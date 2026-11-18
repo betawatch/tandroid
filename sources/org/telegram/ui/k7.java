@@ -1,62 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k7 extends FrameLayout {
-    public final org.telegram.ui.Components.fp a;
-    public final FrameLayout b;
-    public final TextView c;
-    public boolean d;
-    public int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ g7 h;
+public final class k7 extends f7 {
+    public final ArrayList n;
+    public final /* synthetic */ s7 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k7(g7 g7Var, Context context, int i7) {
-        super(context);
-        this.f = i7;
-        this.h = g7Var;
-        org.telegram.ui.Components.fp fpVar = new org.telegram.ui.Components.fp(21, context, null);
-        this.a = fpVar;
-        fpVar.setDrawBackgroundAsArc(14);
-        fpVar.b(org.telegram.ui.ActionBar.j6.i7, org.telegram.ui.ActionBar.j6.g7, org.telegram.ui.ActionBar.j6.k7);
-        View view = new View(getContext());
-        view.setOnClickListener(new a(this, 7));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.b = frameLayout;
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setGravity(5);
-        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.n6, null);
-        if (org.telegram.messenger.hd.a0) {
-            addView(fpVar, c8.ja.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
-            addView(view, c8.ja.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
-            addView(frameLayout, c8.ja.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
-            addView(textView, c8.ja.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-            return;
-        }
-        addView(fpVar, c8.ja.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        addView(view, c8.ja.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
-        addView(frameLayout, c8.ja.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
-        addView(textView, c8.ja.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
+    public k7(s7 s7Var) {
+        super(s7Var, 2);
+        this.r = s7Var;
+        this.n = new ArrayList();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.d) {
-            if (org.telegram.messenger.hd.a0) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-            } else {
-                canvas.drawLine(getMeasuredWidth() - org.telegram.messenger.g0.L(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+    @Override // org.telegram.ui.f7, org.telegram.ui.e7
+    public final void F() {
+        super.F();
+        ArrayList arrayList = this.n;
+        arrayList.clear();
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.e;
+            if (i7 >= arrayList2.size()) {
+                return;
             }
+            arrayList.add(new org.telegram.messenger.ef(0, ((l7) arrayList2.get(i7)).d.a.getPath(), 0, ((l7) arrayList2.get(i7)).d.d == 1, 0, 0));
+            i7++;
         }
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        View view = f1Var.a;
+        j7 j7Var = (j7) view;
+        org.telegram.ui.Cells.h7 h7Var = (org.telegram.ui.Cells.h7) j7Var.b.getChildAt(0);
+        ArrayList arrayList = this.e;
+        ei.b bVar = ((l7) arrayList.get(i7)).d;
+        boolean z10 = bVar == view.getTag();
+        boolean z11 = i7 != arrayList.size() - 1;
+        view.setTag(bVar);
+        File file = bVar.a;
+        long lastModified = file.lastModified();
+        String M0 = bVar.h == 5 ? org.telegram.messenger.gd.M0(2131753939, null) : file.getName();
+        String s5 = org.telegram.messenger.gd.s(lastModified / 1000, true);
+        String name = file.getName();
+        Pattern pattern = Utilities.a;
+        int lastIndexOf = name.lastIndexOf(46);
+        String substring = lastIndexOf != -1 ? name.substring(lastIndexOf + 1) : null;
+        h7Var.d(M0, s5, substring != null ? substring.toUpperCase() : null, null, 0, z11);
+        if (!z10) {
+            h7Var.setPhoto(file.getPath());
+        }
+        h7Var.getImageView().setRoundRadius(org.telegram.messenger.g0.L(bVar.h == 5 ? 20.0f : 4.0f));
+        j7Var.d = z11;
+        j7Var.c.setText(org.telegram.messenger.g0.i0(bVar.c, false, false));
+        j7Var.a.a(this.r.h.j.contains(bVar), z10);
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        j7 j7Var = new j7(this, viewGroup.getContext(), 0);
+        j7Var.e = 2;
+        j7Var.b.addView(new org.telegram.ui.Cells.h7(3, viewGroup.getContext(), null));
+        return new org.telegram.ui.Components.kj0(j7Var);
     }
 }

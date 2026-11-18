@@ -1,37 +1,45 @@
 package hi;
 
-import org.telegram.messenger.z10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o implements z10 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ia b;
+    public final /* synthetic */ ja b;
 
-    public /* synthetic */ o(ia iaVar, int i7) {
+    public /* synthetic */ o(ja jaVar, int i7) {
         this.a = i7;
-        this.b = iaVar;
+        this.b = jaVar;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        Integer num = (Integer) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int intValue = num.intValue();
-                ia iaVar = this.b;
-                iaVar.setPeriod(intValue);
-                z10 z10Var = iaVar.B1;
-                if (z10Var != null) {
-                    z10Var.a(num);
-                    break;
-                }
+                this.b.n();
+                break;
+            case 1:
+                ja jaVar = this.b;
+                jaVar.K0 = false;
+                jaVar.L0 = TLObject.FLAG_31;
+                jaVar.invalidate();
+                jaVar.S0.setVisibility(0);
+                jaVar.T0.setVisibility(0);
                 break;
             default:
-                z10 z10Var2 = this.b.C1;
-                if (z10Var2 != null) {
-                    z10Var2.a(num);
-                    break;
+                ta taVar = this.b.S1;
+                ha haVar = taVar.Y0;
+                if (haVar != null) {
+                    haVar.P = false;
+                    haVar.c();
+                    ha haVar2 = taVar.Y0;
+                    haVar2.m(0L);
+                    db dbVar = haVar2.G;
+                    if (dbVar != null) {
+                        dbVar.setProgress(0L);
+                        break;
+                    }
                 }
                 break;
         }

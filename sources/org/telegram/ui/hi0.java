@@ -1,25 +1,41 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hi0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dr b;
+import android.os.Build;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ hi0(dr drVar, int i7) {
-        this.a = i7;
-        this.b = drVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class hi0 {
+    public final LaunchActivity a;
+    public final ArrayList b = new ArrayList();
+    public int c = TLObject.FLAG_31;
+
+    public hi0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.D(1.0f);
-                break;
-            default:
-                this.b.D(1.0f);
-                break;
+    public final void a() {
+        boolean isEmpty = this.b.isEmpty();
+        LaunchActivity launchActivity = this.a;
+        try {
+            if (isEmpty || launchActivity.getResources().getConfiguration().smallestScreenWidthDp >= 600 || (Build.VERSION.SDK_INT >= 24 && launchActivity.isInMultiWindowMode())) {
+                int i7 = this.c;
+                if (i7 != Integer.MIN_VALUE) {
+                    launchActivity.setRequestedOrientation(i7);
+                    this.c = TLObject.FLAG_31;
+                    return;
+                }
+                return;
+            }
+            if (this.c == Integer.MIN_VALUE) {
+                this.c = launchActivity.getRequestedOrientation();
+            }
+            if (launchActivity.getRequestedOrientation() != 1) {
+                launchActivity.setRequestedOrientation(1);
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

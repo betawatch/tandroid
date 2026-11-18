@@ -1,69 +1,67 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rh extends mq0 {
-    public final /* synthetic */ an a;
+public final class rh implements View.OnClickListener {
+    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ org.telegram.ui.Components.ck0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ bn f;
 
-    public rh(an anVar) {
-        this.a = anVar;
+    public rh(bn bnVar, mf0 mf0Var, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = bnVar;
+        this.a = mf0Var;
+        this.b = ck0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final uq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
-        jj jjVar;
-        ImageReceiver imageReceiver;
-        if (i7 >= 0) {
-            an anVar = this.a;
-            if (i7 < anVar.eb.size() && (jjVar = anVar.X1) != null && jjVar.getListView() != null) {
-                int childCount = anVar.X1.getListView().getChildCount();
-                Object obj = anVar.eb.get(i7);
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = anVar.X1.getListView().getChildAt(i10);
-                    if (childAt instanceof org.telegram.ui.Cells.h2) {
-                        org.telegram.ui.Cells.h2 h2Var = (org.telegram.ui.Cells.h2) childAt;
-                        if (h2Var.getResult() == obj) {
-                            imageReceiver = h2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                uq0 uq0Var = new uq0();
-                                uq0Var.b = iArr[0];
-                                uq0Var.c = iArr[1];
-                                uq0Var.d = anVar.X1.getListView();
-                                uq0Var.a = imageReceiver;
-                                uq0Var.e = imageReceiver.p();
-                                uq0Var.h = imageReceiver.E();
-                                return uq0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
-                }
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        mf0 mf0Var = this.a;
+        ArrayList arrayList = mf0Var.b;
+        ArrayList arrayList2 = mf0Var.c;
+        bn bnVar = this.f;
+        if (bnVar.g9 == null || arrayList2.isEmpty()) {
+            return;
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final void o(int i7, org.telegram.messenger.g20 g20Var, boolean z10, int i10, int i11, boolean z11) {
-        if (i7 >= 0) {
-            an anVar = this.a;
-            if (i7 >= anVar.eb.size()) {
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
                 return;
             }
-            anVar.Hb((TLRPC.BotInlineResult) anVar.eb.get(i7), z10, i10, 0L);
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            bnVar.presentFragment(new ProfileActivity(bundle, null));
+            bnVar.P7(true);
+            return;
         }
+        if (org.telegram.messenger.bz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(bnVar.getParentActivity()), bnVar.Ba).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131748296, null)), null);
+            bnVar.C1 = t6;
+            t6.j = 4000;
+            t6.j();
+            org.telegram.messenger.bz.S(org.telegram.messenger.bz.c1 - 1);
+        }
+        org.telegram.ui.Components.ck0 ck0Var = this.b;
+        ck0Var.requestLayout();
+        this.c.requestLayout();
+        ck0Var.getAdapter().f();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

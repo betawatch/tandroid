@@ -1,23 +1,33 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class st extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ tt V2;
+public final /* synthetic */ class st implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vt b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public st(tt ttVar, Activity activity, String str) {
-        super(activity, null, str, false, null, false, null);
-        this.V2 = ttVar;
+    public /* synthetic */ st(vt vtVar, int i7) {
+        this.a = i7;
+        this.b = vtVar;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            org.telegram.messenger.g0.i3(new org.telegram.ui.Components.voip.u(this, hVar, i7), 250L);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
+                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
+                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
+                vt vtVar = this.b;
+                vtVar.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new st(vtVar, 1));
+                break;
+            default:
+                this.b.getMessagesController().X2(true);
+                break;
         }
     }
 }

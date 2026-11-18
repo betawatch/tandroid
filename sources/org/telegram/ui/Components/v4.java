@@ -1,47 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class v4 extends FrameLayout {
-    public boolean a;
-    public int b;
-    public h6 c;
-    public h6 d;
-
-    public h6 getSubtitleTextView() {
-        return this.d;
-    }
-
-    public h6 getTitle() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        h6 h6Var = this.d;
-        h6 h6Var2 = this.c;
-        int y10 = org.telegram.messenger.i20.y(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? org.telegram.messenger.g0.m : 0);
-        int i13 = this.b;
-        if (h6Var.getVisibility() != 8) {
-            h6Var2.layout(i13, (org.telegram.messenger.g0.L(1.0f) + y10) - h6Var2.getPaddingTop(), h6Var2.getMeasuredWidth() + i13, h6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(1.3f) + (h6Var2.getTextHeight() + y10)) - h6Var2.getPaddingTop()));
-        } else {
-            h6Var2.layout(i13, (org.telegram.messenger.g0.L(11.0f) + y10) - h6Var2.getPaddingTop(), h6Var2.getMeasuredWidth() + i13, h6Var2.getPaddingBottom() + ((org.telegram.messenger.g0.L(11.0f) + (h6Var2.getTextHeight() + y10)) - h6Var2.getPaddingTop()));
-        }
-        h6Var.layout(i13, org.telegram.messenger.g0.L(20.0f) + y10, h6Var.getMeasuredWidth() + i13, org.telegram.messenger.g0.L(24.0f) + h6Var.getTextHeight() + y10);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        h6 h6Var = this.c;
-        int paddingRight = h6Var.getPaddingRight() + size;
-        int L = paddingRight - org.telegram.messenger.g0.L(16.0f);
-        h6Var.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(h6Var.getPaddingRight() + org.telegram.messenger.g0.L(32.0f), TLObject.FLAG_31));
-        this.d.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(20.0f), TLObject.FLAG_31));
-        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i10));
+public final class v4 extends k80 {
+    @Override // org.telegram.ui.Components.k80, android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

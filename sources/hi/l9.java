@@ -1,18 +1,30 @@
 package hi;
 
-import android.app.Activity;
-import android.graphics.Path;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class l9 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ta b;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class l9 extends x3 {
-    public final Path O;
-    public final /* synthetic */ sa P;
+    public /* synthetic */ l9(ta taVar, int i7) {
+        this.a = i7;
+        this.b = taVar;
+    }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l9(sa saVar, Activity activity, fi.b bVar, org.telegram.ui.Components.u9 u9Var) {
-        super(activity, bVar, u9Var);
-        this.P = saVar;
-        this.O = new Path();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ta taVar = this.b;
+                taVar.getClass();
+                taVar.f(1.0f, true, new s8(taVar, 6));
+                taVar.c1.b(true, true);
+                break;
+            default:
+                ta taVar2 = this.b;
+                taVar2.e(false);
+                taVar2.n2 = null;
+                break;
+        }
     }
 }

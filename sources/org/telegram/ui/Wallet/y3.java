@@ -1,30 +1,37 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y3 implements Runnable {
+public final /* synthetic */ class y3 implements r1.d {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c4 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ y3(c4 c4Var, int i7) {
+    public /* synthetic */ y3(Object obj, int i7) {
         this.a = i7;
-        this.b = c4Var;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Cells.t0 t0Var = this.b.a;
-                if (t0Var.getParent() instanceof View) {
-                    ((View) t0Var.getParent()).invalidate();
-                    break;
-                }
+                f4 f4Var = (f4) this.b;
+                f4Var.H = f10;
+                f4Var.d();
+                break;
+            case 1:
+                e9 e9Var = (e9) this.b;
+                e9Var.e = f10;
+                e9Var.setScaleX(f10);
+                e9Var.setScaleY(f10);
+                break;
+            case 2:
+                da daVar = (da) this.b;
+                daVar.c0 = f10;
+                daVar.G0();
                 break;
             default:
-                this.b.p();
+                ((ca) this.b).d.setConversionWobble(f10);
                 break;
         }
     }

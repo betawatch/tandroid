@@ -1,151 +1,76 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class io implements Runnable {
+public final /* synthetic */ class io implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ v2 c;
+    public final /* synthetic */ x2 b;
 
-    public /* synthetic */ io(int i7, v2 v2Var, int i10) {
-        this.a = i10;
-        this.b = i7;
-        this.c = v2Var;
+    public /* synthetic */ io(x2 x2Var, int i7) {
+        this.a = i7;
+        this.b = x2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:36:0x006f  */
-    /* JADX WARN: Removed duplicated region for block: B:73:0x00dd  */
-    /* JADX WARN: Type inference failed for: r0v1, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v7, types: [int] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        TLRPC.help_AppConfig help_appconfig;
-        NativeByteBuffer byteBufferValue;
-        SQLiteCursor sQLiteCursor2;
-        TLRPC.messages_AvailableEffects messages_availableeffects;
-        NativeByteBuffer byteBufferValue2;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        String str;
+        int i7;
+        String str2;
+        int i10;
         switch (this.a) {
             case 0:
-                ?? r02 = this.b;
-                v2 v2Var = this.c;
-                SQLiteCursor sQLiteCursor3 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase = vr.a0(r02).b;
-                        if (sQLiteDatabase != null) {
-                            sQLiteCursor = sQLiteDatabase.queryFinalized("SELECT data FROM app_config", new Object[0]);
-                            try {
-                                if (!sQLiteCursor.next() || (byteBufferValue = sQLiteCursor.byteBufferValue(0)) == null) {
-                                    help_appconfig = null;
-                                } else {
-                                    help_appconfig = TLRPC.help_AppConfig.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), true);
-                                    byteBufferValue.reuse();
-                                }
-                                if (help_appconfig instanceof TLRPC.TL_help_appConfig) {
-                                    v2Var.a(Long.valueOf(r6.hash), (TLRPC.TL_help_appConfig) help_appconfig);
-                                } else {
-                                    v2Var.a(0L, null);
-                                }
-                                sQLiteCursor3 = sQLiteCursor;
-                            } catch (Exception e10) {
-                                e = e10;
-                                a8.g(e, true);
-                                v2Var.a(0L, null);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
-                            }
+                boolean z10 = tLObject instanceof TLRPC.TL_help_appConfigNotModified;
+                x2 x2Var = this.b;
+                if (!z10) {
+                    if (!(tLObject instanceof TLRPC.TL_help_appConfig)) {
+                        StringBuilder sb2 = new StringBuilder("getting appconfig error ");
+                        if (tL_error != null) {
+                            str = tL_error.code + " " + tL_error.text;
+                        } else {
+                            str = "";
                         }
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLiteCursor3 = r02;
-                        if (sQLiteCursor3 != null) {
-                            sQLiteCursor3.dispose();
-                        }
-                        throw th;
+                        sb2.append(str);
+                        a8.d(sb2.toString());
+                        x2Var.a(Boolean.FALSE, null, 0L, Boolean.valueOf(tL_error == null || !((i7 = tL_error.code) == -2000 || i7 == -2001)));
+                        break;
+                    } else {
+                        x2Var.a(Boolean.FALSE, (TLRPC.TL_help_appConfig) tLObject, Long.valueOf(r6.hash), Boolean.TRUE);
+                        break;
                     }
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    if (sQLiteCursor3 != null) {
-                    }
-                    throw th;
+                } else {
+                    Boolean bool = Boolean.TRUE;
+                    x2Var.a(bool, null, 0L, bool);
+                    break;
                 }
                 break;
             default:
-                ?? r03 = this.b;
-                v2 v2Var2 = this.c;
-                SQLiteCursor sQLiteCursor4 = null;
-                try {
-                    try {
-                        SQLiteDatabase sQLiteDatabase2 = vr.a0(r03).b;
-                        if (sQLiteDatabase2 != null) {
-                            sQLiteCursor2 = sQLiteDatabase2.queryFinalized("SELECT data FROM effects", new Object[0]);
-                            try {
-                                if (!sQLiteCursor2.next() || (byteBufferValue2 = sQLiteCursor2.byteBufferValue(0)) == null) {
-                                    messages_availableeffects = null;
-                                } else {
-                                    messages_availableeffects = TLRPC.messages_AvailableEffects.TLdeserialize(byteBufferValue2, byteBufferValue2.readInt32(false), true);
-                                    byteBufferValue2.reuse();
-                                }
-                                if (messages_availableeffects instanceof TLRPC.TL_messages_availableEffects) {
-                                    v2Var2.a(Long.valueOf(r6.hash), (TLRPC.TL_messages_availableEffects) messages_availableeffects);
-                                } else {
-                                    v2Var2.a(0L, null);
-                                }
-                                sQLiteCursor4 = sQLiteCursor2;
-                            } catch (Exception e12) {
-                                e = e12;
-                                a8.g(e, true);
-                                v2Var2.a(0L, null);
-                                if (sQLiteCursor2 != null) {
-                                    sQLiteCursor2.dispose();
-                                    return;
-                                }
-                                return;
-                            }
+                boolean z11 = tLObject instanceof TLRPC.TL_messages_availableEffectsNotModified;
+                x2 x2Var2 = this.b;
+                if (!z11) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_availableEffects)) {
+                        StringBuilder sb3 = new StringBuilder("getting available effects error ");
+                        if (tL_error != null) {
+                            str2 = tL_error.code + " " + tL_error.text;
+                        } else {
+                            str2 = "";
                         }
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        sQLiteCursor4 = r03;
-                        if (sQLiteCursor4 != null) {
-                            sQLiteCursor4.dispose();
-                        }
-                        throw th;
+                        sb3.append(str2);
+                        a8.d(sb3.toString());
+                        x2Var2.a(Boolean.FALSE, null, 0L, Boolean.valueOf(tL_error == null || !((i10 = tL_error.code) == -2000 || i10 == -2001)));
+                        break;
+                    } else {
+                        x2Var2.a(Boolean.FALSE, (TLRPC.TL_messages_availableEffects) tLObject, Long.valueOf(r6.hash), Boolean.TRUE);
+                        break;
                     }
-                } catch (Exception e13) {
-                    e = e13;
-                    sQLiteCursor2 = null;
-                } catch (Throwable th5) {
-                    th = th5;
-                    if (sQLiteCursor4 != null) {
-                    }
-                    throw th;
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    x2Var2.a(bool2, null, 0L, bool2);
+                    break;
                 }
-                break;
         }
     }
 }

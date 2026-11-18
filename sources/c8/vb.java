@@ -1,166 +1,75 @@
 package c8;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.Dialog;
-import android.content.DialogInterface;
+import android.net.Uri;
 import android.os.Build;
-import android.util.SparseArray;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.Window;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.WeakHashMap;
-import org.telegram.messenger.beta.R;
+import android.os.SystemClock;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class vb {
-    public static boolean a = false;
-    public static Method b = null;
-    public static boolean c = false;
-    public static Field d;
-
-    public static boolean a(View view, KeyEvent keyEvent) {
-        ArrayList arrayList;
-        int size;
-        int indexOfKey;
-        WeakHashMap weakHashMap = r0.i0.a;
-        if (Build.VERSION.SDK_INT >= 28) {
-            return false;
+    public static q2.v a(j2.h hVar, String str, byte[] bArr, Map map) {
+        Map map2;
+        List list;
+        j2.b0 b0Var = new j2.b0(hVar);
+        Map map3 = Collections.EMPTY_MAP;
+        Uri parse = Uri.parse(str);
+        a8.la.k(parse, "The uri must be set.");
+        j2.m mVar = new j2.m(parse, 2, bArr, map, 0L, -1L, null, 1);
+        int i7 = 0;
+        j2.m mVar2 = mVar;
+        while (true) {
+            try {
+                j2.k kVar = new j2.k(b0Var, mVar2);
+                try {
+                    byte[] b10 = i9.f.b(kVar);
+                    x2.u uVar = new x2.u(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
+                    ji.j jVar = new ji.j(b10, 22);
+                    jVar.c = uVar;
+                    q2.v vVar = new q2.v(jVar);
+                    try {
+                        kVar.close();
+                    } catch (IOException unused) {
+                    }
+                    return vVar;
+                } catch (j2.x e10) {
+                    int i10 = e10.c;
+                    String str2 = null;
+                    if ((i10 == 307 || i10 == 308) && i7 < 5 && (map2 = e10.d) != null && (list = (List) map2.get("Location")) != null && !list.isEmpty()) {
+                        str2 = (String) list.get(0);
+                    }
+                    if (str2 == null) {
+                        throw e10;
+                    }
+                    i7++;
+                    j2.l a10 = mVar2.a();
+                    a10.e = Uri.parse(str2);
+                    mVar2 = a10.d();
+                    try {
+                        kVar.close();
+                    } catch (IOException unused2) {
+                    }
+                } finally {
+                    String str3 = h2.l0.a;
+                    try {
+                        kVar.close();
+                    } catch (IOException unused3) {
+                    }
+                }
+            } catch (Exception e11) {
+                throw new q2.w(mVar, b0Var.c, b0Var.a.getResponseHeaders(), b0Var.b, e11);
+            }
         }
-        ArrayList arrayList2 = r0.h0.d;
-        r0.h0 h0Var = (r0.h0) view.getTag(R.id.tag_unhandled_key_event_manager);
-        WeakReference weakReference = null;
-        if (h0Var == null) {
-            h0Var = new r0.h0();
-            h0Var.a = null;
-            h0Var.b = null;
-            h0Var.c = null;
-            view.setTag(R.id.tag_unhandled_key_event_manager, h0Var);
-        }
-        WeakReference weakReference2 = h0Var.c;
-        if (weakReference2 != null && weakReference2.get() == keyEvent) {
-            return false;
-        }
-        h0Var.c = new WeakReference(keyEvent);
-        if (h0Var.b == null) {
-            h0Var.b = new SparseArray();
-        }
-        SparseArray sparseArray = h0Var.b;
-        if (keyEvent.getAction() == 1 && (indexOfKey = sparseArray.indexOfKey(keyEvent.getKeyCode())) >= 0) {
-            weakReference = (WeakReference) sparseArray.valueAt(indexOfKey);
-            sparseArray.removeAt(indexOfKey);
-        }
-        if (weakReference == null) {
-            weakReference = (WeakReference) sparseArray.get(keyEvent.getKeyCode());
-        }
-        if (weakReference == null) {
-            return false;
-        }
-        View view2 = (View) weakReference.get();
-        if (view2 == null || !view2.isAttachedToWindow() || (arrayList = (ArrayList) view2.getTag(R.id.tag_unhandled_key_listeners)) == null || (size = arrayList.size() - 1) < 0) {
-            return true;
-        }
-        arrayList.get(size).getClass();
-        throw new ClassCastException();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:56:0x00bf  */
-    /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean b(r0.i iVar, View view, Window.Callback callback, KeyEvent keyEvent) {
-        DialogInterface.OnKeyListener onKeyListener;
-        Window window;
-        boolean z10 = false;
-        if (iVar != null) {
-            if (Build.VERSION.SDK_INT >= 28) {
-                return iVar.i(keyEvent);
-            }
-            if (callback instanceof Activity) {
-                Activity activity = (Activity) callback;
-                activity.onUserInteraction();
-                Window window2 = activity.getWindow();
-                if (window2.hasFeature(8)) {
-                    ActionBar actionBar = activity.getActionBar();
-                    if (keyEvent.getKeyCode() == 82 && actionBar != null) {
-                        if (!a) {
-                            try {
-                                b = actionBar.getClass().getMethod("onMenuKeyEvent", KeyEvent.class);
-                            } catch (NoSuchMethodException unused) {
-                            }
-                            a = true;
-                        }
-                        Method method = b;
-                        if (method != null) {
-                            try {
-                                Object invoke = method.invoke(actionBar, keyEvent);
-                                if (invoke != null) {
-                                    z10 = ((Boolean) invoke).booleanValue();
-                                }
-                            } catch (IllegalAccessException | InvocationTargetException unused2) {
-                            }
-                        }
-                        if (z10) {
-                            return true;
-                        }
-                    }
-                }
-                if (window2.superDispatchKeyEvent(keyEvent)) {
-                    return true;
-                }
-                View decorView = window2.getDecorView();
-                if (r0.i0.c(decorView, keyEvent)) {
-                    return true;
-                }
-                return keyEvent.dispatch(activity, decorView != null ? decorView.getKeyDispatcherState() : null, activity);
-            }
-            if (callback instanceof Dialog) {
-                Dialog dialog = (Dialog) callback;
-                if (!c) {
-                    try {
-                        Field declaredField = Dialog.class.getDeclaredField("mOnKeyListener");
-                        d = declaredField;
-                        declaredField.setAccessible(true);
-                    } catch (NoSuchFieldException unused3) {
-                    }
-                    c = true;
-                }
-                Field field = d;
-                if (field != null) {
-                    try {
-                        onKeyListener = (DialogInterface.OnKeyListener) field.get(dialog);
-                    } catch (IllegalAccessException unused4) {
-                    }
-                    if (onKeyListener == null && onKeyListener.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
-                        return true;
-                    }
-                    window = dialog.getWindow();
-                    if (!window.superDispatchKeyEvent(keyEvent)) {
-                        return true;
-                    }
-                    View decorView2 = window.getDecorView();
-                    if (r0.i0.c(decorView2, keyEvent)) {
-                        return true;
-                    }
-                    return keyEvent.dispatch(dialog, decorView2 != null ? decorView2.getKeyDispatcherState() : null, dialog);
-                }
-                onKeyListener = null;
-                if (onKeyListener == null) {
-                }
-                window = dialog.getWindow();
-                if (!window.superDispatchKeyEvent(keyEvent)) {
-                }
-            } else if ((view != null && r0.i0.c(view, keyEvent)) || iVar.i(keyEvent)) {
-                return true;
-            }
-        }
-        return false;
+    public static boolean b(Throwable th2) {
+        return Build.VERSION.SDK_INT == 34 && (th2 instanceof NoSuchMethodError) && th2.getMessage() != null && th2.getMessage().contains("Landroid/media/NotProvisionedException;.<init>(");
+    }
+
+    public static boolean c(Throwable th2) {
+        return Build.VERSION.SDK_INT == 34 && (th2 instanceof NoSuchMethodError) && th2.getMessage() != null && th2.getMessage().contains("Landroid/media/ResourceBusyException;.<init>(");
     }
 }

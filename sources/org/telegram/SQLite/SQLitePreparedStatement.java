@@ -3,12 +3,12 @@ package org.telegram.SQLite;
 import android.os.SystemClock;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.y0;
+import p5.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class SQLitePreparedStatement {
     private boolean isFinalized = false;
@@ -18,7 +18,7 @@ public class SQLitePreparedStatement {
 
     public SQLitePreparedStatement(SQLiteDatabase sQLiteDatabase, String str) {
         this.sqliteStatementHandle = prepare(sQLiteDatabase.getSQLiteHandle(), str);
-        if (r2.a) {
+        if (s2.a) {
             this.query = str;
             this.startTime = SystemClock.elapsedRealtime();
         }
@@ -86,21 +86,21 @@ public class SQLitePreparedStatement {
         if (this.isFinalized) {
             return;
         }
-        if (r2.a) {
+        if (s2.a) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.startTime;
             if (elapsedRealtime > 500) {
                 StringBuilder sb2 = new StringBuilder("sqlite query ");
                 sb2.append(this.query);
                 sb2.append(" took ");
                 sb2.append(elapsedRealtime);
-                y0.t("ms", sb2);
+                c.s("ms", sb2);
             }
         }
         try {
             this.isFinalized = true;
             finalize(this.sqliteStatementHandle);
         } catch (SQLiteException e10) {
-            if (r2.a) {
+            if (s2.a) {
                 a8.e(e10.getMessage(), e10);
             }
         }

@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,12 +19,12 @@ public final /* synthetic */ class mc0 implements Runnable {
                 oc0 oc0Var = nc0Var.d;
                 if (nc0Var.b) {
                     boolean z10 = oc0Var.M;
-                    org.telegram.ui.Components.ch0 ch0Var = oc0Var.L;
+                    org.telegram.ui.Components.mh0 mh0Var = oc0Var.L;
                     xc xcVar = oc0Var.n;
                     if (z10 && System.currentTimeMillis() - nc0Var.a >= 10000) {
-                        xcVar.setAnimation(ch0Var);
-                        ch0Var.N(0, false, false);
-                        ch0Var.u0 = new mc0(nc0Var, 1);
+                        xcVar.setAnimation(mh0Var);
+                        mh0Var.N(0, false, false);
+                        mh0Var.u0 = new mc0(nc0Var, 1);
                         xcVar.d();
                         nc0Var.a = System.currentTimeMillis();
                     }
@@ -33,13 +33,13 @@ public final /* synthetic */ class mc0 implements Runnable {
                 }
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new mc0(this.b, 2));
+                org.telegram.messenger.g0.g3(new mc0(this.b, 2));
                 break;
             default:
                 oc0 oc0Var2 = this.b.d;
-                org.telegram.ui.Components.ch0 ch0Var2 = oc0Var2.K;
-                ch0Var2.N(0, false, false);
-                oc0Var2.n.setAnimation(ch0Var2);
+                org.telegram.ui.Components.mh0 mh0Var2 = oc0Var2.K;
+                mh0Var2.N(0, false, false);
+                oc0Var2.n.setAnimation(mh0Var2);
                 break;
         }
     }

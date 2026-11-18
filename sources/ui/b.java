@@ -7,7 +7,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Shader;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class b implements a {
     public final Paint a;
@@ -53,20 +53,6 @@ public final class b implements a {
         c();
     }
 
-    @Override // ui.a
-    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
-        }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f10, f11);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f10, f11, f12, f13, this.a);
-    }
-
     public final void c() {
         Bitmap bitmap = this.d;
         Matrix matrix = this.b;
@@ -89,5 +75,19 @@ public final class b implements a {
         float max = Math.max(f10 / f11, f12 / f13);
         matrix.setScale(max, max);
         matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
+    }
+
+    @Override // ui.a
+    public final void o(float f10, float f11, float f12, float f13, Canvas canvas) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f10, f11);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f10, f11, f12, f13, this.a);
     }
 }

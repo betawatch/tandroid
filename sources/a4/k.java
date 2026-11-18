@@ -12,7 +12,7 @@ import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import androidx.core.graphics.drawable.IconCompat;
-import bg.n0;
+import bg.o0;
 import e0.j0;
 import e0.m;
 import e0.o;
@@ -33,12 +33,12 @@ import m4.e0;
 import m4.f0;
 import m4.g0;
 import m6.n;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dx0;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.kx0;
+import org.telegram.ui.Components.mx0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class k implements a0 {
     public final /* synthetic */ int a;
@@ -200,9 +200,9 @@ public class k implements a0 {
                                 int A3 = xVar.A();
                                 if (A3 != 21) {
                                     if (A3 == 14) {
-                                        i15 = ns.S1;
+                                        i15 = ks.S1;
                                     } else if (A3 == 33) {
-                                        i15 = ns.V1;
+                                        i15 = ks.V1;
                                     }
                                 }
                                 i15 = 172;
@@ -798,10 +798,10 @@ public class k implements a0 {
         kotlin.jvm.internal.j.e(message, "message");
         kotlin.jvm.internal.j.e(hint, "hint");
         String concat = hint.length() == 0 ? "" : "\n".concat(hint);
-        StringBuilder m10 = r.b.m(message, " at path: ");
-        m10.append(((xa) this.c).l());
-        m10.append(concat);
-        String message2 = m10.toString();
+        StringBuilder n10 = p5.c.n(message, " at path: ");
+        n10.append(((xa) this.c).m());
+        n10.append(concat);
+        String message2 = n10.toString();
         String input = (String) this.f;
         kotlin.jvm.internal.j.e(message2, "message");
         kotlin.jvm.internal.j.e(input, "input");
@@ -818,7 +818,7 @@ public class k implements a0 {
         String str = (String) this.f;
         String str2 = b10 == 1 ? "quotation mark '\"'" : b10 == 2 ? "string escape sequence '\\'" : b10 == 4 ? "comma ','" : b10 == 5 ? "colon ':'" : b10 == 6 ? "start of the object '{'" : b10 == 7 ? "end of the object '}'" : b10 == 8 ? "start of the array '['" : b10 == 9 ? "end of the array ']'" : b10 == 10 ? "end of the input" : b10 == Byte.MAX_VALUE ? "invalid token" : "valid token";
         int i7 = z10 ? this.b - 1 : this.b;
-        n(this, r.b.l("Expected ", str2, ", but had '", (this.b == str.length() || i7 < 0) ? "EOF" : String.valueOf(str.charAt(i7)), "' instead"), i7, 4);
+        n(this, p5.c.l("Expected ", str2, ", but had '", (this.b == str.length() || i7 < 0) ? "EOF" : String.valueOf(str.charAt(i7)), "' instead"), i7, 4);
         throw null;
     }
 
@@ -870,13 +870,13 @@ public class k implements a0 {
     public String toString() {
         switch (this.a) {
             case 2:
-                StringBuilder sb2 = new StringBuilder(ns.e3);
+                StringBuilder sb2 = new StringBuilder(ks.e3);
                 sb2.append("<<\n mode: ");
-                sb2.append((gc.e) this.c);
+                sb2.append((gc.d) this.c);
                 sb2.append("\n ecLevel: ");
-                sb2.append((gc.c) this.d);
+                sb2.append((gc.b) this.d);
                 sb2.append("\n version: ");
-                sb2.append((gc.f) this.e);
+                sb2.append((gc.e) this.e);
                 sb2.append("\n maskPattern: ");
                 sb2.append(this.b);
                 if (((cc.c) this.f) == null) {
@@ -935,12 +935,12 @@ public class k implements a0 {
             return;
         }
         iArr[i7] = 1;
-        for (dx0 dx0Var : ((dx0[][]) this.d)[i7]) {
-            w(dx0Var.a.b);
-            dx0[] dx0VarArr = (dx0[]) this.c;
+        for (kx0 kx0Var : ((kx0[][]) this.d)[i7]) {
+            w(kx0Var.a.b);
+            kx0[] kx0VarArr = (kx0[]) this.c;
             int i10 = this.b;
             this.b = i10 - 1;
-            dx0VarArr[i10] = dx0Var;
+            kx0VarArr[i10] = kx0Var;
         }
         iArr[i7] = 2;
     }
@@ -1059,7 +1059,7 @@ public class k implements a0 {
                 y.m(builder2);
             }
             if (i16 >= 31) {
-                n0.g(builder2);
+                o0.g(builder2);
             }
             bundle2.putBoolean("android.support.action.showsUserInterface", hVar.e);
             builder2.addExtras(bundle2);
@@ -1309,31 +1309,31 @@ public class k implements a0 {
         this.b = i7;
     }
 
-    public k(fx0 fx0Var, dx0[] dx0VarArr) {
+    public k(mx0 mx0Var, kx0[] kx0VarArr) {
         this.a = 5;
-        this.f = fx0Var;
-        int length = dx0VarArr.length;
-        this.c = new dx0[length];
+        this.f = mx0Var;
+        int length = kx0VarArr.length;
+        this.c = new kx0[length];
         this.b = length - 1;
-        int e10 = fx0Var.e() + 1;
-        dx0[][] dx0VarArr2 = new dx0[e10][];
+        int e10 = mx0Var.e() + 1;
+        kx0[][] kx0VarArr2 = new kx0[e10][];
         int[] iArr = new int[e10];
-        for (dx0 dx0Var : dx0VarArr) {
-            int i7 = dx0Var.a.a;
+        for (kx0 kx0Var : kx0VarArr) {
+            int i7 = kx0Var.a.a;
             iArr[i7] = iArr[i7] + 1;
         }
         for (int i10 = 0; i10 < e10; i10++) {
-            dx0VarArr2[i10] = new dx0[iArr[i10]];
+            kx0VarArr2[i10] = new kx0[iArr[i10]];
         }
         Arrays.fill(iArr, 0);
-        for (dx0 dx0Var2 : dx0VarArr) {
-            int i11 = dx0Var2.a.a;
-            dx0[] dx0VarArr3 = dx0VarArr2[i11];
+        for (kx0 kx0Var2 : kx0VarArr) {
+            int i11 = kx0Var2.a.a;
+            kx0[] kx0VarArr3 = kx0VarArr2[i11];
             int i12 = iArr[i11];
             iArr[i11] = i12 + 1;
-            dx0VarArr3[i12] = dx0Var2;
+            kx0VarArr3[i12] = kx0Var2;
         }
-        this.d = dx0VarArr2;
-        this.e = new int[((fx0) this.f).e() + 1];
+        this.d = kx0VarArr2;
+        this.e = new int[((mx0) this.f).e() + 1];
     }
 }

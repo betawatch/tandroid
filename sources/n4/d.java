@@ -6,7 +6,7 @@ import e2.t0;
 import f3.p;
 import h2.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -18,7 +18,7 @@ public abstract class d {
         if (i7 != 1380533830 && i7 != 1380333108) {
             return false;
         }
-        pVar.c(0, 4, xVar.a);
+        pVar.b(0, 4, xVar.a);
         xVar.N(0);
         int m10 = xVar.m();
         if (m10 == 1463899717) {
@@ -44,7 +44,7 @@ public abstract class d {
             if (j10 > 2147483647L) {
                 throw t0.c("Chunk is too large (~2GB+) to skip; id: " + i10);
             }
-            pVar.m((int) j10);
+            pVar.r((int) j10);
             b10 = i.b(pVar, xVar);
         }
     }

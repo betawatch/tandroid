@@ -1,74 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ao0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ po0 c;
+public final class ao0 extends ck0 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ yo0 g3;
 
-    public /* synthetic */ ao0(po0 po0Var, boolean z10, int i7) {
-        this.a = i7;
-        this.c = po0Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ao0(yo0 yo0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(context, i6Var);
+        this.f3 = i7;
+        this.g3 = yo0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.ck0
+    public final boolean E0(float f10) {
+        switch (this.f3) {
             case 0:
-                AnimatorSet[] animatorSetArr = this.c.P1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    animatorSetArr[0] = null;
-                    break;
+                yo0 yo0Var = this.g3;
+                if (f10 >= org.telegram.messenger.g0.L((!yo0Var.d2 || yo0Var.k2[1] == null) ? 58.0f : 111.0f) + yo0Var.C2.b) {
                 }
                 break;
             default:
-                po0 po0Var = this.c;
-                if (animator.equals(po0Var.z1)) {
-                    po0Var.z1 = null;
-                    break;
+                yo0 yo0Var2 = this.g3;
+                if (f10 >= org.telegram.messenger.g0.L((!yo0Var2.d2 || yo0Var2.k2[1] == null) ? 58.0f : 111.0f) + yo0Var2.C2.b) {
                 }
                 break;
         }
+        return true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void draw(Canvas canvas) {
+        switch (this.f3) {
             case 0:
-                po0 po0Var = this.c;
-                AnimatorSet[] animatorSetArr = po0Var.P1;
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        po0Var.O1[0].setVisibility(4);
-                    }
-                    animatorSetArr[0] = null;
+                yo0 yo0Var = this.g3;
+                ck0 ck0Var = yo0Var.A1;
+                if (ck0Var.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, org.telegram.messenger.g0.L((!yo0Var.d2 || yo0Var.k2[1] == null) ? 58.0f : 111.0f) + yo0Var.l2, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (ck0Var.getVisibility() != 8) {
+                    canvas.restore();
                     break;
                 }
                 break;
             default:
-                po0 po0Var2 = this.c;
-                FrameLayout frameLayout = po0Var2.r1;
-                if (animator.equals(po0Var2.z1)) {
-                    if (!this.b) {
-                        po0Var2.n1.setVisibility(4);
-                        FrameLayout frameLayout2 = po0Var2.Y1;
-                        if (frameLayout2 != null && frameLayout == null) {
-                            frameLayout2.setVisibility(4);
-                        }
-                        po0Var2.q1.setVisibility(4);
-                    } else if (frameLayout != null) {
-                        frameLayout.setVisibility(4);
-                    }
-                    po0Var2.z1 = null;
+                yo0 yo0Var2 = this.g3;
+                ck0 ck0Var2 = yo0Var2.A1;
+                if (ck0Var2.getVisibility() != 8) {
+                    canvas.save();
+                    canvas.clipRect(0, org.telegram.messenger.g0.L((!yo0Var2.d2 || yo0Var2.k2[1] == null) ? 58.0f : 111.0f) + yo0Var2.l2, getWidth(), getHeight());
+                }
+                super.draw(canvas);
+                if (ck0Var2.getVisibility() != 8) {
+                    canvas.restore();
                     break;
                 }
                 break;

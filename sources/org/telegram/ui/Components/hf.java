@@ -1,40 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hf extends AnimatorListenerAdapter {
+public final class hf implements View.OnKeyListener {
     public final /* synthetic */ ChatActivityEnterView a;
 
     public hf(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d5, code lost:
+    
+        if (r8.getAction() != 0) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00d9, code lost:
+    
+        if (r6.N2 != null) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00db, code lost:
+    
+        r6.r1();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00de, code lost:
+    
+        return true;
+     */
+    @Override // android.view.View.OnKeyListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
         ChatActivityEnterView chatActivityEnterView = this.a;
-        oi0 oi0Var = chatActivityEnterView.i1;
-        if (oi0Var != null && oi0Var.T0 != null) {
-            chatActivityEnterView.r5 = new od(3, this, animator);
-            return;
+        if (keyEvent != null) {
+            chatActivityEnterView.E0 = keyEvent.isShiftPressed();
+            chatActivityEnterView.D0 = keyEvent.isCtrlPressed();
         }
-        i61 i61Var = chatActivityEnterView.g1;
-        if (i61Var != null) {
-            i61Var.setVisibility(8);
+        if (i7 == 4 && !chatActivityEnterView.n3 && chatActivityEnterView.O0() && keyEvent.getAction() == 1) {
+            if (org.telegram.ui.ns.g0 != null && org.telegram.ui.ns.p().E) {
+                org.telegram.ui.ns.p().n();
+                return true;
+            }
+            if (chatActivityEnterView.T2 != 1 || chatActivityEnterView.a3 == null) {
+                if (keyEvent.getAction() == 1) {
+                    if (chatActivityEnterView.T2 == 1 && chatActivityEnterView.a3 != null) {
+                        org.telegram.messenger.mp.u1(chatActivityEnterView.R).h7.edit().putInt("hidekeyboard_" + chatActivityEnterView.E3, chatActivityEnterView.a3.e1()).commit();
+                    }
+                    if (chatActivityEnterView.F2 != 0) {
+                        chatActivityEnterView.L1(0, true);
+                        cg cgVar = chatActivityEnterView.V0;
+                        if (cgVar != null) {
+                            cgVar.t(true);
+                        }
+                        chatActivityEnterView.F0.requestFocus();
+                        return true;
+                    }
+                    if (chatActivityEnterView.n4) {
+                        chatActivityEnterView.M1(false, true, false, true);
+                        return true;
+                    }
+                    if (chatActivityEnterView.p4 == null) {
+                        if (chatActivityEnterView.a3 != null && chatActivityEnterView.T2 != 1 && TextUtils.isEmpty(chatActivityEnterView.F0.getTextToUse())) {
+                            chatActivityEnterView.T1(1, 1, true, true);
+                            return true;
+                        }
+                        chatActivityEnterView.T1(0, 0, true, false);
+                    }
+                }
+                return true;
+            }
+        } else if (i7 == 66 && !keyEvent.isShiftPressed()) {
+            if (chatActivityEnterView.p3) {
+            }
         }
-        oi0 oi0Var2 = chatActivityEnterView.i1;
-        if (oi0Var2 != null) {
-            oi0Var2.setVisibility(8);
-        }
-        chatActivityEnterView.X4 = 0.0f;
-        chatActivityEnterView.K0();
-        chatActivityEnterView.B0();
-        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.v2;
-        if (recordCircle != null) {
-            recordCircle.g();
-        }
+        return false;
     }
 }

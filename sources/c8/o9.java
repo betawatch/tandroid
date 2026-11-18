@@ -1,20 +1,83 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class o9 {
-    public static String a(String str, String str2) {
-        int length = str.length() - str2.length();
-        if (length < 0 || length > 1) {
-            throw new IllegalArgumentException("Invalid input received");
+    public static int a(d4.f fVar, int i7, int i10, int i11) {
+        a8.la.f(Math.max(Math.max(i7, i10), i11) <= 31);
+        int i12 = (1 << i7) - 1;
+        int i13 = (1 << i10) - 1;
+        u0.a(u0.a(i12, i13), 1 << i11);
+        if (fVar.b() < i7) {
+            return -1;
         }
-        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
-        for (int i7 = 0; i7 < str.length(); i7++) {
-            sb2.append(str.charAt(i7));
-            if (str2.length() > i7) {
-                sb2.append(str2.charAt(i7));
+        int j3 = fVar.j(i7);
+        if (j3 == i12) {
+            if (fVar.b() < i10) {
+                return -1;
+            }
+            int j10 = fVar.j(i10);
+            j3 += j10;
+            if (j10 == i13) {
+                if (fVar.b() < i11) {
+                    return -1;
+                }
+                return fVar.j(i11) + j3;
             }
         }
-        return sb2.toString();
+        return j3;
+    }
+
+    public static void b(d4.f fVar) {
+        fVar.L(3);
+        fVar.L(8);
+        boolean i7 = fVar.i();
+        boolean i10 = fVar.i();
+        if (i7) {
+            fVar.L(5);
+        }
+        if (i10) {
+            fVar.L(6);
+        }
+    }
+
+    public static void c(d4.f fVar) {
+        int j3;
+        int j10 = fVar.j(2);
+        if (j10 == 0) {
+            fVar.L(6);
+            return;
+        }
+        int a10 = a(fVar, 5, 8, 16) + 1;
+        if (j10 == 1) {
+            fVar.L(a10 * 7);
+            return;
+        }
+        if (j10 == 2) {
+            boolean i7 = fVar.i();
+            int i10 = i7 ? 1 : 5;
+            int i11 = i7 ? 7 : 5;
+            int i12 = i7 ? 8 : 6;
+            int i13 = 0;
+            while (i13 < a10) {
+                if (fVar.i()) {
+                    fVar.L(7);
+                    j3 = 0;
+                } else {
+                    if (fVar.j(2) == 3 && fVar.j(i11) * i10 != 0) {
+                        fVar.K();
+                    }
+                    j3 = fVar.j(i12) * i10;
+                    if (j3 != 0 && j3 != 180) {
+                        fVar.K();
+                    }
+                    fVar.K();
+                }
+                if (j3 != 0 && j3 != 180 && fVar.i()) {
+                    i13++;
+                }
+                i13++;
+            }
+        }
     }
 }

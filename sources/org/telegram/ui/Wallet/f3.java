@@ -1,302 +1,219 @@
 package org.telegram.ui.Wallet;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.a20;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import di.pb;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.u10;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.f60;
+import org.telegram.messenger.gd;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public abstract class f3 {
-    public static void a(final int i7, final a20 a20Var, final s10 s10Var, final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP, final TwoStepVerificationActivity twoStepVerificationActivity, final u10 u10Var, final boolean z10, final boolean z11, final bg.u0 u0Var) {
-        if (u0Var.b) {
-            return;
+public final class f3 {
+    public final int a;
+    public final int b;
+    public final boolean c;
+    public final int d;
+    public final long e;
+    public final long f;
+    public final long g;
+    public final long h;
+    public long i;
+    public final int j;
+    public boolean k;
+    public final String l;
+    public final int m;
+
+    public f3(int i7, int i10, boolean z10, int i11, long j3, long j10, long j11, long j12, int i12, String str, int i13) {
+        this.a = i7;
+        this.b = i10;
+        this.c = z10;
+        this.d = i11;
+        this.e = j3;
+        this.f = j10;
+        this.g = j11;
+        this.h = j12;
+        this.j = i12;
+        this.l = TextUtils.isEmpty(str) ? null : str;
+        this.m = i13;
+    }
+
+    public static String a(TL_wallet.WalletOnchainGiftAction walletOnchainGiftAction) {
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCreate) {
+            return ((TL_wallet.walletOnchainGiftActionOfferCreate) walletOnchainGiftAction).counterparty_address;
         }
-        final org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-        if (T == null || T.getContext() == null) {
-            u0Var.a();
-            return;
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferAccept) {
+            return ((TL_wallet.walletOnchainGiftActionOfferAccept) walletOnchainGiftAction).counterparty_address;
         }
-        final Activity parentActivity = T.getParentActivity();
-        TLRPC.User f10 = m10.i(i7).f();
-        if (parentActivity == null || f10 == null) {
-            u0Var.a();
-            return;
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCancel) {
+            return ((TL_wallet.walletOnchainGiftActionOfferCancel) walletOnchainGiftAction).counterparty_address;
         }
-        final org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, T.getContext(), null);
-        if (z11) {
-            t1Var.r(250L);
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferDecline) {
+            return ((TL_wallet.walletOnchainGiftActionOfferDecline) walletOnchainGiftAction).counterparty_address;
         }
-        z10 z10Var = new z10() { // from class: org.telegram.ui.Wallet.c3
-            @Override // org.telegram.messenger.z10
-            public final void a(Object obj) {
-                TLMethod tLMethod = (TLMethod) obj;
-                final bg.u0 u0Var2 = u0Var;
-                boolean z12 = u0Var2.b;
-                final org.telegram.ui.ActionBar.t1 t1Var2 = t1Var;
-                if (z12 || tLMethod == null) {
-                    t1Var2.dismiss();
-                    u0Var2.a();
-                    return;
-                }
-                final int i10 = i7;
-                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-                d3.b bVar = new d3.b(1);
-                final Activity activity = parentActivity;
-                final s10 s10Var2 = s10Var;
-                final u10 u10Var2 = u10Var;
-                final a20 a20Var2 = a20Var;
-                final TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP2 = inputCheckPasswordSRP;
-                final org.telegram.ui.ActionBar.e2 e2Var = T;
-                final TwoStepVerificationActivity twoStepVerificationActivity2 = twoStepVerificationActivity;
-                final boolean z13 = z10;
-                final boolean z14 = z11;
-                connectionsManager.sendRequestTyped(tLMethod, bVar, new s10() { // from class: org.telegram.ui.Wallet.d3
-                    @Override // org.telegram.messenger.s10
-                    public final void a(Object obj2, Object obj3) {
-                        TLObject tLObject = (TLObject) obj2;
-                        final TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                        t1Var2.dismiss();
-                        final bg.u0 u0Var3 = u0Var2;
-                        if (u0Var3.b) {
-                            return;
-                        }
-                        final TwoStepVerificationActivity twoStepVerificationActivity3 = twoStepVerificationActivity2;
-                        final u10 u10Var3 = u10Var2;
-                        TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP3 = inputCheckPasswordSRP2;
-                        if (tL_error == null) {
-                            u0Var3.c = true;
-                            if (twoStepVerificationActivity3 != null) {
-                                try {
-                                    twoStepVerificationActivity3.t0();
-                                    twoStepVerificationActivity3.finishFragment();
-                                } finally {
-                                }
-                            }
-                            u10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
-                            u0Var3.a();
-                            return;
-                        }
-                        boolean equals = "PASSWORD_MISSING".equals(tL_error.text);
-                        final int i11 = i10;
-                        final a20 a20Var3 = a20Var2;
-                        final s10 s10Var3 = s10Var2;
-                        final boolean z15 = z13;
-                        final boolean z16 = z14;
-                        if (equals || tL_error.text.startsWith("PASSWORD_TOO_FRESH_") || tL_error.text.startsWith("SESSION_TOO_FRESH_")) {
-                            if (twoStepVerificationActivity3 != null) {
-                                twoStepVerificationActivity3.t0();
-                            }
-                            ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(i11);
-                            TL_account.getPassword getpassword = new TL_account.getPassword();
-                            d3.b bVar2 = new d3.b(1);
-                            final Activity activity2 = activity;
-                            final org.telegram.ui.ActionBar.e2 e2Var2 = e2Var;
-                            connectionsManager2.sendRequestTyped(getpassword, bVar2, new s10() { // from class: org.telegram.ui.Wallet.y2
-                                @Override // org.telegram.messenger.s10
-                                public final void a(Object obj4, Object obj5) {
-                                    int i12;
-                                    TL_account.Password password = (TL_account.Password) obj4;
-                                    TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
-                                    bg.u0 u0Var4 = bg.u0.this;
-                                    if (u0Var4.b) {
-                                        return;
-                                    }
-                                    if (tL_error2 == null) {
-                                        e3 e3Var = new e3(u0Var4);
-                                        int i13 = i11;
-                                        e3Var.setCurrentAccount(i13);
-                                        a20 a20Var4 = a20Var3;
-                                        s10 s10Var4 = s10Var3;
-                                        u10 u10Var4 = u10Var3;
-                                        boolean z17 = z15;
-                                        a3 a3Var = new a3(i13, a20Var4, s10Var4, e3Var, u10Var4, z17, z16, u0Var4, 0);
-                                        e3Var.a0 = 1;
-                                        e3Var.c0 = a3Var;
-                                        e3Var.J = password;
-                                        e3Var.K = false;
-                                        org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
-                                        if (T2 == null || T2.getContext() == null) {
-                                            u0Var4.a();
-                                            return;
-                                        } else {
-                                            if (!z17) {
-                                                T2.presentFragment(e3Var);
-                                                return;
-                                            }
-                                            org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                                            c2Var.a = true;
-                                            T2.showAsSheet(e3Var, c2Var);
-                                            return;
-                                        }
-                                    }
-                                    u0Var4.a();
-                                    Activity activity3 = activity2;
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity3);
-                                    String M0 = hd.M0(2131751297, null);
-                                    org.telegram.ui.ActionBar.t1 t1Var3 = alertDialog$Builder.a;
-                                    t1Var3.S = M0;
-                                    LinearLayout linearLayout = new LinearLayout(activity3);
-                                    linearLayout.setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(24.0f), 0);
-                                    linearLayout.setOrientation(1);
-                                    alertDialog$Builder.o(linearLayout);
-                                    TextView textView = new TextView(activity3);
-                                    int i14 = org.telegram.ui.ActionBar.j6.j5;
-                                    org.telegram.ui.ActionBar.q6.U(textView, i14, null);
-                                    textView.setTextSize(1, 16.0f);
-                                    textView.setGravity((hd.a0 ? 5 : 3) | 48);
-                                    textView.setText(org.telegram.messenger.g0.X2(hd.M0(2131742864, null)));
-                                    linearLayout.addView(textView, c8.ja.o(-1, -2));
-                                    LinearLayout linearLayout2 = new LinearLayout(activity3);
-                                    linearLayout2.setOrientation(0);
-                                    linearLayout.addView(linearLayout2, c8.ja.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                    ImageView imageView = new ImageView(activity3);
-                                    imageView.setImageResource(R.drawable.list_circle);
-                                    imageView.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
-                                    PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-                                    org.telegram.ui.ActionBar.q6.s(imageView, i14, null, mode);
-                                    TextView textView2 = new TextView(activity3);
-                                    org.telegram.ui.ActionBar.q6.U(textView2, i14, null);
-                                    textView2.setTextSize(1, 16.0f);
-                                    textView2.setGravity((hd.a0 ? 5 : 3) | 48);
-                                    textView2.setText(org.telegram.messenger.g0.X2(hd.M0(2131751300, null)));
-                                    if (hd.a0) {
-                                        linearLayout2.addView(textView2, c8.ja.o(-1, -2));
-                                        linearLayout2.addView(imageView, c8.ja.r(-2, -2, 5));
-                                    } else {
-                                        linearLayout2.addView(imageView, c8.ja.o(-2, -2));
-                                        linearLayout2.addView(textView2, c8.ja.o(-1, -2));
-                                    }
-                                    LinearLayout e10 = org.telegram.messenger.k5.e(activity3, 0);
-                                    linearLayout.addView(e10, c8.ja.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                    ImageView imageView2 = new ImageView(activity3);
-                                    imageView2.setImageResource(R.drawable.list_circle);
-                                    imageView2.setPadding(hd.a0 ? org.telegram.messenger.g0.L(11.0f) : 0, org.telegram.messenger.g0.L(9.0f), hd.a0 ? 0 : org.telegram.messenger.g0.L(11.0f), 0);
-                                    org.telegram.ui.ActionBar.q6.s(imageView2, i14, null, mode);
-                                    TextView textView3 = new TextView(activity3);
-                                    org.telegram.ui.ActionBar.q6.U(textView3, i14, null);
-                                    textView3.setTextSize(1, 16.0f);
-                                    textView3.setGravity((hd.a0 ? 5 : 3) | 48);
-                                    textView3.setText(org.telegram.messenger.g0.X2(hd.M0(2131751299, null)));
-                                    if (hd.a0) {
-                                        e10.addView(textView3, c8.ja.o(-1, -2));
-                                        i12 = 5;
-                                        e10.addView(imageView2, c8.ja.r(-2, -2, 5));
-                                    } else {
-                                        i12 = 5;
-                                        e10.addView(imageView2, c8.ja.o(-2, -2));
-                                        e10.addView(textView3, c8.ja.o(-1, -2));
-                                    }
-                                    boolean equals2 = "PASSWORD_MISSING".equals(tL_error.text);
-                                    org.telegram.ui.ActionBar.e2 e2Var3 = e2Var2;
-                                    if (equals2) {
-                                        alertDialog$Builder.k(hd.M0(2131751291, null), new b3(e2Var3, 0));
-                                        alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                                    } else {
-                                        TextView textView4 = new TextView(activity3);
-                                        org.telegram.ui.ActionBar.q6.U(textView4, i14, null);
-                                        textView4.setTextSize(1, 16.0f);
-                                        if (!hd.a0) {
-                                            i12 = 3;
-                                        }
-                                        org.telegram.messenger.k5.l(textView4, i12 | 48, null, 2131751298);
-                                        linearLayout.addView(textView4, c8.ja.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
-                                        alertDialog$Builder.h(hd.M0(2131747831, null), null);
-                                    }
-                                    TwoStepVerificationActivity twoStepVerificationActivity4 = twoStepVerificationActivity3;
-                                    if (twoStepVerificationActivity4 != null) {
-                                        twoStepVerificationActivity4.showDialog(t1Var3);
-                                    } else {
-                                        e2Var3.showDialog(t1Var3);
-                                    }
-                                }
-                            }, 8);
-                            return;
-                        }
-                        if ("SRP_ID_INVALID".equals(tL_error.text)) {
-                            ConnectionsManager.getInstance(i11).sendRequestTyped(new TL_account.getPassword(), new d3.b(1), new s10() { // from class: org.telegram.ui.Wallet.z2
-                                @Override // org.telegram.messenger.s10
-                                public final void a(Object obj4, Object obj5) {
-                                    s10 s10Var4;
-                                    a20 a20Var4;
-                                    int i12;
-                                    TwoStepVerificationActivity twoStepVerificationActivity4;
-                                    TL_account.Password password = (TL_account.Password) obj4;
-                                    TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj5;
-                                    bg.u0 u0Var4 = bg.u0.this;
-                                    if (u0Var4.b) {
-                                        return;
-                                    }
-                                    if (tL_error2 != null) {
-                                        u0Var4.a();
-                                        return;
-                                    }
-                                    TwoStepVerificationActivity twoStepVerificationActivity5 = twoStepVerificationActivity3;
-                                    int i13 = i11;
-                                    a20 a20Var5 = a20Var3;
-                                    s10 s10Var5 = s10Var3;
-                                    u10 u10Var4 = u10Var3;
-                                    boolean z17 = z15;
-                                    boolean z18 = z16;
-                                    if (twoStepVerificationActivity5 == null) {
-                                        e3 e3Var = new e3(u0Var4);
-                                        e3Var.setCurrentAccount(i13);
-                                        s10Var4 = s10Var5;
-                                        a20Var4 = a20Var5;
-                                        i12 = i13;
-                                        a3 a3Var = new a3(i12, a20Var4, s10Var4, e3Var, u10Var4, z17, z18, u0Var4, 1);
-                                        e3Var.a0 = 1;
-                                        e3Var.c0 = a3Var;
-                                        e3Var.x0(new f60(u0Var4, z17, e3Var, 13));
-                                        twoStepVerificationActivity4 = e3Var;
-                                    } else {
-                                        s10Var4 = s10Var5;
-                                        a20Var4 = a20Var5;
-                                        i12 = i13;
-                                        twoStepVerificationActivity4 = twoStepVerificationActivity5;
-                                    }
-                                    twoStepVerificationActivity4.J = password;
-                                    TwoStepVerificationActivity.r0(password);
-                                    f3.a(i12, a20Var4, s10Var4, twoStepVerificationActivity4.q0(), twoStepVerificationActivity4, u10Var4, z17, z18, u0Var4);
-                                }
-                            }, 8);
-                            return;
-                        }
-                        u0Var3.c = true;
-                        if (twoStepVerificationActivity3 != null) {
-                            try {
-                                twoStepVerificationActivity3.t0();
-                                twoStepVerificationActivity3.finishFragment();
-                            } finally {
-                            }
-                        }
-                        u10Var3.a(tLObject, tL_error, inputCheckPasswordSRP3);
-                        u0Var3.a();
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferExpire) {
+            return ((TL_wallet.walletOnchainGiftActionOfferExpire) walletOnchainGiftAction).counterparty_address;
+        }
+        return null;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0084  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0099  */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x008e  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static f3 c(TL_wallet.walletTransaction wallettransaction) {
+        int i7;
+        long j3;
+        TL_wallet.nftItem nftitem;
+        if (wallettransaction == null) {
+            return null;
+        }
+        TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
+        if (!(walletTransactionPeer instanceof TL_wallet.walletTransactionPeerOnchainGift)) {
+            return null;
+        }
+        TL_wallet.WalletOnchainGiftAction walletOnchainGiftAction = ((TL_wallet.walletTransactionPeerOnchainGift) walletTransactionPeer).action;
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionBuy) {
+            long j10 = wallettransaction.amount;
+            int i10 = (j10 > 0 || (j10 == 0 && !wallettransaction.incoming)) ? 1 : 0;
+            long abs = Math.abs(j10);
+            if (i10 != 0 && wallettransaction.amount > 0 && (nftitem = wallettransaction.nft) != null) {
+                TL_stars.StarGift starGift = nftitem.gift;
+                if (starGift instanceof TL_stars.TL_starGiftUnique) {
+                    i7 = bi.v4.f((TL_stars.TL_starGiftUnique) starGift);
+                    if (i7 > 0 || i7 >= 10000) {
+                        j3 = 0;
+                    } else {
+                        abs = new BigDecimal(wallettransaction.amount).multiply(BigDecimal.valueOf(10000L)).divide(BigDecimal.valueOf(10000 - i7), 0, RoundingMode.HALF_UP).longValue();
+                        j3 = abs - wallettransaction.amount;
                     }
-                });
+                    return new f3(i10, R.drawable.wallet_transaction_swap, true, i10 == 0 ? wallettransaction.amount > 0 ? 0 : -1 : 1, wallettransaction.amount, abs, j3, 0L, 0, null, i10 == 0 ? 2131749542 : 2131749534);
+                }
             }
-        };
-        if (a20Var != null) {
-            z10Var.a((TLMethod) a20Var.a(inputCheckPasswordSRP));
-        } else if (s10Var != null) {
-            s10Var.a(inputCheckPasswordSRP, z10Var);
+            i7 = -1;
+            if (i7 > 0) {
+            }
+            j3 = 0;
+            return new f3(i10, R.drawable.wallet_transaction_swap, true, i10 == 0 ? wallettransaction.amount > 0 ? 0 : -1 : 1, wallettransaction.amount, abs, j3, 0L, 0, null, i10 == 0 ? 2131749542 : 2131749534);
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionChangePrice) {
+            TL_wallet.walletOnchainGiftActionChangePrice walletonchaingiftactionchangeprice = (TL_wallet.walletOnchainGiftActionChangePrice) walletOnchainGiftAction;
+            if (!walletonchaingiftactionchangeprice.hasOldPrice()) {
+                return new f3(3, R.drawable.wallet_transaction_out, false, -1, wallettransaction.amount, walletonchaingiftactionchangeprice.new_price, 0L, 0L, 0, null, 0);
+            }
+            f3 f3Var = new f3(9, R.drawable.wallet_transaction_reprice, true, 0, wallettransaction.amount, walletonchaingiftactionchangeprice.new_price, 0L, 0L, 0, null, 0);
+            f3Var.i = walletonchaingiftactionchangeprice.old_price;
+            return f3Var;
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionDelist) {
+            return new f3(4, R.drawable.wallet_transaction_in, true, 1, wallettransaction.amount, 0L, 0L, 0L, 0, null, 0);
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCreate) {
+            TL_wallet.walletOnchainGiftActionOfferCreate walletonchaingiftactionoffercreate = (TL_wallet.walletOnchainGiftActionOfferCreate) walletOnchainGiftAction;
+            long j11 = wallettransaction.amount;
+            return new f3(5, R.drawable.wallet_transaction_out, false, 0, -(j11 != 0 ? Math.abs(j11) : walletonchaingiftactionoffercreate.amount), walletonchaingiftactionoffercreate.price, walletonchaingiftactionoffercreate.service_fee, 0L, walletonchaingiftactionoffercreate.expires_at, walletonchaingiftactionoffercreate.counterparty_address, 2131742782);
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferAccept) {
+            TL_wallet.walletOnchainGiftActionOfferAccept walletonchaingiftactionofferaccept = (TL_wallet.walletOnchainGiftActionOfferAccept) walletOnchainGiftAction;
+            if (walletonchaingiftactionofferaccept.buyer) {
+                long j12 = wallettransaction.amount;
+                return new f3(0, R.drawable.wallet_transaction_swap, true, 1, -(j12 != 0 ? Math.abs(j12) : walletonchaingiftactionofferaccept.price + walletonchaingiftactionofferaccept.service_fee), walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.service_fee, 0L, 0, walletonchaingiftactionofferaccept.counterparty_address, 2131749534);
+            }
+            long j13 = wallettransaction.amount;
+            return new f3(2, R.drawable.wallet_transaction_swap, true, 0, j13 != 0 ? Math.abs(j13) : walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.price, walletonchaingiftactionofferaccept.service_fee, 0L, 0, walletonchaingiftactionofferaccept.counterparty_address, 2131749542);
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferCancel) {
+            TL_wallet.walletOnchainGiftActionOfferCancel walletonchaingiftactionoffercancel = (TL_wallet.walletOnchainGiftActionOfferCancel) walletOnchainGiftAction;
+            f3 d = d(6, wallettransaction, walletonchaingiftactionoffercancel.refund_amount, walletonchaingiftactionoffercancel.price, walletonchaingiftactionoffercancel.fine, walletonchaingiftactionoffercancel.counterparty_address);
+            d.k = (walletonchaingiftactionoffercancel.flags & 4) != 0;
+            return d;
+        }
+        if (walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferDecline) {
+            TL_wallet.walletOnchainGiftActionOfferDecline walletonchaingiftactionofferdecline = (TL_wallet.walletOnchainGiftActionOfferDecline) walletOnchainGiftAction;
+            return d(7, wallettransaction, walletonchaingiftactionofferdecline.refund_amount, walletonchaingiftactionofferdecline.price, 0L, walletonchaingiftactionofferdecline.counterparty_address);
+        }
+        if (!(walletOnchainGiftAction instanceof TL_wallet.walletOnchainGiftActionOfferExpire)) {
+            return null;
+        }
+        TL_wallet.walletOnchainGiftActionOfferExpire walletonchaingiftactionofferexpire = (TL_wallet.walletOnchainGiftActionOfferExpire) walletOnchainGiftAction;
+        return d(8, wallettransaction, walletonchaingiftactionofferexpire.refund_amount, walletonchaingiftactionofferexpire.price, 0L, walletonchaingiftactionofferexpire.counterparty_address);
+    }
+
+    public static f3 d(int i7, TL_wallet.walletTransaction wallettransaction, long j3, long j10, long j11, String str) {
+        long j12 = wallettransaction.amount;
+        return new f3(i7, R.drawable.wallet_transaction_in, true, 0, j12 != 0 ? Math.abs(j12) : j3, j10, 0L, j11, 0, str, 2131742782);
+    }
+
+    public static SpannableStringBuilder f(int i7, long j3) {
+        return pb.b1(true, gd.a0(null, null, i7, "⭐️ " + u0.t(j3, false)), 0.7f, null);
+    }
+
+    public final CharSequence b() {
+        int i7 = this.a;
+        long j3 = this.e;
+        long j10 = this.f;
+        switch (i7) {
+            case 0:
+                if (j10 == 0) {
+                    j10 = Math.abs(j3);
+                }
+                return f(2131742822, j10);
+            case 1:
+                if (j3 != 0) {
+                    j10 = Math.abs(j3);
+                }
+                return f(2131742811, j10);
+            case 2:
+                return f(2131742821, Math.abs(j3));
+            case 3:
+                return j10 != 0 ? f(2131742815, j10) : gd.M0(2131742816, null);
+            case 4:
+                return gd.M0(2131742814, null);
+            case 5:
+                return gd.M0(2131742817, null);
+            case 6:
+                return gd.M0(2131742820, null);
+            case 7:
+                return gd.M0(2131742819, null);
+            case 8:
+                return gd.M0(2131742818, null);
+            case 9:
+                return f(2131742813, j10);
+            default:
+                return "";
+        }
+    }
+
+    public final String e() {
+        switch (this.a) {
+            case 0:
+                return gd.M0(2131742808, null);
+            case 1:
+                return gd.M0(2131742805, null);
+            case 2:
+                return gd.M0(2131742810, null);
+            case 3:
+                return gd.M0(2131742807, null);
+            case 4:
+                return gd.M0(2131742806, null);
+            case 5:
+                return gd.M0(2131742817, null);
+            case 6:
+                return gd.M0(2131742820, null);
+            case 7:
+                return gd.M0(2131742819, null);
+            case 8:
+                return gd.M0(2131742818, null);
+            case 9:
+                return gd.M0(2131742809, null);
+            default:
+                return "";
         }
     }
 }

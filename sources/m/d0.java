@@ -8,7 +8,7 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -33,24 +33,24 @@ public final class d0 extends y {
         c0 c0Var = this.e;
         Context context = c0Var.getContext();
         int[] iArr = f.a.g;
-        h6.m z10 = h6.m.z(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) z10.c;
-        r0.i0.i(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) z10.c, i7);
-        Drawable s5 = z10.s(0);
-        if (s5 != null) {
-            c0Var.setThumb(s5);
+        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) D.c;
+        r0.i0.i(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
+        Drawable v = D.v(0);
+        if (v != null) {
+            c0Var.setThumb(v);
         }
-        Drawable p10 = z10.p(1);
+        Drawable t6 = D.t(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = p10;
-        if (p10 != null) {
-            p10.setCallback(c0Var);
-            p10.setLayoutDirection(c0Var.getLayoutDirection());
-            if (p10.isStateful()) {
-                p10.setState(c0Var.getDrawableState());
+        this.f = t6;
+        if (t6 != null) {
+            t6.setCallback(c0Var);
+            t6.setLayoutDirection(c0Var.getLayoutDirection());
+            if (t6.isStateful()) {
+                t6.setState(c0Var.getDrawableState());
             }
             f();
         }
@@ -60,10 +60,10 @@ public final class d0 extends y {
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = z10.o(2);
+            this.g = D.s(2);
             this.i = true;
         }
-        z10.D();
+        D.G();
         f();
     }
 

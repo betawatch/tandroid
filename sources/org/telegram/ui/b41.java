@@ -1,15 +1,62 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b41 extends k41 {
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (getTranslationY() != 0.0f) {
-            canvas.drawColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.d6, false));
+public final class b41 extends org.telegram.ui.Components.y61 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ FrameLayout d;
+    public final /* synthetic */ c51 e;
+
+    public b41(c51 c51Var, boolean z10, boolean z11, boolean z12, FrameLayout frameLayout) {
+        this.e = c51Var;
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
+        this.d = frameLayout;
+    }
+
+    @Override // org.telegram.ui.Components.y61
+    public final View d(int i7) {
+        c51 c51Var = this.e;
+        if (c51Var.o0) {
+            return c51Var.j0;
         }
-        super.onDraw(canvas);
+        boolean z10 = this.a;
+        FrameLayout frameLayout = this.d;
+        if (z10) {
+            if (i7 == 0) {
+                return frameLayout;
+            }
+            i7--;
+        }
+        if (this.b) {
+            if (i7 == 0) {
+                return c51Var.j0;
+            }
+            i7--;
+        }
+        return (this.c && i7 == 0) ? c51Var.k0 : frameLayout;
+    }
+
+    @Override // org.telegram.ui.Components.y61
+    public final int e() {
+        if (this.e.o0) {
+            return 1;
+        }
+        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
+    }
+
+    @Override // org.telegram.ui.Components.y61
+    public final int h(int i7) {
+        return i7;
+    }
+
+    @Override // org.telegram.ui.Components.y61
+    public final void b(View view, int i7, int i10) {
     }
 }

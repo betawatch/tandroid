@@ -1,7 +1,7 @@
 package hd;
 
-import c8.d0;
-import c8.sd;
+import c8.f0;
+import c8.vd;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +23,7 @@ public abstract class f extends l {
             if (i7 > 1) {
                 sb2.append(charSequence);
             }
-            sd.a(sb2, obj, lVar);
+            vd.a(sb2, obj, lVar);
         }
         sb2.append(charSequence3);
     }
@@ -73,7 +73,7 @@ public abstract class f extends l {
                     }
                     next = it.next();
                 }
-                return d0.a(next);
+                return f0.a(next);
             }
         }
         ArrayList arrayList = new ArrayList(i7);
@@ -87,7 +87,7 @@ public abstract class f extends l {
             }
         }
         int size = arrayList.size();
-        return size != 0 ? size != 1 ? arrayList : d0.a(arrayList.get(0)) : nVar;
+        return size != 0 ? size != 1 ? arrayList : f0.a(arrayList.get(0)) : nVar;
     }
 
     public static byte[] i(ArrayList arrayList) {
@@ -140,7 +140,7 @@ public abstract class f extends l {
             if (size != 1) {
                 return n(collection);
             }
-            return d0.a(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
+            return f0.a(iterable instanceof List ? ((List) iterable).get(0) : collection.iterator().next());
         }
         if (z10) {
             arrayList = n((Collection) iterable);
@@ -150,7 +150,7 @@ public abstract class f extends l {
             arrayList = arrayList2;
         }
         int size2 = arrayList.size();
-        return size2 != 0 ? size2 != 1 ? arrayList : d0.a(arrayList.get(0)) : nVar;
+        return size2 != 0 ? size2 != 1 ? arrayList : f0.a(arrayList.get(0)) : nVar;
     }
 
     public static long[] m(Collection collection) {

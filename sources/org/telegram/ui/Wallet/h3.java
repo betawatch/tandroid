@@ -1,34 +1,68 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.jc;
+import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class h3 implements org.telegram.ui.ActionBar.r1, r0.m, jc {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o3 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h3(o3 o3Var, int i7) {
+    public /* synthetic */ h3(Object obj, int i7) {
         this.a = i7;
-        this.b = o3Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // r0.m
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        w3 w3Var = (w3) this.b;
+        w3Var.I = l1Var.a.f(647);
+        w3Var.h.requestLayout();
+        return r0.l1.b;
+    }
+
+    public void a(float f10, float f11, int i7) {
         switch (this.a) {
-            case 0:
-                o3 o3Var = this.b;
-                o3Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o3Var.R = floatValue;
-                o3Var.r.setUseGyroscope(floatValue);
+            case 2:
+                ((x6) this.b).J.setShadowLayer(f10 * 2.0f, f11, -0.0f, i0.a.o(i7, Math.round(Color.alpha(i7) * 0.5f)));
+                break;
+            case 3:
+                ((TextPaint) this.b).setShadowLayer(f10, 0.0f, f11, i7);
                 break;
             default:
-                o3 o3Var2 = this.b;
-                o3Var2.getClass();
-                o3Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                o3Var2.e();
+                ((org.telegram.ui.Components.m6) this.b).s(f10, f11, i7);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 0:
+                ((org.telegram.ui.ActionBar.h2) this.b).presentFragment(new bb1(6, null));
+                break;
+            default:
+                d9.e0((d9) this.b);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.jc
+    public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        ((q8) this.b).d0.f0();
+    }
+
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void V(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

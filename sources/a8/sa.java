@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sa implements Runnable {
     public final /* synthetic */ int a;
@@ -112,23 +112,23 @@ public final /* synthetic */ class sa implements Runnable {
                 if (n0Var.r != 1 || n0Var.s == null) {
                     return;
                 }
-                Editable text = n0Var.f.b.F0.getText();
+                Editable text = n0Var.f.a.F0.getText();
                 boolean z12 = text != null && text.toString().trim().length() > 0;
                 long uptimeMillis = SystemClock.uptimeMillis();
                 boolean z13 = n0Var.s.getRightMode() == 2;
-                long j11 = n0Var.q0;
+                long j11 = n0Var.r0;
                 if (uptimeMillis - j11 >= 300) {
                     if (z13) {
                         if (!z12 || n0Var.U > j11) {
                             n0Var.s.setRightMode(0);
-                            n0Var.q0 = uptimeMillis;
+                            n0Var.r0 = uptimeMillis;
                         }
-                    } else if (z12 && uptimeMillis - n0Var.U > 1200 && uptimeMillis - n0Var.p0 > 1200) {
+                    } else if (z12 && uptimeMillis - n0Var.U > 1200 && uptimeMillis - n0Var.q0 > 1200) {
                         n0Var.s.setRightMode(2);
-                        n0Var.q0 = uptimeMillis;
+                        n0Var.r0 = uptimeMillis;
                     }
                 }
-                org.telegram.messenger.g0.i3(this, 50L);
+                org.telegram.messenger.g0.h3(this, 50L);
                 return;
             case 2:
                 ai.q0 q0Var = (ai.q0) this.b;
@@ -202,9 +202,9 @@ public final /* synthetic */ class sa implements Runnable {
                                 ai.a0 a0Var2 = h2Var.h;
                                 if (a0Var2 != null) {
                                     ai.n0 n0Var2 = a0Var2.b;
-                                    float[] fArr = n0Var2.C0;
-                                    org.telegram.ui.Components.u5 u5Var = n0Var2.Y;
-                                    if (u5Var == null || u5Var.c < 0.2f || !n0Var2.m(fArr) || (layout = n0Var2.f.b.F0.getLayout()) == null || spanEnd2 > layout.getText().length()) {
+                                    float[] fArr = n0Var2.D0;
+                                    org.telegram.ui.Components.c6 c6Var = n0Var2.Y;
+                                    if (c6Var == null || c6Var.c < 0.2f || !n0Var2.q(fArr) || (layout = n0Var2.f.a.F0.getLayout()) == null || spanEnd2 > layout.getText().length()) {
                                         e2VarArr = e2VarArr2;
                                         i7 = length2;
                                     } else {
@@ -227,10 +227,10 @@ public final /* synthetic */ class sa implements Runnable {
                                             float f12 = f11;
                                             ai.s0 s0Var2 = s0Var;
                                             float max2 = (Math.max(1.0f, max - f10) * random.nextFloat()) + f10;
-                                            float z16 = com.google.android.gms.internal.vision.e2.z(lineBottom, lineTop, org.telegram.ui.Cells.y0.g(random, 0.85f, 0.15f), lineTop);
+                                            float z16 = com.google.android.gms.internal.vision.e2.z(lineBottom, lineTop, org.telegram.ui.Cells.c0.h(random, 0.85f, 0.15f), lineTop);
                                             float L = org.telegram.messenger.g0.L((random.nextFloat() * 7.0f) + 3.0f);
                                             double nextFloat = ((random.nextFloat() - f12) * 2.2f) - 1.5707963267948966d;
-                                            s0Var2.i(max2, z16, ((float) Math.cos(nextFloat)) * L, ((float) Math.sin(nextFloat)) * L, org.telegram.ui.Cells.y0.g(random, 0.55f, 0.45f), org.telegram.ui.Cells.y0.g(random, f12, 0.55f));
+                                            s0Var2.j(max2, z16, ((float) Math.cos(nextFloat)) * L, ((float) Math.sin(nextFloat)) * L, org.telegram.ui.Cells.c0.h(random, 0.55f, 0.45f), org.telegram.ui.Cells.c0.h(random, f12, 0.55f));
                                             i17++;
                                             f11 = f12;
                                             s0Var = s0Var2;
@@ -352,7 +352,7 @@ public final /* synthetic */ class sa implements Runnable {
                 }
                 return;
             case 12:
-                ((b3.m) this.b).d();
+                ((b3.n) this.b).d();
                 return;
             case 13:
                 for (Thread thread : bg.i.w.keySet()) {
@@ -364,14 +364,14 @@ public final /* synthetic */ class sa implements Runnable {
                     bg.i.x = false;
                     return;
                 } else {
-                    org.telegram.messenger.g0.i3(((bg.i) this.b).p, 5000L);
+                    org.telegram.messenger.g0.h3(((bg.i) this.b).p, 5000L);
                     return;
                 }
             case 14:
-                bg.b0 b0Var = (bg.b0) this.b;
-                if (b0Var.G.get()) {
-                    b0Var.invalidate();
-                    b0Var.I.postDelayed(this, 300L);
+                bg.c0 c0Var = (bg.c0) this.b;
+                if (c0Var.G.get()) {
+                    c0Var.invalidate();
+                    c0Var.I.postDelayed(this, 300L);
                     return;
                 }
                 return;
@@ -443,9 +443,9 @@ public final /* synthetic */ class sa implements Runnable {
                 }
                 return;
             case 17:
-                ci.a0 a0Var4 = (ci.a0) this.b;
-                CameraView cameraView = a0Var4.b;
-                if (!a0Var4.i0 || cameraView == null) {
+                ci.b0 b0Var = (ci.b0) this.b;
+                CameraView cameraView = b0Var.b;
+                if (!b0Var.i0 || cameraView == null) {
                     return;
                 }
                 TextureView textureView = cameraView.getTextureView();
@@ -459,31 +459,31 @@ public final /* synthetic */ class sa implements Runnable {
                         width = Math.max(1, (int) (f13 * min));
                         height = Math.max(1, (int) (f14 * min));
                     }
-                    Bitmap bitmap = ((ci.a0) this.b).l0;
-                    if (bitmap == null || bitmap.getWidth() != width || ((ci.a0) this.b).l0.getHeight() != height) {
-                        ((ci.a0) this.b).l0 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                    Bitmap bitmap = ((ci.b0) this.b).l0;
+                    if (bitmap == null || bitmap.getWidth() != width || ((ci.b0) this.b).l0.getHeight() != height) {
+                        ((ci.b0) this.b).l0 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                     }
                     try {
-                        textureView.getBitmap(((ci.a0) this.b).l0);
-                        ci.a0 a0Var5 = (ci.a0) this.b;
-                        q4.q f15 = ci.a0.f(a0Var5.l0, a0Var5.j0, a0Var5.k0, a0Var5.P);
+                        textureView.getBitmap(((ci.b0) this.b).l0);
+                        ci.b0 b0Var2 = (ci.b0) this.b;
+                        q4.q f15 = ci.b0.f(b0Var2.l0, b0Var2.j0, b0Var2.k0, b0Var2.P);
                         if (f15 != null) {
-                            org.telegram.messenger.g0.h3(new c1.c(12, this, f15));
+                            org.telegram.messenger.g0.g3(new c1.c(11, this, f15));
                             return;
                         }
                     } catch (Throwable th2) {
                         org.telegram.messenger.a8.g(th2, true);
                     }
                 }
-                if (((ci.a0) this.b).i0) {
-                    ((ci.a0) this.b).h0.postDelayed(this, 150L);
+                if (((ci.b0) this.b).i0) {
+                    ((ci.b0) this.b).h0.postDelayed(this, 150L);
                     return;
                 }
                 return;
             case 18:
-                com.google.android.gms.common.api.internal.c0 c0Var = (com.google.android.gms.common.api.internal.c0) this.b;
-                n6.e eVar = c0Var.d;
-                Context context = c0Var.c;
+                com.google.android.gms.common.api.internal.c0 c0Var2 = (com.google.android.gms.common.api.internal.c0) this.b;
+                n6.e eVar = c0Var2.d;
+                Context context = c0Var2.c;
                 eVar.getClass();
                 if (n6.g.a.getAndSet(true)) {
                     return;
@@ -503,7 +503,7 @@ public final /* synthetic */ class sa implements Runnable {
                 ((com.google.android.gms.common.api.internal.l0) this.b).a();
                 return;
             case 20:
-                com.google.android.gms.common.api.internal.l0 l0Var = (com.google.android.gms.common.api.internal.l0) ((d6.i) this.b).b;
+                com.google.android.gms.common.api.internal.l0 l0Var = (com.google.android.gms.common.api.internal.l0) ((ob.c) this.b).b;
                 ((q6.d) l0Var.b).j(l0Var.b.getClass().getName().concat(" disconnecting because it was signed out."));
                 return;
             case 21:
@@ -520,18 +520,18 @@ public final /* synthetic */ class sa implements Runnable {
                 }
             case 23:
                 f5.t tVar3 = (f5.t) this.b;
-                f5.b bVar3 = tVar3.d;
+                f5.b bVar3 = tVar3.e;
                 bVar3.k(0);
-                f5.f fVar2 = f5.a0.i;
-                bVar3.j(24, fVar2);
+                f5.f fVar2 = f5.z.i;
+                bVar3.j(24, tVar3.d, fVar2);
                 tVar3.c(fVar2);
                 return;
             case 24:
-                fi.b4 b4Var = (fi.b4) this.b;
-                if (b4Var.u1 && b4Var.L0) {
-                    fi.i9 i9Var = ((fi.z8) b4Var.A1).d;
-                    i9Var.l1 = false;
-                    i9Var.V();
+                fi.z3 z3Var = (fi.z3) this.b;
+                if (z3Var.u1 && z3Var.L0) {
+                    fi.f9 f9Var = ((fi.w8) z3Var.A1).d;
+                    f9Var.l1 = false;
+                    f9Var.V();
                     return;
                 }
                 return;
@@ -539,14 +539,14 @@ public final /* synthetic */ class sa implements Runnable {
                 ((fi.w) this.b).M0 = false;
                 return;
             case 26:
-                fi.r7 r7Var = (fi.r7) this.b;
-                r7Var.b = false;
-                r7Var.invalidate();
+                fi.o7 o7Var = (fi.o7) this.b;
+                o7Var.b = false;
+                o7Var.invalidate();
                 return;
             case 27:
-                tg.j jVar = ((hi.u9) this.b).t0;
-                if (jVar instanceof tg.n2) {
-                    ((tg.n2) jVar).getEditText();
+                tg.j jVar = ((hi.v9) this.b).t0;
+                if (jVar instanceof tg.m2) {
+                    ((tg.m2) jVar).getEditText();
                     return;
                 }
                 return;

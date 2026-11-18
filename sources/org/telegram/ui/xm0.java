@@ -1,65 +1,57 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xm0 implements org.telegram.ui.Cells.p5 {
-    public final /* synthetic */ l4 a;
+public final class xm0 implements org.telegram.ui.ActionBar.o0, org.telegram.ui.Components.fk0 {
+    public final /* synthetic */ cn0 a;
 
-    public xm0(l4 l4Var) {
-        this.a = l4Var;
+    public /* synthetic */ xm0(cn0 cn0Var) {
+        this.a = cn0Var;
     }
 
-    public final void a() {
-        an anVar;
-        TLRPC.Chat chat;
-        zm0 zm0Var = (zm0) this.a.e;
-        if (!zm0Var.J || (anVar = zm0Var.V) == null || (chat = anVar.e) == null || org.telegram.messenger.t3.N(chat) || !chat.slowmode_enabled || zm0Var.X == 2) {
-            return;
+    @Override // org.telegram.ui.Components.fk0
+    public void e(boolean z10) {
+        org.telegram.ui.ActionBar.s4 s4Var;
+        cn0 cn0Var = this.a;
+        cn0Var.X = z10 ? 1 : 0;
+        if (z10) {
+            s4Var = ((org.telegram.ui.ActionBar.h2) cn0Var).parentLayout;
+            s4Var.getView().requestDisallowInterceptTouchEvent(true);
         }
-        org.telegram.ui.Components.t4.r0(zm0Var, org.telegram.messenger.hd.M0(2131745310, null), org.telegram.messenger.hd.M0(2131745303, null), null);
-        if (zm0Var.X == 1) {
-            zm0Var.X = 2;
+        cn0Var.L.d1(true);
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public boolean f(int i7) {
+        return this.a.M.d(i7) == 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o0
+    public void k() {
+        cn0 cn0Var = this.a;
+        cn0Var.R.setText(org.telegram.messenger.gd.M0(cn0Var.Z ? 2131745151 : 2131745150, null));
+        cn0Var.R.setIcon(cn0Var.Z ? R.drawable.msg_media : R.drawable.msg_list);
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public void l(View view, boolean z10) {
+        if (z10 == this.a.Y && (view instanceof org.telegram.ui.Cells.r5)) {
+            org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+            r5Var.y.e(r5Var);
         }
     }
 
-    @Override // org.telegram.ui.Cells.p5
-    public final void d(org.telegram.ui.Cells.q5 q5Var) {
-        boolean z10;
-        int intValue = ((Integer) q5Var.getTag()).intValue();
-        zm0 zm0Var = (zm0) this.a.e;
-        org.telegram.messenger.ve veVar = zm0Var.K;
-        int i7 = -1;
-        if (veVar != null) {
-            org.telegram.messenger.ff ffVar = (org.telegram.messenger.ff) veVar.e.get(intValue);
-            boolean containsKey = zm0Var.b.containsKey(Integer.valueOf(ffVar.C));
-            z10 = !containsKey;
-            if (!containsKey && zm0Var.I > 0 && zm0Var.b.size() >= zm0Var.I) {
-                a();
-                return;
-            }
-            if (zm0Var.e && !containsKey) {
-                i7 = zm0Var.c.size();
-            }
-            q5Var.b(i7, z10, true);
-            zm0Var.d0(intValue, ffVar);
-        } else {
-            org.telegram.messenger.g0.v1(zm0Var.getParentActivity().getCurrentFocus());
-            org.telegram.messenger.jf jfVar = (org.telegram.messenger.jf) zm0Var.f.get(intValue);
-            boolean containsKey2 = zm0Var.b.containsKey(jfVar.B);
-            z10 = !containsKey2;
-            if (!containsKey2 && zm0Var.I > 0 && zm0Var.b.size() >= zm0Var.I) {
-                a();
-                return;
-            }
-            if (zm0Var.e && !containsKey2) {
-                i7 = zm0Var.c.size();
-            }
-            q5Var.b(i7, z10, true);
-            zm0Var.d0(intValue, jfVar);
-        }
-        zm0Var.n0(z10 ? 1 : 2);
-        zm0Var.t0.y();
+    @Override // org.telegram.ui.Components.fk0
+    public boolean m(int i7) {
+        cn0 cn0Var = this.a;
+        org.telegram.messenger.ue ueVar = cn0Var.K;
+        return cn0Var.b.containsKey(ueVar != null ? Integer.valueOf(((org.telegram.messenger.ef) ueVar.e.get(i7)).C) : ((org.telegram.messenger.hf) cn0Var.f.get(i7)).B);
+    }
+
+    @Override // org.telegram.ui.ActionBar.o0
+    public void j() {
     }
 }

@@ -1,15 +1,70 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f90 extends org.telegram.ui.Cells.q8 {
-    @Override // org.telegram.ui.Cells.q8, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(0, 0, getWidth(), getHeight());
-        super.onDraw(canvas);
-        canvas.restore();
+public final class f90 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j90 b;
+
+    public /* synthetic */ f90(j90 j90Var, int i7) {
+        this.a = i7;
+        this.b = j90Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                j90 j90Var = this.b;
+                if (!j90Var.O) {
+                    if (editable.toString().equals("0")) {
+                        j90Var.G.setText("");
+                        break;
+                    } else {
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                j90Var.b0(parseInt);
+                                break;
+                            } else {
+                                j90Var.c0();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            j90Var.c0();
+                            return;
+                        }
+                    }
+                }
+                break;
+            default:
+                org.telegram.messenger.j6.l(editable, this.b.L.getPaint().getFontMetricsInt(), false);
+                break;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

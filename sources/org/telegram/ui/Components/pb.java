@@ -1,36 +1,82 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.Typeface;
-import android.widget.ImageView;
+import android.view.MotionEvent;
+import android.view.WindowManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class pb extends va {
-    public final ImageView a;
-    public final z70 b;
+public final class pb extends vi0 {
+    public final /* synthetic */ int n1 = 0;
+    public final /* synthetic */ Object o1;
 
-    public pb(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        int i7 = org.telegram.ui.ActionBar.j6.yj;
-        getThemedColor(i7);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        org.telegram.ui.ActionBar.q6.s(imageView, i7, e6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, c8.ja.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
-        z70 z70Var = new z70(context, null);
-        this.b = z70Var;
-        z70Var.setDisablePaddingsOffsetY(true);
-        z70Var.setSingleLine();
-        org.telegram.ui.ActionBar.q6.U(z70Var, i7, e6Var);
-        z70Var.setTypeface(Typeface.SANS_SERIF);
-        z70Var.setTextSize(1, 15.0f);
-        addView(z70Var, c8.ja.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb(org.telegram.ui.ns nsVar, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(4, i7, context, null, i6Var);
+        this.o1 = nsVar;
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
+    @Override // org.telegram.ui.Components.vi0, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        gc gcVar;
+        switch (this.n1) {
+            case 0:
+                rb rbVar = (rb) this.o1;
+                if (motionEvent.getAction() == 0) {
+                    gc gcVar2 = rbVar.n;
+                    if (gcVar2 != null) {
+                        gcVar2.i(false);
+                    }
+                } else if (motionEvent.getAction() == 1 && (gcVar = rbVar.n) != null) {
+                    gcVar.i(true);
+                }
+                break;
+        }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.vi0
+    public void j() {
+        switch (this.n1) {
+            case 1:
+                super.j();
+                org.telegram.ui.ns nsVar = (org.telegram.ui.ns) this.o1;
+                if (getReactionsWindow() != null) {
+                    WindowManager.LayoutParams layoutParams = nsVar.x;
+                    layoutParams.flags &= -131073;
+                    layoutParams.softInputMode = 16;
+                } else {
+                    nsVar.x.flags |= 131072;
+                }
+                try {
+                    ((WindowManager) nsVar.w.getSystemService("window")).updateViewLayout(nsVar.y, nsVar.x);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            default:
+                super.j();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.vi0
+    public void m() {
+        switch (this.n1) {
+            case 0:
+                gc gcVar = gc.w;
+                if (gcVar != null) {
+                    gcVar.i(false);
+                }
+                ((rb) this.o1).d.getReactionsWindow().c.setOnClickListener(new n0(this, 3));
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pb(rb rbVar, org.telegram.ui.ActionBar.h2 h2Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(3, i7, context, h2Var, i6Var);
+        this.o1 = rbVar;
     }
 }

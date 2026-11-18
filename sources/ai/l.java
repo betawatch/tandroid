@@ -1,41 +1,42 @@
 package ai;
 
+import java.util.Comparator;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l implements Runnable {
+public final /* synthetic */ class l implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ ki.r1 c;
+    public final /* synthetic */ float[] b;
 
-    public /* synthetic */ l(boolean[] zArr, ki.r1 r1Var, int i7) {
+    public /* synthetic */ l(int i7, float[] fArr) {
         this.a = i7;
-        this.b = zArr;
-        this.c = r1Var;
+        this.b = fArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                ki.r1 r1Var = this.c;
+                float[] fArr = this.b;
                 t[] tVarArr = DictationAsr.a;
-                if (!zArr[0]) {
-                    r1Var.a(null, null, true);
-                    break;
-                }
-                break;
+                return Float.compare(fArr[((Integer) obj2).intValue()], fArr[((Integer) obj).intValue()]);
+            case 1:
+                float[] fArr2 = this.b;
+                return Float.compare(fArr2[(((Integer) obj).intValue() * 3) + 2], fArr2[(((Integer) obj2).intValue() * 3) + 2]);
+            case 2:
+                float[] fArr3 = this.b;
+                return Float.compare(fArr3[(((Integer) obj).intValue() * 3) + 2], fArr3[(((Integer) obj2).intValue() * 3) + 2]);
+            case 3:
+                float[] fArr4 = this.b;
+                return Float.compare(fArr4[(((Integer) obj).intValue() * 3) + 2], fArr4[(((Integer) obj2).intValue() * 3) + 2]);
             default:
-                boolean[] zArr2 = this.b;
-                ki.r1 r1Var2 = this.c;
-                t[] tVarArr2 = DictationAsr.a;
-                if (!zArr2[0]) {
-                    r1Var2.a(null, null, true);
-                    break;
-                }
-                break;
+                float[] fArr5 = this.b;
+                Integer num = (Integer) obj2;
+                float f10 = fArr5[((Integer) obj).intValue()];
+                float log = f10 > 0.0f ? (float) Math.log(f10) : 0.0f;
+                float f11 = fArr5[num.intValue()];
+                return Float.compare(log, f11 > 0.0f ? (float) Math.log(f11) : 0.0f);
         }
     }
 }

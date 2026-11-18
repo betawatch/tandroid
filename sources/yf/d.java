@@ -1,53 +1,32 @@
 package yf;
 
-import ai.e1;
-import java.io.File;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.g0;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import wg.q;
+import wg.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class d implements is {
-    public final int a;
-    public final String b;
-    public boolean c;
+public final /* synthetic */ class d implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public d(String str, int i7) {
+    public /* synthetic */ d(Object obj, int i7) {
         this.a = i7;
-        this.b = str;
-        ns.f(i7).b(this, ns.U1);
-        ns.f(i7).b(this, ns.V1);
-        w7.G(i7).h0(false, ConnectionsManager.FileTypeAudio, str, true);
+        this.b = obj;
     }
 
-    public final void a() {
-        int i7 = this.a;
-        ns.f(i7).n(this, ns.U1);
-        ns.f(i7).n(this, ns.V1);
-    }
-
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.U1) {
-            String str = (String) objArr[0];
-            if (!this.c && str.equals(this.b)) {
-                TLRPC.InputFile inputFile = (TLRPC.InputFile) objArr[1];
-                TL_account.uploadRingtone uploadringtone = new TL_account.uploadRingtone();
-                uploadringtone.file = inputFile;
-                uploadringtone.file_name = inputFile.name;
-                String D = w7.D(new File(inputFile.name));
-                uploadringtone.mime_type = D;
-                if ("ogg".equals(D)) {
-                    uploadringtone.mime_type = "audio/ogg";
-                } else {
-                    uploadringtone.mime_type = "audio/mpeg";
-                }
-                ConnectionsManager.getInstance(this.a).sendRequest(uploadringtone, new e1(this, 28));
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                g0.g3(new q((e) this.b, tLObject, tL_error, 3));
+                break;
+            default:
+                g0.g3(new r(13, (c) this.b, tLObject));
+                break;
         }
     }
 }

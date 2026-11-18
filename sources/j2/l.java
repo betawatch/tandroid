@@ -1,6 +1,6 @@
 package j2;
 
-import a8.ja;
+import a8.la;
 import android.net.Uri;
 import e2.s0;
 import e2.t0;
@@ -9,7 +9,7 @@ import h2.l0;
 import java.math.RoundingMode;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l implements n4.b {
     public int a;
@@ -90,14 +90,14 @@ public final class l implements n4.b {
     @Override // n4.b
     public void c(int i7, long j3) {
         n4.e eVar = new n4.e((i2.s) this.g, 1, i7, j3);
-        ((f3.q) this.e).f(eVar);
+        ((f3.q) this.e).j(eVar);
         i0 i0Var = (i0) this.f;
         i0Var.g((e2.u) this.h);
         i0Var.d(eVar.e);
     }
 
     public m d() {
-        ja.k((Uri) this.e, "The uri must be set.");
+        la.k((Uri) this.e, "The uri must be set.");
         return new m((Uri) this.e, this.a, (byte[]) this.f, (Map) this.g, this.b, this.d, (String) this.h, this.c);
     }
 }

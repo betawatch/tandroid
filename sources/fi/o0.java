@@ -2,78 +2,51 @@ package fi;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.animation.LinearInterpolator;
-import android.widget.LinearLayout;
-import di.ac;
-import org.telegram.messenger.ns;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.ks;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class o0 extends LinearLayout {
-    public ac a;
-    public final Path b;
-    public final Paint c;
-    public long d;
-    public final org.telegram.ui.Components.u5 e;
-    public final /* synthetic */ r0 f;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class o0 extends TextView {
+    public int a;
+    public final h6.m b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o0(r0 r0Var, Context context) {
+    public o0(Context context) {
         super(context);
-        this.f = r0Var;
-        this.b = new Path();
-        this.c = new Paint(1);
-        this.d = 0L;
-        this.e = new org.telegram.ui.Components.u5(this, 0L, 1000L, new LinearInterpolator());
+        this.a = -1;
+        this.b = new h6.m(29);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        Path path = this.b;
-        path.rewind();
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), Path.Direction.CW);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.a < 0) {
+            this.a = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
+        }
+        if (this.a <= org.telegram.messenger.g0.L(100.0f)) {
+            super.onDraw(canvas);
+            return;
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+        super.onDraw(canvas);
         canvas.save();
-        canvas.clipPath(path);
-        r0 r0Var = this.f;
-        t0 t0Var = r0Var.f;
-        if (t0Var != null) {
-            int b10 = t.b(t0Var.a, t0Var.b(), 3);
-            t0 t0Var2 = r0Var.f;
-            int b11 = t.b(t0Var2.a, t0Var2.b(), 5);
-            canvas.drawColor(b10);
-            long j3 = this.d;
-            t0 t0Var3 = r0Var.f;
-            long j10 = t0Var3.b;
-            org.telegram.ui.Components.u5 u5Var = this.e;
-            if (j3 != j10) {
-                u5Var.e(true, t0Var3.a());
-            }
-            float e10 = u5Var.e(false, r0Var.f.a());
-            this.d = r0Var.f.b;
-            Paint paint = this.c;
-            paint.setColor(b11);
-            paint.setAlpha(ns.L1);
-            canvas2 = canvas;
-            canvas2.drawRect(getWidth() * e10, 0.0f, getWidth(), getHeight(), paint);
-        } else {
-            canvas2 = canvas;
-        }
-        if (this.a == null) {
-            this.a = new ac(1, ns.Z3);
-        }
-        this.a.f(0, 0, getWidth(), getHeight());
-        ac acVar = this.a;
-        acVar.h = 30.0f;
-        acVar.d();
-        this.a.b(canvas2, -1, 0.85f);
-        invalidate();
-        canvas2.restore();
-        super.dispatchDraw(canvas2);
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(getWidth() - org.telegram.messenger.g0.L(15.0f), 0.0f, getWidth(), getHeight());
+        this.b.n(canvas, rectF, 2, 1.0f);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_31), i10);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.a = -1;
     }
 }

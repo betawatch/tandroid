@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -162,12 +162,12 @@ public final /* synthetic */ class r implements View.OnClickListener {
                 z2 z2Var = g4Var5.d;
                 if (z2Var != null) {
                     org.telegram.messenger.g0.g(z2Var.d.getText());
-                    if (org.telegram.messenger.g0.H3()) {
-                        Toast.makeText(g4Var5.M, org.telegram.messenger.hd.M0(2131744194, null), 0).show();
+                    if (org.telegram.messenger.g0.G3()) {
+                        Toast.makeText(g4Var5.M, org.telegram.messenger.gd.M0(2131743959, null), 0).show();
                     }
                 }
-                org.telegram.ui.ActionBar.g1 g1Var = g4Var5.I;
-                if (g1Var != null && g1Var.isShowing()) {
+                org.telegram.ui.ActionBar.h1 h1Var = g4Var5.I;
+                if (h1Var != null && h1Var.isShowing()) {
                     g4Var5.I.d(true);
                     break;
                 }

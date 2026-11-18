@@ -15,10 +15,12 @@ import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.identitycredentials.GetCredentialRequest;
 import com.google.android.gms.tasks.Task;
-import di.i6;
-import di.z6;
+import di.c7;
+import di.l6;
 import f7.v;
 import gd.k;
+import hi.u5;
+import hi.w4;
 import j7.c;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -37,7 +39,7 @@ import w0.a;
 import w0.h;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class CredentialProviderPlayServicesImpl implements i {
     public static final g Companion = new g();
@@ -176,7 +178,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
         com.google.android.gms.common.api.internal.g.a();
         t b10 = u.b();
         b10.d = new n6.c[]{l7.d.a};
-        b10.c = new gc.b(a10, 14);
+        b10.c = new w4(a10, 9);
         b10.b = false;
         b10.a = 1554;
         a10.e(1, b10.a()).addOnSuccessListener(new a1.c(new l() { // from class: a1.f
@@ -272,11 +274,11 @@ public final class CredentialProviderPlayServicesImpl implements i {
             k7.g gVar3 = new k7.g(context, k7.g.l, aVar, com.google.android.gms.common.api.i.c);
             t b10 = u.b();
             b10.d = new n6.c[]{t7.b.b};
-            b10.c = new ia.d(gVar2, 4);
+            b10.c = new u5(gVar2, 7);
             b10.a = 32704;
             Task e10 = gVar3.e(1, b10.a());
             j.d(e10, "doWrite(...)");
-            e10.addOnSuccessListener(new z6(new e1.b(cancellationSignal, dVar, executor, callback, 0), 2)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
+            e10.addOnSuccessListener(new c7(new e1.b(cancellationSignal, dVar, executor, callback, 0), 2)).addOnFailureListener(new a1.d(cancellationSignal, dVar, executor, callback));
             return;
         }
         v0.e eVar2 = (v0.e) request;
@@ -292,9 +294,9 @@ public final class CredentialProviderPlayServicesImpl implements i {
             }
             e7.a aVar2 = new e7.a(context, e7.a.l, aVar, new s(6));
             t b11 = u.b();
-            b11.c = new cb.c(aVar2, e11);
+            b11.c = new d6.i(aVar2, e11);
             b11.a = 5407;
-            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new ae.d(3, cancellationSignal, eVar3), 18)).addOnFailureListener(new ab.g(13, eVar3, cancellationSignal));
+            aVar2.e(0, b11.a()).addOnSuccessListener(new a1.c(new ae.d(3, cancellationSignal, eVar3), 18)).addOnFailureListener(new ab.g(12, eVar3, cancellationSignal));
         } catch (JSONException e12) {
             Companion.getClass();
             if (g.a(cancellationSignal)) {
@@ -404,7 +406,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
                 GetCredentialRequest getCredentialRequest = new GetCredentialRequest(arrayList, bundle, null, new ResultReceiver(null));
                 Context context2 = aVar2.e;
                 j.e(context2, "context");
-                new k7.g(context2, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest).addOnSuccessListener(new z6(new e1.b(cancellationSignal, aVar2, executor, callback, 1), 3)).addOnFailureListener(new i6(request, aVar2, callback, executor, cancellationSignal));
+                new k7.g(context2, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest).addOnSuccessListener(new c7(new e1.b(cancellationSignal, aVar2, executor, callback, 1), 3)).addOnFailureListener(new l6(request, aVar2, callback, executor, cancellationSignal));
                 return;
             }
         } while (!(((v0.h) it.next()) instanceof o));
@@ -437,7 +439,7 @@ public final class CredentialProviderPlayServicesImpl implements i {
         GetCredentialRequest getCredentialRequest2 = new GetCredentialRequest(arrayList2, bundle2, null, new ResultReceiver(null));
         Context context3 = aVar3.e;
         j.e(context3, "context");
-        new k7.g(context3, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest2).addOnSuccessListener(new z6(new ae.d(4, cancellationSignal, aVar3), 12)).addOnFailureListener(new a3.h(aVar3, cancellationSignal, executor, callback));
+        new k7.g(context3, eVar, aVar, com.google.android.gms.common.api.i.c).f(getCredentialRequest2).addOnSuccessListener(new c7(new ae.d(4, cancellationSignal, aVar3), 12)).addOnFailureListener(new a3.h(aVar3, cancellationSignal, executor, callback));
     }
 
     public static /* synthetic */ void getGoogleApiAvailability$annotations() {

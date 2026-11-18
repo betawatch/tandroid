@@ -1,47 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ly0 implements org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ny0 b;
+public final class ly0 extends au0 {
+    public final h6.m g0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 h0;
+    public final /* synthetic */ jy0 i0;
 
-    public /* synthetic */ ly0(ny0 ny0Var, int i7) {
-        this.a = i7;
-        this.b = ny0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ly0(Context context, org.telegram.ui.ActionBar.i6 i6Var, jy0 jy0Var) {
+        super(context, null);
+        this.h0 = i6Var;
+        this.i0 = jy0Var;
+        this.g0 = new h6.m(29);
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        int i10 = this.a;
-        ny0 ny0Var = this.b;
-        switch (i10) {
-            case 0:
-                ny0Var.a();
-                break;
-            case 1:
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ny0Var.getContext());
-                String M0 = org.telegram.messenger.hd.M0(2131743976, null);
-                org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder.a;
-                t1Var2.U = M0;
-                t1Var2.S = org.telegram.messenger.hd.M0(R.string.AppName, null);
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131751652, null), new ly0(ny0Var, 2));
-                alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131752589, null), null);
-                alertDialog$Builder.p();
-                break;
-            default:
-                org.telegram.ui.ActionBar.t1 t1Var3 = new org.telegram.ui.ActionBar.t1(3, ny0Var.getContext(), null);
-                t1Var3.j0 = false;
-                TL_account.deleteAccount deleteaccount = new TL_account.deleteAccount();
-                deleteaccount.reason = "Decline ToS update";
-                ConnectionsManager.getInstance(ny0Var.d).sendRequest(deleteaccount, new org.telegram.ui.v7(24, ny0Var, t1Var3));
-                t1Var3.show();
-                break;
+    @Override // org.telegram.ui.Components.au0
+    public final boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.au0
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view != this.i0) {
+            return super.drawChild(canvas, view, j3);
         }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), org.telegram.messenger.ks.e4, 31);
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.save();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, 0.0f, org.telegram.messenger.g0.L(45.0f), getHeight());
+        this.g0.n(canvas, rectF, 0, 1.0f);
+        canvas.restore();
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.au0
+    public final org.telegram.ui.ActionBar.i6 getResourceProvider() {
+        return this.h0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.q.x, TLObject.FLAG_30);
+        jy0 jy0Var = this.i0;
+        jy0Var.measure(makeMeasureSpec, i10);
+        setMeasuredDimension(View.MeasureSpec.getSize(i7), jy0Var.getMeasuredHeight() + org.telegram.messenger.g0.L(24.0f));
     }
 }

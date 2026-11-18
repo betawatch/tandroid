@@ -3,86 +3,53 @@ package org.telegram.messenger;
 import android.util.Pair;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class x2 {
-    public final long a;
-    public HashMap b;
-    public HashMap c;
-    public HashMap d;
+public final /* synthetic */ class x2 implements u10 {
+    public final /* synthetic */ y2 a;
+    public final /* synthetic */ Pair b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public x2() {
-        this(240000);
+    public /* synthetic */ x2(y2 y2Var, Pair pair, Object obj, int i7, Object obj2) {
+        this.a = y2Var;
+        this.b = pair;
+        this.c = obj;
+        this.d = i7;
+        this.e = obj2;
     }
 
-    public final void a(Pair pair, Object obj) {
-        if (j(pair.second)) {
-            if (this.b == null) {
-                this.b = new HashMap();
+    @Override // org.telegram.messenger.u10
+    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
+        Boolean bool = (Boolean) obj;
+        Long l10 = (Long) obj3;
+        y2 y2Var = this.a;
+        y2Var.getClass();
+        boolean booleanValue = ((Boolean) obj4).booleanValue();
+        Pair pair = this.b;
+        if (booleanValue) {
+            if (y2Var.d == null) {
+                y2Var.d = new HashMap();
             }
-            this.b.put(pair, obj);
+            long currentTimeMillis = System.currentTimeMillis();
+            y2Var.d.put(pair, Long.valueOf(currentTimeMillis));
+            if (y2Var instanceof lo) {
+                y2Var.h(pair.hashCode(), currentTimeMillis);
+            }
         }
-    }
-
-    public boolean b(Object obj) {
-        return false;
-    }
-
-    public final void c(int i7, Object obj, z10 z10Var) {
-        Pair pair = new Pair(Integer.valueOf(i7), obj);
-        HashMap hashMap = this.c;
-        if (hashMap != null && hashMap.get(pair) != null) {
-            g0.h3(new mg(this, pair, z10Var, 11));
-            return;
-        }
-        HashMap hashMap2 = this.b;
-        Object obj2 = hashMap2 == null ? null : hashMap2.get(pair);
-        if (obj2 != null && !i(pair)) {
-            z10Var.a(obj2);
+        boolean z10 = true;
+        if (bool.booleanValue()) {
+            Object obj5 = this.c;
+            y2Var.a(pair, obj5);
+            g0.g3(new aa.c0(y2Var, pair, obj5, z10, 8));
         } else {
-            g0.h3(new mg(this, pair, z10Var, 11));
-            e(i7, obj, new v2(this, pair, obj, i7));
+            if (obj2 != null) {
+                l10.getClass();
+                y2Var.g(this.d, this.e, obj2);
+                y2Var.a(pair, obj2);
+            }
+            g0.g3(new aa.c0(y2Var, pair, obj2, z10, 8));
         }
-    }
-
-    public final void d(int i7, Integer num) {
-        if (this.d == null) {
-            return;
-        }
-        Pair pair = new Pair(Integer.valueOf(i7), num);
-        this.d.remove(pair);
-        if (this instanceof mo) {
-            h(pair.hashCode(), 0L);
-        }
-    }
-
-    public void e(int i7, Object obj, s10 s10Var) {
-        ((v2) s10Var).a(0L, null);
-    }
-
-    public abstract void f(int i7, Object obj, long j3, w2 w2Var);
-
-    public final boolean i(Pair pair) {
-        HashMap hashMap = this.d;
-        Long l10 = hashMap != null ? (Long) hashMap.get(pair) : null;
-        if ((this instanceof mo) && l10 == null) {
-            int hashCode = pair.hashCode();
-            l10 = Long.valueOf(((mo) this).e.f7.getLong("effects_last_" + hashCode, 0L));
-        }
-        return l10 == null || System.currentTimeMillis() - l10.longValue() >= this.a;
-    }
-
-    public boolean j(Object obj) {
-        return true;
-    }
-
-    public x2(int i7) {
-        this.a = i7;
-    }
-
-    public void h(int i7, long j3) {
-    }
-
-    public void g(int i7, Object obj, Object obj2) {
     }
 }

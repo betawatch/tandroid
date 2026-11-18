@@ -1,6 +1,6 @@
 package org.telegram.utils.twidget;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 final class WidgetSandboxNative {
     private static final boolean LOADED = load();
@@ -37,7 +37,9 @@ final class WidgetSandboxNative {
         }
     }
 
-    public static native void registerResources(byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4, byte[] bArr5, byte[] bArr6);
+    public static native void prepare(byte[] bArr);
+
+    public static native void registerResources(byte[] bArr, byte[] bArr2, byte[] bArr3, byte[] bArr4);
 
     public static native void repaint(long j3);
 

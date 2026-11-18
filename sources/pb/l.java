@@ -15,15 +15,16 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.ld0;
+import m9.y;
+import org.telegram.ui.md0;
 import org.xmlpull.v1.XmlSerializer;
-import v4.e1;
-import v4.m0;
-import v4.u;
-import v4.y;
+import v4.f1;
+import v4.n0;
+import v4.v;
+import v4.z;
 import zd.v0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -143,7 +144,7 @@ public final /* synthetic */ class l implements Runnable {
                 i iVar = (i) this.b;
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) this.c;
                 int decrementAndGet = iVar.b.decrementAndGet();
-                q6.m.j(decrementAndGet >= 0);
+                q6.m.k(decrementAndGet >= 0);
                 if (decrementAndGet == 0) {
                     iVar.c();
                     iVar.c.set(false);
@@ -154,7 +155,7 @@ public final /* synthetic */ class l implements Runnable {
                 return;
             case 3:
                 ab.q qVar = (ab.q) this.b;
-                q6.m.j(((Thread) ((AtomicReference) qVar.d).getAndSet(Thread.currentThread())) == null);
+                q6.m.k(((Thread) ((AtomicReference) qVar.d).getAndSet(Thread.currentThread())) == null);
                 try {
                     ((Runnable) this.c).run();
                     ((AtomicReference) qVar.d).set(null);
@@ -176,25 +177,25 @@ public final /* synthetic */ class l implements Runnable {
                 kVar.v.remove(arrayList);
                 return;
             case 5:
-                u uVar = (u) this.b;
-                e1 e1Var = uVar.e;
-                y yVar = (y) this.c;
-                RecyclerView recyclerView = yVar.I;
-                if (recyclerView == null || !recyclerView.H || uVar.w || e1Var.b() == -1) {
+                v vVar = (v) this.b;
+                f1 f1Var = vVar.e;
+                z zVar = (z) this.c;
+                RecyclerView recyclerView = zVar.I;
+                if (recyclerView == null || !recyclerView.H || vVar.w || f1Var.b() == -1) {
                     return;
                 }
-                m0 itemAnimator = yVar.I.getItemAnimator();
+                n0 itemAnimator = zVar.I.getItemAnimator();
                 if (itemAnimator == null || !itemAnimator.k()) {
-                    ArrayList arrayList2 = yVar.G;
+                    ArrayList arrayList2 = zVar.G;
                     int size2 = arrayList2.size();
                     for (int i10 = 0; i10 < size2; i10++) {
-                        if (((u) arrayList2.get(i10)).x) {
+                        if (((v) arrayList2.get(i10)).x) {
                         }
                     }
-                    yVar.y.q(e1Var);
+                    zVar.y.q(f1Var);
                     return;
                 }
-                yVar.I.post(this);
+                zVar.I.post(this);
                 return;
             case 6:
                 try {
@@ -211,11 +212,11 @@ public final /* synthetic */ class l implements Runnable {
                 ArrayList arrayList3 = (ArrayList) this.b;
                 shortcutInfoCompatSaverImpl.e(arrayList3);
                 File file = shortcutInfoCompatSaverImpl.f;
-                ld0 ld0Var = new ld0(file);
-                File file2 = (File) ld0Var.c;
+                md0 md0Var = new md0(file);
+                File file2 = (File) md0Var.c;
                 FileOutputStream fileOutputStream = null;
                 try {
-                    J = ld0Var.J();
+                    J = md0Var.J();
                 } catch (Exception e13) {
                     exc = e13;
                 }
@@ -250,7 +251,7 @@ public final /* synthetic */ class l implements Runnable {
                     } catch (IOException e14) {
                         Log.e("AtomicFile", "Failed to close file output stream", e14);
                     }
-                    ld0.G(file2, file);
+                    md0.G(file2, file);
                     return;
                 } catch (Exception e15) {
                     exc = e15;
@@ -302,7 +303,7 @@ public final /* synthetic */ class l implements Runnable {
                 a0.f fVar2 = shortcutInfoCompatSaverImpl3.c;
                 Iterator it = ((a0.e) fVar2.values()).iterator();
                 while (it.hasNext()) {
-                    ((m9.y) it.next()).cancel(false);
+                    ((y) it.next()).cancel(false);
                 }
                 fVar2.clear();
                 shortcutInfoCompatSaverImpl3.h((c0.m) this.b);
@@ -353,9 +354,9 @@ public final /* synthetic */ class l implements Runnable {
         this.c = iVar;
     }
 
-    public l(y yVar, u uVar, int i7) {
+    public l(z zVar, v vVar, int i7) {
         this.a = 5;
-        this.c = yVar;
-        this.b = uVar;
+        this.c = zVar;
+        this.b = vVar;
     }
 }

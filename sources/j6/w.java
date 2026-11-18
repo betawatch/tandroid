@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
 import m.o3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w extends q6.h {
     public static final b Y = new b("CastClientImpl", null);
@@ -79,7 +79,7 @@ public final class w extends q6.h {
 
     public final void D() {
         CastDevice castDevice = this.G;
-        q6.m.h(castDevice, "device should not be null");
+        q6.m.i(castDevice, "device should not be null");
         if (castDevice.c(2048) || !castDevice.c(4) || castDevice.c(1)) {
             return;
         }

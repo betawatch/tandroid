@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
     public final Integer b;
-    public final m c;
+    public final l c;
     public final long d;
     public final long e;
     public final Map f;
@@ -19,10 +19,10 @@ public final class h {
     public final byte[] i;
     public final byte[] j;
 
-    public h(String str, Integer num, m mVar, long j3, long j10, HashMap hashMap, Integer num2, String str2, byte[] bArr, byte[] bArr2) {
+    public h(String str, Integer num, l lVar, long j3, long j10, HashMap hashMap, Integer num2, String str2, byte[] bArr, byte[] bArr2) {
         this.a = str;
         this.b = num;
-        this.c = mVar;
+        this.c = lVar;
         this.d = j3;
         this.e = j10;
         this.f = hashMap;
@@ -57,11 +57,11 @@ public final class h {
         e0Var.h = this.h;
         e0Var.i = this.i;
         e0Var.j = this.j;
-        m mVar = this.c;
-        if (mVar == null) {
+        l lVar = this.c;
+        if (lVar == null) {
             throw new NullPointerException("Null encodedPayload");
         }
-        e0Var.c = mVar;
+        e0Var.c = lVar;
         e0Var.d = Long.valueOf(this.d);
         e0Var.e = Long.valueOf(this.e);
         e0Var.f = new HashMap(this.f);

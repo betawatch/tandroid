@@ -1,10 +1,10 @@
 package androidx.car.app.hardware.common;
 
 import j$.util.Objects;
+import p5.c;
 import r.b;
-import r.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class CarZone {
     public static final int CAR_ZONE_COLUMN_ALL = 16;
@@ -13,7 +13,7 @@ public final class CarZone {
     public static final int CAR_ZONE_COLUMN_LEFT = 32;
     public static final int CAR_ZONE_COLUMN_PASSENGER = 96;
     public static final int CAR_ZONE_COLUMN_RIGHT = 64;
-    public static final CarZone CAR_ZONE_GLOBAL = new CarZone(new c());
+    public static final CarZone CAR_ZONE_GLOBAL = new CarZone(new b());
     public static final int CAR_ZONE_ROW_ALL = 0;
     public static final int CAR_ZONE_ROW_EXCLUDE_FIRST = 4;
     public static final int CAR_ZONE_ROW_FIRST = 1;
@@ -22,8 +22,8 @@ public final class CarZone {
     private final int mColumn;
     private final int mRow;
 
-    public CarZone(c cVar) {
-        cVar.getClass();
+    public CarZone(b bVar) {
+        bVar.getClass();
         this.mRow = 0;
         this.mColumn = 16;
     }
@@ -69,7 +69,7 @@ public final class CarZone {
         } else if (i10 == 96) {
             str = "CAR_ZONE_COLUMN_PASSENGER";
         }
-        return b.l("[CarZone row value: ", str2, ", column value: ", str, "]");
+        return c.l("[CarZone row value: ", str2, ", column value: ", str, "]");
     }
 
     private CarZone() {

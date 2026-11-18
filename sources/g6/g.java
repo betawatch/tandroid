@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g {
     public static final j6.b c = new j6.b("SessionManager", null);
@@ -18,7 +18,7 @@ public final class g {
     }
 
     public final void a(h hVar) {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         try {
             y yVar = this.a;
             z zVar = new z(hVar);
@@ -32,7 +32,7 @@ public final class g {
 
     public final void b(boolean z10) {
         j6.b bVar = c;
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         try {
             Log.i(bVar.a, bVar.d("End session for %s", this.b.getPackageName()));
             y yVar = this.a;
@@ -47,7 +47,7 @@ public final class g {
     }
 
     public final c c() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f d = d();
         if (d == null || !(d instanceof c)) {
             return null;
@@ -56,7 +56,7 @@ public final class g {
     }
 
     public final f d() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         try {
             y yVar = this.a;
             Parcel r12 = yVar.r1(yVar.p1(), 1);

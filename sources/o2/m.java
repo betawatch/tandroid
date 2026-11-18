@@ -2,11 +2,11 @@ package o2;
 
 import e2.u;
 import h2.l0;
-import x2.b1;
+import x2.d1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class m implements b1 {
+public final class m implements d1 {
     public final u a;
     public long[] c;
     public boolean d;
@@ -46,21 +46,21 @@ public final class m implements b1 {
         }
     }
 
-    @Override // x2.b1
-    public final boolean f() {
+    @Override // x2.d1
+    public final boolean h() {
         return true;
     }
 
-    @Override // x2.b1
-    public final int n(long j3) {
+    @Override // x2.d1
+    public final int j(long j3) {
         int max = Math.max(this.h, l0.b(this.c, j3, true));
         int i7 = max - this.h;
         this.h = max;
         return i7;
     }
 
-    @Override // x2.b1
-    public final int q(k8.a aVar, k2.h hVar, int i7) {
+    @Override // x2.d1
+    public final int m(k8.a aVar, k2.h hVar, int i7) {
         int i10 = this.h;
         boolean z10 = i10 == this.c.length;
         if (z10 && !this.d) {
@@ -79,16 +79,16 @@ public final class m implements b1 {
             this.h = i10 + 1;
         }
         if ((i7 & 4) == 0) {
-            byte[] E0 = this.b.E0(this.e.a[i10]);
-            hVar.b(E0.length);
-            hVar.c.put(E0);
+            byte[] v02 = this.b.v0(this.e.a[i10]);
+            hVar.b(v02.length);
+            hVar.c.put(v02);
         }
         hVar.e = this.c[i10];
         hVar.setFlags(1);
         return -4;
     }
 
-    @Override // x2.b1
+    @Override // x2.d1
     public final void a() {
     }
 }

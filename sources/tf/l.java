@@ -7,12 +7,12 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.ou;
-import org.telegram.ui.ld0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.md0;
 import sg.h0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends rf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -35,7 +35,7 @@ public final class l extends rf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:108:0x024b, code lost:
     
-        r2.d.n1(r2.a.e());
+        r2.d.T(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x0221, code lost:
     
@@ -43,7 +43,7 @@ public final class l extends rf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x025a, code lost:
     
-        r2.d.n1(r2.a.e());
+        r2.d.T(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:113:0x0265, code lost:
     
@@ -88,7 +88,7 @@ public final class l extends rf.a {
         byte b10;
         byte b11;
         byte b12;
-        ld0 ld0Var;
+        md0 md0Var;
         Logger logger;
         uf.a aVar;
         int i7;
@@ -106,12 +106,12 @@ public final class l extends rf.a {
                 hVar.b = 0;
                 hVar.c = 0;
                 long j13 = dVar.b;
-                ou ouVar = new ou(dVar, 26);
+                hn hnVar = new hn(dVar, 19);
                 byte[] bArr = new byte[3];
                 int i10 = 0;
                 for (int i11 = 3; i10 < i11; i11 = 3) {
                     long j14 = j13;
-                    int read = ((ab.d) ouVar.b).read(bArr, i10, 3 - i10);
+                    int read = ((ab.d) hnVar.b).read(bArr, i10, 3 - i10);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -123,52 +123,52 @@ public final class l extends rf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte g12 = ouVar.g1();
-                hVar.a = g12;
-                if (g12 != 2 && g12 != 3 && g12 != 4) {
-                    throw new c(i5.c.i(g12, "Unsupported ID3v2 version: "));
+                byte Q = hnVar.Q();
+                hVar.a = Q;
+                if (Q != 2 && Q != 3 && Q != 4) {
+                    throw new c(i5.c.i(Q, "Unsupported ID3v2 version: "));
                 }
-                byte g13 = ouVar.g1();
-                byte g14 = ouVar.g1();
-                int j16 = ouVar.j1();
-                hVar.b = j16 + 10;
-                if (g12 == 2) {
-                    hVar.d = (g14 & 128) != 0;
-                    hVar.e = (g14 & 64) != 0;
-                    b11 = g13;
+                byte Q2 = hnVar.Q();
+                byte Q3 = hnVar.Q();
+                int S = hnVar.S();
+                hVar.b = S + 10;
+                if (Q == 2) {
+                    hVar.d = (Q3 & 128) != 0;
+                    hVar.e = (Q3 & 64) != 0;
+                    b11 = Q2;
                 } else {
-                    hVar.d = (g14 & 128) != 0;
-                    if ((g14 & 64) == 0) {
-                        b11 = g13;
-                        b12 = g14;
-                    } else if (g12 == 3) {
-                        int h12 = ouVar.h1();
-                        ouVar.g1();
-                        ouVar.g1();
-                        ouVar.h1();
-                        b11 = g13;
-                        b12 = g14;
-                        ouVar.n1(h12 - 6);
+                    hVar.d = (Q3 & 128) != 0;
+                    if ((Q3 & 64) == 0) {
+                        b11 = Q2;
+                        b12 = Q3;
+                    } else if (Q == 3) {
+                        int R = hnVar.R();
+                        hnVar.Q();
+                        hnVar.Q();
+                        hnVar.R();
+                        b11 = Q2;
+                        b12 = Q3;
+                        hnVar.T(R - 6);
                     } else {
-                        b11 = g13;
-                        b12 = g14;
-                        ouVar.n1(ouVar.j1() - 4);
+                        b11 = Q2;
+                        b12 = Q3;
+                        hnVar.T(hnVar.S() - 4);
                     }
-                    if (g12 >= 4 && (b12 & 16) != 0) {
+                    if (Q >= 4 && (b12 & 16) != 0) {
                         hVar.c = 10;
-                        hVar.b = j16 + 20;
+                        hVar.b = S + 20;
                     }
                 }
                 int i12 = (int) (dVar.b - j15);
                 gVar.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(g12), Integer.valueOf(b11));
+                String.format("2.%d.%d", Integer.valueOf(Q), Integer.valueOf(b11));
                 int i13 = hVar.b;
                 if (hVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (g12 >= 4 || !hVar.d) {
+                if (Q >= 4 || !hVar.d) {
                     logger = logger2;
-                    ld0Var = new ld0(mVar, i12, (i13 - i12) - hVar.c, hVar);
+                    md0Var = new md0(mVar, i12, (i13 - i12) - hVar.c, hVar);
                 } else {
                     int i14 = i13 - i12;
                     byte[] bArr2 = new byte[i14];
@@ -190,18 +190,18 @@ public final class l extends rf.a {
                         }
                         z10 = b13 == -1;
                     }
-                    ld0Var = new ld0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
+                    md0Var = new md0(new ByteArrayInputStream(bArr2, 0, i16), i12, i16, hVar);
                     logger = logger2;
                 }
-                ou ouVar2 = (ou) ld0Var.d;
-                uf.a aVar2 = (uf.a) ld0Var.b;
+                hn hnVar2 = (hn) md0Var.d;
+                uf.a aVar2 = (uf.a) md0Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(ld0Var);
+                        f fVar = new f(md0Var);
                         String str6 = fVar.a;
                         int i18 = fVar.c;
                         aVar = aVar2;
@@ -222,7 +222,7 @@ public final class l extends rf.a {
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                ouVar2.n1(aVar.e());
+                                hnVar2.T(aVar.e());
                                 i7 = hVar.c;
                                 if (i7 > 0) {
                                 }
@@ -274,7 +274,7 @@ public final class l extends rf.a {
                                     i20++;
                                 }
                             }
-                            ouVar2.n1(i18);
+                            hnVar2.T(i18);
                             aVar2 = aVar;
                         } else if (logger.isLoggable(level)) {
                             logger.log(level, "ID3 frame claims to extend frames area");
@@ -284,7 +284,7 @@ public final class l extends rf.a {
                         aVar = aVar2;
                     }
                 }
-                ouVar2.n1(aVar.e());
+                hnVar2.T(aVar.e());
                 i7 = hVar.c;
                 if (i7 > 0) {
                     mVar.skip(i7);
@@ -320,14 +320,14 @@ public final class l extends rf.a {
         if (j11 <= j12) {
             return;
         }
-        long j17 = j12 - j11;
-        long j18 = 0;
-        while (j18 < j17) {
-            long skip = mVar.skip(j17 - j18);
+        long j16 = j12 - j11;
+        long j17 = 0;
+        while (j17 < j16) {
+            long skip = mVar.skip(j16 - j17);
             if (skip <= 0) {
                 throw new EOFException();
             }
-            j18 += skip;
+            j17 += skip;
         }
         if (!a.c(bufferedInputStream)) {
             return;
@@ -351,8 +351,8 @@ public final class l extends rf.a {
                 s5 = 0;
             }
             str = a.b(97, 30, bArr3);
-            int b15 = r.b.b(bArr3[127]);
-            r2 = b15 != 0 ? r.b.d(b15) : null;
+            int b15 = p5.c.b(bArr3[127]);
+            r2 = b15 != 0 ? p5.c.d(b15) : null;
             if (bArr3[125] == 0 && (b10 = bArr3[126]) != 0) {
                 s9 = (short) (b10 & 255);
                 str2 = r2;
@@ -457,7 +457,7 @@ public final class l extends rf.a {
             if (read4 == -1) {
                 break;
             }
-            if (i18 == 255 && (read4 & ns.B3) == 224) {
+            if (i18 == 255 && (read4 & ks.B3) == 224) {
                 mVar.mark(2);
                 int read5 = sVar2.a(mVar) ? -1 : mVar.read();
                 if (read5 == -1) {
@@ -521,7 +521,7 @@ public final class l extends rf.a {
                 if (read7 == -1 || read8 == -1) {
                     break;
                 }
-                if (read7 == 255 && (read8 & ns.d4) == (read4 & ns.d4)) {
+                if (read7 == 255 && (read8 & ks.d4) == (read4 & ks.d4)) {
                     int read9 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read10 = sVar2.a(mVar) ? -1 : mVar.read();
                     if (read9 == -1 || read10 == -1) {
@@ -596,7 +596,7 @@ public final class l extends rf.a {
             if (read == i17 || read2 == i17) {
                 j11 = length;
             } else {
-                if (read == 255 && (read2 & ns.B3) == 224) {
+                if (read == 255 && (read2 & ks.B3) == 224) {
                     int read11 = sVar2.a(mVar) ? -1 : mVar.read();
                     int read12 = sVar2.a(mVar) ? -1 : mVar.read();
                     j11 = length;

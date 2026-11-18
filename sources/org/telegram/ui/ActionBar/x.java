@@ -1,118 +1,423 @@
 package org.telegram.ui.ActionBar;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.z10;
-import org.telegram.ui.ke;
+import java.util.WeakHashMap;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.j10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x {
-    public y a;
-    public int b;
+public final class x extends FrameLayout {
+    public boolean E;
+    public final /* synthetic */ ActionBarLayout F;
+    public final Rect a;
+    public boolean b;
     public int c;
-    public CharSequence d;
+    public final Paint d;
     public int e;
-    public Drawable f;
-    public int g;
-    public e6 h;
-    public float i;
-    public Boolean j;
-    public Boolean k;
-    public int l;
-    public q0 m;
-    public ArrayList n;
+    public boolean f;
+    public int h;
+    public int n;
+    public LinearGradient r;
+    public final Matrix s;
+    public Paint w;
+    public q3 x;
+    public boolean y;
 
-    public final void a() {
-        y yVar = this.a;
-        if (this.m != null) {
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x(Context context, ActionBarLayout actionBarLayout) {
+        super(context);
+        this.F = actionBarLayout;
+        this.a = new Rect();
+        this.d = new Paint();
+        this.s = new Matrix();
+        setWillNotDraw(false);
+    }
+
+    public final void a(Canvas canvas, boolean z10, int i7) {
+        Canvas canvas2;
+        int paddingLeft = getPaddingLeft();
+        int paddingRight = getPaddingRight();
+        int paddingBottom = getPaddingBottom();
+        Paint n02 = n6.n0(i7);
+        q3 q3Var = q3.c;
+        if (paddingLeft <= 0 || this.x == q3Var) {
+            canvas2 = canvas;
+        } else {
+            canvas2 = canvas;
+            canvas2.drawRect(0.0f, 0.0f, paddingLeft + 1, getHeight(), n02);
         }
-        int childCount = yVar.getChildCount();
-        ArrayList arrayList = yVar.e;
-        int i7 = 0;
-        if (arrayList != null) {
-            int indexOf = arrayList.indexOf(Integer.valueOf(this.b));
-            int i10 = 0;
+        if (paddingRight > 0 && this.x != q3Var) {
+            canvas2.drawRect(getWidth() - (paddingRight + 1), 0.0f, getWidth(), getHeight(), n02);
+        }
+        if (paddingBottom > 0) {
+            if (this.x == q3.a || z10) {
+                canvas2.drawRect(0.0f, getHeight() - (paddingBottom + 1), getWidth(), getHeight(), n02);
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i7, layoutParams);
+        ActionBarLayout actionBarLayout = this.F;
+        if (actionBarLayout.t1 != null && getParent() == actionBarLayout) {
+            actionBarLayout.o(this, actionBarLayout.t1);
+        } else {
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c(this);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0037 A[Catch: Exception -> 0x0018, TRY_LEAVE, TryCatch #0 {Exception -> 0x0018, blocks: (B:2:0x0000, B:5:0x0009, B:7:0x0011, B:13:0x0022, B:22:0x0031, B:24:0x0037, B:33:0x001a), top: B:1:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003a A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        int i7;
+        try {
+            int childCount = getChildCount();
+            int i10 = childCount - 1;
             while (true) {
-                if (i10 >= yVar.getChildCount()) {
+                if (i10 < 0) {
+                    i10 = -1;
                     break;
                 }
-                Object tag = yVar.getChildAt(i10).getTag();
-                if (tag instanceof Integer) {
-                    if (yVar.e.indexOf((Integer) tag) > indexOf) {
-                        childCount = i10;
-                        break;
+                View childAt = getChildAt(i10);
+                if ((childAt instanceof e2) && childAt.getVisibility() == 0) {
+                    break;
+                } else {
+                    i10--;
+                }
+            }
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt2 = getChildAt(i11);
+                if (childAt2 != null) {
+                    if (i10 != -1 && i11 != i10) {
+                        i7 = 4;
+                        if (childAt2.getImportantForAccessibility() == i7) {
+                            childAt2.setImportantForAccessibility(i7);
+                        }
+                    }
+                    i7 = 0;
+                    if (childAt2.getImportantForAccessibility() == i7) {
                     }
                 }
-                i10++;
             }
-        }
-        q0 f10 = yVar.f(childCount, this.b, this.c, null, this.e, this.f, this.g, null, this.h);
-        this.m = f10;
-        f10.setVisibility(this.l);
-        CharSequence charSequence = this.d;
-        if (charSequence != null) {
-            this.m.setContentDescription(charSequence);
-        }
-        Boolean bool = this.k;
-        if (bool != null) {
-            this.m.S = bool.booleanValue();
-        }
-        Boolean bool2 = this.j;
-        if (bool2 != null) {
-            this.m.T = bool2.booleanValue();
-        }
-        this.m.setAlpha(this.i);
-        ArrayList arrayList2 = this.n;
-        if (arrayList2 != null) {
-            int size = arrayList2.size();
-            while (i7 < size) {
-                Object obj = arrayList2.get(i7);
-                i7++;
-                ((z10) obj).a(this.m);
-            }
-            this.n = null;
+        } catch (Exception e10) {
+            a8.g(e10, true);
         }
     }
 
-    public final void b(ke keVar) {
-        q0 q0Var = this.m;
-        if (q0Var != null) {
-            keVar.a(q0Var);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        i0.b bVar;
+        ActionBarLayout actionBarLayout = this.F;
+        if (actionBarLayout.T0) {
+            super.dispatchDraw(canvas);
             return;
         }
-        if (this.n == null) {
-            this.n = new ArrayList();
-        }
-        this.n.add(keVar);
-    }
-
-    public final void c() {
-        this.k = Boolean.FALSE;
-        q0 q0Var = this.m;
-        if (q0Var != null) {
-            q0Var.S = false;
-        }
-    }
-
-    public final void d() {
-        this.j = Boolean.TRUE;
-        q0 q0Var = this.m;
-        if (q0Var != null) {
-            q0Var.T = true;
-        }
-    }
-
-    public final void e(int i7) {
-        if (this.l != i7) {
-            this.l = i7;
-            if (i7 == 0) {
-                a();
+        p3 p3Var = actionBarLayout.y;
+        boolean z10 = false;
+        int color = p3Var != null ? p3Var.getInternalNavbarPaint().getColor() : n6.x0(null, n6.a7, false);
+        boolean z11 = true;
+        if (this == actionBarLayout.x) {
+            org.telegram.ui.Components.c6 c6Var = actionBarLayout.i1;
+            s sVar = actionBarLayout.H;
+            if (sVar != null && sVar.hasSheet()) {
+                z10 = true;
             }
-            q0 q0Var = this.m;
-            if (q0Var != null) {
-                q0Var.setVisibility(i7);
+            float d = c6Var.d(z10);
+            if (d > 0.0f) {
+                a(canvas, this.E, n6.r1(d, color));
+            }
+        } else {
+            h2 lastFragment = actionBarLayout.getLastFragment();
+            if (lastFragment != null && !lastFragment.inPreviewMode) {
+                if (this == actionBarLayout.s && this.x != q3.a) {
+                    int childCount = getChildCount();
+                    for (int i7 = 0; i7 < childCount; i7++) {
+                        if (getChildAt(i7) instanceof e2) {
+                            break;
+                        }
+                    }
+                }
+                z11 = false;
+                a(canvas, z11, color);
+                if (z11 && this.y && actionBarLayout.w(false) <= 0 && (bVar = actionBarLayout.u1) != null && bVar.d > 0) {
+                    super.dispatchDraw(canvas);
+                    canvas.drawRect(0.0f, getHeight() - actionBarLayout.u1.d, getWidth(), getHeight(), n6.n0(color));
+                    return;
+                }
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        motionEvent.getAction();
+        ActionBarLayout actionBarLayout = this.F;
+        boolean z10 = actionBarLayout.h && actionBarLayout.K == null;
+        if ((!z10 && !actionBarLayout.b0) || (motionEvent.getActionMasked() != 0 && motionEvent.getActionMasked() != 5)) {
+            if (z10) {
+                try {
+                    if (this != actionBarLayout.s) {
+                    }
+                } catch (Throwable th2) {
+                    a8.g(th2, true);
+                }
+            }
+            if (super.dispatchTouchEvent(motionEvent)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        Drawable drawable;
+        ArrayList<d2> arrayList;
+        ActionBarLayout actionBarLayout = this.F;
+        h2 h2Var = !actionBarLayout.V0.isEmpty() ? (h2) p5.c.h(1, actionBarLayout.V0) : null;
+        s sVar = actionBarLayout.H;
+        if (sVar != null && (arrayList = sVar.sheetsStack) != null && !arrayList.isEmpty()) {
+            h2Var = actionBarLayout.H;
+        }
+        d2 lastSheet = h2Var != null ? h2Var.getLastSheet() : null;
+        if (lastSheet != null && lastSheet.j() && lastSheet.d() != view) {
+            return true;
+        }
+        if (view instanceof k) {
+            return super.drawChild(canvas, view, j3);
+        }
+        int childCount = getChildCount();
+        int i13 = 0;
+        while (true) {
+            if (i13 >= childCount) {
+                break;
+            }
+            View childAt = getChildAt(i13);
+            if (childAt != view && (childAt instanceof k) && childAt.getVisibility() == 0) {
+                k kVar = (k) childAt;
+                if (kVar.getCastShadows() && kVar.getShadowAlpha() > 0) {
+                    i10 = childAt.getMeasuredHeight();
+                    i11 = (int) childAt.getY();
+                    i7 = kVar.getShadowAlpha();
+                }
+            } else {
+                i13++;
+            }
+        }
+        i7 = 0;
+        i10 = 0;
+        i11 = 0;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (i10 != 0 && (drawable = ActionBarLayout.w1) != null) {
+            int alpha = drawable.getAlpha();
+            int i14 = i11 + i10;
+            ActionBarLayout.w1.setBounds(0, i14, getMeasuredWidth(), ActionBarLayout.w1.getIntrinsicHeight() + i14);
+            ActionBarLayout.w1.setAlpha(i7);
+            ActionBarLayout.w1.draw(canvas);
+            ActionBarLayout.w1.setAlpha(alpha);
+        }
+        if (!actionBarLayout.T0 && this.E && this.y && h2Var != null && h2Var.getListViewForSimpleGlass() == null && (i12 = org.telegram.messenger.g0.n) >= org.telegram.messenger.g0.L(32.0f)) {
+            int i15 = (int) (i12 * 1.33f);
+            int navigationBarColor = h2Var.getNavigationBarColor();
+            if (i15 != this.h || this.n != navigationBarColor || this.w == null) {
+                if (this.w == null) {
+                    this.w = new Paint(1);
+                }
+                this.n = navigationBarColor;
+                this.h = i15;
+                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, i15, new int[]{n6.r1(0.1f, navigationBarColor), n6.r1(1.0f, navigationBarColor)}, new float[]{0.0f, 0.88f}, Shader.TileMode.CLAMP);
+                this.r = linearGradient;
+                this.w.setShader(linearGradient);
+            }
+            Matrix matrix = this.s;
+            matrix.reset();
+            matrix.postTranslate(0.0f, getHeight() - i15);
+            this.r.setLocalMatrix(matrix);
+            canvas.drawRect(0.0f, getHeight() - i15, getWidth(), getHeight(), this.w);
+        }
+        return drawChild;
+    }
+
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return Build.VERSION.SDK_INT >= 28;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.c != 0) {
+            int i7 = n6.d6;
+            int x02 = n6.x0(null, i7, false);
+            int i10 = this.e;
+            Paint paint = this.d;
+            if (i10 != x02) {
+                int x03 = n6.x0(null, i7, false);
+                this.e = x03;
+                paint.setColor(x03);
+            }
+            canvas2 = canvas;
+            canvas2.drawRect(0.0f, (getMeasuredHeight() - this.c) - 3, getMeasuredWidth(), getMeasuredHeight(), paint);
+        } else {
+            canvas2 = canvas;
+        }
+        super.onDraw(canvas2);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        int i13;
+        int childCount = getChildCount();
+        int paddingLeft = getPaddingLeft();
+        int i14 = 0;
+        while (true) {
+            if (i14 >= childCount) {
+                i13 = 0;
+                break;
+            }
+            View childAt = getChildAt(i14);
+            if (childAt instanceof k) {
+                i13 = childAt.getMeasuredHeight();
+                childAt.layout(paddingLeft, 0, childAt.getMeasuredWidth() + paddingLeft, i13);
+                break;
+            }
+            i14++;
+        }
+        for (int i15 = 0; i15 < childCount; i15++) {
+            View childAt2 = getChildAt(i15);
+            if (!(childAt2 instanceof k)) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt2.getLayoutParams();
+                if (childAt2.getTag(R.id.sheet_attached_to_fragment_tag) != null || childAt2.getFitsSystemWindows() || (childAt2 instanceof e2)) {
+                    int i16 = layoutParams.leftMargin;
+                    childAt2.layout(paddingLeft + i16, layoutParams.topMargin, childAt2.getMeasuredWidth() + i16 + paddingLeft, childAt2.getMeasuredHeight() + layoutParams.topMargin);
+                } else {
+                    int i17 = layoutParams.leftMargin;
+                    childAt2.layout(paddingLeft + i17, layoutParams.topMargin + i13, childAt2.getMeasuredWidth() + i17 + paddingLeft, childAt2.getMeasuredHeight() + layoutParams.topMargin + i13);
+                }
+            }
+        }
+        View rootView = getRootView();
+        Rect rect = this.a;
+        getWindowVisibleDisplayFrame(rect);
+        this.b = ((rootView.getHeight() - (rect.top != 0 ? org.telegram.messenger.g0.m : 0)) - org.telegram.messenger.g0.q1(rootView)) - (rect.bottom - rect.top) > 0;
+        ActionBarLayout actionBarLayout = this.F;
+        Runnable runnable = actionBarLayout.d;
+        if (runnable == null || actionBarLayout.s.b || actionBarLayout.w.b) {
+            return;
+        }
+        org.telegram.messenger.g0.r(runnable);
+        actionBarLayout.d.run();
+        actionBarLayout.d = null;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11;
+        int size = View.MeasureSpec.getSize(i7);
+        int size2 = View.MeasureSpec.getSize(i10);
+        boolean z10 = size2 > size;
+        boolean z11 = this.f;
+        ActionBarLayout actionBarLayout = this.F;
+        if (z11 != z10 && actionBarLayout.y()) {
+            actionBarLayout.v();
+        }
+        this.f = z10;
+        int childCount = getChildCount();
+        getWindowVisibleDisplayFrame(this.a);
+        g3 g3Var = actionBarLayout.F;
+        if (g3Var != null) {
+            g3Var.setCurrentAccount(j10.t0);
+        }
+        int i12 = 0;
+        while (true) {
+            if (i12 >= childCount) {
+                i11 = 0;
+                break;
+            }
+            View childAt = getChildAt(i12);
+            if (childAt instanceof k) {
+                childAt.measure(View.MeasureSpec.makeMeasureSpec((size - getPaddingLeft()) - getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, 0));
+                i11 = childAt.getMeasuredHeight();
+                break;
+            }
+            i12++;
+        }
+        for (int i13 = 0; i13 < childCount; i13++) {
+            View childAt2 = getChildAt(i13);
+            if (!(childAt2 instanceof k)) {
+                if (childAt2 instanceof e2) {
+                    measureChildWithMargins(childAt2, i7, 0, i10, (actionBarLayout.w(false) > 0 || !this.y) ? 0 : actionBarLayout.u1.d);
+                } else if (childAt2.getTag(R.id.sheet_attached_to_fragment_tag) != null || childAt2.getFitsSystemWindows()) {
+                    measureChildWithMargins(childAt2, i7, 0, i10, this.y ? actionBarLayout.u1.d : 0);
+                } else {
+                    measureChildWithMargins(childAt2, i7, 0, i10, i11);
+                }
+            }
+        }
+        setMeasuredDimension(size, size2);
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        b();
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewRemoved(View view) {
+        super.onViewRemoved(view);
+        b();
+    }
+
+    public void setDrawNavigationBar(boolean z10) {
+        if (this.E != z10) {
+            this.E = z10;
+            invalidate();
+        }
+    }
+
+    public void setFragmentPanTranslationOffset(int i7) {
+        this.c = i7;
+        invalidate();
+    }
+
+    public void setShouldHandleBottomInsets(q3 q3Var) {
+        if (this.x != q3Var) {
+            this.x = q3Var;
+            this.y = q3Var != q3.a;
+            View view = (View) getParent();
+            ActionBarLayout actionBarLayout = this.F;
+            if (actionBarLayout.t1 != null && getParent() == actionBarLayout) {
+                actionBarLayout.o(this, actionBarLayout.t1);
+            } else if (view != null) {
+                WeakHashMap weakHashMap = r0.i0.a;
+                r0.y.c(view);
             }
         }
     }

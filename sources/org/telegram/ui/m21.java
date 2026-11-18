@@ -1,27 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
-    public final /* synthetic */ boolean c;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ m21(SessionsActivity sessionsActivity, boolean z10, int i7) {
-        this.a = i7;
-        this.b = sessionsActivity;
-        this.c = z10;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class m21 extends org.telegram.ui.ActionBar.x2 {
+    public static final /* synthetic */ int p1 = 0;
+    public TLRPC.TL_authorization m1;
+    public SessionsActivity n1;
+    public org.telegram.ui.Components.ph0 o1;
+
+    public static void J0(m21 m21Var, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(m21Var.getContext());
+        alertDialog$Builder.f(new CharSequence[]{org.telegram.messenger.gd.M0(2131751756, null)}, new og.j(12, m21Var, str));
+        alertDialog$Builder.p();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.p0(this.c);
-                break;
-            default:
-                this.b.p0(this.c);
-                break;
-        }
+    public static void K0(m21 m21Var) {
+        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
+        TLRPC.TL_authorization tL_authorization = m21Var.m1;
+        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
+        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
+        changeauthorizationsettings.flags = 3;
+        changeauthorizationsettings.hash = tL_authorization.hash;
+        ConnectionsManager.getInstance(m21Var.a).sendRequest(changeauthorizationsettings, new fi.k5(28));
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    public final void show() {
+        super.show();
+        this.o1.d();
     }
 }

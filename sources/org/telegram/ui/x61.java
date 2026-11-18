@@ -1,66 +1,35 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x61 extends AnimatorListenerAdapter {
+public final class x61 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t71 b;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ x71 c;
 
-    public /* synthetic */ x61(t71 t71Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x61(x71 x71Var, Context context, int i7, Rect rect) {
+        super(context);
+        this.c = x71Var;
         this.a = i7;
-        this.b = t71Var;
+        this.b = rect;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                t71 t71Var = this.b;
-                t71Var.z0.invalidate();
-                t71Var.y0[1].setVisibility(8);
-                t71Var.e2 = null;
-                break;
-            case 1:
-                this.b.D0 = null;
-                break;
-            case 2:
-                t71 t71Var2 = this.b;
-                if (t71Var2.F0.getTag() == null) {
-                    t71Var2.F0.setVisibility(4);
-                }
-                t71Var2.J0 = null;
-                break;
-            case 3:
-                t71 t71Var3 = this.b;
-                if (t71Var3.G0.getTag() == null) {
-                    t71Var3.G0.setVisibility(4);
-                }
-                t71Var3.K0 = null;
-                break;
-            case 4:
-                t71 t71Var4 = this.b;
-                bc bcVar = t71Var4.j2;
-                if (bcVar != null) {
-                    if (bcVar.getParent() != null) {
-                        ((ViewGroup) t71Var4.j2.getParent()).removeView(t71Var4.j2);
-                    }
-                    t71Var4.j2 = null;
-                }
-                t71Var4.l2 = null;
-                super.onAnimationEnd(animator);
-                break;
-            default:
-                t71 t71Var5 = this.b;
-                if (!t71Var5.r1.a()) {
-                    t71Var5.T1.setVisibility(8);
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = this.a;
+        Rect rect = this.b;
+        x71 x71Var = this.c;
+        if (i7 == 0) {
+            x71Var.r.setBounds(x71Var.X.getLeft() - rect.left, 0, x71Var.X.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            x71Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
         }
+        x71Var.r.draw(canvas);
     }
 }

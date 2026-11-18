@@ -1,46 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m7 extends AnimatorListenerAdapter {
+public final class m7 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y7 b;
+    public final /* synthetic */ g8 b;
 
-    public /* synthetic */ m7(y7 y7Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ m7(g8 g8Var, Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = y7Var;
+        this.b = g8Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 2:
-                this.b.w2 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        TextView textView;
         switch (this.a) {
             case 0:
-                this.b.g2 = false;
+                int z11 = org.telegram.messenger.n10.z(248.0f, i11 - i7, 4);
+                for (int i13 = 0; i13 < 5; i13++) {
+                    int L = (z11 * i13) + org.telegram.messenger.g0.L((i13 * 48) + 4);
+                    int L2 = org.telegram.messenger.g0.L(9.0f);
+                    g8 g8Var = this.b;
+                    View view = g8Var.h2[i13];
+                    view.layout(L, L2, view.getMeasuredWidth() + L, g8Var.h2[i13].getMeasuredHeight() + L2);
+                }
                 break;
             case 1:
-                y7 y7Var = this.b;
-                y7Var.c2.setVisibility(4);
-                y7Var.d2.setImageBitmap(null);
-                y7Var.g2 = false;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
+            case 2:
+                super.onLayout(z10, i7, i10, i11, i12);
+                g8 g8Var2 = this.b;
+                if (g8Var2.P1 != null && (textView = g8Var2.U1) != null) {
+                    int left = (textView.getLeft() - org.telegram.messenger.g0.L(4.0f)) - g8Var2.P1.getMeasuredWidth();
+                    org.telegram.ui.ActionBar.r0 r0Var = g8Var2.P1;
+                    r0Var.layout(left, r0Var.getTop(), g8Var2.P1.getMeasuredWidth() + left, g8Var2.P1.getBottom());
+                    break;
+                }
                 break;
         }
     }
 
-    private final void a(Animator animator) {
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 1:
+                g8 g8Var = this.b;
+                if (g8Var.c2.getTag() != null) {
+                    g8Var.X0(false, true);
+                }
+                return true;
+            case 2:
+                return true;
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
     }
 }

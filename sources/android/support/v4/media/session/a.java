@@ -7,18 +7,18 @@ import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements b {
     public IBinder a;
 
     @Override // android.support.v4.media.session.b
-    public final void F(Bundle bundle) {
+    public final void E(Bundle bundle) {
         throw null;
     }
 
     @Override // android.support.v4.media.session.b
-    public final void M(List list) {
+    public final void L(List list) {
         throw null;
     }
 
@@ -76,12 +76,12 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void l0(CharSequence charSequence) {
+    public final void k0(CharSequence charSequence) {
         throw null;
     }
 
     @Override // android.support.v4.media.session.b
-    public final void n0() {
+    public final void m0() {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");
@@ -92,7 +92,7 @@ public final class a implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void p0(MediaMetadataCompat mediaMetadataCompat) {
+    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
         Parcel obtain = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("android.support.v4.media.session.IMediaControllerCallback");

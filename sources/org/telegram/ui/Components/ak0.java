@@ -1,37 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ak0 extends pb {
-    public final bk0 c;
+public final class ak0 {
+    public static final ak0 a;
+    public static final ak0 b;
+    public static final /* synthetic */ ak0[] c;
 
-    public ak0(Activity activity, String str) {
-        super(activity, null);
-        this.b.setText(str);
-        this.b.setTranslationY(-1.0f);
-        ImageView imageView = this.a;
-        bk0 bk0Var = new bk0();
-        this.c = bk0Var;
-        imageView.setImageDrawable(bk0Var);
+    /* JADX INFO: Fake field, exist only in values array */
+    ak0 EF0;
+
+    static {
+        ak0 ak0Var = new ak0("FULL_BACKGROUND", 0);
+        ak0 ak0Var2 = new ak0("SECTION_COLOR_BACKGROUND", 1);
+        ak0 ak0Var3 = new ak0("OPTIMIZED_BACKGROUND", 2);
+        a = ak0Var3;
+        ak0 ak0Var4 = new ak0("DRAW_VERTICES", 3);
+        b = ak0Var4;
+        c = new ak0[]{ak0Var, ak0Var2, ak0Var3, ak0Var4};
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void onEnterTransitionEnd() {
-        super.onEnterTransitionEnd();
-        bk0 bk0Var = this.c;
-        bk0Var.getClass();
-        bk0Var.g = System.currentTimeMillis();
-        bk0Var.invalidateSelf();
+    public static ak0 valueOf(String str) {
+        return (ak0) Enum.valueOf(ak0.class, str);
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public final void onExitTransitionEnd() {
-        super.onExitTransitionEnd();
-        bk0 bk0Var = this.c;
-        bk0Var.g = -1L;
-        bk0Var.invalidateSelf();
+    public static ak0[] values() {
+        return (ak0[]) c.clone();
     }
 }

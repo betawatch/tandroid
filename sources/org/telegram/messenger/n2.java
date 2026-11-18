@@ -1,42 +1,19 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_keyboard;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class n2 extends m2 {
-    public final TL_keyboard.KeyboardInlineButton a;
-
-    public n2(TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
-        this.a = keyboardInlineButton;
+public abstract class n2 {
+    public int a() {
+        return 1;
     }
 
-    @Override // org.telegram.messenger.m2
-    public final int a() {
-        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.a.style;
-        if (keyboardButtonStyle == null) {
-            return 1;
-        }
-        if (keyboardButtonStyle.bg_success) {
-            return 3;
-        }
-        if (keyboardButtonStyle.bg_danger) {
-            return 4;
-        }
-        return keyboardButtonStyle.bg_primary ? 2 : 1;
-    }
-
-    @Override // org.telegram.messenger.m2
-    public final long b() {
-        TL_keyboard.KeyboardButtonStyle keyboardButtonStyle = this.a.style;
-        if (keyboardButtonStyle != null) {
-            return keyboardButtonStyle.icon;
-        }
+    public long b() {
         return 0L;
     }
 
-    @Override // org.telegram.messenger.m2
-    public final String d() {
-        return this.a.text;
+    public int c() {
+        return 0;
     }
+
+    public abstract String d();
 }

@@ -1,30 +1,39 @@
 package fi;
 
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class h1 extends TLRPC.TL_messageMediaStory {
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.user_id = inputSerializedData.readInt64(z10);
-        this.id = inputSerializedData.readInt32(z10);
-        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        this.via_mention = inputSerializedData.readBool(z10);
-        this.peer = np.s1(m10.t0).z1(this.user_id);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class h1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j1 b;
+
+    public /* synthetic */ h1(j1 j1Var, int i7) {
+        this.a = i7;
+        this.b = j1Var;
     }
 
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147811);
-        outputSerializedData.writeInt64(this.user_id);
-        outputSerializedData.writeInt32(this.id);
-        this.storyItem.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.via_mention);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                j1 j1Var = this.b;
+                j1Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                j1Var.n = floatValue;
+                View view = j1Var.b;
+                view.setAlpha(1.0f - floatValue);
+                view.setScaleX(1.0f - j1Var.n);
+                view.setScaleY(1.0f - j1Var.n);
+                j1Var.c.setColorFilter(new PorterDuffColorFilter(i0.a.f(j1Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
+                j1Var.a.invalidate();
+                break;
+        }
     }
 }

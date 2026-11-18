@@ -1,95 +1,92 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ay0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
-    public final /* synthetic */ org.telegram.messenger.gj e;
+public final class ay0 extends org.telegram.ui.Components.bk0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ey0 d;
 
-    public /* synthetic */ ay0(an anVar, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.messenger.gj gjVar, int i7) {
-        this.a = i7;
-        this.b = anVar;
-        this.c = activity;
-        this.d = e6Var;
-        this.e = gjVar;
+    public ay0(ey0 ey0Var, Context context) {
+        this.d = ey0Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        org.telegram.messenger.gj gjVar = this.e;
-        org.telegram.ui.ActionBar.e6 e6Var = this.d;
-        final Activity activity = this.c;
-        an anVar = this.b;
-        final int i10 = 2;
-        switch (i7) {
-            case 0:
-                final int i11 = 1;
-                org.telegram.ui.Components.cc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.by0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, e6Var)).j();
-                anVar.ib(gjVar);
-                anVar.kb(gjVar);
-                break;
-            case 1:
-                final int i12 = 0;
-                org.telegram.ui.Components.cc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.by0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, e6Var)).j();
-                anVar.ib(gjVar);
-                anVar.kb(gjVar);
-                break;
-            default:
-                org.telegram.ui.Components.cc.a0(anVar).c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new Runnable() { // from class: org.telegram.ui.by0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                vf.c.t(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, e6Var)).j();
-                anVar.ib(gjVar);
-                anVar.kb(gjVar);
-                break;
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        int i7 = f1Var.f;
+        return i7 == 3 || i7 == 2;
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        ey0 ey0Var = this.d;
+        return ey0Var.f + (ey0Var.e < 0 ? ey0Var.getMediaDataController().h.size() : 0) + 1;
+    }
+
+    @Override // v4.i0
+    public final int d(int i7) {
+        if (i7 == 0) {
+            return 0;
         }
+        ey0 ey0Var = this.d;
+        if (i7 == ey0Var.c) {
+            return 2;
+        }
+        if (i7 == ey0Var.e) {
+            return 3;
+        }
+        return i7 == b() - 1 ? 4 : 1;
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        int i10;
+        int i11;
+        if (d(i7) != 1) {
+            return;
+        }
+        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) f1Var.a;
+        ey0 ey0Var = this.d;
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ey0Var.getMediaDataController().h.get(i7 - ey0Var.d);
+        String str = tL_availableReaction.reaction;
+        i10 = ((org.telegram.ui.ActionBar.h2) ey0Var).currentAccount;
+        boolean contains = str.contains(org.telegram.messenger.ri.d0(i10).S());
+        i11 = ((org.telegram.ui.ActionBar.h2) ey0Var).currentAccount;
+        xVar.a(tL_availableReaction, contains, i11);
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        org.telegram.ui.ActionBar.s4 s4Var;
+        View view;
+        ey0 ey0Var = this.d;
+        Context context = this.c;
+        if (i7 == 0) {
+            s4Var = ((org.telegram.ui.ActionBar.h2) ey0Var).parentLayout;
+            org.telegram.ui.Cells.aa aaVar = new org.telegram.ui.Cells.aa(context, s4Var, 2);
+            aaVar.setImportantForAccessibility(4);
+            aaVar.x = ey0Var;
+            view = aaVar;
+        } else if (i7 == 2) {
+            org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context);
+            z8Var.setText(org.telegram.messenger.gd.M0(2131751341, null));
+            view = z8Var;
+        } else if (i7 == 3) {
+            dy0 dy0Var = new dy0(ey0Var, context);
+            dy0Var.a(false);
+            view = dy0Var;
+        } else if (i7 != 4) {
+            view = new org.telegram.ui.Cells.x(context, true, true);
+        } else {
+            View jnVar = new org.telegram.ui.Components.jn(context, 22);
+            jnVar.setTag(-33024);
+            view = jnVar;
+        }
+        return new org.telegram.ui.Components.kj0(view);
     }
 }

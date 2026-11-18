@@ -1,14 +1,14 @@
 package org.telegram.messenger.voip;
 
-import di.z9;
+import di.ca;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.ds;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.is;
+import org.telegram.ui.Components.ks;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,17 +32,17 @@ public final /* synthetic */ class k0 implements RequestDelegate {
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$54(this.b, this.c, (String) this.e, tLObject, tL_error);
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new z9((bs) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
+                org.telegram.messenger.g0.g3(new ca((is) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 3));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new z9((ds) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
+                org.telegram.messenger.g0.g3(new ca((ks) this.d, this.b, (TLRPC.TL_messages_searchGlobal) this.e, this.c, tLObject, 4));
                 break;
         }
     }
 
-    public /* synthetic */ k0(p41 p41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
+    public /* synthetic */ k0(z41 z41Var, int i7, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z10, int i10) {
         this.a = i10;
-        this.d = p41Var;
+        this.d = z41Var;
         this.b = i7;
         this.e = tL_messages_searchGlobal;
         this.c = z10;

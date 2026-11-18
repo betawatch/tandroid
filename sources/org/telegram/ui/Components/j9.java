@@ -1,127 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
+import android.graphics.Bitmap;
 import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.beta.R;
+import android.graphics.drawable.GradientDrawable;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j9 extends Drawable implements Drawable.Callback {
-    public static int[] s;
-    public final Context a;
-    public final g6 b;
-    public Drawable c;
-    public Drawable d;
-    public int e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
+public final /* synthetic */ class j9 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ p9 b;
+    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ f50 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ c8.ia[] f;
 
-    public j9(Context context) {
-        this.a = context;
-        g6 g6Var = new g6(false, false, false);
-        this.b = g6Var;
-        g6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
-        g6Var.n(0.2f, 160L, er.h);
-        g6Var.w(org.telegram.messenger.g0.L(10.0f));
-        g6Var.b = 17;
-        g6Var.setCallback(this);
-        g6Var.U = true;
-        if (s != null) {
-            return;
-        }
-        s = new int[]{R.drawable.profile_level1_inner, R.drawable.profile_level1_outer, R.drawable.profile_level2_inner, R.drawable.profile_level2_outer, R.drawable.profile_level3_inner, R.drawable.profile_level3_outer, R.drawable.profile_level4_inner, R.drawable.profile_level4_outer, R.drawable.profile_level5_inner, R.drawable.profile_level5_outer, R.drawable.profile_level6_inner, R.drawable.profile_level6_outer, R.drawable.profile_level7_inner, R.drawable.profile_level7_outer, R.drawable.profile_level8_inner, R.drawable.profile_level8_outer, R.drawable.profile_level9_inner, R.drawable.profile_level9_outer, R.drawable.profile_level10_inner, R.drawable.profile_level10_outer, R.drawable.profile_level20_inner, R.drawable.profile_level20_outer, R.drawable.profile_level30_inner, R.drawable.profile_level30_outer, R.drawable.profile_level40_inner, R.drawable.profile_level40_outer, R.drawable.profile_level50_inner, R.drawable.profile_level50_outer, R.drawable.profile_level60_inner, R.drawable.profile_level60_outer, R.drawable.profile_level70_inner, R.drawable.profile_level70_outer, R.drawable.profile_level80_inner, R.drawable.profile_level80_outer, R.drawable.profile_level90_inner, R.drawable.profile_level90_outer, R.drawable.profile_level_minus_inner, R.drawable.profile_level_minus_outer};
+    public /* synthetic */ j9(p9 p9Var, f50 f50Var, Runnable[] runnableArr, int i7, c8.ia[] iaVarArr) {
+        this.b = p9Var;
+        this.d = f50Var;
+        this.c = runnableArr;
+        this.e = i7;
+        this.f = iaVarArr;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.d;
-        if (drawable == null || this.c == null) {
-            return;
-        }
-        drawable.draw(canvas);
-        this.c.draw(canvas);
-        canvas.save();
-        canvas.translate(getBounds().exactCenterX(), getBounds().exactCenterY());
-        this.b.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        Drawable drawable = this.c;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-        }
-        Drawable drawable2 = this.d;
-        if (drawable2 != null) {
-            drawable2.setBounds(getBounds());
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                p9 p9Var = this.b;
+                f50 f50Var = this.d;
+                Runnable[] runnableArr = this.c;
+                int i7 = this.e;
+                c8.ia[] iaVarArr = this.f;
+                try {
+                    GradientDrawable.Orientation orientation = p9Var.getOrientation();
+                    int[] iArr = p9Var.a;
+                    int i10 = f50Var.a;
+                    int i11 = f50Var.b;
+                    Rect e10 = p9.e(orientation, i10, i11);
+                    Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
+                    Utilities.drawDitheredGradient(createBitmap, iArr, e10.left, e10.top, e10.right, e10.bottom);
+                    org.telegram.messenger.g0.g3(new bg.m0(p9Var, runnableArr, createBitmap, f50Var, i7, iaVarArr, 8));
+                    return;
+                } catch (Throwable th2) {
+                    org.telegram.messenger.g0.g3(new j9(p9Var, runnableArr, f50Var, i7, iaVarArr));
+                    throw th2;
+                }
+            default:
+                p9.a(this.b, this.c, null, this.d, this.e, this.f);
+                return;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
-        scheduleSelf(runnable, j3);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        int o4 = i0.a.o(this.e, i7);
-        if (this.e != o4) {
-            this.e = o4;
-            Drawable drawable = this.c;
-            if (drawable != null) {
-                drawable.setColorFilter(o4, PorterDuff.Mode.MULTIPLY);
-                invalidateSelf();
-            }
-        }
-        int o10 = i0.a.o(this.f, i7);
-        if (this.f != o10) {
-            this.f = o10;
-            if (this.c != null) {
-                this.d.setColorFilter(o10, PorterDuff.Mode.MULTIPLY);
-                invalidateSelf();
-            }
-        }
-        int o11 = i0.a.o(this.h, i7);
-        if (this.h != o11) {
-            this.h = o11;
-            this.b.v(o11, false);
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        unscheduleSelf(runnable);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public /* synthetic */ j9(p9 p9Var, Runnable[] runnableArr, f50 f50Var, int i7, c8.ia[] iaVarArr) {
+        this.b = p9Var;
+        this.c = runnableArr;
+        this.d = f50Var;
+        this.e = i7;
+        this.f = iaVarArr;
     }
 }

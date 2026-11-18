@@ -1,35 +1,37 @@
 package di;
 
-import org.telegram.ui.Components.fz0;
+import android.content.DialogInterface;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ba implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
-    public final /* synthetic */ Runnable c;
+public final /* synthetic */ class ba implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ fs c;
 
-    public /* synthetic */ ba(Runnable runnable, Runnable runnable2, int i7) {
-        this.a = i7;
-        this.b = runnable;
-        this.c = runnable2;
+    public /* synthetic */ ba(int i7, oa oaVar) {
+        this.b = i7;
+        this.c = oaVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.run();
-                this.c.run();
+                ks.f(this.b).n((oa) this.c, ks.C3);
                 break;
             default:
-                fz0.b(this.b);
-                Runnable runnable = this.c;
-                if (runnable != null) {
-                    org.telegram.messenger.g0.h3(runnable);
-                    break;
-                }
+                tg.g0 g0Var = (tg.g0) this.c;
+                g0Var.o0(false);
+                g0Var.B0(this.b);
                 break;
         }
+    }
+
+    public /* synthetic */ ba(tg.g0 g0Var, int i7) {
+        this.c = g0Var;
+        this.b = i7;
     }
 }

@@ -9,14 +9,14 @@ import android.graphics.RectF;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.st0;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.ry;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class r1 extends st0 {
+public final class r1 extends au0 {
     public boolean g0;
     public final Paint h0;
     public final RectF i0;
@@ -31,11 +31,11 @@ public final class r1 extends st0 {
         this.i0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.st0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.au0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         z1 z1Var = this.j0;
         Rect rect = z1Var.x;
-        int r12 = j6.r1(z1Var.J, z1Var.getThemedColor(j6.d6));
+        int r12 = n6.r1(z1Var.J, z1Var.getThemedColor(n6.d6));
         Paint paint = this.h0;
         paint.setColor(r12);
         if (!z1Var.F || z1Var.y == null) {
@@ -66,9 +66,9 @@ public final class r1 extends st0 {
             canvas.restore();
             canvas.restore();
             canvas.save();
-            canvas.translate(org.telegram.messenger.g0.T1(rectF.right, (z1Var.z0.getX() + (z1Var.b0.getX() + (z1Var.a0.getX() + z1Var.Z.getX()))) + z1Var.z0.getWidth(), z1Var.J) - z1Var.w.i2.getWidth(), org.telegram.messenger.g0.T1(rectF.bottom, (z1Var.z0.getY() + (z1Var.b0.getY() + (z1Var.a0.getY() + z1Var.Z.getY()))) + z1Var.z0.getHeight(), z1Var.J) - z1Var.w.i2.getHeight());
-            canvas.saveLayerAlpha(-org.telegram.messenger.g0.L(6.0f), -org.telegram.messenger.g0.L(6.0f), z1Var.w.i2.getWidth(), z1Var.w.i2.getHeight(), (int) ((1.0f - z1Var.J) * 255.0f), 31);
-            z1Var.w.i2.draw(canvas);
+            canvas.translate(org.telegram.messenger.g0.T1(rectF.right, (z1Var.z0.getX() + (z1Var.b0.getX() + (z1Var.a0.getX() + z1Var.Z.getX()))) + z1Var.z0.getWidth(), z1Var.J) - z1Var.w.o2.getWidth(), org.telegram.messenger.g0.T1(rectF.bottom, (z1Var.z0.getY() + (z1Var.b0.getY() + (z1Var.a0.getY() + z1Var.Z.getY()))) + z1Var.z0.getHeight(), z1Var.J) - z1Var.w.o2.getHeight());
+            canvas.saveLayerAlpha(-org.telegram.messenger.g0.L(6.0f), -org.telegram.messenger.g0.L(6.0f), z1Var.w.o2.getWidth(), z1Var.w.o2.getHeight(), (int) ((1.0f - z1Var.J) * 255.0f), 31);
+            z1Var.w.o2.draw(canvas);
             canvas.restore();
             canvas.restore();
         }
@@ -83,7 +83,7 @@ public final class r1 extends st0 {
         z1 z1Var = this.j0;
         if (action == 0 && keyEvent.getKeyCode() == 47 && keyEvent.isCtrlPressed()) {
             if (z1Var.v0()) {
-                org.telegram.messenger.k5.n(null, 2131746003, new cc(z1Var.Y, z1Var.getResourceProvider()), R.raw.contact_check, 36);
+                org.telegram.messenger.f3.n(null, 2131745808, new lc(z1Var.Y, z1Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
         } else if (!z1Var.Q.k3(keyEvent)) {
@@ -102,10 +102,10 @@ public final class r1 extends st0 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ly lyVar;
+        ry ryVar;
         z1 z1Var = this.j0;
         if (!z1Var.Q.v3.x() || !z1Var.Q.w3.onTouchEvent(motionEvent)) {
-            int height = (!z1Var.D0 || (lyVar = z1Var.B0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(z1Var.E0, z1Var.U0), z1Var.V0) : (int) lyVar.getY();
+            int height = (!z1Var.D0 || (ryVar = z1Var.B0) == null) ? (getHeight() - org.telegram.messenger.g0.L(60.0f)) - Math.max(Math.max(z1Var.E0, z1Var.U0), z1Var.V0) : (int) ryVar.getY();
             if (motionEvent.getAction() == 0 && z1Var.C0 && motionEvent.getY() < height) {
                 z1Var.p0(true);
             }

@@ -1,67 +1,35 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.text.Collator;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u4 implements Runnable {
+public final /* synthetic */ class u4 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ HashMap e;
+    public final /* synthetic */ Collator b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ u4(g5 g5Var, ArrayList arrayList, HashMap hashMap, HashMap hashMap2) {
-        this.a = 4;
-        this.b = g5Var;
-        this.d = arrayList;
-        this.c = hashMap;
-        this.e = hashMap2;
+    public /* synthetic */ u4(Object obj, Collator collator, int i7) {
+        this.a = i7;
+        this.c = obj;
+        this.b = collator;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                HashMap hashMap = this.e;
-                g5 g5Var = this.b;
-                g5Var.E(this.c, this.d, hashMap, true);
-                g5Var.N();
-                g5Var.getNotificationCenter().k(25, new Object[0]);
-                g5Var.getNotificationCenter().k(26, new Object[0]);
-                break;
-            case 1:
-                HashMap hashMap2 = this.e;
-                g5 g5Var2 = this.b;
-                g5Var2.E(this.c, this.d, hashMap2, true);
-                g5Var2.N();
-                g5Var2.getNotificationCenter().k(25, new Object[0]);
-                g5Var2.getNotificationCenter().k(26, new Object[0]);
-                break;
-            case 2:
-                this.b.E(this.c, this.d, this.e, true);
-                break;
-            case 3:
-                HashMap hashMap3 = this.e;
-                g5 g5Var3 = this.b;
-                g5Var3.E(this.c, this.d, hashMap3, true);
-                g5Var3.getNotificationCenter().k(26, new Object[0]);
-                break;
+                i5 i5Var = (i5) this.c;
+                TLRPC.User c22 = i5Var.getMessagesController().c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                TLRPC.User c23 = i5Var.getMessagesController().c2(Long.valueOf(((TLRPC.TL_contact) obj2).user_id));
+                return this.b.compare(o10.k(c22, true), o10.k(c23, true));
             default:
-                g5 g5Var4 = this.b;
-                g5Var4.d0 = this.d;
-                g5Var4.e0 = this.c;
-                g5Var4.c0 = this.e;
-                break;
+                a0.h hVar = (a0.h) this.c;
+                TLRPC.User user = (TLRPC.User) hVar.f(((TLRPC.TL_contact) obj).user_id);
+                TLRPC.User user2 = (TLRPC.User) hVar.f(((TLRPC.TL_contact) obj2).user_id);
+                return this.b.compare(o10.k(user, true), o10.k(user2, true));
         }
-    }
-
-    public /* synthetic */ u4(g5 g5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i7) {
-        this.a = i7;
-        this.b = g5Var;
-        this.c = hashMap;
-        this.d = arrayList;
-        this.e = hashMap2;
     }
 }

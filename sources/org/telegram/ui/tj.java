@@ -1,69 +1,66 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class tj extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
+public final class tj extends org.telegram.ui.Components.bd {
+    public org.telegram.ui.Cells.y e;
+    public int f;
+    public final /* synthetic */ boolean h;
+    public final /* synthetic */ bn n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ tj(an anVar, Context context, int i7) {
+    public tj(bn bnVar, Context context, boolean z10) {
         super(context);
-        this.a = i7;
-        this.b = anVar;
+        this.n = bnVar;
+        this.h = z10;
     }
 
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                an anVar = this.b;
-                if (view == anVar.j3) {
-                    ImageView imageView = anVar.h3;
-                    int i13 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
-                    ImageView imageView2 = anVar.i3;
-                    if (imageView2 != null && imageView2.getVisibility() != 8) {
-                        i13 += 48;
+    @Override // org.telegram.ui.Components.bd
+    public final void d() {
+        try {
+            int themedColor = this.n.getThemedColor(org.telegram.ui.ActionBar.n6.nf);
+            if (this.e != null) {
+                Drawable background = getBackground();
+                Drawable drawable = this.e;
+                if (background == drawable) {
+                    if (themedColor != this.f) {
+                        org.telegram.ui.ActionBar.n6.H1(drawable, themedColor & 436207615, true);
                     }
-                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = org.telegram.messenger.g0.L(i13);
+                    if (getImageView() != null && (themedColor != this.f || getImageView().getColorFilter() == null)) {
+                        getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+                    }
+                    this.f = themedColor;
+                    if (getTextView() != null || getTextView().getCurrentTextColor() == themedColor) {
+                    }
+                    getTextView().setTextColor(themedColor);
+                    return;
                 }
-                super.measureChildWithMargins(view, i7, i10, i11, i12);
-                break;
-            default:
-                super.measureChildWithMargins(view, i7, i10, i11, i12);
-                break;
+            }
+            org.telegram.ui.Cells.y Y = org.telegram.ui.ActionBar.n6.Y(org.telegram.messenger.g0.L(19.0f), themedColor & 436207615, this.h ? org.telegram.messenger.g0.L(4.0f) : 0, org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f));
+            this.e = Y;
+            setBackground(Y);
+            if (getImageView() != null) {
+                getImageView().setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
+            }
+            this.f = themedColor;
+            if (getTextView() != null) {
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f10);
-                this.b.m1.invalidate();
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i7);
-                this.b.id.h(2, i7 == 0, getMeasuredWidth() > 0);
-                break;
-            default:
-                super.setVisibility(i7);
-                break;
+    @Override // org.telegram.ui.Components.bd
+    public final void setEditButton(boolean z10) {
+        super.setEditButton(z10);
+        if (this.h) {
+            getTextView().setMaxWidth(z10 ? org.telegram.messenger.g0.L(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
         }
     }
 }

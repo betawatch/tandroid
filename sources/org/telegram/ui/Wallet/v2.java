@@ -1,23 +1,23 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.ScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class v2 extends FrameLayout implements u2 {
-    public final FrameLayout a;
+public final class v2 extends ScrollView {
+    public final /* synthetic */ int a;
 
-    public v2(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v2(Context context, int i7) {
         super(context);
-        setClipChildren(false);
-        setClipToPadding(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.a = frameLayout;
-        addView(frameLayout, c8.ja.e(-1, -2, 80));
+        this.a = i7;
     }
 
-    public FrameLayout getContent() {
-        return this.a;
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(this.a)), TLObject.FLAG_31));
     }
 }

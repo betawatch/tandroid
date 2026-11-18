@@ -1,7 +1,7 @@
 package p2;
 
-import a8.ha;
 import a8.ja;
+import a8.la;
 import a8.xa;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -17,7 +17,7 @@ import e2.x;
 import h2.l0;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.RoundingMode;
@@ -28,9 +28,9 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 import org.webrtc.MediaStreamTrack;
 import org.xml.sax.helpers.DefaultHandler;
 import org.xmlpull.v1.XmlPullParser;
@@ -38,9 +38,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class e extends DefaultHandler implements b3.q {
+public final class e extends DefaultHandler implements b3.r {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
     public static final Pattern c = Pattern.compile("CC([1-4])=.*");
     public static final Pattern d = Pattern.compile("([1-9]|[1-5][0-9]|6[0-3])=.*");
@@ -88,7 +88,7 @@ public final class e extends DefaultHandler implements b3.q {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     /* JADX WARN: Code restructure failed: missing block: B:12:0x008f, code lost:
     
-        if (r13 == 0) goto L134;
+        if (r13 == 0) goto L135;
      */
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0093, code lost:
     
@@ -98,15 +98,11 @@ public final class e extends DefaultHandler implements b3.q {
     
         if (r13.equals("fa01") == false) goto L63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x0184, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:74:0x019d, code lost:
     
-        if (r13.equals("04") == false) goto L134;
+        if (r13 == 0) goto L135;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x019a, code lost:
-    
-        if (r13 == 0) goto L134;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x01ad, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:80:0x01b0, code lost:
     
         if (r13 < 33) goto L49;
      */
@@ -213,13 +209,15 @@ public final class e extends DefaultHandler implements b3.q {
                     } else {
                         String[] d02 = l0.d0(str);
                         if (d02.length != 0) {
-                            i7 = 21;
-                            List y10 = new xa(new d6.i(new g9.e('.', 0), 21)).y(ha.c(d02[0].trim()));
-                            if (y10.size() == 4 && ((String) y10.get(0)).equals("ac-4")) {
-                                String str2 = (String) y10.get(3);
+                            List A = new xa(new ob.c(new g9.e('.', 0), 24)).A(ja.c(d02[0].trim()));
+                            if (A.size() == 4 && ((String) A.get(0)).equals("ac-4")) {
+                                String str2 = (String) A.get(3);
                                 str2.getClass();
                                 if (!str2.equals("03")) {
-                                    break;
+                                    if (str2.equals("04")) {
+                                        i11 = 21;
+                                        break;
+                                    }
                                 } else {
                                     i11 = 18;
                                     break;
@@ -240,7 +238,7 @@ public final class e extends DefaultHandler implements b3.q {
             case 7:
                 String attributeValue5 = xmlPullParser.getAttributeValue(null, "value");
                 if (attributeValue5 != null) {
-                    String c12 = ha.c(attributeValue5);
+                    String c12 = ja.c(attributeValue5);
                     c12.getClass();
                     switch (c12.hashCode()) {
                         case 1596796:
@@ -410,7 +408,7 @@ public final class e extends DefaultHandler implements b3.q {
         String str4;
         String attributeValue = xmlPullParser.getAttributeValue(null, "schemeIdUri");
         if (attributeValue != null) {
-            String c11 = ha.c(attributeValue);
+            String c11 = ja.c(attributeValue);
             c11.getClass();
             switch (c11.hashCode()) {
                 case -1980789791:
@@ -1086,13 +1084,13 @@ public final class e extends DefaultHandler implements b3.q {
                                                         if (str82 == null) {
                                                             str82 = attributeValue22;
                                                         } else if (attributeValue22 != null) {
-                                                            ja.p(str82.equals(attributeValue22));
+                                                            la.p(str82.equals(attributeValue22));
                                                         }
                                                         int g11 = g(xmlPullParser);
                                                         if (i35 == -1) {
                                                             i35 = g11;
                                                         } else if (g11 != -1) {
-                                                            ja.p(i35 == g11 ? i11 : i10);
+                                                            la.p(i35 == g11 ? i11 : i10);
                                                         }
                                                         arrayList11 = arrayList8;
                                                         str24 = str82;
@@ -1460,7 +1458,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                             str17 = str93;
                                                                                             str40 = str105;
                                                                                             i15 = i42;
-                                                                                            sVar = p(xmlPullParser, (r) sVar5);
+                                                                                            sVar = o(xmlPullParser, (r) sVar5);
                                                                                             arrayList25 = arrayList57;
                                                                                             i16 = i41;
                                                                                             arrayList12 = arrayList46;
@@ -1562,7 +1560,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                         ArrayList arrayList60 = arrayList20;
                                                                                                                         f fVar2 = (f) arrayList60.get(i18);
                                                                                                                         String str113 = str45;
-                                                                                                                        if (ha.a("urn:mpeg:dash:role:2011", fVar2.a)) {
+                                                                                                                        if (ja.a("urn:mpeg:dash:role:2011", fVar2.a)) {
                                                                                                                             String str114 = fVar2.b;
                                                                                                                             i49 |= (str114 != null && (str114.equals("forced_subtitle") || str114.equals("forced-subtitle"))) ? 2 : i10;
                                                                                                                         }
@@ -1578,8 +1576,8 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                         while (i50 < arrayList61.size()) {
                                                                                                                             f fVar3 = (f) arrayList61.get(i50);
                                                                                                                             ArrayList arrayList62 = arrayList61;
-                                                                                                                            if (ha.a("urn:mpeg:dash:role:2011", fVar3.a)) {
-                                                                                                                                i51 |= n(fVar3.b);
+                                                                                                                            if (ja.a("urn:mpeg:dash:role:2011", fVar3.a)) {
+                                                                                                                                i51 |= m(fVar3.b);
                                                                                                                             }
                                                                                                                             i50++;
                                                                                                                             arrayList61 = arrayList62;
@@ -1595,9 +1593,9 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                             String str116 = fVar4.a;
                                                                                                                             int i56 = i51;
                                                                                                                             String str117 = fVar4.b;
-                                                                                                                            if (ha.a("urn:mpeg:dash:role:2011", str116)) {
-                                                                                                                                i20 = n(str117);
-                                                                                                                            } else if (ha.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
+                                                                                                                            if (ja.a("urn:mpeg:dash:role:2011", str116)) {
+                                                                                                                                i20 = m(str117);
+                                                                                                                            } else if (ja.a("urn:tva:metadata:cs:AudioPurposeCS:2007", fVar4.a)) {
                                                                                                                                 if (str117 != null) {
                                                                                                                                     switch (str117.hashCode()) {
                                                                                                                                         case 49:
@@ -1614,25 +1612,25 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                                             }
                                                                                                                                             i19 = -1;
                                                                                                                                             break;
-                                                                                                                                        case ns.o0 /* 51 */:
+                                                                                                                                        case ks.o0 /* 51 */:
                                                                                                                                             if (str117.equals("3")) {
                                                                                                                                                 i19 = 2;
                                                                                                                                                 break;
                                                                                                                                             }
                                                                                                                                             i19 = -1;
                                                                                                                                             break;
-                                                                                                                                        case ns.p0 /* 52 */:
+                                                                                                                                        case ks.p0 /* 52 */:
                                                                                                                                             if (str117.equals("4")) {
                                                                                                                                                 i19 = 3;
                                                                                                                                                 break;
                                                                                                                                             }
                                                                                                                                             i19 = -1;
                                                                                                                                             break;
-                                                                                                                                        case ns.q0 /* 53 */:
+                                                                                                                                        case ks.q0 /* 53 */:
                                                                                                                                         default:
                                                                                                                                             i19 = -1;
                                                                                                                                             break;
-                                                                                                                                        case ns.r0 /* 54 */:
+                                                                                                                                        case ks.r0 /* 54 */:
                                                                                                                                             if (str117.equals("6")) {
                                                                                                                                                 i19 = 4;
                                                                                                                                                 break;
@@ -1671,13 +1669,13 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                             i51 = i56;
                                                                                                                         }
                                                                                                                         ArrayList arrayList65 = arrayList10;
-                                                                                                                        int o4 = i51 | i53 | o(arrayList24) | o(arrayList26);
+                                                                                                                        int n10 = i51 | i53 | n(arrayList24) | n(arrayList26);
                                                                                                                         int i57 = i10;
                                                                                                                         while (true) {
                                                                                                                             if (i57 < arrayList24.size()) {
                                                                                                                                 f fVar5 = (f) arrayList24.get(i57);
                                                                                                                                 arrayList27 = arrayList24;
-                                                                                                                                if ((ha.a("http://dashif.org/thumbnail_tile", fVar5.a) || ha.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
+                                                                                                                                if ((ja.a("http://dashif.org/thumbnail_tile", fVar5.a) || ja.a("http://dashif.org/guidelines/thumbnail_tile", fVar5.a)) && (str48 = fVar5.b) != null) {
                                                                                                                                     String str118 = l0.a;
                                                                                                                                     String[] split = str48.split("x", -1);
                                                                                                                                     if (split.length != 2) {
@@ -1704,7 +1702,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                         tVar.j = str47;
                                                                                                                         tVar.i = i14;
                                                                                                                         tVar.e = i49;
-                                                                                                                        tVar.f = o4;
+                                                                                                                        tVar.f = n10;
                                                                                                                         tVar.H = mVar;
                                                                                                                         String str119 = str35;
                                                                                                                         tVar.d = str119;
@@ -1772,7 +1770,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                                         int i62 = i15;
                                                                                                                         if (i62 != -1) {
                                                                                                                             if (h != -1) {
-                                                                                                                                ja.p(i62 == h ? 1 : i10);
+                                                                                                                                la.p(i62 == h ? 1 : i10);
                                                                                                                             }
                                                                                                                             h = i62;
                                                                                                                         }
@@ -1920,7 +1918,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                 z11 = z10;
                                                                                                 str42 = str27;
                                                                                                 str40 = str105;
-                                                                                                sVar = q(xmlPullParser, (o) sVar5, j55, j54, j52, d10, j56);
+                                                                                                sVar = p(xmlPullParser, (o) sVar5, j55, j54, j52, d10, j56);
                                                                                                 arrayList24 = arrayList56;
                                                                                                 arrayList25 = arrayList57;
                                                                                                 i17 = i44;
@@ -1970,13 +1968,13 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                                     arrayList22 = arrayList18;
                                                                                                     str11 = str125;
                                                                                                     j25 = j59;
-                                                                                                    s r11 = r(xmlPullParser, (p) sVar5, arrayList68, j57, j24, j25, d11, j10);
+                                                                                                    s q10 = q(xmlPullParser, (p) sVar5, arrayList68, j57, j24, j25, d11, j10);
                                                                                                     arrayList13 = arrayList68;
                                                                                                     j22 = j57;
                                                                                                     j26 = d11;
                                                                                                     str42 = str27;
                                                                                                     str40 = str105;
-                                                                                                    sVar = r11;
+                                                                                                    sVar = q10;
                                                                                                     arrayList23 = arrayList54;
                                                                                                 } else {
                                                                                                     z11 = z10;
@@ -2141,7 +2139,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                             str21 = attributeValue14;
                                                                             int i63 = i35;
                                                                             if (h2.a.i(xmlPullParser, str127)) {
-                                                                                sVar3 = p(xmlPullParser, (r) sVar3);
+                                                                                sVar3 = o(xmlPullParser, (r) sVar3);
                                                                                 str23 = str127;
                                                                                 str24 = str82;
                                                                                 i13 = i63;
@@ -2160,7 +2158,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                     str24 = str82;
                                                                                     i12 = i63;
                                                                                     arrayList15 = arrayList70;
-                                                                                    sVar3 = q(xmlPullParser, (o) sVar3, j22, j60, j21, d12, j10);
+                                                                                    sVar3 = p(xmlPullParser, (o) sVar3, j22, j60, j21, d12, j10);
                                                                                     j10 = j10;
                                                                                     j17 = j60;
                                                                                     j48 = d12;
@@ -2173,7 +2171,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                                                     j17 = j60;
                                                                                     if (h2.a.i(xmlPullParser, str11)) {
                                                                                         long d13 = d(xmlPullParser, j61);
-                                                                                        sVar3 = r(xmlPullParser, (p) sVar3, arrayList13, j22, j17, j21, d13, j10);
+                                                                                        sVar3 = q(xmlPullParser, (p) sVar3, arrayList13, j22, j17, j21, d13, j10);
                                                                                         j48 = d13;
                                                                                     } else {
                                                                                         if (h2.a.i(xmlPullParser, "InbandEventStream")) {
@@ -2498,7 +2496,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                 str3 = str131;
                                                 str4 = str130;
                                                 if (h2.a.i(xmlPullParser, "SegmentBase")) {
-                                                    sVar2 = p(xmlPullParser, null);
+                                                    sVar2 = o(xmlPullParser, null);
                                                     arrayList5 = arrayList5;
                                                     str6 = str67;
                                                     j16 = j63;
@@ -2510,7 +2508,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                     long d14 = d(xmlPullParser, -9223372036854775807L);
                                                     arrayList5 = arrayList5;
                                                     str5 = str129;
-                                                    sVar2 = q(xmlPullParser, null, j63, j62, j14, d14, j10);
+                                                    sVar2 = p(xmlPullParser, null, j63, j62, j14, d14, j10);
                                                     j10 = j10;
                                                     j17 = j62;
                                                     j16 = j63;
@@ -2524,7 +2522,7 @@ public final class e extends DefaultHandler implements b3.q {
                                                     if (h2.a.i(xmlPullParser, str68)) {
                                                         long d15 = d(xmlPullParser, -9223372036854775807L);
                                                         g0 g0Var = i0.b;
-                                                        sVar2 = r(xmlPullParser, null, s1.e, j16, j17, j14, d15, j10);
+                                                        sVar2 = q(xmlPullParser, null, t1.e, j16, j17, j14, d15, j10);
                                                         j44 = d15;
                                                     } else if (h2.a.i(xmlPullParser, "AssetIdentifier")) {
                                                         h(xmlPullParser, "AssetIdentifier");
@@ -2621,7 +2619,7 @@ public final class e extends DefaultHandler implements b3.q {
         }
     }
 
-    public static j m(XmlPullParser xmlPullParser, String str, String str2) {
+    public static j l(XmlPullParser xmlPullParser, String str, String str2) {
         long j3;
         long j10;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
@@ -2640,7 +2638,7 @@ public final class e extends DefaultHandler implements b3.q {
         return new j(j3, attributeValue, j10);
     }
 
-    public static int n(String str) {
+    public static int m(String str) {
         if (str != null) {
             switch (str) {
                 case "subtitle":
@@ -2672,17 +2670,17 @@ public final class e extends DefaultHandler implements b3.q {
         return 0;
     }
 
-    public static int o(ArrayList arrayList) {
+    public static int n(ArrayList arrayList) {
         int i7 = 0;
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            if (ha.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i10)).a)) {
+            if (ja.a("http://dashif.org/guidelines/trickmode", ((f) arrayList.get(i10)).a)) {
                 i7 = TLObject.FLAG_14;
             }
         }
         return i7;
     }
 
-    public static r p(XmlPullParser xmlPullParser, r rVar) {
+    public static r o(XmlPullParser xmlPullParser, r rVar) {
         long j3 = rVar != null ? rVar.b : 1L;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
         if (attributeValue != null) {
@@ -2709,7 +2707,7 @@ public final class e extends DefaultHandler implements b3.q {
         while (true) {
             xmlPullParser.next();
             if (h2.a.i(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else {
                 b(xmlPullParser);
             }
@@ -2721,7 +2719,7 @@ public final class e extends DefaultHandler implements b3.q {
         }
     }
 
-    public static o q(XmlPullParser xmlPullParser, o oVar, long j3, long j10, long j11, long j12, long j13) {
+    public static o p(XmlPullParser xmlPullParser, o oVar, long j3, long j10, long j11, long j12, long j13) {
         long j14 = oVar != null ? oVar.b : 1L;
         List list = null;
         String attributeValue = xmlPullParser.getAttributeValue(null, "timescale");
@@ -2754,14 +2752,14 @@ public final class e extends DefaultHandler implements b3.q {
         do {
             xmlPullParser.next();
             if (h2.a.i(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (h2.a.i(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j15, j10);
+                list2 = r(xmlPullParser, j15, j10);
             } else if (h2.a.i(xmlPullParser, "SegmentURL")) {
                 if (list == null) {
                     list = new ArrayList();
                 }
-                list.add(m(xmlPullParser, "media", "mediaRange"));
+                list.add(l(xmlPullParser, "media", "mediaRange"));
             } else {
                 b(xmlPullParser);
             }
@@ -2780,7 +2778,7 @@ public final class e extends DefaultHandler implements b3.q {
         return new o(jVar, j15, j17, j21, j19, list2, j23, list, l0.S(j13), l0.S(j3));
     }
 
-    public static p r(XmlPullParser xmlPullParser, p pVar, List list, long j3, long j10, long j11, long j12, long j13) {
+    public static p q(XmlPullParser xmlPullParser, p pVar, List list, long j3, long j10, long j11, long j12, long j13) {
         long j14;
         long j15 = pVar != null ? pVar.b : 1L;
         j jVar = null;
@@ -2814,7 +2812,7 @@ public final class e extends DefaultHandler implements b3.q {
                 break;
             }
             f fVar = (f) list.get(i7);
-            if (ha.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
+            if (ja.a("http://dashif.org/guidelines/last-segment-number", fVar.a)) {
                 j14 = Long.parseLong(fVar.b);
                 break;
             }
@@ -2823,15 +2821,15 @@ public final class e extends DefaultHandler implements b3.q {
         long j23 = j14;
         long j24 = j12 == -9223372036854775807L ? j11 : j12;
         long j25 = j24 == Long.MAX_VALUE ? -9223372036854775807L : j24;
-        ld0 t6 = t(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        ld0 t10 = t(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        md0 s5 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        md0 s9 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
             if (h2.a.i(xmlPullParser, "Initialization")) {
-                jVar = m(xmlPullParser, "sourceURL", "range");
+                jVar = l(xmlPullParser, "sourceURL", "range");
             } else if (h2.a.i(xmlPullParser, "SegmentTimeline")) {
-                list2 = s(xmlPullParser, j16, j10);
+                list2 = r(xmlPullParser, j16, j10);
             } else {
                 b(xmlPullParser);
             }
@@ -2844,10 +2842,10 @@ public final class e extends DefaultHandler implements b3.q {
                 list2 = pVar.f;
             }
         }
-        return new p(jVar, j16, j18, j22, j23, j20, list2, j25, t10, t6, l0.S(j13), l0.S(j3));
+        return new p(jVar, j16, j18, j22, j23, j20, list2, j25, s9, s5, l0.S(j13), l0.S(j3));
     }
 
-    public static ArrayList s(XmlPullParser xmlPullParser, long j3, long j10) {
+    public static ArrayList r(XmlPullParser xmlPullParser, long j3, long j10) {
         long j11;
         ArrayList arrayList = new ArrayList();
         long j12 = 0;
@@ -2886,11 +2884,11 @@ public final class e extends DefaultHandler implements b3.q {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0100. Please report as an issue. */
-    public static ld0 t(XmlPullParser xmlPullParser, String str, ld0 ld0Var) {
+    public static md0 s(XmlPullParser xmlPullParser, String str, md0 md0Var) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return ld0Var;
+            return md0Var;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2946,11 +2944,11 @@ public final class e extends DefaultHandler implements b3.q {
                 i7 = indexOf2 + 1;
             }
         }
-        return new ld0(arrayList, arrayList2, arrayList3, 3);
+        return new md0(arrayList, arrayList2, arrayList3, 3);
     }
 
-    @Override // b3.q
-    public final Object l(Uri uri, j2.k kVar) {
+    @Override // b3.r
+    public final Object t(Uri uri, j2.k kVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             newPullParser.setInput(kVar, null);

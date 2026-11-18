@@ -20,7 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
 import d1.f;
-import f2.h;
+import f2.i;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -354,7 +354,7 @@ public class IconCompat extends CustomVersionedParcelable {
                     createWithBitmap = Icon.createWithBitmap(b((Bitmap) this.b, false));
                     break;
                 } else {
-                    createWithBitmap = h.b((Bitmap) this.b);
+                    createWithBitmap = i.b((Bitmap) this.b);
                     break;
                 }
             case 6:
@@ -373,7 +373,7 @@ public class IconCompat extends CustomVersionedParcelable {
                         createWithBitmap = Icon.createWithBitmap(b(BitmapFactory.decodeStream(k10), false));
                         break;
                     } else {
-                        createWithBitmap = h.b(BitmapFactory.decodeStream(k10));
+                        createWithBitmap = i.b(BitmapFactory.decodeStream(k10));
                         break;
                     }
                 }

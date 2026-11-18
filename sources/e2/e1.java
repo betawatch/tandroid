@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e1 extends d1 {
     public static final String d;
@@ -19,7 +19,7 @@ public final class e1 extends d1 {
     }
 
     public e1(int i7) {
-        ja.e("maxStars must be a positive integer", i7 > 0);
+        la.e("maxStars must be a positive integer", i7 > 0);
         this.b = i7;
         this.c = -1.0f;
     }
@@ -52,11 +52,11 @@ public final class e1 extends d1 {
 
     public e1(int i7, float f10) {
         boolean z10 = false;
-        ja.e("maxStars must be a positive integer", i7 > 0);
+        la.e("maxStars must be a positive integer", i7 > 0);
         if (f10 >= 0.0f && f10 <= i7) {
             z10 = true;
         }
-        ja.e("starRating is out of range [0, maxStars]", z10);
+        la.e("starRating is out of range [0, maxStars]", z10);
         this.b = i7;
         this.c = f10;
     }

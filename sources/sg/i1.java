@@ -4,14 +4,14 @@ import android.graphics.Bitmap;
 import android.opengl.GLES20;
 import android.opengl.GLUtils;
 import android.os.Build;
-import c8.gc;
+import c8.jc;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.nt0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.vt0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class i1 {
     public final Bitmap a;
@@ -21,9 +21,9 @@ public final class i1 {
         this.a = bitmap;
     }
 
-    public static int b(nt0 nt0Var) {
-        int i7 = (int) nt0Var.a;
-        int i10 = (int) nt0Var.b;
+    public static int b(vt0 vt0Var) {
+        int i7 = (int) vt0Var.a;
+        int i10 = (int) vt0Var.b;
         int[] iArr = new int[1];
         GLES20.glGenTextures(1, iArr, 0);
         int i11 = iArr[0];
@@ -79,18 +79,18 @@ public final class i1 {
             this.a.getPixels(iArr2, 0, width, 0, 0, width, height);
             for (int i12 = 0; i12 < i11; i12++) {
                 int i13 = iArr2[i12];
-                iArr2[i12] = ((i13 >> 16) & ns.e4) | (i13 & (-16711936)) | ((i13 & ns.e4) << 16);
+                iArr2[i12] = ((i13 >> 16) & ks.e4) | (i13 & (-16711936)) | ((i13 & ks.e4) << 16);
             }
             GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, IntBuffer.wrap(iArr2));
         }
         if (!bitmap.isRecycled() && Build.VERSION.SDK_INT <= 28) {
             int pixel = bitmap.getPixel(0, 0);
-            int i14 = ((pixel >> 16) & ns.e4) | (pixel & (-16711936)) | ((pixel & ns.e4) << 16);
+            int i14 = ((pixel >> 16) & ks.e4) | (pixel & (-16711936)) | ((pixel & ks.e4) << 16);
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(4);
             allocateDirect.putInt(i14).position(0);
             GLES20.glTexSubImage2D(3553, 0, 0, 0, 1, 1, 6408, 5121, allocateDirect);
         }
-        gc.a();
+        jc.a();
         return this.b;
     }
 }

@@ -3,20 +3,20 @@ package s4;
 import android.content.ComponentName;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
-import org.telegram.messenger.ou;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u {
     public final h3 a;
     public final ArrayList b = new ArrayList();
     public final boolean c;
-    public final ou d;
+    public final hn d;
     public ca.i e;
 
     public u(h3 h3Var, boolean z10) {
         this.a = h3Var;
-        this.d = (ou) h3Var.d;
+        this.d = (hn) h3Var.d;
         this.c = z10;
     }
 

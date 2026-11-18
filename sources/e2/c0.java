@@ -1,9 +1,10 @@
 package e2;
 
 import android.net.Uri;
+import h9.y1;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c0 {
     public UUID a;
@@ -12,11 +13,11 @@ public final class c0 {
     public boolean f;
     public h9.i0 g;
     public byte[] h;
-    public h9.l0 c = h9.x1.h;
+    public h9.l0 c = y1.h;
     public boolean e = true;
 
     public c0() {
         h9.g0 g0Var = h9.i0.b;
-        this.g = h9.s1.e;
+        this.g = h9.t1.e;
     }
 }

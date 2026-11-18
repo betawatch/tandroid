@@ -1,7 +1,7 @@
 package d3;
 
 import a8.b8;
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.graphics.Point;
 import android.media.MediaCodecInfo;
@@ -15,14 +15,14 @@ import android.os.Trace;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.view.Surface;
-import di.p4;
+import di.s4;
 import e2.i1;
 import e2.l1;
 import e2.s0;
 import e2.v1;
 import e2.x1;
 import h2.l0;
-import h9.s1;
+import h9.t1;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -32,11 +32,10 @@ import java.util.PriorityQueue;
 import l2.m1;
 import l2.o1;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.y0;
-import org.telegram.ui.Wallet.k8;
-import x2.b1;
+import org.telegram.ui.wc1;
+import x2.d1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends u2.r {
     public static final int[] T1 = {1920, 1600, 1440, 1280, 960, 854, 640, 540, 480};
@@ -1410,11 +1409,11 @@ public final class l extends u2.r {
     public static List F0(Context context, u2.i iVar, e2.u uVar, boolean z10, boolean z11) {
         String str = uVar.s;
         if (str == null) {
-            return s1.e;
+            return t1.e;
         }
-        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(str) && !f2.h.c(context)) {
+        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(str) && !f2.i.c(context)) {
             String c10 = u2.w.c(uVar);
-            List a10 = c10 == null ? s1.e : iVar.a(c10, z10, z11);
+            List a10 = c10 == null ? t1.e : iVar.a(c10, z10, z11);
             if (!a10.isEmpty()) {
                 return a10;
             }
@@ -1504,7 +1503,7 @@ public final class l extends u2.r {
         if (Build.VERSION.SDK_INT >= 35 && oVar.h) {
             return null;
         }
-        ja.p(P0(oVar));
+        la.p(P0(oVar));
         n nVar = this.t1;
         if (nVar != null && nVar.a != oVar.f && nVar != null) {
             nVar.release();
@@ -1518,7 +1517,7 @@ public final class l extends u2.r {
                 int i7 = n.d;
             } else if (!n.b(context)) {
                 z10 = false;
-                ja.p(z10);
+                la.p(z10);
                 mVar = new m("ExoPlayer:PlaceholderSurface");
                 int i10 = !z11 ? n.d : 0;
                 mVar.start();
@@ -1551,7 +1550,7 @@ public final class l extends u2.r {
                 this.t1 = nVar2;
             }
             z10 = true;
-            ja.p(z10);
+            la.p(z10);
             mVar = new m("ExoPlayer:PlaceholderSurface");
             if (!z11) {
             }
@@ -1626,7 +1625,7 @@ public final class l extends u2.r {
     public final void M0(u2.l lVar, int i7, long j3) {
         Surface surface;
         Trace.beginSection("releaseOutputBuffer");
-        lVar.h(i7, j3);
+        lVar.f(i7, j3);
         Trace.endSection();
         this.P0.e++;
         this.A1 = 0;
@@ -1646,7 +1645,7 @@ public final class l extends u2.r {
             if (!z10 || (surface = this.s1) == null) {
                 return;
             }
-            bVar.O(surface);
+            bVar.P(surface);
             this.v1 = true;
         }
     }
@@ -1665,7 +1664,7 @@ public final class l extends u2.r {
                 if (surface3 == null || !this.v1) {
                     return;
                 }
-                bVar.O(surface3);
+                bVar.P(surface3);
                 return;
             }
             return;
@@ -1689,7 +1688,7 @@ public final class l extends u2.r {
                 Surface H0 = H0(oVar);
                 if (H0 != null) {
                     try {
-                        lVar.n(H0);
+                        lVar.m(H0);
                     } catch (Throwable th2) {
                         th2.printStackTrace();
                         throw new u(th2);
@@ -1698,7 +1697,7 @@ public final class l extends u2.r {
                     if (Build.VERSION.SDK_INT < 35) {
                         throw new IllegalStateException();
                     }
-                    lVar.g();
+                    lVar.e();
                 }
             }
         }
@@ -1832,13 +1831,13 @@ public final class l extends u2.r {
         List F0 = F0(context, iVar, uVar, z10, z11);
         HashMap hashMap = u2.w.a;
         ArrayList arrayList = new ArrayList(F0);
-        Collections.sort(arrayList, new p4(new k8(16, context, uVar), 4));
+        Collections.sort(arrayList, new s4(new wc1(14, context, uVar), 4));
         return arrayList;
     }
 
     public final void Q0(u2.l lVar, int i7) {
         Trace.beginSection("skipVideoBuffer");
-        lVar.f(i7);
+        lVar.d(i7);
         Trace.endSection();
         this.P0.f++;
     }
@@ -1859,13 +1858,13 @@ public final class l extends u2.r {
         K0();
     }
 
-    public final void S0(x2.f0 f0Var) {
+    public final void S0(x2.g0 g0Var) {
         l1 l1Var = this.G;
         if (l1Var.p()) {
             this.Q1 = -9223372036854775807L;
             return;
         }
-        int b10 = l1Var.b(f0Var.a);
+        int b10 = l1Var.b(g0Var.a);
         if (b10 == -1) {
             this.Q1 = -9223372036854775807L;
         } else {
@@ -2109,7 +2108,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(23, bVar, exc));
+            handler.post(new c1.c(22, bVar, exc));
         }
     }
 
@@ -2239,7 +2238,7 @@ public final class l extends u2.r {
             if (k0Var5 != null) {
                 Surface surface = this.s1;
                 surface.getClass();
-                k0Var5.g(surface, yVar);
+                k0Var5.f(surface, yVar);
                 return;
             }
             return;
@@ -2282,7 +2281,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(21, bVar, cVar));
+            handler.post(new c1.c(20, bVar, cVar));
         }
     }
 
@@ -2291,7 +2290,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new c1.c(24, bVar, str));
+            handler.post(new c1.c(23, bVar, str));
         }
     }
 
@@ -2303,7 +2302,7 @@ public final class l extends u2.r {
         wf.b bVar = this.c1;
         Handler handler = (Handler) bVar.b;
         if (handler != null) {
-            handler.post(new aa.r(bVar, uVar, e02, 12));
+            handler.post(new aa.r(bVar, uVar, e02, 16));
         }
         y yVar = this.j1;
         if (yVar != null) {
@@ -2371,7 +2370,7 @@ public final class l extends u2.r {
             List list = this.r1;
             if (list == null) {
                 h9.g0 g0Var = h9.i0.b;
-                list = s1.e;
+                list = t1.e;
             }
             k0Var.u(uVar2, this.Q0.b, i12, list);
             this.q1 = 2;
@@ -2506,7 +2505,7 @@ public final class l extends u2.r {
         }
         if (a10 == 2) {
             Trace.beginSection("dropVideoBuffer");
-            lVar.f(i7);
+            lVar.d(i7);
             Trace.endSection();
             R0(0, 1);
             T0(wVar.a);
@@ -2532,17 +2531,17 @@ public final class l extends u2.r {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean m() {
-        boolean f10;
+        boolean h;
         boolean z10 = false;
         if (this.V != null) {
             if (k()) {
-                f10 = this.E;
+                h = this.E;
             } else {
-                b1 b1Var = this.r;
-                b1Var.getClass();
-                f10 = b1Var.f();
+                d1 d1Var = this.r;
+                d1Var.getClass();
+                h = d1Var.h();
             }
-            if (!f10) {
+            if (!h) {
                 if (!(this.w0 >= 0)) {
                     if (this.u0 != -9223372036854775807L) {
                         this.h.getClass();
@@ -2585,7 +2584,7 @@ public final class l extends u2.r {
         m1 m1Var = this.d;
         m1Var.getClass();
         boolean z12 = m1Var.b;
-        ja.p((z12 && this.M1 == 0) ? false : true);
+        la.p((z12 && this.M1 == 0) ? false : true);
         if (this.L1 != z12) {
             this.L1 = z12;
             n0();
@@ -2607,7 +2606,7 @@ public final class l extends u2.r {
                 h2.g0 g0Var = this.h;
                 g0Var.getClass();
                 xVar2.g = g0Var;
-                ja.p(!xVar2.b);
+                la.p(!xVar2.b);
                 if (((r) xVar2.f) == null) {
                     xVar2.f = new r();
                 }
@@ -2637,13 +2636,13 @@ public final class l extends u2.r {
             xVar.e(!z11 ? 1 : 0);
             return;
         }
-        k0Var2.e(new cb.c(this, 15));
+        k0Var2.g(new d6.i(this, 11));
         v vVar = this.O1;
         if (vVar != null) {
             this.o1.c(vVar);
         }
         if (this.s1 != null && !this.u1.equals(h2.y.c)) {
-            this.o1.g(this.s1, this.u1);
+            this.o1.f(this.s1, this.u1);
         }
         this.o1.l(this.x1);
         this.o1.d(this.c0);
@@ -2734,7 +2733,7 @@ public final class l extends u2.r {
                 p0();
                 n0();
             } finally {
-                y0.C(this.Y, null);
+                p5.c.w(this.Y, null);
                 this.Y = null;
             }
         } finally {
@@ -2779,7 +2778,7 @@ public final class l extends u2.r {
         }
         k0 k0Var = this.o1;
         if (k0Var != null) {
-            k0Var.f();
+            k0Var.e();
         } else {
             x xVar = this.f1;
             xVar.d = false;
@@ -2799,9 +2798,9 @@ public final class l extends u2.r {
     }
 
     @Override // u2.r, l2.b
-    public final void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
-        super.u(uVarArr, j3, j10, f0Var);
-        S0(f0Var);
+    public final void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
+        super.u(uVarArr, j3, j10, g0Var);
+        S0(g0Var);
         y yVar = this.j1;
         if (yVar != null) {
             yVar.b();
@@ -2935,9 +2934,9 @@ public final class l extends u2.r {
 
     @Override // l2.b
     public final void v() {
-        x2.f0 f0Var = this.H;
-        if (f0Var != null) {
-            S0(f0Var);
+        x2.g0 g0Var = this.H;
+        if (g0Var != null) {
+            S0(g0Var);
         }
     }
 
@@ -3023,25 +3022,24 @@ public final class l extends u2.r {
         z10 = true;
         int i12 = 4;
         int i13 = e10 ? 4 : 3;
-        int i14 = 16;
-        int i15 = oVar.f(uVar) ? 16 : 8;
-        int i16 = oVar.g ? 64 : 0;
-        int i17 = z10 ? 128 : 0;
-        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(uVar.s) && !f2.h.c(context)) {
-            i17 = 256;
+        int i14 = oVar.f(uVar) ? 16 : 8;
+        int i15 = oVar.g ? 64 : 0;
+        int i16 = z10 ? 128 : 0;
+        if (Build.VERSION.SDK_INT >= 26 && "video/dolby-vision".equals(uVar.s) && !f2.i.c(context)) {
+            i16 = 256;
         }
         if (e10) {
             List F02 = F0(context, iVar, uVar, z11, true);
             if (!F02.isEmpty()) {
                 HashMap hashMap = u2.w.a;
                 ArrayList arrayList = new ArrayList(F02);
-                Collections.sort(arrayList, new p4(new k8(i14, context, uVar), i12));
+                Collections.sort(arrayList, new s4(new wc1(14, context, uVar), i12));
                 u2.o oVar3 = (u2.o) arrayList.get(0);
                 if (oVar3.e(context, uVar) && oVar3.f(uVar)) {
                     i7 = 32;
                 }
             }
         }
-        return i13 | i15 | i7 | i16 | i17;
+        return i13 | i14 | i7 | i15 | i16;
     }
 }

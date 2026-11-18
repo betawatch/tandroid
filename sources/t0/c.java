@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 import android.view.inputmethod.InputContentInfo;
-import org.telegram.ui.Components.ff;
+import org.telegram.ui.Components.of;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c extends InputConnectionWrapper {
     public final /* synthetic */ e a;
@@ -20,11 +20,11 @@ public final class c extends InputConnectionWrapper {
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean commitContent(InputContentInfo inputContentInfo, int i7, Bundle bundle) {
-        ff ffVar = null;
+        of ofVar = null;
         if (inputContentInfo != null && Build.VERSION.SDK_INT >= 25) {
-            ffVar = new ff(new g(inputContentInfo), 17);
+            ofVar = new of(new g(inputContentInfo), 18);
         }
-        if (this.a.o(ffVar, i7, bundle)) {
+        if (this.a.d(ofVar, i7, bundle)) {
             return true;
         }
         return super.commitContent(inputContentInfo, i7, bundle);

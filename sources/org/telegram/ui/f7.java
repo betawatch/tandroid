@@ -2,25 +2,44 @@ package org.telegram.ui;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class f7 extends rg.b {
-    public final int d;
-    public final ArrayList e = new ArrayList();
+public abstract class f7 extends e7 {
+    public final ArrayList f;
+    public final /* synthetic */ s7 h;
 
-    public f7(int i7) {
-        this.d = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f7(s7 s7Var, int i7) {
+        super(i7);
+        this.h = s7Var;
+        this.f = new ArrayList();
     }
 
-    public abstract void F();
-
-    @Override // v4.h0
-    public final int b() {
-        return this.e.size();
+    @Override // org.telegram.ui.Components.bk0
+    public boolean D(v4.f1 f1Var) {
+        return !(this instanceof n7);
     }
 
-    @Override // v4.h0
-    public final int d(int i7) {
-        return ((m7) this.e.get(i7)).a;
+    @Override // org.telegram.ui.e7
+    public void F() {
+        ArrayList arrayList = this.f;
+        arrayList.clear();
+        ArrayList arrayList2 = this.e;
+        arrayList.addAll(arrayList2);
+        arrayList2.clear();
+        ei.c cVar = this.h.h;
+        if (cVar != null) {
+            int i7 = this.d;
+            ArrayList arrayList3 = i7 == 1 ? cVar.d : i7 == 2 ? cVar.e : i7 == 3 ? cVar.f : i7 == 5 ? cVar.g : i7 == 4 ? cVar.h : null;
+            if (arrayList3 != null) {
+                for (int i10 = 0; i10 < arrayList3.size(); i10++) {
+                    ei.b bVar = (ei.b) arrayList3.get(i10);
+                    l7 l7Var = new l7(2, true);
+                    l7Var.d = bVar;
+                    arrayList2.add(l7Var);
+                }
+            }
+        }
+        E(arrayList, arrayList2);
     }
 }

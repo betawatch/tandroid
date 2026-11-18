@@ -1,43 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.ShapeDrawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class cw0 extends tj0 {
-    public final Context c;
-    public final /* synthetic */ dw0 d;
+public final class cw0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public org.telegram.ui.ActionBar.i6 a;
+    public ShapeDrawable b;
+    public View c;
 
-    public cw0(dw0 dw0Var, Activity activity) {
-        this.d = dw0Var;
-        this.c = activity;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        try {
+            ShapeDrawable shapeDrawable = this.b;
+            if (shapeDrawable != null) {
+                org.telegram.ui.ActionBar.n6.C1(org.telegram.ui.ActionBar.n6.r1(0.12f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Ef, this.a)), shapeDrawable);
+                View view = this.c;
+                if (view != null) {
+                    view.invalidate();
+                }
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        return false;
-    }
-
-    @Override // v4.h0
-    public final int b() {
-        return this.d.c.size();
-    }
-
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
-        org.telegram.ui.Cells.v vVar = (org.telegram.ui.Cells.v) e1Var.a;
-        ArrayList arrayList = this.d.c;
-        vVar.b((TLRPC.StickerSetCovered) arrayList.get(i7), i7 != arrayList.size() - 1);
-    }
-
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.Cells.v vVar = new org.telegram.ui.Cells.v(this.c, false);
-        vVar.setLayoutParams(new v4.p0(-1, org.telegram.messenger.g0.L(82.0f)));
-        return new cj0(vVar);
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

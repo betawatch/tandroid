@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import androidx.appcompat.view.menu.ExpandedMenuView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements x, AdapterView.OnItemClickListener {
     public Context a;
@@ -35,18 +35,18 @@ public final class g implements x, AdapterView.OnItemClickListener {
     }
 
     @Override // l.x
-    public final void d() {
-        f fVar = this.f;
-        if (fVar != null) {
-            fVar.notifyDataSetChanged();
+    public final void d(k kVar, boolean z10) {
+        w wVar = this.e;
+        if (wVar != null) {
+            wVar.d(kVar, z10);
         }
     }
 
     @Override // l.x
-    public final void e(k kVar, boolean z10) {
-        w wVar = this.e;
-        if (wVar != null) {
-            wVar.e(kVar, z10);
+    public final void e() {
+        f fVar = this.f;
+        if (fVar != null) {
+            fVar.notifyDataSetChanged();
         }
     }
 
@@ -79,8 +79,8 @@ public final class g implements x, AdapterView.OnItemClickListener {
         }
         l lVar = new l();
         lVar.a = d0Var;
-        f5.v vVar = new f5.v(context);
-        g.b bVar = (g.b) vVar.c;
+        b3.j jVar = new b3.j(context);
+        g.b bVar = (g.b) jVar.c;
         g gVar = new g((ContextThemeWrapper) bVar.c);
         lVar.c = gVar;
         gVar.e = lVar;
@@ -99,7 +99,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
             bVar.f = d0Var.m;
         }
         bVar.k = lVar;
-        g.f g10 = vVar.g();
+        g.f g10 = jVar.g();
         lVar.b = g10;
         g10.setOnDismissListener(lVar);
         WindowManager.LayoutParams attributes = lVar.b.getWindow().getAttributes();
@@ -110,7 +110,7 @@ public final class g implements x, AdapterView.OnItemClickListener {
         if (wVar == null) {
             return true;
         }
-        wVar.y(d0Var);
+        wVar.C(d0Var);
         return true;
     }
 

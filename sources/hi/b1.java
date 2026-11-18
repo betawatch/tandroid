@@ -1,35 +1,191 @@
 package hi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.tr;
 
-    public /* synthetic */ b1(c1 c1Var, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class b1 {
+    public final int a;
+    public final ArrayList b = new ArrayList();
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public File g;
+
+    public b1(int i7) {
         this.a = i7;
-        this.b = c1Var;
+        if (this.e || this.f) {
+            return;
+        }
+        this.f = true;
+        x0 x0Var = new x0(this, 0);
+        tr a02 = tr.a0(i7);
+        a02.a.c(new di.p6((Object) a02, true, (Object) x0Var, 3));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                c1 c1Var = this.b;
-                if (c1Var.L > 0) {
-                    c1Var.dualToggleShape();
-                    try {
-                        c1Var.performHapticFeedback(0, 1);
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-            default:
-                c1 c1Var2 = this.b;
-                c1Var2.focusToPoint((int) c1Var2.J, (int) c1Var2.K);
-                break;
+    public final void a(a1 a1Var) {
+        String str;
+        StringBuilder sb2;
+        long j3;
+        int i7 = this.a;
+        tr a02 = tr.a0(i7);
+        StringBuilder sb3 = new StringBuilder("StoryDraft append ");
+        sb3.append(a1Var.a);
+        sb3.append(" (edit=");
+        sb3.append(a1Var.G);
+        if (a1Var.G) {
+            StringBuilder sb4 = new StringBuilder(", storyId=");
+            sb4.append(a1Var.H);
+            sb4.append(", ");
+            if (a1Var.J != 0) {
+                sb2 = new StringBuilder("documentId=");
+                j3 = a1Var.J;
+            } else {
+                sb2 = new StringBuilder("photoId=");
+                j3 = a1Var.K;
+            }
+            sb2.append(j3);
+            sb4.append(sb2.toString());
+            sb4.append(", expireDate=");
+            sb4.append(a1Var.L);
+            str = sb4.toString();
+        } else {
+            str = "";
         }
+        sb3.append(str);
+        sb3.append(", now=");
+        sb3.append(System.currentTimeMillis());
+        sb3.append(")");
+        org.telegram.messenger.a8.b(sb3.toString());
+        a02.a.c(new y0(a02, a1Var, 1));
+        ks.f(i7).k(ks.A5, new Object[0]);
+    }
+
+    public final void b(d7 d7Var) {
+        ArrayList arrayList = new ArrayList(1);
+        arrayList.add(d7Var);
+        c(arrayList);
+    }
+
+    public final void c(ArrayList arrayList) {
+        String str;
+        StringBuilder sb2;
+        long j3;
+        if (arrayList == null) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            d7 d7Var = (d7) arrayList.get(i7);
+            if (d7Var != null) {
+                StringBuilder sb3 = new StringBuilder("StoryDraft delete ");
+                sb3.append(d7Var.b);
+                sb3.append(" (edit=");
+                sb3.append(d7Var.g);
+                if (d7Var.g) {
+                    StringBuilder sb4 = new StringBuilder(", storyId=");
+                    sb4.append(d7Var.f);
+                    sb4.append(", ");
+                    if (d7Var.H != 0) {
+                        sb2 = new StringBuilder("documentId=");
+                        j3 = d7Var.H;
+                    } else {
+                        sb2 = new StringBuilder("photoId=");
+                        j3 = d7Var.I;
+                    }
+                    sb2.append(j3);
+                    sb4.append(sb2.toString());
+                    sb4.append(", expireDate=");
+                    sb4.append(d7Var.J);
+                    str = sb4.toString();
+                } else {
+                    str = "";
+                }
+                sb3.append(str);
+                sb3.append(", now=");
+                sb3.append(System.currentTimeMillis());
+                sb3.append(")");
+                org.telegram.messenger.a8.b(sb3.toString());
+                arrayList2.add(Long.valueOf(d7Var.b));
+                d7Var.i(true);
+            }
+        }
+        if (arrayList2.isEmpty()) {
+            return;
+        }
+        this.b.removeAll(arrayList);
+        int i10 = this.a;
+        tr a02 = tr.a0(i10);
+        a02.a.c(new z0(a02, arrayList2, 0));
+        ks.f(i10).k(ks.A5, new Object[0]);
+    }
+
+    public final void d(d7 d7Var) {
+        if (d7Var == null) {
+            return;
+        }
+        e(d7Var);
+        ArrayList arrayList = this.b;
+        arrayList.remove(d7Var);
+        if (!d7Var.w) {
+            arrayList.add(0, d7Var);
+        }
+        a1 a1Var = new a1(d7Var);
+        int i7 = this.a;
+        tr a02 = tr.a0(i7);
+        a02.a.c(new y0(a02, a1Var, 0));
+        ks.f(i7).k(ks.A5, new Object[0]);
+    }
+
+    public final void e(d7 d7Var) {
+        if (d7Var == null) {
+            return;
+        }
+        if (d7Var.b == 0) {
+            d7Var.b = Utilities.b.nextLong();
+        }
+        d7Var.d = System.currentTimeMillis();
+        d7Var.c = true;
+        if (d7Var.M) {
+            d7Var.L = f(d7Var.L);
+        } else if (d7Var.L != null) {
+            File x10 = d7.x(this.a, d7Var.K);
+            try {
+                org.telegram.messenger.g0.E(d7Var.L, x10);
+                d7Var.L = f(x10);
+                d7Var.M = true;
+            } catch (IOException e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
+        }
+        d7Var.Z0 = f(d7Var.Z0);
+        d7Var.P0 = f(d7Var.P0);
+        d7Var.O0 = f(d7Var.O0);
+    }
+
+    public final File f(File file) {
+        if (file == null) {
+            return null;
+        }
+        if (this.g == null) {
+            File file2 = new File(org.telegram.messenger.w7.z(4), "drafts");
+            this.g = file2;
+            if (!file2.exists()) {
+                this.g.mkdir();
+            }
+        }
+        if (!file.getAbsolutePath().startsWith(this.g.getAbsolutePath())) {
+            File file3 = new File(this.g, file.getName());
+            if (file.renameTo(file3)) {
+                return file3;
+            }
+        }
+        return file;
     }
 }

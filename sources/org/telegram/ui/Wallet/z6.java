@@ -1,35 +1,16 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.s10;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ byte[] c;
-    public final /* synthetic */ c2 d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ s10 f;
-
-    public /* synthetic */ z6(WalletEngine2 walletEngine2, byte[] bArr, c2 c2Var, String str, s10 s10Var, int i7) {
-        this.a = i7;
-        this.b = walletEngine2;
-        this.c = bArr;
-        this.d = c2Var;
-        this.e = str;
-        this.f = s10Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$signMessage$11(this.c, this.d, this.e, this.f);
-                break;
-            default:
-                this.b.lambda$prepareTonConnectTransfer$5(this.c, this.d, this.e, this.f);
-                break;
-        }
-    }
+public final class z6 {
+    public boolean a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public long h;
+    public long i;
+    public long j;
 }

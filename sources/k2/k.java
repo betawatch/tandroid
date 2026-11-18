@@ -6,11 +6,11 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.FilesMigrationService;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gz;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends Thread {
     public final /* synthetic */ int a = 0;
@@ -34,14 +34,14 @@ public final class k extends Thread {
             default:
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.b;
                 File externalStorageDirectory = Environment.getExternalStorageDirectory();
-                if (!TextUtils.isEmpty(gz.h0)) {
+                if (!TextUtils.isEmpty(bz.h0)) {
                     ArrayList d12 = g0.d1();
                     int size = d12.size();
                     int i7 = 0;
                     while (true) {
                         if (i7 < size) {
                             File file = (File) d12.get(i7);
-                            if (file.getAbsolutePath().startsWith(gz.h0)) {
+                            if (file.getAbsolutePath().startsWith(bz.h0)) {
                                 externalStorageDirectory = file;
                             } else {
                                 i7++;
@@ -58,7 +58,7 @@ public final class k extends Thread {
                 }
                 a8.b("move time = " + (System.currentTimeMillis() - currentTimeMillis));
                 t0.b.getSharedPreferences("systemConfig", 0).edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
-                g0.h3(new org.telegram.messenger.a(this, 10));
+                g0.g3(new org.telegram.messenger.a(this, 10));
                 return;
         }
     }

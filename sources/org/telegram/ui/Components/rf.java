@@ -1,32 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rf extends org.telegram.ui.an {
-    public boolean ud;
-    public final /* synthetic */ TLRPC.User vd;
-    public final /* synthetic */ TLRPC.User wd;
-    public final /* synthetic */ long xd;
+public final class rf extends AnimatorListenerAdapter {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rf(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j3) {
-        super(bundle);
-        this.vd = user;
-        this.wd = user2;
-        this.xd = j3;
+    public rf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.an, org.telegram.ui.ActionBar.e2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.ud) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        xi0 xi0Var = chatActivityEnterView.i1;
+        if (xi0Var != null && xi0Var.T0 != null) {
+            chatActivityEnterView.x5 = new org.telegram.ui.ci(29, this, animator);
             return;
         }
-        this.ud = true;
-        cc.a0(this).I(R.raw.contact_check, org.telegram.messenger.hd.a0(null, null, 2131751739, org.telegram.messenger.q10.p(this.vd)), org.telegram.messenger.g0.U2(org.telegram.messenger.hd.a0(null, null, 2131751740, org.telegram.messenger.q10.p(this.wd)), new di.x2(this, this.xd, 21))).j();
+        t61 t61Var = chatActivityEnterView.g1;
+        if (t61Var != null) {
+            t61Var.setVisibility(8);
+        }
+        xi0 xi0Var2 = chatActivityEnterView.i1;
+        if (xi0Var2 != null) {
+            xi0Var2.setVisibility(8);
+        }
+        chatActivityEnterView.d5 = 0.0f;
+        chatActivityEnterView.S0();
+        chatActivityEnterView.J0();
+        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.B2;
+        if (recordCircle != null) {
+            recordCircle.g();
+        }
     }
 }

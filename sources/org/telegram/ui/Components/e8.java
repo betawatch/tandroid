@@ -1,86 +1,110 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e8 implements org.telegram.ui.ActionBar.q1, cq {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q8 b;
+public final /* synthetic */ class e8 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ f8 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ e8(q8 q8Var, int i7) {
-        this.a = i7;
-        this.b = q8Var;
+    public /* synthetic */ e8(f8 f8Var, String str, ArrayList arrayList) {
+        this.b = f8Var;
+        this.d = str;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.cq
-    public void c(int i7, int i10, boolean z10) {
-        q8 q8Var = this.b;
-        if (i10 == 0) {
-            m8 m8Var = q8Var.Z;
-            int i11 = m8Var.c;
-            if (i11 != i7 && (i11 == 0 || i7 == 0)) {
-                m8 a10 = m8Var.a();
-                q8Var.Z = a10;
-                q8Var.a.b(a10, true);
-                q8Var.s0();
-            }
-            q8Var.Z.c = i7;
-        } else if (i10 == 1) {
-            m8 m8Var2 = q8Var.Z;
-            int i12 = m8Var2.d;
-            if (i12 != i7 && (i12 == 0 || i7 == 0)) {
-                m8 a11 = m8Var2.a();
-                q8Var.Z = a11;
-                q8Var.a.b(a11, true);
-                q8Var.s0();
-            }
-            q8Var.Z.d = i7;
-        } else if (i10 == 2) {
-            m8 m8Var3 = q8Var.Z;
-            int i13 = m8Var3.e;
-            if (i13 != i7 && (i13 == 0 || i7 == 0)) {
-                m8 a12 = m8Var3.a();
-                q8Var.Z = a12;
-                q8Var.a.b(a12, true);
-                q8Var.s0();
-            }
-            q8Var.Z.e = i7;
-        } else if (i10 == 3) {
-            m8 m8Var4 = q8Var.Z;
-            int i14 = m8Var4.f;
-            if (i14 != i7 && (i14 == 0 || i7 == 0)) {
-                m8 a13 = m8Var4.a();
-                q8Var.Z = a13;
-                q8Var.a.b(a13, true);
-                q8Var.s0();
-            }
-            q8Var.Z.f = i7;
-        }
-        org.telegram.messenger.ns.e().k(org.telegram.messenger.ns.r4, new Object[0]);
-        q8Var.a.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.cq
-    public /* synthetic */ int d(int i7) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        String str;
+        int i7 = this.a;
+        String str2 = null;
+        String str3 = this.d;
+        ArrayList arrayList = this.c;
+        f8 f8Var = this.b;
+        switch (i7) {
             case 0:
-                this.b.finishFragment();
+                f8Var.getClass();
+                String lowerCase = str3.trim().toLowerCase();
+                if (lowerCase.length() == 0) {
+                    org.telegram.messenger.g0.g3(new e8(f8Var, new ArrayList(), str3));
+                    break;
+                } else {
+                    String S0 = org.telegram.messenger.gd.E0().S0(lowerCase, true, false);
+                    if (!lowerCase.equals(S0) && S0.length() != 0) {
+                        str2 = S0;
+                    }
+                    int i10 = (str2 != null ? 1 : 0) + 1;
+                    String[] strArr = new String[i10];
+                    strArr[0] = lowerCase;
+                    if (str2 != null) {
+                        strArr[1] = str2;
+                    }
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) arrayList.get(i11);
+                        int i12 = 0;
+                        while (true) {
+                            if (i12 < i10) {
+                                String str4 = strArr[i12];
+                                String I0 = fjVar.I0();
+                                if (I0 != null && I0.length() != 0) {
+                                    if (I0.toLowerCase().contains(str4)) {
+                                        arrayList2.add(fjVar);
+                                    } else {
+                                        TLRPC.Document document = fjVar.D == 0 ? fjVar.k.media.webpage.document : fjVar.k.media.document;
+                                        int i13 = 0;
+                                        while (true) {
+                                            if (i13 < document.attributes.size()) {
+                                                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
+                                                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
+                                                    String str5 = documentAttribute.performer;
+                                                    z10 = str5 != null ? str5.toLowerCase().contains(str4) : false;
+                                                    if (!z10 && (str = documentAttribute.title) != null) {
+                                                        z10 = str.toLowerCase().contains(str4);
+                                                    }
+                                                } else {
+                                                    i13++;
+                                                }
+                                            } else {
+                                                z10 = false;
+                                            }
+                                        }
+                                        if (z10) {
+                                            arrayList2.add(fjVar);
+                                        }
+                                    }
+                                }
+                                i12++;
+                            }
+                        }
+                    }
+                    org.telegram.messenger.g0.g3(new e8(f8Var, arrayList2, str3));
+                    break;
+                }
                 break;
             default:
-                this.b.finishFragment();
+                g8 g8Var = f8Var.n;
+                if (g8Var.r1) {
+                    g8Var.q1 = true;
+                    f8Var.d = arrayList;
+                    f8Var.e = str3;
+                    f8Var.f();
+                    g8Var.t1.n0(0);
+                    org.telegram.messenger.f3.q(null, null, 2131748048, new Object[]{str3}, g8Var.x1);
+                    break;
+                }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.cq
-    public /* synthetic */ void a(boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.cq
-    public /* synthetic */ void b() {
+    public /* synthetic */ e8(f8 f8Var, ArrayList arrayList, String str) {
+        this.b = f8Var;
+        this.c = arrayList;
+        this.d = str;
     }
 }

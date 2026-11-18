@@ -2,7 +2,7 @@ package d3;
 
 import h2.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -23,21 +23,21 @@ public final /* synthetic */ class g0 implements Runnable {
                 l2.d dVar = this.c;
                 h0 h0Var = (h0) bVar.c;
                 String str = l0.a;
-                m2.e eVar = ((l2.z) h0Var).a.s;
-                m2.a U = eVar.U();
-                eVar.V(U, 1015, new m2.c(U, dVar, 7));
+                m2.d dVar2 = ((l2.z) h0Var).a.s;
+                m2.a U = dVar2.U();
+                dVar2.V(U, 1015, new m2.c(U, dVar, 8));
                 break;
             default:
                 wf.b bVar2 = this.b;
-                l2.d dVar2 = this.c;
-                synchronized (dVar2) {
+                l2.d dVar3 = this.c;
+                synchronized (dVar3) {
                 }
                 h0 h0Var2 = (h0) bVar2.c;
                 String str2 = l0.a;
                 l2.f0 f0Var = ((l2.z) h0Var2).a;
-                m2.e eVar2 = f0Var.s;
-                m2.a S = eVar2.S((x2.f0) eVar2.d.e);
-                eVar2.V(S, 1020, new ki.e(S, dVar2, 11));
+                m2.d dVar4 = f0Var.s;
+                m2.a S = dVar4.S((x2.g0) dVar4.d.e);
+                dVar4.V(S, 1020, new ki.e(S, dVar3, 12));
                 f0Var.S = null;
                 break;
         }

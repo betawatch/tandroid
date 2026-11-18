@@ -9,19 +9,19 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class p2 extends View implements org.telegram.ui.Cells.g9, c3 {
-    public final n50 a;
+public final class p2 extends View implements org.telegram.ui.Cells.h9, c3 {
+    public final p50 a;
     public final e4 b;
     public z2 c;
     public int d;
     public int e;
     public TL_iv.pageBlockSubheader f;
 
-    public p2(Context context, n50 n50Var, e4 e4Var) {
+    public p2(Context context, p50 p50Var, e4 e4Var) {
         super(context);
-        this.a = n50Var;
+        this.a = p50Var;
         this.b = e4Var;
     }
 
@@ -59,10 +59,10 @@ public final class p2 extends View implements org.telegram.ui.Cells.g9, c3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.i20.a(this);
+        return org.telegram.messenger.n10.a(this);
     }
 
-    @Override // org.telegram.ui.Cells.g9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -115,20 +115,20 @@ public final class p2 extends View implements org.telegram.ui.Cells.g9, c3 {
     public final void onMeasure(int i7, int i10) {
         int i11;
         int size = View.MeasureSpec.getSize(i7);
-        n50 n50Var = this.a;
-        n50Var.getClass();
+        p50 p50Var = this.a;
+        p50Var.getClass();
         this.d = org.telegram.messenger.g0.L(18);
-        n50Var.getClass();
+        p50Var.getClass();
         this.e = org.telegram.messenger.g0.L(8);
         TL_iv.pageBlockSubheader pageblocksubheader = this.f;
         if (pageblocksubheader != null) {
             TL_iv.RichText richText = pageblocksubheader.text;
-            n50 n50Var2 = this.a;
-            n50Var2.getClass();
+            p50 p50Var2 = this.a;
+            p50Var2.getClass();
             int L = size - org.telegram.messenger.g0.L(36);
             TL_iv.pageBlockSubheader pageblocksubheader2 = this.f;
             e4 e4Var = this.b;
-            z2 n10 = g4.n(n50Var2, this, null, richText, L, 0, pageblocksubheader2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ou0.a(), 0, this.b);
+            z2 n10 = g4.n(p50Var2, this, null, richText, L, 0, pageblocksubheader2, (e4Var == null || !e4Var.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a(), 0, this.b);
             this.c = n10;
             if (n10 != null) {
                 int height = n10.d.getHeight() + this.e;

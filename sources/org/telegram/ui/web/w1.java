@@ -9,7 +9,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -78,7 +78,7 @@ public final /* synthetic */ class w1 implements Runnable {
                                                 } catch (Exception e11) {
                                                     a8.g(e11, true);
                                                 }
-                                                org.telegram.messenger.g0.h3(new w1(a2Var3, 2));
+                                                org.telegram.messenger.g0.g3(new w1(a2Var3, 2));
                                                 break;
                                         }
                                     }
@@ -132,7 +132,7 @@ public final /* synthetic */ class w1 implements Runnable {
                                     } catch (Exception e11) {
                                         a8.g(e11, true);
                                     }
-                                    org.telegram.messenger.g0.h3(new w1(a2Var3, 2));
+                                    org.telegram.messenger.g0.g3(new w1(a2Var3, 2));
                                     break;
                             }
                         }
@@ -153,7 +153,7 @@ public final /* synthetic */ class w1 implements Runnable {
                         a8.g(e10, true);
                     }
                     final int i10 = 0;
-                    org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.web.x1
+                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.web.x1
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i10) {
@@ -197,7 +197,7 @@ public final /* synthetic */ class w1 implements Runnable {
                                     } catch (Exception e11) {
                                         a8.g(e11, true);
                                     }
-                                    org.telegram.messenger.g0.h3(new w1(a2Var3, 2));
+                                    org.telegram.messenger.g0.g3(new w1(a2Var3, 2));
                                     break;
                             }
                         }

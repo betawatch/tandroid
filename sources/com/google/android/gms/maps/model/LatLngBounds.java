@@ -2,7 +2,7 @@ package com.google.android.gms.maps.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 import ji.j;
@@ -10,7 +10,7 @@ import m6.e;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<LatLngBounds> CREATOR = new e(4);
@@ -18,16 +18,13 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        m.h(latLng, "southwest must not be null.");
-        m.h(latLng2, "northeast must not be null.");
+        m.i(latLng, "southwest must not be null.");
+        m.i(latLng2, "northeast must not be null.");
         double d = latLng2.a;
         double d2 = latLng.a;
-        if (d >= d2) {
-            this.a = latLng;
-            this.b = latLng2;
-            return;
-        }
-        throw new IllegalArgumentException("southern latitude exceeds northern latitude (" + d2 + " > " + d + ")");
+        m.c(d >= d2, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d2), Double.valueOf(d));
+        this.a = latLng;
+        this.b = latLng2;
     }
 
     public final boolean equals(Object obj) {
@@ -47,16 +44,16 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
 
     public final String toString() {
         j jVar = new j(this);
-        jVar.U(this.a, "southwest");
-        jVar.U(this.b, "northeast");
+        jVar.E(this.a, "southwest");
+        jVar.E(this.b, "northeast");
         return jVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.k(parcel, 3, this.b, i7);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.k(parcel, 3, this.b, i7);
+        bc.s(parcel, r10);
     }
 }

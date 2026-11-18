@@ -1,77 +1,192 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
+import android.util.DisplayMetrics;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class jg0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
+public class jg0 extends FrameLayout {
+    public final Paint a;
+    public final Path b;
+    public final ig0 c;
+    public float d;
+    public float e;
+    public float f;
+    public boolean h;
+    public bi.y1 n;
 
-    public /* synthetic */ jg0(kg0 kg0Var, int i7) {
-        this.a = i7;
-        this.b = kg0Var;
+    public jg0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Path();
+        paint.setColor(-16777216);
+        if (Build.VERSION.SDK_INT < 31 || org.telegram.messenger.bz.o() < 1) {
+            this.c = new gg0(this);
+        } else {
+            this.c = new hg0(this, org.telegram.messenger.bz.o() == 2 ? 1.0f : 1.5f);
+        }
+        setIntensity(15.0f);
+        setBlurIntensity(0.0f);
+        setWillNotDraw(false);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                kg0 kg0Var = this.b;
-                AnimatorSet animatorSet = kg0Var.s;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    kg0Var.s = null;
-                    kg0Var.getClass();
-                    break;
-                }
-                break;
-            case 2:
-                kg0 kg0Var2 = this.b;
-                AnimatorSet animatorSet2 = kg0Var2.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    kg0Var2.s = null;
-                    kg0Var2.getClass();
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public static /* synthetic */ void a(jg0 jg0Var, Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, org.telegram.messenger.g0.L(32.0f));
+        super.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (!this.h) {
+            super.draw(canvas);
+        } else {
+            this.c.c(new iy(this, 12), canvas);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7 = this.a;
-        kg0 kg0Var = this.b;
-        switch (i7) {
-            case 0:
-                AnimatorSet animatorSet = kg0Var.h;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    kg0Var.h = null;
-                }
-                org.telegram.messenger.ns.e().k(99, 512);
-                break;
-            case 1:
-                AnimatorSet animatorSet2 = kg0Var.s;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    kg0Var.s = null;
-                    if (kg0Var.x) {
-                        kg0Var.setLayerType(0, null);
+    public float getAvatarEndScale() {
+        float min;
+        int L;
+        bi.y1 y1Var = this.n;
+        if (y1Var == null) {
+            return 0.8f;
+        }
+        if (y1Var.c) {
+            min = ((RectF) y1Var.e).width() - org.telegram.messenger.g0.L(2.0f);
+            L = org.telegram.messenger.g0.L(100.0f);
+        } else {
+            min = Math.min(((RectF) y1Var.e).width(), ((RectF) this.n.e).height());
+            L = org.telegram.messenger.g0.L(100.0f);
+        }
+        return Math.min(0.8f, min / L);
+    }
+
+    public float getHiddenAvatarSizeDp() {
+        bi.y1 y1Var = this.n;
+        if (y1Var == null || !y1Var.c) {
+            return 24.0f;
+        }
+        return (((RectF) y1Var.e).width() * 0.5f) / org.telegram.messenger.g0.p;
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        bi.y1 y1Var;
+        float f10;
+        int i13;
+        super.onSizeChanged(i7, i10, i11, i12);
+        Context context = getContext();
+        if (Build.VERSION.SDK_INT >= 28) {
+            y1Var = new bi.y1();
+            int identifier = context.getResources().getIdentifier("config_mainBuiltInDisplayCutout", "string", "android");
+            if (identifier != 0) {
+                String string = context.getString(identifier);
+                if (!string.isEmpty()) {
+                    String trim = string.trim();
+                    DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+                    int i14 = displayMetrics.widthPixels;
+                    float f11 = displayMetrics.density;
+                    if (trim.endsWith("@right")) {
+                        f10 = i14;
+                        trim = trim.substring(0, trim.length() - 6).trim();
+                        i13 = 5;
+                    } else if (trim.endsWith("@left")) {
+                        trim = trim.substring(0, trim.length() - 5).trim();
+                        f10 = 0.0f;
+                        i13 = 3;
+                    } else {
+                        f10 = i14 / 2.0f;
+                        i13 = 17;
                     }
+                    boolean endsWith = trim.endsWith("@dp");
+                    if (endsWith) {
+                        trim = com.google.android.gms.internal.vision.e2.k(trim, 3, 0);
+                    }
+                    if (trim.contains("@bottom")) {
+                        trim = trim.split("@bottom", 2)[0].trim();
+                    }
+                    try {
+                        i0.d[] c10 = c8.l0.c(trim);
+                        Path path = new Path();
+                        i0.d.b(c10, path);
+                        Matrix matrix = new Matrix();
+                        if (endsWith) {
+                            matrix.postScale(f11, f11);
+                        }
+                        matrix.postTranslate(f10, 0.0f);
+                        path.transform(matrix);
+                        y1Var.d = path;
+                        RectF rectF = new RectF();
+                        path.computeBounds(rectF, true);
+                        y1Var.e = rectF;
+                        DisplayMetrics displayMetrics2 = context.getResources().getDisplayMetrics();
+                        if (i13 != 17 && Math.abs(rectF.centerX() - (displayMetrics2.widthPixels / 2.0f)) <= org.telegram.messenger.g0.L(2.0f)) {
+                            i13 = 17;
+                        }
+                        int i15 = (i13 != 17 || rectF.left >= ((float) displayMetrics2.widthPixels) / 4.0f) ? i13 : 3;
+                        y1Var.a = (i15 != 17 || rectF.right <= (((float) displayMetrics2.widthPixels) / 4.0f) * 3.0f) ? i15 : 5;
+                        y1Var.b = trim.contains("C") || trim.contains("S") || trim.contains("Q");
+                        y1Var.c = rectF.width() <= ((float) org.telegram.messenger.g0.L(32.0f)) || rectF.width() <= rectF.height();
+                    } catch (Throwable th2) {
+                        org.telegram.messenger.a8.e("Failed to parse notch info", th2);
+                    }
+                    this.n = y1Var;
+                    if ((y1Var != null && y1Var.a != 17) || getWidth() > getHeight()) {
+                        this.n = null;
+                    }
+                    this.c.d(i7, i10);
                 }
-                org.telegram.messenger.ns.e().k(99, 512);
-                break;
-            default:
-                AnimatorSet animatorSet3 = kg0Var.s;
-                if (animatorSet3 != null && animatorSet3.equals(animator)) {
-                    kg0Var.s = null;
-                    org.telegram.messenger.g0.h3(new wa0(this, 11));
-                }
-                org.telegram.messenger.ns.e().k(99, 512);
-                break;
+            }
         }
+        y1Var = null;
+        this.n = y1Var;
+        if (y1Var != null) {
+            this.n = null;
+            this.c.d(i7, i10);
+        }
+        this.n = null;
+        this.c.d(i7, i10);
+    }
+
+    public void setBlurIntensity(float f10) {
+        this.f = f10;
+        this.c.b(f10);
+        invalidate();
+    }
+
+    public void setGooeyEnabled(boolean z10) {
+        if (this.h == z10) {
+            return;
+        }
+        this.h = z10;
+        invalidate();
+    }
+
+    public void setHideProgress(float f10) {
+        setPullProgress(f10);
+        setBlurIntensity(Math.min((c8.l9.a(f10, 0.2f, 0.7f) - 0.2f) / 0.5f, 0.75f));
+        setGooeyEnabled(f10 > 0.0f && f10 < 1.0f);
+        setVisibility(f10 >= 1.0f ? 8 : 0);
+    }
+
+    public void setIntensity(float f10) {
+        this.d = f10;
+        this.c.a(f10);
+        invalidate();
+    }
+
+    public void setPullProgress(float f10) {
+        this.e = f10;
+        invalidate();
     }
 }

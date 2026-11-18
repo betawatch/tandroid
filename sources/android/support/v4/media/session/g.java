@@ -10,7 +10,7 @@ import android.text.TextUtils;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends Binder implements b {
     public final WeakReference a;
@@ -21,12 +21,12 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void F(Bundle bundle) {
+    public final void E(Bundle bundle) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void M(List list) {
+    public final void L(List list) {
         throw new AssertionError();
     }
 
@@ -60,12 +60,17 @@ public final class g extends Binder implements b {
     }
 
     @Override // android.support.v4.media.session.b
-    public final void l0(CharSequence charSequence) {
+    public final void k0(CharSequence charSequence) {
         throw new AssertionError();
     }
 
     @Override // android.support.v4.media.session.b
-    public final void n0() {
+    public final void m0() {
+        throw new AssertionError();
+    }
+
+    @Override // android.support.v4.media.session.b
+    public final void o0(MediaMetadataCompat mediaMetadataCompat) {
         throw new AssertionError();
     }
 
@@ -89,22 +94,22 @@ public final class g extends Binder implements b {
                 }
                 return true;
             case 2:
-                n0();
+                m0();
                 return true;
             case 3:
                 e1((PlaybackStateCompat) j1.a(parcel, PlaybackStateCompat.CREATOR));
                 return true;
             case 4:
-                p0((MediaMetadataCompat) j1.a(parcel, MediaMetadataCompat.CREATOR));
+                o0((MediaMetadataCompat) j1.a(parcel, MediaMetadataCompat.CREATOR));
                 return true;
             case 5:
-                M(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
+                L(parcel.createTypedArrayList(MediaSessionCompat$QueueItem.CREATOR));
                 return true;
             case 6:
-                l0((CharSequence) j1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
+                k0((CharSequence) j1.a(parcel, TextUtils.CHAR_SEQUENCE_CREATOR));
                 return true;
             case 7:
-                F((Bundle) j1.a(parcel, Bundle.CREATOR));
+                E((Bundle) j1.a(parcel, Bundle.CREATOR));
                 return true;
             case 8:
                 g1((ParcelableVolumeInfo) j1.a(parcel, ParcelableVolumeInfo.CREATOR));
@@ -136,11 +141,6 @@ public final class g extends Binder implements b {
             default:
                 return super.onTransact(i7, parcel, parcel2, i10);
         }
-    }
-
-    @Override // android.support.v4.media.session.b
-    public final void p0(MediaMetadataCompat mediaMetadataCompat) {
-        throw new AssertionError();
     }
 
     @Override // android.os.IInterface

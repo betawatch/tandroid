@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.f;
 import gd.g;
 import gd.k;
@@ -17,7 +17,7 @@ import zd.b0;
 import zd.e0;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzn extends j implements p {
     int zza;
@@ -52,7 +52,7 @@ final class zzn extends j implements p {
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
         int i7 = this.zza;
-        b.c(obj);
+        h.b(obj);
         if (i7 == 0) {
             z zVar = (z) this.zzf;
             ArrayList arrayList = new ArrayList();

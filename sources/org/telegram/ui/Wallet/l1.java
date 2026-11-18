@@ -1,88 +1,87 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.z10;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.r60;
+import org.json.JSONArray;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.q10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l1 implements z10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ hi.d b;
-    public final /* synthetic */ hi.d c;
-    public final /* synthetic */ w2 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
-    public final /* synthetic */ z1 f;
+public final /* synthetic */ class l1 implements q10 {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ l2 b;
+    public final /* synthetic */ TL_wallet.tonConnectSession c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ byte[] e;
+    public final /* synthetic */ Object f;
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ l1(hi.d dVar, hi.d dVar2, d2 d2Var, z1 z1Var, w2 w2Var, org.telegram.ui.ActionBar.e6 e6Var, g gVar) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.g = d2Var;
-        this.f = z1Var;
-        this.d = w2Var;
-        this.e = e6Var;
-        this.h = gVar;
+    public /* synthetic */ l1(l2 l2Var, p51 p51Var, r0 r0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, g2 g2Var) {
+        this.b = l2Var;
+        this.f = p51Var;
+        this.g = r0Var;
+        this.c = tonconnectsession;
+        this.d = str;
+        this.e = bArr;
+        this.h = g2Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        int i7 = this.a;
+        l2 l2Var = this.b;
+        switch (i7) {
             case 0:
-                d2 d2Var = (d2) this.g;
-                g gVar = (g) this.h;
-                Boolean bool = (Boolean) obj;
-                hi.d dVar = this.b;
-                dVar.setEnabled(false);
-                hi.d dVar2 = this.c;
-                dVar2.setEnabled(false);
-                (bool.booleanValue() ? dVar2 : dVar).setLoading(true);
-                boolean booleanValue = bool.booleanValue();
-                w2 w2Var = this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = this.e;
-                z1 z1Var = this.f;
-                d2Var.f(z1Var, booleanValue, new r60(dVar, dVar2, w2Var, e6Var, gVar, z1Var, 3));
-                break;
-            default:
-                boolean[] zArr = (boolean[]) this.g;
-                boolean[] zArr2 = (boolean[]) this.h;
-                String str = (String) obj;
-                hi.d dVar3 = this.b;
-                boolean z10 = false;
-                dVar3.setLoading(false);
-                hi.d dVar4 = this.c;
-                dVar4.setLoading(false);
-                w2 w2Var2 = this.d;
-                if (str != null) {
-                    if (!zArr[0]) {
-                        cc.c0(str, w2Var2.F, this.e);
-                        z1 z1Var2 = this.f;
-                        dVar3.setEnabled(!z1Var2.n && zArr2[0]);
-                        if (!z1Var2.n && !z1Var2.o) {
-                            z10 = true;
-                        }
-                        dVar4.setEnabled(z10);
-                        break;
-                    } else {
-                        cc.b0(str);
-                        break;
-                    }
+                p51 p51Var = (p51) this.f;
+                r0 r0Var = (r0) this.g;
+                TL_wallet.tonConnectSession tonconnectsession = this.c;
+                String str = this.d;
+                byte[] bArr = this.e;
+                g2 g2Var = (g2) this.h;
+                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                l2Var.getClass();
+                if (tL_error == null && tonconnectchallenge != null) {
+                    Utilities.e.c(new di.j7(l2Var, r0Var, tonconnectsession, str, bArr, g2Var, tonconnectchallenge, p51Var, 7));
+                    break;
                 } else {
-                    w2Var2.dismiss();
+                    p51Var.a(l2.z(tL_error, "registerKey"));
                     break;
                 }
-                break;
+            default:
+                e0 e0Var = (e0) this.f;
+                TL_wallet.tonConnectSession tonconnectsession2 = this.c;
+                String str2 = this.d;
+                byte[] bArr2 = this.e;
+                JSONArray jSONArray = (JSONArray) this.g;
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) this.h;
+                r0 r0Var2 = (r0) obj;
+                String str3 = (String) obj2;
+                l2Var.getClass();
+                if (str3 == null && r0Var2 != null) {
+                    r0 b10 = r0Var2.b();
+                    Utilities.e.c(new di.j7(l2Var, b10, tonconnectsession2, str2, bArr2, jSONArray, tL_urlAuthResultRequest, new e0(5, b10, e0Var), 8));
+                    break;
+                } else {
+                    if (str3 == null) {
+                        str3 = "Recovery phrase is unavailable";
+                    }
+                    e0Var.a(null, str3);
+                    break;
+                }
         }
     }
 
-    public /* synthetic */ l1(hi.d dVar, hi.d dVar2, w2 w2Var, boolean[] zArr, org.telegram.ui.ActionBar.e6 e6Var, z1 z1Var, boolean[] zArr2) {
-        this.b = dVar;
-        this.c = dVar2;
-        this.d = w2Var;
-        this.g = zArr;
-        this.e = e6Var;
-        this.f = z1Var;
-        this.h = zArr2;
+    public /* synthetic */ l1(l2 l2Var, e0 e0Var, TL_wallet.tonConnectSession tonconnectsession, String str, byte[] bArr, JSONArray jSONArray, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest) {
+        this.b = l2Var;
+        this.f = e0Var;
+        this.c = tonconnectsession;
+        this.d = str;
+        this.e = bArr;
+        this.g = jSONArray;
+        this.h = tL_urlAuthResultRequest;
     }
 }

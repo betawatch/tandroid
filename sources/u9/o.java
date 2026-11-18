@@ -1,17 +1,18 @@
 package u9;
 
-import org.telegram.ui.Wallet.k8;
+import org.telegram.ui.wc1;
+import r0.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o implements ua.b {
-    public static final r2.j c = new r2.j(28);
+    public static final f1 c = new f1(29);
     public static final ab.m d = new ab.m(2);
     public ua.a a;
     public volatile ua.b b;
 
-    public o(r2.j jVar, ua.b bVar) {
-        this.a = jVar;
+    public o(f1 f1Var, ua.b bVar) {
+        this.a = f1Var;
         this.b = bVar;
     }
 
@@ -29,7 +30,7 @@ public final class o implements ua.b {
             if (bVar != mVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new k8(19, this.a, aVar);
+                this.a = new wc1(17, this.a, aVar);
                 bVar2 = null;
             }
         }

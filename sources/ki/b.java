@@ -4,17 +4,17 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ k b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1 c;
 
-    public /* synthetic */ b(k kVar, org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    public /* synthetic */ b(k kVar, org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         this.a = i7;
         this.b = kVar;
-        this.c = t1Var;
+        this.c = u1Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -23,16 +23,16 @@ public final /* synthetic */ class b implements RequestDelegate {
             case 0:
                 final int i7 = 1;
                 final k kVar = this.b;
-                final org.telegram.ui.ActionBar.t1 t1Var = this.c;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.c
+                final org.telegram.ui.ActionBar.u1 u1Var = this.c;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.c
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                k.B0(kVar, t1Var, tLObject, tL_error);
+                                k.B0(kVar, u1Var, tLObject, tL_error);
                                 break;
                             default:
-                                k.C0(kVar, t1Var, tLObject, tL_error);
+                                k.C0(kVar, u1Var, tLObject, tL_error);
                                 break;
                         }
                     }
@@ -41,16 +41,16 @@ public final /* synthetic */ class b implements RequestDelegate {
             default:
                 final int i10 = 0;
                 final k kVar2 = this.b;
-                final org.telegram.ui.ActionBar.t1 t1Var2 = this.c;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.c
+                final org.telegram.ui.ActionBar.u1 u1Var2 = this.c;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: ki.c
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                k.B0(kVar2, t1Var2, tLObject, tL_error);
+                                k.B0(kVar2, u1Var2, tLObject, tL_error);
                                 break;
                             default:
-                                k.C0(kVar2, t1Var2, tLObject, tL_error);
+                                k.C0(kVar2, u1Var2, tLObject, tL_error);
                                 break;
                         }
                     }

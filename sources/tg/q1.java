@@ -6,27 +6,27 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
-import fi.o8;
+import fi.l8;
 import j$.util.Objects;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.pi0;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.h60;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class q1 extends j {
     public float A0;
-    public nt0 r0;
-    public o8 s0;
-    public o8 t0;
+    public vt0 r0;
+    public l8 s0;
+    public l8 t0;
     public ch.g0 u0;
     public ch.g0 v0;
     public ch.p0 w0;
-    public u5 x0;
-    public u5 y0;
+    public c6 x0;
+    public c6 y0;
     public boolean z0;
 
     @Override // tg.j
@@ -38,7 +38,7 @@ public final class q1 extends j {
 
     @Override // tg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        nt0 nt0Var = this.r0;
+        vt0 vt0Var = this.r0;
         int padding = getPadding();
         float e10 = this.y0.e(false, 1.0f);
         if (e10 == 1.0f) {
@@ -47,15 +47,15 @@ public final class q1 extends j {
         canvas.save();
         float f10 = this.A0;
         canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
-        o8 o8Var = this.t0;
-        if (o8Var != null) {
-            o8Var.e = (int) ((1.0f - e10) * 255.0f);
-            o8Var.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
+        l8 l8Var = this.t0;
+        if (l8Var != null) {
+            l8Var.e = (int) ((1.0f - e10) * 255.0f);
+            l8Var.setBounds(padding, padding, ((int) vt0Var.a) - padding, ((int) vt0Var.b) - padding);
             this.t0.draw(canvas);
         }
-        o8 o8Var2 = this.s0;
-        o8Var2.e = (int) (e10 * 255.0f);
-        o8Var2.setBounds(padding, padding, ((int) nt0Var.a) - padding, ((int) nt0Var.b) - padding);
+        l8 l8Var2 = this.s0;
+        l8Var2.e = (int) (e10 * 255.0f);
+        l8Var2.setBounds(padding, padding, ((int) vt0Var.a) - padding, ((int) vt0Var.b) - padding);
         this.s0.draw(canvas);
         Rect rect = org.telegram.messenger.g0.Q;
         float width = (this.s0.getBounds().width() * 0.61f) / 2.0f;
@@ -103,23 +103,23 @@ public final class q1 extends j {
     }
 
     @Override // tg.j
-    public pi0 getSelectionBounds() {
+    public yi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new pi0();
+            return new yi0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f10 = scale / 2.0f;
         float f11 = scale * scaleX;
-        return new pi0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
+        return new yi0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
     }
 
     @Override // tg.j
     public final void k() {
-        nt0 nt0Var = this.r0;
-        float f10 = nt0Var.a / 2.0f;
-        float f11 = nt0Var.b / 2.0f;
+        vt0 vt0Var = this.r0;
+        float f10 = vt0Var.a / 2.0f;
+        float f11 = vt0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -141,17 +141,17 @@ public final class q1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        nt0 nt0Var = this.r0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) nt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) nt0Var.b, TLObject.FLAG_30));
+        vt0 vt0Var = this.r0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) vt0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) vt0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z10) {
         if (z10) {
             this.t0 = this.s0;
-            o8 o8Var = new o8(this);
-            this.s0 = o8Var;
+            l8 l8Var = new l8(this);
+            this.s0 = l8Var;
             if (this.t0.a != 1) {
-                o8Var.a();
+                l8Var.a();
             }
             this.s0.b(this.z0, false);
             this.s0.c(getScaleX());
@@ -171,9 +171,9 @@ public final class q1 extends j {
         }
         boolean[] zArr = {false};
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new ch.v(28, this, zArr));
-        ofFloat.addListener(new y50(20, this, zArr));
-        ofFloat.setInterpolator(er.g);
+        ofFloat.addUpdateListener(new ch.w(28, this, zArr));
+        ofFloat.addListener(new h60(20, this, zArr));
+        ofFloat.setInterpolator(lr.g);
         ofFloat.setDuration(350L);
         ofFloat.start();
     }

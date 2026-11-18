@@ -2,77 +2,77 @@ package zi;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
-    public final /* synthetic */ o c;
+    public final /* synthetic */ k b;
+    public final /* synthetic */ n c;
 
-    public /* synthetic */ d(l lVar, o oVar, int i7) {
+    public /* synthetic */ d(k kVar, n nVar, int i7) {
         this.a = i7;
-        this.b = lVar;
-        this.c = oVar;
+        this.b = kVar;
+        this.c = nVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        u uVar;
+        t tVar;
         switch (this.a) {
             case 0:
-                l lVar = this.b;
-                d dVar = new d(lVar, this.c, 3);
-                Handler handler = lVar.n;
+                k kVar = this.b;
+                d dVar = new d(kVar, this.c, 3);
+                Handler handler = kVar.n;
                 if (handler != null) {
                     handler.post(dVar);
                     return;
                 }
                 return;
             case 1:
-                l lVar2 = this.b;
-                d dVar2 = new d(lVar2, this.c, 2);
-                Handler handler2 = lVar2.n;
+                k kVar2 = this.b;
+                d dVar2 = new d(kVar2, this.c, 2);
+                Handler handler2 = kVar2.n;
                 if (handler2 != null) {
                     handler2.post(dVar2);
                     return;
                 }
                 return;
             case 2:
-                l lVar3 = this.b;
-                o oVar = this.c;
-                if (lVar3.U && !lVar3.Y && lVar3.w == oVar) {
-                    lVar3.j();
-                    if (lVar3.f0 == 0) {
-                        lVar3.f0 = oVar.e;
+                k kVar3 = this.b;
+                n nVar = this.c;
+                if (kVar3.U && !kVar3.Y && kVar3.w == nVar) {
+                    kVar3.j();
+                    if (kVar3.f0 == 0) {
+                        kVar3.f0 = nVar.e;
                     }
-                    lVar3.j.b("common A/V start completed: segmentElapsedMs=" + l.z(lVar3.C0));
-                    v0 v0Var = (v0) lVar3.k.a;
-                    v0Var.i.post(new j0(v0Var, 2));
+                    kVar3.j.b("common A/V start completed: segmentElapsedMs=" + k.z(kVar3.C0));
+                    u0 u0Var = (u0) kVar3.k.a;
+                    u0Var.i.post(new i0(u0Var, 2));
                     return;
                 }
                 return;
             default:
-                l lVar4 = this.b;
-                o oVar2 = this.c;
-                if (!lVar4.U || lVar4.Y || lVar4.w != oVar2 || lVar4.z == null || (uVar = lVar4.v) == null) {
+                k kVar4 = this.b;
+                n nVar2 = this.c;
+                if (!kVar4.U || kVar4.Y || kVar4.w != nVar2 || kVar4.z == null || (tVar = kVar4.v) == null) {
                     return;
                 }
                 try {
-                    long j3 = oVar2.F;
+                    long j3 = nVar2.F;
                     if (j3 <= 0) {
                         throw new IllegalArgumentException("Invalid recording time origin");
                     }
-                    uVar.p = j3;
-                    uVar.Q = -1L;
-                    uVar.R = 0L;
-                    uVar.S = -1L;
-                    uVar.q = Long.MAX_VALUE;
-                    uVar.t0 = true;
-                    lVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + l.z(lVar4.C0));
+                    tVar.p = j3;
+                    tVar.Q = -1L;
+                    tVar.R = 0L;
+                    tVar.S = -1L;
+                    tVar.q = Long.MAX_VALUE;
+                    tVar.t0 = true;
+                    kVar4.j.b("common A/V start armed; waiting for next camera frame: segmentElapsedMs=" + k.z(kVar4.C0));
                     return;
                 } catch (RuntimeException e10) {
-                    lVar4.j();
-                    lVar4.M(e10);
+                    kVar4.j();
+                    kVar4.M(e10);
                     return;
                 }
         }

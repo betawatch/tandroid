@@ -1,46 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.RectF;
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface q4 {
-    boolean a();
+public final class q4 {
+    public final h2 a;
+    public boolean b;
+    public boolean c;
+    public boolean d = true;
+    public boolean e;
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public boolean g;
 
-    boolean b(q0 q0Var, RectF rectF);
+    public q4(h2 h2Var) {
+        this.a = h2Var;
+    }
 
-    boolean d();
+    public final void a() {
+        this.c = true;
+    }
 
-    boolean e();
-
-    boolean f();
-
-    fh.g g(g5 g5Var);
-
-    int getButtonsGlassBackgroundColor();
-
-    gh.a getButtonsGlassColorProvider();
-
-    int getMenuDimAlpha();
-
-    int getMenuExtraBelow();
-
-    gh.a getMenuGlassColorProvider();
-
-    View getMenuHostView();
-
-    int getMenuMaxHeight();
-
-    e6 getMenuResourcesProvider();
-
-    int getMenuRise();
-
-    View getMenuView();
-
-    g5 getOpenMenuOverlay();
-
-    void h(g5 g5Var, q0 q0Var);
-
-    void setMenuGlassFrostedProgress(float f10);
+    public final void b(boolean z10) {
+        this.b = z10;
+    }
 }

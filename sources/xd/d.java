@@ -1,6 +1,6 @@
 package xd;
 
-import c8.rd;
+import c8.ud;
 
 /* loaded from: classes.dex */
 public abstract class d extends l {
@@ -74,7 +74,7 @@ public abstract class d extends l {
                 kotlin.jvm.internal.j.e(other, "other");
                 if (i12 >= 0 && string.length() - length4 >= 0 && i12 <= other.length() - length4) {
                     for (int i14 = 0; i14 < length4; i14++) {
-                        if (rd.a(string.charAt(i14), other.charAt(i12 + i14), z10)) {
+                        if (ud.a(string.charAt(i14), other.charAt(i12 + i14), z10)) {
                         }
                     }
                     return i12;
@@ -106,7 +106,7 @@ public abstract class d extends l {
         if (i7 > f10) {
             return -1;
         }
-        while (!rd.a(cArr[0], charSequence.charAt(i7), false)) {
+        while (!ud.a(cArr[0], charSequence.charAt(i7), false)) {
             if (i7 == f10) {
                 return -1;
             }

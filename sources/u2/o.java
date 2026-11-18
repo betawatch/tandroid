@@ -8,20 +8,20 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
-import c8.oc;
+import c8.rc;
 import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import h2.l0;
 import h9.f0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -235,7 +235,7 @@ public final class o {
                             }
                             i12 = c10 + 3;
                         }
-                        s1 f10 = p10.f();
+                        t1 f10 = p10.f();
                         int i13 = 0;
                         while (i13 < f10.d) {
                             if (((Integer) f10.get(i13)).intValue() + i10 < length) {
@@ -297,7 +297,7 @@ public final class o {
                             codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(1026, i15)};
                         } else {
                             i7 = 4;
-                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(ns.g4, i15), w.b(513, i15), w.b(514, i15), w.b(1026, i15), w.b(1028, i15)};
+                            codecProfileLevelArr = new MediaCodecInfo.CodecProfileLevel[]{w.b(ks.g4, i15), w.b(513, i15), w.b(514, i15), w.b(1026, i15), w.b(1028, i15)};
                         }
                     } else {
                         i7 = 4;
@@ -409,7 +409,7 @@ public final class o {
         }
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 29) {
-            int b10 = (i11 < 29 || ((bool = oc.a) != null && bool.booleanValue())) ? 0 : y.b(videoCapabilities, i7, i10, d);
+            int b10 = (i11 < 29 || ((bool = rc.a) != null && bool.booleanValue())) ? 0 : y.b(videoCapabilities, i7, i10, d);
             if (b10 != 2) {
                 if (b10 == 1) {
                     StringBuilder n10 = i5.c.n("sizeAndRate.cover, ", i7, "x", i10, "@");

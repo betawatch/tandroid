@@ -7,17 +7,16 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import org.telegram.messenger.i20;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.g71;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.k71;
 import tg.x1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b extends View {
-    public final g6 a;
+    public final m6 a;
     public float b;
     public ValueAnimator c;
     public int d;
@@ -26,15 +25,15 @@ public final class b extends View {
     public b(Context context) {
         super(context);
         this.b = 1.0f;
-        g6 g6Var = new g6(false, false, true);
-        this.a = g6Var;
-        g6Var.n(0.3f, 250L, er.h);
-        g6Var.setCallback(this);
-        g6Var.w(org.telegram.messenger.g0.L(11.5f));
-        g6Var.x(org.telegram.messenger.g0.o());
-        g6Var.u(-1);
-        g6Var.t("", true, true);
-        g6Var.b = 17;
+        m6 m6Var = new m6(false, false, true);
+        this.a = m6Var;
+        m6Var.n(0.3f, 250L, lr.h);
+        m6Var.setCallback(this);
+        m6Var.w(org.telegram.messenger.g0.L(11.5f));
+        m6Var.x(org.telegram.messenger.g0.o());
+        m6Var.u(-1);
+        m6Var.t("", true, true);
+        m6Var.b = 17;
         Paint paint = new Paint(1);
         this.e = paint;
         paint.setColor(-6915073);
@@ -42,15 +41,15 @@ public final class b extends View {
     }
 
     public final void a(int i7, boolean z10) {
-        if (!q.i()) {
+        if (!s.i()) {
             i7 = 0;
         }
         if (i7 > 0) {
             setVisibility(0);
         }
-        g6 g6Var = this.a;
+        m6 m6Var = this.a;
         if (z10) {
-            g6Var.a();
+            m6Var.a();
         }
         if (z10 && i7 != this.d && i7 > 0) {
             ValueAnimator valueAnimator = this.c;
@@ -61,15 +60,15 @@ public final class b extends View {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.c = ofFloat;
             ofFloat.addUpdateListener(new x1(this, 6));
-            this.c.addListener(new g71(this, 24));
-            i20.k(2.0f, this.c);
+            this.c.addListener(new k71(this, 24));
+            org.telegram.ui.Cells.c0.q(2.0f, this.c);
             this.c.setDuration(200L);
             this.c.start();
         }
         this.d = i7;
-        int length = g6Var.i.length();
-        g6Var.t("x" + i7, z10, true);
-        int length2 = g6Var.i.length();
+        int length = m6Var.i.length();
+        m6Var.t("x" + i7, z10, true);
+        int length2 = m6Var.i.length();
         invalidate();
         if (length != length2) {
             requestLayout();
@@ -83,8 +82,8 @@ public final class b extends View {
         canvas.translate(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
         Rect rect = org.telegram.messenger.g0.Q;
         int L = org.telegram.messenger.g0.L(8.0f);
-        g6 g6Var = this.a;
-        rect.set(0, 0, L + ((int) g6Var.c()), org.telegram.messenger.g0.L(20.0f));
+        m6 m6Var = this.a;
+        rect.set(0, 0, L + ((int) m6Var.c()), org.telegram.messenger.g0.L(20.0f));
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(rect);
         if (this.b != 1.0f) {
@@ -94,8 +93,8 @@ public final class b extends View {
         }
         canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.e);
         rect.set(0, 0, (int) rectF.width(), org.telegram.messenger.g0.L(19.0f));
-        g6Var.setBounds(rect);
-        g6Var.draw(canvas);
+        m6Var.setBounds(rect);
+        m6Var.draw(canvas);
         if (this.b != 1.0f) {
             canvas.restore();
         }

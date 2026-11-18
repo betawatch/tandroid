@@ -1,14 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a21 extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+public final /* synthetic */ class a21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.fj b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ String d;
+
+    public /* synthetic */ a21(org.telegram.messenger.fj fjVar, long j3, String str, int i7) {
+        this.a = i7;
+        this.b = fjVar;
+        this.c = j3;
+        this.d = str;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        String str = this.d;
+        long j3 = this.c;
+        org.telegram.messenger.fj fjVar = this.b;
+        switch (i7) {
+            case 0:
+                org.telegram.messenger.ks f10 = org.telegram.messenger.ks.f(fjVar.K1);
+                Long valueOf = Long.valueOf(j3);
+                Boolean bool = Boolean.TRUE;
+                f10.k(org.telegram.messenger.ks.A1, fjVar, valueOf, str, bool, bool);
+                break;
+            default:
+                g21.f(fjVar, j3, str);
+                break;
+        }
     }
 }

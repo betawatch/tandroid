@@ -8,11 +8,11 @@ import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
-import org.telegram.ui.ActionBar.y5;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
+import org.telegram.ui.ActionBar.b6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d1 extends TextView {
     public boolean a;
@@ -34,11 +34,11 @@ public final class d1 extends TextView {
         super.onDraw(canvas);
         canvas.restore();
         if (this.a) {
-            int y10 = i20.y(16.0f, getHeight(), 2);
-            if (hd.a0) {
-                this.b.setBounds(org.telegram.messenger.g0.L(7.0f), y10, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(16.0f) + y10);
+            int z10 = n10.z(16.0f, getHeight(), 2);
+            if (gd.a0) {
+                this.b.setBounds(org.telegram.messenger.g0.L(7.0f), z10, org.telegram.messenger.g0.L(23.0f), org.telegram.messenger.g0.L(16.0f) + z10);
             } else {
-                this.b.setBounds(getWidth() - org.telegram.messenger.g0.L(23.0f), y10, getWidth() - org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(16.0f) + y10);
+                this.b.setBounds(getWidth() - org.telegram.messenger.g0.L(23.0f), z10, getWidth() - org.telegram.messenger.g0.L(7.0f), org.telegram.messenger.g0.L(16.0f) + z10);
             }
             this.b.draw(canvas);
         }
@@ -47,11 +47,11 @@ public final class d1 extends TextView {
     public void setCurrent(boolean z10) {
         this.a = z10;
         if (z10) {
-            setPadding(org.telegram.messenger.g0.L(hd.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(hd.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
-            setBackground(y5.d(0, y5.b(1090519039), org.telegram.messenger.g0.L(32.0f)));
+            setPadding(org.telegram.messenger.g0.L(gd.a0 ? 27.0f : 12.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(gd.a0 ? 12.0f : 27.0f), org.telegram.messenger.g0.L(6.0f));
+            setBackground(b6.d(0, b6.b(1090519039), org.telegram.messenger.g0.L(32.0f)));
         } else {
             setPadding(org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(14.0f));
-            setBackground(y5.d(0, y5.b(-14145495), 0.0f));
+            setBackground(b6.d(0, b6.b(-14145495), 0.0f));
         }
         if (this.a && this.b == null) {
             Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);

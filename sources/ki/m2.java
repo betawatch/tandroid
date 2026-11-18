@@ -1,86 +1,46 @@
 package ki;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.KeyEvent;
-import org.telegram.ui.Components.k10;
-import org.telegram.ui.Components.tr0;
-import org.telegram.ui.Components.ys0;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.s4;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class m2 extends AnimatorListenerAdapter {
+public final /* synthetic */ class m2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ KeyEvent.Callback d;
+    public final /* synthetic */ o2 b;
 
-    public /* synthetic */ m2(KeyEvent.Callback callback, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = callback;
-        this.b = i7;
-        this.c = i10;
+    public /* synthetic */ m2(o2 o2Var, int i7) {
+        this.a = i7;
+        this.b = o2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i7;
-        v4.h0 adapter;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                x2 x2Var = (x2) this.d;
-                x2Var.T = i0.a.f(1.0f, this.b, this.c);
-                x2Var.l();
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                o2 o2Var = this.b;
+                t2 t2Var = o2Var.d;
+                toggleuseremojistatuspermission.bot = mp.u1(t2Var.I).q1(t2Var.J);
+                toggleuseremojistatuspermission.enabled = false;
+                ConnectionsManager.getInstance(t2Var.I).sendRequest(toggleuseremojistatuspermission, new n2(o2Var, 1));
                 break;
             case 1:
-                k10 k10Var = (k10) this.d;
-                k10Var.M = this.b;
-                k10Var.N = this.c;
-                k10Var.G.setColorFilter(new PorterDuffColorFilter(k10Var.M, PorterDuff.Mode.MULTIPLY));
-                k10Var.F.setColor(k10Var.M);
-                k10Var.r.setColor(k10Var.N);
-                k10Var.K.d(i0.a.o(k10Var.N, 38));
-                break;
-            case 2:
-                ys0 ys0Var = (ys0) this.d;
-                tr0[] tr0VarArr = ys0Var.n0;
-                ys0Var.M1.e();
-                ys0Var.r1 = false;
-                int[] iArr = ys0Var.p1;
-                int i10 = this.c;
-                int i11 = this.b;
-                iArr[i11] = i10;
-                for (int i12 = 0; i12 < tr0VarArr.length; i12++) {
-                    tr0 tr0Var = tr0VarArr[i12];
-                    if (tr0Var != null && tr0Var.h != null && (((i7 = tr0Var.F) == 0 || ys0.z0(i7)) && (adapter = tr0VarArr[i12].h.getAdapter()) != null)) {
-                        int b10 = adapter.b();
-                        if (i12 == 0) {
-                            ys0Var.w1[0].g(false);
-                        }
-                        tr0VarArr[i12].x.y1(iArr[i11]);
-                        tr0VarArr[i12].h.a0();
-                        if (adapter.b() == b10) {
-                            org.telegram.messenger.g0.a4(tr0VarArr[i12].h);
-                        } else {
-                            adapter.f();
-                        }
-                        tr0VarArr[i12].n.setVisibility(8);
-                    }
-                }
-                ys0Var.j1();
+                t2 t2Var2 = this.b.d;
+                s0.e(t2Var2.getContext(), t2Var2.I, t2Var2.J).l(false, null);
                 break;
             default:
-                org.telegram.ui.Components.voip.z zVar = (org.telegram.ui.Components.voip.z) this.d;
-                int i13 = this.b;
-                zVar.E0 = i13;
-                zVar.F0 = i13;
-                int i14 = this.c;
-                zVar.G0 = i14;
-                zVar.U.setColor(i14);
-                if (zVar.T > 0.0f) {
-                    zVar.invalidate();
+                t2 t2Var3 = this.b.d;
+                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                if (T != null && T.getParentLayout() != null) {
+                    s4 parentLayout = T.getParentLayout();
+                    T.presentFragment(ProfileActivity.D4(t2Var3.J));
+                    org.telegram.messenger.g0.j3(parentLayout, "botPermissionLocation");
+                    t2Var3.o(true);
                     break;
                 }
                 break;

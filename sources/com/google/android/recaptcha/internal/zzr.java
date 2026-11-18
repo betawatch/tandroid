@@ -1,7 +1,7 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
 import android.app.Application;
+import b7.h;
 import com.google.android.gms.common.api.i;
 import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.common.api.internal.u;
@@ -12,11 +12,12 @@ import gd.k;
 import id.c;
 import jd.a;
 import kd.j;
+import o8.b;
 import o8.f;
 import rd.p;
 import zd.e0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzr extends j implements p {
     int zza;
@@ -55,7 +56,7 @@ final class zzr extends j implements p {
         try {
             try {
                 if (i7 == 0) {
-                    b.c(obj);
+                    h.b(obj);
                     e0Var = this.zzb.zzc;
                     if (e0Var == null) {
                         e0Var = null;
@@ -67,8 +68,8 @@ final class zzr extends j implements p {
                     }
                 } else {
                     if (i7 != 1) {
-                        b.c(obj);
-                        str2 = ((o8.b) obj).a;
+                        h.b(obj);
+                        str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
                         }
@@ -80,7 +81,7 @@ final class zzr extends j implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new g((zzxx) zzf.zzk());
                     }
-                    b.c(obj);
+                    h.b(obj);
                 }
                 o8.a aVar2 = new o8.a();
                 zzu zzuVar = this.zzb;
@@ -92,7 +93,7 @@ final class zzr extends j implements p {
                 e eVar = new e(context, e.l, com.google.android.gms.common.api.b.j, i.c);
                 t b10 = u.b();
                 b10.d = new n6.c[]{f.a};
-                b10.c = new cb.c(aVar2, 16);
+                b10.c = new d6.i(aVar2, 12);
                 b10.a = 34002;
                 Task e10 = eVar.e(0, b10.a());
                 kotlin.jvm.internal.j.d(e10, "doRead(...)");
@@ -102,14 +103,14 @@ final class zzr extends j implements p {
                 if (obj == aVar) {
                     return aVar;
                 }
-                str2 = ((o8.b) obj).a;
+                str2 = ((b) obj).a;
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new g(b.b(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new g(h.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new g(b.b(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new g(h.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

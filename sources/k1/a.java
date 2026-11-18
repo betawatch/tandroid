@@ -6,38 +6,38 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 import r0.i0;
 import s0.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class a extends cf {
+public final class a extends b5 {
     public final /* synthetic */ b b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(15);
+        super(18);
         this.b = bVar;
     }
 
-    @Override // org.telegram.ui.Components.cf
-    public final c m(int i7) {
+    @Override // org.telegram.ui.Cells.b5
+    public final c t(int i7) {
         return new c(AccessibilityNodeInfo.obtain(this.b.j(i7).a));
     }
 
-    @Override // org.telegram.ui.Components.cf
-    public final c p(int i7) {
+    @Override // org.telegram.ui.Cells.b5
+    public final c w(int i7) {
         b bVar = this.b;
         int i10 = i7 == 2 ? bVar.k : bVar.l;
         if (i10 == Integer.MIN_VALUE) {
             return null;
         }
-        return m(i10);
+        return t(i10);
     }
 
-    @Override // org.telegram.ui.Components.cf
-    public final boolean r(int i7, int i10, Bundle bundle) {
+    @Override // org.telegram.ui.Cells.b5
+    public final boolean z(int i7, int i10, Bundle bundle) {
         int i11;
         int i12;
         b bVar = this.b;

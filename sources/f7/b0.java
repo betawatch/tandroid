@@ -2,10 +2,10 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b0 extends r6.a {
     public static final Parcelable.Creator<b0> CREATOR = new db.k(19);
@@ -15,12 +15,12 @@ public final class b0 extends r6.a {
     public final String d;
 
     public b0(String str, byte[] bArr, String str2, String str3) {
-        q6.m.g(bArr);
+        q6.m.h(bArr);
         this.a = q7.s0.o(bArr.length, bArr);
-        q6.m.g(str);
+        q6.m.h(str);
         this.b = str;
         this.c = str2;
-        q6.m.g(str3);
+        q6.m.h(str3);
         this.d = str3;
     }
 
@@ -29,7 +29,7 @@ public final class b0 extends r6.a {
             return false;
         }
         b0 b0Var = (b0) obj;
-        return q6.m.k(this.a, b0Var.a) && q6.m.k(this.b, b0Var.b) && q6.m.k(this.c, b0Var.c) && q6.m.k(this.d, b0Var.d);
+        return q6.m.l(this.a, b0Var.a) && q6.m.l(this.b, b0Var.b) && q6.m.l(this.c, b0Var.c) && q6.m.l(this.d, b0Var.d);
     }
 
     public final int hashCode() {
@@ -47,11 +47,11 @@ public final class b0 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.c(parcel, 2, this.a.p());
-        yb.l(parcel, 3, this.b);
-        yb.l(parcel, 4, this.c);
-        yb.l(parcel, 5, this.d);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.c(parcel, 2, this.a.p());
+        bc.l(parcel, 3, this.b);
+        bc.l(parcel, 4, this.c);
+        bc.l(parcel, 5, this.d);
+        bc.s(parcel, r10);
     }
 }

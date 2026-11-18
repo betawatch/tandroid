@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import c8.uc;
+import c8.xc;
 import com.google.android.gms.internal.vision.e2;
 import hd.f;
 import hd.h;
@@ -10,7 +10,7 @@ import ud.b;
 import ud.e;
 import xd.a;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzkp implements zzjt {
     public static final zzkp zza = new zzkp();
@@ -160,7 +160,7 @@ public final class zzkp implements zzjt {
             int length7 = bArr3.length;
             byte[] bArr4 = (byte[]) obj2;
             zzjs.zza(this, length7, bArr4.length);
-            e a10 = uc.a(0, length7);
+            e a10 = xc.a(0, length7);
             ArrayList arrayList11 = new ArrayList(h.d(a10, 10));
             Iterator it = a10.iterator();
             while (true) {
@@ -176,7 +176,7 @@ public final class zzkp implements zzjt {
             int length8 = sArr3.length;
             short[] sArr4 = (short[]) obj2;
             zzjs.zza(this, length8, sArr4.length);
-            e a11 = uc.a(0, length8);
+            e a11 = xc.a(0, length8);
             ArrayList arrayList12 = new ArrayList(h.d(a11, 10));
             Iterator it2 = a11.iterator();
             while (true) {
@@ -192,7 +192,7 @@ public final class zzkp implements zzjt {
             int length9 = iArr3.length;
             int[] iArr4 = (int[]) obj2;
             zzjs.zza(this, length9, iArr4.length);
-            e a12 = uc.a(0, length9);
+            e a12 = xc.a(0, length9);
             ArrayList arrayList13 = new ArrayList(h.d(a12, 10));
             Iterator it3 = a12.iterator();
             while (true) {
@@ -211,7 +211,7 @@ public final class zzkp implements zzjt {
             int length10 = jArr3.length;
             long[] jArr4 = (long[]) obj2;
             zzjs.zza(this, length10, jArr4.length);
-            e a13 = uc.a(0, length10);
+            e a13 = xc.a(0, length10);
             ArrayList arrayList14 = new ArrayList(h.d(a13, 10));
             Iterator it4 = a13.iterator();
             while (true) {

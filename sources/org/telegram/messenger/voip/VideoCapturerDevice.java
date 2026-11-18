@@ -8,12 +8,11 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.view.Display;
 import android.view.WindowManager;
-import bi.m1;
-import di.x2;
-import oi.u4;
+import bi.m2;
+import bi.y3;
+import oi.s2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.ui.Cells.y0;
 import org.webrtc.Camera1Enumerator;
 import org.webrtc.Camera2Enumerator;
 import org.webrtc.CameraEnumerator;
@@ -26,7 +25,7 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
@@ -44,7 +43,7 @@ public class VideoCapturerDevice {
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -58,14 +57,14 @@ public class VideoCapturerDevice {
 
         @Override // android.media.projection.MediaProjection.Callback
         public void onStop() {
-            org.telegram.messenger.g0.h3(new j(0));
+            org.telegram.messenger.g0.g3(new j(0));
         }
     }
 
     public VideoCapturerDevice(boolean z10) {
         Logging.enableLogToDebugOutput(Logging.Severity.LS_VERBOSE);
         Logging.d("VideoCapturerDevice", "device model = " + Build.MANUFACTURER + Build.MODEL);
-        org.telegram.messenger.g0.h3(new ai.q(15, this, z10));
+        org.telegram.messenger.g0.g3(new ch.k(14, this, z10));
     }
 
     public static void checkScreenCapturerSize() {
@@ -81,7 +80,7 @@ public class VideoCapturerDevice {
         }
         videoCapturerDevice.currentWidth = i10;
         videoCapturerDevice.currentHeight = screenCaptureSize.y;
-        videoCapturerDevice.handler.post(new u4(9, videoCapturerDevice, screenCaptureSize));
+        videoCapturerDevice.handler.post(new s2(12, videoCapturerDevice, screenCaptureSize));
     }
 
     public static EglBase getEglBase() {
@@ -115,7 +114,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j3, String str) {
-        org.telegram.messenger.g0.h3(new m1(this, j3, str, 15));
+        org.telegram.messenger.g0.g3(new m2(this, j3, str, 15));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -185,11 +184,11 @@ public class VideoCapturerDevice {
                 if (this.videoCapturer == null) {
                     this.videoCapturer = camera2Enumerator.createCapturer(str2, new 2());
                     this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
-                    this.handler.post(new x2(this, j3, 17));
+                    this.handler.post(new y3(this, j3, 18));
                     return;
                 } else {
                     a8.b("VideoCapturerDevice init(" + j3 + "): videoCapturer.switchCamera CAMERA");
-                    this.handler.post(new u4(10, this, str2));
+                    this.handler.post(new s2(13, this, str2));
                     return;
                 }
             }
@@ -199,7 +198,7 @@ public class VideoCapturerDevice {
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new m1(this, j3, screenCaptureSize, 16));
+                this.handler.post(new m2(this, j3, screenCaptureSize, 16));
             }
         }
     }
@@ -271,7 +270,7 @@ public class VideoCapturerDevice {
             sb2.append(j3);
             sb2.append(", ");
             sb2.append(i7);
-            y0.t("): videoCapturer.startCapture", sb2);
+            p5.c.s("): videoCapturer.startCapture", sb2);
             this.videoCapturer.startCapture(CAPTURE_WIDTH, CAPTURE_HEIGHT, 30);
             return;
         }
@@ -294,14 +293,14 @@ public class VideoCapturerDevice {
     private static native CapturerObserver nativeGetJavaVideoCapturerObserver(long j3);
 
     private void onDestroy() {
-        i5.c.t(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
+        i5.c.v(this.nativePtr, new StringBuilder("VideoCapturerDevice onDestroy ptr="));
         this.nativePtr = 0L;
-        org.telegram.messenger.g0.h3(new i(this, 1));
+        org.telegram.messenger.g0.g3(new i(this, 1));
     }
 
     private void onStateChanged(long j3, int i7) {
         a8.b("VideoCapturerDevice onStateChanged(" + j3 + ", " + i7 + ")");
-        org.telegram.messenger.g0.h3(new h(this, j3, i7));
+        org.telegram.messenger.g0.g3(new h(this, j3, i7));
     }
 
     private static Point getScreenCaptureSize(int i7) {
@@ -355,7 +354,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -369,7 +368,7 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onFirstFrameAvailable() {
-            org.telegram.messenger.g0.h3(new j(1));
+            org.telegram.messenger.g0.g3(new j(1));
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -393,7 +392,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }
@@ -407,7 +406,7 @@ public class VideoCapturerDevice {
 
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
         public void onCameraSwitchDone(final boolean z10) {
-            org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.messenger.voip.k
+            org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.messenger.voip.k
                 @Override // java.lang.Runnable
                 public final void run() {
                     VideoCapturerDevice.3.lambda$onCameraSwitchDone$0(z10);

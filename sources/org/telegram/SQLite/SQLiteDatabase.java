@@ -1,11 +1,11 @@
 package org.telegram.SQLite;
 
 import org.telegram.messenger.a8;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
-import r.b;
+import p5.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class SQLiteDatabase {
     private boolean inTransaction;
@@ -18,7 +18,7 @@ public class SQLiteDatabase {
 
     public void beginTransaction() {
         if (this.inTransaction) {
-            boolean z10 = r2.a;
+            boolean z10 = s2.a;
             commitTransaction();
         }
         this.inTransaction = true;
@@ -39,7 +39,7 @@ public class SQLiteDatabase {
                 commitTransaction();
                 closedb(this.sqliteHandle);
             } catch (SQLiteException e10) {
-                if (r2.a) {
+                if (s2.a) {
                     a8.e(e10.getMessage(), e10);
                 }
             }
@@ -78,7 +78,7 @@ public class SQLiteDatabase {
 
     public void explainQuery(String str, Object... objArr) {
         checkOpened();
-        SQLiteCursor query = new SQLitePreparedStatement(this, b.k("EXPLAIN QUERY PLAN ", str)).query(objArr);
+        SQLiteCursor query = new SQLitePreparedStatement(this, c.k("EXPLAIN QUERY PLAN ", str)).query(objArr);
         while (query.next()) {
             int columnCount = query.getColumnCount();
             StringBuilder sb2 = new StringBuilder();

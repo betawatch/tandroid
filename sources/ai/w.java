@@ -8,7 +8,7 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class w {
     public final z a;
@@ -34,7 +34,7 @@ public final class w {
         this.d = r1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00db  */
     /* JADX WARN: Removed duplicated region for block: B:44:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -57,15 +57,15 @@ public final class w {
                         if (hashCode != -1354815177) {
                             if (hashCode == -792934015 && optString.equals("partial")) {
                                 StringBuilder sb2 = new StringBuilder();
-                                this.j = DictationAsr.h(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("open"), null);
+                                this.j = DictationAsr.g(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
+                                DictationAsr.m(sb2, jSONObject.optJSONArray("open"), null);
                                 this.i = sb2.length();
-                                DictationAsr.n(sb2, jSONObject.optJSONArray("tail"), null);
+                                DictationAsr.m(sb2, jSONObject.optJSONArray("tail"), null);
                                 this.h = sb2.toString();
                                 i7 = 1;
                             }
                         } else if (optString.equals("commit")) {
-                            DictationAsr.n(this.e, jSONObject.optJSONArray("words"), this.f);
+                            DictationAsr.m(this.e, jSONObject.optJSONArray("words"), this.f);
                             i7 = 1;
                         }
                     } else if (optString.equals("language")) {
@@ -79,7 +79,7 @@ public final class w {
                 } catch (Exception e10) {
                     e = e10;
                     i10 = i7;
-                    Log.e("Dictation", "tinyasr: events ".concat(str), e);
+                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
                     i7 = i10;
                     if (i7 == 0) {
                     }
@@ -104,6 +104,6 @@ public final class w {
         for (int i10 = 0; i10 < size; i10++) {
             iArr[i10] = ((Integer) arrayList.get(i10)).intValue();
         }
-        org.telegram.messenger.g0.h3(new v(this, iArr, sb2, str, z10, i7, runnable));
+        org.telegram.messenger.g0.g3(new v(this, iArr, sb2, str, z10, i7, runnable));
     }
 }

@@ -9,11 +9,11 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class v7 {
     public static b9.k0 a(Context context, GoogleSignInOptions googleSignInOptions) {
-        q6.m.g(googleSignInOptions);
+        q6.m.h(googleSignInOptions);
         return new b9.k0(context, z5.a.a, googleSignInOptions, new com.google.android.gms.common.api.i(new w7.s(6), Looper.getMainLooper()));
     }
 
@@ -37,6 +37,6 @@ public abstract class v7 {
             }
         }
         Status status3 = bVar.a;
-        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(q6.m.l(status3)) : Tasks.forResult(googleSignInAccount);
+        return (!status3.b() || (googleSignInAccount = bVar.b) == null) ? Tasks.forException(q6.m.m(status3)) : Tasks.forResult(googleSignInAccount);
     }
 }

@@ -1,506 +1,407 @@
 package ug;
 
-import android.content.SharedPreferences;
-import android.graphics.Point;
-import android.graphics.SurfaceTexture;
-import android.opengl.EGL14;
-import android.opengl.EGLDisplay;
-import android.opengl.EGLSurface;
-import android.os.Bundle;
-import android.os.Process;
-import android.os.StrictMode;
-import android.text.TextUtils;
-import android.util.Base64;
-import android.util.LongSparseArray;
-import android.widget.ImageView;
-import android.widget.TextView;
-import di.q9;
-import java.io.File;
-import java.io.InputStream;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.concurrent.Callable;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.w7;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.vf0;
-import org.telegram.ui.Components.xb;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.y10;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public class t1 {
+    public boolean B;
+    public Matrix[] C;
+    public float[][] D;
+    public int[] E;
+    public float[] F;
+    public boolean G;
+    public boolean N;
+    public i6 P;
+    public long R;
+    public long S;
+    public boolean g;
+    public boolean h;
+    public y10 l;
+    public boolean m;
+    public final int p;
+    public boolean q;
+    public int z;
+    public final RectF a = new RectF();
+    public final RectF b = new RectF();
+    public final RectF c = new RectF();
+    public Bitmap[] d = new Bitmap[3];
+    public boolean[] e = new boolean[3];
+    public boolean[] f = new boolean[3];
+    public final Paint i = new Paint();
+    public float j = 0.0f;
+    public float k = 0.0f;
+    public final ArrayList n = new ArrayList();
+    public float o = 1.0f;
+    public int r = 14;
+    public int s = 12;
+    public int t = 10;
+    public float u = 0.85f;
+    public float v = 0.85f;
+    public float w = 0.9f;
+    public long x = 2000;
+    public int y = 1000;
+    public final float A = 1000.0f / org.telegram.messenger.g0.r;
+    public boolean H = false;
+    public boolean I = true;
+    public boolean J = true;
+    public boolean K = false;
+    public boolean L = false;
+    public boolean M = true;
+    public int O = -1;
+    public int Q = n6.Lk;
+    public int T = 0;
 
-    public /* synthetic */ t1(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+    public t1(int i7) {
+        this.p = i7;
+        this.B = i7 < 50;
     }
 
-    private final void a() {
-        int i7;
-        yi.j jVar = (yi.j) this.b;
-        File file = (File) this.c;
-        synchronized (jVar.m) {
-            while (i7 < jVar.m.size()) {
-                try {
-                    File file2 = (File) jVar.m.get(i7);
-                    i7 = (file != null && file.equals(file2)) ? i7 + 1 : 0;
-                    if (file2.exists() && !file2.delete()) {
-                        jVar.h.b("temporary file deletion failed: " + file2.getName());
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-            jVar.m.clear();
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:181:?, code lost:
-    
-        return;
-     */
-    @Override // java.lang.Runnable
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0290  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x030d  */
+    /* JADX WARN: Removed duplicated region for block: B:124:0x0334 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x02eb  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        TLObject e22;
-        TLObject e23;
-        SurfaceTexture surfaceTexture;
-        boolean z10;
-        TLRPC.Document document;
-        TLRPC.Document document2;
-        int i7 = 3;
-        int i10 = 0;
-        switch (this.a) {
-            case 0:
-                w1 w1Var = (w1) this.b;
-                w1Var.e = (File) this.c;
-                w1Var.a();
-                return;
-            case 1:
-                v9.a aVar = (v9.a) this.b;
-                Runnable runnable = (Runnable) this.c;
-                Process.setThreadPriority(aVar.c);
-                StrictMode.ThreadPolicy threadPolicy = aVar.d;
-                if (threadPolicy != null) {
-                    StrictMode.setThreadPolicy(threadPolicy);
-                }
-                runnable.run();
-                return;
-            case 2:
-                Callable callable = (Callable) this.b;
-                v9.h hVar = (v9.h) ((cf) this.c).a;
-                try {
-                    hVar.k(callable.call());
-                    return;
-                } catch (Exception e10) {
-                    hVar.l(e10);
-                    return;
-                }
-            case 3:
-                ((vg.e) this.b).c((ArrayList) this.c);
-                return;
-            case 4:
-                vg.p pVar = (vg.p) this.b;
-                vg.r rVar = (vg.r) this.c;
-                pVar.getClass();
-                try {
-                    EGLDisplay eGLDisplay = pVar.j;
-                    if (eGLDisplay != EGL14.EGL_NO_DISPLAY) {
-                        EGLSurface eGLSurface = pVar.l;
-                        EGL14.eglMakeCurrent(eGLDisplay, eGLSurface, eGLSurface, pVar.k);
-                        EGLSurface eGLSurface2 = rVar.h;
-                        if (eGLSurface2 != EGL14.EGL_NO_SURFACE) {
-                            EGL14.eglDestroySurface(pVar.j, eGLSurface2);
-                        }
-                        rVar.h = EGL14.EGL_NO_SURFACE;
-                        if (pVar.g.length == 0) {
-                            pVar.b();
-                        }
+    public final void a() {
+        int i7;
+        int L;
+        int i10 = 6;
+        int i11 = 3;
+        if (this.O == 43) {
+            if (this.d.length != 6) {
+                this.d = new Bitmap[6];
+            }
+            if (this.e.length != 6) {
+                this.e = new boolean[6];
+            }
+            if (this.f.length != 6) {
+                this.f = new boolean[6];
+            }
+            i7 = 6;
+        } else {
+            i7 = 3;
+        }
+        int i12 = 0;
+        while (i12 < i7) {
+            float f10 = this.u;
+            if (i12 == 0) {
+                L = org.telegram.messenger.g0.L(this.r);
+            } else if (i12 == 1) {
+                f10 = this.v;
+                L = org.telegram.messenger.g0.L(this.s);
+            } else {
+                f10 = this.w;
+                L = org.telegram.messenger.g0.L(this.t);
+            }
+            int i13 = this.O;
+            if (i13 == 9) {
+                this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_folder : i12 == 1 ? R.raw.premium_object_bubble : R.raw.premium_object_settings, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                this.e[i12] = true;
+            } else {
+                int i14 = R.raw.premium_object_star2;
+                if (i13 == 27) {
+                    if (i12 == 0) {
+                        i14 = R.raw.filled_messages_paid;
+                    } else if (i12 == 1) {
+                        i14 = R.raw.filled_crown_on;
                     }
-                    rVar.b.release();
-                    return;
-                } finally {
-                    rVar.b.release();
-                }
-            case 5:
-                ((wg.r0) this.b).a((ArrayList) this.c);
-                return;
-            case 6:
-                ((wg.t) this.b).a((TLRPC.TL_error) this.c);
-                return;
-            case 7:
-                vr vrVar = (vr) this.b;
-                z10 z10Var = (z10) this.c;
-                HashMap h02 = vrVar.h0();
-                if (h02.isEmpty()) {
-                    return;
-                }
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Components.w1(z10Var, h02, 1));
-                return;
-            case 8:
-                ((gh) this.b).a((ArrayList) this.c);
-                return;
-            case 9:
-                xb I = cc.a0((an) this.b).I(R.raw.stars_send, hd.M0(2131745092, null), org.telegram.messenger.g0.X2(hd.H(',', "StarsGiveawaySentPopupInfo", (int) ((TL_stars.TL_starsGiveawayOption) this.c).stars)));
-                I.j = 5000;
-                I.k(true);
-                return;
-            case 10:
-                ns.f(m10.t0).k(ns.V2, ((wg.y) this.b).X1, Boolean.TRUE, (TL_stories.PrepaidGiveaway) this.c);
-                return;
-            case 11:
-                wg.c1 c1Var = (wg.c1) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                ArrayList arrayList = c1Var.g2;
-                arrayList.clear();
-                c1Var.t2 = -1;
-                if (tLObject instanceof TLRPC.TL_contacts_found) {
-                    TLRPC.TL_contacts_found tL_contacts_found = (TLRPC.TL_contacts_found) tLObject;
-                    np s12 = np.s1(c1Var.a);
-                    s12.Y3(tL_contacts_found.users, false);
-                    s12.S3(tL_contacts_found.chats, false);
-                    HashSet hashSet = new HashSet();
-                    ArrayList<TLRPC.Peer> arrayList2 = tL_contacts_found.my_results;
-                    int size = arrayList2.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        TLRPC.Peer peer = arrayList2.get(i11);
-                        i11++;
-                        long o4 = m5.o(peer);
-                        if (!hashSet.contains(Long.valueOf(o4)) && (e23 = s12.e2(o4)) != null) {
-                            arrayList.add(e23);
-                            hashSet.add(Long.valueOf(o4));
-                        }
-                    }
-                    ArrayList<TLRPC.Peer> arrayList3 = tL_contacts_found.results;
-                    int size2 = arrayList3.size();
-                    while (i10 < size2) {
-                        TLRPC.Peer peer2 = arrayList3.get(i10);
-                        i10++;
-                        long o10 = m5.o(peer2);
-                        if (!hashSet.contains(Long.valueOf(o10)) && (e22 = s12.e2(o10)) != null) {
-                            arrayList.add(e22);
-                            hashSet.add(Long.valueOf(o10));
-                        }
-                    }
-                }
-                c1Var.p1(true, true);
-                return;
-            case 12:
-                wh.i iVar = (wh.i) this.b;
-                iVar.b.add((String) this.c);
-                iVar.invalidate();
-                return;
-            case 13:
-                wi.h hVar2 = (wi.h) this.b;
-                wi.o oVar = (wi.o) this.c;
-                wi.l lVar = hVar2.b;
-                if (hVar2.j != oVar) {
-                    return;
-                }
-                ImageView imageView = hVar2.l;
-                if (imageView != null && imageView.getVisibility() == 0) {
-                    oVar.setFirstFrameCallback(new wi.b(hVar2, i7));
-                }
-                if (lVar.P()) {
-                    lVar.f();
-                    return;
+                    this.d[i12] = mz.d(i14, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                    this.e[i12] = true;
                 } else {
-                    if (lVar.h()) {
-                        return;
-                    }
-                    lVar.c(lVar.l());
-                    return;
-                }
-            case 14:
-                wi.h hVar3 = (wi.h) this.b;
-                z10 z10Var2 = (z10) this.c;
-                hVar3.l();
-                wi.o oVar2 = hVar3.j;
-                hVar3.j = null;
-                if (oVar2 != null) {
-                    org.telegram.messenger.g0.E2(oVar2);
-                    SurfaceTexture surfaceTexture2 = oVar2.a;
-                    oVar2.a = null;
-                    surfaceTexture = surfaceTexture2;
-                } else {
-                    surfaceTexture = null;
-                }
-                z10Var2.a(surfaceTexture);
-                return;
-            case 15:
-                wi.o oVar3 = (wi.o) this.b;
-                SurfaceTexture surfaceTexture3 = (SurfaceTexture) this.c;
-                if (oVar3.a == surfaceTexture3 && oVar3.getSurfaceTexture() == null) {
-                    oVar3.setSurfaceTexture(surfaceTexture3);
-                    return;
-                }
-                return;
-            case 16:
-                ((h2.j) this.b).accept(this.c);
-                return;
-            case 17:
-                ((x2.v0) this.b).C((f3.b0) this.c);
-                return;
-            case 18:
-                xi.i iVar2 = (xi.i) this.b;
-                xi.h hVar4 = (xi.h) this.c;
-                byte[] bArr = new byte[65536];
-                try {
-                    InputStream inputStream = hVar4.b.getInputStream();
-                    while (true) {
-                        synchronized (iVar2.a) {
-                            while (!iVar2.u && iVar2.m.get(Integer.valueOf(hVar4.a)) == hVar4 && (!iVar2.t || !hVar4.e || hVar4.c == 0)) {
-                                try {
-                                    iVar2.a.wait();
-                                } finally {
-                                }
+                    int i15 = R.raw.premium_object_like;
+                    if (i13 == 11 || i13 == 4) {
+                        if (i12 == 0) {
+                            i15 = R.raw.premium_object_smile1;
+                        } else if (i12 == 1) {
+                            i15 = R.raw.premium_object_smile2;
+                        }
+                        this.d[i12] = mz.d(i15, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                        this.e[i12] = true;
+                    } else {
+                        int i16 = R.raw.premium_object_user;
+                        if (i13 == 22) {
+                            if (i12 != 0) {
+                                i16 = i12 == 1 ? R.raw.cache_photos : R.raw.cache_profile_photos;
                             }
-                            if (!iVar2.u && iVar2.m.get(Integer.valueOf(hVar4.a)) == hVar4) {
-                                int read = inputStream.read(bArr, 0, (int) Math.min(65536L, hVar4.c));
-                                if (read < 0) {
-                                    z10 = true;
-                                    try {
-                                        iVar2.e(hVar4, true);
-                                        return;
-                                    } catch (Exception unused) {
-                                        iVar2.e(hVar4, z10);
-                                        return;
+                            this.d[i12] = mz.d(i16, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == i11) {
+                            if (i12 == 0) {
+                                i15 = R.raw.premium_object_adsbubble;
+                            } else if (i12 != 1) {
+                                i15 = R.raw.premium_object_noads;
+                            }
+                            this.d[i12] = mz.d(i15, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 7) {
+                            if (i12 == 0) {
+                                i16 = R.raw.premium_object_video2;
+                            } else if (i12 == 1) {
+                                i16 = R.raw.premium_object_video;
+                            }
+                            this.d[i12] = mz.d(i16, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 43) {
+                            this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_list : i12 == 1 ? R.raw.premium_object_math : i12 == 2 ? R.raw.premium_object_table : i12 == i11 ? R.raw.premium_object_superscript : i12 == 4 ? R.raw.premium_object_bold : R.raw.premium_object_code, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 1001) {
+                            this.d[i12] = mz.d(R.raw.premium_object_fire, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 1002) {
+                            this.d[i12] = mz.d(R.raw.premium_object_star2, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 24) {
+                            this.d[i12] = mz.d(i12 == 0 ? R.raw.premium_object_tag : i12 == 1 ? R.raw.premium_object_check : R.raw.premium_object_star, L, L, i0.a.o(n6.w0(this.Q, this.P), 30));
+                            this.e[i12] = true;
+                        } else if (i13 == 28) {
+                            if (i12 == 0) {
+                                this.d[i12] = mz.d(R.raw.filled_premium_dollar, L, L, i0.a.o(n6.w0(this.Q, this.P), ks.e4));
+                                this.f[i12] = true;
+                            }
+                            Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
+                            this.d[i12] = createBitmap;
+                            Canvas canvas = new Canvas(createBitmap);
+                            if (this.O == i10 || !(i12 == 1 || i12 == 2)) {
+                                Path path = new Path();
+                                float f11 = L >> 1;
+                                int i17 = (int) (f10 * f11);
+                                path.moveTo(0.0f, f11);
+                                float f12 = i17;
+                                path.lineTo(f12, f12);
+                                path.lineTo(f11, 0.0f);
+                                float f13 = L - i17;
+                                path.lineTo(f13, f12);
+                                float f14 = L;
+                                path.lineTo(f14, f11);
+                                path.lineTo(f13, f13);
+                                path.lineTo(f11, f14);
+                                path.lineTo(f12, f13);
+                                path.lineTo(0.0f, f11);
+                                path.close();
+                                Paint paint = new Paint();
+                                if (this.q) {
+                                    paint.setColor(b());
+                                    if (this.M) {
+                                        paint.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.N(this.r / 5.0f)));
                                     }
-                                }
-                                if (read != 0) {
-                                    byte[] bArr2 = new byte[read];
-                                    System.arraycopy(bArr, 0, bArr2, 0, read);
-                                    synchronized (iVar2.a) {
-                                        try {
-                                            if (!iVar2.u && iVar2.m.get(Integer.valueOf(hVar4.a)) == hVar4 && iVar2.t) {
-                                                hVar4.c -= read;
-                                                iVar2.n(2, hVar4.a, bArr2);
-                                            }
-                                        } finally {
-                                        }
+                                    canvas.drawPath(path, paint);
+                                } else {
+                                    if (L >= org.telegram.messenger.g0.L(10.0f)) {
+                                        ia.e.d().f(L * (-2), 0.0f, L, L);
+                                    } else {
+                                        ia.e.d().f(L * (-4), 0.0f, L, L);
                                     }
+                                    Paint e10 = ia.e.d().e();
+                                    if (this.M) {
+                                        e10.setPathEffect(new CornerPathEffect(org.telegram.messenger.g0.N(this.r / 5.0f)));
+                                    }
+                                    if (this.L) {
+                                        e10.setAlpha(ks.e4);
+                                    } else if (this.K) {
+                                        e10.setAlpha(60);
+                                    } else {
+                                        e10.setAlpha(120);
+                                    }
+                                    canvas.drawPath(path, e10);
+                                    e10.setPathEffect(null);
+                                    e10.setAlpha(ks.e4);
                                 }
+                                if (!this.K) {
+                                    Utilities.stackBlurBitmap(createBitmap, 2);
+                                }
+                            } else {
+                                Drawable drawable = org.telegram.messenger.t0.b.getDrawable(R.drawable.msg_premium_liststar);
+                                drawable.setColorFilter(new PorterDuffColorFilter(n6.w0(this.Q, this.P), PorterDuff.Mode.MULTIPLY));
+                                drawable.setBounds(0, 0, L, L);
+                                drawable.draw(canvas);
+                            }
+                        } else {
+                            if (i13 == 105 && i12 == 0) {
+                                this.d[i12] = mz.d(R.raw.premium_object_star2, L, L, b());
+                            }
+                            Bitmap createBitmap2 = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
+                            this.d[i12] = createBitmap2;
+                            Canvas canvas2 = new Canvas(createBitmap2);
+                            if (this.O == i10) {
+                            }
+                            Path path2 = new Path();
+                            float f112 = L >> 1;
+                            int i172 = (int) (f10 * f112);
+                            path2.moveTo(0.0f, f112);
+                            float f122 = i172;
+                            path2.lineTo(f122, f122);
+                            path2.lineTo(f112, 0.0f);
+                            float f132 = L - i172;
+                            path2.lineTo(f132, f122);
+                            float f142 = L;
+                            path2.lineTo(f142, f112);
+                            path2.lineTo(f132, f132);
+                            path2.lineTo(f112, f142);
+                            path2.lineTo(f122, f132);
+                            path2.lineTo(0.0f, f112);
+                            path2.close();
+                            Paint paint2 = new Paint();
+                            if (this.q) {
+                            }
+                            if (!this.K) {
                             }
                         }
                     }
-                    return;
-                } catch (Exception unused2) {
-                    z10 = true;
                 }
-                break;
-            case 19:
-                xi.i iVar3 = (xi.i) this.b;
-                try {
-                    byte[] decode = Base64.decode(((String) this.c).substring(14), 2);
-                    if (decode.length >= 8 && decode.length <= 1048584) {
-                        iVar3.m(decode);
-                        return;
-                    }
-                    iVar3.h();
-                    return;
-                } catch (IllegalArgumentException e11) {
-                    a8.g(e11, true);
-                    iVar3.h();
-                    return;
+            }
+            i12++;
+            i10 = 6;
+            i11 = 3;
+        }
+    }
+
+    public int b() {
+        return this.O == 100 ? i0.a.o(n6.w0(this.Q, this.P), ks.e3) : n6.w0(this.Q, this.P);
+    }
+
+    public final void c() {
+        a();
+        boolean z10 = this.G;
+        int i7 = this.p;
+        if (z10) {
+            int length = this.d.length;
+            this.C = new Matrix[length];
+            this.D = new float[length][];
+            this.E = new int[length];
+            this.F = new float[length];
+            for (int i10 = 0; i10 < length; i10++) {
+                this.C[i10] = new Matrix();
+                this.D[i10] = new float[i7 * 2];
+            }
+        }
+        ArrayList arrayList = this.n;
+        if (arrayList.isEmpty()) {
+            for (int i11 = 0; i11 < i7; i11++) {
+                arrayList.add(new s1(this));
+            }
+        }
+    }
+
+    public final void d(Canvas canvas) {
+        e(canvas, 1.0f);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:48:0x001a, code lost:
+    
+        if (r5 > 50) goto L4;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void e(Canvas canvas, float f10) {
+        int i7;
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.S;
+        long j10 = j3 >= 4 ? 50L : 4L;
+        j3 = j10;
+        boolean z10 = this.G;
+        ArrayList arrayList = this.n;
+        if (z10) {
+            RectF rectF = this.a;
+            float centerX = rectF.centerX() + 0.0f;
+            float centerY = rectF.centerY() + this.k;
+            int i10 = 0;
+            while (true) {
+                Matrix[] matrixArr = this.C;
+                if (i10 >= matrixArr.length) {
+                    break;
                 }
-            case 20:
-                ((xi.i) this.b).m((byte[]) this.c);
-                return;
-            case 21:
-                yf.c cVar = (yf.c) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                if (tLObject2 != null) {
-                    if (tLObject2 instanceof TL_account.TL_savedRingtonesNotModified) {
-                        cVar.f(true);
-                    } else if (tLObject2 instanceof TL_account.TL_savedRingtones) {
-                        TL_account.TL_savedRingtones tL_savedRingtones = (TL_account.TL_savedRingtones) tLObject2;
-                        ArrayList<TLRPC.Document> arrayList4 = tL_savedRingtones.ringtones;
-                        ArrayList arrayList5 = cVar.e;
-                        if (!cVar.f) {
-                            cVar.f(false);
-                            cVar.f = true;
-                        }
-                        HashMap hashMap = new HashMap();
-                        int size3 = arrayList5.size();
-                        int i12 = 0;
-                        while (i12 < size3) {
-                            Object obj = arrayList5.get(i12);
-                            i12++;
-                            yf.b bVar = (yf.b) obj;
-                            if (bVar.b != null && (document = bVar.a) != null) {
-                                hashMap.put(Long.valueOf(document.id), bVar.b);
-                            }
-                        }
-                        arrayList5.clear();
-                        SharedPreferences d = cVar.d();
-                        d.edit().clear().apply();
-                        SharedPreferences.Editor edit = d.edit();
-                        edit.putInt("count", arrayList4.size());
-                        for (int i13 = 0; i13 < arrayList4.size(); i13++) {
-                            TLRPC.Document document3 = arrayList4.get(i13);
-                            String str = (String) hashMap.get(Long.valueOf(document3.id));
-                            SerializedData serializedData = new SerializedData(document3.getObjectSize());
-                            document3.serializeToStream(serializedData);
-                            edit.putString("tone_document" + i13, Utilities.f(serializedData.toByteArray()));
-                            if (str != null) {
-                                edit.putString("tone_local_path" + i13, str);
-                            }
-                            yf.b bVar2 = new yf.b();
-                            bVar2.a = document3;
-                            bVar2.b = str;
-                            int i14 = cVar.d;
-                            cVar.d = i14 + 1;
-                            bVar2.c = i14;
-                            arrayList5.add(bVar2);
-                        }
-                        edit.apply();
-                        ns.f(cVar.c).k(ns.e5, new Object[0]);
-                        SharedPreferences.Editor edit2 = cVar.d().edit();
-                        long j3 = tL_savedRingtones.hash;
-                        yf.c.g = j3;
-                        SharedPreferences.Editor putLong = edit2.putLong("hash", j3);
-                        long currentTimeMillis = System.currentTimeMillis();
-                        yf.c.h = currentTimeMillis;
-                        putLong.putLong("lastReload", currentTimeMillis).apply();
-                    }
-                    cVar.b();
-                    return;
+                float[] fArr = this.F;
+                float f11 = ((j3 / ((i10 * 10000.0f) + 40000.0f)) * 360.0f) + fArr[i10];
+                fArr[i10] = f11;
+                matrixArr[i10].setRotate(f11, centerX, centerY);
+                this.E[i10] = 0;
+                i10++;
+            }
+            i7 = 0;
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                s1 s1Var = (s1) arrayList.get(i11);
+                t1 t1Var = s1Var.t;
+                int[] iArr = t1Var.E;
+                int i12 = s1Var.l;
+                int i13 = iArr[i12];
+                float[] fArr2 = t1Var.D[i12];
+                int i14 = i13 * 2;
+                fArr2[i14] = s1Var.d;
+                fArr2[i14 + 1] = s1Var.e;
+                iArr[i12] = i13 + 1;
+            }
+            int i15 = 0;
+            while (true) {
+                Matrix[] matrixArr2 = this.C;
+                if (i15 >= matrixArr2.length) {
+                    break;
                 }
-                return;
-            case 22:
-                yf.c cVar2 = (yf.c) this.b;
-                ArrayList arrayList6 = (ArrayList) this.c;
-                while (i10 < arrayList6.size()) {
-                    yf.b bVar3 = (yf.b) arrayList6.get(i10);
-                    if (bVar3 != null && ((TextUtils.isEmpty(bVar3.b) || !new File(bVar3.b).exists()) && (document2 = bVar3.a) != null)) {
-                        w7.G(cVar2.c);
-                        File I2 = w7.I(document2);
-                        if (I2 == null || !I2.exists()) {
-                            org.telegram.messenger.g0.h3(new t1(23, cVar2, document2));
-                        }
-                    }
-                    i10++;
+                Matrix matrix = matrixArr2[i15];
+                float[] fArr3 = this.D[i15];
+                matrix.mapPoints(fArr3, 0, fArr3, 0, this.E[i15]);
+                this.E[i15] = 0;
+                i15++;
+            }
+        } else {
+            i7 = 0;
+        }
+        for (int i16 = i7; i16 < arrayList.size(); i16++) {
+            s1 s1Var2 = (s1) arrayList.get(i16);
+            if (this.g) {
+                s1Var2.a(canvas, this.R, f10);
+            } else {
+                s1Var2.a(canvas, currentTimeMillis, f10);
+            }
+            if (this.I && currentTimeMillis > s1Var2.a) {
+                s1Var2.b(currentTimeMillis);
+            }
+            if (this.H) {
+                if (!this.b.contains(s1Var2.h, s1Var2.i)) {
+                    s1Var2.b(currentTimeMillis);
                 }
+            }
+        }
+        this.S = currentTimeMillis;
+    }
+
+    public final void f() {
+        long currentTimeMillis = System.currentTimeMillis();
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.n;
+            if (i7 >= arrayList.size()) {
                 return;
-            case 23:
-                yf.c cVar3 = (yf.c) this.b;
-                TLRPC.Document document4 = (TLRPC.Document) this.c;
-                w7.G(cVar3.c).W(document4, document4, 0, 0);
-                return;
-            case 24:
-                yf.d dVar = (yf.d) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                int i15 = dVar.a;
-                if (tL_error.text.equals("RINGTONE_DURATION_TOO_LONG")) {
-                    ns.e().k(ns.P4, 4, hd.a0("TooLongError", null, 2131744041, new Object[0]), hd.a0("ErrorRingtoneDurationTooLong", null, 2131751104, Integer.valueOf(np.s1(i15).l4)));
-                    return;
-                } else if (tL_error.text.equals("RINGTONE_SIZE_TOO_BIG")) {
-                    ns.e().k(ns.P4, 4, hd.a0("TooLargeError", null, 2131744042, new Object[0]), hd.a0("ErrorRingtoneSizeTooBig", null, 2131751102, Integer.valueOf(np.s1(i15).m4 / 1024)));
-                    return;
-                } else {
-                    ns.e().k(ns.P4, 4, hd.a0("InvalidFormatError", null, 2131749181, new Object[0]), hd.M0(2131751103, null));
-                    return;
-                }
-            case 25:
-                ((p1) this.b).a((TLRPC.Chat) this.c);
-                return;
-            case 26:
-                yi.j jVar = (yi.j) this.b;
-                Throwable th2 = (Throwable) this.c;
-                jVar.getClass();
-                jVar.g(th2 instanceof Exception ? (Exception) th2 : new RuntimeException(th2));
-                return;
-            case 27:
-                a();
-                return;
-            case 28:
-                zh.l lVar2 = (zh.l) this.b;
-                e5 e5Var = (e5) this.c;
-                int i16 = lVar2.k;
-                e2 e2Var = lVar2.g;
-                TLRPC.TL_chatInviteImporter importer = e5Var.getImporter();
-                lVar2.r = importer;
-                LongSparseArray longSparseArray = lVar2.d;
-                TLRPC.User user = (TLRPC.User) longSparseArray.get(importer.user_id);
-                if (user == null) {
-                    return;
-                }
-                e2Var.getMessagesController().X3(user, false, false);
-                Point point = org.telegram.messenger.g0.q;
-                boolean z11 = point.x > point.y;
-                if (user.photo == null || z11) {
-                    lVar2.b = true;
-                    e2Var.dismissCurrentDialog();
-                    Bundle bundle = new Bundle();
-                    ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-                    bundle.putLong("user_id", user.id);
-                    bundle.putBoolean("removeFragmentOnChatOpen", false);
-                    e2Var.presentFragment(profileActivity);
-                    return;
-                }
-                if (lVar2.s == null) {
-                    zh.k kVar = new zh.k(lVar2, e2Var.getParentActivity(), (uj0) e5Var.getParent(), e2Var.getResourceProvider(), lVar2.a);
-                    lVar2.s = kVar;
-                    TLRPC.TL_chatInviteImporter tL_chatInviteImporter = lVar2.r;
-                    i9 avatarImageView = e5Var.getAvatarImageView();
-                    TextView textView = kVar.e;
-                    vf0 vf0Var = kVar.h;
-                    kVar.r = tL_chatInviteImporter;
-                    kVar.w = avatarImageView;
-                    TLRPC.User a22 = np.s1(i16).a2(Long.valueOf(tL_chatInviteImporter.user_id));
-                    gc m10 = gc.m(i16, 0, a22);
-                    gc m11 = gc.m(i16, 1, a22);
-                    if (np.s1(i16).b2(tL_chatInviteImporter.user_id) == null) {
-                        np.s1(i16).g3(a22, false, 0);
-                    }
-                    vf0Var.setParentAvatarImage(avatarImageView);
-                    vf0Var.M(tL_chatInviteImporter.user_id, true);
-                    vf0Var.H(null, m10, m11, true);
-                    kVar.d.setText(q10.p((TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id)));
-                    textView.setText(tL_chatInviteImporter.about);
-                    textView.setVisibility(TextUtils.isEmpty(tL_chatInviteImporter.about) ? 8 : 0);
-                    kVar.E.requestLayout();
-                    lVar2.s.setOnDismissListener(new q9(lVar2, 15));
-                    lVar2.s.show();
-                    return;
-                }
-                return;
-            default:
-                ((zi.l) this.b).Y((zi.n0) this.c);
-                return;
+            }
+            ((s1) arrayList.get(i7)).b(currentTimeMillis);
+            i7++;
+        }
+    }
+
+    public final void g() {
+        int w02 = n6.w0(this.Q, this.P);
+        if (this.z != w02) {
+            this.z = w02;
+            a();
         }
     }
 }

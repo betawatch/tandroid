@@ -4,10 +4,10 @@ import android.content.Context;
 import android.text.TextPaint;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.ui.Components.sy0;
-import org.telegram.ui.n50;
+import org.telegram.ui.Components.zy0;
+import org.telegram.ui.p50;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -33,12 +33,12 @@ public final class v extends ClickableSpan {
                 vf.c.t(t0.b, (String) this.c);
                 break;
             case 1:
-                ((n50) this.b).a((org.telegram.ui.e4) this.c, (sy0) this.d);
+                ((p50) this.b).a((org.telegram.ui.e4) this.c, (zy0) this.d);
                 break;
             default:
-                org.telegram.ui.ActionBar.t1 t1Var = ((org.telegram.ui.ActionBar.t1[]) this.b)[0];
-                if (t1Var != null) {
-                    t1Var.dismiss();
+                org.telegram.ui.ActionBar.u1 u1Var = ((org.telegram.ui.ActionBar.u1[]) this.b)[0];
+                if (u1Var != null) {
+                    u1Var.dismiss();
                 }
                 vf.c.t((Context) this.d, "https://t.me/" + ((String) this.c));
                 break;
@@ -49,7 +49,7 @@ public final class v extends ClickableSpan {
     public void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Xc, (org.telegram.ui.ActionBar.e6) this.d));
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Xc, (org.telegram.ui.ActionBar.i6) this.d));
                 textPaint.setUnderlineText(false);
                 break;
             case 1:
@@ -63,9 +63,9 @@ public final class v extends ClickableSpan {
         }
     }
 
-    public v(org.telegram.ui.ActionBar.t1[] t1VarArr, Context context, String str) {
+    public v(org.telegram.ui.ActionBar.u1[] u1VarArr, Context context, String str) {
         this.a = 2;
-        this.b = t1VarArr;
+        this.b = u1VarArr;
         this.d = context;
         this.c = str;
     }

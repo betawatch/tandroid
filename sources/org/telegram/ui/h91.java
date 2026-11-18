@@ -1,37 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class h91 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i91 b;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ h91(i91 i91Var, int i7) {
-        this.a = i7;
-        this.b = i91Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class h91 extends org.telegram.ui.Components.j60 {
+    public final /* synthetic */ long v2;
+    public final /* synthetic */ j91 w2;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h91(j91 j91Var, Context context, int i7, a0.h hVar, long j3, org.telegram.ui.ActionBar.h2 h2Var, long j10) {
+        super(context, i7, hVar, j3, h2Var, null);
+        this.w2 = j91Var;
+        this.v2 = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                i91 i91Var = this.b;
-                i91Var.F = null;
-                if (i91Var.G != -1) {
-                    i91Var.H.getNotificationCenter().j(i91Var.G);
-                    i91Var.G = -1;
-                    break;
-                }
-                break;
-            default:
-                i91 i91Var2 = this.b;
-                i91Var2.F = null;
-                if (i91Var2.G != -1) {
-                    i91Var2.H.getNotificationCenter().j(i91Var2.G);
-                    i91Var2.G = -1;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.j60
+    public final boolean S0() {
+        TLRPC.Chat O0 = this.w2.b.getMessagesController().O0(Long.valueOf(this.v2));
+        return O0 != null && org.telegram.messenger.v3.y(3, O0);
     }
 }

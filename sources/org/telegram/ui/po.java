@@ -1,49 +1,14 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class po extends org.telegram.ui.Components.i70 {
-    public final /* synthetic */ TLRPC.Chat x;
-    public final /* synthetic */ qo y;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public po(qo qoVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
-        super(context, chat);
-        this.y = qoVar;
-        this.x = chat2;
-    }
-
-    @Override // org.telegram.ui.Components.i70
-    public final boolean a(boolean z10, org.telegram.ui.Components.g70 g70Var) {
-        to toVar = this.y.d;
-        if (toVar.Q) {
-            return false;
-        }
-        toVar.Q = true;
-        e(new zg(15, this, g70Var), new wn(this, this.x, z10, g70Var, 2));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.i70
-    public final boolean b(boolean z10, org.telegram.ui.Components.h70 h70Var) {
-        to toVar = this.y.d;
-        if (toVar.P) {
-            return false;
-        }
-        toVar.P = true;
-        e(new zg(15, this, h70Var), new wn(this, this.x, z10, h70Var, 1));
-        return true;
-    }
-
-    public final void e(zg zgVar, Runnable runnable) {
-        to toVar = this.y.d;
-        if (org.telegram.messenger.t3.T(toVar.f)) {
-            runnable.run();
-        } else {
-            toVar.getMessagesController().T(toVar.getParentActivity(), this.x.id, toVar, new m2.d(24, this, runnable), zgVar);
-        }
+public final class po extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 }

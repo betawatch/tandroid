@@ -9,10 +9,10 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ff;
-import org.telegram.ui.ld0;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -72,9 +72,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        ld0 ld0Var = eVar.C;
-        if (ld0Var != null) {
-            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) ld0Var.b;
+        md0 md0Var = eVar.C;
+        if (md0Var != null) {
+            android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) md0Var.b;
             if (a0Var != null) {
                 return ((android.support.v4.media.session.u) a0Var.b).c;
             }
@@ -109,7 +109,7 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new ff(c10, 15));
+                k kVar = new k(c10.h, new of(c10, 16));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();

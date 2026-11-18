@@ -2,13 +2,13 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w extends r6.a {
     public static final Parcelable.Creator<w> CREATOR;
@@ -24,7 +24,7 @@ public final class w extends r6.a {
     public w(String str, byte[] bArr, ArrayList arrayList) {
         q7.s0 s0Var = q7.s0.c;
         q7.s0 o4 = q7.s0.o(bArr.length, bArr);
-        q6.m.g(str);
+        q6.m.h(str);
         try {
             this.a = a0.a(str);
             this.b = o4;
@@ -40,7 +40,7 @@ public final class w extends r6.a {
         }
         w wVar = (w) obj;
         List list = wVar.c;
-        if (!this.a.equals(wVar.a) || !q6.m.k(this.b, wVar.b)) {
+        if (!this.a.equals(wVar.a) || !q6.m.l(this.b, wVar.b)) {
             return false;
         }
         List list2 = this.c;
@@ -62,11 +62,11 @@ public final class w extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
+        int r10 = bc.r(parcel, 20293);
         this.a.getClass();
-        yb.l(parcel, 2, "public-key");
-        yb.c(parcel, 3, this.b.p());
-        yb.p(parcel, 4, this.c);
-        yb.s(parcel, r10);
+        bc.l(parcel, 2, "public-key");
+        bc.c(parcel, 3, this.b.p());
+        bc.p(parcel, 4, this.c);
+        bc.s(parcel, r10);
     }
 }

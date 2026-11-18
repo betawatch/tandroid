@@ -1,97 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kh extends AnimatorListenerAdapter {
-    public final /* synthetic */ zm a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.j5 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ pm e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ an h;
+public final class kh implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a = 0;
+    public boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public kh(an anVar, zm zmVar, boolean z10, org.telegram.ui.ActionBar.j5 j5Var, boolean z11, pm pmVar, boolean z12) {
-        this.h = anVar;
-        this.a = zmVar;
+    public kh(f40 f40Var, org.telegram.messenger.u3 u3Var, boolean z10) {
+        this.d = f40Var;
+        this.c = u3Var;
         this.b = z10;
-        this.c = j5Var;
-        this.d = z11;
-        this.e = pmVar;
-        this.f = z12;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        an anVar = this.h;
-        if (anVar.U2.getTag() != null) {
-            anVar.U2.setVisibility(4);
-            int c92 = anVar.c9();
-            anVar.U2.a(Math.min(c92 - 1, Math.max(1, c92 - anVar.Z4[0])), false);
-        } else {
-            anVar.U2.setAlpha(1.0f);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                bn bnVar = (bn) this.d;
+                ViewTreeObserver viewTreeObserver = (ViewTreeObserver) this.c;
+                if (viewTreeObserver.isAlive()) {
+                    viewTreeObserver.removeOnPreDrawListener(this);
+                }
+                vi viVar = bnVar.p1;
+                if (viVar != null) {
+                    viVar.getViewTreeObserver().removeOnPreDrawListener(this);
+                }
+                if (this.b) {
+                    return true;
+                }
+                this.b = true;
+                return bnVar.M8();
+            default:
+                f40 f40Var = (f40) this.d;
+                n30 n30Var = f40Var.L1;
+                n30Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                f40Var.p4 = null;
+                b20 b20Var = f40Var.Z3;
+                org.telegram.messenger.u3 u3Var = (org.telegram.messenger.u3) this.c;
+                b20Var.j(u3Var);
+                if (f40Var.n2) {
+                    f40Var.n2 = false;
+                    f40Var.R0(true);
+                    if (this.b && u3Var != null) {
+                        n30Var.v0(0);
+                    }
+                    f40Var.n2 = true;
+                } else {
+                    f40Var.R0(true);
+                }
+                f40Var.b.requestLayout();
+                return false;
         }
-        anVar.U2.setTranslationY(0.0f);
-        anVar.S2[0].setTranslationX(0.0f);
-        anVar.S2[1].setTranslationX(0.0f);
-        anVar.U2.setTranslationX(anVar.V2 + 0.0f);
-        zm zmVar = this.a;
-        zmVar.setTranslationY(0.0f);
-        boolean z10 = this.b;
-        if (!z10) {
-            zmVar.setTranslationY(0.0f);
-        }
-        org.telegram.ui.ActionBar.j5 j5Var = this.c;
-        if (!z10) {
-            j5Var.setTranslationY(0.0f);
-        }
-        boolean z11 = this.d;
-        pm pmVar = this.e;
-        if (!z11) {
-            pmVar.setTranslationY(0.0f);
-        }
-        anVar.R2[0].setTranslationX(0.0f);
-        anVar.R2[1].setTranslationX(0.0f);
-        anVar.Q2[1].setAlpha(1.0f);
-        anVar.Q2[1].setScaleX(1.0f);
-        anVar.Q2[1].setScaleY(1.0f);
-        anVar.Q2[0].setAlpha(1.0f);
-        anVar.Q2[0].setScaleX(1.0f);
-        anVar.Q2[0].setScaleY(1.0f);
-        org.telegram.ui.ActionBar.j5[] j5VarArr = anVar.S2;
-        org.telegram.ui.ActionBar.j5 j5Var2 = j5VarArr[0];
-        j5VarArr[1] = j5Var2;
-        j5VarArr[0] = j5Var;
-        j5Var2.setVisibility(4);
-        pm[] pmVarArr = anVar.T2;
-        pm pmVar2 = pmVarArr[0];
-        pmVarArr[1] = pmVar2;
-        pmVarArr[0] = pmVar;
-        pmVar2.setVisibility(4);
-        zm[] zmVarArr = anVar.R2;
-        zm zmVar2 = zmVarArr[0];
-        if (zmVar != zmVar2) {
-            zmVarArr[1] = zmVar2;
-            zmVarArr[0] = zmVar;
-            zmVar2.setVisibility(4);
-        }
-        if (this.f) {
-            anVar.Q2[1].setImageBitmap(null);
-            anVar.Q2[1].setVisibility(4);
-        }
-        org.telegram.ui.Components.i9[] i9VarArr = anVar.Q2;
-        org.telegram.ui.Components.i9 i9Var = i9VarArr[1];
-        org.telegram.ui.Components.i9 i9Var2 = i9VarArr[0];
-        i9VarArr[1] = i9Var2;
-        i9VarArr[0] = i9Var;
-        i9Var2.setAlpha(1.0f);
-        anVar.Q2[1].setScaleX(1.0f);
-        anVar.Q2[1].setScaleY(1.0f);
-        anVar.Q2[1].setVisibility(4);
-        anVar.W2[0] = null;
-        anVar.P2 = false;
+    }
+
+    public kh(bn bnVar, ViewTreeObserver viewTreeObserver) {
+        this.d = bnVar;
+        this.c = viewTreeObserver;
     }
 }

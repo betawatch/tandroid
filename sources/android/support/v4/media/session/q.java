@@ -21,17 +21,17 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.b10;
-import org.telegram.ui.Components.c10;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.e10;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.ff;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Components.i10;
+import org.telegram.ui.Components.j10;
+import org.telegram.ui.Components.k10;
+import org.telegram.ui.Components.l10;
+import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.of;
 import org.telegram.ui.PhotoViewer;
 import s4.o0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q extends Handler {
     public final /* synthetic */ int a;
@@ -74,11 +74,11 @@ public final class q extends Handler {
                 if (bVar.p == 2 || bVar.k()) {
                     bVar.z = null;
                     if (obj2 instanceof Exception) {
-                        aVar2.Q0((Exception) obj2, false);
+                        aVar2.M0((Exception) obj2, false);
                         return;
                     }
                     try {
-                        bVar.b.E(((q2.w) obj2).a);
+                        bVar.b.D(((q2.v) obj2).a);
                         aVar2.c = null;
                         HashSet hashSet = (HashSet) aVar2.b;
                         i0 q10 = i0.q(hashSet);
@@ -92,7 +92,7 @@ public final class q extends Handler {
                         }
                         return;
                     } catch (Exception e10) {
-                        aVar2.Q0(e10, true);
+                        aVar2.M0(e10, true);
                         return;
                     }
                 }
@@ -107,10 +107,10 @@ public final class q extends Handler {
         if (obj == bVar3.x && bVar3.k()) {
             bVar3.x = null;
             synchronized (bVar3.o) {
-                ff ffVar = bVar3.y;
-                ffVar.getClass();
+                of ofVar = bVar3.y;
+                ofVar.getClass();
                 aVar = new nb.a(22);
-                ((f0) ffVar.b).f();
+                ((f0) ofVar.b).f();
                 bVar3.y = null;
             }
             if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
@@ -118,12 +118,12 @@ public final class q extends Handler {
                 return;
             }
             try {
-                byte[] D = bVar3.b.D(bVar3.v, ((q2.w) obj2).a);
-                if (bVar3.w != null && D != null && D.length != 0) {
-                    bVar3.w = D;
+                byte[] C = bVar3.b.C(bVar3.v, ((q2.v) obj2).a);
+                if (bVar3.w != null && C != null && C.length != 0) {
+                    bVar3.w = C;
                 }
                 bVar3.p = 4;
-                bVar3.i(new org.telegram.ui.ActionBar.z(aVar, 18));
+                bVar3.i(new org.telegram.ui.ActionBar.p(aVar, 19));
             } catch (Exception e11) {
                 e = e11;
                 bVar3.m(e, true);
@@ -231,59 +231,59 @@ public final class q extends Handler {
                 ((org.telegram.messenger.b) this.b).i = false;
                 return;
             case 5:
-                d10 d10Var = (d10) this.b;
-                c10 c10Var = d10Var.g;
+                k10 k10Var = (k10) this.b;
+                j10 j10Var = k10Var.g;
                 int i11 = message.what;
                 if (i11 == 1) {
-                    c10Var.getClass();
+                    j10Var.getClass();
                     return;
                 }
                 if (i11 == 2) {
-                    d10Var.f.removeMessages(3);
-                    d10Var.j = false;
-                    d10Var.k = true;
-                    c10Var.onLongPress(d10Var.n);
+                    k10Var.f.removeMessages(3);
+                    k10Var.j = false;
+                    k10Var.k = true;
+                    j10Var.onLongPress(k10Var.n);
                     return;
                 }
                 if (i11 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                b10 b10Var = d10Var.h;
-                if (b10Var != null) {
-                    if (d10Var.i) {
-                        d10Var.j = true;
+                i10 i10Var = k10Var.h;
+                if (i10Var != null) {
+                    if (k10Var.i) {
+                        k10Var.j = true;
                         return;
                     } else {
-                        ((PhotoViewer) b10Var).Y1(d10Var.n);
+                        ((PhotoViewer) i10Var).Y1(k10Var.n);
                         return;
                     }
                 }
                 return;
             case 6:
-                e10 e10Var = (e10) this.b;
-                f10 f10Var = e10Var.f;
+                l10 l10Var = (l10) this.b;
+                m10 m10Var = l10Var.f;
                 int i12 = message.what;
                 if (i12 == 1) {
-                    f10Var.onShowPress(e10Var.m);
+                    m10Var.onShowPress(l10Var.m);
                     return;
                 }
                 if (i12 == 2) {
-                    e10Var.e.removeMessages(3);
-                    e10Var.i = false;
-                    e10Var.j = true;
-                    f10Var.onLongPress(e10Var.m);
+                    l10Var.e.removeMessages(3);
+                    l10Var.i = false;
+                    l10Var.j = true;
+                    m10Var.onLongPress(l10Var.m);
                     return;
                 }
                 if (i12 != 3) {
                     throw new RuntimeException("Unknown message " + message);
                 }
-                f10 f10Var2 = e10Var.g;
-                if (f10Var2 != null) {
-                    if (e10Var.h) {
-                        e10Var.i = true;
+                m10 m10Var2 = l10Var.g;
+                if (m10Var2 != null) {
+                    if (l10Var.h) {
+                        l10Var.i = true;
                         return;
                     } else {
-                        f10Var2.onSingleTapConfirmed(e10Var.m);
+                        m10Var2.onSingleTapConfirmed(l10Var.m);
                         return;
                     }
                 }
@@ -291,11 +291,11 @@ public final class q extends Handler {
             case 7:
                 p4.v vVar = (p4.v) message.obj;
                 ab.c0 c0Var = (ab.c0) this.b;
-                if (c0Var.x(vVar)) {
+                if (c0Var.A(vVar)) {
                     p4.u uVar = vVar.d;
                     uVar.getClass();
                     uVar.g();
-                    c0Var.H(vVar);
+                    c0Var.K(vVar);
                     return;
                 }
                 return;
@@ -307,7 +307,7 @@ public final class q extends Handler {
                 if (bArr == null) {
                     return;
                 }
-                ArrayList arrayList = ((q2.f) this.b).x;
+                ArrayList arrayList = ((q2.e) this.b).x;
                 int size = arrayList.size();
                 int i13 = 0;
                 while (i13 < size) {
@@ -362,10 +362,10 @@ public final class q extends Handler {
                     return;
                 }
                 h3Var.c = false;
-                cf cfVar = (cf) h3Var.f;
-                if (cfVar != null) {
+                b5 b5Var = (b5) h3Var.f;
+                if (b5Var != null) {
                     ca.i iVar = (ca.i) h3Var.n;
-                    s4.e eVar = (s4.e) cfVar.a;
+                    s4.e eVar = (s4.e) b5Var.a;
                     s4.u d = eVar.d(h3Var);
                     if (d != null) {
                         eVar.m(d, iVar);
@@ -405,7 +405,7 @@ public final class q extends Handler {
                             }
                         }
                         if (dVar2 == null) {
-                            u2.e.b(dVar2);
+                            u2.e.d(dVar2);
                             return;
                         }
                         return;

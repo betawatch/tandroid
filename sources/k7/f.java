@@ -8,7 +8,7 @@ import j7.m;
 import j7.r;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends q implements a {
     public final /* synthetic */ int b;
@@ -23,7 +23,7 @@ public final class f extends q implements a {
     }
 
     @Override // k7.a
-    public void I0(Status status, m mVar) {
+    public void H0(Status status, m mVar) {
         switch (this.b) {
             case 1:
                 j.e(status, "status");
@@ -36,7 +36,7 @@ public final class f extends q implements a {
     }
 
     @Override // k7.a
-    public void J0(Status status, r rVar) {
+    public void I0(Status status, r rVar) {
         j.e(status, "status");
         throw new UnsupportedOperationException();
     }
@@ -48,7 +48,7 @@ public final class f extends q implements a {
     }
 
     @Override // k7.a
-    public void x0(Status status, j7.f fVar) {
+    public void w0(Status status, j7.f fVar) {
         switch (this.b) {
             case 0:
                 j.e(status, "status");

@@ -7,23 +7,23 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import javax.net.SocketFactory;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t extends Thread {
     public final h a;
     public final SocketFactory b;
     public final InetSocketAddress c;
     public final int d;
-    public final f5.v e;
-    public final f5.v f;
+    public final b3.j e;
+    public final b3.j f;
 
-    public t(h hVar, SocketFactory socketFactory, InetSocketAddress inetSocketAddress, int i7, f5.v vVar, f5.v vVar2) {
+    public t(h hVar, SocketFactory socketFactory, InetSocketAddress inetSocketAddress, int i7, b3.j jVar, b3.j jVar2) {
         this.a = hVar;
         this.b = socketFactory;
         this.c = inetSocketAddress;
         this.d = i7;
-        this.e = vVar;
-        this.f = vVar2;
+        this.e = jVar;
+        this.f = jVar2;
     }
 
     public final void a(Exception exc) {
@@ -57,9 +57,9 @@ public final class t extends Thread {
         boolean z10;
         Socket socket = null;
         try {
-            f5.v vVar = this.e;
-            if (vVar != null) {
-                ((CountDownLatch) vVar.c).await(vVar.b, TimeUnit.MILLISECONDS);
+            b3.j jVar = this.e;
+            if (jVar != null) {
+                ((CountDownLatch) jVar.c).await(jVar.b, TimeUnit.MILLISECONDS);
             }
             h hVar = this.a;
             synchronized (hVar) {

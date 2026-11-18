@@ -1,180 +1,67 @@
 package org.telegram.messenger;
 
-import android.accounts.Account;
-import android.content.ContentResolver;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.provider.ContactsContract;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ i5 b;
+    public final /* synthetic */ HashMap c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ w4(g5 g5Var, ArrayList arrayList, int i7) {
-        this.a = i7;
-        this.b = g5Var;
-        this.c = arrayList;
+    public /* synthetic */ w4(i5 i5Var, ArrayList arrayList, HashMap hashMap, HashMap hashMap2) {
+        this.a = 4;
+        this.b = i5Var;
+        this.d = arrayList;
+        this.c = hashMap;
+        this.e = hashMap2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x01a3, code lost:
-    
-        if (r12 != null) goto L80;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:77:0x01a5, code lost:
-    
-        r12.close();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x01af, code lost:
-    
-        org.telegram.messenger.a8.b("performWriteContactsToPhoneBookInternal " + (java.lang.System.currentTimeMillis() - r10));
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x01c5, code lost:
-    
-        return;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x01ac, code lost:
-    
-        if (r12 != null) goto L80;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x01c9  */
     @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void run() {
-        boolean z10;
-        Cursor cursor;
         switch (this.a) {
             case 0:
-                g5 g5Var = this.b;
-                ArrayList arrayList = this.c;
-                long currentTimeMillis = System.currentTimeMillis();
-                int i7 = 1;
-                try {
-                    try {
-                        Account account = g5Var.a;
-                        if (!g5.w() || account == null) {
-                            return;
-                        }
-                        int i10 = 0;
-                        if (!(t0.b.checkSelfPermission("android.permission.WRITE_CONTACTS") == 0)) {
-                            return;
-                        }
-                        SharedPreferences sharedPreferences = np.s1(g5Var.currentAccount).f7;
-                        boolean z11 = sharedPreferences.getBoolean("contacts_updated_v7", false);
-                        boolean z12 = !z11;
-                        if (!z11) {
-                            try {
-                                sharedPreferences.edit().putBoolean("contacts_updated_v7", true).commit();
-                            } catch (Exception e10) {
-                                e = e10;
-                                z10 = true;
-                                cursor = null;
-                                try {
-                                    a8.g(e, z10);
-                                    break;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    if (cursor != null) {
-                                        cursor.close();
-                                    }
-                                    throw th;
-                                }
-                            }
-                        }
-                        ContentResolver contentResolver = t0.b.getContentResolver();
-                        Cursor query = contentResolver.query(ContactsContract.RawContacts.CONTENT_URI, new String[]{"_id", "sync2", "account_name"}, "account_type=?", new String[]{account.type}, "deleted ASC");
-                        try {
-                            a0.h hVar = new a0.h();
-                            if (query != null) {
-                                a0.h hVar2 = new a0.h();
-                                ArrayList arrayList2 = new ArrayList();
-                                while (query.moveToNext()) {
-                                    long j3 = query.getLong(i10);
-                                    long j10 = query.getLong(i7);
-                                    if (j10 != 0) {
-                                        if (account.name.equals(query.getString(2))) {
-                                            if (z11 && hVar2.h(j10) < 0) {
-                                                hVar2.k(Long.valueOf(j3), j10);
-                                            }
-                                            arrayList2.add(Long.valueOf(j3));
-                                            i7 = 1;
-                                        }
-                                        hVar.k(Long.valueOf(j3), j10);
-                                        i7 = 1;
-                                    }
-                                    i10 = 0;
-                                }
-                                query.close();
-                                a8.b("performWriteContactsToPhoneBookInternal contacts array " + arrayList.size() + " " + z12 + " bookContactsSize=" + hVar.m() + " toDelete=" + arrayList2.size() + " currentAccount=" + g5Var.currentAccount);
-                                if (!arrayList2.isEmpty()) {
-                                    g5Var.k(contentResolver, account, arrayList2, hVar2, hVar);
-                                }
-                                ArrayList arrayList3 = null;
-                                for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                                    TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList.get(i11);
-                                    if (!z11 || hVar.h(tL_contact.user_id) < 0) {
-                                        if (arrayList3 == null) {
-                                            arrayList3 = new ArrayList();
-                                        }
-                                        g5Var.b(arrayList3, g5Var.getMessagesController().a2(Long.valueOf(tL_contact.user_id)));
-                                        if (arrayList3.size() > 450) {
-                                            contentResolver.applyBatch("com.android.contacts", arrayList3);
-                                            arrayList3.clear();
-                                        }
-                                    }
-                                }
-                                if (arrayList3 != null && !arrayList3.isEmpty()) {
-                                    contentResolver.applyBatch("com.android.contacts", arrayList3);
-                                    arrayList3.clear();
-                                }
-                                cursor = null;
-                                break;
-                            } else {
-                                cursor = query;
-                                break;
-                            }
-                        } catch (Exception e11) {
-                            e = e11;
-                            cursor = query;
-                            z10 = true;
-                            a8.g(e, z10);
-                        } catch (Throwable th3) {
-                            th = th3;
-                            cursor = query;
-                            if (cursor != null) {
-                            }
-                            throw th;
-                        }
-                    } catch (Throwable th4) {
-                        th = th4;
-                        cursor = null;
-                    }
-                } catch (Exception e12) {
-                    e = e12;
-                    z10 = true;
-                }
+                HashMap hashMap = this.e;
+                i5 i5Var = this.b;
+                i5Var.E(this.c, this.d, hashMap, true);
+                i5Var.N();
+                i5Var.getNotificationCenter().k(25, new Object[0]);
+                i5Var.getNotificationCenter().k(26, new Object[0]);
                 break;
             case 1:
-                this.b.i(this.c, false);
-                return;
+                HashMap hashMap2 = this.e;
+                i5 i5Var2 = this.b;
+                i5Var2.E(this.c, this.d, hashMap2, true);
+                i5Var2.N();
+                i5Var2.getNotificationCenter().k(25, new Object[0]);
+                i5Var2.getNotificationCenter().k(26, new Object[0]);
+                break;
+            case 2:
+                this.b.E(this.c, this.d, this.e, true);
+                break;
+            case 3:
+                HashMap hashMap3 = this.e;
+                i5 i5Var3 = this.b;
+                i5Var3.E(this.c, this.d, hashMap3, true);
+                i5Var3.getNotificationCenter().k(26, new Object[0]);
+                break;
             default:
-                g5 g5Var2 = this.b;
-                ArrayList arrayList4 = this.c;
-                g5Var2.getClass();
-                int size = arrayList4.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    Object obj = arrayList4.get(i12);
-                    i12++;
-                    g5Var2.j(((TLRPC.User) obj).id);
-                }
-                return;
+                i5 i5Var4 = this.b;
+                i5Var4.d0 = this.d;
+                i5Var4.e0 = this.c;
+                i5Var4.c0 = this.e;
+                break;
         }
+    }
+
+    public /* synthetic */ w4(i5 i5Var, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i7) {
+        this.a = i7;
+        this.b = i5Var;
+        this.c = hashMap;
+        this.d = arrayList;
+        this.e = hashMap2;
     }
 }

@@ -1,12 +1,12 @@
 package m4;
 
-import a8.ja;
+import a8.la;
 import e2.s0;
 import f3.i0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -117,7 +117,7 @@ public final class h implements i {
         switch (this.a) {
             case 0:
                 if (this.b) {
-                    ja.p(this.c != -9223372036854775807L);
+                    la.p(this.c != -9223372036854775807L);
                     for (i0 i0Var : (i0[]) this.g) {
                         i0Var.c(this.c, 1, this.e, 0, null);
                     }
@@ -128,7 +128,7 @@ public final class h implements i {
             default:
                 ((i0) this.g).getClass();
                 if (this.b && (i7 = this.d) != 0 && this.e == i7) {
-                    ja.p(this.c != -9223372036854775807L);
+                    la.p(this.c != -9223372036854775807L);
                     ((i0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
@@ -178,7 +178,7 @@ public final class h implements i {
                     tVar.r = s0.n("application/dvbsubs");
                     tVar.u = Collections.singletonList(e0Var.b);
                     tVar.d = e0Var.a;
-                    r.b.s(tVar, d2);
+                    p5.c.r(tVar, d2);
                     i0VarArr[i7] = d2;
                 }
                 break;
@@ -192,7 +192,7 @@ public final class h implements i {
                 tVar2.a = (String) f0Var.e;
                 tVar2.q = s0.n("video/mp2t");
                 tVar2.r = s0.n("application/id3");
-                r.b.s(tVar2, d22);
+                p5.c.r(tVar2, d22);
                 break;
         }
     }

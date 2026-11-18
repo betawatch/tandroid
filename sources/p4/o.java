@@ -1,6 +1,6 @@
 package p4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o {
     public static final String d;
@@ -9,7 +9,7 @@ public final class o {
     public static final String g;
     public final int a;
     public final long b;
-    public final k1 c;
+    public final m1 c;
 
     static {
         String str = h2.l0.a;
@@ -21,9 +21,9 @@ public final class o {
         g = Integer.toString(5, 36);
     }
 
-    public o(int i7, long j3, k1 k1Var) {
+    public o(int i7, long j3, m1 m1Var) {
         this.a = i7;
         this.b = j3;
-        this.c = k1Var;
+        this.c = m1Var;
     }
 }

@@ -1,157 +1,143 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.e51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m implements z10 {
+public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
 
-    public /* synthetic */ m(Object obj, Object obj2, Object obj3, int i7) {
+    public /* synthetic */ m(Object obj, int i7) {
         this.a = i7;
         this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        char c10 = 1;
-        Object obj2 = this.d;
-        Object obj3 = this.c;
-        Object obj4 = this.b;
-        switch (i7) {
-            case 0:
-                l0 l0Var = (l0) obj4;
-                s10 s10Var = (s10) obj3;
-                String str = (String) obj2;
-                byte[] bArr = (byte[]) obj;
-                l0Var.getClass();
-                if (bArr != null) {
-                    TL_wallet.walletUserAddress walletuseraddress = new TL_wallet.walletUserAddress();
-                    walletuseraddress.user_id = 0L;
-                    walletuseraddress.address = str;
-                    walletuseraddress.public_key = bArr;
-                    l0Var.M.put(str, walletuseraddress);
-                    s10Var.a(walletuseraddress, null);
-                    break;
-                } else {
-                    s10Var.a(null, null);
-                    break;
-                }
-            case 1:
-                d2 d2Var = (d2) obj4;
-                z1 z1Var = (z1) obj3;
-                oi.c cVar = (oi.c) obj2;
-                String str2 = (String) obj;
-                d2Var.getClass();
-                z1Var.p = !z1Var.n && !d2Var.j(z1Var) && d2Var.A(z1Var) && str2 == null;
-                cVar.a(null, str2);
-                break;
-            case 2:
-                d2 d2Var2 = (d2) obj4;
-                z1 z1Var2 = (z1) obj3;
-                z10 z10Var = (z10) obj2;
-                String str3 = (String) obj;
-                d2Var2.getClass();
-                z1Var2.m = false;
-                if (z1Var2.r == null && d2Var2.g == z1Var2) {
-                    d2Var2.g = null;
-                }
-                z10Var.a(str3);
-                break;
-            case 3:
-                d2 d2Var3 = (d2) obj4;
-                d2Var3.getClass();
-                org.telegram.messenger.g0.h3(new g7((Object) d2Var3, obj3, (String) obj, obj2, 6));
-                break;
-            case 4:
-                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj4;
-                fi.r rVar = (fi.r) obj3;
-                TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
-                TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj;
-                if (wallettransaction2 != null) {
-                    wallettransaction2.incoming = wallettransaction.incoming;
-                    wallettransaction2.peer = wallettransaction.peer;
-                    wallettransactionArr[0] = wallettransaction2;
-                    rVar.a(wallettransaction2);
-                    break;
-                }
-                break;
-            case 5:
-                x2[] x2VarArr = (x2[]) obj3;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj2;
-                String str4 = (String) obj;
-                ((hi.d) obj4).setLoading(false);
-                if (!TextUtils.isEmpty(str4)) {
-                    new cc(x2VarArr[0].F, e6Var).e0(str4, false);
-                    break;
-                } else {
-                    x2VarArr[0].dismiss();
-                    break;
-                }
-            case 6:
-                p8.d0((p8) obj4, (z10) obj3, (p0) obj2, (i0) obj);
-                break;
-            case 7:
-                z9 z9Var = (z9) obj3;
-                l0 l0Var2 = (l0) obj4;
-                TLRPC.User user = (TLRPC.User) obj2;
-                String str5 = (String) obj;
-                if (!z9Var.r) {
-                    if (!TextUtils.isEmpty(str5) && l0.b(z9Var.f, l0Var2.t())) {
-                        b0 b0Var = new b0(l0Var2, str5, z9Var.e, null, new q(z9Var, l0Var2, user, str5));
-                        l0Var2.m0(b0Var);
-                        z9Var.n = new l(b0Var, c10 == true ? 1 : 0);
-                        break;
-                    } else {
-                        z9Var.h = false;
-                        z9Var.a0.setLoading(false);
-                        cc.a0(z9Var).e0(TextUtils.isEmpty(str5) ? hd.M0(2131743039, null) : "WALLET_CHANGED", false);
-                        break;
-                    }
-                }
-                break;
-            case 8:
-                ((org.telegram.ui.Cells.f6) ((View) obj)).x((TLRPC.User) obj4, null, (CharSequence) obj3, (CharSequence) obj2, false, false);
-                break;
-            default:
-                x2 x2Var = (x2) obj3;
-                org.telegram.ui.ActionBar.e6 e6Var2 = (org.telegram.ui.ActionBar.e6) obj2;
-                String str6 = (String) obj;
-                ((hi.d) obj4).setLoading(false);
-                if (str6 != null) {
-                    cc.c0(str6, x2Var.F, e6Var2);
-                    break;
-                } else {
-                    x2Var.dismiss();
-                    break;
-                }
+    private final void a() {
+        i0 i0Var = (i0) this.b;
+        synchronized (i0Var) {
+            if (i0Var.a) {
+                return;
+            }
+            i0Var.a = true;
+            Runnable runnable = i0Var.b;
+            if (runnable != null) {
+                runnable.run();
+                i0Var.b = null;
+            }
         }
     }
 
-    public /* synthetic */ m(z10 z10Var, l0 l0Var, p0 p0Var, p8 p8Var) {
-        this.a = 6;
-        this.b = p8Var;
-        this.c = z10Var;
-        this.d = p0Var;
-    }
-
-    public /* synthetic */ m(z9 z9Var, l0 l0Var, TLRPC.User user) {
-        this.a = 7;
-        this.c = z9Var;
-        this.b = l0Var;
-        this.d = user;
+    @Override // java.lang.Runnable
+    public final void run() {
+        View d;
+        switch (this.a) {
+            case 0:
+                g0 g0Var = (g0) this.b;
+                synchronized (g0Var) {
+                    if (g0Var.a) {
+                        return;
+                    }
+                    g0Var.a = true;
+                    Runnable runnable = g0Var.b;
+                    if (runnable != null) {
+                        runnable.run();
+                        g0Var.b = null;
+                    }
+                    return;
+                }
+            case 1:
+                ((r0) this.b).close();
+                return;
+            case 2:
+                a();
+                return;
+            case 3:
+                e1 e1Var = (e1) this.b;
+                e1Var.c("AUTH_CANCELED");
+                e1Var.e();
+                if (c8.za.b == e1Var) {
+                    c8.za.b = null;
+                    return;
+                }
+                return;
+            case 4:
+                ((d3) this.b).dismiss();
+                return;
+            case 5:
+                ((org.telegram.ui.Cells.u0) this.b).invalidate();
+                return;
+            case 6:
+                ((org.telegram.ui.ActionBar.k5) this.b).a(true);
+                return;
+            case 7:
+                org.telegram.messenger.g0.E2((hi.m3) this.b);
+                return;
+            case 8:
+                j6 j6Var = (j6) this.b;
+                bi.d6 d6Var = j6Var.c;
+                if (d6Var == null || d6Var.getScrollState() != 0) {
+                    return;
+                }
+                e51 B0 = j6Var.j.B0();
+                if ((B0 == null || B0.getScrollState() == 0) && (d = j6Var.d(j6Var.c.f3)) != null) {
+                    v4.c0 c0Var = j6Var.c.f3;
+                    c0Var.getClass();
+                    int i7 = new int[]{0, v4.p0.z(d) - c0Var.F()}[1];
+                    if (i7 != 0) {
+                        j6Var.c.w0(0, i7, null);
+                        return;
+                    }
+                    return;
+                }
+                return;
+            case 9:
+                fi.u2 u2Var = (fi.u2) this.b;
+                ci.f fVar = (ci.f) u2Var.b;
+                ci.e eVar = (ci.e) u2Var.c;
+                if (eVar == null) {
+                    return;
+                }
+                fVar.a(eVar);
+                fVar.D = 0.0f;
+                u2Var.c = null;
+                u2Var.invalidate();
+                return;
+            case 10:
+                ((WalletEngine2) this.b).lambda$close$56();
+                return;
+            case 11:
+                e9 e9Var = (e9) this.b;
+                boolean z10 = e9Var.h != -1;
+                if (!z10 && !e9Var.s) {
+                    e9Var.c = e9Var.c();
+                    e9Var.d = 0.0f;
+                }
+                boolean z11 = z10 || e9Var.s || e9Var.e > 1.001f;
+                l4 l4Var = e9Var.b;
+                float f10 = e9Var.c;
+                float f11 = e9Var.d;
+                l4Var.r = f10;
+                l4Var.s = f11;
+                l4Var.w = z11;
+                l4Var.x = z11;
+                return;
+            case 12:
+                l9 l9Var = (l9) this.b;
+                l9Var.removeSelfFromStack();
+                Runnable runnable2 = l9Var.f;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    return;
+                }
+                return;
+            case 13:
+                ((org.telegram.ui.Cells.w3) this.b).requestLayout();
+                return;
+            default:
+                ((va) this.b).Z();
+                return;
+        }
     }
 }

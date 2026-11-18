@@ -2,7 +2,7 @@ package o2;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import b3.q;
+import b3.r;
 import e2.t0;
 import j$.util.DesugarTimeZone;
 import java.io.BufferedReader;
@@ -14,13 +14,13 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class g implements q {
+public final class g implements r {
     public static final Pattern a = Pattern.compile("(.+?)(Z|((\\+|-|−)(\\d\\d)(:?(\\d\\d))?))");
 
-    @Override // b3.q
-    public final Object l(Uri uri, j2.k kVar) {
+    @Override // b3.r
+    public final Object t(Uri uri, j2.k kVar) {
         String readLine = new BufferedReader(new InputStreamReader(kVar, StandardCharsets.UTF_8)).readLine();
         try {
             Matcher matcher = a.matcher(readLine);

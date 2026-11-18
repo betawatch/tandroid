@@ -5,17 +5,17 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.view.View;
 import android.widget.TextView;
-import c8.ja;
-import hi.y4;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.y5;
+import c8.ma;
+import hi.x4;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.b6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.d3;
-import org.telegram.ui.Components.i9;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h extends d3 {
     public final /* synthetic */ m f;
@@ -24,23 +24,23 @@ public final class h extends d3 {
     public h(m mVar, Context context) {
         super(context);
         this.f = mVar;
-        this.a = m10.t0;
+        this.a = j10.t0;
         final int i7 = 1;
         setOrientation(1);
-        q6.h(j6.a7, this, null);
-        y4 y4Var = new y4(context, 3);
-        y4Var.c = new Path();
+        u6.h(n6.a7, this, null);
+        x4 x4Var = new x4(context, 3);
+        x4Var.c = new Path();
         Paint paint = new Paint(1);
-        y4Var.b = paint;
+        x4Var.b = paint;
         final int i10 = 0;
-        paint.setColor(j6.x0(null, j6.d6, false));
+        paint.setColor(n6.x0(null, n6.d6, false));
         paint.setShadowLayer(org.telegram.messenger.g0.L(1.33f), 0.0f, org.telegram.messenger.g0.L(0.33f), 503316480);
-        y4Var.setWillNotDraw(false);
-        y4Var.setOrientation(1);
-        y4Var.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
-        i9 i9Var = new i9(context);
-        this.b = i9Var;
-        i9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
+        x4Var.setWillNotDraw(false);
+        x4Var.setOrientation(1);
+        x4Var.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(32.0f));
+        q9 q9Var = new q9(context);
+        this.b = q9Var;
+        q9Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
             public final /* synthetic */ jg.h b;
 
             {
@@ -60,26 +60,26 @@ public final class h extends d3 {
             }
         });
         a();
-        y4Var.addView(i9Var, ja.r(ns.O1, ns.O1, 49));
+        x4Var.addView(q9Var, ma.r(ks.O1, ks.O1, 49));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setGravity(17);
         textView.setTextSize(1, 18.0f);
-        q6.U(textView, j6.G6, null);
+        u6.U(textView, n6.G6, null);
         textView.setTypeface(org.telegram.messenger.g0.o());
-        y4Var.addView(textView, ja.t(-1, -2, 49, 0, 6, 0, 0));
+        x4Var.addView(textView, ma.t(-1, -2, 49, 0, 6, 0, 0));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setGravity(17);
         textView2.setTextSize(1, 14.0f);
-        q6.U(textView2, j6.y6, null);
-        y4Var.addView(textView2, ja.t(-1, -2, 49, 0, 7, 0, 0));
+        u6.U(textView2, n6.y6, null);
+        x4Var.addView(textView2, ma.t(-1, -2, 49, 0, 7, 0, 0));
         TextView textView3 = new TextView(context);
         this.e = textView3;
         textView3.setGravity(17);
-        textView3.setBackground(y5.f(j6.Fi, 8.0f));
+        textView3.setBackground(b6.f(n6.Fi, 8.0f));
         textView3.setTextSize(1, 14.0f);
-        q6.U(textView3, j6.Ji, null);
+        u6.U(textView3, n6.Ji, null);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setPadding(org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f), org.telegram.messenger.g0.L(14.0f));
         textView3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Cells.c3
@@ -101,8 +101,8 @@ public final class h extends d3 {
                 }
             }
         });
-        y4Var.addView(textView3, ja.t(-1, -2, 49, 0, 18, 0, 0));
-        addView(y4Var, ja.o(-1, -2));
+        x4Var.addView(textView3, ma.t(-1, -2, 49, 0, 18, 0, 0));
+        addView(x4Var, ma.o(-1, -2));
         set(null);
     }
 }

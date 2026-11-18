@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
@@ -94,7 +94,7 @@ public final class c {
     public final void d() {
         BasePendingResult basePendingResult;
         BasePendingResult basePendingResult2;
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (this.b != 0 && (basePendingResult = this.l) == null) {
             if (basePendingResult != null) {
                 basePendingResult.c();
@@ -107,7 +107,7 @@ public final class c {
             }
             h hVar = this.c;
             hVar.getClass();
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             if (hVar.w()) {
                 i iVar = new i(hVar);
                 h.x(iVar);

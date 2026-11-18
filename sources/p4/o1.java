@@ -1,73 +1,65 @@
 package p4;
 
-import android.media.session.MediaSession;
+import a8.la;
 import android.os.Bundle;
-import android.os.IBinder;
-import android.text.TextUtils;
-import j$.util.Objects;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o1 {
-    public static final String i;
-    public static final String j;
-    public static final String k;
-    public static final String l;
-    public static final String m;
-    public static final String n;
-    public static final String o;
-    public static final String p;
-    public static final String q;
-    public static final String r;
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public static final String h;
     public final int a;
-    public final int b;
-    public final int c;
-    public final String d;
-    public final String e;
-    public final IBinder f;
-    public final Bundle g;
-    public final MediaSession.Token h;
+    public final Bundle b;
+    public final long c;
+    public final m1 d;
 
     static {
         String str = h2.l0.a;
-        i = Integer.toString(0, 36);
-        j = Integer.toString(1, 36);
-        k = Integer.toString(2, 36);
-        l = Integer.toString(3, 36);
-        m = Integer.toString(4, 36);
-        n = Integer.toString(5, 36);
-        o = Integer.toString(6, 36);
-        p = Integer.toString(7, 36);
-        q = Integer.toString(8, 36);
-        r = Integer.toString(9, 36);
+        e = Integer.toString(0, 36);
+        f = Integer.toString(1, 36);
+        g = Integer.toString(2, 36);
+        h = Integer.toString(3, 36);
     }
 
-    public o1(int i7, String str, c1 c1Var, Bundle bundle, MediaSession.Token token) {
-        str.getClass();
-        bundle.getClass();
-        this.a = i7;
-        this.b = 1010001300;
-        this.c = 9;
-        this.d = str;
-        this.e = "";
-        this.f = c1Var;
-        this.g = bundle;
-        this.h = token;
+    public o1(int i7) {
+        this(i7, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof o1)) {
-            return false;
+    public static o1 a(Bundle bundle) {
+        m1 m1Var;
+        int i7 = bundle.getInt(e, -1);
+        Bundle o4 = h2.l0.o(bundle.getBundle(f));
+        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
+        Bundle bundle2 = bundle.getBundle(h);
+        if (bundle2 != null) {
+            int i10 = bundle2.getInt(m1.d, 1000);
+            String string = bundle2.getString(m1.e, "");
+            Bundle o10 = h2.l0.o(bundle2.getBundle(m1.f));
+            if (o10 == null) {
+                o10 = Bundle.EMPTY;
+            }
+            m1Var = new m1(string, i10, o10);
+        } else {
+            m1Var = i7 != 0 ? new m1(i7) : null;
         }
-        o1 o1Var = (o1) obj;
-        return this.a == o1Var.a && this.b == o1Var.b && this.c == o1Var.c && TextUtils.equals(this.d, o1Var.d) && TextUtils.equals(this.e, o1Var.e) && Objects.equals(this.f, o1Var.f) && Objects.equals(this.h, o1Var.h);
+        m1 m1Var2 = m1Var;
+        if (o4 == null) {
+            o4 = Bundle.EMPTY;
+        }
+        return new o1(i7, o4, j3, m1Var2);
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), 0, Integer.valueOf(this.b), Integer.valueOf(this.c), this.d, this.e, null, this.f, this.h);
-    }
-
-    public final String toString() {
-        return "SessionToken {pkg=" + this.d + " type=0 libraryVersion=" + this.b + " interfaceVersion=" + this.c + " service=" + this.e + " IMediaSession=" + this.f + " extras=" + this.g + "}";
+    public o1(int i7, Bundle bundle, long j3, m1 m1Var) {
+        la.f(m1Var == null || i7 < 0);
+        this.a = i7;
+        this.b = new Bundle(bundle);
+        this.c = j3;
+        if (m1Var == null && i7 < 0) {
+            m1Var = new m1(i7);
+        }
+        this.d = m1Var;
     }
 }

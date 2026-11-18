@@ -1,6 +1,6 @@
 package p4;
 
-import a8.ja;
+import a8.bb;
 import a8.la;
 import a8.t7;
 import android.app.PendingIntent;
@@ -18,24 +18,25 @@ import android.os.Process;
 import android.os.RemoteException;
 import android.util.SparseBooleanArray;
 import android.view.KeyEvent;
-import c8.r9;
+import c8.t9;
 import j$.util.Objects;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import org.telegram.messenger.cf;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.qe;
-import org.telegram.ui.Components.lv0;
-import org.telegram.ui.wn;
+import org.telegram.messenger.bf;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.pe;
+import org.telegram.ui.Components.sv0;
+import org.telegram.ui.Wallet.c5;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class d0 {
-    public static final m1 B = new m1(1);
-    public static final g9.t C = la.a(new d3.p(5));
+    public static final o1 B = new o1(1);
+    public static final g9.t C = bb.a(new d3.p(5));
     public final Bundle A;
     public final Object a = new Object();
     public final Uri b;
@@ -43,10 +44,10 @@ public class d0 {
     public final a0 d;
     public final w7.s e;
     public final Context f;
-    public final c1 g;
+    public final e1 g;
     public final m0 h;
     public final String i;
-    public final n1 j;
+    public final p1 j;
     public final x k;
     public final Handler l;
     public final h2.d m;
@@ -55,9 +56,9 @@ public class d0 {
     public final boolean p;
     public final boolean q;
     public final h9.i0 r;
-    public e1 s;
-    public g1 t;
-    public cf u;
+    public g1 s;
+    public i1 t;
+    public bf u;
     public boolean v;
     public final long w;
     public boolean x;
@@ -78,23 +79,23 @@ public class d0 {
         this.m = dVar;
         this.p = z10;
         this.q = z11;
-        c1 c1Var2 = new c1(this);
-        this.g = c1Var2;
+        e1 e1Var = new e1(this);
+        this.g = e1Var;
         this.o = new Handler(Looper.getMainLooper());
         Looper A0 = c1Var.A0();
         Handler handler = new Handler(A0);
         this.l = handler;
-        this.s = e1.H;
+        this.s = g1.H;
         this.c = new b0(this, A0);
         this.d = new a0(this, A0);
         Uri build = new Uri.Builder().scheme("androidx").authority("media3.session").appendPath(str2 == null ? "" : str2).build();
         this.b = build;
         m0 m0Var = new m0(this, build, handler, bundle, z10, i0Var, i0Var2, t.e, t.f, bundle2);
         this.h = m0Var;
-        this.j = new n1(Process.myUid(), context.getPackageName(), c1Var2, bundle, ((q4.l) m0Var.n.b).c.b);
-        g1 g1Var = new g1(c1Var);
-        this.t = g1Var;
-        h2.l0.W(handler, new org.telegram.ui.web.e1(5, this, g1Var));
+        this.j = new p1(Process.myUid(), context.getPackageName(), e1Var, bundle, ((q4.l) m0Var.n.b).c.b);
+        i1 i1Var = new i1(c1Var);
+        this.t = i1Var;
+        h2.l0.W(handler, new c5(27, this, i1Var));
         this.w = 3000L;
         this.n = new y(this, 2);
         h2.l0.W(handler, new y(this, 3));
@@ -106,19 +107,19 @@ public class d0 {
                 if (d0Var.v) {
                     return;
                 }
-                l1 R0 = d0Var.t.R0();
+                n1 R0 = d0Var.t.R0();
                 if (!d0Var.c.hasMessages(1)) {
-                    l1 l1Var = d0Var.s.c;
+                    n1 n1Var = d0Var.s.c;
                     e2.b1 b1Var = R0.a;
                     int i7 = b1Var.b;
-                    e2.b1 b1Var2 = l1Var.a;
+                    e2.b1 b1Var2 = n1Var.a;
                     if (i7 == b1Var2.b && b1Var.e == b1Var2.e && b1Var.h == b1Var2.h && b1Var.i == b1Var2.i) {
                         ab.c0 c0Var = d0Var.g.b;
-                        h9.i0 o4 = c0Var.o();
-                        for (int i10 = 0; i10 < o4.size(); i10++) {
-                            v vVar = (v) o4.get(i10);
-                            c0Var.s(vVar);
-                            d0Var.c(vVar, new z(R0, c0Var.z(vVar, 16), c0Var.z(vVar, 17), vVar));
+                        h9.i0 p10 = c0Var.p();
+                        for (int i10 = 0; i10 < p10.size(); i10++) {
+                            v vVar = (v) p10.get(i10);
+                            c0Var.t(vVar);
+                            d0Var.c(vVar, new z(R0, c0Var.C(vVar, 16), c0Var.C(vVar, 17), vVar));
                         }
                         try {
                             d0Var.h.j.b(0, R0, true, true, 0);
@@ -155,19 +156,19 @@ public class d0 {
                 if (keyCode != 272) {
                     if (keyCode != 273) {
                         switch (keyCode) {
-                            case ns.W0 /* 85 */:
+                            case ks.W0 /* 85 */:
                                 break;
-                            case ns.X0 /* 86 */:
+                            case ks.X0 /* 86 */:
                                 eVar = new e(this, e10, 6);
                                 break;
-                            case ns.Y0 /* 87 */:
+                            case ks.Y0 /* 87 */:
                                 break;
-                            case ns.Z0 /* 88 */:
+                            case ks.Z0 /* 88 */:
                                 break;
-                            case ns.a1 /* 89 */:
+                            case ks.a1 /* 89 */:
                                 eVar = new e(this, e10, 5);
                                 break;
-                            case ns.b1 /* 90 */:
+                            case ks.b1 /* 90 */:
                                 eVar = new e(this, e10, 4);
                                 break;
                             default:
@@ -180,21 +181,21 @@ public class d0 {
             } else {
                 eVar = new e(this, e10, 1);
             }
-            h2.l0.W(this.l, new wn(this, z11, e10, eVar, 15));
+            h2.l0.W(this.l, new yn(this, z11, e10, eVar, 15));
             return true;
         }
         eVar = this.t.u() ? new e(this, e10, 7) : new e(this, e10, 8);
-        h2.l0.W(this.l, new wn(this, z11, e10, eVar, 15));
+        h2.l0.W(this.l, new yn(this, z11, e10, eVar, 15));
         return true;
     }
 
     public final void c(v vVar, c0 c0Var) {
         int i7;
-        c1 c1Var = this.g;
+        e1 e1Var = this.g;
         try {
-            com.google.android.gms.common.api.internal.t u10 = c1Var.b.u(vVar);
-            if (u10 != null) {
-                i7 = u10.e();
+            com.google.android.gms.common.api.internal.t v = e1Var.b.v(vVar);
+            if (v != null) {
+                i7 = v.e();
             } else if (!h(vVar)) {
                 return;
             } else {
@@ -205,16 +206,16 @@ public class d0 {
                 c0Var.b(uVar, i7);
             }
         } catch (DeadObjectException unused) {
-            c1Var.b.H(vVar);
+            e1Var.b.K(vVar);
         } catch (RemoteException e10) {
             h2.a.m("MediaSessionImpl", "Exception in " + vVar, e10);
         }
     }
 
     public final void d(c0 c0Var) {
-        h9.i0 o4 = this.g.b.o();
-        for (int i7 = 0; i7 < o4.size(); i7++) {
-            c((v) o4.get(i7), c0Var);
+        h9.i0 p10 = this.g.b.p();
+        for (int i7 = 0; i7 < p10.size(); i7++) {
+            c((v) p10.get(i7), c0Var);
         }
         try {
             c0Var.b(this.h.j, 0);
@@ -224,9 +225,9 @@ public class d0 {
     }
 
     public final v e() {
-        h9.i0 o4 = this.g.b.o();
-        for (int i7 = 0; i7 < o4.size(); i7++) {
-            v vVar = (v) o4.get(i7);
+        h9.i0 p10 = this.g.b.p();
+        for (int i7 = 0; i7 < p10.size(); i7++) {
+            v vVar = (v) p10.get(i7);
             if (i(vVar)) {
                 return vVar;
             }
@@ -236,11 +237,11 @@ public class d0 {
 
     public final void f(e2.y0 y0Var) {
         this.c.a(false, false);
-        d(new org.telegram.ui.ActionBar.z(y0Var, 11));
+        d(new org.telegram.ui.ActionBar.p(y0Var, 12));
         try {
-            qe qeVar = this.h.j;
+            pe peVar = this.h.j;
             e2.o oVar = this.s.s;
-            qeVar.n();
+            peVar.n();
         } catch (RemoteException e10) {
             h2.a.d("MediaSessionImpl", "Exception in using media1 API", e10);
         }
@@ -252,9 +253,9 @@ public class d0 {
             boolean z12 = this.t.p0(31) || this.t.p0(20);
             v s5 = s(vVar);
             SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-            ja.p(!false);
+            la.p(!false);
             sparseBooleanArray.append(1, true);
-            ja.p(!false);
+            la.p(!false);
             e2.y0 y0Var = new e2.y0(new e2.s(sparseBooleanArray));
             if (z11 || !z12) {
                 if (!z11) {
@@ -276,7 +277,7 @@ public class d0 {
     }
 
     public final boolean h(v vVar) {
-        return this.g.b.x(vVar) || this.h.g.x(vVar);
+        return this.g.b.A(vVar) || this.h.g.A(vVar);
     }
 
     public final boolean i(v vVar) {
@@ -304,9 +305,9 @@ public class d0 {
         m0 m0Var = this.h;
         if (z10 && k(vVar)) {
             m0Var.getClass();
-            j1 j1Var = t.e;
-            j1 j1Var2 = m0Var.x;
-            j1Var2.getClass();
+            l1 l1Var = t.e;
+            l1 l1Var2 = m0Var.x;
+            l1Var2.getClass();
             e2.y0 y0Var = m0Var.y;
             y0Var.getClass();
             if (m0Var.w.isEmpty()) {
@@ -318,12 +319,12 @@ public class d0 {
                 h9.i0 i0Var4 = m0Var.w;
                 i0Var = i0Var4 == null ? null : h9.i0.q(i0Var4);
             }
-            return new t(j1Var2, y0Var, i0Var2, i0Var);
+            return new t(l1Var2, y0Var, i0Var2, i0Var);
         }
         this.e.getClass();
         e2.y0 y0Var2 = t.f;
-        j1 j1Var3 = t.e;
-        t tVar = new t(j1Var3, y0Var2, null, null);
+        l1 l1Var3 = t.e;
+        t tVar = new t(l1Var3, y0Var2, null, null);
         if (i(vVar)) {
             this.x = true;
             x xVar = this.k;
@@ -337,7 +338,7 @@ public class d0 {
             d0 d0Var = m0Var.h;
             int i7 = 0;
             boolean z11 = m0Var.y.a(17) != y0Var2.a(17);
-            m0Var.x = j1Var3;
+            m0Var.x = l1Var3;
             m0Var.y = y0Var2;
             if (!m0Var.w.isEmpty()) {
                 m0Var.o0();
@@ -354,7 +355,7 @@ public class d0 {
     public final m9.w n(v vVar) {
         s(vVar);
         this.e.getClass();
-        return r9.b(new m1(-6));
+        return t9.b(new o1(-6));
     }
 
     public final boolean o() {
@@ -362,7 +363,7 @@ public class d0 {
             return true;
         }
         try {
-            return ((Boolean) t7.a(new org.telegram.ui.ActionBar.z(this, 10)).b.get()).booleanValue();
+            return ((Boolean) t7.a(new org.telegram.ui.ActionBar.p(this, 11)).b.get()).booleanValue();
         } catch (InterruptedException | ExecutionException e10) {
             throw new IllegalStateException(e10);
         }
@@ -379,7 +380,7 @@ public class d0 {
         return h2.l0.g0(w7.s.s0(list), new m9.q() { // from class: p4.s
             @Override // m9.q, v5.e
             public final m9.y apply(Object obj) {
-                return r9.b(new w((List) obj, i7, j3));
+                return t9.b(new w((List) obj, i7, j3));
             }
         });
     }
@@ -393,9 +394,9 @@ public class d0 {
                 }
                 this.v = true;
                 a0 a0Var = this.d;
-                lv0 lv0Var = a0Var.a;
-                if (lv0Var != null) {
-                    a0Var.removeCallbacks(lv0Var);
+                sv0 sv0Var = a0Var.a;
+                if (sv0Var != null) {
+                    a0Var.removeCallbacks(sv0Var);
                     a0Var.a = null;
                 }
                 this.l.removeCallbacksAndMessages(null);
@@ -445,16 +446,16 @@ public class d0 {
                 mediaSession.setCallback(null);
                 lVar.b.a.clear();
                 mediaSession.release();
-                c1 c1Var = this.g;
-                Set set = c1Var.c;
-                ab.c0 c0Var = c1Var.b;
-                h9.i0 o4 = c0Var.o();
-                int size = o4.size();
+                e1 e1Var = this.g;
+                Set set = e1Var.c;
+                ab.c0 c0Var = e1Var.b;
+                h9.i0 p10 = c0Var.p();
+                int size = p10.size();
                 while (i10 < size) {
-                    Object obj = o4.get(i10);
+                    Object obj = p10.get(i10);
                     i10++;
                     v vVar = (v) obj;
-                    c0Var.H(vVar);
+                    c0Var.K(vVar);
                     u uVar = vVar.d;
                     if (uVar != null) {
                         uVar.g();
@@ -468,7 +469,7 @@ public class d0 {
                     }
                 }
                 set.clear();
-                c1Var.a.clear();
+                e1Var.a.clear();
             } catch (Throwable th2) {
                 throw th2;
             }

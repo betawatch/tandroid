@@ -1,11 +1,11 @@
 package ai;
 
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ae;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.xe;
+import org.telegram.ui.Components.gf;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.qf;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,46 +24,46 @@ public final /* synthetic */ class b0 implements Runnable {
         switch (this.a) {
             case 0:
                 n0 n0Var = this.b;
-                if (!n0Var.k() && (q0Var = n0Var.s) != null) {
+                if (!n0Var.o() && (q0Var = n0Var.s) != null) {
                     q0Var.setShown(false);
                     break;
                 }
                 break;
             case 1:
                 n0 n0Var2 = this.b;
-                if (!n0Var2.k() && (q0Var2 = n0Var2.s) != null) {
+                if (!n0Var2.o() && (q0Var2 = n0Var2.s) != null) {
                     q0Var2.e();
                     break;
                 }
                 break;
             case 2:
-                xe xeVar = this.b.f.b.F0;
-                if (xeVar != null) {
-                    xeVar.requestFocus();
+                gf gfVar = this.b.f.a.F0;
+                if (gfVar != null) {
+                    gfVar.requestFocus();
                     break;
                 }
                 break;
             case 3:
-                ChatActivityEnterView chatActivityEnterView = this.b.f.b;
-                chatActivityEnterView.y1 = 0L;
-                chatActivityEnterView.z1 = null;
+                ChatActivityEnterView chatActivityEnterView = this.b.f.a;
+                chatActivityEnterView.E1 = 0L;
+                chatActivityEnterView.F1 = null;
                 break;
             case 4:
                 n0 n0Var3 = this.b;
-                ae aeVar = n0Var3.f;
-                String t6 = n0Var3.t();
+                qf qfVar = n0Var3.f;
+                String y10 = n0Var3.y();
                 g0 g0Var = new g0(n0Var3, 0);
-                aeVar.getClass();
-                ChatActivityEnterView chatActivityEnterView2 = aeVar.b;
-                org.telegram.ui.Components.d0 d0Var = new org.telegram.ui.Components.d0(chatActivityEnterView2.getContext(), chatActivityEnterView2.E4);
-                d0Var.s1(t6);
-                d0Var.f2 = g0Var;
-                d0Var.show();
+                qfVar.getClass();
+                ChatActivityEnterView chatActivityEnterView2 = qfVar.a;
+                org.telegram.ui.Components.m0 m0Var = new org.telegram.ui.Components.m0(chatActivityEnterView2.getContext(), chatActivityEnterView2.K4);
+                m0Var.x1(y10);
+                m0Var.f2 = g0Var;
+                m0Var.show();
                 break;
             case 5:
-                xe xeVar2 = this.b.f.b.F0;
-                if (xeVar2 != null) {
-                    xeVar2.requestFocus();
+                gf gfVar2 = this.b.f.a.F0;
+                if (gfVar2 != null) {
+                    gfVar2.requestFocus();
                     break;
                 }
                 break;
@@ -85,28 +85,28 @@ public final /* synthetic */ class b0 implements Runnable {
             case 8:
                 n0 n0Var6 = this.b;
                 if (n0Var6.r == 1) {
-                    n0Var6.B(true);
+                    n0Var6.J(true);
                     break;
                 }
                 break;
             case 9:
                 n0 n0Var7 = this.b;
                 if (n0Var7.r == 1) {
-                    n0Var7.B(false);
+                    n0Var7.J(false);
                     break;
                 }
                 break;
             case 10:
-                er erVar = er.h;
+                lr lrVar = lr.h;
                 n0 n0Var8 = this.b;
-                n0Var8.b(0.0f, 320L, erVar);
-                org.telegram.messenger.g0.i3(new b0(n0Var8, 1), 360L);
+                n0Var8.b(0.0f, 320L, lrVar);
+                org.telegram.messenger.g0.h3(new b0(n0Var8, 1), 360L);
                 break;
             default:
                 n0 n0Var9 = this.b;
-                if (!n0Var9.k()) {
-                    n0Var9.f.b.A1(null, true);
-                    n0Var9.b(0.0f, 240L, er.g);
+                if (!n0Var9.o()) {
+                    n0Var9.f.a.I1(null, true);
+                    n0Var9.b(0.0f, 240L, lr.g);
                     break;
                 }
                 break;

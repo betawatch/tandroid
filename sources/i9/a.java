@@ -1,11 +1,11 @@
 package i9;
 
-import a8.ka;
-import c8.s0;
+import a8.ma;
+import c8.u0;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -25,7 +25,7 @@ public final class a {
         try {
             int length = cArr.length;
             RoundingMode roundingMode = RoundingMode.UNNECESSARY;
-            int c10 = s0.c(length);
+            int c10 = u0.c(length);
             this.d = c10;
             int numberOfTrailingZeros = Integer.numberOfTrailingZeros(c10);
             int i7 = 1 << (3 - numberOfTrailingZeros);
@@ -37,7 +37,7 @@ public final class a {
             for (int i10 = 0; i10 < this.f; i10++) {
                 int i11 = this.d;
                 RoundingMode roundingMode2 = RoundingMode.CEILING;
-                zArr[s0.b(i10 * 8, i11)] = true;
+                zArr[u0.b(i10 * 8, i11)] = true;
             }
             this.h = z10;
         } catch (ArithmeticException e10) {
@@ -75,10 +75,10 @@ public final class a {
                 if (bArr[c10] == -1) {
                     bArr[c10] = (byte) i7;
                 } else {
-                    throw new IllegalArgumentException(ka.a("Duplicate character: %s", Character.valueOf(c10)));
+                    throw new IllegalArgumentException(ma.a("Duplicate character: %s", Character.valueOf(c10)));
                 }
             } else {
-                throw new IllegalArgumentException(ka.a("Non-ASCII character: %s", Character.valueOf(c10)));
+                throw new IllegalArgumentException(ma.a("Non-ASCII character: %s", Character.valueOf(c10)));
             }
         }
     }

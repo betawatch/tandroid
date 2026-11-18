@@ -1,55 +1,49 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ig0 extends LinearLayout {
-    public static final /* synthetic */ int d = 0;
-    public final TextView[] a;
-    public final TextView[] b;
-    public final /* synthetic */ jg0 c;
+public final class ig0 extends org.telegram.ui.Components.ao {
+    public final /* synthetic */ ng0 B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ig0(jg0 jg0Var, Context context) {
-        super(context);
-        this.c = jg0Var;
-        this.a = new TextView[4];
-        this.b = new TextView[4];
-        setOrientation(1);
-        setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        int i7 = 0;
-        while (i7 < 2) {
-            LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
-            for (int i10 = 0; i10 < 2; i10++) {
-                LinearLayout f11 = org.telegram.messenger.k5.f(context, 1);
-                LinearLayout f12 = org.telegram.messenger.k5.f(context, 0);
-                int i11 = (i7 * 2) + i10;
-                this.a[i11] = new TextView(context);
-                this.b[i11] = new TextView(context);
-                this.a[i11].setTypeface(org.telegram.messenger.g0.o());
-                this.a[i11].setTextSize(1, 17.0f);
-                this.b[i11].setTextSize(1, 13.0f);
-                this.b[i11].setGravity(3);
-                f12.addView(this.a[i11]);
-                f11.addView(f12);
-                f11.addView(this.b[i11]);
-                f10.addView(f11, c8.ja.l(1.0f, -1, -2));
-            }
-            addView(f10, c8.ja.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, i7 == 0 ? 16.0f : 0.0f));
-            i7++;
+    public ig0(ng0 ng0Var, Context context) {
+        super(context, null, false, null);
+        this.B0 = ng0Var;
+    }
+
+    @Override // org.telegram.ui.Components.ao, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        ng0 ng0Var = this.B0;
+        ng0Var.X.y0(ng0Var.c0.getAvatarImageView().getX(), ng0Var.c0.getAvatarImageView().getY(), ng0Var.c0.getAvatarImageView().getWidth(), ng0Var.c0.getAvatarImageView().getHeight());
+        if (ng0Var.Z) {
+            canvas.save();
+            canvas.scale(0.9f, 0.9f, ng0Var.X.r(), ng0Var.X.s());
+            ng0Var.X.h(canvas, null);
+            canvas.restore();
+        }
+        if (ng0Var.Y) {
+            int r10 = (int) (ng0Var.X.r() - (org.telegram.ui.ActionBar.n6.U0.getIntrinsicWidth() / 2));
+            int s5 = (int) (ng0Var.X.s() - (org.telegram.ui.ActionBar.n6.U0.getIntrinsicHeight() / 2));
+            Drawable drawable = org.telegram.ui.ActionBar.n6.U0;
+            drawable.setBounds(r10, s5, drawable.getIntrinsicWidth() + r10, org.telegram.ui.ActionBar.n6.U0.getIntrinsicHeight() + s5);
+            org.telegram.ui.ActionBar.n6.U0.draw(canvas);
         }
     }
 
-    public final void a() {
-        for (int i7 = 0; i7 < 4; i7++) {
-            TextView textView = this.a[i7];
-            int i10 = org.telegram.ui.ActionBar.j6.G6;
-            jg0 jg0Var = this.c;
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(i10, jg0Var.getResourceProvider()));
-            this.b[i7].setTextColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.z6, jg0Var.getResourceProvider()));
-        }
+    @Override // org.telegram.ui.Components.ao, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.B0.X.P();
+    }
+
+    @Override // org.telegram.ui.Components.ao, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.B0.X.R();
     }
 }

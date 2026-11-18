@@ -1,27 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class nh0 extends uj0 {
-    public final /* synthetic */ vh0 f3;
+public final class nh0 extends ImageReceiver {
+    public final /* synthetic */ ph0 K1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nh0(vh0 vh0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.f3 = vh0Var;
+    public nh0(ph0 ph0Var) {
+        super(null);
+        this.K1 = ph0Var;
     }
 
-    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        vh0 vh0Var = this.f3;
-        o90 o90Var = vh0Var.K;
-        if (o90Var != null) {
-            o90Var.measure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), 0));
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean x0(Drawable drawable, String str, int i7, boolean z10, int i10) {
+        if (drawable != null) {
+            this.K1.c();
         }
-        super.onMeasure(i7, i10);
-        vh0Var.j();
+        return super.x0(drawable, str, i7, z10, i10);
     }
 }

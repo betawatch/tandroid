@@ -1,74 +1,69 @@
 package org.telegram.ui.Components;
 
-import java.util.HashMap;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ml implements org.telegram.messenger.z10 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ wl e;
+public final /* synthetic */ class ml implements z4, qj0, b81 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    public /* synthetic */ ml(rl rlVar, boolean z10, boolean z11, int i7) {
-        this.e = rlVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = i7;
+    public /* synthetic */ ml(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
+        this.a = i7;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.z4
+    public void O(int i7, int i10, boolean z10) {
+        int i11 = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        switch (i11) {
             case 0:
-                Long l10 = (Long) obj;
-                ki kiVar = ((tl) this.e).b.b;
-                if (kiVar != null) {
-                    kiVar.G3 = true;
-                }
-                kiVar.X3.y1(7, true, this.b, this.d, 0, 0L, kiVar.f1(), this.c, l10.longValue());
-                HashMap hashMap = ChatAttachAlertPhotoLayout.t1;
-                hashMap.clear();
-                ChatAttachAlertPhotoLayout.s1.clear();
-                ChatAttachAlertPhotoLayout.u1.clear();
-                hashMap.clear();
-                PhotoViewer.p1();
-                PhotoViewer.p1().z0(PhotoViewer.p1().Q, false);
-                PhotoViewer.p1().v2 = true;
+                boolean z11 = ChatAttachAlertPhotoLayout.r1;
+                si siVar = chatAttachAlertPhotoLayout.b;
+                siVar.N0();
+                siVar.X3.y1(7, false, z10, i7, 0, 0L, siVar.g1(), false, 0L);
                 break;
             default:
-                rl rlVar = (rl) this.e;
-                Long l11 = (Long) obj;
-                PhotoViewer.p1();
-                PhotoViewer.p1().P = false;
-                PhotoViewer.p1().v2 = false;
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = rlVar.c;
-                ki kiVar2 = chatAttachAlertPhotoLayout.b;
-                kiVar2.t4 = true;
-                kiVar2.G3 = true;
-                chatAttachAlertPhotoLayout.d0(false);
-                ii iiVar = kiVar2.X3;
-                boolean z10 = this.b;
-                iiVar.y1(z10 ? 4 : 8, true, this.c, this.d, 0, 0L, kiVar2.f1(), z10, l11.longValue());
-                ChatAttachAlertPhotoLayout.s1.clear();
-                ChatAttachAlertPhotoLayout.u1.clear();
-                ChatAttachAlertPhotoLayout.t1.clear();
-                chatAttachAlertPhotoLayout.H.f();
-                chatAttachAlertPhotoLayout.w.f();
-                kiVar2.a(true);
-                PhotoViewer.p1();
-                PhotoViewer.p1().z0(PhotoViewer.p1().Q, false);
-                PhotoViewer.p1().v2 = true;
+                boolean z12 = ChatAttachAlertPhotoLayout.r1;
+                si siVar2 = chatAttachAlertPhotoLayout.b;
+                siVar2.N0();
+                siVar2.X3.y1(4, true, z10, i7, 0, 0L, siVar2.g1(), false, 0L);
                 break;
         }
     }
 
-    public /* synthetic */ ml(tl tlVar, boolean z10, int i7, boolean z11) {
-        this.e = tlVar;
-        this.b = z10;
-        this.d = i7;
-        this.c = z11;
+    @Override // org.telegram.ui.Components.b81
+    public void b(float f10) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        em emVar = chatAttachAlertPhotoLayout.Q;
+        if (emVar != null) {
+            chatAttachAlertPhotoLayout.C0 = f10;
+            emVar.setZoom(f10);
+        }
+        chatAttachAlertPhotoLayout.w0(true);
+    }
+
+    @Override // org.telegram.ui.Components.qj0
+    public boolean c(int i7, View view) {
+        boolean z10 = ChatAttachAlertPhotoLayout.r1;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        si siVar = chatAttachAlertPhotoLayout.b;
+        if (!siVar.R2) {
+            if (i7 == 0 && chatAttachAlertPhotoLayout.U0 == chatAttachAlertPhotoLayout.V0) {
+                qi qiVar = siVar.X3;
+                if (qiVar != null) {
+                    qiVar.y1(0, false, true, 0, 0, 0L, siVar.g1(), false, 0L);
+                }
+                return true;
+            }
+            if (view instanceof org.telegram.ui.Cells.r5) {
+                gk0 gk0Var = chatAttachAlertPhotoLayout.J;
+                boolean z11 = !((org.telegram.ui.Cells.r5) view).a();
+                chatAttachAlertPhotoLayout.L = z11;
+                gk0Var.d(i7, view, z11);
+            }
+        }
+        return false;
     }
 }

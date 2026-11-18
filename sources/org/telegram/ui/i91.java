@@ -1,70 +1,49 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i91 extends v4.k {
-    public Runnable F;
-    public int G;
-    public final /* synthetic */ u91 H;
+public final class i91 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ y91 c;
 
-    public i91(u91 u91Var) {
-        this.H = u91Var;
+    public /* synthetic */ i91(y91 y91Var, boolean z10, int i7) {
+        this.a = i7;
+        this.c = y91Var;
+        this.b = z10;
     }
 
-    @Override // v4.k
-    public final void F() {
-        if (this.G == -1) {
-            this.G = this.H.getNotificationCenter().q(null, this.G, false);
-            Runnable runnable = this.F;
-            if (runnable != null) {
-                org.telegram.messenger.g0.r(runnable);
-                this.F = null;
-            }
-        }
-    }
-
-    @Override // v4.k
-    public final void N() {
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            this.F = null;
-        }
-        h91 h91Var = new h91(this, 0);
-        this.F = h91Var;
-        org.telegram.messenger.g0.h3(h91Var);
-    }
-
-    @Override // v4.k, v4.m0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-        }
-        h91 h91Var = new h91(this, 1);
-        this.F = h91Var;
-        org.telegram.messenger.g0.h3(h91Var);
-    }
-
-    @Override // v4.k
-    public final void z(v4.e1 e1Var) {
-        u91 u91Var = this.H;
-        View view = u91Var.d1;
-        if (view == e1Var.a) {
-            view.setTranslationX(0.0f);
-            z81 z81Var = u91Var.P;
-            if (z81Var != null) {
-                z81Var.G.clear();
-            }
-            View view2 = u91Var.d1;
-            if (view2 instanceof r91) {
-                r91 r91Var = (r91) view2;
-                r91Var.setTopicIcon(r91Var.d5);
-            }
-            u91Var.d1 = null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f10 = z10 ? 1.0f : 0.0f;
+                y91 y91Var = this.c;
+                y91Var.W0(f10);
+                if (!z10) {
+                    Activity parentActivity = y91Var.getParentActivity();
+                    i7 = ((org.telegram.ui.ActionBar.h2) y91Var).classGuid;
+                    org.telegram.messenger.g0.k3(parentActivity, i7);
+                    y91Var.s0.setVisibility(8);
+                    y91Var.U0(true);
+                    break;
+                } else {
+                    y91Var.r0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.p0.setVisibility(8);
+                    break;
+                }
+                break;
         }
     }
 }

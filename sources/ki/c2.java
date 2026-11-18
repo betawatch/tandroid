@@ -1,30 +1,56 @@
 package ki;
 
-import android.view.View;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.messenger.voip.VoIPPreNotificationService;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.p5;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c2 implements View.OnClickListener {
+public final /* synthetic */ class c2 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
+    public final /* synthetic */ int b;
 
-    public /* synthetic */ c2(x2 x2Var, int i7) {
-        this.a = i7;
-        this.b = x2Var;
+    public /* synthetic */ c2(int i7, int i10) {
+        this.a = i10;
+        this.b = i7;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        int i7 = this.a;
+        int i10 = 1;
+        int i11 = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.ui.web.s0 webView = this.b.E.getWebView();
-                if (webView != null) {
-                    webView.reload();
+                org.telegram.messenger.g0.g3(new jg.x(i11, i10));
+                break;
+            case 1:
+                VoIPGroupNotification.lambda$decline$3(i11, tLObject, tL_error);
+                break;
+            case 2:
+                VoIPPreNotificationService.lambda$decline$4(i11, tLObject, tL_error);
+                break;
+            case 3:
+                org.telegram.messenger.g0.g3(new p5(i11, tLObject));
+                break;
+            case 4:
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    mp.u1(i11).V3((TLRPC.TL_updates) tLObject, false);
                     break;
                 }
                 break;
+            case 5:
+                String str = LaunchActivity.C1;
+                org.telegram.messenger.g0.g3(new p5(i11, 2, tLObject));
+                break;
             default:
-                this.b.w();
+                String str2 = LaunchActivity.C1;
+                org.telegram.messenger.g0.g3(new p5(i11, i10, tLObject));
                 break;
         }
     }

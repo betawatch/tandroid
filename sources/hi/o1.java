@@ -9,14 +9,13 @@ import android.util.SparseArray;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.gz;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.wi0;
+import org.telegram.messenger.bz;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class o1 extends uj0 {
-    public wi0 f3;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class o1 extends ck0 {
+    public org.telegram.ui.ActionBar.l5 f3;
     public boolean g3;
     public float h3;
     public float i3;
@@ -40,24 +39,24 @@ public final class o1 extends uj0 {
     }
 
     public static void z1(o1 o1Var, int i7, int i10) {
-        if (o1Var.f3 == null || !(o1Var.getLayoutManager() instanceof v4.s)) {
+        if (o1Var.f3 == null || !(o1Var.getLayoutManager() instanceof v4.t)) {
             return;
         }
-        v4.s sVar = (v4.s) o1Var.getLayoutManager();
-        View m10 = sVar.m(i7);
-        int L0 = sVar.L0();
-        if ((m10 == null && Math.abs(i7 - L0) > sVar.J * 9.0f) || !gz.c()) {
-            o1Var.f3.b = sVar.L0() < i7 ? 0 : 1;
-            o1Var.f3.d(i7, i10, false, false);
+        v4.t tVar = (v4.t) o1Var.getLayoutManager();
+        View m10 = tVar.m(i7);
+        int L0 = tVar.L0();
+        if ((m10 == null && Math.abs(i7 - L0) > tVar.J * 9.0f) || !bz.c()) {
+            o1Var.f3.b = tVar.L0() < i7 ? 0 : 1;
+            o1Var.f3.k(i7, i10, false, false);
         } else {
             l1 l1Var = new l1(0, o1Var.getContext(), o1Var);
             l1Var.a = i7;
             l1Var.p = i10;
-            sVar.w0(l1Var);
+            tVar.w0(l1Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -108,7 +107,7 @@ public final class o1 extends uj0 {
                     int y10 = this.j3 ? (int) n1Var.getY() : n1Var.getTop();
                     ArrayList arrayList4 = (ArrayList) sparseArray.get(y10);
                     if (arrayList4 == null) {
-                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) r.b.g(1, arrayList) : new ArrayList();
+                        arrayList4 = !arrayList.isEmpty() ? (ArrayList) p5.c.g(1, arrayList) : new ArrayList();
                         sparseArray.put(y10, arrayList4);
                     }
                     arrayList4.add(n1Var);
@@ -151,7 +150,7 @@ public final class o1 extends uj0 {
                     m1Var = new m1(this);
                     m1Var.l(7);
                 } else {
-                    m1Var = (m1) r.b.g(1, arrayList2);
+                    m1Var = (m1) p5.c.g(1, arrayList2);
                 }
                 m1Var.N = R;
                 m1Var.e();
@@ -194,14 +193,14 @@ public final class o1 extends uj0 {
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView
-    public final void setLayoutManager(v4.o0 o0Var) {
-        super.setLayoutManager(o0Var);
+    public final void setLayoutManager(v4.p0 p0Var) {
+        super.setLayoutManager(p0Var);
         this.f3 = null;
-        if (o0Var instanceof v4.b0) {
-            wi0 wi0Var = new wi0(this, (v4.b0) o0Var);
-            this.f3 = wi0Var;
-            wi0Var.i = new ci.h(this, 1);
-            wi0Var.h = new di.z6(this, 17);
+        if (p0Var instanceof v4.c0) {
+            org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(this, (v4.c0) p0Var);
+            this.f3 = l5Var;
+            l5Var.r = new ci.h(this, 1);
+            l5Var.n = new di.c7(this, 17);
         }
     }
 }

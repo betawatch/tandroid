@@ -1,81 +1,86 @@
 package org.telegram.ui;
 
-import android.graphics.Matrix;
-import android.graphics.Shader;
-import java.security.SecureRandom;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b40 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public Shader g;
-    public final int i;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
+public final class b40 extends Drawable {
+    public long b;
+    public int d;
+    public final View e;
+    public final Paint a = new Paint(1);
+    public float c = 1.0f;
 
-    public b40(int i7) {
-        this.i = i7;
+    public b40(View view) {
+        this.e = view;
     }
 
-    public final void a() {
-        int i7 = this.i;
-        if (c40.s1(i7)) {
-            this.a = a8.p0.f(Utilities.b.nextInt(100), 0.2f, 100.0f, 0.85f);
-            this.b = 1.0f;
-        } else if (i7 == 1) {
-            SecureRandom secureRandom = Utilities.b;
-            this.a = a8.p0.f(secureRandom.nextInt(100), 0.3f, 100.0f, 0.2f);
-            this.b = a8.p0.f(secureRandom.nextInt(100), 0.3f, 100.0f, 0.7f);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int L;
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        View view = this.e;
+        if (view instanceof org.telegram.ui.ActionBar.n5) {
+            L = org.telegram.messenger.g0.L(1.0f) + centerY;
+            centerX -= org.telegram.messenger.g0.L(3.0f);
         } else {
-            SecureRandom secureRandom2 = Utilities.b;
-            this.a = com.google.android.gms.internal.vision.e2.c(secureRandom2.nextInt(100), 100.0f, 0.2f, 0.8f);
-            this.b = secureRandom2.nextInt(100) / 100.0f;
+            L = org.telegram.messenger.g0.L(2.0f) + centerY;
         }
+        Paint paint = this.a;
+        paint.setColor(-1147527);
+        paint.setAlpha((int) (this.c * 255.0f));
+        canvas.drawCircle(centerX, L, org.telegram.messenger.g0.L(4.0f), paint);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = elapsedRealtime - this.b;
+        if (j3 > 17) {
+            j3 = 17;
+        }
+        this.b = elapsedRealtime;
+        int i7 = this.d;
+        if (i7 == 0) {
+            float f10 = (j3 / 2000.0f) + this.c;
+            this.c = f10;
+            if (f10 >= 1.0f) {
+                this.c = 1.0f;
+                this.d = 1;
+            }
+        } else if (i7 == 1) {
+            float f11 = this.c - (j3 / 2000.0f);
+            this.c = f11;
+            if (f11 < 0.5f) {
+                this.c = 0.5f;
+                this.d = 0;
+            }
+        }
+        view.invalidate();
     }
 
-    public final void b(int i7, int i10, int i11, long j3, float f10) {
-        if (this.g == null) {
-            return;
-        }
-        float f11 = this.e;
-        if (f11 == 0.0f || this.f >= f11) {
-            this.e = Utilities.b.nextInt(org.telegram.messenger.ns.e3) + 1500;
-            this.f = 0.0f;
-            if (this.a == -1.0f) {
-                a();
-            }
-            this.c = this.a;
-            this.d = this.b;
-            a();
-        }
-        float f12 = j3;
-        float f13 = 1.0f;
-        float f14 = (f12 * 0.02f * f10) + (f12 * 1.0f) + this.f;
-        this.f = f14;
-        float f15 = this.e;
-        if (f14 > f15) {
-            this.f = f15;
-        }
-        float interpolation = org.telegram.ui.Components.er.g.getInterpolation(this.f / f15);
-        float f16 = i11;
-        float f17 = this.c;
-        float f18 = (((((this.a - f17) * interpolation) + f17) * f16) + i10) - 200.0f;
-        float f19 = this.d;
-        float f20 = (((((this.b - f19) * interpolation) + f19) * f16) + i7) - 200.0f;
-        int i12 = this.i;
-        if (!c40.s1(i12)) {
-            f13 = i12 == 1 ? 4.0f : 2.5f;
-        }
-        float L = (org.telegram.messenger.g0.L(122.0f) / 400.0f) * f13;
-        Matrix matrix = this.h;
-        matrix.reset();
-        matrix.postTranslate(f18, f20);
-        matrix.postScale(L, L, f18 + 200.0f, f20 + 200.0f);
-        this.g.setLocalMatrix(matrix);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

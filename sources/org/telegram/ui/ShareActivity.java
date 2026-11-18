@@ -13,17 +13,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class ShareActivity extends Activity {
     public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Components.po0 a;
+    public org.telegram.ui.Components.yo0 a;
 
     @Override // android.app.Activity
     public final void onCreate(Bundle bundle) {
         org.telegram.messenger.t0.w();
         org.telegram.messenger.g0.v(this, getResources().getConfiguration());
-        org.telegram.messenger.g0.w3(getWindow());
+        org.telegram.messenger.g0.v3(getWindow());
         requestWindowFeature(1);
         setTheme(R.style.Theme_TMessages_Transparent);
         super.onCreate(bundle);
@@ -56,12 +56,12 @@ public class ShareActivity extends Activity {
         TLdeserialize.readAttachPath(serializedData, 0L);
         serializedData.cleanup();
         String string2 = sharedPreferences.getString(queryParameter + "_link", null);
-        org.telegram.messenger.gj gjVar = new org.telegram.messenger.gj(org.telegram.messenger.m10.t0, TLdeserialize, false, true);
-        gjVar.k.with_my_score = true;
+        org.telegram.messenger.fj fjVar = new org.telegram.messenger.fj(org.telegram.messenger.j10.t0, TLdeserialize, false, true);
+        fjVar.k.with_my_score = true;
         try {
-            org.telegram.ui.Components.po0 N0 = org.telegram.ui.Components.po0.N0(this, gjVar, null, false, string2);
-            this.a = N0;
-            N0.setCanceledOnTouchOutside(true);
+            org.telegram.ui.Components.yo0 O0 = org.telegram.ui.Components.yo0.O0(this, fjVar, null, false, string2);
+            this.a = O0;
+            O0.setCanceledOnTouchOutside(true);
             this.a.setOnDismissListener(new q5(this, 15));
             this.a.show();
         } catch (Exception e10) {
@@ -74,8 +74,8 @@ public class ShareActivity extends Activity {
     public final void onPause() {
         super.onPause();
         try {
-            org.telegram.ui.Components.po0 po0Var = this.a;
-            if (po0Var == null || !po0Var.isShowing()) {
+            org.telegram.ui.Components.yo0 yo0Var = this.a;
+            if (yo0Var == null || !yo0Var.isShowing()) {
                 return;
             }
             this.a.dismiss();

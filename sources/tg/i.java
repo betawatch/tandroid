@@ -1,6 +1,6 @@
 package tg;
 
-import a8.t9;
+import a8.w9;
 import android.content.Context;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
@@ -8,18 +8,18 @@ import android.os.Build;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.widget.FrameLayout;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.pi0;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class i extends FrameLayout {
     public final Paint a;
     public final Paint b;
     public final Paint c;
     public int d;
-    public final u5 e;
+    public final c6 e;
     public boolean f;
     public final /* synthetic */ j h;
 
@@ -33,7 +33,7 @@ public abstract class i extends FrameLayout {
         this.b = paint2;
         Paint paint3 = new Paint(1);
         this.c = paint3;
-        this.e = new u5(this, 0L, 250L, er.h);
+        this.e = new c6(this, 0L, 250L, lr.h);
         this.f = true;
         setWillNotDraw(false);
         paint.setColor(-1);
@@ -54,7 +54,7 @@ public abstract class i extends FrameLayout {
 
     public final void b() {
         j jVar = this.h;
-        pi0 selectionBounds = jVar.getSelectionBounds();
+        yi0 selectionBounds = jVar.getSelectionBounds();
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
         layoutParams.leftMargin = (int) selectionBounds.a;
         layoutParams.topMargin = (int) selectionBounds.b;
@@ -139,8 +139,8 @@ public abstract class i extends FrameLayout {
                             jVar.s = true;
                             org.telegram.messenger.g0.r(eVar);
                             int[] n10 = jVar.G.n(jVar);
-                            float a10 = t9.a(n10[0], n10[1], jVar.b, jVar.c);
-                            float a11 = t9.a(n10[0], n10[1], f10, f11);
+                            float a10 = w9.a(n10[0], n10[1], jVar.b, jVar.c);
+                            float a11 = w9.a(n10[0], n10[1], f10, f11);
                             float f16 = 0.0f;
                             if (a10 > 0.0f) {
                                 jVar.j(a11 / a10);
@@ -185,7 +185,7 @@ public abstract class i extends FrameLayout {
                     ((d) getParent()).invalidate();
                 }
                 if (a12 == 3 && (jVar instanceof q1)) {
-                    org.telegram.messenger.g0.i3(eVar, ViewConfiguration.getLongPressTimeout());
+                    org.telegram.messenger.g0.h3(eVar, ViewConfiguration.getLongPressTimeout());
                 }
                 z10 = true;
             }

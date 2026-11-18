@@ -1,18 +1,29 @@
 package org.telegram.ui.Components;
 
-import java.util.concurrent.Executor;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n51 implements Executor {
-    public final /* synthetic */ org.telegram.messenger.q5 a;
+public final class n51 extends c10 {
+    public final ah.i K;
+    public final /* synthetic */ o51 L;
 
-    public /* synthetic */ n51(org.telegram.messenger.q5 q5Var) {
-        this.a = q5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n51(o51 o51Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
+        this.L = o51Var;
+        ah.i iVar = this.r;
+        this.K = iVar;
+        iVar.setImeOptions(268435459);
+        iVar.setHint(org.telegram.messenger.gd.M0(2131743102, null));
+        iVar.addTextChangedListener(new ah.j(this, 29));
+        iVar.setOnEditorActionListener(new g(this, 12));
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.a.postRunnable(runnable);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.L.K0(motionEvent, this.K);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

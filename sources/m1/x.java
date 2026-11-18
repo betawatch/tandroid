@@ -2,7 +2,7 @@ package m1;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x extends kd.j implements rd.l {
     public final /* synthetic */ int a = 0;
@@ -71,7 +71,7 @@ public final class x extends kd.j implements rd.l {
                     }
                 }
                 if (i7 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     this.d = rVar2;
                     this.b = 1;
                     obj = b0Var.i(this);
@@ -83,7 +83,7 @@ public final class x extends kd.j implements rd.l {
                     if (i7 != 1) {
                         if (i7 == 2) {
                             pVar = (kotlin.jvm.internal.p) ((Serializable) this.d);
-                            af.b.c(obj);
+                            b7.h.b(obj);
                             pVar.a = ((Number) obj).intValue();
                             return gd.k.a;
                         }
@@ -91,12 +91,12 @@ public final class x extends kd.j implements rd.l {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         pVar2 = (kotlin.jvm.internal.p) ((Serializable) this.d);
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         pVar2.a = ((Number) obj).intValue();
                         return gd.k.a;
                     }
                     rVar = (kotlin.jvm.internal.r) ((Serializable) this.d);
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 rVar.a = obj;
                 m0 g10 = b0Var.g();
@@ -114,7 +114,7 @@ public final class x extends kd.j implements rd.l {
                 int i10 = this.b;
                 b0 b0Var2 = this.c;
                 if (i10 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     this.b = 1;
                     obj = b0.f(b0Var2, true, this);
                     if (obj == aVar2) {
@@ -127,11 +127,11 @@ public final class x extends kd.j implements rd.l {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
                             Object obj4 = this.d;
-                            af.b.c(obj);
+                            b7.h.b(obj);
                             return obj4;
                         }
                         cVar = (c) this.d;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         obj2 = cVar.b;
                         if ((obj2 == null ? obj2.hashCode() : 0) == cVar.c) {
                             throw new IllegalStateException("Data in DataStore was mutated but DataStore is only compatible with Immutable types.");
@@ -145,7 +145,7 @@ public final class x extends kd.j implements rd.l {
                         }
                         return obj;
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 cVar = (c) obj;
                 id.h hVar = (id.h) this.e;

@@ -4,7 +4,7 @@ import android.util.Log;
 import java.lang.Thread;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v implements Thread.UncaughtExceptionHandler {
     public final ob.c a;
@@ -46,7 +46,7 @@ public final class v implements Thread.UncaughtExceptionHandler {
         try {
             try {
                 if (a(thread, th2)) {
-                    this.a.l(this.b, thread, th2);
+                    this.a.L(this.b, thread, th2);
                 } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
                 }

@@ -2,35 +2,61 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xq implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
-    public final /* synthetic */ TLRPC.TL_chatFull c;
+    public final /* synthetic */ int E;
+    public final /* synthetic */ boolean F;
+    public final /* synthetic */ int G;
+    public final /* synthetic */ long H;
+    public final /* synthetic */ int I;
+    public final /* synthetic */ boolean J;
+    public final /* synthetic */ int K;
+    public final /* synthetic */ boolean L;
+    public final /* synthetic */ boolean M;
+    public final /* synthetic */ tz N;
+    public final /* synthetic */ tr a;
+    public final /* synthetic */ TLRPC.TL_messages_messages b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int w;
+    public final /* synthetic */ int x;
+    public final /* synthetic */ int y;
 
-    public /* synthetic */ xq(vr vrVar, TLRPC.TL_chatFull tL_chatFull, int i7) {
-        this.a = i7;
-        this.b = vrVar;
-        this.c = tL_chatFull;
+    public /* synthetic */ xq(tr trVar, TLRPC.TL_messages_messages tL_messages_messages, int i7, long j3, long j10, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, boolean z10, int i19, long j11, int i20, boolean z11, int i21, boolean z12, boolean z13, tz tzVar) {
+        this.a = trVar;
+        this.b = tL_messages_messages;
+        this.c = i7;
+        this.d = j3;
+        this.e = j10;
+        this.f = i10;
+        this.h = i11;
+        this.n = i12;
+        this.r = i13;
+        this.s = i14;
+        this.w = i15;
+        this.x = i16;
+        this.y = i17;
+        this.E = i18;
+        this.F = z10;
+        this.G = i19;
+        this.H = j11;
+        this.I = i20;
+        this.J = z11;
+        this.K = i21;
+        this.L = z12;
+        this.M = z13;
+        this.N = tzVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        TLRPC.TL_chatFull tL_chatFull = this.c;
-        vr vrVar = this.b;
-        switch (i7) {
-            case 0:
-                ns notificationCenter = vrVar.getNotificationCenter();
-                Boolean bool = Boolean.FALSE;
-                notificationCenter.k(30, tL_chatFull, 0, bool, bool);
-                break;
-            default:
-                ns notificationCenter2 = vrVar.getNotificationCenter();
-                Boolean bool2 = Boolean.FALSE;
-                notificationCenter2.k(30, tL_chatFull, 0, bool2, bool2);
-                break;
-        }
+        this.a.getMessagesController().R3(this.b, this.c, this.d, this.e, this.f, this.h, this.n, true, this.r, this.s, this.w, this.x, this.y, this.E, this.F, this.G, this.H, this.I, this.J, this.K, this.L, this.M, this.N);
     }
 }

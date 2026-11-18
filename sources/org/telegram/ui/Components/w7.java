@@ -1,110 +1,49 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.animation.AnimatorSet;
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w7 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ x7 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ String d;
+public final class w7 extends FrameLayout {
+    public final q9[] a;
+    public int b;
+    public AnimatorSet c;
+    public long d;
+    public final /* synthetic */ g8 e;
 
-    public /* synthetic */ w7(x7 x7Var, String str, ArrayList arrayList) {
-        this.b = x7Var;
-        this.d = str;
-        this.c = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z10;
-        String str;
-        int i7 = this.a;
-        String str2 = null;
-        String str3 = this.d;
-        ArrayList arrayList = this.c;
-        x7 x7Var = this.b;
-        switch (i7) {
-            case 0:
-                x7Var.getClass();
-                String lowerCase = str3.trim().toLowerCase();
-                if (lowerCase.length() == 0) {
-                    org.telegram.messenger.g0.h3(new w7(x7Var, new ArrayList(), str3));
-                    break;
-                } else {
-                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
-                    if (!lowerCase.equals(S0) && S0.length() != 0) {
-                        str2 = S0;
-                    }
-                    int i10 = (str2 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i10];
-                    strArr[0] = lowerCase;
-                    if (str2 != null) {
-                        strArr[1] = str2;
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) arrayList.get(i11);
-                        int i12 = 0;
-                        while (true) {
-                            if (i12 < i10) {
-                                String str4 = strArr[i12];
-                                String I0 = gjVar.I0();
-                                if (I0 != null && I0.length() != 0) {
-                                    if (I0.toLowerCase().contains(str4)) {
-                                        arrayList2.add(gjVar);
-                                    } else {
-                                        TLRPC.Document document = gjVar.D == 0 ? gjVar.k.media.webpage.document : gjVar.k.media.document;
-                                        int i13 = 0;
-                                        while (true) {
-                                            if (i13 < document.attributes.size()) {
-                                                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
-                                                if (documentAttribute instanceof TLRPC.TL_documentAttributeAudio) {
-                                                    String str5 = documentAttribute.performer;
-                                                    z10 = str5 != null ? str5.toLowerCase().contains(str4) : false;
-                                                    if (!z10 && (str = documentAttribute.title) != null) {
-                                                        z10 = str.toLowerCase().contains(str4);
-                                                    }
-                                                } else {
-                                                    i13++;
-                                                }
-                                            } else {
-                                                z10 = false;
-                                            }
-                                        }
-                                        if (z10) {
-                                            arrayList2.add(gjVar);
-                                        }
-                                    }
-                                }
-                                i12++;
-                            }
-                        }
-                    }
-                    org.telegram.messenger.g0.h3(new w7(x7Var, arrayList2, str3));
-                    break;
-                }
-                break;
-            default:
-                y7 y7Var = x7Var.n;
-                if (y7Var.r1) {
-                    y7Var.q1 = true;
-                    x7Var.d = arrayList;
-                    x7Var.e = str3;
-                    x7Var.f();
-                    y7Var.t1.n0(0);
-                    org.telegram.messenger.k5.q(null, null, 2131748240, new Object[]{str3}, y7Var.x1);
-                    break;
-                }
-                break;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w7(g8 g8Var, Context context) {
+        super(context);
+        this.e = g8Var;
+        this.a = new q9[2];
+        for (int i7 = 0; i7 < 2; i7++) {
+            this.a[i7] = new q9(context);
+            this.a[i7].getImageReceiver().h1 = new ai.s1(this, i7, 8);
+            this.a[i7].setRoundRadius(org.telegram.messenger.g0.L(4.0f));
+            if (i7 == 1) {
+                this.a[i7].setVisibility(8);
+            }
+            addView(this.a[i7], c8.ma.c(-1.0f, -1));
         }
     }
 
-    public /* synthetic */ w7(x7 x7Var, ArrayList arrayList, String str) {
-        this.b = x7Var;
-        this.c = arrayList;
-        this.d = str;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int action = motionEvent.getAction();
+        g8 g8Var = this.e;
+        if (action == 0) {
+            if (this.a[this.b].getImageReceiver().I()) {
+                g8Var.X0(true, true);
+                this.d = SystemClock.elapsedRealtime();
+                return true;
+            }
+        } else if (action != 2 && SystemClock.elapsedRealtime() - this.d >= 400) {
+            g8Var.X0(false, true);
+        }
+        return true;
     }
 }

@@ -18,14 +18,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.util.Xml;
-import c8.j0;
-import c8.p0;
+import c8.l0;
+import c8.r0;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q extends h {
     public static final PorterDuff.Mode w = PorterDuff.Mode.SRC_IN;
@@ -403,7 +403,7 @@ public final class q extends h {
     public final void setTint(int i7) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            p0.a(i7, drawable);
+            r0.a(i7, drawable);
         } else {
             setTintList(ColorStateList.valueOf(i7));
         }
@@ -594,7 +594,7 @@ public final class q extends h {
                                 }
                                 String string3 = f13.getString(2);
                                 if (string3 != null) {
-                                    jVar.a = j0.c(string3);
+                                    jVar.a = l0.c(string3);
                                 }
                                 jVar.f = h0.b.a(f13, xmlPullParser, theme, "fillColor", 1);
                                 float f14 = jVar.h;
@@ -679,7 +679,7 @@ public final class q extends h {
                                     }
                                     String string5 = f21.getString(1);
                                     if (string5 != null) {
-                                        iVar.a = j0.c(string5);
+                                        iVar.a = l0.c(string5);
                                     }
                                     iVar.c = !h0.b.c(xmlPullParser, "fillType") ? 0 : f21.getInt(2, 0);
                                     f21.recycle();

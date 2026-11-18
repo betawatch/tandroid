@@ -13,9 +13,9 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -37,7 +37,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -98,7 +98,7 @@ public class Track {
             lc.d dVar = new lc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
-                dVar.d = ns.q1;
+                dVar.d = ks.q1;
             } else {
                 dVar.d = 64;
             }
@@ -122,14 +122,14 @@ public class Track {
             gVar.m = dVar;
             ByteBuffer allocate = ByteBuffer.allocate(gVar.c());
             h5.b.r(3, allocate);
-            allocate.put((byte) ((gVar.c() - 2) & ns.e4));
+            allocate.put((byte) ((gVar.c() - 2) & ks.e4));
             h5.b.p(gVar.d, allocate);
-            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & ns.e4));
+            allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & ks.e4));
             if (gVar.e > 0) {
                 h5.b.p(gVar.k, allocate);
             }
             if (gVar.f > 0) {
-                allocate.put((byte) (gVar.i & ns.e4));
+                allocate.put((byte) (gVar.i & ks.e4));
                 allocate.put(h5.b.b(gVar.j));
                 allocate.put((byte) 0);
             }
@@ -155,9 +155,9 @@ public class Track {
                 }
                 i12 = 4;
             }
-            allocate2.put((byte) ((i12 + i10) & ns.e4));
-            allocate2.put((byte) (dVar2.d & ns.e4));
-            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & ns.e4));
+            allocate2.put((byte) ((i12 + i10) & ks.e4));
+            allocate2.put((byte) (dVar2.d & ks.e4));
+            allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & ks.e4));
             h5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
@@ -186,10 +186,10 @@ public class Track {
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
             h5.b.r(6, allocate4);
             allocate4.put((byte) 1);
-            allocate4.put((byte) (mVar2.d & ns.e4));
+            allocate4.put((byte) (mVar2.d & ks.e4));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            i5.c.u(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
+            i5.c.w(ze.a.c(kc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -308,9 +308,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            i5.c.u(ze.a.c(qc.a.h, aVar5, aVar5, arrayList));
+            i5.c.w(ze.a.c(qc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            i5.c.u(ze.a.c(qc.a.n, aVar5, aVar5, arrayList2));
+            i5.c.w(ze.a.c(qc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -364,26 +364,26 @@ public class Track {
             } else if (integer2 == 8) {
                 aVar5.e(100);
             } else if (integer2 == 16) {
-                aVar5.e(ns.v1);
+                aVar5.e(ks.v1);
             } else if (integer2 == 32) {
-                aVar5.e(ns.G1);
+                aVar5.e(ks.G1);
             } else if (integer2 == 64) {
-                aVar5.e(ns.T3);
+                aVar5.e(ks.T3);
             }
         } else {
             aVar5.e(100);
         }
-        i5.c.u(ze.a.c(qc.a.s, aVar5, aVar5, new Integer(-1)));
+        i5.c.w(ze.a.c(qc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        i5.c.u(ze.a.c(qc.a.w, aVar5, aVar5, new Integer(-1)));
+        i5.c.w(ze.a.c(qc.a.w, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        i5.c.u(ze.a.c(qc.a.r, aVar5, aVar5, new Integer(-1)));
+        i5.c.w(ze.a.c(qc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        i5.c.u(ze.a.c(qc.a.b, aVar5, aVar5, new Integer(1)));
+        i5.c.w(ze.a.c(qc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        i5.c.u(ze.a.c(qc.a.f, aVar5, aVar5, new Integer(3)));
+        i5.c.w(ze.a.c(qc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        i5.c.u(ze.a.c(qc.a.d, aVar5, aVar5, new Integer(0)));
+        i5.c.w(ze.a.c(qc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);

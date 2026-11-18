@@ -1,6 +1,6 @@
 package d4;
 
-import a8.ja;
+import a8.la;
 import android.text.Layout;
 import android.text.SpannableStringBuilder;
 import com.google.android.gms.internal.vision.e2;
@@ -10,9 +10,9 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends j {
     public final x h = new x();
@@ -42,11 +42,11 @@ public final class g extends j {
     }
 
     @Override // d4.j
-    public final d6.i f() {
+    public final ob.c f() {
         List list = this.n;
         this.o = list;
         list.getClass();
-        return new d6.i(list, 11);
+        return new ob.c(list, 14);
     }
 
     @Override // d4.j, k2.e
@@ -95,7 +95,7 @@ public final class g extends j {
                         fVar.e = 1;
                         bArr[0] = A3;
                     } else {
-                        ja.f(i7 == 2);
+                        la.f(i7 == 2);
                         f fVar2 = this.p;
                         if (fVar2 == null) {
                             h2.a.c("Cea708Decoder", "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
@@ -213,7 +213,7 @@ public final class g extends j {
                                 if (j11 == 127) {
                                     this.m.a((char) 9835);
                                 } else {
-                                    this.m.a((char) (j11 & ns.e4));
+                                    this.m.a((char) (j11 & ks.e4));
                                 }
                                 i7 = i10;
                                 z11 = true;
@@ -222,13 +222,13 @@ public final class g extends j {
                                     e[] eVarArr = this.l;
                                     switch (j11) {
                                         case 128:
-                                        case ns.N1 /* 129 */:
-                                        case ns.O1 /* 130 */:
-                                        case ns.P1 /* 131 */:
-                                        case ns.Q1 /* 132 */:
+                                        case ks.N1 /* 129 */:
+                                        case ks.O1 /* 130 */:
+                                        case ks.P1 /* 131 */:
+                                        case ks.Q1 /* 132 */:
                                         case 133:
                                         case 134:
-                                        case ns.R1 /* 135 */:
+                                        case ks.R1 /* 135 */:
                                             z10 = true;
                                             int i13 = j11 - 128;
                                             if (this.q != i13) {
@@ -237,7 +237,7 @@ public final class g extends j {
                                                 break;
                                             }
                                             break;
-                                        case ns.S1 /* 136 */:
+                                        case ks.S1 /* 136 */:
                                             z10 = true;
                                             for (int i14 = 1; i14 <= 8; i14++) {
                                                 if (fVar3.i()) {
@@ -252,7 +252,7 @@ public final class g extends j {
                                                 }
                                             }
                                             break;
-                                        case ns.T1 /* 137 */:
+                                        case ks.T1 /* 137 */:
                                             for (int i15 = 1; i15 <= 8; i15++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i15].d = true;
@@ -260,7 +260,7 @@ public final class g extends j {
                                             }
                                             z10 = true;
                                             break;
-                                        case ns.U1 /* 138 */:
+                                        case ks.U1 /* 138 */:
                                             for (int i16 = 1; i16 <= 8; i16++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i16].d = false;
@@ -268,7 +268,7 @@ public final class g extends j {
                                             }
                                             z10 = true;
                                             break;
-                                        case ns.V1 /* 139 */:
+                                        case ks.V1 /* 139 */:
                                             for (int i17 = 1; i17 <= 8; i17++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i17].d = !r1.d;
@@ -276,7 +276,7 @@ public final class g extends j {
                                             }
                                             z10 = true;
                                             break;
-                                        case ns.W1 /* 140 */:
+                                        case ks.W1 /* 140 */:
                                             for (int i18 = 1; i18 <= 8; i18++) {
                                                 if (fVar3.i()) {
                                                     eVarArr[8 - i18].d();
@@ -284,18 +284,18 @@ public final class g extends j {
                                             }
                                             z10 = true;
                                             break;
-                                        case ns.X1 /* 141 */:
+                                        case ks.X1 /* 141 */:
                                             fVar3.L(8);
                                             z10 = true;
                                             break;
-                                        case ns.Y1 /* 142 */:
+                                        case ks.Y1 /* 142 */:
                                             z10 = true;
                                             break;
-                                        case ns.Z1 /* 143 */:
+                                        case ks.Z1 /* 143 */:
                                             l();
                                             z10 = true;
                                             break;
-                                        case ns.a2 /* 144 */:
+                                        case ks.a2 /* 144 */:
                                             int i19 = i10;
                                             if (!this.m.c) {
                                                 fVar3.L(16);
@@ -314,7 +314,7 @@ public final class g extends j {
                                                 this.m.e(i20, i21);
                                                 z10 = true;
                                             }
-                                        case ns.b2 /* 145 */:
+                                        case ks.b2 /* 145 */:
                                             if (this.m.c) {
                                                 int c11 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
                                                 int c12 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
@@ -327,7 +327,7 @@ public final class g extends j {
                                             z10 = true;
                                             i12 = 3;
                                             break;
-                                        case ns.c2 /* 146 */:
+                                        case ks.c2 /* 146 */:
                                             if (this.m.c) {
                                                 fVar3.L(4);
                                                 int j12 = fVar3.j(4);
@@ -344,15 +344,15 @@ public final class g extends j {
                                             z10 = true;
                                             i12 = 3;
                                             break;
-                                        case ns.d2 /* 147 */:
-                                        case ns.e2 /* 148 */:
-                                        case ns.f2 /* 149 */:
-                                        case ns.g2 /* 150 */:
+                                        case ks.d2 /* 147 */:
+                                        case ks.e2 /* 148 */:
+                                        case ks.f2 /* 149 */:
+                                        case ks.g2 /* 150 */:
                                         default:
                                             e2.o(j11, "Invalid C1 command: ", "Cea708Decoder");
                                             z10 = true;
                                             break;
-                                        case ns.h2 /* 151 */:
+                                        case ks.h2 /* 151 */:
                                             if (this.m.c) {
                                                 int c13 = e.c(fVar3.j(2), fVar3.j(2), fVar3.j(2), fVar3.j(2));
                                                 fVar3.j(2);
@@ -372,14 +372,14 @@ public final class g extends j {
                                             z10 = true;
                                             i12 = 3;
                                             break;
-                                        case ns.i2 /* 152 */:
-                                        case ns.j2 /* 153 */:
-                                        case ns.k2 /* 154 */:
-                                        case ns.l2 /* 155 */:
-                                        case ns.m2 /* 156 */:
-                                        case ns.n2 /* 157 */:
-                                        case ns.o2 /* 158 */:
-                                        case ns.p2 /* 159 */:
+                                        case ks.i2 /* 152 */:
+                                        case ks.j2 /* 153 */:
+                                        case ks.k2 /* 154 */:
+                                        case ks.l2 /* 155 */:
+                                        case ks.m2 /* 156 */:
+                                        case ks.n2 /* 157 */:
+                                        case ks.o2 /* 158 */:
+                                        case ks.p2 /* 159 */:
                                             int i22 = j11 - 152;
                                             e eVar4 = eVarArr[i22];
                                             fVar3.L(i10);
@@ -443,7 +443,7 @@ public final class g extends j {
                                 } else {
                                     z10 = true;
                                     if (j11 <= 255) {
-                                        this.m.a((char) (j11 & ns.e4));
+                                        this.m.a((char) (j11 & ks.e4));
                                     } else {
                                         e2.o(j11, "Invalid base command: ", "Cea708Decoder");
                                         i7 = 2;
@@ -500,45 +500,45 @@ public final class g extends j {
                                             case 50:
                                                 this.m.a((char) 8217);
                                                 break;
-                                            case ns.o0 /* 51 */:
+                                            case ks.o0 /* 51 */:
                                                 this.m.a((char) 8220);
                                                 break;
-                                            case ns.p0 /* 52 */:
+                                            case ks.p0 /* 52 */:
                                                 this.m.a((char) 8221);
                                                 break;
-                                            case ns.q0 /* 53 */:
+                                            case ks.q0 /* 53 */:
                                                 this.m.a((char) 8226);
                                                 break;
                                             default:
                                                 switch (j21) {
-                                                    case ns.D1 /* 118 */:
+                                                    case ks.D1 /* 118 */:
                                                         this.m.a((char) 8539);
                                                         break;
-                                                    case ns.E1 /* 119 */:
+                                                    case ks.E1 /* 119 */:
                                                         this.m.a((char) 8540);
                                                         break;
                                                     case 120:
                                                         this.m.a((char) 8541);
                                                         break;
-                                                    case ns.F1 /* 121 */:
+                                                    case ks.F1 /* 121 */:
                                                         this.m.a((char) 8542);
                                                         break;
-                                                    case ns.G1 /* 122 */:
+                                                    case ks.G1 /* 122 */:
                                                         this.m.a((char) 9474);
                                                         break;
-                                                    case ns.H1 /* 123 */:
+                                                    case ks.H1 /* 123 */:
                                                         this.m.a((char) 9488);
                                                         break;
-                                                    case ns.I1 /* 124 */:
+                                                    case ks.I1 /* 124 */:
                                                         this.m.a((char) 9492);
                                                         break;
-                                                    case ns.J1 /* 125 */:
+                                                    case ks.J1 /* 125 */:
                                                         this.m.a((char) 9472);
                                                         break;
-                                                    case ns.K1 /* 126 */:
+                                                    case ks.K1 /* 126 */:
                                                         this.m.a((char) 9496);
                                                         break;
-                                                    case ns.L1 /* 127 */:
+                                                    case ks.L1 /* 127 */:
                                                         this.m.a((char) 9484);
                                                         break;
                                                     default:

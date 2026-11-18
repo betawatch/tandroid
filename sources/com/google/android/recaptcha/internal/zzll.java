@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -8,7 +8,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzll extends j implements p {
     int zza;
@@ -42,31 +42,31 @@ final class zzll extends j implements p {
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        Object b10;
+        Object a10;
         a aVar = a.a;
         int i7 = this.zza;
         if (i7 != 0) {
             if (i7 == 1) {
-                b.c(obj);
-                b10 = b.b(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-                return new g(b10);
+                h.b(obj);
+                a10 = h.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+                return new g(a10);
             }
             if (i7 != 2) {
-                b.c(obj);
-                b10 = k.a;
-                return new g(b10);
+                h.b(obj);
+                a10 = k.a;
+                return new g(a10);
             }
             zzhkVar = (zzhk) this.zzd;
-            b.c(obj);
+            h.b(obj);
             this.zzd = null;
             this.zza = 3;
             if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
                 return aVar;
             }
-            b10 = k.a;
-            return new g(b10);
+            a10 = k.a;
+            return new g(a10);
         }
-        b.c(obj);
+        h.b(obj);
         zzhkVar = (zzhk) this.zzd;
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzV() || !zzxnVar.zzT() || !zzxnVar.zzS()) {
@@ -76,8 +76,8 @@ final class zzll extends j implements p {
             if (zzn.zzc(zzmcVar, this) == aVar) {
                 return aVar;
             }
-            b10 = b.b(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
-            return new g(b10);
+            a10 = h.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null));
+            return new g(a10);
         }
         zzly zzlyVar = this.zzc;
         zzlyVar.zze = zzxnVar;
@@ -91,7 +91,7 @@ final class zzll extends j implements p {
         this.zza = 3;
         if (((zzhg) obj).zza(zzhkVar, this) == aVar) {
         }
-        b10 = k.a;
-        return new g(b10);
+        a10 = k.a;
+        return new g(a10);
     }
 }

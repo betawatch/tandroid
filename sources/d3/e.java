@@ -1,13 +1,13 @@
 package d3;
 
-import a8.ja;
+import a8.la;
 import android.view.Surface;
 import e2.x1;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements k0 {
     public final x a;
@@ -59,13 +59,7 @@ public final class e implements k0 {
     }
 
     @Override // d3.k0
-    public final void e(cb.c cVar) {
-        this.h = cVar;
-        this.i = m9.r.a;
-    }
-
-    @Override // d3.k0
-    public final void f() {
+    public final void e() {
         this.b.b();
         x xVar = this.a;
         xVar.d = false;
@@ -80,9 +74,15 @@ public final class e implements k0 {
     }
 
     @Override // d3.k0
-    public final void g(Surface surface, h2.y yVar) {
+    public final void f(Surface surface, h2.y yVar) {
         this.e = surface;
         this.a.g(surface);
+    }
+
+    @Override // d3.k0
+    public final void g(d6.i iVar) {
+        this.h = iVar;
+        this.i = m9.r.a;
     }
 
     @Override // d3.k0
@@ -156,7 +156,7 @@ public final class e implements k0 {
         sVar.c++;
         d0Var.h = j3;
         d0Var.j = -9223372036854775807L;
-        this.i.execute(new ch.w(this, 2));
+        this.i.execute(new ca.r(this, 6));
         return true;
     }
 
@@ -183,7 +183,7 @@ public final class e implements k0 {
         d0Var.j = -9223372036854775807L;
         h2.j0 j0Var2 = d0Var.e;
         if (j0Var2.p() > 0) {
-            ja.f(j0Var2.p() > 0);
+            la.f(j0Var2.p() > 0);
             while (j0Var2.p() > 1) {
                 j0Var2.i();
             }
@@ -192,7 +192,7 @@ public final class e implements k0 {
             d0Var.l = ((Long) i7).longValue();
         }
         if (j0Var.p() > 0) {
-            ja.f(j0Var.p() > 0);
+            la.f(j0Var.p() > 0);
             while (j0Var.p() > 1) {
                 j0Var.i();
             }
@@ -234,7 +234,7 @@ public final class e implements k0 {
 
     @Override // d3.k0
     public final void u(e2.u uVar, long j3, int i7, List list) {
-        ja.p(list.isEmpty());
+        la.p(list.isEmpty());
         int i10 = uVar.z;
         int i11 = uVar.A;
         e2.u uVar2 = this.f;

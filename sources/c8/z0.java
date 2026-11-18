@@ -1,27 +1,135 @@
 package c8;
 
-import android.os.Build;
-import org.telegram.messenger.np;
-import org.telegram.ui.Dictation.DictationAsr;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class z0 {
-    public static boolean a() {
-        if (!b() || !DictationAsr.B()) {
-            return false;
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0078 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0077 A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int a(int i7, CharSequence charSequence) {
+        char charAt;
+        if (i7 >= charSequence.length()) {
+            return -1;
         }
-        if (DictationAsr.x()) {
-            return Build.VERSION.SDK_INT >= 33 && ai.d.h();
+        if (charSequence.charAt(i7) == '<') {
+            while (true) {
+                i7++;
+                if (i7 >= charSequence.length() || (charAt = charSequence.charAt(i7)) == '\n' || charAt == '<') {
+                    break;
+                }
+                if (charAt == '>') {
+                    return i7 + 1;
+                }
+                if (charAt == '\\') {
+                    int i10 = i7 + 1;
+                    if (a1.a(i10, charSequence)) {
+                        i7 = i10;
+                    }
+                }
+            }
+            return -1;
         }
-        return true;
+        int i11 = 0;
+        int i12 = i7;
+        while (i12 < charSequence.length()) {
+            char charAt2 = charSequence.charAt(i12);
+            if (charAt2 == 0 || charAt2 == ' ') {
+                if (i12 != i7) {
+                    return i12;
+                }
+                return -1;
+            }
+            if (charAt2 == '\\') {
+                int i13 = i12 + 1;
+                if (a1.a(i13, charSequence)) {
+                    i12 = i13;
+                }
+            } else if (charAt2 == '(') {
+                i11++;
+                if (i11 > 32) {
+                    return -1;
+                }
+            } else if (charAt2 != ')') {
+                if (Character.isISOControl(charAt2)) {
+                    if (i12 != i7) {
+                    }
+                }
+            } else {
+                if (i11 == 0) {
+                    return i12;
+                }
+                i11--;
+            }
+            i12++;
+        }
+        return charSequence.length();
     }
 
-    public static boolean b() {
-        return np.e1().getBoolean("design_voice_live_transcript", true);
+    public static int b(int i7, CharSequence charSequence) {
+        while (i7 < charSequence.length()) {
+            switch (charSequence.charAt(i7)) {
+                case ks.c1 /* 91 */:
+                    return -1;
+                case ks.d1 /* 92 */:
+                    int i10 = i7 + 1;
+                    if (!a1.a(i10, charSequence)) {
+                        break;
+                    } else {
+                        i7 = i10;
+                        break;
+                    }
+                case ks.e1 /* 93 */:
+                    return i7;
+            }
+            i7++;
+        }
+        return charSequence.length();
     }
 
-    public static boolean c() {
-        return np.e1().getBoolean("design_voice_live_field", true);
+    public static int c(int i7, CharSequence charSequence) {
+        if (i7 >= charSequence.length()) {
+            return -1;
+        }
+        char charAt = charSequence.charAt(i7);
+        char c10 = '\"';
+        if (charAt != '\"') {
+            c10 = '\'';
+            if (charAt != '\'') {
+                if (charAt != '(') {
+                    return -1;
+                }
+                c10 = ')';
+            }
+        }
+        int d = d(charSequence, i7 + 1, c10);
+        if (d != -1 && d < charSequence.length() && charSequence.charAt(d) == c10) {
+            return d + 1;
+        }
+        return -1;
+    }
+
+    public static int d(CharSequence charSequence, int i7, char c10) {
+        while (i7 < charSequence.length()) {
+            char charAt = charSequence.charAt(i7);
+            if (charAt == '\\') {
+                int i10 = i7 + 1;
+                if (a1.a(i10, charSequence)) {
+                    i7 = i10;
+                    i7++;
+                }
+            }
+            if (charAt == c10) {
+                return i7;
+            }
+            if (c10 == ')' && charAt == '(') {
+                return -1;
+            }
+            i7++;
+        }
+        return charSequence.length();
     }
 }

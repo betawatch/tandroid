@@ -2,9 +2,9 @@ package cc;
 
 import java.nio.charset.Charset;
 import java.util.HashMap;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public enum d {
     /* JADX INFO: Fake field, exist only in values array */
@@ -54,7 +54,7 @@ public enum d {
     /* JADX INFO: Fake field, exist only in values array */
     EF412(26, "UTF-8"),
     /* JADX INFO: Fake field, exist only in values array */
-    EF437(new int[]{27, ns.A2}, "US-ASCII"),
+    EF437(new int[]{27, ks.A2}, "US-ASCII"),
     /* JADX INFO: Fake field, exist only in values array */
     EF457(new int[]{28}, new String[0]),
     /* JADX INFO: Fake field, exist only in values array */

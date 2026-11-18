@@ -1,62 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xz0 extends FrameLayout {
-    public final ImageView a;
-    public final vz0 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class xz0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yz0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xz0(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(18.0f), -854795));
-        addView(view, c8.ja.d(-1, 36.0f, 51, 14.0f, 11.0f, 14.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, c8.ja.d(36, 36.0f, 51, 16.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        uz0 uz0Var = new uz0();
-        imageView2.setImageDrawable(uz0Var);
-        uz0Var.f = org.telegram.messenger.g0.L(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, c8.ja.d(36, 36.0f, 53, 14.0f, 11.0f, 14.0f, 0.0f));
-        imageView2.setOnClickListener(new y60(this, 18));
-        vz0 vz0Var = new vz0(this, context);
-        this.b = vz0Var;
-        vz0Var.setTextSize(1, 16.0f);
-        vz0Var.setHintTextColor(-6774617);
-        vz0Var.setTextColor(-14540254);
-        vz0Var.setBackgroundDrawable(null);
-        vz0Var.setPadding(0, 0, 0, 0);
-        vz0Var.setMaxLines(1);
-        vz0Var.setLines(1);
-        vz0Var.setSingleLine(true);
-        vz0Var.setImeOptions(268435459);
-        vz0Var.setHint(org.telegram.messenger.hd.M0(2131745836, null));
-        vz0Var.setCursorColor(-11491093);
-        vz0Var.setCursorSize(org.telegram.messenger.g0.L(20.0f));
-        vz0Var.setCursorWidth(1.5f);
-        addView(vz0Var, c8.ja.d(-1, 40.0f, 51, 54.0f, 9.0f, 46.0f, 0.0f));
-        vz0Var.addTextChangedListener(new wz0(this));
-        vz0Var.setOnEditorActionListener(new q0(this, 10));
+    public xz0(yz0 yz0Var, int i7) {
+        this.b = yz0Var;
+        this.a = i7;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x007f A[LOOP:0: B:13:0x0075->B:15:0x007f, LOOP_END] */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        int i10;
+        int i11;
+        yz0 yz0Var = this.b;
+        EditTextBoldCursor[] editTextBoldCursorArr = yz0Var.n;
+        ThemeEditorView.EditorAlert editorAlert = yz0Var.J;
+        if (editorAlert.F1) {
+            return;
+        }
+        editorAlert.F1 = true;
+        int intValue = Utilities.z(editable.toString()).intValue();
+        int i12 = this.a;
+        if (intValue < 0) {
+            editTextBoldCursorArr[i12].setText("0");
+            EditTextBoldCursor editTextBoldCursor = editTextBoldCursorArr[i12];
+            editTextBoldCursor.setSelection(editTextBoldCursor.length());
+            intValue = 0;
+        } else if (intValue > 255) {
+            editTextBoldCursorArr[i12].setText("255");
+            EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursorArr[i12];
+            editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
+            intValue = 255;
+        }
+        int b10 = yz0Var.b();
+        if (i12 == 2) {
+            i7 = b10 & (-256);
+            i10 = intValue & org.telegram.messenger.ks.e4;
+        } else if (i12 == 1) {
+            i7 = b10 & (-65281);
+            i10 = (intValue & org.telegram.messenger.ks.e4) << 8;
+        } else {
+            if (i12 != 0) {
+                if (i12 == 3) {
+                    i7 = b10 & 16777215;
+                    i10 = (intValue & org.telegram.messenger.ks.e4) << 24;
+                }
+                yz0Var.c(b10);
+                for (i11 = 0; i11 < ThemeEditorView.this.e.size(); i11++) {
+                    ((org.telegram.ui.ActionBar.w6) ThemeEditorView.this.e.get(i11)).e(yz0Var.b(), false, true);
+                }
+                ThemeEditorView.a(ThemeEditorView.this);
+                editorAlert.F1 = false;
+            }
+            i7 = b10 & (-16711681);
+            i10 = (intValue & org.telegram.messenger.ks.e4) << 16;
+        }
+        b10 = i7 | i10;
+        yz0Var.c(b10);
+        while (i11 < ThemeEditorView.this.e.size()) {
+        }
+        ThemeEditorView.a(ThemeEditorView.this);
+        editorAlert.F1 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

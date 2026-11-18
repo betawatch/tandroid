@@ -5,7 +5,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l implements DialogInterface.OnKeyListener, DialogInterface.OnClickListener, DialogInterface.OnDismissListener, w {
     public d0 a;
@@ -13,7 +13,12 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
     public g c;
 
     @Override // l.w
-    public final void e(k kVar, boolean z10) {
+    public final boolean C(k kVar) {
+        return false;
+    }
+
+    @Override // l.w
+    public final void d(k kVar, boolean z10) {
         g.f fVar;
         if ((z10 || kVar == this.a) && (fVar = this.b) != null) {
             fVar.dismiss();
@@ -32,7 +37,7 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
 
     @Override // android.content.DialogInterface.OnDismissListener
     public final void onDismiss(DialogInterface dialogInterface) {
-        this.c.e(this.a, true);
+        this.c.d(this.a, true);
     }
 
     @Override // android.content.DialogInterface.OnKeyListener
@@ -57,10 +62,5 @@ public final class l implements DialogInterface.OnKeyListener, DialogInterface.O
             }
         }
         return d0Var.performShortcut(i7, keyEvent, 0);
-    }
-
-    @Override // l.w
-    public final boolean y(k kVar) {
-        return false;
     }
 }

@@ -1,15 +1,18 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.lang.ref.Reference;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class wd {
-    public static final Exception a(x0.a aVar, String str, Exception exc) {
-        if (exc instanceof y0.a) {
-            return new y0.a(aVar, str);
+    public static void a(ArrayList arrayList, Object obj) {
+        for (int size = arrayList.size() - 1; size >= 0; size--) {
+            Object obj2 = ((Reference) arrayList.get(size)).get();
+            if (obj2 == null || obj2 == obj) {
+                arrayList.remove(size);
+                return;
+            }
         }
-        if (exc instanceof y0.b) {
-            return new y0.b(aVar, str);
-        }
-        throw new z0.a();
     }
 }

@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_ephemeral;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r8 extends c1 {
     public static volatile r8[] s = new r8[4];
@@ -293,20 +293,20 @@ public final class r8 extends c1 {
         TLRPC.Message message;
         TLRPC.MessageFwdHeader messageFwdHeader;
         TLRPC.Peer peer;
-        if (obj instanceof fi.b6) {
-            fi.b6 b6Var = (fi.b6) obj;
-            if (b6Var.a == null) {
+        if (obj instanceof fi.y5) {
+            fi.y5 y5Var = (fi.y5) obj;
+            if (y5Var.a == null) {
                 a8.b("failed request reference can't find list in botpreview");
                 return null;
             }
-            TLRPC.MessageMedia messageMedia = b6Var.media;
+            TLRPC.MessageMedia messageMedia = y5Var.media;
             if (messageMedia.document != null) {
-                return "botstory_doc_" + b6Var.media.document.id;
+                return "botstory_doc_" + y5Var.media.document.id;
             }
             if (messageMedia.photo != null) {
-                return "botstory_photo_" + b6Var.media.photo.id;
+                return "botstory_photo_" + y5Var.media.photo.id;
             }
-            return "botstory_" + b6Var.id;
+            return "botstory_" + y5Var.id;
         }
         if (obj instanceof TL_stories.StoryItem) {
             TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
@@ -328,13 +328,13 @@ public final class r8 extends c1 {
         if (obj instanceof TLRPC.TL_attachMenuBot) {
             return a8.p0.o(((TLRPC.TL_attachMenuBot) obj).bot_id, "attach_menu_bot_");
         }
-        if (obj instanceof gj) {
-            gj gjVar = (gj) obj;
-            long v02 = gj.v0(gjVar.k);
-            if (gjVar.D == 29 && (message = gjVar.k) != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
-                v02 = m5.o(peer);
+        if (obj instanceof fj) {
+            fj fjVar = (fj) obj;
+            long v02 = fj.v0(fjVar.k);
+            if (fjVar.D == 29 && (message = fjVar.k) != null && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
+                v02 = n5.o(peer);
             }
-            return "message" + gjVar.L1() + "_" + v02 + "_" + gjVar.r1 + "_" + gj.I1(gjVar.k);
+            return "message" + fjVar.L1() + "_" + v02 + "_" + fjVar.r1 + "_" + fj.I1(fjVar.k);
         }
         if (obj instanceof TLRPC.Message) {
             TLRPC.Message message2 = (TLRPC.Message) obj;
@@ -390,20 +390,20 @@ public final class r8 extends c1 {
         if (z11 && (((TL_ephemeral.TL_sendMessage) obj2).media instanceof TLRPC.TL_inputMediaPoll) && (obj instanceof ArrayList)) {
             return null;
         }
-        if (obj2 instanceof fi.b6) {
-            fi.b6 b6Var = (fi.b6) obj2;
-            TLRPC.MessageMedia messageMedia = b6Var.media;
+        if (obj2 instanceof fi.y5) {
+            fi.y5 y5Var = (fi.y5) obj2;
+            TLRPC.MessageMedia messageMedia = y5Var.media;
             if (messageMedia.document != null) {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
-                tL_inputDocumentFileLocation.id = b6Var.media.document.id;
-                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + b6Var.media.document.id);
+                tL_inputDocumentFileLocation.id = y5Var.media.document.id;
+                return new Pair(tL_inputDocumentFileLocation, "botstory_doc_" + y5Var.media.document.id);
             }
             if (messageMedia.photo == null) {
-                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + b6Var.id);
+                return new Pair(new TLRPC.TL_inputDocumentFileLocation(), "botstory_" + y5Var.id);
             }
             TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
-            tL_inputPhotoFileLocation.id = b6Var.media.photo.id;
-            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + b6Var.media.photo.id);
+            tL_inputPhotoFileLocation.id = y5Var.media.photo.id;
+            return new Pair(tL_inputPhotoFileLocation, "botstory_photo_" + y5Var.media.photo.id);
         }
         if (obj2 instanceof TL_stories.TL_storyItem) {
             TL_stories.TL_storyItem tL_storyItem = (TL_stories.TL_storyItem) obj2;
@@ -776,23 +776,23 @@ public final class r8 extends c1 {
                         i7 i7Var = (i7) obj6;
                         if (inputFileLocation != null) {
                             if (!Arrays.equals(i7Var.V.file_reference, inputFileLocation.file_reference)) {
-                                str = r2.a ? Utilities.f(i7Var.V.file_reference) : null;
+                                str = s2.a ? Utilities.f(i7Var.V.file_reference) : null;
                                 i7Var.V = inputFileLocation;
-                                if (r2.a) {
+                                if (s2.a) {
                                     r1 = Utilities.f(inputFileLocation.file_reference);
                                 }
-                                if (r2.a) {
+                                if (s2.a) {
                                     a8.b("debug_loading: from fileref cache updated fileref from " + str + " to " + r1);
                                 }
                             }
                         } else if (!Arrays.equals(inputFileLocation2.file_reference, bArr)) {
-                            String f10 = r2.a ? Utilities.f(i7Var.V.file_reference) : null;
+                            String f10 = s2.a ? Utilities.f(i7Var.V.file_reference) : null;
                             TLRPC.InputFileLocation inputFileLocation3 = i7Var.V;
                             inputFileLocation2.file_reference = bArr;
                             inputFileLocation3.file_reference = bArr;
-                            r1 = r2.a ? Utilities.f(bArr) : null;
+                            r1 = s2.a ? Utilities.f(bArr) : null;
                             str = f10;
-                            if (r2.a) {
+                            if (s2.a) {
                             }
                         }
                     }
@@ -919,8 +919,8 @@ public final class r8 extends c1 {
                 inputFileLocationArr[0] = (TLRPC.InputFileLocation) obj;
             }
         }
-        if (tLObject instanceof fi.b6) {
-            TLRPC.MessageMedia messageMedia3 = ((fi.b6) tLObject).media;
+        if (tLObject instanceof fi.y5) {
+            TLRPC.MessageMedia messageMedia3 = ((fi.y5) tLObject).media;
             TLRPC.Document document2 = messageMedia3.document;
             if (document2 != null) {
                 bArr = e(document2, messageMedia3.alt_documents, inputFileLocation, zArr, inputFileLocationArr);
@@ -933,7 +933,7 @@ public final class r8 extends c1 {
         } else if (tLObject instanceof TLRPC.messages_Messages) {
             TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
             if (messages_messages.messages.isEmpty()) {
-                boolean z10 = r2.a;
+                boolean z10 = s2.a;
                 a8.b("empty messages, file ref not found");
             } else {
                 int size = messages_messages.messages.size();
@@ -969,7 +969,7 @@ public final class r8 extends c1 {
                 }
                 if (bArr == null) {
                     getMessagesStorage().r1(messages_messages.messages.get(0), messages_messages.users, messages_messages.chats, true);
-                    boolean z11 = r2.a;
+                    boolean z11 = s2.a;
                     a8.b("file ref not found in messages, replacing message");
                 }
             }
@@ -987,7 +987,7 @@ public final class r8 extends c1 {
             }
         } else if (tLObject instanceof TLRPC.TL_messages_availableReactions) {
             TLRPC.TL_messages_availableReactions tL_messages_availableReactions = (TLRPC.TL_messages_availableReactions) tLObject;
-            getMediaDataController().x1(tL_messages_availableReactions.reactions, tL_messages_availableReactions.hash, (int) (System.currentTimeMillis() / 1000), false);
+            getMediaDataController().A1(tL_messages_availableReactions.reactions, tL_messages_availableReactions.hash, (int) (System.currentTimeMillis() / 1000), false);
             ArrayList<TLRPC.TL_availableReaction> arrayList2 = tL_messages_availableReactions.reactions;
             int size3 = arrayList2.size();
             int i12 = 0;
@@ -1002,8 +1002,8 @@ public final class r8 extends c1 {
             }
         } else if (tLObject instanceof TLRPC.TL_users_userFull) {
             TLRPC.TL_users_userFull tL_users_userFull = (TLRPC.TL_users_userFull) tLObject;
-            getMessagesController().Y3(tL_users_userFull.users, false);
-            getMessagesController().S3(tL_users_userFull.chats, false);
+            getMessagesController().f4(tL_users_userFull.users, false);
+            getMessagesController().Z3(tL_users_userFull.chats, false);
             TLRPC.UserFull userFull = tL_users_userFull.full_user;
             TL_bots.BotInfo botInfo = userFull.bot_info;
             if (botInfo != null) {
@@ -1030,13 +1030,13 @@ public final class r8 extends c1 {
         } else if (tLObject instanceof TLRPC.TL_help_appUpdate) {
             TLRPC.TL_help_appUpdate tL_help_appUpdate = (TLRPC.TL_help_appUpdate) tLObject;
             try {
-                gz.j1 = tL_help_appUpdate;
-                gz.y();
+                bz.j1 = tL_help_appUpdate;
+                bz.y();
             } catch (Exception e10) {
                 a8.g(e10, true);
             }
             try {
-                ns.e().k(ns.Q4, new Object[0]);
+                ks.e().k(ks.S4, new Object[0]);
             } catch (Exception e11) {
                 a8.g(e11, true);
             }
@@ -1064,8 +1064,8 @@ public final class r8 extends c1 {
             }
         } else if (tLObject instanceof TLRPC.TL_messages_webPage) {
             TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
-            getMessagesController().S3(tL_messages_webPage.chats, false);
-            getMessagesController().Y3(tL_messages_webPage.users, false);
+            getMessagesController().Z3(tL_messages_webPage.chats, false);
+            getMessagesController().f4(tL_messages_webPage.users, false);
             bArr = i(tL_messages_webPage.webpage, inputFileLocation, zArr, inputFileLocationArr);
         } else if (tLObject instanceof TLRPC.WebPage) {
             bArr = i((TLRPC.WebPage) tLObject, inputFileLocation, zArr, inputFileLocationArr);
@@ -1183,26 +1183,26 @@ public final class r8 extends c1 {
                     TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj4;
                     if (storyItem == null) {
                         TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-                        tL_updateStory.peer = getMessagesController().z1(storyItem2.dialogId);
+                        tL_updateStory.peer = getMessagesController().B1(storyItem2.dialogId);
                         TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
                         tL_updateStory.story = tL_storyItemDeleted;
                         tL_storyItemDeleted.id = storyItem2.id;
                         ArrayList arrayList4 = new ArrayList();
                         arrayList4.add(tL_updateStory);
-                        getMessagesController().N3(arrayList4, null, null, false, 0);
+                        getMessagesController().U3(arrayList4, null, null, false, 0);
                     } else {
-                        TLRPC.User a22 = getMessagesController().a2(Long.valueOf(storyItem2.dialogId));
-                        if (a22 != null && a22.contact) {
-                            np.s1(this.currentAccount).P1().k.k(storyItem2.dialogId, storyItem);
+                        TLRPC.User c22 = getMessagesController().c2(Long.valueOf(storyItem2.dialogId));
+                        if (c22 != null && c22.contact) {
+                            mp.u1(this.currentAccount).R1().k.k(storyItem2.dialogId, storyItem);
                         }
                     }
                     if (storyItem != null && bArr == null) {
                         TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
-                        tL_updateStory2.peer = np.s1(this.currentAccount).z1(storyItem2.dialogId);
+                        tL_updateStory2.peer = mp.u1(this.currentAccount).B1(storyItem2.dialogId);
                         tL_updateStory2.story = storyItem;
                         ArrayList arrayList5 = new ArrayList();
                         arrayList5.add(tL_updateStory2);
-                        np.s1(this.currentAccount).N3(arrayList5, null, null, false, 0);
+                        mp.u1(this.currentAccount).U3(arrayList5, null, null, false, 0);
                     }
                 }
             }
@@ -1226,7 +1226,7 @@ public final class r8 extends c1 {
         tL_inputPeerPhotoFileLocation.local_id = inputFileLocation.local_id;
         tL_inputPeerPhotoFileLocation.big = z10;
         if (user == null) {
-            if (!t3.T(chat)) {
+            if (!v3.T(chat)) {
                 tL_inputPeerChat = new TLRPC.TL_inputPeerChat();
                 tL_inputPeerChat.chat_id = chat.id;
             } else if (chat.access_hash != 0 || chat.fromMessageDialogId == 0 || chat.fromMessageId == 0) {
@@ -1236,7 +1236,7 @@ public final class r8 extends c1 {
             } else {
                 tL_inputPeerChat = new TLRPC.TL_inputPeerChannelFromMessage();
                 tL_inputPeerChat.channel_id = chat.id;
-                tL_inputPeerChat.peer = getMessagesController().j1(chat.fromMessageDialogId);
+                tL_inputPeerChat.peer = getMessagesController().l1(chat.fromMessageDialogId);
                 tL_inputPeerChat.msg_id = chat.fromMessageId;
             }
             tL_inputPeerPhotoFileLocation.photo_id = chat.photo.photo_id;
@@ -1249,7 +1249,7 @@ public final class r8 extends c1 {
         } else {
             inputPeer = new TLRPC.TL_inputPeerUserFromMessage();
             inputPeer.user_id = user.id;
-            inputPeer.peer = getMessagesController().j1(user.fromMessageDialogId);
+            inputPeer.peer = getMessagesController().l1(user.fromMessageDialogId);
             inputPeer.msg_id = user.fromMessageId;
             tL_inputPeerPhotoFileLocation.photo_id = user.photo.photo_id;
         }
@@ -1371,7 +1371,7 @@ public final class r8 extends c1 {
                             z15 = r12;
                             i10 = i18;
                         } else {
-                            if (tL_error2 == null || !r2.a) {
+                            if (tL_error2 == null || !s2.a) {
                                 zArr = zArr3;
                             } else {
                                 Object[] objArr = p8Var3.b;
@@ -1393,8 +1393,8 @@ public final class r8 extends c1 {
                                 z13 = true;
                             }
                             p8Var3.d = z13;
-                            if (tLObject instanceof fi.b6) {
-                                TLRPC.MessageMedia messageMedia2 = ((fi.b6) tLObject).media;
+                            if (tLObject instanceof fi.y5) {
+                                TLRPC.MessageMedia messageMedia2 = ((fi.y5) tLObject).media;
                                 arrayList2 = arrayList;
                                 TLRPC.Document document3 = messageMedia2.document;
                                 if (document3 != null) {
@@ -1415,7 +1415,7 @@ public final class r8 extends c1 {
                                     if (messages_messages.messages.isEmpty()) {
                                         i7 = size2;
                                         z14 = z16;
-                                        boolean z17 = r2.a;
+                                        boolean z17 = s2.a;
                                         a8.b("empty messages, file ref not found");
                                     } else {
                                         int size3 = messages_messages.messages.size();
@@ -1481,7 +1481,7 @@ public final class r8 extends c1 {
                                         }
                                         if (bArr == null) {
                                             getMessagesStorage().r1(messages_messages.messages.get(i13), messages_messages.users, messages_messages.chats, true);
-                                            boolean z18 = r2.a;
+                                            boolean z18 = s2.a;
                                             a8.b("file ref not found in messages, replacing message");
                                         }
                                     }
@@ -1504,7 +1504,7 @@ public final class r8 extends c1 {
                                         long j10 = 1000;
                                         if (tLObject instanceof TLRPC.TL_messages_availableReactions) {
                                             TLRPC.TL_messages_availableReactions tL_messages_availableReactions = (TLRPC.TL_messages_availableReactions) tLObject;
-                                            getMediaDataController().x1(tL_messages_availableReactions.reactions, tL_messages_availableReactions.hash, (int) (System.currentTimeMillis() / 1000), false);
+                                            getMediaDataController().A1(tL_messages_availableReactions.reactions, tL_messages_availableReactions.hash, (int) (System.currentTimeMillis() / 1000), false);
                                             ArrayList<TLRPC.TL_availableReaction> arrayList6 = tL_messages_availableReactions.reactions;
                                             int size5 = arrayList6.size();
                                             int i23 = 0;
@@ -1528,8 +1528,8 @@ public final class r8 extends c1 {
                                             bArr = e11;
                                         } else if (tLObject instanceof TLRPC.TL_users_userFull) {
                                             TLRPC.TL_users_userFull tL_users_userFull = (TLRPC.TL_users_userFull) tLObject;
-                                            getMessagesController().Y3(tL_users_userFull.users, false);
-                                            getMessagesController().S3(tL_users_userFull.chats, false);
+                                            getMessagesController().f4(tL_users_userFull.users, false);
+                                            getMessagesController().Z3(tL_users_userFull.chats, false);
                                             TLRPC.UserFull userFull = tL_users_userFull.full_user;
                                             TL_bots.BotInfo botInfo = userFull.bot_info;
                                             if (botInfo != null) {
@@ -1582,7 +1582,7 @@ public final class r8 extends c1 {
                                                         i18 = i10;
                                                     }
                                                     tL_attachMenuBots.bots = arrayList8;
-                                                    getMediaDataController().v1(tL_attachMenuBots, tL_attachMenuBots.hash, (int) (System.currentTimeMillis() / j3), false);
+                                                    getMediaDataController().y1(tL_attachMenuBots, tL_attachMenuBots.hash, (int) (System.currentTimeMillis() / j3), false);
                                                 } else {
                                                     i10 = i18;
                                                 }
@@ -1591,13 +1591,13 @@ public final class r8 extends c1 {
                                                 if (tLObject instanceof TLRPC.TL_help_appUpdate) {
                                                     TLRPC.TL_help_appUpdate tL_help_appUpdate = (TLRPC.TL_help_appUpdate) tLObject;
                                                     try {
-                                                        gz.j1 = tL_help_appUpdate;
-                                                        gz.y();
+                                                        bz.j1 = tL_help_appUpdate;
+                                                        bz.y();
                                                     } catch (Exception e13) {
                                                         a8.g(e13, true);
                                                     }
                                                     try {
-                                                        ns.e().k(ns.Q4, new Object[0]);
+                                                        ks.e().k(ks.S4, new Object[0]);
                                                     } catch (Exception e14) {
                                                         a8.g(e14, true);
                                                     }
@@ -1629,8 +1629,8 @@ public final class r8 extends c1 {
                                                     }
                                                 } else if (tLObject instanceof TLRPC.TL_messages_webPage) {
                                                     TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
-                                                    getMessagesController().S3(tL_messages_webPage.chats, false);
-                                                    getMessagesController().Y3(tL_messages_webPage.users, false);
+                                                    getMessagesController().Z3(tL_messages_webPage.chats, false);
+                                                    getMessagesController().f4(tL_messages_webPage.users, false);
                                                     bArr = i(tL_messages_webPage.webpage, p8Var3.a, zArr2, inputFileLocationArr);
                                                 } else if (tLObject instanceof TLRPC.WebPage) {
                                                     bArr = i((TLRPC.WebPage) tLObject, inputFileLocation, zArr2, inputFileLocationArr);
@@ -1666,7 +1666,7 @@ public final class r8 extends c1 {
                                                         TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) tLObject;
                                                         e10 = e(tL_theme.document, null, inputFileLocation, zArr2, inputFileLocationArr);
                                                         if (e10 != null && z10) {
-                                                            g0.h3(new a(tL_theme, 9));
+                                                            g0.g3(new a(tL_theme, 9));
                                                         }
                                                     } else if (tLObject instanceof Vector) {
                                                         Vector vector = (Vector) tLObject;
@@ -1687,7 +1687,7 @@ public final class r8 extends c1 {
                                                                         i11 = size8;
                                                                         i12 = i27;
                                                                         getMessagesStorage().m1(arrayList10, null, true, true);
-                                                                        g0.h3(new x4(13, this, user));
+                                                                        g0.g3(new z4(13, this, user));
                                                                     }
                                                                     bArr = h;
                                                                 } else {
@@ -1701,7 +1701,7 @@ public final class r8 extends c1 {
                                                                             arrayList11.add(chat);
                                                                             getMessagesStorage().m1(null, arrayList11, true, true);
                                                                             final int i28 = 0;
-                                                                            g0.h3(new Runnable(this) { // from class: org.telegram.messenger.i8
+                                                                            g0.g3(new Runnable(this) { // from class: org.telegram.messenger.i8
                                                                                 public final /* synthetic */ r8 b;
 
                                                                                 {
@@ -1712,10 +1712,10 @@ public final class r8 extends c1 {
                                                                                 public final void run() {
                                                                                     switch (i28) {
                                                                                         case 0:
-                                                                                            this.b.getMessagesController().Q3(chat, false);
+                                                                                            this.b.getMessagesController().X3(chat, false);
                                                                                             break;
                                                                                         default:
-                                                                                            this.b.getMessagesController().Q3(chat, false);
+                                                                                            this.b.getMessagesController().X3(chat, false);
                                                                                             break;
                                                                                     }
                                                                                 }
@@ -1749,7 +1749,7 @@ public final class r8 extends c1 {
                                                                     arrayList12.add(chat2);
                                                                     final int i30 = 1;
                                                                     getMessagesStorage().m1(null, arrayList12, true, true);
-                                                                    g0.h3(new Runnable(this) { // from class: org.telegram.messenger.i8
+                                                                    g0.g3(new Runnable(this) { // from class: org.telegram.messenger.i8
                                                                         public final /* synthetic */ r8 b;
 
                                                                         {
@@ -1760,10 +1760,10 @@ public final class r8 extends c1 {
                                                                         public final void run() {
                                                                             switch (i30) {
                                                                                 case 0:
-                                                                                    this.b.getMessagesController().Q3(chat2, false);
+                                                                                    this.b.getMessagesController().X3(chat2, false);
                                                                                     break;
                                                                                 default:
-                                                                                    this.b.getMessagesController().Q3(chat2, false);
+                                                                                    this.b.getMessagesController().X3(chat2, false);
                                                                                     break;
                                                                             }
                                                                         }
@@ -1788,7 +1788,7 @@ public final class r8 extends c1 {
                                                             bArr = e17;
                                                         }
                                                         if (z10) {
-                                                            getMediaDataController().y1(0, tL_messages_savedGifs.gifs, true, 0, true);
+                                                            getMediaDataController().B1(0, tL_messages_savedGifs.gifs, true, 0, true);
                                                         }
                                                     } else if (tLObject instanceof TLRPC.TL_messages_stickerSet) {
                                                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject;
@@ -1809,7 +1809,7 @@ public final class r8 extends c1 {
                                                             }
                                                         }
                                                         if (z10) {
-                                                            g0.h3(new x4(14, this, tL_messages_stickerSet));
+                                                            g0.g3(new z4(14, this, tL_messages_stickerSet));
                                                         }
                                                     } else if (tLObject instanceof TLRPC.TL_messages_recentStickers) {
                                                         TLRPC.TL_messages_recentStickers tL_messages_recentStickers = (TLRPC.TL_messages_recentStickers) tLObject;
@@ -1828,7 +1828,7 @@ public final class r8 extends c1 {
                                                             bArr = e19;
                                                         }
                                                         if (z10) {
-                                                            getMediaDataController().y1(0, tL_messages_recentStickers.stickers, false, 0, true);
+                                                            getMediaDataController().B1(0, tL_messages_recentStickers.stickers, false, 0, true);
                                                         }
                                                     } else if (tLObject instanceof TLRPC.TL_messages_favedStickers) {
                                                         TLRPC.TL_messages_favedStickers tL_messages_favedStickers = (TLRPC.TL_messages_favedStickers) tLObject;
@@ -1847,7 +1847,7 @@ public final class r8 extends c1 {
                                                             bArr = e20;
                                                         }
                                                         if (z10) {
-                                                            getMediaDataController().y1(2, tL_messages_favedStickers.stickers, false, 0, true);
+                                                            getMediaDataController().B1(2, tL_messages_favedStickers.stickers, false, 0, true);
                                                         }
                                                     } else if (tLObject instanceof TLRPC.photos_Photos) {
                                                         TLRPC.photos_Photos photos_photos = (TLRPC.photos_Photos) tLObject;
@@ -1890,28 +1890,28 @@ public final class r8 extends c1 {
                                                                         if (storyItem2 == null) {
                                                                             TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
                                                                             p8Var = p8Var3;
-                                                                            tL_updateStory.peer = getMessagesController().z1(storyItem3.dialogId);
+                                                                            tL_updateStory.peer = getMessagesController().B1(storyItem3.dialogId);
                                                                             TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
                                                                             tL_updateStory.story = tL_storyItemDeleted;
                                                                             tL_storyItemDeleted.id = storyItem3.id;
                                                                             ArrayList arrayList13 = new ArrayList();
                                                                             arrayList13.add(tL_updateStory);
-                                                                            getMessagesController().N3(arrayList13, null, null, false, 0);
+                                                                            getMessagesController().U3(arrayList13, null, null, false, 0);
                                                                         } else {
                                                                             p8Var = p8Var3;
-                                                                            TLRPC.User a22 = getMessagesController().a2(Long.valueOf(storyItem3.dialogId));
-                                                                            if (a22 != null && a22.contact) {
-                                                                                np.s1(this.currentAccount).P1().k.k(storyItem3.dialogId, storyItem2);
+                                                                            TLRPC.User c22 = getMessagesController().c2(Long.valueOf(storyItem3.dialogId));
+                                                                            if (c22 != null && c22.contact) {
+                                                                                mp.u1(this.currentAccount).R1().k.k(storyItem3.dialogId, storyItem2);
                                                                             }
                                                                         }
                                                                         if (storyItem2 != null && bArr == null) {
                                                                             TL_stories.TL_updateStory tL_updateStory2 = new TL_stories.TL_updateStory();
                                                                             hashMap = hashMap2;
-                                                                            tL_updateStory2.peer = np.s1(this.currentAccount).z1(storyItem3.dialogId);
+                                                                            tL_updateStory2.peer = mp.u1(this.currentAccount).B1(storyItem3.dialogId);
                                                                             tL_updateStory2.story = storyItem2;
                                                                             ArrayList arrayList14 = new ArrayList();
                                                                             arrayList14.add(tL_updateStory2);
-                                                                            np.s1(this.currentAccount).N3(arrayList14, null, null, false, 0);
+                                                                            mp.u1(this.currentAccount).U3(arrayList14, null, null, false, 0);
                                                                             if (bArr != null) {
                                                                                 v(p8Var.b);
                                                                             } else if (t(p8Var, bArr, inputFileLocationArr != null ? inputFileLocationArr[0] : null, z11)) {
@@ -2021,12 +2021,12 @@ public final class r8 extends c1 {
         TLRPC.TL_inputMediaPhoto tL_inputMediaPhoto2;
         int indexOf2;
         int indexOf3;
-        boolean z11 = r2.a;
+        boolean z11 = s2.a;
         StringBuilder sb2 = new StringBuilder("fileref updated for ");
         final int i7 = 0;
         sb2.append(p8Var.b[0]);
         sb2.append(" ");
-        org.telegram.ui.Cells.y0.t(p8Var.c, sb2);
+        p5.c.s(p8Var.c, sb2);
         Object[] objArr2 = p8Var.b;
         Object obj = objArr2[0];
         final int i10 = 1;
@@ -2059,7 +2059,7 @@ public final class r8 extends c1 {
                             }
                             if (z13) {
                                 hashMap.remove(tL_messages_sendMultiMedia);
-                                g0.h3(new j8(this, tL_messages_sendMultiMedia, objArr3, i7));
+                                g0.g3(new j8(this, tL_messages_sendMultiMedia, objArr3, i7));
                                 return true;
                             }
                         }
@@ -2105,7 +2105,7 @@ public final class r8 extends c1 {
                                     }
                                     if (z14) {
                                         hashMap.remove(tL_messages_sendMedia);
-                                        g0.h3(new k8(this, tL_messages_sendMedia, objArr4, i7));
+                                        g0.g3(new k8(this, tL_messages_sendMedia, objArr4, i7));
                                         return true;
                                     }
                                 }
@@ -2154,7 +2154,7 @@ public final class r8 extends c1 {
                                     }
                                     if (z15) {
                                         hashMap.remove(tL_sendMessage);
-                                        g0.h3(new l8(this, tL_sendMessage, objArr5, i7));
+                                        g0.g3(new l8(this, tL_sendMessage, objArr5, i7));
                                         return true;
                                     }
                                 }
@@ -2187,7 +2187,7 @@ public final class r8 extends c1 {
                         tL_inputMediaPhoto6.id.file_reference = bArr;
                     }
                 }
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2198,52 +2198,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2253,7 +2253,7 @@ public final class r8 extends c1 {
             TLRPC.TL_inputMediaDocument tL_inputMediaDocument4 = (TLRPC.TL_inputMediaDocument) inputMedia2;
             if (!z10 || !Arrays.equals(tL_inputMediaDocument4.id.file_reference, bArr)) {
                 tL_inputMediaDocument4.id.file_reference = bArr;
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2264,52 +2264,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i7) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2325,7 +2325,7 @@ public final class r8 extends c1 {
                         tL_inputMediaPhoto7.id.file_reference = bArr;
                     }
                 }
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2336,52 +2336,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2391,7 +2391,7 @@ public final class r8 extends c1 {
             TLRPC.TL_inputMediaDocument tL_inputMediaDocument5 = (TLRPC.TL_inputMediaDocument) inputMedia3;
             if (!z10 || !Arrays.equals(tL_inputMediaDocument5.id.file_reference, bArr)) {
                 tL_inputMediaDocument5.id.file_reference = bArr;
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2402,52 +2402,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i10) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2463,7 +2463,7 @@ public final class r8 extends c1 {
                         tL_inputMediaPhoto8.id.file_reference = bArr;
                     }
                 }
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2474,52 +2474,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2529,7 +2529,7 @@ public final class r8 extends c1 {
             TLRPC.TL_inputMediaDocument tL_inputMediaDocument6 = (TLRPC.TL_inputMediaDocument) inputMedia4;
             if (!z10 || !Arrays.equals(tL_inputMediaDocument6.id.file_reference, bArr)) {
                 tL_inputMediaDocument6.id.file_reference = bArr;
-                g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                     public final /* synthetic */ r8 b;
 
                     {
@@ -2540,52 +2540,52 @@ public final class r8 extends c1 {
                     public final void run() {
                         switch (i13) {
                             case 0:
-                                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                 p8 p8Var2 = p8Var;
                                 Object[] objArr6 = p8Var2.b;
                                 TLObject tLObject = (TLObject) objArr6[0];
-                                gj gjVar = (gj) objArr6[1];
+                                fj fjVar = (fj) objArr6[1];
                                 String str2 = (String) objArr6[2];
-                                qy qyVar = (qy) objArr6[3];
+                                ly lyVar = (ly) objArr6[3];
                                 boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                 Object[] objArr7 = p8Var2.b;
-                                sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                 break;
                             case 1:
-                                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                 p8 p8Var3 = p8Var;
                                 Object[] objArr8 = p8Var3.b;
                                 TLObject tLObject2 = (TLObject) objArr8[0];
-                                gj gjVar2 = (gj) objArr8[1];
+                                fj fjVar2 = (fj) objArr8[1];
                                 String str3 = (String) objArr8[2];
-                                qy qyVar2 = (qy) objArr8[3];
+                                ly lyVar2 = (ly) objArr8[3];
                                 boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                 Object[] objArr9 = p8Var3.b;
-                                sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                 break;
                             case 2:
-                                ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                 p8 p8Var4 = p8Var;
                                 Object[] objArr10 = p8Var4.b;
                                 TLObject tLObject3 = (TLObject) objArr10[0];
-                                gj gjVar3 = (gj) objArr10[1];
+                                fj fjVar3 = (fj) objArr10[1];
                                 String str4 = (String) objArr10[2];
-                                qy qyVar3 = (qy) objArr10[3];
+                                ly lyVar3 = (ly) objArr10[3];
                                 boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                 Object[] objArr11 = p8Var4.b;
-                                sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                 break;
                             default:
-                                ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                 p8 p8Var5 = p8Var;
                                 Object[] objArr12 = p8Var5.b;
                                 TLObject tLObject4 = (TLObject) objArr12[0];
-                                gj gjVar4 = (gj) objArr12[1];
+                                fj fjVar4 = (fj) objArr12[1];
                                 String str5 = (String) objArr12[2];
-                                qy qyVar4 = (qy) objArr12[3];
+                                ly lyVar4 = (ly) objArr12[3];
                                 boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                 Object[] objArr13 = p8Var5.b;
-                                sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                 break;
                         }
                     }
@@ -2603,7 +2603,7 @@ public final class r8 extends c1 {
                         if (objArr.length > 1) {
                             Object obj6 = objArr[1];
                             if (obj6 instanceof Runnable) {
-                                g0.h3((Runnable) obj6);
+                                g0.g3((Runnable) obj6);
                             }
                         }
                     }
@@ -2627,7 +2627,7 @@ public final class r8 extends c1 {
                             tL_inputMediaPhoto9.id.file_reference = bArr;
                         }
                     }
-                    g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                    g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                         public final /* synthetic */ r8 b;
 
                         {
@@ -2638,52 +2638,52 @@ public final class r8 extends c1 {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                     p8 p8Var2 = p8Var;
                                     Object[] objArr6 = p8Var2.b;
                                     TLObject tLObject = (TLObject) objArr6[0];
-                                    gj gjVar = (gj) objArr6[1];
+                                    fj fjVar = (fj) objArr6[1];
                                     String str2 = (String) objArr6[2];
-                                    qy qyVar = (qy) objArr6[3];
+                                    ly lyVar = (ly) objArr6[3];
                                     boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                     Object[] objArr7 = p8Var2.b;
-                                    sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                    sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                     break;
                                 case 1:
-                                    ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                     p8 p8Var3 = p8Var;
                                     Object[] objArr8 = p8Var3.b;
                                     TLObject tLObject2 = (TLObject) objArr8[0];
-                                    gj gjVar2 = (gj) objArr8[1];
+                                    fj fjVar2 = (fj) objArr8[1];
                                     String str3 = (String) objArr8[2];
-                                    qy qyVar2 = (qy) objArr8[3];
+                                    ly lyVar2 = (ly) objArr8[3];
                                     boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                     Object[] objArr9 = p8Var3.b;
-                                    sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                    sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                     break;
                                 case 2:
-                                    ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                     p8 p8Var4 = p8Var;
                                     Object[] objArr10 = p8Var4.b;
                                     TLObject tLObject3 = (TLObject) objArr10[0];
-                                    gj gjVar3 = (gj) objArr10[1];
+                                    fj fjVar3 = (fj) objArr10[1];
                                     String str4 = (String) objArr10[2];
-                                    qy qyVar3 = (qy) objArr10[3];
+                                    ly lyVar3 = (ly) objArr10[3];
                                     boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                     Object[] objArr11 = p8Var4.b;
-                                    sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                    sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                     break;
                                 default:
-                                    ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                     p8 p8Var5 = p8Var;
                                     Object[] objArr12 = p8Var5.b;
                                     TLObject tLObject4 = (TLObject) objArr12[0];
-                                    gj gjVar4 = (gj) objArr12[1];
+                                    fj fjVar4 = (fj) objArr12[1];
                                     String str5 = (String) objArr12[2];
-                                    qy qyVar4 = (qy) objArr12[3];
+                                    ly lyVar4 = (ly) objArr12[3];
                                     boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                     Object[] objArr13 = p8Var5.b;
-                                    sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                    sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                     break;
                             }
                         }
@@ -2693,7 +2693,7 @@ public final class r8 extends c1 {
                 TLRPC.TL_inputMediaDocument tL_inputMediaDocument7 = (TLRPC.TL_inputMediaDocument) inputMedia5;
                 if (!z10 || !Arrays.equals(tL_inputMediaDocument7.id.file_reference, bArr)) {
                     tL_inputMediaDocument7.id.file_reference = bArr;
-                    g0.h3(new Runnable(this) { // from class: org.telegram.messenger.m8
+                    g0.g3(new Runnable(this) { // from class: org.telegram.messenger.m8
                         public final /* synthetic */ r8 b;
 
                         {
@@ -2704,52 +2704,52 @@ public final class r8 extends c1 {
                         public final void run() {
                             switch (i11) {
                                 case 0:
-                                    ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper = this.b.getSendMessagesHelper();
                                     p8 p8Var2 = p8Var;
                                     Object[] objArr6 = p8Var2.b;
                                     TLObject tLObject = (TLObject) objArr6[0];
-                                    gj gjVar = (gj) objArr6[1];
+                                    fj fjVar = (fj) objArr6[1];
                                     String str2 = (String) objArr6[2];
-                                    qy qyVar = (qy) objArr6[3];
+                                    ly lyVar = (ly) objArr6[3];
                                     boolean booleanValue = ((Boolean) objArr6[4]).booleanValue();
                                     Object[] objArr7 = p8Var2.b;
-                                    sendMessagesHelper.O(tLObject, gjVar, str2, qyVar, booleanValue, (qy) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
+                                    sendMessagesHelper.O(tLObject, fjVar, str2, lyVar, booleanValue, (ly) objArr7[5], null, null, ((Boolean) objArr7[6]).booleanValue());
                                     break;
                                 case 1:
-                                    ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                                     p8 p8Var3 = p8Var;
                                     Object[] objArr8 = p8Var3.b;
                                     TLObject tLObject2 = (TLObject) objArr8[0];
-                                    gj gjVar2 = (gj) objArr8[1];
+                                    fj fjVar2 = (fj) objArr8[1];
                                     String str3 = (String) objArr8[2];
-                                    qy qyVar2 = (qy) objArr8[3];
+                                    ly lyVar2 = (ly) objArr8[3];
                                     boolean booleanValue2 = ((Boolean) objArr8[4]).booleanValue();
                                     Object[] objArr9 = p8Var3.b;
-                                    sendMessagesHelper2.O(tLObject2, gjVar2, str3, qyVar2, booleanValue2, (qy) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
+                                    sendMessagesHelper2.O(tLObject2, fjVar2, str3, lyVar2, booleanValue2, (ly) objArr9[5], null, null, ((Boolean) objArr9[6]).booleanValue());
                                     break;
                                 case 2:
-                                    ez sendMessagesHelper3 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper3 = this.b.getSendMessagesHelper();
                                     p8 p8Var4 = p8Var;
                                     Object[] objArr10 = p8Var4.b;
                                     TLObject tLObject3 = (TLObject) objArr10[0];
-                                    gj gjVar3 = (gj) objArr10[1];
+                                    fj fjVar3 = (fj) objArr10[1];
                                     String str4 = (String) objArr10[2];
-                                    qy qyVar3 = (qy) objArr10[3];
+                                    ly lyVar3 = (ly) objArr10[3];
                                     boolean booleanValue3 = ((Boolean) objArr10[4]).booleanValue();
                                     Object[] objArr11 = p8Var4.b;
-                                    sendMessagesHelper3.O(tLObject3, gjVar3, str4, qyVar3, booleanValue3, (qy) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
+                                    sendMessagesHelper3.O(tLObject3, fjVar3, str4, lyVar3, booleanValue3, (ly) objArr11[5], null, null, ((Boolean) objArr11[6]).booleanValue());
                                     break;
                                 default:
-                                    ez sendMessagesHelper4 = this.b.getSendMessagesHelper();
+                                    zy sendMessagesHelper4 = this.b.getSendMessagesHelper();
                                     p8 p8Var5 = p8Var;
                                     Object[] objArr12 = p8Var5.b;
                                     TLObject tLObject4 = (TLObject) objArr12[0];
-                                    gj gjVar4 = (gj) objArr12[1];
+                                    fj fjVar4 = (fj) objArr12[1];
                                     String str5 = (String) objArr12[2];
-                                    qy qyVar4 = (qy) objArr12[3];
+                                    ly lyVar4 = (ly) objArr12[3];
                                     boolean booleanValue4 = ((Boolean) objArr12[4]).booleanValue();
                                     Object[] objArr13 = p8Var5.b;
-                                    sendMessagesHelper4.O(tLObject4, gjVar4, str5, qyVar4, booleanValue4, (qy) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
+                                    sendMessagesHelper4.O(tLObject4, fjVar4, str5, lyVar4, booleanValue4, (ly) objArr13[5], null, null, ((Boolean) objArr13[6]).booleanValue());
                                     break;
                             }
                         }
@@ -2762,28 +2762,28 @@ public final class r8 extends c1 {
                     TLRPC.TL_messages_saveGif tL_messages_saveGif = (TLRPC.TL_messages_saveGif) obj;
                     if (!z10 || !Arrays.equals(tL_messages_saveGif.id.file_reference, bArr)) {
                         tL_messages_saveGif.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveGif, new fi.m5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveGif, new fi.k5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_saveRecentSticker) {
                     TLRPC.TL_messages_saveRecentSticker tL_messages_saveRecentSticker = (TLRPC.TL_messages_saveRecentSticker) obj;
                     if (!z10 || !Arrays.equals(tL_messages_saveRecentSticker.id.file_reference, bArr)) {
                         tL_messages_saveRecentSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new fi.m5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_saveRecentSticker, new fi.k5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_stickers_addStickerToSet) {
                     TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = (TLRPC.TL_stickers_addStickerToSet) obj;
                     if (!z10 || !Arrays.equals(tL_stickers_addStickerToSet.sticker.document.file_reference, bArr)) {
                         tL_stickers_addStickerToSet.sticker.document.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new fi.m5(i16));
+                        getConnectionsManager().sendRequest(tL_stickers_addStickerToSet, new fi.k5(i16));
                         return true;
                     }
                 } else if (obj instanceof TLRPC.TL_messages_faveSticker) {
                     TLRPC.TL_messages_faveSticker tL_messages_faveSticker = (TLRPC.TL_messages_faveSticker) obj;
                     if (!z10 || !Arrays.equals(tL_messages_faveSticker.id.file_reference, bArr)) {
                         tL_messages_faveSticker.id.file_reference = bArr;
-                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new fi.m5(i16));
+                        getConnectionsManager().sendRequest(tL_messages_faveSticker, new fi.k5(i16));
                         return true;
                     }
                 } else {
@@ -2793,27 +2793,27 @@ public final class r8 extends c1 {
                             i7 i7Var = (i7) obj7;
                             if (inputFileLocation != null) {
                                 if (!z10 || !Arrays.equals(i7Var.V.file_reference, inputFileLocation.file_reference)) {
-                                    str = r2.a ? Utilities.f(i7Var.V.file_reference) : null;
+                                    str = s2.a ? Utilities.f(i7Var.V.file_reference) : null;
                                     i7Var.V = inputFileLocation;
-                                    if (r2.a) {
+                                    if (s2.a) {
                                         r8 = Utilities.f(inputFileLocation.file_reference);
                                     }
                                     i7Var.A0 = false;
-                                    if (r2.a) {
+                                    if (s2.a) {
                                         a8.b("debug_loading: " + i7Var.L0.getName() + " " + str + " " + r8 + " reference updated resume download");
                                     }
                                     i7Var.s(-1);
                                     return true;
                                 }
                             } else if (!z10 || !Arrays.equals(p8Var.a.file_reference, bArr)) {
-                                String f10 = r2.a ? Utilities.f(i7Var.V.file_reference) : null;
+                                String f10 = s2.a ? Utilities.f(i7Var.V.file_reference) : null;
                                 TLRPC.InputFileLocation inputFileLocation2 = i7Var.V;
                                 p8Var.a.file_reference = bArr;
                                 inputFileLocation2.file_reference = bArr;
-                                r8 = r2.a ? Utilities.f(bArr) : null;
+                                r8 = s2.a ? Utilities.f(bArr) : null;
                                 str = f10;
                                 i7Var.A0 = false;
-                                if (r2.a) {
+                                if (s2.a) {
                                 }
                                 i7Var.s(-1);
                                 return true;
@@ -2845,8 +2845,8 @@ public final class r8 extends c1 {
         return false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:103:0x02aa  */
-    /* JADX WARN: Removed duplicated region for block: B:113:0x02dc  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x02ab  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x02dd  */
     /* JADX WARN: Removed duplicated region for block: B:262:0x028a  */
     /* JADX WARN: Removed duplicated region for block: B:268:0x0204  */
     /* JADX WARN: Removed duplicated region for block: B:78:0x016a  */
@@ -2873,7 +2873,7 @@ public final class r8 extends c1 {
         TLRPC.MessageMedia messageMedia;
         TLRPC.WebPage webPage;
         String simpleName;
-        if (r2.a) {
+        if (s2.a) {
             StringBuilder sb2 = new StringBuilder("start loading request reference parent ");
             if (obj instanceof String) {
                 simpleName = (String) obj;
@@ -2883,9 +2883,9 @@ public final class r8 extends c1 {
                 sb3.append(storyItem.dialogId);
                 sb3.append(" id=");
                 simpleName = a8.p0.n(storyItem.id, ")", sb3);
-            } else if (obj instanceof gj) {
-                gj gjVar = (gj) obj;
-                simpleName = "message(dialogId=" + gj.B0(gjVar.k) + "messageId" + gjVar.e1() + ")";
+            } else if (obj instanceof fj) {
+                fj fjVar = (fj) obj;
+                simpleName = "message(dialogId=" + fj.B0(fjVar.k) + "messageId" + fjVar.e1() + ")";
             } else {
                 simpleName = obj == null ? null : obj.getClass().getSimpleName();
             }
@@ -2952,9 +2952,9 @@ public final class r8 extends c1 {
         }
         TLRPC.InputFileLocation inputFileLocation = (TLRPC.InputFileLocation) p10.first;
         String str8 = (String) p10.second;
-        if (obj instanceof gj) {
-            gj gjVar2 = (gj) obj;
-            if (gjVar2.L1() < 0 && (message = gjVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+        if (obj instanceof fj) {
+            fj fjVar2 = (fj) obj;
+            if (fjVar2.L1() < 0 && (message = fjVar2.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 obj2 = webPage;
                 o4 = o(obj2);
                 if (o4 != null) {
@@ -3052,128 +3052,34 @@ public final class r8 extends c1 {
                             }
                         }
                     }
-                    if (!(obj2 instanceof fi.b6)) {
-                        fi.b6 b6Var = (fi.b6) obj2;
-                        fi.c6 c6Var = b6Var.a;
-                        if (c6Var == null) {
+                    final int i14 = 5;
+                    if (!(obj2 instanceof fi.y5)) {
+                        fi.y5 y5Var = (fi.y5) obj2;
+                        fi.z5 z5Var = y5Var.a;
+                        if (z5Var == null) {
                             v(objArr);
                             return;
                         }
-                        fi.s5 s5Var = new fi.s5(c6Var, b6Var, new d3(this, str7, str4, 2), 1);
-                        if (c6Var.F != 0) {
-                            ConnectionsManager.getInstance(c6Var.c).cancelRequest(c6Var.F, true);
+                        di.ga gaVar = new di.ga(z5Var, y5Var, new e3(this, str7, str4, 2), i14);
+                        if (z5Var.F != 0) {
+                            ConnectionsManager.getInstance(z5Var.c).cancelRequest(z5Var.F, true);
                             z10 = false;
-                            c6Var.F = 0;
+                            z5Var.F = 0;
                         } else {
                             z10 = false;
                         }
-                        c6Var.C = z10;
-                        c6Var.D = z10;
-                        c6Var.H(s5Var);
+                        z5Var.C = z10;
+                        z5Var.D = z10;
+                        z5Var.H(gaVar);
                         return;
                     }
                     if (obj2 instanceof TL_stories.StoryItem) {
                         TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) obj2;
                         TL_stories.TL_stories_getStoriesByID tL_stories_getStoriesByID = new TL_stories.TL_stories_getStoriesByID();
-                        tL_stories_getStoriesByID.peer = getMessagesController().j1(storyItem2.dialogId);
+                        tL_stories_getStoriesByID.peer = getMessagesController().l1(storyItem2.dialogId);
                         tL_stories_getStoriesByID.id.add(Integer.valueOf(storyItem2.id));
-                        final int i14 = 7;
+                        final int i15 = 7;
                         getConnectionsManager().sendRequest(tL_stories_getStoriesByID, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                            public final /* synthetic */ r8 b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                switch (i14) {
-                                    case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 16:
-                                        r8 r8Var = this.b;
-                                        r8Var.getClass();
-                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                        }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                }
-                            }
-                        });
-                        return;
-                    }
-                    if (obj2 instanceof TLRPC.TL_help_premiumPromo) {
-                        final int i15 = 16;
-                        getConnectionsManager().sendRequest(new TLRPC.TL_help_getPremiumPromo(), new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -3236,7 +3142,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -3266,11 +3172,9 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof TLRPC.TL_availableReaction) {
-                        TLRPC.TL_messages_getAvailableReactions tL_messages_getAvailableReactions = new TLRPC.TL_messages_getAvailableReactions();
-                        tL_messages_getAvailableReactions.hash = 0;
-                        final int i16 = 17;
-                        getConnectionsManager().sendRequest(tL_messages_getAvailableReactions, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    if (obj2 instanceof TLRPC.TL_help_premiumPromo) {
+                        final int i16 = 16;
+                        getConnectionsManager().sendRequest(new TLRPC.TL_help_getPremiumPromo(), new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -3333,7 +3237,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -3363,11 +3267,11 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof TL_bots.BotInfo) {
-                        TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                        tL_users_getFullUser.id = getMessagesController().o1(((TL_bots.BotInfo) obj2).user_id);
-                        final int i17 = 18;
-                        getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    if (obj2 instanceof TLRPC.TL_availableReaction) {
+                        TLRPC.TL_messages_getAvailableReactions tL_messages_getAvailableReactions = new TLRPC.TL_messages_getAvailableReactions();
+                        tL_messages_getAvailableReactions.hash = 0;
+                        final int i17 = 17;
+                        getConnectionsManager().sendRequest(tL_messages_getAvailableReactions, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -3430,7 +3334,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -3460,11 +3364,11 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof TLRPC.TL_attachMenuBot) {
-                        TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
-                        tL_messages_getAttachMenuBot.bot = getMessagesController().o1(((TLRPC.TL_attachMenuBot) obj2).bot_id);
-                        final int i18 = 19;
-                        getConnectionsManager().sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    if (obj2 instanceof TL_bots.BotInfo) {
+                        TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
+                        tL_users_getFullUser.id = getMessagesController().q1(((TL_bots.BotInfo) obj2).user_id);
+                        final int i18 = 18;
+                        getConnectionsManager().sendRequest(tL_users_getFullUser, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -3527,7 +3431,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -3557,115 +3461,113 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof gj) {
-                        gj gjVar3 = (gj) obj2;
-                        long v02 = gj.v0(gjVar3.k);
-                        TLRPC.InputPeer j12 = getMessagesController().j1(gj.B0(gjVar3.k));
-                        if (gjVar3.r1) {
+                    if (obj2 instanceof TLRPC.TL_attachMenuBot) {
+                        TLRPC.TL_messages_getAttachMenuBot tL_messages_getAttachMenuBot = new TLRPC.TL_messages_getAttachMenuBot();
+                        tL_messages_getAttachMenuBot.bot = getMessagesController().q1(((TLRPC.TL_attachMenuBot) obj2).bot_id);
+                        final int i19 = 19;
+                        getConnectionsManager().sendRequest(tL_messages_getAttachMenuBot, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                            public final /* synthetic */ r8 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                switch (i19) {
+                                    case 0:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 1:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 2:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 3:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 4:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 5:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 6:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 7:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 8:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 9:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 10:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 11:
+                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 12:
+                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 13:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 14:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 15:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 16:
+                                        r8 r8Var = this.b;
+                                        r8Var.getClass();
+                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                        }
+                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 18:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 19:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 20:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 21:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 22:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    default:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    if (obj2 instanceof fj) {
+                        fj fjVar3 = (fj) obj2;
+                        long v02 = fj.v0(fjVar3.k);
+                        TLRPC.InputPeer l1 = getMessagesController().l1(fj.B0(fjVar3.k));
+                        if (fjVar3.r1) {
                             TLRPC.TL_messages_getScheduledMessages tL_messages_getScheduledMessages = new TLRPC.TL_messages_getScheduledMessages();
-                            tL_messages_getScheduledMessages.peer = getMessagesController().j1(gj.B0(gjVar3.k));
-                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(gjVar3.L1()));
-                            final int i19 = 20;
+                            tL_messages_getScheduledMessages.peer = getMessagesController().l1(fj.B0(fjVar3.k));
+                            tL_messages_getScheduledMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            final int i20 = 20;
                             getConnectionsManager().sendRequest(tL_messages_getScheduledMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                                public final /* synthetic */ r8 b;
-
-                                {
-                                    this.b = this;
-                                }
-
-                                @Override // org.telegram.tgnet.RequestDelegate
-                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                    switch (i19) {
-                                        case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                            break;
-                                        case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                            break;
-                                        case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 16:
-                                            r8 r8Var = this.b;
-                                            r8Var.getClass();
-                                            int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                            if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                            }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                    }
-                                }
-                            });
-                            return;
-                        }
-                        if (gj.b4(gjVar3.k)) {
-                            TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
-                            tL_messages_getQuickReplyMessages.shortcut_id = gj.I1(gjVar3.k);
-                            tL_messages_getQuickReplyMessages.flags |= 1;
-                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(gjVar3.L1()));
-                            final int i20 = 21;
-                            getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
                                 {
@@ -3728,7 +3630,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -3758,13 +3660,13 @@ public final class r8 extends c1 {
                             });
                             return;
                         }
-                        TLRPC.Message message2 = gjVar3.k;
-                        if (message2 != null && message2.rich_message != null) {
-                            TL_iv.getRichMessage getrichmessage = new TL_iv.getRichMessage();
-                            getrichmessage.peer = j12;
-                            getrichmessage.id = gjVar3.L1();
-                            final int i21 = 22;
-                            getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                        if (fj.b4(fjVar3.k)) {
+                            TLRPC.TL_messages_getQuickReplyMessages tL_messages_getQuickReplyMessages = new TLRPC.TL_messages_getQuickReplyMessages();
+                            tL_messages_getQuickReplyMessages.shortcut_id = fj.I1(fjVar3.k);
+                            tL_messages_getQuickReplyMessages.flags |= 1;
+                            tL_messages_getQuickReplyMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            final int i21 = 21;
+                            getConnectionsManager().sendRequest(tL_messages_getQuickReplyMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
                                 {
@@ -3827,7 +3729,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -3857,11 +3759,13 @@ public final class r8 extends c1 {
                             });
                             return;
                         }
-                        if (v02 == 0) {
-                            TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
-                            tL_messages_getMessages.id.add(Integer.valueOf(gjVar3.L1()));
-                            final int i22 = 0;
-                            getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                        TLRPC.Message message2 = fjVar3.k;
+                        if (message2 != null && message2.rich_message != null) {
+                            TL_iv.getRichMessage getrichmessage = new TL_iv.getRichMessage();
+                            getrichmessage.peer = l1;
+                            getrichmessage.id = fjVar3.L1();
+                            final int i22 = 22;
+                            getConnectionsManager().sendRequest(getrichmessage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
                                 {
@@ -3924,7 +3828,104 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            }
+                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 17:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 18:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 19:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 20:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 21:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 22:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        default:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                    }
+                                }
+                            });
+                            return;
+                        }
+                        if (v02 == 0) {
+                            TLRPC.TL_messages_getMessages tL_messages_getMessages = new TLRPC.TL_messages_getMessages();
+                            tL_messages_getMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                            final int i23 = 0;
+                            getConnectionsManager().sendRequest(tL_messages_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                                public final /* synthetic */ r8 b;
+
+                                {
+                                    this.b = this;
+                                }
+
+                                @Override // org.telegram.tgnet.RequestDelegate
+                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                    switch (i23) {
+                                        case 0:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 1:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 2:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 3:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 4:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 5:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 6:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 7:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 8:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 9:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 10:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 11:
+                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            break;
+                                        case 12:
+                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                            break;
+                                        case 13:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 14:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 15:
+                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                            break;
+                                        case 16:
+                                            r8 r8Var = this.b;
+                                            r8Var.getClass();
+                                            int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                            if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -3955,111 +3956,10 @@ public final class r8 extends c1 {
                             return;
                         }
                         TLRPC.TL_channels_getMessages tL_channels_getMessages = new TLRPC.TL_channels_getMessages();
-                        tL_channels_getMessages.channel = getMessagesController().h1(v02);
-                        tL_channels_getMessages.id.add(Integer.valueOf(gjVar3.L1()));
-                        final int i23 = 23;
+                        tL_channels_getMessages.channel = getMessagesController().j1(v02);
+                        tL_channels_getMessages.id.add(Integer.valueOf(fjVar3.L1()));
+                        final int i24 = 23;
                         getConnectionsManager().sendRequest(tL_channels_getMessages, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                            public final /* synthetic */ r8 b;
-
-                            {
-                                this.b = this;
-                            }
-
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                switch (i23) {
-                                    case 0:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 1:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 2:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 3:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 4:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 5:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 6:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 7:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 8:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 9:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 10:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 11:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 12:
-                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                        break;
-                                    case 13:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 14:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 15:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 16:
-                                        r8 r8Var = this.b;
-                                        r8Var.getClass();
-                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                        }
-                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 17:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 18:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 19:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 20:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 21:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    case 22:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                    default:
-                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                        break;
-                                }
-                            }
-                        });
-                        return;
-                    }
-                    if (obj2 instanceof TLRPC.TL_wallPaper) {
-                        TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
-                        TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
-                        TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
-                        tL_inputWallPaper.id = tL_wallPaper.id;
-                        tL_inputWallPaper.access_hash = tL_wallPaper.access_hash;
-                        getwallpaper.wallpaper = tL_inputWallPaper;
-                        final int i24 = 1;
-                        getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -4122,7 +4022,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -4152,16 +4052,15 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof TLRPC.TL_theme) {
-                        TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) obj2;
-                        TL_account.getTheme gettheme = new TL_account.getTheme();
-                        TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
-                        tL_inputTheme.id = tL_theme.id;
-                        tL_inputTheme.access_hash = tL_theme.access_hash;
-                        gettheme.theme = tL_inputTheme;
-                        gettheme.format = "android";
-                        final int i25 = 2;
-                        getConnectionsManager().sendRequest(gettheme, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    if (obj2 instanceof TLRPC.TL_wallPaper) {
+                        TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) obj2;
+                        TL_account.getWallPaper getwallpaper = new TL_account.getWallPaper();
+                        TLRPC.TL_inputWallPaper tL_inputWallPaper = new TLRPC.TL_inputWallPaper();
+                        tL_inputWallPaper.id = tL_wallPaper.id;
+                        tL_inputWallPaper.access_hash = tL_wallPaper.access_hash;
+                        getwallpaper.wallpaper = tL_inputWallPaper;
+                        final int i25 = 1;
+                        getConnectionsManager().sendRequest(getwallpaper, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -4224,7 +4123,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -4254,12 +4153,16 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    final int i26 = 3;
-                    if (obj2 instanceof TLRPC.WebPage) {
-                        TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
-                        tL_messages_getWebPage.url = ((TLRPC.WebPage) obj2).url;
-                        tL_messages_getWebPage.hash = 0;
-                        getConnectionsManager().sendRequest(tL_messages_getWebPage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    if (obj2 instanceof TLRPC.TL_theme) {
+                        TLRPC.TL_theme tL_theme = (TLRPC.TL_theme) obj2;
+                        TL_account.getTheme gettheme = new TL_account.getTheme();
+                        TLRPC.TL_inputTheme tL_inputTheme = new TLRPC.TL_inputTheme();
+                        tL_inputTheme.id = tL_theme.id;
+                        tL_inputTheme.access_hash = tL_theme.access_hash;
+                        gettheme.theme = tL_inputTheme;
+                        gettheme.format = "android";
+                        final int i26 = 2;
+                        getConnectionsManager().sendRequest(gettheme, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -4322,7 +4225,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -4352,11 +4255,12 @@ public final class r8 extends c1 {
                         });
                         return;
                     }
-                    if (obj2 instanceof TLRPC.User) {
-                        TLRPC.TL_users_getUsers tL_users_getUsers = new TLRPC.TL_users_getUsers();
-                        tL_users_getUsers.id.add(getMessagesController().q1((TLRPC.User) obj2));
-                        final int i27 = 4;
-                        getConnectionsManager().sendRequest(tL_users_getUsers, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                    final int i27 = 3;
+                    if (obj2 instanceof TLRPC.WebPage) {
+                        TLRPC.TL_messages_getWebPage tL_messages_getWebPage = new TLRPC.TL_messages_getWebPage();
+                        tL_messages_getWebPage.url = ((TLRPC.WebPage) obj2).url;
+                        tL_messages_getWebPage.hash = 0;
+                        getConnectionsManager().sendRequest(tL_messages_getWebPage, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
 
                             {
@@ -4419,7 +4323,104 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                        }
+                                        r8Var.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 17:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 18:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 19:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 20:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 21:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 22:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    default:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    if (obj2 instanceof TLRPC.User) {
+                        TLRPC.TL_users_getUsers tL_users_getUsers = new TLRPC.TL_users_getUsers();
+                        tL_users_getUsers.id.add(getMessagesController().s1((TLRPC.User) obj2));
+                        final int i28 = 4;
+                        getConnectionsManager().sendRequest(tL_users_getUsers, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                            public final /* synthetic */ r8 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // org.telegram.tgnet.RequestDelegate
+                            public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                switch (i28) {
+                                    case 0:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 1:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 2:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 3:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 4:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 5:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 6:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 7:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 8:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 9:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 10:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 11:
+                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 12:
+                                        this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                        break;
+                                    case 13:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 14:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 15:
+                                        this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                        break;
+                                    case 16:
+                                        r8 r8Var = this.b;
+                                        r8Var.getClass();
+                                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                        if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -4454,7 +4455,6 @@ public final class r8 extends c1 {
                         if (chat instanceof TLRPC.TL_chat) {
                             TLRPC.TL_messages_getChats tL_messages_getChats = new TLRPC.TL_messages_getChats();
                             tL_messages_getChats.id.add(Long.valueOf(chat.id));
-                            final int i28 = 5;
                             getConnectionsManager().sendRequest(tL_messages_getChats, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                                 public final /* synthetic */ r8 b;
 
@@ -4464,7 +4464,7 @@ public final class r8 extends c1 {
 
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                    switch (i28) {
+                                    switch (i14) {
                                         case 0:
                                             this.b.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -4518,7 +4518,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -4547,105 +4547,106 @@ public final class r8 extends c1 {
                                 }
                             });
                             return;
-                        }
-                        if ((chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_community)) {
-                            TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
-                            tL_channels_getChannels.id.add(np.i1(chat));
-                            final int i29 = 6;
-                            getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
-                                public final /* synthetic */ r8 b;
+                        } else {
+                            if ((chat instanceof TLRPC.TL_channel) || (chat instanceof TLRPC.TL_community)) {
+                                TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
+                                tL_channels_getChannels.id.add(mp.k1(chat));
+                                final int i29 = 6;
+                                getConnectionsManager().sendRequest(tL_channels_getChannels, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
+                                    public final /* synthetic */ r8 b;
 
-                                {
-                                    this.b = this;
-                                }
-
-                                @Override // org.telegram.tgnet.RequestDelegate
-                                public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                    switch (i29) {
-                                        case 0:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 1:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 2:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 3:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 4:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 5:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 6:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 7:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 8:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 9:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 10:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 11:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                            break;
-                                        case 12:
-                                            this.b.s(str7, str4, tLObject2, tL_error, false, false);
-                                            break;
-                                        case 13:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 14:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 15:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 16:
-                                            r8 r8Var = this.b;
-                                            r8Var.getClass();
-                                            int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
-                                            if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
-                                            }
-                                            r8Var.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 17:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 18:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 19:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 20:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 21:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        case 22:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
-                                        default:
-                                            this.b.s(str7, str4, tLObject2, tL_error, true, false);
-                                            break;
+                                    {
+                                        this.b = this;
                                     }
-                                }
-                            });
+
+                                    @Override // org.telegram.tgnet.RequestDelegate
+                                    public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
+                                        switch (i29) {
+                                            case 0:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 1:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 2:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 3:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 4:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 5:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 6:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 7:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 8:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 9:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 10:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 11:
+                                                this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                                break;
+                                            case 12:
+                                                this.b.s(str7, str4, tLObject2, tL_error, false, false);
+                                                break;
+                                            case 13:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 14:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 15:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 16:
+                                                r8 r8Var = this.b;
+                                                r8Var.getClass();
+                                                int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                                                if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
+                                                    r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                }
+                                                r8Var.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 17:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 18:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 19:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 20:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 21:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            case 22:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                            default:
+                                                this.b.s(str7, str4, tLObject2, tL_error, true, false);
+                                                break;
+                                        }
+                                    }
+                                });
+                                return;
+                            }
                             return;
                         }
-                        return;
                     }
                     if (!z11) {
                         if (obj2 instanceof TLRPC.TL_messages_stickerSet) {
@@ -4719,7 +4720,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -4820,7 +4821,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -4920,7 +4921,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -5070,7 +5071,7 @@ public final class r8 extends c1 {
 
                                 @Override // org.telegram.tgnet.RequestDelegate
                                 public final void run(TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                    switch (i26) {
+                                    switch (i27) {
                                         case 0:
                                             r8 r8Var = this.b;
                                             r8Var.a(r8Var.f, tLObject2, tL_error);
@@ -5167,7 +5168,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -5275,7 +5276,7 @@ public final class r8 extends c1 {
                                             r8Var.getClass();
                                             int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                             if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                                r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                                r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                             }
                                             r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                             break;
@@ -5306,7 +5307,7 @@ public final class r8 extends c1 {
                             return;
                         }
                         TLRPC.TL_channels_getMessages tL_channels_getMessages2 = new TLRPC.TL_channels_getMessages();
-                        tL_channels_getMessages2.channel = np.i1(getMessagesController().M0(A));
+                        tL_channels_getMessages2.channel = mp.k1(getMessagesController().O0(A));
                         tL_channels_getMessages2.id.add(Utilities.z(split[2]));
                         final int i38 = 11;
                         getConnectionsManager().sendRequest(tL_channels_getMessages2, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
@@ -5372,7 +5373,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -5409,8 +5410,8 @@ public final class r8 extends c1 {
                         tL_photos_getUserPhotos.limit = 80;
                         tL_photos_getUserPhotos.offset = 0;
                         tL_photos_getUserPhotos.max_id = 0L;
-                        np messagesController = getMessagesController();
-                        tL_photos_getUserPhotos.user_id = messagesController.q1(messagesController.a2(A2));
+                        mp messagesController = getMessagesController();
+                        tL_photos_getUserPhotos.user_id = messagesController.s1(messagesController.c2(A2));
                         final int i39 = 9;
                         getConnectionsManager().sendRequest(tL_photos_getUserPhotos, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                             public final /* synthetic */ r8 b;
@@ -5475,7 +5476,7 @@ public final class r8 extends c1 {
                                         r8Var.getClass();
                                         int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                         if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                            r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                            r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                         }
                                         r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                         break;
@@ -5510,7 +5511,7 @@ public final class r8 extends c1 {
                     tL_messages_search.limit = 80;
                     tL_messages_search.offset_id = 0;
                     tL_messages_search.q = "";
-                    tL_messages_search.peer = getMessagesController().j1(longValue);
+                    tL_messages_search.peer = getMessagesController().l1(longValue);
                     final int i40 = 10;
                     getConnectionsManager().sendRequest(tL_messages_search, new RequestDelegate(this) { // from class: org.telegram.messenger.g8
                         public final /* synthetic */ r8 b;
@@ -5575,7 +5576,7 @@ public final class r8 extends c1 {
                                     r8Var.getClass();
                                     int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
                                     if (tLObject2 instanceof TLRPC.TL_help_premiumPromo) {
-                                        r8Var.getMediaDataController().w1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
+                                        r8Var.getMediaDataController().z1((TLRPC.TL_help_premiumPromo) tLObject2, currentTimeMillis, false);
                                     }
                                     r8Var.s(str7, str4, tLObject2, tL_error, true, false);
                                     break;
@@ -5612,7 +5613,8 @@ public final class r8 extends c1 {
                 b10 = b(str);
                 if (b10 == null) {
                 }
-                if (!(obj2 instanceof fi.b6)) {
+                final int i142 = 5;
+                if (!(obj2 instanceof fi.y5)) {
                 }
             }
         }
@@ -5643,7 +5645,7 @@ public final class r8 extends c1 {
             Object[] objArr2 = (Object[]) hashMap.get(tL_messages_sendMultiMedia);
             if (objArr2 != null) {
                 hashMap.remove(tL_messages_sendMultiMedia);
-                g0.h3(new j8(this, tL_messages_sendMultiMedia, objArr2, 1));
+                g0.g3(new j8(this, tL_messages_sendMultiMedia, objArr2, 1));
                 return;
             }
             return;
@@ -5656,7 +5658,7 @@ public final class r8 extends c1 {
                 Object[] objArr3 = (Object[]) hashMap.get(tL_messages_sendMedia);
                 if (objArr3 != null) {
                     hashMap.remove(tL_messages_sendMedia);
-                    g0.h3(new k8(this, tL_messages_sendMedia, objArr3, 1));
+                    g0.g3(new k8(this, tL_messages_sendMedia, objArr3, 1));
                     return;
                 }
                 return;
@@ -5669,7 +5671,7 @@ public final class r8 extends c1 {
                 Object[] objArr4 = (Object[]) hashMap.get(tL_sendMessage);
                 if (objArr4 != null) {
                     hashMap.remove(tL_sendMessage);
-                    g0.h3(new l8(this, tL_sendMessage, objArr4, 1));
+                    g0.g3(new l8(this, tL_sendMessage, objArr4, 1));
                     return;
                 }
                 return;
@@ -5706,7 +5708,7 @@ public final class r8 extends c1 {
                 return;
             }
             final int i7 = 1;
-            g0.h3(new Runnable(this) { // from class: org.telegram.messenger.n8
+            g0.g3(new Runnable(this) { // from class: org.telegram.messenger.n8
                 public final /* synthetic */ r8 b;
 
                 {
@@ -5717,14 +5719,14 @@ public final class r8 extends c1 {
                 public final void run() {
                     switch (i7) {
                         case 0:
-                            ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                            zy sendMessagesHelper = this.b.getSendMessagesHelper();
                             Object[] objArr5 = objArr;
-                            sendMessagesHelper.O((TLObject) objArr5[0], (gj) objArr5[1], (String) objArr5[2], (qy) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (qy) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
+                            sendMessagesHelper.O((TLObject) objArr5[0], (fj) objArr5[1], (String) objArr5[2], (ly) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (ly) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
                             break;
                         default:
-                            ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                            zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                             Object[] objArr6 = objArr;
-                            sendMessagesHelper2.O((TLObject) objArr6[0], (gj) objArr6[1], (String) objArr6[2], (qy) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (qy) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
+                            sendMessagesHelper2.O((TLObject) objArr6[0], (fj) objArr6[1], (String) objArr6[2], (ly) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (ly) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
                             break;
                     }
                 }
@@ -5732,7 +5734,7 @@ public final class r8 extends c1 {
             return;
         }
         final int i10 = 0;
-        g0.h3(new Runnable(this) { // from class: org.telegram.messenger.n8
+        g0.g3(new Runnable(this) { // from class: org.telegram.messenger.n8
             public final /* synthetic */ r8 b;
 
             {
@@ -5743,14 +5745,14 @@ public final class r8 extends c1 {
             public final void run() {
                 switch (i10) {
                     case 0:
-                        ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                        zy sendMessagesHelper = this.b.getSendMessagesHelper();
                         Object[] objArr5 = objArr;
-                        sendMessagesHelper.O((TLObject) objArr5[0], (gj) objArr5[1], (String) objArr5[2], (qy) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (qy) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
+                        sendMessagesHelper.O((TLObject) objArr5[0], (fj) objArr5[1], (String) objArr5[2], (ly) objArr5[3], ((Boolean) objArr5[4]).booleanValue(), (ly) objArr5[5], null, null, ((Boolean) objArr5[6]).booleanValue());
                         break;
                     default:
-                        ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                        zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                         Object[] objArr6 = objArr;
-                        sendMessagesHelper2.O((TLObject) objArr6[0], (gj) objArr6[1], (String) objArr6[2], (qy) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (qy) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
+                        sendMessagesHelper2.O((TLObject) objArr6[0], (fj) objArr6[1], (String) objArr6[2], (ly) objArr6[3], ((Boolean) objArr6[4]).booleanValue(), (ly) objArr6[5], null, null, ((Boolean) objArr6[6]).booleanValue());
                         break;
                 }
             }

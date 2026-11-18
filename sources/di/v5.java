@@ -1,37 +1,44 @@
 package di;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class v5 extends AnimatorListenerAdapter {
-    public final /* synthetic */ w5 a;
+public final /* synthetic */ class v5 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z5 b;
 
-    public v5(w5 w5Var) {
-        this.a = w5Var;
+    public /* synthetic */ v5(z5 z5Var, int i7) {
+        this.a = i7;
+        this.b = z5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        w5 w5Var = this.a;
-        ch.w wVar = w5Var.m0;
-        w5Var.w0 = w5Var.v0;
-        w5Var.d(w5Var.b0);
-        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = w5Var.e;
-        int i7 = 2 - w5Var.v0;
-        stargiftattributemodelArr[i7] = (TL_stars.starGiftAttributeModel) w5Var.d0.f;
-        lb.c1(w5Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - w5Var.v0].document, ns.q2);
-        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) w5Var.e0.f;
-        if (stargiftattributepattern != null) {
-            org.telegram.ui.Components.g5 l10 = org.telegram.ui.Components.g5.l(m10.t0, 7, stargiftattributepattern.document);
-            l10.m = true;
-            l10.u();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                z5 z5Var = this.b;
+                z5Var.getClass();
+                z5Var.z0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z5Var.d(z5Var.b0);
+                break;
+            case 1:
+                z5 z5Var2 = this.b;
+                z5Var2.getClass();
+                float x10 = com.google.android.gms.internal.vision.e2.x((float) Math.pow((r6 * 2.0f) - 2.0f, 2.0d), 0.075f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                z5Var2.A0 = x10;
+                FrameLayout frameLayout = z5Var2.b;
+                frameLayout.setScaleX(x10);
+                frameLayout.setScaleY(z5Var2.A0);
+                z5Var2.invalidate();
+                break;
+            default:
+                z5 z5Var3 = this.b;
+                z5Var3.getClass();
+                z5Var3.z0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z5Var3.d(z5Var3.b0);
+                break;
         }
-        org.telegram.messenger.g0.r(wVar);
-        org.telegram.messenger.g0.i3(wVar, 2500L);
     }
 }

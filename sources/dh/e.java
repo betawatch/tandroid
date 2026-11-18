@@ -5,9 +5,9 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.support.v4.media.session.w;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e {
     public final RenderNode a = w.c();
@@ -60,7 +60,7 @@ public final class e {
         int i10 = gVar.d;
         float f16 = (f10 * i10) / f12;
         float f17 = (f11 * i10) / f14;
-        long p10 = si.p(si.p(si.p(si.p(si.p(0L, renderNode.getUniqueId()), round), round2), width), height);
+        long r10 = ri.r(ri.r(ri.r(ri.r(ri.r(0L, renderNode.getUniqueId()), round), round2), width), height);
         boolean z11 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
         int i11 = 0;
         while (true) {
@@ -75,10 +75,10 @@ public final class e {
             }
             i11++;
         }
-        if (this.i == p10 && !z11) {
+        if (this.i == r10 && !z11) {
             return;
         }
-        this.i = p10;
+        this.i = r10;
         int i12 = 0;
         this.a.setPosition(0, 0, width, height);
         this.a.beginRecording(width, height).drawRenderNode(renderNode);

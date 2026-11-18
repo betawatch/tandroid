@@ -10,7 +10,7 @@ import java.util.Arrays;
 import q6.m;
 import sg.h0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends j {
     public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("ModuleInstall.API", new a9.e(19), new com.google.android.gms.common.api.d());
@@ -18,7 +18,7 @@ public final class e extends j {
     public final Task f(n... nVarArr) {
         m.a("Please provide at least one OptionalModuleApi.", nVarArr.length > 0);
         for (n nVar : nVarArr) {
-            m.h(nVar, "Requested API must not be null.");
+            m.i(nVar, "Requested API must not be null.");
         }
         a b10 = a.b(Arrays.asList(nVarArr), false);
         if (b10.a.isEmpty()) {

@@ -1,9 +1,9 @@
 package t2;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.graphics.Point;
-import bg.n0;
+import bg.o0;
 import e2.t0;
 import e2.u;
 import h2.l0;
@@ -14,7 +14,7 @@ import k2.j;
 import k2.l;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends l {
     public final Context o;
@@ -51,8 +51,8 @@ public final class b extends l {
         a aVar = (a) jVar;
         ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
-        ja.p(byteBuffer.hasArray());
-        ja.f(byteBuffer.arrayOffset() == 0);
+        la.p(byteBuffer.hasArray());
+        la.f(byteBuffer.arrayOffset() == 0);
         try {
             int i7 = this.p;
             if (i7 == -1) {
@@ -77,7 +77,7 @@ public final class b extends l {
                     i7 = TLObject.FLAG_12;
                 }
             }
-            aVar.a = n0.b(byteBuffer.remaining(), i7, byteBuffer.array());
+            aVar.a = o0.b(byteBuffer.remaining(), i7, byteBuffer.array());
             aVar.timeUs = hVar.e;
             return null;
         } catch (t0 e10) {

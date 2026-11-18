@@ -1,176 +1,59 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class ui extends TLObject {
-    public final TLRPC.Message a;
-    public int b;
-
-    public ui(TLRPC.Message message) {
-        this.b = 0;
-        this.a = message;
-        int i7 = message.voiceTranscription != null ? 1 : 0;
-        this.b = i7;
-        int i10 = i7 | (message.voiceTranscriptionForce ? 2 : 0);
-        this.b = i10;
-        int i11 = i10 | (message.originalLanguage != null ? 4 : 0);
-        this.b = i11;
-        int i12 = i11 | (message.translatedToLanguage != null ? 8 : 0);
-        this.b = i12;
-        int i13 = i12 | (message.translatedText != null ? 16 : 0);
-        this.b = i13;
-        int i14 = i13 | (message.translatedPoll != null ? 32 : 0);
-        this.b = i14;
-        int i15 = i14 | (message.errorAllowedPriceStars != 0 ? 64 : 0);
-        this.b = i15;
-        int i16 = i15 | (message.errorNewPriceStars != 0 ? 128 : 0);
-        this.b = i16;
-        int i17 = i16 | (message.translatedVoiceTranscription != null ? 256 : 0);
-        this.b = i17;
-        int flag = TLObject.setFlag(i17, 1024, message.summaryText != null);
-        this.b = flag;
-        int flag2 = TLObject.setFlag(flag, 2048, message.translatedSummaryText != null);
-        this.b = flag2;
-        int flag3 = TLObject.setFlag(flag2, TLObject.FLAG_12, message.translatedSummaryLanguage != null);
-        this.b = flag3;
-        int flag4 = TLObject.setFlag(flag3, TLObject.FLAG_13, message.translatedRichMessage != null);
-        this.b = flag4;
-        TLRPC.MessageAction messageAction = message.action;
-        int flag5 = TLObject.setFlag(flag4, TLObject.FLAG_14, (messageAction instanceof TLRPC.TL_messageActionGramTransfer) && ((TLRPC.TL_messageActionGramTransfer) messageAction).comment_encrypted_preparing);
-        this.b = flag5;
-        int flag6 = TLObject.setFlag(flag5, 32768, message.voiceTranscriptionLocal);
-        this.b = flag6;
-        this.b = TLObject.setFlag(flag6, 65536, message.voiceTranscriptionWords != null);
+public abstract class ui {
+    public static void a(TLRPC.Message message, TLRPC.TL_message tL_message) {
+        tL_message.voiceTranscription = message.voiceTranscription;
+        tL_message.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
+        tL_message.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
+        tL_message.voiceTranscriptionForce = message.voiceTranscriptionForce;
+        tL_message.voiceTranscriptionRated = message.voiceTranscriptionRated;
+        tL_message.voiceTranscriptionId = message.voiceTranscriptionId;
+        tL_message.voiceTranscriptionLocal = message.voiceTranscriptionLocal;
+        tL_message.voiceTranscriptionWords = message.voiceTranscriptionWords;
+        tL_message.premiumEffectWasPlayed = message.premiumEffectWasPlayed;
+        tL_message.originalLanguage = message.originalLanguage;
+        tL_message.translatedToLanguage = message.translatedToLanguage;
+        tL_message.translatedPoll = message.translatedPoll;
+        tL_message.translatedText = message.translatedText;
+        tL_message.translatedRichMessage = message.translatedRichMessage;
+        tL_message.errorAllowedPriceStars = message.errorAllowedPriceStars;
+        tL_message.errorNewPriceStars = message.errorNewPriceStars;
+        tL_message.translatedVoiceTranscription = message.translatedVoiceTranscription;
+        tL_message.summarizedOpen = message.summarizedOpen;
+        tL_message.summaryText = message.summaryText;
+        tL_message.translatedSummaryText = message.translatedSummaryText;
+        tL_message.translatedSummaryLanguage = message.translatedSummaryLanguage;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(true);
-        this.b = readInt32;
-        TLRPC.Message message = this.a;
-        TLRPC.MessageAction messageAction = message.action;
-        if (messageAction instanceof TLRPC.TL_messageActionGramTransfer) {
-            TLRPC.TL_messageActionGramTransfer tL_messageActionGramTransfer = (TLRPC.TL_messageActionGramTransfer) messageAction;
-            tL_messageActionGramTransfer.comment_encrypted_preparing = !tL_messageActionGramTransfer.comment_encrypted && TLObject.hasFlag(readInt32, TLObject.FLAG_14);
-        }
-        if ((this.b & 1) != 0) {
-            message.voiceTranscription = inputSerializedData.readString(z10);
-        }
-        int i7 = this.b;
-        message.voiceTranscriptionForce = (i7 & 2) != 0;
-        message.summarizedOpen = (i7 & 512) != 0;
-        message.voiceTranscriptionOpen = inputSerializedData.readBool(z10);
-        message.voiceTranscriptionFinal = inputSerializedData.readBool(z10);
-        message.voiceTranscriptionRated = inputSerializedData.readBool(z10);
-        message.voiceTranscriptionId = inputSerializedData.readInt64(z10);
-        message.premiumEffectWasPlayed = inputSerializedData.readBool(z10);
-        if ((this.b & 4) != 0) {
-            message.originalLanguage = inputSerializedData.readString(z10);
-        }
-        if ((this.b & 8) != 0) {
-            message.translatedToLanguage = inputSerializedData.readString(z10);
-        }
-        if ((this.b & 16) != 0) {
-            message.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.b & 32) != 0) {
-            int readInt322 = inputSerializedData.readInt32(z10);
-            message.translatedPoll = (z00) TLObject.TLdeserialize(z00.class, 613759672 != readInt322 ? null : new z00(), inputSerializedData, readInt322, z10);
-        }
-        if ((this.b & 64) != 0) {
-            message.errorAllowedPriceStars = inputSerializedData.readInt64(z10);
-        }
-        if ((this.b & 128) != 0) {
-            message.errorNewPriceStars = inputSerializedData.readInt64(z10);
-        }
-        if ((this.b & 256) != 0) {
-            message.translatedVoiceTranscription = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if (TLObject.hasFlag(this.b, 1024)) {
-            message.summaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if (TLObject.hasFlag(this.b, 2048)) {
-            message.translatedSummaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if (TLObject.hasFlag(this.b, TLObject.FLAG_12)) {
-            message.translatedSummaryLanguage = inputSerializedData.readString(z10);
-        }
-        if (TLObject.hasFlag(this.b, TLObject.FLAG_13)) {
-            message.translatedRichMessage = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        message.voiceTranscriptionLocal = TLObject.hasFlag(this.b, 32768);
-        if (!TLObject.hasFlag(this.b, 65536)) {
-            message.voiceTranscriptionWords = null;
+    public static void b(TLRPC.Message message, NativeByteBuffer nativeByteBuffer) {
+        if (nativeByteBuffer == null) {
             return;
         }
-        int readInt323 = inputSerializedData.readInt32(z10);
-        message.voiceTranscriptionWords = new int[readInt323];
-        for (int i10 = 0; i10 < readInt323; i10++) {
-            message.voiceTranscriptionWords[i10] = inputSerializedData.readInt32(z10);
+        int readInt32 = nativeByteBuffer.readInt32(true);
+        if (readInt32 != 1) {
+            throw new RuntimeException(i5.c.i(readInt32, "can't read params version = "));
         }
+        new ti(message).readParams(nativeByteBuffer, true);
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(1);
-        TLRPC.Message message = this.a;
-        int i7 = message.voiceTranscriptionForce ? this.b | 2 : this.b & (-3);
-        this.b = i7;
-        int i10 = message.summarizedOpen ? i7 | 512 : i7 & (-513);
-        this.b = i10;
-        outputSerializedData.writeInt32(i10);
-        if ((1 & this.b) != 0) {
-            outputSerializedData.writeString(message.voiceTranscription);
+    public static NativeByteBuffer c(TLRPC.Message message) {
+        TLRPC.MessageAction messageAction = message.action;
+        if (!((messageAction instanceof TLRPC.TL_messageActionGramTransfer) && ((TLRPC.TL_messageActionGramTransfer) messageAction).comment_encrypted_preparing) && message.voiceTranscription == null && message.translatedVoiceTranscription == null && !message.voiceTranscriptionOpen && !message.summarizedOpen && message.summaryText == null && message.translatedSummaryLanguage == null && message.translatedSummaryText == null && !message.voiceTranscriptionFinal && !message.voiceTranscriptionRated && !message.voiceTranscriptionForce && message.voiceTranscriptionId == 0 && !message.voiceTranscriptionLocal && message.voiceTranscriptionWords == null && !message.premiumEffectWasPlayed && message.originalLanguage == null && message.translatedToLanguage == null && message.translatedPoll == null && message.translatedText == null && message.translatedRichMessage == null && message.errorAllowedPriceStars == 0 && message.errorNewPriceStars == 0) {
+            return null;
         }
-        outputSerializedData.writeBool(message.voiceTranscriptionOpen);
-        outputSerializedData.writeBool(message.voiceTranscriptionFinal);
-        outputSerializedData.writeBool(message.voiceTranscriptionRated);
-        outputSerializedData.writeInt64(message.voiceTranscriptionId);
-        outputSerializedData.writeBool(message.premiumEffectWasPlayed);
-        if ((this.b & 4) != 0) {
-            outputSerializedData.writeString(message.originalLanguage);
-        }
-        if ((this.b & 8) != 0) {
-            outputSerializedData.writeString(message.translatedToLanguage);
-        }
-        if ((this.b & 16) != 0) {
-            message.translatedText.serializeToStream(outputSerializedData);
-        }
-        if ((this.b & 32) != 0) {
-            message.translatedPoll.serializeToStream(outputSerializedData);
-        }
-        if ((this.b & 64) != 0) {
-            outputSerializedData.writeInt64(message.errorAllowedPriceStars);
-        }
-        if ((this.b & 128) != 0) {
-            outputSerializedData.writeInt64(message.errorNewPriceStars);
-        }
-        if ((this.b & 256) != 0) {
-            message.translatedVoiceTranscription.serializeToStream(outputSerializedData);
-        }
-        if (TLObject.hasFlag(this.b, 1024)) {
-            message.summaryText.serializeToStream(outputSerializedData);
-        }
-        if (TLObject.hasFlag(this.b, 2048)) {
-            message.translatedSummaryText.serializeToStream(outputSerializedData);
-        }
-        if (TLObject.hasFlag(this.b, TLObject.FLAG_12)) {
-            outputSerializedData.writeString(message.translatedSummaryLanguage);
-        }
-        if (TLObject.hasFlag(this.b, TLObject.FLAG_13)) {
-            message.translatedRichMessage.serializeToStream(outputSerializedData);
-        }
-        if (TLObject.hasFlag(this.b, 65536)) {
-            outputSerializedData.writeInt32(message.voiceTranscriptionWords.length);
-            for (int i11 : message.voiceTranscriptionWords) {
-                outputSerializedData.writeInt32(i11);
-            }
+        ti tiVar = new ti(message);
+        try {
+            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(tiVar.getObjectSize());
+            tiVar.serializeToStream(nativeByteBuffer);
+            return nativeByteBuffer;
+        } catch (Exception e10) {
+            e10.printStackTrace();
+            return null;
         }
     }
 }

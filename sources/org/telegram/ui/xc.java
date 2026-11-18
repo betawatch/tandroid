@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xc extends org.telegram.ui.Components.fh0 {
+public final class xc extends org.telegram.ui.Components.ph0 {
     public final /* synthetic */ int r;
     public final /* synthetic */ Object s;
 
@@ -30,7 +30,7 @@ public final class xc extends org.telegram.ui.Components.fh0 {
                 break;
             case 3:
                 super.invalidate(i7, i10, i11, i12);
-                ((c50) this.s).e.invalidate();
+                ((f50) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate(i7, i10, i11, i12);
@@ -44,11 +44,11 @@ public final class xc extends org.telegram.ui.Components.fh0 {
         switch (this.r) {
             case 1:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (!((org.telegram.ui.Components.ep) this.s).H1) {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754750, null));
+                if (!((org.telegram.ui.Components.lp) this.s).H1) {
+                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.M0(2131754750, null));
                     break;
                 } else {
-                    accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754751, null));
+                    accessibilityNodeInfo.setText(org.telegram.messenger.gd.M0(2131754751, null));
                     break;
                 }
             default:
@@ -70,11 +70,11 @@ public final class xc extends org.telegram.ui.Components.fh0 {
                 break;
             case 2:
                 super.invalidate();
-                ((org.telegram.ui.Components.k10) this.s).invalidate();
+                ((org.telegram.ui.Components.r10) this.s).invalidate();
                 break;
             case 3:
                 super.invalidate();
-                ((c50) this.s).e.invalidate();
+                ((f50) this.s).e.invalidate();
                 break;
             case 4:
                 super.invalidate();

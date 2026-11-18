@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t extends CharacterStyle {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final class t extends CharacterStyle {
                 textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
                 break;
             default:
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.r1(textPaint.getAlpha() / 255.0f, this.b));
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.r1(textPaint.getAlpha() / 255.0f, this.b));
                 break;
         }
     }

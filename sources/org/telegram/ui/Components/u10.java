@@ -1,45 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u10 implements Runnable {
+public final class u10 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+    public final /* synthetic */ z10 b;
 
-    public /* synthetic */ u10(Context context, int i7) {
+    public /* synthetic */ u10(z10 z10Var, int i7) {
         this.a = i7;
-        this.b = context;
+        this.b = z10Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        Context context = this.b;
-        switch (i7) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                s10.k(context);
-                break;
-            case 1:
-                vf.c.t(context, org.telegram.messenger.hd.M0(2131744966, null));
-                break;
-            case 2:
-                Activity W = org.telegram.messenger.g0.W(context);
-                if (W instanceof LaunchActivity) {
-                    ((LaunchActivity) W).t0(new PremiumPreviewFragment(0, ug.j0.u1(10)));
-                    break;
-                }
+                z10 z10Var = this.b;
+                z10Var.b.setVisibility(8);
+                z10Var.F = false;
+                z10Var.G = 0.0f;
                 break;
             default:
-                Activity W2 = org.telegram.messenger.g0.W(context);
-                if (W2 instanceof LaunchActivity) {
-                    ((LaunchActivity) W2).t0(new PremiumPreviewFragment(0, ug.j0.u1(9)));
-                    break;
-                }
+                this.b.e.setVisibility(8);
                 break;
         }
     }

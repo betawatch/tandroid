@@ -1,97 +1,24 @@
 package di;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.widget.TextView;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.mb0;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class oa implements TextWatcher {
-    public boolean a;
-    public int b = 2;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ mb0 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ hi.d h;
-    public final /* synthetic */ TextView n;
+public final class oa implements fs {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x2[] b;
 
-    public oa(EditTextBoldCursor editTextBoldCursor, mb0 mb0Var, long j3, boolean z10, hi.d dVar, TextView textView) {
-        this.c = editTextBoldCursor;
-        this.d = mb0Var;
-        this.e = j3;
-        this.f = z10;
-        this.h = dVar;
-        this.n = textView;
+    public oa(boolean[] zArr, org.telegram.ui.ActionBar.x2[] x2VarArr) {
+        this.a = zArr;
+        this.b = x2VarArr;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0076  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x00a6  */
-    @Override // android.text.TextWatcher
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void afterTextChanged(Editable editable) {
-        long j3;
-        mb0 mb0Var = this.d;
-        EditTextBoldCursor editTextBoldCursor = this.c;
-        if (this.a) {
-            return;
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        org.telegram.ui.ActionBar.x2 x2Var;
+        if (i7 == ks.C3 && this.a[0] && (x2Var = this.b[0]) != null) {
+            x2Var.dismiss();
         }
-        try {
-            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
-            try {
-                if (j3 > np.s1(m10.t0).T5) {
-                    this.a = true;
-                    j3 = np.s1(m10.t0).T5;
-                    editTextBoldCursor.setText(Long.toString(j3));
-                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                    int i7 = -this.b;
-                    this.b = i7;
-                    org.telegram.messenger.g0.F3(i7, mb0Var, null);
-                }
-            } catch (Exception unused) {
-                this.a = true;
-                long j10 = this.e;
-                editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
-                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
-                this.a = false;
-                if (!this.f) {
-                }
-                mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-                TextView textView = this.n;
-                if (j3 != 0) {
-                }
-            }
-        } catch (Exception unused2) {
-            j3 = 0;
-        }
-        this.a = false;
-        if (!this.f) {
-            this.h.setEnabled(j3 > 0);
-        }
-        mb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
-        TextView textView2 = this.n;
-        if (j3 != 0) {
-            textView2.animate().alpha(0.0f).start();
-            textView2.setText("");
-        } else {
-            textView2.animate().alpha(1.0f).start();
-            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * np.s1(m10.t0).d6), "USD"));
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

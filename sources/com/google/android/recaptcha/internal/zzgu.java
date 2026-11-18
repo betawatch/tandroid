@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
+import b5.a;
 import java.util.TimerTask;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgu extends TimerTask {
     final /* synthetic */ zzgz zza;
@@ -17,7 +17,7 @@ public final class zzgu extends TimerTask {
     public final void run() {
         try {
             int i7 = zzby.zza;
-            b0.q(((zzcr) bb.b(zzgw.zza).getValue()).zza(), new zzgv(this.zza, null));
+            b0.q(((zzcr) a.c(zzgw.zza).getValue()).zza(), new zzgv(this.zza, null));
         } catch (Exception unused) {
         }
     }

@@ -1,65 +1,63 @@
 package hi;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.is;
-import org.telegram.ui.jm0;
-import org.telegram.ui.qc;
-import org.telegram.ui.t71;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class ba implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public boolean b = false;
-    public final /* synthetic */ is c;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class ba extends View {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ Canvas b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Paint f;
+    public final /* synthetic */ Bitmap h;
+    public final /* synthetic */ Paint n;
+    public final /* synthetic */ float r;
+    public final /* synthetic */ float s;
+    public final /* synthetic */ ta w;
 
-    public /* synthetic */ ba(is isVar, int i7) {
-        this.a = i7;
-        this.c = isVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ba(ta taVar, Context context, boolean z10, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14) {
+        super(context);
+        this.w = taVar;
+        this.a = z10;
+        this.b = canvas;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
+        this.f = paint;
+        this.h = bitmap;
+        this.n = paint2;
+        this.r = f13;
+        this.s = f14;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                sa saVar = (sa) this.c;
-                saVar.E2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                aa aaVar = saVar.D2;
-                if (aaVar != null) {
-                    aaVar.invalidate();
-                }
-                if (!this.b && saVar.E2 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 1:
-                qc qcVar = (qc) this.c;
-                qcVar.o0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                qcVar.n0.invalidate();
-                if (!this.b && qcVar.o0 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            case 2:
-                jm0 jm0Var = (jm0) this.c;
-                jm0Var.Z = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                jm0Var.Y.invalidate();
-                if (!this.b && jm0Var.Z > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
-            default:
-                t71 t71Var = (t71) this.c;
-                t71Var.k2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t71Var.j2.invalidate();
-                if (!this.b && t71Var.k2 > 0.5f) {
-                    this.b = true;
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        boolean z10 = this.a;
+        Paint paint = this.n;
+        float f10 = this.e;
+        float f11 = this.d;
+        float f12 = this.c;
+        ta taVar = this.w;
+        if (z10) {
+            float f13 = taVar.E2;
+            if (f13 > 0.0f) {
+                this.b.drawCircle(f12, f11, f10 * f13, this.f);
+            }
+            canvas.drawBitmap(this.h, 0.0f, 0.0f, paint);
+        } else {
+            canvas.drawCircle(f12, f11, (1.0f - taVar.E2) * f10, paint);
         }
+        canvas.save();
+        canvas.translate(this.r, this.s);
+        taVar.j1.draw(canvas);
+        canvas.restore();
     }
 }

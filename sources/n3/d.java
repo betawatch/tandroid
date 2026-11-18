@@ -5,12 +5,12 @@ import e2.t0;
 import h9.f0;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.io.StringReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final String[] a = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};
@@ -32,7 +32,7 @@ public abstract class d {
             throw t0.a(null, "Couldn't find xmp metadata");
         }
         g0 g0Var = i0.b;
-        s1 s1Var = s1.e;
+        t1 t1Var = t1.e;
         long j3 = -9223372036854775807L;
         loop0: while (true) {
             newPullParser.next();
@@ -66,12 +66,12 @@ public abstract class d {
                         while (true) {
                             if (i7 >= 2) {
                                 g0 g0Var2 = i0.b;
-                                s1Var = s1.e;
+                                t1Var = t1.e;
                                 break;
                             }
                             String f12 = h2.a.f(newPullParser, c[i7]);
                             if (f12 != null) {
-                                s1Var = i0.v(new c("image/jpeg", "Primary", 0L, 0L), new c("video/mp4", "MotionPhoto", Long.parseLong(f12), 0L));
+                                t1Var = i0.v(new c("image/jpeg", "Primary", 0L, 0L), new c("video/mp4", "MotionPhoto", Long.parseLong(f12), 0L));
                                 break;
                             }
                             i7++;
@@ -79,20 +79,20 @@ public abstract class d {
                     }
                 }
             } else if (h2.a.i(newPullParser, "Container:Directory")) {
-                s1Var = b(newPullParser, "Container", "Item");
+                t1Var = b(newPullParser, "Container", "Item");
             } else if (h2.a.i(newPullParser, "GContainer:Directory")) {
-                s1Var = b(newPullParser, "GContainer", "GContainerItem");
+                t1Var = b(newPullParser, "GContainer", "GContainerItem");
             }
             if (h2.a.h(newPullParser, "x:xmpmeta")) {
-                if (!s1Var.isEmpty()) {
-                    return new va(j3, s1Var, 5);
+                if (!t1Var.isEmpty()) {
+                    return new va(j3, t1Var, 5);
                 }
             }
         }
         return null;
     }
 
-    public static s1 b(XmlPullParser xmlPullParser, String str, String str2) {
+    public static t1 b(XmlPullParser xmlPullParser, String str, String str2) {
         f0 p10 = i0.p();
         String concat = str.concat(":Item");
         String concat2 = str.concat(":Directory");
@@ -108,7 +108,7 @@ public abstract class d {
                 String f12 = h2.a.f(xmlPullParser, concat5);
                 String f13 = h2.a.f(xmlPullParser, concat6);
                 if (f10 == null || f11 == null) {
-                    return s1.e;
+                    return t1.e;
                 }
                 p10.c(new c(f10, f11, f12 != null ? Long.parseLong(f12) : 0L, f13 != null ? Long.parseLong(f13) : 0L));
             }

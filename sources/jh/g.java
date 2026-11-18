@@ -1,14 +1,17 @@
 package jh;
 
+import a8.va;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import v4.e1;
+import e2.r0;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.md0;
+import v4.f1;
+import v4.h1;
 import v4.p0;
-import v4.w0;
+import v4.x0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g {
     public final RecyclerView a;
@@ -17,135 +20,58 @@ public final class g {
         this.a = recyclerView;
     }
 
-    public void a(v4.a aVar) {
-        int i7 = aVar.a;
+    public void a(f1 f1Var, r0 r0Var, r0 r0Var2) {
+        boolean z10;
+        f1 T;
+        int i7;
         RecyclerView recyclerView = this.a;
-        if (i7 == 1) {
-            recyclerView.y.V(recyclerView, aVar.b, aVar.d);
-            return;
-        }
-        if (i7 == 2) {
-            recyclerView.y.Y(recyclerView, aVar.b, aVar.d);
-        } else if (i7 == 4) {
-            recyclerView.y.a0(recyclerView, aVar.b, aVar.d, aVar.c);
-        } else {
-            if (i7 != 8) {
-                return;
-            }
-            recyclerView.y.X(recyclerView, aVar.b, aVar.d);
-        }
-    }
-
-    public void b(int i7, int i10, Object obj) {
-        int i11;
-        int i12;
-        RecyclerView recyclerView = this.a;
-        int z10 = recyclerView.e.z();
-        int i13 = i10 + i7;
-        for (int i14 = 0; i14 < z10; i14++) {
-            View y10 = recyclerView.e.y(i14);
-            e1 U = RecyclerView.U(y10);
-            if (U != null && !U.r() && (i12 = U.c) >= i7 && i12 < i13) {
-                U.a(2);
-                if (obj == null) {
-                    U.a(1024);
-                } else if ((1024 & U.l) == 0) {
-                    if (U.m == null) {
-                        ArrayList arrayList = new ArrayList();
-                        U.m = arrayList;
-                        U.n = DesugarCollections.unmodifiableList(arrayList);
+        recyclerView.b.k(f1Var);
+        recyclerView.h(f1Var);
+        f1Var.q(false);
+        h1 h1Var = (h1) recyclerView.d0;
+        h1Var.getClass();
+        int i10 = r0Var.a;
+        int i11 = r0Var.b;
+        View view = f1Var.a;
+        int left = r0Var2 == null ? view.getLeft() : r0Var2.a;
+        int top = r0Var2 == null ? view.getTop() : r0Var2.b;
+        if (f1Var.j() || (i10 == left && i11 == top)) {
+            int i12 = f1Var.h;
+            int i13 = -1;
+            if (i12 != -1) {
+                for (int i14 = 0; i14 < recyclerView.getChildCount(); i14++) {
+                    View childAt = recyclerView.getChildAt(i14);
+                    if (childAt != null && (T = recyclerView.T(childAt)) != null && !T.j() && (i7 = T.h) >= 0 && i7 < i12 && i7 > i13) {
+                        i13 = i7;
                     }
-                    U.m.add(obj);
                 }
-                ((p0) y10.getLayoutParams()).c = true;
             }
+            f1Var.i = (f1Var.h - i13) + (i13 * 1000);
+            h1Var.s(f1Var, r0Var);
+            z10 = true;
+        } else {
+            view.layout(left, top, view.getWidth() + left, view.getHeight() + top);
+            z10 = h1Var.r(f1Var, r0Var, i10, i11, left, top);
         }
-        w0 w0Var = recyclerView.b;
-        ArrayList arrayList2 = (ArrayList) w0Var.e;
-        for (int size = arrayList2.size() - 1; size >= 0; size--) {
-            e1 e1Var = (e1) arrayList2.get(size);
-            if (e1Var != null && (i11 = e1Var.c) >= i7 && i11 < i13) {
-                e1Var.a(2);
-                w0Var.f(size);
-            }
+        if (z10) {
+            recyclerView.m0();
         }
-        recyclerView.z0 = true;
     }
 
-    public void c(int i7, int i10) {
+    public void b(f1 f1Var) {
         RecyclerView recyclerView = this.a;
-        int z10 = recyclerView.e.z();
-        for (int i11 = 0; i11 < z10; i11++) {
-            e1 U = RecyclerView.U(recyclerView.e.y(i11));
-            if (U != null && !U.r() && U.c >= i7) {
-                U.n(i10, false);
-                recyclerView.v0.f = true;
+        p0 p0Var = recyclerView.y;
+        View view = f1Var.a;
+        x0 x0Var = recyclerView.b;
+        md0 md0Var = p0Var.a;
+        of ofVar = (of) md0Var.b;
+        int indexOfChild = ((RecyclerView) ofVar.b).indexOfChild(view);
+        if (indexOfChild >= 0) {
+            if (((va) md0Var.c).I(indexOfChild)) {
+                md0Var.K(view);
             }
+            ofVar.x0(indexOfChild);
         }
-        ArrayList arrayList = (ArrayList) recyclerView.b.e;
-        int size = arrayList.size();
-        for (int i12 = 0; i12 < size; i12++) {
-            e1 e1Var = (e1) arrayList.get(i12);
-            if (e1Var != null && e1Var.c >= i7) {
-                e1Var.n(i10, true);
-            }
-        }
-        recyclerView.requestLayout();
-        recyclerView.y0 = true;
-    }
-
-    public void d(int i7, int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        RecyclerView recyclerView = this.a;
-        int z10 = recyclerView.e.z();
-        int i18 = -1;
-        if (i7 < i10) {
-            i12 = i7;
-            i11 = i10;
-            i13 = -1;
-        } else {
-            i11 = i7;
-            i12 = i10;
-            i13 = 1;
-        }
-        for (int i19 = 0; i19 < z10; i19++) {
-            e1 U = RecyclerView.U(recyclerView.e.y(i19));
-            if (U != null && (i17 = U.c) >= i12 && i17 <= i11) {
-                if (i17 == i7) {
-                    U.n(i10 - i7, false);
-                } else {
-                    U.n(i13, false);
-                }
-                recyclerView.v0.f = true;
-            }
-        }
-        ArrayList arrayList = (ArrayList) recyclerView.b.e;
-        if (i7 < i10) {
-            i15 = i7;
-            i14 = i10;
-        } else {
-            i14 = i7;
-            i15 = i10;
-            i18 = 1;
-        }
-        int size = arrayList.size();
-        for (int i20 = 0; i20 < size; i20++) {
-            e1 e1Var = (e1) arrayList.get(i20);
-            if (e1Var != null && (i16 = e1Var.c) >= i15 && i16 <= i14) {
-                if (i16 == i7) {
-                    e1Var.n(i10 - i7, false);
-                } else {
-                    e1Var.n(i18, false);
-                }
-            }
-        }
-        recyclerView.requestLayout();
-        recyclerView.y0 = true;
+        x0Var.g(view);
     }
 }

@@ -4,13 +4,13 @@ import android.os.SystemClock;
 import android.util.Log;
 import java.io.File;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.is;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h1 implements is {
+public final class h1 implements fs {
     public final /* synthetic */ String a;
     public final /* synthetic */ long[] b;
     public final /* synthetic */ i1 c;
@@ -27,7 +27,7 @@ public final class h1 implements is {
         this.f = countDownLatch;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         File file;
         if (objArr.length != 0) {
@@ -35,11 +35,11 @@ public final class h1 implements is {
             String str = this.a;
             if (str.equals(obj)) {
                 this.b[0] = SystemClock.elapsedRealtime();
-                if (i7 == ns.X1) {
-                    this.c.b(((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
+                if (i7 == ks.X1) {
+                    this.c.c(((Long) objArr[1]).longValue(), ((Long) objArr[2]).longValue());
                     return;
                 }
-                if (i7 == ns.Y1) {
+                if (i7 == ks.Y1) {
                     if (objArr.length > 1) {
                         Object obj2 = objArr[1];
                         if (obj2 instanceof File) {
@@ -50,14 +50,14 @@ public final class h1 implements is {
                     file = this.e;
                     this.d[0] = file;
                 } else {
-                    if (i7 != ns.Z1) {
+                    if (i7 != ks.Z1) {
                         return;
                     }
                     StringBuilder u10 = a8.p0.u("speech models: ", str, " download failed (");
                     u10.append(objArr.length > 1 ? objArr[1] : "");
                     u10.append(")");
                     Log.d("Dictation", u10.toString());
-                    np.e1().edit().remove("speech_models_checked").apply();
+                    mp.g1().edit().remove("speech_models_checked").apply();
                 }
                 this.f.countDown();
             }

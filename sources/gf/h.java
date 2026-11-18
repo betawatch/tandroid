@@ -1,8 +1,8 @@
 package gf;
 
-import c8.y0;
+import c8.a1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h extends mf.a {
     public final kf.h a;
@@ -52,8 +52,8 @@ public final class h extends mf.a {
         if (i11 < 4) {
             char c10 = hVar.g;
             int i12 = hVar.h;
-            int b10 = y0.b(c10, i7, charSequence.length(), charSequence) - i7;
-            if (b10 >= i12 && y0.c(i7 + b10, charSequence.length(), charSequence) == charSequence.length()) {
+            int b10 = a1.b(c10, i7, charSequence.length(), charSequence) - i7;
+            if (b10 >= i12 && a1.c(i7 + b10, charSequence.length(), charSequence) == charSequence.length()) {
                 return new a(-1, -1, true);
             }
         }

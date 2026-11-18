@@ -3,7 +3,7 @@ package a8;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class p8 {
     public static String a(String str, Object... objArr) {
@@ -27,7 +27,7 @@ public abstract class p8 {
                 } catch (Exception e10) {
                     String E = p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
-                    l10 = r.b.l("<", E, " threw ", e10.getClass().getName(), ">");
+                    l10 = p5.c.l("<", E, " threw ", e10.getClass().getName(), ">");
                 }
             }
             objArr[i10] = l10;

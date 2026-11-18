@@ -14,31 +14,34 @@ import android.graphics.Shader;
 import android.os.Build;
 import android.os.SystemClock;
 import java.util.Random;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.nu0;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class s0 {
-    public static float R;
+    public static float U;
     public final int[] A;
     public final int[] B;
     public float C;
     public float D;
     public float E;
-    public final float[] F;
-    public final float[] G;
-    public final float[] H;
+    public float F;
+    public float G;
+    public float H;
     public final float[] I;
     public final float[] J;
     public final float[] K;
     public final float[] L;
     public final float[] M;
-    public final int[] N;
-    public final boolean[] O;
-    public final boolean[] P;
-    public float Q;
+    public final float[] N;
+    public final float[] O;
+    public final float[] P;
+    public final int[] Q;
+    public final boolean[] R;
+    public final boolean[] S;
+    public float T;
     public final Paint a;
     public final Object b;
     public final Paint c;
@@ -76,16 +79,16 @@ public final class s0 {
         this.g = new RectF();
         this.h = true;
         this.i = SystemClock.uptimeMillis();
-        this.j = new float[ns.W1];
-        this.k = new float[ns.W1];
-        this.l = new float[ns.W1];
-        this.m = new float[ns.W1];
-        this.n = new float[ns.W1];
-        this.o = new float[ns.W1];
-        this.p = new float[ns.W1];
-        this.q = new float[ns.W1];
-        this.r = new int[ns.W1];
-        this.s = new boolean[ns.W1];
+        this.j = new float[ks.W1];
+        this.k = new float[ks.W1];
+        this.l = new float[ks.W1];
+        this.m = new float[ks.W1];
+        this.n = new float[ks.W1];
+        this.o = new float[ks.W1];
+        this.p = new float[ks.W1];
+        this.q = new float[ks.W1];
+        this.r = new int[ks.W1];
+        this.s = new boolean[ks.W1];
         this.t = new Random();
         this.x = new Path();
         this.y = new RectF();
@@ -93,17 +96,20 @@ public final class s0 {
         this.A = new int[]{-15420490, -14699385, -13787165};
         this.B = new int[7];
         this.C = -1.0f;
-        this.F = new float[ns.W1];
-        this.G = new float[ns.W1];
-        this.H = new float[ns.W1];
-        this.I = new float[ns.W1];
-        this.J = new float[ns.W1];
-        this.K = new float[ns.W1];
-        this.L = new float[ns.W1];
-        this.M = new float[ns.W1];
-        this.N = new int[ns.W1];
-        this.O = new boolean[ns.W1];
-        this.P = new boolean[ns.W1];
+        this.E = 1.0f;
+        this.F = 1.0f;
+        this.G = 1.0f;
+        this.I = new float[ks.W1];
+        this.J = new float[ks.W1];
+        this.K = new float[ks.W1];
+        this.L = new float[ks.W1];
+        this.M = new float[ks.W1];
+        this.N = new float[ks.W1];
+        this.O = new float[ks.W1];
+        this.P = new float[ks.W1];
+        this.Q = new int[ks.W1];
+        this.R = new boolean[ks.W1];
+        this.S = new boolean[ks.W1];
         if (Build.VERSION.SDK_INT >= 33) {
             try {
                 r0.c();
@@ -125,21 +131,21 @@ public final class s0 {
     }
 
     public static int d(int i7) {
-        if (R == 0.0f) {
+        if (U == 0.0f) {
             return i7;
         }
-        float[] fArr = {(((R + 205.0f) % 360.0f) + 360.0f) % 360.0f, 0.0f, 0.0f};
+        float[] fArr = {(((U + 205.0f) % 360.0f) + 360.0f) % 360.0f, 0.0f, 0.0f};
         Color.colorToHSV(i7, fArr);
         return Color.HSVToColor(Color.alpha(i7), fArr);
     }
 
     public static int e(int i7) {
-        if (R == 0.0f) {
+        if (U == 0.0f) {
             return i7;
         }
         float[] fArr = new float[3];
         Color.colorToHSV(i7, fArr);
-        fArr[0] = (((fArr[0] + R) % 360.0f) + 360.0f) % 360.0f;
+        fArr[0] = (((fArr[0] + U) % 360.0f) + 360.0f) % 360.0f;
         return Color.HSVToColor(Color.alpha(i7), fArr);
     }
 
@@ -161,14 +167,14 @@ public final class s0 {
                 }
             }
         }
-        R = f10;
+        U = f10;
     }
 
-    public static int[] j(boolean z10) {
-        if (R == 0.0f) {
+    public static int[] k(boolean z10) {
+        if (U == 0.0f) {
             return null;
         }
-        int[] iArr = z10 ? (int[]) nu0.T.clone() : (int[]) nu0.U.clone();
+        int[] iArr = z10 ? (int[]) vu0.T.clone() : (int[]) vu0.U.clone();
         for (int i7 = 0; i7 < iArr.length; i7++) {
             iArr[i7] = e(iArr[i7]);
         }
@@ -225,21 +231,21 @@ public final class s0 {
         return this.h ? e(rgb) : rgb;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x06d1  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x06e0  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x06d3  */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x06ab  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0694  */
-    /* JADX WARN: Removed duplicated region for block: B:194:0x0866  */
-    /* JADX WARN: Removed duplicated region for block: B:235:0x0854  */
-    /* JADX WARN: Removed duplicated region for block: B:237:0x056e  */
-    /* JADX WARN: Removed duplicated region for block: B:238:0x02d5  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x02d1  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x02f2  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0580  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0593  */
-    /* JADX WARN: Removed duplicated region for block: B:97:0x0691  */
-    /* JADX WARN: Removed duplicated region for block: B:99:0x0698  */
+    /* JADX WARN: Removed duplicated region for block: B:100:0x06c7  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0700  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x070d  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x0702  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x06da  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x06c3  */
+    /* JADX WARN: Removed duplicated region for block: B:195:0x08a2  */
+    /* JADX WARN: Removed duplicated region for block: B:235:0x0892  */
+    /* JADX WARN: Removed duplicated region for block: B:237:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:238:0x0304  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0300  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0321  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x05b2  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x05c5  */
+    /* JADX WARN: Removed duplicated region for block: B:98:0x06c0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -252,44 +258,48 @@ public final class s0 {
         float f18;
         float f19;
         float f20;
-        Canvas canvas3;
         float f21;
+        Canvas canvas3;
         float f22;
-        boolean equals;
-        boolean z10;
         float f23;
         float f24;
-        int i7;
+        boolean equals;
+        boolean z10;
         float f25;
+        int i7;
         int i10;
         int i11;
+        int i12;
         float[] fArr;
         float[] fArr2;
-        float[] fArr3;
+        int[] iArr;
         boolean[] zArr;
-        int i12;
-        double d;
-        int i13;
-        float cos;
-        float sin;
         float f26;
         float f27;
-        boolean z11;
         float f28;
+        double d;
+        int i13;
+        float sin;
         float f29;
         float f30;
-        float g10;
         float f31;
-        int i14;
+        boolean z11;
+        boolean z12;
         float f32;
         float f33;
+        float h;
+        float f34;
+        int i14;
+        float f35;
+        float f36;
         if (f11 <= 0.001f || rectF.width() <= 0.0f || rectF.height() <= 0.0f) {
             this.u = 0L;
             return;
         }
         float uptimeMillis = (((SystemClock.uptimeMillis() - this.i) % 3600000) / 1000.0f) * (this.h ? 1.0f : t0.c(8));
         float max = (Math.max(0.0f, Math.min(1.0f, f13)) * (this.h ? org.telegram.messenger.g0.L(4.0f) : org.telegram.messenger.g0.L(10.0f))) + org.telegram.messenger.g0.L(26.0f);
-        float f34 = 0.45f;
+        float f37 = 0.45f;
+        float f38 = 0.7f;
         int i15 = 1;
         int i16 = 3;
         Object obj = this.b;
@@ -298,7 +308,7 @@ public final class s0 {
         } else {
             if (Build.VERSION.SDK_INT >= 33) {
                 RuntimeShader runtimeShader = (RuntimeShader) obj;
-                f19 = 12.0f;
+                f20 = 12.0f;
                 runtimeShader.setFloatUniform("uSize", rectF.width(), rectF.height());
                 runtimeShader.setFloatUniform("uOrigin", rectF.left, rectF.top);
                 runtimeShader.setFloatUniform("uRadius", Math.min(f10, rectF.height() / 2.0f));
@@ -307,132 +317,141 @@ public final class s0 {
                 runtimeShader.setFloatUniform("uSweep", f12);
                 runtimeShader.setFloatUniform("uDark", this.h ? 1.0f : 0.0f);
                 float C = a8.p0.C(rectF.height() - org.telegram.messenger.g0.L(52.0f), org.telegram.messenger.g0.L(70.0f) - org.telegram.messenger.g0.L(52.0f), 1.0f, 0.0f);
-                runtimeShader.setFloatUniform("uHue", R / 360.0f);
+                runtimeShader.setFloatUniform("uHue", U / 360.0f);
+                runtimeShader.setFloatUniform("uNStroke", this.E);
+                runtimeShader.setFloatUniform("uNGlow", this.F);
+                runtimeShader.setFloatUniform("uNSat", this.G);
                 runtimeShader.setFloatUniform("uThin", 1.0f - ((3.0f - (C * 2.0f)) * (C * C)));
                 runtimeShader.setFloatUniform("uHalo", max);
                 runtimeShader.setFloatUniform("uDp", org.telegram.messenger.g0.p);
                 runtimeShader.setFloatUniform("uLevel", f13);
                 runtimeShader.setFloatUniform("uPulse", this.C);
                 runtimeShader.setFloatUniform("uPulseAng", this.D);
-                float[] fArr4 = this.z;
-                runtimeShader.setFloatUniform("uL0", fArr4[0], fArr4[1], fArr4[2]);
-                runtimeShader.setFloatUniform("uL1", fArr4[3], fArr4[4], fArr4[5]);
-                runtimeShader.setFloatUniform("uL2", fArr4[6], fArr4[7], fArr4[8]);
-                runtimeShader.setFloatUniform("uLHi", fArr4[9], fArr4[10], fArr4[11]);
+                float[] fArr3 = this.z;
+                runtimeShader.setFloatUniform("uL0", fArr3[0], fArr3[1], fArr3[2]);
+                runtimeShader.setFloatUniform("uL1", fArr3[3], fArr3[4], fArr3[5]);
+                runtimeShader.setFloatUniform("uL2", fArr3[6], fArr3[7], fArr3[8]);
+                runtimeShader.setFloatUniform("uLHi", fArr3[9], fArr3[10], fArr3[11]);
                 runtimeShader.setFloatUniform("uHaloW", t0.c(3));
                 runtimeShader.setFloatUniform("uHaloS", t0.c(4));
                 runtimeShader.setFloatUniform("uLift", t0.c(5));
                 runtimeShader.setFloatUniform("uRimW", t0.c(6));
                 runtimeShader.setFloatUniform("uRimB", t0.c(7));
-                int[] iArr = this.B;
-                runtimeShader.setFloatUniform("uRim", Color.red(iArr[4]) / 255.0f, Color.green(iArr[4]) / 255.0f, Color.blue(iArr[4]) / 255.0f);
+                int[] iArr2 = this.B;
+                runtimeShader.setFloatUniform("uRim", Color.red(iArr2[4]) / 255.0f, Color.green(iArr2[4]) / 255.0f, Color.blue(iArr2[4]) / 255.0f);
                 BlendMode blendMode = this.h ? BlendMode.PLUS : BlendMode.SRC_OVER;
                 Paint paint = this.a;
                 paint.setBlendMode(blendMode);
                 f16 = 3.0f;
-                f17 = 0.9f;
-                f18 = 0.8f;
-                f14 = 4.0f;
+                f17 = 0.0f;
                 f15 = 1.0f;
+                f18 = 0.9f;
+                f19 = 0.8f;
+                f14 = 4.0f;
                 canvas.drawRect(rectF.left - max, rectF.top - max, rectF.right + max, rectF.bottom + max, paint);
                 canvas2 = canvas;
                 long uptimeMillis2 = SystemClock.uptimeMillis();
-                float f35 = 0.0f;
+                float f39 = f15;
                 float min = this.u != 0 ? 0.016f : Math.min(0.05f, (uptimeMillis2 - r5) / 1000.0f);
                 this.u = uptimeMillis2;
                 Random random = this.t;
                 if (f11 <= 0.3f) {
-                    float f36 = f17;
-                    float f37 = 0.35f;
-                    if (f12 >= 0.0f && f12 > 0.05f && f12 < 0.95f) {
-                        float f38 = 0.3f;
+                    float f40 = f18;
+                    float f41 = 0.35f;
+                    if (f12 >= f17 && f12 > 0.05f && f12 < 0.95f) {
+                        float f42 = 0.3f;
                         this.v = (95.0f * min) + this.v;
                         while (true) {
-                            float f39 = this.v;
-                            if (f39 < f15) {
+                            float f43 = this.v;
+                            if (f43 < f39) {
                                 break;
                             }
-                            this.v = f39 - f15;
-                            float z12 = com.google.android.gms.internal.vision.e2.z(rectF.height(), org.telegram.messenger.g0.L(8.0f), random.nextFloat(), rectF.top + org.telegram.messenger.g0.L(f14));
-                            float width = ((((rectF.width() * ((1.7f * f12) - 0.35f)) + rectF.left) - ((z12 - rectF.centerY()) * f36)) - (random.nextFloat() * org.telegram.messenger.g0.L(70.0f))) + org.telegram.messenger.g0.L(f19);
+                            this.v = f43 - f39;
+                            float z13 = com.google.android.gms.internal.vision.e2.z(rectF.height(), org.telegram.messenger.g0.L(8.0f), random.nextFloat(), rectF.top + org.telegram.messenger.g0.L(f14));
+                            float width = ((((rectF.width() * ((1.7f * f12) - 0.35f)) + rectF.left) - ((z13 - rectF.centerY()) * f40)) - (random.nextFloat() * org.telegram.messenger.g0.L(70.0f))) + org.telegram.messenger.g0.L(f20);
                             float L = org.telegram.messenger.g0.L((random.nextFloat() * 6.0f) + 2.0f);
-                            i(width, z12, (random.nextFloat() - f38) * L, L * (random.nextFloat() - 0.5f), org.telegram.ui.Cells.y0.g(random, f34, f37), org.telegram.ui.Cells.y0.g(random, f34, 0.32f));
+                            j(width, z13, (random.nextFloat() - f42) * L, L * (random.nextFloat() - 0.5f), org.telegram.ui.Cells.c0.h(random, f37, f41), org.telegram.ui.Cells.c0.h(random, f37, 0.32f));
                             canvas2 = canvas;
                             min = min;
-                            f37 = 0.35f;
-                            f34 = 0.45f;
-                            f38 = 0.3f;
+                            f41 = 0.35f;
+                            f37 = 0.45f;
+                            f42 = 0.3f;
                         }
                     }
-                    f20 = min;
+                    float f44 = min;
                     canvas3 = canvas2;
-                    f22 = 6.0f;
-                    float f40 = this.C;
-                    if (f40 >= 0.0f) {
-                        this.E = (32.0f * f20 * ((float) Math.sin(f40 * 3.141592653589793d))) + this.E;
+                    f24 = 6.0f;
+                    float f45 = this.C;
+                    if (f45 >= f17) {
+                        this.H = (32.0f * f44 * ((float) Math.sin(f45 * 3.141592653589793d))) + this.H;
                         while (true) {
-                            float f41 = this.E;
-                            if (f41 < f15) {
+                            float f46 = this.H;
+                            if (f46 < f39) {
                                 break;
                             }
-                            this.E = f41 - f15;
+                            this.H = f46 - f39;
                             double nextFloat = ((this.C * 3.77f) + this.D) - (random.nextFloat() * 0.5f);
-                            float cos2 = (float) Math.cos(nextFloat);
+                            float cos = (float) Math.cos(nextFloat);
                             float sin2 = (float) Math.sin(nextFloat);
-                            float max2 = f15 / Math.max(Math.abs(cos2), Math.abs(sin2));
-                            float width2 = ((rectF.width() * (cos2 * max2)) / 2.0f) + rectF.centerX();
+                            float max2 = f39 / Math.max(Math.abs(cos), Math.abs(sin2));
+                            float width2 = ((rectF.width() * (cos * max2)) / 2.0f) + rectF.centerX();
                             float height = ((rectF.height() * (max2 * sin2)) / 2.0f) + rectF.centerY();
                             float max3 = Math.max(rectF.left + org.telegram.messenger.g0.L(6.0f), Math.min(rectF.right - org.telegram.messenger.g0.L(6.0f), width2));
-                            float max4 = Math.max(rectF.top + org.telegram.messenger.g0.L(f15), Math.min(rectF.bottom - org.telegram.messenger.g0.L(f15), height));
+                            float max4 = Math.max(rectF.top + org.telegram.messenger.g0.L(f39), Math.min(rectF.bottom - org.telegram.messenger.g0.L(f39), height));
                             float L2 = org.telegram.messenger.g0.L((random.nextFloat() * 8.0f) + f14);
-                            i(max3, max4, com.google.android.gms.internal.vision.e2.B(sin2, f18, cos2 * 0.6f, L2), com.google.android.gms.internal.vision.e2.C(cos2, f18, sin2 * 0.6f, L2), org.telegram.ui.Cells.y0.g(random, 0.3f, 0.4f), org.telegram.ui.Cells.y0.g(random, 0.35f, 0.3f));
+                            j(max3, max4, com.google.android.gms.internal.vision.e2.B(sin2, f19, cos * 0.6f, L2), com.google.android.gms.internal.vision.e2.C(cos, f19, sin2 * 0.6f, L2), org.telegram.ui.Cells.c0.h(random, 0.3f, 0.4f), org.telegram.ui.Cells.c0.h(random, 0.35f, 0.3f));
                         }
                     }
-                    f21 = 0.4f;
-                    this.w = (((random.nextFloat() * f18) + 0.6f) * f20 * (f12 >= 0.0f ? 2.0f : (f13 * f16) + 3.6f)) + this.w;
+                    f22 = 0.3f;
+                    f23 = 0.4f;
+                    this.w = (((random.nextFloat() * f19) + 0.6f) * f44 * (f12 >= f17 ? 2.0f : (f13 * f16) + 3.6f)) + this.w;
                     while (true) {
-                        float f42 = this.w;
-                        if (f42 < f15) {
+                        float f47 = this.w;
+                        if (f47 < f39) {
                             break;
                         }
-                        this.w = f42 - f15;
+                        this.w = f47 - f39;
                         float width3 = rectF.width();
                         float height2 = rectF.height();
                         float nextFloat2 = random.nextFloat() * (width3 + height2) * 2.0f;
-                        float nextFloat3 = (random.nextFloat() * org.telegram.messenger.g0.L(f14)) + org.telegram.messenger.g0.L(f15);
+                        float nextFloat3 = (random.nextFloat() * org.telegram.messenger.g0.L(f14)) + org.telegram.messenger.g0.L(f39);
                         if (nextFloat2 < width3) {
-                            f32 = rectF.left + nextFloat2;
-                            f33 = rectF.top + nextFloat3;
+                            f35 = rectF.left + nextFloat2;
+                            f36 = rectF.top + nextFloat3;
                         } else {
-                            float f43 = nextFloat2 - width3;
-                            if (f43 < height2) {
-                                f32 = rectF.right - nextFloat3;
-                                f33 = rectF.top + f43;
+                            float f48 = nextFloat2 - width3;
+                            if (f48 < height2) {
+                                f35 = rectF.right - nextFloat3;
+                                f36 = rectF.top + f48;
                             } else {
-                                float f44 = f43 - height2;
-                                if (f44 < width3) {
-                                    f32 = rectF.right - f44;
-                                    f33 = rectF.bottom - nextFloat3;
+                                float f49 = f48 - height2;
+                                if (f49 < width3) {
+                                    f35 = rectF.right - f49;
+                                    f36 = rectF.bottom - nextFloat3;
                                 } else {
-                                    float f45 = f44 - width3;
-                                    f32 = rectF.left + nextFloat3;
-                                    f33 = rectF.bottom - f45;
+                                    float f50 = f49 - width3;
+                                    f35 = rectF.left + nextFloat3;
+                                    f36 = rectF.bottom - f50;
                                 }
                             }
                         }
-                        float max5 = Math.max(rectF.left + org.telegram.messenger.g0.L(10.0f), Math.min(rectF.right - org.telegram.messenger.g0.L(10.0f), f32));
-                        float max6 = Math.max(rectF.top + org.telegram.messenger.g0.L(2.0f), Math.min(rectF.bottom - org.telegram.messenger.g0.L(2.0f), f33));
+                        float max5 = Math.max(rectF.left + org.telegram.messenger.g0.L(10.0f), Math.min(rectF.right - org.telegram.messenger.g0.L(10.0f), f35));
+                        float max6 = Math.max(rectF.top + org.telegram.messenger.g0.L(2.0f), Math.min(rectF.bottom - org.telegram.messenger.g0.L(2.0f), f36));
                         float L3 = org.telegram.messenger.g0.L((random.nextFloat() * 3.5f) + 1.5f);
                         double nextFloat4 = random.nextFloat() * 3.141592653589793d * 2.0d;
-                        i(max5, max6, ((float) Math.cos(nextFloat4)) * L3, (((float) Math.sin(nextFloat4)) * L3) - org.telegram.messenger.g0.L(f15), org.telegram.ui.Cells.y0.g(random, 1.1f, f36), org.telegram.ui.Cells.y0.g(random, 0.38f, 0.3f));
-                        f36 = 0.9f;
+                        j(max5, max6, ((float) Math.cos(nextFloat4)) * L3, (((float) Math.sin(nextFloat4)) * L3) - org.telegram.messenger.g0.L(f39), org.telegram.ui.Cells.c0.h(random, 1.1f, f40), org.telegram.ui.Cells.c0.h(random, 0.38f, 0.3f));
+                        f19 = f19;
+                        f44 = f44;
                     }
+                    f21 = f44;
                 } else {
-                    f20 = min;
+                    f21 = min;
                     canvas3 = canvas2;
-                    f21 = 0.4f;
-                    f22 = 6.0f;
+                    f22 = 0.3f;
+                    f23 = 0.4f;
+                    f24 = 6.0f;
                 }
+                float f51 = f19;
                 RectF rectF2 = this.y;
                 equals = rectF2.equals(rectF);
                 Path path = this.x;
@@ -442,34 +461,35 @@ public final class s0 {
                     path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
                 }
                 z10 = this.h;
-                int[] iArr2 = this.A;
+                int[] iArr3 = this.A;
                 Paint paint2 = this.f;
                 if (z10) {
-                    float[] fArr5 = this.M;
-                    f24 = 0.02f;
+                    float[] fArr4 = this.P;
+                    f25 = 0.02f;
+                    float[] fArr5 = this.O;
+                    int[] iArr4 = this.Q;
+                    float f52 = f22;
                     float[] fArr6 = this.L;
-                    f23 = f18;
-                    int[] iArr3 = this.N;
-                    float[] fArr7 = this.I;
-                    float[] fArr8 = this.H;
-                    boolean[] zArr2 = this.O;
-                    float[] fArr9 = this.K;
-                    float[] fArr10 = this.G;
-                    float[] fArr11 = this.F;
-                    boolean[] zArr3 = this.P;
-                    float[] fArr12 = this.J;
+                    float[] fArr7 = this.K;
+                    boolean[] zArr2 = this.R;
+                    float[] fArr8 = this.N;
+                    float[] fArr9 = this.J;
+                    float[] fArr10 = this.I;
+                    boolean[] zArr3 = this.S;
+                    float[] fArr11 = this.M;
                     if (f11 > 0.3f) {
-                        fArr = fArr12;
-                        fArr2 = fArr6;
-                        fArr3 = fArr7;
+                        fArr = fArr11;
+                        fArr2 = fArr5;
+                        iArr = iArr4;
                         zArr = zArr2;
-                        this.Q = org.telegram.ui.Cells.y0.f(f13, 55.0f, 30.0f, f20, this.Q);
+                        float f53 = f21;
+                        this.T = org.telegram.ui.Cells.c0.g(f13, 55.0f, 30.0f, f53, this.T);
                         while (true) {
-                            float f46 = this.Q;
-                            if (f46 < f15) {
+                            float f54 = this.T;
+                            if (f54 < f39) {
                                 break;
                             }
-                            this.Q = f46 - f15;
+                            this.T = f54 - f39;
                             int i17 = 0;
                             while (true) {
                                 if (i17 >= 140) {
@@ -482,117 +502,116 @@ public final class s0 {
                                 }
                             }
                             if (i17 < 0) {
+                                f28 = f53;
                                 i14 = i16;
-                                f31 = f22;
+                                f34 = f24;
                             } else {
                                 float min2 = Math.min(f10, rectF.height() / 2.0f);
-                                float max7 = Math.max(f35, rectF.width() - (min2 * 2.0f));
+                                float max7 = Math.max(f17, rectF.width() - (min2 * 2.0f));
+                                f28 = f53;
                                 float nextFloat5 = random.nextFloat() * ((max7 * 2.0f) + ((float) (min2 * 6.283185307179586d)));
                                 if (nextFloat5 < max7) {
-                                    f26 = rectF.left + min2 + nextFloat5;
-                                    f27 = rectF.top;
+                                    f29 = rectF.left + min2 + nextFloat5;
+                                    f30 = rectF.top;
                                     sin = -1.0f;
                                     i13 = i17;
                                 } else {
-                                    float f47 = nextFloat5 - max7;
-                                    if (f47 < max7) {
-                                        f26 = (rectF.right - min2) - f47;
-                                        f27 = rectF.bottom;
+                                    float f55 = nextFloat5 - max7;
+                                    if (f55 < max7) {
+                                        f29 = (rectF.right - min2) - f55;
+                                        f30 = rectF.bottom;
                                         i13 = i17;
-                                        sin = f15;
+                                        sin = f39;
                                     } else {
-                                        double d2 = (f47 - max7) / min2;
-                                        boolean z13 = d2 < 3.141592653589793d;
-                                        if (z13) {
+                                        double d2 = (f55 - max7) / min2;
+                                        boolean z14 = d2 < 3.141592653589793d;
+                                        if (z14) {
                                             d = -1.5707963267948966d;
                                         } else {
                                             d = 1.5707963267948966d;
                                             d2 -= 3.141592653589793d;
                                         }
                                         double d10 = d2 + d;
-                                        i13 = i17;
-                                        float f48 = z13 ? rectF.right - min2 : rectF.left + min2;
+                                        float f56 = z14 ? rectF.right - min2 : rectF.left + min2;
                                         float centerY = rectF.centerY();
-                                        float f49 = f48;
-                                        cos = (float) Math.cos(d10);
+                                        i13 = i17;
+                                        float cos2 = (float) Math.cos(d10);
                                         sin = (float) Math.sin(d10);
-                                        f26 = (cos * min2) + f49;
-                                        f27 = (sin * min2) + centerY;
-                                        z11 = random.nextFloat() >= 0.3f;
+                                        f29 = (cos2 * min2) + f56;
+                                        f30 = (sin * min2) + centerY;
+                                        f31 = cos2;
+                                        z11 = random.nextFloat() >= f52;
                                         if (z11) {
-                                            f28 = f27;
-                                            f29 = f26;
-                                            f30 = f22;
-                                            g10 = org.telegram.ui.Cells.y0.g(random, f19, f30);
+                                            z12 = z11;
+                                            f32 = f30;
+                                            f33 = f24;
+                                            h = org.telegram.ui.Cells.c0.h(random, f20, f33);
                                         } else {
-                                            float f50 = f16;
-                                            f29 = f26;
-                                            f28 = f27;
-                                            g10 = org.telegram.ui.Cells.y0.g(random, f14, f50);
-                                            f30 = f22;
+                                            float f57 = f16;
+                                            f32 = f30;
+                                            z12 = z11;
+                                            h = org.telegram.ui.Cells.c0.h(random, f14, f57);
+                                            f33 = f24;
                                         }
-                                        float L4 = org.telegram.messenger.g0.L(g10);
-                                        f31 = f30;
-                                        float nextFloat6 = (random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(f31);
-                                        fArr11[i13] = f29;
-                                        fArr10[i13] = f28;
-                                        float f51 = !z11 ? -cos : cos;
-                                        float f52 = cos;
-                                        float f53 = -sin;
-                                        fArr8[i13] = (f53 * nextFloat6) + (f51 * L4);
-                                        if (z11) {
-                                            sin = f53;
+                                        float L4 = org.telegram.messenger.g0.L(h);
+                                        f34 = f33;
+                                        float nextFloat6 = (random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(f34);
+                                        fArr10[i13] = f29;
+                                        fArr9[i13] = f32;
+                                        float f58 = -sin;
+                                        fArr7[i13] = (f58 * nextFloat6) + ((!z12 ? -f31 : f31) * L4);
+                                        if (z12) {
+                                            sin = f58;
                                         }
-                                        fArr3[i13] = (f52 * nextFloat6) + (sin * L4);
-                                        f35 = 0.0f;
+                                        fArr6[i13] = (f31 * nextFloat6) + (sin * L4);
+                                        f17 = 0.0f;
                                         fArr[i13] = 0.0f;
-                                        fArr9[i13] = org.telegram.ui.Cells.y0.g(random, 1.2f, 1.1f);
+                                        fArr8[i13] = org.telegram.ui.Cells.c0.h(random, 1.2f, 1.1f);
                                         fArr2[i13] = org.telegram.messenger.g0.N((random.nextFloat() * 0.6f) + 0.55f);
-                                        fArr5[i13] = random.nextFloat() * 6.28f;
+                                        fArr4[i13] = random.nextFloat() * 6.28f;
                                         i14 = i16;
-                                        iArr3[i13] = random.nextInt(i14);
-                                        zArr3[i13] = z11;
+                                        iArr[i13] = random.nextInt(i14);
+                                        zArr3[i13] = z12;
                                         zArr[i13] = true;
                                     }
                                 }
-                                cos = 0.0f;
-                                if (random.nextFloat() >= 0.3f) {
+                                f31 = 0.0f;
+                                if (random.nextFloat() >= f52) {
                                 }
                                 if (z11) {
                                 }
-                                float L42 = org.telegram.messenger.g0.L(g10);
-                                f31 = f30;
-                                float nextFloat62 = (random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(f31);
-                                fArr11[i13] = f29;
-                                fArr10[i13] = f28;
-                                if (!z11) {
+                                float L42 = org.telegram.messenger.g0.L(h);
+                                f34 = f33;
+                                float nextFloat62 = (random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(f34);
+                                fArr10[i13] = f29;
+                                fArr9[i13] = f32;
+                                float f582 = -sin;
+                                fArr7[i13] = (f582 * nextFloat62) + ((!z12 ? -f31 : f31) * L42);
+                                if (z12) {
                                 }
-                                float f522 = cos;
-                                float f532 = -sin;
-                                fArr8[i13] = (f532 * nextFloat62) + (f51 * L42);
-                                if (z11) {
-                                }
-                                fArr3[i13] = (f522 * nextFloat62) + (sin * L42);
-                                f35 = 0.0f;
+                                fArr6[i13] = (f31 * nextFloat62) + (sin * L42);
+                                f17 = 0.0f;
                                 fArr[i13] = 0.0f;
-                                fArr9[i13] = org.telegram.ui.Cells.y0.g(random, 1.2f, 1.1f);
+                                fArr8[i13] = org.telegram.ui.Cells.c0.h(random, 1.2f, 1.1f);
                                 fArr2[i13] = org.telegram.messenger.g0.N((random.nextFloat() * 0.6f) + 0.55f);
-                                fArr5[i13] = random.nextFloat() * 6.28f;
+                                fArr4[i13] = random.nextFloat() * 6.28f;
                                 i14 = i16;
-                                iArr3[i13] = random.nextInt(i14);
-                                zArr3[i13] = z11;
+                                iArr[i13] = random.nextInt(i14);
+                                zArr3[i13] = z12;
                                 zArr[i13] = true;
                             }
                             i16 = i14;
-                            f22 = f31;
+                            f53 = f28;
+                            f24 = f34;
                             f16 = 3.0f;
                             f14 = 4.0f;
-                            f19 = 12.0f;
+                            f20 = 12.0f;
                         }
+                        f21 = f53;
                     } else {
-                        fArr = fArr12;
-                        fArr2 = fArr6;
-                        fArr3 = fArr7;
+                        fArr = fArr11;
+                        fArr2 = fArr5;
+                        iArr = iArr4;
                         zArr = zArr2;
                     }
                     int i18 = 0;
@@ -608,126 +627,130 @@ public final class s0 {
                             if (zArr[i21]) {
                                 if (zArr3[i21] == (i18 == i20)) {
                                     if (i18 == 0) {
-                                        float f54 = fArr[i21] + f20;
-                                        fArr[i21] = f54;
-                                        if (f54 >= fArr9[i21]) {
+                                        float f59 = fArr[i21] + f21;
+                                        fArr[i21] = f59;
+                                        if (f59 >= fArr8[i21]) {
                                             zArr[i21] = false;
                                         } else {
-                                            fArr11[i21] = (fArr8[i21] * f20) + fArr11[i21];
-                                            fArr10[i21] = (fArr3[i21] * f20) + fArr10[i21];
-                                            float f55 = f15 - (f20 * 0.6f);
-                                            fArr8[i21] = fArr8[i21] * f55;
-                                            fArr3[i21] = fArr3[i21] * f55;
+                                            fArr10[i21] = (fArr7[i21] * f21) + fArr10[i21];
+                                            fArr9[i21] = (fArr6[i21] * f21) + fArr9[i21];
+                                            float f60 = f39 - (f21 * 0.6f);
+                                            fArr7[i21] = fArr7[i21] * f60;
+                                            fArr6[i21] = fArr6[i21] * f60;
                                         }
                                     }
-                                    float f56 = fArr[i21] / fArr9[i21];
-                                    float f57 = f15;
-                                    float min3 = Math.min(f57, f56 / 0.15f);
-                                    float f58 = f57 - f56;
-                                    i12 = i21;
-                                    float B = com.google.android.gms.internal.vision.e2.B((float) Math.sin((fArr[i21] * 9.0f) + fArr5[i21]), 0.3f, 0.7f, com.google.android.gms.internal.vision.e2.D(min3, f58, f58, f11));
+                                    float f61 = fArr[i21] / fArr8[i21];
+                                    float f62 = f39;
+                                    float min3 = Math.min(f62, f61 / 0.15f);
+                                    float f63 = f62 - f61;
+                                    f26 = f38;
+                                    f27 = f52;
+                                    float B = com.google.android.gms.internal.vision.e2.B((float) Math.sin((fArr[i21] * 9.0f) + fArr4[i21]), f27, f26, com.google.android.gms.internal.vision.e2.D(min3, f63, f63, f11));
                                     if (B > 0.02f) {
-                                        paint2.setColor(zArr3[i12] ? i0.a.f(0.3f, iArr2[iArr3[i12]], -1) : i0.a.f(0.82f, iArr2[iArr3[i12]], -1));
-                                        paint2.setAlpha((int) (Math.min(1.0f, B * (zArr3[i12] ? f23 : 1.0f)) * 255.0f));
-                                        canvas3.drawCircle(fArr11[i12], fArr10[i12], fArr2[i12], paint2);
-                                        i21 = i12 + 1;
+                                        paint2.setColor(zArr3[i21] ? i0.a.f(f27, iArr3[iArr[i21]], -1) : i0.a.f(0.82f, iArr3[iArr[i21]], -1));
+                                        paint2.setAlpha((int) (Math.min(1.0f, B * (zArr3[i21] ? f51 : 1.0f)) * 255.0f));
+                                        canvas3.drawCircle(fArr10[i21], fArr9[i21], fArr2[i21], paint2);
+                                        i21++;
+                                        f38 = f26;
+                                        f52 = f27;
                                         i20 = 1;
-                                        f15 = 1.0f;
+                                        f39 = 1.0f;
                                     }
-                                    i21 = i12 + 1;
+                                    i21++;
+                                    f38 = f26;
+                                    f52 = f27;
                                     i20 = 1;
-                                    f15 = 1.0f;
+                                    f39 = 1.0f;
                                 }
                             }
-                            i12 = i21;
-                            i21 = i12 + 1;
+                            f26 = f38;
+                            f27 = f52;
+                            i21++;
+                            f38 = f26;
+                            f52 = f27;
                             i20 = 1;
-                            f15 = 1.0f;
+                            f39 = 1.0f;
                         }
+                        float f64 = f38;
+                        float f65 = f52;
                         if (i18 == i20) {
                             canvas3.restore();
                         }
                         i18++;
+                        f38 = f64;
+                        f52 = f65;
                         i19 = 2;
                         i15 = 1;
-                        f15 = 1.0f;
+                        f39 = 1.0f;
                     }
+                    i7 = -1;
                     for (int i22 = 0; i22 < 140; i22++) {
                         if (zArr[i22] && zArr3[i22]) {
-                            float f59 = fArr[i22] + f20;
-                            fArr[i22] = f59;
-                            if (f59 >= fArr9[i22]) {
+                            float f66 = fArr[i22] + f21;
+                            fArr[i22] = f66;
+                            if (f66 >= fArr8[i22]) {
                                 zArr[i22] = false;
                             } else {
-                                fArr11[i22] = (fArr8[i22] * f20) + fArr11[i22];
-                                fArr10[i22] = (fArr3[i22] * f20) + fArr10[i22];
-                                float f60 = 1.0f - (f20 * 0.6f);
-                                fArr8[i22] = fArr8[i22] * f60;
-                                fArr3[i22] = fArr3[i22] * f60;
+                                fArr10[i22] = (fArr7[i22] * f21) + fArr10[i22];
+                                fArr9[i22] = (fArr6[i22] * f21) + fArr9[i22];
+                                float f67 = 1.0f - (f21 * 0.6f);
+                                fArr7[i22] = fArr7[i22] * f67;
+                                fArr6[i22] = fArr6[i22] * f67;
                             }
                         }
                     }
                 } else {
-                    f23 = f18;
-                    f24 = 0.02f;
+                    f25 = 0.02f;
+                    i7 = -1;
                 }
                 canvas3.save();
                 canvas3.clipPath(path);
-                i7 = 0;
-                while (i7 < 140) {
+                for (i10 = 0; i10 < 140; i10++) {
                     boolean[] zArr4 = this.s;
-                    if (zArr4[i7]) {
-                        float[] fArr13 = this.o;
-                        float f61 = fArr13[i7] + f20;
-                        fArr13[i7] = f61;
-                        float[] fArr14 = this.n;
-                        if (f61 >= fArr14[i7]) {
-                            zArr4[i7] = false;
+                    if (zArr4[i10]) {
+                        float[] fArr12 = this.o;
+                        float f68 = fArr12[i10] + f21;
+                        fArr12[i10] = f68;
+                        float[] fArr13 = this.n;
+                        if (f68 >= fArr13[i10]) {
+                            zArr4[i10] = false;
                         } else {
-                            float[] fArr15 = this.j;
-                            float f62 = fArr15[i7];
-                            float[] fArr16 = this.l;
-                            fArr15[i7] = (fArr16[i7] * f20) + f62;
-                            float[] fArr17 = this.k;
-                            float f63 = fArr17[i7];
-                            float[] fArr18 = this.m;
-                            fArr17[i7] = (fArr18[i7] * f20) + f63;
-                            float f64 = 1.0f - (f20 * f23);
-                            fArr16[i7] = fArr16[i7] * f64;
-                            fArr18[i7] = fArr18[i7] * f64;
-                            float f65 = fArr13[i7] / fArr14[i7];
-                            f25 = f20;
-                            float sin3 = ((((float) Math.sin((fArr13[i7] * 14.0f) + this.q[i7])) * f21) + 0.6f) * com.google.android.gms.internal.vision.e2.C(f65, f65, 1.0f, Math.min(1.0f, f65 / 0.12f)) * f11;
-                            if (sin3 > f24) {
-                                boolean z14 = this.h;
-                                int[] iArr4 = this.r;
-                                if (z14) {
-                                    int i23 = iArr4[i7];
-                                    i10 = e(i23 == 0 ? -1 : i23 == 1 ? -4200705 : -2964225);
-                                    i11 = e(iArr4[i7] == 2 ? -6652929 : -9455873);
+                            float[] fArr14 = this.j;
+                            float f69 = fArr14[i10];
+                            float[] fArr15 = this.l;
+                            fArr14[i10] = (fArr15[i10] * f21) + f69;
+                            float[] fArr16 = this.k;
+                            float f70 = fArr16[i10];
+                            float[] fArr17 = this.m;
+                            fArr16[i10] = (fArr17[i10] * f21) + f70;
+                            float f71 = 1.0f - (f21 * f51);
+                            fArr15[i10] = fArr15[i10] * f71;
+                            fArr17[i10] = fArr17[i10] * f71;
+                            float f72 = fArr12[i10] / fArr13[i10];
+                            float sin3 = ((((float) Math.sin((fArr12[i10] * 14.0f) + this.q[i10])) * f23) + 0.6f) * com.google.android.gms.internal.vision.e2.C(f72, f72, 1.0f, Math.min(1.0f, f72 / 0.12f)) * f11;
+                            if (sin3 > f25) {
+                                boolean z15 = this.h;
+                                int[] iArr5 = this.r;
+                                if (z15) {
+                                    int i23 = iArr5[i10];
+                                    i11 = e(i23 == 0 ? i7 : i23 == 1 ? -4200705 : -2964225);
+                                    i12 = e(iArr5[i10] == 2 ? -6652929 : -9455873);
                                 } else {
-                                    i10 = iArr2[iArr4[i7]];
-                                    i11 = -6295334;
+                                    i11 = iArr3[iArr5[i10]];
+                                    i12 = -6295334;
                                 }
-                                paint2.setColor(i11);
+                                paint2.setColor(i12);
                                 paint2.setAlpha((int) (sin3 * 255.0f * (this.h ? 0.22f : 0.18f)));
-                                float f66 = fArr15[i7];
-                                float f67 = fArr17[i7];
-                                float[] fArr19 = this.p;
-                                canvas3.drawCircle(f66, f67, fArr19[i7] * 2.4f, paint2);
-                                paint2.setColor(i10);
+                                float f73 = fArr14[i10];
+                                float f74 = fArr16[i10];
+                                float[] fArr18 = this.p;
+                                canvas3.drawCircle(f73, f74, fArr18[i10] * 2.4f, paint2);
+                                paint2.setColor(i11);
                                 paint2.setAlpha((int) (Math.min(1.0f, sin3 * (this.h ? 1.0f : 0.85f)) * 255.0f));
-                                canvas3.drawCircle(fArr15[i7], fArr17[i7], fArr19[i7], paint2);
-                                i7++;
-                                f20 = f25;
+                                canvas3.drawCircle(fArr14[i10], fArr16[i10], fArr18[i10], paint2);
                             }
-                            i7++;
-                            f20 = f25;
                         }
                     }
-                    f25 = f20;
-                    i7++;
-                    f20 = f25;
                 }
                 canvas3.restore();
             }
@@ -736,9 +759,10 @@ public final class s0 {
         canvas2 = canvas;
         f15 = 1.0f;
         f16 = 3.0f;
-        f17 = 0.9f;
-        f18 = 0.8f;
-        f19 = 12.0f;
+        f17 = 0.0f;
+        f18 = 0.9f;
+        f19 = 0.8f;
+        f20 = 12.0f;
         int e10 = this.h ? e(-14717953) : -13712186;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, rectF.width(), 0.0f, new int[]{e10, this.h ? e(-13051649) : -12793440, this.h ? e(-9546241) : -11553808, e10}, (float[]) null, Shader.TileMode.MIRROR);
         Matrix matrix = this.e;
@@ -750,46 +774,45 @@ public final class s0 {
         paint3.setShader(linearGradient);
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(10.0f));
         paint3.setMaskFilter(new BlurMaskFilter(org.telegram.messenger.g0.L(12.0f), BlurMaskFilter.Blur.NORMAL));
-        float f68 = f11 * 255.0f;
-        paint3.setAlpha((int) com.google.android.gms.internal.vision.e2.B(f13, 0.2f, 0.8f, (this.h ? 0.7f : 0.45f) * f68));
+        paint3.setAlpha((int) (Math.min(1.0f, ((0.2f * f13) + 0.8f) * (this.h ? this.F * 0.7f : 0.45f) * f11) * 255.0f));
         canvas2.drawRoundRect(rectF, f10, f10, paint3);
         Paint paint4 = this.d;
         paint4.setShader(linearGradient);
         paint4.setStrokeWidth(org.telegram.messenger.g0.L(1.3f));
-        paint4.setAlpha((int) (f68 * 0.9f));
+        paint4.setAlpha((int) (Math.min(1.0f, f11 * 0.9f * (this.h ? this.E : 1.0f)) * 255.0f));
         RectF rectF3 = this.g;
         rectF3.set(rectF);
         rectF3.inset(org.telegram.messenger.g0.L(0.6f), org.telegram.messenger.g0.L(0.6f));
         canvas2.drawRoundRect(rectF3, f10, f10, paint4);
         long uptimeMillis22 = SystemClock.uptimeMillis();
-        float f352 = 0.0f;
+        float f392 = f15;
         if (this.u != 0) {
         }
         this.u = uptimeMillis22;
         Random random2 = this.t;
         if (f11 <= 0.3f) {
         }
+        float f512 = f19;
         RectF rectF22 = this.y;
         equals = rectF22.equals(rectF);
         Path path2 = this.x;
         if (!equals) {
         }
         z10 = this.h;
-        int[] iArr22 = this.A;
+        int[] iArr32 = this.A;
         Paint paint22 = this.f;
         if (z10) {
         }
         canvas3.save();
         canvas3.clipPath(path2);
-        i7 = 0;
-        while (i7 < 140) {
+        while (i10 < 140) {
         }
         canvas3.restore();
     }
 
     public final void f() {
         for (int i7 = 0; i7 < 140; i7++) {
-            this.O[i7] = false;
+            this.R[i7] = false;
         }
         for (int i10 = 0; i10 < 140; i10++) {
             this.s[i10] = false;
@@ -831,7 +854,7 @@ public final class s0 {
                     f15 = t0.d(f21);
                     f12 = t0.d(f22);
                     c10 = 1;
-                    f16 = i20.z(f18, 0.16f, 0.95f, f16);
+                    f16 = n10.A(f18, 0.16f, 0.95f, f16);
                 } else {
                     c10 = 1;
                     f15 = h7 - 28.0f;
@@ -903,7 +926,13 @@ public final class s0 {
         }
     }
 
-    public final void i(float f10, float f11, float f12, float f13, float f14, float f15) {
+    public final void i() {
+        this.E = 0.7f;
+        this.F = 0.6f;
+        this.G = 0.85f;
+    }
+
+    public final void j(float f10, float f11, float f12, float f13, float f14, float f15) {
         float[] fArr;
         float[] fArr2;
         boolean[] zArr;

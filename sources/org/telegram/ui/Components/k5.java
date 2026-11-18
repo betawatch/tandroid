@@ -1,40 +1,153 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import java.lang.ref.WeakReference;
+import android.os.Looper;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k5 implements m5 {
-    public final WeakReference a;
-    public final boolean b;
-    public Layout c;
-    public p5 d;
-    public Rect e;
-    public g5 f;
-    public org.telegram.messenger.f6 h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean w;
+public final class k5 {
+    public HashMap a;
+    public HashMap b;
+    public HashSet c;
+    public lg d;
+    public final int e;
 
-    public k5(View view, boolean z10) {
-        this.a = new WeakReference(view);
-        this.b = z10;
+    public k5(int i7) {
+        this.e = i7;
     }
 
-    @Override // org.telegram.ui.Components.m5
-    public final void invalidate() {
-        View view = (View) this.a.get();
-        if (view == null) {
+    public static boolean a() {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            return true;
+        }
+        boolean z10 = org.telegram.messenger.s2.a;
+        org.telegram.messenger.a8.e("EmojiDocumentFetcher", new IllegalStateException("Wrong thread"));
+        return false;
+    }
+
+    public final void b(long j3, l5 l5Var) {
+        TLRPC.Document document;
+        if (j3 == 0) {
             return;
         }
-        if (!this.b || view.getParent() == null) {
-            view.invalidate();
-        } else {
-            ((View) view.getParent()).invalidate();
+        synchronized (this) {
+            try {
+                HashMap hashMap = this.a;
+                if (hashMap != null && (document = (TLRPC.Document) hashMap.get(Long.valueOf(j3))) != null) {
+                    if (l5Var != null) {
+                        l5Var.a(document);
+                    }
+                    return;
+                }
+                if (a()) {
+                    if (this.b == null) {
+                        this.b = new HashMap();
+                    }
+                    ArrayList arrayList = (ArrayList) this.b.get(Long.valueOf(j3));
+                    if (arrayList != null) {
+                        arrayList.add(l5Var);
+                        return;
+                    }
+                    ArrayList arrayList2 = new ArrayList(1);
+                    arrayList2.add(l5Var);
+                    this.b.put(Long.valueOf(j3), arrayList2);
+                    if (this.c == null) {
+                        this.c = new HashSet();
+                    }
+                    this.c.add(Long.valueOf(j3));
+                    if (this.d != null) {
+                        return;
+                    }
+                    lg lgVar = new lg(this, 5);
+                    this.d = lgVar;
+                    org.telegram.messenger.g0.g3(lgVar);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final TLRPC.InputStickerSet c(long j3) {
+        synchronized (this) {
+            try {
+                HashMap hashMap = this.a;
+                if (hashMap == null) {
+                    return null;
+                }
+                TLRPC.Document document = (TLRPC.Document) hashMap.get(Long.valueOf(j3));
+                if (document == null) {
+                    return null;
+                }
+                return org.telegram.messenger.fj.i1(document);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void d(ArrayList arrayList) {
+        ArrayList arrayList2;
+        if (a()) {
+            o5.w();
+            for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                if (arrayList.get(i7) instanceof TLRPC.Document) {
+                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i7);
+                    e(document);
+                    HashMap hashMap = this.b;
+                    if (hashMap != null && (arrayList2 = (ArrayList) hashMap.remove(Long.valueOf(document.id))) != null) {
+                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
+                            l5 l5Var = (l5) arrayList2.get(i10);
+                            if (l5Var != null) {
+                                l5Var.a(document);
+                            }
+                        }
+                        arrayList2.clear();
+                    }
+                }
+            }
+        }
+    }
+
+    public final void e(TLRPC.Document document) {
+        if (document == null) {
+            return;
+        }
+        synchronized (this) {
+            try {
+                if (this.a == null) {
+                    this.a = new HashMap();
+                }
+                this.a.put(Long.valueOf(document.id), document);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void f(ArrayList arrayList) {
+        if (arrayList == null) {
+            return;
+        }
+        synchronized (this) {
+            try {
+                if (this.a == null) {
+                    this.a = new HashMap();
+                }
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    TLRPC.Document document = (TLRPC.Document) obj;
+                    this.a.put(Long.valueOf(document.id), document);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 }

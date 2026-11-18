@@ -1,35 +1,51 @@
 package ch;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.j1;
+import org.telegram.ui.ActionBar.s4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l extends e0 {
-    public final /* synthetic */ o i2;
+public final class l extends j1 {
+    public final /* synthetic */ ai.k0 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(o oVar, Context context, e6 e6Var, int i7) {
-        super(i7, context, e6Var);
-        this.i2 = oVar;
+    public l(ai.k0 k0Var, ai.k0 k0Var2) {
+        super(k0Var2);
+        this.x = k0Var;
     }
 
-    @Override // org.telegram.ui.Components.ft
-    public final void G(int i7, int i10) {
-        if (i10 > i7) {
-            this.i2.F.w0(0, org.telegram.messenger.g0.L(30.0f), null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ft, android.widget.EditText, android.widget.TextView
-    public final boolean onTextContextMenuItem(int i7) {
-        if (i7 == R.id.menu_delete || i7 == 16908320) {
-            return this.i2.g0();
-        }
-        if (i7 == 16908322 || i7 == 16908321) {
+    @Override // org.telegram.ui.ActionBar.j1
+    public final boolean b() {
+        boolean z10;
+        boolean z11;
+        p pVar = (p) this.x.c;
+        s4 parentLayout = pVar.getParentLayout();
+        z10 = ((h2) pVar).inPreviewMode;
+        if (z10 || org.telegram.messenger.g0.Q1()) {
             return false;
         }
-        return super.onTextContextMenuItem(i7);
+        z11 = ((h2) pVar).inBubbleMode;
+        return (z11 || org.telegram.messenger.g0.E || parentLayout == null) ? false : true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.j1
+    public final void e(float f10, float f11, boolean z10) {
+        p pVar = (p) this.x.c;
+        if (pVar.getParentLayout() != null) {
+            boolean z11 = ((ActionBarLayout) pVar.getParentLayout()).n;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.j1
+    public final void g(int i7, boolean z10) {
+        p pVar = (p) this.x.c;
+        pVar.w.setVisibility(0);
+        pVar.w.animate().alpha(!z10 ? 1.0f : 0.0f).withEndAction(new k(0, this, z10)).start();
+    }
+
+    @Override // org.telegram.ui.ActionBar.j1
+    public final void f() {
     }
 }

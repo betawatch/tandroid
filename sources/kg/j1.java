@@ -1,200 +1,125 @@
 package kg;
 
-import a8.ja;
 import android.content.Context;
-import android.graphics.SurfaceTexture;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.os.Looper;
-import ki.w2;
-import ki.x3;
-import oi.d2;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Cells.i3;
-import org.telegram.ui.Cells.k3;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import c8.ma;
+import java.util.HashSet;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.h20;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.o80;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class j1 extends LinearLayout implements c6 {
+    public final i6 a;
+    public final o80 b;
+    public final ImageReceiver c;
+    public final TextView d;
+    public boolean e;
 
-    public /* synthetic */ j1(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public j1(Context context, i6 i6Var) {
+        super(context);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.c = imageReceiver;
+        this.a = i6Var;
+        setOrientation(1);
+        o80 o80Var = new o80();
+        this.b = o80Var;
+        int i7 = n6.G6;
+        int w02 = n6.w0(i7, i6Var);
+        o80Var.g(n6.r1(0.05f, w02), n6.r1(0.15f, w02), n6.r1(0.1f, w02), n6.r1(0.3f, w02));
+        o80Var.k(4.0f);
+        o80Var.x.setStrokeWidth(org.telegram.messenger.g0.L(1.0f));
+        imageReceiver.J0(org.telegram.messenger.g0.L(4.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setGravity(gd.a0 ? 5 : 3);
+        u6.U(textView, i7, i6Var);
+        textView.setTextSize(1, 16.0f);
+        boolean z10 = gd.a0;
+        addView(textView, ma.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
+        TextView textView2 = new TextView(context);
+        textView2.setGravity(gd.a0 ? 5 : 3);
+        n10.r(textView2, n6.z6, i6Var, null, 2131752678);
+        textView2.setTextSize(1, 13.0f);
+        boolean z11 = gd.a0;
+        addView(textView2, ma.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Object obj;
-        int i7 = this.a;
-        int i10 = 0;
-        Object obj2 = this.b;
-        switch (i7) {
-            case 0:
-                ((bi.o1) obj2).a(Boolean.FALSE);
-                return;
-            case 1:
-                ns.f(((v1) obj2).a).k(ns.F1, new Object[0]);
-                return;
-            case 2:
-                ((ki.e0) obj2).invalidateSelf();
-                return;
-            case 3:
-                ((ki.f0) obj2).invalidateSelf();
-                return;
-            case 4:
-                ((ki.h0) obj2).d();
-                return;
-            case 5:
-                ((ki.t0) obj2).c();
-                return;
-            case 6:
-                ((ki.t0) obj2).c();
-                return;
-            case 7:
-                ((ki.u0) obj2).a();
-                return;
-            case 8:
-                ((ki.v0) obj2).a();
-                return;
-            case 9:
-                ((w2) obj2).invalidate();
-                return;
-            case 10:
-                ((h2.f) obj2).e();
-                return;
-            case 11:
-                x3 x3Var = (x3) obj2;
-                x3Var.R = x3Var.r;
-                return;
-            case 12:
-                l2.f0 f0Var = (l2.f0) obj2;
-                h2.c cVar = f0Var.C;
-                Context context = f0Var.e;
-                String str = h2.l0.a;
-                int generateAudioSessionId = f2.h.d(context).generateAudioSessionId();
-                if (generateAudioSessionId == -1) {
-                    generateAudioSessionId = 0;
-                }
-                cVar.getClass();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper == ((h2.i0) cVar.c).a.getLooper()) {
-                    obj = cVar.e;
-                } else {
-                    ja.p(myLooper == ((h2.i0) cVar.b).a.getLooper());
-                    obj = cVar.f;
-                }
-                if (((Integer) obj).intValue() != generateAudioSessionId) {
-                    Integer valueOf = Integer.valueOf(generateAudioSessionId);
-                    cVar.f = valueOf;
-                    h2.b bVar = new h2.b(cVar, valueOf, i10);
-                    h2.i0 i0Var = (h2.i0) cVar.c;
-                    if (i0Var.a.getLooper().getThread().isAlive()) {
-                        i0Var.d(bVar);
-                    }
-                    f0Var.t1(1, 10, Integer.valueOf(generateAudioSessionId));
-                    f0Var.t1(2, 10, Integer.valueOf(generateAudioSessionId));
-                    return;
-                }
-                return;
-            case 13:
-                l2.f0 f0Var2 = ((l2.z) obj2).a;
-                f0Var2.x1(null);
-                f0Var2.q1(0, 0);
-                return;
-            case 14:
-                try {
-                    l2.o0.f((l2.j1) obj2);
-                    return;
-                } catch (l2.l e10) {
-                    h2.a.d("ExoPlayerImplInternal", "Unexpected error delivering message on external thread.", e10);
-                    throw new RuntimeException(e10);
-                }
-            case 15:
-                m2.e eVar = (m2.e) obj2;
-                m2.a Q = eVar.Q();
-                eVar.V(Q, 1028, new li.p(Q, 22));
-                eVar.f.d();
-                return;
-            case 16:
-                ((mh.b) obj2).invalidate();
-                return;
-            case 17:
-                ((n2.e) obj2).c();
-                return;
-            case 18:
-                h2.r rVar = (h2.r) obj2;
-                rVar.getClass();
-                if (Thread.currentThread() == rVar.a) {
-                    rVar.e(-1, new n2.a0(0));
-                    return;
-                }
-                return;
-            case 19:
-                n2.r0 r0Var = (n2.r0) obj2;
-                if (r0Var.a0 >= 300000) {
-                    r0Var.n.q();
-                    r0Var.a0 = 0L;
-                    return;
-                }
-                return;
-            case 20:
-                nh.c cVar2 = (nh.c) obj2;
-                GroupCallMessage groupCallMessage = cVar2.I;
-                if (groupCallMessage != null) {
-                    cVar2.a.a(groupCallMessage.isSendDelayed(), true);
-                    cVar2.b.a(cVar2.I.isSendError(), true);
-                    return;
-                }
-                return;
-            case 21:
-                i3 i3Var = ((k3) obj2).d;
-                i3Var.requestFocus();
-                org.telegram.messenger.g0.J3(i3Var);
-                return;
-            case 22:
-                org.telegram.messenger.g0.J3(((oi.u) obj2).a2.d);
-                return;
-            case 23:
-                ((oi.a0) obj2).invalidate();
-                return;
-            case 24:
-                ga.d dVar = (ga.d) obj2;
-                dVar.d = null;
-                dVar.e = null;
-                dVar.f = null;
-                dVar.h = null;
-                dVar.j(null);
-                return;
-            case 25:
-                ((oi.w1) obj2).invalidateSelf();
-                return;
-            case 26:
-                ((d2) obj2).c();
-                return;
-            case 27:
-                TLParseException.lambda$doThrowOrLog$0((TLParseException) obj2);
-                return;
-            case 28:
-                Drawable drawable = ActionBarLayout.w1;
-                org.telegram.messenger.g0.h3((ci.p0) obj2);
-                return;
-            default:
-                ((org.telegram.ui.ActionBar.p0) obj2).setSelectedForDelete(false);
-                return;
+    public final void a(TLRPC.TL_businessLocation tL_businessLocation, boolean z10) {
+        if (tL_businessLocation != null) {
+            this.d.setText(tL_businessLocation.address);
+            if (tL_businessLocation.geo_point != null) {
+                this.c.p0(fc.p(h20.b(tL_businessLocation.geo_point, org.telegram.messenger.g0.L(44.0f), org.telegram.messenger.g0.L(44.0f), 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), "44_44", this.b, 0L, null, null, 0);
+            } else {
+                this.c.w0(null);
+            }
+        }
+        this.e = z10;
+        setPadding(0, 0, 0, z10 ? 1 : 0);
+        invalidate();
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float L = gd.a0 ? org.telegram.messenger.g0.L(16.0f) : getWidth() - org.telegram.messenger.g0.L(60.0f);
+        float L2 = org.telegram.messenger.g0.L(8.0f);
+        float L3 = org.telegram.messenger.g0.L(44.0f);
+        float L4 = org.telegram.messenger.g0.L(44.0f);
+        ImageReceiver imageReceiver = this.c;
+        imageReceiver.y0(L, L2, L3, L4);
+        imageReceiver.h(canvas, null);
+        super.onDraw(canvas);
+        if (this.e) {
+            Paint W0 = n6.W0("paintDivider", this.a);
+            if (W0 == null) {
+                W0 = n6.k0;
+            }
+            canvas.drawRect(org.telegram.messenger.g0.L(gd.a0 ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(gd.a0 ? 21.33f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 
-    public /* synthetic */ j1(l2.z zVar, SurfaceTexture surfaceTexture) {
-        this.a = 13;
-        this.b = zVar;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
     }
 
-    public /* synthetic */ j1(l2.o0 o0Var, l2.j1 j1Var) {
-        this.a = 14;
-        this.b = j1Var;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        o80 o80Var = this.b;
+        if (o80Var != null) {
+            try {
+                int w02 = n6.w0(n6.G6, this.a);
+                o80Var.g(n6.r1(0.05f, w02), n6.r1(0.15f, w02), n6.r1(0.1f, w02), n6.r1(0.3f, w02));
+                invalidate();
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.b || super.verifyDrawable(drawable);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

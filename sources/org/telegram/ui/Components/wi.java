@@ -1,26 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class wi extends v4.c0 {
-    public final /* synthetic */ gi.g r;
+public final /* synthetic */ class wi implements org.telegram.messenger.v10, org.telegram.messenger.w10 {
+    public final /* synthetic */ cj a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wi(gi.g gVar, Context context) {
-        super(context);
-        this.r = gVar;
+    @Override // org.telegram.messenger.w10
+    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+        this.a.R(l41Var, view);
+        return Boolean.TRUE;
     }
 
-    @Override // v4.c0
-    public final int k(int i7, View view) {
-        return org.telegram.messenger.k5.B(7.0f, ((yi) this.r.R).n.getPaddingTop(), super.k(i7, view));
-    }
-
-    @Override // v4.c0
-    public final int m(int i7) {
-        return super.m(i7) * 2;
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.R((l41) obj, (View) obj2);
     }
 }

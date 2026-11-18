@@ -2,27 +2,14 @@ package org.telegram.ui.Components;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hl0 implements View.OnClickListener {
-    public final /* synthetic */ di.i4 a;
+public interface hl0 {
+    void D();
 
-    public hl0(di.i4 i4Var) {
-        this.a = i4Var;
-    }
+    void a(int i7, boolean z10);
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        il0 il0Var = (il0) this.a.d;
-        for (int i7 = 0; i7 < il0Var.e.size(); i7++) {
-            org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) il0Var.e.get(i7);
-            if (il0Var.I) {
-                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.m10.t0).a).f(gjVar.F0());
-            } else {
-                org.telegram.messenger.w7.G(org.telegram.messenger.c.a(org.telegram.messenger.m10.t0).a).W(gjVar.F0(), gjVar, 0, 0);
-                org.telegram.messenger.z5.q(il0Var.d).y();
-            }
-        }
-        il0Var.d(true);
-    }
+    void g(float f10);
+
+    boolean h1(int i7, View view);
 }

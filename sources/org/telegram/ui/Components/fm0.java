@@ -1,11 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.content.Context;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface fm0 {
-    void A(float f10);
+public final class fm0 extends is {
+    public final /* synthetic */ org.telegram.ui.kw l0;
 
-    void D(org.telegram.ui.Cells.t2 t2Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fm0(org.telegram.ui.kw kwVar, ck0 ck0Var, Context context, int i7, int i10) {
+        super(ck0Var, context, i7, i10, false, null);
+        this.l0 = kwVar;
+    }
 
-    void finish();
+    @Override // org.telegram.ui.Components.z41
+    public final void O(boolean z10) {
+        ArrayList arrayList;
+        super.O(z10);
+        em0 em0Var = this.l0.o0;
+        em0Var.e(this.c0 || this.d0 || (arrayList = this.W) == null || !arrayList.isEmpty(), z10);
+        em0Var.d.setText(org.telegram.messenger.gd.M0(2131747975, null));
+        em0Var.e.setVisibility(8);
+    }
 }

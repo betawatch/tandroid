@@ -1,114 +1,77 @@
 package hi;
 
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.SQLite.SQLitePreparedStatement;
-import org.telegram.messenger.vr;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements Runnable {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class x0 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
-    public final /* synthetic */ z0 c;
+    public final /* synthetic */ b1 b;
 
-    public /* synthetic */ x0(vr vrVar, z0 z0Var, int i7) {
+    public /* synthetic */ x0(b1 b1Var, int i7) {
         this.a = i7;
-        this.b = vrVar;
-        this.c = z0Var;
+        this.b = b1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        SQLiteDatabase sQLiteDatabase;
-        SQLiteDatabase sQLiteDatabase2;
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        File file;
+        File file2;
+        ArrayList arrayList = (ArrayList) obj;
         switch (this.a) {
             case 0:
-                vr vrVar = this.b;
-                z0 z0Var = this.c;
-                SQLitePreparedStatement sQLitePreparedStatement = null;
-                try {
-                    try {
-                        sQLiteDatabase = vrVar.b;
-                    } catch (Exception e10) {
-                        org.telegram.messenger.a8.g(e10, true);
-                        if (sQLitePreparedStatement == null) {
-                            return;
-                        }
+                long currentTimeMillis = System.currentTimeMillis();
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                ArrayList arrayList4 = new ArrayList();
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    d7 a10 = ((a1) arrayList.get(i7)).a();
+                    if ((a10.v() || ((file = a10.L) != null && file.exists())) && currentTimeMillis - a10.d <= 604800000) {
+                        arrayList4.add(a10);
+                        arrayList2.add(Long.valueOf(a10.b));
+                    } else {
+                        arrayList3.add(a10);
                     }
-                    if (sQLiteDatabase == null) {
-                        return;
-                    }
-                    sQLitePreparedStatement = sQLiteDatabase.executeFast("REPLACE INTO story_drafts VALUES (?, ?, ?, ?)");
-                    sQLitePreparedStatement.requery();
-                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(true);
-                    z0Var.b(nativeByteBuffer);
-                    NativeByteBuffer nativeByteBuffer2 = new NativeByteBuffer(nativeByteBuffer.length());
-                    z0Var.b(nativeByteBuffer2);
-                    sQLitePreparedStatement.bindLong(1, z0Var.a);
-                    int i7 = 2;
-                    sQLitePreparedStatement.bindLong(2, z0Var.b);
-                    sQLitePreparedStatement.bindByteBuffer(3, nativeByteBuffer2);
-                    if (z0Var.G) {
-                        i7 = 1;
-                    } else if (!z0Var.M) {
-                        i7 = 0;
-                    }
-                    sQLitePreparedStatement.bindInteger(4, i7);
-                    sQLitePreparedStatement.step();
-                    nativeByteBuffer2.reuse();
-                    sQLitePreparedStatement.dispose();
-                    sQLitePreparedStatement.dispose();
-                    return;
-                } catch (Throwable th2) {
-                    if (sQLitePreparedStatement != null) {
-                        sQLitePreparedStatement.dispose();
-                    }
-                    throw th2;
                 }
+                b1 b1Var = this.b;
+                b1Var.c(arrayList3);
+                b1Var.f = false;
+                b1Var.e = true;
+                fi.p6 R1 = mp.u1(b1Var.a).R1();
+                int size = arrayList4.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj2 = arrayList4.get(i10);
+                    i10++;
+                    fi.o6 o6Var = new fi.o6(R1, (d7) obj2);
+                    R1.d(o6Var.K, o6Var, R1.b, false);
+                }
+                ks.f(R1.a).k(ks.x5, new Object[0]);
+                break;
             default:
-                vr vrVar2 = this.b;
-                z0 z0Var2 = this.c;
-                SQLitePreparedStatement sQLitePreparedStatement2 = null;
-                try {
-                    try {
-                        sQLiteDatabase2 = vrVar2.b;
-                    } catch (Exception e11) {
-                        org.telegram.messenger.a8.g(e11, true);
-                        if (sQLitePreparedStatement2 == null) {
-                            return;
-                        }
+                b1 b1Var2 = this.b;
+                b1Var2.getClass();
+                long currentTimeMillis2 = System.currentTimeMillis();
+                ArrayList arrayList5 = new ArrayList();
+                ArrayList arrayList6 = new ArrayList();
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    d7 a11 = ((a1) arrayList.get(i11)).a();
+                    if ((a11.v() || ((file2 = a11.L) != null && file2.exists())) && (!a11.g ? currentTimeMillis2 - a11.d <= 604800000 : currentTimeMillis2 <= a11.J)) {
+                        b1Var2.b.add(a11);
+                        arrayList5.add(Long.valueOf(a11.b));
+                    } else {
+                        arrayList6.add(a11);
                     }
-                    if (sQLiteDatabase2 == null) {
-                        return;
-                    }
-                    sQLitePreparedStatement2 = sQLiteDatabase2.executeFast("INSERT INTO story_drafts VALUES (?, ?, ?, ?)");
-                    sQLitePreparedStatement2.requery();
-                    NativeByteBuffer nativeByteBuffer3 = new NativeByteBuffer(true);
-                    z0Var2.b(nativeByteBuffer3);
-                    NativeByteBuffer nativeByteBuffer4 = new NativeByteBuffer(nativeByteBuffer3.length());
-                    z0Var2.b(nativeByteBuffer4);
-                    sQLitePreparedStatement2.bindLong(1, z0Var2.a);
-                    int i10 = 2;
-                    sQLitePreparedStatement2.bindLong(2, z0Var2.b);
-                    sQLitePreparedStatement2.bindByteBuffer(3, nativeByteBuffer4);
-                    if (z0Var2.G) {
-                        i10 = 1;
-                    } else if (!z0Var2.M) {
-                        i10 = 0;
-                    }
-                    sQLitePreparedStatement2.bindInteger(4, i10);
-                    sQLitePreparedStatement2.step();
-                    nativeByteBuffer4.reuse();
-                    sQLitePreparedStatement2.dispose();
-                    sQLitePreparedStatement2.dispose();
-                    return;
-                } catch (Throwable th3) {
-                    if (sQLitePreparedStatement2 != null) {
-                        sQLitePreparedStatement2.dispose();
-                    }
-                    throw th3;
                 }
+                b1Var2.c(arrayList6);
+                b1Var2.d = false;
+                b1Var2.c = true;
+                ks.f(b1Var2.a).k(ks.A5, new Object[0]);
+                break;
         }
     }
 }

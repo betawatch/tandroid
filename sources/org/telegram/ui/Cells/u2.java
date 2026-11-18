@@ -7,13 +7,13 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class u2 extends z {
     public StaticLayout E;
@@ -23,7 +23,7 @@ public final class u2 extends z {
     public int I;
     public TLRPC.RecentMeUrl f;
     public ImageReceiver h;
-    public org.telegram.ui.Components.t8 n;
+    public org.telegram.ui.Components.b9 n;
     public int r;
     public StaticLayout s;
     public int w;
@@ -47,7 +47,7 @@ public final class u2 extends z {
         Canvas canvas2;
         if (this.H) {
             canvas2 = canvas;
-            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.u0);
+            canvas2.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.u0);
         } else {
             canvas2 = canvas;
         }
@@ -68,10 +68,10 @@ public final class u2 extends z {
             canvas2.restore();
         }
         if (this.F) {
-            z.s(this.w, org.telegram.messenger.g0.L(16.5f), org.telegram.ui.ActionBar.j6.f1);
-            z.s(this.w, org.telegram.messenger.g0.L(16.5f), org.telegram.ui.ActionBar.j6.i1);
-            org.telegram.ui.ActionBar.j6.f1.draw(canvas2);
-            org.telegram.ui.ActionBar.j6.i1.draw(canvas2);
+            z.s(this.w, org.telegram.messenger.g0.L(16.5f), org.telegram.ui.ActionBar.n6.f1);
+            z.s(this.w, org.telegram.messenger.g0.L(16.5f), org.telegram.ui.ActionBar.n6.i1);
+            org.telegram.ui.ActionBar.n6.f1.draw(canvas2);
+            org.telegram.ui.ActionBar.n6.i1.draw(canvas2);
         }
         this.h.h(canvas2, null);
     }
@@ -141,15 +141,15 @@ public final class u2 extends z {
         }
         int i13 = this.I;
         ImageReceiver imageReceiver = this.h;
-        org.telegram.ui.Components.t8 t8Var = this.n;
-        TextPaint textPaint = org.telegram.ui.ActionBar.j6.B0[0];
-        TextPaint textPaint2 = org.telegram.ui.ActionBar.j6.F0[0];
+        org.telegram.ui.Components.b9 b9Var = this.n;
+        TextPaint textPaint = org.telegram.ui.ActionBar.n6.B0[0];
+        TextPaint textPaint2 = org.telegram.ui.ActionBar.n6.F0[0];
         this.F = false;
         TLRPC.RecentMeUrl recentMeUrl = this.f;
         if (recentMeUrl instanceof TLRPC.TL_recentMeUrlChat) {
-            TLRPC.Chat M0 = np.s1(i13).M0(Long.valueOf(this.f.chat_id));
-            this.F = M0.verified;
-            if (hd.a0) {
+            TLRPC.Chat O0 = mp.u1(i13).O0(Long.valueOf(this.f.chat_id));
+            this.F = O0.verified;
+            if (gd.a0) {
                 getMeasuredWidth();
                 org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                 this.r = org.telegram.messenger.g0.L(14.0f);
@@ -157,26 +157,26 @@ public final class u2 extends z {
                 org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                 this.r = org.telegram.messenger.g0.L(r6 + 4);
             }
-            str2 = M0.title;
-            t8Var.q(M0);
-            imageReceiver.i0(M0, t8Var, this.f);
+            str2 = O0.title;
+            b9Var.q(O0);
+            imageReceiver.i0(O0, b9Var, this.f);
         } else {
             if (!(recentMeUrl instanceof TLRPC.TL_recentMeUrlUser)) {
                 if (recentMeUrl instanceof TLRPC.TL_recentMeUrlStickerSet) {
-                    if (hd.a0) {
+                    if (gd.a0) {
                         this.r = org.telegram.messenger.g0.L(14.0f);
                     } else {
                         this.r = org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                     }
                     String str3 = this.f.set.set.title;
-                    t8Var.k(5L, str3, null, null);
+                    b9Var.k(5L, str3, null, null);
                     str = null;
-                    imageReceiver.q0(gc.b(this.f.set.cover), null, t8Var, null, this.f, 0);
+                    imageReceiver.q0(fc.b(this.f.set.cover), null, b9Var, null, this.f, 0);
                     str2 = str3;
                 } else {
                     str = null;
                     if (recentMeUrl instanceof TLRPC.TL_recentMeUrlChatInvite) {
-                        if (hd.a0) {
+                        if (gd.a0) {
                             this.r = org.telegram.messenger.g0.L(14.0f);
                         } else {
                             this.r = org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
@@ -184,19 +184,19 @@ public final class u2 extends z {
                         TLRPC.ChatInvite chatInvite = this.f.chat_invite;
                         TLRPC.Chat chat = chatInvite.chat;
                         if (chat != null) {
-                            t8Var.q(chat);
+                            b9Var.q(chat);
                             TLRPC.RecentMeUrl recentMeUrl2 = this.f;
                             TLRPC.Chat chat2 = recentMeUrl2.chat_invite.chat;
                             str2 = chat2.title;
                             this.F = chat2.verified;
-                            imageReceiver.i0(chat2, t8Var, recentMeUrl2);
+                            imageReceiver.i0(chat2, b9Var, recentMeUrl2);
                         } else {
                             String str4 = chatInvite.title;
-                            t8Var.k(5L, str4, null, null);
-                            imageReceiver.q0(gc.i(org.telegram.messenger.w7.w(this.f.chat_invite.photo.sizes, 50, false, null, false), this.f.chat_invite.photo), "50_50", t8Var, null, this.f, 0);
+                            b9Var.k(5L, str4, null, null);
+                            imageReceiver.q0(fc.i(org.telegram.messenger.w7.w(this.f.chat_invite.photo.sizes, 50, false, null, false), this.f.chat_invite.photo), "50_50", b9Var, null, this.f, 0);
                             str2 = str4;
                         }
-                        if (hd.a0) {
+                        if (gd.a0) {
                             getMeasuredWidth();
                             org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                             this.r = org.telegram.messenger.g0.L(14.0f);
@@ -205,23 +205,23 @@ public final class u2 extends z {
                             this.r = org.telegram.messenger.g0.L(r3 + 4);
                         }
                     } else if (recentMeUrl instanceof TLRPC.TL_recentMeUrlUnknown) {
-                        if (hd.a0) {
+                        if (gd.a0) {
                             this.r = org.telegram.messenger.g0.L(14.0f);
                         } else {
                             this.r = org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                         }
-                        imageReceiver.q0(null, null, t8Var, null, this.f, 0);
+                        imageReceiver.q0(null, null, b9Var, null, this.f, 0);
                         str2 = "Url";
                     } else {
-                        imageReceiver.q0(null, null, t8Var, null, recentMeUrl, 0);
+                        imageReceiver.q0(null, null, b9Var, null, recentMeUrl, 0);
                         str2 = "";
                     }
                 }
-                String str5 = np.s1(i13).V2 + "/" + this.f.url;
+                String str5 = mp.u1(i13).X2 + "/" + this.f.url;
                 if (TextUtils.isEmpty(str2)) {
-                    str2 = hd.M0(2131749328, str);
+                    str2 = gd.M0(2131749136, str);
                 }
-                if (hd.a0) {
+                if (gd.a0) {
                     measuredWidth = getMeasuredWidth() - this.r;
                     L = org.telegram.messenger.g0.L(14.0f);
                 } else {
@@ -230,9 +230,9 @@ public final class u2 extends z {
                 }
                 int i14 = measuredWidth - L;
                 if (this.F) {
-                    int intrinsicWidth = org.telegram.ui.ActionBar.j6.f1.getIntrinsicWidth() + org.telegram.messenger.g0.L(6.0f);
+                    int intrinsicWidth = org.telegram.ui.ActionBar.n6.f1.getIntrinsicWidth() + org.telegram.messenger.g0.L(6.0f);
                     i14 -= intrinsicWidth;
-                    if (hd.a0) {
+                    if (gd.a0) {
                         this.r += intrinsicWidth;
                     }
                 }
@@ -244,7 +244,7 @@ public final class u2 extends z {
                 int measuredWidth3 = getMeasuredWidth();
                 int i16 = org.telegram.messenger.g0.C;
                 int L2 = measuredWidth3 - org.telegram.messenger.g0.L(i16 + 16);
-                if (hd.a0) {
+                if (gd.a0) {
                     this.y = org.telegram.messenger.g0.L(16.0f);
                     measuredWidth2 = getMeasuredWidth() - org.telegram.messenger.g0.L(org.telegram.messenger.g0.Q1() ? 65.0f : 61.0f);
                 } else {
@@ -255,7 +255,7 @@ public final class u2 extends z {
                 int max2 = Math.max(org.telegram.messenger.g0.L(12.0f), L2);
                 int i17 = max2;
                 this.E = new StaticLayout(TextUtils.ellipsize(str5, textPaint3, max2 - org.telegram.messenger.g0.L(12.0f), TextUtils.TruncateAt.END), textPaint3, max2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                if (hd.a0) {
+                if (gd.a0) {
                     StaticLayout staticLayout = this.s;
                     if (staticLayout != null && staticLayout.getLineCount() > 0) {
                         float lineRight = this.s.getLineRight(0);
@@ -287,7 +287,7 @@ public final class u2 extends z {
                     float lineLeft = this.s.getLineLeft(0);
                     double ceil3 = Math.ceil(this.s.getLineWidth(0));
                     if (this.F) {
-                        this.w = (int) ((((i15 - ceil3) + this.r) - org.telegram.messenger.g0.L(6.0f)) - org.telegram.ui.ActionBar.j6.f1.getIntrinsicWidth());
+                        this.w = (int) ((((i15 - ceil3) + this.r) - org.telegram.messenger.g0.L(6.0f)) - org.telegram.ui.ActionBar.n6.f1.getIntrinsicWidth());
                     }
                     if (lineLeft == 0.0f) {
                         double d10 = i15;
@@ -308,16 +308,16 @@ public final class u2 extends z {
                 }
                 return;
             }
-            TLRPC.User a22 = np.s1(i13).a2(Long.valueOf(this.f.user_id));
-            if (hd.a0) {
+            TLRPC.User c22 = mp.u1(i13).c2(Long.valueOf(this.f.user_id));
+            if (gd.a0) {
                 this.r = org.telegram.messenger.g0.L(14.0f);
             } else {
                 this.r = org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
             }
-            if (a22 != null) {
-                if (a22.bot) {
+            if (c22 != null) {
+                if (c22.bot) {
                     org.telegram.messenger.g0.L(16.5f);
-                    if (hd.a0) {
+                    if (gd.a0) {
                         getMeasuredWidth();
                         org.telegram.messenger.g0.L(org.telegram.messenger.g0.C);
                         this.r = org.telegram.messenger.g0.L(14.0f);
@@ -326,17 +326,17 @@ public final class u2 extends z {
                         this.r = org.telegram.messenger.g0.L(r6 + 4);
                     }
                 }
-                this.F = a22.verified;
+                this.F = c22.verified;
             }
-            str2 = q10.p(a22);
-            t8Var.r(a22);
-            imageReceiver.i0(a22, t8Var, this.f);
+            str2 = o10.q(c22);
+            b9Var.r(c22);
+            imageReceiver.i0(c22, b9Var, this.f);
         }
         str = null;
-        String str52 = np.s1(i13).V2 + "/" + this.f.url;
+        String str52 = mp.u1(i13).X2 + "/" + this.f.url;
         if (TextUtils.isEmpty(str2)) {
         }
-        if (hd.a0) {
+        if (gd.a0) {
         }
         int i142 = measuredWidth - L;
         if (this.F) {
@@ -349,13 +349,13 @@ public final class u2 extends z {
         int measuredWidth32 = getMeasuredWidth();
         int i162 = org.telegram.messenger.g0.C;
         int L22 = measuredWidth32 - org.telegram.messenger.g0.L(i162 + 16);
-        if (hd.a0) {
+        if (gd.a0) {
         }
         imageReceiver.y0(measuredWidth2, this.G, org.telegram.messenger.g0.L(52.0f), org.telegram.messenger.g0.L(52.0f));
         int max22 = Math.max(org.telegram.messenger.g0.L(12.0f), L22);
         int i172 = max22;
         this.E = new StaticLayout(TextUtils.ellipsize(str52, textPaint32, max22 - org.telegram.messenger.g0.L(12.0f), TextUtils.TruncateAt.END), textPaint32, max22, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        if (hd.a0) {
+        if (gd.a0) {
         }
     }
 

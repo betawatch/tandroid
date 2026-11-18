@@ -1,38 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xm0 implements r1.c {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn0 b;
-    public final /* synthetic */ r1.g c;
+public interface xm0 {
+    void C();
 
-    public /* synthetic */ xm0(fn0 fn0Var, r1.g gVar, int i7) {
-        this.a = i7;
-        this.b = fn0Var;
-        this.c = gVar;
-    }
+    CharSequence getContentDescription();
 
-    @Override // r1.c
-    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                if (!z10) {
-                    this.b.z.remove(this.c);
-                    gVar.d();
-                    break;
-                }
-                break;
-            default:
-                fn0 fn0Var = this.b;
-                if (!z10) {
-                    fn0Var.z.remove(this.c);
-                    gVar.d();
-                    break;
-                } else {
-                    fn0Var.getClass();
-                    break;
-                }
-        }
-    }
+    void n(boolean z10, float f10);
+
+    int r0();
 }

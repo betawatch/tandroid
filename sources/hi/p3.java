@@ -4,29 +4,29 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.WeakHashMap;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public class p3 {
     public final View a;
     public View b;
-    public final z10 c;
+    public final x10 c;
     public boolean d;
     public boolean e;
     public boolean f;
     public boolean g;
     public final Rect h = new Rect();
-    public final m3 i;
+    public final bi.o1 i;
     public final n3 j;
     public int k;
     public int l;
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r1v1, types: [android.view.ViewTreeObserver$OnGlobalLayoutListener, hi.n3] */
-    public p3(View view, boolean z10, z10 z10Var) {
-        m3 m3Var = new m3(this, 0);
-        this.i = m3Var;
+    public p3(View view, boolean z10, x10 x10Var) {
+        bi.o1 o1Var = new bi.o1(this, 1);
+        this.i = o1Var;
         ?? r12 = new ViewTreeObserver.OnGlobalLayoutListener() { // from class: hi.n3
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
@@ -35,11 +35,11 @@ public class p3 {
         };
         this.j = r12;
         this.a = view;
-        this.c = z10Var;
+        this.c = x10Var;
         this.b = view;
         if (view.isAttachedToWindow()) {
             view.getViewTreeObserver().addOnGlobalLayoutListener(r12);
-            view.addOnLayoutChangeListener(m3Var);
+            view.addOnLayoutChangeListener(o1Var);
         }
         view.addOnAttachStateChangeListener(new o3(this, z10, view));
     }
@@ -52,9 +52,9 @@ public class p3 {
                 this.e = false;
             }
         }
-        z10 z10Var = this.c;
-        if (z10Var != null) {
-            z10Var.a(Integer.valueOf(this.l));
+        x10 x10Var = this.c;
+        if (x10Var != null) {
+            x10Var.a(Integer.valueOf(this.l));
         }
     }
 
@@ -79,7 +79,7 @@ public class p3 {
                 view = view2;
             }
             WeakHashMap weakHashMap = r0.i0.a;
-            r0.k1 a10 = r0.b0.a(view);
+            r0.l1 a10 = r0.b0.a(view);
             this.l = a10 != null ? a10.a.f(8).d : 0;
         } else {
             Rect rect = this.h;

@@ -4,7 +4,7 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.internal.ReflectedParcelable;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import r6.a;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
@@ -176,21 +176,21 @@ public class GoogleSignInOptions extends a implements b, ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        yb.p(parcel, 2, new ArrayList(this.b));
-        yb.k(parcel, 3, this.c, i7);
-        yb.q(parcel, 4, 4);
+        bc.p(parcel, 2, new ArrayList(this.b));
+        bc.k(parcel, 3, this.c, i7);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        yb.q(parcel, 5, 4);
+        bc.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        yb.q(parcel, 6, 4);
+        bc.q(parcel, 6, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        yb.l(parcel, 7, this.h);
-        yb.l(parcel, 8, this.n);
-        yb.p(parcel, 9, this.r);
-        yb.l(parcel, 10, this.s);
-        yb.s(parcel, r10);
+        bc.l(parcel, 7, this.h);
+        bc.l(parcel, 8, this.n);
+        bc.p(parcel, 9, this.r);
+        bc.l(parcel, 10, this.s);
+        bc.s(parcel, r10);
     }
 }

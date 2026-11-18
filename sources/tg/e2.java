@@ -29,10 +29,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import bi.b3;
-import bi.w2;
-import c8.ja;
-import c8.ke;
+import bi.e5;
+import bi.j5;
+import c8.ma;
+import c8.ne;
 import com.google.mlkit.vision.label.internal.ImageLabelerImpl;
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import hi.d7;
@@ -44,38 +44,38 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ez;
-import org.telegram.messenger.g20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.n6;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.si;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.j6;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.ri;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.fz0;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.a31;
-import org.telegram.ui.ah0;
-import org.telegram.ui.ln0;
-import org.telegram.ui.nb1;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.mz0;
+import org.telegram.ui.cd0;
+import org.telegram.ui.e31;
+import org.telegram.ui.jw0;
+import org.telegram.ui.on0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e2 extends FrameLayout implements is {
+public final class e2 extends FrameLayout implements fs {
     public static final /* synthetic */ int s0 = 0;
     public volatile boolean E;
     public b2 F;
@@ -92,20 +92,20 @@ public final class e2 extends FrameLayout implements is {
     public float Q;
     public float R;
     public float S;
-    public fz0 T;
+    public mz0 T;
     public int U;
     public int V;
     public boolean W;
     public int a;
     public c2 a0;
-    public final u5 b;
-    public final e6 b0;
-    public final u5 c;
+    public final c6 b;
+    public final i6 b0;
+    public final c6 c;
     public s1 c0;
     public final Paint d;
     public String d0;
     public final Paint e;
-    public hi.t0 e0;
+    public hi.u0 e0;
     public final Paint f;
     public final Matrix f0;
     public float g0;
@@ -128,12 +128,12 @@ public final class e2 extends FrameLayout implements is {
     public final Path x;
     public volatile boolean y;
 
-    public e2(ContextThemeWrapper contextThemeWrapper, e6 e6Var) {
+    public e2(ContextThemeWrapper contextThemeWrapper, i6 i6Var) {
         super(contextThemeWrapper);
         this.a = -1;
-        er erVar = er.h;
-        this.b = new u5(0.0f, (View) null, 0L, 420L, erVar);
-        this.c = new u5(0.0f, (View) null, 0L, 420L, erVar);
+        lr lrVar = lr.h;
+        this.b = new c6(0.0f, (View) null, 0L, 420L, lrVar);
+        this.c = new c6(0.0f, (View) null, 0L, 420L, lrVar);
         Paint paint = new Paint(1);
         this.d = paint;
         Paint paint2 = new Paint(1);
@@ -153,7 +153,7 @@ public final class e2 extends FrameLayout implements is {
         this.n0 = new RectF();
         this.q0 = new ArrayList();
         this.r0 = new Rect();
-        this.b0 = e6Var;
+        this.b0 = i6Var;
         paint.setColor(-1);
         Paint.Style style = Paint.Style.STROKE;
         paint.setStyle(style);
@@ -162,7 +162,7 @@ public final class e2 extends FrameLayout implements is {
         paint.setStrokeCap(cap);
         paint.setPathEffect(new DashPathEffect(new float[]{org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(10.0f)}, 0.5f));
         paint.setShadowLayer(org.telegram.messenger.g0.N(0.75f), 0.0f, 0.0f, 1342177280);
-        paint.setAlpha(ns.W1);
+        paint.setAlpha(ks.W1);
         TextView textView = new TextView(contextThemeWrapper);
         this.N = textView;
         textView.setTextSize(1, 13.0f);
@@ -170,7 +170,7 @@ public final class e2 extends FrameLayout implements is {
         textView.setAlpha(0.0f);
         textView.setScaleX(0.3f);
         textView.setScaleY(0.3f);
-        addView(textView, ja.e(-2, -2, 17));
+        addView(textView, ma.e(-2, -2, 17));
         paint3.setColor(-1);
         paint3.setStrokeWidth(org.telegram.messenger.g0.L(3.0f));
         paint3.setStyle(style);
@@ -193,10 +193,10 @@ public final class e2 extends FrameLayout implements is {
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.b(0.33f, 10.0f);
         m1Var.setBrushWeight(this.G);
-        m1Var.setValueOverride(new cf(this));
+        m1Var.setValueOverride(new b5(this));
         m1Var.setTranslationX(-org.telegram.messenger.g0.L(18.0f));
         m1Var.setAlpha(0.0f);
-        addView(m1Var, ja.c(-1.0f, -1));
+        addView(m1Var, ma.c(-1.0f, -1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:103:0x023c  */
@@ -218,7 +218,7 @@ public final class e2 extends FrameLayout implements is {
         int width = b10.getWidth();
         int height = b2Var.b().getHeight();
         int i12 = 2;
-        float max = Math.max(width, height) / (gz.o() == 2 ? 512.0f : 384.0f);
+        float max = Math.max(width, height) / (bz.o() == 2 ? 512.0f : 384.0f);
         if ((b2Var.c / 90) % 2 != 0) {
             width = b2Var.b().getHeight();
             height = b2Var.b().getWidth();
@@ -445,10 +445,10 @@ public final class e2 extends FrameLayout implements is {
                 BlurMaskFilter.Blur blur = BlurMaskFilter.Blur.NORMAL;
                 paint.setMaskFilter(new BlurMaskFilter(L, blur));
                 paint4.setStyle(style);
-                paint4.setColor(j6.r1(0.04f, -1));
+                paint4.setColor(n6.r1(0.04f, -1));
                 paint4.setStrokeCap(cap);
                 paint4.setStrokeWidth(org.telegram.messenger.g0.L(20.0f));
-                paint4.setColor(j6.r1(0.04f, -1));
+                paint4.setColor(n6.r1(0.04f, -1));
                 paint4.setMaskFilter(new BlurMaskFilter(org.telegram.messenger.g0.L(60.0f), blur));
                 return;
             }
@@ -490,19 +490,19 @@ public final class e2 extends FrameLayout implements is {
         if (c2Var == null) {
             return;
         }
-        final int i7 = m10.t0;
+        final int i7 = j10.t0;
         final int i10 = 1;
         c2Var.o = true;
         if (c2Var.m != null) {
             h();
             c2Var.m.a(c2Var.b, c2Var.e.document);
-            org.telegram.messenger.g0.i3(new ah0(22), 250L);
+            org.telegram.messenger.g0.h3(new cd0(25), 250L);
             return;
         }
         final int i11 = 0;
         if (c2Var.k != null) {
             TLRPC.TL_stickers_replaceSticker tL_stickers_replaceSticker = new TLRPC.TL_stickers_replaceSticker();
-            tL_stickers_replaceSticker.sticker = si.a0(c2Var.k, c2Var.c).document;
+            tL_stickers_replaceSticker.sticker = ri.c0(c2Var.k, c2Var.c).document;
             tL_stickers_replaceSticker.new_sticker = c2Var.e;
             ConnectionsManager.getInstance(i7).sendRequest(tL_stickers_replaceSticker, new RequestDelegate(this) { // from class: tg.u1
                 public final /* synthetic */ e2 b;
@@ -519,7 +519,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var = this.b;
                             final int i13 = i7;
                             final c2 c2Var2 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -535,16 +535,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i14 = i13;
                                                 z10 = true;
-                                                si.b0(i14).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i14).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i14).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i14).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i14).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i14).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var2.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var2.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i15 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i16 = i15;
@@ -553,23 +553,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var3 = e2Var2;
                                                         switch (i16) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var4.f.document;
                                                                 String str = c2Var4.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject3, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject3, document, str, bool);
                                                                 e2Var3.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject3, c2Var4.f.document, c2Var4.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject3, c2Var4.f.document, c2Var4.l, Boolean.TRUE);
                                                                 e2Var3.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var4.f.document;
                                                                 String str2 = c2Var4.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject3, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject3, document2, str2, bool2);
                                                                 e2Var3.h();
                                                                 break;
                                                         }
@@ -580,9 +580,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var2.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var3.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var3.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var3.n = null;
                                                 break;
                                             }
@@ -595,14 +595,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i16 = i13;
                                                 z11 = true;
-                                                si.b0(i16).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i16).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var3.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i16).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i16).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var3.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i17 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i17;
@@ -611,23 +611,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var3;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -638,9 +638,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var3.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var4.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var4.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var4.n = null;
                                                 break;
                                             }
@@ -654,16 +654,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i13;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i19;
@@ -672,23 +672,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var4;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -699,9 +699,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -715,7 +715,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var2 = this.b;
                             final int i15 = i7;
                             final c2 c2Var3 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -731,16 +731,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i142 = i15;
                                                 z10 = true;
-                                                si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var22.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var22.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i152 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i152;
@@ -749,23 +749,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var22;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -776,9 +776,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var22.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var32.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var32.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var32.n = null;
                                                 break;
                                             }
@@ -791,14 +791,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i16 = i15;
                                                 z11 = true;
-                                                si.b0(i16).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i16).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var3.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i16).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i16).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var3.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i17 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i17;
@@ -807,23 +807,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var3;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -834,9 +834,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var3.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var4.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var4.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var4.n = null;
                                                 break;
                                             }
@@ -850,16 +850,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i15;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i19;
@@ -868,23 +868,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var4;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -895,9 +895,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -911,7 +911,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var3 = this.b;
                             final int i17 = i7;
                             final c2 c2Var4 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -927,16 +927,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i142 = i17;
                                                 z10 = true;
-                                                si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var22.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var22.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i152 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i162 = i152;
@@ -945,23 +945,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var32 = e2Var22;
                                                         switch (i162) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var42.f.document;
                                                                 String str = c2Var42.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var32.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var42.f.document, c2Var42.l, Boolean.TRUE);
                                                                 e2Var32.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var42.f.document;
                                                                 String str2 = c2Var42.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var32.h();
                                                                 break;
                                                         }
@@ -972,9 +972,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var22.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var32.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var32.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var32.n = null;
                                                 break;
                                             }
@@ -987,14 +987,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i162 = i17;
                                                 z11 = true;
-                                                si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var32.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var32.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i172 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i172;
@@ -1003,23 +1003,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var32;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1030,9 +1030,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var32.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var42.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var42.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var42.n = null;
                                                 break;
                                             }
@@ -1046,16 +1046,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i17;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i19;
@@ -1064,23 +1064,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var4;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1091,9 +1091,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -1128,7 +1128,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var = this.b;
                             final int i13 = i7;
                             final c2 c2Var2 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -1144,16 +1144,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i142 = i13;
                                                 z10 = true;
-                                                si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var22.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var22.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i152 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i152;
@@ -1162,23 +1162,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var22;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1189,9 +1189,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var22.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var32.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var32.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var32.n = null;
                                                 break;
                                             }
@@ -1204,14 +1204,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i162 = i13;
                                                 z11 = true;
-                                                si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var32.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var32.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i172 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i172;
@@ -1220,23 +1220,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var32;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1247,9 +1247,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var32.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var42.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var42.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var42.n = null;
                                                 break;
                                             }
@@ -1263,16 +1263,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i13;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i19;
@@ -1281,23 +1281,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var4;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1308,9 +1308,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -1324,7 +1324,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var2 = this.b;
                             final int i15 = i7;
                             final c2 c2Var3 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -1340,16 +1340,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i142 = i15;
                                                 z10 = true;
-                                                si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var22.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var22.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i152 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i152;
@@ -1358,23 +1358,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var22;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1385,9 +1385,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var22.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var32.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var32.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var32.n = null;
                                                 break;
                                             }
@@ -1400,14 +1400,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i162 = i15;
                                                 z11 = true;
-                                                si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var32.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var32.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i172 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i172;
@@ -1416,23 +1416,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var32;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1443,9 +1443,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var32.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var42.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var42.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var42.n = null;
                                                 break;
                                             }
@@ -1459,16 +1459,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i15;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i19;
@@ -1477,23 +1477,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var4;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1504,9 +1504,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -1520,7 +1520,7 @@ public final class e2 extends FrameLayout implements is {
                             final e2 e2Var3 = this.b;
                             final int i17 = i7;
                             final c2 c2Var4 = c2Var;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     boolean z10;
@@ -1536,16 +1536,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                 int i142 = i17;
                                                 z10 = true;
-                                                si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                    si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                    ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var = e2Var22.e0;
-                                                if (t0Var != null) {
-                                                    t0Var.setProgress(1.0f);
+                                                hi.u0 u0Var = e2Var22.e0;
+                                                if (u0Var != null) {
+                                                    u0Var.setProgress(1.0f);
                                                 }
                                                 final int i152 = 1;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i152;
@@ -1554,23 +1554,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var22;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1581,9 +1581,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var22.h();
                                                 z10 = false;
                                             }
-                                            z10 z10Var = c2Var32.n;
-                                            if (z10Var != null) {
-                                                z10Var.a(Boolean.valueOf(z10));
+                                            x10 x10Var = c2Var32.n;
+                                            if (x10Var != null) {
+                                                x10Var.a(Boolean.valueOf(z10));
                                                 c2Var32.n = null;
                                                 break;
                                             }
@@ -1596,14 +1596,14 @@ public final class e2 extends FrameLayout implements is {
                                             if (z14) {
                                                 int i162 = i17;
                                                 z11 = true;
-                                                si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                hi.t0 t0Var2 = e2Var32.e0;
-                                                if (t0Var2 != null) {
-                                                    t0Var2.setProgress(1.0f);
+                                                ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                hi.u0 u0Var2 = e2Var32.e0;
+                                                if (u0Var2 != null) {
+                                                    u0Var2.setProgress(1.0f);
                                                 }
                                                 final int i172 = 0;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i172;
@@ -1612,23 +1612,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var32;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1639,9 +1639,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var32.h();
                                                 z11 = false;
                                             }
-                                            z10 z10Var2 = c2Var42.n;
-                                            if (z10Var2 != null) {
-                                                z10Var2.a(Boolean.valueOf(z11));
+                                            x10 x10Var2 = c2Var42.n;
+                                            if (x10Var2 != null) {
+                                                x10Var2.a(Boolean.valueOf(z11));
                                                 c2Var42.n = null;
                                                 break;
                                             }
@@ -1655,16 +1655,16 @@ public final class e2 extends FrameLayout implements is {
                                                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                 int i18 = i17;
                                                 z12 = true;
-                                                si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                    si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                    ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                 }
-                                                hi.t0 t0Var3 = e2Var4.e0;
-                                                if (t0Var3 != null) {
-                                                    t0Var3.setProgress(1.0f);
+                                                hi.u0 u0Var3 = e2Var4.e0;
+                                                if (u0Var3 != null) {
+                                                    u0Var3.setProgress(1.0f);
                                                 }
                                                 final int i19 = 2;
-                                                org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
                                                         int i1622 = i19;
@@ -1673,23 +1673,23 @@ public final class e2 extends FrameLayout implements is {
                                                         e2 e2Var322 = e2Var4;
                                                         switch (i1622) {
                                                             case 0:
-                                                                ns f10 = ns.f(m10.t0);
+                                                                ks f10 = ks.f(j10.t0);
                                                                 TLRPC.Document document = c2Var422.f.document;
                                                                 String str = c2Var422.l;
                                                                 Boolean bool = Boolean.FALSE;
-                                                                f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                 e2Var322.h();
                                                                 break;
                                                             case 1:
-                                                                ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                 e2Var322.h();
                                                                 break;
                                                             default:
-                                                                ns f11 = ns.f(m10.t0);
+                                                                ks f11 = ks.f(j10.t0);
                                                                 TLRPC.Document document2 = c2Var422.f.document;
                                                                 String str2 = c2Var422.l;
                                                                 Boolean bool2 = Boolean.FALSE;
-                                                                f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                 e2Var322.h();
                                                                 break;
                                                         }
@@ -1700,9 +1700,9 @@ public final class e2 extends FrameLayout implements is {
                                                 e2Var4.h();
                                                 z12 = false;
                                             }
-                                            z10 z10Var3 = c2Var5.n;
-                                            if (z10Var3 != null) {
-                                                z10Var3.a(Boolean.valueOf(z12));
+                                            x10 x10Var3 = c2Var5.n;
+                                            if (x10Var3 != null) {
+                                                x10Var3.a(Boolean.valueOf(z12));
                                                 c2Var5.n = null;
                                                 break;
                                             }
@@ -1718,11 +1718,11 @@ public final class e2 extends FrameLayout implements is {
         }
         if (c2Var.h) {
             h();
-            ns.f(i7).m(ns.s3, Boolean.FALSE);
-            org.telegram.messenger.g0.i3(new q2.d(c2Var, 17), 350L);
-            z10 z10Var = c2Var.n;
-            if (z10Var != null) {
-                z10Var.a(Boolean.TRUE);
+            ks.f(i7).m(ks.u3, Boolean.FALSE);
+            org.telegram.messenger.g0.h3(new org.telegram.ui.web.z0(c2Var, 20), 350L);
+            x10 x10Var = c2Var.n;
+            if (x10Var != null) {
+                x10Var.a(Boolean.TRUE);
                 return;
             }
             return;
@@ -1730,7 +1730,7 @@ public final class e2 extends FrameLayout implements is {
         if (c2Var.i == 0) {
             if (c2Var.j != null) {
                 TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
-                tL_stickers_addStickerToSet.stickerset = si.Z(c2Var.j);
+                tL_stickers_addStickerToSet.stickerset = ri.b0(c2Var.j);
                 tL_stickers_addStickerToSet.sticker = c2Var.e;
                 final int i12 = 2;
                 ConnectionsManager.getInstance(i7).sendRequest(tL_stickers_addStickerToSet, new RequestDelegate(this) { // from class: tg.u1
@@ -1748,7 +1748,7 @@ public final class e2 extends FrameLayout implements is {
                                 final e2 e2Var = this.b;
                                 final int i13 = i7;
                                 final c2 c2Var2 = c2Var;
-                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                                org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         boolean z10;
@@ -1764,16 +1764,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                     int i142 = i13;
                                                     z10 = true;
-                                                    si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                    if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                        si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                    ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                    if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                        ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var = e2Var22.e0;
-                                                    if (t0Var != null) {
-                                                        t0Var.setProgress(1.0f);
+                                                    hi.u0 u0Var = e2Var22.e0;
+                                                    if (u0Var != null) {
+                                                        u0Var.setProgress(1.0f);
                                                     }
                                                     final int i152 = 1;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i152;
@@ -1782,23 +1782,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var22;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -1809,9 +1809,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var22.h();
                                                     z10 = false;
                                                 }
-                                                z10 z10Var2 = c2Var32.n;
-                                                if (z10Var2 != null) {
-                                                    z10Var2.a(Boolean.valueOf(z10));
+                                                x10 x10Var2 = c2Var32.n;
+                                                if (x10Var2 != null) {
+                                                    x10Var2.a(Boolean.valueOf(z10));
                                                     c2Var32.n = null;
                                                     break;
                                                 }
@@ -1824,14 +1824,14 @@ public final class e2 extends FrameLayout implements is {
                                                 if (z14) {
                                                     int i162 = i13;
                                                     z11 = true;
-                                                    si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                    si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                    hi.t0 t0Var2 = e2Var32.e0;
-                                                    if (t0Var2 != null) {
-                                                        t0Var2.setProgress(1.0f);
+                                                    ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                    ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                    hi.u0 u0Var2 = e2Var32.e0;
+                                                    if (u0Var2 != null) {
+                                                        u0Var2.setProgress(1.0f);
                                                     }
                                                     final int i172 = 0;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i172;
@@ -1840,23 +1840,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var32;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -1867,9 +1867,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var32.h();
                                                     z11 = false;
                                                 }
-                                                z10 z10Var22 = c2Var42.n;
-                                                if (z10Var22 != null) {
-                                                    z10Var22.a(Boolean.valueOf(z11));
+                                                x10 x10Var22 = c2Var42.n;
+                                                if (x10Var22 != null) {
+                                                    x10Var22.a(Boolean.valueOf(z11));
                                                     c2Var42.n = null;
                                                     break;
                                                 }
@@ -1883,16 +1883,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                     int i18 = i13;
                                                     z12 = true;
-                                                    si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                    if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                        si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                    ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                    if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                        ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var3 = e2Var4.e0;
-                                                    if (t0Var3 != null) {
-                                                        t0Var3.setProgress(1.0f);
+                                                    hi.u0 u0Var3 = e2Var4.e0;
+                                                    if (u0Var3 != null) {
+                                                        u0Var3.setProgress(1.0f);
                                                     }
                                                     final int i19 = 2;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i19;
@@ -1901,23 +1901,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var4;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -1928,9 +1928,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var4.h();
                                                     z12 = false;
                                                 }
-                                                z10 z10Var3 = c2Var5.n;
-                                                if (z10Var3 != null) {
-                                                    z10Var3.a(Boolean.valueOf(z12));
+                                                x10 x10Var3 = c2Var5.n;
+                                                if (x10Var3 != null) {
+                                                    x10Var3.a(Boolean.valueOf(z12));
                                                     c2Var5.n = null;
                                                     break;
                                                 }
@@ -1944,7 +1944,7 @@ public final class e2 extends FrameLayout implements is {
                                 final e2 e2Var2 = this.b;
                                 final int i15 = i7;
                                 final c2 c2Var3 = c2Var;
-                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                                org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         boolean z10;
@@ -1960,16 +1960,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                     int i142 = i15;
                                                     z10 = true;
-                                                    si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                    if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                        si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                    ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                    if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                        ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var = e2Var22.e0;
-                                                    if (t0Var != null) {
-                                                        t0Var.setProgress(1.0f);
+                                                    hi.u0 u0Var = e2Var22.e0;
+                                                    if (u0Var != null) {
+                                                        u0Var.setProgress(1.0f);
                                                     }
                                                     final int i152 = 1;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i152;
@@ -1978,23 +1978,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var22;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2005,9 +2005,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var22.h();
                                                     z10 = false;
                                                 }
-                                                z10 z10Var2 = c2Var32.n;
-                                                if (z10Var2 != null) {
-                                                    z10Var2.a(Boolean.valueOf(z10));
+                                                x10 x10Var2 = c2Var32.n;
+                                                if (x10Var2 != null) {
+                                                    x10Var2.a(Boolean.valueOf(z10));
                                                     c2Var32.n = null;
                                                     break;
                                                 }
@@ -2020,14 +2020,14 @@ public final class e2 extends FrameLayout implements is {
                                                 if (z14) {
                                                     int i162 = i15;
                                                     z11 = true;
-                                                    si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                    si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                    hi.t0 t0Var2 = e2Var32.e0;
-                                                    if (t0Var2 != null) {
-                                                        t0Var2.setProgress(1.0f);
+                                                    ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                    ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                    hi.u0 u0Var2 = e2Var32.e0;
+                                                    if (u0Var2 != null) {
+                                                        u0Var2.setProgress(1.0f);
                                                     }
                                                     final int i172 = 0;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i172;
@@ -2036,23 +2036,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var32;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2063,9 +2063,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var32.h();
                                                     z11 = false;
                                                 }
-                                                z10 z10Var22 = c2Var42.n;
-                                                if (z10Var22 != null) {
-                                                    z10Var22.a(Boolean.valueOf(z11));
+                                                x10 x10Var22 = c2Var42.n;
+                                                if (x10Var22 != null) {
+                                                    x10Var22.a(Boolean.valueOf(z11));
                                                     c2Var42.n = null;
                                                     break;
                                                 }
@@ -2079,16 +2079,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                     int i18 = i15;
                                                     z12 = true;
-                                                    si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                    if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                        si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                    ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                    if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                        ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var3 = e2Var4.e0;
-                                                    if (t0Var3 != null) {
-                                                        t0Var3.setProgress(1.0f);
+                                                    hi.u0 u0Var3 = e2Var4.e0;
+                                                    if (u0Var3 != null) {
+                                                        u0Var3.setProgress(1.0f);
                                                     }
                                                     final int i19 = 2;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i19;
@@ -2097,23 +2097,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var4;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2124,9 +2124,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var4.h();
                                                     z12 = false;
                                                 }
-                                                z10 z10Var3 = c2Var5.n;
-                                                if (z10Var3 != null) {
-                                                    z10Var3.a(Boolean.valueOf(z12));
+                                                x10 x10Var3 = c2Var5.n;
+                                                if (x10Var3 != null) {
+                                                    x10Var3.a(Boolean.valueOf(z12));
                                                     c2Var5.n = null;
                                                     break;
                                                 }
@@ -2140,7 +2140,7 @@ public final class e2 extends FrameLayout implements is {
                                 final e2 e2Var3 = this.b;
                                 final int i17 = i7;
                                 final c2 c2Var4 = c2Var;
-                                org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.v1
+                                org.telegram.messenger.g0.g3(new Runnable() { // from class: tg.v1
                                     @Override // java.lang.Runnable
                                     public final void run() {
                                         boolean z10;
@@ -2156,16 +2156,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject2;
                                                     int i142 = i17;
                                                     z10 = true;
-                                                    si.b0(i142).I1(tL_messages_stickerSet, true);
-                                                    if (!si.b0(i142).B0(tL_messages_stickerSet.set.id, true)) {
-                                                        si.b0(i142).f2(null, tLObject2, 2, null, false, false);
+                                                    ri.d0(i142).N1(tL_messages_stickerSet, true);
+                                                    if (!ri.d0(i142).E0(tL_messages_stickerSet.set.id, true)) {
+                                                        ri.d0(i142).k2(null, tLObject2, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var = e2Var22.e0;
-                                                    if (t0Var != null) {
-                                                        t0Var.setProgress(1.0f);
+                                                    hi.u0 u0Var = e2Var22.e0;
+                                                    if (u0Var != null) {
+                                                        u0Var.setProgress(1.0f);
                                                     }
                                                     final int i152 = 1;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i152;
@@ -2174,23 +2174,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var22;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2201,9 +2201,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var22.h();
                                                     z10 = false;
                                                 }
-                                                z10 z10Var2 = c2Var32.n;
-                                                if (z10Var2 != null) {
-                                                    z10Var2.a(Boolean.valueOf(z10));
+                                                x10 x10Var2 = c2Var32.n;
+                                                if (x10Var2 != null) {
+                                                    x10Var2.a(Boolean.valueOf(z10));
                                                     c2Var32.n = null;
                                                     break;
                                                 }
@@ -2216,14 +2216,14 @@ public final class e2 extends FrameLayout implements is {
                                                 if (z14) {
                                                     int i162 = i17;
                                                     z11 = true;
-                                                    si.b0(i162).I1((TLRPC.TL_messages_stickerSet) tLObject3, true);
-                                                    si.b0(i162).f2(null, tLObject3, 2, null, false, false);
-                                                    hi.t0 t0Var2 = e2Var32.e0;
-                                                    if (t0Var2 != null) {
-                                                        t0Var2.setProgress(1.0f);
+                                                    ri.d0(i162).N1((TLRPC.TL_messages_stickerSet) tLObject3, true);
+                                                    ri.d0(i162).k2(null, tLObject3, 2, null, false, false);
+                                                    hi.u0 u0Var2 = e2Var32.e0;
+                                                    if (u0Var2 != null) {
+                                                        u0Var2.setProgress(1.0f);
                                                     }
                                                     final int i172 = 0;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i172;
@@ -2232,23 +2232,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var32;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2259,9 +2259,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var32.h();
                                                     z11 = false;
                                                 }
-                                                z10 z10Var22 = c2Var42.n;
-                                                if (z10Var22 != null) {
-                                                    z10Var22.a(Boolean.valueOf(z11));
+                                                x10 x10Var22 = c2Var42.n;
+                                                if (x10Var22 != null) {
+                                                    x10Var22.a(Boolean.valueOf(z11));
                                                     c2Var42.n = null;
                                                     break;
                                                 }
@@ -2275,16 +2275,16 @@ public final class e2 extends FrameLayout implements is {
                                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) tLObject4;
                                                     int i18 = i17;
                                                     z12 = true;
-                                                    si.b0(i18).I1(tL_messages_stickerSet2, true);
-                                                    if (!si.b0(i18).B0(tL_messages_stickerSet2.set.id, true)) {
-                                                        si.b0(i18).f2(null, tLObject4, 2, null, false, false);
+                                                    ri.d0(i18).N1(tL_messages_stickerSet2, true);
+                                                    if (!ri.d0(i18).E0(tL_messages_stickerSet2.set.id, true)) {
+                                                        ri.d0(i18).k2(null, tLObject4, 2, null, false, false);
                                                     }
-                                                    hi.t0 t0Var3 = e2Var4.e0;
-                                                    if (t0Var3 != null) {
-                                                        t0Var3.setProgress(1.0f);
+                                                    hi.u0 u0Var3 = e2Var4.e0;
+                                                    if (u0Var3 != null) {
+                                                        u0Var3.setProgress(1.0f);
                                                     }
                                                     final int i19 = 2;
-                                                    org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.w1
+                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.w1
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
                                                             int i1622 = i19;
@@ -2293,23 +2293,23 @@ public final class e2 extends FrameLayout implements is {
                                                             e2 e2Var322 = e2Var4;
                                                             switch (i1622) {
                                                                 case 0:
-                                                                    ns f10 = ns.f(m10.t0);
+                                                                    ks f10 = ks.f(j10.t0);
                                                                     TLRPC.Document document = c2Var422.f.document;
                                                                     String str = c2Var422.l;
                                                                     Boolean bool = Boolean.FALSE;
-                                                                    f10.m(ns.s3, bool, tLObject32, document, str, bool);
+                                                                    f10.m(ks.u3, bool, tLObject32, document, str, bool);
                                                                     e2Var322.h();
                                                                     break;
                                                                 case 1:
-                                                                    ns.f(m10.t0).m(ns.s3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
+                                                                    ks.f(j10.t0).m(ks.u3, Boolean.FALSE, tLObject32, c2Var422.f.document, c2Var422.l, Boolean.TRUE);
                                                                     e2Var322.h();
                                                                     break;
                                                                 default:
-                                                                    ns f11 = ns.f(m10.t0);
+                                                                    ks f11 = ks.f(j10.t0);
                                                                     TLRPC.Document document2 = c2Var422.f.document;
                                                                     String str2 = c2Var422.l;
                                                                     Boolean bool2 = Boolean.FALSE;
-                                                                    f11.m(ns.s3, bool2, tLObject32, document2, str2, bool2);
+                                                                    f11.m(ks.u3, bool2, tLObject32, document2, str2, bool2);
                                                                     e2Var322.h();
                                                                     break;
                                                             }
@@ -2320,9 +2320,9 @@ public final class e2 extends FrameLayout implements is {
                                                     e2Var4.h();
                                                     z12 = false;
                                                 }
-                                                z10 z10Var3 = c2Var5.n;
-                                                if (z10Var3 != null) {
-                                                    z10Var3.a(Boolean.valueOf(z12));
+                                                x10 x10Var3 = c2Var5.n;
+                                                if (x10Var3 != null) {
+                                                    x10Var3.a(Boolean.valueOf(z12));
                                                     c2Var5.n = null;
                                                     break;
                                                 }
@@ -2338,15 +2338,15 @@ public final class e2 extends FrameLayout implements is {
             }
             return;
         }
-        ez.C(i7).v0(c2Var.f.document, null, c2Var.i, null, null, null, null, null, true, 0, 0, false, null, null, 0L, 0L, null);
-        hi.t0 t0Var = this.e0;
-        if (t0Var != null) {
-            t0Var.setProgress(1.0f);
+        zy.C(i7).v0(c2Var.f.document, null, c2Var.i, null, null, null, null, null, true, 0, 0, false, null, null, 0L, 0L, null);
+        hi.u0 u0Var = this.e0;
+        if (u0Var != null) {
+            u0Var.setProgress(1.0f);
         }
-        org.telegram.messenger.g0.i3(new nb1(this, i7, 11), 450L);
-        z10 z10Var2 = c2Var.n;
-        if (z10Var2 != null) {
-            z10Var2.a(Boolean.TRUE);
+        org.telegram.messenger.g0.h3(new jw0(this, i7, 14), 450L);
+        x10 x10Var2 = c2Var.n;
+        if (x10Var2 != null) {
+            x10Var2.a(Boolean.TRUE);
             c2Var.n = null;
         }
     }
@@ -2438,10 +2438,10 @@ public final class e2 extends FrameLayout implements is {
         return createBitmap2;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         c2 c2Var;
-        if (i7 == ns.U1) {
+        if (i7 == ks.U1) {
             String str = (String) objArr[0];
             TLRPC.InputFile inputFile = (TLRPC.InputFile) objArr[1];
             c2 c2Var2 = this.a0;
@@ -2464,10 +2464,10 @@ public final class e2 extends FrameLayout implements is {
             tL_documentAttributeSticker.alt = c2Var3.c;
             tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
             tL_messages_uploadMedia.media.attributes.add(tL_documentAttributeSticker);
-            ConnectionsManager.getInstance(m10.t0).sendRequest(tL_messages_uploadMedia, new a31(9, this, c2Var3), 2);
+            ConnectionsManager.getInstance(j10.t0).sendRequest(tL_messages_uploadMedia, new e31(9, this, c2Var3), 2);
             return;
         }
-        if (i7 == ns.W1) {
+        if (i7 == ks.W1) {
             String str2 = (String) objArr[0];
             c2 c2Var4 = this.a0;
             if (c2Var4 == null || !str2.equalsIgnoreCase(c2Var4.b)) {
@@ -2478,16 +2478,16 @@ public final class e2 extends FrameLayout implements is {
             if (longValue2 > 0) {
                 c2 c2Var5 = this.a0;
                 c2Var5.u = Utilities.i(longValue / longValue2, 1.0f, c2Var5.u);
-                hi.t0 t0Var = this.e0;
-                if (t0Var != null) {
-                    t0Var.setProgress(this.a0.b());
+                hi.u0 u0Var = this.e0;
+                if (u0Var != null) {
+                    u0Var.setProgress(this.a0.b());
                     return;
                 }
                 return;
             }
             return;
         }
-        if (i7 == ns.V1) {
+        if (i7 == ks.V1) {
             String str3 = (String) objArr[0];
             c2 c2Var6 = this.a0;
             if (c2Var6 == null || !str3.equalsIgnoreCase(c2Var6.b)) {
@@ -2496,16 +2496,16 @@ public final class e2 extends FrameLayout implements is {
             h();
             return;
         }
-        if (i7 == ns.a2) {
+        if (i7 == ks.a2) {
             c2 c2Var7 = this.a0;
             if (c2Var7 != null && objArr[0] == c2Var7.r) {
-                w7.G(m10.t0).h0(false, 67108864, this.a0.b, true);
+                w7.G(j10.t0).h0(false, 67108864, this.a0.b, true);
                 return;
             }
             return;
         }
-        if (i7 != ns.b2) {
-            if (i7 == ns.c2 && (c2Var = this.a0) != null && objArr[0] == c2Var.r) {
+        if (i7 != ks.b2) {
+            if (i7 == ks.c2 && (c2Var = this.a0) != null && objArr[0] == c2Var.r) {
                 h();
                 return;
             }
@@ -2522,9 +2522,9 @@ public final class e2 extends FrameLayout implements is {
             w7.G(this.a).n(str4, false, Math.max(1L, longValue3), longValue4, f10);
             c2 c2Var9 = this.a0;
             c2Var9.t = Math.max(c2Var9.t, floatValue);
-            hi.t0 t0Var2 = this.e0;
-            if (t0Var2 != null) {
-                t0Var2.setProgress(this.a0.b());
+            hi.u0 u0Var2 = this.e0;
+            if (u0Var2 != null) {
+                u0Var2.setProgress(this.a0.b());
             }
         }
     }
@@ -2562,7 +2562,7 @@ public final class e2 extends FrameLayout implements is {
                 }
                 z10 = false;
                 if (z10 && !this.I[i7].b) {
-                    org.telegram.messenger.g0.b4(this);
+                    org.telegram.messenger.g0.a4(this);
                 }
                 this.I[i7].b = z10;
                 i7++;
@@ -2621,15 +2621,15 @@ public final class e2 extends FrameLayout implements is {
         setClickable(false);
         TextView textView = this.N;
         textView.animate().cancel();
-        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(er.h).start();
+        textView.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(240L).setInterpolator(lr.h).start();
     }
 
     public final void g(Canvas canvas, boolean z10, ViewGroup viewGroup, boolean z11) {
-        u5 u5Var = this.c;
-        u5Var.a = viewGroup;
+        c6 c6Var = this.c;
+        c6Var.a = viewGroup;
         boolean z12 = this.j0;
-        if (z12 || u5Var.c > 0.0f) {
-            float d = viewGroup == null ? 1.0f : u5Var.d(z12 && !z11);
+        if (z12 || c6Var.c > 0.0f) {
+            float d = viewGroup == null ? 1.0f : c6Var.d(z12 && !z11);
             b2[] b2VarArr = this.I;
             if (b2VarArr != null) {
                 for (b2 b2Var : b2VarArr) {
@@ -2680,22 +2680,22 @@ public final class e2 extends FrameLayout implements is {
         return this.J;
     }
 
-    public fz0 getThanosEffect() {
-        if (!fz0.c()) {
+    public mz0 getThanosEffect() {
+        if (!mz0.c()) {
             return null;
         }
         if (this.T == null) {
-            fz0 fz0Var = new fz0(getContext(), new t1(this, 1));
-            this.T = fz0Var;
-            addView(fz0Var, ja.c(-1.0f, -1));
+            mz0 mz0Var = new mz0(getContext(), new t1(this, 1));
+            this.T = mz0Var;
+            addView(mz0Var, ma.c(-1.0f, -1));
         }
         return this.T;
     }
 
     public final void h() {
-        hi.t0 t0Var = this.e0;
-        if (t0Var != null) {
-            t0Var.a();
+        hi.u0 u0Var = this.e0;
+        if (u0Var != null) {
+            u0Var.a();
             this.e0 = null;
         }
     }
@@ -2762,7 +2762,7 @@ public final class e2 extends FrameLayout implements is {
         }
     }
 
-    public final void m(Bitmap bitmap, int i7, int i10, int i11, ln0 ln0Var) {
+    public final void m(Bitmap bitmap, int i7, int i10, int i11, on0 on0Var) {
         vb.c cVar;
         int i12 = i10 <= 0 ? org.telegram.messenger.g0.q.x : i10;
         int i13 = i11 <= 0 ? org.telegram.messenger.g0.q.y : i11;
@@ -2774,13 +2774,13 @@ public final class e2 extends FrameLayout implements is {
         this.J = bitmap;
         this.K = i7;
         this.d0 = null;
-        w2 w2Var = new w2(this, i7, ln0Var, 6);
+        e5 e5Var = new e5(this, i7, on0Var, 6);
         this.y = true;
         ia.a aVar = new ia.a();
         aVar.b = true;
         aVar.c = true;
-        zzd a10 = ke.a(new zb.d(aVar));
-        if (n6.h(getContext()).f()) {
+        zzd a10 = ne.a(new zb.d(aVar));
+        if (org.telegram.messenger.n6.h(getContext()).f()) {
             ArrayList arrayList = new ArrayList();
             Bitmap bitmap2 = this.J;
             d2 d2Var = new d2();
@@ -2788,34 +2788,34 @@ public final class e2 extends FrameLayout implements is {
             d2Var.e = min;
             d2Var.d = min;
             d2Var.a = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
-            new Canvas(d2Var.a).drawRect(0.0f, 0.0f, d2Var.d, d2Var.e, j6.Gm);
+            new Canvas(d2Var.a).drawRect(0.0f, 0.0f, d2Var.d, d2Var.e, n6.Gm);
             d2Var.b = (bitmap2.getWidth() - d2Var.d) / 2;
             d2Var.c = (bitmap2.getHeight() - d2Var.e) / 2;
             arrayList.add(d2Var);
-            w2Var.a(arrayList);
+            e5Var.a(arrayList);
             return;
         }
         ub.a a11 = ub.a.a(i7, bitmap);
-        a10.g(a11).addOnSuccessListener(new org.telegram.ui.ActionBar.z(w2Var, 29)).addOnFailureListener(new b3(this, bitmap, i7, ln0Var, w2Var, 6));
+        a10.h(a11).addOnSuccessListener(new z1(e5Var, 0)).addOnFailureListener(new j5(this, bitmap, i7, on0Var, e5Var, 6));
         if (this.d0 == null) {
             xb.a aVar2 = xb.a.b;
-            q6.m.h(aVar2, "options cannot be null");
+            q6.m.i(aVar2, "options cannot be null");
             synchronized (vb.c.class) {
                 cVar = (vb.c) pb.g.c().a(vb.c.class);
             }
             ua.b bVar = (ua.b) cVar.a.get(xb.a.class);
-            q6.m.g(bVar);
+            q6.m.h(bVar);
             yb.b bVar2 = (yb.b) bVar.get();
             bVar2.getClass();
             ua uaVar = bVar2.c;
             b8 b8Var = new b8();
             b8Var.c = y7.b;
             pb.n.a.execute(new qa(uaVar, new xa(b8Var, 1), a8.c, uaVar.b(), 0));
-            new ImageLabelerImpl((pb.e) bVar2.a.R0(aVar2), (Executor) bVar2.b.a.get(), new n6.c("vision.ica", 1L)).g(a11).addOnSuccessListener(new z1(this, 0)).addOnFailureListener(new r2.j(26));
+            new ImageLabelerImpl((pb.e) bVar2.a.R0(aVar2), (Executor) bVar2.b.a.get(), new n6.c("vision.ica", 1L)).h(a11).addOnSuccessListener(new z1(this, 1)).addOnFailureListener(new r0.f1(27));
         }
-        ArrayList arrayList2 = si.b0(this.a).n;
+        ArrayList arrayList2 = ri.d0(this.a).n;
         for (int i14 = 0; i14 < Math.min(arrayList2.size(), 9); i14++) {
-            org.telegram.messenger.j6.g(((TLRPC.TL_availableReaction) arrayList2.get(i14)).reaction);
+            j6.g(((TLRPC.TL_availableReaction) arrayList2.get(i14)).reaction);
         }
     }
 
@@ -2823,7 +2823,7 @@ public final class e2 extends FrameLayout implements is {
         if (tL_error == null || "PACK_TITLE_INVALID".equals(tL_error.text)) {
             return;
         }
-        new cc((FrameLayout) getParent(), this.b0).t(tL_error.text, null).j();
+        new lc((FrameLayout) getParent(), this.b0).t(tL_error.text, null).j();
     }
 
     public final void o() {
@@ -2846,12 +2846,12 @@ public final class e2 extends FrameLayout implements is {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ns.f(this.a).c(this, ns.U1);
-        ns.f(this.a).c(this, ns.W1);
-        ns.f(this.a).c(this, ns.V1);
-        ns.f(this.a).c(this, ns.c2);
-        ns.f(this.a).c(this, ns.a2);
-        ns.f(this.a).c(this, ns.b2);
+        ks.f(this.a).c(this, ks.U1);
+        ks.f(this.a).c(this, ks.W1);
+        ks.f(this.a).c(this, ks.V1);
+        ks.f(this.a).c(this, ks.c2);
+        ks.f(this.a).c(this, ks.a2);
+        ks.f(this.a).c(this, ks.b2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -2859,12 +2859,12 @@ public final class e2 extends FrameLayout implements is {
         super.onDetachedFromWindow();
         int i7 = this.a;
         if (i7 >= 0) {
-            ns.f(i7).n(this, ns.U1);
-            ns.f(this.a).n(this, ns.W1);
-            ns.f(this.a).n(this, ns.V1);
-            ns.f(this.a).n(this, ns.c2);
-            ns.f(this.a).n(this, ns.a2);
-            ns.f(this.a).n(this, ns.b2);
+            ks.f(i7).n(this, ks.U1);
+            ks.f(this.a).n(this, ks.W1);
+            ks.f(this.a).n(this, ks.V1);
+            ks.f(this.a).n(this, ks.c2);
+            ks.f(this.a).n(this, ks.a2);
+            ks.f(this.a).n(this, ks.b2);
         }
     }
 
@@ -2913,15 +2913,15 @@ public final class e2 extends FrameLayout implements is {
         }
     }
 
-    public final void p(final String str, final g20 g20Var, final String str2, final CharSequence charSequence, final boolean z10, final long j3, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final TLRPC.Document document2, final String str3, final z10 z10Var, final s10 s10Var) {
-        org.telegram.messenger.g0.i3(new Runnable() { // from class: tg.y1
+    public final void p(final String str, final e20 e20Var, final String str2, final CharSequence charSequence, final boolean z10, final long j3, final TLRPC.StickerSet stickerSet, final TLRPC.Document document, final TLRPC.Document document2, final String str3, final x10 x10Var, final q10 q10Var) {
+        org.telegram.messenger.g0.h3(new Runnable() { // from class: tg.y1
             @Override // java.lang.Runnable
             public final void run() {
                 c2 c2Var;
                 e2 e2Var = e2.this;
-                z10 z10Var2 = z10Var;
+                x10 x10Var2 = x10Var;
                 int i7 = 0;
-                boolean z11 = z10Var2 == null || (c2Var = e2Var.a0) == null || !c2Var.o;
+                boolean z11 = x10Var2 == null || (c2Var = e2Var.a0) == null || !c2Var.o;
                 if (z11) {
                     c2 c2Var2 = e2Var.a0;
                     if (c2Var2 != null) {
@@ -2944,11 +2944,11 @@ public final class e2 extends FrameLayout implements is {
                 c2Var4.i = j3;
                 c2Var4.j = stickerSet;
                 c2Var4.k = document;
-                g20 g20Var2 = g20Var;
-                c2Var4.s = g20Var2;
+                e20 e20Var2 = e20Var;
+                c2Var4.s = e20Var2;
                 c2Var4.l = str3;
-                c2Var4.n = z10Var2;
-                c2Var4.m = s10Var;
+                c2Var4.n = x10Var2;
+                c2Var4.m = q10Var;
                 ArrayList arrayList = c2Var4.q;
                 if (!TextUtils.isEmpty(str4)) {
                     c2Var4.p.add(new File(c2Var4.b));
@@ -2963,21 +2963,21 @@ public final class e2 extends FrameLayout implements is {
                     TLRPC.Document document3 = document2;
                     if (document3 != null) {
                         c2 c2Var5 = e2Var.a0;
-                        c2Var5.e = si.a0(document3, c2Var5.c);
+                        c2Var5.e = ri.c0(document3, c2Var5.c);
                         e2Var.a0.f = new TLRPC.TL_messageMediaDocument();
                         TLRPC.TL_messageMediaDocument tL_messageMediaDocument = e2Var.a0.f;
                         tL_messageMediaDocument.flags |= 1;
                         tL_messageMediaDocument.document = document3;
                         e2Var.a();
-                    } else if (g20Var2 != null) {
+                    } else if (e20Var2 != null) {
                         TLRPC.TL_message tL_message = new TLRPC.TL_message();
                         tL_message.id = 1;
                         c2 c2Var6 = e2Var.a0;
-                        String absolutePath = d7.w(m10.t0, "webm").getAbsolutePath();
+                        String absolutePath = d7.w(j10.t0, "webm").getAbsolutePath();
                         tL_message.attachPath = absolutePath;
                         c2Var6.b = absolutePath;
-                        e2Var.a0.r = new gj(m10.t0, tL_message, null, false, false);
-                        e2Var.a0.r.r0 = g20Var2;
+                        e2Var.a0.r = new fj(j10.t0, tL_message, null, false, false);
+                        e2Var.a0.r.r0 = e20Var2;
                         MediaController.B().h0(e2Var.a0.r, false, false, false);
                     } else {
                         w7.G(e2Var.a).h0(false, 67108864, str4, true);
@@ -2985,17 +2985,17 @@ public final class e2 extends FrameLayout implements is {
                 } else {
                     e2Var.a();
                 }
-                if (z10Var2 == null) {
+                if (x10Var2 == null) {
                     if (e2Var.e0 == null) {
-                        e2Var.e0 = new hi.t0(e2Var.getContext(), hd.M0(2131746919, null));
+                        e2Var.e0 = new hi.u0(e2Var.getContext(), gd.M0(2131746726, null));
                     }
                     e2Var.e0.setOnCancelListener(new t1(e2Var, i7));
                     if (e2Var.e0.getParent() == null) {
-                        e2Var.addView(e2Var.e0, ja.e(-1, -1, 17));
+                        e2Var.addView(e2Var.e0, ma.e(-1, -1, 17));
                     }
-                    hi.t0 t0Var = e2Var.e0;
-                    t0Var.F = true;
-                    t0Var.invalidate();
+                    hi.u0 u0Var = e2Var.e0;
+                    u0Var.F = true;
+                    u0Var.invalidate();
                 }
             }
         }, 300L);
@@ -3004,30 +3004,30 @@ public final class e2 extends FrameLayout implements is {
     public void setCurrentAccount(int i7) {
         int i10 = this.a;
         if (i10 != i7) {
-            int i11 = ns.b2;
-            int i12 = ns.a2;
-            int i13 = ns.c2;
-            int i14 = ns.V1;
-            int i15 = ns.W1;
-            int i16 = ns.U1;
+            int i11 = ks.b2;
+            int i12 = ks.a2;
+            int i13 = ks.c2;
+            int i14 = ks.V1;
+            int i15 = ks.W1;
+            int i16 = ks.U1;
             if (i10 >= 0 && isAttachedToWindow()) {
-                ns.f(this.a).n(this, i16);
-                ns.f(this.a).n(this, i15);
-                ns.f(this.a).n(this, i14);
-                ns.f(this.a).n(this, i13);
-                ns.f(this.a).n(this, i12);
-                ns.f(this.a).n(this, i11);
+                ks.f(this.a).n(this, i16);
+                ks.f(this.a).n(this, i15);
+                ks.f(this.a).n(this, i14);
+                ks.f(this.a).n(this, i13);
+                ks.f(this.a).n(this, i12);
+                ks.f(this.a).n(this, i11);
             }
             this.a = i7;
             if (i7 < 0 || !isAttachedToWindow()) {
                 return;
             }
-            ns.f(this.a).c(this, i16);
-            ns.f(this.a).c(this, i15);
-            ns.f(this.a).c(this, i14);
-            ns.f(this.a).c(this, i13);
-            ns.f(this.a).c(this, i12);
-            ns.f(this.a).c(this, i11);
+            ks.f(this.a).c(this, i16);
+            ks.f(this.a).c(this, i15);
+            ks.f(this.a).c(this, i14);
+            ks.f(this.a).c(this, i13);
+            ks.f(this.a).c(this, i12);
+            ks.f(this.a).c(this, i11);
         }
     }
 
@@ -3036,7 +3036,7 @@ public final class e2 extends FrameLayout implements is {
             return;
         }
         this.j0 = z10;
-        this.i0.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : org.telegram.messenger.g0.L(-18.0f)).setInterpolator(er.h).setDuration(320L).start();
+        this.i0.animate().alpha(z10 ? 1.0f : 0.0f).translationX(z10 ? 0.0f : org.telegram.messenger.g0.L(-18.0f)).setInterpolator(lr.h).setDuration(320L).start();
         if (getParent() instanceof View) {
             ((View) getParent()).invalidate();
         }

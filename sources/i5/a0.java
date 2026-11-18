@@ -3,14 +3,13 @@ package i5;
 import a8.p0;
 import ab.c0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a0 extends a {
-    public static final /* synthetic */ ff h;
-    public static final /* synthetic */ ff n;
-    public static final /* synthetic */ ff r;
+    public static final /* synthetic */ ze.b h;
+    public static final /* synthetic */ ze.b n;
+    public static final /* synthetic */ ze.b r;
     public int e;
     public int[] f;
 
@@ -52,17 +51,17 @@ public final class a0 extends a {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        c.u(ze.a.b(h, this, this));
+        c.w(ze.a.b(h, this, this));
         sb2.append(this.e);
         sb2.append(";opcolor0=");
-        ff ffVar = n;
-        c.u(ze.a.b(ffVar, this, this));
+        ze.b bVar = n;
+        c.w(ze.a.b(bVar, this, this));
         sb2.append(this.f[0]);
         sb2.append(";opcolor1=");
-        c.u(ze.a.b(ffVar, this, this));
+        c.w(ze.a.b(bVar, this, this));
         sb2.append(this.f[1]);
         sb2.append(";opcolor2=");
-        c.u(ze.a.b(ffVar, this, this));
+        c.w(ze.a.b(bVar, this, this));
         return p0.n(this.f[2], "]", sb2);
     }
 }

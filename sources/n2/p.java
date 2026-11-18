@@ -1,6 +1,6 @@
 package n2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -22,16 +22,16 @@ public final /* synthetic */ class p implements Runnable {
             case 0:
                 s sVar = (s) aVar.c;
                 String str = h2.l0.a;
-                m2.e eVar = ((l2.z) sVar).a.s;
-                m2.a U = eVar.U();
-                eVar.V(U, 1029, new li.p(U, exc, 18));
+                m2.d dVar = ((l2.z) sVar).a.s;
+                m2.a U = dVar.U();
+                dVar.V(U, 1029, new li.c(U, exc, 19));
                 break;
             default:
                 s sVar2 = (s) aVar.c;
                 String str2 = h2.l0.a;
-                m2.e eVar2 = ((l2.z) sVar2).a.s;
-                m2.a U2 = eVar2.U();
-                eVar2.V(U2, 1014, new m2.c(U2, exc, 10));
+                m2.d dVar2 = ((l2.z) sVar2).a.s;
+                m2.a U2 = dVar2.U();
+                dVar2.V(U2, 1014, new m2.c(U2, exc, 11));
                 break;
         }
     }

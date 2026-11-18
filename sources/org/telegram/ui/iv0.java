@@ -1,23 +1,29 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class iv0 extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ ProfileActivity V2;
+public final class iv0 extends np {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ TLRPC.User e1;
+    public final /* synthetic */ ProfileActivity f1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.V2 = profileActivity;
+    public iv0(ProfileActivity profileActivity, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i7, boolean[] zArr, TLRPC.User user) {
+        super(j3, j10, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i7, true, false, null);
+        this.f1 = profileActivity;
+        this.d1 = zArr;
+        this.e1 = user;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            org.telegram.messenger.g0.i3(new mp0(this, hVar, i7, 21), 250L);
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            ProfileActivity profileActivity = this.f1;
+            if (org.telegram.ui.Components.lc.a(profileActivity)) {
+                org.telegram.ui.Components.lc.C(this.e1.first_name, profileActivity).j();
+            }
         }
     }
 }

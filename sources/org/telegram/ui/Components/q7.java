@@ -1,61 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.widget.TextView;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q7 extends t7 {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ Context F;
-    public final /* synthetic */ KeyEvent.Callback G;
+public final class q7 extends zc {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ org.telegram.messenger.fs c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ q7(KeyEvent.Callback callback, Context context, Context context2, int i7) {
+    public /* synthetic */ q7(org.telegram.messenger.fs fsVar, Context context, int i7) {
         super(context);
-        this.E = i7;
-        this.G = callback;
-        this.F = context2;
+        this.b = i7;
+        this.c = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.t7
-    public final TextView a() {
-        switch (this.E) {
+    @Override // org.telegram.ui.Components.zc
+    public final void c(boolean z10) {
+        switch (this.b) {
             case 0:
-                r80 r80Var = new r80(this.F);
-                org.telegram.ui.ActionBar.q6.U(r80Var, org.telegram.ui.ActionBar.j6.Fj, ((y7) this.G).J0);
-                r80Var.setTextSize(1, 17.0f);
-                r80Var.setTypeface(org.telegram.messenger.g0.o());
-                r80Var.setEllipsize(TextUtils.TruncateAt.END);
-                r80Var.setSingleLine(true);
-                return r80Var;
-            case 1:
-                r80 r80Var2 = new r80(this.F);
-                int i7 = org.telegram.ui.ActionBar.j6.Jj;
-                y7 y7Var = (y7) this.G;
-                org.telegram.ui.ActionBar.q6.U(r80Var2, i7, y7Var.J0);
-                r80Var2.setTextSize(1, 13.0f);
-                r80Var2.setEllipsize(TextUtils.TruncateAt.END);
-                r80Var2.setSingleLine(true);
-                r80Var2.setPadding(org.telegram.messenger.g0.L(6.0f), 0, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(1.0f));
-                int i10 = org.telegram.ui.ActionBar.j6.i6;
-                org.telegram.ui.Cells.y a02 = org.telegram.ui.ActionBar.j6.a0(org.telegram.ui.ActionBar.j6.w0(i10, y7Var.J0), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-                org.telegram.ui.ActionBar.m6 M = org.telegram.ui.ActionBar.q6.M(i10);
-                org.telegram.ui.ActionBar.e6 e6Var = y7Var.J0;
-                r80Var2.setBackground(a02);
-                org.telegram.ui.ActionBar.q6.j(r80Var2, a02, null, M, e6Var);
-                r80Var2.setOnClickListener(new n2(4, this, r80Var2));
-                return r80Var2;
+                g8 g8Var = (g8) this.c;
+                g8Var.updateColors();
+                org.telegram.ui.xq xqVar = g8Var.I1;
+                if (xqVar != null) {
+                    xqVar.a(d1.f.u());
+                    break;
+                }
+                break;
             default:
-                r80 r80Var3 = new r80(this.F);
-                org.telegram.ui.ActionBar.q6.U(r80Var3, org.telegram.ui.ActionBar.j6.Jj, ((qm0) this.G).O);
-                r80Var3.setTextSize(1, 12.0f);
-                r80Var3.setEllipsize(TextUtils.TruncateAt.END);
-                r80Var3.setSingleLine(true);
-                r80Var3.setPadding(org.telegram.messenger.g0.L(0.0f), 0, org.telegram.messenger.g0.L(0.0f), org.telegram.messenger.g0.L(0.0f));
-                return r80Var3;
+                PhotoViewer photoViewer = (PhotoViewer) this.c;
+                org.telegram.ui.ActionBar.z0 z0Var = photoViewer.G0;
+                if (z0Var != null) {
+                    z0Var.f(z10);
+                    photoViewer.G0.setSelectorColor(z10 ? 259241196 : 268435455);
+                }
+                f61 f61Var = photoViewer.G2;
+                if (f61Var != null) {
+                    f61Var.t0(d1.f.u() || photoViewer.r);
+                }
+                org.telegram.ui.xq xqVar2 = photoViewer.x0;
+                if (xqVar2 != null) {
+                    xqVar2.a(d1.f.u());
+                    break;
+                }
+                break;
         }
     }
 }

@@ -1,11 +1,11 @@
 package p1;
 
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class g {
-    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, ns.n1, ns.o1, ns.p1, ns.q1, ns.r1, ns.s1, ns.t1, ns.u1, ns.v1, ns.w1, ns.x1, ns.y1, ns.z1, ns.A1, ns.B1, ns.C1, ns.D1, ns.E1, 120, ns.F1, ns.G1, ns.H1, ns.I1, ns.J1, ns.K1, ns.L1, 128, ns.N1, ns.O1, ns.P1, ns.Q1, 133, 134, ns.R1, ns.S1, ns.T1, ns.U1};
+    public static final /* synthetic */ int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, ks.n1, ks.o1, ks.p1, ks.q1, ks.r1, ks.s1, ks.t1, ks.u1, ks.v1, ks.w1, ks.x1, ks.y1, ks.z1, ks.A1, ks.B1, ks.C1, ks.D1, ks.E1, 120, ks.F1, ks.G1, ks.H1, ks.I1, ks.J1, ks.K1, ks.L1, 128, ks.N1, ks.O1, ks.P1, ks.Q1, 133, 134, ks.R1, ks.S1, ks.T1, ks.U1};
 
     public static /* synthetic */ Integer a(int i7) {
         if (i7 == 0) {

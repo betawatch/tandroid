@@ -1,49 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n01 extends Drawable {
-    public final Paint a = new Paint(1);
-    public final RectF b = new RectF();
-    public final /* synthetic */ int c;
-    public final /* synthetic */ v01 d;
+public final class n01 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public ap0 d;
 
-    public n01(v01 v01Var, int i7) {
-        this.d = v01Var;
-        this.c = i7;
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
+        int i7 = 0;
+        int i10 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i10 += view2.getTop();
+            i7 += view2.getLeft();
+        }
+        int width = ((this.a.getWidth() / 2) + i7) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f) : width : 0);
+        setTranslationY(i10 - getMeasuredHeight());
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.b;
-        rectF.set(bounds);
-        int i7 = this.c;
-        rectF.inset(i7, i7);
-        float height = rectF.height() / 2.0f;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.O5, this.d.e);
-        Paint paint = this.a;
-        paint.setColor(w02);
-        canvas.drawRoundRect(rectF, height, height, paint);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        a();
     }
 }

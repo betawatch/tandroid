@@ -1,58 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class nx extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final class nx implements View.OnClickListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ hi.w4 b;
+    public final /* synthetic */ androidx.mediarouter.app.w c;
 
-    static {
-        a41.h(new nx());
+    public nx(androidx.mediarouter.app.w wVar, boolean[] zArr, hi.w4 w4Var) {
+        this.c = wVar;
+        this.a = zArr;
+        this.b = w4Var;
     }
 
-    public static b41 i(TLRPC.StickerSetCovered stickerSetCovered, ex exVar, boolean z10) {
-        b41 K = b41.K(nx.class);
-        long j3 = stickerSetCovered.set.id;
-        long j10 = 1 + j3;
-        K.d = (int) (j10 ^ (j10 >>> 32));
-        K.B = j3;
-        K.G = stickerSetCovered;
-        K.H = exVar;
-        K.e = z10;
-        return K;
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        ph.b bVar = (ph.b) view;
-        Object obj = b41Var.G;
-        if (obj instanceof TLRPC.TL_messages_stickerSet) {
-            bVar.setPack((TLRPC.TL_messages_stickerSet) obj);
-        } else if (obj instanceof TLRPC.StickerSetCovered) {
-            TLRPC.Document document = ((ex) b41Var.H).e;
-            bVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
-            bVar.c.d(document, null, null, null, false, false);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        qx qxVar = (qx) this.c.b;
+        boolean[] zArr = this.a;
+        if (zArr[0]) {
+            return;
         }
-        bVar.a(b41Var.e, false);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final boolean c(b41 b41Var, b41 b41Var2) {
-        return b41Var.B == b41Var2.B && b41Var.e == b41Var2.e;
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        ph.b bVar = new ph.b(context, e6Var);
-        bVar.setLayoutParams(new v4.p0(org.telegram.messenger.g0.L(64.0f), -1));
-        return bVar;
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final boolean e(b41 b41Var, b41 b41Var2) {
-        return b41Var.B == b41Var2.B;
+        zArr[0] = true;
+        org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, qxVar.G.getContext(), null)};
+        TLRPC.TL_messages_getEmojiURL tL_messages_getEmojiURL = new TLRPC.TL_messages_getEmojiURL();
+        ry ryVar = qxVar.G;
+        String str = qxVar.x;
+        if (str == null) {
+            str = ryVar.X0[0];
+        }
+        tL_messages_getEmojiURL.lang_code = str;
+        org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, u1VarArr, ConnectionsManager.getInstance(ryVar.d1).sendRequest(tL_messages_getEmojiURL, new bi.m1(this, u1VarArr, this.b, 16)), 11), 1000L);
     }
 }

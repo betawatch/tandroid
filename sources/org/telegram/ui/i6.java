@@ -1,16 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class i6 extends v4.k {
-    public final /* synthetic */ y6 F;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-    public i6(y6 y6Var) {
-        this.F = y6Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class i6 extends s7 {
+    public final /* synthetic */ int H = 1;
+    public final /* synthetic */ Object I;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i6(au auVar, Context context, x6 x6Var) {
+        super(context, x6Var, null, null);
+        this.I = auVar;
     }
 
-    @Override // v4.k
-    public final void P(v4.e1 e1Var) {
-        this.F.b.invalidate();
+    public void f(boolean z10) {
+        org.telegram.ui.ActionBar.a5 a5Var;
+        org.telegram.ui.ActionBar.a5 a5Var2;
+        x6 x6Var = (x6) this.I;
+        if (!z10) {
+            a5Var = ((org.telegram.ui.ActionBar.h2) x6Var).simpleActionBar;
+            a5Var.w();
+            return;
+        }
+        te.a aVar = x6Var.T;
+        if (aVar != null) {
+            aVar.a(true, true);
+        }
+        a5Var2 = ((org.telegram.ui.ActionBar.h2) x6Var).simpleActionBar;
+        a5Var2.J();
+    }
+
+    @Override // org.telegram.ui.s7, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.H) {
+            case 1:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((((au) this.I).r1 - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i6(x6 x6Var, Context context, x6 x6Var2, ri.q qVar, org.telegram.ui.Components.qt0 qt0Var) {
+        super(context, x6Var2, qVar, qt0Var);
+        this.I = x6Var;
     }
 }

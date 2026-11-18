@@ -1,117 +1,102 @@
 package hi;
 
-import android.graphics.drawable.ColorDrawable;
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.tj0;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.Components.xc0;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.a80;
+import org.telegram.ui.cn0;
+import org.telegram.ui.mm;
+import org.telegram.ui.mn;
+import org.telegram.ui.rn;
+import org.telegram.ui.yn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public abstract class c3 extends tj0 {
-    public boolean d;
-    public String f;
-    public String h;
-    public TLRPC.User n;
-    public boolean r;
-    public final /* synthetic */ d3 x;
-    public final ArrayList c = new ArrayList();
-    public int e = -1;
-    public final ColorDrawable s = new ColorDrawable(285212671);
-    public final e1 w = new e1(this, 7);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class c3 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public c3(d3 d3Var) {
-        this.x = d3Var;
+    public /* synthetic */ c3(int i7, Object obj, boolean z10) {
+        this.a = i7;
+        this.c = obj;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        return true;
-    }
-
-    public final void E() {
-        int i7 = this.x.a;
-        if (this.d) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.g3(new di.p6((d3) this.c, tLObject, this.b, 4));
+                break;
+            case 1:
+                ((VoIPService) this.c).lambda$acknowledgeCall$13(this.b, tLObject, tL_error);
+                break;
+            case 2:
+                org.telegram.ui.i9 i9Var = (org.telegram.ui.i9) this.c;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_affectedFoundMessages tL_messages_affectedFoundMessages = (TLRPC.TL_messages_affectedFoundMessages) tLObject;
+                    TL_update.TL_updateDeleteMessages tL_updateDeleteMessages = new TL_update.TL_updateDeleteMessages();
+                    tL_updateDeleteMessages.messages = tL_messages_affectedFoundMessages.messages;
+                    tL_updateDeleteMessages.pts = tL_messages_affectedFoundMessages.pts;
+                    tL_updateDeleteMessages.pts_count = tL_messages_affectedFoundMessages.pts_count;
+                    TLRPC.TL_updates tL_updates = new TLRPC.TL_updates();
+                    tL_updates.updates.add(tL_updateDeleteMessages);
+                    i9Var.getMessagesController().V3(tL_updates, false);
+                    if (tL_messages_affectedFoundMessages.offset != 0) {
+                        TLRPC.TL_messages_deletePhoneCallHistory tL_messages_deletePhoneCallHistory = new TLRPC.TL_messages_deletePhoneCallHistory();
+                        boolean z10 = this.b;
+                        tL_messages_deletePhoneCallHistory.revoke = z10;
+                        i9Var.getConnectionsManager().sendRequest(tL_messages_deletePhoneCallHistory, new c3(2, i9Var, z10));
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                org.telegram.messenger.g0.g3(new di.p6((mm) this.c, tLObject, this.b, 15));
+                break;
+            case 4:
+                rn rnVar = (rn) this.c;
+                if (!(tLObject instanceof TLRPC.Updates)) {
+                    org.telegram.messenger.g0.g3(new mn(rnVar, 3));
+                    break;
+                } else {
+                    rnVar.getMessagesController().V3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.g0.g3(new ch.k(21, rnVar, this.b));
+                    break;
+                }
+            case 5:
+                org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 0));
+                break;
+            case 6:
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Components.k7((xc0) this.c, tL_error, tLObject, this.b));
+                break;
+            case 7:
+                org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 9));
+                break;
+            case 8:
+                org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 10));
+                break;
+            case 9:
+                org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 13));
+                break;
+            case 10:
+                cn0 cn0Var = (cn0) this.c;
+                if (tLObject != null) {
+                    org.telegram.messenger.g0.g3(new a80(cn0Var, tLObject, this.b, 4));
+                    break;
+                }
+                break;
+            case 11:
+                org.telegram.messenger.g0.g3(new yn(this.c, (Object) tL_error, (Object) tLObject, this.b, 14));
+                break;
+            default:
+                org.telegram.messenger.g0.g3(new a80((WallpapersListActivity) this.c, tLObject, this.b, 13));
+                break;
         }
-        this.d = true;
-        F(true);
-        np s12 = np.s1(i7);
-        String str = s12.M3;
-        if (this.n == null) {
-            TLObject f22 = s12.f2(str);
-            if (f22 instanceof TLRPC.User) {
-                this.n = (TLRPC.User) f22;
-            }
-        }
-        TLRPC.User user = this.n;
-        if (user == null && !this.r) {
-            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
-            tL_contacts_resolveUsername.username = str;
-            this.e = ConnectionsManager.getInstance(i7).sendRequest(tL_contacts_resolveUsername, new bi.v2(15, this, s12));
-        } else {
-            if (user == null) {
-                return;
-            }
-            TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            tL_messages_getInlineBotResults.bot = s12.q1(this.n);
-            String str2 = this.f;
-            if (str2 == null) {
-                str2 = "";
-            }
-            tL_messages_getInlineBotResults.query = str2;
-            tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
-            String str3 = this.h;
-            String str4 = str3 != null ? str3 : "";
-            tL_messages_getInlineBotResults.offset = str4;
-            this.e = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getInlineBotResults, new b3(0, this, TextUtils.isEmpty(str4)));
-        }
-    }
-
-    public abstract void F(boolean z10);
-
-    @Override // v4.h0
-    public final int b() {
-        return this.c.size();
-    }
-
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
-        org.telegram.ui.Components.i9 i9Var = (org.telegram.ui.Components.i9) e1Var.a;
-        TLObject tLObject = (TLObject) this.c.get(i7);
-        boolean z10 = tLObject instanceof TLRPC.Document;
-        ColorDrawable colorDrawable = this.s;
-        if (z10) {
-            i9Var.j(gc.b((TLRPC.Document) tLObject), "200_200", colorDrawable, null);
-            return;
-        }
-        if (tLObject instanceof TLRPC.Photo) {
-            TLRPC.Photo photo = (TLRPC.Photo) tLObject;
-            i9Var.j(gc.i(org.telegram.messenger.w7.w(photo.sizes, ns.r5, false, null, false), photo), "200_200", colorDrawable, null);
-        } else {
-            if (!(tLObject instanceof TLRPC.BotInlineResult)) {
-                i9Var.b();
-                return;
-            }
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) tLObject;
-            TLRPC.WebDocument webDocument = botInlineResult.thumb;
-            if (webDocument != null) {
-                i9Var.j(gc.g(webDocument.url), "200_200", colorDrawable, botInlineResult);
-            } else {
-                i9Var.b();
-            }
-        }
-    }
-
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        return new cj0(new di.t5(this.x.getContext(), 1));
     }
 }

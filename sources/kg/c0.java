@@ -3,29 +3,29 @@ package kg;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.bj;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.dl;
-import org.telegram.ui.Components.qy;
-import org.telegram.ui.Components.sj;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.zk;
-import org.telegram.ui.Components.zm;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.gl;
+import org.telegram.ui.Components.gn;
+import org.telegram.ui.Components.ij;
+import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.kl;
+import org.telegram.ui.Components.wy;
+import org.telegram.ui.Components.zj;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c0 extends qy {
+public final class c0 extends wy {
     public final /* synthetic */ int U;
-    public final /* synthetic */ ci V;
+    public final /* synthetic */ ki V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c0(ci ciVar, int i7, uj0 uj0Var, int i10) {
-        super(i7, 0, uj0Var);
+    public /* synthetic */ c0(ki kiVar, int i7, ck0 ck0Var, int i10) {
+        super(i7, 0, ck0Var);
         this.U = i10;
-        this.V = ciVar;
+        this.V = kiVar;
     }
 
-    @Override // v4.o0
+    @Override // v4.p0
     public int[] t(View view, Rect rect) {
         switch (this.U) {
             case 4:
@@ -43,8 +43,8 @@ public final class c0 extends qy {
         }
     }
 
-    @Override // v4.b0, v4.o0
-    public final void v0(RecyclerView recyclerView, v4.b1 b1Var, int i7) {
+    @Override // v4.c0, v4.p0
+    public final void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
         switch (this.U) {
             case 0:
                 b0 b0Var = new b0(this, recyclerView.getContext());
@@ -52,45 +52,45 @@ public final class c0 extends qy {
                 w0(b0Var);
                 break;
             case 1:
-                bj bjVar = new bj(this, recyclerView.getContext());
-                bjVar.a = i7;
-                w0(bjVar);
+                ij ijVar = new ij(this, recyclerView.getContext());
+                ijVar.a = i7;
+                w0(ijVar);
                 break;
             case 2:
-                sj sjVar = new sj(this, recyclerView.getContext());
-                sjVar.a = i7;
-                w0(sjVar);
+                zj zjVar = new zj(this, recyclerView.getContext());
+                zjVar.a = i7;
+                w0(zjVar);
                 break;
             case 3:
-                zk zkVar = new zk(this, recyclerView.getContext());
-                zkVar.a = i7;
-                w0(zkVar);
+                gl glVar = new gl(this, recyclerView.getContext());
+                glVar.a = i7;
+                w0(glVar);
                 break;
             default:
-                zm zmVar = new zm(this, recyclerView.getContext());
-                zmVar.a = i7;
-                w0(zmVar);
+                gn gnVar = new gn(this, recyclerView.getContext());
+                gnVar.a = i7;
+                w0(gnVar);
                 break;
         }
     }
 
-    @Override // v4.b0
-    public void z0(v4.b1 b1Var, int[] iArr) {
+    @Override // v4.c0
+    public void z0(v4.c1 c1Var, int[] iArr) {
         switch (this.U) {
             case 3:
-                super.z0(b1Var, iArr);
-                iArr[1] = Math.max(iArr[1], ((dl) this.V).M.getHeight());
+                super.z0(c1Var, iArr);
+                iArr[1] = Math.max(iArr[1], ((kl) this.V).M.getHeight());
                 break;
             default:
-                super.z0(b1Var, iArr);
+                super.z0(c1Var, iArr);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(dl dlVar, di.c1 c1Var) {
-        super(0, 0, c1Var);
+    public c0(kl klVar, di.b1 b1Var) {
+        super(0, 0, b1Var);
         this.U = 3;
-        this.V = dlVar;
+        this.V = klVar;
     }
 }

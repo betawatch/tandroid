@@ -6,7 +6,7 @@ import android.util.Log;
 import java.util.Collections;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class n0 implements Runnable {
                 n nVar = (n) this.c;
                 m mVar = oVar.b;
                 if (mVar != null) {
-                    nVar.g(mVar.a);
+                    nVar.q(mVar.a);
                     break;
                 }
                 break;
@@ -71,7 +71,7 @@ public final class n0 implements Runnable {
                 n6.a aVar2 = hVar2.b;
                 if (aVar2.c()) {
                     q6.x xVar = hVar2.c;
-                    q6.m.g(xVar);
+                    q6.m.h(xVar);
                     n6.a aVar3 = xVar.c;
                     if (!aVar3.c()) {
                         Log.wtf("SignInCoordinator", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar3)), new Exception());

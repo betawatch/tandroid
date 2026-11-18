@@ -1,44 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fd0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kd0 b;
+import java.util.TimerTask;
 
-    public /* synthetic */ fd0(kd0 kd0Var, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class fd0 extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gd0 b;
+
+    public /* synthetic */ fd0(gd0 gd0Var, int i7) {
         this.a = i7;
-        this.b = kd0Var;
+        this.b = gd0Var;
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
-        int i7;
-        int i10 = this.a;
-        kd0 kd0Var = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                kd0Var.o();
-                break;
-            case 1:
-                PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, "sms");
-                ce0 ce0Var = kd0Var.w;
-                i7 = ((org.telegram.ui.ActionBar.e2) ce0Var).currentAccount;
-                premiumPreviewFragment.setCurrentAccount(i7);
-                ce0Var.presentFragment(premiumPreviewFragment);
-                break;
-            case 2:
-                ce0 ce0Var2 = kd0Var.w;
-                ce0Var2.M1(0, true, null, true);
-                ce0Var2.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131752021, null));
-                break;
-            case 3:
-                ce0 ce0Var3 = kd0Var.w;
-                ce0Var3.M1(0, true, null, true);
-                ce0Var3.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131752021, null));
+                org.telegram.messenger.g0.g3(new lz(this, 26));
                 break;
             default:
-                kd0Var.b.setLoading(false);
+                if (this.b.U != null) {
+                    org.telegram.messenger.g0.g3(new lz(this, 27));
+                    break;
+                }
                 break;
         }
     }

@@ -2,6 +2,7 @@ package androidx.car.app.utils;
 
 import a8.p0;
 import aa.r;
+import ai.s;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class g {
     public static IOnDoneCallback a() {
@@ -34,11 +35,11 @@ public abstract class g {
     }
 
     public static void b(IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new r(iOnDoneCallback, str, aVar, 4));
+        h.a(new r(iOnDoneCallback, str, aVar, 5));
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, a aVar) {
-        h.a(new ai.r((Object) oVar, (Object) iOnDoneCallback, str, (Object) aVar, 1));
+        h.a(new s((Object) oVar, (Object) iOnDoneCallback, str, (Object) aVar, 1));
     }
 
     public static void d(String str, b bVar) {

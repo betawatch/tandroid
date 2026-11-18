@@ -8,29 +8,30 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
-import di.ab;
-import di.r4;
-import di.s4;
-import di.za;
-import fi.h4;
-import fi.v6;
-import fi.w6;
-import fi.x3;
-import fi.z7;
-import hi.d3;
-import hi.j5;
+import di.db;
+import di.eb;
+import di.u4;
+import di.v4;
+import fi.f4;
+import fi.q4;
+import fi.s6;
+import fi.t6;
+import fi.v3;
+import fi.w7;
+import hi.e3;
+import hi.i5;
+import hi.j6;
 import hi.j8;
-import hi.k6;
-import hi.l3;
 import hi.l8;
-import hi.q5;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.mi0;
+import hi.m3;
+import hi.o5;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.vi0;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.sl;
-import org.telegram.ui.vv0;
+import org.telegram.ui.tl;
+import org.telegram.ui.wv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class j0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -43,16 +44,16 @@ public final class j0 extends AnimatorListenerAdapter {
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public void onAnimationEnd(Animator animator) {
-        sl slVar;
+        tl tlVar;
         boolean z10;
         int i7 = this.a;
         Object obj = this.b;
         switch (i7) {
             case 0:
                 n0 n0Var = (n0) obj;
-                if (n0Var.E0 <= 0.0f && (slVar = n0Var.D0) != null && n0Var.F0 == animator) {
-                    slVar.q0(n0Var.G0);
-                    n0Var.D0 = null;
+                if (n0Var.F0 <= 0.0f && (tlVar = n0Var.E0) != null && n0Var.G0 == animator) {
+                    tlVar.q0(n0Var.H0);
+                    n0Var.E0 = null;
                     break;
                 }
                 break;
@@ -63,36 +64,36 @@ public final class j0 extends AnimatorListenerAdapter {
                 ((c1.c) obj).run();
                 break;
             case 3:
-                ((ch.o) obj).w.setVisibility(4);
+                ((ch.p) obj).w.setVisibility(4);
                 break;
             case 4:
-                ch.r rVar = (ch.r) obj;
-                rVar.setVisibility(8);
-                ch.q qVar = rVar.b;
-                if (qVar != null) {
-                    rVar.removeView(qVar);
-                    rVar.b = null;
+                ch.s sVar = (ch.s) obj;
+                sVar.setVisibility(8);
+                ch.r rVar = sVar.b;
+                if (rVar != null) {
+                    sVar.removeView(rVar);
+                    sVar.b = null;
                 }
-                rVar.e = null;
+                sVar.e = null;
                 break;
             case 5:
                 ((ch.i0) obj).y.c();
                 break;
             case 6:
-                s4 s4Var = (s4) obj;
-                s4Var.F = 1.0f;
-                s4Var.G = -1;
-                r4 r4Var = s4Var.I;
-                if (r4Var != null && (z10 = r4Var.l) && z10) {
-                    r4Var.l = false;
-                    r4Var.b();
+                v4 v4Var = (v4) obj;
+                v4Var.F = 1.0f;
+                v4Var.G = -1;
+                u4 u4Var = v4Var.I;
+                if (u4Var != null && (z10 = u4Var.l) && z10) {
+                    u4Var.l = false;
+                    u4Var.b();
                 }
-                s4Var.H = null;
+                v4Var.H = null;
                 break;
             case 7:
-                za zaVar = ((ab) obj).c;
-                zaVar.setScaleX(1.0f);
-                zaVar.setScaleY(1.0f);
+                db dbVar = ((eb) obj).c;
+                dbVar.setScaleX(1.0f);
+                dbVar.setScaleY(1.0f);
                 break;
             case 8:
                 fi.a aVar = (fi.a) obj;
@@ -104,126 +105,126 @@ public final class j0 extends AnimatorListenerAdapter {
                 ((fi.p) obj).P.p = false;
                 break;
             case 10:
-                fi.n0 n0Var2 = (fi.n0) obj;
-                fi.s0 s0Var = n0Var2.L;
-                if (s0Var != null && n0Var2.J == s0Var.a) {
+                fi.m0 m0Var = (fi.m0) obj;
+                fi.r0 r0Var = m0Var.L;
+                if (r0Var != null && m0Var.J == r0Var.a) {
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    n0Var2.K = ofFloat;
-                    ofFloat.addUpdateListener(new ah.h(this, 17));
-                    n0Var2.K.setStartDelay(3000L);
-                    n0Var2.K.setDuration(550L);
-                    n0Var2.K.setInterpolator(new LinearInterpolator());
-                    n0Var2.K.start();
+                    m0Var.K = ofFloat;
+                    ofFloat.addUpdateListener(new ah.g(this, 17));
+                    m0Var.K.setStartDelay(3000L);
+                    m0Var.K.setDuration(550L);
+                    m0Var.K.setInterpolator(new LinearInterpolator());
+                    m0Var.K.start();
                     break;
                 }
                 break;
             case 11:
-                fi.k2 k2Var = (fi.k2) obj;
-                k2Var.S6.invalidate();
-                k2Var.setAnimatedTop(0);
-                k2Var.S6.F2 = true;
-                View view = k2Var.o2;
+                fi.i2 i2Var = (fi.i2) obj;
+                i2Var.s7.invalidate();
+                i2Var.setAnimatedTop(0);
+                i2Var.s7.F2 = true;
+                View view = i2Var.u2;
                 if (view != null && view.getVisibility() == 0) {
-                    k2Var.o2.setTranslationY(((1.0f - k2Var.getTopViewEnterProgress()) * k2Var.o2.getLayoutParams().height) + k2Var.B2);
+                    i2Var.u2.setTranslationY(((1.0f - i2Var.getTopViewEnterProgress()) * i2Var.u2.getLayoutParams().height) + i2Var.H2);
                 }
-                k2Var.S6.O1 = null;
+                i2Var.s7.O1 = null;
                 break;
             case 12:
-                x3 x3Var = (x3) obj;
-                x3Var.c[1].setVisibility(8);
-                x3Var.c[0].setAlpha(1.0f);
-                x3Var.c[0].setTranslationY(0.0f);
+                v3 v3Var = (v3) obj;
+                v3Var.c[1].setVisibility(8);
+                v3Var.c[0].setAlpha(1.0f);
+                v3Var.c[0].setTranslationY(0.0f);
                 break;
             case 13:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                vv0 vv0Var = profileStoriesView.h;
+                wv0 wv0Var = profileStoriesView.h;
                 profileStoriesView.H = 1.0f;
-                vv0Var.S = 1.0f;
-                vv0Var.invalidate();
+                wv0Var.S = 1.0f;
+                wv0Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 14:
-                ((h4) obj).N = null;
+                ((f4) obj).N = null;
                 break;
             case 15:
-                fi.s4 s4Var2 = (fi.s4) obj;
-                s4Var2.x = null;
-                s4Var2.r = 1.0f;
-                s4Var2.invalidate();
+                q4 q4Var = (q4) obj;
+                q4Var.x = null;
+                q4Var.r = 1.0f;
+                q4Var.invalidate();
                 break;
             case 16:
             default:
                 super.onAnimationEnd(animator);
                 break;
             case 17:
-                z7 z7Var = (z7) obj;
-                z7Var.I = false;
-                z7Var.H = 0.0f;
-                z7Var.invalidate();
-                z7Var.requestLayout();
-                z7Var.K.requestLayout();
+                w7 w7Var = (w7) obj;
+                w7Var.I = false;
+                w7Var.H = 0.0f;
+                w7Var.invalidate();
+                w7Var.requestLayout();
+                w7Var.K.requestLayout();
                 break;
             case 18:
-                hi.m mVar = ((hi.g) obj).d0;
-                if (mVar.g0 == animator) {
-                    mVar.g0 = null;
-                    mVar.f.getEditText().setScrollY(mVar.c0);
+                hi.n nVar = ((hi.g) obj).d0;
+                if (nVar.g0 == animator) {
+                    nVar.g0 = null;
+                    nVar.f.getEditText().setScrollY(nVar.c0);
                     break;
                 }
                 break;
             case 19:
-                hi.d0 d0Var = (hi.d0) obj;
-                d0Var.l = 1.0f;
-                hi.e0 e0Var = d0Var.p;
-                if (e0Var.n.contains(d0Var)) {
-                    d0Var.c.R();
-                    hi.c0 c0Var = d0Var.d;
-                    if (c0Var != null) {
-                        c0Var.pause();
-                        d0Var.d.release(null);
-                        d0Var.d = null;
+                hi.e0 e0Var = (hi.e0) obj;
+                e0Var.l = 1.0f;
+                hi.f0 f0Var = e0Var.p;
+                if (f0Var.n.contains(e0Var)) {
+                    e0Var.c.R();
+                    hi.d0 d0Var = e0Var.d;
+                    if (d0Var != null) {
+                        d0Var.pause();
+                        e0Var.d.release(null);
+                        e0Var.d = null;
                     }
-                    TextureView textureView = d0Var.e;
+                    TextureView textureView = e0Var.e;
                     if (textureView != null) {
                         org.telegram.messenger.g0.E2(textureView);
-                        d0Var.e = null;
+                        e0Var.e = null;
                     }
-                    d0Var.f = false;
-                    e0Var.n.remove(d0Var);
+                    e0Var.f = false;
+                    f0Var.n.remove(e0Var);
                 }
-                e0Var.invalidate();
+                f0Var.invalidate();
                 break;
             case 20:
-                d3 d3Var = (d3) ((hi.s2) obj).c;
-                d3Var.G.setVisibility(8);
-                d3Var.d.setVisibility(8);
+                e3 e3Var = (e3) ((hi.t2) obj).c;
+                e3Var.G.setVisibility(8);
+                e3Var.d.setVisibility(8);
                 break;
             case 21:
-                l3 l3Var = (l3) obj;
-                l3Var.A0 = 1.0f;
-                l3Var.invalidate();
+                m3 m3Var = (m3) obj;
+                m3Var.A0 = 1.0f;
+                m3Var.invalidate();
                 break;
             case 22:
-                org.telegram.messenger.g0.E2((mi0) obj);
+                org.telegram.messenger.g0.E2((vi0) obj);
                 break;
             case 23:
                 super.onAnimationEnd(animator);
-                j5 j5Var = (j5) obj;
-                ImageView imageView = j5Var.c;
-                j5Var.c = j5Var.d;
-                j5Var.d = imageView;
+                i5 i5Var = (i5) obj;
+                ImageView imageView = i5Var.c;
+                i5Var.c = i5Var.d;
+                i5Var.d = imageView;
                 imageView.bringToFront();
-                j5Var.d.setVisibility(8);
-                j5Var.h = null;
+                i5Var.d.setVisibility(8);
+                i5Var.h = null;
                 break;
             case 24:
                 super.onAnimationEnd(animator);
-                ((q5) obj).x = null;
+                ((o5) obj).x = null;
                 break;
             case 25:
-                k6 k6Var = (k6) obj;
-                if (k6Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) k6Var.getParent()).removeView(k6Var);
+                j6 j6Var = (j6) obj;
+                if (j6Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) j6Var.getParent()).removeView(j6Var);
                     break;
                 }
                 break;
@@ -236,12 +237,12 @@ public final class j0 extends AnimatorListenerAdapter {
                 j8Var.d = null;
                 break;
             case 28:
-                ki.w wVar = (ki.w) obj;
-                wVar.setVisibility(8);
-                wVar.a = null;
+                ki.v vVar = (ki.v) obj;
+                vVar.setVisibility(8);
+                vVar.a = null;
                 break;
             case 29:
-                ((ki.x2) obj).F.setVisibility(8);
+                ((ki.t2) obj).F.setVisibility(8);
                 break;
         }
     }
@@ -251,10 +252,10 @@ public final class j0 extends AnimatorListenerAdapter {
         switch (this.a) {
             case 16:
                 super.onAnimationStart(animator);
-                w6 w6Var = (w6) this.b;
-                ch0 ch0Var = ((v6) w6Var.a.get(w6Var.d)).c;
-                ch0Var.M = 2;
-                ch0Var.start();
+                t6 t6Var = (t6) this.b;
+                mh0 mh0Var = ((s6) t6Var.a.get(t6Var.d)).c;
+                mh0Var.M = 2;
+                mh0Var.start();
                 break;
             default:
                 super.onAnimationStart(animator);

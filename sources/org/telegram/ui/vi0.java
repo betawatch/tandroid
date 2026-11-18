@@ -1,34 +1,104 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vi0 implements RequestDelegate {
+public final /* synthetic */ class vi0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ek0 b;
+    public final /* synthetic */ hk0 b;
 
-    public /* synthetic */ vi0(ek0 ek0Var, int i7) {
+    public /* synthetic */ vi0(hk0 hk0Var, int i7) {
         this.a = i7;
-        this.b = ek0Var;
+        this.b = hk0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        hk0 hk0Var = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.h3(new lc0(this.b, tL_error, tLObject, 12));
+                hk0Var.T0 = 2;
+                hk0Var.H1();
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new jd0(17, this.b, tL_error));
+                hk0Var.h1();
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new ri0(this.b, 5));
+                hk0Var.T0 = 3;
+                hk0Var.H1();
+                break;
+            case 3:
+                hk0Var.T0 = 1;
+                hk0Var.H1();
+                break;
+            case 4:
+                hk0Var.T0 = 4;
+                hk0Var.H1();
+                break;
+            case 5:
+                if (hk0Var.getParentActivity().checkSelfPermission("android.permission.CAMERA") == 0) {
+                    t9 t9Var = new t9(0);
+                    t9Var.N = new hj0(hk0Var);
+                    hk0Var.presentFragment(t9Var);
+                    break;
+                } else {
+                    hk0Var.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 22);
+                    break;
+                }
+            case 6:
+                hk0Var.f = true;
+                hk0Var.M.callOnClick();
+                hk0Var.f = false;
+                break;
+            case 7:
+                hk0Var.T0 = 0;
+                hk0Var.H1();
+                break;
+            case 8:
+                hk0Var.T0 = 4;
+                hk0Var.H1();
+                break;
+            case 9:
+                hk0Var.h1();
+                break;
+            case 10:
+                hk0.g0(hk0Var);
+                break;
+            case 11:
+                hk0.h0(hk0Var);
+                break;
+            case 12:
+                hk0Var.G1();
+                break;
+            case 13:
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hk0Var.getParentActivity());
+                String M0 = org.telegram.messenger.gd.M0(2131743997, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.S = M0;
+                u1Var.U = org.telegram.messenger.gd.M0(2131743998, null);
+                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131751587, null), new xi0(hk0Var, 5));
+                alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
+                hk0Var.showDialog(u1Var);
+                TextView textView = (TextView) u1Var.d(-1);
+                if (textView != null) {
+                    org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+                    break;
+                }
+                break;
+            case 14:
+                hk0Var.G1();
+                break;
+            case 15:
+                hk0.a0(hk0Var);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new jd0(16, this.b, tLObject));
+                hk0Var.f = true;
+                hk0Var.M.callOnClick();
+                hk0Var.f = false;
                 break;
         }
     }

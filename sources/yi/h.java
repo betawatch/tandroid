@@ -1,27 +1,18 @@
 package yi;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.io.File;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class h {
-    public static final h a;
-    public static final h b;
-    public static final /* synthetic */ h[] c;
+    public final long a;
+    public final File b;
+    public long c;
+    public boolean d = true;
+    public boolean e;
 
-    static {
-        h hVar = new h("DISABLED", 0);
-        a = hVar;
-        h hVar2 = new h("RNNOISE", 1);
-        b = hVar2;
-        c = new h[]{hVar, hVar2};
-    }
-
-    public static h valueOf(String str) {
-        return (h) Enum.valueOf(h.class, str);
-    }
-
-    public static h[] values() {
-        return (h[]) c.clone();
+    public h(long j3, File file) {
+        this.a = j3;
+        this.b = file;
     }
 }

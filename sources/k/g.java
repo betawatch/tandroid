@@ -15,7 +15,7 @@ import l.m;
 import l.n;
 import l.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -141,34 +141,34 @@ public final class g {
         if (z11) {
             ((l0.a) menuItem).setContentDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            f2.h.h(menuItem, charSequence);
+            f2.i.h(menuItem, charSequence);
         }
         CharSequence charSequence2 = this.B;
         if (z11) {
             ((l0.a) menuItem).setTooltipText(charSequence2);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            f2.h.l(menuItem, charSequence2);
+            f2.i.l(menuItem, charSequence2);
         }
         char c10 = this.n;
         int i11 = this.o;
         if (z11) {
             ((l0.a) menuItem).setAlphabeticShortcut(c10, i11);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            f2.h.g(menuItem, c10, i11);
+            f2.i.g(menuItem, c10, i11);
         }
         char c11 = this.p;
         int i12 = this.q;
         if (z11) {
             ((l0.a) menuItem).setNumericShortcut(c11, i12);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            f2.h.k(menuItem, c11, i12);
+            f2.i.k(menuItem, c11, i12);
         }
         PorterDuff.Mode mode = this.D;
         if (mode != null) {
             if (z11) {
                 ((l0.a) menuItem).setIconTintMode(mode);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                f2.h.j(menuItem, mode);
+                f2.i.j(menuItem, mode);
             }
         }
         ColorStateList colorStateList = this.C;
@@ -176,7 +176,7 @@ public final class g {
             if (z11) {
                 ((l0.a) menuItem).setIconTintList(colorStateList);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                f2.h.i(menuItem, colorStateList);
+                f2.i.i(menuItem, colorStateList);
             }
         }
     }

@@ -2,7 +2,7 @@ package p4;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -34,25 +34,25 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 break;
             case 1:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(26)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 1, e1.s1(new org.telegram.utils.twidget.f(27)));
                 break;
             case 2:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 9, c1.s1(new q0(5)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 9, e1.s1(new r0(6)));
                 break;
             case 3:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 7, c1.s1(new q0(1)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 7, e1.s1(new r0(2)));
                 break;
             case 4:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 12, c1.s1(new q0(4)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 12, e1.s1(new r0(5)));
                 break;
             case 5:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 11, c1.s1(new q0(0)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 11, e1.s1(new r0(1)));
                 break;
             case 6:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 3, c1.s1(new q0(11)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 3, e1.s1(new r0(12)));
                 break;
             case 7:
-                this.b.g.q1(this.c, TLObject.FLAG_31, 1, c1.s1(new org.telegram.utils.twidget.e(26)));
+                this.b.g.q1(this.c, TLObject.FLAG_31, 1, e1.s1(new org.telegram.utils.twidget.f(27)));
                 break;
             case 8:
                 this.b.g.o1(this.c, TLObject.FLAG_31);

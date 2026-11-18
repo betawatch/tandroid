@@ -1,102 +1,237 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
+import android.view.ViewConfiguration;
+import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class jl0 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final View a;
-    public final ImageView b;
-    public final hi.b2 c;
-    public final ah.i d;
-    public final org.telegram.ui.ActionBar.e6 e;
+public final class jl0 {
+    public static final float A;
+    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
+    public static final float w = 0.4f;
+    public static final float x = 1.0f - 0.4f;
+    public static final float[] y = new float[101];
+    public static final float z;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public long l;
+    public int m;
+    public float n;
+    public float o;
+    public float p;
+    public final Interpolator r;
+    public float t;
+    public final float u;
+    public boolean q = true;
+    public final boolean s = true;
 
-    public jl0(Context context, float f10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.e = e6Var;
-        View view = new View(context);
-        this.a = view;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.O5, e6Var)));
-        addView(view, c8.ja.i(-1.0f, 36.0f, 8388659, f10, 11.0f, f10, 0.0f));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        org.telegram.ui.ActionBar.q6.s(imageView, org.telegram.ui.ActionBar.j6.Q5, e6Var, PorterDuff.Mode.MULTIPLY);
-        addView(imageView, c8.ja.i(36.0f, 36.0f, 8388659, f10 + 2.0f, 11.0f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.b = imageView2;
-        imageView2.setScaleType(scaleType);
-        hi.b2 b2Var = new hi.b2(3, this);
-        this.c = b2Var;
-        imageView2.setImageDrawable(b2Var);
-        b2Var.f = org.telegram.messenger.g0.L(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, c8.ja.i(36.0f, 36.0f, 8388661, f10, 11.0f, f10, 0.0f));
-        imageView2.setOnClickListener(new y60(this, 9));
-        ah.i iVar = new ah.i(8, context, this);
-        this.d = iVar;
-        iVar.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.q6.D(iVar, org.telegram.ui.ActionBar.j6.P5, e6Var);
-        org.telegram.ui.ActionBar.q6.U(iVar, org.telegram.ui.ActionBar.j6.R5, e6Var);
-        iVar.setBackgroundDrawable(null);
-        iVar.setPadding(0, 0, 0, 0);
-        iVar.setMaxLines(1);
-        iVar.setLines(1);
-        iVar.setSingleLine(true);
-        iVar.setGravity(c8.ja.y() | 16);
-        iVar.setImeOptions(268435459);
-        org.telegram.ui.ActionBar.q6.l(iVar, 30, org.telegram.ui.ActionBar.j6.Di, e6Var);
-        iVar.setCursorSize(org.telegram.messenger.g0.L(20.0f));
-        iVar.setCursorWidth(1.5f);
-        float f11 = f10 + 2.0f;
-        addView(iVar, c8.ja.i(-1.0f, 40.0f, 8388659, f11 + 38.0f, 9.0f, f11 + 30.0f, 0.0f));
-        iVar.addTextChangedListener(new ah.j(this, 24));
-        iVar.setOnEditorActionListener(new q0(this, 6));
+    static {
+        float f10;
+        float f11;
+        float f12 = 0.0f;
+        for (int i7 = 0; i7 <= 100; i7++) {
+            float f13 = i7 / 100.0f;
+            float f14 = 1.0f;
+            while (true) {
+                float A2 = com.google.android.gms.internal.vision.e2.A(f14, f12, 2.0f, f12);
+                float f15 = 1.0f - A2;
+                f10 = 3.0f * A2 * f15;
+                f11 = A2 * A2 * A2;
+                float B = com.google.android.gms.internal.vision.e2.B(A2, x, f15 * w, f10) + f11;
+                if (Math.abs(B - f13) < 1.0E-5d) {
+                    break;
+                } else if (B > f13) {
+                    f14 = A2;
+                } else {
+                    f12 = A2;
+                }
+            }
+            y[i7] = f10 + f11;
+        }
+        y[100] = 1.0f;
+        z = 8.0f;
+        A = 1.0f;
+        A = 1.0f / e(1.0f);
     }
 
-    public abstract void a(String str);
-
-    public wp getProgressDrawable() {
-        return this.c;
+    public jl0(Context context, DecelerateInterpolator decelerateInterpolator) {
+        this.r = decelerateInterpolator;
+        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
     }
 
-    public View getSearchBackground() {
-        return this.a;
+    public static float e(float f10) {
+        float f11 = f10 * z;
+        return (f11 < 1.0f ? f11 - (1.0f - ((float) Math.exp(-f11))) : com.google.android.gms.internal.vision.e2.z(1.0f, (float) Math.exp(1.0f - f11), 0.63212055f, 0.36787945f)) * A;
     }
 
-    public EditTextBoldCursor getSearchEditText() {
-        return this.d;
+    public final void a() {
+        this.j = this.d;
+        this.k = this.e;
+        this.q = true;
     }
 
-    public void setHint(String str) {
-        this.d.setHint(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        View view = this.a;
-        if (view != null) {
-            try {
-                org.telegram.ui.ActionBar.j6.C1(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.O5, this.e), view.getBackground());
-                view.invalidate();
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-                return;
+    public final boolean b() {
+        if (this.q) {
+            return false;
+        }
+        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
+        int i7 = this.m;
+        if (currentAnimationTimeMillis >= i7) {
+            this.j = this.d;
+            this.k = this.e;
+            this.q = true;
+            return true;
+        }
+        int i10 = this.a;
+        if (i10 == 0) {
+            float f10 = currentAnimationTimeMillis * this.n;
+            Interpolator interpolator = this.r;
+            float e10 = interpolator == null ? e(f10) : interpolator.getInterpolation(f10);
+            this.j = Math.round(this.o * e10) + this.b;
+            this.k = Math.round(e10 * this.p) + this.c;
+            return true;
+        }
+        if (i10 == 1) {
+            float f11 = currentAnimationTimeMillis / i7;
+            int i11 = (int) (f11 * 100.0f);
+            float f12 = i11 / 100.0f;
+            int i12 = i11 + 1;
+            float[] fArr = y;
+            float f13 = fArr[i11];
+            float z10 = com.google.android.gms.internal.vision.e2.z(fArr[i12], f13, (f11 - f12) / ((i12 / 100.0f) - f12), f13);
+            int round = Math.round((this.d - r1) * z10) + this.b;
+            this.j = round;
+            int min = Math.min(round, this.g);
+            this.j = min;
+            this.j = Math.max(min, this.f);
+            int round2 = Math.round(z10 * (this.e - r1)) + this.c;
+            this.k = round2;
+            int min2 = Math.min(round2, this.i);
+            this.k = min2;
+            int max = Math.max(min2, this.h);
+            this.k = max;
+            if (this.j == this.d && max == this.e) {
+                this.q = true;
             }
         }
-        invalidate();
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00ad  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void c(int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        int i17;
+        int i18;
+        if (!this.s || this.q) {
+            i17 = i11;
+        } else {
+            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
+            float f10 = this.d - this.b;
+            float f11 = this.e - this.c;
+            float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
+            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
+            float f13 = (f11 / sqrt) * currentAnimationTimeMillis;
+            i17 = i11;
+            float f14 = i17;
+            if (Math.signum(f14) == Math.signum(f12)) {
+                i18 = i12;
+                float f15 = i18;
+                if (Math.signum(f15) == Math.signum(f13)) {
+                    i17 = (int) (f14 + f12);
+                    i18 = (int) (f15 + f13);
+                }
+                this.a = 1;
+                this.q = false;
+                float sqrt2 = (float) Math.sqrt((i18 * i18) + (i17 * i17));
+                this.t = sqrt2;
+                double log = Math.log((w * sqrt2) / 800.0f);
+                double d = v;
+                double d2 = d - 1.0d;
+                this.m = (int) (Math.exp(log / d2) * 1000.0d);
+                this.l = AnimationUtils.currentAnimationTimeMillis();
+                this.b = i7;
+                this.c = i10;
+                float f16 = sqrt2 != 0.0f ? 1.0f : i17 / sqrt2;
+                float f17 = sqrt2 != 0.0f ? i18 / sqrt2 : 1.0f;
+                double exp = Math.exp((d / d2) * log);
+                this.f = i13;
+                this.g = i14;
+                this.h = i15;
+                this.i = i16;
+                float f18 = (int) (exp * 800.0f);
+                int round = Math.round(f16 * f18) + i7;
+                this.d = round;
+                int min = Math.min(round, this.g);
+                this.d = min;
+                this.d = Math.max(min, this.f);
+                int round2 = Math.round(f18 * f17) + i10;
+                this.e = round2;
+                int min2 = Math.min(round2, this.i);
+                this.e = min2;
+                this.e = Math.max(min2, this.h);
+            }
+        }
+        i18 = i12;
+        this.a = 1;
+        this.q = false;
+        float sqrt22 = (float) Math.sqrt((i18 * i18) + (i17 * i17));
+        this.t = sqrt22;
+        double log2 = Math.log((w * sqrt22) / 800.0f);
+        double d10 = v;
+        double d22 = d10 - 1.0d;
+        this.m = (int) (Math.exp(log2 / d22) * 1000.0d);
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = i7;
+        this.c = i10;
+        if (sqrt22 != 0.0f) {
+        }
+        if (sqrt22 != 0.0f) {
+        }
+        double exp2 = Math.exp((d10 / d22) * log2);
+        this.f = i13;
+        this.g = i14;
+        this.h = i15;
+        this.i = i16;
+        float f182 = (int) (exp2 * 800.0f);
+        int round3 = Math.round(f16 * f182) + i7;
+        this.d = round3;
+        int min3 = Math.min(round3, this.g);
+        this.d = min3;
+        this.d = Math.max(min3, this.f);
+        int round22 = Math.round(f182 * f17) + i10;
+        this.e = round22;
+        int min22 = Math.min(round22, this.i);
+        this.e = min22;
+        this.e = Math.max(min22, this.h);
+    }
+
+    public final void d(int i7, int i10) {
+        this.a = 0;
+        this.q = false;
+        this.m = i10;
+        this.l = AnimationUtils.currentAnimationTimeMillis();
+        this.b = 0;
+        this.c = 0;
+        this.d = 0;
+        this.e = i7;
+        this.o = 0;
+        this.p = i7;
+        this.n = 1.0f / this.m;
     }
 }

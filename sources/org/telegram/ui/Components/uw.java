@@ -1,49 +1,25 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class uw extends c8.oa {
+    public final /* synthetic */ ry a;
 
-    public /* synthetic */ uw(Object obj, float f10, int i7, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f10;
-        this.c = i7;
+    public uw(ry ryVar) {
+        this.a = ryVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                vw vwVar = (vw) this.d;
-                float f10 = this.b;
-                int i7 = this.c;
-                ly lyVar = vwVar.G;
-                try {
-                    pi.l lVar = new pi.l(lyVar.Q.getContext(), 0, f10);
-                    lVar.a = i7;
-                    lyVar.R.w0(lVar);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            default:
-                org.telegram.ui.n11 n11Var = (org.telegram.ui.n11) this.d;
-                float f11 = this.b;
-                int i10 = this.c;
-                try {
-                    pi.l lVar2 = new pi.l(n11Var.i0.getContext(), 0, f11);
-                    lVar2.a = i10;
-                    n11Var.s0.w0(lVar2);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
-        }
+    @Override // c8.oa
+    public final void a() {
+        ry ryVar = this.a;
+        ryVar.g0 = false;
+        ryVar.Q.B1();
+    }
+
+    @Override // c8.oa
+    public final void b() {
+        ry ryVar = this.a;
+        ryVar.Q.B1();
+        ryVar.g0 = true;
     }
 }

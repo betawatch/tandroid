@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -11,7 +11,7 @@ import kd.j;
 import rd.p;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzah extends j implements p {
     Object zza;
@@ -56,14 +56,14 @@ final class zzah extends j implements p {
         a aVar = a.a;
         int i7 = this.zzd;
         if (i7 == 0) {
-            b.c(obj);
+            h.b(obj);
             zzxn zzxnVar = this.zze;
             if (!zzxnVar.zzU()) {
-                return new g(b.b(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new g(h.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzk = zzxnVar.zzk();
             if (zzk.zzi().zzn()) {
-                return new g(b.b(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
+                return new g(h.a(new zzcg(zzce.zzb, zzcd.zzab, null, null, 12, null)));
             }
             zzaj zzajVar = this.zzf;
             zzajVar.zzb = zzk.zzi();
@@ -74,7 +74,7 @@ final class zzah extends j implements p {
                 zzhkVar = (zzhk) this.zzc;
                 it2 = (Iterator) this.zzb;
                 zzxpVar = (zzxp) this.zza;
-                b.c(obj);
+                h.b(obj);
                 this.zza = zzxpVar;
                 this.zzb = it2;
                 this.zzc = null;
@@ -87,7 +87,7 @@ final class zzah extends j implements p {
             }
             it = (Iterator) this.zzb;
             zzk = (zzxp) this.zza;
-            b.c(obj);
+            h.b(obj);
         }
         if (!it.hasNext()) {
             return new g(k.a);

@@ -1,25 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.RectF;
+import android.view.View;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j5 b;
+public interface u4 {
+    boolean a();
 
-    public /* synthetic */ u4(j5 j5Var, int i7) {
-        this.a = i7;
-        this.b = j5Var;
-    }
+    boolean b(r0 r0Var, RectF rectF);
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.setVisibility(8);
-                break;
-            default:
-                this.b.setVisibility(8);
-                break;
-        }
-    }
+    boolean d();
+
+    boolean e();
+
+    boolean f();
+
+    fh.g g(k5 k5Var);
+
+    int getButtonsGlassBackgroundColor();
+
+    gh.a getButtonsGlassColorProvider();
+
+    int getMenuAnchorTint();
+
+    int getMenuDimAlpha();
+
+    int getMenuExtraBelow();
+
+    gh.a getMenuGlassColorProvider();
+
+    View getMenuHostView();
+
+    int getMenuMaxHeight();
+
+    i6 getMenuResourcesProvider();
+
+    int getMenuRise();
+
+    View getMenuView();
+
+    k5 getOpenMenuOverlay();
+
+    void h(k5 k5Var, r0 r0Var);
+
+    void setMenuGlassFrostedProgress(float f10);
 }

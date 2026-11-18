@@ -4,7 +4,7 @@ import a8.u6;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import c8.qb;
+import c8.tb;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r implements k {
     public final Context a;
@@ -25,7 +25,7 @@ public final class r implements k {
     public u6 n;
 
     public r(Context context, o0.d dVar) {
-        qb.a(context, "Context cannot be null");
+        tb.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = s.d;
@@ -72,7 +72,7 @@ public final class r implements k {
                     this.h = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new a3.f(this, 11));
+                this.f.execute(new a3.f(this, 12));
             } catch (Throwable th2) {
                 throw th2;
             }

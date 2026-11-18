@@ -1,12 +1,12 @@
 package h9;
 
-import a8.ja;
+import a8.la;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class v0 extends g2 {
+public final class v0 extends h2 {
     public int a;
     public Object b;
     public final /* synthetic */ int c;
@@ -21,7 +21,7 @@ public final class v0 extends g2 {
     @Override // java.util.Iterator
     public final boolean hasNext() {
         Object next;
-        ja.p(this.a != 4);
+        la.p(this.a != 4);
         int c10 = p1.g.c(this.a);
         if (c10 == 0) {
             return true;
@@ -50,7 +50,7 @@ public final class v0 extends g2 {
                         } else {
                             next = it2.next();
                         }
-                    } while (!((b2) this.e).b.contains(next));
+                    } while (!((c2) this.e).b.contains(next));
             }
             this.b = next;
             if (this.a != 3) {
@@ -81,10 +81,10 @@ public final class v0 extends g2 {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public v0(b2 b2Var) {
+    public v0(c2 c2Var) {
         this();
         this.c = 1;
-        this.e = b2Var;
-        this.d = b2Var.a.iterator();
+        this.e = c2Var;
+        this.d = c2Var.a.iterator();
     }
 }

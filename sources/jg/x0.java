@@ -1,24 +1,24 @@
 package jg;
 
 import android.location.Location;
-import org.telegram.messenger.az;
+import org.telegram.messenger.vy;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x0 implements az {
+public final class x0 implements vy {
     public final /* synthetic */ h1 a;
 
     public x0(h1 h1Var) {
         this.a = h1Var;
     }
 
-    @Override // org.telegram.messenger.az
-    public final void c() {
+    @Override // org.telegram.messenger.vy
+    public final void b() {
         this.a.Q();
     }
 
-    @Override // org.telegram.messenger.az
+    @Override // org.telegram.messenger.vy
     public final void f(Location location) {
         h1 h1Var = this.a;
         TLRPC.User user = h1Var.x0;

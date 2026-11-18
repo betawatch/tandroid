@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
 /* loaded from: classes.dex */
 public final class l1 {
@@ -114,7 +114,7 @@ public final class l1 {
 
     public static int d(int i7, byte[] bArr, int i10, l lVar) {
         int i11;
-        int i12 = i7 & ns.L1;
+        int i12 = i7 & ks.L1;
         int i13 = i10 + 1;
         byte b10 = bArr[i10];
         if (b10 >= 0) {
@@ -424,7 +424,7 @@ public final class l1 {
                 if (obj instanceof String) {
                     String str2 = (String) obj;
                     if (!str2.startsWith("http") && str2.length() > 200) {
-                        str2 = String.valueOf(str2.substring(0, ns.e3)).concat("[...]");
+                        str2 = String.valueOf(str2.substring(0, ks.e3)).concat("[...]");
                     }
                     int length = str2.length();
                     StringBuilder sb2 = new StringBuilder(length);

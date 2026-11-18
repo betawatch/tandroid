@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -31,7 +31,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                 final t5 t5Var = this.b;
                 final CountDownLatch countDownLatch = this.c;
                 final Runnable runnable = this.d;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.j5
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.j5
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i7) {
@@ -47,7 +47,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                                     t5Var2.m0 = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
                                     boolean z10 = false;
-                                    org.telegram.messenger.np.s1(t5Var2.T).Y3(tL_premium_boostsList.users, false);
+                                    org.telegram.messenger.mp.u1(t5Var2.T).f4(tL_premium_boostsList.users, false);
                                     t5Var2.l0 = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
@@ -91,7 +91,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                                     t5Var3.n0 = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
                                     boolean z11 = false;
-                                    org.telegram.messenger.np.s1(t5Var3.T).Y3(tL_premium_boostsList2.users, false);
+                                    org.telegram.messenger.mp.u1(t5Var3.T).f4(tL_premium_boostsList2.users, false);
                                     t5Var3.k0 = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();
@@ -132,7 +132,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                 final t5 t5Var2 = this.b;
                 final CountDownLatch countDownLatch2 = this.c;
                 final Runnable runnable2 = this.d;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.j5
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.j5
                     @Override // java.lang.Runnable
                     public final void run() {
                         switch (i10) {
@@ -148,7 +148,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                                     t5Var22.m0 = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
                                     boolean z10 = false;
-                                    org.telegram.messenger.np.s1(t5Var22.T).Y3(tL_premium_boostsList.users, false);
+                                    org.telegram.messenger.mp.u1(t5Var22.T).f4(tL_premium_boostsList.users, false);
                                     t5Var22.l0 = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
@@ -192,7 +192,7 @@ public final /* synthetic */ class i5 implements RequestDelegate {
                                     t5Var3.n0 = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
                                     boolean z11 = false;
-                                    org.telegram.messenger.np.s1(t5Var3.T).Y3(tL_premium_boostsList2.users, false);
+                                    org.telegram.messenger.mp.u1(t5Var3.T).f4(tL_premium_boostsList2.users, false);
                                     t5Var3.k0 = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();

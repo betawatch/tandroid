@@ -1,18 +1,18 @@
 package ai;
 
-import fi.b7;
+import fi.y6;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.lc;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.yw;
+import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,7 +35,7 @@ public final /* synthetic */ class x0 implements Runnable {
         TL_stories.StoryItem storyItem;
         int i7 = this.a;
         r2 = null;
-        b7 a10 = null;
+        y6 a10 = null;
         boolean z10 = this.d;
         long j3 = this.c;
         int i10 = this.b;
@@ -66,27 +66,27 @@ public final /* synthetic */ class x0 implements Runnable {
                     }
                     if (storyItem != null) {
                         storyItem.dialogId = j3;
-                        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
+                        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
                         if (Q != null) {
-                            if (Q instanceof yw) {
+                            if (Q instanceof cx) {
                                 try {
-                                    a10 = b7.a(((yw) Q).F0.h);
+                                    a10 = y6.a(((cx) Q).F0.h);
                                 } catch (Exception unused) {
                                 }
                             }
-                            b7 b7Var = a10;
+                            y6 y6Var = a10;
                             Q.getOrCreateStoryViewer().B();
                             ArrayList arrayList = new ArrayList();
                             arrayList.add(Long.valueOf(j3));
                             if (z10) {
                                 Q.getOrCreateStoryViewer().w1 = true;
                             }
-                            Q.getOrCreateStoryViewer().M(launchActivity, storyItem, arrayList, 0, null, null, b7Var, false);
+                            Q.getOrCreateStoryViewer().M(launchActivity, storyItem, arrayList, 0, null, null, y6Var, false);
                             break;
                         }
                     }
                 }
-                cc.X().Q(R.raw.error, 36, hd.M0(2131744606, null)).k(false);
+                lc.Y().Q(R.raw.error, 36, gd.M0(2131744371, null)).k(false);
                 break;
         }
     }

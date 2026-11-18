@@ -1,44 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oc0 implements org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+public final class oc0 extends Drawable implements Drawable.Callback {
+    public final fh.g a;
+    public final RectF b = new RectF();
+    public int c = org.telegram.messenger.ks.e4;
 
-    public /* synthetic */ oc0(Activity activity, int i7) {
-        this.a = i7;
-        this.b = activity;
+    public oc0(fh.g gVar) {
+        this.a = gVar;
+        gVar.setCallback(this);
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 0:
-                Activity activity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    activity.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            default:
-                Activity activity2 = this.b;
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    activity2.startActivity(intent2);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        this.a.draw(canvas);
+        Rect bounds = getBounds();
+        RectF rectF = this.b;
+        rectF.set(bounds);
+        float min = Math.min(rectF.width(), rectF.height()) / 2.0f;
+        float f10 = this.c / 255.0f;
+        ci.u.c(canvas, rectF, min, f10);
+        ci.u.a(min, f10, 0, canvas, rectF);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.c = i7;
+        this.a.setAlpha(i7);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.getClass();
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
     }
 }

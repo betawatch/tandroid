@@ -1,141 +1,49 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tf0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+public final class tf0 extends nx {
+    public final int[] O;
+    public final /* synthetic */ eg0 P;
 
-    public /* synthetic */ tf0(int i7, org.telegram.ui.ActionBar.e2 e2Var) {
-        this.a = i7;
-        this.b = e2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tf0(eg0 eg0Var, sf0 sf0Var, int i7) {
+        super(i7, sf0Var);
+        this.P = eg0Var;
+        this.O = new int[2];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                c2Var.a = true;
-                this.b.showAsSheet(new PremiumPreviewFragment(0, "effect"), c2Var);
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.e2 e2Var = this.b;
-                if (e2Var instanceof PremiumPreviewFragment) {
-                    PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) e2Var;
-                    premiumPreviewFragment.q0 = true;
-                    premiumPreviewFragment.getMediaDataController().R0(false);
-                    premiumPreviewFragment.a.y0(0);
-                } else {
-                    PremiumPreviewFragment premiumPreviewFragment2 = new PremiumPreviewFragment(0, null);
-                    premiumPreviewFragment2.q0 = true;
-                    if (e2Var != null) {
-                        e2Var.presentFragment(premiumPreviewFragment2);
-                    } else {
-                        org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                        if (T != null) {
-                            T.presentFragment(premiumPreviewFragment2);
-                        }
-                    }
-                }
-                if (e2Var != null && (e2Var.getParentActivity() instanceof LaunchActivity)) {
-                    try {
-                        e2Var.getFragmentView().performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                    ((LaunchActivity) e2Var.getParentActivity()).w0.c(false);
-                    break;
-                }
-                break;
-            case 2:
-                this.b.presentFragment(new DataSettingsActivity());
-                break;
-            case 3:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 4:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 5:
-                this.b.presentFragment(new WallpapersListActivity(0));
-                break;
-            case 6:
-                this.b.presentFragment(new WallpapersListActivity(1));
-                break;
-            case 7:
-                this.b.presentFragment(new NotificationsCustomSettingsActivity(2, new ArrayList(), null, true));
-                break;
-            case 8:
-                this.b.presentFragment(new WallpapersListActivity(0));
-                break;
-            case 9:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 10:
-                org.telegram.messenger.i20.l(3, this.b);
-                break;
-            case 11:
-                org.telegram.messenger.i20.l(3, this.b);
-                break;
-            case 12:
-                org.telegram.ui.ActionBar.e2 e2Var2 = this.b;
-                ug.x0 x0Var = new ug.x0(e2Var2, 5, false);
-                x0Var.K0();
-                e2Var2.showDialog(x0Var);
-                break;
-            case 13:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 14:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 15:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 16:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 17:
-                org.telegram.messenger.i20.l(1, this.b);
-                break;
-            case 18:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 19:
-                this.b.presentFragment(new NotificationsSettingsActivity());
-                break;
-            case 20:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 21:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 22:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 23:
-                this.b.presentFragment(new NotificationsSettingsActivity());
-                break;
-            case 24:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 25:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 26:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 27:
-                org.telegram.messenger.i20.l(0, this.b);
-                break;
-            case 28:
-                this.b.presentFragment(new StickersActivity(0, null));
-                break;
-            default:
-                this.b.presentFragment(new StickersActivity(0, null));
-                break;
+    @Override // org.telegram.ui.nx
+    public final void g(mx mxVar) {
+        eg0 eg0Var = this.P;
+        ag0 ag0Var = eg0Var.K;
+        if (mxVar == null) {
+            return;
         }
+        if (eg0Var.l0 != null) {
+            mxVar.c = true;
+            float f10 = (nx.f() * org.telegram.messenger.g0.p) / 1.3f;
+            float f11 = f10 / 3.0f;
+            mxVar.d = f11;
+            mxVar.e = f11;
+            mxVar.a = Utilities.i(eg0Var.l0.right - (0.75f * f10), org.telegram.messenger.g0.q.x - f10, 0.0f);
+            mxVar.b = eg0Var.l0.bottom - (f10 / 2.0f);
+            return;
+        }
+        org.telegram.ui.Cells.q1 q1Var = eg0Var.Q;
+        if (q1Var == null || !q1Var.isAttachedToWindow() || eg0Var.Q.getMessageObject() == null || eg0Var.Q.getMessageObject().e1() != eg0Var.R) {
+            return;
+        }
+        eg0Var.Q.getLocationOnScreen(this.O);
+        mxVar.c = true;
+        float f12 = (nx.f() * org.telegram.messenger.g0.p) / 1.3f;
+        float f13 = f12 / 3.0f;
+        mxVar.d = f13;
+        mxVar.e = f13;
+        float f14 = f12 / 2.0f;
+        mxVar.a = Utilities.i(((ag0Var.getScaleX() * eg0Var.Q.getTimeX()) + r8[0]) - f14, org.telegram.messenger.g0.q.x - f12, 0.0f);
+        mxVar.b = ((ag0Var.getScaleY() * eg0Var.Q.getTimeY()) + r8[1]) - f14;
     }
 }

@@ -1,14 +1,14 @@
 package y2;
 
-import c8.q0;
+import c8.s0;
 import e2.u;
 import f3.i0;
 import j2.b0;
 import org.telegram.tgnet.ConnectionsManager;
 import sg.h0;
-import x2.a1;
+import x2.c1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends a {
     public final int F;
@@ -22,15 +22,15 @@ public final class n extends a {
         this.G = uVar2;
     }
 
-    @Override // b3.l
+    @Override // b3.m
     public final void a() {
         b0 b0Var = this.r;
         h0 h0Var = this.y;
         h0Var.getClass();
-        for (a1 a1Var : (a1[]) h0Var.c) {
-            if (a1Var.H != 0) {
-                a1Var.H = 0L;
-                a1Var.B = true;
+        for (c1 c1Var : (c1[]) h0Var.c) {
+            if (c1Var.H != 0) {
+                c1Var.H = 0L;
+                c1Var.B = true;
             }
         }
         i0 f10 = h0Var.f(this.F);
@@ -45,10 +45,10 @@ public final class n extends a {
                 this.H += i7;
             }
             f10.c(this.h, 1, (int) this.H, 0, null);
-            q0.a(b0Var);
+            s0.a(b0Var);
             this.I = true;
         } catch (Throwable th2) {
-            q0.a(b0Var);
+            s0.a(b0Var);
             throw th2;
         }
     }
@@ -58,7 +58,7 @@ public final class n extends a {
         return this.I;
     }
 
-    @Override // b3.l
-    public final void D() {
+    @Override // b3.m
+    public final void A() {
     }
 }

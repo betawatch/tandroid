@@ -1,28 +1,25 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.z10;
-import org.telegram.ui.PasscodeActivity;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class y extends PasscodeActivity {
-    public final /* synthetic */ boolean[] X;
-    public final /* synthetic */ z10 Y;
+public final /* synthetic */ class y implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(boolean[] zArr, z10 z10Var) {
-        super(3);
-        this.X = zArr;
-        this.Y = z10Var;
+    public /* synthetic */ y(int i7, boolean[] zArr) {
+        this.a = i7;
+        this.b = zArr;
     }
 
-    @Override // org.telegram.ui.PasscodeActivity, org.telegram.ui.ActionBar.e2
-    public final void onFragmentDestroy() {
-        z10 z10Var;
-        super.onFragmentDestroy();
-        if (this.X[0] || (z10Var = this.Y) == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b[0] = true;
+                break;
+            default:
+                this.b[0] = true;
+                break;
         }
-        z10Var.a("PASSCODE_FAILED");
     }
 }

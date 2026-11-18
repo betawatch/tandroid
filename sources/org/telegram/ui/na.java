@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class na implements org.telegram.messenger.pr {
+public final /* synthetic */ class na implements org.telegram.messenger.nr {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -13,9 +13,9 @@ public final /* synthetic */ class na implements org.telegram.messenger.pr {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.pr
+    @Override // org.telegram.messenger.nr
     public final void a(int i7) {
-        oq0 oq0Var;
+        qq0 qq0Var;
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
@@ -27,14 +27,14 @@ public final /* synthetic */ class na implements org.telegram.messenger.pr {
                 break;
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.E != null && (oq0Var = photoViewer.f0) != null && i7 > 0) {
-                    org.telegram.ui.Components.cc.F(oq0Var, true).j();
+                if (photoViewer.E != null && (qq0Var = photoViewer.f0) != null && i7 > 0) {
+                    org.telegram.ui.Components.lc.F(qq0Var, true).j();
                     break;
                 }
                 break;
             case 3:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
-                RectF rectF = ProfileActivity.X6;
+                RectF rectF = ProfileActivity.Z6;
                 if (i7 != 1) {
                     profileActivity.getNotificationCenter().k(79, Long.valueOf(profileActivity.e1));
                     break;
@@ -46,12 +46,12 @@ public final /* synthetic */ class na implements org.telegram.messenger.pr {
                     break;
                 }
             default:
-                u91 u91Var = ((a91) obj).a;
+                y91 y91Var = ((e91) obj).a;
                 if (i7 != 0) {
-                    u91Var.finishFragment();
+                    y91Var.finishFragment();
                     break;
                 } else {
-                    u91Var.S0(false);
+                    y91Var.S0(false);
                     break;
                 }
         }

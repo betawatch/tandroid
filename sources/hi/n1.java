@@ -5,35 +5,35 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.fc;
 import org.telegram.messenger.gc;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.qc;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.pc;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.fq;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.mq;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class n1 extends View {
-    public fq a;
+    public mq a;
     public boolean b;
     public final int c;
-    public org.telegram.ui.Components.g5 d;
+    public org.telegram.ui.Components.o5 d;
     public final o1 e;
     public ImageReceiver f;
     public long h;
-    public final hc[] n;
+    public final gc[] n;
     public ImageReceiver r;
-    public final dc s;
+    public final mc s;
     public boolean w;
 
     public n1(Context context, o1 o1Var) {
         super(context);
-        this.c = m10.t0;
-        this.n = new hc[2];
-        this.s = new dc(this);
+        this.c = j10.t0;
+        this.n = new gc[2];
+        this.s = new mc(this);
         setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
         this.e = o1Var;
     }
@@ -42,9 +42,9 @@ public final class n1 extends View {
         if (this.h == (document == null ? 0L : document.id)) {
             return;
         }
-        org.telegram.ui.Components.g5 g5Var = this.d;
-        if (g5Var != null) {
-            g5Var.n(this);
+        org.telegram.ui.Components.o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
         if (document == null) {
             this.b = false;
@@ -54,8 +54,8 @@ public final class n1 extends View {
         }
         this.b = true;
         this.h = document.id;
-        int i7 = i2.C1;
-        org.telegram.ui.Components.g5 l10 = org.telegram.ui.Components.g5.l(this.c, qc.e(z10 ? 1 : 16388) ? 3 : 13, document);
+        int i7 = j2.C1;
+        org.telegram.ui.Components.o5 l10 = org.telegram.ui.Components.o5.l(this.c, pc.e(z10 ? 1 : 16388) ? 3 : 13, document);
         this.d = l10;
         if (this.w) {
             l10.a(this);
@@ -75,9 +75,9 @@ public final class n1 extends View {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.w = true;
-        org.telegram.ui.Components.g5 g5Var = this.d;
-        if (g5Var != null) {
-            g5Var.a(this);
+        org.telegram.ui.Components.o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
         ImageReceiver imageReceiver = this.f;
         if (imageReceiver != null) {
@@ -89,9 +89,9 @@ public final class n1 extends View {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.w = false;
-        org.telegram.ui.Components.g5 g5Var = this.d;
-        if (g5Var != null) {
-            g5Var.n(this);
+        org.telegram.ui.Components.o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
         ImageReceiver imageReceiver = this.f;
         if (imageReceiver != null) {
@@ -107,9 +107,9 @@ public final class n1 extends View {
             this.f.h(canvas, null);
             return;
         }
-        org.telegram.ui.Components.g5 g5Var = this.d;
-        if (g5Var != null) {
-            g5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+        org.telegram.ui.Components.o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
             this.d.draw(canvas);
         }
     }
@@ -121,9 +121,9 @@ public final class n1 extends View {
     }
 
     public void setDrawable(Drawable drawable) {
-        org.telegram.ui.Components.g5 g5Var = this.d;
-        if (g5Var != null) {
-            g5Var.n(this);
+        org.telegram.ui.Components.o5 o5Var = this.d;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
         this.d = null;
         this.h = 0L;
@@ -177,9 +177,9 @@ public final class n1 extends View {
         this.f.H0(!this.b ? this : this.e);
         TLRPC.PhotoSize w10 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
         String str = "video/webm".equals(document.mime_type) ? "80_80_g" : "80_80";
-        if (!qc.e(1)) {
+        if (!pc.e(1)) {
             str = str.concat("_firstframe");
         }
-        this.f.r0(gc.b(document), str, gc.c(w10, document), "80_80", null, 0L, null, document, 0);
+        this.f.r0(fc.b(document), str, fc.c(w10, document), "80_80", null, 0L, null, document, 0);
     }
 }

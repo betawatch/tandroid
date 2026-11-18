@@ -1,83 +1,59 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import java.util.Locale;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.u41;
+import android.content.Context;
+import android.graphics.SurfaceTexture;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class l4 implements z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y5 b;
+public final class l4 extends vg.r {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
 
-    public /* synthetic */ l4(y5 y5Var, int i7) {
-        this.a = i7;
-        this.b = y5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l4(e9 e9Var, Context context, m mVar) {
+        super(context, mVar, 0);
+        this.F = e9Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // vg.r
+    public final void a() {
+        switch (this.E) {
             case 0:
-                Boolean bool = (Boolean) obj;
-                y5 y5Var = this.b;
-                y5Var.C0.setClickable(!bool.booleanValue());
-                y5Var.D0.setClickable(!bool.booleanValue());
-                if (bool.booleanValue()) {
-                    y5Var.f0 = 1;
-                    y5Var.q0.setPosition(1);
-                    y5Var.q0.post(new e4(y5Var, 7));
-                    break;
-                }
-                break;
-            case 1:
-                String lowerCase = ((String) obj).trim().toLowerCase(Locale.ROOT);
-                y5 y5Var2 = this.b;
-                y5Var2.l0 = lowerCase;
-                u41[] u41VarArr = y5Var2.s0;
-                u41 u41Var = u41VarArr[1];
-                if (u41Var != null) {
-                    y5.Z0(u41Var, true);
-                    u41VarArr[1].v0(0);
-                    u41VarArr[1].post(new e4(y5Var2, 7));
-                    break;
-                }
-                break;
-            case 2:
-                float floatValue = ((Float) obj).floatValue();
-                y5 y5Var3 = this.b;
-                if (y5Var3.B0 != floatValue) {
-                    y5Var3.B0 = floatValue;
-                    float z10 = org.telegram.ui.Cells.y0.z(floatValue, 0.6f, 1.0f, 0.0f);
-                    for (int i7 = 0; i7 < y5Var3.A0.getChildCount(); i7++) {
-                        View childAt = y5Var3.A0.getChildAt(i7);
-                        childAt.setAlpha(z10);
-                        childAt.setPivotY(0.0f);
-                        childAt.setScaleY(1.0f - floatValue);
-                    }
-                    y5Var3.A0.setImportantForAccessibility(floatValue != 0.0f ? 4 : 0);
-                    y5Var3.A0.requestLayout();
-                    break;
-                }
-                break;
-            case 3:
-                y5.j0(this.b, (String) obj);
+                m4 m4Var = (m4) this.F;
+                m4Var.o = true;
+                setPaused(true);
+                setVisibility(8);
+                m4Var.a.invalidate();
                 break;
             default:
-                TLRPC.User user = (TLRPC.User) obj;
-                y5 y5Var4 = this.b;
-                if (!y5Var4.isFinished) {
-                    if (user == null) {
-                        org.telegram.messenger.g0.h3(new e4(y5Var4, 11));
-                        break;
-                    } else {
-                        y5Var4.presentFragment(new p9(user));
-                        break;
-                    }
-                }
+                setPaused(true);
+                setVisibility(8);
+                ((e9) this.F).a.setVisibility(0);
                 break;
         }
+    }
+
+    @Override // vg.r, android.view.TextureView.SurfaceTextureListener
+    public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
+        switch (this.E) {
+            case 1:
+                ImageView imageView = ((e9) this.F).a;
+                super.onSurfaceTextureUpdated(surfaceTexture);
+                if (this.n && imageView.getVisibility() == 0) {
+                    imageView.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                super.onSurfaceTextureUpdated(surfaceTexture);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l4(m4 m4Var, Context context, i4 i4Var) {
+        super(context, i4Var, 2);
+        this.F = m4Var;
     }
 }

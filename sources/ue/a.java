@@ -2,12 +2,12 @@ package ue;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface a {
     void E0();
 
-    void O(float f10, float f11);
+    void M(float f10, float f11);
 
     boolean Q0(float f10, float f11);
 
@@ -17,15 +17,15 @@ public interface a {
 
     long getLongPressDuration();
 
-    boolean k0();
+    boolean m0();
 
-    boolean l1();
+    boolean m1();
 
-    void n(View view, float f10, float f11);
+    void o(View view, float f10, float f11);
 
-    void s(float f10, float f11);
+    void t(float f10, float f11);
 
-    void s0();
+    void t0();
 
-    void v(View view, float f10, float f11);
+    void x(View view, float f10, float f11);
 }

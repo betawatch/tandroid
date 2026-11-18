@@ -1,38 +1,38 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import j$.util.concurrent.ConcurrentHashMap;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class yb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ac b;
-    public final /* synthetic */ Boolean c;
+    public final /* synthetic */ zb b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ yb(ac acVar, Boolean bool, int i7) {
+    public /* synthetic */ yb(zb zbVar, long j3, long j10, int i7) {
         this.a = i7;
-        this.b = acVar;
-        this.c = bool;
+        this.b = zbVar;
+        this.c = j3;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        Boolean bool = this.c;
-        ac acVar = this.b;
-        int i10 = 1;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                acVar.h.u.remove(acVar.a.e);
-                g0.h3(new yb(acVar, bool, i10));
+                zb zbVar = this.b;
+                ConcurrentHashMap concurrentHashMap = zbVar.h.u;
+                String str = zbVar.a.e;
+                long j3 = this.c;
+                long j10 = this.d;
+                concurrentHashMap.put(str, new long[]{j3, j10});
+                g0.g3(new yb(zbVar, j3, j10, 1));
                 break;
             default:
-                tb tbVar = acVar.a;
-                if (!bool.booleanValue()) {
-                    ns.f(tbVar.o).k(ns.Z1, tbVar.e, 2);
-                    break;
-                } else {
-                    ns.f(tbVar.o).k(ns.Y1, tbVar.e, tbVar.p);
-                    break;
-                }
+                sb sbVar = this.b.a;
+                ks.f(sbVar.o).k(ks.X1, sbVar.e, Long.valueOf(this.c), Long.valueOf(this.d));
+                break;
         }
     }
 }

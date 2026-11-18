@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
@@ -8,7 +8,7 @@ import kd.j;
 import rd.p;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzlu extends j implements p {
     int zza;
@@ -42,7 +42,7 @@ final class zzlu extends j implements p {
         int i7 = this.zza;
         k kVar = k.a;
         if (i7 == 0) {
-            b.c(obj);
+            h.b(obj);
             zzhk zzhkVar3 = (zzhk) this.zzc;
             zzdj zzn = this.zzb.zzn();
             zzmc[] zzmcVarArr = {zzmc.zzd, zzmc.zzc, zzmc.zzb};
@@ -57,7 +57,7 @@ final class zzlu extends j implements p {
         }
         if (i7 != 1) {
             zzhkVar2 = (zzhk) this.zzc;
-            b.c(obj);
+            h.b(obj);
             zzly zzlyVar = this.zzb;
             zzlyVar.zza = b0.a();
             zzD = zzlyVar.zzD();
@@ -65,7 +65,7 @@ final class zzlu extends j implements p {
             return kVar;
         }
         zzhkVar = (zzhk) this.zzc;
-        b.c(obj);
+        h.b(obj);
         if (((Boolean) obj).booleanValue()) {
             return kVar;
         }

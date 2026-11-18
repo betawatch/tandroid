@@ -1,57 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.nb1;
+import android.util.Base64;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j2 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class j2 {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final long e;
+    public final boolean f;
 
-    public /* synthetic */ j2(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
-
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                r2 r2Var = (r2) this.b;
-                if (!r2Var.e) {
-                    r2Var.e = true;
-                    nb1 nb1Var = r2Var.h;
-                    if (nb1Var != null) {
-                        nb1Var.run();
-                    }
-                    if (!r2Var.f) {
-                        r2Var.f = true;
-                        r2Var.b.c();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                TLRPC.User user = (TLRPC.User) this.b;
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                if (T != null) {
-                    T.presentFragment(new p9(user));
-                    break;
-                }
-                break;
-            default:
-                p9 p9Var = (p9) this.b;
-                EditTextBoldCursor editTextBoldCursor = p9Var.I;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    org.telegram.messenger.g0.J3(p9Var.I);
-                    break;
-                }
-                break;
+    public j2(JSONObject jSONObject) {
+        String string = jSONObject.getString("address");
+        this.a = string;
+        if (string.contains(":") || !WalletEngine2.isValidAddress(string)) {
+            throw new IllegalArgumentException("Expected a friendly destination address");
         }
+        this.f = (Base64.decode(string.replace('-', '+').replace('_', '/'), 2)[0] & Byte.MAX_VALUE) == 17;
+        Object obj = jSONObject.get("amount");
+        if (obj instanceof String) {
+            String str = (String) obj;
+            if (str.matches("[0-9]+")) {
+                long parseLong = Long.parseLong(str);
+                this.e = parseLong;
+                if (jSONObject.has("extra_currency") && jSONObject.getJSONObject("extra_currency").length() != 0) {
+                    throw new IllegalArgumentException("Extra currencies are not supported");
+                }
+                if (parseLong < 0) {
+                    throw new IllegalArgumentException("Transfer amount must not be negative");
+                }
+                String string2 = jSONObject.has("payload") ? jSONObject.getString("payload") : null;
+                this.b = string2;
+                String string3 = jSONObject.has("stateInit") ? jSONObject.getString("stateInit") : null;
+                this.c = string3;
+                if ((string2 != null && !WalletEngine2.isValidCellBoc(string2)) || (string3 != null && !WalletEngine2.isValidCellBoc(string3))) {
+                    throw new IllegalArgumentException("Invalid transaction cell");
+                }
+                this.d = WalletEngine2.textCommentFromBody(string2);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Invalid transfer amount");
     }
 }

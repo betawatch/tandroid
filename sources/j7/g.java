@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.ResultReceiver;
-import c8.yb;
+import c8.bc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
     public static final Parcelable.Creator<g> CREATOR = new b(5);
@@ -32,13 +32,13 @@ public final class g extends r6.a {
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel dest, int i7) {
         kotlin.jvm.internal.j.e(dest, "dest");
-        int r10 = yb.r(dest, 20293);
-        yb.l(dest, 1, this.a);
-        yb.b(dest, 2, this.b);
-        yb.b(dest, 3, this.c);
-        yb.l(dest, 4, this.d);
-        yb.l(dest, 5, this.e);
-        yb.k(dest, 6, this.f, i7);
-        yb.s(dest, r10);
+        int r10 = bc.r(dest, 20293);
+        bc.l(dest, 1, this.a);
+        bc.b(dest, 2, this.b);
+        bc.b(dest, 3, this.c);
+        bc.l(dest, 4, this.d);
+        bc.l(dest, 5, this.e);
+        bc.k(dest, 6, this.f, i7);
+        bc.s(dest, r10);
     }
 }

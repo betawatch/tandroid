@@ -1,27 +1,42 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class s01 {
-    public TLRPC.TL_forumTopic a;
-    public org.telegram.messenger.sv b;
-    public final /* synthetic */ v01 c;
+public final /* synthetic */ class s01 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f11 b;
 
-    public s01(v01 v01Var) {
-        this.c = v01Var;
+    public /* synthetic */ s01(f11 f11Var, int i7) {
+        this.a = i7;
+        this.b = f11Var;
     }
 
-    public final long a() {
-        org.telegram.messenger.sv svVar = this.b;
-        if (svVar != null) {
-            return svVar.a;
+    @Override // java.lang.Runnable
+    public final void run() {
+        v4.c0 c0Var;
+        switch (this.a) {
+            case 0:
+                f11 f11Var = this.b;
+                f11Var.P = null;
+                f11Var.k();
+                break;
+            default:
+                f11 f11Var2 = this.b;
+                long j3 = f11Var2.b;
+                if (!f11Var2.d && f11Var2.y > 0.0f && (c0Var = (v4.c0) f11Var2.r.getLayoutManager()) != null && c0Var.N0() >= f11Var2.s.c.size() - 3) {
+                    if (!f11Var2.j()) {
+                        org.telegram.messenger.e00 e00Var = org.telegram.messenger.mp.u1(f11Var2.a).t7;
+                        long j10 = -j3;
+                        if (!e00Var.e(j10)) {
+                            e00Var.o(j10);
+                            break;
+                        }
+                    } else {
+                        f11Var2.k();
+                        break;
+                    }
+                }
+                break;
         }
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        if (tL_forumTopic == null) {
-            return 0L;
-        }
-        return this.c.c ? org.telegram.messenger.m5.o(tL_forumTopic.from_id) : tL_forumTopic.id;
     }
 }

@@ -1,26 +1,22 @@
 package c8;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import org.telegram.ui.w80;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class wa {
-    public static boolean a(w80 w80Var) {
-        Context context = org.telegram.messenger.t0.b;
-        int componentEnabledSetting = context.getPackageManager().getComponentEnabledSetting(w80Var.a(context));
-        return componentEnabledSetting == 1 || (componentEnabledSetting == 0 && w80Var == w80.h);
+    public static int a(w7.s sVar) {
+        sVar.getClass();
+        return Math.max(1, (int) Math.ceil(0.5f * org.telegram.messenger.g0.p)) + (((int) Math.ceil(1.9f * org.telegram.messenger.g0.p)) * 2);
     }
 
-    public static void b(w80 w80Var) {
-        Context context = org.telegram.messenger.t0.b;
-        PackageManager packageManager = context.getPackageManager();
-        w80[] values = w80.values();
-        int length = values.length;
-        for (int i7 = 0; i7 < length; i7++) {
-            w80 w80Var2 = values[i7];
-            packageManager.setComponentEnabledSetting(w80Var2.a(context), w80Var2 == w80Var ? 1 : 2, 1);
-        }
+    public static void b(Canvas canvas, Bitmap bitmap, int i7, float f10, float f11, int i10, int i11, Paint paint) {
+        int min = Math.min(i7, bitmap.getWidth());
+        int i12 = (int) f10;
+        int i13 = (int) f11;
+        canvas.drawBitmap(bitmap, new Rect(0, i10, min, i10 + i11), new Rect(i12, i13, min + i12, i11 + i13), paint);
     }
 }

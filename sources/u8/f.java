@@ -2,9 +2,9 @@ package u8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends r6.a {
     public static final Parcelable.Creator<f> CREATOR = new o(5);
@@ -15,13 +15,13 @@ public final class f extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
+        int r10 = bc.r(parcel, 20293);
         int i10 = this.a;
-        yb.q(parcel, 2, 4);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(i10);
-        yb.l(parcel, 3, this.b);
-        yb.l(parcel, 4, this.c);
-        yb.l(parcel, 5, this.d);
-        yb.s(parcel, r10);
+        bc.l(parcel, 3, this.b);
+        bc.l(parcel, 4, this.c);
+        bc.l(parcel, 5, this.d);
+        bc.s(parcel, r10);
     }
 }

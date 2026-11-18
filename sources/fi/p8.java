@@ -1,164 +1,173 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.si;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.jx;
+import a8.sa;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class p8 extends k8 {
-    public final ch.p0 J;
-    public final o8 K;
-    public final ch.g0 L;
-    public final ImageReceiver M;
-    public final org.telegram.ui.Components.u5 N;
-    public final org.telegram.ui.Components.g6 O;
-    public boolean P;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class p8 implements GestureDetector.OnGestureListener {
+    public final /* synthetic */ f9 a;
 
-    public p8(Context context, m8 m8Var, TL_stories.TL_mediaAreaSuggestedReaction tL_mediaAreaSuggestedReaction, jx jxVar) {
-        super(context, m8Var, tL_mediaAreaSuggestedReaction);
-        TLRPC.TL_availableReaction tL_availableReaction;
-        ArrayList arrayList;
-        o8 o8Var = new o8(this);
-        this.K = o8Var;
-        ch.g0 g0Var = new ch.g0(this);
-        this.L = g0Var;
-        this.M = new ImageReceiver(this);
-        this.N = new org.telegram.ui.Components.u5(this);
-        this.O = new org.telegram.ui.Components.g6(false, false, false);
-        ch.p0 d = ch.p0.d(tL_mediaAreaSuggestedReaction.reaction);
-        this.J = d;
-        if (tL_mediaAreaSuggestedReaction.flipped) {
-            o8Var.b(true, false);
+    public p8(f9 f9Var) {
+        this.a = f9Var;
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        f9 f9Var = this.a;
+        f9Var.g1 = false;
+        return !f9.c(f9Var, f9Var.s, motionEvent.getX(), motionEvent.getY(), false);
+    }
+
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        f9 f9Var = this.a;
+        if (f9Var.a0 != 0.0f && f9Var.u1 == null && f11 < -1000.0f && !f9Var.b0) {
+            f9Var.b0 = true;
+            try {
+                f9Var.s.performHapticFeedback(3);
+            } catch (Exception unused) {
+            }
+            f9.g(f9Var);
         }
-        o8Var.c(getScaleX());
-        g0Var.e(d);
-        jxVar.getClass();
-        String str = d.f;
-        str = str == null ? gj.U(org.telegram.ui.Components.g5.e(jxVar.b, d.g)) : str;
-        if (str != null && (arrayList = (ArrayList) jxVar.e.get(str)) != null && !arrayList.isEmpty()) {
-            int min = Math.min(1, arrayList.size());
-            for (int i7 = 0; i7 < min; i7++) {
-                jxVar.l((TLRPC.Document) arrayList.get(i7));
+        if (f9Var.f0 != 0.0f) {
+            if (f11 < -1000.0f) {
+                f9Var.o(true);
+            } else if (f11 > 1000.0f) {
+                f9Var.o(false);
+            } else {
+                f9Var.o(f9Var.x.f > 0.5f);
             }
         }
-        if (this.J.f != null && (tL_availableReaction = (TLRPC.TL_availableReaction) si.b0(m10.t0).r.get(this.J.f)) != null) {
-            this.M.q0(gc.b(tL_availableReaction.center_icon), "40_40_lastreactframe", null, "webp", tL_availableReaction, 1);
-        }
-        org.telegram.ui.Components.g6 g6Var = this.O;
-        g6Var.b = 17;
-        g6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
-        this.O.w(org.telegram.messenger.g0.L(18.0f));
-        this.O.N = org.telegram.messenger.g0.q.x;
-        if (tL_mediaAreaSuggestedReaction.dark) {
-            this.K.a();
-            this.O.u(-1);
-        }
+        f9Var.g1 = true;
+        return false;
     }
 
-    @Override // fi.k8
-    public final void a(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        o8 o8Var = this.K;
-        o8Var.setBounds(0, 0, measuredWidth, measuredHeight);
-        o8Var.draw(canvas);
-        float measuredWidth2 = ((int) (getMeasuredWidth() * 0.61f)) / 2.0f;
-        float centerX = o8Var.getBounds().centerX() - measuredWidth2;
-        float centerY = o8Var.getBounds().centerY() - measuredWidth2;
-        float centerX2 = o8Var.getBounds().centerX() + measuredWidth2;
-        float centerY2 = o8Var.getBounds().centerY() + measuredWidth2;
-        float height = (o8Var.getBounds().height() * 0.427f) + o8Var.getBounds().top;
-        float f10 = height - measuredWidth2;
-        float f11 = height + measuredWidth2;
-        float e10 = this.N.e(false, this.P ? 1.0f : 0.0f);
-        Rect rect = org.telegram.messenger.g0.Q;
-        rect.set((int) centerX, (int) org.telegram.messenger.g0.T1(centerY, f10, e10), (int) centerX2, (int) org.telegram.messenger.g0.T1(centerY2, f11, e10));
-        int i7 = o8Var.a == 1 ? -1 : -16777216;
-        ch.g0 g0Var = this.L;
-        g0Var.d(i7);
-        g0Var.c(rect);
-        g0Var.a(canvas);
-        float height2 = (o8Var.getBounds().height() * 0.839f) + o8Var.getBounds().top;
-        org.telegram.ui.Components.g6 g6Var = this.O;
-        g6Var.setBounds(o8Var.getBounds().left, (int) (height2 - org.telegram.messenger.g0.L(10.0f)), o8Var.getBounds().right, (int) (org.telegram.messenger.g0.L(10.0f) + height2));
-        canvas.save();
-        canvas.scale(e10, e10, o8Var.getBounds().centerX(), height2);
-        g6Var.draw(canvas);
-        canvas.restore();
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
+        float f12;
+        gc gcVar;
+        f9 f9Var = this.a;
+        if (!f9Var.k0) {
+            return false;
+        }
+        if (f9Var.m0) {
+            f9Var.a0 += f11;
+            float L = org.telegram.messenger.g0.L(200.0f);
+            if (f9Var.a0 > L && !f9Var.b0) {
+                f9Var.b0 = true;
+                f9.g(f9Var);
+                try {
+                    f9Var.s.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
+            }
+            f9Var.e0 = Utilities.i(f9Var.a0 / L, 1.0f, 0.0f);
+            if (f9Var.o0.getCurrentPeerView() != null) {
+                f9Var.o0.getCurrentPeerView().invalidate();
+            }
+            if (f9Var.a0 < 0.0f) {
+                f9Var.a0 = 0.0f;
+                f9Var.m0 = false;
+            }
+            return true;
+        }
+        if (f9Var.d0) {
+            float f13 = f9Var.f0;
+            if (f13 <= f9Var.x.c || f11 <= 0.0f) {
+                f9Var.f0 = f13 + f11;
+            } else {
+                f9Var.f0 = (0.05f * f11) + f13;
+            }
+            t8 t8Var = f9Var.s;
+            gc gcVar2 = gc.w;
+            if (gcVar2 != null && gcVar2.h == t8Var) {
+                gcVar2.b();
+            }
+            if (f9Var.o0.getCurrentPeerView() != null) {
+                f9Var.o0.getCurrentPeerView().invalidate();
+            }
+            f9Var.w.invalidate();
+            if (f9Var.f0 < 0.0f) {
+                f9Var.f0 = 0.0f;
+                f9Var.d0 = false;
+            }
+            return true;
+        }
+        if (f9Var.W > 0.8f) {
+            float f14 = -f11;
+            if ((f14 > 0.0f && f9Var.X > 0.0f) || (f14 < 0.0f && f9Var.X < 0.0f)) {
+                f12 = 0.3f;
+                f9Var.X -= f11 * f12;
+                t8 t8Var2 = f9Var.s;
+                gcVar = gc.w;
+                if (gcVar != null && gcVar.h == t8Var2) {
+                    gcVar.b();
+                }
+                f9.i(f9Var);
+                return true;
+            }
+        }
+        f12 = 0.6f;
+        f9Var.X -= f11 * f12;
+        t8 t8Var22 = f9Var.s;
+        gcVar = gc.w;
+        if (gcVar != null) {
+            gcVar.b();
+        }
+        f9.i(f9Var);
+        return true;
     }
 
-    public final void c(TL_stories.StoryViews storyViews, boolean z10) {
-        org.telegram.ui.Components.u5 u5Var = this.N;
-        if (storyViews != null) {
-            for (int i7 = 0; i7 < storyViews.reactions.size(); i7++) {
-                if (ch.s0.c(storyViews.reactions.get(i7).reaction, this.J)) {
-                    boolean z11 = z10 && this.P;
-                    this.P = storyViews.reactions.get(i7).count > 0;
-                    this.O.t(org.telegram.messenger.g0.o0(storyViews.reactions.get(i7).count, 0), z11, true);
-                    if (z10) {
-                        return;
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        z3 currentPeerView;
+        f9 f9Var = this.a;
+        if (f9Var.f0 == 0.0f && f9Var.g0) {
+            if (f9Var.y || f9Var.L0 || f9Var.m1 || f9Var.i1 || f9Var.j1) {
+                v8 v8Var = f9Var.o0;
+                if (v8Var != null && (currentPeerView = v8Var.getCurrentPeerView()) != null) {
+                    currentPeerView.q0();
+                }
+            } else {
+                z3 z10 = f9Var.z();
+                if (z10 == null || !z10.y1.f) {
+                    boolean z11 = motionEvent.getX() > ((float) f9Var.w.getMeasuredWidth()) * 0.33f;
+                    z3 currentPeerView2 = f9Var.o0.getCurrentPeerView();
+                    if (currentPeerView2 != null && !currentPeerView2.b1(z11)) {
+                        if (f9Var.o0.E(z11)) {
+                            v8 v8Var2 = f9Var.o0;
+                            v8Var2.M0 = true;
+                            v8Var2.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                            sa saVar = v8Var2.N0;
+                            org.telegram.messenger.g0.r(saVar);
+                            org.telegram.messenger.g0.h3(saVar, 150L);
+                            return false;
+                        }
+                        if (z11) {
+                            f9Var.u(true);
+                            return false;
+                        }
+                        e9 e9Var = f9Var.A0;
+                        if (e9Var != null) {
+                            e9Var.loopBack();
+                            return false;
+                        }
                     }
-                    u5Var.e(true, this.P ? 1.0f : 0.0f);
-                    return;
                 }
             }
         }
-        this.P = false;
-        invalidate();
-        if (z10) {
-            return;
-        }
-        u5Var.e(true, this.P ? 1.0f : 0.0f);
+        return false;
     }
 
-    public org.telegram.ui.Components.g5 getAnimatedEmojiDrawable() {
-        return this.L.b;
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.L.b(true);
-        this.M.P();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.L.b(false);
-        this.M.R();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        this.O.w(Math.min(org.telegram.messenger.g0.L(18.0f), getMeasuredHeight() * 0.156f));
-    }
-
-    @Override // android.view.View
-    public void setScaleX(float f10) {
-        if (getScaleX() != f10) {
-            this.K.c(f10);
-            super.setScaleX(f10);
-        }
+    @Override // android.view.GestureDetector.OnGestureListener
+    public final void onShowPress(MotionEvent motionEvent) {
     }
 }

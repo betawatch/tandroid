@@ -1,68 +1,127 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.Utilities;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r9 implements Runnable {
-    public boolean a;
-    public int b;
-    public int c;
-    public final /* synthetic */ s9 d;
+public final class r9 extends Drawable implements Drawable.Callback {
+    public static int[] s;
+    public final Context a;
+    public final m6 b;
+    public Drawable c;
+    public Drawable d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
 
-    public r9(s9 s9Var) {
-        this.d = s9Var;
+    public r9(Context context) {
+        this.a = context;
+        m6 m6Var = new m6(false, false, false);
+        this.b = m6Var;
+        m6Var.x(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
+        m6Var.n(0.2f, 160L, lr.h);
+        m6Var.w(org.telegram.messenger.g0.L(10.0f));
+        m6Var.b = 17;
+        m6Var.setCallback(this);
+        m6Var.U = true;
+        if (s != null) {
+            return;
+        }
+        s = new int[]{R.drawable.profile_level1_inner, R.drawable.profile_level1_outer, R.drawable.profile_level2_inner, R.drawable.profile_level2_outer, R.drawable.profile_level3_inner, R.drawable.profile_level3_outer, R.drawable.profile_level4_inner, R.drawable.profile_level4_outer, R.drawable.profile_level5_inner, R.drawable.profile_level5_outer, R.drawable.profile_level6_inner, R.drawable.profile_level6_outer, R.drawable.profile_level7_inner, R.drawable.profile_level7_outer, R.drawable.profile_level8_inner, R.drawable.profile_level8_outer, R.drawable.profile_level9_inner, R.drawable.profile_level9_outer, R.drawable.profile_level10_inner, R.drawable.profile_level10_outer, R.drawable.profile_level20_inner, R.drawable.profile_level20_outer, R.drawable.profile_level30_inner, R.drawable.profile_level30_outer, R.drawable.profile_level40_inner, R.drawable.profile_level40_outer, R.drawable.profile_level50_inner, R.drawable.profile_level50_outer, R.drawable.profile_level60_inner, R.drawable.profile_level60_outer, R.drawable.profile_level70_inner, R.drawable.profile_level70_outer, R.drawable.profile_level80_inner, R.drawable.profile_level80_outer, R.drawable.profile_level90_inner, R.drawable.profile_level90_outer, R.drawable.profile_level_minus_inner, R.drawable.profile_level_minus_outer};
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        Bitmap bitmap;
-        s9 s9Var = this.d;
-        Paint paint = s9Var.w;
-        if (s9Var.f == null) {
-            s9Var.f = new Bitmap[2];
-            s9Var.i = new Canvas[2];
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.d;
+        if (drawable == null || this.c == null) {
+            return;
         }
-        int i7 = (int) (this.b / 15.0f);
-        int i10 = 0;
-        while (i10 < 2) {
-            int i11 = (int) ((i10 == 0 ? s9Var.s : this.c) / 15.0f);
-            Bitmap bitmap2 = s9Var.f[i10];
-            if (bitmap2 != null && ((bitmap2.getHeight() != i11 || s9Var.f[i10].getWidth() != i7) && (bitmap = s9Var.f[i10]) != null)) {
-                bitmap.recycle();
-                s9Var.f[i10] = null;
-            }
-            System.currentTimeMillis();
-            Bitmap[] bitmapArr = s9Var.f;
-            if (bitmapArr[i10] == null) {
-                try {
-                    bitmapArr[i10] = Bitmap.createBitmap(i7, i11, Bitmap.Config.ARGB_8888);
-                    s9Var.i[i10] = new Canvas(s9Var.f[i10]);
-                    s9Var.i[i10].scale(i7 / s9Var.e[i10].getWidth(), i11 / s9Var.e[i10].getHeight());
-                } catch (Throwable th2) {
-                    org.telegram.messenger.a8.g(th2, true);
-                }
-            }
-            if (i10 == 1) {
-                s9Var.f[i10].eraseColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, s9Var.y));
-            } else {
-                s9Var.f[i10].eraseColor(0);
-            }
-            paint.setAlpha(org.telegram.messenger.ns.e4);
-            Utilities.stackBlurBitmap(s9Var.e[i10], 15);
-            Canvas canvas = s9Var.i[i10];
-            if (canvas != null) {
-                canvas.drawBitmap(s9Var.e[i10], 0.0f, 0.0f, paint);
-            }
-            if (this.a) {
-                return;
-            } else {
-                i10++;
+        drawable.draw(canvas);
+        this.c.draw(canvas);
+        canvas.save();
+        canvas.translate(getBounds().exactCenterX(), getBounds().exactCenterY());
+        this.b.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        Drawable drawable = this.c;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+        }
+        Drawable drawable2 = this.d;
+        if (drawable2 != null) {
+            drawable2.setBounds(getBounds());
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        int o4 = i0.a.o(this.e, i7);
+        if (this.e != o4) {
+            this.e = o4;
+            Drawable drawable = this.c;
+            if (drawable != null) {
+                drawable.setColorFilter(o4, PorterDuff.Mode.MULTIPLY);
+                invalidateSelf();
             }
         }
-        org.telegram.messenger.g0.h3(new dg(this, 12));
+        int o10 = i0.a.o(this.f, i7);
+        if (this.f != o10) {
+            this.f = o10;
+            if (this.c != null) {
+                this.d.setColorFilter(o10, PorterDuff.Mode.MULTIPLY);
+                invalidateSelf();
+            }
+        }
+        int o11 = i0.a.o(this.h, i7);
+        if (this.h != o11) {
+            this.h = o11;
+            this.b.v(o11, false);
+            invalidateSelf();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j1 extends Fragment implements l {
     public static final WeakHashMap b = new WeakHashMap();
@@ -19,12 +19,17 @@ public final class j1 extends Fragment implements l {
 
     @Override // com.google.android.gms.common.api.internal.l
     public final void a(String str, k kVar) {
-        this.a.B(str, kVar);
+        this.a.D(str, kVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.l
     public final k b(Class cls, String str) {
         return (k) cls.cast(((Map) this.a.c).get(str));
+    }
+
+    @Override // com.google.android.gms.common.api.internal.l
+    public final Activity c() {
+        return getActivity();
     }
 
     @Override // android.app.Fragment
@@ -34,11 +39,6 @@ public final class j1 extends Fragment implements l {
         while (it.hasNext()) {
             ((k) it.next()).dump(str, fileDescriptor, printWriter, strArr);
         }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.l
-    public final Activity e() {
-        return getActivity();
     }
 
     @Override // android.app.Fragment
@@ -53,7 +53,7 @@ public final class j1 extends Fragment implements l {
     @Override // android.app.Fragment
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.a.C(bundle);
+        this.a.E(bundle);
     }
 
     @Override // android.app.Fragment
@@ -81,7 +81,7 @@ public final class j1 extends Fragment implements l {
     @Override // android.app.Fragment
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        this.a.E(bundle);
+        this.a.G(bundle);
     }
 
     @Override // android.app.Fragment

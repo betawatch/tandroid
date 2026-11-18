@@ -2,30 +2,32 @@ package org.telegram.utils.twidget;
 
 import android.os.IInterface;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public interface d extends IInterface {
-    byte[] B(int i7, int i10, int i11, int i12, int i13);
+    byte[] A(int i7, int i10, int i11, int i12, int i13);
 
-    void E(int i7);
+    void D(int i7);
 
-    void G(byte[] bArr, byte[] bArr2, double d, int i7, int i10, float f10, float f11, int i11, int i12);
+    void F(byte[] bArr, byte[] bArr2, double d, int i7, int i10, float f10, float f11, int i11, int i12);
 
-    float[] H(int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2);
+    float[] G(int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2);
 
-    void K0(int i7, int i10, byte[] bArr);
+    void J0(int i7, int i10, byte[] bArr);
 
-    void R0(byte[] bArr);
+    void Q0(byte[] bArr);
+
+    void R0(int i7, float f10);
 
     void f1(int i7);
 
-    void i0(byte[] bArr);
+    void h0(byte[] bArr);
 
-    float q0(int i7, byte[] bArr);
+    float p0(int i7, byte[] bArr);
 
-    void u0(int i7, int i10, int i11, int[] iArr);
+    void t0(int i7, int i10, int i11, int[] iArr);
 
-    void w0(int i7, byte[] bArr);
+    void v0(int i7, byte[] bArr);
 
-    void y(int i7, int i10, int i11, byte[] bArr);
+    void x(int i7, int i10, int i11, byte[] bArr);
 }

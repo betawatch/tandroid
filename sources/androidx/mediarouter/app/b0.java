@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b0 extends g.u {
     public s4.v E;
@@ -118,7 +118,7 @@ public final class b0 extends g.u {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
         this.x = recyclerView;
         recyclerView.setAdapter(this.w);
-        this.x.setLayoutManager(new v4.b0());
+        this.x.setLayoutManager(new v4.c0());
         getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : b7.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
     }
 

@@ -1,80 +1,25 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class i1 implements b1 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ k1 c;
+public interface i1 {
+    i1 a(int i7, int i10);
 
-    public i1(k1 k1Var) {
-        this.c = k1Var;
-    }
+    int b();
 
-    @Override // x2.b1
-    public final void a() {
-        k1 k1Var = this.c;
-        if (k1Var.w) {
-            return;
-        }
-        k1Var.r.a();
-    }
+    i1 c(int i7);
 
-    public final void b() {
-        if (this.b) {
-            return;
-        }
-        k1 k1Var = this.c;
-        k1Var.e.i(e2.s0.h(k1Var.s.s), k1Var.s, 0, null, 0L);
-        this.b = true;
-    }
+    int d(int i7);
 
-    @Override // x2.b1
-    public final boolean f() {
-        return this.c.x;
-    }
+    int e(int i7);
 
-    @Override // x2.b1
-    public final int n(long j3) {
-        b();
-        if (j3 <= 0 || this.a == 2) {
-            return 0;
-        }
-        this.a = 2;
-        return 1;
-    }
+    i1 f(int i7, int i10);
 
-    @Override // x2.b1
-    public final int q(k8.a aVar, k2.h hVar, int i7) {
-        b();
-        k1 k1Var = this.c;
-        boolean z10 = k1Var.x;
-        if (z10 && k1Var.y == null) {
-            this.a = 2;
-        }
-        int i10 = this.a;
-        if (i10 == 2) {
-            hVar.addFlag(4);
-            return -4;
-        }
-        if ((i7 & 2) != 0 || i10 == 0) {
-            aVar.c = k1Var.s;
-            this.a = 1;
-            return -5;
-        }
-        if (!z10) {
-            return -3;
-        }
-        k1Var.y.getClass();
-        hVar.addFlag(1);
-        hVar.e = 0L;
-        if ((i7 & 4) == 0) {
-            hVar.b(k1Var.E);
-            hVar.c.put(k1Var.y, 0, k1Var.E);
-        }
-        if ((i7 & 1) == 0) {
-            this.a = 2;
-        }
-        return -4;
-    }
+    i1 g();
+
+    int getLength();
+
+    int h();
+
+    i1 i();
 }

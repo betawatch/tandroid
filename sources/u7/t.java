@@ -1,57 +1,29 @@
 package u7;
 
-import c8.qc;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c8.bc;
+import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class t extends s {
-    public static final t e = new t(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
+public final class t extends r6.a implements com.google.android.gms.common.api.r {
+    public static final Parcelable.Creator<t> CREATOR = new m(2);
+    public final Status a;
 
-    public t(int i7, Object[] objArr) {
-        this.c = objArr;
-        this.d = i7;
+    public t(Status status) {
+        this.a = status;
     }
 
-    @Override // u7.s, u7.p
-    public final int f(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i7 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i7);
-        return i7;
+    @Override // com.google.android.gms.common.api.r
+    public final Status a() {
+        return this.a;
     }
 
-    @Override // java.util.List
-    public final Object get(int i7) {
-        qc.a(i7, this.d);
-        Object obj = this.c[i7];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // u7.p
-    public final int i() {
-        return this.d;
-    }
-
-    @Override // u7.p
-    public final int j() {
-        return 0;
-    }
-
-    @Override // u7.p
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // u7.p
-    public final Object[] l() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 1, this.a, i7);
+        bc.s(parcel, r10);
     }
 }

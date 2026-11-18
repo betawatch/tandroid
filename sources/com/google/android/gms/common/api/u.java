@@ -3,9 +3,9 @@ package com.google.android.gms.common.api;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.ac;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u implements Parcelable.Creator {
     public static final u b = new u(0);
@@ -24,24 +24,24 @@ public final class u implements Parcelable.Creator {
                     parcel.setDataPosition(dataPosition - 4);
                     return g.d;
                 }
-                int z10 = xb.z(parcel);
+                int z10 = ac.z(parcel);
                 boolean z11 = false;
                 h hVar = null;
                 while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
                     char c10 = (char) readInt;
                     if (c10 == 1) {
-                        hVar = (h) xb.g(parcel, readInt, h.CREATOR);
+                        hVar = (h) ac.g(parcel, readInt, h.CREATOR);
                     } else if (c10 != 2) {
-                        xb.y(parcel, readInt);
+                        ac.y(parcel, readInt);
                     } else {
-                        z11 = xb.n(parcel, readInt);
+                        z11 = ac.n(parcel, readInt);
                     }
                 }
-                xb.m(parcel, z10);
+                ac.m(parcel, z10);
                 return new g(hVar, z11);
             case 1:
-                int z12 = xb.z(parcel);
+                int z12 = ac.z(parcel);
                 int i7 = 0;
                 boolean z13 = true;
                 int i10 = 0;
@@ -50,38 +50,38 @@ public final class u implements Parcelable.Creator {
                     int readInt2 = parcel.readInt();
                     char c11 = (char) readInt2;
                     if (c11 == 1) {
-                        i7 = xb.u(parcel, readInt2);
+                        i7 = ac.u(parcel, readInt2);
                     } else if (c11 == 2) {
-                        i10 = xb.u(parcel, readInt2);
+                        i10 = ac.u(parcel, readInt2);
                     } else if (c11 == 3) {
-                        i11 = xb.u(parcel, readInt2);
+                        i11 = ac.u(parcel, readInt2);
                     } else if (c11 != 4) {
-                        xb.y(parcel, readInt2);
+                        ac.y(parcel, readInt2);
                     } else {
-                        z13 = xb.n(parcel, readInt2);
+                        z13 = ac.n(parcel, readInt2);
                     }
                 }
-                xb.m(parcel, z12);
+                ac.m(parcel, z12);
                 return new h(i7, i10, i11, z13);
             case 2:
-                int z14 = xb.z(parcel);
+                int z14 = ac.z(parcel);
                 String str = null;
                 int i12 = 0;
                 while (parcel.dataPosition() < z14) {
                     int readInt3 = parcel.readInt();
                     char c12 = (char) readInt3;
                     if (c12 == 1) {
-                        i12 = xb.u(parcel, readInt3);
+                        i12 = ac.u(parcel, readInt3);
                     } else if (c12 != 2) {
-                        xb.y(parcel, readInt3);
+                        ac.y(parcel, readInt3);
                     } else {
-                        str = xb.h(parcel, readInt3);
+                        str = ac.h(parcel, readInt3);
                     }
                 }
-                xb.m(parcel, z14);
+                ac.m(parcel, z14);
                 return new Scope(i12, str);
             default:
-                int z15 = xb.z(parcel);
+                int z15 = ac.z(parcel);
                 String str2 = null;
                 n6.a aVar = null;
                 int i13 = 0;
@@ -90,18 +90,18 @@ public final class u implements Parcelable.Creator {
                     int readInt4 = parcel.readInt();
                     char c13 = (char) readInt4;
                     if (c13 == 1) {
-                        i13 = xb.u(parcel, readInt4);
+                        i13 = ac.u(parcel, readInt4);
                     } else if (c13 == 2) {
-                        str2 = xb.h(parcel, readInt4);
+                        str2 = ac.h(parcel, readInt4);
                     } else if (c13 == 3) {
-                        pendingIntent = (PendingIntent) xb.g(parcel, readInt4, PendingIntent.CREATOR);
+                        pendingIntent = (PendingIntent) ac.g(parcel, readInt4, PendingIntent.CREATOR);
                     } else if (c13 != 4) {
-                        xb.y(parcel, readInt4);
+                        ac.y(parcel, readInt4);
                     } else {
-                        aVar = (n6.a) xb.g(parcel, readInt4, n6.a.CREATOR);
+                        aVar = (n6.a) ac.g(parcel, readInt4, n6.a.CREATOR);
                     }
                 }
-                xb.m(parcel, z15);
+                ac.m(parcel, z15);
                 return new Status(i13, str2, pendingIntent, aVar);
         }
     }

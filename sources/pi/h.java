@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.q1;
-import v4.e1;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -77,11 +77,11 @@ public final class h extends AnimatorListenerAdapter {
     public final void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 0:
-                e1 e1Var = this.b.a;
+                f1 f1Var = this.b.a;
                 this.e.getClass();
                 break;
             default:
-                e1 e1Var2 = this.b.b;
+                f1 f1Var2 = this.b.b;
                 this.e.getClass();
                 break;
         }

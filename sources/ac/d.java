@@ -17,8 +17,8 @@ import c8.gg;
 import c8.pa;
 import c8.qa;
 import c8.re;
-import c8.ta;
 import c8.tf;
+import c8.ua;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +28,7 @@ import q6.m;
 import r0.l0;
 import r0.m0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements tf {
     public long a;
@@ -108,21 +108,21 @@ public final /* synthetic */ class d implements tf {
         a0Var.b = Long.valueOf(j3 & Long.MAX_VALUE);
         a0Var.c = ebVar;
         a0Var.d = Boolean.valueOf(z10);
-        r7Var.b = new ta(a0Var);
+        r7Var.b = new ua(a0Var);
         int i10 = aVar.e;
         f.l.getClass();
         int i11 = aVar.e;
         if (i11 == -1) {
             Bitmap bitmap = aVar.a;
-            m.g(bitmap);
+            m.h(bitmap);
             i7 = bitmap.getAllocationByteCount();
         } else {
             if (i11 == 17 || i11 == 842094169) {
-                m.g(null);
+                m.h(null);
                 throw null;
             }
             if (i11 == 35) {
-                m.g(null);
+                m.h(null);
                 throw null;
             }
             i7 = 0;

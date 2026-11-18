@@ -3,13 +3,13 @@ package tg;
 import android.content.Context;
 import android.graphics.PointF;
 import android.view.ViewGroup;
-import c8.ja;
-import org.telegram.messenger.i20;
+import c8.ma;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.pi0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n0 extends j {
     public final m0 r0;
@@ -26,7 +26,7 @@ public final class n0 extends j {
         m0Var.setMaxWidth(i10);
         r(i7, messageMedia, mediaArea);
         m0Var.e(0, this.t0);
-        addView(m0Var, ja.e(-2, -2, 51));
+        addView(m0Var, ma.e(-2, -2, 51));
         setClipChildren(false);
         setClipToPadding(false);
         k();
@@ -63,16 +63,16 @@ public final class n0 extends j {
     }
 
     @Override // tg.j
-    public pi0 getSelectionBounds() {
+    public yi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new pi0();
+            return new yi0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = i20.x(L, 2.0f, getPositionX(), scaleX);
-        return new pi0(x10, i20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
+        return new yi0(y10, n10.y(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + y10) - y10, L2 * scaleX);
     }
 
     @Override // tg.j

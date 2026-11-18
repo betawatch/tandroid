@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a8 {
     public static boolean j = false;
@@ -22,7 +22,7 @@ public final class a8 {
     public OutputStreamWriter a;
     public FastDateFormat b;
     public FastDateFormat c;
-    public p5 d;
+    public q5 d;
     public File e;
     public File f;
     public boolean g;
@@ -49,11 +49,11 @@ public final class a8 {
     }
 
     public static void b(String str) {
-        if (r2.a) {
+        if (s2.a) {
             h();
             Log.d("tmessages", str);
             if (j().a != null) {
-                j().d.c(new l4(str, 3));
+                j().d.c(new n4(str, 3));
             }
         }
     }
@@ -70,21 +70,21 @@ public final class a8 {
     }
 
     public static void d(String str) {
-        if (r2.a) {
+        if (s2.a) {
             h();
             Log.e("tmessages", str);
             if (j().a != null) {
-                j().d.c(new l4(str, 2));
+                j().d.c(new n4(str, 2));
             }
         }
     }
 
     public static void e(String str, Throwable th2) {
-        if (r2.a) {
+        if (s2.a) {
             h();
             Log.e("tmessages", str, th2);
             if (j().a != null) {
-                j().d.c(new x4(11, str, th2));
+                j().d.c(new z4(11, str, th2));
             }
         }
     }
@@ -94,7 +94,7 @@ public final class a8 {
     }
 
     public static void g(Throwable th2, boolean z10) {
-        if (r2.a) {
+        if (s2.a) {
             if (!(th2 instanceof InterruptedException) && !(th2 instanceof MediaCodecVideoConvertor.ConversionCanceledException) && !(th2 instanceof z7) && z10) {
                 Typeface typeface = g0.a;
                 t0.a(th2);
@@ -105,7 +105,7 @@ public final class a8 {
                 j = true;
                 File file = new File(t0.h(), "malformed_database/");
                 file.mkdirs();
-                vr a02 = vr.a0(m10.t0);
+                tr a02 = tr.a0(j10.t0);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(a02.c);
                 arrayList.add(a02.d);
@@ -133,7 +133,7 @@ public final class a8 {
     }
 
     public static void i(Throwable th2, boolean z10) {
-        if (r2.a) {
+        if (s2.a) {
             if (th2 instanceof OutOfMemoryError) {
                 j();
                 c(false);
@@ -172,7 +172,7 @@ public final class a8 {
                     a8Var.h = null;
                     a8Var.i = null;
                     k = a8Var;
-                    if (r2.a) {
+                    if (s2.a) {
                         a8Var.k();
                     }
                 }
@@ -184,11 +184,11 @@ public final class a8 {
     }
 
     public static void l(String str) {
-        if (r2.a) {
+        if (s2.a) {
             h();
             Log.w("tmessages", str);
             if (j().a != null) {
-                j().d.c(new l4(str, 1));
+                j().d.c(new n4(str, 1));
             }
         }
     }
@@ -214,7 +214,7 @@ public final class a8 {
         this.e = new File(P0, format + ".txt");
         this.i = new File(P0, format + "_mtproto.txt");
         try {
-            this.d = new p5("logQueue");
+            this.d = new q5("logQueue");
             this.e.createNewFile();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(this.e));
             this.a = outputStreamWriter;

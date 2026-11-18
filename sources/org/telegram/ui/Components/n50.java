@@ -1,27 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n50 extends org.telegram.ui.Cells.pa {
-    public final TextView c0;
-    public final TextView d0;
+public final /* synthetic */ class n50 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ bk0 h;
 
-    public n50(Context context) {
-        super(context, 6, 0, true);
-        LinearLayout f10 = org.telegram.messenger.k5.f(context, 1);
-        TextView textView = new TextView(context);
-        this.c0 = textView;
-        org.telegram.messenger.k5.m(textView, org.telegram.ui.ActionBar.j6.G6, null, 1, 16.0f);
-        f10.addView(textView, c8.ja.r(-2, -2, 5));
-        TextView textView2 = new TextView(context);
-        this.d0 = textView2;
-        org.telegram.ui.ActionBar.q6.U(textView2, org.telegram.ui.ActionBar.j6.z6, null);
-        textView2.setTextSize(1, 13.0f);
-        f10.addView(textView2, c8.ja.t(-2, -2, 5, 0, 1, 0, 0));
-        addView(f10, c8.ja.d(-2, -2.0f, (org.telegram.messenger.hd.a0 ? 3 : 5) | 16, 18.0f, 0.0f, 18.0f, 0.0f));
+    public /* synthetic */ n50(bk0 bk0Var, TLRPC.User user, String str, boolean z10, boolean z11, boolean z12, int i7) {
+        this.a = i7;
+        this.h = bk0Var;
+        this.b = user;
+        this.c = str;
+        this.d = z10;
+        this.e = z11;
+        this.f = z12;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                x50 x50Var = ((s50) this.h).c;
+                ny0.b(x50Var.getContext(), x50Var.a, -x50Var.b2, this.b, this.c, this.d, this.e, this.f, x50Var.J0);
+                break;
+            default:
+                gt0 gt0Var = ((tr0) this.h).f;
+                ny0.b(gt0Var.getContext(), gt0Var.y1.getCurrentAccount(), gt0Var.m1, this.b, this.c, this.d, this.e, this.f, gt0Var.I1);
+                break;
+        }
     }
 }

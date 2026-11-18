@@ -1,100 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.Collections;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class nm extends View {
-    public final ArrayList a;
-    public final ArrayList b;
-    public final /* synthetic */ an c;
+public final class nm extends c8.oa {
+    public org.telegram.messenger.fj a;
+    public int b = 0;
+    public boolean c = true;
+    public int d = 0;
+    public int e;
+    public boolean f;
+    public int g;
+    public final /* synthetic */ bn h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nm(an anVar, Context context) {
-        super(context);
-        this.c = anVar;
-        this.a = new ArrayList();
-        this.b = new ArrayList();
+    public nm(bn bnVar) {
+        this.h = bnVar;
     }
 
+    @Override // c8.oa
     public final void a() {
-        ArrayList arrayList = this.a;
-        arrayList.clear();
-        an anVar = this.c;
-        arrayList.add(anVar.Z1);
-        arrayList.add(anVar.A0);
-        arrayList.add(anVar.Z);
-        arrayList.add(anVar.Z3);
-        arrayList.add(anVar.X1);
-        arrayList.add(anVar.m3);
-        arrayList.add(anVar.a0);
-        arrayList.add(anVar.y1);
-        arrayList.add(anVar.U);
-        arrayList.add(anVar.g2);
-        arrayList.removeAll(Collections.singleton(null));
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        an anVar = this.c;
-        anVar.Yc = true;
-        ArrayList arrayList = this.b;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ((View) obj).setVisibility(0);
-        }
-        arrayList.clear();
-        anVar.Yc = false;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        a();
-        an anVar = this.c;
-        anVar.Yc = true;
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            View view = (View) obj;
-            if (view.getVisibility() == 0) {
-                view.setVisibility(8);
-                this.b.add(view);
+        org.telegram.messenger.fj fjVar = this.a;
+        bn bnVar = this.h;
+        if (fjVar != null) {
+            bnVar.D0.T();
+            int indexOf = bnVar.M6.indexOf(this.a) + bnVar.D0.K;
+            if (indexOf >= 0) {
+                bnVar.C0.i1(indexOf, (int) ((this.e + this.g) - bnVar.P9), this.f);
             }
+        } else {
+            bnVar.D0.T();
+            bnVar.C0.i1(this.b, this.d, this.c);
         }
-        anVar.Yc = false;
+        this.a = null;
+        bnVar.B3 = true;
+        bnVar.Gd(false);
+        org.telegram.messenger.g0.g3(new bh(this, 9));
     }
 
-    @Override // android.view.View
-    public void setTranslationX(float f10) {
-        super.setTranslationX(f10);
-        a();
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            View view = (View) obj;
-            if (view != null) {
-                view.setTranslationX(f10);
-            }
+    @Override // c8.oa
+    public final void c() {
+        bn bnVar = this.h;
+        bnVar.fa = bnVar.getNotificationCenter().q(bn.sd, bnVar.fa, true);
+        zj zjVar = bnVar.Ta;
+        if (zjVar.n) {
+            zjVar.d();
+        }
+    }
+
+    @Override // c8.oa
+    public final void d(View view) {
+        if (view instanceof org.telegram.ui.Cells.q1) {
+            org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
+            q1Var.setDelegate(null);
+            q1Var.setResourcesProvider(null);
         }
     }
 }

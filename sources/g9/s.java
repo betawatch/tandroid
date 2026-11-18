@@ -1,23 +1,23 @@
 package g9;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s implements Iterator {
     public String b;
     public final CharSequence c;
     public final i d;
     public int f;
-    public final /* synthetic */ d6.i h;
+    public final /* synthetic */ ob.c h;
     public int a = 2;
     public int e = 0;
 
-    public s(d6.i iVar, xa xaVar, CharSequence charSequence) {
-        this.h = iVar;
+    public s(ob.c cVar, xa xaVar, CharSequence charSequence) {
+        this.h = cVar;
         this.d = (i) xaVar.c;
         this.f = xaVar.b;
         this.c = charSequence;
@@ -27,7 +27,7 @@ public final class s implements Iterator {
     public final boolean hasNext() {
         String str;
         i iVar;
-        ja.p(this.a != 4);
+        la.p(this.a != 4);
         int c10 = p1.g.c(this.a);
         if (c10 == 0) {
             return true;
@@ -45,7 +45,7 @@ public final class s implements Iterator {
                 e eVar = (e) this.h.b;
                 CharSequence charSequence = this.c;
                 int length = charSequence.length();
-                ja.m(i10, length);
+                la.m(i10, length);
                 while (true) {
                     if (i10 >= length) {
                         i10 = -1;

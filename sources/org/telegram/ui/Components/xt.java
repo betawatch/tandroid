@@ -2,89 +2,119 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.view.KeyEvent;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
 import android.view.MotionEvent;
-import android.view.ViewParent;
-import android.webkit.WebView;
+import android.view.ViewConfiguration;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xt extends WebView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class xt extends xh.l {
+    public final n2.o0 V;
+    public l80 W;
+    public boolean a0;
+    public boolean b0;
+    public boolean c0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ xt(KeyEvent.Callback callback, Context context, Context context2, int i7) {
-        super(context);
-        this.a = i7;
-        this.c = callback;
-        this.b = context2;
+    public xt(Context context) {
+        super(context, null, true);
+        this.V = new n2.o0(this);
     }
 
-    @Override // android.view.View
-    public void draw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.draw(canvas);
-                ViewParent parent = getParent();
-                org.telegram.ui.bq0 bq0Var = (org.telegram.ui.bq0) this.c;
-                if (parent != bq0Var && bq0Var.h.getVisibility() == 0) {
-                    canvas.drawColor(-16777216);
-                    bq0Var.j(canvas, getWidth(), getHeight());
-                    break;
-                }
-                break;
-            default:
-                super.draw(canvas);
-                break;
+    @Override // xh.l
+    public final ClickableSpan a(int i7, int i10) {
+        Layout layout = getLayout();
+        if (layout == null) {
+            return null;
         }
-    }
-
-    @Override // android.webkit.WebView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.u(this.b, true);
-                super.onAttachedToWindow();
-                break;
-            default:
-                org.telegram.messenger.g0.u(this.b, true);
-                super.onAttachedToWindow();
-                break;
+        int paddingLeft = i7 - getPaddingLeft();
+        int paddingTop = i10 - getPaddingTop();
+        int lineForVertical = layout.getLineForVertical(paddingTop);
+        float f10 = paddingLeft;
+        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f10);
+        float lineLeft = getLayout().getLineLeft(lineForVertical);
+        if (lineLeft <= f10 && layout.getLineWidth(lineForVertical) + lineLeft >= f10 && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
+            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+            if (clickableSpanArr.length != 0 && !org.telegram.messenger.g0.C1()) {
+                return clickableSpanArr[0];
+            }
         }
+        return null;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.u(this.b, false);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                org.telegram.messenger.g0.u(this.b, false);
-                super.onDetachedFromWindow();
-                break;
+    @Override // xh.l, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        if (!this.a0) {
+            canvas.translate(this.b0 ? 0.0f : getPaddingLeft(), this.c0 ? 0.0f : getPaddingTop());
         }
+        if (this.V.h(canvas)) {
+            invalidate();
+        }
+        canvas.restore();
+        super.onDraw(canvas);
     }
 
-    @Override // android.webkit.WebView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                bu buVar = (bu) this.c;
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (onTouchEvent) {
-                    if (motionEvent.getAction() == 1) {
-                        buVar.E0 = false;
-                    } else {
-                        buVar.E0 = true;
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        CharacterStyle characterStyle;
+        n2.o0 o0Var = this.V;
+        if (o0Var != null) {
+            Layout layout = getLayout();
+            ClickableSpan a10 = a((int) motionEvent.getX(), (int) motionEvent.getY());
+            if (a10 != null && motionEvent.getAction() == 0) {
+                l80 l80Var = new l80(a10, null, motionEvent.getX(), motionEvent.getY(), 0);
+                this.W = l80Var;
+                o0Var.b(l80Var, null);
+                SpannableString spannableString = new SpannableString(layout.getText());
+                int spanStart = spannableString.getSpanStart(this.W.i);
+                int spanEnd = spannableString.getSpanEnd(this.W.i);
+                f80 b10 = this.W.b();
+                b10.d(layout, spanStart, getPaddingTop());
+                layout.getSelectionPath(spanStart, spanEnd, b10);
+                org.telegram.messenger.g0.h3(new mo(this, l80Var, a10), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                o0Var.f(true);
+                l80 l80Var2 = this.W;
+                if (l80Var2 != null && (characterStyle = l80Var2.i) == a10) {
+                    if (characterStyle != null) {
+                        ((ClickableSpan) characterStyle).onClick(this);
                     }
+                    this.W = null;
+                    return true;
                 }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
+                this.W = null;
+            }
+            if (motionEvent.getAction() == 3) {
+                o0Var.f(true);
+                this.W = null;
+            }
         }
+        return this.W != null || super.onTouchEvent(motionEvent);
+    }
+
+    @Override // xh.l
+    public void setDisablePaddingsOffset(boolean z10) {
+        this.a0 = z10;
+    }
+
+    @Override // xh.l
+    public void setDisablePaddingsOffsetX(boolean z10) {
+        this.b0 = z10;
+    }
+
+    @Override // xh.l
+    public void setDisablePaddingsOffsetY(boolean z10) {
+        this.c0 = z10;
+    }
+
+    @Override // xh.l, android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), bufferType);
     }
 }

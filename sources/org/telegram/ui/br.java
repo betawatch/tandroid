@@ -1,167 +1,227 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import java.util.Calendar;
-import java.util.regex.Pattern;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class br implements org.telegram.ui.Components.lt0, org.telegram.ui.Components.kt0, org.telegram.messenger.nc, org.telegram.ui.ActionBar.q1, org.telegram.ui.Components.gb0, org.telegram.ui.Components.eb0 {
-    public final /* synthetic */ int a;
+public abstract class br extends LinearLayout {
+    public final Paint a;
+    public final Paint b;
+    public float c;
+    public boolean d;
+    public boolean e;
+    public er[] f;
 
-    public /* synthetic */ br(int i7) {
-        this.a = i7;
+    public br(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        paint.setStyle(Paint.Style.STROKE);
+        setOrientation(0);
     }
 
-    @Override // org.telegram.ui.Components.lt0
-    public void c(Object obj, float f10) {
-        dr drVar = (dr) obj;
-        switch (this.a) {
-            case 0:
-                drVar.M1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 1:
-            case 3:
-            default:
-                drVar.P1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                drVar.N1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-            case 4:
-                drVar.O1 = f10;
-                if (drVar.getParent() != null) {
-                    ((View) drVar.getParent()).invalidate();
-                    break;
-                }
-                break;
-        }
-    }
+    public abstract void a();
 
-    @Override // org.telegram.ui.Components.eb0
-    public String e(int i7) {
-        switch (this.a) {
-            case 11:
-                if (i7 != 0) {
-                    Calendar calendar = Calendar.getInstance();
-                    int i10 = calendar.get(1);
-                    calendar.add(6, i7);
-                    long timeInMillis = calendar.getTimeInMillis();
-                    if (calendar.get(1) != i10) {
-                        break;
-                    } else {
-                        break;
-                    }
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i7, int i10) {
+        int i11;
+        int i12;
+        int i13;
+        er[] erVarArr = this.f;
+        int i14 = 0;
+        if (erVarArr == null || erVarArr.length != i7) {
+            if (erVarArr != null) {
+                for (er erVar : erVarArr) {
+                    removeView(erVar);
+                }
+            }
+            this.f = new er[i7];
+            int i15 = 0;
+            while (i15 < i7) {
+                this.f[i15] = new zq(this, getContext(), i15, i7);
+                this.f[i15].setImeOptions(268435461);
+                this.f[i15].setTextSize(1, 20.0f);
+                this.f[i15].setMaxLines(1);
+                this.f[i15].setTypeface(org.telegram.messenger.g0.o());
+                this.f[i15].setPadding(0, 0, 0, 0);
+                this.f[i15].setGravity(17);
+                if (i10 == 3) {
+                    this.f[i15].setEnabled(false);
+                    this.f[i15].setInputType(0);
+                    this.f[i15].setVisibility(8);
                 } else {
-                    break;
+                    this.f[i15].setInputType(3);
                 }
-            case 12:
-                if (i7 != 0) {
-                    Calendar calendar2 = Calendar.getInstance();
-                    int i11 = calendar2.get(1);
-                    calendar2.add(6, i7);
-                    long timeInMillis2 = calendar2.getTimeInMillis();
-                    int i12 = calendar2.get(1);
-                    if (i12 == i11 && i7 < 7) {
-                        break;
-                    } else if (i12 != i11) {
-                        break;
-                    } else {
-                        break;
-                    }
+                int i16 = 42;
+                int i17 = 10;
+                if (i10 == 10) {
+                    i11 = 47;
                 } else {
-                    break;
-                }
-                break;
-            case 17:
-                Calendar calendar3 = Calendar.getInstance();
-                calendar3.set(5, 1);
-                calendar3.set(2, i7);
-                break;
-            case 20:
-                if (i7 != 0) {
-                    Calendar calendar4 = Calendar.getInstance();
-                    int i13 = calendar4.get(1);
-                    calendar4.add(6, i7);
-                    long timeInMillis3 = calendar4.getTimeInMillis();
-                    if (calendar4.get(1) != i13) {
-                        break;
+                    i11 = 34;
+                    if (i10 == 11) {
+                        i16 = 28;
+                        i17 = 5;
                     } else {
-                        break;
+                        i17 = 7;
+                        i12 = 42;
+                        i13 = 34;
+                        addView(this.f[i15], c8.ma.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
+                        this.f[i15].addTextChangedListener(new ar(this, i15, i7));
+                        this.f[i15].setOnEditorActionListener(new fa(this, 3));
+                        i15++;
                     }
-                } else {
+                }
+                i13 = i16;
+                i12 = i11;
+                addView(this.f[i15], c8.ma.t(i13, i12, 1, 0, 0, i15 == i7 + (-1) ? i17 : 0, 0));
+                this.f[i15].addTextChangedListener(new ar(this, i15, i7));
+                this.f[i15].setOnEditorActionListener(new fa(this, 3));
+                i15++;
+            }
+            return;
+        }
+        while (true) {
+            er[] erVarArr2 = this.f;
+            if (i14 >= erVarArr2.length) {
+                return;
+            }
+            erVarArr2[i14].setText("");
+            i14++;
+        }
+    }
+
+    public final void c(String str, boolean z10) {
+        if (this.f == null) {
+            return;
+        }
+        int i7 = 0;
+        if (z10) {
+            int i10 = 0;
+            while (true) {
+                er[] erVarArr = this.f;
+                if (i10 >= erVarArr.length) {
                     break;
                 }
-            case 27:
-                if (i7 != 0) {
-                    Calendar calendar5 = Calendar.getInstance();
-                    int i14 = calendar5.get(1);
-                    calendar5.add(6, i7);
-                    long timeInMillis4 = calendar5.getTimeInMillis();
-                    if (calendar5.get(1) != i14) {
-                        break;
-                    } else {
-                        break;
-                    }
-                } else {
+                if (erVarArr[i10].isFocused()) {
+                    i7 = i10;
                     break;
                 }
+                i10++;
+            }
         }
-        return String.format("%02d", Integer.valueOf(i7));
-    }
-
-    @Override // org.telegram.ui.Components.kt0
-    public float get(Object obj) {
-        dr drVar = (dr) obj;
-        switch (this.a) {
-            case 1:
-                return drVar.N1;
-            case 2:
-            default:
-                return drVar.P1;
-            case 3:
-                return drVar.O1;
+        for (int i11 = i7; i11 < Math.min(this.f.length, str.length() + i7); i11++) {
+            this.f[i11].setText(Character.toString(str.charAt(i11 - i7)));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 9:
-                t1Var.dismiss();
-                break;
-            default:
-                t1Var.dismiss();
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        for (int i7 = 0; i7 < getChildCount(); i7++) {
+            View childAt = getChildAt(i7);
+            if (childAt instanceof er) {
+                er erVar = (er) childAt;
+                if (!this.e) {
+                    if (childAt.isFocused()) {
+                        erVar.B(1.0f);
+                    } else if (!childAt.isFocused()) {
+                        erVar.B(0.0f);
+                    }
+                }
+                float successProgress = erVar.getSuccessProgress();
+                int f10 = i0.a.f(successProgress, i0.a.f(erVar.getErrorProgress(), i0.a.f(erVar.getFocusedProgress(), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.k6, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.l6, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.q7, false)), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.i7, false));
+                Paint paint = this.a;
+                paint.setColor(f10);
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+                float f11 = this.c;
+                rectF.inset(f11, f11);
+                if (successProgress != 0.0f) {
+                    float f12 = -Math.max(0.0f, (erVar.getSuccessScaleProgress() - 1.0f) * this.c);
+                    rectF.inset(f12, f12);
+                }
+                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (!(view instanceof er)) {
+            return super.drawChild(canvas, view, j3);
+        }
+        er erVar = (er) view;
+        canvas.save();
+        float f10 = erVar.V1;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(view.getX(), view.getY(), view.getX() + view.getMeasuredWidth(), view.getY() + view.getMeasuredHeight());
+        float f11 = this.c;
+        rectF.inset(f11, f11);
+        canvas.clipRect(rectF);
+        if (erVar.X1) {
+            float f12 = (f10 * 0.5f) + 0.5f;
+            view.setAlpha(f10);
+            canvas.scale(f12, f12, (erVar.getMeasuredWidth() / 2.0f) + erVar.getX(), (erVar.getMeasuredHeight() / 2.0f) + erVar.getY());
+        } else {
+            view.setAlpha(1.0f);
+            canvas.translate(0.0f, (1.0f - f10) * view.getMeasuredHeight());
+        }
+        super.drawChild(canvas, view, j3);
+        canvas.restore();
+        float f13 = erVar.W1;
+        if (f13 >= 1.0f) {
+            return true;
+        }
+        canvas.save();
+        float f14 = 1.0f - f13;
+        float f15 = (f14 * 0.5f) + 0.5f;
+        canvas.scale(f15, f15, (erVar.getMeasuredWidth() / 2.0f) + erVar.getX(), (erVar.getMeasuredHeight() / 2.0f) + erVar.getY());
+        Paint paint = this.b;
+        paint.setAlpha((int) (f14 * 255.0f));
+        canvas.drawBitmap(erVar.Y1, erVar.getX(), erVar.getY(), paint);
+        canvas.restore();
+        return true;
+    }
+
+    public String getCode() {
+        if (this.f == null) {
+            return "";
+        }
+        StringBuilder sb2 = new StringBuilder();
+        int i7 = 0;
+        while (true) {
+            er[] erVarArr = this.f;
+            if (i7 >= erVarArr.length) {
+                return sb2.toString();
+            }
+            sb2.append(pf.b.d(erVarArr[i7].getText().toString(), false));
+            i7++;
         }
     }
 
-    @Override // org.telegram.ui.Components.gb0
-    public void m(org.telegram.ui.Components.ib0 ib0Var, int i7) {
-        Pattern pattern = org.telegram.ui.Components.t4.a;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        float L = org.telegram.messenger.g0.L(1.5f);
+        this.c = L;
+        this.a.setStrokeWidth(L);
     }
 
-    @Override // org.telegram.messenger.nc
-    public void r(Exception exc) {
-        switch (this.a) {
-            case 7:
-                org.telegram.messenger.a8.g(exc, true);
-                break;
-            default:
-                org.telegram.messenger.a8.g(exc, true);
-                break;
-        }
+    public void setCode(String str) {
+        this.f[0].setText(str);
+    }
+
+    public void setText(String str) {
+        c(str, false);
     }
 }

@@ -17,13 +17,13 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Xml;
-import c8.p0;
+import c8.r0;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends h implements Animatable {
     public final Context d;
@@ -316,7 +316,7 @@ public final class e extends h implements Animatable {
     public final void setTint(int i7) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
-            p0.a(i7, drawable);
+            r0.a(i7, drawable);
         } else {
             this.c.a.setTint(i7);
         }

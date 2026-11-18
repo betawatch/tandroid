@@ -1,10 +1,10 @@
 package d4;
 
-import a8.ja;
+import a8.la;
 import h2.l0;
 import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class j implements c4.e {
     public final ArrayDeque a = new ArrayDeque();
@@ -43,7 +43,7 @@ public abstract class j implements c4.e {
 
     @Override // k2.e
     public final Object d() {
-        ja.p(this.d == null);
+        la.p(this.d == null);
         ArrayDeque arrayDeque = this.a;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -56,7 +56,7 @@ public abstract class j implements c4.e {
     @Override // k2.e
     public final void e(Object obj) {
         c4.i iVar = (c4.i) obj;
-        ja.f(iVar == this.d);
+        la.f(iVar == this.d);
         h hVar = (h) iVar;
         if (!hVar.isEndOfStream()) {
             long j3 = hVar.e;
@@ -76,7 +76,7 @@ public abstract class j implements c4.e {
         this.d = null;
     }
 
-    public abstract d6.i f();
+    public abstract ob.c f();
 
     @Override // k2.e
     public void flush() {
@@ -134,7 +134,7 @@ public abstract class j implements c4.e {
             }
             g(hVar2);
             if (i()) {
-                d6.i f10 = f();
+                ob.c f10 = f();
                 c4.j jVar2 = (c4.j) arrayDeque.pollFirst();
                 long j3 = hVar2.e;
                 jVar2.timeUs = j3;

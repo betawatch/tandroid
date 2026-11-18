@@ -14,7 +14,7 @@ import java.util.function.IntFunction;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d0 extends AbstractCollection implements Serializable, Collection {
     public static final Object[] a = new Object[0];
@@ -34,13 +34,13 @@ public abstract class d0 extends AbstractCollection implements Serializable, Col
         throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public abstract boolean contains(Object obj);
 
     public i0 f() {
         if (isEmpty()) {
             g0 g0Var = i0.b;
-            return s1.e;
+            return t1.e;
         }
         Object[] array = toArray(a);
         g0 g0Var2 = i0.b;
@@ -53,7 +53,7 @@ public abstract class d0 extends AbstractCollection implements Serializable, Col
     }
 
     public int i(int i7, Object[] objArr) {
-        g2 it = iterator();
+        h2 it = iterator();
         while (it.hasNext()) {
             objArr[i7] = it.next();
             i7++;
@@ -77,7 +77,7 @@ public abstract class d0 extends AbstractCollection implements Serializable, Col
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
     /* renamed from: n, reason: merged with bridge method [inline-methods] */
-    public abstract g2 iterator();
+    public abstract h2 iterator();
 
     @Override // java.util.Collection
     public /* synthetic */ Stream parallelStream() {

@@ -3,11 +3,11 @@ package s2;
 import android.net.Uri;
 import android.os.SystemClock;
 import h9.g0;
-import h9.g2;
+import h9.h2;
 import h9.t0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements u {
     public final /* synthetic */ d a;
@@ -22,7 +22,7 @@ public final class a implements u {
     }
 
     @Override // s2.u
-    public final boolean d(Uri uri, f5.v vVar, boolean z10) {
+    public final boolean d(Uri uri, b3.j jVar, boolean z10) {
         c cVar;
         d dVar = this.a;
         HashMap hashMap = dVar.d;
@@ -32,13 +32,13 @@ public final class a implements u {
             cVar2.getClass();
             w wVar = cVar2.a;
             int size = wVar.b.size();
-            g2 it = t0.q(wVar.b.values()).iterator();
+            h2 it = t0.q(wVar.b.values()).iterator();
             int i7 = 0;
             while (it.hasNext()) {
                 Uri uri2 = (Uri) it.next();
                 c cVar3 = (c) hashMap.get(uri2);
                 if (cVar3 != null) {
-                    b bVar = (b) r.b.i(cVar3.b, uri2, uri2);
+                    b bVar = (b) p5.c.i(cVar3.b, uri2, uri2);
                     bVar.getClass();
                     if (elapsedRealtime <= bVar.r) {
                         i7++;
@@ -55,7 +55,7 @@ public final class a implements u {
             }
             b3.h hVar = new b3.h(size, i7, size2, i10);
             dVar.c.getClass();
-            b3.i Q4 = qb.a.Q4(hVar, vVar);
+            b3.i Q4 = qb.a.Q4(hVar, jVar);
             if (Q4 != null && (cVar = (c) hashMap.get(uri)) != null) {
                 return c.c(cVar, uri, Q4.b);
             }

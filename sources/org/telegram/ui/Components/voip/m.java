@@ -7,21 +7,21 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import c8.ja;
+import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class m extends FrameLayout {
-    public final o2 a;
+    public final n2 a;
     public final h b;
     public final TextView c;
     public final TextView d;
@@ -36,23 +36,23 @@ public final class m extends FrameLayout {
         this.n = false;
         this.r = SystemClock.elapsedRealtime();
         setBackgroundColor(-14999773);
-        o2 o2Var = new o2(context, false, true, false, false);
-        this.a = o2Var;
+        n2 n2Var = new n2(context, false, true, false, false);
+        this.a = n2Var;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FIT;
-        n2 n2Var = o2Var.d;
-        n2Var.setScalingType(scalingType);
-        n2Var.setEnableHardwareScaler(true);
-        n2Var.setRotateTextureWithScreen(true);
-        o2Var.b0 = 1;
-        n2Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
-        View view = o2Var.h;
+        m2 m2Var = n2Var.d;
+        m2Var.setScalingType(scalingType);
+        m2Var.setEnableHardwareScaler(true);
+        m2Var.setRotateTextureWithScreen(true);
+        n2Var.b0 = 1;
+        m2Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
+        View view = n2Var.h;
         if (view != null) {
             view.setVisibility(8);
         }
-        addView(o2Var, ja.c(-1.0f, -1));
+        addView(n2Var, ma.c(-1.0f, -1));
         h hVar = new h(context);
         this.b = hVar;
-        addView(hVar, ja.c(-1.0f, -1));
+        addView(hVar, ma.c(-1.0f, -1));
         TextView textView = new TextView(context);
         this.c = textView;
         textView.setTextColor(-1);
@@ -61,7 +61,7 @@ public final class m extends FrameLayout {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(1);
         textView.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, 0.0f, TLObject.FLAG_31);
-        addView(textView, ja.d(-1, -2.0f, 81, 12.0f, 0.0f, 12.0f, 8.0f));
+        addView(textView, ma.d(-1, -2.0f, 81, 12.0f, 0.0f, 12.0f, 8.0f));
         TextView textView2 = new TextView(context);
         this.d = textView2;
         textView2.setTextColor(-1275068417);
@@ -70,17 +70,17 @@ public final class m extends FrameLayout {
         textView2.setGravity(1);
         textView2.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, 0.0f, TLObject.FLAG_31);
         textView2.setVisibility(8);
-        addView(textView2, ja.d(-1, -2.0f, 49, 32.0f, 8.0f, 32.0f, 0.0f));
+        addView(textView2, ma.d(-1, -2.0f, 49, 32.0f, 8.0f, 32.0f, 0.0f));
         k kVar = new k(context);
         this.f = kVar;
-        addView(kVar, ja.c(-1.0f, -1));
+        addView(kVar, ma.c(-1.0f, -1));
         kVar.a();
         ImageView imageView = new ImageView(context);
         this.e = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setColorFilter(-1);
-        imageView.setBackground(j6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
-        addView(imageView, ja.d(28, 28.0f, 51, 6.0f, 6.0f, 0.0f, 0.0f));
+        imageView.setBackground(n6.L(org.telegram.messenger.g0.L(28.0f), 1711276032));
+        addView(imageView, ma.d(28, 28.0f, 51, 6.0f, 6.0f, 0.0f, 0.0f));
     }
 
     public static boolean a(VoIPService voIPService) {
@@ -99,13 +99,13 @@ public final class m extends FrameLayout {
             this.h = user;
             sharedInstance.getAccount();
             hVar.a(user);
-            textView.setText(q10.p(user));
+            textView.setText(o10.q(user));
         }
         boolean a10 = a(sharedInstance);
         boolean z10 = true;
-        o2 o2Var = this.a;
-        boolean z11 = a10 && !o2Var.d.isFirstFrameRendered() && SystemClock.elapsedRealtime() - this.r < 1200;
-        if (!a10 || (!o2Var.d.isFirstFrameRendered() && !z11)) {
+        n2 n2Var = this.a;
+        boolean z11 = a10 && !n2Var.d.isFirstFrameRendered() && SystemClock.elapsedRealtime() - this.r < 1200;
+        if (!a10 || (!n2Var.d.isFirstFrameRendered() && !z11)) {
             z10 = false;
         }
         if (this.n != z10) {
@@ -118,12 +118,12 @@ public final class m extends FrameLayout {
         int callState = sharedInstance.getCallState();
         TextView textView2 = this.d;
         if (callState == 5) {
-            textView2.setText(hd.M0(2131743253, null));
+            textView2.setText(gd.M0(2131743016, null));
             textView2.setVisibility(0);
         } else if (callState == 3) {
             textView2.setVisibility(8);
         } else {
-            textView2.setText(hd.M0(2131743419, null));
+            textView2.setText(gd.M0(2131743182, null));
             textView2.setVisibility(0);
         }
     }

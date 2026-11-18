@@ -3,9 +3,9 @@ package wi;
 import android.app.Activity;
 import android.graphics.SurfaceTexture;
 import android.view.TextureView;
-import ug.t1;
+import wg.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class o extends TextureView implements TextureView.SurfaceTextureListener {
     public SurfaceTexture a;
@@ -43,7 +43,7 @@ public final class o extends TextureView implements TextureView.SurfaceTextureLi
     @Override // android.view.TextureView.SurfaceTextureListener
     public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
         if (surfaceTexture == this.a) {
-            post(new t1(15, this, surfaceTexture));
+            post(new r(7, this, surfaceTexture));
             return false;
         }
         TextureView.SurfaceTextureListener surfaceTextureListener = this.b;

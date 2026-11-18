@@ -1,26 +1,26 @@
 package t3;
 
-import a8.ja;
-import c8.g1;
+import a8.la;
+import c8.k1;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import h2.l0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends i {
     public final String b;
     public final i0 c;
 
-    public n(String str, String str2, s1 s1Var) {
+    public n(String str, String str2, t1 t1Var) {
         super(str);
-        ja.f(!s1Var.isEmpty());
+        la.f(!t1Var.isEmpty());
         this.b = str2;
-        i0 q10 = i0.q(s1Var);
+        i0 q10 = i0.q(t1Var);
         this.c = q10;
     }
 
@@ -272,7 +272,7 @@ public final class n extends i {
                     n0Var.t = Integer.valueOf(Integer.parseInt((String) i0Var.get(0)));
                     break;
                 case '\f':
-                    Integer g10 = g1.g((String) i0Var.get(0));
+                    Integer g10 = k1.g((String) i0Var.get(0));
                     if (g10 != null) {
                         String a10 = j.a(g10.intValue());
                         if (a10 != null) {

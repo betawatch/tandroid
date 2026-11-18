@@ -2,17 +2,16 @@ package i5;
 
 import a8.p0;
 import ab.c0;
-import c8.lb;
+import c8.ob;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff n;
-    public static final /* synthetic */ ff r;
-    public static final /* synthetic */ ff s;
-    public static final /* synthetic */ ff w;
+    public static final /* synthetic */ ze.b n;
+    public static final /* synthetic */ ze.b r;
+    public static final /* synthetic */ ze.b s;
+    public static final /* synthetic */ ze.b w;
     public long e;
     public long[] f;
     public int h;
@@ -32,7 +31,7 @@ public final class p extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         this.e = h5.b.i(byteBuffer);
-        int a10 = lb.a(h5.b.i(byteBuffer));
+        int a10 = ob.a(h5.b.i(byteBuffer));
         this.h = a10;
         if (this.e == 0) {
             this.f = new long[a10];
@@ -66,10 +65,10 @@ public final class p extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SampleSizeBox[sampleSize=");
-        c.u(ze.a.b(n, this, this));
+        c.w(ze.a.b(n, this, this));
         sb2.append(this.e);
         sb2.append(";sampleCount=");
-        c.u(ze.a.b(r, this, this));
+        c.w(ze.a.b(r, this, this));
         return p0.r(sb2, this.e > 0 ? this.h : this.f.length, "]");
     }
 }

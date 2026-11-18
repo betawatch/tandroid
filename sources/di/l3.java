@@ -1,55 +1,33 @@
 package di;
 
-import android.os.Bundle;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l3 implements Runnable {
+public final /* synthetic */ class l3 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ f6 b;
+    public final /* synthetic */ TwoStepVerificationActivity c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ l3(long j3, int i7) {
+    public /* synthetic */ l3(f6 f6Var, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10, int i7) {
         this.a = i7;
-        this.b = j3;
+        this.b = f6Var;
+        this.c = twoStepVerificationActivity;
+        this.d = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                if (T != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", this.b);
-                    bundle.putBoolean("my_profile", true);
-                    bundle.putBoolean("open_gifts", true);
-                    T.presentFragment(new ProfileActivity(bundle, null));
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
-                if (T2 != null) {
-                    T2.presentFragment(an.ua(this.b));
-                    break;
-                }
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.e2 T3 = LaunchActivity.T();
-                if (T3 != null) {
-                    T3.presentFragment(an.ua(this.b));
-                    break;
-                }
+                org.telegram.messenger.g0.g3(new q3(this.b, tLObject, this.c, this.d, tL_error));
                 break;
             default:
-                org.telegram.ui.ActionBar.e2 T4 = LaunchActivity.T();
-                if (T4 != null) {
-                    T4.presentFragment(an.ua(this.b));
-                    break;
-                }
+                org.telegram.messenger.g0.g3(new q3(this.b, tL_error, this.c, tLObject, this.d));
                 break;
         }
     }

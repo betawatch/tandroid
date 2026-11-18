@@ -1,58 +1,88 @@
 package ug;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import di.ac;
-import org.telegram.messenger.qc;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.l8;
-import org.telegram.ui.Components.fh0;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import c8.ma;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m1 extends l8 {
-    public final ac a0;
-    public final int b0;
-    public final q2.d c0;
+public final class m1 extends FrameLayout {
+    public float a;
+    public final l1 b;
+    public final ImageReceiver c;
+    public final ImageReceiver d;
+    public boolean e;
+    public boolean f;
+    public float h;
+    public float n;
+    public TLRPC.Document r;
+    public boolean s;
+    public final /* synthetic */ v0 w;
 
-    public m1(int i7, Context context, e6 e6Var) {
-        super(context, e6Var);
-        this.a0 = new ac(1, 15);
-        this.c0 = new q2.d(this, 25);
-        this.b0 = i7 == 1 ? j6.Wk : j6.Dk;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m1(v0 v0Var, Context context) {
+        super(context);
+        this.w = v0Var;
+        this.f = true;
+        l1 l1Var = new l1(this, context);
+        this.b = l1Var;
+        ImageReceiver imageReceiver = new ImageReceiver(l1Var);
+        this.c = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(l1Var);
+        this.d = imageReceiver2;
+        imageReceiver.u0 = false;
+        imageReceiver2.u0 = false;
+        setClipChildren(false);
+        addView(l1Var, ma.e(-1, -2, 21));
     }
 
-    @Override // org.telegram.ui.Cells.l8, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        boolean e10 = qc.e(131072);
-        q2.d dVar = this.c0;
-        if (e10) {
-            ac acVar = this.a0;
-            acVar.d();
-            acVar.a(canvas, j6.x0(null, this.b0, false));
-            bg.k.d().a(15, dVar);
-        } else {
-            bg.k.d().f(dVar);
+    public final void a(boolean z10, boolean z11, boolean z12) {
+        boolean z13 = this.e;
+        l1 l1Var = this.b;
+        if (z13 != z11) {
+            this.e = z11;
+            if (!z12) {
+                this.h = z11 ? 1.0f : 0.0f;
+            }
+            l1Var.invalidate();
         }
-        super.dispatchDraw(canvas);
+        if (this.f != z10) {
+            this.f = z10;
+            if (!z12) {
+                this.n = z10 ? 1.0f : 0.0f;
+            }
+            l1Var.invalidate();
+        }
     }
 
-    @Override // org.telegram.ui.Cells.l8, android.view.ViewGroup, android.view.View
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c.P();
+        this.d.P();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        bg.k.d().f(this.c0);
+        this.c.R();
+        this.d.R();
     }
 
-    @Override // org.telegram.ui.Cells.l8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        fh0 fh0Var = this.e;
-        float width = (fh0Var.getWidth() / 2.0f) + fh0Var.getX();
-        float height = ((fh0Var.getHeight() / 2.0f) + (fh0Var.getY() + fh0Var.getPaddingTop())) - org.telegram.messenger.g0.L(3.0f);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(width - org.telegram.messenger.g0.L(16.0f), height - org.telegram.messenger.g0.L(16.0f), width + org.telegram.messenger.g0.L(16.0f), height + org.telegram.messenger.g0.L(16.0f));
-        this.a0.g(rectF);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int i11 = (int) (this.w.s3 * 0.6f);
+        l1 l1Var = this.b;
+        ViewGroup.LayoutParams layoutParams = l1Var.getLayoutParams();
+        ViewGroup.LayoutParams layoutParams2 = l1Var.getLayoutParams();
+        int L = i11 - org.telegram.messenger.g0.L(16.0f);
+        layoutParams2.height = L;
+        layoutParams.width = L;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i11 * 0.7f), TLObject.FLAG_30));
     }
 }

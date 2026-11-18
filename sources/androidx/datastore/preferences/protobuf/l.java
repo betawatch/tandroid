@@ -2,9 +2,9 @@ package androidx.datastore.preferences.protobuf;
 
 import java.io.IOException;
 import java.util.Locale;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends IOException {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -13,7 +13,7 @@ public final class l extends IOException {
     */
     public l(int i7, int i10) {
         super(r0.toString());
-        StringBuilder sb2 = new StringBuilder(ns.t1);
+        StringBuilder sb2 = new StringBuilder(ks.t1);
         sb2.append("CodedOutputStream was writing to a flat byte array and ran out of space (pos ");
         sb2.append(i7);
         sb2.append(" limit ");

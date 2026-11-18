@@ -1,36 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.ui.g60;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hd b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ gd b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ g60 d;
 
-    public /* synthetic */ uc(hd hdVar, int i7, int i10) {
-        this.a = i10;
-        this.b = hdVar;
-        this.c = i7;
+    public /* synthetic */ uc(gd gdVar, String str, g60 g60Var, int i7) {
+        this.a = i7;
+        this.b = gdVar;
+        this.c = str;
+        this.d = g60Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                hd hdVar = this.b;
-                hdVar.P = false;
-                hdVar.j(this.c);
-                break;
-            case 1:
-                hd hdVar2 = this.b;
-                hdVar2.P = false;
-                hdVar2.j(this.c);
-                break;
-            case 2:
-                this.b.Z0(this.c, null, true, null);
+                g0.g3(new uc(this.b, this.c, this.d, 1));
                 break;
             default:
-                this.b.Z0(this.c, null, true, null);
+                mp.g1().edit().putBoolean("langpack_patched" + this.c, true).apply();
+                this.d.run();
+                this.b.Q = false;
                 break;
         }
     }

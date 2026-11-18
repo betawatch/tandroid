@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
@@ -54,8 +54,8 @@ public final /* synthetic */ class c0 implements Runnable {
         }
         d0Var.b.h();
         e0 e0Var3 = d0Var.b;
-        com.google.android.gms.common.api.internal.m mVar = cb.c.h(e0Var3.g, e0Var3.l, "castDeviceControllerListenerKey").b;
-        q6.m.h(mVar, "Key must not be null");
+        com.google.android.gms.common.api.internal.m mVar = d6.i.o(e0Var3.g, e0Var3.l, "castDeviceControllerListenerKey").b;
+        q6.m.i(mVar, "Key must not be null");
         e0Var3.c(mVar, 8415);
     }
 

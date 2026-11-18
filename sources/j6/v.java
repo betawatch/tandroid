@@ -3,7 +3,7 @@ package j6;
 import java.util.concurrent.atomic.AtomicReference;
 import q6.c0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v extends g {
     public final AtomicReference b;
@@ -15,7 +15,7 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void L0(d dVar) {
+    public final void K0(d dVar) {
         w wVar = (w) this.b.get();
         if (wVar == null) {
             return;
@@ -25,7 +25,7 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void O0(c cVar) {
+    public final void N0(c cVar) {
         w wVar = (w) this.b.get();
         if (wVar == null) {
             return;
@@ -49,7 +49,7 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void X(int i7) {
+    public final void W(int i7) {
         w wVar = null;
         w wVar2 = (w) this.b.getAndSet(null);
         if (wVar2 != null) {
@@ -83,7 +83,7 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void a0(String str, String str2) {
+    public final void Z(String str, String str2) {
         w wVar = (w) this.b.get();
         if (wVar == null) {
             return;
@@ -93,12 +93,21 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void d0(int i7) {
+    public final void c0(int i7) {
         if (((w) this.b.get()) == null) {
             return;
         }
         synchronized (w.Z) {
         }
+    }
+
+    @Override // j6.h
+    public final void f0(long j3) {
+        w wVar = (w) this.b.get();
+        if (wVar == null) {
+            return;
+        }
+        w.B(wVar, j3, 0);
     }
 
     @Override // j6.h
@@ -108,15 +117,6 @@ public final class v extends g {
         }
         synchronized (w.a0) {
         }
-    }
-
-    @Override // j6.h
-    public final void g0(long j3) {
-        w wVar = (w) this.b.get();
-        if (wVar == null) {
-            return;
-        }
-        w.B(wVar, j3, 0);
     }
 
     @Override // j6.h
@@ -158,7 +158,7 @@ public final class v extends g {
     }
 
     @Override // j6.h
-    public final void P0(int i7) {
+    public final void O0(int i7) {
     }
 
     @Override // j6.h

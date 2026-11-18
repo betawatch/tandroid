@@ -17,6 +17,7 @@ import android.util.Log;
 import com.google.android.gms.internal.cast.i4;
 import com.google.android.gms.internal.cast.j4;
 import com.google.android.gms.internal.cast.n4;
+import hi.w4;
 import j$.util.DesugarCollections;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final j6.b l = new j6.b("CastContext", null);
@@ -70,9 +71,9 @@ public final class a {
             Iterator it = list.iterator();
             while (it.hasNext()) {
                 com.google.android.gms.internal.cast.e eVar2 = (com.google.android.gms.internal.cast.e) it.next();
-                q6.m.h(eVar2, "Additional SessionProvider must not be null.");
+                q6.m.i(eVar2, "Additional SessionProvider must not be null.");
                 String str = eVar2.b;
-                q6.m.f(str, "Category for SessionProvider must not be null or empty string.");
+                q6.m.g(str, "Category for SessionProvider must not be null or empty string.");
                 q6.m.a("SessionProvider for category " + str + " already added", !hashMap.containsKey(str));
                 hashMap.put(str, eVar2.c);
             }
@@ -106,18 +107,18 @@ public final class a {
                     r13.recycle();
                     g gVar = new g(yVar, context);
                     this.c = gVar;
-                    q6.m.f("PrecacheManager", "The log tag cannot be null or empty.");
+                    q6.m.g("PrecacheManager", "The log tag cannot be null or empty.");
                     TextUtils.isEmpty(null);
                     com.google.android.gms.internal.cast.s sVar2 = this.j;
                     if (sVar2 != null) {
                         sVar2.f = gVar;
                         com.google.android.gms.internal.cast.y yVar2 = sVar2.c;
-                        q6.m.g(yVar2);
+                        q6.m.h(yVar2);
                         yVar2.post(new com.google.android.gms.internal.cast.r(sVar2, i7));
                     }
                     ExecutorService newFixedThreadPool = Executors.newFixedThreadPool(3);
                     com.google.android.gms.internal.cast.w wVar = new com.google.android.gms.internal.cast.w(context, newFixedThreadPool instanceof i4 ? (i4) newFixedThreadPool : newFixedThreadPool instanceof ScheduledExecutorService ? new n4((ScheduledExecutorService) newFixedThreadPool) : new j4(newFixedThreadPool));
-                    q6.m.f("BaseNetUtils", "The log tag cannot be null or empty.");
+                    q6.m.g("BaseNetUtils", "The log tag cannot be null or empty.");
                     TextUtils.isEmpty(null);
                     ConnectivityManager connectivityManager = wVar.c;
                     com.google.android.gms.internal.cast.w.j.b("Start monitoring connectivity changes", new Object[0]);
@@ -171,13 +172,14 @@ public final class a {
                             }
                             mVar.m();
                         }
-                        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new cb.c(this, 27));
+                        int i10 = 23;
+                        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", "com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", "com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE", "com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE", "com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED"}).addOnSuccessListener(new d6.i(this, i10));
                         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
-                        b10.c = new gc.b(sVar, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
+                        b10.c = new w4(sVar, new String[]{"com.google.android.gms.cast.MAP_CAST_STATUS_CODES_TO_CAST_REASON_CODES"});
                         b10.d = new n6.c[]{f6.y.d};
                         b10.b = false;
                         b10.a = 8427;
-                        sVar.e(0, b10.a()).addOnSuccessListener(new d6.i(this, 20));
+                        sVar.e(0, b10.a()).addOnSuccessListener(new ob.c(this, i10));
                     } catch (RemoteException e10) {
                         throw new IllegalStateException("Failed to call addAppVisibilityListener", e10);
                     }
@@ -193,7 +195,7 @@ public final class a {
     }
 
     public static a c(Context context) {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (n == null) {
             synchronized (m) {
                 if (n == null) {
@@ -251,7 +253,7 @@ public final class a {
     }
 
     public final s4.r a() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         try {
             l lVar = (l) this.b;
             Parcel r12 = lVar.r1(lVar.p1(), 1);
@@ -265,7 +267,7 @@ public final class a {
     }
 
     public final g b() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         return this.c;
     }
 }

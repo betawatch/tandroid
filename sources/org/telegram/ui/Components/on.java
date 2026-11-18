@@ -1,73 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.R;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.ui.u91;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class on extends i9 {
-    public final org.telegram.ui.Cells.j6 H;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 I;
-    public final /* synthetic */ boolean J;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 K;
-    public final /* synthetic */ sn L;
+public final class on extends org.telegram.ui.Cells.a6 {
+    public final /* synthetic */ org.telegram.ui.l4 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public on(sn snVar, Context context, org.telegram.ui.ActionBar.e2 e2Var, boolean z10, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.L = snVar;
-        this.I = e2Var;
-        this.J = z10;
-        this.K = e6Var;
-        this.H = new org.telegram.ui.Cells.j6(this);
+    public on(org.telegram.ui.l4 l4Var, Context context, int i7) {
+        super(context, i7, null, null);
+        this.G = l4Var;
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        long j3;
-        sn snVar = this.L;
-        if (!snVar.b || this.e != null) {
-            super.onDraw(canvas);
-            return;
-        }
-        org.telegram.ui.Cells.j6 j6Var = this.H;
-        j6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        j6Var.a = true;
-        j6Var.v = true;
-        j6Var.J = this.K;
-        Integer num = snVar.c;
-        if (num != null) {
-            j6Var.z = num.intValue();
-        }
-        org.telegram.ui.an anVar = snVar.H;
-        if (anVar != null) {
-            j3 = anVar.a();
-        } else {
-            org.telegram.ui.ActionBar.e2 e2Var = this.I;
-            j3 = e2Var instanceof u91 ? -((u91) e2Var).a : 0L;
-        }
-        fi.l7.h(j3, canvas, this.a, j6Var);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!this.J || !getImageReceiver().L()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-        } else {
-            accessibilityNodeInfo.setText(org.telegram.messenger.hd.M0(2131754798, null));
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.hd.M0(2131747817, null)));
+    @Override // org.telegram.ui.Cells.a6
+    public final void h(bi.u uVar, ActionMode actionMode) {
+        if (uVar.isFocused() && uVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.bn.C8(menu, ((org.telegram.ui.bn) ((rn) this.G.e).b.a2).h, false, true, true, true);
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.L.b && this.H.a(this, motionEvent)) {
-            return true;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Cells.a6
+    public final void j(boolean z10) {
+        rn.R((rn) this.G.e, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void k(org.telegram.ui.Cells.a6 a6Var) {
+        rn.S((rn) this.G.e, a6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.a6
+    public final void l(bi.u uVar) {
+        ((rn) this.G.e).b.i1(uVar, true);
     }
 }

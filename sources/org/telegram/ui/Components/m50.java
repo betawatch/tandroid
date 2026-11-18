@@ -1,71 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m50 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
-    public int d;
-    public int e;
-    public final /* synthetic */ p50 f;
+public final class m50 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.x2[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m50(p50 p50Var, Context context) {
-        super(context);
-        this.f = p50Var;
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.M(46, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.R7, false), org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Y7, false)));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.large_income);
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        addView(imageView, c8.ja.d(46, 46.0f, 19, 13.0f, 0.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        i5.c.v(textView, 1, 16.0f);
-        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.G6, null);
-        addView(textView, c8.ja.d(-1, -2.0f, 51, 72.0f, 9.0f, 0.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.q6.U(textView2, org.telegram.ui.ActionBar.j6.y6, null);
-        addView(textView2, c8.ja.d(-1, -2.0f, 51, 72.0f, 32.0f, 0.0f, 0.0f));
+    public m50(org.telegram.ui.ActionBar.x2[] x2VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = x2VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.R7, false);
-        int x03 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Y7, false);
-        ImageView imageView = this.a;
-        if (imageView != null) {
-            if (x02 == this.d && x03 == this.e) {
-                return;
-            }
-            this.d = x02;
-            this.e = x03;
-            imageView.setBackground(org.telegram.ui.ActionBar.j6.M(46, x02, x03));
-            invalidate();
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+        if (T != null) {
+            T.presentFragment(ProfileActivity.D4(this.b.user_id));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

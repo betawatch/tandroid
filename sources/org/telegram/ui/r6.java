@@ -1,43 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.HashSet;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r6 extends View implements org.telegram.ui.ActionBar.z5 {
-    public Paint a;
-    public Paint b;
-    public float c;
-    public org.telegram.ui.Components.u5 d;
+public final class r6 {
+    public long a;
+    public int b;
+    public long c;
+    public final SparseArray d = new SparseArray();
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), this.b);
-        rectF.set(0.0f, 0.0f, this.d.e(false, this.c) * getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), this.a);
+    public r6(long j3) {
+        this.a = j3;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            Paint paint = this.a;
-            int i7 = org.telegram.ui.ActionBar.j6.N6;
-            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-            this.b.setColor(org.telegram.ui.ActionBar.j6.r1(0.2f, org.telegram.ui.ActionBar.j6.x0(null, i7, false)));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    public final void a(ei.b bVar, int i7) {
+        SparseArray sparseArray = this.d;
+        s6 s6Var = (s6) sparseArray.get(i7, null);
+        if (s6Var == null) {
+            s6Var = new s6();
+            sparseArray.put(i7, s6Var);
         }
+        long j3 = bVar.c;
+        s6Var.a += j3;
+        this.c += j3;
+        this.b++;
+        s6Var.b.add(bVar);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public final void b(ei.b bVar) {
+        s6 s6Var = (s6) this.d.get(bVar.d, null);
+        if (s6Var != null && s6Var.b.remove(bVar)) {
+            long j3 = s6Var.a;
+            long j10 = bVar.c;
+            s6Var.a = j3 - j10;
+            this.c -= j10;
+            this.b--;
+        }
     }
 }

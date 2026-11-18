@@ -3,36 +3,36 @@ package org.telegram.ui.Components;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements org.telegram.messenger.z10 {
+public final /* synthetic */ class f implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ d0 b;
+    public final /* synthetic */ m0 b;
 
-    public /* synthetic */ f(d0 d0Var, int i7) {
+    public /* synthetic */ f(m0 m0Var, int i7) {
         this.a = i7;
-        this.b = d0Var;
+        this.b = m0Var;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         int i7 = this.a;
         int i10 = 0;
-        d0 d0Var = this.b;
+        m0 m0Var = this.b;
         switch (i7) {
             case 0:
-                d0.f1(d0Var, (TL_aicompose.AiComposeTone) obj);
+                m0.g1(m0Var, (TL_aicompose.AiComposeTone) obj);
                 break;
             case 1:
                 TL_aicompose.AiComposeTone aiComposeTone = (TL_aicompose.AiComposeTone) obj;
-                d0Var.q2.b.add(0, aiComposeTone);
-                d0Var.x1();
-                new cc(d0Var.C2, d0Var.J0).p(aiComposeTone.emoji_id, org.telegram.messenger.hd.a0(null, null, 2131754956, aiComposeTone.title), org.telegram.messenger.hd.M0(2131754957, null)).j();
+                m0Var.s2.b.add(0, aiComposeTone);
+                m0Var.E1();
+                new lc(m0Var.E2, m0Var.J0).p(aiComposeTone.emoji_id, org.telegram.messenger.gd.a0(null, null, 2131754956, aiComposeTone.title), org.telegram.messenger.gd.M0(2131754957, null)).j();
                 break;
             case 2:
                 TL_aicompose.AiComposeTone aiComposeTone2 = (TL_aicompose.AiComposeTone) obj;
                 if (aiComposeTone2 instanceof TL_aicompose.TL_aiComposeTone) {
-                    org.telegram.messenger.e eVar = d0Var.q2;
+                    org.telegram.messenger.e eVar = m0Var.s2;
                     TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone2;
                     ArrayList arrayList = eVar.b;
                     while (true) {
@@ -46,10 +46,10 @@ public final /* synthetic */ class f implements org.telegram.messenger.z10 {
                         }
                     }
                 }
-                d0Var.x1();
+                m0Var.E1();
                 break;
             default:
-                d0.e1(d0Var, ((Integer) obj).intValue());
+                m0.f1(m0Var, ((Integer) obj).intValue());
                 break;
         }
     }

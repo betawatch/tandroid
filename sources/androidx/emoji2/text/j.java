@@ -2,14 +2,14 @@ package androidx.emoji2.text;
 
 import android.view.MotionEvent;
 import android.view.ViewGroup;
-import c8.qb;
+import c8.tb;
 import com.google.android.gms.common.api.internal.l0;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.Cells.j7;
+import org.telegram.ui.Cells.k7;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -66,19 +66,19 @@ public final class j implements Runnable {
                 }
                 break;
             default:
-                j7 j7Var = (j7) this.c;
-                if (j7Var.a && j7Var.getParent() != null && this.b == j7Var.c) {
-                    j7Var.a = false;
+                k7 k7Var = (k7) this.c;
+                if (k7Var.a && k7Var.getParent() != null && this.b == k7Var.c) {
+                    k7Var.a = false;
                     try {
-                        j7Var.performHapticFeedback(0);
+                        k7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i10 = j7Var.h;
+                    int i10 = k7Var.h;
                     if (i10 >= 0) {
-                        j7Var.y.a(((CharSequence) j7Var.F.get(i10)).toString(), true);
+                        k7Var.y.a(((CharSequence) k7Var.F.get(i10)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    j7Var.onTouchEvent(obtain2);
+                    k7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
@@ -100,7 +100,7 @@ public final class j implements Runnable {
 
     public j(List list, int i7, Throwable th2) {
         this.a = 0;
-        qb.a(list, "initCallbacks cannot be null");
+        tb.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i7;
     }

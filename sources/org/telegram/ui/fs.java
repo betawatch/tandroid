@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class fs implements View.OnClickListener {
     public final /* synthetic */ ArrayList a;
@@ -43,7 +43,7 @@ public final class fs implements View.OnClickListener {
                 lsVar2.M(nsVar.a0, nsVar.i);
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 2) {
-            org.telegram.messenger.si.b0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+            org.telegram.messenger.ri.d0(nsVar.r).d(2, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 3) {
             TLRPC.Document document2 = nsVar.W;
             Object obj2 = nsVar.b0;
@@ -52,10 +52,10 @@ public final class fs implements View.OnClickListener {
             if (lsVar3 == null) {
                 return;
             } else {
-                org.telegram.ui.Components.t4.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
+                org.telegram.ui.Components.b5.I(nsVar.w, lsVar3.a(), new a1.d(lsVar3, document2, str2, obj2, 13));
             }
         } else if (((Integer) arrayList.get(intValue)).intValue() == 4) {
-            org.telegram.messenger.si.b0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
+            org.telegram.messenger.ri.d0(nsVar.r).d(0, nsVar.b0, nsVar.W, (int) (System.currentTimeMillis() / 1000), true);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 5) {
             nsVar.l.i(nsVar.X);
         } else if (((Integer) arrayList.get(intValue)).intValue() == 7) {

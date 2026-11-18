@@ -1,30 +1,75 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.ViewTreeObserver;
-import org.telegram.ui.Components.er;
+import android.transition.Transition;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.c10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ q0 b;
+public final class k0 implements Transition.TransitionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
 
-    public k0(q0 q0Var, float f10) {
-        this.b = q0Var;
-        this.a = f10;
+    public /* synthetic */ k0(int i7, FrameLayout frameLayout) {
+        this.a = i7;
+        this.b = frameLayout;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        q0 q0Var = this.b;
-        q0Var.e.getViewTreeObserver().removeOnPreDrawListener(this);
-        float x10 = q0Var.e.getX();
-        float f10 = this.a;
-        if (x10 != f10) {
-            ah.i iVar = q0Var.e;
-            iVar.setTranslationX(f10 - iVar.getX());
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+        switch (this.a) {
+            case 0:
+                ((r0) this.b).j0.e();
+                break;
+            default:
+                ((c10) this.b).F.e();
+                break;
         }
-        q0Var.e.animate().translationX(0.0f).setDuration(250L).setStartDelay(0L).setInterpolator(er.f).start();
-        return true;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        switch (this.a) {
+            case 0:
+                ((r0) this.b).j0.e();
+                break;
+            default:
+                ((c10) this.b).F.e();
+                break;
+        }
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+        int i7 = this.a;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+        int i7 = this.a;
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
+        switch (this.a) {
+            case 0:
+                ((r0) this.b).j0.d();
+                break;
+            default:
+                ((c10) this.b).F.d();
+                break;
+        }
+    }
+
+    private final void a(Transition transition) {
+    }
+
+    private final void b(Transition transition) {
+    }
+
+    private final void c(Transition transition) {
+    }
+
+    private final void d(Transition transition) {
     }
 }

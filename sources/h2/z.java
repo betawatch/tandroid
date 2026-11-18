@@ -7,16 +7,17 @@ import e2.l1;
 import e2.q0;
 import e2.q1;
 import e2.s1;
+import e2.v0;
 import e2.w0;
 import e2.x1;
 import e2.y0;
 import e2.z0;
 import java.util.List;
-import org.telegram.ui.Components.q40;
-import org.telegram.ui.Components.u51;
-import zi.v0;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.y40;
+import zi.u0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z implements a1 {
     public final /* synthetic */ int a;
@@ -36,11 +37,11 @@ public final class z implements a1 {
     public final void D(int i7, boolean z10) {
         switch (this.a) {
             case 1:
-                u51 u51Var = (u51) this.b;
-                if (!u51Var.I && i7 == 3) {
-                    u51Var.I = true;
-                    if (u51Var.H && u51Var.J) {
-                        u51Var.h0();
+                f61 f61Var = (f61) this.b;
+                if (!f61Var.I && i7 == 3) {
+                    f61Var.I = true;
+                    if (f61Var.H && f61Var.J) {
+                        f61Var.h0();
                         break;
                     }
                 }
@@ -99,13 +100,13 @@ public final class z implements a1 {
                 break;
             case 2:
                 yi.j jVar = (yi.j) this.b;
-                yi.e eVar = jVar.E;
+                yi.d dVar = jVar.E;
                 Handler handler = jVar.i;
                 if (jVar.u != z10) {
                     jVar.u = z10;
-                    handler.removeCallbacks(eVar);
+                    handler.removeCallbacks(dVar);
                     if (z10) {
-                        handler.post(eVar);
+                        handler.post(dVar);
                     }
                     jVar.f.getClass();
                     jVar.m();
@@ -113,9 +114,9 @@ public final class z implements a1 {
                 }
                 break;
             default:
-                v0 v0Var = (v0) this.b;
-                if (v0Var.a0 == 5) {
-                    v0Var.z(z10);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.a0 == 5) {
+                    u0Var.z(z10);
                     break;
                 }
                 break;
@@ -123,17 +124,7 @@ public final class z implements a1 {
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void a(int i7) {
-        int i10 = this.a;
-    }
-
-    @Override // e2.a1
-    public final /* synthetic */ void b(x1 x1Var) {
-        int i7 = this.a;
-    }
-
-    @Override // e2.a1
-    public final /* synthetic */ void c(boolean z10) {
+    public final /* synthetic */ void a(x1 x1Var) {
         int i7 = this.a;
     }
 
@@ -163,17 +154,27 @@ public final class z implements a1 {
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void i(int i7, boolean z10) {
+    public final /* synthetic */ void i(int i7) {
         int i10 = this.a;
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void j(float f10) {
+    public final /* synthetic */ void j(boolean z10) {
         int i7 = this.a;
     }
 
     @Override // e2.a1
-    public final void l(int i7) {
+    public final /* synthetic */ void k(int i7, boolean z10) {
+        int i10 = this.a;
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void l(float f10) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final void m(int i7) {
         l2.f0 f0Var;
         l2.f0 f0Var2;
         switch (this.a) {
@@ -189,11 +190,11 @@ public final class z implements a1 {
                 }
                 break;
             default:
-                v0 v0Var = (v0) this.b;
-                v0Var.m.b("preview playback state=" + i7);
-                if (v0Var.a0 == 5 && i7 == 4 && (f0Var2 = v0Var.W) != null) {
-                    f0Var2.Z0(5, v0Var.K);
-                    v0Var.W.f();
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview playback state=" + i7);
+                if (u0Var.a0 == 5 && i7 == 4 && (f0Var2 = u0Var.W) != null) {
+                    f0Var2.Z0(5, u0Var.K);
+                    u0Var.W.f();
                     break;
                 }
                 break;
@@ -201,17 +202,12 @@ public final class z implements a1 {
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void m(e2.o0 o0Var) {
+    public final /* synthetic */ void n(e2.o0 o0Var) {
         int i7 = this.a;
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void n(e2.e eVar) {
-        int i7 = this.a;
-    }
-
-    @Override // e2.a1
-    public final /* synthetic */ void o(e2.o0 o0Var) {
+    public final /* synthetic */ void o(e2.e eVar) {
         int i7 = this.a;
     }
 
@@ -223,9 +219,9 @@ public final class z implements a1 {
             case 2:
                 break;
             default:
-                v0 v0Var = (v0) this.b;
-                if (v0Var.a0 == 5) {
-                    q40.o((q40) v0Var.d.b);
+                u0 u0Var = (u0) this.b;
+                if (u0Var.a0 == 5) {
+                    y40.o((y40) u0Var.d.b);
                     break;
                 }
                 break;
@@ -233,7 +229,12 @@ public final class z implements a1 {
     }
 
     @Override // e2.a1
-    public final /* synthetic */ void q(e2.v0 v0Var) {
+    public final /* synthetic */ void p(e2.o0 o0Var) {
+        int i7 = this.a;
+    }
+
+    @Override // e2.a1
+    public final /* synthetic */ void q(v0 v0Var) {
         int i7 = this.a;
     }
 
@@ -263,7 +264,7 @@ public final class z implements a1 {
     }
 
     @Override // e2.a1
-    public final void y(e2.v0 v0Var) {
+    public final void y(v0 v0Var) {
         switch (this.a) {
             case 0:
             case 1:
@@ -272,9 +273,9 @@ public final class z implements a1 {
                 ((yi.j) this.b).g(v0Var);
                 break;
             default:
-                v0 v0Var2 = (v0) this.b;
-                v0Var2.m.b("preview player error: code=" + v0Var.a);
-                v0Var2.h(v0Var);
+                u0 u0Var = (u0) this.b;
+                u0Var.m.b("preview player error: code=" + v0Var.a);
+                u0Var.h(v0Var);
                 break;
         }
     }
@@ -357,7 +358,7 @@ public final class z implements a1 {
     private final /* synthetic */ void L1(s1 s1Var) {
     }
 
-    private final /* synthetic */ void M0(e2.v0 v0Var) {
+    private final /* synthetic */ void M0(v0 v0Var) {
     }
 
     private final /* synthetic */ void M1(x1 x1Var) {
@@ -366,19 +367,19 @@ public final class z implements a1 {
     private final /* synthetic */ void N(y0 y0Var) {
     }
 
-    private final /* synthetic */ void N0(e2.v0 v0Var) {
+    private final /* synthetic */ void N0(v0 v0Var) {
     }
 
     private final /* synthetic */ void N1(x1 x1Var) {
     }
 
-    private final /* synthetic */ void O0(e2.v0 v0Var) {
+    private final /* synthetic */ void O0(v0 v0Var) {
     }
 
     private final /* synthetic */ void O1(x1 x1Var) {
     }
 
-    private final /* synthetic */ void P0(e2.v0 v0Var) {
+    private final /* synthetic */ void P0(v0 v0Var) {
     }
 
     private final /* synthetic */ void P1(x1 x1Var) {
@@ -387,7 +388,7 @@ public final class z implements a1 {
     private final /* synthetic */ void Q(y0 y0Var) {
     }
 
-    private final /* synthetic */ void Q0(e2.v0 v0Var) {
+    private final /* synthetic */ void Q0(v0 v0Var) {
     }
 
     private final /* synthetic */ void Q1(float f10) {
@@ -396,7 +397,7 @@ public final class z implements a1 {
     private final /* synthetic */ void R(g2.c cVar) {
     }
 
-    private final /* synthetic */ void R0(e2.v0 v0Var) {
+    private final /* synthetic */ void R0(v0 v0Var) {
     }
 
     private final /* synthetic */ void R1(float f10) {
@@ -450,10 +451,16 @@ public final class z implements a1 {
     private final /* synthetic */ void a0(z0 z0Var) {
     }
 
+    private final /* synthetic */ void b(e2.e eVar) {
+    }
+
     private final /* synthetic */ void b0(z0 z0Var) {
     }
 
     private final /* synthetic */ void b1(int i7) {
+    }
+
+    private final /* synthetic */ void c(e2.e eVar) {
     }
 
     private final /* synthetic */ void c0(boolean z10) {
@@ -486,9 +493,6 @@ public final class z implements a1 {
     private final /* synthetic */ void j0(boolean z10) {
     }
 
-    private final /* synthetic */ void k(e2.e eVar) {
-    }
-
     private final /* synthetic */ void k0(boolean z10) {
     }
 
@@ -508,9 +512,6 @@ public final class z implements a1 {
     }
 
     private final /* synthetic */ void o1(boolean z10) {
-    }
-
-    private final /* synthetic */ void p(e2.e eVar) {
     }
 
     private final /* synthetic */ void p1(boolean z10) {

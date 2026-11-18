@@ -1,39 +1,133 @@
 package fi;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import c8.ma;
+import c8.ra;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l1 b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class j1 extends FrameLayout {
+    public final FrameLayout a;
+    public final View b;
+    public final ImageView c;
+    public final i1 d;
+    public boolean e;
+    public ValueAnimator f;
+    public boolean h;
+    public float n;
+    public ValueAnimator r;
 
-    public /* synthetic */ j1(l1 l1Var, int i7) {
-        this.a = i7;
-        this.b = l1Var;
+    public j1(Context context, gh.b bVar) {
+        super(context);
+        ra.a(this);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.a = frameLayout;
+        dh.j jVar = new dh.j();
+        jVar.a = bVar;
+        jVar.a();
+        jVar.g.setColor(-14670806);
+        jVar.invalidateSelf();
+        jVar.f = org.telegram.messenger.g0.L(1.0f);
+        frameLayout.setBackground(jVar);
+        addView(frameLayout, ma.e(40, 40, 17));
+        View view = new View(context);
+        this.b = view;
+        view.setBackground(org.telegram.ui.ActionBar.n6.L(org.telegram.messenger.g0.L(40.0f), -13522392));
+        frameLayout.addView(view, ma.e(38, 38, 17));
+        view.setAlpha(0.0f);
+        view.setScaleX(0.0f);
+        view.setScaleY(0.0f);
+        i1 i1Var = new i1(context);
+        this.d = i1Var;
+        addView(i1Var, ma.e(42, 42, 17));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setScaleX(0.75f);
+        imageView.setScaleY(0.75f);
+        imageView.setColorFilter(new PorterDuffColorFilter(-2960428, PorterDuff.Mode.SRC_IN));
+        frameLayout.addView(imageView, ma.e(40, 40, 17));
+        b(false, false);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.d.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                l1 l1Var = this.b;
-                l1Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l1Var.n = floatValue;
-                View view = l1Var.b;
-                view.setAlpha(1.0f - floatValue);
-                view.setScaleX(1.0f - l1Var.n);
-                view.setScaleY(1.0f - l1Var.n);
-                l1Var.c.setColorFilter(new PorterDuffColorFilter(i0.a.f(l1Var.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
-                l1Var.a.invalidate();
-                break;
+    public final void a(boolean z10, boolean z11) {
+        if (this.e == z10 && z11) {
+            return;
         }
+        this.e = z10;
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.f = null;
+        }
+        boolean z12 = true;
+        i1 i1Var = this.d;
+        if (z11) {
+            i1Var.setVisibility(0);
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(i1Var.getAlpha(), z10 ? 0.0f : 1.0f);
+            this.f = ofFloat;
+            ofFloat.addUpdateListener(new h1(this, 0));
+            this.f.setDuration(320L);
+            this.f.setInterpolator(lr.h);
+            this.f.start();
+        } else {
+            i1Var.setAlpha(z10 ? 0.0f : 1.0f);
+            i1Var.setVisibility(z10 ? 8 : 0);
+        }
+        if (!this.h && z10) {
+            z12 = false;
+        }
+        c(z12, z11);
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        this.h = z10;
+        int i7 = R.drawable.msg_voice_unmuted;
+        ImageView imageView = this.c;
+        if (z11) {
+            if (z10) {
+                i7 = R.drawable.msg_voice_muted;
+            }
+            imageView.setImageResource(i7);
+        } else {
+            if (z10) {
+                i7 = R.drawable.msg_voice_muted;
+            }
+            org.telegram.messenger.g0.P3(imageView, i7);
+        }
+        c(z10 || !this.e, z11);
+    }
+
+    public final void c(boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.r;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.r = null;
+        }
+        if (z11) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.n, z10 ? 1.0f : 0.0f);
+            this.r = ofFloat;
+            ofFloat.addUpdateListener(new h1(this, 1));
+            this.r.setInterpolator(lr.h);
+            this.r.setDuration(420L);
+            this.r.start();
+            return;
+        }
+        float f10 = z10 ? 1.0f : 0.0f;
+        this.n = f10;
+        View view = this.b;
+        view.setAlpha(1.0f - f10);
+        view.setScaleX(1.0f - this.n);
+        view.setScaleY(1.0f - this.n);
+        this.c.setColorFilter(new PorterDuffColorFilter(i0.a.f(this.n, -1, -2960428), PorterDuff.Mode.SRC_IN));
+        this.a.invalidate();
     }
 }

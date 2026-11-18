@@ -1,112 +1,156 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.ComposeShader;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.graphics.CornerPathEffect;
 import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.os.Build;
+import android.text.Layout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f80 extends Drawable {
-    public final Bitmap a;
-    public final Paint b = new Paint(2);
-    public long c;
-    public LinearGradient d;
-    public final Matrix e;
-    public float f;
-    public float g;
-    public final i9 h;
+public final class f80 extends pq {
+    public static CornerPathEffect w;
+    public static int x;
+    public Layout h;
     public int i;
-    public int j;
+    public float j;
+    public float k;
+    public float l;
+    public final boolean m;
+    public boolean n;
+    public int o;
+    public int p;
+    public float q;
+    public float r;
+    public float s;
+    public float t;
+    public float u;
+    public float v;
 
-    public f80(i9 i9Var, String str, int i7, int i10) {
-        Bitmap bitmap;
-        try {
-            Path b10 = org.telegram.messenger.qz.b(str);
-            bitmap = Bitmap.createBitmap(i7, i10, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            float f10 = 512;
-            canvas.scale(i7 / f10, i10 / f10);
-            Paint paint = new Paint();
-            paint.setColor(-1);
-            canvas.drawPath(b10, paint);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-            bitmap = null;
-        }
-        this.a = bitmap;
-        this.h = i9Var;
-        this.e = new Matrix();
+    public f80() {
+        this.j = -1.0f;
+        this.n = true;
+        this.s = Float.MAX_VALUE;
+        this.u = Float.MAX_VALUE;
+        this.c = false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Bitmap bitmap = this.a;
-        if (bitmap == null) {
+    public static CornerPathEffect c() {
+        if (w == null || x != org.telegram.messenger.g0.L(5.0f)) {
+            int L = org.telegram.messenger.g0.L(5.0f);
+            x = L;
+            w = new CornerPathEffect(L);
+        }
+        return w;
+    }
+
+    @Override // org.telegram.ui.Components.pq, android.graphics.Path
+    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        Layout layout = this.h;
+        if (layout == null) {
+            f(f10, f11, f12, f13, direction);
             return;
         }
-        int i7 = org.telegram.ui.ActionBar.j6.h5;
-        int i10 = org.telegram.ui.ActionBar.j6.i5;
-        int x02 = org.telegram.ui.ActionBar.j6.x0(null, i7, false);
-        int x03 = org.telegram.ui.ActionBar.j6.x0(null, i10, false);
-        int i11 = this.i;
-        Paint paint = this.b;
-        Matrix matrix = this.e;
-        if (i11 != x02 || this.j != x03) {
-            this.i = x02;
-            this.j = x03;
-            int w02 = org.telegram.messenger.g0.w0(x03, x02);
-            paint.setColor(x03);
-            float L = org.telegram.messenger.g0.L(500.0f);
-            this.g = L;
-            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{x03, w02, x03}, new float[]{0.0f, 0.18f, 0.36f}, Shader.TileMode.REPEAT);
-            this.d = linearGradient;
-            linearGradient.setLocalMatrix(matrix);
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            paint.setShader(new ComposeShader(this.d, new BitmapShader(bitmap, tileMode, tileMode), PorterDuff.Mode.MULTIPLY));
-        }
-        Rect bounds = getBounds();
-        canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, paint);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long abs = Math.abs(this.c - elapsedRealtime);
-        if (abs > 17) {
-            abs = 16;
-        }
-        this.c = elapsedRealtime;
-        this.f = a8.p0.f(abs, this.g, 1800.0f, this.f);
-        while (true) {
-            float f10 = this.f;
-            float f11 = this.g * 2.0f;
-            if (f10 < f11) {
-                matrix.setTranslate(f10, 0.0f);
-                this.d.setLocalMatrix(matrix);
-                this.h.invalidate();
-                return;
+        try {
+            float f14 = this.l;
+            float f15 = f11 + f14;
+            float f16 = f13 + f14;
+            float f17 = this.j;
+            if (f17 == -1.0f) {
+                this.j = f15;
+            } else if (f17 != f15) {
+                this.j = f15;
+                this.i++;
             }
-            this.f = f10 - f11;
+            float lineRight = layout.getLineRight(this.i);
+            float lineLeft = this.h.getLineLeft(this.i);
+            if (f10 < lineRight) {
+                if (f10 > lineLeft || f12 > lineLeft) {
+                    if (f12 > lineRight) {
+                        f12 = lineRight;
+                    }
+                    if (f10 < lineLeft) {
+                        f10 = lineLeft;
+                    }
+                    float f18 = this.k;
+                    float f19 = f10 + f18;
+                    float f20 = f12 + f18;
+                    if (Build.VERSION.SDK_INT < 28) {
+                        f16 -= f16 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
+                    } else if (f16 - f15 > this.p) {
+                        f16 = this.l + (f16 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
+                    }
+                    int i7 = this.o;
+                    if (i7 < 0) {
+                        f16 += i7;
+                    } else if (i7 > 0) {
+                        f15 += i7;
+                    }
+                    float f21 = f15;
+                    float f22 = f16;
+                    if (this.m) {
+                        f(f19 - (org.telegram.messenger.g0.L(5.0f) / 2.0f), f21, f20 + (org.telegram.messenger.g0.L(5.0f) / 2.0f), f22, direction);
+                    } else {
+                        f(f19, f21, f20, f22, direction);
+                    }
+                }
+            }
+        } catch (Exception unused) {
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public final void d(Layout layout, int i7, float f10) {
+        e(layout, i7, 0.0f, f10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
+    public final void e(Layout layout, int i7, float f10, float f11) {
+        int lineCount;
+        if (layout == null) {
+            this.h = null;
+            this.i = 0;
+            this.j = -1.0f;
+            this.k = f10;
+            this.l = f11;
+            return;
+        }
+        this.h = layout;
+        this.i = layout.getLineForOffset(i7);
+        this.j = -1.0f;
+        this.k = f10;
+        this.l = f11;
+        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
+            return;
+        }
+        int i10 = lineCount - 1;
+        this.p = layout.getLineBottom(i10) - layout.getLineTop(i10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public final void f(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        float f14 = this.r;
+        float f15 = f10 - f14;
+        float f16 = this.q;
+        float f17 = f11 - f16;
+        float f18 = f12 + f14;
+        float f19 = f13 + f16;
+        this.s = Math.min(this.s, Math.min(f15, f18));
+        this.u = Math.min(this.u, Math.min(f17, f19));
+        this.t = Math.max(this.t, Math.max(f15, f18));
+        this.v = Math.max(this.v, Math.max(f17, f19));
+        super.addRect(f15, f17, f18, f19, direction);
+    }
+
+    @Override // org.telegram.ui.Components.pq, android.graphics.Path
+    public final void reset() {
+        if (this.n) {
+            super.reset();
+        }
+    }
+
+    public f80(int i7) {
+        this.j = -1.0f;
+        this.n = true;
+        this.s = Float.MAX_VALUE;
+        this.u = Float.MAX_VALUE;
+        this.m = true;
+        this.c = false;
     }
 }

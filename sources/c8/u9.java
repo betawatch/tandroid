@@ -1,27 +1,46 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class u9 {
-    public final /* synthetic */ int a = 1;
-
-    public int hashCode() {
-        switch (this.a) {
-            case 1:
-                return toString().hashCode();
-            default:
-                return super.hashCode();
+    public static final int a(int i7, int i10, int i11) {
+        if (i11 > 0) {
+            if (i7 < i10) {
+                int i12 = i10 % i11;
+                if (i12 < 0) {
+                    i12 += i11;
+                }
+                int i13 = i7 % i11;
+                if (i13 < 0) {
+                    i13 += i11;
+                }
+                int i14 = (i12 - i13) % i11;
+                if (i14 < 0) {
+                    i14 += i11;
+                }
+                return i10 - i14;
+            }
+        } else {
+            if (i11 >= 0) {
+                throw new IllegalArgumentException("Step is zero.");
+            }
+            if (i7 > i10) {
+                int i15 = -i11;
+                int i16 = i7 % i15;
+                if (i16 < 0) {
+                    i16 += i15;
+                }
+                int i17 = i10 % i15;
+                if (i17 < 0) {
+                    i17 += i15;
+                }
+                int i18 = (i16 - i17) % i15;
+                if (i18 < 0) {
+                    i18 += i15;
+                }
+                return i18 + i10;
+            }
         }
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 1:
-                String b10 = kotlin.jvm.internal.s.a(getClass()).b();
-                kotlin.jvm.internal.j.b(b10);
-                return b10;
-            default:
-                return super.toString();
-        }
+        return i10;
     }
 }

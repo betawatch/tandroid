@@ -10,55 +10,48 @@ import java.util.Iterator;
 import java.util.List;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class g {
     public String a;
 
-    public g(String str, int i7) {
-        switch (i7) {
-            case 3:
-                this.a = str;
-                break;
-            default:
-                str.getClass();
-                this.a = str;
-                break;
-        }
+    public g(String str) {
+        str.getClass();
+        this.a = str;
     }
 
-    public static void b(android.support.v4.media.session.a0 a0Var, ia.f fVar) {
-        String str = (String) fVar.b;
+    public static void b(android.support.v4.media.session.a0 a0Var, ia.e eVar) {
+        String str = (String) eVar.b;
         if (str != null) {
             a0Var.m("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
         a0Var.m("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
         a0Var.m("X-CRASHLYTICS-API-CLIENT-VERSION", "20.1.1");
         a0Var.m("Accept", "application/json");
-        String str2 = (String) fVar.c;
+        String str2 = (String) eVar.c;
         if (str2 != null) {
             a0Var.m("X-CRASHLYTICS-DEVICE-MODEL", str2);
         }
-        String str3 = (String) fVar.d;
+        String str3 = (String) eVar.d;
         if (str3 != null) {
             a0Var.m("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
         }
-        String str4 = (String) fVar.e;
+        String str4 = (String) eVar.e;
         if (str4 != null) {
             a0Var.m("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
         }
-        String str5 = ((aa.a0) fVar.i).c().a;
+        String str5 = ((aa.a0) eVar.i).c().a;
         if (str5 != null) {
             a0Var.m("X-CRASHLYTICS-INSTALLATION-ID", str5);
         }
     }
 
-    public static HashMap c(ia.f fVar) {
+    public static HashMap c(ia.e eVar) {
         HashMap hashMap = new HashMap();
-        hashMap.put("build_version", (String) fVar.h);
-        hashMap.put("display_version", (String) fVar.g);
-        hashMap.put("source", Integer.toString(fVar.a));
-        String str = (String) fVar.f;
+        hashMap.put("build_version", (String) eVar.h);
+        hashMap.put("display_version", (String) eVar.g);
+        hashMap.put("source", Integer.toString(eVar.a));
+        String str = (String) eVar.f;
         if (!TextUtils.isEmpty(str)) {
             hashMap.put("instance", str);
         }

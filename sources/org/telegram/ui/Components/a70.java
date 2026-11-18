@@ -1,40 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a70 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+public final class a70 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ g70 b;
 
-    public /* synthetic */ a70(int i7, Object obj, boolean z10) {
-        this.a = i7;
-        this.b = obj;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a70(g70 g70Var, Context context) {
+        super(context);
+        this.b = g70Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                e70 e70Var = (e70) this.b;
-                e70.J0(e70Var.getContext(), e70Var.o1, e70Var.t1, this.c);
-                break;
-            case 1:
-                e70 e70Var2 = (e70) this.b;
-                e70.J0(e70Var2.getContext(), e70Var2.o1, e70Var2.t1, this.c);
-                break;
-            default:
-                hi.sa saVar = (hi.sa) this.b;
-                saVar.A2 = false;
-                saVar.Y0.x(7, true);
-                if (this.c) {
-                    saVar.p(true);
-                    break;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        g70 g70Var = this.b;
+        ArrayList arrayList = g70Var.t1;
+        if (g70Var.w1 == 0) {
+            int size = View.MeasureSpec.getSize(i7);
+            int L = org.telegram.messenger.g0.L(95.0f) * arrayList.size();
+            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) g70Var.q1.getLayoutParams();
+            if (L > size) {
+                layoutParams.width = -1;
+                layoutParams.gravity = 51;
+                if (!this.a) {
+                    TLRPC.Peer peer = g70Var.x1;
+                    if (peer != null) {
+                        arrayList.remove(peer);
+                        arrayList.add(0, g70Var.x1);
+                    }
+                    this.a = true;
                 }
-                break;
+            } else {
+                layoutParams.width = -2;
+                layoutParams.gravity = 49;
+                if (!this.a) {
+                    if (g70Var.x1 != null) {
+                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
+                        arrayList.remove(g70Var.x1);
+                        arrayList.add(max, g70Var.x1);
+                    }
+                    this.a = true;
+                }
+            }
         }
+        super.onMeasure(i7, i10);
     }
 }

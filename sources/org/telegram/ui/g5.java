@@ -5,7 +5,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class g5 extends androidx.fragment.app.v {
     public int P = -1;
@@ -20,29 +20,29 @@ public abstract class g5 extends androidx.fragment.app.v {
         boolean z10 = iArr.length > 0 && iArr[0] == 0;
         if (i7 == 104) {
             if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131743285, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.gd.M0(2131743048, null));
                 return true;
             }
-            c40 c40Var = c40.C5;
-            if (c40Var != null) {
-                c40Var.s1.callOnClick();
+            f40 f40Var = f40.C5;
+            if (f40Var != null) {
+                f40Var.s1.callOnClick();
                 return true;
             }
         } else {
             if (i7 == 4 || i7 == 151) {
                 if (z10) {
-                    org.telegram.messenger.fc.D().i(null);
+                    org.telegram.messenger.ec.D().i(null);
                     return true;
                 }
-                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.hd.M0(2131747301, null) : org.telegram.messenger.hd.M0(2131747299, null));
+                w(R.raw.permission_request_folder, i7 == 151 ? org.telegram.messenger.gd.M0(2131747108, null) : org.telegram.messenger.gd.M0(2131747106, null));
                 return true;
             }
             if (i7 == 5) {
                 if (z10) {
-                    org.telegram.messenger.g5.r(this.P).l();
+                    org.telegram.messenger.i5.r(this.P).l();
                     return true;
                 }
-                w(R.raw.permission_request_contacts, org.telegram.messenger.hd.M0(2131747306, null));
+                w(R.raw.permission_request_contacts, org.telegram.messenger.gd.M0(2131747113, null));
                 return false;
             }
             if (i7 == 3 || i7 == 150) {
@@ -57,27 +57,27 @@ public abstract class g5 extends androidx.fragment.app.v {
                     }
                 }
                 if (i7 == 150 && (!z11 || !z12)) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747309, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.gd.M0(2131747116, null));
                     return true;
                 }
                 if (!z11) {
-                    w(R.raw.permission_request_microphone, org.telegram.messenger.hd.M0(2131747311, null));
+                    w(R.raw.permission_request_microphone, org.telegram.messenger.gd.M0(2131747118, null));
                     return true;
                 }
                 if (!z12) {
-                    w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747308, null));
+                    w(R.raw.permission_request_camera, org.telegram.messenger.gd.M0(2131747115, null));
                     return true;
                 }
-                if (org.telegram.messenger.gz.y0) {
+                if (org.telegram.messenger.bz.y0) {
                     CameraController.getInstance().initCamera(null);
                 }
                 return false;
             }
             if (i7 != 18 && i7 != 19 && i7 != 20 && i7 != 22) {
-                int i11 = org.telegram.messenger.ns.w4;
-                int i12 = org.telegram.messenger.ns.v4;
+                int i11 = org.telegram.messenger.ks.y4;
+                int i12 = org.telegram.messenger.ks.x4;
                 if (i7 == 2) {
-                    org.telegram.messenger.ns e10 = org.telegram.messenger.ns.e();
+                    org.telegram.messenger.ks e10 = org.telegram.messenger.ks.e();
                     if (z10) {
                         i11 = i12;
                     }
@@ -85,7 +85,7 @@ public abstract class g5 extends androidx.fragment.app.v {
                     return true;
                 }
                 if (i7 == 211) {
-                    org.telegram.messenger.ns e11 = org.telegram.messenger.ns.e();
+                    org.telegram.messenger.ks e11 = org.telegram.messenger.ks.e();
                     if (z10) {
                         i11 = i12;
                     }
@@ -93,23 +93,23 @@ public abstract class g5 extends androidx.fragment.app.v {
                     return true;
                 }
             } else if (!z10) {
-                w(R.raw.permission_request_camera, org.telegram.messenger.hd.M0(2131747308, null));
+                w(R.raw.permission_request_camera, org.telegram.messenger.gd.M0(2131747115, null));
             }
         }
         return true;
     }
 
-    public final org.telegram.ui.ActionBar.t1 v(int i7, String str) {
+    public final org.telegram.ui.ActionBar.u1 v(int i7, String str) {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        int i10 = org.telegram.ui.ActionBar.j6.L5;
-        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.j6.x0(null, i10, false), null);
+        int i10 = org.telegram.ui.ActionBar.n6.L5;
+        alertDialog$Builder.m(i7, 72, org.telegram.ui.ActionBar.n6.x0(null, i10, false), null);
         alertDialog$Builder.n(i10, null);
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(str);
-        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-        t1Var.U = X2;
-        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747300, null), new w0(this, 4));
-        alertDialog$Builder.h(org.telegram.messenger.hd.M0(2131751772, null), null);
-        return t1Var;
+        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(str);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.U = W2;
+        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747107, null), new w0(this, 4));
+        alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131751761, null), null);
+        return u1Var;
     }
 
     public final void w(int i7, String str) {

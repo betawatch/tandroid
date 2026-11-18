@@ -1,48 +1,95 @@
 package li;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import c8.ja;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.i9;
+import android.widget.TextView;
+import bi.y3;
+import java.util.ArrayList;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class m extends FrameLayout implements z5 {
-    public final i9 a;
+public final /* synthetic */ class m implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ fs e;
 
-    public m(Context context) {
-        super(context);
-        i9 i9Var = new i9(context);
-        this.a = i9Var;
-        i9Var.setRoundRadius(org.telegram.messenger.g0.L(20.0f));
-        addView(i9Var, ja.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+    public /* synthetic */ m(fs fsVar, boolean z10, boolean z11, long j3, int i7) {
+        this.a = i7;
+        this.e = fsVar;
+        this.b = z10;
+        this.c = z11;
+        this.d = j3;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = j6.S0;
-        i9 i9Var = this.a;
-        bg.s.a(canvas, drawable, (i9Var.getWidth() / 2.0f) + i9Var.getLeft(), (i9Var.getHeight() / 2.0f) + i9Var.getTop(), i9Var.getHeight());
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = 2131751903;
+        boolean z10 = this.c;
+        boolean z11 = this.b;
+        long j3 = this.d;
+        fs fsVar = this.e;
+        switch (i7) {
+            case 0:
+                p pVar = (p) fsVar;
+                String M0 = gd.M0(2131751904, null);
+                if (z11) {
+                    i10 = 2131751906;
+                } else if (z10) {
+                    i10 = 2131751905;
+                }
+                b5.s0(pVar, M0, gd.M0(i10, null), gd.M0(2131746126, null), true, new h(pVar, j3, 0));
+                break;
+            case 1:
+                d0 d0Var = (d0) fsVar;
+                Context context = d0Var.getContext();
+                i6 i6Var = d0Var.J0;
+                String M02 = gd.M0(2131751904, null);
+                if (z11) {
+                    i10 = 2131751906;
+                } else if (z10) {
+                    i10 = 2131751905;
+                }
+                u1 M = b5.M(context, i6Var, M02, gd.M0(i10, null), gd.M0(2131746126, null), new y3(d0Var, j3, 12));
+                M.show();
+                TextView textView = (TextView) M.d(-1);
+                if (textView != null) {
+                    u6.U(textView, n6.q7, null);
+                    break;
+                }
+                break;
+            case 2:
+                mp mpVar = (mp) fsVar;
+                ArrayList arrayList = z11 ? mpVar.w0 : mpVar.v0;
+                if (!z10) {
+                    arrayList.remove(Long.valueOf(j3));
+                    break;
+                } else if (!arrayList.contains(Long.valueOf(j3))) {
+                    arrayList.add(Long.valueOf(j3));
+                    break;
+                }
+                break;
+            default:
+                bn.y1((bn) fsVar, j3, z11, z10);
+                break;
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(136.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    public /* synthetic */ m(bn bnVar, long j3, boolean z10, boolean z11) {
+        this.a = 3;
+        this.e = bnVar;
+        this.d = j3;
+        this.b = z10;
+        this.c = z11;
     }
 }

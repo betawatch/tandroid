@@ -4,12 +4,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.tj0;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e0 extends tj0 {
+public final class e0 extends bk0 {
     public final Context c;
     public final ArrayList d = new ArrayList();
     public String e;
@@ -20,17 +20,17 @@ public final class e0 extends tj0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        return e1Var.f == 0;
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        return f1Var.f == 0;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         return this.d.size() + 2;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         if (i7 == 0) {
             return 1;
@@ -38,7 +38,7 @@ public final class e0 extends tj0 {
         return i7 == b() - 1 ? 2 : 0;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final void f() {
         super.f();
         this.f.Q();
@@ -46,50 +46,50 @@ public final class e0 extends tj0 {
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x002b  */
     /* JADX WARN: Removed duplicated region for block: B:16:? A[RETURN, SYNTHETIC] */
-    @Override // v4.h0
+    @Override // v4.i0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void t(v4.e1 e1Var, int i7) {
+    public final void t(v4.f1 f1Var, int i7) {
         Object obj;
-        if (e1Var.f != 0) {
+        if (f1Var.f != 0) {
             return;
         }
-        q1 q1Var = (q1) e1Var.a;
+        s1 s1Var = (s1) f1Var.a;
         boolean z10 = i7 != b() + (-2);
         int i10 = i7 - 1;
         if (i10 >= 0) {
             ArrayList arrayList = this.d;
             if (i10 < arrayList.size()) {
                 obj = arrayList.get(i10);
-                if (obj instanceof u1) {
+                if (obj instanceof v1) {
                     return;
                 }
-                u1 u1Var = (u1) obj;
-                q1Var.a(u1Var, this.e, z10);
-                q1Var.d.a(this.f.x.contains(Integer.valueOf(u1Var.a)), false);
+                v1 v1Var = (v1) obj;
+                s1Var.a(v1Var, this.e, z10);
+                s1Var.d.a(this.f.x.contains(Integer.valueOf(v1Var.a)), false);
                 return;
             }
         }
         obj = null;
-        if (obj instanceof u1) {
+        if (obj instanceof v1) {
         }
     }
 
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        View q1Var;
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        View s1Var;
         Context context = this.c;
         if (i7 == 0) {
-            q1Var = new q1(context, this.f.a, false);
+            s1Var = new s1(context, this.f.a, false);
         } else if (i7 != 1) {
-            q1Var = new View(context);
-            q1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setTag(-33024);
         } else {
-            q1Var = new View(context);
-            q1Var.setLayoutParams(new v4.p0(-1, org.telegram.messenger.g0.L(56.0f)));
-            q1Var.setTag(-33024);
+            s1Var = new View(context);
+            s1Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+            s1Var.setTag(-33024);
         }
-        return new cj0(q1Var);
+        return new kj0(s1Var);
     }
 }

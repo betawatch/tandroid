@@ -1,32 +1,44 @@
 package h9;
 
-import di.z6;
+import a8.la;
+import a8.lb;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.NavigableMap;
+import java.util.RandomAccess;
 import java.util.Set;
+import java.util.SortedMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class l1 extends l implements a1 {
-    public final a1 e;
-    public final ob.c f;
+public final class l1 extends l implements a1, Serializable {
+    public final transient Map e;
+    public transient int f;
+    public transient k1 h;
 
-    public l1(a1 a1Var, ob.c cVar) {
-        a1Var.getClass();
-        this.e = a1Var;
-        this.f = cVar;
+    public l1(Map map) {
+        la.f(map.isEmpty());
+        this.e = map;
     }
 
-    @Override // h9.i1
+    @Override // h9.j1
     public final void clear() {
-        this.e.clear();
+        Map map = this.e;
+        Iterator it = map.values().iterator();
+        while (it.hasNext()) {
+            ((Collection) it.next()).clear();
+        }
+        map.clear();
+        this.f = 0;
     }
 
     @Override // h9.l
     public final Map d() {
-        return new h1(this.e.b(), new z6(this, 15));
+        Map map = this.e;
+        return map instanceof NavigableMap ? new e(this, (NavigableMap) map) : map instanceof SortedMap ? new h(this, (SortedMap) map) : new lb(this, map, 2);
     }
 
     @Override // h9.l
@@ -36,26 +48,31 @@ public final class l1 extends l implements a1 {
 
     @Override // h9.l
     public final Set f() {
-        return this.e.keySet();
+        Map map = this.e;
+        return map instanceof NavigableMap ? new f(this, (NavigableMap) map) : map instanceof SortedMap ? new i(this, (SortedMap) map) : new d(this, map);
     }
 
     @Override // h9.l
     public final Iterator g() {
-        return new w0(this.e.a().iterator(), new d6.i(this.f, 24));
+        return new b(this, 1);
     }
 
-    @Override // h9.i1
+    @Override // h9.j1
     public final Collection get(Object obj) {
-        return o.y((List) this.e.get(obj), new q4.q(this.f, obj, false, 24));
+        Collection collection = (Collection) this.e.get(obj);
+        if (collection == null) {
+            collection = h();
+        }
+        List list = (List) collection;
+        return list instanceof RandomAccess ? new g(this, obj, list, null) : new a8.f(this, obj, list, (a8.f) null);
     }
 
-    @Override // h9.l, h9.i1
-    public final boolean remove(Object obj, Object obj2) {
-        return get(obj).remove(obj2);
+    public final Collection h() {
+        return (List) this.h.get();
     }
 
-    @Override // h9.i1
+    @Override // h9.j1
     public final int size() {
-        return this.e.size();
+        return this.f;
     }
 }

@@ -1,17 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l50 extends FrameLayout {
-    public TextView a;
+public final class l50 extends v4.u0 {
+    public final /* synthetic */ v4.c0 a;
+    public final /* synthetic */ x50 b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(84.0f), TLObject.FLAG_30));
+    public l50(x50 x50Var, v4.c0 c0Var) {
+        this.b = x50Var;
+        this.a = c0Var;
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        x50 x50Var = this.b;
+        x50.J0(x50Var);
+        if (!x50Var.M1 || x50Var.L1) {
+            return;
+        }
+        if (x50Var.N1 - this.a.N0() < 10) {
+            x50Var.L0();
+        }
     }
 }

@@ -1,7 +1,7 @@
 package i6;
 
 import a8.r7;
-import a8.w9;
+import a8.x9;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -24,7 +24,7 @@ import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f {
     public static final j6.b u = new j6.b("MediaNotificationProxy", null);
@@ -54,16 +54,16 @@ public final class f {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         this.b = notificationManager;
         j6.b bVar = g6.a.l;
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         g6.a aVar = g6.a.n;
-        m.g(aVar);
-        m.d("Must be called from the main thread.");
+        m.h(aVar);
+        m.e("Must be called from the main thread.");
         g6.b bVar2 = aVar.e;
-        m.g(bVar2);
+        m.h(bVar2);
         h6.a aVar2 = bVar2.f;
-        m.g(aVar2);
+        m.h(aVar2);
         h6.f fVar = aVar2.d;
-        m.g(fVar);
+        m.h(fVar);
         this.c = fVar;
         aVar2.b();
         Resources resources = context.getResources();
@@ -265,7 +265,7 @@ public final class f {
             if (component != null) {
                 int size = arrayList.size();
                 try {
-                    for (Intent a11 = w9.a(context, component); a11 != null; a11 = w9.a(context, a11.getComponent())) {
+                    for (Intent a11 = x9.a(context, component); a11 != null; a11 = x9.a(context, a11.getComponent())) {
                         arrayList.add(size, a11);
                     }
                 } catch (PackageManager.NameNotFoundException e10) {

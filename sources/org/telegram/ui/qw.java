@@ -1,38 +1,20 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rw b;
-
-    public /* synthetic */ qw(rw rwVar, int i7) {
-        this.a = i7;
-        this.b = rwVar;
+public final class qw extends org.telegram.ui.Components.c10 {
+    public qw(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        switch (this.a) {
-            case 0:
-                rw rwVar = this.b;
-                yw ywVar = rwVar.o0;
-                Context context = rwVar.getContext();
-                i7 = ((org.telegram.ui.ActionBar.e2) ywVar).currentAccount;
-                ywVar.showDialog(new ug.j0(3, i7, context, ywVar, null));
-                break;
-            default:
-                yw ywVar2 = this.b.o0;
-                wv wvVar = ywVar2.N0;
-                if (wvVar != null) {
-                    wvVar.dismiss();
-                    ywVar2.N0 = null;
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || getAlpha() >= 0.25f) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        return false;
     }
 }

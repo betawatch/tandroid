@@ -1,29 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gs0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PremiumPreviewFragment b;
+import android.view.View;
+import java.io.Serializable;
 
-    public /* synthetic */ gs0(PremiumPreviewFragment premiumPreviewFragment, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gs0 implements org.telegram.ui.ActionBar.r1, org.telegram.messenger.v10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ is0 b;
+
+    public /* synthetic */ gs0(is0 is0Var, int i7) {
         this.a = i7;
-        this.b = premiumPreviewFragment;
+        this.b = is0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                this.b.o0();
-                break;
-            case 1:
-                PremiumPreviewFragment premiumPreviewFragment = this.b;
-                premiumPreviewFragment.a.postOnAnimation(new gs0(premiumPreviewFragment, 0));
+                this.b.d0();
                 break;
             default:
-                this.b.getMediaDataController().R0(false);
+                this.b.finishFragment();
                 break;
+        }
+    }
+
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        View view = (View) obj2;
+        if (((org.telegram.ui.Components.l41) obj).d == 1) {
+            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+            boolean z10 = !r8Var.e.h;
+            is0 is0Var = this.b;
+            is0Var.n = z10;
+            r8Var.setChecked(z10);
+            is0Var.d.g3.O(true);
+            is0Var.a0(true);
         }
     }
 }

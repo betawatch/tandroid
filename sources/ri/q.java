@@ -3,16 +3,16 @@ package ri;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
-import c8.ud;
+import c8.xd;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.qc;
-import org.telegram.ui.Components.ri;
-import org.telegram.ui.Components.ss;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.w61;
+import org.telegram.messenger.pc;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.oa;
+import org.telegram.ui.Components.zs;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class q {
     public static r F;
@@ -50,8 +50,8 @@ public final class q {
     public final ArrayList E = new ArrayList();
 
     public static r f() {
-        boolean e10 = qc.e(256);
-        boolean e11 = qc.e(262144);
+        boolean e10 = pc.e(256);
+        boolean e11 = pc.e(262144);
         r rVar = F;
         if (rVar == null || rVar.a != e10 || rVar.b != e11) {
             F = new r(e10, e11);
@@ -64,13 +64,13 @@ public final class q {
         this.o.add(gVar);
     }
 
-    public final void b(uj0 uj0Var) {
-        if (uj0Var == null) {
+    public final void b(ck0 ck0Var) {
+        if (ck0Var == null) {
             return;
         }
-        this.n.add(uj0Var);
-        uj0Var.E2.b.add(new ss() { // from class: ri.f
-            @Override // org.telegram.ui.Components.ss
+        this.n.add(ck0Var);
+        ck0Var.E2.b.add(new zs() { // from class: ri.f
+            @Override // org.telegram.ui.Components.zs
             public final void a(int i7, boolean z10) {
                 q qVar = q.this;
                 qVar.h++;
@@ -78,19 +78,19 @@ public final class q {
             }
         });
         j jVar = new j(this);
-        if (uj0Var.Q == null) {
-            uj0Var.Q = new ArrayList();
+        if (ck0Var.Q == null) {
+            ck0Var.Q = new ArrayList();
         }
-        uj0Var.Q.add(jVar);
-        uj0Var.j(new ri(this, 28));
+        ck0Var.Q.add(jVar);
+        ck0Var.j(new oa(this, 29));
     }
 
-    public final void c(w61 w61Var) {
-        if (w61Var == null) {
+    public final void c(g71 g71Var) {
+        if (g71Var == null) {
             return;
         }
         g gVar = new g(this);
-        ArrayList arrayList = w61Var.S;
+        ArrayList arrayList = g71Var.S;
         if (arrayList.contains(gVar)) {
             return;
         }
@@ -166,7 +166,7 @@ public final class q {
                 ArrayList arrayList2 = cVar2.a;
                 if (!arrayList2.contains(hVar)) {
                     arrayList2.add(hVar);
-                    if (view.isAttachedToWindow() && (a10 = ud.a(view, cVar2)) != null) {
+                    if (view.isAttachedToWindow() && (a10 = xd.a(view, cVar2)) != null) {
                         ((xe.b) a10.a.b).add(hVar);
                     }
                 }

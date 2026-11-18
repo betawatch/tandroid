@@ -1,33 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class qm extends AnimatorListenerAdapter {
+public final /* synthetic */ class qm implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jn b;
+    public final /* synthetic */ rn b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ qm(jn jnVar, int i7) {
-        this.a = i7;
-        this.b = jnVar;
+    public /* synthetic */ qm(rn rnVar, int i7, int i10) {
+        this.a = i10;
+        this.b = rnVar;
+        this.c = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.F.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.F.setTranslationY(0.0f);
+                this.b.j0(this.c, (sh.d) obj);
                 break;
             default:
-                jn jnVar = this.b;
-                jnVar.g1 = false;
-                jnVar.F.setTranslationY(0.0f);
-                jnVar.f0();
+                rn rnVar = this.b;
+                rnVar.getClass();
+                rnVar.j0(this.c, new th.e((String) obj));
                 break;
         }
     }

@@ -1,131 +1,181 @@
 package c8;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.net.Uri;
-import android.os.ParcelFileDescriptor;
-import android.os.Process;
-import android.os.StrictMode;
-import android.util.Log;
-import java.io.Closeable;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.MappedByteBuffer;
-import java.nio.channels.FileChannel;
+import android.graphics.Path;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l0 {
-    public static void a(Closeable closeable) {
-        if (closeable != null) {
-            try {
-                closeable.close();
-            } catch (IOException unused) {
-            }
-        }
-    }
-
-    public static boolean b(File file, Resources resources, int i7) {
-        InputStream inputStream;
-        try {
-            inputStream = resources.openRawResource(i7);
-            try {
-                boolean c10 = c(file, inputStream);
-                a(inputStream);
-                return c10;
-            } catch (Throwable th2) {
-                th = th2;
-                a(inputStream);
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            inputStream = null;
-        }
-    }
-
-    public static boolean c(File file, InputStream inputStream) {
-        FileOutputStream fileOutputStream;
-        StrictMode.ThreadPolicy allowThreadDiskWrites = StrictMode.allowThreadDiskWrites();
-        FileOutputStream fileOutputStream2 = null;
-        try {
-            try {
-                fileOutputStream = new FileOutputStream(file, false);
-            } catch (IOException e10) {
-                e = e10;
-            }
-        } catch (Throwable th2) {
-            th = th2;
-        }
-        try {
-            byte[] bArr = new byte[1024];
-            while (true) {
-                int read = inputStream.read(bArr);
-                if (read == -1) {
-                    a(fileOutputStream);
-                    StrictMode.setThreadPolicy(allowThreadDiskWrites);
-                    return true;
-                }
-                fileOutputStream.write(bArr, 0, read);
-            }
-        } catch (IOException e11) {
-            e = e11;
-            fileOutputStream2 = fileOutputStream;
-            Log.e("TypefaceCompatUtil", "Error copying resource contents to temp file: " + e.getMessage());
-            a(fileOutputStream2);
-            StrictMode.setThreadPolicy(allowThreadDiskWrites);
+    public static boolean a(i0.d[] dVarArr, i0.d[] dVarArr2) {
+        if (dVarArr == null || dVarArr2 == null || dVarArr.length != dVarArr2.length) {
             return false;
-        } catch (Throwable th3) {
-            th = th3;
-            fileOutputStream2 = fileOutputStream;
-            a(fileOutputStream2);
-            StrictMode.setThreadPolicy(allowThreadDiskWrites);
-            throw th;
+        }
+        for (int i7 = 0; i7 < dVarArr.length; i7++) {
+            i0.d dVar = dVarArr[i7];
+            char c10 = dVar.a;
+            i0.d dVar2 = dVarArr2[i7];
+            if (c10 != dVar2.a || dVar.b.length != dVar2.b.length) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static float[] b(int i7, float[] fArr) {
+        if (i7 < 0) {
+            throw new IllegalArgumentException();
+        }
+        int length = fArr.length;
+        if (length < 0) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int min = Math.min(i7, length);
+        float[] fArr2 = new float[i7];
+        System.arraycopy(fArr, 0, fArr2, 0, min);
+        return fArr2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0096 A[Catch: NumberFormatException -> 0x00aa, LOOP:3: B:25:0x0068->B:35:0x0096, LOOP_END, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0095 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x009c A[Catch: NumberFormatException -> 0x00aa, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00b1 A[Catch: NumberFormatException -> 0x00aa, TryCatch #0 {NumberFormatException -> 0x00aa, blocks: (B:22:0x0054, B:25:0x0068, B:27:0x006e, B:31:0x007a, B:35:0x0096, B:39:0x009c, B:44:0x00b1, B:56:0x00b4), top: B:21:0x0054 }] */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x00d7 A[SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static i0.d[] c(String str) {
+        int i7;
+        String trim;
+        float[] fArr;
+        ArrayList arrayList = new ArrayList();
+        int i10 = 0;
+        int i11 = 0;
+        int i12 = 1;
+        while (i12 < str.length()) {
+            while (i12 < str.length()) {
+                char charAt = str.charAt(i12);
+                if ((charAt - 'Z') * (charAt - 'A') > 0) {
+                    if ((charAt - 'z') * (charAt - 'a') > 0) {
+                        continue;
+                        i12++;
+                    }
+                }
+                if (charAt != 'e' && charAt != 'E') {
+                    trim = str.substring(i11, i12).trim();
+                    if (!trim.isEmpty()) {
+                        if (trim.charAt(i10) == 'z' || trim.charAt(i10) == 'Z') {
+                            fArr = new float[i10];
+                        } else {
+                            try {
+                                float[] fArr2 = new float[trim.length()];
+                                int length = trim.length();
+                                int i13 = i10;
+                                int i14 = 1;
+                                while (i14 < length) {
+                                    int i15 = i10;
+                                    int i16 = i15;
+                                    int i17 = i16;
+                                    int i18 = i17;
+                                    for (int i19 = i14; i19 < trim.length(); i19++) {
+                                        char charAt2 = trim.charAt(i19);
+                                        if (charAt2 != ' ') {
+                                            if (charAt2 != 'E' && charAt2 != 'e') {
+                                                switch (charAt2) {
+                                                    case ',':
+                                                        break;
+                                                    case '-':
+                                                        if (i19 != i14 && i15 == 0) {
+                                                            i15 = 0;
+                                                            i17 = 1;
+                                                            i18 = 1;
+                                                            break;
+                                                        }
+                                                        i15 = 0;
+                                                        break;
+                                                    case '.':
+                                                        if (i16 == 0) {
+                                                            i15 = 0;
+                                                            i16 = 1;
+                                                            break;
+                                                        }
+                                                        i15 = 0;
+                                                        i17 = 1;
+                                                        i18 = 1;
+                                                        break;
+                                                    default:
+                                                        i15 = 0;
+                                                        break;
+                                                }
+                                            } else {
+                                                i15 = 1;
+                                            }
+                                            if (i17 == 0) {
+                                                if (i14 < i19) {
+                                                    fArr2[i13] = Float.parseFloat(trim.substring(i14, i19));
+                                                    i13++;
+                                                }
+                                                i14 = i18 == 0 ? i19 : i19 + 1;
+                                                i10 = 0;
+                                            }
+                                        }
+                                        i15 = 0;
+                                        i17 = 1;
+                                        if (i17 == 0) {
+                                        }
+                                    }
+                                    if (i14 < i19) {
+                                    }
+                                    if (i18 == 0) {
+                                    }
+                                    i10 = 0;
+                                }
+                                fArr = b(i13, fArr2);
+                                i10 = 0;
+                            } catch (NumberFormatException e10) {
+                                throw new RuntimeException(a8.p0.p("error in parsing \"", trim, "\""), e10);
+                            }
+                        }
+                        arrayList.add(new i0.d(trim.charAt(i10), fArr));
+                    }
+                    i11 = i12;
+                    i12++;
+                    i10 = 0;
+                }
+                i12++;
+            }
+            trim = str.substring(i11, i12).trim();
+            if (!trim.isEmpty()) {
+            }
+            i11 = i12;
+            i12++;
+            i10 = 0;
+        }
+        if (i12 - i11 != 1 || i11 >= str.length()) {
+            i7 = 0;
+        } else {
+            i7 = 0;
+            arrayList.add(new i0.d(str.charAt(i11), new float[0]));
+        }
+        return (i0.d[]) arrayList.toArray(new i0.d[i7]);
+    }
+
+    public static Path d(String str) {
+        Path path = new Path();
+        try {
+            i0.d.b(c(str), path);
+            return path;
+        } catch (RuntimeException e10) {
+            throw new RuntimeException("Error in parsing ".concat(str), e10);
         }
     }
 
-    public static File d(Context context) {
-        File cacheDir = context.getCacheDir();
-        if (cacheDir == null) {
-            return null;
+    public static i0.d[] e(i0.d[] dVarArr) {
+        i0.d[] dVarArr2 = new i0.d[dVarArr.length];
+        for (int i7 = 0; i7 < dVarArr.length; i7++) {
+            dVarArr2[i7] = new i0.d(dVarArr[i7]);
         }
-        String str = ".font" + Process.myPid() + "-" + Process.myTid() + "-";
-        for (int i7 = 0; i7 < 100; i7++) {
-            File file = new File(cacheDir, str + i7);
-            if (file.createNewFile()) {
-                return file;
-            }
-        }
-        return null;
-    }
-
-    public static MappedByteBuffer e(Context context, Uri uri) {
-        ParcelFileDescriptor openFileDescriptor;
-        try {
-            openFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r", null);
-        } catch (IOException unused) {
-        }
-        if (openFileDescriptor == null) {
-            if (openFileDescriptor != null) {
-                openFileDescriptor.close();
-                return null;
-            }
-            return null;
-        }
-        try {
-            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
-            try {
-                FileChannel channel = fileInputStream.getChannel();
-                MappedByteBuffer map = channel.map(FileChannel.MapMode.READ_ONLY, 0L, channel.size());
-                fileInputStream.close();
-                openFileDescriptor.close();
-                return map;
-            } finally {
-            }
-        } finally {
-        }
+        return dVarArr2;
     }
 }

@@ -1,61 +1,65 @@
 package hi;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PointF;
-import org.telegram.ui.Components.er;
+import android.content.Context;
+import android.graphics.Bitmap;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.camera.CameraView;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class a6 {
-    public final a0 a;
-    public boolean b;
-    public z5 c;
-    public final org.telegram.ui.Components.u5 d;
-    public final org.telegram.ui.Components.u5 e;
-    public final org.telegram.ui.Components.u5 f;
-    public final org.telegram.ui.Components.u5[] g;
-    public final org.telegram.ui.Components.u5[] h;
-    public final Paint i;
-    public final Path j;
+    public final t8 c;
+    public y5 d;
+    public CameraView f;
+    public Bitmap g;
+    public final AtomicReference a = new AtomicReference();
+    public final AtomicBoolean b = new AtomicBoolean(false);
+    public final x5 h = new x5(this, 0);
+    public final String e = mp.u1(j10.t0).X2;
 
-    public a6(a0 a0Var) {
-        Paint paint = new Paint(1);
-        this.i = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-8697);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(6.0f));
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setShadowLayer(1.08045274E9f, 0.0f, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(6.0f));
-        this.j = new Path();
-        this.a = a0Var;
-        er erVar = er.g;
-        this.d = new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 320L, erVar);
-        this.e = new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar);
-        this.f = new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar);
-        this.g = new org.telegram.ui.Components.u5[]{new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar)};
-        this.h = new org.telegram.ui.Components.u5[]{new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar), new org.telegram.ui.Components.u5(0.0f, a0Var, 0L, 160L, erVar)};
+    public a6(Context context, t8 t8Var) {
+        this.c = t8Var;
+        Utilities.e.c(new r1(7, this, context));
     }
 
-    public final void a(z5 z5Var) {
-        if (z5Var != null) {
-            this.c = z5Var;
+    public final void a(CameraView cameraView) {
+        this.f = cameraView;
+        if (this.a.get() == null || this.b.get()) {
+            return;
         }
-        if (z5Var != null) {
-            float f10 = z5Var.d;
-            float f11 = z5Var.c;
-            PointF[] pointFArr = z5Var.b;
-            if (!this.b) {
-                this.e.e(true, f11);
-                this.f.e(true, f10);
-                for (int i7 = 0; i7 < Math.min(4, pointFArr.length); i7++) {
-                    this.g[i7].e(true, pointFArr[i7].x - f11);
-                    this.h[i7].e(true, pointFArr[i7].y - f10);
-                }
-            }
+        Utilities.e.a(this.h);
+        Utilities.e.d(this.h, b());
+    }
+
+    public final long b() {
+        if (this.d == null) {
+            return 750L;
         }
-        this.b = z5Var != null;
-        this.a.run();
+        int o4 = bz.o();
+        if (o4 != 1) {
+            return o4 != 2 ? 800L : 80L;
+        }
+        return 400L;
+    }
+
+    public final void c(boolean z10) {
+        if (this.b.getAndSet(z10) == z10) {
+            return;
+        }
+        if (!z10) {
+            Utilities.e.a(this.h);
+            Utilities.e.d(this.h, b());
+            return;
+        }
+        Utilities.e.a(this.h);
+        if (this.d != null) {
+            this.d = null;
+            org.telegram.messenger.g0.g3(new x5(this, 1));
+        }
     }
 }

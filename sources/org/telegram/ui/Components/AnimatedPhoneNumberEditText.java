@@ -10,21 +10,21 @@ import android.util.TypedValue;
 import j$.util.Objects;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class AnimatedPhoneNumberEditText extends y20 {
+public class AnimatedPhoneNumberEditText extends g30 {
     public final ArrayList P1;
     public final ArrayList Q1;
     public final TextPaint R1;
     public ObjectAnimator S1;
     public float T1;
     public String U1;
-    public final a6 V1;
+    public final h6 V1;
     public final ArrayList W1;
     public final ArrayList X1;
     public Boolean Y1;
     public String Z1;
-    public di.m6 a2;
+    public di.p6 a2;
 
     public AnimatedPhoneNumberEditText(Context context) {
         super(context);
@@ -32,7 +32,7 @@ public class AnimatedPhoneNumberEditText extends y20 {
         this.Q1 = new ArrayList();
         this.R1 = new TextPaint(1);
         this.U1 = "";
-        this.V1 = new a6(this, 0);
+        this.V1 = new h6(this, 0);
         this.W1 = new ArrayList();
         this.X1 = new ArrayList();
     }
@@ -53,7 +53,7 @@ public class AnimatedPhoneNumberEditText extends y20 {
         super.setHintText(str);
     }
 
-    @Override // org.telegram.ui.Components.y20
+    @Override // org.telegram.ui.Components.g30
     public final void A(int i7) {
         ArrayList arrayList = this.W1;
         if (i7 < arrayList.size()) {
@@ -61,7 +61,7 @@ public class AnimatedPhoneNumberEditText extends y20 {
         }
     }
 
-    @Override // org.telegram.ui.Components.y20
+    @Override // org.telegram.ui.Components.g30
     public String getHintText() {
         return this.Z1;
     }
@@ -70,7 +70,7 @@ public class AnimatedPhoneNumberEditText extends y20 {
         return this.T1;
     }
 
-    @Override // org.telegram.ui.Components.y20
+    @Override // org.telegram.ui.Components.g30
     public void setHintText(String str) {
         boolean isEmpty;
         boolean isEmpty2 = TextUtils.isEmpty(str);
@@ -103,7 +103,7 @@ public class AnimatedPhoneNumberEditText extends y20 {
         }
         if (isEmpty) {
             int length = str2.length();
-            di.m6 m6Var = new di.m6(this, z10, str, 18);
+            di.p6 p6Var = new di.p6(this, z10, str, 18);
             Runnable runnable = this.a2;
             if (runnable != null) {
                 removeCallbacks(runnable);
@@ -125,10 +125,10 @@ public class AnimatedPhoneNumberEditText extends y20 {
                 gVar.c = true;
                 arrayList2.add(gVar);
                 arrayList.add(Float.valueOf(f11));
-                postDelayed(new dg(gVar, 7), i10 * 5);
+                postDelayed(new lg(gVar, 7), i10 * 5);
             }
-            this.a2 = m6Var;
-            postDelayed(m6Var, (length * 5) + 150);
+            this.a2 = p6Var;
+            postDelayed(p6Var, (length * 5) + 150);
         }
     }
 
@@ -148,13 +148,12 @@ public class AnimatedPhoneNumberEditText extends y20 {
         arrayList2.addAll(arrayList);
         arrayList.clear();
         int i7 = 0;
-        int i10 = 1;
         boolean z10 = TextUtils.isEmpty(this.U1) && !TextUtils.isEmpty(str);
         this.T1 = 0.0f;
         while (i7 < str.length()) {
-            int i11 = i7 + 1;
-            String substring = str.substring(i7, i11);
-            String substring2 = (arrayList2.isEmpty() || i7 >= this.U1.length()) ? null : this.U1.substring(i7, i11);
+            int i10 = i7 + 1;
+            String substring = str.substring(i7, i10);
+            String substring2 = (arrayList2.isEmpty() || i7 >= this.U1.length()) ? null : this.U1.substring(i7, i10);
             if (z10 || substring2 == null || !substring2.equals(substring)) {
                 TextPaint textPaint2 = this.R1;
                 if (z10 && substring2 == null) {
@@ -168,13 +167,13 @@ public class AnimatedPhoneNumberEditText extends y20 {
                 arrayList.add((StaticLayout) arrayList2.get(i7));
                 arrayList2.set(i7, null);
             }
-            i7 = i11;
+            i7 = i10;
         }
         if (!arrayList2.isEmpty()) {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", -1.0f, 0.0f);
             this.S1 = ofFloat;
             ofFloat.setDuration(150L);
-            this.S1.addListener(new x5(this, i10));
+            this.S1.addListener(new x(this, 2));
             this.S1.start();
         }
         this.U1 = str;
@@ -189,13 +188,13 @@ public class AnimatedPhoneNumberEditText extends y20 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.kt, android.widget.TextView
+    @Override // org.telegram.ui.Components.pt, android.widget.TextView
     public void setTextColor(int i7) {
         super.setTextColor(i7);
         this.R1.setColor(i7);
     }
 
-    @Override // org.telegram.ui.Components.y20, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    @Override // org.telegram.ui.Components.g30, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
     public final void setTextSize(int i7, float f10) {
         super.setTextSize(i7, f10);
         this.R1.setTextSize(TypedValue.applyDimension(i7, f10, getResources().getDisplayMetrics()));

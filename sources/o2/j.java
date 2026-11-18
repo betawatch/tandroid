@@ -1,6 +1,6 @@
 package o2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j {
     public final y2.e a;
@@ -20,76 +20,76 @@ public final class j {
     }
 
     public final j a(long j3, p2.m mVar) {
-        long L;
-        long L2;
+        long o4;
+        long o10;
         i c10 = this.b.c();
         i c11 = mVar.c();
         if (c10 == null) {
             return new j(j3, mVar, this.c, this.a, this.f, c10);
         }
-        if (!c10.g0()) {
+        if (!c10.t()) {
             return new j(j3, mVar, this.c, this.a, this.f, c11);
         }
-        long t02 = c10.t0(j3);
-        if (t02 == 0) {
+        long y10 = c10.y(j3);
+        if (y10 == 0) {
             return new j(j3, mVar, this.c, this.a, this.f, c11);
         }
         c11.getClass();
-        long k02 = c10.k0();
-        long b10 = c10.b(k02);
-        long j10 = t02 + k02;
+        long v = c10.v();
+        long a10 = c10.a(v);
+        long j10 = y10 + v;
         long j11 = j10 - 1;
-        long i7 = c10.i(j11, j3) + c10.b(j11);
-        long k03 = c11.k0();
-        long b11 = c11.b(k03);
+        long e10 = c10.e(j11, j3) + c10.a(j11);
+        long v10 = c11.v();
+        long a11 = c11.a(v10);
         long j12 = this.f;
-        if (i7 == b11) {
-            L = j10 - k03;
+        if (e10 == a11) {
+            o4 = j10 - v10;
         } else {
-            if (i7 < b11) {
+            if (e10 < a11) {
                 throw new x2.b();
             }
-            if (b11 < b10) {
-                L2 = j12 - (c11.L(b10, j3) - k02);
-                return new j(j3, mVar, this.c, this.a, L2, c11);
+            if (a11 < a10) {
+                o10 = j12 - (c11.o(a10, j3) - v);
+                return new j(j3, mVar, this.c, this.a, o10, c11);
             }
-            L = c10.L(b11, j3) - k03;
+            o4 = c10.o(a11, j3) - v10;
         }
-        L2 = L + j12;
-        return new j(j3, mVar, this.c, this.a, L2, c11);
+        o10 = o4 + j12;
+        return new j(j3, mVar, this.c, this.a, o10, c11);
     }
 
     public final long b(long j3) {
         i iVar = this.d;
         iVar.getClass();
         long j10 = this.e;
-        long y10 = iVar.y(j10, j3) + this.f;
+        long h = iVar.h(j10, j3) + this.f;
         iVar.getClass();
-        return (iVar.v0(j10, j3) + y10) - 1;
+        return (iVar.z(j10, j3) + h) - 1;
     }
 
     public final long c() {
         i iVar = this.d;
         iVar.getClass();
-        return iVar.t0(this.e);
+        return iVar.y(this.e);
     }
 
     public final long d(long j3) {
         long e10 = e(j3);
         i iVar = this.d;
         iVar.getClass();
-        return iVar.i(j3 - this.f, this.e) + e10;
+        return iVar.e(j3 - this.f, this.e) + e10;
     }
 
     public final long e(long j3) {
         i iVar = this.d;
         iVar.getClass();
-        return iVar.b(j3 - this.f);
+        return iVar.a(j3 - this.f);
     }
 
     public final boolean f(long j3, long j10) {
         i iVar = this.d;
         iVar.getClass();
-        return iVar.g0() || j10 == -9223372036854775807L || d(j3) <= j10;
+        return iVar.t() || j10 == -9223372036854775807L || d(j3) <= j10;
     }
 }

@@ -1,32 +1,63 @@
 package org.telegram.ui;
 
-import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ph0 implements org.telegram.ui.Components.hj0, org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ NotificationsSettingsActivity a;
+public final class ph0 extends rg.a {
+    public int c;
+    public int d;
+    public CharSequence e;
+    public CharSequence f;
+    public th0 g;
+    public int h;
+    public boolean i;
 
-    public /* synthetic */ ph0(NotificationsSettingsActivity notificationsSettingsActivity) {
-        this.a = notificationsSettingsActivity;
+    public static ph0 b(int i7, String str, boolean z10) {
+        ph0 ph0Var = new ph0(1, true);
+        ph0Var.c = i7;
+        ph0Var.e = str;
+        ph0Var.i = z10;
+        return ph0Var;
     }
 
-    @Override // org.telegram.ui.Components.hj0
-    public /* synthetic */ boolean c1(View view) {
+    public static ph0 c(int i7, String str, String str2) {
+        ph0 ph0Var = new ph0(5, true);
+        ph0Var.c = i7;
+        ph0Var.e = str;
+        ph0Var.f = str2;
+        return ph0Var;
+    }
+
+    public static ph0 d(int i7, String str) {
+        ph0 ph0Var = new ph0(4, true);
+        ph0Var.c = i7;
+        ph0Var.e = str;
+        return ph0Var;
+    }
+
+    @Override // rg.a
+    public final boolean a(rg.a aVar) {
+        if (this == aVar) {
+            return true;
+        }
+        if (ph0.class != aVar.getClass()) {
+            return false;
+        }
+        ph0 ph0Var = (ph0) aVar;
+        return this.c == ph0Var.c && this.d == ph0Var.d && this.h == ph0Var.h && this.i == ph0Var.i && Objects.equals(this.e, ph0Var.e) && Objects.equals(this.f, ph0Var.f) && this.g == ph0Var.g;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && ph0.class == obj.getClass()) {
+            ph0 ph0Var = (ph0) obj;
+            if (this.c == ph0Var.c && this.h == ph0Var.h && ((this.a == 8 || (this.d == ph0Var.d && Objects.equals(this.e, ph0Var.e) && (this.a == 6 || Objects.equals(this.f, ph0Var.f)))) && this.g == ph0Var.g)) {
+                return true;
+            }
+        }
         return false;
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public void f(float f10, float f11, int i7, View view) {
-        NotificationsSettingsActivity.d0(this.a, view, i7, f10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        NotificationsSettingsActivity.e0(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.hj0
-    public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

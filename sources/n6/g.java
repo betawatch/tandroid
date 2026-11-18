@@ -13,10 +13,10 @@ import com.google.android.gms.common.GooglePlayServicesMissingManifestValueExcep
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class g {
     public static boolean b = false;
@@ -29,9 +29,9 @@ public abstract class g {
         try {
             if (!c) {
                 try {
-                    PackageInfo c10 = z6.b.a(context).c(Build.VERSION.SDK_INT >= 28 ? 134217792 : 64, "com.google.android.gms");
+                    PackageInfo b10 = z6.b.a(context).b(Build.VERSION.SDK_INT >= 28 ? 134217792 : 64, "com.google.android.gms");
                     h.a(context);
-                    if (c10 == null || h.b(c10, false) || !h.b(c10, true)) {
+                    if (b10 == null || h.b(b10, false) || !h.b(b10, true)) {
                         b = false;
                     } else {
                         b = true;
@@ -95,7 +95,7 @@ public abstract class g {
             }
             if (i10 != 12451000) {
                 int i11 = e.a;
-                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ns.p1 + String.valueOf(i10).length() + ns.Y2);
+                StringBuilder sb2 = new StringBuilder(String.valueOf(i11).length() + ks.p1 + String.valueOf(i10).length() + ks.Y2);
                 sb2.append("The meta-data tag in your app's AndroidManifest.xml does not have the right value.  Expected ");
                 sb2.append(i11);
                 sb2.append(" but found ");
@@ -129,7 +129,7 @@ public abstract class g {
                         Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play services, but their signature is invalid."));
                     } else {
                         if (z10) {
-                            q6.m.g(packageInfo);
+                            q6.m.h(packageInfo);
                             if (!h.b(packageInfo, true)) {
                                 Log.w("GooglePlayServicesUtil", String.valueOf(packageName).concat(" requires Google Play Store, but its signature is invalid."));
                             }

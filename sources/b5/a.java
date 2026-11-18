@@ -1,87 +1,16 @@
 package b5;
 
-import android.content.Context;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.util.Log;
-import android.util.SparseArray;
-import android.util.TypedValue;
 import androidx.versionedparcelable.ParcelImpl;
-import h0.h;
-import h0.i;
-import h0.j;
-import m.m2;
+import gd.h;
+import gd.i;
+import gd.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a {
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0046, code lost:
-    
-        if (r5.c == r8.hashCode()) goto L21;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static ColorStateList a(Context context, int i7) {
-        ColorStateList colorStateList;
-        ColorStateList colorStateList2;
-        h hVar;
-        Resources resources = context.getResources();
-        Resources.Theme theme = context.getTheme();
-        i iVar = new i(resources, theme);
-        synchronized (j.c) {
-            try {
-                SparseArray sparseArray = (SparseArray) j.b.get(iVar);
-                colorStateList = null;
-                if (sparseArray != null && sparseArray.size() > 0 && (hVar = (h) sparseArray.get(i7)) != null) {
-                    if (hVar.b.equals(resources.getConfiguration())) {
-                        if (theme == null) {
-                            if (hVar.c != 0) {
-                            }
-                            colorStateList2 = hVar.a;
-                        }
-                        if (theme != null) {
-                        }
-                    }
-                    sparseArray.remove(i7);
-                }
-                colorStateList2 = null;
-            } finally {
-            }
-        }
-        if (colorStateList2 != null) {
-            return colorStateList2;
-        }
-        ThreadLocal threadLocal = j.a;
-        TypedValue typedValue = (TypedValue) threadLocal.get();
-        if (typedValue == null) {
-            typedValue = new TypedValue();
-            threadLocal.set(typedValue);
-        }
-        resources.getValue(i7, typedValue, true);
-        int i10 = typedValue.type;
-        if (i10 < 28 || i10 > 31) {
-            try {
-                colorStateList = h0.c.a(resources, resources.getXml(i7), theme);
-            } catch (Exception e10) {
-                Log.w("ResourcesCompat", "Failed to inflate ColorStateList, leaving it to the framework", e10);
-            }
-        }
-        if (colorStateList == null) {
-            return resources.getColorStateList(i7, theme);
-        }
-        j.a(iVar, i7, colorStateList, theme);
-        return colorStateList;
-    }
-
-    public static Drawable b(Context context, int i7) {
-        return m2.d().g(context, i7);
-    }
-
-    public static d c(Bundle bundle) {
+    public static d a(Bundle bundle) {
         try {
             Bundle bundle2 = (Bundle) bundle.getParcelable("android.support.v4.media.session.SESSION_TOKEN2");
             if (bundle2 == null) {
@@ -96,5 +25,19 @@ public abstract class a {
         } catch (RuntimeException unused) {
             return null;
         }
+    }
+
+    public static gd.c b(rd.a aVar) {
+        gd.d[] dVarArr = gd.d.a;
+        j jVar = j.a;
+        h hVar = new h();
+        hVar.a = aVar;
+        hVar.b = jVar;
+        return hVar;
+    }
+
+    public static i c(rd.a initializer) {
+        kotlin.jvm.internal.j.e(initializer, "initializer");
+        return new i(initializer);
     }
 }

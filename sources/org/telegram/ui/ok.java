@@ -1,161 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.concurrent.atomic.AtomicReference;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ok extends org.telegram.ui.ActionBar.j5 {
-    public final /* synthetic */ int N0;
-    public final Object O0;
+public final class ok extends FrameLayout {
+    public float a;
+    public float b;
+    public final /* synthetic */ bn c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ok(int i7, Context context, Object obj) {
-        super(context);
-        this.N0 = i7;
-        this.O0 = obj;
+    public ok(bn bnVar, Activity activity) {
+        super(activity);
+        this.c = bnVar;
+        setOnLongClickListener(new t(this, 2));
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public boolean k(CharSequence charSequence) {
-        org.telegram.ui.ActionBar.j5 j5Var;
-        switch (this.N0) {
-            case 1:
-                AtomicReference atomicReference = (AtomicReference) this.O0;
-                if (atomicReference != null && (j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get()) != null) {
-                    j5Var.k(charSequence);
-                }
-                return l(charSequence, false);
-            default:
-                return super.k(charSequence);
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        bn bnVar = this.c;
+        if (view == bnVar.O2) {
+            canvas.save();
+            canvas.clipRect(0, 0, getMeasuredWidth(), org.telegram.messenger.g0.L(48.0f));
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.N0) {
-            case 2:
-                super.onAttachedToWindow();
-                ((hm0) this.O0).s.a();
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
+        org.telegram.ui.ActionBar.n5[] n5VarArr = bnVar.S2;
+        if (view != n5VarArr[0] && view != n5VarArr[1]) {
+            boolean drawChild = super.drawChild(canvas, view, j3);
+            if (view == bnVar.O2) {
+                canvas.restore();
+            }
+            return drawChild;
         }
+        canvas.save();
+        canvas.clipRect(0, 0, getMeasuredWidth() - org.telegram.messenger.g0.L(38.0f), getMeasuredHeight());
+        boolean drawChild2 = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild2;
     }
 
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.N0) {
-            case 2:
-                super.onDetachedFromWindow();
-                ((hm0) this.O0).s.b();
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        bn bnVar = this.c;
+        if (!bnVar.P2) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.N0) {
-            case 3:
-                int rightDrawableX = getRightDrawableX();
-                super.onDraw(canvas);
-                if (rightDrawableX != getRightDrawableX()) {
-                    ((ProfileActivity) this.O0).s5();
-                    break;
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.N0) {
-            case 3:
-                ProfileActivity profileActivity = (ProfileActivity) this.O0;
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                if (isFocusable()) {
-                    if (profileActivity.h != null || profileActivity.n != null) {
-                        StringBuilder sb2 = new StringBuilder(getText());
-                        if (profileActivity.n != null) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(profileActivity.n);
-                        }
-                        if (profileActivity.h != null) {
-                            if (sb2.length() > 0) {
-                                sb2.append(", ");
-                            }
-                            sb2.append(profileActivity.h);
-                        }
-                        accessibilityNodeInfo.setText(sb2);
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5
-    public void setTextColor(int i7) {
-        switch (this.N0) {
-            case 3:
-                ProfileActivity profileActivity = (ProfileActivity) this.O0;
-                profileActivity.H5 = i7;
-                super.setTextColor(i0.a.f(profileActivity.E5, i7, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.G6, profileActivity.A0)));
-                break;
-            default:
-                super.setTextColor(i7);
-                break;
+        int i11 = 0;
+        while (true) {
+            AnimatorSet[] animatorSetArr = bnVar.W2;
+            if (i11 >= animatorSetArr.length) {
+                bnVar.P2 = false;
+                return;
+            }
+            AnimatorSet animatorSet = animatorSetArr[i11];
+            if (animatorSet != null) {
+                animatorSet.start();
+            }
+            i11++;
         }
     }
 
     @Override // android.view.View
-    public void setTranslationY(float f10) {
-        org.telegram.ui.ActionBar.j5 j5Var;
-        switch (this.N0) {
-            case 0:
-                super.setTranslationY(f10);
-                an anVar = (an) this.O0;
-                if (this == anVar.S2[0] && anVar.W2[1] != null) {
-                    if (anVar.b5 && f10 < 0.0f) {
-                        anVar.O2.setTranslationY(f10 / 2.0f);
-                        break;
-                    } else {
-                        anVar.O2.setTranslationY(0.0f);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                AtomicReference atomicReference = (AtomicReference) this.O0;
-                if (atomicReference != null && (j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get()) != null) {
-                    j5Var.setTranslationY(f10);
-                }
-                super.setTranslationY(f10);
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.a = motionEvent.getY();
+        int action = motionEvent.getAction();
+        bn bnVar = this.c;
+        if (action == 1) {
+            bnVar.finishPreviewFragment();
+        } else if (motionEvent.getAction() == 2) {
+            float f10 = this.b - this.a;
+            bnVar.movePreviewFragment(f10);
+            if (f10 < 0.0f) {
+                this.b = this.a;
+            }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ok(Context context, AtomicReference atomicReference) {
-        super(context);
-        this.N0 = 1;
-        this.O0 = atomicReference;
+        return super.onTouchEvent(motionEvent);
     }
 }

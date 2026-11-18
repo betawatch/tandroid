@@ -1,32 +1,32 @@
 package ee;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class s {
     public static final /* synthetic */ int a = 0;
 
     static {
-        Object b10;
-        Object b11;
+        Object a10;
+        Object a11;
         Exception exc = new Exception();
         String simpleName = a.a.class.getSimpleName();
         StackTraceElement stackTraceElement = exc.getStackTrace()[0];
         new StackTraceElement("_COROUTINE.".concat(simpleName), "_", stackTraceElement.getFileName(), stackTraceElement.getLineNumber());
         try {
-            b10 = kd.a.class.getCanonicalName();
+            a10 = kd.a.class.getCanonicalName();
         } catch (Throwable th2) {
-            b10 = af.b.b(th2);
+            a10 = b7.h.a(th2);
         }
-        if (gd.g.a(b10) != null) {
-            b10 = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
+        if (gd.g.a(a10) != null) {
+            a10 = "kotlin.coroutines.jvm.internal.BaseContinuationImpl";
         }
         try {
-            b11 = s.class.getCanonicalName();
+            a11 = s.class.getCanonicalName();
         } catch (Throwable th3) {
-            b11 = af.b.b(th3);
+            a11 = b7.h.a(th3);
         }
-        if (gd.g.a(b11) != null) {
-            b11 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
+        if (gd.g.a(a11) != null) {
+            a11 = "kotlinx.coroutines.internal.StackTraceRecoveryKt";
         }
     }
 }

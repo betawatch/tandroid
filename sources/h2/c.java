@@ -1,6 +1,6 @@
 package h2;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -26,13 +26,13 @@ import m.b3;
 import m.l1;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ic;
-import org.telegram.messenger.p5;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.rd0;
-import org.telegram.ui.qk;
+import org.telegram.messenger.hc;
+import org.telegram.messenger.q5;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Components.be0;
+import org.telegram.ui.rk;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -75,7 +75,7 @@ public final class c {
     }
 
     public void C(int i7) {
-        ja.p(i7 >= 0);
+        la.p(i7 >= 0);
         this.a = i7;
         r(i7);
     }
@@ -101,7 +101,7 @@ public final class c {
     }
 
     public boolean F() {
-        return ((rd0) this.b).b() && ((rd0) this.c).b() && ((rd0) this.d).b() && ((rd0) this.e).b();
+        return ((be0) this.b).b() && ((be0) this.c).b() && ((be0) this.d).b() && ((be0) this.e).b();
     }
 
     public void G(Object obj) {
@@ -147,8 +147,8 @@ public final class c {
             }
             i2.t tVar3 = arrayDeque.isEmpty() ? new i2.t() : (i2.t) arrayDeque.pop();
             ArrayList arrayList = tVar3.a;
-            ja.f(j3 != -9223372036854775807L);
-            ja.p(arrayList.isEmpty());
+            la.f(j3 != -9223372036854775807L);
+            la.p(arrayList.isEmpty());
             tVar3.b = j3;
             arrayList.add(xVar2);
             priorityQueue.add(tVar3);
@@ -278,18 +278,18 @@ public final class c {
                 int d = descriptor.d(name);
                 i10 = -3;
                 if (d == -3 && o0Var3.c) {
-                    cf cfVar = json.c;
+                    b5 b5Var = json.c;
                     b1.f fVar = new b1.f(2, descriptor, json);
-                    cfVar.getClass();
-                    cfVar.getClass();
+                    b5Var.getClass();
+                    b5Var.getClass();
                     kotlin.jvm.internal.j.e(descriptor, "descriptor");
-                    Map map = (Map) ((ConcurrentHashMap) cfVar.a).get(descriptor);
+                    Map map = (Map) ((ConcurrentHashMap) b5Var.a).get(descriptor);
                     qe.g gVar = qe.f.a;
                     Object obj = map != null ? map.get(gVar) : null;
                     Object obj2 = obj != null ? obj : null;
                     if (obj2 == null) {
                         obj2 = fVar.invoke();
-                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) cfVar.a;
+                        ConcurrentHashMap concurrentHashMap = (ConcurrentHashMap) b5Var.a;
                         Object obj3 = concurrentHashMap.get(descriptor);
                         Object obj4 = obj3;
                         if (obj3 == null) {
@@ -539,7 +539,7 @@ public final class c {
             if (xd.d.e(message, "at path")) {
                 throw e10;
             }
-            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((xa) ((a4.k) this.d).c).l(), e10);
+            throw new ke.b(e10.a, e10.getMessage() + " at path: " + ((xa) ((a4.k) this.d).c).m(), e10);
         }
     }
 
@@ -556,8 +556,8 @@ public final class c {
 
     public void o() {
         this.b = null;
-        if (((qk) this.f) != null) {
-            Utilities.e.a((qk) this.f);
+        if (((rk) this.f) != null) {
+            Utilities.e.a((rk) this.f);
         }
         Bitmap bitmap = (Bitmap) this.c;
         if (bitmap != null && !bitmap.isRecycled()) {
@@ -593,26 +593,26 @@ public final class c {
     public void q() {
         ByteBuffer byteBuffer = (ByteBuffer) this.f;
         byteBuffer.position(0);
-        rd0 rd0Var = (rd0) this.b;
-        if (rd0Var.f == null) {
-            rd0Var.a();
+        be0 be0Var = (be0) this.b;
+        if (be0Var.f == null) {
+            be0Var.a();
         }
-        float[] fArr = rd0Var.f;
-        rd0 rd0Var2 = (rd0) this.c;
-        if (rd0Var2.f == null) {
-            rd0Var2.a();
+        float[] fArr = be0Var.f;
+        be0 be0Var2 = (be0) this.c;
+        if (be0Var2.f == null) {
+            be0Var2.a();
         }
-        float[] fArr2 = rd0Var2.f;
-        rd0 rd0Var3 = (rd0) this.d;
-        if (rd0Var3.f == null) {
-            rd0Var3.a();
+        float[] fArr2 = be0Var2.f;
+        be0 be0Var3 = (be0) this.d;
+        if (be0Var3.f == null) {
+            be0Var3.a();
         }
-        float[] fArr3 = rd0Var3.f;
-        rd0 rd0Var4 = (rd0) this.e;
-        if (rd0Var4.f == null) {
-            rd0Var4.a();
+        float[] fArr3 = be0Var3.f;
+        be0 be0Var4 = (be0) this.e;
+        if (be0Var4.f == null) {
+            be0Var4.a();
         }
-        float[] fArr4 = rd0Var4.f;
+        float[] fArr4 = be0Var4.f;
         for (int i7 = 0; i7 < 200; i7++) {
             byteBuffer.put((byte) (fArr2[i7] * 255.0f));
             byteBuffer.put((byte) (fArr3[i7] * 255.0f));
@@ -649,7 +649,7 @@ public final class c {
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001f, code lost:
     
-        if (((org.telegram.ui.qk) r8.f) != null) goto L5;
+        if (((org.telegram.ui.rk) r8.f) != null) goto L5;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -662,24 +662,24 @@ public final class c {
                     return bitmap2;
                 }
             }
-            if (((qk) this.f) != null) {
-                Utilities.e.a((qk) this.f);
+            if (((rk) this.f) != null) {
+                Utilities.e.a((rk) this.f);
             }
             this.b = str;
-            p5 p5Var = Utilities.e;
-            qk qkVar = new qk(this, bitmap, i7, i10, str, z10);
-            this.f = qkVar;
-            p5Var.c(qkVar);
+            q5 q5Var = Utilities.e;
+            rk rkVar = new rk(this, bitmap, i7, i10, str, z10);
+            this.f = rkVar;
+            q5Var.c(rkVar);
             return (Bitmap) this.c;
         }
         return null;
     }
 
-    public Bitmap t(ic icVar) {
-        if (icVar == null) {
+    public Bitmap t(hc hcVar) {
+        if (hcVar == null) {
             return null;
         }
-        return s(icVar.c, icVar.a, icVar.e, 0, false);
+        return s(hcVar.c, hcVar.a, hcVar.e, 0, false);
     }
 
     public Bitmap u(ImageReceiver imageReceiver) {
@@ -710,10 +710,10 @@ public final class c {
         View view = (View) this.b;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        h6.m z10 = h6.m.z(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) z10.c;
+        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) D.c;
         View view2 = (View) this.b;
-        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) z10.c, i7);
+        r0.i0.i(view2, view2.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
         try {
             if (typedArray.hasValue(0)) {
                 this.a = typedArray.getResourceId(0, -1);
@@ -728,14 +728,14 @@ public final class c {
                 }
             }
             if (typedArray.hasValue(1)) {
-                r0.a0.f(view, z10.o(1));
+                r0.a0.f(view, D.s(1));
             }
             if (typedArray.hasValue(2)) {
                 r0.a0.g(view, l1.b(typedArray.getInt(2, -1), null));
             }
-            z10.D();
+            D.G();
         } catch (Throwable th2) {
-            z10.D();
+            D.G();
             throw th2;
         }
     }
@@ -777,10 +777,10 @@ public final class c {
     }
 
     public c() {
-        this.b = new rd0();
-        this.c = new rd0();
-        this.d = new rd0();
-        this.e = new rd0();
+        this.b = new be0();
+        this.c = new be0();
+        this.d = new be0();
+        this.e = new be0();
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
         this.f = allocateDirect;
         allocateDirect.order(ByteOrder.LITTLE_ENDIAN);

@@ -3,11 +3,13 @@ package ia;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
-import c8.dc;
+import bg.f0;
+import c8.gc;
 import com.google.android.gms.internal.vision.e2;
 import di.h;
 import h2.e0;
-import hi.l0;
+import h9.g1;
+import hi.u5;
 import j$.util.Objects;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -22,8 +24,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import n5.g0;
 import n5.h0;
 import n5.j0;
-import n5.l;
-import n5.n;
+import n5.m;
+import n5.o;
 import n5.p;
 import n5.q;
 import n5.r;
@@ -31,16 +33,17 @@ import n5.t;
 import n5.v;
 import n5.z;
 import o5.i;
-import o5.m;
-import o5.o;
+import o5.l;
+import o5.n;
 import org.json.JSONObject;
-import org.telegram.ui.Wallet.k8;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
+import org.telegram.ui.wc1;
 import p1.g;
+import p5.f;
 import tg.z1;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public Object a;
@@ -66,21 +69,21 @@ public final class c {
         b bVar = null;
         try {
             if (!g.b(2, i7)) {
-                JSONObject U = ((l0) this.e).U();
-                if (U != null) {
-                    b S = ((d) this.c).S(U);
-                    d("Loaded cached settings: ", U);
+                JSONObject K = ((g1) this.e).K();
+                if (K != null) {
+                    b s5 = ((u5) this.c).s(K);
+                    d("Loaded cached settings: ", K);
                     ((s) this.d).getClass();
                     long currentTimeMillis = System.currentTimeMillis();
-                    if (g.b(3, i7) || S.c >= currentTimeMillis) {
+                    if (g.b(3, i7) || s5.c >= currentTimeMillis) {
                         try {
                             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                                 Log.v("FirebaseCrashlytics", "Returning cached settings.", null);
                             }
-                            return S;
+                            return s5;
                         } catch (Exception e10) {
                             e = e10;
-                            bVar = S;
+                            bVar = s5;
                             Log.e("FirebaseCrashlytics", "Failed to get cached settings", e);
                             return bVar;
                         }
@@ -103,8 +106,8 @@ public final class c {
         return (b) ((AtomicReference) this.h).get();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0458  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x043c A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x0456  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x043a A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -115,7 +118,7 @@ public final class c {
         String str;
         p5.a aVar2;
         int i10;
-        m5.b c10;
+        m5.b b10;
         String str2;
         Integer num;
         c cVar;
@@ -124,7 +127,7 @@ public final class c {
         final i iVar2 = iVar;
         byte[] bArr2 = iVar2.b;
         w5.c cVar3 = (w5.c) cVar2.f;
-        p5.e a10 = ((p5.d) cVar2.b).a(iVar2.a);
+        f a10 = ((p5.e) cVar2.b).a(iVar2.a);
         long j10 = 0;
         while (true) {
             final int i12 = 0;
@@ -146,11 +149,11 @@ public final class c {
                             SQLiteDatabase a11 = gVar2.a();
                             a11.beginTransaction();
                             try {
-                                Long b10 = v5.g.b(a11, iVar3);
-                                if (b10 == null) {
+                                Long b11 = v5.g.b(a11, iVar3);
+                                if (b11 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b11.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -168,11 +171,11 @@ public final class c {
                         default:
                             v5.g gVar3 = (v5.g) ((v5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new k8(22, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new wc1(20, gVar3, iVar2));
                     }
                 }
             })).booleanValue()) {
-                gVar.f(new h(cVar2, iVar2, j10, 9));
+                gVar.f(new h(cVar2, iVar2, j10, 10));
                 return;
             }
             final int i13 = 1;
@@ -193,11 +196,11 @@ public final class c {
                             SQLiteDatabase a11 = gVar2.a();
                             a11.beginTransaction();
                             try {
-                                Long b10 = v5.g.b(a11, iVar3);
-                                if (b10 == null) {
+                                Long b11 = v5.g.b(a11, iVar3);
+                                if (b11 == null) {
                                     bool = Boolean.FALSE;
                                 } else {
-                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b10.toString()});
+                                    Cursor rawQuery = gVar2.a().rawQuery("SELECT 1 FROM events WHERE context_id = ? LIMIT 1", new String[]{b11.toString()});
                                     try {
                                         Boolean valueOf = Boolean.valueOf(rawQuery.moveToNext());
                                         rawQuery.close();
@@ -215,20 +218,19 @@ public final class c {
                         default:
                             v5.g gVar3 = (v5.g) ((v5.d) this.b.c);
                             gVar3.getClass();
-                            return (Iterable) gVar3.c(new k8(22, gVar3, iVar2));
+                            return (Iterable) gVar3.c(new wc1(20, gVar3, iVar2));
                     }
                 }
             });
             if (!iterable.iterator().hasNext()) {
                 return;
             }
-            int i14 = 2;
+            int i14 = 3;
             if (a10 == null) {
-                dc.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
+                gc.a(iVar2, "Uploader", "Unknown backend for %s, deleting event batch for it...");
                 aVar2 = new p5.a(3, -1L);
                 bArr = bArr2;
                 j3 = j10;
-                i10 = 2;
             } else {
                 ArrayList arrayList = new ArrayList();
                 Iterator it = iterable.iterator();
@@ -241,19 +243,19 @@ public final class c {
                     r5.a aVar3 = (r5.a) gVar.f(new z1(cVar4, i14));
                     e0 e0Var = new e0();
                     e0Var.f = new HashMap();
-                    e0Var.d = Long.valueOf(((x5.a) cVar2.g).s());
-                    e0Var.e = Long.valueOf(((x5.a) cVar2.h).s());
+                    e0Var.d = Long.valueOf(((x5.a) cVar2.g).r());
+                    e0Var.e = Long.valueOf(((x5.a) cVar2.h).r());
                     e0Var.a = "GDT_CLIENT_METRICS";
                     l5.c cVar5 = new l5.c("proto");
                     aVar3.getClass();
-                    ld0 ld0Var = o.a;
-                    ld0Var.getClass();
+                    md0 md0Var = n.a;
+                    md0Var.getClass();
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                     try {
-                        ld0Var.q(aVar3, byteArrayOutputStream);
+                        md0Var.q(aVar3, byteArrayOutputStream);
                     } catch (IOException unused) {
                     }
-                    e0Var.c = new m(cVar5, byteArrayOutputStream.toByteArray());
+                    e0Var.c = new l(cVar5, byteArrayOutputStream.toByteArray());
                     arrayList.add(((m5.c) a10).a(e0Var.b()));
                 }
                 m5.c cVar6 = (m5.c) a10;
@@ -279,9 +281,9 @@ public final class c {
                     Map.Entry entry = (Map.Entry) it2.next();
                     o5.h hVar2 = (o5.h) ((List) entry.getValue()).get(0);
                     j0 j0Var = j0.a;
-                    long s5 = cVar6.f.s();
-                    long s9 = cVar6.e.s();
-                    n nVar = new n(new l(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
+                    long r10 = cVar6.f.r();
+                    long r11 = cVar6.e.r();
+                    n5.n nVar = new n5.n(new n5.l(Integer.valueOf(hVar2.b("sdk-version")), hVar2.a("model"), hVar2.a("hardware"), hVar2.a("device"), hVar2.a("product"), hVar2.a("os-uild"), hVar2.a("manufacturer"), hVar2.a("fingerprint"), hVar2.a("locale"), hVar2.a("country"), hVar2.a("mcc_mnc"), hVar2.a("application_build")));
                     try {
                         num = Integer.valueOf(Integer.parseInt((String) entry.getKey()));
                         str2 = null;
@@ -292,11 +294,11 @@ public final class c {
                     ArrayList arrayList4 = new ArrayList();
                     for (o5.h hVar3 : (List) entry.getValue()) {
                         Iterator it3 = it2;
-                        m mVar = hVar3.c;
+                        l lVar = hVar3.c;
                         byte[] bArr3 = bArr2;
                         byte[] bArr4 = hVar3.j;
-                        l5.c cVar7 = mVar.a;
-                        byte[] bArr5 = mVar.b;
+                        l5.c cVar7 = lVar.a;
+                        byte[] bArr5 = lVar.b;
                         long j11 = j10;
                         if (cVar7.equals(new l5.c("proto"))) {
                             cVar = new c();
@@ -307,9 +309,9 @@ public final class c {
                             cVar8.f = str4;
                             cVar = cVar8;
                         } else {
-                            String c11 = dc.c("CctTransportBackend");
-                            if (Log.isLoggable(c11, 5)) {
-                                Log.w(c11, "Received event of unsupported encoding " + cVar7 + ". Skipping...");
+                            String c10 = gc.c("CctTransportBackend");
+                            if (Log.isLoggable(c10, 5)) {
+                                Log.w(c10, "Received event of unsupported encoding " + cVar7 + ". Skipping...");
                             }
                             it2 = it3;
                             bArr2 = bArr3;
@@ -328,7 +330,7 @@ public final class c {
                         if (num3 != null) {
                             r rVar = new r(new q(num3));
                             z zVar = z.a;
-                            cVar.c = new n5.o(rVar);
+                            cVar.c = new o(rVar);
                         }
                         byte[] bArr6 = hVar3.i;
                         if (bArr6 != null || bArr4 != null) {
@@ -342,22 +344,22 @@ public final class c {
                             str6 = str6.concat(" eventUptimeMs");
                         }
                         if (((Long) cVar.g) == null) {
-                            str6 = r.b.v(str6, " timezoneOffsetSeconds");
+                            str6 = p5.c.v(str6, " timezoneOffsetSeconds");
                         }
                         if (!str6.isEmpty()) {
                             throw new IllegalStateException("Missing required properties:".concat(str6));
                         }
-                        arrayList4.add(new n5.s(((Long) cVar.a).longValue(), (Integer) cVar.b, (n5.o) cVar.c, ((Long) cVar.d).longValue(), (byte[]) cVar.e, (String) cVar.f, ((Long) cVar.g).longValue(), (v) cVar.h, (p) cVar.i));
+                        arrayList4.add(new n5.s(((Long) cVar.a).longValue(), (Integer) cVar.b, (o) cVar.c, ((Long) cVar.d).longValue(), (byte[]) cVar.e, (String) cVar.f, ((Long) cVar.g).longValue(), (v) cVar.h, (p) cVar.i));
                         it2 = it3;
                         bArr2 = bArr3;
                         j10 = j11;
                     }
-                    arrayList3.add(new t(s5, s9, nVar, num, str2, arrayList4));
+                    arrayList3.add(new t(r10, r11, nVar, num, str2, arrayList4));
                     it2 = it2;
                 }
                 bArr = bArr2;
                 j3 = j10;
-                n5.m mVar2 = new n5.m(arrayList3);
+                m mVar = new m(arrayList3);
                 URL url = cVar6.d;
                 if (bArr != null) {
                     try {
@@ -378,29 +380,28 @@ public final class c {
                     str = null;
                 }
                 try {
-                    h6.m mVar3 = new h6.m(url, mVar2, str, false, 13);
-                    ki.e eVar = new ki.e(cVar6, 15);
+                    h6.m mVar2 = new h6.m(url, mVar, str, false, 13);
+                    ki.e eVar = new ki.e(cVar6, 16);
+                    h6.m mVar3 = mVar2;
                     int i16 = 5;
-                    h6.m mVar4 = mVar3;
                     do {
-                        c10 = eVar.c(mVar4);
-                        URL url2 = (URL) c10.c;
+                        b10 = eVar.b(mVar3);
+                        URL url2 = (URL) b10.c;
                         if (url2 != null) {
-                            dc.a(url2, "CctTransportBackend", "Following redirect to: %s");
-                            mVar4 = new h6.m(url2, (n5.m) mVar4.c, (String) mVar4.d, false, 13);
+                            gc.a(url2, "CctTransportBackend", "Following redirect to: %s");
+                            mVar3 = new h6.m(url2, (m) mVar3.c, (String) mVar3.d, false, 13);
                         } else {
-                            mVar4 = null;
+                            mVar3 = null;
                         }
-                        if (mVar4 == null) {
+                        if (mVar3 == null) {
                             break;
                         } else {
                             i16--;
                         }
                     } while (i16 >= 1);
-                    int i17 = c10.b;
+                    int i17 = b10.b;
                     if (i17 == 200) {
-                        aVar2 = new p5.a(1, c10.a);
-                        i10 = 2;
+                        aVar2 = new p5.a(1, b10.a);
                     } else {
                         if (i17 >= 500 || i17 == 404) {
                             aVar = new p5.a(2, -1L);
@@ -409,7 +410,7 @@ public final class c {
                                 aVar = new p5.a(4, -1L);
                             } catch (IOException e10) {
                                 e = e10;
-                                dc.b("CctTransportBackend", "Could not make request to the backend", e);
+                                gc.b("CctTransportBackend", "Could not make request to the backend", e);
                                 i10 = 2;
                                 aVar2 = new p5.a(2, -1L);
                                 i11 = aVar2.a;
@@ -420,26 +421,26 @@ public final class c {
                             aVar = new p5.a(3, -1L);
                         }
                         aVar2 = aVar;
-                        i10 = 2;
                     }
                 } catch (IOException e11) {
                     e = e11;
                 }
             }
+            i10 = 2;
             i11 = aVar2.a;
             if (i11 != i10) {
-                gVar.f(new bg.e0(this, iterable, iVar, j3, 6));
-                ((ld0) this.d).H(iVar, i7 + 1, true);
+                gVar.f(new f0(this, iterable, iVar, j3, 7));
+                ((md0) this.d).H(iVar, i7 + 1, true);
                 return;
             }
             cVar2 = this;
             iVar2 = iVar;
             j10 = j3;
-            gVar.f(new k8(17, cVar2, iterable));
+            gVar.f(new wc1(15, cVar2, iterable));
             if (i11 == 1) {
                 j10 = Math.max(j10, aVar2.b);
                 if (bArr != null) {
-                    gVar.f(new z1(cVar2, 4));
+                    gVar.f(new z1(cVar2, 5));
                 }
             } else if (i11 == 4) {
                 HashMap hashMap2 = new HashMap();
@@ -452,7 +453,7 @@ public final class c {
                         hashMap2.put(str9, 1);
                     }
                 }
-                gVar.f(new k8(18, cVar2, hashMap2));
+                gVar.f(new wc1(16, cVar2, hashMap2));
             }
             bArr2 = bArr;
         }

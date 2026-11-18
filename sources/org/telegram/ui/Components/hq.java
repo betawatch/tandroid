@@ -1,119 +1,103 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import java.util.HashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hq extends View implements org.telegram.ui.ActionBar.z5 {
-    public final Paint a;
-    public final Paint b;
-    public final RectF c;
-    public int d;
-    public long e;
-    public int f;
-    public int h;
-    public int n;
-    public int r;
+public final class hq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public hq(Context context, int i7) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        Paint paint2 = new Paint(1);
-        this.b = paint2;
-        this.c = new RectF();
-        this.d = 0;
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint2.setStyle(style);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        paint2.setStrokeCap(Paint.Cap.ROUND);
-        if (i7 == 0) {
-            this.f = org.telegram.ui.ActionBar.j6.B7;
-            this.h = org.telegram.ui.ActionBar.j6.C7;
-        } else if (i7 == 1) {
-            this.f = org.telegram.ui.ActionBar.j6.D7;
-            this.h = org.telegram.ui.ActionBar.j6.E7;
-        } else if (i7 == 2) {
-            this.f = org.telegram.ui.ActionBar.j6.F7;
-            this.h = org.telegram.ui.ActionBar.j6.G7;
-        } else if (i7 == 3) {
-            this.f = org.telegram.ui.ActionBar.j6.H7;
-            this.h = org.telegram.ui.ActionBar.j6.I7;
+    public hq(kq kqVar, int i7) {
+        this.c = kqVar;
+        this.b = i7;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        int i10 = this.a;
+        int i11 = this.b;
+        View view = this.c;
+        switch (i10) {
+            case 0:
+                kq kqVar = (kq) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = kqVar.F;
+                if (!kqVar.r) {
+                    kqVar.r = true;
+                    int i12 = 0;
+                    while (i12 < editable.length()) {
+                        char charAt = editable.charAt(i12);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i12, i12 + 1, "");
+                            i12--;
+                        }
+                        i12++;
+                    }
+                    if (editable.length() != 0) {
+                        try {
+                            i7 = Integer.parseInt(editTextBoldCursorArr[i11].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i7 = -1;
+                        }
+                        kqVar.setColorInner(i7);
+                        int color = kqVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i11].setSelection(editable.length());
+                        }
+                        kqVar.w[kqVar.T].a(color);
+                        kqVar.a.c(color, kqVar.T, true);
+                        kqVar.r = false;
+                        break;
+                    } else {
+                        kqVar.r = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i11 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    org.telegram.messenger.g0.V3(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    org.telegram.messenger.g0.V3(numberTextView, true);
+                    break;
+                }
         }
-        updateColors();
     }
 
-    public final void a(int i7, int i10) {
-        this.f = -1;
-        this.h = -1;
-        this.n = i7;
-        this.r = i10;
-        updateColors();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = System.currentTimeMillis();
-        invalidate();
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (getVisibility() != 0) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j3 = currentTimeMillis - this.e;
-        this.e = currentTimeMillis;
-        this.d = (int) (((j3 * 360) / 1000.0f) + this.d);
-        int measuredWidth = (getMeasuredWidth() / 2) - org.telegram.messenger.g0.L(9.0f);
-        int measuredHeight = (getMeasuredHeight() / 2) - org.telegram.messenger.g0.L(9.0f);
-        float f10 = measuredWidth;
-        float f11 = measuredHeight;
-        float L = org.telegram.messenger.g0.L(18.0f) + measuredWidth;
-        float L2 = org.telegram.messenger.g0.L(18.0f) + measuredHeight;
-        RectF rectF = this.c;
-        rectF.set(f10, f11, L, L2);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, org.telegram.messenger.g0.L(9.0f), this.a);
-        canvas.drawArc(rectF, this.d - 90, 90.0f, false, this.b);
-        invalidate();
+    public hq(int i7, NumberTextView numberTextView) {
+        this.b = i7;
+        this.c = numberTextView;
     }
 
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        super.setVisibility(i7);
-        this.e = System.currentTimeMillis();
-        invalidate();
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int i7 = this.f;
-        Paint paint = this.a;
-        if (i7 >= 0) {
-            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-        } else {
-            paint.setColor(this.n);
-        }
-        int i10 = this.h;
-        Paint paint2 = this.b;
-        if (i10 >= 0) {
-            paint2.setColor(org.telegram.ui.ActionBar.j6.x0(null, i10, false));
-        } else {
-            paint2.setColor(this.r);
-        }
-        invalidate();
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

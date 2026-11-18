@@ -1,69 +1,110 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.Editable;
 import android.text.TextUtils;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.LaunchActivity;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class qf implements Runnable {
-    public final /* synthetic */ org.telegram.messenger.gj a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
-    public final /* synthetic */ org.telegram.messenger.gj d;
-    public final /* synthetic */ TLRPC.User e;
-    public final /* synthetic */ ChatActivityEnterView f;
+public final class qf {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public qf(ChatActivityEnterView chatActivityEnterView, org.telegram.messenger.gj gjVar, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, org.telegram.messenger.gj gjVar2, TLRPC.User user) {
-        this.f = chatActivityEnterView;
-        this.a = gjVar;
-        this.b = j3;
-        this.c = keyboardButtonProto;
-        this.d = gjVar2;
-        this.e = user;
+    public qf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ChatActivityEnterView chatActivityEnterView = this.f;
-        org.telegram.ui.an anVar = chatActivityEnterView.x3;
-        if (chatActivityEnterView.U1.Q() > org.telegram.messenger.g0.L(20.0f) || chatActivityEnterView.G0()) {
-            chatActivityEnterView.y0(false);
-            org.telegram.messenger.g0.v1(chatActivityEnterView);
-            org.telegram.messenger.g0.i3(this, 150L);
+    public final void a(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        Drawable backgroundImage = chatActivityEnterView.a2.getBackgroundImage();
+        if (backgroundImage != null) {
+            backgroundImage.draw(canvas);
+        }
+        org.telegram.ui.bn bnVar = chatActivityEnterView.D3;
+        org.telegram.ui.bj bjVar = bnVar != null ? bnVar.A0 : null;
+        if (bjVar == null || bjVar.getWidth() <= 0) {
             return;
         }
-        if (anVar == null) {
-            return;
+        canvas.save();
+        canvas.translate(bjVar.getX(), bjVar.getY());
+        bjVar.draw(canvas);
+        canvas.restore();
+    }
+
+    public final void b() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        fe feVar = chatActivityEnterView.R0;
+        if (feVar != null) {
+            feVar.invalidate();
         }
-        int i7 = chatActivityEnterView.R;
-        long j3 = this.a.k.dialog_id;
-        TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
-        String text = keyboardButtonProto.getText();
-        String url = keyboardButtonProto.getUrl();
-        boolean c10 = cg.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
-        org.telegram.messenger.gj gjVar = this.d;
-        ki.k4 b10 = ki.k4.b(i7, j3, this.b, text, url, c10 ? 1 : 0, gjVar != null ? gjVar.k.id : 0, anVar == null ? 0L : anVar.j9(), null, false, null, null, 0, false, false);
-        LaunchActivity launchActivity = LaunchActivity.H1;
-        if (launchActivity != null && launchActivity.N() != null && LaunchActivity.H1.N().k(b10) != null) {
-            ki.a0 a0Var = chatActivityEnterView.m0;
-            if (a0Var != null) {
-                a0Var.setOpened(false);
+        ai.n0 n0Var = chatActivityEnterView.j1;
+        boolean z10 = n0Var != null && n0Var.m();
+        gf gfVar = chatActivityEnterView.F0;
+        Editable text = gfVar == null ? null : gfVar.getText();
+        gf gfVar2 = chatActivityEnterView.F0;
+        chatActivityEnterView.V1((gfVar2 == null || gfVar2.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
+        chatActivityEnterView.k6 = z10;
+        org.telegram.ui.bn bnVar = chatActivityEnterView.D3;
+        if (bnVar != null) {
+            bnVar.dd();
+            yw0 yw0Var = bnVar.s1;
+            if (yw0Var != null) {
+                yw0Var.e();
+            }
+        }
+    }
+
+    public final void c(float f10, int i7) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        fe feVar = chatActivityEnterView.R0;
+        SparseArray sparseArray = chatActivityEnterView.A1;
+        int i10 = org.telegram.ui.ActionBar.n6.Nl;
+        int i11 = ChatActivityEnterView.n7;
+        int C0 = chatActivityEnterView.C0(i10);
+        if (f10 <= 0.004f) {
+            if (chatActivityEnterView.z1 == 0) {
                 return;
             }
+            chatActivityEnterView.z1 = 0;
+            feVar.setColorFilter(new PorterDuffColorFilter(C0, PorterDuff.Mode.SRC_IN));
             return;
         }
-        TLRPC.User user = this.e;
-        String F1 = user == null ? null : org.telegram.messenger.np.s1(chatActivityEnterView.R).F1(user.restriction_reason);
-        if (!TextUtils.isEmpty(F1)) {
-            org.telegram.messenger.np.s1(chatActivityEnterView.R);
-            org.telegram.messenger.np.S4(F1, anVar);
-        } else {
-            ki.x2 x2Var = new ki.x2(chatActivityEnterView.getContext(), chatActivityEnterView.E4);
-            x2Var.m0 = chatActivityEnterView.w3;
-            x2Var.x(anVar, b10);
-            x2Var.show();
+        int f11 = i0.a.f(Math.min(1.0f, f10), C0, i7 | (-16777216)) & (-117901064);
+        if (f11 == chatActivityEnterView.z1) {
+            return;
         }
+        chatActivityEnterView.z1 = f11;
+        ColorFilter colorFilter = (ColorFilter) sparseArray.get(f11);
+        if (colorFilter == null) {
+            colorFilter = new PorterDuffColorFilter(f11, PorterDuff.Mode.SRC_IN);
+            if (sparseArray.size() > 512) {
+                sparseArray.clear();
+            }
+            sparseArray.put(f11, colorFilter);
+        }
+        feVar.setColorFilter(colorFilter);
+    }
+
+    public final void d(float f10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.w1 = f10;
+        if (f10 >= 1.0f || f10 <= 0.0f) {
+            Editable text = chatActivityEnterView.F0.getText();
+            chatActivityEnterView.P1((chatActivityEnterView.F0.getLineCount() <= 2 || text == null || TextUtils.isEmpty(text.toString().trim())) ? false : true);
+        }
+        chatActivityEnterView.i2();
+        org.telegram.ui.d61 d61Var = chatActivityEnterView.d2;
+        if (d61Var != null) {
+            d61Var.invalidate();
+        }
+        ie ieVar = chatActivityEnterView.f2;
+        if (ieVar != null) {
+            ieVar.invalidate();
+        }
+        chatActivityEnterView.o2.setAlpha((1.0f - f10) * chatActivityEnterView.x1);
     }
 }

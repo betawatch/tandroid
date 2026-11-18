@@ -1,18 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u4 extends MetricAffectingSpan {
-    public String a;
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
+public final class u4 extends sb0 {
+    @Override // org.telegram.ui.Components.sb0
+    public final CharSequence d(int i7) {
+        return org.telegram.messenger.gd.G(i7, "Minutes", new Object[0]);
     }
 }

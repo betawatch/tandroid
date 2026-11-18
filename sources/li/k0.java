@@ -5,64 +5,64 @@ import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import di.rb;
-import di.x2;
-import hi.lb;
+import bi.y3;
+import di.vb;
+import hi.mb;
 import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p9;
-import org.telegram.messenger.t3;
-import org.telegram.messenger.x3;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n5;
+import org.telegram.messenger.o9;
+import org.telegram.messenger.v3;
+import org.telegram.messenger.z3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.t1;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.vb;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.Components.wb;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.e9;
+import org.telegram.ui.Components.ec;
+import org.telegram.ui.Components.fc;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class k0 implements mi.e {
     public final Context a;
-    public final e6 b;
-    public final cc c;
+    public final i6 b;
+    public final lc c;
     public final int d;
     public final long e;
     public final TLRPC.Chat f;
     public j0 h;
-    public rb i;
+    public vb i;
     public String k;
     public int l;
     public boolean m;
     public boolean n;
     public long o;
     public int p;
-    public t1 q;
+    public u1 q;
     public int r;
     public final a0.h g = new a0.h();
     public ArrayList j = new ArrayList();
 
-    public k0(Context context, e6 e6Var, cc ccVar, int i7, long j3) {
+    public k0(Context context, i6 i6Var, lc lcVar, int i7, long j3) {
         this.a = context;
-        this.b = e6Var;
-        this.c = ccVar;
+        this.b = i6Var;
+        this.c = lcVar;
         this.d = i7;
         this.e = j3;
-        this.f = np.s1(i7).M0(Long.valueOf(j3));
-        this.o = np.s1(i7).f7.getLong(p0.o(j3, "community_requests_last_view_time_"), 0L);
+        this.f = mp.u1(i7).O0(Long.valueOf(j3));
+        this.o = mp.u1(i7).h7.getLong(p0.o(j3, "community_requests_last_view_time_"), 0L);
     }
 
     public final void a() {
@@ -73,7 +73,7 @@ public final class k0 implements mi.e {
         }
         int size = arrayList.size();
         for (int i7 = 0; i7 < size; i7++) {
-            if (!this.g.d(m5.o(((TL_communities.CommunityPeerRequest) this.j.get(i7)).peer))) {
+            if (!this.g.d(n5.o(((TL_communities.CommunityPeerRequest) this.j.get(i7)).peer))) {
                 if (r2.date <= this.o) {
                     return;
                 } else {
@@ -83,8 +83,8 @@ public final class k0 implements mi.e {
         }
     }
 
-    public final void b(u41 u41Var) {
-        if (this.m || this.n || u41Var.f3.N0() + 10 <= u41Var.g3.E.size()) {
+    public final void b(e51 e51Var) {
+        if (this.m || this.n || e51Var.f3.N0() + 10 <= e51Var.g3.E.size()) {
             return;
         }
         d();
@@ -101,16 +101,16 @@ public final class k0 implements mi.e {
             int i7 = 0;
             while (i7 < size) {
                 TL_communities.CommunityPeerRequest communityPeerRequest = (TL_communities.CommunityPeerRequest) arrayList3.get(i7);
-                long o4 = m5.o(communityPeerRequest.peer);
+                long o4 = n5.o(communityPeerRequest.peer);
                 a0.h hVar = this.g;
                 if (hVar == null || !hVar.d(o4)) {
-                    TLRPC.User a22 = np.s1(this.d).a2(Long.valueOf(communityPeerRequest.requested_by));
+                    TLRPC.User c22 = mp.u1(this.d).c2(Long.valueOf(communityPeerRequest.requested_by));
                     boolean z10 = !communityPeerRequest.visible;
                     boolean z11 = i7 < size + (-1);
                     int i10 = mi.g.b;
-                    b41 K = b41.K(mi.g.class);
-                    K.G = new mi.f(o4, a22, z10);
-                    K.H = this;
+                    l41 K = l41.K(mi.g.class);
+                    K.H = new mi.f(o4, c22, z10);
+                    K.I = this;
                     K.j = !z11;
                     arrayList.add(K);
                 }
@@ -120,29 +120,29 @@ public final class k0 implements mi.e {
         if (this.n) {
             return;
         }
-        arrayList.add(b41.p(29));
+        arrayList.add(l41.p(29));
     }
 
     public final void d() {
-        if (this.m || this.n || !t3.y(27, this.f)) {
+        if (this.m || this.n || !v3.y(27, this.f)) {
             return;
         }
         this.m = true;
-        np s12 = np.s1(this.d);
+        mp u12 = mp.u1(this.d);
         String str = this.k;
         i0 i0Var = new i0(this, 1);
         TL_communities.TL_communities_getPeerLinkRequests tL_communities_getPeerLinkRequests = new TL_communities.TL_communities_getPeerLinkRequests();
-        tL_communities_getPeerLinkRequests.community = s12.h1(this.e);
+        tL_communities_getPeerLinkRequests.community = u12.j1(this.e);
         tL_communities_getPeerLinkRequests.offset = str;
         tL_communities_getPeerLinkRequests.limit = 100;
-        s12.getConnectionsManager().sendRequestTyped(tL_communities_getPeerLinkRequests, new d3.b(1), new x3(3, s12, i0Var));
+        u12.getConnectionsManager().sendRequestTyped(tL_communities_getPeerLinkRequests, new d3.b(1), new z3(3, u12, i0Var));
     }
 
     public final void e() {
         int i7 = this.d;
         long currentTime = ConnectionsManager.getInstance(i7).getCurrentTime();
         this.o = currentTime;
-        np.s1(i7).f7.edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
+        mp.u1(i7).h7.edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
         a();
     }
 
@@ -151,30 +151,30 @@ public final class k0 implements mi.e {
         if (this.q == null && this.r == 0) {
             int i7 = 0;
             if (z11) {
-                t1 M = t4.M(this.a, this.b, hd.M0(z10 ? 2131751983 : 2131751935, null), org.telegram.messenger.g0.X2(hd.G(this.l, z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), hd.M0(z10 ? 2131754486 : 2131751604, null), new ai.q(12, this, z10));
+                u1 M = b5.M(this.a, this.b, gd.M0(z10 ? 2131751972 : 2131751924, null), org.telegram.messenger.g0.W2(gd.G(this.l, z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", new Object[0])), gd.M0(z10 ? 2131754484 : 2131751593, null), new ch.k(11, this, z10));
                 M.show();
                 if (z10 || (textView = (TextView) M.d(-1)) == null) {
                     return;
                 }
-                q6.U(textView, j6.q7, null);
+                u6.U(textView, n6.q7, null);
                 return;
             }
-            rb rbVar = this.i;
-            if (rbVar != null) {
-                rbVar.run();
+            vb vbVar = this.i;
+            if (vbVar != null) {
+                vbVar.run();
             }
             this.i = null;
-            t1 t1Var = new t1(3, this.a, this.b);
-            this.q = t1Var;
-            t1Var.setOnCancelListener(new lb(this, 3));
+            u1 u1Var = new u1(3, this.a, this.b);
+            this.q = u1Var;
+            u1Var.setOnCancelListener(new mb(this, 3));
             this.q.r(500L);
-            np s12 = np.s1(this.d);
+            mp u12 = mp.u1(this.d);
             i0 i0Var = new i0(this, i7);
             TL_communities.TL_communities_toggleAllPeerLinkRequestApproval tL_communities_toggleAllPeerLinkRequestApproval = new TL_communities.TL_communities_toggleAllPeerLinkRequestApproval();
             long j3 = this.e;
-            tL_communities_toggleAllPeerLinkRequestApproval.community = s12.h1(j3);
+            tL_communities_toggleAllPeerLinkRequestApproval.community = u12.j1(j3);
             tL_communities_toggleAllPeerLinkRequestApproval.reject = !z10;
-            this.r = s12.getConnectionsManager().sendRequestTyped(tL_communities_toggleAllPeerLinkRequestApproval, new d3.b(1), new p9(s12, j3, i0Var, 1));
+            this.r = u12.getConnectionsManager().sendRequestTyped(tL_communities_toggleAllPeerLinkRequestApproval, new d3.b(1), new o9(u12, j3, i0Var, 1));
         }
     }
 
@@ -185,54 +185,53 @@ public final class k0 implements mi.e {
         a();
         j0 j0Var = this.h;
         if (j0Var != null) {
-            j0Var.I();
+            j0Var.F();
         }
-        int i10 = z10 ? 2131751880 : 2131751879;
+        int i10 = z10 ? 2131751869 : 2131751868;
         int i11 = this.d;
-        SpannableStringBuilder X2 = org.telegram.messenger.g0.X2(hd.a0(null, null, i10, m5.s(i11, j3)));
-        rb rbVar = this.i;
-        if (rbVar != null) {
-            rbVar.run();
+        SpannableStringBuilder W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, i10, n5.s(i11, j3)));
+        vb vbVar = this.i;
+        if (vbVar != null) {
+            vbVar.run();
         }
-        this.i = new rb(this, j3, z10, 2);
+        this.i = new vb(this, j3, z10, 2);
         Context context = this.a;
-        e6 e6Var = this.b;
-        wb wbVar = new wb(context, e6Var, false);
-        TLObject e22 = np.s1(i11).e2(j3);
-        w8 w8Var = wbVar.a;
-        if (e22 != null) {
-            w8Var.setCount(1);
-            w8Var.b(0, m10.t0, e22);
+        i6 i6Var = this.b;
+        fc fcVar = new fc(context, i6Var, false);
+        TLObject g22 = mp.u1(i11).g2(j3);
+        e9 e9Var = fcVar.a;
+        if (g22 != null) {
+            e9Var.setCount(1);
+            e9Var.b(0, j10.t0, g22);
             i7 = 1;
         } else {
             i7 = 0;
         }
-        w8Var.setTranslationX(org.telegram.messenger.g0.L(7.0f));
-        w8Var.setScaleX(1.333f);
-        w8Var.setScaleY(1.333f);
-        w8Var.a(false);
-        z70 z70Var = wbVar.b;
-        z70Var.setSingleLine(false);
-        z70Var.setMaxLines(2);
-        z70Var.setTextSize(1, 14.0f);
-        z70Var.setText(X2);
-        int i12 = 12;
-        if (z70Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+        e9Var.setTranslationX(org.telegram.messenger.g0.L(7.0f));
+        e9Var.setScaleX(1.333f);
+        e9Var.setScaleY(1.333f);
+        e9Var.a(false);
+        k80 k80Var = fcVar.b;
+        k80Var.setSingleLine(false);
+        k80Var.setMaxLines(2);
+        k80Var.setTextSize(1, 14.0f);
+        k80Var.setText(W2);
+        if (k80Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
             int L = org.telegram.messenger.g0.L(74 - ((3 - i7) * 12));
-            if (hd.a0) {
-                ((ViewGroup.MarginLayoutParams) z70Var.getLayoutParams()).rightMargin = L;
+            if (gd.a0) {
+                ((ViewGroup.MarginLayoutParams) k80Var.getLayoutParams()).rightMargin = L;
             } else {
-                ((ViewGroup.MarginLayoutParams) z70Var.getLayoutParams()).leftMargin = L;
+                ((ViewGroup.MarginLayoutParams) k80Var.getLayoutParams()).leftMargin = L;
             }
         }
-        if (hd.a0) {
-            w8Var.setTranslationX(org.telegram.messenger.g0.L(32 - ((i7 - 1) * 12)));
+        if (gd.a0) {
+            e9Var.setTranslationX(org.telegram.messenger.g0.L(32 - ((i7 - 1) * 12)));
         }
-        vb vbVar = new vb(context, e6Var, true, true);
-        vbVar.e(hd.M0(2131743885, null));
-        vbVar.b = new x2(this, j3, i12);
-        vbVar.c = this.i;
-        wbVar.setButton(vbVar);
-        this.c.b(wbVar, 5000).j();
+        ec ecVar = new ec(context, i6Var, true, true);
+        ecVar.e(gd.M0(2131743648, null));
+        ecVar.b = new y3(this, j3, 13);
+        ecVar.c = this.i;
+        fcVar.setButton(ecVar);
+        this.c.b(fcVar, 5000).j();
     }
 }

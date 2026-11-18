@@ -1,12 +1,12 @@
 package db;
 
 import android.content.Context;
-import c8.n0;
+import c8.p0;
 import org.telegram.messenger.d1;
 import zd.j0;
 import zd.t1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements a {
     public static final d1 b = new d1("fpnvsdk", "FirebasePhoneNumberVerificationImpl");
@@ -19,6 +19,6 @@ public final class n implements a {
         this.a = dVar;
         t1 t1Var = new t1();
         ge.e eVar = j0.a;
-        n0.c(t1Var, ee.n.a);
+        p0.c(t1Var, ee.n.a);
     }
 }

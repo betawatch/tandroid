@@ -1,42 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.GradientDrawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class f9 {
-    public static final /* synthetic */ int[] a;
+public final class f9 implements te.f, we.a {
+    public final ImageReceiver a;
+    public final b9 b;
+    public long c;
+    public boolean d;
+    public final /* synthetic */ g9 e;
 
-    static {
-        int[] iArr = new int[GradientDrawable.Orientation.values().length];
-        a = iArr;
-        try {
-            iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
+    public f9(g9 g9Var, View view) {
+        this.e = g9Var;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.J0(g9Var.e / 2);
+        b9 b9Var = new b9((org.telegram.ui.ActionBar.i6) null);
+        this.b = b9Var;
+        b9Var.u(org.telegram.messenger.g0.L(22.0f));
+    }
+
+    @Override // we.a
+    public final void a() {
+        if (this.d) {
+            this.d = false;
+            this.a.R();
         }
-        try {
-            a[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
+        this.c = 0L;
+    }
+
+    @Override // te.f
+    public final int b(boolean z10) {
+        if (z10) {
+            return 0;
         }
-        try {
-            a[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
+        return -this.e.f;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof f9) && this.c == ((f9) obj).c;
+    }
+
+    @Override // te.f
+    public final int getHeight() {
+        return this.e.e;
+    }
+
+    @Override // te.f
+    public final int getWidth() {
+        return this.e.e;
     }
 }

@@ -1,45 +1,31 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f20 implements nh.a {
-    public final /* synthetic */ c40 a;
+public final class f20 implements c5.h {
+    public final /* synthetic */ f40 a;
 
-    public f20(c40 c40Var) {
-        this.a = c40Var;
+    public f20(f40 f40Var) {
+        this.a = f40Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
-        }
-        boolean z10 = Q instanceof ProfileActivity;
-        c40 c40Var = this.a;
-        if (z10 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
-            c40Var.dismiss();
-            return;
-        }
-        int R0 = c40Var.R0();
-        Bundle bundle = new Bundle();
-        long j3 = groupCallMessage.fromId;
-        if (j3 > 0) {
-            bundle.putLong("user_id", j3);
-        } else {
-            bundle.putLong("chat_id", -j3);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == org.telegram.messenger.m10.i(c40Var.o1.a).e()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (R0 > 0 && R0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        Q.presentFragment(profileActivity, false, z11);
-        c40Var.dismiss();
+    @Override // c5.h
+    public final void a(int i7) {
+        f40 f40Var = this.a;
+        f40Var.m1.E0.k(i7);
+        c20 c20Var = f40Var.C4;
+        c20Var.K = c20Var.M;
+        c20Var.L = c20Var.N;
+        c20Var.O = 0.0f;
+        c20Var.P = 1;
+        c20Var.invalidate();
+    }
+
+    @Override // c5.h
+    public final void c(int i7) {
+    }
+
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
     }
 }

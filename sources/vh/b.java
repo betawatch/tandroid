@@ -3,40 +3,40 @@ package vh;
 import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.w00;
-import r0.k1;
+import org.telegram.ui.Components.d10;
+import r0.l1;
 import r0.m;
-import vg.o;
+import v4.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements w00, m {
-    public final /* synthetic */ h a;
+public final /* synthetic */ class b implements d10, m {
+    public final /* synthetic */ g a;
 
-    public /* synthetic */ b(h hVar) {
-        this.a = hVar;
+    public /* synthetic */ b(g gVar) {
+        this.a = gVar;
     }
 
     @Override // r0.m
-    public k1 M0(View view, k1 k1Var) {
-        WindowInsets g10 = k1Var.g();
-        h hVar = this.a;
-        hVar.t0(g10);
-        hVar.U1.a(k1Var.a.f(8).d > 0, true);
-        return k1.b;
+    public l1 P0(View view, l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
+        g gVar = this.a;
+        gVar.t0(g10);
+        gVar.U1.a(l1Var.a.f(8).d > 0, true);
+        return l1.b;
     }
 
-    @Override // org.telegram.ui.Components.w00
+    @Override // org.telegram.ui.Components.d10
     public void a(int i7) {
         int min = Math.min(i7, g0.L(144.0f));
         if (i7 > 0) {
             min -= g0.L(8.0f);
         }
-        h hVar = this.a;
-        if (hVar.h2 != min) {
-            hVar.h2 = min;
-            hVar.T1.a(min);
-            hVar.d2.postOnAnimation(new o(hVar, 1));
+        g gVar = this.a;
+        if (gVar.h2 != min) {
+            gVar.h2 = min;
+            gVar.T1.a(min);
+            gVar.d2.postOnAnimation(new p(gVar, 4));
         }
     }
 }

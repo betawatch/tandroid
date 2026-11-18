@@ -16,12 +16,14 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.TextView;
-import c8.ic;
-import c8.mc;
+import c8.i9;
+import c8.lc;
+import c8.pc;
+import hi.w4;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class z0 extends TextView implements u0.k {
     public final h2.c a;
@@ -29,7 +31,7 @@ public class z0 extends TextView implements u0.k {
     public final y c;
     public t d;
     public boolean e;
-    public gc.b f;
+    public w4 f;
     public Future h;
 
     public z0(Context context, AttributeSet attributeSet) {
@@ -115,7 +117,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mc.d(super.getCustomSelectionActionModeCallback());
+        return pc.d(super.getCustomSelectionActionModeCallback());
     }
 
     @Override // android.widget.TextView
@@ -134,7 +136,7 @@ public class z0 extends TextView implements u0.k {
             if (i7 >= 28) {
                 this.f = new y0(this);
             } else if (i7 >= 26) {
-                this.f = new gc.b(this, 16);
+                this.f = new w4(this, 11);
             }
         }
         return this.f;
@@ -176,7 +178,7 @@ public class z0 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                mc.a(this);
+                pc.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -195,7 +197,7 @@ public class z0 extends TextView implements u0.k {
     }
 
     public p0.c getTextMetricsParamsCompat() {
-        return mc.a(this);
+        return pc.a(this);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -203,7 +205,7 @@ public class z0 extends TextView implements u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        c8.n1.a(editorInfo, onCreateInputConnection, this);
+        i9.a(editorInfo, onCreateInputConnection, this);
         return onCreateInputConnection;
     }
 
@@ -229,7 +231,7 @@ public class z0 extends TextView implements u0.k {
                 if (Build.VERSION.SDK_INT >= 29) {
                     throw null;
                 }
-                mc.a(this);
+                pc.a(this);
                 throw null;
             } catch (InterruptedException | ExecutionException unused) {
             }
@@ -348,7 +350,7 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(mc.e(callback, this));
+        super.setCustomSelectionActionModeCallback(pc.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -357,24 +359,24 @@ public class z0 extends TextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((ic) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((lc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     @Override // android.widget.TextView
     public void setFirstBaselineToTopHeight(int i7) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().d0(i7);
+            getSuperCaller().A1(i7);
         } else {
-            mc.b(this, i7);
+            pc.b(this, i7);
         }
     }
 
     @Override // android.widget.TextView
     public void setLastBaselineToBottomHeight(int i7) {
         if (Build.VERSION.SDK_INT >= 28) {
-            getSuperCaller().C(i7);
+            getSuperCaller().R0(i7);
         } else {
-            mc.c(this, i7);
+            pc.c(this, i7);
         }
     }
 
@@ -392,7 +394,7 @@ public class z0 extends TextView implements u0.k {
         if (Build.VERSION.SDK_INT >= 29) {
             throw null;
         }
-        mc.a(this);
+        pc.a(this);
         throw null;
     }
 
@@ -503,7 +505,7 @@ public class z0 extends TextView implements u0.k {
             typeface2 = null;
         } else {
             Context context = getContext();
-            c8.k0 k0Var = i0.f.a;
+            c8.m0 m0Var = i0.e.a;
             if (context == null) {
                 throw new IllegalArgumentException("Context cannot be null");
             }
@@ -543,7 +545,7 @@ public class z0 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelativeWithIntrinsicBounds(int i7, int i10, int i11, int i12) {
         Context context = getContext();
-        setCompoundDrawablesRelativeWithIntrinsicBounds(i7 != 0 ? b5.a.b(context, i7) : null, i10 != 0 ? b5.a.b(context, i10) : null, i11 != 0 ? b5.a.b(context, i11) : null, i12 != 0 ? b5.a.b(context, i12) : null);
+        setCompoundDrawablesRelativeWithIntrinsicBounds(i7 != 0 ? c8.z.b(context, i7) : null, i10 != 0 ? c8.z.b(context, i10) : null, i11 != 0 ? c8.z.b(context, i11) : null, i12 != 0 ? c8.z.b(context, i12) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();
@@ -553,7 +555,7 @@ public class z0 extends TextView implements u0.k {
     @Override // android.widget.TextView
     public final void setCompoundDrawablesWithIntrinsicBounds(int i7, int i10, int i11, int i12) {
         Context context = getContext();
-        setCompoundDrawablesWithIntrinsicBounds(i7 != 0 ? b5.a.b(context, i7) : null, i10 != 0 ? b5.a.b(context, i10) : null, i11 != 0 ? b5.a.b(context, i11) : null, i12 != 0 ? b5.a.b(context, i12) : null);
+        setCompoundDrawablesWithIntrinsicBounds(i7 != 0 ? c8.z.b(context, i7) : null, i10 != 0 ? c8.z.b(context, i10) : null, i11 != 0 ? c8.z.b(context, i11) : null, i12 != 0 ? c8.z.b(context, i12) : null);
         w0 w0Var = this.b;
         if (w0Var != null) {
             w0Var.b();

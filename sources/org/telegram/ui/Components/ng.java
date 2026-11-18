@@ -1,39 +1,45 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ng {
-    public static final ng a;
-    public static final ng b;
-    public static final ng c;
-    public static final ng d;
-    public static final ng e;
-    public static final ng f;
-    public static final /* synthetic */ ng[] h;
+public final /* synthetic */ class ng implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pg b;
+    public final /* synthetic */ hi.m3 c;
 
-    static {
-        ng ngVar = new ng("VOICE", 0);
-        a = ngVar;
-        ng ngVar2 = new ng("VIDEO", 1);
-        b = ngVar2;
-        ng ngVar3 = new ng("STICKER", 2);
-        c = ngVar3;
-        ng ngVar4 = new ng("KEYBOARD", 3);
-        d = ngVar4;
-        ng ngVar5 = new ng("SMILE", 4);
-        e = ngVar5;
-        ng ngVar6 = new ng("GIF", 5);
-        f = ngVar6;
-        h = new ng[]{ngVar, ngVar2, ngVar3, ngVar4, ngVar5, ngVar6};
+    public /* synthetic */ ng(pg pgVar, hi.m3 m3Var, int i7) {
+        this.a = i7;
+        this.b = pgVar;
+        this.c = m3Var;
     }
 
-    public static ng valueOf(String str) {
-        return (ng) Enum.valueOf(ng.class, str);
-    }
-
-    public static ng[] values() {
-        return (ng[]) h.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                pg pgVar = this.b;
+                hi.m3 m3Var = this.c;
+                pgVar.removeView(m3Var);
+                if (pgVar.b == m3Var) {
+                    pgVar.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                this.b.removeView(this.c);
+                break;
+            case 2:
+                this.b.removeView(this.c);
+                break;
+            default:
+                pg pgVar2 = this.b;
+                hi.m3 m3Var2 = this.c;
+                pgVar2.removeView(m3Var2);
+                if (pgVar2.a == m3Var2) {
+                    pgVar2.a = null;
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,6 +1,6 @@
 package j2;
 
-import a8.ja;
+import a8.la;
 import a8.p0;
 import android.net.Uri;
 import e2.m0;
@@ -8,7 +8,7 @@ import j$.util.DesugarCollections;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m {
     public static final /* synthetic */ int i = 0;
@@ -26,9 +26,9 @@ public final class m {
     }
 
     public m(Uri uri, int i7, byte[] bArr, Map map, long j3, long j10, String str, int i10) {
-        ja.f(j3 >= 0);
-        ja.f(j3 >= 0);
-        ja.f(j10 > 0 || j10 == -1);
+        la.f(j3 >= 0);
+        la.f(j3 >= 0);
+        la.f(j10 > 0 || j10 == -1);
         uri.getClass();
         this.a = uri;
         this.b = i7;

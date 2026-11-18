@@ -1,106 +1,81 @@
 package fi;
 
-import c8.fa;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.kj;
-import org.telegram.messenger.np;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.ea0;
-import org.telegram.ui.Components.ka0;
-import org.telegram.ui.Components.y90;
-import org.telegram.ui.an;
-import org.telegram.ui.qm;
-import org.telegram.ui.tk;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class d2 extends fa {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class d2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ z3 c;
 
-    public /* synthetic */ d2(Object obj, int i7) {
+    public /* synthetic */ d2(z3 z3Var, boolean z10, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.c = z3Var;
+        this.b = z10;
     }
 
-    @Override // c8.fa
-    public final void a(boolean z10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        float hideInterfaceAlpha;
         switch (this.a) {
             case 0:
-                b4 b4Var = (b4) this.b;
-                u3 u3Var = b4Var.A1;
-                boolean x10 = b4Var.u0.a0.x();
-                i9 i9Var = ((z8) u3Var).d;
-                i9Var.j1 = x10;
-                i9Var.V();
-                break;
-            case 1:
-                an anVar = (an) this.b;
-                anVar.J9 = !z10;
-                if (z10) {
-                    if (anVar.u9 != null) {
-                        an.e2(anVar, 0.0f);
-                        anVar.u9 = null;
-                    }
-                    anVar.v9 = false;
-                    anVar.B9 = false;
-                    tk tkVar = anVar.D9;
-                    if (tkVar != null) {
-                        org.telegram.messenger.g0.r(tkVar.I);
-                        tkVar.a();
-                    }
+                if (!this.b) {
+                    z3 z3Var = this.c;
+                    z3Var.b3.setVisibility(8);
+                    z3Var.b3.n();
+                    break;
                 }
-                anVar.dd();
                 break;
             default:
-                ea0 ea0Var = (ea0) this.b;
-                y90 y90Var = ea0Var.e;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = ea0Var.s;
-                ka0 ka0Var = ea0Var.d0;
-                if (ka0Var.s) {
-                    if (!z10 && actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b > 0.0f) {
-                        actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().b(true);
-                        break;
-                    } else if (z10) {
-                        if (y90Var.v - y90Var.u <= np.s1(ka0Var.x).p4) {
-                            org.telegram.ui.Cells.p9 p9Var = y90Var.W;
-                            gj c10 = ea0Var.c(p9Var != null ? ((org.telegram.ui.Cells.q1) p9Var).getMessageObject() : null);
-                            kj kjVar = ka0Var.d;
-                            if (kjVar.d == null) {
-                                int i7 = y90Var.u;
-                                kjVar.e = i7;
-                                int i10 = y90Var.v;
-                                kjVar.f = i10;
-                                kjVar.d = qm.b(i7, i10, c10);
-                                actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(ea0Var.J);
-                                break;
-                            }
-                        } else {
-                            ea0Var.g();
-                            break;
-                        }
-                    }
+                z3 z3Var2 = this.c;
+                k8 k8Var = z3Var2.m0;
+                bi.p2 p2Var = z3Var2.i0;
+                ImageView imageView = z3Var2.h0;
+                ImageView imageView2 = z3Var2.g0;
+                v3 v3Var = z3Var2.Y0;
+                z3Var2.O3 = this.b ? 1.0f : 0.0f;
+                v3Var.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * z3Var2.O3);
+                v3Var.setAlpha(1.0f - z3Var2.O3);
+                imageView2.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * z3Var2.O3);
+                imageView2.setAlpha(1.0f - z3Var2.O3);
+                imageView.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * z3Var2.O3);
+                imageView.setAlpha(1.0f - z3Var2.O3);
+                p2Var.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * z3Var2.O3);
+                p2Var.setAlpha((1.0f - z3Var2.O3) * z3Var2.O2);
+                t2 t2Var = z3Var2.G1;
+                if (t2Var != null) {
+                    t2Var.setTranslationY(org.telegram.messenger.g0.L(8.0f) * z3Var2.O3);
+                    z3Var2.G1.setAlpha(1.0f - z3Var2.O3);
                 }
-                break;
-        }
-    }
-
-    @Override // c8.fa
-    public void b() {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        switch (this.a) {
-            case 1:
-                an anVar = (an) this.b;
-                kVar = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
-                if (kVar != null) {
-                    kVar2 = ((org.telegram.ui.ActionBar.e2) anVar).actionBar;
-                    if (kVar2.x()) {
-                        anVar.O7(false);
-                    }
+                if (k8Var != null) {
+                    k8Var.setTranslationY((-org.telegram.messenger.g0.L(8.0f)) * z3Var2.O3);
+                    k8Var.setAlpha(1.0f - z3Var2.O3);
                 }
-                anVar.h8();
-                anVar.N3.j(58, 0L, null);
+                z3Var2.u0.setAlpha(1.0f - z3Var2.O3);
+                s3 s3Var = z3Var2.A1;
+                float f10 = s3Var != null ? ((w8) s3Var).d.W : 0.0f;
+                hideInterfaceAlpha = z3Var2.getHideInterfaceAlpha();
+                t2 t2Var2 = z3Var2.n0;
+                if (t2Var2 != null) {
+                    t2Var2.setAlpha((1.0f - z3Var2.O3) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                ImageView imageView3 = z3Var2.x0;
+                if (imageView3 != null) {
+                    imageView3.setAlpha((1.0f - z3Var2.O3) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                t2 t2Var3 = z3Var2.z0;
+                if (t2Var3 != null) {
+                    t2Var3.setAlpha((1.0f - z3Var2.O3) * (1.0f - f10) * hideInterfaceAlpha);
+                }
+                i2 i2Var = z3Var2.L1;
+                if (i2Var != null) {
+                    i2Var.setAlpha(1.0f - z3Var2.O3);
+                    z3Var2.invalidate();
+                }
+                z3Var2.M0.invalidate();
                 break;
         }
     }

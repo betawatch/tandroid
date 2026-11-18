@@ -1,81 +1,84 @@
 package di;
 
 import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.u41;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ib extends FrameLayout implements is {
-    public final u41 a;
-    public final org.telegram.ui.ActionBar.e6 b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public final long f;
-    public final hb h;
+public final class ib extends LinearLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.i6 b;
+    public final org.telegram.ui.Components.q9 c;
+    public final org.telegram.ui.ActionBar.n5 d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final TextView n;
+    public boolean r;
+    public boolean s;
 
-    public ib(Context context, boolean z10, long j3, int i7, int i10, int i11, org.telegram.ui.ActionBar.e6 e6Var) {
+    public ib(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
-        this.d = i7;
-        this.e = z10;
-        this.c = i10;
-        this.f = j3;
-        this.b = e6Var;
-        this.h = new hb(i10, i7, j3, z10);
-        u41 u41Var = new u41(context, i10, i11, true, new bi.b(this, 23), new z6(this, 1), null, e6Var);
-        this.a = u41Var;
-        addView(u41Var, c8.ja.c(-1.0f, -1));
-        u41Var.setOnScrollListener(new bi.z4(this, 10));
+        this.a = i7;
+        this.b = i6Var;
+        setOrientation(0);
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+        this.c = q9Var;
+        q9Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
+        addView(q9Var, c8.ma.q(46, 46, 0.0f, 19, 13, 0, 13, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ma.q(-1, -2, 1.0f, 16, 0, 0, 0, 0));
+        org.telegram.ui.ActionBar.n5 n5Var = new org.telegram.ui.ActionBar.n5(context);
+        this.d = n5Var;
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.X(n5Var, i10, i6Var);
+        n5Var.setTextSize(16);
+        n5Var.setTypeface(org.telegram.messenger.g0.o());
+        ks.i(n5Var);
+        linearLayout.addView(n5Var, c8.ma.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
+        TextView textView = new TextView(context);
+        this.e = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, i10, i6Var);
+        textView.setTextSize(1, 13.0f);
+        textView.setVisibility(8);
+        TextView f10 = n10.f(linearLayout, textView, c8.ma.k(0.0f, 0.0f, 0.0f, 1.0f, -1, -2), context);
+        this.f = f10;
+        int i11 = org.telegram.ui.ActionBar.n6.z6;
+        org.telegram.ui.ActionBar.u6.U(f10, i11, i6Var);
+        f10.setTextSize(1, 14.0f);
+        linearLayout.addView(f10, c8.ma.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
+        LinearLayout linearLayout2 = new LinearLayout(context);
+        linearLayout2.setOrientation(1);
+        addView(linearLayout2, c8.ma.q(-2, -2, 0.0f, 16, 0, 0, 18, 0));
+        TextView textView2 = new TextView(context);
+        this.h = textView2;
+        org.telegram.messenger.f3.l(textView2, i10, i6Var, 1, 16.0f);
+        textView2.setGravity(5);
+        TextView f11 = n10.f(linearLayout2, textView2, c8.ma.t(-1, -2, 5, 0, 0, 0, 1), context);
+        this.n = f11;
+        org.telegram.ui.ActionBar.u6.U(f11, i11, i6Var);
+        f11.setTextSize(1, 13.0f);
+        f11.setGravity(5);
+        linearLayout2.addView(f11, c8.ma.t(-1, -2, 5, 0, 0, 0, 0));
     }
 
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ns.z3;
-        u41 u41Var = this.a;
-        if (i7 != i11) {
-            if (i7 == ns.D3 && ((Long) objArr[0]).longValue() == this.f) {
-                u41Var.g3.O(true);
-                return;
-            }
-            return;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.s) {
+            canvas.drawRect(org.telegram.messenger.g0.L(72.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.k0);
         }
-        u41Var.g3.O(true);
-        if (u41Var.canScrollVertically(1)) {
-            for (int i12 = 0; i12 < u41Var.getChildCount(); i12++) {
-                if (!(u41Var.getChildAt(i12) instanceof pz)) {
-                }
-            }
-            return;
-        }
-        this.h.run();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        long j3 = this.f;
-        int i7 = this.c;
-        if (j3 != 0) {
-            ns.f(i7).c(this, ns.D3);
-        } else {
-            ns.f(i7).c(this, ns.z3);
-        }
-        this.a.g3.O(false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        long j3 = this.f;
-        int i7 = this.c;
-        if (j3 != 0) {
-            ns.f(i7).n(this, ns.D3);
-        } else {
-            ns.f(i7).n(this, ns.z3);
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.r ? 68.0f : 58.0f), TLObject.FLAG_30));
     }
 }

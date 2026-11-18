@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends r6.a {
     public static final android.support.v4.media.session.a0 e;
@@ -29,34 +29,34 @@ public final class l extends r6.a {
 
     static {
         android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(24);
-        a0Var.y(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
-        a0Var.y(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
-        a0Var.y(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.TITLE", "title");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
-        a0Var.y(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
-        a0Var.y(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
-        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
-        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
-        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
-        a0Var.y(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
-        a0Var.y(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
-        a0Var.y(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
+        a0Var.z(4, "com.google.android.gms.cast.metadata.CREATION_DATE", "creationDateTime");
+        a0Var.z(4, "com.google.android.gms.cast.metadata.RELEASE_DATE", "releaseDate");
+        a0Var.z(4, "com.google.android.gms.cast.metadata.BROADCAST_DATE", "originalAirdate");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.TITLE", "title");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.SUBTITLE", "subtitle");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.ARTIST", "artist");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.ALBUM_ARTIST", "albumArtist");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.ALBUM_TITLE", "albumName");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.COMPOSER", "composer");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.DISC_NUMBER", "discNumber");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.TRACK_NUMBER", "trackNumber");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.SEASON_NUMBER", "season");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.EPISODE_NUMBER", "episode");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.SERIES_TITLE", "seriesTitle");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.STUDIO", "studio");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.WIDTH", "width");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.HEIGHT", "height");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.LOCATION_NAME", "location");
+        a0Var.z(3, "com.google.android.gms.cast.metadata.LOCATION_LATITUDE", "latitude");
+        a0Var.z(3, "com.google.android.gms.cast.metadata.LOCATION_LONGITUDE", "longitude");
+        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_DURATION", "sectionDuration");
+        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_MEDIA", "sectionStartTimeInMedia");
+        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_ABSOLUTE_TIME", "sectionStartAbsoluteTime");
+        a0Var.z(5, "com.google.android.gms.cast.metadata.SECTION_START_TIME_IN_CONTAINER", "sectionStartTimeInContainer");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.QUEUE_ITEM_ID", "queueItemId");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.BOOK_TITLE", "bookTitle");
+        a0Var.z(2, "com.google.android.gms.cast.metadata.CHAPTER_NUMBER", "chapterNumber");
+        a0Var.z(1, "com.google.android.gms.cast.metadata.CHAPTER_TITLE", "chapterTitle");
         e = a0Var;
     }
 
@@ -312,13 +312,13 @@ public final class l extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.p(parcel, 2, this.a);
-        yb.b(parcel, 3, this.b);
+        int r10 = bc.r(parcel, 20293);
+        bc.p(parcel, 2, this.a);
+        bc.b(parcel, 3, this.b);
         int i10 = this.c;
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(i10);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 
     public l(int i7) {

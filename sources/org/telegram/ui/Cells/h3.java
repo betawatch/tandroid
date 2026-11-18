@@ -7,19 +7,19 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ft;
-import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
     public boolean E;
     public boolean a;
     public final f3 b;
-    public final org.telegram.ui.ActionBar.e6 c;
+    public final org.telegram.ui.ActionBar.i6 c;
     public final int d;
     public boolean e;
     public int f;
@@ -27,31 +27,31 @@ public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBa
     public boolean n;
     public boolean r;
     public boolean s;
-    public final org.telegram.ui.Components.x4 w;
+    public final org.telegram.ui.Components.f5 w;
     public int x;
-    public final org.telegram.ui.Components.g6 y;
+    public final org.telegram.ui.Components.m6 y;
 
-    public h3(Context context, st0 st0Var, String str, boolean z10, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
+    public h3(Context context, au0 au0Var, String str, boolean z10, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.f = -1;
         this.r = true;
-        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(false, true, true);
-        this.y = g6Var;
-        g6Var.n(0.2f, 160L, er.h);
-        g6Var.w(org.telegram.messenger.g0.L(15.33f));
-        g6Var.b = 5;
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, true, true);
+        this.y = m6Var;
+        m6Var.n(0.2f, 160L, lr.h);
+        m6Var.w(org.telegram.messenger.g0.L(15.33f));
+        m6Var.b = 5;
         this.d = i7;
-        f3 f3Var = new f3(this, context, st0Var, e6Var, z10);
+        f3 f3Var = new f3(this, context, au0Var, i6Var, z10);
         this.b = f3Var;
-        ft editText = f3Var.getEditText();
+        mt editText = f3Var.getEditText();
         editText.setDelegate(new k8.a(14, this, editText));
         f3Var.setWillNotDraw(false);
-        this.w = new org.telegram.ui.Components.x4(f3Var);
-        g6Var.setCallback(f3Var);
+        this.w = new org.telegram.ui.Components.f5(f3Var);
+        m6Var.setCallback(f3Var);
         editText.setTextSize(1, 17.0f);
-        org.telegram.ui.ActionBar.q6.D(editText, org.telegram.ui.ActionBar.j6.H6, e6Var);
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.q6.U(editText, i10, e6Var);
+        org.telegram.ui.ActionBar.u6.D(editText, org.telegram.ui.ActionBar.n6.H6, i6Var);
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.U(editText, i10, i6Var);
         editText.setBackground(null);
         if (z10) {
             editText.setMaxLines(5);
@@ -61,22 +61,22 @@ public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBa
             editText.setSingleLine(true);
         }
         editText.setPadding(editText.getPaddingLeft(), editText.getPaddingTop(), org.telegram.messenger.g0.L(0.0f), editText.getPaddingBottom());
-        editText.setGravity((hd.a0 ? 5 : 3) | 48);
+        editText.setGravity((gd.a0 ? 5 : 3) | 48);
         editText.setInputType((z10 ? 131072 : 0) | 573441);
         editText.setRawInputType(573441);
         editText.setHint(str);
-        org.telegram.ui.ActionBar.q6.l(editText, 30, i10, e6Var);
-        this.c = e6Var;
+        org.telegram.ui.ActionBar.u6.l(editText, 30, i10, i6Var);
+        this.c = i6Var;
         editText.setCursorSize(org.telegram.messenger.g0.L(19.0f));
         editText.setCursorWidth(1.5f);
         editText.addTextChangedListener(new g3(this, i7, editText, z10));
         editText.setOnFocusChangeListener(new hi.u6(this, 2));
-        addView(f3Var, c8.ja.e(-1, -1, 48));
+        addView(f3Var, c8.ma.e(-1, -1, 48));
         c();
     }
 
     public int a() {
-        return org.telegram.ui.Components.g5.f();
+        return org.telegram.ui.Components.o5.f();
     }
 
     public final void c() {
@@ -101,7 +101,7 @@ public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBa
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.E) {
-            canvas.drawLine(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+            canvas.drawLine(gd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (gd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
         }
     }
 
@@ -143,13 +143,13 @@ public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBa
         this.a = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         f3 f3Var = this.b;
         if (f3Var != null) {
             try {
                 if (f3Var.getEditText() != null) {
-                    f3Var.getEditText().setCursorColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.G6, this.c));
+                    f3Var.getEditText().setCursorColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, this.c));
                 }
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
@@ -157,7 +157,7 @@ public abstract class h3 extends FrameLayout implements org.telegram.ui.ActionBa
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

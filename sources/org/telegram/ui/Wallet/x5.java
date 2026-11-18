@@ -1,157 +1,33 @@
 package org.telegram.ui.Wallet;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.er;
+import android.graphics.drawable.ShapeDrawable;
+import org.telegram.ui.Components.cs;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class x5 extends Drawable {
-    public final /* synthetic */ int a;
-    public final Path b;
-    public final Paint c;
-    public final Object d;
-    public final Object e;
+public final class x5 extends cs {
+    public final ShapeDrawable H;
+    public final /* synthetic */ n6 I;
 
-    public x5(org.telegram.ui.l0 l0Var) {
-        this.a = 1;
-        this.e = l0Var;
-        this.b = new Path();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        this.d = new org.telegram.ui.Components.u5(new org.telegram.ui.ActionBar.r0(this, 28), 350L, er.h, 0);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x5(n6 n6Var, Context context) {
+        super(context);
+        this.I = n6Var;
+        this.H = org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(22.0f), n6Var.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
     }
 
-    public void c() {
-        invalidateSelf();
-        ((org.telegram.ui.l0) this.e).P.setContentDescription(hd.M0(2131750587, null));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                canvas.drawPath(this.b, this.c);
-                break;
-            default:
-                float d = ((org.telegram.ui.Components.u5) this.d).d(true);
-                float centerX = getBounds().centerX();
-                float centerY = getBounds().centerY();
-                float width = getBounds().width();
-                float f10 = 0.57f * width;
-                Path path = this.b;
-                path.rewind();
-                float f11 = f10 / 2.0f;
-                path.moveTo(centerX - org.telegram.messenger.g0.T1(f11, (-f10) / 2.0f, d), centerY);
-                float f12 = f11 + centerX;
-                path.lineTo(f12, centerY);
-                float f13 = f12 - (0.27f * width);
-                float f14 = (0.54f * width) / 2.0f;
-                path.moveTo(f13, centerY - f14);
-                path.lineTo(f12, centerY);
-                path.lineTo(f13, f14 + centerY);
-                canvas.save();
-                float L = org.telegram.messenger.g0.L(2.0f);
-                Paint paint = this.c;
-                paint.setStrokeWidth(L);
-                canvas.translate(0.0f, (-width) * 0.1f * d);
-                canvas.rotate(d * 90.0f, centerX, centerY);
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                break;
+    @Override // org.telegram.ui.Components.cs, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int ceil = (int) Math.ceil(getMetadata().g.a);
+        if (ceil > 0) {
+            ShapeDrawable shapeDrawable = this.H;
+            shapeDrawable.getPaint().setColor(this.I.getThemedColor(org.telegram.ui.ActionBar.n6.d6));
+            shapeDrawable.setBounds(0, 0, getWidth(), ceil);
+            shapeDrawable.setAlpha((int) (getMetadata().c.a * 255.0f));
+            shapeDrawable.draw(canvas);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 1:
-                return org.telegram.messenger.g0.L(24.0f);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 1:
-                return org.telegram.messenger.g0.L(24.0f);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-            case 0:
-                return -3;
-            default:
-                return -2;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void onBoundsChange(Rect rect) {
-        switch (this.a) {
-            case 0:
-                super.onBoundsChange(rect);
-                RectF rectF = (RectF) this.d;
-                rectF.set(rect);
-                Path path = this.b;
-                path.reset();
-                path.addRoundRect(rectF, (float[]) this.e, Path.Direction.CW);
-                this.c.setShader(new LinearGradient(0.0f, rect.top, 0.0f, rect.bottom, new int[]{-16216082, -12207881}, new float[]{0.15f, 0.53f}, Shader.TileMode.CLAMP));
-                break;
-            default:
-                super.onBoundsChange(rect);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        switch (this.a) {
-            case 0:
-                this.c.setAlpha(i7);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                this.c.setColorFilter(colorFilter);
-                invalidateSelf();
-                break;
-        }
-    }
-
-    public x5() {
-        this.a = 0;
-        this.c = new Paint(1);
-        this.b = new Path();
-        this.d = new RectF();
-        this.e = new float[]{org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), 0.0f, 0.0f, 0.0f, 0.0f};
-    }
-
-    private final void a(int i7) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+        super.dispatchDraw(canvas);
     }
 }

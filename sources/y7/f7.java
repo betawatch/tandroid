@@ -8,9 +8,9 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class f7 implements oa.a, zi.y0 {
+public final class f7 implements oa.a, zi.x0 {
     public Object a;
     public Object b;
     public Object c;
@@ -29,8 +29,20 @@ public final class f7 implements oa.a, zi.y0 {
         }
     }
 
-    @Override // zi.y0
-    public void a(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
+    @Override // zi.x0
+    public void A(MediaFormat mediaFormat) {
+        this.c = mediaFormat;
+    }
+
+    @Override // oa.a
+    public /* bridge */ /* synthetic */ oa.a b(Class cls, na.d dVar) {
+        ((HashMap) this.a).put(cls, dVar);
+        ((HashMap) this.b).remove(cls);
+        return this;
+    }
+
+    @Override // zi.x0
+    public void q(ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(bufferInfo.size);
         byteBuffer.position(bufferInfo.offset);
         byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
@@ -41,20 +53,8 @@ public final class f7 implements oa.a, zi.y0 {
         ((ArrayList) this.b).add(bufferInfo2);
     }
 
-    @Override // oa.a
-    public /* bridge */ /* synthetic */ oa.a b(Class cls, na.d dVar) {
-        ((HashMap) this.a).put(cls, dVar);
-        ((HashMap) this.b).remove(cls);
-        return this;
-    }
-
-    @Override // zi.y0
-    public void o(MediaFormat mediaFormat) {
-        this.c = mediaFormat;
-    }
-
-    public f7(zi.q0 q0Var, Range range, xa xaVar) {
-        this.a = q0Var;
+    public f7(zi.p0 p0Var, Range range, xa xaVar) {
+        this.a = p0Var;
         this.b = range;
         this.c = xaVar;
     }

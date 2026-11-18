@@ -1,6 +1,6 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class cb implements l5.e {
     public static cb b;
@@ -124,9 +124,9 @@ public final class cb implements l5.e {
         aVar.b(i8.class, m4.a);
         aVar.b(h8.class, l4.a);
         aVar.b(s0.class, s1.a);
-        aVar.b(androidx.fragment.app.e0.class, i6.a);
+        aVar.b(w9.class, i6.a);
         aVar.b(x9.class, k6.a);
-        aVar.b(w9.class, j6.a);
+        aVar.b(androidx.fragment.app.e0.class, j6.a);
         aVar.b(p6.class, t2.a);
         aVar.b(e7.class, k3.a);
         aVar.b(d7.class, j3.a);

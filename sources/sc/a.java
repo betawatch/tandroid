@@ -1,26 +1,27 @@
 package sc;
 
 import android.os.AsyncTask;
-import c8.pd;
-import f5.g;
+import c8.sd;
+import ee.t;
 import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.ef0;
+import org.telegram.ui.Cells.b5;
 import org.telegram.ui.f;
-import org.telegram.ui.kl0;
-import org.telegram.ui.ld0;
+import org.telegram.ui.hf0;
+import org.telegram.ui.md0;
+import org.telegram.ui.ml0;
+import tc.g;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends AsyncTask {
     public final /* synthetic */ String a;
     public final /* synthetic */ uc.a b;
     public final /* synthetic */ f c;
-    public final /* synthetic */ cf d;
+    public final /* synthetic */ b5 d;
 
-    public a(cf cfVar, String str, uc.a aVar, f fVar) {
-        this.d = cfVar;
+    public a(b5 b5Var, String str, uc.a aVar, f fVar) {
+        this.d = b5Var;
         this.a = str;
         this.b = aVar;
         this.c = fVar;
@@ -28,13 +29,13 @@ public final class a extends AsyncTask {
 
     @Override // android.os.AsyncTask
     public final Object doInBackground(Object[] objArr) {
-        cf cfVar = this.d;
+        b5 b5Var = this.d;
         try {
-            ld0 c10 = vc.b.c(pd.a(this.b), new g(this.a, 3));
-            Object obj = cfVar.a;
+            md0 c10 = vc.b.c(sd.a(this.b), new t(this.a, 2));
+            Object obj = b5Var.a;
             return new b(c10, null);
-        } catch (tc.g e10) {
-            Object obj2 = cfVar.a;
+        } catch (g e10) {
+            Object obj2 = b5Var.a;
             return new b(null, e10);
         }
     }
@@ -43,15 +44,15 @@ public final class a extends AsyncTask {
     public final void onPostExecute(Object obj) {
         b bVar = (b) obj;
         Object obj2 = this.d.a;
-        ld0 ld0Var = bVar.a;
+        md0 md0Var = bVar.a;
         f fVar = this.c;
-        if (ld0Var != null) {
-            kl0 kl0Var = (kl0) fVar.b;
-            if (kl0Var.R0) {
+        if (md0Var != null) {
+            ml0 ml0Var = (ml0) fVar.b;
+            if (ml0Var.R0) {
                 return;
             }
-            kl0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) ld0Var.b, (String) ld0Var.d);
-            g0.h3(new ef0(fVar, 11));
+            ml0Var.x0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) md0Var.b, (String) md0Var.d);
+            g0.g3(new hf0(fVar, 11));
             return;
         }
         Exception exc = bVar.b;

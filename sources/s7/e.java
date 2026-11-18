@@ -3,11 +3,11 @@ package s7;
 import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 import q4.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends r6.a {
     public static final Parcelable.Creator<e> CREATOR = new x(16);
@@ -26,7 +26,7 @@ public final class e extends r6.a {
     public final boolean equals(Object obj) {
         if (obj instanceof e) {
             e eVar = (e) obj;
-            if (q6.m.k(this.b, eVar.b) && q6.m.k(Boolean.valueOf(this.c), Boolean.valueOf(eVar.c)) && q6.m.k(this.d, eVar.d) && Arrays.equals(this.a, eVar.a)) {
+            if (q6.m.l(this.b, eVar.b) && q6.m.l(Boolean.valueOf(this.c), Boolean.valueOf(eVar.c)) && q6.m.l(this.d, eVar.d) && Arrays.equals(this.a, eVar.a)) {
                 return true;
             }
         }
@@ -39,12 +39,12 @@ public final class e extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.o(parcel, 1, this.a, i7);
-        yb.l(parcel, 2, this.b);
-        yb.q(parcel, 3, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.o(parcel, 1, this.a, i7);
+        bc.l(parcel, 2, this.b);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        yb.k(parcel, 4, this.d, i7);
-        yb.s(parcel, r10);
+        bc.k(parcel, 4, this.d, i7);
+        bc.s(parcel, r10);
     }
 }

@@ -3,7 +3,7 @@ package h9;
 import java.util.Collection;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n0 extends d0 {
     public final j0 b;
@@ -12,7 +12,7 @@ public final class n0 extends d0 {
         this.b = j0Var;
     }
 
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
         if (obj instanceof Map.Entry) {
             Map.Entry entry = (Map.Entry) obj;
@@ -28,7 +28,7 @@ public final class n0 extends d0 {
 
     @Override // h9.d0
     /* renamed from: n */
-    public final g2 iterator() {
+    public final h2 iterator() {
         j0 j0Var = this.b;
         j0Var.getClass();
         return new m0(j0Var);

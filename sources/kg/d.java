@@ -1,11 +1,11 @@
 package kg;
 
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -27,10 +27,10 @@ public final /* synthetic */ class d implements Runnable {
             case 1:
                 TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
                 int i10 = eVar.a;
-                disablepeerconnectedbot.peer = np.s1(i10).j1(eVar.s);
+                disablepeerconnectedbot.peer = mp.u1(i10).l1(eVar.s);
                 ConnectionsManager.getInstance(i10).sendRequest(disablepeerconnectedbot, null);
-                np.s1(i10).e7.edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
-                ns.f(i10).k(79, Long.valueOf(eVar.s));
+                mp.u1(i10).g7.edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
+                ks.f(i10).k(79, Long.valueOf(eVar.s));
                 f.a(i10).f = false;
                 break;
             default:

@@ -7,11 +7,11 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
-import c8.hc;
+import c8.kc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class c extends hc {
+public final class c extends kc {
     public final RenderNode a = w.n();
     public final Paint b = new Paint(1);
     public final /* synthetic */ f c;
@@ -20,7 +20,7 @@ public final class c extends hc {
         this.c = fVar;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void a(Rect rect, RectF rectF) {
         f fVar = this.c;
         if (fVar.x || !this.a.hasDisplayList()) {
@@ -41,22 +41,22 @@ public final class c extends hc {
         }
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void b() {
         this.a.discardDisplayList();
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final boolean d() {
         return this.a.hasDisplayList();
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void e(float f10) {
         this.a.setAlpha(f10);
     }

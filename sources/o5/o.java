@@ -1,30 +1,46 @@
 package o5;
 
-import java.util.HashMap;
-import org.telegram.ui.ld0;
+import android.os.Process;
+import c8.gc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class o {
-    public static final ld0 a;
+public final class o implements Runnable {
+    public final /* synthetic */ int a;
+    public final Runnable b;
 
-    static {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap.put(o.class, e.a);
-        hashMap2.remove(o.class);
-        hashMap.put(r5.a.class, a.a);
-        hashMap2.remove(r5.a.class);
-        hashMap.put(r5.g.class, g.a);
-        hashMap2.remove(r5.g.class);
-        hashMap.put(r5.e.class, d.a);
-        hashMap2.remove(r5.e.class);
-        hashMap.put(r5.d.class, c.a);
-        hashMap2.remove(r5.d.class);
-        hashMap.put(r5.b.class, b.a);
-        hashMap2.remove(r5.b.class);
-        hashMap.put(r5.f.class, f.a);
-        hashMap2.remove(r5.f.class);
-        a = new ld0(new HashMap(hashMap), new HashMap(hashMap2), qa.f.a, 11);
+    public /* synthetic */ o(int i7, Runnable runnable) {
+        this.a = i7;
+        this.b = runnable;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                try {
+                    this.b.run();
+                    break;
+                } catch (Exception e10) {
+                    gc.b("Executor", "Background execution failure.", e10);
+                    return;
+                }
+            case 1:
+                this.b.run();
+                break;
+            default:
+                Process.setThreadPriority(0);
+                this.b.run();
+                break;
+        }
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                return this.b.toString();
+            default:
+                return super.toString();
+        }
     }
 }

@@ -9,9 +9,9 @@ import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
+public final class i2 extends View implements org.telegram.ui.ActionBar.c6 {
     public final /* synthetic */ int a = 1;
     public Object b;
     public Drawable c;
@@ -20,11 +20,11 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
         super(context);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
         switch (this.a) {
             case 0:
-                hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.Hl));
+                hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Hl));
                 break;
         }
     }
@@ -36,8 +36,8 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
                 float measuredWidth = getMeasuredWidth() / 2.0f;
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 canvas.drawCircle(measuredWidth, measuredHeight, getMeasuredWidth() / 2.0f, (Paint) this.b);
-                ia.f.d().f(-org.telegram.messenger.g0.L(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawCircle(measuredWidth, measuredHeight, (getMeasuredWidth() / 2.0f) - org.telegram.messenger.g0.L(2.0f), ia.f.d().e());
+                ia.e.d().f(-org.telegram.messenger.g0.L(10.0f), 0.0f, getMeasuredWidth(), getMeasuredHeight());
+                canvas.drawCircle(measuredWidth, measuredHeight, (getMeasuredWidth() / 2.0f) - org.telegram.messenger.g0.L(2.0f), ia.e.d().e());
                 float L = org.telegram.messenger.g0.L(18.0f) / 2.0f;
                 Drawable drawable = this.c;
                 drawable.setBounds((int) (measuredWidth - L), (int) (measuredHeight - L), (int) (measuredWidth + L), (int) (measuredHeight + L));
@@ -54,11 +54,11 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
         switch (this.a) {
             case 0:
                 setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(12.0f));
-                org.telegram.ui.Components.fq fqVar = (org.telegram.ui.Components.fq) this.c;
-                n50 n50Var = (n50) this.b;
-                int i11 = org.telegram.ui.ActionBar.j6.Hl;
-                ((g4) n50Var).getClass();
-                org.telegram.ui.ActionBar.j6.B1(fqVar, org.telegram.ui.ActionBar.j6.v0(i11), false);
+                org.telegram.ui.Components.mq mqVar = (org.telegram.ui.Components.mq) this.c;
+                p50 p50Var = (p50) this.b;
+                int i11 = org.telegram.ui.ActionBar.n6.Hl;
+                ((g4) p50Var).getClass();
+                org.telegram.ui.ActionBar.n6.B1(mqVar, org.telegram.ui.ActionBar.n6.v0(i11), false);
                 break;
             default:
                 super.onMeasure(i7, i10);
@@ -66,14 +66,14 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         switch (this.a) {
             case 0:
                 try {
-                    org.telegram.ui.Components.fq fqVar = (org.telegram.ui.Components.fq) this.c;
-                    if (fqVar != null && ((n50) this.b) != null) {
-                        org.telegram.ui.ActionBar.j6.B1(fqVar, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Hl, false), false);
+                    org.telegram.ui.Components.mq mqVar = (org.telegram.ui.Components.mq) this.c;
+                    if (mqVar != null && ((p50) this.b) != null) {
+                        org.telegram.ui.ActionBar.n6.B1(mqVar, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Hl, false), false);
                         invalidate();
                         break;
                     }
@@ -83,19 +83,19 @@ public final class i2 extends View implements org.telegram.ui.ActionBar.z5 {
                 }
                 break;
             default:
-                ((Paint) this.b).setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.h5, false));
+                ((Paint) this.b).setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.h5, false));
                 invalidate();
                 break;
         }
     }
 
-    public i2(Context context, n50 n50Var) {
+    public i2(Context context, p50 p50Var) {
         super(context);
-        this.b = n50Var;
-        org.telegram.ui.Components.fq fqVar = new org.telegram.ui.Components.fq(new ColorDrawable(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Hl, false)), org.telegram.ui.ActionBar.j6.X0(context, R.drawable.greydivider_bottom, -16777216));
-        this.c = fqVar;
-        fqVar.x = true;
-        setBackgroundDrawable(fqVar);
+        this.b = p50Var;
+        org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(new ColorDrawable(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Hl, false)), org.telegram.ui.ActionBar.n6.X0(context, R.drawable.greydivider_bottom, -16777216));
+        this.c = mqVar;
+        mqVar.x = true;
+        setBackgroundDrawable(mqVar);
         setImportantForAccessibility(2);
     }
 

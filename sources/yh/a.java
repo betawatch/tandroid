@@ -13,22 +13,22 @@ import android.os.SystemClock;
 import android.text.TextPaint;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
-import c8.ja;
+import c8.ma;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.be;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.ke0;
-import org.telegram.ui.Components.oi0;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.ke;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.ue0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a extends FrameLayout {
     public boolean E;
@@ -38,21 +38,21 @@ public final class a extends FrameLayout {
     public boolean I;
     public String J;
     public final TextPaint K;
-    public final e6 a;
-    public final be b;
+    public final i6 a;
+    public final ke b;
     public final i c;
     public final Paint d;
     public final Paint e;
     public final Paint f;
     public final TextPaint h;
-    public final g6 n;
-    public final ke0 r;
+    public final m6 n;
+    public final ue0 r;
     public LinearGradient s;
     public final Matrix w;
-    public final u5 x;
-    public final u5 y;
+    public final c6 x;
+    public final c6 y;
 
-    public a(Context context, e6 e6Var, be beVar) {
+    public a(Context context, i6 i6Var, ke keVar) {
         super(context);
         this.d = new Paint(1);
         this.e = new Paint(1);
@@ -60,37 +60,37 @@ public final class a extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.h = textPaint;
         this.w = new Matrix();
-        er erVar = er.h;
-        this.x = new u5(this, 0L, 420L, erVar);
-        this.y = new u5(this, 0L, 200L, erVar);
+        lr lrVar = lr.h;
+        this.x = new c6(this, 0L, 420L, lrVar);
+        this.y = new c6(this, 0L, 200L, lrVar);
         this.F = -1.0f;
         this.G = 1.0f;
         this.H = new RectF();
         this.J = "0:01";
         this.K = new TextPaint(1);
-        this.a = e6Var;
-        this.b = beVar;
+        this.a = i6Var;
+        this.b = keVar;
         setWillNotDraw(false);
         setClipChildren(false);
         setClipToPadding(false);
-        g6 g6Var = new g6(false, false, false);
-        this.n = g6Var;
-        g6Var.n(0.35f, 260L, erVar);
-        g6Var.setCallback(this);
-        g6Var.w(g0.L(14.0f));
-        g6Var.x(g0.o1("fonts/rmedium.ttf"));
-        g6Var.N = g0.q.x;
-        ke0 ke0Var = new ke0(10);
-        this.r = ke0Var;
-        ke0Var.f = this;
-        ke0Var.setCallback(this);
-        ke0Var.h = ns.j4;
+        m6 m6Var = new m6(false, false, false);
+        this.n = m6Var;
+        m6Var.n(0.35f, 260L, lrVar);
+        m6Var.setCallback(this);
+        m6Var.w(g0.L(14.0f));
+        m6Var.x(g0.o1("fonts/rmedium.ttf"));
+        m6Var.N = g0.q.x;
+        ue0 ue0Var = new ue0(10);
+        this.r = ue0Var;
+        ue0Var.f = this;
+        ue0Var.setCallback(this);
+        ue0Var.h = ks.j4;
         textPaint.setTextSize(g0.L(15.0f));
         i iVar = new i(12, context, this);
         this.c = iVar;
         iVar.setBackground(null);
         iVar.setPadding(0, 0, 0, 0);
-        iVar.setTextSize(1, gz.W0);
+        iVar.setTextSize(1, bz.W0);
         iVar.setMaxLines(6);
         iVar.setGravity(51);
         iVar.setImeOptions(TLObject.FLAG_28);
@@ -100,26 +100,26 @@ public final class a extends FrameLayout {
         iVar.setHint("Nothing recognised — type here");
         iVar.setVisibility(8);
         iVar.setAlpha(0.0f);
-        addView(iVar, ja.d(-1, -2.0f, 51, 10.0f, 40.0f, 6.0f, 11.0f));
-        int w02 = j6.w0(j6.Uf, e6Var);
-        int i7 = j6.Le;
-        iVar.setTextColor(j6.w0(i7, e6Var));
-        iVar.setHintTextColor(j6.w0(j6.Me, e6Var));
+        addView(iVar, ma.d(-1, -2.0f, 51, 10.0f, 40.0f, 6.0f, 11.0f));
+        int w02 = n6.w0(n6.Uf, i6Var);
+        int i7 = n6.Le;
+        iVar.setTextColor(n6.w0(i7, i6Var));
+        iVar.setHintTextColor(n6.w0(n6.Me, i6Var));
         iVar.setCursorColor(w02);
         iVar.setHandlesColor(w02);
-        iVar.setHighlightColor(j6.r1(0.25f, w02));
-        textPaint.setColor(j6.r1(0.5f, j6.w0(i7, e6Var)));
+        iVar.setHighlightColor(n6.r1(0.25f, w02));
+        textPaint.setColor(n6.r1(0.5f, n6.w0(i7, i6Var)));
         this.s = null;
         invalidate();
         setMinimumHeight(g0.L(44.0f));
     }
 
     public final float a() {
-        be beVar = this.b;
-        if (beVar != null) {
-            float O0 = beVar.b.O0(this);
-            if (!Float.isNaN(O0)) {
-                return O0;
+        ke keVar = this.b;
+        if (keVar != null) {
+            float W0 = keVar.b.W0(this);
+            if (!Float.isNaN(W0)) {
+                return W0;
             }
         }
         if (this.F <= 0.0f) {
@@ -148,13 +148,13 @@ public final class a extends FrameLayout {
     public final void dispatchDraw(Canvas canvas) {
         float f10;
         float f11;
-        oi0 oi0Var;
-        int i7 = j6.Uf;
-        e6 e6Var = this.a;
-        int w02 = j6.w0(i7, e6Var);
-        u5 u5Var = this.x;
-        u5Var.getClass();
-        float e10 = u5Var.e(false, 0.0f);
+        xi0 xi0Var;
+        int i7 = n6.Uf;
+        i6 i6Var = this.a;
+        int w02 = n6.w0(i7, i6Var);
+        c6 c6Var = this.x;
+        c6Var.getClass();
+        float e10 = c6Var.e(false, 0.0f);
         float a10 = a();
         float d = this.y.d(this.I);
         i iVar = this.c;
@@ -188,21 +188,21 @@ public final class a extends FrameLayout {
         } else {
             f11 = this.G;
         }
-        int r12 = j6.r1(0.12f * f11, w02);
+        int r12 = n6.r1(0.12f * f11, w02);
         Paint paint2 = this.d;
         paint2.setColor(r12);
         canvas.drawRoundRect(rectF, f13, f13, paint2);
         int L5 = g0.L(10.0f);
-        be beVar = this.b;
-        boolean z10 = (beVar == null || (oi0Var = beVar.b.i1) == null || !oi0Var.g()) ? false : true;
-        ke0 ke0Var = this.r;
-        ke0Var.a(z10, true);
-        ke0Var.a.setColor(w02);
-        ke0Var.g = (int) (f11 * 255.0f);
+        ke keVar = this.b;
+        boolean z10 = (keVar == null || (xi0Var = keVar.b.i1) == null || !xi0Var.g()) ? false : true;
+        ue0 ue0Var = this.r;
+        ue0Var.a(z10, true);
+        ue0Var.a.setColor(w02);
+        ue0Var.g = (int) (f11 * 255.0f);
         float f16 = L5 / 2.0f;
-        ke0Var.setBounds((int) (rectF.left + g0.L(10.0f)), (int) (T1 - f16), ((int) (rectF.left + g0.L(10.0f))) + L5, (int) (f16 + T1));
-        ke0Var.draw(canvas);
-        paint.setColor(j6.r1(f11, w02));
+        ue0Var.setBounds((int) (rectF.left + g0.L(10.0f)), (int) (T1 - f16), ((int) (rectF.left + g0.L(10.0f))) + L5, (int) (f16 + T1));
+        ue0Var.draw(canvas);
+        paint.setColor(n6.r1(f11, w02));
         canvas.drawText(this.J, rectF.left + g0.L(26.0f), T1 - ((paint.ascent() + paint.descent()) / 2.0f), paint);
         canvas.restore();
         float f17 = (1.0f - e10) * this.G;
@@ -212,12 +212,12 @@ public final class a extends FrameLayout {
             float f18 = (-g0.L(6.0f)) * e10;
             Paint paint3 = this.h;
             paint3.setAlpha((int) (127.5f * f17));
-            int i10 = j6.Le;
-            paint3.setColor(j6.r1(0.5f * f17, j6.w0(i10, e6Var)));
+            int i10 = n6.Le;
+            paint3.setColor(n6.r1(0.5f * f17, n6.w0(i10, i6Var)));
             canvas.drawText("Transcribing…", L6, g0.L(19.0f) + a10 + f18, paint3);
             float L7 = a10 + g0.L(28.0f) + f18;
-            int w03 = j6.w0(i10, e6Var);
-            int r13 = j6.r1(0.08f * f17, w03);
+            int w03 = n6.w0(i10, i6Var);
+            int r13 = n6.r1(0.08f * f17, w03);
             Paint paint4 = this.e;
             paint4.setColor(r13);
             RectF rectF2 = g0.P;
@@ -228,11 +228,11 @@ public final class a extends FrameLayout {
                 LinearGradient linearGradient = this.s;
                 Paint paint5 = this.f;
                 if (linearGradient == null) {
-                    LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, g0.L(90.0f), 0.0f, new int[]{0, j6.r1(0.14f, w03), 0}, (float[]) null, Shader.TileMode.CLAMP);
+                    LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, g0.L(90.0f), 0.0f, new int[]{0, n6.r1(0.14f, w03), 0}, (float[]) null, Shader.TileMode.CLAMP);
                     this.s = linearGradient2;
                     paint5.setShader(linearGradient2);
                 }
-                float interpolation = (er.j.getInterpolation((SystemClock.elapsedRealtime() % 1300) / 1300.0f) * (f19 + g0.L(90.0f))) + (L6 - g0.L(90.0f));
+                float interpolation = (lr.j.getInterpolation((SystemClock.elapsedRealtime() % 1300) / 1300.0f) * (f19 + g0.L(90.0f))) + (L6 - g0.L(90.0f));
                 Matrix matrix = this.w;
                 matrix.setTranslate(interpolation, 0.0f);
                 this.s.setLocalMatrix(matrix);
@@ -271,7 +271,7 @@ public final class a extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        be beVar;
+        ke keVar;
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 0) {
             if (!b(motionEvent)) {
@@ -285,13 +285,13 @@ public final class a extends FrameLayout {
             return this.I;
         }
         this.I = false;
-        if (actionMasked == 1 && (beVar = this.b) != null) {
-            ChatActivityEnterView chatActivityEnterView = beVar.b;
-            oi0 oi0Var = chatActivityEnterView.i1;
-            if (oi0Var != null) {
-                oi0Var.setPlaying(!oi0Var.g());
+        if (actionMasked == 1 && (keVar = this.b) != null) {
+            ChatActivityEnterView chatActivityEnterView = keVar.b;
+            xi0 xi0Var = chatActivityEnterView.i1;
+            if (xi0Var != null) {
+                xi0Var.setPlaying(!xi0Var.g());
             }
-            a aVar = chatActivityEnterView.L1;
+            a aVar = chatActivityEnterView.R1;
             if (aVar != null) {
                 aVar.invalidate();
             }

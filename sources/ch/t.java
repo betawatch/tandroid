@@ -1,10 +1,10 @@
 package ch;
 
-import android.animation.ValueAnimator;
+import org.telegram.ui.Components.gb0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ b0 b;
 
@@ -13,16 +13,30 @@ public final /* synthetic */ class t implements ValueAnimator.AnimatorUpdateList
         this.b = b0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                b0 b0Var = this.b;
-                b0Var.getClass();
-                b0Var.a.setAlpha(1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.a.invalidate();
                 break;
             default:
-                this.b.a.invalidate();
+                b0 b0Var = this.b;
+                ai.k0 k0Var = b0Var.c;
+                if (k0Var.getParent() != null) {
+                    if (b0Var.d) {
+                        org.telegram.messenger.g0.E2(k0Var);
+                    } else {
+                        try {
+                            b0Var.b.removeView(k0Var);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    gb0 gb0Var = b0Var.p;
+                    if (gb0Var != null) {
+                        gb0Var.run();
+                        break;
+                    }
+                }
                 break;
         }
     }

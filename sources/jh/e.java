@@ -11,21 +11,21 @@ import android.util.LongSparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import c8.i9;
+import c8.l9;
 import java.util.ArrayList;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.s2;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.t0;
-import org.telegram.ui.aj;
+import org.telegram.ui.Cells.u0;
+import org.telegram.ui.bj;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF I = new RectF();
@@ -55,7 +55,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         this.x = new LongSparseArray();
         this.y = new LongSparseArray();
         this.E = new c(this, 1);
-        this.a = gz.g1;
+        this.a = bz.g1;
     }
 
     public final void a() {
@@ -69,17 +69,17 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             return;
         }
         TLRPC.TL_messages_reportReadMetrics tL_messages_reportReadMetrics = new TLRPC.TL_messages_reportReadMetrics();
-        tL_messages_reportReadMetrics.peer = np.s1(this.e).j1(this.d);
+        tL_messages_reportReadMetrics.peer = mp.u1(this.e).l1(this.d);
         tL_messages_reportReadMetrics.metrics = new ArrayList<>(arrayList);
         ConnectionsManager.getInstance(this.e).sendRequestTyped(tL_messages_reportReadMetrics, null, new b(0));
         arrayList.clear();
     }
 
-    public final void b(int i7, long j3, ViewGroup viewGroup, aj ajVar) {
+    public final void b(int i7, long j3, ViewGroup viewGroup, bj bjVar) {
         this.d = j3;
         this.e = i7;
         this.f = viewGroup;
-        this.h = ajVar;
+        this.h = bjVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:130:0x029c  */
@@ -100,7 +100,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         LongSparseArray longSparseArray3;
         boolean z11;
         RectF rectF;
-        gj messageObject;
+        fj messageObject;
         int i7;
         RectF rectF2;
         long j10;
@@ -132,11 +132,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             if (k.c(childAt, viewGroup, rectF3)) {
                 if (childAt instanceof q1) {
                     messageObject = ((q1) childAt).getMessageObject();
-                } else if (childAt instanceof t0) {
-                    messageObject = ((t0) childAt).getMessageObject();
+                } else if (childAt instanceof u0) {
+                    messageObject = ((u0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
-                    long B0 = gj.B0(messageObject.k);
+                    long B0 = fj.B0(messageObject.k);
                     i7 = i11;
                     if (B0 == this.d) {
                         int e12 = messageObject.e1();
@@ -149,7 +149,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                                 j10 = c12;
                                 dVar = new d(e12, j10);
                                 longSparseArray.put(j15, dVar);
-                                if (r2.a) {
+                                if (s2.a) {
                                     Log.d("ViewMetrics", e12 + " " + j10 + " in screen");
                                 }
                             } else {
@@ -228,20 +228,20 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         j3 = uptimeMillis;
                         float f10 = rectF8.top - rectF6.top;
                         float f11 = height - (rectF6.bottom - rectF8.bottom);
-                        dVar3.l = Math.min(dVar3.l, i9.a(f10, 0.0f, height));
-                        dVar3.m = Math.max(dVar3.m, i9.a(f11, 0.0f, height));
+                        dVar3.l = Math.min(dVar3.l, l9.a(f10, 0.0f, height));
+                        dVar3.m = Math.max(dVar3.m, l9.a(f11, 0.0f, height));
                         dVar3.k = Math.max(dVar3.k, rectF8.height());
                         dVar3.j = Math.max(dVar3.j, height);
                         if (dVar3.i || dVar3.g <= 300) {
                             str2 = str3;
                         } else {
-                            if (r2.a) {
+                            if (s2.a) {
                                 StringBuilder sb2 = new StringBuilder();
                                 sb2.append(j20);
                                 sb2.append(" ");
                                 sb2.append(j18);
                                 str2 = str3;
-                                r.b.t(sb2, " in viewport", str2);
+                                p5.c.t(sb2, " in viewport", str2);
                             } else {
                                 str2 = str3;
                             }
@@ -254,21 +254,21 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         if (!z11 && dVar3.g > 300000) {
                             arrayList.add(dVar3.a());
                             longSparseArray3.removeAt(size4);
-                            if (r2.a) {
+                            if (s2.a) {
                                 StringBuilder sb3 = new StringBuilder();
                                 sb3.append(j20);
                                 sb3.append(" ");
                                 sb3.append(j18);
-                                r.b.t(sb3, " out of time", str2);
+                                p5.c.t(sb3, " out of time", str2);
                             }
                         } else if (!z11 && dVar3.e != j3 && (j18 == j16 || rectF7 == null)) {
                             longSparseArray3.removeAt(size4);
-                            if (!r2.a) {
+                            if (!s2.a) {
                                 StringBuilder sb4 = new StringBuilder();
                                 sb4.append(j20);
                                 sb4.append(" ");
                                 sb4.append(j18);
-                                r.b.t(sb4, " out of screen", str2);
+                                p5.c.t(sb4, " out of screen", str2);
                             }
                         }
                     } else {
@@ -277,7 +277,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                         }
                         longSparseArray3 = longSparseArray2;
                         longSparseArray3.removeAt(size4);
-                        if (r2.a) {
+                        if (s2.a) {
                             Log.d(str2, j20 + " " + j18 + " out of viewport: " + dVar3.g);
                         }
                     }
@@ -300,7 +300,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             }
             if (!z11) {
                 longSparseArray3.removeAt(size4);
-                if (!r2.a) {
+                if (!s2.a) {
                 }
             }
             size4--;
@@ -313,7 +313,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         if (!arrayList.isEmpty() && this.r == null) {
             c cVar = new c(this, 0);
             this.r = cVar;
-            g0.i3(cVar, 5000L);
+            g0.h3(cVar, 5000L);
         }
         if (this.a) {
             invalidate();
@@ -329,8 +329,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         viewTreeObserver.addOnPreDrawListener(this);
         this.F.addOnGlobalLayoutListener(this);
         this.F.addOnScrollChangedListener(this);
-        g0.i3(this.E, 400L);
-        if (r2.a) {
+        g0.h3(this.E, 400L);
+        if (s2.a) {
             Log.d("ViewMetrics", "attach");
         }
     }
@@ -346,7 +346,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         this.F = null;
         this.s = 0L;
         g0.r(this.E);
-        if (r2.a) {
+        if (s2.a) {
             Log.d("ViewMetrics", "detach");
         }
         super.onDetachedFromWindow();
@@ -362,7 +362,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.H.setTextSize(g0.L(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = j6.Im;
+            Paint paint = n6.Im;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.x;
@@ -370,10 +370,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i7 = 0; i7 < size; i7++) {
                 d dVar = (d) longSparseArray.valueAt(i7);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, j6.Jm);
+                canvas.drawRect(rectF2, n6.Jm);
                 canvas.save();
-                canvas.translate(rectF2.left, i9.a(i9.a(rectF2.centerY() - g0.L(20.0f), rectF.top - g0.L(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - g0.L(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), g0.L(40.0f), j6.Hm);
+                canvas.translate(rectF2.left, l9.a(l9.a(rectF2.centerY() - g0.L(20.0f), rectF.top - g0.L(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - g0.L(40.0f)));
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), g0.L(40.0f), n6.Hm);
                 canvas.translate(g0.L(10.0f), g0.L(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.H);

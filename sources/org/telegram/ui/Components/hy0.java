@@ -1,22 +1,14 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hy0 {
-    public final File a;
-    public long b;
-    public long c;
-    public boolean d;
-    public boolean e;
-    public TLRPC.InputFile f;
-    public TLRPC.InputEncryptedFile g;
-    public byte[] h;
-    public byte[] i;
-
-    public hy0(File file) {
-        this.a = file;
+public final class hy0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), org.telegram.messenger.g0.L(16.0f));
     }
 }

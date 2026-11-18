@@ -1,6 +1,5 @@
 package zd;
 
-import a8.ma;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.IdentityHashMap;
@@ -9,7 +8,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class n1 implements a1, r, r1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(n1.class, Object.class, "_state$volatile");
@@ -116,7 +115,7 @@ public class n1 implements a1, r, r1 {
                     ((e1) jVar2).j(th2);
                 } catch (Throwable th3) {
                     if (jVar != null) {
-                        ma.a(jVar, th3);
+                        af.b.a(jVar, th3);
                     } else {
                         jVar = new androidx.car.app.j("Exception in completion handler " + jVar2 + " for " + this, th3);
                     }
@@ -336,7 +335,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.f get(id.g gVar) {
-        return c8.n0.a(this, gVar);
+        return c8.p0.a(this, gVar);
     }
 
     @Override // zd.a1
@@ -404,7 +403,7 @@ public class n1 implements a1, r, r1 {
                 return b0.w(obj);
             }
         } while (L(obj) < 0);
-        f1 f1Var = new f1(c8.v0.b(cVar), this);
+        f1 f1Var = new f1(c8.x0.b(cVar), this);
         f1Var.s();
         f1Var.v(new j(b0.n(this, true, new m0(f1Var, 3)), 2));
         Object r10 = f1Var.r();
@@ -440,7 +439,7 @@ public class n1 implements a1, r, r1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean j(Object obj) {
-        aa.b0 b0Var;
+        ee.t tVar;
         Object obj2 = b0.d;
         if (u()) {
             do {
@@ -463,7 +462,7 @@ public class n1 implements a1, r, r1 {
                 Object obj4 = atomicReferenceFieldUpdater.get(this);
                 if (!(obj4 instanceof h1)) {
                     if (!(obj4 instanceof x0)) {
-                        b0Var = b0.g;
+                        tVar = b0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -480,7 +479,7 @@ public class n1 implements a1, r, r1 {
                                 }
                             }
                             G(v, th2);
-                            b0Var = b0.d;
+                            tVar = b0.d;
                             break loop1;
                         }
                         continue;
@@ -497,7 +496,7 @@ public class n1 implements a1, r, r1 {
                 } else {
                     synchronized (obj4) {
                         if (h1.d.get((h1) obj4) == b0.h) {
-                            b0Var = b0.g;
+                            tVar = b0.g;
                         } else {
                             boolean d = ((h1) obj4).d();
                             if (th2 == null) {
@@ -508,12 +507,12 @@ public class n1 implements a1, r, r1 {
                             if (c10 != null) {
                                 G(((h1) obj4).a, c10);
                             }
-                            b0Var = b0.d;
+                            tVar = b0.d;
                         }
                     }
                 }
             }
-            obj2 = b0Var;
+            obj2 = tVar;
         }
         if (obj2 != b0.d && obj2 != b0.e) {
             if (obj2 == b0.g) {
@@ -538,7 +537,7 @@ public class n1 implements a1, r, r1 {
                 return kVar;
             }
         } while (L(obj) < 0);
-        m mVar = new m(1, c8.v0.b(cVar));
+        m mVar = new m(1, c8.x0.b(cVar));
         mVar.s();
         mVar.v(new j(b0.n(this, true, new o(mVar, 1)), 2));
         Object r10 = mVar.r();
@@ -568,7 +567,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.h minusKey(id.g gVar) {
-        return c8.n0.b(this, gVar);
+        return c8.p0.b(this, gVar);
     }
 
     public boolean n(Throwable th2) {
@@ -608,7 +607,7 @@ public class n1 implements a1, r, r1 {
                         ((e1) jVar2).j(th2);
                     } catch (Throwable th4) {
                         if (jVar != null) {
-                            ma.a(jVar, th4);
+                            af.b.a(jVar, th4);
                         } else {
                             jVar = new androidx.car.app.j("Exception in completion handler " + jVar2 + " for " + this, th4);
                         }
@@ -647,7 +646,7 @@ public class n1 implements a1, r, r1 {
 
     @Override // id.h
     public final id.h plus(id.h hVar) {
-        return c8.n0.c(this, hVar);
+        return c8.p0.c(this, hVar);
     }
 
     public final Object q(h1 h1Var, Object obj) {
@@ -667,7 +666,7 @@ public class n1 implements a1, r, r1 {
                     i7++;
                     Throwable th3 = (Throwable) obj2;
                     if (th3 != s5 && th3 != s5 && !(th3 instanceof CancellationException) && newSetFromMap.add(th3)) {
-                        ma.a(s5, th3);
+                        af.b.a(s5, th3);
                     }
                 }
             }

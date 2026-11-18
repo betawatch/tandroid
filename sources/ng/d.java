@@ -4,16 +4,16 @@ import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import di.lb;
+import di.pb;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.r1;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -52,7 +52,7 @@ public final class d {
         int i13;
         int i14;
         ?? obj = new Object();
-        obj.g = ns.e4;
+        obj.g = ks.e4;
         if (z10) {
             long j14 = j3 - j10;
             if (j14 == 0) {
@@ -227,7 +227,7 @@ public final class d {
                 return g0.o0((int) j3, 0);
             }
             if (i7 != 1) {
-                return lb.a1(false, i5.c.l(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return pb.b1(false, i5.c.l(j3, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + r1.i().f(j3, "USD");
         }

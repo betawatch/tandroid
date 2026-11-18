@@ -1,53 +1,59 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import android.view.KeyEvent;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.y10;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ta extends FrameLayout {
-    public final org.telegram.ui.Components.h6 a;
-    public final ImageView b;
-    public int c;
-    public boolean d;
+public final /* synthetic */ class ta implements y10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public ta(Context context) {
-        super(context);
-        org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(context, false, false, false);
-        this.a = h6Var;
-        h6Var.getDrawable().r(true, true);
-        h6Var.setTextSize(org.telegram.messenger.g0.L(15.0f));
-        addView(h6Var, c8.ja.i(-1.0f, -1.0f, 8388627, 22.0f, 0.0f, 58.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.arrow_more);
-        addView(imageView, c8.ja.i(24.0f, 24.0f, 8388629, 0.0f, 0.0f, 17.0f, 0.0f));
+    public /* synthetic */ ta(KeyEvent.Callback callback, int i7) {
+        this.a = i7;
+        this.b = callback;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c = ConnectionsManager.DEFAULT_DATACENTER_ID;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(hd.a0 ? 0.0f : org.telegram.messenger.g0.L(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (hd.a0 ? org.telegram.messenger.g0.L(22.0f) : 0), getMeasuredHeight(), org.telegram.ui.ActionBar.j6.k0);
+    @Override // org.telegram.messenger.y10
+    public final Object a(Object obj) {
+        int i7 = this.a;
+        KeyEvent.Callback callback = this.b;
+        switch (i7) {
+            case 0:
+                ua uaVar = (ua) callback;
+                return uaVar.s[((Integer) obj).intValue() % uaVar.s.length];
+            case 1:
+                fj fjVar = (fj) obj;
+                ((hi.v6) callback).m2 = fjVar;
+                return Boolean.valueOf(MediaController.B().o0(org.telegram.messenger.f3.i(fjVar), fjVar, 0L, true, null, 0L));
+            case 2:
+                ua uaVar2 = (ua) callback;
+                return uaVar2.s[((Integer) obj).intValue() % uaVar2.s.length];
+            case 3:
+                return new org.telegram.ui.Wallet.c5(22, (org.telegram.ui.l0) callback, (Integer) obj);
+            case 4:
+                tg.g0 g0Var = (tg.g0) callback;
+                if (((Integer) obj).intValue() == 2) {
+                    si siVar = new si(g0Var.getContext(), new tg.w(g0Var), false, false, false, g0Var.A1);
+                    siVar.n = true;
+                    siVar.B1(gd.M0(2131754426, null));
+                    siVar.X3 = new tg.x(g0Var, siVar);
+                    siVar.setOnDismissListener(new hi.f1(8));
+                    siVar.z1(1, false);
+                    siVar.f1();
+                    MediaController.h2 = true;
+                    siVar.e2.i0();
+                    siVar.show();
+                }
+                return Boolean.TRUE;
+            default:
+                Paint[] paintArr = ((yg.r) callback).h;
+                return paintArr[((Integer) obj).intValue() % paintArr.length];
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(48.0f), TLObject.FLAG_30));
     }
 }

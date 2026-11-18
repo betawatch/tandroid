@@ -1,187 +1,36 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Random;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.it0;
-import org.telegram.ui.Components.pz;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class y0 {
-    public static int A(int i7, int i10, Drawable drawable) {
-        return i10 - (drawable.getIntrinsicWidth() / i7);
+public final /* synthetic */ class y0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
+
+    public /* synthetic */ y0(Spanned spanned, int i7) {
+        this.a = i7;
+        this.b = spanned;
     }
 
-    public static /* synthetic */ String B(int i7) {
-        if (i7 == 1) {
-            return "PAID";
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int spanStart;
+        int spanStart2;
+        switch (this.a) {
+            case 0:
+                Spanned spanned = this.b;
+                spanStart = spanned.getSpanStart((qi.g) obj2);
+                spanStart2 = spanned.getSpanStart((qi.g) obj);
+                break;
+            default:
+                SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
+                spanStart = spannableStringBuilder.getSpanStart((o9) obj2);
+                spanStart2 = spannableStringBuilder.getSpanStart((o9) obj);
+                break;
         }
-        if (i7 == 2) {
-            return "CANCELLED";
-        }
-        if (i7 == 3) {
-            return "PENDING";
-        }
-        if (i7 == 4) {
-            return "FAILED";
-        }
-        throw null;
-    }
-
-    public static void C(q2.h hVar, q2.h hVar2) {
-        if (hVar == hVar2) {
-            return;
-        }
-        if (hVar2 != null) {
-            hVar2.b(null);
-        }
-        if (hVar != null) {
-            hVar.c(null);
-        }
-    }
-
-    public static boolean a(gj gjVar) {
-        return gjVar != null && gj.B0(gjVar.k) == 1271266957;
-    }
-
-    public static void b(RecyclerView recyclerView) {
-        recyclerView.C0();
-        v4.o0 layoutManager = recyclerView.getLayoutManager();
-        if (layoutManager instanceof v4.b0) {
-            ((v4.b0) layoutManager).h1(0, 0);
-        } else {
-            recyclerView.v0(0);
-        }
-    }
-
-    public static float c(RecyclerView recyclerView) {
-        int i7 = it0.m0;
-        v4.o0 layoutManager = recyclerView.getLayoutManager();
-        if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
-            return 0.0f;
-        }
-        if (layoutManager.m(0) == null) {
-            return Float.POSITIVE_INFINITY;
-        }
-        return Math.max(0.0f, (recyclerView.getPaddingTop() - v4.o0.z(r0)) + ((ViewGroup.MarginLayoutParams) ((v4.p0) r0.getLayoutParams())).topMargin);
-    }
-
-    public static float d(float f10, float f11, float f12) {
-        return (org.telegram.messenger.g0.N(f10) * f11) + f12;
-    }
-
-    public static float e(float f10, float f11, float f12, float f13) {
-        return Math.min(f13, (f10 / f11) + f12);
-    }
-
-    public static float f(float f10, float f11, float f12, float f13, float f14) {
-        return (((f10 * f11) + f12) * f13) + f14;
-    }
-
-    public static float g(Random random, float f10, float f11) {
-        return (random.nextFloat() * f10) + f11;
-    }
-
-    public static int h(int i7, int i10, Drawable drawable) {
-        return (drawable.getIntrinsicHeight() / i7) + i10;
-    }
-
-    public static int i(pz pzVar, int i7) {
-        return pzVar.c(pzVar.getMeasuredWidth()) + i7;
-    }
-
-    public static Bundle j(int i7, String str, String str2, boolean z10) {
-        Bundle bundle = new Bundle();
-        bundle.putBoolean(str, z10);
-        bundle.putInt(str2, i7);
-        return bundle;
-    }
-
-    public static TextView k(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
-        frameLayout.addView(textView, layoutParams);
-        return new TextView(context);
-    }
-
-    public static Integer l(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
-        arrayList.add(hd.M0(i7, null));
-        arrayList2.add(Integer.valueOf(i10));
-        return Integer.valueOf(i11);
-    }
-
-    public static String m(String str, String str2, String str3, StringBuilder sb2) {
-        sb2.append(str);
-        sb2.append(str2);
-        sb2.append(str3);
-        return sb2.toString();
-    }
-
-    public static r1.h n(float f10, float f11, float f12) {
-        r1.h hVar = new r1.h(f10);
-        hVar.b(f11);
-        hVar.a(f12);
-        return hVar;
-    }
-
-    public static void o(int i7, String str, ArrayList arrayList) {
-        arrayList.add(new o6(i7, str));
-    }
-
-    public static void p(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
-        arrayList.add(hd.M0(i7, null));
-        arrayList2.add(num);
-    }
-
-    public static void q(FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, TLRPC.TL_error tL_error, boolean z10) {
-        new cc(frameLayout, e6Var).f0(tL_error, z10);
-    }
-
-    public static void r(String str, int i7, StringBuilder sb2, String str2) {
-        sb2.append(hd.M0(i7, str));
-        sb2.append(str2);
-    }
-
-    public static void s(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
-        arrayList.add(hd.M0(i7, str));
-        arrayList2.add(Integer.valueOf(i10));
-    }
-
-    public static void t(String str, StringBuilder sb2) {
-        sb2.append(str);
-        org.telegram.messenger.a8.b(sb2.toString());
-    }
-
-    public static /* synthetic */ boolean u(TLRPC.TL_game tL_game) {
-        return tL_game != null;
-    }
-
-    public static float v(float f10, float f11, float f12, float f13) {
-        return Math.max(f13, (f10 - f11) / f12);
-    }
-
-    public static int w(int i7, int i10, Drawable drawable) {
-        return (drawable.getIntrinsicWidth() / i7) + i10;
-    }
-
-    public static float x(float f10, float f11, float f12, float f13) {
-        return f13 - ((f10 * f11) * f12);
-    }
-
-    public static int y(int i7, int i10, Drawable drawable) {
-        return i10 - (drawable.getIntrinsicHeight() / i7);
-    }
-
-    public static float z(float f10, float f11, float f12, float f13) {
-        return Math.max(f13, f12 - (f10 / f11));
+        return spanStart - spanStart2;
     }
 }

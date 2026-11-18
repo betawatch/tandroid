@@ -1,60 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y2 b;
+public final class w2 extends Drawable {
+    public final int a = -15130842;
 
-    public /* synthetic */ w2(y2 y2Var, int i7) {
-        this.a = i7;
-        this.b = y2Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawColor(this.a);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                y2 y2Var = this.b;
-                y2Var.getClass();
-                y2Var.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                y2Var.invalidate();
-                y2Var.U.c();
-                break;
-            case 1:
-                y2 y2Var2 = this.b;
-                y2Var2.getClass();
-                y2Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y2Var2.invalidate();
-                y2Var2.U.c();
-                break;
-            case 2:
-                y2 y2Var3 = this.b;
-                y2Var3.getClass();
-                y2Var3.I = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                y2Var3.invalidate();
-                y2Var3.U.c();
-                break;
-            case 3:
-                y2 y2Var4 = this.b;
-                y2Var4.getClass();
-                y2Var4.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                y2Var4.invalidate();
-                break;
-            case 4:
-                y2 y2Var5 = this.b;
-                y2Var5.getClass();
-                y2Var5.G = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                y2Var5.invalidate();
-                break;
-            default:
-                y2 y2Var6 = this.b;
-                y2Var6.getClass();
-                y2Var6.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                y2Var6.invalidate();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

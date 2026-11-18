@@ -5,17 +5,17 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ si b;
+    public final /* synthetic */ ri b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ sf(si siVar, boolean z10, int i7, int i10) {
+    public /* synthetic */ sf(ri riVar, boolean z10, int i7, int i10) {
         this.a = i10;
-        this.b = siVar;
+        this.b = riVar;
         this.c = z10;
         this.d = i7;
     }
@@ -26,18 +26,18 @@ public final /* synthetic */ class sf implements Runnable {
         NativeByteBuffer byteBufferValue;
         switch (this.a) {
             case 0:
-                si siVar = this.b;
-                boolean[] zArr = siVar.x0;
+                ri riVar = this.b;
+                boolean[] zArr = riVar.x0;
                 boolean z10 = this.c;
                 zArr[z10 ? 1 : 0] = false;
-                siVar.y0[z10 ? 1 : 0] = true;
-                siVar.r0[z10 ? 1 : 0] = this.d;
+                riVar.y0[z10 ? 1 : 0] = true;
+                riVar.r0[z10 ? 1 : 0] = this.d;
                 break;
             case 1:
                 this.b.r0[this.c ? 1 : 0] = this.d;
                 break;
             default:
-                si siVar2 = this.b;
+                ri riVar2 = this.b;
                 boolean z11 = this.c;
                 int i10 = this.d;
                 if (z11) {
@@ -58,7 +58,7 @@ public final /* synthetic */ class sf implements Runnable {
                     }
                 }
                 try {
-                    SQLiteCursor queryFinalized = siVar2.getMessagesStorage().b.queryFinalized("SELECT document FROM web_recent_v3 WHERE type = " + i7 + " ORDER BY date DESC", new Object[0]);
+                    SQLiteCursor queryFinalized = riVar2.getMessagesStorage().b.queryFinalized("SELECT document FROM web_recent_v3 WHERE type = " + i7 + " ORDER BY date DESC", new Object[0]);
                     ArrayList arrayList = new ArrayList();
                     while (queryFinalized.next()) {
                         if (!queryFinalized.isNull(0) && (byteBufferValue = queryFinalized.byteBufferValue(0)) != null) {
@@ -70,10 +70,10 @@ public final /* synthetic */ class sf implements Runnable {
                         }
                     }
                     queryFinalized.dispose();
-                    g0.h3(new vf(siVar2, z11, arrayList, i10));
+                    g0.g3(new vf(riVar2, z11, arrayList, i10));
                     break;
                 } catch (Throwable th2) {
-                    siVar2.getMessagesStorage().o(th2, true);
+                    riVar2.getMessagesStorage().o(th2, true);
                 }
                 break;
         }

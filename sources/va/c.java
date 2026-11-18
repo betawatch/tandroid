@@ -5,7 +5,7 @@ import android.net.TrafficStats;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
-import c8.rb;
+import c8.ub;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -28,11 +28,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Pattern;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import tg.x;
 import u9.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
@@ -324,11 +324,11 @@ public final class c implements d {
     public final void h() {
         o9.g gVar = this.a;
         gVar.a();
-        q6.m.f(gVar.c.b, "Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.g(gVar.c.b, "Please set your Application ID. A valid Firebase App ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
-        q6.m.f(gVar.c.h, "Please set your Project ID. A valid Firebase Project ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.g(gVar.c.h, "Please set your Project ID. A valid Firebase Project ID is required to communicate with Firebase server APIs: It identifies your application with Firebase.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
-        q6.m.f(gVar.c.a, "Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.");
+        q6.m.g(gVar.c.a, "Please set a valid API key. A Firebase API key is required to communicate with Firebase server APIs: It authenticates your project with Google.Please refer to https://firebase.google.com/support/privacy/init-options.");
         gVar.a();
         String str = gVar.c.b;
         Pattern pattern = j.c;
@@ -372,7 +372,7 @@ public final class c implements d {
                     if (publicKey != null) {
                         try {
                             byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
-                            digest[0] = (byte) (((digest[0] & 15) + ns.x1) & ns.e4);
+                            digest[0] = (byte) (((digest[0] & 15) + ks.x1) & ks.e4);
                             str2 = Base64.encodeToString(digest, 0, 8, 11);
                         } catch (NoSuchAlgorithmException unused) {
                             Log.w("ContentValues", "Unexpected error, device missing required algorithms");
@@ -406,7 +406,7 @@ public final class c implements d {
                     break;
                 }
                 String str3 = strArr[i7];
-                String str4 = (String) cVar.a.b(rb.a("|T|" + cVar.b + "|" + str3), null);
+                String str4 = (String) cVar.a.b(ub.a("|T|" + cVar.b + "|" + str3), null);
                 if (str4 == null || str4.isEmpty()) {
                     i7++;
                 } else if (str4.startsWith("{")) {

@@ -1,11 +1,11 @@
 package org.telegram.messenger.voip;
 
-import c8.zc;
+import c8.dd;
 import java.util.ArrayList;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class GroupCallMessage {
     private static final int FLAG_IS_OUT = 1;
@@ -45,7 +45,7 @@ public class GroupCallMessage {
                     c10.h = j11;
                 } else {
                     ArrayList<TLRPC.MessageEntity> arrayList2 = tL_textWithEntities.entities;
-                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) si.b0(i7).r.get(tL_textWithEntities.text)) != null) ? ch.p0.c(tL_availableReaction) : null;
+                    c10 = ((arrayList2 == null || arrayList2.isEmpty()) && (tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(i7).r.get(tL_textWithEntities.text)) != null) ? ch.p0.c(tL_availableReaction) : null;
                 }
                 this.reactionAnimatedEmojiId = j11;
                 this.visibleReaction = c10;
@@ -59,19 +59,19 @@ public class GroupCallMessage {
     }
 
     public boolean isOut() {
-        return zc.a(this.flags, 1);
+        return dd.a(this.flags, 1);
     }
 
     public boolean isSendConfirmed() {
-        return zc.a(this.flags, 8);
+        return dd.a(this.flags, 8);
     }
 
     public boolean isSendDelayed() {
-        return zc.a(this.flags, 2);
+        return dd.a(this.flags, 2);
     }
 
     public boolean isSendError() {
-        return zc.a(this.flags, 4);
+        return dd.a(this.flags, 4);
     }
 
     public void notifyStateUpdate() {
@@ -86,19 +86,19 @@ public class GroupCallMessage {
     }
 
     public void setIsOut(boolean z10) {
-        this.flags = zc.b(this.flags, 1, z10);
+        this.flags = dd.b(this.flags, 1, z10);
     }
 
     public void setIsSendConfirmed(boolean z10) {
-        this.flags = zc.b(this.flags, 8, z10);
+        this.flags = dd.b(this.flags, 8, z10);
     }
 
     public void setIsSendDelayed(boolean z10) {
-        this.flags = zc.b(this.flags, 2, z10);
+        this.flags = dd.b(this.flags, 2, z10);
     }
 
     public void setIsSendError(boolean z10) {
-        this.flags = zc.b(this.flags, 4, z10);
+        this.flags = dd.b(this.flags, 4, z10);
     }
 
     public void subscribeToStateUpdates(Runnable runnable) {

@@ -1,77 +1,70 @@
 package di;
 
-import android.content.Context;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b8 implements z10 {
-    public final /* synthetic */ u8 a;
+public final /* synthetic */ class b8 implements Runnable {
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ long b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ z10 d;
-    public final /* synthetic */ Context e;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 f;
-    public final /* synthetic */ boolean g;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ gj i;
-    public final /* synthetic */ TLRPC.InputInvoice j;
-    public final /* synthetic */ TLRPC.TL_payments_paymentFormStars k;
-    public final /* synthetic */ int l;
-    public final /* synthetic */ long m;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ b8(u8 u8Var, long j3, boolean[] zArr, z10 z10Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, String str, gj gjVar, TLRPC.InputInvoice inputInvoice, TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars, int i7, long j10) {
-        this.a = u8Var;
+    public /* synthetic */ b8(x8 x8Var, TLObject tLObject, long j3, long j10, boolean z10) {
+        this.e = x8Var;
+        this.f = tLObject;
         this.b = j3;
-        this.c = zArr;
-        this.d = z10Var;
-        this.e = context;
-        this.f = e6Var;
-        this.g = z10;
-        this.h = str;
-        this.i = gjVar;
-        this.j = inputInvoice;
-        this.k = tL_payments_paymentFormStars;
-        this.l = i7;
-        this.m = j10;
+        this.d = j10;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        z10 z10Var = (z10) obj;
-        u8 u8Var = this.a;
-        long j3 = u8Var.f.amount;
-        long j10 = this.b;
-        boolean[] zArr = this.c;
-        z10 z10Var2 = this.d;
-        gj gjVar = this.i;
-        TLRPC.InputInvoice inputInvoice = this.j;
-        TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = this.k;
-        int i7 = this.l;
-        if (j3 >= j10) {
-            u8Var.Z(gjVar, inputInvoice, tL_payments_paymentFormStars, new r6(u8Var, i7, z10Var, zArr, z10Var2));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.PeerSettings peerSettings;
+        int i7 = this.a;
+        TLObject tLObject = this.f;
+        Object obj = this.e;
+        switch (i7) {
+            case 0:
+                x8 x8Var = (x8) obj;
+                int i10 = x8Var.a;
+                if (tLObject instanceof TLRPC.TL_boolTrue) {
+                    long j3 = this.b;
+                    long j10 = this.d;
+                    if (j3 == 0) {
+                        TLRPC.UserFull d2 = mp.u1(i10).d2(j10);
+                        if (d2 != null && (peerSettings = d2.settings) != null) {
+                            peerSettings.flags &= -16385;
+                            peerSettings.charge_paid_message_stars = 0L;
+                        }
+                        mp.u1(i10).g7.edit().putLong(a8.p0.o(j10, "dialog_bar_paying_"), 0L).apply();
+                        mp.u1(i10).g3(mp.u1(i10).c2(Long.valueOf(j10)), mp.u1(i10).O0(Long.valueOf(-j10)), true);
+                        org.telegram.messenger.i5.r(i10).D(true);
+                        ks.f(i10).k(ks.P3, Long.valueOf(j10));
+                        break;
+                    } else {
+                        x8Var.Z(-j3, j10, this.c);
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((tr) obj).getMessagesController().I3(this.b, this.c, (TLRPC.InputPeer) tLObject, this.d);
+                break;
         }
-        boolean z10 = np.s1(u8Var.a).k7;
-        Context context = this.e;
-        org.telegram.ui.ActionBar.e6 e6Var = this.f;
-        if (!z10) {
-            boolean[] zArr2 = {false};
-            bb bbVar = new bb(context, e6Var, j10, this.g ? 9 : 0, this.h, new g8(u8Var, zArr2, gjVar, inputInvoice, tL_payments_paymentFormStars, zArr, i7, z10Var2, z10Var), this.m);
-            bbVar.setOnDismissListener(new k6(u8Var, z10Var, zArr2, zArr, z10Var2, 1));
-            bbVar.show();
-            return;
-        }
-        if (z10Var != null) {
-            z10Var.a(Boolean.FALSE);
-        }
-        if (!zArr[0] && z10Var2 != null) {
-            z10Var2.a("cancelled");
-            zArr[0] = true;
-        }
-        u8.c0(context, e6Var);
+    }
+
+    public /* synthetic */ b8(tr trVar, long j3, boolean z10, TLRPC.InputPeer inputPeer, long j10) {
+        this.e = trVar;
+        this.b = j3;
+        this.c = z10;
+        this.f = inputPeer;
+        this.d = j10;
     }
 }

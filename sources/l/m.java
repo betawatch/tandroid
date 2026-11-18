@@ -14,11 +14,11 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import hi.l0;
+import h9.g1;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -74,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new l0(this, 7);
+            nVar2.b = new g1(this, 7);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -195,7 +195,7 @@ public final class m implements l0.a {
         if (i7 == 0) {
             return null;
         }
-        Drawable b10 = b5.a.b(this.n.a, i7);
+        Drawable b10 = c8.z.b(this.n.a, i7);
         this.m = 0;
         this.l = b10;
         return d(b10);

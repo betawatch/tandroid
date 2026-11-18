@@ -1,71 +1,36 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.a80;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class lh implements pi, qr {
-    public final /* synthetic */ c1 a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class lh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ oi b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ lh(c1 c1Var, Object obj, Object obj2, Object obj3) {
-        this.a = c1Var;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ lh(oi oiVar, ArrayList arrayList, String str, int i7) {
+        this.a = i7;
+        this.b = oiVar;
+        this.c = arrayList;
+        this.d = str;
     }
 
-    @Override // org.telegram.messenger.pi
-    public void c(String str, ArrayList arrayList) {
-        si siVar = (si) this.a;
-        qi qiVar = (qi) this.b;
-        ri riVar = (ri) this.c;
-        z10 z10Var = (z10) this.d;
-        HashMap hashMap = siVar.Q1;
-        if (hashMap.containsKey(qiVar)) {
-            StringBuilder sb2 = new StringBuilder();
-            int size = arrayList.size();
-            int i7 = 0;
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                oi oiVar = (oi) obj;
-                if (!TextUtils.isEmpty(oiVar.a) && !oiVar.a.startsWith("animated_")) {
-                    sb2.append(oiVar.a);
-                }
-            }
-            TLRPC.TL_messages_searchStickers tL_messages_searchStickers = new TLRPC.TL_messages_searchStickers();
-            boolean z10 = qiVar.a;
-            String str2 = qiVar.b;
-            tL_messages_searchStickers.emojis = z10;
-            if (!TextUtils.isEmpty(str2)) {
-                tL_messages_searchStickers.lang_code.add(str2);
-            }
-            tL_messages_searchStickers.emoticon = sb2.toString();
-            tL_messages_searchStickers.q = qiVar.c;
-            tL_messages_searchStickers.limit = 100;
-            tL_messages_searchStickers.offset = riVar != null ? riVar.b.intValue() : 0;
-            hashMap.put(qiVar, Integer.valueOf(siVar.getConnectionsManager().sendRequestTyped(tL_messages_searchStickers, new d3.b(1), new l9(siVar, qiVar, riVar, z10Var, 1))));
-        }
-    }
-
-    @Override // org.telegram.messenger.qr
-    public void run(long j3) {
-        ez ezVar = (ez) this.a;
-        Uri uri = (Uri) this.b;
-        ArrayList arrayList = (ArrayList) this.c;
-        a80 a80Var = (a80) this.d;
-        if (j3 != 0) {
-            ezVar.Q(-j3, uri, arrayList, a80Var);
-        } else {
-            a80Var.run(0L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                g0.g3(new lh(this.b, this.c, this.d, 2));
+                break;
+            case 1:
+                ArrayList arrayList = this.c;
+                this.b.e(this.d, arrayList);
+                break;
+            default:
+                ArrayList arrayList2 = this.c;
+                this.b.e(this.d, arrayList2);
+                break;
         }
     }
 }

@@ -1,13 +1,13 @@
 package a4;
 
-import a8.ja;
+import a8.la;
 import f3.b0;
 import f3.p;
 import f3.t;
 import f3.u;
 import h2.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements h {
     public long a;
@@ -16,14 +16,14 @@ public final class c implements h {
     public Object d;
 
     public c(long j3, int i7) {
-        ja.p(((b3.a) this.c) == null);
+        la.p(((b3.a) this.c) == null);
         this.a = j3;
         this.b = j3 + i7;
     }
 
     @Override // a4.h
-    public b0 Y() {
-        ja.p(this.a != -1);
+    public b0 f() {
+        la.p(this.a != -1);
         return new t((u) this.c, this.a, 0);
     }
 

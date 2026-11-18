@@ -1,20 +1,27 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class f00 {
-    public int a = -1;
-    public long b;
-    public long c;
-    public int d;
-    public int e;
-    public int f;
-    public TLRPC.Message g;
-    public ArrayList h;
-    public boolean i;
-    public boolean j;
-    public boolean k;
+public final /* synthetic */ class f00 implements nc, mc {
+    public final /* synthetic */ z00 a;
+    public final /* synthetic */ fj b;
+    public final /* synthetic */ f3.s c;
+    public final /* synthetic */ di.o9 d;
+
+    public /* synthetic */ f00(z00 z00Var, fj fjVar, f3.s sVar, di.o9 o9Var) {
+        this.a = z00Var;
+        this.b = fjVar;
+        this.c = sVar;
+        this.d = o9Var;
+    }
+
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        g0.g3(new fn(this.a, this.b, str, this.c, this.d, 18));
+    }
+
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        g0.g3(new tl(this.a, this.b, this.c, this.d, 27));
+    }
 }

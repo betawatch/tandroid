@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
 import android.content.Context;
-import c8.v0;
+import b5.a;
+import c8.x0;
 import hd.m;
 import hd.u;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import kotlin.jvm.internal.j;
 import wd.c;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgz implements zzgs {
     private static Timer zza;
@@ -67,7 +67,7 @@ public final class zzgz implements zzgs {
                 if (iterator.hasNext()) {
                     u uVar = new u(iterator, null);
                     c cVar = new c();
-                    cVar.c = v0.a(cVar, cVar, uVar);
+                    cVar.c = x0.a(cVar, cVar, uVar);
                     it = cVar;
                 } else {
                     it = m.a;
@@ -123,7 +123,7 @@ public final class zzgz implements zzgs {
         byte[] zzd = ((zzwq) zzi.zzk()).zzd();
         try {
             int i10 = zzby.zza;
-            if (!((zzha) bb.b(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
+            if (!((zzha) a.c(zzgt.zza).getValue()).zza(zzd) || (zzgoVar = this.zzc) == null) {
                 return;
             }
             zzgoVar.zza(arrayList);
@@ -143,7 +143,7 @@ public final class zzgz implements zzgs {
     public final void zza(zzzm zzzmVar) {
         try {
             int i7 = zzby.zza;
-            b0.q(((zzcr) bb.b(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
+            b0.q(((zzcr) a.c(zzgx.zza).getValue()).zza(), new zzgy(this, zzzmVar, null));
         } catch (Exception unused) {
         }
         zzh();

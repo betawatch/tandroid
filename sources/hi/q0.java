@@ -1,58 +1,45 @@
 package hi;
 
-import android.net.Uri;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.z10;
+import java.io.File;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class q0 implements z10 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+    public final /* synthetic */ v0 b;
+    public final /* synthetic */ File c;
 
-    public /* synthetic */ q0(u0 u0Var, int i7) {
+    public /* synthetic */ q0(v0 v0Var, File file, int i7) {
         this.a = i7;
-        this.b = u0Var;
+        this.b = v0Var;
+        this.c = file;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        u0 u0Var = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                Float f10 = (Float) obj;
-                t0 t0Var = u0Var.n;
-                if (t0Var != null) {
-                    t0Var.setProgress(f10.floatValue());
+                v0 v0Var = this.b;
+                if (v0Var.c && v0Var.r != null) {
+                    MediaController.d0(this.c.getAbsolutePath(), v0Var.getContext(), 1, null, null, new r0(v0Var, 1));
                     break;
                 }
                 break;
             case 1:
-                Uri uri = (Uri) obj;
-                if (u0Var.c && u0Var.r != null) {
-                    u0Var.n.b(R.raw.ic_save_to_gallery, 3500, hd.N0("VideoSavedHint"));
-                    u0Var.c = false;
-                    u0Var.d();
-                    u0Var.w = uri;
+                v0 v0Var2 = this.b;
+                d7 d7Var = v0Var2.r;
+                File file = this.c;
+                d7Var.c(file);
+                if (v0Var2.c && v0Var2.r != null) {
+                    org.telegram.messenger.g0.g3(new q0(v0Var2, file, 2));
                     break;
                 }
                 break;
             default:
-                Uri uri2 = (Uri) obj;
-                u0Var.c = false;
-                u0Var.d();
-                t0 t0Var2 = u0Var.n;
-                if (t0Var2 != null) {
-                    t0Var2.a();
-                    u0Var.n = null;
-                }
-                t0 t0Var3 = new t0(u0Var.getContext());
-                u0Var.n = t0Var3;
-                t0Var3.b(R.raw.ic_save_to_gallery, 2500, hd.N0("PhotoSavedHint"));
-                u0Var.b.addView(u0Var.n);
-                u0Var.w = uri2;
+                String absolutePath = this.c.getAbsolutePath();
+                v0 v0Var3 = this.b;
+                MediaController.d0(absolutePath, v0Var3.getContext(), 0, null, null, new r0(v0Var3, 2));
                 break;
         }
     }

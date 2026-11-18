@@ -3,19 +3,19 @@ package gi;
 import android.view.KeyEvent;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import hi.d3;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.ul;
-import org.telegram.ui.Components.wi;
-import v4.b1;
-import v4.s;
-import v4.w0;
+import hi.e3;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.bm;
+import org.telegram.ui.Components.dj;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.ki;
+import v4.c1;
+import v4.t;
+import v4.x0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class g extends s {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class g extends t {
     public final /* synthetic */ int Q;
     public final /* synthetic */ KeyEvent.Callback R;
 
@@ -26,67 +26,67 @@ public final class g extends s {
         this.R = frameLayout;
     }
 
-    @Override // v4.b0
+    @Override // v4.c0
     public boolean Y0() {
         switch (this.Q) {
             case 4:
-                return ((bw0) this.R).R1 != null && hd.a0;
+                return ((iw0) this.R).R1 != null && gd.a0;
             default:
                 return super.Y0();
         }
     }
 
-    @Override // v4.s, v4.b0, v4.o0
-    public void b0(w0 w0Var, b1 b1Var) {
+    @Override // v4.t, v4.c0, v4.p0
+    public void b0(x0 x0Var, c1 c1Var) {
         switch (this.Q) {
             case 1:
-                super.b0(w0Var, b1Var);
-                d3 d3Var = (d3) this.R;
-                if (d3Var.V) {
-                    d3Var.V = false;
-                    d3Var.a();
+                super.b0(x0Var, c1Var);
+                e3 e3Var = (e3) this.R;
+                if (e3Var.V) {
+                    e3Var.V = false;
+                    e3Var.a();
                     break;
                 }
                 break;
             default:
-                super.b0(w0Var, b1Var);
+                super.b0(x0Var, c1Var);
                 break;
         }
     }
 
-    @Override // v4.s, v4.b0, v4.o0
-    public int o0(int i7, w0 w0Var, b1 b1Var) {
+    @Override // v4.t, v4.c0, v4.p0
+    public int o0(int i7, x0 x0Var, c1 c1Var) {
         switch (this.Q) {
             case 0:
                 if (((m) this.R).b) {
                     i7 = 0;
                 }
-                return super.o0(i7, w0Var, b1Var);
+                return super.o0(i7, x0Var, c1Var);
             default:
-                return super.o0(i7, w0Var, b1Var);
+                return super.o0(i7, x0Var, c1Var);
         }
     }
 
-    @Override // v4.b0, v4.o0
-    public void v0(RecyclerView recyclerView, b1 b1Var, int i7) {
+    @Override // v4.c0, v4.p0
+    public void v0(RecyclerView recyclerView, c1 c1Var, int i7) {
         switch (this.Q) {
             case 2:
-                wi wiVar = new wi(this, recyclerView.getContext());
-                wiVar.a = i7;
-                w0(wiVar);
+                dj djVar = new dj(this, recyclerView.getContext());
+                djVar.a = i7;
+                w0(djVar);
                 break;
             case 3:
-                ul ulVar = new ul(this, recyclerView.getContext());
-                ulVar.a = i7;
-                w0(ulVar);
+                bm bmVar = new bm(this, recyclerView.getContext());
+                bmVar.a = i7;
+                w0(bmVar);
                 break;
             default:
-                super.v0(recyclerView, b1Var, i7);
+                super.v0(recyclerView, c1Var, i7);
                 break;
         }
     }
 
-    @Override // v4.s, v4.b0, v4.o0
+    @Override // v4.t, v4.c0, v4.p0
     public boolean y0() {
         switch (this.Q) {
             case 0:
@@ -102,16 +102,16 @@ public final class g extends s {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(ci ciVar, int i7, int i10) {
+    public /* synthetic */ g(ki kiVar, int i7, int i10) {
         super(i7);
         this.Q = i10;
-        this.R = ciVar;
+        this.R = kiVar;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(bw0 bw0Var) {
+    public g(iw0 iw0Var) {
         super(5);
         this.Q = 4;
-        this.R = bw0Var;
+        this.R = iw0Var;
     }
 }

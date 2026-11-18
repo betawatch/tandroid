@@ -1,12 +1,11 @@
 package org.telegram.ui.Cells;
 
 import android.view.MotionEvent;
-import org.telegram.messenger.ou;
 import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.x51;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class j1 extends OldVideoPlayerRewinder {
     public final /* synthetic */ int a;
@@ -45,9 +44,9 @@ public final class j1 extends OldVideoPlayerRewinder {
         switch (this.a) {
             case 0:
                 q1 q1Var = (q1) this.b;
-                m51 m51Var = q1Var.Ob;
-                m51Var.n = new ou(this, 2);
-                m51Var.e(false);
+                x51 x51Var = q1Var.Ob;
+                x51Var.n = new hi.w4(this, 27);
+                x51Var.e(false);
                 q1Var.Ob.d(!z10);
                 q1Var.Ob.f(true);
                 q1Var.invalidate();
@@ -61,13 +60,13 @@ public final class j1 extends OldVideoPlayerRewinder {
                 photoViewer.f0.invalidate();
                 wi.n nVar = photoViewer.P8;
                 if (nVar != null && (hVar = nVar.e) != null) {
-                    m51 m51Var2 = hVar.F;
-                    m51Var2.e(false);
-                    m51Var2.d(z11);
-                    m51Var2.f(true);
-                    fi.w2 w2Var = hVar.o;
-                    if (w2Var != null) {
-                        w2Var.invalidate();
+                    x51 x51Var2 = hVar.F;
+                    x51Var2.e(false);
+                    x51Var2.d(z11);
+                    x51Var2.f(true);
+                    fi.u2 u2Var = hVar.o;
+                    if (u2Var != null) {
+                        u2Var.invalidate();
                     }
                     wi.d dVar = hVar.m;
                     if (dVar != null) {
@@ -88,7 +87,7 @@ public final class j1 extends OldVideoPlayerRewinder {
                 q1Var.Ob.g(Math.abs(j3));
                 if (z10) {
                     q1Var.Q5.b0 = f10;
-                    q1Var.T3();
+                    q1Var.U3();
                     break;
                 }
                 break;
@@ -104,9 +103,9 @@ public final class j1 extends OldVideoPlayerRewinder {
                     hVar.F.g(0L);
                     if (z10) {
                         hVar.I = f10;
-                        fi.w2 w2Var = hVar.o;
-                        if (w2Var != null) {
-                            w2Var.invalidate();
+                        fi.u2 u2Var = hVar.o;
+                        if (u2Var != null) {
+                            u2Var.invalidate();
                         }
                         wi.d dVar = hVar.m;
                         if (dVar != null) {

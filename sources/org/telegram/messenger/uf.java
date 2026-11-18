@@ -6,7 +6,7 @@ import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uf implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -17,8 +17,8 @@ public final /* synthetic */ class uf implements Runnable {
     public final /* synthetic */ c1 f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ uf(si siVar, boolean z10, int i7, ArrayList arrayList, boolean z11, int i10) {
-        this.f = siVar;
+    public /* synthetic */ uf(ri riVar, boolean z10, int i7, ArrayList arrayList, boolean z11, int i10) {
+        this.f = riVar;
         this.c = z10;
         this.b = i7;
         this.h = arrayList;
@@ -39,17 +39,17 @@ public final /* synthetic */ class uf implements Runnable {
         c1 c1Var = this.f;
         switch (i10) {
             case 0:
-                si siVar = (si) c1Var;
+                ri riVar = (ri) c1Var;
                 ArrayList arrayList = (ArrayList) obj;
                 try {
-                    SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+                    SQLiteDatabase sQLiteDatabase = riVar.getMessagesStorage().b;
                     if (z11) {
-                        i7 = siVar.getMessagesController().g3;
+                        i7 = riVar.getMessagesController().i3;
                     } else {
                         if (i13 != 3 && i13 != 7) {
-                            i7 = i13 == 2 ? siVar.getMessagesController().f3 : siVar.getMessagesController().e3;
+                            i7 = i13 == 2 ? riVar.getMessagesController().h3 : riVar.getMessagesController().g3;
                         }
-                        i7 = ns.e3;
+                        i7 = ks.e3;
                     }
                     sQLiteDatabase.beginTransaction();
                     SQLitePreparedStatement executeFast = sQLiteDatabase.executeFast("REPLACE INTO web_recent_v3 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -101,13 +101,13 @@ public final /* synthetic */ class uf implements Runnable {
                 }
                 break;
             default:
-                ((np) c1Var).getNotificationCenter().k(18, Integer.valueOf(i13), Integer.valueOf(((TLRPC.messages_Messages) obj).messages.size()), Boolean.valueOf(z11), Boolean.valueOf(z10), Integer.valueOf(i12));
+                ((mp) c1Var).getNotificationCenter().k(18, Integer.valueOf(i13), Integer.valueOf(((TLRPC.messages_Messages) obj).messages.size()), Boolean.valueOf(z11), Boolean.valueOf(z10), Integer.valueOf(i12));
                 break;
         }
     }
 
-    public /* synthetic */ uf(np npVar, int i7, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i10) {
-        this.f = npVar;
+    public /* synthetic */ uf(mp mpVar, int i7, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i10) {
+        this.f = mpVar;
         this.b = i7;
         this.h = messages_messages;
         this.c = z10;

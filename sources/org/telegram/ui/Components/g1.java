@@ -1,28 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import android.widget.EditText;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.ui.LanguageSelectActivity;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class g1 implements org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditText b;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ g1(EditText editText, int i7) {
+    public /* synthetic */ g1(LaunchActivity launchActivity, int i7) {
         this.a = i7;
-        this.b = editText;
+        this.b = launchActivity;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.v1(this.b);
+                this.b.t0(new LanguageSelectActivity());
+                break;
+            case 1:
+                this.b.t0(new org.telegram.ui.x6());
                 break;
             default:
-                org.telegram.messenger.g0.v1(this.b);
-                break;
+                LaunchActivity launchActivity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    launchActivity.startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
         }
     }
 }

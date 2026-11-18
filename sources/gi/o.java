@@ -5,15 +5,15 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ja;
+import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class o extends LinearLayout {
     public final TextView a;
     public final TextView b;
@@ -26,22 +26,22 @@ public final class o extends LinearLayout {
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 16.0f);
-        q6.U(textView, j6.j5, null);
-        textView.setGravity(hd.a0 ? 5 : 3);
-        addView(textView, ja.t(-1, -2, 51, 0, 7, 0, 0));
+        u6.U(textView, n6.j5, null);
+        textView.setGravity(gd.a0 ? 5 : 3);
+        addView(textView, ma.t(-1, -2, 51, 0, 7, 0, 0));
         TextView textView2 = new TextView(context);
         this.b = textView2;
         textView2.setTextSize(1, 13.0f);
-        q6.U(textView2, j6.q5, null);
-        textView2.setGravity(hd.a0 ? 5 : 3);
-        addView(textView2, ja.t(-1, -2, 51, 0, 4, 0, 0));
+        u6.U(textView2, n6.q5, null);
+        textView2.setGravity(gd.a0 ? 5 : 3);
+        addView(textView2, ma.t(-1, -2, 51, 0, 4, 0, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), j6.k0);
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), n6.k0);
         }
     }
 

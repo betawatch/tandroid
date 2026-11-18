@@ -8,30 +8,29 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import bi.b6;
-import bi.y1;
-import bi.z4;
-import c8.ja;
+import bi.i8;
+import bi.q1;
+import bi.s2;
+import c8.ma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.d5;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.wi0;
+import org.telegram.ui.ActionBar.l5;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class s extends FrameLayout implements is {
+public abstract class s extends FrameLayout implements fs {
     public static final long[] L = {5449505950283078474L, 5420315771991497307L, 5373141891321699086L, 5373026167722876724L, 5435957248314579621L, 5440354006335495210L, 5436040291507247633L, 5445284980978621387L, 5442983582882601962L, 5409008750893734809L, 5371017798065592581L, 5472030678633684592L, 5467583879948803288L, 5471952986970267163L, 5415696465945173620L, 5397915559037785261L, 5283020991981693429L, 5283051451889756068L, 5282816560128336499L, 5465449362807070392L, 5470012829983580233L};
     public static final PorterDuffColorFilter M = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     public TLRPC.TL_messages_stickerSet E;
@@ -42,11 +41,11 @@ public abstract class s extends FrameLayout implements is {
     public ArrayList J;
     public boolean K;
     public final int a;
-    public final f0 b;
+    public final g0 b;
     public final m c;
-    public final v4.s d;
+    public final v4.t d;
     public final k e;
-    public final wi0 f;
+    public final l5 f;
     public final r h;
     public final ArrayList n;
     public int r;
@@ -55,10 +54,10 @@ public abstract class s extends FrameLayout implements is {
     public final boolean x;
     public int y;
 
-    public s(Context context, int i7, f0 f0Var) {
+    public s(Context context, int i7, g0 g0Var) {
         super(context);
-        g0 g0Var = (g0) this;
-        k kVar = new k(g0Var);
+        h0 h0Var = (h0) this;
+        k kVar = new k(h0Var);
         this.e = kVar;
         this.n = new ArrayList();
         this.r = 7;
@@ -66,29 +65,29 @@ public abstract class s extends FrameLayout implements is {
         this.H = new HashSet();
         this.I = new HashSet();
         this.a = i7;
-        this.b = f0Var;
-        this.x = m10.i(i7).q();
+        this.b = g0Var;
+        this.x = j10.i(i7).q();
         m mVar = new m(context, null);
         this.c = mVar;
-        v4.s sVar = new v4.s(this.r);
-        this.d = sVar;
-        sVar.O = new y1(g0Var, 3);
-        mVar.setLayoutManager(sVar);
-        wi0 wi0Var = new wi0(mVar, sVar);
-        this.f = wi0Var;
-        wi0Var.i = new h(g0Var, 0);
+        v4.t tVar = new v4.t(this.r);
+        this.d = tVar;
+        tVar.O = new s2(h0Var, 3);
+        mVar.setLayoutManager(tVar);
+        l5 l5Var = new l5(mVar, tVar);
+        this.f = l5Var;
+        l5Var.r = new h(h0Var, 0);
         mVar.setAdapter(kVar);
         mVar.setSelectorDrawableColor(0);
-        mVar.setOnItemClickListener(new b6(f0Var, 1));
+        mVar.setOnItemClickListener(new i8(g0Var, 1));
         mVar.setItemAnimator(null);
         mVar.setOverScrollMode(2);
         mVar.setVerticalScrollBarEnabled(false);
         mVar.setClipToPadding(false);
-        mVar.j(new z4(g0Var, 5));
-        addView(mVar, ja.c(-1.0f, -1));
-        r rVar = new r(g0Var, context);
+        mVar.j(new q1(h0Var, 6));
+        addView(mVar, ma.c(-1.0f, -1));
+        r rVar = new r(h0Var, context);
         this.h = rVar;
-        addView(rVar, ja.e(-1, 36, 48));
+        addView(rVar, ma.e(-1, 36, 48));
         e();
     }
 
@@ -104,13 +103,13 @@ public abstract class s extends FrameLayout implements is {
     }
 
     public static boolean d(Drawable drawable) {
-        return (drawable instanceof g5) && gj.C4(((g5) drawable).e);
+        return (drawable instanceof o5) && fj.C4(((o5) drawable).e);
     }
 
     public final ArrayList a() {
         if (this.J == null) {
             this.J = new ArrayList();
-            for (String str : np.s1(this.a).f7.getString("qrAppliedEmoji", "").split(",")) {
+            for (String str : mp.u1(this.a).h7.getString("qrAppliedEmoji", "").split(",")) {
                 try {
                     if (!str.isEmpty()) {
                         this.J.add(Long.valueOf(Long.parseLong(str)));
@@ -131,7 +130,7 @@ public abstract class s extends FrameLayout implements is {
         for (int i11 = 0; i11 < mVar.getChildCount(); i11++) {
             View childAt = mVar.getChildAt(i11);
             this.d.getClass();
-            int z10 = v4.o0.z(childAt);
+            int z10 = v4.p0.z(childAt);
             if (z10 >= paddingTop && z10 < i7 && (R = RecyclerView.R(childAt)) != -1) {
                 i10 = R;
                 i7 = z10;
@@ -143,9 +142,9 @@ public abstract class s extends FrameLayout implements is {
         return 0;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.x0 && objArr.length > 0) {
+        if (i7 == ks.x0 && objArr.length > 0) {
             Object obj = objArr[0];
             if ((obj instanceof Integer) && ((Integer) obj).intValue() != 5) {
                 return;
@@ -164,59 +163,57 @@ public abstract class s extends FrameLayout implements is {
         ArrayList<Long> arrayList2;
         ArrayList<TLRPC.Document> arrayList3;
         int i7;
-        HashSet hashSet;
+        ArrayList arrayList4;
+        int i10;
         TLRPC.Document document;
-        String str4;
-        HashSet hashSet2;
-        ArrayList<TLRPC.Document> arrayList4;
-        int i10 = this.a;
-        si b02 = si.b0(i10);
-        ArrayList<o> arrayList5 = this.n;
-        arrayList5.clear();
-        ArrayList arrayList6 = new ArrayList();
-        ArrayList s02 = b02.s0(5);
-        int size = s02.size();
-        int i11 = 0;
+        ArrayList<TLRPC.Document> arrayList5;
+        int i11 = this.a;
+        ri d02 = ri.d0(i11);
+        ArrayList<o> arrayList6 = this.n;
+        arrayList6.clear();
+        ArrayList arrayList7 = new ArrayList();
+        ArrayList u02 = d02.u0(5);
+        int size = u02.size();
         int i12 = 0;
+        int i13 = 0;
         while (true) {
             str = "application/x-tgsticker";
-            if (i12 >= size) {
+            if (i13 >= size) {
                 break;
             }
-            Object obj = s02.get(i12);
-            i12++;
+            Object obj = u02.get(i13);
+            i13++;
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
             if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null && tL_messages_stickerSet.documents != null) {
-                ArrayList arrayList7 = new ArrayList();
-                ArrayList<TLRPC.Document> arrayList8 = tL_messages_stickerSet.documents;
-                int size2 = arrayList8.size();
-                int i13 = 0;
-                while (i13 < size2) {
-                    TLRPC.Document document2 = arrayList8.get(i13);
-                    i13++;
+                ArrayList arrayList8 = new ArrayList();
+                ArrayList<TLRPC.Document> arrayList9 = tL_messages_stickerSet.documents;
+                int size2 = arrayList9.size();
+                int i14 = 0;
+                while (i14 < size2) {
+                    TLRPC.Document document2 = arrayList9.get(i14);
+                    i14++;
                     TLRPC.Document document3 = document2;
                     if (document3 != null && "application/x-tgsticker".equals(document3.mime_type)) {
-                        arrayList7.add(document3);
+                        arrayList8.add(document3);
                     }
                 }
-                if (!arrayList7.isEmpty()) {
-                    arrayList6.add(new o(2, tL_messages_stickerSet.set.title, arrayList7));
+                if (!arrayList8.isEmpty()) {
+                    arrayList7.add(new o(2, tL_messages_stickerSet.set.title, arrayList8));
                 }
             }
         }
-        int i14 = 4;
         if (this.E == null && !this.F) {
             this.F = true;
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "RestrictedEmoji";
-            TLRPC.TL_messages_stickerSet l02 = si.b0(i10).l0(tL_inputStickerSetShortName, null, false, true, new ai.g0(this, i14));
-            if (l02 != null && (arrayList4 = l02.documents) != null && !arrayList4.isEmpty()) {
-                this.E = l02;
+            TLRPC.TL_messages_stickerSet n02 = ri.d0(i11).n0(tL_inputStickerSetShortName, null, false, true, new ai.g0(this, 6));
+            if (n02 != null && (arrayList5 = n02.documents) != null && !arrayList5.isEmpty()) {
+                this.E = n02;
             }
         }
-        ArrayList arrayList9 = new ArrayList(21);
-        HashSet hashSet3 = this.I;
-        hashSet3.clear();
+        ArrayList arrayList10 = new ArrayList(21);
+        HashSet hashSet = this.I;
+        hashSet.clear();
         if (this.E != null || this.G) {
             HashMap hashMap = new HashMap();
             TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = this.E;
@@ -227,11 +224,11 @@ public abstract class s extends FrameLayout implements is {
                     TLRPC.Document document4 = arrayList3.get(i15);
                     i15++;
                     TLRPC.Document document5 = document4;
-                    String str5 = str;
+                    String str4 = str;
                     if (document5 != null) {
                         hashMap.put(Long.valueOf(document5.id), document5);
                     }
-                    str = str5;
+                    str = str4;
                 }
             }
             str2 = str;
@@ -253,124 +250,109 @@ public abstract class s extends FrameLayout implements is {
             j3 = 0;
             j10 = 0;
             int i17 = 0;
-            for (int i18 = 21; i17 < i18; i18 = 21) {
+            while (i17 < 21) {
                 long j11 = (i17 == 4 && j10 != j3 && hashMap.containsKey(Long.valueOf(j10))) ? j10 : L[i17];
                 TLRPC.Document document6 = (TLRPC.Document) hashMap.get(Long.valueOf(j11));
                 if (document6 == null) {
-                    document6 = g5.e(i10, j11);
+                    document6 = o5.e(i11, j11);
                 }
                 if (document6 != null) {
-                    arrayList9.add(document6);
-                    hashSet3.add(Long.valueOf(document6.id));
+                    arrayList10.add(document6);
+                    hashSet.add(Long.valueOf(document6.id));
                 } else if (this.H.add(Long.valueOf(j11))) {
-                    g5.g(i10).b(j11, new d5() { // from class: ci.g
-                        @Override // org.telegram.ui.Components.d5
+                    o5.g(i11).b(j11, new org.telegram.ui.Components.l5() { // from class: ci.g
+                        @Override // org.telegram.ui.Components.l5
                         public final void a(TLRPC.Document document7) {
-                            org.telegram.messenger.g0.h3(new c1.c(8, s.this, document7));
+                            org.telegram.messenger.g0.g3(new c1.c(7, s.this, document7));
                         }
                     });
                 }
                 i17++;
             }
         } else {
-            for (int i19 = 0; i19 < 21; i19++) {
-                arrayList9.add(new TLRPC.TL_documentEmpty());
+            for (int i18 = 0; i18 < 21; i18++) {
+                arrayList10.add(new TLRPC.TL_documentEmpty());
             }
             str2 = "application/x-tgsticker";
         }
-        if (!arrayList9.isEmpty()) {
-            arrayList5.add(new o(0, hd.M0(2131746497, null), arrayList9));
+        if (!arrayList10.isEmpty()) {
+            arrayList6.add(new o(0, gd.M0(2131746302, null), arrayList10));
         }
-        ArrayList arrayList10 = new ArrayList();
-        HashSet hashSet4 = new HashSet();
-        int i20 = this.r * 3;
+        ArrayList arrayList11 = new ArrayList();
+        HashSet hashSet2 = new HashSet();
+        int i19 = this.r * 3;
         ArrayList a10 = a();
-        int i21 = 0;
-        while (i21 < a10.size() && arrayList10.size() < i20) {
-            long longValue = ((Long) a10.get(i21)).longValue();
-            int size5 = arrayList9.size();
-            int i22 = i11;
+        int i20 = 0;
+        while (i20 < a10.size() && arrayList11.size() < i19) {
+            long longValue = ((Long) a10.get(i20)).longValue();
+            int size5 = arrayList10.size();
             while (true) {
-                if (i22 >= size5) {
-                    hashSet = hashSet4;
+                if (i12 >= size5) {
+                    arrayList4 = a10;
+                    i10 = i20;
                     document = null;
                     break;
                 }
-                Object obj2 = arrayList9.get(i22);
-                i22++;
+                Object obj2 = arrayList10.get(i12);
+                i12++;
                 document = (TLRPC.Document) obj2;
-                hashSet = hashSet4;
+                arrayList4 = a10;
+                i10 = i20;
                 if (document.id == longValue) {
                     break;
-                } else {
-                    hashSet4 = hashSet;
                 }
+                a10 = arrayList4;
+                i20 = i10;
             }
             if (document == null) {
-                document = g5.e(i10, longValue);
+                document = o5.e(i11, longValue);
             }
-            if (document != null) {
-                str4 = str2;
-                if (str4.equals(document.mime_type)) {
-                    hashSet2 = hashSet;
-                    if (hashSet2.add(Long.valueOf(document.id))) {
-                        arrayList10.add(document);
-                    }
-                    i21++;
-                    str2 = str4;
-                    hashSet4 = hashSet2;
-                    i11 = 0;
-                }
-            } else {
-                str4 = str2;
+            if (document != null && str2.equals(document.mime_type) && hashSet2.add(Long.valueOf(document.id))) {
+                arrayList11.add(document);
             }
-            hashSet2 = hashSet;
-            i21++;
-            str2 = str4;
-            hashSet4 = hashSet2;
-            i11 = 0;
+            i20 = i10 + 1;
+            a10 = arrayList4;
+            i12 = 0;
         }
-        HashSet hashSet5 = hashSet4;
-        String str6 = str2;
-        int i23 = 0;
+        int i21 = 0;
         while (true) {
-            ArrayList arrayList11 = j6.i;
-            if (i23 >= arrayList11.size() || arrayList10.size() >= i20) {
+            ArrayList arrayList12 = j6.i;
+            if (i21 >= arrayList12.size() || arrayList11.size() >= i19) {
                 break;
             }
-            String str7 = (String) arrayList11.get(i23);
-            if (str7 != null && str7.startsWith("animated_")) {
+            String str5 = (String) arrayList12.get(i21);
+            if (str5 != null && str5.startsWith("animated_")) {
                 try {
-                    TLRPC.Document e10 = g5.e(i10, Long.parseLong(str7.substring(9)));
-                    if ((e10 != null && str6.equals(e10.mime_type)) && hashSet5.add(Long.valueOf(e10.id))) {
-                        arrayList10.add(e10);
+                    TLRPC.Document e10 = o5.e(i11, Long.parseLong(str5.substring(9)));
+                    if ((e10 != null && str2.equals(e10.mime_type)) && hashSet2.add(Long.valueOf(e10.id))) {
+                        arrayList11.add(e10);
                     }
                 } catch (NumberFormatException unused) {
                 }
             }
-            i23++;
+            i21++;
         }
-        if (arrayList10.isEmpty()) {
+        if (arrayList11.isEmpty()) {
             i7 = 1;
         } else {
             i7 = 1;
-            arrayList5.add(new o(1, hd.M0(2131746361, null), arrayList10));
+            arrayList6.add(new o(1, gd.M0(2131746166, null), arrayList11));
         }
-        arrayList5.addAll(arrayList6);
-        int size6 = arrayList5.size();
-        int i24 = 0;
-        int i25 = 0;
-        while (i25 < size6) {
-            o oVar = arrayList5.get(i25);
-            i25++;
+        arrayList6.addAll(arrayList7);
+        int size6 = arrayList6.size();
+        int i22 = 0;
+        int i23 = 0;
+        while (i23 < size6) {
+            o oVar = arrayList6.get(i23);
+            i23++;
             o oVar2 = oVar;
-            oVar2.d = i24;
-            i24 += oVar2.c.size() + (oVar2.b != null ? i7 : 0);
+            oVar2.d = i22;
+            i22 += oVar2.c.size() + (oVar2.b != null ? i7 : 0);
         }
-        this.s = i24;
+        this.s = i22;
         this.e.f();
         r rVar = this.h;
-        rVar.setSections(arrayList5);
+        rVar.setSections(arrayList6);
         rVar.a(f(c()), false);
     }
 
@@ -396,8 +378,8 @@ public abstract class s extends FrameLayout implements is {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         int i7 = this.a;
-        ns.f(i7).c(this, ns.x0);
-        ns.f(i7).c(this, ns.B0);
+        ks.f(i7).c(this, ks.x0);
+        ks.f(i7).c(this, ks.B0);
         e();
     }
 
@@ -405,8 +387,8 @@ public abstract class s extends FrameLayout implements is {
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         int i7 = this.a;
-        ns.f(i7).n(this, ns.x0);
-        ns.f(i7).n(this, ns.B0);
+        ks.f(i7).n(this, ks.x0);
+        ks.f(i7).n(this, ks.B0);
     }
 
     @Override // android.view.View
@@ -417,7 +399,7 @@ public abstract class s extends FrameLayout implements is {
         if (max != this.r) {
             this.r = max;
             this.d.y1(max);
-            post(new ch.w(this, 1));
+            post(new ca.r(this, 5));
         }
     }
 

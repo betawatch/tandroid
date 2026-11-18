@@ -1,44 +1,41 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ks;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m5 extends Drawable {
-    public final float a;
-    public final Paint b;
+public final class m5 extends j5 {
+    public final boolean c;
+    public final ImageReceiver d;
 
-    public m5(float f10, int i7) {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.a = f10;
-        paint.setColor(i7);
+    public m5(View view, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = true;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.d = imageReceiver;
+        pb.d1(imageReceiver, stargiftattributemodel.document, ks.q2);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(getBounds());
-        Paint paint = this.b;
-        float f10 = this.a;
-        canvas.drawRoundRect(rectF, f10, f10, paint);
-        org.telegram.messenger.g0.P(canvas, rectF, f10);
+    @Override // di.j5
+    public final void a() {
+        if (this.c) {
+            this.d.R();
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // di.j5
+    public final boolean b() {
+        return this.d.B() != null;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public m5(org.telegram.ui.Components.q9 q9Var, TL_stars.starGiftAttributeModel stargiftattributemodel) {
+        this.a = stargiftattributemodel.name;
+        this.b = stargiftattributemodel.getRarityPermille();
+        this.c = false;
+        this.d = q9Var.getImageReceiver();
     }
 }

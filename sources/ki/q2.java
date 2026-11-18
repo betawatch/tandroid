@@ -1,49 +1,18 @@
 package ki;
 
-import org.telegram.messenger.np;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_bots;
-import org.telegram.ui.ActionBar.o4;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import android.graphics.Point;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s2 b;
-
-    public /* synthetic */ q2(s2 s2Var, int i7) {
-        this.a = i7;
-        this.b = s2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
-                s2 s2Var = this.b;
-                x2 x2Var = s2Var.d;
-                toggleuseremojistatuspermission.bot = np.s1(x2Var.I).o1(x2Var.J);
-                toggleuseremojistatuspermission.enabled = false;
-                ConnectionsManager.getInstance(x2Var.I).sendRequest(toggleuseremojistatuspermission, new r2(s2Var, 1));
-                break;
-            case 1:
-                x2 x2Var2 = this.b.d;
-                s0.e(x2Var2.getContext(), x2Var2.I, x2Var2.J).l(false, null);
-                break;
-            default:
-                x2 x2Var3 = this.b.d;
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                if (T != null && T.getParentLayout() != null) {
-                    o4 parentLayout = T.getParentLayout();
-                    T.presentFragment(ProfileActivity.C4(x2Var3.J));
-                    org.telegram.messenger.g0.k3(parentLayout, "botPermissionLocation");
-                    x2Var3.o(true);
-                    break;
-                }
-                break;
+public final class q2 extends org.telegram.ui.ActionBar.k {
+    @Override // org.telegram.ui.ActionBar.k, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
+            Point point = org.telegram.messenger.g0.q;
+            i7 = View.MeasureSpec.makeMeasureSpec((int) (Math.min(point.x, point.y) * 0.8f), TLObject.FLAG_30);
         }
+        super.onMeasure(i7, i10);
     }
 }

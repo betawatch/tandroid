@@ -1,31 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.ViewGroup;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class p00 implements we.a {
-    public final ViewGroup a;
-    public final nh.c b;
+public final /* synthetic */ class p00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FragmentContextView b;
 
-    public p00(bi.v1 v1Var, GroupCallMessage groupCallMessage) {
-        nh.c cVar = new nh.c(v1Var.getContext());
-        this.b = cVar;
-        cVar.setBackgroundColor(i0.a.o(-16777216, 34));
-        xh.l lVar = cVar.w;
-        lVar.setMaxLines(1);
-        lVar.setSingleLine(true);
-        lVar.setEllipsize(TextUtils.TruncateAt.END);
-        cVar.set(groupCallMessage);
-        cVar.setAlpha(0.0f);
-        this.a = v1Var;
-        v1Var.addView(cVar);
+    public /* synthetic */ p00(FragmentContextView fragmentContextView, int i7) {
+        this.a = i7;
+        this.b = fragmentContextView;
     }
 
-    @Override // we.a
-    public final void a() {
-        this.a.removeView(this.b);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        FragmentContextView fragmentContextView = this.b;
+        switch (i7) {
+            case 0:
+                fragmentContextView.P.g = 0.0f;
+                fragmentContextView.N.invalidate();
+                break;
+            default:
+                float[] fArr = FragmentContextView.X0;
+                fragmentContextView.o(true);
+                break;
+        }
     }
 }

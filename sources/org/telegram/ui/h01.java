@@ -1,52 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h01 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ n11 c;
+public final class h01 extends n11 {
+    public final /* synthetic */ View R;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique S;
+    public final /* synthetic */ i01 T;
 
-    public /* synthetic */ h01(n11 n11Var, boolean z10, int i7) {
-        this.a = i7;
-        this.c = n11Var;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h01(i01 i01Var, Context context, Runnable runnable, View view, b11 b11Var, org.telegram.ui.ActionBar.i6 i6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(i01Var.e, context, runnable, view, b11Var, i6Var);
+        this.T = i01Var;
+        this.R = view2;
+        this.S = tL_starGiftUnique;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                n11 n11Var = this.c;
-                b01 b01Var = n11Var.j0;
-                boolean z10 = this.b;
-                b01Var.setVisibility(z10 ? 0 : 8);
-                n11Var.i0.setVisibility(z10 ? 8 : 0);
-                n11Var.G1 = null;
-                if (!z10 && (arrayList2 = n11Var.C1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = n11Var.F1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    n11Var.r0.E(false);
-                }
-                if (!z10 && (arrayList = n11Var.D1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                n11 n11Var2 = this.c;
-                n11Var2.k0.setVisibility((this.b && n11Var2.j0.getVisibility() == 0) ? 0 : 8);
-                n11Var2.J1 = null;
-                break;
-        }
+    @Override // org.telegram.ui.n11, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        super.dismiss();
+        this.T.e.Y0 = null;
     }
 }

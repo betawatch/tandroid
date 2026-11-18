@@ -1,22 +1,6 @@
 package a8;
 
-import android.util.Base64;
-import java.util.LinkedHashMap;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class o9 {
-    public static byte[] a(JSONObject jSONObject) {
-        LinkedHashMap linkedHashMap = d1.g.a;
-        String optString = jSONObject.optString("challenge", "");
-        kotlin.jvm.internal.j.b(optString);
-        if (optString.length() == 0) {
-            throw new JSONException("Challenge not found in request or is unexpectedly empty");
-        }
-        byte[] decode = Base64.decode(optString, 11);
-        kotlin.jvm.internal.j.d(decode, "decode(...)");
-        return decode;
-    }
 }

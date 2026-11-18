@@ -1,8 +1,8 @@
 package e2;
 
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x1 {
     public static final x1 d = new x1(0, 0);
@@ -38,7 +38,7 @@ public final class x1 {
     }
 
     public final int hashCode() {
-        return Float.floatToRawIntBits(this.c) + ((((ns.u3 + this.a) * 31) + this.b) * 31);
+        return Float.floatToRawIntBits(this.c) + ((((ks.u3 + this.a) * 31) + this.b) * 31);
     }
 
     public x1(float f10, int i7, int i10) {

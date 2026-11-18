@@ -1,24 +1,10 @@
 package fi;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class a9 extends x {
-    public final /* synthetic */ i9 a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(Context context, i9 i9Var) {
-        super(context);
-        this.a = i9Var;
-    }
-
-    @Override // fi.x, android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        a4 a4Var = this.a.G0;
-        if (a4Var != null) {
-            a4Var.b();
-        }
-    }
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public interface a9 {
+    void m(Canvas canvas, RectF rectF, float f10);
 }

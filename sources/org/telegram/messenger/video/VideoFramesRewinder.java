@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import bi.m1;
+import bi.m2;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -13,13 +13,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -43,7 +43,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -53,9 +53,9 @@ public class VideoFramesRewinder {
     }
 
     public VideoFramesRewinder() {
-        int o4 = gz.o();
+        int o4 = bz.o();
         if (o4 == 1) {
-            this.maxFramesCount = ns.e3;
+            this.maxFramesCount = ks.e3;
             this.maxFrameSide = 580;
         } else if (o4 != 2) {
             this.maxFramesCount = 100;
@@ -98,7 +98,7 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) r.b.g(1, arrayList));
+            this.frames.add((Frame) p5.c.g(1, arrayList));
         }
         if (arrayList.size() > 0) {
             a8.b("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
@@ -183,7 +183,7 @@ public class VideoFramesRewinder {
             c12 = c10;
             i12 = 0;
         }
-        g0.h3(new m1(this, arrayList, currentTimeMillis, 13));
+        g0.g3(new m2(this, arrayList, currentTimeMillis, 13));
     }
 
     private void prepare(long j3) {
@@ -303,7 +303,7 @@ public class VideoFramesRewinder {
             release();
         } else {
             this.stop.set(false);
-            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, m10.t0, 0L, null, true);
+            this.mDecoder = AnimatedFileNative.a(file.getAbsolutePath(), this.meta, j10.t0, 0L, null, true);
         }
     }
 }

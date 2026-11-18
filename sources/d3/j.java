@@ -3,7 +3,7 @@ package d3;
 import android.content.Context;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j {
     public final Context a;
@@ -16,6 +16,6 @@ public final class j {
 
     public j(Context context) {
         this.a = context;
-        this.c = new androidx.emoji2.text.n(context, 2);
+        this.c = new androidx.emoji2.text.n(context, (char) 0);
     }
 }

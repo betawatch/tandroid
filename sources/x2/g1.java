@@ -1,25 +1,148 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.Arrays;
+import java.util.Random;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface g1 {
-    g1 a(int i7, int i10);
+public final class g1 implements i1 {
+    public final Random a;
+    public final int[] b;
+    public final int[] c;
 
-    int b();
+    public g1() {
+        this(new Random());
+    }
 
-    g1 c(int i7);
+    @Override // x2.i1
+    public final i1 a(int i7, int i10) {
+        int i11 = i10 - i7;
+        int[] iArr = this.b;
+        int[] iArr2 = new int[iArr.length - i11];
+        int i12 = 0;
+        for (int i13 = 0; i13 < iArr.length; i13++) {
+            int i14 = iArr[i13];
+            if (i14 < i7 || i14 >= i10) {
+                int i15 = i13 - i12;
+                if (i14 >= i7) {
+                    i14 -= i11;
+                }
+                iArr2[i15] = i14;
+            } else {
+                i12++;
+            }
+        }
+        return new g1(iArr2, new Random(this.a.nextLong()));
+    }
 
-    int d(int i7);
+    @Override // x2.i1
+    public final int b() {
+        int[] iArr = this.b;
+        if (iArr.length > 0) {
+            return iArr[0];
+        }
+        return -1;
+    }
 
-    int e(int i7);
+    @Override // x2.i1
+    public final i1 c(int i7) {
+        return ((g1) i()).f(0, i7);
+    }
 
-    g1 f(int i7, int i10);
+    @Override // x2.i1
+    public final int d(int i7) {
+        int i10 = this.c[i7] - 1;
+        if (i10 >= 0) {
+            return this.b[i10];
+        }
+        return -1;
+    }
 
-    g1 g();
+    @Override // x2.i1
+    public final int e(int i7) {
+        int i10 = this.c[i7] + 1;
+        int[] iArr = this.b;
+        if (i10 < iArr.length) {
+            return iArr[i10];
+        }
+        return -1;
+    }
 
-    int getLength();
+    @Override // x2.i1
+    public final i1 f(int i7, int i10) {
+        int[] iArr;
+        Random random;
+        int[] iArr2 = new int[i10];
+        int[] iArr3 = new int[i10];
+        int i11 = 0;
+        while (true) {
+            iArr = this.b;
+            random = this.a;
+            if (i11 >= i10) {
+                break;
+            }
+            iArr2[i11] = random.nextInt(iArr.length + 1);
+            int i12 = i11 + 1;
+            int nextInt = random.nextInt(i12);
+            iArr3[i11] = iArr3[nextInt];
+            iArr3[nextInt] = i11 + i7;
+            i11 = i12;
+        }
+        Arrays.sort(iArr2);
+        int[] iArr4 = new int[iArr.length + i10];
+        int i13 = 0;
+        int i14 = 0;
+        for (int i15 = 0; i15 < iArr.length + i10; i15++) {
+            if (i13 >= i10 || i14 != iArr2[i13]) {
+                int i16 = i14 + 1;
+                int i17 = iArr[i14];
+                iArr4[i15] = i17;
+                if (i17 >= i7) {
+                    iArr4[i15] = i17 + i10;
+                }
+                i14 = i16;
+            } else {
+                iArr4[i15] = iArr3[i13];
+                i13++;
+            }
+        }
+        return new g1(iArr4, new Random(random.nextLong()));
+    }
 
-    int h();
+    @Override // x2.i1
+    public final int getLength() {
+        return this.b.length;
+    }
 
-    g1 i();
+    @Override // x2.i1
+    public final int h() {
+        int[] iArr = this.b;
+        if (iArr.length > 0) {
+            return iArr[iArr.length - 1];
+        }
+        return -1;
+    }
+
+    @Override // x2.i1
+    public final i1 i() {
+        return new g1(new Random(this.a.nextLong()));
+    }
+
+    public g1(int[] iArr, Random random) {
+        this.b = iArr;
+        this.a = random;
+        this.c = new int[iArr.length];
+        for (int i7 = 0; i7 < iArr.length; i7++) {
+            this.c[iArr[i7]] = i7;
+        }
+    }
+
+    public g1(Random random) {
+        this(new int[0], random);
+    }
+
+    @Override // x2.i1
+    public final i1 g() {
+        return this;
+    }
 }

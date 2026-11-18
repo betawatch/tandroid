@@ -1,36 +1,33 @@
 package fi;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.d80;
-import org.telegram.ui.pa0;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class u5 implements RequestDelegate {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class u5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ p6 b;
 
-    public /* synthetic */ u5(Object obj, long j3, int i7) {
+    public /* synthetic */ u5(p6 p6Var, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = j3;
+        this.b = p6Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new bi.m1((s6) this.c, this.b, tLObject, 6));
+                p6 p6Var = this.b;
+                p6Var.R = false;
+                p6Var.S = null;
+                break;
+            case 1:
+                p6 p6Var2 = this.b;
+                p6Var2.s = true;
+                p6Var2.l.edit().putBoolean("read_loaded", true).apply();
                 break;
             default:
-                pa0 pa0Var = (pa0) this.c;
-                if (tLObject != null) {
-                    org.telegram.messenger.g0.h3(new d80(pa0Var, tLObject, this.b, 1));
-                    break;
-                }
+                p6 p6Var3 = this.b;
+                p6Var3.R = false;
+                p6Var3.S = null;
                 break;
         }
     }

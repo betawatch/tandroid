@@ -1,80 +1,67 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.Window;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class k41 extends j41 {
-    public final int w;
-    public final /* synthetic */ z41 x;
+public final class k41 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k41(z41 z41Var, Context context, int i7, int i10, lg.f fVar) {
-        super(context, i10, fVar, null);
-        this.x = z41Var;
-        this.w = i7;
+    public /* synthetic */ k41(m41 m41Var, int i7) {
+        this.a = i7;
+        this.b = m41Var;
     }
 
-    @Override // org.telegram.ui.j41
-    public final void b(l41 l41Var) {
-        int i7;
-        z41 z41Var = this.x;
-        i7 = ((org.telegram.ui.ActionBar.e2) z41Var).classGuid;
-        l41Var.a(this.w, i7, z41Var.a.stats_dc, new eh(2, z41Var, this.r));
-    }
-
-    @Override // org.telegram.ui.j41
-    public final void c() {
-        int i7;
-        if (this.r.c > 0) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                m41 m41Var = this.b;
+                m41Var.b.setVisibility(4);
+                lg.g gVar = m41Var.b;
+                gVar.K = false;
+                lg.g gVar2 = m41Var.c;
+                gVar2.K = true;
+                gVar.z0 = 0;
+                gVar2.z0 = 0;
+                Window window = m41Var.a;
+                if (window != null) {
+                    window.clearFlags(16);
+                    break;
+                }
+                break;
+            case 1:
+                m41 m41Var2 = this.b;
+                lg.g gVar3 = m41Var2.c;
+                gVar3.setVisibility(4);
+                lg.g gVar4 = m41Var2.b;
+                gVar4.z0 = 0;
+                gVar3.z0 = 0;
+                gVar4.K = true;
+                gVar3.K = false;
+                if (gVar4 instanceof lg.q) {
+                    gVar4.v0 = false;
+                    gVar4.d();
+                } else {
+                    gVar4.v0 = true;
+                    gVar4.x((gVar4.H0 * gVar4.h0.k) - lg.g.l1);
+                    gVar4.c(true);
+                    gVar4.invalidate();
+                }
+                Window window2 = m41Var2.a;
+                if (window2 != null) {
+                    window2.clearFlags(16);
+                    break;
+                }
+                break;
+            default:
+                m41 m41Var3 = this.b;
+                m41Var3.b.z0 = 0;
+                m41Var3.e.setVisibility(8);
+                break;
         }
-        performClick();
-        lg.g gVar = this.b;
-        if (gVar.u0.H) {
-            long selectedDate = gVar.getSelectedDate();
-            if (this.s == 4) {
-                l41 l41Var = this.r;
-                l41Var.e = new mg.e(l41Var.d, selectedDate);
-                g(false);
-                return;
-            }
-            if (this.r.g == null) {
-                return;
-            }
-            z41 z41Var = this.x;
-            z41.c0(z41Var);
-            String str = this.r.g + "_" + selectedDate;
-            mg.b bVar = (mg.b) z41Var.V.f(str);
-            if (bVar != null) {
-                this.r.e = bVar;
-                g(false);
-                return;
-            }
-            TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-            tL_loadAsyncGraph.token = this.r.g;
-            if (selectedDate != 0) {
-                tL_loadAsyncGraph.x = selectedDate;
-                tL_loadAsyncGraph.flags |= 1;
-            }
-            y41 y41Var = new y41();
-            z41Var.Z = y41Var;
-            z41Var.T.getClass();
-            y41Var.a = RecyclerView.R(this);
-            gVar.u0.d(true, false);
-            int i10 = this.w;
-            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new jo0(this, str, y41Var, 10), null, null, 0, z41Var.a.stats_dc, 1, true);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-            i7 = ((org.telegram.ui.ActionBar.e2) z41Var).classGuid;
-            connectionsManager.bindRequestToGuid(sendRequest, i7);
-        }
-    }
-
-    @Override // org.telegram.ui.j41
-    public final void f() {
-        z41.c0(this.x);
     }
 }

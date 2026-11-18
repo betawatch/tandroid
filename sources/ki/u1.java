@@ -1,63 +1,32 @@
 package ki;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.util.SparseIntArray;
-import android.widget.ImageView;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.i9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class u1 {
-    public final SparseIntArray a = new SparseIntArray();
-    public final SparseIntArray b = new SparseIntArray();
-    public final int[] c = {j6.G6, j6.u8, j6.G8, j6.E8, j6.F8, j6.I5, j6.zj};
-    public float d;
+public final /* synthetic */ class u1 implements r3, i9, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ t2 a;
 
-    public final int a(int i7) {
-        return i0.a.f(this.d, this.a.get(i7), this.b.get(i7));
+    public /* synthetic */ u1(t2 t2Var) {
+        this.a = t2Var;
     }
 
-    public final void b(org.telegram.ui.ActionBar.k kVar, float f10) {
-        this.d = f10;
-        int i7 = j6.G6;
-        kVar.setTitleColor(a(i7));
-        kVar.setSubtitleColor(j6.r1(0.45f, a(i7)));
-        kVar.H(a(i7), false);
-        ImageView imageView = kVar.e;
-        if (imageView != null) {
-            imageView.setColorFilter(new PorterDuffColorFilter(a(i7), PorterDuff.Mode.SRC_IN));
-        }
-        kVar.F(a(j6.u8), false);
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        this.a.o(false);
     }
 
-    public final void c(SparseIntArray sparseIntArray, int i7, e6 e6Var) {
-        int i10;
-        int[] iArr = this.c;
-        int i11 = 0;
-        if (i7 == 0) {
-            while (i11 < iArr.length) {
-                int i12 = iArr[i11];
-                sparseIntArray.put(i12, j6.w0(i12, e6Var));
-                i11++;
-            }
+    @Override // org.telegram.messenger.i9
+    public Object m(Object obj) {
+        return Boolean.valueOf(this.a.f.getKeyboardHeight() >= org.telegram.messenger.g0.L(20.0f));
+    }
+
+    @Override // ki.r3
+    public void s(boolean z10) {
+        t2 t2Var = this.a;
+        if (t2Var.f0 && z10) {
             return;
         }
-        int i13 = i0.a.h(i7) < 0.5d ? -1 : -16777216;
-        int o4 = i0.a.o(i13, 60);
-        while (i11 < iArr.length) {
-            int i14 = iArr[i11];
-            if (i14 == j6.G8 || i14 == j6.E8 || i14 == j6.F8 || i14 == (i10 = j6.I5)) {
-                sparseIntArray.put(i14, j6.w0(i14, e6Var));
-            } else if (i14 == j6.zj) {
-                sparseIntArray.put(i14, i0.a.f(0.5f, i7, i13));
-            } else if (i14 == j6.u8 || i14 == i10) {
-                sparseIntArray.put(i14, o4);
-            } else {
-                sparseIntArray.put(i14, i13);
-            }
-            i11++;
-        }
+        t2Var.o(true);
     }
 }

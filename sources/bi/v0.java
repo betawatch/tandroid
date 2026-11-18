@@ -2,15 +2,14 @@ package bi;
 
 import android.animation.AnimatorSet;
 import java.util.LinkedList;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.ra0;
-import org.telegram.ui.Components.vg;
-import org.telegram.ui.Components.yf;
+import org.telegram.ui.Components.bb0;
+import org.telegram.ui.Components.eh;
+import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.lg;
+import org.telegram.ui.Components.pc0;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements r1.c {
     public final /* synthetic */ int a;
@@ -33,71 +32,71 @@ public final /* synthetic */ class v0 implements r1.c {
                 fVar.run();
                 break;
             case 1:
-                ki.x3 x3Var = (ki.x3) this.b;
+                ki.s3 s3Var = (ki.s3) this.b;
                 Runnable runnable = (Runnable) this.c;
-                if (gVar == x3Var.H) {
-                    x3Var.H = null;
+                if (gVar == s3Var.H) {
+                    s3Var.H = null;
                     if (runnable != null) {
                         runnable.run();
                     }
-                    Runnable runnable2 = x3Var.F;
+                    Runnable runnable2 = s3Var.F;
                     if (runnable2 != null) {
                         runnable2.run();
                     }
-                    float f12 = x3Var.h;
+                    float f12 = s3Var.h;
                     if (f12 != -1.0f) {
-                        boolean z11 = x3Var.s;
-                        x3Var.s = true;
-                        x3Var.setOffsetY(f12);
-                        x3Var.h = -1.0f;
-                        x3Var.s = z11;
+                        boolean z11 = s3Var.s;
+                        s3Var.s = true;
+                        s3Var.setOffsetY(f12);
+                        s3Var.h = -1.0f;
+                        s3Var.s = z11;
                     }
-                    x3Var.n = -2.14748365E9f;
+                    s3Var.n = -2.1474836E9f;
                     break;
                 }
                 break;
             case 2:
-                cb cbVar = (cb) this.b;
-                dg dgVar = (dg) this.c;
-                cbVar.setInOutOffset(0.0f);
+                lb lbVar = (lb) this.b;
+                lg lgVar = (lg) this.c;
+                lbVar.setInOutOffset(0.0f);
                 if (!z10) {
-                    dgVar.run();
+                    lgVar.run();
                     break;
                 }
                 break;
             case 3:
-                ki kiVar = (ki) this.b;
-                yf yfVar = (yf) this.c;
-                AnimatorSet animatorSet = kiVar.A0;
+                si siVar = (si) this.b;
+                org.telegram.ui.Components.k7 k7Var = (org.telegram.ui.Components.k7) this.c;
+                AnimatorSet animatorSet = siVar.A0;
                 if (animatorSet != null && !animatorSet.isRunning()) {
-                    yfVar.run();
+                    k7Var.run();
                     break;
                 }
                 break;
             case 4:
-                di.y3 y3Var = (di.y3) this.b;
-                vg vgVar = (vg) this.c;
-                ki kiVar2 = (ki) y3Var.d;
-                kiVar2.x2.setTranslationY(0.0f);
-                kiVar2.x2.m(kiVar2.j4);
-                kiVar2.Y0.g();
-                kiVar2.b.invalidate();
-                vgVar.run();
-                kiVar2.P1(0);
+                di.a4 a4Var = (di.a4) this.b;
+                eh ehVar = (eh) this.c;
+                si siVar2 = (si) a4Var.d;
+                siVar2.x2.setTranslationY(0.0f);
+                siVar2.x2.m(siVar2.j4);
+                siVar2.Y0.g();
+                siVar2.b.invalidate();
+                ehVar.run();
+                siVar2.Q1(0);
                 break;
             default:
-                fc0 fc0Var = (fc0) this.b;
-                ra0 ra0Var = (ra0) this.c;
-                LinkedList linkedList = fc0Var.V;
-                fc0Var.U = null;
-                ra0Var.D = null;
-                ra0Var.y();
+                pc0 pc0Var = (pc0) this.b;
+                bb0 bb0Var = (bb0) this.c;
+                LinkedList linkedList = pc0Var.V;
+                pc0Var.U = null;
+                bb0Var.D = null;
+                bb0Var.y();
                 if (!z10) {
-                    ra0Var.h = 1.0f;
-                    ra0Var.y();
+                    bb0Var.h = 1.0f;
+                    bb0Var.y();
                     if (!linkedList.isEmpty()) {
                         ((Runnable) linkedList.poll()).run();
-                        fc0Var.W.poll();
+                        pc0Var.W.poll();
                         break;
                     }
                 }

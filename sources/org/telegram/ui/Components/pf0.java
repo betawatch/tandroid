@@ -1,78 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pf0 implements c5.h {
-    public final /* synthetic */ org.telegram.ui.yu0 a;
+public enum pf0 {
+    d(2131746538, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
+    e(2131746492, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24),
+    f(2131746491, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24),
+    h(2131746547, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
+    n(2131746542, R.drawable.gift, R.drawable.input_gift_s),
+    r(2131746536, R.drawable.action_share, R.drawable.msg_share),
+    s(2131746548, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24),
+    w(2131746534, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24),
+    x(2131746541, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24),
+    y(2131746537, R.drawable.report, R.drawable.msg_report),
+    E(2131746540, R.drawable.leave, R.drawable.leave),
+    F(2131746533, R.drawable.live_stream, R.drawable.live_stream),
+    G(2131746539, R.drawable.live_stream, R.drawable.live_stream),
+    H(2131746549, R.drawable.filled_profile_story, R.drawable.outline_profile_story),
+    I(2131746535, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24),
+    J(2131746544, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF16(2131746543, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
+    K(2131746546, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
+    L(2131745300, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
 
-    public pf0(org.telegram.ui.yu0 yu0Var) {
-        this.a = yu0Var;
-    }
+    public final int a;
+    public final int b;
+    public final int c;
 
-    @Override // c5.h
-    public final void a(int i7) {
-        org.telegram.ui.yu0 yu0Var = this.a;
-        int i10 = yu0Var.p1;
-        boolean z10 = i7 >= i10;
-        if (i7 != i10) {
-            yu0Var.p1 = i7;
-        }
-        org.telegram.messenger.vo voVar = yu0Var.T0;
-        if (voVar != null) {
-            uf0 uf0Var = yu0Var.E0;
-            voVar.b(i7 - (uf0Var != null ? uf0Var.j() : 0), z10);
-        }
-    }
-
-    @Override // c5.h
-    public final void b(float f10, int i7, int i10) {
-        org.telegram.messenger.gc gcVar;
-        org.telegram.ui.yu0 yu0Var = this.a;
-        yu0Var.B(f10, i7);
-        if (i10 == 0) {
-            int k10 = yu0Var.E0.k(i7);
-            yu0Var.getCurrentItemView();
-            int childCount = yu0Var.getChildCount();
-            for (int i11 = 0; i11 < childCount; i11++) {
-                View childAt = yu0Var.getChildAt(i11);
-                if (childAt instanceof i9) {
-                    uf0 uf0Var = yu0Var.E0;
-                    int k11 = uf0Var.k(uf0Var.d.indexOf(childAt));
-                    ImageReceiver imageReceiver = ((i9) childAt).getImageReceiver();
-                    boolean z10 = imageReceiver.u0;
-                    if (k11 >= 0 && k11 < yu0Var.X0.size()) {
-                        if (k11 == k10) {
-                            if (!z10) {
-                                imageReceiver.u0 = true;
-                                imageReceiver.P0(false);
-                            }
-                            org.telegram.messenger.gc gcVar2 = (org.telegram.messenger.gc) yu0Var.X0.get(k11);
-                            if (gcVar2 != null) {
-                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(yu0Var.M0);
-                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gcVar2.f;
-                                if (tL_fileLocationToBeDeprecated != null) {
-                                    org.telegram.messenger.w7.K.c(new org.telegram.messenger.x4(9, G, tL_fileLocationToBeDeprecated));
-                                }
-                            }
-                        } else if (z10) {
-                            t5 m10 = imageReceiver.m();
-                            if (m10 != null && (gcVar = (org.telegram.messenger.gc) yu0Var.X0.get(k11)) != null) {
-                                m10.y(gcVar.j, false, true);
-                            }
-                            imageReceiver.u0 = false;
-                            imageReceiver.Q0();
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @Override // c5.h
-    public final void c(int i7) {
+    pf0(int i7, int i10, int i11) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
     }
 }

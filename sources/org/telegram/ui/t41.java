@@ -1,103 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t41 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final TextView[] a;
-    public final TextView[] b;
-    public final TextView[] c;
+public final class t41 extends np {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ c51 e1;
+    public final /* synthetic */ v41 f1;
 
-    public t41(Context context, int i7) {
-        super(context);
-        int i10 = i7 * 2;
-        this.a = new TextView[i10];
-        this.b = new TextView[i10];
-        this.c = new TextView[i10];
-        setOrientation(1);
-        setPadding(org.telegram.messenger.g0.L(16.0f), 0, org.telegram.messenger.g0.L(16.0f), 0);
-        for (int i11 = 0; i11 < i7; i11++) {
-            LinearLayout f10 = org.telegram.messenger.k5.f(context, 0);
-            for (int i12 = 0; i12 < 2; i12++) {
-                LinearLayout f11 = org.telegram.messenger.k5.f(context, 1);
-                LinearLayout f12 = org.telegram.messenger.k5.f(context, 0);
-                int i13 = (i11 * 2) + i12;
-                this.a[i13] = new TextView(context);
-                this.b[i13] = new TextView(context);
-                this.c[i13] = new TextView(context);
-                this.a[i13].setTypeface(org.telegram.messenger.g0.o());
-                this.a[i13].setTextSize(1, 17.0f);
-                this.c[i13].setTextSize(1, 13.0f);
-                this.c[i13].setGravity(3);
-                this.b[i13].setTextSize(1, 13.0f);
-                this.b[i13].setPadding(org.telegram.messenger.g0.L(4.0f), 0, 0, 0);
-                f12.addView(this.a[i13]);
-                f12.addView(this.b[i13]);
-                f11.addView(f12);
-                f11.addView(this.c[i13]);
-                f10.addView(f11, c8.ja.l(1.0f, -1, -2));
-            }
-            addView(f10, c8.ja.d(-1, -2.0f, 0, 0.0f, 0.0f, 0.0f, 16.0f));
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t41(v41 v41Var, long j3, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, c51 c51Var) {
+        super(j3, j10, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = v41Var;
+        this.d1 = zArr;
+        this.e1 = c51Var;
     }
 
-    public final void a(String str, int i7, String str2, String str3) {
-        this.a[i7].setText(str);
-        this.b[i7].setText(str2);
-        this.c[i7].setText(str3);
-        updateColors();
-    }
-
-    public void setData(v41 v41Var) {
-        TextView[] textViewArr = this.a;
-        textViewArr[0].setText(v41Var.b);
-        textViewArr[1].setText(v41Var.f);
-        textViewArr[2].setText(v41Var.j);
-        textViewArr[3].setText(v41Var.n);
-        TextView[] textViewArr2 = this.b;
-        textViewArr2[0].setText(v41Var.c);
-        textViewArr2[0].setTag(Integer.valueOf(v41Var.d ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
-        textViewArr2[1].setText(v41Var.g);
-        textViewArr2[1].setTag(Integer.valueOf(v41Var.h ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
-        textViewArr2[2].setText(v41Var.k);
-        textViewArr2[2].setTag(Integer.valueOf(v41Var.l ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
-        textViewArr2[3].setText(v41Var.o);
-        textViewArr2[3].setTag(Integer.valueOf(v41Var.p ? org.telegram.ui.ActionBar.j6.x6 : org.telegram.ui.ActionBar.j6.p7));
-        TextView[] textViewArr3 = this.c;
-        textViewArr3[0].setText(v41Var.a);
-        textViewArr3[1].setText(v41Var.e);
-        textViewArr3[2].setText(v41Var.i);
-        textViewArr3[3].setText(v41Var.m);
-        updateColors();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        TextView[] textViewArr;
-        TextView[] textViewArr2;
-        TextView[] textViewArr3 = this.a;
-        if (textViewArr3 == null || (textViewArr = this.b) == null || (textViewArr2 = this.c) == null) {
-            return;
-        }
-        for (int i7 = 0; i7 < textViewArr3.length; i7++) {
-            TextView textView = textViewArr3[i7];
-            int i10 = org.telegram.ui.ActionBar.j6.G6;
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.x0(null, i10, false));
-            textViewArr2[i7].setTextColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.z6, false));
-            Integer num = (Integer) textViewArr[i7].getTag();
-            if (num != null) {
-                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.j6.x0(null, num.intValue(), false));
-            } else {
-                textViewArr[i7].setTextColor(org.telegram.ui.ActionBar.j6.x0(null, i10, false));
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            c51 c51Var = this.e1;
+            if (org.telegram.ui.Components.lc.a(c51Var)) {
+                org.telegram.ui.Components.lc.C(this.f1.a.first_name, c51Var).j();
             }
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

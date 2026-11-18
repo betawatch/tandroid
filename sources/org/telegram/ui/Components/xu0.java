@@ -1,56 +1,68 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.RequestDelegate;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xu0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.w2 b;
+public final class xu0 {
+    public final m5 a;
+    public Drawable b;
 
-    public /* synthetic */ xu0(org.telegram.messenger.w2 w2Var, int i7) {
-        this.a = i7;
-        this.b = w2Var;
+    public xu0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
-                org.telegram.messenger.w2 w2Var = this.b;
-                if (!z10) {
-                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
-                        w2Var.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        w2Var.a(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool = Boolean.TRUE;
-                    w2Var.a(bool, null, 0L, bool);
-                    break;
-                }
-            default:
-                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
-                org.telegram.messenger.w2 w2Var2 = this.b;
-                if (!z11) {
-                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
-                        w2Var2.a(Boolean.FALSE, null, 0L, Boolean.TRUE);
-                        break;
-                    } else {
-                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
-                        w2Var2.a(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
-                        break;
-                    }
-                } else {
-                    Boolean bool2 = Boolean.TRUE;
-                    w2Var2.a(bool2, null, 0L, bool2);
-                    break;
-                }
+    public final m5 a(TLObject tLObject, int i7, boolean z10) {
+        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i7, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i7, z10) : b(null, null, i7, z10);
+    }
+
+    public final m5 b(TLRPC.User user, TLRPC.Chat chat, int i7, boolean z10) {
+        m5 m5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new mq(org.telegram.ui.ActionBar.n6.f1, org.telegram.ui.ActionBar.n6.i1);
+            }
+            this.b = drawable;
+            m5Var.g(drawable, z10);
+            m5Var.k(null);
+            return m5Var;
         }
+        if (chat != null && org.telegram.messenger.n5.f(chat.emoji_status) != 0) {
+            m5Var.j(org.telegram.messenger.n5.f(chat.emoji_status), z10);
+            m5Var.k(Integer.valueOf(i7));
+            return m5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new mq(org.telegram.ui.ActionBar.n6.f1, org.telegram.ui.ActionBar.n6.i1);
+            }
+            this.b = drawable2;
+            m5Var.g(drawable2, z10);
+            m5Var.k(null);
+            return m5Var;
+        }
+        if (user != null && org.telegram.messenger.n5.f(user.emoji_status) != 0) {
+            m5Var.j(org.telegram.messenger.n5.f(user.emoji_status), z10);
+            m5Var.k(Integer.valueOf(i7));
+            return m5Var;
+        }
+        if (user == null || !user.premium) {
+            m5Var.g(null, z10);
+            m5Var.k(null);
+            return m5Var;
+        }
+        m5Var.g((Drawable) ia.e.d().f, z10);
+        m5Var.k(Integer.valueOf(i7));
+        return m5Var;
+    }
+
+    public xu0(int i7, View view) {
+        this.a = new m5(org.telegram.messenger.g0.L(i7), view);
     }
 }

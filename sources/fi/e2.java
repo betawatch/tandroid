@@ -1,43 +1,54 @@
 package fi;
 
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.fq;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class e2 extends fq {
-    public final /* synthetic */ int E;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class e2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e2(Drawable drawable, Drawable drawable2, int i7) {
-        super(drawable, drawable2);
-        this.E = i7;
+    public /* synthetic */ e2(z3 z3Var, int i7) {
+        this.a = i7;
+        this.b = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.fq, android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i7 = this.E;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e2(Drawable drawable, Drawable drawable2, int i7, int i10) {
-        super(drawable, drawable2, i7, i10);
-        this.E = 3;
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
-    }
-
-    private final void d(ColorFilter colorFilter) {
-    }
-
-    private final void e(ColorFilter colorFilter) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        k2 k2Var;
+        Runnable runnable;
+        switch (this.a) {
+            case 0:
+                z3 z3Var = this.b;
+                z3Var.d3 = 0.0f;
+                z3Var.b3.setAlpha(1.0f);
+                z3Var.b3.setVisibility(8);
+                z3Var.b3.n();
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                z3 z3Var2 = this.b;
+                z3Var2.x2.e();
+                z3Var2.r2 = z3Var2.Y1;
+                i2 i2Var = z3Var2.L1;
+                if (i2Var != null && (runnable = i2Var.x) != null) {
+                    runnable.run();
+                    i2Var.x = null;
+                }
+                if (z3Var2.u1 && !z3Var2.f2) {
+                    f9 f9Var = ((w8) z3Var2.A1).d;
+                    if (f9Var.y) {
+                        f9Var.y = false;
+                        f9Var.V();
+                    }
+                }
+                if (!z3Var2.f2 && (k2Var = z3Var2.N2) != null) {
+                    k2Var.setVisibility(8);
+                }
+                z3Var2.F2 = true;
+                z3Var2.invalidate();
+                break;
+        }
     }
 }

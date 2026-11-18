@@ -1,11 +1,28 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class qb {
-    public static void a(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
+    public static void a(InputStream inputStream, ByteArrayOutputStream byteArrayOutputStream) {
+        kotlin.jvm.internal.j.e(inputStream, "<this>");
+        byte[] bArr = new byte[TLObject.FLAG_13];
+        int read = inputStream.read(bArr);
+        while (read >= 0) {
+            byteArrayOutputStream.write(bArr, 0, read);
+            read = inputStream.read(bArr);
         }
+    }
+
+    public static final byte[] b(InputStream inputStream) {
+        kotlin.jvm.internal.j.e(inputStream, "<this>");
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(TLObject.FLAG_13, inputStream.available()));
+        a(inputStream, byteArrayOutputStream);
+        byte[] byteArray = byteArrayOutputStream.toByteArray();
+        kotlin.jvm.internal.j.d(byteArray, "toByteArray(...)");
+        return byteArray;
     }
 }

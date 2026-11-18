@@ -1,116 +1,223 @@
 package ki;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.f91;
-import org.telegram.ui.u91;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.y60;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c3 implements z10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class c3 extends ClickableSpan {
+    public final /* synthetic */ int a = 1;
+    public final int b;
+    public final Object c;
+    public final Object d;
 
-    public /* synthetic */ c3(int i7, long j3, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.u2 u2Var, e6 e6Var) {
+    public c3(i3 i3Var, int i7, di.c0 c0Var) {
+        this.d = i3Var;
         this.b = i7;
-        this.d = connectedbotstarref;
-        this.e = u2Var;
-        this.f = context;
-        this.c = j3;
-        this.g = e6Var;
+        this.c = c0Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7;
-        SpannableStringBuilder X2;
-        int i10 = this.a;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i10) {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        int i7 = this.a;
+        Object obj = this.d;
+        switch (i7) {
             case 0:
-                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) obj4;
-                Context context = (Context) obj3;
-                e6 e6Var = (e6) obj2;
-                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
+                final di.c0 c0Var = (di.c0) this.c;
+                y60 I = y60.I((i3) obj, view);
+                final int i10 = 0;
+                char c10 = 1;
                 int i11 = this.b;
-                long j3 = this.c;
-                if (connectedbotstarref2 != null) {
-                    u2Var.dismiss();
-                    n3.K0(context, i11, connectedbotstarref2, j3, e6Var);
-                    break;
-                } else {
-                    TLRPC.User a22 = np.s1(i11).a2(Long.valueOf(connectedbotstarref.bot_id));
-                    if (a22 != null) {
-                        np.s1(i11).W2(a22, 0, true, new a3(u2Var, context, i11, j3, e6Var, 1));
-                        break;
+                I.i(new Runnable() { // from class: ki.b3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                di.c0 c0Var2 = c0Var;
+                                if (c0Var2.g != 3) {
+                                    c0Var2.g = 3;
+                                    c0Var2.c = 0;
+                                    c0Var2.d = false;
+                                    c0Var2.i = false;
+                                    c0Var2.f = 0L;
+                                    c0Var2.j = null;
+                                    c0Var2.h = false;
+                                    c0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                di.c0 c0Var3 = c0Var;
+                                if (c0Var3.g != 2) {
+                                    c0Var3.g = 2;
+                                    c0Var3.c = 0;
+                                    c0Var3.d = false;
+                                    c0Var3.i = false;
+                                    c0Var3.f = 0L;
+                                    c0Var3.j = null;
+                                    c0Var3.h = false;
+                                    c0Var3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                di.c0 c0Var4 = c0Var;
+                                if (c0Var4.g != 1) {
+                                    c0Var4.g = 1;
+                                    c0Var4.c = 0;
+                                    c0Var4.d = false;
+                                    c0Var4.i = false;
+                                    c0Var4.f = 0L;
+                                    c0Var4.j = null;
+                                    c0Var4.h = false;
+                                    c0Var4.a();
+                                    break;
+                                }
+                                break;
+                        }
                     }
-                }
+                }, gd.M0(2131752467, null), i11 == 3);
+                final int i12 = 2;
+                boolean z10 = i11 == 2;
+                String M0 = gd.M0(2131752465, null);
+                final char c11 = c10 == true ? 1 : 0;
+                I.i(new Runnable() { // from class: ki.b3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (c11) {
+                            case 0:
+                                di.c0 c0Var2 = c0Var;
+                                if (c0Var2.g != 3) {
+                                    c0Var2.g = 3;
+                                    c0Var2.c = 0;
+                                    c0Var2.d = false;
+                                    c0Var2.i = false;
+                                    c0Var2.f = 0L;
+                                    c0Var2.j = null;
+                                    c0Var2.h = false;
+                                    c0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                di.c0 c0Var3 = c0Var;
+                                if (c0Var3.g != 2) {
+                                    c0Var3.g = 2;
+                                    c0Var3.c = 0;
+                                    c0Var3.d = false;
+                                    c0Var3.i = false;
+                                    c0Var3.f = 0L;
+                                    c0Var3.j = null;
+                                    c0Var3.h = false;
+                                    c0Var3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                di.c0 c0Var4 = c0Var;
+                                if (c0Var4.g != 1) {
+                                    c0Var4.g = 1;
+                                    c0Var4.c = 0;
+                                    c0Var4.d = false;
+                                    c0Var4.i = false;
+                                    c0Var4.f = 0L;
+                                    c0Var4.j = null;
+                                    c0Var4.h = false;
+                                    c0Var4.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, M0, z10);
+                I.i(new Runnable() { // from class: ki.b3
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                di.c0 c0Var2 = c0Var;
+                                if (c0Var2.g != 3) {
+                                    c0Var2.g = 3;
+                                    c0Var2.c = 0;
+                                    c0Var2.d = false;
+                                    c0Var2.i = false;
+                                    c0Var2.f = 0L;
+                                    c0Var2.j = null;
+                                    c0Var2.h = false;
+                                    c0Var2.a();
+                                    break;
+                                }
+                                break;
+                            case 1:
+                                di.c0 c0Var3 = c0Var;
+                                if (c0Var3.g != 2) {
+                                    c0Var3.g = 2;
+                                    c0Var3.c = 0;
+                                    c0Var3.d = false;
+                                    c0Var3.i = false;
+                                    c0Var3.f = 0L;
+                                    c0Var3.j = null;
+                                    c0Var3.h = false;
+                                    c0Var3.a();
+                                    break;
+                                }
+                                break;
+                            default:
+                                di.c0 c0Var4 = c0Var;
+                                if (c0Var4.g != 1) {
+                                    c0Var4.g = 1;
+                                    c0Var4.c = 0;
+                                    c0Var4.d = false;
+                                    c0Var4.i = false;
+                                    c0Var4.f = 0L;
+                                    c0Var4.j = null;
+                                    c0Var4.h = false;
+                                    c0Var4.a();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, gd.M0(2131752466, null), i11 == 1);
+                I.W(5);
+                I.t = false;
+                I.s = 0;
+                I.b0(org.telegram.messenger.g0.L(24.0f), -org.telegram.messenger.g0.L(24.0f));
+                I.a0();
                 break;
             default:
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
-                int[] iArr = (int[]) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                u91 u91Var = ((f91) obj5).b;
-                if (tL_messages_invitedUsers2 != null) {
-                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
-                }
-                int i12 = iArr[0] + 1;
-                iArr[0] = i12;
-                if (i12 == this.b) {
-                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
-                    long j10 = this.c;
-                    if (!isEmpty) {
-                        TLRPC.Chat M0 = u91Var.getMessagesController().M0(Long.valueOf(j10));
-                        i7 = ((org.telegram.ui.ActionBar.e2) u91Var).currentAccount;
-                        t4.f(i7, M0, tL_messages_invitedUsers);
-                        break;
-                    } else {
-                        cc a02 = cc.a0(u91Var);
-                        TLRPC.Chat M02 = u91Var.getMessagesController().M0(Long.valueOf(j10));
-                        a02.getClass();
-                        if (arrayList.size() == 0) {
-                            X2 = null;
-                        } else if (arrayList.size() != 1) {
-                            X2 = org.telegram.messenger.t3.V(M02) ? org.telegram.messenger.g0.X2(hd.G(arrayList.size(), "AddedMembersToChannel", new Object[0])) : org.telegram.messenger.g0.X2(hd.G(arrayList.size(), "AddedSubscribersToChannel", new Object[0]));
-                        } else if (org.telegram.messenger.t3.V(M02)) {
-                            X2 = org.telegram.messenger.g0.X2(hd.a0("HasBeenAddedToChannel", null, 2131749364, "**" + q10.j((TLRPC.User) arrayList.get(0), true) + "**"));
-                        } else {
-                            X2 = org.telegram.messenger.g0.X2(hd.a0("HasBeenAddedToGroup", null, 2131749363, "**" + q10.j((TLRPC.User) arrayList.get(0), true) + "**"));
-                        }
-                        a02.V(arrayList, X2, null, null).j();
-                        break;
-                    }
+                Runnable runnable = (Runnable) obj;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ c3(f91 f91Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i7, ArrayList arrayList, long j3) {
-        this.d = f91Var;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(textPaint.linkColor);
+                break;
+            default:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                textPaint.setColor(n6.w0(this.b, (i6) this.c));
+                break;
+        }
+    }
+
+    public c3(int i7, i6 i6Var, Runnable runnable) {
         this.b = i7;
-        this.g = arrayList;
-        this.c = j3;
+        this.c = i6Var;
+        this.d = runnable;
     }
 }

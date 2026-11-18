@@ -1,22 +1,18 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.ns;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public abstract class ea {
-    public static org.telegram.messenger.q5 a;
-    public static final int[] b = new int[ns.N1];
-
-    static {
-        int i7 = 0;
-        while (true) {
-            int[] iArr = b;
-            if (i7 >= iArr.length) {
-                return;
-            }
-            iArr[i7] = (int) (Math.max(0.0d, Math.min(1.0d, 7.5d - Math.sqrt(i7))) * 255.0d);
-            i7++;
-        }
-    }
+public final class ea {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public int k;
+    public float l;
 }

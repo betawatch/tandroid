@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a {
     public static ExecutorService a;
@@ -43,10 +43,10 @@ public abstract class a {
         if (TextUtils.isEmpty(replace)) {
             return str;
         }
-        StringBuilder m10 = r.b.m(str, "\n  ");
-        m10.append(replace.replace("\n", "\n  "));
-        m10.append('\n');
-        return m10.toString();
+        StringBuilder n10 = p5.c.n(str, "\n  ");
+        n10.append(replace.replace("\n", "\n  "));
+        n10.append('\n');
+        return n10.toString();
     }
 
     public static void b(String str, String str2) {

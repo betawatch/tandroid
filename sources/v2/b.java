@@ -1,10 +1,10 @@
 package v2;
 
-import a8.ja;
+import a8.la;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import c8.ba;
+import c8.da;
 import e2.n0;
 import e2.o0;
 import e2.p0;
@@ -17,15 +17,16 @@ import java.util.ArrayList;
 import ki.e;
 import l2.f0;
 import l2.z;
+import x2.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends l2.b implements Handler.Callback {
     public final a J;
     public final z K;
     public final Handler L;
     public final o3.a M;
-    public ba N;
+    public da N;
     public boolean O;
     public boolean P;
     public long Q;
@@ -67,7 +68,7 @@ public final class b extends l2.b implements Handler.Callback {
             if (a10 != null) {
                 a aVar = this.J;
                 if (aVar.b(a10)) {
-                    ba a11 = aVar.a(a10);
+                    da a11 = aVar.a(a10);
                     byte[] c10 = p0VarArr[i7].c();
                     c10.getClass();
                     o3.a aVar2 = this.M;
@@ -88,8 +89,8 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     public final long G(long j3) {
-        ja.p(j3 != -9223372036854775807L);
-        ja.p(this.S != -9223372036854775807L);
+        la.p(j3 != -9223372036854775807L);
+        la.p(this.S != -9223372036854775807L);
         return j3 - this.S;
     }
 
@@ -112,9 +113,9 @@ public final class b extends l2.b implements Handler.Callback {
         o0 f12 = f0Var.f1();
         if (!f12.equals(f0Var.Q)) {
             f0Var.Q = f12;
-            rVar.c(14, new e(zVar, 6));
+            rVar.c(14, new e(zVar, 7));
         }
-        rVar.c(28, new e(q0Var, 7));
+        rVar.c(28, new e(q0Var, 8));
         rVar.b();
     }
 
@@ -157,7 +158,7 @@ public final class b extends l2.b implements Handler.Callback {
     }
 
     @Override // l2.b
-    public final void u(u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
+    public final void u(u[] uVarArr, long j3, long j10, g0 g0Var) {
         this.N = this.J.a(uVarArr[0]);
         q0 q0Var = this.R;
         if (q0Var != null) {
@@ -179,7 +180,7 @@ public final class b extends l2.b implements Handler.Callback {
                 o3.a aVar = this.M;
                 aVar.clear();
                 k8.a aVar2 = this.c;
-                aVar2.x0();
+                aVar2.g0();
                 int w10 = w(aVar2, aVar, 0);
                 if (w10 == -4) {
                     if (aVar.isEndOfStream()) {
@@ -187,9 +188,9 @@ public final class b extends l2.b implements Handler.Callback {
                     } else if (aVar.e >= this.x) {
                         aVar.r = this.Q;
                         aVar.c();
-                        ba baVar = this.N;
+                        da daVar = this.N;
                         String str = l0.a;
-                        q0 a10 = baVar.a(aVar);
+                        q0 a10 = daVar.a(aVar);
                         if (a10 != null) {
                             ArrayList arrayList = new ArrayList(a10.a.length);
                             F(a10, arrayList);

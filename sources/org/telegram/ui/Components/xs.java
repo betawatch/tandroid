@@ -1,25 +1,11 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xs implements org.telegram.messenger.r10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-
-    public /* synthetic */ xs(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.messenger.r10
-    public final Object run() {
-        switch (this.a) {
-            case 0:
-                return Boolean.valueOf(((EditTextBoldCursor) this.b).w());
-            case 1:
-                return ((l30) this.b).getCloseIntoObject();
-            default:
-                return Boolean.valueOf(((ft) this.b).w());
-        }
-    }
+public abstract class xs {
+    public static final lr a = new lr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final lr b = new lr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final lr c = new lr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final lr d = new lr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final lr e = new lr(0.455d, 0.03d, 0.515d, 0.955d);
 }

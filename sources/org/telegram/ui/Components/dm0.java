@@ -1,16 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class dm0 extends v4.k {
-    public final /* synthetic */ org.telegram.ui.hw F;
+    public final /* synthetic */ org.telegram.ui.kw F;
 
-    public dm0(org.telegram.ui.hw hwVar) {
-        this.F = hwVar;
+    public dm0(org.telegram.ui.kw kwVar) {
+        this.F = kwVar;
     }
 
     @Override // v4.k
-    public final void P(v4.e1 e1Var) {
+    public final void P(v4.f1 f1Var) {
         this.F.invalidate();
     }
 }

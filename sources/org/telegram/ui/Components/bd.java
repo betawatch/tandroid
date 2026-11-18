@@ -1,46 +1,61 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.StickersActivity;
-import org.telegram.ui.ThemeActivity;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Space;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 b;
+public abstract class bd extends LinearLayout {
+    public ImageView a;
+    public TextView b;
+    public Space c;
+    public boolean d;
 
-    public /* synthetic */ bd(int i7, org.telegram.ui.ActionBar.e2 e2Var) {
-        this.a = i7;
-        this.b = e2Var;
+    public final void a(ImageView imageView, LinearLayout.LayoutParams layoutParams) {
+        if (this.a == null) {
+            this.a = imageView;
+            addView(imageView, layoutParams);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        org.telegram.ui.ActionBar.e2 e2Var = this.b;
-        switch (i7) {
-            case 0:
-                int i10 = ChatActivityEnterView.N6;
-                if (e2Var == null) {
-                    if (e2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) e2Var.getContext()).t0(new PremiumPreviewFragment(0, null));
-                        break;
-                    }
-                } else {
-                    new ug.x0(e2Var, 11, false).show();
-                    break;
-                }
-                break;
-            case 1:
-                e2Var.presentFragment(new StickersActivity(0, null));
-                break;
-            default:
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.V0 = true;
-                e2Var.presentFragment(themeActivity);
-                break;
+    public final void b(Space space, LinearLayout.LayoutParams layoutParams) {
+        if (this.c == null) {
+            this.c = space;
+            addView(space, layoutParams);
+        }
+    }
+
+    public final void c(TextView textView, LinearLayout.LayoutParams layoutParams) {
+        if (this.b == null) {
+            this.b = textView;
+            addView(textView, layoutParams);
+        }
+    }
+
+    public abstract void d();
+
+    public ImageView getImageView() {
+        return this.a;
+    }
+
+    public TextView getTextView() {
+        return this.b;
+    }
+
+    public void setEditButton(boolean z10) {
+        this.d = z10;
+    }
+
+    public void setOnlyIconMode(boolean z10) {
+        TextView textView = this.b;
+        if (textView != null) {
+            textView.setVisibility(z10 ? 8 : 0);
+        }
+        Space space = this.c;
+        if (space != null) {
+            space.setVisibility(z10 ? 8 : 0);
         }
     }
 }

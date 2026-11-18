@@ -2,7 +2,7 @@ package p4;
 
 import m.b3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements c0, l0 {
     public final /* synthetic */ boolean a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class z implements c0, l0 {
 
     @Override // p4.c0
     public void b(u uVar, int i7) {
-        uVar.b(i7, (l1) this.c, this.a, this.b, ((v) this.d).c);
+        uVar.b(i7, (n1) this.c, this.a, this.b, ((v) this.d).c);
     }
 
     @Override // p4.l0
@@ -34,8 +34,8 @@ public final /* synthetic */ class z implements c0, l0 {
         q10.b(new m9.u(0, q10, b3Var), m9.r.a);
     }
 
-    public /* synthetic */ z(l1 l1Var, boolean z10, boolean z11, v vVar) {
-        this.c = l1Var;
+    public /* synthetic */ z(n1 n1Var, boolean z10, boolean z11, v vVar) {
+        this.c = n1Var;
         this.a = z10;
         this.b = z11;
         this.d = vVar;

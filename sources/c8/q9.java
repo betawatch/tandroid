@@ -1,19 +1,20 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class q9 {
-    public abstract boolean a(m9.o oVar, m9.c cVar, m9.c cVar2);
-
-    public abstract boolean b(m9.o oVar, Object obj, Object obj2);
-
-    public abstract boolean c(m9.o oVar, m9.n nVar, m9.n nVar2);
-
-    public abstract m9.c d(m9.o oVar);
-
-    public abstract m9.n e(m9.o oVar);
-
-    public abstract void f(m9.n nVar, m9.n nVar2);
-
-    public abstract void g(m9.n nVar, Thread thread);
+    public static String a(String str, String str2) {
+        int length = str.length() - str2.length();
+        if (length < 0 || length > 1) {
+            throw new IllegalArgumentException("Invalid input received");
+        }
+        StringBuilder sb2 = new StringBuilder(str2.length() + str.length());
+        for (int i7 = 0; i7 < str.length(); i7++) {
+            sb2.append(str.charAt(i7));
+            if (str2.length() > i7) {
+                sb2.append(str2.charAt(i7));
+            }
+        }
+        return sb2.toString();
+    }
 }

@@ -1,22 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class c71 extends t71 {
-    public final /* synthetic */ an m2;
-    public final /* synthetic */ boolean n2;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c71(Object obj, an anVar, boolean z10) {
-        super(obj, null, true);
-        this.m2 = anVar;
-        this.n2 = z10;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class c71 extends AnimatorListenerAdapter {
+    public final /* synthetic */ x71 a;
+
+    public c71(x71 x71Var) {
+        this.a = x71Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        ym ymVar = this.m2.Aa;
-        ymVar.r(ymVar.f, ymVar.g, false, Boolean.valueOf(this.n2), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        x71 x71Var = this.a;
+        x71Var.L0[x71Var.Y0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

@@ -1,11 +1,11 @@
 package y7;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s3 implements na.d {
     public static final s3 a = new s3();
-    public static final na.c b = new na.c("confidence", i5.c.p(r.b.n(h.class, new e(1))));
-    public static final na.c c = new na.c("languageCode", i5.c.p(r.b.n(h.class, new e(2))));
+    public static final na.c b = new na.c("confidence", i5.c.p(p5.c.o(h.class, new e(1))));
+    public static final na.c c = new na.c("languageCode", i5.c.p(p5.c.o(h.class, new e(2))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

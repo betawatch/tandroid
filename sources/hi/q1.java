@@ -1,15 +1,15 @@
 package hi;
 
-import org.telegram.messenger.gj;
-import org.telegram.messenger.xy;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.sy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gh;
-import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.ph;
+import org.telegram.ui.Components.y60;
 import org.telegram.ui.ls;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class q1 implements ls {
     @Override // org.telegram.ui.ls
     public final /* synthetic */ boolean A() {
@@ -27,7 +27,7 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ m60 E(ai.k0 k0Var) {
+    public final /* synthetic */ y60 E(ai.k0 k0Var) {
         return null;
     }
 
@@ -122,8 +122,24 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ gj z() {
+    public final /* synthetic */ fj z() {
         return null;
+    }
+
+    @Override // org.telegram.ui.ls
+    public final /* synthetic */ void K() {
+    }
+
+    @Override // org.telegram.ui.ls
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.ls
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.ls
+    public final /* synthetic */ void s() {
     }
 
     @Override // org.telegram.ui.ls
@@ -143,7 +159,7 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void i(xy xyVar) {
+    public final /* synthetic */ void i(sy syVar) {
     }
 
     @Override // org.telegram.ui.ls
@@ -167,22 +183,6 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void K() {
-    }
-
-    @Override // org.telegram.ui.ls
-    public final /* synthetic */ void L() {
-    }
-
-    @Override // org.telegram.ui.ls
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.ls
-    public final /* synthetic */ void s() {
-    }
-
-    @Override // org.telegram.ui.ls
     public final void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
     }
 
@@ -195,7 +195,7 @@ public final class q1 implements ls {
     }
 
     @Override // org.telegram.ui.ls
-    public final /* synthetic */ void y(CharSequence charSequence, String str, gh ghVar) {
+    public final /* synthetic */ void y(CharSequence charSequence, String str, ph phVar) {
     }
 
     @Override // org.telegram.ui.ls

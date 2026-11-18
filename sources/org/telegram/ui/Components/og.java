@@ -1,55 +1,65 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import java.util.ArrayList;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class og {
-    public static final og d;
-    public static final og e;
-    public static final /* synthetic */ og[] f;
-    public final ng a;
-    public final ng b;
-    public final int c;
+public final class og extends k1.b {
+    public final /* synthetic */ pg o;
 
-    static {
-        ng ngVar = ng.a;
-        ng ngVar2 = ng.b;
-        og ogVar = new og("VOICE_TO_VIDEO", 0, ngVar, ngVar2, R.raw.voice_and_video);
-        d = ogVar;
-        ng ngVar3 = ng.c;
-        ng ngVar4 = ng.d;
-        og ogVar2 = new og("STICKER_TO_KEYBOARD", 1, ngVar3, ngVar4, R.raw.sticker_to_keyboard);
-        ng ngVar5 = ng.e;
-        og ogVar3 = new og("SMILE_TO_KEYBOARD", 2, ngVar5, ngVar4, R.raw.smile_to_keyboard);
-        og ogVar4 = new og("VIDEO_TO_VOICE", 3, ngVar2, ngVar, R.raw.voice_and_video);
-        e = ogVar4;
-        og ogVar5 = new og("KEYBOARD_TO_STICKER", 4, ngVar4, ngVar3, R.raw.keyboard_to_sticker);
-        ng ngVar6 = ng.f;
-        f = new og[]{ogVar, ogVar2, ogVar3, ogVar4, ogVar5, new og("KEYBOARD_TO_GIF", 5, ngVar4, ngVar6, R.raw.keyboard_to_gif), new og("KEYBOARD_TO_SMILE", 6, ngVar4, ngVar5, R.raw.keyboard_to_smile), new og("GIF_TO_KEYBOARD", 7, ngVar6, ngVar4, R.raw.gif_to_keyboard), new og("GIF_TO_SMILE", 8, ngVar6, ngVar5, R.raw.gif_to_smile), new og("SMILE_TO_GIF", 9, ngVar5, ngVar6, R.raw.smile_to_gif), new og("SMILE_TO_STICKER", 10, ngVar5, ngVar3, R.raw.smile_to_sticker), new og("STICKER_TO_SMILE", 11, ngVar3, ngVar5, R.raw.sticker_to_smile)};
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public og(pg pgVar, pg pgVar2) {
+        super(pgVar2);
+        this.o = pgVar;
     }
 
-    public og(String str, int i7, ng ngVar, ng ngVar2, int i10) {
-        this.a = ngVar;
-        this.b = ngVar2;
-        this.c = i10;
+    @Override // k1.b
+    public final int g(float f10, float f11) {
+        pg pgVar = this.o;
+        ChatActivityEnterView chatActivityEnterView = pgVar.Q0;
+        if (chatActivityEnterView.g5 && chatActivityEnterView.B2 != null && chatActivityEnterView.G4.contains(f10, f11)) {
+            return 2;
+        }
+        return (!chatActivityEnterView.Q || chatActivityEnterView.B2 == null || chatActivityEnterView.b5 <= 0.1f || !pgVar.K.contains(f10, f11)) ? -1 : 4;
     }
 
-    public static og valueOf(String str) {
-        return (og) Enum.valueOf(og.class, str);
+    @Override // k1.b
+    public final void h(ArrayList arrayList) {
+        ChatActivityEnterView chatActivityEnterView = this.o.Q0;
+        if (chatActivityEnterView.g5) {
+            arrayList.add(2);
+        }
+        if (!chatActivityEnterView.Q || chatActivityEnterView.B2 == null || chatActivityEnterView.b5 <= 0.1f) {
+            return;
+        }
+        arrayList.add(4);
     }
 
-    public static og[] values() {
-        return (og[]) f.clone();
+    @Override // k1.b
+    public final boolean k(int i7, int i10) {
+        return true;
+    }
+
+    @Override // k1.b
+    public final void l(int i7, s0.c cVar) {
+        pg pgVar = this.o;
+        ChatActivityEnterView chatActivityEnterView = pgVar.Q0;
+        if (i7 == 2) {
+            Rect rect = chatActivityEnterView.I4;
+            RectF rectF = chatActivityEnterView.G4;
+            rect.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+            cVar.h(chatActivityEnterView.I4);
+            cVar.o(org.telegram.messenger.gd.M0(chatActivityEnterView.d5 > 0.5f ? 2131754927 : 2131754930, null));
+            return;
+        }
+        if (i7 == 4) {
+            Rect rect2 = chatActivityEnterView.I4;
+            RectF rectF2 = pgVar.K;
+            rect2.set((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+            cVar.h(chatActivityEnterView.I4);
+            cVar.o(org.telegram.messenger.gd.M0(chatActivityEnterView.P ? 2131754934 : 2131754935, null));
+        }
     }
 }

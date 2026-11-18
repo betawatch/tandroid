@@ -4,7 +4,7 @@ import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u implements ib.b {
     public final /* synthetic */ int a;
@@ -56,14 +56,14 @@ public final class u implements ib.b {
                 i7 = wVar.d;
                 String str = "";
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     va.c cVar2 = (va.c) dVar;
                     Task f10 = cVar2.f();
                     try {
                         kotlin.jvm.internal.j.d(f10, "getToken(...)");
                         wVar.a = cVar2;
                         wVar.d = 1;
-                        Object a10 = c8.w0.a(f10, wVar);
+                        Object a10 = c8.y0.a(f10, wVar);
                         if (a10 != aVar) {
                             obj = a10;
                             dVar = cVar2;
@@ -78,7 +78,7 @@ public final class u implements ib.b {
                         kotlin.jvm.internal.j.d(e11, "getId(...)");
                         wVar.a = r92;
                         wVar.d = 2;
-                        obj = c8.w0.a(e11, wVar);
+                        obj = c8.y0.a(e11, wVar);
                         dVar = r92;
                     }
                     return aVar;
@@ -88,7 +88,7 @@ public final class u implements ib.b {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     ?? r93 = (String) wVar.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     dVar = r93;
                     String str2 = (String) obj;
                     ?? r94 = dVar;
@@ -99,7 +99,7 @@ public final class u implements ib.b {
                     return new x(str, r94);
                 }
                 va.d dVar3 = (va.d) wVar.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 dVar = dVar3;
                 String str3 = ((va.a) obj).a;
                 kotlin.jvm.internal.j.b(str3);
@@ -109,7 +109,7 @@ public final class u implements ib.b {
                 kotlin.jvm.internal.j.d(e112, "getId(...)");
                 wVar.a = r92;
                 wVar.d = 2;
-                obj = c8.w0.a(e112, wVar);
+                obj = c8.y0.a(e112, wVar);
                 dVar = r92;
             }
         }
@@ -128,7 +128,7 @@ public final class u implements ib.b {
         kotlin.jvm.internal.j.d(e1122, "getId(...)");
         wVar.a = r92;
         wVar.d = 2;
-        obj2 = c8.w0.a(e1122, wVar);
+        obj2 = c8.y0.a(e1122, wVar);
         dVar = r92;
     }
 

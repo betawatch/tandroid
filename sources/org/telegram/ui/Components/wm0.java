@@ -1,31 +1,81 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class wm0 implements r1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn0 b;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
-    public /* synthetic */ wm0(fn0 fn0Var, int i7) {
-        this.a = i7;
-        this.b = fn0Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public abstract class wm0 extends View.AccessibilityDelegate {
+    public static final String c = "android.widget.SeekBar";
+    public final HashMap a = new HashMap(4);
+    public final bi.r2 b = new bi.r2(this, 15);
+
+    public abstract boolean a();
+
+    public abstract boolean b();
+
+    public abstract void c(boolean z10);
+
+    public CharSequence d() {
+        return null;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                this.b.o.setScaleX(1.0f / f10);
-                break;
-            case 1:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
-            case 2:
-                this.b.o.setScaleX(1.0f / f10);
-                break;
-            default:
-                this.b.o.setScaleY(1.0f / f10);
-                break;
+    public void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        accessibilityNodeInfo.setClassName(c);
+        CharSequence d = d();
+        if (!TextUtils.isEmpty(d)) {
+            accessibilityNodeInfo.setText(d);
         }
+        if (a()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_BACKWARD);
+        }
+        if (b()) {
+            accessibilityNodeInfo.addAction(AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_FORWARD);
+        }
+    }
+
+    public final void f(AccessibilityNodeInfo accessibilityNodeInfo) {
+        e(null, accessibilityNodeInfo);
+    }
+
+    public boolean g(View view, int i7, Bundle bundle) {
+        if (i7 != 4096 && i7 != 8192) {
+            return false;
+        }
+        c(i7 == 8192);
+        if (view != null) {
+            WeakHashMap weakHashMap = r0.i0.a;
+            if (view.isAttachedToWindow()) {
+                HashMap hashMap = this.a;
+                Runnable runnable = (Runnable) hashMap.get(view);
+                if (runnable == null) {
+                    runnable = new dw(29, this, view);
+                    hashMap.put(view, runnable);
+                    view.addOnAttachStateChangeListener(this.b);
+                } else {
+                    view.removeCallbacks(runnable);
+                }
+                view.postDelayed(runnable, 400L);
+            }
+        }
+        return true;
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+        e(view, accessibilityNodeInfo);
+    }
+
+    @Override // android.view.View.AccessibilityDelegate
+    public final boolean performAccessibilityAction(View view, int i7, Bundle bundle) {
+        if (super.performAccessibilityAction(view, i7, bundle)) {
+            return true;
+        }
+        return g(view, i7, bundle);
     }
 }

@@ -1,6 +1,6 @@
 package zd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m0 extends e1 {
     public final /* synthetic */ int e;
@@ -36,7 +36,7 @@ public final class m0 extends e1 {
                 f1 f1Var = (f1) this.f;
                 Object obj = n1.a.get(h());
                 if (obj instanceof v) {
-                    f1Var.resumeWith(af.b.b(((v) obj).a));
+                    f1Var.resumeWith(b7.h.a(((v) obj).a));
                     return;
                 } else {
                     f1Var.resumeWith(b0.w(obj));

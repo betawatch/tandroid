@@ -1,11 +1,11 @@
 package org.telegram.ui.web;
 
 import java.util.ArrayList;
-import org.telegram.messenger.gz;
+import org.telegram.messenger.bz;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class t1 {
     public final int a;
@@ -19,7 +19,7 @@ public final class t1 {
     public boolean i;
     public TLRPC.TL_webPage j;
     public int k;
-    public ai.s l;
+    public ai.j l;
     public final ArrayList m = new ArrayList();
 
     public t1(int i7) {
@@ -27,7 +27,7 @@ public final class t1 {
     }
 
     public final void a() {
-        ai.s sVar;
+        ai.j jVar;
         if (this.c) {
             return;
         }
@@ -35,15 +35,15 @@ public final class t1 {
         if (!this.g) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.k, true);
         }
-        if (this.i || (sVar = this.l) == null) {
+        if (this.i || (jVar = this.l) == null) {
             return;
         }
-        sVar.run();
+        jVar.run();
     }
 
     public final TLRPC.WebPage b() {
         TLRPC.WebPage webPage;
-        if (!gz.w0 && (webPage = this.h) != null) {
+        if (!bz.w0 && (webPage = this.h) != null) {
             return webPage;
         }
         TLRPC.TL_webPage tL_webPage = this.j;
@@ -77,9 +77,9 @@ public final class t1 {
         this.d = s0Var.getUrl();
         this.e = s0Var.getProgress();
         this.f = s0Var.b;
-        ai.s sVar = this.l;
-        if (sVar != null) {
-            sVar.run();
+        ai.j jVar = this.l;
+        if (jVar != null) {
+            jVar.run();
         }
         this.l = v1.e(s0Var, new s1(this, 1));
     }

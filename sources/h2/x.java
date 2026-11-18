@@ -1,18 +1,18 @@
 package h2;
 
-import a8.ja;
+import a8.la;
 import a8.p0;
-import c8.g1;
 import c8.k1;
+import c8.m1;
 import h9.t0;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x {
     public static final char[] d = {'\r', '\n'};
@@ -29,11 +29,11 @@ public final class x {
 
     public static int b(int i7, int i10, int i11, int i12) {
         byte b10 = (byte) i11;
-        return g1.c((byte) 0, k1.a(((i7 & 7) << 2) | ((i10 & 48) >> 4)), k1.a(((((byte) i10) & 15) << 4) | ((b10 & 60) >> 2)), k1.a(((b10 & 3) << 6) | (((byte) i12) & 63)));
+        return k1.c((byte) 0, m1.a(((i7 & 7) << 2) | ((i10 & 48) >> 4)), m1.a(((((byte) i10) & 15) << 4) | ((b10 & 60) >> 2)), m1.a(((b10 & 3) << 6) | (((byte) i12) & 63)));
     }
 
     public static int d(Charset charset) {
-        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
+        la.h(f.contains(charset), "Unsupported charset: %s", charset);
         return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
     }
 
@@ -109,7 +109,7 @@ public final class x {
                 break;
             }
         }
-        return g1.b(j3);
+        return k1.b(j3);
     }
 
     public final long G() {
@@ -205,12 +205,12 @@ public final class x {
     }
 
     public final void M(int i7) {
-        ja.f(i7 >= 0 && i7 <= this.a.length);
+        la.f(i7 >= 0 && i7 <= this.a.length);
         this.c = i7;
     }
 
     public final void N(int i7) {
-        ja.f(i7 >= 0 && i7 <= this.c);
+        la.f(i7 >= 0 && i7 <= this.c);
         this.b = i7;
     }
 
@@ -259,7 +259,7 @@ public final class x {
     public final int h(Charset charset) {
         int i7;
         int i10;
-        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
+        la.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() < d(charset)) {
             throw new IndexOutOfBoundsException("position=" + this.b + ", limit=" + this.c);
         }
@@ -331,15 +331,15 @@ public final class x {
         int h;
         if (a() >= d(charset) && (h = h(charset)) != 0) {
             long j3 = h >>> 8;
-            ja.d(j3, "out of range: %s", (j3 >> 32) == 0);
+            la.d(j3, "out of range: %s", (j3 >> 32) == 0);
             int i7 = (int) j3;
             if (!Character.isSupplementaryCodePoint(i7)) {
                 long j10 = i7;
                 char c10 = (char) j10;
-                ja.d(j10, "Out of range: %s", ((long) c10) == j10);
+                la.d(j10, "Out of range: %s", ((long) c10) == j10);
                 for (char c11 : cArr) {
                     if (c11 == c10) {
-                        this.b = g1.b(h & ns.e4) + this.b;
+                        this.b = k1.b(h & ks.e4) + this.b;
                         return c10;
                     }
                 }
@@ -367,7 +367,7 @@ public final class x {
 
     public final String n(Charset charset) {
         int i7;
-        ja.h(f.contains(charset), "Unsupported charset: %s", charset);
+        la.h(f.contains(charset), "Unsupported charset: %s", charset);
         if (a() == 0) {
             return null;
         }

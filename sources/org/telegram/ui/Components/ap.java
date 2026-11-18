@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.ArrayList;
-import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ap implements ResultCallback {
-    public final /* synthetic */ org.telegram.messenger.d4 a;
-    public final /* synthetic */ ep b;
+public final /* synthetic */ class ap implements org.telegram.ui.w71 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ si b;
+    public final /* synthetic */ org.telegram.ui.vb c;
 
-    public ap(ep epVar, org.telegram.messenger.d4 d4Var) {
-        this.b = epVar;
-        this.a = d4Var;
+    public /* synthetic */ ap(si siVar, org.telegram.ui.vb vbVar, int i7) {
+        this.a = i7;
+        this.b = siVar;
+        this.c = vbVar;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        ArrayList e10 = this.a.e(7);
-        ep epVar = this.b;
-        org.telegram.messenger.ns.f(epVar.a).d(new od(22, this, e10));
-        epVar.V1 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.w71
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                this.b.L();
+                this.c.a(tL_wallPaper);
+                break;
+            default:
+                this.b.L();
+                this.c.a(tL_wallPaper);
+                break;
+        }
     }
 }

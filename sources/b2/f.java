@@ -2,9 +2,9 @@ package b2;
 
 import android.media.VolumeProvider;
 import androidx.emoji2.text.q;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends VolumeProvider {
     public final /* synthetic */ q a;
@@ -18,12 +18,12 @@ public final class f extends VolumeProvider {
     @Override // android.media.VolumeProvider
     public final void onAdjustVolume(int i7) {
         q qVar = this.a;
-        ((s4.e) ((ld0) qVar.f).d).a.post(new s4.c(qVar, i7, 1));
+        ((s4.e) ((md0) qVar.f).d).a.post(new s4.c(qVar, i7, 1));
     }
 
     @Override // android.media.VolumeProvider
     public final void onSetVolumeTo(int i7) {
         q qVar = this.a;
-        ((s4.e) ((ld0) qVar.f).d).a.post(new s4.c(qVar, i7, 0));
+        ((s4.e) ((md0) qVar.f).d).a.post(new s4.c(qVar, i7, 0));
     }
 }

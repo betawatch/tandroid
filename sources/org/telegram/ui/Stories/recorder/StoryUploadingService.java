@@ -7,31 +7,31 @@ import android.os.IBinder;
 import e0.i0;
 import e0.q;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.at;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
+import org.telegram.messenger.xs;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public class StoryUploadingService extends Service implements is {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public class StoryUploadingService extends Service implements fs {
     public q a;
     public String b;
     public float c;
     public int d = -1;
 
     public StoryUploadingService() {
-        ns.e().b(this, ns.B5);
+        ks.e().b(this, ks.D5);
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
-        if (i7 != ns.A5) {
-            if (i7 == ns.B5 && (str = this.b) != null && str.equals((String) objArr[0])) {
+        if (i7 != ks.C5) {
+            if (i7 == ks.D5 && (str = this.b) != null && str.equals((String) objArr[0])) {
                 stopSelf();
                 return;
             }
@@ -69,51 +69,51 @@ public class StoryUploadingService extends Service implements is {
         } catch (Exception unused) {
         }
         new i0(t0.b).b(33, null);
-        ns.e().n(this, ns.B5);
-        ns.f(this.d).n(this, ns.A5);
-        if (r2.a) {
+        ks.e().n(this, ks.D5);
+        ks.f(this.d).n(this, ks.C5);
+        if (s2.a) {
             a8.b("upload story destroy");
         }
     }
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i7, int i10) {
-        int i11 = ns.A5;
+        int i11 = ks.C5;
         this.b = intent.getStringExtra("path");
         int i12 = this.d;
-        int intExtra = intent.getIntExtra("currentAccount", m10.t0);
+        int intExtra = intent.getIntExtra("currentAccount", j10.t0);
         this.d = intExtra;
-        if (!m10.r(intExtra)) {
+        if (!j10.r(intExtra)) {
             stopSelf();
             return 2;
         }
         if (i12 != this.d) {
             if (i12 != -1) {
-                ns.f(i12).n(this, i11);
+                ks.f(i12).n(this, i11);
             }
             int i13 = this.d;
             if (i13 != -1) {
-                ns.f(i13).b(this, i11);
+                ks.f(i13).b(this, i11);
             }
         }
         if (this.b == null) {
             stopSelf();
             return 2;
         }
-        if (r2.a) {
+        if (s2.a) {
             a8.b("start upload story");
         }
         if (this.a == null) {
-            at.i();
+            xs.i();
             q qVar = new q(t0.b, null);
             this.a = qVar;
             qVar.F.icon = R.drawable.stat_sys_upload;
             qVar.F.when = System.currentTimeMillis();
             q qVar2 = this.a;
-            qVar2.y = at.k0;
-            qVar2.g(hd.M0(org.telegram.messenger.beta.R.string.AppName, null));
-            this.a.p(hd.M0(2131744451, null));
-            this.a.f(hd.M0(2131744451, null));
+            qVar2.y = xs.k0;
+            qVar2.g(gd.M0(org.telegram.messenger.beta.R.string.AppName, null));
+            this.a.p(gd.M0(2131744216, null));
+            this.a.f(gd.M0(2131744216, null));
         }
         this.c = 0.0f;
         q qVar3 = this.a;

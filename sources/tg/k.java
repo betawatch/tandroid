@@ -1,10 +1,10 @@
 package tg;
 
 import android.view.View;
-import di.pa;
-import di.y9;
+import di.ba;
+import di.ta;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -34,24 +34,24 @@ public final /* synthetic */ class k implements View.OnClickListener {
                 g0Var2.postDelayed(new n(g0Var2, 1), 350L);
                 v vVar = new v(g0Var2.getContext(), g0Var2.A1, false, false);
                 vVar.z1 = new q(g0Var2);
-                vVar.N0(new pa(g0Var2, 4));
-                vVar.setOnDismissListener(new y9(g0Var2, i7));
+                vVar.O0(new ta(g0Var2, 4));
+                vVar.setOnDismissListener(new ba(g0Var2, i7));
                 vVar.show();
                 g0Var2.o0(true);
                 break;
             case 2:
                 g0 g0Var3 = this.b;
                 j jVar = g0Var3.C0;
-                if ((jVar instanceof n2) && !g0Var3.D0) {
-                    n2 n2Var = (n2) jVar;
+                if ((jVar instanceof m2) && !g0Var3.D0) {
+                    m2 m2Var = (m2) jVar;
                     g0Var3.D0 = true;
-                    n2Var.q();
-                    View focusedView = n2Var.getFocusedView();
+                    m2Var.q();
+                    View focusedView = m2Var.getFocusedView();
                     focusedView.requestFocus();
-                    org.telegram.messenger.g0.J3(focusedView);
+                    org.telegram.messenger.g0.I3(focusedView);
                 }
-                org.telegram.ui.ActionBar.g1 g1Var = g0Var3.B1;
-                if (g1Var != null && g1Var.isShowing()) {
+                org.telegram.ui.ActionBar.h1 h1Var = g0Var3.B1;
+                if (h1Var != null && h1Var.isShowing()) {
                     g0Var3.B1.d(true);
                     break;
                 }
@@ -62,7 +62,7 @@ public final /* synthetic */ class k implements View.OnClickListener {
             default:
                 g0 g0Var4 = this.b;
                 g0Var4.B0(2);
-                if (!(g0Var4.C0 instanceof n2)) {
+                if (!(g0Var4.C0 instanceof m2)) {
                     g0Var4.h0(true);
                     break;
                 }

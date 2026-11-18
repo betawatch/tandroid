@@ -1,9 +1,9 @@
 package ee;
 
-import c8.v0;
+import c8.x0;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class q extends zd.a implements kd.d {
     public final id.c d;
@@ -20,7 +20,7 @@ public class q extends zd.a implements kd.d {
 
     @Override // zd.n1
     public void g(Object obj) {
-        a.h(v0.b(this.d), b0.s(obj));
+        a.h(x0.b(this.d), b0.s(obj));
     }
 
     @Override // kd.d

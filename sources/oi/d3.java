@@ -5,100 +5,80 @@ import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class d3 implements v4 {
+public final class d3 implements w4 {
     public final /* synthetic */ r a;
     public final /* synthetic */ a b;
-    public final /* synthetic */ q3 c;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ s3 d;
 
-    public d3(a aVar, r rVar, q3 q3Var) {
-        this.c = q3Var;
+    public d3(s3 s3Var, r rVar, a aVar, String str) {
+        this.d = s3Var;
         this.a = rVar;
         this.b = aVar;
+        this.c = str;
     }
 
-    @Override // oi.v4
+    @Override // oi.w4
     public final void a() {
         r rVar = this.a;
         rVar.a = 3;
-        q3 q3Var = this.c;
-        q3Var.h4.remove(rVar);
-        q3Var.t4(this.b, rVar);
-        q3Var.p3.onContentChanged();
+        s3 s3Var = this.d;
+        s3Var.h4.remove(rVar);
+        s3Var.t3.remove(this.b);
+        s3Var.g3.O(true);
+        s3Var.p3.onContentChanged();
     }
 
-    @Override // oi.v4
-    public final void b(int i7, int i10) {
-        if (i7 > 0 && i10 > 0) {
-            r rVar = this.a;
-            rVar.j = i7;
-            rVar.k = i10;
-        }
-        View C1 = this.c.C1(this.b);
-        if (C1 instanceof p4) {
-            C1.requestLayout();
-            C1.invalidate();
-        }
-    }
-
-    @Override // oi.v4
-    public final void c(TLRPC.Photo photo) {
-        int i7;
-        int i10;
-        r rVar = this.a;
-        rVar.g = photo;
-        rVar.a = 2;
-        TLRPC.PhotoSize w10 = w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false);
-        if (w10 != null && (i7 = w10.w) > 0 && (i10 = w10.h) > 0) {
-            rVar.j = i7;
-            rVar.k = i10;
-        }
-        a aVar = this.b;
-        TL_iv.PageBlock Q3 = q3.Q3(aVar, rVar);
-        if (Q3 instanceof TL_iv.pageBlockPhoto) {
-            ((TL_iv.pageBlockPhoto) Q3).photo_id = photo.id;
-        }
-        q3 q3Var = this.c;
-        q3Var.h4.remove(rVar);
-        q3Var.q4(aVar);
-        q3Var.p3.onContentChanged();
-    }
-
-    @Override // oi.v4
-    public final void d(TLRPC.Document document) {
+    @Override // oi.w4
+    public final void e(TLRPC.Document document) {
+        String str = this.c;
+        document.localPath = str;
+        s3 s3Var = this.d;
+        w7.G(s3Var.n3).e0(str, document);
         r rVar = this.a;
         rVar.h = document;
         rVar.a = 2;
-        a aVar = this.b;
-        TL_iv.PageBlock Q3 = q3.Q3(aVar, rVar);
-        if (Q3 instanceof TL_iv.pageBlockVideo) {
-            ((TL_iv.pageBlockVideo) Q3).video_id = document.id;
+        TL_iv.PageBlock pageBlock = this.b.b;
+        if (pageBlock instanceof TL_iv.pageBlockDocument) {
+            ((TL_iv.pageBlockDocument) pageBlock).document_id = document.id;
         }
-        q3 q3Var = this.c;
-        q3Var.h4.remove(rVar);
-        q3Var.q4(aVar);
-        q3Var.p3.onContentChanged();
+        s3Var.h4.remove(rVar);
+        s3Var.g3.O(false);
+        s3Var.p3.onContentChanged();
     }
 
-    @Override // oi.v4
+    @Override // oi.w4
     public final void g(float f10) {
         this.a.f = f10;
         a aVar = this.b;
-        q3 q3Var = this.c;
-        View C1 = q3Var.C1(aVar);
-        if (C1 instanceof p4) {
-            C1.requestLayout();
-            C1.invalidate();
+        s3 s3Var = this.d;
+        View C1 = s3Var.C1(aVar);
+        if (C1 instanceof v0) {
+            v0 v0Var = (v0) C1;
+            v0Var.g(v0Var.h());
+            v0Var.l();
+            v0Var.m(false);
+            v0Var.requestLayout();
+            v0Var.invalidate();
         }
-        q3Var.p3.onContentChanged();
+        s3Var.p3.onContentChanged();
     }
 
-    @Override // oi.v4
-    public final /* synthetic */ void e(TLRPC.Document document) {
+    @Override // oi.w4
+    public final /* synthetic */ void c(TLRPC.Photo photo) {
     }
 
-    @Override // oi.v4
+    @Override // oi.w4
+    public final /* synthetic */ void d(TLRPC.Document document) {
+    }
+
+    @Override // oi.w4
     public final /* synthetic */ void f(TLRPC.Document document) {
+    }
+
+    @Override // oi.w4
+    public final /* synthetic */ void b(int i7, int i10) {
     }
 }

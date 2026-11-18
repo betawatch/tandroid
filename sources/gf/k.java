@@ -1,7 +1,7 @@
 package gf;
 
-import c8.x0;
-import c8.y0;
+import c8.a1;
+import c8.z0;
 import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import java.util.BitSet;
@@ -14,9 +14,9 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import kf.s;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k implements lf.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -232,7 +232,7 @@ public final class k implements lf.a {
                         if (d10 != null) {
                             i10 = 1;
                             String k10 = e2.k(d10, 1, 1);
-                            kVar = new kf.k(1, r.b.k("mailto:", k10), null);
+                            kVar = new kf.k(1, p5.c.k("mailto:", k10), null);
                             kVar.b(new s(k10));
                         } else {
                             i10 = 1;
@@ -259,7 +259,7 @@ public final class k implements lf.a {
                         }
                     } else if (g10 != '`') {
                         switch (g10) {
-                            case ns.c1 /* 91 */:
+                            case ks.c1 /* 91 */:
                                 int i13 = this.f;
                                 this.f = i13 + 1;
                                 s sVar4 = new s("[");
@@ -271,7 +271,7 @@ public final class k implements lf.a {
                                 this.h = dVar2;
                                 pVar2 = sVar4;
                                 break;
-                            case ns.d1 /* 92 */:
+                            case ks.d1 /* 92 */:
                                 this.f++;
                                 if (g() == '\n') {
                                     sVar = new kf.g(1);
@@ -293,7 +293,7 @@ public final class k implements lf.a {
                                 }
                                 pVar2 = sVar;
                                 break;
-                            case ns.e1 /* 93 */:
+                            case ks.e1 /* 93 */:
                                 int i16 = this.f + 1;
                                 this.f = i16;
                                 d dVar3 = this.h;
@@ -306,7 +306,7 @@ public final class k implements lf.a {
                                             Pattern pattern = q;
                                             d(pattern);
                                             i11 = 1;
-                                            int a10 = x0.a(this.f, this.e);
+                                            int a10 = z0.a(this.f, this.e);
                                             if (a10 == -1) {
                                                 str3 = null;
                                             } else {
@@ -319,7 +319,7 @@ public final class k implements lf.a {
                                                 String str7 = this.e;
                                                 int i17 = this.f;
                                                 if (s.matcher(str7.substring(i17 - 1, i17)).matches()) {
-                                                    int c10 = x0.c(this.f, this.e);
+                                                    int c10 = z0.c(this.f, this.e);
                                                     if (c10 == -1) {
                                                         str2 = null;
                                                     } else {
@@ -351,7 +351,7 @@ public final class k implements lf.a {
                                             int i18 = this.f;
                                             if (i18 < this.e.length() && this.e.charAt(this.f) == '[') {
                                                 int i19 = this.f + 1;
-                                                int b10 = x0.b(i19, this.e);
+                                                int b10 = z0.b(i19, this.e);
                                                 int i20 = b10 - i19;
                                                 if (b10 != -1 && i20 <= 999 && b10 < this.e.length() && this.e.charAt(b10) == ']') {
                                                     this.f = b10 + 1;
@@ -513,7 +513,7 @@ public final class k implements lf.a {
                             String replace = this.e.substring(i35, this.f - d13.length()).replace('\n', ' ');
                             if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
                                 int length2 = replace.length();
-                                if (y0.b(' ', 0, length2, replace) != length2) {
+                                if (a1.b(' ', 0, length2, replace) != length2) {
                                     replace = e2.k(replace, 1, 1);
                                 }
                             }

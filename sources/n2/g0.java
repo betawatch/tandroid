@@ -4,13 +4,15 @@ import android.media.AudioTimestamp;
 import android.media.AudioTrack;
 import android.media.metrics.LogSessionId;
 import android.os.Build;
+import hi.u5;
+import hi.w4;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g0 {
     public static final Object t = new Object();
@@ -19,7 +21,7 @@ public final class g0 {
     public final AudioTrack a;
     public final n b;
     public final float c;
-    public final ia.d d;
+    public final u5 d;
     public c0 e;
     public final j0 f;
     public final boolean g;
@@ -36,11 +38,11 @@ public final class g0 {
     public int r;
     public boolean s;
 
-    public g0(AudioTrack audioTrack, n nVar, ia.d dVar, float f10, h2.g0 g0Var) {
+    public g0(AudioTrack audioTrack, n nVar, u5 u5Var, float f10, h2.g0 g0Var) {
         this.a = audioTrack;
         this.b = nVar;
         this.c = f10;
-        this.d = dVar;
+        this.d = u5Var;
         boolean M = h2.l0.M(nVar.a);
         this.g = M;
         if (M) {
@@ -48,9 +50,9 @@ public final class g0 {
         } else {
             this.h = -1;
         }
-        this.f = new j0(new gc.b(this, 19), g0Var, audioTrack, nVar.a, this.h, nVar.f);
-        if (Build.VERSION.SDK_INT >= 24 && dVar != null) {
-            this.e = new c0(audioTrack, dVar);
+        this.f = new j0(new w4(this, 14), g0Var, audioTrack, nVar.a, this.h, nVar.f);
+        if (Build.VERSION.SDK_INT >= 24 && u5Var != null) {
+            this.e = new c0(audioTrack, u5Var);
         }
         this.i = c() ? new f0(this) : null;
     }
@@ -232,7 +234,7 @@ public final class g0 {
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
                 } else {
-                    gc.b bVar = zVar2.c;
+                    w4 w4Var = zVar2.c;
                     long j16 = audioTimestamp22.nanoTime / 1000;
                     z13 = timestamp;
                     audioTimestamp = audioTimestamp22;
@@ -242,9 +244,9 @@ public final class g0 {
                         long j17 = j11;
                         if (Math.abs(B - j17) > 5000000) {
                             long j18 = yVar.e;
-                            bVar.getClass();
+                            w4Var.getClass();
                             audioTrack = audioTrack2;
-                            h2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j18 + ", " + j16 + ", " + nanoTime + ", " + j17 + ", " + ((g0) bVar.b).b());
+                            h2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (frame position mismatch): " + j18 + ", " + j16 + ", " + nanoTime + ", " + j17 + ", " + ((g0) w4Var.b).b());
                             zVar = zVar;
                             i10 = 4;
                             zVar.a(4);
@@ -339,8 +341,8 @@ public final class g0 {
                         return j132;
                     }
                     long j26 = yVar.e;
-                    bVar.getClass();
-                    h2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j26 + ", " + j16 + ", " + nanoTime + ", " + j11 + ", " + ((g0) bVar.b).b());
+                    w4Var.getClass();
+                    h2.a.l("AudioTrackAudioOutput", "Spurious audio timestamp (system clock mismatch): " + j26 + ", " + j16 + ", " + nanoTime + ", " + j11 + ", " + ((g0) w4Var.b).b());
                     zVar2.a(4);
                     zVar = zVar2;
                     audioTrack = audioTrack2;
@@ -421,12 +423,12 @@ public final class g0 {
         j0Var.h.a.f = true;
     }
 
-    public final void f(m2.j jVar) {
+    public final void f(m2.i iVar) {
         LogSessionId logSessionId;
         if (Build.VERSION.SDK_INT < 31) {
             return;
         }
-        LogSessionId a10 = jVar.a();
+        LogSessionId a10 = iVar.a();
         logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
         if (a10.equals(logSessionId)) {
             return;
@@ -438,7 +440,7 @@ public final class g0 {
         AudioTrack audioTrack;
         int write;
         boolean z10;
-        ia.d dVar;
+        u5 u5Var;
         i0 i0Var;
         e eVar;
         int i10;
@@ -471,7 +473,7 @@ public final class g0 {
             boolean z14 = i10 > this.r;
             this.r = i10;
             if (z14) {
-                rVar.e(-1, new m2.c());
+                rVar.e(-1, new a0(0));
             }
         } else {
             audioTrack = audioTrack2;
@@ -532,7 +534,7 @@ public final class g0 {
             return z10;
         }
         z10 = (Build.VERSION.SDK_INT >= 24 && write == -6) || write == -32;
-        if (z10 && (dVar = this.d) != null && (eVar = (i0Var = (i0) dVar.b).i) != null) {
+        if (z10 && (u5Var = this.d) != null && (eVar = (i0Var = (i0) u5Var.b).i) != null) {
             b bVar = b.f;
             i0Var.h = bVar;
             eVar.b(bVar);

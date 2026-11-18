@@ -3,7 +3,7 @@ package h2;
 import e2.i1;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e0 {
     public Object a;
@@ -41,20 +41,20 @@ public final class e0 {
 
     public o5.h b() {
         String str = ((String) this.a) == null ? " transportName" : "";
-        if (((o5.m) this.c) == null) {
+        if (((o5.l) this.c) == null) {
             str = str.concat(" encodedPayload");
         }
         if (((Long) this.d) == null) {
-            str = r.b.v(str, " eventMillis");
+            str = p5.c.v(str, " eventMillis");
         }
         if (((Long) this.e) == null) {
-            str = r.b.v(str, " uptimeMillis");
+            str = p5.c.v(str, " uptimeMillis");
         }
         if (((HashMap) this.f) == null) {
-            str = r.b.v(str, " autoMetadata");
+            str = p5.c.v(str, " autoMetadata");
         }
         if (str.isEmpty()) {
-            return new o5.h((String) this.a, (Integer) this.b, (o5.m) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);
+            return new o5.h((String) this.a, (Integer) this.b, (o5.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f, (Integer) this.g, (String) this.h, (byte[]) this.i, (byte[]) this.j);
         }
         throw new IllegalStateException("Missing required properties:".concat(str));
     }

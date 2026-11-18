@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Intent;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x4 implements org.telegram.messenger.is {
+public final class x4 implements org.telegram.messenger.fs {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,7 +14,7 @@ public final class x4 implements org.telegram.messenger.is {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         switch (this.a) {
             case 0:
@@ -29,7 +29,7 @@ public final class x4 implements org.telegram.messenger.is {
                 int intValue = ((Integer) objArr[0]).intValue();
                 ((Integer) objArr[1]).getClass();
                 Intent intent = (Intent) objArr[2];
-                org.telegram.messenger.ns.e().n(this, org.telegram.messenger.ns.c5);
+                org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.e5);
                 if (intValue == 200) {
                     try {
                         ob0Var.G = (GoogleSignInAccount) a8.v7.b(intent).getResult(com.google.android.gms.common.api.f.class);
@@ -46,7 +46,7 @@ public final class x4 implements org.telegram.messenger.is {
                 int intValue2 = ((Integer) objArr[0]).intValue();
                 ((Integer) objArr[1]).getClass();
                 Intent intent2 = (Intent) objArr[2];
-                org.telegram.messenger.ns.e().n(this, org.telegram.messenger.ns.c5);
+                org.telegram.messenger.ks.e().n(this, org.telegram.messenger.ks.e5);
                 if (intValue2 == 200) {
                     try {
                         rc0Var.E = (GoogleSignInAccount) a8.v7.b(intent2).getResult(com.google.android.gms.common.api.f.class);

@@ -1,59 +1,37 @@
 package di;
 
 import android.graphics.Canvas;
-import android.graphics.Path;
+import android.graphics.Paint;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
+import android.text.style.ReplacementSpan;
+import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ra extends org.telegram.ui.Components.i9 {
-    public xh.e H;
-    public Path I;
-    public RectF J;
-    public Drawable K;
+public final class ra extends ReplacementSpan {
+    public final Paint a;
+    public final vy0 b;
+    public final /* synthetic */ int c;
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        RectF rectF = this.J;
-        Path path = this.I;
-        Drawable drawable = this.K;
-        super.dispatchDraw(canvas);
-        if (this.H == null) {
-            this.H = xh.e.e(this);
-        }
-        if (this.H != null) {
-            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-            path.rewind();
-            path.addRoundRect(rectF, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f), Path.Direction.CW);
-            canvas.save();
-            canvas.clipPath(path);
-            canvas2 = canvas;
-            this.H.c(canvas2, this, getWidth(), getHeight(), 1.0f, false);
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-        }
-        drawable.setBounds((getWidth() - drawable.getIntrinsicWidth()) / 2, (getHeight() - drawable.getIntrinsicHeight()) / 2, (drawable.getIntrinsicWidth() + getWidth()) / 2, (drawable.getIntrinsicHeight() + getHeight()) / 2);
-        drawable.draw(canvas2);
+    public ra(int i7, String str) {
+        this.c = i7;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(org.telegram.ui.ActionBar.n6.r1(0.1f, i7));
+        this.b = new vy0(str, 13.0f, org.telegram.messenger.g0.o());
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
-    public final void onAttachedToWindow() {
-        xh.e eVar = this.H;
-        if (eVar != null) {
-            eVar.a(this);
-        }
-        super.onAttachedToWindow();
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(f10, (r12 - org.telegram.messenger.g0.L(20.0f)) / 2.0f, org.telegram.messenger.g0.L(12.0f) + f10 + this.b.c, (org.telegram.messenger.g0.L(20.0f) + r12) / 2.0f);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), this.a);
+        int i14 = this.c;
+        this.b.c(f10 + org.telegram.messenger.g0.L(6.0f), (i11 + i13) / 2.0f, 1.0f, i14, canvas);
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
-    public final void onDetachedFromWindow() {
-        xh.e eVar = this.H;
-        if (eVar != null) {
-            eVar.b(this);
-        }
-        super.onDetachedFromWindow();
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (org.telegram.messenger.g0.L(12.0f) + this.b.c);
     }
 }

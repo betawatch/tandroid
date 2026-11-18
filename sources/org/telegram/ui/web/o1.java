@@ -8,51 +8,51 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import c8.ja;
+import c8.ma;
 import java.io.InputStream;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.wz;
-import org.telegram.messenger.xz;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.sz;
+import org.telegram.messenger.tz;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.eh0;
+import org.telegram.ui.hh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o1 implements z10 {
+public final /* synthetic */ class o1 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wz b;
+    public final /* synthetic */ sz b;
     public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ xz d;
+    public final /* synthetic */ tz d;
     public final /* synthetic */ v1 e;
-    public final /* synthetic */ z10 f;
+    public final /* synthetic */ x10 f;
 
-    public /* synthetic */ o1(wz wzVar, boolean[] zArr, xz xzVar, v1 v1Var, z10 z10Var, int i7) {
+    public /* synthetic */ o1(sz szVar, boolean[] zArr, tz tzVar, v1 v1Var, x10 x10Var, int i7) {
         this.a = i7;
-        this.b = wzVar;
+        this.b = szVar;
         this.c = zArr;
-        this.d = xzVar;
+        this.d = tzVar;
         this.e = v1Var;
-        this.f = z10Var;
+        this.f = x10Var;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                wz wzVar = this.b;
+                sz szVar = this.b;
                 boolean[] zArr = this.c;
-                xz xzVar = this.d;
+                tz tzVar = this.d;
                 v1 v1Var = this.e;
-                z10 z10Var = this.f;
+                x10 x10Var = this.f;
                 InputStream inputStream = (InputStream) obj;
-                xz.a(wzVar);
+                tz.a(szVar);
                 if (!zArr[0]) {
-                    wz d = xz.d(xzVar, "readHTML");
+                    sz d = tz.d(tzVar, "readHTML");
                     String str = v1Var.a;
-                    final o1 o1Var = new o1(d, zArr, xzVar, v1Var, z10Var, 1);
+                    final o1 o1Var = new o1(d, zArr, tzVar, v1Var, x10Var, 1);
                     if (inputStream != null) {
                         Context context = LaunchActivity.H1;
                         if (context == null) {
@@ -65,8 +65,8 @@ public final /* synthetic */ class o1 implements z10 {
                                 o1Var.a(null);
                                 break;
                             } else {
-                                final eh0 eh0Var = new eh0(context, 16);
-                                ((ViewGroup) rootView).addView(eh0Var);
+                                final hh0 hh0Var = new hh0(context, 16);
+                                ((ViewGroup) rootView).addView(hh0Var);
                                 final WebView webView = new WebView(context);
                                 WebSettings settings = webView.getSettings();
                                 settings.setAllowContentAccess(false);
@@ -80,12 +80,12 @@ public final /* synthetic */ class o1 implements z10 {
                                 settings.setAllowUniversalAccessFromFileURLs(false);
                                 webView.setWebViewClient(new q1(v1Var, inputStream));
                                 webView.setWebChromeClient(new r1());
-                                eh0Var.addView(webView, ja.c(-1.0f, -1));
+                                hh0Var.addView(webView, ma.c(-1.0f, -1));
                                 final boolean[] zArr2 = {false};
                                 webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
                                     @JavascriptInterface
                                     public void done(String str2) {
-                                        org.telegram.messenger.g0.h3(new x(zArr2, webView, eh0Var, str2, o1Var, 6));
+                                        org.telegram.messenger.g0.g3(new x(zArr2, webView, hh0Var, str2, o1Var, 6));
                                     }
                                 }, "Instant");
                                 webView.loadUrl(str);
@@ -102,28 +102,28 @@ public final /* synthetic */ class o1 implements z10 {
                 }
                 break;
             default:
-                wz wzVar2 = this.b;
+                sz szVar2 = this.b;
                 boolean[] zArr3 = this.c;
-                xz xzVar2 = this.d;
+                tz tzVar2 = this.d;
                 v1 v1Var2 = this.e;
-                z10 z10Var2 = this.f;
+                x10 x10Var2 = this.f;
                 JSONObject jSONObject = (JSONObject) obj;
-                xz.a(wzVar2);
+                tz.a(szVar2);
                 if (!zArr3[0]) {
-                    wz d2 = xz.d(xzVar2, "parseJSON");
+                    sz d2 = tz.d(tzVar2, "parseJSON");
                     try {
                         v1Var2.c = v1Var2.i(v1Var2.a, jSONObject);
                     } catch (Exception e10) {
-                        xz.c(xzVar2, "error: " + e10);
+                        tz.c(tzVar2, "error: " + e10);
                         a8.g(e10, true);
                     }
-                    xz.a(d2);
-                    z10Var2.a(v1Var2);
+                    tz.a(d2);
+                    x10Var2.a(v1Var2);
                     TLRPC.TL_webPage tL_webPage = v1Var2.c;
                     if (tL_webPage != null) {
                         v1.e.put(tL_webPage, v1Var2);
                     }
-                    xz.b(xzVar2);
+                    tz.b(tzVar2);
                     break;
                 }
                 break;

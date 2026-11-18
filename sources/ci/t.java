@@ -2,15 +2,15 @@ package ci;
 
 import ai.v1;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t implements is {
+public final class t implements fs {
     public final int a;
     public final TLRPC.Document b;
     public final int c;
@@ -24,7 +24,7 @@ public final class t implements is {
         this.b = document;
         this.c = i10;
         this.d = v1Var;
-        ns.f(i7).b(this, ns.Y1);
+        ks.f(i7).b(this, ks.Y1);
         w7.G(i7);
         if (!w7.J(document, null, true, true).exists()) {
             w7.G(i7).W(document, tL_starGiftUnique, 3, 1);
@@ -39,15 +39,15 @@ public final class t implements is {
         w7.G(this.a);
         if (w7.J(this.b, null, true, true).exists()) {
             this.f = true;
-            ns.f(this.a).n(this, ns.Y1);
+            ks.f(this.a).n(this, ks.Y1);
             w7.G(this.a);
-            Utilities.e.c(new c1.c(9, this, w7.J(this.b, null, true, true)));
+            Utilities.e.c(new c1.c(8, this, w7.J(this.b, null, true, true)));
         }
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.Y1) {
+        if (i7 == ks.Y1) {
             a();
         }
     }

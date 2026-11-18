@@ -9,7 +9,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
@@ -43,7 +43,7 @@ public final class e implements m {
         }
     }
 
-    public static void b(d dVar) {
+    public static void d(d dVar) {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             arrayDeque.add(dVar);
@@ -51,16 +51,8 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void Y() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-    }
-
-    @Override // u2.m
-    public final void d(int i7, int i10, int i11, long j3) {
-        Y();
+    public final void b(int i7, int i10, int i11, long j3) {
+        j();
         d a10 = a();
         a10.a = i7;
         a10.b = i10;
@@ -72,8 +64,8 @@ public final class e implements m {
     }
 
     @Override // u2.m
-    public final void e(int i7, k2.d dVar, long j3, int i10) {
-        Y();
+    public final void c(int i7, k2.d dVar, long j3, int i10) {
+        j();
         d a10 = a();
         a10.a = i7;
         a10.b = 0;
@@ -155,8 +147,16 @@ public final class e implements m {
     }
 
     @Override // u2.m
+    public final void j() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
+    }
+
+    @Override // u2.m
     public final void setParameters(Bundle bundle) {
-        Y();
+        j();
         android.support.v4.media.session.q qVar = this.c;
         String str = l0.a;
         qVar.obtainMessage(4, bundle).sendToTarget();

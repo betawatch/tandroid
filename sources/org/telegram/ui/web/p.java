@@ -1,23 +1,23 @@
 package org.telegram.ui.web;
 
-import fi.i7;
+import fi.f7;
 import org.json.JSONObject;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class p implements z10 {
+public final /* synthetic */ class p implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
-    public final /* synthetic */ i7 c;
+    public final /* synthetic */ f7 c;
 
-    public /* synthetic */ p(v0 v0Var, i7 i7Var, int i7) {
+    public /* synthetic */ p(v0 v0Var, f7 f7Var, int i7) {
         this.a = i7;
         this.b = v0Var;
-        this.c = i7Var;
+        this.c = f7Var;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
@@ -30,12 +30,12 @@ public final /* synthetic */ class p implements z10 {
                 v0 v0Var = this.b;
                 v0Var.getClass();
                 boolean booleanValue = ((Boolean) obj).booleanValue();
-                i7 i7Var = this.c;
+                f7 f7Var = this.c;
                 if (!booleanValue) {
-                    v0Var.x(i7Var, "home_screen_failed", v0.A("UNSUPPORTED", "error"));
+                    v0Var.x(f7Var, "home_screen_failed", v0.A("UNSUPPORTED", "error"));
                     break;
                 } else {
-                    v0Var.x(i7Var, "home_screen_added", null);
+                    v0Var.x(f7Var, "home_screen_added", null);
                     break;
                 }
         }

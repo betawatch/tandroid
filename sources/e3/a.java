@@ -9,7 +9,7 @@ import k2.h;
 import l2.a0;
 import l2.b;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends b {
     public final h J;
@@ -74,7 +74,7 @@ public final class a extends b {
             h hVar = this.J;
             hVar.clear();
             k8.a aVar = this.c;
-            aVar.x0();
+            aVar.g0();
             if (w(aVar, hVar, 0) != -4 || hVar.isEndOfStream()) {
                 return;
             }

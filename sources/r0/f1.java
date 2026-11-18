@@ -1,39 +1,66 @@
 package r0;
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.graphics.Typeface;
+import android.media.MediaRoute2Info;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.firebase.components.ComponentRegistrar;
+import java.util.List;
+import tg.e2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class f1 extends e1 {
-    public static final k1 r;
+public final /* synthetic */ class f1 implements g9.k, sg.y, t3.g, OnFailureListener, u9.e, ua.a {
+    public final /* synthetic */ int a;
 
-    static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        r = k1.h(null, windowInsets);
+    public /* synthetic */ f1(int i7) {
+        this.a = i7;
     }
 
-    public f1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var, windowInsets);
+    public static /* bridge */ /* synthetic */ MediaRoute2Info d(Object obj) {
+        return (MediaRoute2Info) obj;
     }
 
-    @Override // r0.b1, r0.h1
-    public i0.c f(int i7) {
-        return i0.c.c(this.c.getInsets(i1.a(i7)));
+    @Override // sg.y
+    public Typeface a() {
+        switch (this.a) {
+            case 18:
+                return org.telegram.messenger.g0.o1("fonts/rmedium.ttf");
+            case 19:
+                return org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
+            case 20:
+                return Typeface.create("serif", 1);
+            case 21:
+                return org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf");
+            case 22:
+                return org.telegram.messenger.g0.o1("fonts/rmono.ttf");
+            default:
+                return org.telegram.messenger.g0.o1("fonts/mw_bold.ttf");
+        }
     }
 
-    @Override // r0.b1, r0.h1
-    public i0.c g(int i7) {
-        return i0.c.c(this.c.getInsetsIgnoringVisibility(i1.a(i7)));
+    @Override // g9.k, l5.e
+    public Object apply(Object obj) {
+        r2.p pVar = (r2.p) obj;
+        pVar.h();
+        return h9.i0.q(h9.o.y(pVar.Z.b, new x2.z0(1)));
     }
 
-    @Override // r0.b1, r0.h1
-    public boolean p(int i7) {
-        return this.c.isVisible(i1.a(i7));
+    @Override // t3.g
+    public boolean c(int i7, int i10, int i11, int i12, int i13) {
+        return false;
     }
 
-    @Override // r0.b1, r0.h1
-    public final void d(View view) {
+    @Override // u9.e
+    public List k(ComponentRegistrar componentRegistrar) {
+        return componentRegistrar.getComponents();
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        int i7 = e2.s0;
+    }
+
+    @Override // ua.a
+    public void b(ua.b bVar) {
     }
 }

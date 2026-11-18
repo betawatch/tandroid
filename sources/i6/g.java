@@ -8,12 +8,12 @@ import com.google.android.gms.cast.framework.media.MediaIntentReceiver;
 import f6.p;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.ui.Components.y7;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+import org.telegram.ui.Components.g8;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends s {
     public final /* synthetic */ int g;
@@ -40,9 +40,9 @@ public final class g extends s {
                 }
                 break;
             default:
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null) {
-                    MediaController.B().i0(gjVar, (j3 / 1000) / ((float) gjVar.L0()));
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    MediaController.B().i0(fjVar, (j3 / 1000) / ((float) fjVar.L0()));
                     boolean z10 = MusicPlayerService.s;
                     ((MusicPlayerService) obj).f(j3);
                     break;
@@ -56,11 +56,11 @@ public final class g extends s {
         switch (this.g) {
             case 1:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
-                gz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
+                bz.E(i7 != 1 ? (i7 == 2 || i7 == 3) ? 1 : 0 : 2);
                 MusicPlayerService.g();
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null) {
-                    musicPlayerService.a(gjVar, false);
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    musicPlayerService.a(fjVar, false);
                     break;
                 }
                 break;
@@ -76,19 +76,19 @@ public final class g extends s {
             case 1:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) this.h;
                 if (i7 == 1 || i7 == 2) {
-                    if (!gz.N0) {
+                    if (!bz.N0) {
                         MediaController.B().l0(2);
                     }
-                } else if (gz.N0) {
+                } else if (bz.N0) {
                     MediaController.B().l0(0);
                 }
                 a0 a0Var = MusicPlayerService.w;
                 if (a0Var != null) {
-                    a0Var.w(gz.N0 ? 1 : 0);
+                    a0Var.x(bz.N0 ? 1 : 0);
                 }
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null) {
-                    musicPlayerService.a(gjVar, false);
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
+                    musicPlayerService.a(fjVar, false);
                     break;
                 }
                 break;
@@ -105,7 +105,7 @@ public final class g extends s {
                 h.v.b("onSkipToNext", new Object[0]);
                 h6.h hVar = ((h) this.h).n;
                 if (hVar != null) {
-                    m.d("Must be called from the main thread.");
+                    m.e("Must be called from the main thread.");
                     if (!hVar.w()) {
                         h6.h.t();
                         break;
@@ -116,8 +116,8 @@ public final class g extends s {
                 }
                 break;
             default:
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null && gjVar.I3()) {
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null && fjVar.I3()) {
                     MediaController.B().U(false);
                     break;
                 }
@@ -132,7 +132,7 @@ public final class g extends s {
                 h.v.b("onSkipToPrevious", new Object[0]);
                 h6.h hVar = ((h) this.h).n;
                 if (hVar != null) {
-                    m.d("Must be called from the main thread.");
+                    m.e("Must be called from the main thread.");
                     if (!hVar.w()) {
                         h6.h.t();
                         break;
@@ -143,8 +143,8 @@ public final class g extends s {
                 }
                 break;
             default:
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null && gjVar.I3()) {
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null && fjVar.I3()) {
                     MediaController.B().V();
                     break;
                 }
@@ -216,31 +216,31 @@ public final class g extends s {
             default:
                 MusicPlayerService musicPlayerService = (MusicPlayerService) obj;
                 if ("org.telegram.android.musicplayer.repeat".equals(str)) {
-                    gz.E((gz.S0 + 1) % 3);
+                    bz.E((bz.S0 + 1) % 3);
                     MusicPlayerService.g();
-                    y7 y7Var = y7.T2;
-                    if (y7Var != null) {
-                        y7Var.c1();
+                    g8 g8Var = g8.T2;
+                    if (g8Var != null) {
+                        g8Var.d1();
                     }
                 } else if ("org.telegram.android.musicplayer.shuffle".equals(str)) {
-                    if (gz.N0) {
+                    if (bz.N0) {
                         MediaController.B().l0(0);
                     } else {
                         MediaController.B().l0(2);
                     }
                     a0 a0Var = MusicPlayerService.w;
                     if (a0Var != null) {
-                        a0Var.w(gz.N0 ? 1 : 0);
+                        a0Var.x(bz.N0 ? 1 : 0);
                     }
-                    y7 y7Var2 = y7.T2;
-                    if (y7Var2 != null) {
-                        y7Var2.c1();
+                    g8 g8Var2 = g8.T2;
+                    if (g8Var2 != null) {
+                        g8Var2.d1();
                     }
                 }
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null) {
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null) {
                     boolean z10 = MusicPlayerService.s;
-                    musicPlayerService.a(gjVar, false);
+                    musicPlayerService.a(fjVar, false);
                     break;
                 }
                 break;

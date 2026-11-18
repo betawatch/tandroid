@@ -1,10 +1,10 @@
 package hd;
 
 import a8.p0;
-import c8.b0;
+import c8.d0;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends c implements RandomAccess {
     public final c a;
@@ -14,7 +14,7 @@ public final class b extends c implements RandomAccess {
     public b(c cVar, int i7, int i10) {
         this.a = cVar;
         this.b = i7;
-        b0.a(i7, i10, cVar.f());
+        d0.a(i7, i10, cVar.f());
         this.c = i10 - i7;
     }
 

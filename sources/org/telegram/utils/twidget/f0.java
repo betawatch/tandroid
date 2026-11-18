@@ -1,255 +1,62 @@
 package org.telegram.utils.twidget;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Locale;
-import org.json.JSONObject;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.vr;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.t1;
-import org.telegram.ui.Components.hk0;
-import org.telegram.ui.LaunchActivity;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class f0 {
+    public long a;
 
-    public /* synthetic */ f0(int i7, Object obj, Object obj2) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:117:0x0238  */
-    /* JADX WARN: Removed duplicated region for block: B:144:0x0223  */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0275  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        String str;
-        String str2;
-        ArrayList arrayList;
-        String str3;
-        y0 y0Var;
-        e2 T;
-        hk0 hk0Var;
-        y0 y0Var2;
-        r5 = null;
-        r5 = null;
-        View view = null;
-        switch (this.a) {
-            case 0:
-                k0 k0Var = (k0) this.b;
-                TLRPC.TL_messageMediaWidget tL_messageMediaWidget = (TLRPC.TL_messageMediaWidget) this.c;
-                k0Var.r = tL_messageMediaWidget;
-                k0Var.q = tL_messageMediaWidget.public_data_hash;
-                n0.c(k0Var, n0.C(tL_messageMediaWidget.chat_data), n0.C(tL_messageMediaWidget.public_data));
-                return;
-            case 1:
-                ((g0) this.b).a(null, (TLRPC.TL_error) this.c);
-                return;
-            case 2:
-                vr vrVar = (vr) this.c;
-                k0 k0Var2 = (k0) this.b;
-                long j3 = k0Var2.c;
-                int i7 = k0Var2.d;
-                ArrayList arrayList2 = new ArrayList();
-                try {
-                    SQLiteDatabase sQLiteDatabase = vrVar.b;
-                    Locale locale = Locale.US;
-                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT local FROM widget_state WHERE uid = " + j3 + " AND mid = " + i7, new Object[0]);
-                    try {
-                        try {
-                            str2 = (!queryFinalized.next() || queryFinalized.isNull(0)) ? null : queryFinalized.stringValue(0);
-                            try {
-                                queryFinalized.dispose();
-                                queryFinalized = vrVar.b.queryFinalized("SELECT width, height, anchor FROM widget_heights WHERE uid = " + j3 + " AND mid = " + i7 + " ORDER BY date DESC", new Object[0]);
-                                while (queryFinalized.next()) {
-                                    arrayList2.add(new int[]{queryFinalized.intValue(0), queryFinalized.intValue(1), queryFinalized.intValue(2)});
-                                }
-                                queryFinalized.dispose();
-                            } catch (Exception e10) {
-                                e = e10;
-                                str = str2;
-                                sQLiteCursor = queryFinalized;
-                                try {
-                                    vrVar.o(e, true);
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    str2 = str;
-                                    Object[] objArr = {str2, arrayList2};
-                                    arrayList = (ArrayList) objArr[1];
-                                    if (!arrayList.isEmpty()) {
-                                    }
-                                    org.telegram.messenger.g0.h3(new f0(3, k0Var2, objArr));
-                                    return;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    if (sQLiteCursor != null) {
-                                        sQLiteCursor.dispose();
-                                    }
-                                    throw th;
-                                }
-                            }
-                        } catch (Exception e11) {
-                            e = e11;
-                            sQLiteCursor = queryFinalized;
-                            str = null;
-                            vrVar.o(e, true);
-                            if (sQLiteCursor != null) {
-                            }
-                            str2 = str;
-                            Object[] objArr2 = {str2, arrayList2};
-                            arrayList = (ArrayList) objArr2[1];
-                            if (!arrayList.isEmpty()) {
-                            }
-                            org.telegram.messenger.g0.h3(new f0(3, k0Var2, objArr2));
-                            return;
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        sQLiteCursor = queryFinalized;
-                        if (sQLiteCursor != null) {
-                        }
-                        throw th;
-                    }
-                } catch (Exception e12) {
-                    e = e12;
-                    sQLiteCursor = null;
-                } catch (Throwable th4) {
-                    th = th4;
-                    sQLiteCursor = null;
-                }
-                Object[] objArr22 = {str2, arrayList2};
-                arrayList = (ArrayList) objArr22[1];
-                if (!arrayList.isEmpty()) {
-                    l0 l10 = n0.l(k0Var2.a());
-                    synchronized (l10) {
-                        if (l10.a.isEmpty()) {
-                            for (int i10 = 0; i10 < arrayList.size() && i10 < 4; i10++) {
-                                l10.a.add((int[]) arrayList.get(i10));
-                            }
-                        }
-                    }
-                }
-                org.telegram.messenger.g0.h3(new f0(3, k0Var2, objArr22));
-                return;
-            case 3:
-                k0 k0Var3 = (k0) this.b;
-                String str4 = (String) ((Object[]) this.c)[0];
-                HashMap hashMap = n0.c;
-                k0Var3.z = true;
-                String a10 = k0Var3.a();
-                if (str4 != null && !hashMap.containsKey(a10)) {
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("local", new JSONObject(str4));
-                        hashMap.put(a10, jSONObject);
-                    } catch (Exception e13) {
-                        a8.g(e13, true);
-                    }
-                }
-                y0 y0Var3 = k0Var3.t;
-                if (y0Var3 != null) {
-                    JSONObject jSONObject2 = (JSONObject) hashMap.get(a10);
-                    try {
-                        str3 = hd.E0().y.toLanguageTag();
-                    } catch (Exception unused) {
-                        str3 = null;
-                    }
-                    String jSONObject3 = jSONObject2 != null ? jSONObject2.toString() : null;
-                    y0Var3.t = str3;
-                    y0Var3.u = jSONObject3;
-                }
-                hk0 hk0Var2 = k0Var3.u;
-                if (hk0Var2 != null && (y0Var3 == null || y0Var3.i <= 0)) {
-                    hk0Var2.p0("cached heights read");
-                }
-                if (k0Var3.A) {
-                    k0Var3.A = false;
-                    if (k0Var3.x > 0 && y0Var3 != null) {
-                        n0.A(k0Var3);
-                    }
-                }
-                n0.p();
-                return;
-            case 4:
-                l1 l1Var = (l1) this.b;
-                JSONObject jSONObject4 = (JSONObject) this.c;
-                if (l1Var.w || (y0Var = l1Var.L) == null || y0Var.e == null) {
-                    return;
-                }
-                k0 h = n0.h(y0Var);
-                String optString = jSONObject4.optString("kind");
-                if (!"openLink".equals(optString) && !"openTelegramLink".equals(optString)) {
-                    if ("haptic".equals(optString)) {
-                        if (h != null && h.x > 0 && (hk0Var = h.w) != null) {
-                            view = hk0Var.W;
-                        }
-                        if (view != null) {
-                            String optString2 = jSONObject4.optString("haptic");
-                            view.performHapticFeedback("selection".equals(optString2) ? 4 : "notification".equals(optString2) ? 16 : 3);
-                            return;
-                        }
-                        return;
-                    }
-                    return;
-                }
-                String optString3 = jSONObject4.optString("url");
-                boolean equals = "openTelegramLink".equals(optString);
-                if (TextUtils.isEmpty(optString3) || n0.i || (T = LaunchActivity.T()) == null || T.getParentActivity() == null) {
-                    return;
-                }
-                Activity parentActivity = T.getParentActivity();
-                if (equals) {
-                    vf.c.t(parentActivity, optString3);
-                    return;
-                }
-                n0.i = true;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, parentActivity, T.getResourceProvider());
-                alertDialog$Builder.a.S = hd.M0(2131742872, null);
-                alertDialog$Builder.a.U = hd.a0(null, null, 2131742873, optString3);
-                alertDialog$Builder.k(hd.M0(2131747817, null), new t(2, optString3, parentActivity));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                t1 t1Var = alertDialog$Builder.a;
-                t1Var.setOnDismissListener(new hi.f1(7));
-                if (T.showDialog(t1Var) == null) {
-                    n0.i = false;
-                    return;
-                }
-                return;
-            default:
-                l1 l1Var2 = (l1) this.b;
-                Exception exc = (Exception) this.c;
-                l1Var2.getClass();
-                l1Var2.N = exc.toString();
-                if (l1Var2.w || (y0Var2 = l1Var2.L) == null) {
-                    return;
-                }
-                y0Var2.g(l1Var2.N);
-                return;
+    public final void a() {
+        long j3 = this.a;
+        if (j3 != 0) {
+            WidgetClientNative.arbiterCancel(j3);
         }
     }
 
-    public /* synthetic */ f0(vr vrVar, k0 k0Var) {
-        this.a = 2;
-        this.c = vrVar;
-        this.b = k0Var;
+    public final int b(double d, double d2, double d10, boolean z10, boolean z11, boolean z12, boolean z13, int i7) {
+        if (this.a == 0) {
+            this.a = WidgetClientNative.arbiterCreate();
+        }
+        return WidgetClientNative.arbiterDown(this.a, d, d2, d10, z10, z11, z12, z13, i7);
+    }
+
+    public final double c() {
+        long j3 = this.a;
+        if (j3 == 0) {
+            return -1.0d;
+        }
+        return WidgetClientNative.arbiterHoldDeadline(j3);
+    }
+
+    public final int d(double d, double d2, double d10) {
+        long j3 = this.a;
+        if (j3 == 0) {
+            return -1;
+        }
+        return WidgetClientNative.arbiterMove(j3, d, d2, d10);
+    }
+
+    public final void e() {
+        long j3 = this.a;
+        if (j3 == 0) {
+            return;
+        }
+        WidgetClientNative.arbiterDestroy(j3);
+        this.a = 0L;
+    }
+
+    public final int f(double d) {
+        long j3 = this.a;
+        if (j3 == 0) {
+            return -1;
+        }
+        return WidgetClientNative.arbiterTick(j3, d);
+    }
+
+    public final int g(double d, double d2, double d10) {
+        long j3 = this.a;
+        if (j3 == 0) {
+            return -1;
+        }
+        return WidgetClientNative.arbiterUp(j3, d, d2, d10);
     }
 }

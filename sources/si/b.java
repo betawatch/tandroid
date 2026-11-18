@@ -6,11 +6,11 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import c8.hc;
+import c8.kc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class b extends hc {
+public final class b extends kc {
     public final boolean a;
     public final Paint b = new Paint();
     public final Paint c;
@@ -30,12 +30,12 @@ public final class b extends hc {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void b() {
         this.e = -1;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void c(Canvas canvas) {
         Paint paint;
         boolean z10;
@@ -109,7 +109,7 @@ public final class b extends hc {
             float f21 = fVar.e;
             float f22 = f20 + f21;
             canvas.translate(-f19, -f22);
-            fVar.f.b0(f19, f22, bounds.right + f18, f21 + bounds.bottom, canvas);
+            fVar.f.o(f19, f22, bounds.right + f18, f21 + bounds.bottom, canvas);
             canvas.restore();
             f10 = f15;
             f11 = f16;
@@ -123,17 +123,17 @@ public final class b extends hc {
         canvas.restore();
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final boolean d() {
         return false;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void e(float f10) {
         this.b.setAlpha(Math.round(f10 * 255.0f));
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void a(Rect rect, RectF rectF) {
     }
 }

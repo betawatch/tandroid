@@ -2,14 +2,13 @@ package j8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 import q6.m;
-import u7.k;
-import u7.o;
+import u7.n;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new j7.b(21);
@@ -17,14 +16,14 @@ public final class a extends r6.a {
     public final int b;
     public final boolean c;
     public final String d;
-    public final k e;
+    public final u7.j e;
 
-    public a(long j3, int i7, boolean z10, String str, k kVar) {
+    public a(long j3, int i7, boolean z10, String str, u7.j jVar) {
         this.a = j3;
         this.b = i7;
         this.c = z10;
         this.d = str;
-        this.e = kVar;
+        this.e = jVar;
     }
 
     public final boolean equals(Object obj) {
@@ -32,7 +31,7 @@ public final class a extends r6.a {
             return false;
         }
         a aVar = (a) obj;
-        return this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && m.k(this.d, aVar.d) && m.k(this.e, aVar.e);
+        return this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && m.l(this.d, aVar.d) && m.l(this.e, aVar.e);
     }
 
     public final int hashCode() {
@@ -45,7 +44,7 @@ public final class a extends r6.a {
         long j3 = this.a;
         if (j3 != Long.MAX_VALUE) {
             m10.append("maxAge=");
-            o.a(j3, m10);
+            n.a(j3, m10);
         }
         int i7 = this.b;
         if (i7 != 0) {
@@ -70,10 +69,10 @@ public final class a extends r6.a {
             m10.append(", moduleId=");
             m10.append(str2);
         }
-        k kVar = this.e;
-        if (kVar != null) {
+        u7.j jVar = this.e;
+        if (jVar != null) {
             m10.append(", impersonation=");
-            m10.append(kVar);
+            m10.append(jVar);
         }
         m10.append(']');
         return m10.toString();
@@ -81,15 +80,15 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 8);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 1, 8);
         parcel.writeLong(this.a);
-        yb.q(parcel, 2, 4);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        yb.q(parcel, 3, 4);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(this.c ? 1 : 0);
-        yb.l(parcel, 4, this.d);
-        yb.k(parcel, 5, this.e, i7);
-        yb.s(parcel, r10);
+        bc.l(parcel, 4, this.d);
+        bc.k(parcel, 5, this.e, i7);
+        bc.s(parcel, r10);
     }
 }

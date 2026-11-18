@@ -1,19 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class xx0 extends e11 {
-    public final /* synthetic */ zx0 e;
+import android.transition.Transition;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xx0(zx0 zx0Var, wx0 wx0Var) {
-        super(wx0Var);
-        this.e = zx0Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class xx0 implements Transition.TransitionListener {
+    public final /* synthetic */ Runnable a;
+
+    public xx0(Runnable runnable) {
+        this.a = runnable;
     }
 
-    @Override // org.telegram.ui.e11, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.n = null;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.run();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
     }
 }

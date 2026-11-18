@@ -4,69 +4,69 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.i9, cr0, r0.m, org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ an a;
+public final /* synthetic */ class dh implements lh.d, org.telegram.messenger.h9, er0, r0.m, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ bn a;
 
-    public /* synthetic */ dh(an anVar) {
-        this.a = anVar;
+    public /* synthetic */ dh(bn bnVar) {
+        this.a = bnVar;
     }
 
     @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        an anVar = this.a;
-        r0.k1 P8 = anVar.P8(k1Var);
-        i0.c I0 = org.telegram.messenger.g0.I0(P8, false);
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        bn bnVar = this.a;
+        r0.l1 P8 = bnVar.P8(l1Var);
+        i0.b I0 = org.telegram.messenger.g0.I0(P8, false);
         int i7 = I0.a;
         int i10 = I0.c;
-        if (anVar.qb != i7 || anVar.rb != i10) {
-            anVar.qb = i7;
-            anVar.rb = i10;
-            anVar.m1.requestLayout();
+        if (bnVar.rb != i7 || bnVar.sb != i10) {
+            bnVar.rb = i7;
+            bnVar.sb = i10;
+            bnVar.m1.requestLayout();
         }
-        anVar.w.j(P8);
-        bi.g2 g2Var = anVar.Z3;
-        if (g2Var != null) {
-            g2Var.setPadding(i7, 0, i10, 0);
+        bnVar.w.j(P8);
+        bi.a3 a3Var = bnVar.Z3;
+        if (a3Var != null) {
+            a3Var.setPadding(i7, 0, i10, 0);
         }
-        anVar.C7();
-        anVar.G7();
-        anVar.N9();
+        bnVar.C7();
+        bnVar.G7();
+        bnVar.N9();
         boolean p10 = P8.a.p(8);
-        if (anVar.pb != p10) {
-            anVar.pb = p10;
-            anVar.m1.R();
+        if (bnVar.qb != p10) {
+            bnVar.qb = p10;
+            bnVar.m1.R();
         }
-        hi.i1 i1Var = anVar.F1;
+        hi.i1 i1Var = bnVar.F1;
         if (i1Var != null) {
             r0.i0.b(i1Var, P8);
         }
-        return r0.k1.b;
+        return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.er0
     public void a(float[] fArr) {
-        an anVar = this.a;
-        fArr[1] = anVar.A0.getBottom() - anVar.Xa;
-        fArr[0] = (anVar.A0.getTop() + anVar.O9) - org.telegram.messenger.g0.L(4.0f);
+        bn bnVar = this.a;
+        fArr[1] = bnVar.A0.getBottom() - bnVar.Ya;
+        fArr[0] = (bnVar.A0.getTop() + bnVar.P9) - org.telegram.messenger.g0.L(4.0f);
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        an anVar = this.a;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        bn bnVar = this.a;
         try {
             Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
             intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-            anVar.getParentActivity().startActivity(intent);
+            bnVar.getParentActivity().startActivity(intent);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.messenger.i9
+    @Override // org.telegram.messenger.h9
     public boolean run() {
-        an anVar = this.a;
-        return anVar.h != null || anVar.W9();
+        bn bnVar = this.a;
+        return bnVar.h != null || bnVar.W9();
     }
 }

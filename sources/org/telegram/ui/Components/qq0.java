@@ -1,37 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
+import android.os.Bundle;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class qq0 extends org.telegram.ui.Cells.f7 {
-    public final /* synthetic */ ys0 m0;
+public final class qq0 implements org.telegram.ui.e50 {
+    public final /* synthetic */ gt0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qq0(ys0 ys0Var, Context context) {
-        super(context);
-        this.m0 = ys0Var;
+    public qq0(gt0 gt0Var) {
+        this.a = gt0Var;
     }
 
-    @Override // org.telegram.ui.Cells.f7
-    public final boolean d(org.telegram.messenger.gj gjVar) {
-        long playlistTopicId;
-        ys0 ys0Var = this.m0;
-        ns0[] ns0VarArr = ys0Var.w1;
-        if (org.telegram.messenger.gj.R4(gjVar.k) || gjVar.h4()) {
-            boolean S = MediaController.B().S(gjVar);
-            MediaController.B().r0(S ? ns0VarArr[4].a : null, false);
-            return S;
+    @Override // org.telegram.ui.e50
+    public final void c(org.telegram.ui.f50 f50Var, long j3) {
+        Bundle bundle = new Bundle();
+        bundle.putLong("chat_id", j3);
+        bundle.putBoolean("just_created_chat", true);
+        f50Var.presentFragment(new org.telegram.ui.bn(bundle), true);
+        ur0 ur0Var = this.a.S;
+        org.telegram.ui.ActionBar.h2 h2Var = ur0Var.r.y1;
+        if (ur0Var.n != 0) {
+            h2Var.getConnectionsManager().cancelRequest(ur0Var.n, true);
+            ur0Var.n = 0;
         }
-        if (!gjVar.I3()) {
-            return false;
+        ur0Var.d.clear();
+        ur0Var.e = false;
+        ur0Var.h = false;
+        ur0Var.E(0L);
+        TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(ur0Var.F()));
+        if (c22 != null) {
+            h2Var.getMessagesController().c3(c22, h2Var.getClassGuid(), true, null);
         }
-        MediaController B = MediaController.B();
-        ArrayList arrayList = ns0VarArr[4].a;
-        long j3 = ys0Var.f1;
-        playlistTopicId = ys0Var.getPlaylistTopicId();
-        return B.o0(arrayList, gjVar, j3, true, null, playlistTopicId);
     }
 }

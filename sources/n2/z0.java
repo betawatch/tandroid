@@ -2,9 +2,9 @@ package n2;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class z0 extends f2.n {
+public final class z0 extends f2.o {
     public static final int i = Float.floatToIntBits(Float.NaN);
 
     public static void m(int i7, ByteBuffer byteBuffer) {
@@ -15,7 +15,7 @@ public final class z0 extends f2.n {
         byteBuffer.putInt(floatToIntBits);
     }
 
-    @Override // f2.m
+    @Override // f2.n
     public final void c(ByteBuffer byteBuffer) {
         ByteBuffer l10;
         int position = byteBuffer.position();
@@ -66,12 +66,12 @@ public final class z0 extends f2.n {
         l10.flip();
     }
 
-    @Override // f2.n
-    public final f2.j h(f2.j jVar) {
-        int i7 = jVar.c;
+    @Override // f2.o
+    public final f2.k h(f2.k kVar) {
+        int i7 = kVar.c;
         if (h2.l0.L(i7) || i7 == 2) {
-            return i7 != 4 ? new f2.j(jVar.a, jVar.b, 4) : f2.j.e;
+            return i7 != 4 ? new f2.k(kVar.a, kVar.b, 4) : f2.k.e;
         }
-        throw new f2.l(jVar);
+        throw new f2.m(kVar);
     }
 }

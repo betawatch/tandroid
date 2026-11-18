@@ -1,32 +1,37 @@
 package d9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class o implements n, he.b, ib.b, q5.b {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class o implements n, he.b, ib.b {
+    public final Object a;
 
-    public /* synthetic */ o(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public /* synthetic */ o(Object obj) {
+        this.a = obj;
     }
 
     public static o b(Object obj) {
         if (obj != null) {
-            return new o(obj, 2);
+            return new o(obj);
         }
         throw new NullPointerException("instance cannot be null");
     }
 
     @Override // d9.r
     public Object a() {
-        return this.b;
+        return this.a;
+    }
+
+    public Object c() {
+        if (q7.a.b == null) {
+            q7.a.b = new ab.b0();
+        }
+        synchronized (q7.a.a) {
+        }
+        throw new IllegalStateException("Must call PhenotypeContext.setContext() first");
     }
 
     @Override // fd.a
     public Object get() {
-        switch (this.a) {
-        }
-        return this.b;
+        return this.a;
     }
 }

@@ -24,7 +24,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends g.u {
     public TextView E;
@@ -115,7 +115,7 @@ public final class g extends g.u {
         }
     }
 
-    public final void h(s4.r rVar) {
+    public final void g(s4.r rVar) {
         if (rVar == null) {
             throw new IllegalArgumentException("selector must not be null");
         }

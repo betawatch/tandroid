@@ -1,64 +1,65 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class an0 implements org.telegram.ui.Components.zk0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cn0 b;
+public final class an0 implements org.telegram.ui.Cells.q5 {
+    public final /* synthetic */ l4 a;
 
-    public /* synthetic */ an0(cn0 cn0Var, int i7) {
-        this.a = i7;
-        this.b = cn0Var;
+    public an0(l4 l4Var) {
+        this.a = l4Var;
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public void D0(float f10) {
-        cn0 cn0Var = this.b;
-        if (f10 != 1.0f || cn0Var.n[1].getVisibility() == 0) {
-            if (cn0Var.w) {
-                cn0Var.n[0].setTranslationX((-f10) * r3.getMeasuredWidth());
-                cn0Var.n[1].setTranslationX(r3[0].getMeasuredWidth() - (f10 * cn0Var.n[0].getMeasuredWidth()));
-            } else {
-                cn0Var.n[0].setTranslationX(r3.getMeasuredWidth() * f10);
-                cn0Var.n[1].setTranslationX((f10 * r3[0].getMeasuredWidth()) - cn0Var.n[0].getMeasuredWidth());
-            }
-            if (f10 == 1.0f) {
-                org.telegram.ui.ActionBar.v4[] v4VarArr = cn0Var.n;
-                org.telegram.ui.ActionBar.v4 v4Var = v4VarArr[0];
-                v4VarArr[0] = v4VarArr[1];
-                v4VarArr[1] = v4Var;
-                v4Var.setVisibility(8);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.zk0
-    public void b(int i7, boolean z10) {
-        cn0 cn0Var = this.b;
-        if (cn0Var.n[0].b == i7) {
+    public final void a() {
+        bn bnVar;
+        TLRPC.Chat chat;
+        cn0 cn0Var = (cn0) this.a.e;
+        if (!cn0Var.J || (bnVar = cn0Var.V) == null || (chat = bnVar.e) == null || org.telegram.messenger.v3.N(chat) || !chat.slowmode_enabled || cn0Var.X == 2) {
             return;
         }
-        cn0Var.e = i7 == cn0Var.h.getFirstTabId();
-        org.telegram.ui.ActionBar.v4 v4Var = cn0Var.n[1];
-        v4Var.b = i7;
-        v4Var.setVisibility(0);
-        cn0Var.o0(true);
-        cn0Var.w = z10;
-        if (i7 == 0) {
-            cn0Var.c.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745761, null));
-        } else {
-            cn0Var.c.setSearchFieldHint(org.telegram.messenger.hd.M0(2131745764, null));
+        org.telegram.ui.Components.b5.r0(cn0Var, org.telegram.messenger.gd.M0(2131745115, null), org.telegram.messenger.gd.M0(2131745108, null), null);
+        if (cn0Var.X == 1) {
+            cn0Var.X = 2;
         }
     }
 
-    @Override // org.telegram.ui.Components.zk0
-    public /* synthetic */ boolean j1(int i7, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.zk0
-    public /* synthetic */ void D() {
+    @Override // org.telegram.ui.Cells.q5
+    public final void e(org.telegram.ui.Cells.r5 r5Var) {
+        boolean z10;
+        int intValue = ((Integer) r5Var.getTag()).intValue();
+        cn0 cn0Var = (cn0) this.a.e;
+        org.telegram.messenger.ue ueVar = cn0Var.K;
+        int i7 = -1;
+        if (ueVar != null) {
+            org.telegram.messenger.ef efVar = (org.telegram.messenger.ef) ueVar.e.get(intValue);
+            boolean containsKey = cn0Var.b.containsKey(Integer.valueOf(efVar.C));
+            z10 = !containsKey;
+            if (!containsKey && cn0Var.I > 0 && cn0Var.b.size() >= cn0Var.I) {
+                a();
+                return;
+            }
+            if (cn0Var.e && !containsKey) {
+                i7 = cn0Var.c.size();
+            }
+            r5Var.b(i7, z10, true);
+            cn0Var.d0(intValue, efVar);
+        } else {
+            org.telegram.messenger.g0.v1(cn0Var.getParentActivity().getCurrentFocus());
+            org.telegram.messenger.hf hfVar = (org.telegram.messenger.hf) cn0Var.f.get(intValue);
+            boolean containsKey2 = cn0Var.b.containsKey(hfVar.B);
+            z10 = !containsKey2;
+            if (!containsKey2 && cn0Var.I > 0 && cn0Var.b.size() >= cn0Var.I) {
+                a();
+                return;
+            }
+            if (cn0Var.e && !containsKey2) {
+                i7 = cn0Var.c.size();
+            }
+            r5Var.b(i7, z10, true);
+            cn0Var.d0(intValue, hfVar);
+        }
+        cn0Var.n0(z10 ? 1 : 2);
+        cn0Var.t0.u();
     }
 }

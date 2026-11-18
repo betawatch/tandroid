@@ -1,25 +1,45 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class s5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t5 b;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.ce;
+import org.telegram.ui.b31;
 
-    public /* synthetic */ s5(t5 t5Var, int i7) {
-        this.a = i7;
-        this.b = t5Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class s5 implements TextWatcher {
+    public final /* synthetic */ String[] a;
+    public final /* synthetic */ b31 b;
+    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ ce d;
+
+    public s5(String[] strArr, b31 b31Var, Runnable[] runnableArr, ce ceVar) {
+        this.a = strArr;
+        this.b = b31Var;
+        this.c = runnableArr;
+        this.d = ceVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new s5(this.b, 1));
-                break;
-            default:
-                this.b.a();
-                break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a[0] = editable.toString();
+        this.b.run();
+        Runnable[] runnableArr = this.c;
+        Runnable runnable = runnableArr[0];
+        if (runnable != null) {
+            runnable.run();
+            runnableArr[0] = null;
         }
+        ce ceVar = this.d;
+        org.telegram.messenger.g0.r(ceVar);
+        org.telegram.messenger.g0.h3(ceVar, 1000L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

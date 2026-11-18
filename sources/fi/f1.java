@@ -1,38 +1,30 @@
 package fi;
 
-import org.webrtc.VideoFrame;
-import org.webrtc.VideoSink;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class f1 implements VideoSink {
-    public volatile VideoSink a;
-    public volatile int b;
-    public volatile int c;
-    public final c1 d = new c1(this, 2);
-    public final /* synthetic */ g1 e;
-
-    public f1(g1 g1Var) {
-        this.e = g1Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class f1 extends TLRPC.TL_messageMediaStory {
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.user_id = inputSerializedData.readInt64(z10);
+        this.id = inputSerializedData.readInt32(z10);
+        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        this.via_mention = inputSerializedData.readBool(z10);
+        this.peer = mp.u1(j10.t0).B1(this.user_id);
     }
 
-    @Override // org.webrtc.VideoSink
-    public final void onFrame(VideoFrame videoFrame) {
-        int rotatedWidth = videoFrame.getRotatedWidth();
-        int rotatedHeight = videoFrame.getRotatedHeight();
-        if (rotatedWidth != this.b || rotatedHeight != this.c) {
-            this.b = rotatedWidth;
-            this.c = rotatedHeight;
-            org.telegram.messenger.g0.h3(this.d);
-        }
-        VideoSink videoSink = this.a;
-        if (videoSink != null) {
-            videoSink.onFrame(videoFrame);
-        }
-    }
-
-    @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        org.webrtc.d0.a(this, videoSink);
+    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt32(-946147811);
+        outputSerializedData.writeInt64(this.user_id);
+        outputSerializedData.writeInt32(this.id);
+        this.storyItem.serializeToStream(outputSerializedData);
+        outputSerializedData.writeBool(this.via_mention);
     }
 }

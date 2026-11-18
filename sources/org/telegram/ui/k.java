@@ -9,10 +9,10 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegram.messenger.is {
-    public org.telegram.ui.Components.uj0 a;
+public final class k extends org.telegram.ui.ActionBar.h2 implements org.telegram.messenger.fs {
+    public org.telegram.ui.Components.ck0 a;
     public j b;
     public boolean c;
     public TLRPC.GlobalPrivacySettings d;
@@ -34,17 +34,17 @@ public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegra
         ArrayList arrayList2 = this.h;
         arrayList.addAll(arrayList2);
         arrayList2.clear();
-        arrayList2.add(new i(0, 0, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFolders")));
-        arrayList2.add(new i(1, 1, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFoldersCheck")));
-        arrayList2.add(new i(2, 2, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedFoldersInfo")));
-        if (getMessagesController().T0().size() > 1) {
-            arrayList2.add(new i(0, 3, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChats")));
-            arrayList2.add(new i(1, 4, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChatsCheck")));
-            arrayList2.add(new i(2, 5, org.telegram.messenger.hd.N0("ArchiveSettingUnmutedChatsInfo")));
+        arrayList2.add(new i(0, 0, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedFolders")));
+        arrayList2.add(new i(1, 1, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedFoldersCheck")));
+        arrayList2.add(new i(2, 2, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedFoldersInfo")));
+        if (getMessagesController().V0().size() > 1) {
+            arrayList2.add(new i(0, 3, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedChats")));
+            arrayList2.add(new i(1, 4, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedChatsCheck")));
+            arrayList2.add(new i(2, 5, org.telegram.messenger.gd.N0("ArchiveSettingUnmutedChatsInfo")));
         }
-        arrayList2.add(new i(0, 6, org.telegram.messenger.hd.N0("NewChatsFromNonContacts")));
-        arrayList2.add(new i(1, 7, org.telegram.messenger.hd.N0("NewChatsFromNonContactsCheck")));
-        arrayList2.add(new i(2, 8, org.telegram.messenger.hd.N0("ArchiveAndMuteInfo")));
+        arrayList2.add(new i(0, 6, org.telegram.messenger.gd.N0("NewChatsFromNonContacts")));
+        arrayList2.add(new i(1, 7, org.telegram.messenger.gd.N0("NewChatsFromNonContactsCheck")));
+        arrayList2.add(new i(2, 8, org.telegram.messenger.gd.N0("ArchiveAndMuteInfo")));
         j jVar = this.b;
         if (jVar == null) {
             return;
@@ -57,32 +57,32 @@ public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegra
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.ActionBar.h2
     public final View createView(Context context) {
         setHasOwnBackground(true);
         this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(org.telegram.messenger.hd.M0(2131754143, null));
-        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.x4(this, 22));
+        this.simpleActionBar.setTitle(org.telegram.messenger.gd.M0(2131754141, null));
+        this.simpleActionBar.setActionBarMenuOnItemClick(new bi.r1(this, 24));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        org.telegram.ui.Components.uj0 uj0Var = new org.telegram.ui.Components.uj0(context, null);
-        this.a = uj0Var;
-        uj0Var.r1();
+        org.telegram.ui.Components.ck0 ck0Var = new org.telegram.ui.Components.ck0(context, null);
+        this.a = ck0Var;
+        ck0Var.r1();
         this.a.setLayoutManager(new jg.b0(1, false, 2));
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setSectionsDrawBackground(true);
         this.a.setLayoutAnimation(null);
-        org.telegram.ui.Components.uj0 uj0Var2 = this.a;
+        org.telegram.ui.Components.ck0 ck0Var2 = this.a;
         j jVar = new j(this);
         this.b = jVar;
-        uj0Var2.setAdapter(jVar);
+        ck0Var2.setAdapter(jVar);
         v4.k kVar = new v4.k();
         kVar.n(350L);
-        kVar.o(org.telegram.ui.Components.er.h);
+        kVar.o(org.telegram.ui.Components.lr.h);
         kVar.C = false;
         kVar.m = false;
         this.a.setItemAnimator(kVar);
-        frameLayout.addView(this.a, c8.ja.c(-1.0f, -1));
+        frameLayout.addView(this.a, c8.ma.c(-1.0f, -1));
         this.a.setOnItemClickListener(new h(this, 0 == true ? 1 : 0));
         getContactsController().B();
         TLRPC.GlobalPrivacySettings globalPrivacySettings = getContactsController().Y;
@@ -94,10 +94,10 @@ public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegra
         return this.fragmentView;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 != org.telegram.messenger.ns.k0) {
-            if (i7 == org.telegram.messenger.ns.O2) {
+        if (i7 != org.telegram.messenger.ks.k0) {
+            if (i7 == org.telegram.messenger.ks.O2) {
                 Z(true);
                 return;
             }
@@ -118,11 +118,11 @@ public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegra
                     if (R < arrayList.size()) {
                         int i12 = ((i) arrayList.get(R)).d;
                         if (i12 == 1) {
-                            ((org.telegram.ui.Cells.q8) childAt).setChecked(this.d.keep_archived_unmuted);
+                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.keep_archived_unmuted);
                         } else if (i12 == 4) {
-                            ((org.telegram.ui.Cells.q8) childAt).setChecked(this.d.keep_archived_folders);
+                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.keep_archived_folders);
                         } else if (i12 == 7) {
-                            ((org.telegram.ui.Cells.q8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
+                            ((org.telegram.ui.Cells.r8) childAt).setChecked(this.d.archive_and_mute_new_noncontact_peers);
                         }
                     }
                 }
@@ -131,35 +131,35 @@ public final class k extends org.telegram.ui.ActionBar.e2 implements org.telegra
         this.c = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final org.telegram.ui.Components.uj0 getListViewForSimpleGlass() {
+    @Override // org.telegram.ui.ActionBar.h2
+    public final org.telegram.ui.Components.ck0 getListViewForSimpleGlass() {
         return this.a;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.ActionBar.h2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.ActionBar.h2
     public final boolean onFragmentCreate() {
-        getNotificationCenter().c(this, org.telegram.messenger.ns.k0);
+        getNotificationCenter().c(this, org.telegram.messenger.ks.k0);
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.ActionBar.h2
     public final void onFragmentDestroy() {
-        getNotificationCenter().n(this, org.telegram.messenger.ns.k0);
+        getNotificationCenter().n(this, org.telegram.messenger.ks.k0);
         super.onFragmentDestroy();
         if (this.c) {
             TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
             setglobalprivacysettings.settings = this.d;
-            getConnectionsManager().sendRequest(setglobalprivacysettings, new fi.m5(9));
+            getConnectionsManager().sendRequest(setglobalprivacysettings, new fi.k5(9));
             this.c = false;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
+    @Override // org.telegram.ui.ActionBar.h2
     public final boolean useSimpleActionBar() {
         return true;
     }

@@ -4,12 +4,12 @@ import android.animation.ValueAnimator;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.al0;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.ph0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
@@ -31,23 +31,23 @@ public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateLis
         Object obj = this.d;
         switch (i7) {
             case 0:
-                m5 m5Var = (m5) obj;
-                m5Var.k1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
-                m5Var.D0.invalidate();
+                l5 l5Var = (l5) obj;
+                l5Var.k1.a = i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10);
+                l5Var.D0.invalidate();
                 break;
             case 1:
                 org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) obj;
                 f4Var.getClass();
                 int S0 = org.telegram.messenger.g0.S0(valueAnimator.getAnimatedFraction(), 1.0f, i11, i10);
-                fh0 fh0Var = f4Var.f;
-                fh0Var.setColorFilter(new PorterDuffColorFilter(S0, PorterDuff.Mode.SRC_IN));
-                org.telegram.ui.ActionBar.j6.H1(fh0Var.getDrawable(), S0 & 620756991, true);
+                ph0 ph0Var = f4Var.f;
+                ph0Var.setColorFilter(new PorterDuffColorFilter(S0, PorterDuff.Mode.SRC_IN));
+                org.telegram.ui.ActionBar.n6.H1(ph0Var.getDrawable(), S0 & 620756991, true);
                 break;
             case 2:
-                org.telegram.ui.Components.g6 g6Var = (org.telegram.ui.Components.g6) obj;
-                g6Var.getClass();
-                g6Var.u(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10));
-                g6Var.invalidateSelf();
+                org.telegram.ui.Components.m6 m6Var = (org.telegram.ui.Components.m6) obj;
+                m6Var.getClass();
+                m6Var.u(i0.a.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), i11, i10));
+                m6Var.invalidateSelf();
                 break;
             case 3:
                 ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = (ScrollSlidingTextTabStrip) obj;
@@ -60,13 +60,13 @@ public final /* synthetic */ class g4 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                bw0 bw0Var = (bw0) ((sk0) obj).b;
-                bw0Var.n1.setAlpha(animatedFraction);
-                bw0Var.r1.setAlpha(animatedFraction);
+                iw0 iw0Var = (iw0) ((al0) obj).b;
+                iw0Var.n1.setAlpha(animatedFraction);
+                iw0Var.r1.setAlpha(animatedFraction);
                 if (i11 != 0) {
                     int i13 = (int) ((1.0f - animatedFraction) * i11);
-                    bw0Var.W0(i10 + i13);
-                    bw0Var.n1.setTranslationY(i13);
+                    iw0Var.X0(i10 + i13);
+                    iw0Var.n1.setTranslationY(i13);
                     break;
                 }
                 break;

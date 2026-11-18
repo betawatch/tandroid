@@ -1,113 +1,167 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.er;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.gd;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o4 extends Drawable {
-    public final Paint a;
-    public final LinearGradient[] b;
-    public final Matrix c;
-    public final org.telegram.ui.Components.u5 d;
-    public final Path e;
-    public final ac f;
-    public int g;
-    public int h;
+public final /* synthetic */ class o4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b5 b;
 
-    public o4() {
-        Paint paint = new Paint(1);
-        Paint paint2 = new Paint(1);
-        this.a = new Paint(1);
-        this.b = new LinearGradient[2];
-        this.c = new Matrix();
-        this.d = new org.telegram.ui.Components.u5(1.0f, new ch.w(this, 15), 0L, 420L, er.h);
-        this.e = new Path();
-        this.f = new ac(1, 45);
-        Paint.Style style = Paint.Style.STROKE;
-        paint.setStyle(style);
-        paint.setColor(117440511);
-        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.0f));
-        paint2.setStyle(style);
-        paint2.setColor(301989887);
-        paint2.setStrokeWidth(org.telegram.messenger.g0.N(0.6666667f));
+    public /* synthetic */ o4(b5 b5Var, int i7) {
+        this.a = i7;
+        this.b = b5Var;
     }
 
-    public final void a(int i7, int i10) {
-        if (this.g == i7 && this.h == i10) {
-            return;
-        }
-        LinearGradient[] linearGradientArr = this.b;
-        linearGradientArr[0] = linearGradientArr[1];
-        this.g = i7;
-        this.h = i10;
-        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        this.d.e(true, 0.0f);
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        org.telegram.messenger.g0.P.set(getBounds());
-        float L = org.telegram.messenger.g0.L(24.0f);
-        int i7 = 0;
-        float e10 = this.d.e(false, 1.0f);
-        while (true) {
-            LinearGradient[] linearGradientArr = this.b;
-            if (i7 >= linearGradientArr.length) {
-                Path path = this.e;
-                path.rewind();
-                RectF rectF = org.telegram.messenger.g0.P;
-                path.addRoundRect(rectF, L, L, Path.Direction.CW);
-                canvas.save();
-                canvas.clipPath(path);
-                ac acVar = this.f;
-                acVar.g(rectF);
-                acVar.h = 30.0f;
-                acVar.d();
-                acVar.a(canvas, org.telegram.ui.ActionBar.j6.r1(0.6f, -1));
-                invalidateSelf();
-                canvas.restore();
-                org.telegram.messenger.g0.P(canvas, rectF, L);
-                return;
-            }
-            if (linearGradientArr[i7] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.5d);
-                if (pow > 0.0f) {
-                    Matrix matrix = this.c;
-                    matrix.reset();
-                    RectF rectF2 = org.telegram.messenger.g0.P;
-                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
-                    linearGradientArr[i7].setLocalMatrix(matrix);
-                    LinearGradient linearGradient = linearGradientArr[i7];
-                    Paint paint = this.a;
-                    paint.setShader(linearGradient);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF2, L, L, paint);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        z4 z4Var;
+        int i7 = this.a;
+        boolean z10 = true;
+        b5 b5Var = this.b;
+        switch (i7) {
+            case 0:
+                if (b5Var.Q.getAlpha() >= 1.0f) {
+                    b5Var.h0.run();
+                    break;
                 }
-            }
-            i7++;
+                break;
+            case 1:
+                if (b5Var.Q.getAlpha() >= 1.0f) {
+                    b5Var.h0.run();
+                    break;
+                }
+                break;
+            case 2:
+                b5Var.getClass();
+                b5Var.b((q4) view);
+                break;
+            case 3:
+                b5Var.getClass();
+                b5Var.b((q4) view);
+                break;
+            case 4:
+                b5 b5Var2 = this.b;
+                LinearLayout linearLayout = b5Var2.H;
+                z4[] z4VarArr = b5Var2.n;
+                if (b5Var2.getAlpha() >= 1.0f && !b5Var2.i0) {
+                    if (b5Var2.k0) {
+                        b5Var2.a(b5Var2.a0, b5Var2.b0, b5Var2.c0, b5Var2.d0);
+                        break;
+                    } else {
+                        ArrayList arrayList = new ArrayList();
+                        for (z4 z4Var2 : z4VarArr) {
+                            if (z4Var2 != null) {
+                                TL_stars.StarGift starGift = z4Var2.h;
+                                if ((starGift != null ? starGift : null) != null) {
+                                    if (starGift == null) {
+                                        starGift = null;
+                                    }
+                                    arrayList.add(starGift);
+                                }
+                            }
+                        }
+                        if (!arrayList.isEmpty() && b5Var2.f0 != null) {
+                            TextView textView = b5Var2.L;
+                            b5Var2.i0 = true;
+                            b5Var2.k0 = false;
+                            hi.m3 m3Var = b5Var2.U;
+                            if (m3Var != null) {
+                                m3Var.f(true);
+                                b5Var2.U = null;
+                            }
+                            textView.setText("");
+                            b5Var2.M.setText(gd.a0(null, null, 2131749760, ki.k.J0(b5Var2.getGiftsSuccessChance())));
+                            for (int i10 = 0; i10 < z4VarArr.length; i10++) {
+                                z4 z4Var3 = z4VarArr[i10];
+                                if (z4Var3 != null) {
+                                    z4Var3.setClickable(false);
+                                    z4 z4Var4 = z4VarArr[i10];
+                                    TL_stars.StarGift starGift2 = z4Var4.h;
+                                    if (starGift2 == null) {
+                                        starGift2 = null;
+                                    }
+                                    if (starGift2 == null) {
+                                        z4Var4.animate().alpha(0.0f).start();
+                                    }
+                                }
+                            }
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 < z4VarArr.length) {
+                                    z4 z4Var5 = z4VarArr[i11];
+                                    if (z4Var5 != null) {
+                                        TL_stars.StarGift starGift3 = z4Var5.h;
+                                        if ((starGift3 != null ? starGift3 : null) != null) {
+                                            if (starGift3 == null) {
+                                                starGift3 = null;
+                                            }
+                                            textView.setText(starGift3.title + " #" + gd.E(starGift3.num, ','));
+                                        }
+                                    }
+                                    i11++;
+                                }
+                            }
+                            b5Var2.R.animate().alpha(0.0f).start();
+                            linearLayout.animate().alpha(0.0f).start();
+                            b5Var2.S.animate().alpha(1.0f).start();
+                            b5Var2.Q.animate().alpha(0.25f).start();
+                            b5Var2.K.d();
+                            ArrayList arrayList2 = new ArrayList();
+                            for (z4 z4Var6 : z4VarArr) {
+                                TL_stars.StarGift starGift4 = z4Var6.h;
+                                if ((starGift4 != null ? starGift4 : null) != null) {
+                                    if (starGift4 == null) {
+                                        starGift4 = null;
+                                    }
+                                    arrayList2.add(starGift4);
+                                }
+                            }
+                            b5Var2.f0.a(arrayList2, new bi.m6(3, b5Var2, arrayList2), new ca.r(b5Var2, 18));
+                            break;
+                        } else {
+                            org.telegram.messenger.g0.F3(linearLayout);
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                z4 z4Var7 = (z4) view;
+                TL_stars.StarGift starGift5 = z4Var7.h;
+                if (starGift5 == null) {
+                    starGift5 = null;
+                }
+                if (starGift5 != null && !z4Var7.n) {
+                    z4Var7.a(null, true);
+                    b5Var.d(true);
+                    break;
+                } else {
+                    int i12 = 0;
+                    while (true) {
+                        z4[] z4VarArr2 = b5Var.n;
+                        if (i12 < z4VarArr2.length && (z4Var = z4VarArr2[i12]) != view) {
+                            if (z4Var != null) {
+                                TL_stars.StarGift starGift6 = z4Var.h;
+                                if (starGift6 == null) {
+                                    starGift6 = null;
+                                }
+                                if (starGift6 != null) {
+                                    z10 = false;
+                                }
+                            }
+                            i12++;
+                        }
+                    }
+                    b5Var.g0.a(new ai.v1(11, b5Var, z4Var7), Boolean.valueOf(z10));
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

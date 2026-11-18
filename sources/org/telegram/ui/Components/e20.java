@@ -1,49 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Matrix;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
+import java.security.SecureRandom;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class e20 extends org.telegram.ui.ActionBar.u2 {
-    public c5.l m1;
-    public b20 n1;
-    public LinearLayout o1;
-    public TextView[] p1;
-    public float q1;
-    public int r1;
+public final class e20 {
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public RadialGradient g;
+    public final int i;
+    public int j;
+    public int k;
+    public int l;
+    public float a = -1.0f;
+    public float b = -1.0f;
+    public final Matrix h = new Matrix();
 
-    public static void I0(org.telegram.ui.d30 d30Var) {
-        TextView[] textViewArr = d30Var.p1;
-        int i7 = d30Var.r1;
-        TextView textView = textViewArr[i7];
-        TextView textView2 = i7 < textViewArr.length + (-1) ? textViewArr[i7 + 1] : null;
-        d30Var.b.getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (d30Var.b.getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * d30Var.q1;
-        }
-        for (int i10 = 0; i10 < textViewArr.length; i10++) {
-            int i11 = d30Var.r1;
-            float f10 = 0.9f;
-            float f11 = 0.7f;
-            if (i10 >= i11 && i10 <= i11 + 1) {
-                if (i10 == i11) {
-                    float f12 = d30Var.q1;
-                    f11 = 1.0f - (0.3f * f12);
-                    f10 = 1.0f - (f12 * 0.1f);
-                } else {
-                    float f13 = d30Var.q1;
-                    f11 = 0.7f + (0.3f * f13);
-                    f10 = 0.9f + (f13 * 0.1f);
-                }
+    public e20(int i7) {
+        this.i = i7;
+    }
+
+    public final void a(float f10) {
+        int i7 = this.i;
+        if (i7 == 0) {
+            int i10 = this.j;
+            int i11 = org.telegram.ui.ActionBar.n6.Kh;
+            if (i10 != org.telegram.ui.ActionBar.n6.x0(null, i11, false) || this.k != org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Lh, false)) {
+                int x02 = org.telegram.ui.ActionBar.n6.x0(null, i11, false);
+                this.j = x02;
+                int x03 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Lh, false);
+                this.k = x03;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
             }
-            textViewArr[i10].setAlpha(f11);
-            textViewArr[i10].setScaleX(f10);
-            textViewArr[i10].setScaleY(f10);
+        } else if (i7 == 1) {
+            int i12 = this.j;
+            int i13 = org.telegram.ui.ActionBar.n6.Mh;
+            if (i12 != org.telegram.ui.ActionBar.n6.x0(null, i13, false) || this.k != org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Nh, false)) {
+                int x04 = org.telegram.ui.ActionBar.n6.x0(null, i13, false);
+                this.j = x04;
+                int x05 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Nh, false);
+                this.k = x05;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
+            }
+        } else {
+            if (i7 != 3) {
+                return;
+            }
+            int i14 = this.j;
+            int i15 = org.telegram.ui.ActionBar.n6.Zh;
+            if (i14 != org.telegram.ui.ActionBar.n6.x0(null, i15, false) || this.k != org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.ai, false) || this.l != org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bi, false)) {
+                int x06 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.ai, false);
+                this.k = x06;
+                int x07 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.bi, false);
+                this.l = x07;
+                int x08 = org.telegram.ui.ActionBar.n6.x0(null, i15, false);
+                this.j = x08;
+                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, (float[]) null, Shader.TileMode.CLAMP);
+            }
         }
-        d30Var.o1.setTranslationX(measuredWidth2);
-        d30Var.n1.invalidate();
+        int L = org.telegram.messenger.g0.L(130.0f);
+        float f11 = this.e;
+        if (f11 == 0.0f || this.f >= f11) {
+            this.e = Utilities.b.nextInt(700) + 500;
+            this.f = 0.0f;
+            if (this.a == -1.0f) {
+                b();
+            }
+            this.c = this.a;
+            this.d = this.b;
+            b();
+        }
+        float f12 = 16L;
+        float f13 = (f12 * 0.02f * f10) + (1.0f * f12) + this.f;
+        this.f = f13;
+        float f14 = this.e;
+        if (f13 > f14) {
+            this.f = f14;
+        }
+        float interpolation = lr.g.getInterpolation(this.f / f14);
+        float f15 = L;
+        float f16 = this.c;
+        float f17 = ((((this.a - f16) * interpolation) + f16) * f15) - 200.0f;
+        float f18 = this.d;
+        float f19 = ((((this.b - f18) * interpolation) + f18) * f15) - 200.0f;
+        float f20 = (f15 / 400.0f) * (i7 == 3 ? 2.0f : 1.5f);
+        Matrix matrix = this.h;
+        matrix.reset();
+        matrix.postTranslate(f17, f19);
+        matrix.postScale(f20, f20, f17 + 200.0f, f19 + 200.0f);
+        this.g.setLocalMatrix(matrix);
+    }
+
+    public final void b() {
+        int i7 = this.i;
+        if (i7 == 0) {
+            SecureRandom secureRandom = Utilities.b;
+            this.a = a8.p0.f(secureRandom.nextInt(100), 0.1f, 100.0f, 0.2f);
+            this.b = a8.p0.f(secureRandom.nextInt(100), 0.1f, 100.0f, 0.7f);
+        } else if (i7 == 3) {
+            SecureRandom secureRandom2 = Utilities.b;
+            this.a = a8.p0.f(secureRandom2.nextInt(100), 0.1f, 100.0f, 0.6f);
+            this.b = (secureRandom2.nextInt(100) * 0.1f) / 100.0f;
+        } else {
+            SecureRandom secureRandom3 = Utilities.b;
+            this.a = com.google.android.gms.internal.vision.e2.c(secureRandom3.nextInt(100), 100.0f, 0.2f, 0.8f);
+            this.b = secureRandom3.nextInt(100) / 100.0f;
+        }
     }
 }

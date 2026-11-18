@@ -2,9 +2,9 @@ package jb;
 
 import android.content.Context;
 import android.os.Bundle;
-import c8.ee;
+import c8.he;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements q {
     public final Bundle a;
@@ -33,7 +33,7 @@ public final class a implements q {
     public final yd.a c() {
         Bundle bundle = this.a;
         if (bundle.containsKey("firebase_sessions_sessions_restart_timeout")) {
-            return new yd.a(ee.c(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d));
+            return new yd.a(he.c(bundle.getInt("firebase_sessions_sessions_restart_timeout"), yd.c.d));
         }
         return null;
     }

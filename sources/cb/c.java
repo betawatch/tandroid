@@ -1,239 +1,402 @@
 package cb;
 
-import a8.ja;
 import a8.sa;
-import a8.xa;
 import aa.p;
 import ai.p0;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.os.Parcel;
 import android.os.ResultReceiver;
 import android.util.Log;
-import android.view.Surface;
-import android.view.View;
-import android.view.Window;
 import android.webkit.WebView;
 import android.widget.TextView;
+import androidx.biometric.g0;
+import androidx.fragment.app.f0;
 import androidx.fragment.app.j0;
+import androidx.fragment.app.s;
 import androidx.lifecycle.a0;
-import b3.i;
-import b3.j;
-import b3.l;
-import c8.j1;
-import cc.e;
-import ci.n0;
+import bi.j3;
 import com.android.billingclient.api.ProxyBillingActivityV2;
-import com.google.android.gms.common.api.internal.f0;
 import com.google.android.gms.common.api.internal.h1;
-import com.google.android.gms.common.api.internal.o;
 import com.google.android.gms.common.api.internal.q;
 import com.google.android.gms.common.api.internal.q0;
-import com.google.android.gms.internal.cast.a1;
-import com.google.android.gms.internal.cast.a2;
-import com.google.android.gms.internal.cast.m0;
-import com.google.android.gms.internal.cast.x;
-import com.google.android.gms.internal.play_billing.r;
+import com.google.android.gms.internal.cast.t;
 import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.SuccessContinuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
-import d3.i0;
-import d8.d;
-import d8.f;
-import di.i6;
-import di.t;
-import e2.x1;
-import f6.y;
-import f7.v;
-import fi.d4;
-import fi.e9;
-import fi.f9;
-import fi.g3;
-import g.s;
+import d9.o;
+import di.pb;
+import e5.n;
+import f5.g;
+import f6.d0;
+import f6.e0;
+import fi.z3;
+import g6.j;
+import gb.d1;
+import gb.l;
+import gb.w0;
+import h6.m;
 import j$.util.DesugarCollections;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
-import java.lang.reflect.InvocationHandler;
+import j6.f;
+import j6.x;
+import java.nio.BufferOverflowException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.nio.ReadOnlyBufferException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.ConcurrentModificationException;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
-import java.util.WeakHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.locks.Lock;
-import l.k;
-import l.w;
+import m.i1;
 import m.o3;
-import m6.n;
-import o9.g;
-import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
-import org.chromium.support_lib_boundary.WebMessageBoundaryInterface;
-import org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface;
-import org.chromium.support_lib_boundary.WebMessagePayloadBoundaryInterface;
-import org.chromium.support_lib_boundary.WebMessagePortBoundaryInterface;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.kc;
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Cells.o0;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.ft0;
-import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.av0;
-import org.telegram.ui.vv0;
-import q6.m;
-import q7.l1;
-import q7.m1;
+import org.chromium.support_lib_boundary.StaticsBoundaryInterface;
+import org.chromium.support_lib_boundary.WebViewProviderBoundaryInterface;
+import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.nt0;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.p11;
+import org.telegram.ui.r00;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class c implements SuccessContinuation, p0, a0, androidx.activity.result.b, j, te.b, q0, i0, q, ft0, kc, WebMessageListenerBoundaryInterface, e9, w, OnSuccessListener, OnCompleteListener, ib.b {
+public final class c implements SuccessContinuation, p0, a0, androidx.activity.result.b, e71, p11, q0, nt0, n, q, oo0, i1, OnCompleteListener, ib.b {
     public static volatile c c;
     public final /* synthetic */ int a;
-    public final Object b;
+    public Object b;
 
-    public c(f0 f0Var) {
-        this.a = 13;
-        this.b = new WeakReference(f0Var);
+    public /* synthetic */ c(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static o h(Looper looper, Object obj, String str) {
-        m.h(obj, "Listener must not be null");
-        m.h(looper, "Looper must not be null");
-        return new o(looper, obj, str);
+    public static int B(int i7) {
+        return C(i7 << 3);
     }
 
-    @Override // te.b
-    public void E(float f10, int i7) {
-        ch.o oVar = (ch.o) this.b;
-        oVar.c.setLayerType(0, null);
-        if (f10 == 0.0f && !oVar.P) {
-            oVar.c.setVisibility(4);
-            if (Build.MODEL.toLowerCase().startsWith("zte") && Build.VERSION.SDK_INT <= 28) {
-                oVar.F.setFocusableInTouchMode(false);
+    public static int C(int i7) {
+        if ((i7 & (-128)) == 0) {
+            return 1;
+        }
+        if ((i7 & (-16384)) == 0) {
+            return 2;
+        }
+        if (((-2097152) & i7) == 0) {
+            return 3;
+        }
+        return (i7 & (-268435456)) == 0 ? 4 : 5;
+    }
+
+    public static int q(CharSequence charSequence) {
+        int length = charSequence.length();
+        int i7 = 0;
+        int i10 = 0;
+        while (i10 < length && charSequence.charAt(i10) < 128) {
+            i10++;
+        }
+        int i11 = length;
+        while (true) {
+            if (i10 >= length) {
+                break;
+            }
+            char charAt = charSequence.charAt(i10);
+            if (charAt < 2048) {
+                i11 += (127 - charAt) >>> 31;
+                i10++;
+            } else {
+                int length2 = charSequence.length();
+                while (i10 < length2) {
+                    char charAt2 = charSequence.charAt(i10);
+                    if (charAt2 < 2048) {
+                        i7 += (127 - charAt2) >>> 31;
+                    } else {
+                        i7 += 2;
+                        if (55296 <= charAt2 && charAt2 <= 57343) {
+                            if (Character.codePointAt(charSequence, i10) < 65536) {
+                                StringBuilder sb2 = new StringBuilder(39);
+                                sb2.append("Unpaired surrogate at index ");
+                                sb2.append(i10);
+                                throw new IllegalArgumentException(sb2.toString());
+                            }
+                            i10++;
+                        }
+                    }
+                    i10++;
+                }
+                i11 += i7;
             }
         }
-        ns.e().k(ns.k1, 512);
+        if (i11 >= length) {
+            return i11;
+        }
+        StringBuilder sb3 = new StringBuilder(54);
+        sb3.append("UTF-8 length does not fit in int: ");
+        sb3.append(i11 + 4294967296L);
+        throw new IllegalArgumentException(sb3.toString());
     }
 
-    @Override // org.telegram.ui.Components.ft0
-    public void F(boolean z10) {
-        te.a aVar = ((t) this.b).s;
+    public static int v(int i7, String str) {
+        int B = B(i7);
+        int q10 = q(str);
+        return C(q10) + q10 + B;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v20 */
+    public static void x(CharSequence charSequence, ByteBuffer byteBuffer) {
+        int i7;
+        char charAt;
+        if (byteBuffer.isReadOnly()) {
+            throw new ReadOnlyBufferException();
+        }
+        char c10 = 57343;
+        int i10 = 0;
+        if (!byteBuffer.hasArray()) {
+            int length = charSequence.length();
+            while (i10 < length) {
+                char charAt2 = charSequence.charAt(i10);
+                char c11 = charAt2;
+                if (charAt2 >= 128) {
+                    if (charAt2 < 2048) {
+                        byteBuffer.put((byte) ((charAt2 >>> 6) | 960));
+                        c11 = (charAt2 & '?') | 128;
+                    } else {
+                        if (charAt2 >= 55296 && 57343 >= charAt2) {
+                            int i11 = i10 + 1;
+                            if (i11 != charSequence.length()) {
+                                char charAt3 = charSequence.charAt(i11);
+                                if (Character.isSurrogatePair(charAt2, charAt3)) {
+                                    int codePoint = Character.toCodePoint(charAt2, charAt3);
+                                    byteBuffer.put((byte) ((codePoint >>> 18) | ks.P3));
+                                    byteBuffer.put((byte) (((codePoint >>> 12) & 63) | 128));
+                                    byteBuffer.put((byte) (((codePoint >>> 6) & 63) | 128));
+                                    byteBuffer.put((byte) ((codePoint & 63) | 128));
+                                    i10 = i11;
+                                } else {
+                                    i10 = i11;
+                                }
+                            }
+                            StringBuilder sb2 = new StringBuilder(39);
+                            sb2.append("Unpaired surrogate at index ");
+                            sb2.append(i10 - 1);
+                            throw new IllegalArgumentException(sb2.toString());
+                        }
+                        byteBuffer.put((byte) ((charAt2 >>> '\f') | 480));
+                        byteBuffer.put((byte) (((charAt2 >>> 6) & 63) | 128));
+                        byteBuffer.put((byte) ((charAt2 & '?') | 128));
+                        i10++;
+                    }
+                }
+                byteBuffer.put((byte) c11);
+                i10++;
+            }
+            return;
+        }
+        try {
+            byte[] array = byteBuffer.array();
+            int arrayOffset = byteBuffer.arrayOffset() + byteBuffer.position();
+            int remaining = byteBuffer.remaining();
+            int length2 = charSequence.length();
+            int i12 = remaining + arrayOffset;
+            while (i10 < length2) {
+                int i13 = i10 + arrayOffset;
+                if (i13 >= i12 || (charAt = charSequence.charAt(i10)) >= 128) {
+                    break;
+                }
+                array[i13] = (byte) charAt;
+                i10++;
+            }
+            if (i10 == length2) {
+                i7 = arrayOffset + length2;
+            } else {
+                i7 = arrayOffset + i10;
+                while (i10 < length2) {
+                    char charAt4 = charSequence.charAt(i10);
+                    if (charAt4 < 128 && i7 < i12) {
+                        array[i7] = (byte) charAt4;
+                        i7++;
+                    } else if (charAt4 < 2048 && i7 <= i12 - 2) {
+                        int i14 = i7 + 1;
+                        array[i7] = (byte) ((charAt4 >>> 6) | 960);
+                        i7 += 2;
+                        array[i14] = (byte) ((charAt4 & '?') | 128);
+                    } else {
+                        if ((charAt4 >= 55296 && c10 >= charAt4) || i7 > i12 - 3) {
+                            if (i7 > i12 - 4) {
+                                StringBuilder sb3 = new StringBuilder(37);
+                                sb3.append("Failed writing ");
+                                sb3.append(charAt4);
+                                sb3.append(" at index ");
+                                sb3.append(i7);
+                                throw new ArrayIndexOutOfBoundsException(sb3.toString());
+                            }
+                            int i15 = i10 + 1;
+                            if (i15 != charSequence.length()) {
+                                char charAt5 = charSequence.charAt(i15);
+                                if (Character.isSurrogatePair(charAt4, charAt5)) {
+                                    int codePoint2 = Character.toCodePoint(charAt4, charAt5);
+                                    array[i7] = (byte) ((codePoint2 >>> 18) | ks.P3);
+                                    array[i7 + 1] = (byte) (((codePoint2 >>> 12) & 63) | 128);
+                                    int i16 = i7 + 3;
+                                    array[i7 + 2] = (byte) (((codePoint2 >>> 6) & 63) | 128);
+                                    i7 += 4;
+                                    array[i16] = (byte) ((codePoint2 & 63) | 128);
+                                    i10 = i15;
+                                } else {
+                                    i10 = i15;
+                                }
+                            }
+                            StringBuilder sb4 = new StringBuilder(39);
+                            sb4.append("Unpaired surrogate at index ");
+                            sb4.append(i10 - 1);
+                            throw new IllegalArgumentException(sb4.toString());
+                        }
+                        array[i7] = (byte) ((charAt4 >>> '\f') | 480);
+                        int i17 = i7 + 2;
+                        array[i7 + 1] = (byte) (((charAt4 >>> 6) & 63) | 128);
+                        i7 += 3;
+                        array[i17] = (byte) ((charAt4 & '?') | 128);
+                    }
+                    i10++;
+                    c10 = 57343;
+                }
+            }
+            byteBuffer.position(i7 - byteBuffer.arrayOffset());
+        } catch (ArrayIndexOutOfBoundsException e10) {
+            BufferOverflowException bufferOverflowException = new BufferOverflowException();
+            bufferOverflowException.initCause(e10);
+            throw bufferOverflowException;
+        }
+    }
+
+    public static int z(long j3) {
+        if (((-128) & j3) == 0) {
+            return 1;
+        }
+        if (((-16384) & j3) == 0) {
+            return 2;
+        }
+        if (((-2097152) & j3) == 0) {
+            return 3;
+        }
+        if (((-268435456) & j3) == 0) {
+            return 4;
+        }
+        if (((-34359738368L) & j3) == 0) {
+            return 5;
+        }
+        if (((-4398046511104L) & j3) == 0) {
+            return 6;
+        }
+        if (((-562949953421312L) & j3) == 0) {
+            return 7;
+        }
+        if (((-72057594037927936L) & j3) == 0) {
+            return 8;
+        }
+        return (j3 & Long.MIN_VALUE) == 0 ? 9 : 10;
+    }
+
+    @Override // androidx.lifecycle.a0
+    public void A(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        g0 g0Var = (g0) this.b;
+        Handler handler = g0Var.B0;
+        sa saVar = g0Var.C0;
+        handler.removeCallbacks(saVar);
+        TextView textView = g0Var.H0;
+        if (textView != null) {
+            textView.setText(charSequence);
+        }
+        handler.postDelayed(saVar, 2000L);
+    }
+
+    @Override // org.telegram.ui.Components.oo0
+    public void D0() {
+        z3.h0((z3) this.b);
+    }
+
+    @Override // org.telegram.ui.Components.nt0
+    public void G(boolean z10) {
+        pb pbVar = (pb) this.b;
+        te.a aVar = pbVar.Z;
         if (aVar != null) {
             aVar.a(z10, true);
         }
-    }
-
-    @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        ((ch.o) this.b).j0(f10);
-    }
-
-    @Override // org.telegram.messenger.kc
-    public void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        ch0 B;
-        boolean[] zArr = (boolean[]) this.b;
-        if (!z10 || (B = imageReceiver.B()) == null || zArr[0]) {
-            return;
+        r00 r00Var = pbVar.s;
+        if (r00Var != null) {
+            r00Var.invalidate();
         }
-        B.N(0, false, false);
-        g0.h3(new o0(B, 0));
-        zArr[0] = true;
     }
 
-    @Override // org.telegram.ui.Components.ft0
+    @Override // org.telegram.ui.Components.nt0
     public float U0() {
-        i0.c cVar;
-        cVar = ((e2) ((t) this.b)).mSystemInsets;
-        return i5.c.d(9.66f, ri.a.d(cVar.b), 0);
+        return i5.c.d(9.66f, ri.a.d(((pb) this.b).c0), 0);
     }
 
-    public void a(f3.j jVar) {
-        LinkedHashMap linkedHashMap = (LinkedHashMap) this.b;
-        long[] jArr = jVar.e;
-        if (jArr.length <= 0 || linkedHashMap.containsKey(Long.valueOf(jArr[0]))) {
+    @Override // org.telegram.ui.Components.e71
+    public void a(int i7, boolean z10) {
+        j3 j3Var = (j3) this.b;
+        if (j3Var.m2 == i7) {
             return;
         }
-        linkedHashMap.put(Long.valueOf(jVar.e[0]), jVar);
+        j3Var.m2 = i7;
+        j3Var.e2.g();
+        j3Var.U1.O(true);
     }
 
     @Override // com.google.android.gms.common.api.internal.q
     public void accept(Object obj, Object obj2) {
-        int i7 = this.a;
-        Object obj3 = this.b;
-        switch (i7) {
-            case 16:
-                d dVar = new d(0, (TaskCompletionSource) obj2);
-                d8.c cVar = (d8.c) ((f) obj).n();
-                Parcel obtain = Parcel.obtain();
-                obtain.writeInterfaceToken("com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService");
-                int i10 = d8.a.a;
-                obtain.writeStrongBinder(dVar);
-                obtain.writeInt(1);
-                ((o8.a) obj3).writeToParcel(obtain, 0);
-                cVar.h1(obtain, 2);
-                return;
-            default:
-                e7.b bVar = new e7.b(0, (TaskCompletionSource) obj2);
-                m1 m1Var = (m1) ((l1) obj).n();
-                Parcel obtain2 = Parcel.obtain();
-                obtain2.writeInterfaceToken(m1Var.b);
-                int i11 = q7.j.a;
-                obtain2.writeStrongBinder(bVar);
-                obtain2.writeInt(1);
-                ((v) obj3).writeToParcel(obtain2, 0);
-                Parcel obtain3 = Parcel.obtain();
-                try {
-                    m1Var.a.transact(1, obtain2, obtain3, 0);
-                    obtain3.readException();
-                    return;
-                } finally {
-                    obtain2.recycle();
-                    obtain3.recycle();
-                }
+        x xVar = (x) obj;
+        f fVar = (f) xVar.n();
+        d0 d0Var = ((e0) this.b).l;
+        Parcel p12 = fVar.p1();
+        t.d(p12, d0Var);
+        fVar.u1(p12, 18);
+        f fVar2 = (f) xVar.n();
+        fVar2.u1(fVar2.p1(), 17);
+        ((TaskCompletionSource) obj2).setResult(null);
+    }
+
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ boolean b() {
+        return true;
+    }
+
+    @Override // e5.n
+    public WebViewProviderBoundaryInterface createWebView(WebView webView) {
+        return (WebViewProviderBoundaryInterface) af.b.b(WebViewProviderBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).createWebView(webView));
+    }
+
+    @Override // e5.n
+    public String[] d() {
+        return ((WebViewProviderFactoryBoundaryInterface) this.b).getSupportedFeatures();
+    }
+
+    public void e(StringBuilder sb2, Iterator it) {
+        g gVar = (g) this.b;
+        if (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            sb2.append(g.f(entry.getKey()));
+            sb2.append("=");
+            sb2.append(g.f(entry.getValue()));
+            while (it.hasNext()) {
+                sb2.append((CharSequence) gVar.a);
+                Map.Entry entry2 = (Map.Entry) it.next();
+                sb2.append(g.f(entry2.getKey()));
+                sb2.append("=");
+                sb2.append(g.f(entry2.getValue()));
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.ft0
-    public int b1() {
-        i0.c cVar;
-        cVar = ((e2) ((t) this.b)).mSystemInsets;
-        return cVar.d;
-    }
-
-    @Override // fi.e9
-    public void d(long j3, int i7, g3 g3Var) {
-        av0 av0Var = (av0) this.b;
-        int i10 = ProfileStoriesView.t0;
-        av0Var.f(true, false);
-        g3Var.run();
-    }
-
-    @Override // l.w
-    public void e(k kVar, boolean z10) {
-        ((s) this.b).g(kVar);
     }
 
     @Override // androidx.activity.result.b
@@ -242,11 +405,11 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
             case 7:
                 androidx.activity.result.a aVar = (androidx.activity.result.a) obj;
                 j0 j0Var = (j0) this.b;
-                androidx.fragment.app.f0 f0Var = (androidx.fragment.app.f0) j0Var.F.pollFirst();
+                f0 f0Var = (f0) j0Var.F.pollFirst();
                 if (f0Var != null) {
                     String str = f0Var.a;
                     int i7 = f0Var.b;
-                    androidx.fragment.app.s o4 = j0Var.c.o(str);
+                    s o4 = j0Var.c.o(str);
                     if (o4 != null) {
                         o4.x(i7, aVar.a, aVar.b);
                         break;
@@ -263,976 +426,80 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
                 androidx.activity.result.a aVar2 = (androidx.activity.result.a) obj;
                 proxyBillingActivityV2.getClass();
                 Intent intent = aVar2.b;
-                int i10 = aVar2.a;
-                Bundle extras = intent == null ? null : intent.getExtras();
-                if (i10 != -1) {
-                    if (extras == null) {
-                        extras = new Bundle();
-                    }
-                    u.h("ProxyBillingActivityV2", "External offer flow finished with resultCode: " + i10);
-                    extras.putInt("INTERNAL_LOG_ERROR_REASON", 134);
-                    extras.putString("INTERNAL_LOG_ERROR_ADDITIONAL_DETAILS", "External offer flow finished with error resultCode: " + i10);
-                }
-                int i11 = u.e("ProxyBillingActivityV2", intent).a;
-                ResultReceiver resultReceiver = proxyBillingActivityV2.P;
+                int i10 = u.e("ProxyBillingActivityV2", intent).a;
+                ResultReceiver resultReceiver = proxyBillingActivityV2.O;
                 if (resultReceiver != null) {
-                    resultReceiver.send(i11, extras);
-                } else {
-                    u.h("ProxyBillingActivityV2", "External offer flow result receiver is null");
+                    resultReceiver.send(i10, intent == null ? null : intent.getExtras());
                 }
-                if (i11 != 0) {
-                    u.h("ProxyBillingActivityV2", "External offer flow finished with billing responseCode: " + i11);
+                int i11 = aVar2.a;
+                if (i11 != -1 || i10 != 0) {
+                    u.h("ProxyBillingActivityV2", "External offer dialog finished with resultCode: " + i11 + " and billing's responseCode: " + i10);
                 }
                 proxyBillingActivityV2.finish();
                 break;
         }
     }
 
+    @Override // fd.a
+    public Object get() {
+        switch (this.a) {
+            case 27:
+                return new l((ua.b) ((o) this.b).a);
+            default:
+                return new w0((d1) ((ib.c) this.b).get());
+        }
+    }
+
+    @Override // e5.n
+    public StaticsBoundaryInterface getStatics() {
+        return (StaticsBoundaryInterface) af.b.b(StaticsBoundaryInterface.class, ((WebViewProviderFactoryBoundaryInterface) this.b).getStatics());
+    }
+
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ boolean h(int i7) {
+        return false;
+    }
+
     @Override // com.google.android.gms.common.api.internal.q0
-    public void g(n6.a aVar) {
+    public void i(n6.a aVar) {
         h1 h1Var = (h1) this.b;
         h1Var.o.lock();
         try {
-            h1Var.m = aVar;
+            h1Var.l = aVar;
             h1Var.j();
         } finally {
             h1Var.o.unlock();
         }
     }
 
-    @Override // fd.a
-    public Object get() {
-        g firebaseApp = (g) ((d9.o) this.b).b;
-        kotlin.jvm.internal.j.e(firebaseApp, "firebaseApp");
-        gb.p0 p0Var = gb.p0.a;
-        return gb.p0.a(firebaseApp);
-    }
-
-    @Override // org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface
-    public String[] getSupportedFeatures() {
-        return new String[]{"WEB_MESSAGE_LISTENER", "WEB_MESSAGE_ARRAY_BUFFER"};
-    }
-
     @Override // com.google.android.gms.common.api.internal.q0
-    public void i(int i7) {
+    public void j(int i7) {
+        n6.a aVar;
         h1 h1Var = (h1) this.b;
         Lock lock = h1Var.o;
         Lock lock2 = h1Var.o;
         lock.lock();
         try {
-            if (h1Var.n) {
-                h1Var.n = false;
-                h1Var.b.i(i7);
-                h1Var.m = null;
-                h1Var.l = null;
-            } else {
+            if (!h1Var.n && (aVar = h1Var.m) != null && aVar.c()) {
                 h1Var.n = true;
-                h1Var.d.onConnectionSuspended(i7);
+                h1Var.e.onConnectionSuspended(i7);
+                return;
             }
-            lock2.unlock();
-        } catch (Throwable th2) {
-            lock2.unlock();
-            throw th2;
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.q0
-    public void j(Bundle bundle) {
-        h1 h1Var = (h1) this.b;
-        h1Var.o.lock();
-        try {
-            h1Var.m = n6.a.f;
-            h1Var.j();
+            h1Var.n = false;
+            h1Var.b.j(i7);
+            h1Var.m = null;
+            h1Var.l = null;
         } finally {
-            h1Var.o.unlock();
+            lock2.unlock();
         }
     }
 
-    @Override // b3.j
-    public i k(l lVar, long j3, long j10, IOException iOException, int i7) {
-        ((o2.d) this.b).a.y(iOException);
-        return b3.o.e;
+    @Override // org.telegram.ui.Components.nt0
+    public int j1() {
+        return ((pb) this.b).d0;
     }
 
-    @Override // fi.e9
-    public boolean l(long j3, int i7, int i10, int i11, f9 f9Var) {
-        ImageReceiver imageReceiver;
-        d4 d4Var;
-        d4 d4Var2;
-        f9Var.b = null;
-        f9Var.c = null;
-        av0 av0Var = (av0) this.b;
-        vv0 vv0Var = av0Var.h;
-        ArrayList arrayList = av0Var.x;
-        if (av0Var.O < 0.2f) {
-            f9Var.b = vv0Var.getImageReceiver();
-            f9Var.c = null;
-            f9Var.a = vv0Var;
-            f9Var.h = 0.0f;
-            f9Var.i = g0.q.y;
-            f9Var.g = (View) av0Var.getParent();
-            f9Var.d = av0Var.E;
-            f9Var.n = true;
-            return true;
-        }
-        int i12 = 0;
-        while (true) {
-            if (i12 >= arrayList.size()) {
-                imageReceiver = null;
-                d4Var = null;
-                d4Var2 = null;
-                break;
-            }
-            d4 d4Var3 = (d4) arrayList.get(i12);
-            if (d4Var3.e < 1.0f || d4Var3.a != i10) {
-                i12++;
-            } else {
-                int i13 = i12 - 1;
-                int i14 = i12 - 2;
-                d4 d = ProfileStoriesView.d(i13 >= 0 ? (d4) arrayList.get(i13) : null, i14 >= 0 ? (d4) arrayList.get(i14) : null, d4Var3);
-                imageReceiver = d4Var3.b;
-                d4Var2 = d;
-                d4Var = d4Var3;
-            }
-        }
-        if (imageReceiver == null) {
-            return false;
-        }
-        f9Var.c = imageReceiver;
-        f9Var.b = null;
-        f9Var.a = av0Var;
-        f9Var.h = 0.0f;
-        f9Var.i = g0.q.y;
-        f9Var.g = (View) av0Var.getParent();
-        if (d4Var == null || d4Var2 == null) {
-            f9Var.f = null;
-            return true;
-        }
-        f9Var.f = new i6(this, new RectF(d4Var.m), d4Var, new RectF(d4Var2.m), d4Var2);
-        return true;
-    }
-
-    @Override // d3.i0
-    public void n() {
-        d3.l lVar = (d3.l) this.b;
-        if (lVar.s1 != null) {
-            lVar.R0(0, 1);
-        }
-    }
-
-    @Override // androidx.lifecycle.a0
-    public void o(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        androidx.biometric.g0 g0Var = (androidx.biometric.g0) this.b;
-        Handler handler = g0Var.B0;
-        sa saVar = g0Var.C0;
-        handler.removeCallbacks(saVar);
-        TextView textView = g0Var.H0;
-        if (textView != null) {
-            textView.setText(charSequence);
-        }
-        handler.postDelayed(saVar, 2000L);
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        g6.c.h((g6.c) ((g6.j) this.b).c, "joinApplication", task);
-    }
-
-    @Override // d3.i0
-    public void onFirstFrameRendered() {
-        d3.l lVar = (d3.l) this.b;
-        Surface surface = lVar.s1;
-        if (surface != null) {
-            lVar.c1.O(surface);
-            lVar.v1 = true;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006c  */
-    /* JADX WARN: Removed duplicated region for block: B:17:? A[RETURN, SYNTHETIC] */
-    @Override // org.chromium.support_lib_boundary.WebMessageListenerBoundaryInterface
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void onPostMessage(WebView webView, InvocationHandler invocationHandler, Uri uri, boolean z10, InvocationHandler invocationHandler2) {
-        xa xaVar;
-        xa xaVar2;
-        WebMessageBoundaryInterface webMessageBoundaryInterface = (WebMessageBoundaryInterface) af.b.a(WebMessageBoundaryInterface.class, invocationHandler);
-        InvocationHandler[] ports = webMessageBoundaryInterface.getPorts();
-        d6.i[] iVarArr = new d6.i[ports.length];
-        for (int i7 = 0; i7 < ports.length; i7++) {
-            InvocationHandler invocationHandler3 = ports[i7];
-            d6.i iVar = new d6.i(14);
-            iVar.b = (WebMessagePortBoundaryInterface) af.b.a(WebMessagePortBoundaryInterface.class, invocationHandler3);
-            iVarArr[i7] = iVar;
-        }
-        if (e5.k.a.b()) {
-            WebMessagePayloadBoundaryInterface webMessagePayloadBoundaryInterface = (WebMessagePayloadBoundaryInterface) af.b.a(WebMessagePayloadBoundaryInterface.class, webMessageBoundaryInterface.getMessagePayload());
-            int type = webMessagePayloadBoundaryInterface.getType();
-            if (type == 0) {
-                xaVar = new xa(webMessagePayloadBoundaryInterface.getAsString());
-            } else {
-                if (type != 1) {
-                    xaVar2 = null;
-                    if (xaVar2 == null) {
-                        JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) af.b.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
-                        ((d5.a) this.b).e(webView, xaVar2, uri, z10, (e5.f) jsReplyProxyBoundaryInterface.getOrCreatePeer(new aa.s(jsReplyProxyBoundaryInterface, 2)));
-                        return;
-                    }
-                    return;
-                }
-                xaVar = new xa(webMessagePayloadBoundaryInterface.getAsArrayBuffer());
-            }
-        } else {
-            xaVar = new xa(webMessageBoundaryInterface.getData());
-        }
-        xaVar2 = xaVar;
-        if (xaVar2 == null) {
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public void onSuccess(Object obj) {
-        a2 a2Var;
-        a1 b10;
-        g6.a aVar = (g6.a) this.b;
-        Bundle bundle = (Bundle) obj;
-        if (m0.j) {
-            Context context = aVar.a;
-            j6.s sVar = aVar.f;
-            m0 m0Var = new m0(context, sVar, aVar.c, aVar.j, aVar.g);
-            int i7 = 1;
-            int i10 = bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE") ? bundle.getInt("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_MODE", 0) : (bundle.containsKey("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED") && bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_SESSION_ANALYTICS_ENABLED", false)) ? 1 : 0;
-            boolean z10 = bundle.getBoolean("com.google.android.gms.cast.FLAG_CLIENT_FEATURE_USAGE_ANALYTICS_ENABLED", false);
-            if (i10 == 0) {
-                if (!z10) {
-                    return;
-                }
-                i10 = 0;
-                z10 = true;
-            }
-            String packageName = context.getPackageName();
-            Locale locale = Locale.ROOT;
-            String v = r.b.v(packageName, ".client_cast_analytics_data");
-            m0Var.h = bundle.getLong("com.google.android.gms.cast.FLAG_FIRELOG_UPLOAD_MODE") == 0 ? 1 : 2;
-            o5.t.b(context);
-            m0Var.g = o5.t.a().c(m5.a.e).a("CAST_SENDER_SDK", new l5.c("proto"), x.a);
-            if (bundle.containsKey("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE")) {
-                m0Var.e = Long.valueOf(bundle.getLong("com.google.android.gms.cast.FLAG_ANALYTICS_LOGGING_BUCKET_SIZE"));
-            }
-            SharedPreferences sharedPreferences = context.getApplicationContext().getSharedPreferences(v, 0);
-            if (i10 != 0) {
-                com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
-                b11.c = new ia.d(sVar, new String[]{"com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_ERROR", "com.google.android.gms.cast.DICTIONARY_CAST_STATUS_CODES_TO_APP_SESSION_CHANGE_REASON"}, i7);
-                b11.d = new n6.c[]{y.c};
-                b11.b = false;
-                b11.a = 8426;
-                Task e10 = sVar.e(0, b11.a());
-                n nVar = new n();
-                nVar.b = m0Var;
-                nVar.c = packageName;
-                nVar.a = i10;
-                nVar.d = sharedPreferences;
-                e10.addOnSuccessListener(nVar);
-            }
-            if (z10) {
-                m.g(sharedPreferences);
-                j6.b bVar = a2.i;
-                synchronized (a2.class) {
-                    try {
-                        if (a2.k == null) {
-                            a2.k = new a2(sharedPreferences, m0Var, packageName);
-                        }
-                        a2Var = a2.k;
-                    } catch (Throwable th2) {
-                        throw th2;
-                    }
-                }
-                String str = a2Var.c;
-                SharedPreferences sharedPreferences2 = a2Var.b;
-                HashSet hashSet = a2Var.f;
-                String string = sharedPreferences2.getString("feature_usage_sdk_version", null);
-                String string2 = sharedPreferences2.getString("feature_usage_package_name", null);
-                hashSet.clear();
-                HashSet hashSet2 = a2Var.g;
-                hashSet2.clear();
-                a2Var.h = 0L;
-                String str2 = a2.j;
-                if (str2.equals(string) && str.equals(string2)) {
-                    a2Var.h = sharedPreferences2.getLong("feature_usage_last_report_time", 0L);
-                    long currentTimeMillis = System.currentTimeMillis();
-                    HashSet hashSet3 = new HashSet();
-                    for (String str3 : sharedPreferences2.getAll().keySet()) {
-                        if (str3.startsWith("feature_usage_timestamp_")) {
-                            long j3 = sharedPreferences2.getLong(str3, 0L);
-                            if (j3 != 0 && currentTimeMillis - j3 > 1209600000) {
-                                hashSet3.add(str3);
-                            } else if (str3.startsWith("feature_usage_timestamp_reported_feature_")) {
-                                a1 b12 = a2.b(str3.substring(41));
-                                if (b12 != null) {
-                                    hashSet2.add(b12);
-                                    hashSet.add(b12);
-                                }
-                            } else if (str3.startsWith("feature_usage_timestamp_detected_feature_") && (b10 = a2.b(str3.substring(41))) != null) {
-                                hashSet.add(b10);
-                            }
-                        }
-                    }
-                    a2Var.c(hashSet3);
-                    m.g(a2Var.e);
-                    m.g(a2Var.d);
-                    a2Var.e.post(a2Var.d);
-                } else {
-                    HashSet hashSet4 = new HashSet();
-                    for (String str4 : sharedPreferences2.getAll().keySet()) {
-                        if (str4.startsWith("feature_usage_timestamp_")) {
-                            hashSet4.add(str4);
-                        }
-                    }
-                    hashSet4.add("feature_usage_last_report_time");
-                    a2Var.c(hashSet4);
-                    sharedPreferences2.edit().putString("feature_usage_sdk_version", str2).putString("feature_usage_package_name", str).apply();
-                }
-                a2.a(a1.h);
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:112:0x0232  */
-    /* JADX WARN: Removed duplicated region for block: B:115:0x0240 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:201:0x0505  */
-    /* JADX WARN: Removed duplicated region for block: B:205:0x050a  */
-    /* JADX WARN: Removed duplicated region for block: B:232:0x054b  */
-    /* JADX WARN: Removed duplicated region for block: B:236:0x054f  */
-    /* JADX WARN: Removed duplicated region for block: B:279:0x061f  */
-    /* JADX WARN: Removed duplicated region for block: B:284:0x063f  */
-    /* JADX WARN: Removed duplicated region for block: B:287:0x064a  */
-    /* JADX WARN: Removed duplicated region for block: B:289:0x0651  */
-    /* JADX WARN: Removed duplicated region for block: B:301:0x05e9 A[Catch: a | c -> 0x0686, TryCatch #5 {a | c -> 0x0686, blocks: (B:298:0x05cf, B:299:0x05e5, B:301:0x05e9, B:302:0x05ec, B:304:0x05f0, B:306:0x05fa, B:308:0x0600, B:313:0x0605), top: B:297:0x05cf }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public android.support.v4.media.session.a0 p(wf.b bVar) {
-        int i7;
-        ArrayList arrayList;
-        hc.c cVar;
-        hc.c cVar2;
-        hc.c cVar3;
-        float f10;
-        float f11;
-        hc.a aVar;
-        float f12;
-        float f13;
-        float f14;
-        int i10;
-        int i11;
-        bc.j[] jVarArr;
-        bc.a aVar2;
-        cc.b bVar2;
-        int i12;
-        e eVar;
-        int i13;
-        android.support.v4.media.session.a0 a0Var;
-        List list;
-        String str;
-        int i14;
-        boolean z10;
-        double d;
-        double abs;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        gc.b bVar3 = (gc.b) this.b;
-        if (((cc.b) bVar.c) == null) {
-            bVar.c = ((cc.g) bVar.b).a();
-        }
-        cc.b bVar4 = (cc.b) bVar.c;
-        gc.b bVar5 = new gc.b(bVar4, 2);
-        hc.e eVar2 = new hc.e(bVar4);
-        int i19 = bVar4.b;
-        int i20 = bVar4.a;
-        int i21 = (i19 * 3) / 388;
-        int i22 = 3;
-        if (i21 < 3) {
-            i21 = 3;
-        }
-        char c10 = 5;
-        int[] iArr = new int[5];
-        int i23 = i21 - 1;
-        int i24 = 0;
-        boolean z11 = false;
-        while (true) {
-            char c11 = c10;
-            int i25 = 1;
-            i7 = i22;
-            arrayList = eVar2.b;
-            if (i23 >= i19 || z11) {
-                break;
-            }
-            Arrays.fill(iArr, i24);
-            int i26 = i24;
-            while (i26 < i20) {
-                if (bVar4.b(i26, i23)) {
-                    if ((i24 & 1) == i25) {
-                        i24++;
-                    }
-                    iArr[i24] = iArr[i24] + i25;
-                } else if ((i24 & 1) == 0) {
-                    if (i24 == 4) {
-                        if (!hc.e.b(iArr)) {
-                            i15 = i26;
-                            int i27 = i25;
-                            iArr[0] = iArr[2];
-                            iArr[i27] = iArr[i7];
-                            iArr[2] = iArr[4];
-                            iArr[i7] = i27;
-                            iArr[4] = 0;
-                        } else if (eVar2.c(i23, i26, iArr)) {
-                            if (eVar2.c) {
-                                z11 = eVar2.d();
-                                i17 = 2;
-                            } else {
-                                if (arrayList.size() > i25) {
-                                    int size = arrayList.size();
-                                    int i28 = 0;
-                                    hc.c cVar4 = null;
-                                    while (true) {
-                                        if (i28 >= size) {
-                                            i16 = i26;
-                                            i17 = 2;
-                                            i18 = 0;
-                                            break;
-                                        }
-                                        Object obj = arrayList.get(i28);
-                                        i28++;
-                                        hc.c cVar5 = (hc.c) obj;
-                                        i16 = i26;
-                                        if (cVar5.d >= 2) {
-                                            if (cVar4 != null) {
-                                                eVar2.c = true;
-                                                i17 = 2;
-                                                i18 = ((int) (Math.abs(cVar4.a - cVar5.a) - Math.abs(cVar4.b - cVar5.b))) / 2;
-                                                break;
-                                            }
-                                            cVar4 = cVar5;
-                                        }
-                                        i26 = i16;
-                                    }
-                                } else {
-                                    i16 = i26;
-                                    i18 = 0;
-                                    i17 = 2;
-                                }
-                                if (i18 > iArr[i17]) {
-                                    i23 += (i18 - r4) - 2;
-                                    i26 = i20 - 1;
-                                } else {
-                                    i26 = i16;
-                                }
-                            }
-                            Arrays.fill(iArr, 0);
-                            i24 = 0;
-                            i21 = i17;
-                        } else {
-                            i15 = i26;
-                            iArr[0] = iArr[2];
-                            iArr[1] = iArr[i7];
-                            iArr[2] = iArr[4];
-                            iArr[i7] = 1;
-                            iArr[4] = 0;
-                        }
-                        i24 = i7;
-                    } else {
-                        i15 = i26;
-                        int i29 = i24 + 1;
-                        iArr[i29] = iArr[i29] + 1;
-                        i24 = i29;
-                    }
-                    i26 = i15;
-                } else {
-                    iArr[i24] = iArr[i24] + 1;
-                }
-                i26++;
-                i25 = 1;
-            }
-            if (hc.e.b(iArr) && eVar2.c(i23, i20, iArr)) {
-                int i30 = iArr[0];
-                if (eVar2.c) {
-                    i21 = i30;
-                    z11 = eVar2.d();
-                } else {
-                    i21 = i30;
-                }
-            }
-            i23 += i21;
-            c10 = c11;
-            i22 = i7;
-            i24 = 0;
-        }
-        if (arrayList.size() < i7) {
-            throw bc.e.a();
-        }
-        Iterator it = arrayList.iterator();
-        while (it.hasNext()) {
-            if (((hc.c) it.next()).d < 2) {
-                it.remove();
-            }
-        }
-        Collections.sort(arrayList, hc.e.e);
-        hc.c[] cVarArr = new hc.c[3];
-        int i31 = 0;
-        double d2 = Double.MAX_VALUE;
-        for (int i32 = 2; i31 < arrayList.size() - i32; i32 = 2) {
-            hc.c cVar6 = (hc.c) arrayList.get(i31);
-            float f15 = cVar6.c;
-            i31++;
-            int i33 = i31;
-            while (i33 < arrayList.size() - 1) {
-                hc.c cVar7 = (hc.c) arrayList.get(i33);
-                double e10 = hc.e.e(cVar6, cVar7);
-                i33++;
-                for (int i34 = i33; i34 < arrayList.size(); i34++) {
-                    hc.c cVar8 = (hc.c) arrayList.get(i34);
-                    if (cVar8.c <= 1.4f * f15) {
-                        double e11 = hc.e.e(cVar7, cVar8);
-                        double e12 = hc.e.e(cVar6, cVar8);
-                        if (e10 < e11) {
-                            if (e11 <= e12) {
-                                e12 = e11;
-                                e11 = e12;
-                            } else if (e10 >= e12) {
-                                d = e12;
-                                e12 = e10;
-                                abs = Math.abs(e11 - (d * 2.0d)) + Math.abs(e11 - (e12 * 2.0d));
-                                if (abs >= d2) {
-                                    cVarArr[0] = cVar6;
-                                    cVarArr[1] = cVar7;
-                                    cVarArr[2] = cVar8;
-                                    d2 = abs;
-                                }
-                            }
-                            d = e10;
-                            abs = Math.abs(e11 - (d * 2.0d)) + Math.abs(e11 - (e12 * 2.0d));
-                            if (abs >= d2) {
-                            }
-                        } else {
-                            if (e11 >= e12) {
-                                d = e12;
-                                e12 = e11;
-                            } else if (e10 < e12) {
-                                d = e11;
-                                e11 = e12;
-                                e12 = e10;
-                                abs = Math.abs(e11 - (d * 2.0d)) + Math.abs(e11 - (e12 * 2.0d));
-                                if (abs >= d2) {
-                                }
-                            } else {
-                                d = e11;
-                            }
-                            e11 = e10;
-                            abs = Math.abs(e11 - (d * 2.0d)) + Math.abs(e11 - (e12 * 2.0d));
-                            if (abs >= d2) {
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (d2 == Double.MAX_VALUE) {
-            throw bc.e.a();
-        }
-        float a10 = bc.j.a(cVarArr[0], cVarArr[1]);
-        float a11 = bc.j.a(cVarArr[1], cVarArr[2]);
-        float a12 = bc.j.a(cVarArr[0], cVarArr[2]);
-        if (a11 >= a10 && a11 >= a12) {
-            cVar = cVarArr[0];
-            cVar2 = cVarArr[1];
-            cVar3 = cVarArr[2];
-        } else if (a12 < a11 || a12 < a10) {
-            cVar = cVarArr[2];
-            cVar2 = cVarArr[0];
-            cVar3 = cVarArr[1];
-        } else {
-            cVar = cVarArr[1];
-            cVar2 = cVarArr[0];
-            cVar3 = cVarArr[2];
-        }
-        float f16 = cVar.a;
-        float f17 = cVar.b;
-        if (com.google.android.gms.internal.vision.e2.t(cVar2.a, f16, cVar3.b - f17, (cVar2.b - f17) * (cVar3.a - f16)) < 0.0f) {
-            hc.c cVar9 = cVar3;
-            cVar3 = cVar2;
-            cVar2 = cVar9;
-        }
-        cVarArr[0] = cVar2;
-        cVarArr[1] = cVar;
-        cVarArr[2] = cVar3;
-        float m0 = bVar5.m0(cVar, cVar3);
-        float f18 = cVar.a;
-        float f19 = cVar3.b;
-        float f20 = cVar3.a;
-        float m02 = bVar5.m0(cVar, cVar2);
-        float f21 = cVar2.b;
-        float f22 = cVar2.a;
-        float f23 = (m02 + m0) / 2.0f;
-        if (f23 < 1.0f) {
-            throw bc.e.a();
-        }
-        float a13 = bc.j.a(cVar, cVar3) / f23;
-        int i35 = (int) (a13 + (a13 < 0.0f ? -0.5f : 0.5f));
-        float a14 = bc.j.a(cVar, cVar2) / f23;
-        int i36 = (((int) (a14 + (a14 >= 0.0f ? 0.5f : -0.5f))) + i35) / 2;
-        int i37 = i36 + 7;
-        int i38 = i37 & 3;
-        if (i38 == 0) {
-            i37 = i36 + 8;
-        } else if (i38 == 2) {
-            i37 = i36 + 6;
-        } else if (i38 == 3) {
-            i37 = i36 + 5;
-        }
-        int i39 = i37;
-        int[] iArr2 = gc.f.e;
-        if (i39 % 4 != 1) {
-            throw bc.c.a();
-        }
-        try {
-            gc.f c12 = gc.f.c((i39 - 17) / 4);
-            int i40 = 10;
-            int i41 = (c12.a * 4) + 10;
-            if (c12.b.length > 0) {
-                float f24 = (f20 - f18) + f22;
-                f11 = f20;
-                float f25 = (f19 - f17) + f21;
-                float f26 = 1.0f - (3.0f / i41);
-                int z12 = (int) com.google.android.gms.internal.vision.e2.z(f24, f18, f26, f18);
-                int z13 = (int) com.google.android.gms.internal.vision.e2.z(f25, f17, f26, f17);
-                f10 = f18;
-                for (int i42 = 4; i42 <= 16; i42 <<= 1) {
-                    try {
-                        aVar = bVar5.y0(f23, i42, z12, z13);
-                        break;
-                    } catch (bc.e unused) {
-                    }
-                }
-            } else {
-                f10 = f18;
-                f11 = f20;
-            }
-            aVar = null;
-            float f27 = i39 - 3.5f;
-            if (aVar != null) {
-                f12 = aVar.a;
-                f13 = aVar.b;
-                f14 = f27 - 3.0f;
-            } else {
-                f12 = (f11 - f10) + f22;
-                f13 = (f19 - f17) + f21;
-                f14 = f27;
-            }
-            float f28 = f13;
-            float f29 = cVar.a;
-            float f30 = cVar.b;
-            float f31 = cVar3.a;
-            float f32 = cVar3.b;
-            float f33 = cVar2.a;
-            float f34 = cVar2.b;
-            cc.i a15 = cc.i.a(3.5f, 3.5f, f27, 3.5f, f14, f14, 3.5f, f27);
-            hc.a aVar3 = aVar;
-            float f35 = a15.e;
-            float f36 = a15.i;
-            float f37 = f35 * f36;
-            float f38 = a15.f;
-            float f39 = a15.h;
-            float f40 = f37 - (f38 * f39);
-            float f41 = a15.g;
-            float f42 = f38 * f41;
-            float f43 = a15.d;
-            float f44 = f42 - (f43 * f36);
-            float f45 = (f43 * f39) - (f35 * f41);
-            float f46 = a15.c;
-            float f47 = f46 * f39;
-            float f48 = a15.b;
-            float f49 = f47 - (f48 * f36);
-            float f50 = a15.a;
-            float f51 = (f36 * f50) - (f46 * f41);
-            float f52 = (f41 * f48) - (f39 * f50);
-            float f53 = (f48 * f38) - (f46 * f35);
-            float f54 = (f46 * f43) - (f38 * f50);
-            float f55 = (f50 * f35) - (f48 * f43);
-            cc.i a16 = cc.i.a(f29, f30, f31, f32, f12, f28, f33, f34);
-            float f56 = a16.a;
-            float f57 = a16.d;
-            float f58 = a16.g;
-            float f59 = (f58 * f53) + (f57 * f49) + (f56 * f40);
-            float f60 = (f58 * f54) + (f57 * f51) + (f56 * f44);
-            float f61 = (f58 * f55) + (f57 * f52) + (f56 * f45);
-            float f62 = a16.b;
-            float f63 = a16.e;
-            float f64 = a16.h;
-            float f65 = (f64 * f53) + (f63 * f49) + (f62 * f40);
-            float f66 = (f64 * f54) + (f63 * f51) + (f62 * f44);
-            float f67 = (f64 * f55) + (f63 * f52) + (f62 * f45);
-            float f68 = a16.c;
-            float f69 = a16.f;
-            float f70 = a16.i;
-            float f71 = (f53 * f70) + (f49 * f69) + (f40 * f68);
-            float f72 = (f54 * f70) + (f51 * f69) + (f44 * f68);
-            float f73 = (f70 * f55) + (f69 * f52) + (f68 * f45);
-            if (i39 <= 0 || i39 <= 0) {
-                throw bc.e.a();
-            }
-            cc.b bVar6 = new cc.b(i39, i39);
-            int i43 = i39 * 2;
-            hc.c cVar10 = cVar;
-            float[] fArr = new float[i43];
-            int i44 = 0;
-            while (i44 < i39) {
-                int i45 = i39;
-                float f74 = i44 + 0.5f;
-                int i46 = 0;
-                while (i46 < i43) {
-                    int i47 = i46;
-                    fArr[i47] = (i47 / 2) + 0.5f;
-                    fArr[i47 + 1] = f74;
-                    i46 = i47 + 2;
-                }
-                int i48 = i43 - 1;
-                hc.c cVar11 = cVar2;
-                int i49 = 0;
-                while (i49 < i48) {
-                    float f75 = fArr[i49];
-                    int i50 = i49 + 1;
-                    int i51 = i49;
-                    float f76 = fArr[i50];
-                    hc.c cVar12 = cVar3;
-                    float e13 = r.b.e(f72, f76, f71 * f75, f73);
-                    fArr[i51] = (((f60 * f76) + (f59 * f75)) + f61) / e13;
-                    fArr[i50] = (((f76 * f66) + (f75 * f65)) + f67) / e13;
-                    i49 = i51 + 2;
-                    cVar3 = cVar12;
-                }
-                hc.c cVar13 = cVar3;
-                int i52 = bVar4.b;
-                float f77 = f72;
-                int i53 = 0;
-                boolean z14 = true;
-                while (i53 < i48 && z14) {
-                    int i54 = (int) fArr[i53];
-                    int i55 = i53 + 1;
-                    int i56 = i48;
-                    int i57 = (int) fArr[i55];
-                    int i58 = i53;
-                    if (i54 < -1 || i54 > i20 || i57 < -1 || i57 > i52) {
-                        throw bc.e.a();
-                    }
-                    if (i54 == -1) {
-                        fArr[i58] = 0.0f;
-                    } else if (i54 == i20) {
-                        fArr[i58] = i20 - 1;
-                    } else {
-                        z10 = false;
-                        if (i57 != -1) {
-                            fArr[i55] = 0.0f;
-                        } else if (i57 == i52) {
-                            fArr[i55] = i52 - 1;
-                        } else {
-                            z14 = z10;
-                            i53 = i58 + 2;
-                            i48 = i56;
-                        }
-                        z14 = true;
-                        i53 = i58 + 2;
-                        i48 = i56;
-                    }
-                    z10 = true;
-                    if (i57 != -1) {
-                    }
-                    z14 = true;
-                    i53 = i58 + 2;
-                    i48 = i56;
-                }
-                int i59 = i43 - 2;
-                boolean z15 = true;
-                while (i59 >= 0 && z15) {
-                    int i60 = (int) fArr[i59];
-                    int i61 = i59 + 1;
-                    int i62 = i59;
-                    int i63 = (int) fArr[i61];
-                    if (i60 < -1 || i60 > i20 || i63 < -1 || i63 > i52) {
-                        throw bc.e.a();
-                    }
-                    if (i60 == -1) {
-                        fArr[i62] = 0.0f;
-                    } else if (i60 == i20) {
-                        fArr[i62] = i20 - 1;
-                    } else {
-                        z15 = false;
-                        if (i63 != -1) {
-                            fArr[i61] = 0.0f;
-                        } else if (i63 == i52) {
-                            fArr[i61] = i52 - 1;
-                        } else {
-                            i59 = i62 - 2;
-                        }
-                        z15 = true;
-                        i59 = i62 - 2;
-                    }
-                    z15 = true;
-                    if (i63 != -1) {
-                    }
-                    z15 = true;
-                    i59 = i62 - 2;
-                }
-                for (int i64 = 0; i64 < i43; i64 += 2) {
-                    try {
-                        if (bVar4.b((int) fArr[i64], (int) fArr[i64 + 1])) {
-                            bVar6.c(i64 / 2, i44);
-                        }
-                    } catch (ArrayIndexOutOfBoundsException unused2) {
-                        throw bc.e.a();
-                    }
-                }
-                i44++;
-                i39 = i45;
-                cVar2 = cVar11;
-                f72 = f77;
-                cVar3 = cVar13;
-            }
-            hc.c cVar14 = cVar2;
-            hc.c cVar15 = cVar3;
-            if (aVar3 == null) {
-                i11 = 3;
-                i10 = 1;
-                jVarArr = new bc.j[]{cVar14, cVar10, cVar15};
-            } else {
-                i10 = 1;
-                i11 = 3;
-                jVarArr = new bc.j[]{cVar14, cVar10, cVar15, aVar3};
-            }
-            bc.j[] jVarArr2 = jVarArr;
-            bVar3.getClass();
-            ab.q qVar = new ab.q();
-            int i65 = bVar6.b;
-            if (i65 < 21 || (i65 & i11) != i10) {
-                throw bc.c.a();
-            }
-            qVar.b = bVar6;
-            try {
-                eVar = bVar3.x0(qVar);
-            } catch (bc.a e14) {
-                aVar2 = e14;
-                e = null;
-                try {
-                    qVar.w();
-                    qVar.c = null;
-                    qVar.d = null;
-                    qVar.a = true;
-                    qVar.v();
-                    qVar.u();
-                    bVar2 = (cc.b) qVar.b;
-                    i12 = 0;
-                    while (i12 < bVar2.a) {
-                        int i66 = i12 + 1;
-                        for (int i67 = i66; i67 < bVar2.b; i67++) {
-                            if (bVar2.b(i12, i67) != bVar2.b(i67, i12)) {
-                                bVar2.a(i67, i12);
-                                bVar2.a(i12, i67);
-                            }
-                        }
-                        i12 = i66;
-                    }
-                    e x02 = bVar3.x0(qVar);
-                    x02.h = new qb.a(i40);
-                    eVar = x02;
-                    i13 = eVar.a;
-                    if (com.google.android.gms.internal.vision.e2.s((qb.a) eVar.h)) {
-                        bc.j jVar = jVarArr2[0];
-                        jVarArr2[0] = jVarArr2[2];
-                        jVarArr2[2] = jVar;
-                    }
-                    a0Var = new android.support.v4.media.session.a0((String) eVar.d, jVarArr2);
-                    list = (List) eVar.f;
-                    if (list != null) {
-                    }
-                    str = (String) eVar.e;
-                    if (str != null) {
-                    }
-                    if (i13 >= 0) {
-                        a0Var.p(bc.i.d, Integer.valueOf(i14));
-                        a0Var.p(bc.i.e, Integer.valueOf(i13));
-                    }
-                    a0Var.p(bc.i.c, (Integer) eVar.g);
-                    a0Var.p(bc.i.f, "]Q" + eVar.c);
-                    return a0Var;
-                } catch (bc.a | bc.c unused3) {
-                    if (e != null) {
-                        throw e;
-                    }
-                    throw aVar2;
-                }
-            } catch (bc.c e15) {
-                e = e15;
-                aVar2 = null;
-                qVar.w();
-                qVar.c = null;
-                qVar.d = null;
-                qVar.a = true;
-                qVar.v();
-                qVar.u();
-                bVar2 = (cc.b) qVar.b;
-                i12 = 0;
-                while (i12 < bVar2.a) {
-                }
-                e x022 = bVar3.x0(qVar);
-                x022.h = new qb.a(i40);
-                eVar = x022;
-                i13 = eVar.a;
-                if (com.google.android.gms.internal.vision.e2.s((qb.a) eVar.h)) {
-                }
-                a0Var = new android.support.v4.media.session.a0((String) eVar.d, jVarArr2);
-                list = (List) eVar.f;
-                if (list != null) {
-                }
-                str = (String) eVar.e;
-                if (str != null) {
-                }
-                if (i13 >= 0) {
-                }
-                a0Var.p(bc.i.c, (Integer) eVar.g);
-                a0Var.p(bc.i.f, "]Q" + eVar.c);
-                return a0Var;
-            }
-            i13 = eVar.a;
-            if (com.google.android.gms.internal.vision.e2.s((qb.a) eVar.h) && jVarArr2.length >= 3) {
-                bc.j jVar2 = jVarArr2[0];
-                jVarArr2[0] = jVarArr2[2];
-                jVarArr2[2] = jVar2;
-            }
-            a0Var = new android.support.v4.media.session.a0((String) eVar.d, jVarArr2);
-            list = (List) eVar.f;
-            if (list != null) {
-                a0Var.p(bc.i.a, list);
-            }
-            str = (String) eVar.e;
-            if (str != null) {
-                a0Var.p(bc.i.b, str);
-            }
-            if (i13 >= 0 && (i14 = eVar.b) >= 0) {
-                a0Var.p(bc.i.d, Integer.valueOf(i14));
-                a0Var.p(bc.i.e, Integer.valueOf(i13));
-            }
-            a0Var.p(bc.i.c, (Integer) eVar.g);
-            a0Var.p(bc.i.f, "]Q" + eVar.c);
-            return a0Var;
-        } catch (IllegalArgumentException unused4) {
-            throw bc.c.a();
-        }
-    }
-
-    public Set q() {
+    public Set l() {
         Set unmodifiableSet;
         synchronized (((HashSet) this.b)) {
             unmodifiableSet = DesugarCollections.unmodifiableSet((HashSet) this.b);
@@ -1240,39 +507,88 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
         return unmodifiableSet;
     }
 
-    @Override // d3.i0
-    public void s() {
-        l2.i0 i0Var = ((d3.l) this.b).Z;
-        if (i0Var != null) {
-            i0Var.a();
+    @Override // com.google.android.gms.common.api.internal.q0
+    public void m(Bundle bundle) {
+        h1 h1Var = (h1) this.b;
+        h1Var.o.lock();
+        try {
+            Bundle bundle2 = h1Var.k;
+            if (bundle2 == null) {
+                h1Var.k = bundle;
+            } else if (bundle != null) {
+                bundle2.putAll(bundle);
+            }
+            h1Var.l = n6.a.f;
+            h1Var.j();
+        } finally {
+            h1Var.o.unlock();
         }
     }
 
-    public f3.j t() {
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        ArrayList arrayList3 = new ArrayList();
-        ArrayList arrayList4 = new ArrayList();
-        for (f3.j jVar : ((LinkedHashMap) this.b).values()) {
-            arrayList.add(jVar.b);
-            arrayList2.add(jVar.c);
-            arrayList3.add(jVar.d);
-            arrayList4.add(jVar.e);
+    public void n() {
+        ((androidx.fragment.app.u) this.b).d.R();
+    }
+
+    @Override // com.google.android.gms.tasks.OnCompleteListener
+    public void onComplete(Task task) {
+        g6.c.h((g6.c) ((j) this.b).c, "launchApplication", task);
+    }
+
+    public void p(m mVar) {
+        o3 o3Var = (o3) this.b;
+        o3Var.b = mVar;
+        Iterator it = ((LinkedList) o3Var.c).iterator();
+        while (it.hasNext()) {
+            ((a7.c) it.next()).b();
         }
-        int[][] iArr = (int[][]) arrayList.toArray(new int[arrayList.size()][]);
-        long j3 = 0;
-        for (int[] iArr2 : iArr) {
-            j3 += iArr2.length;
+        ((LinkedList) o3Var.c).clear();
+    }
+
+    public void r(int i7, String str) {
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        w(i7, 2);
+        try {
+            int C = C(str.length());
+            if (C != C(str.length() * 3)) {
+                u(q(str));
+                x(str, byteBuffer);
+                return;
+            }
+            int position = byteBuffer.position();
+            if (byteBuffer.remaining() < C) {
+                throw new androidx.datastore.preferences.protobuf.l(position + C, byteBuffer.limit());
+            }
+            byteBuffer.position(position + C);
+            x(str, byteBuffer);
+            int position2 = byteBuffer.position();
+            byteBuffer.position(position);
+            u((position2 - position) - C);
+            byteBuffer.position(position2);
+        } catch (BufferOverflowException e10) {
+            androidx.datastore.preferences.protobuf.l lVar = new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
+            lVar.initCause(e10);
+            throw lVar;
         }
-        int i7 = (int) j3;
-        ja.d(j3, "the total number of elements (%s) in the arrays must fit in an int", j3 == ((long) i7));
-        int[] iArr3 = new int[i7];
-        int i10 = 0;
-        for (int[] iArr4 : iArr) {
-            System.arraycopy(iArr4, 0, iArr3, i10, iArr4.length);
-            i10 += iArr4.length;
+    }
+
+    public void s(int i7, byte[] bArr) {
+        w(i7, 2);
+        u(bArr.length);
+        int length = bArr.length;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (byteBuffer.remaining() < length) {
+            throw new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
         }
-        return new f3.j(iArr3, j1.a((long[][]) arrayList2.toArray(new long[arrayList2.size()][])), j1.a((long[][]) arrayList3.toArray(new long[arrayList3.size()][])), j1.a((long[][]) arrayList4.toArray(new long[arrayList4.size()][])));
+        byteBuffer.put(bArr, 0, length);
+    }
+
+    public void t(int i7) {
+        byte b10 = (byte) i7;
+        ByteBuffer byteBuffer = (ByteBuffer) this.b;
+        if (!byteBuffer.hasRemaining()) {
+            throw new androidx.datastore.preferences.protobuf.l(byteBuffer.position(), byteBuffer.limit());
+        }
+        byteBuffer.put(b10);
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -1286,92 +602,31 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
         return Tasks.forResult(null);
     }
 
-    public void u() {
-        ((androidx.fragment.app.u) this.b).d.R();
+    public void u(int i7) {
+        while ((i7 & (-128)) != 0) {
+            t((i7 & ks.L1) | 128);
+            i7 >>>= 7;
+        }
+        t(i7);
     }
 
-    public void v(h6.m mVar) {
-        o3 o3Var = (o3) this.b;
-        o3Var.b = mVar;
-        Iterator it = ((LinkedList) o3Var.c).iterator();
-        while (it.hasNext()) {
-            ((a7.c) it.next()).b();
-        }
-        ((LinkedList) o3Var.c).clear();
+    public void w(int i7, int i10) {
+        u((i7 << 3) | i10);
     }
 
-    @Override // b3.j
-    public void w(l lVar, long j3, long j10) {
-        boolean z10;
-        o2.d dVar = (o2.d) this.b;
-        synchronized (c3.b.b) {
-            z10 = c3.b.c;
+    public void y(long j3) {
+        while (((-128) & j3) != 0) {
+            t((((int) j3) & ks.L1) | 128);
+            j3 >>>= 7;
         }
-        if (z10) {
-            dVar.b();
-        } else {
-            dVar.a.y(new IOException(new ConcurrentModificationException()));
-        }
+        t((int) j3);
     }
 
-    public void x(int i7) {
-        TLRPC.TL_exportedNoPaidMessagesToken c10;
-        n0 n0Var = ((ci.i0) this.b).e;
-        if (n0Var == null || n0Var.d == i7) {
-            return;
-        }
-        if (n0Var.c.d && i7 == 2) {
-            i7 = 1;
-        }
-        n0Var.d = i7;
-        n0Var.f().edit().putBoolean("qrNoPaidPermanent", n0Var.d == 2).apply();
-        int i10 = n0Var.d;
-        if (i10 == 0) {
-            if (n0Var.n != 0) {
-                ConnectionsManager.getInstance(n0Var.a).cancelRequest(n0Var.n, true);
-                n0Var.n = 0;
-                return;
-            }
-            return;
-        }
-        if (i10 == 2 && (c10 = n0Var.c()) != null) {
-            n0Var.f = c10;
-            n0Var.b.setFreeLink(n0Var.d(c10));
-        }
-        n0Var.n(false, n0Var.d == 1);
-    }
-
-    @Override // l.w
-    public boolean y(k kVar) {
-        Window.Callback callback = ((s) this.b).f.getCallback();
-        if (callback == null) {
-            return true;
-        }
-        callback.onMenuOpened(ns.t1, kVar);
-        return true;
-    }
-
-    public void z() {
-        f0 f0Var = (f0) ((WeakReference) this.b).get();
-        if (f0Var == null) {
-            return;
-        }
-        f0Var.l();
-    }
-
-    public /* synthetic */ c(e7.a aVar, v vVar) {
-        this.a = 20;
-        this.b = vVar;
-    }
-
-    public /* synthetic */ c(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
-    }
-
-    public /* synthetic */ c(ob.c cVar) {
-        this.a = 22;
-        this.b = (r) cVar.b;
+    public c(byte[] bArr, int i7) {
+        this.a = 14;
+        ByteBuffer wrap = ByteBuffer.wrap(bArr, 0, i7);
+        this.b = wrap;
+        wrap.order(ByteOrder.LITTLE_ENDIAN);
     }
 
     public c(int i7) {
@@ -1380,14 +635,10 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
             case 8:
                 this.b = new CopyOnWriteArrayList();
                 break;
-            case 12:
-                this.b = Collections.newSetFromMap(new WeakHashMap());
+            case 10:
+                this.b = new q4.q[cg.b.values().length];
                 break;
-            case 21:
-                this.b = new LinkedHashMap();
-                break;
-            case 24:
-                this.b = new gc.b(0);
+            case 19:
                 break;
             default:
                 this.b = new HashSet();
@@ -1400,27 +651,23 @@ public final class c implements SuccessContinuation, p0, a0, androidx.activity.r
         this.b = nVar;
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void A(ImageReceiver imageReceiver) {
+    @Override // org.telegram.ui.Components.oo0
+    public /* synthetic */ void Q() {
     }
 
-    @Override // d3.i0
-    public void b(x1 x1Var) {
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ void c() {
     }
 
-    @Override // fi.e9
-    public /* synthetic */ void c(boolean z10) {
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ void o() {
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void O(int i7, Drawable drawable) {
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ void g(float f10) {
     }
 
-    @Override // b3.j
-    public void m(l lVar, long j3, long j10, boolean z10) {
-    }
-
-    @Override // b3.j
-    public /* synthetic */ void r(l lVar, long j3, long j10, int i7) {
+    @Override // org.telegram.ui.Components.e71
+    public /* synthetic */ void k(ArrayList arrayList) {
     }
 }

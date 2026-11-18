@@ -1,11 +1,12 @@
 package r2;
 
-import c8.g1;
+import c8.k1;
 import e2.s0;
+import e2.t;
 import e2.u;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
@@ -14,17 +15,17 @@ public final class c {
     public int c;
 
     public static void a(int i7, ArrayList arrayList) {
-        if (g1.d(i7, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i7))) {
+        if (k1.d(i7, 0, 7, d) == -1 || arrayList.contains(Integer.valueOf(i7))) {
             return;
         }
         arrayList.add(Integer.valueOf(i7));
     }
 
     public final u b(u uVar) {
-        if (!this.b || !this.a.L(uVar)) {
+        if (!this.b || !this.a.H(uVar)) {
             return uVar;
         }
-        e2.t a10 = uVar.a();
+        t a10 = uVar.a();
         String str = uVar.k;
         a10.r = s0.n("application/x-media3-cues");
         a10.P = this.a.O(uVar);

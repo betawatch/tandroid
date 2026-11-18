@@ -11,7 +11,7 @@ import java.util.Iterator;
 import java.util.Set;
 import org.telegram.messenger.d1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final d1 a = new d1("GoogleSignInCommon", new String[0]);
@@ -29,7 +29,7 @@ public abstract class h {
     }
 
     public static void b(Context context) {
-        i.V(context).Z();
+        i.B(context).E();
         Set set = m.a;
         synchronized (set) {
         }

@@ -1,113 +1,88 @@
 package hi;
 
 import android.app.Activity;
-import android.content.Context;
-import android.os.Build;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.cc;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.q10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class a5 extends i2 {
-    public final /* synthetic */ int D1;
-    public final /* synthetic */ m5 E1;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class a5 extends bn {
+    public final /* synthetic */ q10 vd;
+    public final /* synthetic */ l5 wd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a5(m5 m5Var, Context context, e5 e5Var, int i7) {
-        super(context, e5Var, false, false);
-        this.E1 = m5Var;
-        this.D1 = i7;
+    public a5(l5 l5Var, q10 q10Var) {
+        super(null);
+        this.wd = l5Var;
+        this.vd = q10Var;
     }
 
-    @Override // hi.i2
-    public final boolean I0(Integer num) {
-        h5 h5Var = this.E1.B0;
-        if (num.intValue() == 3) {
-            int i7 = 0;
-            int i10 = 0;
-            for (int i11 = 0; i11 < h5Var.getChildCount(); i11++) {
-                if (h5Var.getChildAt(i11) instanceof tg.q1) {
-                    i10++;
-                }
-            }
-            int i12 = np.s1(this.a).p5;
-            org.telegram.ui.ActionBar.k2 k2Var = this.c;
-            if (i10 >= i12 && !m10.i(this.a).q()) {
-                String G = hd.G(np.s1(this.a).q5, "StoryPremiumWidgets2", new Object[0]);
-                try {
-                    k2Var.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-                new cc(k2Var, this.J0).I(R.raw.star_premium_2, hd.M0(2131749199, null), org.telegram.messenger.g0.S2(G, org.telegram.ui.ActionBar.j6.Xc, 0, new e1(this, i7), this.J0)).k(true);
-                return false;
-            }
-            if (i10 >= np.s1(this.a).q5) {
-                try {
-                    k2Var.performHapticFeedback(3);
-                } catch (Exception unused2) {
-                }
-                new cc(k2Var, this.J0).I(R.raw.chats_infotip, hd.M0(2131748978, "LimitReached"), hd.G(np.s1(this.a).q5, "StoryReactionsWidgetLimit2", new Object[0])).k(true);
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // hi.i2
-    public final boolean J0(Integer num) {
-        m5 m5Var = this.E1;
-        h5 h5Var = m5Var.B0;
-        boolean z10 = false;
-        if (m5Var.H1) {
-            if (num.intValue() != 2) {
-                return false;
-            }
-        } else if (num.intValue() == 5) {
-            int i7 = 0;
-            while (true) {
-                if (i7 >= h5Var.getChildCount()) {
-                    break;
-                }
-                if (h5Var.getChildAt(i7) instanceof tg.o2) {
-                    z10 = true;
-                    break;
-                }
-                i7++;
-            }
-            return !z10;
-        }
-        return true;
-    }
-
-    @Override // hi.i2
-    public final boolean K0(Runnable runnable) {
-        sa saVar = ((u9) this.E1).k2;
-        Activity activity = saVar.b;
-        if (activity == null) {
-            return true;
-        }
-        if (Build.VERSION.SDK_INT >= 33) {
-            if (activity.checkSelfPermission("android.permission.READ_MEDIA_AUDIO") == 0) {
-                return true;
-            }
-            activity.requestPermissions(new String[]{"android.permission.READ_MEDIA_AUDIO"}, ns.A1);
-            saVar.z2 = (ai.w0) runnable;
-            return false;
-        }
-        if (activity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") == 0) {
-            return true;
-        }
-        activity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, ns.A1);
-        saVar.z2 = (ai.w0) runnable;
+    @Override // org.telegram.ui.bn
+    public final boolean V9() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.u2
-    public final void n0() {
-        this.E1.O0(this.D1);
+    @Override // org.telegram.ui.bn, org.telegram.ui.Components.zg, org.telegram.ui.Components.m40
+    public final long a() {
+        return 0L;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.bn, org.telegram.ui.ma0
+    public final void b(TLRPC.MessageMedia messageMedia, int i7, boolean z10, int i10, long j3) {
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            tL_mediaAreaGeoPoint2 = new TL_stories.TL_mediaAreaGeoPoint();
+            tL_mediaAreaGeoPoint2.geo = messageMedia.geo;
+        } else {
+            if (!(messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
+                return;
+            }
+            TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) messageMedia;
+            long j10 = tL_messageMediaVenue.query_id;
+            if (j10 == -1 || j10 == -2) {
+                TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint3 = new TL_stories.TL_mediaAreaGeoPoint();
+                tL_mediaAreaGeoPoint3.geo = messageMedia.geo;
+                TL_stories.TL_geoPointAddress tL_geoPointAddress = tL_messageMediaVenue.geoAddress;
+                tL_mediaAreaGeoPoint3.address = tL_geoPointAddress;
+                if (tL_geoPointAddress != null) {
+                    tL_mediaAreaGeoPoint3.flags |= 1;
+                }
+                Utilities.e.c(new r1(3, messageMedia, tL_mediaAreaGeoPoint3));
+                tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
+            } else {
+                TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
+                tL_inputMediaAreaVenue.query_id = tL_messageMediaVenue.query_id;
+                tL_inputMediaAreaVenue.result_id = tL_messageMediaVenue.result_id;
+                tL_mediaAreaGeoPoint = tL_inputMediaAreaVenue;
+            }
+            tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
+        }
+        this.vd.a(messageMedia, tL_mediaAreaGeoPoint2);
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final Activity getParentActivity() {
+        return org.telegram.messenger.g0.W(this.wd.getContext());
+    }
+
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.h2
+    public final org.telegram.ui.ActionBar.i6 getResourceProvider() {
+        return this.wd.q1;
+    }
+
+    @Override // org.telegram.ui.bn, org.telegram.ui.ActionBar.h2
+    public final boolean isLightStatusBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.bn, org.telegram.ui.Components.zg
+    public final TLRPC.User j() {
+        return j10.i(this.currentAccount).f();
     }
 }

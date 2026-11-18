@@ -1,7 +1,7 @@
 package m9;
 
 import a8.p0;
-import c8.q9;
+import c8.s9;
 import com.google.android.gms.internal.play_billing.s0;
 import j$.util.Objects;
 import java.util.Locale;
@@ -16,12 +16,12 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class o extends n9.a implements y {
     public static final boolean d;
     public static final s0 e;
-    public static final q9 f;
+    public static final s9 f;
     public static final Object h;
     public volatile Object a;
     public volatile c b;
@@ -30,7 +30,7 @@ public abstract class o extends n9.a implements y {
     static {
         boolean z10;
         Throwable th2;
-        q9 fVar;
+        s9 fVar;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -367,9 +367,9 @@ public abstract class o extends n9.a implements y {
                 n nVar3 = new n();
                 z10 = true;
                 while (true) {
-                    q9 q9Var = f;
-                    q9Var.f(nVar3, nVar2);
-                    if (q9Var.c(this, nVar2, nVar3)) {
+                    s9 s9Var = f;
+                    s9Var.f(nVar3, nVar2);
+                    if (s9Var.c(this, nVar2, nVar3)) {
                         j10 = j11;
                         while (true) {
                             LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -407,7 +407,7 @@ public abstract class o extends n9.a implements y {
                     t6.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t6.toString();
                     if (nanos + 1000 < j10) {
-                        String v = r.b.v(sb2, " (plus ");
+                        String v = p5.c.v(sb2, " (plus ");
                         long j13 = -nanos;
                         long convert = timeUnit.convert(j13, TimeUnit.NANOSECONDS);
                         long nanos2 = j13 - timeUnit.toNanos(convert);
@@ -415,17 +415,17 @@ public abstract class o extends n9.a implements y {
                         if (convert > j10) {
                             String str = v + convert + " " + lowerCase;
                             if (z11) {
-                                str = r.b.v(str, ",");
+                                str = p5.c.v(str, ",");
                             }
-                            v = r.b.v(str, " ");
+                            v = p5.c.v(str, " ");
                         }
                         if (z11) {
                             v = v + nanos2 + " nanoseconds ";
                         }
-                        sb2 = r.b.v(v, "delay)");
+                        sb2 = p5.c.v(v, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(r.b.v(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(p5.c.v(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(p0.E(sb2, " for ", oVar));
                 }
@@ -645,9 +645,9 @@ public abstract class o extends n9.a implements y {
             if (nVar2 != nVar) {
                 n nVar3 = new n();
                 do {
-                    q9 q9Var = f;
-                    q9Var.f(nVar3, nVar2);
-                    if (q9Var.c(this, nVar2, nVar3)) {
+                    s9 s9Var = f;
+                    s9Var.f(nVar3, nVar2);
+                    if (s9Var.c(this, nVar2, nVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

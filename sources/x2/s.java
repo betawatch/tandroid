@@ -1,96 +1,61 @@
 package x2;
 
-import a8.ja;
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.ns;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class s implements j2.h {
-    public final j2.h a;
-    public final int b;
-    public final s0 c;
-    public final byte[] d;
-    public int e;
+public abstract class s extends e2.l1 {
+    public final e2.l1 e;
 
-    public s(j2.h hVar, int i7, s0 s0Var) {
-        ja.f(i7 > 0);
-        this.a = hVar;
-        this.b = i7;
-        this.c = s0Var;
-        this.d = new byte[1];
-        this.e = i7;
+    public s(e2.l1 l1Var) {
+        this.e = l1Var;
     }
 
-    @Override // j2.h
-    public final void addTransferListener(j2.c0 c0Var) {
-        c0Var.getClass();
-        this.a.addTransferListener(c0Var);
+    @Override // e2.l1
+    public final int a(boolean z10) {
+        return this.e.a(z10);
     }
 
-    @Override // j2.h
-    public final void close() {
-        throw new UnsupportedOperationException();
+    @Override // e2.l1
+    public int b(Object obj) {
+        return this.e.b(obj);
     }
 
-    @Override // j2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
+    @Override // e2.l1
+    public final int c(boolean z10) {
+        return this.e.c(z10);
     }
 
-    @Override // j2.h
-    public final Uri getUri() {
-        return this.a.getUri();
+    @Override // e2.l1
+    public int e(int i7, int i10, boolean z10) {
+        return this.e.e(i7, i10, z10);
     }
 
-    @Override // j2.h
-    public final long open(j2.m mVar) {
-        throw new UnsupportedOperationException();
+    @Override // e2.l1
+    public e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
+        return this.e.f(i7, i1Var, z10);
     }
 
-    @Override // e2.n
-    public final int read(byte[] bArr, int i7, int i10) {
-        int i11 = this.e;
-        j2.h hVar = this.a;
-        if (i11 == 0) {
-            byte[] bArr2 = this.d;
-            int i12 = 0;
-            if (hVar.read(bArr2, 0, 1) != -1) {
-                int i13 = (bArr2[0] & ns.e4) << 4;
-                if (i13 != 0) {
-                    byte[] bArr3 = new byte[i13];
-                    int i14 = i13;
-                    while (i14 > 0) {
-                        int read = hVar.read(bArr3, i12, i14);
-                        if (read != -1) {
-                            i12 += read;
-                            i14 -= read;
-                        }
-                    }
-                    while (i13 > 0 && bArr3[i13 - 1] == 0) {
-                        i13--;
-                    }
-                    if (i13 > 0) {
-                        h2.x xVar = new h2.x(bArr3, i13);
-                        s0 s0Var = this.c;
-                        long max = !s0Var.x ? s0Var.r : Math.max(s0Var.y.v(true), s0Var.r);
-                        int a10 = xVar.a();
-                        f3.i0 i0Var = s0Var.w;
-                        i0Var.getClass();
-                        i0Var.b(a10, xVar);
-                        i0Var.c(max, 1, a10, 0, null);
-                        s0Var.x = true;
-                    }
-                }
-                this.e = this.b;
-            }
-            return -1;
-        }
-        int read2 = hVar.read(bArr, i7, Math.min(this.e, i10));
-        if (read2 != -1) {
-            this.e -= read2;
-        }
-        return read2;
+    @Override // e2.l1
+    public final int h() {
+        return this.e.h();
+    }
+
+    @Override // e2.l1
+    public int k(int i7, int i10, boolean z10) {
+        return this.e.k(i7, i10, z10);
+    }
+
+    @Override // e2.l1
+    public Object l(int i7) {
+        return this.e.l(i7);
+    }
+
+    @Override // e2.l1
+    public e2.k1 m(int i7, e2.k1 k1Var, long j3) {
+        return this.e.m(i7, k1Var, j3);
+    }
+
+    @Override // e2.l1
+    public final int o() {
+        return this.e.o();
     }
 }

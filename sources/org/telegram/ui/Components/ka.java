@@ -1,40 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.Layout;
-import android.text.Spanned;
-import android.text.style.LeadingMarginSpan;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ka implements LeadingMarginSpan {
-    public final int a;
-    public final int b;
+public abstract class ka extends sa {
+    public final LinearLayout T1;
+    public FrameLayout U1;
+    public hi.d V1;
 
-    public ka(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
+    public ka(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, null, false, false, i6Var);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.T1 = linearLayout;
+        linearLayout.setOrientation(1);
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i7, int i10, int i11, int i12, int i13, CharSequence charSequence, int i14, int i15, boolean z10, Layout layout) {
-        if (((Spanned) charSequence).getSpanStart(this) == i14) {
-            Paint.Style style = paint.getStyle();
-            int color = paint.getColor();
-            paint.setColor(-11491093);
-            paint.setStyle(Paint.Style.FILL);
-            if (layout != null) {
-                i13 -= layout.getLineForOffset(i14) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
-            }
-            canvas.drawCircle((i10 * r7) + i7, (i11 + i13) / 2.0f, this.b, paint);
-            paint.setColor(color);
-            paint.setStyle(style);
-        }
+    @Override // org.telegram.ui.Components.sa
+    public final bk0 M0(ck0 ck0Var) {
+        return new di.l4(this, 2);
     }
 
-    @Override // android.text.style.LeadingMarginSpan
-    public final int getLeadingMargin(boolean z10) {
-        return (this.b * 2) + this.a;
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence P0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    public final void setTitle(CharSequence charSequence) {
+        this.p1.setTitle(charSequence);
     }
 }

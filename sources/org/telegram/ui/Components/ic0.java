@@ -1,12 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ic0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
+public final class ic0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jc0 b;
+
+    public /* synthetic */ ic0(jc0 jc0Var, int i7) {
+        this.a = i7;
+        this.b = jc0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
+        switch (this.a) {
+            case 0:
+                pc0 pc0Var = this.b.d;
+                if (!pc0Var.Q) {
+                    pc0Var.b0 = 1.0f;
+                    pc0Var.h(1.0f);
+                    break;
+                }
+                break;
+            default:
+                jc0 jc0Var = this.b;
+                pc0 pc0Var2 = jc0Var.d;
+                if (!pc0Var2.Q) {
+                    Runnable runnable = jc0Var.c;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    if (org.telegram.messenger.bz.r == 1 && pc0Var2.y.getVisibility() != 0 && (editTextBoldCursor = pc0Var2.r) != null) {
+                        editTextBoldCursor.requestFocus();
+                        org.telegram.messenger.g0.I3(pc0Var2.r);
+                        break;
+                    }
+                }
+                break;
+        }
+    }
 }

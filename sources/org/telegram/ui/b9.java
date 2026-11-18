@@ -4,28 +4,28 @@ import android.content.Context;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b9 extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2 V2;
+public final class b9 extends org.telegram.ui.Components.yo0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.x2 V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b9(Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.u2 u2Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.V2 = u2Var;
+    public b9(Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.ActionBar.x2 x2Var) {
+        super(context, null, str, false, str2, false, i6Var);
+        this.V2 = x2Var;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+    @Override // org.telegram.ui.Components.yo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
         String a02;
         if (z10) {
             if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.hd.a0(null, null, 2131749187, org.telegram.messenger.hd.G(hVar == null ? 1 : hVar.m(), "Chats", new Object[0]));
+                a02 = org.telegram.messenger.gd.a0(null, null, 2131748995, org.telegram.messenger.gd.G(hVar == null ? 1 : hVar.m(), "Chats", new Object[0]));
             } else {
                 long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == org.telegram.messenger.m10.i(this.a).e()) ? org.telegram.messenger.hd.M0(2131749185, null) : org.telegram.messenger.hd.a0(null, null, 2131749184, org.telegram.messenger.np.s1(this.a).B1(j3, true));
+                a02 = (j3 == 0 || j3 == org.telegram.messenger.j10.i(this.a).e()) ? org.telegram.messenger.gd.M0(2131748993, null) : org.telegram.messenger.gd.a0(null, null, 2131748992, org.telegram.messenger.mp.u1(this.a).D1(j3, true));
             }
-            org.telegram.ui.Components.xb Q = new org.telegram.ui.Components.cc(this.V2.F, this.J0).Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(a02));
+            org.telegram.ui.Components.gc Q = new org.telegram.ui.Components.lc(this.V2.F, this.J0).Q(R.raw.forward, 36, org.telegram.messenger.g0.W2(a02));
             Q.r = false;
             Q.j();
         }

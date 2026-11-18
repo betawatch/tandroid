@@ -1,25 +1,17 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class bb {
     public static ab a;
 
-    public static gd.c a(rd.a aVar) {
-        gd.d[] dVarArr = gd.d.a;
-        gd.j jVar = gd.j.a;
-        gd.h hVar = new gd.h();
-        hVar.a = aVar;
-        hVar.b = jVar;
-        return hVar;
+    public static g9.t a(g9.t tVar) {
+        return !(tVar instanceof g9.v) ? tVar instanceof g9.u ? tVar : tVar instanceof Serializable ? new g9.u(tVar) : new g9.v(tVar) : tVar;
     }
 
-    public static gd.i b(rd.a initializer) {
-        kotlin.jvm.internal.j.e(initializer, "initializer");
-        return new gd.i(initializer);
-    }
-
-    public static synchronized ua c(na naVar) {
+    public static synchronized ua b(na naVar) {
         ua uaVar;
         synchronized (bb.class) {
             try {
@@ -34,22 +26,22 @@ public abstract class bb {
         return uaVar;
     }
 
-    public static synchronized ua d() {
-        ua c10;
+    public static synchronized ua c() {
+        ua b10;
         synchronized (bb.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
+            byte b11 = (byte) (((byte) 1) | 2);
+            if (b11 != 3) {
                 StringBuilder sb2 = new StringBuilder();
-                if ((b10 & 1) == 0) {
+                if ((b11 & 1) == 0) {
                     sb2.append(" enableFirelog");
                 }
-                if ((b10 & 2) == 0) {
+                if ((b11 & 2) == 0) {
                     sb2.append(" firelogEventType");
                 }
                 throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
             }
-            c10 = c(new na());
+            b10 = b(new na());
         }
-        return c10;
+        return b10;
     }
 }

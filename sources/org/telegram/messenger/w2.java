@@ -1,55 +1,43 @@
 package org.telegram.messenger;
 
 import android.util.Pair;
-import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w2 implements w10 {
-    public final /* synthetic */ x2 a;
+public final /* synthetic */ class w2 implements q10 {
+    public final /* synthetic */ y2 a;
     public final /* synthetic */ Pair b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ w2(x2 x2Var, Pair pair, Object obj, int i7, Object obj2) {
-        this.a = x2Var;
+    public /* synthetic */ w2(y2 y2Var, Pair pair, Object obj, int i7) {
+        this.a = y2Var;
         this.b = pair;
         this.c = obj;
         this.d = i7;
-        this.e = obj2;
     }
 
-    @Override // org.telegram.messenger.w10
-    public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-        Boolean bool = (Boolean) obj;
-        Long l10 = (Long) obj3;
-        x2 x2Var = this.a;
-        x2Var.getClass();
-        boolean booleanValue = ((Boolean) obj4).booleanValue();
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        Object obj3;
+        Long l10 = (Long) obj;
+        y2 y2Var = this.a;
         Pair pair = this.b;
-        if (booleanValue) {
-            if (x2Var.d == null) {
-                x2Var.d = new HashMap();
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            x2Var.d.put(pair, Long.valueOf(currentTimeMillis));
-            if (x2Var instanceof mo) {
-                x2Var.h(pair.hashCode(), currentTimeMillis);
-            }
+        if (!y2Var.i(pair)) {
+            y2Var.a(pair, obj2);
+            g0.g3(new aa.c0((Object) y2Var, (Object) pair, obj2, true, 8));
+            return;
         }
-        boolean z10 = true;
-        if (bool.booleanValue()) {
-            Object obj5 = this.c;
-            x2Var.a(pair, obj5);
-            g0.h3(new aa.c0(x2Var, pair, obj5, z10, 8));
+        Object obj4 = this.c;
+        if (obj2 == null || !y2Var.b(obj4)) {
+            obj3 = obj2;
         } else {
-            if (obj2 != null) {
-                l10.getClass();
-                x2Var.g(this.d, this.e, obj2);
-                x2Var.a(pair, obj2);
-            }
-            g0.h3(new aa.c0(x2Var, pair, obj2, z10, 8));
+            y2Var.a(pair, obj2);
+            obj3 = obj2;
+            g0.g3(new aa.c0((Object) y2Var, (Object) pair, obj3, false, 8));
         }
+        long longValue = l10.longValue();
+        int i7 = this.d;
+        y2Var.f(i7, obj4, longValue, new x2(y2Var, pair, obj3, i7, obj4));
     }
 }

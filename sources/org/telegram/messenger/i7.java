@@ -22,10 +22,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i7 {
-    public static bg.d0 l1;
+    public static bg.e0 l1;
     public File A;
     public boolean A0;
     public final boolean B;
@@ -72,7 +72,7 @@ public final class i7 {
     public boolean V0;
     public final TLRPC.InputWebFileLocation W;
     public int W0;
-    public final k20 X;
+    public final h20 X;
     public final e8 X0;
     public volatile int Y;
     public volatile boolean Y0;
@@ -86,7 +86,7 @@ public final class i7 {
     public final int b1;
     public boolean c;
     public final long c0;
-    public fi.m6 c1;
+    public fi.j6 c1;
     public long d;
     public long d0;
     public long d1;
@@ -102,7 +102,7 @@ public final class i7 {
     public final Runnable h;
     public final byte[] h0;
     public long h1;
-    public x4 i;
+    public z4 i;
     public final byte[] i0;
     public long i1;
     public boolean j;
@@ -140,10 +140,10 @@ public final class i7 {
     public int y0;
     public boolean z;
     public boolean z0;
-    public static volatile p5 k1 = new p5("writeFileQueue");
+    public static volatile q5 k1 = new q5("writeFileQueue");
     public static final Object m1 = new Object();
 
-    public i7(gc gcVar, Object obj, String str, long j3) {
+    public i7(fc fcVar, Object obj, String str, long j3) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -158,65 +158,65 @@ public final class i7 {
         this.p0 = obj;
         this.j = obj instanceof TL_stories.TL_storyItem;
         this.X0 = w7.E(obj);
-        this.r0 = gcVar.p == 2;
-        if (gcVar.c != null) {
+        this.r0 = fcVar.p == 2;
+        if (fcVar.c != null) {
             TLRPC.TL_inputEncryptedFileLocation tL_inputEncryptedFileLocation = new TLRPC.TL_inputEncryptedFileLocation();
             this.V = tL_inputEncryptedFileLocation;
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = gcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = fcVar.f;
             long j10 = tL_fileLocationToBeDeprecated.volume_id;
             tL_inputEncryptedFileLocation.id = j10;
             tL_inputEncryptedFileLocation.volume_id = j10;
             tL_inputEncryptedFileLocation.local_id = tL_fileLocationToBeDeprecated.local_id;
-            tL_inputEncryptedFileLocation.access_hash = gcVar.e;
+            tL_inputEncryptedFileLocation.access_hash = fcVar.e;
             byte[] bArr = new byte[32];
             this.i0 = bArr;
-            System.arraycopy(gcVar.d, 0, bArr, 0, 32);
-            this.h0 = gcVar.c;
-        } else if (gcVar.n != null) {
+            System.arraycopy(fcVar.d, 0, bArr, 0, 32);
+            this.h0 = fcVar.c;
+        } else if (fcVar.n != null) {
             TLRPC.TL_inputPeerPhotoFileLocation tL_inputPeerPhotoFileLocation = new TLRPC.TL_inputPeerPhotoFileLocation();
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = gcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated2 = fcVar.f;
             long j11 = tL_fileLocationToBeDeprecated2.volume_id;
             tL_inputPeerPhotoFileLocation.id = j11;
             tL_inputPeerPhotoFileLocation.volume_id = j11;
             tL_inputPeerPhotoFileLocation.local_id = tL_fileLocationToBeDeprecated2.local_id;
-            tL_inputPeerPhotoFileLocation.photo_id = gcVar.s;
-            tL_inputPeerPhotoFileLocation.big = gcVar.m == 0;
-            tL_inputPeerPhotoFileLocation.peer = gcVar.n;
+            tL_inputPeerPhotoFileLocation.photo_id = fcVar.s;
+            tL_inputPeerPhotoFileLocation.big = fcVar.m == 0;
+            tL_inputPeerPhotoFileLocation.peer = fcVar.n;
             this.V = tL_inputPeerPhotoFileLocation;
-        } else if (gcVar.o != null) {
+        } else if (fcVar.o != null) {
             TLRPC.TL_inputStickerSetThumb tL_inputStickerSetThumb = new TLRPC.TL_inputStickerSetThumb();
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = gcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated3 = fcVar.f;
             long j12 = tL_fileLocationToBeDeprecated3.volume_id;
             tL_inputStickerSetThumb.id = j12;
             tL_inputStickerSetThumb.volume_id = j12;
             tL_inputStickerSetThumb.local_id = tL_fileLocationToBeDeprecated3.local_id;
-            tL_inputStickerSetThumb.thumb_version = gcVar.q;
-            tL_inputStickerSetThumb.stickerset = gcVar.o;
+            tL_inputStickerSetThumb.thumb_version = fcVar.q;
+            tL_inputStickerSetThumb.stickerset = fcVar.o;
             this.V = tL_inputStickerSetThumb;
-        } else if (gcVar.u != null) {
-            if (gcVar.s != 0) {
+        } else if (fcVar.u != null) {
+            if (fcVar.s != 0) {
                 TLRPC.TL_inputPhotoFileLocation tL_inputPhotoFileLocation = new TLRPC.TL_inputPhotoFileLocation();
                 this.V = tL_inputPhotoFileLocation;
-                tL_inputPhotoFileLocation.id = gcVar.s;
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated4 = gcVar.f;
+                tL_inputPhotoFileLocation.id = fcVar.s;
+                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated4 = fcVar.f;
                 tL_inputPhotoFileLocation.volume_id = tL_fileLocationToBeDeprecated4.volume_id;
                 tL_inputPhotoFileLocation.local_id = tL_fileLocationToBeDeprecated4.local_id;
-                tL_inputPhotoFileLocation.access_hash = gcVar.e;
-                tL_inputPhotoFileLocation.file_reference = gcVar.b;
-                tL_inputPhotoFileLocation.thumb_size = gcVar.u;
-                if (gcVar.p == 2) {
+                tL_inputPhotoFileLocation.access_hash = fcVar.e;
+                tL_inputPhotoFileLocation.file_reference = fcVar.b;
+                tL_inputPhotoFileLocation.thumb_size = fcVar.u;
+                if (fcVar.p == 2) {
                     this.o0 = true;
                 }
             } else {
                 TLRPC.TL_inputDocumentFileLocation tL_inputDocumentFileLocation = new TLRPC.TL_inputDocumentFileLocation();
                 this.V = tL_inputDocumentFileLocation;
-                tL_inputDocumentFileLocation.id = gcVar.t;
-                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated5 = gcVar.f;
+                tL_inputDocumentFileLocation.id = fcVar.t;
+                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated5 = fcVar.f;
                 tL_inputDocumentFileLocation.volume_id = tL_fileLocationToBeDeprecated5.volume_id;
                 tL_inputDocumentFileLocation.local_id = tL_fileLocationToBeDeprecated5.local_id;
-                tL_inputDocumentFileLocation.access_hash = gcVar.e;
-                tL_inputDocumentFileLocation.file_reference = gcVar.b;
-                tL_inputDocumentFileLocation.thumb_size = gcVar.u;
+                tL_inputDocumentFileLocation.access_hash = fcVar.e;
+                tL_inputDocumentFileLocation.file_reference = fcVar.b;
+                tL_inputDocumentFileLocation.thumb_size = fcVar.u;
             }
             TLRPC.InputFileLocation inputFileLocation = this.V;
             if (inputFileLocation.file_reference == null) {
@@ -225,20 +225,20 @@ public final class i7 {
         } else {
             TLRPC.TL_inputFileLocation tL_inputFileLocation = new TLRPC.TL_inputFileLocation();
             this.V = tL_inputFileLocation;
-            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated6 = gcVar.f;
+            TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated6 = fcVar.f;
             tL_inputFileLocation.volume_id = tL_fileLocationToBeDeprecated6.volume_id;
             tL_inputFileLocation.local_id = tL_fileLocationToBeDeprecated6.local_id;
-            tL_inputFileLocation.secret = gcVar.e;
-            byte[] bArr2 = gcVar.b;
+            tL_inputFileLocation.secret = fcVar.e;
+            byte[] bArr2 = fcVar.b;
             tL_inputFileLocation.file_reference = bArr2;
             if (bArr2 == null) {
                 tL_inputFileLocation.file_reference = new byte[0];
             }
             this.o0 = true;
         }
-        int i7 = gcVar.p;
+        int i7 = fcVar.p;
         this.a1 = i7 == 1 || i7 == 3;
-        int i10 = gcVar.a;
+        int i10 = fcVar.a;
         this.T = i10;
         this.U = i10;
         this.b1 = 16777216;
@@ -323,7 +323,7 @@ public final class i7 {
         }
         if (z10) {
             if (!z11) {
-                if (r2.a) {
+                if (s2.a) {
                     a8.d(this.L0 + " downloaded duplicate file part " + j3 + " - " + j10);
                     return;
                 }
@@ -336,10 +336,10 @@ public final class i7 {
             synchronized (this) {
                 this.Y0 = true;
             }
-            p5 p5Var = k1;
-            x4 x4Var = new x4(6, this, arrayList2);
-            this.i = x4Var;
-            p5Var.c(x4Var);
+            q5 q5Var = k1;
+            z4 z4Var = new z4(6, this, arrayList2);
+            this.i = z4Var;
+            q5Var.c(z4Var);
             i();
         }
     }
@@ -463,7 +463,7 @@ public final class i7 {
                     ConnectionsManager.getInstance(this.R).cancelRequest(h7Var2.a, true);
                     h7Var2.k = true;
                 }
-                if (!b6.h()) {
+                if (!c6.h()) {
                     int i10 = h7Var2.d >>> 16;
                     iArr[i10] = iArr[i10] + h7Var2.c;
                 }
@@ -471,12 +471,12 @@ public final class i7 {
         }
         for (int i11 = 0; i11 < 8; i11++) {
             int i12 = (i11 << 16) | 2;
-            if (iArr[i11] > ((!this.j || b6.h()) ? TLObject.FLAG_20 : 262144)) {
+            if (iArr[i11] > ((!this.j || c6.h()) ? TLObject.FLAG_20 : 262144)) {
                 ConnectionsManager.getInstance(this.R).discardConnection(this.u0 ? this.y0 : this.T, i12);
             }
         }
         this.G0.clear();
-        g0.h3(new y6(this, 2));
+        g0.g3(new y6(this, 2));
         for (int i13 = 0; i13 < this.I0.size(); i13++) {
             h7 h7Var3 = (h7) this.I0.get(i13);
             if (this.y) {
@@ -569,7 +569,7 @@ public final class i7 {
     public final File g() {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         File[] fileArr = new File[1];
-        Utilities.d.c(new mg(this, fileArr, countDownLatch, 21));
+        Utilities.d.c(new yf(this, fileArr, countDownLatch, 21));
         try {
             countDownLatch.await();
         } catch (Exception e10) {
@@ -628,7 +628,7 @@ public final class i7 {
     public final void j(int i7, boolean z10) {
         d();
         this.Y = i7 == 1 ? 4 : 2;
-        if (this.g0 != null && r2.a) {
+        if (this.g0 != null && s2.a) {
             long currentTimeMillis = this.d1 != 0 ? System.currentTimeMillis() - this.d1 : 0L;
             if (i7 == 1) {
                 a8.b("cancel downloading file to " + this.L0 + " time = " + currentTimeMillis + " dc = " + this.T + " size = " + g0.i0(this.b0, false, false));
@@ -654,16 +654,16 @@ public final class i7 {
             d();
             int i10 = 10;
             if (!this.y && !z11) {
-                k1.c(new ey(2, this, this.M0, this.N0, this.A, this.J0, z10));
+                k1.c(new yx(2, this, this.M0, this.N0, this.A, this.J0, z10));
                 this.M0 = null;
                 this.N0 = null;
                 this.A = null;
                 this.g0.getClass();
-                w7.K.c(new x4(i10, this, this.e1));
+                w7.K.c(new z4(i10, this, this.e1));
                 return;
             }
             this.z = true;
-            boolean z12 = r2.a;
+            boolean z12 = s2.a;
             if (i7 == 1) {
                 a8.b("file already exist " + this.J0);
             } else {
@@ -674,7 +674,7 @@ public final class i7 {
                 sb2.append(" of ");
                 sb2.append(this.b0);
                 sb2.append(" prefSize=");
-                i5.c.r(this.J, sb2);
+                i5.c.t(this.J, sb2);
             }
             if (this.X0 != null) {
                 int i11 = 12;
@@ -682,17 +682,17 @@ public final class i7 {
                     f8 f8Var = w7.G(this.R).d;
                     List singletonList = Collections.singletonList(new ei.b(this.J0));
                     f8Var.getClass();
-                    f8Var.h(new x4(i11, f8Var, singletonList));
+                    f8Var.h(new z4(i11, f8Var, singletonList));
                 }
                 if (this.N0 != null) {
                     f8 f8Var2 = w7.G(this.R).d;
                     List singletonList2 = Collections.singletonList(new ei.b(this.N0));
                     f8Var2.getClass();
-                    f8Var2.h(new x4(i11, f8Var2, singletonList2));
+                    f8Var2.h(new z4(i11, f8Var2, singletonList2));
                 }
             }
             this.g0.getClass();
-            w7.K.c(new x4(i10, this, this.e1));
+            w7.K.c(new z4(i10, this, this.e1));
             this.g0.c(this, this.L0);
         }
     }
@@ -770,7 +770,7 @@ public final class i7 {
         if (this.Y == 1 || this.Y == 5) {
             int i10 = h7Var.a;
             this.G0.remove(h7Var);
-            g0.h3(new z6(this, i10, i7));
+            g0.g3(new z6(this, i10, i7));
             String str2 = " secret = ";
             if (tL_error == null) {
                 try {
@@ -874,7 +874,7 @@ public final class i7 {
                         this.v.writeLong(j32);
                         this.w += 16;
                         this.v.getChannel().write(nativeByteBuffer.buffer);
-                        boolean z18 = r2.a;
+                        boolean z18 = s2.a;
                         StringBuilder sb2 = new StringBuilder("save preload file part ");
                         sb2.append(this.A);
                         sb2.append(" offset ");
@@ -950,7 +950,7 @@ public final class i7 {
                                 if (this.a0 < this.b0) {
                                     z11 = z10;
                                     z12 = true;
-                                    boolean z19 = r2.a;
+                                    boolean z19 = s2.a;
                                     bArr = this.h0;
                                     if (bArr != null) {
                                         Utilities.c(nativeByteBuffer.buffer, bArr, this.i0, false, true, 0, nativeByteBuffer.limit());
@@ -1027,7 +1027,7 @@ public final class i7 {
                                                         this.C0 = new RandomAccessFile(this.J0, "r");
                                                     }
                                                     this.C0.seek(j44);
-                                                    boolean z20 = r2.a;
+                                                    boolean z20 = s2.a;
                                                     if (h > 2147483647L) {
                                                         throw new RuntimeException("!!!");
                                                     }
@@ -1047,7 +1047,7 @@ public final class i7 {
                                                         z13 = z12;
                                                     }
                                                     if (!Arrays.equals(Utilities.o(j13, this.D0), tL_fileHash.hash)) {
-                                                        if (r2.a) {
+                                                        if (s2.a) {
                                                             if (this.V != null) {
                                                                 a8.d("invalid cdn hash " + this.V + " id = " + this.V.id + " local_id = " + this.V.local_id + str3 + this.V.access_hash + " volume_id = " + this.V.volume_id + str2 + this.V.secret);
                                                             } else if (this.W != null) {
@@ -1092,7 +1092,7 @@ public final class i7 {
                         }
                         z11 = z10;
                         z12 = false;
-                        boolean z192 = r2.a;
+                        boolean z192 = s2.a;
                         bArr = this.h0;
                         if (bArr != null) {
                         }
@@ -1167,7 +1167,7 @@ public final class i7 {
                     if (g0.F1(e10)) {
                         j(-1, false);
                     } else if (g0.G1(e10)) {
-                        gz.h(this.L0);
+                        bz.h(this.L0);
                         j(-1, true);
                     } else {
                         j(0, false);
@@ -1213,11 +1213,11 @@ public final class i7 {
                         j(2, false);
                         return false;
                     }
-                    if (r2.a) {
+                    if (s2.a) {
                         TLRPC.InputFileLocation inputFileLocation = this.V;
                         if (inputFileLocation != null) {
                             if (inputFileLocation instanceof TLRPC.TL_inputPeerPhotoFileLocation) {
-                                a8.d(tL_error.text + " " + this.V + " peer_did = " + m5.n(((TLRPC.TL_inputPeerPhotoFileLocation) this.V).peer) + " peer_access_hash=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).peer.access_hash + " photo_id=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).photo_id + " big=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).big);
+                                a8.d(tL_error.text + " " + this.V + " peer_did = " + n5.n(((TLRPC.TL_inputPeerPhotoFileLocation) this.V).peer) + " peer_access_hash=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).peer.access_hash + " photo_id=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).photo_id + " big=" + ((TLRPC.TL_inputPeerPhotoFileLocation) this.V).big);
                             } else {
                                 a8.d(tL_error.text + " " + this.V + " id = " + this.V.id + " local_id = " + this.V.local_id + " access_hash = " + this.V.access_hash + " volume_id = " + this.V.volume_id + str2 + this.V.secret);
                             }
@@ -1246,7 +1246,7 @@ public final class i7 {
             }
             return false;
         }
-        boolean z21 = r2.a;
+        boolean z21 = s2.a;
         if (this.Y == 3) {
             StringBuilder sb4 = new StringBuilder("trying to write to finished file ");
             sb4.append(this.r);
@@ -1286,14 +1286,14 @@ public final class i7 {
         this.A0 = true;
         this.B0 = true;
         Object obj = this.p0;
-        if (obj instanceof gj) {
-            gj gjVar = (gj) obj;
-            if (gjVar.e1() < 0 && (message = gjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
+        if (obj instanceof fj) {
+            fj fjVar = (fj) obj;
+            if (fjVar.e1() < 0 && (message = fjVar.k) != null && (messageMedia = message.media) != null && (webPage = messageMedia.webpage) != null) {
                 this.p0 = webPage;
                 this.j = false;
             }
         }
-        if (r2.a) {
+        if (s2.a) {
             a8.b("debug_loading: " + this.L0.getName() + " file reference expired ");
         }
         r8.n(this.R).u(new Object[]{this.V, this, h7Var}, this.p0);
@@ -1396,7 +1396,7 @@ public final class i7 {
         int i12 = 1;
         if (this.j0 == 0) {
             if (this.e) {
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("debug_loading: restart with small chunk");
                 }
                 this.j0 = 32768;
@@ -1435,7 +1435,7 @@ public final class i7 {
                         if (h7Var != null && h7Var.e != j15) {
                             int i13 = h7Var.a;
                             i7Var.G0.remove(h7Var);
-                            g0.h3(new z6(i7Var, i13, 2));
+                            g0.g3(new z6(i7Var, i13, 2));
                             long j16 = i7Var.Q;
                             long j17 = i7Var.j0;
                             i7Var.Q = j16 - j17;
@@ -1446,8 +1446,8 @@ public final class i7 {
                                 ConnectionsManager.getInstance(i7Var.R).cancelRequest(i7Var.f0.a, true);
                                 i7Var.l0--;
                             }
-                            boolean z23 = r2.a;
-                            i5.c.t(i7Var.f0.e, new StringBuilder("frame get cancel request at offset "));
+                            boolean z23 = s2.a;
+                            i5.c.v(i7Var.f0.e, new StringBuilder("frame get cancel request at offset "));
                             i7Var.f0 = null;
                         }
                         if (i7Var.f0 == null) {
@@ -1485,7 +1485,7 @@ public final class i7 {
             return;
         }
         if (this.V == null && this.W == null) {
-            boolean z21 = r2.a;
+            boolean z21 = s2.a;
             a8.b("loadOperation: no location, failing");
             j(0, true);
             return;
@@ -1502,10 +1502,10 @@ public final class i7 {
         if (this.W != null) {
             String a10 = Utilities.a(this.X.a);
             if (this.n0) {
-                r12 = r.b.v(a10, ".temp.enc");
-                str8 = a8.p0.s(r.b.m(a10, "."), this.P0, ".enc");
+                r12 = p5.c.v(a10, ".temp.enc");
+                str8 = a8.p0.s(p5.c.n(a10, "."), this.P0, ".enc");
                 if (this.h0 != null) {
-                    r13 = r.b.v(a10, "_64.iv.enc");
+                    r13 = p5.c.v(a10, "_64.iv.enc");
                     str5 = str8;
                     j3 = 0;
                 }
@@ -1513,12 +1513,12 @@ public final class i7 {
                 str5 = str8;
                 j3 = 0;
             } else {
-                String v = r.b.v(a10, ".temp");
-                StringBuilder m10 = r.b.m(a10, ".");
-                m10.append(this.P0);
-                String sb2 = m10.toString();
+                String v = p5.c.v(a10, ".temp");
+                StringBuilder n10 = p5.c.n(a10, ".");
+                n10.append(this.P0);
+                String sb2 = n10.toString();
                 if (this.h0 != null) {
-                    r13 = r.b.v(a10, "_64.iv");
+                    r13 = p5.c.v(a10, "_64.iv");
                     r12 = v;
                     str8 = sb2;
                     str5 = str8;
@@ -1609,7 +1609,7 @@ public final class i7 {
                     a8.g(e10, true);
                 }
                 if (!zArr3[0]) {
-                    if (r2.a) {
+                    if (s2.a) {
                         a8.b("debug_loading: delete existing file cause file size mismatch " + this.L0.getName() + " totalSize=" + this.b0 + " existingFileSize=" + this.L0.length());
                     }
                     u7 u7Var3 = this.g0;
@@ -1677,14 +1677,14 @@ public final class i7 {
                 this.S = true;
                 try {
                     k(1, false, false);
-                    fi.m6 m6Var = this.c1;
-                    if (m6Var != null) {
+                    fi.j6 j6Var = this.c1;
+                    if (j6Var != null) {
                         u7 u7Var4 = this.g0;
                         File file3 = this.L0;
                         f8 f8Var3 = u7Var4.e.d;
-                        long j16 = m6Var.c;
-                        int i15 = m6Var.b;
-                        int i16 = m6Var.d;
+                        long j16 = j6Var.c;
+                        int i15 = j6Var.b;
+                        int i16 = j6Var.d;
                         String file4 = file3 != null ? file3.toString() : null;
                         f8Var3.getClass();
                         f8Var3.h(new d8(f8Var3, j16, i15, i16, file4, 0));
@@ -1704,7 +1704,7 @@ public final class i7 {
                         j(0, true);
                         return;
                     } else {
-                        gz.h(this.L0);
+                        bz.h(this.L0);
                         j(i7, true);
                         return;
                     }
@@ -1712,10 +1712,10 @@ public final class i7 {
             }
             this.J0 = new File(this.U0, str6);
             if (this.a1) {
-                this.K0 = new File(this.U0, r.b.v(str6, ".gz"));
+                this.K0 = new File(this.U0, p5.c.v(str6, ".gz"));
             }
             if (this.n0) {
-                File file5 = new File(t0.b.getCacheDir(), r.b.v(str5, ".key"));
+                File file5 = new File(t0.b.getCacheDir(), p5.c.v(str5, ".key"));
                 try {
                     randomAccessFile = new RandomAccessFile(file5, "rws");
                     long length = file5.length();
@@ -1753,7 +1753,7 @@ public final class i7 {
                         a8.g(e, false);
                         z10 = z17;
                     } else if (g0.G1(e)) {
-                        gz.h(this.L0);
+                        bz.h(this.L0);
                         a8.g(e, false);
                         z10 = z17;
                     } else {
@@ -1776,7 +1776,7 @@ public final class i7 {
                     arrayList = this.M;
                     if (arrayList != null) {
                     }
-                    if (r2.a) {
+                    if (s2.a) {
                     }
                     if (str2 != null) {
                     }
@@ -1867,7 +1867,7 @@ public final class i7 {
                                                                 arrayList = this.M;
                                                                 if (arrayList != null) {
                                                                 }
-                                                                if (r2.a) {
+                                                                if (s2.a) {
                                                                 }
                                                                 if (str2 != null) {
                                                                 }
@@ -1906,7 +1906,7 @@ public final class i7 {
                                                                 arrayList = this.M;
                                                                 if (arrayList != null) {
                                                                 }
-                                                                if (r2.a) {
+                                                                if (s2.a) {
                                                                 }
                                                                 if (str2 != null) {
                                                                 }
@@ -1979,7 +1979,7 @@ public final class i7 {
                                             arrayList = this.M;
                                             if (arrayList != null) {
                                             }
-                                            if (r2.a) {
+                                            if (s2.a) {
                                             }
                                             if (str2 != null) {
                                             }
@@ -2087,14 +2087,14 @@ public final class i7 {
                 f8Var4.getClass();
                 int i18 = 24;
                 if (file6 != null && e8Var != null) {
-                    f8Var4.h(new mg(f8Var4, file6, e8Var, i18));
+                    f8Var4.h(new yf(f8Var4, file6, e8Var, i18));
                 }
                 f8 f8Var5 = w7.G(this.R).d;
                 File file7 = this.J0;
                 e8 e8Var2 = this.X0;
                 f8Var5.getClass();
                 if (file7 != null && e8Var2 != null) {
-                    f8Var5.h(new mg(f8Var5, file7, e8Var2, i18));
+                    f8Var5.h(new yf(f8Var5, file7, e8Var2, i18));
                 }
             }
             if (!this.J0.exists()) {
@@ -2138,7 +2138,7 @@ public final class i7 {
                 }
                 this.Q = this.a0;
             }
-            if (r2.a) {
+            if (s2.a) {
                 if (this.y) {
                     a8.b("start preloading file to temp = " + this.J0);
                 } else {
@@ -2147,7 +2147,7 @@ public final class i7 {
                     sb3.append(" final = ");
                     sb3.append(this.L0);
                     sb3.append(" priority");
-                    i5.c.r(this.W0, sb3);
+                    i5.c.t(this.W0, sb3);
                 }
             }
             if (str2 != null) {
@@ -2170,7 +2170,7 @@ public final class i7 {
                         LaunchActivity.D(1);
                         a8.g(e25, false);
                     } else if (g0.G1(e25)) {
-                        gz.h(this.L0);
+                        bz.h(this.L0);
                         a8.g(e25, false);
                     } else {
                         a8.g(e25, true);
@@ -2207,7 +2207,7 @@ public final class i7 {
                 }
                 z12 = true;
                 if (g0.G1(e26)) {
-                    gz.h(this.L0);
+                    bz.h(this.L0);
                     a8.g(e26, false);
                     j(-1, true);
                     return;
@@ -2218,7 +2218,7 @@ public final class i7 {
                 return;
             } else {
                 this.S = z12;
-                Utilities.d.c(new x4(5, this, zArr2));
+                Utilities.d.c(new z4(5, this, zArr2));
                 return;
             }
         }
@@ -2450,7 +2450,7 @@ public final class i7 {
         Pair m11;
         i7 i7Var = this;
         Utilities.d.a(i7Var.h);
-        boolean z10 = r2.a;
+        boolean z10 = s2.a;
         int i17 = 1;
         if (i7Var.Y == 5) {
             i7Var.Y = 1;
@@ -2573,7 +2573,7 @@ public final class i7 {
                                 }
                                 if (j10 == j11) {
                                     if (j16 == j11) {
-                                        boolean z11 = r2.a;
+                                        boolean z11 = s2.a;
                                         return;
                                     }
                                     j10 = j16;
@@ -2585,7 +2585,7 @@ public final class i7 {
                             }
                         } else {
                             if (i7Var2.G != 0 && i7Var2.F <= j13) {
-                                boolean z12 = r2.a;
+                                boolean z12 = s2.a;
                                 return;
                             }
                             j10 = i7Var2.C;
@@ -2630,7 +2630,7 @@ public final class i7 {
                                 i7Var2.u = new HashMap();
                             }
                             i7Var2.u.put(Long.valueOf(j10), Integer.valueOf(i17));
-                            boolean z13 = r2.a;
+                            boolean z13 = s2.a;
                             StringBuilder t6 = a8.p0.t(j10, "start next preload from ", " size ");
                             t6.append(i7Var2.b0);
                             t6.append(" for ");
@@ -2643,18 +2643,18 @@ public final class i7 {
                         int i20 = i7Var2.J;
                         if (i20 > 0 && j10 >= i20) {
                             if (((!i7Var2.j || i7Var2.W0 >= 3) ? 0 : i12) != 0) {
-                                boolean z14 = r2.a;
+                                boolean z14 = s2.a;
                                 return;
                             }
                         }
                         long j22 = i7Var2.b0;
                         if (j22 > j3 && j10 > j3 && j10 >= j22) {
-                            boolean z15 = r2.a;
+                            boolean z15 = s2.a;
                             return;
                         }
                         if (!i7Var2.y && (arrayList = i7Var2.O) != null) {
                             i7Var2.c(j10, i7Var2.j0 + j10, arrayList, false);
-                            boolean z16 = r2.a;
+                            boolean z16 = s2.a;
                         }
                         long j23 = i7Var2.b0;
                         boolean z17 = (j23 <= j3 || i11 == i13 + (-1) || (j23 > j3 && ((long) i7Var2.j0) + j10 >= j23)) ? i12 : 0;
@@ -2696,7 +2696,7 @@ public final class i7 {
                         if (!i7Var2.y && i7Var2.B && i7Var2.v != null && (hashMap = i7Var2.t) != null && (f7Var = (f7) hashMap.get(Long.valueOf(j10))) != null) {
                             h7Var.f = new TLRPC.TL_upload_file();
                             try {
-                                boolean z18 = r2.a;
+                                boolean z18 = s2.a;
                             } catch (Exception unused) {
                             }
                             if (f7Var.b > 2147483647L) {
@@ -2718,8 +2718,8 @@ public final class i7 {
                             i7Var2 = i7Var2;
                         }
                         if (i7Var2.e0 != j3) {
-                            boolean z19 = r2.a;
-                            i5.c.t(i7Var2.e0, new StringBuilder("frame get offset = "));
+                            boolean z19 = s2.a;
+                            i5.c.v(i7Var2.e0, new StringBuilder("frame get offset = "));
                             j13 = j3;
                             i7Var2.e0 = j13;
                             i7Var2.f0 = h7Var;
@@ -2738,7 +2738,7 @@ public final class i7 {
                             i7Var2 = i7Var2;
                         } else {
                             h7Var.i = i7Var2.e;
-                            if (r2.a) {
+                            if (s2.a) {
                                 h7Var.b = System.currentTimeMillis();
                             }
                             int i24 = i23 | 2048;
@@ -2750,7 +2750,7 @@ public final class i7 {
                             int i27 = i25;
                             int sendRequestSync = connectionsManager.sendRequestSync(tLObject2, new jg.r(i25, i26, 2, obj2, h7Var, tLObject2), null, null, i24, i27, i26, z17);
                             h7Var.a = sendRequestSync;
-                            if (r2.a) {
+                            if (s2.a) {
                                 StringBuilder sb2 = new StringBuilder("debug_loading: ");
                                 sb2.append(i7Var2.L0.getName());
                                 sb2.append(" dc=");
@@ -2762,10 +2762,10 @@ public final class i7 {
                                 sb2.append(" conType=");
                                 sb2.append(i26);
                                 sb2.append(" priority=");
-                                i5.c.r(i7Var2.W0, sb2);
+                                i5.c.t(i7Var2.W0, sb2);
                             }
                             i14 = 0;
-                            g0.h3(new z6(i7Var2, sendRequestSync, i14));
+                            g0.g3(new z6(i7Var2, sendRequestSync, i14));
                             i15 = 1;
                             i7Var2.l0++;
                             i11++;
@@ -2789,17 +2789,17 @@ public final class i7 {
     }
 
     public final void t() {
-        boolean z10 = !np.s1(this.R).H3 && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
+        boolean z10 = !mp.u1(this.R).J3 && this.b0 > 0 && this.h0 == null && !this.n0 && !this.y && this.J == 0;
         this.f = z10;
         if (z10) {
-            boolean q10 = m10.i(this.R).q();
+            boolean q10 = j10.i(this.R).q();
             this.g = q10 ? 8 : 2;
             this.k0 = ((q10 ? 16 : 2) * TLObject.FLAG_20) / this.j0;
         }
     }
 
     public final void u() {
-        if ((this.J > 0 || np.s1(this.R).G3) && !this.e) {
+        if ((this.J > 0 || mp.u1(this.R).I3) && !this.e) {
             this.n = TLObject.FLAG_19;
             this.o = 8;
             this.p = 8;
@@ -2815,7 +2815,7 @@ public final class i7 {
         this.q = (int) (2097152000 / this.n);
     }
 
-    public i7(cw cwVar) {
+    public i7(yv yvVar) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -2829,7 +2829,7 @@ public final class i7 {
         u();
         TLRPC.TL_inputSecureFileLocation tL_inputSecureFileLocation = new TLRPC.TL_inputSecureFileLocation();
         this.V = tL_inputSecureFileLocation;
-        TLRPC.TL_secureFile tL_secureFile = cwVar.b;
+        TLRPC.TL_secureFile tL_secureFile = yvVar.b;
         tL_inputSecureFileLocation.id = tL_secureFile.id;
         tL_inputSecureFileLocation.access_hash = tL_secureFile.access_hash;
         this.T = tL_secureFile.dc_id;
@@ -2839,7 +2839,7 @@ public final class i7 {
         this.P0 = ".jpg";
     }
 
-    public i7(int i7, k20 k20Var) {
+    public i7(int i7, h20 h20Var) {
         this.g = 2;
         this.h = new y6(this, 0);
         this.n = 131072;
@@ -2852,24 +2852,24 @@ public final class i7 {
         this.f1 = new y6(this, 5);
         u();
         this.R = i7;
-        this.X = k20Var;
-        this.W = k20Var.b;
-        this.b0 = k20Var.d;
-        int i10 = np.s1(i7).O3;
+        this.X = h20Var;
+        this.W = h20Var.b;
+        this.b0 = h20Var.d;
+        int i10 = mp.u1(i7).Q3;
         this.T = i10;
         this.U = i10;
-        String H = w7.H(k20Var.e);
-        if (k20Var.e.startsWith("image/")) {
+        String H = w7.H(h20Var.e);
+        if (h20Var.e.startsWith("image/")) {
             this.b1 = 16777216;
-        } else if (k20Var.e.equals("audio/ogg")) {
+        } else if (h20Var.e.equals("audio/ogg")) {
             this.b1 = ConnectionsManager.FileTypeAudio;
-        } else if (k20Var.e.startsWith("video/")) {
+        } else if (h20Var.e.startsWith("video/")) {
             this.b1 = 33554432;
         } else {
             this.b1 = 67108864;
         }
         this.o0 = true;
-        this.P0 = fc.B(k20Var.a, H);
+        this.P0 = ec.B(h20Var.a, H);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:31:0x013d A[Catch: Exception -> 0x0087, TryCatch #0 {Exception -> 0x0087, blocks: (B:8:0x0050, B:11:0x0062, B:12:0x00e6, B:14:0x00f0, B:18:0x00fc, B:20:0x0106, B:22:0x0110, B:23:0x0118, B:25:0x0120, B:28:0x012a, B:29:0x0133, B:31:0x013d, B:32:0x0162, B:34:0x016a, B:39:0x0142, B:41:0x014c, B:43:0x0150, B:46:0x0159, B:47:0x015e, B:48:0x0131, B:50:0x008a, B:52:0x008e, B:54:0x00a5, B:55:0x00a9, B:57:0x00ba, B:61:0x00c4, B:59:0x00d3, B:62:0x00d6, B:64:0x00da, B:66:0x00de, B:68:0x00e2), top: B:7:0x0050 }] */
@@ -2894,8 +2894,8 @@ public final class i7 {
         this.Y = 0;
         this.F0 = new ArrayList();
         this.f1 = new y6(this, 5);
-        this.k = gj.K4(document);
-        if (document != null && !gj.N2(document)) {
+        this.k = fj.K4(document);
+        if (document != null && !fj.N2(document)) {
             "application/x-tgwallpattern".equals(document.mime_type);
         }
         u();
@@ -2965,7 +2965,7 @@ public final class i7 {
                         this.b1 = ConnectionsManager.FileTypeAudio;
                     } else {
                         String str = document.mime_type;
-                        if (!"video/mp4".equals(str) && (!gz.D0 || !"video/x-matroska".equals(str))) {
+                        if (!"video/mp4".equals(str) && (!bz.D0 || !"video/x-matroska".equals(str))) {
                             this.b1 = 67108864;
                         }
                         this.b1 = 33554432;

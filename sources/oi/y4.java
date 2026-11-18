@@ -1,262 +1,220 @@
 package oi;
 
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.xg0;
+import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public abstract class y4 {
-    public static Object a(Spanned spanned, int i7, int i10, Class cls) {
-        for (Object obj : spanned.getSpans(i7, Math.max(i7, i10), cls)) {
-            int spanStart = spanned.getSpanStart(obj);
-            int spanEnd = spanned.getSpanEnd(obj);
-            if (spanStart <= i7 && spanEnd >= i10) {
-                return obj;
+    public static ArrayList a(int i7, ArrayList arrayList) {
+        LinkedHashSet linkedHashSet = new LinkedHashSet();
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            b((TL_iv.PageBlock) obj, linkedHashSet);
+        }
+        ArrayList arrayList2 = new ArrayList(linkedHashSet.size());
+        mp u12 = mp.u1(i7);
+        Iterator it = linkedHashSet.iterator();
+        while (it.hasNext()) {
+            Long l10 = (Long) it.next();
+            l10.getClass();
+            TLRPC.User c22 = u12.c2(l10);
+            if (c22 != null) {
+                TLRPC.InputUser s12 = u12.s1(c22);
+                if (!(s12 instanceof TLRPC.TL_inputUserEmpty)) {
+                    arrayList2.add(s12);
+                }
             }
         }
-        return null;
+        return arrayList2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static ArrayList b(CharSequence charSequence) {
-        int i7;
-        boolean z10;
-        ArrayList arrayList = new ArrayList();
-        if (charSequence == null) {
-            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
-            pageblockparagraph.text = new TL_iv.textEmpty();
-            arrayList.add(pageblockparagraph);
-            return arrayList;
+    public static void b(TL_iv.PageBlock pageBlock, LinkedHashSet linkedHashSet) {
+        ArrayList<TL_iv.pageTableCell> arrayList;
+        if (pageBlock == null) {
+            return;
         }
-        Spanned spanned = charSequence instanceof Spanned ? (Spanned) charSequence : null;
-        ArrayList arrayList2 = new ArrayList();
-        arrayList2.add(0);
-        for (int i10 = 0; i10 < charSequence.length(); i10++) {
-            if (charSequence.charAt(i10) == '\n') {
-                arrayList2.add(Integer.valueOf(i10 + 1));
+        d(pageBlock.text, linkedHashSet);
+        TL_iv.PageCaption pageCaption = pageBlock.caption;
+        if (pageCaption != null) {
+            d(pageCaption.text, linkedHashSet);
+            d(pageCaption.credit, linkedHashSet);
+        }
+        int i7 = 0;
+        if (pageBlock instanceof TL_iv.pageBlockButtonRow) {
+            ArrayList<TL_keyboard.PageButton> arrayList2 = ((TL_iv.pageBlockButtonRow) pageBlock).buttons;
+            if (arrayList2 != null) {
+                int size = arrayList2.size();
+                while (i7 < size) {
+                    TL_keyboard.PageButton pageButton = arrayList2.get(i7);
+                    i7++;
+                    TL_keyboard.PageButton pageButton2 = pageButton;
+                    if (pageButton2 != null) {
+                        TL_keyboard.InlineButtonType inlineButtonType = pageButton2.type;
+                        if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile) {
+                            long j3 = ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id;
+                            if (j3 != 0) {
+                                linkedHashSet.add(Long.valueOf(j3));
+                            }
+                        }
+                        d(pageButton2.text, linkedHashSet);
+                    }
+                }
+                return;
             }
+            return;
         }
-        int size = arrayList2.size();
-        int[] iArr = new int[size];
-        for (int i11 = 0; i11 < size; i11++) {
-            iArr[i11] = ((Integer) arrayList2.get(i11)).intValue();
+        if (pageBlock instanceof TL_iv.pageBlockBlockquote) {
+            d(((TL_iv.pageBlockBlockquote) pageBlock).caption, linkedHashSet);
+            return;
         }
-        int length = charSequence.length();
-        int i12 = 0;
-        while (i12 < size) {
-            int i13 = iArr[i12];
-            i12++;
-            boolean z11 = true;
-            int i14 = i12 < size ? iArr[i12] - 1 : length;
-            qi.g gVar = spanned == null ? null : (qi.g) a(spanned, i13, i14, qi.g.class);
-            xg0 xg0Var = (spanned == null || gVar != null) ? 0 : (xg0) a(spanned, i13, i14, xg0.class);
-            if (gVar == null && xg0Var == 0) {
-                CharSequence subSequence = charSequence.subSequence(i13, i14);
-                TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
-                pageblockparagraph2.text = a6.f(subSequence);
-                arrayList.add(pageblockparagraph2);
+        if (pageBlock instanceof TL_iv.pageBlockPullquote) {
+            d(((TL_iv.pageBlockPullquote) pageBlock).caption, linkedHashSet);
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockBlockquoteBlocks) {
+            TL_iv.pageBlockBlockquoteBlocks pageblockblockquoteblocks = (TL_iv.pageBlockBlockquoteBlocks) pageBlock;
+            d(pageblockblockquoteblocks.caption, linkedHashSet);
+            c(pageblockblockquoteblocks.blocks, linkedHashSet);
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockDetails) {
+            TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) pageBlock;
+            d(pageblockdetails.title, linkedHashSet);
+            c(pageblockdetails.blocks, linkedHashSet);
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockList) {
+            ArrayList<TL_iv.PageListItem> arrayList3 = ((TL_iv.pageBlockList) pageBlock).items;
+            if (arrayList3 != null) {
+                int size2 = arrayList3.size();
+                while (i7 < size2) {
+                    TL_iv.PageListItem pageListItem = arrayList3.get(i7);
+                    i7++;
+                    TL_iv.PageListItem pageListItem2 = pageListItem;
+                    if (pageListItem2 instanceof TL_iv.TL_pageListItemText) {
+                        d(((TL_iv.TL_pageListItemText) pageListItem2).text, linkedHashSet);
+                    } else if (pageListItem2 instanceof TL_iv.TL_pageListItemBlocks) {
+                        c(((TL_iv.TL_pageListItemBlocks) pageListItem2).blocks, linkedHashSet);
+                    }
+                }
+                return;
+            }
+            return;
+        }
+        if (pageBlock instanceof TL_iv.pageBlockOrderedList) {
+            ArrayList<TL_iv.PageListOrderedItem> arrayList4 = ((TL_iv.pageBlockOrderedList) pageBlock).items;
+            if (arrayList4 != null) {
+                int size3 = arrayList4.size();
+                while (i7 < size3) {
+                    TL_iv.PageListOrderedItem pageListOrderedItem = arrayList4.get(i7);
+                    i7++;
+                    TL_iv.PageListOrderedItem pageListOrderedItem2 = pageListOrderedItem;
+                    if (pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemText) {
+                        d(((TL_iv.TL_pageListOrderedItemText) pageListOrderedItem2).text, linkedHashSet);
+                    } else if (pageListOrderedItem2 instanceof TL_iv.TL_pageListOrderedItemBlocks) {
+                        c(((TL_iv.TL_pageListOrderedItemBlocks) pageListOrderedItem2).blocks, linkedHashSet);
+                    }
+                }
+                return;
+            }
+            return;
+        }
+        if (!(pageBlock instanceof TL_iv.pageBlockTable)) {
+            if (pageBlock instanceof TL_iv.pageBlockCollage) {
+                c(((TL_iv.pageBlockCollage) pageBlock).items, linkedHashSet);
+                return;
+            }
+            if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
+                c(((TL_iv.pageBlockSlideshow) pageBlock).items, linkedHashSet);
+                return;
+            }
+            if (pageBlock instanceof TL_iv.pageBlockEmbedPost) {
+                c(((TL_iv.pageBlockEmbedPost) pageBlock).blocks, linkedHashSet);
+                return;
+            } else if (pageBlock instanceof TL_iv.pageBlockCover) {
+                b(((TL_iv.pageBlockCover) pageBlock).cover, linkedHashSet);
+                return;
             } else {
-                qi.g gVar2 = gVar != null ? gVar : xg0Var;
-                while (true) {
-                    if (i12 >= size) {
-                        i7 = length;
-                        z10 = z11;
-                        break;
-                    }
-                    int i15 = iArr[i12];
-                    z10 = z11;
-                    int i16 = i12 + 1;
-                    if (i16 < size) {
-                        i7 = length;
-                        length = iArr[i16] - 1;
-                    } else {
-                        i7 = length;
-                    }
-                    if ((gVar != null ? a(spanned, i15, length, qi.g.class) : a(spanned, i15, length, xg0.class)) != gVar2) {
-                        break;
-                    }
-                    i14 = length;
-                    i12 = i16;
-                    z11 = z10;
-                    length = i7;
+                if (pageBlock instanceof TL_iv.pageBlockRelatedArticles) {
+                    d(((TL_iv.pageBlockRelatedArticles) pageBlock).title, linkedHashSet);
+                    return;
                 }
-                CharSequence subSequence2 = charSequence.subSequence(i13, i14);
-                if (gVar != null) {
-                    TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
-                    pageblockpreformatted.text = a6.f(subSequence2);
-                    String str = gVar.a;
-                    if (str == null) {
-                        str = "";
-                    }
-                    pageblockpreformatted.language = str;
-                    arrayList.add(pageblockpreformatted);
-                } else {
-                    TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-                    pageblockblockquote.text = a6.f(subSequence2);
-                    pageblockblockquote.caption = new TL_iv.textEmpty();
-                    pageblockblockquote.collapsed = (xg0Var == 0 || !xg0Var.e) ? false : z10;
-                    arrayList.add(pageblockblockquote);
-                }
-                length = i7;
+                return;
             }
         }
-        if (arrayList.isEmpty()) {
-            TL_iv.pageBlockParagraph pageblockparagraph3 = new TL_iv.pageBlockParagraph();
-            pageblockparagraph3.text = new TL_iv.textEmpty();
-            arrayList.add(pageblockparagraph3);
+        TL_iv.pageBlockTable pageblocktable = (TL_iv.pageBlockTable) pageBlock;
+        d(pageblocktable.title, linkedHashSet);
+        ArrayList<TL_iv.pageTableRow> arrayList5 = pageblocktable.rows;
+        if (arrayList5 != null) {
+            int size4 = arrayList5.size();
+            int i10 = 0;
+            while (i10 < size4) {
+                TL_iv.pageTableRow pagetablerow = arrayList5.get(i10);
+                i10++;
+                TL_iv.pageTableRow pagetablerow2 = pagetablerow;
+                if (pagetablerow2 != null && (arrayList = pagetablerow2.cells) != null) {
+                    int size5 = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size5) {
+                        TL_iv.pageTableCell pagetablecell = arrayList.get(i11);
+                        i11++;
+                        TL_iv.pageTableCell pagetablecell2 = pagetablecell;
+                        if (pagetablecell2 != null) {
+                            d(pagetablecell2.text, linkedHashSet);
+                        }
+                    }
+                }
+            }
         }
-        return arrayList;
     }
 
-    public static boolean c(TL_iv.RichText richText) {
-        if (richText == null || (richText instanceof TL_iv.textEmpty) || (richText instanceof TL_iv.textPlain) || (richText instanceof TL_iv.textCustomEmoji)) {
-            return false;
+    public static void c(ArrayList arrayList, LinkedHashSet linkedHashSet) {
+        if (arrayList == null) {
+            return;
         }
-        if (!(richText instanceof TL_iv.textConcat)) {
-            if ((richText instanceof TL_iv.textMarked) || (richText instanceof TL_iv.textSubscript) || (richText instanceof TL_iv.textSuperscript) || (richText instanceof TL_iv.textMath) || (richText instanceof TL_iv.textButton)) {
-                return true;
-            }
-            return c(richText.text);
-        }
-        ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
-            TL_iv.RichText richText2 = arrayList.get(i7);
+            Object obj = arrayList.get(i7);
             i7++;
-            if (c(richText2)) {
-                return true;
-            }
+            b((TL_iv.PageBlock) obj, linkedHashSet);
         }
-        return false;
     }
 
-    public static boolean d(ArrayList arrayList, HashMap hashMap) {
-        boolean c10;
-        TL_iv.RichText richText;
+    public static void d(TL_iv.RichText richText, LinkedHashSet linkedHashSet) {
+        if (richText == null) {
+            return;
+        }
+        if (richText instanceof TL_iv.textButton) {
+            TL_keyboard.InlineButtonType inlineButtonType = ((TL_iv.textButton) richText).type;
+            if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile) {
+                long j3 = ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id;
+                if (j3 != 0) {
+                    linkedHashSet.add(Long.valueOf(j3));
+                }
+            }
+        } else if (richText instanceof TL_iv.textDiff) {
+            d(((TL_iv.textDiff) richText).old_text, linkedHashSet);
+        }
+        d(richText.text, linkedHashSet);
+        ArrayList<TL_iv.RichText> arrayList = richText.texts;
         if (arrayList != null) {
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
-                Object obj = arrayList.get(i7);
+                TL_iv.RichText richText2 = arrayList.get(i7);
                 i7++;
-                a aVar = (a) obj;
-                if (aVar == null) {
-                    c10 = false;
-                } else {
-                    ArrayList arrayList2 = aVar.k;
-                    if (!aVar.i && aVar.c <= 0) {
-                        TL_iv.PageBlock pageBlock = aVar.b;
-                        if (!(pageBlock instanceof TL_iv.pageBlockPullquote)) {
-                            boolean z10 = pageBlock instanceof TL_iv.pageBlockBlockquote;
-                            if (arrayList2.size() + (z10 ? 1 : 0) <= 1 && (!z10 || (richText = ((TL_iv.pageBlockBlockquote) pageBlock).caption) == null || (richText instanceof TL_iv.textEmpty) || a6.l(richText).isEmpty())) {
-                                if (hashMap != null && !arrayList2.isEmpty()) {
-                                    int size2 = arrayList2.size();
-                                    int i10 = 0;
-                                    while (i10 < size2) {
-                                        Object obj2 = arrayList2.get(i10);
-                                        i10++;
-                                        TL_iv.RichText richText2 = (TL_iv.RichText) hashMap.get((Long) obj2);
-                                        if (richText2 != null && !(richText2 instanceof TL_iv.textEmpty) && !a6.l(richText2).isEmpty()) {
-                                            break;
-                                        }
-                                    }
-                                }
-                                if ((pageBlock instanceof TL_iv.pageBlockParagraph) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || z10) {
-                                    c10 = c(pageBlock.text);
-                                }
-                            }
-                        }
-                    }
-                    c10 = true;
-                }
-                if (c10) {
-                    return true;
-                }
+                d(richText2, linkedHashSet);
             }
         }
-        return false;
-    }
-
-    public static SpannableStringBuilder e(a aVar, boolean z10) {
-        SpannableStringBuilder r10;
-        if (z10) {
-            TL_iv.PageBlock pageBlock = aVar.b;
-            r10 = a6.r(pageBlock != null ? pageBlock.text : null, pageBlock, false);
-        } else {
-            TL_iv.PageBlock pageBlock2 = aVar.b;
-            r10 = a6.r(pageBlock2 != null ? pageBlock2.text : null, pageBlock2, true);
-        }
-        if (!(aVar.b instanceof TL_iv.pageBlockPreformatted)) {
-            return r10;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(r10);
-        spannableStringBuilder.setSpan(new qi.g(((TL_iv.pageBlockPreformatted) aVar.b).language, spannableStringBuilder.toString(), true), 0, spannableStringBuilder.length(), 33);
-        return spannableStringBuilder;
-    }
-
-    public static SpannableStringBuilder f(List list, boolean z10) {
-        ArrayList arrayList = new ArrayList();
-        int i7 = 0;
-        while (list != null && i7 < list.size()) {
-            a aVar = (a) list.get(i7);
-            if (aVar.k.isEmpty()) {
-                TL_iv.PageBlock pageBlock = aVar.b;
-                if ((pageBlock instanceof TL_iv.pageBlockBlockquote) || (pageBlock instanceof TL_iv.pageBlockPullquote)) {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(z10 ? a6.r(pageBlock.text, pageBlock, false) : a6.r(pageBlock.text, pageBlock, true));
-                    TL_iv.PageBlock pageBlock2 = aVar.b;
-                    boolean z11 = (pageBlock2 instanceof TL_iv.pageBlockBlockquote) && ((TL_iv.pageBlockBlockquote) pageBlock2).collapsed;
-                    if (spannableStringBuilder.length() > 0) {
-                        xg0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
-                    }
-                    arrayList.add(spannableStringBuilder);
-                } else {
-                    arrayList.add(e(aVar, z10));
-                }
-                i7++;
-            } else {
-                long longValue = ((Long) aVar.k.get(0)).longValue();
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                int i10 = i7;
-                while (i10 < list.size() && !((a) list.get(i10)).k.isEmpty() && ((Long) ((a) list.get(i10)).k.get(0)).longValue() == longValue) {
-                    if (i10 > i7) {
-                        spannableStringBuilder2.append('\n');
-                    }
-                    spannableStringBuilder2.append((CharSequence) e((a) list.get(i10), z10));
-                    i10++;
-                }
-                if (spannableStringBuilder2.length() > 0) {
-                    xg0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
-                }
-                arrayList.add(spannableStringBuilder2);
-                i7 = i10;
-            }
-        }
-        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (i11 > 0) {
-                spannableStringBuilder3.append('\n');
-            }
-            spannableStringBuilder3.append((CharSequence) arrayList.get(i11));
-        }
-        return spannableStringBuilder3;
-    }
-
-    public static SpannableStringBuilder g(ArrayList arrayList) {
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(f(arrayList, true));
-        int length = spannableStringBuilder.length();
-        a6.o(spannableStringBuilder, 0, length, 65536, false, null);
-        a6.o(spannableStringBuilder, 0, length, TLObject.FLAG_14, false, null);
-        a6.o(spannableStringBuilder, 0, length, 32768, false, null);
-        for (q qVar : (q[]) spannableStringBuilder.getSpans(0, length, q.class)) {
-            spannableStringBuilder.removeSpan(qVar);
-        }
-        return spannableStringBuilder;
     }
 }

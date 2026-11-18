@@ -1,24 +1,28 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes4.dex */
-public final class f0 {
-    public String a;
-    public i0 b;
-    public byte[] c;
-    public final /* synthetic */ l0 d;
+import org.telegram.messenger.x10;
+import org.telegram.ui.PasscodeActivity;
 
-    public f0(l0 l0Var) {
-        this.d = l0Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class f0 extends PasscodeActivity {
+    public final /* synthetic */ boolean[] X;
+    public final /* synthetic */ x10 Y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f0(boolean[] zArr, x10 x10Var) {
+        super(3);
+        this.X = zArr;
+        this.Y = x10Var;
     }
 
-    public final void a() {
-        i0 i0Var = this.b;
-        this.b = null;
-        try {
-            this.d.U(i0Var, false, new e0(this, 0));
-        } finally {
-            i0Var.close();
+    @Override // org.telegram.ui.PasscodeActivity, org.telegram.ui.ActionBar.h2
+    public final void onFragmentDestroy() {
+        x10 x10Var;
+        super.onFragmentDestroy();
+        if (this.X[0] || (x10Var = this.Y) == null) {
+            return;
         }
+        x10Var.a("PASSCODE_FAILED");
     }
 }

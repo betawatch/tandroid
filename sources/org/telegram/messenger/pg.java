@@ -1,59 +1,146 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class pg implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ si b;
-    public final /* synthetic */ ur c;
-    public final /* synthetic */ TLRPC.Message d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c1 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ pg(si siVar, ur urVar, TLRPC.Message message) {
-        this.b = siVar;
-        this.c = urVar;
-        this.d = message;
+    public /* synthetic */ pg(c1 c1Var, Object obj, boolean z10, long j3, int i7) {
+        this.a = i7;
+        this.b = c1Var;
+        this.e = obj;
+        this.c = z10;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        TLRPC.Message message = this.d;
-        ur urVar = this.c;
-        si siVar = this.b;
+        long j3 = this.d;
+        boolean z10 = this.c;
+        Object obj = this.e;
+        c1 c1Var = this.b;
+        int i10 = 0;
         switch (i7) {
             case 0:
-                siVar.getNotificationCenter().k(69, message, urVar);
+                ri riVar = (ri) c1Var;
+                if (((ArrayList) obj) != null && j3 != 0) {
+                    riVar.q0[z10 ? 1 : 0] = j3;
+                }
+                riVar.x0[z10 ? 1 : 0] = false;
+                riVar.N0(z10, false);
+                break;
+            case 1:
+                ri riVar2 = (ri) c1Var;
+                TLObject tLObject = (TLObject) obj;
+                boolean z11 = tLObject instanceof TLRPC.TL_messages_featuredStickers;
+                boolean z12 = this.c;
+                if (!z11) {
+                    boolean z13 = tLObject instanceof TLRPC.TL_messages_featuredStickersNotModified;
+                    long j10 = this.d;
+                    if (!z13) {
+                        riVar2.w1(z12, null, null, false, false, (int) (System.currentTimeMillis() / 1000), j10);
+                        break;
+                    } else {
+                        int currentTimeMillis = (int) (System.currentTimeMillis() / 1000);
+                        g0.g3(new sf(riVar2, z12, currentTimeMillis, i10));
+                        riVar2.L1(z12, null, null, currentTimeMillis, j10, false);
+                        break;
+                    }
+                } else {
+                    TLRPC.TL_messages_featuredStickers tL_messages_featuredStickers = (TLRPC.TL_messages_featuredStickers) tLObject;
+                    riVar2.w1(z12, tL_messages_featuredStickers.sets, tL_messages_featuredStickers.unread, tL_messages_featuredStickers.premium, false, (int) (System.currentTimeMillis() / 1000), tL_messages_featuredStickers.hash);
+                    break;
+                }
+            case 2:
+                mp mpVar = (mp) c1Var;
+                mpVar.A1.k((a0.h) obj, j3);
+                if (z10) {
+                    mpVar.B1.delete(j3);
+                    mpVar.Y2(j3, false);
+                    mpVar.getNotificationCenter().k(ks.u1, Long.valueOf(j3));
+                    break;
+                }
+                break;
+            case 3:
+                mp mpVar2 = (mp) c1Var;
+                TLObject tLObject2 = (TLObject) obj;
+                if (!(tLObject2 instanceof TLRPC.messages_Chats)) {
+                    if (tLObject2 instanceof TLRPC.Users) {
+                        ArrayList<TLRPC.User> arrayList = ((TLRPC.Users) tLObject2).users;
+                        mpVar2.f4(arrayList, false);
+                        no noVar = new no();
+                        noVar.a = z10;
+                        noVar.b.addAll(arrayList);
+                        if (tLObject2 instanceof TLRPC.TL_usersSlice) {
+                            noVar.c = Math.max(0, ((TLRPC.TL_usersSlice) tLObject2).count - arrayList.size());
+                        } else if (!mpVar2.getUserConfig().q()) {
+                            boolean z14 = s2.a;
+                        }
+                        mpVar2.e8.put(Long.valueOf(j3), noVar);
+                        mpVar2.getNotificationCenter().k(203, Long.valueOf(j3));
+                        break;
+                    }
+                } else {
+                    ArrayList<TLRPC.Chat> arrayList2 = ((TLRPC.messages_Chats) tLObject2).chats;
+                    mpVar2.Z3(arrayList2, false);
+                    no noVar2 = new no();
+                    noVar2.a = z10;
+                    noVar2.b.addAll(arrayList2);
+                    if (tLObject2 instanceof TLRPC.TL_messages_chatsSlice) {
+                        noVar2.c = Math.max(0, ((TLRPC.TL_messages_chatsSlice) tLObject2).count - arrayList2.size());
+                    } else if (!mpVar2.getUserConfig().q()) {
+                        boolean z15 = s2.a;
+                    }
+                    mpVar2.e8.put(Long.valueOf(j3), noVar2);
+                    mpVar2.getNotificationCenter().k(203, Long.valueOf(j3));
+                    break;
+                }
+                break;
+            case 4:
+                mp mpVar3 = (mp) c1Var;
+                ArrayList arrayList3 = (ArrayList) obj;
+                if (z10) {
+                    mpVar3.getNotificationCenter().k(2, 64);
+                }
+                mpVar3.x5(0, j3, arrayList3);
+                mpVar3.getNotificationCenter().k(3, new Object[0]);
                 break;
             default:
-                a0.h hVar = siVar.z1;
-                HashMap hashMap = siVar.y1;
-                TLRPC.Message message2 = (TLRPC.Message) hashMap.get(urVar);
-                hashMap.put(urVar, message);
-                a0.h hVar2 = siVar.x1;
-                ArrayList arrayList = (ArrayList) hVar2.f(urVar.a);
-                if (arrayList == null) {
-                    arrayList = new ArrayList();
-                }
-                arrayList.add(message);
-                hVar2.k(arrayList, urVar.a);
-                if (gj.v0(message) == 0) {
-                    if (message2 != null) {
-                        hVar.e(message2.id);
-                    }
-                    hVar.k(urVar, message.id);
-                }
-                siVar.getNotificationCenter().k(69, message, urVar);
+                ((tr) c1Var).getMessagesController().J4(null, (org.telegram.ui.ActionBar.e6) obj, this.c, this.d);
                 break;
         }
     }
 
-    public /* synthetic */ pg(si siVar, TLRPC.Message message, ur urVar) {
-        this.b = siVar;
-        this.d = message;
-        this.c = urVar;
+    public /* synthetic */ pg(ri riVar, ArrayList arrayList, long j3, boolean z10) {
+        this.a = 0;
+        this.b = riVar;
+        this.e = arrayList;
+        this.d = j3;
+        this.c = z10;
+    }
+
+    public /* synthetic */ pg(mp mpVar, long j3, a0.h hVar, boolean z10) {
+        this.a = 2;
+        this.b = mpVar;
+        this.d = j3;
+        this.e = hVar;
+        this.c = z10;
+    }
+
+    public /* synthetic */ pg(mp mpVar, boolean z10, long j3, ArrayList arrayList) {
+        this.a = 4;
+        this.b = mpVar;
+        this.c = z10;
+        this.d = j3;
+        this.e = arrayList;
     }
 }

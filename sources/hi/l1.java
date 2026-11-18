@@ -1,13 +1,13 @@
 package hi;
 
 import android.content.Context;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.mw;
-import org.telegram.ui.c01;
-import org.telegram.ui.n11;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.sw;
+import org.telegram.ui.g01;
+import org.telegram.ui.r11;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class l1 extends pi.l {
     public final /* synthetic */ int q;
     public final /* synthetic */ Object r;
@@ -19,17 +19,17 @@ public final class l1 extends pi.l {
         this.r = obj;
     }
 
-    @Override // pi.l, v4.a1
+    @Override // pi.l, v4.b1
     public void e() {
         switch (this.q) {
             case 0:
                 ((o1) this.r).j3 = true;
                 break;
             case 1:
-                ((ly) this.r).g0 = true;
+                ((ry) this.r).g0 = true;
                 break;
             case 4:
-                ((n11) this.r).y1 = true;
+                ((r11) this.r).y1 = true;
                 break;
         }
     }
@@ -41,19 +41,19 @@ public final class l1 extends pi.l {
                 ((o1) this.r).j3 = false;
                 break;
             case 1:
-                ((ly) this.r).g0 = false;
+                ((ry) this.r).g0 = false;
                 break;
             case 2:
-                ((mw) this.r).Q.g0 = false;
+                ((sw) this.r).Q.g0 = false;
                 break;
             case 3:
-                ((c01) this.r).R.y1 = false;
+                ((g01) this.r).R.y1 = false;
                 break;
             case 4:
-                ((n11) this.r).y1 = false;
+                ((r11) this.r).y1 = false;
                 break;
             default:
-                ((c01) this.r).R.y1 = false;
+                ((g01) this.r).R.y1 = false;
                 break;
         }
     }

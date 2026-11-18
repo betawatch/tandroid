@@ -8,10 +8,10 @@ import android.graphics.Rect;
 import android.graphics.Region;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import bi.x1;
-import org.telegram.ui.Components.fo;
+import bi.r2;
+import org.telegram.ui.Components.mo;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h extends Drawable {
     public final /* synthetic */ int a;
@@ -281,9 +281,9 @@ public abstract class h extends Drawable {
         this.a = 1;
         this.b = new Paint(1);
         if (view != null) {
-            view.addOnAttachStateChangeListener(new x1(this, 13));
+            view.addOnAttachStateChangeListener(new r2(this, 13));
             if (view.isAttachedToWindow()) {
-                view.post(new fo(this, 3));
+                view.post(new mo(this, 3));
             }
         }
     }

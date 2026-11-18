@@ -1,6 +1,6 @@
 package y2;
 
-import a8.ja;
+import a8.la;
 import android.util.SparseArray;
 import e2.u;
 import f3.b0;
@@ -10,7 +10,7 @@ import f3.q;
 import f3.s;
 import sg.h0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements q {
     public static final s w = new s();
@@ -98,7 +98,7 @@ public final class e implements q {
         SparseArray sparseArray = this.d;
         c cVar = (c) sparseArray.get(i7);
         if (cVar == null) {
-            ja.p(this.s == null);
+            la.p(this.s == null);
             cVar = new c(i7, i10, i10 == this.b ? this.c : null, this.e);
             h0 h0Var = this.h;
             long j3 = this.n;
@@ -119,7 +119,7 @@ public final class e implements q {
     }
 
     @Override // f3.q
-    public final void f(b0 b0Var) {
+    public final void j(b0 b0Var) {
         this.r = b0Var;
     }
 }

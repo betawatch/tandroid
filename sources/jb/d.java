@@ -2,7 +2,7 @@ package jb;
 
 import android.os.Build;
 import android.util.Log;
-import c8.ee;
+import c8.he;
 import gb.h1;
 import gb.u;
 import gb.x;
@@ -11,7 +11,7 @@ import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d implements q {
     public static final int g;
@@ -25,7 +25,7 @@ public final class d implements q {
 
     static {
         int i7 = yd.a.d;
-        g = (int) yd.a.d(ee.c(24, yd.c.f), yd.c.d);
+        g = (int) yd.a.d(he.c(24, yd.c.f), yd.c.d);
         h = new xd.c("com/google/firebase/sessions//");
     }
 
@@ -88,7 +88,7 @@ public final class d implements q {
                     gd.k kVar = gd.k.a;
                     id.c cVar2 = null;
                     if (r42 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         ie.d dVar = this.f;
                         if (!dVar.c() && !pVar.b()) {
                             return kVar;
@@ -107,7 +107,7 @@ public final class d implements q {
                             }
                             aVar = bVar.a;
                             try {
-                                af.b.c(obj);
+                                b7.h.b(obj);
                                 ((ie.d) aVar).f(null);
                                 return kVar;
                             } catch (Throwable th2) {
@@ -117,7 +117,7 @@ public final class d implements q {
                             }
                         }
                         aVar2 = bVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         str = ((x) obj).a;
                         if (!str.equals("")) {
                             Log.w("FirebaseSessions", "Error getting Firebase Installation ID. Skipping this Session Event.");
@@ -152,7 +152,7 @@ public final class d implements q {
                         return aVar3;
                     }
                     aVar2 = bVar.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     if (pVar.b()) {
                         Log.d("FirebaseSessions", "Remote settings cache not expired. Using cached values.");
                         ((ie.d) aVar2).f(null);
@@ -195,7 +195,7 @@ public final class d implements q {
             return null;
         }
         int i7 = yd.a.d;
-        return new yd.a(ee.c(num.intValue(), yd.c.d));
+        return new yd.a(he.c(num.intValue(), yd.c.d));
     }
 
     @Override // jb.q

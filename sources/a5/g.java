@@ -2,9 +2,9 @@ package a5;
 
 import android.animation.TypeEvaluator;
 import com.google.android.gms.internal.vision.e2;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements TypeEvaluator {
     public static final g a = new g();
@@ -12,19 +12,19 @@ public final class g implements TypeEvaluator {
     @Override // android.animation.TypeEvaluator
     public final Object evaluate(float f10, Object obj, Object obj2) {
         int intValue = ((Integer) obj).intValue();
-        float f11 = ((intValue >> 24) & ns.e4) / 255.0f;
-        float f12 = ((intValue >> 16) & ns.e4) / 255.0f;
-        float f13 = ((intValue >> 8) & ns.e4) / 255.0f;
+        float f11 = ((intValue >> 24) & ks.e4) / 255.0f;
+        float f12 = ((intValue >> 16) & ks.e4) / 255.0f;
+        float f13 = ((intValue >> 8) & ks.e4) / 255.0f;
         int intValue2 = ((Integer) obj2).intValue();
-        float f14 = ((intValue2 >> 24) & ns.e4) / 255.0f;
-        float f15 = ((intValue2 >> 16) & ns.e4) / 255.0f;
-        float f16 = ((intValue2 >> 8) & ns.e4) / 255.0f;
+        float f14 = ((intValue2 >> 24) & ks.e4) / 255.0f;
+        float f15 = ((intValue2 >> 16) & ks.e4) / 255.0f;
+        float f16 = ((intValue2 >> 8) & ks.e4) / 255.0f;
         float pow = (float) Math.pow(f12, 2.2d);
         float pow2 = (float) Math.pow(f13, 2.2d);
-        float pow3 = (float) Math.pow((intValue & ns.e4) / 255.0f, 2.2d);
+        float pow3 = (float) Math.pow((intValue & ks.e4) / 255.0f, 2.2d);
         float pow4 = (float) Math.pow(f15, 2.2d);
         float pow5 = (float) Math.pow(f16, 2.2d);
-        float pow6 = (float) Math.pow((intValue2 & ns.e4) / 255.0f, 2.2d);
+        float pow6 = (float) Math.pow((intValue2 & ks.e4) / 255.0f, 2.2d);
         float z10 = e2.z(f14, f11, f10, f11);
         float z11 = e2.z(pow4, pow, f10, pow);
         float z12 = e2.z(pow5, pow2, f10, pow2);

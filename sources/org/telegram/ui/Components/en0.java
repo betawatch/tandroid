@@ -1,46 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class en0 extends LinearLayout {
-    public final jt0 a;
-    public final TextView b;
-    public final TextView c;
+public final /* synthetic */ class en0 implements r1.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ on0 b;
 
-    public en0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        setLayoutParams(new v4.p0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int L = org.telegram.messenger.g0.L(14.0f);
-        int i7 = L / 2;
-        setPadding(L, i7, L, i7);
-        jt0 jt0Var = new jt0(context);
-        this.a = jt0Var;
-        addView(jt0Var, c8.ja.c(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, c8.ja.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i10 = org.telegram.ui.ActionBar.j6.E8;
-        org.telegram.ui.ActionBar.q6.U(textView, i10, e6Var);
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        org.telegram.ui.ActionBar.q6.V(textView2, org.telegram.ui.ActionBar.q6.g(i10, org.telegram.messenger.ns.n1), e6Var);
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    public /* synthetic */ en0(on0 on0Var, int i7) {
+        this.a = i7;
+        this.b = on0Var;
+    }
+
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                this.b.o.setScaleX(1.0f / f10);
+                break;
+            case 1:
+                this.b.o.setScaleY(1.0f / f10);
+                break;
+            case 2:
+                this.b.o.setScaleX(1.0f / f10);
+                break;
+            default:
+                this.b.o.setScaleY(1.0f / f10);
+                break;
+        }
     }
 }

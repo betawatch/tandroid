@@ -2,36 +2,37 @@ package jg;
 
 import android.content.Context;
 import android.text.style.CharacterStyle;
+import hi.u5;
+import hi.w4;
 import java.util.ArrayList;
 import java.util.HashMap;
-import ki.i4;
-import ki.z3;
-import oi.c5;
-import oi.k5;
-import oi.s5;
+import ki.d4;
+import ki.u3;
+import oi.d5;
+import oi.l5;
 import oi.t5;
-import oi.y5;
+import oi.z5;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.d5;
-import org.telegram.messenger.g5;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.si;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.f5;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i5;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.h9;
+import org.telegram.ui.Cells.i9;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.Wallet.a6;
-import org.telegram.ui.Wallet.c6;
-import org.telegram.ui.Wallet.z5;
-import org.telegram.ui.an;
+import org.telegram.ui.Wallet.p6;
+import org.telegram.ui.Wallet.q6;
+import org.telegram.ui.Wallet.s6;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
@@ -79,10 +80,10 @@ public final /* synthetic */ class o1 implements Runnable {
                 int length = lowerCase.length();
                 int i14 = this.b;
                 if (length == 0) {
-                    org.telegram.messenger.g0.h3(new ai.g1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
+                    org.telegram.messenger.g0.g3(new ai.g1(s1Var, i14, new ArrayList(), new ArrayList(), s1Var.I, 5));
                     break;
                 } else {
-                    String S0 = hd.E0().S0(lowerCase, true, false);
+                    String S0 = gd.E0().S0(lowerCase, true, false);
                     if (lowerCase.equals(S0) || S0.length() == 0) {
                         S0 = null;
                     }
@@ -99,23 +100,23 @@ public final /* synthetic */ class o1 implements Runnable {
                     String str2 = null;
                     while (i16 < arrayList2.size()) {
                         String[] strArr2 = strArr;
-                        TLRPC.User a22 = np.s1(i12).a2(Long.valueOf(((TLRPC.TL_contact) arrayList2.get(i16)).user_id));
-                        if (s1Var.w || !a22.self) {
+                        TLRPC.User c22 = mp.u1(i12).c2(Long.valueOf(((TLRPC.TL_contact) arrayList2.get(i16)).user_id));
+                        if (s1Var.w || !c22.self) {
                             String[] strArr3 = new String[3];
                             i7 = i12;
-                            strArr3[0] = g5.m(0, a22.first_name, a22.last_name).toLowerCase();
+                            strArr3[0] = i5.m(0, c22.first_name, c22.last_name).toLowerCase();
                             arrayList = arrayList2;
-                            String S02 = hd.E0().S0(strArr3[0], true, false);
+                            String S02 = gd.E0().S0(strArr3[0], true, false);
                             strArr3[1] = S02;
                             if (strArr3[0].equals(S02)) {
                                 strArr3[1] = str2;
                             }
-                            if (q10.z(a22)) {
-                                strArr3[2] = hd.M0(2131746266, str2).toLowerCase();
+                            if (o10.A(c22)) {
+                                strArr3[2] = gd.M0(2131746071, str2).toLowerCase();
                             } else {
                                 String str3 = str2;
-                                if (a22.self) {
-                                    strArr3[2] = hd.M0(2131745901, str3).toLowerCase();
+                                if (c22.self) {
+                                    strArr3[2] = gd.M0(2131745706, str3).toLowerCase();
                                 }
                             }
                             char c11 = 0;
@@ -124,20 +125,20 @@ public final /* synthetic */ class o1 implements Runnable {
                                 char c12 = c11;
                                 for (int i18 = 0; i18 < 3; i18++) {
                                     String str5 = strArr3[i18];
-                                    if (str5 != null && (str5.startsWith(str4) || i5.c.A(" ", str4, str5))) {
+                                    if (str5 != null && (str5.startsWith(str4) || i5.c.B(" ", str4, str5))) {
                                         c10 = 1;
-                                        String n10 = q10.n(a22);
-                                        c11 = (c10 == 0 || n10 == null || !n10.startsWith(str4)) ? c10 : (char) 2;
+                                        String o4 = o10.o(c22);
+                                        c11 = (c10 == 0 || o4 == null || !o4.startsWith(str4)) ? c10 : (char) 2;
                                         if (c11 == 0) {
                                             z10 = true;
                                             if (c11 == 1) {
-                                                arrayList4.add(org.telegram.messenger.g0.r0(a22.first_name, a22.last_name, str4));
+                                                arrayList4.add(org.telegram.messenger.g0.r0(c22.first_name, c22.last_name, str4));
                                                 str = null;
                                             } else {
                                                 str = null;
-                                                arrayList4.add(org.telegram.messenger.g0.r0("@" + q10.n(a22), null, "@" + str4));
+                                                arrayList4.add(org.telegram.messenger.g0.r0("@" + o10.o(c22), null, "@" + str4));
                                             }
-                                            arrayList3.add(a22);
+                                            arrayList3.add(c22);
                                             i16++;
                                             str2 = str;
                                             arrayList2 = arrayList;
@@ -147,7 +148,7 @@ public final /* synthetic */ class o1 implements Runnable {
                                     }
                                 }
                                 c10 = c12;
-                                String n102 = q10.n(a22);
+                                String o42 = o10.o(c22);
                                 if (c10 == 0) {
                                 }
                                 if (c11 == 0) {
@@ -169,17 +170,17 @@ public final /* synthetic */ class o1 implements Runnable {
                     int i19 = i12;
                     if (s1Var.H == null) {
                         s1Var.H = new ArrayList();
-                        ArrayList arrayList6 = g5.r(i19).b0;
+                        ArrayList arrayList6 = i5.r(i19).b0;
                         int size = arrayList6.size();
                         int i20 = 0;
                         while (i20 < size) {
                             Object obj4 = arrayList6.get(i20);
                             i20++;
-                            d5 d5Var = (d5) obj4;
+                            f5 f5Var = (f5) obj4;
                             r1 r1Var = new r1();
-                            r1Var.b = d5Var;
-                            r1Var.a = (d5Var.i + " " + d5Var.j).toLowerCase();
-                            (d5Var.j + " " + d5Var.i).toLowerCase();
+                            r1Var.b = f5Var;
+                            r1Var.a = (f5Var.i + " " + f5Var.j).toLowerCase();
+                            (f5Var.j + " " + f5Var.i).toLowerCase();
                             s1Var.H.add(r1Var);
                         }
                     }
@@ -189,19 +190,19 @@ public final /* synthetic */ class o1 implements Runnable {
                             arrayList5.add(r1Var2.b);
                         }
                     }
-                    org.telegram.messenger.g0.h3(new ai.g1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
+                    org.telegram.messenger.g0.g3(new ai.g1(s1Var, i14, arrayList3, arrayList4, arrayList5, 5));
                     break;
                 }
                 break;
             case 1:
                 TLRPC.Document document = (TLRPC.Document) obj2;
-                i4.g(i13, (TLRPC.User) obj3, document, i12, new z3((org.telegram.ui.web.o) obj, document, i11));
+                d4.g(i13, (TLRPC.User) obj3, document, i12, new u3((org.telegram.ui.web.o) obj, document, i11));
                 break;
             case 2:
                 oi.e1 e1Var = (oi.e1) obj2;
-                h9 h9Var = (h9) obj;
+                i9 i9Var = (i9) obj;
                 oi.p0 p0Var = ((oi.m0) obj3).a;
-                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && h9Var.j0(p0Var, 0, i12, i13)) {
+                if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && i9Var.j0(p0Var, 0, i12, i13)) {
                     p0Var.n = true;
                     e1Var.setSelection(i13);
                     p0Var.n = false;
@@ -210,65 +211,65 @@ public final /* synthetic */ class o1 implements Runnable {
                 break;
             case 3:
                 oi.e1 e1Var2 = (oi.e1) obj2;
-                h9 h9Var2 = (h9) obj;
-                c5 c5Var = (c5) ((gc.b) obj3).b;
+                i9 i9Var2 = (i9) obj;
+                d5 d5Var = (d5) ((w4) obj3).b;
                 if (e1Var2.length() >= i13 && e1Var2.getSelectionStart() != e1Var2.getSelectionEnd()) {
-                    if (h9Var2.x()) {
-                        c5Var.x = true;
+                    if (i9Var2.x()) {
+                        d5Var.x = true;
                         e1Var2.setSelection(i13);
-                        c5Var.x = false;
+                        d5Var.x = false;
                         break;
-                    } else if (h9Var2.j0(c5Var, 0, i12, i13)) {
-                        c5Var.x = true;
+                    } else if (i9Var2.j0(d5Var, 0, i12, i13)) {
+                        d5Var.x = true;
                         e1Var2.setSelection(i13);
-                        c5Var.x = false;
+                        d5Var.x = false;
                         break;
                     }
                 }
                 break;
             case 4:
                 oi.e1 e1Var3 = (oi.e1) obj2;
-                h9 h9Var3 = (h9) obj;
-                k5 k5Var = (k5) ((ia.d) obj3).b;
-                if (e1Var3.length() >= i13 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && h9Var3.j0(k5Var, 0, i12, i13)) {
-                    k5Var.H = true;
+                i9 i9Var3 = (i9) obj;
+                l5 l5Var = (l5) ((u5) obj3).b;
+                if (e1Var3.length() >= i13 && e1Var3.getSelectionStart() != e1Var3.getSelectionEnd() && i9Var3.j0(l5Var, 0, i12, i13)) {
+                    l5Var.H = true;
                     e1Var3.setSelection(i13);
-                    k5Var.H = false;
+                    l5Var.H = false;
                     break;
                 }
                 break;
             case 5:
                 oi.e1 e1Var4 = (oi.e1) obj2;
-                h9 h9Var4 = (h9) obj;
-                y5 y5Var = ((s5) obj3).a;
+                i9 i9Var4 = (i9) obj;
+                z5 z5Var = ((t5) obj3).a;
                 if (e1Var4.length() >= i13 && e1Var4.getSelectionStart() != e1Var4.getSelectionEnd()) {
-                    if (h9Var4.x()) {
-                        y5Var.G = true;
+                    if (i9Var4.x()) {
+                        z5Var.G = true;
                         e1Var4.setSelection(i13);
-                        y5Var.G = false;
+                        z5Var.G = false;
                         break;
-                    } else if (h9Var4.j0(y5Var, 0, i12, i13)) {
-                        y5Var.G = true;
+                    } else if (i9Var4.j0(z5Var, 0, i12, i13)) {
+                        z5Var.G = true;
                         e1Var4.setSelection(i13);
-                        y5Var.G = false;
+                        z5Var.G = false;
                         break;
                     }
                 }
                 break;
             case 6:
                 oi.e1 e1Var5 = (oi.e1) obj2;
-                h9 h9Var5 = (h9) obj;
-                y5 y5Var2 = ((t5) obj3).a;
+                i9 i9Var5 = (i9) obj;
+                z5 z5Var2 = ((oi.u5) obj3).a;
                 if (e1Var5.length() >= i13 && e1Var5.getSelectionStart() != e1Var5.getSelectionEnd()) {
-                    if (h9Var5.x()) {
-                        y5Var2.n = true;
+                    if (i9Var5.x()) {
+                        z5Var2.n = true;
                         e1Var5.setSelection(i13);
-                        y5Var2.n = false;
+                        z5Var2.n = false;
                         break;
-                    } else if (h9Var5.j0(y5Var2, 1, i12, i13)) {
-                        y5Var2.n = true;
+                    } else if (i9Var5.j0(z5Var2, 1, i12, i13)) {
+                        z5Var2.n = true;
                         e1Var5.setSelection(i13);
-                        y5Var2.n = false;
+                        z5Var2.n = false;
                         break;
                     }
                 }
@@ -283,56 +284,56 @@ public final /* synthetic */ class o1 implements Runnable {
                     mediaController.Y0 = false;
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
                     a0Var.f = messages_messages.next_rate;
-                    vr.a0(i12).m1(messages_messages.users, messages_messages.chats, true, true);
-                    np.s1(i12).Y3(messages_messages.users, false);
-                    np.s1(i12).S3(messages_messages.chats, false);
+                    tr.a0(i12).m1(messages_messages.users, messages_messages.chats, true, true);
+                    mp.u1(i12).f4(messages_messages.users, false);
+                    mp.u1(i12).Z3(messages_messages.chats, false);
                     int size2 = messages_messages.messages.size();
                     int i22 = 0;
                     for (int i23 = 0; i23 < size2; i23++) {
-                        gj gjVar = new gj(i12, messages_messages.messages.get(i23), false, true);
-                        if (!gjVar.S4() && !hashMap.containsKey(Integer.valueOf(gjVar.e1()))) {
-                            arrayList7.add(0, gjVar);
-                            hashMap.put(Integer.valueOf(gjVar.e1()), gjVar);
+                        fj fjVar = new fj(i12, messages_messages.messages.get(i23), false, true);
+                        if (!fjVar.S4() && !hashMap.containsKey(Integer.valueOf(fjVar.e1()))) {
+                            arrayList7.add(0, fjVar);
+                            hashMap.put(Integer.valueOf(fjVar.e1()), fjVar);
                             i22++;
                         }
                     }
                     mediaController.t0();
                     mediaController.Y0 = false;
                     mediaController.D0.e = arrayList7.size() == mediaController.D0.d;
-                    if (gz.N0) {
+                    if (bz.N0) {
                         mediaController.g();
                     }
                     if (i22 != 0) {
-                        ns.f(mediaController.v0.K1).k(74, Integer.valueOf(i22));
+                        ks.f(mediaController.v0.K1).k(74, Integer.valueOf(i22));
                         break;
                     }
                 }
                 break;
             case 8:
-                si siVar = (si) obj3;
+                ri riVar = (ri) obj3;
                 TLObject tLObject2 = (TLObject) obj2;
                 StickersActivity stickersActivity = (StickersActivity) obj;
                 int i24 = this.c;
                 if (i13 != 0) {
                     if (tLObject2 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
-                        siVar.A1(stickersActivity, true, i24, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject2);
+                        riVar.E1(stickersActivity, true, i24, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject2);
                     }
-                    siVar.b1(i24, false, false, true, null);
+                    riVar.e1(i24, false, false, true, null);
                     break;
                 } else {
-                    siVar.a1(i24, false, true);
+                    riVar.d1(i24, false, true);
                     break;
                 }
             case 9:
-                an anVar = (an) obj3;
-                anVar.Zb = i13;
-                anVar.ac = i12;
-                anVar.bc = (CharacterStyle) obj2;
+                bn bnVar = (bn) obj3;
+                bnVar.ac = i13;
+                bnVar.bc = i12;
+                bnVar.cc = (CharacterStyle) obj2;
                 ((org.telegram.ui.Cells.q1) obj).invalidate();
                 break;
             default:
-                a6 a6Var = (a6) obj;
-                org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.g((c6) obj3, new z5(((Context) obj2).getApplicationContext(), i13, i12, a6Var), a6Var, 16));
+                q6 q6Var = (q6) obj;
+                org.telegram.messenger.g0.g3(new org.telegram.ui.Wallet.p((s6) obj3, new p6(((Context) obj2).getApplicationContext(), i13, i12, q6Var), q6Var, 16));
                 break;
         }
     }
@@ -355,21 +356,21 @@ public final /* synthetic */ class o1 implements Runnable {
         this.c = i10;
     }
 
-    public /* synthetic */ o1(an anVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.q1 q1Var) {
+    public /* synthetic */ o1(bn bnVar, int i7, int i10, CharacterStyle characterStyle, org.telegram.ui.Cells.q1 q1Var) {
         this.a = 9;
-        this.d = anVar;
+        this.d = bnVar;
         this.b = i7;
         this.c = i10;
         this.e = characterStyle;
         this.f = q1Var;
     }
 
-    public /* synthetic */ o1(c6 c6Var, Context context, int i7, int i10, a6 a6Var) {
+    public /* synthetic */ o1(s6 s6Var, Context context, int i7, int i10, q6 q6Var) {
         this.a = 10;
-        this.d = c6Var;
+        this.d = s6Var;
         this.e = context;
         this.b = i7;
         this.c = i10;
-        this.f = a6Var;
+        this.f = q6Var;
     }
 }

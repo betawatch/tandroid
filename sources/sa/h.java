@@ -2,8 +2,8 @@ package sa;
 
 import android.content.Context;
 import android.os.Build;
-import c8.c1;
-import c8.rb;
+import c8.e1;
+import c8.ub;
 import gb.o;
 import gb.z0;
 import j$.time.ZoneOffset;
@@ -21,16 +21,16 @@ import java.util.Set;
 import rd.l;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public static final q1.e b = new q1.e("fire-global");
     public static final q1.e c = new q1.e("fire-count");
-    public static final q1.e d = rb.a("last-used-date");
+    public static final q1.e d = ub.a("last-used-date");
     public final ka.d a;
 
     public h(Context context, String str) {
-        this.a = new ka.d(context, r.b.k("FirebaseHeartBeat", str));
+        this.a = new ka.d(context, p5.c.k("FirebaseHeartBeat", str));
     }
 
     public static String c(long j3) {
@@ -43,7 +43,7 @@ public final class h {
                 Iterator it = ((Set) entry.getValue()).iterator();
                 while (it.hasNext()) {
                     if (str.equals((String) it.next())) {
-                        return rb.b(((q1.e) entry.getKey()).a);
+                        return ub.b(((q1.e) entry.getKey()).a);
                     }
                 }
             }
@@ -56,7 +56,7 @@ public final class h {
         if (d2 == null) {
             return;
         }
-        HashSet hashSet = new HashSet((Collection) c1.a(bVar, d2, new HashSet()));
+        HashSet hashSet = new HashSet((Collection) e1.a(bVar, d2, new HashSet()));
         hashSet.remove(str);
         if (hashSet.isEmpty()) {
             bVar.c(d2);
@@ -114,7 +114,7 @@ public final class h {
         try {
             try {
                 String c10 = c(j3);
-                q1.e b10 = rb.b(str);
+                q1.e b10 = ub.b(str);
                 this.a.a(new e1.b(this, c10, str, b10, 2));
             } catch (Throwable th2) {
                 th = th2;

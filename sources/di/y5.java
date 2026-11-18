@@ -1,20 +1,37 @@
 package di;
 
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class y5 extends org.telegram.ui.Components.ca {
-    public ArrayList W1;
-    public LimitPreviewView X1;
+public final class y5 extends AnimatorListenerAdapter {
+    public final /* synthetic */ z5 a;
 
-    public final void d1(long j3) {
-        ArrayList arrayList = this.W1;
-        if (arrayList == null || arrayList.isEmpty()) {
-            return;
+    public y5(z5 z5Var) {
+        this.a = z5Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        z5 z5Var = this.a;
+        ca.r rVar = z5Var.p0;
+        z5Var.z0 = z5Var.y0;
+        z5Var.d(z5Var.b0);
+        TL_stars.starGiftAttributeModel[] stargiftattributemodelArr = z5Var.e;
+        int i7 = 2 - z5Var.y0;
+        stargiftattributemodelArr[i7] = (TL_stars.starGiftAttributeModel) z5Var.d0.f;
+        pb.d1(z5Var.d[i7].getImageReceiver(), stargiftattributemodelArr[2 - z5Var.y0].document, ks.q2);
+        TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) z5Var.e0.f;
+        if (stargiftattributepattern != null) {
+            org.telegram.ui.Components.o5 l10 = org.telegram.ui.Components.o5.l(j10.t0, 7, stargiftattributepattern.document);
+            l10.m = true;
+            l10.u();
         }
-        this.X1.j((TL_stars.StarGiftUpgradePrice) arrayList.get(0), j3, (TL_stars.StarGiftUpgradePrice) i5.c.h(1, arrayList));
+        org.telegram.messenger.g0.r(rVar);
+        org.telegram.messenger.g0.h3(rVar, 2500L);
     }
 }

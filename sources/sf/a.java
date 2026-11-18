@@ -10,8 +10,9 @@ import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import kf.p;
+import p5.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends rf.a {
     public static final Logger s = Logger.getLogger(a.class.getName());
@@ -415,9 +416,9 @@ public final class a extends rf.a {
                                                             String str5 = this.h;
                                                             if (str5 == null || str5.trim().length() == 0) {
                                                                 if (k11.i() == 2) {
-                                                                    int b10 = r.b.b(dataInputStream5.readShort() - r62);
+                                                                    int b10 = c.b(dataInputStream5.readShort() - r62);
                                                                     if (b10 != 0) {
-                                                                        this.h = r.b.d(b10);
+                                                                        this.h = c.d(b10);
                                                                     }
                                                                 } else {
                                                                     this.h = k11.m();

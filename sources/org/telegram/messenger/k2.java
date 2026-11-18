@@ -1,102 +1,15 @@
 package org.telegram.messenger;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.support.LongSparseLongArray;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k2 extends c1 {
-    public static volatile k2[] b = new k2[4];
-    public final LongSparseLongArray a;
+public final class k2 {
+    public final long a;
+    public final TLRPC.JoinChatBotResult b;
 
-    public k2(int i7) {
-        super(i7);
-        this.a = new LongSparseLongArray();
-    }
-
-    public static k2 b(int i7) {
-        k2 k2Var;
-        k2 k2Var2 = b[i7];
-        if (k2Var2 != null) {
-            return k2Var2;
-        }
-        synchronized (f2.class) {
-            try {
-                k2Var = b[i7];
-                if (k2Var == null) {
-                    k2[] k2VarArr = b;
-                    k2 k2Var3 = new k2(i7);
-                    k2VarArr[i7] = k2Var3;
-                    k2Var = k2Var3;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return k2Var;
-    }
-
-    public final void a(long j3, long j10, TLRPC.JoinChatBotResult joinChatBotResult) {
-        this.a.get(j10, 0L);
-        getNotificationCenter().k(ns.Q5, new j2(j3, joinChatBotResult));
-        HashSet hashSet = ki.x2.b1;
-        if (hashSet != null) {
-            Iterator it = hashSet.iterator();
-            while (it.hasNext()) {
-                ki.x2 x2Var = (ki.x2) it.next();
-                ki.k4 k4Var = x2Var.x0;
-                if (k4Var != null && k4Var.g == 5) {
-                    long j11 = k4Var.b;
-                    if (j11 == j3 || j11 == 0) {
-                        TLObject tLObject = k4Var.q;
-                        if ((tLObject instanceof TLRPC.TL_webViewResultUrl) && ((TLRPC.TL_webViewResultUrl) tLObject).query_id == j10) {
-                            x2Var.o(false);
-                            return;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    public final void c(final long j3, final long j10, final long j11, boolean z10) {
-        org.telegram.ui.ActionBar.e2 Q;
-        if (LaunchActivity.H1 == null || (Q = LaunchActivity.Q()) == null) {
-            return;
-        }
-        TLRPC.User a22 = getMessagesController().a2(Long.valueOf(j10));
-        if (!z10) {
-            if (b6.j(this.currentAccount, j10) || getMessagesController().X6.contains(Long.valueOf(j10))) {
-                c(j3, j10, j11, true);
-                return;
-            } else {
-                org.telegram.ui.Components.t4.n(Q, a22, new Runnable() { // from class: org.telegram.messenger.i2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        long j12 = j11;
-                        k2 k2Var = k2.this;
-                        long j13 = j3;
-                        long j14 = j10;
-                        k2Var.c(j13, j14, j12, true);
-                        b6.p(k2Var.currentAccount, j14);
-                    }
-                }, new ai.o(28));
-                return;
-            }
-        }
-        this.a.put(j11, j10);
-        org.telegram.ui.ActionBar.e2 Q2 = LaunchActivity.Q();
-        ki.k4 b10 = ki.k4.b(this.currentAccount, j3, j10, null, null, 5, 0, 0L, null, false, null, null, 0, false, false);
-        b10.d = j11;
-        ki.x2 x2Var = new ki.x2(LaunchActivity.H1, null);
-        x2Var.B(false);
-        x2Var.C0 = true;
-        x2Var.m0 = LaunchActivity.H1;
-        x2Var.x(Q2, b10);
-        x2Var.show();
+    public k2(long j3, TLRPC.JoinChatBotResult joinChatBotResult) {
+        this.a = j3;
+        this.b = joinChatBotResult;
     }
 }

@@ -1,99 +1,42 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.Components.bp0;
-import org.telegram.ui.Components.ys0;
+import org.telegram.ui.Components.y60;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ee implements RequestDelegate {
+public final /* synthetic */ class ee implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ is d;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ fs c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ ee(is isVar, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = isVar;
-        this.b = i7;
-        this.c = i10;
+    public /* synthetic */ ee(fs fsVar, Object obj, float f10, int i7) {
+        this.a = i7;
+        this.c = fsVar;
+        this.d = obj;
+        this.b = f10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i7 = this.a;
-        is isVar = this.d;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                String[] strArr = MediaController.W1;
-                g0.h3(new jg.o1(this.b, this.c, 7, (MediaController) isVar, tLObject, tL_error));
-                break;
-            case 1:
-                np npVar = (np) isVar;
-                LongSparseIntArray longSparseIntArray = npVar.Z0;
-                int i10 = 0;
-                if (tL_error == null) {
-                    TLRPC.updates_Difference updates_difference = (TLRPC.updates_Difference) tLObject;
-                    if (updates_difference instanceof TLRPC.TL_updates_differenceTooLong) {
-                        g0.h3(new l2.x(npVar, updates_difference, this.b, this.c, 4));
-                        break;
-                    } else {
-                        if (updates_difference instanceof TLRPC.TL_updates_differenceSlice) {
-                            TLRPC.TL_updates_state tL_updates_state = updates_difference.intermediate_state;
-                            npVar.Y0(tL_updates_state.pts, tL_updates_state.date, tL_updates_state.qts, true);
-                        }
-                        a0.h hVar = new a0.h();
-                        a0.h hVar2 = new a0.h();
-                        for (int i11 = 0; i11 < updates_difference.users.size(); i11++) {
-                            TLRPC.User user = updates_difference.users.get(i11);
-                            hVar.k(user, user.id);
-                        }
-                        for (int i12 = 0; i12 < updates_difference.chats.size(); i12++) {
-                            TLRPC.Chat chat = updates_difference.chats.get(i12);
-                            hVar2.k(chat, chat.id);
-                        }
-                        ArrayList arrayList = new ArrayList();
-                        if (!updates_difference.other_updates.isEmpty()) {
-                            while (i10 < updates_difference.other_updates.size()) {
-                                TLRPC.Update update = updates_difference.other_updates.get(i10);
-                                if (update instanceof TL_update.TL_updateMessageID) {
-                                    arrayList.add((TL_update.TL_updateMessageID) update);
-                                    updates_difference.other_updates.remove(i10);
-                                } else {
-                                    if (np.Y1(update) == 2) {
-                                        long V1 = np.V1(update);
-                                        int i13 = longSparseIntArray.get(V1);
-                                        if (i13 == 0 && (i13 = npVar.getMessagesStorage().N(V1)) != 0) {
-                                            longSparseIntArray.put(V1, i13);
-                                        }
-                                        if (i13 != 0 && np.W1(update) <= i13) {
-                                            updates_difference.other_updates.remove(i10);
-                                        }
-                                    }
-                                    i10++;
-                                }
-                                i10--;
-                                i10++;
-                            }
-                        }
-                        g0.h3(new fi(26, npVar, updates_difference));
-                        npVar.getMessagesStorage().a.c(new jn(npVar, updates_difference, arrayList, hVar, hVar2, 10));
-                        break;
+                MediaController mediaController = (MediaController) this.c;
+                fj fjVar = (fj) this.d;
+                if (mediaController.j0 != null && mediaController.v0 != null && !mediaController.h0) {
+                    if (mediaController.L(fjVar)) {
+                        mediaController.i0(mediaController.v0, this.b);
                     }
-                } else {
-                    npVar.g2 = false;
-                    npVar.getConnectionsManager().setIsUpdating(false);
-                    a8.b("received: isUpdating = false");
+                    mediaController.j0.h0();
                     break;
                 }
                 break;
             default:
-                g0.h3(new bp0((ys0) isVar, tL_error, this.b, this.c, tLObject, 0));
+                org.telegram.ui.g4 g4Var = (org.telegram.ui.g4) this.c;
+                y60 y60Var = (y60) this.d;
+                g4Var.i0.N.c(true, 0.0f);
+                y60Var.p = new org.telegram.ui.a0(g4Var, this.b, 0);
+                y60Var.a0();
                 break;
         }
     }

@@ -7,12 +7,12 @@ import android.os.Build;
 import android.view.View;
 import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.ht0;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.pt0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements ht0, r0.m {
+public final /* synthetic */ class e implements pt0, r0.m {
     public final /* synthetic */ int a;
     public final /* synthetic */ FrameLayout b;
 
@@ -22,14 +22,14 @@ public final /* synthetic */ class e implements ht0, r0.m {
     }
 
     @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        r0.h1 h1Var = k1Var.a;
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        r0.i1 i1Var = l1Var.a;
         Rect rect = new Rect();
         if (Build.VERSION.SDK_INT >= 30) {
-            i0.c f10 = h1Var.f(527);
+            i0.b f10 = i1Var.f(527);
             rect.set(f10.a, f10.b, f10.c, f10.d);
         } else {
-            rect.set(h1Var.i().a, h1Var.i().b, h1Var.i().c, h1Var.i().d);
+            rect.set(i1Var.i().a, i1Var.i().b, i1Var.i().c, i1Var.i().d);
         }
         int i7 = rect.left;
         int i10 = rect.top;
@@ -38,23 +38,23 @@ public final /* synthetic */ class e implements ht0, r0.m {
         FrameLayout frameLayout = this.b;
         frameLayout.setPadding(i7, i10, i11, i12);
         frameLayout.requestLayout();
-        return k1Var;
+        return l1Var;
     }
 
-    @Override // org.telegram.ui.Components.ht0
+    @Override // org.telegram.ui.Components.pt0
     public void a(Canvas canvas, RectF rectF, RecyclerView recyclerView) {
         switch (this.a) {
             case 0:
-                uj0 uj0Var = (uj0) recyclerView;
-                ih.d.a(uj0Var, canvas, rectF, uj0Var, this.b);
+                ck0 ck0Var = (ck0) recyclerView;
+                ih.d.a(ck0Var, canvas, rectF, ck0Var, this.b);
                 break;
             case 1:
-                uj0 uj0Var2 = (uj0) recyclerView;
-                ih.d.a(uj0Var2, canvas, rectF, uj0Var2, this.b);
+                ck0 ck0Var2 = (ck0) recyclerView;
+                ih.d.a(ck0Var2, canvas, rectF, ck0Var2, this.b);
                 break;
             default:
-                uj0 uj0Var3 = (uj0) recyclerView;
-                ih.d.a(uj0Var3, canvas, rectF, uj0Var3, this.b);
+                ck0 ck0Var3 = (ck0) recyclerView;
+                ih.d.a(ck0Var3, canvas, rectF, ck0Var3, this.b);
                 break;
         }
     }

@@ -4,7 +4,7 @@ import a8.w8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.internal.cast.f0;
 import com.google.android.gms.internal.cast.j0;
@@ -27,7 +27,7 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import r6.a;
 import x6.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
@@ -319,34 +319,34 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.I;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int r10 = yb.r(parcel, 20293);
+        int r10 = bc.r(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        yb.l(parcel, 2, str);
-        yb.q(parcel, 3, 4);
+        bc.l(parcel, 2, str);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        yb.l(parcel, 4, this.c);
-        yb.k(parcel, 5, this.d, i7);
-        yb.q(parcel, 6, 8);
+        bc.l(parcel, 4, this.c);
+        bc.k(parcel, 5, this.d, i7);
+        bc.q(parcel, 6, 8);
         parcel.writeLong(this.e);
-        yb.p(parcel, 7, this.f);
-        yb.k(parcel, 8, this.h, i7);
-        yb.l(parcel, 9, this.n);
+        bc.p(parcel, 7, this.f);
+        bc.k(parcel, 8, this.h, i7);
+        bc.l(parcel, 9, this.n);
         List list = this.r;
-        yb.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        bc.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        yb.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        yb.l(parcel, 12, this.w);
-        yb.k(parcel, 13, this.x, i7);
-        yb.q(parcel, 14, 8);
+        bc.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        bc.l(parcel, 12, this.w);
+        bc.k(parcel, 13, this.x, i7);
+        bc.q(parcel, 14, 8);
         parcel.writeLong(this.y);
-        yb.l(parcel, 15, this.E);
-        yb.l(parcel, 16, this.F);
-        yb.l(parcel, 17, this.G);
-        yb.l(parcel, 18, this.H);
-        yb.s(parcel, r10);
+        bc.l(parcel, 15, this.E);
+        bc.l(parcel, 16, this.F);
+        bc.l(parcel, 17, this.G);
+        bc.l(parcel, 18, this.H);
+        bc.s(parcel, r10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:105:0x0299  */

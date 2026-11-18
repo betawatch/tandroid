@@ -1,12 +1,12 @@
 package ki;
 
 import android.content.Context;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.n00;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.q00;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class f extends ug.s1 {
+public final class f extends ug.u1 {
     public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -15,87 +15,87 @@ public final class f extends ug.s1 {
         this.r = i7;
     }
 
-    @Override // ug.s1
+    @Override // ug.u1
     public final void a() {
         switch (this.r) {
             case 0:
                 super.a();
-                ug.r1 r1Var = this.a;
-                r1Var.q = true;
-                r1Var.K = false;
-                r1Var.L = true;
-                r1Var.H = true;
-                r1Var.c();
+                ug.t1 t1Var = this.a;
+                t1Var.q = true;
+                t1Var.K = false;
+                t1Var.L = true;
+                t1Var.H = true;
+                t1Var.c();
                 break;
             case 1:
                 super.a();
-                ug.r1 r1Var2 = this.a;
-                r1Var2.q = true;
-                r1Var2.K = false;
-                r1Var2.L = true;
-                r1Var2.H = true;
-                r1Var2.c();
+                ug.t1 t1Var2 = this.a;
+                t1Var2.q = true;
+                t1Var2.K = false;
+                t1Var2.L = true;
+                t1Var2.H = true;
+                t1Var2.c();
                 break;
             case 2:
-                n00 n00Var = new n00(50);
-                this.a = n00Var;
-                n00Var.O = 100;
-                n00Var.M = false;
-                n00Var.G = false;
-                n00Var.K = true;
-                n00Var.H = true;
-                n00Var.J = false;
-                n00Var.r = 4;
-                n00Var.w = 0.98f;
-                n00Var.v = 0.98f;
-                n00Var.u = 0.98f;
-                n00Var.c();
+                q00 q00Var = new q00(50);
+                this.a = q00Var;
+                q00Var.O = 100;
+                q00Var.M = false;
+                q00Var.G = false;
+                q00Var.K = true;
+                q00Var.H = true;
+                q00Var.J = false;
+                q00Var.r = 4;
+                q00Var.w = 0.98f;
+                q00Var.v = 0.98f;
+                q00Var.u = 0.98f;
+                q00Var.c();
                 break;
             case 3:
-                ug.r1 r1Var3 = this.a;
-                r1Var3.q = true;
-                r1Var3.K = false;
-                r1Var3.H = true;
-                r1Var3.J = true;
-                r1Var3.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.r1 r1Var4 = this.a;
-                r1Var4.x = 2000L;
-                r1Var4.y = 3000;
-                r1Var4.r = 16;
-                r1Var4.G = false;
-                r1Var4.O = 28;
-                r1Var4.Q = j6.Dk;
-                r1Var4.c();
+                ug.t1 t1Var3 = this.a;
+                t1Var3.q = true;
+                t1Var3.K = false;
+                t1Var3.H = true;
+                t1Var3.J = true;
+                t1Var3.k = org.telegram.messenger.g0.L(-14.0f);
+                ug.t1 t1Var4 = this.a;
+                t1Var4.x = 2000L;
+                t1Var4.y = 3000;
+                t1Var4.r = 16;
+                t1Var4.G = false;
+                t1Var4.O = 28;
+                t1Var4.Q = n6.Dk;
+                t1Var4.c();
                 break;
             case 4:
-                ug.r1 r1Var5 = this.a;
-                r1Var5.q = true;
-                r1Var5.K = false;
-                r1Var5.H = true;
-                r1Var5.J = true;
-                r1Var5.k = org.telegram.messenger.g0.L(-14.0f);
-                ug.r1 r1Var6 = this.a;
-                r1Var6.x = 2000L;
-                r1Var6.y = 3000;
-                r1Var6.r = 16;
-                r1Var6.G = false;
-                r1Var6.O = 28;
-                r1Var6.Q = j6.Dk;
-                r1Var6.c();
+                ug.t1 t1Var5 = this.a;
+                t1Var5.q = true;
+                t1Var5.K = false;
+                t1Var5.H = true;
+                t1Var5.J = true;
+                t1Var5.k = org.telegram.messenger.g0.L(-14.0f);
+                ug.t1 t1Var6 = this.a;
+                t1Var6.x = 2000L;
+                t1Var6.y = 3000;
+                t1Var6.r = 16;
+                t1Var6.G = false;
+                t1Var6.O = 28;
+                t1Var6.Q = n6.Dk;
+                t1Var6.c();
                 break;
             default:
                 super.a();
-                ug.r1 r1Var7 = this.a;
-                r1Var7.q = true;
-                r1Var7.K = false;
-                r1Var7.L = true;
-                r1Var7.H = true;
-                r1Var7.c();
+                ug.t1 t1Var7 = this.a;
+                t1Var7.q = true;
+                t1Var7.K = false;
+                t1Var7.L = true;
+                t1Var7.H = true;
+                t1Var7.c();
                 break;
         }
     }
 
-    @Override // ug.s1
+    @Override // ug.u1
     public int getStarsRectWidth() {
         switch (this.r) {
             case 0:
@@ -109,7 +109,7 @@ public final class f extends ug.s1 {
         }
     }
 
-    @Override // ug.s1, android.view.View
+    @Override // ug.u1, android.view.View
     public void onMeasure(int i7, int i10) {
         switch (this.r) {
             case 3:

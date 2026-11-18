@@ -23,22 +23,21 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import di.z6;
-import fi.b4;
-import fi.c1;
-import fi.p7;
+import di.c7;
+import fi.m7;
 import fi.w;
+import fi.z3;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import q4.q;
 import r0.a0;
 import r0.i0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class l extends ViewGroup {
     public static final b u0;
@@ -83,7 +82,7 @@ public class l extends ViewGroup {
     public ArrayList l0;
     public h m0;
     public Parcelable n;
-    public z6 n0;
+    public c7 n0;
     public int o0;
     public int p0;
     public ArrayList q0;
@@ -832,25 +831,25 @@ public class l extends ViewGroup {
                 if (!((f) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
                     w wVar = (w) this.n0.b;
-                    p7 p7Var = (p7) childAt2;
+                    m7 m7Var = (m7) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        p7Var.a(false);
-                        g0.i3(new c1(p7Var, 13), 16L);
+                        m7Var.a(false);
+                        g0.h3(new f2.a(m7Var, 17), 16L);
                     } else {
-                        if (!p7Var.d) {
-                            p7Var.a(true);
+                        if (!m7Var.d) {
+                            m7Var.a(true);
                             if (wVar.y0 != null) {
-                                b4 b4Var = p7Var.a;
-                                long j3 = p7Var.b;
-                                ArrayList arrayList2 = p7Var.c;
-                                b4Var.l1 = j3;
-                                b4Var.j1 = arrayList2;
-                                b4Var.m0(-1);
+                                z3 z3Var = m7Var.a;
+                                long j3 = m7Var.b;
+                                ArrayList arrayList2 = m7Var.c;
+                                z3Var.l1 = j3;
+                                z3Var.j1 = arrayList2;
+                                z3Var.m0(-1);
                             } else {
-                                p7Var.a.S0(-1, p7Var.b);
+                                m7Var.a.S0(-1, m7Var.b);
                             }
                         }
-                        p7Var.a.setOffset(left2);
+                        m7Var.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);
@@ -953,7 +952,7 @@ public class l extends ViewGroup {
 
     @Override // android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int action = motionEvent.getAction() & ns.e4;
+        int action = motionEvent.getAction() & ks.e4;
         if (action == 3 || action == 1) {
             v();
             return false;
@@ -1070,7 +1069,7 @@ public class l extends ViewGroup {
                 if (fVar.a) {
                     int i19 = fVar.b;
                     int i20 = i19 & 7;
-                    int i21 = i19 & ns.x1;
+                    int i21 = i19 & ks.x1;
                     if (i20 != 1) {
                         if (i20 == 3) {
                             i13 = childAt.getMeasuredWidth() + paddingLeft;
@@ -1185,7 +1184,7 @@ public class l extends ViewGroup {
             if (childAt.getVisibility() != 8 && (fVar2 = (f) childAt.getLayoutParams()) != null && fVar2.a) {
                 int i14 = fVar2.b;
                 int i15 = i14 & 7;
-                int i16 = i14 & ns.x1;
+                int i16 = i14 & ks.x1;
                 boolean z11 = i16 == 48 || i16 == 80;
                 if (i15 != 3 && i15 != 5) {
                     z10 = false;
@@ -1303,7 +1302,7 @@ public class l extends ViewGroup {
                 this.a0 = VelocityTracker.obtain();
             }
             this.a0.addMovement(motionEvent);
-            int action = motionEvent.getAction() & ns.e4;
+            int action = motionEvent.getAction() & ks.e4;
             if (action == 0) {
                 this.r.abortAnimation();
                 this.L = false;
@@ -1647,7 +1646,7 @@ public class l extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            i5.c.y(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i5.c.z(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

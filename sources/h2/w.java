@@ -2,23 +2,22 @@ package h2;
 
 import android.content.Context;
 import android.graphics.SurfaceTexture;
-import fi.c1;
-import fi.f6;
+import fi.a6;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.ui.Components.PipRoundVideoView;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.f61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.j4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class w implements s51 {
+public final class w implements d61 {
     public static w f;
     public boolean a;
     public int b;
@@ -76,7 +75,7 @@ public final class w implements s51 {
                 Iterator it2 = ((CopyOnWriteArrayList) this.d).iterator();
                 while (it2.hasNext()) {
                     v vVar2 = (v) it2.next();
-                    vVar2.b.execute(new c1(vVar2, 24));
+                    vVar2.b.execute(new f2.a(vVar2, 28));
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -84,26 +83,26 @@ public final class w implements s51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s51
-    public void onError(u51 u51Var, Exception exc) {
+    @Override // org.telegram.ui.Components.d61
+    public void onError(f61 f61Var, Exception exc) {
         a8.g(exc, true);
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onStateChanged(boolean z10, int i7) {
         int i10 = this.b;
         MediaController mediaController = (MediaController) this.e;
         if (i10 != mediaController.n0) {
             return;
         }
-        MediaController.f(mediaController, (gj) this.c, (int[]) this.d, this.a, z10, i7);
+        MediaController.f(mediaController, (fj) this.c, (int[]) this.d, this.a, z10, i7);
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         MediaController mediaController = (MediaController) this.e;
         if (mediaController.F0 != null) {
@@ -155,7 +154,7 @@ public final class w implements s51 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
         MediaController mediaController = (MediaController) this.e;
         float f11 = i10 == 0 ? 1.0f : (i7 * f10) / i10;
@@ -166,7 +165,7 @@ public final class w implements s51 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onRenderedFirstFrame() {
         MediaController mediaController = (MediaController) this.e;
         j4 j4Var = mediaController.M0;
@@ -187,26 +186,26 @@ public final class w implements s51 {
         this.d = new CopyOnWriteArrayList();
         this.e = new Object();
         this.b = 0;
-        e10.execute(new f6(20, this, context));
+        e10.execute(new a6(22, this, context));
     }
 
-    public w(MediaController mediaController, int i7, gj gjVar, int[] iArr, boolean z10) {
+    public w(MediaController mediaController, int i7, fj fjVar, int[] iArr, boolean z10) {
         this.e = mediaController;
         this.b = i7;
-        this.c = gjVar;
+        this.c = fjVar;
         this.d = iArr;
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

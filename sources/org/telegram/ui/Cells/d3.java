@@ -2,49 +2,49 @@ package org.telegram.ui.Cells;
 
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.pz;
-import org.telegram.messenger.si;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.lz;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class d3 extends LinearLayout implements is {
+public abstract class d3 extends LinearLayout implements fs {
     public int a;
-    public org.telegram.ui.Components.i9 b;
+    public org.telegram.ui.Components.q9 b;
     public TextView c;
     public TextView d;
     public TextView e;
 
     public final void a() {
-        org.telegram.ui.Components.i9 i9Var = this.b;
+        org.telegram.ui.Components.q9 q9Var = this.b;
         int i7 = this.a;
-        TLRPC.TL_messages_stickerSet p02 = si.b0(i7).p0("tg_placeholders_android");
-        if (p02 == null) {
-            p02 = si.b0(i7).n0("tg_placeholders_android");
+        TLRPC.TL_messages_stickerSet r02 = ri.d0(i7).r0("tg_placeholders_android");
+        if (r02 == null) {
+            r02 = ri.d0(i7).p0("tg_placeholders_android");
         }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = p02;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = r02;
         TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
         if (document == null) {
-            si.b0(i7).c1("tg_placeholders_android", false, tL_messages_stickerSet == null);
-            i9Var.getImageReceiver().f();
+            ri.d0(i7).f1("tg_placeholders_android", false, tL_messages_stickerSet == null);
+            q9Var.getImageReceiver().f();
             return;
         }
-        pz d = org.telegram.messenger.t5.d(document.thumbs, org.telegram.ui.ActionBar.j6.a7, 0.2f, false);
+        lz d = org.telegram.messenger.u5.d(document.thumbs, org.telegram.ui.ActionBar.n6.a7, 0.2f, false);
         if (d != null) {
             d.e = 512;
             d.f = 512;
         }
-        this.b.k(gc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
-        i9Var.getImageReceiver().W(2);
+        this.b.k(fc.b(document), "130_130", "tgs", d, tL_messages_stickerSet);
+        q9Var.getImageReceiver().W(2);
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.y0 && "tg_placeholders_android".equals((String) objArr[0]) && getVisibility() == 0) {
+        if (i7 == ks.y0 && "tg_placeholders_android".equals((String) objArr[0]) && getVisibility() == 0) {
             a();
         }
     }
@@ -52,13 +52,13 @@ public abstract class d3 extends LinearLayout implements is {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ns.f(this.a).c(this, ns.y0);
+        ks.f(this.a).c(this, ks.y0);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ns.f(this.a).n(this, ns.y0);
+        ks.f(this.a).n(this, ks.y0);
     }
 
     public void set(TLRPC.RequestPeerType requestPeerType) {
@@ -66,21 +66,21 @@ public abstract class d3 extends LinearLayout implements is {
         TextView textView2 = this.c;
         TextView textView3 = this.e;
         if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            textView2.setText(hd.M0(2131748144, null));
-            textView.setText(hd.M0(2131748143, null));
+            textView2.setText(gd.M0(2131747952, null));
+            textView.setText(gd.M0(2131747951, null));
             textView3.setVisibility(0);
-            textView3.setText(hd.M0(2131751752, null));
+            textView3.setText(gd.M0(2131751741, null));
             return;
         }
         if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
-            textView2.setText(hd.M0(2131748140, null));
-            textView.setText(hd.M0(2131748139, null));
+            textView2.setText(gd.M0(2131747948, null));
+            textView.setText(gd.M0(2131747947, null));
             textView3.setVisibility(8);
         } else {
-            textView2.setText(hd.M0(2131748142, null));
-            textView.setText(hd.M0(2131748141, null));
+            textView2.setText(gd.M0(2131747950, null));
+            textView.setText(gd.M0(2131747949, null));
             textView3.setVisibility(0);
-            textView3.setText(hd.M0(2131751746, null));
+            textView3.setText(gd.M0(2131751735, null));
         }
     }
 }

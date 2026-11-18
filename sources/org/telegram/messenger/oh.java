@@ -1,145 +1,74 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.SQLite.SQLiteDatabase;
-import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oh implements Runnable {
+public final /* synthetic */ class oh implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ si b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ri b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ oh(si siVar, boolean z10, int i7) {
-        this.a = i7;
-        this.b = siVar;
-        this.c = z10;
+    public /* synthetic */ oh(ri riVar, int i7, int i10) {
+        this.a = i10;
+        this.b = riVar;
+        this.c = i7;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00b4 A[DONT_GENERATE] */
-    /* JADX WARN: Type inference failed for: r5v0 */
-    /* JADX WARN: Type inference failed for: r5v10 */
-    /* JADX WARN: Type inference failed for: r5v11 */
-    /* JADX WARN: Type inference failed for: r5v2, types: [org.telegram.SQLite.SQLiteCursor] */
-    /* JADX WARN: Type inference failed for: r5v4 */
-    /* JADX WARN: Type inference failed for: r5v5 */
-    /* JADX WARN: Type inference failed for: r5v6 */
-    /* JADX WARN: Type inference failed for: r5v8 */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        ArrayList arrayList;
-        int i7;
-        long j3;
-        int i10;
-        boolean z10;
-        ArrayList arrayList2;
-        boolean z11;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        ArrayList<TLRPC.Document> arrayList;
         switch (this.a) {
             case 0:
-                si siVar = this.b;
-                boolean[] zArr = siVar.x0;
-                boolean z12 = this.c;
-                zArr[z12 ? 1 : 0] = false;
-                siVar.y0[z12 ? 1 : 0] = true;
-                return;
-            default:
-                si siVar2 = this.b;
-                boolean z13 = this.c;
-                ArrayList arrayList3 = new ArrayList();
-                ?? r52 = null;
-                int i11 = 0;
-                long j10 = 0;
-                try {
-                    SQLiteDatabase sQLiteDatabase = siVar2.getMessagesStorage().b;
-                    StringBuilder sb2 = new StringBuilder("SELECT data, unread, date, hash, premium FROM stickers_featured WHERE emoji = ");
-                    sb2.append(z13 ? 1 : 0);
-                    sb2.append(" AND id = ");
-                    sb2.append(z13 ? 2 : 1);
-                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized(sb2.toString(), new Object[0]);
-                    try {
-                        if (queryFinalized.next()) {
-                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                            if (byteBufferValue != null) {
-                                arrayList = new ArrayList();
-                                try {
-                                    int readInt32 = byteBufferValue.readInt32(false);
-                                    for (int i12 = 0; i12 < readInt32; i12++) {
-                                        arrayList.add(TLRPC.StickerSetCovered.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false));
-                                    }
-                                    byteBufferValue.reuse();
-                                    r52 = arrayList;
-                                } catch (Throwable th2) {
-                                    th = th2;
-                                    i7 = 0;
-                                    r52 = queryFinalized;
-                                    try {
-                                        a8.g(th, true);
-                                        z10 = false;
-                                        j3 = j10;
-                                        i10 = i7;
-                                        arrayList2 = arrayList;
-                                        siVar2.t1(z13, arrayList2, arrayList3, z10, true, i10, j3);
-                                        return;
-                                    } finally {
-                                        if (r52 != null) {
-                                            r52.dispose();
-                                        }
-                                    }
-                                }
-                            }
-                            NativeByteBuffer byteBufferValue2 = queryFinalized.byteBufferValue(1);
-                            if (byteBufferValue2 != null) {
-                                int readInt322 = byteBufferValue2.readInt32(false);
-                                for (int i13 = 0; i13 < readInt322; i13++) {
-                                    arrayList3.add(Long.valueOf(byteBufferValue2.readInt64(false)));
-                                }
-                                byteBufferValue2.reuse();
-                            }
-                            i7 = queryFinalized.intValue(2);
-                            try {
-                                j10 = queryFinalized.longValue(3);
-                                z11 = queryFinalized.intValue(4) == 1;
-                                i11 = i7;
-                                r52 = r52;
-                            } catch (Throwable th3) {
-                                th = th3;
-                                arrayList = r52;
-                                r52 = queryFinalized;
-                                a8.g(th, true);
-                                z10 = false;
-                                j3 = j10;
-                                i10 = i7;
-                                arrayList2 = arrayList;
-                                siVar2.t1(z13, arrayList2, arrayList3, z10, true, i10, j3);
-                                return;
-                            }
-                        } else {
-                            z11 = false;
-                        }
-                        queryFinalized.dispose();
-                        ArrayList arrayList4 = r52;
-                        z10 = z11;
-                        arrayList2 = arrayList4;
-                        j3 = j10;
-                        i10 = i11;
-                    } catch (Throwable th4) {
-                        th = th4;
-                        arrayList = r52;
+                ri riVar = this.b;
+                Long[] lArr = riVar.G0;
+                Long valueOf = Long.valueOf(System.currentTimeMillis() / 1000);
+                int i7 = this.c;
+                lArr[i7] = valueOf;
+                if (!(tLObject instanceof TL_account.TL_emojiStatusesNotModified)) {
+                    if (tLObject instanceof TL_account.TL_emojiStatuses) {
+                        TL_account.TL_emojiStatuses tL_emojiStatuses = (TL_account.TL_emojiStatuses) tLObject;
+                        riVar.E0[i7] = tL_emojiStatuses.hash;
+                        riVar.F0[i7] = tL_emojiStatuses.statuses;
+                        riVar.getMessagesStorage().a.c(new l7(riVar, i7, tL_emojiStatuses, 8));
+                        g0.g3(new eg(riVar, 3));
+                        break;
                     }
-                } catch (Throwable th5) {
-                    th = th5;
-                    arrayList = null;
-                    i7 = 0;
+                } else {
+                    riVar.I0[i7] = false;
+                    break;
                 }
-                siVar2.t1(z13, arrayList2, arrayList3, z10, true, i10, j3);
-                return;
+                break;
+            case 1:
+                g0.g3(new dg(this.b, tL_error, tLObject, this.c, 0));
+                break;
+            case 2:
+                this.b.B1(this.c, tLObject instanceof TLRPC.TL_messages_savedGifs ? ((TLRPC.TL_messages_savedGifs) tLObject).gifs : null, true, 0, true);
+                break;
+            default:
+                int i10 = this.c;
+                if (i10 == 3 || i10 == 7) {
+                    if (tLObject instanceof TLRPC.TL_messages_stickers) {
+                        arrayList = ((TLRPC.TL_messages_stickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                } else if (i10 == 2) {
+                    if (tLObject instanceof TLRPC.TL_messages_favedStickers) {
+                        arrayList = ((TLRPC.TL_messages_favedStickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                } else {
+                    if (tLObject instanceof TLRPC.TL_messages_recentStickers) {
+                        arrayList = ((TLRPC.TL_messages_recentStickers) tLObject).stickers;
+                    }
+                    arrayList = null;
+                }
+                this.b.B1(i10, arrayList, false, 0, true);
+                break;
         }
     }
 }

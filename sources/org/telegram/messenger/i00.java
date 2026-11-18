@@ -1,27 +1,45 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i00 implements oc, nc {
-    public final /* synthetic */ c10 a;
-    public final /* synthetic */ gj b;
-    public final /* synthetic */ f3.s c;
-    public final /* synthetic */ di.l9 d;
+public final /* synthetic */ class i00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z00 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ i00(c10 c10Var, gj gjVar, f3.s sVar, di.l9 l9Var) {
-        this.a = c10Var;
-        this.b = gjVar;
-        this.c = sVar;
-        this.d = l9Var;
+    public /* synthetic */ i00(z00 z00Var, long j3, int i7) {
+        this.a = i7;
+        this.b = z00Var;
+        this.c = j3;
     }
 
-    @Override // org.telegram.messenger.oc
-    public void a(String str) {
-        g0.h3(new jn(this.a, this.b, str, this.c, this.d, 18));
-    }
-
-    @Override // org.telegram.messenger.nc
-    public void r(Exception exc) {
-        g0.h3(new bm(this.a, this.b, this.c, this.d, 27));
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        long j3 = this.c;
+        z00 z00Var = this.b;
+        switch (i7) {
+            case 0:
+                ks.f(z00Var.currentAccount).k(ks.O1, Long.valueOf(j3));
+                break;
+            default:
+                ArrayList arrayList = (ArrayList) z00Var.n.S.f(j3);
+                if (arrayList != null) {
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        fj fjVar = (fj) arrayList.get(i10);
+                        if (fjVar == null || fjVar.k == null) {
+                            arrayList2.add(null);
+                        } else {
+                            arrayList2.add(z00Var.getMessagesStorage().e0(fjVar.e1(), fj.B0(fjVar.k)));
+                        }
+                    }
+                    g0.g3(new yf(z00Var, arrayList2, arrayList, 5));
+                    break;
+                }
+                break;
+        }
     }
 }

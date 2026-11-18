@@ -1,73 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.MotionEvent;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l21 extends h6 {
-    public final Paint s;
-    public final n2.o0 w;
-    public final /* synthetic */ n21 x;
+public final class l21 extends v4.u0 {
+    public final /* synthetic */ y21 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l21(n21 n21Var, Context context) {
-        super(context, false, false, false);
-        this.x = n21Var;
-        this.s = new Paint(1);
-        this.w = new n2.o0();
+    public l21(y21 y21Var) {
+        this.a = y21Var;
     }
 
-    @Override // org.telegram.ui.Components.h6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (org.telegram.messenger.hd.a0) {
-            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        } else {
-            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        y21 y21Var = this.a;
+        k21 k21Var = y21Var.H1;
+        if (i7 == 0) {
+            y21Var.G1 = false;
         }
-        p21 p21Var = this.x.n;
-        int i7 = org.telegram.ui.ActionBar.j6.Gj;
-        String[] strArr = p21.S1;
-        int r12 = org.telegram.ui.ActionBar.j6.r1(0.1175f, org.telegram.ui.ActionBar.j6.w0(i7, p21Var.J0));
-        Paint paint = this.s;
-        paint.setColor(r12);
-        canvas.drawRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
-        if (this.w.h(canvas)) {
-            invalidate();
+        if ((i7 == 0 || i7 == 2) && y21Var.M0(false) > 0.0f && y21Var.M0(false) < org.telegram.messenger.g0.L(96.0f) && k21Var.canScrollVertically(1) && y21.J0(y21Var)) {
+            y21Var.G1 = true;
+            k21Var.w0(0, (int) y21Var.M0(false), null);
         }
-        super.onDraw(canvas);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        p21 p21Var = this.x.n;
-        int action = motionEvent.getAction();
-        n2.o0 o0Var = this.w;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
-                }
-                o0Var.f(true);
-                invalidate();
-            }
-            return super.onTouchEvent(motionEvent);
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        y21 y21Var = this.a;
+        y21Var.b.invalidate();
+        boolean canScrollVertically = y21Var.H1.canScrollVertically(1);
+        View view = y21Var.L1;
+        Boolean bool = y21Var.R1;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            y21Var.R1 = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.messenger.n10.o(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), lr.h, 320L);
         }
-        String[] strArr = p21.S1;
-        a80 a80Var = new a80(null, p21Var.J0, motionEvent.getX(), motionEvent.getY(), 0);
-        a80Var.d(org.telegram.ui.ActionBar.j6.r1(0.1175f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Gj, p21Var.J0)));
-        u70 b10 = a80Var.b();
-        if (org.telegram.messenger.hd.a0) {
-            org.telegram.messenger.g0.P.set(getWidth() - d(), (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, getWidth(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        } else {
-            org.telegram.messenger.g0.P.set(0.0f, (getHeight() - org.telegram.messenger.g0.L(18.0f)) / 2.0f, d(), (org.telegram.messenger.g0.L(18.0f) + getHeight()) / 2.0f);
-        }
-        b10.addRect(org.telegram.messenger.g0.P, Path.Direction.CW);
-        o0Var.b(a80Var, null);
-        invalidate();
-        return true;
     }
 }

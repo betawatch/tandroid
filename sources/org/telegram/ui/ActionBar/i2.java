@@ -1,37 +1,45 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i2 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class i2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ x2 b;
 
-    public /* synthetic */ i2(int i7, Runnable runnable) {
+    public /* synthetic */ i2(x2 x2Var, int i7) {
         this.a = i7;
-        this.b = runnable;
+        this.b = x2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run();
+                x2 x2Var = this.b;
+                n2 n2Var = x2Var.c;
+                org.telegram.messenger.g0.E2(n2Var);
+                x2Var.j1.getLayoutContainer().addView(n2Var);
                 break;
             case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                this.b.dismiss();
                 break;
-            default:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
+            case 2:
+                try {
+                    this.b.L();
                     break;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
+                    return;
                 }
+            default:
+                this.b.dismiss();
+                ks.f(j10.t0).k(ks.V2, new Object[0]);
+                org.telegram.messenger.g0.h3(new cd0(28), 220L);
                 break;
         }
     }

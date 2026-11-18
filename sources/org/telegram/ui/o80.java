@@ -1,54 +1,41 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o80 implements org.telegram.messenger.bp {
-    public final /* synthetic */ g50 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+public final /* synthetic */ class o80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p80 b;
+    public final /* synthetic */ org.telegram.messenger.c c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 e;
 
-    public o80(LaunchActivity launchActivity, g50 g50Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = g50Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
+    public /* synthetic */ o80(p80 p80Var, org.telegram.messenger.c cVar, long j3, org.telegram.ui.ActionBar.h2 h2Var, int i7) {
+        this.a = i7;
+        this.b = p80Var;
+        this.c = cVar;
+        this.d = j3;
+        this.e = h2Var;
     }
 
-    @Override // org.telegram.messenger.bp
-    public final void a() {
-        LaunchActivity launchActivity = this.e;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.t4.r0((org.telegram.ui.ActionBar.e2) i5.c.h(1, launchActivity.e0), null, org.telegram.messenger.hd.M0(2131749075, null), null);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.g3(new o80(this.b, this.c, this.d, this.e, 1));
+                break;
+            default:
+                org.telegram.messenger.c cVar = this.c;
+                int i7 = cVar.a;
+                org.telegram.messenger.mp u12 = org.telegram.messenger.mp.u1(i7);
+                long j3 = this.d;
+                long j10 = -j3;
+                org.telegram.messenger.t3 i12 = u12.i1(j10, false, null);
+                TLRPC.Chat O0 = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(j10));
+                org.telegram.messenger.mp.u1(i7).l1(j3);
+                org.telegram.ui.Components.voip.b2.l(O0, null, false, Boolean.valueOf(i12 == null || !i12.b.rtmp_stream), this.b.h, this.e, cVar);
+                break;
         }
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-    }
-
-    @Override // org.telegram.messenger.bp
-    public final void f(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        if (this.b[0]) {
-            return;
-        }
-        an anVar = new an(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            anVar.b6 = chatInvite;
-        }
-        ((ActionBarLayout) this.e.M()).S(anVar);
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l0 {
     public final CharSequence a;
@@ -31,7 +31,7 @@ public final class l0 {
             if (Build.VERSION.SDK_INT >= 26) {
                 Iterator it = l0Var.c.iterator();
                 while (it.hasNext()) {
-                    f2.h.f(addExtras, (String) it.next());
+                    f2.i.f(addExtras, (String) it.next());
                 }
             }
             if (Build.VERSION.SDK_INT >= 29) {

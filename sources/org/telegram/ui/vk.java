@@ -1,28 +1,18 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class vk extends mq0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ an c;
+public final class vk extends oq0 {
+    public final /* synthetic */ bn a;
 
-    public vk(an anVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = anVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    public vk(bn bnVar) {
+        this.a = bnVar;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final org.telegram.messenger.ic j(int i7) {
-        return new org.telegram.messenger.ic(this.a, null, 0);
-    }
-
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final void o(int i7, org.telegram.messenger.g20 g20Var, boolean z10, int i10, int i11, boolean z11) {
-        this.c.u((org.telegram.messenger.ff) this.b.get(0), g20Var, z10, i10, 0, z11, 0L);
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        return bn.P1(this.a, fjVar, fileLocation, i7, z10, false);
     }
 }

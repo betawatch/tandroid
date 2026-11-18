@@ -28,32 +28,32 @@ import org.telegram.messenger.ShareBroadcastReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b3;
-import org.telegram.ui.ActionBar.c3;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.g4;
+import org.telegram.ui.jw0;
 import org.telegram.ui.k3;
-import org.telegram.ui.nb1;
 import org.telegram.ui.web.s0;
 import org.telegram.ui.x2;
 import sg.h0;
 import tg.x;
 import zf.e;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static h0 a;
@@ -263,7 +263,7 @@ public abstract class c {
             for (int i7 = 0; i7 < queryIntentActivities.size(); i7++) {
                 try {
                     strArr[i7] = queryIntentActivities.get(i7).activityInfo.packageName;
-                    if (r2.a) {
+                    if (s2.a) {
                         a8.b("default browser name = " + strArr[i7]);
                     }
                 } catch (Exception unused2) {
@@ -298,7 +298,7 @@ public abstract class c {
                     i12++;
                 }
             }
-            if (r2.a) {
+            if (s2.a) {
                 for (int i13 = 0; i13 < list.size(); i13++) {
                     a8.b("device has " + list.get(i13).activityInfo.packageName + " to open " + str);
                 }
@@ -309,7 +309,7 @@ public abstract class c {
         list = context.getPackageManager().queryIntentActivities(new Intent("android.intent.action.VIEW", Uri.parse(str)), 0);
         if (strArr == null) {
         }
-        if (r2.a) {
+        if (s2.a) {
         }
         if (list == null) {
             return false;
@@ -322,7 +322,7 @@ public abstract class c {
         Typeface typeface = g0.a;
         String K0 = uri == null ? null : g0.K0(uri.toString(), false);
         String lowerCase = K0 != null ? K0.toLowerCase() : "";
-        if (!np.s1(m10.t0).f4.contains(lowerCase)) {
+        if (!mp.u1(j10.t0).h4.contains(lowerCase)) {
             Matcher matcher = LaunchActivity.D1.matcher(lowerCase);
             if (matcher.find()) {
                 StringBuilder sb2 = new StringBuilder("https://t.me/");
@@ -394,7 +394,7 @@ public abstract class c {
 
     public static boolean h(String str) {
         try {
-            return TextUtils.equals(g0.K0(str, false), np.s1(m10.t0).V2);
+            return TextUtils.equals(g0.K0(str, false), mp.u1(j10.t0).X2);
         } catch (Exception e10) {
             a8.g(e10, true);
             return false;
@@ -542,27 +542,27 @@ public abstract class c {
     }
 
     public static void o(String str) {
-        c3 N;
-        b3 b3Var;
+        g3 N;
+        f3 f3Var;
         k3[] k3VarArr;
         k3 k3Var;
         LaunchActivity launchActivity = LaunchActivity.H1;
         if (launchActivity != null && (N = launchActivity.N()) != null) {
             if (!TextUtils.isEmpty(str)) {
-                ArrayList<b3> tabs = N.getTabs();
+                ArrayList<f3> tabs = N.getTabs();
                 for (int i7 = 0; i7 < tabs.size(); i7++) {
-                    b3Var = tabs.get(i7);
-                    g4 g4Var = b3Var.J;
+                    f3Var = tabs.get(i7);
+                    g4 g4Var = f3Var.J;
                     if (g4Var != null && !g4Var.e0.isEmpty()) {
-                        Object h = i5.c.h(1, b3Var.J.e0);
+                        Object h = i5.c.h(1, f3Var.J.e0);
                         if (h instanceof x2) {
                             s0 s0Var = ((x2) h).b;
-                            if (s0Var == null && (k3VarArr = b3Var.J.v0) != null && (k3Var = k3VarArr[0]) != null) {
+                            if (s0Var == null && (k3VarArr = f3Var.J.v0) != null && (k3Var = k3VarArr[0]) != null) {
                                 s0Var = k3Var.getWebView();
                             }
                             if (s0Var != null) {
-                                if (TextUtils.equals(c3.p(s0Var.canGoBack() ? s0Var.getUrl() : s0Var.getOpenURL()), c3.p(str))) {
-                                    N.e(b3Var);
+                                if (TextUtils.equals(g3.p(s0Var.canGoBack() ? s0Var.getUrl() : s0Var.getOpenURL()), g3.p(str))) {
+                                    N.e(f3Var);
                                     break;
                                 }
                             } else {
@@ -574,12 +574,12 @@ public abstract class c {
                     }
                 }
             }
-            b3Var = null;
-            if (b3Var != null) {
+            f3Var = null;
+            if (f3Var != null) {
                 return;
             }
         }
-        e2 T = LaunchActivity.T();
+        h2 T = LaunchActivity.T();
         if (T != null && T.getArticleViewer() != null) {
             T.getArticleViewer().L(null, null, null, str);
             return;
@@ -726,7 +726,7 @@ public abstract class c {
             build = uri;
             uri2 = build;
         }
-        int i7 = m10.t0;
+        int i7 = j10.t0;
         boolean[] zArr = {false};
         boolean g10 = g(uri2, false, zArr);
         if (str != null) {
@@ -801,21 +801,21 @@ public abstract class c {
                 try {
                     Typeface typeface = g0.a;
                     String K02 = uri2 == null ? null : g0.K0(uri2.toString(), false);
-                    if (m10.i(m10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
-                        t1[] t1VarArr = {new t1(3, context, null)};
+                    if (j10.i(j10.t0).f() != null && (i(K02, true, false) || ("telegram.org".equalsIgnoreCase(K02) && (uri2.toString().toLowerCase().contains("telegram.org/faq") || uri2.toString().toLowerCase().contains("telegram.org/privacy") || uri2.toString().toLowerCase().contains("telegram.org/blog"))))) {
+                        u1[] u1VarArr = {new u1(3, context, null)};
                         TL_account.getWebPagePreview getwebpagepreview = new TL_account.getWebPagePreview();
                         getwebpagepreview.message = uri2.toString();
                         str4 = str3;
                         z19 = z17;
-                        int i10 = 12;
+                        int i10 = 15;
                         bVar2 = bVar;
                         try {
-                            int sendRequest = ConnectionsManager.getInstance(m10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, t1VarArr, i7, uri2, context, z19));
+                            int sendRequest = ConnectionsManager.getInstance(j10.t0).sendRequest(getwebpagepreview, new org.telegram.ui.g0(bVar2, u1VarArr, i7, uri2, context, z19));
                             if (bVar2 != null) {
                                 bVar2.d();
                                 return;
                             } else {
-                                g0.i3(new nb1(t1VarArr, sendRequest, i10), 1000L);
+                                g0.h3(new jw0(u1VarArr, sendRequest, i10), 1000L);
                                 return;
                             }
                         } catch (Exception unused) {
@@ -836,16 +836,16 @@ public abstract class c {
             }
             boolean z21 = false;
             K0 = g0.K0(uri2.toString().toLowerCase(), false);
-            if (np.s1(org.telegram.messenger.c.a(i7).a).e4.contains(K0)) {
-                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(np.s1(org.telegram.messenger.c.a(m10.t0).a).g4, "UTF-8")).build();
+            if (mp.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
+                uri2 = uri2.buildUpon().appendQueryParameter("autologin_token", URLEncoder.encode(mp.u1(org.telegram.messenger.c.a(j10.t0).a).i4, "UTF-8")).build();
             }
             if (z19) {
                 if (uri2 == null) {
-                    if (!np.s1(i7).N2(uri2.toString())) {
+                    if (!mp.u1(i7).T2(uri2.toString())) {
                     }
                 }
-                if (np.s1(i7).O2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
-                    if (np.s1(i7).f4.contains(K0)) {
+                if (mp.u1(i7).U2() && !g10 && !lowerCase.equals("tel") && !j(uri2.toString()) && (zArr[0] || !m(context, uri2.toString(), false) || !f(context, uri2.toString()))) {
+                    if (mp.u1(i7).h4.contains(K0)) {
                         Intent intent = new Intent("android.intent.action.VIEW", uri2);
                         intent.addFlags(TLObject.FLAG_28);
                         t0.b.startActivity(intent);
@@ -881,17 +881,17 @@ public abstract class c {
                         Bundle bundle = new Bundle();
                         bundle.putBinder("android.support.customtabs.extra.SESSION", e10 == null ? null : (zf.b) e10.b);
                         intent3.putExtras(bundle);
-                        String M0 = hd.M0(2131751762, null);
+                        String M0 = gd.M0(2131751751, null);
                         ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
                         Bundle bundle2 = new Bundle();
                         bundle2.putString("android.support.customtabs.customaction.MENU_ITEM_TITLE", M0);
                         bundle2.putParcelable("android.support.customtabs.customaction.PENDING_INTENT", broadcast);
                         arrayList.add(bundle2);
                         z22 = false;
-                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", j6.x0(null, j6.S8, false));
+                        intent3.putExtra("android.support.customtabs.extra.TOOLBAR_COLOR", n6.x0(null, n6.S8, false));
                         intent3.putExtra("android.support.customtabs.extra.TITLE_VISIBILITY", 1);
                         Bitmap decodeResource = BitmapFactory.decodeResource(context.getResources(), R.drawable.msg_filled_shareout);
-                        String M02 = hd.M0(2131745459, null);
+                        String M02 = gd.M0(2131745264, null);
                         z21 = false;
                         PendingIntent broadcast2 = PendingIntent.getBroadcast(t0.b, 0, intent2, 33554432);
                         Bundle bundle3 = new Bundle();
@@ -930,7 +930,7 @@ public abstract class c {
                 try {
                     if (BubbleActivity.b0 == null) {
                         if (uri2 != null) {
-                            if (np.s1(i7).N2(uri2.toString())) {
+                            if (mp.u1(i7).T2(uri2.toString())) {
                                 if (TextUtils.isEmpty(str4)) {
                                     if (uri2.getScheme() != null && !"https".equals(uri2.getScheme()) && !"http".equals(uri2.getScheme()) && !"tonsite".equals(uri2.getScheme())) {
                                     }
@@ -1000,7 +1000,7 @@ public abstract class c {
         uri2 = uri2.normalizeScheme();
         boolean z212 = false;
         K0 = g0.K0(uri2.toString().toLowerCase(), false);
-        if (np.s1(org.telegram.messenger.c.a(i7).a).e4.contains(K0)) {
+        if (mp.u1(org.telegram.messenger.c.a(i7).a).g4.contains(K0)) {
         }
         if (z19) {
         }

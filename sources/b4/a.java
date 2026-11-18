@@ -7,10 +7,10 @@ import f3.q;
 import f3.s;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class a implements o {
         switch (this.a) {
         }
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     @Override // f3.o

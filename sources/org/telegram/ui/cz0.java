@@ -1,26 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.WindowInsets;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cz0 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class cz0 extends rg.a {
+    public final org.telegram.messenger.kv c;
+    public final String d;
 
-    public /* synthetic */ cz0(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public cz0(int i7) {
+        super(i7, false);
+        this.c = null;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
-            default:
-                return j11.b((d01) this.b, view, windowInsets);
+    public final boolean equals(Object obj) {
+        org.telegram.messenger.kv kvVar;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || cz0.class != obj.getClass()) {
+            return false;
+        }
+        cz0 cz0Var = (cz0) obj;
+        if (this.a != cz0Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, cz0Var.d);
+        }
+        org.telegram.messenger.kv kvVar2 = this.c;
+        return kvVar2 == null || (kvVar = cz0Var.c) == null || kvVar2.d == kvVar.d;
+    }
+
+    public cz0(org.telegram.messenger.kv kvVar) {
+        super(2, false);
+        this.c = kvVar;
+    }
+
+    public cz0(int i7, String str) {
+        super(i7, false);
+        this.d = str;
+        this.c = null;
     }
 }

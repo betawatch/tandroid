@@ -1,135 +1,30 @@
 package c8;
 
-import org.telegram.messenger.ns;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class x0 {
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0078 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0077 A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static int a(int i7, CharSequence charSequence) {
-        char charAt;
-        if (i7 >= charSequence.length()) {
-            return -1;
+    /* JADX WARN: Multi-variable type inference failed */
+    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
+        kotlin.jvm.internal.j.e(pVar, "<this>");
+        if (pVar instanceof kd.a) {
+            return ((kd.a) pVar).create(cVar, cVar2);
         }
-        if (charSequence.charAt(i7) == '<') {
-            while (true) {
-                i7++;
-                if (i7 >= charSequence.length() || (charAt = charSequence.charAt(i7)) == '\n' || charAt == '<') {
-                    break;
-                }
-                if (charAt == '>') {
-                    return i7 + 1;
-                }
-                if (charAt == '\\') {
-                    int i10 = i7 + 1;
-                    if (y0.a(i10, charSequence)) {
-                        i7 = i10;
-                    }
-                }
-            }
-            return -1;
-        }
-        int i11 = 0;
-        int i12 = i7;
-        while (i12 < charSequence.length()) {
-            char charAt2 = charSequence.charAt(i12);
-            if (charAt2 == 0 || charAt2 == ' ') {
-                if (i12 != i7) {
-                    return i12;
-                }
-                return -1;
-            }
-            if (charAt2 == '\\') {
-                int i13 = i12 + 1;
-                if (y0.a(i13, charSequence)) {
-                    i12 = i13;
-                }
-            } else if (charAt2 == '(') {
-                i11++;
-                if (i11 > 32) {
-                    return -1;
-                }
-            } else if (charAt2 != ')') {
-                if (Character.isISOControl(charAt2)) {
-                    if (i12 != i7) {
-                    }
-                }
-            } else {
-                if (i11 == 0) {
-                    return i12;
-                }
-                i11--;
-            }
-            i12++;
-        }
-        return charSequence.length();
+        id.h context = cVar2.getContext();
+        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
     }
 
-    public static int b(int i7, CharSequence charSequence) {
-        while (i7 < charSequence.length()) {
-            switch (charSequence.charAt(i7)) {
-                case ns.c1 /* 91 */:
-                    return -1;
-                case ns.d1 /* 92 */:
-                    int i10 = i7 + 1;
-                    if (!y0.a(i10, charSequence)) {
-                        break;
-                    } else {
-                        i7 = i10;
-                        break;
-                    }
-                case ns.e1 /* 93 */:
-                    return i7;
-            }
-            i7++;
-        }
-        return charSequence.length();
+    public static id.c b(id.c cVar) {
+        id.c intercepted;
+        kotlin.jvm.internal.j.e(cVar, "<this>");
+        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
+        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
     }
 
-    public static int c(int i7, CharSequence charSequence) {
-        if (i7 >= charSequence.length()) {
-            return -1;
-        }
-        char charAt = charSequence.charAt(i7);
-        char c10 = '\"';
-        if (charAt != '\"') {
-            c10 = '\'';
-            if (charAt != '\'') {
-                if (charAt != '(') {
-                    return -1;
-                }
-                c10 = ')';
-            }
-        }
-        int d = d(charSequence, i7 + 1, c10);
-        if (d != -1 && d < charSequence.length() && charSequence.charAt(d) == c10) {
-            return d + 1;
-        }
-        return -1;
-    }
-
-    public static int d(CharSequence charSequence, int i7, char c10) {
-        while (i7 < charSequence.length()) {
-            char charAt = charSequence.charAt(i7);
-            if (charAt == '\\') {
-                int i10 = i7 + 1;
-                if (y0.a(i10, charSequence)) {
-                    i7 = i10;
-                    i7++;
-                }
-            }
-            if (charAt == c10) {
-                return i7;
-            }
-            if (c10 == ')' && charAt == '(') {
-                return -1;
-            }
-            i7++;
-        }
-        return charSequence.length();
+    public static Object c(rd.p pVar, Object obj, id.c cVar) {
+        kotlin.jvm.internal.j.e(pVar, "<this>");
+        id.h context = cVar.getContext();
+        Object dVar = context == id.i.a ? new jd.d(cVar) : new jd.e(cVar, context);
+        kotlin.jvm.internal.u.a(2, pVar);
+        return pVar.invoke(obj, dVar);
     }
 }

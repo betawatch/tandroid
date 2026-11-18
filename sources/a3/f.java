@@ -7,7 +7,6 @@ import ab.c0;
 import ab.o0;
 import ai.n2;
 import ai.z;
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -23,49 +22,52 @@ import android.widget.EditText;
 import androidx.fragment.app.j0;
 import androidx.fragment.app.u0;
 import androidx.lifecycle.e0;
-import bi.i4;
-import bi.l2;
-import bi.s2;
+import bi.b5;
+import bi.f3;
+import bi.h3;
+import bi.j3;
+import bi.q6;
 import bi.t0;
+import bi.v7;
 import bi.x0;
-import c8.he;
-import c8.k0;
-import c8.l0;
+import bi.x4;
+import bi.y2;
+import c8.ke;
+import c8.m0;
+import c8.n0;
 import com.google.android.gms.internal.vision.e2;
-import di.ac;
+import di.ec;
 import java.nio.MappedByteBuffer;
 import java.util.ArrayDeque;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import java.util.concurrent.atomic.AtomicReference;
-import m.o3;
 import org.json.JSONArray;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.p41;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.z41;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     public /* synthetic */ f(androidx.fragment.app.l lVar, u0 u0Var) {
-        this.a = 12;
+        this.a = 13;
         this.b = lVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0082, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0093, code lost:
     
-        r4 = org.telegram.ui.Dictation.DictationAsr.nativeFileNext(r1);
+        r8 = org.telegram.ui.Dictation.DictationAsr.nativeFileNext(r3);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:89:0x018d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01a9, code lost:
     
-        r6 = org.telegram.ui.Dictation.DictationAsr.nativeSessionFinish(r1);
-        r0.a(r6);
-        android.util.Log.d("Dictation", "tinyasr: finished, " + (r5 / 32) + " ms of audio, " + r3 + " ms busy, " + (android.os.SystemClock.elapsedRealtime() - r8) + " ms in all");
+        r7 = org.telegram.ui.Dictation.DictationAsr.nativeSessionFinish(r3);
+        r2.a(r7);
+        android.util.Log.d("Dictation", "tinyasr: finished, " + (r0 / 32) + " ms of audio, " + r10 + " ms busy, " + (android.os.SystemClock.elapsedRealtime() - r5) + " ms in all");
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -77,9 +79,9 @@ public final /* synthetic */ class f implements Runnable {
         long nativeFileNew;
         String nativeFileNext;
         ai.w wVar = (ai.w) this.b;
-        long k10 = DictationAsr.k(wVar.b);
-        long j3 = 0;
-        if (k10 == 0) {
+        long j3 = DictationAsr.j(wVar.b);
+        long j10 = 0;
+        if (j3 == 0) {
             wVar.b(wVar.o);
             return;
         }
@@ -88,9 +90,10 @@ public final /* synthetic */ class f implements Runnable {
         synchronized (zVar.a) {
             z10 = zVar.d;
         }
+        int i7 = 0;
         if (!z10) {
             String str = wVar.c.split(",")[0];
-            nativeSessionNew = DictationAsr.nativeSessionNew(k10, wVar.c, str);
+            nativeSessionNew = DictationAsr.nativeSessionNew(j3, wVar.c, str, bz.o() == 0 ? 2 : 4);
             StringBuilder sb2 = new StringBuilder("tinyasr: session ");
             sb2.append(wVar.b.a);
             sb2.append(" in ");
@@ -99,23 +102,24 @@ public final /* synthetic */ class f implements Runnable {
             sb2.append(" ms");
             Log.d("Dictation", sb2.toString());
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            int i7 = 0;
+            int i10 = 0;
+            long j11 = 0;
             while (true) {
                 try {
                     if (wVar.l) {
                         break;
                     }
                     boolean z11 = wVar.k;
-                    int c10 = wVar.a.c() - i7;
+                    int c10 = wVar.a.c() - i10;
                     if (c10 >= 2) {
-                        int min = Math.min(10240, c10 & (-2)) + i7;
-                        byte[] b10 = wVar.a.b(i7, min);
+                        int min = Math.min(10240, c10 & (-2)) + i10;
+                        byte[] b10 = wVar.a.b(i10, min);
                         long elapsedRealtime2 = SystemClock.elapsedRealtime();
                         nativeSessionPush = DictationAsr.nativeSessionPush(nativeSessionNew, b10, 0, b10.length);
                         wVar.a(nativeSessionPush);
-                        j3 += SystemClock.elapsedRealtime() - elapsedRealtime2;
+                        j11 += SystemClock.elapsedRealtime() - elapsedRealtime2;
                         wVar.m = min;
-                        i7 = min;
+                        i10 = min;
                     } else if (z11) {
                         break;
                     } else {
@@ -139,14 +143,17 @@ public final /* synthetic */ class f implements Runnable {
         wVar.m = b11.length;
         int length = b11.length / 2;
         float[] fArr = new float[length];
-        for (int i10 = 0; i10 < length; i10++) {
-            int i11 = i10 * 2;
-            fArr[i10] = ((short) ((b11[i11 + 1] << 8) | (b11[i11] & 255))) / 32768.0f;
+        while (i7 < length) {
+            int i11 = i7 * 2;
+            fArr[i7] = ((short) ((b11[i11] & 255) | (b11[i11 + 1] << 8))) / 32768.0f;
+            i7++;
+            j10 = j10;
         }
-        nativeFileNew = DictationAsr.nativeFileNew(k10, fArr, wVar.c);
+        long j12 = j10;
+        nativeFileNew = DictationAsr.nativeFileNew(j3, fArr, wVar.c, bz.o() == 0 ? 2 : 4);
         try {
-            if (nativeFileNew == 0) {
-                if (nativeFileNew != 0) {
+            if (nativeFileNew == j12) {
+                if (nativeFileNew != j12) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
                 DictationAsr.M(wVar.b);
@@ -157,13 +164,13 @@ public final /* synthetic */ class f implements Runnable {
                 while (!wVar.l && nativeFileNext != null) {
                     try {
                         try {
-                            DictationAsr.n(wVar.e, new JSONArray(nativeFileNext), null);
+                            DictationAsr.m(wVar.e, new JSONArray(nativeFileNext), null);
                         } catch (Exception e10) {
                             Log.e("Dictation", "tinyasr: words " + nativeFileNext, e10);
                         }
                         wVar.b(null);
                     } catch (Throwable th3) {
-                        if (nativeFileNew != 0) {
+                        if (nativeFileNew != j12) {
                             DictationAsr.nativeFileFree(nativeFileNew);
                         }
                         DictationAsr.M(wVar.b);
@@ -178,7 +185,7 @@ public final /* synthetic */ class f implements Runnable {
                     }
                 }
                 Log.d("Dictation", "tinyasr: file pass in " + wVar.c + ", " + (length / 16) + " ms of audio in " + (SystemClock.elapsedRealtime() - elapsedRealtime3) + " ms");
-                if (nativeFileNew != 0) {
+                if (nativeFileNew != j12) {
                     DictationAsr.nativeFileFree(nativeFileNew);
                 }
                 DictationAsr.M(wVar.b);
@@ -273,12 +280,12 @@ public final /* synthetic */ class f implements Runnable {
                         Context context = rVar.a;
                         aVar.getClass();
                         o0.h[] hVarArr = {d};
-                        k0 k0Var = i0.f.a;
-                        he.a("TypefaceCompat.createFromFontInfo");
+                        m0 m0Var = i0.e.a;
+                        ke.a("TypefaceCompat.createFromFontInfo");
                         try {
-                            Typeface b10 = i0.f.a.b(context, hVarArr, 0);
+                            Typeface b10 = i0.e.a.b(context, hVarArr, 0);
                             Trace.endSection();
-                            MappedByteBuffer e10 = l0.e(rVar.a, d.a);
+                            MappedByteBuffer e10 = n0.e(rVar.a, d.a);
                             if (e10 == null || b10 == null) {
                                 throw new RuntimeException("Unable to open file.");
                             }
@@ -322,50 +329,6 @@ public final /* synthetic */ class f implements Runnable {
         }
     }
 
-    private final void d() {
-        boolean z10;
-        String str;
-        o3 o3Var = (o3) this.b;
-        synchronized (((AtomicMarkableReference) o3Var.g)) {
-            try {
-                z10 = false;
-                if (((AtomicMarkableReference) o3Var.g).isMarked()) {
-                    str = (String) ((AtomicMarkableReference) o3Var.g).getReference();
-                    ((AtomicMarkableReference) o3Var.g).set(str, false);
-                    z10 = true;
-                } else {
-                    str = null;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        if (z10) {
-            ((ca.h) o3Var.a).i((String) o3Var.c, str);
-        }
-    }
-
-    private final void f() {
-        ab.q qVar = (ab.q) this.b;
-        Map map = null;
-        ((AtomicReference) qVar.c).set(null);
-        synchronized (qVar) {
-            try {
-                if (((AtomicMarkableReference) qVar.b).isMarked()) {
-                    map = ((ca.e) ((AtomicMarkableReference) qVar.b).getReference()).a();
-                    AtomicMarkableReference atomicMarkableReference = (AtomicMarkableReference) qVar.b;
-                    atomicMarkableReference.set((ca.e) atomicMarkableReference.getReference(), false);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        if (map != null) {
-            o3 o3Var = (o3) qVar.d;
-            ((ca.h) o3Var.a).h((String) o3Var.c, map, qVar.a);
-        }
-    }
-
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
@@ -395,21 +358,24 @@ public final /* synthetic */ class f implements Runnable {
                 ((ah.c) this.b).f();
                 return;
             case 4:
-                a();
+                ((ai.f) this.b).c(null, null);
                 return;
             case 5:
-                b();
+                a();
                 return;
             case 6:
-                g0.J3((EditText) this.b);
+                b();
                 return;
             case 7:
-                DictationAsr.V((ai.t) ((a0) this.b).b, new n2());
+                g0.I3((EditText) this.b);
                 return;
             case 8:
-                ((androidx.activity.l) this.b).invalidateOptionsMenu();
+                DictationAsr.Y((ai.t) ((a0) this.b).b, new n2());
                 return;
             case 9:
+                ((androidx.activity.l) this.b).invalidateOptionsMenu();
+                return;
+            case 10:
                 androidx.activity.k kVar = (androidx.activity.k) this.b;
                 Runnable runnable = kVar.b;
                 if (runnable != null) {
@@ -418,26 +384,26 @@ public final /* synthetic */ class f implements Runnable {
                     return;
                 }
                 return;
-            case 10:
+            case 11:
                 androidx.activity.m.a((androidx.activity.m) this.b);
                 return;
-            case 11:
+            case 12:
                 c();
                 return;
-            case 12:
+            case 13:
                 androidx.fragment.app.l this$0 = (androidx.fragment.app.l) this.b;
                 kotlin.jvm.internal.j.e(this$0, "this$0");
                 kotlin.jvm.internal.j.e(null, "$operation");
                 this$0.a(null);
                 return;
-            case 13:
+            case 14:
                 Iterator it2 = ((j0) this.b).n.iterator();
                 if (it2.hasNext()) {
                     it2.next().getClass();
                     throw new ClassCastException();
                 }
                 return;
-            case 14:
+            case 15:
                 e0 e0Var = (e0) this.b;
                 androidx.lifecycle.v vVar = e0Var.f;
                 if (e0Var.b == 0) {
@@ -450,41 +416,41 @@ public final /* synthetic */ class f implements Runnable {
                     return;
                 }
                 return;
-            case 15:
+            case 16:
                 try {
                     ((Bitmap) this.b).recycle();
                     return;
                 } catch (Exception unused) {
                     return;
                 }
-            case 16:
-                bg.q qVar = (bg.q) this.b;
-                long j3 = qVar.b;
+            case 17:
+                bg.r rVar = (bg.r) this.b;
+                long j3 = rVar.b;
                 if (j3 > 0) {
                     long j10 = j3 - 1;
-                    qVar.b = j10;
-                    qVar.a.g(j10);
+                    rVar.b = j10;
+                    rVar.a.i(j10);
                 }
-                if (qVar.b <= 0) {
-                    qVar.c = false;
+                if (rVar.b <= 0) {
+                    rVar.c = false;
                 }
-                if (qVar.c) {
-                    g0.i3(qVar.d, 1000L);
+                if (rVar.c) {
+                    g0.h3(rVar.d, 1000L);
                     return;
                 }
                 return;
-            case 17:
+            case 18:
                 bi.y yVar = (bi.y) this.b;
                 yVar.d2.setTranslationX(yVar.c2.getAnimatedWidth() + g0.L(28.0f));
                 return;
-            case 18:
+            case 19:
                 ((t0) this.b).onBackPressed();
                 return;
-            case 19:
+            case 20:
                 x0 x0Var = (x0) this.b;
                 Drawable drawable = x0Var.O;
                 if (drawable != null && !x0Var.Q) {
-                    drawable.setAlpha(ns.e4);
+                    drawable.setAlpha(ks.e4);
                 }
                 x0Var.a.setAlpha(1.0f);
                 if (x0Var.getParent() instanceof ViewGroup) {
@@ -496,50 +462,44 @@ public final /* synthetic */ class f implements Runnable {
                     return;
                 }
                 return;
-            case 20:
-                p41 p41Var = ((s2) this.b).U1;
-                if (p41Var != null) {
-                    p41Var.O(false);
+            case 21:
+                z41 z41Var = ((j3) this.b).U1;
+                if (z41Var != null) {
+                    z41Var.O(false);
                     return;
                 }
-                return;
-            case 21:
-                ((bi.e2) this.b).c();
                 return;
             case 22:
-                ((l2) this.b).invalidateSelf();
+                ((y2) this.b).c();
                 return;
             case 23:
-                bi.n2 n2Var = (bi.n2) this.b;
-                ac acVar = n2Var.e;
-                if (acVar != null) {
-                    acVar.d();
-                    n2Var.invalidateSelf();
+                ((f3) this.b).invalidateSelf();
+                return;
+            case 24:
+                h3 h3Var = (h3) this.b;
+                ec ecVar = h3Var.e;
+                if (ecVar != null) {
+                    ecVar.d();
+                    h3Var.invalidateSelf();
                     return;
                 }
                 return;
-            case 24:
-                ((i4) this.b).p();
-                return;
             case 25:
-                ((c1.f) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
+                ((x4) this.b).run();
                 return;
             case 26:
-                d();
+                EditTextBoldCursor editTextBoldCursor = ((b5) this.b).o1;
+                editTextBoldCursor.requestFocus();
+                g0.I3(editTextBoldCursor);
                 return;
             case 27:
-                f();
+                ((q6) this.b).p();
                 return;
             case 28:
-                ch.r rVar = (ch.r) ((d6.i) this.b).b;
-                ch.q qVar2 = rVar.b;
-                if (qVar2 != null) {
-                    qVar2.d(true);
-                }
-                rVar.a.O7(true);
+                ((v7) this.b).c.a(Boolean.TRUE);
                 return;
             default:
-                ((ValueAnimator) this.b).start();
+                ((c1.f) this.b).f().a(new w0.h(2, "Failed to launch the selector UI. Hint: ensure the `context` parameter is an Activity-based context."));
                 return;
         }
     }

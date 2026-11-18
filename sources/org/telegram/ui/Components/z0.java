@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 c;
-    public final /* synthetic */ AlertDialog$Builder d;
+    public final /* synthetic */ org.telegram.ui.Cells.c2[] b;
 
-    public /* synthetic */ z0(TLRPC.User user, org.telegram.ui.ActionBar.e2 e2Var, AlertDialog$Builder alertDialog$Builder, int i7) {
+    public /* synthetic */ z0(org.telegram.ui.Cells.c2[] c2VarArr, int i7) {
         this.a = i7;
-        this.b = user;
-        this.c = e2Var;
-        this.d = alertDialog$Builder;
+        this.b = c2VarArr;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                bundle.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.e2 e2Var = this.c;
-                if (e2Var.getMessagesController().E(bundle, e2Var, null, null)) {
-                    e2Var.presentFragment(new ProfileActivity(bundle, null));
-                }
-                this.d.a.M0.run();
+                int intValue = ((Integer) view.getTag()).intValue();
+                this.b[intValue].c(!r1[r3.intValue()].b(), true);
                 break;
             default:
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", this.b.id);
-                org.telegram.ui.ActionBar.e2 e2Var2 = this.c;
-                if (e2Var2.getMessagesController().E(bundle2, e2Var2, null, null)) {
-                    e2Var2.presentFragment(new ProfileActivity(bundle2, null));
-                }
-                this.d.a.M0.run();
+                int intValue2 = ((Integer) view.getTag()).intValue();
+                this.b[intValue2].c(!r1[r3.intValue()].b(), true);
                 break;
         }
     }

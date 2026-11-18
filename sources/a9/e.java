@@ -14,13 +14,13 @@ import j6.w;
 import j6.x;
 import kotlin.jvm.internal.j;
 import m.o3;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import q6.m;
 import q6.q;
 import q7.l1;
 import y8.o;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class e {
             default:
                 switch (this.a) {
                     case 1:
-                        return new m7.e(context, looper, ns.K1, commonSettings, kVar, lVar, 0);
+                        return new m7.e(context, looper, ks.K1, commonSettings, kVar, lVar, 0);
                     case 2:
                         com.google.android.gms.common.api.a apiOptions = (com.google.android.gms.common.api.a) obj;
                         j.e(context, "context");
@@ -90,26 +90,26 @@ public final class e {
                     case 17:
                         return new s7.b(context, looper, 19, commonSettings, kVar, lVar, 0);
                     case 18:
-                        return new u7.l(context, looper, kVar, lVar, commonSettings);
+                        return new u7.k(context, looper, kVar, lVar, commonSettings);
                     case 19:
-                        return new v6.f(context, looper, ns.f5, commonSettings, kVar, lVar, 0);
+                        return new v6.f(context, looper, ks.f5, commonSettings, kVar, lVar, 0);
                 }
             case 4:
                 f6.e eVar = (f6.e) obj;
-                m.h(eVar, "Setting the API options is required.");
+                m.i(eVar, "Setting the API options is required.");
                 return new x(context, looper, commonSettings, eVar.a, 0, eVar.c, eVar.d, kVar, lVar);
             case 5:
                 f6.e eVar2 = (f6.e) obj;
-                m.h(eVar2, "Setting the API options is required.");
+                m.i(eVar2, "Setting the API options is required.");
                 return new w(context, looper, commonSettings, eVar2.a, 0, eVar2.b, eVar2.c, kVar, lVar);
             case 6:
-                return new t(context, looper, ns.r2, commonSettings, kVar, lVar, 0);
+                return new t(context, looper, ks.r2, commonSettings, kVar, lVar, 0);
             case 8:
                 return new y1(context, looper, 40, commonSettings, kVar, lVar, 0);
             case 11:
                 return new e8.a(context, looper, kVar, lVar, commonSettings);
             case 12:
-                return new l1(context, looper, ns.e2, commonSettings, kVar, lVar, 0);
+                return new l1(context, looper, ks.e2, commonSettings, kVar, lVar, 0);
             case 13:
                 commonSettings.getClass();
                 Integer num = (Integer) commonSettings.g;

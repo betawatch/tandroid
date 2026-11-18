@@ -1,35 +1,34 @@
 package m1;
 
-import a8.bb;
 import a8.i7;
-import a8.ma;
+import hi.w4;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import zd.s1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b0 implements g {
     public final f0 a;
-    public final hi.l0 b;
+    public final h9.g1 b;
     public final zd.z c;
-    public final d6.i d;
+    public final ob.c d;
     public int f;
     public s1 g;
     public final ab.c0 i;
     public final xi.e l;
     public final ie.d e = new ie.d();
-    public final hi.l0 h = new hi.l0(12);
-    public final gd.i j = bb.b(new l(this, 1));
-    public final gd.i k = bb.b(new l(this, 0));
+    public final h9.g1 h = new h9.g1(12);
+    public final gd.i j = b5.a.c(new l(this, 1));
+    public final gd.i k = b5.a.c(new l(this, 0));
 
-    public b0(f0 f0Var, List list, hi.l0 l0Var, zd.z zVar) {
+    public b0(f0 f0Var, List list, h9.g1 g1Var, zd.z zVar) {
         this.a = f0Var;
-        this.b = l0Var;
+        this.b = g1Var;
         this.c = zVar;
         id.c cVar = null;
-        this.d = new d6.i(new de.c(this, cVar, 3));
+        this.d = new ob.c(new de.c(this, cVar, 3));
         this.i = new ab.c0(this, list);
         y yVar = new y(this, 0);
         be.l lVar = new be.l(this, cVar, 10);
@@ -37,7 +36,7 @@ public final class b0 implements g {
         eVar.a = zVar;
         eVar.b = lVar;
         eVar.c = i7.a(ConnectionsManager.DEFAULT_DATACENTER_ID, null, 6);
-        eVar.d = new gc.b(17);
+        eVar.d = new w4(12);
         zd.a1 a1Var = (zd.a1) zVar.c().get(zd.y.b);
         if (a1Var != null) {
             a1Var.invokeOnCompletion(new u0(1, yVar, eVar));
@@ -66,7 +65,7 @@ public final class b0 implements g {
                     jd.a aVar = jd.a.a;
                     i7 = pVar.e;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         dVar = b0Var.e;
                         pVar.a = b0Var;
                         pVar.b = dVar;
@@ -80,7 +79,7 @@ public final class b0 implements g {
                         }
                         ie.d dVar2 = pVar.b;
                         b0 b0Var2 = pVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         dVar = dVar2;
                         b0Var = b0Var2;
                     }
@@ -169,7 +168,7 @@ public final class b0 implements g {
                                 zd.t tVar2 = qVar.c;
                                 b0 b0Var3 = qVar.b;
                                 n0 n0Var2 = (n0) qVar.a;
-                                af.b.c(obj);
+                                b7.h.b(obj);
                                 tVar = tVar2;
                                 b0Var2 = b0Var3;
                                 n0Var = n0Var2;
@@ -178,11 +177,11 @@ public final class b0 implements g {
                             }
                         }
                         zd.s sVar2 = (zd.s) qVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         sVar = sVar2;
                     } catch (Throwable th2) {
                         th = th2;
-                        obj = af.b.b(th);
+                        obj = b7.h.a(th);
                         sVar = b0Var;
                         a10 = gd.g.a(obj);
                         zd.t tVar3 = (zd.t) sVar;
@@ -199,11 +198,11 @@ public final class b0 implements g {
                     }
                     return gd.k.a;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 tVar = n0Var.b;
                 try {
-                    e1 B = b0Var.h.B();
-                    if (B instanceof c) {
+                    e1 E = b0Var.h.E();
+                    if (E instanceof c) {
                         ?? r22 = n0Var.a;
                         id.h hVar = n0Var.d;
                         qVar.a = tVar;
@@ -214,7 +213,7 @@ public final class b0 implements g {
                             th = th3;
                             th = th;
                             b0Var = tVar;
-                            obj = af.b.b(th);
+                            obj = b7.h.a(th);
                             sVar = b0Var;
                             a10 = gd.g.a(obj);
                             zd.t tVar322 = (zd.t) sVar;
@@ -223,18 +222,18 @@ public final class b0 implements g {
                             return gd.k.a;
                         }
                     } else {
-                        if (!(B instanceof w0)) {
-                            z10 = B instanceof f1;
+                        if (!(E instanceof w0)) {
+                            z10 = E instanceof f1;
                         }
                         if (!z10) {
-                            if (B instanceof l0) {
-                                throw ((l0) B).b;
+                            if (E instanceof l0) {
+                                throw ((l0) E).b;
                             }
                             throw new androidx.car.app.j();
                         }
-                        if (B != n0Var.c) {
-                            kotlin.jvm.internal.j.c(B, "null cannot be cast to non-null type androidx.datastore.core.ReadException<T of androidx.datastore.core.DataStoreImpl.handleUpdate$lambda$2>");
-                            throw ((w0) B).b;
+                        if (E != n0Var.c) {
+                            kotlin.jvm.internal.j.c(E, "null cannot be cast to non-null type androidx.datastore.core.ReadException<T of androidx.datastore.core.DataStoreImpl.handleUpdate$lambda$2>");
+                            throw ((w0) E).b;
                         }
                         qVar.a = n0Var;
                         qVar.b = b0Var;
@@ -249,7 +248,7 @@ public final class b0 implements g {
                 } catch (Throwable th4) {
                     th = th4;
                     b0Var = tVar;
-                    obj = af.b.b(th);
+                    obj = b7.h.a(th);
                     sVar = b0Var;
                     a10 = gd.g.a(obj);
                     zd.t tVar3222 = (zd.t) sVar;
@@ -303,7 +302,7 @@ public final class b0 implements g {
                     jd.a aVar = jd.a.a;
                     i7 = rVar.e;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         dVar = b0Var.e;
                         rVar.a = b0Var;
                         rVar.b = dVar;
@@ -317,7 +316,7 @@ public final class b0 implements g {
                         }
                         ie.d dVar2 = rVar.b;
                         b0 b0Var2 = rVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         dVar = dVar2;
                         b0Var = b0Var2;
                     }
@@ -378,20 +377,20 @@ public final class b0 implements g {
                 aVar = jd.a.a;
                 i7 = tVar.f;
                 if (i7 != 0) {
-                    af.b.c(obj);
-                    e1 B = b0Var.h.B();
-                    if (B instanceof f1) {
+                    b7.h.b(obj);
+                    e1 E = b0Var.h.E();
+                    if (E instanceof f1) {
                         throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
                     }
                     m0 g10 = b0Var.g();
                     tVar.a = b0Var;
-                    tVar.b = B;
+                    tVar.b = E;
                     tVar.c = z10;
                     tVar.f = 1;
                     Object b10 = g10.b(tVar);
                     if (b10 != aVar) {
                         b0Var2 = b0Var;
-                        e1Var = B;
+                        e1Var = E;
                         obj = b10;
                     }
                     return aVar;
@@ -399,7 +398,7 @@ public final class b0 implements g {
                 if (i7 != 1) {
                     if (i7 == 2) {
                         b0Var3 = tVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         eVar = (gd.e) obj;
                         e1 e1Var2 = (e1) eVar.a;
                         if (((Boolean) eVar.b).booleanValue()) {
@@ -410,18 +409,18 @@ public final class b0 implements g {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     b0Var3 = tVar.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     eVar = (gd.e) obj;
                     e1 e1Var22 = (e1) eVar.a;
                     if (((Boolean) eVar.b).booleanValue()) {
-                        b0Var3.h.X(e1Var22);
+                        b0Var3.h.L(e1Var22);
                     }
                     return e1Var22;
                 }
                 z10 = tVar.c;
                 e1Var = tVar.b;
                 b0Var2 = tVar.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 int intValue = ((Number) obj).intValue();
                 z11 = e1Var instanceof c;
                 int i11 = !z11 ? e1Var.a : -1;
@@ -530,7 +529,7 @@ public final class b0 implements g {
                 id.c cVar2 = null;
                 switch (wVar.r) {
                     case 0:
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                         if (!z10) {
                             m0 g10 = b0Var.g();
                             wVar.a = b0Var;
@@ -575,7 +574,7 @@ public final class b0 implements g {
                     case 1:
                         z10 = wVar.e;
                         b0Var = (b0) wVar.a;
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                         if (obj2 == null) {
                         }
                         m0 g122 = b0Var.g();
@@ -594,20 +593,20 @@ public final class b0 implements g {
                         obj = wVar.b;
                         b0Var3 = (b0) wVar.a;
                         try {
-                            af.b.c(obj2);
+                            b7.h.b(obj2);
                             return new c(obj, i7, ((Number) obj2).intValue());
                         } catch (b e10) {
                             e = e10;
                             b0Var = b0Var3;
                             rVar = new kotlin.jvm.internal.r();
-                            hi.l0 l0Var = b0Var.b;
+                            h9.g1 g1Var = b0Var.b;
                             wVar.a = b0Var;
                             wVar.b = e;
                             wVar.c = rVar;
                             wVar.d = rVar;
                             wVar.e = z10;
                             wVar.r = 5;
-                            Object invoke = ((rd.l) l0Var.b).invoke(e);
+                            Object invoke = ((rd.l) g1Var.b).invoke(e);
                             if (invoke != obj3) {
                                 bVar = e;
                                 obj2 = invoke;
@@ -630,7 +629,7 @@ public final class b0 implements g {
                                 } catch (Throwable th2) {
                                     th = th2;
                                     bVar2 = bVar;
-                                    ma.a(bVar2, th);
+                                    af.b.a(bVar2, th);
                                     throw bVar2;
                                 }
                             }
@@ -639,7 +638,7 @@ public final class b0 implements g {
                     case 3:
                         z10 = wVar.e;
                         b0Var = (b0) wVar.a;
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                         int intValue2 = ((Number) obj2).intValue();
                         m0 g112 = b0Var.g();
                         v vVar2 = new v(b0Var, intValue2, cVar2, 1);
@@ -652,7 +651,7 @@ public final class b0 implements g {
                         return (c) obj2;
                     case 4:
                         boolean z12 = wVar.e;
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                         return (c) obj2;
                     case 5:
                         z11 = wVar.e;
@@ -660,7 +659,7 @@ public final class b0 implements g {
                         rVar = (kotlin.jvm.internal.r) wVar.c;
                         bVar = (b) wVar.b;
                         b0Var2 = (b0) wVar.a;
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                         rVar2.a = obj2;
                         kotlin.jvm.internal.p pVar22 = new kotlin.jvm.internal.p();
                         x xVar2 = new x(rVar, b0Var2, pVar22, (id.c) null);
@@ -687,13 +686,13 @@ public final class b0 implements g {
                         rVar3 = (kotlin.jvm.internal.r) wVar.b;
                         bVar2 = (b) wVar.a;
                         try {
-                            af.b.c(obj2);
+                            b7.h.b(obj2);
                             Object obj42 = rVar3.a;
                             obj3 = new c(obj42, obj42 != null ? obj42.hashCode() : 0, pVar.a);
                             return obj3;
                         } catch (Throwable th3) {
                             th = th3;
-                            ma.a(bVar2, th);
+                            af.b.a(bVar2, th);
                             throw bVar2;
                         }
                     default:
@@ -729,7 +728,7 @@ public final class b0 implements g {
 
     /* JADX WARN: Code restructure failed: missing block: B:26:0x0063, code lost:
     
-        if (r4.I(r0) != r1) goto L28;
+        if (r4.L(r0) != r1) goto L28;
      */
     /* JADX WARN: Removed duplicated region for block: B:31:0x003e  */
     /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
@@ -754,7 +753,7 @@ public final class b0 implements g {
                     jd.a aVar = jd.a.a;
                     i7 = sVar.e;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         m0 g10 = g();
                         sVar.a = this;
                         sVar.e = 1;
@@ -771,16 +770,16 @@ public final class b0 implements g {
                         i10 = sVar.b;
                         b0Var2 = sVar.a;
                         try {
-                            af.b.c(obj);
+                            b7.h.b(obj);
                             return gd.k.a;
                         } catch (Throwable th3) {
                             th2 = th3;
-                            b0Var2.h.X(new w0(i10, th2));
+                            b0Var2.h.L(new w0(i10, th2));
                             throw th2;
                         }
                     }
                     b0Var = sVar.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     intValue = ((Number) obj).intValue();
                     ab.c0 c0Var = b0Var.i;
                     sVar.a = b0Var;
@@ -796,7 +795,7 @@ public final class b0 implements g {
             i10 = intValue;
             th2 = th4;
             b0Var2 = b0Var;
-            b0Var2.h.X(new w0(i10, th2));
+            b0Var2.h.L(new w0(i10, th2));
             throw th2;
         }
         sVar = new s(this, cVar);
@@ -830,7 +829,7 @@ public final class b0 implements g {
                 jd.a aVar = jd.a.a;
                 i7 = zVar.d;
                 if (i7 != 0) {
-                    af.b.c(obj2);
+                    b7.h.b(obj2);
                     kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
                     i0 i0Var = (i0) this.j.getValue();
                     a0 a0Var = new a0(pVar2, this, obj, z10, null);
@@ -845,7 +844,7 @@ public final class b0 implements g {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     pVar = zVar.a;
-                    af.b.c(obj2);
+                    b7.h.b(obj2);
                 }
                 return new Integer(pVar.a);
             }

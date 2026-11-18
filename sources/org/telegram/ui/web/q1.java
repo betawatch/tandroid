@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class q1 extends WebViewClient {
     public boolean a = true;
@@ -33,23 +33,23 @@ public final class q1 extends WebViewClient {
         if (this.a) {
             this.a = false;
             String y22 = org.telegram.messenger.g0.y2(null, R.raw.instant);
-            boolean z10 = r2.a;
+            boolean z10 = s2.a;
             return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(a8.p0.p("<script>\n", y22.replace("$DEBUG$", "true"), "\n</script>").getBytes(StandardCharsets.UTF_8)));
         }
         v1 v1Var = this.d;
         if (str == null || !str.endsWith("/index.html")) {
             xi.e eVar = v1Var.b;
-            a1 a1Var = eVar != null ? (a1) ((HashMap) eVar.c).get(str) : null;
-            if (a1Var == null) {
+            b1 b1Var = eVar != null ? (b1) ((HashMap) eVar.c).get(str) : null;
+            if (b1Var == null) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
-            b1 b1Var = (b1) a1Var.a.get("content-type");
-            String str3 = b1Var == null ? null : b1Var.a;
+            c1 c1Var = (c1) b1Var.a.get("content-type");
+            String str3 = c1Var == null ? null : c1Var.a;
             if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
                 return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
             }
             try {
-                a10 = a1Var.a();
+                a10 = b1Var.a();
                 str2 = str3;
             } catch (IOException e10) {
                 a8.g(e10, true);
@@ -59,12 +59,12 @@ public final class q1 extends WebViewClient {
             str2 = "application/octet-stream";
             if (this.b) {
                 xi.e eVar2 = v1Var.b;
-                a1 a1Var2 = eVar2 != null ? (a1) ((ArrayList) eVar2.b).get(0) : null;
-                if (a1Var2 == null) {
+                b1 b1Var2 = eVar2 != null ? (b1) ((ArrayList) eVar2.b).get(0) : null;
+                if (b1Var2 == null) {
                     return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
                 }
                 try {
-                    a10 = a1Var2.a();
+                    a10 = b1Var2.a();
                 } catch (IOException e11) {
                     a8.g(e11, true);
                     return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);

@@ -1,50 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s0 implements org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.w2 b;
 
-    public /* synthetic */ s0(int i7, Runnable runnable) {
+    public /* synthetic */ s0(org.telegram.ui.ActionBar.w2 w2Var, int i7) {
         this.a = i7;
-        this.b = runnable;
+        this.b = w2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.run();
-                break;
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                t1Var.dismiss();
+                this.b.invalidateSelf();
                 break;
             default:
-                t1Var.dismiss();
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
+                org.telegram.ui.ActionBar.w2 w2Var = this.b;
+                ((c6) w2Var.d).e(true, 0.0f);
+                w2Var.invalidateSelf();
                 break;
         }
     }

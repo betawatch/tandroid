@@ -1,82 +1,57 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fj0 extends mq0 {
-    public final /* synthetic */ ek0 a;
+public final class fj0 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ hk0 d;
 
-    public fj0(ek0 ek0Var) {
-        this.a = ek0Var;
+    public fj0(hk0 hk0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.d = hk0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final void B(int i7) {
-        ek0 ek0Var = this.a;
-        int i10 = ek0Var.T0;
-        org.telegram.messenger.cw cwVar = i10 == 1 ? ek0Var.k1 : i10 == 4 ? (org.telegram.messenger.cw) ek0Var.l1.get(i7) : i10 == 2 ? ek0Var.m1 : i10 == 3 ? ek0Var.n1 : (org.telegram.messenger.cw) ek0Var.j1.get(i7);
-        ck0 ck0Var = (ck0) ek0Var.o1.remove(cwVar);
-        if (ck0Var == null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
             return;
         }
-        String r12 = ek0.r1(cwVar);
-        int i11 = ek0Var.T0;
-        String str = null;
-        if (i11 == 1) {
-            ek0Var.k1 = null;
-            str = r.b.k("selfie", r12);
-        } else if (i11 == 4) {
-            str = r.b.k("translation", r12);
-        } else if (i11 == 2) {
-            ek0Var.m1 = null;
-            str = r.b.k("front", r12);
-        } else if (i11 == 3) {
-            ek0Var.n1 = null;
-            str = r.b.k("reverse", r12);
-        } else if (i11 == 0) {
-            str = r.b.k("files", r12);
-        }
-        if (str != null) {
-            HashMap hashMap = ek0Var.y1;
-            if (hashMap != null) {
-                hashMap.remove(str);
+        boolean z10 = true;
+        this.a = true;
+        int i7 = 0;
+        while (true) {
+            if (i7 >= editable.length()) {
+                z10 = false;
+                break;
             }
-            HashMap hashMap2 = ek0Var.z1;
-            if (hashMap2 != null) {
-                hashMap2.remove(str);
+            char charAt = editable.charAt(i7);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
+                break;
+            } else {
+                i7++;
             }
         }
-        ek0Var.X1(ek0Var.T0);
-        ek0Var.j0.removeView(ck0Var);
+        this.a = false;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        if (z10) {
+            editTextBoldCursor.setErrorText(org.telegram.messenger.gd.M0(2131747256, null));
+        } else {
+            hk0.N0(this.d, editTextBoldCursor, this.c, editable, false);
+        }
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final uq0 E(org.telegram.messenger.gj gjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
-        if (i7 < 0) {
-            return null;
-        }
-        ek0 ek0Var = this.a;
-        if (i7 >= ek0Var.j0.getChildCount()) {
-            return null;
-        }
-        ck0 ck0Var = (ck0) ek0Var.j0.getChildAt(i7);
-        int[] iArr = new int[2];
-        ck0Var.c.getLocationInWindow(iArr);
-        uq0 uq0Var = new uq0();
-        uq0Var.b = iArr[0];
-        uq0Var.c = iArr[1];
-        uq0Var.d = ek0Var.j0;
-        ImageReceiver imageReceiver = ck0Var.c.getImageReceiver();
-        uq0Var.a = imageReceiver;
-        uq0Var.e = imageReceiver.p();
-        return uq0Var;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final String b0() {
-        return this.a.T0 == 1 ? org.telegram.messenger.hd.a0("PassportDeleteSelfieAlert", null, 2131747581, new Object[0]) : org.telegram.messenger.hd.a0("PassportDeleteScanAlert", null, 2131747583, new Object[0]);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

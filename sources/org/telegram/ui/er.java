@@ -1,92 +1,203 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.content.ClipboardManager;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.ArrayList;
+import android.graphics.Rect;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class er extends Drawable {
-    public final Drawable a;
-    public final Drawable b;
-    public int d;
-    public int e;
-    public final ArrayList c = new ArrayList();
-    public boolean f = false;
-    public final org.telegram.ui.Components.u5 g = new org.telegram.ui.Components.u5(new bh(this, 14), 420, org.telegram.ui.Components.er.h);
-    public int h = org.telegram.messenger.ns.e4;
+public abstract class er extends EditTextBoldCursor {
+    public static final org.telegram.ui.Components.ut0 d2;
+    public static final org.telegram.ui.Components.ut0 e2;
+    public static final org.telegram.ui.Components.ut0 f2;
+    public static final org.telegram.ui.Components.ut0 g2;
+    public float M1;
+    public float N1;
+    public float O1;
+    public float P1;
+    public r1.g Q1;
+    public r1.g R1;
+    public r1.g S1;
+    public r1.g T1;
+    public boolean U1;
+    public float V1;
+    public float W1;
+    public boolean X1;
+    public Bitmap Y1;
+    public Canvas Z1;
+    public ValueAnimator a2;
+    public ValueAnimator b2;
+    public boolean c2;
 
-    public er(Drawable drawable, Drawable drawable2) {
-        this.a = drawable;
-        this.b = drawable2;
+    static {
+        org.telegram.ui.Components.ut0 ut0Var = new org.telegram.ui.Components.ut0(new cr(0), new cr(1));
+        ut0Var.c = 100.0f;
+        d2 = ut0Var;
+        org.telegram.ui.Components.ut0 ut0Var2 = new org.telegram.ui.Components.ut0(new cr(2), new cr(3));
+        ut0Var2.c = 100.0f;
+        e2 = ut0Var2;
+        org.telegram.ui.Components.ut0 ut0Var3 = new org.telegram.ui.Components.ut0(new cr(4), new cr(5));
+        ut0Var3.c = 100.0f;
+        f2 = ut0Var3;
+        org.telegram.ui.Components.ut0 ut0Var4 = new org.telegram.ui.Components.ut0(new cr(6), new cr(7));
+        ut0Var4.c = 100.0f;
+        g2 = ut0Var4;
     }
 
-    public final void a(int i7, int i10) {
-        this.d = i7;
-        this.e = i10;
+    public static void C(r1.g gVar, float f10) {
+        r1.h hVar = gVar.m;
+        if (hVar == null || f10 != ((float) hVar.i)) {
+            gVar.d();
+            r1.h hVar2 = new r1.h(f10);
+            hVar2.b(400.0f);
+            hVar2.a(1.0f);
+            hVar2.i = f10;
+            gVar.m = hVar2;
+            gVar.h();
+        }
     }
 
-    public final void b(boolean z10) {
-        if (this.f == z10) {
+    public final void A(float f10) {
+        C(this.R1, f10 * 100.0f);
+    }
+
+    public final void B(float f10) {
+        C(this.Q1, f10 * 100.0f);
+    }
+
+    public final void D(float f10) {
+        C(this.S1, f10 * 100.0f);
+        r1.g gVar = this.T1;
+        gVar.d();
+        if (f10 == 0.0f) {
+            this.P1 = 1.0f;
             return;
         }
-        this.f = z10;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            ((View) obj).invalidate();
+        r1.h p10 = org.telegram.ui.Cells.c0.p(1.0f, 500.0f, 0.75f);
+        p10.i = 100.0f;
+        gVar.m = p10;
+        gVar.b = 100.0f;
+        gVar.c = true;
+        gVar.a = 4000.0f;
+        gVar.h();
+    }
+
+    public final void E() {
+        if (getMeasuredHeight() == 0 || getMeasuredWidth() == 0 || getLayout() == null) {
+            return;
         }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float d = this.g.d(this.f);
-        int i7 = this.h;
-        Drawable drawable = this.a;
-        drawable.setAlpha(i7);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        if (d > 0.0f) {
-            Drawable drawable2 = this.b;
-            drawable2.setAlpha((int) (this.h * d));
-            drawable2.setBounds(getBounds().left + this.d, getBounds().top + this.e, drawable2.getIntrinsicWidth() + getBounds().left + this.d, drawable2.getIntrinsicHeight() + getBounds().top + this.e);
-            float T1 = org.telegram.messenger.g0.T1(0.5f, 1.0f, d);
-            canvas.save();
-            canvas.scale(T1, T1, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
-            drawable2.draw(canvas);
-            canvas.restore();
+        Bitmap bitmap = this.Y1;
+        if (bitmap == null || bitmap.getHeight() != getMeasuredHeight() || this.Y1.getWidth() != getMeasuredWidth()) {
+            Bitmap bitmap2 = this.Y1;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            }
+            this.Y1 = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
+            this.Z1 = new Canvas(this.Y1);
         }
+        this.Y1.eraseColor(0);
+        StaticLayout staticLayout = new StaticLayout(getTransformationMethod().getTransformation(getText(), this), getLayout().getPaint(), (int) Math.ceil(getLayout().getPaint().measureText(r4, 0, r4.length())), Layout.Alignment.ALIGN_NORMAL, getLineSpacingMultiplier(), getLineSpacingExtra(), getIncludeFontPadding());
+        this.Z1.save();
+        this.Z1.translate((getMeasuredWidth() - staticLayout.getWidth()) / 2.0f, (getMeasuredHeight() - staticLayout.getHeight()) / 2.0f);
+        staticLayout.draw(this.Z1);
+        this.Z1.restore();
+        this.W1 = 0.0f;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.b2 = ofFloat;
+        ofFloat.addUpdateListener(new a3(this, 7));
+        this.b2.setDuration(220L);
+        this.b2.start();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
+    public float getErrorProgress() {
+        return this.N1;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
+    public float getFocusedProgress() {
+        return this.M1;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    public float getSuccessProgress() {
+        return this.O1;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.h = i7;
+    public float getSuccessScaleProgress() {
+        return this.P1;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
-        this.b.setColorFilter(colorFilter);
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.Q1.d();
+        this.R1.d();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i7, Rect rect) {
+        super.onFocusChanged(z10, i7, rect);
+        if (isFocused()) {
+            return;
+        }
+        m();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClipDescription primaryClipDescription;
+        int i7;
+        if (motionEvent.getAction() == 0) {
+            this.c2 = true;
+            motionEvent.getX();
+            motionEvent.getY();
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            br brVar = getParent() instanceof br ? (br) getParent() : null;
+            if (motionEvent.getAction() == 1 && this.c2) {
+                if (!isFocused() || brVar == null) {
+                    requestFocus();
+                } else {
+                    ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(ClipboardManager.class);
+                    if (clipboardManager == null || clipboardManager.getPrimaryClipDescription() == null || (primaryClipDescription = clipboardManager.getPrimaryClipDescription()) == null) {
+                        return false;
+                    }
+                    primaryClipDescription.hasMimeType("text/plain");
+                    ClipData.Item itemAt = clipboardManager.getPrimaryClip().getItemAt(0);
+                    try {
+                        i7 = Integer.parseInt((itemAt == null || itemAt.getText() == null) ? "" : itemAt.getText().toString());
+                    } catch (Exception unused) {
+                        i7 = -1;
+                    }
+                    if (i7 > 0) {
+                        startActionMode(new dr(this));
+                    }
+                }
+                setSelection(0);
+                if (this.U1) {
+                    org.telegram.messenger.g0.I3(this);
+                }
+            }
+            this.c2 = false;
+        }
+        return this.c2;
+    }
+
+    @Override // android.view.View
+    public final boolean requestFocus(int i7, Rect rect) {
+        ((ViewGroup) getParent()).invalidate();
+        return super.requestFocus(i7, rect);
+    }
+
+    public void setShowSoftInputOnFocusCompat(boolean z10) {
+        this.U1 = z10;
+        setShowSoftInputOnFocus(z10);
     }
 }

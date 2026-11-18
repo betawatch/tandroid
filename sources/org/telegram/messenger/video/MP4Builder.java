@@ -3,7 +3,8 @@ package org.telegram.messenger.video;
 import ab.c0;
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import c8.mb;
+import c8.pb;
+import i5.q;
 import i5.r;
 import i5.s;
 import i5.u;
@@ -26,7 +27,7 @@ import java.util.LinkedList;
 import java.util.List;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -63,7 +64,7 @@ public class MP4Builder {
         return this.currentMp4Movie.addTrack(mediaFormat, z10);
     }
 
-    public void createCtts(Track track, i5.q qVar) {
+    public void createCtts(Track track, q qVar) {
         int[] sampleCompositions = track.getSampleCompositions();
         if (sampleCompositions == null) {
             return;
@@ -80,7 +81,7 @@ public class MP4Builder {
         }
         i5.f fVar = new i5.f("ctts");
         fVar.e = Collections.EMPTY_LIST;
-        i5.c.u(ze.a.c(i5.f.f, fVar, fVar, arrayList));
+        i5.c.w(ze.a.c(i5.f.f, fVar, fVar, arrayList));
         fVar.e = arrayList;
         qVar.a(fVar);
     }
@@ -123,19 +124,19 @@ public class MP4Builder {
         pc.d dVar = pc.d.j;
         nVar.w = dVar;
         Date date = new Date();
-        i5.c.u(ze.a.c(i5.n.R, nVar, nVar, date));
+        i5.c.w(ze.a.c(i5.n.R, nVar, nVar, date));
         nVar.e = date;
         long j3 = 4294967296L;
-        if (mb.a(date) >= 4294967296L) {
+        if (pb.a(date) >= 4294967296L) {
             nVar.h();
         }
         Date date2 = new Date();
-        i5.c.u(ze.a.c(i5.n.S, nVar, nVar, date2));
+        i5.c.w(ze.a.c(i5.n.S, nVar, nVar, date2));
         nVar.f = date2;
-        if (mb.a(date2) >= 4294967296L) {
+        if (pb.a(date2) >= 4294967296L) {
             nVar.h();
         }
-        i5.c.u(ze.a.c(i5.n.V, nVar, nVar, dVar));
+        i5.c.w(ze.a.c(i5.n.V, nVar, nVar, dVar));
         nVar.w = dVar;
         long timescale = getTimescale(mp4Movie);
         ArrayList<Track> tracks = mp4Movie.getTracks();
@@ -156,15 +157,15 @@ public class MP4Builder {
             j3 = j11;
         }
         long j12 = j3;
-        i5.c.u(ze.a.c(i5.n.U, nVar, nVar, new Long(j10)));
+        i5.c.w(ze.a.c(i5.n.U, nVar, nVar, new Long(j10)));
         nVar.n = j10;
         if (j10 >= j12) {
             nVar.h();
         }
-        i5.c.u(ze.a.c(i5.n.T, nVar, nVar, new Long(timescale)));
+        i5.c.w(ze.a.c(i5.n.T, nVar, nVar, new Long(timescale)));
         nVar.h = timescale;
         long size2 = mp4Movie.getTracks().size() + 1;
-        i5.c.u(ze.a.c(i5.n.W, nVar, nVar, new Long(size2)));
+        i5.c.w(ze.a.c(i5.n.W, nVar, nVar, new Long(size2)));
         nVar.x = size2;
         mVar.a(nVar);
         ArrayList<Track> tracks2 = mp4Movie.getTracks();
@@ -178,7 +179,7 @@ public class MP4Builder {
     }
 
     public i5.b createStbl(Track track) {
-        i5.q qVar = new i5.q("stbl");
+        q qVar = new q("stbl");
         createStsd(track, qVar);
         createStts(track, qVar);
         createCtts(track, qVar);
@@ -189,7 +190,7 @@ public class MP4Builder {
         return qVar;
     }
 
-    public void createStco(Track track, i5.q qVar) {
+    public void createStco(Track track, q qVar) {
         ArrayList arrayList = new ArrayList();
         ArrayList<Sample> samples = track.getSamples();
         int size = samples.size();
@@ -214,16 +215,16 @@ public class MP4Builder {
         }
         u uVar = new u("stco");
         uVar.f = new long[0];
-        i5.c.u(ze.a.c(u.n, uVar, uVar, jArr));
+        i5.c.w(ze.a.c(u.n, uVar, uVar, jArr));
         uVar.f = jArr;
         qVar.a(uVar);
     }
 
-    public void createStsc(Track track, i5.q qVar) {
+    public void createStsc(Track track, q qVar) {
         s sVar = new s("stsc");
         sVar.e = Collections.EMPTY_LIST;
         LinkedList linkedList = new LinkedList();
-        i5.c.u(ze.a.c(s.h, sVar, sVar, linkedList));
+        i5.c.w(ze.a.c(s.h, sVar, sVar, linkedList));
         sVar.e = linkedList;
         int size = track.getSamples().size();
         int i7 = -1;
@@ -235,7 +236,7 @@ public class MP4Builder {
             i11++;
             if (i12 == size - 1 || size2 != track.getSamples().get(i12 + 1).getOffset()) {
                 if (i7 != i11) {
-                    i5.c.u(ze.a.b(s.f, sVar, sVar));
+                    i5.c.w(ze.a.b(s.f, sVar, sVar));
                     sVar.e.add(new r(i10, i11, 1L));
                     i7 = i11;
                 }
@@ -246,31 +247,31 @@ public class MP4Builder {
         qVar.a(sVar);
     }
 
-    public void createStsd(Track track, i5.q qVar) {
+    public void createStsd(Track track, q qVar) {
         qVar.a(track.getSampleDescriptionBox());
     }
 
-    public void createStss(Track track, i5.q qVar) {
+    public void createStss(Track track, q qVar) {
         long[] syncSamples = track.getSyncSamples();
         if (syncSamples == null || syncSamples.length <= 0) {
             return;
         }
         v vVar = new v("stss");
-        i5.c.u(ze.a.c(v.h, vVar, vVar, syncSamples));
+        i5.c.w(ze.a.c(v.h, vVar, vVar, syncSamples));
         vVar.e = syncSamples;
         qVar.a(vVar);
     }
 
-    public void createStsz(Track track, i5.q qVar) {
+    public void createStsz(Track track, q qVar) {
         i5.p pVar = new i5.p("stsz");
         pVar.f = new long[0];
         long[] jArr = this.track2SampleSizes.get(track);
-        i5.c.u(ze.a.c(i5.p.s, pVar, pVar, jArr));
+        i5.c.w(ze.a.c(i5.p.s, pVar, pVar, jArr));
         pVar.f = jArr;
         qVar.a(pVar);
     }
 
-    public void createStts(Track track, i5.q qVar) {
+    public void createStts(Track track, q qVar) {
         ArrayList arrayList = new ArrayList();
         w wVar = null;
         for (long j3 : track.getSampleDurations()) {
@@ -283,7 +284,7 @@ public class MP4Builder {
         }
         x xVar = new x("stts");
         xVar.e = Collections.EMPTY_LIST;
-        i5.c.u(ze.a.c(x.f, xVar, xVar, arrayList));
+        i5.c.w(ze.a.c(x.f, xVar, xVar, arrayList));
         xVar.e = arrayList;
         qVar.a(xVar);
     }
@@ -306,46 +307,46 @@ public class MP4Builder {
         com.googlecode.mp4parser.g.b(c12);
         zVar.g(zVar.d() | 4);
         if (track.isAudio()) {
-            i5.c.u(ze.a.c(z.X, zVar, zVar, dVar));
+            i5.c.w(ze.a.c(z.X, zVar, zVar, dVar));
             zVar.x = dVar;
         } else {
             pc.d matrix = mp4Movie.getMatrix();
-            i5.c.u(ze.a.c(z.X, zVar, zVar, matrix));
+            i5.c.w(ze.a.c(z.X, zVar, zVar, matrix));
             zVar.x = matrix;
         }
-        i5.c.u(ze.a.c(z.V, zVar, zVar, new Integer(0)));
+        i5.c.w(ze.a.c(z.V, zVar, zVar, new Integer(0)));
         zVar.s = 0;
         Date creationTime = track.getCreationTime();
-        i5.c.u(ze.a.c(z.Q, zVar, zVar, creationTime));
+        i5.c.w(ze.a.c(z.Q, zVar, zVar, creationTime));
         zVar.e = creationTime;
-        if (mb.a(creationTime) >= 4294967296L) {
+        if (pb.a(creationTime) >= 4294967296L) {
             zVar.h();
         }
         long timescale = (getTimescale(mp4Movie) * track.getDuration()) / track.getTimeScale();
-        i5.c.u(ze.a.c(z.T, zVar, zVar, new Long(timescale)));
+        i5.c.w(ze.a.c(z.T, zVar, zVar, new Long(timescale)));
         zVar.n = timescale;
         if (timescale >= 4294967296L) {
             zVar.g(1);
         }
         double height = track.getHeight();
-        i5.c.u(ze.a.c(z.Z, zVar, zVar, new Double(height)));
+        i5.c.w(ze.a.c(z.Z, zVar, zVar, new Double(height)));
         zVar.E = height;
         double width = track.getWidth();
-        i5.c.u(ze.a.c(z.Y, zVar, zVar, new Double(width)));
+        i5.c.w(ze.a.c(z.Y, zVar, zVar, new Double(width)));
         zVar.y = width;
-        i5.c.u(ze.a.c(z.U, zVar, zVar, new Integer(0)));
+        i5.c.w(ze.a.c(z.U, zVar, zVar, new Integer(0)));
         zVar.r = 0;
         Date date = new Date();
-        i5.c.u(ze.a.c(z.R, zVar, zVar, date));
+        i5.c.w(ze.a.c(z.R, zVar, zVar, date));
         zVar.f = date;
-        if (mb.a(date) >= 4294967296L) {
+        if (pb.a(date) >= 4294967296L) {
             zVar.h();
         }
         long trackId = track.getTrackId() + 1;
-        i5.c.u(ze.a.c(z.S, zVar, zVar, new Long(trackId)));
+        i5.c.w(ze.a.c(z.S, zVar, zVar, new Long(trackId)));
         zVar.h = trackId;
         float volume = track.getVolume();
-        i5.c.u(ze.a.c(z.W, zVar, zVar, new Float(volume)));
+        i5.c.w(ze.a.c(z.W, zVar, zVar, new Float(volume)));
         zVar.w = volume;
         yVar.a(zVar);
         i5.i iVar = new i5.i("mdia", 2);
@@ -355,25 +356,25 @@ public class MP4Builder {
         lVar.f = new Date();
         lVar.r = "eng";
         Date creationTime2 = track.getCreationTime();
-        i5.c.u(ze.a.c(i5.l.F, lVar, lVar, creationTime2));
+        i5.c.w(ze.a.c(i5.l.F, lVar, lVar, creationTime2));
         lVar.e = creationTime2;
         long duration = track.getDuration();
-        i5.c.u(ze.a.c(i5.l.H, lVar, lVar, new Long(duration)));
+        i5.c.w(ze.a.c(i5.l.H, lVar, lVar, new Long(duration)));
         lVar.n = duration;
         long timeScale = track.getTimeScale();
-        i5.c.u(ze.a.c(i5.l.G, lVar, lVar, new Long(timeScale)));
+        i5.c.w(ze.a.c(i5.l.G, lVar, lVar, new Long(timeScale)));
         lVar.h = timeScale;
-        i5.c.u(ze.a.c(i5.l.I, lVar, lVar, "eng"));
+        i5.c.w(ze.a.c(i5.l.I, lVar, lVar, "eng"));
         lVar.r = "eng";
         iVar.a(lVar);
         i5.k kVar = new i5.k("hdlr");
         kVar.f = null;
         kVar.s = true;
         String str = track.isAudio() ? "SoundHandle" : "VideoHandle";
-        i5.c.u(ze.a.c(i5.k.y, kVar, kVar, str));
+        i5.c.w(ze.a.c(i5.k.y, kVar, kVar, str));
         kVar.f = str;
         String handler = track.getHandler();
-        i5.c.u(ze.a.c(i5.k.E, kVar, kVar, handler));
+        i5.c.w(ze.a.c(i5.k.E, kVar, kVar, handler));
         kVar.e = handler;
         iVar.a(kVar);
         i5.i iVar2 = new i5.i("minf", 3);
@@ -538,10 +539,10 @@ public class MP4Builder {
         }
     }
 
-    public void createSidx(Track track, i5.q qVar) {
+    public void createSidx(Track track, q qVar) {
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class InterleaveChunkMdat implements i5.b {
         private long contentSize;
         private long dataOffset;

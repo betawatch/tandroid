@@ -1,17 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xa0 extends Drawable.ConstantState {
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final int getChangingConfigurations() {
-        return 0;
+public final class xa0 extends org.telegram.ui.ActionBar.n5 {
+    public final Paint N0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 O0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa0(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.O0 = i6Var;
+        this.N0 = new Paint(1);
     }
 
-    @Override // android.graphics.drawable.Drawable.ConstantState
-    public final Drawable newDrawable() {
-        return new ya0();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.K5, this.O0);
+        Paint paint = this.N0;
+        paint.setColor(w02);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - (getTextWidth() / 2.0f)) - org.telegram.messenger.g0.L(8.0f), height, paint);
+        canvas.drawLine((getTextWidth() / 2.0f) + (getWidth() / 2.0f) + org.telegram.messenger.g0.L(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

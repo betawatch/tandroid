@@ -1,13 +1,13 @@
 package p4;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.ui.Components.ff;
+import org.telegram.ui.Components.of;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -44,7 +44,7 @@ public final class c {
 
     public d a() {
         int i7 = 1;
-        ja.o("Exactly one of sessionCommand and playerCommand should be set", (((i1) this.d) == null) != (this.a == -1));
+        la.o("Exactly one of sessionCommand and playerCommand should be set", (((k1) this.d) == null) != (this.a == -1));
         if (((l9.a) this.f) == null) {
             int i10 = this.a;
             if (i10 != 1) {
@@ -60,16 +60,16 @@ public final class c {
             }
             this.f = new l9.a(new int[]{i7});
         }
-        return new d((i1) this.d, this.a, this.b, (Bundle) this.e, this.c, (l9.a) this.f, this.g);
+        return new d((k1) this.d, this.a, this.b, (Bundle) this.e, this.c, (l9.a) this.f, this.g);
     }
 
-    public void b(v4.d0 d0Var) {
+    public void b(v4.e0 e0Var) {
         v4.o oVar;
         int i7;
         int[] iArr = (int[]) this.e;
         ArrayList arrayList = (ArrayList) this.d;
         v4.o oVar2 = (v4.o) this.g;
-        v4.b bVar = d0Var instanceof v4.b ? (v4.b) d0Var : new v4.b(d0Var);
+        v4.b bVar = e0Var instanceof v4.b ? (v4.b) e0Var : new v4.b(e0Var);
         ArrayList arrayList2 = new ArrayList();
         int i10 = this.a;
         int size = arrayList.size() - 1;
@@ -96,11 +96,11 @@ public final class c {
                                 int i20 = i18 >> 5;
                                 i7 = i16;
                                 v4.l e10 = e(i20, arrayList2, false);
-                                bVar.E(i17, e10.b - 1);
+                                bVar.F(i17, e10.b - 1);
                                 if (i19 == 4) {
                                     int i21 = e10.b - 1;
                                     oVar.getClass();
-                                    bVar.h1(i21, 1);
+                                    bVar.g1(i21, 1);
                                 }
                             } else {
                                 if (i19 != 16) {
@@ -115,7 +115,7 @@ public final class c {
                             oVar = oVar2;
                             i7 = i16;
                             boolean z11 = true;
-                            bVar.K0(i17, 1);
+                            bVar.M0(i17, 1);
                             int size2 = arrayList2.size();
                             int i22 = 0;
                             while (i22 < size2) {
@@ -131,7 +131,7 @@ public final class c {
                         oVar2 = oVar;
                     }
                 } else {
-                    bVar.K0(i13, i15);
+                    bVar.M0(i13, i15);
                 }
             }
             ArrayList arrayList4 = arrayList;
@@ -152,14 +152,14 @@ public final class c {
                                 }
                                 arrayList2.add(new v4.l(i25, i13, false));
                             }
-                            bVar.E(e(i26 >> 5, arrayList2, true).b, i13);
+                            bVar.F(e(i26 >> 5, arrayList2, true).b, i13);
                             if (i27 == 4) {
                                 oVar3.getClass();
-                                bVar.h1(i13, 1);
+                                bVar.g1(i13, 1);
                             }
                         } else {
                             boolean z12 = true;
-                            bVar.m0(i13, 1);
+                            bVar.g0(i13, 1);
                             int size3 = arrayList2.size();
                             int i28 = 0;
                             while (i28 < size3) {
@@ -171,14 +171,14 @@ public final class c {
                         }
                     }
                 } else {
-                    bVar.m0(i13, i23);
+                    bVar.g0(i13, i23);
                 }
             }
             for (int i29 = i12 - 1; i29 >= 0; i29--) {
                 int i30 = nVar.a + i29;
                 if ((iArr2[i30] & 31) == 2) {
                     oVar3.getClass();
-                    bVar.h1(i30, 1);
+                    bVar.g1(i30, 1);
                 }
             }
             i10 = nVar.a;
@@ -191,8 +191,8 @@ public final class c {
         bVar.a();
     }
 
-    public void c(v4.h0 h0Var) {
-        b(new ff(h0Var, 22));
+    public void c(v4.i0 i0Var) {
+        b(new of(i0Var, 23));
     }
 
     public void d(int i7, int i10, int i11, boolean z10) {

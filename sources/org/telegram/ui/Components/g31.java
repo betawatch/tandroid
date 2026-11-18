@@ -1,72 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g31 extends v4.t0 {
-    public final /* synthetic */ int a = 1;
-    public int b;
-    public final /* synthetic */ Object c;
+public final class g31 extends xh.l {
+    public final h6.m V;
+    public final /* synthetic */ j31 W;
 
-    public g31(di.f4 f4Var, int i7) {
-        this.c = f4Var;
-        this.b = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g31(j31 j31Var, Context context) {
+        super(context);
+        this.W = j31Var;
+        this.V = new h6.m(29);
     }
 
-    @Override // v4.t0
-    public final void a(RecyclerView recyclerView, int i7) {
-        org.telegram.ui.Wallet.u8 u8Var;
-        switch (this.a) {
-            case 0:
-                if (i7 == 0) {
-                    this.b = 0;
-                    break;
-                }
-                break;
-            default:
-                if (i7 == 1 && (u8Var = ((org.telegram.ui.Wallet.y5) ((di.f4) this.c).c).j0) != null) {
-                    u8Var.a();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // v4.t0
-    public final void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                j31 j31Var = (j31) this.c;
-                x31 x31Var = j31Var.o1;
-                this.b += i10;
-                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > org.telegram.messenger.g0.L(96.0f)) {
-                    View findFocus = x31Var.findFocus();
-                    if (findFocus == null) {
-                        findFocus = x31Var;
-                    }
-                    org.telegram.messenger.g0.v1(findFocus);
-                }
-                if (i10 != 0 && x31Var.c()) {
-                    j31Var.p1 = x31Var.getContentTopOffset();
-                    j31Var.b.invalidate();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) ((di.f4) this.c).c;
-                if (this.b != 0) {
-                    recyclerView.post(new org.telegram.ui.Wallet.e4(y5Var, 14));
-                    break;
-                } else {
-                    y5Var.E0();
-                    break;
-                }
-        }
-    }
-
-    public g31(j31 j31Var) {
-        this.c = j31Var;
+    @Override // xh.l, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int L = org.telegram.messenger.g0.L(8.0f) + this.W.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - L, getHeight(), org.telegram.messenger.ks.e4, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        nu0.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set((getWidth() - L) - org.telegram.messenger.g0.L(24.0f), 0.0f, getWidth() - L, getHeight());
+        this.V.n(canvas, rectF, 2, 1.0f);
+        canvas.restore();
     }
 }

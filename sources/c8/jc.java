@@ -1,23 +1,16 @@
 package c8;
 
+import android.opengl.GLES20;
+import android.opengl.GLUtils;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class jc {
-    public static void a(Exception exc, String str, Object... objArr) {
-        if (Log.isLoggable("Vision", 6)) {
-            if (Log.isLoggable("Vision", 3)) {
-                Log.e("Vision", String.format(str, objArr), exc);
-                return;
-            }
-            String format = String.format(str, objArr);
-            String valueOf = String.valueOf(exc);
-            StringBuilder sb2 = new StringBuilder(valueOf.length() + format.length() + 2);
-            sb2.append(format);
-            sb2.append(": ");
-            sb2.append(valueOf);
-            Log.e("Vision", sb2.toString());
+    public static void a() {
+        int glGetError = GLES20.glGetError();
+        if (glGetError != 0) {
+            Log.d("Paint", GLUtils.getEGLErrorString(glGetError));
         }
     }
 }

@@ -8,10 +8,10 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import l5.d;
-import o5.s;
+import o5.r;
 import q4.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b {
     public final double a;
@@ -21,18 +21,18 @@ public final class b {
     public final int e;
     public final ArrayBlockingQueue f;
     public final ThreadPoolExecutor g;
-    public final s h;
+    public final r h;
     public final q i;
     public int j;
     public long k;
 
-    public b(s sVar, ia.b bVar, q qVar) {
+    public b(r rVar, ia.b bVar, q qVar) {
         double d = bVar.d;
         double d2 = bVar.e;
         this.a = d;
         this.b = d2;
         this.c = bVar.f * 1000;
-        this.h = sVar;
+        this.h = rVar;
         this.i = qVar;
         this.d = SystemClock.elapsedRealtime();
         int i7 = (int) d;
@@ -62,6 +62,6 @@ public final class b {
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", str, null);
         }
-        this.h.a(new l5.a(null, bVar.a, d.c, null), new g(this, taskCompletionSource, SystemClock.elapsedRealtime() - this.d < 2000, bVar, 1));
+        this.h.a(new l5.a(null, bVar.a, d.c, null), new g(this, taskCompletionSource, SystemClock.elapsedRealtime() - this.d < 2000, bVar, 2));
     }
 }

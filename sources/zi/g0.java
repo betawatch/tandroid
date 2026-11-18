@@ -1,113 +1,131 @@
 package zi;
 
-import android.net.Uri;
 import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.g20;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.ff;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.q40;
-import org.telegram.ui.Components.v40;
-import org.telegram.ui.ce;
-import org.telegram.ui.qj;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ef;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.py0;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.x40;
+import org.telegram.ui.Components.y40;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ u0 b;
+    public final /* synthetic */ q0 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ File e;
+    public final /* synthetic */ boolean f;
 
-    public /* synthetic */ g0(v0 v0Var, long j3, int i7) {
-        this.a = i7;
-        this.b = v0Var;
-        this.c = j3;
+    public /* synthetic */ g0(u0 u0Var, q0 q0Var, long j3, File file, boolean z10) {
+        this.b = u0Var;
+        this.c = q0Var;
+        this.d = j3;
+        this.e = file;
+        this.f = z10;
+    }
+
+    private final void a() {
+        u0 u0Var = this.b;
+        q0 q0Var = this.c;
+        File file = this.e;
+        long j3 = this.d;
+        boolean z10 = this.f;
+        synchronized (u0Var.g) {
+            if (!u0Var.H && !q0Var.d && !q0Var.e) {
+                q0Var.e = true;
+                ((qy0) u0Var.e).b(q0Var.a, file.length(), file);
+                u0Var.i.post(new g0(u0Var, q0Var, j3, file, z10));
+            }
+        }
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        File file;
-        qj qjVar;
-        i61 i61Var;
+        py0 py0Var;
+        py0 py0Var2;
         switch (this.a) {
             case 0:
-                v0 v0Var = this.b;
-                long j3 = this.c;
-                if (v0Var.a0 == 6) {
-                    v0Var.I = j3;
-                    v0Var.O = 0L;
-                    v0Var.K = 0L;
-                    v0Var.L = j3;
-                    v0Var.x(2);
-                    v0Var.l.V(v0Var.U, v0Var.I * 1000, v0Var.r);
-                    break;
-                }
-                break;
+                a();
+                return;
             default:
-                v0 v0Var2 = this.b;
-                long j10 = this.c;
-                if (v0Var2.a0 == 4) {
-                    v0Var2.O = j10;
-                    long min = Math.min(v0Var2.q, j10);
-                    v0Var2.I = min;
-                    v0Var2.K = 0L;
-                    v0Var2.L = min;
-                    v0Var2.b.setSurfaceTextureListener(null);
-                    v0Var2.b.setTransform(v0Var2.h);
-                    l2.f0 a10 = new l2.n(v0Var2.a).a();
-                    v0Var2.W = a10;
-                    a10.z1(v0Var2.b);
-                    v0Var2.W.m0(e2.l0.b(Uri.fromFile(v0Var2.V)));
-                    v0Var2.W.k(0);
-                    v0Var2.W.T(1.0f);
-                    v0Var2.W.I0(v0Var2.Z);
-                    v0Var2.W.a();
-                    v0Var2.W.Z0(5, v0Var2.K);
-                    v0Var2.m.b("preview player prepared: durationMs=" + v0Var2.I + ", trim=" + v0Var2.K + ".." + v0Var2.L);
-                    v0Var2.x(5);
-                    ff ffVar = v0Var2.d;
-                    long j11 = v0Var2.I;
-                    long j12 = v0Var2.K;
-                    long j13 = v0Var2.L;
-                    ((q40) ffVar.b).w.setProgress(((float) j11) / 60000.0f);
-                    q40 q40Var = (q40) ffVar.b;
-                    q40Var.k0 = false;
-                    q40Var.I.setAlpha(0.0f);
-                    q40 q40Var2 = (q40) ffVar.b;
-                    if (q40Var2.V == null) {
-                        v0 v0Var3 = q40Var2.P;
-                        if (v0Var3 == null) {
-                            file = null;
-                        } else {
-                            v0.v();
-                            file = v0Var3.V;
-                        }
-                        if (file != null) {
-                            q40 q40Var3 = (q40) ffVar.b;
-                            q40Var3.U = q40Var3.t(file, j11, null);
-                            q40 q40Var4 = (q40) ffVar.b;
-                            g20 g20Var = q40Var4.U;
-                            g20Var.a = j12 > 0 ? j12 : -1L;
-                            g20Var.b = j13 < j11 ? j13 : -1L;
-                            ns.f(q40Var4.f).k(ns.s2, Integer.valueOf(((q40) ffVar.b).h), ((q40) ffVar.b).U, file.getAbsolutePath(), new ArrayList());
-                            float max = Math.max(1L, j11);
-                            q40 q40Var5 = (q40) ffVar.b;
-                            float f10 = j12 / max;
-                            float f11 = j13 / max;
-                            v40 v40Var = q40Var5.b;
-                            if (v40Var != null && (qjVar = ((ce) v40Var).b.a0) != null && (i61Var = qjVar.g1) != null) {
-                                float max2 = Math.max(0.0f, Math.min(1.0f, f10));
-                                i61Var.b = max2;
-                                i61Var.c = Math.max(max2, Math.min(1.0f, f11));
-                                i61Var.invalidate();
+                u0 u0Var = this.b;
+                q0 q0Var = this.c;
+                long j3 = this.d;
+                File file = this.e;
+                boolean z10 = this.f;
+                int i7 = u0Var.a0;
+                if (i7 == 10 || i7 == 9) {
+                    return;
+                }
+                u0Var.x(8);
+                u0Var.m.b("output completed: generation=" + q0Var.a + ", durationMs=" + j3 + ", size=" + file.length() + ", hasAudio=" + z10);
+                u0Var.m("completed");
+                of ofVar = u0Var.d;
+                long j10 = q0Var.a;
+                y40 y40Var = (y40) ofVar.b;
+                x40 x40Var = y40Var.V;
+                if (x40Var != null) {
+                    y40Var.V = null;
+                    y40Var.l0 = true;
+                    qy0 qy0Var = y40Var.T;
+                    if (qy0Var == null) {
+                        py0Var2 = null;
+                    } else {
+                        synchronized (qy0Var) {
+                            try {
+                                try {
+                                    oy0 oy0Var = (oy0) qy0Var.c.get(Long.valueOf(j10));
+                                    if (oy0Var == null || oy0Var.e) {
+                                        py0Var = new py0(file.length(), null, null, null, null);
+                                    } else {
+                                        py0Var = new py0(Math.max(oy0Var.c, file.length()), oy0Var.f, oy0Var.g, oy0Var.h, oy0Var.i);
+                                    }
+                                    py0Var2 = py0Var;
+                                } catch (Throwable th2) {
+                                    th = th2;
+                                    throw th;
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                throw th;
                             }
                         }
                     }
-                    v0Var2.r();
-                    break;
+                    e20 t6 = y40Var.t(file, j3, py0Var2);
+                    t6.t = !z10;
+                    ef efVar = new ef(0, file.getAbsolutePath(), 0, true, 0, 0);
+                    efVar.x = x40Var.c;
+                    efVar.y = x40Var.d;
+                    y40Var.e.u(efVar, t6, x40Var.a, x40Var.b, 0, false, x40Var.e);
+                    qy0 qy0Var2 = y40Var.T;
+                    if (qy0Var2 != null) {
+                        qy0Var2.d(false);
+                    }
+                    y40Var.T = null;
+                    MediaController.B().Y(false);
+                    if (y40Var.a0) {
+                        y40Var.a0 = false;
+                        y40Var.P = null;
+                    }
                 }
-                break;
+                if (u0Var.G) {
+                    u0Var.s();
+                    return;
+                }
+                return;
         }
+    }
+
+    public /* synthetic */ g0(u0 u0Var, q0 q0Var, File file, long j3, boolean z10) {
+        this.b = u0Var;
+        this.c = q0Var;
+        this.e = file;
+        this.d = j3;
+        this.f = z10;
     }
 }

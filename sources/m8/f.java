@@ -3,23 +3,24 @@ package m8;
 import android.os.Parcel;
 import android.os.RemoteException;
 import androidx.car.app.j;
+import hi.u5;
 import q6.m;
 import v7.i;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f {
     public final v7.a a;
 
     public f(v7.a aVar) {
-        m.g(aVar);
+        m.h(aVar);
         this.a = aVar;
     }
 
-    public final void a(ia.d dVar) {
+    public final void a(u5 u5Var) {
         v7.a aVar = this.a;
         try {
-            a7.a aVar2 = (a7.a) dVar.b;
+            a7.a aVar2 = (a7.a) u5Var.b;
             i iVar = (i) aVar;
             Parcel p12 = iVar.p1();
             v7.b.c(p12, aVar2);

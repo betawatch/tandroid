@@ -1,33 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f2 implements DialogInterface.OnShowListener {
+public final /* synthetic */ class f2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ org.telegram.messenger.x10 b;
+    public final /* synthetic */ HashMap c;
 
-    public /* synthetic */ f2(EditTextBoldCursor editTextBoldCursor, int i7) {
+    public /* synthetic */ f2(org.telegram.messenger.x10 x10Var, HashMap hashMap, int i7) {
         this.a = i7;
-        this.b = editTextBoldCursor;
+        this.b = x10Var;
+        this.c = hashMap;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                z3 z3Var = (z3) this.b;
-                z3Var.requestFocus();
-                org.telegram.messenger.g0.J3(z3Var);
-                break;
-            case 1:
-                kg.x0 x0Var = (kg.x0) this.b;
-                x0Var.requestFocus();
-                org.telegram.messenger.g0.J3(x0Var);
+                this.b.a(this.c);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new ht(this.b, 7));
+                this.b.a(this.c);
                 break;
         }
     }

@@ -1,15 +1,14 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.hd;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.z70;
-import org.telegram.ui.r60;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.t60;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k implements z10 {
+public final /* synthetic */ class k implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -18,7 +17,7 @@ public final /* synthetic */ class k implements z10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         CharSequence V;
         int i7 = this.a;
@@ -28,42 +27,38 @@ public final /* synthetic */ class k implements z10 {
                 ((ai.u2) obj2).a(Boolean.valueOf(((String) obj) == null));
                 break;
             case 1:
-                i0 i0Var = (i0) obj;
-                ((s10) obj2).a(i0Var, i0Var == null ? "LOCAL_STORAGE_ERROR" : null);
+                String str = (String) obj;
+                l2.m("disconnect session", str);
+                ((x10) obj2).a(str);
                 break;
             case 2:
-                String str = (String) obj;
-                d2.m("disconnect session", str);
-                ((z10) obj2).a(str);
+                String str2 = (String) obj;
+                l2.m("approve session", str2);
+                ((t60) obj2).a(str2);
                 break;
             case 3:
-                String str2 = (String) obj;
-                d2.m("approve session", str2);
-                ((r60) obj2).a(str2);
-                break;
-            case 4:
-                org.telegram.messenger.g0.h3(new r(15, (c8) obj2, (TLRPC.UserFull) obj));
+                org.telegram.messenger.g0.g3(new c5(7, (r8) obj2, (TLRPC.UserFull) obj));
                 break;
             default:
-                f8 f8Var = (f8) obj2;
-                f8Var.getClass();
+                u8 u8Var = (u8) obj2;
+                u8Var.getClass();
                 int i10 = ((Integer) obj).intValue() == 0 ? 12 : 24;
-                if (f8Var.a != i10) {
-                    f8Var.a = i10;
-                    f8Var.b0(f8Var.getParentActivity());
-                    f8Var.d0();
-                    z70 z70Var = f8Var.h;
-                    byte[] bArr = f8Var.s;
+                if (u8Var.a != i10) {
+                    u8Var.a = i10;
+                    u8Var.b0(u8Var.getParentActivity());
+                    u8Var.d0();
+                    k80 k80Var = u8Var.h;
+                    byte[] bArr = u8Var.s;
                     Integer valueOf = Integer.valueOf(i10);
                     Object[] objArr = new Object[1];
                     if (bArr != null) {
                         objArr[0] = valueOf;
-                        V = hd.V(null, null, 2131743093, objArr);
+                        V = gd.V(null, null, 2131742854, objArr);
                     } else {
                         objArr[0] = valueOf;
-                        V = hd.V(null, null, 2131743091, objArr);
+                        V = gd.V(null, null, 2131742852, objArr);
                     }
-                    z70Var.setText(V);
+                    k80Var.setText(V);
                     break;
                 }
                 break;

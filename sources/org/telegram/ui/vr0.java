@@ -1,77 +1,70 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class vr0 extends org.telegram.ui.Cells.q1 {
-    public final Paint Ad;
-    public final /* synthetic */ byte[] Bd;
-    public final /* synthetic */ int Cd;
-    public final /* synthetic */ int Dd;
-    public final /* synthetic */ xr0 Ed;
-    public final Path zd;
+public final class vr0 implements View.OnClickListener {
+    public final /* synthetic */ mf0 a;
+    public final /* synthetic */ bn b;
+    public final /* synthetic */ org.telegram.ui.Components.ck0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.y60 e;
+    public final /* synthetic */ org.telegram.ui.Components.y60 f;
+    public final /* synthetic */ as0 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vr0(xr0 xr0Var, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var, byte[] bArr, int i10, int i11) {
-        super(context, i7, false, null, e6Var);
-        this.Ed = xr0Var;
-        this.Bd = bArr;
-        this.Cd = i10;
-        this.Dd = i11;
-        this.zd = new Path();
-        this.Ad = new Paint(1);
+    public vr0(as0 as0Var, mf0 mf0Var, bn bnVar, org.telegram.ui.Components.ck0 ck0Var, LinearLayout linearLayout, org.telegram.ui.Components.y60 y60Var, org.telegram.ui.Components.y60 y60Var2) {
+        this.h = as0Var;
+        this.a = mf0Var;
+        this.b = bnVar;
+        this.c = ck0Var;
+        this.d = linearLayout;
+        this.e = y60Var;
+        this.f = y60Var2;
     }
 
-    @Override // org.telegram.ui.Cells.q1
-    public final void j1(Canvas canvas) {
-        this.S4 = 0;
-        this.T4 = this.Q4.size() - 1;
-        this.U4 = (-org.telegram.messenger.g0.L(7.0f)) * this.Ed.E;
-        super.j1(canvas);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        int W1 = W1(this.Bd);
-        float V1 = V1(W1);
-        float U1 = U1(W1);
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(getPollButtonsLeft(), V1, getPollButtonsRight(), U1);
-        float f10 = rectF.top;
-        float L = org.telegram.messenger.g0.L(3.0f);
-        xr0 xr0Var = this.Ed;
-        rectF.top = org.telegram.messenger.g0.T1(L, xr0Var.W ? -org.telegram.messenger.g0.L(3.0f) : 0.0f, xr0Var.E) + f10;
-        float f11 = rectF.bottom;
-        boolean z10 = xr0Var.W;
-        float L2 = org.telegram.messenger.g0.L(3.0f);
-        if (!z10) {
-            L2 = org.telegram.messenger.g0.T1(L2, 0.0f, xr0Var.E);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        mf0 mf0Var = this.a;
+        ArrayList arrayList = mf0Var.b;
+        ArrayList arrayList2 = mf0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-        rectF.bottom = f11 + L2;
-        Path path = this.zd;
-        path.rewind();
-        path.addRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), Path.Direction.CW);
-        Paint paint = this.Ad;
-        paint.setColor(0);
-        paint.setShadowLayer(org.telegram.messenger.g0.L(2.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.j6.r1(xr0Var.E * 0.2f, -16777216));
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
-        canvas.clipPath(path);
-        d1(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(this.Cd, this.Dd);
-    }
-
-    @Override // org.telegram.ui.Cells.q1, android.view.View
-    public final void setPressed(boolean z10) {
+        int size = arrayList2.size();
+        as0 as0Var = this.h;
+        bn bnVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            bnVar.presentFragment(new ProfileActivity(bundle, null));
+            as0Var.c(false);
+            return;
+        }
+        if (org.telegram.messenger.bz.c1 > 0 && bnVar.m1.getKeyboardHeight() < org.telegram.messenger.g0.L(20.0f)) {
+            org.telegram.ui.Components.gc t6 = new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(as0Var.getContext()), as0Var.b).t(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131748296, null)), null);
+            bnVar.C1 = t6;
+            t6.j = 4000;
+            t6.j();
+            org.telegram.messenger.bz.S(org.telegram.messenger.bz.c1 - 1);
+        }
+        org.telegram.ui.Components.ck0 ck0Var = this.c;
+        ck0Var.requestLayout();
+        this.d.requestLayout();
+        ck0Var.getAdapter().f();
+        this.e.L(this.f);
     }
 }

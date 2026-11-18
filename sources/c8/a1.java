@@ -1,43 +1,84 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.messenger.ks;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a1 {
-    public static Integer a(String str) {
-        if (str == null) {
-            return null;
+    public static boolean a(int i7, CharSequence charSequence) {
+        if (i7 >= charSequence.length()) {
+            return false;
         }
-        switch (str.hashCode()) {
-            case -1118317585:
-                return str.equals("REPEAT_ALL_AND_SHUFFLE") ? 3 : null;
-            case -962896020:
-                return str.equals("REPEAT_SINGLE") ? 2 : null;
-            case 1645938909:
-                return str.equals("REPEAT_ALL") ? 1 : null;
-            case 1645952171:
-                return str.equals("REPEAT_OFF") ? 0 : null;
+        char charAt = charSequence.charAt(i7);
+        switch (charAt) {
+            case '!':
+            case '\"':
+            case '#':
+            case '$':
+            case '%':
+            case '&':
+            case '\'':
+            case '(':
+            case ')':
+            case '*':
+            case '+':
+            case ',':
+            case '-':
+            case '.':
+            case '/':
+                return true;
             default:
-                return null;
+                switch (charAt) {
+                    case ks.v0 /* 58 */:
+                    case ks.w0 /* 59 */:
+                    case ks.x0 /* 60 */:
+                    case ks.y0 /* 61 */:
+                    case ks.z0 /* 62 */:
+                    case ks.A0 /* 63 */:
+                    case '@':
+                        return true;
+                    default:
+                        switch (charAt) {
+                            case ks.c1 /* 91 */:
+                            case ks.d1 /* 92 */:
+                            case ks.e1 /* 93 */:
+                            case ks.f1 /* 94 */:
+                            case ks.g1 /* 95 */:
+                            case '`':
+                                return true;
+                            default:
+                                switch (charAt) {
+                                    case ks.H1 /* 123 */:
+                                    case ks.I1 /* 124 */:
+                                    case ks.J1 /* 125 */:
+                                    case ks.K1 /* 126 */:
+                                        return true;
+                                    default:
+                                        return false;
+                                }
+                        }
+                }
         }
     }
 
-    public static String b(Integer num) {
-        if (num == null) {
-            return null;
+    public static int b(char c10, int i7, int i10, CharSequence charSequence) {
+        while (i7 < i10) {
+            if (charSequence.charAt(i7) != c10) {
+                return i7;
+            }
+            i7++;
         }
-        int intValue = num.intValue();
-        if (intValue == 0) {
-            return "REPEAT_OFF";
+        return i10;
+    }
+
+    public static int c(int i7, int i10, CharSequence charSequence) {
+        while (i7 < i10) {
+            char charAt = charSequence.charAt(i7);
+            if (charAt != '\t' && charAt != ' ') {
+                return i7;
+            }
+            i7++;
         }
-        if (intValue == 1) {
-            return "REPEAT_ALL";
-        }
-        if (intValue == 2) {
-            return "REPEAT_SINGLE";
-        }
-        if (intValue != 3) {
-            return null;
-        }
-        return "REPEAT_ALL_AND_SHUFFLE";
+        return i10;
     }
 }

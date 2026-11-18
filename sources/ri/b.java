@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.Shader;
-import bg.n0;
+import bg.o0;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class b {
     public final RenderNode e;
@@ -44,7 +44,7 @@ public final class b {
         renderNode.setUseCompositingLayer(true, null);
         RenderNode renderNode2 = new RenderNode("glass-" + i7);
         this.f = renderNode2;
-        renderNode2.setRenderEffect(n0.d());
+        renderNode2.setRenderEffect(o0.d());
         this.g = new RenderNode("glass-frosted-" + i7);
         RenderNode renderNode3 = new RenderNode("filtered-" + i7);
         this.h = renderNode3;
@@ -66,7 +66,7 @@ public final class b {
         if (c10 == 3) {
             return this.i;
         }
-        throw new IllegalArgumentException("Unknown source index: ".concat(r.b.w(i7)));
+        throw new IllegalArgumentException("Unknown source index: ".concat(p5.c.x(i7)));
     }
 
     public final void b(int i7, int i10, int i11) {

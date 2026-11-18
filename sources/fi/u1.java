@@ -1,36 +1,49 @@
 package fi;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class u1 implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class u1 implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ b4 b;
+    public final /* synthetic */ z3 b;
 
-    public /* synthetic */ u1(b4 b4Var, int i7) {
+    public /* synthetic */ u1(z3 z3Var, int i7) {
         this.a = i7;
-        this.b = b4Var;
+        this.b = z3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                b4 b4Var = this.b;
-                b4Var.getClass();
-                b4Var.r2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b4Var.invalidate();
-                break;
-            case 1:
-                b4 b4Var2 = this.b;
-                b4Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b4Var2.d3 = floatValue;
-                b4Var2.b3.setTransitionProgress(floatValue);
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
+                z3 z3Var = this.b;
+                if (tL_premium_boostsStatus != null) {
+                    z3Var.t3 = tL_premium_boostsStatus;
+                    mp.u1(z3Var.m2).I0().b(z3Var.l1, tL_premium_boostsStatus, new ai.v1(14, z3Var, tL_premium_boostsStatus));
+                    break;
+                } else {
+                    f9 f9Var = z3Var.t0;
+                    if (f9Var != null) {
+                        f9Var.k1 = false;
+                        f9Var.V();
+                        break;
+                    }
+                }
                 break;
             default:
-                b4.X(this.b, valueAnimator);
+                long longValue = ((Long) obj).longValue();
+                z3 z3Var2 = this.b;
+                z3Var2.v3 = longValue;
+                i2 i2Var = z3Var2.L1;
+                if (i2Var != null) {
+                    i2Var.P(true);
+                    z3Var2.L1.v2();
+                }
+                z3Var2.p0(true);
                 break;
         }
     }

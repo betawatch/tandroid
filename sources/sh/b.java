@@ -1,238 +1,109 @@
 package sh;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.ViewTreeObserver;
+import android.view.View;
 import android.widget.FrameLayout;
-import bi.u;
-import c8.ja;
-import c8.na;
-import fi.w2;
-import java.util.HashSet;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.j0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.w1;
-import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ji;
-import org.telegram.ui.Components.t00;
-import org.telegram.ui.Wallet.i9;
-import org.telegram.ui.an;
-import org.telegram.ui.eh0;
-import org.telegram.ui.sc1;
-import org.telegram.ui.ye;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.af;
+import tg.k2;
+import ug.i1;
+import wg.b0;
+import wg.g0;
+import wg.j0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b extends FrameLayout implements ViewTreeObserver.OnPreDrawListener, z5 {
-    public final int[] E;
-    public final Rect F;
-    public ViewTreeObserver G;
-    public int H;
-    public final te.a I;
-    public final te.a J;
-    public final u a;
-    public final w2 b;
-    public final ji c;
-    public final an d;
-    public final FrameLayout.LayoutParams e;
-    public final j5 f;
-    public c h;
-    public q1 n;
-    public int r;
-    public ye s;
-    public final eh0 w;
-    public final eh0 x;
-    public final int y;
+public final /* synthetic */ class b implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public b(Activity activity, e6 e6Var, an anVar) {
-        super(activity);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(0, -2);
-        this.e = layoutParams;
-        this.E = new int[2];
-        this.F = new Rect();
-        int i7 = 22;
-        z zVar = new z(this, i7);
-        er erVar = er.h;
-        this.I = new te.a(0, zVar, erVar, 380L, false);
-        this.J = new te.a(0, new z(this, i7), erVar, 380L, false);
-        this.d = anVar;
-        this.y = ((j0) anVar.getMessagesController().y7.I.b).c;
-        int i10 = 3;
-        u uVar = new u(this, activity, e6Var, i10);
-        this.a = uVar;
-        uVar.setAllowTextEntitiesIntersection(true);
-        q6.U(uVar, j6.G6, e6Var);
-        q6.G(uVar, j6.Xc, e6Var);
-        q6.D(uVar, j6.H6, e6Var);
-        uVar.setHint(hd.M0(2131747183, null));
-        uVar.setTextSize(1, 15.0f);
-        uVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        uVar.setBackground(null);
-        uVar.setImeOptions(268435462);
-        uVar.setInputType(uVar.getInputType() | TLObject.FLAG_14);
-        uVar.addTextChangedListener(new i9(this, 4));
-        w2 w2Var = new w2(activity, 6);
-        this.b = w2Var;
-        int i11 = j6.Mi;
-        y h02 = j6.h0(j6.w0(i11, e6Var), 1, -1);
-        m6 M = q6.M(i11);
-        w2Var.setBackground(h02);
-        q6.j(w2Var, h02, null, M, e6Var);
-        na.a(w2Var);
-        ji jiVar = new ji(getContext(), 36);
-        this.c = jiVar;
-        y h03 = j6.h0(j6.w0(i11, e6Var), 1, -1);
-        m6 M2 = q6.M(i11);
-        jiVar.setBackground(h03);
-        q6.j(jiVar, h03, null, M2, e6Var);
-        jiVar.setOnClickListener(new sc1(i10, this, anVar));
-        na.a(jiVar);
-        j5 j5Var = new j5(getContext());
-        this.f = j5Var;
-        j5Var.setTextSize(13);
-        j5Var.setGravity(17);
-        j5Var.setTranslationY(g0.L(44.0f));
-        j5Var.setVisibility(8);
-        eh0 eh0Var = new eh0(activity, 18);
-        this.x = eh0Var;
-        addView(eh0Var, layoutParams);
-        eh0 eh0Var2 = new eh0(activity, 17);
-        this.w = eh0Var2;
-        eh0Var.addView(eh0Var2, ja.c(-2.0f, -1));
-        eh0Var2.addView(j5Var, ja.e(54, 24, 53));
-        eh0Var2.addView(w2Var, ja.e(44, 44, 51));
-        eh0Var2.addView(jiVar, ja.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        eh0Var2.addView(uVar, ja.d(-1, -2.0f, ns.E1, 39.0f, 0.0f, 47.0f, 0.0f));
-        uVar.setPadding(g0.L(5.0f), g0.L(11.0f), g0.L(5.0f), g0.L(11.0f));
+    public /* synthetic */ b(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static void a(b bVar) {
-        j5 j5Var = bVar.f;
-        t00.d(j5Var, bVar.I.e);
-        int i7 = j6.A6;
-        an anVar = bVar.d;
-        j5Var.setTextColor(i0.a.f(bVar.J.e, j6.w0(i7, anVar.getResourceProvider()), j6.w0(j6.p7, anVar.getResourceProvider())));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(j6.A6));
-        hashSet.add(Integer.valueOf(j6.p7));
-    }
-
-    public c getAttachedMedia() {
-        return this.h;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        this.G = viewTreeObserver;
-        viewTreeObserver.addOnPreDrawListener(this);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ViewTreeObserver viewTreeObserver = this.G;
-        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
-            this.G.removeOnPreDrawListener(this);
-        }
-        this.G = null;
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        w1 w1Var;
-        uh.a aVar;
-        q1 q1Var = this.n;
-        if (q1Var != null) {
-            int e12 = q1Var.getMessageObject().e1();
-            if (this.n.isAttachedToWindow() && this.r == e12 && (w1Var = this.n.x2) != null && (aVar = w1Var.l) != null && w1Var.s) {
-                Rect bounds = aVar.getBounds();
-                Rect rect = this.F;
-                rect.set(bounds);
-                q1 q1Var2 = this.n;
-                int[] iArr = this.E;
-                q1Var2.getLocationInWindow(iArr);
-                int i7 = iArr[0];
-                int i10 = iArr[1];
-                getLocationInWindow(iArr);
-                rect.offset(i7 - iArr[0], i10 - iArr[1]);
-                int width = rect.width();
-                FrameLayout.LayoutParams layoutParams = this.e;
-                int i11 = layoutParams.width;
-                eh0 eh0Var = this.x;
-                if (i11 != width) {
-                    layoutParams.width = width;
-                    eh0Var.setLayoutParams(layoutParams);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                ((af) this.b).run();
+                break;
+            case 1:
+                ((h01) this.b).run();
+                break;
+            case 2:
+                ((k2) this.b).onBackPressed();
+                break;
+            case 3:
+                ((k80) this.b).performClick();
+                break;
+            case 4:
+                i1 i1Var = (i1) this.b;
+                PremiumPreviewFragment.u0();
+                PremiumPreviewFragment.p0(i1Var.p2, null, "profile", null);
+                break;
+            case 5:
+                final g0 g0Var = (g0) this.b;
+                yg.a aVar = g0Var.M2;
+                if (!aVar.a.R) {
+                    aVar.b(true);
+                    String str = g0Var.N2;
+                    final int i7 = 0;
+                    x10 x10Var = new x10() { // from class: wg.f0
+                        @Override // org.telegram.messenger.x10
+                        public final void a(Object obj) {
+                            switch (i7) {
+                                case 0:
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.M2.b(false);
+                                    g0Var2.dismiss();
+                                    org.telegram.messenger.g0.h3(new e0(g0Var2, 1), 200L);
+                                    break;
+                                default:
+                                    g0 g0Var3 = g0Var;
+                                    g0Var3.M2.b(false);
+                                    h.c((TLRPC.TL_error) obj, (FrameLayout) g0Var3.b, g0Var3.J0, new e0(g0Var3, 0));
+                                    break;
+                            }
+                        }
+                    };
+                    final int i10 = 1;
+                    x10 x10Var2 = new x10() { // from class: wg.f0
+                        @Override // org.telegram.messenger.x10
+                        public final void a(Object obj) {
+                            switch (i10) {
+                                case 0:
+                                    g0 g0Var2 = g0Var;
+                                    g0Var2.M2.b(false);
+                                    g0Var2.dismiss();
+                                    org.telegram.messenger.g0.h3(new e0(g0Var2, 1), 200L);
+                                    break;
+                                default:
+                                    g0 g0Var3 = g0Var;
+                                    g0Var3.M2.b(false);
+                                    h.c((TLRPC.TL_error) obj, (FrameLayout) g0Var3.b, g0Var3.J0, new e0(g0Var3, 0));
+                                    break;
+                            }
+                        }
+                    };
+                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+                    TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
+                    tL_payments_applyGiftCode.slug = str;
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new wg.n(x10Var2, x10Var, 0), 2);
+                    break;
                 }
-                eh0Var.setTranslationX(rect.left);
-                eh0Var.setTranslationY(g0.L(0.66f) + rect.top);
-                return true;
-            }
-            ye yeVar = this.s;
-            if (yeVar != null) {
-                yeVar.run();
-                this.s = null;
-            }
-        }
-        return true;
-    }
-
-    public void setAnimatedVisibility(float f10) {
-        this.w.setAlpha(f10);
-    }
-
-    public void setCellToWatch(q1 q1Var) {
-        this.n = q1Var;
-        this.r = q1Var.getMessageObject().e1();
-    }
-
-    public void setColor(int i7) {
-        if (this.H != i7) {
-            this.H = i7;
-            PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i7, PorterDuff.Mode.SRC_IN);
-            w2 w2Var = this.b;
-            ((Drawable) w2Var.c).setColorFilter(porterDuffColorFilter);
-            ((Drawable) w2Var.d).setColorFilter(porterDuffColorFilter);
-            ((Drawable) this.c.c).setColorFilter(porterDuffColorFilter);
-            u uVar = this.a;
-            uVar.setCursorColor(i7);
-            uVar.setHandlesColor(i7);
-            uVar.setHintTextColor(i7);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        an anVar;
-        try {
-            j5 j5Var = this.f;
-            if (j5Var == null || (anVar = this.d) == null) {
-                return;
-            }
-            j5Var.setTextColor(i0.a.f(this.J.e, j6.w0(j6.A6, anVar.getResourceProvider()), j6.w0(j6.p7, anVar.getResourceProvider())));
-        } catch (Exception e10) {
-            a8.g(e10, true);
+                break;
+            case 6:
+                ((j0) this.b).dismiss();
+                break;
+            default:
+                ((b0) ((xg.e) this.b)).r.dismiss();
+                break;
         }
     }
 }

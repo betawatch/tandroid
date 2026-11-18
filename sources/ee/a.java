@@ -1,27 +1,26 @@
 package ee;
 
-import a8.ma;
 import a8.p0;
-import aa.b0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.ConnectionsManager;
 import zd.a1;
 import zd.a2;
+import zd.b0;
 import zd.t0;
 import zd.u1;
 import zd.v1;
 import zd.x;
 import zd.y;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final b0 a = new b0("CLOSED", 1);
-    public static final b0 b = new b0("UNDEFINED", 1);
-    public static final b0 c = new b0("REUSABLE_CLAIMED", 1);
-    public static final b0 d = new b0("NO_THREAD_ELEMENTS", 1);
+    public static final t a = new t("CLOSED", 0);
+    public static final t b = new t("UNDEFINED", 0);
+    public static final t c = new t("REUSABLE_CLAIMED", 0);
+    public static final t d = new t("NO_THREAD_ELEMENTS", 0);
     public static final b1.e e = new b1.e(5);
     public static final b1.e f = new b1.e(6);
     public static final b1.e g = new b1.e(7);
@@ -39,9 +38,9 @@ public abstract class a {
             }
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b.a;
             Object obj = atomicReferenceFieldUpdater.get(rVar);
-            b0 b0Var = a;
-            if (obj == b0Var) {
-                return b0Var;
+            t tVar = a;
+            if (obj == tVar) {
+                return tVar;
             }
             r rVar2 = (r) ((b) obj);
             if (rVar2 == null) {
@@ -77,14 +76,14 @@ public abstract class a {
                     runtimeException = th2;
                 } else {
                     runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
-                    ma.a(runtimeException, th2);
+                    af.b.a(runtimeException, th2);
                 }
                 Thread currentThread = Thread.currentThread();
                 currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
         }
         try {
-            ma.a(th2, new e(hVar));
+            af.b.a(th2, new e(hVar));
         } catch (Throwable unused) {
         }
         Thread currentThread2 = Thread.currentThread();
@@ -113,21 +112,21 @@ public abstract class a {
         if (obj == d) {
             return;
         }
-        if (!(obj instanceof v)) {
+        if (!(obj instanceof w)) {
             Object fold = hVar.fold(null, f);
             kotlin.jvm.internal.j.c(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
             p0.A(fold);
             throw null;
         }
-        v vVar = (v) obj;
-        u1[] u1VarArr = vVar.b;
+        w wVar = (w) obj;
+        u1[] u1VarArr = wVar.b;
         int length = u1VarArr.length - 1;
         if (length < 0) {
             return;
         }
         u1 u1Var = u1VarArr[length];
         kotlin.jvm.internal.j.b(null);
-        Object obj2 = vVar.a[length];
+        Object obj2 = wVar.a[length];
         throw null;
     }
 
@@ -166,7 +165,7 @@ public abstract class a {
                 Object obj2 = fVar.h;
                 id.h context = cVar2.getContext();
                 Object l10 = l(context, obj2);
-                a2 x10 = l10 != d ? zd.b0.x(cVar2, context, l10) : null;
+                a2 x10 = l10 != d ? b0.x(cVar2, context, l10) : null;
                 try {
                     cVar2.resumeWith(obj);
                 } finally {
@@ -175,7 +174,7 @@ public abstract class a {
                     }
                 }
             } else {
-                fVar.resumeWith(af.b.b(a1Var.getCancellationException()));
+                fVar.resumeWith(b7.h.a(a1Var.getCancellationException()));
             }
             while (a11.k()) {
             }
@@ -197,7 +196,7 @@ public abstract class a {
         boolean z10;
         int i7;
         int i10;
-        int i11 = t.a;
+        int i11 = u.a;
         try {
             str2 = System.getProperty(str);
         } catch (SecurityException unused) {
@@ -283,7 +282,7 @@ public abstract class a {
             return d;
         }
         if (obj instanceof Integer) {
-            return hVar.fold(new v(((Number) obj).intValue(), hVar), g);
+            return hVar.fold(new w(((Number) obj).intValue(), hVar), g);
         }
         p0.A(obj);
         throw null;

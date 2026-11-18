@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -18,13 +18,13 @@ public abstract class a0 {
         }
     }
 
-    public static k1 b(View view, k1 k1Var, Rect rect) {
-        WindowInsets g10 = k1Var.g();
+    public static l1 b(View view, l1 l1Var, Rect rect) {
+        WindowInsets g10 = l1Var.g();
         if (g10 != null) {
-            return k1.h(view, view.computeSystemWindowInsets(g10, rect));
+            return l1.h(view, view.computeSystemWindowInsets(g10, rect));
         }
         rect.setEmpty();
-        return k1Var;
+        return l1Var;
     }
 
     public static ColorStateList c(View view) {

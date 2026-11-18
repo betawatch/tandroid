@@ -1,24 +1,33 @@
 package org.telegram.messenger;
 
-import android.accounts.Account;
-import android.accounts.OperationCanceledException;
-import android.content.AbstractThreadedSyncAdapter;
-import android.content.ContentProviderClient;
-import android.content.SyncResult;
-import android.os.Bundle;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class j5 extends AbstractThreadedSyncAdapter {
-    @Override // android.content.AbstractThreadedSyncAdapter
-    public final void onPerformSync(Account account, Bundle bundle, String str, ContentProviderClient contentProviderClient, SyncResult syncResult) {
-        try {
-            j5 j5Var = ContactsSyncAdapterService.a;
-            if (r2.a) {
-                a8.b("performSync: " + account.toString());
-            }
-        } catch (OperationCanceledException e10) {
-            a8.g(e10, true);
+public final /* synthetic */ class j5 implements fs {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ j5(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                fi.y3 y3Var = (fi.y3) this.b;
+                if (i7 == 25) {
+                    y3Var.d(false);
+                    break;
+                }
+                break;
+            default:
+                qz qzVar = (qz) this.b;
+                if (i7 == 255) {
+                    g0.g3(new xr(qzVar, 15));
+                    break;
+                }
+                break;
         }
     }
 }

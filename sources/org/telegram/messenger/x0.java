@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.m71;
+import org.telegram.ui.Components.w71;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class x0 implements Runnable {
         this.c = obj;
     }
 
-    /* JADX WARN: Not initialized variable reg: 3, insn: 0x00e7: MOVE (r4 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) (LINE:232), block:B:70:0x00e7 */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x059a  */
-    /* JADX WARN: Removed duplicated region for block: B:370:0x05c4  */
+    /* JADX WARN: Not initialized variable reg: 3, insn: 0x00e8: MOVE (r4 I:??[OBJECT, ARRAY]) = (r3 I:??[OBJECT, ARRAY]) (LINE:233), block:B:70:0x00e8 */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x059b  */
+    /* JADX WARN: Removed duplicated region for block: B:370:0x05c5  */
     /* JADX WARN: Removed duplicated region for block: B:372:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x011a  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x011b  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -46,8 +46,8 @@ public final /* synthetic */ class x0 implements Runnable {
         int i11;
         long j10;
         long j11;
-        m71 m71Var;
-        m71 m71Var2;
+        w71 w71Var;
+        w71 w71Var2;
         SQLiteCursor sQLiteCursor;
         SQLiteCursor sQLiteCursor2;
         long j12 = 0;
@@ -59,7 +59,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 File file2 = (File) this.c;
                 Set set = z0.a;
                 long currentTimeMillis = System.currentTimeMillis();
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("checkKeepMedia start task");
                 }
                 ArrayList arrayList = new ArrayList();
@@ -68,10 +68,10 @@ public final /* synthetic */ class x0 implements Runnable {
                 while (true) {
                     int i15 = 4;
                     if (i14 < 4) {
-                        if (m10.i(i14).p()) {
-                            u2 u2Var = m10.i(i14).getMessagesController().s7;
-                            arrayList.add(u2Var);
-                            if (u2Var.e().size() > 0) {
+                        if (j10.i(i14).p()) {
+                            v2 v2Var = j10.i(i14).getMessagesController().u7;
+                            arrayList.add(v2Var);
+                            if (v2Var.e().size() > 0) {
                                 z10 = true;
                             }
                         }
@@ -83,12 +83,12 @@ public final /* synthetic */ class x0 implements Runnable {
                         long j13 = Long.MAX_VALUE;
                         while (i16 < 4) {
                             long j14 = j12;
-                            int i17 = gz.q().getInt(i5.c.i(i16, "keep_media_type_"), u2.b(i16));
+                            int i17 = bz.q().getInt(i5.c.i(i16, "keep_media_type_"), v2.b(i16));
                             iArr[i16] = i17;
                             if (i17 != 2) {
                                 z11 = false;
                             }
-                            long a10 = u2.a(i17);
+                            long a10 = v2.a(i17);
                             if (a10 < j13) {
                                 j13 = a10;
                             }
@@ -99,7 +99,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         if (z10) {
                             z11 = false;
                         }
-                        SparseArray l10 = fc.D().l();
+                        SparseArray l10 = ec.D().l();
                         long j16 = j15;
                         int i18 = 0;
                         int i19 = 0;
@@ -114,28 +114,28 @@ public final /* synthetic */ class x0 implements Runnable {
                                     if (listFiles != null) {
                                         for (int i21 = 0; i21 < listFiles.length; i21++) {
                                             if (!listFiles[i21].isDirectory() && !set.contains(listFiles[i21].getAbsolutePath())) {
-                                                arrayList2.add(new t2(listFiles[i21]));
+                                                arrayList2.add(new u2(listFiles[i21]));
                                             }
                                         }
                                     }
                                     for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                        ((u2) arrayList.get(i22)).g(arrayList2);
+                                        ((v2) arrayList.get(i22)).g(arrayList2);
                                     }
                                     for (int i23 = 0; i23 < arrayList2.size(); i23++) {
-                                        t2 t2Var = (t2) arrayList2.get(i23);
-                                        boolean z12 = t2Var.d;
-                                        File file3 = t2Var.a;
+                                        u2 u2Var = (u2) arrayList2.get(i23);
+                                        boolean z12 = u2Var.d;
+                                        File file3 = u2Var.a;
                                         if (z12) {
-                                            j11 = u2.a(iArr[3]);
+                                            j11 = v2.a(iArr[3]);
                                         } else {
-                                            int i24 = t2Var.b;
+                                            int i24 = u2Var.b;
                                             if (i24 != 2) {
                                                 if (i24 >= 0) {
-                                                    j10 = u2.a(i24);
+                                                    j10 = v2.a(i24);
                                                 } else {
-                                                    int i25 = t2Var.c;
+                                                    int i25 = u2Var.c;
                                                     if (i25 >= 0) {
-                                                        j10 = u2.a(iArr[i25]);
+                                                        j10 = v2.a(iArr[i25]);
                                                     } else if (i20 == 0) {
                                                         j10 = j13;
                                                     }
@@ -149,7 +149,7 @@ public final /* synthetic */ class x0 implements Runnable {
                                         long lastUsageFileTime = Utilities.getLastUsageFileTime(file3.getAbsolutePath());
                                         if (lastUsageFileTime > 316000000 && lastUsageFileTime < j17 && !set.contains(file3.getPath())) {
                                             try {
-                                                if (r2.a) {
+                                                if (s2.a) {
                                                     i19++;
                                                     j16 += file3.length();
                                                 }
@@ -170,7 +170,7 @@ public final /* synthetic */ class x0 implements Runnable {
                             i15 = 4;
                         }
                         int i26 = i12;
-                        int i27 = gz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
+                        int i27 = bz.q().getInt("cache_limit", ConnectionsManager.DEFAULT_DATACENTER_ID);
                         if (i27 != Integer.MAX_VALUE) {
                             long j18 = i27 == i26 ? 314572800L : i27 * 1048576000;
                             long j19 = j15;
@@ -183,7 +183,7 @@ public final /* synthetic */ class x0 implements Runnable {
                                     z0.a((File) l10.valueAt(i29), arrayList3);
                                 }
                                 for (int i30 = 0; i30 < arrayList.size(); i30++) {
-                                    ((u2) arrayList.get(i30)).g(arrayList3);
+                                    ((v2) arrayList.get(i30)).g(arrayList3);
                                 }
                                 Collections.sort(arrayList3, new jg.w(11));
                                 long j20 = j15;
@@ -215,8 +215,8 @@ public final /* synthetic */ class x0 implements Runnable {
                                                         a8.g(th3, true);
                                                     }
                                                 }
-                                                np.e1().edit().putInt("lastKeepMediaCheckTime", gz.H).apply();
-                                                if (r2.a) {
+                                                mp.g1().edit().putInt("lastKeepMediaCheckTime", bz.H).apply();
+                                                if (s2.a) {
                                                     a8.b("checkKeepMedia task end time " + (System.currentTimeMillis() - currentTimeMillis) + " auto deleted info: files " + i19 + " size " + g0.i0(j16, false, false) + "   deleted by size limit info: files " + i7 + " size " + g0.i0(j3, false, false) + " unknownTimeFiles " + i10);
                                                     return;
                                                 }
@@ -232,8 +232,8 @@ public final /* synthetic */ class x0 implements Runnable {
                                 file = new File(file2, "acache");
                                 if (file.exists()) {
                                 }
-                                np.e1().edit().putInt("lastKeepMediaCheckTime", gz.H).apply();
-                                if (r2.a) {
+                                mp.g1().edit().putInt("lastKeepMediaCheckTime", bz.H).apply();
+                                if (s2.a) {
                                 }
                             }
                         }
@@ -243,8 +243,8 @@ public final /* synthetic */ class x0 implements Runnable {
                         file = new File(file2, "acache");
                         if (file.exists()) {
                         }
-                        np.e1().edit().putInt("lastKeepMediaCheckTime", gz.H).apply();
-                        if (r2.a) {
+                        mp.g1().edit().putInt("lastKeepMediaCheckTime", bz.H).apply();
+                        if (s2.a) {
                         }
                     }
                 }
@@ -290,7 +290,7 @@ public final /* synthetic */ class x0 implements Runnable {
                     }
                 }
                 if (i34 == 2) {
-                    fc.D().j();
+                    ec.D().j();
                     return;
                 }
                 return;
@@ -298,34 +298,34 @@ public final /* synthetic */ class x0 implements Runnable {
                 FilesMigrationService filesMigrationService = (FilesMigrationService) this.c;
                 int i36 = this.b;
                 boolean z13 = FilesMigrationService.c;
-                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(ns.Y4, f9.b.a(filesMigrationService, at.k0).setContentTitle(hd.M0(2131748430, null)).setContentText(i36 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i36, false).build());
+                ((NotificationManager) filesMigrationService.getSystemService("notification")).notify(ks.Y4, f9.b.a(filesMigrationService, xs.k0).setContentTitle(gd.M0(2131748238, null)).setContentText(i36 + "/" + filesMigrationService.a).setSmallIcon(R.drawable.notification).setAutoCancel(false).setProgress(filesMigrationService.a, i36, false).build());
                 return;
             case 3:
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.c;
                 int i37 = this.b;
                 String[] strArr = MediaController.W1;
                 try {
-                    t1Var.o(i37);
+                    u1Var.o(i37);
                     return;
                 } catch (Exception e15) {
                     a8.g(e15, true);
                     return;
                 }
             case 4:
-                te teVar = (te) this.c;
+                se seVar = (se) this.c;
                 int i38 = this.b;
-                MediaController mediaController = teVar.a;
+                MediaController mediaController = seVar.a;
                 if (i38 == 1) {
                     if (mediaController.I(mediaController.v0) && !mediaController.H()) {
                         mediaController.R(mediaController.v0, true);
                     } else if (mediaController.J()) {
                         mediaController.B0(2, 0, false, false);
                     }
-                    org.telegram.ui.Components.bu buVar = org.telegram.ui.Components.bu.S1;
-                    if (buVar != null && (m71Var2 = buVar.n1) != null && m71Var2.x) {
-                        m71Var2.a.g0();
-                        m71Var2.n();
-                        m71Var2.g0.d(true, true);
+                    org.telegram.ui.Components.gu guVar = org.telegram.ui.Components.gu.S1;
+                    if (guVar != null && (w71Var2 = guVar.n1) != null && w71Var2.x) {
+                        w71Var2.a.g0();
+                        w71Var2.n();
+                        w71Var2.g0.d(true, true);
                     }
                     mediaController.X = true;
                     return;
@@ -335,11 +335,11 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
                 if (i38 == 2) {
-                    org.telegram.ui.Components.bu buVar2 = org.telegram.ui.Components.bu.S1;
-                    if (buVar2 != null && (m71Var = buVar2.n1) != null && m71Var.x) {
-                        m71Var.a.g0();
-                        m71Var.n();
-                        m71Var.g0.d(true, true);
+                    org.telegram.ui.Components.gu guVar2 = org.telegram.ui.Components.gu.S1;
+                    if (guVar2 != null && (w71Var = guVar2.n1) != null && w71Var.x) {
+                        w71Var.a.g0();
+                        w71Var.n();
+                        w71Var.g0.d(true, true);
                     }
                     mediaController.X = true;
                     return;
@@ -349,7 +349,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 int i39 = this.b;
                 TLRPC.TL_help_appConfig tL_help_appConfig = (TLRPC.TL_help_appConfig) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase = vr.a0(i39).b;
+                    SQLiteDatabase sQLiteDatabase = tr.a0(i39).b;
                     if (sQLiteDatabase != null) {
                         sQLiteDatabase.executeFast("DELETE FROM app_config").stepThis().dispose();
                         if (tL_help_appConfig != null) {
@@ -374,7 +374,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 int i40 = this.b;
                 TLRPC.messages_AvailableEffects messages_availableeffects = (TLRPC.messages_AvailableEffects) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase2 = vr.a0(i40).b;
+                    SQLiteDatabase sQLiteDatabase2 = tr.a0(i40).b;
                     if (sQLiteDatabase2 != null) {
                         sQLiteDatabase2.executeFast("DELETE FROM effects").stepThis().dispose();
                         if (messages_availableeffects != null) {
@@ -397,25 +397,25 @@ public final /* synthetic */ class x0 implements Runnable {
                 }
             case 7:
                 int i41 = this.b;
-                s10 s10Var = (s10) this.c;
+                q10 q10Var = (q10) this.c;
                 try {
                     try {
-                        SQLiteDatabase sQLiteDatabase3 = vr.a0(i41).b;
+                        SQLiteDatabase sQLiteDatabase3 = tr.a0(i41).b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteCursor = sQLiteDatabase3.queryFinalized("SELECT data FROM web_browser_settings", new Object[0]);
                             try {
-                                TL_account.WebBrowserSettings webBrowserSettings = sQLiteCursor.next() ? (TL_account.WebBrowserSettings) sQLiteCursor.tlObjectValue(0, new fd(7), true) : null;
+                                TL_account.WebBrowserSettings webBrowserSettings = sQLiteCursor.next() ? (TL_account.WebBrowserSettings) sQLiteCursor.tlObjectValue(0, new ed(8), true) : null;
                                 if (webBrowserSettings instanceof TL_account.TL_webBrowserSettings) {
                                     TL_account.TL_webBrowserSettings tL_webBrowserSettings = (TL_account.TL_webBrowserSettings) webBrowserSettings;
-                                    s10Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
+                                    q10Var.a(Long.valueOf(tL_webBrowserSettings.hash), tL_webBrowserSettings);
                                 } else {
-                                    s10Var.a(0L, null);
+                                    q10Var.a(0L, null);
                                 }
                                 sQLiteCursor3 = sQLiteCursor;
                             } catch (Exception e18) {
                                 e = e18;
                                 a8.g(e, true);
-                                s10Var.a(0L, null);
+                                q10Var.a(0L, null);
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
                                     return;
@@ -449,7 +449,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 int i42 = this.b;
                 TL_account.TL_webBrowserSettings tL_webBrowserSettings2 = (TL_account.TL_webBrowserSettings) this.c;
                 try {
-                    SQLiteDatabase sQLiteDatabase4 = vr.a0(i42).b;
+                    SQLiteDatabase sQLiteDatabase4 = tr.a0(i42).b;
                     if (sQLiteDatabase4 != null) {
                         sQLiteDatabase4.executeFast("DELETE FROM web_browser_settings").stepThis().dispose();
                         if (tL_webBrowserSettings2 != null) {
@@ -471,7 +471,7 @@ public final /* synthetic */ class x0 implements Runnable {
                 ((ai.u2) this.c).a(Integer.valueOf(this.b));
                 return;
             case 10:
-                ((org.telegram.ui.ag) this.c).a(this.b);
+                ((org.telegram.ui.cg) this.c).a(this.b);
                 return;
             case 11:
                 PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
@@ -484,11 +484,11 @@ public final /* synthetic */ class x0 implements Runnable {
                 c cVar = (c) this.c;
                 try {
                     if (i43 == 1) {
-                        ns.e().k(ns.P4, 1, hd.M0(2131743833, null));
+                        ks.e().k(ks.R4, 1, gd.M0(2131743596, null));
                     } else if (i43 != 2) {
                         return;
                     } else {
-                        ns.f(cVar.a).k(ns.i5, 6);
+                        ks.f(cVar.a).k(ks.k5, 6);
                     }
                     return;
                 } catch (Exception e21) {
@@ -496,7 +496,7 @@ public final /* synthetic */ class x0 implements Runnable {
                     return;
                 }
             default:
-                Utilities.u(this.b + 1, (z10[]) this.c);
+                Utilities.u(this.b + 1, (x10[]) this.c);
                 return;
         }
     }

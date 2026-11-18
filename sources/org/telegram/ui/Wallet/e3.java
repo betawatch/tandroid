@@ -1,22 +1,104 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.ui.TwoStepVerificationActivity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.ViewGroup;
+import java.util.HashSet;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class e3 extends TwoStepVerificationActivity {
-    public final /* synthetic */ bg.u0 e0;
+public class e3 extends org.telegram.ui.Components.sa implements org.telegram.ui.ActionBar.c6 {
+    public z41 T1;
+    public final ViewGroup U1;
+    public final Paint V1;
+    public float W1;
 
-    public e3(bg.u0 u0Var) {
-        this.e0 = u0Var;
+    public e3(Context context, ViewGroup viewGroup, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, null, true, false, i6Var);
+        this.V1 = new Paint();
+        this.v1 = 0.1f;
+        this.U1 = viewGroup;
+        ck0 ck0Var = this.o1;
+        int i7 = this.u0;
+        ck0Var.setPadding(i7, 0, i7, 0);
+        updateColors();
+        this.T1.O(false);
     }
 
-    @Override // org.telegram.ui.TwoStepVerificationActivity, org.telegram.ui.ActionBar.e2
-    public final void onFragmentDestroy() {
-        bg.u0 u0Var = this.e0;
-        if (((Runnable) u0Var.d) != null && !u0Var.c) {
-            u0Var.a();
+    @Override // org.telegram.ui.ActionBar.x2
+    public final void E0(int i7) {
+        super.E0(i7);
+        org.telegram.messenger.g0.s3(this, 0, false, null);
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final bk0 M0(ck0 ck0Var) {
+        z41 z41Var = new z41(ck0Var, getContext(), this.a, 0, true, new e(this, 5), this.J0);
+        this.T1 = z41Var;
+        return z41Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence P0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public void U0(float f10) {
+        this.W1 = f10;
+        if (this.F != null) {
+            this.F.setTranslationY(Math.max((this.b.getY() + f10) + this.t0, this.F.getHeight() + (org.telegram.messenger.g0.L(56.0f) + org.telegram.messenger.g0.m)) - this.F.getBottom());
         }
-        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2
+    public final void Z(Canvas canvas) {
+        org.telegram.ui.ActionBar.n2 n2Var = this.c;
+        float height = n2Var.getHeight();
+        float max = Math.max(height - org.telegram.messenger.g0.n, this.b.getY() + this.W1 + this.t0);
+        if (max >= height) {
+            return;
+        }
+        boolean z10 = this.b.getWidth() < n2Var.getWidth();
+        canvas.drawRect(z10 ? this.b.getX() + this.u0 : 0.0f, max, z10 ? (this.b.getX() + this.b.getWidth()) - this.u0 : n2Var.getWidth(), height, this.V1);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.a7));
+    }
+
+    public int e1() {
+        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.a7, this.J0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    public void show() {
+        if (getWindow() != null) {
+            org.telegram.messenger.g0.S(getWindow());
+        }
+        super.show();
+        int e12 = e1();
+        E0(e12);
+        org.telegram.messenger.g0.m3(this, org.telegram.messenger.g0.B(e12) > 0.721f);
+        if (getWindow() != null) {
+            getWindow().getDecorView().requestApplyInsets();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int e12 = e1();
+        this.V1.setColor(e12);
+        v0(e12);
+        P(e12);
+        ViewGroup viewGroup = this.U1;
+        if (viewGroup != null) {
+            viewGroup.invalidate();
+        }
     }
 }

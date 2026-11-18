@@ -2,19 +2,19 @@ package zi;
 
 import android.os.Handler;
 import j$.util.Objects;
-import org.telegram.ui.Components.ff;
+import org.telegram.ui.Components.of;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+    public final /* synthetic */ k b;
     public final /* synthetic */ n0 c;
     public final /* synthetic */ long d;
 
-    public /* synthetic */ b(l lVar, n0 n0Var, long j3, int i7) {
+    public /* synthetic */ b(k kVar, n0 n0Var, long j3, int i7) {
         this.a = i7;
-        this.b = lVar;
+        this.b = kVar;
         this.c = n0Var;
         this.d = j3;
     }
@@ -23,20 +23,20 @@ public final /* synthetic */ class b implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                l lVar = this.b;
-                lVar.c.post(new b(lVar, this.c, this.d, 1));
+                k kVar = this.b;
+                kVar.c.post(new b(kVar, this.c, this.d, 1));
                 break;
             default:
-                l lVar2 = this.b;
+                k kVar2 = this.b;
                 n0 n0Var = this.c;
                 long j3 = this.d;
-                if (lVar2.U && lVar2.F == n0Var) {
-                    lVar2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + l.z(j3));
-                    v0 v0Var = (v0) lVar2.k.a;
-                    Handler handler = v0Var.i;
-                    ff ffVar = v0Var.d;
-                    Objects.requireNonNull(ffVar);
-                    handler.post(new vg.o(ffVar, 14));
+                if (kVar2.U && kVar2.F == n0Var) {
+                    kVar2.j.b("camera switch first preview frame: path=DUAL_ACTIVE, totalElapsedMs=" + k.z(j3));
+                    u0 u0Var = (u0) kVar2.k.a;
+                    Handler handler = u0Var.i;
+                    of ofVar = u0Var.d;
+                    Objects.requireNonNull(ofVar);
+                    handler.post(new v4.p(ofVar, 16));
                     break;
                 }
                 break;

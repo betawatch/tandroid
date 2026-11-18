@@ -1,36 +1,52 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class q11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.gj b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-    public /* synthetic */ q11(org.telegram.messenger.gj gjVar, long j3, String str, int i7) {
-        this.a = i7;
-        this.b = gjVar;
-        this.c = j3;
-        this.d = str;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class q11 extends Drawable {
+    public final Drawable a;
+    public final Paint b = new Paint(1);
+    public final RectF c = new RectF();
+
+    public q11(Context context) {
+        this.a = i5.c.g(context, R.drawable.menu_topic_add);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        String str = this.d;
-        long j3 = this.c;
-        org.telegram.messenger.gj gjVar = this.b;
-        switch (i7) {
-            case 0:
-                org.telegram.messenger.ns f10 = org.telegram.messenger.ns.f(gjVar.K1);
-                Long valueOf = Long.valueOf(j3);
-                Boolean bool = Boolean.TRUE;
-                f10.k(org.telegram.messenger.ns.A1, gjVar, valueOf, str, bool, bool);
-                break;
-            default:
-                x11.f(gjVar, j3, str);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawRoundRect(this.c, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), this.b);
+        this.a.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        super.onBoundsChange(rect);
+        this.c.set(rect);
+        int centerX = rect.centerX() - org.telegram.messenger.g0.L(12.0f);
+        int centerY = rect.centerY() - org.telegram.messenger.g0.L(12.0f);
+        this.a.setBounds(centerX, centerY, org.telegram.messenger.g0.L(24.0f) + centerX, org.telegram.messenger.g0.L(24.0f) + centerY);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.b.setAlpha(i7);
+        this.a.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

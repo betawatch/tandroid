@@ -1,14 +1,14 @@
 package m4;
 
-import a8.ja;
+import a8.la;
 import e2.s0;
 import f3.i0;
 import h2.l0;
 import java.util.Arrays;
 import java.util.Collections;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -281,7 +281,7 @@ public final class e implements i {
                             fVar.L(5);
                             int j12 = fVar.j(3);
                             int i34 = this.p;
-                            byte[] bArr8 = {(byte) (((j11 << 3) & ns.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
+                            byte[] bArr8 = {(byte) (((j11 << 3) & ks.X3) | ((i34 >> 1) & 7)), (byte) (((j12 << 3) & 120) | ((i34 << 7) & 128))};
                             f3.a n10 = f3.b.n(new d4.f(bArr8, 2), false);
                             e2.t tVar = new e2.t();
                             tVar.a = this.g;
@@ -321,7 +321,7 @@ public final class e implements i {
                     int i36 = this.k + min3;
                     this.k = i36;
                     if (i36 == this.t) {
-                        ja.p(this.u != -9223372036854775807L);
+                        la.p(this.u != -9223372036854775807L);
                         this.v.c(this.u, 1, this.t, 0, null);
                         this.u += this.w;
                         this.j = 0;
@@ -388,7 +388,7 @@ public final class e implements i {
         tVar.a = (String) f0Var.e;
         tVar.q = s0.n(this.f);
         tVar.r = s0.n("application/id3");
-        r.b.s(tVar, d22);
+        p5.c.r(tVar, d22);
     }
 
     @Override // m4.i

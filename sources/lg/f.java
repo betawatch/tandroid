@@ -14,16 +14,16 @@ import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.i7;
-import org.telegram.messenger.p5;
+import org.telegram.messenger.q5;
 import org.telegram.messenger.x7;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.m6;
 import org.telegram.ui.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class f {
     public int a;
@@ -35,7 +35,7 @@ public final class f {
     public final Object g;
     public final Object h;
 
-    public f(int i7, int i10, p5 p5Var) {
+    public f(int i7, int i10, q5 q5Var) {
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.c = false;
@@ -43,7 +43,7 @@ public final class f {
         this.h = new x7(this, 1);
         this.b = i7;
         this.a = i10;
-        this.f = p5Var;
+        this.f = q5Var;
     }
 
     public void a(i7 i7Var) {
@@ -75,18 +75,18 @@ public final class f {
     }
 
     public void b(boolean z10) {
-        p5 p5Var = (p5) this.f;
+        q5 q5Var = (q5) this.f;
         x7 x7Var = (x7) this.h;
         if (z10) {
-            p5Var.a(x7Var);
+            q5Var.a(x7Var);
             x7Var.run();
         } else {
             if (this.c) {
                 return;
             }
             this.c = true;
-            p5Var.a(x7Var);
-            p5Var.d(x7Var, 20L);
+            q5Var.a(x7Var);
+            q5Var.d(x7Var, 20L);
         }
     }
 
@@ -96,11 +96,11 @@ public final class f {
         RectF rectF = l0Var.a;
         rectF.set(0.0f, 0.0f, f10, f11);
         canvas.saveLayerAlpha(rectF, (int) (f12 * 255.0f), 31);
-        g6 g6Var = (g6) this.d;
-        float i7 = g6Var.i();
-        g6 g6Var2 = (g6) this.e;
-        float i10 = g6Var2.i();
-        TextPaint textPaint = g6Var2.a;
+        m6 m6Var = (m6) this.d;
+        float i7 = m6Var.i();
+        m6 m6Var2 = (m6) this.e;
+        float i10 = m6Var2.i();
+        TextPaint textPaint = m6Var2.a;
         float f13 = i10 * i7;
         canvas.save();
         float f14 = 0.82f * f11;
@@ -108,15 +108,15 @@ public final class f {
         canvas.translate(0.0f, (-g0.L(4.0f)) * f13);
         float T1 = g0.T1(1.0f, 0.86f, f13) * l0Var.H;
         canvas.scale(T1, T1, 0.0f, 0.0f);
-        g6Var.o(0.0f, 0.0f, f10, f11);
-        g6Var.draw(canvas);
+        m6Var.o(0.0f, 0.0f, f10, f11);
+        m6Var.draw(canvas);
         canvas.restore();
-        float d = ((u5) this.f).d(this.c);
+        float d = ((c6) this.f).d(this.c);
         canvas.save();
         canvas.translate(0.0f, e2.t(1.0f, f13, g0.L(4.0f), (g0.L(14.0f) * f13) + ((1.0f - l0Var.H) * f14 * f13) + (-g0.L(1.0f))));
         float T12 = g0.T1(1.15f, 0.9f, f13) * l0Var.H;
         canvas.scale(T12, T12, 0.0f, 0.0f);
-        g6Var2.u(i0.a.f(d, this.a, j6.x0(null, j6.q7, false)));
+        m6Var2.u(i0.a.f(d, this.a, n6.x0(null, n6.q7, false)));
         if (d > 0.0f) {
             if (this.b != textPaint.getColor()) {
                 int color = textPaint.getColor();
@@ -127,11 +127,11 @@ public final class f {
             drawable.setBounds(0, ((int) (f11 - g0.L(16.0f))) / 2, g0.L(16.0f), ((int) (g0.L(16.0f) + f11)) / 2);
             drawable.draw(canvas);
         }
-        g6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
-        g6Var2.draw(canvas);
+        m6Var2.o(g0.L(20.0f) * d, 0.0f, f10, f11);
+        m6Var2.draw(canvas);
         canvas.restore();
         rectF.set(f10 - g0.L(12.0f), 0.0f, f10, f11);
-        l0Var.s0.m(canvas, rectF, 2, 1.0f);
+        l0Var.s0.n(canvas, rectF, 2, 1.0f);
         canvas.restore();
     }
 
@@ -139,7 +139,7 @@ public final class f {
         Canvas canvas;
         Paint paint = (Paint) this.g;
         RectF rectF = (RectF) this.f;
-        int w02 = j6.w0(j6.d6, (e6) this.h);
+        int w02 = n6.w0(n6.d6, (i6) this.h);
         int i11 = (i7 + i10) << 10;
         if (i11 != this.a || this.c) {
             this.c = false;
@@ -161,28 +161,28 @@ public final class f {
 
     public f(l0 l0Var) {
         this.h = l0Var;
-        g6 g6Var = new g6(true, true, true);
-        this.d = g6Var;
-        g6 g6Var2 = new g6(true, true, true);
-        this.e = g6Var2;
-        this.f = new u5(l0Var, 0L, 300L, er.h);
+        m6 m6Var = new m6(true, true, true);
+        this.d = m6Var;
+        m6 m6Var2 = new m6(true, true, true);
+        this.e = m6Var2;
+        this.f = new c6(l0Var, 0L, 300L, lr.h);
         this.c = false;
-        g6Var.L = true;
-        g6Var.w(g0.L(18.33f));
-        g6Var.B = 0.6f;
-        g6Var.x(g0.o());
-        g6Var.q(false);
-        g6Var.setCallback(l0Var);
-        g6Var.N = 9999999;
-        g6Var2.L = true;
-        g6Var2.w(g0.L(14.0f));
-        g6Var2.q(false);
-        g6Var2.setCallback(l0Var);
-        g6Var2.N = 9999999;
+        m6Var.L = true;
+        m6Var.w(g0.L(18.33f));
+        m6Var.B = 0.6f;
+        m6Var.x(g0.o());
+        m6Var.q(false);
+        m6Var.setCallback(l0Var);
+        m6Var.N = 9999999;
+        m6Var2.L = true;
+        m6Var2.w(g0.L(14.0f));
+        m6Var2.q(false);
+        m6Var2.setCallback(l0Var);
+        m6Var2.N = 9999999;
         this.g = l0Var.getContext().getResources().getDrawable(R.drawable.warning_sign).mutate();
     }
 
-    public f(e6 e6Var) {
+    public f(i6 i6Var) {
         this.f = new RectF();
         Paint paint = new Paint(1);
         this.g = paint;
@@ -190,6 +190,6 @@ public final class f {
         this.c = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.h = e6Var;
+        this.h = i6Var;
     }
 }

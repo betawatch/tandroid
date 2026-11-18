@@ -1,6 +1,6 @@
 package m1;
 
-import c8.ob;
+import c8.rb;
 import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class d0 implements a {
     public final File a;
@@ -54,7 +54,7 @@ public class d0 implements a {
                 jd.a aVar = jd.a.a;
                 r22 = c0Var.e;
                 if (r22 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     if (d0Var.c.get()) {
                         throw new IllegalStateException("This scope has already been closed.");
                     }
@@ -91,7 +91,7 @@ public class d0 implements a {
                             if (b11 != aVar) {
                                 obj = b11;
                                 fileInputStream = fileInputStream4;
-                                ob.a(fileInputStream, null);
+                                rb.a(fileInputStream, null);
                                 return obj;
                             }
                             return aVar;
@@ -109,8 +109,8 @@ public class d0 implements a {
                     }
                     fileInputStream = (Closeable) c0Var.a;
                     try {
-                        af.b.c(obj);
-                        ob.a(fileInputStream, null);
+                        b7.h.b(obj);
+                        rb.a(fileInputStream, null);
                         return obj;
                     } catch (Throwable th6) {
                         th2 = th6;
@@ -123,7 +123,7 @@ public class d0 implements a {
                 fileInputStream2 = c0Var.b;
                 r22 = (d0) c0Var.a;
                 try {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 } catch (Throwable th7) {
                     th3 = th7;
                     try {
@@ -131,7 +131,7 @@ public class d0 implements a {
                     } finally {
                     }
                 }
-                ob.a(fileInputStream2, null);
+                rb.a(fileInputStream2, null);
                 return obj;
             }
         }
@@ -141,7 +141,7 @@ public class d0 implements a {
         r22 = c0Var.e;
         if (r22 != 0) {
         }
-        ob.a(fileInputStream2, null);
+        rb.a(fileInputStream2, null);
         return obj2;
     }
 

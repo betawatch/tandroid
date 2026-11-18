@@ -1,48 +1,54 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class p3 implements Runnable {
-    public final /* synthetic */ r3 a;
+public final /* synthetic */ class p3 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public p3(r3 r3Var) {
-        this.a = r3Var;
+    public /* synthetic */ p3(Object obj, Object obj2, boolean z10, int i7) {
+        this.a = i7;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        r3 r3Var = this.a;
-        a0.h hVar = r3Var.P;
-        long uptimeMillis = SystemClock.uptimeMillis();
-        int i10 = 0;
-        boolean z10 = false;
-        while (i10 < hVar.m()) {
-            long j3 = hVar.j(i10);
-            if (uptimeMillis - ((TLRPC.GroupCallParticipant) hVar.f(j3)).lastSpeakTime >= 500) {
-                hVar.l(j3);
-                if (j3 > 0) {
-                    TLRPC.User a22 = np.s1(r3Var.C.a).a2(Long.valueOf(j3));
-                    r.b.t(a8.p0.t(j3, "remove from speaking ", " "), a22 != null ? a22.first_name : null, "GroupCall");
-                    i7 = i10;
-                } else {
-                    i7 = i10;
-                    TLRPC.Chat M0 = np.s1(r3Var.C.a).M0(Long.valueOf(-j3));
-                    r.b.t(a8.p0.t(j3, "remove from speaking ", " "), M0 != null ? M0.title : null, "GroupCall");
-                }
-                i10 = i7 - 1;
-                z10 = true;
-            }
-            i10++;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                g0.g3(new aa.c0((t3) this.c, this.b, tLObject, (TL_phone.getGroupParticipants) this.d, 9));
+                break;
+            case 1:
+                g0.g3(new aa.c0((ri) this.c, tL_error, tLObject, (String) this.d, this.b));
+                break;
+            case 2:
+                g0.g3(new aa.c0((ri) this.c, tLObject, (SharedPreferences) this.d, this.b, 16));
+                break;
+            case 3:
+                mp mpVar = (mp) this.c;
+                TLRPC.TL_contacts_getBlocked tL_contacts_getBlocked = (TLRPC.TL_contacts_getBlocked) this.d;
+                mpVar.getClass();
+                g0.g3(new aa.c0(mpVar, tLObject, this.b, tL_contacts_getBlocked, 18));
+                break;
+            default:
+                g0.g3(new aa.c0((po) this.c, (int[]) this.d, tLObject, this.b, 20));
+                break;
         }
-        if (hVar.m() > 0) {
-            g0.i3(r3Var.Q, 550L);
-        }
-        if (z10) {
-            ns.f(r3Var.C.a).k(ns.y2, Long.valueOf(r3Var.c), Long.valueOf(r3Var.b.id), Boolean.FALSE);
-        }
+    }
+
+    public /* synthetic */ p3(Object obj, boolean z10, TLObject tLObject, int i7) {
+        this.a = i7;
+        this.c = obj;
+        this.b = z10;
+        this.d = tLObject;
     }
 }

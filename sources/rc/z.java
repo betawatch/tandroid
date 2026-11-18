@@ -1,9 +1,9 @@
 package rc;
 
 import java.util.ArrayList;
-import org.telegram.ui.Wallet.x0;
+import org.telegram.ui.Wallet.h1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class z extends Thread {
     public final u a;
@@ -26,12 +26,12 @@ public abstract class z extends Thread {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                x0 x0Var = (x0) obj;
+                h1 h1Var = (h1) obj;
                 try {
                     try {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     } catch (Throwable unused) {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -44,12 +44,12 @@ public abstract class z extends Thread {
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                x0 x0Var2 = (x0) obj2;
+                h1 h1Var2 = (h1) obj2;
                 try {
                     try {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     } catch (Throwable unused3) {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import com.google.android.play.core.integrity.StandardIntegrityException;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 import gd.k;
@@ -12,7 +12,7 @@ import rd.p;
 import zd.t;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzbd extends j implements p {
     long zza;
@@ -66,7 +66,7 @@ final class zzbd extends j implements p {
         a aVar = a.a;
         int i7 = this.zzc;
         if (i7 == 0) {
-            b.c(obj);
+            h.b(obj);
             j3 = 1000;
             z10 = true;
             if (!z10) {
@@ -74,7 +74,7 @@ final class zzbd extends j implements p {
         } else if (i7 != 1) {
             z11 = this.zzb;
             j3 = this.zza;
-            b.c(obj);
+            h.b(obj);
             z10 = z11;
             j3 += j3;
             if (!z10) {
@@ -87,7 +87,7 @@ final class zzbd extends j implements p {
         } else {
             j3 = this.zza;
             try {
-                b.c(obj);
+                h.b(obj);
             } catch (Exception e10) {
                 this.zze.a = e10;
                 z11 = (e10 instanceof StandardIntegrityException) && ((errorCode = ((StandardIntegrityException) e10).getErrorCode()) == -100 || errorCode == -18 || errorCode == -12 || errorCode == -8 || errorCode == -3);

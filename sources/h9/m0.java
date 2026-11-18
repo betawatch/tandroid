@@ -3,19 +3,19 @@ package h9;
 import j$.util.Objects;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class m0 extends g2 {
-    public final g2 a;
+public final class m0 extends h2 {
+    public final h2 a;
     public Object b;
-    public g2 c;
+    public h2 c;
 
     public m0(j0 j0Var) {
-        x1 x1Var = j0Var.e;
-        t0 t0Var = x1Var.a;
+        y1 y1Var = j0Var.e;
+        t0 t0Var = y1Var.a;
         if (t0Var == null) {
-            t0Var = x1Var.c();
-            x1Var.a = t0Var;
+            t0Var = y1Var.c();
+            y1Var.a = t0Var;
         }
         this.a = t0Var.iterator();
         this.b = null;

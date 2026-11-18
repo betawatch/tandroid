@@ -2,7 +2,7 @@ package l2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,14 +19,14 @@ public final /* synthetic */ class b1 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                m2.e eVar = this.b.b.h;
+                m2.d dVar = this.b.b.h;
                 Pair pair = this.c;
-                eVar.z(((Integer) pair.first).intValue(), (x2.f0) pair.second);
+                dVar.z(((Integer) pair.first).intValue(), (x2.g0) pair.second);
                 break;
             default:
-                m2.e eVar2 = this.b.b.h;
+                m2.d dVar2 = this.b.b.h;
                 Pair pair2 = this.c;
-                eVar2.w(((Integer) pair2.first).intValue(), (x2.f0) pair2.second);
+                dVar2.w(((Integer) pair2.first).intValue(), (x2.g0) pair2.second);
                 break;
         }
     }

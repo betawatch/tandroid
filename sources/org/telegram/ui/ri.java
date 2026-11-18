@@ -2,29 +2,42 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ri implements org.telegram.messenger.nr {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ si b;
+public final /* synthetic */ class ri implements org.telegram.messenger.nr {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
 
-    public ri(si siVar, boolean z10) {
-        this.b = siVar;
-        this.a = z10;
+    public /* synthetic */ ri(int i7, Object obj, boolean z10) {
+        this.a = i7;
+        this.c = obj;
+        this.b = z10;
     }
 
     @Override // org.telegram.messenger.nr
-    public final void j(boolean z10) {
-        an anVar = this.b.b;
-        if (z10) {
-            TLRPC.User user = anVar.f;
-            boolean z11 = this.a;
-            if (user != null || z11) {
-                org.telegram.messenger.vr messagesStorage = anVar.getMessagesStorage();
-                messagesStorage.a.c(new org.telegram.messenger.ar(messagesStorage, anVar.k6, new qi(1, this, z11), 0));
-                return;
-            }
+    public final void a(int i7) {
+        switch (this.a) {
+            case 0:
+                bn bnVar = ((ti) this.c).b;
+                if (i7 > 0 && bnVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.lc.b0(bnVar).m(this.b ? org.telegram.ui.Components.kc.H : org.telegram.ui.Components.kc.J, i7, 0, 0, bnVar.Ba).j();
+                    break;
+                }
+                break;
+            default:
+                si siVar = (si) this.c;
+                bn bnVar2 = siVar.b.b;
+                if (i7 < 50) {
+                    bnVar2.Ta(bnVar2.s4, true);
+                    break;
+                } else {
+                    TLRPC.Chat chat = bnVar2.e;
+                    TLRPC.User user = bnVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.b5.r(bnVar2, true, chat, user, false, false, false, z10, new w0(siVar, z10));
+                    break;
+                }
         }
-        anVar.Ta(anVar.s4, z10);
     }
 }

@@ -1,13 +1,12 @@
 package qi;
 
 import com.google.android.gms.internal.play_billing.s0;
-import f5.v;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class q {
     public static final HashMap b;
@@ -38,7 +37,7 @@ public final class q {
         a(hashMap, 21, "punctuation");
         a(hashMap, 256, "bold");
         a(hashMap, 512, "italic");
-        a(hashMap, ns.g4, "important");
+        a(hashMap, ks.g4, "important");
         b = hashMap;
     }
 
@@ -49,7 +48,7 @@ public final class q {
             for (String str : strArr[i7].split("\\s+")) {
                 Integer num = (Integer) b.get(str);
                 if (num != null) {
-                    i10 = ((i10 & ns.e4) == 0 ? i10 | (num.intValue() & ns.e4) : i10) | (num.intValue() & (-256));
+                    i10 = ((i10 & ks.e4) == 0 ? i10 | (num.intValue() & ks.e4) : i10) | (num.intValue() & (-256));
                 }
             }
             this.a[i7] = i10;
@@ -72,8 +71,8 @@ public final class q {
         int[] iArr3 = new int[length];
         int[] iArr4 = new int[length];
         boolean z10 = false;
-        v vVar = new v(13, z10, z10);
-        vVar.c = new int[48];
+        b3.j jVar = new b3.j(12, z10, z10);
+        jVar.c = new int[48];
         int i7 = -1;
         int i10 = 0;
         int i11 = 0;
@@ -86,12 +85,12 @@ public final class q {
                 if (i15 > i13) {
                     break;
                 }
-                vVar.b(i11, i15, iArr4[i7]);
+                jVar.b(i11, i15, iArr4[i7]);
                 i11 = iArr3[i7];
                 i7--;
             }
             if (i7 >= 0) {
-                vVar.b(i11, i13, iArr4[i7]);
+                jVar.b(i11, i13, iArr4[i7]);
             }
             int i16 = iArr[i12 + 4];
             int i17 = i16 < 0 ? 0 : iArr2[i16];
@@ -99,12 +98,12 @@ public final class q {
             int[] iArr5 = this.a;
             int i19 = iArr5[i18];
             int i20 = iArr5[iArr[i12 + 3]];
-            int i21 = i20 & ns.e4;
+            int i21 = i20 & ks.e4;
             if (i21 == 0) {
-                i21 = i19 & ns.e4;
+                i21 = i19 & ks.e4;
             }
             if (i21 == 0) {
-                i21 = i17 & ns.e4;
+                i21 = i17 & ks.e4;
             }
             int i22 = ((i17 | i19 | i20) & (-256)) | i21;
             iArr2[i10] = i22;
@@ -115,10 +114,10 @@ public final class q {
             i11 = i13;
         }
         while (i7 >= 0) {
-            vVar.b(i11, iArr3[i7], iArr4[i7]);
+            jVar.b(i11, iArr3[i7], iArr4[i7]);
             i11 = iArr3[i7];
             i7--;
         }
-        return Arrays.copyOf((int[]) vVar.c, vVar.b);
+        return Arrays.copyOf((int[]) jVar.c, jVar.b);
     }
 }

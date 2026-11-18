@@ -1,10 +1,10 @@
 package m4;
 
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements f3.o {
     public final b a = new b("audio/ac3");
@@ -19,7 +19,7 @@ public final class a implements f3.o {
         int i7 = 0;
         while (true) {
             lVar = (f3.l) pVar;
-            lVar.h(xVar.a, 0, 10, false);
+            lVar.g(xVar.a, 0, 10, false);
             xVar.N(0);
             if (xVar.D() != 4801587) {
                 break;
@@ -27,14 +27,14 @@ public final class a implements f3.o {
             xVar.O(3);
             int z10 = xVar.z();
             i7 += z10 + 10;
-            lVar.n(z10, false);
+            lVar.x(z10, false);
         }
         lVar.f = 0;
-        lVar.n(i7, false);
+        lVar.x(i7, false);
         int i10 = 0;
         int i11 = i7;
         while (true) {
-            lVar.h(xVar.a, 0, 6, false);
+            lVar.g(xVar.a, 0, 6, false);
             xVar.N(0);
             if (xVar.H() != 2935) {
                 lVar.f = 0;
@@ -42,7 +42,7 @@ public final class a implements f3.o {
                 if (i11 - i7 >= 8192) {
                     break;
                 }
-                lVar.n(i11, false);
+                lVar.x(i11, false);
                 i10 = 0;
             } else {
                 i10++;
@@ -61,7 +61,7 @@ public final class a implements f3.o {
                 if (e10 == -1) {
                     break;
                 }
-                lVar.n(e10 - 6, false);
+                lVar.x(e10 - 6, false);
             }
         }
         return false;
@@ -71,7 +71,7 @@ public final class a implements f3.o {
     public final void c(f3.q qVar) {
         this.a.g(qVar, new f0(0, 1));
         qVar.d1();
-        qVar.f(new f3.t(-9223372036854775807L));
+        qVar.j(new f3.t(-9223372036854775807L));
     }
 
     @Override // f3.o
@@ -83,7 +83,7 @@ public final class a implements f3.o {
     @Override // f3.o
     public final List e() {
         h9.g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     @Override // f3.o

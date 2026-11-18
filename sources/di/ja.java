@@ -1,25 +1,40 @@
 package di;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
 import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ja extends ClickableSpan {
-    public final /* synthetic */ d9 a;
+public final /* synthetic */ class ja implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ eb b;
 
-    public ja(d9 d9Var) {
-        this.a = d9Var;
+    public /* synthetic */ ja(eb ebVar, int i7) {
+        this.a = i7;
+        this.b = ebVar;
     }
 
-    @Override // android.text.style.ClickableSpan
+    @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        this.a.run();
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setUnderlineText(false);
+        org.telegram.ui.ActionBar.h2 Q;
+        org.telegram.ui.ActionBar.h2 Q2;
+        switch (this.a) {
+            case 0:
+                if (this.b.e > 0 && (Q = LaunchActivity.Q()) != null) {
+                    org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
+                    f2Var.a = true;
+                    Q.showAsSheet(new pb(), f2Var);
+                    break;
+                }
+                break;
+            default:
+                if (this.b.e > 0 && (Q2 = LaunchActivity.Q()) != null) {
+                    org.telegram.ui.ActionBar.f2 f2Var2 = new org.telegram.ui.ActionBar.f2();
+                    f2Var2.a = true;
+                    Q2.showAsSheet(new pb(), f2Var2);
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -1,151 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.io.File;
-import java.net.URLEncoder;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.TextureView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t51 {
-    public int a;
-    public boolean b;
-    public long c;
-    public Uri d;
-    public long e;
-    public Uri f;
-    public TLRPC.Document g;
-    public TLRPC.Document h;
-    public int i;
-    public int j;
-    public long k;
-    public double l;
-    public String m;
+public final /* synthetic */ class t51 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static Uri a(int i7, int i10, TLRPC.Document document) {
-        StringBuilder m10 = i5.c.m(i7, "?account=", "&id=");
-        m10.append(document.id);
-        m10.append("&hash=");
-        m10.append(document.access_hash);
-        m10.append("&dc=");
-        m10.append(document.dc_id);
-        m10.append("&size=");
-        m10.append(document.size);
-        m10.append("&mime=");
-        m10.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-        m10.append("&rid=");
-        m10.append(i10);
-        m10.append("&name=");
-        m10.append(URLEncoder.encode(org.telegram.messenger.w7.B(document), "UTF-8"));
-        m10.append("&reference=");
-        byte[] bArr = document.file_reference;
-        if (bArr == null) {
-            bArr = new byte[0];
-        }
-        m10.append(Utilities.f(bArr));
-        return Uri.parse("tg://" + org.telegram.messenger.w7.r(null, document) + m10.toString());
+    public /* synthetic */ t51(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public static t51 d(int i7, TLRPC.Document document, TLRPC.Document document2, int i10, boolean z10) {
-        TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo;
-        String str;
-        t51 t51Var = new t51();
-        int i11 = 0;
-        while (true) {
-            if (i11 >= document.attributes.size()) {
-                tL_documentAttributeVideo = null;
-                break;
-            }
-            TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i11);
-            if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                tL_documentAttributeVideo = (TLRPC.TL_documentAttributeVideo) documentAttribute;
-                break;
-            }
-            i11++;
-        }
-        String lowerCase = (tL_documentAttributeVideo == null || (str = tL_documentAttributeVideo.video_codec) == null) ? null : str.toLowerCase();
-        t51Var.a = i7;
-        t51Var.g = document;
-        t51Var.c = document.id;
-        t51Var.d = a(i7, i10, document);
-        if (document2 != null) {
-            t51Var.h = document2;
-            t51Var.e = document2.id;
-            t51Var.f = a(i7, i10, document2);
-            org.telegram.messenger.w7.G(i7);
-            File J = org.telegram.messenger.w7.J(document2, null, false, z10);
-            if (J == null || !J.exists()) {
-                org.telegram.messenger.w7.G(i7);
-                File J2 = org.telegram.messenger.w7.J(document2, null, true, z10);
-                if (J2 != null && J2.exists()) {
-                    t51Var.f = Uri.fromFile(J2);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                cz czVar = ((v51) this.b).b;
+                if (czVar != null) {
+                    czVar.c(false, true, false);
+                    break;
                 }
-            } else {
-                t51Var.f = Uri.fromFile(J);
-            }
-        }
-        t51Var.m = lowerCase;
-        long j3 = document.size;
-        t51Var.k = j3;
-        if (tL_documentAttributeVideo != null) {
-            double d = tL_documentAttributeVideo.duration;
-            t51Var.i = tL_documentAttributeVideo.w;
-            t51Var.j = tL_documentAttributeVideo.h;
-            t51Var.l = j3 / d;
-        }
-        org.telegram.messenger.w7.G(i7);
-        File J3 = org.telegram.messenger.w7.J(document, null, false, z10);
-        if (J3 != null && J3.exists()) {
-            t51Var.d = Uri.fromFile(J3);
-            return t51Var;
-        }
-        org.telegram.messenger.w7.G(i7);
-        File J4 = org.telegram.messenger.w7.J(document, null, true, z10);
-        if (J4 != null && J4.exists()) {
-            t51Var.d = Uri.fromFile(J4);
-        }
-        return t51Var;
-    }
-
-    public final boolean b() {
-        Uri uri = this.d;
-        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
-    }
-
-    public final boolean c() {
-        Uri uri = this.f;
-        return uri != null && "file".equalsIgnoreCase(uri.getScheme());
-    }
-
-    public final void e(boolean z10) {
-        if (!b() && this.g != null) {
-            org.telegram.messenger.w7.G(this.a);
-            File J = org.telegram.messenger.w7.J(this.g, null, false, z10);
-            if (J == null || !J.exists()) {
-                org.telegram.messenger.w7.G(this.a);
-                File J2 = org.telegram.messenger.w7.J(this.g, null, true, z10);
-                if (J2 != null && J2.exists()) {
-                    this.d = Uri.fromFile(J2);
+                break;
+            case 1:
+                f61 f61Var = (f61) this.b;
+                l2.f0 f0Var = f61Var.d;
+                if (f0Var != null) {
+                    TextureView textureView = f61Var.n;
+                    f0Var.F1();
+                    if (textureView != null && textureView == f0Var.X) {
+                        f0Var.F1();
+                        f0Var.s1();
+                        f0Var.x1(null);
+                        f0Var.q1(0, 0);
+                    }
+                    f61Var.d.z1(f61Var.n);
+                    ArrayList arrayList = f61Var.O;
+                    if (arrayList != null) {
+                        f61Var.k0(arrayList, f61Var.P);
+                    } else if (f61Var.V) {
+                        f61Var.l0(f61Var.R, f61Var.T, f61Var.S, f61Var.U);
+                    } else {
+                        f61Var.j0(f61Var.R, f61Var.T);
+                    }
+                    f61Var.h0();
+                    break;
                 }
-            } else {
-                this.d = Uri.fromFile(J);
-            }
+                break;
+            case 2:
+                f61 f61Var2 = (f61) ((oi.a6) this.b).f;
+                f61Var2.b0.removeCallbacksAndMessages(null);
+                f61Var2.L.x(false, null);
+                break;
+            case 3:
+                ((h61) this.b).g = false;
+                break;
+            case 4:
+                ((w71) ((h40) ((org.telegram.ui.ActionBar.i1) this.b).b).b).w.b();
+                break;
+            default:
+                ((s71) this.b).d(false, true);
+                break;
         }
-        if (c() || this.h == null) {
-            return;
-        }
-        org.telegram.messenger.w7.G(this.a);
-        File J3 = org.telegram.messenger.w7.J(this.h, null, false, z10);
-        if (J3 != null && J3.exists()) {
-            this.f = Uri.fromFile(J3);
-            return;
-        }
-        org.telegram.messenger.w7.G(this.a);
-        File J4 = org.telegram.messenger.w7.J(this.h, null, true, z10);
-        if (J4 == null || !J4.exists()) {
-            return;
-        }
-        this.f = Uri.fromFile(J4);
     }
 }

@@ -13,27 +13,27 @@ import android.view.MotionEvent;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.ou;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Components.ft;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.mt;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class e0 extends ft implements z5 {
-    public final e6 e2;
-    public final ou f2;
+public abstract class e0 extends mt implements c6 {
+    public final i6 e2;
+    public final hn f2;
     public Runnable g2;
     public int h2;
 
-    public e0(int i7, Context context, e6 e6Var) {
-        super(context, e6Var);
-        this.e2 = e6Var;
-        this.f2 = new ou(getContext(), new d0());
+    public e0(int i7, Context context, i6 i6Var) {
+        super(context, i6Var);
+        this.e2 = i6Var;
+        this.f2 = new hn(getContext(), new d0());
         setBackground(null);
         setIncludeFontPadding(true);
         int i10 = Build.VERSION.SDK_INT;
@@ -46,18 +46,18 @@ public abstract class e0 extends ft implements z5 {
         setTextSize(1, 22.0f);
         setGravity(80);
         setPadding(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(12.0f));
-        q6.U(this, j6.Le, e6Var);
-        q6.G(this, j6.Yc, e6Var);
-        q6.C(this, j6.lg, e6Var);
-        int i12 = j6.Me;
-        q6.l(this, 34, i12, e6Var);
-        q6.D(this, i12, e6Var);
-        q6.l(this, 30, j6.Ne, e6Var);
-        q6.l(this, 36, j6.mg, e6Var);
+        u6.U(this, n6.Le, i6Var);
+        u6.G(this, n6.Yc, i6Var);
+        u6.C(this, n6.lg, i6Var);
+        int i12 = n6.Me;
+        u6.l(this, 34, i12, i6Var);
+        u6.D(this, i12, i6Var);
+        u6.l(this, 30, n6.Ne, i6Var);
+        u6.l(this, 36, n6.mg, i6Var);
         if (i10 >= 28) {
             setFallbackLineSpacing(false);
         }
-        setOnFocusChangeListener(new c0((l) this, i11));
+        setOnFocusChangeListener(new c0((m) this, i11));
         setTextIsSelectable(true);
         setLongClickable(false);
         setFocusableInTouchMode(false);
@@ -69,7 +69,7 @@ public abstract class e0 extends ft implements z5 {
         if (((b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)).length == 0) {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("x");
             b bVar = new b(this.e2);
-            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ns.e4);
+            ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, ks.e4);
             ofInt.addUpdateListener(new a(bVar, this, 0));
             ofInt.setDuration(200L);
             ofInt.start();
@@ -81,7 +81,7 @@ public abstract class e0 extends ft implements z5 {
     public final void K(boolean z10) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(getText());
         for (b bVar : (b[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b.class)) {
-            c1.c cVar = new c1.c(6, this, bVar);
+            c1.c cVar = new c1.c(5, this, bVar);
             if (z10) {
                 setCursorVisible(false);
                 ValueAnimator ofInt = ValueAnimator.ofInt(bVar.f, 0);
@@ -95,7 +95,7 @@ public abstract class e0 extends ft implements z5 {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt, android.view.View
+    @Override // org.telegram.ui.Components.pt, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (!((GestureDetector) this.f2.b).onTouchEvent(motionEvent) || isLongClickable()) {
             return super.dispatchTouchEvent(motionEvent);
@@ -126,10 +126,10 @@ public abstract class e0 extends ft implements z5 {
     @Override // org.telegram.ui.Components.EditTextBoldCursor
     public final void o(ActionMode actionMode, Menu menu) {
         menu.clear();
-        menu.add(R.id.menu_delete, R.id.menu_delete, 0, hd.M0(2131751598, null));
+        menu.add(R.id.menu_delete, R.id.menu_delete, 0, gd.M0(2131751587, null));
     }
 
-    @Override // org.telegram.ui.Components.kt, android.widget.TextView
+    @Override // org.telegram.ui.Components.pt, android.widget.TextView
     public final void onSelectionChanged(int i7, int i10) {
         super.onSelectionChanged(i7, i10);
         if (!hasSelection() || ((b[]) getText().getSpans(i7, i10, b.class)).length == 0) {
@@ -149,20 +149,20 @@ public abstract class e0 extends ft implements z5 {
         this.g2 = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        e6 e6Var = this.e2;
+        i6 i6Var = this.e2;
         try {
-            setHintColor(j6.w0(j6.Me, e6Var));
-            setCursorColor(j6.w0(j6.Ne, e6Var));
-            setHandlesColor(j6.w0(j6.mg, e6Var));
+            setHintColor(n6.w0(n6.Me, i6Var));
+            setCursorColor(n6.w0(n6.Ne, i6Var));
+            setHandlesColor(n6.w0(n6.mg, i6Var));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

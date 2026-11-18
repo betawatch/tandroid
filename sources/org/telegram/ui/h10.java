@@ -1,11 +1,60 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class h10 {
-    public final /* synthetic */ c40 a;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-    public h10(c40 c40Var) {
-        this.a = c40Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class h10 extends v4.u0 {
+    public final /* synthetic */ f40 a;
+
+    public h10(f40 f40Var) {
+        this.a = f40Var;
+    }
+
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        org.telegram.ui.Components.kj0 kj0Var;
+        f40 f40Var = this.a;
+        n30 n30Var = f40Var.L1;
+        if (i7 != 0) {
+            org.telegram.ui.Components.j30 j30Var = f40Var.h2;
+            if (j30Var != null) {
+                j30Var.a();
+            }
+            org.telegram.ui.Components.j30 j30Var2 = f40Var.i2;
+            if (j30Var2 != null) {
+                j30Var2.a();
+                return;
+            }
+            return;
+        }
+        float L = f40Var.t2 - org.telegram.messenger.g0.L(74.0f);
+        n30Var.getChildAt(0);
+        if (L + f40Var.t0 >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || !n30Var.canScrollVertically(1) || (kj0Var = (org.telegram.ui.Components.kj0) n30Var.K(0)) == null) {
+            return;
+        }
+        View view = kj0Var.a;
+        if (view.getTop() > 0) {
+            n30Var.w0(0, view.getTop(), null);
+        }
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        org.telegram.messenger.t3 t3Var;
+        f40 f40Var = this.a;
+        if (f40Var.L1.getChildCount() <= 0 || (t3Var = f40Var.V2) == null) {
+            return;
+        }
+        if (!t3Var.u && !t3Var.t && f40Var.T1.N0() > f40Var.K1.G - 5) {
+            f40Var.V2.k(false);
+        }
+        f40.Q0(f40Var);
+        u30 u30Var = f40Var.P2;
+        if (u30Var != null) {
+            u30Var.invalidate();
+        }
+        f40Var.b.invalidate();
     }
 }

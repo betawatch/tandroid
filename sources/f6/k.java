@@ -2,12 +2,12 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Arrays;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public final MediaInfo a;
@@ -49,7 +49,7 @@ public final class k extends r6.a {
             return false;
         }
         k kVar = (k) obj;
-        return x6.c.a(this.n, kVar.n) && q6.m.k(this.a, kVar.a) && q6.m.k(this.b, kVar.b) && q6.m.k(this.c, kVar.c) && this.d == kVar.d && this.e == kVar.e && Arrays.equals(this.f, kVar.f) && q6.m.k(this.r, kVar.r) && q6.m.k(this.s, kVar.s) && q6.m.k(this.w, kVar.w) && q6.m.k(this.x, kVar.x) && this.y == kVar.y;
+        return x6.c.a(this.n, kVar.n) && q6.m.l(this.a, kVar.a) && q6.m.l(this.b, kVar.b) && q6.m.l(this.c, kVar.c) && this.d == kVar.d && this.e == kVar.e && Arrays.equals(this.f, kVar.f) && q6.m.l(this.r, kVar.r) && q6.m.l(this.s, kVar.s) && q6.m.l(this.w, kVar.w) && q6.m.l(this.x, kVar.x) && this.y == kVar.y;
     }
 
     public final int hashCode() {
@@ -60,22 +60,22 @@ public final class k extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.n;
         this.h = jSONObject == null ? null : jSONObject.toString();
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.k(parcel, 3, this.b, i7);
-        yb.a(parcel, 4, this.c);
-        yb.q(parcel, 5, 8);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.k(parcel, 3, this.b, i7);
+        bc.a(parcel, 4, this.c);
+        bc.q(parcel, 5, 8);
         parcel.writeLong(this.d);
-        yb.q(parcel, 6, 8);
+        bc.q(parcel, 6, 8);
         parcel.writeDouble(this.e);
-        yb.j(parcel, 7, this.f);
-        yb.l(parcel, 8, this.h);
-        yb.l(parcel, 9, this.r);
-        yb.l(parcel, 10, this.s);
-        yb.l(parcel, 11, this.w);
-        yb.l(parcel, 12, this.x);
-        yb.q(parcel, 13, 8);
+        bc.j(parcel, 7, this.f);
+        bc.l(parcel, 8, this.h);
+        bc.l(parcel, 9, this.r);
+        bc.l(parcel, 10, this.s);
+        bc.l(parcel, 11, this.w);
+        bc.l(parcel, 12, this.x);
+        bc.q(parcel, 13, 8);
         parcel.writeLong(this.y);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

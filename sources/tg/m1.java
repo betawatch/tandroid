@@ -8,15 +8,15 @@ import android.graphics.RectF;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import c8.i9;
-import org.telegram.messenger.ou;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.u5;
+import c8.l9;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class m1 extends View {
-    public final u5 E;
+    public final c6 E;
     public sg.u0 F;
     public float G;
     public float H;
@@ -27,7 +27,7 @@ public final class m1 extends View {
     public final Paint a;
     public final Paint b;
     public final Path c;
-    public final ou d;
+    public final hn d;
     public final RectF e;
     public boolean f;
     public boolean h;
@@ -35,8 +35,8 @@ public final class m1 extends View {
     public float r;
     public long s;
     public boolean w;
-    public final u5 x;
-    public final u5 y;
+    public final c6 x;
+    public final c6 y;
 
     public m1(Context context) {
         super(context);
@@ -47,12 +47,12 @@ public final class m1 extends View {
         this.c = new Path();
         this.e = new RectF();
         this.w = true;
-        this.x = new u5(this);
-        this.y = new u5(this);
-        this.E = new u5(this);
+        this.x = new c6(this);
+        this.y = new c6(this);
+        this.E = new c6(this);
         this.I = new sg.h1(1.0f, 0.016773745f, -1);
         this.K = true;
-        this.d = new ou(context, new k1(this));
+        this.d = new hn(context, new k1(this));
         paint2.setColor(-1);
         paint2.setShadowLayer(org.telegram.messenger.g0.L(4.0f), 0.0f, org.telegram.messenger.g0.L(2.0f), 1342177280);
         paint.setColor(1090519039);
@@ -100,13 +100,13 @@ public final class m1 extends View {
         if (z11) {
             float f10 = this.n;
             if (f10 != 1.0f) {
-                this.n = org.telegram.ui.Cells.y0.e(min, 200.0f, f10, 1.0f);
+                this.n = org.telegram.ui.Cells.c0.f(min, 200.0f, f10, 1.0f);
                 invalidate();
                 z10 = this.f;
                 if (z10) {
                     float f11 = this.r;
                     if (f11 != 1.0f) {
-                        this.r = org.telegram.ui.Cells.y0.e(min, 200.0f, f11, 1.0f);
+                        this.r = org.telegram.ui.Cells.c0.f(min, 200.0f, f11, 1.0f);
                         invalidate();
                         RectF rectF = this.e;
                         float height = rectF.height();
@@ -135,13 +135,13 @@ public final class m1 extends View {
                         }
                         canvas.save();
                         float L4 = org.telegram.messenger.g0.L(32.0f);
-                        er erVar = er.f;
-                        canvas.translate(erVar.getInterpolation(this.r) * L4, rectF.top);
+                        lr lrVar = lr.f;
+                        canvas.translate(lrVar.getInterpolation(this.r) * L4, rectF.top);
                         canvas.drawPath(path, this.a);
                         canvas.restore();
                         float f13 = (e10 - e11) / (e12 - e11);
                         float f14 = L2 * 1.5f;
-                        a(erVar.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), i9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f13, rectF.height(), rectF.top), rectF.top + f12, rectF.bottom - Math.min(f14, f12)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f14, f12), f12, f13), this.r), canvas, false);
+                        a(lrVar.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), l9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f13, rectF.height(), rectF.top), rectF.top + f12, rectF.bottom - Math.min(f14, f12)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f14, f12), f12, f13), this.r), canvas, false);
                         if (this.K && this.r != 0.0f && this.w && this.F != null) {
                             sg.u0 u0Var = this.F;
                             float f15 = u0Var.c.g.a;
@@ -157,7 +157,7 @@ public final class m1 extends View {
                 if (!z10) {
                     float f16 = this.r;
                     if (f16 != 0.0f) {
-                        this.r = org.telegram.ui.Cells.y0.z(min, 200.0f, f16, 0.0f);
+                        this.r = org.telegram.ui.Cells.c0.B(min, 200.0f, f16, 0.0f);
                         invalidate();
                     }
                 }
@@ -186,13 +186,13 @@ public final class m1 extends View {
                 }
                 canvas.save();
                 float L42 = org.telegram.messenger.g0.L(32.0f);
-                er erVar2 = er.f;
-                canvas.translate(erVar2.getInterpolation(this.r) * L42, rectF3.top);
+                lr lrVar2 = lr.f;
+                canvas.translate(lrVar2.getInterpolation(this.r) * L42, rectF3.top);
                 canvas.drawPath(path2, this.a);
                 canvas.restore();
                 float f132 = (e10 - e11) / (e12 - e11);
                 float f142 = L22 * 1.5f;
-                a(erVar2.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), i9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f132, rectF3.height(), rectF3.top), rectF3.top + f122, rectF3.bottom - Math.min(f142, f122)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f142, f122), f122, f132), this.r), canvas, false);
+                a(lrVar2.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), l9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f132, rectF3.height(), rectF3.top), rectF3.top + f122, rectF3.bottom - Math.min(f142, f122)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f142, f122), f122, f132), this.r), canvas, false);
                 if (this.K) {
                     sg.u0 u0Var2 = this.F;
                     float f152 = u0Var2.c.g.a;
@@ -205,7 +205,7 @@ public final class m1 extends View {
         if (!z11) {
             float f17 = this.n;
             if (f17 != 0.0f) {
-                this.n = org.telegram.ui.Cells.y0.z(min, 200.0f, f17, 0.0f);
+                this.n = org.telegram.ui.Cells.c0.B(min, 200.0f, f17, 0.0f);
                 invalidate();
             }
         }
@@ -239,13 +239,13 @@ public final class m1 extends View {
         }
         canvas.save();
         float L422 = org.telegram.messenger.g0.L(32.0f);
-        er erVar22 = er.f;
-        canvas.translate(erVar22.getInterpolation(this.r) * L422, rectF32.top);
+        lr lrVar22 = lr.f;
+        canvas.translate(lrVar22.getInterpolation(this.r) * L422, rectF32.top);
         canvas.drawPath(path22, this.a);
         canvas.restore();
         float f1322 = (e10 - e11) / (e12 - e11);
         float f1422 = L222 * 1.5f;
-        a(erVar22.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), i9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1322, rectF32.height(), rectF32.top), rectF32.top + f1222, rectF32.bottom - Math.min(f1422, f1222)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f1422, f1222), f1222, f1322), this.r), canvas, false);
+        a(lrVar22.getInterpolation(this.r) * org.telegram.messenger.g0.L(32.0f), l9.a(com.google.android.gms.internal.vision.e2.z(1.0f, f1322, rectF32.height(), rectF32.top), rectF32.top + f1222, rectF32.bottom - Math.min(f1422, f1222)), org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.T1(Math.min(f1422, f1222), f1222, f1322), this.r), canvas, false);
         if (this.K) {
         }
         if (this.n != 0.0f) {

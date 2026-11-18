@@ -3,9 +3,9 @@ package com.google.android.gms.internal.cast;
 import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q5 implements g6.h {
     public static final z4 b = new z4(1);
@@ -15,48 +15,49 @@ public final class q5 implements g6.h {
         this.a = x0Var;
     }
 
-    public void a(int i7, Object obj, d6 d6Var) {
-        v4 v4Var = (v4) this.a;
-        v4Var.i(i7, 3);
-        d6Var.e((q4) obj, v4Var.a);
-        v4Var.i(i7, 4);
-    }
-
     @Override // g6.h
-    public void b(g6.f fVar, boolean z10) {
+    public void a(g6.f fVar, boolean z10) {
         x0.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0Var.c();
-        q6.m.g(x0Var.g);
+        q6.m.h(x0Var.g);
         o1 b10 = x0Var.c.b(x0Var.g);
         j1 m10 = k1.m(b10.d());
         m10.c();
         k1.p((k1) m10.b, z10);
         b10.c();
         p1.p((p1) b10.b, (k1) m10.a());
-        x0Var.a.a((p1) b10.a(), 227);
+        x0Var.a.a((p1) b10.a(), ks.E3);
         x0.b(x0Var);
         x0Var.e();
     }
 
     @Override // g6.h
-    public void c(g6.f fVar, int i7) {
+    public void b(g6.f fVar, int i7) {
         x0.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i7));
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0Var.c();
-        q6.m.g(x0Var.g);
-        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ns.C3);
+        q6.m.h(x0Var.g);
+        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ks.C3);
         x0.b(x0Var);
         x0Var.e.removeCallbacks(x0Var.d);
     }
 
-    @Override // g6.h
-    public /* bridge */ /* synthetic */ void d(g6.f fVar, int i7) {
-        x0 x0Var = (x0) this.a;
-        x0Var.h = (g6.c) fVar;
-        x0.a(x0Var, i7);
+    public void c(int i7, Object obj, d6 d6Var) {
+        v4 v4Var = (v4) this.a;
+        v4Var.i(i7, 3);
+        d6Var.e((q4) obj, v4Var.a);
+        v4Var.i(i7, 4);
+    }
+
+    public void d(int i7, Object obj, d6 d6Var) {
+        q4 q4Var = (q4) obj;
+        v4 v4Var = (v4) this.a;
+        v4Var.j((i7 << 3) | 2);
+        v4Var.j(q4Var.a(d6Var));
+        d6Var.e(q4Var, v4Var.a);
     }
 
     @Override // g6.h
@@ -67,28 +68,27 @@ public final class q5 implements g6.h {
     }
 
     @Override // g6.h
-    public void f(g6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void f(g6.f fVar, int i7) {
+        x0 x0Var = (x0) this.a;
+        x0Var.h = (g6.c) fVar;
+        x0.a(x0Var, i7);
+    }
+
+    @Override // g6.h
+    public void h(g6.f fVar, String str) {
         x0.j.b("onSessionStarted with sessionId = %s", str);
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0Var.c();
         y0 y0Var = x0Var.g;
         y0Var.f = str;
-        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ns.z3);
+        x0Var.a.a((p1) x0Var.c.b(y0Var).a(), ks.z3);
         x0.b(x0Var);
         x0Var.e();
     }
 
-    public void g(int i7, Object obj, d6 d6Var) {
-        q4 q4Var = (q4) obj;
-        v4 v4Var = (v4) this.a;
-        v4Var.j((i7 << 3) | 2);
-        v4Var.j(q4Var.a(d6Var));
-        d6Var.e(q4Var, v4Var.a);
-    }
-
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void i(g6.f fVar, int i7) {
+    public /* bridge */ /* synthetic */ void k(g6.f fVar, int i7) {
         x0 x0Var = (x0) this.a;
         x0Var.h = (g6.c) fVar;
         x0.a(x0Var, i7);
@@ -112,7 +112,7 @@ public final class q5 implements g6.h {
         c cVar = x0Var.b;
         if (g10) {
             bVar.b("Use the existing ApplicationAnalyticsSession if it is available and valid.", new Object[0]);
-            q6.m.g(x0Var.g);
+            q6.m.h(x0Var.g);
         } else {
             if (sharedPreferences == null) {
                 j6.b bVar2 = y0.k;
@@ -144,17 +144,17 @@ public final class q5 implements g6.h {
                                         }
                                         y0Var2.i = z10;
                                         j6.b bVar3 = g6.a.l;
-                                        q6.m.d("Must be called from the main thread.");
+                                        q6.m.e("Must be called from the main thread.");
                                         g6.a aVar = g6.a.n;
-                                        q6.m.g(aVar);
-                                        q6.m.d("Must be called from the main thread.");
+                                        q6.m.h(aVar);
+                                        q6.m.e("Must be called from the main thread.");
                                         y0Var2.b = aVar.e.a;
                                         y0 y0Var3 = x0Var.g;
-                                        q6.m.g(y0Var3);
+                                        q6.m.h(y0Var3);
                                         y0Var3.f = str;
                                     } else {
                                         bVar.b("Use the restored ApplicationAnalyticsSession if it is valid.", new Object[0]);
-                                        q6.m.g(x0Var.g);
+                                        q6.m.h(x0Var.g);
                                         y0.l = x0Var.g.d + 1;
                                     }
                                 }
@@ -168,7 +168,7 @@ public final class q5 implements g6.h {
             if (x0Var.g(str)) {
             }
         }
-        q6.m.g(x0Var.g);
+        q6.m.h(x0Var.g);
         o1 b10 = x0Var.c.b(x0Var.g);
         j1 m10 = k1.m(b10.d());
         m10.c();
@@ -179,7 +179,7 @@ public final class q5 implements g6.h {
         k1.p((k1) m11.b, true);
         b10.c();
         p1.p((p1) b10.b, (k1) m11.a());
-        x0Var.a.a((p1) b10.a(), ns.D3);
+        x0Var.a.a((p1) b10.a(), ks.D3);
     }
 
     @Override // g6.h
@@ -201,7 +201,7 @@ public final class q5 implements g6.h {
             k1.r((k1) m10.b, 17);
             b10.e((k1) m10.a());
         }
-        x0Var.a.a((p1) b10.a(), ns.y3);
+        x0Var.a.a((p1) b10.a(), ks.y3);
     }
 
     @Override // g6.h

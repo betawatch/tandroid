@@ -6,25 +6,25 @@ import android.graphics.RectF;
 import android.os.SystemClock;
 import android.view.View;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ck0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.n40;
-import org.telegram.ui.s91;
+import org.telegram.ui.q40;
+import org.telegram.ui.w91;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k implements eh.a {
     public final ViewGroup c;
-    public final n40 d;
+    public final q40 d;
     public final ViewGroup e;
     public boolean h;
     public final RectF a = new RectF();
     public final PointF b = new PointF();
     public final RectF f = new RectF();
 
-    public k(ViewGroup viewGroup, ViewGroup viewGroup2, n40 n40Var) {
+    public k(ViewGroup viewGroup, ViewGroup viewGroup2, q40 q40Var) {
         this.c = viewGroup;
-        this.d = n40Var;
+        this.d = q40Var;
         this.e = viewGroup2;
     }
 
@@ -67,12 +67,12 @@ public final class k implements eh.a {
                     View childAt = viewGroup.getChildAt(i7);
                     RectF rectF2 = this.a;
                     if (jh.k.c(childAt, viewGroup2, rectF2) && rectF2.intersect(rectF)) {
-                        n40 n40Var = this.d;
-                        int i10 = n40Var.a;
-                        Object obj = n40Var.b;
+                        q40 q40Var = this.d;
+                        int i10 = q40Var.a;
+                        Object obj = q40Var.b;
                         switch (i10) {
                             case 0:
-                                ((uj0) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((ck0) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                             case 1:
                                 ProfileActivity profileActivity = (ProfileActivity) obj;
@@ -83,7 +83,7 @@ public final class k implements eh.a {
                                     break;
                                 }
                             default:
-                                ((s91) obj).drawChild(canvas, childAt, uptimeMillis);
+                                ((w91) obj).drawChild(canvas, childAt, uptimeMillis);
                                 break;
                         }
                     }

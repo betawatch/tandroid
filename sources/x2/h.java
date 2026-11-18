@@ -1,11 +1,11 @@
 package x2;
 
-import a8.ja;
+import a8.la;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class h extends s1 {
+public final class h extends t1 {
     public final long l;
     public final long m;
     public final boolean n;
@@ -31,7 +31,7 @@ public final class h extends s1 {
         this.s = new e2.k1();
     }
 
-    @Override // x2.s1
+    @Override // x2.t1
     public final void A(e2.l1 l1Var) {
         if (this.u != null) {
             return;
@@ -86,15 +86,15 @@ public final class h extends s1 {
         }
     }
 
-    @Override // x2.s1, x2.a
+    @Override // x2.t1, x2.a
     public final boolean a(e2.l0 l0Var) {
         a aVar = this.k;
         return aVar.i().e.equals(l0Var.e) && aVar.a(l0Var);
     }
 
     @Override // x2.a
-    public final d0 c(f0 f0Var, h6.m mVar, long j3) {
-        d dVar = new d(this.k.c(f0Var, mVar, j3), this.n, this.v, this.w, 0);
+    public final e0 c(g0 g0Var, h6.m mVar, long j3) {
+        d dVar = new d(this.k.c(g0Var, mVar, j3), this.n, this.v, this.w, 0);
         this.r.add(dVar);
         return dVar;
     }
@@ -109,10 +109,10 @@ public final class h extends s1 {
     }
 
     @Override // x2.a
-    public final void o(d0 d0Var) {
+    public final void o(e0 e0Var) {
         ArrayList arrayList = this.r;
-        ja.p(arrayList.remove(d0Var));
-        this.k.o(((d) d0Var).a);
+        la.p(arrayList.remove(e0Var));
+        this.k.o(((d) e0Var).a);
         if (!arrayList.isEmpty() || this.o) {
             return;
         }

@@ -1,90 +1,122 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wk0 b;
+public final class rk0 extends Drawable {
+    public long a;
+    public boolean b;
+    public Paint c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public int h;
+    public int i;
+    public org.telegram.ui.Cells.q1 j;
+    public float k;
+    public int l;
+    public int m;
+    public org.telegram.ui.ActionBar.i6 n;
 
-    public /* synthetic */ rk0(wk0 wk0Var, int i7) {
-        this.a = i7;
-        this.b = wk0Var;
+    public final void a() {
+        if (this.b) {
+            return;
+        }
+        this.a = System.currentTimeMillis();
+        this.b = true;
+        this.j.invalidate();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
-    
-        if (r2.r0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
-    
-        if (r2.r0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
-    
-        if (r2.r0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
-    
-        r4 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
-    
-        r2.scrollBy(r0 * r4, 0);
-        org.telegram.messenger.g0.h3(r2.t0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        switch (this.a) {
-            case 0:
-                wk0 wk0Var = this.b;
-                org.telegram.ui.z51 z51Var = wk0Var.e;
-                wk0Var.c0 = false;
-                wk0Var.W = wk0Var.getScrollX() + wk0Var.a0;
-                tabSize = wk0Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                wk0Var.V = ceil;
-                wk0Var.U = ceil;
-                if (wk0Var.e(ceil) && ceil >= 0 && ceil < z51Var.getChildCount()) {
-                    try {
-                        wk0Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    wk0Var.e0 = 0.0f;
-                    wk0Var.w = 0.0f;
-                    View childAt = z51Var.getChildAt(ceil);
-                    wk0Var.s = childAt;
-                    wk0Var.d0 = childAt.getX() - wk0Var.getScrollX();
-                    wk0Var.s.invalidate();
-                    z51Var.invalidate();
-                    wk0Var.j();
-                    wk0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis();
-                wk0 wk0Var2 = this.b;
-                long j3 = currentTimeMillis - wk0Var2.s0;
-                int i7 = -1;
-                if (j3 >= 3000) {
-                    if (j3 >= 5000) {
-                        max = Math.max(1, org.telegram.messenger.g0.L(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, org.telegram.messenger.g0.L(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, org.telegram.messenger.g0.L(1.0f));
-                    break;
-                }
+    public final void b() {
+        if (this.b) {
+            this.b = false;
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Paint paint = this.c;
+        paint.setColor(i0.a.f(this.k, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Zc, this.n), this.l));
+        int i7 = this.m;
+        if (i7 != 255) {
+            paint.setAlpha((int) ((paint.getAlpha() / 255.0f) * i7));
+        }
+        int i10 = getBounds().left;
+        int i11 = getBounds().top;
+        int i12 = 0;
+        while (i12 < 3) {
+            Canvas canvas2 = canvas;
+            canvas2.drawRect(org.telegram.messenger.g0.L(2.0f) + i10, org.telegram.messenger.g0.L((this.d * 7.0f) + 2.0f) + i11, org.telegram.messenger.g0.L(4.0f) + i10, org.telegram.messenger.g0.L(10.0f) + i11, paint);
+            canvas2.drawRect(org.telegram.messenger.g0.L(5.0f) + i10, org.telegram.messenger.g0.L((this.e * 7.0f) + 2.0f) + i11, org.telegram.messenger.g0.L(7.0f) + i10, org.telegram.messenger.g0.L(10.0f) + i11, paint);
+            canvas2.drawRect(org.telegram.messenger.g0.L(8.0f) + i10, org.telegram.messenger.g0.L((this.f * 7.0f) + 2.0f) + i11, org.telegram.messenger.g0.L(10.0f) + i10, org.telegram.messenger.g0.L(10.0f) + i11, paint);
+            i12++;
+            canvas = canvas2;
+        }
+        if (this.b) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j3 = currentTimeMillis - this.a;
+            this.a = currentTimeMillis;
+            if (j3 > 50) {
+                j3 = 50;
+            }
+            float f10 = j3;
+            float f11 = ((f10 / 300.0f) * this.g) + this.d;
+            this.d = f11;
+            if (f11 > 1.0f) {
+                this.g = -1;
+                this.d = 1.0f;
+            } else if (f11 < 0.0f) {
+                this.g = 1;
+                this.d = 0.0f;
+            }
+            float f12 = ((f10 / 310.0f) * this.h) + this.e;
+            this.e = f12;
+            if (f12 > 1.0f) {
+                this.h = -1;
+                this.e = 1.0f;
+            } else if (f12 < 0.0f) {
+                this.h = 1;
+                this.e = 0.0f;
+            }
+            float f13 = ((f10 / 320.0f) * this.i) + this.f;
+            this.f = f13;
+            if (f13 > 1.0f) {
+                this.i = -1;
+                this.f = 1.0f;
+            } else if (f13 < 0.0f) {
+                this.i = 1;
+                this.f = 0.0f;
+            }
+            this.j.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return org.telegram.messenger.g0.L(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return org.telegram.messenger.g0.L(12.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.m = i7;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

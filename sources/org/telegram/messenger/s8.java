@@ -17,7 +17,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s8 implements j2.h, j7 {
     public static final ConcurrentHashMap I = new ConcurrentHashMap();
@@ -97,28 +97,6 @@ public final class s8 implements j2.h, j7 {
         this.G++;
     }
 
-    public final void b(int i7) {
-        j2.m mVar = this.H;
-        String str = h2.l0.a;
-        for (int i10 = 0; i10 < this.G; i10++) {
-            j2.c0 c0Var = (j2.c0) this.F.get(i10);
-            boolean z10 = this.E;
-            b3.g gVar = (b3.g) c0Var;
-            synchronized (gVar) {
-                if (z10) {
-                    if (mVar != null) {
-                        try {
-                            if ((mVar.h & 8) == 8) {
-                            }
-                        } finally {
-                        }
-                    }
-                    gVar.i += i7;
-                }
-            }
-        }
-    }
-
     @Override // j2.h
     public final void close() {
         a8.d("FileStreamLoadOperation " + this.s.id + " close me=" + this);
@@ -155,12 +133,26 @@ public final class s8 implements j2.h, j7 {
         }
     }
 
-    public final int f() {
-        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(J, Long.valueOf(this.s.id), null);
-        if (num != null) {
-            return num.intValue();
+    public final void e(int i7) {
+        j2.m mVar = this.H;
+        String str = h2.l0.a;
+        for (int i10 = 0; i10 < this.G; i10++) {
+            j2.c0 c0Var = (j2.c0) this.F.get(i10);
+            boolean z10 = this.E;
+            b3.g gVar = (b3.g) c0Var;
+            synchronized (gVar) {
+                if (z10) {
+                    if (mVar != null) {
+                        try {
+                            if ((mVar.h & 8) == 8) {
+                            }
+                        } finally {
+                        }
+                    }
+                    gVar.i += i7;
+                }
+            }
         }
-        return 3;
     }
 
     @Override // j2.h
@@ -171,6 +163,14 @@ public final class s8 implements j2.h, j7 {
     @Override // j2.h
     public final Uri getUri() {
         return this.b;
+    }
+
+    public final int h() {
+        Integer num = (Integer) ConcurrentMap$-EL.getOrDefault(J, Long.valueOf(this.s.id), null);
+        if (num != null) {
+            return num.intValue();
+        }
+        return 3;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x0251  */
@@ -214,11 +214,11 @@ public final class s8 implements j2.h, j7 {
         TLRPC.TL_document tL_document3 = this.s;
         Object obj = this.w;
         long j10 = this.h;
-        int f10 = f();
+        int h = h();
         int i11 = tL_document3 == null ? 1 : 0;
         CountDownLatch countDownLatch = new CountDownLatch(1);
         i7[] i7VarArr = new i7[1];
-        w7.K.c(new k7(G, i7VarArr, tL_document3, null, obj, f10, this, j10, false, i11, countDownLatch));
+        w7.K.c(new k7(G, i7VarArr, tL_document3, null, obj, h, this, j10, false, i11, countDownLatch));
         w7.a(countDownLatch, true);
         this.a = i7VarArr[0];
         this.d = 0L;
@@ -260,9 +260,9 @@ public final class s8 implements j2.h, j7 {
                     StringBuilder sb2 = new StringBuilder("FileStreamLoadOperation ");
                     sb2.append(this.s.id);
                     sb2.append(" ");
-                    sb2.append(gj.h2(this.s));
+                    sb2.append(fj.h2(this.s));
                     sb2.append("x");
-                    sb2.append(gj.h2(this.s));
+                    sb2.append(fj.h2(this.s));
                     sb2.append(" mime_type=");
                     sb2.append(this.s.mime_type);
                     sb2.append(" codec=");
@@ -296,9 +296,9 @@ public final class s8 implements j2.h, j7 {
         StringBuilder sb22 = new StringBuilder("FileStreamLoadOperation ");
         sb22.append(this.s.id);
         sb22.append(" ");
-        sb22.append(gj.h2(this.s));
+        sb22.append(fj.h2(this.s));
         sb22.append("x");
-        sb22.append(gj.h2(this.s));
+        sb22.append(fj.h2(this.s));
         sb22.append(" mime_type=");
         sb22.append(this.s.mime_type);
         sb22.append(" codec=");
@@ -356,7 +356,7 @@ public final class s8 implements j2.h, j7 {
                     i7Var.getClass();
                     CountDownLatch countDownLatch = new CountDownLatch(1);
                     ?? r62 = new long[2];
-                    Utilities.d.c(new k9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
+                    Utilities.d.c(new j9(i7Var, (Serializable) r62, this.h, i16, countDownLatch, 2));
                     countDownLatch.await();
                     i11 = (int) r62[i15];
                     if (i11 != 0) {
@@ -365,13 +365,13 @@ public final class s8 implements j2.h, j7 {
                         TLRPC.TL_document tL_document = this.s;
                         Object obj = this.w;
                         long j10 = this.h;
-                        int f10 = f();
+                        int h = h();
                         int i18 = tL_document == null ? 1 : i15;
                         CountDownLatch countDownLatch2 = new CountDownLatch(1);
                         i7[] i7VarArr = new i7[1];
                         i12 = i11;
                         i13 = i15;
-                        w7.K.c(new k7(G, i7VarArr, tL_document, null, obj, f10, this, j10, false, i18, countDownLatch2));
+                        w7.K.c(new k7(G, i7VarArr, tL_document, null, obj, h, this, j10, false, i18, countDownLatch2));
                         w7.a(countDownLatch2, true);
                         i7 i7Var2 = i7VarArr[i13 == true ? 1 : 0];
                         i7 i7Var3 = this.a;
@@ -392,7 +392,7 @@ public final class s8 implements j2.h, j7 {
                     i7 i7Var4 = this.a;
                     file = (i7Var4.Y == 3 || i7Var4.z || !i7Var4.O0) ? i7Var4.J0 : i7Var4.L0;
                     if (this.r != null || !Objects.equals(this.y, file)) {
-                        if (r2.a) {
+                        if (s2.a) {
                             a8.b("check stream file " + file);
                         }
                         randomAccessFile = this.r;
@@ -424,11 +424,11 @@ public final class s8 implements j2.h, j7 {
                                     TLRPC.TL_document tL_document2 = this.s;
                                     Object obj2 = this.w;
                                     long j12 = this.h;
-                                    int f11 = f();
+                                    int h7 = h();
                                     int i19 = tL_document2 == null ? 1 : 0;
                                     CountDownLatch countDownLatch4 = new CountDownLatch(1);
                                     i7[] i7VarArr2 = new i7[1];
-                                    w7.K.c(new k7(G2, i7VarArr2, tL_document2, null, obj2, f11, this, j12, false, i19, countDownLatch4));
+                                    w7.K.c(new k7(G2, i7VarArr2, tL_document2, null, obj2, h7, this, j12, false, i19, countDownLatch4));
                                     w7.a(countDownLatch4, true);
                                     i7 i7Var5 = i7VarArr2[0];
                                     i7 i7Var6 = this.a;
@@ -458,7 +458,7 @@ public final class s8 implements j2.h, j7 {
             i7Var7.getClass();
             CountDownLatch countDownLatch5 = new CountDownLatch(1);
             ?? r622 = new long[2];
-            Utilities.d.c(new k9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
+            Utilities.d.c(new j9(i7Var7, (Serializable) r622, this.h, i16, countDownLatch5, 2));
             countDownLatch5.await();
             i11 = (int) r622[i15];
             if (i11 != 0) {
@@ -468,7 +468,7 @@ public final class s8 implements j2.h, j7 {
             }
             if (this.r != null) {
             }
-            if (r2.a) {
+            if (s2.a) {
             }
             randomAccessFile = this.r;
             if (randomAccessFile != null) {
@@ -488,7 +488,7 @@ public final class s8 implements j2.h, j7 {
             this.h += j13;
             this.c -= j13;
             this.d += j13;
-            b(read);
+            e(read);
         }
         return read;
     }

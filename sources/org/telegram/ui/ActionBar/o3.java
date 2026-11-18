@@ -1,54 +1,16 @@
 package org.telegram.ui.ActionBar;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o3 implements ig.a {
-    public i6 a;
-    public TLRPC.TL_theme b;
-    public TLRPC.TL_chatThemeUniqueGift c;
-    public int d;
-    public int e = -1;
-    public SparseIntArray f;
-    public String g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public int o;
-
-    public final long a() {
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme != null) {
-            return tL_theme.id;
+public final class o3 extends u1 {
+    @Override // org.telegram.ui.ActionBar.u1
+    public final int f(int i7) {
+        if (i7 == n6.h5) {
+            return -14277082;
         }
-        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-        if (tL_chatThemeUniqueGift != null) {
-            return tL_chatThemeUniqueGift.gift.gift_id;
+        if (i7 == n6.j5 || i7 == n6.H5 || i7 == n6.A5) {
+            return -1;
         }
-        return 0L;
-    }
-
-    public final TLRPC.ThemeSettings b(int i7) {
-        ArrayList<TLRPC.ThemeSettings> arrayList;
-        TLRPC.TL_theme tL_theme = this.b;
-        if (tL_theme == null) {
-            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
-            if (tL_chatThemeUniqueGift != null) {
-                arrayList = tL_chatThemeUniqueGift.theme_settings;
-            }
-            return null;
-        }
-        arrayList = tL_theme.settings;
-        if (arrayList != null && i7 >= 0 && arrayList.size() > i7) {
-            return arrayList.get(i7);
-        }
-        return null;
+        return n6.w0(i7, this.S0);
     }
 }

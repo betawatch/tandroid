@@ -2,15 +2,15 @@ package ch;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.i9;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.q9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j0 extends i9 {
+public final class j0 extends q9 {
     public boolean H;
-    public g5 I;
+    public o5 I;
     public d J;
     public boolean K;
     public final /* synthetic */ l0 L;
@@ -22,13 +22,13 @@ public final class j0 extends i9 {
         getImageReceiver().h0(3);
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
+    @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.K = true;
-        g5 g5Var = this.I;
-        if (g5Var != null) {
-            g5Var.a(this);
+        o5 o5Var = this.I;
+        if (o5Var != null) {
+            o5Var.a(this);
         }
         d dVar = this.J;
         if (dVar != null) {
@@ -36,13 +36,13 @@ public final class j0 extends i9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
+    @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.K = false;
-        g5 g5Var = this.I;
-        if (g5Var != null) {
-            g5Var.n(this);
+        o5 o5Var = this.I;
+        if (o5Var != null) {
+            o5Var.n(this);
         }
         d dVar = this.J;
         if (dVar != null) {
@@ -50,12 +50,12 @@ public final class j0 extends i9 {
         }
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
+    @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onDraw(Canvas canvas) {
-        g5 g5Var = this.I;
-        if (g5Var != null) {
-            g5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            this.I.setAlpha(ns.e4);
+        o5 o5Var = this.I;
+        if (o5Var != null) {
+            o5Var.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            this.I.setAlpha(ks.e4);
             this.I.draw(canvas);
             this.H = true;
             return;

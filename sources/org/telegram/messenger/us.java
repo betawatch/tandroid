@@ -1,95 +1,69 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import java.util.ArrayList;
+import android.net.Uri;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class us implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ at b;
-    public final /* synthetic */ int c;
+public final class us {
+    public final int a;
+    public final long b;
+    public final boolean c;
+    public final String d;
+    public final TLRPC.User e;
+    public final TLRPC.Chat f;
+    public final e0.q g;
+    public final /* synthetic */ long h;
+    public final /* synthetic */ String i;
+    public final /* synthetic */ long[] j;
+    public final /* synthetic */ int k;
+    public final /* synthetic */ Uri l;
+    public final /* synthetic */ int m;
+    public final /* synthetic */ boolean n;
+    public final /* synthetic */ boolean o;
+    public final /* synthetic */ boolean p;
+    public final /* synthetic */ int q;
+    public final /* synthetic */ xs r;
 
-    public /* synthetic */ us(at atVar, int i7, int i10) {
-        this.a = i10;
-        this.b = atVar;
-        this.c = i7;
+    public us(xs xsVar, int i7, long j3, boolean z10, String str, TLRPC.User user, TLRPC.Chat chat, e0.q qVar, long j10, String str2, long[] jArr, int i10, Uri uri, int i11, boolean z11, boolean z12, boolean z13, int i12) {
+        this.r = xsVar;
+        this.h = j10;
+        this.i = str2;
+        this.j = jArr;
+        this.k = i10;
+        this.l = uri;
+        this.m = i11;
+        this.n = z11;
+        this.o = z12;
+        this.p = z13;
+        this.q = i12;
+        this.a = i7;
+        this.d = str;
+        this.e = user;
+        this.f = chat;
+        this.g = qVar;
+        this.b = j3;
+        this.c = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final void a() {
+        e0.q qVar = this.g;
+        boolean z10 = s2.a;
         int i7 = this.a;
-        int i10 = this.c;
-        at atVar = this.b;
-        switch (i7) {
-            case 0:
-                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
-                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
-                break;
-            case 1:
-                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
-                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
-                break;
-            case 2:
-                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
-                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
-                break;
-            case 3:
-                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
-                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
-                break;
-            case 4:
-                if (atVar.J == 0) {
-                    atVar.w.clear();
-                    ns.e().k(ns.d4, new Object[0]);
-                }
-                ns.e().k(ns.G4, Integer.valueOf(atVar.currentAccount));
-                atVar.getNotificationCenter().k(ns.d2, Integer.valueOf(i10));
-                break;
-            case 5:
-                a0.h hVar = atVar.c;
-                ArrayList arrayList = atVar.a;
-                int i11 = 0;
-                boolean z10 = false;
-                while (i11 < arrayList.size()) {
-                    gj gjVar = (gj) arrayList.get(i11);
-                    if (gjVar.J && Math.abs(gjVar.e1()) == i10) {
-                        arrayList.remove(i11);
-                        SparseArray sparseArray = (SparseArray) hVar.f(gj.B0(gjVar.k));
-                        if (sparseArray != null) {
-                            sparseArray.remove(gjVar.e1());
-                        }
-                        if (sparseArray != null && sparseArray.size() <= 0) {
-                            hVar.l(gj.B0(gjVar.k));
-                        }
-                        ArrayList arrayList2 = new ArrayList();
-                        arrayList2.add(Integer.valueOf(gjVar.e1()));
-                        atVar.getMessagesStorage().E(arrayList2, gj.B0(gjVar.k));
-                        i11--;
-                        z10 = true;
-                    }
-                    i11++;
-                }
-                if (z10) {
-                    atVar.Z(false);
-                    break;
-                }
-                break;
-            case 6:
-                atVar.getClass();
-                a0.h hVar2 = new a0.h();
-                hVar2.k(h9.o.r(Integer.valueOf(i10)), 0L);
-                atVar.M(hVar2, false);
-                break;
-            case 7:
-                if (r2.a) {
-                    a8.b("set last online from other device = " + i10);
-                }
-                atVar.M = i10;
-                break;
-            default:
-                atVar.n(i10);
-                break;
+        if (z10) {
+            StringBuilder m10 = i5.c.m(i7, "show dialog notification with id ", " ");
+            m10.append(this.b);
+            m10.append(" user=");
+            m10.append(this.e);
+            m10.append(" chat=");
+            m10.append(this.f);
+            a8.l(m10.toString());
+        }
+        try {
+            xs.m0.e(null, i7, qVar.b());
+        } catch (SecurityException e10) {
+            a8.g(e10, true);
+            this.r.P(qVar, this.b, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q);
         }
     }
 }

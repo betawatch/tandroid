@@ -1,27 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import android.content.Context;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class xp implements InputFilter {
-    public final int a;
+public final class xp extends LinearLayout {
+    public final /* synthetic */ aq a;
 
-    public xp(int i7) {
-        this.a = i7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xp(aq aqVar, Context context) {
+        super(context);
+        this.a = aqVar;
     }
 
-    @Override // android.text.InputFilter
-    public CharSequence filter(CharSequence charSequence, int i7, int i10, Spanned spanned, int i11, int i12) {
-        int codePointCount = this.a - (Character.codePointCount(spanned, 0, spanned.length()) - Character.codePointCount(spanned, i11, i12));
-        if (codePointCount <= 0) {
-            return "";
-        }
-        if (codePointCount >= Character.codePointCount(charSequence, i7, i10)) {
-            return null;
-        }
-        int i13 = codePointCount + i7;
-        return (Character.isHighSurrogate(charSequence.charAt(i13 + (-1))) && (i13 = i13 + (-1)) == i7) ? "" : charSequence.subSequence(i7, i13);
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        aq.J0(this.a);
     }
 }

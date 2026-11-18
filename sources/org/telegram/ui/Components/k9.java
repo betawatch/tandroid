@@ -1,143 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.graphics.Bitmap;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k9 extends Drawable {
-    public TextPaint a;
-    public final Paint b;
-    public final Paint c;
-    public final Paint d;
-    public final float e;
-    public float f;
-    public float g;
-    public final RectF h;
-    public ValueAnimator i;
+public final /* synthetic */ class k9 implements o9 {
+    public final /* synthetic */ p9 a;
+    public final /* synthetic */ c8.ia[] b;
+    public final /* synthetic */ Runnable[] c;
+    public final /* synthetic */ f50[] d;
 
-    public k9() {
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new Paint(1);
-        this.d = new Paint(1);
-        this.e = 1.0f;
-        this.f = 0.0f;
-        this.g = 1.0f;
-        this.h = new RectF();
-        paint.setStyle(Paint.Style.STROKE);
+    public /* synthetic */ k9(p9 p9Var, c8.ia[] iaVarArr, Runnable[] runnableArr, f50[] f50VarArr) {
+        this.a = p9Var;
+        this.b = iaVarArr;
+        this.c = runnableArr;
+        this.d = f50VarArr;
     }
 
-    public final void a(boolean z10, float f10) {
-        float max = Math.max(Math.min(f10, 1.0f), 0.0f);
-        ValueAnimator valueAnimator = this.i;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.i = null;
+    @Override // org.telegram.ui.Components.o9
+    public final void dispose() {
+        p9 p9Var = this.a;
+        c8.ia[] iaVarArr = this.b;
+        Runnable[] runnableArr = this.c;
+        f50[] f50VarArr = this.d;
+        iaVarArr[0] = null;
+        if (p9Var.e.contains(runnableArr)) {
+            org.telegram.messenger.q5 q5Var = Utilities.e;
+            q5Var.getClass();
+            for (Runnable runnable : runnableArr) {
+                q5Var.a(runnable);
+            }
+            p9Var.e.remove(runnableArr);
         }
-        if (!z10) {
-            this.g = max;
-            invalidateSelf();
-            return;
+        for (f50 f50Var : f50VarArr) {
+            Bitmap bitmap = (Bitmap) p9Var.b.remove(f50Var);
+            p9Var.c.remove(f50Var);
+            if (bitmap != null) {
+                bitmap.recycle();
+            }
         }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g, max);
-        this.i = ofFloat;
-        ofFloat.addUpdateListener(new c6(this, 5));
-        this.i.addListener(new org.telegram.ui.ActionBar.t0(this, max, 4));
-        this.i.setInterpolator(er.h);
-        this.i.setDuration(200L);
-        this.i.start();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        if (getBounds() == null) {
-            return;
-        }
-        int i7 = getBounds().left;
-        int i10 = getBounds().top + ((int) this.f);
-        int width = getBounds().width();
-        int height = getBounds().height();
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY() + ((int) this.f);
-        TextPaint textPaint = this.a;
-        Paint paint = this.d;
-        Paint paint2 = this.c;
-        Paint paint3 = this.b;
-        if (textPaint != null) {
-            int color = textPaint.getColor();
-            paint3.setColor(color);
-            paint2.setColor(color);
-            paint.setColor(color);
-        }
-        if (this.e != 1.0f) {
-            canvas.save();
-            float f10 = this.e;
-            canvas.scale(f10, f10, centerX, centerY);
-        }
-        paint3.setStrokeWidth(org.telegram.messenger.g0.N(1.1f));
-        float f11 = i7;
-        float f12 = width;
-        float N = (((f12 - org.telegram.messenger.g0.N(16.33f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.33f);
-        float f13 = i10;
-        float f14 = height;
-        float N2 = ((f14 - org.telegram.messenger.g0.N(10.33f)) / 2.0f) + f13;
-        float N3 = (((org.telegram.messenger.g0.N(16.33f) + f12) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.33f);
-        float N4 = ((org.telegram.messenger.g0.N(10.33f) + f14) / 2.0f) + f13;
-        RectF rectF = this.h;
-        rectF.set(N, N2, N3, N4);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(2.33f), org.telegram.messenger.g0.N(2.33f), paint3);
-        rectF.set((((f12 - org.telegram.messenger.g0.N(13.0f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.66f), ((f14 - org.telegram.messenger.g0.N(7.33f)) / 2.0f) + f13, Math.max(org.telegram.messenger.g0.N(1.1f), this.g * org.telegram.messenger.g0.N(13.0f)) + ((((f12 - org.telegram.messenger.g0.N(13.0f)) / 2.0f) + f11) - org.telegram.messenger.g0.N(1.66f)), ((org.telegram.messenger.g0.N(7.33f) + f14) / 2.0f) + f13);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.N(0.83f), org.telegram.messenger.g0.N(0.83f), paint);
-        float f15 = centerY;
-        rectF.set((((org.telegram.messenger.g0.N(17.5f) + f12) - org.telegram.messenger.g0.N(4.66f)) / 2.0f) + f11, f15 - org.telegram.messenger.g0.N(2.65f), ((org.telegram.messenger.g0.N(4.66f) + (org.telegram.messenger.g0.N(17.5f) + f12)) / 2.0f) + f11, org.telegram.messenger.g0.N(2.65f) + f15);
-        canvas.drawArc(rectF, -90.0f, 180.0f, false, paint2);
-        if (this.e != 1.0f) {
-            canvas.restore();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(this.e * 24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(this.e * 24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.b.setAlpha(i7);
-        this.c.setAlpha(i7);
-        this.d.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
-    }
-
-    public k9(float f10, int i7) {
-        this();
-        a(false, f10);
-        this.b.setColor(-1);
-        this.c.setColor(-1);
-        this.d.setColor(i7);
-        this.e = 1.3f;
-        invalidateSelf();
     }
 }

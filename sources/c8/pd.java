@@ -1,35 +1,60 @@
 package c8;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class pd {
-    public static HashMap a(uc.a aVar) {
-        HashMap hashMap = new HashMap();
-        HashMap hashMap2 = new HashMap();
-        hashMap2.put("number", qd.e(aVar.a));
-        hashMap2.put("cvc", qd.e(aVar.b));
-        hashMap2.put("exp_month", aVar.c);
-        hashMap2.put("exp_year", aVar.d);
-        hashMap2.put("name", qd.e(aVar.e));
-        hashMap2.put("currency", qd.e(aVar.n));
-        hashMap2.put("address_line1", qd.e(aVar.f));
-        hashMap2.put("address_line2", qd.e(aVar.g));
-        hashMap2.put("address_city", qd.e(aVar.h));
-        hashMap2.put("address_zip", qd.e(aVar.j));
-        hashMap2.put("address_state", qd.e(aVar.i));
-        hashMap2.put("address_country", qd.e(aVar.k));
-        Iterator it = new HashSet(hashMap2.keySet()).iterator();
-        while (it.hasNext()) {
-            String str = (String) it.next();
-            if (hashMap2.get(str) == null) {
-                hashMap2.remove(str);
+    public static String a(String str, Object... objArr) {
+        int length;
+        int length2;
+        int indexOf;
+        String l10;
+        int i7 = 0;
+        int i10 = 0;
+        while (true) {
+            length = objArr.length;
+            if (i10 >= length) {
+                break;
             }
+            Object obj = objArr[i10];
+            if (obj == null) {
+                l10 = "null";
+            } else {
+                try {
+                    l10 = obj.toString();
+                } catch (Exception e10) {
+                    String E = a8.p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
+                    l10 = p5.c.l("<", E, " threw ", e10.getClass().getName(), ">");
+                }
+            }
+            objArr[i10] = l10;
+            i10++;
         }
-        hashMap.put("card", hashMap2);
-        return hashMap;
+        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
+        int i11 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i7 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
+                break;
+            }
+            sb2.append((CharSequence) str, i11, indexOf);
+            sb2.append(objArr[i7]);
+            i7++;
+            i11 = indexOf + 2;
+        }
+        sb2.append((CharSequence) str, i11, str.length());
+        if (i7 < length2) {
+            sb2.append(" [");
+            sb2.append(objArr[i7]);
+            for (int i12 = i7 + 1; i12 < objArr.length; i12++) {
+                sb2.append(", ");
+                sb2.append(objArr[i12]);
+            }
+            sb2.append(']');
+        }
+        return sb2.toString();
     }
 }

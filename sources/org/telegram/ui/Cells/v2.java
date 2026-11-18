@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class v2 extends FrameLayout {
     public int a;
@@ -42,18 +42,18 @@ public final class v2 extends FrameLayout {
         TextView textView = this.b;
         TextView textView2 = this.c;
         if (textView2.getVisibility() == 0) {
-            boolean z10 = hd.a0;
-            d = c8.ja.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
+            boolean z10 = gd.a0;
+            d = c8.ma.d(-1, -1.0f, (z10 ? 5 : 3) | 48, z10 ? this.f : 61.0f, 0.0f, z10 ? 61.0f : this.f, 0.0f);
         } else {
-            boolean z11 = hd.a0;
-            d = c8.ja.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
+            boolean z11 = gd.a0;
+            d = c8.ma.d(-1, -1.0f, (z11 ? 5 : 3) | 48, z11 ? 61.0f : this.f, 0.0f, z11 ? this.f : 61.0f, 0.0f);
         }
         textView.setLayoutParams(d);
         RadioButton radioButton = this.d;
         if (textView2.getVisibility() == 0) {
-            d2 = c8.ja.d(22, 22.0f, (hd.a0 ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d2 = c8.ma.d(22, 22.0f, (gd.a0 ? 5 : 3) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         } else {
-            d2 = c8.ja.d(22, 22.0f, (hd.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
+            d2 = c8.ma.d(22, 22.0f, (gd.a0 ? 3 : 5) | 48, 20.0f, 15.0f, 20.0f, 0.0f);
         }
         radioButton.setLayoutParams(d2);
     }
@@ -61,7 +61,7 @@ public final class v2 extends FrameLayout {
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         if (this.e) {
-            canvas.drawLine(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(hd.a0 ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+            canvas.drawLine(org.telegram.messenger.g0.L(gd.a0 ? 0.0f : this.f), getHeight() - 1, getMeasuredWidth() - org.telegram.messenger.g0.L(gd.a0 ? this.f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.n6.k0);
         }
     }
 
@@ -75,7 +75,7 @@ public final class v2 extends FrameLayout {
         this.d.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(22.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(22.0f), TLObject.FLAG_30));
         if (textView.getVisibility() == 0) {
             textView.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
-            L = i20.w(12.0f, textView.getMeasuredWidth(), L);
+            L = n10.x(12.0f, textView.getMeasuredWidth(), L);
         }
         this.b.measure(View.MeasureSpec.makeMeasureSpec(L, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
     }

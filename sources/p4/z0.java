@@ -1,9 +1,206 @@
 package p4;
 
-import java.util.List;
+import a8.la;
+import android.os.Bundle;
+import android.os.Parcel;
+import c8.hb;
+import c8.kb;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface z0 {
-    void a(g1 g1Var, v vVar, List list);
+public final class z0 implements u {
+    public final l a;
+    public final int b;
+
+    public z0(l lVar, int i7) {
+        this.a = lVar;
+        this.b = i7;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r3v2 */
+    /* JADX WARN: Type inference failed for: r3v3, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r3v6 */
+    @Override // p4.u
+    public final void a(int i7, g1 g1Var, e2.y0 y0Var, boolean z10, boolean z11) {
+        Parcel obtain;
+        int i10 = this.b;
+        la.p(i10 != 0);
+        ?? r32 = (z10 || !y0Var.a(17)) ? 1 : 0;
+        boolean z12 = z11 || !y0Var.a(30);
+        l lVar = this.a;
+        if (i10 < 2) {
+            Bundle f10 = g1Var.e(y0Var, z10, true).f(i10);
+            k kVar = (k) lVar;
+            kVar.getClass();
+            obtain = Parcel.obtain();
+            try {
+                obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+                obtain.writeInt(i7);
+                hb.a(obtain, f10);
+                obtain.writeInt(r32);
+                kVar.a.transact(3007, obtain, null, 1);
+                return;
+            } finally {
+            }
+        }
+        Bundle f11 = g1Var.e(y0Var, z10, z11).f(i10);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(f1.a, r32);
+        bundle.putBoolean(f1.b, z12);
+        k kVar2 = (k) lVar;
+        kVar2.getClass();
+        obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, f11);
+            hb.a(obtain, bundle);
+            kVar2.a.transact(3013, obtain, null, 1);
+        } finally {
+        }
+    }
+
+    @Override // p4.u
+    public final void b(int i7, n1 n1Var, boolean z10, boolean z11, int i10) {
+        Bundle b10 = n1Var.a(z10, z11).b(i10);
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, b10);
+            kVar.a.transact(3008, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // p4.u
+    public final void c(int i7) {
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            kVar.a.transact(3011, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // p4.u
+    public final void d(int i7, int i10, int i11) {
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            obtain.writeInt(i10);
+            obtain.writeInt(i11);
+            kVar.a.transact(3018, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // p4.u
+    public final void e(int i7, e2.y0 y0Var) {
+        Bundle b10 = y0Var.b();
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, b10);
+            kVar.a.transact(3009, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != z0.class) {
+            return false;
+        }
+        return Objects.equals(this.a.asBinder(), ((z0) obj).a.asBinder());
+    }
+
+    @Override // p4.u
+    public final void f(int i7, o1 o1Var) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(o1.e, o1Var.a);
+        bundle.putBundle(o1.f, o1Var.b);
+        bundle.putLong(o1.g, o1Var.c);
+        m1 m1Var = o1Var.d;
+        if (m1Var != null) {
+            bundle.putBundle(o1.h, m1Var.a());
+        }
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, bundle);
+            kVar.a.transact(3002, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // p4.u
+    public final void g() {
+        kb.a(this.a);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.a.asBinder());
+    }
+
+    @Override // p4.u
+    public final void i(int i7, o oVar) {
+        Bundle bundle = new Bundle();
+        bundle.putInt(o.d, oVar.a);
+        bundle.putLong(o.e, oVar.b);
+        bundle.putBundle(o.g, oVar.c.a());
+        bundle.putInt(o.f, 4);
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, bundle);
+            kVar.a.transact(3003, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    @Override // p4.u
+    public final void j(int i7, k1 k1Var) {
+        Bundle bundle = Bundle.EMPTY;
+        Bundle a10 = k1Var.a();
+        k kVar = (k) this.a;
+        kVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("androidx.media3.session.IMediaController");
+            obtain.writeInt(i7);
+            hb.a(obtain, a10);
+            hb.a(obtain, bundle);
+            kVar.a.transact(3005, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
 }

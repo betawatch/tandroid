@@ -1,18 +1,18 @@
 package n2;
 
-import a8.ja;
+import a8.la;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k0 extends f2.n {
+public final class k0 extends f2.o {
     public int[] i;
     public int[] j;
 
-    @Override // f2.m
+    @Override // f2.n
     public final void c(ByteBuffer byteBuffer) {
         int[] iArr = this.j;
         iArr.getClass();
@@ -50,9 +50,9 @@ public final class k0 extends f2.n {
                             u10 += 2;
                         }
                         int i11 = ((((b10 << 24) & (-16777216)) | ((b11 << 16) & 16711680)) | ((byteBuffer.get(u10) << 8) & 65280)) >> 8;
-                        ja.h((i11 & (-16777216)) == 0 || (i11 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i11));
-                        ja.f(l10.remaining() >= 3);
-                        l10.put((byte) (l10.order() == byteOrder ? (i11 & 16711680) >> 16 : i11 & ns.e4)).put((byte) ((i11 & 65280) >> 8)).put((byte) (l10.order() == byteOrder ? i11 & ns.e4 : (i11 & 16711680) >> 16));
+                        la.h((i11 & (-16777216)) == 0 || (i11 & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i11));
+                        la.f(l10.remaining() >= 3);
+                        l10.put((byte) (l10.order() == byteOrder ? (i11 & 16711680) >> 16 : i11 & ks.e4)).put((byte) ((i11 & 65280) >> 8)).put((byte) (l10.order() == byteOrder ? i11 & ks.e4 : (i11 & 16711680) >> 16));
                     } else {
                         l10.putFloat(byteBuffer.getFloat(u10));
                     }
@@ -65,36 +65,36 @@ public final class k0 extends f2.n {
         l10.flip();
     }
 
-    @Override // f2.n
-    public final f2.j h(f2.j jVar) {
-        int i7 = jVar.c;
+    @Override // f2.o
+    public final f2.k h(f2.k kVar) {
+        int i7 = kVar.c;
         int[] iArr = this.i;
         if (iArr == null) {
-            return f2.j.e;
+            return f2.k.e;
         }
-        int i10 = jVar.b;
+        int i10 = kVar.b;
         if (!h2.l0.M(i7)) {
-            throw new f2.l(jVar);
+            throw new f2.m(kVar);
         }
         boolean z10 = i10 != iArr.length;
         int i11 = 0;
         while (i11 < iArr.length) {
             int i12 = iArr[i11];
             if (i12 >= i10) {
-                throw new f2.l("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", jVar);
+                throw new f2.m("Channel map (" + Arrays.toString(iArr) + ") trying to access non-existent input channel.", kVar);
             }
             z10 |= i12 != i11;
             i11++;
         }
-        return z10 ? new f2.j(jVar.a, iArr.length, i7) : f2.j.e;
+        return z10 ? new f2.k(kVar.a, iArr.length, i7) : f2.k.e;
     }
 
-    @Override // f2.n
+    @Override // f2.o
     public final void i() {
         this.j = this.i;
     }
 
-    @Override // f2.n
+    @Override // f2.o
     public final void k() {
         this.j = null;
         this.i = null;

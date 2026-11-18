@@ -1,67 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ef implements bi.w0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gf b;
-    public final /* synthetic */ FrameLayout c;
+public final class ef extends ki.v {
+    public boolean s;
+    public final /* synthetic */ ChatActivityEnterView w;
 
-    public /* synthetic */ ef(gf gfVar, FrameLayout frameLayout, int i7) {
-        this.a = i7;
-        this.b = gfVar;
-        this.c = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ef(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.w = chatActivityEnterView;
+        this.a = null;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.f = true;
+        this.b = new e2.r0();
+        di.b1 b1Var = new di.b1(5, context, this);
+        this.c = b1Var;
+        b1Var.setOverScrollMode(2);
+        b1Var.setClipToPadding(false);
+        b1Var.setClipToOutline(true);
+        b1Var.j(new bi.q1(this, 21));
+        addView(b1Var);
+        paint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.zj, false));
+        fh.g gVar = this.r;
+        if (gVar != null) {
+            gVar.updateColors();
+        }
+        invalidate();
+        setClipChildren(false);
+        this.s = false;
     }
 
-    @Override // bi.w0
-    public final void a(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                gf gfVar = this.b;
-                gfVar.getClass();
-                this.c.getLocationInWindow(new int[2]);
-                ChatActivityEnterView chatActivityEnterView = gfVar.a;
-                st0 st0Var = chatActivityEnterView.U1;
-                st0Var.getLocationInWindow(new int[2]);
-                canvas.save();
-                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
-                Drawable backgroundImage = st0Var.getBackgroundImage();
-                if (backgroundImage != null) {
-                    backgroundImage.draw(canvas);
-                }
-                org.telegram.ui.an anVar = chatActivityEnterView.x3;
-                org.telegram.ui.aj ajVar = anVar != null ? anVar.A0 : null;
-                if (ajVar != null && ajVar.getWidth() > 0) {
-                    canvas.translate(ajVar.getX(), ajVar.getY());
-                    ajVar.draw(canvas);
-                }
-                canvas.restore();
-                break;
-            default:
-                gf gfVar2 = this.b;
-                gfVar2.getClass();
-                this.c.getLocationInWindow(new int[2]);
-                ChatActivityEnterView chatActivityEnterView2 = gfVar2.a;
-                st0 st0Var2 = chatActivityEnterView2.U1;
-                st0Var2.getLocationInWindow(new int[2]);
-                canvas.save();
-                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
-                Drawable backgroundImage2 = st0Var2.getBackgroundImage();
-                if (backgroundImage2 != null) {
-                    backgroundImage2.draw(canvas);
-                }
-                org.telegram.ui.an anVar2 = chatActivityEnterView2.x3;
-                org.telegram.ui.aj ajVar2 = anVar2 != null ? anVar2.A0 : null;
-                if (ajVar2 != null && ajVar2.getWidth() > 0) {
-                    canvas.translate(ajVar2.getX(), ajVar2.getY());
-                    ajVar2.draw(canvas);
-                }
-                canvas.restore();
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        if (this.s) {
+            return;
         }
+        this.s = true;
+        this.w.f2();
     }
 }

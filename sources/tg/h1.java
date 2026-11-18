@@ -10,21 +10,21 @@ import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import bi.x2;
-import c8.ja;
-import hi.j3;
+import bi.f5;
+import c8.ma;
+import hi.k3;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.k5;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.g71;
+import org.telegram.messenger.f3;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.ph0;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h1 extends LinearLayout {
-    public final fh0[] a;
+    public final ph0[] a;
     public g1 b;
     public final Paint c;
     public final int d;
@@ -38,7 +38,7 @@ public final class h1 extends LinearLayout {
     public h1(Context context, boolean z10) {
         super(context);
         List list = sg.h.a;
-        this.a = new fh0[list.size() + 2];
+        this.a = new ph0[list.size() + 2];
         final int i7 = 1;
         Paint paint = new Paint(1);
         this.c = paint;
@@ -59,14 +59,14 @@ public final class h1 extends LinearLayout {
             if (i11 >= list2.size() + 2) {
                 return;
             }
-            fh0[] fh0VarArr = this.a;
+            ph0[] ph0VarArr = this.a;
             Object[] objArr = i11 == 0;
             Object[] objArr2 = i11 == list2.size() + 1;
-            fh0 fh0Var = new fh0(getContext());
-            fh0Var.setPadding(org.telegram.messenger.g0.L(objArr != false ? 0.0f : 8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(objArr2 != false ? 0.0f : 8.0f), org.telegram.messenger.g0.L(8.0f));
-            fh0Var.setLayoutParams(ja.l(1.0f, 0, 40));
-            fh0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-            fh0VarArr[i12] = fh0Var;
+            ph0 ph0Var = new ph0(getContext());
+            ph0Var.setPadding(org.telegram.messenger.g0.L(objArr != false ? 0.0f : 8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(objArr2 != false ? 0.0f : 8.0f), org.telegram.messenger.g0.L(8.0f));
+            ph0Var.setLayoutParams(ma.l(1.0f, 0, 40));
+            ph0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            ph0VarArr[i12] = ph0Var;
             if (i11 == 0) {
                 this.a[i12].setOnClickListener(new View.OnClickListener(this) { // from class: tg.f1
                     public final /* synthetic */ h1 b;
@@ -91,7 +91,7 @@ public final class h1 extends LinearLayout {
                 sg.h hVar = (sg.h) list2.get(i11 - 1);
                 if (z10 || !(hVar instanceof sg.b)) {
                     this.a[i12].f(hVar.e(), 28, 28, null);
-                    this.a[i12].setOnClickListener(new x2(this, i12, hVar, 25));
+                    this.a[i12].setOnClickListener(new f5(this, i12, hVar, 25));
                 } else {
                     i11++;
                 }
@@ -125,18 +125,18 @@ public final class h1 extends LinearLayout {
 
     public final void a(int i7) {
         if (i7 >= 0) {
-            fh0[] fh0VarArr = this.a;
-            if (i7 >= fh0VarArr.length) {
+            ph0[] ph0VarArr = this.a;
+            if (i7 >= ph0VarArr.length) {
                 return;
             }
             if (this.r == null || this.h != i7) {
-                fh0 fh0Var = fh0VarArr[i7];
-                if (fh0Var != null) {
-                    Drawable drawable = fh0Var.getDrawable();
-                    if (drawable instanceof ch0) {
-                        ch0 ch0Var = (ch0) drawable;
-                        ch0Var.M(0);
-                        ch0Var.start();
+                ph0 ph0Var = ph0VarArr[i7];
+                if (ph0Var != null) {
+                    Drawable drawable = ph0Var.getDrawable();
+                    if (drawable instanceof mh0) {
+                        mh0 mh0Var = (mh0) drawable;
+                        mh0Var.M(0);
+                        mh0Var.start();
                     }
                 }
                 ValueAnimator valueAnimator = this.r;
@@ -148,15 +148,15 @@ public final class h1 extends LinearLayout {
                 }
                 if (this.e) {
                     this.e = false;
-                    org.telegram.messenger.g0.Q3(fh0VarArr[this.d + 1], R.drawable.msg_add);
+                    org.telegram.messenger.g0.P3(ph0VarArr[this.d + 1], R.drawable.msg_add);
                 }
                 this.h = i7;
                 this.n = 0.0f;
                 ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(250L);
                 this.r = duration;
-                duration.setInterpolator(er.f);
-                this.r.addUpdateListener(new j3(this, 27));
-                this.r.addListener(new g71(this, 18));
+                duration.setInterpolator(lr.f);
+                this.r.addUpdateListener(new k3(this, 27));
+                this.r.addListener(new k71(this, 18));
                 this.r.start();
             }
         }
@@ -178,12 +178,12 @@ public final class h1 extends LinearLayout {
                     if (this.r != null) {
                         if (this.h != i7) {
                             a(i7);
-                            post(new org.telegram.ui.ActionBar.j1(1, childAt));
+                            post(new org.telegram.ui.ActionBar.k1(1, childAt));
                             return true;
                         }
                     } else if (this.f != i7) {
                         a(i7);
-                        post(new org.telegram.ui.ActionBar.j1(1, childAt));
+                        post(new org.telegram.ui.ActionBar.k1(1, childAt));
                         return true;
                     }
                 }
@@ -196,27 +196,27 @@ public final class h1 extends LinearLayout {
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         int i7 = this.f;
-        fh0[] fh0VarArr = this.a;
-        fh0 fh0Var = fh0VarArr[i7];
+        ph0[] ph0VarArr = this.a;
+        ph0 ph0Var = ph0VarArr[i7];
         int i10 = this.h;
-        fh0 fh0Var2 = i10 != -1 ? fh0VarArr[i10] : null;
+        ph0 ph0Var2 = i10 != -1 ? ph0VarArr[i10] : null;
         float f10 = 0.0f;
-        float f11 = fh0Var2 != null ? this.n : 0.0f;
+        float f11 = ph0Var2 != null ? this.n : 0.0f;
         float f12 = 1.0f;
         if (f11 > 0.25f && f11 < 0.75f) {
-            f12 = (f11 <= 0.25f || f11 >= 0.5f) ? k5.y(0.75f, f11, 0.25f, 1.0f) : (0.5f - f11) / 0.25f;
+            f12 = (f11 <= 0.25f || f11 >= 0.5f) ? f3.y(0.75f, f11, 0.25f, 1.0f) : (0.5f - f11) / 0.25f;
         }
-        float L = (org.telegram.messenger.g0.L(3.0f) * f12) + (Math.min((fh0Var.getWidth() - fh0Var.getPaddingLeft()) - fh0Var.getPaddingRight(), (fh0Var.getHeight() - fh0Var.getPaddingTop()) - fh0Var.getPaddingBottom()) / 2.0f) + org.telegram.messenger.g0.L(3.0f);
-        float width = (fh0Var.getWidth() / 2.0f) + fh0Var.getX();
+        float L = (org.telegram.messenger.g0.L(3.0f) * f12) + (Math.min((ph0Var.getWidth() - ph0Var.getPaddingLeft()) - ph0Var.getPaddingRight(), (ph0Var.getHeight() - ph0Var.getPaddingTop()) - ph0Var.getPaddingBottom()) / 2.0f) + org.telegram.messenger.g0.L(3.0f);
+        float width = (ph0Var.getWidth() / 2.0f) + ph0Var.getX();
         int i11 = this.f;
         int i12 = this.d;
         float L2 = (i11 == i12 + 1 ? org.telegram.messenger.g0.L(4.0f) : 0.0f) + width;
-        float width2 = fh0Var2 != null ? (fh0Var2.getWidth() / 2.0f) + fh0Var2.getX() : 0.0f;
+        float width2 = ph0Var2 != null ? (ph0Var2.getWidth() / 2.0f) + ph0Var2.getX() : 0.0f;
         int i13 = this.h;
         if (i13 != -1 && i13 == i12 + 1) {
             f10 = org.telegram.messenger.g0.L(4.0f);
         }
-        canvas.drawCircle(org.telegram.messenger.g0.T1(L2, width2 + f10, f11), (fh0Var.getHeight() / 2.0f) + fh0Var.getY(), L, this.c);
+        canvas.drawCircle(org.telegram.messenger.g0.T1(L2, width2 + f10, f11), (ph0Var.getHeight() / 2.0f) + ph0Var.getY(), L, this.c);
     }
 
     public void setDelegate(g1 g1Var) {
@@ -227,7 +227,7 @@ public final class h1 extends LinearLayout {
         this.f = i7;
         if (this.e) {
             this.e = false;
-            org.telegram.messenger.g0.Q3(this.a[this.d + 1], R.drawable.msg_add);
+            org.telegram.messenger.g0.P3(this.a[this.d + 1], R.drawable.msg_add);
         }
         invalidate();
     }

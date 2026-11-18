@@ -19,10 +19,10 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class DictationLid {
     public static volatile long c;
@@ -67,10 +67,10 @@ public abstract class DictationLid {
         byte[] m10 = m(bArr);
         int length = m10.length / 32;
         if (length < i7) {
-            g0.h3(new w0(c1Var, length, 0));
+            g0.g3(new w0(c1Var, length, 0));
         } else {
             float[] fArr = new float[d.length];
-            g0.h3(new x0(c1Var, nativePredict(j3, m10, 0, m10.length, false, fArr), fArr, SystemClock.elapsedRealtime() - elapsedRealtime, length));
+            g0.g3(new x0(c1Var, nativePredict(j3, m10, 0, m10.length, false, fArr), fArr, SystemClock.elapsedRealtime() - elapsedRealtime, length));
         }
     }
 
@@ -78,7 +78,7 @@ public abstract class DictationLid {
         Context applicationContext = context.getApplicationContext();
         File file = new File(applicationContext.getFilesDir(), "tinylid.bin");
         int i7 = 0;
-        boolean z10 = System.currentTimeMillis() - np.e1().getLong("tinylid_checked", 0L) > 86400000;
+        boolean z10 = System.currentTimeMillis() - mp.g1().getLong("tinylid_checked", 0L) > 86400000;
         if (file.exists()) {
             k(applicationContext);
         }
@@ -89,7 +89,7 @@ public abstract class DictationLid {
                 if (!file2.exists()) {
                     TLRPC.TL_transcriptionModel f10 = j1.f(j1.a(), "tinylid");
                     DictationAsr.h.putIfAbsent("tinylid.bin", new long[]{0, Math.max(f10 != null ? f10.document.size : 0L, 4400000L)});
-                    DictationAsr.o();
+                    DictationAsr.n();
                 }
                 b.execute(new v0(file2, i7));
             }
@@ -209,10 +209,10 @@ public abstract class DictationLid {
     }
 
     public static void l(String str) {
-        if (str == null || str.equals(np.e1().getString("tinylid_lang", null))) {
+        if (str == null || str.equals(mp.g1().getString("tinylid_lang", null))) {
             return;
         }
-        np.e1().edit().putString("tinylid_lang", str).apply();
+        mp.g1().edit().putString("tinylid_lang", str).apply();
     }
 
     public static byte[] m(byte[] bArr) {

@@ -1,18 +1,18 @@
 package fh;
 
-import a8.ca;
+import a8.ea;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.NinePatchDrawable;
-import c8.o0;
-import org.telegram.ui.ActionBar.j6;
+import c8.q0;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d extends ca {
+public final class d extends ea {
     public NinePatchDrawable d;
     public long e;
     public final /* synthetic */ g g;
@@ -25,7 +25,7 @@ public final class d extends ca {
         this.g = gVar;
     }
 
-    @Override // a8.ca
+    @Override // a8.ea
     public final void b(Canvas canvas, ui.a aVar) {
         ui.a v = g.v(aVar);
         g gVar = this.g;
@@ -40,10 +40,10 @@ public final class d extends ca {
         }
         if (fVar.e()) {
             float f10 = gVar.c / 255.0f;
-            int r12 = j6.r1(f10, i7);
+            int r12 = n6.r1(f10, i7);
             Paint paint = this.b;
             paint.setColor(r12);
-            int r13 = j6.r1(f10 * gVar.W, gVar.x);
+            int r13 = n6.r1(f10 * gVar.W, gVar.x);
             if (Color.alpha(r13) != 0) {
                 paint.setShadowLayer(gVar.U, 0.0f, gVar.V, r13);
             } else {
@@ -68,7 +68,7 @@ public final class d extends ca {
         Rect rect = this.c;
         if (ninePatchDrawable == null || this.e != j3) {
             this.e = j3;
-            NinePatchDrawable b10 = o0.b(this.f, i7, fVar.b, gVar.U, gVar.x, gVar.V, Color.alpha(i7) == 255 ? i7 : 1);
+            NinePatchDrawable b10 = q0.b(this.f, i7, fVar.b, gVar.U, gVar.x, gVar.V, Color.alpha(i7) == 255 ? i7 : 1);
             this.d = b10;
             b10.getPadding(rect);
         }

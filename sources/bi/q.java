@@ -2,19 +2,19 @@ package bi;
 
 import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.e70;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.p70;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.yw;
+import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -33,14 +33,14 @@ public final /* synthetic */ class q implements View.OnClickListener {
             case 0:
                 y yVar = (y) this.c;
                 yVar.getClass();
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
                 if (T != null) {
                     long j3 = this.b;
-                    if (!q10.A(j3)) {
+                    if (!o10.B(j3)) {
                         Bundle bundle = new Bundle();
                         if (j3 > 0) {
                             bundle.putLong("user_id", j3);
-                            if (j3 == m10.i(yVar.a).e()) {
+                            if (j3 == j10.i(yVar.a).e()) {
                                 bundle.putBoolean("my_profile", true);
                             }
                         } else {
@@ -57,18 +57,18 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 yVar.dismiss();
                 break;
             case 1:
-                s2 s2Var = (s2) this.c;
-                s2Var.getClass();
-                org.telegram.ui.ActionBar.e2 T2 = LaunchActivity.T();
+                j3 j3Var = (j3) this.c;
+                j3Var.getClass();
+                org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
                 if (T2 != null) {
-                    s2Var.dismiss();
-                    T2.presentFragment(ProfileActivity.C4(this.b));
+                    j3Var.dismiss();
+                    T2.presentFragment(ProfileActivity.D4(this.b));
                     break;
                 }
                 break;
             case 2:
-                fi.b4 b4Var = (fi.b4) this.c;
-                b4Var.getClass();
+                fi.z3 z3Var = (fi.z3) this.c;
+                z3Var.getClass();
                 Bundle bundle2 = new Bundle();
                 long j10 = this.b;
                 if (j10 >= 0) {
@@ -76,32 +76,32 @@ public final /* synthetic */ class q implements View.OnClickListener {
                 } else {
                     bundle2.putLong("chat_id", -j10);
                 }
-                b4Var.t0.N(new ProfileActivity(bundle2, null));
+                z3Var.t0.N(new ProfileActivity(bundle2, null));
                 break;
             case 3:
-                e70 e70Var = (e70) this.c;
-                e70Var.dismiss();
+                p70 p70Var = (p70) this.c;
+                p70Var.dismiss();
                 TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite = new TLRPC.TL_messages_importChatInvite();
-                tL_messages_importChatInvite.hash = e70Var.n1;
-                ConnectionsManager.getInstance(e70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new v5(e70Var, this.b, tL_messages_importChatInvite), 2);
+                tL_messages_importChatInvite.hash = p70Var.n1;
+                ConnectionsManager.getInstance(p70Var.a).sendRequestTyped(tL_messages_importChatInvite, null, new c8(p70Var, this.b, tL_messages_importChatInvite), 2);
                 break;
             case 4:
-                yw ywVar = (yw) this.c;
-                np messagesController = ywVar.getMessagesController();
+                cx cxVar = (cx) this.c;
+                mp messagesController = cxVar.getMessagesController();
                 long j11 = this.b;
-                boolean r22 = messagesController.r2(j11, 0L, null);
-                if (r22) {
-                    ywVar.getNotificationsController().T(j11, 4, 0L);
+                boolean u22 = messagesController.u2(j11, 0L, null);
+                if (u22) {
+                    cxVar.getNotificationsController().T(j11, 4, 0L);
                 } else {
-                    ywVar.getNotificationsController().T(j11, 3, 0L);
+                    cxVar.getNotificationsController().T(j11, 3, 0L);
                 }
-                cc.A(ywVar, !r22, null).j();
-                ywVar.finishPreviewFragment();
+                lc.A(cxVar, !u22, null).j();
+                cxVar.finishPreviewFragment();
                 break;
             default:
-                z10 z10Var = ((sh.m) this.c).f;
-                if (z10Var != null) {
-                    z10Var.a(Long.valueOf(this.b));
+                x10 x10Var = ((sh.n) this.c).f;
+                if (x10Var != null) {
+                    x10Var.a(Long.valueOf(this.b));
                     break;
                 }
                 break;

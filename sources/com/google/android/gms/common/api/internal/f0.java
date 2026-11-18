@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 import m.o3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f0 extends com.google.android.gms.common.api.m implements q0 {
     public ab.e0 E;
@@ -28,7 +28,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
     public final o3 H;
     public final a0.f I;
     public final a9.e J;
-    public final cb.c K;
+    public final d6.i K;
     public final ArrayList L;
     public Integer M;
     public final a1 N;
@@ -53,7 +53,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
         this.s = 120000L;
         this.w = 5000L;
         this.G = new HashSet();
-        this.K = new cb.c(12);
+        this.K = new d6.i(8);
         this.M = null;
         d0 d0Var = new d0();
         d0Var.a = this;
@@ -77,7 +77,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
             com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) obj;
             q6.u uVar = this.c;
             uVar.getClass();
-            q6.m.g(kVar);
+            q6.m.h(kVar);
             synchronized (uVar.r) {
                 try {
                     ArrayList arrayList4 = uVar.b;
@@ -111,7 +111,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static int k(Collection collection, boolean z10) {
+    public static int h(Collection collection, boolean z10) {
         Iterator it = collection.iterator();
         boolean z11 = false;
         boolean z12 = false;
@@ -152,17 +152,17 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
             int i7 = 2;
             boolean z10 = false;
             if (this.e >= 0) {
-                q6.m.i("Sign-in mode should have been set explicitly by auto-manage.", this.M != null);
+                q6.m.j("Sign-in mode should have been set explicitly by auto-manage.", this.M != null);
             } else {
                 Integer num = this.M;
                 if (num == null) {
-                    this.M = Integer.valueOf(k(this.F.values(), false));
+                    this.M = Integer.valueOf(h(this.F.values(), false));
                 } else if (num.intValue() == 2) {
                     throw new IllegalStateException("Cannot call connect() when SignInMode is set to SIGN_IN_MODE_OPTIONAL. Call connect(SIGN_IN_MODE_OPTIONAL) instead.");
                 }
             }
             Integer num2 = this.M;
-            q6.m.g(num2);
+            q6.m.h(num2);
             int intValue = num2.intValue();
             reentrantLock.lock();
             try {
@@ -174,7 +174,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
                     sb2.append("Illegal sign-in mode: ");
                     sb2.append(i7);
                     q6.m.a(sb2.toString(), z10);
-                    m(i7);
+                    l(i7);
                     n();
                     reentrantLock.unlock();
                     return;
@@ -183,7 +183,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
                 sb22.append("Illegal sign-in mode: ");
                 sb22.append(i7);
                 q6.m.a(sb22.toString(), z10);
-                m(i7);
+                l(i7);
                 n();
                 reentrantLock.unlock();
                 return;
@@ -218,7 +218,7 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
             }
             linkedList.clear();
             if (this.d != null) {
-                h();
+                g();
                 q6.u uVar = this.c;
                 uVar.e = false;
                 uVar.f.incrementAndGet();
@@ -241,15 +241,31 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
         }
     }
 
+    public final boolean g() {
+        if (!this.r) {
+            return false;
+        }
+        this.r = false;
+        e0 e0Var = this.x;
+        e0Var.removeMessages(2);
+        e0Var.removeMessages(1);
+        ab.e0 e0Var2 = this.E;
+        if (e0Var2 != null) {
+            e0Var2.b();
+            this.E = null;
+        }
+        return true;
+    }
+
     @Override // com.google.android.gms.common.api.internal.q0
-    public final void g(n6.a aVar) {
+    public final void i(n6.a aVar) {
         n6.d dVar = this.y;
         Context context = this.f;
         int i7 = aVar.b;
         dVar.getClass();
         AtomicBoolean atomicBoolean = n6.g.a;
         if (!(i7 == 18 ? true : i7 == 1 ? n6.g.c(context) : false)) {
-            h();
+            g();
         }
         if (this.r) {
             return;
@@ -285,24 +301,8 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
         uVar.f.incrementAndGet();
     }
 
-    public final boolean h() {
-        if (!this.r) {
-            return false;
-        }
-        this.r = false;
-        e0 e0Var = this.x;
-        e0Var.removeMessages(2);
-        e0Var.removeMessages(1);
-        ab.e0 e0Var2 = this.E;
-        if (e0Var2 != null) {
-            e0Var2.b();
-            this.E = null;
-        }
-        return true;
-    }
-
     @Override // com.google.android.gms.common.api.internal.q0
-    public final void i(int i7) {
+    public final void j(int i7) {
         if (i7 == 1) {
             if (!this.r) {
                 this.r = true;
@@ -310,9 +310,9 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
                     try {
                         n6.d dVar = this.y;
                         Context applicationContext = this.f.getApplicationContext();
-                        cb.c cVar = new cb.c(this);
+                        d6.i iVar = new d6.i(this);
                         dVar.getClass();
-                        this.E = n6.d.g(applicationContext, cVar);
+                        this.E = n6.d.g(applicationContext, iVar);
                     } catch (SecurityException unused) {
                     }
                 }
@@ -363,8 +363,120 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
         }
     }
 
+    public final /* synthetic */ void k() {
+        this.b.lock();
+        try {
+            if (this.r) {
+                n();
+            }
+        } finally {
+            this.b.unlock();
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void l(int i7) {
+        ReentrantLock reentrantLock;
+        Integer num = this.M;
+        if (num == null) {
+            this.M = Integer.valueOf(i7);
+        } else if (num.intValue() != i7) {
+            int intValue = this.M.intValue();
+            String str = intValue != 1 ? intValue != 2 ? intValue != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED";
+            String str2 = i7 != 1 ? i7 != 2 ? i7 != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED";
+            StringBuilder sb2 = new StringBuilder(str.length() + str2.length() + 51);
+            sb2.append("Cannot use sign-in mode: ");
+            sb2.append(str2);
+            sb2.append(". Mode was already set to ");
+            sb2.append(str);
+            throw new IllegalStateException(sb2.toString());
+        }
+        if (this.d != null) {
+            return;
+        }
+        a0.f fVar = this.F;
+        Iterator it = ((a0.e) fVar.values()).iterator();
+        boolean z10 = false;
+        boolean z11 = false;
+        while (it.hasNext()) {
+            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) it.next();
+            z10 |= cVar.f();
+            z11 |= ((q6.d) cVar) instanceof d6.e;
+        }
+        int intValue2 = this.M.intValue();
+        ArrayList arrayList = this.L;
+        ReentrantLock reentrantLock2 = this.b;
+        if (intValue2 == 1) {
+            reentrantLock = reentrantLock2;
+            if (!z10) {
+                throw new IllegalStateException("SIGN_IN_MODE_REQUIRED cannot be used on a GoogleApiClient that does not contain any authenticated APIs. Use connect() instead.");
+            }
+            if (z11) {
+                throw new IllegalStateException("Cannot use SIGN_IN_MODE_REQUIRED with GOOGLE_SIGN_IN_API. Use connect(SIGN_IN_MODE_OPTIONAL) instead.");
+            }
+            fVar = fVar;
+        } else {
+            if (intValue2 == 2 && z10) {
+                a0.f fVar2 = new a0.f(0);
+                a0.f fVar3 = new a0.f(0);
+                Iterator it2 = ((a0.a) fVar.entrySet()).iterator();
+                com.google.android.gms.common.api.c cVar2 = null;
+                while (it2.hasNext()) {
+                    Map.Entry entry = (Map.Entry) it2.next();
+                    com.google.android.gms.common.api.c cVar3 = (com.google.android.gms.common.api.c) entry.getValue();
+                    q6.d dVar = (q6.d) cVar3;
+                    dVar.getClass();
+                    if (true == (dVar instanceof d6.e)) {
+                        cVar2 = cVar3;
+                    }
+                    if (cVar3.f()) {
+                        fVar2.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
+                    } else {
+                        fVar3.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
+                    }
+                }
+                q6.m.j("CompositeGoogleApiClient should not be used without any APIs that require sign-in.", !fVar2.isEmpty());
+                a0.f fVar4 = new a0.f(0);
+                a0.f fVar5 = new a0.f(0);
+                a0.f fVar6 = this.I;
+                Iterator it3 = ((a0.c) fVar6.keySet()).iterator();
+                while (it3.hasNext()) {
+                    com.google.android.gms.common.api.e eVar = (com.google.android.gms.common.api.e) it3.next();
+                    Object obj = eVar.b;
+                    if (fVar2.containsKey(obj)) {
+                        fVar4.put(eVar, (Boolean) fVar6.get(eVar));
+                    } else {
+                        if (!fVar3.containsKey(obj)) {
+                            throw new IllegalStateException("Each API in the isOptionalMap must have a corresponding client in the clients map.");
+                        }
+                        fVar5.put(eVar, (Boolean) fVar6.get(eVar));
+                    }
+                }
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                int size = arrayList.size();
+                for (int i10 = 0; i10 < size; i10++) {
+                    g1 g1Var = (g1) arrayList.get(i10);
+                    com.google.android.gms.common.api.e eVar2 = g1Var.a;
+                    if (fVar4.containsKey(eVar2)) {
+                        arrayList2.add(g1Var);
+                    } else {
+                        if (!fVar5.containsKey(eVar2)) {
+                            throw new IllegalStateException("Each ClientCallbacks must have a corresponding API in the isOptionalMap");
+                        }
+                        arrayList3.add(g1Var);
+                    }
+                }
+                this.d = new h1(this.f, this, reentrantLock2, this.h, this.y, fVar2, fVar3, this.H, this.J, cVar2, arrayList2, arrayList3, fVar4, fVar5);
+                return;
+            }
+            reentrantLock = reentrantLock2;
+        }
+        this.d = new i0(this.f, this, reentrantLock, this.h, this.y, fVar, this.H, this.I, this.J, arrayList, this);
+    }
+
     @Override // com.google.android.gms.common.api.internal.q0
-    public final void j(Bundle bundle) {
+    public final void m(Bundle bundle) {
         while (true) {
             LinkedList linkedList = this.n;
             if (linkedList.isEmpty()) {
@@ -375,11 +487,11 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
                 }
                 synchronized (uVar.r) {
                     try {
-                        q6.m.j(!uVar.h);
+                        q6.m.k(!uVar.h);
                         yVar.removeMessages(1);
                         uVar.h = true;
                         ArrayList arrayList = uVar.c;
-                        q6.m.j(arrayList.isEmpty());
+                        q6.m.k(arrayList.isEmpty());
                         ArrayList arrayList2 = new ArrayList(uVar.b);
                         AtomicInteger atomicInteger = uVar.f;
                         int i7 = atomicInteger.get();
@@ -440,122 +552,10 @@ public final class f0 extends com.google.android.gms.common.api.m implements q0 
         }
     }
 
-    public final /* synthetic */ void l() {
-        this.b.lock();
-        try {
-            if (this.r) {
-                n();
-            }
-        } finally {
-            this.b.unlock();
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void m(int i7) {
-        ReentrantLock reentrantLock;
-        Integer num = this.M;
-        if (num == null) {
-            this.M = Integer.valueOf(i7);
-        } else if (num.intValue() != i7) {
-            int intValue = this.M.intValue();
-            String str = intValue != 1 ? intValue != 2 ? intValue != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED";
-            String str2 = i7 != 1 ? i7 != 2 ? i7 != 3 ? "UNKNOWN" : "SIGN_IN_MODE_NONE" : "SIGN_IN_MODE_OPTIONAL" : "SIGN_IN_MODE_REQUIRED";
-            StringBuilder sb2 = new StringBuilder(str.length() + str2.length() + 51);
-            sb2.append("Cannot use sign-in mode: ");
-            sb2.append(str2);
-            sb2.append(". Mode was already set to ");
-            sb2.append(str);
-            throw new IllegalStateException(sb2.toString());
-        }
-        if (this.d != null) {
-            return;
-        }
-        a0.f fVar = this.F;
-        Iterator it = ((a0.e) fVar.values()).iterator();
-        boolean z10 = false;
-        boolean z11 = false;
-        while (it.hasNext()) {
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) it.next();
-            z10 |= cVar.f();
-            z11 |= ((q6.d) cVar) instanceof d6.e;
-        }
-        int intValue2 = this.M.intValue();
-        ArrayList arrayList = this.L;
-        ReentrantLock reentrantLock2 = this.b;
-        if (intValue2 == 1) {
-            reentrantLock = reentrantLock2;
-            if (!z10) {
-                throw new IllegalStateException("SIGN_IN_MODE_REQUIRED cannot be used on a GoogleApiClient that does not contain any authenticated APIs. Use connect() instead.");
-            }
-            if (z11) {
-                throw new IllegalStateException("Cannot use SIGN_IN_MODE_REQUIRED with GOOGLE_SIGN_IN_API. Use connect(SIGN_IN_MODE_OPTIONAL) instead.");
-            }
-            fVar = fVar;
-        } else {
-            if (intValue2 == 2 && z10) {
-                a0.f fVar2 = new a0.f(0);
-                a0.f fVar3 = new a0.f(0);
-                Iterator it2 = ((a0.a) fVar.entrySet()).iterator();
-                com.google.android.gms.common.api.c cVar2 = null;
-                while (it2.hasNext()) {
-                    Map.Entry entry = (Map.Entry) it2.next();
-                    com.google.android.gms.common.api.c cVar3 = (com.google.android.gms.common.api.c) entry.getValue();
-                    q6.d dVar = (q6.d) cVar3;
-                    dVar.getClass();
-                    if (true == (dVar instanceof d6.e)) {
-                        cVar2 = cVar3;
-                    }
-                    if (cVar3.f()) {
-                        fVar2.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
-                    } else {
-                        fVar3.put((com.google.android.gms.common.api.d) entry.getKey(), cVar3);
-                    }
-                }
-                q6.m.i("CompositeGoogleApiClient should not be used without any APIs that require sign-in.", !fVar2.isEmpty());
-                a0.f fVar4 = new a0.f(0);
-                a0.f fVar5 = new a0.f(0);
-                a0.f fVar6 = this.I;
-                Iterator it3 = ((a0.c) fVar6.keySet()).iterator();
-                while (it3.hasNext()) {
-                    com.google.android.gms.common.api.e eVar = (com.google.android.gms.common.api.e) it3.next();
-                    Object obj = eVar.b;
-                    if (fVar2.containsKey(obj)) {
-                        fVar4.put(eVar, (Boolean) fVar6.get(eVar));
-                    } else {
-                        if (!fVar3.containsKey(obj)) {
-                            throw new IllegalStateException("Each API in the isOptionalMap must have a corresponding client in the clients map.");
-                        }
-                        fVar5.put(eVar, (Boolean) fVar6.get(eVar));
-                    }
-                }
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                int size = arrayList.size();
-                for (int i10 = 0; i10 < size; i10++) {
-                    g1 g1Var = (g1) arrayList.get(i10);
-                    com.google.android.gms.common.api.e eVar2 = g1Var.a;
-                    if (fVar4.containsKey(eVar2)) {
-                        arrayList2.add(g1Var);
-                    } else {
-                        if (!fVar5.containsKey(eVar2)) {
-                            throw new IllegalStateException("Each ClientCallbacks must have a corresponding API in the isOptionalMap");
-                        }
-                        arrayList3.add(g1Var);
-                    }
-                }
-                this.d = new h1(this.f, this, reentrantLock2, this.h, this.y, fVar2, fVar3, this.H, this.J, cVar2, arrayList2, arrayList3, fVar4, fVar5);
-                return;
-            }
-            reentrantLock = reentrantLock2;
-        }
-        this.d = new i0(this.f, this, reentrantLock, this.h, this.y, fVar, this.H, this.I, this.J, arrayList, this);
-    }
-
     public final void n() {
         this.c.e = true;
         r0 r0Var = this.d;
-        q6.m.g(r0Var);
+        q6.m.h(r0Var);
         r0Var.a();
     }
 }

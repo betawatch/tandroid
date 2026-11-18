@@ -1,114 +1,148 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import java.io.File;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class dd {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public boolean g;
-    public int h;
-    public int i;
-    public boolean j;
-    public int k;
+    public final /* synthetic */ int a;
 
-    public static dd a(String str) {
-        dd ddVar = null;
-        if (str != null && str.length() != 0) {
-            String[] split = str.split("\\|");
-            if (split.length >= 4) {
-                ddVar = new dd();
-                ddVar.a = split[0];
-                ddVar.b = split[1];
-                ddVar.c = split[2].toLowerCase();
-                ddVar.d = split[3];
-                if (split.length >= 5) {
-                    ddVar.h = Utilities.z(split[4]).intValue();
+    public final int a(int i7) {
+        switch (this.a) {
+            case 0:
+                int i10 = i7 % 100;
+                if (i7 == 0) {
+                    return 1;
                 }
-                ddVar.e = split.length >= 6 ? split[5] : "";
-                ddVar.f = split.length >= 7 ? split[6] : ddVar.c;
-                if (split.length >= 8) {
-                    ddVar.g = Utilities.z(split[7]).intValue() == 1;
+                if (i7 == 1) {
+                    return 2;
                 }
-                if (split.length >= 9) {
-                    ddVar.i = Utilities.z(split[8]).intValue();
+                if (i7 == 2) {
+                    return 4;
                 }
-                if (split.length >= 10) {
-                    ddVar.k = Utilities.z(split[9]).intValue();
-                } else {
-                    ddVar.k = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                if (i10 < 3 || i10 > 10) {
+                    return (i10 < 11 || i10 > 99) ? 0 : 16;
                 }
-                if (!TextUtils.isEmpty(ddVar.e)) {
-                    ddVar.e = ddVar.e.replace("-", "_");
+                return 8;
+            case 1:
+                int i11 = i7 % 100;
+                int i12 = i7 % 10;
+                if (i12 == 1 && i11 != 11) {
+                    return 2;
                 }
-            }
+                if (i12 < 2 || i12 > 4 || (i11 >= 12 && i11 <= 14)) {
+                    return (i12 == 0 || (i12 >= 5 && i12 <= 9) || (i11 >= 11 && i11 <= 14)) ? 16 : 0;
+                }
+                return 8;
+            case 2:
+                if (i7 == 0) {
+                    return 1;
+                }
+                if (i7 == 1) {
+                    return 2;
+                }
+                if (i7 == 2) {
+                    return 4;
+                }
+                if (i7 == 3) {
+                    return 8;
+                }
+                return i7 == 6 ? 16 : 0;
+            case 3:
+                if (i7 == 1) {
+                    return 2;
+                }
+                return (i7 < 2 || i7 > 4) ? 0 : 8;
+            case 4:
+                return (i7 < 0 || i7 >= 2) ? 0 : 2;
+            case 5:
+                if (i7 == 0) {
+                    return 1;
+                }
+                return i7 == 1 ? 2 : 0;
+            case 6:
+                if (i7 == 0) {
+                    return 1;
+                }
+                return (i7 % 10 != 1 || i7 % 100 == 11) ? 0 : 2;
+            case 7:
+                int i13 = i7 % 100;
+                int i14 = i7 % 10;
+                if (i14 != 1 || (i13 >= 11 && i13 <= 19)) {
+                    return (i14 < 2 || i14 > 9 || (i13 >= 11 && i13 <= 19)) ? 0 : 8;
+                }
+                return 2;
+            case 8:
+                return (i7 % 10 != 1 || i7 == 11) ? 0 : 2;
+            case 9:
+                int i15 = i7 % 100;
+                if (i7 == 1) {
+                    return 2;
+                }
+                if (i7 == 0 || (i15 >= 2 && i15 <= 10)) {
+                    return 8;
+                }
+                return (i15 < 11 || i15 > 19) ? 0 : 16;
+            case 10:
+                return 0;
+            case 11:
+                return i7 == 1 ? 2 : 0;
+            case 12:
+                int i16 = i7 % 100;
+                int i17 = i7 % 10;
+                if (i7 == 1) {
+                    return 2;
+                }
+                if (i17 < 2 || i17 > 4 || (i16 >= 12 && i16 <= 14)) {
+                    return ((i17 < 0 || i17 > 1) && (i17 < 5 || i17 > 9) && (i16 < 12 || i16 > 14)) ? 0 : 16;
+                }
+                return 8;
+            case 13:
+                int i18 = i7 % 100;
+                if (i7 == 1) {
+                    return 2;
+                }
+                return (i7 == 0 || (i18 >= 1 && i18 <= 19)) ? 8 : 0;
+            case 14:
+                int i19 = i7 % 100;
+                int i20 = i7 % 10;
+                if (i20 != 1 || i19 == 11) {
+                    return (i20 < 2 || i20 > 4 || (i19 >= 12 && i19 <= 14)) ? 0 : 8;
+                }
+                return 2;
+            case 15:
+                int i21 = i7 % 100;
+                if (i21 == 1) {
+                    return 2;
+                }
+                if (i21 == 2) {
+                    return 4;
+                }
+                return (i21 < 3 || i21 > 4) ? 0 : 8;
+            case 16:
+                if (i7 < 0 || i7 > 1) {
+                    return (i7 < 2 || i7 > 10) ? 0 : 8;
+                }
+                return 2;
+            case 17:
+                if (i7 == 1) {
+                    return 2;
+                }
+                return i7 == 2 ? 4 : 0;
+            case 18:
+                if (i7 == 0) {
+                    return 1;
+                }
+                if (i7 == 1) {
+                    return 2;
+                }
+                if (i7 == 2) {
+                    return 4;
+                }
+                if (i7 == 3) {
+                    return 8;
+                }
+                return i7 == 6 ? 16 : 0;
+            default:
+                return (i7 == 0 || i7 == 1) ? 2 : 0;
         }
-        return ddVar;
-    }
-
-    public final String b() {
-        if (this.d != null && !i() && !j()) {
-            return "local_" + this.c;
-        }
-        if (!j()) {
-            return this.c;
-        }
-        return "unofficial_" + this.c;
-    }
-
-    public final String c() {
-        return this.c.replace("_", "-");
-    }
-
-    public final File d() {
-        if (j()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_base_"), this.c, ".xml"));
-        }
-        return null;
-    }
-
-    public final File e() {
-        if (i()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("remote_"), this.c, ".xml"));
-        }
-        if (j()) {
-            return new File(t0.h(), a8.p0.s(new StringBuilder("unofficial_"), this.c, ".xml"));
-        }
-        if (TextUtils.isEmpty(this.d)) {
-            return null;
-        }
-        return new File(this.d);
-    }
-
-    public final String f() {
-        String str = this.e;
-        if (str == null) {
-            str = "";
-        }
-        TextUtils.isEmpty(this.f);
-        return this.a + "|" + this.b + "|" + this.c + "|" + this.d + "|" + this.h + "|" + str + "|" + this.f + "|" + (this.g ? 1 : 0) + "|" + this.i + "|" + this.k;
-    }
-
-    public final boolean g() {
-        return (!j() || TextUtils.isEmpty(this.e) || this.e.equals(this.c)) ? false : true;
-    }
-
-    public final boolean h() {
-        return (TextUtils.isEmpty(this.d) || i() || j()) ? false : true;
-    }
-
-    public final boolean i() {
-        return "remote".equals(this.d);
-    }
-
-    public final boolean j() {
-        return "unofficial".equals(this.d);
     }
 }

@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pa implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class pa implements RequestDelegate {
                     final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults = (TLRPC.TL_channels_adminLogResults) tLObject;
                     final int i7 = 1;
                     final lb lbVar = this.b;
-                    org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ma
+                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.ma
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i7) {
@@ -52,19 +52,19 @@ public final /* synthetic */ class pa implements RequestDelegate {
                             arrayList2.add((TLRPC.User) arrayList.get(i10));
                         }
                     }
-                    lbVar2.getMessagesController().Y3(arrayList2, false);
+                    lbVar2.getMessagesController().f4(arrayList2, false);
                     break;
                 }
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new u5(9, this.b, tLObject));
+                org.telegram.messenger.g0.g3(new k9(5, this.b, tLObject));
                 break;
             case 3:
                 if (tLObject != null) {
                     final TLRPC.TL_channels_adminLogResults tL_channels_adminLogResults2 = (TLRPC.TL_channels_adminLogResults) tLObject;
                     final int i11 = 0;
                     final lb lbVar3 = this.b;
-                    org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.ma
+                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.ma
                         @Override // java.lang.Runnable
                         public final void run() {
                             switch (i11) {
@@ -81,7 +81,7 @@ public final /* synthetic */ class pa implements RequestDelegate {
                 }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new o1(this.b, tL_error, tLObject, 9));
+                org.telegram.messenger.g0.g3(new o1(this.b, tL_error, tLObject, 9));
                 break;
         }
     }

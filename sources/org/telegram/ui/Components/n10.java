@@ -1,31 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n10 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s10 b;
+public final class n10 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    public /* synthetic */ n10(s10 s10Var, int i7) {
-        this.a = i7;
-        this.b = s10Var;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                s10 s10Var = this.b;
-                s10Var.b.setVisibility(8);
-                s10Var.F = false;
-                s10Var.G = 0.0f;
-                break;
-            default:
-                this.b.e.setVisibility(8);
-                break;
-        }
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

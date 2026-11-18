@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 import android.os.Build;
 import android.telephony.TelephonyManager;
 import android.util.SparseArray;
-import c8.dc;
+import c8.gc;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
@@ -18,8 +18,8 @@ import n5.a0;
 import n5.b0;
 import n5.c0;
 import n5.d0;
+import n5.e;
 import n5.e0;
-import n5.f;
 import n5.f0;
 import n5.g;
 import n5.g0;
@@ -41,14 +41,14 @@ import n5.t;
 import n5.v;
 import n5.w;
 import n5.y;
-import org.telegram.ui.Components.cf;
-import p5.e;
+import org.telegram.ui.Cells.b5;
+import p5.f;
 import pa.d;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class c implements e {
-    public final cf a;
+public final class c implements f {
+    public final b5 a;
     public final ConnectivityManager b;
     public final Context c;
     public final URL d;
@@ -73,7 +73,7 @@ public final class c implements e {
         i iVar = i.a;
         dVar.b(e0.class, iVar);
         dVar.b(s.class, iVar);
-        n5.e eVar = n5.e.a;
+        e eVar = e.a;
         dVar.b(a0.class, eVar);
         dVar.b(o.class, eVar);
         h hVar = h.a;
@@ -85,11 +85,11 @@ public final class c implements e {
         k kVar = k.a;
         dVar.b(i0.class, kVar);
         dVar.b(v.class, kVar);
-        f fVar = f.a;
+        n5.f fVar = n5.f.a;
         dVar.b(b0.class, fVar);
         dVar.b(p.class, fVar);
         dVar.d = true;
-        this.a = new cf(dVar);
+        this.a = new b5(dVar);
         this.c = context;
         this.b = (ConnectivityManager) context.getSystemService("connectivity");
         this.d = b(a.c);
@@ -102,7 +102,7 @@ public final class c implements e {
         try {
             return new URL(str);
         } catch (MalformedURLException e10) {
-            throw new IllegalArgumentException(r.b.k("Invalid url: ", str), e10);
+            throw new IllegalArgumentException(p5.c.k("Invalid url: ", str), e10);
         }
     }
 
@@ -175,7 +175,7 @@ public final class c implements e {
             try {
                 i10 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
             } catch (PackageManager.NameNotFoundException e10) {
-                dc.b("CctTransportBackend", "Unable to find version code for package", e10);
+                gc.b("CctTransportBackend", "Unable to find version code for package", e10);
             }
             c10.a("application_build", Integer.toString(i10));
             return c10.b();

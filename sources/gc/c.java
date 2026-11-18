@@ -1,46 +1,58 @@
 package gc;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r4v1 gc.c, still in use, count: 1, list:
-  (r4v1 gc.c) from 0x0033: FILLED_NEW_ARRAY (r1v1 gc.c), (r0v0 gc.c), (r5v1 gc.c), (r4v1 gc.c) A[WRAPPED] (LINE:52) elemType: gc.c
-	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
-	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
-	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
-	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.tgnet.ConnectionsManager;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
-    b(1),
-    c(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF4(3),
-    d(2);
-
-    public static final c[] e;
-    public final int a;
-
-    static {
-        c cVar = b;
-        c cVar2 = c;
-        c cVar3 = d;
-        e = new c[]{cVar2, cVar, cVar3, r4};
-    }
+    public static final int[][] c = {new int[]{21522, 0}, new int[]{20773, 1}, new int[]{24188, 2}, new int[]{23371, 3}, new int[]{17913, 4}, new int[]{16590, 5}, new int[]{20375, 6}, new int[]{19104, 7}, new int[]{30660, 8}, new int[]{29427, 9}, new int[]{32170, 10}, new int[]{30877, 11}, new int[]{26159, 12}, new int[]{25368, 13}, new int[]{27713, 14}, new int[]{26998, 15}, new int[]{5769, 16}, new int[]{5054, 17}, new int[]{7399, 18}, new int[]{6608, 19}, new int[]{1890, 20}, new int[]{597, 21}, new int[]{3340, 22}, new int[]{2107, 23}, new int[]{13663, 24}, new int[]{12392, 25}, new int[]{16177, 26}, new int[]{14854, 27}, new int[]{9396, 28}, new int[]{8579, 29}, new int[]{11994, 30}, new int[]{11245, 31}};
+    public final b a;
+    public final byte b;
 
     public c(int i7) {
-        this.a = i7;
+        int i10 = (i7 >> 3) & 3;
+        if (i10 < 0 || i10 >= 4) {
+            throw new IllegalArgumentException();
+        }
+        this.a = b.e[i10];
+        this.b = (byte) (i7 & 7);
     }
 
-    public static c valueOf(String str) {
-        return (c) Enum.valueOf(c.class, str);
+    public static c a(int i7, int i10) {
+        int bitCount;
+        int i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        int i12 = 0;
+        for (int i13 = 0; i13 < 32; i13++) {
+            int[] iArr = c[i13];
+            int i14 = iArr[0];
+            if (i14 == i7 || i14 == i10) {
+                return new c(iArr[1]);
+            }
+            int bitCount2 = Integer.bitCount(i7 ^ i14);
+            if (bitCount2 < i11) {
+                i12 = iArr[1];
+                i11 = bitCount2;
+            }
+            if (i7 != i10 && (bitCount = Integer.bitCount(i14 ^ i10)) < i11) {
+                i12 = iArr[1];
+                i11 = bitCount;
+            }
+        }
+        if (i11 <= 3) {
+            return new c(i12);
+        }
+        return null;
     }
 
-    public static c[] values() {
-        return (c[]) f.clone();
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a == cVar.a && this.b == cVar.b;
+    }
+
+    public final int hashCode() {
+        return (this.a.ordinal() << 3) | this.b;
     }
 }

@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
 import android.app.Application;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import b5.a;
 import com.google.android.recaptcha.RecaptchaAction;
 import gd.c;
 import kotlin.jvm.internal.j;
 import zd.x1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzfp {
     private final String zza;
@@ -26,14 +26,14 @@ public final class zzfp {
     public zzfp(String str) {
         this.zza = str;
         int i7 = zzby.zza;
-        this.zzb = bb.b(zzff.zza);
-        this.zzc = bb.b(zzfg.zza);
-        this.zzd = bb.b(zzfh.zza);
-        this.zze = bb.b(zzfi.zza);
-        this.zzf = bb.b(zzfj.zza);
-        this.zzg = bb.b(zzfk.zza);
-        this.zzh = bb.b(zzfl.zza);
-        this.zzi = bb.b(zzfm.zza);
+        this.zzb = a.c(zzff.zza);
+        this.zzc = a.c(zzfg.zza);
+        this.zzd = a.c(zzfh.zza);
+        this.zze = a.c(zzfi.zza);
+        this.zzf = a.c(zzfj.zza);
+        this.zzg = a.c(zzfk.zza);
+        this.zzh = a.c(zzfl.zza);
+        this.zzi = a.c(zzfm.zza);
     }
 
     public static final /* synthetic */ zzq zzb(zzfp zzfpVar) {
@@ -100,7 +100,7 @@ public final class zzfp {
         try {
             zzxg zzj = zzxg.zzj(zzdb.zza(str));
             int i7 = zzby.zza;
-            ((zziq) bb.b(zzeu.zza).getValue()).zza(zzj);
+            ((zziq) a.c(zzeu.zza).getValue()).zza(zzj);
         } catch (Exception e10) {
             throw new zzcg(zzce.zzl, zzcd.zzan, e10.getMessage(), null, 8, null);
         }

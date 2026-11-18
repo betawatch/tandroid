@@ -1,29 +1,56 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s2 implements org.telegram.ui.ActionBar.q1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.z10 b;
-    public final /* synthetic */ boolean[] c;
+import android.view.KeyEvent;
+import android.widget.TextView;
 
-    public /* synthetic */ s2(int i7, org.telegram.messenger.z10 z10Var, boolean[] zArr) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s2 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ s2(int i7) {
         this.a = i7;
-        this.b = z10Var;
-        this.c = zArr;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                this.b.a(Boolean.valueOf(this.c[0]));
+                org.telegram.messenger.g0.v1(textView);
+                break;
+            case 1:
+                if (i7 == 6) {
+                    org.telegram.messenger.g0.v1(textView);
+                    break;
+                }
+                break;
+            case 2:
+                if (i7 == 6) {
+                    org.telegram.messenger.g0.v1(textView);
+                    break;
+                }
+                break;
+            case 3:
+                if (i7 == 6) {
+                    org.telegram.messenger.g0.v1(textView);
+                    break;
+                }
+                break;
+            case 4:
+                if (i7 == 6) {
+                    textView.clearFocus();
+                    org.telegram.messenger.g0.v1(textView);
+                    break;
+                }
                 break;
             default:
-                this.b.a(Boolean.TRUE);
-                this.c[0] = true;
-                t1Var.dismiss();
+                if (i7 == 6) {
+                    textView.clearFocus();
+                    org.telegram.messenger.g0.v1(textView);
+                    break;
+                }
                 break;
         }
+        return false;
     }
 }

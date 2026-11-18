@@ -1,69 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.LinearLayout;
-import org.telegram.messenger.Utilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ch implements r1.d {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ KeyEvent.Callback e;
+public final /* synthetic */ class ch implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ si b;
 
-    public /* synthetic */ ch(ki kiVar, float f10, float f11, boolean z10) {
-        this.e = kiVar;
-        this.c = f10;
-        this.d = f11;
-        this.b = z10;
+    public /* synthetic */ ch(si siVar, int i7) {
+        this.a = i7;
+        this.b = siVar;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ki kiVar = (ki) this.e;
-                LinearLayout linearLayout = kiVar.j3;
-                LinearLayout linearLayout2 = kiVar.l3;
-                float f12 = f10 / 500.0f;
-                vh vhVar = kiVar.Z1;
-                ci ciVar = kiVar.w2;
-                Float valueOf = Float.valueOf(f12);
-                vhVar.getClass();
-                vhVar.a(ciVar, valueOf);
-                kiVar.V2.setAlpha(org.telegram.messenger.g0.T1(this.c, this.d, f12));
-                kiVar.M1(kiVar.w2, 0);
-                kiVar.M1(kiVar.x2, 0);
-                if (!(kiVar.x2 instanceof im) || this.b) {
-                    f12 = 1.0f - f12;
+                this.b.R1();
+                break;
+            case 1:
+                this.b.B2.invalidate();
+                break;
+            case 2:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                si siVar = this.b;
+                siVar.D0 = floatValue;
+                org.telegram.ui.ActionBar.n2 n2Var = siVar.c;
+                if (n2Var != null) {
+                    n2Var.invalidate();
+                    break;
                 }
-                float i7 = Utilities.i(f12, 1.0f, 0.0f);
-                linearLayout2.setAlpha(i7);
-                float f13 = 1.0f - i7;
-                linearLayout.setAlpha(f13);
-                linearLayout.setTranslationX(i7 * (-org.telegram.messenger.g0.L(16.0f)));
-                linearLayout2.setTranslationX(f13 * org.telegram.messenger.g0.L(16.0f));
+                break;
+            case 3:
+                si siVar2 = this.b;
+                siVar2.getClass();
+                siVar2.A1(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                si siVar3 = this.b;
+                ki kiVar = siVar3.w2;
+                xk xkVar = siVar3.r2;
+                if (kiVar == xkVar && xkVar != null) {
+                    xkVar.invalidate();
+                    break;
+                }
                 break;
             default:
-                gn0 gn0Var = (gn0) this.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    if (f10 > this.c / 2.0f || !gn0Var.s) {
-                    }
-                } else if (f10 < this.d / 2.0f || !gn0Var.r) {
-                }
-                gn0Var.s = !z10;
-                gn0Var.r = z10;
+                this.b.R1();
                 break;
         }
-    }
-
-    public /* synthetic */ ch(gn0 gn0Var, boolean z10, float f10, float f11) {
-        this.e = gn0Var;
-        this.b = z10;
-        this.c = f10;
-        this.d = f11;
     }
 }

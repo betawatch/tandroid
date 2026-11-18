@@ -2,137 +2,111 @@ package org.telegram.messenger;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.os.Process;
 import android.os.SystemClock;
+import java.util.ArrayList;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class q5 extends Thread {
-    private static final int THREAD_PRIORITY_DEFAULT = -1000;
-    private static int indexPointer;
-    public final int index;
-    private long lastTaskTime;
-    private int threadPriority;
-    private volatile Handler handler = null;
-    private CountDownLatch syncLatch = new CountDownLatch(1);
+public final class q5 extends Thread {
+    public volatile Handler a;
+    public final Object b = new Object();
+    public ArrayList c = new ArrayList();
+    public final CountDownLatch d = new CountDownLatch(1);
+    public final int e = -1000;
 
-    public q5(String str, boolean z10) {
-        int i7 = indexPointer;
-        indexPointer = i7 + 1;
-        this.index = i7;
-        this.threadPriority = THREAD_PRIORITY_DEFAULT;
-        setName(str);
-        if (z10) {
-            start();
-        }
-    }
-
-    public void cancelRunnable(Runnable runnable) {
-        try {
-            this.syncLatch.await();
-            this.handler.removeCallbacks(runnable);
-        } catch (Exception e10) {
-            a8.g(e10, false);
-        }
-    }
-
-    public void cancelRunnables(Runnable[] runnableArr) {
-        try {
-            this.syncLatch.await();
-            for (Runnable runnable : runnableArr) {
-                this.handler.removeCallbacks(runnable);
-            }
-        } catch (Exception e10) {
-            a8.g(e10, false);
-        }
-    }
-
-    public void cleanupQueue() {
-        try {
-            this.syncLatch.await();
-            this.handler.removeCallbacksAndMessages(null);
-        } catch (Exception e10) {
-            a8.g(e10, false);
-        }
-    }
-
-    public Handler getHandler() {
-        return this.handler;
-    }
-
-    public long getLastTaskTime() {
-        return this.lastTaskTime;
-    }
-
-    public boolean isReady() {
-        return this.syncLatch.getCount() == 0;
-    }
-
-    public boolean postRunnable(Runnable runnable) {
-        this.lastTaskTime = SystemClock.elapsedRealtime();
-        return postRunnable(runnable, 0L);
-    }
-
-    public boolean postToFrontRunnable(Runnable runnable) {
-        try {
-            this.syncLatch.await();
-        } catch (Exception e10) {
-            a8.g(e10, false);
-        }
-        return this.handler.postAtFrontOfQueue(runnable);
-    }
-
-    public void recycle() {
-        this.handler.getLooper().quit();
-    }
-
-    @Override // java.lang.Thread, java.lang.Runnable
-    public void run() {
-        Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new n5(this, 0));
-        this.syncLatch.countDown();
-        int i7 = this.threadPriority;
-        if (i7 != THREAD_PRIORITY_DEFAULT) {
-            Process.setThreadPriority(i7);
-        }
-        Looper.loop();
-    }
-
-    public void sendMessage(Message message, int i7) {
-        try {
-            this.syncLatch.await();
-            if (i7 <= 0) {
-                this.handler.sendMessage(message);
-            } else {
-                this.handler.sendMessageDelayed(message, i7);
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    public boolean postRunnable(Runnable runnable, long j3) {
-        try {
-            this.syncLatch.await();
-        } catch (Exception e10) {
-            a8.g(e10, false);
-        }
-        if (j3 <= 0) {
-            return this.handler.post(runnable);
-        }
-        return this.handler.postDelayed(runnable, j3);
-    }
-
-    public q5(String str, int i7) {
-        int i10 = indexPointer;
-        indexPointer = i10 + 1;
-        this.index = i10;
-        this.threadPriority = i7;
+    public q5(String str) {
         setName(str);
         start();
     }
 
-    public void handleMessage(Message message) {
+    public final void a(Runnable runnable) {
+        Handler handler = this.a;
+        if (handler != null) {
+            handler.removeCallbacks(runnable);
+            return;
+        }
+        synchronized (this.b) {
+            try {
+                ArrayList arrayList = this.c;
+                if (arrayList == null) {
+                    this.a.removeCallbacks(runnable);
+                    return;
+                }
+                for (int size = arrayList.size() - 1; size >= 0; size--) {
+                    if (((p5) this.c.get(size)).b == runnable) {
+                        this.c.remove(size);
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final Handler b() {
+        try {
+            this.d.await();
+        } catch (Exception e10) {
+            a8.g(e10, false);
+        }
+        return this.a;
+    }
+
+    public final void c(Runnable runnable) {
+        SystemClock.elapsedRealtime();
+        d(runnable, 0L);
+    }
+
+    public final boolean d(Runnable runnable, long j3) {
+        Handler handler = this.a;
+        if (handler != null) {
+            return j3 <= 0 ? handler.post(runnable) : handler.postDelayed(runnable, j3);
+        }
+        long max = Math.max(0L, j3) + SystemClock.uptimeMillis();
+        synchronized (this.b) {
+            try {
+                ArrayList arrayList = this.c;
+                if (arrayList == null) {
+                    return this.a.postAtTime(runnable, max);
+                }
+                arrayList.add(new p5(0, max, runnable));
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        Looper.prepare();
+        Handler handler = new Handler(Looper.myLooper(), new o5(this, 1));
+        synchronized (this.b) {
+            for (int i7 = 0; i7 < this.c.size(); i7++) {
+                try {
+                    p5 p5Var = (p5) this.c.get(i7);
+                    int i10 = p5Var.a;
+                    if (i10 == 0) {
+                        handler.postAtTime(p5Var.b, p5Var.c);
+                    } else if (i10 == 1) {
+                        handler.postAtFrontOfQueue(p5Var.b);
+                    } else {
+                        handler.sendMessageAtTime(null, p5Var.c);
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            this.c = null;
+            this.a = handler;
+        }
+        this.d.countDown();
+        int i11 = this.e;
+        if (i11 != -1000) {
+            Process.setThreadPriority(i11);
+        }
+        Looper.loop();
     }
 }

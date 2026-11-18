@@ -1,39 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ q8 d;
+public final /* synthetic */ class l8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y8 b;
 
-    public l8(q8 q8Var, float f10, float f11, boolean z10) {
-        this.d = q8Var;
-        this.a = f10;
-        this.b = f11;
-        this.c = z10;
+    public /* synthetic */ l8(y8 y8Var, int i7) {
+        this.a = i7;
+        this.b = y8Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        q8 q8Var = this.d;
-        q8Var.O = floatValue;
-        float T1 = org.telegram.messenger.g0.T1(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.e2) q8Var).actionBar;
-        kVar.getTitleTextView().setAlpha(q8Var.O);
-        if (q8Var.G && !this.c) {
-            q8Var.n0(false, 1.0f - q8Var.O);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                y8 y8Var = this.b;
+                if (!y8Var.V) {
+                    if (y8Var.O <= 0.0f) {
+                        y8Var.l0(!y8Var.a.w, true, false);
+                        break;
+                    } else {
+                        if (y8Var.N != null) {
+                            y8Var.F = 1.0f;
+                            y8Var.G = true;
+                        }
+                        org.telegram.messenger.g0.v1(y8Var.fragmentView);
+                        break;
+                    }
+                }
+                break;
+            default:
+                y8 y8Var2 = this.b;
+                y8Var2.getClass();
+                y8Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
+                break;
         }
-        q8Var.r.setTranslationY(T1);
-        q8Var.y.setTranslationY(T1);
-        q8Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.e2) q8Var).actionBar;
-        kVar2.invalidate();
     }
 }

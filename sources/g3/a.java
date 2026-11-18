@@ -1,6 +1,7 @@
 package g3;
 
 import androidx.car.app.media.b;
+import b3.j;
 import e2.s0;
 import e2.t;
 import e2.t0;
@@ -13,17 +14,17 @@ import f3.p;
 import f3.q;
 import f3.s;
 import f3.y;
-import f5.v;
 import h2.l0;
 import h9.g0;
-import h9.s1;
+import h9.t1;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
+import p5.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -94,8 +95,8 @@ public final class a implements o {
             }
         }
         y yVar = (y) b0Var;
-        v vVar = yVar.b;
-        long m10 = vVar.b == 0 ? -9223372036854775807L : vVar.m(l0.c(yVar.a, j3));
+        j jVar = yVar.b;
+        long m10 = jVar.b == 0 ? -9223372036854775807L : jVar.m(l0.c(yVar.a, j3));
         this.k = m10;
         if (Math.abs(this.q - m10) < 20000) {
             return;
@@ -107,7 +108,7 @@ public final class a implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = h9.i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:32:0x0122  */
@@ -138,7 +139,7 @@ public final class a implements o {
             tVar.s = i11;
             tVar.J = 1;
             tVar.K = i10;
-            r.b.s(tVar, i0Var);
+            c.r(tVar, i0Var);
         }
         int i12 = 0;
         if (this.g == 0) {
@@ -158,17 +159,17 @@ public final class a implements o {
                     y yVar = (y) b0Var;
                     long j3 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    v vVar = yVar.b;
-                    int i13 = vVar.b;
-                    if (i13 == 0 || j3 - vVar.m(i13 - 1) >= 100000) {
-                        v vVar2 = yVar.a;
-                        v vVar3 = yVar.b;
-                        if (vVar3.b == 0 && j3 > 0) {
-                            vVar2.c(0L);
-                            vVar3.c(0L);
+                    j jVar = yVar.b;
+                    int i13 = jVar.b;
+                    if (i13 == 0 || j3 - jVar.m(i13 - 1) >= 100000) {
+                        j jVar2 = yVar.a;
+                        j jVar3 = yVar.b;
+                        if (jVar3.b == 0 && j3 > 0) {
+                            jVar2.c(0L);
+                            jVar3.c(0L);
                         }
-                        vVar2.c(position);
-                        vVar3.c(j3);
+                        jVar2.c(position);
+                        jVar3.c(j3);
                     }
                     if (this.p && Math.abs(this.q - j3) < 20000) {
                         this.p = false;
@@ -199,7 +200,7 @@ public final class a implements o {
                 }
                 b0 b0Var2 = this.o;
                 if (b0Var2 != null) {
-                    this.l.f(b0Var2);
+                    this.l.j(b0Var2);
                 }
             }
             if (i12 == -1) {
@@ -207,7 +208,7 @@ public final class a implements o {
                 if (b0Var3 instanceof y) {
                     long j10 = this.k + this.e;
                     ((y) b0Var3).c = j10;
-                    this.l.f(b0Var3);
+                    this.l.j(b0Var3);
                     this.m.d(j10);
                 }
             }
@@ -224,9 +225,9 @@ public final class a implements o {
 
     public final int g(p pVar) {
         boolean z10;
-        pVar.l();
+        pVar.n();
         byte[] bArr = this.a;
-        pVar.c(0, 1, bArr);
+        pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
             throw t0.a(null, "Invalid padding bits for frame header " + ((int) b10));
@@ -243,24 +244,24 @@ public final class a implements o {
     }
 
     public final boolean h(p pVar) {
-        pVar.l();
+        pVar.n();
         byte[] bArr = u;
         byte[] bArr2 = new byte[bArr.length];
-        pVar.c(0, bArr.length, bArr2);
+        pVar.b(0, bArr.length, bArr2);
         if (Arrays.equals(bArr2, bArr)) {
             this.d = false;
-            pVar.m(bArr.length);
+            pVar.r(bArr.length);
             return true;
         }
-        pVar.l();
+        pVar.n();
         byte[] bArr3 = v;
         byte[] bArr4 = new byte[bArr3.length];
-        pVar.c(0, bArr3.length, bArr4);
+        pVar.b(0, bArr3.length, bArr4);
         if (!Arrays.equals(bArr4, bArr3)) {
             return false;
         }
         this.d = true;
-        pVar.m(bArr3.length);
+        pVar.r(bArr3.length);
         return true;
     }
 

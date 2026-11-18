@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p0 {
     public final wf.b a;
@@ -91,7 +91,7 @@ public final class p0 {
         sVar.L = j0Var.w;
         sVar.N = j0Var.y;
         wf.b bVar = this.a;
-        bVar.A(sVar, false);
+        bVar.C(sVar, false);
         ArrayList arrayList = sVar.i0;
         int size = arrayList.size();
         int i7 = 0;
@@ -101,7 +101,7 @@ public final class p0 {
             ((q) obj).a();
         }
         arrayList.clear();
-        sVar.M.b(sVar.L, sVar.h(), sVar);
+        sVar.M.b(sVar.L, sVar.f(), sVar);
         sVar.a = 0;
         sVar.V = false;
         sVar.y(sVar.L.b);
@@ -117,7 +117,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(0);
-        bVar.v(sVar, false);
+        bVar.w(sVar, false);
     }
 
     public final int c() {
@@ -229,7 +229,7 @@ public final class p0 {
             return;
         }
         wf.b bVar = this.a;
-        bVar.B(sVar, false);
+        bVar.D(sVar, false);
         sVar.M.R();
         sVar.a = 1;
         sVar.V = false;
@@ -245,7 +245,7 @@ public final class p0 {
         sVar.b0 = true;
         if (sVar.V) {
             sVar.e0.e(androidx.lifecycle.m.ON_CREATE);
-            bVar.w(sVar, false);
+            bVar.x(sVar, false);
         } else {
             throw new w0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -307,7 +307,7 @@ public final class p0 {
         boolean z11 = sVar.x && !sVar.v();
         xi.e eVar = this.b;
         if (z11) {
-            eVar.J(sVar.e, null);
+            eVar.N(sVar.e, null);
         }
         if (!z11) {
             m0 m0Var = (m0) eVar.d;
@@ -341,7 +341,7 @@ public final class p0 {
         if (!sVar.V) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
-        this.a.x(sVar, false);
+        this.a.y(sVar, false);
         ArrayList p10 = eVar.p();
         int size = p10.size();
         while (i7 < size) {
@@ -360,7 +360,7 @@ public final class p0 {
         if (str2 != null) {
             sVar.h = eVar.n(str2);
         }
-        eVar.B(this);
+        eVar.E(this);
     }
 
     public final void g() {
@@ -377,13 +377,13 @@ public final class p0 {
         if (!sVar.V) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroyView()");
         }
-        a0.m mVar = ((z1.b) new android.support.v4.media.session.a0(sVar.f(), z1.b.f).j(z1.b.class)).d;
+        a0.m mVar = ((z1.b) new android.support.v4.media.session.a0(sVar.g(), z1.b.f).j(z1.b.class)).d;
         int i7 = mVar.c;
         for (int i10 = 0; i10 < i7; i10++) {
             ((z1.a) mVar.b[i10]).k();
         }
         sVar.I = false;
-        this.a.H(sVar, false);
+        this.a.I(sVar, false);
         sVar.W = null;
         sVar.f0.j(null);
         sVar.F = false;
@@ -406,7 +406,7 @@ public final class p0 {
             k0Var.l();
             sVar.M = new k0();
         }
-        this.a.y(sVar, false);
+        this.a.z(sVar, false);
         sVar.a = -1;
         sVar.L = null;
         sVar.N = null;
@@ -458,7 +458,7 @@ public final class p0 {
                             Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar);
                         }
                         ((m0) eVar.d).c(sVar, true);
-                        eVar.B(this);
+                        eVar.E(this);
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "initState called for fragment: " + sVar);
                         }
@@ -556,7 +556,7 @@ public final class p0 {
         sVar.V = false;
         sVar.E();
         if (sVar.V) {
-            this.a.z(sVar, false);
+            this.a.A(sVar, false);
             return;
         }
         throw new w0("Fragment " + sVar + " did not call through to super.onPause()");
@@ -617,8 +617,8 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(7);
-        this.a.C(sVar, false);
-        this.b.J(sVar.e, null);
+        this.a.E(sVar, false);
+        this.b.N(sVar.e, null);
         sVar.b = null;
         sVar.c = null;
         sVar.d = null;
@@ -644,7 +644,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(5);
-        this.a.E(sVar, false);
+        this.a.G(sVar, false);
     }
 
     public final void o() {
@@ -662,7 +662,7 @@ public final class p0 {
         sVar.V = false;
         sVar.I();
         if (sVar.V) {
-            this.a.F(sVar, false);
+            this.a.H(sVar, false);
             return;
         }
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");

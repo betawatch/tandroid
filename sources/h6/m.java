@@ -1,6 +1,6 @@
 package h6;
 
-import a8.ja;
+import a8.la;
 import a8.r7;
 import ab.c0;
 import android.content.Context;
@@ -32,7 +32,7 @@ import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import bi.x1;
+import bi.r2;
 import ch.n0;
 import ch.p0;
 import ch.q0;
@@ -45,8 +45,8 @@ import e2.s0;
 import e2.t;
 import e2.u;
 import f3.i0;
-import fi.f6;
-import fi.n2;
+import fi.a6;
+import fi.l2;
 import gb.h1;
 import h2.j0;
 import h2.k0;
@@ -54,11 +54,11 @@ import h2.l0;
 import h2.x;
 import hi.c7;
 import hi.d7;
-import hi.h4;
+import hi.r1;
 import hi.s8;
+import hi.t5;
 import hi.v5;
 import hi.w5;
-import hi.x5;
 import j$.util.DesugarCollections;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -87,52 +87,50 @@ import m4.f0;
 import n2.w0;
 import org.telegram.messenger.ILocationServiceProvider;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.aa;
-import org.telegram.messenger.bp;
-import org.telegram.messenger.dz;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.ap;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.fa;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ga;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.na;
+import org.telegram.messenger.nt;
 import org.telegram.messenger.oa;
 import org.telegram.messenger.pa;
 import org.telegram.messenger.qa;
-import org.telegram.messenger.qt;
 import org.telegram.messenger.ra;
-import org.telegram.messenger.sa;
+import org.telegram.messenger.t0;
+import org.telegram.messenger.w9;
 import org.telegram.messenger.x9;
 import org.telegram.messenger.y9;
 import org.telegram.messenger.z9;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.ActionBar.v0;
 import org.telegram.ui.ActionBar.z0;
+import org.telegram.ui.Cells.b5;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Cells.y0;
+import org.telegram.ui.Cells.u0;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.bx0;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.dk;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.k51;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.li0;
-import org.telegram.ui.Components.mi0;
-import org.telegram.ui.Components.px0;
-import org.telegram.ui.Components.s51;
-import org.telegram.ui.Components.sy;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.wy;
-import org.telegram.ui.an;
-import org.telegram.ui.ym0;
+import org.telegram.ui.Components.cz;
+import org.telegram.ui.Components.d61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.ix0;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.r51;
+import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ui0;
+import org.telegram.ui.Components.v51;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.wx0;
+import org.telegram.ui.Components.yy;
+import org.telegram.ui.bn;
+import org.telegram.ui.bn0;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, bp, li0, ym0 {
+public final class m implements d61, ib.b, c4.d, a0, OnCompleteListener, q5.b, ILocationServiceProvider, ap, ui0, bn0 {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -142,7 +140,11 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         this.a = i7;
     }
 
-    public static StringBuilder C(String str) {
+    public static m D(Context context, AttributeSet attributeSet, int[] iArr, int i7) {
+        return new m(context, context.obtainStyledAttributes(attributeSet, iArr, i7, 0));
+    }
+
+    public static StringBuilder F(String str) {
         StringBuilder sb2;
         int i7;
         byte[] H;
@@ -268,14 +270,14 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
     }
 
-    public static m g(View view) {
+    public static m i(View view) {
         return new m(view);
     }
 
     public static Object[] l(Object[] objArr, int[] iArr) {
         int length = objArr.length;
         Class<?> componentType = objArr.getClass().getComponentType();
-        bx0 bx0Var = px0.T;
+        ix0 ix0Var = wx0.T;
         int i7 = -1;
         for (int i10 : iArr) {
             i7 = Math.max(i7, i10);
@@ -287,23 +289,66 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return objArr2;
     }
 
-    public static m z(Context context, AttributeSet attributeSet, int[] iArr, int i7) {
-        return new m(context, context.obtainStyledAttributes(attributeSet, iArr, i7, 0));
+    public Paint B(float f10, int i7) {
+        Paint[] paintArr = (Paint[]) this.b;
+        if (paintArr[i7] == null) {
+            Paint paint = new Paint(1);
+            paintArr[i7] = paint;
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        }
+        paintArr[i7].setShader(null);
+        paintArr[i7].setColor(-65536);
+        paintArr[i7].setAlpha((int) (f10 * 255.0f));
+        return paintArr[i7];
     }
 
-    @Override // org.telegram.ui.Components.li0
-    public /* synthetic */ boolean B() {
+    public int C(gc.e eVar) {
+        ArrayList arrayList = (ArrayList) this.b;
+        int size = arrayList.size();
+        int i7 = 0;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ic.e eVar2 = (ic.e) obj;
+            int i11 = eVar2.d;
+            gc.d dVar = eVar2.a;
+            int a10 = dVar.a(eVar);
+            int i12 = a10 + 4;
+            int ordinal = dVar.ordinal();
+            if (ordinal != 1) {
+                if (ordinal == 2) {
+                    i12 = ((i11 / 2) * 11) + i12 + (i11 % 2 != 1 ? 0 : 6);
+                } else if (ordinal == 4) {
+                    i12 += eVar2.a() * 8;
+                } else if (ordinal == 5) {
+                    i12 = a10 + 12;
+                } else if (ordinal == 6) {
+                    i12 += i11 * 13;
+                }
+            } else {
+                int i13 = ((i11 / 3) * 10) + i12;
+                int i14 = i11 % 3;
+                i12 = i13 + (i14 != 1 ? i14 == 2 ? 7 : 0 : 4);
+            }
+            i7 += i12;
+        }
+        return i7;
+    }
+
+    @Override // org.telegram.ui.Components.ui0
+    public /* synthetic */ boolean E() {
         return false;
     }
 
-    public void D() {
+    public void G() {
         ((TypedArray) this.c).recycle();
     }
 
-    public void E(b3.a aVar) {
-        m2.j jVar = (m2.j) ((HashMap) this.b).remove(aVar);
-        jVar.getClass();
-        l2.g gVar = (l2.g) ((l2.h) this.d).p.get(jVar);
+    public void H(b3.a aVar) {
+        m2.i iVar = (m2.i) ((HashMap) this.b).remove(aVar);
+        iVar.getClass();
+        l2.g gVar = (l2.g) ((l2.h) this.d).p.get(iVar);
         if (gVar != null) {
             synchronized (gVar) {
                 gVar.d--;
@@ -311,18 +356,18 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
     }
 
-    public void F(String str) {
+    public void I(String str) {
         if (str == null) {
             throw new NullPointerException("Null backendName");
         }
         this.b = str;
     }
 
-    public synchronized void G() {
+    public synchronized void J() {
         ((l2.h) this.d).c.e();
     }
 
-    public void H(boolean z10, float f10) {
+    public void K(boolean z10, float f10) {
         z0[] z0VarArr = (z0[]) this.d;
         for (int i7 = 0; i7 < z0VarArr.length; i7++) {
             if (!z10 || ((i7 != 0 || Math.abs(f10 - 0.2f) >= 0.01f) && ((i7 != 1 || Math.abs(f10 - 0.5f) >= 0.1f) && ((i7 != 2 || Math.abs(f10 - 1.0f) >= 0.1f) && ((i7 != 3 || Math.abs(f10 - 1.5f) >= 0.1f) && (i7 != 4 || Math.abs(f10 - 2.0f) >= 0.1f)))))) {
@@ -334,15 +379,10 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         ((v0) this.c).e(true, f10);
     }
 
-    @Override // org.telegram.ui.Components.li0
-    public /* synthetic */ boolean L() {
-        return false;
-    }
-
-    @Override // org.telegram.messenger.bp
+    @Override // org.telegram.messenger.ap
     public void a() {
         ((vf.b) this.b).b();
-        ((e2) this.c).presentFragment(new an((Bundle) this.d));
+        ((h2) this.c).presentFragment(new bn((Bundle) this.d));
     }
 
     @Override // m4.a0
@@ -353,6 +393,11 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         i0 d2 = qVar.d2(f0Var.c, 5);
         this.d = d2;
         d2.g((u) this.b);
+    }
+
+    @Override // org.telegram.ui.bn0
+    public void b0() {
+        ((kk) this.d).R.A();
     }
 
     @Override // m4.a0
@@ -386,21 +431,21 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public void checkLocationSettings(ra raVar, q0.a aVar) {
+    public void checkLocationSettings(qa qaVar, q0.a aVar) {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(((aa) raVar).a);
+        arrayList.add(((z9) qaVar).a);
         u7.c cVar = (u7.c) this.c;
         j8.c cVar2 = new j8.c(arrayList, false, false);
         cVar.getClass();
         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
-        b10.c = new cf(cVar2);
+        b10.c = new b5(cVar2);
         b10.a = 2426;
-        cVar.e(0, b10.a()).addOnCompleteListener(new x9(aVar, 1));
+        cVar.e(0, b10.a()).addOnCompleteListener(new w9(aVar, 1));
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
     public boolean checkServices() {
-        return qt.b.hasServices();
+        return nt.b.hasServices();
     }
 
     @Override // c4.d
@@ -413,20 +458,55 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return -1;
     }
 
-    @Override // org.telegram.ui.ym0
-    public void d0() {
-        ((dk) this.d).R.A();
-    }
-
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.bn0
     public /* synthetic */ boolean e() {
         return true;
     }
 
-    @Override // org.telegram.messenger.bp
+    @Override // org.telegram.messenger.ap
     public void f(boolean z10) {
         ((vf.b) this.b).b();
-        ((e2) this.c).presentFragment(new an((Bundle) this.d));
+        ((h2) this.c).presentFragment(new bn((Bundle) this.d));
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
+    @Override // org.telegram.ui.Components.ui0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void g(View view, p0 p0Var, boolean z10, boolean z11) {
+        float f10;
+        q0 q0Var;
+        n0 k10;
+        float f11;
+        int i7;
+        float f12;
+        bn bnVar = (bn) this.d;
+        z J8 = bnVar.J8(((fj) this.b).e1(), true);
+        float f13 = 0.0f;
+        if (J8 instanceof q1) {
+            q0 q0Var2 = ((q1) J8).O;
+            n0 k11 = q0Var2.k(p0Var);
+            if (k11 == null) {
+                f12 = 0.0f;
+                f10 = f12;
+                bnVar.Eb(J8, (fj) this.b, (vi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+            } else {
+                f13 = q0Var2.b + k11.w + (k11.z / 2.0f);
+                f11 = q0Var2.c + k11.x;
+                i7 = k11.A;
+            }
+        } else if (!(J8 instanceof u0) || (k10 = (q0Var = ((u0) J8).F0).k(p0Var)) == null) {
+            f10 = 0.0f;
+            bnVar.Eb(J8, (fj) this.b, (vi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+        } else {
+            f13 = q0Var.b + k10.w + (k10.z / 2.0f);
+            f11 = q0Var.c + k10.x;
+            i7 = k10.A;
+        }
+        f12 = f11 + (i7 / 2.0f);
+        f10 = f12;
+        bnVar.Eb(J8, (fj) this.b, (vi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
     }
 
     @Override // fd.a
@@ -436,7 +516,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                 return new jb.p((id.h) ((ib.c) this.b).get(), (h1) ((ib.c) this.c).get(), (m1.g) ((ib.c) this.d).get());
             default:
                 int i7 = 28;
-                return new o5.t(new qb.a(i7), new pb.b(i7), (t5.c) ((r7) this.b).get(), (ia.c) ((ga.d) this.c).get(), (c0) ((xi.e) this.d).get());
+                return new o5.s(new qb.a(i7), new pb.b(i7), (t5.b) ((r7) this.b).get(), (ia.c) ((ga.d) this.c).get(), (c0) ((xi.e) this.d).get());
         }
     }
 
@@ -447,54 +527,14 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         com.google.android.gms.common.api.internal.t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.c = u7.a.c;
         b10.a = 2414;
-        cVar.e(0, b10.a()).addOnCompleteListener(new x9(aVar, 0));
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0063  */
-    @Override // org.telegram.ui.Components.li0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void h(View view, p0 p0Var, boolean z10, boolean z11) {
-        float f10;
-        q0 q0Var;
-        n0 k10;
-        float f11;
-        int i7;
-        float f12;
-        an anVar = (an) this.d;
-        z J8 = anVar.J8(((gj) this.b).e1(), true);
-        float f13 = 0.0f;
-        if (J8 instanceof q1) {
-            q0 q0Var2 = ((q1) J8).O;
-            n0 k11 = q0Var2.k(p0Var);
-            if (k11 == null) {
-                f12 = 0.0f;
-                f10 = f12;
-                anVar.Eb(J8, (gj) this.b, (mi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-            } else {
-                f13 = q0Var2.b + k11.w + (k11.z / 2.0f);
-                f11 = q0Var2.c + k11.x;
-                i7 = k11.A;
-            }
-        } else if (!(J8 instanceof t0) || (k10 = (q0Var = ((t0) J8).F0).k(p0Var)) == null) {
-            f10 = 0.0f;
-            anVar.Eb(J8, (gj) this.b, (mi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
-        } else {
-            f13 = q0Var.b + k10.w + (k10.z / 2.0f);
-            f11 = q0Var.c + k10.x;
-            i7 = k10.A;
-        }
-        f12 = f11 + (i7 / 2.0f);
-        f10 = f12;
-        anVar.Eb(J8, (gj) this.b, (mi0) this.c, view, f13, f10, p0Var, false, (p0Var == null && p0Var.a) ? true : z10, z11, false);
+        cVar.e(0, b10.a()).addOnCompleteListener(new w9(aVar, 0));
     }
 
     @Override // c4.d
-    public long i(int i7) {
+    public long h(int i7) {
         long[] jArr = (long[]) this.d;
-        ja.f(i7 >= 0);
-        ja.f(i7 < jArr.length);
+        la.f(i7 >= 0);
+        la.f(i7 < jArr.length);
         return jArr[i7];
     }
 
@@ -531,7 +571,33 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         canvas.drawRect(rectF, paintArr[0]);
     }
 
-    public void m(Canvas canvas, RectF rectF, int i7, float f10) {
+    @Override // c4.d
+    public List m(long j3) {
+        List list = (List) this.b;
+        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList2 = new ArrayList();
+        for (int i7 = 0; i7 < list.size(); i7++) {
+            long[] jArr = (long[]) this.c;
+            int i10 = i7 * 2;
+            if (jArr[i10] <= j3 && j3 < jArr[i10 + 1]) {
+                l4.c cVar = (l4.c) list.get(i7);
+                g2.b bVar = cVar.a;
+                if (bVar.e == -3.4028235E38f) {
+                    arrayList2.add(cVar);
+                } else {
+                    arrayList.add(bVar);
+                }
+            }
+        }
+        Collections.sort(arrayList2, new w(6));
+        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+            g2.b bVar2 = ((l4.c) arrayList2.get(i11)).a;
+            arrayList.add(new g2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i11, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
+        }
+        return arrayList;
+    }
+
+    public void n(Canvas canvas, RectF rectF, int i7, float f10) {
         Paint[] paintArr = (Paint[]) this.b;
         Matrix matrix = (Matrix) this.d;
         if (f10 <= 0.0f) {
@@ -567,20 +633,9 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         canvas.drawRect(rectF, paintArr[i7]);
     }
 
-    public Object n(Bitmap bitmap) {
-        ih.a aVar = (ih.a) this.b;
-        if (aVar.a(bitmap)) {
-            this.d = ((ih.b) this.c).b(bitmap);
-            aVar.b(bitmap);
-        }
-        return this.d;
-    }
-
-    public ColorStateList o(int i7) {
-        int resourceId;
-        ColorStateList a10;
-        TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i7) || (resourceId = typedArray.getResourceId(i7, 0)) == 0 || (a10 = b5.a.a((Context) this.b, resourceId)) == null) ? typedArray.getColorStateList(i7) : a10;
+    @Override // org.telegram.ui.Components.ui0
+    public /* synthetic */ boolean o() {
+        return true;
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
@@ -596,17 +651,17 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public ra onCreateLocationRequest() {
-        LocationRequest locationRequest = new LocationRequest(ns.n1, 3600000L, 600000L, 0L, Long.MAX_VALUE, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0.0f, true, 3600000L, 0, 0, null, false, new WorkSource(), null);
-        aa aaVar = new aa();
-        aaVar.a = locationRequest;
-        return aaVar;
+    public qa onCreateLocationRequest() {
+        LocationRequest locationRequest = new LocationRequest(ks.n1, 3600000L, 600000L, 0L, Long.MAX_VALUE, Long.MAX_VALUE, ConnectionsManager.DEFAULT_DATACENTER_ID, 0.0f, true, 3600000L, 0, 0, null, false, new WorkSource(), null);
+        z9 z9Var = new z9();
+        z9Var.a = locationRequest;
+        return z9Var;
     }
 
     @Override // org.telegram.messenger.ILocationServiceProvider
-    public sa onCreateLocationServicesAPI(Context context, oa oaVar, final pa paVar) {
+    public ra onCreateLocationServicesAPI(Context context, na naVar, final oa oaVar) {
         List list;
-        Context context2 = org.telegram.messenger.t0.b;
+        Context context2 = t0.b;
         HashSet hashSet = new HashSet();
         HashSet hashSet2 = new HashSet();
         a0.f fVar = new a0.f(0);
@@ -619,11 +674,11 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         String packageName = context2.getPackageName();
         String name = context2.getClass().getName();
         com.google.android.gms.common.api.e eVar2 = j8.b.a;
-        q6.m.h(eVar2, "Api must not be null");
+        q6.m.i(eVar2, "Api must not be null");
         com.google.android.gms.common.api.e eVar3 = null;
         fVar2.put(eVar2, null);
         a9.e eVar4 = eVar2.a;
-        q6.m.h(eVar4, "Base client builder must not be null");
+        q6.m.i(eVar4, "Base client builder must not be null");
         switch (eVar4.a) {
             case 22:
                 list = Collections.EMPTY_LIST;
@@ -634,18 +689,18 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
         hashSet2.addAll(list);
         hashSet.addAll(list);
-        arrayList.add(new z9(oaVar));
-        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.w9
+        arrayList.add(new y9(naVar));
+        arrayList2.add(new com.google.android.gms.common.api.l() { // from class: org.telegram.messenger.v9
             @Override // com.google.android.gms.common.api.l
             public final void onConnectionFailed(n6.a aVar) {
-                rd rdVar = (rd) pa.this;
-                if (rdVar.M) {
+                qd qdVar = (qd) oa.this;
+                if (qdVar.M) {
                     return;
                 }
-                rdVar.L = Boolean.FALSE;
-                if (rdVar.E) {
-                    rdVar.E = false;
-                    rdVar.p();
+                qdVar.L = Boolean.FALSE;
+                if (qdVar.E) {
+                    qdVar.E = false;
+                    qdVar.p();
                 }
             }
         });
@@ -677,7 +732,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                         throw new IllegalStateException(a8.p0.p("Must not set scopes in GoogleApiClient.Builder when using ", str, ". Set account in GoogleSignInOptions.Builder instead."));
                     }
                 }
-                com.google.android.gms.common.api.internal.f0 f0Var = new com.google.android.gms.common.api.internal.f0(context2, new ReentrantLock(), looper, o3Var2, fVar5, arrayList, arrayList2, fVar6, com.google.android.gms.common.api.internal.f0.k(fVar6.values(), true), arrayList4);
+                com.google.android.gms.common.api.internal.f0 f0Var = new com.google.android.gms.common.api.internal.f0(context2, new ReentrantLock(), looper, o3Var2, fVar5, arrayList, arrayList2, fVar6, com.google.android.gms.common.api.internal.f0.h(fVar6.values(), true), arrayList4);
                 Set set = com.google.android.gms.common.api.m.a;
                 synchronized (set) {
                     set.add(f0Var);
@@ -695,7 +750,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
             g1 g1Var = new g1(eVar6, z11);
             arrayList3.add(g1Var);
             a9.e eVar7 = eVar6.a;
-            q6.m.g(eVar7);
+            q6.m.h(eVar7);
             ArrayList arrayList5 = arrayList3;
             Map map2 = map;
             o3 o3Var3 = o3Var;
@@ -712,7 +767,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                 if (eVar3 != null) {
                     String str2 = eVar6.c;
                     String str3 = eVar3.c;
-                    throw new IllegalStateException(y0.m(str2, " cannot be used with ", str3, new StringBuilder(String.valueOf(str2).length() + 21 + String.valueOf(str3).length())));
+                    throw new IllegalStateException(p5.c.m(str2, " cannot be used with ", str3, new StringBuilder(String.valueOf(str2).length() + 21 + String.valueOf(str3).length())));
                 }
                 mainLooper = looper2;
                 o3Var = o3Var3;
@@ -727,144 +782,163 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
     }
 
-    @Override // org.telegram.ui.Components.s51
-    public void onError(u51 u51Var, Exception exc) {
-        s8 s8Var = ((x5) this.d).O;
+    @Override // org.telegram.ui.Components.d61
+    public void onError(f61 f61Var, Exception exc) {
+        s8 s8Var = ((w5) this.d).O;
         if (s8Var != null) {
             s8Var.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onRenderedFirstFrame(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onStateChanged(boolean z10, int i7) {
-        x5 x5Var = (x5) this.d;
-        v5 v5Var = x5Var.L;
-        u51 u51Var = x5Var.e;
-        if (u51Var == null) {
+        w5 w5Var = (w5) this.d;
+        t5 t5Var = w5Var.L;
+        f61 f61Var = w5Var.e;
+        if (f61Var == null) {
             return;
         }
-        if (u51Var.d0()) {
-            g0.h3(v5Var);
+        if (f61Var.d0()) {
+            g0.g3(t5Var);
         } else {
-            g0.r(v5Var);
+            g0.r(t5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        ((x5) this.d).i();
+        ((w5) this.d).i();
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onVideoSizeChanged(int i7, int i10, int i11, float f10) {
-        x5 x5Var = (x5) this.d;
+        w5 w5Var = (w5) this.d;
         d7 d7Var = (d7) this.b;
         if (d7Var != null) {
-            c7 V = x5Var.e.V(d7Var.d1);
+            c7 V = w5Var.e.V(d7Var.d1);
             d7Var.d1 = V;
-            k51 k51Var = x5Var.n;
-            if (k51Var != null) {
-                k51Var.setHDRInfo(V);
+            v51 v51Var = w5Var.n;
+            if (v51Var != null) {
+                v51Var.setHDRInfo(V);
             }
         }
         int i12 = (int) (i7 * f10);
-        x5Var.f = i12;
+        w5Var.f = i12;
         int i13 = (int) (i10 * f10);
-        x5Var.h = i13;
+        w5Var.h = i13;
         if (d7Var != null && (d7Var.k0 != i12 || d7Var.l0 != i13)) {
             d7Var.k0 = i12;
             d7Var.l0 = i13;
             d7Var.A();
         }
-        x5Var.b();
-        k51 k51Var2 = x5Var.n;
-        if (k51Var2 != null) {
-            int i14 = x5Var.f;
-            int i15 = x5Var.h;
-            k51Var2.d = i14;
-            k51Var2.e = i15;
-            wy wyVar = k51Var2.b;
-            if (wyVar == null) {
+        w5Var.b();
+        v51 v51Var2 = w5Var.n;
+        if (v51Var2 != null) {
+            int i14 = w5Var.f;
+            int i15 = w5Var.h;
+            v51Var2.d = i14;
+            v51Var2.e = i15;
+            cz czVar = v51Var2.b;
+            if (czVar == null) {
                 return;
             }
-            wyVar.postRunnable(new sy(wyVar, i14, i15, 0));
+            czVar.postRunnable(new yy(czVar, i14, i15, 0));
         }
-    }
-
-    public Drawable p(int i7) {
-        int resourceId;
-        TypedArray typedArray = (TypedArray) this.c;
-        return (!typedArray.hasValue(i7) || (resourceId = typedArray.getResourceId(i7, 0)) == 0) ? typedArray.getDrawable(i7) : b5.a.b((Context) this.b, resourceId);
     }
 
     @Override // c4.d
-    public List q(long j3) {
-        List list = (List) this.b;
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        for (int i7 = 0; i7 < list.size(); i7++) {
-            long[] jArr = (long[]) this.c;
-            int i10 = i7 * 2;
-            if (jArr[i10] <= j3 && j3 < jArr[i10 + 1]) {
-                l4.c cVar = (l4.c) list.get(i7);
-                g2.b bVar = cVar.a;
-                if (bVar.e == -3.4028235E38f) {
-                    arrayList2.add(cVar);
-                } else {
-                    arrayList.add(bVar);
+    public int p() {
+        return ((long[]) this.d).length;
+    }
+
+    @Override // org.telegram.ui.Components.ui0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    public Object r(Bitmap bitmap) {
+        ih.a aVar = (ih.a) this.b;
+        if (aVar.a(bitmap)) {
+            this.d = ((ih.b) this.c).b(bitmap);
+            aVar.b(bitmap);
+        }
+        return this.d;
+    }
+
+    @Override // org.telegram.messenger.ILocationServiceProvider
+    public synchronized void removeLocationUpdates(pa paVar) {
+        x9 x9Var = (x9) ((HashMap) this.d).remove(paVar);
+        if (x9Var != null) {
+            u7.c cVar = (u7.c) this.b;
+            cVar.getClass();
+            String simpleName = x9.class.getSimpleName();
+            q6.m.g(simpleName, "Listener type must not be empty");
+            cVar.c(new com.google.android.gms.common.api.internal.m(x9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
+        }
+    }
+
+    @Override // org.telegram.messenger.ILocationServiceProvider
+    public synchronized void requestLocationUpdates(qa qaVar, pa paVar) {
+        x9 x9Var = (x9) ((HashMap) this.d).remove(paVar);
+        if (x9Var != null) {
+            u7.c cVar = (u7.c) this.b;
+            cVar.getClass();
+            String simpleName = x9.class.getSimpleName();
+            q6.m.g(simpleName, "Listener type must not be empty");
+            cVar.c(new com.google.android.gms.common.api.internal.m(x9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
+        }
+        x9 x9Var2 = new x9(paVar);
+        ((HashMap) this.d).put(paVar, x9Var2);
+        ((u7.c) this.b).f(((z9) qaVar).a, x9Var2, Looper.getMainLooper());
+    }
+
+    public ColorStateList s(int i7) {
+        int resourceId;
+        ColorStateList a10;
+        TypedArray typedArray = (TypedArray) this.c;
+        return (!typedArray.hasValue(i7) || (resourceId = typedArray.getResourceId(i7, 0)) == 0 || (a10 = c8.z.a((Context) this.b, resourceId)) == null) ? typedArray.getColorStateList(i7) : a10;
+    }
+
+    public Drawable t(int i7) {
+        int resourceId;
+        TypedArray typedArray = (TypedArray) this.c;
+        return (!typedArray.hasValue(i7) || (resourceId = typedArray.getResourceId(i7, 0)) == 0) ? typedArray.getDrawable(i7) : c8.z.b((Context) this.b, resourceId);
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 2:
+                StringBuilder sb2 = new StringBuilder();
+                ArrayList arrayList = (ArrayList) this.b;
+                int size = arrayList.size();
+                ic.e eVar = null;
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    ic.e eVar2 = (ic.e) obj;
+                    if (eVar != null) {
+                        sb2.append(",");
+                    }
+                    sb2.append(eVar2.toString());
+                    eVar = eVar2;
                 }
-            }
-        }
-        Collections.sort(arrayList2, new w(6));
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            g2.b bVar2 = ((l4.c) arrayList2.get(i11)).a;
-            arrayList.add(new g2.b(bVar2.a, bVar2.b, bVar2.c, bVar2.d, (-1) - i11, 1, bVar2.g, bVar2.h, bVar2.i, bVar2.n, bVar2.o, bVar2.j, bVar2.k, bVar2.l, bVar2.m, bVar2.p, bVar2.q, bVar2.r));
-        }
-        return arrayList;
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public /* synthetic */ boolean r() {
-        return true;
-    }
-
-    @Override // org.telegram.messenger.ILocationServiceProvider
-    public synchronized void removeLocationUpdates(qa qaVar) {
-        y9 y9Var = (y9) ((HashMap) this.d).remove(qaVar);
-        if (y9Var != null) {
-            u7.c cVar = (u7.c) this.b;
-            cVar.getClass();
-            String simpleName = y9.class.getSimpleName();
-            q6.m.f(simpleName, "Listener type must not be empty");
-            cVar.c(new com.google.android.gms.common.api.internal.m(y9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
+                return sb2.toString();
+            default:
+                return super.toString();
         }
     }
 
-    @Override // org.telegram.messenger.ILocationServiceProvider
-    public synchronized void requestLocationUpdates(ra raVar, qa qaVar) {
-        y9 y9Var = (y9) ((HashMap) this.d).remove(qaVar);
-        if (y9Var != null) {
-            u7.c cVar = (u7.c) this.b;
-            cVar.getClass();
-            String simpleName = y9.class.getSimpleName();
-            q6.m.f(simpleName, "Listener type must not be empty");
-            cVar.c(new com.google.android.gms.common.api.internal.m(y9Var, simpleName), 2418).continueWith(u7.b.a, u7.a.b);
-        }
-        y9 y9Var2 = new y9(qaVar);
-        ((HashMap) this.d).put(qaVar, y9Var2);
-        ((u7.c) this.b).f(((aa) raVar).a, y9Var2, Looper.getMainLooper());
-    }
-
-    public Drawable s(int i7) {
+    public Drawable v(int i7) {
         int resourceId;
         Drawable f10;
         if (!((TypedArray) this.c).hasValue(i7) || (resourceId = ((TypedArray) this.c).getResourceId(i7, 0)) == 0) {
@@ -878,7 +952,47 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return f10;
     }
 
-    public Typeface t(int i7, int i10, j0 j0Var) {
+    @Override // org.telegram.ui.bn0
+    public void v0(int i7, boolean z10, boolean z11) {
+        if (z10) {
+            return;
+        }
+        kk kkVar = (kk) this.d;
+        HashMap hashMap = (HashMap) this.b;
+        ArrayList arrayList = (ArrayList) this.c;
+        si siVar = kkVar.b;
+        if (hashMap.isEmpty() || kkVar.R == null || kkVar.L) {
+            return;
+        }
+        kkVar.L = true;
+        ArrayList arrayList2 = new ArrayList();
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            Object obj = hashMap.get(arrayList.get(i10));
+            org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
+            arrayList2.add(yyVar);
+            if (obj instanceof ef) {
+                ef efVar = (ef) obj;
+                String str = efVar.h;
+                if (str != null) {
+                    yyVar.c = str;
+                } else {
+                    yyVar.c = efVar.I;
+                }
+                yyVar.e = efVar.c;
+                yyVar.f = efVar.g;
+                yyVar.k = efVar.s;
+                yyVar.o = efVar.b;
+                CharSequence charSequence = efVar.a;
+                yyVar.d = charSequence != null ? charSequence.toString() : null;
+                yyVar.i = efVar.n;
+                yyVar.j = efVar.r;
+                yyVar.h = efVar.x;
+            }
+        }
+        org.telegram.ui.Components.b5.X(siVar.H3, siVar.Y0() + arrayList2.size(), siVar.c1(), new l2(i7, 2, kkVar, arrayList2, z11));
+    }
+
+    public Typeface w(int i7, int i10, j0 j0Var) {
         j0 j0Var2;
         XmlPullParserException xmlPullParserException;
         IOException iOException;
@@ -903,11 +1017,11 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                     return null;
                 }
                 int i11 = typedValue.assetCookie;
-                a0.j jVar = i0.f.b;
-                Typeface typeface = (Typeface) jVar.a(i0.f.b(resources, resourceId, charSequence2, i11, i10));
-                int i12 = 18;
+                a0.j jVar = i0.e.b;
+                Typeface typeface = (Typeface) jVar.a(i0.e.b(resources, resourceId, charSequence2, i11, i10));
+                int i12 = 20;
                 if (typeface != null) {
-                    new Handler(Looper.getMainLooper()).post(new f6(i12, j0Var, typeface));
+                    new Handler(Looper.getMainLooper()).post(new a6(i12, j0Var, typeface));
                     return typeface;
                 }
                 try {
@@ -915,12 +1029,12 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                         j0Var2 = j0Var;
                         try {
                             int i13 = typedValue.assetCookie;
-                            Typeface e10 = i0.f.a.e(context, resources, resourceId, charSequence2, i10);
+                            Typeface e10 = i0.e.a.e(context, resources, resourceId, charSequence2, i10);
                             if (e10 != null) {
-                                jVar.b(i0.f.b(resources, resourceId, charSequence2, i13, i10), e10);
+                                jVar.b(i0.e.b(resources, resourceId, charSequence2, i13, i10), e10);
                             }
                             if (e10 != null) {
-                                new Handler(Looper.getMainLooper()).post(new f6(i12, j0Var2, e10));
+                                new Handler(Looper.getMainLooper()).post(new a6(i12, j0Var2, e10));
                             } else {
                                 j0Var2.b();
                             }
@@ -942,7 +1056,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
                     h0.d g10 = h0.b.g(resources.getXml(resourceId), resources);
                     if (g10 != null) {
                         try {
-                            return i0.f.a(context, g10, resources, resourceId, charSequence2, typedValue.assetCookie, i10, j0Var);
+                            return i0.e.a(context, g10, resources, resourceId, charSequence2, typedValue.assetCookie, i10, j0Var);
                         } catch (IOException e13) {
                             e = e13;
                             j0Var2 = j0Var;
@@ -988,132 +1102,16 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         return null;
     }
 
-    @Override // org.telegram.ui.ym0
-    public void t0(int i7, boolean z10, boolean z11) {
-        if (z10) {
-            return;
-        }
-        dk dkVar = (dk) this.d;
-        HashMap hashMap = (HashMap) this.b;
-        ArrayList arrayList = (ArrayList) this.c;
-        ki kiVar = dkVar.b;
-        if (hashMap.isEmpty() || dkVar.R == null || dkVar.L) {
-            return;
-        }
-        dkVar.L = true;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            Object obj = hashMap.get(arrayList.get(i10));
-            dz dzVar = new dz();
-            arrayList2.add(dzVar);
-            if (obj instanceof ff) {
-                ff ffVar = (ff) obj;
-                String str = ffVar.h;
-                if (str != null) {
-                    dzVar.c = str;
-                } else {
-                    dzVar.c = ffVar.I;
-                }
-                dzVar.e = ffVar.c;
-                dzVar.f = ffVar.g;
-                dzVar.k = ffVar.s;
-                dzVar.o = ffVar.b;
-                CharSequence charSequence = ffVar.a;
-                dzVar.d = charSequence != null ? charSequence.toString() : null;
-                dzVar.i = ffVar.n;
-                dzVar.j = ffVar.r;
-                dzVar.h = ffVar.x;
-            }
-        }
-        t4.X(kiVar.H3, kiVar.X0() + arrayList2.size(), kiVar.b1(), new n2(i7, 2, dkVar, arrayList2, z11));
-    }
-
-    public String toString() {
-        switch (this.a) {
-            case 2:
-                StringBuilder sb2 = new StringBuilder();
-                ArrayList arrayList = (ArrayList) this.b;
-                int size = arrayList.size();
-                ic.e eVar = null;
-                int i7 = 0;
-                while (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    ic.e eVar2 = (ic.e) obj;
-                    if (eVar != null) {
-                        sb2.append(",");
-                    }
-                    sb2.append(eVar2.toString());
-                    eVar = eVar2;
-                }
-                return sb2.toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    @Override // c4.d
-    public int u() {
-        return ((long[]) this.d).length;
-    }
-
-    public void v(ga gaVar) {
+    public void y(fa faVar) {
         try {
             l8.f fVar = (l8.f) this.c;
-            k8.c cVar = new k8.c(gaVar);
+            k8.c cVar = new k8.c(faVar);
             Parcel p12 = fVar.p1();
             v7.b.c(p12, cVar);
             fVar.t1(p12, 9);
         } catch (RemoteException e10) {
             throw new androidx.car.app.j(e10);
         }
-    }
-
-    public Paint w(float f10, int i7) {
-        Paint[] paintArr = (Paint[]) this.b;
-        if (paintArr[i7] == null) {
-            Paint paint = new Paint(1);
-            paintArr[i7] = paint;
-            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        }
-        paintArr[i7].setShader(null);
-        paintArr[i7].setColor(-65536);
-        paintArr[i7].setAlpha((int) (f10 * 255.0f));
-        return paintArr[i7];
-    }
-
-    public int x(gc.f fVar) {
-        ArrayList arrayList = (ArrayList) this.b;
-        int size = arrayList.size();
-        int i7 = 0;
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            ic.e eVar = (ic.e) obj;
-            int i11 = eVar.d;
-            gc.e eVar2 = eVar.a;
-            int a10 = eVar2.a(fVar);
-            int i12 = a10 + 4;
-            int ordinal = eVar2.ordinal();
-            if (ordinal != 1) {
-                if (ordinal == 2) {
-                    i12 = ((i11 / 2) * 11) + i12 + (i11 % 2 != 1 ? 0 : 6);
-                } else if (ordinal == 4) {
-                    i12 += eVar.a() * 8;
-                } else if (ordinal == 5) {
-                    i12 = a10 + 12;
-                } else if (ordinal == 6) {
-                    i12 += i11 * 13;
-                }
-            } else {
-                int i13 = ((i11 / 3) * 10) + i12;
-                int i14 = i11 % 3;
-                i12 = i13 + (i14 != 1 ? i14 == 2 ? 7 : 0 : 4);
-            }
-            i7 += i12;
-        }
-        return i7;
     }
 
     public /* synthetic */ m(Object obj, Object obj2, Object obj3, int i7) {
@@ -1123,45 +1121,45 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         this.c = obj3;
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public void onRenderedFirstFrame() {
         d7 d7Var = (d7) this.b;
         Runnable[] runnableArr = (Runnable[]) this.c;
-        x5 x5Var = (x5) this.d;
-        w5 w5Var = x5Var.I;
-        if (w5Var != null && w5Var.g) {
-            int i7 = x5Var.f;
-            int i10 = x5Var.h;
-            w5Var.d = true;
-            w5Var.e = i7;
-            w5Var.f = i10;
-            org.telegram.ui.web.b bVar = w5Var.c;
+        w5 w5Var = (w5) this.d;
+        v5 v5Var = w5Var.I;
+        if (v5Var != null && v5Var.g) {
+            int i7 = w5Var.f;
+            int i10 = w5Var.h;
+            v5Var.d = true;
+            v5Var.e = i7;
+            v5Var.f = i10;
+            org.telegram.ui.web.b bVar = v5Var.c;
             if (bVar != null) {
-                bVar.a(Integer.valueOf(i7), Integer.valueOf(w5Var.f));
+                bVar.a(Integer.valueOf(i7), Integer.valueOf(v5Var.f));
             }
         }
         Runnable runnable = runnableArr[0];
         if (runnable == null) {
-            k51 k51Var = x5Var.n;
-            if (k51Var != null) {
-                if (w5Var == null || !w5Var.g) {
-                    k51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new h4(4, this, d7Var)).start();
+            v51 v51Var = w5Var.n;
+            if (v51Var != null) {
+                if (v5Var == null || !v5Var.g) {
+                    v51Var.animate().alpha(1.0f).setDuration(180L).withEndAction(new r1(6, this, d7Var)).start();
                     return;
                 }
                 return;
             }
             return;
         }
-        x5Var.post(runnable);
+        w5Var.post(runnable);
         runnableArr[0] = null;
-        Bitmap bitmap = x5Var.a;
+        Bitmap bitmap = w5Var.a;
         if (bitmap != null) {
             bitmap.recycle();
-            if (d7Var.M0 == x5Var.a) {
+            if (d7Var.M0 == w5Var.a) {
                 d7Var.M0 = null;
             }
-            x5Var.a = null;
-            x5Var.invalidate();
+            w5Var.a = null;
+            w5Var.invalidate();
         }
     }
 
@@ -1175,7 +1173,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
     public m(ai.k0 k0Var, l8.f fVar) {
         this.a = 7;
         this.c = fVar;
-        q6.m.g(k0Var);
+        q6.m.h(k0Var);
         this.b = k0Var;
     }
 
@@ -1226,31 +1224,31 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         Arrays.sort(copyOf);
     }
 
-    @Override // org.telegram.ui.Components.li0
-    public /* synthetic */ void K() {
+    @Override // org.telegram.ui.bn0
+    public void u() {
     }
 
-    @Override // org.telegram.ui.ym0
-    public void y() {
+    @Override // org.telegram.ui.Components.ui0
+    public /* synthetic */ void z() {
     }
 
     public m(View view) {
         this.a = 28;
         this.d = view;
-        h51 h51Var = new h51(this, view);
-        this.b = h51Var;
-        view.addOnLayoutChangeListener(h51Var);
+        r51 r51Var = new r51(this, view);
+        this.b = r51Var;
+        view.addOnLayoutChangeListener(r51Var);
     }
 
-    @Override // org.telegram.ui.ym0
+    @Override // org.telegram.ui.bn0
     public void A(Editable editable) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onSeekFinished(m2.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.s51
+    @Override // org.telegram.ui.Components.d61
     public /* synthetic */ void onSeekStarted(m2.a aVar) {
     }
 
@@ -1268,28 +1266,28 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         this.c = typedArray;
     }
 
-    public m(f2.m[] mVarArr) {
+    public m(f2.n[] nVarArr) {
         this.a = 15;
         w0 w0Var = new w0();
-        f2.r rVar = new f2.r();
-        rVar.c = 1.0f;
-        rVar.d = 1.0f;
-        f2.j jVar = f2.j.e;
-        rVar.e = jVar;
-        rVar.f = jVar;
-        rVar.g = jVar;
-        rVar.h = jVar;
-        ByteBuffer byteBuffer = f2.m.a;
-        rVar.k = byteBuffer;
-        rVar.l = byteBuffer;
-        rVar.b = -1;
-        f2.m[] mVarArr2 = new f2.m[mVarArr.length + 2];
-        this.b = mVarArr2;
-        System.arraycopy(mVarArr, 0, mVarArr2, 0, mVarArr.length);
+        f2.s sVar = new f2.s();
+        sVar.c = 1.0f;
+        sVar.d = 1.0f;
+        f2.k kVar = f2.k.e;
+        sVar.e = kVar;
+        sVar.f = kVar;
+        sVar.g = kVar;
+        sVar.h = kVar;
+        ByteBuffer byteBuffer = f2.n.a;
+        sVar.k = byteBuffer;
+        sVar.l = byteBuffer;
+        sVar.b = -1;
+        f2.n[] nVarArr2 = new f2.n[nVarArr.length + 2];
+        this.b = nVarArr2;
+        System.arraycopy(nVarArr, 0, nVarArr2, 0, nVarArr.length);
         this.c = w0Var;
-        this.d = rVar;
-        mVarArr2[mVarArr.length] = w0Var;
-        mVarArr2[mVarArr.length + 1] = rVar;
+        this.d = sVar;
+        nVarArr2[nVarArr.length] = w0Var;
+        nVarArr2[nVarArr.length + 1] = sVar;
     }
 
     public m(Signature signature) {
@@ -1317,10 +1315,10 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         ViewTreeObserver viewTreeObserver;
         ViewTreeObserver viewTreeObserver2;
         this.a = 5;
-        x1 x1Var = new x1(this, 6);
+        r2 r2Var = new r2(this, 6);
         this.b = view;
         this.c = kVar;
-        view.addOnAttachStateChangeListener(x1Var);
+        view.addOnAttachStateChangeListener(r2Var);
         if (!view.isAttachedToWindow() || (viewTreeObserver2 = (ViewTreeObserver) this.d) == (viewTreeObserver = view.getViewTreeObserver())) {
             return;
         }
@@ -1336,52 +1334,52 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         }
     }
 
-    public m(ab.q qVar, gc.f fVar, ic.d dVar) {
-        gc.e eVar;
+    public m(ab.q qVar, gc.e eVar, ic.d dVar) {
+        gc.d dVar2;
         int i7;
         int i10;
         this.a = 2;
         this.d = qVar;
         this.b = new ArrayList();
-        ic.d dVar2 = dVar;
+        ic.d dVar3 = dVar;
         int i11 = 0;
         int i12 = 0;
         while (true) {
-            eVar = gc.e.n;
-            if (dVar2 == null) {
+            dVar2 = gc.d.n;
+            if (dVar3 == null) {
                 break;
             }
-            int i13 = dVar2.c;
-            int i14 = i11 + dVar2.d;
-            ic.d dVar3 = dVar2.e;
+            int i13 = dVar3.c;
+            int i14 = i11 + dVar3.d;
+            ic.d dVar4 = dVar3.e;
             int i15 = i12;
-            gc.e eVar2 = dVar2.a;
-            boolean z10 = (eVar2 == gc.e.h && dVar3 == null && i13 != 0) || !(dVar3 == null || i13 == dVar3.c);
+            gc.d dVar5 = dVar3.a;
+            boolean z10 = (dVar5 == gc.d.h && dVar4 == null && i13 != 0) || !(dVar4 == null || i13 == dVar4.c);
             i7 = z10 ? 1 : i15;
-            if (dVar3 == null || dVar3.a != eVar2 || z10) {
-                ((ArrayList) this.b).add(0, new ic.e(this, eVar2, dVar2.b, i13, i14));
+            if (dVar4 == null || dVar4.a != dVar5 || z10) {
+                ((ArrayList) this.b).add(0, new ic.e(this, dVar5, dVar3.b, i13, i14));
                 i10 = 0;
             } else {
                 i10 = i14;
             }
             if (z10) {
-                ((ArrayList) this.b).add(0, new ic.e(this, eVar, dVar2.b, dVar2.c, 0));
+                ((ArrayList) this.b).add(0, new ic.e(this, dVar2, dVar3.b, dVar3.c, 0));
             }
             i12 = i7;
-            dVar2 = dVar3;
+            dVar3 = dVar4;
             i11 = i10;
         }
         int i16 = i12;
         boolean z11 = qVar.a;
-        gc.c cVar = (gc.c) qVar.d;
+        gc.b bVar = (gc.b) qVar.d;
         if (z11) {
-            ic.e eVar3 = (ic.e) ((ArrayList) this.b).get(0);
-            if (eVar3 != null && eVar3.a != eVar && i16 != 0) {
-                ((ArrayList) this.b).add(0, new ic.e(this, eVar, 0, 0, 0));
+            ic.e eVar2 = (ic.e) ((ArrayList) this.b).get(0);
+            if (eVar2 != null && eVar2.a != dVar2 && i16 != 0) {
+                ((ArrayList) this.b).add(0, new ic.e(this, dVar2, 0, 0, 0));
             }
-            ((ArrayList) this.b).add(((ic.e) ((ArrayList) this.b).get(0)).a == eVar ? 1 : 0, new ic.e(this, gc.e.s, 0, 0, 0));
+            ((ArrayList) this.b).add(((ic.e) ((ArrayList) this.b).get(0)).a == dVar2 ? 1 : 0, new ic.e(this, gc.d.s, 0, 0, 0));
         }
-        int i17 = fVar.a;
+        int i17 = eVar.a;
         int i18 = 26;
         int c10 = p1.g.c(i17 <= 9 ? 1 : i17 <= 26 ? 2 : 3);
         if (c10 == 0) {
@@ -1392,21 +1390,21 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         } else {
             i7 = 10;
         }
-        int x10 = x(fVar);
-        while (i17 < i18 && !ic.b.d(x10, gc.f.c(i17), cVar)) {
+        int C = C(eVar);
+        while (i17 < i18 && !ic.b.d(C, gc.e.c(i17), bVar)) {
             i17++;
         }
-        while (i17 > i7 && ic.b.d(x10, gc.f.c(i17 - 1), cVar)) {
+        while (i17 > i7 && ic.b.d(C, gc.e.c(i17 - 1), bVar)) {
             i17--;
         }
-        this.c = gc.f.c(i17);
+        this.c = gc.e.c(i17);
     }
 
-    public m(l2.h hVar, m2.j jVar) {
+    public m(l2.h hVar, m2.i iVar) {
         this.a = 8;
         this.d = hVar;
         this.b = new HashMap();
-        this.c = jVar;
+        this.c = iVar;
     }
 
     public m(Object[] objArr, Object[] objArr2) {
@@ -1428,7 +1426,7 @@ public final class m implements s51, ib.b, c4.d, a0, OnCompleteListener, q5.b, I
         this.d = l(objArr2, iArr);
     }
 
-    @Override // org.telegram.ui.Components.li0
-    public /* synthetic */ void J(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
+    @Override // org.telegram.ui.Components.ui0
+    public /* synthetic */ void x(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
     }
 }

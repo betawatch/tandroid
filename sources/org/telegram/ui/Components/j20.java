@@ -1,291 +1,69 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.accessibility.AccessibilityEvent;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j20 extends tj0 {
-    public final Context c;
-    public final jg.z1 d;
-    public h20 e;
-    public int f;
-    public boolean h;
-    public int n;
-    public int r;
-    public int s;
-    public int w;
-    public final /* synthetic */ k20 x;
+public final class j20 extends ImageView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public j20(k20 k20Var, Context context) {
-        this.x = k20Var;
-        this.c = context;
-        jg.z1 z1Var = new jg.z1(true);
-        this.d = z1Var;
-        z1Var.a = new i20(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ j20(Object obj, Context context, int i7, int i10) {
+        super(context);
+        this.a = i10;
+        this.c = obj;
+        this.b = i7;
     }
 
-    @Override // v4.h0
-    public final void A(v4.e1 e1Var) {
-        View view = e1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+    @Override // android.widget.ImageView, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.onDraw(canvas);
+                org.telegram.ui.f00 f00Var = (org.telegram.ui.f00) this.c;
+                o80 o80Var = f00Var.s;
+                if (f00Var.r) {
+                    int i7 = this.b / 2;
+                    o80Var.setBounds(i7, i7, getWidth() - i7, getHeight() - i7);
+                    o80Var.draw(canvas);
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        View view = e1Var.a;
-        return !((view instanceof org.telegram.ui.Cells.a5) && this.x.a2.contains(Long.valueOf(((org.telegram.ui.Cells.a5) view).getUserId()))) && e1Var.f == 0;
+    @Override // android.view.View
+    public void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                if (accessibilityEvent.getEventType() == 32768) {
+                    ((org.telegram.ui.g30) ((k20) this.c).d).m1.x(this.b, true);
+                    break;
+                }
+                break;
+            default:
+                super.onInitializeAccessibilityEvent(accessibilityEvent);
+                break;
+        }
     }
 
-    @Override // v4.h0
-    public final int b() {
-        return this.f;
-    }
-
-    @Override // v4.h0
-    public final int d(int i7) {
-        if (i7 == 0) {
-            return 2;
+    @Override // android.widget.ImageView, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 1:
+                return drawable == ((org.telegram.ui.f00) this.c).s || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
         }
-        if (i7 == this.r) {
-            return 3;
-        }
-        return (i7 == this.w || i7 == this.s) ? 1 : 0;
-    }
-
-    @Override // v4.h0
-    public final void f() {
-        this.f = 1;
-        jg.z1 z1Var = this.d;
-        int size = z1Var.g.size();
-        if (size != 0) {
-            int i7 = this.f;
-            this.s = i7;
-            this.f = size + 1 + i7;
-        } else {
-            this.s = -1;
-        }
-        int size2 = z1Var.e.size();
-        if (size2 != 0) {
-            int i10 = this.f;
-            this.w = i10;
-            this.f = size2 + 1 + i10;
-        } else {
-            this.w = -1;
-        }
-        int i11 = this.f;
-        this.f = i11 + 1;
-        this.r = i11;
-        super.f();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0077  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x00ba  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00cc A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x007b  */
-    @Override // v4.h0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void t(v4.e1 e1Var, int i7) {
-        TLObject tLObject;
-        boolean z10;
-        TLRPC.User a22;
-        int size;
-        String str;
-        boolean z11;
-        int size2;
-        int i10 = i7;
-        int i11 = e1Var.f;
-        View view = e1Var.a;
-        SpannableStringBuilder spannableStringBuilder = null;
-        if (i11 != 0) {
-            if (i11 != 1) {
-                return;
-            }
-            org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) view;
-            if (i10 == this.s) {
-                x3Var.setText(org.telegram.messenger.hd.M0(2131752377, null));
-                return;
-            } else {
-                if (i10 == this.w) {
-                    x3Var.setText(org.telegram.messenger.hd.M0(2131749535, null));
-                    return;
-                }
-                return;
-            }
-        }
-        int i12 = this.s;
-        jg.z1 z1Var = this.d;
-        if (i12 >= 0 && i10 > i12) {
-            if (i10 < z1Var.g.size() + i12 + 1) {
-                tLObject = (TLObject) z1Var.g.get((i10 - this.s) - 1);
-                z10 = tLObject instanceof TLRPC.User;
-                k20 k20Var = this.x;
-                if (z10) {
-                    a22 = (TLRPC.User) tLObject;
-                } else if (tLObject instanceof TLRPC.ChannelParticipant) {
-                    a22 = org.telegram.messenger.np.s1(k20Var.a).a2(Long.valueOf(org.telegram.messenger.gj.B1(((TLRPC.ChannelParticipant) tLObject).peer)));
-                } else if (!(tLObject instanceof TLRPC.ChatParticipant)) {
-                    return;
-                } else {
-                    a22 = org.telegram.messenger.np.s1(k20Var.a).a2(Long.valueOf(((TLRPC.ChatParticipant) tLObject).user_id));
-                }
-                TLRPC.User user = a22;
-                String n10 = org.telegram.messenger.q10.n(user);
-                size = z1Var.g.size();
-                if (size != 0) {
-                    int i13 = size + 1;
-                    if (i13 > i10) {
-                        str = z1Var.n;
-                        z11 = true;
-                        if (!z11 || n10 == null || (size2 = z1Var.e.size()) == 0 || size2 + 1 <= i10) {
-                            n10 = null;
-                        } else {
-                            String str2 = z1Var.c;
-                            if (str2.startsWith("@")) {
-                                str2 = str2.substring(1);
-                            }
-                            try {
-                                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                                spannableStringBuilder2.append((CharSequence) "@");
-                                spannableStringBuilder2.append((CharSequence) n10);
-                                int A1 = org.telegram.messenger.g0.A1(n10, str2);
-                                if (A1 != -1) {
-                                    int length = str2.length();
-                                    if (A1 == 0) {
-                                        length++;
-                                    } else {
-                                        A1++;
-                                    }
-                                    spannableStringBuilder2.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.gh, false)), A1, length + A1, 33);
-                                }
-                                n10 = spannableStringBuilder2;
-                            } catch (Exception e10) {
-                                org.telegram.messenger.a8.g(e10, true);
-                            }
-                        }
-                        if (str != null) {
-                            String p10 = org.telegram.messenger.q10.p(user);
-                            SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(p10);
-                            int A12 = org.telegram.messenger.g0.A1(p10, str);
-                            if (A12 != -1) {
-                                spannableStringBuilder3.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.gh, false)), A12, str.length() + A12, 33);
-                            }
-                            spannableStringBuilder = spannableStringBuilder3;
-                        }
-                        org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-                        a5Var.setTag(Integer.valueOf(i10));
-                        a5Var.setCustomImageVisible(k20Var.a2.contains(Long.valueOf(user.id)));
-                        a5Var.c(user, spannableStringBuilder, n10, false);
-                    }
-                    i10 -= i13;
-                }
-                str = null;
-                z11 = false;
-                if (z11) {
-                }
-                n10 = null;
-                if (str != null) {
-                }
-                org.telegram.ui.Cells.a5 a5Var2 = (org.telegram.ui.Cells.a5) view;
-                a5Var2.setTag(Integer.valueOf(i10));
-                a5Var2.setCustomImageVisible(k20Var.a2.contains(Long.valueOf(user.id)));
-                a5Var2.c(user, spannableStringBuilder, n10, false);
-            }
-        }
-        int i14 = this.w;
-        if (i14 >= 0 && i10 > i14) {
-            if (i10 < z1Var.e.size() + i14 + 1) {
-                tLObject = (TLObject) z1Var.e.get((i10 - this.w) - 1);
-                z10 = tLObject instanceof TLRPC.User;
-                k20 k20Var2 = this.x;
-                if (z10) {
-                }
-                TLRPC.User user2 = a22;
-                String n102 = org.telegram.messenger.q10.n(user2);
-                size = z1Var.g.size();
-                if (size != 0) {
-                }
-                str = null;
-                z11 = false;
-                if (z11) {
-                }
-                n102 = null;
-                if (str != null) {
-                }
-                org.telegram.ui.Cells.a5 a5Var22 = (org.telegram.ui.Cells.a5) view;
-                a5Var22.setTag(Integer.valueOf(i10));
-                a5Var22.setCustomImageVisible(k20Var2.a2.contains(Long.valueOf(user2.id)));
-                a5Var22.c(user2, spannableStringBuilder, n102, false);
-            }
-        }
-        tLObject = null;
-        z10 = tLObject instanceof TLRPC.User;
-        k20 k20Var22 = this.x;
-        if (z10) {
-        }
-        TLRPC.User user22 = a22;
-        String n1022 = org.telegram.messenger.q10.n(user22);
-        size = z1Var.g.size();
-        if (size != 0) {
-        }
-        str = null;
-        z11 = false;
-        if (z11) {
-        }
-        n1022 = null;
-        if (str != null) {
-        }
-        org.telegram.ui.Cells.a5 a5Var222 = (org.telegram.ui.Cells.a5) view;
-        a5Var222.setTag(Integer.valueOf(i10));
-        a5Var222.setCustomImageVisible(k20Var22.a2.contains(Long.valueOf(user22.id)));
-        a5Var222.c(user22, spannableStringBuilder, n1022, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v5, types: [android.view.View, org.telegram.ui.Cells.x3] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View] */
-    /* JADX WARN: Type inference failed for: r8v8, types: [android.view.View] */
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        org.telegram.ui.Cells.a5 a5Var;
-        if (i7 != 0) {
-            Context context = this.c;
-            if (i7 == 1) {
-                ?? x3Var = new org.telegram.ui.Cells.x3(context, null);
-                org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.ah, x3Var, null);
-                x3Var.setTextColor(org.telegram.ui.ActionBar.j6.Hh);
-                a5Var = x3Var;
-            } else if (i7 != 2) {
-                a5Var = new View(context);
-            } else {
-                ?? view = new View(context);
-                view.setLayoutParams(new v4.p0(-1, org.telegram.messenger.g0.L(56.0f)));
-                a5Var = view;
-            }
-        } else {
-            org.telegram.ui.Cells.a5 a5Var2 = new org.telegram.ui.Cells.a5(this.c, 2, 2, false, null);
-            a5Var2.setCustomRightImage(R.drawable.msg_invited);
-            a5Var2.setNameColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.eh, false));
-            int x02 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.ch, false);
-            int x03 = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.gh, false);
-            a5Var2.P = true;
-            a5Var2.I = x02;
-            a5Var2.J = x03;
-            a5Var2.setDividerColor(org.telegram.ui.ActionBar.j6.kh);
-            a5Var = a5Var2;
-        }
-        return new cj0(a5Var);
     }
 }

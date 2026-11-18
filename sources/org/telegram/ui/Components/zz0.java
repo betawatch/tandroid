@@ -1,129 +1,59 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-import java.util.Arrays;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class zz0 extends ImageView {
-    public static final org.telegram.ui.Cells.g1 x = new org.telegram.ui.Cells.g1(Float.class, "radius", 3);
-    public final Paint a;
-    public final Matrix b;
-    public RadialGradient c;
-    public boolean d;
-    public float e;
-    public float f;
-    public float h;
-    public fh0 n;
-    public ColorFilter r;
-    public final int[] s;
-    public final int[] w;
+public final class zz0 extends bk0 {
+    public Context c;
+    public ArrayList d;
 
-    public zz0(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.s = new int[2];
-        this.w = new int[2];
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        return true;
     }
 
-    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.l3 l3Var, fh0 fh0Var) {
-        Drawable drawable = fh0Var.getDrawable();
-        if (drawable != null && fh0Var.isAttachedToWindow() && bitmap.isMutable()) {
-            int[] iArr = new int[2];
-            RectF rectF = new RectF(drawable.getBounds());
-            fh0Var.getImageMatrix().mapRect(rectF);
-            fh0Var.getLocationInWindow(iArr);
-            rectF.offset(fh0Var.getPaddingLeft() + iArr[0], fh0Var.getPaddingTop() + iArr[1]);
-            if (l3Var != null) {
-                l3Var.getLocationInWindow(iArr);
-                rectF.offset(-iArr[0], -iArr[1]);
-            }
-            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
-            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
-            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
-            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
-            if (max >= min || max2 >= min2) {
-                return;
-            }
-            int i7 = min - max;
-            int[] iArr2 = new int[i7];
-            for (int i10 = max2; i10 < min2; i10++) {
-                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i10));
-                bitmap.setPixels(iArr2, 0, i7, max, i10, i7, 1);
-            }
+    @Override // v4.i0
+    public final int b() {
+        ArrayList arrayList = this.d;
+        if (arrayList.isEmpty()) {
+            return 0;
+        }
+        return arrayList.size() + 1;
+    }
+
+    @Override // v4.i0
+    public final int d(int i7) {
+        return i7 == 0 ? 1 : 0;
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        if (f1Var.f == 0) {
+            org.telegram.ui.ActionBar.w6 w6Var = (org.telegram.ui.ActionBar.w6) ((ArrayList) this.d.get(i7 - 1)).get(0);
+            int c10 = w6Var.e == org.telegram.ui.ActionBar.n6.Ee ? 0 : w6Var.c();
+            org.telegram.ui.Cells.u8 u8Var = (org.telegram.ui.Cells.u8) f1Var.a;
+            u8Var.a.setText(org.telegram.ui.ActionBar.w4.c(w6Var.e));
+            u8Var.b = c10;
+            u8Var.setWillNotDraw(c10 == 0);
+            u8Var.invalidate();
         }
     }
 
-    public final void b(float f10, float f11, boolean z10) {
-        this.e = f10;
-        this.f = f11;
-        this.d = z10;
-        RadialGradient radialGradient = this.c;
-        Paint paint = this.a;
-        if (radialGradient == null) {
-            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
-            this.c = radialGradient2;
-            paint.setShader(radialGradient2);
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        View u8Var;
+        Context context = this.c;
+        if (i7 != 0) {
+            u8Var = new View(context);
+            u8Var.setLayoutParams(new v4.q0(-1, org.telegram.messenger.g0.L(56.0f)));
+        } else {
+            u8Var = new org.telegram.ui.Cells.u8(context);
+            u8Var.setLayoutParams(new v4.q0(-1, -2));
         }
-        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        if (this.h >= 1.0f || this.d) {
-            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
-            super.onDraw(canvas);
-            fh0 fh0Var = this.n;
-            Drawable drawable = fh0Var != null ? fh0Var.getDrawable() : 0;
-            if (drawable != 0 && this.n.isAttachedToWindow()) {
-                this.n.getLocationInWindow(this.s);
-                getLocationInWindow(this.w);
-                ColorFilter colorFilter = drawable.getColorFilter();
-                canvas.save();
-                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
-                canvas.concat(this.n.getImageMatrix());
-                drawable.setColorFilter(this.r);
-                drawable.draw(canvas);
-                drawable.setColorFilter(colorFilter);
-                canvas.restore();
-                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
-                    invalidate();
-                }
-            }
-            float f10 = this.h;
-            if (f10 >= 1.0f) {
-                float f11 = f10 / 100.0f;
-                Matrix matrix = this.b;
-                matrix.setScale(f11, f11);
-                matrix.postTranslate(this.e, this.f);
-                this.c.setLocalMatrix(matrix);
-                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
-            }
-            canvas.restoreToCount(saveLayer);
-        }
-    }
-
-    public void setRadius(float f10) {
-        this.h = f10;
-        invalidate();
+        return new kj0(u8Var);
     }
 }

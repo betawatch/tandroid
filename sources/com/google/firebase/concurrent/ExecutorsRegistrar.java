@@ -2,7 +2,7 @@ package com.google.firebase.concurrent;
 
 import android.os.Build;
 import android.os.StrictMode;
-import c8.tc;
+import c8.wc;
 import com.google.firebase.components.ComponentRegistrar;
 import e2.j0;
 import java.util.Arrays;
@@ -22,7 +22,7 @@ import ug.x;
 import v9.a;
 import v9.f;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ExecutorsRegistrar implements ComponentRegistrar {
     public static final m a = new m(new ab.m(3));
@@ -49,10 +49,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet3 = new HashSet();
         hashSet.add(qVar);
         for (q qVar2 : qVarArr) {
-            tc.a(qVar2, "Null interface");
+            wc.a(qVar2, "Null interface");
         }
         Collections.addAll(hashSet, qVarArr);
-        u9.a aVar = new u9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new x(7), hashSet3);
+        u9.a aVar = new u9.a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new x(8), hashSet3);
         q qVar3 = new q(b.class, ScheduledExecutorService.class);
         q[] qVarArr2 = {new q(b.class, ExecutorService.class), new q(b.class, Executor.class)};
         HashSet hashSet4 = new HashSet();
@@ -60,10 +60,10 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet6 = new HashSet();
         hashSet4.add(qVar3);
         for (q qVar4 : qVarArr2) {
-            tc.a(qVar4, "Null interface");
+            wc.a(qVar4, "Null interface");
         }
         Collections.addAll(hashSet4, qVarArr2);
-        u9.a aVar2 = new u9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new x(8), hashSet6);
+        u9.a aVar2 = new u9.a(null, new HashSet(hashSet4), new HashSet(hashSet5), 0, 0, new x(9), hashSet6);
         q qVar5 = new q(c.class, ScheduledExecutorService.class);
         q[] qVarArr3 = {new q(c.class, ExecutorService.class), new q(c.class, Executor.class)};
         HashSet hashSet7 = new HashSet();
@@ -71,12 +71,12 @@ public class ExecutorsRegistrar implements ComponentRegistrar {
         HashSet hashSet9 = new HashSet();
         hashSet7.add(qVar5);
         for (q qVar6 : qVarArr3) {
-            tc.a(qVar6, "Null interface");
+            wc.a(qVar6, "Null interface");
         }
         Collections.addAll(hashSet7, qVarArr3);
-        u9.a aVar3 = new u9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new x(9), hashSet9);
+        u9.a aVar3 = new u9.a(null, new HashSet(hashSet7), new HashSet(hashSet8), 0, 0, new x(10), hashSet9);
         j0 b10 = u9.a.b(new q(d.class, Executor.class));
-        b10.f = new x(10);
+        b10.f = new x(11);
         return Arrays.asList(aVar, aVar2, aVar3, b10.b());
     }
 }

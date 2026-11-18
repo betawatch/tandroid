@@ -1,34 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.s10;
-import org.telegram.tgnet.tl.TL_wallet;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ s10 c;
-    public final /* synthetic */ TL_wallet.walletTransaction d;
-    public final /* synthetic */ String e;
+public final class d7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ si a;
+    public final /* synthetic */ m7 b;
+    public final /* synthetic */ e7 c;
 
-    public /* synthetic */ d7(WalletEngine2 walletEngine2, s10 s10Var, TL_wallet.walletTransaction wallettransaction, String str, int i7) {
-        this.a = i7;
-        this.b = walletEngine2;
-        this.c = s10Var;
-        this.d = wallettransaction;
-        this.e = str;
+    public d7(e7 e7Var, si siVar, m7 m7Var) {
+        this.c = e7Var;
+        this.a = siVar;
+        this.b = m7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$previewTonConnect$1(this.c, this.d, this.e);
-                break;
-            default:
-                this.b.lambda$emulateRotateKey$29(this.c, this.d, this.e);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        this.c.a(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.c.a(true);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        if (this.a != null) {
+            org.telegram.messenger.g0.v1(this.b);
         }
     }
 }

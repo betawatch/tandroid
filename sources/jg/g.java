@@ -2,16 +2,16 @@ package jg;
 
 import j$.util.Objects;
 import java.util.ArrayList;
-import org.telegram.messenger.s3;
+import org.telegram.messenger.u3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pj0;
-import org.telegram.ui.Components.q01;
-import org.telegram.ui.Components.s01;
-import org.telegram.ui.Components.vw;
-import org.telegram.ui.f40;
-import org.telegram.ui.n11;
+import org.telegram.ui.Components.a11;
+import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.bx;
+import org.telegram.ui.Components.xj0;
+import org.telegram.ui.i40;
+import org.telegram.ui.r11;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g extends v4.o {
     public final /* synthetic */ int b;
@@ -51,20 +51,20 @@ public final class g extends v4.o {
                 TLRPC.Dialog dialog2 = kVar2.c;
                 return i11 == i12 && (i11 != 0 ? i11 != 14 ? i11 != 4 ? i11 != 6 ? i11 != 5 ? i11 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
             case 1:
-                return ((Integer) this.c.get(i7)).equals(((vw) this.d).n.get(i10));
+                return ((Integer) this.c.get(i7)).equals(((bx) this.d).n.get(i10));
             case 2:
-                return Objects.equals(this.c.get(i7), ((pj0) this.d).n.get(i10));
+                return Objects.equals(this.c.get(i7), ((xj0) this.d).n.get(i10));
             case 3:
-                return ((s01) this.c.get(i7)).a() == ((s01) ((q01) this.d).c.get(i10)).a();
+                return ((b11) this.c.get(i7)).a() == ((b11) ((a11) this.d).c.get(i10)).a();
             case 4:
-                f40 f40Var = (f40) this.d;
+                i40 i40Var = (i40) this.d;
                 ArrayList arrayList = this.c;
-                if (i7 >= arrayList.size() || i10 >= f40Var.e.size()) {
+                if (i7 >= arrayList.size() || i10 >= i40Var.e.size()) {
                     return false;
                 }
-                return ((s3) arrayList.get(i7)).equals(f40Var.e.get(i10));
+                return ((u3) arrayList.get(i7)).equals(i40Var.e.get(i10));
             default:
-                return ((Long) this.c.get(i7)).equals(((n11) this.d).w0.get(i10));
+                return ((Long) this.c.get(i7)).equals(((r11) this.d).w0.get(i10));
         }
     }
 
@@ -74,15 +74,15 @@ public final class g extends v4.o {
             case 0:
                 return this.c.size();
             case 1:
-                return ((vw) this.d).n.size();
+                return ((bx) this.d).n.size();
             case 2:
-                return ((pj0) this.d).n.size();
+                return ((xj0) this.d).n.size();
             case 3:
-                return ((q01) this.d).c.size();
+                return ((a11) this.d).c.size();
             case 4:
-                return ((f40) this.d).e.size();
+                return ((i40) this.d).e.size();
             default:
-                return ((n11) this.d).w0.size();
+                return ((r11) this.d).w0.size();
         }
     }
 

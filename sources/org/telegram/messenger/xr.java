@@ -1,386 +1,296 @@
 package org.telegram.messenger;
 
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Typeface;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Build;
-import android.security.keystore.KeyPermanentlyInvalidatedException;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.lang.reflect.Field;
-import java.security.KeyPairGenerator;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
-import javax.crypto.Cipher;
-import org.telegram.tgnet.TLObject;
+import android.location.Location;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.View;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import com.google.android.gms.tasks.Tasks;
+import com.google.firebase.messaging.FirebaseMessaging;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.rv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class xr {
-    public static volatile boolean a = false;
-    public static final StringBuilder b = new StringBuilder();
-    public static final byte[] c = {-1, -40, -1, -32, 0, 16, 74, 70, 73, 70, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, -1, -37, 0, 67, 0, 40, 28, 30, 35, 30, 25, 40, 35, 33, 35, 45, 43, 40, 48, 60, 100, 65, 60, 55, 55, 60, 123, 88, 93, 73, 100, -111, Byte.MIN_VALUE, -103, -106, -113, Byte.MIN_VALUE, -116, -118, -96, -76, -26, -61, -96, -86, -38, -83, -118, -116, -56, -1, -53, -38, -18, -11, -1, -1, -1, -101, -63, -1, -1, -1, -6, -1, -26, -3, -1, -8, -1, -37, 0, 67, 1, 43, 45, 45, 60, 53, 60, 118, 65, 65, 118, -8, -91, -116, -91, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -8, -1, -64, 0, 17, 8, 0, 30, 0, 40, 3, 1, 34, 0, 2, 17, 1, 3, 17, 1, -1, -60, 0, 31, 0, 0, 1, 5, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -60, 0, -75, 16, 0, 2, 1, 3, 3, 2, 4, 3, 5, 5, 4, 4, 0, 0, 1, 125, 1, 2, 3, 0, 4, 17, 5, 18, 33, 49, 65, 6, 19, 81, 97, 7, 34, 113, 20, 50, -127, -111, -95, 8, 35, 66, -79, -63, 21, 82, -47, -16, 36, 51, 98, 114, -126, 9, 10, 22, 23, 24, 25, 26, 37, 38, 39, 40, 41, 42, 52, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, -125, -124, -123, -122, -121, -120, -119, -118, -110, -109, -108, -107, -106, -105, -104, -103, -102, -94, -93, -92, -91, -90, -89, -88, -87, -86, -78, -77, -76, -75, -74, -73, -72, -71, -70, -62, -61, -60, -59, -58, -57, -56, -55, -54, -46, -45, -44, -43, -42, -41, -40, -39, -38, -31, -30, -29, -28, -27, -26, -25, -24, -23, -22, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -1, -60, 0, 31, 1, 0, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, -1, -60, 0, -75, 17, 0, 2, 1, 2, 4, 4, 3, 4, 7, 5, 4, 4, 0, 1, 2, 119, 0, 1, 2, 3, 17, 4, 5, 33, 49, 6, 18, 65, 81, 7, 97, 113, 19, 34, 50, -127, 8, 20, 66, -111, -95, -79, -63, 9, 35, 51, 82, -16, 21, 98, 114, -47, 10, 22, 36, 52, -31, 37, -15, 23, 24, 25, 26, 38, 39, 40, 41, 42, 53, 54, 55, 56, 57, 58, 67, 68, 69, 70, 71, 72, 73, 74, 83, 84, 85, 86, 87, 88, 89, 90, 99, 100, 101, 102, 103, 104, 105, 106, 115, 116, 117, 118, 119, 120, 121, 122, -126, -125, -124, -123, -122, -121, -120, -119, -118, -110, -109, -108, -107, -106, -105, -104, -103, -102, -94, -93, -92, -91, -90, -89, -88, -87, -86, -78, -77, -76, -75, -74, -73, -72, -71, -70, -62, -61, -60, -59, -58, -57, -56, -55, -54, -46, -45, -44, -43, -42, -41, -40, -39, -38, -30, -29, -28, -27, -26, -25, -24, -23, -22, -14, -13, -12, -11, -10, -9, -8, -7, -6, -1, -38, 0, 12, 3, 1, 0, 2, 17, 3, 17, 0, 63, 0};
-    public static final byte[] d = {-1, -39};
-    public static KeyStore e;
-    public static KeyPairGenerator f;
-    public static Boolean g;
-    public static Boolean h;
-    public static int i;
-    public static SharedPreferences j;
-    public static volatile ji.m k;
+public final /* synthetic */ class xr implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public static boolean a() {
-        Boolean bool = g;
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        try {
-            Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding").init(2, e.getKey("tmessages_passcode", null));
-            g = Boolean.FALSE;
-            return false;
-        } catch (KeyPermanentlyInvalidatedException unused) {
-            g = Boolean.TRUE;
-            return true;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            g = Boolean.FALSE;
-            return false;
-        }
+    public /* synthetic */ xr(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x004c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void b(boolean z10) {
-        boolean z11;
-        boolean z12;
-        FingerprintManager fingerprintManager;
-        FingerprintManager fingerprintManager2;
-        if (g()) {
-            return;
-        }
-        Typeface typeface = g0.a;
-        if (!((KeyguardManager) t0.b.getSystemService("keyguard")).isKeyguardSecure()) {
-            return;
-        }
-        int i7 = 0;
-        try {
-            fingerprintManager2 = (FingerprintManager) t0.b.getSystemService("fingerprint");
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
-        if (fingerprintManager2 != null) {
-            z11 = fingerprintManager2.isHardwareDetected();
-            if (z11) {
-                return;
-            }
-            try {
-                fingerprintManager = (FingerprintManager) t0.b.getSystemService("fingerprint");
-            } catch (Exception e11) {
-                a8.g(e11, true);
-            }
-            if (fingerprintManager != null) {
-                z12 = fingerprintManager.hasEnrolledFingerprints();
-                if (z12) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        FirebaseMessaging firebaseMessaging;
+        Task task;
+        TLRPC.Message message;
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                try {
+                    t0.b.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, (Bundle) this.b);
+                    return;
+                } catch (Exception e10) {
+                    a8.g(e10, true);
                     return;
                 }
-                Utilities.e.c(new c9(i7, z10));
+            case 1:
+                ks.f(((ys) this.b).a).k(42, new Object[0]);
                 return;
-            }
-            z12 = false;
-            if (z12) {
-            }
-        }
-        z11 = false;
-        if (z11) {
-        }
-    }
-
-    public static Bitmap c(int i7, int i10) {
-        Bitmap createBitmap = Bitmap.createBitmap(i7, i10, Bitmap.Config.ARGB_8888);
-        createBitmap.eraseColor(0);
-        return createBitmap;
-    }
-
-    public static String d() {
-        String str = "mips";
-        String str2 = "armeabi";
-        try {
-            String str3 = Build.CPU_ABI;
-            if (str3.equalsIgnoreCase("x86_64")) {
-                str = "x86_64";
-            } else if (str3.equalsIgnoreCase("arm64-v8a")) {
-                str = "arm64-v8a";
-            } else if (str3.equalsIgnoreCase("armeabi-v7a")) {
-                str = "armeabi-v7a";
-            } else {
-                if (!str3.equalsIgnoreCase("armeabi")) {
-                    if (str3.equalsIgnoreCase("x86")) {
-                        str = "x86";
-                    } else if (!str3.equalsIgnoreCase("mips")) {
-                        if (r2.a) {
-                            a8.d("Unsupported arch: ".concat(str3));
-                        }
-                    }
-                }
-                str = "armeabi";
-            }
-            str2 = str;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
-        String property = System.getProperty("os.arch");
-        return (property == null || !property.contains("686")) ? str2 : "x86";
-    }
-
-    public static KeyStore e() {
-        KeyStore keyStore = e;
-        if (keyStore != null) {
-            return keyStore;
-        }
-        try {
-            KeyStore keyStore2 = KeyStore.getInstance("AndroidKeyStore");
-            e = keyStore2;
-            keyStore2.load(null);
-            return e;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0082 A[Catch: all -> 0x001f, TryCatch #4 {all -> 0x001f, blocks: (B:11:0x000e, B:13:0x0019, B:18:0x0026, B:35:0x0057, B:37:0x005b, B:38:0x0063, B:20:0x007e, B:22:0x0082, B:23:0x0097, B:43:0x006e), top: B:10:0x000e, outer: #2, inners: #0, #3 }] */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x009e A[RETURN] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static synchronized void f(Context context) {
-        synchronized (xr.class) {
-            if (a) {
-                return;
-            }
-            try {
-                try {
-                    System.loadLibrary("tmessages.49");
-                    a = true;
-                    if (r2.a) {
-                        a8.b("loaded normal lib");
-                    }
-                } catch (Error e10) {
-                    a8.g(e10, true);
-                    StringBuilder sb2 = b;
-                    sb2.append("128: ");
-                    sb2.append(e10);
-                    sb2.append("\n");
-                    String d2 = d();
-                    File file = new File(context.getFilesDir(), "lib");
-                    file.mkdirs();
-                    File file2 = new File(file, "libtmessages.49loc.so");
-                    if (file2.exists()) {
-                        try {
-                            if (r2.a) {
-                                a8.b("Load local lib");
-                            }
-                            System.load(file2.getAbsolutePath());
-                            a = true;
+            case 2:
+                kt ktVar = (kt) this.b;
+                ktVar.a = true;
+                int i7 = j10.t0;
+                int i10 = 0;
+                boolean z11 = false;
+                while (true) {
+                    ArrayList arrayList = bz.z1;
+                    if (i10 >= arrayList.size()) {
+                        if (z11) {
                             return;
-                        } catch (Error e11) {
-                            StringBuilder sb3 = b;
-                            sb3.append(e11);
-                            sb3.append("\n");
+                        }
+                        ktVar.a = false;
+                        ktVar.a();
+                        return;
+                    }
+                    az azVar = (az) arrayList.get(i10);
+                    if (!azVar.c && SystemClock.elapsedRealtime() - azVar.e >= 120000) {
+                        azVar.c = true;
+                        ConnectionsManager.getInstance(i7).checkProxy(azVar.a, new j1(azVar, 15));
+                        z11 = true;
+                    }
+                    i10++;
+                }
+                break;
+            case 3:
+                nt ntVar = (nt) this.b;
+                try {
+                    bz.i = SystemClock.elapsedRealtime();
+                    o9.g.f(t0.b);
+                    ob.c cVar = FirebaseMessaging.m;
+                    synchronized (FirebaseMessaging.class) {
+                        firebaseMessaging = FirebaseMessaging.getInstance(o9.g.c());
+                    }
+                    if (firebaseMessaging.d.v()) {
+                        task = Tasks.forException(new IllegalStateException("API disabled. Please use {@link #register()} instead or enable this API by removing {@code <meta-data android:name=\"firebase_messaging_installation_id_enabled\" android:value=\"true\" />} from your app's manifest."));
+                    } else {
+                        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
+                        firebaseMessaging.g.execute(new a1.e(6, firebaseMessaging, taskCompletionSource));
+                        task = taskCompletionSource.getTask();
+                    }
+                    task.addOnCompleteListener(new ed(ntVar, 13));
+                    return;
+                } catch (Throwable th2) {
+                    a8.g(th2, true);
+                    return;
+                }
+            case 4:
+                ut utVar = (ut) this.b;
+                ev evVar = utVar.e;
+                if (evVar == null || !evVar.H()) {
+                    utVar.w.l0();
+                    return;
+                }
+                return;
+            case 5:
+                View view = ((bu) this.b).W;
+                if (view != null) {
+                    view.invalidate();
+                    return;
+                }
+                return;
+            case 6:
+                View view2 = ((cu) this.b).h;
+                if (view2 != null) {
+                    view2.invalidate();
+                    return;
+                }
+                return;
+            case 7:
+                org.telegram.ui.Cells.l1 l1Var = ((ev) this.b).F;
+                if (l1Var != null) {
+                    l1Var.m();
+                    return;
+                }
+                return;
+            case 8:
+                dv dvVar = (dv) this.b;
+                dvVar.K = null;
+                if (dvVar.R == null) {
+                    if (dvVar.N == null) {
+                        return;
+                    }
+                    dvVar.L = true;
+                    View view3 = dvVar.T;
+                    if (view3 != null) {
+                        try {
+                            view3.performHapticFeedback(0);
+                        } catch (Exception unused) {
+                        }
+                    }
+                    dvVar.l(dvVar.N, true);
+                    n2.o0 o0Var = dvVar.J;
+                    if (o0Var != null) {
+                        o0Var.f(true);
+                        return;
+                    }
+                    return;
+                }
+                dvVar.L = true;
+                View view4 = dvVar.T;
+                if (view4 != null) {
+                    try {
+                        view4.performHapticFeedback(0);
+                    } catch (Exception unused2) {
+                    }
+                }
+                cu cuVar = dvVar.R;
+                ev evVar2 = dvVar.a;
+                org.telegram.ui.Cells.q1 q1Var = evVar2.E;
+                org.telegram.ui.Cells.l1 l1Var2 = evVar2.F;
+                TL_iv.textButton textbutton = cuVar.b;
+                if (q1Var == null || l1Var2 == null) {
+                    return;
+                }
+                l1Var2.I1(q1Var, textbutton);
+                return;
+            case 9:
+                xv xvVar = (xv) this.b;
+                ArrayList arrayList2 = xvVar.f;
+                if (arrayList2.isEmpty()) {
+                    return;
+                }
+                xvVar.getMessagesController().U3(arrayList2, null, null, false, 0);
+                arrayList2.clear();
+                return;
+            case 10:
+                ((rv0) this.b).a(null);
+                return;
+            case 11:
+                g0.g3((ww) this.b);
+                return;
+            case 12:
+                zy zyVar = (zy) this.b;
+                zyVar.getNotificationCenter().b(zyVar, ks.U1);
+                zyVar.getNotificationCenter().b(zyVar, ks.W1);
+                zyVar.getNotificationCenter().b(zyVar, ks.V1);
+                zyVar.getNotificationCenter().b(zyVar, ks.a2);
+                zyVar.getNotificationCenter().b(zyVar, ks.b2);
+                zyVar.getNotificationCenter().b(zyVar, ks.c2);
+                zyVar.getNotificationCenter().b(zyVar, ks.S1);
+                zyVar.getNotificationCenter().b(zyVar, ks.R1);
+                zyVar.getNotificationCenter().b(zyVar, ks.Y1);
+                zyVar.getNotificationCenter().b(zyVar, ks.Z1);
+                return;
+            case 13:
+                fj fjVar = (fj) this.b;
+                if (fjVar == null || (message = fjVar.k) == null) {
+                    return;
+                }
+                message.reqId = 0;
+                return;
+            case 14:
+                a8.b8 b8Var = (a8.b8) this.b;
+                vy vyVar = (vy) b8Var.a;
+                Location location = (Location) b8Var.f;
+                if (location != null) {
+                    vyVar.f(location);
+                } else {
+                    vyVar.b();
+                }
+                b8Var.d();
+                return;
+            case 15:
+                qz qzVar = (qz) this.b;
+                android.support.v4.media.session.a0 a0Var = qzVar.b;
+                int i11 = j10.t0;
+                qzVar.c = i11;
+                qzVar.d = g0.b1(mp.u1(i11).g7, "auto_lastSelectedDialog", 0L);
+                qzVar.e = false;
+                qzVar.f = false;
+                qzVar.g.clear();
+                qzVar.h.b();
+                qzVar.i.b();
+                qzVar.j.b();
+                qzVar.k.b();
+                qzVar.l.b();
+                try {
+                    a0Var.v(null);
+                    ((android.support.v4.media.session.u) a0Var.b).a.setQueueTitle(null);
+                    return;
+                } catch (Throwable unused3) {
+                    return;
+                }
+            case 16:
+                ks.f(((pz) this.b).g.c).k(ks.g2, 0);
+                return;
+            default:
+                z00 z00Var = (z00) this.b;
+                mp mpVar = z00Var.n;
+                String string = mpVar.h7.getString("translating_dialog_languages2", null);
+                if (string == null) {
+                    return;
+                }
+                for (String str : string.split(";")) {
+                    String[] split = str.split("=");
+                    if (split.length >= 2) {
+                        long parseLong = Long.parseLong(split[0]);
+                        String[] split2 = split[1].split(">");
+                        if (split2.length == 2) {
+                            String str2 = split2[0];
+                            String str3 = split2[1];
+                            if (str3.length() <= 0 || str3.charAt(str3.length() - 1) != '!') {
+                                z10 = false;
+                            } else {
+                                str3 = com.google.android.gms.internal.vision.e2.k(str3, 1, 0);
+                                z10 = true;
+                            }
+                            if ("null".equals(str2)) {
+                                str2 = null;
+                            }
+                            if ("null".equals(str3)) {
+                                str3 = null;
+                            }
+                            if (str2 != null) {
+                                z00Var.e.put(Long.valueOf(parseLong), str2);
+                                if (!z00Var.w(str2)) {
+                                    z00Var.a.put(parseLong, Boolean.valueOf(!z10));
+                                    z00Var.b.add(Long.valueOf(parseLong));
+                                }
+                                if (str3 != null) {
+                                    z00Var.d.put(Long.valueOf(parseLong), str3);
+                                }
+                            }
+                        }
+                    }
+                }
+                Set<String> stringSet = mpVar.h7.getStringSet("hidden_translation_at", null);
+                if (stringSet != null) {
+                    Iterator<String> it = stringSet.iterator();
+                    while (it.hasNext()) {
+                        try {
+                            z00Var.h.add(Long.valueOf(Long.parseLong(it.next())));
+                        } catch (Exception e11) {
                             a8.g(e11, true);
-                            file2.delete();
-                            if (r2.a) {
-                                a8.d("Library not found, arch = ".concat(d2));
-                                StringBuilder sb4 = b;
-                                sb4.append("Library not found, arch = ".concat(d2));
-                                sb4.append("\n");
-                            }
-                            if (i(context, file, file2, d2)) {
-                                return;
-                            }
-                            System.loadLibrary("tmessages.49");
-                            a = true;
                         }
                     }
-                    if (r2.a) {
-                    }
-                    if (i(context, file, file2, d2)) {
-                    }
-                    try {
-                        System.loadLibrary("tmessages.49");
-                        a = true;
-                    } catch (Error e12) {
-                        a8.g(e12, true);
-                        StringBuilder sb5 = b;
-                        sb5.append("184: ");
-                        sb5.append(e12);
-                        sb5.append("\n");
-                    }
+                    return;
                 }
-            } catch (Throwable th2) {
-                th2.printStackTrace();
-                StringBuilder sb6 = b;
-                sb6.append("176: ");
-                sb6.append(th2);
-                sb6.append("\n");
-                System.loadLibrary("tmessages.49");
-                a = true;
-            }
+                return;
         }
     }
 
-    public static boolean g() {
-        try {
-            return e().containsAlias("tmessages_passcode");
-        } catch (KeyStoreException e10) {
-            a8.g(e10, true);
-            return false;
-        }
-    }
-
-    public static boolean h() {
-        int intValue;
-        Boolean bool = h;
-        if (bool != null) {
-            return bool.booleanValue();
-        }
-        try {
-            Field declaredField = Build.VERSION.class.getDeclaredField("SEM_PLATFORM_INT");
-            declaredField.setAccessible(true);
-            intValue = ((Integer) declaredField.get(null)).intValue();
-        } catch (Exception unused) {
-            h = Boolean.FALSE;
-        }
-        if (intValue < 100000) {
-            return false;
-        }
-        i = intValue - 90000;
-        h = Boolean.TRUE;
-        return h.booleanValue();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00d5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:68:? A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00cb A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean i(Context context, File file, File file2, String str) {
-        ZipFile zipFile;
-        ZipFile zipFile2;
-        int length;
-        try {
-            File[] listFiles = file.listFiles();
-            length = listFiles.length;
-            for (File file3 : listFiles) {
-                file3.delete();
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
-        }
-        InputStream inputStream = null;
-        try {
-            try {
-                zipFile2 = new ZipFile(context.getApplicationInfo().sourceDir);
-                try {
-                    ZipEntry entry = zipFile2.getEntry("lib/" + str + "/libtmessages.49.so");
-                    if (entry == null) {
-                        throw new Exception("Unable to find file in apk:lib/" + str + "/tmessages.49");
-                    }
-                    InputStream inputStream2 = zipFile2.getInputStream(entry);
-                    FileOutputStream fileOutputStream = new FileOutputStream(file2);
-                    byte[] bArr = new byte[TLObject.FLAG_12];
-                    while (true) {
-                        int read = inputStream2.read(bArr);
-                        if (read <= 0) {
-                            break;
-                        }
-                        Thread.yield();
-                        fileOutputStream.write(bArr, 0, read);
-                    }
-                    fileOutputStream.close();
-                    file2.setReadable(true, false);
-                    file2.setExecutable(true, false);
-                    file2.setWritable(true);
-                    try {
-                        System.load(file2.getAbsolutePath());
-                        a = true;
-                    } catch (Error e11) {
-                        a8.g(e11, true);
-                    }
-                    try {
-                        inputStream2.close();
-                    } catch (Exception e12) {
-                        a8.g(e12, true);
-                    }
-                    try {
-                        zipFile2.close();
-                    } catch (Exception e13) {
-                        a8.g(e13, true);
-                    }
-                    return true;
-                } catch (Exception e14) {
-                    e = e14;
-                    a8.g(e, true);
-                    if (0 != 0) {
-                        try {
-                            inputStream.close();
-                        } catch (Exception e15) {
-                            a8.g(e15, true);
-                        }
-                    }
-                    if (zipFile2 != null) {
-                        try {
-                            zipFile2.close();
-                        } catch (Exception e16) {
-                            a8.g(e16, true);
-                        }
-                    }
-                    return false;
-                }
-            } catch (Throwable th2) {
-                th = th2;
-                zipFile = length;
-                if (0 != 0) {
-                    try {
-                        inputStream.close();
-                    } catch (Exception e17) {
-                        a8.g(e17, true);
-                    }
-                }
-                if (zipFile != null) {
-                    throw th;
-                }
-                try {
-                    zipFile.close();
-                    throw th;
-                } catch (Exception e18) {
-                    a8.g(e18, true);
-                    throw th;
-                }
-            }
-        } catch (Exception e19) {
-            e = e19;
-            zipFile2 = null;
-        } catch (Throwable th3) {
-            th = th3;
-            zipFile = null;
-            if (0 != 0) {
-            }
-            if (zipFile != null) {
-            }
-        }
+    public /* synthetic */ xr(zy zyVar, fj fjVar) {
+        this.a = 13;
+        this.b = fjVar;
     }
 }

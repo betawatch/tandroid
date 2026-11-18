@@ -1,29 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class xc1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ zc1 a;
+import android.widget.FrameLayout;
+import java.util.HashSet;
 
-    public xc1(zc1 zc1Var) {
-        this.a = zc1Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class xc1 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.a7));
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i7) {
-        zc1 zc1Var = this.a;
-        org.telegram.messenger.gj gjVar = zc1Var.n;
-        if (i7 == -1) {
-            zc1Var.finishFragment();
-            return;
-        }
-        if (i7 != 1) {
-            if (i7 == 2) {
-                zc1.a0(zc1Var.d, gjVar, zc1Var.getParentActivity(), zc1Var.r, zc1Var.e);
-            }
-        } else if (gjVar != null) {
-            gjVar.k.with_my_score = false;
-            zc1Var.showDialog(org.telegram.ui.Components.po0.N0(zc1Var.getParentActivity(), gjVar, null, false, zc1Var.h));
-        }
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
     }
 }

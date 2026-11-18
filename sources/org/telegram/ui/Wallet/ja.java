@@ -1,58 +1,54 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
-import org.telegram.messenger.i20;
+import android.content.Intent;
+import android.net.Uri;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class ja extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final org.telegram.ui.Components.i9 b;
-    public final TextView c;
-    public final TextView d;
+public final /* synthetic */ class ja implements jg.f0, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ na a;
 
-    public ja(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.a = e6Var;
-        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
-        this.b = i9Var;
-        i9Var.setRoundRadius(org.telegram.messenger.g0.L(10.0f));
-        addView(i9Var, c8.ja.d(28, 28.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, c8.ja.d(-1, -2.0f, 23, 62.0f, 0.0f, 20.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView f10 = i20.f(linearLayout, textView, c8.ja.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2), context);
-        this.d = f10;
-        f10.setTextSize(1, 14.0f);
-        linearLayout.addView(f10, c8.ja.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        updateColors();
+    public /* synthetic */ ja(na naVar) {
+        this.a = naVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.z6));
+    @Override // jg.f0
+    public void a(a0.h hVar, ArrayList arrayList) {
+        na naVar = this.a;
+        ArrayList arrayList2 = naVar.s;
+        if (naVar.r) {
+            return;
+        }
+        arrayList2.clear();
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            jg.g0 g0Var = (jg.g0) obj;
+            TLObject tLObject = g0Var.a;
+            if ((tLObject instanceof TLRPC.User) && na.h0((TLRPC.User) tLObject)) {
+                arrayList2.add((TLRPC.User) g0Var.a);
+            }
+        }
+        bi.d6 d6Var = naVar.a;
+        if (d6Var != null) {
+            d6Var.g3.O(true);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.c.setTextColor(org.telegram.ui.ActionBar.j6.w0(i7, e6Var));
-        this.d.setTextColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.z6, e6Var));
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        na naVar = this.a;
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+            naVar.getParentActivity().startActivity(intent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 }

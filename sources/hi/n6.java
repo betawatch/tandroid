@@ -1,41 +1,21 @@
 package hi;
 
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.an;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class n6 extends o6 {
-    public final /* synthetic */ TLRPC.Chat b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class n6 {
+    public final String a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n6(String str, TLRPC.Chat chat) {
-        super(str);
-        this.b = chat;
+    public n6(String str) {
+        this.a = str;
     }
 
-    @Override // hi.o6
-    public final String a() {
-        return hd.M0(2131754819, null);
-    }
+    public abstract String a();
 
-    @Override // hi.o6
-    public final String b() {
-        return this.b.title;
-    }
+    public abstract String b();
 
-    @Override // hi.o6
-    public final void c(org.telegram.ui.ActionBar.e2 e2Var) {
-        e2Var.presentFragment(an.ua(-this.b.id));
-    }
+    public abstract void c(org.telegram.ui.ActionBar.h2 h2Var);
 
-    @Override // hi.o6
-    public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
-        TLRPC.Chat chat = this.b;
-        t8Var.q(chat);
-        imageReceiver.i0(chat, t8Var, null);
-    }
+    public abstract void d(ImageReceiver imageReceiver);
 }

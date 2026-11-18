@@ -1,21 +1,31 @@
 package ug;
 
-import android.content.Context;
-import android.widget.Scroller;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u0 extends Scroller {
-    public final /* synthetic */ v0 a;
+public final class u0 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u0(v0 v0Var, Context context) {
-        super(context);
-        this.a = v0Var;
+    public /* synthetic */ u0(z0 z0Var, int i7) {
+        this.a = i7;
+        this.b = z0Var;
     }
 
-    @Override // android.widget.Scroller
-    public final void startScroll(int i7, int i10, int i11, int i12, int i13) {
-        super.startScroll(i7, i10, i11, i12, (this.a.y0 ? 3 : 1) * i13);
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                z0 z0Var = this.b;
+                z0Var.b.invalidate();
+                z0Var.J0();
+                break;
+            default:
+                z0 z0Var2 = this.b;
+                z0Var2.b.invalidate();
+                z0Var2.J0();
+                break;
+        }
     }
 }

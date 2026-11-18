@@ -1,13 +1,14 @@
 package n2;
 
 import android.media.AudioTrack;
+import hi.w4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z {
     public final y a;
     public final int b;
-    public final gc.b c;
+    public final w4 c;
     public int d;
     public long e;
     public long f;
@@ -15,10 +16,10 @@ public final class z {
     public long h;
     public long i;
 
-    public z(AudioTrack audioTrack, gc.b bVar) {
+    public z(AudioTrack audioTrack, w4 w4Var) {
         this.a = new y(audioTrack);
         this.b = audioTrack.getSampleRate();
-        this.c = bVar;
+        this.c = w4Var;
         a(0);
     }
 

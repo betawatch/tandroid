@@ -1,7 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
 import android.app.Application;
+import b7.h;
+import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.api.i;
 import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.common.api.internal.u;
@@ -15,7 +16,7 @@ import kd.j;
 import o8.f;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzs extends j implements p {
     final /* synthetic */ zzu zza;
@@ -42,24 +43,24 @@ final class zzs extends j implements p {
     public final Object invokeSuspend(Object obj) {
         zzcz zzczVar;
         a aVar = a.a;
-        b.c(obj);
+        h.b(obj);
         zzu zzuVar = this.zza;
         zzczVar = zzuVar.zza;
         if (!zzczVar.zzb(zzu.zzl(zzuVar))) {
-            return new g(b.b(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
+            return new g(h.a(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
         }
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzR() || zzxnVar.zzg().zzf().zzn()) {
-            return new g(b.b(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
+            return new g(h.a(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
         }
         zzuVar.zzb = zzxnVar.zzg().zzf().zzm();
         o8.c cVar = new o8.c();
         Application context = zzu.zzl(zzuVar);
         kotlin.jvm.internal.j.e(context, "context");
-        e eVar = new e(context, e.l, com.google.android.gms.common.api.b.j, i.c);
+        e eVar = new e(context, e.l, b.j, i.c);
         t b10 = u.b();
         b10.d = new n6.c[]{f.b};
-        b10.c = new d6.i(cVar, 12);
+        b10.c = new ob.c(cVar, 15);
         b10.a = 34001;
         Task e10 = eVar.e(0, b10.a());
         kotlin.jvm.internal.j.d(e10, "doRead(...)");

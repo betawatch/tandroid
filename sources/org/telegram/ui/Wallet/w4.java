@@ -1,19 +1,49 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.text.TextUtils;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.lc;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class w4 extends org.telegram.ui.ActionBar.u2 {
-    @Override // org.telegram.ui.ActionBar.u2
-    public final void s0() {
-        super.s0();
-        try {
-            int w02 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.a7, this.J0);
-            v0(w02);
-            if (this.H0 != w02) {
-                P(w02);
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+public final /* synthetic */ class w4 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hi.d b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+
+    public /* synthetic */ w4(hi.d dVar, org.telegram.ui.ActionBar.x2 x2Var, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        this.a = i7;
+        this.b = dVar;
+        this.c = x2Var;
+        this.d = i6Var;
+    }
+
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        String str = (String) obj;
+        switch (this.a) {
+            case 0:
+                this.b.setLoading(false);
+                boolean isEmpty = TextUtils.isEmpty(str);
+                org.telegram.ui.ActionBar.x2 x2Var = this.c;
+                if (!isEmpty) {
+                    new lc(x2Var.F, this.d).f0(str, false);
+                    break;
+                } else {
+                    x2Var.dismiss();
+                    break;
+                }
+            default:
+                this.b.setLoading(false);
+                org.telegram.ui.ActionBar.x2 x2Var2 = this.c;
+                if (str == null) {
+                    x2Var2.dismiss();
+                    break;
+                } else {
+                    new lc(x2Var2.F, this.d).f0(str, false);
+                    break;
+                }
         }
     }
 }

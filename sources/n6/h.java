@@ -7,12 +7,12 @@ import android.content.pm.Signature;
 import android.content.pm.SigningInfo;
 import android.os.Build;
 import android.util.Log;
-import c8.ib;
+import c8.lb;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public static h b;
@@ -23,7 +23,7 @@ public final class h {
     }
 
     public static h a(Context context) {
-        q6.m.g(context);
+        q6.m.h(context);
         synchronized (h.class) {
             try {
                 if (b == null) {
@@ -51,7 +51,7 @@ public final class h {
         if (packageInfo != null) {
             if (z10 && ("com.android.vending".equals(packageInfo.packageName) || "com.google.android.gms".equals(packageInfo.packageName))) {
                 ApplicationInfo applicationInfo = packageInfo.applicationInfo;
-                z10 = (applicationInfo == null || (applicationInfo.flags & ns.N1) == 0) ? false : true;
+                z10 = (applicationInfo == null || (applicationInfo.flags & ks.N1) == 0) ? false : true;
             }
             try {
                 fVar = z10 ? n.c : n.b;
@@ -65,7 +65,7 @@ public final class h {
                     if (bArr != null) {
                         p7.b bVar = p7.e.b;
                         Object[] objArr = {bArr};
-                        ib.a(1, objArr);
+                        lb.a(1, objArr);
                         fVar2 = new p7.f(1, objArr);
                     } else {
                         p7.b bVar2 = p7.e.b;

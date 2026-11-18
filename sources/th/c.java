@@ -10,17 +10,17 @@ import android.text.TextUtils;
 import android.view.View;
 import java.io.File;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c extends sh.c {
+public final class c extends sh.d {
     public final String b;
     public final Uri c;
     public final String d;
@@ -58,25 +58,25 @@ public final class c extends sh.c {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(g0.L(13.0f));
         textPaint.setTypeface(g0.o());
-        textPaint.setColor(j6.x0(null, j6.sj, false));
+        textPaint.setColor(n6.x0(null, n6.sj, false));
         this.n = new StaticLayout(TextUtils.ellipsize(str2, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
     }
 
-    public static b d(View view, String str, String str2, TLRPC.Document document, gj gjVar) {
+    public static b d(View view, String str, String str2, TLRPC.Document document, fj fjVar) {
         b bVar = new b();
-        bVar.a.setColor(j6.x0(null, j6.G6, false));
-        bVar.b.setColor(j6.x0(null, j6.y6, false));
+        bVar.a.setColor(n6.x0(null, n6.G6, false));
+        bVar.b.setColor(n6.x0(null, n6.y6, false));
         bVar.d = true;
         RadialProgress2 radialProgress2 = new RadialProgress2(view, null);
         bVar.c = radialProgress2;
         radialProgress2.setCircleRadius(g0.L(21.0f));
-        bVar.c.g(j6.Ze, j6.af, j6.ld, j6.md);
-        if (gj.J3(document)) {
-            if (gj.W2(document)) {
+        bVar.c.g(n6.Ze, n6.af, n6.ld, n6.md);
+        if (fj.J3(document)) {
+            if (fj.W2(document)) {
                 TLRPC.PhotoSize w10 = w7.w(document.thumbs, g0.L(22.0f), true, null, false);
-                bVar.c.j(w7.w(document.thumbs, g0.L(44.0f), true, w10, true), w10, document, gjVar);
+                bVar.c.j(w7.w(document.thumbs, g0.L(44.0f), true, w10, true), w10, document, fjVar);
             } else {
-                String t02 = gj.t0(document, true);
+                String t02 = fj.t0(document, true);
                 if (TextUtils.isEmpty(t02)) {
                     bVar.c.i(null, null, null);
                 } else {
@@ -103,7 +103,7 @@ public final class c extends sh.c {
         return bVar;
     }
 
-    @Override // sh.c
+    @Override // sh.d
     public final void c(Canvas canvas, int i7, int i10) {
         Drawable drawable = this.h;
         if (drawable != null) {
@@ -136,7 +136,7 @@ public final class c extends sh.c {
             TextPaint textPaint = new TextPaint(1);
             textPaint.setTextSize(g0.L(13.0f));
             textPaint.setTypeface(g0.o());
-            textPaint.setColor(j6.x0(null, j6.sj, false));
+            textPaint.setColor(n6.x0(null, n6.sj, false));
             this.n = new StaticLayout(TextUtils.ellipsize(str, textPaint, g0.L(34.0f), TextUtils.TruncateAt.END), textPaint, g0.L(34.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
             return;
         }

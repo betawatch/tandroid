@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class NotificationCallbackReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -13,11 +13,11 @@ public class NotificationCallbackReceiver extends BroadcastReceiver {
             return;
         }
         t0.w();
-        int intExtra = intent.getIntExtra("currentAccount", m10.t0);
-        if (m10.r(intExtra)) {
+        int intExtra = intent.getIntExtra("currentAccount", j10.t0);
+        if (j10.r(intExtra)) {
             long longExtra = intent.getLongExtra("did", 777000L);
             byte[] byteArrayExtra = intent.getByteArrayExtra("data");
-            g0.h3(new fk(ez.C(intExtra), longExtra, intent.getIntExtra("mid", 0), byteArrayExtra, 10));
+            g0.g3(new ek(zy.C(intExtra), longExtra, intent.getIntExtra("mid", 0), byteArrayExtra, 10));
         }
     }
 }

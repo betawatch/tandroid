@@ -1,43 +1,29 @@
 package wg;
 
-import android.util.Pair;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.z10;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s0 implements z10 {
+public final /* synthetic */ class s0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ w0 b;
 
-    public /* synthetic */ s0(u0 u0Var, boolean z10, int i7) {
+    public /* synthetic */ s0(w0 w0Var, int i7) {
         this.a = i7;
-        this.b = u0Var;
-        this.c = z10;
+        this.b = w0Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                List list = (List) obj;
-                u0 u0Var = this.b;
-                ArrayList arrayList = u0Var.c2;
-                if (this.c) {
-                    u0Var.d2.addAll(list);
-                }
-                if (u0Var.n2 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    u0Var.n1(true, true);
-                    u0Var.j1(true);
-                    break;
-                }
+                w0 w0Var = this.b;
+                w0Var.a2.clear();
+                w0Var.U1.d.b(true);
+                w0Var.o1(true, false);
                 break;
             default:
-                u0.d1(this.b, this.c, (Pair) obj);
+                this.b.j1(false);
                 break;
         }
     }

@@ -6,11 +6,11 @@ import java.io.File;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class v0 implements Runnable {
             case 0:
                 File file = this.b;
                 ExecutorService executorService = DictationLid.a;
-                SharedPreferences e12 = np.e1();
+                SharedPreferences g12 = mp.g1();
                 long[] jArr = {0};
                 try {
                     if (j1.d() && (e10 = j1.e()) != null) {
@@ -41,9 +41,9 @@ public final /* synthetic */ class v0 implements Runnable {
                     if (f10 == null && !file.exists()) {
                         Log.d("Dictation", "tinylid: not on the server");
                     }
-                    int c10 = j1.c(f10, file, new a1.c(jArr, 8));
+                    int c10 = j1.c(f10, file, false, new a1.c(jArr, 8));
                     if (c10 >= 0) {
-                        e12.edit().putLong("tinylid_checked", System.currentTimeMillis()).apply();
+                        g12.edit().putLong("tinylid_checked", System.currentTimeMillis()).apply();
                     }
                     if (c10 > 0) {
                         DictationLid.e = true;

@@ -7,7 +7,7 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.a8;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d implements GLSurfaceView.Renderer {
     public long a;
@@ -122,7 +122,7 @@ public final class d implements GLSurfaceView.Renderer {
         } catch (RuntimeException e10) {
             a8.g(e10, true);
             this.d.r = true;
-            this.d.post(new q2.d(this, 28));
+            this.d.post(new v4.p(this, 1));
         }
     }
 
@@ -152,7 +152,7 @@ public final class d implements GLSurfaceView.Renderer {
         } catch (RuntimeException e10) {
             a8.g(e10, true);
             this.d.r = true;
-            this.d.post(new q2.d(this, 28));
+            this.d.post(new v4.p(this, 1));
         }
     }
 }

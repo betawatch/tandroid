@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -9,7 +9,7 @@ import kd.j;
 import rd.p;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzd extends j implements p {
     int zza;
@@ -62,7 +62,7 @@ final class zzd extends j implements p {
             obj = zzgVar.zzf(e10, this);
         }
         if (i7 == 0) {
-            b.c(obj);
+            h.b(obj);
             zzgr zzgrVar = (zzgr) this.zze;
             zzg zzgVar2 = this.zzb;
             if (zzgVar2.zzi()) {
@@ -76,10 +76,10 @@ final class zzd extends j implements p {
             if (i7 != 1) {
                 if (i7 != 2) {
                     zzcg zzcgVar = (zzcg) this.zze;
-                    b.c(obj);
+                    h.b(obj);
                     throw zzcgVar;
                 }
-                b.c(obj);
+                h.b(obj);
                 zzg zzgVar3 = this.zzb;
                 zzcg zzcgVar2 = (zzcg) obj;
                 this.zze = zzcgVar2;
@@ -89,9 +89,9 @@ final class zzd extends j implements p {
                 }
                 return aVar;
             }
-            b.c(obj);
+            h.b(obj);
         }
-        b.c(((g) obj).a);
+        h.b(((g) obj).a);
         this.zzb.zza = true;
         return kVar;
     }

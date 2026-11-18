@@ -15,9 +15,9 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.i9;
-import c8.ja;
-import di.k4;
+import c8.l9;
+import c8.ma;
+import di.n4;
 import hi.q3;
 import i5.c;
 import java.util.ArrayList;
@@ -26,50 +26,49 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.t;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.h6;
-import org.telegram.ui.Components.my;
-import org.telegram.ui.z20;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.n6;
+import org.telegram.ui.Components.sy;
+import org.telegram.ui.c30;
 import tg.x1;
+import ug.b1;
 import ug.o;
 import ug.p;
 import ug.q;
 import ug.r;
 import ug.s;
-import ug.z0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class LimitPreviewView extends LinearLayout implements z5 {
+public class LimitPreviewView extends LinearLayout implements c6 {
     public static final /* synthetic */ int p0 = 0;
     public ViewGroup E;
-    public z0 F;
+    public b1 F;
     public int G;
     public boolean H;
     public boolean I;
-    public final k4 J;
+    public final n4 J;
     public boolean K;
     public final Paint L;
     public boolean M;
     public boolean N;
-    public final h6 O;
+    public final n6 O;
     public final TextView P;
     public boolean Q;
     public boolean R;
     public boolean S;
-    public final e6 T;
+    public final i6 T;
     public boolean U;
     public boolean V;
     public boolean W;
@@ -98,19 +97,19 @@ public class LimitPreviewView extends LinearLayout implements z5 {
     public boolean o0;
     public final int r;
     public float s;
-    public final h6 w;
+    public final n6 w;
     public final TextView x;
     public float y;
 
-    public LimitPreviewView(int i7, int i10, int i11, Context context, e6 e6Var) {
-        this(context, i7, i10, i11, 0.5f, e6Var);
+    public LimitPreviewView(int i7, int i10, int i11, Context context, i6 i6Var) {
+        this(context, i7, i10, i11, 0.5f, i6Var);
     }
 
     public static void a(LimitPreviewView limitPreviewView, TL_stars.Tl_starsRating tl_starsRating) {
         boolean z10;
         r rVar = limitPreviewView.e;
-        h6 h6Var = limitPreviewView.w;
-        h6 h6Var2 = limitPreviewView.O;
+        n6 n6Var = limitPreviewView.w;
+        n6 n6Var2 = limitPreviewView.O;
         limitPreviewView.l0 = null;
         if (limitPreviewView.isAttachedToWindow()) {
             ValueAnimator valueAnimator = limitPreviewView.j0;
@@ -118,20 +117,20 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                 valueAnimator.cancel();
             }
             limitPreviewView.M = false;
-            limitPreviewView.setRatingPaintColorKey(j6.Fi);
+            limitPreviewView.setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.Fi);
             if (tl_starsRating.stars <= 0) {
                 limitPreviewView.a = 0.5f;
-                h6Var2.setText("");
-                h6Var.setText(hd.M0(2131745173, null));
-                limitPreviewView.setRatingPaintColorKey(j6.nk);
+                n6Var2.setText("");
+                n6Var.setText(gd.M0(2131744938, null));
+                limitPreviewView.setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.nk);
                 limitPreviewView.M = true;
             } else {
                 if (tl_starsRating.next_level_stars != 0) {
                     long j3 = tl_starsRating.current_level_stars;
                     z10 = false;
-                    limitPreviewView.a = i9.a((r7 - j3) / (r9 - j3), 0.0f, 1.0f);
-                    h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
-                    h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level + 1)));
+                    limitPreviewView.a = l9.a((r7 - j3) / (r9 - j3), 0.0f, 1.0f);
+                    n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
+                    n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level + 1)));
                     limitPreviewView.setArrowX(1.0f);
                     rVar.setScaleX(0.6f);
                     rVar.setScaleY(0.6f);
@@ -142,17 +141,17 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                     limitPreviewView.b0 = limitPreviewView.n;
                     limitPreviewView.J.requestLayout();
                     limitPreviewView.requestLayout();
-                    ViewPropertyAnimator duration = h6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-                    er erVar = er.h;
-                    duration.setInterpolator(erVar).start();
-                    h6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(erVar).start();
+                    ViewPropertyAnimator duration = n6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+                    lr lrVar = lr.h;
+                    duration.setInterpolator(lrVar).start();
+                    n6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(lrVar).start();
                     limitPreviewView.setPremiumCountColor(limitPreviewView.M);
                     limitPreviewView.setDefaultTextColor(true);
                     limitPreviewView.h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
                 }
                 limitPreviewView.a = 1.0f;
-                h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level - 1)));
-                h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
+                n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level - 1)));
+                n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
             }
             z10 = false;
             limitPreviewView.setArrowX(1.0f);
@@ -165,10 +164,10 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             limitPreviewView.b0 = limitPreviewView.n;
             limitPreviewView.J.requestLayout();
             limitPreviewView.requestLayout();
-            ViewPropertyAnimator duration2 = h6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-            er erVar2 = er.h;
-            duration2.setInterpolator(erVar2).start();
-            h6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(erVar2).start();
+            ViewPropertyAnimator duration2 = n6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+            lr lrVar2 = lr.h;
+            duration2.setInterpolator(lrVar2).start();
+            n6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(lrVar2).start();
             limitPreviewView.setPremiumCountColor(limitPreviewView.M);
             limitPreviewView.setDefaultTextColor(true);
             limitPreviewView.h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
@@ -179,8 +178,8 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         boolean z10;
         float f10;
         r rVar = limitPreviewView.e;
-        h6 h6Var = limitPreviewView.w;
-        h6 h6Var2 = limitPreviewView.O;
+        n6 n6Var = limitPreviewView.w;
+        n6 n6Var2 = limitPreviewView.O;
         limitPreviewView.l0 = null;
         if (limitPreviewView.isAttachedToWindow()) {
             ValueAnimator valueAnimator = limitPreviewView.j0;
@@ -188,20 +187,20 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                 valueAnimator.cancel();
             }
             limitPreviewView.M = false;
-            limitPreviewView.setRatingPaintColorKey(j6.Fi);
+            limitPreviewView.setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.Fi);
             if (tl_starsRating.stars <= 0) {
                 limitPreviewView.a = 0.0f;
-                h6Var2.setText("");
-                h6Var.setText(hd.M0(2131745173, null));
-                limitPreviewView.setRatingPaintColorKey(j6.nk);
+                n6Var2.setText("");
+                n6Var.setText(gd.M0(2131744938, null));
+                limitPreviewView.setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.nk);
                 limitPreviewView.M = true;
             } else {
                 if (tl_starsRating.next_level_stars != 0) {
                     long j3 = tl_starsRating.current_level_stars;
                     z10 = false;
-                    limitPreviewView.a = i9.a((r7 - j3) / (r9 - j3), 0.0f, 1.0f);
-                    h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
-                    h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level + 1)));
+                    limitPreviewView.a = l9.a((r7 - j3) / (r9 - j3), 0.0f, 1.0f);
+                    n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
+                    n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level + 1)));
                     f10 = 0.0f;
                     limitPreviewView.setArrowX(f10);
                     rVar.setScaleX(0.6f);
@@ -213,17 +212,17 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                     limitPreviewView.b0 = limitPreviewView.n;
                     limitPreviewView.J.requestLayout();
                     limitPreviewView.requestLayout();
-                    ViewPropertyAnimator duration = h6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-                    er erVar = er.h;
-                    duration.setInterpolator(erVar).start();
-                    h6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(erVar).start();
+                    ViewPropertyAnimator duration = n6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+                    lr lrVar = lr.h;
+                    duration.setInterpolator(lrVar).start();
+                    n6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(lrVar).start();
                     limitPreviewView.setPremiumCountColor(limitPreviewView.M);
                     limitPreviewView.setDefaultTextColor(true);
                     limitPreviewView.h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
                 }
                 limitPreviewView.a = 1.0f;
-                h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level - 1)));
-                h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
+                n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level - 1)));
+                n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
             }
             z10 = false;
             f10 = 0.0f;
@@ -237,10 +236,10 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             limitPreviewView.b0 = limitPreviewView.n;
             limitPreviewView.J.requestLayout();
             limitPreviewView.requestLayout();
-            ViewPropertyAnimator duration2 = h6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-            er erVar2 = er.h;
-            duration2.setInterpolator(erVar2).start();
-            h6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(erVar2).start();
+            ViewPropertyAnimator duration2 = n6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+            lr lrVar2 = lr.h;
+            duration2.setInterpolator(lrVar2).start();
+            n6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(lrVar2).start();
             limitPreviewView.setPremiumCountColor(limitPreviewView.M);
             limitPreviewView.setDefaultTextColor(true);
             limitPreviewView.h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
@@ -269,18 +268,18 @@ public class LimitPreviewView extends LinearLayout implements z5 {
     /* JADX INFO: Access modifiers changed from: private */
     public void setDefaultTextColor(boolean z10) {
         this.o0 = !z10;
-        this.O.setTextColor(z10 ? -1 : j6.w0(j6.G6, this.T));
+        this.O.setTextColor(z10 ? -1 : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, this.T));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setPremiumCountColor(boolean z10) {
         this.m0 = !z10;
-        this.w.setTextColor(z10 ? -1 : j6.w0(j6.G6, this.T));
+        this.w.setTextColor(z10 ? -1 : org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, this.T));
     }
 
     private void setRatingPaintColorKey(int i7) {
         this.n0 = i7;
-        this.L.setColor(j6.w0(i7, this.T));
+        this.L.setColor(org.telegram.ui.ActionBar.n6.w0(i7, this.T));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -308,34 +307,34 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         boolean z10;
         g0.r(this.l0);
         this.l0 = null;
-        int i7 = j6.Fi;
+        int i7 = org.telegram.ui.ActionBar.n6.Fi;
         setRatingPaintColorKey(i7);
         this.M = false;
         int i10 = tl_starsRating.level;
         int i11 = tl_starsRating2.level;
-        k4 k4Var = this.J;
-        h6 h6Var = this.w;
-        h6 h6Var2 = this.O;
+        n4 n4Var = this.J;
+        n6 n6Var = this.w;
+        n6 n6Var2 = this.O;
         final int i12 = 1;
         if (i10 == i11) {
             if (tl_starsRating2.stars <= 0) {
                 this.a = 0.0f;
-                h6Var2.setText("");
-                h6Var.setText(hd.M0(2131745173, null));
-                setRatingPaintColorKey(j6.nk);
+                n6Var2.setText("");
+                n6Var.setText(gd.M0(2131744938, null));
+                setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.nk);
                 this.M = true;
                 z10 = false;
             } else {
                 z10 = false;
                 if (tl_starsRating2.next_level_stars == 0) {
                     this.a = 1.0f;
-                    h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(i11 - 1)));
-                    h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating2.level)));
+                    n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(i11 - 1)));
+                    n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating2.level)));
                 } else {
                     long j3 = tl_starsRating2.current_level_stars;
-                    this.a = i9.a((r10 - j3) / (r5 - j3), 0.0f, 1.0f);
-                    h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating2.level)));
-                    h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating2.level + 1)));
+                    this.a = l9.a((r10 - j3) / (r5 - j3), 0.0f, 1.0f);
+                    n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating2.level)));
+                    n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating2.level + 1)));
                 }
             }
             this.U = true;
@@ -343,7 +342,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             this.V = z11;
             this.W = z11;
             this.b0 = this.n;
-            k4Var.requestLayout();
+            n4Var.requestLayout();
             requestLayout();
             setPremiumCountColor(this.M);
             setDefaultTextColor(true);
@@ -359,14 +358,14 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             this.V = false;
             this.W = true;
             this.b0 = this.n;
-            k4Var.requestLayout();
+            n4Var.requestLayout();
             requestLayout();
             setPremiumCountColor(this.M);
             setDefaultTextColor(true);
-            ViewPropertyAnimator duration = h6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
-            er erVar = er.h;
-            duration.setInterpolator(erVar).start();
-            h6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(erVar).start();
+            ViewPropertyAnimator duration = n6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
+            lr lrVar = lr.h;
+            duration.setInterpolator(lrVar).start();
+            n6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(lrVar).start();
             h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
             final int i13 = 0;
             Runnable runnable = new Runnable(this) { // from class: ug.n
@@ -389,7 +388,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                 }
             };
             this.l0 = runnable;
-            g0.i3(runnable, 600L);
+            g0.h3(runnable, 600L);
             return;
         }
         if (i11 < i10) {
@@ -403,12 +402,12 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             this.V = false;
             this.W = true;
             this.b0 = this.n;
-            k4Var.requestLayout();
+            n4Var.requestLayout();
             requestLayout();
-            ViewPropertyAnimator duration2 = h6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
-            er erVar2 = er.h;
-            duration2.setInterpolator(erVar2).start();
-            h6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(erVar2).start();
+            ViewPropertyAnimator duration2 = n6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
+            lr lrVar2 = lr.h;
+            duration2.setInterpolator(lrVar2).start();
+            n6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(lrVar2).start();
             setPremiumCountColor(this.M);
             setDefaultTextColor(true);
             h((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
@@ -432,7 +431,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                 }
             };
             this.l0 = runnable2;
-            g0.i3(runnable2, 600L);
+            g0.h3(runnable2, 600L);
         }
     }
 
@@ -440,18 +439,18 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         int i7;
         int i10 = tL_premium_boostsStatus.current_level_boosts;
         int i11 = tL_premium_boostsStatus.boosts;
-        h6 h6Var = this.O;
-        h6 h6Var2 = this.w;
+        n6 n6Var = this.O;
+        n6 n6Var2 = this.w;
         if ((i10 == i11 && z10) || (i7 = tL_premium_boostsStatus.next_level_boosts) == 0) {
             this.a = 1.0f;
-            h6Var.setText(hd.a0("BoostsLevel", null, 2131753160, Integer.valueOf(tL_premium_boostsStatus.level - 1)));
-            h6Var2.setText(hd.a0("BoostsLevel", null, 2131753160, Integer.valueOf(tL_premium_boostsStatus.level)));
+            n6Var.setText(gd.a0("BoostsLevel", null, 2131753158, Integer.valueOf(tL_premium_boostsStatus.level - 1)));
+            n6Var2.setText(gd.a0("BoostsLevel", null, 2131753158, Integer.valueOf(tL_premium_boostsStatus.level)));
         } else {
-            this.a = i9.a((i11 - i10) / (i7 - i10), 0.0f, 1.0f);
-            h6Var.setText(hd.a0("BoostsLevel", null, 2131753160, Integer.valueOf(tL_premium_boostsStatus.level)));
-            h6Var2.setText(hd.a0("BoostsLevel", null, 2131753160, Integer.valueOf(tL_premium_boostsStatus.level + 1)));
+            this.a = l9.a((i11 - i10) / (i7 - i10), 0.0f, 1.0f);
+            n6Var.setText(gd.a0("BoostsLevel", null, 2131753158, Integer.valueOf(tL_premium_boostsStatus.level)));
+            n6Var2.setText(gd.a0("BoostsLevel", null, 2131753158, Integer.valueOf(tL_premium_boostsStatus.level + 1)));
         }
-        ((FrameLayout.LayoutParams) h6Var2.getLayoutParams()).gravity = 5;
+        ((FrameLayout.LayoutParams) n6Var2.getLayoutParams()).gravity = 5;
         setType(17);
         this.x.setVisibility(8);
         this.P.setVisibility(8);
@@ -467,13 +466,13 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d").setSpan(new eq(this.r, 0), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d").setSpan(new lq(this.r, 0), 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").setSpan(new RelativeSizeSpan(0.8f), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) (i7 > 1200 ? hd.S(null, i7) : hd.E(i7, ',')));
+        spannableStringBuilder.append((CharSequence) (i7 > 1200 ? gd.S(null, i7) : gd.E(i7, ',')));
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) "\u200a/\u200a");
-        spannableStringBuilder.append((CharSequence) (i10 > 1200 ? hd.S(null, i10) : hd.E(i10, ',')));
-        spannableStringBuilder.setSpan(new t(ns.A2, 2, false), length, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) (i10 > 1200 ? gd.S(null, i10) : gd.E(i10, ',')));
+        spannableStringBuilder.setSpan(new t(ks.A2, 2, false), length, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.65f), length, spannableStringBuilder.length(), 33);
         r rVar = this.e;
         rVar.b(spannableStringBuilder, false);
@@ -481,20 +480,20 @@ public class LimitPreviewView extends LinearLayout implements z5 {
     }
 
     public final void i(int i7, boolean z10) {
-        eq eqVar;
+        lq lqVar;
         if (i7 < 0) {
-            eqVar = new eq(R.drawable.warning_sign, 0);
+            lqVar = new lq(R.drawable.warning_sign, 0);
         } else {
-            eqVar = new eq(this.r, 0);
+            lqVar = new lq(this.r, 0);
             float f10 = this.s;
-            eqVar.I = f10;
-            eqVar.J = f10;
+            lqVar.I = f10;
+            lqVar.J = f10;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d").setSpan(eqVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d").setSpan(lqVar, 0, 1, 0);
         if (i7 >= 0 || !this.i0) {
             spannableStringBuilder.append((CharSequence) " ").setSpan(new RelativeSizeSpan(0.8f), 1, 2, 0);
-            spannableStringBuilder.append((CharSequence) hd.E(i7, ','));
+            spannableStringBuilder.append((CharSequence) gd.E(i7, ','));
         }
         r rVar = this.e;
         rVar.b(spannableStringBuilder, z10);
@@ -503,13 +502,13 @@ public class LimitPreviewView extends LinearLayout implements z5 {
 
     public final void j(TL_stars.StarGiftUpgradePrice starGiftUpgradePrice, long j3, TL_stars.StarGiftUpgradePrice starGiftUpgradePrice2) {
         this.N = true;
-        setRatingPaintColorKey(j6.Fi);
+        setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.Fi);
         this.a = g0.z1(j3, starGiftUpgradePrice.upgrade_stars, starGiftUpgradePrice2.upgrade_stars);
-        this.O.setText(hd.H(',', "Stars", (int) starGiftUpgradePrice.upgrade_stars));
-        String H = hd.H(',', "Stars", (int) starGiftUpgradePrice2.upgrade_stars);
-        h6 h6Var = this.w;
-        h6Var.setText(H);
-        ((FrameLayout.LayoutParams) h6Var.getLayoutParams()).gravity = 5;
+        this.O.setText(gd.H(',', "Stars", (int) starGiftUpgradePrice.upgrade_stars));
+        String H = gd.H(',', "Stars", (int) starGiftUpgradePrice2.upgrade_stars);
+        n6 n6Var = this.w;
+        n6Var.setText(H);
+        ((FrameLayout.LayoutParams) n6Var.getLayoutParams()).gravity = 5;
         setType(17);
         this.x.setVisibility(8);
         this.P.setVisibility(8);
@@ -677,7 +676,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                             i20 = i22;
                         }
                         textPaint = textPaint2;
-                        spannableStringBuilder.setSpan(new my(false), i19, i19 + 1, 0);
+                        spannableStringBuilder.setSpan(new sy(false), i19, i19 + 1, 0);
                     } else {
                         f16 = f12;
                         z12 = z15;
@@ -698,7 +697,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                     qVar2.f = ofFloat;
                     ofFloat.addUpdateListener(new o(rVar, qVar2, 1));
                     qVar2.f.addListener(new p(rVar, qVar2, 0));
-                    qVar2.f.setInterpolator(er.g);
+                    qVar2.f.setInterpolator(lr.g);
                     qVar2.f.setDuration(750L);
                     qVar2.f.setStartDelay(((arrayList.size() - 1) - i23) * 60);
                     qVar2.f.start();
@@ -771,7 +770,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
                 }
             }
         });
-        this.j0.addListener(new z20(16, this, z19));
+        this.j0.addListener(new c30(16, this, z19));
         this.j0.setInterpolator(new OvershootInterpolator());
         if (this.a0) {
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -780,10 +779,10 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             ofFloat3.start();
             this.j0.setDuration(600L);
         } else if (z17) {
-            this.j0.setInterpolator(er.i);
+            this.j0.setInterpolator(lr.i);
             this.j0.setDuration(320L);
         } else if (z16) {
-            this.j0.setInterpolator(er.h);
+            this.j0.setInterpolator(lr.h);
             this.j0.setDuration(500L);
         } else {
             this.j0.setDuration(1000L);
@@ -794,7 +793,7 @@ public class LimitPreviewView extends LinearLayout implements z5 {
     }
 
     public void setBagePosition(float f10) {
-        this.y = i9.a(f10, 0.1f, 0.9f);
+        this.y = l9.a(f10, 0.1f, 0.9f);
     }
 
     public void setDarkGradientProvider(s sVar) {
@@ -815,29 +814,29 @@ public class LimitPreviewView extends LinearLayout implements z5 {
 
     public void setStarRating(TL_stars.Tl_starsRating tl_starsRating) {
         this.M = false;
-        setRatingPaintColorKey(j6.Fi);
+        setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.Fi);
         long j3 = tl_starsRating.current_level_stars;
         long j10 = tl_starsRating.stars;
-        h6 h6Var = this.O;
-        h6 h6Var2 = this.w;
+        n6 n6Var = this.O;
+        n6 n6Var2 = this.w;
         if (j10 <= 0) {
             this.a = 0.5f;
-            h6Var.setText("");
-            h6Var2.setText(hd.M0(2131745173, null));
-            setRatingPaintColorKey(j6.nk);
+            n6Var.setText("");
+            n6Var2.setText(gd.M0(2131744938, null));
+            setRatingPaintColorKey(org.telegram.ui.ActionBar.n6.nk);
             this.M = true;
         } else {
             if (tl_starsRating.next_level_stars == 0) {
                 this.a = 1.0f;
-                h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level - 1)));
-                h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
+                n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level - 1)));
+                n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
             } else {
-                this.a = i9.a((j10 - j3) / (r12 - j3), 0.0f, 1.0f);
-                h6Var.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level)));
-                h6Var2.setText(hd.a0(null, null, 2131745174, Integer.valueOf(tl_starsRating.level + 1)));
+                this.a = l9.a((j10 - j3) / (r12 - j3), 0.0f, 1.0f);
+                n6Var.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level)));
+                n6Var2.setText(gd.a0(null, null, 2131744939, Integer.valueOf(tl_starsRating.level + 1)));
             }
         }
-        ((FrameLayout.LayoutParams) h6Var2.getLayoutParams()).gravity = 5;
+        ((FrameLayout.LayoutParams) n6Var2.getLayoutParams()).gravity = 5;
         setType(17);
         this.x.setVisibility(8);
         this.P.setVisibility(8);
@@ -849,8 +848,8 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         this.S = true;
     }
 
-    public void setStaticGradinet(z0 z0Var) {
-        this.F = z0Var;
+    public void setStaticGradinet(b1 b1Var) {
+        this.F = b1Var;
     }
 
     public void setStatus(int i7, int i10, boolean z10) {
@@ -858,70 +857,70 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             z10 = false;
         }
         this.b = i7;
-        this.a = i9.a(i7 / i10, 0.0f, 1.0f);
+        this.a = l9.a(i7 / i10, 0.0f, 1.0f);
         if (z10) {
             this.a0 = true;
             this.b0 = this.n;
             this.J.requestLayout();
             requestLayout();
         }
-        h6 h6Var = this.w;
-        ((FrameLayout.LayoutParams) h6Var.getLayoutParams()).gravity = 5;
+        n6 n6Var = this.w;
+        ((FrameLayout.LayoutParams) n6Var.getLayoutParams()).gravity = 5;
         this.x.setVisibility(8);
         this.P.setVisibility(8);
         this.O.setText("0");
-        h6Var.setText("" + i10);
+        n6Var.setText("" + i10);
         i(i7, false);
         this.Q = true;
         this.R = true;
     }
 
     public void setType(int i7) {
-        h6 h6Var = this.w;
+        n6 n6Var = this.w;
         int i10 = this.r;
         r rVar = this.e;
         if (i7 == 6) {
             if (rVar != null) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "d ").setSpan(new eq(i10, 0), 0, 1, 0);
-                spannableStringBuilder.append((CharSequence) (m10.i(m10.t0).q() ? "4 GB" : "2 GB"));
+                spannableStringBuilder.append((CharSequence) "d ").setSpan(new lq(i10, 0), 0, 1, 0);
+                spannableStringBuilder.append((CharSequence) (j10.i(j10.t0).q() ? "4 GB" : "2 GB"));
                 rVar.b(spannableStringBuilder, false);
             }
-            h6Var.setText("4 GB");
+            n6Var.setText("4 GB");
             return;
         }
         if (i7 == 11) {
             if (rVar != null) {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                spannableStringBuilder2.append((CharSequence) "d").setSpan(new eq(i10, 0), 0, 1, 0);
+                spannableStringBuilder2.append((CharSequence) "d").setSpan(new lq(i10, 0), 0, 1, 0);
                 rVar.b(spannableStringBuilder2, false);
             }
-            h6Var.setText("");
+            n6Var.setText("");
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        h6 h6Var;
-        h6 h6Var2;
-        e6 e6Var = this.T;
+        n6 n6Var;
+        n6 n6Var2;
+        i6 i6Var = this.T;
         try {
-            if (this.o0 && (h6Var2 = this.O) != null) {
-                h6Var2.setTextColor(j6.w0(j6.G6, e6Var));
+            if (this.o0 && (n6Var2 = this.O) != null) {
+                n6Var2.setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var));
             }
         } catch (Exception e10) {
             a8.g(e10, true);
         }
         try {
-            if (this.m0 && (h6Var = this.w) != null) {
-                h6Var.setTextColor(j6.w0(j6.G6, e6Var));
+            if (this.m0 && (n6Var = this.w) != null) {
+                n6Var.setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.G6, i6Var));
             }
             int i7 = this.n0;
             if (i7 >= 0) {
-                this.L.setColor(j6.w0(i7, e6Var));
-                k4 k4Var = this.J;
-                if (k4Var != null) {
-                    k4Var.invalidate();
+                this.L.setColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+                n4 n4Var = this.J;
+                if (n4Var != null) {
+                    n4Var.invalidate();
                 }
                 r rVar = this.e;
                 if (rVar != null) {
@@ -933,15 +932,15 @@ public class LimitPreviewView extends LinearLayout implements z5 {
         }
     }
 
-    public LimitPreviewView(Context context, int i7, int i10, int i11, float f10, e6 e6Var) {
+    public LimitPreviewView(Context context, int i7, int i10, int i11, float f10, i6 i6Var) {
         super(context);
         this.s = 1.0f;
         this.I = true;
         this.L = new Paint(1);
         this.e0 = true;
         this.n0 = -1;
-        this.T = e6Var;
-        this.a = i9.a(f10, 0.1f, 0.9f);
+        this.T = i6Var;
+        this.a = l9.a(f10, 0.1f, 0.9f);
         this.r = i7;
         this.b = i10;
         setOrientation(1);
@@ -953,60 +952,60 @@ public class LimitPreviewView extends LinearLayout implements z5 {
             this.e = rVar;
             i(i10, false);
             rVar.setPadding(g0.L(19.0f), g0.L(6.0f), g0.L(19.0f), g0.L(14.0f));
-            addView(rVar, ja.p(-2, -2, 0.0f, 3));
+            addView(rVar, ma.p(-2, -2, 0.0f, 3));
         }
         q3 q3Var = new q3(this, context, true);
         this.g0 = q3Var;
-        h6 h6Var = new h6(context, false, false, false);
-        this.O = h6Var;
-        h6Var.setTextSize(g0.L(14.0f));
-        h6Var.setTypeface(g0.o());
-        h6Var.setText(hd.M0(2131748981, null));
-        h6Var.setGravity(16);
+        n6 n6Var = new n6(context, false, false, false);
+        this.O = n6Var;
+        n6Var.setTextSize(g0.L(14.0f));
+        n6Var.setTypeface(g0.o());
+        n6Var.setText(gd.M0(2131748789, null));
+        n6Var.setGravity(16);
         setDefaultTextColor(false);
         TextView textView = new TextView(context);
         this.x = textView;
         textView.setTypeface(g0.o());
         textView.setText(String.format("%d", Integer.valueOf(i11)));
         textView.setGravity(16);
-        q6.U(textView, j6.G6, e6Var);
-        if (hd.a0) {
-            q3Var.addView(h6Var, ja.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            q3Var.addView(textView, ja.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+        u6.U(textView, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        if (gd.a0) {
+            q3Var.addView(n6Var, ma.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var.addView(textView, ma.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            q3Var.addView(h6Var, ja.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            q3Var.addView(textView, ja.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var.addView(n6Var, ma.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var.addView(textView, ma.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
         q3 q3Var2 = new q3(this, context, false);
         this.h0 = q3Var2;
         TextView textView2 = new TextView(context);
         this.P = textView2;
         textView2.setTypeface(g0.o());
-        textView2.setText(hd.M0(2131748979, null));
+        textView2.setText(gd.M0(2131748787, null));
         textView2.setGravity(16);
         textView2.setTextColor(-1);
-        h6 h6Var2 = new h6(context, false, false, false);
-        this.w = h6Var2;
-        h6Var2.setTextSize(g0.L(14.0f));
-        h6Var2.setTypeface(g0.o());
-        h6Var2.setText(String.format("%d", Integer.valueOf(i11)));
-        h6Var2.setGravity(21);
+        n6 n6Var2 = new n6(context, false, false, false);
+        this.w = n6Var2;
+        n6Var2.setTextSize(g0.L(14.0f));
+        n6Var2.setTypeface(g0.o());
+        n6Var2.setText(String.format("%d", Integer.valueOf(i11)));
+        n6Var2.setGravity(21);
         setPremiumCountColor(true);
-        if (hd.a0) {
-            q3Var2.addView(textView2, ja.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
-            q3Var2.addView(h6Var2, ja.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+        if (gd.a0) {
+            q3Var2.addView(textView2, ma.d(-1, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var2.addView(n6Var2, ma.d(-2, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
         } else {
-            q3Var2.addView(textView2, ja.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
-            q3Var2.addView(h6Var2, ja.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var2.addView(textView2, ma.d(-1, 30.0f, 3, 12.0f, 0.0f, 12.0f, 0.0f));
+            q3Var2.addView(n6Var2, ma.d(-2, 30.0f, 5, 12.0f, 0.0f, 12.0f, 0.0f));
         }
-        k4 k4Var = new k4(this, context, e6Var);
-        this.J = k4Var;
-        k4Var.addView(q3Var, ja.c(30.0f, -1));
-        k4Var.addView(q3Var2, ja.c(30.0f, -1));
-        addView(k4Var, ja.q(-1, 30, 0.0f, 0, 14, i7 != 0 ? 12 : 0, 14, 0));
+        n4 n4Var = new n4(this, context, i6Var);
+        this.J = n4Var;
+        n4Var.addView(q3Var, ma.c(30.0f, -1));
+        n4Var.addView(q3Var2, ma.c(30.0f, -1));
+        addView(n4Var, ma.q(-1, 30, 0.0f, 0, 14, i7 != 0 ? 12 : 0, 14, 0));
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

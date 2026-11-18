@@ -1,111 +1,95 @@
 package fi;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.SpannableStringBuilder;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.Components.er;
+import java.util.ArrayList;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class o9 extends ReplacementSpan {
-    public View a;
-    public float d;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public class o9 {
+    public static long g;
+    public final p6 a;
+    public final int b;
+    public final long c;
+    public int d;
     public boolean e;
-    public long f;
-    public boolean n;
-    public boolean r;
-    public int b = 1;
-    public int c = 2;
-    public final er h = new er(0.0f, 0.5f, 0.5f, 1.0f);
+    public final f2.a f = new f2.a(this, 24);
 
-    public static CharSequence a(TextView textView, String str) {
-        int i7;
-        int i10;
-        SpannableStringBuilder spannableStringBuilder = null;
-        if (str == null) {
-            return null;
-        }
-        int i11 = 0;
-        while (i11 < str.length()) {
-            if (str.charAt(i11) == 8230) {
-                i10 = 1;
-            } else {
-                if (str.charAt(i11) == '.' && (i7 = i11 + 2) < str.length() && str.charAt(i11 + 1) == '.' && str.charAt(i7) == '.') {
-                    i10 = 3;
-                }
-                i11++;
-            }
-            if (spannableStringBuilder == null) {
-                spannableStringBuilder = new SpannableStringBuilder(str);
-            }
-            o9 o9Var = new o9();
-            o9Var.a = textView;
-            o9Var.n = false;
-            spannableStringBuilder.setSpan(o9Var, i11, i11 + i10, 33);
-            i11 += i10 - 1;
-            i11++;
-        }
-        return spannableStringBuilder == null ? str : spannableStringBuilder;
+    public o9(int i7, long j3, p6 p6Var) {
+        this.b = i7;
+        this.a = p6Var;
+        this.c = j3;
     }
 
-    public final void b(org.telegram.ui.Cells.t0 t0Var) {
-        this.a = t0Var;
-        this.n = false;
+    public void a(ArrayList arrayList) {
+        TL_stories.PeerStories y10 = this.a.y(this.c);
+        if (y10 == null || y10.stories == null) {
+            return;
+        }
+        int i7 = 0;
+        while (i7 < y10.stories.size()) {
+            i7 = com.google.android.gms.internal.vision.e2.f(y10.stories.get(i7).id, i7, 1, arrayList);
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float f11;
-        TextPaint textPaint = (TextPaint) paint;
-        float measureText = paint.measureText("…") / 3.0f;
-        float f12 = -(this.r ? textPaint.getFontMetrics().ascent : textPaint.getFontMetrics().top);
-        float f13 = (textPaint.getFontMetrics().bottom - textPaint.getFontMetrics().top) * (this.n ? 0.05f : 0.0365f);
-        float f14 = f12 - f13;
-        if (!this.e) {
-            float f15 = this.d + 0.053333335f;
-            this.d = f15;
-            if (f15 > 1.0f) {
-                this.d = 0.0f;
-                int i14 = this.b - 1;
-                this.b = i14;
-                this.c--;
-                if (i14 < 0) {
-                    this.b = 1;
-                    this.c = 2;
-                    this.e = true;
-                    this.f = System.currentTimeMillis();
+    public final void b(boolean z10) {
+        if (this.e == z10) {
+            return;
+        }
+        if (z10) {
+            this.e = true;
+            c();
+        } else {
+            this.e = false;
+            org.telegram.messenger.g0.r(this.f);
+            ConnectionsManager.getInstance(this.b).cancelRequest(this.d, false);
+            this.d = 0;
+        }
+    }
+
+    public final void c() {
+        if (this.e) {
+            long currentTimeMillis = 10000 - (System.currentTimeMillis() - g);
+            if (currentTimeMillis > 0) {
+                f2.a aVar = this.f;
+                org.telegram.messenger.g0.r(aVar);
+                org.telegram.messenger.g0.h3(aVar, currentTimeMillis);
+                return;
+            }
+            if (this.d == 0) {
+                TL_stories.TL_stories_getStoriesViews tL_stories_getStoriesViews = new TL_stories.TL_stories_getStoriesViews();
+                a(tL_stories_getStoriesViews.id);
+                if (!tL_stories_getStoriesViews.id.isEmpty()) {
+                    int i7 = this.b;
+                    tL_stories_getStoriesViews.peer = mp.u1(i7).l1(this.c);
+                    this.d = ConnectionsManager.getInstance(i7).sendRequest(tL_stories_getStoriesViews, new bi.k1(14, this, tL_stories_getStoriesViews));
+                    return;
                 }
             }
-        } else if (System.currentTimeMillis() - this.f > 1000) {
+            this.d = 0;
             this.e = false;
         }
-        for (int i15 = 0; i15 < 3; i15++) {
-            float f16 = measureText / 2.0f;
-            float f17 = (i15 * measureText) + f10 + f16;
-            if (i15 == this.b) {
-                f17 = org.telegram.messenger.g0.T1(f17, r.b.e(measureText, i15 + 1, f10, f16), this.d);
-                float f18 = this.d;
-                f11 = org.telegram.messenger.g0.T1(f14, f14 - f16, this.h.getInterpolation(f18 < 0.5f ? f18 / 0.5f : org.telegram.messenger.k5.y(f18, 0.5f, 0.5f, 1.0f)));
-            } else {
-                if (i15 == this.c) {
-                    f17 = org.telegram.messenger.g0.T1(f17, r.b.e(measureText, i15 - 1, f10, f16), this.d);
-                }
-                f11 = f14;
-            }
-            canvas.drawCircle(f17, f11, f13, paint);
-        }
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
-        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) paint.measureText("…");
+    public boolean d(ArrayList arrayList, TL_stories.TL_stories_storyViews tL_stories_storyViews) {
+        if (tL_stories_storyViews != null && tL_stories_storyViews.views != null) {
+            long j3 = this.c;
+            p6 p6Var = this.a;
+            TL_stories.PeerStories y10 = p6Var.y(j3);
+            if (y10 != null && !y10.stories.isEmpty()) {
+                for (int i7 = 0; i7 < tL_stories_storyViews.views.size(); i7++) {
+                    for (int i10 = 0; i10 < y10.stories.size(); i10++) {
+                        if (y10.stories.get(i10).id == ((Integer) arrayList.get(i7)).intValue()) {
+                            y10.stories.get(i10).views = tL_stories_storyViews.views.get(i7);
+                        }
+                    }
+                }
+                c7 c7Var = p6Var.k;
+                c7Var.b.a.c(new a7(c7Var, y10, 0));
+                return true;
+            }
+        }
+        return false;
     }
 }

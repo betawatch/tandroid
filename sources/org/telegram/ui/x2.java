@@ -2,10 +2,10 @@ package org.telegram.ui;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x2 extends org.telegram.ui.ActionBar.b3 {
-    @Override // org.telegram.ui.ActionBar.b3
+public final class x2 extends org.telegram.ui.ActionBar.f3 {
+    @Override // org.telegram.ui.ActionBar.f3
     public final String b() {
         org.telegram.ui.web.s0 s0Var = this.b;
         return (s0Var == null || TextUtils.isEmpty(s0Var.getTitle())) ? super.b() : this.b.getTitle();

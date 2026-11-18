@@ -1,47 +1,98 @@
 package hi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public interface wa {
-    void A(boolean z10);
+import android.media.MediaExtractor;
+import android.media.MediaFormat;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
 
-    void D(float f10, int i7);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class wa {
+    public final org.telegram.ui.Components.c6 a;
+    public final int b;
+    public final short[] d;
+    public short e;
+    public final MediaExtractor f;
+    public final MediaFormat g;
+    public final long h;
+    public final FfmpegAudioWaveformLoader k;
+    public final /* synthetic */ db l;
+    public int c = 0;
+    public final Object i = new Object();
+    public boolean j = false;
 
-    void H(float f10);
+    public wa(db dbVar, String str, int i7) {
+        this.l = dbVar;
+        this.a = new org.telegram.ui.Components.c6(dbVar, 0L, 600L, lr.h);
+        int i10 = 0;
+        MediaExtractor mediaExtractor = new MediaExtractor();
+        this.f = mediaExtractor;
+        String str2 = null;
+        try {
+            mediaExtractor.setDataSource(str);
+            int trackCount = mediaExtractor.getTrackCount();
+            while (true) {
+                if (i10 < trackCount) {
+                    MediaFormat trackFormat = this.f.getTrackFormat(i10);
+                    str2 = trackFormat.getString("mime");
+                    if (str2 != null && str2.startsWith("audio/")) {
+                        this.f.selectTrack(i10);
+                        this.g = trackFormat;
+                        break;
+                    }
+                    i10++;
+                } else {
+                    break;
+                }
+            }
+            MediaFormat mediaFormat = this.g;
+            if (mediaFormat != null) {
+                this.h = mediaFormat.getLong("durationUs") / 1000000;
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+        int min = Math.min(Math.round((((this.h * 1000) / Math.min(dbVar.h != null ? r8.e : !dbVar.s.isEmpty() ? dbVar.getBaseDuration() : dbVar.F ? dbVar.I : this.h * 1000, dbVar.getMaxScrollDuration())) * i7) / Math.round(org.telegram.messenger.g0.N(3.3333f))), 4000);
+        this.b = min;
+        this.d = new short[min];
+        if (this.h <= 0 || this.g == null) {
+            return;
+        }
+        if ("audio/mpeg".equals(str2) || "audio/mp3".equals(str2) || "audio/mp4a".equals(str2) || "audio/mp4a-latm".equals(str2)) {
+            this.k = new FfmpegAudioWaveformLoader(str, min, new e7(this, 2));
+        } else {
+            Utilities.h.c(new k(this, 22));
+        }
+    }
 
-    void O(long j3);
+    public final void a() {
+        FfmpegAudioWaveformLoader ffmpegAudioWaveformLoader = this.k;
+        if (ffmpegAudioWaveformLoader != null) {
+            ffmpegAudioWaveformLoader.destroy();
+        }
+        Utilities.h.a(new k(this, 22));
+        synchronized (this.i) {
+            this.j = true;
+        }
+    }
 
-    void S(boolean z10);
-
-    void X(float f10, int i7);
-
-    void Y(float f10);
-
-    void e(int i7);
-
-    void f0(float f10);
-
-    void i0(float f10, int i7);
-
-    void j0(float f10);
-
-    void k(float f10);
-
-    void k0();
-
-    void n(float f10);
-
-    void o0(float f10);
-
-    void p(long j3, boolean z10);
-
-    void s();
-
-    void s0(int i7, long j3);
-
-    void t0(long j3);
-
-    void v(boolean z10, float f10);
-
-    void w(float f10);
+    public final void b(short[] sArr, int i7) {
+        for (int i10 = 0; i10 < i7; i10++) {
+            int i11 = this.c;
+            int i12 = i11 + i10;
+            short[] sArr2 = this.d;
+            if (i12 >= sArr2.length) {
+                break;
+            }
+            sArr2[i11 + i10] = sArr[i10];
+            short s5 = this.e;
+            short s9 = sArr[i10];
+            if (s5 < s9) {
+                this.e = s9;
+            }
+        }
+        this.c += i7;
+        this.l.invalidate();
+    }
 }

@@ -1,24 +1,18 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d91 extends org.telegram.ui.Components.a60 {
-    public final /* synthetic */ long v2;
-    public final /* synthetic */ f91 w2;
+public final class d91 extends v4.z {
+    public final /* synthetic */ y91 T;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d91(f91 f91Var, Context context, int i7, a0.h hVar, long j3, org.telegram.ui.ActionBar.e2 e2Var, long j10) {
-        super(context, i7, hVar, j3, e2Var, null);
-        this.w2 = f91Var;
-        this.v2 = j10;
+    public d91(y91 y91Var, x91 x91Var) {
+        super(x91Var);
+        this.T = y91Var;
     }
 
-    @Override // org.telegram.ui.Components.a60
-    public final boolean R0() {
-        TLRPC.Chat M0 = this.w2.b.getMessagesController().M0(Long.valueOf(this.v2));
-        return M0 != null && org.telegram.messenger.t3.y(3, M0);
+    @Override // v4.z
+    public final boolean s() {
+        return this.T.y > 0;
     }
 }

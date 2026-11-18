@@ -1,114 +1,34 @@
 package r0;
 
-import android.os.Build;
-import android.view.View;
-import j$.util.Objects;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class h1 {
-    public static final k1 b;
-    public final k1 a;
+public final class h1 extends g1 {
+    public static final l1 s;
 
     static {
-        int i7 = Build.VERSION.SDK_INT;
-        b = (i7 >= 34 ? new z0() : i7 >= 30 ? new y0() : i7 >= 29 ? new x0() : new w0()).b().a.a().a.b().a.c();
+        WindowInsets windowInsets;
+        windowInsets = WindowInsets.CONSUMED;
+        s = l1.h(null, windowInsets);
     }
 
-    public h1(k1 k1Var) {
-        this.a = k1Var;
+    public h1(l1 l1Var, WindowInsets windowInsets) {
+        super(l1Var, windowInsets);
     }
 
-    public k1 a() {
-        return this.a;
+    @Override // r0.g1, r0.b1, r0.i1
+    public i0.b f(int i7) {
+        return i0.b.c(this.c.getInsets(k1.a(i7)));
     }
 
-    public k1 b() {
-        return this.a;
+    @Override // r0.g1, r0.b1, r0.i1
+    public i0.b g(int i7) {
+        return i0.b.c(this.c.getInsetsIgnoringVisibility(k1.a(i7)));
     }
 
-    public k1 c() {
-        return this.a;
-    }
-
-    public h e() {
-        return null;
-    }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h1)) {
-            return false;
-        }
-        h1 h1Var = (h1) obj;
-        return o() == h1Var.o() && n() == h1Var.n() && Objects.equals(k(), h1Var.k()) && Objects.equals(i(), h1Var.i()) && Objects.equals(e(), h1Var.e());
-    }
-
-    public i0.c f(int i7) {
-        return i0.c.e;
-    }
-
-    public i0.c g(int i7) {
-        if ((i7 & 8) == 0) {
-            return i0.c.e;
-        }
-        throw new IllegalArgumentException("Unable to query the maximum insets for IME");
-    }
-
-    public i0.c h() {
-        return k();
-    }
-
-    public int hashCode() {
-        return Objects.hash(Boolean.valueOf(o()), Boolean.valueOf(n()), k(), i(), e());
-    }
-
-    public i0.c i() {
-        return i0.c.e;
-    }
-
-    public i0.c j() {
-        return k();
-    }
-
-    public i0.c k() {
-        return i0.c.e;
-    }
-
-    public i0.c l() {
-        return k();
-    }
-
-    public k1 m(int i7, int i10, int i11, int i12) {
-        return b;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean o() {
-        return false;
-    }
-
+    @Override // r0.g1, r0.b1, r0.i1
     public boolean p(int i7) {
-        return true;
-    }
-
-    public void d(View view) {
-    }
-
-    public void q(i0.c[] cVarArr) {
-    }
-
-    public void r(k1 k1Var) {
-    }
-
-    public void s(i0.c cVar) {
-    }
-
-    public void t(int i7) {
+        return this.c.isVisible(k1.a(i7));
     }
 }

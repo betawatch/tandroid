@@ -1,81 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.TextureView;
-import android.view.View;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.widget.FrameLayout;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class w40 extends FrameLayout {
-    public s40 a;
-    public v40 b;
-    public u40 c;
-    public boolean d;
+public final class w40 extends b50 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ y40 c;
 
-    public static boolean e(int i7) {
-        aj.a aVar = aj.e.d;
-        aVar.a();
-        if (!aVar.c) {
-            return !((org.telegram.messenger.h0) org.telegram.messenger.np.s1(i7).y7.g0.b).c;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w40(y40 y40Var, Context context) {
+        super(context);
+        this.c = y40Var;
+        setWillNotDraw(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        y40 y40Var = this.c;
+        FrameLayout frameLayout = y40Var.x;
+        sk0 sk0Var = y40Var.w;
+        v40 v40Var = y40Var.y;
+        super.dispatchDraw(canvas);
+        if (this.a == null) {
+            return;
         }
-        aVar.a();
-        return aVar.d;
-    }
-
-    public abstract void a(boolean z10);
-
-    public abstract void b(float f10, int i7);
-
-    public abstract void c(boolean z10);
-
-    public abstract void d(boolean z10);
-
-    public abstract boolean f();
-
-    public abstract void g(float f10);
-
-    public abstract View getButtonsLayout();
-
-    public abstract t40 getCameraContainer();
-
-    public abstract RectF getCameraRect();
-
-    public abstract View getMuteImageView();
-
-    public abstract Paint getPaint();
-
-    public abstract TextureView getTextureView();
-
-    public abstract void h(int i7, int i10, int i11, long j3, long j10, boolean z10);
-
-    public abstract void i(dh.c cVar, org.telegram.ui.oi oiVar);
-
-    public abstract void j(boolean z10);
-
-    public abstract void k();
-
-    public final void setAnimationCallback(s40 s40Var) {
-        this.a = s40Var;
-    }
-
-    public abstract void setInternalPadding(int i7);
-
-    public abstract void setIsMessageTransition(boolean z10);
-
-    public final void setRecordingUiFrameCallback(u40 u40Var) {
-        this.c = u40Var;
-        if (u40Var != null) {
-            boolean z10 = this.d;
-            org.telegram.ui.qj qjVar = ((org.telegram.ui.wi) u40Var).a.a0;
-            if (qjVar != null) {
-                qjVar.setRoundVideoUiFrameClockActive(z10);
-            }
+        float f10 = this.b;
+        if (f10 < 1.0f) {
+            this.b = Math.min(1.0f, f10 + 0.064f);
+            invalidate();
         }
+        canvas.save();
+        canvas.translate(v40Var.getLeft() + frameLayout.getLeft() + sk0Var.getLeft(), v40Var.getTop() + frameLayout.getTop() + sk0Var.getTop());
+        if (this.a.N0 != v40Var.getWidth()) {
+            float width = v40Var.getWidth() / this.a.N0;
+            canvas.scale(width, width);
+        }
+        ImageReceiver imageReceiver = this.a;
+        canvas.translate(-imageReceiver.L0, -imageReceiver.M0);
+        float alpha = this.a.getAlpha();
+        this.a.setAlpha(this.b);
+        this.a.h(canvas, null);
+        this.a.setAlpha(alpha);
+        canvas.restore();
     }
 
-    public final void setTrimCallback(v40 v40Var) {
-        this.b = v40Var;
+    @Override // org.telegram.ui.Components.b50
+    public final void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
+        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

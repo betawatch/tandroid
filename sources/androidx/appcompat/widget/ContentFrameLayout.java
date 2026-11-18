@@ -16,7 +16,7 @@ import m.k3;
 import org.telegram.tgnet.TLObject;
 import r0.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -89,7 +89,7 @@ public class ContentFrameLayout extends FrameLayout {
         super.onDetachedFromWindow();
         i1 i1Var = this.n;
         if (i1Var != null) {
-            s sVar = (s) ((ob.c) i1Var).b;
+            s sVar = (s) ((cb.c) i1Var).b;
             j1 j1Var = sVar.s;
             if (j1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) j1Var;

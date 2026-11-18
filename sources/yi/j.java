@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import b7.l;
-import fi.a4;
+import fi.y3;
 import h2.z;
 import java.io.File;
 import java.util.ArrayList;
@@ -19,14 +19,15 @@ import java.util.concurrent.atomic.AtomicLong;
 import l2.f0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.le;
-import org.telegram.messenger.ns;
-import ug.t1;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
+import wg.q;
+import wg.r;
+import yi.g;
 import yi.h;
-import yi.i;
 import yi.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class j {
     public static final sa.d H = new sa.d(29);
@@ -34,12 +35,12 @@ public final class j {
     public f0 A;
     public byte[] B;
     public ac.e C;
-    public final e D;
-    public final e E;
+    public final d D;
+    public final d E;
     public final Context a;
     public final File b;
     public final long c;
-    public final h d;
+    public final g d;
     public final boolean e;
     public final ji.j f;
     public final k8.a g;
@@ -55,7 +56,7 @@ public final class j {
     public boolean w;
     public boolean x;
     public boolean y;
-    public volatile i z;
+    public volatile h z;
     public final Handler i = new Handler(Looper.getMainLooper());
     public final ExecutorService j = Executors.newSingleThreadExecutor(new y0(9));
     public final ExecutorService k = Executors.newSingleThreadExecutor(new y0(10));
@@ -65,26 +66,26 @@ public final class j {
     public long t = 1;
     public final z F = new z(this, 2);
 
-    /* JADX WARN: Type inference failed for: r4v3, types: [yi.e] */
-    /* JADX WARN: Type inference failed for: r4v4, types: [yi.e] */
-    public j(a4 a4Var) {
+    /* JADX WARN: Type inference failed for: r4v3, types: [yi.d] */
+    /* JADX WARN: Type inference failed for: r4v4, types: [yi.d] */
+    public j(y3 y3Var) {
         q();
-        Context context = (Context) a4Var.b;
+        Context context = (Context) y3Var.b;
         Context applicationContext = context.getApplicationContext();
         context = applicationContext != null ? applicationContext : context;
         this.a = context;
-        File file = (File) a4Var.c;
+        File file = (File) y3Var.c;
         this.b = file == null ? context.getCacheDir() : file;
         this.c = 700L;
-        h hVar = (h) a4Var.d;
-        this.d = hVar;
-        this.e = a4Var.a;
-        this.f = (ji.j) a4Var.e;
-        this.g = (k8.a) a4Var.f;
-        b bVar = new b((g) a4Var.g);
+        g gVar = (g) y3Var.d;
+        this.d = gVar;
+        this.e = y3Var.a;
+        this.f = (ji.j) y3Var.e;
+        this.g = (k8.a) y3Var.f;
+        b bVar = new b((f) y3Var.g);
         this.h = bVar;
         final int i7 = 0;
-        this.D = new Runnable(this) { // from class: yi.e
+        this.D = new Runnable(this) { // from class: yi.d
             public final /* synthetic */ j b;
 
             {
@@ -124,7 +125,7 @@ public final class j {
             }
         };
         final int i10 = 1;
-        this.E = new Runnable(this) { // from class: yi.e
+        this.E = new Runnable(this) { // from class: yi.d
             public final /* synthetic */ j b;
 
             {
@@ -163,7 +164,7 @@ public final class j {
                 }
             }
         };
-        bVar.b("session created: device=" + Build.MANUFACTURER + " " + Build.MODEL + ", sdk=" + Build.VERSION.SDK_INT + ", sampleRate=48000, noiseSuppression=" + hVar + ", minimumDurationMs=700, maximumDurationMs=0");
+        bVar.b("session created: device=" + Build.MANUFACTURER + " " + Build.MODEL + ", sdk=" + Build.VERSION.SDK_INT + ", sampleRate=48000, noiseSuppression=" + gVar + ", minimumDurationMs=700, maximumDurationMs=0");
     }
 
     public static void q() {
@@ -176,17 +177,17 @@ public final class j {
         return (j3 * 1000) / 48000;
     }
 
-    public final void a(i iVar, long j3) {
+    public final void a(h hVar, long j3) {
         if (j3 <= 0) {
             return;
         }
         synchronized (this.l) {
             try {
-                if (iVar.d && !iVar.e) {
-                    long j10 = iVar.c;
+                if (hVar.d && !hVar.e) {
+                    long j10 = hVar.c;
                     if (j3 > j10) {
-                        iVar.c = j3;
-                        this.k.execute(new c(this, iVar, j10, j3 - j10, 1));
+                        hVar.c = j3;
+                        this.k.execute(new c(this, hVar, j10, j3 - j10, 1));
                     }
                 }
             } finally {
@@ -200,17 +201,17 @@ public final class j {
         if (i7 == 10 || i7 == 8) {
             return;
         }
-        this.h.b("cancel requested: state=".concat(r.b.x(i7)));
-        e eVar = this.D;
+        this.h.b("cancel requested: state=".concat(i.c(i7)));
+        d dVar = this.D;
         Handler handler = this.i;
-        handler.removeCallbacks(eVar);
+        handler.removeCallbacks(dVar);
         handler.removeCallbacks(this.E);
         p();
         k(2);
         s(10);
-        org.telegram.utils.recorder.audio.d dVar = this.n;
-        if (dVar != null) {
-            dVar.d();
+        org.telegram.utils.recorder.audio.d dVar2 = this.n;
+        if (dVar2 != null) {
+            dVar2.d();
         } else {
             c();
             t();
@@ -223,28 +224,28 @@ public final class j {
         }
         this.x = true;
         ac.e eVar = this.C;
-        t1 t1Var = new t1(27, this, eVar == null ? null : (File) eVar.b);
+        r rVar = new r(19, this, eVar == null ? null : (File) eVar.b);
         try {
-            this.j.execute(t1Var);
+            this.j.execute(rVar);
         } catch (RejectedExecutionException unused) {
-            t1Var.run();
+            rVar.run();
         }
     }
 
-    public final i d() {
+    public final h d() {
         File f10 = f();
         long j3 = this.t;
         this.t = 1 + j3;
-        i iVar = new i(j3, f10);
+        h hVar = new h(j3, f10);
         synchronized (this.l) {
-            this.z = iVar;
-            this.k.execute(new d(this, iVar, f10, 1));
+            this.z = hVar;
+            this.k.execute(new q(this, hVar, f10, 5));
         }
         b bVar = this.h;
         StringBuilder t6 = p0.t(j3, "output generation started: id=", ", file=");
         t6.append(f10.getName());
         bVar.b(t6.toString());
-        return iVar;
+        return hVar;
     }
 
     public final l e() {
@@ -264,21 +265,21 @@ public final class j {
         if (i7 == 9 || i7 == 10 || i7 == 8) {
             return;
         }
-        this.h.a("fatal error in state=".concat(r.b.x(i7)), exc);
+        this.h.a("fatal error in state=".concat(i.c(i7)), exc);
         Handler handler = this.i;
         handler.removeCallbacks(this.D);
         handler.removeCallbacks(this.E);
         p();
         k(3);
         s(9);
-        i iVar = this.z;
-        if (iVar != null) {
-            this.k.execute(new c(this, iVar, exc));
+        h hVar = this.z;
+        if (hVar != null) {
+            this.k.execute(new c(this, hVar, exc));
         }
-        MediaController mediaController = ((le) this.f.b).a;
+        MediaController mediaController = ((ke) this.f.b).a;
         String[] strArr = MediaController.W1;
         a8.e("AudioRecorderV2 failed", exc);
-        ns.f(mediaController.i1).k(ns.m2, Integer.valueOf(mediaController.h1));
+        ks.f(mediaController.i1).k(ks.m2, Integer.valueOf(mediaController.h1));
         mediaController.x(false);
         org.telegram.utils.recorder.audio.d dVar = this.n;
         if (dVar != null) {
@@ -294,7 +295,7 @@ public final class j {
         q();
         int i7 = this.G;
         if (i7 == 3 || i7 == 5) {
-            this.h.b("finish requested: state=" + r.b.x(this.G) + ", durationMs=" + j() + ", trim=" + this.r + ".." + this.s);
+            this.h.b("finish requested: state=" + i.c(this.G) + ", durationMs=" + j() + ", trim=" + this.r + ".." + this.s);
             if (this.G == 3) {
                 this.v = true;
                 this.i.removeCallbacks(this.D);
@@ -304,8 +305,8 @@ public final class j {
             }
             p();
             s(7);
-            final i iVar = this.z;
-            if (iVar == null) {
+            final h hVar = this.z;
+            if (hVar == null) {
                 g(new IllegalStateException("Output generation is missing"));
                 return;
             }
@@ -317,34 +318,34 @@ public final class j {
             }
             final long j10 = this.s;
             k(1);
-            final i d = d();
+            final h d = d();
             this.j.execute(new Runnable() { // from class: org.telegram.utils.recorder.audio.e
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // java.lang.Runnable
                 public final void run() {
                     j jVar;
-                    i iVar2 = iVar;
-                    i iVar3 = d;
+                    h hVar2 = hVar;
+                    h hVar3 = d;
                     long j11 = j3;
                     long j12 = j10;
                     j jVar2 = j.this;
                     Handler handler = jVar2.i;
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     try {
-                        String absolutePath = iVar2.b.getAbsolutePath();
-                        File file = iVar3.b;
+                        String absolutePath = hVar2.b.getAbsolutePath();
+                        File file = hVar3.b;
                         String absolutePath2 = file.getAbsolutePath();
                         try {
                             if (!AudioRecorderNative.b(absolutePath, absolutePath2, j11, j12)) {
                                 throw new IllegalStateException("Unable to trim final Opus output");
                             }
-                            jVar2.h.b("final trim completed: source=" + iVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j11 + ".." + j12 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
-                            jVar2.a(iVar3, file.length());
+                            jVar2.h.b("final trim completed: source=" + hVar2.b.getName() + ", output=" + file.getName() + ", trim=" + j11 + ".." + j12 + ", bytes=" + file.length() + ", elapsedMs=" + (SystemClock.elapsedRealtime() - elapsedRealtime));
+                            jVar2.a(hVar3, file.length());
                             handler.post(new ai.f0(jVar2, j12, j11, 4));
                         } catch (Throwable th2) {
                             th = th2;
                             jVar = absolutePath2;
-                            handler.post(new t1(26, jVar, th));
+                            handler.post(new r(18, jVar, th));
                         }
                     } catch (Throwable th3) {
                         th = th3;
@@ -359,19 +360,19 @@ public final class j {
         if (this.G != 7) {
             return;
         }
-        i iVar = this.z;
-        if (iVar == null) {
+        h hVar = this.z;
+        if (hVar == null) {
             g(new IllegalStateException("Output generation is missing"));
             return;
         }
         long j3 = j();
         if (j3 >= this.c) {
-            this.j.execute(new org.telegram.utils.recorder.audio.b(j3, iVar, this));
+            this.j.execute(new org.telegram.utils.recorder.audio.b(j3, hVar, this));
             return;
         }
         this.h.b("recording rejected as too short: durationMs=" + j3);
-        MediaController mediaController = ((le) this.f.b).a;
-        ns.f(mediaController.i1).k(ns.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
+        MediaController mediaController = ((ke) this.f.b).a;
+        ks.f(mediaController.i1).k(ks.t2, Integer.valueOf(mediaController.h1), Boolean.FALSE, Integer.valueOf((int) j3));
         mediaController.x(false);
         k(2);
         s(10);
@@ -387,13 +388,13 @@ public final class j {
 
     public final void k(int i7) {
         synchronized (this.l) {
-            i iVar = this.z;
-            if (iVar != null && iVar.d && !iVar.e) {
-                iVar.d = false;
-                this.k.execute(new c(this, iVar, i7));
+            h hVar = this.z;
+            if (hVar != null && hVar.d && !hVar.e) {
+                hVar.d = false;
+                this.k.execute(new c(this, hVar, i7));
                 b bVar = this.h;
                 StringBuilder sb2 = new StringBuilder("output generation invalidated: id=");
-                sb2.append(iVar.a);
+                sb2.append(hVar.a);
                 sb2.append(", reason=");
                 sb2.append(i7 != 1 ? i7 != 2 ? i7 != 3 ? "null" : "ERROR" : "CANCELLED" : "REBUILT");
                 bVar.b(sb2.toString());
@@ -416,7 +417,7 @@ public final class j {
     public final void m() {
         l e10 = e();
         ji.j jVar = this.f;
-        MediaController mediaController = ((le) jVar.b).a;
+        MediaController mediaController = ((ke) jVar.b).a;
         int i7 = e10.a;
         e0.g gVar = (e0.g) jVar.c;
         int i10 = gVar.a;
@@ -427,11 +428,11 @@ public final class j {
                 System.currentTimeMillis();
                 String[] strArr = MediaController.W1;
                 if (!mediaController.J1) {
-                    ns.f(mediaController.i1).k(ns.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
+                    ks.f(mediaController.i1).k(ks.l2, Integer.valueOf(mediaController.h1), Boolean.TRUE);
                 }
             } else if (!z10 && i10 == 6) {
                 mediaController.Y(true);
-                ns.f(mediaController.i1).k(ns.p2, new Object[0]);
+                ks.f(mediaController.i1).k(ks.p2, new Object[0]);
             }
             if (gVar.b) {
                 if (i7 == 3 || i7 == 5) {
@@ -487,7 +488,7 @@ public final class j {
             return;
         }
         this.G = i7;
-        this.h.b("state: " + r.b.x(i10) + " -> " + r.b.x(i7) + ", durationMs=" + r(this.p + this.q));
+        this.h.b("state: " + i.c(i10) + " -> " + i.c(i7) + ", durationMs=" + r(this.p + this.q));
         m();
     }
 
@@ -499,12 +500,12 @@ public final class j {
     public final void u(long j3, long j10, File file) {
         long j11 = this.o + 1;
         this.o = j11;
-        i iVar = this.z;
-        if (iVar == null) {
+        h hVar = this.z;
+        if (hVar == null) {
             g(new IllegalStateException("Output generation is missing"));
             return;
         }
-        final org.telegram.utils.recorder.audio.d dVar = new org.telegram.utils.recorder.audio.d(iVar.b, file, j3, j10, this.d, this.h, new ac.e(j11, iVar, this));
+        final org.telegram.utils.recorder.audio.d dVar = new org.telegram.utils.recorder.audio.d(hVar.b, file, j3, j10, this.d, this.h, new ac.e(j11, hVar, this));
         this.n = dVar;
         this.q = 0L;
         dVar.k.post(new Runnable() { // from class: org.telegram.utils.recorder.audio.a
@@ -521,7 +522,7 @@ public final class j {
                     if (a10 == null) {
                         throw new IllegalStateException("Unable to initialize native Opus recorder");
                     }
-                    if (dVar2.e == h.b) {
+                    if (dVar2.e == g.b) {
                         AudioNoiseSuppressor a11 = AudioNoiseSuppressor.a();
                         dVar2.u = a11;
                         if (a11 == null) {
@@ -548,7 +549,7 @@ public final class j {
                     dVar2.x = SystemClock.elapsedRealtime();
                     if (d > 0) {
                         ac.e eVar = dVar2.g;
-                        ((j) eVar.c).a((i) eVar.b, d);
+                        ((j) eVar.c).a((h) eVar.b, d);
                     }
                 } catch (Throwable th2) {
                     if (dVar2.v != null) {

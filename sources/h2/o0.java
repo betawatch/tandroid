@@ -15,14 +15,14 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import c8.xc;
-import c8.yb;
-import fi.f6;
+import c8.ad;
+import c8.bc;
+import fi.a6;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o0 implements yb.a {
     public final /* synthetic */ int a = 1;
@@ -45,7 +45,7 @@ public final class o0 implements yb.a {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         i0 i0Var2 = (i0) this.f;
-        i0Var2.a.postDelayed(new f6(23, this, atomicBoolean), 1000L);
+        i0Var2.a.postDelayed(new a6(25, this, atomicBoolean), 1000L);
         i0Var.d(new n0(this, atomicBoolean, z10, z11, 0));
     }
 
@@ -66,7 +66,7 @@ public final class o0 implements yb.a {
             zzb();
         }
         db dbVar = (db) this.f;
-        q6.m.g(dbVar);
+        q6.m.h(dbVar);
         if (!this.b) {
             try {
                 dbVar.t1(dbVar.p1(), 1);
@@ -78,7 +78,7 @@ public final class o0 implements yb.a {
         int i7 = aVar.e;
         int i10 = aVar.b;
         int i11 = aVar.c;
-        int a10 = xc.a(aVar.d);
+        int a10 = ad.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i12 = aVar.e;
         if (i12 != -1) {
@@ -89,29 +89,29 @@ public final class o0 implements yb.a {
                     throw new lb.a(i5.c.i(aVar.e, "Unsupported image format: "), 3);
                 }
             }
-            q6.m.g(null);
+            q6.m.h(null);
             throw null;
         }
         Bitmap bitmap = aVar.a;
-        q6.m.g(bitmap);
+        q6.m.h(bitmap);
         bVar = new a7.b(bitmap);
         try {
             Parcel p12 = dbVar.p1();
             int i13 = a8.g0.a;
             p12.writeStrongBinder(bVar);
             p12.writeInt(1);
-            int r10 = yb.r(p12, 20293);
-            yb.q(p12, 1, 4);
+            int r10 = bc.r(p12, 20293);
+            bc.q(p12, 1, 4);
             p12.writeInt(i7);
-            yb.q(p12, 2, 4);
+            bc.q(p12, 2, 4);
             p12.writeInt(i10);
-            yb.q(p12, 3, 4);
+            bc.q(p12, 3, 4);
             p12.writeInt(i11);
-            yb.q(p12, 4, 4);
+            bc.q(p12, 4, 4);
             p12.writeInt(a10);
-            yb.q(p12, 5, 8);
+            bc.q(p12, 5, 8);
             p12.writeLong(elapsedRealtime);
-            yb.s(p12, r10);
+            bc.s(p12, r10);
             Parcel r12 = dbVar.r1(p12, 3);
             ArrayList createTypedArrayList = r12.createTypedArrayList(hb.CREATOR);
             r12.recycle();

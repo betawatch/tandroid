@@ -1,12 +1,12 @@
 package di;
 
 import java.util.HashMap;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,7 +26,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 final int i7 = 1;
                 final e0 e0Var = this.b;
                 final long j3 = this.c;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: di.a0
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: di.a0
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i10 = i7;
@@ -42,7 +42,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j10), null);
                                 }
                                 e0Var2.d.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                ns.f(e0Var2.a).k(ns.C3, Long.valueOf(j10));
+                                ks.f(e0Var2.a).k(ks.E3, Long.valueOf(j10));
                                 break;
                             default:
                                 HashMap hashMap2 = e0Var2.c;
@@ -52,7 +52,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j10), null);
                                 }
                                 e0Var2.b.put(Long.valueOf(j10), Long.valueOf(System.currentTimeMillis()));
-                                ns.f(e0Var2.a).k(ns.C3, Long.valueOf(j10));
+                                ks.f(e0Var2.a).k(ks.E3, Long.valueOf(j10));
                                 break;
                         }
                     }
@@ -62,7 +62,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 final int i10 = 0;
                 final e0 e0Var2 = this.b;
                 final long j10 = this.c;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: di.a0
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: di.a0
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i102 = i10;
@@ -78,7 +78,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap.put(Long.valueOf(j102), null);
                                 }
                                 e0Var22.d.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                ns.f(e0Var22.a).k(ns.C3, Long.valueOf(j102));
+                                ks.f(e0Var22.a).k(ks.E3, Long.valueOf(j102));
                                 break;
                             default:
                                 HashMap hashMap2 = e0Var22.c;
@@ -88,7 +88,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                                     hashMap2.put(Long.valueOf(j102), null);
                                 }
                                 e0Var22.b.put(Long.valueOf(j102), Long.valueOf(System.currentTimeMillis()));
-                                ns.f(e0Var22.a).k(ns.C3, Long.valueOf(j102));
+                                ks.f(e0Var22.a).k(ks.E3, Long.valueOf(j102));
                                 break;
                         }
                     }

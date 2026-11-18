@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class o2 {
     public final int a;
@@ -53,7 +53,7 @@ public final class o2 {
             o2Var = this;
         } else {
             o2Var = this;
-            org.telegram.messenger.g0.h3(new l2((Object) o2Var, this.f, (Serializable) this.j, true, 0));
+            org.telegram.messenger.g0.g3(new l2((Object) o2Var, this.f, (Serializable) this.j, true, 0));
             o2Var.j = "";
         }
         p2 p2Var = o2Var.t;

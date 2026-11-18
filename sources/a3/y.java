@@ -1,11 +1,11 @@
 package a3;
 
-import a8.ja;
+import a8.la;
 import e2.s1;
 import j$.util.Objects;
 import l2.m1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class y {
     public final int a;
@@ -15,7 +15,7 @@ public final class y {
     public final Object e;
 
     public y(m1[] m1VarArr, u[] uVarArr, s1 s1Var, Object obj) {
-        ja.f(m1VarArr.length == uVarArr.length);
+        la.f(m1VarArr.length == uVarArr.length);
         this.b = m1VarArr;
         this.c = (u[]) uVarArr.clone();
         this.d = s1Var;

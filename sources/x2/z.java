@@ -1,44 +1,50 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import j$.util.Objects;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class z extends e2.l1 {
-    public final e2.l0 e;
+public final class z extends s {
+    public static final Object h = new Object();
+    public final Object f;
+    public final Object g;
 
-    public z(e2.l0 l0Var) {
-        this.e = l0Var;
+    public z(e2.l1 l1Var, Object obj, Object obj2) {
+        super(l1Var);
+        this.f = obj;
+        this.g = obj2;
     }
 
-    @Override // e2.l1
+    @Override // x2.s, e2.l1
     public final int b(Object obj) {
-        return obj == y.h ? 0 : -1;
+        Object obj2;
+        if (h.equals(obj) && (obj2 = this.g) != null) {
+            obj = obj2;
+        }
+        return this.e.b(obj);
     }
 
-    @Override // e2.l1
+    @Override // x2.s, e2.l1
     public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
-        i1Var.h(z10 ? 0 : null, z10 ? y.h : null, 0, -9223372036854775807L, 0L, e2.c.c, true);
+        this.e.f(i7, i1Var, z10);
+        if (Objects.equals(i1Var.b, this.g) && z10) {
+            i1Var.b = h;
+        }
         return i1Var;
     }
 
-    @Override // e2.l1
-    public final int h() {
-        return 1;
-    }
-
-    @Override // e2.l1
+    @Override // x2.s, e2.l1
     public final Object l(int i7) {
-        return y.h;
+        Object l10 = this.e.l(i7);
+        return Objects.equals(l10, this.g) ? h : l10;
     }
 
-    @Override // e2.l1
+    @Override // x2.s, e2.l1
     public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
-        k1Var.b(e2.k1.q, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, false, true, null, 0L, -9223372036854775807L, 0, 0, 0L);
-        k1Var.k = true;
+        this.e.m(i7, k1Var, j3);
+        if (Objects.equals(k1Var.a, this.f)) {
+            k1Var.a = e2.k1.q;
+        }
         return k1Var;
-    }
-
-    @Override // e2.l1
-    public final int o() {
-        return 1;
     }
 }

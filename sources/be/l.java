@@ -1,8 +1,8 @@
 package be;
 
 import android.util.Log;
-import c8.j9;
-import c8.v0;
+import c8.m9;
+import c8.x0;
 import gb.a1;
 import gb.b1;
 import gb.d1;
@@ -10,6 +10,7 @@ import gb.j0;
 import gb.r0;
 import gb.t0;
 import gb.w0;
+import hi.w4;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +24,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -113,76 +114,76 @@ public final class l extends kd.j implements rd.p {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:238:0x03af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:244:0x03b3, code lost:
     
-        if (r0.a(r7, r19) == r5) goto L219;
+        if (r0.a(r6, r19) == r4) goto L220;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:240:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:246:?, code lost:
     
-        return r5;
+        return r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:245:0x03f9, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:251:0x03fe, code lost:
     
-        if (gb.d1.a(r4, r0, r2, r19) == r5) goto L219;
+        if (gb.d1.a(r3, r0, r2, r19) == r4) goto L220;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:279:0x0467, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:285:0x046c, code lost:
     
-        if (r4.b(r19) == r5) goto L246;
+        if (r3.b(r19) == r4) goto L247;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:281:?, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:287:?, code lost:
     
-        return r5;
+        return r4;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:285:0x042f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:291:0x0434, code lost:
     
-        if (r6 == r5) goto L246;
+        if (r5 == r4) goto L247;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:325:0x0544, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:331:0x054a, code lost:
     
-        if (r2 == r3) goto L302;
+        if (r2 == r3) goto L303;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:326:0x0547, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:332:0x054d, code lost:
     
-        r2 = r7;
+        r2 = r6;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:331:0x0554, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:337:0x055a, code lost:
     
-        if (r2 == jd.a.a) goto L302;
+        if (r2 == jd.a.a) goto L303;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0191, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0194, code lost:
     
-        if (r3.invoke(r2, r19) != r0) goto L82;
+        if (r3.invoke(r2, r19) != r0) goto L83;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x034d  */
-    /* JADX WARN: Removed duplicated region for block: B:205:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:206:0x0352  */
-    /* JADX WARN: Removed duplicated region for block: B:342:0x0598  */
-    /* JADX WARN: Removed duplicated region for block: B:345:0x059a  */
-    /* JADX WARN: Type inference failed for: r10v16, types: [be.c, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r10v17, types: [be.c, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r10v18 */
-    /* JADX WARN: Type inference failed for: r10v19, types: [be.c, java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r10v23 */
-    /* JADX WARN: Type inference failed for: r2v54, types: [kd.j, rd.p] */
-    /* JADX WARN: Type inference failed for: r9v0 */
-    /* JADX WARN: Type inference failed for: r9v18, types: [int] */
-    /* JADX WARN: Type inference failed for: r9v19, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r9v21 */
-    /* JADX WARN: Type inference failed for: r9v24 */
-    /* JADX WARN: Type inference failed for: r9v25 */
-    /* JADX WARN: Type inference failed for: r9v26 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x0191 -> B:8:0x0195). Please report as a decompilation issue!!! */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x007b  */
+    /* JADX WARN: Removed duplicated region for block: B:206:0x0350  */
+    /* JADX WARN: Removed duplicated region for block: B:209:0x0377  */
+    /* JADX WARN: Removed duplicated region for block: B:211:0x0355  */
+    /* JADX WARN: Removed duplicated region for block: B:348:0x059e  */
+    /* JADX WARN: Removed duplicated region for block: B:351:0x05a0  */
+    /* JADX WARN: Type inference failed for: r2v48, types: [kd.j, rd.p] */
+    /* JADX WARN: Type inference failed for: r8v0 */
+    /* JADX WARN: Type inference failed for: r8v10 */
+    /* JADX WARN: Type inference failed for: r8v14 */
+    /* JADX WARN: Type inference failed for: r8v15 */
+    /* JADX WARN: Type inference failed for: r8v16 */
+    /* JADX WARN: Type inference failed for: r8v7, types: [int] */
+    /* JADX WARN: Type inference failed for: r8v8, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r9v11, types: [be.c, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v12, types: [be.c, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v13 */
+    /* JADX WARN: Type inference failed for: r9v14, types: [be.c, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r9v18 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x0194 -> B:8:0x0198). Please report as a decompilation issue!!! */
     @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         gd.k kVar;
-        Object b10;
+        Object a10;
         Object invoke;
-        Object b11;
+        Object b10;
         boolean booleanValue;
         Integer num;
         Boolean bool;
@@ -193,26 +194,25 @@ public final class l extends kd.j implements rd.p {
         Integer num3;
         Double d2;
         Boolean bool2;
-        Object a10;
+        Object a11;
         gd.k kVar2;
         l lVar;
         Object obj2;
-        ?? r10;
+        ?? r92;
         AtomicLongFieldUpdater atomicLongFieldUpdater;
         c cVar;
         k kVar3;
         int i7 = this.a;
-        int i10 = 4;
         Object obj3 = this.d;
         gd.k kVar4 = gd.k.a;
-        ?? r92 = 1;
+        ?? r82 = 1;
         switch (i7) {
             case 0:
                 jd.a aVar = jd.a.a;
-                int i11 = this.b;
+                int i10 = this.b;
                 try {
-                    if (i11 == 0) {
-                        af.b.c(obj);
+                    if (i10 == 0) {
+                        b7.h.b(obj);
                         u uVar = (u) obj3;
                         this.b = 1;
                         kVar = kVar4;
@@ -222,27 +222,27 @@ public final class l extends kd.j implements rd.p {
                             }
                         } catch (Throwable th2) {
                             th = th2;
-                            b10 = af.b.b(th);
-                            return new j(b10 instanceof gd.f ? kVar : new h(gd.g.a(b10)));
+                            a10 = b7.h.a(th);
+                            return new j(a10 instanceof gd.f ? kVar : new h(gd.g.a(a10)));
                         }
                     } else {
-                        if (i11 != 1) {
+                        if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         kVar = kVar4;
                     }
-                    b10 = kVar;
+                    a10 = kVar;
                 } catch (Throwable th3) {
                     th = th3;
                     kVar = kVar4;
                 }
-                return new j(b10 instanceof gd.f ? kVar : new h(gd.g.a(b10)));
+                return new j(a10 instanceof gd.f ? kVar : new h(gd.g.a(a10)));
             case 1:
                 jd.a aVar2 = jd.a.a;
-                int i12 = this.b;
-                if (i12 == 0) {
-                    af.b.c(obj);
+                int i11 = this.b;
+                if (i11 == 0) {
+                    b7.h.b(obj);
                     s sVar = (s) this.c;
                     ce.b bVar = (ce.b) obj3;
                     this.b = 1;
@@ -251,7 +251,7 @@ public final class l extends kd.j implements rd.p {
                             invoke = ((de.c) bVar.e).invoke(sVar, this);
                             break;
                         default:
-                            invoke = ((ce.c) bVar.e).G(new de.l(sVar), this);
+                            invoke = ((ce.c) bVar.e).v(new de.l(sVar), this);
                             jd.a aVar3 = jd.a.a;
                             if (invoke != aVar3) {
                                 invoke = kVar4;
@@ -263,77 +263,77 @@ public final class l extends kd.j implements rd.p {
                         return aVar2;
                     }
                 } else {
-                    if (i12 != 1) {
+                    if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 2:
                 jd.a aVar4 = jd.a.a;
-                int i13 = this.b;
-                if (i13 == 0) {
-                    af.b.c(obj);
+                int i12 = this.b;
+                if (i12 == 0) {
+                    b7.h.b(obj);
                     ce.d dVar = (ce.d) this.c;
                     this.b = 1;
-                    Object G = ((ce.c) ((ce.b) obj3).e).G(dVar, this);
-                    if (G != aVar4) {
-                        G = kVar4;
+                    Object v = ((ce.c) ((ce.b) obj3).e).v(dVar, this);
+                    if (v != aVar4) {
+                        v = kVar4;
                     }
-                    if (G == aVar4) {
+                    if (v == aVar4) {
                         return aVar4;
                     }
                 } else {
-                    if (i13 != 1) {
+                    if (i12 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 3:
                 jd.a aVar5 = jd.a.a;
-                int i14 = this.b;
-                if (i14 == 0) {
-                    af.b.c(obj);
+                int i13 = this.b;
+                if (i13 == 0) {
+                    b7.h.b(obj);
                     Object obj4 = this.c;
                     this.b = 1;
                     if (((ce.d) obj3).a(obj4, this) == aVar5) {
                         return aVar5;
                     }
                 } else {
-                    if (i14 != 1) {
+                    if (i13 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 4:
                 gb.n nVar = (gb.n) this.c;
                 jb.l lVar2 = nVar.b;
                 jd.a aVar6 = jd.a.a;
-                int i15 = this.b;
-                if (i15 == 0) {
-                    af.b.c(obj);
+                int i14 = this.b;
+                if (i14 == 0) {
+                    b7.h.b(obj);
                     hb.c cVar2 = hb.c.a;
                     this.b = 1;
-                    b11 = cVar2.b(this);
+                    b10 = cVar2.b(this);
                     break;
                 } else {
-                    if (i15 != 1) {
-                        if (i15 != 2) {
+                    if (i14 != 1) {
+                        if (i14 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
-                        Boolean a11 = lVar2.a.a();
-                        if (a11 != null) {
-                            booleanValue = a11.booleanValue();
+                        b7.h.b(obj);
+                        Boolean a12 = lVar2.a.a();
+                        if (a12 != null) {
+                            booleanValue = a12.booleanValue();
                         } else {
-                            Boolean a12 = lVar2.b.a();
-                            booleanValue = a12 != null ? a12.booleanValue() : true;
+                            Boolean a13 = lVar2.b.a();
+                            booleanValue = a13 != null ? a13.booleanValue() : true;
                         }
                         if (booleanValue) {
                             o9.g gVar = nVar.a;
-                            g0.e eVar = new g0.e(i10);
+                            g0.e eVar = new g0.e(5);
                             gVar.a();
                             gVar.j.add(eVar);
                         } else {
@@ -341,10 +341,10 @@ public final class l extends kd.j implements rd.p {
                         }
                         return kVar4;
                     }
-                    af.b.c(obj);
-                    b11 = obj;
+                    b7.h.b(obj);
+                    b10 = obj;
                 }
-                Collection values = ((Map) b11).values();
+                Collection values = ((Map) b10).values();
                 if (!(values instanceof Collection) || !values.isEmpty()) {
                     Iterator it = values.iterator();
                     while (it.hasNext()) {
@@ -360,44 +360,44 @@ public final class l extends kd.j implements rd.p {
                 j0 j0Var = (j0) obj3;
                 d1 d1Var = (d1) this.c;
                 jd.a aVar7 = jd.a.a;
-                int i16 = this.b;
+                int i15 = this.b;
                 try {
                 } catch (Exception e10) {
                     Log.d("FirebaseSessions", "App foregrounded, failed to update data. Message: " + e10.getMessage());
                     if (d1Var.e(j0Var)) {
-                        gb.n0 a13 = d1Var.b.a(j0Var.a);
-                        d1Var.h = j0.a(j0Var, a13, null, null, 4);
+                        gb.n0 a14 = d1Var.b.a(j0Var.a);
+                        d1Var.h = j0.a(j0Var, a14, null, null, 4);
                         t0 t0Var = (t0) d1Var.c;
-                        zd.b0.q(zd.b0.b(t0Var.e), new r0(t0Var, a13, null));
-                        String str = a13.a;
+                        zd.b0.q(zd.b0.b(t0Var.e), new r0(t0Var, a14, null));
+                        String str = a14.a;
                         a1 a1Var = a1.b;
                         this.b = 2;
                         break;
                     }
                 }
-                if (i16 == 0) {
-                    af.b.c(obj);
+                if (i15 == 0) {
+                    b7.h.b(obj);
                     m1.g gVar2 = d1Var.e;
                     b1 b1Var = new b1(d1Var, null, 1);
                     this.b = 1;
                     break;
                 } else {
-                    if (i16 != 1) {
-                        if (i16 != 2) {
+                    if (i15 != 1) {
+                        if (i15 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         return kVar4;
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 6:
                 jb.d dVar2 = (jb.d) obj3;
                 jd.a aVar8 = jd.a.a;
-                int i17 = this.b;
-                if (i17 == 0) {
-                    af.b.c(obj);
+                int i16 = this.b;
+                if (i16 == 0) {
+                    b7.h.b(obj);
                     JSONObject jSONObject = (JSONObject) this.c;
                     Log.d("FirebaseSessions", "Fetched settings: " + jSONObject);
                     if (jSONObject.has("app_quality")) {
@@ -414,37 +414,37 @@ public final class l extends kd.j implements rd.p {
                                     e = e11;
                                     num3 = null;
                                 }
-                            } catch (JSONException e12) {
-                                e = e12;
+                                try {
+                                    num2 = num3;
+                                    d = d2;
+                                    bool = bool2;
+                                    num = jSONObject2.has("cache_duration") ? (Integer) jSONObject2.get("cache_duration") : null;
+                                } catch (JSONException e12) {
+                                    e = e12;
+                                    kd.g.a(Log.e("FirebaseSessions", "Error parsing the configs remotely fetched: ", e));
+                                    num2 = num3;
+                                    d = d2;
+                                    bool = bool2;
+                                    num = null;
+                                    pVar = dVar2.e;
+                                    if (num == null) {
+                                    }
+                                    iVar = new jb.i(bool, d, num2, new Integer(num == null ? num.intValue() : jb.d.g), new Long(dVar2.a.a().c));
+                                    this.b = 1;
+                                    if (pVar.c(iVar, this) == aVar8) {
+                                    }
+                                    return kVar4;
+                                }
+                            } catch (JSONException e13) {
+                                e = e13;
                                 num3 = null;
                                 d2 = null;
                             }
-                        } catch (JSONException e13) {
-                            e = e13;
+                        } catch (JSONException e14) {
+                            e = e14;
                             num3 = null;
                             d2 = null;
                             bool2 = null;
-                        }
-                        try {
-                            num2 = num3;
-                            d = d2;
-                            bool = bool2;
-                            num = jSONObject2.has("cache_duration") ? (Integer) jSONObject2.get("cache_duration") : null;
-                        } catch (JSONException e14) {
-                            e = e14;
-                            kd.g.a(Log.e("FirebaseSessions", "Error parsing the configs remotely fetched: ", e));
-                            num2 = num3;
-                            d = d2;
-                            bool = bool2;
-                            num = null;
-                            pVar = dVar2.e;
-                            if (num == null) {
-                            }
-                            iVar = new jb.i(bool, d, num2, new Integer(num == null ? num.intValue() : jb.d.g), new Long(dVar2.a.a().c));
-                            this.b = 1;
-                            if (pVar.c(iVar, this) == aVar8) {
-                            }
-                            return kVar4;
                         }
                     } else {
                         num = null;
@@ -459,20 +459,20 @@ public final class l extends kd.j implements rd.p {
                         return aVar8;
                     }
                 } else {
-                    if (i17 != 1) {
+                    if (i16 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 7:
                 ka.d dVar3 = (ka.d) this.c;
                 ThreadLocal threadLocal = dVar3.b;
                 Object obj6 = jd.a.a;
-                int i18 = this.b;
+                int i17 = this.b;
                 try {
-                    if (i18 == 0) {
-                        af.b.c(obj);
+                    if (i17 == 0) {
+                        b7.h.b(obj);
                         Object obj7 = threadLocal.get();
                         Boolean bool3 = Boolean.TRUE;
                         if (kotlin.jvm.internal.j.a(obj7, bool3)) {
@@ -482,50 +482,50 @@ public final class l extends kd.j implements rd.p {
                         q1.d dVar4 = dVar3.c;
                         ka.b bVar2 = new ka.b((rd.l) obj3, null, 0);
                         this.b = 1;
-                        a10 = dVar4.a(new q1.c(bVar2, null, 1), this);
-                        if (a10 == obj6) {
+                        a11 = dVar4.a(new q1.c(bVar2, null, 1), this);
+                        if (a11 == obj6) {
                             return obj6;
                         }
                     } else {
-                        if (i18 != 1) {
+                        if (i17 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
-                        a10 = obj;
+                        b7.h.b(obj);
+                        a11 = obj;
                     }
-                    obj6 = (q1.b) a10;
+                    obj6 = (q1.b) a11;
                     return obj6;
                 } finally {
                     threadLocal.set(Boolean.FALSE);
                 }
             case 8:
                 jd.a aVar9 = jd.a.a;
-                int i19 = this.b;
-                if (i19 == 0) {
-                    af.b.c(obj);
+                int i18 = this.b;
+                if (i18 == 0) {
+                    b7.h.b(obj);
                     m1.j jVar = (m1.j) this.c;
                     this.b = 1;
-                    if (j9.a((List) obj3, jVar, this) == aVar9) {
+                    if (m9.a((List) obj3, jVar, this) == aVar9) {
                         return aVar9;
                     }
                 } else {
-                    if (i19 != 1) {
+                    if (i18 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             case 9:
                 jd.a aVar10 = jd.a.a;
-                int i20 = this.b;
-                if (i20 != 0) {
-                    if (i20 != 1) {
+                int i19 = this.b;
+                if (i19 != 0) {
+                    if (i19 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     return obj;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 ?? r22 = (kd.j) this.c;
                 Object obj8 = ((m1.c) obj3).b;
                 this.b = 1;
@@ -533,144 +533,141 @@ public final class l extends kd.j implements rd.p {
                 return invoke2 == aVar10 ? aVar10 : invoke2;
             case 10:
                 jd.a aVar11 = jd.a.a;
-                int i21 = this.b;
-                if (i21 == 0) {
-                    af.b.c(obj);
+                int i20 = this.b;
+                if (i20 == 0) {
+                    b7.h.b(obj);
                     n0 n0Var = (n0) this.c;
                     this.b = 1;
                     if (b0.c((b0) obj3, n0Var, this) == aVar11) {
                         return aVar11;
                     }
                 } else {
-                    if (i21 != 1) {
+                    if (i20 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar4;
             default:
                 xi.e eVar2 = (xi.e) obj3;
                 jd.a aVar12 = jd.a.a;
-                int i22 = this.b;
-                if (i22 == 0) {
-                    af.b.c(obj);
-                    if (((AtomicInteger) ((gc.b) eVar2.d).b).get() <= 0) {
+                int i21 = this.b;
+                if (i21 == 0) {
+                    b7.h.b(obj);
+                    if (((AtomicInteger) ((w4) eVar2.d).b).get() <= 0) {
                         throw new IllegalStateException("Check failed.");
                     }
                     zd.b0.g(((z) eVar2.a).c());
                     l lVar3 = (l) eVar2.b;
-                    r10 = (c) eVar2.c;
+                    r92 = (c) eVar2.c;
                     this.c = lVar3;
-                    this.b = r92;
-                    r10.getClass();
+                    this.b = r82;
+                    r92.getClass();
                     atomicLongFieldUpdater = c.b;
                     AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.c;
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = c.h;
-                    k kVar5 = (k) atomicReferenceFieldUpdater.get(r10);
-                    while (!r10.r(atomicLongFieldUpdater.get(r10), r92)) {
+                    k kVar5 = (k) atomicReferenceFieldUpdater.get(r92);
+                    while (!r92.r(atomicLongFieldUpdater.get(r92), r82)) {
                     }
-                    Throwable n10 = r10.n();
-                    int i23 = ee.s.a;
+                    Throwable n10 = r92.n();
+                    int i22 = ee.s.a;
                     throw n10;
                 }
-                if (i22 != 1) {
-                    if (i22 != 2) {
+                if (i21 != 1) {
+                    if (i21 != 2) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     kVar2 = kVar4;
                     kVar4 = kVar2;
-                    if (((AtomicInteger) ((gc.b) eVar2.d).b).decrementAndGet() == 0) {
+                    if (((AtomicInteger) ((w4) eVar2.d).b).decrementAndGet() == 0) {
                         return kVar4;
                     }
-                    r92 = 1;
+                    r82 = 1;
                     zd.b0.g(((z) eVar2.a).c());
                     l lVar32 = (l) eVar2.b;
-                    r10 = (c) eVar2.c;
+                    r92 = (c) eVar2.c;
                     this.c = lVar32;
-                    this.b = r92;
-                    r10.getClass();
+                    this.b = r82;
+                    r92.getClass();
                     atomicLongFieldUpdater = c.b;
                     AtomicLongFieldUpdater atomicLongFieldUpdater22 = c.c;
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = c.h;
-                    k kVar52 = (k) atomicReferenceFieldUpdater2.get(r10);
-                    while (!r10.r(atomicLongFieldUpdater.get(r10), r92)) {
-                        long andIncrement = atomicLongFieldUpdater22.getAndIncrement(r10);
+                    k kVar52 = (k) atomicReferenceFieldUpdater2.get(r92);
+                    while (!r92.r(atomicLongFieldUpdater.get(r92), r82)) {
+                        long andIncrement = atomicLongFieldUpdater22.getAndIncrement(r92);
                         long j3 = e.b;
-                        c cVar3 = r10;
+                        c cVar3 = r92;
                         long j10 = andIncrement / j3;
-                        int i24 = (int) (andIncrement % j3);
+                        int i23 = (int) (andIncrement % j3);
+                        l lVar4 = lVar32;
                         if (kVar52.c == j10) {
                             cVar = cVar3;
                         } else {
                             cVar = cVar3;
                             k l10 = cVar.l(j10, kVar52);
                             if (l10 == null) {
-                                r10 = cVar;
-                                r92 = 1;
+                                r92 = cVar;
+                                lVar32 = lVar4;
+                                r82 = 1;
                             } else {
                                 kVar52 = l10;
                             }
                         }
-                        r10 = cVar;
+                        r92 = cVar;
                         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3 = atomicReferenceFieldUpdater2;
                         k kVar6 = kVar52;
-                        Object z10 = r10.z(kVar6, i24, andIncrement, null);
-                        aa.b0 b0Var = e.m;
-                        if (z10 == b0Var) {
+                        Object z10 = r92.z(kVar6, i23, andIncrement, null);
+                        ee.t tVar = e.m;
+                        if (z10 == tVar) {
                             throw new IllegalStateException("unexpected");
                         }
-                        l lVar4 = lVar32;
-                        aa.b0 b0Var2 = e.o;
-                        if (z10 != b0Var2) {
+                        ee.t tVar2 = e.o;
+                        if (z10 != tVar2) {
                             if (z10 == e.n) {
-                                zd.m l11 = zd.b0.l(v0.b(this));
+                                zd.m l11 = zd.b0.l(x0.b(this));
                                 kVar2 = kVar4;
                                 try {
-                                    Object z11 = r10.z(kVar6, i24, andIncrement, l11);
-                                    if (z11 == b0Var) {
-                                        l11.a(kVar6, i24);
-                                    } else if (z11 != b0Var2) {
+                                    Object z11 = r92.z(kVar6, i23, andIncrement, l11);
+                                    if (z11 == tVar) {
+                                        l11.a(kVar6, i23);
+                                    } else if (z11 != tVar2) {
                                         kVar6.b();
                                         l11.B(z11, null);
                                     } else {
-                                        if (andIncrement < r10.p()) {
+                                        if (andIncrement < r92.p()) {
                                             kVar6.b();
                                         }
-                                        k kVar7 = (k) atomicReferenceFieldUpdater3.get(r10);
+                                        k kVar7 = (k) atomicReferenceFieldUpdater3.get(r92);
                                         while (true) {
-                                            if (r10.r(atomicLongFieldUpdater.get(r10), true)) {
-                                                l11.resumeWith(af.b.b(r10.n()));
+                                            if (r92.r(atomicLongFieldUpdater.get(r92), true)) {
+                                                l11.resumeWith(b7.h.a(r92.n()));
                                             } else {
-                                                long andIncrement2 = atomicLongFieldUpdater22.getAndIncrement(r10);
+                                                long andIncrement2 = atomicLongFieldUpdater22.getAndIncrement(r92);
                                                 long j11 = e.b;
                                                 AtomicLongFieldUpdater atomicLongFieldUpdater3 = atomicLongFieldUpdater;
                                                 long j12 = andIncrement2 / j11;
-                                                int i25 = (int) (andIncrement2 % j11);
-                                                AtomicLongFieldUpdater atomicLongFieldUpdater4 = atomicLongFieldUpdater22;
+                                                int i24 = (int) (andIncrement2 % j11);
                                                 if (kVar7.c == j12) {
                                                     kVar3 = kVar7;
                                                 } else {
-                                                    k l12 = r10.l(j12, kVar7);
+                                                    k l12 = r92.l(j12, kVar7);
                                                     if (l12 == null) {
-                                                        continue;
                                                         atomicLongFieldUpdater = atomicLongFieldUpdater3;
-                                                        atomicLongFieldUpdater22 = atomicLongFieldUpdater4;
                                                     } else {
                                                         kVar3 = l12;
                                                     }
                                                 }
-                                                Object z12 = r10.z(kVar3, i25, andIncrement2, l11);
+                                                Object z12 = r92.z(kVar3, i24, andIncrement2, l11);
                                                 k kVar8 = kVar3;
                                                 if (z12 == e.m) {
-                                                    l11.a(kVar8, i25);
+                                                    l11.a(kVar8, i24);
                                                 } else if (z12 == e.o) {
-                                                    if (andIncrement2 < r10.p()) {
+                                                    if (andIncrement2 < r92.p()) {
                                                         kVar8.b();
                                                     }
-                                                    kVar7 = kVar8;
                                                     atomicLongFieldUpdater = atomicLongFieldUpdater3;
-                                                    atomicLongFieldUpdater22 = atomicLongFieldUpdater4;
+                                                    kVar7 = kVar8;
                                                 } else {
                                                     if (z12 == e.n) {
                                                         throw new IllegalStateException("unexpected");
@@ -700,20 +697,20 @@ public final class l extends kd.j implements rd.p {
                             }
                             return aVar12;
                         }
-                        if (andIncrement < r10.p()) {
+                        if (andIncrement < r92.p()) {
                             kVar6.b();
                         }
-                        lVar32 = lVar4;
                         kVar52 = kVar6;
-                        r92 = 1;
+                        r82 = 1;
                         atomicReferenceFieldUpdater2 = atomicReferenceFieldUpdater3;
+                        lVar32 = lVar4;
                     }
-                    Throwable n102 = r10.n();
-                    int i232 = ee.s.a;
+                    Throwable n102 = r92.n();
+                    int i222 = ee.s.a;
                     throw n102;
                 }
                 l lVar5 = (l) this.c;
-                af.b.c(obj);
+                b7.h.b(obj);
                 lVar = lVar5;
                 kVar2 = kVar4;
                 obj2 = obj;

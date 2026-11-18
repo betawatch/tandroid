@@ -18,12 +18,12 @@ import android.os.Build;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.c6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d extends Drawable implements z5 {
+public final class d extends Drawable implements c6 {
     public final Paint E;
     public int F;
     public boolean G;
@@ -52,7 +52,7 @@ public final class d extends Drawable implements z5 {
         this.s = paint2;
         a5.b bVar = new a5.b(this, 2);
         this.E = new Paint(1);
-        this.H = ns.e4;
+        this.H = ks.e4;
         this.b = gVar;
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint2.setFilterBitmap(true);
@@ -62,7 +62,7 @@ public final class d extends Drawable implements z5 {
 
     public static LinearGradient a(int i7, boolean z10) {
         int alpha = Color.alpha(i7);
-        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, 0), i0.a.o(i7, (alpha * 96) / ns.I4), i0.a.o(i7, (alpha * ns.G2) / ns.I4), i0.a.o(i7, (alpha * ns.I3) / ns.I4)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, 0), i0.a.o(i7, (alpha * 96) / ns.e4), i0.a.o(i7, (alpha * ns.G2) / ns.e4), i0.a.o(i7, (alpha * ns.I3) / ns.e4), i0.a.o(i7, (alpha * ns.e4) / ns.e4)}, (float[]) null, Shader.TileMode.CLAMP);
+        return z10 ? new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, 0), i0.a.o(i7, (alpha * 96) / ks.I4), i0.a.o(i7, (alpha * ks.G2) / ks.I4), i0.a.o(i7, (alpha * ks.I3) / ks.I4)}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, 0.0f, 1.0f, new int[]{i0.a.o(i7, 0), i0.a.o(i7, (alpha * 96) / ks.e4), i0.a.o(i7, (alpha * ks.G2) / ks.e4), i0.a.o(i7, (alpha * ks.I3) / ks.e4), i0.a.o(i7, (alpha * ks.e4) / ks.e4)}, (float[]) null, Shader.TileMode.CLAMP);
     }
 
     public final void b(int i7, boolean z10) {
@@ -189,7 +189,7 @@ public final class d extends Drawable implements z5 {
         this.H = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
             this.b.updateColors();
@@ -199,7 +199,7 @@ public final class d extends Drawable implements z5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

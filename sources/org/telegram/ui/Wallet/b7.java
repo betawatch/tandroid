@@ -1,32 +1,30 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.s10;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ s10 c;
+public final class b7 extends FrameLayout {
+    public final /* synthetic */ e7 a;
 
-    public /* synthetic */ b7(WalletEngine2 walletEngine2, s10 s10Var, int i7) {
-        this.a = i7;
-        this.b = walletEngine2;
-        this.c = s10Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b7(e7 e7Var, Context context) {
+        super(context);
+        this.a = e7Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$emulateRotateKey$30(this.c);
-                break;
-            case 1:
-                this.b.lambda$balance$14(this.c);
-                break;
-            default:
-                this.b.lambda$prepareSendNFT$24(this.c);
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(-getLeft(), -getTop());
+        e7 e7Var = this.a;
+        e7Var.j.c(canvas);
+        canvas.restore();
+        super.dispatchDraw(canvas);
+        if (e7Var.j.d()) {
+            postInvalidateOnAnimation();
         }
     }
 }

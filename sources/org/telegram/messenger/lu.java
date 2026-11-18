@@ -1,425 +1,605 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
-import java.io.File;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class lu extends cu implements x5 {
-    public final TLRPC.Document X;
-    public final RadialProgress2 Y;
+public abstract class lu extends zt implements y5 {
+    public static Paint p0;
+    public static ColorMatrixColorFilter q0;
+    public final boolean X;
+    public final ImageReceiver Y;
     public final ImageReceiver Z;
-    public final Paint a0;
-    public final TextPaint b0;
-    public final TextPaint c0;
-    public StaticLayout d0;
-    public StaticLayout e0;
+    public Bitmap a0;
+    public RadialProgress2 b0;
+    public int c0;
+    public int d0;
+    public boolean e0;
     public final int f0;
-    public final int g0;
-    public final int h0;
-    public final int i0;
-    public final RectF j0;
-    public final boolean k0;
-    public int l0;
+    public int g0;
+    public boolean h0;
+    public boolean i0;
+    public int j0;
+    public int k0;
+    public final int l0;
     public boolean m0;
-    public boolean n0;
-    public int o0;
-    public final int p0;
+    public final Path n0;
+    public final zu o0;
 
-    public lu(iv ivVar, Rect rect, int i7, TL_iv.pageBlockDocument pageblockdocument) {
-        super(ivVar, rect, i7);
+    public lu(ev evVar, Rect rect, int i7, boolean z10) {
+        super(evVar, rect, i7);
         ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.Z = imageReceiver;
-        this.a0 = new Paint(1);
-        this.b0 = new TextPaint(1);
-        this.c0 = new TextPaint(1);
-        int L = g0.L(16.0f);
-        this.f0 = L;
-        int L2 = g0.L(9.0f);
-        int L3 = g0.L(42.0f);
-        this.h0 = L3;
-        this.i0 = g0.L(14.0f);
-        this.j0 = new RectF();
-        this.o0 = -1;
-        TLRPC.Document s5 = ivVar.s(pageblockdocument.document_id);
-        this.X = s5;
-        int L4 = g0.L(10.0f) + ivVar.S;
-        this.g0 = L4;
-        boolean W2 = gj.W2(s5);
-        this.k0 = W2;
-        this.p0 = z5.q(ivVar.a).k();
-        RadialProgress2 radialProgress2 = new RadialProgress2(null, null);
-        this.Y = radialProgress2;
-        radialProgress2.setCircleRadius(L3 / 2);
-        L = W2 ? ((g0.L(86.0f) - L3) / 2) + L4 : L;
-        L2 = W2 ? g0.L(10.0f) + ((g0.L(86.0f) - L3) / 2) : L2;
-        radialProgress2.r(L, L2, L + L3, L3 + L2);
-        imageReceiver.J0(g0.L(6.0f));
+        this.Y = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver(null);
+        this.Z = imageReceiver2;
+        this.g0 = -1;
+        this.l0 = g0.L(48.0f);
+        this.n0 = new Path();
+        this.o0 = new zu();
+        this.X = z10;
+        this.f0 = a6.q(evVar.a).k();
         imageReceiver.A1 = true;
-        if (W2) {
-            TLRPC.PhotoSize w10 = w7.w(s5.thumbs, ns.r5, false, null, true);
-            imageReceiver.y0(L4, g0.L(10.0f), g0.L(86.0f), g0.L(86.0f));
-            imageReceiver.q0(w10 != null ? gc.c(w10, s5) : null, "86_86", fc.m(s5.thumbs), null, ivVar.b, 1);
-        }
-        k0();
-        l0(false);
+        imageReceiver2.A1 = true;
+        imageReceiver.h1 = new hi.w4(this, 25);
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.zt
+    public final void A(int i7, Rect rect) {
+        Rect rect2 = this.b;
+        int i10 = rect2.left;
+        int i11 = (this.a.C - i10) - rect2.right;
+        int i12 = this.c0;
+        int i13 = (i11 > i12 ? (i11 - i12) / 2 : 0) + i10;
+        int i14 = ((int) this.N) + rect2.top;
+        rect.set(i13, i14, i12 + i13, this.d0 + i14);
+    }
+
+    @Override // org.telegram.messenger.zt
+    public final int B() {
+        return 1;
+    }
+
+    @Override // org.telegram.messenger.y5
     public final void C(boolean z10) {
-        l0(true);
+        t0(false);
     }
 
-    @Override // org.telegram.messenger.cu
+    @Override // org.telegram.messenger.zt
+    public final CharSequence E(int i7) {
+        String M0 = gd.M0(q0() ? 2131753931 : 2131753946, null);
+        return (!r0() || this.o0.b()) ? M0 : TextUtils.concat(M0, ", ", gd.M0(2131745027, null));
+    }
+
+    @Override // org.telegram.messenger.zt
     public final int I() {
         Rect rect = this.b;
-        return g0.L(this.k0 ? 106.0f : 60.0f) + rect.top + rect.bottom;
+        return rect.top + this.d0 + rect.bottom;
     }
 
-    @Override // org.telegram.messenger.cu
+    @Override // org.telegram.messenger.zt
     public final int J() {
-        int i7;
-        int i10;
-        boolean z10 = this.k0;
-        iv ivVar = this.a;
-        if (z10) {
-            i10 = g0.L(86.0f) + (this.g0 - ivVar.S);
-        } else {
-            StaticLayout staticLayout = this.e0;
-            if (staticLayout == null || staticLayout.getLineCount() <= 0) {
-                i7 = 0;
-            } else {
-                StaticLayout staticLayout2 = this.e0;
-                i7 = (int) Math.ceil(staticLayout2.getLineWidth(staticLayout2.getLineCount() - 1));
-            }
-            i10 = (this.f0 - ivVar.S) + this.h0 + this.i0 + i7;
-        }
-        Rect rect = this.b;
-        return rect.left + i10 + rect.right;
+        return K();
     }
 
-    @Override // org.telegram.messenger.cu
+    @Override // org.telegram.messenger.zt
     public final int K() {
-        TLRPC.Document document = this.X;
-        int min = Math.min(this.c, Math.max(g0.L(220.0f), g0.L(48.0f) + (this.k0 ? g0.L(107.0f) : this.f0 + this.h0 + this.i0) + ((int) Math.ceil(Math.max(this.b0.measureText(document == null ? "" : w7.B(document)), this.c0.measureText(document != null ? g0.i0(document.size, false, false) : ""))))));
         Rect rect = this.b;
-        return rect.left + min + rect.right;
+        return rect.left + this.c0 + rect.right;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void N(String str) {
-        this.Y.p(true, 1.0f);
-        l0(true);
+        RadialProgress2 radialProgress2 = this.b0;
+        if (radialProgress2 != null) {
+            radialProgress2.p(true, 1.0f);
+        }
+        if (p0() && (i0() || this.m0)) {
+            j0(true);
+        }
+        t0(true);
     }
 
-    @Override // org.telegram.messenger.cu
+    @Override // org.telegram.messenger.zt
     public final void T() {
         View view = this.W;
-        ImageReceiver imageReceiver = this.Z;
-        if (view != null) {
-            this.Y.n(view);
-            imageReceiver.H0(this.W);
-        }
+        ImageReceiver imageReceiver = this.Y;
+        imageReceiver.H0(view);
         imageReceiver.P();
-        l0(false);
+        View view2 = this.W;
+        ImageReceiver imageReceiver2 = this.Z;
+        imageReceiver2.H0(view2);
+        imageReceiver2.P();
+        t0(false);
     }
 
-    @Override // org.telegram.messenger.cu
-    public final void V() {
-        this.Z.R();
-        z5.q(this.a.a).v(this);
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final void W(Canvas canvas) {
-        org.telegram.ui.Cells.q1 q1Var;
-        org.telegram.ui.Cells.l1 l1Var;
-        Drawable drawable;
-        TLRPC.Document document = this.X;
-        if (document == null) {
-            return;
-        }
-        if (this.o0 != i0()) {
-            k0();
-        }
-        canvas.save();
-        iv ivVar = this.a;
-        canvas.translate(-ivVar.S, 0.0f);
-        boolean z10 = this.k0;
-        int i7 = this.g0;
-        if (z10 && !this.Z.h(canvas, null)) {
-            int w02 = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.zc : org.telegram.ui.ActionBar.j6.xe, ivVar.D);
-            Paint paint = this.a0;
-            paint.setColor(w02);
-            canvas.drawRoundRect(i7, g0.L(10.0f), g0.L(86.0f) + i7, g0.L(96.0f), g0.L(6.0f), g0.L(6.0f), paint);
-        }
-        this.Y.draw(canvas);
-        this.b0.setColor(org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.wc : org.telegram.ui.ActionBar.j6.ue, ivVar.D));
-        this.c0.setColor(org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.jc : org.telegram.ui.ActionBar.j6.ee, ivVar.D));
-        int L = z10 ? g0.L(97.0f) + i7 : this.f0 + this.h0 + this.i0;
-        int L2 = g0.L(11.0f);
-        int L3 = g0.L(2.0f) + this.d0.getHeight() + L2;
-        canvas.save();
-        float f10 = L;
-        canvas.translate(f10, L2);
-        this.d0.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        canvas.translate(f10, L3);
-        this.e0.draw(canvas);
-        canvas.restore();
-        RectF rectF = this.j0;
-        if (document == null || (q1Var = ivVar.E) == null || (l1Var = ivVar.F) == null || !l1Var.a0(q1Var)) {
-            rectF.setEmpty();
-        } else {
-            if (ivVar.E()) {
-                org.telegram.ui.ActionBar.e6 e6Var = ivVar.D;
-                drawable = e6Var != null ? e6Var.getDrawable("drawableMsgOutMenu") : null;
-                if (drawable == null) {
-                    drawable = org.telegram.ui.ActionBar.j6.R0("drawableMsgOutMenu");
-                }
-            } else {
-                drawable = org.telegram.ui.ActionBar.j6.c4;
+    @Override // org.telegram.messenger.zt
+    public final boolean U(int i7, View view) {
+        if (r0()) {
+            zu zuVar = this.o0;
+            if (!zuVar.b && zuVar.f == null) {
+                ImageReceiver imageReceiver = this.Y;
+                float f10 = imageReceiver.N0;
+                float f11 = imageReceiver.O0;
+                zuVar.c(this.W, imageReceiver.L0 + (f10 / 2.0f), (f11 / 2.0f) + imageReceiver.M0, f10, f11);
+                return true;
             }
-            int L4 = (this.o0 + this.b.right) - g0.L(32.0f);
-            int L5 = g0.L(7.0f);
-            drawable.setBounds(L4, L5, drawable.getIntrinsicWidth() + L4, drawable.getIntrinsicHeight() + L5);
-            drawable.draw(canvas);
-            rectF.set(L4 - g0.L(8.0f), 0.0f, g0.L(8.0f) + drawable.getIntrinsicWidth() + L4, g0.L(54.0f));
         }
-        canvas.restore();
+        ev evVar = this.a;
+        org.telegram.ui.Cells.l1 l1Var = evVar.F;
+        if (l1Var == null) {
+            return false;
+        }
+        l1Var.p2(evVar.E, n0());
+        return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0145  */
-    @Override // org.telegram.messenger.cu
+    @Override // org.telegram.messenger.zt
+    public final void V() {
+        this.Y.R();
+        this.Z.R();
+        this.a0 = null;
+        a6.q(this.a.a).v(this);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:59:0x01bf  */
+    /* JADX WARN: Removed duplicated region for block: B:62:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.messenger.zt
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void W(Canvas canvas) {
+        ImageReceiver imageReceiver;
+        ImageReceiver imageReceiver2;
+        Canvas canvas2 = canvas;
+        if (p0 == null) {
+            Paint paint = new Paint(1);
+            p0 = paint;
+            paint.setColor(251658240);
+        }
+        ev evVar = this.a;
+        int i7 = evVar.C;
+        Rect rect = this.b;
+        int i10 = (i7 - rect.left) - rect.right;
+        boolean R = R();
+        int L = g0.L(2.0f);
+        int i11 = (R || evVar.D()) ? 0 : evVar.S - L;
+        int i12 = (R || evVar.D()) ? 0 : evVar.T - L;
+        boolean z10 = (evVar.C - rect.left) - rect.right > this.c0;
+        if (R) {
+            canvas2.save();
+            Path path = this.n0;
+            path.rewind();
+            path.addRoundRect(0.0f, 0.0f, i10, this.d0, g0.L(8.0f), g0.L(8.0f), Path.Direction.CW);
+            canvas2.clipPath(path);
+        }
+        ImageReceiver imageReceiver3 = this.Y;
+        if (imageReceiver3.I() && imageReceiver3.i1 == 1.0f) {
+            imageReceiver = imageReceiver3;
+        } else {
+            imageReceiver = imageReceiver3;
+            canvas2.drawRect(-i11, 0.0f, i10 + i12, this.d0, p0);
+        }
+        xh.e eVar = null;
+        ImageReceiver imageReceiver4 = this.Z;
+        if (z10) {
+            s0();
+            u0(imageReceiver4, false);
+            imageReceiver2 = imageReceiver;
+            u0(imageReceiver2, true);
+            if (imageReceiver4.n() != null) {
+                imageReceiver4.y0(-i11, 0.0f, i11 + i10 + i12, this.d0);
+                imageReceiver4.setAlpha(imageReceiver2.i1);
+                imageReceiver4.h(canvas2, null);
+            }
+            imageReceiver2.S0 = true;
+            imageReceiver2.y0(0.0f, 0.0f, (evVar.C - rect.left) - rect.right, this.d0);
+        } else {
+            imageReceiver2 = imageReceiver;
+            u0(imageReceiver2, false);
+            imageReceiver2.S0 = false;
+            imageReceiver2.y0(-i11, 0.0f, i11 + i10 + i12, this.d0);
+        }
+        imageReceiver2.h(canvas2, null);
+        if (r0()) {
+            zu zuVar = this.o0;
+            if (!zuVar.b()) {
+                if (!zuVar.b()) {
+                    s0();
+                    float f10 = imageReceiver2.L0;
+                    float f11 = imageReceiver2.M0;
+                    float f12 = imageReceiver2.N0;
+                    float f13 = imageReceiver2.O0;
+                    if (f12 > 0.0f && f13 > 0.0f) {
+                        canvas2.save();
+                        canvas2.clipRect(f10, f11, f10 + f12, f11 + f13);
+                        zuVar.a(canvas2);
+                        if (imageReceiver4.n() != null) {
+                            u0(imageReceiver4, false);
+                            imageReceiver4.y0(f10, f11, f12, f13);
+                            imageReceiver4.setAlpha(imageReceiver2.i1);
+                            imageReceiver4.h(canvas2, null);
+                        }
+                        View view = evVar.Q;
+                        if (view != null) {
+                            xh.e eVar2 = evVar.R;
+                            if (eVar2 != null && eVar2.i) {
+                                evVar.R = null;
+                            }
+                            if (evVar.R == null) {
+                                evVar.R = xh.e.e(view);
+                            }
+                            eVar = evVar.R;
+                        }
+                        if (eVar != null) {
+                            canvas2.translate(f10, f11);
+                            eVar.c(canvas2, this.W, Math.round(f12), Math.round(f13), imageReceiver2.i1, false);
+                            canvas2 = canvas2;
+                        }
+                        canvas2.restore();
+                        View view2 = this.W;
+                        if (view2 != null) {
+                            view2.invalidate();
+                        }
+                    }
+                }
+                if (R) {
+                    return;
+                }
+                canvas2.restore();
+                return;
+            }
+        }
+        RadialProgress2 radialProgress2 = this.b0;
+        if (radialProgress2 != null && this.g0 != -1) {
+            int i13 = (evVar.C - rect.left) - rect.right;
+            int i14 = this.c0;
+            int i15 = (i13 > i14 ? (i13 - i14) / 2 : 0) + this.j0;
+            int i16 = this.k0;
+            int i17 = this.l0;
+            radialProgress2.r(i15, i16, i15 + i17, i17 + i16);
+            this.b0.draw(canvas2);
+        }
+        if (R) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0082  */
+    @Override // org.telegram.messenger.zt
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean Y(MotionEvent motionEvent) {
         boolean z10;
-        org.telegram.ui.Cells.q1 q1Var;
         org.telegram.ui.Cells.l1 l1Var;
+        int actionMasked = motionEvent.getActionMasked();
         float x10 = motionEvent.getX();
-        iv ivVar = this.a;
-        int i7 = ivVar.S;
-        int i10 = ivVar.a;
-        float f10 = x10 + i7;
-        float y10 = motionEvent.getY();
-        boolean contains = this.j0.contains(f10, y10);
-        if (motionEvent.getActionMasked() == 0 && contains) {
-            this.n0 = true;
-            return true;
-        }
-        boolean z11 = this.n0;
-        TLRPC.Document document = this.X;
-        if (z11) {
-            if (motionEvent.getActionMasked() == 2 && !contains) {
-                this.n0 = false;
-                return true;
-            }
-            if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-                boolean z12 = motionEvent.getActionMasked() == 1 && contains;
-                this.n0 = false;
-                if (z12 && document != null && document != null && (q1Var = ivVar.E) != null && (l1Var = ivVar.F) != null && l1Var.a0(q1Var)) {
-                    View view = this.W;
-                    if (view != null) {
-                        view.playSoundEffect(0);
-                    }
-                    ivVar.F.K(ivVar.E, document, F());
-                }
-                return true;
-            }
-        }
-        boolean z13 = this.k0;
-        if (f10 >= (z13 ? this.g0 : this.f0) && f10 <= this.o0 - g0.L(12.0f) && y10 >= g0.L(10.0f)) {
-            if (y10 <= g0.L(z13 ? 96.0f : 53.0f)) {
-                z10 = true;
-                if (motionEvent.getActionMasked() != 0 && z10) {
-                    this.m0 = true;
-                    return true;
-                }
-                if (motionEvent.getActionMasked() == 1 || !this.m0) {
-                    if (motionEvent.getActionMasked() == 3) {
-                        this.m0 = false;
-                    }
-                    return this.m0;
-                }
-                this.m0 = false;
-                if (z10) {
-                    View view2 = this.W;
-                    if (view2 != null) {
-                        view2.playSoundEffect(0);
-                    }
-                    int i11 = this.l0;
-                    if (i11 == 0) {
-                        View view3 = this.W;
-                        Activity activity = null;
-                        Context context = view3 == null ? null : view3.getContext();
-                        while (true) {
-                            if (context instanceof ContextWrapper) {
-                                if (context instanceof Activity) {
-                                    activity = (Activity) context;
-                                    break;
+        Rect rect = this.b;
+        int i7 = rect.left;
+        float f10 = x10 - i7;
+        ev evVar = this.a;
+        float f11 = f10 - ((evVar.C - i7) - rect.right > this.c0 ? (r5 - r3) / 2 : 0);
+        float y10 = motionEvent.getY() - rect.top;
+        boolean z11 = f11 >= 0.0f && f11 <= ((float) this.c0) && y10 >= 0.0f && y10 <= ((float) this.d0);
+        int i10 = this.g0;
+        if (i10 != -1) {
+            if (f11 >= this.j0) {
+                int i11 = this.l0;
+                if (f11 <= r10 + i11) {
+                    if (y10 >= this.k0 && y10 <= r1 + i11) {
+                        z10 = true;
+                        if (actionMasked != 0) {
+                            if (!z11 || (!z10 && i10 != 0 && i10 != 2)) {
+                                if (z11) {
+                                    this.i0 = true;
+                                    return true;
                                 }
-                                context = ((ContextWrapper) context).getBaseContext();
-                            } else if (context instanceof Activity) {
-                                activity = (Activity) context;
+                            }
+                            this.h0 = true;
+                            View view = this.W;
+                            if (view != null) {
+                                view.invalidate();
+                                return true;
                             }
                         }
-                        Activity activity2 = activity;
-                        File j02 = j0();
-                        if (activity2 != null && j02 != null) {
-                            g0.t2(j02, w7.B(document), document.mime_type, activity2, ivVar.D, false);
+                        if (actionMasked != 1) {
+                            if (actionMasked != 3) {
+                                return this.i0 || this.h0;
+                            }
+                            this.i0 = false;
+                            this.h0 = false;
+                            return false;
                         }
-                    } else {
-                        RadialProgress2 radialProgress2 = this.Y;
-                        if (i11 == 1 && document != null) {
-                            w7.G(i10).W(document, ivVar.b, 1, 1);
-                            this.l0 = 2;
-                            radialProgress2.setIcon(3, true, true);
-                        } else if (i11 == 2 && document != null) {
-                            w7.G(i10).f(document);
-                            this.l0 = 1;
-                            radialProgress2.setIcon(2, false, true);
+                        boolean z12 = this.h0;
+                        ImageReceiver imageReceiver = this.Y;
+                        if (!z12) {
+                            if (this.i0) {
+                                this.i0 = false;
+                                if (z11) {
+                                    View view2 = this.W;
+                                    if (view2 != null) {
+                                        view2.playSoundEffect(0);
+                                    }
+                                    if (r0()) {
+                                        zu zuVar = this.o0;
+                                        if (!zuVar.b && zuVar.f == null) {
+                                            float f12 = imageReceiver.N0;
+                                            float f13 = imageReceiver.O0;
+                                            zuVar.c(this.W, (f12 / 2.0f) + imageReceiver.L0, (f13 / 2.0f) + imageReceiver.M0, f12, f13);
+                                            return true;
+                                        }
+                                    }
+                                    org.telegram.ui.Cells.l1 l1Var2 = evVar.F;
+                                    if (l1Var2 != null) {
+                                        l1Var2.p2(evVar.E, n0());
+                                        return true;
+                                    }
+                                }
+                            }
                         }
-                    }
-                    View view4 = this.W;
-                    if (view4 != null) {
-                        view4.invalidate();
+                        this.h0 = false;
+                        View view3 = this.W;
+                        if (view3 != null) {
+                            view3.playSoundEffect(0);
+                            this.W.invalidate();
+                        }
+                        int i12 = this.g0;
+                        if (i12 == 0) {
+                            this.m0 = true;
+                            RadialProgress2 radialProgress2 = this.b0;
+                            if (radialProgress2 != null) {
+                                radialProgress2.p(true, 0.0f);
+                            }
+                            j0(true);
+                            this.g0 = 1;
+                            RadialProgress2 radialProgress22 = this.b0;
+                            if (radialProgress22 != null) {
+                                radialProgress22.setIcon(3, true, true);
+                            }
+                            View view4 = this.W;
+                            if (view4 != null) {
+                                view4.invalidate();
+                                return true;
+                            }
+                        } else if (i12 == 1) {
+                            this.m0 = false;
+                            imageReceiver.c();
+                            this.g0 = 0;
+                            RadialProgress2 radialProgress23 = this.b0;
+                            if (radialProgress23 != null) {
+                                radialProgress23.setIcon(2, false, true);
+                            }
+                            View view5 = this.W;
+                            if (view5 != null) {
+                                view5.invalidate();
+                                return true;
+                            }
+                        } else if (i12 == 2) {
+                            this.m0 = true;
+                            imageReceiver.u0 = true;
+                            j0(true);
+                            imageReceiver.P0(false);
+                            this.g0 = -1;
+                            RadialProgress2 radialProgress24 = this.b0;
+                            if (radialProgress24 != null) {
+                                radialProgress24.setIcon(4, false, true);
+                            }
+                            View view6 = this.W;
+                            if (view6 != null) {
+                                view6.invalidate();
+                                return true;
+                            }
+                        } else if (i12 == 3 && (l1Var = evVar.F) != null) {
+                            l1Var.p2(evVar.E, n0());
+                            return true;
+                        }
                     }
                 }
-                return true;
             }
         }
         z10 = false;
-        if (motionEvent.getActionMasked() != 0) {
+        if (actionMasked != 0) {
         }
-        if (motionEvent.getActionMasked() == 1) {
-        }
-        if (motionEvent.getActionMasked() == 3) {
-        }
-        return this.m0;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final int getObserverTag() {
-        return this.p0;
+        return this.f0;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void i(long j3, long j10) {
-        this.Y.p(true, j10 <= 0 ? 0.0f : Math.min(1.0f, j3 / j10));
-        if (this.l0 != 2) {
-            l0(true);
+        RadialProgress2 radialProgress2 = this.b0;
+        if (radialProgress2 != null) {
+            radialProgress2.p(true, Math.min(1.0f, j10 <= 0 ? 0.0f : j3 / j10));
+        }
+        if (this.g0 != 1) {
+            t0(true);
         }
     }
 
-    public final int i0() {
-        iv ivVar = this.a;
-        int i7 = ivVar.C;
-        int i10 = this.c;
-        if (i7 > 0) {
-            Rect rect = this.b;
-            i10 = Math.min(i10, Math.max(0, (i7 - rect.left) - rect.right));
-        }
-        return i10 + ivVar.S + ivVar.T;
+    public boolean i0() {
+        return true;
     }
 
-    public final File j0() {
-        TLRPC.Document document = this.X;
-        if (document == null) {
-            return null;
-        }
-        iv ivVar = this.a;
-        w7.G(ivVar.a);
-        File J = w7.J(document, null, false, true);
-        if (J != null && J.exists()) {
-            return J;
-        }
-        w7.G(ivVar.a);
-        return w7.J(document, null, true, true);
+    public abstract void j0(boolean z10);
+
+    public boolean k0() {
+        return (a6.q(this.a.a).m() & 1) != 0;
     }
 
-    public final void k0() {
-        int i7;
-        int i10;
-        this.o0 = i0();
-        if (this.k0) {
-            i7 = g0.L(97.0f);
-            i10 = this.g0;
-        } else {
-            i7 = this.f0 + this.h0;
-            i10 = this.i0;
-        }
-        int d = i5.c.d(48.0f, this.o0 - (i7 + i10), g0.L(40.0f));
-        iv ivVar = this.a;
-        float L = g0.L(ivVar.M - 1);
-        TextPaint textPaint = this.b0;
-        textPaint.setTextSize(L);
-        textPaint.setTypeface(g0.o());
-        this.c0.setTextSize(g0.L(ivVar.M - 3));
-        TLRPC.Document document = this.X;
-        CharSequence ellipsize = TextUtils.ellipsize(document == null ? "" : w7.B(document), textPaint, d, TextUtils.TruncateAt.END);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-        this.d0 = new StaticLayout(ellipsize, this.b0, d, alignment, 1.0f, 0.0f, false);
-        this.e0 = new StaticLayout(document != null ? g0.i0(document.size, false, false) : "", this.c0, d, alignment, 1.0f, 0.0f, false);
+    public abstract boolean l0();
+
+    public final void m0() {
+        this.Y.y0(0.0f, 0.0f, this.c0, this.d0);
+        int i7 = this.c0;
+        int i10 = this.l0;
+        this.j0 = (i7 - i10) / 2;
+        this.k0 = (this.d0 - i10) / 2;
+        boolean k02 = k0();
+        this.e0 = k02;
+        j0(k02 || l0());
     }
 
-    public final void l0(boolean z10) {
-        iv ivVar = this.a;
-        RadialProgress2 radialProgress2 = this.Y;
-        boolean z11 = this.k0;
-        if (z11) {
-            radialProgress2.g(org.telegram.ui.ActionBar.j6.cf, org.telegram.ui.ActionBar.j6.df, org.telegram.ui.ActionBar.j6.ef, org.telegram.ui.ActionBar.j6.ff);
-            radialProgress2.d = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Yd, ivVar.D);
-        } else {
-            radialProgress2.g(ivVar.E() ? org.telegram.ui.ActionBar.j6.Ec : org.telegram.ui.ActionBar.j6.Ze, ivVar.E() ? org.telegram.ui.ActionBar.j6.Fc : org.telegram.ui.ActionBar.j6.af, ivVar.E() ? org.telegram.ui.ActionBar.j6.Gb : org.telegram.ui.ActionBar.j6.ld, ivVar.E() ? org.telegram.ui.ActionBar.j6.Hb : org.telegram.ui.ActionBar.j6.md);
-            radialProgress2.d = org.telegram.ui.ActionBar.j6.w0(ivVar.E() ? org.telegram.ui.ActionBar.j6.uc : org.telegram.ui.ActionBar.j6.se, ivVar.D);
+    public abstract TL_iv.PageBlock n0();
+
+    public abstract String o0();
+
+    public boolean p0() {
+        return false;
+    }
+
+    public boolean q0() {
+        return false;
+    }
+
+    public abstract boolean r0();
+
+    public final void s0() {
+        Bitmap n10;
+        ImageReceiver imageReceiver = this.Z;
+        Bitmap n11 = imageReceiver.n();
+        ImageReceiver imageReceiver2 = this.Y;
+        if ((n11 != null && imageReceiver2.m() != null) || (n10 = imageReceiver2.n()) == null || n10.isRecycled()) {
+            return;
         }
-        String r10 = w7.r(null, this.X);
-        File j02 = j0();
-        if (j02 != null && j02.exists()) {
-            z5.q(ivVar.a).v(this);
-            this.l0 = 0;
-            radialProgress2.setIcon(z11 ? 4 : 5, false, z10);
-        } else if (TextUtils.isEmpty(r10)) {
-            radialProgress2.setIcon(4, false, z10);
-        } else {
-            z5.q(ivVar.a).a(r10, null, this);
-            if (w7.G(ivVar.a).S(r10)) {
-                this.l0 = 2;
-                Float w10 = fc.D().w(r10);
-                radialProgress2.p(z10, w10 != null ? w10.floatValue() : 0.0f);
-                radialProgress2.setIcon(3, true, z10);
+        if (n10 != this.a0 || imageReceiver.n() == null) {
+            this.a0 = n10;
+            imageReceiver.v0(Utilities.D(n10, false));
+            if (q0 == null) {
+                ColorMatrix colorMatrix = new ColorMatrix();
+                g0.n2(colorMatrix, 0.9f);
+                g0.i(colorMatrix, 0.6f);
+                q0 = new ColorMatrixColorFilter(colorMatrix);
+            }
+            imageReceiver.p1 = q0;
+        }
+    }
+
+    public final void t0(boolean z10) {
+        View view;
+        View view2;
+        RadialProgress2 radialProgress2 = this.b0;
+        int i7 = this.l0;
+        if (radialProgress2 == null && (view2 = this.W) != null) {
+            RadialProgress2 radialProgress22 = new RadialProgress2(view2, null);
+            this.b0 = radialProgress22;
+            radialProgress22.d = -1;
+            radialProgress22.setColors(1711276032, 2130706432, -1, -2500135);
+            RadialProgress2 radialProgress23 = this.b0;
+            int i10 = this.j0;
+            int i11 = this.k0;
+            radialProgress23.r(i10, i11, i10 + i7, i7 + i11);
+        } else if (radialProgress2 != null && (view = this.W) != null) {
+            radialProgress2.n(view);
+            RadialProgress2 radialProgress24 = this.b0;
+            int i12 = this.j0;
+            int i13 = this.k0;
+            radialProgress24.r(i12, i13, i12 + i7, i7 + i13);
+        }
+        String o02 = o0();
+        if (TextUtils.isEmpty(o02)) {
+            this.g0 = -1;
+            RadialProgress2 radialProgress25 = this.b0;
+            if (radialProgress25 != null) {
+                radialProgress25.setIcon(4, false, false);
+                return;
+            }
+            return;
+        }
+        ImageReceiver imageReceiver = this.Y;
+        org.telegram.ui.Components.b6 m10 = imageReceiver.m();
+        boolean z11 = m10 != null && (m10.s() || imageReceiver.M());
+        boolean l02 = l0();
+        ev evVar = this.a;
+        if (l02 || (p0() && z11)) {
+            a6.q(evVar.a).v(this);
+            if (q0() && !z11) {
+                this.g0 = 3;
+                RadialProgress2 radialProgress26 = this.b0;
+                if (radialProgress26 != null) {
+                    radialProgress26.setIcon(0, false, z10);
+                }
+            } else if (!p0() || z11 || i0() || this.m0) {
+                this.g0 = -1;
+                RadialProgress2 radialProgress27 = this.b0;
+                if (radialProgress27 != null) {
+                    radialProgress27.setIcon(4, false, z10);
+                }
             } else {
-                this.l0 = 1;
-                radialProgress2.p(z10, 0.0f);
-                radialProgress2.setIcon(2, false, z10);
+                this.g0 = 2;
+                RadialProgress2 radialProgress28 = this.b0;
+                if (radialProgress28 != null) {
+                    radialProgress28.setIcon(8, false, z10);
+                }
+            }
+        } else {
+            a6.q(evVar.a).a(o02, null, this);
+            if (this.e0 || this.m0 || w7.G(evVar.a).S(o02)) {
+                this.g0 = 1;
+                Float w10 = ec.D().w(o02);
+                r2 = w10 != null ? w10.floatValue() : 0.0f;
+                RadialProgress2 radialProgress29 = this.b0;
+                if (radialProgress29 != null) {
+                    radialProgress29.setIcon(3, true, z10);
+                }
+            } else if (q0()) {
+                this.g0 = 3;
+                RadialProgress2 radialProgress210 = this.b0;
+                if (radialProgress210 != null) {
+                    radialProgress210.setIcon(0, true, z10);
+                }
+            } else {
+                this.g0 = 0;
+                RadialProgress2 radialProgress211 = this.b0;
+                if (radialProgress211 != null) {
+                    radialProgress211.setIcon(2, true, z10);
+                }
+            }
+            RadialProgress2 radialProgress212 = this.b0;
+            if (radialProgress212 != null) {
+                radialProgress212.p(false, r2);
             }
         }
-        View view = this.W;
-        if (view != null) {
-            view.invalidate();
+        View view3 = this.W;
+        if (view3 != null) {
+            view3.invalidate();
         }
     }
 
-    @Override // org.telegram.messenger.x5
+    public final void u0(ImageReceiver imageReceiver, boolean z10) {
+        if (z10) {
+            imageReceiver.J0(0);
+            return;
+        }
+        int i7 = bz.Y0;
+        int L = i7 > 2 ? g0.L(i7 - 2) : g0.L(i7);
+        int min = Math.min(g0.L(3.0f), L);
+        ev evVar = this.a;
+        if (evVar.D()) {
+            imageReceiver.J0(g0.L(12.0f));
+            return;
+        }
+        boolean z11 = this.X;
+        int i10 = (!z11 || evVar.B() || (!evVar.E() && evVar.G())) ? min : L;
+        if (!z11 || (evVar.E() && evVar.G())) {
+            L = min;
+        }
+        imageReceiver.K0(i10, L, min, min);
+    }
+
+    @Override // org.telegram.messenger.y5
     public final void o(long j3, long j10) {
     }
 }

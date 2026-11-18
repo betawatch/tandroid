@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    android:versionCode="73229"
+    android:versionCode="73369"
     android:versionName="13.3.0"
     android:installLocation="auto"
     android:compileSdkVersion="36"
@@ -165,6 +165,7 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:zygotePreloadName="org.telegram.utils.twidget.WidgetEnginePreload"
         android:allowAudioPlaybackCapture="true"
         android:requestLegacyExternalStorage="true"
         android:preserveLegacyExternalStorage="true"
@@ -474,6 +475,13 @@
             android:documentLaunchMode="always"
             android:resizeableActivity="true"/>
         <activity
+            android:name="org.telegram.ui.WidgetConformanceActivity"
+            android:permission="android.permission.DUMP"
+            android:exported="true"
+            android:taskAffinity="org.telegram.widget.conformance"
+            android:launchMode="singleTask"
+            android:hardwareAccelerated="true"/>
+        <activity
             android:theme="@style/Theme.TMessages.Transparent"
             android:name="org.telegram.ui.ShareActivity"
             android:exported="true"
@@ -598,6 +606,12 @@
             android:exported="false"
             android:process=":widgets"
             android:isolatedProcess="true"/>
+        <service
+            android:name="org.telegram.utils.twidget.WidgetEngineService.Forked"
+            android:exported="false"
+            android:process=":widgets"
+            android:isolatedProcess="true"
+            android:useAppZygote="true"/>
         <service
             android:name="org.telegram.messenger.AuthenticatorService"
             android:exported="true"

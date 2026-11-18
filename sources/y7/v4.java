@@ -1,23 +1,23 @@
 package y7;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v4 implements na.d {
     public static final v4 a = new v4();
-    public static final na.c b = new na.c("appId", i5.c.p(r.b.n(h.class, new e(1))));
-    public static final na.c c = new na.c("appVersion", i5.c.p(r.b.n(h.class, new e(2))));
-    public static final na.c d = new na.c("firebaseProjectId", i5.c.p(r.b.n(h.class, new e(3))));
-    public static final na.c e = new na.c("mlSdkVersion", i5.c.p(r.b.n(h.class, new e(4))));
-    public static final na.c f = new na.c("tfliteSchemaVersion", i5.c.p(r.b.n(h.class, new e(5))));
-    public static final na.c g = new na.c("gcmSenderId", i5.c.p(r.b.n(h.class, new e(6))));
-    public static final na.c h = new na.c("apiKey", i5.c.p(r.b.n(h.class, new e(7))));
-    public static final na.c i = new na.c("languages", i5.c.p(r.b.n(h.class, new e(8))));
-    public static final na.c j = new na.c("mlSdkInstanceId", i5.c.p(r.b.n(h.class, new e(9))));
-    public static final na.c k = new na.c("isClearcutClient", i5.c.p(r.b.n(h.class, new e(10))));
-    public static final na.c l = new na.c("isStandaloneMlkit", i5.c.p(r.b.n(h.class, new e(11))));
-    public static final na.c m = new na.c("isJsonLogging", i5.c.p(r.b.n(h.class, new e(12))));
-    public static final na.c n = new na.c("buildLevel", i5.c.p(r.b.n(h.class, new e(13))));
-    public static final na.c o = new na.c("optionalModuleVersion", i5.c.p(r.b.n(h.class, new e(14))));
+    public static final na.c b = new na.c("appId", i5.c.p(p5.c.o(h.class, new e(1))));
+    public static final na.c c = new na.c("appVersion", i5.c.p(p5.c.o(h.class, new e(2))));
+    public static final na.c d = new na.c("firebaseProjectId", i5.c.p(p5.c.o(h.class, new e(3))));
+    public static final na.c e = new na.c("mlSdkVersion", i5.c.p(p5.c.o(h.class, new e(4))));
+    public static final na.c f = new na.c("tfliteSchemaVersion", i5.c.p(p5.c.o(h.class, new e(5))));
+    public static final na.c g = new na.c("gcmSenderId", i5.c.p(p5.c.o(h.class, new e(6))));
+    public static final na.c h = new na.c("apiKey", i5.c.p(p5.c.o(h.class, new e(7))));
+    public static final na.c i = new na.c("languages", i5.c.p(p5.c.o(h.class, new e(8))));
+    public static final na.c j = new na.c("mlSdkInstanceId", i5.c.p(p5.c.o(h.class, new e(9))));
+    public static final na.c k = new na.c("isClearcutClient", i5.c.p(p5.c.o(h.class, new e(10))));
+    public static final na.c l = new na.c("isStandaloneMlkit", i5.c.p(p5.c.o(h.class, new e(11))));
+    public static final na.c m = new na.c("isJsonLogging", i5.c.p(p5.c.o(h.class, new e(12))));
+    public static final na.c n = new na.c("buildLevel", i5.c.p(p5.c.o(h.class, new e(13))));
+    public static final na.c o = new na.c("optionalModuleVersion", i5.c.p(p5.c.o(h.class, new e(14))));
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {

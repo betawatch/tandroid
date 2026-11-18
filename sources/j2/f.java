@@ -1,6 +1,6 @@
 package j2;
 
-import a8.ja;
+import a8.la;
 import android.net.Uri;
 import android.util.Base64;
 import e2.t0;
@@ -8,7 +8,7 @@ import h2.l0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -42,7 +42,7 @@ public final class f extends c {
         long j3 = mVar.f;
         Uri normalizeScheme = uri.normalizeScheme();
         String scheme = normalizeScheme.getScheme();
-        ja.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
+        la.h("data".equals(scheme), "Unsupported scheme: %s", scheme);
         String schemeSpecificPart = normalizeScheme.getSchemeSpecificPart();
         String str = l0.a;
         String[] split = schemeSpecificPart.split(",", -1);
@@ -54,7 +54,7 @@ public final class f extends c {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e10) {
-                throw new t0(r.b.k("Error while parsing Base64 encoded string: ", str2), e10, true, 0);
+                throw new t0(p5.c.k("Error while parsing Base64 encoded string: ", str2), e10, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);

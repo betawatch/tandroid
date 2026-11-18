@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sg implements Runnable {
     public final /* synthetic */ int a;
@@ -38,16 +38,16 @@ public final /* synthetic */ class sg implements Runnable {
                 view.setVisibility(8);
                 break;
             case 4:
-                org.telegram.messenger.gz.I(0);
-                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.hd.M0(2131744401, null), true, true);
+                org.telegram.messenger.bz.I(0);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.gd.M0(2131744166, null), true, true);
                 break;
             case 5:
-                org.telegram.messenger.gz.I(1);
-                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.hd.M0(2131744400, null), true, true);
+                org.telegram.messenger.bz.I(1);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.gd.M0(2131744165, null), true, true);
                 break;
             default:
-                org.telegram.messenger.gz.I(2);
-                ((org.telegram.ui.Cells.v9) view).c.c(org.telegram.messenger.hd.M0(2131744399, null), true, true);
+                org.telegram.messenger.bz.I(2);
+                ((org.telegram.ui.Cells.w9) view).c.c(org.telegram.messenger.gd.M0(2131744164, null), true, true);
                 break;
         }
     }

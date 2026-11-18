@@ -1,6 +1,6 @@
 package com.google.android.play.core.integrity;
 
-import a8.s9;
+import a8.t9;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -19,7 +19,7 @@ import d9.g0;
 import d9.k0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class aj {
     final d9.c a;
@@ -89,7 +89,7 @@ final class aj {
         }
         ArrayList arrayList = new ArrayList();
         arrayList.add(new d9.t(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(s9.a(arrayList)));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(t9.a(arrayList)));
         return bundle;
     }
 

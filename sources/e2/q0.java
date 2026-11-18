@@ -3,7 +3,7 @@ package e2;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q0 {
     public final p0[] a;
@@ -42,7 +42,7 @@ public final class q0 {
     }
 
     public final int hashCode() {
-        return c8.j1.b(this.b) + (Arrays.hashCode(this.a) * 31);
+        return c8.l1.b(this.b) + (Arrays.hashCode(this.a) * 31);
     }
 
     public final String toString() {

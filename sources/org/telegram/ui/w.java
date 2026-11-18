@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class w implements Runnable {
                 qVar.setText(str);
                 di.q qVar2 = g4Var.i0.c0;
                 qVar2.setSelection(qVar2.getText().length());
-                org.telegram.messenger.g0.J3(g4Var.i0.c0);
+                org.telegram.messenger.g0.I3(g4Var.i0.c0);
                 break;
             default:
                 vf.c.n(this.b.M, this.c, false, null);

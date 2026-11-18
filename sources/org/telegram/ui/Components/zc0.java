@@ -1,62 +1,65 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class zc0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public Switch d;
-    public boolean e;
+public final /* synthetic */ class zc0 implements org.telegram.messenger.x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ String[] b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.messenger.x10 d;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.invalidate();
-        }
+    public /* synthetic */ zc0(String[] strArr, Activity activity, org.telegram.messenger.x10 x10Var, int i7) {
+        this.a = i7;
+        this.b = strArr;
+        this.c = activity;
+        this.d = x10Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e) {
-            canvas.drawLine(org.telegram.messenger.hd.a0 ? 0.0f : org.telegram.messenger.g0.L(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (org.telegram.messenger.hd.a0 ? org.telegram.messenger.g0.L(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        int L = org.telegram.messenger.g0.L(13.0f) + this.a.getMeasuredHeight();
-        TextView textView = this.b;
-        textView.layout(textView.getLeft(), L, textView.getRight(), textView.getMeasuredHeight() + L);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        TextView textView = this.a;
-        measureChildWithMargins(textView, i7, 0, i10, 0);
-        TextView textView2 = this.b;
-        measureChildWithMargins(textView2, i7, 0, i10, 0);
-        measureChildWithMargins(this.c, i7, 0, i10, 0);
-        Switch r72 = this.d;
-        if (r72 != null) {
-            measureChildWithMargins(r72, i7, 0, i10, 0);
-        }
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.k5.b(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), org.telegram.messenger.g0.L(64.0f)) + (this.e ? 1 : 0));
-    }
-
-    public void setChecked(boolean z10) {
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.c(z10, true);
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                String[] strArr = this.b;
+                int length = strArr.length;
+                boolean z10 = false;
+                int i7 = 0;
+                while (true) {
+                    if (i7 < length) {
+                        if (this.c.checkSelfPermission(strArr[i7]) == 0) {
+                            z10 = true;
+                        } else {
+                            i7++;
+                        }
+                    }
+                }
+                org.telegram.messenger.x10 x10Var = this.d;
+                if (x10Var != null) {
+                    x10Var.a(Boolean.valueOf(z10));
+                    break;
+                }
+                break;
+            default:
+                String[] strArr2 = this.b;
+                int length2 = strArr2.length;
+                boolean z11 = false;
+                int i10 = 0;
+                while (true) {
+                    if (i10 < length2) {
+                        if (this.c.checkSelfPermission(strArr2[i10]) == 0) {
+                            i10++;
+                        }
+                    } else {
+                        z11 = true;
+                    }
+                }
+                org.telegram.messenger.x10 x10Var2 = this.d;
+                if (x10Var2 != null) {
+                    x10Var2.a(Boolean.valueOf(z11));
+                    break;
+                }
+                break;
         }
     }
 }

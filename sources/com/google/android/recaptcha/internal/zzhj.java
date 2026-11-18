@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzhj {
     public static final Object zza(zzhh zzhhVar, p pVar, c cVar) {
@@ -33,7 +33,7 @@ public final class zzhj {
                 i7 = zzhiVar.zzb;
                 k kVar = k.a;
                 if (i7 != 0) {
-                    b.c(obj);
+                    h.b(obj);
                     zzhiVar.zzb = 1;
                     if (zzhfVar.zza(zzhkVar, zzhiVar) == obj2) {
                         return obj2;
@@ -42,7 +42,7 @@ public final class zzhj {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.c(obj);
+                    h.b(obj);
                 }
                 return kVar;
             }

@@ -1,15 +1,19 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.BitmapDrawable;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class bc {
-    public final BitmapDrawable a;
-    public final String b;
+public final class bc extends TLRPC.PhotoSize {
+    public final TLRPC.Photo a;
+    public final TLRPC.TL_inputPhoto b;
 
-    public bc(String str, BitmapDrawable bitmapDrawable) {
-        this.b = str;
-        this.a = bitmapDrawable;
+    public bc(TLRPC.Photo photo) {
+        this.a = photo;
+        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+        tL_inputPhoto.id = photo.id;
+        tL_inputPhoto.file_reference = photo.file_reference;
+        tL_inputPhoto.access_hash = photo.access_hash;
+        this.b = tL_inputPhoto;
     }
 }

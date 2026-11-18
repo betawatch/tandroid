@@ -3,12 +3,12 @@ package org.scilab.forge.jlatexmath;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MacroInfo {
-    public static HashMap<String, MacroInfo> Commands = new HashMap<>(ns.X4);
+    public static HashMap<String, MacroInfo> Commands = new HashMap<>(ks.X4);
     public static HashMap<String, Object> Packages = new HashMap<>();
     public boolean hasOptions;
     public Method macro;

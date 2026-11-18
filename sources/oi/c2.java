@@ -1,13 +1,31 @@
 package oi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class c2 {
-    public final b2[] a;
-    public final a2 b;
+    public final long a;
+    public final byte[] b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public final boolean f;
+    public final boolean g;
+    public final r h;
+    public final ArrayList i;
+    public final ArrayList j;
 
-    public c2(b2[] b2VarArr, a2 a2Var) {
-        this.a = b2VarArr;
-        this.b = a2Var;
+    public c2(long j3, byte[] bArr, int i7, int i10, boolean z10, boolean z11, boolean z12, r rVar, ArrayList arrayList, ArrayList arrayList2) {
+        this.a = j3;
+        this.b = bArr;
+        this.c = i7;
+        this.d = i10;
+        this.e = z10;
+        this.f = z11;
+        this.g = z12;
+        this.h = rVar;
+        this.i = arrayList;
+        this.j = arrayList2;
     }
 }

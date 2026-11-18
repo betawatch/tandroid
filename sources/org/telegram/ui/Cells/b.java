@@ -5,9 +5,9 @@ import android.graphics.Typeface;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.wh0;
+import org.telegram.ui.Components.fi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a = 1;
@@ -17,12 +17,12 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f10, float f11, wh0 wh0Var, wh0 wh0Var2) {
+    public /* synthetic */ b(HorizontalScrollView horizontalScrollView, float f10, float f11, fi0 fi0Var, fi0 fi0Var2) {
         this.d = horizontalScrollView;
         this.b = f10;
         this.c = f11;
-        this.e = wh0Var;
-        this.f = wh0Var2;
+        this.e = fi0Var;
+        this.f = fi0Var2;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -65,8 +65,8 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
             default:
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 ((HorizontalScrollView) frameLayout).setScrollX((int) com.google.android.gms.internal.vision.e2.z(f10, f11, floatValue2, f11));
-                ((wh0) obj2).setOutlineProgress(1.0f - floatValue2);
-                ((wh0) obj).setOutlineProgress(floatValue2);
+                ((fi0) obj2).setOutlineProgress(1.0f - floatValue2);
+                ((fi0) obj).setOutlineProgress(floatValue2);
                 break;
         }
     }

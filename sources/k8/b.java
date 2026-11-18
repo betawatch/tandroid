@@ -5,15 +5,15 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.j;
-import c8.b1;
-import c8.f1;
-import c8.p9;
+import c8.d1;
+import c8.j1;
+import c8.r9;
 import l8.d;
 import n6.f;
 import q6.m;
 import v7.e;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static boolean a = false;
@@ -22,21 +22,21 @@ public abstract class b {
     public static synchronized int a(Context context) {
         synchronized (b.class) {
             try {
-                m.h(context, "Context is null");
+                m.i(context, "Context is null");
                 Log.d("b", "preferredRenderer: ".concat("null"));
                 if (a) {
                     return 0;
                 }
                 try {
-                    d a10 = f1.a(context);
+                    d a10 = j1.a(context);
                     try {
                         l8.a x12 = a10.x1();
-                        m.g(x12);
-                        b1.a = x12;
+                        m.h(x12);
+                        d1.a = x12;
                         e z12 = a10.z1();
-                        if (p9.a == null) {
-                            m.h(z12, "delegate must not be null");
-                            p9.a = z12;
+                        if (r9.a == null) {
+                            m.i(z12, "delegate must not be null");
+                            r9.a = z12;
                         }
                         a = true;
                         try {

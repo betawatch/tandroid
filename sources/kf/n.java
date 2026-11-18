@@ -1,12 +1,12 @@
 package kf;
 
-import c8.d1;
+import c8.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class n extends a {
     @Override // kf.p
-    public void a(d1 d1Var) {
-        d1Var.k(this);
+    public void a(f1 f1Var) {
+        f1Var.k(this);
     }
 }

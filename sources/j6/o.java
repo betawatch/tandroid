@@ -24,66 +24,67 @@ import android.widget.OverScroller;
 import android.widget.TextView;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
+import bg.e0;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import hi.u5;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
-import ki.s3;
+import ki.n3;
 import m.r1;
 import oi.d0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MusicPlayerService;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.cz;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.f3;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.g20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.hz;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.kf;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.jf;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ku;
+import org.telegram.messenger.n5;
 import org.telegram.messenger.nu;
-import org.telegram.messenger.q5;
-import org.telegram.messenger.qe;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.pe;
 import org.telegram.messenger.r5;
-import org.telegram.messenger.ru;
-import org.telegram.messenger.se;
+import org.telegram.messenger.re;
+import org.telegram.messenger.s2;
+import org.telegram.messenger.s5;
+import org.telegram.messenger.su;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.wu;
+import org.telegram.messenger.vr;
 import org.telegram.messenger.xf;
-import org.telegram.messenger.xr;
-import org.telegram.messenger.z5;
-import org.telegram.messenger.zd;
+import org.telegram.messenger.yd;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.g2;
-import org.telegram.ui.ActionBar.g4;
-import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.ActionBar.u2;
-import org.telegram.ui.Cells.j7;
-import org.telegram.ui.Cells.p6;
-import org.telegram.ui.Cells.q7;
-import org.telegram.ui.Cells.s5;
+import org.telegram.ui.ActionBar.j1;
+import org.telegram.ui.ActionBar.j2;
+import org.telegram.ui.ActionBar.k4;
+import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.ActionBar.x2;
+import org.telegram.ui.Cells.k7;
+import org.telegram.ui.Cells.r7;
+import org.telegram.ui.Cells.t5;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.f41;
-import org.telegram.ui.Components.i7;
-import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.kc;
-import org.telegram.ui.Components.u51;
-import org.telegram.ui.Components.y7;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.g8;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.p7;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -115,31 +116,31 @@ public final /* synthetic */ class o implements Runnable {
         boolean z11;
         boolean z12;
         MediaController B = MediaController.B();
-        kf kfVar = (kf) this.b;
-        gj gjVar = kfVar.a;
-        g20 g20Var = kfVar.b;
-        if (gjVar == null || g20Var == null) {
+        jf jfVar = (jf) this.b;
+        fj fjVar = jfVar.a;
+        e20 e20Var = jfVar.b;
+        if (fjVar == null || e20Var == null) {
             return;
         }
-        String str2 = g20Var.o;
-        long j11 = g20Var.p;
-        long j12 = g20Var.a;
-        long j13 = g20Var.c;
-        long j14 = g20Var.b;
-        int i13 = g20Var.k;
-        int i14 = g20Var.l;
-        int i15 = g20Var.g;
-        int i16 = g20Var.h;
-        int i17 = g20Var.i;
-        int i18 = g20Var.n;
-        int i19 = g20Var.m;
-        int i20 = g20Var.j;
-        boolean z13 = m5.C(gj.B0(gjVar.k)) || g20Var.V;
-        File file2 = new File(gjVar.k.attachPath);
+        String str2 = e20Var.o;
+        long j11 = e20Var.p;
+        long j12 = e20Var.a;
+        long j13 = e20Var.c;
+        long j14 = e20Var.b;
+        int i13 = e20Var.k;
+        int i14 = e20Var.l;
+        int i15 = e20Var.g;
+        int i16 = e20Var.h;
+        int i17 = e20Var.i;
+        int i18 = e20Var.n;
+        int i19 = e20Var.m;
+        int i20 = e20Var.j;
+        boolean z13 = n5.C(fj.B0(fjVar.k)) || e20Var.V;
+        File file2 = new File(fjVar.k.attachPath);
         if (file2.exists()) {
             file2.delete();
         }
-        if (r2.a) {
+        if (s2.a) {
             file = file2;
             StringBuilder sb2 = new StringBuilder("begin convert ");
             sb2.append(str2);
@@ -184,11 +185,11 @@ public final /* synthetic */ class o implements Runnable {
             } else if (j12 > 0) {
                 i11 = i10;
                 i12 = i7;
-                j10 = g20Var.v - j12;
+                j10 = e20Var.v - j12;
             } else {
                 i11 = i10;
                 i12 = i7;
-                j3 = g20Var.v;
+                j3 = e20Var.v;
             }
             if (i18 != 0) {
                 i18 = 25;
@@ -199,28 +200,28 @@ public final /* synthetic */ class o implements Runnable {
                 i14 = i13;
                 i13 = i14;
             }
-            if (!g20Var.Z && i18 > 40 && Math.min(i13, i14) <= 480) {
+            if (!e20Var.Z && i18 > 40 && Math.min(i13, i14) <= 480) {
                 i18 = 30;
             }
             int i21 = i18;
-            boolean z14 = (j13 != -1 && g20Var.H == null && g20Var.G == null && g20Var.B == null && g20Var.A == null && i14 == i16 && i13 == i17 && i15 == 0 && !g20Var.s && j12 == -1 && g20Var.b0.isEmpty()) ? false : true;
+            boolean z14 = (j13 != -1 && e20Var.H == null && e20Var.G == null && e20Var.B == null && e20Var.A == null && i14 == i16 && i13 == i17 && i15 == 0 && !e20Var.s && j12 == -1 && e20Var.b0.isEmpty()) ? false : true;
             SharedPreferences sharedPreferences = t0.b.getSharedPreferences("videoconvert", 0);
             long currentTimeMillis = System.currentTimeMillis();
             String str4 = str3;
             File file3 = file;
-            qe qeVar = new qe(B, g20Var, file3, kfVar);
-            g20Var.X = true;
+            pe peVar = new pe(B, e20Var, file3, jfVar);
+            e20Var.X = true;
             MediaCodecVideoConvertor mediaCodecVideoConvertor = new MediaCodecVideoConvertor();
-            MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str4, file3, j11, i15, z13, i16, i17, i14, i13, i21, i12, i11, j12, j14, j13, z14, j3, qeVar, g20Var);
-            of2.soundInfos.addAll(g20Var.b0);
+            MediaCodecVideoConvertor.ConvertVideoParams of2 = MediaCodecVideoConvertor.ConvertVideoParams.of(str4, file3, j11, i15, z13, i16, i17, i14, i13, i21, i12, i11, j12, j14, j13, z14, j3, peVar, e20Var);
+            of2.soundInfos.addAll(e20Var.b0);
             convertVideo = mediaCodecVideoConvertor.convertVideo(of2);
-            z10 = g20Var.W;
+            z10 = e20Var.W;
             if (!z10) {
                 synchronized (B.b) {
-                    z10 = g20Var.W;
+                    z10 = e20Var.W;
                 }
             }
-            if (r2.a) {
+            if (s2.a) {
                 a8.b("time=" + (System.currentTimeMillis() - currentTimeMillis) + " canceled=" + z10);
             }
             z11 = true;
@@ -230,12 +231,12 @@ public final /* synthetic */ class o implements Runnable {
             if (!convertVideo && !z10) {
                 z11 = false;
             }
-            g20 g20Var2 = kfVar.b;
-            z12 = g20Var2.X;
+            e20 e20Var2 = jfVar.b;
+            z12 = e20Var2.X;
             if (z12) {
-                g20Var2.X = false;
+                e20Var2.X = false;
             }
-            g0.h3(new zd(B, z11, true, kfVar, file3, 1.0f, lastFrameTimestamp, z12, length));
+            g0.g3(new yd(B, z11, true, jfVar, file3, 1.0f, lastFrameTimestamp, z12, length));
         }
         j10 = j14 - j12;
         i11 = i10;
@@ -247,7 +248,7 @@ public final /* synthetic */ class o implements Runnable {
             i14 = i13;
             i13 = i14;
         }
-        if (!g20Var.Z) {
+        if (!e20Var.Z) {
             i18 = 30;
         }
         int i212 = i18;
@@ -257,16 +258,16 @@ public final /* synthetic */ class o implements Runnable {
         long currentTimeMillis2 = System.currentTimeMillis();
         String str42 = str3;
         File file32 = file;
-        qe qeVar2 = new qe(B, g20Var, file32, kfVar);
-        g20Var.X = true;
+        pe peVar2 = new pe(B, e20Var, file32, jfVar);
+        e20Var.X = true;
         MediaCodecVideoConvertor mediaCodecVideoConvertor2 = new MediaCodecVideoConvertor();
-        MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str42, file32, j11, i15, z13, i16, i17, i14, i13, i212, i12, i11, j12, j14, j13, z14, j3, qeVar2, g20Var);
-        of22.soundInfos.addAll(g20Var.b0);
+        MediaCodecVideoConvertor.ConvertVideoParams of22 = MediaCodecVideoConvertor.ConvertVideoParams.of(str42, file32, j11, i15, z13, i16, i17, i14, i13, i212, i12, i11, j12, j14, j13, z14, j3, peVar2, e20Var);
+        of22.soundInfos.addAll(e20Var.b0);
         convertVideo = mediaCodecVideoConvertor2.convertVideo(of22);
-        z10 = g20Var.W;
+        z10 = e20Var.W;
         if (!z10) {
         }
-        if (r2.a) {
+        if (s2.a) {
         }
         z11 = true;
         sharedPreferences2.edit().putBoolean("isPreviousOk", true).apply();
@@ -275,11 +276,11 @@ public final /* synthetic */ class o implements Runnable {
         if (!convertVideo) {
             z11 = false;
         }
-        g20 g20Var22 = kfVar.b;
-        z12 = g20Var22.X;
+        e20 e20Var22 = jfVar.b;
+        z12 = e20Var22.X;
         if (z12) {
         }
-        g0.h3(new zd(B, z11, true, kfVar, file32, 1.0f, lastFrameTimestamp2, z12, length2));
+        g0.g3(new yd(B, z11, true, jfVar, file32, 1.0f, lastFrameTimestamp2, z12, length2));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:327:0x0712  */
@@ -338,38 +339,38 @@ public final /* synthetic */ class o implements Runnable {
                 eVar.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 5:
-                Object obj = ((d6.i) this.b).b;
+                Object obj = ((u5) this.b).b;
                 return;
             case 6:
                 ((d0) this.b).h();
                 return;
             case 7:
-                if (!((r5) this.b).a.isEmpty()) {
+                if (!((s5) this.b).a.isEmpty()) {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     int i11 = 0;
-                    while (i11 < ((r5) this.b).a.size()) {
-                        q5 q5Var = (q5) ((r5) this.b).a.get(i11);
-                        if (q5Var.getLastTaskTime() < elapsedRealtime - 30000) {
-                            q5Var.recycle();
-                            ((r5) this.b).a.remove(i11);
-                            ((r5) this.b).e--;
+                    while (i11 < ((s5) this.b).a.size()) {
+                        r5 r5Var = (r5) ((s5) this.b).a.get(i11);
+                        if (r5Var.getLastTaskTime() < elapsedRealtime - 30000) {
+                            r5Var.recycle();
+                            ((s5) this.b).a.remove(i11);
+                            ((s5) this.b).e--;
                             i11--;
                         }
                         i11++;
                     }
                 }
-                if (((r5) this.b).a.isEmpty() && ((r5) this.b).c.isEmpty()) {
-                    ((r5) this.b).h = false;
+                if (((s5) this.b).a.isEmpty() && ((s5) this.b).c.isEmpty()) {
+                    ((s5) this.b).h = false;
                     return;
                 } else {
                     Utilities.e.d(this, 30000L);
-                    ((r5) this.b).h = true;
+                    ((s5) this.b).h = true;
                     return;
                 }
             case 8:
-                z5 z5Var = (z5) this.b;
-                z5Var.J.clear();
-                z5Var.getNotificationCenter().k(ns.b5, new Object[0]);
+                a6 a6Var = (a6) this.b;
+                a6Var.J.clear();
+                a6Var.getNotificationCenter().k(ks.d5, new Object[0]);
                 return;
             case 9:
                 MediaController mediaController = (MediaController) this.b;
@@ -396,10 +397,10 @@ public final /* synthetic */ class o implements Runnable {
                     }
                     byteBuffer.limit(read);
                     int i13 = mediaController.B1;
-                    ji.m mVar = xr.k;
+                    ji.m mVar = vr.k;
                     if (mVar != null && read > 0) {
                         try {
-                            mVar.m(byteBuffer, read, i13, 1);
+                            mVar.o(byteBuffer, read, i13, 1);
                         } catch (Throwable th2) {
                             a8.g(th2, true);
                         }
@@ -441,7 +442,7 @@ public final /* synthetic */ class o implements Runnable {
                                         double sqrt = Math.sqrt((d / read) / 2.0d);
                                         mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                                         mediaController.N1.c(mediaController.P1);
-                                        g0.h3(new se(this, sqrt, 0));
+                                        g0.g3(new re(this, sqrt, 0));
                                         return;
                                     }
                                 }
@@ -465,14 +466,14 @@ public final /* synthetic */ class o implements Runnable {
                         double sqrt2 = Math.sqrt((d / read) / 2.0d);
                         mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                         mediaController.N1.c(mediaController.P1);
-                        g0.h3(new se(this, sqrt2, 0));
+                        g0.g3(new re(this, sqrt2, 0));
                         return;
                     }
                     byteBuffer.position(0);
                     double sqrt22 = Math.sqrt((d / read) / 2.0d);
                     mediaController.O1.c(new xf(this, byteBuffer, read != byteBuffer.capacity(), 6));
                     mediaController.N1.c(mediaController.P1);
-                    g0.h3(new se(this, sqrt22, 0));
+                    g0.g3(new re(this, sqrt22, 0));
                     return;
                 }
                 return;
@@ -485,7 +486,7 @@ public final /* synthetic */ class o implements Runnable {
                     return;
                 }
                 if (MediaController.B().v0.j0 == -9223372036854775807L) {
-                    g0.i3(this, 500L);
+                    g0.h3(this, 500L);
                     return;
                 }
                 RemoteControlClient.MetadataEditor editMetadata = musicPlayerService.a.editMetadata(false);
@@ -497,105 +498,105 @@ public final /* synthetic */ class o implements Runnable {
                 t0.b.sendBroadcast((Intent) this.b);
                 return;
             case 13:
-                nu nuVar = (nu) this.b;
-                OverScroller overScroller = nuVar.n0;
-                if (overScroller == null || nuVar.W == null || !overScroller.computeScrollOffset()) {
+                ku kuVar = (ku) this.b;
+                OverScroller overScroller = kuVar.n0;
+                if (overScroller == null || kuVar.W == null || !overScroller.computeScrollOffset()) {
                     return;
                 }
-                int currX = nuVar.n0.getCurrX();
+                int currX = kuVar.n0.getCurrX();
                 r15 = currX >= 0 ? currX : 0;
-                int i17 = nuVar.d0;
+                int i17 = kuVar.d0;
                 if (r15 > i17) {
                     r15 = i17;
                 }
-                if (r15 != nuVar.e0) {
-                    nuVar.e0 = r15;
+                if (r15 != kuVar.e0) {
+                    kuVar.e0 = r15;
+                    kuVar.W.invalidate();
+                }
+                if (kuVar.n0.isFinished()) {
+                    return;
+                }
+                kuVar.W.postOnAnimation(this);
+                return;
+            case 14:
+                nu nuVar = (nu) this.b;
+                OverScroller overScroller2 = nuVar.v0;
+                if (overScroller2 == null || nuVar.W == null || !overScroller2.computeScrollOffset()) {
+                    return;
+                }
+                int currX2 = nuVar.v0.getCurrX();
+                r15 = currX2 >= 0 ? currX2 : 0;
+                int i18 = nuVar.b0;
+                if (r15 > i18) {
+                    r15 = i18;
+                }
+                if (r15 != nuVar.c0) {
+                    nuVar.c0 = r15;
+                    nuVar.Z(nuVar.T, nuVar.U, nuVar.V);
                     nuVar.W.invalidate();
                 }
-                if (nuVar.n0.isFinished()) {
+                if (nuVar.v0.isFinished()) {
                     return;
                 }
                 nuVar.W.postOnAnimation(this);
                 return;
-            case 14:
-                ru ruVar = (ru) this.b;
-                OverScroller overScroller2 = ruVar.v0;
-                if (overScroller2 == null || ruVar.W == null || !overScroller2.computeScrollOffset()) {
-                    return;
-                }
-                int currX2 = ruVar.v0.getCurrX();
-                r15 = currX2 >= 0 ? currX2 : 0;
-                int i18 = ruVar.b0;
-                if (r15 > i18) {
-                    r15 = i18;
-                }
-                if (r15 != ruVar.c0) {
-                    ruVar.c0 = r15;
-                    ruVar.Z(ruVar.T, ruVar.U, ruVar.V);
-                    ruVar.W.invalidate();
-                }
-                if (ruVar.v0.isFinished()) {
-                    return;
-                }
-                ruVar.W.postOnAnimation(this);
-                return;
             case 15:
-                wu wuVar = (wu) this.b;
-                OverScroller overScroller3 = wuVar.z0;
-                if (overScroller3 == null || wuVar.W == null || !overScroller3.computeScrollOffset()) {
+                su suVar = (su) this.b;
+                OverScroller overScroller3 = suVar.z0;
+                if (overScroller3 == null || suVar.W == null || !overScroller3.computeScrollOffset()) {
                     return;
                 }
-                int currX3 = wuVar.z0.getCurrX();
+                int currX3 = suVar.z0.getCurrX();
                 r15 = currX3 >= 0 ? currX3 : 0;
-                int i19 = wuVar.i0;
+                int i19 = suVar.i0;
                 if (r15 > i19) {
                     r15 = i19;
                 }
-                if (r15 != wuVar.j0) {
-                    wuVar.j0 = r15;
-                    wuVar.Z(wuVar.T, wuVar.U, wuVar.V);
-                    wuVar.W.invalidate();
+                if (r15 != suVar.j0) {
+                    suVar.j0 = r15;
+                    suVar.Z(suVar.T, suVar.U, suVar.V);
+                    suVar.W.invalidate();
                 }
-                if (wuVar.z0.isFinished()) {
+                if (suVar.z0.isFinished()) {
                     return;
                 }
-                wuVar.W.postOnAnimation(this);
+                suVar.W.postOnAnimation(this);
                 return;
             case 16:
                 long currentTimeMillis = System.currentTimeMillis();
-                hz hzVar = (hz) this.b;
-                if (Math.abs(currentTimeMillis - hzVar.b) < 2000) {
+                cz czVar = (cz) this.b;
+                if (Math.abs(currentTimeMillis - czVar.b) < 2000) {
                     return;
                 }
-                hzVar.b = currentTimeMillis;
+                czVar.b = currentTimeMillis;
                 try {
-                    hzVar.s.b();
+                    czVar.s.b();
                     int i20 = 0;
                     while (true) {
                         if (i20 >= 3) {
                             int i21 = 0;
                             for (int i22 = 3; i21 < i22; i22 = 3) {
-                                hzVar.s.write(hz.a(hzVar, hzVar.c[i21][7]), 0, 8);
-                                hzVar.s.write(hz.a(hzVar, hzVar.d[i21][7]), 0, 8);
-                                hzVar.s.write(hz.b(hzVar, hzVar.e[i21][7]), 0, 4);
-                                hzVar.s.write(hz.b(hzVar, hzVar.f[i21][7]), 0, 4);
+                                czVar.s.write(cz.a(czVar, czVar.c[i21][7]), 0, 8);
+                                czVar.s.write(cz.a(czVar, czVar.d[i21][7]), 0, 8);
+                                czVar.s.write(cz.b(czVar, czVar.e[i21][7]), 0, 4);
+                                czVar.s.write(cz.b(czVar, czVar.f[i21][7]), 0, 4);
                                 i21++;
                             }
-                            hzVar.r.seek(0L);
-                            RandomAccessFile randomAccessFile = hzVar.r;
-                            bg.d0 d0Var = hzVar.s;
-                            randomAccessFile.write(d0Var.a, 0, d0Var.b);
-                            hzVar.r.getFD().sync();
+                            czVar.r.seek(0L);
+                            RandomAccessFile randomAccessFile = czVar.r;
+                            e0 e0Var = czVar.s;
+                            randomAccessFile.write(e0Var.a, 0, e0Var.b);
+                            czVar.r.getFD().sync();
                             return;
                         }
                         for (int i23 = 0; i23 < 7; i23++) {
-                            hzVar.s.write(hz.a(hzVar, hzVar.c[i20][i23]), 0, 8);
-                            hzVar.s.write(hz.a(hzVar, hzVar.d[i20][i23]), 0, 8);
-                            hzVar.s.write(hz.b(hzVar, hzVar.e[i20][i23]), 0, 4);
-                            hzVar.s.write(hz.b(hzVar, hzVar.f[i20][i23]), 0, 4);
+                            czVar.s.write(cz.a(czVar, czVar.c[i20][i23]), 0, 8);
+                            czVar.s.write(cz.a(czVar, czVar.d[i20][i23]), 0, 8);
+                            czVar.s.write(cz.b(czVar, czVar.e[i20][i23]), 0, 4);
+                            czVar.s.write(cz.b(czVar, czVar.f[i20][i23]), 0, 4);
                         }
-                        hzVar.s.write(hz.b(hzVar, hzVar.n[i20]), 0, 4);
-                        hzVar.s.write(hz.a(hzVar, hzVar.h[i20]), 0, 8);
+                        czVar.s.write(cz.b(czVar, czVar.n[i20]), 0, 4);
+                        czVar.s.write(cz.a(czVar, czVar.h[i20]), 0, 8);
                         i20++;
                     }
                 } catch (Exception unused) {
@@ -610,84 +611,84 @@ public final /* synthetic */ class o implements Runnable {
                 actionBarLayout.h0(false, true, false);
                 return;
             case 18:
-                i1 i1Var = (i1) this.b;
-                ValueAnimator valueAnimator = i1Var.m;
+                j1 j1Var = (j1) this.b;
+                ValueAnimator valueAnimator = j1Var.m;
                 if (valueAnimator == null || valueAnimator.isRunning()) {
                     return;
                 }
-                i1Var.m.start();
+                j1Var.m.start();
                 return;
             case 19:
-                u2 u2Var = (u2) this.b;
-                if (u2Var.H != this || (z10 = u2Var.J)) {
+                x2 x2Var = (x2) this.b;
+                if (x2Var.H != this || (z10 = x2Var.J)) {
                     return;
                 }
-                u2Var.H = null;
+                x2Var.H = null;
                 if (z10) {
                     return;
                 }
-                u2Var.b.setVisibility(0);
-                if (u2Var.m0()) {
+                x2Var.b.setVisibility(0);
+                if (x2Var.m0()) {
                     return;
                 }
-                if (u2Var.K) {
-                    u2Var.c.setLayerType(2, null);
+                if (x2Var.K) {
+                    x2Var.c.setLayerType(2, null);
                 }
-                if (u2Var.W0) {
-                    u2Var.b.setTranslationX(g0.L(48.0f));
-                    u2Var.b.setAlpha(0.0f);
-                    u2Var.b.setTranslationY(0.0f);
+                if (x2Var.W0) {
+                    x2Var.b.setTranslationX(g0.L(48.0f));
+                    x2Var.b.setAlpha(0.0f);
+                    x2Var.b.setTranslationY(0.0f);
                 } else {
-                    u2Var.b.setTranslationY(Math.max(0, Math.min(g0.n, u2Var.R())) + g0.L(10.0f) + u2Var.S() + u2Var.f);
+                    x2Var.b.setTranslationY(Math.max(0, Math.min(g0.n, x2Var.R())) + g0.L(10.0f) + x2Var.S() + x2Var.f);
                 }
-                u2Var.h0();
-                u2Var.B0 = 1;
-                ValueAnimator valueAnimator2 = u2Var.C0;
+                x2Var.h0();
+                x2Var.B0 = 1;
+                ValueAnimator valueAnimator2 = x2Var.C0;
                 if (valueAnimator2 != null) {
                     valueAnimator2.cancel();
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(u2Var.D0, 1.0f);
-                u2Var.C0 = ofFloat;
-                ofFloat.addUpdateListener(new g2(u2Var, 0));
-                u2Var.A0 = new AnimatorSet();
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(x2Var.D0, 1.0f);
+                x2Var.C0 = ofFloat;
+                ofFloat.addUpdateListener(new j2(x2Var, 0));
+                x2Var.A0 = new AnimatorSet();
                 ArrayList arrayList = new ArrayList();
-                arrayList.add(ObjectAnimator.ofFloat(u2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(u2Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
-                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(u2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
-                ofFloat2.addUpdateListener(new g2(u2Var, 1));
+                arrayList.add(ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_X, 0.0f));
+                arrayList.add(ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.ALPHA, 1.0f));
+                ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(x2Var.b, (Property<ViewGroup, Float>) View.TRANSLATION_Y, 0.0f);
+                ofFloat2.addUpdateListener(new j2(x2Var, 1));
                 arrayList.add(ofFloat2);
-                arrayList.add(ObjectAnimator.ofInt(u2Var.Z, k6.d, u2Var.p0 ? u2Var.q0 : 0));
-                arrayList.add(u2Var.C0);
-                u2Var.F(arrayList, true);
-                u2Var.A0.playTogether(arrayList);
-                if (u2Var.W0) {
-                    u2Var.A0.setDuration(250L);
-                    u2Var.A0.setInterpolator(er.f);
+                arrayList.add(ObjectAnimator.ofInt(x2Var.Z, q6.d, x2Var.p0 ? x2Var.q0 : 0));
+                arrayList.add(x2Var.C0);
+                x2Var.F(arrayList, true);
+                x2Var.A0.playTogether(arrayList);
+                if (x2Var.W0) {
+                    x2Var.A0.setDuration(250L);
+                    x2Var.A0.setInterpolator(lr.f);
                 } else {
-                    u2Var.A0.setDuration(u2Var.k0);
-                    u2Var.A0.setInterpolator(u2Var.l0);
+                    x2Var.A0.setDuration(x2Var.k0);
+                    x2Var.A0.setInterpolator(x2Var.l0);
                 }
-                u2Var.A0.setStartDelay(u2Var.E ? 0L : 20L);
-                u2Var.A0.setInterpolator(u2Var.l0);
-                u2Var.M0.d();
-                u2Var.A0.addListener(new m2(u2Var, r15));
-                if (u2Var.L0) {
-                    ns.e().k(98, 512);
+                x2Var.A0.setStartDelay(x2Var.E ? 0L : 20L);
+                x2Var.A0.setInterpolator(x2Var.l0);
+                x2Var.M0.d();
+                x2Var.A0.addListener(new p2(x2Var, r15));
+                if (x2Var.L0) {
+                    ks.e().k(98, 512);
                 }
-                u2Var.A0.start();
+                x2Var.A0.start();
                 return;
             case 20:
-                g4 g4Var = (g4) this.b;
-                g4Var.k();
-                g4Var.j();
-                g4Var.f.setAlpha(1.0f);
+                k4 k4Var = (k4) this.b;
+                k4Var.k();
+                k4Var.j();
+                k4Var.f.setAlpha(1.0f);
                 return;
             case 21:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                a80 a80Var = jVar.x;
-                if (a80Var != null) {
-                    CharacterStyle characterStyle = a80Var.i;
-                    final String url = characterStyle instanceof f41 ? ((f41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+                l80 l80Var = jVar.x;
+                if (l80Var != null) {
+                    CharacterStyle characterStyle = l80Var.i;
+                    final String url = characterStyle instanceof p41 ? ((p41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
                     try {
                         jVar.performHapticFeedback(0, 2);
                     } catch (Exception unused2) {
@@ -696,15 +697,15 @@ public final /* synthetic */ class o implements Runnable {
                     final float f13 = jVar.y;
                     if (jVar.getContext() != null) {
                         final ClickableSpan clickableSpan = (ClickableSpan) jVar.x.i;
-                        u2 k10 = k5.k(1, jVar.getContext(), null, false);
-                        k10.P = url;
-                        k10.Q = false;
-                        CharSequence[] charSequenceArr = {hd.M0(2131747817, null), hd.M0(2131751767, null)};
+                        x2 j11 = f3.j(1, jVar.getContext(), null, false);
+                        j11.P = url;
+                        j11.Q = false;
+                        CharSequence[] charSequenceArr = {gd.M0(2131747624, null), gd.M0(2131751756, null)};
                         DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i24) {
                                 j jVar2 = (j) j6.o.this.b;
-                                org.telegram.ui.ActionBar.e2 e2Var = jVar2.I;
+                                org.telegram.ui.ActionBar.h2 h2Var = jVar2.I;
                                 if (i24 == 0) {
                                     jVar2.d(clickableSpan, staticLayout, f13);
                                     return;
@@ -712,27 +713,27 @@ public final /* synthetic */ class o implements Runnable {
                                 if (i24 == 1) {
                                     String str = url;
                                     org.telegram.messenger.g0.g(str);
-                                    if (org.telegram.messenger.g0.H3()) {
+                                    if (org.telegram.messenger.g0.G3()) {
                                         if (str.startsWith("@")) {
-                                            org.telegram.messenger.k5.n(null, 2131743665, cc.a0(e2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131743428, lc.b0(h2Var), R.raw.copy, 36);
                                         } else if (str.startsWith("#") || str.startsWith("$")) {
-                                            org.telegram.messenger.k5.n(null, 2131749362, cc.a0(e2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131749170, lc.b0(h2Var), R.raw.copy, 36);
                                         } else {
-                                            org.telegram.messenger.k5.n(null, 2131748921, cc.a0(e2Var), R.raw.copy, 36);
+                                            org.telegram.messenger.f3.n(null, 2131748729, lc.b0(h2Var), R.raw.copy, 36);
                                         }
                                     }
                                 }
                             }
                         };
-                        k10.M = charSequenceArr;
-                        k10.L = onClickListener;
-                        k10.I0 = new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.e
+                        j11.M = charSequenceArr;
+                        j11.L = onClickListener;
+                        j11.I0 = new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.e
                             @Override // android.content.DialogInterface.OnDismissListener
                             public final void onDismiss(DialogInterface dialogInterface) {
                                 ((j) j6.o.this.b).e();
                             }
                         };
-                        k10.show();
+                        j11.show();
                     }
                     jVar.x = null;
                     return;
@@ -750,114 +751,114 @@ public final /* synthetic */ class o implements Runnable {
                 zVar.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 23:
-                s5 s5Var = (s5) this.b;
-                TextView textView = s5Var.b;
+                t5 t5Var = (t5) this.b;
+                TextView textView = t5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
-                s5Var.d = animatorSet;
+                t5Var.d = animatorSet;
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(s5Var.a, (Property<TextView, Float>) property, 1.0f));
-                s5Var.d.setDuration(250L);
-                s5Var.d.setInterpolator(new DecelerateInterpolator());
-                s5Var.d.addListener(new s3(this, 26));
-                s5Var.d.start();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(t5Var.a, (Property<TextView, Float>) property, 1.0f));
+                t5Var.d.setDuration(250L);
+                t5Var.d.setInterpolator(new DecelerateInterpolator());
+                t5Var.d.addListener(new n3(this, 26));
+                t5Var.d.start();
                 return;
             case 24:
-                p6 p6Var = (p6) this.b;
-                p6Var.a();
-                RectF rectF = p6Var.r;
-                p6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                g0.i3(p6Var.E, 1000L);
+                org.telegram.ui.Cells.q6 q6Var = (org.telegram.ui.Cells.q6) this.b;
+                q6Var.a();
+                RectF rectF = q6Var.r;
+                q6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                g0.h3(q6Var.E, 1000L);
                 return;
             case 25:
-                j7 j7Var = (j7) this.b;
-                if (j7Var.b == null) {
-                    j7Var.b = new androidx.emoji2.text.j(j7Var, i10);
+                k7 k7Var = (k7) this.b;
+                if (k7Var.b == null) {
+                    k7Var.b = new androidx.emoji2.text.j(k7Var, i10);
                 }
-                androidx.emoji2.text.j jVar3 = j7Var.b;
-                int i25 = j7Var.c + 1;
-                j7Var.c = i25;
+                androidx.emoji2.text.j jVar3 = k7Var.b;
+                int i25 = k7Var.c + 1;
+                k7Var.c = i25;
                 jVar3.b = i25;
-                j7Var.postDelayed(jVar3, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
+                k7Var.postDelayed(jVar3, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 26:
-                q7 q7Var = (q7) this.b;
-                RectF rectF2 = q7Var.s;
-                q7Var.invalidate(((int) rectF2.left) - 5, ((int) rectF2.top) - 5, ((int) rectF2.right) + 5, ((int) rectF2.bottom) + 5);
-                g0.i3(q7Var.G, 1000L);
+                r7 r7Var = (r7) this.b;
+                RectF rectF2 = r7Var.s;
+                r7Var.invalidate(((int) rectF2.left) - 5, ((int) rectF2.top) - 5, ((int) rectF2.right) + 5, ((int) rectF2.bottom) + 5);
+                g0.h3(r7Var.G, 1000L);
                 return;
             case 27:
-                i7 i7Var = (i7) this.b;
-                y7 y7Var = i7Var.E;
+                p7 p7Var = (p7) this.b;
+                g8 g8Var = p7Var.E;
                 if (MediaController.B().v0 == null) {
                     return;
                 }
-                int i26 = y7Var.D2 + 1;
-                y7Var.D2 = i26;
+                int i26 = g8Var.D2 + 1;
+                g8Var.D2 = i26;
                 if (i26 != 1) {
                     if (i26 != 2) {
                         MediaController.B().m0(true, 13.0f);
                         return;
                     } else {
                         MediaController.B().m0(true, 7.0f);
-                        g0.i3(this, 2000L);
+                        g0.h3(this, 2000L);
                         return;
                     }
                 }
-                i7Var.w = true;
-                y7Var.B2 = 1;
+                p7Var.w = true;
+                g8Var.B2 = 1;
                 if (MediaController.B().H()) {
-                    y7Var.Y0();
-                } else if (y7Var.B2 == 1) {
-                    g0.r(y7Var.I2);
-                    y7Var.F2 = 0L;
+                    g8Var.Z0();
+                } else if (g8Var.B2 == 1) {
+                    g0.r(g8Var.I2);
+                    g8Var.F2 = 0L;
                 }
                 MediaController.B().m0(true, 4.0f);
-                g0.i3(this, 2000L);
+                g0.h3(this, 2000L);
                 return;
             case 28:
-                y7 y7Var2 = (y7) this.b;
-                u51 u51Var = MediaController.B().j0;
-                long U = u51Var == null ? 0L : u51Var.U();
+                g8 g8Var2 = (g8) this.b;
+                f61 f61Var = MediaController.B().j0;
+                long U = f61Var == null ? 0L : f61Var.U();
                 if (U == 0 || U == -9223372036854775807L) {
-                    y7Var2.E2 = System.currentTimeMillis();
+                    g8Var2.E2 = System.currentTimeMillis();
                     return;
                 }
-                float f14 = y7Var2.C2;
+                float f14 = g8Var2.C2;
                 long currentTimeMillis2 = System.currentTimeMillis();
-                long j11 = currentTimeMillis2 - y7Var2.E2;
-                y7Var2.E2 = currentTimeMillis2;
-                long j12 = currentTimeMillis2 - y7Var2.F2;
-                int i27 = y7Var2.D2;
-                float f15 = ((long) ((f14 * r2) + (((i27 == 1 ? 3L : i27 == 2 ? 6L : 12L) * j11) - j11))) / U;
+                long j12 = currentTimeMillis2 - g8Var2.E2;
+                g8Var2.E2 = currentTimeMillis2;
+                long j13 = currentTimeMillis2 - g8Var2.F2;
+                int i27 = g8Var2.D2;
+                float f15 = ((long) ((f14 * r2) + (((i27 == 1 ? 3L : i27 == 2 ? 6L : 12L) * j12) - j12))) / U;
                 if (f15 < 0.0f) {
                     f15 = 0.0f;
                 }
-                y7Var2.C2 = f15;
-                gj gjVar = MediaController.B().v0;
-                if (gjVar != null && gjVar.I3()) {
+                g8Var2.C2 = f15;
+                fj fjVar = MediaController.B().v0;
+                if (fjVar != null && fjVar.I3()) {
                     if (!MediaController.B().H()) {
-                        MediaController.B().v0.b0 = y7Var2.C2;
+                        MediaController.B().v0.b0 = g8Var2.C2;
                     }
-                    y7Var2.b1(gjVar, false);
+                    g8Var2.c1(fjVar, false);
                 }
-                if (y7Var2.B2 == 1 && y7Var2.D2 > 0 && MediaController.B().H()) {
-                    if (j12 > 200 || y7Var2.C2 == 0.0f) {
-                        y7Var2.F2 = currentTimeMillis2;
+                if (g8Var2.B2 == 1 && g8Var2.D2 > 0 && MediaController.B().H()) {
+                    if (j13 > 200 || g8Var2.C2 == 0.0f) {
+                        g8Var2.F2 = currentTimeMillis2;
                         MediaController.B().i0(MediaController.B().v0, f15);
                     }
-                    if (y7Var2.D2 <= 0 || y7Var2.C2 <= 0.0f) {
+                    if (g8Var2.D2 <= 0 || g8Var2.C2 <= 0.0f) {
                         return;
                     }
-                    g0.i3(y7Var2.I2, 16L);
+                    g0.h3(g8Var2.I2, 16L);
                     return;
                 }
                 return;
             default:
-                kc kcVar = (kc) this.b;
-                kcVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                kcVar.f.performHapticFeedback(0);
-                Runnable runnable = kcVar.j;
+                tc tcVar = (tc) this.b;
+                tcVar.b(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                tcVar.f.performHapticFeedback(0);
+                Runnable runnable = tcVar.j;
                 if (runnable != null) {
                     runnable.run();
                     return;
@@ -871,8 +872,8 @@ public final /* synthetic */ class o implements Runnable {
         this.b = obj;
     }
 
-    public o(d6.i iVar, int i7) {
+    public o(u5 u5Var, int i7) {
         this.a = 5;
-        this.b = iVar;
+        this.b = u5Var;
     }
 }

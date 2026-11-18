@@ -16,7 +16,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class y8 {
     public byte[] A;
@@ -184,9 +184,9 @@ public final class y8 {
                     if (!this.E && this.t > 10485760) {
                         this.D = true;
                     }
-                    long j11 = np.s1(i15).r6;
-                    if (m10.i(c.a(i15).a).q() && this.t > 2097152000) {
-                        j11 = np.s1(i15).s6;
+                    long j11 = mp.u1(i15).t6;
+                    if (j10.i(c.a(i15).a).q() && this.t > 2097152000) {
+                        j11 = mp.u1(i15).u6;
                     }
                     z11 = z15;
                     long j12 = j11 * 1024;
@@ -200,7 +200,7 @@ public final class y8 {
                         this.h = i16;
                     }
                     this.e = Math.max(1, (this.i ? 32 : TLObject.FLAG_13) / this.h);
-                    this.f = m10.i(c.a(i15).a).q() ? 8 : 4;
+                    this.f = j10.i(c.a(i15).a).q() ? 8 : 4;
                     if (z11) {
                         this.j = new ArrayList(this.e);
                         for (int i17 = 0; i17 < this.e; i17++) {
@@ -314,7 +314,7 @@ public final class y8 {
                                                         System.arraycopy(this.z, 0, bArr6, 32, 32);
                                                         byte[] digest = messageDigest.digest(bArr6);
                                                         for (int i24 = 0; i24 < 4; i24++) {
-                                                            this.C |= ((digest[i24] ^ digest[i24 + 4]) & ns.e4) << (i24 * 8);
+                                                            this.C |= ((digest[i24] ^ digest[i24 + 4]) & ks.e4) << (i24 * 8);
                                                         }
                                                     } catch (Exception e10) {
                                                         a8.g(e10, true);
@@ -561,7 +561,7 @@ public final class y8 {
                         }
                         int[] iArr4 = y8Var2.g;
                         iArr4[i45] = iArr4[i45] - 1;
-                        if (r2.a) {
+                        if (s2.a) {
                             i39 = 0;
                             a8.b("debug_uploading:  response reqId " + iArr3[0] + " time" + str5);
                         } else {
@@ -569,7 +569,7 @@ public final class y8 {
                         }
                         int f10 = tLObject != null ? tLObject.networkType : t0.f();
                         if (i50 == 50331648) {
-                            hz.e(i51).j(f10, 3, i46);
+                            cz.e(i51).j(f10, 3, i46);
                             i40 = i50;
                             i41 = 5;
                             sparseArray = sparseArray2;
@@ -577,18 +577,18 @@ public final class y8 {
                             i40 = i50;
                             if (i40 == 33554432) {
                                 sparseArray = sparseArray2;
-                                hz.e(i51).j(f10, 2, i46);
+                                cz.e(i51).j(f10, 2, i46);
                             } else {
                                 sparseArray = sparseArray2;
                                 if (i40 == 16777216) {
-                                    hz.e(i51).j(f10, 4, i46);
+                                    cz.e(i51).j(f10, 4, i46);
                                 } else if (i40 == 67108864) {
                                     if (str5 == null || !(str5.toLowerCase().endsWith("mp3") || str5.toLowerCase().endsWith("m4a"))) {
                                         long j18 = i46;
                                         i41 = 5;
-                                        hz.e(i51).j(f10, 5, j18);
+                                        cz.e(i51).j(f10, 5, j18);
                                     } else {
-                                        hz.e(i51).j(f10, 7, i46);
+                                        cz.e(i51).j(f10, 7, i46);
                                     }
                                 }
                             }
@@ -598,7 +598,7 @@ public final class y8 {
                             y8Var2.j.add(bArr8);
                         }
                         y8Var2.p.delete(i47);
-                        g0.h3(new w8(y8Var2, iArr3, 1));
+                        g0.g3(new w8(y8Var2, iArr3, 1));
                         if (!(tLObject instanceof TLRPC.TL_boolTrue)) {
                             y8Var2.m = 4;
                             y8Var2.o.a();
@@ -614,14 +614,14 @@ public final class y8 {
                         t7 t7Var = y8Var2.o;
                         int i52 = i41;
                         long j20 = y8Var2.w;
-                        pb pbVar = t7Var.d.F;
-                        if (pbVar != null) {
+                        ob obVar = t7Var.d.F;
+                        if (obVar != null) {
                             y8Var = y8Var2;
                             str3 = "m4a";
                             str2 = str5;
                             j16 = 0;
                             i42 = i39;
-                            pbVar.a(y8Var, t7Var.b, j20, max2, t7Var.a);
+                            obVar.a(y8Var, t7Var.b, j20, max2, t7Var.a);
                         } else {
                             str2 = str5;
                             y8Var = y8Var2;
@@ -699,7 +699,7 @@ public final class y8 {
                             t7Var2.getClass();
                             str4 = str6;
                             i43 = i52;
-                            w7.K.c(new tl(t7Var2, t7Var2.a, t7Var2.b, t7Var2.c, inputFile, (TLRPC.InputEncryptedFile) null, (byte[]) null, (byte[]) null, y8Var4));
+                            w7.K.c(new ql(t7Var2, t7Var2.a, t7Var2.b, t7Var2.c, inputFile, (TLRPC.InputEncryptedFile) null, (byte[]) null, (byte[]) null, y8Var4));
                             y8Var4.b();
                         } else {
                             str4 = str3;
@@ -719,31 +719,31 @@ public final class y8 {
                             byte[] bArr10 = y8Var5.y;
                             byte[] bArr11 = y8Var5.z;
                             t7Var3.getClass();
-                            w7.K.c(new tl(t7Var3, t7Var3.a, t7Var3.b, t7Var3.c, (TLRPC.InputFile) null, inputEncryptedFile, bArr10, bArr11, y8Var5));
+                            w7.K.c(new ql(t7Var3, t7Var3.a, t7Var3.b, t7Var3.c, (TLRPC.InputFile) null, inputEncryptedFile, bArr10, bArr11, y8Var5));
                             y8Var5.b();
                         }
                         if (i40 == 50331648) {
-                            hz.e(i51).k(t0.f(), 3, 1);
+                            cz.e(i51).k(t0.f(), 3, 1);
                             return;
                         }
                         if (i40 == 33554432) {
-                            hz.e(i51).k(t0.f(), 2, 1);
+                            cz.e(i51).k(t0.f(), 2, 1);
                             return;
                         }
                         if (i40 == 16777216) {
-                            hz.e(i51).k(t0.f(), 4, 1);
+                            cz.e(i51).k(t0.f(), 4, 1);
                             return;
                         }
                         if (i40 == 67108864) {
                             if (str2 == null || !(str2.toLowerCase().endsWith("mp3") || str2.toLowerCase().endsWith(str4))) {
-                                hz.e(i51).k(t0.f(), i43, 1);
+                                cz.e(i51).k(t0.f(), i43, 1);
                             } else {
-                                hz.e(i51).k(t0.f(), 7, 1);
+                                cz.e(i51).k(t0.f(), 7, 1);
                             }
                         }
                     }
                 }, null, new j1(this, 3), this.E ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i12, true);
-                if (r2.a) {
+                if (s2.a) {
                     StringBuilder sb3 = new StringBuilder("debug_uploading:  send reqId ");
                     sb3.append(iArr2[0]);
                     sb3.append(" ");
@@ -753,10 +753,10 @@ public final class y8 {
                     sb3.append(" isBig=");
                     sb3.append(this.D);
                     sb3.append(" file_id=");
-                    i5.c.t(this.s, sb3);
+                    i5.c.v(this.s, sb3);
                 }
                 this.p.put(i31, iArr2[0]);
-                g0.h3(new w8(this, iArr2, 0));
+                g0.g3(new w8(this, iArr2, 0));
             }
         } catch (Exception e12) {
             e = e12;

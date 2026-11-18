@@ -4,7 +4,7 @@ import a8.sa;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -46,7 +46,7 @@ public class z {
                 return;
             }
             yVar.c = i10;
-            yVar.a.o(this.e);
+            yVar.a.A(this.e);
         }
     }
 
@@ -161,7 +161,7 @@ public class z {
         if (yVar == null) {
             return;
         }
-        yVar.g();
+        yVar.h();
         yVar.c(false);
     }
 

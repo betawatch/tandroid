@@ -1,9 +1,9 @@
 package hi;
 
-import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ l8 b;
@@ -18,15 +18,15 @@ public final /* synthetic */ class b8 implements Runnable {
         switch (this.a) {
             case 0:
                 q8 q8Var = this.b.a0;
-                xb.h(q8Var.c);
-                super/*org.telegram.ui.ActionBar.u2*/.dismiss();
+                gc.h(q8Var.c);
+                super/*org.telegram.ui.ActionBar.x2*/.dismiss();
                 break;
             case 1:
                 l8 l8Var = this.b;
                 l8Var.w.setLoading(false);
                 q8 q8Var2 = l8Var.a0;
-                q8Var2.M0();
-                q8Var2.m1.C(0);
+                q8Var2.N0();
+                q8Var2.m1.A(0);
                 break;
             case 2:
                 this.b.V = false;
@@ -34,7 +34,7 @@ public final /* synthetic */ class b8 implements Runnable {
             case 3:
                 q8 q8Var3 = this.b.a0;
                 q8Var3.H1 = 6;
-                q8Var3.m1.C(1);
+                q8Var3.m1.A(1);
                 break;
             case 4:
                 l8 l8Var2 = this.b;

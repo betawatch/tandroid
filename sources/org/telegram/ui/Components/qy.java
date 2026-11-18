@@ -1,159 +1,153 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseArray;
+import android.animation.ObjectAnimator;
+import android.os.SystemClock;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewConfiguration;
+import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class qy extends v4.b0 {
-    public final SparseArray I;
-    public int J;
-    public int K;
-    public int L;
-    public int M;
-    public final RecyclerView N;
-    public boolean O;
-    public boolean P;
-    public final boolean Q;
-    public boolean R;
-    public int S;
-    public final boolean T;
+public class qy extends v4.u0 {
+    public final int a;
+    public boolean b;
+    public final /* synthetic */ ry c;
 
-    public qy(int i7, uj0 uj0Var) {
-        this.I = new SparseArray();
-        this.J = -1;
-        this.P = true;
-        this.Q = true;
-        this.T = true;
-        this.N = uj0Var;
-        this.M = i7;
+    public qy(ry ryVar, int i7) {
+        this.c = ryVar;
+        this.a = i7;
     }
 
-    @Override // v4.o0
-    public final void P(View view) {
-        if (this.T) {
-            RecyclerView recyclerView = this.N;
-            View F = recyclerView.F(view);
-            if ((F == null ? null : recyclerView.T(F)).b() == B() - 1) {
-                ((ViewGroup.MarginLayoutParams) ((v4.p0) view.getLayoutParams())).height = Math.max(this.J, 0);
-            }
+    @Override // v4.u0
+    public void a(RecyclerView recyclerView, int i7) {
+        ObjectAnimator objectAnimator;
+        ey eyVar;
+        ry ryVar = this.c;
+        ObjectAnimator[] objectAnimatorArr = ryVar.S0;
+        v4.b1 b1Var = recyclerView.getLayoutManager().e;
+        if (b1Var != null && b1Var.e) {
+            this.b = true;
+            return;
         }
-        super.P(view);
-    }
-
-    @Override // v4.o0
-    public final void Q() {
-        this.I.clear();
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void V(RecyclerView recyclerView, int i7, int i10) {
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void W(RecyclerView recyclerView) {
-        this.I.clear();
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void X(RecyclerView recyclerView, int i7, int i10) {
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void Y(RecyclerView recyclerView, int i7, int i10) {
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void Z() {
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void a0(RecyclerView recyclerView, int i7, int i10, Object obj) {
-        p1();
-        p1();
-    }
-
-    @Override // v4.o0
-    public final void d0(v4.w0 w0Var, v4.b1 b1Var, int i7, int i10) {
-        int i11 = this.K;
-        this.L = View.MeasureSpec.getSize(i7);
-        int size = View.MeasureSpec.getSize(i10);
-        this.K = size;
-        if (i11 != size) {
-            p1();
-        }
-        super.d0(w0Var, b1Var, i7, i10);
-    }
-
-    @Override // v4.b0, v4.o0
-    public final boolean e() {
-        return this.Q;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void p1() {
-        RecyclerView recyclerView;
-        v4.h0 adapter;
-        if (this.K > 0 && (adapter = (recyclerView = this.N).getAdapter()) != null) {
-            int b10 = adapter.b() - 1;
-            int i7 = 0;
-            int i10 = 0;
-            for (int i11 = this.O; i11 < b10; i11++) {
-                int d = adapter.d(i11);
-                SparseArray sparseArray = this.I;
-                v4.e1 e1Var = (v4.e1) sparseArray.get(d, null);
-                if (e1Var == null) {
-                    e1Var = adapter.a(recyclerView, d);
-                    View view = e1Var.a;
-                    sparseArray.put(d, e1Var);
-                    if (view.getLayoutParams() == null) {
-                        view.setLayoutParams(n());
+        int i10 = this.a;
+        if (i7 != 0) {
+            if (i7 == 1) {
+                if (ryVar.K0) {
+                    ryVar.K0 = false;
+                }
+                if (i10 == 0) {
+                    eyVar = ryVar.H0;
+                } else if (i10 == 1) {
+                    eyVar = ryVar.W;
+                } else {
+                    if (i10 != 2) {
+                        throw new IllegalArgumentException(i5.c.i(i10, "Unexpected argument: "));
                     }
+                    eyVar = ryVar.p0;
                 }
-                View view2 = e1Var.a;
-                if (this.P) {
-                    adapter.t(e1Var, i11);
+                if (eyVar != null) {
+                    eyVar.b();
                 }
-                v4.p0 p0Var = (v4.p0) view2.getLayoutParams();
-                view2.measure(v4.o0.s(d(), this.L, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) p0Var).leftMargin + ((ViewGroup.MarginLayoutParams) p0Var).rightMargin, ((ViewGroup.MarginLayoutParams) p0Var).width), v4.o0.s(this.Q, this.K, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) p0Var).topMargin + ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) p0Var).height));
-                i7 += view2.getMeasuredHeight();
-                if (i11 == 0) {
-                    i10 = view2.getMeasuredHeight();
+                this.b = false;
+            }
+            if (!this.b && (objectAnimator = objectAnimatorArr[i10]) != null && objectAnimator.isRunning()) {
+                objectAnimatorArr[i10].cancel();
+            }
+            if (i10 == 0) {
+                if (ryVar.U0 == null) {
+                    jg.d1 d1Var = new jg.d1(ryVar, ryVar.d1, ryVar.u1.a(), ryVar.u1.f(), 1);
+                    ryVar.U0 = d1Var;
+                    d1Var.a();
                 }
-                if (this.R) {
-                    if (i7 >= this.K + i10) {
-                        break;
+                ryVar.U0.b();
+                return;
+            }
+            return;
+        }
+        if (!this.b) {
+            int[] iArr = ryVar.R0;
+            rx rxVar = ryVar.u1;
+            if ((rxVar == null || !rxVar.z()) && i10 != 0) {
+                float N = org.telegram.messenger.g0.N(i10 == 1 ? 36.0f : 48.0f);
+                float f10 = iArr[i10] / (-N);
+                if (f10 <= 0.0f || f10 >= 1.0f) {
+                    ck0 x10 = ryVar.x(i10);
+                    int L = org.telegram.messenger.g0.L(i10 == 1 ? 38.0f : 48.0f);
+                    v4.f1 K = x10.K(0);
+                    if (K != null) {
+                        int bottom = K.a.getBottom();
+                        int i11 = iArr[i10];
+                        float f11 = (bottom - (L + i11)) / ryVar.c1;
+                        if (f11 > 0.0f || f11 < 1.0f) {
+                            ryVar.i(i10, i11, f11 > 0.5f);
+                        }
                     }
                 } else {
-                    if (i7 >= this.K) {
-                        break;
+                    HorizontalScrollView y10 = ryVar.y(i10);
+                    int i12 = f10 > 0.5f ? (int) (-Math.ceil(N)) : 0;
+                    if (f10 > 0.5f) {
+                        ryVar.i(i10, i12, false);
                     }
+                    if (i10 == 1) {
+                        ryVar.m(i12);
+                    }
+                    ObjectAnimator objectAnimator2 = objectAnimatorArr[i10];
+                    if (objectAnimator2 == null) {
+                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y10, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y10.getTranslationY(), i12);
+                        objectAnimatorArr[i10] = ofFloat;
+                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.k2(ryVar, i10, 3));
+                        objectAnimatorArr[i10].setDuration(200L);
+                    } else {
+                        objectAnimator2.setFloatValues(y10.getTranslationY(), i12);
+                    }
+                    objectAnimatorArr[i10].start();
                 }
             }
-            if (this.R) {
-                this.J = Math.max(this.S, (((this.K - i7) - this.M) - recyclerView.getPaddingBottom()) + i10);
-            } else {
-                this.J = Math.max(this.S, ((this.K - i7) - this.M) - recyclerView.getPaddingBottom());
-            }
         }
+        if (ryVar.K0) {
+            ryVar.K0 = false;
+        }
+        this.b = false;
     }
 
-    public qy(int i7, int i10, uj0 uj0Var) {
-        super(1, false);
-        this.I = new SparseArray();
-        this.J = -1;
-        this.P = true;
-        this.Q = true;
-        this.T = true;
-        this.N = uj0Var;
-        this.M = i7;
+    @Override // v4.u0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        ry ryVar = this.c;
+        int i11 = this.a;
+        ryVar.p(i11);
+        ry.e(ryVar, i11, i10);
+        if (i11 == 0) {
+            ryVar.q(false);
+        } else if (i11 == 1) {
+            ryVar.l(false);
+        } else if (i11 == 2) {
+            ry.f(ryVar, false);
+        }
+        if (this.b) {
+            return;
+        }
+        float f10 = i10;
+        FrameLayout frameLayout = ryVar.n;
+        if (SystemClock.elapsedRealtime() - ryVar.E2 < ViewConfiguration.getTapTimeout()) {
+            return;
+        }
+        ryVar.I += f10;
+        int L = ryVar.h.getCurrentItem() == 0 ? org.telegram.messenger.g0.L(38.0f) : org.telegram.messenger.g0.L(48.0f);
+        float f11 = ryVar.I;
+        if (f11 >= L) {
+            ryVar.N(false);
+            return;
+        }
+        if (f11 <= (-L)) {
+            ryVar.N(true);
+        } else {
+            if ((frameLayout.getTag() != null || ryVar.I >= 0.0f) && (frameLayout.getTag() == null || ryVar.I <= 0.0f)) {
+                return;
+            }
+            ryVar.I = 0.0f;
+        }
     }
 }

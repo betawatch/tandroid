@@ -1,116 +1,251 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hh0 implements sw, org.telegram.ui.ActionBar.q1, ex0 {
-    public final /* synthetic */ NotificationsCustomSettingsActivity a;
+public final class hh0 extends FrameLayout {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ hh0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
-        this.a = notificationsCustomSettingsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ hh0(Context context, int i7) {
+        super(context);
+        this.a = i7;
     }
 
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean H() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean P(yw ywVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ex0
-    public void d(qh0 qh0Var) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        notificationsCustomSettingsActivity.x.add(0, qh0Var);
-        notificationsCustomSettingsActivity.q0(true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        SharedPreferences.Editor edit = notificationsCustomSettingsActivity.getNotificationsSettings().edit();
-        int size = notificationsCustomSettingsActivity.x.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            qh0 qh0Var = (qh0) notificationsCustomSettingsActivity.x.get(i10);
-            if (notificationsCustomSettingsActivity.s == 3) {
-                edit.remove("stories_" + qh0Var.d);
-            } else {
-                edit.remove("notify2_" + qh0Var.d).remove("custom_" + qh0Var.d);
-            }
-            notificationsCustomSettingsActivity.getMessagesStorage().E1(qh0Var.d, 0L);
-            TLRPC.Dialog dialog = (TLRPC.Dialog) notificationsCustomSettingsActivity.getMessagesController().R.f(qh0Var.d);
-            if (dialog != null) {
-                dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                super.dispatchDraw(canvas);
+                break;
+            case 14:
+                org.telegram.ui.ActionBar.n6.i3.setBounds(0, 0, getMeasuredWidth(), org.telegram.ui.ActionBar.n6.i3.getIntrinsicHeight());
+                org.telegram.ui.ActionBar.n6.i3.draw(canvas);
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        edit.commit();
-        int size2 = notificationsCustomSettingsActivity.x.size();
-        for (int i11 = 0; i11 < size2; i11++) {
-            notificationsCustomSettingsActivity.getNotificationsController().c0(((qh0) notificationsCustomSettingsActivity.x.get(i11)).d, 0, false);
-        }
-        notificationsCustomSettingsActivity.x.clear();
-        notificationsCustomSettingsActivity.y.clear();
-        notificationsCustomSettingsActivity.q0(true);
-        notificationsCustomSettingsActivity.getNotificationCenter().k(org.telegram.messenger.ns.f0, new Object[0]);
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, u91 u91Var) {
-        int i11 = 0;
-        long j3 = ((org.telegram.messenger.ur) arrayList.get(0)).a;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.a;
-        if (notificationsCustomSettingsActivity.s != 3) {
-            Bundle bundle = new Bundle();
-            bundle.putLong("dialog_id", j3);
-            bundle.putBoolean("exception", true);
-            fx0 fx0Var = new fx0(bundle, notificationsCustomSettingsActivity.getResourceProvider());
-            fx0Var.s = new hh0(notificationsCustomSettingsActivity);
-            notificationsCustomSettingsActivity.presentFragment(fx0Var, true);
-            return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 16:
+                return false;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        ArrayList arrayList2 = notificationsCustomSettingsActivity.w;
-        if (arrayList2 != null) {
-            Iterator it = arrayList2.iterator();
-            while (it.hasNext()) {
-                if (((qh0) it.next()).d == j3) {
-                    it.remove();
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 16:
+                return false;
+            case 18:
+                return super.drawChild(canvas, view, j3);
+            case 22:
+                return false;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.view.View
+    public boolean hasOverlappingRendering() {
+        switch (this.a) {
+            case 17:
+                return false;
+            default:
+                return super.hasOverlappingRendering();
+        }
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.a) {
+            case 3:
+                int intrinsicHeight = org.telegram.ui.ActionBar.n6.i3.getIntrinsicHeight();
+                org.telegram.ui.ActionBar.n6.i3.setBounds(0, 0, getMeasuredWidth(), intrinsicHeight);
+                org.telegram.ui.ActionBar.n6.i3.draw(canvas);
+                canvas.drawRect(0.0f, intrinsicHeight, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.n6.j2);
+                break;
+            case 13:
+                super.onDraw(canvas);
+                canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), 1.0f, org.telegram.ui.ActionBar.n6.k0);
+                break;
+            default:
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 10:
+                int childCount = getChildCount();
+                int i13 = 0;
+                int i14 = 0;
+                for (int i15 = 0; i15 < childCount; i15++) {
+                    if (getChildAt(i15).getMeasuredWidth() + i13 > getMeasuredWidth()) {
+                        i14 += getChildAt(i15).getMeasuredHeight();
+                        i13 = 0;
+                    }
+                    getChildAt(i15).layout(i13, i14, getChildAt(i15).getMeasuredWidth() + i13, getChildAt(i15).getMeasuredHeight() + i14);
+                    i13 += getChildAt(i15).getMeasuredWidth();
                 }
-            }
+                break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
         }
-        ArrayList arrayList3 = notificationsCustomSettingsActivity.x;
-        if (arrayList3 != null) {
-            Iterator it2 = arrayList3.iterator();
-            while (it2.hasNext()) {
-                if (((qh0) it2.next()).d == j3) {
-                    it2.remove();
-                }
-            }
-        }
-        qh0 qh0Var = new qh0();
-        qh0Var.d = j3;
-        qh0Var.e = true;
-        Boolean bool = notificationsCustomSettingsActivity.n;
-        if (bool != null && bool.booleanValue()) {
-            i11 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        }
-        qh0Var.c = i11;
-        if (notificationsCustomSettingsActivity.x == null) {
-            notificationsCustomSettingsActivity.x = new ArrayList();
-        }
-        notificationsCustomSettingsActivity.x.add(qh0Var);
-        notificationsCustomSettingsActivity.q0(true);
-        return true;
     }
 
-    @Override // org.telegram.ui.ex0
-    public /* synthetic */ void b0() {
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 2:
+                super.onMeasure(i7, i10);
+                setPivotY(getMeasuredHeight());
+                break;
+            case 7:
+                super.onMeasure(i7, org.telegram.messenger.n10.C(36.0f, View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
+                break;
+            case 8:
+                super.onMeasure(i7, i10);
+                break;
+            case 10:
+                int size = View.MeasureSpec.getSize(i7);
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
+                int childCount = getChildCount();
+                int measuredHeight = childCount > 0 ? getChildAt(0).getMeasuredHeight() : 0;
+                int i11 = 0;
+                int i12 = 0;
+                for (int i13 = 0; i13 < childCount; i13++) {
+                    if (getChildAt(i13).getMeasuredWidth() + i11 > size) {
+                        i12 += getChildAt(i13).getMeasuredHeight();
+                        i11 = 0;
+                    }
+                    i11 += getChildAt(i13).getMeasuredWidth();
+                }
+                setMeasuredDimension(getMeasuredWidth(), getChildCount() != 0 ? org.telegram.messenger.g0.L(16.0f) + measuredHeight + i12 : 0);
+                break;
+            case 11:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(60.0f), TLObject.FLAG_30));
+                break;
+            case 12:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(60.0f), TLObject.FLAG_30));
+                break;
+            case 16:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(500.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(500.0f), TLObject.FLAG_30));
+                break;
+            case 20:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(86.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 16:
+                return false;
+            case 19:
+                return false;
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh0(org.telegram.ui.Components.x20 x20Var, Context context, int i7, String str, CharSequence charSequence) {
+        super(context);
+        this.a = 6;
+        boolean z10 = org.telegram.messenger.gd.a0;
+        ImageView imageView = new ImageView(getContext());
+        Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.x(this, mutate, i10, x20Var.J0, PorterDuff.Mode.MULTIPLY);
+        imageView.setImageDrawable(mutate);
+        addView(imageView, c8.ma.d(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
+        TextView textView = new TextView(getContext());
+        textView.setText(str);
+        org.telegram.messenger.f3.l(textView, i10, x20Var.J0, 1, 14.0f);
+        addView(textView, c8.ma.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
+        org.telegram.ui.Components.k80 k80Var = new org.telegram.ui.Components.k80(getContext(), null);
+        k80Var.setText(charSequence);
+        k80Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(k80Var, org.telegram.ui.ActionBar.n6.Gj, x20Var.J0);
+        org.telegram.ui.ActionBar.u6.G(k80Var, org.telegram.ui.ActionBar.n6.Xc, x20Var.J0);
+        k80Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        k80Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        addView(k80Var, c8.ma.d(-2, -2.0f, z10 ? 5 : 3, (z10 ? 27 : 68) - 4, 18.0f, (z10 ? 68 : 27) - 4, 0.0f));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh0(uy0 uy0Var, Context context, int i7, String str, CharSequence charSequence) {
+        super(context);
+        this.a = 5;
+        boolean z10 = org.telegram.messenger.gd.a0;
+        ImageView imageView = new ImageView(getContext());
+        Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.x(this, mutate, i10, uy0Var.J0, PorterDuff.Mode.MULTIPLY);
+        imageView.setImageDrawable(mutate);
+        addView(imageView, c8.ma.d(24, 24.0f, z10 ? 5 : 3, z10 ? 0.0f : 27.0f, 6.0f, z10 ? 27.0f : 0.0f, 0.0f));
+        TextView textView = new TextView(getContext());
+        textView.setText(str);
+        org.telegram.messenger.f3.l(textView, i10, uy0Var.J0, 1, 14.0f);
+        addView(textView, c8.ma.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 0.0f, z10 ? 68.0f : 27.0f, 0.0f));
+        org.telegram.ui.Components.k80 k80Var = new org.telegram.ui.Components.k80(getContext(), null);
+        k80Var.setText(charSequence);
+        k80Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(k80Var, org.telegram.ui.ActionBar.n6.Gj, uy0Var.J0);
+        org.telegram.ui.ActionBar.u6.G(k80Var, org.telegram.ui.ActionBar.n6.Xc, uy0Var.J0);
+        k80Var.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        addView(k80Var, c8.ma.d(-2, -2.0f, z10 ? 5 : 3, z10 ? 27.0f : 68.0f, 18.0f, z10 ? 68.0f : 27.0f, 0.0f));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh0(int i7, Context context, String str) {
+        super(context);
+        this.a = 0;
+        setPadding(0, org.telegram.messenger.g0.L(7.0f), 0, org.telegram.messenger.g0.L(7.0f));
+        ImageView e10 = org.telegram.messenger.n10.e(context, i7);
+        e10.setScaleType(ImageView.ScaleType.CENTER);
+        int i10 = org.telegram.ui.ActionBar.n6.j5;
+        org.telegram.ui.ActionBar.u6.s(e10, i10, null, PorterDuff.Mode.MULTIPLY);
+        boolean z10 = org.telegram.messenger.gd.a0;
+        addView(e10, c8.ma.d(24, 24.0f, (z10 ? 5 : 3) | 16, z10 ? 0.0f : 22.0f, 0.0f, z10 ? 22.0f : 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        org.telegram.ui.ActionBar.u6.U(textView, i10, null);
+        textView.setTextSize(1, 14.0f);
+        textView.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        textView.setText(str);
+        boolean z11 = org.telegram.messenger.gd.a0;
+        addView(textView, c8.ma.d(-1, -2.0f, 23, z11 ? 0.0f : 61.0f, 0.0f, z11 ? 61.0f : 0.0f, 0.0f));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hh0(Context context) {
+        super(context);
+        this.a = 4;
+        setPadding(org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(11.0f), org.telegram.messenger.g0.L(11.0f));
     }
 }

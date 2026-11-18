@@ -14,6 +14,7 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.support.v4.media.session.a0;
 import android.util.Log;
+import c8.ad;
 import c8.bg;
 import c8.cg;
 import c8.db;
@@ -26,7 +27,6 @@ import c8.gg;
 import c8.h1;
 import c8.hg;
 import c8.uf;
-import c8.xc;
 import c8.yf;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends pb.e {
     public static final n6.c[] k = {j.c};
@@ -54,8 +54,8 @@ public final class f extends pb.e {
     public bg j;
 
     public f(g gVar, zb.d dVar, uf ufVar, wa waVar) {
-        m.h(gVar, "MlKitContext can not be null");
-        m.h(dVar, "SubjectSegmenterOptions can not be null");
+        m.i(gVar, "MlKitContext can not be null");
+        m.i(dVar, "SubjectSegmenterOptions can not be null");
         this.d = gVar.b();
         this.e = dVar;
         this.f = ufVar;
@@ -153,8 +153,8 @@ public final class f extends pb.e {
                 try {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     bg bgVar = this.j;
-                    m.g(bgVar);
-                    yf yfVar = new yf(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), xc.a(aVar.d));
+                    m.h(bgVar);
+                    yf yfVar = new yf(aVar.e, aVar.b, aVar.c, SystemClock.elapsedRealtime(), ad.a(aVar.d));
                     int i7 = aVar.e;
                     try {
                         if (i7 != -1) {
@@ -165,11 +165,11 @@ public final class f extends pb.e {
                                     throw new lb.a("Unsupported image format: " + aVar.e, 3);
                                 }
                             }
-                            m.g(null);
+                            m.h(null);
                             throw null;
                         }
                         Bitmap bitmap = aVar.a;
-                        m.g(bitmap);
+                        m.h(bitmap);
                         bVar = new a7.b(bitmap);
                         try {
                             gg x12 = bgVar.x1(bVar, yfVar);

@@ -8,10 +8,10 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLiteException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f8 {
-    public p5 a;
+    public q5 a;
     public final int b;
     public SQLiteDatabase c;
     public File d;
@@ -64,7 +64,7 @@ public final class f8 {
             this.c.executeFast("PRAGMA temp_store = MEMORY").stepThis().dispose();
             if (exists) {
                 int intValue = this.c.executeInt("PRAGMA user_version", new Object[0]).intValue();
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("current files db version = " + intValue);
                 }
                 if (intValue == 0) {
@@ -102,7 +102,7 @@ public final class f8 {
                             this.d.delete();
                             this.e.delete();
                             b(i7 + 1, false);
-                            boolean z11 = r2.a;
+                            boolean z11 = s2.a;
                             a8.g(e10, true);
                         }
                         if (E) {
@@ -118,7 +118,7 @@ public final class f8 {
                 this.e.delete();
                 b(i7 + 1, false);
             }
-            boolean z112 = r2.a;
+            boolean z112 = s2.a;
             a8.g(e10, true);
         }
     }
@@ -127,9 +127,9 @@ public final class f8 {
         if (this.h) {
             return;
         }
-        if (!xr.a) {
+        if (!vr.a) {
             int i7 = 0;
-            while (!xr.a) {
+            while (!vr.a) {
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException e10) {
@@ -150,9 +150,9 @@ public final class f8 {
             synchronized (this) {
                 try {
                     if (this.a == null) {
-                        p5 p5Var = new p5("files_database_queue_" + this.b);
-                        this.a = p5Var;
-                        p5Var.setPriority(10);
+                        q5 q5Var = new q5("files_database_queue_" + this.b);
+                        this.a = q5Var;
+                        q5Var.setPriority(10);
                     }
                 } catch (Throwable th2) {
                     throw th2;
@@ -250,12 +250,12 @@ public final class f8 {
         String str3 = (String) concurrentHashMap.get(str2);
         String str4 = null;
         if (str3 == "~null~") {
-            boolean z12 = r2.a;
+            boolean z12 = s2.a;
             a8.b("get file path cached null id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=null in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
             return null;
         }
         if (str3 != null) {
-            boolean z13 = r2.a;
+            boolean z13 = s2.a;
             a8.b("get file path cached id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=" + str3 + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
             return str3;
         }
@@ -290,7 +290,7 @@ public final class f8 {
                                     sQLiteCursor3 = sQLiteDatabase.queryFinalized("SELECT path FROM paths WHERE document_id = " + j10 + " AND dc_id = " + i12 + " AND type = " + i13, new Object[0]);
                                     if (sQLiteCursor3.next()) {
                                         strArr2[0] = sQLiteCursor3.stringValue(0);
-                                        boolean z14 = r2.a;
+                                        boolean z14 = s2.a;
                                         a8.b("get file path id=" + j10 + " dc=" + i12 + " type=" + i13 + " path=" + strArr2[0] + " in " + (System.currentTimeMillis() - j11) + "ms");
                                     }
                                 } catch (Throwable th2) {
@@ -332,7 +332,7 @@ public final class f8 {
                             if (sQLiteCursor2.next()) {
                                 str = sQLiteCursor2.stringValue(i12);
                                 try {
-                                    boolean z14 = r2.a;
+                                    boolean z14 = s2.a;
                                     a8.b("get file path id=" + j3 + " dc=" + i7 + " type=" + i10 + " path=" + str + " in " + (System.currentTimeMillis() - currentTimeMillis) + "ms");
                                     str4 = str;
                                 } catch (SQLiteException e10) {
@@ -385,19 +385,19 @@ public final class f8 {
 
     public final void g(int i7) {
         if (i7 == 1) {
-            k5.s(this.c, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
-            k5.s(this.c, "PRAGMA user_version = 2");
+            f3.s(this.c, "CREATE INDEX IF NOT EXISTS path_in_paths ON paths(path);");
+            f3.s(this.c, "PRAGMA user_version = 2");
             i7 = 2;
         }
         if (i7 == 2) {
-            k5.s(this.c, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
-            k5.s(this.c, "PRAGMA user_version = 3");
+            f3.s(this.c, "CREATE TABLE paths_by_dialog_id(path TEXT PRIMARY KEY, dialog_id INTEGER);");
+            f3.s(this.c, "PRAGMA user_version = 3");
             i7 = 3;
         }
         if (i7 == 3) {
-            k5.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
-            k5.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
-            k5.s(this.c, "PRAGMA user_version = 4");
+            f3.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_id INTEGER default 0");
+            f3.s(this.c, "ALTER TABLE paths_by_dialog_id ADD COLUMN message_type INTEGER default 0");
+            f3.s(this.c, "PRAGMA user_version = 4");
             i7 = 4;
         }
         if (i7 == 4 || i7 == 5 || i7 == 6) {
@@ -406,7 +406,7 @@ public final class f8 {
             } catch (Throwable th2) {
                 a8.g(th2, true);
             }
-            k5.s(this.c, "PRAGMA user_version = 7");
+            f3.s(this.c, "PRAGMA user_version = 7");
         }
     }
 

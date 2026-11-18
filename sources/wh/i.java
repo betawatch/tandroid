@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.j10;
 import org.telegram.ui.Cells.q1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class i extends View {
     public final HashMap a;
@@ -26,11 +26,11 @@ public final class i extends View {
         this.a = new HashMap();
         this.b = new ArrayList();
         this.c = new ArrayList();
-        this.d = m10.t0;
+        this.d = j10.t0;
     }
 
     public static String b(q1 q1Var) {
-        gj messageObject = q1Var.getMessageObject();
+        fj messageObject = q1Var.getMessageObject();
         if (messageObject == null) {
             return null;
         }

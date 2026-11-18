@@ -12,7 +12,7 @@ import android.graphics.drawable.RippleDrawable;
 import android.os.ProfilingResult;
 import android.util.Log;
 import android.view.View;
-import ci.i0;
+import ci.j0;
 import da.k0;
 import da.l0;
 import j$.util.function.Consumer$-CC;
@@ -21,7 +21,7 @@ import java.util.WeakHashMap;
 import java.util.function.Consumer;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k implements Consumer {
     public final /* synthetic */ int a;
@@ -57,17 +57,17 @@ public final /* synthetic */ class k implements Consumer {
                 k0 k0Var = new k0(new l0(intValue));
                 try {
                     ga.b.g.getClass();
-                    ga.b.g(bVar.b.b(str, "profiling-manager-info"), ea.a.a.o(k0Var));
+                    ga.b.g(bVar.b.b(str, "profiling-manager-info"), ea.a.a.v(k0Var));
                     return;
                 } catch (IOException e10) {
                     Log.w("FirebaseCrashlytics", "Could not persist Profiling Manager info " + str, e10);
                     return;
                 }
             default:
-                i0 i0Var = (i0) this.c;
+                j0 j0Var = (j0) this.c;
                 ci.m mVar2 = (ci.m) this.b;
                 Canvas canvas = (Canvas) obj;
-                ci.c cVar2 = i0Var.y;
+                ci.c cVar2 = j0Var.y;
                 RectF rectF = cVar2.N;
                 WeakHashMap weakHashMap = cVar2.O;
                 Paint paint = cVar2.c;
@@ -119,10 +119,10 @@ public final /* synthetic */ class k implements Consumer {
                     mVar2 = mVar;
                     cVar2 = cVar;
                 }
-                if (i0Var.d.J.isEmpty()) {
+                if (j0Var.d.J.isEmpty()) {
                     return;
                 }
-                i0Var.y.invalidate();
+                j0Var.y.invalidate();
                 return;
         }
     }

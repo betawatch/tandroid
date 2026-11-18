@@ -1,18 +1,22 @@
 package zi;
 
-import android.media.MediaCodec;
-import java.nio.ByteBuffer;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class w {
-    public final boolean a;
-    public final ByteBuffer b;
-    public final MediaCodec.BufferInfo c;
+    public long a = Long.MIN_VALUE;
+    public long b = Long.MIN_VALUE;
+    public long c = Long.MIN_VALUE;
+    public long d;
 
-    public w(boolean z10, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo) {
-        this.a = z10;
-        this.b = byteBuffer;
-        this.c = bufferInfo;
+    public w(long j3) {
+        this.d = j3;
+    }
+
+    public final long a() {
+        long j3 = this.c;
+        if (j3 == Long.MIN_VALUE) {
+            return 0L;
+        }
+        return Math.max(1L, this.d) + j3;
     }
 }

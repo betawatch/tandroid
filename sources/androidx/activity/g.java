@@ -13,13 +13,13 @@ import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
 import java.util.ArrayList;
 import n2.a0;
 import org.telegram.messenger.fi;
+import org.telegram.messenger.fj;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.messenger.w7;
-import org.telegram.ui.Components.dp;
+import org.telegram.ui.Components.kp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final class g implements Runnable {
     */
     public final void run() {
         l5.a aVar;
-        o5.s sVar;
+        o5.r rVar;
         VisionClearcutLogger visionClearcutLogger;
         int i7 = 0;
         switch (this.a) {
@@ -72,10 +72,10 @@ public final class g implements Runnable {
                 return;
             case 2:
                 com.google.android.gms.internal.cast.p pVar = (com.google.android.gms.internal.cast.p) this.d;
-                s4.r rVar = (s4.r) this.c;
+                s4.r rVar2 = (s4.r) this.c;
                 int i11 = this.b;
                 synchronized (pVar.e) {
-                    pVar.n1(rVar, i11);
+                    pVar.n1(rVar2, i11);
                 }
                 return;
             case 3:
@@ -106,10 +106,10 @@ public final class g implements Runnable {
                         aVar = new l5.a(Integer.valueOf(i12 - 1), p1Var2, l5.d.a, null);
                     }
                     m0.i.b("analytics event: %s", aVar2);
-                    q6.m.g(aVar2);
-                    sVar = m0Var.g;
-                    if (sVar == null) {
-                        sVar.a(aVar2, new a0(7));
+                    q6.m.h(aVar2);
+                    rVar = m0Var.g;
+                    if (rVar == null) {
+                        rVar.a(aVar2, new a0(8));
                         return;
                     }
                     return;
@@ -117,9 +117,9 @@ public final class g implements Runnable {
                 aVar = new l5.a(Integer.valueOf(i12 - 1), p1Var2, l5.d.b, null);
                 aVar2 = aVar;
                 m0.i.b("analytics event: %s", aVar2);
-                q6.m.g(aVar2);
-                sVar = m0Var.g;
-                if (sVar == null) {
+                q6.m.h(aVar2);
+                rVar = m0Var.g;
+                if (rVar == null) {
                 }
             case 4:
                 ((TextView) this.d).setTypeface((Typeface) this.c, this.b);
@@ -127,15 +127,15 @@ public final class g implements Runnable {
             case 5:
                 ArrayList arrayList = (ArrayList) this.d;
                 while (i7 < arrayList.size()) {
-                    ((dp) arrayList.get(i7)).a.m(this.b);
+                    ((kp) arrayList.get(i7)).a.m(this.b);
                     i7++;
                 }
-                g0.h3(new fi(3, this, arrayList));
+                g0.g3(new fi(3, this, arrayList));
                 return;
             case 6:
                 ArrayList arrayList2 = (ArrayList) this.d;
                 while (i7 < arrayList2.size()) {
-                    if (!((String) this.c).equals(((gj) arrayList2.get(i7)).S0())) {
+                    if (!((String) this.c).equals(((fj) arrayList2.get(i7)).S0())) {
                         arrayList2.remove(i7);
                         i7--;
                     }
@@ -160,9 +160,9 @@ public final class g implements Runnable {
         this.b = i7;
     }
 
-    public g(si siVar, ArrayList arrayList, int i7) {
+    public g(ri riVar, ArrayList arrayList, int i7) {
         this.a = 5;
-        this.c = siVar;
+        this.c = riVar;
         this.d = arrayList;
         this.b = i7;
     }

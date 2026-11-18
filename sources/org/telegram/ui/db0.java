@@ -10,38 +10,38 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class db0 extends TextView implements org.telegram.ui.ActionBar.z5 {
+public class db0 extends TextView implements org.telegram.ui.ActionBar.c6 {
     public final org.telegram.ui.Cells.y a;
-    public final org.telegram.ui.Components.d80 b;
+    public final org.telegram.ui.Components.o80 b;
     public int c;
-    public final /* synthetic */ ce0 d;
+    public final /* synthetic */ de0 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db0(ce0 ce0Var, Context context) {
+    public db0(de0 de0Var, Context context) {
         super(context);
-        this.d = ce0Var;
-        int i7 = org.telegram.ui.ActionBar.j6.I6;
-        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.r1(0.1f, org.telegram.ui.ActionBar.j6.x0(null, i7, false)), 7, -1);
+        this.d = de0Var;
+        int i7 = org.telegram.ui.ActionBar.n6.I6;
+        org.telegram.ui.Cells.y h02 = org.telegram.ui.ActionBar.n6.h0(org.telegram.ui.ActionBar.n6.r1(0.1f, org.telegram.ui.ActionBar.n6.x0(null, i7, false)), 7, -1);
         this.a = h02;
-        org.telegram.ui.Components.d80 d80Var = new org.telegram.ui.Components.d80();
-        this.b = d80Var;
-        org.telegram.ui.ActionBar.p6 p6Var = org.telegram.ui.ActionBar.q6.a;
-        this.c = org.telegram.ui.ActionBar.j6.r1(0.1f, org.telegram.ui.ActionBar.j6.x0(null, i7, false));
+        org.telegram.ui.Components.o80 o80Var = new org.telegram.ui.Components.o80();
+        this.b = o80Var;
+        org.telegram.ui.ActionBar.t6 t6Var = org.telegram.ui.ActionBar.u6.a;
+        this.c = org.telegram.ui.ActionBar.n6.r1(0.1f, org.telegram.ui.ActionBar.n6.x0(null, i7, false));
         h02.setCallback(this);
-        d80Var.D = true;
-        d80Var.u = 0.8f;
+        o80Var.D = true;
+        o80Var.u = 0.8f;
     }
 
     public boolean a() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.I6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.Ce));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.I6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.Ce));
     }
 
     public boolean b() {
@@ -54,23 +54,23 @@ public class db0 extends TextView implements org.telegram.ui.ActionBar.z5 {
         if (layout == null || (text = layout.getText()) == null) {
             return;
         }
-        org.telegram.ui.Components.u70 u70Var = new org.telegram.ui.Components.u70(0);
+        org.telegram.ui.Components.f80 f80Var = new org.telegram.ui.Components.f80(0);
         float L = org.telegram.messenger.g0.L(3.0f);
         float L2 = org.telegram.messenger.g0.L(6.0f);
-        u70Var.q = L;
-        u70Var.r = L2;
+        f80Var.q = L;
+        f80Var.r = L2;
         int length = text.length();
-        u70Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, u70Var);
+        f80Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, f80Var);
         RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(u70Var.s, u70Var.u, u70Var.t, u70Var.v);
+        rectF.set(f80Var.s, f80Var.u, f80Var.t, f80Var.v);
         this.a.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        org.telegram.ui.Components.d80 d80Var = this.b;
-        d80Var.y = u70Var;
-        d80Var.k(4.0f);
-        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.j6.Ce);
-        d80Var.g(org.telegram.ui.ActionBar.j6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.j6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.j6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.j6.r1(6.0f, themedColor));
-        d80Var.l();
+        org.telegram.ui.Components.o80 o80Var = this.b;
+        o80Var.y = f80Var;
+        o80Var.k(4.0f);
+        int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.n6.Ce);
+        o80Var.g(org.telegram.ui.ActionBar.n6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.n6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.n6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.n6.r1(6.0f, themedColor));
+        o80Var.l();
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -87,11 +87,11 @@ public class db0 extends TextView implements org.telegram.ui.ActionBar.z5 {
         canvas.restore();
         super.onDraw(canvas);
         boolean a10 = a();
-        org.telegram.ui.Components.d80 d80Var = this.b;
-        if (a10 || d80Var.d()) {
+        org.telegram.ui.Components.o80 o80Var = this.b;
+        if (a10 || o80Var.d()) {
             canvas.save();
             canvas.translate(getPaddingLeft(), paddingTop);
-            d80Var.draw(canvas);
+            o80Var.draw(canvas);
             canvas.restore();
             invalidate();
         }
@@ -122,19 +122,19 @@ public class db0 extends TextView implements org.telegram.ui.ActionBar.z5 {
         c();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            int r12 = org.telegram.ui.ActionBar.j6.r1(0.1f, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.I6, false));
+            int r12 = org.telegram.ui.ActionBar.n6.r1(0.1f, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.I6, false));
             org.telegram.ui.Cells.y yVar = this.a;
             if (yVar != null && r12 != this.c) {
-                org.telegram.ui.ActionBar.j6.H1(yVar, r12, true);
+                org.telegram.ui.ActionBar.n6.H1(yVar, r12, true);
             }
             this.c = r12;
-            org.telegram.ui.Components.d80 d80Var = this.b;
-            if (d80Var != null) {
-                int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.j6.Ce);
-                d80Var.g(org.telegram.ui.ActionBar.j6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.j6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.j6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.j6.r1(6.0f, themedColor));
+            org.telegram.ui.Components.o80 o80Var = this.b;
+            if (o80Var != null) {
+                int themedColor = this.d.getThemedColor(org.telegram.ui.ActionBar.n6.Ce);
+                o80Var.g(org.telegram.ui.ActionBar.n6.r1(0.85f, themedColor), org.telegram.ui.ActionBar.n6.r1(2.0f, themedColor), org.telegram.ui.ActionBar.n6.r1(3.5f, themedColor), org.telegram.ui.ActionBar.n6.r1(6.0f, themedColor));
             }
             invalidate();
         } catch (Exception e10) {

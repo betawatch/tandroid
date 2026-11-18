@@ -6,10 +6,10 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c4 extends FrameLayout {
-    public final org.telegram.ui.Components.qm0 a;
+    public final org.telegram.ui.Components.ym0 a;
     public final int b;
     public final int c;
     public int d;
@@ -26,12 +26,12 @@ public final class c4 extends FrameLayout {
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
         textPaint.setTextSize(org.telegram.messenger.g0.L(16.0f));
-        org.telegram.ui.Components.qm0 qm0Var = new org.telegram.ui.Components.qm0(context, null, false);
-        this.a = qm0Var;
-        qm0Var.setReportChanges(true);
-        qm0Var.setSeparatorsCount(19);
-        qm0Var.setDelegate(new f(this, 3));
-        addView(qm0Var, c8.ja.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
+        org.telegram.ui.Components.ym0 ym0Var = new org.telegram.ui.Components.ym0(context, null, false);
+        this.a = ym0Var;
+        ym0Var.setReportChanges(true);
+        ym0Var.setSeparatorsCount(19);
+        ym0Var.setDelegate(new f(this, 3));
+        addView(ym0Var, c8.ma.d(-1, 38.0f, 51, 5.0f, 5.0f, 39.0f, 0.0f));
     }
 
     @Override // android.view.View
@@ -42,12 +42,12 @@ public final class c4 extends FrameLayout {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        int i7 = org.telegram.ui.ActionBar.j6.I6;
+        int i7 = org.telegram.ui.ActionBar.n6.I6;
         this.f.getClass();
-        int v02 = org.telegram.ui.ActionBar.j6.v0(i7);
+        int v02 = org.telegram.ui.ActionBar.n6.v0(i7);
         TextPaint textPaint = this.e;
         textPaint.setColor(v02);
-        canvas.drawText("" + org.telegram.messenger.gz.Z0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
+        canvas.drawText("" + org.telegram.messenger.bz.Z0, getMeasuredWidth() - org.telegram.messenger.g0.L(39.0f), org.telegram.messenger.g0.L(28.0f), textPaint);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -55,7 +55,7 @@ public final class c4 extends FrameLayout {
         super.onMeasure(i7, i10);
         int size = View.MeasureSpec.getSize(i7);
         if (this.d != size) {
-            int i11 = org.telegram.messenger.gz.Z0;
+            int i11 = org.telegram.messenger.bz.Z0;
             int i12 = this.b;
             this.a.setProgress((i11 - i12) / (this.c - i12));
             this.d = size;

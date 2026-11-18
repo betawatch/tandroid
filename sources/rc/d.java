@@ -2,9 +2,9 @@ package rc;
 
 import ab.b0;
 import h2.j0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[] a = {16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15};
@@ -67,19 +67,19 @@ public abstract class d {
             char charAt = str.charAt(i7);
             if (charAt != '\t' && charAt != ' ' && charAt != '\"' && charAt != ',' && charAt != '/' && charAt != '{' && charAt != '}' && charAt != '(' && charAt != ')') {
                 switch (charAt) {
-                    case ns.v0 /* 58 */:
-                    case ns.w0 /* 59 */:
-                    case ns.x0 /* 60 */:
-                    case ns.y0 /* 61 */:
-                    case ns.z0 /* 62 */:
-                    case ns.A0 /* 63 */:
+                    case ks.v0 /* 58 */:
+                    case ks.w0 /* 59 */:
+                    case ks.x0 /* 60 */:
+                    case ks.y0 /* 61 */:
+                    case ks.z0 /* 62 */:
+                    case ks.A0 /* 63 */:
                     case '@':
                         break;
                     default:
                         switch (charAt) {
-                            case ns.c1 /* 91 */:
-                            case ns.d1 /* 92 */:
-                            case ns.e1 /* 93 */:
+                            case ks.c1 /* 91 */:
+                            case ks.d1 /* 92 */:
+                            case ks.e1 /* 93 */:
                                 break;
                             default:
                         }
@@ -94,39 +94,39 @@ public abstract class d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void c(f5.v vVar, int[] iArr, int[] iArr2, j0 j0Var) {
+    public static void c(b3.j jVar, int[] iArr, int[] iArr2, j0 j0Var) {
         int i7;
-        int s5;
-        int s9;
+        int r10;
+        int r11;
         int i10;
         int i11 = 0;
         while (i11 < iArr2.length) {
-            int m10 = j0Var.m(vVar, iArr);
+            int m10 = j0Var.m(jVar, iArr);
             if (m10 < 0 || m10 > 15) {
                 switch (m10) {
                     case 16:
                         i7 = iArr2[i11 - 1];
-                        s5 = vVar.s(iArr, 2) + 3;
-                        for (i10 = 0; i10 < s5; i10++) {
+                        r10 = jVar.r(iArr, 2) + 3;
+                        for (i10 = 0; i10 < r10; i10++) {
                             iArr2[i11 + i10] = i7;
                         }
-                        i11 += s5 - 1;
+                        i11 += r10 - 1;
                         break;
                     case 17:
-                        s9 = vVar.s(iArr, 3) + 3;
-                        s5 = s9;
+                        r11 = jVar.r(iArr, 3) + 3;
+                        r10 = r11;
                         i7 = 0;
-                        while (i10 < s5) {
+                        while (i10 < r10) {
                         }
-                        i11 += s5 - 1;
+                        i11 += r10 - 1;
                         break;
                     case 18:
-                        s9 = vVar.s(iArr, 7) + 11;
-                        s5 = s9;
+                        r11 = jVar.r(iArr, 7) + 11;
+                        r10 = r11;
                         i7 = 0;
-                        while (i10 < s5) {
+                        while (i10 < r10) {
                         }
-                        i11 += s5 - 1;
+                        i11 += r10 - 1;
                         break;
                     default:
                         throw new b0(String.format("[%s] Bad code length '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), iArr));
@@ -138,9 +138,9 @@ public abstract class d {
         }
     }
 
-    public static int d(f5.v vVar, int[] iArr, j0 j0Var) {
+    public static int d(b3.j jVar, int[] iArr, j0 j0Var) {
         int i7;
-        int m10 = j0Var.m(vVar, iArr);
+        int m10 = j0Var.m(jVar, iArr);
         int i10 = 2;
         int i11 = 5;
         switch (m10) {
@@ -151,222 +151,222 @@ public abstract class d {
                 return m10 + 1;
             case 4:
                 i10 = 1;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 5:
                 i10 = 1;
                 i11 = 7;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 6:
                 i11 = 9;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 7:
                 i11 = 13;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 8:
                 i11 = 17;
                 i10 = 3;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 9:
                 i11 = 25;
                 i10 = 3;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 10:
                 i11 = 33;
                 i10 = 4;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 11:
                 i11 = 49;
                 i10 = 4;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 12:
                 i7 = 65;
                 i10 = 5;
                 i11 = i7;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 13:
                 i7 = 97;
                 i10 = 5;
                 i11 = i7;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 14:
-                i11 = ns.N1;
+                i11 = ks.N1;
                 i10 = 6;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 15:
-                i11 = ns.X2;
+                i11 = ks.X2;
                 i10 = 6;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 16:
-                i11 = ns.g4;
+                i11 = ks.g4;
                 i10 = 7;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 17:
                 i11 = 385;
                 i10 = 7;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 18:
                 i11 = 513;
                 i10 = 8;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 19:
                 i11 = 769;
                 i10 = 8;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 20:
                 i11 = 1025;
                 i10 = 9;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 21:
                 i11 = 1537;
                 i10 = 9;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 22:
                 i11 = 2049;
                 i10 = 10;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 23:
                 i11 = 3073;
                 i10 = 10;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 24:
                 i11 = 4097;
                 i10 = 11;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 25:
                 i11 = 6145;
                 i10 = 11;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 26:
                 i11 = 8193;
                 i10 = 12;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 27:
                 i11 = 12289;
                 i10 = 12;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 28:
                 i11 = 16385;
                 i10 = 13;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             case 29:
                 i11 = 24577;
                 i10 = 13;
-                return vVar.s(iArr, i10) + i11;
+                return jVar.r(iArr, i10) + i11;
             default:
                 throw new b0(String.format("[%s] Bad distance code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(m10), Integer.valueOf(iArr[0])));
         }
     }
 
-    public static void e(f5.v vVar, int[] iArr, j0[] j0VarArr) {
-        int s5 = vVar.s(iArr, 5) + ns.g4;
-        int s9 = vVar.s(iArr, 5) + 1;
-        int s10 = vVar.s(iArr, 4) + 4;
+    public static void e(b3.j jVar, int[] iArr, j0[] j0VarArr) {
+        int r10 = jVar.r(iArr, 5) + ks.g4;
+        int r11 = jVar.r(iArr, 5) + 1;
+        int r12 = jVar.r(iArr, 4) + 4;
         int[] iArr2 = new int[19];
-        for (int i7 = 0; i7 < s10; i7++) {
-            iArr2[a[i7]] = (byte) vVar.s(iArr, 3);
+        for (int i7 = 0; i7 < r12; i7++) {
+            iArr2[a[i7]] = (byte) jVar.r(iArr, 3);
         }
         j0 j0Var = new j0(iArr2);
-        int[] iArr3 = new int[s5];
-        c(vVar, iArr, iArr3, j0Var);
+        int[] iArr3 = new int[r10];
+        c(jVar, iArr, iArr3, j0Var);
         j0 j0Var2 = new j0(iArr3);
-        int[] iArr4 = new int[s9];
-        c(vVar, iArr, iArr4, j0Var);
+        int[] iArr4 = new int[r11];
+        c(jVar, iArr, iArr4, j0Var);
         j0 j0Var3 = new j0(iArr4);
         j0VarArr[0] = j0Var2;
         j0VarArr[1] = j0Var3;
     }
 
-    public static int f(f5.v vVar, int[] iArr, int i7) {
+    public static int f(b3.j jVar, int[] iArr, int i7) {
         int i10;
         int i11 = 1;
         switch (i7) {
-            case ns.g4 /* 257 */:
-            case ns.h4 /* 258 */:
-            case ns.i4 /* 259 */:
-            case ns.j4 /* 260 */:
-            case ns.k4 /* 261 */:
-            case ns.l4 /* 262 */:
-            case ns.m4 /* 263 */:
-            case ns.n4 /* 264 */:
+            case ks.g4 /* 257 */:
+            case ks.h4 /* 258 */:
+            case ks.i4 /* 259 */:
+            case ks.j4 /* 260 */:
+            case ks.k4 /* 261 */:
+            case ks.l4 /* 262 */:
+            case ks.m4 /* 263 */:
+            case ks.n4 /* 264 */:
                 return i7 - 254;
-            case ns.o4 /* 265 */:
+            case ks.o4 /* 265 */:
                 i10 = 11;
-                return vVar.s(iArr, i11) + i10;
-            case ns.p4 /* 266 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.p4 /* 266 */:
                 i10 = 13;
-                return vVar.s(iArr, i11) + i10;
-            case ns.q4 /* 267 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.q4 /* 267 */:
                 i10 = 15;
-                return vVar.s(iArr, i11) + i10;
-            case ns.r4 /* 268 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.r4 /* 268 */:
                 i10 = 17;
-                return vVar.s(iArr, i11) + i10;
-            case ns.s4 /* 269 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.s4 /* 269 */:
                 i10 = 19;
                 i11 = 2;
-                return vVar.s(iArr, i11) + i10;
-            case ns.t4 /* 270 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.t4 /* 270 */:
                 i10 = 23;
                 i11 = 2;
-                return vVar.s(iArr, i11) + i10;
-            case ns.u4 /* 271 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.u4 /* 271 */:
                 i10 = 27;
                 i11 = 2;
-                return vVar.s(iArr, i11) + i10;
-            case ns.v4 /* 272 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.v4 /* 272 */:
                 i10 = 31;
                 i11 = 2;
-                return vVar.s(iArr, i11) + i10;
-            case ns.w4 /* 273 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.w4 /* 273 */:
                 i10 = 35;
                 i11 = 3;
-                return vVar.s(iArr, i11) + i10;
-            case ns.x4 /* 274 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.x4 /* 274 */:
                 i10 = 43;
                 i11 = 3;
-                return vVar.s(iArr, i11) + i10;
-            case ns.y4 /* 275 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.y4 /* 275 */:
                 i10 = 51;
                 i11 = 3;
-                return vVar.s(iArr, i11) + i10;
-            case ns.z4 /* 276 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.z4 /* 276 */:
                 i10 = 59;
                 i11 = 3;
-                return vVar.s(iArr, i11) + i10;
-            case ns.A4 /* 277 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.A4 /* 277 */:
                 i10 = 67;
                 i11 = 4;
-                return vVar.s(iArr, i11) + i10;
-            case ns.B4 /* 278 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.B4 /* 278 */:
                 i10 = 83;
                 i11 = 4;
-                return vVar.s(iArr, i11) + i10;
-            case ns.C4 /* 279 */:
+                return jVar.r(iArr, i11) + i10;
+            case ks.C4 /* 279 */:
                 i10 = 99;
                 i11 = 4;
-                return vVar.s(iArr, i11) + i10;
-            case ns.D4 /* 280 */:
-                i10 = ns.A1;
+                return jVar.r(iArr, i11) + i10;
+            case ks.D4 /* 280 */:
+                i10 = ks.A1;
                 i11 = 4;
-                return vVar.s(iArr, i11) + i10;
-            case ns.E4 /* 281 */:
-                i10 = ns.P1;
+                return jVar.r(iArr, i11) + i10;
+            case ks.E4 /* 281 */:
+                i10 = ks.P1;
                 i11 = 5;
-                return vVar.s(iArr, i11) + i10;
-            case ns.F4 /* 282 */:
-                i10 = ns.t2;
+                return jVar.r(iArr, i11) + i10;
+            case ks.F4 /* 282 */:
+                i10 = ks.t2;
                 i11 = 5;
-                return vVar.s(iArr, i11) + i10;
-            case ns.G4 /* 283 */:
-                i10 = ns.Z2;
+                return jVar.r(iArr, i11) + i10;
+            case ks.G4 /* 283 */:
+                i10 = ks.Z2;
                 i11 = 5;
-                return vVar.s(iArr, i11) + i10;
-            case ns.H4 /* 284 */:
-                i10 = 227;
+                return jVar.r(iArr, i11) + i10;
+            case ks.H4 /* 284 */:
+                i10 = ks.E3;
                 i11 = 5;
-                return vVar.s(iArr, i11) + i10;
-            case ns.I4 /* 285 */:
-                return ns.h4;
+                return jVar.r(iArr, i11) + i10;
+            case ks.I4 /* 285 */:
+                return ks.h4;
             default:
                 throw new b0(String.format("[%s] Bad literal/length code '%d' at the bit index '%d'.", d.class.getSimpleName(), Integer.valueOf(i7), Integer.valueOf(iArr[0])));
         }

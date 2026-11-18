@@ -1,8 +1,8 @@
 package l2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k1 extends x2.r {
+public final class k1 extends x2.s {
     public final e2.k1 f;
 
     public k1(e2.l1 l1Var) {
@@ -10,7 +10,7 @@ public final class k1 extends x2.r {
         this.f = new e2.k1();
     }
 
-    @Override // x2.r, e2.l1
+    @Override // x2.s, e2.l1
     public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
         e2.l1 l1Var = this.e;
         e2.i1 f10 = l1Var.f(i7, i1Var, z10);

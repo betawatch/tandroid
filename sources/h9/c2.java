@@ -1,174 +1,70 @@
 package h9;
 
-import a8.ja;
-import java.util.AbstractCollection;
-import java.util.ArrayList;
+import java.util.AbstractSet;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
-import java.util.RandomAccess;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class c2 extends AbstractCollection implements Set {
-    public final Set a;
-    public final g9.l b;
+public final class c2 extends AbstractSet {
+    public final /* synthetic */ Set a;
+    public final /* synthetic */ Set b;
 
-    public c2(Set set, g9.l lVar) {
+    public c2(Set set, Set set2) {
         this.a = set;
-        this.b = lVar;
+        this.b = set2;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean add(Object obj) {
-        ja.f(this.b.apply(obj));
-        return this.a.add(obj);
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean addAll(Collection collection) {
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            ja.f(this.b.apply(it.next()));
-        }
-        return this.a.addAll(collection);
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final void clear() {
-        Set set = this.a;
-        boolean z10 = set instanceof RandomAccess;
-        g9.l lVar = this.b;
-        if (!z10 || !(set instanceof List)) {
-            Iterator it = set.iterator();
-            lVar.getClass();
-            while (it.hasNext()) {
-                if (lVar.apply(it.next())) {
-                    it.remove();
-                }
-            }
-            return;
-        }
-        List list = (List) set;
-        lVar.getClass();
-        int i7 = 0;
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            Object obj = list.get(i10);
-            if (!lVar.apply(obj)) {
-                if (i10 > i7) {
-                    try {
-                        list.set(i7, obj);
-                    } catch (IllegalArgumentException unused) {
-                        o.t(list, lVar, i7, i10);
-                        return;
-                    } catch (UnsupportedOperationException unused2) {
-                        o.t(list, lVar, i7, i10);
-                        return;
-                    }
-                }
-                i7++;
-            }
-        }
-        list.subList(i7, list.size()).clear();
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
-        boolean z10;
-        Set set = this.a;
-        set.getClass();
-        try {
-            z10 = set.contains(obj);
-        } catch (ClassCastException | NullPointerException unused) {
-            z10 = false;
-        }
-        if (z10) {
-            return this.b.apply(obj);
-        }
-        return false;
+        return this.a.contains(obj) && this.b.contains(obj);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean containsAll(Collection collection) {
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            if (!contains(it.next())) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        return o.k(this, obj);
-    }
-
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return o.o(this);
+        return this.a.containsAll(collection) && this.b.containsAll(collection);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean isEmpty() {
-        Iterator it = this.a.iterator();
-        g9.l lVar = this.b;
-        ja.k(lVar, "predicate");
-        int i7 = 0;
-        while (true) {
-            if (!it.hasNext()) {
-                i7 = -1;
-                break;
-            }
-            if (lVar.apply(it.next())) {
-                break;
-            }
-            i7++;
-        }
-        return true ^ (i7 != -1);
+        return Collections.disjoint(this.b, this.a);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
     public final Iterator iterator() {
-        Iterator it = this.a.iterator();
-        it.getClass();
-        g9.l lVar = this.b;
-        lVar.getClass();
-        return new v0(it, lVar);
+        return new v0(this);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean remove(Object obj) {
-        return contains(obj) && this.a.remove(obj);
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean removeAll(Collection collection) {
-        Iterator it = this.a.iterator();
-        boolean z10 = false;
-        while (it.hasNext()) {
-            Object next = it.next();
-            if (this.b.apply(next) && collection.contains(next)) {
-                it.remove();
-                z10 = true;
-            }
-        }
-        return z10;
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean retainAll(Collection collection) {
-        Iterator it = this.a.iterator();
-        boolean z10 = false;
-        while (it.hasNext()) {
-            Object next = it.next();
-            if (this.b.apply(next) && !collection.contains(next)) {
-                it.remove();
-                z10 = true;
-            }
-        }
-        return z10;
+        throw new UnsupportedOperationException();
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -176,37 +72,10 @@ public class c2 extends AbstractCollection implements Set {
         Iterator it = this.a.iterator();
         int i7 = 0;
         while (it.hasNext()) {
-            if (this.b.apply(it.next())) {
+            if (this.b.contains(it.next())) {
                 i7++;
             }
         }
         return i7;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final Object[] toArray() {
-        Iterator it = iterator();
-        ArrayList arrayList = new ArrayList();
-        while (true) {
-            v0 v0Var = (v0) it;
-            if (!v0Var.hasNext()) {
-                return arrayList.toArray();
-            }
-            arrayList.add(v0Var.next());
-        }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final Object[] toArray(Object[] objArr) {
-        Iterator it = iterator();
-        ArrayList arrayList = new ArrayList();
-        while (true) {
-            v0 v0Var = (v0) it;
-            if (v0Var.hasNext()) {
-                arrayList.add(v0Var.next());
-            } else {
-                return arrayList.toArray(objArr);
-            }
-        }
     }
 }

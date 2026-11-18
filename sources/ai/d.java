@@ -24,11 +24,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.ui.qb1;
-import org.telegram.ui.tn0;
-import org.telegram.ui.xb1;
+import org.telegram.ui.ac1;
+import org.telegram.ui.tb1;
+import org.telegram.ui.wn0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class d {
     public static boolean a;
@@ -57,7 +57,7 @@ public abstract class d {
         boolean[] zArr = {false};
         boolean[] zArr2 = {false};
         a1.e eVar = new a1.e(8, zArr2, arrayList);
-        org.telegram.messenger.g0.i3(new a1.e(9, zArr2, eVar), 3000L);
+        org.telegram.messenger.g0.h3(new a1.e(9, zArr2, eVar), 3000L);
         int size = arrayList.size();
         int i7 = 0;
         while (i7 < size) {
@@ -93,7 +93,7 @@ public abstract class d {
     public static n2.b d(AudioManager audioManager, e2.e eVar, h9.i0 i0Var, List list) {
         List<AudioProfile> directProfilesForAttributes = audioManager.getDirectProfilesForAttributes(eVar.b());
         HashMap hashMap = new HashMap();
-        hashMap.put(2, new HashSet(c8.g1.a(12)));
+        hashMap.put(2, new HashSet(c8.k1.a(12)));
         for (int i7 = 0; i7 < directProfilesForAttributes.size(); i7++) {
             AudioProfile audioProfile = directProfilesForAttributes.get(i7);
             if (audioProfile.getEncapsulationType() != 1) {
@@ -102,9 +102,9 @@ public abstract class d {
                     if (hashMap.containsKey(Integer.valueOf(format))) {
                         Set set = (Set) hashMap.get(Integer.valueOf(format));
                         set.getClass();
-                        set.addAll(c8.g1.a(audioProfile.getChannelMasks()));
+                        set.addAll(c8.k1.a(audioProfile.getChannelMasks()));
                     } else {
-                        hashMap.put(Integer.valueOf(format), new HashSet(c8.g1.a(audioProfile.getChannelMasks())));
+                        hashMap.put(Integer.valueOf(format), new HashSet(c8.k1.a(audioProfile.getChannelMasks())));
                     }
                 }
             }
@@ -153,24 +153,24 @@ public abstract class d {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static tn0 j(xb1 xb1Var, qb1 qb1Var) {
-        OnBackInvokedDispatcher findOnBackInvokedDispatcher = xb1Var.findOnBackInvokedDispatcher();
+    public static wn0 j(ac1 ac1Var, tb1 tb1Var) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher = ac1Var.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher == null) {
             return null;
         }
-        tn0 tn0Var = new tn0(qb1Var, 1);
-        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, tn0Var);
-        return tn0Var;
+        wn0 wn0Var = new wn0(tb1Var, 1);
+        findOnBackInvokedDispatcher.registerOnBackInvokedCallback(0, wn0Var);
+        return wn0Var;
     }
 
     public static void k(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 
-    public static void l(xb1 xb1Var, tn0 tn0Var) {
-        OnBackInvokedDispatcher findOnBackInvokedDispatcher = xb1Var.findOnBackInvokedDispatcher();
+    public static void l(ac1 ac1Var, wn0 wn0Var) {
+        OnBackInvokedDispatcher findOnBackInvokedDispatcher = ac1Var.findOnBackInvokedDispatcher();
         if (findOnBackInvokedDispatcher != null) {
-            findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(tn0Var);
+            findOnBackInvokedDispatcher.unregisterOnBackInvokedCallback(wn0Var);
         }
     }
 }

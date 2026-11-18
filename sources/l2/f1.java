@@ -10,32 +10,32 @@ import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f1 {
-    public final m2.j a;
+    public final m2.i a;
     public final o0 e;
-    public final m2.e h;
+    public final m2.d h;
     public final h2.i0 i;
     public boolean k;
     public j2.c0 l;
-    public x2.g1 j = new x2.e1();
+    public x2.i1 j = new x2.g1();
     public final IdentityHashMap c = new IdentityHashMap();
     public final HashMap d = new HashMap();
     public final ArrayList b = new ArrayList();
     public final HashMap f = new HashMap();
     public final HashSet g = new HashSet();
 
-    public f1(o0 o0Var, m2.e eVar, h2.i0 i0Var, m2.j jVar) {
-        this.a = jVar;
+    public f1(o0 o0Var, m2.d dVar, h2.i0 i0Var, m2.i iVar) {
+        this.a = iVar;
         this.e = o0Var;
-        this.h = eVar;
+        this.h = dVar;
         this.i = i0Var;
     }
 
-    public final e2.l1 a(int i7, ArrayList arrayList, x2.g1 g1Var) {
+    public final e2.l1 a(int i7, ArrayList arrayList, x2.i1 i1Var) {
         if (!arrayList.isEmpty()) {
-            this.j = g1Var;
+            this.j = i1Var;
             for (int i10 = i7; i10 < arrayList.size() + i7; i10++) {
                 e1 e1Var = (e1) arrayList.get(i10 - i7);
                 ArrayList arrayList2 = this.b;
@@ -113,11 +113,11 @@ public final class f1 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v0, types: [l2.y0, x2.g0] */
+    /* JADX WARN: Type inference failed for: r1v0, types: [l2.y0, x2.h0] */
     public final void e(e1 e1Var) {
-        x2.a0 a0Var = e1Var.a;
-        ?? r12 = new x2.g0() { // from class: l2.y0
-            @Override // x2.g0
+        x2.b0 b0Var = e1Var.a;
+        ?? r12 = new x2.h0() { // from class: l2.y0
+            @Override // x2.h0
             public final void a(x2.a aVar, e2.l1 l1Var) {
                 h2.i0 i0Var = f1.this.e.n;
                 i0Var.e(2);
@@ -125,42 +125,42 @@ public final class f1 {
             }
         };
         c1 c1Var = new c1(this, e1Var);
-        this.f.put(e1Var, new d1(a0Var, r12, c1Var));
+        this.f.put(e1Var, new d1(b0Var, r12, c1Var));
         String str = h2.l0.a;
         Looper myLooper = Looper.myLooper();
         if (myLooper == null) {
             myLooper = Looper.getMainLooper();
         }
         Handler handler = new Handler(myLooper, null);
-        a0Var.getClass();
-        xa xaVar = a0Var.c;
+        b0Var.getClass();
+        xa xaVar = b0Var.c;
         xaVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) xaVar.d;
-        x2.i0 i0Var = new x2.i0();
-        i0Var.a = handler;
-        i0Var.b = c1Var;
-        copyOnWriteArrayList.add(i0Var);
+        x2.j0 j0Var = new x2.j0();
+        j0Var.a = handler;
+        j0Var.b = c1Var;
+        copyOnWriteArrayList.add(j0Var);
         Looper myLooper2 = Looper.myLooper();
         if (myLooper2 == null) {
             myLooper2 = Looper.getMainLooper();
         }
         Handler handler2 = new Handler(myLooper2, null);
-        q2.k kVar = a0Var.d;
-        kVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
-        q2.j jVar = new q2.j();
-        jVar.a = handler2;
-        jVar.b = c1Var;
-        copyOnWriteArrayList2.add(jVar);
-        a0Var.l(r12, this.l, this.a);
+        q2.j jVar = b0Var.d;
+        jVar.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar.c;
+        q2.i iVar = new q2.i();
+        iVar.a = handler2;
+        iVar.b = c1Var;
+        copyOnWriteArrayList2.add(iVar);
+        b0Var.l(r12, this.l, this.a);
     }
 
-    public final void f(x2.d0 d0Var) {
+    public final void f(x2.e0 e0Var) {
         IdentityHashMap identityHashMap = this.c;
-        e1 e1Var = (e1) identityHashMap.remove(d0Var);
+        e1 e1Var = (e1) identityHashMap.remove(e0Var);
         e1Var.getClass();
-        e1Var.a.o(d0Var);
-        e1Var.c.remove(((x2.x) d0Var).a);
+        e1Var.a.o(e0Var);
+        e1Var.c.remove(((x2.y) e0Var).a);
         if (!identityHashMap.isEmpty()) {
             c();
         }

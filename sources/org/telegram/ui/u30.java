@@ -1,17 +1,79 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u30 extends org.telegram.ui.Cells.y3 {
-    @Override // org.telegram.ui.Cells.y3, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        if (org.telegram.messenger.g0.Q1()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(420.0f), View.MeasureSpec.getSize(i7)), TLObject.FLAG_30), i10);
+public final class u30 extends View {
+    public int[] a;
+    public int b;
+    public final Paint c;
+    public float d;
+    public final /* synthetic */ f40 e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u30(f40 f40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.e = f40Var;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        paint.setStyle(Paint.Style.FILL);
+        paint.setAlpha(0);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (!this.e.y4 || r0.Z3.c >= 0.1d) {
+            return;
+        }
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
+    }
+
+    public void setNewColors(int[] iArr) {
+        int[] iArr2 = this.a;
+        Paint paint = this.c;
+        boolean z10 = true;
+        f40 f40Var = this.e;
+        boolean z11 = false;
+        if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
+            if (iArr2 == null) {
+                paint.setAlpha(org.telegram.messenger.ks.e4);
+            }
+            this.a = iArr;
+            if (f40Var.c3 != null) {
+                float f10 = f40Var.d3;
+                if (f10 != 1.0f) {
+                    iArr[0] = i0.a.o(iArr[0], (int) (f10 * 255.0f));
+                    int[] iArr3 = this.a;
+                    iArr3[1] = i0.a.o(iArr3[1], (int) (f40Var.d3 * 255.0f));
+                }
+            }
+            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, f40Var.P2.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));
+            z11 = true;
+        }
+        if (this.b != f40Var.U3) {
+            paint.setShadowLayer(org.telegram.messenger.g0.L(36.0f), 0.0f, this.d, f40Var.U3);
+            this.b = f40Var.U3;
         } else {
-            super.onMeasure(i7, i10);
+            z10 = z11;
+        }
+        if (z10) {
+            invalidate();
+        }
+        f40Var.F1();
+    }
+
+    public void setShadowOffset(int i7) {
+        float f10 = i7;
+        if (this.d != f10) {
+            this.c.setShadowLayer(org.telegram.messenger.g0.L(36.0f), 0.0f, this.d, this.e.U3);
+            this.d = f10;
+            invalidate();
         }
     }
 }

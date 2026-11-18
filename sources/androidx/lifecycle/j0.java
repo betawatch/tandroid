@@ -5,8 +5,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
@@ -80,7 +81,7 @@ public abstract class j0 {
         if (str == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `VIEW_MODEL_KEY`");
         }
-        w4.d d = eVar.g().d();
+        w4.d d = eVar.h().d();
         l0 l0Var = d instanceof l0 ? (l0) d : null;
         if (l0Var == null) {
             throw new IllegalStateException("enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call");
@@ -112,9 +113,9 @@ public abstract class j0 {
         if (nVar != n.b && nVar != n.c) {
             throw new IllegalArgumentException("Failed requirement.");
         }
-        if (eVar.g().d() == null) {
-            l0 l0Var = new l0(eVar.g(), (u0) eVar);
-            eVar.g().f("androidx.lifecycle.internal.SavedStateHandlesProvider", l0Var);
+        if (eVar.h().d() == null) {
+            l0 l0Var = new l0(eVar.h(), (u0) eVar);
+            eVar.h().f("androidx.lifecycle.internal.SavedStateHandlesProvider", l0Var);
             eVar.m().a(new SavedStateHandleAttacher(l0Var));
         }
     }
@@ -125,10 +126,6 @@ public abstract class j0 {
         kotlin.jvm.internal.j.c(a10, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new y1.c(a10));
         y1.c[] cVarArr = (y1.c[]) arrayList.toArray(new y1.c[0]);
-        y1.c[] initializers = (y1.c[]) Arrays.copyOf(cVarArr, cVarArr.length);
-        kotlin.jvm.internal.j.e(initializers, "initializers");
-        u7.i iVar = new u7.i();
-        iVar.a = initializers;
-        return (m0) new android.support.v4.media.session.a0(u0Var.f(), iVar, u0Var instanceof i ? ((i) u0Var).d() : y1.a.b).k(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new android.support.v4.media.session.a0(u0Var.g(), new hn((y1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).e() : y1.a.b).k(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

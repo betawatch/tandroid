@@ -16,16 +16,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.en0;
-import org.telegram.ui.rv;
-import org.telegram.ui.tp0;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.hn0;
+import org.telegram.ui.uv;
+import org.telegram.ui.vp0;
 import y7.f7;
 import z7.qa;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.api.internal.q, b3.q {
+public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.api.internal.q, b3.r {
     public final /* synthetic */ int a;
     public final Object b;
     public Object c;
@@ -34,6 +34,16 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
         this.a = i7;
         this.b = obj;
         this.c = obj2;
+    }
+
+    @Override // te.d
+    public boolean C() {
+        return false;
+    }
+
+    @Override // te.d
+    public boolean D(float f10) {
+        return false;
     }
 
     @Override // te.d
@@ -59,9 +69,9 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     public ArrayList b() {
         ?? arrayList;
         ArrayList arrayList2 = new ArrayList();
-        cf cfVar = (cf) this.c;
+        b5 b5Var = (b5) this.c;
         Context context = (Context) this.b;
-        Class cls = (Class) cfVar.a;
+        Class cls = (Class) b5Var.a;
         Bundle bundle = null;
         try {
             PackageManager packageManager = context.getPackageManager();
@@ -94,11 +104,6 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
             arrayList2.add(new u9.c((String) it.next(), 0));
         }
         return arrayList2;
-    }
-
-    @Override // te.d
-    public void b0() {
-        ((te.i) this.b).f((te.j) this.c);
     }
 
     public void c(String str, PrintWriter printWriter) {
@@ -204,30 +209,30 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     }
 
     public View d(int i7, int i10, int i11, int i12) {
-        v4.i1 i1Var = (v4.i1) this.c;
-        v4.j1 j1Var = (v4.j1) this.b;
-        int B = j1Var.B();
-        int S = j1Var.S();
+        v4.j1 j1Var = (v4.j1) this.c;
+        v4.k1 k1Var = (v4.k1) this.b;
+        int z10 = k1Var.z();
+        int R = k1Var.R();
         int i13 = i10 > i7 ? 1 : -1;
         View view = null;
         while (i7 != i10) {
-            View g02 = j1Var.g0(i7);
-            int e10 = j1Var.e(g02);
-            int i02 = j1Var.i0(g02);
-            i1Var.b = B;
-            i1Var.c = S;
-            i1Var.d = e10;
-            i1Var.e = i02;
+            View d02 = k1Var.d0(i7);
+            int a10 = k1Var.a(d02);
+            int f02 = k1Var.f0(d02);
+            j1Var.b = z10;
+            j1Var.c = R;
+            j1Var.d = a10;
+            j1Var.e = f02;
             if (i11 != 0) {
-                i1Var.a = i11;
-                if (i1Var.a()) {
-                    return g02;
+                j1Var.a = i11;
+                if (j1Var.a()) {
+                    return d02;
                 }
             }
             if (i12 != 0) {
-                i1Var.a = i12;
-                if (i1Var.a()) {
-                    view = g02;
+                j1Var.a = i12;
+                if (j1Var.a()) {
+                    view = d02;
                 }
             }
             i7 += i13;
@@ -236,18 +241,25 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     }
 
     public boolean e(View view) {
-        v4.i1 i1Var = (v4.i1) this.c;
-        v4.j1 j1Var = (v4.j1) this.b;
-        int B = j1Var.B();
-        int S = j1Var.S();
-        int e10 = j1Var.e(view);
-        int i02 = j1Var.i0(view);
-        i1Var.b = B;
-        i1Var.c = S;
-        i1Var.d = e10;
-        i1Var.e = i02;
-        i1Var.a = 24579;
-        return i1Var.a();
+        v4.j1 j1Var = (v4.j1) this.c;
+        v4.k1 k1Var = (v4.k1) this.b;
+        int z10 = k1Var.z();
+        int R = k1Var.R();
+        int a10 = k1Var.a(view);
+        int f02 = k1Var.f0(view);
+        j1Var.b = z10;
+        j1Var.c = R;
+        j1Var.d = a10;
+        j1Var.e = f02;
+        j1Var.a = 24579;
+        return j1Var.a();
+    }
+
+    @Override // sg.t0
+    public void e0() {
+        vp0 vp0Var = (vp0) this.c;
+        vp0Var.p0.a.u();
+        vp0Var.V0.setViewHidden(false);
     }
 
     public f3.i0 f(int i7) {
@@ -259,7 +271,7 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
                 return new f3.n();
             }
             if (i7 == iArr[i10]) {
-                return ((x2.a1[]) this.c)[i10];
+                return ((x2.c1[]) this.c)[i10];
             }
             i10++;
         }
@@ -276,60 +288,48 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     }
 
     @Override // sg.t0
-    public void h0() {
-        tp0 tp0Var = (tp0) this.c;
-        tp0Var.p0.a.C();
-        tp0Var.V0.setViewHidden(false);
+    public void j() {
+        ((hn0) this.b).run();
     }
 
-    @Override // b3.q
-    public Object l(Uri uri, j2.k kVar) {
-        w2.a aVar = (w2.a) ((b3.q) this.b).l(uri, kVar);
+    @Override // sg.t0
+    public void k() {
+        uv uvVar = ((vp0) this.c).H0;
+        if (uvVar != null) {
+            uvVar.invalidate();
+        }
+    }
+
+    @Override // te.d
+    public void m1() {
+        ((te.i) this.b).f((te.j) this.c);
+    }
+
+    @Override // sg.t0
+    public void n() {
+        vp0 vp0Var = (vp0) this.c;
+        if (vp0Var.U0) {
+            vp0Var.U0 = false;
+        } else {
+            vp0Var.d1.b(1);
+            vp0Var.w((h) h.a.get(0));
+        }
+    }
+
+    @Override // sg.t0
+    public void n0() {
+        vp0 vp0Var = (vp0) this.c;
+        if (vp0Var.C0 != null) {
+            vp0Var.r0(null, true);
+        }
+        vp0Var.V0.setViewHidden(true);
+    }
+
+    @Override // b3.r
+    public Object t(Uri uri, j2.k kVar) {
+        w2.a aVar = (w2.a) ((b3.r) this.b).t(uri, kVar);
         List list = (List) this.c;
         return (list == null || list.isEmpty()) ? aVar : (w2.a) aVar.a(list);
-    }
-
-    @Override // sg.t0
-    public void m() {
-        ((en0) this.b).run();
-    }
-
-    @Override // sg.t0
-    public void o() {
-        rv rvVar = ((tp0) this.c).H0;
-        if (rvVar != null) {
-            rvVar.invalidate();
-        }
-    }
-
-    @Override // te.d
-    public boolean q() {
-        return false;
-    }
-
-    @Override // sg.t0
-    public void q0() {
-        tp0 tp0Var = (tp0) this.c;
-        if (tp0Var.C0 != null) {
-            tp0Var.r0(null, true);
-        }
-        tp0Var.V0.setViewHidden(true);
-    }
-
-    @Override // te.d
-    public boolean s(float f10) {
-        return false;
-    }
-
-    @Override // sg.t0
-    public void t() {
-        tp0 tp0Var = (tp0) this.c;
-        if (tp0Var.U0) {
-            tp0Var.U0 = false;
-        } else {
-            tp0Var.d1.b(1);
-            tp0Var.w((h) h.a.get(0));
-        }
     }
 
     public String toString() {
@@ -351,11 +351,11 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
     }
 
     @Override // sg.t0
-    public boolean z() {
-        tp0 tp0Var = (tp0) this.c;
-        boolean z10 = tp0Var.C0 == null;
+    public boolean y() {
+        vp0 vp0Var = (vp0) this.c;
+        boolean z10 = vp0Var.C0 == null;
         if (!z10) {
-            tp0Var.r0(null, true);
+            vp0Var.r0(null, true);
         }
         return z10;
     }
@@ -385,19 +385,19 @@ public final class h0 implements te.d, t0, q5.b, com.google.android.gms.common.a
         this.c = (z1.b) new android.support.v4.media.session.a0(t0Var, z1.b.f).j(z1.b.class);
     }
 
-    public h0(v4.j1 j1Var) {
+    public h0(v4.k1 k1Var) {
         this.a = 5;
-        this.b = j1Var;
-        v4.i1 i1Var = new v4.i1();
-        i1Var.a = 0;
-        this.c = i1Var;
+        this.b = k1Var;
+        v4.j1 j1Var = new v4.j1();
+        j1Var.a = 0;
+        this.c = j1Var;
     }
 
     @Override // te.d
-    public void n(boolean z10) {
+    public void x(boolean z10) {
     }
 
     @Override // te.d
-    public void v() {
+    public void H() {
     }
 }

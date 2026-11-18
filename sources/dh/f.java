@@ -4,10 +4,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
-import bg.n0;
+import bg.o0;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class f {
     public final e b;
@@ -25,14 +25,14 @@ public final class f {
                 this.c = eVar;
                 eVar.e = 4;
                 eVar.f = 4;
-                eVar.d(g0.N(6.0f), n0.d());
+                eVar.d(g0.N(6.0f), o0.d());
             } else {
                 e eVar2 = new e(gVar, "glass", 1, true);
                 this.c = eVar2;
                 eVar2.e = 4;
                 eVar2.f = 4;
                 eVar2.c(g0.N(6.0f));
-                eVar2.e(n0.d());
+                eVar2.e(o0.d());
             }
             e eVar3 = new e(gVar, "blur", 0, false);
             this.b = eVar3;
@@ -47,7 +47,7 @@ public final class f {
             eVar4.e = 8;
             eVar4.f = 8;
             eVar4.c(g0.N(40.0f));
-            eVar4.e(n0.d());
+            eVar4.e(o0.d());
             this.c = null;
             return;
         }
@@ -58,7 +58,7 @@ public final class f {
         int i10 = z12 ? 16 : 8;
         eVar5.e = i7;
         eVar5.f = i10;
-        eVar5.d(g0.N(40.0f), n0.d());
+        eVar5.d(g0.N(40.0f), o0.d());
         this.c = null;
     }
 

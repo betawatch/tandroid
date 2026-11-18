@@ -10,78 +10,78 @@ import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ja;
+import c8.ma;
 import dh.c;
 import fh.g;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.y;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.sp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a extends FrameLayout implements te.b, z5 {
+public final class a extends FrameLayout implements te.b, c6 {
     public final te.a a;
     public final te.a b;
     public ImageView c;
     public ImageView d;
-    public lp e;
-    public e6 f;
+    public sp e;
+    public i6 f;
     public float h;
     public int n;
     public g r;
 
     public a(Context context) {
         super(context);
-        er erVar = er.h;
-        this.a = new te.a(0, this, erVar, 320L, false);
-        this.b = new te.a(1, this, erVar, 320L, true);
+        lr lrVar = lr.h;
+        this.a = new te.a(0, this, lrVar, 320L, false);
+        this.b = new te.a(1, this, lrVar, 320L, true);
         this.h = 1.0f;
     }
 
-    public static a c(Context context, c cVar, gh.a aVar, e6 e6Var) {
-        int i7 = j6.Nl;
-        int w02 = j6.w0(i7, e6Var);
+    public static a c(Context context, c cVar, gh.a aVar, i6 i6Var) {
+        int i7 = n6.Nl;
+        int w02 = n6.w0(i7, i6Var);
         a aVar2 = new a(context);
-        aVar2.f = e6Var;
+        aVar2.f = i6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.setIconColor(w02);
         int L = g0.L(22.0f);
-        int r12 = j6.r1(0.15f, w02);
+        int r12 = n6.r1(0.15f, w02);
         int L2 = g0.L(6.0f);
-        y Y = j6.Y(L, r12, L2, L2, L2, L2);
-        m6 K = q6.K(0.15f, i7);
+        y Y = n6.Y(L, r12, L2, L2, L2, L2);
+        q6 K = u6.K(0.15f, i7);
         aVar2.setBackground(Y);
-        q6.j(aVar2, Y, null, K, e6Var);
+        u6.j(aVar2, Y, null, K, i6Var);
         return aVar2;
     }
 
-    public static a d(Context context, c cVar, gh.a aVar, e6 e6Var, int i7, int i10) {
-        int i11 = j6.Nl;
-        int w02 = j6.w0(i11, e6Var);
+    public static a d(Context context, c cVar, gh.a aVar, i6 i6Var, int i7, int i10) {
+        int i11 = n6.Nl;
+        int w02 = n6.w0(i11, i6Var);
         a aVar2 = new a(context);
-        aVar2.f = e6Var;
+        aVar2.f = i6Var;
         aVar2.setBlurredBackgroundDrawable(cVar.c(aVar2, aVar, false));
         aVar2.f(i7, i10);
         aVar2.setIconColor(w02);
         int L = g0.L(22.0f);
-        int r12 = j6.r1(0.15f, w02);
+        int r12 = n6.r1(0.15f, w02);
         int L2 = g0.L(6.0f);
-        y Y = j6.Y(L, r12, L2, L2, L2, L2);
-        m6 K = q6.K(0.15f, i11);
+        y Y = n6.Y(L, r12, L2, L2, L2, L2);
+        q6 K = u6.K(0.15f, i11);
         aVar2.setBackground(Y);
-        q6.j(aVar2, Y, null, K, e6Var);
+        u6.j(aVar2, Y, null, K, i6Var);
         return aVar2;
     }
 
     @Override // te.b
-    public final void G(int i7, float f10, float f11, te.c cVar) {
+    public final void H(int i7, float f10, float f11, te.c cVar) {
         if (i7 == 0) {
             a();
             b();
@@ -144,7 +144,7 @@ public final class a extends FrameLayout implements te.b, z5 {
             ImageView imageView = new ImageView(getContext());
             this.c = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            addView(this.c, ja.e(i10, i10, 17));
+            addView(this.c, ma.e(i10, i10, 17));
             a();
         }
         this.c.setImageResource(i7);
@@ -193,32 +193,32 @@ public final class a extends FrameLayout implements te.b, z5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         g gVar = this.r;
         if (gVar != null) {
             gVar.updateColors();
             invalidate();
         }
-        int w02 = j6.w0(j6.Nl, this.f);
+        int w02 = n6.w0(n6.Nl, this.f);
         if (this.c != null && w02 != this.n) {
             setIconColor(w02);
         }
         int L = g0.L(22.0f);
-        int r12 = j6.r1(0.15f, w02);
+        int r12 = n6.r1(0.15f, w02);
         if (getBackground() instanceof RippleDrawable) {
-            j6.H1(getBackground(), r12, true);
+            n6.H1(getBackground(), r12, true);
         } else {
             int L2 = g0.L(6.0f);
-            setBackground(j6.Y(L, r12, L2, L2, L2, L2));
+            setBackground(n6.Y(L, r12, L2, L2, L2, L2));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 
     @Override // te.b
-    public final /* synthetic */ void E(float f10, int i7) {
+    public final /* synthetic */ void D(float f10, int i7) {
     }
 }

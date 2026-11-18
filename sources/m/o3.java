@@ -21,11 +21,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import org.telegram.messenger.ga;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.fa;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o3 {
     public Object a;
@@ -100,17 +100,17 @@ public final class o3 {
             synchronized (k8.b.class) {
                 k8.b.a(context);
             }
-            l8.f y12 = c8.f1.a(context).y1(new a7.b(context));
+            l8.f y12 = c8.j1.a(context).y1(new a7.b(context));
             if (y12 == null) {
                 return;
             }
-            ((cb.c) this.f).v(new h6.m((ai.k0) this.e, y12));
+            ((cb.c) this.f).p(new h6.m((ai.k0) this.e, y12));
             int size = arrayList.size();
             int i7 = 0;
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                ((h6.m) this.b).v((ga) obj);
+                ((h6.m) this.b).y((fa) obj);
             }
             arrayList.clear();
         } catch (RemoteException e10) {
@@ -122,14 +122,17 @@ public final class o3 {
     public o3(String str, ga.d dVar, ba.e eVar) {
         this.d = new ab.q(this, false);
         this.e = new ab.q(this, true);
-        this.f = new f5.v(2, (short) 0);
+        ca.q qVar = new ca.q();
+        qVar.a = new ArrayList();
+        qVar.b = 128;
+        this.f = qVar;
         this.g = new AtomicMarkableReference(null, false);
         this.c = str;
         this.a = new ca.h(dVar);
         this.b = eVar;
     }
 
-    public o3(Context context, e6 e6Var) {
+    public o3(Context context, i6 i6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         Paint paint = new Paint();
@@ -146,6 +149,6 @@ public final class o3 {
         Drawable mutate2 = context.getDrawable(org.telegram.messenger.beta.R.drawable.filled_views).mutate();
         this.d = mutate2;
         mutate2.setBounds(0, 0, (int) (mutate2.getIntrinsicWidth() * 0.7f), (int) (mutate2.getIntrinsicHeight() * 0.7f));
-        paint.setColor(j6.w0(j6.Ci, e6Var));
+        paint.setColor(n6.w0(n6.Ci, i6Var));
     }
 }

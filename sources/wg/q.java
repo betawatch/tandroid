@@ -1,237 +1,182 @@
 package wg;
 
-import android.text.TextUtils;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.text.style.ClickableSpan;
 import android.util.Pair;
-import bi.j6;
-import di.k7;
+import android.webkit.WebView;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import ki.x2;
-import org.json.JSONObject;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r1;
-import org.telegram.messenger.r2;
-import org.telegram.messenger.t3;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.ConnectionsManager;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.qy0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class q {
-    public static HashMap a;
+public final /* synthetic */ class q implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public static void a(long j3, List list, z10 z10Var, z10 z10Var2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
-        np s12 = np.s1(m10.t0);
-        TL_stories.TL_premium_applyBoost tL_premium_applyBoost = new TL_stories.TL_premium_applyBoost();
-        tL_premium_applyBoost.peer = s12.j1(-j3);
-        tL_premium_applyBoost.flags |= 1;
-        tL_premium_applyBoost.slots.addAll(list);
-        connectionsManager.sendRequest(tL_premium_applyBoost, new j6(z10Var2, s12, z10Var, 22), 66);
+    public /* synthetic */ q(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    public static ArrayList b(int i7, List list) {
-        ArrayList arrayList = new ArrayList();
-        Iterator it = list.iterator();
-        while (it.hasNext()) {
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) it.next();
-            String str = tL_premiumGiftCodeOption.store_product;
-            if (tL_premiumGiftCodeOption.users == i7) {
-                arrayList.add(tL_premiumGiftCodeOption);
-            }
-        }
-        if (arrayList.isEmpty()) {
-            Iterator it2 = list.iterator();
-            while (it2.hasNext()) {
-                TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption2 = (TLRPC.TL_premiumGiftCodeOption) it2.next();
-                if (tL_premiumGiftCodeOption2.users == 1) {
-                    arrayList.add(tL_premiumGiftCodeOption2);
+    private final void a() {
+        xi.i iVar = (xi.i) this.b;
+        WebView webView = (WebView) this.c;
+        e5.f fVar = (e5.f) this.d;
+        synchronized (iVar.a) {
+            if (!iVar.u && iVar.o == webView && iVar.p == fVar && !iVar.r) {
+                if (iVar.s) {
+                    a8.d("WEB proxy: Base64 bridge installation timed out again; transport stopped");
+                    iVar.q();
+                } else {
+                    iVar.s = true;
+                    a8.d("WEB proxy: Base64 bridge installation timed out; retrying once");
+                    iVar.h();
                 }
             }
         }
-        return arrayList;
     }
 
-    public static List c(ArrayList arrayList) {
-        if (!h()) {
-            return arrayList;
+    private final void b() {
+        yi.j jVar = (yi.j) this.b;
+        yi.h hVar = (yi.h) this.c;
+        File file = (File) this.d;
+        k8.a aVar = jVar.g;
+        long j3 = hVar.a;
+        synchronized (((e0.g) aVar.c).f) {
+            ((HashMap) ((e0.g) aVar.c).g).put(Long.valueOf(j3), file);
         }
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = (TLRPC.TL_premiumGiftCodeOption) obj;
-            if (tL_premiumGiftCodeOption.store_product != null) {
-                arrayList2.add(tL_premiumGiftCodeOption);
-            }
-        }
-        return arrayList2;
+        ((Handler) ((e0.g) aVar.c).d).post(new org.telegram.messenger.u0(aVar, j3, (ke) aVar.b, file, 1));
     }
 
-    public static void d(gj gjVar, z10 z10Var, z10 z10Var2) {
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
-        np s12 = np.s1(m10.t0);
-        TLRPC.TL_payments_getGiveawayInfo tL_payments_getGiveawayInfo = new TLRPC.TL_payments_getGiveawayInfo();
-        tL_payments_getGiveawayInfo.msg_id = gjVar.e1();
-        tL_payments_getGiveawayInfo.peer = s12.j1(gj.B1(gjVar.k.peer_id));
-        connectionsManager.sendRequest(tL_payments_getGiveawayInfo, new n(z10Var2, z10Var, 1));
-    }
-
-    public static ArrayList e(long j3) {
-        ArrayList arrayList = new ArrayList();
-        np s12 = np.s1(m10.t0);
-        ArrayList arrayList2 = s12.y;
-        for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-            TLRPC.Dialog dialog = (TLRPC.Dialog) arrayList2.get(i7);
-            if (m5.z(dialog.id) && t3.R(s12.M0(Long.valueOf(-dialog.id)))) {
-                long j10 = dialog.id;
-                if ((-j10) != j3) {
-                    arrayList.add(s12.j1(j10));
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((ug.z) this.b).a(new Pair((HashMap) this.c, (ArrayList) this.d));
+                return;
+            case 1:
+                xh.l lVar = (xh.l) this.b;
+                l80 l80Var = (l80) this.c;
+                ClickableSpan clickableSpan = (ClickableSpan) this.d;
+                j80 j80Var = lVar.H;
+                if (j80Var == null || lVar.I != l80Var) {
+                    return;
                 }
-            }
-        }
-        return arrayList;
-    }
-
-    public static long f() {
-        return np.s1(m10.t0).o0;
-    }
-
-    public static int g() {
-        return (int) np.s1(m10.t0).r0;
-    }
-
-    public static boolean h() {
-        if (r2.b()) {
-            return false;
-        }
-        return r1.i().k();
-    }
-
-    public static boolean i() {
-        return np.s1(m10.t0).s0 > 0;
-    }
-
-    public static int j(int i7, TLRPC.Chat chat, z10 z10Var) {
-        Pair pair;
-        if (chat == null) {
-            HashMap hashMap = a;
-            List list = null;
-            if (hashMap != null && (pair = (Pair) hashMap.get(Integer.valueOf(i7))) != null && System.currentTimeMillis() - ((Long) pair.first).longValue() < 1800000) {
-                list = (List) pair.second;
-            }
-            if (list != null) {
-                z10Var.a(list);
-                return -1;
-            }
-        }
-        np s12 = np.s1(i7);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
-        TLRPC.TL_payments_getPremiumGiftCodeOptions tL_payments_getPremiumGiftCodeOptions = new TLRPC.TL_payments_getPremiumGiftCodeOptions();
-        if (chat != null) {
-            tL_payments_getPremiumGiftCodeOptions.flags = 1;
-            tL_payments_getPremiumGiftCodeOptions.boost_peer = s12.j1(-chat.id);
-        }
-        return connectionsManager.sendRequest(tL_payments_getPremiumGiftCodeOptions, new jg.u(chat, i7, z10Var, 9));
-    }
-
-    public static void k(ArrayList arrayList, TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption, TLRPC.Chat chat, TLRPC.TL_textWithEntities tL_textWithEntities, e2 e2Var, z10 z10Var, z10 z10Var2) {
-        int i7 = m10.t0;
-        HashMap hashMap = a;
-        if (hashMap != null) {
-            hashMap.remove(Integer.valueOf(i7));
-        }
-        if (h()) {
-            np s12 = np.s1(m10.t0);
-            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
-            TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-            tL_inputStorePaymentPremiumGiftCode.users = new ArrayList<>();
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                TLObject tLObject = (TLObject) obj;
-                if (tLObject instanceof TLRPC.User) {
-                    tL_inputStorePaymentPremiumGiftCode.users.add(s12.q1((TLRPC.User) tLObject));
+                j80Var.a(clickableSpan);
+                lVar.I = null;
+                lVar.y.f(true);
+                return;
+            case 2:
+                a();
+                return;
+            case 3:
+                yf.e eVar = (yf.e) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.d;
+                String str = eVar.b;
+                int i7 = eVar.a;
+                if (tLObject != null) {
+                    ri.d0(i7).l1(str, (TLRPC.Document) tLObject, false);
+                } else {
+                    eVar.a();
+                    ri.d0(i7).l1(str, null, true);
+                    if (tL_error != null) {
+                        ks.f(i7).d(new r(16, eVar, tL_error));
+                    }
                 }
-            }
-            if (chat != null) {
-                tL_inputStorePaymentPremiumGiftCode.flags = 1;
-                tL_inputStorePaymentPremiumGiftCode.boost_peer = s12.j1(-chat.id);
-            }
-            if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-                tL_inputStorePaymentPremiumGiftCode.flags |= 2;
-                tL_inputStorePaymentPremiumGiftCode.message = tL_textWithEntities;
-            }
-            f5.a aVar = new f5.a();
-            aVar.c = "inapp";
-            aVar.b = tL_premiumGiftCodeOption.store_product;
-            r1.i().o(Arrays.asList(aVar.a()), new org.telegram.ui.Components.p0(tL_inputStorePaymentPremiumGiftCode, tL_premiumGiftCodeOption, connectionsManager, z10Var2, z10Var, e2Var, 2));
-            return;
+                eVar.a();
+                return;
+            case 4:
+                yi.j jVar = (yi.j) this.b;
+                yi.h hVar = (yi.h) this.c;
+                byte[] bArr = (byte[]) this.d;
+                File file = hVar.b;
+                if (jVar.G != 4) {
+                    return;
+                }
+                jVar.B = bArr;
+                try {
+                    jVar.p();
+                    if (jVar.e) {
+                        l2.f0 a10 = new l2.n(jVar.a).a();
+                        jVar.A = a10;
+                        a10.I0(jVar.F);
+                        jVar.A.m0(e2.l0.b(Uri.fromFile(file)));
+                        jVar.A.a();
+                    }
+                    jVar.s(5);
+                    ji.j jVar2 = jVar.f;
+                    long j3 = jVar.j();
+                    byte[] bArr2 = jVar.B;
+                    jVar2.Q(j3, bArr2 == null ? null : (byte[]) bArr2.clone());
+                    return;
+                } catch (Throwable th2) {
+                    jVar.g(th2 instanceof Exception ? th2 : new RuntimeException(th2));
+                    return;
+                }
+            case 5:
+                b();
+                return;
+            case 6:
+                zi.t tVar = (zi.t) this.b;
+                HandlerThread handlerThread = (HandlerThread) this.c;
+                CountDownLatch countDownLatch = (CountDownLatch) this.d;
+                tVar.getClass();
+                try {
+                    tVar.i();
+                    return;
+                } finally {
+                    handlerThread.quitSafely();
+                    countDownLatch.countDown();
+                }
+            case 7:
+                zi.u0 u0Var = (zi.u0) this.b;
+                zi.x xVar = (zi.x) this.c;
+                File file2 = (File) this.d;
+                Handler handler = u0Var.i;
+                try {
+                    xVar.c(file2);
+                    u0Var.g();
+                    long h = xVar.h();
+                    u0Var.m.b("preview snapshot completed: durationMs=" + h + ", size=" + file2.length() + ", elapsedMs=" + zi.u0.f(u0Var.N));
+                    handler.post(new zi.f0(u0Var, h, 1));
+                    return;
+                } catch (Exception e10) {
+                    handler.post(new zi.e0(u0Var, e10, 3));
+                    return;
+                }
+            default:
+                zi.u0 u0Var2 = (zi.u0) this.b;
+                zi.q0 q0Var = (zi.q0) this.c;
+                File file3 = (File) this.d;
+                zi.r0 r0Var = u0Var2.e;
+                long j10 = q0Var.a;
+                qy0 qy0Var = (qy0) r0Var;
+                synchronized (qy0Var) {
+                    if (qy0Var.d) {
+                        return;
+                    }
+                    qy0Var.c.put(Long.valueOf(j10), new oy0(file3));
+                    return;
+                }
         }
-        np s13 = np.s1(m10.t0);
-        ConnectionsManager connectionsManager2 = ConnectionsManager.getInstance(m10.t0);
-        TLRPC.TL_payments_getPaymentForm tL_payments_getPaymentForm = new TLRPC.TL_payments_getPaymentForm();
-        TLRPC.TL_inputInvoicePremiumGiftCode tL_inputInvoicePremiumGiftCode = new TLRPC.TL_inputInvoicePremiumGiftCode();
-        TLRPC.TL_inputStorePaymentPremiumGiftCode tL_inputStorePaymentPremiumGiftCode2 = new TLRPC.TL_inputStorePaymentPremiumGiftCode();
-        tL_inputStorePaymentPremiumGiftCode2.users = new ArrayList<>();
-        int size2 = arrayList.size();
-        int i11 = 0;
-        while (i11 < size2) {
-            Object obj2 = arrayList.get(i11);
-            i11++;
-            TLObject tLObject2 = (TLObject) obj2;
-            if (tLObject2 instanceof TLRPC.User) {
-                tL_inputStorePaymentPremiumGiftCode2.users.add(s13.q1((TLRPC.User) tLObject2));
-            }
-        }
-        if (tL_textWithEntities != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 2;
-            tL_inputStorePaymentPremiumGiftCode2.message = tL_textWithEntities;
-        }
-        if (chat != null) {
-            tL_inputStorePaymentPremiumGiftCode2.flags |= 1;
-            tL_inputStorePaymentPremiumGiftCode2.boost_peer = s13.j1(-chat.id);
-        }
-        tL_inputStorePaymentPremiumGiftCode2.currency = tL_premiumGiftCodeOption.currency;
-        tL_inputStorePaymentPremiumGiftCode2.amount = tL_premiumGiftCodeOption.amount;
-        tL_inputInvoicePremiumGiftCode.purpose = tL_inputStorePaymentPremiumGiftCode2;
-        tL_inputInvoicePremiumGiftCode.option = tL_premiumGiftCodeOption;
-        JSONObject u10 = x2.u(e2Var.getResourceProvider(), false);
-        if (u10 != null) {
-            TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
-            tL_payments_getPaymentForm.theme_params = tL_dataJSON;
-            tL_dataJSON.data = u10.toString();
-            tL_payments_getPaymentForm.flags |= 1;
-        }
-        tL_payments_getPaymentForm.invoice = tL_inputInvoicePremiumGiftCode;
-        connectionsManager2.sendRequest(tL_payments_getPaymentForm, new k7(z10Var2, s13, tL_inputInvoicePremiumGiftCode, e2Var, z10Var));
-    }
-
-    public static int l(long j3) {
-        if (j3 < System.currentTimeMillis() + 120000) {
-            j3 = System.currentTimeMillis() + 120000;
-        }
-        return (int) (j3 / 1000);
-    }
-
-    public static void m(int i7, ArrayList arrayList) {
-        if (a == null) {
-            a = new HashMap();
-        }
-        a.put(Integer.valueOf(i7), new Pair(Long.valueOf(System.currentTimeMillis()), arrayList));
     }
 }

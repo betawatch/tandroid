@@ -11,11 +11,11 @@ import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import c8.i9;
+import c8.l9;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n extends View {
     public final Paint a;
@@ -61,7 +61,7 @@ public final class n extends View {
         int HSVToColor = Color.HSVToColor(fArr);
         q qVar = this.n;
         qVar.q1 = HSVToColor;
-        qVar.I0(HSVToColor, 0);
+        qVar.J0(HSVToColor, 0);
         invalidate();
     }
 
@@ -79,9 +79,9 @@ public final class n extends View {
         int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
         int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
         float f10 = width;
-        float a10 = i9.a(this.d * f10, L2, f10 - L2) + getPaddingLeft();
+        float a10 = l9.a(this.d * f10, L2, f10 - L2) + getPaddingLeft();
         float f11 = height;
-        float a11 = i9.a(this.e * f11, L2, f11 - L2) + getPaddingTop();
+        float a11 = l9.a(this.e * f11, L2, f11 - L2) + getPaddingTop();
         Rect rect = org.telegram.messenger.g0.Q;
         Drawable drawable = this.f;
         drawable.getPadding(rect);
@@ -91,7 +91,7 @@ public final class n extends View {
         drawable.setBounds(i7, i10, (int) (a10 + L + i11), (int) (a11 + L + i11));
         drawable.draw(canvas);
         canvas.drawCircle(a10, a11, L, paint);
-        tg.y0.A1(a10, a11, strokeWidth, i0.a.o(this.n.q1, ns.e4), canvas);
+        tg.y0.A1(a10, a11, strokeWidth, i0.a.o(this.n.q1, ks.e4), canvas);
     }
 
     @Override // android.view.View

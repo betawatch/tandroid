@@ -1,126 +1,101 @@
 package di;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.RadialGradient;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a5 extends View implements org.telegram.ui.ActionBar.z5 {
-    public final n5 a;
-    public final ImageReceiver b;
-    public final Path c;
-    public final Paint d;
+public final class a5 extends Drawable {
+    public Drawable g;
+    public int h;
+    public int i;
+    public final Paint b = new Paint(1);
+    public final Shader[] c = new Shader[2];
+    public final Matrix d = new Matrix();
+    public final org.telegram.ui.Components.c6 e = new org.telegram.ui.Components.c6(1.0f, new ca.r(this, 22), 0, 420, lr.h);
+    public final RectF f = new RectF();
+    public final int a = 1;
 
-    public a5(Context context, TL_stars.StarGift starGift, TLObject tLObject) {
-        super(context);
-        Path path = new Path();
-        this.c = path;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        org.telegram.ui.ActionBar.p6 p6Var = org.telegram.ui.ActionBar.q6.a;
-        n5 n5Var = new n5(this, starGift, 60, 0.27f);
-        this.a = n5Var;
-        n5Var.L = 3;
-        org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
-        t8Var.l(tLObject);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        imageReceiver.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver.i0(tLObject, t8Var, null);
-        paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.E6, false));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
-        path.rewind();
-        path.moveTo(0.0f, -org.telegram.messenger.g0.L(8.0f));
-        path.lineTo(org.telegram.messenger.g0.L(6.166f), 0.0f);
-        path.lineTo(0.0f, org.telegram.messenger.g0.L(8.0f));
+    public final void a(int i7, int i10) {
+        if (this.h == i7 && this.i == i10) {
+            return;
+        }
+        Shader[] shaderArr = this.c;
+        shaderArr[0] = shaderArr[1];
+        if (this.a == 0) {
+            this.h = i7;
+            this.i = i10;
+            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        } else {
+            float L = org.telegram.messenger.g0.L(340.0f);
+            this.h = i7;
+            this.i = i10;
+            shaderArr[1] = new RadialGradient(0.0f, 0.0f, L, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        }
+        this.e.e(true, 0.0f);
+        invalidateSelf();
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.P();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.b.R();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int width = (getWidth() / 2) - (org.telegram.messenger.g0.L(156.0f) / 2);
-        int height = (getHeight() / 2) - org.telegram.messenger.g0.L(30.0f);
-        int L = org.telegram.messenger.g0.L(60.0f) + width;
-        int L2 = org.telegram.messenger.g0.L(60.0f) + height;
-        n5 n5Var = this.a;
-        n5Var.setBounds(width, height, L, L2);
-        n5Var.draw(canvas);
-        canvas.save();
-        canvas.translate((getWidth() / 2.0f) - (org.telegram.messenger.g0.L(6.166f) / 2.0f), getHeight() / 2.0f);
-        canvas.drawPath(this.c, this.d);
-        canvas.restore();
-        float L3 = org.telegram.messenger.g0.L(60.0f);
-        float L4 = org.telegram.messenger.g0.L(60.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.y0(org.telegram.messenger.g0.L(96.0f) + width, height, L3, L4);
-        imageReceiver.h(canvas, null);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(100.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        Paint paint = this.d;
-        try {
-            int i7 = org.telegram.ui.ActionBar.j6.E6;
-            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.f;
+        rectF.set(bounds);
+        rectF.right = rectF.width() + rectF.left;
+        int i7 = 0;
+        float e10 = this.e.e(false, 1.0f);
+        while (true) {
+            Shader[] shaderArr = this.c;
+            if (i7 >= shaderArr.length) {
+                break;
+            }
+            if (shaderArr[i7] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.25d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.d;
+                    matrix.reset();
+                    if (this.a == 1) {
+                        matrix.postTranslate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
+                    } else {
+                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
+                    }
+                    shaderArr[i7].setLocalMatrix(matrix);
+                    Shader shader = shaderArr[i7];
+                    Paint paint = this.b;
+                    paint.setShader(shader);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
+                }
+            }
+            i7++;
+        }
+        if (this.g != null) {
+            canvas.save();
+            canvas.translate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
+            v0.a(canvas, 0, this.g, rectF.width(), org.telegram.messenger.g0.L(290.0f), 2.0f, 1.0f);
+            canvas.restore();
         }
     }
 
-    public a5(Context context, TL_stars.StarGift starGift) {
-        super(context);
-        Path path = new Path();
-        this.c = path;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        org.telegram.ui.ActionBar.p6 p6Var = org.telegram.ui.ActionBar.q6.a;
-        n5 n5Var = new n5(this, starGift, 60, 0.27f);
-        this.a = n5Var;
-        n5Var.L = 3;
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        imageReceiver.J0(org.telegram.messenger.g0.L(30.0f));
-        imageReceiver.w0(org.telegram.ui.Cells.r6.a(60, "fragment"));
-        paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.E6, false));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.33f));
-        path.rewind();
-        path.moveTo(0.0f, -org.telegram.messenger.g0.L(8.0f));
-        path.lineTo(org.telegram.messenger.g0.L(6.166f), 0.0f);
-        path.lineTo(0.0f, org.telegram.messenger.g0.L(8.0f));
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

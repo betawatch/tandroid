@@ -1,318 +1,40 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.si;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.st0;
-import org.telegram.ui.Components.u11;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class ha extends org.telegram.ui.ActionBar.e2 {
-    public final String[] a;
-    public final int[] b;
-    public final l c;
-    public final ArrayList d;
-    public ScrollView e;
-    public ImageView f;
-    public hi.d h;
-    public int n;
-    public int r;
-    public int s;
-    public int w;
-    public int x;
-    public boolean y;
+public final /* synthetic */ class ha implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ na b;
 
-    public ha(ArrayList arrayList, l lVar) {
-        super(null);
-        this.b = new int[3];
-        this.d = new ArrayList();
-        int i7 = 0;
-        String[] strArr = (String[]) arrayList.toArray(new String[0]);
-        this.a = strArr;
-        if (strArr.length != 12 && strArr.length != 24) {
-            throw new IllegalArgumentException("Expected a 12- or 24-word recovery phrase");
-        }
-        this.c = lVar;
-        ArrayList arrayList2 = new ArrayList();
-        for (int i10 = 0; i10 < this.a.length; i10 = com.google.android.gms.internal.vision.e2.f(i10, i10, 1, arrayList2)) {
-        }
-        Collections.shuffle(arrayList2);
-        while (true) {
-            int[] iArr = this.b;
-            if (i7 >= iArr.length) {
-                Arrays.sort(iArr);
-                return;
-            } else {
-                iArr[i7] = ((Integer) arrayList2.get(i7)).intValue();
-                i7++;
-            }
-        }
+    public /* synthetic */ ha(na naVar, int i7) {
+        this.a = i7;
+        this.b = naVar;
     }
 
-    public final void Z() {
-        if (this.h == null) {
-            return;
-        }
-        ArrayList arrayList = this.d;
-        boolean z10 = false;
-        boolean z11 = arrayList.size() == this.b.length;
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            z11 &= !((pa) obj).getWord().isEmpty();
-        }
-        this.h.setVisibility(z11 ? 0 : 4);
-        hi.d dVar = this.h;
-        if (z11 && !this.y) {
-            z10 = true;
-        }
-        dVar.setEnabled(z10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final View createView(Context context) {
-        final int i7 = 0;
-        this.actionBar.setAddToContainer(false);
-        this.actionBar.setOccupyStatusBar(false);
-        st0 st0Var = new st0(context, null);
-        st0Var.setDelegate(new rt0() { // from class: org.telegram.ui.Wallet.fa
-            @Override // org.telegram.ui.Components.rt0
-            public final void L(int i10, boolean z10) {
-                ha haVar = ha.this;
-                haVar.getClass();
-                if (i10 <= org.telegram.messenger.g0.L(20.0f)) {
-                    i10 = 0;
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        ah.i iVar;
+        switch (this.a) {
+            case 0:
+                na.e0(this.b, (String) obj);
+                break;
+            default:
+                TLRPC.User user = (TLRPC.User) obj;
+                na naVar = this.b;
+                if (!naVar.isFinished && (iVar = naVar.O) != null) {
+                    if (user != null) {
+                        org.telegram.messenger.g0.v1(iVar);
+                        naVar.m0(null, user);
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.g3(new ia(naVar, 1));
+                        break;
+                    }
                 }
-                haVar.n = i10;
-                haVar.onInsets(haVar.r, haVar.s, haVar.w, haVar.x);
-            }
-        });
-        org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.d6, st0Var, this.resourceProvider);
-        this.fragmentView = st0Var;
-        ScrollView scrollView = new ScrollView(context);
-        this.e = scrollView;
-        final int i10 = 1;
-        scrollView.setFillViewport(true);
-        this.e.setVerticalScrollBarEnabled(false);
-        this.e.setClipToPadding(false);
-        this.e.setPadding(0, org.telegram.messenger.g0.L(96.0f), 0, 0);
-        st0Var.addView(this.e, c8.ja.c(-1.0f, -1));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(org.telegram.messenger.g0.L(36.0f), 0, org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(24.0f));
-        linearLayout.setClipToPadding(false);
-        this.e.addView(linearLayout, new FrameLayout.LayoutParams(-1, -2));
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        ImageView imageView2 = this.f;
-        int i11 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.q6.s(imageView2, i11, this.resourceProvider, PorterDuff.Mode.SRC_IN);
-        this.f.setImageResource(R.drawable.ic_ab_close);
-        ImageView imageView3 = this.f;
-        int i12 = org.telegram.ui.ActionBar.j6.i6;
-        org.telegram.ui.ActionBar.q6.Q(imageView3, org.telegram.ui.ActionBar.j6.h0(org.telegram.ui.ActionBar.j6.w0(i12, this.resourceProvider), 3, -1), null, org.telegram.ui.ActionBar.q6.M(i12), this.resourceProvider);
-        this.f.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.ga
-            public final /* synthetic */ ha b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                int i13 = i7;
-                ha haVar = this.b;
-                switch (i13) {
-                    case 0:
-                        haVar.finishFragment();
-                        break;
-                    default:
-                        int[] iArr = haVar.b;
-                        ArrayList arrayList = haVar.d;
-                        if (!haVar.y && arrayList.size() == iArr.length) {
-                            boolean z10 = org.telegram.messenger.r2.a;
-                            int size = arrayList.size();
-                            int i14 = 0;
-                            while (i14 < size) {
-                                Object obj = arrayList.get(i14);
-                                i14++;
-                                if (((pa) obj).getWord().isEmpty()) {
-                                    break;
-                                }
-                            }
-                            boolean z11 = true;
-                            for (int i15 = 0; i15 < iArr.length; i15++) {
-                                pa paVar = (pa) arrayList.get(i15);
-                                boolean equalsIgnoreCase = haVar.a[iArr[i15]].equalsIgnoreCase(paVar.getWord());
-                                if (!equalsIgnoreCase && paVar.w) {
-                                    org.telegram.messenger.g0.G3(paVar);
-                                }
-                                paVar.setError(!equalsIgnoreCase);
-                                z11 &= equalsIgnoreCase;
-                            }
-                            if (z11) {
-                                haVar.y = true;
-                                haVar.Z();
-                                org.telegram.messenger.g0.v1(haVar.fragmentView);
-                                l lVar = haVar.c;
-                                if (lVar != null) {
-                                    lVar.run();
-                                    break;
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        st0Var.addView(this.f, c8.ja.d(48, 48.0f, 51, 4.0f, 12.0f, 0.0f, 0.0f));
-        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
-        i9Var.setAspectFit(true);
-        i9Var.getImageReceiver().d = org.telegram.messenger.g0.t0();
-        si.b0(org.telegram.messenger.g0.t0()).c2(i9Var, "RestrictedEmoji", "👨\u200d🏫", "100_100");
-        i9Var.getImageReceiver().X(1);
-        linearLayout.addView(i9Var, c8.ja.t(100, 100, 1, 0, 0, 0, 12));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setGravity(1);
-        i20.q(textView, i11, this.resourceProvider, null, 2131743005);
-        TextView f10 = i20.f(linearLayout, textView, c8.ja.t(-1, -2, 1, 32, 0, 32, 10), context);
-        f10.setTextSize(1, 14.0f);
-        f10.setGravity(1);
-        org.telegram.ui.ActionBar.q6.U(f10, org.telegram.ui.ActionBar.j6.z6, this.resourceProvider);
-        int[] iArr = this.b;
-        org.telegram.messenger.k5.q(null, null, 2131743004, new Object[]{Integer.valueOf(iArr[0] + 1), Integer.valueOf(iArr[1] + 1), Integer.valueOf(iArr[2] + 1)}, f10);
-        linearLayout.addView(f10, c8.ja.t(-1, -2, 1, 32, 0, 32, 8));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setOrientation(1);
-        linearLayout2.setGravity(1);
-        linearLayout2.setClipChildren(false);
-        linearLayout.addView(linearLayout2, c8.ja.t(-1, -2, 1, 0, 16, 0, 0));
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = this.d;
-        int size = arrayList2.size();
-        int i13 = 0;
-        while (i13 < size) {
-            Object obj = arrayList2.get(i13);
-            i13++;
-            arrayList.add(((pa) obj).getWord());
-        }
-        arrayList2.clear();
-        int i14 = 0;
-        while (i14 < iArr.length) {
-            pa paVar = new pa(iArr[i14], context, this.resourceProvider, false);
-            if (i14 < arrayList.size()) {
-                paVar.setText((String) arrayList.get(i14));
-            }
-            paVar.setOnTextChangedListener(new l(this, 14));
-            paVar.setOnNextListener(new u11(this, i14, paVar, 21));
-            linearLayout2.addView(paVar, c8.ja.t(-1, 50, 1, 0, i14 == 0 ? 0 : 12, 0, 0));
-            arrayList2.add(paVar);
-            i14++;
-        }
-        linearLayout.addView(new View(context), c8.ja.l(1.0f, -1, 0));
-        hi.d dVar = new hi.d(context, this.resourceProvider, true);
-        this.h = dVar;
-        dVar.f();
-        this.h.setText(hd.M0(2131743154, null));
-        this.h.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Wallet.ga
-            public final /* synthetic */ ha b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                int i132 = i10;
-                ha haVar = this.b;
-                switch (i132) {
-                    case 0:
-                        haVar.finishFragment();
-                        break;
-                    default:
-                        int[] iArr2 = haVar.b;
-                        ArrayList arrayList3 = haVar.d;
-                        if (!haVar.y && arrayList3.size() == iArr2.length) {
-                            boolean z10 = org.telegram.messenger.r2.a;
-                            int size2 = arrayList3.size();
-                            int i142 = 0;
-                            while (i142 < size2) {
-                                Object obj2 = arrayList3.get(i142);
-                                i142++;
-                                if (((pa) obj2).getWord().isEmpty()) {
-                                    break;
-                                }
-                            }
-                            boolean z11 = true;
-                            for (int i15 = 0; i15 < iArr2.length; i15++) {
-                                pa paVar2 = (pa) arrayList3.get(i15);
-                                boolean equalsIgnoreCase = haVar.a[iArr2[i15]].equalsIgnoreCase(paVar2.getWord());
-                                if (!equalsIgnoreCase && paVar2.w) {
-                                    org.telegram.messenger.g0.G3(paVar2);
-                                }
-                                paVar2.setError(!equalsIgnoreCase);
-                                z11 &= equalsIgnoreCase;
-                            }
-                            if (z11) {
-                                haVar.y = true;
-                                haVar.Z();
-                                org.telegram.messenger.g0.v1(haVar.fragmentView);
-                                l lVar = haVar.c;
-                                if (lVar != null) {
-                                    lVar.run();
-                                    break;
-                                }
-                            }
-                        }
-                        break;
-                }
-            }
-        });
-        linearLayout.addView(this.h, c8.ja.t(-1, 48, 1, 0, 24, 0, 0));
-        Z();
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onInsets(int i7, int i10, int i11, int i12) {
-        this.r = i7;
-        this.s = i10;
-        this.w = i11;
-        this.x = i12;
-        ScrollView scrollView = this.e;
-        if (scrollView != null) {
-            scrollView.setPadding(i7, org.telegram.messenger.g0.L(96.0f) + i10, i11, i12 + this.n);
-        }
-        ImageView imageView = this.f;
-        if (imageView != null) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) imageView.getLayoutParams();
-            layoutParams.leftMargin = org.telegram.messenger.g0.L(4.0f) + i7;
-            layoutParams.topMargin = org.telegram.messenger.g0.L(12.0f) + i10;
-            this.f.setLayoutParams(layoutParams);
+                break;
         }
     }
 }

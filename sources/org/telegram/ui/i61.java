@@ -1,38 +1,80 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i61 implements org.telegram.messenger.z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ t71 b;
+public final class i61 extends org.telegram.ui.Components.bk0 {
+    public final Context c;
+    public org.telegram.ui.ActionBar.m6 d;
+    public ArrayList e;
+    public final /* synthetic */ ThemeActivity f;
 
-    public /* synthetic */ i61(t71 t71Var, int i7) {
-        this.a = i7;
-        this.b = t71Var;
+    public i61(ThemeActivity themeActivity, Context context) {
+        this.f = themeActivity;
+        this.c = context;
+        f();
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                t71 t71Var = this.b;
-                t71Var.getClass();
-                t71Var.p1 = ((Float) obj).floatValue();
-                t71Var.z0.invalidate();
-                t71Var.a1();
-                break;
-            case 1:
-                t71 t71Var2 = this.b;
-                t71Var2.X1 = (TL_stories.TL_premium_boostsStatus) obj;
-                t71Var2.W1 = true;
-                t71Var2.m1(true);
-                t71Var2.V1 = false;
-                break;
-            default:
-                t71.Z(this.b, (org.telegram.messenger.e3) obj);
-                break;
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        return false;
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        if (this.e.isEmpty()) {
+            return 0;
         }
+        return this.e.size() + 1;
+    }
+
+    @Override // v4.i0
+    public final int d(int i7) {
+        return i7 == b() - 1 ? 1 : 0;
+    }
+
+    @Override // v4.i0
+    public final void f() {
+        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.n6.J : org.telegram.ui.ActionBar.n6.D0();
+        this.e = new ArrayList(this.d.c0);
+        super.f();
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        View view = f1Var.a;
+        int d = d(i7);
+        if (d == 0) {
+            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
+            org.telegram.ui.ActionBar.m6 m6Var = this.d;
+            org.telegram.ui.ActionBar.k6 k6Var = (org.telegram.ui.ActionBar.k6) this.e.get(i7);
+            innerAccentView.d = m6Var;
+            innerAccentView.e = k6Var;
+            innerAccentView.a(false);
+            return;
+        }
+        if (d != 1) {
+            return;
+        }
+        z51 z51Var = (z51) view;
+        org.telegram.ui.ActionBar.m6 m6Var2 = this.d;
+        int i10 = z51.c;
+        z51Var.getClass();
+        if (m6Var2.X >= 8) {
+            z51Var.b = new int[]{m6Var2.l(6), m6Var2.l(4), m6Var2.l(7), m6Var2.l(2), m6Var2.l(0), m6Var2.l(5), m6Var2.l(3)};
+        } else {
+            z51Var.b = new int[7];
+        }
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        Context context = this.c;
+        return i7 != 0 ? new org.telegram.ui.Components.kj0(new z51(context)) : new org.telegram.ui.Components.kj0(new ThemeActivity.InnerAccentView(context));
     }
 }

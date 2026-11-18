@@ -1,52 +1,60 @@
 package ch;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.ui.Cells.y0;
-import org.telegram.ui.Components.mi0;
+import c8.ma;
+import org.telegram.messenger.gd;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q extends mi0 {
-    public float n1;
-    public long o1;
+public final /* synthetic */ class q implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s b;
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        long min = Math.min(16L, System.currentTimeMillis() - this.o1);
-        this.o1 = System.currentTimeMillis();
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-        canvas.saveLayerAlpha(rectF, (int) (this.n1 * 255.0f), 31);
-        super.draw(canvas);
-        canvas.restore();
-        if (!isEnabled()) {
-            float f10 = this.n1;
-            if (f10 != 0.0f) {
-                this.n1 = y0.z(min, 150.0f, f10, 0.0f);
-                invalidate();
-                if (this.n1 == 0.0f) {
-                    setVisibility(8);
-                    return;
-                }
-                return;
-            }
-        }
-        if (isEnabled()) {
-            float f11 = this.n1;
-            if (f11 != 1.0f) {
-                this.n1 = y0.e(min, 150.0f, f11, 1.0f);
-                invalidate();
-            }
-        }
+    public /* synthetic */ q(s sVar, int i7) {
+        this.a = i7;
+        this.b = sVar;
     }
 
-    @Override // android.view.View
-    public final void setVisibility(int i7) {
-        super.setVisibility(i7);
-        if (i7 != 8 || this.n1 == 0.0f) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c(true);
+                break;
+            default:
+                s sVar = this.b;
+                sVar.e = sVar.b();
+                int i7 = sVar.f;
+                int i10 = sVar.h;
+                bn bnVar = sVar.a;
+                if (sVar.b == null) {
+                    r rVar = new r((bnVar.getUserConfig().e() > bnVar.a() ? 1 : (bnVar.getUserConfig().e() == bnVar.a() ? 0 : -1)) == 0 ? 3 : 0, bnVar.getCurrentAccount(), sVar.getContext(), sVar.a, bnVar.getResourceProvider());
+                    rVar.n1 = 1.0f;
+                    rVar.setWillNotDraw(false);
+                    sVar.b = rVar;
+                    int L = org.telegram.messenger.g0.L(4.0f) + (gd.a0 ? 0 : i10);
+                    int L2 = org.telegram.messenger.g0.L(4.0f);
+                    int L3 = org.telegram.messenger.g0.L(4.0f);
+                    if (!gd.a0) {
+                        i10 = 0;
+                    }
+                    rVar.setPadding(L, L2, L3 + i10, org.telegram.messenger.g0.L(i7));
+                    sVar.b.setDelegate(new ob.c(sVar, 10));
+                    sVar.b.setClipChildren(false);
+                    sVar.b.setClipToPadding(false);
+                    sVar.addView(sVar.b, ma.e(-2, i7 + 70, 5));
+                }
+                sVar.c(false);
+                if (!sVar.b.isEnabled()) {
+                    sVar.y = false;
+                    sVar.b.setTransitionProgress(1.0f);
+                    break;
+                } else {
+                    sVar.y = true;
+                    sVar.b.p(sVar.e, bnVar.r8, true);
+                    sVar.b.r(false);
+                    break;
+                }
         }
-        this.n1 = 0.0f;
     }
 }

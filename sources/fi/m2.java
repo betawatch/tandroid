@@ -1,35 +1,44 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import org.telegram.ui.Components.j90;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.q90;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class m2 extends j90 {
-    public final /* synthetic */ b4 W;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class m2 implements q90 {
+    public final /* synthetic */ z3 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m2(b4 b4Var, Context context, long j3, org.telegram.ui.ActionBar.e2 e2Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, j3, 0L, e2Var, e6Var);
-        this.W = b4Var;
+    public m2(z3 z3Var) {
+        this.a = z3Var;
     }
 
-    @Override // org.telegram.ui.Components.j90
-    public final void f(Canvas canvas, Rect rect, float f10) {
-        b4 b4Var = this.W;
-        a8.b8 b8Var = b4Var.z1;
-        b8Var.k(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(rect);
-        rectF.offset(0.0f, 0.0f);
-        canvas.drawRoundRect(rectF, f10, f10, (Paint) b8Var.a);
-        canvas.drawRoundRect(rectF, f10, f10, b4Var.X1);
-        if (rectF.top < getMeasuredHeight() - 1) {
-            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, b4Var.l0.d("paintDivider"));
-        }
+    @Override // org.telegram.ui.Components.q90
+    public final Paint.FontMetricsInt P() {
+        return this.a.L1.getEditField().getPaint().getFontMetricsInt();
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final void Y(TLRPC.TL_document tL_document, String str, Object obj) {
+        z3 z3Var = this.a;
+        org.telegram.ui.Components.b5.X(z3Var.m2, 1, z3Var.l1, new bi.i2(this, tL_document, str, obj, 1));
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i7) {
+        z3 z3Var = this.a;
+        org.telegram.ui.Components.b5.X(z3Var.m2, 1, z3Var.l1, new l2(i7, 0, this, botInlineResult, z10));
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final void l0(int i7, int i10, CharSequence charSequence, boolean z10) {
+        this.a.L1.l1(i7, i10, charSequence, z10);
+    }
+
+    @Override // org.telegram.ui.Components.q90
+    public final void q0(String str) {
+        i2 i2Var = this.a.L1;
+        i2Var.Z();
+        i2Var.V0.h(str);
     }
 }

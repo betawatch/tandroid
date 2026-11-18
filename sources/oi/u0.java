@@ -3,44 +3,44 @@ package oi;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class u0 extends a41 {
+public final class u0 extends k41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        a41.h(new u0());
+        k41.h(new u0());
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        gj gjVar;
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        fj fjVar;
         r rVar;
         v0 v0Var = (v0) view;
-        a aVar = (a) b41Var.G;
-        l3 l3Var = (l3) b41Var.H;
+        a aVar = (a) l41Var.H;
+        n3 n3Var = (n3) l41Var.I;
         v0Var.a = aVar;
-        v0Var.T = l3Var;
-        v0Var.N = hd.a0;
+        v0Var.T = n3Var;
+        v0Var.N = gd.a0;
         v0Var.c(aVar);
         v0Var.G.b();
         TLRPC.Document h = v0Var.h();
         if (v0Var.V != h) {
             v0Var.V = h;
             if (h == null) {
-                gjVar = null;
+                fjVar = null;
             } else {
                 TLRPC.TL_message tL_message = new TLRPC.TL_message();
                 tL_message.out = true;
@@ -50,7 +50,7 @@ public final class u0 extends a41 {
                 tL_message.from_id = tL_peerUser;
                 TLRPC.Peer peer = tL_message.peer_id;
                 int i7 = v0Var.n;
-                long e10 = m10.i(i7).e();
+                long e10 = j10.i(i7).e();
                 peer.user_id = e10;
                 tL_peerUser.user_id = e10;
                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -64,9 +64,9 @@ public final class u0 extends a41 {
                 if (aVar2 != null && (rVar = aVar2.g) != null && !TextUtils.isEmpty(rVar.e)) {
                     tL_message.attachPath = v0Var.a.g.e;
                 }
-                gjVar = new gj(i7, tL_message, false, true);
+                fjVar = new fj(i7, tL_message, false, true);
             }
-            v0Var.U = gjVar;
+            v0Var.U = fjVar;
         }
         v0Var.g(h);
         v0Var.l();
@@ -77,15 +77,15 @@ public final class u0 extends a41 {
         v0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        v0 v0Var = new v0(i7, context, e6Var);
-        v0Var.setBackground(new w1(j6.w0(j6.d6, e6Var)));
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        v0 v0Var = new v0(i7, context, i6Var);
+        v0Var.setBackground(new w1(n6.w0(n6.d6, i6Var)));
         v0Var.a0 = true;
         return v0Var;
     }
 
-    @Override // org.telegram.ui.Components.a41
+    @Override // org.telegram.ui.Components.k41
     public final boolean f() {
         return false;
     }

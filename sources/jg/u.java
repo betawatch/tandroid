@@ -1,20 +1,23 @@
 package jg;
 
 import android.graphics.RectF;
+import bi.u4;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.f30;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.c9;
-import org.telegram.ui.yt0;
+import org.telegram.ui.cu0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,11 +25,11 @@ public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ u(int i7, HashSet hashSet, e2 e2Var) {
+    public /* synthetic */ u(int i7, HashSet hashSet, h2 h2Var) {
         this.a = 4;
         this.b = i7;
         this.d = hashSet;
-        this.c = e2Var;
+        this.c = h2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -39,7 +42,7 @@ public final /* synthetic */ class u implements RequestDelegate {
             case 0:
                 h0 h0Var = (h0) obj2;
                 h0Var.getClass();
-                org.telegram.messenger.g0.h3(new ci.p0((Object) h0Var, this.b, (Object) tLObject, (String) obj, 6));
+                org.telegram.messenger.g0.g3(new u4(h0Var, this.b, tLObject, (String) obj, 7));
                 break;
             case 1:
                 ((VoIPService) obj2).lambda$startConferenceGroupCall$34(i10, (String) obj, tLObject, tL_error);
@@ -48,27 +51,27 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) obj2).lambda$editCallMember$90(i10, (Runnable) obj, tLObject, tL_error);
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new ci.p0((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 15));
+                org.telegram.messenger.g0.g3(new u4((c9) obj2, tLObject, this.b, (TLRPC.User) obj, 16));
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new ai.g1(tLObject, this.b, (HashSet) obj2, tL_error, (e2) obj, 11));
+                org.telegram.messenger.g0.g3(new ai.g1(tLObject, this.b, (HashSet) obj2, tL_error, (h2) obj, 11));
                 break;
             case 5:
-                org.telegram.messenger.g0.h3(new ci.p0((e2) obj2, tLObject, this.b, (z10) obj, 23));
+                org.telegram.messenger.g0.g3(new u4((h2) obj2, tLObject, this.b, (x10) obj, 24));
                 break;
             case 6:
-                org.telegram.messenger.g0.h3(new ci.p0(obj2, this.b, (Object) tLObject, (String) obj, 25));
+                org.telegram.messenger.g0.g3(new u4((f30) obj2, this.b, tLObject, (String) obj, 26));
                 break;
             case 7:
-                org.telegram.messenger.g0.h3(new ci.p0(obj2, this.b, (Object) tLObject, (String) obj, 27));
+                org.telegram.messenger.g0.g3(new u4((cp0) obj2, this.b, tLObject, (String) obj, 28));
                 break;
             case 8:
-                RectF rectF = ProfileActivity.X6;
-                org.telegram.messenger.g0.i3(new yt0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
+                RectF rectF = ProfileActivity.Z6;
+                org.telegram.messenger.g0.h3(new cu0((ProfileActivity) obj2, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) obj, 0), i10);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
-                z10 z10Var = (z10) obj;
+                x10 x10Var = (x10) obj;
                 if (tLObject instanceof Vector) {
                     Vector vector = (Vector) tLObject;
                     ArrayList arrayList = new ArrayList();
@@ -86,11 +89,11 @@ public final /* synthetic */ class u implements RequestDelegate {
                     }
                     boolean isEmpty = arrayList2.isEmpty();
                     int i12 = this.b;
-                    if (isEmpty || !wg.q.h()) {
-                        org.telegram.messenger.g0.h3(new wg.m(chat, i12, arrayList, z10Var, 1));
+                    if (isEmpty || !wg.s.h()) {
+                        org.telegram.messenger.g0.g3(new wg.m(chat, i12, arrayList, x10Var, 1));
                         break;
                     } else {
-                        org.telegram.messenger.r1.i().o(arrayList2, new bg.f0(arrayList, chat, i12, z10Var, 10));
+                        org.telegram.messenger.r1.i().o(arrayList2, new bg.g0(arrayList, chat, i12, x10Var, 10));
                         break;
                     }
                 }

@@ -1,9 +1,9 @@
 package gb;
 
-import c8.m1;
+import c8.h9;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h0 implements oe.e {
     public static final h0 a;
@@ -75,7 +75,7 @@ public final /* synthetic */ class h0 implements oe.e {
 
     @Override // oe.e
     public final ke.a[] c() {
-        return new ke.a[]{l0.a, m1.a(e1.a), m1.a((ke.a) j0.d[2].getValue())};
+        return new ke.a[]{l0.a, h9.a(e1.a), h9.a((ke.a) j0.d[2].getValue())};
     }
 
     @Override // ke.a

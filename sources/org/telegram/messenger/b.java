@@ -2,9 +2,9 @@ package org.telegram.messenger;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class b implements org.telegram.ui.Components.c00 {
+public final class b implements org.telegram.ui.Components.j00 {
     public final Thread c;
     public final ai.o d;
     public volatile boolean e;
@@ -25,7 +25,7 @@ public final class b implements org.telegram.ui.Components.c00 {
         thread.start();
     }
 
-    @Override // org.telegram.ui.Components.c00
+    @Override // org.telegram.ui.Components.j00
     public final void a() {
         synchronized (this.a) {
             this.f++;
@@ -35,7 +35,7 @@ public final class b implements org.telegram.ui.Components.c00 {
         this.c.interrupt();
     }
 
-    @Override // org.telegram.ui.Components.c00
+    @Override // org.telegram.ui.Components.j00
     public final void b() {
         synchronized (this.a) {
             this.f++;

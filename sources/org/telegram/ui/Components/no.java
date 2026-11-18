@@ -1,55 +1,76 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class no implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ep b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    public /* synthetic */ no(ep epVar, int i7) {
-        this.a = i7;
-        this.b = epVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class no extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final /* synthetic */ int U;
+    public Object V;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ no(int i7, int i10, int i11, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(i7, i10, context, i6Var);
+        this.U = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.U) {
             case 0:
-                this.b.r1.f();
-                break;
+                canvas.save();
+                Path path = (Path) this.V;
+                path.rewind();
+                RectF rectF = org.telegram.messenger.g0.P;
+                rectF.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path.addRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild;
             case 1:
-                this.b.K0(true);
-                break;
+                canvas.save();
+                Path path2 = (Path) this.V;
+                path2.rewind();
+                RectF rectF2 = org.telegram.messenger.g0.P;
+                rectF2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                path2.addRoundRect(rectF2, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), Path.Direction.CW);
+                canvas.clipPath(path2);
+                boolean drawChild2 = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild2;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        int i11;
+        switch (this.U) {
             case 2:
-                ep epVar = this.b;
-                org.telegram.ui.an anVar = epVar.v1;
-                org.telegram.ui.ActionBar.e2 g02 = org.telegram.ui.z41.g0(anVar.getMessagesController().M0(Long.valueOf(-anVar.a())), true);
-                org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                c2Var.a = true;
-                g02.setResourceProvider(anVar.getResourceProvider());
-                c2Var.c = new ih(2);
-                c2Var.d = new no(epVar, 3);
-                c2Var.b = new no(epVar, 4);
-                c2Var.e = true;
-                epVar.R1 = g02;
-                anVar.showAsSheet(g02, c2Var);
-                break;
-            case 3:
-                this.b.O0();
-                break;
-            case 4:
-                this.b.R1 = null;
-                break;
-            case 5:
-                this.b.O0();
-                break;
-            case 6:
-                this.b.R1 = null;
+                y60 y60Var = (y60) this.V;
+                if (this == y60Var.A && (i11 = y60Var.a0) > 0) {
+                    i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i11, View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10));
+                }
+                super.onMeasure(i7, i10);
                 break;
             default:
-                ep epVar2 = this.b;
-                epVar2.O1.c(epVar2.A1);
+                super.onMeasure(i7, i10);
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public no(y60 y60Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(R.drawable.popup_fixed_alert4, i7, context, i6Var);
+        this.U = 2;
+        this.V = y60Var;
     }
 }

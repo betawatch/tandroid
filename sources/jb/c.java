@@ -4,7 +4,7 @@ import android.util.Log;
 import m1.e1;
 import m1.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -52,16 +52,16 @@ public final class c extends kd.j implements rd.p {
         switch (this.a) {
             case 0:
                 jd.a aVar = jd.a.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 Log.e("FirebaseSessions", "Error failed to fetch the remote configs: " + ((String) this.b));
                 return gd.k.a;
             case 1:
                 jd.a aVar2 = jd.a.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 return Boolean.valueOf(!(((e1) this.b) instanceof l0));
             default:
                 jd.a aVar3 = jd.a.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 return (i) this.b;
         }
     }

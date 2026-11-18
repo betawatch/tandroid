@@ -1,46 +1,77 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class ee {
-    public static final long a(long j3) {
-        long j10 = (j3 << 1) + 1;
-        int i7 = yd.a.d;
-        int i10 = yd.b.a;
-        return j10;
-    }
-
-    public static final long b(long j3) {
-        long j10 = j3 << 1;
-        int i7 = yd.a.d;
-        int i10 = yd.b.a;
-        return j10;
-    }
-
-    public static final long c(int i7, yd.c unit) {
-        kotlin.jvm.internal.j.e(unit, "unit");
-        return unit.compareTo(yd.c.d) <= 0 ? b(fe.a(i7, unit, yd.c.b)) : d(i7, unit);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0043, code lost:
-    
-        if (r5 > 4611686018427387903L) goto L10;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static final long d(long j3, yd.c unit) {
-        kotlin.jvm.internal.j.e(unit, "unit");
-        yd.c cVar = yd.c.b;
-        long a10 = fe.a(4611686018426999999L, cVar, unit);
-        if ((-a10) <= j3 && j3 <= a10) {
-            return b(fe.a(j3, unit, cVar));
+    public static w0.i a(String str, String str2) {
+        Exception a10;
+        try {
+            y0.b bVar = new y0.b(new x0.a(26), null);
+            if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_ABORT_ERROR")) {
+                a10 = zd.a(new x0.a(0), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_CONSTRAINT_ERROR")) {
+                a10 = zd.a(new x0.a(1), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_DATA_CLONE_ERROR")) {
+                a10 = zd.a(new x0.a(2), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_DATA_ERROR")) {
+                a10 = zd.a(new x0.a(3), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_ENCODING_ERROR")) {
+                a10 = zd.a(new x0.a(4), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_HIERARCHY_REQUEST_ERROR")) {
+                a10 = zd.a(new x0.a(5), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_IN_USE_ATTRIBUTE_ERROR")) {
+                a10 = zd.a(new x0.a(6), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_CHARACTER_ERROR")) {
+                a10 = zd.a(new x0.a(7), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_MODIFICATION_ERROR")) {
+                a10 = zd.a(new x0.a(8), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_NODE_TYPE_ERROR")) {
+                a10 = zd.a(new x0.a(9), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_INVALID_STATE_ERROR")) {
+                a10 = zd.a(new x0.a(10), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NAMESPACE_ERROR")) {
+                a10 = zd.a(new x0.a(11), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NETWORK_ERROR")) {
+                a10 = zd.a(new x0.a(12), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NO_MODIFICATION_ALLOWED_ERROR")) {
+                a10 = zd.a(new x0.a(13), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_ALLOWED_ERROR")) {
+                a10 = zd.a(new x0.a(14), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_FOUND_ERROR")) {
+                a10 = zd.a(new x0.a(15), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_READABLE_ERROR")) {
+                a10 = zd.a(new x0.a(16), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_NOT_SUPPORTED_ERROR")) {
+                a10 = zd.a(new x0.a(17), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_OPERATION_ERROR")) {
+                a10 = zd.a(new x0.a(18), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_OPT_OUT_ERROR")) {
+                a10 = zd.a(new x0.a(19), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_QUOTA_EXCEEDED_ERROR")) {
+                a10 = zd.a(new x0.a(20), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_READ_ONLY_ERROR")) {
+                a10 = zd.a(new x0.a(21), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_SECURITY_ERROR")) {
+                a10 = zd.a(new x0.a(22), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_SYNTAX_ERROR")) {
+                a10 = zd.a(new x0.a(23), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_TIMEOUT_ERROR")) {
+                a10 = zd.a(new x0.a(24), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_TRANSACTION_INACTIVE_ERROR")) {
+                a10 = zd.a(new x0.a(25), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_UNKNOWN_ERROR")) {
+                a10 = zd.a(new x0.a(26), str2, bVar);
+            } else if (str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_VERSION_ERROR")) {
+                a10 = zd.a(new x0.a(27), str2, bVar);
+            } else {
+                if (!str.equals("androidx.credentials.TYPE_GET_PUBLIC_KEY_CREDENTIAL_DOM_EXCEPTION/androidx.credentials.TYPE_WRONG_DOCUMENT_ERROR")) {
+                    throw new z0.a();
+                }
+                a10 = zd.a(new x0.a(28), str2, bVar);
+            }
+            return (w0.i) a10;
+        } catch (z0.a unused) {
+            return new w0.h(str2, str);
         }
-        yd.c targetUnit = yd.c.c;
-        kotlin.jvm.internal.j.e(targetUnit, "targetUnit");
-        long convert = targetUnit.a.convert(j3, unit.a);
-        long j10 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
-        convert = j10;
-        return a(convert);
     }
 }

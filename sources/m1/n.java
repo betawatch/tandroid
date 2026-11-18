@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends kd.j implements rd.q {
     public final /* synthetic */ int a = 1;
@@ -31,7 +31,7 @@ public final class n extends kd.j implements rd.q {
                 jd.a aVar = jd.a.a;
                 int i7 = this.b;
                 if (i7 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     b0 b0Var = (b0) this.c;
                     this.b = 1;
                     if (b0.b(b0Var, this) == aVar) {
@@ -41,7 +41,7 @@ public final class n extends kd.j implements rd.q {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return gd.k.a;
             default:
@@ -51,10 +51,10 @@ public final class n extends kd.j implements rd.q {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     return obj;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 d0 d0Var = (d0) this.c;
                 this.b = 1;
                 d0Var.getClass();

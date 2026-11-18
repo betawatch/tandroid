@@ -1,6 +1,6 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class t7 {
     public static c0.l a(c0.j jVar) {
@@ -10,7 +10,7 @@ public abstract class t7 {
         iVar.b = lVar;
         iVar.a = jVar.getClass();
         try {
-            iVar.a = jVar.d(iVar);
+            iVar.a = jVar.e(iVar);
             return lVar;
         } catch (Exception e10) {
             lVar.b.l(e10);

@@ -5,7 +5,7 @@ import e5.k;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class f implements Runnable {
                 if (iVar.u) {
                     return;
                 }
-                g0.i3(new f(iVar, 2), 1000L);
+                g0.h3(new f(iVar, 2), 1000L);
             } catch (Throwable th2) {
                 throw th2;
             }

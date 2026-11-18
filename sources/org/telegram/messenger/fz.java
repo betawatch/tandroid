@@ -1,59 +1,42 @@
 package org.telegram.messenger;
 
-import android.text.TextUtils;
-import org.telegram.tgnet.SerializedData;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.logging.Level;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class fz {
-    public xi.a a;
-    public long b;
-    public boolean c;
-    public boolean d;
-    public long e;
+    public final ArrayList a;
 
-    public fz(xi.a aVar) {
-        this.a = aVar;
+    public fz() {
+        File file = new File(System.getProperty("java.io.tmpdir"));
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+        this.a = new ArrayList();
     }
 
-    public static fz a(int i7, SerializedData serializedData) {
-        long j3;
-        long j10;
-        n2.o0 a10 = xi.a.a();
-        String readString = serializedData.readString(false);
-        if (readString == null) {
-            readString = "";
+    public void a() {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            if (obj != null) {
+                throw new ClassCastException();
+            }
+            try {
+                throw null;
+            } catch (Exception e10) {
+                yc.i.d.log(Level.WARNING, "could not delete file ", (Throwable) e10);
+            }
         }
-        a10.c = readString;
-        a10.b = serializedData.readInt32(false);
-        String readString2 = serializedData.readString(false);
-        if (readString2 == null) {
-            readString2 = "";
-        }
-        a10.d = readString2;
-        String readString3 = serializedData.readString(false);
-        if (readString3 == null) {
-            readString3 = "";
-        }
-        a10.e = readString3;
-        String readString4 = serializedData.readString(false);
-        a10.f = readString4 != null ? readString4 : "";
-        if (i7 >= 2) {
-            j3 = serializedData.readInt64(false);
-            j10 = serializedData.readInt64(false);
-        } else {
-            j3 = 0;
-            j10 = 0;
-        }
-        if (i7 >= 3) {
-            a10.q(xi.a.f(serializedData.readInt32(false)));
-        } else {
-            a10.q(TextUtils.isEmpty(readString4) ? 1 : 2);
-        }
-        fz fzVar = new fz(a10.d());
-        fzVar.e = j10;
-        fzVar.b = j3;
-        fzVar.d = j3 > 0;
-        return fzVar;
+        arrayList.clear();
+    }
+
+    public fz(ArrayList arrayList) {
+        this.a = arrayList;
     }
 }

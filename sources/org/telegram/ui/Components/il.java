@@ -1,64 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+public final class il extends jg.s0 {
+    public final /* synthetic */ int E = 0;
+    public final /* synthetic */ org.telegram.messenger.fs F;
 
-    public /* synthetic */ il(int i7, Object obj, boolean z10) {
-        this.a = i7;
-        this.b = obj;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public il(kl klVar, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(context, i6Var, z10, false);
+        this.F = klVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        int i7 = this.a;
-        boolean z10 = false;
-        boolean z11 = this.c;
-        Object obj2 = this.b;
+    @Override // v4.i0
+    public final void f() {
+        int i7 = this.E;
+        org.telegram.messenger.fs fsVar = this.F;
         switch (i7) {
             case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z12 = ChatAttachAlertPhotoLayout.r1;
-                if (view instanceof org.telegram.ui.Cells.q5) {
-                    org.telegram.ui.Cells.q5 q5Var = (org.telegram.ui.Cells.q5) view;
-                    org.telegram.messenger.ff photoEntry = q5Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
-                        z10 = true;
-                    }
-                    q5Var.setHasSpoiler(z10);
-                    break;
+                kl klVar = (kl) fsVar;
+                il ilVar = klVar.O;
+                org.telegram.ui.ActionBar.r0 r0Var = klVar.x;
+                if (r0Var != null) {
+                    r0Var.setShowSearchProgress(ilVar.w);
                 }
-                break;
-            case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z13 = ChatAttachAlertPhotoLayout.r1;
-                if (view2 instanceof org.telegram.ui.Cells.q5) {
-                    org.telegram.ui.Cells.q5 q5Var2 = (org.telegram.ui.Cells.q5) view2;
-                    org.telegram.messenger.ff photoEntry2 = q5Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
-                        z10 = true;
-                    }
-                    q5Var2.setHighQuality(z10);
-                    break;
+                TextView textView = klVar.w;
+                if (textView != null) {
+                    textView.setText(org.telegram.messenger.gd.a0(null, null, 2131747973, ilVar.h));
                 }
+                super.f();
                 break;
             default:
-                Float f10 = (Float) obj;
-                wa waVar = ((ra) obj2).b.p;
-                if (waVar != null && !z11) {
-                    waVar.c(r0.e.getHeight() - f10.floatValue());
-                    break;
+                org.telegram.ui.pa0 pa0Var = (org.telegram.ui.pa0) fsVar;
+                org.telegram.ui.ActionBar.h5 h5Var = pa0Var.r;
+                if (h5Var != null) {
+                    h5Var.setShowSearchProgress(pa0Var.T.w);
                 }
+                TextView textView2 = pa0Var.n;
+                if (textView2 != null) {
+                    textView2.setText(org.telegram.messenger.gd.a0(null, null, 2131747973, pa0Var.T.h));
+                }
+                super.f();
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public il(org.telegram.ui.pa0 pa0Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(context, i6Var, false, z10);
+        this.F = pa0Var;
     }
 }

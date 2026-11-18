@@ -8,11 +8,11 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.AbstractCollection;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w implements Parcelable {
     public static final Parcelable.Creator<w> CREATOR = new m6.e(28);
@@ -97,7 +97,7 @@ public final class w implements Parcelable {
         AbstractCollection createTypedArrayList = parcel.createTypedArrayList(v.CREATOR);
         if (createTypedArrayList == null) {
             g0 g0Var = i0.b;
-            createTypedArrayList = s1.e;
+            createTypedArrayList = t1.e;
         }
         this.r = createTypedArrayList;
         this.s = parcel.readLong();

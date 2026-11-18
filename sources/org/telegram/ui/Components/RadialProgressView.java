@@ -10,9 +10,9 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class RadialProgressView extends View implements org.telegram.ui.ActionBar.z5 {
+public class RadialProgressView extends View implements org.telegram.ui.ActionBar.c6 {
     public float E;
     public float F;
     public int G;
@@ -20,7 +20,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
     public boolean I;
     public float J;
     public boolean K;
-    public final org.telegram.ui.ActionBar.e6 L;
+    public final org.telegram.ui.ActionBar.i6 L;
     public int M;
     public int N;
     public long a;
@@ -58,7 +58,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         b(j3);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
         hashSet.add(Integer.valueOf(this.M));
     }
@@ -208,7 +208,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
 
     public void setProgressColorKey(int i7) {
         this.M = i7;
-        setProgressColor(org.telegram.ui.ActionBar.j6.w0(i7, this.L));
+        setProgressColor(org.telegram.ui.ActionBar.n6.w0(i7, this.L));
         this.N = this.r;
     }
 
@@ -225,7 +225,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         this.h = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         Paint paint = this.x;
         if (paint != null) {
@@ -233,7 +233,7 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
                 if (this.r != this.N) {
                     return;
                 }
-                int w02 = org.telegram.ui.ActionBar.j6.w0(this.M, this.L);
+                int w02 = org.telegram.ui.ActionBar.n6.w0(this.M, this.L);
                 this.N = w02;
                 if (w02 != this.r) {
                     int alpha = paint.getAlpha();
@@ -250,15 +250,15 @@ public class RadialProgressView extends View implements org.telegram.ui.ActionBa
         }
     }
 
-    public RadialProgressView(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public RadialProgressView(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.f = new RectF();
         this.K = true;
-        int i7 = org.telegram.ui.ActionBar.j6.h6;
+        int i7 = org.telegram.ui.ActionBar.n6.h6;
         this.M = i7;
-        this.L = e6Var;
+        this.L = i6Var;
         this.y = org.telegram.messenger.g0.L(40.0f);
-        this.r = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
+        this.r = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
         this.s = new DecelerateInterpolator();
         this.w = new AccelerateInterpolator();
         Paint paint = new Paint(1);

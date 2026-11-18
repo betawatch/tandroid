@@ -1,33 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hm extends vf.b {
-    public final /* synthetic */ org.telegram.ui.Cells.q1 d;
-    public final /* synthetic */ lm e;
+public final class hm implements org.telegram.messenger.ap {
+    public final /* synthetic */ hi a;
+    public final /* synthetic */ bn b;
+    public final /* synthetic */ mm c;
 
-    public hm(lm lmVar, org.telegram.ui.Cells.q1 q1Var) {
-        this.e = lmVar;
-        this.d = q1Var;
+    public hm(mm mmVar, hi hiVar, bn bnVar) {
+        this.c = mmVar;
+        this.a = hiVar;
+        this.b = bnVar;
     }
 
-    @Override // vf.b
-    public final void c(boolean z10) {
-        if (z10) {
-            return;
-        }
-        org.telegram.messenger.g0.i3(new ej(this.e.a, 9), 250L);
+    @Override // org.telegram.messenger.ap
+    public final void a() {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 
-    @Override // vf.b
-    public final void d() {
-        lm lmVar = this.e;
-        an anVar = lmVar.a;
-        org.telegram.ui.Cells.q1 q1Var = this.d;
-        anVar.Zb = q1Var.getMessageObject().e1();
-        an anVar2 = lmVar.a;
-        anVar2.ac = 2;
-        anVar2.bc = null;
-        q1Var.invalidate();
+    @Override // org.telegram.messenger.ap
+    public final void f(boolean z10) {
+        this.a.c(false);
+        this.c.a.presentFragment(this.b);
     }
 }

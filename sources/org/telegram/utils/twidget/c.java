@@ -3,13 +3,13 @@ package org.telegram.utils.twidget;
 import android.os.IBinder;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class c implements d {
     public IBinder a;
 
     @Override // org.telegram.utils.twidget.d
-    public final byte[] B(int i7, int i10, int i11, int i12, int i13) {
+    public final byte[] A(int i7, int i10, int i11, int i12, int i13) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -19,7 +19,7 @@ public final class c implements d {
             obtain.writeInt(i11);
             obtain.writeInt(i12);
             obtain.writeInt(i13);
-            this.a.transact(11, obtain, obtain2, 0);
+            this.a.transact(12, obtain, obtain2, 0);
             obtain2.readException();
             return obtain2.createByteArray();
         } finally {
@@ -29,13 +29,13 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void E(int i7) {
+    public final void D(int i7) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
             obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
             obtain.writeInt(i7);
-            this.a.transact(12, obtain, obtain2, 0);
+            this.a.transact(13, obtain, obtain2, 0);
             obtain2.readException();
         } finally {
             obtain2.recycle();
@@ -44,7 +44,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void G(byte[] bArr, byte[] bArr2, double d, int i7, int i10, float f10, float f11, int i11, int i12) {
+    public final void F(byte[] bArr, byte[] bArr2, double d, int i7, int i10, float f10, float f11, int i11, int i12) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -67,7 +67,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final float[] H(int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2) {
+    public final float[] G(int i7, byte[] bArr, float f10, int i10, boolean z10, byte[] bArr2) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -88,7 +88,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void K0(int i7, int i10, byte[] bArr) {
+    public final void J0(int i7, int i10, byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -105,7 +105,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void R0(byte[] bArr) {
+    public final void Q0(byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -115,6 +115,19 @@ public final class c implements d {
             obtain2.readException();
         } finally {
             obtain2.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // org.telegram.utils.twidget.d
+    public final void R0(int i7, float f10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken("org.telegram.utils.twidget.IWidgetEngineCallback");
+            obtain.writeInt(i7);
+            obtain.writeFloat(f10);
+            this.a.transact(10, obtain, null, 1);
+        } finally {
             obtain.recycle();
         }
     }
@@ -140,7 +153,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void i0(byte[] bArr) {
+    public final void h0(byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -155,7 +168,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final float q0(int i7, byte[] bArr) {
+    public final float p0(int i7, byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -172,7 +185,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void u0(int i7, int i10, int i11, int[] iArr) {
+    public final void t0(int i7, int i10, int i11, int[] iArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -181,7 +194,7 @@ public final class c implements d {
             obtain.writeInt(i10);
             obtain.writeInt(i11);
             obtain.writeIntArray(iArr);
-            this.a.transact(10, obtain, obtain2, 0);
+            this.a.transact(11, obtain, obtain2, 0);
             obtain2.readException();
         } finally {
             obtain2.recycle();
@@ -190,7 +203,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void w0(int i7, byte[] bArr) {
+    public final void v0(int i7, byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -206,7 +219,7 @@ public final class c implements d {
     }
 
     @Override // org.telegram.utils.twidget.d
-    public final void y(int i7, int i10, int i11, byte[] bArr) {
+    public final void x(int i7, int i10, int i11, byte[] bArr) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {

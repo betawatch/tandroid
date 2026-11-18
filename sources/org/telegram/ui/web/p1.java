@@ -6,9 +6,8 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.lv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements ValueCallback {
     public final /* synthetic */ int a;
@@ -45,7 +44,7 @@ public final /* synthetic */ class p1 implements ValueCallback {
                     xi.e eVar = new xi.e(file2);
                     v1Var2.b = eVar;
                     if (!((ArrayList) eVar.b).isEmpty()) {
-                        o1Var.a(((a1) ((ArrayList) v1Var2.b.b).get(0)).a());
+                        o1Var.a(((b1) ((ArrayList) v1Var2.b.b).get(0)).a());
                         return;
                     }
                 } catch (Exception e10) {
@@ -55,11 +54,11 @@ public final /* synthetic */ class p1 implements ValueCallback {
                 return;
             default:
                 xi.i iVar = (xi.i) this.b;
-                lv0 lv0Var = (lv0) this.d;
+                wg.q qVar = (wg.q) this.d;
                 WebView webView3 = this.c;
                 e5.f fVar = (e5.f) this.e;
                 String str = (String) obj;
-                org.telegram.messenger.g0.r(lv0Var);
+                org.telegram.messenger.g0.r(qVar);
                 synchronized (iVar.a) {
                     if (!iVar.u && iVar.o == webView3 && iVar.p == fVar && !iVar.r) {
                         if (!"true".equals(str)) {
@@ -83,10 +82,10 @@ public final /* synthetic */ class p1 implements ValueCallback {
         }
     }
 
-    public /* synthetic */ p1(xi.i iVar, lv0 lv0Var, WebView webView, e5.f fVar) {
+    public /* synthetic */ p1(xi.i iVar, wg.q qVar, WebView webView, e5.f fVar) {
         this.a = 2;
         this.b = iVar;
-        this.d = lv0Var;
+        this.d = qVar;
         this.c = webView;
         this.e = fVar;
     }

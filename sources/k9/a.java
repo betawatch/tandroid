@@ -1,7 +1,8 @@
 package k9;
 
-import a8.ha;
+import a8.ja;
 import a8.xa;
+import cb.c;
 import f5.g;
 import g9.b;
 import g9.e;
@@ -10,15 +11,17 @@ import g9.i;
 import h9.c0;
 import h9.f0;
 import h9.g0;
-import h9.h1;
+import h9.g1;
 import h9.i0;
+import h9.i1;
 import h9.j0;
-import h9.l1;
+import h9.m1;
 import h9.o;
 import h9.q;
 import h9.s;
-import h9.s1;
+import h9.t1;
 import h9.y;
+import hi.f9;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.AbstractCollection;
@@ -27,10 +30,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import ob.c;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final j0 f;
@@ -46,7 +48,7 @@ public final class a {
 
     static {
         j0 j0Var;
-        String c10 = ha.c(StandardCharsets.UTF_8.name());
+        String c10 = ja.c(StandardCharsets.UTF_8.name());
         o.f("charset", c10);
         s b10 = s.b();
         c0 c0Var = (c0) b10.get("charset");
@@ -68,8 +70,8 @@ public final class a {
             while (it.hasNext()) {
                 Map.Entry entry = (Map.Entry) it.next();
                 Object key = entry.getKey();
-                s1 f10 = ((f0) entry.getValue()).f();
-                xaVar.u(key, f10);
+                t1 f10 = ((f0) entry.getValue()).f();
+                xaVar.w(key, f10);
                 i7 += f10.d;
             }
             j0Var = new j0(xaVar.c(true), i7);
@@ -200,7 +202,7 @@ public final class a {
         a("font", "ttf");
         a("font", "woff");
         a("font", "woff2");
-        j = new c(new g("; ", 1), 25);
+        j = new c(new g("; "), 26);
     }
 
     public a(String str, String str2, j0 j0Var) {
@@ -221,8 +223,8 @@ public final class a {
         return aVar;
     }
 
-    public final h1 c() {
-        return new h1(this.c.b(), new c(new i0.b(10), 29));
+    public final i1 c() {
+        return new i1(this.c.b(), new g1(new f9(11), 0));
     }
 
     public final boolean equals(Object obj) {
@@ -258,11 +260,11 @@ public final class a {
         j0 j0Var = this.c;
         if (j0Var.f != 0) {
             sb2.append("; ");
-            Collection a10 = new l1(j0Var, new c(new i0.b(9), 29)).a();
+            Collection a10 = new m1(j0Var, new g1(new f9(10), 0)).a();
             c cVar = j;
             cVar.getClass();
             try {
-                cVar.c(sb2, a10.iterator());
+                cVar.e(sb2, a10.iterator());
             } catch (IOException e10) {
                 throw new AssertionError(e10);
             }

@@ -1,17 +1,16 @@
 package h6;
 
 import com.google.android.gms.common.api.internal.BasePendingResult;
-import hi.e1;
 import java.net.Socket;
 import java.util.ArrayDeque;
 import java.util.TimerTask;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.fo;
+import org.telegram.ui.Components.mo;
 import org.telegram.ui.dc0;
-import org.telegram.ui.ef0;
-import org.telegram.ui.iz;
+import org.telegram.ui.hf0;
+import org.telegram.ui.lz;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends TimerTask {
     public final /* synthetic */ int a;
@@ -33,7 +32,7 @@ public final class r extends TimerTask {
                     h hVar = cVar.c;
                     int[] e10 = j6.a.e(arrayDeque);
                     hVar.getClass();
-                    q6.m.d("Must be called from the main thread.");
+                    q6.m.e("Must be called from the main thread.");
                     if (hVar.w()) {
                         j jVar = new j(hVar, e10);
                         h.x(jVar);
@@ -48,19 +47,19 @@ public final class r extends TimerTask {
                 }
                 break;
             case 1:
-                g0.h3(new e1(this, 4));
+                g0.g3(new hi.k(this, 8));
                 break;
             case 2:
-                g0.h3(new fo(this, 24));
+                g0.g3(new mo(this, 24));
                 break;
             case 3:
                 if (((dc0) this.b).O != null) {
-                    g0.h3(new iz(this, 25));
+                    g0.g3(new lz(this, 25));
                     break;
                 }
                 break;
             case 4:
-                g0.h3(new ef0(this, 8));
+                g0.g3(new hf0(this, 8));
                 break;
             default:
                 try {

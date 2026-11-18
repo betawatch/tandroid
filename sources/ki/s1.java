@@ -1,48 +1,30 @@
 package ki;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.mb0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class s1 implements TextWatcher {
-    public boolean a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ mb0 d;
+public final /* synthetic */ class s1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t2 b;
 
-    public s1(EditTextBoldCursor editTextBoldCursor, int i7, mb0 mb0Var) {
-        this.b = editTextBoldCursor;
-        this.c = i7;
-        this.d = mb0Var;
+    public /* synthetic */ s1(t2 t2Var, int i7) {
+        this.a = i7;
+        this.b = t2Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        EditTextBoldCursor editTextBoldCursor = this.b;
-        CharSequence text = editTextBoldCursor.getText();
-        if (!this.a) {
-            int length = text.length();
-            int i7 = this.c;
-            if (length > i7) {
-                this.a = true;
-                text = text.subSequence(0, i7);
-                editTextBoldCursor.setText(text);
-                editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                this.a = false;
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                t2 t2Var = this.b;
+                t2Var.getClass();
+                t2Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                t2Var.l();
+                break;
+            default:
+                this.b.F.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        this.d.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(text));
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

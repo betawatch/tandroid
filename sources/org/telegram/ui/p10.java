@@ -1,40 +1,71 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import java.util.ArrayList;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class p10 implements Runnable {
-    public final /* synthetic */ c40 a;
+public final class p10 extends org.telegram.ui.Components.ph0 {
+    public final /* synthetic */ f40 r;
 
-    public p10(c40 c40Var) {
-        this.a = c40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p10(f40 f40Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.r = f40Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        c40 c40Var = this.a;
-        org.telegram.ui.ActionBar.j5 j5Var = c40Var.P1;
-        j30 j30Var = c40Var.Q1;
-        if (j30Var == null || c40Var.J) {
-            return;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        f40 f40Var = this.r;
+        int i7 = f40Var.E3;
+        accessibilityNodeInfo.setEnabled(i7 == 0 || i7 == 1);
+        if (f40Var.E3 == 1) {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, org.telegram.messenger.gd.M0(2131743056, null)));
         }
-        org.telegram.messenger.r3 r3Var = c40Var.V2;
-        int i7 = r3Var != null ? r3Var.b.schedule_date : c40Var.j4;
-        if (i7 == 0) {
-            return;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        f40 f40Var = this.r;
+        v00 v00Var = f40Var.x4;
+        ArrayList arrayList = f40Var.Y3;
+        if (f40Var.v1()) {
+            return super.onTouchEvent(motionEvent);
         }
-        int currentTime = i7 - ConnectionsManager.getInstance(c40Var.o1.a).getCurrentTime();
-        if (currentTime >= 86400) {
-            j30Var.l(org.telegram.messenger.hd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]), false);
-        } else {
-            j30Var.l(org.telegram.messenger.g0.j0(Math.abs(currentTime)), false);
-            if (currentTime < 0 && j5Var.getTag() == null) {
-                j5Var.setTag(1);
-                j5Var.l(org.telegram.messenger.hd.M0(2131743441, null), false);
+        if (motionEvent.getAction() == 0 && f40Var.E3 == 0 && f40Var.V2 != null) {
+            org.telegram.messenger.g0.h3(v00Var, 300L);
+            f40Var.Q3 = true;
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (f40Var.Q3) {
+                org.telegram.messenger.g0.r(v00Var);
+                f40Var.Q3 = false;
+            } else if (f40Var.R3) {
+                org.telegram.messenger.g0.r(f40Var.w4);
+                f40Var.S1(0, true);
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(true, true, false);
+                    try {
+                        f40Var.w1.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
+                }
+                arrayList.clear();
+                arrayList.addAll(f40Var.X3);
+                for (int i7 = 0; i7 < arrayList.size(); i7++) {
+                    ((org.telegram.ui.Components.voip.y) arrayList.get(i7)).j(true);
+                }
+                f40Var.R3 = false;
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                super.onTouchEvent(obtain);
+                obtain.recycle();
+                return true;
             }
         }
-        c40Var.R1.l(org.telegram.messenger.hd.W(3, i7, true), false);
-        org.telegram.messenger.g0.i3(c40Var.v4, 1000L);
+        return super.onTouchEvent(motionEvent);
     }
 }

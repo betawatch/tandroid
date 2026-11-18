@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v implements com.google.android.gms.common.api.o {
     public final /* synthetic */ k8 a;
@@ -22,13 +22,13 @@ public final class v implements com.google.android.gms.common.api.o {
     @Override // com.google.android.gms.common.api.o
     public final void a(Status status) {
         if (!status.b()) {
-            this.b.setException(m.l(status));
+            this.b.setException(m.m(status));
             return;
         }
         k8 k8Var = this.a;
         TimeUnit timeUnit = TimeUnit.MILLISECONDS;
         BasePendingResult basePendingResult = (BasePendingResult) k8Var;
-        m.i("Result has already been consumed.", !basePendingResult.j);
+        m.j("Result has already been consumed.", !basePendingResult.j);
         try {
             if (!basePendingResult.d.await(0L, timeUnit)) {
                 basePendingResult.e(Status.n);
@@ -36,7 +36,7 @@ public final class v implements com.google.android.gms.common.api.o {
         } catch (InterruptedException unused) {
             basePendingResult.e(Status.f);
         }
-        m.i("Result is not ready.", basePendingResult.g());
-        this.b.setResult(this.c.q(basePendingResult.j()));
+        m.j("Result is not ready.", basePendingResult.g());
+        this.b.setResult(this.c.o(basePendingResult.j()));
     }
 }

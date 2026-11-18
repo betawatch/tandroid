@@ -1,37 +1,30 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b4 extends ArrayAdapter {
-    public final /* synthetic */ g4 a;
+public final /* synthetic */ class b4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k4 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b4(g4 g4Var, Context context) {
-        super(context, 0);
-        this.a = g4Var;
+    public /* synthetic */ b4(k4 k4Var, int i7) {
+        this.a = i7;
+        this.b = k4Var;
     }
 
-    @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i7, View view, ViewGroup viewGroup) {
-        g4 g4Var = this.a;
-        ab.v vVar = g4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i7);
-        int width = g4Var.I.getWidth();
-        if (view != null) {
-            int i10 = vVar.a;
-            i4.e(view, menuItem, ((g4) vVar.e).Q.j != null);
-        } else {
-            view = i4.b(((g4) vVar.e).Q, (Context) vVar.c, menuItem, true, false, false);
-            int i11 = vVar.b;
-            view.setPadding(i11, 0, i11, 0);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.g();
+                break;
+            case 1:
+                this.b.g();
+                break;
+            default:
+                this.b.g();
+                break;
         }
-        view.setMinimumWidth(width);
-        return view;
     }
 }

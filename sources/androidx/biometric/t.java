@@ -1,79 +1,52 @@
 package androidx.biometric;
 
+import a8.r7;
 import android.content.Context;
 import android.content.pm.PackageInfo;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Build;
-import android.os.CancellationSignal;
-import java.security.Signature;
-import javax.crypto.Cipher;
-import javax.crypto.Mac;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t {
-    public final Context a;
+    public Context a;
 
-    public /* synthetic */ t(Context context, boolean z10) {
-        this.a = context;
-    }
-
-    public static FingerprintManager b(Context context) {
-        int i7 = Build.VERSION.SDK_INT;
-        if (i7 == 23) {
-            return (FingerprintManager) context.getSystemService(FingerprintManager.class);
-        }
-        if (i7 <= 23 || !context.getPackageManager().hasSystemFeature("android.hardware.fingerprint")) {
-            return null;
-        }
-        return (FingerprintManager) context.getSystemService(FingerprintManager.class);
-    }
-
-    public void a(h6.m mVar, ca.i iVar, ob.c cVar) {
-        CancellationSignal cancellationSignal;
-        CancellationSignal cancellationSignal2;
-        FingerprintManager.CryptoObject cryptoObject = null;
-        if (iVar != null) {
-            synchronized (iVar) {
-                try {
-                    if (((CancellationSignal) iVar.c) == null) {
-                        CancellationSignal cancellationSignal3 = new CancellationSignal();
-                        iVar.c = cancellationSignal3;
-                        if (iVar.b) {
-                            cancellationSignal3.cancel();
-                        }
-                    }
-                    cancellationSignal2 = (CancellationSignal) iVar.c;
-                } finally {
-                }
-            }
-            cancellationSignal = cancellationSignal2;
-        } else {
-            cancellationSignal = null;
-        }
-        FingerprintManager b10 = b(this.a);
-        if (b10 != null) {
-            if (mVar != null) {
-                Mac mac = (Mac) mVar.d;
-                Signature signature = (Signature) mVar.b;
-                Cipher cipher = (Cipher) mVar.c;
-                if (cipher != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(cipher);
-                } else if (signature != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(signature);
-                } else if (mac != null) {
-                    cryptoObject = new FingerprintManager.CryptoObject(mac);
-                }
-            }
-            b10.authenticate(cryptoObject, cancellationSignal, 0, new k0.a(cVar, 0), null);
+    public t(Context context, int i7) {
+        switch (i7) {
+            case 2:
+                this.a = context;
+                break;
+            default:
+                this.a = context.getApplicationContext();
+                break;
         }
     }
 
-    public PackageInfo c(int i7, String str) {
+    public o5.j a() {
+        Context context = this.a;
+        if (context == null) {
+            throw new IllegalStateException(Context.class.getCanonicalName() + " must be set");
+        }
+        o5.j jVar = new o5.j();
+        jVar.a = q5.a.a(o5.m.a);
+        e.a aVar = new e.a(context);
+        jVar.b = aVar;
+        jVar.c = q5.a.a(new ji.j(21, aVar, new of(aVar, 9)));
+        e.a aVar2 = jVar.b;
+        jVar.d = new of(aVar2, 26);
+        fd.a a10 = q5.a.a(new sg.h0(6, jVar.d, q5.a.a(new hn(aVar2, 25))));
+        jVar.e = a10;
+        pb.b bVar = new pb.b(25);
+        e.a aVar3 = jVar.b;
+        md0 md0Var = new md0(aVar3, a10, bVar, 17);
+        fd.a aVar4 = jVar.a;
+        fd.a aVar5 = jVar.c;
+        jVar.f = q5.a.a(new h6.m(new r7(aVar4, aVar5, md0Var, a10, a10, 21), new ga.d(aVar3, aVar5, a10, md0Var, aVar4, a10, a10, 5), new xi.e(aVar4, a10, md0Var, a10), false, 17));
+        return jVar;
+    }
+
+    public PackageInfo b(int i7, String str) {
         return this.a.getPackageManager().getPackageInfo(str, i7);
-    }
-
-    public t(Context context) {
-        this.a = context.getApplicationContext();
     }
 }

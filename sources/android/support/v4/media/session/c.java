@@ -6,23 +6,18 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.support.v4.media.MediaMetadataCompat;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements d {
     public IBinder a;
 
     @Override // android.support.v4.media.session.d
-    public final PendingIntent A() {
+    public final MediaMetadataCompat Q() {
         throw null;
     }
 
     @Override // android.support.v4.media.session.d
-    public final MediaMetadataCompat R() {
-        throw null;
-    }
-
-    @Override // android.support.v4.media.session.d
-    public final void V(b bVar) {
+    public final void U(b bVar) {
         Parcel obtain = Parcel.obtain();
         Parcel obtain2 = Parcel.obtain();
         try {
@@ -111,5 +106,10 @@ public final class c implements d {
             obtain2.recycle();
             obtain.recycle();
         }
+    }
+
+    @Override // android.support.v4.media.session.d
+    public final PendingIntent z() {
+        throw null;
     }
 }

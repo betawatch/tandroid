@@ -2,7 +2,7 @@ package y3;
 
 import f3.k;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends k implements h {
     public final long i;
@@ -22,13 +22,13 @@ public final class a extends k implements h {
     }
 
     @Override // y3.h
-    public final long a() {
-        return this.m;
+    public final long a(long j3) {
+        return (Math.max(0L, j3 - this.b) * 8000000) / this.e;
     }
 
     @Override // y3.h
-    public final long b(long j3) {
-        return (Math.max(0L, j3 - this.b) * 8000000) / this.e;
+    public final long b() {
+        return this.m;
     }
 
     @Override // y3.h

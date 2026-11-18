@@ -1,6 +1,37 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface s40 {
+public final /* synthetic */ class s40 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y40 b;
+
+    public /* synthetic */ s40(y40 y40Var, int i7) {
+        this.a = i7;
+        this.b = y40Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                y40 y40Var = this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue() * y40Var.getMeasuredHeight() * 0.5f;
+                y40Var.y0 = floatValue;
+                y40Var.s.setTranslationY(floatValue + y40Var.x0);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y40 y40Var2 = this.b;
+                y40Var2.A0 = floatValue2;
+                zi.u0 u0Var = y40Var2.P;
+                if (u0Var != null) {
+                    u0Var.y(floatValue2);
+                    break;
+                }
+                break;
+        }
+    }
 }

@@ -1,15 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
-public final class o5 {
-    public final int a;
-    public final Runnable b;
-    public final long c;
+import android.os.Handler;
+import android.os.Message;
 
-    public o5(int i7, long j3, Runnable runnable) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes.dex */
+public final /* synthetic */ class o5 implements Handler.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Thread b;
+
+    public /* synthetic */ o5(Thread thread, int i7) {
         this.a = i7;
-        this.b = runnable;
-        this.c = j3;
+        this.b = thread;
+    }
+
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        switch (this.a) {
+            case 0:
+                ((r5) this.b).handleMessage(message);
+                break;
+            default:
+                ((q5) this.b).getClass();
+                break;
+        }
+        return true;
     }
 }

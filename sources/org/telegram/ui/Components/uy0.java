@@ -1,54 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uy0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vy0 b;
+public final class uy0 extends FrameLayout {
+    public static final /* synthetic */ int e = 0;
+    public TextView a;
+    public ty0 b;
+    public TLRPC.TL_help_termsOfService c;
+    public int d;
 
-    public /* synthetic */ uy0(vy0 vy0Var, int i7) {
-        this.a = i7;
-        this.b = vy0Var;
+    public final void a() {
+        ty0 ty0Var = this.b;
+        int i7 = this.d;
+        org.telegram.ui.m80 m80Var = (org.telegram.ui.m80) ty0Var;
+        m80Var.getClass();
+        org.telegram.messenger.j10.i(i7).a0 = null;
+        org.telegram.messenger.j10.i(i7).v(false);
+        LaunchActivity launchActivity = m80Var.a;
+        ArrayList arrayList = launchActivity.e0;
+        if (!arrayList.isEmpty()) {
+            ((org.telegram.ui.ActionBar.h2) i5.c.h(1, arrayList)).onResume();
+        }
+        launchActivity.B0.animate().alpha(0.0f).setDuration(150L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.lz(m80Var, 17)).start();
+        TLRPC.TL_help_acceptTermsOfService tL_help_acceptTermsOfService = new TLRPC.TL_help_acceptTermsOfService();
+        tL_help_acceptTermsOfService.id = this.c.id;
+        ConnectionsManager.getInstance(this.d).sendRequest(tL_help_acceptTermsOfService, new fi.k5(22));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                vy0 vy0Var = this.b;
-                vy0Var.getClass();
-                vy0Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vy0Var.invalidate();
-                break;
-            case 1:
-                vy0 vy0Var2 = this.b;
-                vy0Var2.getClass();
-                vy0Var2.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vy0Var2.invalidate();
-                break;
-            case 2:
-                vy0 vy0Var3 = this.b;
-                vy0Var3.getClass();
-                vy0Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vy0Var3.invalidate();
-                break;
-            case 3:
-                vy0 vy0Var4 = this.b;
-                vy0Var4.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vy0Var4.s = floatValue;
-                vy0Var4.x = (int) ((vy0Var4.h * floatValue) + 0);
-                vy0Var4.invalidate();
-                break;
-            default:
-                vy0 vy0Var5 = this.b;
-                vy0Var5.getClass();
-                vy0Var5.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vy0Var5.y = vy0Var5.r + ((int) Math.ceil((vy0Var5.n - r1) * r5));
-                vy0Var5.invalidate();
-                break;
-        }
+    public void setDelegate(ty0 ty0Var) {
+        this.b = ty0Var;
     }
 }

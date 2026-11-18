@@ -1,171 +1,158 @@
 package org.telegram.messenger;
 
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import java.io.File;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class yu extends xu {
-    public h6.m d0;
-    public org.telegram.ui.Components.dc e0;
-    public boolean f0;
-    public boolean g0;
-    public boolean h0;
-    public boolean i0;
-    public float j0;
-    public int k0;
-    public final Drawable l0;
-    public int m0;
+public final class yu extends lu {
+    public final TL_iv.pageBlockVideo r0;
+    public final TLRPC.Document s0;
+    public final TLRPC.PhotoSize t0;
+    public final TLRPC.TL_photoStrippedSize u0;
+    public final boolean v0;
+    public final boolean w0;
 
-    public yu(iv ivVar, Rect rect, int i7, TL_iv.pageBlockBlockquote pageblockblockquote, SpannableStringBuilder spannableStringBuilder) {
-        super(ivVar, rect, i7, spannableStringBuilder);
-        this.l0 = i5.c.g(t0.b, R.drawable.arrow_more);
-        boolean z10 = pageblockblockquote.collapsed;
-        this.h0 = z10;
-        this.i0 = z10;
-    }
-
-    @Override // org.telegram.messenger.xu, org.telegram.messenger.cu
-    public final int I() {
-        if (!this.h0) {
-            return super.I();
-        }
-        Rect rect = this.b;
-        return (int) Math.min((this.X.b.getPaint().getTextSize() * 1.4f * 3.0f) + rect.top + this.a0 + rect.bottom, super.I());
-    }
-
-    @Override // org.telegram.messenger.xu, org.telegram.messenger.cu
-    public final void W(Canvas canvas) {
-        org.telegram.ui.Components.dc dcVar = this.e0;
-        float a10 = dcVar != null ? dcVar.a(0.01f) : 1.0f;
-        int i7 = this.c;
-        if (a10 != 1.0f) {
-            canvas.save();
-            canvas.scale(a10, a10, i7 / 2.0f, I() / 2.0f);
-        }
-        boolean z10 = this.j0 > 0.0f;
-        int i10 = (this.k0 - this.b.bottom) - this.b0;
-        canvas.save();
-        canvas.clipRect(0, 0, i7, i10);
-        if (z10) {
-            canvas.saveLayer(0.0f, 0.0f, i7, i10, null);
-        }
-        super.W(canvas);
-        if (z10) {
-            if (this.d0 == null) {
-                this.d0 = new h6.m(29);
-            }
-            RectF rectF = g0.P;
-            rectF.set(0.0f, i10 - g0.L(24.0f), i7, i10 + 1);
-            this.d0.m(canvas, rectF, 3, this.j0);
-            canvas.restore();
-        }
-        canvas.restore();
-        iv ivVar = this.a;
-        int i11 = ivVar.y.i();
-        int i12 = this.m0;
-        Drawable drawable = this.l0;
-        if (i11 != i12) {
-            int i13 = ivVar.y.i();
-            this.m0 = i13;
-            drawable.setColorFilter(new PorterDuffColorFilter(i13, PorterDuff.Mode.SRC_IN));
-        }
-        bg.s.e(this.l0, ivVar.C - g0.L(24.0f), g0.L(8.0f) + ((i10 - g0.L(16.0f)) - g0.L(2.0f)), g0.L(16.0f), g0.L(16.0f), 17);
-        canvas.save();
-        canvas.rotate(g0.W1(this.j0, ns.K2, 0), drawable.getBounds().exactCenterX(), drawable.getBounds().exactCenterY());
-        drawable.draw(canvas);
-        canvas.restore();
-        if (a10 != 1.0f) {
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.messenger.xu, org.telegram.messenger.cu
-    public final boolean Y(MotionEvent motionEvent) {
-        View view;
-        int actionMasked = motionEvent.getActionMasked();
-        if (this.g0) {
-            if (actionMasked == 1 || actionMasked == 3) {
-                this.g0 = false;
-            }
-            return super.Y(motionEvent);
-        }
-        iv ivVar = this.a;
-        if (actionMasked == 0) {
-            boolean Y = super.Y(motionEvent);
-            this.g0 = Y;
-            if (!Y) {
-                this.f0 = true;
-                if (this.e0 == null && (view = ivVar.Q) != null) {
-                    this.e0 = new org.telegram.ui.Components.dc(view);
-                }
-                org.telegram.ui.Components.dc dcVar = this.e0;
-                if (dcVar != null) {
-                    dcVar.c(true);
-                    return true;
-                }
-            }
+    public yu(ev evVar, Rect rect, int i7, TL_iv.pageBlockVideo pageblockvideo, boolean z10) {
+        super(evVar, rect, i7, z10);
+        int i10;
+        int i11;
+        this.r0 = pageblockvideo;
+        TLRPC.Document s5 = evVar.s(pageblockvideo.video_id);
+        this.s0 = s5;
+        boolean K4 = fj.K4(s5);
+        this.w0 = K4;
+        int i12 = 0;
+        this.v0 = K4 || fj.s3(s5, false);
+        if (s5 != null) {
+            this.t0 = w7.w(s5.thumbs, ks.r5, false, null, true);
+            this.u0 = w7.Q(s5.thumbs);
         } else {
-            if (actionMasked != 1) {
-                if (actionMasked == 3) {
-                    this.f0 = false;
-                    org.telegram.ui.Components.dc dcVar2 = this.e0;
-                    if (dcVar2 != null) {
-                        dcVar2.c(false);
-                    }
+            this.t0 = null;
+            this.u0 = null;
+        }
+        if (s5 != null) {
+            while (true) {
+                if (i12 >= this.s0.attributes.size()) {
+                    i10 = 100;
+                    i11 = 100;
+                    break;
                 }
-                return this.f0;
+                TLRPC.DocumentAttribute documentAttribute = this.s0.attributes.get(i12);
+                if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
+                    i11 = documentAttribute.w;
+                    i10 = documentAttribute.h;
+                    break;
+                }
+                i12++;
             }
-            if (!this.f0) {
+            if (i11 <= 0 || i10 <= 0) {
+                TLRPC.PhotoSize photoSize = this.t0;
+                i11 = photoSize != null ? photoSize.w : 100;
+                i10 = photoSize != null ? photoSize.h : 100;
+            }
+            r4 = i11;
+        } else {
+            i10 = 100;
+        }
+        int i13 = this.c;
+        int max = (int) ((i13 / Math.max(1, r4)) * i10);
+        Point point = g0.q;
+        int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
+        if (max > max2) {
+            i13 = (int) ((max2 / Math.max(1, i10)) * r4);
+            max = max2;
+        }
+        this.c0 = i13;
+        this.d0 = max;
+        m0();
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean i0() {
+        if (this.w0) {
+            int i7 = bz.a;
+            return pc.e(1024);
+        }
+        int i10 = bz.a;
+        return pc.e(2048);
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final void j0(boolean z10) {
+        TLRPC.Document document = this.s0;
+        if (document == null) {
+            return;
+        }
+        TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.u0;
+        fc c10 = tL_photoStrippedSize != null ? fc.c(tL_photoStrippedSize, document) : null;
+        TLRPC.PhotoSize photoSize = this.t0;
+        fc c11 = photoSize != null ? fc.c(photoSize, document) : null;
+        ev evVar = this.a;
+        ImageReceiver imageReceiver = this.Y;
+        if (!z10 || !this.v0 || (!i0() && !this.m0)) {
+            imageReceiver.u0(null, null, c11, null, c10, "b1", null, document.size, "mp4", evVar.b, 1);
+            return;
+        }
+        imageReceiver.u0 = true;
+        imageReceiver.W(1);
+        imageReceiver.u0(fc.b(document), "g", c11, null, c10, "b1", null, document.size, "mp4", evVar.b, 1);
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean k0() {
+        TLRPC.Document document = this.s0;
+        if (document == null) {
+            return false;
+        }
+        if (this.v0) {
+            return i0() && a6.q(this.a.a).c(4, document.size);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean l0() {
+        TLRPC.Document document = this.s0;
+        if (document != null) {
+            ev evVar = this.a;
+            w7.G(evVar.a);
+            File I = w7.I(document);
+            w7.G(evVar.a);
+            File J = w7.J(document, null, true, true);
+            if ((I == null || !I.exists()) && (J == null || !J.exists())) {
                 return false;
-            }
-            this.f0 = false;
-            org.telegram.ui.Components.dc dcVar3 = this.e0;
-            if (dcVar3 != null) {
-                dcVar3.c(false);
-            }
-            View view2 = ivVar.Q;
-            if (view2 != null) {
-                view2.playSoundEffect(0);
-            }
-            ivVar.X();
-            this.h0 = !this.h0;
-            ivVar.u = true;
-            ivVar.Q();
-            View view3 = ivVar.Q;
-            if (view3 != null) {
-                view3.invalidate();
-            }
-            org.telegram.ui.Cells.q1 q1Var = ivVar.E;
-            org.telegram.ui.Cells.l1 l1Var = ivVar.F;
-            if (q1Var != null && l1Var != null) {
-                l1Var.B1(q1Var, true, true);
             }
         }
         return true;
     }
 
-    @Override // org.telegram.messenger.cu
-    public final void d0() {
-        super.d0();
-        this.i0 = this.h0;
+    @Override // org.telegram.messenger.lu
+    public final TL_iv.PageBlock n0() {
+        return this.r0;
     }
 
-    @Override // org.telegram.messenger.cu
-    public final float z() {
-        org.telegram.ui.Components.dc dcVar = this.e0;
-        if (dcVar != null) {
-            return dcVar.a(0.01f);
-        }
-        return 1.0f;
+    @Override // org.telegram.messenger.lu
+    public final String o0() {
+        return w7.r(null, this.s0);
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean p0() {
+        return this.v0;
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean q0() {
+        return this.w0;
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean r0() {
+        TL_iv.pageBlockVideo pageblockvideo = this.r0;
+        return pageblockvideo != null && pageblockvideo.spoiler;
     }
 }

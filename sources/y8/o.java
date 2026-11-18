@@ -2,7 +2,7 @@ package y8;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o implements com.google.android.gms.common.api.b {
     public final int a;
@@ -12,11 +12,11 @@ public final class o implements com.google.android.gms.common.api.b {
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof o) || !q6.m.k(Integer.valueOf(this.a), Integer.valueOf(((o) obj).a)) || !q6.m.k(1, 1) || !q6.m.k(null, null)) {
+        if (!(obj instanceof o) || !q6.m.l(Integer.valueOf(this.a), Integer.valueOf(((o) obj).a)) || !q6.m.l(1, 1) || !q6.m.l(null, null)) {
             return false;
         }
         Boolean bool = Boolean.TRUE;
-        return q6.m.k(bool, bool);
+        return q6.m.l(bool, bool);
     }
 
     public final int hashCode() {

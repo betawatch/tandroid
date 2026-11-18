@@ -3,7 +3,7 @@ package d3;
 import android.view.Surface;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface k0 {
     boolean a();
@@ -14,11 +14,11 @@ public interface k0 {
 
     void d(float f10);
 
-    void e(cb.c cVar);
+    void e();
 
-    void f();
+    void f(Surface surface, h2.y yVar);
 
-    void g(Surface surface, h2.y yVar);
+    void g(d6.i iVar);
 
     void h();
 

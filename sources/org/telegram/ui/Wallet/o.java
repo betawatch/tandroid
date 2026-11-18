@@ -1,284 +1,178 @@
 package org.telegram.ui.Wallet;
 
 import android.text.TextUtils;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ez;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fy0;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements Runnable {
+public final /* synthetic */ class o implements x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ z10 d;
-    public final /* synthetic */ TL_wallet.nftItem e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ String h;
-    public final /* synthetic */ byte[] n;
-    public final /* synthetic */ long r;
-    public final /* synthetic */ c2 s;
-    public final /* synthetic */ TLRPC.User w;
-    public final /* synthetic */ String x;
-    public final /* synthetic */ z10 y;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ o(l0 l0Var, String str, z10 z10Var, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j3, c2 c2Var, TLRPC.User user, String str4, z10 z10Var2, int i7) {
+    public /* synthetic */ o(Object obj, Object obj2, Object obj3, int i7) {
         this.a = i7;
-        this.b = l0Var;
-        this.c = str;
-        this.d = z10Var;
-        this.e = nftitem;
-        this.f = str2;
-        this.h = str3;
-        this.n = bArr;
-        this.r = j3;
-        this.s = c2Var;
-        this.w = user;
-        this.x = str4;
-        this.y = z10Var2;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        int i7 = this.a;
+        boolean z10 = false;
+        Object obj2 = this.d;
+        Object obj3 = this.c;
+        Object obj4 = this.b;
+        switch (i7) {
             case 0:
-                l0 l0Var = this.b;
-                String str = this.c;
-                z10 z10Var = this.d;
-                o oVar = new o(l0Var, str, z10Var, this.e, this.f, this.h, this.n, this.r, this.s, this.w, this.x, this.y, 1);
-                if (l0Var.K() && !l0Var.J()) {
-                    l0.H("send " + str + ": asking passcode");
-                    org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                    if (T != null) {
-                        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                        c2Var.a = true;
-                        boolean[] zArr = {false};
-                        y yVar = new y(zArr, z10Var);
-                        yVar.W = new fy0(29, zArr, oVar);
-                        T.showAsSheet(yVar, c2Var);
-                        break;
-                    }
+                u0 u0Var = (u0) obj4;
+                q10 q10Var = (q10) obj3;
+                String str = (String) obj2;
+                byte[] bArr = (byte[]) obj;
+                u0Var.getClass();
+                if (bArr != null) {
+                    TL_wallet.walletUserAddress walletuseraddress = new TL_wallet.walletUserAddress();
+                    walletuseraddress.user_id = 0L;
+                    walletuseraddress.address = str;
+                    walletuseraddress.public_key = bArr;
+                    u0Var.P.put(str, walletuseraddress);
+                    q10Var.a(walletuseraddress, null);
+                    break;
                 } else {
-                    oVar.run();
+                    q10Var.a(null, null);
+                    break;
+                }
+            case 1:
+                u0 u0Var2 = (u0) obj4;
+                x10 x10Var = (x10) obj3;
+                Runnable runnable = (Runnable) obj2;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                if (x10Var != null) {
+                    u0Var2.q.put(wallettransaction, x10Var);
+                }
+                if (runnable == null) {
+                    u0Var2.getClass();
+                    break;
+                } else {
+                    u0Var2.r.put(wallettransaction, runnable);
+                    break;
+                }
+            case 2:
+                l2 l2Var = (l2) obj4;
+                h2 h2Var = (h2) obj3;
+                oi.c cVar = (oi.c) obj2;
+                String str2 = (String) obj;
+                l2Var.getClass();
+                if (!h2Var.n && !l2Var.j(h2Var) && l2Var.A(h2Var) && str2 == null) {
+                    z10 = true;
+                }
+                h2Var.p = z10;
+                cVar.a(null, str2);
+                break;
+            case 3:
+                l2 l2Var2 = (l2) obj4;
+                h2 h2Var2 = (h2) obj3;
+                x10 x10Var2 = (x10) obj2;
+                String str3 = (String) obj;
+                l2Var2.getClass();
+                h2Var2.m = false;
+                if (h2Var2.r == null && l2Var2.g == h2Var2) {
+                    l2Var2.g = null;
+                }
+                x10Var2.a(str3);
+                break;
+            case 4:
+                l2 l2Var3 = (l2) obj4;
+                l2Var3.getClass();
+                org.telegram.messenger.g0.g3(new v7((Object) l2Var3, obj3, (String) obj, obj2, 5));
+                break;
+            case 5:
+                TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj4;
+                fi.r rVar = (fi.r) obj3;
+                TL_wallet.walletTransaction[] wallettransactionArr = (TL_wallet.walletTransaction[]) obj2;
+                TL_wallet.walletTransaction wallettransaction3 = (TL_wallet.walletTransaction) obj;
+                if (wallettransaction3 != null) {
+                    wallettransaction3.incoming = wallettransaction2.incoming;
+                    wallettransaction3.peer = wallettransaction2.peer;
+                    wallettransactionArr[0] = wallettransaction3;
+                    rVar.a(wallettransaction3);
                     break;
                 }
                 break;
-            default:
-                StringBuilder sb2 = new StringBuilder("send ");
-                final String str2 = this.c;
-                sb2.append(str2);
-                sb2.append(": ready, get secret phrase");
-                l0.H(sb2.toString());
-                final l0 l0Var2 = this.b;
-                final z10 z10Var2 = this.d;
-                final TL_wallet.nftItem nftitem = this.e;
-                final String str3 = this.f;
-                final String str4 = this.h;
-                final byte[] bArr = this.n;
-                final long j3 = this.r;
-                final c2 c2Var2 = this.s;
-                final TLRPC.User user = this.w;
-                final String str5 = this.x;
-                final z10 z10Var3 = this.y;
-                l0Var2.z(new s10() { // from class: org.telegram.ui.Wallet.s
-                    /* JADX WARN: Removed duplicated region for block: B:47:0x012d  */
-                    /* JADX WARN: Removed duplicated region for block: B:50:0x0139  */
-                    /* JADX WARN: Removed duplicated region for block: B:57:0x0154  */
-                    /* JADX WARN: Removed duplicated region for block: B:60:0x0175  */
-                    /* JADX WARN: Removed duplicated region for block: B:62:0x0187  */
-                    /* JADX WARN: Removed duplicated region for block: B:67:0x012f  */
-                    @Override // org.telegram.messenger.s10
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void a(Object obj, Object obj2) {
-                        TL_wallet.nftItem nftitem2;
-                        k0 k0Var;
-                        TLRPC.User user2;
-                        l0 l0Var3;
-                        long j10;
-                        long j11;
-                        gj gjVar;
-                        z10 z10Var4;
-                        l0 l0Var4;
-                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo;
-                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo2;
-                        i0 i0Var = (i0) obj;
-                        String str6 = (String) obj2;
-                        l0 l0Var5 = l0.this;
-                        int i7 = l0Var5.a;
-                        z10 z10Var5 = z10Var2;
-                        if (str6 != null) {
-                            z10Var5.a(str6);
-                            return;
-                        }
-                        if (i0Var == null) {
-                            z10Var5.a("NULL_ERROR");
-                            return;
-                        }
-                        if (l0Var5.b == null) {
-                            z10Var5.a("NULL_ENGINE");
-                            return;
-                        }
-                        TL_wallet.nftItem nftitem3 = nftitem;
-                        if (nftitem3 != null) {
-                            if (!l0.b(str3, l0Var5.t())) {
-                                z10Var5.a("WALLET_CHANGED");
-                                return;
-                            }
-                        }
-                        k0 B = l0Var5.B();
-                        TL_wallet.walletTransaction wallettransaction = new TL_wallet.walletTransaction();
-                        wallettransaction.incoming = false;
-                        wallettransaction.pending = true;
-                        String str7 = str4;
-                        wallettransaction.comment = str7;
-                        wallettransaction.comment_encrypted = false;
-                        byte[] bArr2 = bArr;
-                        wallettransaction.comment_encrypted_preparing = (nftitem3 != null || bArr2 == null || TextUtils.isEmpty(str7)) ? false : true;
-                        wallettransaction.date = ConnectionsManager.getInstance(i7).getCurrentTime();
-                        long j12 = j3;
-                        wallettransaction.amount = j12;
-                        wallettransaction.nft = nftitem3;
-                        c2 c2Var3 = c2Var2;
-                        TLRPC.User user3 = user;
-                        String str8 = str2;
-                        if (c2Var3 == null || nftitem3 == null) {
-                            nftitem2 = nftitem3;
-                            k0Var = B;
-                            wallettransaction.peer = l0.g(user3, str8, str5);
-                        } else {
-                            TL_wallet.walletTransactionPeerTelegramGift wallettransactionpeertelegramgift = new TL_wallet.walletTransactionPeerTelegramGift();
-                            nftitem2 = nftitem3;
-                            k0Var = B;
-                            wallettransactionpeertelegramgift.own_profile = user3 != null && user3.id == m10.i(i7).e();
-                            wallettransaction.peer = wallettransactionpeertelegramgift;
-                        }
-                        TL_wallet.nftItem nftitem4 = nftitem2;
-                        k0 k0Var2 = k0Var;
-                        g7 g7Var = new g7(l0Var5, wallettransaction, nftitem4, k0Var2, 3);
-                        long nextLong = Utilities.b.nextLong();
-                        wallettransaction.random_id = nextLong;
-                        l0Var5.p.add(0, wallettransaction);
-                        if (nftitem4 != null) {
-                            if (l0Var5.o == null) {
-                                l0Var5.o = new d0(l0Var5);
-                            }
-                            d0 d0Var = l0Var5.o;
-                            d0Var.c.add(wallettransaction);
-                            d0Var.h();
-                            d0Var.g();
-                        }
-                        k0Var2.k();
-                        k0Var2.i();
-                        l0Var5.S();
-                        ez C = ez.C(i7);
-                        if (user3 != null) {
-                            l0Var3 = l0Var5;
-                            if (user3.id != m10.i(i7).e() && nftitem4 == null) {
-                                user2 = user3;
-                                j10 = nextLong;
-                                j11 = j12;
-                                gjVar = C.q(user2, str8, j11, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, j10);
-                                wallettransaction.localMessageId = gjVar != null ? 0 : gjVar.e1();
-                                z10Var4 = z10Var3;
-                                if (z10Var4 != null) {
-                                    z10Var4.a(wallettransaction);
-                                }
-                                String str9 = null;
-                                z10Var5.a(null);
-                                l0Var4 = l0Var3;
-                                tL_updateWalletGaslessInfo = l0Var4.f;
-                                if (tL_updateWalletGaslessInfo != null && !TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address)) {
-                                    tL_updateWalletGaslessInfo2 = l0Var4.f;
-                                    if (tL_updateWalletGaslessInfo2.available) {
-                                        str9 = tL_updateWalletGaslessInfo2.relayer_address;
-                                    }
-                                }
-                                l0.H("prepare sending");
-                                String str10 = str9;
-                                long j13 = j10;
-                                final u uVar = new u(l0Var4, g7Var, C, gjVar, wallettransaction, str8, k0Var2, j13, user2);
-                                if (c2Var3 == null) {
-                                    final int i10 = 0;
-                                    l0Var4.b.prepareTonConnectTransfer(i0Var, c2Var3, a8.p0.o(j13, "deposit:"), new s10() { // from class: org.telegram.ui.Wallet.v
-                                        @Override // org.telegram.messenger.s10
-                                        public final void a(Object obj3, Object obj4) {
-                                            TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
-                                            String str11 = (String) obj4;
-                                            switch (i10) {
-                                                case 0:
-                                                    uVar.a(sendtransfer, null, str11);
-                                                    break;
-                                                default:
-                                                    uVar.a(sendtransfer, null, str11);
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    return;
-                                } else if (nftitem4 == null) {
-                                    l0Var4.b.prepareSend(i0Var, str8, j11, str7, bArr2, str10, uVar);
-                                    return;
-                                } else {
-                                    final int i11 = 1;
-                                    l0Var4.b.prepareSendNFT(i0Var, str8, nftitem4.address, str7, new s10() { // from class: org.telegram.ui.Wallet.v
-                                        @Override // org.telegram.messenger.s10
-                                        public final void a(Object obj3, Object obj4) {
-                                            TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj3;
-                                            String str11 = (String) obj4;
-                                            switch (i11) {
-                                                case 0:
-                                                    uVar.a(sendtransfer, null, str11);
-                                                    break;
-                                                default:
-                                                    uVar.a(sendtransfer, null, str11);
-                                                    break;
-                                            }
-                                        }
-                                    });
-                                    return;
-                                }
-                            }
-                            user2 = user3;
-                        } else {
-                            user2 = user3;
-                            l0Var3 = l0Var5;
-                        }
-                        j10 = nextLong;
-                        j11 = j12;
-                        gjVar = null;
-                        wallettransaction.localMessageId = gjVar != null ? 0 : gjVar.e1();
-                        z10Var4 = z10Var3;
-                        if (z10Var4 != null) {
-                        }
-                        String str92 = null;
-                        z10Var5.a(null);
-                        l0Var4 = l0Var3;
-                        tL_updateWalletGaslessInfo = l0Var4.f;
-                        if (tL_updateWalletGaslessInfo != null) {
-                            tL_updateWalletGaslessInfo2 = l0Var4.f;
-                            if (tL_updateWalletGaslessInfo2.available) {
-                            }
-                        }
-                        l0.H("prepare sending");
-                        String str102 = str92;
-                        long j132 = j10;
-                        final u uVar2 = new u(l0Var4, g7Var, C, gjVar, wallettransaction, str8, k0Var2, j132, user2);
-                        if (c2Var3 == null) {
-                        }
+            case 6:
+                e3[] e3VarArr = (e3[]) obj3;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
+                String str4 = (String) obj;
+                ((hi.d) obj4).setLoading(false);
+                if (!u0.L(str4)) {
+                    if (!TextUtils.isEmpty(str4)) {
+                        new lc(e3VarArr[0].F, i6Var).f0(str4, false);
+                        break;
+                    } else {
+                        e3VarArr[0].dismiss();
+                        break;
                     }
-                }, false, true);
+                }
                 break;
+            case 7:
+                d9.f0((d9) obj4, (x10) obj3, (z0) obj2, (r0) obj);
+                break;
+            case 8:
+                na naVar = (na) obj3;
+                u0 u0Var3 = (u0) obj4;
+                TLRPC.User user = (TLRPC.User) obj2;
+                String str5 = (String) obj;
+                if (!naVar.r) {
+                    if (!TextUtils.isEmpty(str5) && u0.c(naVar.f, u0Var3.y())) {
+                        i0 i0Var = new i0(u0Var3, str5, naVar.e, null, new s(naVar, u0Var3, user, str5));
+                        u0Var3.x0(i0Var);
+                        naVar.n = new m(i0Var, 2);
+                        break;
+                    } else {
+                        naVar.h = false;
+                        naVar.a0.setLoading(false);
+                        lc.b0(naVar).f0(TextUtils.isEmpty(str5) ? gd.M0(2131742781, null) : "WALLET_CHANGED", false);
+                        break;
+                    }
+                }
+                break;
+            case 9:
+                ((org.telegram.ui.Cells.g6) ((View) obj)).x((TLRPC.User) obj4, null, (CharSequence) obj3, (CharSequence) obj2, false, false);
+                break;
+            default:
+                e3 e3Var = (e3) obj3;
+                org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) obj2;
+                String str6 = (String) obj;
+                ((hi.d) obj4).setLoading(false);
+                if (str6 != null) {
+                    lc.d0(str6, e3Var.F, i6Var2);
+                    break;
+                } else {
+                    e3Var.dismiss();
+                    break;
+                }
         }
+    }
+
+    public /* synthetic */ o(x10 x10Var, u0 u0Var, z0 z0Var, d9 d9Var) {
+        this.a = 7;
+        this.b = d9Var;
+        this.c = x10Var;
+        this.d = z0Var;
+    }
+
+    public /* synthetic */ o(na naVar, u0 u0Var, TLRPC.User user) {
+        this.a = 8;
+        this.c = naVar;
+        this.b = u0Var;
+        this.d = user;
     }
 }

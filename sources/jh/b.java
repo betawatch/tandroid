@@ -2,21 +2,21 @@ package jh;
 
 import android.graphics.RectF;
 import java.util.HashSet;
-import org.telegram.messenger.np;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.q10;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.rr;
+import org.telegram.ui.Components.yr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements s10 {
+public final /* synthetic */ class b implements q10 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ b(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -25,13 +25,13 @@ public final /* synthetic */ class b implements s10 {
             case 1:
                 break;
             case 2:
-                int i7 = np.D8;
+                int i7 = mp.I8;
                 break;
             case 3:
-                int i10 = np.D8;
+                int i10 = mp.I8;
                 break;
             case 4:
-                int i11 = rr.D2;
+                int i11 = yr.D2;
                 break;
             default:
                 Boolean bool = (Boolean) obj;

@@ -25,11 +25,11 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.ContextThemeWrapper;
 import android.view.View;
-import c8.h9;
+import c8.j9;
 import java.util.Iterator;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -75,7 +75,7 @@ public class MediaRouteButton extends View {
         if (isInEditMode()) {
             this.mRouter = null;
             this.mCallback = null;
-            this.mRemoteIndicator = b5.a.b(context2, obtainStyledAttributes.getResourceId(3, 0));
+            this.mRemoteIndicator = c8.z.b(context2, obtainStyledAttributes.getResourceId(3, 0));
             return;
         }
         this.mRouter = s4.x.d(context2);
@@ -173,7 +173,7 @@ public class MediaRouteButton extends View {
                     if (hVar.B0) {
                         ((b0) uVar).f(rVar);
                     } else {
-                        ((g) uVar).h(rVar);
+                        ((g) uVar).g(rVar);
                     }
                 }
             }
@@ -239,7 +239,7 @@ public class MediaRouteButton extends View {
         if (!this.mCheatSheetEnabled || TextUtils.isEmpty(string)) {
             string = null;
         }
-        h9.a(this, string);
+        j9.a(this, string);
     }
 
     @Override // android.view.View
@@ -539,7 +539,7 @@ public class MediaRouteButton extends View {
                                             break;
                                         }
                                         ActivityInfo activityInfo = it.next().activityInfo;
-                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & ns.N1) != 0) {
+                                        if (activityInfo != null && (applicationInfo2 = activityInfo.applicationInfo) != null && (applicationInfo2.flags & ks.N1) != 0) {
                                             context.startActivity(putExtra);
                                             z10 = true;
                                             break;
@@ -567,7 +567,7 @@ public class MediaRouteButton extends View {
                     while (true) {
                         if (it2.hasNext()) {
                             ActivityInfo activityInfo2 = it2.next().activityInfo;
-                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & ns.N1) != 0) {
+                            if (activityInfo2 != null && (applicationInfo = activityInfo2.applicationInfo) != null && (applicationInfo.flags & ks.N1) != 0) {
                                 context.sendBroadcast(putExtra2);
                                 break;
                             }

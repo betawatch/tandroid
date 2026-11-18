@@ -2,34 +2,34 @@ package org.telegram.ui.web;
 
 import java.io.Serializable;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.x10;
-import org.telegram.ui.Components.b41;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.v10;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, x10 {
+public final /* synthetic */ class a implements org.telegram.ui.ActionBar.r1, v10 {
     public final /* synthetic */ k a;
 
     public /* synthetic */ a(k kVar) {
         this.a = kVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         k kVar = this.a;
         kVar.getContext().getSharedPreferences("webhistory", 0).edit().remove("queries_json").apply();
         kVar.x.g3.O(true);
     }
 
-    @Override // org.telegram.messenger.x10
-    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         org.telegram.ui.q qVar;
-        b41 b41Var = (b41) obj;
-        boolean H = b41Var.H(d.class);
+        l41 l41Var = (l41) obj;
+        boolean H = l41Var.H(d.class);
         k kVar = this.a;
         if (H) {
-            String charSequence = b41Var.l.toString();
+            String charSequence = l41Var.m.toString();
             org.telegram.ui.x xVar = kVar.M;
             if (xVar != null) {
                 xVar.a(charSequence);
@@ -37,11 +37,11 @@ public final /* synthetic */ class a implements org.telegram.ui.ActionBar.q1, x1
             }
             return;
         }
-        if (!b41Var.H(g.class) || (qVar = kVar.O) == null) {
+        if (!l41Var.H(g.class) || (qVar = kVar.O) == null) {
             return;
         }
         try {
-            qVar.a(k.a((gj) b41Var.H));
+            qVar.a(k.a((fj) l41Var.I));
         } catch (Exception e10) {
             a8.g(e10, true);
         }

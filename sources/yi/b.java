@@ -3,16 +3,16 @@ package yi;
 import android.os.SystemClock;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class b {
     public static final AtomicLong d = new AtomicLong(1);
     public final long a = d.getAndIncrement();
     public final long b = SystemClock.elapsedRealtime();
-    public final g c;
+    public final f c;
 
-    public b(g gVar) {
-        this.c = gVar;
+    public b(f fVar) {
+        this.c = fVar;
     }
 
     public final void a(String str, Throwable th2) {

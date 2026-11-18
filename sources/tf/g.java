@@ -5,10 +5,10 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.ou;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends rf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -34,7 +34,7 @@ public final class g extends rf.a {
     public static f5.a c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new f5.a(4, eVar.d(ns.e3, b10), eVar.c((int) eVar.a.e(), b10));
+        return new f5.a(4, eVar.d(ks.e3, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -74,25 +74,25 @@ public final class g extends rf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    ou ouVar = eVar.d;
+                    hn hnVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte g12 = ouVar.g1();
-                    eVar.d(ns.e3, b10);
+                    byte Q = hnVar.Q();
+                    eVar.d(ks.e3, b10);
                     int e10 = (int) eVar.a.e();
                     byte[] bArr = new byte[e10];
                     int i12 = 0;
                     while (i12 < e10) {
-                        int read = ((ab.d) ouVar.b).read(bArr, i12, e10 - i12);
+                        int read = ((ab.d) hnVar.b).read(bArr, i12, e10 - i12);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i12 += read;
                     }
-                    if (this.o == null || g12 == 3 || g12 == 0) {
+                    if (this.o == null || Q == 3 || Q == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -119,7 +119,7 @@ public final class g extends rf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = g12;
+                            this.r = Q;
                             return;
                         }
                         for (int max2 = Math.max(i10, options.outHeight); max2 > 800; max2 /= 2) {
@@ -130,7 +130,7 @@ public final class g extends rf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = g12;
+                        this.r = Q;
                         return;
                     }
                     return;
@@ -152,14 +152,14 @@ public final class g extends rf.a {
                     try {
                         if (e11.charAt(0) == '(') {
                             int indexOf = e11.indexOf(41);
-                            if (indexOf > 1 && (i7 = r.b.b(Integer.parseInt(e11.substring(1, indexOf)))) == 0 && e11.length() > (i11 = indexOf + 1)) {
+                            if (indexOf > 1 && (i7 = p5.c.b(Integer.parseInt(e11.substring(1, indexOf)))) == 0 && e11.length() > (i11 = indexOf + 1)) {
                                 this.h = e11.substring(i11);
                             }
                         } else {
-                            i7 = r.b.b(Integer.parseInt(e11));
+                            i7 = p5.c.b(Integer.parseInt(e11));
                         }
                         if (i7 != 0) {
-                            this.h = r.b.d(i7);
+                            this.h = p5.c.d(i7);
                             return;
                         }
                         return;

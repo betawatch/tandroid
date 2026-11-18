@@ -1,26 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class io0 implements org.telegram.messenger.z10 {
+public final /* synthetic */ class io0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ oo0 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ro0 b;
 
-    public /* synthetic */ io0(oo0 oo0Var, boolean z10, int i7) {
+    public /* synthetic */ io0(ro0 ro0Var, int i7) {
         this.a = i7;
-        this.b = oo0Var;
-        this.c = z10;
+        this.b = ro0Var;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.Components.cc.F(this.b.b.f0, this.c).j();
+                new org.telegram.ui.Components.lc(this.b.b.f0, null).m(org.telegram.ui.Components.kc.r, 1, -115203550, -1, null).j();
                 break;
             default:
-                org.telegram.ui.Components.cc.F(this.b.b.f0, this.c).j();
+                new org.telegram.ui.Components.lc(this.b.b.f0, null).m(org.telegram.ui.Components.kc.r, 1, -115203550, -1, null).j();
                 break;
         }
     }

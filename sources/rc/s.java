@@ -8,16 +8,16 @@ import javax.net.SocketFactory;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import m4.f0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s {
     public final SocketFactory a;
     public final a b;
     public final int c;
     public int d = 1;
-    public int e = ns.Z3;
+    public int e = ks.Z3;
     public boolean f;
     public Socket g;
 
@@ -74,7 +74,7 @@ public final class s {
                         str = " (" + sSLSocket.getSession().getPeerPrincipal().toString() + ")";
                     } catch (Exception unused) {
                     }
-                    throw new i(49, r.b.l("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
+                    throw new i(49, p5.c.l("The certificate of the peer", str, " does not match the expected hostname (", str2, ")"));
                 }
             }
         } catch (Exception e12) {

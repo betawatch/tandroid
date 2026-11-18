@@ -2,11 +2,11 @@ package f6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends r6.a {
     public static final Parcelable.Creator<r> CREATOR = new v(18);
@@ -28,7 +28,7 @@ public final class r extends r6.a {
         }
         r rVar = (r) obj;
         if (x6.c.a(this.c, rVar.c)) {
-            return q6.m.k(this.a, rVar.a);
+            return q6.m.l(this.a, rVar.a);
         }
         return false;
     }
@@ -41,9 +41,9 @@ public final class r extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.c;
         this.b = jSONObject == null ? null : jSONObject.toString();
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.l(parcel, 3, this.b);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.l(parcel, 3, this.b);
+        bc.s(parcel, r10);
     }
 }

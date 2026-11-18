@@ -1,39 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mf extends AnimatorListenerAdapter {
+public final /* synthetic */ class mf implements bi.w0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+    public final /* synthetic */ pf b;
+    public final /* synthetic */ FrameLayout c;
 
-    public mf(ChatActivityEnterView chatActivityEnterView, int i7) {
-        this.b = chatActivityEnterView;
+    public /* synthetic */ mf(pf pfVar, FrameLayout frameLayout, int i7) {
         this.a = i7;
+        this.b = pfVar;
+        this.c = frameLayout;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.b3)) {
-            int i7 = this.a;
-            if (i7 != 3 && chatActivityEnterView.F0 != null && !org.telegram.messenger.g0.C1()) {
-                chatActivityEnterView.F0.requestFocus();
-            }
-            chatActivityEnterView.C();
-            if (i7 != 3) {
-                gg ggVar = chatActivityEnterView.w2;
-                if (ggVar != null) {
-                    ggVar.setVisibility(8);
+    @Override // bi.w0
+    public final void a(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                pf pfVar = this.b;
+                pfVar.getClass();
+                this.c.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView = pfVar.a;
+                au0 au0Var = chatActivityEnterView.a2;
+                au0Var.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
+                Drawable backgroundImage = au0Var.getBackgroundImage();
+                if (backgroundImage != null) {
+                    backgroundImage.draw(canvas);
                 }
-                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.v2;
-                if (recordCircle != null) {
-                    recordCircle.g();
+                org.telegram.ui.bn bnVar = chatActivityEnterView.D3;
+                org.telegram.ui.bj bjVar = bnVar != null ? bnVar.A0 : null;
+                if (bjVar != null && bjVar.getWidth() > 0) {
+                    canvas.translate(bjVar.getX(), bjVar.getY());
+                    bjVar.draw(canvas);
                 }
-            }
+                canvas.restore();
+                break;
+            default:
+                pf pfVar2 = this.b;
+                pfVar2.getClass();
+                this.c.getLocationInWindow(new int[2]);
+                ChatActivityEnterView chatActivityEnterView2 = pfVar2.a;
+                au0 au0Var2 = chatActivityEnterView2.a2;
+                au0Var2.getLocationInWindow(new int[2]);
+                canvas.save();
+                canvas.translate(r1[0] - r2[0], r1[1] - r2[1]);
+                Drawable backgroundImage2 = au0Var2.getBackgroundImage();
+                if (backgroundImage2 != null) {
+                    backgroundImage2.draw(canvas);
+                }
+                org.telegram.ui.bn bnVar2 = chatActivityEnterView2.D3;
+                org.telegram.ui.bj bjVar2 = bnVar2 != null ? bnVar2.A0 : null;
+                if (bjVar2 != null && bjVar2.getWidth() > 0) {
+                    canvas.translate(bjVar2.getX(), bjVar2.getY());
+                    bjVar2.draw(canvas);
+                }
+                canvas.restore();
+                break;
         }
     }
 }

@@ -1,22 +1,22 @@
 package r2;
 
-import c8.q0;
+import c8.s0;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends y2.f {
     public byte[] s;
     public volatile boolean w;
     public byte[] x;
 
-    @Override // b3.l
-    public final void D() {
+    @Override // b3.m
+    public final void A() {
         this.w = true;
     }
 
-    @Override // b3.l
+    @Override // b3.m
     public final void a() {
         try {
             this.r.open(this.b);
@@ -35,9 +35,9 @@ public final class d extends y2.f {
             if (!this.w) {
                 this.x = Arrays.copyOf(this.s, i10);
             }
-            q0.a(this.r);
+            s0.a(this.r);
         } catch (Throwable th2) {
-            q0.a(this.r);
+            s0.a(this.r);
             throw th2;
         }
     }

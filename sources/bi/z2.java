@@ -1,34 +1,41 @@
 package bi;
 
-import org.telegram.messenger.t10;
-import org.telegram.ui.Components.wp0;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z2 implements te.b, t10 {
-    public final /* synthetic */ wp0 a;
+public final /* synthetic */ class z2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c3 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ z2(wp0 wp0Var) {
-        this.a = wp0Var;
+    public /* synthetic */ z2(c3 c3Var, boolean z10, int i7) {
+        this.a = i7;
+        this.b = c3Var;
+        this.c = z10;
     }
 
-    @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        this.a.l();
-    }
-
-    @Override // org.telegram.messenger.t10
-    public Object d(Number number, Object obj) {
-        wp0 wp0Var = this.a;
-        wp0Var.i();
-        if (((Integer) number).intValue() != -1) {
-            return Boolean.FALSE;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean z10 = this.c;
+                c3 c3Var = this.b;
+                if (!z10) {
+                    c3Var.H.setVisibility(8);
+                    break;
+                } else {
+                    c3Var.getClass();
+                    break;
+                }
+            default:
+                boolean z11 = this.c;
+                c3 c3Var2 = this.b;
+                if (!z11) {
+                    c3Var2.w.setVisibility(8);
+                    break;
+                } else {
+                    c3Var2.getClass();
+                    break;
+                }
         }
-        wp0Var.h(null, new a3(wp0Var, 1));
-        return Boolean.TRUE;
-    }
-
-    @Override // te.b
-    public /* synthetic */ void E(float f10, int i7) {
     }
 }

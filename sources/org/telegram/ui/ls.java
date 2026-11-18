@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public interface ls {
     boolean A();
@@ -14,7 +14,7 @@ public interface ls {
 
     boolean D(TLRPC.Document document);
 
-    org.telegram.ui.Components.m60 E(ai.k0 k0Var);
+    org.telegram.ui.Components.y60 E(ai.k0 k0Var);
 
     void F(TLRPC.Document document);
 
@@ -56,7 +56,7 @@ public interface ls {
 
     boolean h();
 
-    void i(org.telegram.messenger.xy xyVar);
+    void i(org.telegram.messenger.sy syVar);
 
     boolean j();
 
@@ -88,7 +88,7 @@ public interface ls {
 
     void x(String str);
 
-    void y(CharSequence charSequence, String str, org.telegram.ui.Components.gh ghVar);
+    void y(CharSequence charSequence, String str, org.telegram.ui.Components.ph phVar);
 
-    org.telegram.messenger.gj z();
+    org.telegram.messenger.fj z();
 }

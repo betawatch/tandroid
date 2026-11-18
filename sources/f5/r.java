@@ -16,10 +16,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.j1;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.q1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements Callable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class r implements Callable {
 
     /* JADX WARN: Code restructure failed: missing block: B:96:0x00b3, code lost:
     
-        r0 = r2.s(f5.a0.h, org.telegram.messenger.ns.s1, "Service has been reset to null.", r5);
+        r0 = r2.s(f5.z.h, org.telegram.messenger.ks.s1, "Service has been reset to null.", r5);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -48,19 +48,19 @@ public final /* synthetic */ class r implements Callable {
         int i10;
         b bVar = (b) this.b;
         j1 j1Var = (j1) this.c;
-        cb.c cVar2 = (cb.c) this.d;
+        d6.i iVar = (d6.i) this.d;
         Exception exc = null;
         if (!bVar.n()) {
-            f fVar = a0.h;
-            bVar.y(2, 7, fVar);
+            f fVar = z.h;
+            bVar.z(2, 7, fVar);
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
             ((q1) j1Var.b).a(fVar, com.google.android.gms.internal.play_billing.v.e);
             return null;
         }
         if (!bVar.r) {
             com.google.android.gms.internal.play_billing.u.h("BillingClient", "Querying product details is not supported.");
-            f fVar2 = a0.m;
-            bVar.y(20, 7, fVar2);
+            f fVar2 = z.m;
+            bVar.z(20, 7, fVar2);
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
             ((q1) j1Var.b).a(fVar2, com.google.android.gms.internal.play_billing.v.e);
             return null;
@@ -68,8 +68,8 @@ public final /* synthetic */ class r implements Callable {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         int i11 = 0;
-        String str = ((p) ((com.google.android.gms.internal.play_billing.r) cVar2.b).get(0)).b;
-        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) cVar2.b;
+        String str = ((p) ((com.google.android.gms.internal.play_billing.r) iVar.b).get(0)).b;
+        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) iVar.b;
         int size = rVar.size();
         int i12 = 0;
         while (true) {
@@ -109,21 +109,21 @@ public final /* synthetic */ class r implements Callable {
                 if (bVar.s) {
                     bVar.x.getClass();
                 }
-                bVar.v();
-                bVar.v();
-                bVar.v();
-                bVar.v();
+                bVar.w();
+                bVar.w();
+                bVar.w();
+                bVar.w();
                 int i15 = i13;
                 try {
                     Bundle D1 = ((com.google.android.gms.internal.play_billing.a) cVar).D1(true != bVar.t ? 17 : 20, bVar.g.getPackageName(), str, bundle, com.google.android.gms.internal.play_billing.u.d(str2, bVar.d, arrayList3, new t1(1), bVar.A.longValue()));
                     if (D1 == null) {
-                        xaVar = bVar.s(a0.n, 44, "queryProductDetailsAsync got empty product details response.", null);
+                        xaVar = bVar.s(z.n, 44, "queryProductDetailsAsync got empty product details response.", null);
                         break;
                     }
                     if (D1.containsKey("DETAILS_LIST")) {
                         ArrayList<String> stringArrayList = D1.getStringArrayList("DETAILS_LIST");
                         if (stringArrayList == null) {
-                            xaVar = bVar.s(a0.n, 46, "queryProductDetailsAsync got null response list", null);
+                            xaVar = bVar.s(z.n, 46, "queryProductDetailsAsync got null response list", null);
                             break;
                         }
                         ArrayList arrayList5 = new ArrayList();
@@ -138,7 +138,7 @@ public final /* synthetic */ class r implements Callable {
                                 i16++;
                                 rVar = rVar2;
                             } catch (JSONException e10) {
-                                xaVar = bVar.s(a0.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode ProductDetails. \n Exception: ", e10);
+                                xaVar = bVar.s(z.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode ProductDetails. \n Exception: ", e10);
                             }
                         }
                         com.google.android.gms.internal.play_billing.r rVar3 = rVar;
@@ -194,22 +194,22 @@ public final /* synthetic */ class r implements Callable {
                             exc = null;
                             i11 = 0;
                         } catch (JSONException e11) {
-                            xaVar = bVar.s(a0.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode UnfetchedProduct. \n Exception: ", e11);
+                            xaVar = bVar.s(z.a(6, "Error trying to decode SkuDetails."), 47, "Got a JSON exception trying to decode UnfetchedProduct. \n Exception: ", e11);
                         }
                     } else {
                         int a10 = com.google.android.gms.internal.play_billing.u.a("BillingClient", D1);
                         String f10 = com.google.android.gms.internal.play_billing.u.f("BillingClient", D1);
-                        xaVar = a10 != 0 ? bVar.s(a0.a(a10, f10), 23, i5.c.i(a10, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : bVar.s(a0.a(6, f10), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
+                        xaVar = a10 != 0 ? bVar.s(z.a(a10, f10), 23, i5.c.i(a10, "getSkuDetails() failed for queryProductDetailsAsync. Response code: "), null) : bVar.s(z.a(6, f10), 45, "getSkuDetails() returned a bundle with neither an error nor a product detail list for queryProductDetailsAsync.", null);
                     }
                 } catch (DeadObjectException e12) {
                     e = e12;
-                    xaVar = bVar.s(a0.h, i11, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    ((q1) j1Var.b).a(a0.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
+                    xaVar = bVar.s(z.h, i11, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
+                    ((q1) j1Var.b).a(z.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
                     return null;
                 } catch (Exception e13) {
                     e = e13;
-                    xaVar = bVar.s(a0.f, i11, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
-                    ((q1) j1Var.b).a(a0.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
+                    xaVar = bVar.s(z.f, i11, "queryProductDetailsAsync got a remote exception (try to reconnect).", e);
+                    ((q1) j1Var.b).a(z.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
                     return null;
                 }
             } catch (DeadObjectException e14) {
@@ -220,13 +220,13 @@ public final /* synthetic */ class r implements Callable {
                 i11 = 43;
             }
         }
-        ((q1) j1Var.b).a(a0.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
+        ((q1) j1Var.b).a(z.a(xaVar.b, (String) xaVar.d), (ArrayList) xaVar.c);
         return null;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:93:0x0088, code lost:
     
-        r0 = r2.x(f5.a0.h, org.telegram.messenger.ns.s1, "Service has been reset to null", r3);
+        r0 = r2.y(f5.z.h, org.telegram.messenger.ks.s1, "Service has been reset to null", r3);
      */
     /* JADX WARN: Removed duplicated region for block: B:31:0x0174  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x023b  */
@@ -237,7 +237,7 @@ public final /* synthetic */ class r implements Callable {
     */
     private final Object b() {
         Exception exc;
-        q4.q x10;
+        q4.q y10;
         List list;
         com.google.android.gms.internal.play_billing.c cVar;
         Bundle C1;
@@ -247,21 +247,21 @@ public final /* synthetic */ class r implements Callable {
         Exception exc2 = null;
         int i10 = 9;
         if (!bVar.n()) {
-            f fVar = a0.h;
-            bVar.y(2, 9, fVar);
+            f fVar = z.h;
+            bVar.z(2, 9, fVar);
             n nVar = (n) this.c;
             com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-            nVar.f(fVar, com.google.android.gms.internal.play_billing.v.e);
+            nVar.b(fVar, com.google.android.gms.internal.play_billing.v.e);
             return null;
         }
         String str = (String) this.d;
         if (TextUtils.isEmpty(str)) {
             com.google.android.gms.internal.play_billing.u.h("BillingClient", "Please provide a valid product type.");
-            f fVar2 = a0.d;
-            bVar.y(50, 9, fVar2);
+            f fVar2 = z.d;
+            bVar.z(50, 9, fVar2);
             n nVar2 = (n) this.c;
             com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-            nVar2.f(fVar2, com.google.android.gms.internal.play_billing.v.e);
+            nVar2.b(fVar2, com.google.android.gms.internal.play_billing.v.e);
             return null;
         }
         com.google.android.gms.internal.play_billing.u.g("BillingClient", "Querying owned items, item type: ".concat(str));
@@ -290,15 +290,15 @@ public final /* synthetic */ class r implements Callable {
                                     throw th;
                                 } catch (DeadObjectException e10) {
                                     e = e10;
-                                    x10 = bVar.x(a0.h, 52, "Got exception trying to get purchases try to reconnect", e);
-                                    list = (List) x10.b;
+                                    y10 = bVar.y(z.h, 52, "Got exception trying to get purchases try to reconnect", e);
+                                    list = (List) y10.b;
                                     if (list != null) {
                                     }
                                     return exc;
                                 } catch (Exception e11) {
                                     e = e11;
-                                    x10 = bVar.x(a0.f, 52, "Got exception trying to get purchases try to reconnect", e);
-                                    list = (List) x10.b;
+                                    y10 = bVar.y(z.f, 52, "Got exception trying to get purchases try to reconnect", e);
+                                    list = (List) y10.b;
                                     if (list != null) {
                                     }
                                     return exc;
@@ -317,7 +317,7 @@ public final /* synthetic */ class r implements Callable {
                 } else {
                     C1 = ((com.google.android.gms.internal.play_billing.a) cVar).B1(bVar.g.getPackageName(), str, str2);
                 }
-                f fVar3 = a0.f;
+                f fVar3 = z.f;
                 if (C1 == null) {
                     com.google.android.gms.internal.play_billing.u.h("BillingClient", "getPurchase() got null owned items list");
                     i7 = 54;
@@ -345,15 +345,15 @@ public final /* synthetic */ class r implements Callable {
                             com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() contains null signatures list.");
                             i7 = 58;
                         } else {
-                            a10 = a0.g;
+                            a10 = z.g;
                             i7 = 1;
                         }
                     } else {
                         com.google.android.gms.internal.play_billing.u.h("BillingClient", "Bundle returned from getPurchase() doesn't contain required fields.");
                         i7 = 55;
                     }
-                    if (a10 == a0.g) {
-                        x10 = bVar.x(a10, i7, "Purchase bundle invalid", exc2);
+                    if (a10 == z.g) {
+                        y10 = bVar.y(a10, i7, "Purchase bundle invalid", exc2);
                         break;
                     }
                     ArrayList<String> stringArrayList4 = C1.getStringArrayList("INAPP_PURCHASE_ITEM_LIST");
@@ -377,25 +377,25 @@ public final /* synthetic */ class r implements Callable {
                             i11++;
                             stringArrayList4 = arrayList2;
                         } catch (JSONException e12) {
-                            x10 = bVar.x(a0.f, 51, "Got an exception trying to decode the purchase!", e12);
+                            y10 = bVar.y(z.f, 51, "Got an exception trying to decode the purchase!", e12);
                         }
                     }
                     if (z11) {
                         i10 = 9;
-                        bVar.y(26, 9, fVar3);
+                        bVar.z(26, 9, fVar3);
                     } else {
                         i10 = 9;
                     }
                     str2 = C1.getString("INAPP_CONTINUATION_TOKEN");
                     com.google.android.gms.internal.play_billing.u.g("BillingClient", "Continuation token: ".concat(String.valueOf(str2)));
                     if (TextUtils.isEmpty(str2)) {
-                        x10 = new q4.q(19, a0.g, arrayList);
+                        y10 = new q4.q(19, z.g, arrayList);
                         break;
                     }
                     exc2 = exc;
                 }
                 a10 = fVar3;
-                if (a10 == a0.g) {
+                if (a10 == z.g) {
                 }
             } catch (DeadObjectException e13) {
                 e = e13;
@@ -406,14 +406,14 @@ public final /* synthetic */ class r implements Callable {
             }
         }
         exc = exc2;
-        list = (List) x10.b;
+        list = (List) y10.b;
         if (list != null) {
-            ((n) this.c).f((f) x10.c, list);
+            ((n) this.c).b((f) y10.c, list);
         } else {
             n nVar3 = (n) this.c;
-            f fVar4 = (f) x10.c;
+            f fVar4 = (f) y10.c;
             com.google.android.gms.internal.play_billing.p pVar3 = com.google.android.gms.internal.play_billing.r.b;
-            nVar3.f(fVar4, com.google.android.gms.internal.play_billing.v.e);
+            nVar3.b(fVar4, com.google.android.gms.internal.play_billing.v.e);
         }
         return exc;
     }
@@ -429,21 +429,21 @@ public final /* synthetic */ class r implements Callable {
                 cVar = bVar.i;
             }
             if (cVar == null) {
-                return com.google.android.gms.internal.play_billing.u.c(ns.s1, a0.h);
+                return com.google.android.gms.internal.play_billing.u.c(z.h, ks.s1);
             }
             return ((com.google.android.gms.internal.play_billing.a) cVar).z1(bVar.g.getPackageName(), str, str2);
         } catch (DeadObjectException e10) {
-            f fVar = a0.h;
-            String a10 = y.a(e10);
-            c10 = com.google.android.gms.internal.play_billing.u.c(5, fVar);
+            f fVar = z.h;
+            String a10 = x.a(e10);
+            c10 = com.google.android.gms.internal.play_billing.u.c(fVar, 5);
             if (a10 != null) {
                 c10.putString("ADDITIONAL_LOG_DETAILS", a10);
             }
             return c10;
         } catch (Exception e11) {
-            f fVar2 = a0.f;
-            String a11 = y.a(e11);
-            c10 = com.google.android.gms.internal.play_billing.u.c(5, fVar2);
+            f fVar2 = z.f;
+            String a11 = x.a(e11);
+            c10 = com.google.android.gms.internal.play_billing.u.c(fVar2, 5);
             if (a11 != null) {
                 c10.putString("ADDITIONAL_LOG_DETAILS", a11);
             }
@@ -464,8 +464,8 @@ public final /* synthetic */ class r implements Callable {
                 h hVar = (h) this.c;
                 g gVar = (g) this.d;
                 if (!bVar.n()) {
-                    f fVar = a0.h;
-                    bVar.y(2, 4, fVar);
+                    f fVar = z.h;
+                    bVar.z(2, 4, fVar);
                     hVar.a(fVar);
                     return null;
                 }
@@ -492,17 +492,17 @@ public final /* synthetic */ class r implements Callable {
                             if (cVar == null) {
                                 str2 = str3;
                                 try {
-                                    bVar.g(hVar, str2, a0.h, ns.s1, "Service has been reset to null.", null);
+                                    bVar.g(hVar, str2, z.h, ks.s1, "Service has been reset to null.", null);
                                     return null;
                                 } catch (DeadObjectException e10) {
                                     e = e10;
                                     deadObjectException = e;
-                                    bVar.g(hVar, str2, a0.h, 29, "Error consuming purchase!", deadObjectException);
+                                    bVar.g(hVar, str2, z.h, 29, "Error consuming purchase!", deadObjectException);
                                     return null;
                                 } catch (Exception e11) {
                                     e = e11;
                                     exc = e;
-                                    bVar.g(hVar, str2, a0.f, 29, "Error consuming purchase!", exc);
+                                    bVar.g(hVar, str2, z.f, 29, "Error consuming purchase!", exc);
                                     return null;
                                 }
                             }
@@ -531,7 +531,7 @@ public final /* synthetic */ class r implements Callable {
                                 w12.recycle();
                                 str = "";
                             }
-                            f a10 = a0.a(readInt, str);
+                            f a10 = z.a(readInt, str);
                             if (readInt == 0) {
                                 com.google.android.gms.internal.play_billing.u.g("BillingClient", "Successfully consumed purchase.");
                                 hVar.a(a10);
@@ -542,12 +542,12 @@ public final /* synthetic */ class r implements Callable {
                         } catch (DeadObjectException e12) {
                             deadObjectException = e12;
                             str2 = str3;
-                            bVar.g(hVar, str2, a0.h, 29, "Error consuming purchase!", deadObjectException);
+                            bVar.g(hVar, str2, z.h, 29, "Error consuming purchase!", deadObjectException);
                             return null;
                         } catch (Exception e13) {
                             exc = e13;
                             str2 = str3;
-                            bVar.g(hVar, str2, a0.f, 29, "Error consuming purchase!", exc);
+                            bVar.g(hVar, str2, z.f, 29, "Error consuming purchase!", exc);
                             return null;
                         }
                     } catch (DeadObjectException e14) {

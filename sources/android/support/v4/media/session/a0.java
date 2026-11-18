@@ -47,18 +47,18 @@ import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import com.google.android.gms.cast.CastDevice;
 import com.google.android.gms.internal.clearcut.y0;
+import com.google.android.gms.internal.vision.e2;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessagingService;
-import fi.c1;
 import gb.k0;
+import h9.g1;
 import hi.d7;
-import hi.ea;
-import hi.l0;
-import hi.ra;
+import hi.fa;
 import hi.s8;
 import hi.sa;
+import hi.ta;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -84,26 +84,26 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import javax.net.ssl.HttpsURLConnection;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.a20;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.dz;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.ef;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
+import org.telegram.messenger.yy;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e2;
+import org.telegram.ui.ActionBar.h2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.vg;
-import org.telegram.ui.nm0;
+import org.telegram.ui.Components.eh;
+import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.si;
+import org.telegram.ui.pm0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal.q, ib.b, ii {
+public class a0 implements oa.a, pm0, com.google.android.gms.common.api.internal.q, ib.b, qi {
     public static int e;
     public static a0 f;
     public final /* synthetic */ int a;
@@ -132,7 +132,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public static String e(String str, HashMap hashMap) {
+    public static String f(String str, HashMap hashMap) {
         StringBuilder sb2 = new StringBuilder();
         Iterator it = hashMap.entrySet().iterator();
         Map.Entry entry = (Map.Entry) it.next();
@@ -156,7 +156,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         if (!str.endsWith("&")) {
             sb3 = "&".concat(sb3);
         }
-        return r.b.v(str, sb3);
+        return p5.c.v(str, sb3);
     }
 
     public static void g(Bundle bundle) {
@@ -172,7 +172,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         return Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3);
     }
 
-    public static Bundle x(Bundle bundle) {
+    public static Bundle y(Bundle bundle) {
         if (bundle == null) {
             return null;
         }
@@ -186,7 +186,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public boolean V1() {
         return true;
     }
@@ -198,7 +198,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         f6.i iVar = (f6.i) this.d;
         j6.x xVar = (j6.x) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        q6.m.i("Not connected to device", e0Var.G == 2);
+        q6.m.j("Not connected to device", e0Var.G == 2);
         j6.f fVar = (j6.f) xVar.n();
         Parcel p12 = fVar.p1();
         p12.writeString(str);
@@ -271,15 +271,15 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
         if (i10 != 29) {
             if (i10 != 28) {
-                return d();
+                return e();
             }
             if (!((context == null || context.getPackageManager() == null || !i0.a(context.getPackageManager())) ? false : true)) {
                 return 12;
             }
             KeyguardManager a12 = h0.a(tVar.a);
-            return !(a12 == null ? false : h0.b(a12)) ? d() : d() == 0 ? 0 : -1;
+            return !(a12 == null ? false : h0.b(a12)) ? e() : e() == 0 ? 0 : -1;
         }
-        if ((i7 & ns.e4) == 255) {
+        if ((i7 & ks.e4) == 255) {
             BiometricManager biometricManager3 = (BiometricManager) this.c;
             if (biometricManager3 != null) {
                 return androidx.biometric.r.a(biometricManager3);
@@ -353,57 +353,57 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         if (r3 && a10 == 0) {
             KeyguardManager a13 = h0.a(tVar.a);
             if (!(a13 == null ? false : h0.b(a13))) {
-                i11 = d();
-            } else if (d() != 0) {
+                i11 = e();
+            } else if (e() != 0) {
                 i11 = -1;
             }
             return i11;
         }
     }
 
-    public int d() {
-        androidx.biometric.t tVar = (androidx.biometric.t) this.d;
-        if (tVar == null) {
-            Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
-            return 1;
-        }
-        Context context = tVar.a;
-        FingerprintManager b10 = androidx.biometric.t.b(context);
-        if (b10 == null || !b10.isHardwareDetected()) {
-            return 12;
-        }
-        FingerprintManager b11 = androidx.biometric.t.b(context);
-        return (b11 == null || !b11.hasEnrolledFingerprints()) ? 11 : 0;
-    }
-
-    @Override // org.telegram.ui.Components.ii
-    public void d0(vg vgVar) {
-        vgVar.run();
-    }
-
-    @Override // org.telegram.ui.nm0
-    public void f(ArrayList arrayList) {
-        String str = !arrayList.isEmpty() ? ((dz) arrayList.get(0)).c : null;
+    @Override // org.telegram.ui.pm0
+    public void d(ArrayList arrayList) {
+        String str = !arrayList.isEmpty() ? ((yy) arrayList.get(0)).c : null;
         if (str == null) {
             return;
         }
-        Utilities.e.c(new ai.r(str, (a20) this.b, (e2) this.c, (z10) this.d, 5));
+        Utilities.e.c(new ai.s(str, (y10) this.b, (h2) this.c, (x10) this.d, 6));
     }
 
-    @Override // org.telegram.ui.Components.ii
+    public int e() {
+        androidx.emoji2.text.n nVar = (androidx.emoji2.text.n) this.d;
+        if (nVar == null) {
+            Log.e("BiometricManager", "Failure in canAuthenticate(). FingerprintManager was null.");
+            return 1;
+        }
+        Context context = nVar.a;
+        FingerprintManager e10 = androidx.emoji2.text.n.e(context);
+        if (e10 == null || !e10.isHardwareDetected()) {
+            return 12;
+        }
+        FingerprintManager e11 = androidx.emoji2.text.n.e(context);
+        return (e11 == null || !e11.hasEnrolledFingerprints()) ? 11 : 0;
+    }
+
+    @Override // org.telegram.ui.Components.qi
+    public void f0(eh ehVar) {
+        ehVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ boolean g0() {
         return false;
     }
 
     @Override // fd.a
     public Object get() {
-        Context appContext = (Context) ((d9.o) this.b).b;
+        Context appContext = (Context) ((d9.o) this.b).a;
         id.h blockingDispatcher = (id.h) ((ib.c) this.c).get();
         k0 sessionDataSerializer = (k0) ((ib.c) this.d).get();
         kotlin.jvm.internal.j.e(appContext, "appContext");
         kotlin.jvm.internal.j.e(blockingDispatcher, "blockingDispatcher");
         kotlin.jvm.internal.j.e(sessionDataSerializer, "sessionDataSerializer");
-        return gb.q.a(sessionDataSerializer, new l0(new c1.b(sessionDataSerializer, 3), 13), zd.b0.b(blockingDispatcher), new gb.p(appContext, 1));
+        return gb.q.a(sessionDataSerializer, new g1(new c1.b(sessionDataSerializer, 3), 13), zd.b0.b(blockingDispatcher), new gb.p(appContext, 1));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:38:0x00bd  */
@@ -414,7 +414,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
     public y0 h() {
         Throwable th2;
         HttpsURLConnection httpsURLConnection;
-        String e10;
+        String f10;
         String str;
         ba.e.b();
         InputStream inputStream = null;
@@ -422,8 +422,8 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         inputStream = null;
         try {
             try {
-                e10 = e((String) this.b, (HashMap) this.c);
-                str = "GET Request URL: " + e10;
+                f10 = f((String) this.b, (HashMap) this.c);
+                str = "GET Request URL: " + f10;
             } catch (Throwable th3) {
                 th2 = th3;
                 httpsURLConnection = null;
@@ -440,7 +440,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", str, null);
             }
-            httpsURLConnection = (HttpsURLConnection) new URL(e10).openConnection();
+            httpsURLConnection = (HttpsURLConnection) new URL(f10).openConnection();
             try {
                 httpsURLConnection.setReadTimeout(10000);
                 httpsURLConnection.setConnectTimeout(10000);
@@ -522,9 +522,9 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
             y1.b bVar = new y1.b((com.google.android.gms.common.api.q) this.d);
             ((LinkedHashMap) bVar.a).put(q0.b, key);
             try {
-                viewModel = s0Var.e(cls, bVar);
+                viewModel = s0Var.g(cls, bVar);
             } catch (AbstractMethodError unused) {
-                viewModel = s0Var.d(cls);
+                viewModel = s0Var.f(cls);
             }
             kotlin.jvm.internal.j.e(viewModel, "viewModel");
             androidx.lifecycle.p0 p0Var2 = (androidx.lifecycle.p0) linkedHashMap.put(key, viewModel);
@@ -595,7 +595,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
             if (uVar != null) {
                 try {
                     Task task = uVar.c;
-                    q6.m.g(task);
+                    q6.m.h(task);
                     Bitmap bitmap = (Bitmap) Tasks.await(task, 5L, TimeUnit.SECONDS);
                     qVar.j(bitmap);
                     e0.k kVar = new e0.k();
@@ -651,9 +651,9 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         if (str5 == null) {
             throw new IOException("Project ID or API Key is missing");
         }
-        URL url = new URL(org.telegram.ui.Cells.y0.m(str, ":", str4, com.google.android.gms.internal.vision.e2.n("https://fcmregistrations.googleapis.com/v1/projects/", str5, "/registrations/", str3, "/topicSubscriptions/")));
+        URL url = new URL(p5.c.m(str, ":", str4, e2.n("https://fcmregistrations.googleapis.com/v1/projects/", str5, "/registrations/", str3, "/topicSubscriptions/")));
         if (n()) {
-            StringBuilder n10 = com.google.android.gms.internal.vision.e2.n("Topic ", str4, " for: ", str, " with url: ");
+            StringBuilder n10 = e2.n("Topic ", str4, " for: ", str, " with url: ");
             n10.append(url);
             Log.d("FirebaseMessaging", n10.toString());
         }
@@ -683,7 +683,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                 httpURLConnection.disconnect();
                 if (responseCode >= 200 && responseCode < 300) {
                     if (n()) {
-                        Log.d("FirebaseMessaging", r.b.l("Topic ", str4, " for: ", str, " succeeded."));
+                        Log.d("FirebaseMessaging", p5.c.l("Topic ", str4, " for: ", str, " succeeded."));
                         return;
                     }
                     return;
@@ -692,7 +692,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                     if (n()) {
                         Log.d("FirebaseMessaging", "Topic " + str4 + " failed: " + responseMessage);
                     }
-                    throw new IOException(com.google.android.gms.internal.vision.e2.l("Topic ", str4, " failed: ", responseMessage));
+                    throw new IOException(e2.l("Topic ", str4, " failed: ", responseMessage));
                 }
                 if (responseCode >= 500) {
                     throw new IOException("INTERNAL_SERVER_ERROR");
@@ -721,14 +721,14 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public void p(bc.i iVar, Object obj) {
+    public void q(bc.i iVar, Object obj) {
         if (((EnumMap) this.d) == null) {
             this.d = new EnumMap(bc.i.class);
         }
         ((EnumMap) this.d).put((EnumMap) iVar, (bc.i) obj);
     }
 
-    public void q(boolean z10) {
+    public void r(boolean z10) {
         ((u) this.b).a.setActive(z10);
         ArrayList arrayList = (ArrayList) this.d;
         int size = arrayList.size();
@@ -740,7 +740,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public void r(s sVar, Handler handler) {
+    public void s(s sVar, Handler handler) {
         u uVar = (u) this.b;
         if (sVar == null) {
             uVar.e(null, null);
@@ -752,7 +752,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         uVar.e(sVar, handler);
     }
 
-    public void s(MediaMetadataCompat mediaMetadataCompat) {
+    public void t(MediaMetadataCompat mediaMetadataCompat) {
         u uVar = (u) this.b;
         uVar.h = mediaMetadataCompat;
         MediaSession mediaSession = uVar.a;
@@ -764,47 +764,6 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
             obtain.recycle();
         }
         mediaSession.setMetadata(mediaMetadataCompat.b);
-    }
-
-    public void t(PlaybackStateCompat playbackStateCompat) {
-        u uVar = (u) this.b;
-        uVar.f = playbackStateCompat;
-        synchronized (uVar.d) {
-            for (int beginBroadcast = uVar.e.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
-                try {
-                    ((b) uVar.e.getBroadcastItem(beginBroadcast)).e1(playbackStateCompat);
-                } catch (RemoteException unused) {
-                }
-            }
-            uVar.e.finishBroadcast();
-        }
-        MediaSession mediaSession = uVar.a;
-        if (playbackStateCompat.x == null) {
-            PlaybackState.Builder d = b0.d();
-            b0.x(d, playbackStateCompat.a, playbackStateCompat.b, playbackStateCompat.d, playbackStateCompat.n);
-            b0.u(d, playbackStateCompat.c);
-            b0.s(d, playbackStateCompat.e);
-            b0.v(d, playbackStateCompat.h);
-            ArrayList arrayList = playbackStateCompat.r;
-            int size = arrayList.size();
-            int i7 = 0;
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
-                PlaybackState.CustomAction customAction2 = customAction.e;
-                if (customAction2 == null) {
-                    PlaybackState.CustomAction.Builder e10 = b0.e(customAction.a, customAction.b, customAction.c);
-                    b0.w(e10, customAction.d);
-                    customAction2 = b0.b(e10);
-                }
-                b0.a(d, customAction2);
-            }
-            b0.t(d, playbackStateCompat.s);
-            c0.b(d, playbackStateCompat.w);
-            playbackStateCompat.x = b0.c(d);
-        }
-        mediaSession.setPlaybackState(playbackStateCompat.x);
     }
 
     public String toString() {
@@ -879,7 +838,48 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public void u(ArrayList arrayList) {
+    public void u(PlaybackStateCompat playbackStateCompat) {
+        u uVar = (u) this.b;
+        uVar.f = playbackStateCompat;
+        synchronized (uVar.d) {
+            for (int beginBroadcast = uVar.e.beginBroadcast() - 1; beginBroadcast >= 0; beginBroadcast--) {
+                try {
+                    ((b) uVar.e.getBroadcastItem(beginBroadcast)).e1(playbackStateCompat);
+                } catch (RemoteException unused) {
+                }
+            }
+            uVar.e.finishBroadcast();
+        }
+        MediaSession mediaSession = uVar.a;
+        if (playbackStateCompat.x == null) {
+            PlaybackState.Builder d = b0.d();
+            b0.x(d, playbackStateCompat.a, playbackStateCompat.b, playbackStateCompat.d, playbackStateCompat.n);
+            b0.u(d, playbackStateCompat.c);
+            b0.s(d, playbackStateCompat.e);
+            b0.v(d, playbackStateCompat.h);
+            ArrayList arrayList = playbackStateCompat.r;
+            int size = arrayList.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                PlaybackStateCompat.CustomAction customAction = (PlaybackStateCompat.CustomAction) obj;
+                PlaybackState.CustomAction customAction2 = customAction.e;
+                if (customAction2 == null) {
+                    PlaybackState.CustomAction.Builder e10 = b0.e(customAction.a, customAction.b, customAction.c);
+                    b0.w(e10, customAction.d);
+                    customAction2 = b0.b(e10);
+                }
+                b0.a(d, customAction2);
+            }
+            b0.t(d, playbackStateCompat.s);
+            c0.b(d, playbackStateCompat.w);
+            playbackStateCompat.x = b0.c(d);
+        }
+        mediaSession.setPlaybackState(playbackStateCompat.x);
+    }
+
+    public void v(ArrayList arrayList) {
         int i7 = 0;
         if (arrayList != null) {
             HashSet hashSet = new HashSet();
@@ -922,7 +922,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         mediaSession.setQueue(arrayList2);
     }
 
-    public void v(int i7) {
+    public void w(int i7) {
         u uVar = (u) this.b;
         if (uVar.i != i7) {
             uVar.i = i7;
@@ -938,7 +938,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public void w(int i7) {
+    public void x(int i7) {
         u uVar = (u) this.b;
         if (uVar.j != i7) {
             uVar.j = i7;
@@ -954,20 +954,14 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    public void y(int i7, String str, String str2) {
-        ((HashMap) this.b).put(str, str2);
-        ((HashMap) this.c).put(str2, str);
-        ((HashMap) this.d).put(str, Integer.valueOf(i7));
-    }
-
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
-        ra raVar;
+        sa saVar;
         String str = (String) this.c;
         gi.q qVar = (gi.q) this.d;
         long j11 = qVar.d;
-        ki kiVar = (ki) this.b;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = kiVar.e2;
+        si siVar = (si) this.b;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = siVar.e2;
         if (chatAttachAlertPhotoLayout.getSelectedPhotos().isEmpty()) {
             return;
         }
@@ -977,18 +971,18 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
             return;
         }
         Object next = selectedPhotos.values().iterator().next();
-        if (next instanceof ff) {
-            d7 l10 = d7.l((ff) next);
+        if (next instanceof ef) {
+            d7 l10 = d7.l((ef) next);
             l10.J0 = j11;
             l10.K0 = str;
             l10.A();
-            sa D = sa.D(qVar.a.getParentActivity(), qVar.b);
+            ta D = ta.D(qVar.a.getParentActivity(), qVar.b);
             RectF rectF = D.I;
             WindowManager.LayoutParams layoutParams = D.h;
             int i12 = D.c;
             WindowManager windowManager = D.f;
             if (!D.d) {
-                if (np.s1(i12).v2()) {
+                if (mp.u1(i12).A2()) {
                     org.telegram.ui.b.b(i12);
                 } else {
                     D.w0 = j11;
@@ -996,8 +990,8 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                     D.v0 = false;
                     D.e = false;
                     D.C2 = false;
-                    if (windowManager != null && (raVar = D.n) != null && raVar.getParent() == null) {
-                        g0.x3(windowManager, D.n, layoutParams);
+                    if (windowManager != null && (saVar = D.n) != null && saVar.getParent() == null) {
+                        g0.w3(windowManager, D.n, layoutParams);
                         windowManager.addView(D.n, layoutParams);
                         D.f0();
                     }
@@ -1012,9 +1006,9 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                     rectF.set(0.0f, L, point.x, g0.L(100.0f) + point.y);
                     D.H = g0.L(8.0f);
                     D.r.c();
-                    ea eaVar = D.i0;
+                    fa faVar = D.i0;
                     int i13 = D.K;
-                    eaVar.setBackgroundColor((i13 == 1 || i13 == 0) ? 0 : -14737633);
+                    faVar.setBackgroundColor((i13 == 1 || i13 == 0) ? 0 : -14737633);
                     D.r.setTranslationX(0.0f);
                     D.r.setTranslationY(0.0f);
                     D.r.b(0.0f);
@@ -1034,8 +1028,14 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                     D.d();
                 }
             }
-            g0.i3(new c1(kiVar, 21), 400L);
+            g0.h3(new f2.a(siVar, 25), 400L);
         }
+    }
+
+    public void z(int i7, String str, String str2) {
+        ((HashMap) this.b).put(str, str2);
+        ((HashMap) this.c).put(str2, str);
+        ((HashMap) this.d).put(str, Integer.valueOf(i7));
     }
 
     public /* synthetic */ a0(Object obj, Object obj2, Object obj3, int i7) {
@@ -1075,7 +1075,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
 
     public a0(CastDevice castDevice, g6.d0 d0Var) {
         this.a = 22;
-        q6.m.h(castDevice, "CastDevice parameter cannot be null");
+        q6.m.i(castDevice, "CastDevice parameter cannot be null");
         this.b = castDevice;
         this.c = d0Var;
     }
@@ -1104,15 +1104,15 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void K0() {
     }
 
-    @Override // org.telegram.ui.nm0
-    public void s0() {
+    @Override // org.telegram.ui.pm0
+    public void p() {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void v0() {
     }
 
@@ -1123,11 +1123,11 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         this.d = new HashMap();
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void h1(TLRPC.User user) {
     }
 
@@ -1170,7 +1170,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public a0(androidx.fragment.app.v owner) {
-        this(owner.f(), owner.c(), owner.d());
+        this(owner.g(), owner.d(), owner.e());
         this.a = 10;
         kotlin.jvm.internal.j.e(owner, "owner");
     }
@@ -1181,7 +1181,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         this.b = tVar;
         int i7 = Build.VERSION.SDK_INT;
         this.c = i7 >= 29 ? androidx.biometric.r.b(context) : null;
-        this.d = i7 <= 29 ? new androidx.biometric.t(context, false) : null;
+        this.d = i7 <= 29 ? new androidx.emoji2.text.n(context, (char) 0) : null;
     }
 
     public a0(Context context, String str, ComponentName componentName, PendingIntent pendingIntent) {
@@ -1220,7 +1220,7 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
                 } else {
                     this.b = new u(context, str);
                 }
-                r(new p(0), new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper()));
+                s(new p(0), new Handler(Looper.myLooper() != null ? Looper.myLooper() : Looper.getMainLooper()));
                 ((u) this.b).a.setMediaButtonReceiver(pendingIntent);
                 this.c = new wf.b(context, ((u) this.b).c);
                 if (e == 0) {
@@ -1234,14 +1234,14 @@ public class a0 implements oa.a, nm0, com.google.android.gms.common.api.internal
         throw new IllegalArgumentException("context must not be null");
     }
 
-    public a0(gi.q qVar, ki kiVar, String str) {
+    public a0(gi.q qVar, si siVar, String str) {
         this.a = 29;
         this.d = qVar;
-        this.b = kiVar;
+        this.b = siVar;
         this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

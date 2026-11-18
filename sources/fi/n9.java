@@ -1,44 +1,59 @@
 package fi;
 
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.jc;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.support.LongSparseLongArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Cells.qa;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class n9 extends jc {
-    public final ArrayList a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class n9 {
+    public static final n9[] f = new n9[4];
+    public final int a;
+    public final LongSparseLongArray b = new LongSparseLongArray();
+    public final ArrayList c = new ArrayList();
+    public final ArrayList d = new ArrayList();
+    public final m9 e;
 
-    public n9(TL_stories.StoryItem storyItem) {
-        for (int i7 = 0; i7 < storyItem.media_areas.size(); i7++) {
-            if (storyItem.media_areas.get(i7) instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                if (this.a == null) {
-                    this.a = new ArrayList();
-                }
-                this.a.add(new k9(this, (TL_stories.TL_mediaAreaSuggestedReaction) storyItem.media_areas.get(i7)));
-            } else if (storyItem.media_areas.get(i7) instanceof TL_stories.TL_mediaAreaWeather) {
-                if (this.a == null) {
-                    this.a = new ArrayList();
-                }
-                this.a.add(new m9(this, (TL_stories.TL_mediaAreaWeather) storyItem.media_areas.get(i7)));
-            }
-        }
+    public n9(int i7) {
+        new ArrayList();
+        this.e = new m9(this);
+        this.a = i7;
     }
 
-    @Override // org.telegram.messenger.jc
-    public final void a(ImageReceiver imageReceiver) {
-        ArrayList arrayList = this.a;
-        if (arrayList == null) {
+    public final void a(ck0 ck0Var) {
+        TLRPC.UserStatus userStatus;
+        long currentTimeMillis = System.currentTimeMillis();
+        ArrayList arrayList = this.c;
+        arrayList.clear();
+        for (int i7 = 0; i7 < ck0Var.getChildCount(); i7++) {
+            View childAt = ck0Var.getChildAt(i7);
+            long dialogId = childAt instanceof org.telegram.ui.Cells.t2 ? ((org.telegram.ui.Cells.t2) childAt).getDialogId() : childAt instanceof qa ? ((qa) childAt).getDialogId() : 0L;
+            int i10 = this.a;
+            LongSparseLongArray longSparseLongArray = this.b;
+            if (dialogId > 0) {
+                TLRPC.User c22 = mp.u1(i10).c2(Long.valueOf(dialogId));
+                if (c22 != null && !c22.bot && !c22.self && !c22.contact && (userStatus = c22.status) != null && !(userStatus instanceof TLRPC.TL_userStatusEmpty) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
+                    longSparseLongArray.put(dialogId, currentTimeMillis);
+                    arrayList.add(Long.valueOf(dialogId));
+                }
+            } else {
+                TLRPC.Chat O0 = mp.u1(i10).O0(Long.valueOf(-dialogId));
+                if (org.telegram.messenger.v3.T(O0) && !org.telegram.messenger.v3.p0(O0) && currentTimeMillis - longSparseLongArray.get(dialogId, 0L) > 3600000) {
+                    longSparseLongArray.put(dialogId, currentTimeMillis);
+                    arrayList.add(Long.valueOf(dialogId));
+                }
+            }
+        }
+        if (arrayList.isEmpty()) {
             return;
         }
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ((j9) arrayList.get(i7)).c(imageReceiver.e);
-            ((j9) arrayList.get(i7)).b(true);
-        }
+        this.d.addAll(arrayList);
+        m9 m9Var = this.e;
+        org.telegram.messenger.g0.r(m9Var);
+        org.telegram.messenger.g0.h3(m9Var, 300L);
     }
 }

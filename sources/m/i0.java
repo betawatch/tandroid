@@ -6,7 +6,7 @@ import android.util.Log;
 import android.widget.ListAdapter;
 import androidx.appcompat.app.AlertController$RecycleListView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i0 implements o0, DialogInterface.OnClickListener {
     public g.f a;
@@ -57,12 +57,12 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final void h(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.c = charSequence;
     }
 
     @Override // m.o0
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         Log.e("AppCompatSpinner", "Cannot set popup background for MODE_DIALOG, ignoring");
     }
 
@@ -82,8 +82,8 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
             return;
         }
         p0 p0Var = this.d;
-        f5.v vVar = new f5.v(p0Var.getPopupContext());
-        g.b bVar = (g.b) vVar.c;
+        b3.j jVar = new b3.j(p0Var.getPopupContext());
+        g.b bVar = (g.b) jVar.c;
         CharSequence charSequence = this.c;
         if (charSequence != null) {
             bVar.f = charSequence;
@@ -94,7 +94,7 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
         bVar.m = this;
         bVar.b = selectedItemPosition;
         bVar.a = true;
-        g.f g10 = vVar.g();
+        g.f g10 = jVar.g();
         this.a = g10;
         AlertController$RecycleListView alertController$RecycleListView = g10.f.e;
         g0.d(alertController$RecycleListView, i7);
@@ -103,13 +103,8 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
     }
 
     @Override // m.o0
-    public final int n() {
+    public final int o() {
         return 0;
-    }
-
-    @Override // m.o0
-    public final void o(ListAdapter listAdapter) {
-        this.b = (j0) listAdapter;
     }
 
     @Override // android.content.DialogInterface.OnClickListener
@@ -120,5 +115,10 @@ public final class i0 implements o0, DialogInterface.OnClickListener {
             p0Var.performItemClick(null, i7, this.b.getItemId(i7));
         }
         dismiss();
+    }
+
+    @Override // m.o0
+    public final void p(ListAdapter listAdapter) {
+        this.b = (j0) listAdapter;
     }
 }

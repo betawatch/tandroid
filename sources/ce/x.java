@@ -1,18 +1,16 @@
 package ce;
 
-import a8.ma;
-import aa.b0;
 import java.io.Serializable;
 import java.util.NoSuchElementException;
 import java.util.concurrent.CancellationException;
 import org.telegram.tgnet.TLObject;
 import zd.a1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class x {
-    public static final b0 a = new b0("NONE", 1);
-    public static final b0 b = new b0("PENDING", 1);
+    public static final ee.t a = new ee.t("NONE", 0);
+    public static final ee.t b = new ee.t("PENDING", 0);
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
@@ -32,7 +30,7 @@ public abstract class x {
                     Object obj2 = jd.a.a;
                     i7 = fVar.c;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         fVar.a = th2;
                         fVar.c = 1;
                         if (nVar.b(zVar, th2, fVar) == obj2) {
@@ -43,7 +41,7 @@ public abstract class x {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         th2 = fVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                     }
                     return gd.k.a;
                 }
@@ -53,7 +51,7 @@ public abstract class x {
             return gd.k.a;
         } catch (Throwable th3) {
             if (th2 != null && th2 != th3) {
-                ma.a(th3, th2);
+                af.b.a(th3, th2);
             }
             throw th3;
         }
@@ -86,13 +84,13 @@ public abstract class x {
                 jd.a aVar = jd.a.a;
                 i7 = kVar.c;
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     kotlin.jvm.internal.r rVar2 = new kotlin.jvm.internal.r();
                     try {
                         d mVar = new m(dVar, rVar2);
                         kVar.a = rVar2;
                         kVar.c = 1;
-                        if (cVar.G(mVar, kVar) == aVar) {
+                        if (cVar.v(mVar, kVar) == aVar) {
                             return aVar;
                         }
                         return null;
@@ -106,7 +104,7 @@ public abstract class x {
                     }
                     rVar = kVar.a;
                     try {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         return null;
                     } catch (Throwable th4) {
                         th = th4;
@@ -120,10 +118,10 @@ public abstract class x {
                     return th;
                 }
                 if (th instanceof CancellationException) {
-                    ma.a(th2, th);
+                    af.b.a(th2, th);
                     throw th2;
                 }
-                ma.a(th, th2);
+                af.b.a(th, th2);
                 throw th;
             }
         }
@@ -175,7 +173,7 @@ public abstract class x {
                     jd.a aVar = jd.a.a;
                     i7 = eVar.f;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         if (dVar instanceof z) {
                             throw ((z) dVar).a;
                         }
@@ -196,7 +194,7 @@ public abstract class x {
                         bVar2 = eVar.c;
                         ?? r92 = eVar.b;
                         dVar2 = eVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         rVar2 = r92;
                         if (!((Boolean) obj).booleanValue()) {
                         }
@@ -208,7 +206,7 @@ public abstract class x {
                         bVar2 = eVar.c;
                         ?? r93 = eVar.b;
                         dVar2 = eVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         be.r rVar4 = r93;
                         d dVar3 = dVar2;
                         bVar = bVar2;
@@ -234,11 +232,11 @@ public abstract class x {
                             return gd.k.a;
                         }
                         Object obj2 = bVar2.a;
-                        b0 b0Var = be.e.p;
-                        if (obj2 == b0Var) {
+                        ee.t tVar = be.e.p;
+                        if (obj2 == tVar) {
                             throw new IllegalStateException("`hasNext()` has not been invoked");
                         }
-                        bVar2.a = b0Var;
+                        bVar2.a = tVar;
                         if (obj2 == be.e.l) {
                             Throwable n10 = bVar2.c.n();
                             int i11 = ee.s.a;
@@ -287,7 +285,7 @@ public abstract class x {
     public static final Object d(c cVar, kd.c cVar2) {
         s sVar;
         int i7;
-        b0 b0Var;
+        ee.t tVar;
         kotlin.jvm.internal.r rVar;
         de.a e10;
         r rVar2;
@@ -300,17 +298,17 @@ public abstract class x {
                 Object obj2 = sVar.c;
                 Object obj3 = jd.a.a;
                 i7 = sVar.d;
-                b0Var = de.g.a;
+                tVar = de.g.a;
                 if (i7 != 0) {
-                    af.b.c(obj2);
+                    b7.h.b(obj2);
                     kotlin.jvm.internal.r rVar3 = new kotlin.jvm.internal.r();
-                    rVar3.a = b0Var;
+                    rVar3.a = tVar;
                     r rVar4 = new r(rVar3, 0);
                     try {
                         sVar.a = rVar3;
                         sVar.b = rVar4;
                         sVar.d = 1;
-                        if (cVar.G(rVar4, sVar) == obj3) {
+                        if (cVar.v(rVar4, sVar) == obj3) {
                             return obj3;
                         }
                         rVar = rVar3;
@@ -321,7 +319,7 @@ public abstract class x {
                         if (e10.a != rVar2) {
                         }
                         obj = rVar.a;
-                        if (obj == b0Var) {
+                        if (obj == tVar) {
                         }
                     }
                 } else {
@@ -331,19 +329,19 @@ public abstract class x {
                     rVar2 = sVar.b;
                     rVar = sVar.a;
                     try {
-                        af.b.c(obj2);
+                        b7.h.b(obj2);
                     } catch (de.a e12) {
                         e10 = e12;
                         if (e10.a != rVar2) {
                             throw e10;
                         }
                         obj = rVar.a;
-                        if (obj == b0Var) {
+                        if (obj == tVar) {
                         }
                     }
                 }
                 obj = rVar.a;
-                if (obj == b0Var) {
+                if (obj == tVar) {
                     return obj;
                 }
                 throw new NoSuchElementException("Expected at least one element");
@@ -353,11 +351,11 @@ public abstract class x {
         Object obj22 = sVar.c;
         Object obj32 = jd.a.a;
         i7 = sVar.d;
-        b0Var = de.g.a;
+        tVar = de.g.a;
         if (i7 != 0) {
         }
         obj = rVar.a;
-        if (obj == b0Var) {
+        if (obj == tVar) {
         }
     }
 
@@ -382,14 +380,14 @@ public abstract class x {
                 Object obj2 = jd.a.a;
                 i7 = tVar.d;
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     kotlin.jvm.internal.r rVar3 = new kotlin.jvm.internal.r();
                     r rVar4 = new r(rVar3, 1);
                     try {
                         tVar.a = rVar3;
                         tVar.b = rVar4;
                         tVar.d = 1;
-                        if (cVar.G(rVar4, tVar) == obj2) {
+                        if (cVar.v(rVar4, tVar) == obj2) {
                             return obj2;
                         }
                         rVar = rVar3;
@@ -408,7 +406,7 @@ public abstract class x {
                     rVar2 = tVar.b;
                     rVar = tVar.a;
                     try {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                     } catch (de.a e12) {
                         e10 = e12;
                         if (e10.a != rVar2) {

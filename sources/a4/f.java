@@ -1,11 +1,11 @@
 package a4;
 
-import a8.ja;
+import a8.la;
 import f3.p;
 import h2.x;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f {
     public final g a = new g();
@@ -35,7 +35,7 @@ public final class f {
 
     public final boolean b(p pVar) {
         int i7;
-        ja.p(pVar != null);
+        la.p(pVar != null);
         boolean z10 = this.e;
         x xVar = this.b;
         if (z10) {
@@ -55,7 +55,7 @@ public final class f {
                         i7 = 0;
                     }
                     try {
-                        pVar.m(i11);
+                        pVar.r(i11);
                         this.c = i7;
                     } catch (EOFException unused) {
                     }

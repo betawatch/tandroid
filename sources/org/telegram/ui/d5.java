@@ -2,12 +2,12 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d5 extends y4 {
     @Override // org.telegram.ui.y4
     public final void a() {
-        org.telegram.messenger.np.s1(org.telegram.messenger.m10.t0).g3((TLRPC.User) this.c, false, this.d);
+        org.telegram.messenger.mp.u1(org.telegram.messenger.j10.t0).n3((TLRPC.User) this.c, false, this.d);
     }
 
     @Override // org.telegram.ui.y4

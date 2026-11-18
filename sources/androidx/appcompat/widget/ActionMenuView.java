@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import hi.l0;
+import h9.g1;
 import l.j;
 import l.k;
 import l.m;
@@ -27,7 +27,7 @@ import m.w1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ActionMenuView extends w1 implements j, z {
     public k G;
@@ -35,7 +35,7 @@ public class ActionMenuView extends w1 implements j, z {
     public int I;
     public boolean J;
     public h K;
-    public l0 L;
+    public g1 L;
     public boolean M;
     public int N;
     public final int O;
@@ -124,7 +124,7 @@ public class ActionMenuView extends w1 implements j, z {
             Context context = getContext();
             k kVar = new k(context);
             this.G = kVar;
-            kVar.e = new l0(this, 10);
+            kVar.e = new g1(this, 10);
             h hVar = new h(context);
             this.K = hVar;
             hVar.x = true;
@@ -177,7 +177,7 @@ public class ActionMenuView extends w1 implements j, z {
         super.onConfigurationChanged(configuration);
         h hVar = this.K;
         if (hVar != null) {
-            hVar.d();
+            hVar.e();
             if (this.K.g()) {
                 this.K.f();
                 this.K.l();

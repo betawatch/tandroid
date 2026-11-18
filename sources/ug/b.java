@@ -3,17 +3,17 @@ package ug;
 import android.content.Context;
 import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.m10;
+import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b extends a {
     public c d;
 
     @Override // ug.a
-    public final v4.h0 a() {
-        c cVar = new c(m10.t0, this.a);
+    public final v4.i0 a() {
+        c cVar = new c(j10.t0, this.a);
         this.d = cVar;
         cVar.r = this;
         return cVar;

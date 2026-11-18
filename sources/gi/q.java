@@ -8,77 +8,77 @@ import android.text.TextUtils;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.widget.FrameLayout;
-import bi.f3;
-import bi.v4;
-import c8.ja;
-import di.f4;
-import di.z6;
-import fi.c6;
-import fi.r6;
-import fi.s6;
+import bi.e7;
+import bi.n5;
+import c8.ma;
+import di.c7;
+import di.i4;
+import fi.o6;
+import fi.p6;
+import fi.z5;
 import hi.d7;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.z5;
-import org.telegram.ui.Cells.n7;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.Components.vp0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.o7;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.dq0;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public abstract class q extends FrameLayout implements z5, is {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class q extends FrameLayout implements c6, fs {
     public static LongSparseArray F;
     public static LongSparseArray G;
     public int E;
-    public final e2 a;
+    public final h2 a;
     public final int b;
-    public final e6 c;
+    public final i6 c;
     public final long d;
-    public final c6 e;
+    public final z5 e;
     public final ArrayList f;
     public final ArrayList h;
-    public final f3 n;
-    public final v61 r;
+    public final n5 n;
+    public final f71 r;
     public Boolean s;
     public int w;
     public float x;
     public ValueAnimator y;
 
-    public q(Context context, e2 e2Var, long j3) {
+    public q(Context context, h2 h2Var, long j3) {
         super(context);
         this.f = new ArrayList();
         this.h = new ArrayList();
         this.s = null;
         this.w = g0.q.y;
-        this.E = Utilities.j(gz.u1, 6, 2);
-        this.a = e2Var;
-        int currentAccount = e2Var.getCurrentAccount();
+        this.E = Utilities.j(bz.u1, 6, 2);
+        this.a = h2Var;
+        int currentAccount = h2Var.getCurrentAccount();
         this.b = currentAccount;
-        e6 resourceProvider = e2Var.getResourceProvider();
+        i6 resourceProvider = h2Var.getResourceProvider();
         this.c = resourceProvider;
         this.d = j3;
-        setBackgroundColor(j6.w(j6.w0(j6.d6, resourceProvider), j6.r1(0.04f, j6.w0(j6.G6, resourceProvider))));
+        setBackgroundColor(n6.w(n6.w0(n6.d6, resourceProvider), n6.r1(0.04f, n6.w0(n6.G6, resourceProvider))));
         if (G == null) {
             G = new LongSparseArray();
         }
@@ -90,45 +90,45 @@ public abstract class q extends FrameLayout implements z5, is {
             longSparseArray2.put(j10, longSparseArray3);
             longSparseArray = longSparseArray3;
         }
-        c6 c6Var = (c6) longSparseArray.get(j3);
-        if (c6Var == null) {
-            c6 c6Var2 = new c6(currentAccount, j3, "", null);
-            longSparseArray.put(j3, c6Var2);
-            c6Var = c6Var2;
+        z5 z5Var = (z5) longSparseArray.get(j3);
+        if (z5Var == null) {
+            z5 z5Var2 = new z5(currentAccount, j3, "", null);
+            longSparseArray.put(j3, z5Var2);
+            z5Var = z5Var2;
         }
-        this.e = c6Var;
-        vp0 vp0Var = (vp0) this;
-        f3 f3Var = new f3(vp0Var, context);
-        this.n = f3Var;
-        f3Var.setAllowDisallowInterceptTouch(true);
-        f3Var.setAdapter(new f4(1, context, vp0Var));
-        addView(f3Var, ja.e(-1, -1, ns.E1));
-        v61 i7 = f3Var.i(9, true);
+        this.e = z5Var;
+        dq0 dq0Var = (dq0) this;
+        n5 n5Var = new n5(dq0Var, context);
+        this.n = n5Var;
+        n5Var.setAllowDisallowInterceptTouch(true);
+        n5Var.setAdapter(new i4(1, context, dq0Var));
+        addView(n5Var, ma.e(-1, -1, ks.E1));
+        f71 i7 = n5Var.i(9, true);
         this.r = i7;
         i7.r = 12;
-        i7.setPreTabClick(new z6(vp0Var, 13));
-        addView(i7, ja.e(-1, 42, 48));
+        i7.setPreTabClick(new c7(dq0Var, 13));
+        addView(i7, ma.e(-1, 42, 48));
         i(false);
     }
 
     public final void a(String str) {
-        e2 e2Var = this.a;
-        if (e2Var == null || e2Var.getParentActivity() == null) {
+        h2 h2Var = this.a;
+        if (h2Var == null || h2Var.getParentActivity() == null) {
             return;
         }
-        ki kiVar = new ki(e2Var.getParentActivity(), this.a, false, false, false, this.c);
-        kiVar.y1(1, false);
-        kiVar.R2 = true;
-        kiVar.Q2 = false;
-        kiVar.h3.setText(hd.M0(2131752121, null));
-        kiVar.e2.i0();
-        kiVar.X3 = new a0(this, kiVar, str);
-        kiVar.e1();
-        kiVar.show();
+        si siVar = new si(h2Var.getParentActivity(), this.a, false, false, false, this.c);
+        siVar.z1(1, false);
+        siVar.R2 = true;
+        siVar.Q2 = false;
+        siVar.h3.setText(gd.M0(2131752110, null));
+        siVar.e2.i0();
+        siVar.X3 = new a0(this, siVar, str);
+        siVar.f1();
+        siVar.show();
     }
 
     public final void b(String str) {
-        c6 c6Var;
+        z5 z5Var;
         TLRPC.MessageMedia messageMedia;
         if (TextUtils.isEmpty(str)) {
             return;
@@ -139,60 +139,60 @@ public abstract class q extends FrameLayout implements z5, is {
         while (true) {
             ArrayList arrayList = this.f;
             if (i7 >= arrayList.size()) {
-                c6Var = null;
+                z5Var = null;
                 break;
             }
-            c6Var = (c6) arrayList.get(i7);
-            if (c6Var != null && TextUtils.equals(c6Var.E, str)) {
+            z5Var = (z5) arrayList.get(i7);
+            if (z5Var != null && TextUtils.equals(z5Var.E, str)) {
                 break;
             } else {
                 i7++;
             }
         }
-        if (c6Var != null) {
-            ArrayList arrayList2 = c6Var.i;
+        if (z5Var != null) {
+            ArrayList arrayList2 = z5Var.i;
             TL_bots.deletePreviewMedia deletepreviewmedia = new TL_bots.deletePreviewMedia();
             int i10 = this.b;
-            deletepreviewmedia.bot = np.s1(i10).o1(this.d);
+            deletepreviewmedia.bot = mp.u1(i10).q1(this.d);
             deletepreviewmedia.lang_code = str;
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                TL_stories.StoryItem storyItem = ((gj) arrayList2.get(i11)).l;
+                TL_stories.StoryItem storyItem = ((fj) arrayList2.get(i11)).l;
                 if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                    deletepreviewmedia.media.add(np.a5(messageMedia));
+                    deletepreviewmedia.media.add(mp.l5(messageMedia));
                 }
             }
             ConnectionsManager.getInstance(i10).sendRequest(deletepreviewmedia, null);
         }
         i(true);
-        this.r.d(-1, 0);
+        this.r.e(-1, 0);
     }
 
-    public abstract boolean c(gj gjVar);
+    public abstract boolean c(fj fjVar);
 
     public final boolean d() {
-        c6 c6Var;
+        z5 z5Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof m) || (c6Var = ((m) currentView).a) == null) {
+        if (!(currentView instanceof m) || (z5Var = ((m) currentView).a) == null) {
             return true;
         }
-        ArrayList arrayList = c6Var.i;
+        ArrayList arrayList = z5Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (!c((gj) arrayList.get(i7))) {
+            if (!c((fj) arrayList.get(i7))) {
                 return false;
             }
         }
         return true;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        int i11 = ns.x5;
-        f3 f3Var = this.n;
+        int i11 = ks.z5;
+        n5 n5Var = this.n;
         int i12 = 0;
         if (i7 != i11) {
-            if (i7 == ns.v5) {
+            if (i7 == ks.x5) {
                 i(true);
-                View[] viewPages = f3Var.getViewPages();
+                View[] viewPages = n5Var.getViewPages();
                 int length = viewPages.length;
                 while (i12 < length) {
                     View view = viewPages[i12];
@@ -206,16 +206,16 @@ public abstract class q extends FrameLayout implements z5, is {
             return;
         }
         Object obj = objArr[0];
-        c6 c6Var = this.e;
-        if (obj == c6Var) {
+        z5 z5Var = this.e;
+        if (obj == z5Var) {
             i(true);
-            View[] viewPages2 = f3Var.getViewPages();
+            View[] viewPages2 = n5Var.getViewPages();
             int length2 = viewPages2.length;
             while (i12 < length2) {
                 View view2 = viewPages2[i12];
                 if (view2 instanceof m) {
                     m mVar = (m) view2;
-                    if (mVar.a == c6Var) {
+                    if (mVar.a == z5Var) {
                         mVar.w.f();
                     }
                 }
@@ -224,7 +224,7 @@ public abstract class q extends FrameLayout implements z5, is {
             return;
         }
         if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = f3Var.getViewPages();
+            View[] viewPages3 = n5Var.getViewPages();
             for (View view3 : viewPages3) {
                 if (view3 instanceof m) {
                     m mVar2 = (m) view3;
@@ -236,23 +236,23 @@ public abstract class q extends FrameLayout implements z5, is {
         }
     }
 
-    public abstract boolean e(gj gjVar);
+    public abstract boolean e(fj fjVar);
 
     public final void f() {
-        c6 c6Var;
+        z5 z5Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof m) || (c6Var = ((m) currentView).a) == null) {
+        if (!(currentView instanceof m) || (z5Var = ((m) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = c6Var.i;
+        ArrayList arrayList = z5Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (!c((gj) arrayList.get(i7))) {
-                e((gj) arrayList.get(i7));
+            if (!c((fj) arrayList.get(i7))) {
+                e((fj) arrayList.get(i7));
             }
         }
     }
 
-    public abstract boolean g(gj gjVar);
+    public abstract boolean g(fj fjVar);
 
     public String getBotPreviewsSubtitle() {
         int i7;
@@ -261,18 +261,18 @@ public abstract class q extends FrameLayout implements z5, is {
         StringBuilder sb2 = new StringBuilder();
         View currentView = this.n.getCurrentView();
         if (currentView instanceof m) {
-            c6 c6Var = ((m) currentView).a;
-            if (c6Var != null) {
-                ArrayList arrayList = c6Var.i;
+            z5 z5Var = ((m) currentView).a;
+            if (z5Var != null) {
+                ArrayList arrayList = z5Var.i;
                 i7 = 0;
                 i10 = 0;
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                    gj gjVar = (gj) arrayList.get(i11);
-                    TL_stories.StoryItem storyItem = gjVar.l;
+                    fj fjVar = (fj) arrayList.get(i11);
+                    TL_stories.StoryItem storyItem = fjVar.l;
                     if (storyItem != null && (messageMedia = storyItem.media) != null) {
-                        if (gj.K4(messageMedia.document)) {
+                        if (fj.K4(messageMedia.document)) {
                             i10++;
-                        } else if (gjVar.l.media.photo != null) {
+                        } else if (fjVar.l.media.photo != null) {
                             i7++;
                         }
                     }
@@ -282,16 +282,16 @@ public abstract class q extends FrameLayout implements z5, is {
                 i10 = 0;
             }
             if (i7 == 0 && i10 == 0) {
-                return hd.M0(2131753014, null);
+                return gd.M0(2131753003, null);
             }
             if (i7 > 0) {
-                sb2.append(hd.G(i7, "Images", new Object[0]));
+                sb2.append(gd.G(i7, "Images", new Object[0]));
             }
             if (i10 > 0) {
                 if (sb2.length() > 0) {
                     sb2.append(", ");
                 }
-                sb2.append(hd.G(i10, "Videos", new Object[0]));
+                sb2.append(gd.G(i10, "Videos", new Object[0]));
             }
         }
         return sb2.toString();
@@ -299,28 +299,28 @@ public abstract class q extends FrameLayout implements z5, is {
 
     public String getCurrentLang() {
         View view;
-        c6 c6Var;
-        f3 f3Var = this.n;
-        View[] viewPages = f3Var.getViewPages();
-        if (Math.abs(f3Var.getCurrentPosition() - f3Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
+        z5 z5Var;
+        n5 n5Var = this.n;
+        View[] viewPages = n5Var.getViewPages();
+        if (Math.abs(n5Var.getCurrentPosition() - n5Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
-        if (!(view instanceof m) || (c6Var = ((m) view).a) == null) {
+        if (!(view instanceof m) || (z5Var = ((m) view).a) == null) {
             return null;
         }
-        return c6Var.E;
+        return z5Var.E;
     }
 
-    public c6 getCurrentList() {
-        c6 c6Var;
+    public z5 getCurrentList() {
+        z5 z5Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof m) || (c6Var = ((m) currentView).a) == null) {
+        if (!(currentView instanceof m) || (z5Var = ((m) currentView).a) == null) {
             return null;
         }
-        return c6Var;
+        return z5Var;
     }
 
-    public uj0 getCurrentListView() {
+    public ck0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof m) {
             return ((m) currentView).f;
@@ -329,12 +329,12 @@ public abstract class q extends FrameLayout implements z5, is {
     }
 
     public int getItemsCount() {
-        c6 c6Var;
+        z5 z5Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof m) || (c6Var = ((m) currentView).a) == null) {
+        if (!(currentView instanceof m) || (z5Var = ((m) currentView).a) == null) {
             return 0;
         }
-        return c6Var.i.size();
+        return z5Var.i.size();
     }
 
     public int getStartedTrackingX() {
@@ -342,21 +342,21 @@ public abstract class q extends FrameLayout implements z5, is {
     }
 
     public final void h() {
-        c6 c6Var;
+        z5 z5Var;
         View currentView = this.n.getCurrentView();
-        if (!(currentView instanceof m) || (c6Var = ((m) currentView).a) == null) {
+        if (!(currentView instanceof m) || (z5Var = ((m) currentView).a) == null) {
             return;
         }
-        ArrayList arrayList = c6Var.i;
+        ArrayList arrayList = z5Var.i;
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            if (c((gj) arrayList.get(i7))) {
-                g((gj) arrayList.get(i7));
+            if (c((fj) arrayList.get(i7))) {
+                g((fj) arrayList.get(i7));
             }
         }
     }
 
     public final void i(boolean z10) {
-        c6 c6Var;
+        z5 z5Var;
         d7 d7Var;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
@@ -370,17 +370,17 @@ public abstract class q extends FrameLayout implements z5, is {
                 arrayList.add(str);
             }
         }
-        s6 P1 = np.s1(this.b).P1();
+        p6 R1 = mp.u1(this.b).R1();
         long j3 = this.d;
-        ArrayList F2 = P1.F(j3);
+        ArrayList F2 = R1.F(j3);
         if (F2 != null) {
             int size2 = F2.size();
             int i10 = 0;
             while (i10 < size2) {
                 Object obj2 = F2.get(i10);
                 i10++;
-                r6 r6Var = (r6) obj2;
-                if (r6Var != null && (d7Var = r6Var.c) != null && d7Var.J0 == j3 && !TextUtils.isEmpty(d7Var.K0) && !arrayList.contains(d7Var.K0)) {
+                o6 o6Var = (o6) obj2;
+                if (o6Var != null && (d7Var = o6Var.c) != null && d7Var.J0 == j3 && !TextUtils.isEmpty(d7Var.K0) && !arrayList.contains(d7Var.K0)) {
                     arrayList.add(d7Var.K0);
                 }
             }
@@ -397,34 +397,34 @@ public abstract class q extends FrameLayout implements z5, is {
             int i12 = 0;
             while (true) {
                 if (i12 >= arrayList4.size()) {
-                    c6Var = null;
+                    z5Var = null;
                     break;
                 } else {
-                    if (TextUtils.equals(((c6) arrayList4.get(i12)).E, str2)) {
-                        c6Var = (c6) arrayList4.get(i12);
+                    if (TextUtils.equals(((z5) arrayList4.get(i12)).E, str2)) {
+                        z5Var = (z5) arrayList4.get(i12);
                         break;
                     }
                     i12++;
                 }
             }
-            if (c6Var == null) {
-                c6 c6Var2 = new c6(this.b, this.d, str2, null);
-                c6Var2.H(null);
-                c6Var = c6Var2;
+            if (z5Var == null) {
+                z5 z5Var2 = new z5(this.b, this.d, str2, null);
+                z5Var2.H(null);
+                z5Var = z5Var2;
             }
-            arrayList3.add(c6Var);
+            arrayList3.add(z5Var);
         }
-        f3 f3Var = this.n;
-        f3Var.k(true);
-        SpannableString spannableString = new SpannableString(i5.c.k(2131746711, null, new StringBuilder("+ ")));
-        eq eqVar = new eq(R.drawable.msg_filled_plus, 0);
-        eqVar.I = 0.9f;
-        eqVar.J = 0.9f;
-        eqVar.H = 0.85f;
-        spannableString.setSpan(eqVar, 0, 1, 33);
-        v61 v61Var = this.r;
-        v61Var.a(-1, spannableString);
-        v61Var.y.f();
+        n5 n5Var = this.n;
+        n5Var.j(true);
+        SpannableString spannableString = new SpannableString(i5.c.k(2131746516, null, new StringBuilder("+ ")));
+        lq lqVar = new lq(R.drawable.msg_filled_plus, 0);
+        lqVar.I = 0.9f;
+        lqVar.J = 0.9f;
+        lqVar.H = 0.85f;
+        spannableString.setSpan(lqVar, 0, 1, 33);
+        f71 f71Var = this.r;
+        f71Var.a(-1, spannableString);
+        f71Var.y.f();
         boolean z11 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z11) {
@@ -435,16 +435,16 @@ public abstract class q extends FrameLayout implements z5, is {
             this.s = Boolean.valueOf(z11);
             if (!z10) {
                 this.x = z11 ? 1.0f : 0.0f;
-                v61Var.setTranslationY(g0.L(z11 ? 0.0f : -42.0f));
-                f3Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
+                f71Var.setTranslationY(g0.L(z11 ? 0.0f : -42.0f));
+                n5Var.setTranslationY(g0.L(z11 ? 42.0f : 0.0f));
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z11 ? 1.0f : 0.0f);
             this.y = ofFloat;
-            ofFloat.addUpdateListener(new ah.h(this, 25));
-            this.y.addListener(new v4(5, this, z11));
+            ofFloat.addUpdateListener(new ah.g(this, 25));
+            this.y.addListener(new e7(5, this, z11));
             this.y.setDuration(320L);
-            this.y.setInterpolator(er.h);
+            this.y.setInterpolator(lr.h);
             this.y.start();
         }
     }
@@ -456,9 +456,9 @@ public abstract class q extends FrameLayout implements z5, is {
             e eVar = mVar.f;
             for (int i7 = 0; i7 < eVar.getChildCount(); i7++) {
                 View childAt = eVar.getChildAt(i7);
-                if (childAt instanceof n7) {
-                    n7 n7Var = (n7) childAt;
-                    n7Var.i(mVar.a0.c(n7Var.getMessageObject()), true);
+                if (childAt instanceof o7) {
+                    o7 o7Var = (o7) childAt;
+                    o7Var.i(mVar.a0.c(o7Var.getMessageObject()), true);
                 }
             }
         }
@@ -481,8 +481,8 @@ public abstract class q extends FrameLayout implements z5, is {
             longSparseArray2 = longSparseArray4;
         }
         longSparseArray2.put(this.d, this);
-        ns.f(i7).c(this, ns.x5);
-        ns.f(i7).c(this, ns.v5);
+        ks.f(i7).c(this, ks.z5);
+        ks.f(i7).c(this, ks.x5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -497,8 +497,8 @@ public abstract class q extends FrameLayout implements z5, is {
         if (longSparseArray2 != null) {
             longSparseArray2.remove(this.d);
         }
-        ns.f(i7).n(this, ns.x5);
-        ns.f(i7).n(this, ns.v5);
+        ks.f(i7).n(this, ks.z5);
+        ks.f(i7).n(this, ks.x5);
     }
 
     public void setVisibleHeight(int i7) {
@@ -513,18 +513,18 @@ public abstract class q extends FrameLayout implements z5, is {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        e6 e6Var = this.c;
+        i6 i6Var = this.c;
         try {
-            setBackgroundColor(j6.w(j6.w0(j6.d6, e6Var), j6.r1(0.04f, j6.w0(j6.G6, e6Var))));
+            setBackgroundColor(n6.w(n6.w0(n6.d6, i6Var), n6.r1(0.04f, n6.w0(n6.G6, i6Var))));
             invalidate();
         } catch (Exception e10) {
             a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

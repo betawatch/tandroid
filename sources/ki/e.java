@@ -1,9 +1,9 @@
 package ki;
 
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.View;
-import c8.dc;
+import c8.gc;
+import hi.u5;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -19,31 +19,30 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
-import oi.a6;
-import oi.c5;
-import oi.k5;
+import oi.b6;
+import oi.d5;
 import oi.l5;
-import oi.y5;
-import org.telegram.messenger.ur;
-import org.telegram.messenger.x10;
+import oi.m5;
+import oi.z5;
+import org.telegram.messenger.sr;
+import org.telegram.messenger.v10;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.dt;
-import org.telegram.ui.Components.m60;
-import org.telegram.ui.sw;
-import org.telegram.ui.u91;
-import org.telegram.ui.yw;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Components.kt;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.y60;
+import org.telegram.ui.cx;
+import org.telegram.ui.ww;
+import org.telegram.ui.y91;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x10, h2.o, i2.u, dt, oi.k0, sw, l5, Vector.TLDeserializer, r0.m {
+public final /* synthetic */ class e implements org.telegram.ui.ActionBar.r1, v10, h2.o, i2.u, kt, oi.k0, ww, m5, Vector.TLDeserializer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -52,79 +51,20 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.dt
-    public void E() {
-        switch (this.a) {
-            case 18:
-                oi.p0 p0Var = (oi.p0) this.b;
-                oi.e1 e1Var = p0Var.d;
-                oi.a aVar = p0Var.f;
-                if (aVar != null) {
-                    aVar.s = true;
-                    aVar.r = e1Var.q2;
-                }
-                if (aVar != null) {
-                    TL_iv.PageBlock pageBlock = aVar.b;
-                    if (pageBlock instanceof TL_iv.pageBlockDetails) {
-                        ((TL_iv.pageBlockDetails) pageBlock).title = a6.f(e1Var.getText());
-                    }
-                }
-                oi.z2 z2Var = p0Var.h;
-                if (z2Var != null && p0Var.f != null) {
-                    oi.q3.S1(z2Var.a);
-                    break;
-                }
-                break;
-            case 23:
-                ((c5) this.b).g();
-                break;
-            default:
-                k5 k5Var = (k5) this.b;
-                oi.a aVar2 = k5Var.a;
-                if (aVar2 != null) {
-                    aVar2.s = true;
-                    aVar2.r = k5Var.r.q2;
-                }
-                k5Var.w();
-                oi.y2 y2Var = k5Var.F;
-                if (y2Var != null && k5Var.a != null) {
-                    oi.q3.S1(y2Var.a);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean H() {
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean G() {
         return false;
     }
 
-    @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        ActionBarLayout actionBarLayout = (ActionBarLayout) this.b;
-        Drawable drawable = ActionBarLayout.w1;
-        i0.c I0 = org.telegram.messenger.g0.I0(k1Var, false);
-        i0.c I02 = org.telegram.messenger.g0.I0(k1Var, true);
-        actionBarLayout.u1 = I0;
-        actionBarLayout.v1 = I02;
-        actionBarLayout.t1 = k1Var;
-        int childCount = actionBarLayout.getChildCount();
-        for (int i7 = 0; i7 < childCount; i7++) {
-            actionBarLayout.o(actionBarLayout.getChildAt(i7), k1Var);
-        }
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.sw
-    public /* synthetic */ boolean P(yw ywVar) {
+    @Override // org.telegram.ui.ww
+    public /* synthetic */ boolean P(cx cxVar) {
         return false;
     }
 
     @Override // i2.u
     public void a(long j3, h2.x xVar) {
         switch (this.a) {
-            case 13:
+            case 14:
                 f3.b.c(j3, xVar, ((m4.c0) this.b).c);
                 break;
             default:
@@ -133,15 +73,10 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
         }
     }
 
-    @Override // oi.k0
-    public m60 b(oi.e1 e1Var) {
-        return m60.H((oi.z1) ((ia.d) this.b).b, e1Var);
-    }
-
-    public m5.b c(h6.m mVar) {
+    public m5.b b(h6.m mVar) {
         m5.c cVar = (m5.c) this.b;
         URL url = (URL) mVar.b;
-        String c10 = dc.c("CctTransportBackend");
+        String c10 = gc.c("CctTransportBackend");
         if (Log.isLoggable(c10, 4)) {
             Log.i(c10, String.format("Making request to: %s", url));
         }
@@ -164,10 +99,10 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
             try {
                 GZIPOutputStream gZIPOutputStream = new GZIPOutputStream(outputStream);
                 try {
-                    cf cfVar = cVar.a;
+                    b5 b5Var = cVar.a;
                     n5.m mVar2 = (n5.m) mVar.c;
                     BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(gZIPOutputStream));
-                    pa.d dVar = (pa.d) cfVar.a;
+                    pa.d dVar = (pa.d) b5Var.a;
                     pa.e eVar = new pa.e(bufferedWriter, dVar.a, dVar.b, dVar.c, dVar.d);
                     eVar.h(mVar2);
                     eVar.j();
@@ -178,12 +113,12 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
                     }
                     int responseCode = httpURLConnection.getResponseCode();
                     Integer valueOf = Integer.valueOf(responseCode);
-                    String c11 = dc.c("CctTransportBackend");
+                    String c11 = gc.c("CctTransportBackend");
                     if (Log.isLoggable(c11, 4)) {
                         Log.i(c11, String.format("Status Code: %d", valueOf));
                     }
-                    dc.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
-                    dc.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
+                    gc.a(httpURLConnection.getHeaderField("Content-Type"), "CctTransportBackend", "Content-Type: %s");
+                    gc.a(httpURLConnection.getHeaderField("Content-Encoding"), "CctTransportBackend", "Content-Encoding: %s");
                     if (responseCode == 302 || responseCode == 301 || responseCode == 307) {
                         return new m5.b(responseCode, new URL(httpURLConnection.getHeaderField("Location")), 0L);
                     }
@@ -212,24 +147,24 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
             }
         } catch (ConnectException e10) {
             e = e10;
-            dc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            gc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new m5.b(500, null, 0L);
         } catch (UnknownHostException e11) {
             e = e11;
-            dc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
+            gc.b("CctTransportBackend", "Couldn't open connection, returning with 500", e);
             return new m5.b(500, null, 0L);
         } catch (IOException e12) {
             e = e12;
-            dc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            gc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new m5.b(400, null, 0L);
         } catch (na.b e13) {
             e = e13;
-            dc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
+            gc.b("CctTransportBackend", "Couldn't encode request, returning with 400", e);
             return new m5.b(400, null, 0L);
         }
     }
 
-    public void d(int i7) {
+    public void c(int i7) {
         oi.x xVar = (oi.x) this.b;
         xVar.c = i7;
         xVar.e(i7);
@@ -240,7 +175,7 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
         TLRPC.PhotoSize lambda$readParams$0;
         TLRPC.PhotoSize lambda$readParams$02;
         switch (this.a) {
-            case 27:
+            case 28:
                 lambda$readParams$0 = ((TLRPC.TL_stickerSet) this.b).lambda$readParams$0(inputSerializedData, i7, z10);
                 return lambda$readParams$0;
             default:
@@ -249,17 +184,63 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // org.telegram.ui.Components.kt
+    public void g() {
+        switch (this.a) {
+            case 19:
+                oi.p0 p0Var = (oi.p0) this.b;
+                oi.e1 e1Var = p0Var.d;
+                oi.a aVar = p0Var.f;
+                if (aVar != null) {
+                    aVar.s = true;
+                    aVar.r = e1Var.q2;
+                }
+                if (aVar != null) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if (pageBlock instanceof TL_iv.pageBlockDetails) {
+                        ((TL_iv.pageBlockDetails) pageBlock).title = b6.f(e1Var.getText());
+                    }
+                }
+                oi.b3 b3Var = p0Var.h;
+                if (b3Var != null && p0Var.f != null) {
+                    oi.s3.S1(b3Var.a);
+                    break;
+                }
+                break;
+            case 24:
+                ((d5) this.b).g();
+                break;
+            default:
+                l5 l5Var = (l5) this.b;
+                oi.a aVar2 = l5Var.a;
+                if (aVar2 != null) {
+                    aVar2.s = true;
+                    aVar2.r = l5Var.r.q2;
+                }
+                l5Var.w();
+                oi.a3 a3Var = l5Var.F;
+                if (a3Var != null && l5Var.a != null) {
+                    oi.s3.S1(a3Var.a);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
+                ((d) this.b).run();
+                break;
+            case 1:
                 k kVar = (k) this.b;
                 TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                updatestarrefprogram.bot = kVar.getMessagesController().o1(kVar.S);
+                updatestarrefprogram.bot = kVar.getMessagesController().q1(kVar.S);
                 updatestarrefprogram.commission_permille = 0;
-                org.telegram.ui.ActionBar.t1 t1Var2 = new org.telegram.ui.ActionBar.t1(3, kVar.getParentActivity(), null);
-                t1Var2.r(150L);
-                kVar.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar, t1Var2, 0));
+                org.telegram.ui.ActionBar.u1 u1Var2 = new org.telegram.ui.ActionBar.u1(3, kVar.getParentActivity(), null);
+                u1Var2.r(150L);
+                kVar.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar, u1Var2, 0));
                 break;
             default:
                 ((aa.c0) this.b).run();
@@ -270,64 +251,69 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
     @Override // h2.o
     public void invoke(Object obj) {
         switch (this.a) {
-            case 3:
-                ((e2.a1) obj).n((e2.e) this.b);
-                break;
             case 4:
-                ((e2.a1) obj).E((e2.q1) this.b);
+                ((e2.a1) obj).o((e2.e) this.b);
                 break;
             case 5:
-                ((e2.a1) obj).x((g2.c) this.b);
+                ((e2.a1) obj).E((e2.q1) this.b);
                 break;
             case 6:
-                ((e2.a1) obj).o(((l2.z) this.b).a.Q);
+                ((e2.a1) obj).x((g2.c) this.b);
                 break;
             case 7:
-                ((e2.a1) obj).M((e2.q0) this.b);
+                ((e2.a1) obj).p(((l2.z) this.b).a.Q);
                 break;
             case 8:
-            default:
-                ((m2.b) obj).k((x2.b0) this.b);
+                ((e2.a1) obj).M((e2.q0) this.b);
                 break;
             case 9:
-                ((m2.b) obj).G((e2.v0) this.b);
+            default:
+                ((m2.b) obj).b((x2.c0) this.b);
                 break;
             case 10:
-                ((m2.b) obj).onSeekStarted((m2.a) this.b);
+                ((m2.b) obj).G((e2.v0) this.b);
                 break;
             case 11:
+                ((m2.b) obj).onSeekStarted((m2.a) this.b);
+                break;
+            case 12:
                 ((m2.b) obj).z((l2.d) this.b);
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.x10
-    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+    @Override // oi.k0
+    public y60 j(oi.e1 e1Var) {
+        return y60.I((oi.z1) ((u5) this.b).b, e1Var);
+    }
+
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         switch (this.a) {
-            case 1:
-                s.a0((s) this.b, (b41) obj);
-                break;
             case 2:
-                ((j4) this.b).a0((b41) obj);
+                r.a0((r) this.b, (l41) obj);
+                break;
+            case 3:
+                ((e4) this.b).a0((l41) obj);
                 break;
             default:
                 View view = (View) obj2;
-                if (((oi.q3[]) this.b)[0] != null && (view instanceof y5)) {
-                    ((y5) view).B();
+                if (((oi.s3[]) this.b)[0] != null && (view instanceof z5)) {
+                    ((z5) view).B();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.sw
-    public boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, u91 u91Var) {
-        oi.d4 d4Var = (oi.d4) this.b;
-        if (arrayList.isEmpty() || ((ur) arrayList.get(0)).a <= 0) {
+    @Override // org.telegram.ui.ww
+    public boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
+        oi.f4 f4Var = (oi.f4) this.b;
+        if (arrayList.isEmpty() || ((sr) arrayList.get(0)).a <= 0) {
             return false;
         }
-        d4Var.run(((ur) arrayList.get(0)).a);
-        ywVar.finishFragment();
+        f4Var.run(((sr) arrayList.get(0)).a);
+        cxVar.finishFragment();
         return true;
     }
 
@@ -336,8 +322,8 @@ public final /* synthetic */ class e implements org.telegram.ui.ActionBar.q1, x1
         this.b = obj;
     }
 
-    public /* synthetic */ e(m2.a aVar, x2.t tVar, x2.b0 b0Var, IOException iOException, boolean z10) {
-        this.a = 12;
-        this.b = b0Var;
+    public /* synthetic */ e(m2.a aVar, x2.u uVar, x2.c0 c0Var, IOException iOException, boolean z10) {
+        this.a = 13;
+        this.b = c0Var;
     }
 }

@@ -1,69 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class gw extends u31 {
-    public final /* synthetic */ ly b;
+public final class gw extends FrameLayout {
+    public final Paint a;
+    public final /* synthetic */ ry b;
 
-    public gw(ly lyVar) {
-        this.b = lyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gw(ry ryVar, Context context) {
+        super(context);
+        this.b = ryVar;
+        this.a = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.u31
-    public final boolean a() {
-        return this.b.u1.b();
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final String[] b() {
-        return this.b.X0;
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final boolean c() {
-        return this.b.u1.c();
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final boolean d(n31 n31Var, MotionEvent motionEvent) {
-        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
-        ly lyVar = this.b;
-        lyVar.getMeasuredHeight();
-        return p10.q(motionEvent, n31Var, lyVar.h2, lyVar.a2);
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final boolean e(n31 n31Var, j jVar, MotionEvent motionEvent) {
-        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
-        ly lyVar = this.b;
-        lyVar.getMeasuredHeight();
-        return p10.r(motionEvent, n31Var, jVar, lyVar.h2, lyVar.a2);
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final void f(TLRPC.Document document, Object obj, boolean z10, int i7) {
-        this.b.u1.m(null, document, null, obj, null, z10, i7);
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        ly lyVar = this.b;
-        lyVar.u1.r(stickerSetCovered);
-        if (z10) {
-            lyVar.Y(true);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ry ryVar = this.b;
+        fw fwVar = ryVar.C0;
+        float L = org.telegram.messenger.g0.L(50.0f) * ryVar.u1.p();
+        if (L > getMeasuredHeight()) {
+            return;
         }
+        canvas.save();
+        if (L != 0.0f) {
+            canvas.clipRect(0.0f, L, getMeasuredWidth(), getMeasuredHeight());
+        }
+        int z10 = ryVar.z(org.telegram.ui.ActionBar.n6.zf);
+        Paint paint = this.a;
+        paint.setColor(z10);
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), fwVar.getExpandedOffset() + org.telegram.messenger.g0.L(36.0f), paint);
+        super.dispatchDraw(canvas);
+        if (fwVar.s != null) {
+            canvas.save();
+            float f10 = fwVar.d0 - fwVar.e0;
+            float f11 = fwVar.w;
+            if (f11 > 0.0f) {
+                f10 = ((fwVar.s.getX() - fwVar.getScrollX()) * fwVar.w) + ((1.0f - f11) * f10);
+            }
+            canvas.translate(f10, 0.0f);
+            fwVar.s.draw(canvas);
+            canvas.restore();
+        }
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.u31
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.u1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.u31
-    public final void i(String[] strArr) {
-        this.b.X0 = strArr;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        this.b.Z();
     }
 }

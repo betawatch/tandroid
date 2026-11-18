@@ -19,7 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public static final Charset b = Charset.forName("UTF-8");
@@ -63,7 +63,7 @@ public final class h {
         JSONArray jSONArray = new JSONArray();
         for (int i7 = 0; i7 < list.size(); i7++) {
             try {
-                jSONArray.put(new JSONObject(p.a.o(list.get(i7))));
+                jSONArray.put(new JSONObject(p.a.v(list.get(i7))));
             } catch (JSONException e10) {
                 Log.w("FirebaseCrashlytics", "Exception parsing rollout assignment!", e10);
             }
@@ -169,7 +169,7 @@ public final class h {
                 closeable = r32;
             }
         }
-        String k10 = r.b.k("No userId set for session ", str);
+        String k10 = p5.c.k("No userId set for session ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", k10, null);
         }

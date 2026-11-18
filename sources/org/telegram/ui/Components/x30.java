@@ -1,27 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x30 extends f40 {
-    public final /* synthetic */ r40 d;
+public final class x30 {
+    public long a;
+    public float b;
+    public float c;
+    public boolean d;
+    public float e;
+    public final RectF f = new RectF();
+    public int g;
+    public final Paint h;
+    public final int i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x30(r40 r40Var, Context context) {
-        super(r40Var, context);
-        this.d = r40Var;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        this.d.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setRotationY(float f10) {
-        super.setRotationY(f10);
-        this.d.invalidate();
+    public x30(int i7) {
+        this.i = i7;
+        Paint paint = new Paint(1);
+        this.h = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
     }
 }

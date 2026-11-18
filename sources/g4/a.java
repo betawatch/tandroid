@@ -1,7 +1,7 @@
 package g4;
 
-import a8.ha;
 import a8.ja;
+import a8.la;
 import a8.p0;
 import android.graphics.PointF;
 import android.text.Layout;
@@ -14,7 +14,7 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import c4.l;
 import c4.m;
-import c8.g1;
+import c8.k1;
 import com.google.android.gms.internal.vision.e2;
 import h2.j;
 import h2.l0;
@@ -30,7 +30,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
@@ -49,7 +49,7 @@ public final class a implements m {
         }
         this.a = true;
         String r10 = l0.r((byte[]) list.get(0));
-        ja.f(r10.startsWith("Format:"));
+        la.f(r10.startsWith("Format:"));
         e4.b b10 = e4.b.b(r10);
         b10.getClass();
         this.b = b10;
@@ -88,13 +88,277 @@ public final class a implements m {
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
     }
 
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x02e8  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(x xVar, Charset charset) {
+        int i7;
+        d dVar;
+        while (true) {
+            String n10 = xVar.n(charset);
+            if (n10 == null) {
+                return;
+            }
+            int i10 = 0;
+            int i11 = 91;
+            if ("[Script Info]".equalsIgnoreCase(n10)) {
+                while (true) {
+                    String n11 = xVar.n(charset);
+                    if (n11 == null) {
+                        break;
+                    }
+                    if (xVar.a() != 0) {
+                        if ((xVar.h(charset) != 0 ? k1.b(r2 >>> 8) : 1114112) == 91) {
+                            break;
+                        }
+                    }
+                    String[] split = n11.split(":");
+                    if (split.length == 2) {
+                        String c10 = ja.c(split[0].trim());
+                        c10.getClass();
+                        if (c10.equals("playresx")) {
+                            this.e = Float.parseFloat(split[1].trim());
+                        } else if (c10.equals("playresy")) {
+                            try {
+                                this.f = Float.parseFloat(split[1].trim());
+                            } catch (NumberFormatException unused) {
+                            }
+                        }
+                    }
+                }
+            } else if ("[V4+ Styles]".equalsIgnoreCase(n10)) {
+                LinkedHashMap linkedHashMap = new LinkedHashMap();
+                b bVar = null;
+                while (true) {
+                    String n12 = xVar.n(charset);
+                    if (n12 != null) {
+                        if (xVar.a() != 0) {
+                            if ((xVar.h(charset) != 0 ? k1.b(r0 >>> 8) : 1114112) == i11) {
+                            }
+                        }
+                        int i12 = -1;
+                        if (n12.startsWith("Format:")) {
+                            String[] split2 = TextUtils.split(n12.substring(7), ",");
+                            int i13 = -1;
+                            int i14 = -1;
+                            int i15 = -1;
+                            int i16 = -1;
+                            int i17 = -1;
+                            int i18 = -1;
+                            int i19 = -1;
+                            int i20 = -1;
+                            int i21 = -1;
+                            int i22 = -1;
+                            for (int i23 = i10; i23 < split2.length; i23++) {
+                                String c11 = ja.c(split2[i23].trim());
+                                c11.getClass();
+                                switch (c11.hashCode()) {
+                                    case -1178781136:
+                                        if (c11.equals("italic")) {
+                                            i7 = i10;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case -1026963764:
+                                        if (c11.equals("underline")) {
+                                            i7 = 1;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case -192095652:
+                                        if (c11.equals("strikeout")) {
+                                            i7 = 2;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case -70925746:
+                                        if (c11.equals("primarycolour")) {
+                                            i7 = 3;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 3029637:
+                                        if (c11.equals("bold")) {
+                                            i7 = 4;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 3373707:
+                                        if (c11.equals("name")) {
+                                            i7 = 5;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 366554320:
+                                        if (c11.equals("fontsize")) {
+                                            i7 = 6;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 767321349:
+                                        if (c11.equals("borderstyle")) {
+                                            i7 = 7;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 1767875043:
+                                        if (c11.equals("alignment")) {
+                                            i7 = 8;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    case 1988365454:
+                                        if (c11.equals("outlinecolour")) {
+                                            i7 = 9;
+                                            break;
+                                        }
+                                        i7 = -1;
+                                        break;
+                                    default:
+                                        i7 = -1;
+                                        break;
+                                }
+                                switch (i7) {
+                                    case 0:
+                                        i19 = i23;
+                                        break;
+                                    case 1:
+                                        i20 = i23;
+                                        break;
+                                    case 2:
+                                        i21 = i23;
+                                        break;
+                                    case 3:
+                                        i15 = i23;
+                                        break;
+                                    case 4:
+                                        i18 = i23;
+                                        break;
+                                    case 5:
+                                        i13 = i23;
+                                        break;
+                                    case 6:
+                                        i17 = i23;
+                                        break;
+                                    case 7:
+                                        i22 = i23;
+                                        break;
+                                    case 8:
+                                        i14 = i23;
+                                        break;
+                                    case 9:
+                                        i16 = i23;
+                                        break;
+                                }
+                            }
+                            bVar = i13 != -1 ? new b(i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, split2.length) : null;
+                        } else {
+                            if (n12.startsWith("Style:")) {
+                                if (bVar == null) {
+                                    h2.a.l("SsaParser", "Skipping 'Style:' line before 'Format:' line: ".concat(n12));
+                                } else {
+                                    la.f(n12.startsWith("Style:"));
+                                    String[] split3 = TextUtils.split(n12.substring(6), ",");
+                                    int length = split3.length;
+                                    int i24 = bVar.k;
+                                    if (length != i24) {
+                                        int length2 = split3.length;
+                                        String str = l0.a;
+                                        Locale locale = Locale.US;
+                                        StringBuilder n13 = i5.c.n("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
+                                        n13.append(n12);
+                                        n13.append("'");
+                                        h2.a.l("SsaStyle", n13.toString());
+                                    } else {
+                                        try {
+                                            String trim = split3[bVar.a].trim();
+                                            int i25 = bVar.b;
+                                            int a10 = i25 != -1 ? d.a(split3[i25].trim()) : -1;
+                                            int i26 = bVar.c;
+                                            Integer c12 = i26 != -1 ? d.c(split3[i26].trim()) : null;
+                                            int i27 = bVar.d;
+                                            Integer c13 = i27 != -1 ? d.c(split3[i27].trim()) : null;
+                                            int i28 = bVar.e;
+                                            float f10 = -3.4028235E38f;
+                                            if (i28 != -1) {
+                                                String trim2 = split3[i28].trim();
+                                                try {
+                                                    f10 = Float.parseFloat(trim2);
+                                                } catch (NumberFormatException e10) {
+                                                    h2.a.m("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e10);
+                                                }
+                                            }
+                                            float f11 = f10;
+                                            int i29 = bVar.f;
+                                            boolean z10 = i29 != -1 && d.b(split3[i29].trim());
+                                            int i30 = bVar.g;
+                                            boolean z11 = i30 != -1 && d.b(split3[i30].trim());
+                                            int i31 = bVar.h;
+                                            boolean z12 = i31 != -1 && d.b(split3[i31].trim());
+                                            int i32 = bVar.i;
+                                            boolean z13 = i32 != -1 && d.b(split3[i32].trim());
+                                            int i33 = bVar.j;
+                                            if (i33 != -1) {
+                                                String trim3 = split3[i33].trim();
+                                                try {
+                                                    int parseInt = Integer.parseInt(trim3.trim());
+                                                    if (parseInt == 1 || parseInt == 3) {
+                                                        i12 = parseInt;
+                                                    }
+                                                } catch (NumberFormatException unused2) {
+                                                }
+                                                h2.a.l("SsaStyle", "Ignoring unknown BorderStyle: " + trim3);
+                                            }
+                                            dVar = new d(trim, a10, c12, c13, f11, z10, z11, z12, z13, i12);
+                                        } catch (RuntimeException e11) {
+                                            h2.a.m("SsaStyle", "Skipping malformed 'Style:' line: '" + n12 + "'", e11);
+                                        }
+                                        if (dVar != null) {
+                                            linkedHashMap.put(dVar.a, dVar);
+                                        }
+                                    }
+                                    dVar = null;
+                                    if (dVar != null) {
+                                    }
+                                }
+                            }
+                            i10 = 0;
+                            i11 = 91;
+                        }
+                    }
+                }
+                this.d = linkedHashMap;
+            } else if ("[V4 Styles]".equalsIgnoreCase(n10)) {
+                h2.a.g("SsaParser", "[V4 Styles] are not supported");
+            } else if ("[Events]".equalsIgnoreCase(n10)) {
+                return;
+            }
+        }
+    }
+
+    @Override // c4.m
+    public final /* synthetic */ c4.d q(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00cc  */
     @Override // c4.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         Charset charset;
         x xVar;
         e4.b bVar;
@@ -181,7 +445,7 @@ public final class a implements m {
                         h2.a.l("SsaParser", "Skipping dialogue line before complete format: ".concat(n10));
                     } else {
                         int i25 = bVar2.f;
-                        ja.f(n10.startsWith("Dialogue:"));
+                        la.f(n10.startsWith("Dialogue:"));
                         String substring = n10.substring(9);
                         int i26 = bVar2.a;
                         String[] split = substring.split(",", i25);
@@ -455,272 +719,8 @@ public final class a implements m {
     }
 
     @Override // c4.m
-    public final int Q() {
+    public final int y() {
         return 1;
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x02e8  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(x xVar, Charset charset) {
-        int i7;
-        d dVar;
-        while (true) {
-            String n10 = xVar.n(charset);
-            if (n10 == null) {
-                return;
-            }
-            int i10 = 0;
-            int i11 = 91;
-            if ("[Script Info]".equalsIgnoreCase(n10)) {
-                while (true) {
-                    String n11 = xVar.n(charset);
-                    if (n11 == null) {
-                        break;
-                    }
-                    if (xVar.a() != 0) {
-                        if ((xVar.h(charset) != 0 ? g1.b(r2 >>> 8) : 1114112) == 91) {
-                            break;
-                        }
-                    }
-                    String[] split = n11.split(":");
-                    if (split.length == 2) {
-                        String c10 = ha.c(split[0].trim());
-                        c10.getClass();
-                        if (c10.equals("playresx")) {
-                            this.e = Float.parseFloat(split[1].trim());
-                        } else if (c10.equals("playresy")) {
-                            try {
-                                this.f = Float.parseFloat(split[1].trim());
-                            } catch (NumberFormatException unused) {
-                            }
-                        }
-                    }
-                }
-            } else if ("[V4+ Styles]".equalsIgnoreCase(n10)) {
-                LinkedHashMap linkedHashMap = new LinkedHashMap();
-                b bVar = null;
-                while (true) {
-                    String n12 = xVar.n(charset);
-                    if (n12 != null) {
-                        if (xVar.a() != 0) {
-                            if ((xVar.h(charset) != 0 ? g1.b(r0 >>> 8) : 1114112) == i11) {
-                            }
-                        }
-                        int i12 = -1;
-                        if (n12.startsWith("Format:")) {
-                            String[] split2 = TextUtils.split(n12.substring(7), ",");
-                            int i13 = -1;
-                            int i14 = -1;
-                            int i15 = -1;
-                            int i16 = -1;
-                            int i17 = -1;
-                            int i18 = -1;
-                            int i19 = -1;
-                            int i20 = -1;
-                            int i21 = -1;
-                            int i22 = -1;
-                            for (int i23 = i10; i23 < split2.length; i23++) {
-                                String c11 = ha.c(split2[i23].trim());
-                                c11.getClass();
-                                switch (c11.hashCode()) {
-                                    case -1178781136:
-                                        if (c11.equals("italic")) {
-                                            i7 = i10;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case -1026963764:
-                                        if (c11.equals("underline")) {
-                                            i7 = 1;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case -192095652:
-                                        if (c11.equals("strikeout")) {
-                                            i7 = 2;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case -70925746:
-                                        if (c11.equals("primarycolour")) {
-                                            i7 = 3;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 3029637:
-                                        if (c11.equals("bold")) {
-                                            i7 = 4;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 3373707:
-                                        if (c11.equals("name")) {
-                                            i7 = 5;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 366554320:
-                                        if (c11.equals("fontsize")) {
-                                            i7 = 6;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 767321349:
-                                        if (c11.equals("borderstyle")) {
-                                            i7 = 7;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 1767875043:
-                                        if (c11.equals("alignment")) {
-                                            i7 = 8;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    case 1988365454:
-                                        if (c11.equals("outlinecolour")) {
-                                            i7 = 9;
-                                            break;
-                                        }
-                                        i7 = -1;
-                                        break;
-                                    default:
-                                        i7 = -1;
-                                        break;
-                                }
-                                switch (i7) {
-                                    case 0:
-                                        i19 = i23;
-                                        break;
-                                    case 1:
-                                        i20 = i23;
-                                        break;
-                                    case 2:
-                                        i21 = i23;
-                                        break;
-                                    case 3:
-                                        i15 = i23;
-                                        break;
-                                    case 4:
-                                        i18 = i23;
-                                        break;
-                                    case 5:
-                                        i13 = i23;
-                                        break;
-                                    case 6:
-                                        i17 = i23;
-                                        break;
-                                    case 7:
-                                        i22 = i23;
-                                        break;
-                                    case 8:
-                                        i14 = i23;
-                                        break;
-                                    case 9:
-                                        i16 = i23;
-                                        break;
-                                }
-                            }
-                            bVar = i13 != -1 ? new b(i13, i14, i15, i16, i17, i18, i19, i20, i21, i22, split2.length) : null;
-                        } else {
-                            if (n12.startsWith("Style:")) {
-                                if (bVar == null) {
-                                    h2.a.l("SsaParser", "Skipping 'Style:' line before 'Format:' line: ".concat(n12));
-                                } else {
-                                    ja.f(n12.startsWith("Style:"));
-                                    String[] split3 = TextUtils.split(n12.substring(6), ",");
-                                    int length = split3.length;
-                                    int i24 = bVar.k;
-                                    if (length != i24) {
-                                        int length2 = split3.length;
-                                        String str = l0.a;
-                                        Locale locale = Locale.US;
-                                        StringBuilder n13 = i5.c.n("Skipping malformed 'Style:' line (expected ", i24, " values, found ", length2, "): '");
-                                        n13.append(n12);
-                                        n13.append("'");
-                                        h2.a.l("SsaStyle", n13.toString());
-                                    } else {
-                                        try {
-                                            String trim = split3[bVar.a].trim();
-                                            int i25 = bVar.b;
-                                            int a10 = i25 != -1 ? d.a(split3[i25].trim()) : -1;
-                                            int i26 = bVar.c;
-                                            Integer c12 = i26 != -1 ? d.c(split3[i26].trim()) : null;
-                                            int i27 = bVar.d;
-                                            Integer c13 = i27 != -1 ? d.c(split3[i27].trim()) : null;
-                                            int i28 = bVar.e;
-                                            float f10 = -3.4028235E38f;
-                                            if (i28 != -1) {
-                                                String trim2 = split3[i28].trim();
-                                                try {
-                                                    f10 = Float.parseFloat(trim2);
-                                                } catch (NumberFormatException e10) {
-                                                    h2.a.m("SsaStyle", "Failed to parse font size: '" + trim2 + "'", e10);
-                                                }
-                                            }
-                                            float f11 = f10;
-                                            int i29 = bVar.f;
-                                            boolean z10 = i29 != -1 && d.b(split3[i29].trim());
-                                            int i30 = bVar.g;
-                                            boolean z11 = i30 != -1 && d.b(split3[i30].trim());
-                                            int i31 = bVar.h;
-                                            boolean z12 = i31 != -1 && d.b(split3[i31].trim());
-                                            int i32 = bVar.i;
-                                            boolean z13 = i32 != -1 && d.b(split3[i32].trim());
-                                            int i33 = bVar.j;
-                                            if (i33 != -1) {
-                                                String trim3 = split3[i33].trim();
-                                                try {
-                                                    int parseInt = Integer.parseInt(trim3.trim());
-                                                    if (parseInt == 1 || parseInt == 3) {
-                                                        i12 = parseInt;
-                                                    }
-                                                } catch (NumberFormatException unused2) {
-                                                }
-                                                h2.a.l("SsaStyle", "Ignoring unknown BorderStyle: " + trim3);
-                                            }
-                                            dVar = new d(trim, a10, c12, c13, f11, z10, z11, z12, z13, i12);
-                                        } catch (RuntimeException e11) {
-                                            h2.a.m("SsaStyle", "Skipping malformed 'Style:' line: '" + n12 + "'", e11);
-                                        }
-                                        if (dVar != null) {
-                                            linkedHashMap.put(dVar.a, dVar);
-                                        }
-                                    }
-                                    dVar = null;
-                                    if (dVar != null) {
-                                    }
-                                }
-                            }
-                            i10 = 0;
-                            i11 = 91;
-                        }
-                    }
-                }
-                this.d = linkedHashMap;
-            } else if ("[V4 Styles]".equalsIgnoreCase(n10)) {
-                h2.a.g("SsaParser", "[V4 Styles] are not supported");
-            } else if ("[Events]".equalsIgnoreCase(n10)) {
-                return;
-            }
-        }
-    }
-
-    @Override // c4.m
-    public final /* synthetic */ c4.d x(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
     }
 
     @Override // c4.m

@@ -1,47 +1,100 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class x60 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g50 b;
+import android.os.Bundle;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-    public /* synthetic */ x60(g50 g50Var, int i7) {
-        this.a = i7;
-        this.b = g50Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class x60 implements ww {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ TLRPC.User c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ int e;
+
+    public /* synthetic */ x60(LaunchActivity launchActivity, String str, int i7, TLRPC.User user) {
+        this.b = launchActivity;
+        this.d = str;
+        this.e = i7;
+        this.c = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        g50 g50Var = this.b;
-        switch (i7) {
+    @Override // org.telegram.ui.ww
+    public final /* synthetic */ boolean G() {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ww
+    public final /* synthetic */ boolean P(cx cxVar) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ww
+    public final boolean y(cx cxVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, y91 y91Var) {
+        int i11 = this.a;
+        int i12 = this.e;
+        String str = this.d;
+        TLRPC.User user = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (i11) {
             case 0:
-                String str = LaunchActivity.C1;
-                try {
-                    g50Var.run();
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            case 1:
                 String str2 = LaunchActivity.C1;
-                try {
-                    g50Var.run();
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
+                long j3 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+                TLRPC.TL_inputMediaGame tL_inputMediaGame = new TLRPC.TL_inputMediaGame();
+                TLRPC.TL_inputGameShortName tL_inputGameShortName = new TLRPC.TL_inputGameShortName();
+                tL_inputMediaGame.id = tL_inputGameShortName;
+                tL_inputGameShortName.short_name = str;
+                tL_inputGameShortName.bot_id = org.telegram.messenger.mp.u1(i12).s1(user);
+                org.telegram.messenger.zy.C(i12).p0(org.telegram.messenger.mp.u1(i12).l1(j3), tL_inputMediaGame, 0L, 0L);
+                Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
+                if (org.telegram.messenger.n5.C(j3)) {
+                    k10.putInt("enc_id", (int) (j3 & 4294967295L));
+                } else if (org.telegram.messenger.n5.E(j3)) {
+                    k10.putLong("user_id", j3);
+                } else {
+                    k10.putLong("chat_id", -j3);
                 }
+                if (org.telegram.messenger.mp.u1(i12).E(k10, cxVar, null, null)) {
+                    org.telegram.messenger.ks.f(i12).k(4, new Object[0]);
+                    ((ActionBarLayout) launchActivity.M()).V(new bn(k10), true, false);
+                    break;
+                }
+                break;
             default:
                 String str3 = LaunchActivity.C1;
-                try {
-                    g50Var.run();
-                    break;
-                } catch (Exception e12) {
-                    org.telegram.messenger.a8.g(e12, true);
+                long j10 = ((org.telegram.messenger.sr) arrayList.get(0)).a;
+                Bundle k11 = a8.p0.k("scrollToTopOnResume", true);
+                if (org.telegram.messenger.n5.C(j10)) {
+                    k11.putInt("enc_id", (int) (j10 & 4294967295L));
+                } else if (org.telegram.messenger.n5.E(j10)) {
+                    k11.putLong("user_id", j10);
+                } else {
+                    k11.putLong("chat_id", -j10);
                 }
+                k11.putString("attach_bot", org.telegram.messenger.o10.o(user));
+                if (str != null) {
+                    k11.putString("attach_bot_start_command", str);
+                }
+                if (org.telegram.messenger.mp.u1(i12).E(k11, cxVar, null, null)) {
+                    org.telegram.messenger.ks.f(i12).k(4, new Object[0]);
+                    ((ActionBarLayout) launchActivity.M()).V(new bn(k11), true, false);
+                    break;
+                }
+                break;
         }
+        return true;
+    }
+
+    public /* synthetic */ x60(LaunchActivity launchActivity, TLRPC.User user, String str, int i7) {
+        this.b = launchActivity;
+        this.c = user;
+        this.d = str;
+        this.e = i7;
     }
 }

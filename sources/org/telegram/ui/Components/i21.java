@@ -1,24 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i21 extends p21 {
-    public final /* synthetic */ Runnable U1;
+public final /* synthetic */ class i21 implements org.telegram.messenger.nc, org.telegram.messenger.mc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.messenger.q10 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i21(Context context, String str, String str2, CharSequence charSequence, Runnable runnable) {
-        super(context, str, str2, charSequence, null, 0, false, null);
-        this.U1 = runnable;
+    public /* synthetic */ i21(String str, String str2, org.telegram.messenger.q10 q10Var) {
+        this.a = str;
+        this.b = str2;
+        this.c = q10Var;
     }
 
-    @Override // org.telegram.ui.Components.p21, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
-    public final void dismiss() {
-        super.dismiss();
-        Runnable runnable = this.U1;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        y21.K0(this.a, str, this.b, this.c);
+    }
+
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        y21.K0(this.a, "en", this.b, this.c);
     }
 }

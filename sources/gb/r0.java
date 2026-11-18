@@ -3,7 +3,7 @@ package gb;
 import android.util.Log;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r0 extends kd.j implements rd.p {
     public x a;
@@ -63,7 +63,7 @@ public final class r0 extends kd.j implements rd.p {
         int i7 = this.h;
         t0 t0Var2 = this.n;
         if (i7 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             this.h = 1;
             a10 = t0.a(t0Var2, this);
         } else {
@@ -78,7 +78,7 @@ public final class r0 extends kd.j implements rd.p {
                     p0 p0Var2 = this.c;
                     t0 t0Var3 = this.b;
                     x xVar2 = this.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     t0Var = t0Var3;
                     xVar = xVar2;
                     p0Var = p0Var2;
@@ -113,7 +113,7 @@ public final class r0 extends kd.j implements rd.p {
                     }
                     return gd.k.a;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 a11 = obj;
                 x xVar3 = (x) a11;
                 p0 p0Var3 = p0.a;
@@ -164,7 +164,7 @@ public final class r0 extends kd.j implements rd.p {
                 }
                 return aVar;
             }
-            af.b.c(obj);
+            b7.h.b(obj);
             a10 = obj;
         }
         if (((Boolean) a10).booleanValue()) {

@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import id.c;
 import jd.a;
 import org.telegram.tgnet.TLObject;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzhf {
     private final p zza;
@@ -38,7 +38,7 @@ public final class zzhf {
                 a aVar = a.a;
                 i7 = zzheVar.zzc;
                 if (i7 != 0) {
-                    b.c(obj);
+                    h.b(obj);
                     zzgr zzgrVar2 = new zzgr(zzhkVar, this.zzc, this.zzb);
                     try {
                         p pVar = this.zza;
@@ -61,7 +61,7 @@ public final class zzhf {
                     }
                     zzgrVar = zzheVar.zzd;
                     try {
-                        b.c(obj);
+                        h.b(obj);
                     } catch (zzcg e12) {
                         e10 = e12;
                         zzgrVar.zzc(e10);

@@ -1,19 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class m2 {
-    public int a() {
-        return 1;
+public final class m2 {
+    public final ArrayList a = new ArrayList();
+    public int b;
+
+    public final void a() {
+        this.a.add(new n2[]{new p2(4, 2131753063, 0)});
     }
 
-    public long b() {
-        return 0L;
+    public final void b(b3.j jVar) {
+        if (jVar == null) {
+            return;
+        }
+        n2[][] n2VarArr = (n2[][]) jVar.c;
+        int length = n2VarArr.length;
+        for (int i7 = 0; i7 < length; i7++) {
+            int length2 = n2VarArr[i7].length;
+            n2[] n2VarArr2 = new n2[length2];
+            for (int i10 = 0; i10 < length2; i10++) {
+                n2VarArr2[i10] = n2VarArr[i7][i10];
+            }
+            ArrayList arrayList = this.a;
+            arrayList.add(n2VarArr2);
+            if ((jVar.b & (1 << i7)) != 0 && !arrayList.isEmpty()) {
+                this.b = (1 << (arrayList.size() - 1)) | this.b;
+            }
+        }
     }
 
-    public int c() {
-        return 0;
+    public final b3.j c() {
+        ArrayList arrayList = this.a;
+        return new b3.j((n2[][]) arrayList.toArray(new n2[arrayList.size()][]), this.b, 7);
     }
-
-    public abstract String d();
 }

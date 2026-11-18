@@ -1,13 +1,34 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface sw {
-    boolean H();
+public final /* synthetic */ class sw implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ tw b;
+    public final /* synthetic */ org.telegram.messenger.ro c;
+    public final /* synthetic */ boolean d;
 
-    boolean P(yw ywVar);
+    public /* synthetic */ sw(tw twVar, org.telegram.messenger.ro roVar, boolean z10) {
+        this.b = twVar;
+        this.c = roVar;
+        this.d = z10;
+    }
 
-    boolean y(yw ywVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i7, int i10, u91 u91Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b.presentFragment(this.d ? new FiltersSetupActivity() : new kz(this.c, null));
+                break;
+            default:
+                this.b.b.getMessagesController().U4(this.c, !this.d);
+                break;
+        }
+    }
+
+    public /* synthetic */ sw(tw twVar, boolean z10, org.telegram.messenger.ro roVar) {
+        this.b = twVar;
+        this.d = z10;
+        this.c = roVar;
+    }
 }

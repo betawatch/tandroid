@@ -1,15 +1,15 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.decoder.ffmpeg.ExperimentalFfmpegVideoRenderer;
 import androidx.media3.decoder.ffmpeg.FfmpegAudioRenderer;
-import fi.a4;
+import fi.y3;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class j {
     public final Context a;
@@ -18,11 +18,11 @@ public class j {
 
     public j(Context context) {
         this.a = context;
-        this.b = new androidx.emoji2.text.n(context, 2);
+        this.b = new androidx.emoji2.text.n(context, (char) 0);
     }
 
     public n2.r0 a(Context context) {
-        return new a4(context, 1).a();
+        return new y3(context, 1).a();
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(14:(2:22|23)|24|25|26|(2:27|28)|(5:29|30|31|32|33)|(5:35|36|37|38|39)|41|42|87|(0)|90|91|92) */
@@ -55,9 +55,9 @@ public class j {
         jVar.e = handler;
         jVar.f = zVar;
         jVar.g = 50;
-        ja.p(!jVar.b);
+        la.p(!jVar.b);
         Handler handler2 = jVar.e;
-        ja.p((handler2 == null && jVar.f == null) || !(handler2 == null || jVar.f == null));
+        la.p((handler2 == null && jVar.f == null) || !(handler2 == null || jVar.f == null));
         jVar.b = true;
         arrayList.add(new d3.l(jVar));
         if (i19 == 0) {
@@ -100,7 +100,7 @@ public class j {
                                 while (i13 < 4) {
                                 }
                                 arrayList.add(new e3.a());
-                                arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                                arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                                 return (b[]) arrayList.toArray(new b[0]);
                             }
                         } catch (ClassNotFoundException unused3) {
@@ -119,7 +119,7 @@ public class j {
                         while (i13 < 4) {
                         }
                         arrayList.add(new e3.a());
-                        arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                        arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                         return (b[]) arrayList.toArray(new b[0]);
                     }
                 } catch (ClassNotFoundException unused4) {
@@ -195,7 +195,7 @@ public class j {
                                     while (i13 < 4) {
                                     }
                                     arrayList.add(new e3.a());
-                                    arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                                    arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                                     return (b[]) arrayList.toArray(new b[0]);
                                 } catch (Exception e13) {
                                     throw new IllegalStateException("Error instantiating FFmpeg extension", e13);
@@ -226,7 +226,7 @@ public class j {
                                 while (i13 < 4) {
                                 }
                                 arrayList.add(new e3.a());
-                                arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                                arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                                 return (b[]) arrayList.toArray(new b[0]);
                             }
                             try {
@@ -253,7 +253,7 @@ public class j {
                             while (i13 < 4) {
                             }
                             arrayList.add(new e3.a());
-                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                             return (b[]) arrayList.toArray(new b[0]);
                         } catch (Exception e14) {
                             throw new IllegalStateException("Error instantiating FLAC extension", e14);
@@ -291,7 +291,7 @@ public class j {
                             while (i13 < 4) {
                             }
                             arrayList.add(new e3.a());
-                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                             return (b[]) arrayList.toArray(new b[0]);
                         }
                         Class<?> cls32222 = Class.forName("androidx.media3.decoder.iamf.IamfAudioRenderer$Builder");
@@ -313,7 +313,7 @@ public class j {
                             while (i13 < 4) {
                             }
                             arrayList.add(new e3.a());
-                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+                            arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
                             return (b[]) arrayList.toArray(new b[0]);
                         }
                         try {
@@ -339,7 +339,7 @@ public class j {
             arrayList.add(new v2.b(zVar4, looper2222222));
         }
         arrayList.add(new e3.a());
-        arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 1)));
+        arrayList.add(new t2.f(new androidx.emoji2.text.n(context, 2)));
         return (b[]) arrayList.toArray(new b[0]);
     }
 }

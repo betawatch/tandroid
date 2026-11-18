@@ -1,70 +1,116 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.CancellationToken;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.CancellationException;
-import org.json.JSONObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.jd0;
+import android.content.Context;
+import android.os.Build;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class g9 implements v0.g {
-    public final /* synthetic */ CancellationToken a;
-    public final /* synthetic */ TaskCompletionSource b;
-    public final /* synthetic */ jd0 c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Runnable[] e;
+public abstract class g9 {
+    public static db.a a;
 
-    public g9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, jd0 jd0Var, int i7, Runnable[] runnableArr) {
-        this.a = cancellationToken;
-        this.b = taskCompletionSource;
-        this.c = jd0Var;
-        this.d = i7;
-        this.e = runnableArr;
-    }
-
-    @Override // v0.g
-    public final void a(Object obj) {
-        w0.i iVar = (w0.i) obj;
-        if (this.a.isCancellationRequested()) {
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:54:0x007a, code lost:
+    
+        if (r8.checkSelfPermission("android.permission.READ_PHONE_STATE") == 0) goto L37;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00a6  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static d1 a(Context context, db.c cVar) {
+        String str;
+        d1 d1Var = new d1();
+        d1Var.a = cVar.a;
+        String str2 = cVar.b;
+        String str3 = null;
+        if (TextUtils.isEmpty(str2)) {
+            str2 = null;
         }
-        boolean z10 = iVar instanceof w0.k;
-        TaskCompletionSource taskCompletionSource = this.b;
-        if (z10) {
-            taskCompletionSource.trySetException(new Exception("EMPTY"));
-        } else if ((iVar instanceof w0.g) || (iVar instanceof w0.j)) {
-            taskCompletionSource.trySetException(new CancellationException());
-        } else {
-            taskCompletionSource.trySetException(iVar);
-        }
-    }
-
-    @Override // v0.g
-    public final void onResult(Object obj) {
-        v0.n nVar = (v0.n) obj;
-        TaskCompletionSource taskCompletionSource = this.b;
-        CancellationToken cancellationToken = this.a;
-        if (cancellationToken.isCancellationRequested()) {
-            return;
-        }
+        d1Var.b = str2;
         try {
-            String string = new JSONObject(((Bundle) nVar.a.a).getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON")).getJSONObject("data").getJSONObject("vp_token").getJSONArray("firebase").getString(0);
-            this.c.run();
-            TLRPC.TL_auth_finishFirebasePnvLogin tL_auth_finishFirebasePnvLogin = new TLRPC.TL_auth_finishFirebasePnvLogin();
-            tL_auth_finishFirebasePnvLogin.google_token = string;
-            int i7 = this.d;
-            f9 f9Var = new f9(i7, ConnectionsManager.getInstance(i7).sendRequestTyped(tL_auth_finishFirebasePnvLogin, new d3.b(1), new x3(1, cancellationToken, taskCompletionSource), 8), 1);
-            Runnable[] runnableArr = this.e;
-            runnableArr[0] = f9Var;
-            if (cancellationToken.isCancellationRequested()) {
-                runnableArr[0].run();
+            TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService("phone");
+            if (telephonyManager != null) {
+                int b10 = b(context, d1Var.a);
+                if (b10 != -1 && Build.VERSION.SDK_INT >= 24) {
+                    telephonyManager = telephonyManager.createForSubscriptionId(b10);
+                } else if (telephonyManager.getPhoneCount() > 1) {
+                }
+                String simOperatorName = telephonyManager.getSimOperatorName();
+                if (TextUtils.isEmpty(simOperatorName) && Build.VERSION.SDK_INT >= 28) {
+                    CharSequence simCarrierIdName = telephonyManager.getSimCarrierIdName();
+                    simOperatorName = simCarrierIdName == null ? null : simCarrierIdName.toString();
+                }
+                if (!TextUtils.isEmpty(simOperatorName)) {
+                    d1Var.b = simOperatorName;
+                }
+                int i7 = Build.VERSION.SDK_INT;
+                if (i7 >= 26) {
+                    if (context.checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0) {
+                    }
+                    str = null;
+                    if (!TextUtils.isEmpty(str)) {
+                        str3 = str;
+                    }
+                    d1Var.c = str3;
+                }
+                if (i7 >= 33 && b10 != -1) {
+                    try {
+                        SubscriptionManager subscriptionManager = (SubscriptionManager) context.getSystemService(SubscriptionManager.class);
+                        str = subscriptionManager == null ? null : subscriptionManager.getPhoneNumber(b10);
+                    } catch (SecurityException unused) {
+                    }
+                    if (!TextUtils.isEmpty(str)) {
+                        if (!TextUtils.isEmpty(str)) {
+                        }
+                        d1Var.c = str3;
+                    }
+                }
+                str = telephonyManager.getLine1Number();
+                if (!TextUtils.isEmpty(str)) {
+                }
+                d1Var.c = str3;
             }
         } catch (Exception e10) {
-            taskCompletionSource.trySetException(e10);
+            a8.g(e10, true);
+        }
+        return d1Var;
+    }
+
+    public static int b(Context context, int i7) {
+        try {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 >= 34) {
+                return SubscriptionManager.getSubscriptionId(i7);
+            }
+            SubscriptionInfo subscriptionInfo = null;
+            int[] subscriptionIds = null;
+            if (i10 >= 29) {
+                SubscriptionManager subscriptionManager = (SubscriptionManager) context.getSystemService(SubscriptionManager.class);
+                if (subscriptionManager != null) {
+                    subscriptionIds = subscriptionManager.getSubscriptionIds(i7);
+                }
+                if (subscriptionIds != null && subscriptionIds.length > 0) {
+                    return subscriptionIds[0];
+                }
+            } else {
+                if (context.checkSelfPermission("android.permission.READ_PHONE_STATE") == 0) {
+                    SubscriptionManager subscriptionManager2 = (SubscriptionManager) context.getSystemService("telephony_subscription_service");
+                    if (subscriptionManager2 != null) {
+                        subscriptionInfo = subscriptionManager2.getActiveSubscriptionInfoForSimSlotIndex(i7);
+                    }
+                    if (subscriptionInfo != null) {
+                        return subscriptionInfo.getSubscriptionId();
+                    }
+                }
+            }
+            return -1;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return -1;
         }
     }
 }

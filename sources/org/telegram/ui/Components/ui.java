@@ -1,61 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.util.SparseIntArray;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ui extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final TextView b;
-    public final TextView c;
+public final /* synthetic */ class ui implements org.telegram.messenger.y10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ui(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.a = e6Var;
-        setPadding(0, org.telegram.messenger.g0.L(42.0f), 0, org.telegram.messenger.g0.L(42.0f));
-        setTag(-33024);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, c8.ja.r(-1, -2, 17));
-        i9 i9Var = new i9(context);
-        i9Var.setImageDrawable(new ch0(R.raw.utyan_empty, org.telegram.messenger.g0.L(120.0f), org.telegram.messenger.g0.L(120.0f)));
-        linearLayout.addView(i9Var, c8.ja.t(120, 120, 17, 0, 0, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setGravity(17);
-        TextView f10 = org.telegram.messenger.i20.f(linearLayout, textView, c8.ja.t(-1, -2, 17, 32, 12, 32, 8), context);
-        this.c = f10;
-        f10.setTextSize(1, 14.0f);
-        f10.setGravity(17);
-        linearLayout.addView(f10, c8.ja.t(-1, -2, 17, 32, 0, 32, 0));
-        updateColors();
+    public /* synthetic */ ui(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.y6));
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        this.b.setTextColor(org.telegram.ui.ActionBar.j6.w0(i7, e6Var));
-        this.c.setTextColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.y6, e6Var));
+    @Override // org.telegram.messenger.y10
+    public final Object a(Object obj) {
+        int i7 = this.a;
+        char c10 = 1;
+        Object obj2 = this.b;
+        switch (i7) {
+            case 0:
+                return Boolean.valueOf(cj.P((cj) obj2, (org.telegram.messenger.fj) obj));
+            case 1:
+                th.f fVar = (th.f) obj2;
+                View view = (View) obj;
+                ImageReceiver imageReceiver = new ImageReceiver(view);
+                org.telegram.messenger.lz c11 = org.telegram.messenger.u5.c((org.telegram.ui.ActionBar.n6.I.q() ? 3 : 6) * 0.12f, org.telegram.ui.ActionBar.n6.Gc);
+                c11.t = true;
+                c11.m = org.telegram.ui.ActionBar.n6.hf;
+                imageReceiver.s0(org.telegram.messenger.fc.p(org.telegram.messenger.h20.b(fVar.b.geo, org.telegram.messenger.ks.X4, org.telegram.messenger.ks.y2, 15, Math.min(2, (int) Math.ceil(org.telegram.messenger.g0.p)))), null, null, null, new cq(c11), null, 0);
+                view.addOnAttachStateChangeListener(new org.telegram.ui.Cells.l8(imageReceiver, c10 == true ? 1 : 0));
+                imageReceiver.J0(org.telegram.messenger.g0.L(14.0f));
+                return new sc(4, imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
+            case 2:
+                int i10 = ((SparseIntArray) obj2).get(((Integer) obj).intValue(), -1);
+                if (i10 == -1) {
+                    return Boolean.TRUE;
+                }
+                return Boolean.valueOf(i10 == 1);
+            default:
+                e51 e51Var = (e51) obj2;
+                View view2 = (View) obj;
+                e51Var.getClass();
+                return view2.getParent() != e51Var ? Boolean.FALSE : Boolean.valueOf(!z41.K(e51Var.T(view2).f));
+        }
     }
 }

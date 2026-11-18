@@ -13,15 +13,15 @@ import java.util.List;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.is;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.fs;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ is b;
+    public final /* synthetic */ fs b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
@@ -30,10 +30,10 @@ public final /* synthetic */ class v8 implements Runnable {
     public final /* synthetic */ boolean n;
     public final /* synthetic */ Object r;
 
-    public /* synthetic */ v8(sa saVar, u9 u9Var, int i7, int i10, d7 d7Var, boolean z10, boolean z11, Runnable runnable, int i11) {
+    public /* synthetic */ v8(ta taVar, v9 v9Var, int i7, int i10, d7 d7Var, boolean z10, boolean z11, Runnable runnable, int i11) {
         this.a = i11;
-        this.b = saVar;
-        this.c = u9Var;
+        this.b = taVar;
+        this.c = v9Var;
         this.d = i7;
         this.e = i10;
         this.f = d7Var;
@@ -66,7 +66,7 @@ public final /* synthetic */ class v8 implements Runnable {
     */
     public final void run() {
         boolean z10;
-        m5 m5Var;
+        l5 l5Var;
         File file;
         File file2;
         File file3;
@@ -74,24 +74,24 @@ public final /* synthetic */ class v8 implements Runnable {
         boolean z11;
         File file4;
         final File file5;
-        File file6;
-        File file7;
+        final File file6;
+        final File file7;
         final File file8;
         int size;
         int i7;
-        m5 m5Var2;
+        l5 l5Var2;
         String str2;
         tg.u0 p02;
         ?? r12;
         File file9;
         File file10;
-        m5 m5Var3;
+        l5 l5Var3;
         int i10;
         int i11;
         d7 d7Var;
         File file11;
         int i12;
-        m5 m5Var4;
+        l5 l5Var4;
         int i13;
         d7 d7Var2;
         int i14;
@@ -100,26 +100,91 @@ public final /* synthetic */ class v8 implements Runnable {
         ImageReceiver imageReceiver;
         switch (this.a) {
             case 0:
-                sa saVar = (sa) this.b;
-                m5 m5Var5 = (m5) this.c;
+                ta taVar = (ta) this.b;
+                l5 l5Var5 = (l5) this.c;
                 final d7 d7Var3 = (d7) this.f;
                 final ai.w0 w0Var = (ai.w0) this.r;
-                int i15 = saVar.c;
+                int i15 = taVar.c;
                 ArrayList arrayList = new ArrayList();
                 ArrayList arrayList2 = new ArrayList();
-                m5Var5.q0(arrayList2, false, false, false, false, d7Var3);
+                l5Var5.q0(arrayList2, false, false, false, false, d7Var3);
                 if (!d7Var3.K) {
-                    d7Var3.S0 = Utilities.k(m5Var5.getLcm(), 7500L, 5000L);
+                    d7Var3.S0 = Utilities.k(l5Var5.getLcm(), 7500L, 5000L);
                 }
-                List<TLRPC.InputDocument> masks = m5Var5.getMasks();
+                List<TLRPC.InputDocument> masks = l5Var5.getMasks();
                 final ArrayList arrayList3 = masks != null ? new ArrayList(masks) : null;
                 boolean z12 = d7Var3.K;
                 boolean E = d7Var3.E();
                 arrayList2.clear();
-                Bitmap q02 = m5Var5.q0(arrayList2, true, false, false, !z12, d7Var3);
+                final Bitmap q02 = l5Var5.q0(arrayList2, true, false, false, !z12, d7Var3);
                 ArrayList arrayList4 = arrayList2.isEmpty() ? null : arrayList2;
-                File w10 = d7.w(i15, "png");
-                arrayList.add(new x8(q02, w10, 0));
+                final File w10 = d7.w(i15, "png");
+                final int i16 = 0;
+                arrayList.add(new Runnable() { // from class: hi.x8
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i16) {
+                            case 0:
+                                try {
+                                    q02.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w10));
+                                    return;
+                                } catch (Exception e10) {
+                                    org.telegram.messenger.a8.g(e10, true);
+                                    return;
+                                }
+                            case 1:
+                                Bitmap bitmap = q02;
+                                try {
+                                    try {
+                                        bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w10));
+                                        if (bitmap.isRecycled()) {
+                                            return;
+                                        }
+                                    } catch (Exception e11) {
+                                        org.telegram.messenger.a8.g(e11, true);
+                                        if (bitmap.isRecycled()) {
+                                            return;
+                                        }
+                                    }
+                                    bitmap.recycle();
+                                    return;
+                                } catch (Throwable th2) {
+                                    if (!bitmap.isRecycled()) {
+                                        bitmap.recycle();
+                                    }
+                                    throw th2;
+                                }
+                            case 2:
+                                Bitmap bitmap2 = q02;
+                                try {
+                                    try {
+                                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w10));
+                                    } catch (Exception e12) {
+                                        org.telegram.messenger.a8.g(e12, true);
+                                    }
+                                    return;
+                                } finally {
+                                    org.telegram.messenger.g0.z2(bitmap2);
+                                }
+                            case 3:
+                                try {
+                                    q02.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w10));
+                                    return;
+                                } catch (Exception e13) {
+                                    org.telegram.messenger.a8.g(e13, true);
+                                    return;
+                                }
+                            default:
+                                try {
+                                    q02.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w10));
+                                    return;
+                                } catch (Exception e14) {
+                                    org.telegram.messenger.a8.g(e14, true);
+                                    return;
+                                }
+                        }
+                    }
+                });
                 if (d7Var3.u) {
                     z10 = E;
                     long j3 = d7Var3.z0;
@@ -127,29 +192,94 @@ public final /* synthetic */ class v8 implements Runnable {
                         Drawable drawable = d7Var3.x0;
                         if (drawable == null) {
                             file = null;
-                            drawable = x5.e(null, i15, j3, saVar.d2);
+                            drawable = w5.e(null, i15, j3, taVar.d2);
                         } else {
                             file = null;
                         }
                         if (drawable != null) {
-                            File w11 = d7.w(i15, "webp");
-                            Bitmap createBitmap = Bitmap.createBitmap(this.d, this.e, Bitmap.Config.ARGB_8888);
-                            m5Var = m5Var5;
+                            final File w11 = d7.w(i15, "webp");
+                            final Bitmap createBitmap = Bitmap.createBitmap(this.d, this.e, Bitmap.Config.ARGB_8888);
+                            l5Var = l5Var5;
                             d7.j(new Canvas(createBitmap), drawable, createBitmap.getWidth(), createBitmap.getHeight());
-                            arrayList.add(new x8(createBitmap, w11, 1));
+                            final int i17 = 1;
+                            arrayList.add(new Runnable() { // from class: hi.x8
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    switch (i17) {
+                                        case 0:
+                                            try {
+                                                createBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w11));
+                                                return;
+                                            } catch (Exception e10) {
+                                                org.telegram.messenger.a8.g(e10, true);
+                                                return;
+                                            }
+                                        case 1:
+                                            Bitmap bitmap = createBitmap;
+                                            try {
+                                                try {
+                                                    bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w11));
+                                                    if (bitmap.isRecycled()) {
+                                                        return;
+                                                    }
+                                                } catch (Exception e11) {
+                                                    org.telegram.messenger.a8.g(e11, true);
+                                                    if (bitmap.isRecycled()) {
+                                                        return;
+                                                    }
+                                                }
+                                                bitmap.recycle();
+                                                return;
+                                            } catch (Throwable th2) {
+                                                if (!bitmap.isRecycled()) {
+                                                    bitmap.recycle();
+                                                }
+                                                throw th2;
+                                            }
+                                        case 2:
+                                            Bitmap bitmap2 = createBitmap;
+                                            try {
+                                                try {
+                                                    bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w11));
+                                                } catch (Exception e12) {
+                                                    org.telegram.messenger.a8.g(e12, true);
+                                                }
+                                                return;
+                                            } finally {
+                                                org.telegram.messenger.g0.z2(bitmap2);
+                                            }
+                                        case 3:
+                                            try {
+                                                createBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w11));
+                                                return;
+                                            } catch (Exception e13) {
+                                                org.telegram.messenger.a8.g(e13, true);
+                                                return;
+                                            }
+                                        default:
+                                            try {
+                                                createBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w11));
+                                                return;
+                                            } catch (Exception e14) {
+                                                org.telegram.messenger.a8.g(e14, true);
+                                                return;
+                                            }
+                                    }
+                                }
+                            });
                             file9 = w11;
                         } else {
-                            m5Var = m5Var5;
+                            l5Var = l5Var5;
                             file9 = file;
                         }
                         file2 = file9;
                         if (d7Var3.u && d7Var3.K) {
-                            int i16 = d7Var3.k0;
-                            int i17 = d7Var3.l0;
-                            p02 = m5Var.p0();
+                            int i18 = d7Var3.k0;
+                            int i19 = d7Var3.l0;
+                            p02 = l5Var.p0();
                             if (p02 != null) {
                                 tg.p0 p0Var = p02.s0;
-                                if (p0Var.getChildCount() == 1 && i16 > 0 && i17 > 0) {
+                                if (p0Var.getChildCount() == 1 && i18 > 0 && i19 > 0) {
                                     if (p0Var.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
                                         r12 = ((org.telegram.ui.Cells.q1) p0Var.getChildAt(0)).getPhotoImage();
                                         if (r12 != 0) {
@@ -158,26 +288,26 @@ public final /* synthetic */ class v8 implements Runnable {
                                                 float f11 = r12.O0;
                                                 file3 = file2;
                                                 if (((int) f11) > 0) {
-                                                    float f12 = i16;
-                                                    float f13 = i17;
+                                                    float f12 = i18;
+                                                    float f13 = i19;
                                                     float max = Math.max(f10 / f12, f11 / f13);
-                                                    int i18 = (int) ((f12 * max) / 2.0f);
-                                                    int i19 = (int) ((f13 * max) / 2.0f);
-                                                    Bitmap createBitmap2 = Bitmap.createBitmap(i18, i19, Bitmap.Config.ARGB_8888);
+                                                    int i20 = (int) ((f12 * max) / 2.0f);
+                                                    int i21 = (int) ((f13 * max) / 2.0f);
+                                                    final Bitmap createBitmap2 = Bitmap.createBitmap(i20, i21, Bitmap.Config.ARGB_8888);
                                                     float[] fArr = new float[8];
                                                     str = "png";
-                                                    int i20 = 0;
+                                                    int i22 = 0;
                                                     while (true) {
                                                         int[] iArr = r12.X0;
                                                         z11 = z10;
-                                                        if (i20 >= iArr.length) {
+                                                        if (i22 >= iArr.length) {
                                                             Canvas canvas = new Canvas(createBitmap2);
                                                             Path path = new Path();
                                                             canvas.scale(0.5f, 0.5f);
                                                             RectF rectF = org.telegram.messenger.g0.P;
-                                                            float f14 = (i18 * 2.0f) / 2.0f;
+                                                            float f14 = (i20 * 2.0f) / 2.0f;
                                                             float f15 = r12.N0 / 2.0f;
-                                                            float f16 = (i19 * 2.0f) / 2.0f;
+                                                            float f16 = (i21 * 2.0f) / 2.0f;
                                                             float f17 = r12.O0 / 2.0f;
                                                             file4 = w10;
                                                             rectF.set(f14 - f15, f16 - f17, f15 + f14, f17 + f16);
@@ -185,36 +315,166 @@ public final /* synthetic */ class v8 implements Runnable {
                                                             Paint paint = new Paint(1);
                                                             paint.setColor(-1);
                                                             canvas.drawPath(path, paint);
-                                                            File w12 = d7.w(i15, "webp");
-                                                            arrayList.add(new x8(createBitmap2, w12, 2));
+                                                            final File w12 = d7.w(i15, "webp");
+                                                            final int i23 = 2;
+                                                            arrayList.add(new Runnable() { // from class: hi.x8
+                                                                @Override // java.lang.Runnable
+                                                                public final void run() {
+                                                                    switch (i23) {
+                                                                        case 0:
+                                                                            try {
+                                                                                createBitmap2.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w12));
+                                                                                return;
+                                                                            } catch (Exception e10) {
+                                                                                org.telegram.messenger.a8.g(e10, true);
+                                                                                return;
+                                                                            }
+                                                                        case 1:
+                                                                            Bitmap bitmap = createBitmap2;
+                                                                            try {
+                                                                                try {
+                                                                                    bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w12));
+                                                                                    if (bitmap.isRecycled()) {
+                                                                                        return;
+                                                                                    }
+                                                                                } catch (Exception e11) {
+                                                                                    org.telegram.messenger.a8.g(e11, true);
+                                                                                    if (bitmap.isRecycled()) {
+                                                                                        return;
+                                                                                    }
+                                                                                }
+                                                                                bitmap.recycle();
+                                                                                return;
+                                                                            } catch (Throwable th2) {
+                                                                                if (!bitmap.isRecycled()) {
+                                                                                    bitmap.recycle();
+                                                                                }
+                                                                                throw th2;
+                                                                            }
+                                                                        case 2:
+                                                                            Bitmap bitmap2 = createBitmap2;
+                                                                            try {
+                                                                                try {
+                                                                                    bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(w12));
+                                                                                } catch (Exception e12) {
+                                                                                    org.telegram.messenger.a8.g(e12, true);
+                                                                                }
+                                                                                return;
+                                                                            } finally {
+                                                                                org.telegram.messenger.g0.z2(bitmap2);
+                                                                            }
+                                                                        case 3:
+                                                                            try {
+                                                                                createBitmap2.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w12));
+                                                                                return;
+                                                                            } catch (Exception e13) {
+                                                                                org.telegram.messenger.a8.g(e13, true);
+                                                                                return;
+                                                                            }
+                                                                        default:
+                                                                            try {
+                                                                                createBitmap2.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(w12));
+                                                                                return;
+                                                                            } catch (Exception e14) {
+                                                                                org.telegram.messenger.a8.g(e14, true);
+                                                                                return;
+                                                                            }
+                                                                    }
+                                                                }
+                                                            });
                                                             file5 = w12;
-                                                            if (m5Var.r0()) {
+                                                            if (l5Var.r0()) {
                                                                 file6 = d7Var3.R0;
                                                                 file7 = d7Var3.Q0;
                                                             } else {
                                                                 if (z11) {
-                                                                    m5Var2 = m5Var;
+                                                                    l5Var2 = l5Var;
                                                                     str2 = str;
                                                                     file6 = file;
                                                                 } else {
-                                                                    m5Var2 = m5Var;
+                                                                    l5Var2 = l5Var;
                                                                     str2 = str;
-                                                                    Bitmap q03 = m5Var2.q0(new ArrayList(), false, true, false, false, d7Var3);
+                                                                    final Bitmap q03 = l5Var2.q0(new ArrayList(), false, true, false, false, d7Var3);
                                                                     file6 = d7.w(i15, str2);
-                                                                    arrayList.add(new x8(q03, file6, 3));
+                                                                    final int i24 = 3;
+                                                                    arrayList.add(new Runnable() { // from class: hi.x8
+                                                                        @Override // java.lang.Runnable
+                                                                        public final void run() {
+                                                                            switch (i24) {
+                                                                                case 0:
+                                                                                    try {
+                                                                                        q03.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file6));
+                                                                                        return;
+                                                                                    } catch (Exception e10) {
+                                                                                        org.telegram.messenger.a8.g(e10, true);
+                                                                                        return;
+                                                                                    }
+                                                                                case 1:
+                                                                                    Bitmap bitmap = q03;
+                                                                                    try {
+                                                                                        try {
+                                                                                            bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file6));
+                                                                                            if (bitmap.isRecycled()) {
+                                                                                                return;
+                                                                                            }
+                                                                                        } catch (Exception e11) {
+                                                                                            org.telegram.messenger.a8.g(e11, true);
+                                                                                            if (bitmap.isRecycled()) {
+                                                                                                return;
+                                                                                            }
+                                                                                        }
+                                                                                        bitmap.recycle();
+                                                                                        return;
+                                                                                    } catch (Throwable th2) {
+                                                                                        if (!bitmap.isRecycled()) {
+                                                                                            bitmap.recycle();
+                                                                                        }
+                                                                                        throw th2;
+                                                                                    }
+                                                                                case 2:
+                                                                                    Bitmap bitmap2 = q03;
+                                                                                    try {
+                                                                                        try {
+                                                                                            bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file6));
+                                                                                        } catch (Exception e12) {
+                                                                                            org.telegram.messenger.a8.g(e12, true);
+                                                                                        }
+                                                                                        return;
+                                                                                    } finally {
+                                                                                        org.telegram.messenger.g0.z2(bitmap2);
+                                                                                    }
+                                                                                case 3:
+                                                                                    try {
+                                                                                        q03.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file6));
+                                                                                        return;
+                                                                                    } catch (Exception e13) {
+                                                                                        org.telegram.messenger.a8.g(e13, true);
+                                                                                        return;
+                                                                                    }
+                                                                                default:
+                                                                                    try {
+                                                                                        q03.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file6));
+                                                                                        return;
+                                                                                    } catch (Exception e14) {
+                                                                                        org.telegram.messenger.a8.g(e14, true);
+                                                                                        return;
+                                                                                    }
+                                                                            }
+                                                                        }
+                                                                    });
                                                                 }
                                                                 if (!this.h) {
                                                                     file8 = file;
-                                                                    final int i21 = 1;
+                                                                    final int i25 = 1;
                                                                     final boolean z13 = this.n;
                                                                     final ArrayList arrayList5 = arrayList4;
                                                                     final File file14 = file3;
                                                                     final File file15 = file6;
                                                                     final File file16 = file4;
-                                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                                                                    org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                                                                         @Override // java.lang.Runnable
                                                                         public final void run() {
-                                                                            switch (i21) {
+                                                                            switch (i25) {
                                                                                 case 0:
                                                                                     d7 d7Var4 = d7Var3;
                                                                                     s8 s8Var = (s8) w0Var;
@@ -337,21 +597,86 @@ public final /* synthetic */ class v8 implements Runnable {
                                                                     }
                                                                     return;
                                                                 }
-                                                                Bitmap blurBitmap = m5Var2.getBlurBitmap();
+                                                                final Bitmap blurBitmap = l5Var2.getBlurBitmap();
                                                                 file7 = d7.w(i15, str2);
-                                                                arrayList.add(new x8(blurBitmap, file7, 4));
+                                                                final int i26 = 4;
+                                                                arrayList.add(new Runnable() { // from class: hi.x8
+                                                                    @Override // java.lang.Runnable
+                                                                    public final void run() {
+                                                                        switch (i26) {
+                                                                            case 0:
+                                                                                try {
+                                                                                    blurBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file7));
+                                                                                    return;
+                                                                                } catch (Exception e10) {
+                                                                                    org.telegram.messenger.a8.g(e10, true);
+                                                                                    return;
+                                                                                }
+                                                                            case 1:
+                                                                                Bitmap bitmap = blurBitmap;
+                                                                                try {
+                                                                                    try {
+                                                                                        bitmap.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file7));
+                                                                                        if (bitmap.isRecycled()) {
+                                                                                            return;
+                                                                                        }
+                                                                                    } catch (Exception e11) {
+                                                                                        org.telegram.messenger.a8.g(e11, true);
+                                                                                        if (bitmap.isRecycled()) {
+                                                                                            return;
+                                                                                        }
+                                                                                    }
+                                                                                    bitmap.recycle();
+                                                                                    return;
+                                                                                } catch (Throwable th2) {
+                                                                                    if (!bitmap.isRecycled()) {
+                                                                                        bitmap.recycle();
+                                                                                    }
+                                                                                    throw th2;
+                                                                                }
+                                                                            case 2:
+                                                                                Bitmap bitmap2 = blurBitmap;
+                                                                                try {
+                                                                                    try {
+                                                                                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file7));
+                                                                                    } catch (Exception e12) {
+                                                                                        org.telegram.messenger.a8.g(e12, true);
+                                                                                    }
+                                                                                    return;
+                                                                                } finally {
+                                                                                    org.telegram.messenger.g0.z2(bitmap2);
+                                                                                }
+                                                                            case 3:
+                                                                                try {
+                                                                                    blurBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file7));
+                                                                                    return;
+                                                                                } catch (Exception e13) {
+                                                                                    org.telegram.messenger.a8.g(e13, true);
+                                                                                    return;
+                                                                                }
+                                                                            default:
+                                                                                try {
+                                                                                    blurBitmap.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(file7));
+                                                                                    return;
+                                                                                } catch (Exception e14) {
+                                                                                    org.telegram.messenger.a8.g(e14, true);
+                                                                                    return;
+                                                                                }
+                                                                        }
+                                                                    }
+                                                                });
                                                             }
                                                             file8 = file7;
-                                                            final int i212 = 1;
+                                                            final int i252 = 1;
                                                             final boolean z132 = this.n;
                                                             final ArrayList arrayList52 = arrayList4;
                                                             final File file142 = file3;
                                                             final File file152 = file6;
                                                             final File file162 = file4;
-                                                            org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                                                            org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                                                                 @Override // java.lang.Runnable
                                                                 public final void run() {
-                                                                    switch (i212) {
+                                                                    switch (i252) {
                                                                         case 0:
                                                                             d7 d7Var4 = d7Var3;
                                                                             s8 s8Var = (s8) w0Var;
@@ -471,11 +796,11 @@ public final /* synthetic */ class v8 implements Runnable {
                                                             }
                                                             return;
                                                         }
-                                                        int i22 = i20 * 2;
-                                                        float f18 = iArr[i20];
-                                                        fArr[i22] = f18;
-                                                        fArr[i22 + 1] = f18;
-                                                        i20++;
+                                                        int i27 = i22 * 2;
+                                                        float f18 = iArr[i22];
+                                                        fArr[i27] = f18;
+                                                        fArr[i27 + 1] = f18;
+                                                        i22++;
                                                         z10 = z11;
                                                     }
                                                 }
@@ -483,19 +808,19 @@ public final /* synthetic */ class v8 implements Runnable {
                                                 z11 = z10;
                                                 file4 = w10;
                                                 file5 = file;
-                                                if (m5Var.r0()) {
+                                                if (l5Var.r0()) {
                                                 }
                                                 file8 = file7;
-                                                final int i2122 = 1;
+                                                final int i2522 = 1;
                                                 final boolean z1322 = this.n;
                                                 final ArrayList arrayList522 = arrayList4;
                                                 final File file1422 = file3;
                                                 final File file1522 = file6;
                                                 final File file1622 = file4;
-                                                org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                                                org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                                                     @Override // java.lang.Runnable
                                                     public final void run() {
-                                                        switch (i2122) {
+                                                        switch (i2522) {
                                                             case 0:
                                                                 d7 d7Var4 = d7Var3;
                                                                 s8 s8Var = (s8) w0Var;
@@ -631,19 +956,19 @@ public final /* synthetic */ class v8 implements Runnable {
                         z11 = z10;
                         file4 = w10;
                         file5 = file;
-                        if (m5Var.r0()) {
+                        if (l5Var.r0()) {
                         }
                         file8 = file7;
-                        final int i21222 = 1;
+                        final int i25222 = 1;
                         final boolean z13222 = this.n;
                         final ArrayList arrayList5222 = arrayList4;
                         final File file14222 = file3;
                         final File file15222 = file6;
                         final File file16222 = file4;
-                        org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                        org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i21222) {
+                                switch (i25222) {
                                     case 0:
                                         d7 d7Var4 = d7Var3;
                                         s8 s8Var = (s8) w0Var;
@@ -766,13 +1091,13 @@ public final /* synthetic */ class v8 implements Runnable {
                 } else {
                     z10 = E;
                 }
-                m5Var = m5Var5;
+                l5Var = l5Var5;
                 file = null;
                 file2 = null;
                 if (d7Var3.u) {
-                    int i162 = d7Var3.k0;
-                    int i172 = d7Var3.l0;
-                    p02 = m5Var.p0();
+                    int i182 = d7Var3.k0;
+                    int i192 = d7Var3.l0;
+                    p02 = l5Var.p0();
                     if (p02 != null) {
                     }
                     r12 = file;
@@ -784,19 +1109,19 @@ public final /* synthetic */ class v8 implements Runnable {
                 z11 = z10;
                 file4 = w10;
                 file5 = file;
-                if (m5Var.r0()) {
+                if (l5Var.r0()) {
                 }
                 file8 = file7;
-                final int i212222 = 1;
+                final int i252222 = 1;
                 final boolean z132222 = this.n;
                 final ArrayList arrayList52222 = arrayList4;
                 final File file142222 = file3;
                 final File file152222 = file6;
                 final File file162222 = file4;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i212222) {
+                        switch (i252222) {
                             case 0:
                                 d7 d7Var4 = d7Var3;
                                 s8 s8Var = (s8) w0Var;
@@ -916,42 +1241,42 @@ public final /* synthetic */ class v8 implements Runnable {
                 }
                 return;
             case 1:
-                sa saVar2 = (sa) this.b;
-                m5 m5Var6 = (m5) this.c;
+                ta taVar2 = (ta) this.b;
+                l5 l5Var6 = (l5) this.c;
                 d7 d7Var4 = (d7) this.f;
                 final s8 s8Var = (s8) this.r;
-                int i23 = saVar2.c;
+                int i28 = taVar2.c;
                 ArrayList arrayList6 = new ArrayList();
-                m5Var6.q0(arrayList6, false, false, false, false, d7Var4);
+                l5Var6.q0(arrayList6, false, false, false, false, d7Var4);
                 if (!d7Var4.K) {
-                    d7Var4.S0 = Utilities.k(m5Var6.getLcm(), 7500L, 5000L);
+                    d7Var4.S0 = Utilities.k(l5Var6.getLcm(), 7500L, 5000L);
                 }
-                List<TLRPC.InputDocument> masks2 = m5Var6.getMasks();
+                List<TLRPC.InputDocument> masks2 = l5Var6.getMasks();
                 ArrayList arrayList7 = masks2 != null ? new ArrayList(masks2) : null;
                 boolean z14 = d7Var4.K;
                 boolean E2 = d7Var4.E();
                 arrayList6.clear();
-                Bitmap q04 = m5Var6.q0(arrayList6, true, false, false, !z14, d7Var4);
+                Bitmap q04 = l5Var6.q0(arrayList6, true, false, false, !z14, d7Var4);
                 ArrayList arrayList8 = arrayList6.isEmpty() ? null : arrayList6;
-                org.telegram.messenger.w7.G(i23);
-                final File J = org.telegram.messenger.w7.J(fc.a0(q04, Bitmap.CompressFormat.PNG, d7Var4.i0, d7Var4.j0, 87), null, true, true);
+                org.telegram.messenger.w7.G(i28);
+                final File J = org.telegram.messenger.w7.J(ec.a0(q04, Bitmap.CompressFormat.PNG, d7Var4.i0, d7Var4.j0, 87), null, true, true);
                 if (q04 != null && !q04.isRecycled()) {
                     q04.recycle();
                 }
                 boolean z15 = d7Var4.u;
-                int i24 = this.d;
-                int i25 = this.e;
+                int i29 = this.d;
+                int i30 = this.e;
                 final ArrayList arrayList9 = arrayList7;
                 if (z15) {
                     long j10 = d7Var4.z0;
                     if (j10 != Long.MIN_VALUE) {
                         Drawable drawable2 = d7Var4.x0;
                         if (drawable2 == null) {
-                            drawable2 = x5.e(null, i23, j10, saVar2.d2);
+                            drawable2 = w5.e(null, i28, j10, taVar2.d2);
                         }
                         if (drawable2 != null) {
-                            file10 = d7.w(i23, "webp");
-                            Bitmap createBitmap3 = Bitmap.createBitmap(i24, i25, Bitmap.Config.ARGB_8888);
+                            file10 = d7.w(i28, "webp");
+                            Bitmap createBitmap3 = Bitmap.createBitmap(i29, i30, Bitmap.Config.ARGB_8888);
                             d7.j(new Canvas(createBitmap3), drawable2, createBitmap3.getWidth(), createBitmap3.getHeight());
                             try {
                                 try {
@@ -971,40 +1296,40 @@ public final /* synthetic */ class v8 implements Runnable {
                 }
                 file10 = null;
                 if (d7Var4.u && d7Var4.K) {
-                    int i26 = d7Var4.k0;
-                    int i27 = d7Var4.l0;
-                    tg.u0 p03 = m5Var6.p0();
+                    int i31 = d7Var4.k0;
+                    int i32 = d7Var4.l0;
+                    tg.u0 p03 = l5Var6.p0();
                     if (p03 != null) {
                         tg.p0 p0Var2 = p03.s0;
-                        if (p0Var2.getChildCount() == 1 && i26 > 0 && i27 > 0) {
+                        if (p0Var2.getChildCount() == 1 && i31 > 0 && i32 > 0) {
                             if (p0Var2.getChildAt(0) instanceof org.telegram.ui.Cells.q1) {
                                 imageReceiver = ((org.telegram.ui.Cells.q1) p0Var2.getChildAt(0)).getPhotoImage();
                                 if (imageReceiver != null) {
                                     float f19 = imageReceiver.N0;
                                     if (((int) f19) > 0) {
                                         float f20 = imageReceiver.O0;
-                                        m5Var3 = m5Var6;
+                                        l5Var3 = l5Var6;
                                         if (((int) f20) > 0) {
-                                            float f21 = i26;
-                                            float f22 = i27;
+                                            float f21 = i31;
+                                            float f22 = i32;
                                             float max2 = Math.max(f19 / f21, f20 / f22);
-                                            int i28 = (int) ((f21 * max2) / 2.0f);
-                                            int i29 = (int) ((f22 * max2) / 2.0f);
-                                            Bitmap createBitmap4 = Bitmap.createBitmap(i28, i29, Bitmap.Config.ARGB_8888);
+                                            int i33 = (int) ((f21 * max2) / 2.0f);
+                                            int i34 = (int) ((f22 * max2) / 2.0f);
+                                            Bitmap createBitmap4 = Bitmap.createBitmap(i33, i34, Bitmap.Config.ARGB_8888);
                                             float[] fArr2 = new float[8];
-                                            i10 = i24;
-                                            int i30 = 0;
+                                            i10 = i29;
+                                            int i35 = 0;
                                             while (true) {
                                                 int[] iArr2 = imageReceiver.X0;
-                                                i11 = i25;
-                                                if (i30 >= iArr2.length) {
+                                                i11 = i30;
+                                                if (i35 >= iArr2.length) {
                                                     Canvas canvas2 = new Canvas(createBitmap4);
                                                     Path path2 = new Path();
                                                     canvas2.scale(0.5f, 0.5f);
                                                     RectF rectF2 = org.telegram.messenger.g0.P;
-                                                    float f23 = (i28 * 2.0f) / 2.0f;
+                                                    float f23 = (i33 * 2.0f) / 2.0f;
                                                     float f24 = imageReceiver.N0 / 2.0f;
-                                                    float f25 = (i29 * 2.0f) / 2.0f;
+                                                    float f25 = (i34 * 2.0f) / 2.0f;
                                                     float f26 = imageReceiver.O0 / 2.0f;
                                                     d7Var = d7Var4;
                                                     rectF2.set(f23 - f24, f25 - f26, f24 + f23, f26 + f25);
@@ -1013,7 +1338,7 @@ public final /* synthetic */ class v8 implements Runnable {
                                                     paint2.setColor(-1);
                                                     canvas2.drawPath(path2, paint2);
                                                     try {
-                                                        file11 = d7.w(i23, "webp");
+                                                        file11 = d7.w(i28, "webp");
                                                         createBitmap4.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(file11));
                                                     } catch (Exception e11) {
                                                         org.telegram.messenger.a8.g(e11, true);
@@ -1022,29 +1347,29 @@ public final /* synthetic */ class v8 implements Runnable {
                                                     createBitmap4.recycle();
                                                     if (E2) {
                                                         i12 = i10;
-                                                        m5Var4 = m5Var3;
+                                                        l5Var4 = l5Var3;
                                                         i13 = i11;
                                                         d7Var2 = d7Var;
                                                         i14 = 87;
                                                         file12 = null;
                                                     } else {
                                                         i12 = i10;
-                                                        m5Var4 = m5Var3;
+                                                        l5Var4 = l5Var3;
                                                         i13 = i11;
                                                         d7Var2 = d7Var;
                                                         i14 = 87;
-                                                        Bitmap q05 = m5Var4.q0(new ArrayList(), false, true, false, false, d7Var2);
-                                                        org.telegram.messenger.w7.G(i23);
-                                                        File J2 = org.telegram.messenger.w7.J(fc.a0(q05, Bitmap.CompressFormat.PNG, i12, i13, 87), null, true, true);
+                                                        Bitmap q05 = l5Var4.q0(new ArrayList(), false, true, false, false, d7Var2);
+                                                        org.telegram.messenger.w7.G(i28);
+                                                        File J2 = org.telegram.messenger.w7.J(ec.a0(q05, Bitmap.CompressFormat.PNG, i12, i13, 87), null, true, true);
                                                         if (q05 != null && !q05.isRecycled()) {
                                                             q05.recycle();
                                                         }
                                                         file12 = J2;
                                                     }
                                                     if (this.h) {
-                                                        Bitmap blurBitmap2 = m5Var4.getBlurBitmap();
-                                                        org.telegram.messenger.w7.G(i23);
-                                                        file13 = org.telegram.messenger.w7.J(fc.a0(blurBitmap2, Bitmap.CompressFormat.PNG, i12, i13, i14), null, true, true);
+                                                        Bitmap blurBitmap2 = l5Var4.getBlurBitmap();
+                                                        org.telegram.messenger.w7.G(i28);
+                                                        file13 = org.telegram.messenger.w7.J(ec.a0(blurBitmap2, Bitmap.CompressFormat.PNG, i12, i13, i14), null, true, true);
                                                         if (blurBitmap2 != null && !blurBitmap2.isRecycled()) {
                                                             blurBitmap2.recycle();
                                                         }
@@ -1056,13 +1381,13 @@ public final /* synthetic */ class v8 implements Runnable {
                                                     final File file18 = file13;
                                                     final File file19 = file12;
                                                     final ArrayList arrayList10 = arrayList8;
-                                                    final int i31 = 0;
+                                                    final int i36 = 0;
                                                     final boolean z16 = this.n;
                                                     final File file20 = file11;
-                                                    org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                                                    org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                                                         @Override // java.lang.Runnable
                                                         public final void run() {
-                                                            switch (i31) {
+                                                            switch (i36) {
                                                                 case 0:
                                                                     d7 d7Var42 = d7Var5;
                                                                     s8 s8Var2 = (s8) s8Var;
@@ -1178,16 +1503,16 @@ public final /* synthetic */ class v8 implements Runnable {
                                                     });
                                                     return;
                                                 }
-                                                int i32 = i30 * 2;
-                                                float f27 = iArr2[i30];
-                                                fArr2[i32] = f27;
-                                                fArr2[i32 + 1] = f27;
-                                                i30++;
-                                                i25 = i11;
+                                                int i37 = i35 * 2;
+                                                float f27 = iArr2[i35];
+                                                fArr2[i37] = f27;
+                                                fArr2[i37 + 1] = f27;
+                                                i35++;
+                                                i30 = i11;
                                             }
                                         }
-                                        i10 = i24;
-                                        i11 = i25;
+                                        i10 = i29;
+                                        i11 = i30;
                                         d7Var = d7Var4;
                                         file11 = null;
                                         if (E2) {
@@ -1199,13 +1524,13 @@ public final /* synthetic */ class v8 implements Runnable {
                                         final File file182 = file13;
                                         final File file192 = file12;
                                         final ArrayList arrayList102 = arrayList8;
-                                        final int i312 = 0;
+                                        final int i362 = 0;
                                         final boolean z162 = this.n;
                                         final File file202 = file11;
-                                        org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                                        org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                                             @Override // java.lang.Runnable
                                             public final void run() {
-                                                switch (i312) {
+                                                switch (i362) {
                                                     case 0:
                                                         d7 d7Var42 = d7Var52;
                                                         s8 s8Var2 = (s8) s8Var;
@@ -1332,9 +1657,9 @@ public final /* synthetic */ class v8 implements Runnable {
                     if (imageReceiver != null) {
                     }
                 }
-                m5Var3 = m5Var6;
-                i10 = i24;
-                i11 = i25;
+                l5Var3 = l5Var6;
+                i10 = i29;
+                i11 = i30;
                 d7Var = d7Var4;
                 file11 = null;
                 if (E2) {
@@ -1346,13 +1671,13 @@ public final /* synthetic */ class v8 implements Runnable {
                 final File file1822 = file13;
                 final File file1922 = file12;
                 final ArrayList arrayList1022 = arrayList8;
-                final int i3122 = 0;
+                final int i3622 = 0;
                 final boolean z1622 = this.n;
                 final File file2022 = file11;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.w8
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.w8
                     @Override // java.lang.Runnable
                     public final void run() {
-                        switch (i3122) {
+                        switch (i3622) {
                             case 0:
                                 d7 d7Var42 = d7Var522;
                                 s8 s8Var2 = (s8) s8Var;

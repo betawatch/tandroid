@@ -1,34 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
-import android.text.style.UpdateAppearance;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class b00 extends CharacterStyle implements UpdateAppearance {
-    public int a;
-    public int b;
-    public float c;
-    public final org.telegram.ui.ActionBar.e6 d;
-
-    public b00(int i7) {
-        this(i7, null);
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public void updateDrawState(TextPaint textPaint) {
-        this.a = org.telegram.ui.ActionBar.j6.r1(this.c, org.telegram.ui.ActionBar.j6.w0(this.b, this.d));
-        int color = textPaint.getColor();
-        int i7 = this.a;
-        if (color != i7) {
-            textPaint.setColor(i7);
-        }
-    }
-
-    public b00(int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        this.c = 1.0f;
-        this.b = i7;
-        this.d = e6Var;
+public final class b00 extends AnimatorListenerAdapter {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
     }
 }

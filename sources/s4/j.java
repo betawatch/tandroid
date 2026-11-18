@@ -7,8 +7,9 @@ import android.text.TextUtils;
 import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
+import r0.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends MediaRouter2$TransferCallback {
     public final /* synthetic */ k a;
@@ -53,7 +54,7 @@ public final class j extends MediaRouter2$TransferCallback {
             return;
         }
         int i7 = 0;
-        String id2 = r2.j.d(selectedRoutes.get(0)).getId();
+        String id2 = f1.d(selectedRoutes.get(0)).getId();
         this.a.w.put(routingController2, new g(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;

@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
 import android.app.Application;
+import b5.a;
 import gd.c;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgh {
     private zzvu zza;
@@ -15,7 +15,7 @@ public final class zzgh {
 
     public zzgh() {
         int i7 = zzby.zza;
-        this.zzb = bb.b(zzgg.zza);
+        this.zzb = a.c(zzgg.zza);
     }
 
     private final Application zzb() {
@@ -54,7 +54,7 @@ public final class zzgh {
             r10 = this;
             int r0 = com.google.android.recaptcha.internal.zzby.zza
             com.google.android.recaptcha.internal.zzgf r0 = com.google.android.recaptcha.internal.zzgf.zza
-            gd.i r0 = a8.bb.b(r0)
+            gd.i r0 = b5.a.c(r0)
             java.lang.Object r0 = r0.getValue()
             com.google.android.recaptcha.internal.zzch r0 = (com.google.android.recaptcha.internal.zzch) r0
             android.app.Application r0 = r10.zzb()
@@ -73,7 +73,7 @@ public final class zzgh {
             android.content.pm.PackageManager r2 = r2.getPackageManager()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             android.app.Application r7 = r10.zzb()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             java.lang.String r7 = r7.getPackageName()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
-            r8 = 128(0x80, double:6.32E-322)
+            r8 = 128(0x80, double:6.3E-322)
             android.content.pm.PackageManager$ApplicationInfoFlags r8 = android.content.pm.PackageManager.ApplicationInfoFlags.of(r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             android.content.pm.ApplicationInfo r2 = r2.getApplicationInfo(r7, r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             android.os.Bundle r2 = r2.metaData     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
@@ -90,7 +90,7 @@ public final class zzgh {
             android.content.pm.PackageManager r2 = r2.getPackageManager()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             android.app.Application r7 = r10.zzb()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             java.lang.String r7 = r7.getPackageName()     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
-            r8 = 128(0x80, float:1.794E-43)
+            r8 = 128(0x80, float:1.8E-43)
             android.content.pm.ApplicationInfo r2 = r2.getApplicationInfo(r7, r8)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             android.os.Bundle r2 = r2.metaData     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e
             int r2 = r2.getInt(r3, r6)     // Catch: android.content.pm.PackageManager.NameNotFoundException -> L4e

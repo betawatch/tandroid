@@ -12,7 +12,7 @@ import android.util.AttributeSet;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class u extends ImageButton {
     public final h2.c a;
@@ -30,7 +30,7 @@ public class u extends ImageButton {
         cVar.x(attributeSet, i7);
         xa xaVar = new xa(this);
         this.b = xaVar;
-        xaVar.r(attributeSet, i7);
+        xaVar.s(attributeSet, i7);
     }
 
     @Override // android.widget.ImageView, android.view.View
@@ -142,7 +142,7 @@ public class u extends ImageButton {
         xa xaVar = this.b;
         ImageView imageView = (ImageView) xaVar.c;
         if (i7 != 0) {
-            Drawable b10 = b5.a.b(imageView.getContext(), i7);
+            Drawable b10 = c8.z.b(imageView.getContext(), i7);
             if (b10 != null) {
                 l1.a(b10);
             }

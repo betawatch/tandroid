@@ -1,12 +1,12 @@
 package h9;
 
-import a8.ja;
+import a8.la;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
 /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class y0 implements Iterator {
     public static final y0 a;
@@ -38,6 +38,6 @@ public final class y0 implements Iterator {
 
     @Override // java.util.Iterator
     public final void remove() {
-        ja.o("no calls to next() since the last call to remove()", false);
+        la.o("no calls to next() since the last call to remove()", false);
     }
 }

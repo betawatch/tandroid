@@ -1,106 +1,110 @@
 package org.telegram.messenger;
 
+import android.graphics.Paint;
+import android.graphics.Path;
 import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z5 b;
-    public final /* synthetic */ TLRPC.Document c;
-    public final /* synthetic */ gj d;
-
-    public /* synthetic */ u5(z5 z5Var, TLRPC.Document document, gj gjVar, int i7) {
-        this.a = i7;
-        this.b = z5Var;
-        this.c = document;
-        this.d = gjVar;
+public abstract class u5 {
+    public static lz a(int i7) {
+        try {
+            lz lzVar = new lz();
+            dz dzVar = new dz(256.0f, 256.0f, 204.8f);
+            lzVar.a.add(dzVar);
+            lzVar.b.put(dzVar, new Paint(1));
+            lzVar.e = 512;
+            lzVar.f = 512;
+            lzVar.f(i7, null, 0.65f, false);
+            return lzVar;
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return null;
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:26:0x005a  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        gj gjVar;
-        TLRPC.Document document;
-        boolean z10;
-        boolean z11;
-        TLRPC.Document F0;
-        TLRPC.Document F02;
-        switch (this.a) {
-            case 0:
-                z5 z5Var = this.b;
-                ArrayList arrayList = z5Var.I;
-                ArrayList arrayList2 = z5Var.H;
-                for (int i7 = 0; i7 < arrayList2.size(); i7++) {
-                    if (((gj) arrayList2.get(i7)).F0() != null) {
-                        long j3 = ((gj) arrayList2.get(i7)).F0().id;
-                        TLRPC.Document document2 = this.c;
-                        if (j3 == document2.id) {
-                            arrayList2.remove(i7);
-                            int i10 = 0;
-                            while (true) {
-                                int size = arrayList.size();
-                                gjVar = this.d;
-                                if (i10 >= size) {
-                                    arrayList.add(0, gjVar);
-                                    z5Var.J.put(gjVar.e1(), gjVar);
-                                    j6.o oVar = z5Var.T;
-                                    g0.r(oVar);
-                                    g0.i3(oVar, 60000L);
-                                } else if (((gj) arrayList.get(i10)).F0() == null || ((gj) arrayList.get(i10)).F0().id != document2.id) {
-                                    i10++;
-                                }
-                            }
-                            z5Var.getNotificationCenter().k(ns.b5, new Object[0]);
-                            z5Var.getMessagesStorage().a.c(new v5(z5Var, gjVar, 0));
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                z5 z5Var2 = this.b;
-                ArrayList arrayList3 = z5Var2.I;
-                ArrayList arrayList4 = z5Var2.H;
-                int i11 = 0;
-                while (true) {
-                    int size2 = arrayList3.size();
-                    document = this.c;
-                    z10 = true;
-                    if (i11 < size2) {
-                        gj gjVar2 = (gj) arrayList3.get(i11);
-                        if (gjVar2 == null || (F02 = gjVar2.F0()) == null || F02.id != document.id) {
-                            i11++;
-                        } else {
-                            z11 = true;
-                        }
-                    } else {
-                        z11 = false;
-                    }
-                }
-                if (!z11) {
-                    for (int i12 = 0; i12 < arrayList4.size(); i12++) {
-                        gj gjVar3 = (gj) arrayList4.get(i12);
-                        if (gjVar3 != null && (F0 = gjVar3.F0()) != null && F0.id == document.id) {
-                            if (!z10) {
-                                gj gjVar4 = this.d;
-                                arrayList4.add(0, gjVar4);
-                                z5Var2.getMessagesStorage().a.c(new v5(z5Var2, gjVar4, 1));
-                            }
-                            z5Var2.getNotificationCenter().k(ns.b5, new Object[0]);
-                            break;
-                        }
-                    }
-                }
-                z10 = z11;
-                if (!z10) {
-                }
-                z5Var2.getNotificationCenter().k(ns.b5, new Object[0]);
-                break;
+    public static lz b(int i7) {
+        Path path = new Path();
+        path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
+        path.close();
+        lz lzVar = new lz();
+        lzVar.a.add(path);
+        lzVar.b.put(path, new Paint(1));
+        lzVar.e = 512;
+        lzVar.f = 512;
+        lzVar.f(i7, null, 1.0f, false);
+        return lzVar;
+    }
+
+    public static lz c(float f10, int i7) {
+        lz h = mz.h(R.raw.map_placeholder, -65536);
+        if (h != null) {
+            h.f(i7, null, f10, false);
         }
+        return h;
+    }
+
+    public static lz d(ArrayList arrayList, int i7, float f10, boolean z10) {
+        int size = arrayList.size();
+        int i10 = 512;
+        int i11 = 512;
+        TLRPC.TL_photoPathSize tL_photoPathSize = null;
+        for (int i12 = 0; i12 < size; i12++) {
+            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) arrayList.get(i12);
+            if (photoSize instanceof TLRPC.TL_photoPathSize) {
+                tL_photoPathSize = (TLRPC.TL_photoPathSize) photoSize;
+            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z10) {
+                i10 = photoSize.w;
+                i11 = photoSize.h;
+            }
+        }
+        if (tL_photoPathSize == null || i10 == 0 || i11 == 0) {
+            return null;
+        }
+        lz j3 = mz.j(i10, i11, tL_photoPathSize.svgPath);
+        if (j3 != null) {
+            j3.f(i7, null, f10, false);
+        }
+        return j3;
+    }
+
+    public static lz e(TLRPC.Document document, int i7, float f10) {
+        return f(document, i7, f10, null);
+    }
+
+    public static lz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.i6 i6Var) {
+        int i10;
+        int i11;
+        if (document == null) {
+            return null;
+        }
+        int size = document.thumbs.size();
+        for (int i12 = 0; i12 < size; i12++) {
+            TLRPC.PhotoSize photoSize = document.thumbs.get(i12);
+            if (photoSize instanceof TLRPC.TL_photoPathSize) {
+                int size2 = document.attributes.size();
+                for (int i13 = 0; i13 < size2; i13++) {
+                    TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
+                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
+                        i10 = documentAttribute.w;
+                        i11 = documentAttribute.h;
+                        break;
+                    }
+                }
+                i10 = 512;
+                i11 = 512;
+                if (i10 == 0 || i11 == 0) {
+                    return null;
+                }
+                lz j3 = mz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
+                if (j3 != null) {
+                    j3.f(i7, i6Var, f10, false);
+                }
+                return j3;
+            }
+        }
+        return null;
     }
 }

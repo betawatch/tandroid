@@ -18,32 +18,32 @@ import java.io.File;
 import java.util.HashSet;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.mc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class w3 extends View implements org.telegram.ui.ActionBar.c6 {
     public float E;
-    public final org.telegram.ui.Components.u5 F;
-    public final org.telegram.ui.Components.u5 G;
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.Components.c6 F;
+    public final org.telegram.ui.Components.c6 G;
+    public final org.telegram.ui.ActionBar.i6 a;
     public final ImageReceiver b;
     public final Paint c;
     public final Paint d;
-    public final org.telegram.ui.Components.g6 e;
+    public final org.telegram.ui.Components.m6 e;
     public boolean f;
     public boolean h;
     public View.OnClickListener n;
-    public final dc r;
+    public final mc r;
     public int s;
     public String w;
     public float x;
     public float y;
 
-    public w3(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public w3(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.b = imageReceiver;
@@ -51,27 +51,27 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
         this.c = paint;
         Paint paint2 = new Paint(1);
         this.d = paint2;
-        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(false, false, false);
-        this.e = g6Var;
-        this.r = new dc(this);
+        org.telegram.ui.Components.m6 m6Var = new org.telegram.ui.Components.m6(false, false, false);
+        this.e = m6Var;
+        this.r = new mc(this);
         this.s = -1;
-        er erVar = er.h;
-        this.F = new org.telegram.ui.Components.u5(this, 0L, 320L, erVar);
-        this.G = new org.telegram.ui.Components.u5(this, 0L, 320L, erVar);
-        g6Var.setCallback(this);
-        g6Var.u(-1);
-        g6Var.b = 17;
-        g6Var.w(org.telegram.messenger.g0.L(16.0f));
-        g6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
-        g6Var.N = org.telegram.messenger.g0.q.x;
-        g6Var.n(0.65f, 480L, erVar);
-        g6Var.B = 0.35f;
+        lr lrVar = lr.h;
+        this.F = new org.telegram.ui.Components.c6(this, 0L, 320L, lrVar);
+        this.G = new org.telegram.ui.Components.c6(this, 0L, 320L, lrVar);
+        m6Var.setCallback(this);
+        m6Var.u(-1);
+        m6Var.b = 17;
+        m6Var.w(org.telegram.messenger.g0.L(16.0f));
+        m6Var.x(org.telegram.messenger.g0.o1("fonts/num.otf"));
+        m6Var.N = org.telegram.messenger.g0.q.x;
+        m6Var.n(0.65f, 480L, lrVar);
+        m6Var.B = 0.35f;
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(-1);
-        this.a = e6Var;
-        paint2.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Fi, e6Var));
+        this.a = i6Var;
+        paint2.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, i6Var));
         imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
-        c8.na.a(this);
+        c8.ra.a(this);
     }
 
     public final void a(int i7, int i10, final d7 d7Var) {
@@ -113,7 +113,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
                             final Bitmap decodeFile = BitmapFactory.decodeFile(d7Var2.O0.getPath(), options);
                             final int i12 = 1;
                             final w3 w3Var = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.u3
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.u3
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i12) {
@@ -141,7 +141,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
                             final Bitmap decodeFile2 = BitmapFactory.decodeFile(d7Var3.L.getPath(), options2);
                             final int i13 = 0;
                             final w3 w3Var2 = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.u3
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.u3
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i13) {
@@ -191,7 +191,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
                             final Bitmap decodeFile = BitmapFactory.decodeFile(d7Var2.O0.getPath(), options);
                             final int i122 = 1;
                             final w3 w3Var = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.u3
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.u3
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i122) {
@@ -219,7 +219,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
                             final Bitmap decodeFile2 = BitmapFactory.decodeFile(d7Var3.L.getPath(), options2);
                             final int i13 = 0;
                             final w3 w3Var2 = this.b;
-                            org.telegram.messenger.g0.h3(new Runnable() { // from class: hi.u3
+                            org.telegram.messenger.g0.g3(new Runnable() { // from class: hi.u3
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     switch (i13) {
@@ -302,7 +302,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
             paint2.setAlpha((int) (d2 * 255.0f));
             canvas.drawCircle(this.x, this.y, this.E, paint2);
         }
-        paint.setAlpha(ns.e4);
+        paint.setAlpha(ks.e4);
         canvas.drawCircle(this.x, this.y, this.E - org.telegram.messenger.g0.L(1.0f), paint);
         if (d2 > 0.0f) {
             float f10 = this.x;
@@ -310,10 +310,10 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
             float f12 = f10 - f11;
             float f13 = this.y;
             float f14 = f10 + f11;
-            org.telegram.ui.Components.g6 g6Var = this.e;
-            g6Var.o(f12, f13, f14, f13);
-            g6Var.C = (int) (d2 * 255.0f);
-            g6Var.draw(canvas);
+            org.telegram.ui.Components.m6 m6Var = this.e;
+            m6Var.o(f12, f13, f14, f13);
+            m6Var.C = (int) (d2 * 255.0f);
+            m6Var.draw(canvas);
         }
         canvas.restore();
     }
@@ -340,18 +340,18 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
         View.OnClickListener onClickListener;
         boolean z10 = motionEvent.getX() >= this.x - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getX() <= this.x + ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() >= this.y - ((float) org.telegram.messenger.g0.L(14.0f)) && motionEvent.getY() <= this.y + ((float) org.telegram.messenger.g0.L(14.0f));
         int action = motionEvent.getAction();
-        dc dcVar = this.r;
+        mc mcVar = this.r;
         if (action == 0) {
-            dcVar.c(z10);
+            mcVar.c(z10);
         } else if (motionEvent.getAction() == 1) {
-            if (dcVar.i && z10 && (onClickListener = this.n) != null) {
+            if (mcVar.i && z10 && (onClickListener = this.n) != null) {
                 onClickListener.onClick(this);
             }
-            dcVar.c(false);
+            mcVar.c(false);
         } else if (motionEvent.getAction() == 3) {
-            dcVar.c(false);
+            mcVar.c(false);
         }
-        return dcVar.i || super.onTouchEvent(motionEvent);
+        return mcVar.i || super.onTouchEvent(motionEvent);
     }
 
     public void setOnCheckboxClick(View.OnClickListener onClickListener) {
@@ -362,10 +362,10 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
         this.e.t(i7 < 0 ? "" : Integer.toString(i7 + 1), true, true);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         try {
-            this.d.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Fi, this.a));
+            this.d.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, this.a));
             invalidate();
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
@@ -377,7 +377,7 @@ public final class w3 extends View implements org.telegram.ui.ActionBar.z5 {
         return drawable == this.e || super.verifyDrawable(drawable);
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

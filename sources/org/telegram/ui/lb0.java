@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class lb0 extends ar {
+public final class lb0 extends br {
     public final /* synthetic */ int h;
     public final /* synthetic */ Object n;
 
@@ -15,7 +15,7 @@ public final class lb0 extends ar {
         this.n = obj;
     }
 
-    @Override // org.telegram.ui.ar
+    @Override // org.telegram.ui.br
     public final void a() {
         switch (this.h) {
             case 0:
@@ -30,11 +30,11 @@ public final class lb0 extends ar {
                     passcodeActivity.u0();
                     break;
                 } else {
-                    postDelayed(new ef0(this, 3), 260L);
+                    postDelayed(new hf0(this, 3), 260L);
                     break;
                 }
             default:
-                ((xa1) this.n).H0();
+                ((bb1) this.n).H0();
                 break;
         }
     }

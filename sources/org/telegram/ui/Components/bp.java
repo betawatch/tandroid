@@ -1,37 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.ArrayList;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class bp implements ResultCallback {
-    public final /* synthetic */ org.telegram.messenger.d4 a;
-    public final /* synthetic */ ep b;
+public final class bp extends org.telegram.ui.x71 {
+    public final /* synthetic */ int m2;
 
-    public bp(ep epVar, org.telegram.messenger.d4 d4Var) {
-        this.b = epVar;
-        this.a = d4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bp(Object obj, Bitmap bitmap, boolean z10, int i7) {
+        super(obj, bitmap, z10);
+        this.m2 = i7;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        org.telegram.messenger.d4 d4Var = this.a;
-        ArrayList e10 = d4Var.e((d4Var.f.c ? 2 : 0) | 5);
-        ep epVar = this.b;
-        org.telegram.messenger.ns.f(epVar.a).d(new od(23, this, e10));
-        epVar.V1 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.x71
+    public final boolean Z0() {
+        switch (this.m2) {
+        }
+        return true;
     }
 }

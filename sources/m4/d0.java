@@ -1,21 +1,21 @@
 package m4;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
-import c8.n9;
+import c8.p9;
 import e2.t0;
 import h2.k0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d0 implements f3.o {
     public final int a;
@@ -83,15 +83,15 @@ public final class d0 implements f3.o {
     public final boolean b(f3.p pVar) {
         byte[] bArr = this.d.a;
         f3.l lVar = (f3.l) pVar;
-        lVar.h(bArr, 0, 940, false);
+        lVar.g(bArr, 0, 940, false);
         int i7 = 0;
         while (i7 < 188) {
             for (int i10 = 0; i10 < 5; i10++) {
-                if (bArr[(i10 * ns.S2) + i7] != 71) {
+                if (bArr[(i10 * ks.S2) + i7] != 71) {
                     break;
                 }
             }
-            lVar.g(i7, false);
+            lVar.f(i7, false);
             return true;
         }
         return false;
@@ -108,7 +108,7 @@ public final class d0 implements f3.o {
     @Override // f3.o
     public final void d(long j3, long j10) {
         k3.a aVar;
-        ja.p(this.a != 2);
+        la.p(this.a != 2);
         List list = this.c;
         int size = list.size();
         for (int i7 = 0; i7 < size; i7++) {
@@ -143,7 +143,7 @@ public final class d0 implements f3.o {
     @Override // f3.o
     public final List e() {
         h9.g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -195,8 +195,8 @@ public final class d0 implements f3.o {
                         return 1;
                     }
                     xVar2.K(min);
-                    pVar.l();
-                    pVar.c(0, min, xVar2.a);
+                    pVar.n();
+                    pVar.b(0, min, xVar2.a);
                     int i15 = xVar2.b;
                     int i16 = xVar2.c;
                     while (true) {
@@ -204,7 +204,7 @@ public final class d0 implements f3.o {
                             break;
                         }
                         if (xVar2.a[i15] == 71) {
-                            long a10 = n9.a(xVar2, i15, i14);
+                            long a10 = p9.a(xVar2, i15, i14);
                             if (a10 != -9223372036854775807L) {
                                 j3 = a10;
                                 break;
@@ -224,8 +224,8 @@ public final class d0 implements f3.o {
                     return 1;
                 }
                 xVar2.K(min2);
-                pVar.l();
-                pVar.c(0, min2, xVar2.a);
+                pVar.n();
+                pVar.b(0, min2, xVar2.a);
                 int i17 = xVar2.b;
                 int i18 = xVar2.c;
                 int i19 = i18 - 188;
@@ -240,13 +240,13 @@ public final class d0 implements f3.o {
                         if (i20 > 4) {
                             break;
                         }
-                        int i22 = (i20 * ns.S2) + i19;
+                        int i22 = (i20 * ks.S2) + i19;
                         if (i22 < i17 || i22 >= i18 || bArr[i22] != 71) {
                             i21 = 0;
                         } else {
                             i21++;
                             if (i21 == 5) {
-                                long a11 = n9.a(xVar2, i19, i14);
+                                long a11 = p9.a(xVar2, i19, i14);
                                 if (a11 != -9223372036854775807L) {
                                     j3 = a11;
                                     break;
@@ -274,12 +274,12 @@ public final class d0 implements f3.o {
                     i10 = i13;
                     k3.a aVar = new k3.a(new pb.b(8), new xa(this.t, xVar.b), j13, 1 + j13, 0L, length, 188L, 940);
                     this.l = aVar;
-                    this.m.f(aVar.a);
+                    this.m.j(aVar.a);
                 } else {
                     i7 = 1;
                     z10 = false;
                     i10 = i13;
-                    this.m.f(new f3.t(j13));
+                    this.m.j(new f3.t(j13));
                 }
             }
             if (this.q) {
@@ -323,7 +323,7 @@ public final class d0 implements f3.o {
                     i25++;
                 }
                 xVar3.N(i25);
-                int i26 = i25 + ns.S2;
+                int i26 = i25 + ks.S2;
                 if (i26 > i24) {
                     int i27 = (i25 - i23) + this.s;
                     this.s = i27;

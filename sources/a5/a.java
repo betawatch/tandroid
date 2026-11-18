@@ -17,13 +17,13 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.InflateException;
 import android.view.animation.AnimationUtils;
-import c8.j0;
+import c8.l0;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.xmlpull.v1.XmlPullParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = {R.attr.name, R.attr.tint, R.attr.height, R.attr.width, R.attr.alpha, R.attr.autoMirrored, R.attr.tintMode, R.attr.viewportWidth, R.attr.viewportHeight};
@@ -394,15 +394,15 @@ public abstract class a {
         if (i7 == 2) {
             String string = typedArray.getString(i10);
             String string2 = typedArray.getString(i11);
-            i0.e[] c10 = j0.c(string);
-            i0.e[] c11 = j0.c(string2);
+            i0.d[] c10 = l0.c(string);
+            i0.d[] c11 = l0.c(string2);
             if (c10 != null || c11 != null) {
                 if (c10 != null) {
                     f fVar = new f();
                     if (c11 == null) {
                         return PropertyValuesHolder.ofObject(str, fVar, c10);
                     }
-                    if (j0.a(c10, c11)) {
+                    if (l0.a(c10, c11)) {
                         return PropertyValuesHolder.ofObject(str, fVar, c10, c11);
                     }
                     throw new InflateException(e2.l(" Can't morph from ", string, " to ", string2));
@@ -454,9 +454,9 @@ public abstract class a {
         TypedArray f11 = h0.b.f(resources, theme, attributeSet, k);
         ValueAnimator valueAnimator3 = objectAnimator == null ? new ValueAnimator() : objectAnimator;
         boolean c10 = h0.b.c(xmlPullParser, "duration");
-        int i10 = ns.X4;
+        int i10 = ks.X4;
         if (c10) {
-            i10 = f10.getInt(1, ns.X4);
+            i10 = f10.getInt(1, ks.X4);
         }
         long j3 = i10;
         long j10 = xmlPullParser.getAttributeValue("http://schemas.android.com/apk/res/android", "startOffset") != null ? f10.getInt(2, 0) : 0;
@@ -490,7 +490,7 @@ public abstract class a {
                 if (b12 == null && b13 == null) {
                     throw new InflateException(f11.getPositionDescription() + " propertyXName or propertyYName is needed for PathData");
                 }
-                Path d2 = j0.d(b11);
+                Path d2 = l0.d(b11);
                 PathMeasure pathMeasure = new PathMeasure(d2, false);
                 ArrayList arrayList = new ArrayList();
                 arrayList.add(Float.valueOf(0.0f));

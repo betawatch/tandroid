@@ -1,68 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd implements org.telegram.messenger.z10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ String g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
-    public final /* synthetic */ Object j;
+public final /* synthetic */ class qd implements ki.j0, org.telegram.ui.ActionBar.r1, kt, org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ qd(wf wfVar, Object obj, org.telegram.messenger.ff ffVar, boolean z10, int i7, int i10, boolean z11, String str, Object obj2) {
-        this.h = wfVar;
-        this.b = obj;
-        this.i = ffVar;
-        this.c = z10;
-        this.d = i7;
-        this.e = i10;
-        this.f = z11;
-        this.g = str;
-        this.j = obj2;
+    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        Object obj2 = this.i;
-        Object obj3 = this.h;
-        switch (i7) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
-                int i10 = ChatActivityEnterView.N6;
-                ad adVar = new ad(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (org.telegram.messenger.cj) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
-                if (!chatActivityEnterView.J1(adVar)) {
-                    adVar.run();
-                    break;
-                }
-                break;
-            default:
-                wf wfVar = (wf) obj3;
-                ad adVar2 = new ad(wfVar, this.b, (org.telegram.messenger.ff) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
-                if (!wfVar.a.J1(adVar2)) {
-                    adVar2.run();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.kt
+    public void g() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.F0.f();
+        kg kgVar = chatActivityEnterView.N3;
+        if (kgVar != null) {
+            kgVar.u1(chatActivityEnterView.F0.getTextToUse());
         }
     }
 
-    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, org.telegram.messenger.cj cjVar, boolean z10, int i7, int i10, Object obj, boolean z11) {
-        this.h = chatActivityEnterView;
-        this.i = document;
-        this.g = str;
-        this.j = cjVar;
-        this.c = z10;
-        this.d = i7;
-        this.e = i10;
-        this.b = obj;
-        this.f = z11;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        int i10 = ChatActivityEnterView.n7;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.T();
+        gf gfVar = chatActivityEnterView.F0;
+        if (gfVar != null) {
+            gfVar.setText("");
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f1
+    public void j(KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView;
+        cf cfVar;
+        int i7 = ChatActivityEnterView.n7;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (cfVar = (chatActivityEnterView = this.a).O0) != null && cfVar.isShowing()) {
+            chatActivityEnterView.O0.dismiss();
+        }
     }
 }

@@ -4,7 +4,7 @@ import java.util.Comparator;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qs implements Comparator {
     public final /* synthetic */ int a;
@@ -29,15 +29,15 @@ public final /* synthetic */ class qs implements Comparator {
                 }
                 return i7 < i10 ? -1 : 0;
             case 2:
-                org.telegram.messenger.dd ddVar = (org.telegram.messenger.dd) this.b;
-                org.telegram.messenger.dd ddVar2 = (org.telegram.messenger.dd) obj;
-                org.telegram.messenger.dd ddVar3 = (org.telegram.messenger.dd) obj2;
-                if (ddVar2 != ddVar) {
-                    if (ddVar3 != ddVar) {
-                        int i11 = ddVar2.k;
-                        int i12 = ddVar3.k;
+                org.telegram.messenger.cd cdVar = (org.telegram.messenger.cd) this.b;
+                org.telegram.messenger.cd cdVar2 = (org.telegram.messenger.cd) obj;
+                org.telegram.messenger.cd cdVar3 = (org.telegram.messenger.cd) obj2;
+                if (cdVar2 != cdVar) {
+                    if (cdVar3 != cdVar) {
+                        int i11 = cdVar2.k;
+                        int i12 = cdVar3.k;
                         if (i11 == i12) {
-                            return ddVar2.a.compareTo(ddVar3.a);
+                            return cdVar2.a.compareTo(cdVar3.a);
                         }
                         if (i11 <= i12) {
                             if (i11 >= i12) {

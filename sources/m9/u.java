@@ -10,9 +10,10 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.util.SparseArray;
 import b9.l0;
-import c8.r9;
+import c8.t9;
 import com.google.android.gms.common.data.DataHolder;
 import h2.j0;
+import hi.u5;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -22,22 +23,22 @@ import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.fi;
 import org.telegram.messenger.j1;
+import org.telegram.messenger.oz;
 import org.telegram.messenger.q1;
 import org.telegram.messenger.r1;
-import org.telegram.messenger.sz;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.p8;
-import org.telegram.ui.Components.dp;
-import org.telegram.ui.Components.xb;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.kp;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.jx;
-import org.telegram.ui.kq;
-import org.telegram.ui.ll;
-import org.telegram.ui.mq;
-import org.telegram.ui.qq;
+import org.telegram.ui.bn;
+import org.telegram.ui.lq;
+import org.telegram.ui.ml;
+import org.telegram.ui.nq;
+import org.telegram.ui.nx;
+import org.telegram.ui.rq;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -102,7 +103,7 @@ public final class u implements Runnable {
                     }
                 }
                 try {
-                    tVar.onSuccess(r9.a(yVar));
+                    tVar.onSuccess(t9.a(yVar));
                     return;
                 } catch (ExecutionException e10) {
                     tVar.h(e10.getCause());
@@ -174,7 +175,7 @@ public final class u implements Runnable {
                         a8.e("wear-auth: failed to pop LaunchActivity", e11);
                     }
                 }
-                org.telegram.messenger.g0.h3(new sz(bArr, str, str2));
+                org.telegram.messenger.g0.g3(new oz(bArr, str, str2));
                 return;
             case 4:
                 ((a9.d) this.c).c.getClass();
@@ -271,25 +272,25 @@ public final class u implements Runnable {
             case 15:
                 f5.b bVar2 = (f5.b) this.b;
                 f5.h hVar = (f5.h) this.c;
-                f5.f fVar2 = f5.a0.i;
-                bVar2.y(24, 4, fVar2);
+                f5.f fVar2 = f5.z.i;
+                bVar2.z(24, 4, fVar2);
                 hVar.a(fVar2);
                 return;
             case 16:
                 f5.b bVar3 = (f5.b) this.b;
                 j1 j1Var = (j1) this.c;
-                f5.f fVar3 = f5.a0.i;
-                bVar3.y(24, 7, fVar3);
+                f5.f fVar3 = f5.z.i;
+                bVar3.z(24, 7, fVar3);
                 com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
                 ((q1) j1Var.b).a(fVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 17:
                 f5.b bVar4 = (f5.b) this.b;
                 f5.n nVar = (f5.n) this.c;
-                f5.f fVar4 = f5.a0.i;
-                bVar4.y(24, 9, fVar4);
+                f5.f fVar4 = f5.z.i;
+                bVar4.z(24, 9, fVar4);
                 com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-                nVar.f(fVar4, com.google.android.gms.internal.play_billing.v.e);
+                nVar.b(fVar4, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 18:
                 f6.e0 e0Var = ((f6.d0) this.b).b;
@@ -462,9 +463,9 @@ public final class u implements Runnable {
                 a();
                 return;
             case 24:
-                d6.i iVar = (d6.i) this.b;
+                u5 u5Var = (u5) this.b;
                 Typeface typeface = (Typeface) this.c;
-                j0 j0Var = (j0) iVar.b;
+                j0 j0Var = (j0) u5Var.b;
                 if (j0Var != null) {
                     j0Var.h(typeface);
                     return;
@@ -476,26 +477,26 @@ public final class u implements Runnable {
             case 26:
                 ArrayList arrayList = (ArrayList) this.b;
                 for (int i17 = 0; i17 < arrayList.size(); i17++) {
-                    if (arrayList.get(i17) != null && ((dp) arrayList.get(i17)).a != null) {
-                        ((dp) arrayList.get(i17)).a.m(0);
+                    if (arrayList.get(i17) != null && ((kp) arrayList.get(i17)).a != null) {
+                        ((kp) arrayList.get(i17)).a.m(0);
                     }
                 }
-                org.telegram.messenger.g0.h3(new fi(i7, this, arrayList));
+                org.telegram.messenger.g0.g3(new fi(i7, this, arrayList));
                 return;
             case 27:
-                an anVar = ((ll) this.c).b;
-                if (this == anVar.a6) {
-                    anVar.Cb((CharSequence) this.b, false);
-                    anVar.a6 = null;
+                bn bnVar = ((ml) this.c).b;
+                if (this == bnVar.b6) {
+                    bnVar.Cb((CharSequence) this.b, false);
+                    bnVar.b6 = null;
                     return;
                 }
                 return;
             case 28:
-                p8 p8Var = (p8) this.b;
-                boolean z20 = p8Var.d.h;
-                p8Var.setChecked(!z20);
-                qq qqVar = ((mq) this.c).d;
-                TLRPC.TL_chatBannedRights tL_chatBannedRights = qqVar.E;
+                q8 q8Var = (q8) this.b;
+                boolean z20 = q8Var.d.h;
+                q8Var.setChecked(!z20);
+                rq rqVar = ((nq) this.c).d;
+                TLRPC.TL_chatBannedRights tL_chatBannedRights = rqVar.E;
                 tL_chatBannedRights.send_media = z20;
                 tL_chatBannedRights.send_gifs = z20;
                 tL_chatBannedRights.send_inline = z20;
@@ -510,14 +511,14 @@ public final class u implements Runnable {
                 tL_chatBannedRights.embed_links = z20;
                 tL_chatBannedRights.send_polls = z20;
                 tL_chatBannedRights.send_reactions = z20;
-                org.telegram.messenger.g0.a4(qqVar.c);
-                kq B0 = qqVar.B0();
-                qqVar.G0();
-                qqVar.F0(B0);
+                org.telegram.messenger.g0.Z3(rqVar.c);
+                lq B0 = rqVar.B0();
+                rqVar.G0();
+                rqVar.F0(B0);
                 return;
             default:
-                ((xb) this.b).j();
-                ((jx) this.c).F = null;
+                ((gc) this.b).j();
+                ((nx) this.c).F = null;
                 return;
         }
     }

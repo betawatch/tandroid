@@ -1,11 +1,11 @@
 package ge;
 
-import ee.t;
+import ee.u;
 import java.util.concurrent.Executor;
 import zd.u0;
 import zd.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends u0 implements Executor {
     public static final d c = new d();
@@ -13,7 +13,7 @@ public final class d extends u0 implements Executor {
 
     static {
         l lVar = l.c;
-        int i7 = t.a;
+        int i7 = u.a;
         if (64 >= i7) {
             i7 = 64;
         }

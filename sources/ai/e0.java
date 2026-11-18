@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements View.OnKeyListener {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class e0 implements View.OnKeyListener {
 
     @Override // android.view.View.OnKeyListener
     public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
+        org.telegram.ui.ActionBar.h1 h1Var;
         switch (this.a) {
             case 0:
                 bi.x0 x0Var = (bi.x0) this.b;
@@ -47,10 +47,10 @@ public final /* synthetic */ class e0 implements View.OnKeyListener {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.q0 q0Var = (org.telegram.ui.ActionBar.q0) this.b;
-                q0Var.getClass();
-                if (i7 == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && (g1Var = q0Var.d) != null && g1Var.isShowing()) {
-                    q0Var.d.d(true);
+                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.b;
+                r0Var.getClass();
+                if (i7 == 82 && keyEvent.getRepeatCount() == 0 && keyEvent.getAction() == 1 && (h1Var = r0Var.d) != null && h1Var.isShowing()) {
+                    r0Var.d.d(true);
                     break;
                 }
                 break;

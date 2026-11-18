@@ -1,43 +1,33 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import android.window.OnBackInvokedCallback;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public enum w80 {
-    h("DefaultIcon", R.drawable.icon_background_sa, R.mipmap.icon_foreground_sa, 2131754237, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF39("VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, 2131754233, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF59("AquaIcon", R.drawable.icon_4_background_sa, R.mipmap.icon_foreground_sa, 2131754239, false),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF79("PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, 2131754235, true),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF99("TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, 2131754234, true),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF119("NoxIcon", R.mipmap.icon_2_background_sa, R.mipmap.icon_foreground_sa, 2131754236, true);
+public final class w80 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
-
-    w80(String str, int i7, int i10, int i11, boolean z10) {
-        this.a = str;
-        this.b = i7;
-        this.c = i10;
-        this.d = i11;
-        this.e = z10;
+    public w80(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    public final void onBackInvoked() {
+        if (org.telegram.messenger.g0.Q1()) {
+            this.a.onBackPressed();
+            return;
         }
-        return this.f;
+        if (this.a.d0(true)) {
+            LaunchActivity launchActivity = this.a;
+            ActionBarLayout actionBarLayout = launchActivity.p0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.j1) {
+                actionBarLayout.I();
+            } else {
+                actionBarLayout.j1 = false;
+                actionBarLayout.e(false);
+            }
+        }
     }
 }

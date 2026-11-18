@@ -1,23 +1,58 @@
 package c8;
 
-import java.util.Date;
+import android.os.Bundle;
 import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.ld0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class yc {
-    public static ld0 a(String str) {
-        JSONObject jSONObject = new JSONObject(str);
-        String a10 = od.a(jSONObject.getString("id"));
-        long j3 = jSONObject.getLong("created");
-        jSONObject.getBoolean("livemode");
-        String str2 = "card".equals(od.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
-        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
-        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
-        uc.a aVar = new uc.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, od.a(jSONObject2.optString("name")), od.a(jSONObject2.optString("address_line1")), od.a(jSONObject2.optString("address_line2")), od.a(jSONObject2.optString("address_city")), od.a(jSONObject2.optString("address_state")), od.a(jSONObject2.optString("address_zip")), od.a(jSONObject2.optString("address_country")), qd.a(od.a(jSONObject2.optString("brand"))), od.a(jSONObject2.optString("last4")), od.a(jSONObject2.optString("fingerprint")), qd.b(od.a(jSONObject2.optString("funding"))), od.a(jSONObject2.optString("country")), od.a(jSONObject2.optString("currency")));
-        new Date(j3 * 1000);
-        return new ld0(a10, valueOf, aVar, str2);
+    public static v0.c a(String type, Bundle data) {
+        kotlin.jvm.internal.j.e(type, "type");
+        kotlin.jvm.internal.j.e(data, "data");
+        try {
+            int hashCode = type.hashCode();
+            if (hashCode != -1678407252) {
+                if (hashCode != -543568185) {
+                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
+                        try {
+                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
+                            kotlin.jvm.internal.j.b(string);
+                            return new v0.f(string, data);
+                        } catch (Exception unused) {
+                            throw new z0.a();
+                        }
+                    }
+                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
+                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+                }
+                throw new z0.a();
+            }
+            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
+                try {
+                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
+                    kotlin.jvm.internal.j.b(string2);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
+                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
+                    if (string2.length() != 0) {
+                        try {
+                            new JSONObject(string2);
+                            return dVar;
+                        } catch (Exception unused2) {
+                        }
+                    }
+                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
+                } catch (Exception unused3) {
+                    throw new z0.a();
+                }
+            }
+            throw new z0.a();
+        } catch (z0.a unused4) {
+            v0.d dVar2 = new v0.d(type, data);
+            if (type.length() > 0) {
+                return dVar2;
+            }
+            throw new IllegalArgumentException("type should not be empty");
+        }
     }
 }

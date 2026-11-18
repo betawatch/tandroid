@@ -18,7 +18,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
@@ -208,7 +208,12 @@ public final class a implements m {
     }
 
     @Override // c4.m
-    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final /* synthetic */ d q(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
+    }
+
+    @Override // c4.m
+    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         String n10;
         String str;
         a aVar = this;
@@ -307,13 +312,8 @@ public final class a implements m {
     }
 
     @Override // c4.m
-    public final int Q() {
+    public final int y() {
         return 1;
-    }
-
-    @Override // c4.m
-    public final /* synthetic */ d x(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
     }
 
     @Override // c4.m

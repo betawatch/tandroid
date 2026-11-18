@@ -1,44 +1,47 @@
 package bi;
 
 import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ja;
-import c8.sa;
-import di.l8;
-import di.u8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.r10;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h4 extends org.telegram.ui.ActionBar.u2 {
-    public long m1;
+public final /* synthetic */ class h4 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 d;
+    public final /* synthetic */ o3 e;
+    public final /* synthetic */ Boolean f;
 
-    public h4(Context context, long j3, TL_stars.SavedStarGift savedStarGift, org.telegram.ui.ActionBar.e6 e6Var, r10 r10Var) {
-        super(1, context, e6Var, false);
-        this.m1 = 0L;
-        O();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        TextView b10 = sa.b(context, 20.0f, org.telegram.ui.ActionBar.j6.G6, true, e6Var);
-        b10.setText(hd.M0(2131749881, null));
-        linearLayout.addView(b10, ja.k(22.0f, 12.0f, 22.0f, 0.0f, -1, -2));
-        TextView b11 = sa.b(context, 14.0f, org.telegram.ui.ActionBar.j6.y6, false, e6Var);
-        b11.setText(hd.M0(2131749882, null));
-        linearLayout.addView(b11, ja.k(22.0f, 4.33f, 22.0f, 10.0f, -1, -2));
-        hi.d dVar = new hi.d(context, e6Var, true);
-        l8 G = u8.y(this.a, false).G(j3, true);
-        g4 g4Var = new g4(context, this.a, 0, false, new e4(0, this, G), new ab.g(6, this, dVar), null, e6Var);
-        g4Var.setSpanCount(3);
-        g4Var.setOverScrollMode(2);
-        g4Var.setScrollEnabled(false);
-        linearLayout.addView(g4Var, ja.k(11.0f, 0.0f, 11.0f, 0.0f, -1, -2));
-        dVar.i(hd.M0(2131749883, null), false, true);
-        linearLayout.addView(dVar, ja.k(22.0f, 9.0f, 22.0f, 9.0f, -1, 48));
-        dVar.setEnabled(false);
-        dVar.setOnClickListener(new f4(this, G, savedStarGift, r10Var, 0));
-        this.O = linearLayout;
+    public /* synthetic */ h4(Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var, o3 o3Var, Boolean bool, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = i7;
+        this.d = i6Var;
+        this.e = o3Var;
+        this.f = bool;
+    }
+
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                lc k10 = this.e.k();
+                v4.q(this.b, this.c, this.d, k10, (String) obj, this.f);
+                break;
+            case 1:
+                lc k11 = this.e.k();
+                v4.q(this.b, this.c, this.d, k11, (String) obj, this.f);
+                break;
+            case 2:
+                lc k12 = this.e.k();
+                v4.q(this.b, this.c, this.d, k12, (String) obj, this.f);
+                break;
+            default:
+                lc k13 = this.e.k();
+                v4.q(this.b, this.c, this.d, k13, (String) obj, this.f);
+                break;
+        }
     }
 }

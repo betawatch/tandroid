@@ -1,69 +1,84 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.TextUtils;
+import android.transition.TransitionSet;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ja;
-import org.telegram.messenger.ns;
+import c8.ma;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.wu0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d2 extends FrameLayout {
-    public String a;
-    public final ImageView b;
-    public final TextView c;
-    public boolean d;
-    public final m1 e;
-    public final RectF f;
+public final class d2 extends LinearLayout {
+    public HashMap a;
+    public ArrayList b;
+    public ArrayList c;
+    public TransitionSet d;
+    public boolean e;
+    public boolean f;
+    public Runnable h;
+    public l1 n;
+    public TextPaint r;
 
-    public d2(Context context, m1 m1Var, int i7) {
-        super(context);
-        this.f = new RectF();
-        setFocusable(true);
-        setFocusableInTouchMode(true);
-        this.e = m1Var;
-        m1Var.a(this);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, ja.d(24, 24.0f, 16, 8.0f, 2.0f, 8.0f, 2.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTextColor(-1);
-        textView.setTextSize(1, 14.0f);
-        addView(textView, ja.d(-2, -2.0f, 16, i7 != 0 ? 36.0f : 14.0f, 2.0f, 14.0f, 2.0f));
+    public final void a(int i7, String str, String str2) {
+        HashMap hashMap = this.a;
+        if (hashMap.get(str2) != null) {
+            return;
+        }
+        c2 c2Var = new c2(getContext(), this.n, i7);
+        c2Var.a = str2;
+        int L = org.telegram.messenger.g0.q.x - org.telegram.messenger.g0.L(120.0f);
+        TextView textView = c2Var.c;
+        StaticLayout c10 = wu0.c(str, textView.getPaint(), L, Layout.Alignment.ALIGN_NORMAL, 0.0f, TextUtils.TruncateAt.END, L, 10, true);
+        if (c10 != null) {
+            L = 0;
+            for (int i10 = 0; i10 < c10.getLineCount(); i10++) {
+                L = (int) Math.max(L, Math.ceil(c10.getLineWidth(i10)));
+            }
+        }
+        textView.setMaxWidth(L);
+        textView.setText(str);
+        c2Var.b.setImageResource(i7);
+        hashMap.put(str2, c2Var);
+        if (this.e) {
+            this.b.add(c2Var);
+        } else {
+            this.f = true;
+            addView(c2Var, ma.t(-2, -2, 1, 4, 0, 0, 4));
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float width = getWidth();
-        float height = getHeight();
-        RectF rectF = this.f;
-        rectF.set(0.0f, 0.0f, width, height);
-        float x10 = ((View) getParent()).getX() + getX();
-        float y10 = ((View) getParent()).getY() + getY();
-        m1 m1Var = this.e;
-        m1Var.d(x10, y10);
-        Paint paint = m1Var.l;
-        int alpha = (this.d ? paint : m1Var.b()).getAlpha();
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), alpha, 31);
-        (this.d ? paint : m1Var.b()).setAlpha(ns.e4);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), this.d ? paint : m1Var.b());
-        if (!this.d) {
-            paint = m1Var.b();
+    public final CharSequence b(String str) {
+        return str == null ? "" : TextUtils.ellipsize(str, this.r, org.telegram.messenger.g0.L(300.0f), TextUtils.TruncateAt.END);
+    }
+
+    public final void c(String str) {
+        c2 c2Var = (c2) this.a.remove(str);
+        this.n.m.remove(c2Var);
+        if (c2Var != null) {
+            if (!this.e) {
+                this.f = true;
+                removeView(c2Var);
+            } else {
+                if (this.b.remove(c2Var)) {
+                    return;
+                }
+                this.c.add(c2Var);
+            }
         }
-        paint.setAlpha(alpha);
-        if (m1Var.e) {
-            int alpha2 = ((Paint) m1Var.d.a).getAlpha();
-            ((Paint) m1Var.d.a).setAlpha(ns.e4);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), (Paint) m1Var.d.a);
-            ((Paint) m1Var.d.a).setAlpha(alpha2);
-        }
-        canvas.restore();
-        super.dispatchDraw(canvas);
+    }
+
+    public int getChildsHight() {
+        int childCount = getChildCount();
+        return org.telegram.messenger.f3.D(32.0f, childCount, childCount > 0 ? org.telegram.messenger.g0.L(16.0f) : 0);
+    }
+
+    public void setOnViewsUpdated(Runnable runnable) {
+        this.h = runnable;
     }
 }

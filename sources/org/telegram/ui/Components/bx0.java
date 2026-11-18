@@ -1,52 +1,98 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class bx0 {
-    public final /* synthetic */ int a;
+public final class bx0 extends Drawable {
+    public boolean a;
+    public final c6 b;
+    public final Drawable c;
+    public final Drawable d;
+    public int e = org.telegram.messenger.ks.e4;
 
-    public /* synthetic */ bx0(int i7) {
-        this.a = i7;
+    public bx0(org.telegram.ui.Cells.q1 q1Var) {
+        this.b = new c6(q1Var, 420L, lr.h);
+        this.c = q1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
+        this.d = q1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
     }
 
-    public final int a(ix0 ix0Var, int i7) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i7;
-            case 3:
-                return TLObject.FLAG_31;
-            default:
-                return TLObject.FLAG_31;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        Drawable drawable = this.d;
+        drawable.setBounds(bounds);
+        drawable.setAlpha(this.e);
+        drawable.draw(canvas);
+        float d = this.b.d(this.a);
+        float centerX = getBounds().centerX();
+        float centerY = getBounds().centerY();
+        float width = getBounds().width();
+        canvas.save();
+        if (d < 0.5f) {
+            float abs = Math.abs(d - 0.5f) + 0.5f;
+            canvas.scale(abs, abs, centerX, centerY);
         }
+        canvas.save();
+        if (d > 0.5f) {
+            float abs2 = Math.abs(d - 0.5f) + 0.5f;
+            float f10 = -abs2;
+            float f11 = width * 0.32f;
+            canvas.scale(f10, f10, getBounds().left + f11, getBounds().bottom - f11);
+            float f12 = 1.0f - abs2;
+            canvas.translate((-width) * f12 * 0.4f, f12 * width * 0.4f);
+        }
+        Rect bounds2 = getBounds();
+        Drawable drawable2 = this.c;
+        drawable2.setBounds(bounds2);
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        if (d > 0.5f) {
+            float f13 = -(Math.abs(d - 0.5f) + 0.5f);
+            float f14 = 0.32f * width;
+            canvas.scale(f13, f13, getBounds().right - f14, getBounds().top + f14);
+        }
+        canvas.rotate(180.0f, centerX, centerY);
+        if (d > 0.5f) {
+            float abs3 = 1.0f - (Math.abs(d - 0.5f) + 0.5f);
+            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
+        }
+        drawable2.setBounds(getBounds());
+        drawable2.setAlpha(this.e);
+        drawable2.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    public final int b(ix0 ix0Var, int i7) {
-        switch (this.a) {
-            case 0:
-                return TLObject.FLAG_31;
-            case 1:
-                return 0;
-            case 2:
-                return i7;
-            case 3:
-                return 0;
-            default:
-                return 0;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c.getIntrinsicHeight();
     }
 
-    public int c(int i7, int i10) {
-        switch (this.a) {
-            case 4:
-                return i10;
-            default:
-                return i7;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.c.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.e = i7;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
     }
 }

@@ -2,7 +2,7 @@ package zd;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o extends e1 {
     public final /* synthetic */ int e;
@@ -35,10 +35,10 @@ public final class o extends e1 {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.f.n;
                     while (true) {
                         Object obj = atomicReferenceFieldUpdater.get(fVar);
-                        aa.b0 b0Var = ee.a.c;
-                        if (kotlin.jvm.internal.j.a(obj, b0Var)) {
-                            while (!atomicReferenceFieldUpdater.compareAndSet(fVar, b0Var, q10)) {
-                                if (atomicReferenceFieldUpdater.get(fVar) != b0Var) {
+                        ee.t tVar = ee.a.c;
+                        if (kotlin.jvm.internal.j.a(obj, tVar)) {
+                            while (!atomicReferenceFieldUpdater.compareAndSet(fVar, tVar, q10)) {
+                                if (atomicReferenceFieldUpdater.get(fVar) != tVar) {
                                     break;
                                 }
                             }

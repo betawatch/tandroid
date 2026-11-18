@@ -1,18 +1,18 @@
 package v4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i {
-    public e1 a;
-    public e1 b;
+    public f1 a;
+    public f1 b;
     public final int c;
     public final int d;
     public final int e;
     public final int f;
 
-    public i(e1 e1Var, e1 e1Var2, int i7, int i10, int i11, int i12) {
-        this.a = e1Var;
-        this.b = e1Var2;
+    public i(f1 f1Var, f1 f1Var2, int i7, int i10, int i11, int i12) {
+        this.a = f1Var;
+        this.b = f1Var2;
         this.c = i7;
         this.d = i10;
         this.e = i11;

@@ -1,46 +1,165 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.ContextWrapper;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class yb0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
+public final class yb0 extends Dialog implements org.telegram.ui.ActionBar.p4 {
+    public final ActionBarLayout a;
+    public final FrameLayout b;
+    public final pc0 c;
 
-    public /* synthetic */ yb0(zb0 zb0Var, int i7) {
-        this.a = i7;
-        this.b = zb0Var;
+    public yb0(Context context) {
+        super(context, R.style.TransparentDialog);
+        ActionBarLayout actionBarLayout = new ActionBarLayout(context, false);
+        this.a = actionBarLayout;
+        actionBarLayout.setFragmentStack(new ArrayList());
+        org.telegram.ui.ActionBar.q4 q4Var = new org.telegram.ui.ActionBar.q4(new bi.z8(this, 9));
+        q4Var.c = true;
+        actionBarLayout.U(q4Var);
+        actionBarLayout.setDelegate(this);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
+        frameLayout.addView(actionBarLayout.getView(), new FrameLayout.LayoutParams(-1, -1, 17));
+        if (org.telegram.messenger.g0.Q1() && !org.telegram.messenger.g0.E && !org.telegram.messenger.g0.P1()) {
+            frameLayout.setBackgroundColor(-1728053248);
+            frameLayout.setOnClickListener(new h70(this, 3));
+            actionBarLayout.setRemoveActionBarExtraHeight(true);
+            h6.m.i(actionBarLayout.getView());
+        }
+        pc0 pc0Var = new pc0(context);
+        this.c = pc0Var;
+        frameLayout.addView(pc0Var, c8.ma.c(-1.0f, -1));
+        setContentView(frameLayout);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                fc0 fc0Var = this.b.d;
-                if (!fc0Var.Q) {
-                    fc0Var.b0 = 1.0f;
-                    fc0Var.h(1.0f);
-                    break;
-                }
-                break;
-            default:
-                zb0 zb0Var = this.b;
-                fc0 fc0Var2 = zb0Var.d;
-                if (!fc0Var2.Q) {
-                    Runnable runnable = zb0Var.c;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    if (org.telegram.messenger.gz.r == 1 && fc0Var2.y.getVisibility() != 0 && (editTextBoldCursor = fc0Var2.r) != null) {
-                        editTextBoldCursor.requestFocus();
-                        org.telegram.messenger.g0.J3(fc0Var2.r);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.p4
+    public final boolean c(ActionBarLayout actionBarLayout, org.telegram.ui.ActionBar.h2 h2Var) {
+        return true;
+    }
+
+    public final void d(org.telegram.ui.ActionBar.h2 h2Var) {
+        this.a.T(h2Var, (!org.telegram.messenger.g0.Q1() || org.telegram.messenger.g0.E || org.telegram.messenger.g0.P1()) ? false : true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final void f(int[] iArr) {
+        if (!org.telegram.messenger.g0.Q1() || org.telegram.messenger.g0.E || org.telegram.messenger.g0.P1()) {
+            return;
         }
+        iArr[0] = View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(530.0f), View.MeasureSpec.getSize(iArr[0])), TLObject.FLAG_30);
+        iArr[1] = View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(528.0f), View.MeasureSpec.getSize(iArr[1])), TLObject.FLAG_30);
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final boolean k(ActionBarLayout actionBarLayout) {
+        if (actionBarLayout.getFragmentStack().size() <= 1) {
+            dismiss();
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final boolean l(ActionBarLayout actionBarLayout, org.telegram.ui.ActionBar.q4 q4Var) {
+        org.telegram.ui.ActionBar.h2 h2Var = q4Var.a;
+        return true;
+    }
+
+    @Override // android.app.Dialog
+    public final void onBackPressed() {
+        if (this.c.getVisibility() == 0) {
+            if (getOwnerActivity() != null) {
+                getOwnerActivity().finish();
+            }
+        } else {
+            ActionBarLayout actionBarLayout = this.a;
+            actionBarLayout.I();
+            if (actionBarLayout.getFragmentStack().size() <= 1) {
+                dismiss();
+            }
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 30) {
+            window.addFlags(-2147483392);
+        } else {
+            window.addFlags(-2147417856);
+        }
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        if (i7 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        FrameLayout frameLayout = this.b;
+        frameLayout.setSystemUiVisibility(1280);
+        frameLayout.setOnApplyWindowInsetsListener(new org.telegram.ui.ActionBar.y2(2));
+        if (i7 >= 26) {
+            org.telegram.messenger.g0.m3(this, i0.a.h(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, true)) >= 0.9d);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onStart() {
+        super.onStart();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).A0.add(this.c);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onStop() {
+        super.onStop();
+        Context context = getContext();
+        if ((context instanceof ContextWrapper) && !(context instanceof LaunchActivity)) {
+            context = ((ContextWrapper) context).getBaseContext();
+        }
+        if (context instanceof LaunchActivity) {
+            ((LaunchActivity) context).A0.remove(this.c);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final /* synthetic */ void a(float f10) {
+    }
+
+    @Override // org.telegram.ui.ActionBar.p4
+    public final void b(ActionBarLayout actionBarLayout, boolean z10) {
     }
 }

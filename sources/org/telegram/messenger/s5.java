@@ -1,46 +1,40 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class s5 extends TLRPC.TL_document {
-    public final TLRPC.ThemeSettings a;
-    public final TLRPC.Document b;
-    public final org.telegram.ui.ActionBar.i6 c;
-    public final org.telegram.ui.ActionBar.g6 d;
+public final class s5 {
+    public static ArrayList j;
+    public static s5 k;
+    public static final ArrayList l = new ArrayList();
+    public static final androidx.emoji2.text.o m = new androidx.emoji2.text.o(4);
+    public ArrayList a;
+    public SparseIntArray b;
+    public ArrayList c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public boolean h;
+    public j6.o i;
 
-    public s5(TLRPC.ThemeSettings themeSettings) {
-        this.a = themeSettings;
-        org.telegram.ui.ActionBar.i6 Q0 = org.telegram.ui.ActionBar.j6.Q0(org.telegram.ui.ActionBar.j6.r0(themeSettings));
-        this.c = Q0;
-        Q0.getClass();
-        org.telegram.ui.ActionBar.g6 g6Var = new org.telegram.ui.ActionBar.g6();
-        org.telegram.ui.ActionBar.i6.i(g6Var, themeSettings);
-        g6Var.b = Q0;
-        this.d = g6Var;
-        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
-        if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
-            this.id = -2147483648L;
-            this.dc_id = TLObject.FLAG_31;
+    public static void a(Runnable runnable) {
+        if (Thread.currentThread() != t0.d.getLooper().getThread()) {
+            boolean z10 = s2.a;
+            a8.g(new RuntimeException("wrong thread"), true);
             return;
         }
-        TLRPC.Document document = ((TLRPC.TL_wallPaper) wallPaper).document;
-        this.b = document;
-        this.id = document.id;
-        this.access_hash = document.access_hash;
-        this.file_reference = document.file_reference;
-        this.user_id = document.user_id;
-        this.date = document.date;
-        this.file_name = document.file_name;
-        this.mime_type = document.mime_type;
-        this.size = document.size;
-        this.thumbs = document.thumbs;
-        this.version = document.version;
-        this.dc_id = document.dc_id;
-        this.key = document.key;
-        this.iv = document.iv;
-        this.attributes = document.attributes;
+        if (j == null) {
+            ArrayList arrayList = l;
+            if (arrayList.isEmpty()) {
+                j = new ArrayList(100);
+            } else {
+                j = (ArrayList) p5.c.g(1, arrayList);
+            }
+            g0.g3(m);
+        }
+        j.add(runnable);
     }
 }

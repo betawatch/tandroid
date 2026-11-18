@@ -1,13 +1,15 @@
 package f2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
-public final class l extends Exception {
-    public l(j jVar) {
-        this("Unhandled input format:", jVar);
-    }
+import a8.la;
 
-    public l(String str, j jVar) {
-        super(str + " " + jVar);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes.dex */
+public final class l {
+    public static final l b = new l(0);
+    public final long a;
+
+    public l(long j3) {
+        la.f(j3 >= 0);
+        this.a = j3;
     }
 }

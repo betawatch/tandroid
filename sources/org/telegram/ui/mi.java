@@ -1,36 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.app.Activity;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mi extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ an o;
+public final class mi extends org.telegram.ui.Components.bv {
+    public final /* synthetic */ bn R1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mi(an anVar, ki kiVar) {
-        super(kiVar, -2, -2);
-        this.o = anVar;
+    public mi(bn bnVar, org.telegram.ui.ActionBar.h2 h2Var, Activity activity, org.telegram.ui.ActionBar.i6 i6Var, ArrayList arrayList) {
+        super(h2Var, activity, i6Var, arrayList);
+        this.R1 = bnVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.bv, org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
-        d(true);
-        an anVar = this.o;
-        if (anVar.f9 != this) {
-            return;
-        }
-        anVar.f9 = null;
-        anVar.k9 = null;
-        anVar.j9 = null;
-        anVar.C0.R = true;
-        if (anVar.g9) {
-            anVar.x8(false, true, 0.0f);
-        } else {
-            anVar.g9 = true;
-        }
-        qj qjVar = anVar.a0;
-        if (qjVar == null || qjVar.getEditField() == null) {
-            return;
-        }
-        anVar.a0.getEditField().setAllowDrawCursor(true);
+        super.dismiss();
+        bn bnVar = this.R1;
+        bnVar.getClass();
+        bnVar.x8(false, true, 0.0f);
     }
 }

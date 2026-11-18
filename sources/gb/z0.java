@@ -2,7 +2,7 @@ package gb;
 
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z0 extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -45,18 +45,18 @@ public final class z0 extends kd.j implements rd.p {
                 jd.a aVar = jd.a.a;
                 int i7 = this.b;
                 if (i7 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     wf.b bVar = new wf.b(8, d1Var.e.getData(), new x0(d1Var, null));
                     y0 y0Var = new y0(d1Var, 0);
                     this.b = 1;
-                    if (bVar.G(y0Var, this) == aVar) {
+                    if (bVar.v(y0Var, this) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return gd.k.a;
             case 1:
@@ -66,7 +66,7 @@ public final class z0 extends kd.j implements rd.p {
                 id.c cVar = null;
                 try {
                     if (i10 == 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         m1.g gVar = d1Var2.e;
                         b1 b1Var = new b1(d1Var2, cVar, 0);
                         this.b = 1;
@@ -77,7 +77,7 @@ public final class z0 extends kd.j implements rd.p {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
+                        b7.h.b(obj);
                     }
                 } catch (Exception e10) {
                     Log.d("FirebaseSessions", "App backgrounded, failed to update data. Message: " + e10.getMessage());
@@ -93,7 +93,7 @@ public final class z0 extends kd.j implements rd.p {
                 jd.a aVar3 = jd.a.a;
                 int i11 = this.b;
                 if (i11 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     ce.c data = ((ka.d) this.c).c.a.getData();
                     this.b = 1;
                     obj = ce.x.e(data, this);
@@ -104,7 +104,7 @@ public final class z0 extends kd.j implements rd.p {
                     if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 q1.b bVar2 = (q1.b) obj;
                 return bVar2 != null ? bVar2.a() : hd.o.a;

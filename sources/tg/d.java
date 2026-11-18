@@ -1,6 +1,6 @@
 package tg;
 
-import a8.t9;
+import a8.w9;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.MotionEvent;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class d extends FrameLayout {
     public boolean a;
@@ -33,7 +33,7 @@ public abstract class d extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public final void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
-        if (!(view instanceof n2)) {
+        if (!(view instanceof m2)) {
             super.measureChildWithMargins(view, i7, i10, i11, i12);
             return;
         }
@@ -44,13 +44,13 @@ public abstract class d extends FrameLayout {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         c cVar = this.b;
-        j z10 = cVar.z();
-        if (z10 == null) {
+        j B = cVar.B();
+        if (B == null) {
             return false;
         }
         if (motionEvent.getPointerCount() != 1) {
-            z10.n = false;
-            z10.r = true;
+            B.n = false;
+            B.r = true;
             this.c = false;
             this.f = true;
             invalidate();
@@ -59,8 +59,8 @@ public abstract class d extends FrameLayout {
         int actionMasked = motionEvent.getActionMasked();
         if (actionMasked == 0) {
             this.c = false;
-            z10.n = false;
-            z10.r = false;
+            B.n = false;
+            B.r = false;
             this.d = motionEvent.getX();
             this.e = motionEvent.getY();
             this.f = false;
@@ -69,19 +69,19 @@ public abstract class d extends FrameLayout {
         if (!this.f && actionMasked == 2) {
             float x10 = motionEvent.getX();
             float y10 = motionEvent.getY();
-            if (this.c || t9.a(x10, y10, this.d, this.e) > org.telegram.messenger.g0.e) {
+            if (this.c || w9.a(x10, y10, this.d, this.e) > org.telegram.messenger.g0.e) {
                 this.c = true;
-                z10.n = true;
-                z10.e(x10 - this.d, y10 - this.e);
+                B.n = true;
+                B.e(x10 - this.d, y10 - this.e);
                 this.d = x10;
                 this.e = y10;
                 return true;
             }
         } else if (actionMasked == 1 || actionMasked == 3) {
-            z10.n = false;
-            z10.r = true;
+            B.n = false;
+            B.r = true;
             if (!this.c) {
-                cVar.j();
+                cVar.i();
             }
             invalidate();
             return false;

@@ -4,13 +4,15 @@ import android.content.SharedPreferences;
 import android.view.ScaleGestureDetector;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import c8.i9;
+import c8.l9;
 import java.util.ArrayList;
+import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.k5;
 import org.telegram.ui.Components.Crop.CropAreaView;
+import org.telegram.ui.Components.hn;
+import v4.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b implements ScaleGestureDetector.OnScaleGestureListener {
     public final /* synthetic */ int a;
@@ -28,9 +30,9 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
         layoutParams.width = h;
         hVar.x = h;
         wi.l lVar = hVar.b;
-        int L = lVar.L();
-        int b02 = lVar.b0();
-        float f10 = (L <= 0 || b02 <= 0) ? 0.5625f : b02 / L;
+        int J = lVar.J();
+        int a02 = lVar.a0();
+        float f10 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
         int i7 = (int) (((int) (wi.h.i(f10) * f10)) * hVar.z);
         layoutParams.height = i7;
         hVar.y = i7;
@@ -56,20 +58,20 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                     if (f10 * scaleFactor > 30.0f) {
                         scaleFactor = 30.0f / f10;
                     }
-                    m.g(oVar.M, scaleFactor, m.a(oVar.M) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), m.b(oVar.M) * (k5.y((imageView.getHeight() - oVar.E) - (!oVar.r ? g0.m : 0), oVar.F, 2.0f, focusY) / cropAreaView.getCropHeight()));
+                    m.g(oVar.M, scaleFactor, m.a(oVar.M) * ((focusX - (imageView.getWidth() / 2)) / cropAreaView.getCropWidth()), m.b(oVar.M) * (f3.y((imageView.getHeight() - oVar.E) - (!oVar.r ? g0.m : 0), oVar.F, 2.0f, focusY) / cropAreaView.getCropHeight()));
                     oVar.r(false);
                 }
                 return true;
             default:
                 wi.h hVar = (wi.h) this.b;
-                hVar.z = i9.a(scaleGestureDetector.getScaleFactor() * hVar.z, 0.75f, hVar.A);
+                hVar.z = l9.a(scaleGestureDetector.getScaleFactor() * hVar.z, 0.75f, hVar.A);
                 hVar.x = (int) (hVar.h() * hVar.z);
                 wi.l lVar = hVar.b;
-                int L = lVar.L();
-                int b02 = lVar.b0();
-                float f11 = (L <= 0 || b02 <= 0) ? 0.5625f : b02 / L;
+                int J = lVar.J();
+                int a02 = lVar.a0();
+                float f11 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
                 hVar.y = (int) (((int) (wi.h.i(f11) * f11)) * hVar.z);
-                g0.h3(new vg.o(this, 8));
+                g0.g3(new p(this, 10));
                 float m10 = scaleGestureDetector.getFocusX() >= ((float) g0.q.x) / 2.0f ? (r2 - hVar.x) - wi.h.m() : wi.h.m();
                 r1.g gVar = hVar.D;
                 if (gVar.f) {
@@ -108,14 +110,14 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
                 if (hVar.r) {
                     hVar.r = false;
                     hVar.L = false;
-                    lVar.G();
+                    lVar.H();
                     g0.r(hVar.N);
                 }
                 hVar.s = true;
                 layoutParams.width = (int) (hVar.h() * hVar.A);
-                int L = lVar.L();
-                int b02 = lVar.b0();
-                float f10 = (L <= 0 || b02 <= 0) ? 0.5625f : b02 / L;
+                int J = lVar.J();
+                int a02 = lVar.a0();
+                float f10 = (J <= 0 || a02 <= 0) ? 0.5625f : a02 / J;
                 layoutParams.height = (int) (((int) (wi.h.i(f10) * f10)) * hVar.A);
                 hVar.r();
                 break;
@@ -129,9 +131,9 @@ public final class b implements ScaleGestureDetector.OnScaleGestureListener {
             case 0:
                 break;
             default:
-                u7.i b10 = u7.i.b();
+                hn m10 = hn.m();
                 wi.h hVar = (wi.h) this.b;
-                ((SharedPreferences) b10.a).edit().putFloat("scale_factor", hVar.z).apply();
+                ((SharedPreferences) m10.b).edit().putFloat("scale_factor", hVar.z).apply();
                 if (!hVar.D.f && !hVar.E.f) {
                     b();
                     break;

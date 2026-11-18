@@ -1,22 +1,22 @@
 package bi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements te.b, bg.p {
+public final /* synthetic */ class h implements te.b, bg.q {
     public final /* synthetic */ y a;
 
     @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        this.a.j1();
+    public void H(int i7, float f10, float f11, te.c cVar) {
+        this.a.k1();
     }
 
-    @Override // bg.p
-    public void g(long j3) {
+    @Override // bg.q
+    public void i(long j3) {
         y yVar = this.a;
-        yVar.k1(j3, yVar.s2);
+        yVar.l1(j3, yVar.s2);
     }
 
     @Override // te.b
-    public /* synthetic */ void E(float f10, int i7) {
+    public /* synthetic */ void D(float f10, int i7) {
     }
 }

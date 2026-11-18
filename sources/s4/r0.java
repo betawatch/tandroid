@@ -12,15 +12,15 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.h3;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.ou;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r0 extends h3 implements ServiceConnection {
     public static final /* synthetic */ int H = 0;
     public m0 E;
     public boolean F;
-    public org.telegram.ui.ActionBar.z G;
+    public org.telegram.ui.ActionBar.p G;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.y s;
     public final ArrayList w;
@@ -32,7 +32,7 @@ public final class r0 extends h3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new ou(componentName, 22));
+        super(context, new hn(componentName, 15));
         this.w = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.y();
@@ -137,7 +137,7 @@ public final class r0 extends h3 implements ServiceConnection {
                         m0 m0Var = new m0(this, messenger);
                         int i7 = m0Var.d;
                         m0Var.d = i7 + 1;
-                        m0Var.g = i7;
+                        m0Var.h = i7;
                         if (m0Var.b(1, i7, 4, null, null)) {
                             try {
                                 m0Var.a.getBinder().linkToDeath(m0Var, 0);
@@ -175,7 +175,7 @@ public final class r0 extends h3 implements ServiceConnection {
             m0Var.b(2, 0, 0, null, null);
             m0Var.b.b.clear();
             m0Var.a.getBinder().unlinkToDeath(m0Var, 0);
-            m0Var.i.s.post(new l0(m0Var, 0));
+            m0Var.r.s.post(new l0(m0Var, 0));
             this.E = null;
         }
     }

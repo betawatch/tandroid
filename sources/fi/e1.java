@@ -1,407 +1,366 @@
 package fi;
 
-import android.content.Context;
-import android.media.AudioManager;
-import j$.util.Objects;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.SurfaceTexture;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.voip.NativeInstance;
-import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stories;
-import org.webrtc.MediaStreamTrack;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.LaunchActivity;
+import org.webrtc.SurfaceViewRenderer;
+import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
-import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class e1 implements is, AudioManager.OnAudioFocusChangeListener {
-    public static e1 X;
-    public int E;
-    public NativeInstance F;
-    public TLRPC.GroupCallParticipant H;
-    public final b1 I;
-    public boolean J;
-    public long K;
-    public int L;
-    public boolean M;
-    public VideoSink P;
-    public boolean Q;
-    public Runnable R;
-    public Runnable S;
-    public ArrayList V;
-    public ArrayList W;
-    public final TL_stories.StoryItem a;
-    public final long b;
-    public final int c;
-    public final Context d;
-    public final int e;
-    public final TLRPC.InputGroupCall f;
-    public final boolean h;
-    public boolean n;
-    public TLRPC.GroupCall w;
-    public boolean y;
-    public boolean r = false;
-    public boolean s = false;
-    public boolean x = false;
-    public final HashMap G = new HashMap();
-    public final HashSet N = new HashSet();
-    public float O = 1.0f;
-    public int T = -1;
-    public int U = -1;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class e1 implements wi.l {
+    public static e1 w;
+    public wi.n a;
+    public c1 b;
+    public f9 c;
+    public org.telegram.ui.Components.voip.t0 e;
+    public hi.r3 f;
+    public VideoSink h;
+    public LaunchActivity r;
+    public boolean s;
+    public final d1 d = new d1(this);
+    public final f2.a n = new f2.a(this, 5);
 
-    public e1(Context context, int i7, TL_stories.StoryItem storyItem, long j3, int i10, boolean z10, TLRPC.InputGroupCall inputGroupCall, boolean z11, boolean z12) {
-        this.J = false;
-        this.d = context;
-        this.e = i7;
-        this.f = inputGroupCall;
-        this.a = storyItem;
-        this.b = j3;
-        this.c = i10;
-        this.h = z10;
-        this.n = z11;
-        this.J = z12;
-        b1 b1Var = new b1(this);
-        this.I = b1Var;
-        org.telegram.messenger.a8.b("[LivePlayer] setup to call " + inputGroupCall.id);
-        ns.f(i7).b(this, ns.x2);
-        if (z11) {
-            this.K = NativeInstance.createVideoCapturer(b1Var, z12 ? 1 : 0);
-        }
-        c();
-        k();
+    public static boolean a(c1 c1Var) {
+        wi.n nVar;
+        e1 e1Var = w;
+        return (c1Var == null || e1Var == null || e1Var.b != c1Var || (nVar = e1Var.a) == null || !nVar.d() || e1Var.a.c == 0) ? false : true;
     }
 
-    public static NativeInstance.SsrcGroup[] d(TLRPC.TL_groupCallParticipantVideo tL_groupCallParticipantVideo) {
-        if (tL_groupCallParticipantVideo.source_groups.isEmpty()) {
-            return null;
-        }
-        int size = tL_groupCallParticipantVideo.source_groups.size();
-        NativeInstance.SsrcGroup[] ssrcGroupArr = new NativeInstance.SsrcGroup[size];
-        for (int i7 = 0; i7 < size; i7++) {
-            ssrcGroupArr[i7] = new NativeInstance.SsrcGroup();
-            TLRPC.TL_groupCallParticipantVideoSourceGroup tL_groupCallParticipantVideoSourceGroup = tL_groupCallParticipantVideo.source_groups.get(i7);
-            NativeInstance.SsrcGroup ssrcGroup = ssrcGroupArr[i7];
-            ssrcGroup.semantics = tL_groupCallParticipantVideoSourceGroup.semantics;
-            ssrcGroup.ssrcs = new int[tL_groupCallParticipantVideoSourceGroup.sources.size()];
-            int i10 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i7].ssrcs;
-                if (i10 < iArr.length) {
-                    iArr[i10] = tL_groupCallParticipantVideoSourceGroup.sources.get(i10).intValue();
-                    i10++;
-                }
-            }
-        }
-        return ssrcGroupArr;
-    }
-
-    public final boolean a() {
-        TLRPC.GroupCall groupCall;
-        return (this.x || this.n || !this.s || X != null || (groupCall = this.w) == null || groupCall.rtmp_stream || !groupCall.creator) ? false : true;
-    }
-
-    public final boolean b() {
-        if (this.w == null || l()) {
-            return false;
-        }
-        return !this.w.messages_enabled;
-    }
-
-    public final void c() {
-        WebRtcAudioTrack.setAudioTrackUsageAttribute(1);
-        WebRtcAudioTrack.setAudioStreamType(TLObject.FLAG_31);
-        AudioManager audioManager = (AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (this.h) {
-            audioManager.setMode(0);
-            audioManager.setBluetoothScoOn(false);
-        } else if (this.n) {
-            audioManager.setMode(3);
-            this.M = audioManager.requestAudioFocus(this, 0, 2) == 1;
-            VoipAudioManager voipAudioManager = VoipAudioManager.get();
-            audioManager.setBluetoothScoOn(false);
-            voipAudioManager.setSpeakerphoneOn(true);
-        }
-    }
-
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.x2) {
-            long longValue = ((Long) objArr[0]).longValue();
-            TLRPC.GroupCall groupCall = (TLRPC.GroupCall) objArr[1];
-            if (this.b == longValue) {
-                cg.d.a(this.w, groupCall);
-                this.w = groupCall;
-                ns.f(this.e).k(ns.G2, Long.valueOf(groupCall.id));
-            }
-        }
-    }
-
-    public final void e() {
-        if (this.x) {
+    @Override // wi.l
+    public final void B(View view) {
+        hi.r3 r3Var;
+        c1 c1Var = this.b;
+        if (c1Var == null || view != (r3Var = this.f)) {
             return;
         }
-        this.x = true;
-        u(false);
-        ns.f(this.e).n(this, ns.x2);
-        org.telegram.messenger.a8.b("[LivePlayer] destroyed");
-        if (this.y) {
-            TL_phone.leaveGroupCall leavegroupcall = new TL_phone.leaveGroupCall();
-            leavegroupcall.call = this.f;
-            leavegroupcall.source = this.L;
-            ConnectionsManager.getInstance(this.e).sendRequest(leavegroupcall, new y0(this, 5));
+        this.h = c1Var.P;
+        this.d.a = r3Var.getSink();
+        this.b.s(this.d);
+        this.b.v(1.0f);
+        g(true);
+    }
+
+    @Override // wi.l
+    public final void D(SurfaceTexture surfaceTexture) {
+        VideoSink videoSink;
+        org.telegram.ui.Components.voip.t0 t0Var = this.e;
+        this.e = null;
+        this.d.a = null;
+        c1 c1Var = this.b;
+        if (c1Var != null && (videoSink = this.h) != null) {
+            c1Var.s(videoSink);
         }
-        if (this.n) {
-            this.I.setTarget(null);
-            NativeInstance.destroyVideoCapturer(this.K);
+        this.h = null;
+        if (t0Var != null) {
+            t0Var.a();
         }
-        if (this.F != null) {
-            org.telegram.messenger.p5 p5Var = Utilities.e;
-            NativeInstance nativeInstance = this.F;
-            Objects.requireNonNull(nativeInstance);
-            p5Var.c(new org.telegram.messenger.voip.q0(nativeInstance, 3));
-            this.N.clear();
-            this.F = null;
+        surfaceTexture.release();
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ View E() {
+        return null;
+    }
+
+    @Override // wi.l
+    public final boolean G() {
+        c1 c1Var;
+        f9 f9Var = this.c;
+        return (f9Var == null || f9Var.H0 || (c1Var = this.b) == null || f9Var.B0 != c1Var) ? false : true;
+    }
+
+    @Override // wi.l
+    public final int J() {
+        int i7;
+        hi.r3 r3Var;
+        if (this.d.b > 0) {
+            return this.d.b;
         }
-        if (this.M) {
-            ((AudioManager) this.d.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND)).abandonAudioFocus(this);
-            this.M = false;
+        f9 f9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (f9Var == null || (r3Var = f9Var.E0) == null) ? null : r3Var.d;
+        if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameWidth) <= 0) {
+            return 9;
         }
-        if (this.n) {
-            VoipAudioManager.get().setSpeakerphoneOn(false);
+        return i7;
+    }
+
+    @Override // wi.l
+    public final boolean N() {
+        c1 c1Var = this.b;
+        return (c1Var == null || c1Var.x) ? false : true;
+    }
+
+    @Override // wi.l
+    public final boolean O() {
+        return true;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ e2.c1 Q() {
+        return null;
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ boolean S() {
+        return false;
+    }
+
+    @Override // wi.l
+    public final void U() {
+        VideoSink videoSink;
+        this.s = false;
+        c1 c1Var = this.b;
+        f9 f9Var = this.c;
+        boolean z10 = (this.f == null && this.h == null) ? false : true;
+        this.a = null;
+        this.b = null;
+        this.d.a = null;
+        org.telegram.ui.Components.voip.t0 t0Var = this.e;
+        if (t0Var != null) {
+            t0Var.a();
+            this.e = null;
         }
-        if (X == this) {
-            X = null;
-            ns.f(this.e).k(ns.G2, Long.valueOf(g()));
+        if (z10 && f9Var != null) {
+            g(false);
+            if (c1Var != null && (videoSink = this.h) != null) {
+                c1Var.s(videoSink);
+            }
+            this.h = null;
+            this.c = null;
+            f9Var.u(false);
+            return;
+        }
+        this.c = null;
+        if (c1Var == null || c1Var.x) {
+            return;
+        }
+        if (f9Var == null || f9Var.B0 != c1Var) {
+            if (c1Var.n || c1Var == c1.X) {
+                c1Var.s(null);
+            } else {
+                c1Var.e();
+            }
         }
     }
 
-    public final boolean f(TLRPC.InputGroupCall inputGroupCall) {
-        TLRPC.InputGroupCall inputGroupCall2 = this.f;
-        return inputGroupCall2 == inputGroupCall || inputGroupCall2.id == inputGroupCall.id;
+    @Override // wi.l
+    public final /* synthetic */ boolean V(boolean z10, float f10, cn0 cn0Var) {
+        return false;
     }
 
-    public final long g() {
-        TLRPC.GroupCall groupCall = this.w;
-        if (groupCall != null) {
-            return groupCall.id;
+    @Override // wi.l
+    public final void X(View view) {
+        this.f = (hi.r3) view;
+    }
+
+    @Override // wi.l
+    public final void Z() {
+        LaunchActivity launchActivity;
+        c1 c1Var = this.b;
+        if (c1Var != null) {
+            int i7 = c1Var.e;
+            if (!c1Var.x) {
+                if (i7 != j10.t0 && (launchActivity = LaunchActivity.H1) != null) {
+                    launchActivity.O0(i7);
+                }
+                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                TL_stories.StoryItem u10 = mp.u1(i7).R1().u(c1Var.c, c1Var.b);
+                if (u10 == null) {
+                    u10 = c1Var.a;
+                }
+                if (T != null && u10 != null && T.getContext() != null) {
+                    T.getOrCreateStoryViewer().G(i7, T.getContext(), u10, null);
+                    return;
+                }
+                wi.n nVar = this.a;
+                if (nVar != null) {
+                    nVar.b();
+                    return;
+                }
+                return;
+            }
         }
-        TLRPC.InputGroupCall inputGroupCall = this.f;
-        if (inputGroupCall != null) {
-            return inputGroupCall.id;
+        wi.n nVar2 = this.a;
+        if (nVar2 != null) {
+            nVar2.b();
         }
+    }
+
+    @Override // wi.l
+    public final int a0() {
+        int i7;
+        hi.r3 r3Var;
+        if (this.d.c > 0) {
+            return this.d.c;
+        }
+        f9 f9Var = this.c;
+        TextureViewRenderer textureViewRenderer = (f9Var == null || (r3Var = f9Var.E0) == null) ? null : r3Var.d;
+        if (textureViewRenderer == null || (i7 = textureViewRenderer.rotatedFrameHeight) <= 0) {
+            return 16;
+        }
+        return i7;
+    }
+
+    @Override // wi.l
+    public final void b() {
+        if (this.s) {
+            return;
+        }
+        this.s = true;
+        c1 c1Var = this.b;
+        if (c1Var != null) {
+            c1Var.v(0.0f);
+        }
+    }
+
+    @Override // wi.l
+    public final float b0() {
+        return 0.0f;
+    }
+
+    @Override // wi.l
+    public final void d(View view) {
+        VideoSink videoSink;
+        g(false);
+        if (view == this.f) {
+            this.d.a = null;
+            c1 c1Var = this.b;
+            if (c1Var != null && (videoSink = this.h) != null) {
+                c1Var.s(videoSink);
+            }
+            this.h = null;
+            this.f = null;
+        }
+    }
+
+    @Override // wi.l
+    public final /* synthetic */ int e() {
+        return 0;
+    }
+
+    @Override // wi.l
+    public final void f() {
+        if (this.s) {
+            this.s = false;
+            c1 c1Var = this.b;
+            if (c1Var != null) {
+                c1Var.v(1.0f);
+            }
+        }
+    }
+
+    public final void g(boolean z10) {
+        t8 t8Var;
+        f9 f9Var = this.c;
+        if (f9Var == null || (t8Var = f9Var.s) == null) {
+            return;
+        }
+        t8Var.setVisibility(z10 ? 8 : 0);
+    }
+
+    @Override // wi.l
+    public final long getDuration() {
         return 0L;
     }
 
-    public final int h() {
-        TLRPC.GroupCall groupCall = this.w;
-        return (groupCall == null || (groupCall.flags & 16) == 0) ? ConnectionsManager.DEFAULT_DATACENTER_ID : groupCall.stream_dc_id;
+    @Override // wi.l
+    public final boolean h() {
+        return !this.s;
     }
 
-    public final TLRPC.Peer i() {
-        TLRPC.GroupCall groupCall = this.w;
-        if (groupCall == null) {
-            return null;
-        }
-        return groupCall.default_send_as;
-    }
-
-    public final long j() {
-        TLRPC.GroupCall groupCall = this.w;
-        if (groupCall == null) {
-            return 0L;
-        }
-        return groupCall.send_paid_messages_stars;
-    }
-
-    public final void k() {
-        if (this.x) {
+    @Override // wi.l
+    public final void i(wi.o oVar) {
+        if (this.b == null) {
             return;
         }
-        NativeInstance makeGroup = NativeInstance.makeGroup(org.telegram.ui.Components.voip.c2.d("live_" + this.f.id), 0L, false, gz.I0, new v0(this, 0), new di.o(24), new v0(this, 2), new v0(this, 3), new v0(this, 4), new v0(this, 5), false);
-        this.F = makeGroup;
-        makeGroup.setOnStateUpdatedListener(new d1(this));
-        this.F.resetGroupInstance(false, false);
+        org.telegram.ui.Components.voip.t0 t0Var = new org.telegram.ui.Components.voip.t0(oVar);
+        this.e = t0Var;
+        this.d.a = t0Var;
+        c1 c1Var = this.b;
+        this.h = c1Var.P;
+        c1Var.s(this.d);
     }
 
-    public final boolean l() {
-        TLRPC.GroupCall groupCall = this.w;
-        if (groupCall != null && groupCall.creator) {
-            return true;
-        }
-        long j3 = this.b;
-        int i7 = this.e;
-        return j3 >= 0 ? m10.i(i7).e() == j3 : org.telegram.messenger.t3.w(14, np.s1(i7).M0(Long.valueOf(-j3)));
+    @Override // wi.l
+    public final long l() {
+        return 0L;
     }
 
-    public final boolean m() {
-        int i7 = this.E;
-        return i7 == 3 || i7 == 1 || i7 == 2;
+    @Override // wi.l
+    public final boolean o0() {
+        return false;
     }
 
-    public final boolean n() {
-        return !this.x && this.s;
+    @Override // wi.l
+    public final /* synthetic */ boolean p() {
+        return true;
     }
 
-    public final boolean o() {
-        return this.n && this.r;
+    @Override // wi.l
+    public final /* synthetic */ boolean s() {
+        return false;
     }
 
-    public final void p() {
-        this.R = null;
-        if (this.x) {
-            return;
-        }
-        TL_phone.checkGroupCall checkgroupcall = new TL_phone.checkGroupCall();
-        checkgroupcall.call = this.f;
-        checkgroupcall.sources.add(Integer.valueOf(this.L));
-        ConnectionsManager.getInstance(this.e).sendRequest(checkgroupcall, new y0(this, 3));
+    @Override // wi.l
+    public final void u(Rect rect) {
+        rect.setEmpty();
     }
 
-    public final void q() {
-        this.S = null;
-        if (this.x) {
-            return;
-        }
-        TL_phone.getGroupCall getgroupcall = new TL_phone.getGroupCall();
-        getgroupcall.call = this.f;
-        ConnectionsManager.getInstance(this.e).sendRequest(getgroupcall, new y0(this, 0));
+    @Override // wi.l
+    public final View v(LaunchActivity launchActivity) {
+        c1 c1Var = this.b;
+        return new hi.r3(launchActivity, c1Var != null ? c1Var.e : j10.t0);
     }
 
-    public final void r(NativeInstance.SsrcGroup[] ssrcGroupArr) {
-        int i7 = 0;
-        while (true) {
-            if (i7 >= (ssrcGroupArr == null ? 0 : ssrcGroupArr.length)) {
-                x();
-                return;
-            }
-            int i10 = 0;
-            while (true) {
-                int[] iArr = ssrcGroupArr[i7].ssrcs;
-                if (i10 < iArr.length) {
-                    this.N.add(Integer.valueOf(iArr[i10]));
-                    i10++;
-                }
-            }
-            i7++;
+    @Override // wi.l
+    public final void w(View view) {
+        if (view == this.f) {
+            this.d.a = null;
+            this.f = null;
         }
+        hi.r3 r3Var = (hi.r3) view;
+        TextureViewRenderer textureViewRenderer = r3Var.d;
+        if (textureViewRenderer != null) {
+            textureViewRenderer.release();
+        }
+        SurfaceViewRenderer surfaceViewRenderer = r3Var.c;
+        if (surfaceViewRenderer != null) {
+            surfaceViewRenderer.release();
+        }
+        r3Var.r = false;
+        r3Var.c(false, false);
     }
 
-    public final void s(VideoSink videoSink) {
-        if (this.P == videoSink) {
-            return;
-        }
-        this.P = videoSink;
-        this.I.setTarget(videoSink);
+    @Override // wi.l
+    public final /* synthetic */ void H() {
     }
 
-    public final void t(boolean z10) {
-        if (this.x || this.s == z10) {
-            return;
-        }
-        if (this.n && z10) {
-            return;
-        }
-        this.s = z10;
-        ns.f(this.e).k(ns.G2, Long.valueOf(g()));
+    @Override // wi.l
+    public final /* synthetic */ void L(float f10) {
     }
 
-    public final void u(boolean z10) {
-        if (this.x) {
-            z10 = false;
-        }
-        if (this.Q == z10) {
-            return;
-        }
-        this.Q = z10;
-        if (z10) {
-            Runnable runnable = this.R;
-            if (runnable != null) {
-                org.telegram.messenger.g0.r(runnable);
-            }
-            x0 x0Var = new x0(this, 0);
-            this.R = x0Var;
-            org.telegram.messenger.g0.i3(x0Var, 4000L);
-            Runnable runnable2 = this.S;
-            if (runnable2 != null) {
-                org.telegram.messenger.g0.r(runnable2);
-            }
-            x0 x0Var2 = new x0(this, 1);
-            this.S = x0Var2;
-            org.telegram.messenger.g0.i3(x0Var2, l() ? 5000 : 20000);
-            return;
-        }
-        int i7 = this.T;
-        int i10 = this.e;
-        if (i7 != -1) {
-            ConnectionsManager.getInstance(i10).cancelRequest(this.T, true);
-            this.T = -1;
-        }
-        if (this.U != -1) {
-            ConnectionsManager.getInstance(i10).cancelRequest(this.U, true);
-            this.U = -1;
-        }
-        Runnable runnable3 = this.R;
-        if (runnable3 != null) {
-            org.telegram.messenger.g0.r(runnable3);
-            this.R = null;
-        }
-        Runnable runnable4 = this.S;
-        if (runnable4 != null) {
-            org.telegram.messenger.g0.r(runnable4);
-            this.S = null;
-        }
+    @Override // wi.l
+    public final void c(long j3) {
     }
 
-    public final void v(float f10) {
-        wi.n nVar;
-        float l10 = Utilities.l(f10);
-        g1 g1Var = g1.w;
-        if (g1Var != null && g1Var.b == this && (nVar = g1Var.a) != null && nVar.d() && g1Var.a.c != 0) {
-            g1 g1Var2 = g1.w;
-            l10 = (g1Var2 == null || !g1Var2.s) ? 1.0f : 0.0f;
-        }
-        org.telegram.messenger.a8.b("setVolume(" + l10 + ")");
-        if (Math.abs(l10 - this.O) < 0.01f) {
-            return;
-        }
-        this.O = l10;
-        x();
+    @Override // wi.l
+    public final /* synthetic */ void p0(int i7) {
     }
 
-    public final void w() {
-        TL_stories.TL_updateStory tL_updateStory = new TL_stories.TL_updateStory();
-        int i7 = this.e;
-        tL_updateStory.peer = np.s1(i7).z1(this.b);
-        TL_stories.TL_storyItemDeleted tL_storyItemDeleted = new TL_stories.TL_storyItemDeleted();
-        tL_updateStory.story = tL_storyItemDeleted;
-        tL_storyItemDeleted.id = this.c;
-        np.s1(i7).P1().c0(tL_updateStory);
-        e();
+    @Override // wi.l
+    public final /* synthetic */ void h0(int i7, ArrayList arrayList) {
     }
 
-    public final void x() {
-        if (this.x || this.F == null) {
-            return;
-        }
-        Iterator it = this.N.iterator();
-        while (it.hasNext()) {
-            this.F.setVolume(((Integer) it.next()).intValue(), this.O);
-        }
-    }
-
-    @Override // android.media.AudioManager.OnAudioFocusChangeListener
-    public final void onAudioFocusChange(int i7) {
+    @Override // wi.l
+    public final /* synthetic */ void j0(Canvas canvas, int i7, int i10) {
     }
 }

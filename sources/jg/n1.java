@@ -1,28 +1,28 @@
 package jg;
 
 import android.view.ViewGroup;
-import bi.o2;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.tj0;
+import bi.i3;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n1 extends tj0 {
+public final class n1 extends bk0 {
     public h1 c;
     public Integer d;
-    public o2 e;
+    public i3 e;
     public boolean f;
     public int h;
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        if (e1Var.b() == 0) {
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        if (f1Var.b() == 0) {
             return false;
         }
-        return this.c.D(e1Var);
+        return this.c.D(f1Var);
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         h1 h1Var = this.c;
         int K = h1Var.K();
@@ -30,7 +30,7 @@ public final class n1 extends tj0 {
         return K + 1;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         if (i7 == 0) {
             return -983904;
@@ -38,20 +38,20 @@ public final class n1 extends tj0 {
         return this.c.d(i7 - 1);
     }
 
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
         if (i7 > 0) {
-            this.c.t(e1Var, i7 - 1);
+            this.c.t(f1Var, i7 - 1);
         }
     }
 
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
         if (i7 != -983904) {
             return this.c.x(viewGroup, i7);
         }
-        o2 o2Var = new o2(5, viewGroup.getContext(), this);
-        this.e = o2Var;
-        return new cj0(o2Var);
+        i3 i3Var = new i3(5, viewGroup.getContext(), this);
+        this.e = i3Var;
+        return new kj0(i3Var);
     }
 }

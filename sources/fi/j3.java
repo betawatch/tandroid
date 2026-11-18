@@ -1,222 +1,167 @@
 package fi;
 
-import android.text.TextUtils;
+import android.content.Context;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.a10;
-import org.telegram.messenger.c10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.si;
-import org.telegram.messenger.vn;
-import org.telegram.messenger.voip.NativeInstance;
+import java.util.ArrayList;
+import java.util.Collections;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.p21;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.qy0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class j3 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t3 b;
+    public final /* synthetic */ r3 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
+    public final /* synthetic */ f9 d;
 
-    public /* synthetic */ j3(t3 t3Var, int i7) {
-        this.a = i7;
-        this.b = t3Var;
+    public /* synthetic */ j3(r3 r3Var, f9 f9Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.a = 0;
+        this.b = r3Var;
+        this.d = f9Var;
+        this.c = i6Var;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00d1  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00ec  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00f9  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00d3  */
     @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void onClick(View view) {
-        switch (this.a) {
+        boolean z10;
+        View view2;
+        View view3;
+        int i7 = this.a;
+        org.telegram.ui.ActionBar.i6 i6Var = this.c;
+        f9 f9Var = this.d;
+        r3 r3Var = this.b;
+        switch (i7) {
             case 0:
-                b4 b4Var = this.b.x;
-                b4.c0(b4Var, b4Var.l1);
-                t3 t3Var = b4Var.d1;
-                if (t3Var != null) {
-                    t3Var.a();
+                z3 z3Var = r3Var.x;
+                f9Var.k1 = true;
+                f9Var.V();
+                int i10 = z3Var.m2;
+                Context context = z3Var.getContext();
+                TL_stories.StoryItem storyItem = z3Var.y1.a;
+                c3 c3Var = z3Var.M0;
+                org.telegram.ui.ActionBar.i6 i6Var2 = this.c;
+                lc lcVar = new lc(c3Var, i6Var2);
+                ai.g0 g0Var = new ai.g0(f9Var, 17);
+                int i11 = qy0.w1;
+                qy0.K0(i10, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), lcVar, i6Var2, new byte[0], null, g0Var);
+                r3 r3Var2 = z3Var.d1;
+                if (r3Var2 != null) {
+                    r3Var2.a();
                     break;
                 }
                 break;
             case 1:
-                b4 b4Var2 = this.b.x;
-                b4.b0(b4Var2);
-                t3 t3Var2 = b4Var2.d1;
-                if (t3Var2 != null) {
-                    t3Var2.a();
-                    break;
+                z3 z3Var2 = r3Var.x;
+                r3 r3Var3 = z3Var2.d1;
+                x3 x3Var = z3Var2.y1;
+                if (r3Var3 != null) {
+                    r3Var3.a();
                 }
-                break;
-            case 2:
-                b4 b4Var3 = this.b.x;
-                org.telegram.messenger.g0.g(b4Var3.y1.e());
-                b4.h0(b4Var3);
-                t3 t3Var3 = b4Var3.d1;
-                if (t3Var3 != null) {
-                    t3Var3.a();
-                    break;
+                hi.q8 q8Var = new hi.q8(86400, z3Var2.getContext(), i6Var);
+                q8Var.V0();
+                q8Var.W0(mp.u1(z3Var2.m2).l1(z3Var2.l1));
+                q8Var.G1 = true;
+                View[] viewPages = q8Var.m1.getViewPages();
+                View view4 = viewPages[0];
+                if (view4 instanceof hi.l8) {
+                    hi.l8 l8Var = (hi.l8) view4;
+                    l8Var.b(l8Var.a);
                 }
-                break;
-            case 3:
-                b4 b4Var4 = this.b.x;
-                b4Var4.W0(false);
-                t3 t3Var4 = b4Var4.d1;
-                if (t3Var4 != null) {
-                    t3Var4.a();
-                    break;
+                View view5 = viewPages[1];
+                if (view5 instanceof hi.l8) {
+                    hi.l8 l8Var2 = (hi.l8) view5;
+                    l8Var2.b(l8Var2.a);
                 }
-                break;
-            case 4:
-                b4 b4Var5 = this.b.x;
-                z3 z3Var = b4Var5.y1;
-                z3Var.a.translated = false;
-                f7 f7Var = np.s1(b4Var5.m2).P1().k;
-                TL_stories.StoryItem storyItem = z3Var.a;
-                f7Var.k(storyItem.dialogId, storyItem);
-                b4Var5.n0();
-                b4Var5.d1(false);
-                t3 t3Var5 = b4Var5.d1;
-                if (t3Var5 != null) {
-                    t3Var5.a();
-                    break;
-                }
-                break;
-            case 5:
-                t3 t3Var6 = this.b;
-                b4 b4Var6 = t3Var6.x;
-                z3 z3Var2 = b4Var6.y1;
-                z3Var2.a.translated = true;
-                b4Var6.n0();
-                u3 u3Var = b4Var6.A1;
-                if (u3Var != null) {
-                    i9 i9Var = ((z8) u3Var).d;
-                    i9Var.Z0 = true;
-                    i9Var.V();
-                }
-                f7 f7Var2 = np.s1(b4Var6.m2).P1().k;
-                TL_stories.StoryItem storyItem2 = z3Var2.a;
-                f7Var2.k(storyItem2.dialogId, storyItem2);
-                long currentTimeMillis = System.currentTimeMillis();
-                n3 n3Var = new n3(t3Var6, 1);
-                c10 c10Var = np.s1(b4Var6.m2).t7;
-                TL_stories.StoryItem storyItem3 = z3Var2.a;
-                di.x2 x2Var = new di.x2(n3Var, currentTimeMillis, 4);
-                HashSet hashSet = c10Var.K;
-                if (storyItem3 != null) {
-                    a10 a10Var = new a10();
-                    String M0 = p21.M0();
-                    if (storyItem3.translatedText != null && TextUtils.equals(storyItem3.translatedLng, M0)) {
-                        x2Var.run();
-                    } else if (hashSet.contains(a10Var)) {
-                        x2Var.run();
-                    } else {
-                        hashSet.add(a10Var);
-                        TLRPC.TL_messages_translateText tL_messages_translateText = new TLRPC.TL_messages_translateText();
-                        tL_messages_translateText.flags |= 2;
-                        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-                        tL_textWithEntities.text = storyItem3.caption;
-                        tL_textWithEntities.entities = storyItem3.entities;
-                        tL_messages_translateText.text.add(tL_textWithEntities);
-                        tL_messages_translateText.to_lang = c10.D(M0);
-                        c10Var.getConnectionsManager().sendRequest(tL_messages_translateText, new vn(c10Var, storyItem3, M0, a10Var, x2Var, tL_textWithEntities, 1));
+                q8Var.M0(false);
+                q8Var.T0(1);
+                q8Var.R0(false);
+                c1 c1Var = f9Var.B0;
+                if (c1Var != null) {
+                    TLRPC.GroupCall groupCall = c1Var.w;
+                    if (groupCall == null ? true : groupCall.messages_enabled) {
+                        z10 = true;
+                        boolean d = x3Var.d();
+                        TL_stories.StoryItem storyItem2 = x3Var.a;
+                        boolean z11 = storyItem2 == null && storyItem2.pinned;
+                        c1 c1Var2 = f9Var.B0;
+                        int j3 = c1Var2 != null ? 0 : (int) c1Var2.j();
+                        q8Var.w1 = z10;
+                        q8Var.x1 = d;
+                        q8Var.y1 = z11;
+                        q8Var.C1 = j3;
+                        View[] viewPages2 = q8Var.m1.getViewPages();
+                        view2 = viewPages2[0];
+                        if (view2 instanceof hi.l8) {
+                            hi.l8 l8Var3 = (hi.l8) view2;
+                            l8Var3.b(l8Var3.a);
+                        }
+                        view3 = viewPages2[1];
+                        if (view3 instanceof hi.l8) {
+                            hi.l8 l8Var4 = (hi.l8) view3;
+                            l8Var4.b(l8Var4.a);
+                        }
+                        q8Var.O1 = new ab.g(16, r3Var, q8Var);
+                        q8Var.show();
+                        break;
                     }
                 }
-                b4Var6.d1(false);
-                b4Var6.R2 = true;
-                b4Var6.u0.E(true);
-                t3 t3Var7 = b4Var6.d1;
-                if (t3Var7 != null) {
-                    t3Var7.a();
-                    break;
+                z10 = false;
+                boolean d2 = x3Var.d();
+                TL_stories.StoryItem storyItem22 = x3Var.a;
+                if (storyItem22 == null) {
                 }
-                break;
-            case 6:
-                b4 b4Var7 = this.b.x;
-                r6 r6Var = b4Var7.y1.b;
-                if (r6Var != null) {
-                    r6Var.a();
-                    b4Var7.h1();
+                c1 c1Var22 = f9Var.B0;
+                if (c1Var22 != null) {
                 }
-                t3 t3Var8 = b4Var7.d1;
-                if (t3Var8 != null) {
-                    t3Var8.a();
-                    break;
+                q8Var.w1 = z10;
+                q8Var.x1 = d2;
+                q8Var.y1 = z11;
+                q8Var.C1 = j3;
+                View[] viewPages22 = q8Var.m1.getViewPages();
+                view2 = viewPages22[0];
+                if (view2 instanceof hi.l8) {
                 }
-                break;
-            case 7:
-                b4 b4Var8 = this.b.x;
-                b4.b0(b4Var8);
-                t3 t3Var9 = b4Var8.d1;
-                if (t3Var9 != null) {
-                    t3Var9.a();
-                    break;
+                view3 = viewPages22[1];
+                if (view3 instanceof hi.l8) {
                 }
-                break;
-            case 8:
-                b4 b4Var9 = this.b.x;
-                org.telegram.messenger.g0.g(b4Var9.y1.e());
-                b4.h0(b4Var9);
-                t3 t3Var10 = b4Var9.d1;
-                if (t3Var10 != null) {
-                    t3Var10.a();
-                    break;
-                }
-                break;
-            case 9:
-                b4 b4Var10 = this.b.x;
-                b4Var10.W0(false);
-                t3 t3Var11 = b4Var10.d1;
-                if (t3Var11 != null) {
-                    t3Var11.a();
-                    break;
-                }
-                break;
-            case 10:
-                e1 e1Var = e1.X;
-                if (e1Var != null && e1Var.n) {
-                    long j3 = e1Var.K;
-                    boolean z10 = !e1Var.J;
-                    e1Var.J = z10;
-                    NativeInstance.switchCameraCapturer(j3, z10);
-                }
-                t3 t3Var12 = this.b.x.d1;
-                if (t3Var12 != null) {
-                    t3Var12.a();
-                    break;
-                }
-                break;
-            case 11:
-                this.b.x.n3.b();
-                break;
-            case 12:
-                this.b.x.o3.b();
-                break;
-            case 13:
-                b4 b4Var11 = this.b.x;
-                b4.d0(b4Var11);
-                t3 t3Var13 = b4Var11.d1;
-                if (t3Var13 != null) {
-                    t3Var13.a();
-                    break;
-                }
-                break;
-            case 14:
-                b4 b4Var12 = this.b.x;
-                si.b0(b4Var12.m2).N1(b4Var12.l1);
-                b4Var12.C1.l0(b4Var12.l1, true, false);
-                t3 t3Var14 = b4Var12.d1;
-                if (t3Var14 != null) {
-                    t3Var14.a();
-                    break;
-                }
-                break;
+                q8Var.O1 = new ab.g(16, r3Var, q8Var);
+                q8Var.show();
             default:
-                b4 b4Var13 = this.b.x;
-                b4.c0(b4Var13, b4Var13.l1);
-                t3 t3Var15 = b4Var13.d1;
-                if (t3Var15 != null) {
-                    t3Var15.a();
-                    break;
+                z3 z3Var3 = r3Var.x;
+                r3 r3Var4 = z3Var3.d1;
+                if (r3Var4 != null) {
+                    r3Var4.a();
                 }
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, z3Var3.getContext(), i6Var);
+                String M0 = gd.M0(2131748625, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.S = M0;
+                u1Var.U = gd.M0(2131748626, null);
+                alertDialog$Builder.k(gd.M0(2131748627, null), new ab.g(17, r3Var, f9Var));
+                alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                alertDialog$Builder.d(-1);
+                alertDialog$Builder.p();
                 break;
         }
+    }
+
+    public /* synthetic */ j3(r3 r3Var, org.telegram.ui.ActionBar.i6 i6Var, f9 f9Var, int i7) {
+        this.a = i7;
+        this.b = r3Var;
+        this.c = i6Var;
+        this.d = f9Var;
     }
 }

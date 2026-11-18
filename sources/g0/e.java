@@ -3,7 +3,7 @@ package g0;
 import a8.r7;
 import android.content.pm.ShortcutManager;
 import android.util.Log;
-import c8.g0;
+import c8.i0;
 import com.google.firebase.sessions.FirebaseSessionsRegistrar;
 import da.u2;
 import g9.k;
@@ -13,22 +13,21 @@ import gb.n;
 import gb.o0;
 import gb.p0;
 import gb.r;
-import hi.d3;
+import hi.e3;
 import java.nio.charset.Charset;
 import kotlin.jvm.internal.j;
-import org.telegram.messenger.b20;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.j9;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.t10;
-import org.telegram.messenger.ve;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i9;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.r10;
+import org.telegram.messenger.ue;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, j9, t10, b20 {
+public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, i9, r10 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ e(int i7) {
@@ -39,42 +38,37 @@ public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, j9, t10, b2
         return (ShortcutManager) obj;
     }
 
+    public static /* bridge */ /* synthetic */ Class b() {
+        return ShortcutManager.class;
+    }
+
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
         switch (this.a) {
-            case 2:
-                return Integer.valueOf(((g2.b) obj).r);
             case 3:
+                return Integer.valueOf(((g2.b) obj).r);
+            case 4:
                 o0 o0Var = (o0) obj;
-                String o4 = p0.b.o(o0Var);
-                j.d(o4, "encode(...)");
+                String v = p0.b.v(o0Var);
+                j.d(v, "encode(...)");
                 o0Var.getClass();
                 m mVar = m.b;
                 Log.d("FirebaseSessions", "Session Event Type: SESSION_START");
-                byte[] bytes = o4.getBytes(xd.a.a);
+                byte[] bytes = v.getBytes(xd.a.a);
                 j.d(bytes, "getBytes(...)");
                 return bytes;
             default:
                 ha.a.b.getClass();
-                return ea.a.a.o((u2) obj).getBytes(Charset.forName("UTF-8"));
+                return ea.a.a.v((u2) obj).getBytes(Charset.forName("UTF-8"));
         }
-    }
-
-    @Override // org.telegram.messenger.t10
-    public Object d(Number number, Object obj) {
-        Integer num = (Integer) obj;
-        if (((Integer) number).intValue() == 0) {
-            return num.intValue() == 0 ? hd.M0(2131748805, null) : hd.H(',', "Stars", num.intValue());
-        }
-        return "" + num;
     }
 
     @Override // u9.d
-    public Object i(r7 r7Var) {
+    public Object e(r7 r7Var) {
         n components$lambda$0;
         r components$lambda$1;
         switch (this.a) {
-            case 5:
+            case 6:
                 components$lambda$0 = FirebaseSessionsRegistrar.getComponents$lambda$0(r7Var);
                 return components$lambda$0;
             default:
@@ -83,59 +77,68 @@ public final /* synthetic */ class e implements k, l5.e, u9.d, gh.d, j9, t10, b2
         }
     }
 
+    @Override // org.telegram.messenger.r10
+    public Object g(Number number, Object obj) {
+        Integer num = (Integer) obj;
+        if (((Integer) number).intValue() == 0) {
+            return num.intValue() == 0 ? gd.M0(2131748613, null) : gd.H(',', "Stars", num.intValue());
+        }
+        return "" + num;
+    }
+
     @Override // gh.d
-    public int j(e6 e6Var, boolean z10) {
+    public int j(i6 i6Var, boolean z10) {
         switch (this.a) {
-            case 8:
-                return z10 ? j6.r1(0.9f, -15658735) : g0.m(qc.e(262144) ? 0.82f : 0.76f, j6.w0(j6.d6, e6Var), -14145496);
             case 9:
-                if (!qc.e(256)) {
-                    return j6.x0(null, j6.G8, false);
-                }
-                return j6.r1(z10 ? 0.85f : 0.825f, j6.x0(null, j6.G8, false));
+                return z10 ? n6.r1(0.9f, -15658735) : i0.n(pc.e(262144) ? 0.82f : 0.76f, n6.w0(n6.d6, i6Var), -14145496);
             case 10:
-                return g0.m(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.d6, e6Var), j6.w0(j6.Ql, e6Var));
+                return n6.r1(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.d6, i6Var));
             case 11:
-                return j6.r1(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.wj, e6Var));
+                if (!pc.e(256)) {
+                    return n6.x0(null, n6.G8, false);
+                }
+                return n6.r1(z10 ? 0.85f : 0.825f, n6.x0(null, n6.G8, false));
             case 12:
-                return g0.m(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.d6, e6Var), j6.w0(j6.Je, e6Var));
+                return i0.n(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.d6, i6Var), n6.w0(n6.Ql, i6Var));
             case 13:
-                return g0.m(qc.e(262144) ? 0.85f : 0.8f, j6.w0(j6.a7, e6Var), j6.w0(j6.d6, e6Var));
+                return i0.n(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.d6, i6Var), n6.w0(n6.Je, i6Var));
             case 14:
-                return 855638016;
+                return i0.n(pc.e(262144) ? 0.85f : 0.8f, n6.w0(n6.a7, i6Var), n6.w0(n6.d6, i6Var));
             case 15:
-                return TLObject.FLAG_30;
+                return 855638016;
             case 16:
-                return j6.r1(z10 ? 0.82f : 0.78f, j6.w0(j6.h5, e6Var));
+                return TLObject.FLAG_30;
             case 17:
-                return j6.r1(0.075f, -16777216);
+                return n6.r1(z10 ? 0.82f : 0.78f, n6.w0(n6.h5, i6Var));
             case 18:
-                return j6.r1(z10 ? 0.85f : 0.825f, j6.w0(j6.G8, e6Var));
+                return n6.r1(0.075f, -16777216);
             case 19:
-                return j6.r1(0.88f, j6.w0(j6.d6, e6Var));
+                return n6.r1(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.wj, i6Var));
             case 20:
-                return g0.m(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.d6, e6Var), j6.w0(j6.Pl, e6Var));
+                return n6.r1(0.88f, n6.w0(n6.d6, i6Var));
             case 21:
-                return j6.r1(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.d6, e6Var));
+                return n6.r1(z10 ? 0.85f : 0.825f, n6.w0(n6.G8, i6Var));
             case 22:
-                return j6.r1(0.78f, j6.w0(j6.h5, e6Var));
+                return i0.n(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.d6, i6Var), n6.w0(n6.Pl, i6Var));
             case 23:
-                return j6.r1(0.7f, j6.w0(j6.d6, e6Var));
+                return n6.r1(pc.e(262144) ? 0.85f : 0.76f, n6.w0(n6.d6, i6Var));
             case 24:
-                qc.e(262144);
-                return 0;
+                return n6.r1(0.78f, n6.w0(n6.h5, i6Var));
+            case 25:
+                return n6.r1(0.7f, n6.w0(n6.d6, i6Var));
             default:
-                return j6.r1(qc.e(262144) ? 0.85f : 0.76f, j6.w0(j6.d6, e6Var));
+                pc.e(262144);
+                return 0;
         }
     }
 
-    @Override // org.telegram.messenger.j9
-    public Object o(Object obj) {
-        ve veVar = d3.k0;
+    @Override // org.telegram.messenger.i9
+    public Object m(Object obj) {
+        ue ueVar = e3.k0;
         return 0;
     }
 
     public /* synthetic */ e(l lVar) {
-        this.a = 3;
+        this.a = 4;
     }
 }

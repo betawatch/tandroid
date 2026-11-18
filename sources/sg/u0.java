@@ -1,6 +1,6 @@
 package sg;
 
-import a8.t9;
+import a8.w9;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,26 +11,26 @@ import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.ViewConfiguration;
-import c8.ec;
-import c8.i9;
+import c8.hc;
+import c8.l9;
 import com.google.android.gms.internal.vision.e2;
-import fi.r5;
+import fi.p5;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ou;
-import org.telegram.messenger.p2;
-import org.telegram.messenger.q5;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.q2;
+import org.telegram.messenger.r5;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.u9;
-import org.telegram.ui.g71;
+import org.telegram.ui.Components.ca;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.k71;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class u0 extends TextureView {
     public boolean E;
@@ -48,14 +48,14 @@ public class u0 extends TextureView {
     public int x;
     public h y;
 
-    public u0(Context context, i0 i0Var, Bitmap bitmap, Bitmap bitmap2, u9 u9Var) {
+    public u0(Context context, i0 i0Var, Bitmap bitmap, Bitmap bitmap2, ca caVar) {
         super(context);
         setOpaque(false);
         this.h = bitmap;
         this.n = bitmap2;
         this.c = i0Var;
         i0Var.f = this;
-        setSurfaceTextureListener(new q0(this, u9Var));
+        setSurfaceTextureListener(new q0(this, caVar));
         this.e = new v(this);
         o0 o0Var = new o0(this, 0);
         g1 g1Var = new g1();
@@ -89,7 +89,7 @@ public class u0 extends TextureView {
         paint.setPathEffect(new DashPathEffect(new float[]{org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f)}, 0.0f));
         paint.setShadowLayer(4.0f, 0.0f, 1.5f, TLObject.FLAG_30);
         this.f = g1Var;
-        i0Var.a = new ou(this, 24);
+        i0Var.a = new hn(this, 17);
     }
 
     public final void a() {
@@ -124,7 +124,7 @@ public class u0 extends TextureView {
         CountDownLatch countDownLatch = new CountDownLatch(1);
         Bitmap[] bitmapArr = new Bitmap[1];
         try {
-            s0Var.postRunnable(new r5(s0Var, z10, z11, bitmapArr, countDownLatch));
+            s0Var.postRunnable(new p5(s0Var, z10, z11, bitmapArr, countDownLatch));
             countDownLatch.await();
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -142,30 +142,30 @@ public class u0 extends TextureView {
             if (u0Var == null || u0Var.getPainting() == null) {
                 return;
             }
-            nt0 nt0Var = u0Var.getPainting().g;
+            vt0 vt0Var = u0Var.getPainting().g;
             for (int i7 = 0; i7 < arrayList.size(); i7++) {
                 f1 f1Var = (f1) arrayList.get(i7);
                 if (f1Var.c && !f1Var.b) {
-                    g1Var.b(canvas, nt0Var, f1Var);
+                    g1Var.b(canvas, vt0Var, f1Var);
                 }
             }
             x0 x0Var = g1Var.h;
             if (x0Var != null && x0Var.h != 0.0f) {
                 canvas.save();
-                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (g1Var.h.b / nt0Var.a) * canvas.getWidth(), (g1Var.h.c / nt0Var.b) * canvas.getHeight());
+                canvas.rotate((float) (((-r1.h) / 3.141592653589793d) * 180.0d), (g1Var.h.b / vt0Var.a) * canvas.getWidth(), (g1Var.h.c / vt0Var.b) * canvas.getHeight());
             }
             x0 x0Var2 = g1Var.h;
             if (x0Var2 == null || x0Var2.a.o() != 4) {
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
-                canvas2.drawLine(canvas.getWidth() * (g1Var.h.b / nt0Var.a), canvas.getHeight() * (g1Var.h.c / nt0Var.b), canvas.getWidth() * (g1Var.h.i / nt0Var.a), canvas.getHeight() * (g1Var.h.j / nt0Var.b), paint);
-                canvas2.drawLine(canvas2.getWidth() * (g1Var.h.d / nt0Var.a), canvas2.getHeight() * (g1Var.h.e / nt0Var.b), canvas2.getWidth() * (g1Var.h.i / nt0Var.a), canvas2.getHeight() * (g1Var.h.j / nt0Var.b), paint);
+                canvas2.drawLine(canvas.getWidth() * (g1Var.h.b / vt0Var.a), canvas.getHeight() * (g1Var.h.c / vt0Var.b), canvas.getWidth() * (g1Var.h.i / vt0Var.a), canvas.getHeight() * (g1Var.h.j / vt0Var.b), paint);
+                canvas2.drawLine(canvas2.getWidth() * (g1Var.h.d / vt0Var.a), canvas2.getHeight() * (g1Var.h.e / vt0Var.b), canvas2.getWidth() * (g1Var.h.i / vt0Var.a), canvas2.getHeight() * (g1Var.h.j / vt0Var.b), paint);
             }
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 f1 f1Var2 = (f1) arrayList.get(i10);
                 if (f1Var2.c && f1Var2.b) {
-                    g1Var.b(canvas2, nt0Var, f1Var2);
+                    g1Var.b(canvas2, vt0Var, f1Var2);
                 }
             }
             x0 x0Var3 = g1Var.h;
@@ -311,7 +311,7 @@ public class u0 extends TextureView {
                         r02.c(f15, f16, r92);
                     }
                     i11 = i12;
-                    double a10 = t9.a(f1Var4.d, f1Var4.e, fArr[r92], fArr[i11]);
+                    double a10 = w9.a(f1Var4.d, f1Var4.e, fArr[r92], fArr[i11]);
                     int L = org.telegram.messenger.g0.L(40.0f);
                     r33 = r92 == true ? 1 : 0;
                     if (a10 < L && (f1Var == null || a10 < d)) {
@@ -393,11 +393,11 @@ public class u0 extends TextureView {
                             }
                         }
                     } else if (r02.h.a.o() == 4) {
-                        nt0 nt0Var = u0Var.getPainting().g;
+                        vt0 vt0Var = u0Var.getPainting().g;
                         x0 x0Var5 = r02.h;
                         float a12 = g1.a(f15, f16, x0Var5.b, x0Var5.c, x0Var5.i, x0Var5.j);
                         x0 x0Var6 = r02.h;
-                        if (Math.min(a12, g1.a(f15, f16, x0Var6.d, x0Var6.e, x0Var6.i, x0Var6.j)) - (r02.h.f / 2.0f) < Math.min(nt0Var.a, nt0Var.b) * 0.1f) {
+                        if (Math.min(a12, g1.a(f15, f16, x0Var6.d, x0Var6.e, x0Var6.i, x0Var6.j)) - (r02.h.f / 2.0f) < Math.min(vt0Var.a, vt0Var.b) * 0.1f) {
                             f13 = f15;
                             f12 = f16;
                         }
@@ -445,7 +445,7 @@ public class u0 extends TextureView {
         fArr2[1] = height2;
         vVar.t.mapPoints(fArr2);
         float currentTimeMillis = System.currentTimeMillis() - vVar.v;
-        vVar.w = i9.a(vVar.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
+        vVar.w = l9.a(vVar.w - (currentTimeMillis / 125.0f), 0.6f, 1.0f);
         if (vVar.a.getCurrentBrush() != null && (vVar.a.getCurrentBrush() instanceof a)) {
             vVar.w = 1.0f - vVar.w;
         }
@@ -456,7 +456,7 @@ public class u0 extends TextureView {
             if ((motionEvent.getButtonState() & 32) == 32) {
                 z10 = true;
                 if (vVar.a.getCurrentBrush() != null) {
-                    f29 = (org.telegram.messenger.g0.T1(vVar.a.getCurrentBrush().j(), 1.0f, i9.a(vVar.o / 16.0f, 0.0f, 1.0f)) * (f29 - 1.0f)) + 1.0f;
+                    f29 = (org.telegram.messenger.g0.T1(vVar.a.getCurrentBrush().j(), 1.0f, l9.a(vVar.o / 16.0f, 0.0f, 1.0f)) * (f29 - 1.0f)) + 1.0f;
                 }
                 float[] fArr3 = vVar.u;
                 double d13 = fArr3[0];
@@ -476,7 +476,7 @@ public class u0 extends TextureView {
                         if (painting.d == null || !painting.H || painting.q == 0) {
                             if (!vVar.e) {
                                 t0 t0Var2 = vVar.a.a;
-                                if (t0Var2 == null || t0Var2.z()) {
+                                if (t0Var2 == null || t0Var2.y()) {
                                     m0Var.d = true;
                                     j0 j0Var = new j0();
                                     Vector vector = new Vector();
@@ -534,14 +534,14 @@ public class u0 extends TextureView {
                                             boolean[] zArr2 = zArr;
                                             if (!zArr2[0] && floatValue > 0.4f) {
                                                 zArr2[0] = true;
-                                                p2.y.a();
+                                                q2.y.a();
                                             }
                                             fArr5[0] = floatValue;
                                         }
                                     });
-                                    vVar.r.addListener(new g71(vVar, 16));
+                                    vVar.r.addListener(new k71(vVar, 16));
                                     vVar.r.setDuration(240L);
-                                    vVar.r.setInterpolator(er.h);
+                                    vVar.r.setInterpolator(lr.h);
                                     vVar.r.start();
                                 }
                             }
@@ -555,7 +555,7 @@ public class u0 extends TextureView {
                             vVar.q = 0.0d;
                             t0Var = vVar.a.a;
                             if (t0Var == null) {
-                                t0Var.h0();
+                                t0Var.e0();
                                 return;
                             }
                             return;
@@ -569,10 +569,10 @@ public class u0 extends TextureView {
                         int i16 = 1;
                         ofFloat2.addUpdateListener(new c0(painting, i16));
                         painting.L.addListener(new g0(painting, i16));
-                        painting.L.setInterpolator(er.h);
+                        painting.L.setInterpolator(lr.h);
                         painting.L.setDuration(350L);
                         painting.L.start();
-                        p2.n.a();
+                        q2.n.a();
                         r72 = 0;
                         vVar.n = r72;
                         vVar.o = r72;
@@ -631,7 +631,7 @@ public class u0 extends TextureView {
                         vVar.j = false;
                         vVar.f = true;
                         vVar.l = true;
-                        org.telegram.messenger.g0.i3(vVar.y, ViewConfiguration.getLongPressTimeout());
+                        org.telegram.messenger.g0.h3(vVar.y, ViewConfiguration.getLongPressTimeout());
                         return;
                     }
                     float a13 = m0Var.a(vVar.g);
@@ -645,12 +645,12 @@ public class u0 extends TextureView {
                     if (!vVar.e) {
                         t0 t0Var3 = vVar.a.a;
                         if (t0Var3 != null) {
-                            t0Var3.q0();
+                            t0Var3.n0();
                         }
                         vVar.e = true;
                         if (z10 && (vVar.a.getCurrentBrush() instanceof f)) {
                             vVar.A = vVar.a.getCurrentBrush();
-                            vVar.a.g((h) r.b.h(1, h.a));
+                            vVar.a.g((h) p5.c.h(1, h.a));
                         }
                     }
                     vVar.m[vVar.n] = m0Var;
@@ -670,18 +670,18 @@ public class u0 extends TextureView {
                                 z11 = b1Var.b.size() >= 8;
                             }
                             if (z11) {
-                                q5 q5Var = b1.m;
+                                r5 r5Var = b1.m;
                                 y0 y0Var = b1Var.l;
                                 AtomicBoolean atomicBoolean = b1Var.k;
                                 if (!b1Var.j.get()) {
                                     if (atomicBoolean.get() && !b1Var.d && z13) {
-                                        q5Var.cancelRunnable(y0Var);
-                                        q5Var.postRunnable(y0Var, 150L);
+                                        r5Var.cancelRunnable(y0Var);
+                                        r5Var.postRunnable(y0Var, 150L);
                                     }
                                     if (!atomicBoolean.get()) {
                                         r42 = 1;
                                         atomicBoolean.set(true);
-                                        q5Var.postRunnable(y0Var, 150L);
+                                        r5Var.postRunnable(y0Var, 150L);
                                         i7 = vVar.n + r42;
                                         vVar.n = i7;
                                         vVar.o += r42;
@@ -692,7 +692,7 @@ public class u0 extends TextureView {
                                             m0 m0Var5 = m0VarArr[r42];
                                             float atan2 = (float) Math.atan2(d18 - m0Var5.b, m0Var4.a - m0Var5.a);
                                             if (vVar.j) {
-                                                float a14 = i9.a(f10 / (org.telegram.messenger.g0.L(16.0f) / scaleX), 0.0f, 1.0f);
+                                                float a14 = l9.a(f10 / (org.telegram.messenger.g0.L(16.0f) / scaleX), 0.0f, 1.0f);
                                                 if (a14 > 0.4f) {
                                                     double d19 = 1.0f - a14;
                                                     double d20 = vVar.k;
@@ -715,7 +715,7 @@ public class u0 extends TextureView {
                                         if (f10 > org.telegram.messenger.g0.L(8.0f) / f11) {
                                             vVar.h = m0Var;
                                         }
-                                        vVar.w = i9.a((currentTimeMillis / 75.0f) + vVar.w, 0.6f, 1.0f);
+                                        vVar.w = l9.a((currentTimeMillis / 75.0f) + vVar.w, 0.6f, 1.0f);
                                         return;
                                     }
                                 }
@@ -733,7 +733,7 @@ public class u0 extends TextureView {
                     vVar.g = m0Var;
                     if (f10 > org.telegram.messenger.g0.L(8.0f) / f11) {
                     }
-                    vVar.w = i9.a((currentTimeMillis / 75.0f) + vVar.w, 0.6f, 1.0f);
+                    vVar.w = l9.a((currentTimeMillis / 75.0f) + vVar.w, 0.6f, 1.0f);
                     return;
                 }
                 return;
@@ -758,7 +758,7 @@ public class u0 extends TextureView {
         if (s0Var == null) {
             return;
         }
-        s0Var.postRunnable(new org.telegram.ui.web.e1(17, this, runnable));
+        s0Var.postRunnable(new p4.o0(9, this, runnable));
     }
 
     public h getCurrentBrush() {
@@ -797,10 +797,10 @@ public class u0 extends TextureView {
         i0 i0Var = this.c;
         float width = i0Var != null ? getWidth() / i0Var.g.a : 1.0f;
         float f10 = width > 0.0f ? width : 1.0f;
-        nt0 nt0Var = getPainting().g;
+        vt0 vt0Var = getPainting().g;
         matrix.preTranslate(getWidth() / 2.0f, getHeight() / 2.0f);
         matrix.preScale(f10, -f10);
-        matrix.preTranslate((-nt0Var.a) / 2.0f, (-nt0Var.b) / 2.0f);
+        matrix.preTranslate((-vt0Var.a) / 2.0f, (-vt0Var.b) / 2.0f);
         if (this.y instanceof g) {
             g1 g1Var = this.f;
             g1Var.getClass();
@@ -815,7 +815,7 @@ public class u0 extends TextureView {
             matrix.invert(matrix3);
         }
         s0 s0Var = this.d;
-        i0Var.y = ec.c(ec.b(s0Var.n, s0Var.r), ec.a(matrix));
+        i0Var.y = hc.c(hc.b(s0Var.n, s0Var.r), hc.a(matrix));
     }
 
     public void setBrush(h hVar) {
@@ -839,25 +839,25 @@ public class u0 extends TextureView {
             arrayList2.clear();
             arrayList.clear();
             g1Var.h = new x0(g.p(o4));
-            nt0 nt0Var = u0Var.getPainting().g;
+            vt0 vt0Var = u0Var.getPainting().g;
             x0 x0Var = g1Var.h;
-            float f10 = nt0Var.a;
+            float f10 = vt0Var.a;
             x0Var.b = f10 / 2.0f;
-            float f11 = nt0Var.b;
+            float f11 = vt0Var.b;
             x0Var.c = f11 / 2.0f;
             float min = Math.min(f10, f11) / 5.0f;
             x0Var.e = min;
             x0Var.d = min;
             g1Var.h.f = u0Var.getCurrentWeight();
             g1Var.h.g = org.telegram.messenger.g0.L(32.0f);
-            g1Var.h.l = k0.e(m10.t0).k;
+            g1Var.h.l = k0.e(j10.t0).k;
             if (g1Var.h.a.o() == 4) {
                 x0 x0Var2 = g1Var.h;
-                float f12 = nt0Var.a / 2.0f;
+                float f12 = vt0Var.a / 2.0f;
                 x0Var2.d = f12;
                 x0Var2.b = f12;
                 x0Var2.i = f12 + 1.0f;
-                float f13 = nt0Var.b;
+                float f13 = vt0Var.b;
                 float f14 = f13 / 3.0f;
                 float f15 = 1.0f * f14;
                 x0Var2.c = f15;
@@ -944,6 +944,6 @@ public class u0 extends TextureView {
     public void g(h hVar) {
     }
 
-    public void setQueue(q5 q5Var) {
+    public void setQueue(r5 r5Var) {
     }
 }

@@ -1,113 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class qa extends FrameLayout {
-    public final /* synthetic */ xb E;
-    public final cb a;
-    public final Rect b;
-    public final GestureDetector c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public float h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public boolean w;
-    public boolean x;
-    public final /* synthetic */ FrameLayout y;
+public final class qa extends bk0 {
+    public final /* synthetic */ int c;
+    public final Context d;
+    public final Object e;
+    public final /* synthetic */ KeyEvent.Callback f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qa(xb xbVar, cb cbVar, FrameLayout frameLayout) {
-        super(cbVar.getContext());
-        this.E = xbVar;
-        this.y = frameLayout;
-        this.b = new Rect();
-        this.a = cbVar;
-        GestureDetector gestureDetector = new GestureDetector(cbVar.getContext(), new mb(this, cbVar));
-        this.c = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(false);
-        addView(cbVar);
+    public qa(fj fjVar, Context context) {
+        this.c = 1;
+        this.f = fjVar;
+        this.e = new ArrayList();
+        this.d = context;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x011d  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z10 = this.e;
-        cb cbVar = this.a;
-        if (!z10) {
-            float x10 = motionEvent.getX();
-            float y10 = motionEvent.getY();
-            Rect rect = this.b;
-            cbVar.getHitRect(rect);
-            if (!rect.contains((int) x10, (int) y10)) {
-                return false;
-            }
+    @Override // v4.i0
+    public void B(v4.k0 k0Var) {
+        switch (this.c) {
+            case 0:
+                ((bk0) this.e).B(new pa(this, k0Var));
+                break;
+            default:
+                super.B(k0Var);
+                break;
         }
-        this.c.onTouchEvent(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        FrameLayout frameLayout = this.y;
-        xb xbVar = this.E;
-        if (actionMasked == 0) {
-            if (!this.e && !this.s) {
-                cbVar.animate().cancel();
-                this.n = 0.0f;
-                this.h = 0.0f;
-                this.r = false;
-                this.f = cbVar.getTranslationX();
-                System.currentTimeMillis();
-                xb xbVar2 = cbVar.bulletin;
-                this.d = xbVar2 == null || xbVar2.m;
-                this.e = true;
-                xbVar.i(false);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                if (cbVar.onClickListener != null) {
-                    cbVar.setPressed(true);
-                    return true;
-                }
-            }
-        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
-            if (!this.s) {
-                if (Math.abs(this.f) > cbVar.getWidth() / 3.0f) {
-                    float signum = Math.signum(this.f) * cbVar.getWidth();
-                    float f10 = this.f;
-                    cbVar.animate().translationX(signum).alpha(((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) < 0 && this.w) || ((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) > 0 && this.x) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(org.telegram.messenger.g0.G).withEndAction(new org.telegram.ui.a0(this, signum, 1)).start();
-                    this.e = false;
-                    xbVar.i(true);
-                    if (frameLayout.getParent() != null) {
-                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
-                    }
-                    if (cbVar.onClickListener != null) {
-                        cbVar.setPressed(false);
-                    }
-                } else {
-                    cbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
-                }
-            }
-            if (actionMasked == 1 && cbVar.isPressed() && (onClickListener = cbVar.onClickListener) != null && !this.r) {
-                onClickListener.onClick(cbVar);
-            }
-            this.e = false;
-            xbVar.i(true);
-            if (frameLayout.getParent() != null) {
-            }
-            if (cbVar.onClickListener != null) {
-            }
+    }
+
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        switch (this.c) {
+            case 0:
+                return ((bk0) this.e).D(f1Var);
+            default:
+                return f1Var.f == 0;
         }
-        return true;
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        switch (this.c) {
+            case 0:
+                return ((bk0) this.e).b() + 1;
+            default:
+                return ((ArrayList) this.e).size();
+        }
+    }
+
+    @Override // v4.i0
+    public final int d(int i7) {
+        switch (this.c) {
+            case 0:
+                sa saVar = (sa) this.f;
+                if (i7 == (saVar.K1 ? b() - 1 : 0)) {
+                    return -1000;
+                }
+                return ((bk0) this.e).d(i7 - (!saVar.K1 ? 1 : 0));
+            default:
+                return 0;
+        }
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        switch (this.c) {
+            case 0:
+                sa saVar = (sa) this.f;
+                if (i7 != (saVar.K1 ? b() - 1 : 0)) {
+                    ((bk0) this.e).t(f1Var, i7 - (!saVar.K1 ? 1 : 0));
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) f1Var.a;
+                uaVar.d(1, false, false);
+                uaVar.setSize(((fj) this.f).r);
+                uaVar.e(1, ((ArrayList) this.e).get(i7), null, 0);
+                break;
+        }
+    }
+
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        switch (this.c) {
+            case 0:
+                return i7 == -1000 ? new kj0(new bi.i3((sa) this.f, this.d)) : ((bk0) this.e).x(viewGroup, i7);
+            default:
+                ej ejVar = new ej(this, this.d);
+                ejVar.b = false;
+                return new kj0(ejVar);
+        }
+    }
+
+    public qa(sa saVar, bk0 bk0Var, Context context) {
+        this.c = 0;
+        this.f = saVar;
+        this.e = bk0Var;
+        this.d = context;
     }
 }

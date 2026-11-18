@@ -1,38 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tl0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dm0 b;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-    public /* synthetic */ tl0(dm0 dm0Var, int i7) {
-        this.a = i7;
-        this.b = dm0Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class tl0 extends org.telegram.ui.Components.k41 {
+    public static final /* synthetic */ int b = 0;
+
+    static {
+        org.telegram.ui.Components.k41.h(new tl0());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        dm0 dm0Var = this.b;
-        switch (i7) {
-            case 0:
-                if (dm0Var.H) {
-                    dm0Var.b.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                dm0Var.h();
-                break;
-            case 2:
-                int i10 = dm0.r0;
-                dm0Var.h();
-                break;
-            default:
-                int i11 = dm0.r0;
-                dm0Var.h();
-                break;
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.e51 e51Var) {
+        ul0 ul0Var = (ul0) view;
+        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) l41Var.H;
+        bi.d3 d3Var = ul0Var.h;
+        bi.y2 y2Var = ul0Var.e;
+        ul0Var.a = savedStarGift.gift.id;
+        ul0Var.setPadding(0, 0, 0, 0);
+        ul0Var.c(savedStarGift.gift.getDocument(), savedStarGift.gift);
+        ul0Var.b = (TL_stars.starGiftAttributeBackdrop) di.x8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        ul0Var.c = (TL_stars.starGiftAttributePattern) di.x8.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
+        y2Var.d(ul0Var.b);
+        y2Var.e(ul0Var.c);
+        if (d3Var != null) {
+            d3Var.setBackdrop(ul0Var.b);
+            String l10 = i5.c.l(savedStarGift.gift.num, ',', new StringBuilder("#"));
+            d3Var.b = l10;
+            d3Var.a.g(9, l10, false);
         }
+        ul0Var.b(l41Var.e, false);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, org.telegram.ui.Components.ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new ul0(context, i6Var, true);
     }
 }

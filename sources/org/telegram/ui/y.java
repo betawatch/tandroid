@@ -13,7 +13,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -31,8 +31,8 @@ public final /* synthetic */ class y implements View.OnClickListener {
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         TLRPC.Document document;
-        yw ywVar;
-        org.telegram.ui.ActionBar.u2 u2Var;
+        cx cxVar;
+        org.telegram.ui.ActionBar.x2 x2Var;
         int i7 = this.a;
         int i10 = 1;
         Object obj = this.d;
@@ -49,13 +49,13 @@ public final /* synthetic */ class y implements View.OnClickListener {
                     str = "about:blank";
                 }
                 org.telegram.messenger.g0.g(str);
-                new org.telegram.ui.Components.cc(k3Var.f, null).k(false).k(true);
+                new org.telegram.ui.Components.lc(k3Var.f, null).k(false).k(true);
                 break;
             case 1:
-                d7 d7Var = (d7) obj3;
-                y6 y6Var = (y6) obj;
+                c7 c7Var = (c7) obj3;
+                x6 x6Var = (x6) obj;
                 Bundle bundle = new Bundle();
-                ei.b bVar = ((m7) obj2).d;
+                ei.b bVar = ((l7) obj2).d;
                 long j3 = bVar.b;
                 if (j3 > 0) {
                     bundle.putLong("user_id", j3);
@@ -63,71 +63,71 @@ public final /* synthetic */ class y implements View.OnClickListener {
                     bundle.putLong("chat_id", -j3);
                 }
                 bundle.putInt("message_id", bVar.g);
-                y6Var.presentFragment(new an(bundle));
-                d7Var.f.G.dismiss();
-                org.telegram.ui.ActionBar.g1 g1Var = d7Var.a;
-                if (g1Var != null) {
-                    g1Var.d(true);
+                x6Var.presentFragment(new bn(bundle));
+                c7Var.f.G.dismiss();
+                org.telegram.ui.ActionBar.h1 h1Var = c7Var.a;
+                if (h1Var != null) {
+                    h1Var.d(true);
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.vh0 vh0Var = (org.telegram.ui.Components.vh0) obj3;
+                org.telegram.ui.Components.ei0 ei0Var = (org.telegram.ui.Components.ei0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (vh0Var == null || vh0Var.x) {
+                if (ei0Var == null || ei0Var.x) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
                 break;
             case 3:
-                an anVar = (an) obj3;
+                bn bnVar = (bn) obj3;
                 TL_keyboard.KeyboardInlineButton keyboardInlineButton = (TL_keyboard.KeyboardInlineButton) obj2;
-                org.telegram.messenger.gj gjVar = (org.telegram.messenger.gj) obj;
-                if (anVar.getParentActivity() != null) {
-                    if (anVar.d1.getVisibility() != 0 || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) {
-                        anVar.a0.i0(keyboardInlineButton, gjVar, gjVar, null);
+                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                if (bnVar.getParentActivity() != null) {
+                    if (bnVar.d1.getVisibility() != 0 || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeSwitchInline.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeCallback.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeGame.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrl.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeBuy.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUrlAuth.class) || cg.c.c(keyboardInlineButton, TL_keyboard.TL_inlineButtonTypeUserProfile.class)) {
+                        bnVar.a0.p0(keyboardInlineButton, fjVar, fjVar, null);
                         break;
                     }
                 }
                 break;
             case 4:
-                ((an) obj3).Xa((org.telegram.ui.Cells.z) obj2, (TLRPC.ReactionCount) obj, 0.0f, 0.0f);
+                ((bn) obj3).Xa((org.telegram.ui.Cells.z) obj2, (TLRPC.ReactionCount) obj, 0.0f, 0.0f);
                 break;
             case 5:
-                an.k0((an) obj3, (boolean[]) obj2, (Context) obj);
+                bn.k0((bn) obj3, (boolean[]) obj2, (Context) obj);
                 break;
             case 6:
-                an.g1((an) obj3, (sj) obj2, (boolean[]) obj);
+                bn.g1((bn) obj3, (tj) obj2, (boolean[]) obj);
                 break;
             case 7:
-                lm lmVar = (lm) obj3;
+                mm mmVar = (mm) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj2;
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) obj;
-                org.telegram.ui.ActionBar.e2 e2Var = lmVar.a;
-                e2Var.finishPreviewFragment();
+                org.telegram.ui.ActionBar.h2 h2Var = mmVar.a;
+                h2Var.finishPreviewFragment();
                 chat.left = false;
                 if (q1Var != null && q1Var.w != null) {
-                    e2Var.getNotificationCenter().k(org.telegram.messenger.ns.f3, Long.valueOf(q1Var.w.e));
+                    h2Var.getNotificationCenter().k(203, Long.valueOf(q1Var.w.e));
                 }
-                e2Var.getMessagesController().n(chat.id, e2Var.getUserConfig().f(), null, e2Var, new wl(lmVar, chat, 3));
+                h2Var.getMessagesController().n(chat.id, h2Var.getUserConfig().f(), null, h2Var, new xl(mmVar, chat, 3));
                 break;
             case 8:
-                qn qnVar = (qn) obj3;
-                org.telegram.ui.Cells.g6[] g6VarArr = (org.telegram.ui.Cells.g6[]) obj2;
-                org.telegram.messenger.ou ouVar = (org.telegram.messenger.ou) obj;
+                rn rnVar = (rn) obj3;
+                org.telegram.ui.Cells.h6[] h6VarArr = (org.telegram.ui.Cells.h6[]) obj2;
+                hi.w4 w4Var = (hi.w4) obj;
                 Integer num = (Integer) view.getTag();
-                g6VarArr[0].a(num.intValue() == 0);
-                g6VarArr[1].a(num.intValue() == 1);
-                qnVar.K0 = num.intValue() == 1;
-                ((org.telegram.ui.ActionBar.u2) ouVar.b).y0.run();
-                qnVar.u0(true, true);
+                h6VarArr[0].a(num.intValue() == 0);
+                h6VarArr[1].a(num.intValue() == 1);
+                rnVar.K0 = num.intValue() == 1;
+                ((org.telegram.ui.ActionBar.x2) w4Var.b).y0.run();
+                rnVar.u0(true, true);
                 break;
             case 9:
-                org.telegram.messenger.gj gjVar2 = (org.telegram.messenger.gj) obj2;
-                PhotoViewer photoViewer = ((uq) obj3).c.a;
+                org.telegram.messenger.fj fjVar2 = (org.telegram.messenger.fj) obj2;
+                PhotoViewer photoViewer = ((vq) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.Z8;
-                ArrayList arrayList = ((org.telegram.ui.Components.r51) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.c61) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -137,21 +137,21 @@ public final /* synthetic */ class y implements View.OnClickListener {
                         if (i11 < size) {
                             Object obj4 = arrayList.get(i11);
                             i11++;
-                            org.telegram.ui.Components.t51 t51Var = (org.telegram.ui.Components.t51) obj4;
-                            if (t51Var.b()) {
-                                document = t51Var.g;
+                            org.telegram.ui.Components.e61 e61Var = (org.telegram.ui.Components.e61) obj4;
+                            if (e61Var.b()) {
+                                document = e61Var.g;
                             }
                         } else {
                             long j10 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.t51 t51Var2 = null;
+                            org.telegram.ui.Components.e61 e61Var2 = null;
                             for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                                org.telegram.ui.Components.t51 t51Var3 = (org.telegram.ui.Components.t51) arrayList.get(i12);
-                                if (t51Var3.k < j10 && org.telegram.ui.Components.u51.D0(t51Var3.m)) {
-                                    j10 = t51Var3.k;
-                                    t51Var2 = t51Var3;
+                                org.telegram.ui.Components.e61 e61Var3 = (org.telegram.ui.Components.e61) arrayList.get(i12);
+                                if (e61Var3.k < j10 && org.telegram.ui.Components.f61.D0(e61Var3.m)) {
+                                    j10 = e61Var3.k;
+                                    e61Var2 = e61Var3;
                                 }
                             }
-                            document = t51Var2 != null ? t51Var2.g : ((org.telegram.ui.Components.t51) arrayList.get(0)).g;
+                            document = e61Var2 != null ? e61Var2.g : ((org.telegram.ui.Components.e61) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -165,79 +165,79 @@ public final /* synthetic */ class y implements View.OnClickListener {
                     int i13 = 2;
                     if (J == null || !J.exists()) {
                         ArrayList arrayList2 = new ArrayList();
-                        gjVar2.f3 = document;
-                        arrayList2.add(gjVar2);
+                        fjVar2.f3 = document;
+                        arrayList2.add(fjVar2);
                         MediaController.g0(photoViewer.E, org.telegram.messenger.c.a(photoViewer.U), arrayList2, new na(photoViewer, i13));
                     } else {
-                        MediaController.d0(J.toString(), photoViewer.E, 1, null, null, new ln0(photoViewer, i13));
+                        MediaController.d0(J.toString(), photoViewer.E, 1, null, null, new on0(photoViewer, i13));
                     }
                     photoViewer.p0.V(null, null);
                     break;
                 }
                 break;
             case 10:
-                pr prVar = (pr) obj3;
+                qr qrVar = (qr) obj3;
                 TLRPC.User user = (TLRPC.User) obj;
-                org.telegram.ui.Components.t4.L((Context) obj2, org.telegram.messenger.hd.M0(2131746086, null), org.telegram.messenger.hd.a0(null, null, 2131746087, user.first_name), org.telegram.messenger.hd.M0(2131746118, null), new hr(prVar, user, i10), prVar.r).p();
+                org.telegram.ui.Components.b5.L((Context) obj2, org.telegram.messenger.gd.M0(2131745891, null), org.telegram.messenger.gd.a0(null, null, 2131745892, user.first_name), org.telegram.messenger.gd.M0(2131745923, null), new ir(qrVar, user, i10), qrVar.r).p();
                 break;
             case 11:
-                je0 je0Var = (je0) obj3;
-                ((org.telegram.ui.Components.m60) obj2).u();
-                int i14 = ((org.telegram.messenger.so) obj).a;
-                if (je0Var.c.getCurrentPosition() != 0 || (ywVar = je0Var.K) == null) {
-                    if (je0Var.K == null) {
-                        je0Var.r0(null);
+                le0 le0Var = (le0) obj3;
+                ((org.telegram.ui.Components.y60) obj2).v();
+                int i14 = ((org.telegram.messenger.ro) obj).a;
+                if (le0Var.c.getCurrentPosition() != 0 || (cxVar = le0Var.K) == null) {
+                    if (le0Var.K == null) {
+                        le0Var.r0(null);
                     }
-                    je0Var.J = Integer.valueOf(i14);
-                    je0Var.s0(0, true);
-                    je0Var.c.C(0);
+                    le0Var.J = Integer.valueOf(i14);
+                    le0Var.s0(0, true);
+                    le0Var.c.A(0);
                     break;
                 } else {
-                    ywVar.I4(i14);
+                    cxVar.Q4(i14);
                     break;
                 }
                 break;
             case 12:
-                org.telegram.ui.ActionBar.u2[] u2VarArr = (org.telegram.ui.ActionBar.u2[]) obj3;
-                org.telegram.messenger.z10 z10Var = (org.telegram.messenger.z10) obj;
+                org.telegram.ui.ActionBar.x2[] x2VarArr = (org.telegram.ui.ActionBar.x2[]) obj3;
+                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) obj;
                 String str2 = (String) obj2;
-                org.telegram.ui.ActionBar.u2 u2Var2 = u2VarArr[0];
-                if (u2Var2 != null) {
-                    u2Var2.dismiss();
-                    u2VarArr[0] = null;
-                    z10Var.a(str2);
+                org.telegram.ui.ActionBar.x2 x2Var2 = x2VarArr[0];
+                if (x2Var2 != null) {
+                    x2Var2.dismiss();
+                    x2VarArr[0] = null;
+                    x10Var.a(str2);
                     break;
                 }
                 break;
             case 13:
-                org.telegram.ui.ActionBar.u2[] u2VarArr2 = (org.telegram.ui.ActionBar.u2[]) obj2;
+                org.telegram.ui.ActionBar.x2[] x2VarArr2 = (org.telegram.ui.ActionBar.x2[]) obj2;
                 Runnable runnable = (Runnable) obj;
-                if (!((hi.d) obj3).R && (u2Var = u2VarArr2[0]) != null) {
-                    u2Var.dismiss();
-                    u2VarArr2[0] = null;
+                if (!((hi.d) obj3).R && (x2Var = x2VarArr2[0]) != null) {
+                    x2Var.dismiss();
+                    x2VarArr2[0] = null;
                     runnable.run();
                     break;
                 }
                 break;
             case 14:
-                ProfileActivity.e0((ProfileActivity) obj3, (TLRPC.User) obj2, (org.telegram.ui.ActionBar.j5) obj);
+                ProfileActivity.e0((ProfileActivity) obj3, (TLRPC.User) obj2, (org.telegram.ui.ActionBar.n5) obj);
                 break;
             default:
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj3;
                 saveToGallerySettingsActivity.getClass();
-                ((org.telegram.ui.ActionBar.g1) obj2).dismiss();
+                ((org.telegram.ui.ActionBar.h1) obj2).dismiss();
                 LongSparseArray m10 = saveToGallerySettingsActivity.getUserConfig().m(saveToGallerySettingsActivity.a);
-                m10.remove(((org.telegram.messenger.ov) obj).d);
+                m10.remove(((org.telegram.messenger.kv) obj).d);
                 saveToGallerySettingsActivity.getUserConfig().A(saveToGallerySettingsActivity.a, m10);
                 saveToGallerySettingsActivity.e0();
                 break;
         }
     }
 
-    public /* synthetic */ y(org.telegram.ui.ActionBar.u2[] u2VarArr, org.telegram.messenger.z10 z10Var, String str) {
+    public /* synthetic */ y(org.telegram.ui.ActionBar.x2[] x2VarArr, org.telegram.messenger.x10 x10Var, String str) {
         this.a = 12;
-        this.b = u2VarArr;
-        this.d = z10Var;
+        this.b = x2VarArr;
+        this.d = x10Var;
         this.c = str;
     }
 }

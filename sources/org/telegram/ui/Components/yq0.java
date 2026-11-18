@@ -1,60 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class yq0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ys0 b;
+public final class yq0 extends org.telegram.ui.Cells.g7 {
+    public final /* synthetic */ gt0 m0;
 
-    public /* synthetic */ yq0(ys0 ys0Var, int i7) {
-        this.a = i7;
-        this.b = ys0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yq0(gt0 gt0Var, Context context) {
+        super(context);
+        this.m0 = gt0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.O0 = null;
-                break;
-            default:
-                ys0 ys0Var = this.b;
-                org.telegram.ui.ActionBar.q0 q0Var = ys0Var.q0;
-                tr0[] tr0VarArr = ys0Var.n0;
-                ys0Var.i1 = null;
-                if (ys0Var.l1) {
-                    tr0VarArr[1].setVisibility(8);
-                    if (q0Var == null || ys0Var.I()) {
-                        ys0Var.r0 = ys0Var.l0(0.0f);
-                        ys0Var.M1(0.0f);
-                    } else {
-                        ys0Var.setSearchItemVisibility(ys0Var.I0() ? 8 : 4);
-                        ys0Var.r0 = 0.0f;
-                    }
-                    ys0Var.I1(false);
-                    ys0Var.A0 = 0;
-                } else {
-                    tr0 tr0Var = tr0VarArr[0];
-                    tr0VarArr[0] = tr0VarArr[1];
-                    tr0VarArr[1] = tr0Var;
-                    tr0Var.setVisibility(8);
-                    if (q0Var != null && ys0Var.A0 == 2) {
-                        ys0Var.setSearchItemVisibility(ys0Var.I0() ? 8 : 4);
-                    }
-                    ys0Var.A0 = 0;
-                    ys0Var.l1(1.0f, tr0VarArr[0].F);
-                    ys0Var.Y0();
-                    ys0Var.u1();
-                }
-                ys0Var.j1 = false;
-                ys0Var.B1 = false;
-                ys0Var.A1 = false;
-                ys0Var.setHeaderEnabled(true);
-                ys0Var.L0.setEnabled(true);
-                break;
+    @Override // org.telegram.ui.Cells.g7
+    public final boolean d(org.telegram.messenger.fj fjVar) {
+        long playlistTopicId;
+        gt0 gt0Var = this.m0;
+        vs0[] vs0VarArr = gt0Var.w1;
+        if (org.telegram.messenger.fj.R4(fjVar.k) || fjVar.h4()) {
+            boolean S = MediaController.B().S(fjVar);
+            MediaController.B().r0(S ? vs0VarArr[4].a : null, false);
+            return S;
         }
+        if (!fjVar.I3()) {
+            return false;
+        }
+        MediaController B = MediaController.B();
+        ArrayList arrayList = vs0VarArr[4].a;
+        long j3 = gt0Var.f1;
+        playlistTopicId = gt0Var.getPlaylistTopicId();
+        return B.o0(arrayList, fjVar, j3, true, null, playlistTopicId);
     }
 }

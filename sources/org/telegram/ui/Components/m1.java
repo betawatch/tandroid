@@ -1,55 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import android.app.Activity;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m1 implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class m1 implements Runnable {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
-    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.messenger.x10 e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ m1(int i7, int[] iArr, org.telegram.ui.g50 g50Var) {
+    public /* synthetic */ m1(int i7, long j3, long j10, org.telegram.messenger.x10 x10Var, long j11, int i10) {
+        this.a = i10;
         this.b = i7;
-        this.c = iArr;
-        this.d = g50Var;
+        this.c = j3;
+        this.d = j10;
+        this.e = x10Var;
+        this.f = j11;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i7 = this.a;
-        Runnable runnable = this.d;
-        int[] iArr = this.c;
-        int i10 = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                for (int i11 : iArr) {
-                    if (i11 != 0) {
-                        ConnectionsManager.getInstance(i10).cancelRequest(i11, true);
-                    }
-                }
-                if (runnable != null) {
-                    runnable.run();
+                int i7 = this.b;
+                long j3 = di.x8.y(i7, false).p().amount;
+                long j10 = this.c;
+                org.telegram.messenger.x10 x10Var = this.e;
+                long j11 = this.f;
+                if (j3 >= j10) {
+                    x10Var.a(Long.valueOf(j11));
                     break;
+                } else {
+                    Activity u02 = org.telegram.messenger.g0.u0();
+                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    org.telegram.ui.ActionBar.i6 bVar = (PhotoViewer.p1().P1() || (T != null && T.hasShownSheet())) ? new fi.b() : T != null ? T.getResourceProvider() : null;
+                    if (u02 != null) {
+                        long j12 = this.d;
+                        new di.fb(u02, bVar, j10, 13, org.telegram.messenger.n5.s(i7, j12), new org.telegram.ui.a6(1, j11, x10Var), j12).show();
+                        break;
+                    }
                 }
                 break;
             default:
-                String str = LaunchActivity.C1;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                if (runnable != null) {
-                    runnable.run();
+                int i10 = this.b;
+                m1 m1Var = new m1(i10, this.c, this.d, this.e, this.f, 0);
+                if (!di.x8.y(i10, false).e) {
+                    di.x8 y10 = di.x8.y(i10, false);
+                    y10.e = false;
+                    y10.q(m1Var, false, true);
+                    y10.e = true;
+                    break;
+                } else {
+                    m1Var.run();
                     break;
                 }
-                break;
         }
-    }
-
-    public /* synthetic */ m1(int[] iArr, int i7, Runnable runnable) {
-        this.c = iArr;
-        this.b = i7;
-        this.d = runnable;
     }
 }

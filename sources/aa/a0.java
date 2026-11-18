@@ -10,7 +10,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a0 {
     public static final Pattern g = Pattern.compile("[^\\p{Alnum}]");
@@ -33,7 +33,7 @@ public final class a0 {
         this.c = str;
         this.d = dVar;
         this.e = wVar;
-        this.a = new b0(0);
+        this.a = new b0();
     }
 
     public final synchronized String a(String str, SharedPreferences sharedPreferences) {
@@ -125,14 +125,14 @@ public final class a0 {
         Context context = this.b;
         synchronized (b0Var) {
             try {
-                if (b0Var.b == null) {
+                if (b0Var.a == null) {
                     String installerPackageName = context.getPackageManager().getInstallerPackageName(context.getPackageName());
                     if (installerPackageName == null) {
                         installerPackageName = "";
                     }
-                    b0Var.b = installerPackageName;
+                    b0Var.a = installerPackageName;
                 }
-                str = "".equals(b0Var.b) ? null : b0Var.b;
+                str = "".equals(b0Var.a) ? null : b0Var.a;
             } finally {
             }
         }

@@ -23,7 +23,7 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final n6.c[] D = new n6.c[0];
@@ -54,7 +54,7 @@ public abstract class d {
     public final int v;
     public final String w;
     public volatile String x;
-    public volatile x9.d y;
+    public volatile v4.f0 y;
     public n6.a z;
 
     public d(Context context, Looper looper, l0 l0Var, int i7, n nVar, n nVar2, String str) {
@@ -68,11 +68,11 @@ public abstract class d {
         this.A = false;
         this.B = null;
         this.C = new AtomicInteger(0);
-        m.h(context, "Context must not be null");
+        m.i(context, "Context must not be null");
         this.h = context;
-        m.h(looper, "Looper must not be null");
+        m.i(looper, "Looper must not be null");
         this.i = looper;
-        m.h(l0Var, "Supervisor must not be null");
+        m.i(l0Var, "Supervisor must not be null");
         this.j = l0Var;
         this.k = new c0(this, looper);
         this.v = i7;
@@ -94,7 +94,7 @@ public abstract class d {
                     if (e0Var != null) {
                         l0 l0Var = this.j;
                         String str = (String) this.g.c;
-                        m.g(str);
+                        m.h(str);
                         String str2 = (String) this.g.d;
                         if (this.w == null) {
                             this.h.getClass();
@@ -115,7 +115,7 @@ public abstract class d {
                         Log.e("GmsClient", sb2.toString());
                         l0 l0Var2 = this.j;
                         String str5 = (String) this.g.c;
-                        m.g(str5);
+                        m.h(str5);
                         String str6 = (String) this.g.d;
                         if (this.w == null) {
                             this.h.getClass();
@@ -134,7 +134,7 @@ public abstract class d {
                     }
                     l0 l0Var3 = this.j;
                     String str7 = (String) this.g.c;
-                    m.g(str7);
+                    m.h(str7);
                     String str8 = (String) this.g.d;
                     String str9 = this.w;
                     if (str9 == null) {
@@ -165,7 +165,7 @@ public abstract class d {
                         c0Var.sendMessage(c0Var.obtainMessage(7, i11, -1, g0Var));
                     }
                 } else if (i7 == 4) {
-                    m.g(iInterface);
+                    m.h(iInterface);
                     IInterface iInterface2 = iInterface;
                     this.c = System.currentTimeMillis();
                 }
@@ -361,7 +361,7 @@ public abstract class d {
     }
 
     public void h(b bVar) {
-        m.h(bVar, "Connection progress callbacks cannot be null.");
+        m.i(bVar, "Connection progress callbacks cannot be null.");
         this.o = bVar;
         A(2, null);
     }
@@ -396,7 +396,7 @@ public abstract class d {
                     throw new IllegalStateException("Not connected. Call connect() and wait for onConnected() to be called.");
                 }
                 IInterface iInterface2 = this.p;
-                m.h(iInterface2, "Client is connected but service is null");
+                m.i(iInterface2, "Client is connected but service is null");
                 iInterface = iInterface2;
             } catch (Throwable th2) {
                 throw th2;

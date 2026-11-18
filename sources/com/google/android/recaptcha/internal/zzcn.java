@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
 import com.google.android.gms.internal.vision.e2;
-import org.telegram.ui.Cells.y0;
+import p5.c;
 import xd.d;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzcn implements Comparable {
     private int zza;
@@ -12,7 +12,7 @@ public final class zzcn implements Comparable {
     private long zzc;
 
     public final String toString() {
-        return y0.m(d.k(10, String.valueOf(this.zzb)), " us| #Usages: ", d.k(5, String.valueOf(this.zza)), e2.n("avgExecutionTime: ", d.k(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", d.k(10, String.valueOf(this.zzc)), " us| totalTime: "));
+        return c.m(d.k(10, String.valueOf(this.zzb)), " us| #Usages: ", d.k(5, String.valueOf(this.zza)), e2.n("avgExecutionTime: ", d.k(10, String.valueOf(this.zzb / this.zza)), " us| maxExecutionTime: ", d.k(10, String.valueOf(this.zzc)), " us| totalTime: "));
     }
 
     @Override // java.lang.Comparable

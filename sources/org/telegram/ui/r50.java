@@ -1,99 +1,90 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
-import org.telegram.messenger.Intro;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r50 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.is b;
+public final class r50 extends ReplacementSpan {
+    public final Paint a;
+    public final ImageReceiver b;
+    public final float c;
+    public float d;
+    public final View e;
+    public boolean f;
+    public float h;
+    public int n;
 
-    public /* synthetic */ r50(org.telegram.messenger.is isVar, int i7) {
-        this.a = i7;
-        this.b = isVar;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                t50 t50Var = (t50) this.b;
-                if (t50Var.J == null && surfaceTexture != null) {
-                    t50Var.J = new s50(t50Var, surfaceTexture);
-                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
-                    t50Var.J.postRunnable(new iz(this, 12));
-                    s50 s50Var = t50Var.J;
-                    s50Var.postRunnable(s50Var.x);
-                    break;
-                }
-                break;
+    public r50(float f10, int i7, View view) {
+        e5 e5Var = new e5(this, 3);
+        this.f = true;
+        this.n = org.telegram.messenger.ks.e4;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.b = imageReceiver;
+        imageReceiver.d = i7;
+        this.c = f10;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), 855638016);
+        View view2 = this.e;
+        if (view2 == view) {
+            return;
+        }
+        if (view2 != null) {
+            view2.removeOnAttachStateChangeListener(e5Var);
+            if (this.e.isAttachedToWindow() && !view.isAttachedToWindow()) {
+                imageReceiver.R();
+            }
+        }
+        View view3 = this.e;
+        if ((view3 == null || !view3.isAttachedToWindow()) && view != null && view.isAttachedToWindow()) {
+            imageReceiver.P();
+        }
+        this.e = view;
+        imageReceiver.H0(view);
+        if (view != null) {
+            view.addOnAttachStateChangeListener(e5Var);
         }
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                t50 t50Var = (t50) this.b;
-                s50 s50Var = t50Var.J;
-                if (s50Var == null) {
-                    return true;
-                }
-                s50Var.postRunnable(new iz(s50Var, 14));
-                t50Var.J = null;
-                return true;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                TextureView textureView = photoViewer.C2;
-                if (textureView == null || !photoViewer.F3) {
-                    return true;
-                }
-                if (photoViewer.L3) {
-                    photoViewer.G3 = 2;
-                }
-                textureView.setSurfaceTexture(surfaceTexture);
-                photoViewer.C2.setVisibility(0);
-                photoViewer.F3 = false;
-                photoViewer.f0.invalidate();
-                return false;
+    public final void a(float f10) {
+        float L = org.telegram.messenger.g0.L(f10);
+        this.d = L;
+        this.b.J0((int) L);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        boolean z10 = this.f;
+        Paint paint2 = this.a;
+        if (z10 && this.n != paint.getAlpha()) {
+            int alpha = paint.getAlpha();
+            this.n = alpha;
+            paint2.setAlpha(alpha);
+            paint2.setShadowLayer(org.telegram.messenger.g0.L(1.0f), 0.0f, org.telegram.messenger.g0.L(0.66f), org.telegram.ui.ActionBar.n6.r1(this.n / 255.0f, 855638016));
         }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                if (((t50) this.b).J != null) {
-                    Intro.onSurfaceChanged(i7, i10, Math.min(i7 / 150.0f, i10 / 150.0f), 0);
-                    break;
-                }
-                break;
+        float f11 = this.h + f10;
+        float L = (((i11 + i13) / 2.0f) + 0.0f) - (org.telegram.messenger.g0.L(this.c) / 2.0f);
+        if (this.f) {
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(f11, L, org.telegram.messenger.g0.L(this.c) + f11, org.telegram.messenger.g0.L(this.c) + L);
+            float f12 = this.d;
+            canvas.drawRoundRect(rectF, f12, f12, paint2);
         }
+        float L2 = org.telegram.messenger.g0.L(this.c);
+        float L3 = org.telegram.messenger.g0.L(this.c);
+        ImageReceiver imageReceiver = this.b;
+        imageReceiver.y0(f11, L, L2, L3);
+        imageReceiver.setAlpha(paint.getAlpha() / 255.0f);
+        imageReceiver.h(canvas, null);
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.G3 == 1) {
-                    photoViewer.q0(true);
-                    break;
-                }
-                break;
-        }
-    }
-
-    private final void c(SurfaceTexture surfaceTexture) {
-    }
-
-    private final void a(SurfaceTexture surfaceTexture, int i7, int i10) {
-    }
-
-    private final void b(SurfaceTexture surfaceTexture, int i7, int i10) {
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        return org.telegram.messenger.g0.L(this.c);
     }
 }

@@ -1,6 +1,6 @@
 package o2;
 
-import a8.ja;
+import a8.la;
 import e2.f0;
 import e2.i1;
 import e2.k1;
@@ -8,7 +8,7 @@ import e2.l0;
 import e2.l1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends l1 {
     public final long e;
@@ -23,7 +23,7 @@ public final class e extends l1 {
     public final f0 n;
 
     public e(long j3, long j10, long j11, int i7, long j12, long j13, long j14, p2.c cVar, l0 l0Var, f0 f0Var) {
-        ja.p(cVar.d == (f0Var != null));
+        la.p(cVar.d == (f0Var != null));
         this.e = j3;
         this.f = j10;
         this.g = j11;
@@ -47,7 +47,7 @@ public final class e extends l1 {
 
     @Override // e2.l1
     public final i1 f(int i7, i1 i1Var, boolean z10) {
-        ja.j(i7, h());
+        la.j(i7, h());
         p2.c cVar = this.l;
         String str = z10 ? cVar.b(i7).a : null;
         Integer valueOf = z10 ? Integer.valueOf(this.h + i7) : null;
@@ -65,7 +65,7 @@ public final class e extends l1 {
 
     @Override // e2.l1
     public final Object l(int i7) {
-        ja.j(i7, h());
+        la.j(i7, h());
         return Integer.valueOf(this.h + i7);
     }
 
@@ -76,7 +76,7 @@ public final class e extends l1 {
         boolean z11;
         long j11;
         i c10;
-        ja.j(i7, 1);
+        la.j(i7, 1);
         p2.c cVar = this.l;
         boolean z12 = cVar.d;
         long j12 = this.k;
@@ -120,8 +120,8 @@ public final class e extends l1 {
                 i11++;
                 j13 = j11;
             }
-            if (i11 != -1 && (c10 = ((p2.m) ((p2.a) b10.c.get(i11)).c.get(0)).c()) != null && c10.t0(d) != j11) {
-                j12 = (c10.b(c10.L(j14, d)) + j12) - j14;
+            if (i11 != -1 && (c10 = ((p2.m) ((p2.a) b10.c.get(i11)).c.get(0)).c()) != null && c10.y(d) != j11) {
+                j12 = (c10.a(c10.o(j14, d)) + j12) - j14;
             }
         } else {
             z10 = true;

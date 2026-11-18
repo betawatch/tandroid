@@ -1,43 +1,7 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zt0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.Document b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.messenger.gj d;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 e;
-    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
-
-    public /* synthetic */ zt0(TLRPC.Document document, int i7, org.telegram.messenger.gj gjVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
-        this.a = i10;
-        this.b = document;
-        this.c = i7;
-        this.d = gjVar;
-        this.e = q1Var;
-        this.f = tL_messages_stickerSet;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                TLRPC.Document document = this.b;
-                String r10 = org.telegram.messenger.w7.r(null, document);
-                int i7 = this.c;
-                org.telegram.messenger.z5.q(i7).a(r10, this.d, this.e);
-                org.telegram.messenger.w7.G(i7).W(document, this.f, 1, 1);
-                break;
-            default:
-                TLRPC.Document document2 = this.b;
-                String r11 = org.telegram.messenger.w7.r(null, document2);
-                int i10 = this.c;
-                org.telegram.messenger.z5.q(i10).a(r11, this.d, this.e);
-                org.telegram.messenger.w7.G(i10).W(document2, this.f, 1, 1);
-                break;
-        }
-    }
+public interface zt0 {
+    void L(int i7, boolean z10);
 }

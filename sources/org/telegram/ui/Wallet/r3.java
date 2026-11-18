@@ -1,22 +1,31 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.LinearGradient;
-import android.graphics.Shader;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.ui.Components.f30;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class r3 extends ShapeDrawable.ShaderFactory {
-    public final /* synthetic */ f30 a;
+public final /* synthetic */ class r3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 b;
+    public final /* synthetic */ TL_wallet.card c;
 
-    public r3(f30 f30Var) {
-        this.a = f30Var;
+    public /* synthetic */ r3(org.telegram.ui.ActionBar.h2 h2Var, TL_wallet.card cardVar, int i7) {
+        this.a = i7;
+        this.b = h2Var;
+        this.c = cardVar;
     }
 
-    @Override // android.graphics.drawable.ShapeDrawable.ShaderFactory
-    public final Shader resize(int i7, int i10) {
-        f30 f30Var = this.a;
-        return new LinearGradient(0.0f, 0.0f, 0.0f, i10, f30Var.a, f30Var.b, Shader.TileMode.CLAMP);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.h2 h2Var = this.b;
+                h2Var.presentFragment(new da(h2Var.getCurrentAccount(), this.c.address));
+                break;
+            default:
+                org.telegram.ui.ActionBar.h2 h2Var2 = this.b;
+                h2Var2.presentFragment(new da(h2Var2.getCurrentAccount(), this.c.address));
+                break;
+        }
     }
 }

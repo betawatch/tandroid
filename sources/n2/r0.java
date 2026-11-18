@@ -1,6 +1,6 @@
 package n2;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.media.AudioDeviceInfo;
 import android.media.AudioTrack;
@@ -9,8 +9,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
-import fi.a4;
-import h9.s1;
+import fi.y3;
+import h9.t1;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -18,10 +18,9 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
-import kg.j1;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r0 implements x {
     public static final AtomicInteger c0 = new AtomicInteger();
@@ -57,19 +56,19 @@ public final class r0 implements x {
     public Handler b0;
     public final k0 c;
     public final a1 d;
-    public final f2.s e;
+    public final f2.t e;
     public final z0 f;
-    public final s1 g;
+    public final t1 g;
     public final ArrayDeque h;
     public int i;
     public n0 j;
     public final q0 k;
     public final q0 l;
-    public m2.j m;
+    public m2.i m;
     public v n;
     public o0 o;
     public o0 p;
-    public f2.i q;
+    public f2.j q;
     public o r;
     public m0 s;
     public g0 t;
@@ -80,20 +79,20 @@ public final class r0 implements x {
     public boolean y;
     public long z;
 
-    public r0(a4 a4Var) {
+    public r0(y3 y3Var) {
         int deviceId;
-        Context context = (Context) a4Var.b;
+        Context context = (Context) y3Var.b;
         this.a = context == null ? null : context.getApplicationContext();
         this.u = e2.e.i;
-        this.b = (h6.m) a4Var.d;
+        this.b = (h6.m) y3Var.d;
         this.i = 0;
-        this.r = (i0) a4Var.f;
+        this.r = (i0) y3Var.f;
         k0 k0Var = new k0();
         this.c = k0Var;
         a1 a1Var = new a1();
         a1Var.m = h2.l0.b;
         this.d = a1Var;
-        this.e = new f2.s();
+        this.e = new f2.t();
         this.f = new z0();
         this.g = h9.i0.v(a1Var, k0Var);
         this.H = 1.0f;
@@ -291,7 +290,7 @@ public final class r0 implements x {
         byte b10;
         int i10;
         int i11;
-        ja.p(this.K == null);
+        la.p(this.K == null);
         if (byteBuffer.hasRemaining()) {
             if (o0.a(this.p)) {
                 int a02 = (int) h2.l0.a0(h2.l0.S(20L), ((n) this.p.e).b, 1000000L, RoundingMode.UP);
@@ -310,7 +309,7 @@ public final class r0 implements x {
                                 i11 = (byteBuffer.get() & 255) << 24;
                             } else if (i12 == 4) {
                                 float h = h2.l0.h(byteBuffer.getFloat(), -1.0f, 1.0f);
-                                i11 = (int) (h < 0.0f ? (-h) * (-2.14748365E9f) : h * 2.14748365E9f);
+                                i11 = (int) (h < 0.0f ? (-h) * (-2.1474836E9f) : h * 2.1474836E9f);
                             } else if (i12 == 21) {
                                 i7 = ((byteBuffer.get() & 255) << 8) | ((byteBuffer.get() & 255) << 16);
                                 b10 = byteBuffer.get();
@@ -375,9 +374,9 @@ public final class r0 implements x {
                                     }
                                 }
                             } else if (i15 < 0) {
-                                byteBuffer2.putFloat((-i15) / (-2.14748365E9f));
+                                byteBuffer2.putFloat((-i15) / (-2.1474836E9f));
                             } else {
-                                byteBuffer2.putFloat(i15 / 2.14748365E9f);
+                                byteBuffer2.putFloat(i15 / 2.1474836E9f);
                             }
                             if (byteBuffer.position() != position + i13) {
                                 i14++;
@@ -439,19 +438,19 @@ public final class r0 implements x {
             } else {
                 int i7 = ((e2.u) this.p.c).M;
                 w0Var = this.x;
-                f2.r rVar = (f2.r) mVar.d;
+                f2.s sVar = (f2.s) mVar.d;
                 float f10 = w0Var.a;
-                rVar.getClass();
-                ja.f(f10 > 0.0f);
-                if (rVar.c != f10) {
-                    rVar.c = f10;
-                    rVar.i = true;
+                sVar.getClass();
+                la.f(f10 > 0.0f);
+                if (sVar.c != f10) {
+                    sVar.c = f10;
+                    sVar.i = true;
                 }
                 float f11 = w0Var.b;
-                ja.f(f11 > 0.0f);
-                if (rVar.d != f11) {
-                    rVar.d = f11;
-                    rVar.i = true;
+                la.f(f11 > 0.0f);
+                if (sVar.d != f11) {
+                    sVar.d = f11;
+                    sVar.i = true;
                 }
             }
             this.x = w0Var;
@@ -464,12 +463,12 @@ public final class r0 implements x {
         }
         this.y = z10;
         this.h.add(new p0(w0Var2, Math.max(0L, j3), h2.l0.Y(((n) this.p.e).b, l())));
-        f2.i iVar = (f2.i) this.p.f;
-        this.q = iVar;
-        iVar.a();
+        f2.j jVar = (f2.j) this.p.f;
+        this.q = jVar;
+        jVar.a();
         v vVar = this.n;
         if (vVar != null) {
-            vVar.c(this.y);
+            vVar.f(this.y);
         }
     }
 
@@ -482,13 +481,13 @@ public final class r0 implements x {
             if (vVar == null) {
                 throw uVar;
             }
-            vVar.T(uVar);
+            vVar.Y0(uVar);
             throw uVar;
         }
     }
 
     public final void c(e2.u uVar, int[] iArr) {
-        f2.i iVar;
+        f2.j jVar;
         e2.u uVar2;
         int i7;
         int i10;
@@ -506,20 +505,20 @@ public final class r0 implements x {
         int i11 = uVar.K;
         int i12 = uVar.M;
         if ("audio/raw".equals(str)) {
-            ja.f(h2.l0.M(i12));
+            la.f(h2.l0.M(i12));
             int u10 = h2.l0.u(i12) * i11;
             h9.f0 f0Var = new h9.f0(4);
             f0Var.d(this.g);
             f0Var.c(this.e);
-            f2.m[] mVarArr = (f2.m[]) this.b.b;
-            int length = mVarArr.length;
-            h9.o.e(length, mVarArr);
+            f2.n[] nVarArr = (f2.n[]) this.b.b;
+            int length = nVarArr.length;
+            h9.o.e(length, nVarArr);
             f0Var.e(length);
-            System.arraycopy(mVarArr, 0, f0Var.a, f0Var.b, length);
+            System.arraycopy(nVarArr, 0, f0Var.a, f0Var.b, length);
             f0Var.b += length;
-            iVar = new f2.i(f0Var.f());
-            if (iVar.equals(this.q)) {
-                iVar = this.q;
+            jVar = new f2.j(f0Var.f());
+            if (jVar.equals(this.q)) {
+                jVar = this.q;
             }
             int i13 = uVar.N;
             int i14 = uVar.O;
@@ -527,39 +526,39 @@ public final class r0 implements x {
             a1Var.i = i13;
             a1Var.j = i14;
             this.c.i = iArr;
-            f2.j jVar = new f2.j(uVar.L, i11, i12);
+            f2.k kVar = new f2.k(uVar.L, i11, i12);
             try {
-                h9.i0 i0Var2 = iVar.a;
-                if (jVar.equals(f2.j.e)) {
-                    throw new f2.l(jVar);
+                h9.i0 i0Var2 = jVar.a;
+                if (kVar.equals(f2.k.e)) {
+                    throw new f2.m(kVar);
                 }
                 for (int i15 = 0; i15 < i0Var2.size(); i15++) {
-                    f2.m mVar = (f2.m) i0Var2.get(i15);
-                    f2.j e10 = mVar.e(jVar);
-                    if (mVar.isActive()) {
-                        ja.p(!e10.equals(f2.j.e));
-                        jVar = e10;
+                    f2.n nVar = (f2.n) i0Var2.get(i15);
+                    f2.k e10 = nVar.e(kVar);
+                    if (nVar.isActive()) {
+                        la.p(!e10.equals(f2.k.e));
+                        kVar = e10;
                     }
                 }
-                int i16 = jVar.b;
-                int i17 = jVar.c;
+                int i16 = kVar.b;
+                int i17 = kVar.c;
                 e2.t a10 = uVar.a();
                 a10.L = i17;
-                a10.K = jVar.a;
+                a10.K = kVar.a;
                 a10.J = i16;
                 uVar2 = new e2.u(a10);
                 i7 = u10;
                 i10 = h2.l0.u(i17) * i16;
-            } catch (f2.l e11) {
+            } catch (f2.m e11) {
                 throw new t(e11, uVar);
             }
         } else {
-            iVar = new f2.i(s1.e);
+            jVar = new f2.j(t1.e);
             uVar2 = uVar;
             i7 = -1;
             i10 = -1;
         }
-        f2.i iVar2 = iVar;
+        f2.j jVar2 = jVar;
         i i18 = i(uVar2);
         e2.u uVar3 = i18.a;
         try {
@@ -572,7 +571,7 @@ public final class r0 implements x {
                 throw new t("Invalid output channel config (isOffload=" + z10 + ")", uVar3);
             }
             this.X = false;
-            o0 o0Var = new o0(uVar, uVar2, i7, i10, c10, iVar2);
+            o0 o0Var = new o0(uVar, uVar2, i7, i10, c10, jVar2);
             if (p()) {
                 this.o = o0Var;
             } else {
@@ -611,7 +610,7 @@ public final class r0 implements x {
                     this.Y = false;
                 }
                 if (this.O && (vVar2 = this.n) != null && !g10 && !this.Y) {
-                    vVar2.t();
+                    vVar2.a0();
                 }
             }
             if (o0.a(this.p)) {
@@ -619,7 +618,7 @@ public final class r0 implements x {
             }
             if (g10) {
                 if (!o0.a(this.p)) {
-                    ja.p(this.K == this.I);
+                    la.p(this.K == this.I);
                     this.C = (this.D * this.J) + this.C;
                 }
                 this.K = null;
@@ -637,7 +636,7 @@ public final class r0 implements x {
                 w wVar = new w(e10.a, (e2.u) this.p.c, r4);
                 vVar = this.n;
                 if (vVar != null) {
-                    vVar.T(wVar);
+                    vVar.Y0(wVar);
                 }
                 if (!z10) {
                     throw wVar;
@@ -666,10 +665,10 @@ public final class r0 implements x {
             d(Long.MIN_VALUE);
             return this.K == null;
         }
-        f2.i iVar = this.q;
-        if (iVar.d() && !iVar.d) {
-            iVar.d = true;
-            ((f2.m) iVar.b.get(0)).f();
+        f2.j jVar = this.q;
+        if (jVar.d() && !jVar.d) {
+            jVar.d = true;
+            ((f2.n) jVar.b.get(0)).f();
         }
         u(Long.MIN_VALUE);
         if (!this.q.c() || ((byteBuffer = this.K) != null && byteBuffer.hasRemaining())) {
@@ -696,9 +695,9 @@ public final class r0 implements x {
             this.L = false;
             this.N = false;
             this.d.o = 0L;
-            f2.i iVar = (f2.i) this.p.f;
-            this.q = iVar;
-            iVar.a();
+            f2.j jVar = (f2.j) this.p.f;
+            this.q = jVar;
+            jVar.a();
             this.j = null;
             o0 o0Var = this.o;
             if (o0Var != null) {
@@ -729,7 +728,7 @@ public final class r0 implements x {
                         g0.u = Executors.newSingleThreadScheduledExecutor(new ai.y0(1));
                     }
                     g0.v++;
-                    g0.u.schedule(new ki.n(audioTrack, q10, rVar, 9), 20L, TimeUnit.MILLISECONDS);
+                    g0.u.schedule(new kg.i0(audioTrack, q10, rVar, 13), 20L, TimeUnit.MILLISECONDS);
                 } catch (Throwable th2) {
                     throw th2;
                 }
@@ -761,7 +760,7 @@ public final class r0 implements x {
         }
         long bufferSizeInFrames = this.t.a.getBufferSizeInFrames();
         int j3 = f3.b.j(((n) this.p.e).a);
-        ja.p(j3 != -2147483647);
+        la.p(j3 != -2147483647);
         return h2.l0.a0(bufferSizeInFrames, 1000000L, j3, RoundingMode.DOWN);
     }
 
@@ -785,17 +784,17 @@ public final class r0 implements x {
         boolean isEmpty = arrayDeque.isEmpty();
         h6.m mVar = this.b;
         if (isEmpty) {
-            f2.r rVar = (f2.r) mVar.d;
-            if (rVar.isActive()) {
-                if (rVar.n >= 1024) {
-                    long j11 = rVar.m;
-                    rVar.j.getClass();
+            f2.s sVar = (f2.s) mVar.d;
+            if (sVar.isActive()) {
+                if (sVar.n >= 1024) {
+                    long j11 = sVar.m;
+                    sVar.j.getClass();
                     long o4 = j11 - (r8.i.o() * (r8.j * r8.b));
-                    int i7 = rVar.h.a;
-                    int i10 = rVar.g.a;
-                    j10 = i7 == i10 ? h2.l0.a0(j10, o4, rVar.n, RoundingMode.DOWN) : h2.l0.a0(j10, o4 * i7, rVar.n * i10, RoundingMode.DOWN);
+                    int i7 = sVar.h.a;
+                    int i10 = sVar.g.a;
+                    j10 = i7 == i10 ? h2.l0.a0(j10, o4, sVar.n, RoundingMode.DOWN) : h2.l0.a0(j10, o4 * i7, sVar.n * i10, RoundingMode.DOWN);
                 } else {
-                    j10 = (long) (rVar.c * j10);
+                    j10 = (long) (sVar.c * j10);
                 }
             }
             p0 p0Var2 = this.w;
@@ -816,7 +815,7 @@ public final class r0 implements x {
                 this.b0 = new Handler(Looper.myLooper());
             }
             this.b0.removeCallbacksAndMessages(null);
-            this.b0.postDelayed(new j1(this, 19), 100L);
+            this.b0.postDelayed(new kg.j0(this, 23), 100L);
         }
         return Y;
     }
@@ -880,7 +879,7 @@ public final class r0 implements x {
         long j11;
         long j12;
         ByteBuffer byteBuffer2 = this.I;
-        ja.f(byteBuffer2 == null || byteBuffer == byteBuffer2);
+        la.f(byteBuffer2 == null || byteBuffer == byteBuffer2);
         if (this.o != null) {
             if (e()) {
                 if (this.t != null) {
@@ -936,7 +935,7 @@ public final class r0 implements x {
             }
         }
         if (this.I == null) {
-            ja.f(byteBuffer.order() == ByteOrder.LITTLE_ENDIAN);
+            la.f(byteBuffer.order() == ByteOrder.LITTLE_ENDIAN);
             if (byteBuffer.hasRemaining()) {
                 if (!o0.a(this.p) && this.D == 0) {
                     int k10 = k(((n) this.p.e).a, byteBuffer);
@@ -966,7 +965,7 @@ public final class r0 implements x {
                     if (vVar != null) {
                         StringBuilder t6 = a8.p0.t(Y, "Unexpected audio track timestamp discontinuity: expected ", ", got ");
                         t6.append(j3);
-                        vVar.T(new ab.b0(t6.toString()));
+                        vVar.Y0(new ab.b0(t6.toString()));
                     }
                     this.E = true;
                 }
@@ -978,7 +977,7 @@ public final class r0 implements x {
                         a(j3);
                         v vVar2 = this.n;
                         if (vVar2 != null && j14 != j11) {
-                            vVar2.W();
+                            vVar2.o1();
                         }
                     }
                     return false;
@@ -1054,7 +1053,7 @@ public final class r0 implements x {
                 try {
                     b10 = b(nVar);
                     o0 o0Var2 = this.p;
-                    this.p = new o0((e2.u) o0Var2.c, (e2.u) o0Var2.d, o0Var2.a, o0Var2.b, nVar, (f2.i) o0Var2.f);
+                    this.p = new o0((e2.u) o0Var2.c, (e2.u) o0Var2.d, o0Var2.a, o0Var2.b, nVar, (f2.j) o0Var2.f);
                 } catch (u e11) {
                     e10.addSuppressed(e11);
                     i7 = i13;
@@ -1078,9 +1077,9 @@ public final class r0 implements x {
                 g0Var.d(uVar.N, uVar.O);
             }
         }
-        m2.j jVar = this.m;
-        if (jVar != null) {
-            this.t.f(jVar);
+        m2.i iVar = this.m;
+        if (iVar != null) {
+            this.t.f(iVar);
         }
         if (p()) {
             this.t.a.setVolume(this.H);
@@ -1097,20 +1096,20 @@ public final class r0 implements x {
         v vVar = this.n;
         if (vVar != null) {
             int i14 = ((n) this.p.e).a;
-            vVar.u(new s0());
+            vVar.b0(new s0());
             if (z10) {
                 this.R = true;
                 o0 o0Var4 = this.p;
                 m a11 = ((n) o0Var4.e).a();
                 a11.h = this.Q;
-                this.p = new o0((e2.u) o0Var4.c, (e2.u) o0Var4.d, o0Var4.a, o0Var4.b, new n(a11), (f2.i) o0Var4.f);
+                this.p = new o0((e2.u) o0Var4.c, (e2.u) o0Var4.d, o0Var4.a, o0Var4.b, new n(a11), (f2.j) o0Var4.f);
                 o0 o0Var5 = this.o;
                 if (o0Var5 != null) {
                     m a12 = ((n) o0Var5.e).a();
                     a12.h = this.Q;
-                    this.o = new o0((e2.u) o0Var5.c, (e2.u) o0Var5.d, o0Var5.a, o0Var5.b, new n(a12), (f2.i) o0Var5.f);
+                    this.o = new o0((e2.u) o0Var5.c, (e2.u) o0Var5.d, o0Var5.a, o0Var5.b, new n(a12), (f2.j) o0Var5.f);
                 }
-                this.n.a(this.Q);
+                this.n.d(this.Q);
             }
         }
         return true;
@@ -1205,17 +1204,17 @@ public final class r0 implements x {
         }
         while (!this.q.c()) {
             do {
-                f2.i iVar = this.q;
-                if (iVar.d()) {
-                    ByteBuffer byteBuffer3 = iVar.c[iVar.b()];
+                f2.j jVar = this.q;
+                if (jVar.d()) {
+                    ByteBuffer byteBuffer3 = jVar.c[jVar.b()];
                     if (byteBuffer3.hasRemaining()) {
                         byteBuffer = byteBuffer3;
                     } else {
-                        iVar.e(f2.m.a);
-                        byteBuffer = iVar.c[iVar.b()];
+                        jVar.e(f2.n.a);
+                        byteBuffer = jVar.c[jVar.b()];
                     }
                 } else {
-                    byteBuffer = f2.m.a;
+                    byteBuffer = f2.n.a;
                 }
                 if (byteBuffer.hasRemaining()) {
                     B(byteBuffer);
@@ -1225,10 +1224,10 @@ public final class r0 implements x {
                     if (byteBuffer4 == null || !byteBuffer4.hasRemaining()) {
                         return;
                     }
-                    f2.i iVar2 = this.q;
+                    f2.j jVar2 = this.q;
                     ByteBuffer byteBuffer5 = this.I;
-                    if (iVar2.d() && !iVar2.d) {
-                        iVar2.e(byteBuffer5);
+                    if (jVar2.d() && !jVar2.d) {
+                        jVar2.e(byteBuffer5);
                     }
                 }
             } while (this.K == null);
@@ -1246,7 +1245,7 @@ public final class r0 implements x {
             try {
                 n c10 = ((i0) this.r).c(i((e2.u) this.p.d));
                 o0 o0Var2 = this.p;
-                this.p = new o0((e2.u) o0Var2.c, (e2.u) o0Var2.d, o0Var2.a, o0Var2.b, c10, (f2.i) o0Var2.f);
+                this.p = new o0((e2.u) o0Var2.c, (e2.u) o0Var2.d, o0Var2.a, o0Var2.b, c10, (f2.j) o0Var2.f);
             } catch (h e10) {
                 throw new IllegalStateException(new t(e10, (e2.u) this.p.c));
             }
@@ -1258,22 +1257,22 @@ public final class r0 implements x {
         f();
         h9.g0 listIterator = this.g.listIterator(0);
         while (listIterator.hasNext()) {
-            ((f2.m) listIterator.next()).reset();
+            ((f2.n) listIterator.next()).reset();
         }
         this.e.reset();
         this.f.reset();
-        f2.i iVar = this.q;
-        if (iVar != null) {
-            h9.i0 i0Var = iVar.a;
+        f2.j jVar = this.q;
+        if (jVar != null) {
+            h9.i0 i0Var = jVar.a;
             for (int i7 = 0; i7 < i0Var.size(); i7++) {
-                f2.m mVar = (f2.m) i0Var.get(i7);
-                mVar.d(f2.k.b);
-                mVar.reset();
+                f2.n nVar = (f2.n) i0Var.get(i7);
+                nVar.d(f2.l.b);
+                nVar.reset();
             }
-            iVar.b.clear();
-            iVar.c = new ByteBuffer[0];
-            f2.j jVar = f2.j.e;
-            iVar.d = false;
+            jVar.b.clear();
+            jVar.c = new ByteBuffer[0];
+            f2.k kVar = f2.k.e;
+            jVar.d = false;
         }
         this.O = false;
         this.X = false;

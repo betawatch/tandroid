@@ -1,90 +1,59 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Matrix;
-import android.os.SystemClock;
-import android.view.TextureView;
-import android.view.View;
+import android.graphics.Canvas;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n40 extends TextureView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class n40 extends b50 {
+    public ImageReceiver a;
+    public float b;
+    public final /* synthetic */ z40 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n40(int i7, Context context, Object obj) {
+    public n40(z40 z40Var, Context context) {
         super(context);
-        this.a = i7;
-        this.b = obj;
+        this.c = z40Var;
+        z40Var.setWillNotDraw(false);
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        zi.u0 u0Var;
-        switch (this.a) {
-            case 0:
-                q40 q40Var = (q40) this.b;
-                if (!q40Var.J0 && (u0Var = q40Var.R) != null && u0Var.a == 3) {
-                    q40Var.J0 = true;
-                    try {
-                        q40Var.H0 = SystemClock.elapsedRealtimeNanos();
-                        q40Var.F();
-                    } finally {
-                        q40Var.J0 = false;
-                    }
-                }
-                super.invalidate();
-                return;
-            default:
-                super.invalidate();
-                return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        float f10 = this.b;
+        if (f10 != 1.0f) {
+            float f11 = f10 + 0.064f;
+            this.b = f11;
+            if (f11 > 1.0f) {
+                this.b = 1.0f;
+            }
+            invalidate();
+        }
+        if (this.a != null) {
+            canvas.save();
+            float f12 = this.a.N0;
+            int i7 = this.c.X0;
+            if (f12 != i7) {
+                float f13 = i7 / f12;
+                canvas.scale(f13, f13);
+            }
+            ImageReceiver imageReceiver = this.a;
+            canvas.translate(-imageReceiver.L0, -imageReceiver.M0);
+            float alpha = this.a.getAlpha();
+            this.a.setAlpha(this.b);
+            this.a.h(canvas, null);
+            this.a.setAlpha(alpha);
+            canvas.restore();
         }
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 1:
-                View.MeasureSpec.getSize(i7);
-                super.onMeasure(i7, i10);
-                break;
-            case 2:
-                xh.e eVar = (xh.e) this.b;
-                setMeasuredDimension(eVar.g, eVar.h);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
+    @Override // org.telegram.ui.Components.b50
+    public void setImageReceiver(ImageReceiver imageReceiver) {
+        if (this.a == null) {
+            this.b = 0.0f;
         }
-    }
-
-    @Override // android.view.TextureView
-    public void setTransform(Matrix matrix) {
-        switch (this.a) {
-            case 1:
-                super.setTransform(matrix);
-                wy wyVar = ((td0) this.b).m0;
-                if (wyVar != null) {
-                    int width = getWidth();
-                    int height = getHeight();
-                    z9 z9Var = wyVar.J;
-                    if (z9Var != null) {
-                        Matrix matrix2 = z9Var.v;
-                        matrix.invert(matrix2);
-                        float f10 = width;
-                        float f11 = height;
-                        matrix2.preScale(f10, f11);
-                        matrix2.postScale(1.0f / f10, 1.0f / f11);
-                        z9Var.c(matrix2);
-                        wyVar.c(false, false, false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.setTransform(matrix);
-                break;
-        }
+        this.a = imageReceiver;
+        invalidate();
     }
 }

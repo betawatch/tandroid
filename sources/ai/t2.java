@@ -4,16 +4,17 @@ import android.app.Activity;
 import android.text.SpannableStringBuilder;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import c8.ja;
+import c8.ma;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.i20;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.eq;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.lq;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t2 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,44 +39,43 @@ public final /* synthetic */ class t2 implements Runnable {
                     x2Var.e0();
                     break;
                 }
-                break;
             default:
                 Activity parentActivity = x2Var.getParentActivity();
-                e6 resourceProvider = x2Var.getResourceProvider();
+                i6 resourceProvider = x2Var.getResourceProvider();
                 r2 r2Var = new r2(parentActivity, 0);
                 r2Var.setOrientation(1);
-                r2Var.addView(new s2(parentActivity, resourceProvider), ja.t(-1, 120, 1, 0, 16, 0, 10));
+                r2Var.addView(new s2(parentActivity, resourceProvider), ma.t(-1, 120, 1, 0, 16, 0, 10));
                 TextView textView = new TextView(parentActivity);
                 textView.setTextSize(1, 20.0f);
-                textView.setTextColor(j6.w0(j6.j5, resourceProvider));
+                textView.setTextColor(n6.w0(n6.j5, resourceProvider));
                 textView.setTypeface(org.telegram.messenger.g0.o());
                 textView.setGravity(1);
-                textView.setText("Private by design");
-                r2Var.addView(textView, ja.t(-1, -2, 1, 32, 0, 32, 9));
+                textView.setText(gd.M0(2131745045, null));
+                r2Var.addView(textView, ma.t(-1, -2, 1, 32, 0, 32, 9));
                 TextView textView2 = new TextView(parentActivity);
                 textView2.setTextSize(1, 14.0f);
-                textView2.setTextColor(j6.w0(j6.z6, resourceProvider));
+                textView2.setTextColor(n6.w0(n6.z6, resourceProvider));
                 textView2.setGravity(1);
-                textView2.setText("Voice messages turn into text\nright here, on your phone.");
-                r2Var.addView(textView2, ja.t(-1, -2, 1, 32, 0, 32, 25));
-                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.msg2_devices, "Recognized on your phone", "Speech turns into text right on this phone, even offline."), ja.t(-1, -2, 7, 32, 0, 32, 16));
-                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.menu_privacy, "Nothing leaves the phone", "Your voice and its text are never sent to a server for this."), ja.t(-1, -2, 7, 32, 0, 32, 16));
-                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.msg2_data, "Compact languages", "About 30 MB per language. Keep only the ones you need."), ja.t(-1, -2, 7, 32, 0, 32, 16));
+                textView2.setText(gd.M0(2131745046, null));
+                r2Var.addView(textView2, ma.t(-1, -2, 1, 32, 0, 32, 25));
+                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.msg2_devices, gd.M0(2131745048, null), gd.M0(2131745047, null)), ma.t(-1, -2, 7, 32, 0, 32, 16));
+                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.menu_privacy, gd.M0(2131745050, null), gd.M0(2131745049, null)), ma.t(-1, -2, 7, 32, 0, 32, 16));
+                r2Var.addView(a8.i1.a(parentActivity, resourceProvider, R.drawable.msg2_data, gd.M0(2131745053, null), gd.M0(2131745052, null)), ma.t(-1, -2, 7, 32, 0, 32, 16));
                 hi.d dVar = new hi.d(parentActivity, resourceProvider, true);
                 dVar.setRoundRadius(24);
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("👌  Got it");
-                spannableStringBuilder.setSpan(new eq(R.drawable.filled_understood, 0), 0, 2, 33);
+                spannableStringBuilder.setSpan(new lq(R.drawable.filled_understood, 0), 0, 2, 33);
                 dVar.i(spannableStringBuilder, false, true);
-                dVar.setOnClickListener(new q2(r3, 0));
-                r2Var.addView(dVar, ja.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
+                dVar.setOnClickListener(new q2(r4, 0));
+                r2Var.addView(dVar, ma.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
                 FrameLayout frameLayout = new FrameLayout(parentActivity);
-                frameLayout.addView(r2Var, ja.e(-1, -2, 1));
-                org.telegram.ui.ActionBar.u2 i10 = i20.i(parentActivity, false, 1, resourceProvider);
-                i10.O = frameLayout;
-                i10.V0 = 49;
-                i10.show();
-                org.telegram.ui.ActionBar.u2[] u2VarArr = {i10};
-                i10.Q(j6.h5);
+                frameLayout.addView(r2Var, ma.e(-1, -2, 1));
+                org.telegram.ui.ActionBar.x2 j3 = n10.j(parentActivity, false, 1, resourceProvider);
+                j3.O = frameLayout;
+                j3.V0 = 49;
+                j3.show();
+                org.telegram.ui.ActionBar.x2[] x2VarArr = {j3};
+                j3.Q(n6.h5);
                 break;
         }
     }

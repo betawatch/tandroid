@@ -1,19 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a20 extends org.telegram.ui.Components.vf0 {
-    public final /* synthetic */ c40 t1;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a20(c40 c40Var, LaunchActivity launchActivity, a30 a30Var, k30 k30Var, z10 z10Var) {
-        super(launchActivity, a30Var, k30Var, z10Var);
-        this.t1 = c40Var;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.t1.b.invalidate();
+public final class a20 extends v4.o0 {
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        RecyclerView.R(view);
+        if (f40.E5) {
+            rect.set(0, org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f));
+        } else {
+            rect.set(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        }
     }
 }

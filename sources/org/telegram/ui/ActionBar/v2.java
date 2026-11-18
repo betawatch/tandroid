@@ -1,27 +1,21 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-import android.view.WindowInsets;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.DrawableWrapper;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v2 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
+public final class v2 extends DrawableWrapper {
+    public ColorFilter a;
 
-    public /* synthetic */ v2(int i7) {
-        this.a = i7;
+    @Override // android.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
+    public final ColorFilter getColorFilter() {
+        return this.a;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return y2.a(view, windowInsets);
-            case 1:
-                return org.telegram.ui.g4.c(windowInsets);
-            default:
-                view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
-                return windowInsets;
-        }
+    @Override // android.graphics.drawable.DrawableWrapper, android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a = colorFilter;
+        super.setColorFilter(colorFilter);
     }
 }

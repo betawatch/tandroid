@@ -1,98 +1,56 @@
 package h9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import a8.la;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class z1 extends t0 {
-    public static final Object[] r;
-    public static final z1 s;
-    public final transient Object[] d;
-    public final transient int e;
-    public final transient Object[] f;
-    public final transient int h;
-    public final transient int n;
+public final class z1 extends r0 {
+    public static final z1 n;
+    public final transient q1 e;
+    public final transient int f;
+    public transient q0 h;
 
     static {
-        Object[] objArr = new Object[0];
-        r = objArr;
-        s = new z1(0, 0, 0, objArr, objArr);
+        q1 q1Var = new q1();
+        q1Var.d(3);
+        n = new z1(q1Var);
     }
 
-    public z1(int i7, int i10, int i11, Object[] objArr, Object[] objArr2) {
-        this.d = objArr;
-        this.e = i7;
-        this.f = objArr2;
-        this.h = i10;
-        this.n = i11;
-    }
-
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
-    public final boolean contains(Object obj) {
-        if (obj != null) {
-            Object[] objArr = this.f;
-            if (objArr.length != 0) {
-                int v = o.v(obj);
-                while (true) {
-                    int i7 = v & this.h;
-                    Object obj2 = objArr[i7];
-                    if (obj2 == null) {
-                        return false;
-                    }
-                    if (obj2.equals(obj)) {
-                        return true;
-                    }
-                    v = i7 + 1;
-                }
+    public z1(q1 q1Var) {
+        this.e = q1Var;
+        long j3 = 0;
+        int i7 = 0;
+        while (true) {
+            int i10 = q1Var.c;
+            if (i7 >= i10) {
+                this.f = c8.k1.e(j3);
+                return;
+            } else {
+                la.j(i7, i10);
+                j3 += q1Var.b[i7];
+                i7++;
             }
         }
-        return false;
-    }
-
-    @Override // h9.t0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.e;
-    }
-
-    @Override // h9.d0
-    public final int i(int i7, Object[] objArr) {
-        Object[] objArr2 = this.d;
-        int i10 = this.n;
-        System.arraycopy(objArr2, 0, objArr, i7, i10);
-        return i7 + i10;
-    }
-
-    @Override // h9.d0
-    public final Object[] j() {
-        return this.d;
-    }
-
-    @Override // h9.d0
-    public final int k() {
-        return this.n;
-    }
-
-    @Override // h9.d0
-    public final int l() {
-        return 0;
     }
 
     @Override // h9.d0
     public final boolean m() {
-        return false;
+        throw null;
     }
 
-    @Override // h9.d0
-    /* renamed from: n */
-    public final g2 iterator() {
-        return f().listIterator(0);
+    @Override // h9.r0
+    public final t0 o() {
+        q0 q0Var = this.h;
+        if (q0Var != null) {
+            return q0Var;
+        }
+        q0 q0Var2 = new q0(this, 1);
+        this.h = q0Var2;
+        return q0Var2;
     }
 
-    @Override // h9.t0
-    public final i0 r() {
-        return i0.o(this.n, this.d);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection
     public final int size() {
-        return this.n;
+        return this.f;
     }
 }

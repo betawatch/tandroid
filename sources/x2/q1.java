@@ -1,66 +1,22 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class q1 {
-    public static final q1 d = new q1(new e2.m1[0]);
-    public static final String e;
-    public final int a;
-    public final h9.s1 b;
-    public int c;
+public final class q1 extends s {
+    public final e2.l0 f;
 
-    static {
-        String str = h2.l0.a;
-        e = Integer.toString(0, 36);
+    public q1(e2.l1 l1Var, e2.l0 l0Var) {
+        super(l1Var);
+        this.f = l0Var;
     }
 
-    public q1(e2.m1... m1VarArr) {
-        h9.s1 r10 = h9.i0.r(m1VarArr);
-        this.b = r10;
-        this.a = m1VarArr.length;
-        int i7 = 0;
-        while (i7 < r10.d) {
-            int i10 = i7 + 1;
-            for (int i11 = i10; i11 < r10.d; i11++) {
-                if (((e2.m1) r10.get(i7)).equals(r10.get(i11))) {
-                    h2.a.d("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
-                }
-            }
-            i7 = i10;
-        }
-    }
-
-    public final e2.m1 a(int i7) {
-        return (e2.m1) this.b.get(i7);
-    }
-
-    public final int b(e2.m1 m1Var) {
-        int indexOf = this.b.indexOf(m1Var);
-        if (indexOf >= 0) {
-            return indexOf;
-        }
-        return -1;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || q1.class != obj.getClass()) {
-            return false;
-        }
-        q1 q1Var = (q1) obj;
-        return this.a == q1Var.a && this.b.equals(q1Var.b);
-    }
-
-    public final int hashCode() {
-        if (this.c == 0) {
-            this.c = this.b.hashCode();
-        }
-        return this.c;
-    }
-
-    public final String toString() {
-        return this.b.toString();
+    @Override // x2.s, e2.l1
+    public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
+        super.m(i7, k1Var, j3);
+        e2.l0 l0Var = this.f;
+        k1Var.c = l0Var;
+        e2.g0 g0Var = l0Var.b;
+        k1Var.b = null;
+        return k1Var;
     }
 }

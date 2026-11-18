@@ -13,11 +13,11 @@ import android.widget.TextView;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
-import v4.e1;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class a0 extends v4.h0 {
+public final class a0 extends v4.i0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -53,12 +53,12 @@ public final class a0 extends v4.h0 {
         f();
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         return this.c.size();
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         return ((y) this.c.get(i7)).b;
     }
@@ -67,23 +67,23 @@ public final class a0 extends v4.h0 {
     
         if (r2 != null) goto L25;
      */
-    @Override // v4.h0
+    @Override // v4.i0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void t(e1 e1Var, int i7) {
+    public final void t(f1 f1Var, int i7) {
         Drawable createFromStream;
         int d = d(i7);
         y yVar = (y) this.c.get(i7);
         if (d == 1) {
-            ((x) e1Var).v.setText(yVar.a.toString());
+            ((x) f1Var).v.setText(yVar.a.toString());
             return;
         }
         if (d != 2) {
             Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
             return;
         }
-        z zVar = (z) e1Var;
+        z zVar = (z) f1Var;
         s4.v vVar = (s4.v) yVar.a;
         View view = zVar.v;
         view.setVisibility(0);
@@ -105,8 +105,8 @@ public final class a0 extends v4.h0 {
         imageView.setImageDrawable(createFromStream);
     }
 
-    @Override // v4.h0
-    public final e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final f1 x(ViewGroup viewGroup, int i7) {
         LayoutInflater layoutInflater = this.d;
         if (i7 != 1) {
             if (i7 == 2) {

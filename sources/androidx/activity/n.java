@@ -12,7 +12,7 @@ import android.view.Surface;
 import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
-import c8.cb;
+import c8.jb;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.y0;
 import h2.l0;
@@ -21,11 +21,11 @@ import java.util.HashMap;
 import java.util.Map;
 import kotlin.jvm.internal.j;
 import m.p;
-import org.telegram.messenger.ou;
-import org.telegram.ui.Components.tt0;
+import org.telegram.ui.Components.bu0;
+import org.telegram.ui.Components.hn;
 import p4.d0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements m9.t, u2.k, com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
                     eVar = new u2.e(mediaCodec, (HandlerThread) ((u2.b) this.d).get());
                     i7 = 0;
                 } else {
-                    eVar = new ou(mediaCodec, 29);
+                    eVar = new hn(mediaCodec, 22);
                     i7 = 4;
                 }
                 cVar = new u2.c(mediaCodec, (HandlerThread) ((u2.b) this.c).get(), eVar, (u2.j) b8Var.f);
@@ -92,7 +92,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
     public void accept(Object obj, Object obj2) {
         com.google.android.gms.common.api.internal.m mVar;
         boolean z10;
-        u7.l lVar = (u7.l) obj;
+        u7.k kVar = (u7.k) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         synchronized (this) {
             mVar = ((com.google.android.gms.common.api.internal.o) this.c).b;
@@ -102,7 +102,7 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         if (mVar == null) {
             taskCompletionSource.setResult(Boolean.FALSE);
         } else {
-            u7.a.a.a(lVar, mVar, z10, taskCompletionSource);
+            u7.a.a.a(kVar, mVar, z10, taskCompletionSource);
         }
     }
 
@@ -225,16 +225,16 @@ public final class n implements m9.t, u2.k, com.google.android.gms.common.api.in
         d0 d0Var = (d0) this.d;
         p4.v vVar = (p4.v) this.c;
         boolean z10 = this.b;
-        cb.b(d0Var.t, (p4.w) obj);
+        jb.b(d0Var.t, (p4.w) obj);
         l0.J(d0Var.t);
         if (z10) {
             d0Var.p(vVar);
         }
     }
 
-    public /* synthetic */ n(tt0 tt0Var, Object obj, int i7) {
+    public /* synthetic */ n(bu0 bu0Var, Object obj, int i7) {
         this.a = i7;
-        this.d = tt0Var;
+        this.d = bu0Var;
         this.c = obj;
     }
 

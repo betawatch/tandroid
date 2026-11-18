@@ -1,5 +1,6 @@
 package ai;
 
+import android.content.SharedPreferences;
 import android.net.NetworkInfo;
 import android.os.SystemClock;
 import android.text.TextUtils;
@@ -15,18 +16,19 @@ import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.GZIPInputStream;
+import org.telegram.messenger.a6;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.messenger.w7;
-import org.telegram.messenger.y5;
 import org.telegram.messenger.z5;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class j1 {
     public static ArrayList a;
@@ -38,7 +40,7 @@ public abstract class j1 {
         synchronized (j1.class) {
             try {
                 if (a == null) {
-                    String string = np.e1().getString("speech_models", null);
+                    String string = mp.g1().getString("speech_models", null);
                     if (string == null) {
                         return null;
                     }
@@ -53,7 +55,7 @@ public abstract class j1 {
                         a = arrayList;
                     } catch (Throwable th2) {
                         Log.d("Dictation", "speech models: cached list unreadable: " + th2);
-                        np.e1().edit().remove("speech_models").apply();
+                        mp.g1().edit().remove("speech_models").apply();
                     }
                 }
                 return a;
@@ -64,23 +66,23 @@ public abstract class j1 {
     }
 
     public static boolean b() {
-        z5 q10 = z5.q(m10.l());
+        a6 q10 = a6.q(j10.l());
         int e10 = org.telegram.messenger.t0.e();
-        y5 p10 = e10 == 1 ? q10.p() : e10 == 2 ? q10.o() : q10.n();
+        z5 p10 = e10 == 1 ? q10.p() : e10 == 2 ? q10.o() : q10.n();
         return p10 != null && p10.g;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:113:0x010e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:114:0x0110, code lost:
     
         android.util.Log.d(r7, "speech models: " + r17 + " download stalled");
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0074, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0076, code lost:
     
-        if (org.telegram.messenger.z5.q(org.telegram.messenger.m10.l()).p().g != false) goto L30;
+        if (org.telegram.messenger.a6.q(org.telegram.messenger.j10.l()).p().g != false) goto L31;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:101:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:102:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x015f  */
     /* JADX WARN: Type inference failed for: r5v10 */
     /* JADX WARN: Type inference failed for: r5v12 */
     /* JADX WARN: Type inference failed for: r5v5, types: [java.lang.String] */
@@ -91,7 +93,7 @@ public abstract class j1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int c(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file, i1 i1Var) {
+    public static int c(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file, boolean z10, i1 i1Var) {
         int i7;
         int i10;
         int i11;
@@ -105,26 +107,28 @@ public abstract class j1 {
             int i13 = 1;
             String str3 = "Dictation";
             if (file.exists()) {
-                if (np.e1().getLong(str2, 0L) != document.id) {
-                    try {
-                        org.telegram.messenger.t0.c(false);
-                        if (org.telegram.messenger.t0.c != null) {
-                            if (org.telegram.messenger.t0.c.getType() != 1) {
-                                if (org.telegram.messenger.t0.c.getType() == 9) {
+                if (mp.g1().getLong(str2, 0L) != document.id) {
+                    if (!z10) {
+                        try {
+                            org.telegram.messenger.t0.c(false);
+                            if (org.telegram.messenger.t0.c != null) {
+                                if (org.telegram.messenger.t0.c.getType() != 1) {
+                                    if (org.telegram.messenger.t0.c.getType() == 9) {
+                                    }
+                                }
+                                if (org.telegram.messenger.t0.c.getState() == NetworkInfo.State.CONNECTED) {
                                 }
                             }
-                            if (org.telegram.messenger.t0.c.getState() == NetworkInfo.State.CONNECTED) {
-                            }
+                        } catch (Exception e10) {
+                            a8.g(e10, true);
                         }
-                    } catch (Exception e10) {
-                        a8.g(e10, true);
+                        Log.d("Dictation", "speech models: " + file.getName() + " has an update, not on Wi-Fi / auto-download");
+                        return 0;
                     }
-                    Log.d("Dictation", "speech models: " + file.getName() + " has an update, not on Wi-Fi / auto-download");
-                    return 0;
                 }
             }
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            int l10 = m10.l();
+            int l10 = j10.l();
             w7 G = w7.G(l10);
             File J = w7.J(document, null, true, true);
             if (J.exists()) {
@@ -138,10 +142,10 @@ public abstract class j1 {
                 File[] fileArr = new File[1];
                 long[] jArr = {SystemClock.elapsedRealtime()};
                 h1 h1Var = new h1(r10, jArr, i1Var, fileArr, J, countDownLatch);
-                int[] iArr = {ns.X1, ns.Y1, ns.Z1};
+                int[] iArr = {ks.X1, ks.Y1, ks.Z1};
                 i7 = 0;
                 i10 = -1;
-                org.telegram.messenger.g0.h3(new g1(l10, iArr, h1Var, G, document, 0));
+                org.telegram.messenger.g0.g3(new g1(l10, iArr, h1Var, G, document, 0));
                 while (true) {
                     try {
                         str = str3;
@@ -164,7 +168,7 @@ public abstract class j1 {
                     } catch (InterruptedException unused2) {
                         i12 = 1;
                         a1Var = new a1(l10, iArr, h1Var, i12);
-                        org.telegram.messenger.g0.h3(a1Var);
+                        org.telegram.messenger.g0.g3(a1Var);
                         File file3 = fileArr[0];
                         if (file3 == null) {
                         }
@@ -173,12 +177,12 @@ public abstract class j1 {
                     } catch (Throwable th3) {
                         th = th3;
                         i11 = 1;
-                        org.telegram.messenger.g0.h3(new a1(l10, iArr, h1Var, i11));
+                        org.telegram.messenger.g0.g3(new a1(l10, iArr, h1Var, i11));
                         throw th;
                     }
                 }
                 a1Var = new a1(l10, iArr, h1Var, 1);
-                org.telegram.messenger.g0.h3(a1Var);
+                org.telegram.messenger.g0.g3(a1Var);
                 File file32 = fileArr[0];
                 file2 = (file32 == null && file32.exists()) ? fileArr[0] : null;
             }
@@ -260,7 +264,7 @@ public abstract class j1 {
                 Log.d(str, "speech models: couldn't store " + file.getName());
                 return i10;
             }
-            np.e1().edit().putLong(str2, document.id).apply();
+            mp.g1().edit().putLong(str2, document.id).apply();
             Log.d(str, "speech models: " + file.getName() + " (" + TextUtils.join(",", tL_transcriptionModel.languages) + " v" + tL_transcriptionModel.version + "), " + file2.length() + " → " + file.length() + " bytes in " + (SystemClock.elapsedRealtime() - elapsedRealtime) + " ms");
             file4.delete();
             file2.delete();
@@ -274,14 +278,21 @@ public abstract class j1 {
 
     public static boolean d() {
         ArrayList a10 = a();
-        long currentTimeMillis = System.currentTimeMillis() - np.e1().getLong("speech_models_checked", 0L);
+        long currentTimeMillis = System.currentTimeMillis() - mp.g1().getLong("speech_models_checked", 0L);
         if (a10 == null) {
             return true;
         }
-        if (currentTimeMillis <= (a10.isEmpty() ? 3600000L : 86400000L)) {
-            return (a10.isEmpty() && b == 0) || !a8.p0.s(new StringBuilder(), org.telegram.messenger.r2.c, "/1").equals(np.e1().getString("speech_models_build", null));
+        if (currentTimeMillis > (a10.isEmpty() ? 3600000L : 86400000L)) {
+            return true;
         }
-        return true;
+        if (a10.isEmpty() && b == 0) {
+            return true;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(org.telegram.messenger.s2.c);
+        sb2.append("/");
+        sb2.append(DictationAsr.X());
+        return !sb2.toString().equals(mp.g1().getString("speech_models_build", null));
     }
 
     public static synchronized CountDownLatch e() {
@@ -295,15 +306,15 @@ public abstract class j1 {
             if (j3 != 0 && elapsedRealtime - j3 < 60000) {
                 return null;
             }
-            int l10 = m10.l();
-            if (!m10.r(l10)) {
+            int l10 = j10.l();
+            if (!j10.r(l10)) {
                 return null;
             }
             b = elapsedRealtime;
             CountDownLatch countDownLatch2 = new CountDownLatch(1);
             c = countDownLatch2;
             TLRPC.TL_messages_getTranscriptionModels tL_messages_getTranscriptionModels = new TLRPC.TL_messages_getTranscriptionModels();
-            tL_messages_getTranscriptionModels.version = 1;
+            tL_messages_getTranscriptionModels.version = DictationAsr.X();
             ConnectionsManager.getInstance(l10).sendRequest(tL_messages_getTranscriptionModels, new e1(countDownLatch2, 0));
             return countDownLatch2;
         }
@@ -331,10 +342,52 @@ public abstract class j1 {
     }
 
     public static void g(File file) {
-        np.e1().edit().remove("speech_doc_" + file.getName()).apply();
+        mp.g1().edit().remove("speech_doc_" + file.getName()).apply();
     }
 
-    public static void h(ArrayList arrayList) {
+    public static boolean h() {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = d;
+        if (j3 == 0 || elapsedRealtime - j3 > 60000) {
+            d = elapsedRealtime;
+            if (d()) {
+                e();
+            }
+        }
+        ArrayList a10 = a();
+        if (a10 != null) {
+            int size = a10.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = a10.get(i7);
+                i7++;
+                TLRPC.TL_transcriptionModel tL_transcriptionModel = (TLRPC.TL_transcriptionModel) obj;
+                if (!tL_transcriptionModel.languages.isEmpty() && !tL_transcriptionModel.languages.contains("tinylid") && !tL_transcriptionModel.languages.contains("silero-vad")) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public static boolean i(TLRPC.TL_transcriptionModel tL_transcriptionModel, File file) {
+        if (tL_transcriptionModel == null || !file.exists()) {
+            return false;
+        }
+        SharedPreferences g12 = mp.g1();
+        StringBuilder sb2 = new StringBuilder("speech_doc_");
+        sb2.append(file.getName());
+        return g12.getLong(sb2.toString(), 0L) != tL_transcriptionModel.document.id;
+    }
+
+    public static void j() {
+        CountDownLatch e10 = e();
+        if (e10 != null) {
+            new Thread(new f1(e10, 0), "DictationModels").start();
+        }
+    }
+
+    public static void k(ArrayList arrayList) {
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(arrayList.size());
         int size = arrayList.size();
@@ -344,7 +397,7 @@ public abstract class j1 {
             i7++;
             ((TLRPC.TL_transcriptionModel) obj).serializeToStream(serializedData);
         }
-        np.e1().edit().putString("speech_models", Base64.encodeToString(serializedData.toByteArray(), 2)).putLong("speech_models_checked", System.currentTimeMillis()).putString("speech_models_build", org.telegram.messenger.r2.c + "/1").apply();
+        mp.g1().edit().putString("speech_models", Base64.encodeToString(serializedData.toByteArray(), 2)).putLong("speech_models_checked", System.currentTimeMillis()).putString("speech_models_build", org.telegram.messenger.s2.c + "/" + DictationAsr.X()).apply();
         serializedData.cleanup();
     }
 }

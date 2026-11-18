@@ -2,10 +2,10 @@ package n6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c extends r6.a {
     public static final Parcelable.Creator<c> CREATOR = new m6.e(10);
@@ -29,7 +29,7 @@ public final class c extends r6.a {
     public final boolean equals(Object obj) {
         if (obj instanceof c) {
             c cVar = (c) obj;
-            if (q6.m.k(this.a, cVar.a) && b() == cVar.b() && this.d == cVar.d) {
+            if (q6.m.l(this.a, cVar.a) && b() == cVar.b() && this.d == cVar.d) {
                 return true;
             }
         }
@@ -42,24 +42,24 @@ public final class c extends r6.a {
 
     public final String toString() {
         ji.j jVar = new ji.j(this);
-        jVar.U(this.a, "name");
-        jVar.U(Long.valueOf(b()), "version");
-        jVar.U(Boolean.valueOf(this.d), "is_fully_rolled_out");
+        jVar.E(this.a, "name");
+        jVar.E(Long.valueOf(b()), "version");
+        jVar.E(Boolean.valueOf(this.d), "is_fully_rolled_out");
         return jVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.l(parcel, 1, this.a);
-        yb.q(parcel, 2, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.l(parcel, 1, this.a);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
         long b10 = b();
-        yb.q(parcel, 3, 8);
+        bc.q(parcel, 3, 8);
         parcel.writeLong(b10);
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 
     public c(String str, long j3) {

@@ -2,9 +2,9 @@ package org.telegram.ui.web;
 
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class a2 {
     public static a2 e;
@@ -49,7 +49,7 @@ public final class a2 {
             return;
         }
         w1 w1Var = new w1(this, i7);
-        boolean z10 = r2.a;
-        org.telegram.messenger.g0.i3(w1Var, 1000L);
+        boolean z10 = s2.a;
+        org.telegram.messenger.g0.h3(w1Var, 1000L);
     }
 }

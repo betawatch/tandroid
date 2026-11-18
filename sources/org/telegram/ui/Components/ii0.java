@@ -1,36 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ii0 extends ImageReceiver {
-    public final /* synthetic */ int K1;
+public final class ii0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vi0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ii0(int i7, View view) {
-        super(view);
-        this.K1 = i7;
+    public /* synthetic */ ii0(vi0 vi0Var, int i7) {
+        this.a = i7;
+        this.b = vi0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean x0(Drawable drawable, String str, int i7, boolean z10, int i10) {
-        switch (this.K1) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                if (drawable instanceof ch0) {
-                    ((ch0) drawable).N(0, false, true);
-                }
-                return super.x0(drawable, str, i7, z10, i10);
+                super.onAnimationEnd(animator);
+                this.b.M0.e();
+                break;
             default:
-                boolean x02 = super.x0(drawable, str, i7, z10, i10);
-                if (x02 && (drawable instanceof ch0)) {
-                    ch0 ch0Var = (ch0) drawable;
-                    ch0Var.N(0, false, true);
-                    ch0Var.stop();
-                }
-                return x02;
+                super.onAnimationEnd(animator);
+                vi0 vi0Var = this.b;
+                vi0Var.R = null;
+                vi0Var.o0 = 0.0f;
+                vi0Var.m0 = null;
+                vi0Var.invalidate();
+                break;
         }
     }
 }

@@ -2,9 +2,9 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c4 extends org.telegram.ui.ActionBar.j5 {
+public final class c4 extends org.telegram.ui.ActionBar.n5 {
     public float N0;
     public final /* synthetic */ int O0;
     public final /* synthetic */ f4 P0;
@@ -44,17 +44,17 @@ public final class c4 extends org.telegram.ui.ActionBar.j5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
+    @Override // org.telegram.ui.ActionBar.n5
     public final void setFullAlpha(float f10) {
         super.setFullAlpha(f10);
         int i7 = 0;
         while (true) {
-            org.telegram.ui.ActionBar.j5[] j5VarArr = this.P0.d;
-            if (i7 >= j5VarArr.length) {
+            org.telegram.ui.ActionBar.n5[] n5VarArr = this.P0.d;
+            if (i7 >= n5VarArr.length) {
                 return;
             }
-            org.telegram.ui.ActionBar.j5 j5Var = j5VarArr[i7];
-            j5Var.setAlpha(j5Var.getAlpha());
+            org.telegram.ui.ActionBar.n5 n5Var = n5VarArr[i7];
+            n5Var.setAlpha(n5Var.getAlpha());
             i7++;
         }
     }

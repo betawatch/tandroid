@@ -1,21 +1,40 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class kz {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public int j;
-    public final /* synthetic */ lz k;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public kz(lz lzVar) {
-        this.k = lzVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class kz extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pz b;
+
+    public /* synthetic */ kz(pz pzVar, int i7) {
+        this.a = i7;
+        this.b = pzVar;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                pz pzVar = this.b;
+                if (pzVar.C0 == animator) {
+                    pzVar.C0 = null;
+                    break;
+                }
+                break;
+            default:
+                pz pzVar2 = this.b;
+                pzVar2.V = pzVar2.d0;
+                pzVar2.c0 = pzVar2.g0;
+                pzVar2.W = pzVar2.e0;
+                pzVar2.a0 = pzVar2.f0;
+                pzVar2.d0 = -1;
+                pzVar2.e0 = -1;
+                pzVar2.f0 = -1;
+                pzVar2.g0 = -1;
+                break;
+        }
     }
 }

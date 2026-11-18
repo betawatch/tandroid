@@ -3,7 +3,7 @@ package bi;
 import android.content.DialogInterface;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
@@ -20,22 +20,22 @@ public final /* synthetic */ class l implements DialogInterface.OnShowListener {
             case 0:
                 u uVar = (u) this.b;
                 uVar.requestFocus();
-                org.telegram.messenger.g0.J3(uVar);
+                org.telegram.messenger.g0.I3(uVar);
                 break;
             case 1:
-                j3 j3Var = (j3) this.b;
-                j3Var.requestFocus();
-                org.telegram.messenger.g0.J3(j3Var);
+                r5 r5Var = (r5) this.b;
+                r5Var.requestFocus();
+                org.telegram.messenger.g0.I3(r5Var);
                 break;
             case 2:
                 kg.s sVar = (kg.s) this.b;
                 sVar.requestFocus();
-                org.telegram.messenger.g0.J3(sVar);
+                org.telegram.messenger.g0.I3(sVar);
                 break;
             default:
                 EditTextBoldCursor editTextBoldCursor = this.b;
                 editTextBoldCursor.requestFocus();
-                org.telegram.messenger.g0.J3(editTextBoldCursor);
+                org.telegram.messenger.g0.I3(editTextBoldCursor);
                 editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
                 break;
         }

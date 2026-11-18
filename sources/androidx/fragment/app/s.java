@@ -24,7 +24,7 @@ import java.util.LinkedHashMap;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuListener, androidx.lifecycle.t, androidx.lifecycle.u0, androidx.lifecycle.i, w4.e {
     public static final Object k0 = new Object();
@@ -122,7 +122,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     public void J(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         this.M.R();
         this.I = true;
-        f();
+        g();
     }
 
     public final Context K() {
@@ -153,8 +153,12 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         this.f = bundle;
     }
 
+    public Activity c() {
+        return k();
+    }
+
     @Override // androidx.lifecycle.i
-    public final androidx.lifecycle.s0 c() {
+    public final androidx.lifecycle.s0 d() {
         Application application;
         if (this.K == null) {
             throw new IllegalStateException("Can't access ViewModels from detached fragment");
@@ -181,7 +185,7 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     @Override // androidx.lifecycle.i
-    public final y1.b d() {
+    public final y1.b e() {
         Application application;
         Context applicationContext = K().getApplicationContext();
         while (true) {
@@ -212,12 +216,12 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
         return bVar;
     }
 
-    public Activity e() {
-        return k();
+    public z6 f() {
+        return new o(this);
     }
 
     @Override // androidx.lifecycle.u0
-    public final androidx.lifecycle.t0 f() {
+    public final androidx.lifecycle.t0 g() {
         if (this.K == null) {
             throw new IllegalStateException("Can't access ViewModels from detached fragment");
         }
@@ -235,12 +239,8 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
     }
 
     @Override // w4.e
-    public final m.p g() {
+    public final m.p h() {
         return (m.p) this.h0.d;
-    }
-
-    public z6 h() {
-        return new o(this);
     }
 
     public void i(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
@@ -367,11 +367,11 @@ public abstract class s implements ComponentCallbacks, View.OnCreateContextMenuL
             printWriter.println(this.W);
         }
         if (n() != null) {
-            new sg.h0(this, f()).c(str, printWriter);
+            new sg.h0(this, g()).c(str, printWriter);
         }
         printWriter.print(str);
         printWriter.println("Child " + this.M + ":");
-        this.M.w(r.b.v(str, "  "), fileDescriptor, printWriter, strArr);
+        this.M.w(p5.c.v(str, "  "), fileDescriptor, printWriter, strArr);
     }
 
     public final r j() {

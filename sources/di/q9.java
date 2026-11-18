@@ -1,98 +1,41 @@
 package di;
 
-import android.content.DialogInterface;
+import android.text.TextUtils;
+import android.view.View;
 import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.xb0;
+import org.telegram.ui.PasscodeActivity;
+import org.telegram.ui.er;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q9 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class q9 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
+    public final /* synthetic */ EditTextBoldCursor c;
 
-    public /* synthetic */ q9(Object obj, int i7) {
+    public /* synthetic */ q9(Object obj, EditTextBoldCursor editTextBoldCursor, int i7) {
         this.a = i7;
         this.b = obj;
+        this.c = editTextBoldCursor;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        org.telegram.ui.web.c0 c0Var;
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.v1((EditTextBoldCursor) this.b);
+                ((xb0) this.b).c(z10, !TextUtils.isEmpty(this.c.getText()));
                 break;
             case 1:
-                ((s2) this.b).run();
+                ((xb0) this.b).c(z10, !TextUtils.isEmpty(this.c.getText()));
                 break;
             case 2:
-                ((c8) this.b).run();
-                break;
-            case 3:
-                ((fi.c1) this.b).run();
-                break;
-            case 4:
-                fi.i9 i9Var = (fi.i9) this.b;
-                if (dialogInterface == i9Var.v0) {
-                    i9Var.v0 = null;
-                    i9Var.V();
-                    break;
-                }
-                break;
-            case 5:
-                org.telegram.messenger.g0.v1((kg.s) this.b);
-                break;
-            case 6:
-                org.telegram.messenger.g0.v1((kg.x0) this.b);
-                break;
-            case 7:
-                ((oi.o) this.b).P = null;
-                break;
-            case 8:
-                ((oi.z1) this.b).P0 = null;
-                break;
-            case 9:
-                ((org.telegram.ui.ActionBar.t1) this.b).L = null;
-                break;
-            case 10:
-                Runnable[] runnableArr = (Runnable[]) this.b;
-                Runnable runnable = runnableArr[0];
-                if (runnable != null) {
-                    runnable.run();
-                    runnableArr[0] = null;
-                    break;
-                }
-                break;
-            case 11:
-                org.telegram.ui.web.v0 v0Var = ((org.telegram.ui.web.i0) this.b).e.R;
-                if (v0Var != null && (c0Var = v0Var.c) != null) {
-                    c0Var.z();
-                    break;
-                }
-                break;
-            case 12:
-                org.telegram.ui.web.c0 c0Var2 = ((org.telegram.ui.web.o0) this.b).b.e.R.c;
-                if (c0Var2 != null) {
-                    c0Var2.z();
-                    break;
-                }
-                break;
-            case 13:
-                ug.j0 j0Var = (ug.j0) this.b;
-                j0Var.b2 = false;
-                j0Var.t2.e0 = true;
-                j0Var.A2.invalidate();
-                j0Var.t2.invalidate();
-                break;
-            case 14:
-                ug.g1 g1Var = (ug.g1) this.b;
-                xb xbVar = g1Var.n2;
-                if (xbVar != null) {
-                    xbVar.setDialogVisible(false);
-                }
-                g1Var.m2.setPaused(false);
+                ((xb0) this.b).c(z10, !TextUtils.isEmpty(this.c.getText()));
                 break;
             default:
-                ((zh.l) this.b).s = null;
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
+                passcodeActivity.w.setEditText((er) this.c);
+                passcodeActivity.w.setDispatchBackWhenEmpty(true);
                 break;
         }
     }

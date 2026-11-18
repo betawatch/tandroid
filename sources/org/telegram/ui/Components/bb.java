@@ -1,9 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public interface bb {
-    void b(cb cbVar, na naVar, la laVar, oa oaVar);
+import android.content.Context;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-    void y(cb cbVar, na naVar, dg dgVar, il ilVar);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class bb extends FrameLayout {
+    public final /* synthetic */ cb a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bb(cb cbVar, Context context) {
+        super(context);
+        this.a = cbVar;
+    }
+
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
+    }
+
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        cb cbVar = this.a;
+        super.removeView(view);
+        try {
+            cbVar.dismiss();
+        } catch (Exception unused) {
+        }
+        gc.h(cbVar.a);
+    }
+
+    public void setTouchable(boolean z10) {
+        cb cbVar = this.a;
+        WindowManager.LayoutParams layoutParams = cbVar.b;
+        if (layoutParams == null) {
+            return;
+        }
+        if (z10) {
+            layoutParams.flags &= -17;
+        } else {
+            layoutParams.flags |= 16;
+        }
+        cbVar.getWindow().setAttributes(cbVar.b);
+    }
 }

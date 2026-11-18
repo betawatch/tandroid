@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k {
     public boolean a;
@@ -24,18 +24,18 @@ public final class k {
     public long j;
     public float k;
     public float l;
-    public final /* synthetic */ org.telegram.ui.Cells.r0 m;
+    public final /* synthetic */ org.telegram.ui.Cells.s0 m;
 
-    public k(org.telegram.ui.Cells.r0 r0Var) {
-        this.m = r0Var;
+    public k(org.telegram.ui.Cells.s0 s0Var) {
+        this.m = s0Var;
     }
 
     public final void a(int i7, boolean z10) {
         ArrayList arrayList;
-        org.telegram.ui.Cells.r0 r0Var = this.m;
-        ArrayList arrayList2 = r0Var.c;
-        HashMap hashMap = (HashMap) r0Var.f;
-        RectF rectF = (RectF) r0Var.g;
+        org.telegram.ui.Cells.s0 s0Var = this.m;
+        ArrayList arrayList2 = s0Var.c;
+        HashMap hashMap = (HashMap) s0Var.f;
+        RectF rectF = (RectF) s0Var.g;
         g5.a aVar = Utilities.c;
         this.j = Math.abs(aVar.nextLong() % 2250) + 2250;
         this.k = (Math.abs(aVar.nextFloat()) * 0.45f) + 0.6f;
@@ -45,7 +45,7 @@ public final class k {
         } else if (str.length() > 5) {
             this.k *= 0.75f;
         }
-        StaticLayout staticLayout = new StaticLayout(str, r0Var.a, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        StaticLayout staticLayout = new StaticLayout(str, s0Var.a, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = staticLayout;
         if (staticLayout.getLineCount() <= 0) {
             this.i = 0;
@@ -82,13 +82,13 @@ public final class k {
             g5.a aVar2 = Utilities.c;
             float abs3 = Math.abs(((int) aVar2.nextLong()) % f13) + f11;
             float abs4 = Math.abs(((int) aVar2.nextLong()) % rectF.height()) + rectF.top;
-            float f15 = 2.14748365E9f;
+            float f15 = 2.1474836E9f;
             int i11 = 0;
             while (i11 < arrayList2.size()) {
                 k kVar = (k) arrayList2.get(i11);
                 if (kVar.a) {
                     arrayList = arrayList2;
-                    float min = Math.min(Math.abs(((((this.k / r0Var.b) * kVar.h) * 1.1f) + kVar.b) - abs3), Math.abs(kVar.b - abs3));
+                    float min = Math.min(Math.abs(((((this.k / s0Var.b) * kVar.h) * 1.1f) + kVar.b) - abs3), Math.abs(kVar.b - abs3));
                     float f16 = kVar.c - abs4;
                     float f17 = (f16 * f16) + (min * min);
                     if (f17 < f15) {

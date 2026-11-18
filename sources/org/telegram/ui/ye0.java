@@ -1,34 +1,57 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import org.telegram.messenger.beta.R;
+import android.widget.LinearLayout;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ye0 extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ ze0 V2;
+public final class ye0 extends LinearLayout implements org.telegram.messenger.fs {
+    public final org.telegram.ui.Components.q9 a;
+    public final int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ye0(ze0 ze0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.V2 = ze0Var;
+    public ye0(Context context) {
+        super(context);
+        this.b = org.telegram.messenger.j10.t0;
+        setPadding(0, org.telegram.messenger.g0.L(12.0f), 0, org.telegram.messenger.g0.L(12.0f));
+        setOrientation(1);
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+        this.a = q9Var;
+        addView(q9Var, c8.ma.t(org.telegram.messenger.ks.p1, org.telegram.messenger.ks.p1, 49, 0, 2, 0, 0));
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        String a02;
-        cf0 cf0Var = this.V2.L;
-        if (z10) {
-            if (hVar == null || hVar.m() != 1) {
-                a02 = org.telegram.messenger.hd.a0(null, null, 2131749187, org.telegram.messenger.hd.G(i7, "Chats", new Object[0]));
-            } else {
-                long j3 = ((TLRPC.Dialog) hVar.n(0)).id;
-                a02 = (j3 == 0 || j3 == cf0Var.getUserConfig().e()) ? org.telegram.messenger.hd.M0(2131749185, null) : org.telegram.messenger.hd.a0(null, null, 2131749184, cf0Var.getMessagesController().B1(j3, true));
-            }
-            org.telegram.ui.Components.xb Q = org.telegram.ui.Components.cc.a0(cf0Var).Q(R.raw.forward, 36, org.telegram.messenger.g0.X2(a02));
-            Q.r = false;
-            Q.k(true);
+    public final void a() {
+        int i7 = this.b;
+        TLRPC.TL_messages_stickerSet r02 = org.telegram.messenger.ri.d0(i7).r0("tg_placeholders_android");
+        if (r02 == null) {
+            r02 = org.telegram.messenger.ri.d0(i7).p0("tg_placeholders_android");
         }
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = r02;
+        if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() < 4) {
+            org.telegram.messenger.ri.d0(i7).f1("tg_placeholders_android", false, tL_messages_stickerSet == null);
+        } else {
+            TLRPC.Document document = tL_messages_stickerSet.documents.get(3);
+            this.a.k(org.telegram.messenger.fc.b(document), "104_104", "tgs", org.telegram.messenger.u5.f(document, org.telegram.ui.ActionBar.n6.a7, 1.0f, null), tL_messages_stickerSet);
+        }
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.ks.y0 && "tg_placeholders_android".equals((String) objArr[0])) {
+            a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        org.telegram.messenger.ks.f(this.b).c(this, org.telegram.messenger.ks.y0);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.y0);
     }
 }

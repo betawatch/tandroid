@@ -1,50 +1,64 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c7 implements r1.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.widget.FrameLayout;
+import java.io.File;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ c7(Object obj, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class c7 implements org.telegram.messenger.x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g8 b;
+
+    public /* synthetic */ c7(g8 g8Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = g8Var;
     }
 
-    @Override // r1.d
-    public final void a(r1.g gVar, float f10, float f11) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        TLRPC.Document F0;
         switch (this.a) {
             case 0:
-                ((y7) this.b).N1.setBufferedProgress(f10 / 1000.0f);
-                break;
-            case 1:
-                xb xbVar = (xb) this.b;
-                xbVar.o = (int) f10;
-                xbVar.l();
-                break;
-            case 2:
-                if (Math.abs(f10) > ((cb) this.b).getWidth()) {
-                    gVar.d();
-                    break;
+                org.telegram.messenger.fj fjVar = (org.telegram.messenger.fj) obj;
+                if (fjVar != null) {
+                    g8 g8Var = this.b;
+                    if (g8Var.q2 != null && (F0 = fjVar.F0()) != null) {
+                        if (F0.id == 0) {
+                            org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, g8Var.getContext(), null);
+                            u1Var.r(180L);
+                            File file = new File(fjVar.k.attachPath);
+                            if (file.exists()) {
+                                org.telegram.messenger.w7.G(g8Var.a).f0(file.getAbsolutePath(), new bi.j(g8Var, u1Var, F0, 11));
+                                break;
+                            }
+                        } else {
+                            TLRPC.TL_account_saveMusic tL_account_saveMusic = new TLRPC.TL_account_saveMusic();
+                            TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                            tL_account_saveMusic.id = tL_inputDocument;
+                            tL_inputDocument.id = F0.id;
+                            tL_inputDocument.access_hash = F0.access_hash;
+                            tL_inputDocument.file_reference = F0.file_reference;
+                            org.telegram.messenger.gp gpVar = g8Var.q2;
+                            if (gpVar != null) {
+                                gpVar.c.add(0, gpVar.d(F0));
+                                gpVar.e();
+                            }
+                            g8Var.r2.clear();
+                            g8Var.r2.addAll(g8Var.q2.c);
+                            g8Var.u1.f();
+                            ConnectionsManager.getInstance(g8Var.a).sendRequest(tL_account_saveMusic, null);
+                            break;
+                        }
+                    }
                 }
-                break;
-            case 3:
-                ki kiVar = (ki) ((di.y3) this.b).d;
-                ci ciVar = kiVar.x2;
-                if (ciVar == kiVar.h2 || ciVar == kiVar.i2 || (kiVar.A1 && kiVar.r3 != null)) {
-                    kiVar.P1(1);
-                }
-                kiVar.x2.m(kiVar.j4);
-                kiVar.Y0.g();
-                kiVar.b.invalidate();
-                break;
-            case 4:
-                qk qkVar = (qk) this.b;
-                qkVar.n0 = f10;
-                qkVar.m0();
                 break;
             default:
-                ((ra0) this.b).y();
+                g8 g8Var2 = this.b;
+                FrameLayout frameLayout = (FrameLayout) g8Var2.b;
+                org.telegram.ui.ActionBar.i6 i6Var = g8Var2.J0;
+                new lc(frameLayout, i6Var).o(kc.G, i6Var).j();
                 break;
         }
     }

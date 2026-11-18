@@ -31,12 +31,14 @@ import f6.l;
 import f6.o;
 import f6.q;
 import g6.c0;
+import hi.u5;
+import hi.w4;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public static final j6.b v = new j6.b("MediaSessionManager", null);
@@ -68,24 +70,24 @@ public final class h {
         this.b = bVar;
         this.c = pVar;
         j6.b bVar2 = g6.a.l;
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         g6.a aVar = g6.a.n;
         f fVar2 = null;
         this.d = aVar != null ? aVar.b() : null;
         h6.a aVar2 = bVar.f;
         this.e = aVar2 == null ? null : aVar2.d;
-        this.m = new c0(this, 2);
+        int i7 = 2;
+        this.m = new c0(this, i7);
         String str = aVar2 == null ? null : aVar2.b;
         this.f = !TextUtils.isEmpty(str) ? new ComponentName(context, str) : null;
         String str2 = aVar2 == null ? null : aVar2.a;
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         r7 r7Var = new r7(context);
         this.h = r7Var;
-        r7Var.f = new gc.b(this, 7);
+        r7Var.f = new w4(this, 3);
         r7 r7Var2 = new r7(context);
         this.i = r7Var2;
-        int i7 = 29;
-        r7Var2.f = new d6.i(this, i7);
+        r7Var2.f = new u5(this, i7);
         this.k = new y(Looper.getMainLooper(), 0);
         j6.b bVar3 = f.u;
         h6.a aVar3 = bVar.f;
@@ -113,7 +115,7 @@ public final class h {
             fVar2 = new f(context);
         }
         this.j = fVar2;
-        this.l = new sa(this, i7);
+        this.l = new sa(this, 29);
     }
 
     public final void a(h6.h hVar, CastDevice castDevice) {
@@ -145,10 +147,10 @@ public final class h {
                     throw new IllegalArgumentException("The android.media.metadata.ALBUM_ARTIST key cannot be used to put a String");
                 }
                 bundle.putCharSequence("android.media.metadata.ALBUM_ARTIST", string);
-                a0Var.s(new MediaMetadataCompat(bundle));
+                a0Var.t(new MediaMetadataCompat(bundle));
             }
-            a0Var.r(new g(this, i7), null);
-            a0Var.q(true);
+            a0Var.s(new g(this, i7), null);
+            a0Var.r(true);
             this.c.m1(a0Var);
         }
         this.q = true;
@@ -312,7 +314,7 @@ public final class h {
                 h6.h hVar = this.n;
                 if (hVar != null && hVar.h()) {
                     q e10 = hVar.e();
-                    m.g(e10);
+                    m.h(e10);
                     if ((128 & e10.n) != 0 || e10.G != 0) {
                         return 16L;
                     }
@@ -328,7 +330,7 @@ public final class h {
             h6.h hVar2 = this.n;
             if (hVar2 != null && hVar2.h()) {
                 q e11 = hVar2.e();
-                m.g(e11);
+                m.h(e11);
                 if ((64 & e11.n) != 0 || e11.G != 0) {
                     return 32L;
                 }
@@ -379,7 +381,7 @@ public final class h {
         }
         w wVar = mediaMetadataCompat == null ? new w() : new w(mediaMetadataCompat);
         wVar.h(i7 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        a0Var.s(new MediaMetadataCompat(wVar.a));
+        a0Var.t(new MediaMetadataCompat(wVar.a));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -661,7 +663,7 @@ public final class h {
                 b10 = d0Var.b();
             }
         }
-        a0Var2.t(b10);
+        a0Var2.u(b10);
         if (fVar != null && fVar.X) {
             bundle.putBoolean("android.media.playback.ALWAYS_RESERVE_SPACE_FOR.ACTION_SKIP_TO_PREVIOUS", true);
         }
@@ -672,7 +674,7 @@ public final class h {
             uVar.a.setExtras(bundle);
         }
         if (i7 == 0) {
-            a0Var2.s(new MediaMetadataCompat(new Bundle()));
+            a0Var2.t(new MediaMetadataCompat(new Bundle()));
             return;
         }
         if (this.n != null) {
@@ -719,7 +721,7 @@ public final class h {
         if (string2 != null) {
             wVar.j("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        a0Var.s(new MediaMetadataCompat(wVar.a));
+        a0Var.t(new MediaMetadataCompat(wVar.a));
         Uri d = d(lVar);
         if (d != null) {
             this.h.M(d);

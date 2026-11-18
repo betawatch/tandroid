@@ -2,21 +2,20 @@ package kg;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import bi.v2;
 import com.google.android.gms.internal.vision.e2;
 import j$.time.Instant;
 import j$.time.ZoneId;
 import j$.time.format.TextStyle;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class z1 {
     public static volatile z1[] e = new z1[4];
@@ -80,7 +79,7 @@ public final class z1 {
         StringBuilder m10 = e2.m(concat);
         m10.append(i10 < 10 ? "0" : "");
         m10.append(i10);
-        StringBuilder m11 = e2.m(r.b.v(m10.toString(), ":"));
+        StringBuilder m11 = e2.m(p5.c.v(m10.toString(), ":"));
         m11.append(i11 < 10 ? "0" : "");
         m11.append(i11);
         return m11.toString();
@@ -153,7 +152,7 @@ public final class z1 {
             return "";
         }
         if (z10) {
-            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, hd.E0().y);
+            String displayName = of2.getRules().getOffset(Instant.now()).getDisplayName(TextStyle.FULL, gd.E0().y);
             str2 = "GMT";
             if (displayName.length() != 1 || displayName.charAt(0) != 'Z') {
                 str2 = "GMT".concat(displayName);
@@ -173,7 +172,7 @@ public final class z1 {
         }
         this.b = true;
         int i7 = this.a;
-        SharedPreferences sharedPreferences = np.s1(i7).f7;
+        SharedPreferences sharedPreferences = mp.u1(i7).h7;
         TLRPC.help_timezonesList help_timezoneslist = null;
         String string = sharedPreferences.getString("timezones", null);
         if (string != null) {
@@ -185,9 +184,9 @@ public final class z1 {
         if (help_timezoneslist != null) {
             arrayList.addAll(help_timezoneslist.timezones);
         }
-        ns.f(i7).k(ns.r3, new Object[0]);
+        ks.f(i7).k(ks.t3, new Object[0]);
         TLRPC.TL_help_getTimezonesList tL_help_getTimezonesList = new TLRPC.TL_help_getTimezonesList();
         tL_help_getTimezonesList.hash = help_timezoneslist != null ? help_timezoneslist.hash : 0;
-        ConnectionsManager.getInstance(i7).sendRequest(tL_help_getTimezonesList, new v2(21, this, sharedPreferences));
+        ConnectionsManager.getInstance(i7).sendRequest(tL_help_getTimezonesList, new bi.k1(22, this, sharedPreferences));
     }
 }

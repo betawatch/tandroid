@@ -1,8 +1,8 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p1 {
     public static final p1 c;
@@ -22,8 +22,8 @@ public final class p1 {
     }
 
     public p1(long j3, long j10) {
-        ja.f(j3 >= 0);
-        ja.f(j10 >= 0);
+        la.f(j3 >= 0);
+        la.f(j10 >= 0);
         this.a = j3;
         this.b = j10;
     }

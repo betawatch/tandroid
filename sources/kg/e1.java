@@ -1,130 +1,53 @@
 package kg;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import bi.x4;
-import c8.ja;
-import di.z6;
-import hi.h4;
-import hi.q4;
-import java.util.ArrayList;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import java.util.Calendar;
+import java.util.Locale;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e1 extends e2 {
-    public final CharSequence a;
-    public final ArrayList b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public hi.e1 f;
-    public h4 h;
-    public u41 n;
-    public boolean r;
+public final class e1 {
+    public int a;
+    public int b;
 
-    public e1(CharSequence charSequence, ArrayList arrayList, int i7, int i10, int i11) {
-        super(null);
-        this.a = charSequence;
-        this.b = arrayList;
-        this.c = i7;
-        this.d = i10;
-        this.e = i11;
-        this.r = !arrayList.isEmpty();
+    public e1(int i7, int i10) {
+        this.a = i7;
+        this.b = i10;
     }
 
-    public final boolean Z() {
-        ArrayList arrayList = this.b;
-        return arrayList.size() == 1 && ((b1) arrayList.get(0)).a == 0 && ((b1) arrayList.get(0)).b == 1439;
-    }
-
-    public final boolean a0() {
-        ArrayList arrayList = this.b;
-        if (arrayList.size() >= this.e) {
-            return false;
-        }
-        return arrayList.isEmpty() || Z() || ((b1) i5.c.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final View createView(Context context) {
-        setHasOwnBackground(true);
-        this.simpleActionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.simpleActionBar.setTitle(this.a);
-        this.simpleActionBar.setActionBarMenuOnItemClick(new x4(this, 10));
-        FrameLayout frameLayout = new FrameLayout(context);
-        u41 u41Var = new u41(this, new q4(this, 14), new z6(this, 26), null);
-        this.n = u41Var;
-        u41Var.r1();
-        this.n.setSectionsDrawBackground(true);
-        frameLayout.addView(this.n, ja.c(-1.0f, -1));
-        this.fragmentView = frameLayout;
-        return frameLayout;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final uj0 getListViewForSimpleGlass() {
-        return this.n;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onBecomeFullyHidden() {
-        h4 h4Var = this.h;
-        if (h4Var != null) {
-            h4Var.run();
-        }
-        super.onBecomeFullyHidden();
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        if (this.r) {
-            return;
-        }
-        ArrayList arrayList = this.b;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        arrayList.clear();
-        hi.e1 e1Var = this.f;
-        if (e1Var != null) {
-            e1Var.run();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onThemeColorsChanged() {
-        super.onThemeColorsChanged();
-        try {
-            if (this.n != null) {
-                for (int i7 = 0; i7 < this.n.getChildCount(); i7++) {
-                    View childAt = this.n.getChildAt(i7);
-                    if ((childAt instanceof q8) && ((q8) childAt).b == -1) {
-                        q6.h(this.r ? j6.f6 : j6.e6, childAt, null);
+    public static String a(int i7) {
+        int i10 = i7 % 60;
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(0, 0, 0, ((i7 - i10) / 60) % 24, i10);
+        gd E0 = gd.E0();
+        if (E0.c == null) {
+            synchronized (E0) {
+                try {
+                    if (E0.c == null) {
+                        Locale locale = E0.y;
+                        if (locale == null) {
+                            locale = Locale.getDefault();
+                        }
+                        String language = locale.getLanguage();
+                        if (language == null) {
+                            language = "en";
+                        }
+                        String lowerCase = language.toLowerCase();
+                        if (!lowerCase.toLowerCase().equals("ar") && !lowerCase.toLowerCase().equals("ko")) {
+                            locale = Locale.US;
+                        }
+                        boolean z10 = gd.c0;
+                        E0.c = gd.k(locale, z10 ? "HH:mm" : "h:mm a", z10 ? "HH:mm" : "h:mm a");
                     }
+                } finally {
                 }
             }
-        } catch (Exception e10) {
-            a8.g(e10, true);
         }
+        String format = E0.c.format(calendar.getTime());
+        return i7 > 1440 ? gd.a0(null, null, 2131752737, format) : format;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final boolean useSimpleActionBar() {
-        return true;
+    public final String toString() {
+        return a(this.a) + " - " + a(this.b);
     }
 }

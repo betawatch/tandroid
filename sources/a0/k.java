@@ -1,8 +1,8 @@
 package a0;
 
-import c8.uc;
+import c8.xc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k {
     public int[] a;
@@ -16,7 +16,7 @@ public final class k {
             if (i7 == i10) {
                 int[] iArr = this.a;
                 int[] iArr2 = kVar.a;
-                ud.e a10 = uc.a(0, i10);
+                ud.e a10 = xc.a(0, i10);
                 int i11 = a10.a;
                 int i12 = a10.b;
                 if (i11 > i12) {

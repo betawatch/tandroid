@@ -10,11 +10,11 @@ import android.view.ActionMode;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.Button;
-import c8.ic;
-import c8.mc;
+import c8.lc;
+import c8.pc;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m extends Button implements u0.k {
     public final h2.c a;
@@ -115,7 +115,7 @@ public final class m extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mc.d(super.getCustomSelectionActionModeCallback());
+        return pc.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -239,7 +239,7 @@ public final class m extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(mc.e(callback, this));
+        super.setCustomSelectionActionModeCallback(pc.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -248,7 +248,7 @@ public final class m extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((ic) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((lc) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportAllCaps(boolean z10) {

@@ -1,9 +1,9 @@
 package cc;
 
 import java.lang.reflect.Array;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h extends g {
     public b e;
@@ -54,7 +54,7 @@ public final class h extends g {
                     }
                     int i22 = (i19 * i7) + i21;
                     int i23 = i15;
-                    int i24 = ns.e4;
+                    int i24 = ks.e4;
                     int i25 = 0;
                     int i26 = 0;
                     int i27 = 0;

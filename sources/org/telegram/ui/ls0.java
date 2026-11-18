@@ -1,74 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.ImageView;
+import android.util.SparseIntArray;
+import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ls0 extends fs0 {
-    public final /* synthetic */ int r = 1;
-    public final /* synthetic */ org.telegram.ui.Components.tj0 s;
+public final /* synthetic */ class ls0 implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.mp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ls0(di.i4 i4Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.s = i4Var;
+    public /* synthetic */ ls0(org.telegram.messenger.mp mpVar, int i7) {
+        this.a = i7;
+        this.b = mpVar;
     }
 
-    @Override // org.telegram.ui.fs0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.e6 e6Var;
-        boolean q10;
-        org.telegram.ui.ActionBar.e6 e6Var2;
-        switch (this.r) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int i7;
+        int i10;
+        ws0 ws0Var = (ws0) obj;
+        ws0 ws0Var2 = (ws0) obj2;
+        switch (this.a) {
             case 0:
-                float L = org.telegram.messenger.g0.L(10.0f);
-                RectF rectF = org.telegram.messenger.g0.P;
-                ImageView imageView = this.c;
-                rectF.set(imageView.getLeft(), imageView.getTop(), imageView.getRight(), imageView.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((ms0) this.s).c;
-                premiumPreviewFragment.T.reset();
-                premiumPreviewFragment.T.postScale(1.0f, premiumPreviewFragment.O / 100.0f, 0.0f, 0.0f);
-                premiumPreviewFragment.T.postTranslate(0.0f, -this.f.e);
-                premiumPreviewFragment.S.setLocalMatrix(premiumPreviewFragment.T);
-                canvas.drawRoundRect(rectF, L, L, premiumPreviewFragment.U);
-                e6Var = ((org.telegram.ui.ActionBar.e2) premiumPreviewFragment).resourceProvider;
-                if (e6Var != null) {
-                    e6Var2 = ((org.telegram.ui.ActionBar.e2) premiumPreviewFragment).resourceProvider;
-                    q10 = e6Var2.a();
-                } else {
-                    q10 = org.telegram.ui.ActionBar.j6.I.q();
-                }
-                if (q10) {
-                    float L2 = org.telegram.messenger.g0.L(1.0f);
-                    premiumPreviewFragment.R.setStrokeWidth(L2);
-                    canvas.save();
-                    canvas.translate(rectF.left, rectF.top);
-                    rectF.offset(-rectF.left, -rectF.top);
-                    float f10 = L2 / 2.0f;
-                    rectF.inset(f10, f10);
-                    canvas.drawRoundRect(rectF, L, L, premiumPreviewFragment.R);
-                    canvas.restore();
-                }
-                super.dispatchDraw(canvas);
+                SparseIntArray sparseIntArray = this.b.P0;
+                i7 = sparseIntArray.get(ws0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray.get(ws0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
             default:
-                RectF rectF2 = org.telegram.messenger.g0.P;
-                ImageView imageView2 = this.c;
-                rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                di.i4 i4Var = (di.i4) this.s;
-                ((ug.g1) i4Var.d).l2.d(0, 0.0f, 0, getMeasuredWidth(), -this.f.e, ((ug.g1) i4Var.d).a2);
-                canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), ((ug.g1) i4Var.d).l2.f);
-                super.dispatchDraw(canvas);
+                SparseIntArray sparseIntArray2 = this.b.O0;
+                i7 = sparseIntArray2.get(ws0Var.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                i10 = sparseIntArray2.get(ws0Var2.a, ConnectionsManager.DEFAULT_DATACENTER_ID);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ls0(ms0 ms0Var, Context context) {
-        super(context, null);
-        this.s = ms0Var;
+        return i7 - i10;
     }
 }

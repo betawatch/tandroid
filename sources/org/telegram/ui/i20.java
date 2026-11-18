@@ -1,43 +1,45 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i20 implements TextWatcher {
-    public final /* synthetic */ c40 a;
+public final class i20 implements nh.a {
+    public final /* synthetic */ f40 a;
 
-    public i20(c40 c40Var) {
-        this.a = c40Var;
+    public i20(f40 f40Var) {
+        this.a = f40Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        String str;
-        c40 c40Var = this.a;
-        c40Var.z5.a(TextUtils.isEmpty(editable), true);
-        int codePointCount = Character.codePointCount(editable, 0, editable.length());
-        int i7 = c40Var.Y1;
-        if (codePointCount + 25 > i7) {
-            str = "" + (i7 - codePointCount);
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
+        }
+        boolean z10 = Q instanceof ProfileActivity;
+        f40 f40Var = this.a;
+        if (z10 && ((ProfileActivity) Q).a() == groupCallMessage.fromId) {
+            f40Var.dismiss();
+            return;
+        }
+        int S0 = f40Var.S0();
+        Bundle bundle = new Bundle();
+        long j3 = groupCallMessage.fromId;
+        if (j3 > 0) {
+            bundle.putLong("user_id", j3);
         } else {
-            str = null;
+            bundle.putLong("chat_id", -j3);
         }
-        c40Var.H1.a();
-        c40Var.H1.setText(str);
-        c40Var.H1.setTextColor(codePointCount >= i7 ? -1280137 : -1);
-        if (codePointCount > i7) {
-            org.telegram.messenger.p2.E.a();
+        boolean z11 = true;
+        if (groupCallMessage.fromId == org.telegram.messenger.j10.i(f40Var.o1.a).e()) {
+            bundle.putBoolean("my_profile", true);
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (S0 > 0 && S0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        Q.presentFragment(profileActivity, false, z11);
+        f40Var.dismiss();
     }
 }

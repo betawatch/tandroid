@@ -1,55 +1,58 @@
 package bi;
 
-import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.bn;
+import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n4 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a6 b;
+public final /* synthetic */ class n4 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ n4(a6 a6Var, int i7) {
-        this.a = i7;
-        this.b = a6Var;
+    public /* synthetic */ n4(int i7, int i10, String str, boolean z10) {
+        this.e = str;
+        this.b = i7;
+        this.d = z10;
+        this.c = i10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                o5 o5Var = this.b.d;
-                Integer num = (Integer) o5Var.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                Integer num2 = (Integer) o5Var.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                if (num == null) {
-                    return 1;
-                }
-                if (num2 == null) {
-                    return -1;
-                }
-                return num2.intValue() - num.intValue();
-            case 1:
-                o5 o5Var2 = this.b.d;
-                Integer num3 = (Integer) o5Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                Integer num4 = (Integer) o5Var2.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                if (num3 == null) {
-                    return 1;
-                }
-                if (num4 == null) {
-                    return -1;
-                }
-                return num4.intValue() - num3.intValue();
+                final String str = (String) this.e;
+                TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
+                getuniquestargift.slug = str;
+                final int i7 = this.b;
+                ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i7);
+                final int i10 = this.c;
+                final boolean z10 = this.d;
+                connectionsManager.sendRequest(getuniquestargift, new RequestDelegate() { // from class: bi.g4
+                    @Override // org.telegram.tgnet.RequestDelegate
+                    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+                        org.telegram.messenger.g0.g3(new p4(tLObject, i7, z10, i10, str));
+                    }
+                });
+                break;
             default:
-                o5 o5Var3 = this.b.d;
-                Integer num5 = (Integer) o5Var3.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                Integer num6 = (Integer) o5Var3.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                if (num5 == null) {
-                    return 1;
-                }
-                if (num6 == null) {
-                    return -1;
-                }
-                return num6.intValue() - num5.intValue();
+                bn bnVar = (bn) this.e;
+                bnVar.getMessagesController().d0(bnVar.l6, org.telegram.messenger.v3.T(bnVar.e) ? bnVar.l6 : 0L, this.b, this.c, this.d, new vf(bnVar, 21));
+                break;
         }
+    }
+
+    public /* synthetic */ n4(bn bnVar, int i7, int i10, boolean z10) {
+        this.e = bnVar;
+        this.b = i7;
+        this.c = i10;
+        this.d = z10;
     }
 }

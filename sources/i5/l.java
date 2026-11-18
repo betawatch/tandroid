@@ -2,24 +2,23 @@ package i5;
 
 import a8.p0;
 import ab.c0;
-import c8.mb;
+import c8.pb;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff E;
-    public static final /* synthetic */ ff F;
-    public static final /* synthetic */ ff G;
-    public static final /* synthetic */ ff H;
-    public static final /* synthetic */ ff I;
-    public static final /* synthetic */ ff J;
-    public static final /* synthetic */ ff s;
-    public static final /* synthetic */ ff w;
-    public static final /* synthetic */ ff x;
-    public static final /* synthetic */ ff y;
+    public static final /* synthetic */ ze.b E;
+    public static final /* synthetic */ ze.b F;
+    public static final /* synthetic */ ze.b G;
+    public static final /* synthetic */ ze.b H;
+    public static final /* synthetic */ ze.b I;
+    public static final /* synthetic */ ze.b J;
+    public static final /* synthetic */ ze.b s;
+    public static final /* synthetic */ ze.b w;
+    public static final /* synthetic */ ze.b x;
+    public static final /* synthetic */ ze.b y;
     public Date e;
     public Date f;
     public long h;
@@ -45,13 +44,13 @@ public final class l extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = mb.b(h5.b.j(byteBuffer));
-            this.f = mb.b(h5.b.j(byteBuffer));
+            this.e = pb.b(h5.b.j(byteBuffer));
+            this.f = pb.b(h5.b.j(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             this.n = h5.b.j(byteBuffer);
         } else {
-            this.e = mb.b(h5.b.i(byteBuffer));
-            this.f = mb.b(h5.b.i(byteBuffer));
+            this.e = pb.b(h5.b.i(byteBuffer));
+            this.f = pb.b(h5.b.i(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             this.n = h5.b.i(byteBuffer);
         }
@@ -68,13 +67,13 @@ public final class l extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(mb.a(this.e));
-            byteBuffer.putLong(mb.a(this.f));
+            byteBuffer.putLong(pb.a(this.e));
+            byteBuffer.putLong(pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) mb.a(this.e));
-            byteBuffer.putInt((int) mb.a(this.f));
+            byteBuffer.putInt((int) pb.a(this.e));
+            byteBuffer.putInt((int) pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -100,19 +99,19 @@ public final class l extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MediaHeaderBox[creationTime=");
-        c.u(ze.a.b(s, this, this));
+        c.w(ze.a.b(s, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        c.u(ze.a.b(w, this, this));
+        c.w(ze.a.b(w, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        c.u(ze.a.b(x, this, this));
+        c.w(ze.a.b(x, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        c.u(ze.a.b(y, this, this));
+        c.w(ze.a.b(y, this, this));
         sb2.append(this.n);
         sb2.append(";language=");
-        c.u(ze.a.b(E, this, this));
+        c.w(ze.a.b(E, this, this));
         return p0.s(sb2, this.r, "]");
     }
 }

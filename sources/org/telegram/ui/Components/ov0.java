@@ -1,45 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ov0 extends AnimatorListenerAdapter {
+public final class ov0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ bw0 c;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ FrameLayout c;
 
-    public ov0(bw0 bw0Var, int i7, boolean z10) {
-        this.c = bw0Var;
+    public /* synthetic */ ov0(FrameLayout frameLayout, View view, int i7) {
         this.a = i7;
-        this.b = z10;
+        this.c = frameLayout;
+        this.b = view;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.c.D1;
-        int i7 = this.a;
-        AnimatorSet animatorSet = animatorSetArr[i7];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                pv0 pv0Var = (pv0) this.c;
+                pv0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pv0Var.invalidate();
+                ((el0) this.b).invalidate();
+                break;
+            default:
+                ((g71) this.c).B(this.b, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        animatorSetArr[i7] = null;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        bw0 bw0Var = this.c;
-        AnimatorSet[] animatorSetArr = bw0Var.D1;
-        int i7 = this.a;
-        AnimatorSet animatorSet = animatorSetArr[i7];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        if (!this.b) {
-            bw0Var.E1[i7].setVisibility(4);
-        }
-        animatorSetArr[i7] = null;
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qc0 implements Runnable {
     public final /* synthetic */ int a;
@@ -18,12 +18,12 @@ public final /* synthetic */ class qc0 implements Runnable {
         switch (this.a) {
             case 0:
                 rc0 rc0Var = this.b;
-                org.telegram.ui.Components.fh0 fh0Var = rc0Var.h;
-                fh0Var.getAnimatedDrawable().N(0, false, false);
-                fh0Var.d();
+                org.telegram.ui.Components.ph0 ph0Var = rc0Var.h;
+                ph0Var.getAnimatedDrawable().N(0, false, false);
+                ph0Var.d();
                 EditTextBoldCursor editTextBoldCursor = rc0Var.b;
                 editTextBoldCursor.requestFocus();
-                org.telegram.messenger.g0.J3(editTextBoldCursor);
+                org.telegram.messenger.g0.I3(editTextBoldCursor);
                 break;
             default:
                 this.b.b.requestFocus();

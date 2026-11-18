@@ -1,10 +1,10 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class m1 {
-    public static final ke.a a(ke.a aVar) {
-        kotlin.jvm.internal.j.e(aVar, "<this>");
-        return aVar.d().c() ? aVar : new oe.j(aVar);
+    public static byte a(long j3) {
+        a8.la.d(j3, "out of range: %s", (j3 >> 8) == 0);
+        return (byte) j3;
     }
 }

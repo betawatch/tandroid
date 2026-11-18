@@ -1,21 +1,12 @@
 package c8;
 
-import java.io.Closeable;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class ob {
-    public static final void a(Closeable closeable, Throwable th2) {
-        if (closeable != null) {
-            if (th2 == null) {
-                closeable.close();
-                return;
-            }
-            try {
-                closeable.close();
-            } catch (Throwable th3) {
-                a8.ma.a(th2, th3);
-            }
+    public static int a(long j3) {
+        if (j3 > 2147483647L || j3 < -2147483648L) {
+            throw new RuntimeException(p5.c.j(j3, "A cast to int has gone wrong. Please contact the mp4parser discussion group (", ")"));
         }
+        return (int) j3;
     }
 }

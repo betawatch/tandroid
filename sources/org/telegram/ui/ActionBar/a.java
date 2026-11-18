@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.pu0;
+import org.telegram.ui.ru0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -16,19 +16,19 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        y yVar;
+        z zVar;
         switch (this.a) {
             case 0:
-                pu0 pu0Var = this.b.f1;
-                if (pu0Var != null) {
-                    pu0Var.run();
+                ru0 ru0Var = this.b.f1;
+                if (ru0Var != null) {
+                    ru0Var.run();
                     break;
                 }
                 break;
             case 1:
-                pu0 pu0Var2 = this.b.f1;
-                if (pu0Var2 != null) {
-                    pu0Var2.run();
+                ru0 ru0Var2 = this.b.f1;
+                if (ru0Var2 != null) {
+                    ru0Var2.run();
                     break;
                 }
                 break;
@@ -42,12 +42,12 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                     kVar.a.s(W1, L, L, W1);
                     kVar.invalidate();
                 }
-                if (kVar.Q0 && (yVar = kVar.F) != null) {
-                    yVar.setTranslationX(-org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), kVar.p0));
+                if (kVar.Q0 && (zVar = kVar.F) != null) {
+                    zVar.setTranslationX(-org.telegram.messenger.g0.T1(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(5.0f), kVar.p0));
                 }
-                pu0 pu0Var3 = kVar.f1;
-                if (pu0Var3 != null) {
-                    pu0Var3.run();
+                ru0 ru0Var3 = kVar.f1;
+                if (ru0Var3 != null) {
+                    ru0Var3.run();
                     break;
                 }
                 break;

@@ -8,166 +8,185 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ah0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final hi.l0 A;
-    public final hi.l0 B;
-    public final hi.l0 C;
-    public final gc.b D;
-    public final gc.b E;
-    public final ia.d F;
-    public final ia.d G;
-    public final ia.d H;
-    public final ia.d I;
-    public final ia.d J;
-    public final gc.b K;
-    public final ia.d L;
-    public final ia.d M;
-    public final ia.d N;
-    public final ia.d O;
-    public final ia.d P;
-    public final ia.d Q;
-    public final ia.d R;
-    public final ia.d S;
-    public final ia.d T;
-    public final hi.l0 U;
-    public final ia.d V;
-    public final ia.d W;
-    public final ia.d X;
-    public final ia.d Y;
-    public final ia.d Z;
+    public final hi.w4 A;
+    public final hi.w4 B;
+    public final hi.u5 C;
+    public final hi.u5 D;
+    public final hi.u5 E;
+    public final h9.g1 F;
+    public final h9.g1 G;
+    public final h9.g1 H;
+    public final hi.w4 I;
+    public final hi.w4 J;
+    public final hi.u5 K;
+    public final hi.u5 L;
+    public final hi.u5 M;
+    public final hi.u5 N;
+    public final hi.u5 O;
+    public final hi.w4 P;
+    public final hi.u5 Q;
+    public final hi.u5 R;
+    public final hi.u5 S;
+    public final hi.u5 T;
+    public final hi.u5 U;
+    public final hi.u5 V;
+    public final hi.u5 W;
+    public final hi.u5 X;
+    public final hi.u5 Y;
+    public final h9.g1 Z;
     public final HashMap a;
-    public final ia.d a0;
-    public final ia.d b;
-    public final ia.d b0;
-    public final ia.d c;
-    public final ia.d c0;
-    public final ia.d d;
-    public final ia.d d0;
-    public final ia.d e;
-    public final ia.d e0;
-    public final ia.d f;
-    public final hi.l0 f0;
-    public final hi.l0 g;
-    public final hi.l0 g0;
-    public final hi.l0 h;
-    public final hi.l0 h0;
-    public final gc.b i;
-    public final hi.l0 i0;
-    public final gc.b j;
-    public final hi.l0 j0;
-    public final gc.b k;
-    public final hi.l0 k0;
-    public final gc.b l;
-    public final hi.l0 l0;
-    public final hi.l0 m;
-    public final hi.l0 m0;
-    public final ia.d n;
-    public final gc.b n0;
-    public final ia.d o;
-    public final hi.l0 o0;
-    public final ia.d p;
-    public final ia.d q;
-    public final hi.l0 r;
-    public final hi.l0 s;
-    public final ia.d t;
-    public final ia.d u;
-    public final gc.b v;
-    public final gc.b w;
-    public final ia.d x;
-    public final ia.d y;
-    public final ia.d z;
+    public final hi.u5 a0;
+    public final hi.u5 b;
+    public final hi.u5 b0;
+    public final hi.u5 c;
+    public final hi.u5 c0;
+    public final hi.u5 d;
+    public final hi.u5 d0;
+    public final hi.u5 e;
+    public final hi.u5 e0;
+    public final hi.u5 f;
+    public final hi.u5 f0;
+    public final h9.g1 g;
+    public final hi.u5 g0;
+    public final h9.g1 h;
+    public final hi.u5 h0;
+    public final hi.w4 i;
+    public final hi.u5 i0;
+    public final hi.w4 j;
+    public final hi.u5 j0;
+    public final hi.w4 k;
+    public final hi.u5 k0;
+    public final hi.w4 l;
+    public final h9.g1 l0;
+    public final h9.g1 m;
+    public final h9.g1 m0;
+    public final hi.u5 n;
+    public final h9.g1 n0;
+    public final hi.u5 o;
+    public final h9.g1 o0;
+    public final hi.u5 p;
+    public final h9.g1 p0;
+    public final hi.u5 q;
+    public final h9.g1 q0;
+    public final h9.g1 r;
+    public final h9.g1 r0;
+    public final h9.g1 s;
+    public final h9.g1 s0;
+    public final h9.g1 t;
+    public final hi.w4 t0;
+    public final h9.g1 u;
+    public final h9.g1 u0;
+    public final hi.u5 v;
+    public final hi.u5 v0;
+    public final hi.u5 w;
+    public final h9.g1 x;
+    public final hi.u5 y;
+    public final hi.u5 z;
 
     public p0() {
         HashMap hashMap = new HashMap();
         this.a = hashMap;
-        this.b = d(10, "stars_paid_messages_channel_amount_default");
-        this.c = d(850, "stars_suggested_post_commission_permille");
-        this.d = d(5, "stars_suggested_post_amount_min");
-        this.e = d(100000, "stars_suggested_post_amount_max");
-        this.f = d(850, "ton_suggested_post_commission_permille");
-        this.g = e(10000000L, "ton_suggested_post_amount_min");
-        this.h = e(10000000000000L, "ton_suggested_post_amount_max");
+        this.b = e(10, "stars_paid_messages_channel_amount_default");
+        this.c = e(850, "stars_suggested_post_commission_permille");
+        this.d = e(5, "stars_suggested_post_amount_min");
+        this.e = e(100000, "stars_suggested_post_amount_max");
+        this.f = e(850, "ton_suggested_post_commission_permille");
+        this.g = f(10000000L, "ton_suggested_post_amount_min");
+        this.h = f(10000000000000L, "ton_suggested_post_amount_max");
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.i = g(86400L, "stars_suggested_post_age_min");
-        this.j = g(300L, "stars_suggested_post_future_min");
-        this.k = g(2678400L, "stars_suggested_post_future_max");
-        gc.b bVar = new gc.b(25);
-        hashMap.put("ton_usd_rate", (i0) bVar.b);
-        this.l = bVar;
-        f("stars_rating_learnmore_url", "https://telegram.org/blog/telegram-stars");
-        this.m = c("need_age_video_verification", false);
-        this.n = d(800, "stars_stargift_resale_commission_permille");
-        this.o = d(800, "ton_stargift_resale_commission_permille");
-        this.p = d(ns.J1, "stars_stargift_resale_amount_min");
-        this.q = d(35000, "stars_stargift_resale_amount_max");
-        this.r = e(10000000L, "ton_stargift_resale_amount_min");
-        this.s = e(10000000000000L, "ton_stargift_resale_amount_max");
-        this.t = d(100, "stargifts_collections_limit");
-        d(100, "stargifts_collection_gifts_limit");
-        this.u = d(100, "stories_albums_limit");
-        d(100, "stories_album_stories_limit");
-        this.v = g(30L, "message_typing_draft_ttl");
-        this.w = g(10L, "group_call_message_ttl");
-        this.x = d(128, "group_call_message_length_limit");
-        this.y = d(128, "contact_note_length_limit");
-        this.z = d(5, "passkeys_account_passkeys_max");
-        boolean z10 = r2.a;
-        this.A = c("settings_display_passkeys", true);
-        this.B = c("android_disable_blur_in_light_theme", false);
-        this.C = c("android_disable_blur_in_dark_theme", false);
-        this.D = g(86400L, "no_forwards_request_expire_period");
-        this.E = g(2592000L, "poll_close_period_max");
-        this.F = f("music_search_username", null);
-        this.G = d(12, "poll_answers_max");
-        this.H = d(12, "poll_countries_max");
-        this.I = d(100, "poll_answer_length_max");
-        d(ns.e4, "poll_question_length_max");
-        d(ns.e3, "poll_solution_length_max");
-        this.J = d(ns.X4, "poll_caption_length_max");
-        this.K = g(300L, "poll_answer_delete_period");
-        this.L = d(20, "bots_create_limit_default");
-        this.M = d(40, "bots_create_limit_premium");
-        this.N = d(2, "bot_additional_usernames_limit");
-        this.O = f("phone_country_iso2", "en");
-        this.P = d(3, "aicompose_tone_examples_num");
-        this.Q = d(12, "aicompose_tone_title_length_max");
-        this.R = d(1024, "aicompose_tone_prompt_length_max");
-        this.S = d(5, "aicompose_tone_saved_limit_default");
-        this.T = d(20, "aicompose_tone_saved_limit_premium");
-        this.U = c("message_primary_edited_date", false);
-        this.V = d(32768, "rich_message_length_limit");
-        this.W = d(500, "rich_message_max_blocks");
-        this.X = d(16, "rich_message_max_depth");
-        this.Y = d(50, "rich_message_max_media");
-        this.Z = d(20, "rich_message_max_table_cols");
-        this.a0 = f("rich_message_posting", "premium");
-        d(100, "community_peers_limit");
-        d(100, "community_bot_peers_limit");
-        this.b0 = d(TLObject.FLAG_12, "message_length_limit_default");
-        this.c0 = d(TLObject.FLAG_13, "message_length_limit_premium");
-        this.d0 = d(20, "quick_reply_messages_limit");
-        this.e0 = d(5, "ephemeral_welcome_messages_max");
-        this.f0 = c("android_audio_recorder_v2_disabled", false);
-        this.g0 = c("android_round_video_recorder_v2_disabled", false);
-        this.h0 = c("stars_spend_topup_invoice_disabled", false);
-        hi.l0 l0Var = new hi.l0("bot_allowed_suffixes", Collections.singleton("bot"));
-        hashMap.put("bot_allowed_suffixes", (o0) l0Var.b);
-        this.i0 = l0Var;
-        this.j0 = c("wallet_available", true);
-        this.k0 = c("wallet_paid_message_recipient_message_amount_check", true);
-        this.l0 = e(100000000L, "wallet_transfer_min_nanos");
-        e(100000000L, "wallet_gasless_min_nanos");
-        hi.l0 l0Var2 = new hi.l0("wallet_card_bg_gifts", Collections.EMPTY_SET);
-        hashMap.put("wallet_card_bg_gifts", (o0) l0Var2.b);
-        this.m0 = l0Var2;
-        gc.b bVar2 = new gc.b(26);
-        hashMap.put("agent_bot_ids", (m0) bVar2.b);
-        this.n0 = bVar2;
-        this.o0 = c("widgets_disabled", false);
+        this.i = h(86400L, "stars_suggested_post_age_min");
+        this.j = h(300L, "stars_suggested_post_future_min");
+        this.k = h(2678400L, "stars_suggested_post_future_max");
+        hi.w4 w4Var = new hi.w4(20);
+        hashMap.put("ton_usd_rate", (i0) w4Var.b);
+        this.l = w4Var;
+        g("stars_rating_learnmore_url", "https://telegram.org/blog/telegram-stars");
+        this.m = d("need_age_video_verification", false);
+        this.n = e(800, "stars_stargift_resale_commission_permille");
+        this.o = e(800, "ton_stargift_resale_commission_permille");
+        this.p = e(ks.J1, "stars_stargift_resale_amount_min");
+        this.q = e(35000, "stars_stargift_resale_amount_max");
+        this.r = f(10000000L, "ton_stargift_resale_amount_min");
+        this.s = f(10000000000000L, "ton_stargift_resale_amount_max");
+        this.t = d("stargifts_fragment_resale_enabled", false);
+        this.u = d("stargifts_fixed_sale_enabled", false);
+        this.v = g("stargifts_stars_resale", "default");
+        this.w = g("stargifts_ton_resale", "default");
+        this.x = d("stargifts_craft_minted_first_source", false);
+        this.y = e(100, "stargifts_collections_limit");
+        e(100, "stargifts_collection_gifts_limit");
+        this.z = e(100, "stories_albums_limit");
+        e(100, "stories_album_stories_limit");
+        this.A = h(30L, "message_typing_draft_ttl");
+        this.B = h(10L, "group_call_message_ttl");
+        this.C = e(128, "group_call_message_length_limit");
+        this.D = e(128, "contact_note_length_limit");
+        this.E = e(5, "passkeys_account_passkeys_max");
+        boolean z10 = s2.a;
+        this.F = d("settings_display_passkeys", true);
+        this.G = d("android_disable_blur_in_light_theme", false);
+        this.H = d("android_disable_blur_in_dark_theme", false);
+        this.I = h(86400L, "no_forwards_request_expire_period");
+        this.J = h(2592000L, "poll_close_period_max");
+        this.K = g("music_search_username", null);
+        this.L = e(12, "poll_answers_max");
+        this.M = e(12, "poll_countries_max");
+        this.N = e(100, "poll_answer_length_max");
+        e(ks.e4, "poll_question_length_max");
+        e(ks.e3, "poll_solution_length_max");
+        this.O = e(ks.X4, "poll_caption_length_max");
+        this.P = h(300L, "poll_answer_delete_period");
+        this.Q = e(20, "bots_create_limit_default");
+        this.R = e(40, "bots_create_limit_premium");
+        this.S = e(2, "bot_additional_usernames_limit");
+        this.T = g("phone_country_iso2", "en");
+        this.U = e(3, "aicompose_tone_examples_num");
+        this.V = e(12, "aicompose_tone_title_length_max");
+        this.W = e(1024, "aicompose_tone_prompt_length_max");
+        this.X = e(5, "aicompose_tone_saved_limit_default");
+        this.Y = e(20, "aicompose_tone_saved_limit_premium");
+        this.Z = d("message_primary_edited_date", false);
+        this.a0 = e(32768, "rich_message_length_limit");
+        this.b0 = e(500, "rich_message_max_blocks");
+        this.c0 = e(16, "rich_message_max_depth");
+        this.d0 = e(50, "rich_message_max_media");
+        this.e0 = e(20, "rich_message_max_table_cols");
+        this.f0 = g("rich_message_posting", "premium");
+        this.g0 = g("speech_to_text", "enabled");
+        e(100, "community_peers_limit");
+        e(100, "community_bot_peers_limit");
+        this.h0 = e(TLObject.FLAG_12, "message_length_limit_default");
+        this.i0 = e(TLObject.FLAG_13, "message_length_limit_premium");
+        this.j0 = e(20, "quick_reply_messages_limit");
+        this.k0 = e(5, "ephemeral_welcome_messages_max");
+        this.l0 = d("android_audio_recorder_v2_disabled", false);
+        this.m0 = d("android_round_video_recorder_v2_disabled", false);
+        this.n0 = d("stars_spend_topup_invoice_disabled", false);
+        h9.g1 g1Var = new h9.g1("bot_allowed_suffixes", Collections.singleton("bot"));
+        hashMap.put("bot_allowed_suffixes", (o0) g1Var.b);
+        this.o0 = g1Var;
+        this.p0 = d("wallet_available", true);
+        this.q0 = d("wallet_paid_message_recipient_message_amount_check", true);
+        this.r0 = f(100000000L, "wallet_transfer_min_nanos");
+        f(100000000L, "wallet_gasless_min_nanos");
+        h9.g1 g1Var2 = new h9.g1("wallet_card_bg_gifts", Collections.EMPTY_SET);
+        hashMap.put("wallet_card_bg_gifts", (o0) g1Var2.b);
+        this.s0 = g1Var2;
+        hi.w4 w4Var2 = new hi.w4(21);
+        hashMap.put("agent_bot_ids", (m0) w4Var2.b);
+        this.t0 = w4Var2;
+        this.u0 = d("widgets_disabled", false);
+        this.v0 = e(6, "widgets_processes");
+    }
+
+    public static String i(hi.u5 u5Var) {
+        String str = ((n0) u5Var.b).c;
+        return ("visible".equals(str) || "hidden".equals(str)) ? str : "default";
     }
 
     public final boolean a(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
@@ -180,14 +199,49 @@ public final class p0 {
                 z10 |= k0Var.a(editor, tL_jsonObjectValue.value);
             }
         }
-        if (((h0) this.o0.b).c) {
+        TLRPC.TL_jsonString tL_jsonString = new TLRPC.TL_jsonString();
+        tL_jsonString.value = "default";
+        boolean b10 = b(editor, tL_jsonObject, "stargifts_stars_resale", tL_jsonString) | z10;
+        TLRPC.TL_jsonString tL_jsonString2 = new TLRPC.TL_jsonString();
+        tL_jsonString2.value = "default";
+        boolean b11 = b10 | b(editor, tL_jsonObject, "stargifts_ton_resale", tL_jsonString2);
+        TLRPC.TL_jsonBool tL_jsonBool = new TLRPC.TL_jsonBool();
+        tL_jsonBool.value = false;
+        boolean b12 = b11 | b(editor, tL_jsonObject, "stargifts_fragment_resale_enabled", tL_jsonBool);
+        TLRPC.TL_jsonBool tL_jsonBool2 = new TLRPC.TL_jsonBool();
+        tL_jsonBool2.value = false;
+        boolean b13 = b12 | b(editor, tL_jsonObject, "stargifts_fixed_sale_enabled", tL_jsonBool2);
+        boolean z11 = s2.a;
+        TLRPC.TL_jsonBool tL_jsonBool3 = new TLRPC.TL_jsonBool();
+        tL_jsonBool3.value = true;
+        boolean b14 = b(editor, tL_jsonObject, "wallet_available", tL_jsonBool3) | b13;
+        if (((h0) this.u0.b).c) {
             ConcurrentHashMap concurrentHashMap = org.telegram.utils.twidget.n0.a;
-            g0.h3(new ah0(15));
+            g0.g3(new cd0(18));
         }
-        return z10;
+        return b14;
     }
 
-    public final void b(SharedPreferences sharedPreferences) {
+    public final boolean b(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject, String str, TLRPC.JSONValue jSONValue) {
+        int size = tL_jsonObject.value.size();
+        int i7 = 0;
+        while (true) {
+            if (i7 >= size) {
+                k0 k0Var = (k0) this.a.get(str);
+                if (k0Var != null) {
+                    return k0Var.a(editor, jSONValue);
+                }
+            } else {
+                if (str.equals(tL_jsonObject.value.get(i7).key)) {
+                    break;
+                }
+                i7++;
+            }
+        }
+        return false;
+    }
+
+    public final void c(SharedPreferences sharedPreferences) {
         Iterator it = this.a.values().iterator();
         while (it.hasNext()) {
             try {
@@ -198,34 +252,34 @@ public final class p0 {
         }
     }
 
-    public final hi.l0 c(String str, boolean z10) {
-        hi.l0 l0Var = new hi.l0(str, z10);
-        this.a.put(str, (h0) l0Var.b);
-        return l0Var;
+    public final h9.g1 d(String str, boolean z10) {
+        h9.g1 g1Var = new h9.g1(str, z10);
+        this.a.put(str, (h0) g1Var.b);
+        return g1Var;
     }
 
-    public final ia.d d(int i7, String str) {
-        ia.d dVar = new ia.d(str, i7);
-        this.a.put(str, (j0) dVar.b);
-        return dVar;
+    public final hi.u5 e(int i7, String str) {
+        hi.u5 u5Var = new hi.u5(str, i7);
+        this.a.put(str, (j0) u5Var.b);
+        return u5Var;
     }
 
-    public final hi.l0 e(long j3, String str) {
-        hi.l0 l0Var = new hi.l0(str, j3);
-        this.a.put(str, (l0) l0Var.b);
-        return l0Var;
+    public final h9.g1 f(long j3, String str) {
+        h9.g1 g1Var = new h9.g1(str, j3);
+        this.a.put(str, (l0) g1Var.b);
+        return g1Var;
     }
 
-    public final ia.d f(String str, String str2) {
-        ia.d dVar = new ia.d(str, str2);
-        this.a.put(str, (n0) dVar.b);
-        return dVar;
+    public final hi.u5 g(String str, String str2) {
+        hi.u5 u5Var = new hi.u5(str, str2);
+        this.a.put(str, (n0) u5Var.b);
+        return u5Var;
     }
 
-    public final gc.b g(long j3, String str) {
+    public final hi.w4 h(long j3, String str) {
         TimeUnit timeUnit = TimeUnit.SECONDS;
-        gc.b bVar = new gc.b(str, j3);
-        this.a.put(str, (l0) bVar.b);
-        return bVar;
+        hi.w4 w4Var = new hi.w4(str, j3);
+        this.a.put(str, (l0) w4Var.b);
+        return w4Var;
     }
 }

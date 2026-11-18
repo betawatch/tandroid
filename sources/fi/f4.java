@@ -1,133 +1,316 @@
 package fi;
 
 import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableStringBuilder;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.w61;
-import org.telegram.ui.Components.z50;
-import org.telegram.ui.pb1;
+import android.widget.Scroller;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class f4 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class f4 extends View {
+    public float E;
+    public ArrayList F;
+    public ArrayList G;
+    public ArrayList H;
+    public GradientDrawable I;
+    public GestureDetector J;
+    public float K;
+    public int L;
+    public boolean M;
+    public ValueAnimator N;
+    public int a;
+    public int b;
+    public int c;
+    public Scroller d;
+    public float e;
+    public float f;
+    public float h;
+    public int n;
+    public int r;
+    public int s;
+    public boolean w;
+    public int x;
+    public float y;
 
-    public /* synthetic */ f4(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public static void a(f4 f4Var, SpannableStringBuilder spannableStringBuilder, TL_stories.StoryViews storyViews, boolean z10) {
+        int i7 = storyViews == null ? 0 : storyViews.views_count;
+        if (i7 > 0) {
+            spannableStringBuilder.append("d");
+            spannableStringBuilder.setSpan(new lq(R.drawable.msg_views, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(i7, 0));
+            if (storyViews == null || storyViews.reactions_count <= 0) {
+                return;
+            }
+            spannableStringBuilder.append((CharSequence) (z10 ? "\n" : "  "));
+            spannableStringBuilder.append("d");
+            spannableStringBuilder.setSpan(new lq(R.drawable.mini_like_filled, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
+            spannableStringBuilder.append(" ").append((CharSequence) org.telegram.messenger.g0.o0(storyViews.reactions_count, 0));
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        View view;
-        switch (this.a) {
-            case 0:
-                h4 h4Var = (h4) this.b;
-                h4Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                h4Var.invalidate();
-                break;
-            case 1:
-                gi.m mVar = (gi.m) this.b;
-                mVar.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mVar.f.invalidate();
-                break;
-            case 2:
-                hi.d0 d0Var = (hi.d0) this.b;
-                d0Var.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d0Var.p.invalidate();
-                break;
-            case 3:
-                jg.k1 k1Var = (jg.k1) this.b;
-                k1Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k1Var.invalidate();
-                int i7 = 0;
-                while (i7 < 2) {
-                    k1Var.c[i7].setTranslationX(org.telegram.messenger.g0.W1(k1Var.e, 0, -org.telegram.messenger.g0.L(62.0f)));
-                    k1Var.c[i7].setVisibility(0);
-                    float f10 = 0.0f;
-                    k1Var.c[i7].setAlpha(org.telegram.messenger.g0.T1(i7 == 0 ? 1.0f : 0.0f, i7 == 1 ? 1.0f : 0.0f, k1Var.e));
-                    k1Var.d[i7].setTranslationX(org.telegram.messenger.g0.W1(k1Var.e, 0, -org.telegram.messenger.g0.L(62.0f)));
-                    k1Var.d[i7].setVisibility(0);
-                    TextView textView = k1Var.d[i7];
-                    float f11 = i7 == 0 ? 1.0f : 0.0f;
-                    if (i7 == 1) {
-                        f10 = 1.0f;
-                    }
-                    textView.setAlpha(org.telegram.messenger.g0.T1(f11, f10, k1Var.e));
-                    i7++;
-                }
-                break;
-            case 4:
-                lg.k kVar = (lg.k) this.b;
-                kVar.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                kVar.I = true;
-                kVar.invalidate();
-                break;
-            case 5:
-                lg.p pVar = (lg.p) this.b;
-                pVar.k0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                pVar.I = true;
-                pVar.invalidate();
-                break;
-            case 6:
-                MediaController mediaController = (MediaController) this.b;
-                mediaController.Q1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                mediaController.n0();
-                break;
-            case 7:
-                org.telegram.ui.Cells.n7 n7Var = (org.telegram.ui.Cells.n7) this.b;
-                n7Var.C0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                n7Var.invalidate();
-                break;
-            case 8:
-                ((org.telegram.ui.Components.i9) this.b).setRoundRadius(((Integer) valueAnimator.getAnimatedValue()).intValue());
-                break;
-            case 9:
-                di.c1 c1Var = ((z50) this.b).e.o1;
-                int i10 = c1Var.D1;
-                if (i10 != -1 && (view = c1Var.E1) != null) {
-                    c1Var.k1(i10, view);
-                    c1Var.invalidate();
-                    break;
-                }
-                break;
-            case 10:
-                w61 w61Var = (w61) this.b;
-                View[] viewArr = w61Var.e;
-                if (w61Var.y) {
-                    float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    w61Var.c = abs;
-                    l61 l61Var = w61Var.N;
-                    if (l61Var != null) {
-                        l61Var.e(abs, w61Var.d, w61Var.b);
-                    }
-                }
-                w61Var.u(false);
-                break;
-            case 11:
-                org.telegram.ui.Components.voip.r1 r1Var = (org.telegram.ui.Components.voip.r1) this.b;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r1Var.K = floatValue;
-                org.telegram.ui.Components.voip.q1 q1Var = r1Var.j0;
-                if (q1Var != null) {
-                    ((pb1) q1Var).b.e0.d(r1Var.Q, floatValue);
-                }
-                r1Var.invalidate();
-                break;
-            case 12:
-                ug.q0 q0Var = (ug.q0) this.b;
-                q0Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q0Var.e();
-                break;
-            case 13:
-                ((ug.o0) this.b).setOffset(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                ((v4.u) this.b).y = valueAnimator.getAnimatedFraction();
-                break;
+    public abstract void b(int i7);
+
+    public final void c(int i7, boolean z10, boolean z11) {
+        if ((this.L != i7 || z11) && getMeasuredHeight() > 0) {
+            if (this.L != i7) {
+                this.L = i7;
+                b(i7);
+            }
+            this.d.abortAnimation();
+            this.M = false;
+            ValueAnimator valueAnimator = this.N;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                this.N.cancel();
+                this.N = null;
+            }
+            if (!z10) {
+                this.e = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r6 + this.n) * i7);
+                invalidate();
+                return;
+            }
+            float f10 = (this.s / 2.0f) + ((-getMeasuredWidth()) / 2.0f) + ((r1 + this.n) * i7);
+            float f11 = this.e;
+            if (f10 == f11) {
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f11, f10);
+            this.N = ofFloat;
+            ofFloat.addUpdateListener(new d4(this, 0));
+            this.N.addListener(new ai.j0(this, 14));
+            this.N.setInterpolator(lr.f);
+            this.N.setDuration(200L);
+            this.N.start();
         }
+    }
+
+    public final void d() {
+        int measuredWidth = getMeasuredWidth();
+        int i7 = this.s;
+        this.f = (-(measuredWidth - i7)) / 2.0f;
+        this.h = ((getMeasuredWidth() - this.s) / 2.0f) + (((this.F.size() * (i7 + this.n)) - this.n) - getMeasuredWidth());
+    }
+
+    public e4 getCenteredImageReciever() {
+        ArrayList arrayList = this.H;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            if (((e4) arrayList.get(i7)).b == this.L) {
+                return (e4) arrayList.get(i7);
+            }
+        }
+        return null;
+    }
+
+    public int getClosestPosition() {
+        return this.L;
+    }
+
+    public float getFinalHeight() {
+        return org.telegram.messenger.g0.L(180.0f);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.w = true;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        ArrayList arrayList = this.H;
+        super.onDetachedFromWindow();
+        this.w = false;
+        for (int i7 = 0; i7 < arrayList.size(); i7++) {
+            ((e4) arrayList.get(i7)).a.R();
+        }
+        arrayList.clear();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7;
+        float f10;
+        float f11;
+        ArrayList arrayList;
+        float f12;
+        float f13;
+        int i10;
+        float f14;
+        e4 e4Var;
+        ArrayList arrayList2;
+        int i11;
+        GradientDrawable gradientDrawable = this.I;
+        ArrayList arrayList3 = this.H;
+        ArrayList arrayList4 = this.G;
+        super.onDraw(canvas);
+        if (this.d.computeScrollOffset()) {
+            this.e = r5.getCurrX();
+            invalidate();
+            this.M = true;
+        } else if (this.M && (i7 = this.L) >= 0) {
+            c(i7, true, true);
+        }
+        float f15 = 2.0f;
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        arrayList4.clear();
+        arrayList4.addAll(arrayList3);
+        arrayList3.clear();
+        int i12 = -1;
+        float f16 = 2.1474836E9f;
+        int i13 = -1;
+        int i14 = 0;
+        while (i14 < this.F.size()) {
+            float f17 = -this.e;
+            float f18 = f17 + ((this.n + r13) * i14);
+            float f19 = ((this.s / f15) + f18) - measuredWidth;
+            float abs = Math.abs(f19);
+            if (abs < this.s) {
+                f11 = 1.0f - (Math.abs(f19) / this.s);
+                f10 = (0.2f * f11) + 1.0f;
+            } else {
+                f10 = 1.0f;
+                f11 = 0.0f;
+            }
+            if (i13 == i12 || abs < f16) {
+                i13 = i14;
+                f16 = abs;
+            }
+            float t6 = f19 < 0.0f ? com.google.android.gms.internal.vision.e2.t(1.0f, f11, this.s * 0.1f, f18) : com.google.android.gms.internal.vision.e2.z(1.0f, f11, this.s * 0.1f, f18);
+            if (t6 > getMeasuredWidth() || this.s + t6 < 0.0f) {
+                arrayList = arrayList4;
+                f12 = measuredWidth;
+                f13 = f16;
+                i10 = i13;
+                f14 = 2.0f;
+            } else {
+                int i15 = 0;
+                while (true) {
+                    if (i15 >= arrayList4.size()) {
+                        e4Var = new e4(this);
+                        e4Var.a(i14);
+                        e4Var.b = i14;
+                        break;
+                    } else {
+                        if (((e4) arrayList4.get(i15)).b == i14) {
+                            e4Var = (e4) arrayList4.remove(i15);
+                            break;
+                        }
+                        i15++;
+                    }
+                }
+                float f20 = this.s;
+                float f21 = f20 * f10;
+                float f22 = this.r;
+                float f23 = f10 * f22;
+                f12 = measuredWidth;
+                float y10 = org.telegram.messenger.f3.y(f21, f20, 2.0f, t6);
+                float y11 = org.telegram.messenger.f3.y(f23, f22, 2.0f, this.y);
+                if (this.E == 0.0f || i14 == (i11 = this.L)) {
+                    arrayList2 = arrayList3;
+                    arrayList = arrayList4;
+                    f13 = f16;
+                    i10 = i13;
+                    e4Var.a.y0(y10, y11, f21, f23);
+                } else {
+                    f13 = f16;
+                    i10 = i13;
+                    arrayList = arrayList4;
+                    arrayList2 = arrayList3;
+                    e4Var.a.y0(org.telegram.messenger.g0.T1(getMeasuredWidth() * (i14 - i11), y10, this.E), org.telegram.messenger.g0.T1(this.a, y11, this.E), org.telegram.messenger.g0.T1(this.b, f21, this.E), org.telegram.messenger.g0.T1(this.c, f23, this.E));
+                }
+                if (this.E == 1.0f || i14 != this.L) {
+                    ImageReceiver imageReceiver = e4Var.a;
+                    imageReceiver.h(canvas, null);
+                    if (e4Var.c != null) {
+                        int B = (int) com.google.android.gms.internal.vision.e2.B(f11, 0.3f, 0.7f, 255.0f);
+                        gradientDrawable.setAlpha(B);
+                        gradientDrawable.setBounds((int) imageReceiver.L0, (int) (imageReceiver.A() - org.telegram.messenger.g0.L(24.0f)), (int) imageReceiver.y(), ((int) imageReceiver.A()) + 2);
+                        gradientDrawable.draw(canvas);
+                        canvas.save();
+                        f14 = 2.0f;
+                        canvas.translate(imageReceiver.r() - (this.K / 2.0f), (imageReceiver.A() - org.telegram.messenger.g0.L(8.0f)) - e4Var.c.getHeight());
+                        e4Var.d.setAlpha(B);
+                        e4Var.c.draw(canvas);
+                        canvas.restore();
+                    } else {
+                        f14 = 2.0f;
+                    }
+                    arrayList3 = arrayList2;
+                } else {
+                    arrayList3 = arrayList2;
+                    f14 = 2.0f;
+                }
+                arrayList3.add(e4Var);
+            }
+            i14++;
+            f16 = f13;
+            f15 = f14;
+            measuredWidth = f12;
+            i13 = i10;
+            arrayList4 = arrayList;
+            i12 = -1;
+        }
+        ArrayList arrayList5 = arrayList4;
+        if (this.N == null && this.L != i13) {
+            this.L = i13;
+            b(i13);
+        }
+        for (int i16 = 0; i16 < arrayList5.size(); i16++) {
+            ((e4) arrayList5.get(i16)).a.R();
+        }
+        arrayList5.clear();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        ArrayList arrayList = this.H;
+        super.onMeasure(i7, i10);
+        this.n = org.telegram.messenger.g0.L(8.0f);
+        int L = (int) (org.telegram.messenger.g0.L(180.0f) / 1.2f);
+        this.r = L;
+        int i11 = (int) ((L / 16.0f) * 9.0f);
+        this.s = i11;
+        float L2 = i11 - org.telegram.messenger.g0.L(8.0f);
+        this.y = ((org.telegram.messenger.g0.L(180.0f) - this.r) / 2.0f) + org.telegram.messenger.g0.L(20.0f);
+        d();
+        if (this.x >= 0 && getMeasuredWidth() > 0) {
+            this.L = -1;
+            c(this.x, false, false);
+            this.x = -1;
+        }
+        if (this.K != L2) {
+            this.K = L2;
+            for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                ((e4) arrayList.get(i12)).a(((e4) arrayList.get(i12)).b);
+            }
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i7;
+        this.J.onTouchEvent(motionEvent);
+        if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && this.d.isFinished() && (i7 = this.L) >= 0) {
+            c(i7, true, true);
+        }
+        return true;
+    }
+
+    public void setProgressToOpen(float f10) {
+        if (this.E == f10) {
+            return;
+        }
+        this.E = f10;
+        invalidate();
     }
 }

@@ -5,20 +5,20 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import fi.f4;
+import fi.d4;
 import java.util.ArrayList;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.j41;
-import org.telegram.ui.ni0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.m41;
+import org.telegram.ui.qi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] E1;
 
-    public p(Context context, e6 e6Var) {
-        super(context, e6Var);
+    public p(Context context, i6 i6Var) {
+        super(context, i6Var);
         this.x0 = true;
         this.y0 = true;
     }
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.R0;
             if (eVar != null) {
                 getSelectedDate();
-                j41 j41Var = (j41) ((ni0) eVar).b;
-                j41Var.f();
-                j41Var.b.u0.d(false, false);
+                m41 m41Var = (m41) ((qi0) eVar).b;
+                m41Var.f();
+                m41Var.b.u0.d(false, false);
             }
             invalidate();
             B();
@@ -95,7 +95,7 @@ public final class p extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e10 = g.e(this.k0, this.m0, new f4(this, 5));
+                    ValueAnimator e10 = g.e(this.k0, this.m0, new d4(this, 5));
                     this.e0 = e10;
                     e10.start();
                 }
@@ -366,7 +366,7 @@ public final class p extends g {
                 Paint paint = fVar3.c;
                 Paint paint2 = fVar3.c;
                 paint.setStrokeWidth(max * f16);
-                paint2.setAlpha(ns.e4);
+                paint2.setAlpha(ks.e4);
                 canvas.drawLines(fVar3.k, 0, fVar3.j, paint2);
             }
         }
@@ -398,7 +398,7 @@ public final class p extends g {
 
     @Override // lg.g
     public final long r(int i7, int i10) {
-        return ((mg.d) this.i0).m.Y0(i7, i10);
+        return ((mg.d) this.i0).m.U0(i7, i10);
     }
 
     @Override // lg.g

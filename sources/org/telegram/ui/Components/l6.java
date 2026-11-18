@@ -1,27 +1,116 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.widget.TextView;
-import org.telegram.ui.LaunchActivity;
+import android.os.Build;
+import android.text.TextUtils;
+import j$.util.stream.IntStream;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l6 extends va {
-    public l6(LaunchActivity launchActivity, org.telegram.ui.w80 w80Var) {
-        super(launchActivity, null);
-        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
-        TextView textView = new TextView(getContext());
-        addView(qVar, c8.ja.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.yj, null);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, c8.ja.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
-        qVar.setImageDrawable(launchActivity.getDrawable(w80Var.b));
-        qVar.setOuterPadding(org.telegram.messenger.g0.L(8.0f));
-        qVar.setBackgroundOuterPadding(org.telegram.messenger.g0.L(24.0f));
-        qVar.setForeground(w80Var.c);
-        org.telegram.messenger.k5.q(null, null, 2131754238, new Object[]{org.telegram.messenger.hd.M0(w80Var.d, null)}, textView);
+public final class l6 implements CharSequence {
+    public final CharSequence[] a;
+    public final int b;
+
+    public l6(CharSequence charSequence) {
+        if (charSequence == null) {
+            this.a = new CharSequence[0];
+            this.b = 0;
+            return;
+        }
+        this.b = charSequence.length();
+        int i7 = 0;
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (charSequence.charAt(i10) == ' ') {
+                i7++;
+            }
+        }
+        this.a = new CharSequence[i7 + 1];
+        int i11 = 0;
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            int i14 = this.b;
+            if (i11 > i14) {
+                return;
+            }
+            if (i11 == i14 || charSequence.charAt(i11) == ' ') {
+                int i15 = i12 + 1;
+                this.a[i12] = charSequence.subSequence(i13, (i11 < this.b ? 1 : 0) + i11);
+                i13 = i11 + 1;
+                i12 = i15;
+            }
+            i11++;
+        }
+    }
+
+    @Override // java.lang.CharSequence
+    public final char charAt(int i7) {
+        int i10 = 0;
+        while (true) {
+            CharSequence[] charSequenceArr = this.a;
+            if (i10 >= charSequenceArr.length) {
+                return (char) 0;
+            }
+            if (i7 < charSequenceArr[i10].length()) {
+                return charSequenceArr[i10].charAt(i7);
+            }
+            i7 -= charSequenceArr[i10].length();
+            i10++;
+        }
+    }
+
+    @Override // java.lang.CharSequence
+    public /* synthetic */ IntStream chars() {
+        return IntStream.Wrapper.convert(chars());
+    }
+
+    @Override // java.lang.CharSequence
+    public /* synthetic */ java.util.stream.IntStream codePoints() {
+        return IntStream.Wrapper.convert(codePoints());
+    }
+
+    @Override // java.lang.CharSequence
+    public final int length() {
+        return this.a.length;
+    }
+
+    @Override // java.lang.CharSequence
+    public final CharSequence subSequence(int i7, int i10) {
+        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i7, i10));
+    }
+
+    @Override // java.lang.CharSequence
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        int i7 = 0;
+        while (true) {
+            CharSequence[] charSequenceArr = this.a;
+            if (i7 >= charSequenceArr.length) {
+                return sb2.toString();
+            }
+            sb2.append(charSequenceArr[i7]);
+            i7++;
+        }
+    }
+
+    @Override // java.lang.CharSequence
+    public final j$.util.stream.IntStream chars() {
+        j$.util.stream.IntStream convert;
+        if (Build.VERSION.SDK_INT < 24) {
+            return null;
+        }
+        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).chars());
+        return convert;
+    }
+
+    @Override // java.lang.CharSequence
+    public final j$.util.stream.IntStream codePoints() {
+        j$.util.stream.IntStream convert;
+        if (Build.VERSION.SDK_INT < 24) {
+            return null;
+        }
+        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).codePoints());
+        return convert;
     }
 }

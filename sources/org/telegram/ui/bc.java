@@ -6,7 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class bc extends View {
     public final /* synthetic */ int a;
@@ -19,13 +19,13 @@ public final class bc extends View {
     public final /* synthetic */ Paint n;
     public final /* synthetic */ float r;
     public final /* synthetic */ float s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 w;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ bc(org.telegram.ui.ActionBar.e2 e2Var, Activity activity, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14, int i7) {
+    public /* synthetic */ bc(org.telegram.ui.ActionBar.h2 h2Var, Activity activity, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14, int i7) {
         super(activity);
         this.a = i7;
-        this.w = e2Var;
+        this.w = h2Var;
         this.b = canvas;
         this.c = f10;
         this.d = f11;
@@ -64,46 +64,46 @@ public final class bc extends View {
                 break;
             case 1:
                 super.onDraw(canvas);
-                jm0 jm0Var = (jm0) this.w;
-                boolean z11 = jm0Var.T;
+                lm0 lm0Var = (lm0) this.w;
+                boolean z11 = lm0Var.T;
                 Paint paint2 = this.n;
                 float f14 = this.e;
                 float f15 = this.d;
                 float f16 = this.c;
                 if (z11) {
-                    float f17 = jm0Var.Z;
+                    float f17 = lm0Var.Z;
                     if (f17 > 0.0f) {
                         this.b.drawCircle(f16, f15, f14 * f17, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f16, f15, (1.0f - jm0Var.Z) * f14, paint2);
+                    canvas.drawCircle(f16, f15, (1.0f - lm0Var.Z) * f14, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                jm0Var.L.draw(canvas);
+                lm0Var.L.draw(canvas);
                 canvas.restore();
                 break;
             default:
                 super.onDraw(canvas);
-                t71 t71Var = (t71) this.w;
-                boolean a10 = t71Var.a.a();
+                x71 x71Var = (x71) this.w;
+                boolean d = x71Var.a.d();
                 Paint paint3 = this.n;
                 float f18 = this.e;
                 float f19 = this.d;
                 float f20 = this.c;
-                if (a10) {
-                    float f21 = t71Var.k2;
+                if (d) {
+                    float f21 = x71Var.k2;
                     if (f21 > 0.0f) {
                         this.b.drawCircle(f20, f19, f18 * f21, this.f);
                     }
                     canvas.drawBitmap(this.h, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f20, f19, (1.0f - t71Var.k2) * f18, paint3);
+                    canvas.drawCircle(f20, f19, (1.0f - x71Var.k2) * f18, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.r, this.s);
-                t71Var.Q1.draw(canvas);
+                x71Var.Q1.draw(canvas);
                 canvas.restore();
                 break;
         }

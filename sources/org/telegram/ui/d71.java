@@ -1,31 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d71 implements l71 {
-    public boolean a;
-    public final /* synthetic */ an b;
+public final class d71 extends AnimatorListenerAdapter {
+    public final /* synthetic */ x71 a;
 
-    public d71(an anVar, boolean z10) {
-        this.b = anVar;
-        this.a = z10;
+    public d71(x71 x71Var) {
+        this.a = x71Var;
     }
 
-    @Override // org.telegram.ui.l71
-    public final boolean Y0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.l71
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.l71
-    public final void m1(boolean z10) {
-        boolean z11 = !this.a;
-        this.a = z11;
-        ym ymVar = this.b.Aa;
-        ymVar.r(ymVar.f, ymVar.g, z10, Boolean.valueOf(z11), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        x71 x71Var = this.a;
+        if (x71Var.Y0 == null) {
+            x71Var.L0[0].setVisibility(4);
+        }
     }
 }

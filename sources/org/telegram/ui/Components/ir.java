@@ -1,177 +1,176 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ir extends ViewGroup {
-    public static final /* synthetic */ int x = 0;
-    public final gr a;
-    public EditText b;
-    public final View[] c;
-    public View d;
-    public boolean e;
-    public boolean f;
-    public final fr h;
-    public boolean n;
-    public final fr r;
-    public int s;
-    public int w;
+public final class ir extends Drawable {
+    public final Drawable a;
+    public final RectF b = new RectF();
+    public final Paint c;
+    public final Paint d;
+    public int e;
+    public final int f;
+    public float g;
+    public boolean h;
+    public float i;
+    public float j;
+    public float k;
 
-    public ir(Context context) {
-        super(context);
-        String str;
-        int i7 = 12;
-        this.c = new View[12];
-        int i10 = 0;
-        this.h = new fr(this, 0);
-        int i11 = 1;
-        this.r = new fr(this, 1);
-        int i12 = 0;
-        while (i12 < 11) {
-            if (i12 != 9) {
-                switch (i12) {
-                    case 1:
-                        str = "ABC";
-                        break;
-                    case 2:
-                        str = "DEF";
-                        break;
-                    case 3:
-                        str = "GHI";
-                        break;
-                    case 4:
-                        str = "JKL";
-                        break;
-                    case 5:
-                        str = "MNO";
-                        break;
-                    case 6:
-                        str = "PQRS";
-                        break;
-                    case 7:
-                        str = "TUV";
-                        break;
-                    case 8:
-                        str = "WXYZ";
-                        break;
-                    case 9:
-                    default:
-                        str = "";
-                        break;
-                    case 10:
-                        str = "+";
-                        break;
+    public ir(Context context, int i7, int i10) {
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        this.a = context.getDrawable(i7);
+        this.f = i10;
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.7f));
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setColor(-16777216);
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        paint2.setStyle(style);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.N(2.5f));
+    }
+
+    public final void a(boolean z10, boolean z11) {
+        if (this.h != z10) {
+            this.h = z10;
+            if (z11) {
+                this.g = z10 ? 0.0f : 1.0f;
+            } else {
+                this.g = z10 ? 1.0f : 0.0f;
+            }
+            invalidateSelf();
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0039  */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x005e  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003b  */
+    @Override // android.graphics.drawable.Drawable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        int x02;
+        int i7;
+        boolean z10 = this.h;
+        if (z10) {
+            float f10 = this.g;
+            if (f10 != 1.0f) {
+                this.g = f10 + 0.10666667f;
+                invalidateSelf();
+                if (this.g > 1.0f) {
+                    this.g = 1.0f;
                 }
-                String valueOf = String.valueOf(i12 != 10 ? i12 + 1 : 0);
-                this.c[i12] = new hr(context, valueOf, str);
-                this.c[i12].setOnClickListener(new n2(i7, this, valueOf));
-                addView(this.c[i12]);
-            }
-            i12++;
-        }
-        gr grVar = new gr(this, context, new org.telegram.messenger.ou(context, new ki.v3(this, ViewConfiguration.get(context).getScaledTouchSlop(), i11)));
-        this.a = grVar;
-        grVar.setImageResource(R.drawable.msg_clear_input);
-        org.telegram.ui.ActionBar.q6.s(grVar, org.telegram.ui.ActionBar.j6.G6, null, PorterDuff.Mode.SRC_ATOP);
-        int L = org.telegram.messenger.g0.L(11.0f);
-        grVar.setPadding(L, L, L, L);
-        grVar.setOnClickListener(new bi.o(14));
-        this.c[11] = grVar;
-        addView(grVar);
-        while (true) {
-            View[] viewArr = this.c;
-            if (i10 >= viewArr.length) {
+                int i10 = this.f;
+                x02 = i10 >= 0 ? -1 : org.telegram.ui.ActionBar.n6.x0(null, i10, false);
+                i7 = this.e;
+                Drawable drawable = this.a;
+                Paint paint = this.c;
+                if (i7 != x02) {
+                    this.e = x02;
+                    paint.setColor(x02);
+                    drawable.setColorFilter(new PorterDuffColorFilter(x02, PorterDuff.Mode.MULTIPLY));
+                }
+                if (this.g != 0.0f) {
+                    drawable.draw(canvas);
+                    return;
+                }
+                Rect bounds = drawable.getBounds();
+                RectF rectF = this.b;
+                rectF.set(bounds);
+                canvas.saveLayerAlpha(rectF, org.telegram.messenger.ks.e4, 31);
+                drawable.draw(canvas);
+                float N = org.telegram.messenger.g0.N(4.5f) + rectF.left + this.i + this.j;
+                float N2 = ((org.telegram.messenger.g0.N(4.5f) + rectF.top) - org.telegram.messenger.g0.L(1.0f)) + this.j;
+                float L = ((rectF.right - org.telegram.messenger.g0.L(3.0f)) + this.i) - this.k;
+                float L2 = ((rectF.bottom - org.telegram.messenger.g0.L(1.0f)) - org.telegram.messenger.g0.L(3.0f)) - this.k;
+                if (this.h) {
+                    float f11 = this.g;
+                    L = ((L - N) * f11) + N;
+                    L2 = com.google.android.gms.internal.vision.e2.z(L2, N2, f11, N2);
+                } else {
+                    float f12 = this.g;
+                    N = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L - N, N);
+                    N2 = com.google.android.gms.internal.vision.e2.z(1.0f, f12, L2 - N2, N2);
+                }
+                float f13 = L2;
+                float f14 = N2;
+                float f15 = L;
+                float f16 = N;
+                float strokeWidth = f14 - paint.getStrokeWidth();
+                float strokeWidth2 = f13 - paint.getStrokeWidth();
+                Paint paint2 = this.d;
+                canvas.drawLine(f16, strokeWidth, f15, strokeWidth2, paint2);
+                float strokeWidth3 = ((paint2.getStrokeWidth() - paint.getStrokeWidth()) / 2.0f) + 1.0f;
+                canvas.drawLine(f16, f14 - strokeWidth3, f15, f13 - strokeWidth3, paint2);
+                canvas.drawLine(f16, f14, f15, f13, paint);
+                canvas.restore();
                 return;
             }
-            View view = viewArr[i10];
-            if (view != null) {
-                c8.na.b(view, 0.02f, 1.2f);
-                a(i10, view);
+        }
+        if (!z10) {
+            float f17 = this.g;
+            if (f17 != 0.0f) {
+                this.g = f17 - 0.10666667f;
+                invalidateSelf();
+                if (this.g < 0.0f) {
+                    this.g = 0.0f;
+                }
             }
-            i10++;
+        }
+        int i102 = this.f;
+        if (i102 >= 0) {
+        }
+        i7 = this.e;
+        Drawable drawable2 = this.a;
+        Paint paint3 = this.c;
+        if (i7 != x02) {
+        }
+        if (this.g != 0.0f) {
         }
     }
 
-    public static void a(int i7, View view) {
-        boolean z10 = i7 < 3;
-        int i10 = i7 % 3;
-        boolean z11 = i10 == 0;
-        boolean z12 = i10 == 2;
-        boolean z13 = i7 > 8;
-        int i11 = org.telegram.ui.ActionBar.j6.i6;
-        int x02 = org.telegram.ui.ActionBar.j6.x0(null, i11, false);
-        int o4 = i0.a.o(org.telegram.ui.ActionBar.j6.x0(null, i11, false), 30);
-        float f10 = 12.0f;
-        int L = org.telegram.messenger.g0.L((z11 && z10) ? 24.0f : 12.0f);
-        int L2 = org.telegram.messenger.g0.L((z12 && z10) ? 24.0f : 12.0f);
-        int L3 = org.telegram.messenger.g0.L((z12 && z13) ? 24.0f : 12.0f);
-        if (z11 && z13) {
-            f10 = 24.0f;
-        }
-        org.telegram.ui.Cells.y k02 = org.telegram.ui.ActionBar.j6.k0(L, L2, L3, org.telegram.messenger.g0.L(f10), x02, o4, o4);
-        org.telegram.ui.ActionBar.m6 M = org.telegram.ui.ActionBar.q6.M(i11);
-        org.telegram.ui.ActionBar.m6 g10 = org.telegram.ui.ActionBar.q6.g(i11, 30);
-        view.setBackground(k02);
-        org.telegram.ui.ActionBar.q6.j(view, k02, M, g10, null);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
     }
 
-    @Override // android.view.View
-    public final boolean canScrollHorizontally(int i7) {
-        return true;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        int y10 = org.telegram.messenger.i20.y(32.0f, getWidth(), 3);
-        int y11 = org.telegram.messenger.i20.y(42.0f, getHeight(), 4);
-        int i13 = 0;
-        while (true) {
-            View[] viewArr = this.c;
-            if (i13 >= viewArr.length) {
-                return;
-            }
-            int L = org.telegram.messenger.g0.L(6.0f) + y10;
-            int L2 = org.telegram.messenger.g0.L(10.0f) + (L * (i13 % 3));
-            int L3 = org.telegram.messenger.g0.L(6.0f) + y11;
-            int L4 = org.telegram.messenger.g0.L(10.0f) + (L3 * (i13 / 3));
-            View view = viewArr[i13];
-            if (view != null) {
-                view.layout(L2, L4, L2 + y10, L4 + y11);
-            }
-            i13++;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
-        int y10 = org.telegram.messenger.i20.y(32.0f, getWidth(), 3);
-        int y11 = org.telegram.messenger.i20.y(42.0f, getHeight(), 4);
-        for (View view : this.c) {
-            if (view != null) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(y10, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(y11, TLObject.FLAG_30));
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i7, int i10, int i11, int i12) {
+        super.setBounds(i7, i10, i11, i12);
+        this.a.setBounds(i7, i10, i11, i12);
     }
 
-    public void setDispatchBackWhenEmpty(boolean z10) {
-        this.e = z10;
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
     }
 
-    public void setEditText(EditText editText) {
-        this.b = editText;
-        this.e = false;
-    }
-
-    public void setViewToFindFocus(View view) {
-        this.d = view;
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

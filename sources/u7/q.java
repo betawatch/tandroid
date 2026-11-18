@@ -1,80 +1,56 @@
 package u7;
 
-import a8.i0;
-import c8.qc;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import c8.tc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class q extends i0 implements ListIterator {
-    public final int b;
-    public int c;
-    public final s d;
+public final class q extends r {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ r e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(s sVar, int i7) {
-        super(6);
-        int size = sVar.size();
-        if (i7 < 0 || i7 > size) {
-            throw new IndexOutOfBoundsException(qc.c(i7, size, "index"));
-        }
-        this.b = size;
+    public q(r rVar, int i7, int i10) {
+        this.e = rVar;
         this.c = i7;
-        this.d = sVar;
+        this.d = i10;
     }
 
-    public final Object a(int i7) {
-        return this.d.get(i7);
+    @Override // java.util.List
+    public final Object get(int i7) {
+        tc.a(i7, this.d);
+        return this.e.get(i7 + this.c);
     }
 
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // u7.o
+    public final int i() {
+        return this.e.j() + this.c + this.d;
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
+    @Override // u7.o
+    public final int j() {
+        return this.e.j() + this.c;
     }
 
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
+    @Override // u7.o
+    public final boolean k() {
+        return true;
     }
 
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i7 = this.c;
-        this.c = i7 + 1;
-        return a(i7);
+    @Override // u7.o
+    public final Object[] l() {
+        return this.e.l();
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
+    @Override // u7.r, java.util.List
+    /* renamed from: m, reason: merged with bridge method [inline-methods] */
+    public final r subList(int i7, int i10) {
+        tc.b(i7, i10, this.d);
+        int i11 = this.c;
+        return this.e.subList(i7 + i11, i10 + i11);
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i7 = this.c - 1;
-        this.c = i7;
-        return a(i7);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

@@ -1,86 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class y30 extends Drawable {
-    public long b;
-    public int d;
-    public final View e;
-    public final Paint a = new Paint(1);
-    public float c = 1.0f;
+public final class y30 extends org.telegram.ui.Components.voip.r {
+    public final /* synthetic */ int h = 1;
+    public final /* synthetic */ org.telegram.ui.Components.bk0 n;
 
-    public y30(View view) {
-        this.e = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y30(i40 i40Var, Context context) {
+        super(context, true);
+        this.n = i40Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int L;
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        View view = this.e;
-        if (view instanceof org.telegram.ui.ActionBar.j5) {
-            L = org.telegram.messenger.g0.L(1.0f) + centerY;
-            centerX -= org.telegram.messenger.g0.L(3.0f);
-        } else {
-            L = org.telegram.messenger.g0.L(2.0f) + centerY;
+    @Override // org.telegram.ui.Components.voip.r, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        switch (this.h) {
+            case 0:
+                super.onAttachedToWindow();
+                f40 f40Var = ((z30) this.n).N;
+                if (f40Var.L1.getVisibility() == 0 && f40Var.O4) {
+                    f40.K0(f40Var, this, true);
+                    break;
+                }
+                break;
+            default:
+                super.onAttachedToWindow();
+                i40 i40Var = (i40) this.n;
+                if (i40Var.r && getParticipant() != null) {
+                    i40Var.E(this, true);
+                    break;
+                }
+                break;
         }
-        Paint paint = this.a;
-        paint.setColor(-1147527);
-        paint.setAlpha((int) (this.c * 255.0f));
-        canvas.drawCircle(centerX, L, org.telegram.messenger.g0.L(4.0f), paint);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j3 = elapsedRealtime - this.b;
-        if (j3 > 17) {
-            j3 = 17;
+    }
+
+    @Override // org.telegram.ui.Components.voip.r, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        switch (this.h) {
+            case 0:
+                super.onDetachedFromWindow();
+                f40.K0(((z30) this.n).N, this, false);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                ((i40) this.n).E(this, false);
+                break;
         }
-        this.b = elapsedRealtime;
-        int i7 = this.d;
-        if (i7 == 0) {
-            float f10 = (j3 / 2000.0f) + this.c;
-            this.c = f10;
-            if (f10 >= 1.0f) {
-                this.c = 1.0f;
-                this.d = 1;
-            }
-        } else if (i7 == 1) {
-            float f11 = this.c - (j3 / 2000.0f);
-            this.c = f11;
-            if (f11 < 0.5f) {
-                this.c = 0.5f;
-                this.d = 0;
-            }
-        }
-        view.invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y30(z30 z30Var, Context context) {
+        super(context, false);
+        this.n = z30Var;
     }
 }

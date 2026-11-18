@@ -1,34 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.ShapeDrawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashSet;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uv0 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public org.telegram.ui.ActionBar.e6 a;
-    public ShapeDrawable b;
-    public View c;
+public final class uv0 extends yo0 {
+    public final /* synthetic */ iw0 V2;
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            ShapeDrawable shapeDrawable = this.b;
-            if (shapeDrawable != null) {
-                org.telegram.ui.ActionBar.j6.C1(org.telegram.ui.ActionBar.j6.r1(0.12f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Ef, this.a)), shapeDrawable);
-                View view = this.c;
-                if (view != null) {
-                    view.invalidate();
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uv0(iw0 iw0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, null, str, false, str2, false, i6Var);
+        this.V2 = iw0Var;
+    }
+
+    @Override // org.telegram.ui.Components.yo0, org.telegram.ui.ActionBar.x2
+    public final void L() {
+        super.L();
+        org.telegram.ui.ActionBar.h2 h2Var = this.V2.G1;
+        if (h2Var instanceof org.telegram.ui.bn) {
+            org.telegram.messenger.g0.Z2(h2Var.getParentActivity(), h2Var.getClassGuid());
+            if (((org.telegram.ui.bn) h2Var).a0.getVisibility() == 0) {
+                h2Var.getFragmentView().requestLayout();
             }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.yo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.g0.h3(new org.telegram.ui.b0(this, hVar, i7, 27), 100L);
+        }
     }
 }

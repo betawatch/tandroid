@@ -1,17 +1,57 @@
 package p4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class h1 extends m9.o {
-    public final int n;
-    public final Object r;
+public final class h1 extends e2.l1 {
+    public static final Object j = new Object();
+    public final e2.l0 e;
+    public final boolean f;
+    public final boolean g;
+    public final e2.f0 h;
+    public final long i;
 
-    public h1(int i7, Object obj) {
-        this.n = i7;
-        this.r = obj;
+    public h1(i1 i1Var) {
+        this.e = i1Var.w();
+        this.f = i1Var.e0();
+        this.g = i1Var.v0();
+        this.h = i1Var.P0() ? e2.f0.f : null;
+        this.i = h2.l0.S(i1Var.A());
     }
 
-    public final void p() {
-        super.m(this.r);
+    @Override // e2.l1
+    public final int b(Object obj) {
+        return j.equals(obj) ? 0 : -1;
+    }
+
+    @Override // e2.l1
+    public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
+        i1Var.getClass();
+        e2.c cVar = e2.c.c;
+        Object obj = j;
+        i1Var.h(obj, obj, 0, this.i, 0L, cVar, false);
+        i1Var.f = false;
+        return i1Var;
+    }
+
+    @Override // e2.l1
+    public final int h() {
+        return 1;
+    }
+
+    @Override // e2.l1
+    public final Object l(int i7) {
+        return j;
+    }
+
+    @Override // e2.l1
+    public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
+        k1Var.b(j, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, this.f, this.g, this.h, 0L, this.i, 0, 0, 0L);
+        k1Var.k = false;
+        return k1Var;
+    }
+
+    @Override // e2.l1
+    public final int o() {
+        return 1;
     }
 }

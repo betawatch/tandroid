@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.view.Display;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a0 extends MediaRouter.Callback {
     public final j0 a;
@@ -105,7 +105,7 @@ public final class a0 extends MediaRouter.Callback {
             h0 h0Var = (h0) j0Var.H.get(o4);
             e eVar = j0Var.r;
             String str = h0Var.b;
-            eVar.a.removeMessages(ns.l4);
+            eVar.a.removeMessages(ks.l4);
             u d = eVar.d(eVar.s);
             if (d == null || (a10 = d.a(str)) == null) {
                 return;

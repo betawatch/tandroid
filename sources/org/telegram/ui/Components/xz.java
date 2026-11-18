@@ -1,185 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
+import android.os.Bundle;
 import android.view.View;
-import java.util.HashSet;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xz extends View implements org.telegram.ui.ActionBar.z5 {
-    public Matrix E;
-    public g6 F;
-    public TextPaint a;
-    public TextPaint b;
-    public Paint c;
-    public Path d;
-    public float[] e;
-    public oy0 f;
-    public oy0 h;
-    public oy0 n;
-    public LinearGradient r;
-    public LinearGradient s;
-    public Paint w;
-    public Paint x;
-    public Matrix y;
+public abstract class xz extends wm0 {
+    public final boolean d;
 
-    public static CharSequence a(CharSequence charSequence) {
-        return "ALL_CHATS".equals(charSequence.toString()) ? org.telegram.messenger.hd.M0(2131750807, null) : charSequence;
+    public xz(boolean z10) {
+        this.d = z10;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        oy0 oy0Var;
-        float f14;
-        float f15;
-        Paint paint = this.c;
-        Matrix matrix = this.E;
-        Matrix matrix2 = this.y;
-        Path path = this.d;
-        oy0 oy0Var2 = this.f;
-        g6 g6Var = this.F;
-        oy0 oy0Var3 = this.n;
-        super.onDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), org.telegram.messenger.ns.e4, 31);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        oy0 oy0Var4 = this.h;
-        if (oy0Var4 != null) {
-            canvas.save();
-            float f16 = oy0Var4.c;
-            f10 = 15.32f;
-            CharSequence charSequence = g6Var.i;
-            if (charSequence == null || charSequence.length() == 0) {
-                f15 = 0.0f;
-            } else {
-                f15 = g6Var.c() + org.telegram.messenger.g0.L(15.32f);
-            }
-            float f17 = f16 + f15;
-            f11 = measuredWidth - (f17 / 2.0f);
-            canvas.translate(f11, measuredHeight - (oy0Var4.i() / 2.0f));
-            oy0Var4.d(canvas);
-            canvas.restore();
-            f12 = f17;
-        } else {
-            f10 = 15.32f;
-            f11 = measuredWidth;
-            f12 = 0.0f;
-        }
-        CharSequence charSequence2 = g6Var.i;
-        if (charSequence2 == null || charSequence2.length() == 0) {
-            f13 = measuredHeight;
-            oy0Var = oy0Var4;
-            f14 = 2.0f;
-        } else {
-            Rect rect = org.telegram.messenger.g0.Q;
-            f14 = 2.0f;
-            int L = (int) (oy0Var4.c + f11 + org.telegram.messenger.g0.L(4.66f));
-            int L2 = (int) (measuredHeight - org.telegram.messenger.g0.L(9.0f));
-            f13 = measuredHeight;
-            int c10 = (int) (g6Var.c() + oy0Var4.c + f11 + org.telegram.messenger.g0.L(f10));
-            oy0Var = oy0Var4;
-            rect.set(L, L2, c10, (int) (f13 + org.telegram.messenger.g0.L(9.0f)));
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(rect);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), paint);
-            rect.offset(-org.telegram.messenger.g0.L(0.33f), -org.telegram.messenger.g0.L(0.66f));
-            g6Var.setBounds(rect);
-            g6Var.draw(canvas);
-        }
-        float L3 = org.telegram.messenger.g0.L(30.0f);
-        float f18 = (f11 - L3) - oy0Var2.c;
-        canvas.save();
-        canvas.translate(f18, (f13 - (oy0Var2.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
-        oy0Var2.d(canvas);
-        canvas.restore();
-        float f19 = f11 + f12;
-        if (oy0Var3 != null) {
-            canvas.save();
-            canvas.translate(f19 + L3, (f13 - (oy0Var3.i() / f14)) + org.telegram.messenger.g0.L(1.0f));
-            oy0Var3.d(canvas);
-            canvas.restore();
-            f19 += L3 + oy0Var3.c;
-        }
-        float f20 = f19;
-        float L4 = org.telegram.messenger.g0.L(12.0f) + (oy0Var.i() / f14) + f13;
-        canvas.drawRect(0.0f, L4, getMeasuredWidth(), 1.0f + L4, this.a);
-        path.rewind();
-        RectF rectF2 = org.telegram.messenger.g0.P;
-        float f21 = f12 / f14;
-        float f22 = measuredWidth + f21;
-        rectF2.set((measuredWidth - f21) - org.telegram.messenger.g0.L(4.0f), L4 - org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f) + f22, L4);
-        path.addRoundRect(rectF2, this.e, Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.save();
-        float max = Math.max(org.telegram.messenger.g0.L(8.0f), f18);
-        matrix2.reset();
-        matrix2.postTranslate(Math.min(f11, max + org.telegram.messenger.g0.L(8.0f)), 0.0f);
-        this.r.setLocalMatrix(matrix2);
-        float min = Math.min(getMeasuredWidth() - org.telegram.messenger.g0.L(8.0f), f20);
-        matrix.reset();
-        matrix.postTranslate(Math.max(f22, min - org.telegram.messenger.g0.L(88.0f)), 0.0f);
-        this.s.setLocalMatrix(matrix);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.w);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.x);
-        canvas.restore();
-        canvas.restore();
+    @Override // org.telegram.ui.Components.wm0
+    public final boolean a() {
+        return k() > j();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        Paint paint = this.c;
-        TextPaint textPaint = this.b;
-        TextPaint textPaint2 = this.a;
-        if (textPaint2 == null || textPaint == null || paint == null) {
-            return;
-        }
-        int i7 = org.telegram.ui.ActionBar.j6.vi;
-        textPaint2.setColor(org.telegram.ui.ActionBar.j6.r1(0.8f, org.telegram.ui.ActionBar.j6.x0(null, i7, false)));
-        int i10 = org.telegram.ui.ActionBar.j6.o6;
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, i10, false));
-        paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Ki, false));
-        try {
-            g6 g6Var = this.F;
-            if (g6Var != null) {
-                g6Var.u(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.d6, false));
-            }
-            int r12 = org.telegram.ui.ActionBar.j6.r1(0.8f, org.telegram.ui.ActionBar.j6.x0(null, i7, false));
-            oy0 oy0Var = this.f;
-            if (oy0Var != null) {
-                oy0Var.n(r12);
-            }
-            oy0 oy0Var2 = this.h;
-            if (oy0Var2 != null) {
-                oy0Var2.n(org.telegram.ui.ActionBar.j6.x0(null, i10, false));
-            }
-            oy0 oy0Var3 = this.n;
-            if (oy0Var3 != null) {
-                oy0Var3.n(r12);
-            }
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        invalidate();
+    @Override // org.telegram.ui.Components.wm0
+    public final boolean b() {
+        return k() < i();
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.F || super.verifyDrawable(drawable);
+    @Override // org.telegram.ui.Components.wm0
+    public final void c(boolean z10) {
+        float h = h();
+        if (z10) {
+            h *= -1.0f;
+        }
+        l(Math.min(i(), Math.max(j(), k() + h)));
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.Components.wm0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        if (this.d) {
+            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a);
+            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
+        }
     }
+
+    @Override // org.telegram.ui.Components.wm0
+    public final boolean g(View view, int i7, Bundle bundle) {
+        if (super.g(view, i7, bundle)) {
+            return true;
+        }
+        if (i7 != ((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a).getId()) {
+            return false;
+        }
+        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
+        return true;
+    }
+
+    public float h() {
+        return 0.05f;
+    }
+
+    public float i() {
+        return 1.0f;
+    }
+
+    public float j() {
+        return 0.0f;
+    }
+
+    public abstract float k();
+
+    public abstract void l(float f10);
 }

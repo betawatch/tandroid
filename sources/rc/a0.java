@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.telegram.ui.Wallet.x0;
+import org.telegram.ui.Wallet.h1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a0 extends z {
     public final LinkedList b;
@@ -36,14 +36,14 @@ public final class a0 extends z {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                x0 x0Var = (x0) obj;
+                h1 h1Var = (h1) obj;
                 try {
                     try {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     } catch (Throwable unused) {
                     }
                 } catch (Throwable unused2) {
-                    x0Var.getClass();
+                    h1Var.getClass();
                 }
             }
         }
@@ -69,12 +69,12 @@ public final class a0 extends z {
             while (i7 < size) {
                 Object obj = arrayList.get(i7);
                 i7++;
-                x0 x0Var = (x0) obj;
+                h1 h1Var = (h1) obj;
                 try {
                     try {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     } catch (Throwable unused) {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -225,14 +225,14 @@ public final class a0 extends z {
         while (i11 < size) {
             Object obj = arrayList.get(i11);
             i11++;
-            x0 x0Var = (x0) obj;
+            h1 h1Var = (h1) obj;
             try {
                 try {
-                    x0Var.getClass();
+                    h1Var.getClass();
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                x0Var.getClass();
+                h1Var.getClass();
             }
         }
         if (this.e != null) {
@@ -241,12 +241,12 @@ public final class a0 extends z {
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                x0 x0Var2 = (x0) obj2;
+                h1 h1Var2 = (h1) obj2;
                 try {
                     try {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     } catch (Throwable unused4) {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     }
                 } catch (Throwable unused5) {
                 }
@@ -271,7 +271,7 @@ public final class a0 extends z {
                 }
             }
             if (z10) {
-                this.a.d.g();
+                this.a.d.f();
             }
         }
         try {
@@ -281,12 +281,12 @@ public final class a0 extends z {
             while (i10 < size3) {
                 Object obj3 = arrayList3.get(i10);
                 i10++;
-                x0 x0Var3 = (x0) obj3;
+                h1 h1Var3 = (h1) obj3;
                 try {
                     try {
-                        x0Var3.getClass();
+                        h1Var3.getClass();
                     } catch (Throwable unused6) {
-                        x0Var3.getClass();
+                        h1Var3.getClass();
                     }
                 } catch (Throwable unused7) {
                 }
@@ -300,12 +300,12 @@ public final class a0 extends z {
             while (i10 < size4) {
                 Object obj4 = arrayList4.get(i10);
                 i10++;
-                x0 x0Var4 = (x0) obj4;
+                h1 h1Var4 = (h1) obj4;
                 try {
                     try {
-                        x0Var4.getClass();
+                        h1Var4.getClass();
                     } catch (Throwable unused8) {
-                        x0Var4.getClass();
+                        h1Var4.getClass();
                     }
                 } catch (Throwable unused9) {
                 }

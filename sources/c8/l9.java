@@ -1,63 +1,13 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l9 {
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x006b, code lost:
-    
-        return true;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static boolean a(f3.l lVar, boolean z10) {
-        int i7;
-        h2.x xVar = new h2.x(16);
-        boolean z11 = true;
-        while (true) {
-            xVar.K(8);
-            if (!lVar.h(xVar.a, 0, 8, true)) {
-                break;
-            }
-            long C = xVar.C();
-            int m10 = xVar.m();
-            if (C != 1) {
-                i7 = 8;
-            } else {
-                if (!lVar.h(xVar.a, 8, 8, true)) {
-                    break;
-                }
-                C = xVar.G();
-                i7 = 16;
-            }
-            long j3 = i7;
-            if (C < j3) {
-                break;
-            }
-            int i10 = (int) (C - j3);
-            if (z11) {
-                if (m10 != 1718909296 || i10 < 8) {
-                    break;
-                }
-                xVar.K(4);
-                lVar.h(xVar.a, 0, 4, false);
-                if (xVar.m() != 1751476579) {
-                    break;
-                }
-                if (!z10) {
-                    break;
-                }
-                lVar.n(i10 - 4, false);
-                z11 = false;
-            } else {
-                if (m10 == 1836086884) {
-                    break;
-                }
-                if (i10 != 0) {
-                    lVar.n(i10, false);
-                }
-            }
-        }
-        return false;
+    public static float a(float f10, float f11, float f12) {
+        return f10 < f11 ? f11 : f10 > f12 ? f12 : f10;
+    }
+
+    public static int b(int i7, int i10, int i11) {
+        return i7 < i10 ? i10 : i7 > i11 ? i11 : i7;
     }
 }

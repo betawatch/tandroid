@@ -16,16 +16,16 @@ import org.json.JSONObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.qz;
-import org.telegram.messenger.r2;
-import org.telegram.messenger.xz;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mz;
+import org.telegram.messenger.s2;
+import org.telegram.messenger.tz;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.x21;
+import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class v1 {
     public static final HashMap e = new HashMap();
@@ -117,20 +117,20 @@ public final class v1 {
         return null;
     }
 
-    public static ai.s e(s0 s0Var, z10 z10Var) {
+    public static ai.j e(s0 s0Var, x10 x10Var) {
         if (s0Var == null) {
-            z10Var.a(null);
+            x10Var.a(null);
             return null;
         }
         int i7 = 1;
         boolean[] zArr = {false};
         v1 v1Var = new v1();
         v1Var.a = s0Var.getUrl();
-        xz xzVar = !r2.a ? null : new xz("WebInstantView");
-        o1 o1Var = new o1(xz.d(xzVar, "getHTML"), zArr, xzVar, v1Var, z10Var, 0);
+        tz tzVar = !s2.a ? null : new tz("WebInstantView");
+        o1 o1Var = new o1(tz.d(tzVar, "getHTML"), zArr, tzVar, v1Var, x10Var, 0);
         System.currentTimeMillis();
         s0Var.evaluateJavascript(org.telegram.messenger.g0.y2(null, R.raw.open_collapsed).replace("$OPEN$", "true"), new p1(v1Var, s0Var, new File(org.telegram.messenger.g0.E0(), "archive.mht"), o1Var, 0));
-        return new ai.s(i7, zArr);
+        return new ai.j(i7, zArr);
     }
 
     public static boolean f(JSONArray jSONArray) {
@@ -155,7 +155,7 @@ public final class v1 {
 
     public static void g(u1 u1Var, ImageReceiver imageReceiver, Runnable runnable) {
         v1 v1Var;
-        a1 a1Var;
+        b1 b1Var;
         Bitmap decodeStream;
         if (u1Var == null || (v1Var = u1Var.a) == null) {
             return;
@@ -164,17 +164,17 @@ public final class v1 {
         try {
             if (v1Var.b != null) {
                 Iterator it = u1Var.c.iterator();
-                a1Var = null;
+                b1Var = null;
                 while (it.hasNext()) {
-                    a1Var = (a1) ((HashMap) v1Var.b.c).get((String) it.next());
-                    if (a1Var != null) {
+                    b1Var = (b1) ((HashMap) v1Var.b.c).get((String) it.next());
+                    if (b1Var != null) {
                         break;
                     }
                 }
             } else {
-                a1Var = null;
+                b1Var = null;
             }
-            if (a1Var == null) {
+            if (b1Var == null) {
                 if (hashMap.containsKey(u1Var.b)) {
                     imageReceiver.v0((Bitmap) hashMap.get(u1Var.b));
                     return;
@@ -185,7 +185,7 @@ public final class v1 {
                 ArrayList arrayList = (ArrayList) f.get(u1Var.b);
                 if (arrayList == null) {
                     f.put(u1Var.b, new ArrayList());
-                    new y0(new x21(19, v1Var, u1Var)).execute(u1Var.b);
+                    new y0(new p51(18, v1Var, u1Var)).execute(u1Var.b);
                     return;
                 }
                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
@@ -196,17 +196,17 @@ public final class v1 {
                 arrayList.add(new Pair(imageReceiver, runnable));
                 return;
             }
-            b1 b1Var = (b1) a1Var.a.get("content-type");
-            if ((b1Var == null ? null : b1Var.a).contains("svg")) {
+            c1 c1Var = (c1) b1Var.a.get("content-type");
+            if ((c1Var == null ? null : c1Var.a).contains("svg")) {
                 if (u1Var.d > 0 && u1Var.e > 0) {
-                    decodeStream = qz.g(a1Var.a(), org.telegram.messenger.g0.L(u1Var.d), org.telegram.messenger.g0.L(u1Var.e));
+                    decodeStream = mz.g(b1Var.a(), org.telegram.messenger.g0.L(u1Var.d), org.telegram.messenger.g0.L(u1Var.e));
                 }
                 return;
             }
             if (u1Var.d <= 0 || u1Var.e <= 0) {
                 BitmapFactory.Options options = new BitmapFactory.Options();
                 options.inJustDecodeBounds = true;
-                BitmapFactory.decodeStream(a1Var.a(), null, options);
+                BitmapFactory.decodeStream(b1Var.a(), null, options);
                 int i10 = u1Var.d;
                 if (i10 == 0 && u1Var.e == 0) {
                     u1Var.d = options.outWidth;
@@ -218,7 +218,7 @@ public final class v1 {
                 }
                 runnable.run();
             }
-            decodeStream = BitmapFactory.decodeStream(a1Var.a());
+            decodeStream = BitmapFactory.decodeStream(b1Var.a());
             imageReceiver.v0(decodeStream);
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -461,31 +461,31 @@ public final class v1 {
                             break;
                         }
                         break;
-                    case ns.i1 /* 97 */:
+                    case ks.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 3;
                             break;
                         }
                         break;
-                    case ns.j1 /* 98 */:
+                    case ks.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 4;
                             break;
                         }
                         break;
-                    case ns.q1 /* 105 */:
+                    case ks.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 5;
                             break;
                         }
                         break;
-                    case ns.x1 /* 112 */:
+                    case ks.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 6;
                             break;
                         }
                         break;
-                    case ns.A1 /* 115 */:
+                    case ks.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 7;
                             break;
@@ -862,35 +862,35 @@ public final class v1 {
                         }
                         c10 = 65535;
                         break;
-                    case ns.i1 /* 97 */:
+                    case ks.i1 /* 97 */:
                         if (optString.equals("a")) {
                             c10 = 1;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ns.j1 /* 98 */:
+                    case ks.j1 /* 98 */:
                         if (optString.equals("b")) {
                             c10 = 2;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ns.q1 /* 105 */:
+                    case ks.q1 /* 105 */:
                         if (optString.equals("i")) {
                             c10 = 3;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ns.x1 /* 112 */:
+                    case ks.x1 /* 112 */:
                         if (optString.equals("p")) {
                             c10 = 4;
                             break;
                         }
                         c10 = 65535;
                         break;
-                    case ns.A1 /* 115 */:
+                    case ks.A1 /* 115 */:
                         if (optString.equals("s")) {
                             c10 = 5;
                             break;

@@ -1,154 +1,302 @@
 package bg;
 
+import a8.sa;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.view.animation.Interpolator;
-import android.view.animation.PathInterpolator;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.j6;
+import android.os.Build;
+import android.os.Handler;
+import android.os.HandlerThread;
+import android.os.Looper;
+import android.view.Choreographer;
+import android.view.FrameMetrics;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.Window;
+import android.view.WindowManager;
+import java.util.Locale;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class c0 extends Drawable {
-    public static final PathInterpolator i = new PathInterpolator(0.42f, 0.0f, 0.58f, 1.0f);
-    public final Interpolator a;
-    public final GradientDrawable b;
-    public final int e;
-    public final int[] f;
-    public int g;
-    public final Paint c = new Paint(1);
-    public final Rect d = new Rect();
-    public int h = ns.e4;
+public final class c0 extends View {
+    public View E;
+    public a0 F;
+    public final AtomicBoolean G;
+    public final AtomicBoolean H;
+    public final Handler I;
+    public final sa J;
+    public int a;
+    public long b;
+    public int c;
+    public z d;
+    public final AtomicInteger e;
+    public int f;
+    public final Paint h;
+    public final Paint n;
+    public WindowManager r;
+    public WindowManager.LayoutParams s;
+    public Window w;
+    public HandlerThread x;
+    public y y;
 
-    public c0(int i7) {
-        GradientDrawable gradientDrawable = new GradientDrawable();
-        this.b = gradientDrawable;
-        this.a = i;
-        this.f = new int[8];
-        this.e = i7;
-        if (i7 == 1) {
-            gradientDrawable.setOrientation(GradientDrawable.Orientation.LEFT_RIGHT);
-        } else if (i7 == 2) {
-            gradientDrawable.setOrientation(GradientDrawable.Orientation.TOP_BOTTOM);
-        } else if (i7 == 4) {
-            gradientDrawable.setOrientation(GradientDrawable.Orientation.RIGHT_LEFT);
-        } else if (i7 == 8) {
-            gradientDrawable.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
-        }
-        b(0);
+    public c0(LaunchActivity launchActivity) {
+        super(launchActivity.getApplicationContext());
+        this.a = 0;
+        this.b = 0L;
+        this.c = 0;
+        this.e = new AtomicInteger(0);
+        this.f = 0;
+        Paint paint = new Paint(1);
+        this.h = paint;
+        Paint paint2 = new Paint(1);
+        this.n = paint2;
+        this.G = new AtomicBoolean(false);
+        this.H = new AtomicBoolean(false);
+        this.I = new Handler(Looper.getMainLooper());
+        this.J = new sa(this, 14);
+        paint.setColor(-1342177280);
+        paint2.setColor(-1);
+        paint2.setTextSize(org.telegram.messenger.g0.L(9.0f));
+        paint2.setFakeBoldText(true);
+        paint2.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+        setWillNotDraw(false);
     }
 
-    public static void a(Interpolator interpolator, int i7, int[] iArr) {
-        int length = iArr.length - 1;
-        int alpha = Color.alpha(i7);
-        for (int i10 = length; i10 >= 0; i10--) {
-            iArr[i10] = i0.a.o(i7, (int) (interpolator.getInterpolation((length - i10) / length) * alpha));
-        }
-    }
-
-    public final void b(int i7) {
-        if (this.g == i7) {
-            return;
-        }
-        this.g = i7;
-        Interpolator interpolator = this.a;
-        int[] iArr = this.f;
-        a(interpolator, i7, iArr);
-        this.b.setColors(iArr);
-        this.c.setColor(j6.r1(this.h / 255.0f, this.g));
-    }
-
-    public final void c(int i7, int i10) {
-        Rect rect = this.d;
-        if (rect.left == 0 && rect.top == i7 && rect.right == 0 && rect.bottom == i10) {
-            return;
-        }
-        rect.set(0, i7, 0, i10);
-        onBoundsChange(getBounds());
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0096  */
-    /* JADX WARN: Removed duplicated region for block: B:13:? A[RETURN, SYNTHETIC] */
-    @Override // android.graphics.drawable.Drawable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        GradientDrawable gradientDrawable;
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        Rect bounds = getBounds();
-        if (!bounds.isEmpty()) {
-            Paint paint = this.c;
-            Rect rect = this.d;
-            int i13 = this.e;
-            if (i13 == 1 && (i12 = rect.left) > 0) {
-                canvas2 = canvas;
-                canvas2.drawRect(bounds.left, bounds.top, Math.min(bounds.right, r2 + i12), bounds.bottom, paint);
-            } else if (i13 == 2 && (i11 = rect.top) > 0) {
-                float f10 = bounds.left;
-                int i14 = bounds.top;
-                float f11 = i14;
-                float f12 = bounds.right;
-                float min = Math.min(bounds.bottom, i14 + i11);
-                canvas2 = canvas;
-                canvas2.drawRect(f10, f11, f12, min, paint);
-            } else if (i13 == 4 && (i10 = rect.right) > 0) {
-                canvas2 = canvas;
-                canvas2.drawRect(Math.max(bounds.left, bounds.right - i10), bounds.top, bounds.right, bounds.bottom, paint);
-            } else if (i13 == 8 && (i7 = rect.bottom) > 0) {
-                canvas2 = canvas;
-                canvas2.drawRect(bounds.left, Math.max(bounds.top, bounds.bottom - i7), bounds.right, bounds.bottom, paint);
+    public static void a(FrameMetrics frameMetrics) {
+        for (b0 b0Var : b0.values()) {
+            if (Build.VERSION.SDK_INT >= b0Var.c) {
+                long metric = frameMetrics.getMetric(b0Var.a);
+                b0Var.d = metric;
+                if (metric >= 0) {
+                    double d = metric / 1000000.0d;
+                    double d2 = b0Var.e;
+                    if (d2 != 0.0d) {
+                        d = ((d - d2) * 0.05d) + d2;
+                    }
+                    b0Var.e = d;
+                }
+            } else {
+                b0Var.d = Long.MIN_VALUE;
             }
-            gradientDrawable = this.b;
-            if (gradientDrawable.getBounds().isEmpty()) {
-                gradientDrawable.draw(canvas2);
+        }
+    }
+
+    public static c0 b(LaunchActivity launchActivity, org.telegram.ui.k0 k0Var) {
+        c0 c0Var = new c0(launchActivity);
+        c0Var.setObservedView(k0Var);
+        c0Var.r = (WindowManager) launchActivity.getSystemService("window");
+        c0Var.w = launchActivity.getWindow();
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-2, -2, 2, 792, -3);
+        c0Var.s = layoutParams;
+        layoutParams.gravity = 8388627;
+        int L = org.telegram.messenger.g0.L(12);
+        WindowManager.LayoutParams layoutParams2 = c0Var.s;
+        layoutParams2.x = L;
+        layoutParams2.y = L;
+        layoutParams2.width = org.telegram.messenger.g0.L(260.0f);
+        c0Var.r.addView(c0Var, c0Var.s);
+        c0Var.H.set(true);
+        if (c0Var.G.getAndSet(true)) {
+            return c0Var;
+        }
+        HandlerThread handlerThread = new HandlerThread("FrameMetrics");
+        c0Var.x = handlerThread;
+        handlerThread.start();
+        Handler handler = new Handler(c0Var.x.getLooper());
+        y yVar = new y();
+        c0Var.y = yVar;
+        c0Var.w.addOnFrameMetricsAvailableListener(yVar, handler);
+        c0Var.d = new z(c0Var, 0);
+        Choreographer.getInstance().postFrameCallback(c0Var.d);
+        View view = c0Var.E;
+        if (view != null) {
+            c0Var.F = new a0(0, c0Var);
+            ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.addOnDrawListener(c0Var.F);
+            }
+        }
+        c0Var.I.post(c0Var.J);
+        return c0Var;
+    }
+
+    public final void c() {
+        y yVar;
+        this.G.set(false);
+        this.I.removeCallbacks(this.J);
+        Window window = this.w;
+        if (window != null && (yVar = this.y) != null) {
+            window.removeOnFrameMetricsAvailableListener(yVar);
+        }
+        if (this.d != null) {
+            Choreographer.getInstance().removeFrameCallback(this.d);
+            this.d = null;
+        }
+        View view = this.E;
+        if (view != null && this.F != null) {
+            ViewTreeObserver viewTreeObserver = view.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.removeOnDrawListener(this.F);
+            }
+            this.F = null;
+        }
+        HandlerThread handlerThread = this.x;
+        if (handlerThread != null) {
+            handlerThread.quitSafely();
+        }
+        if (this.r != null && this.H.getAndSet(false)) {
+            try {
+                this.r.removeViewImmediate(this);
+            } catch (Throwable unused) {
+            }
+        }
+        this.r = null;
+        this.s = null;
+        this.w = null;
+    }
+
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        String format;
+        double d;
+        c0 c0Var = this;
+        float L = org.telegram.messenger.g0.L(8.0f);
+        float L2 = org.telegram.messenger.g0.L(11.0f);
+        canvas.drawRoundRect(0.0f, 0.0f, c0Var.getWidth() > 0 ? c0Var.getWidth() : org.telegram.messenger.g0.L(260.0f), ((b0.values().length + 9) * L2) + (2.0f * L), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), c0Var.h);
+        float f10 = L + L2;
+        b0[] values = b0.values();
+        int length = values.length;
+        double d2 = 0.0d;
+        double d10 = 0.0d;
+        double d11 = 0.0d;
+        double d12 = 0.0d;
+        float f11 = L2;
+        long j3 = 0;
+        int i7 = 0;
+        long j10 = 0;
+        long j11 = 0;
+        long j12 = 0;
+        while (true) {
+            float f12 = f11;
+            Paint paint = c0Var.n;
+            if (i7 >= length) {
+                long j13 = j12;
+                long max = Math.max(j3, Math.max(j10, j11));
+                double d13 = d11;
+                long j14 = j11;
+                double d14 = d12;
+                long j15 = j10;
+                double d15 = d10;
+                double max2 = Math.max(d15, Math.max(d14, d13));
+                float f13 = f10 + f12;
+                Locale locale = Locale.US;
+                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "ui", Double.valueOf(j3 / 1000000.0d), Double.valueOf(d15)), L, f13, paint);
+                float f14 = f13 + f12;
+                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "rt", Double.valueOf(j15 / 1000000.0d), Double.valueOf(d14)), L, f14, paint);
+                float f15 = f14 + f12;
+                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "gpu", Double.valueOf(j14 / 1000000.0d), Double.valueOf(d13)), L, f15, paint);
+                float f16 = f15 + f12;
+                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "other", Double.valueOf(j13 / 1000000.0d), Double.valueOf(d2)), L, f16, paint);
+                float f17 = f16 + f12;
+                canvas.drawText(String.format(locale, "%-16s : %5.2f / %5.2f ms", "frame", Double.valueOf(max / 1000000.0d), Double.valueOf(max2)), L, f17, paint);
+                float f18 = f17 + f12 + f12;
+                canvas.drawText(String.format(locale, "%-16s : %d /s", "vsync", Integer.valueOf(this.c)), L, f18, paint);
+                canvas.drawText(String.format(locale, "%-16s : %d /s", this.E != null ? "onDraw" : "onDraw (none)", Integer.valueOf(this.f)), L, f18 + f12, paint);
                 return;
             }
+            int i10 = length;
+            b0 b0Var = values[i7];
+            int i11 = i7;
+            boolean z10 = Build.VERSION.SDK_INT >= b0Var.c;
+            String str = b0Var.b;
+            long j16 = j12;
+            if (z10) {
+                long j17 = b0Var.d;
+                if (j17 >= 0) {
+                    format = String.format(Locale.US, "%-16s : %5.2f / %5.2f ms", str, Double.valueOf(j17 / 1000000.0d), Double.valueOf(b0Var.e));
+                    switch (b0Var.ordinal()) {
+                        case 0:
+                        case 7:
+                            j12 = j16 + b0Var.d;
+                            d2 += b0Var.e;
+                            break;
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            j3 += b0Var.d;
+                            d10 += b0Var.e;
+                            j12 = j16;
+                            break;
+                        case 5:
+                            long j18 = b0Var.d;
+                            j3 += j18;
+                            d = b0Var.e;
+                            d10 += d;
+                            j10 += j18;
+                            d12 += d;
+                            j12 = j16;
+                            break;
+                        case 6:
+                            j10 += b0Var.d;
+                            d = b0Var.e;
+                            d12 += d;
+                            j12 = j16;
+                            break;
+                        case 8:
+                            j11 += b0Var.d;
+                            d11 += b0Var.e;
+                            j12 = j16;
+                            break;
+                        default:
+                            j12 = j16;
+                            break;
+                    }
+                    canvas.drawText(format, L, f10, paint);
+                    f10 += f12;
+                    i7 = i11 + 1;
+                    c0Var = this;
+                    f11 = f12;
+                    length = i10;
+                }
+            }
+            format = String.format(Locale.US, "%-16s : n/a", str);
+            j12 = j16;
+            canvas.drawText(format, L, f10, paint);
+            f10 += f12;
+            i7 = i11 + 1;
+            c0Var = this;
+            f11 = f12;
+            length = i10;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        setMeasuredDimension(org.telegram.messenger.g0.L(210.0f), ((b0.values().length + 9) * org.telegram.messenger.g0.L(11.0f)) + (org.telegram.messenger.g0.L(8.0f) * 2));
+    }
+
+    public void setObservedView(View view) {
+        View view2;
+        View view3 = this.E;
+        if (view3 != null && this.F != null) {
+            ViewTreeObserver viewTreeObserver = view3.getViewTreeObserver();
+            if (viewTreeObserver.isAlive()) {
+                viewTreeObserver.removeOnDrawListener(this.F);
+            }
+            this.F = null;
+        }
+        this.E = view;
+        if (!this.G.get() || (view2 = this.E) == null) {
             return;
         }
-        canvas2 = canvas;
-        gradientDrawable = this.b;
-        if (gradientDrawable.getBounds().isEmpty()) {
+        this.F = new a0(0, this);
+        ViewTreeObserver viewTreeObserver2 = view2.getViewTreeObserver();
+        if (viewTreeObserver2.isAlive()) {
+            viewTreeObserver2.addOnDrawListener(this.F);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.h;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        int i7 = rect.left;
-        Rect rect2 = this.d;
-        this.b.setBounds(i7 + rect2.left, rect.top + rect2.top, rect.right - rect2.right, rect.bottom - rect2.bottom);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.h = i7;
-        this.b.setAlpha(i7);
-        this.c.setColor(j6.r1(this.h / 255.0f, this.g));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
-        this.c.setColorFilter(colorFilter);
     }
 }

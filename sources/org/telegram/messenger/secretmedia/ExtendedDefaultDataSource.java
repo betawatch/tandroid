@@ -1,6 +1,6 @@
 package org.telegram.messenger.secretmedia;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -25,7 +25,7 @@ import java.util.Map;
 import org.telegram.messenger.s8;
 import q4.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -185,7 +185,7 @@ public final class ExtendedDefaultDataSource implements h {
 
     @Override // j2.h
     public long open(m mVar) {
-        ja.p(this.dataSource == null);
+        la.p(this.dataSource == null);
         Uri uri = mVar.a;
         if ("mtproto".equals(uri.getScheme())) {
             uri = this.mtprotoUris.get(Long.parseLong(mVar.a.toString().substring(8)));

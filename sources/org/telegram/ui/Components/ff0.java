@@ -1,38 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.beta.R;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public enum ff0 {
-    d(2131746731, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    e(2131746687, R.drawable.filled_profile_mute_24, R.drawable.outline_profile_mute_24),
-    f(2131746686, R.drawable.filled_profile_unmute_24, R.drawable.outline_profile_unmute_24),
-    h(2131746740, R.drawable.filled_profile_message_24, R.drawable.outline_profile_message_24),
-    n(2131746735, R.drawable.gift, R.drawable.input_gift_s),
-    r(2131746729, R.drawable.action_share, R.drawable.msg_share),
-    s(2131746741, R.drawable.filled_profile_call_24, R.drawable.outline_profile_call_24),
-    w(2131746727, R.drawable.filled_profile_video_24, R.drawable.outline_profile_video_24),
-    x(2131746734, R.drawable.filled_profile_member_24, R.drawable.outline_profile_member_24),
-    y(2131746730, R.drawable.report, R.drawable.msg_report),
-    E(2131746733, R.drawable.leave, R.drawable.leave),
-    F(2131746726, R.drawable.live_stream, R.drawable.live_stream),
-    G(2131746732, R.drawable.live_stream, R.drawable.live_stream),
-    H(2131746742, R.drawable.filled_profile_story, R.drawable.outline_profile_story),
-    I(2131746728, R.drawable.filled_profile_stop_24, R.drawable.outline_profile_stop_24),
-    J(2131746737, R.drawable.filled_profile_photo, R.drawable.outline_profile_photo),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF16(2131746736, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    K(2131746739, R.drawable.filled_profile_edit_24, R.drawable.outline_profile_edit_24),
-    L(2131745495, R.drawable.filled_profile_settings, R.drawable.outline_profile_settings);
+public final /* synthetic */ class ff0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ if0 b;
 
-    public final int a;
-    public final int b;
-    public final int c;
-
-    ff0(int i7, int i10, int i11) {
+    public /* synthetic */ ff0(if0 if0Var, int i7) {
         this.a = i7;
-        this.b = i10;
-        this.c = i11;
+        this.b = if0Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                if0 if0Var = this.b;
+                if0Var.getClass();
+                if0Var.b = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if0Var.c(true);
+                break;
+            default:
+                if0 if0Var2 = this.b;
+                if0Var2.getClass();
+                if0Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if0Var2.c(true);
+                break;
+        }
     }
 }

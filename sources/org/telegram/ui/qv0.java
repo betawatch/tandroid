@@ -1,71 +1,30 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.Comparator;
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qv0 implements Comparator {
-    public final /* synthetic */ int a;
+public final class qv0 implements kp {
+    public final /* synthetic */ cx a;
+    public final /* synthetic */ rv0 b;
 
-    public /* synthetic */ qv0(int i7) {
-        this.a = i7;
+    public qv0(rv0 rv0Var, cx cxVar) {
+        this.b = rv0Var;
+        this.a = cxVar;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return (int) (((View) obj).getY() - ((View) obj2).getY());
-            case 1:
-                int i7 = obj instanceof rw0 ? ((rw0) obj).g : obj instanceof org.telegram.messenger.zo ? ((org.telegram.messenger.zo) obj).d : 0;
-                int i10 = obj2 instanceof rw0 ? ((rw0) obj2).g : obj2 instanceof org.telegram.messenger.zo ? ((org.telegram.messenger.zo) obj2).d : 0;
-                if (i7 < i10) {
-                    return -1;
-                }
-                return i7 > i10 ? 1 : 0;
-            case 2:
-                long j3 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
-                long j10 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
-                if (j3 > j10) {
-                    return 1;
-                }
-                return j3 < j10 ? -1 : 0;
-            case 3:
-                return Integer.compare(((org.telegram.ui.ActionBar.i6) obj).W, ((org.telegram.ui.ActionBar.i6) obj2).W);
-            case 4:
-                long j11 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
-                long j12 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
-                if (j11 > j12) {
-                    return 1;
-                }
-                return j11 < j12 ? -1 : 0;
-            case 5:
-                return Integer.compare(((org.telegram.ui.Wallet.h0) obj2).b, ((org.telegram.ui.Wallet.h0) obj).b);
-            case 6:
-                return Integer.compare(((TL_wallet.walletTransaction) obj2).date, ((TL_wallet.walletTransaction) obj).date);
-            case 7:
-                long j13 = org.telegram.messenger.m10.i(((Integer) obj).intValue()).Z;
-                long j14 = org.telegram.messenger.m10.i(((Integer) obj2).intValue()).Z;
-                if (j13 > j14) {
-                    return 1;
-                }
-                return j13 < j14 ? -1 : 0;
-            case 8:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 9:
-                return (int) (((org.telegram.ui.web.j) obj2).c - ((org.telegram.ui.web.j) obj).c);
-            case 10:
-                return Long.compare(((org.telegram.utils.twidget.k0) obj2).y, ((org.telegram.utils.twidget.k0) obj).y);
-            case 11:
-                return ((v4.e1) obj2).a.getTop() - ((v4.e1) obj).a.getTop();
-            case 12:
-                return ((s2.e) obj).a.compareTo(((s2.e) obj2).a);
-            case 13:
-                return (int) ((((ug.j1) obj).a * 100.0f) - (((ug.j1) obj2).a * 100.0f));
-            default:
-                return ((String) obj).compareTo((String) obj2);
-        }
+    @Override // org.telegram.ui.kp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        ProfileActivity profileActivity = this.b.b;
+        profileActivity.N1 = true;
+        this.a.removeSelfFromStack();
+        org.telegram.messenger.ks notificationCenter = profileActivity.getNotificationCenter();
+        int i10 = org.telegram.messenger.ks.t;
+        notificationCenter.n(profileActivity, i10);
+        profileActivity.getNotificationCenter().k(i10, new Object[0]);
+    }
+
+    @Override // org.telegram.ui.kp
+    public final void a(TLRPC.User user) {
     }
 }

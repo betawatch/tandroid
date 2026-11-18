@@ -1,14 +1,14 @@
 package j$.time.format;
 
 import j$.util.concurrent.ConcurrentHashMap;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
 /* loaded from: classes2.dex */
 public final class v {
     public static final v a = new v();
 
     public final int hashCode() {
-        return ns.M2;
+        return ks.M2;
     }
 
     static {

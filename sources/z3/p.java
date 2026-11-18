@@ -4,8 +4,7 @@ import com.google.android.gms.internal.vision.e2;
 import e2.p0;
 import e2.q0;
 import e2.s0;
-import f5.v;
-import fi.m6;
+import fi.j6;
 import h2.x;
 import h9.f0;
 import h9.g0;
@@ -15,7 +14,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -295,14 +294,14 @@ public abstract class p {
         boolean z12 = false;
         while (i17 < i15) {
             xVar.K(8);
-            if (!pVar.h(xVar.a, i16, 8, true)) {
+            if (!pVar.g(xVar.a, i16, 8, true)) {
                 break;
             }
             long C = xVar.C();
             int m10 = xVar.m();
             if (C == 1) {
                 j3 = j11;
-                pVar.c(8, 8, xVar.a);
+                pVar.b(8, 8, xVar.a);
                 i11 = 16;
                 xVar.M(16);
                 C = xVar.u();
@@ -313,7 +312,7 @@ public abstract class p {
                     long length2 = pVar.getLength();
                     if (length2 != j3) {
                         i10 = i17;
-                        C = (length2 - pVar.j()) + 8;
+                        C = (length2 - pVar.l()) + 8;
                         i11 = 8;
                     }
                 }
@@ -325,7 +324,7 @@ public abstract class p {
             if (j13 < j14) {
                 f0Var = null;
                 if (m10 != 1718773093 || i11 != 8) {
-                    return new m6(m10, j13, i11);
+                    return new j6(m10, j13, i11);
                 }
                 j13 = j14;
             } else {
@@ -360,15 +359,15 @@ public abstract class p {
                             if (m10 != 1718909296) {
                                 i13 = 0;
                                 if (i19 != 0) {
-                                    pVar.k(i19);
+                                    pVar.m(i19);
                                 }
                             } else {
                                 if (i19 < 8) {
-                                    return new m6(m10, i19, 8);
+                                    return new j6(m10, i19, 8);
                                 }
                                 xVar.K(i19);
                                 i13 = 0;
-                                pVar.c(0, i19, xVar.a);
+                                pVar.b(0, i19, xVar.a);
                                 int m11 = xVar.m();
                                 if (c(m11, z11)) {
                                     z12 = true;
@@ -394,7 +393,7 @@ public abstract class p {
                                     iArr = f0Var;
                                 }
                                 if (!z12) {
-                                    return new v(iArr, m11);
+                                    return new b3.j(iArr, m11);
                                 }
                             }
                         }

@@ -6,7 +6,7 @@ import android.util.Log;
 import java.math.BigInteger;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z0 {
     public static final j6.b d = new j6.b("ApplicationAnalyticsUtils", null);
@@ -36,7 +36,7 @@ public final class z0 {
             Integer valueOf = Integer.valueOf(i7);
             if (map2.containsKey(valueOf)) {
                 Integer num = (Integer) map2.get(valueOf);
-                q6.m.g(num);
+                q6.m.h(num);
                 i10 = num.intValue();
                 m10.c();
                 k1.r((k1) m10.b, i10);
@@ -45,7 +45,7 @@ public final class z0 {
                     Integer valueOf2 = Integer.valueOf(i7);
                     if (map.containsKey(valueOf2)) {
                         Integer num2 = (Integer) map.get(valueOf2);
-                        q6.m.g(num2);
+                        q6.m.h(num2);
                         i11 = num2.intValue();
                         m10.c();
                         k1.s((k1) m10.b, i11);

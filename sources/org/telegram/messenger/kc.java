@@ -1,13 +1,8 @@
 package org.telegram.messenger;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface kc {
-    void A(ImageReceiver imageReceiver);
-
-    void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12);
-
-    void O(int i7, Drawable drawable);
+public final class kc extends BitmapDrawable {
 }

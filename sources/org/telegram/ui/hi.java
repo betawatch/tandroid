@@ -1,16 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class hi extends vf.b {
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
     public final /* synthetic */ org.telegram.ui.Cells.q1 f;
-    public final /* synthetic */ an g;
+    public final /* synthetic */ bn g;
 
-    public /* synthetic */ hi(an anVar, int i7, org.telegram.ui.Cells.q1 q1Var, int i10) {
+    public /* synthetic */ hi(bn bnVar, int i7, org.telegram.ui.Cells.q1 q1Var, int i10) {
         this.d = i10;
-        this.g = anVar;
+        this.g = bnVar;
         this.e = i7;
         this.f = q1Var;
     }
@@ -20,19 +20,19 @@ public final class hi extends vf.b {
         switch (this.d) {
             case 0:
                 if (!z10) {
-                    org.telegram.messenger.g0.i3(new ai.w0(this, this.e, 23), 240L);
+                    org.telegram.messenger.g0.h3(new ai.w0(this, this.e, 26), 240L);
                     break;
                 }
                 break;
             case 1:
                 if (!z10) {
-                    org.telegram.messenger.g0.i3(new ai.w0(this, this.e, 26), 240L);
+                    org.telegram.messenger.g0.h3(new ai.w0(this, this.e, 29), 240L);
                     break;
                 }
                 break;
             default:
                 if (!z10) {
-                    org.telegram.messenger.g0.i3(new ai.w0(this, this.e, 27), 240L);
+                    org.telegram.messenger.g0.h3(new ii(this, this.e, 0), 240L);
                     break;
                 }
                 break;
@@ -44,24 +44,24 @@ public final class hi extends vf.b {
         switch (this.d) {
             case 0:
                 int i7 = this.e;
-                an anVar = this.g;
-                anVar.Zb = i7;
-                anVar.ac = 6;
+                bn bnVar = this.g;
+                bnVar.ac = i7;
+                bnVar.bc = 6;
                 this.f.invalidate();
                 break;
             case 1:
                 int i10 = this.e;
-                an anVar2 = this.g;
-                anVar2.Zb = i10;
-                anVar2.ac = 5;
-                anVar2.cc = null;
+                bn bnVar2 = this.g;
+                bnVar2.ac = i10;
+                bnVar2.bc = 5;
+                bnVar2.dc = null;
                 this.f.invalidate();
                 break;
             default:
                 int i11 = this.e;
-                an anVar3 = this.g;
-                anVar3.Zb = i11;
-                anVar3.ac = 7;
+                bn bnVar3 = this.g;
+                bnVar3.ac = i11;
+                bnVar3.bc = 7;
                 this.f.invalidate();
                 break;
         }

@@ -1,45 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a4 extends Animation {
+public final class a4 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ g4 e;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ a4(g4 g4Var, float f10, float f11, int i7, int i10) {
-        this.a = i10;
-        this.e = g4Var;
-        this.b = f10;
-        this.c = f11;
-        this.d = i7;
+    public a4(ym0 ym0Var, ym0 ym0Var2, ym0 ym0Var3) {
+        this.a = 1;
+        this.b = ym0Var;
+        this.c = ym0Var2;
+        this.d = ym0Var3;
     }
 
-    @Override // android.view.animation.Animation
-    public final void applyTransformation(float f10, Transformation transformation) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                float f11 = this.b;
-                float z10 = com.google.android.gms.internal.vision.e2.z(this.c, f11, f10, f11);
-                g4 g4Var = this.e;
-                g4Var.i.setX(z10 + (g4Var.f.getWidth() - this.d));
-                float f12 = 1.0f - f10;
-                g4Var.l.setAlpha(f12);
-                g4Var.j.setAlpha(f12);
+                Rect rect = (Rect) this.b;
+                rect.set(i7, i10, i11, i12);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i13, i14, i15, i16);
+                m4 m4Var = (m4) this.d;
+                k4 k4Var = m4Var.b;
+                if (k4Var.f() && !rect.equals(rect2)) {
+                    m4Var.h = true;
+                    if (k4Var.f()) {
+                        m4Var.c();
+                        break;
+                    }
+                }
                 break;
             default:
-                float f13 = this.b;
-                float z11 = com.google.android.gms.internal.vision.e2.z(this.c, f13, f10, f13);
-                g4 g4Var2 = this.e;
-                g4Var2.i.setX(z11 + (g4Var2.f.getWidth() - this.d));
-                g4Var2.l.setAlpha(f10);
-                g4Var2.j.setAlpha(f10);
+                ((ym0) this.b).setProgress(org.telegram.ui.h5.n1);
+                ((ym0) this.c).setProgress(org.telegram.ui.h5.o1);
+                ((ym0) this.d).setProgress(org.telegram.ui.h5.p1);
                 break;
         }
+    }
+
+    public a4(m4 m4Var) {
+        this.a = 0;
+        this.d = m4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

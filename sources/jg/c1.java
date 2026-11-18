@@ -1,11 +1,11 @@
 package jg;
 
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c1 implements Runnable {
     public final /* synthetic */ TLRPC.Chat a;
@@ -13,17 +13,17 @@ public final class c1 implements Runnable {
     public final /* synthetic */ long c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ a0.h e;
-    public final /* synthetic */ np f;
+    public final /* synthetic */ mp f;
     public final /* synthetic */ h1 h;
 
-    public c1(h1 h1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.h hVar, np npVar) {
+    public c1(h1 h1Var, TLRPC.Chat chat, String str, long j3, ArrayList arrayList, a0.h hVar, mp mpVar) {
         this.h = h1Var;
         this.a = chat;
         this.b = str;
         this.c = j3;
         this.d = arrayList;
         this.e = hVar;
-        this.f = npVar;
+        this.f = mpVar;
     }
 
     @Override // java.lang.Runnable
@@ -33,7 +33,7 @@ public final class c1 implements Runnable {
             return;
         }
         TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
-        tL_channels_getParticipants.channel = np.i1(this.a);
+        tL_channels_getParticipants.channel = mp.k1(this.a);
         tL_channels_getParticipants.limit = 20;
         tL_channels_getParticipants.offset = 0;
         TLRPC.TL_channelParticipantsMentions tL_channelParticipantsMentions = new TLRPC.TL_channelParticipantsMentions();
@@ -48,6 +48,6 @@ public final class c1 implements Runnable {
         tL_channels_getParticipants.filter = tL_channelParticipantsMentions;
         int i10 = h1Var.j0 + 1;
         h1Var.j0 = i10;
-        h1Var.k0 = ConnectionsManager.getInstance(h1Var.f).sendRequest(tL_channels_getParticipants, new bg.k0(this, i10, this.d, this.e, this.f, 4));
+        h1Var.k0 = ConnectionsManager.getInstance(h1Var.f).sendRequest(tL_channels_getParticipants, new bg.l0(this, i10, this.d, this.e, this.f, 4));
     }
 }

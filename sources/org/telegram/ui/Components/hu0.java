@@ -1,70 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class hu0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final /* synthetic */ class hu0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.Document b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ org.telegram.messenger.fj d;
+    public final /* synthetic */ org.telegram.ui.Cells.q1 e;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public /* synthetic */ hu0(TLRPC.Document document, int i7, org.telegram.messenger.fj fjVar, org.telegram.ui.Cells.q1 q1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+        this.a = i10;
+        this.b = document;
+        this.c = i7;
+        this.d = fjVar;
+        this.e = q1Var;
+        this.f = tL_messages_stickerSet;
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
-    }
-
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
-    }
-
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.gu0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
-                int i7;
-                hu0 hu0Var = hu0.this;
-                int i10 = hu0Var.a;
-                if (i10 <= 0 || (i7 = hu0Var.b) <= 0) {
-                    hu0Var.end();
-                    return;
-                }
-                int i11 = i10 - 1;
-                hu0Var.a = i11;
-                if (hu0Var.c != null) {
-                    float[] fArr = hu0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        hu0Var.end();
-                        return;
-                    }
-                    float interpolation = hu0Var.getInterpolator().getInterpolation(1.0f - (i11 / i7));
-                    float[] fArr2 = hu0Var.e;
-                    float f10 = fArr2[0];
-                    hu0Var.d = Float.valueOf(((fArr2[1] - f10) * interpolation) + f10);
-                    hu0Var.c.onAnimationUpdate(hu0Var);
-                }
-            }
-        });
-        int duration = (int) (getDuration() / org.telegram.messenger.g0.t);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TLRPC.Document document = this.b;
+                String r10 = org.telegram.messenger.w7.r(null, document);
+                int i7 = this.c;
+                org.telegram.messenger.a6.q(i7).a(r10, this.d, this.e);
+                org.telegram.messenger.w7.G(i7).W(document, this.f, 1, 1);
+                break;
+            default:
+                TLRPC.Document document2 = this.b;
+                String r11 = org.telegram.messenger.w7.r(null, document2);
+                int i10 = this.c;
+                org.telegram.messenger.a6.q(i10).a(r11, this.d, this.e);
+                org.telegram.messenger.w7.G(i10).W(document2, this.f, 1, 1);
+                break;
+        }
     }
 }

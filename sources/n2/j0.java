@@ -3,15 +3,16 @@ package n2;
 import android.media.AudioTrack;
 import android.os.Build;
 import android.os.SystemClock;
+import hi.w4;
 import java.lang.reflect.Method;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j0 {
     public boolean A;
     public long B;
-    public final gc.b a;
+    public final w4 a;
     public final h2.g0 b;
     public final long[] c;
     public final AudioTrack d;
@@ -38,8 +39,8 @@ public final class j0 {
     public long y;
     public long z;
 
-    public j0(gc.b bVar, h2.g0 g0Var, AudioTrack audioTrack, int i7, int i10, int i11) {
-        this.a = bVar;
+    public j0(w4 w4Var, h2.g0 g0Var, AudioTrack audioTrack, int i7, int i10, int i11) {
+        this.a = w4Var;
         this.b = g0Var;
         this.d = audioTrack;
         try {
@@ -49,7 +50,7 @@ public final class j0 {
         this.c = new long[10];
         this.z = -9223372036854775807L;
         this.y = -9223372036854775807L;
-        this.h = new z(audioTrack, bVar);
+        this.h = new z(audioTrack, w4Var);
         int sampleRate = audioTrack.getSampleRate();
         this.e = sampleRate;
         boolean M = h2.l0.M(i7);

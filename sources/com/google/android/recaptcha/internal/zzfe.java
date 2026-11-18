@@ -1,8 +1,7 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
-import hd.h;
 import hd.r;
 import id.c;
 import java.util.LinkedHashMap;
@@ -11,7 +10,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzfe extends j implements p {
     final /* synthetic */ zzyg zza;
@@ -37,11 +36,11 @@ final class zzfe extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        b.c(obj);
+        h.b(obj);
         try {
             zzyg zzygVar = this.zza;
             List<zzyi> zzk = zzygVar.zzk();
-            int b10 = r.b(h.d(zzk, 10));
+            int b10 = r.b(hd.h.d(zzk, 10));
             if (b10 < 16) {
                 b10 = 16;
             }

@@ -3,20 +3,20 @@ package f7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import c8.yb;
+import c8.bc;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 import q7.a1;
 import q7.b1;
 import q7.c1;
 import q7.e1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends l {
     public static final Parcelable.Creator<j> CREATOR = new t0(5);
@@ -26,16 +26,16 @@ public final class j extends l {
     public final String[] d;
 
     public j(byte[] bArr, byte[] bArr2, byte[] bArr3, String[] strArr) {
-        q6.m.g(bArr);
+        q6.m.h(bArr);
         q7.s0 o4 = q7.s0.o(bArr.length, bArr);
-        q6.m.g(bArr2);
+        q6.m.h(bArr2);
         q7.s0 o10 = q7.s0.o(bArr2.length, bArr2);
-        q6.m.g(bArr3);
+        q6.m.h(bArr3);
         q7.s0 o11 = q7.s0.o(bArr3.length, bArr3);
         this.a = o4;
         this.b = o10;
         this.c = o11;
-        q6.m.g(strArr);
+        q6.m.h(strArr);
         this.d = strArr;
     }
 
@@ -184,7 +184,7 @@ public final class j extends l {
             return false;
         }
         j jVar = (j) obj;
-        return q6.m.k(this.a, jVar.a) && q6.m.k(this.b, jVar.b) && q6.m.k(this.c, jVar.c);
+        return q6.m.l(this.a, jVar.a) && q6.m.l(this.b, jVar.b) && q6.m.l(this.c, jVar.c);
     }
 
     public final int hashCode() {
@@ -192,25 +192,25 @@ public final class j extends l {
     }
 
     public final String toString() {
-        ld0 ld0Var = new ld0(getClass().getSimpleName(), 10);
+        md0 md0Var = new md0(getClass().getSimpleName(), 10);
         q7.k0 k0Var = q7.m0.d;
         byte[] p10 = this.a.p();
-        ld0Var.L(k0Var.c(p10.length, p10), "keyHandle");
+        md0Var.L(k0Var.c(p10.length, p10), "keyHandle");
         byte[] p11 = this.b.p();
-        ld0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
+        md0Var.L(k0Var.c(p11.length, p11), "clientDataJSON");
         byte[] p12 = this.c.p();
-        ld0Var.L(k0Var.c(p12.length, p12), "attestationObject");
-        ld0Var.L(Arrays.toString(this.d), "transports");
-        return ld0Var.toString();
+        md0Var.L(k0Var.c(p12.length, p12), "attestationObject");
+        md0Var.L(Arrays.toString(this.d), "transports");
+        return md0Var.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.c(parcel, 2, this.a.p());
-        yb.c(parcel, 3, this.b.p());
-        yb.c(parcel, 4, this.c.p());
-        yb.m(parcel, 5, this.d);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.c(parcel, 2, this.a.p());
+        bc.c(parcel, 3, this.b.p());
+        bc.c(parcel, 4, this.c.p());
+        bc.m(parcel, 5, this.d);
+        bc.s(parcel, r10);
     }
 }

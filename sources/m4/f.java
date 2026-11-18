@@ -5,10 +5,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -75,9 +75,9 @@ public final class f {
                         switch (i7) {
                             case 128:
                                 break;
-                            case ns.N1 /* 129 */:
+                            case ks.N1 /* 129 */:
                                 return new w(new b(nVar.c(), 0, str, "video/mp2t"));
-                            case ns.O1 /* 130 */:
+                            case ks.O1 /* 130 */:
                                 if (!c(64)) {
                                     return null;
                                 }
@@ -89,9 +89,9 @@ public final class f {
                                             return null;
                                         }
                                         return new b0(new h6.m("application/x-scte35"));
-                                    case ns.R1 /* 135 */:
+                                    case ks.R1 /* 135 */:
                                         break;
-                                    case ns.S1 /* 136 */:
+                                    case ks.S1 /* 136 */:
                                         break;
                                     default:
                                         return null;

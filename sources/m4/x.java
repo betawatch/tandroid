@@ -3,7 +3,7 @@ package m4;
 import h2.k0;
 import h2.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x {
     public final /* synthetic */ int a;
@@ -71,7 +71,7 @@ public final class x {
                 xVar.getClass();
                 xVar.L(bArr.length, bArr);
                 this.d = true;
-                pVar.l();
+                pVar.n();
                 break;
             default:
                 byte[] bArr2 = l0.b;
@@ -79,7 +79,7 @@ public final class x {
                 xVar2.getClass();
                 xVar2.L(bArr2.length, bArr2);
                 this.d = true;
-                pVar.l();
+                pVar.n();
                 break;
         }
     }

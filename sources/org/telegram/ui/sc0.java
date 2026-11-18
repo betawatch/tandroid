@@ -2,124 +2,124 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sc0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ed0 b;
+    public final /* synthetic */ gd0 b;
 
-    public /* synthetic */ sc0(ed0 ed0Var, int i7) {
+    public /* synthetic */ sc0(gd0 gd0Var, int i7) {
         this.a = i7;
-        this.b = ed0Var;
+        this.b = gd0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        dr[] drVarArr;
+        er[] erVarArr;
         int i7 = this.a;
         int i10 = 1;
         int i11 = 0;
-        ed0 ed0Var = this.b;
+        gd0 gd0Var = this.b;
         switch (i7) {
             case 0:
-                org.telegram.ui.Components.fh0 fh0Var = ed0Var.H;
-                ar arVar = ed0Var.f;
-                int i12 = ed0Var.i0;
-                if (i12 != 3 && (drVarArr = arVar.f) != null) {
-                    for (int length = drVarArr.length - 1; length >= 0; length--) {
-                        if (length == 0 || arVar.f[length].length() != 0) {
-                            arVar.f[length].requestFocus();
-                            dr drVar = arVar.f[length];
-                            drVar.setSelection(drVar.length());
-                            ce0.b1(ed0Var.v0, arVar.f[length]);
+                org.telegram.ui.Components.ph0 ph0Var = gd0Var.H;
+                br brVar = gd0Var.f;
+                int i12 = gd0Var.i0;
+                if (i12 != 3 && (erVarArr = brVar.f) != null) {
+                    for (int length = erVarArr.length - 1; length >= 0; length--) {
+                        if (length == 0 || brVar.f[length].length() != 0) {
+                            brVar.f[length].requestFocus();
+                            er erVar = brVar.f[length];
+                            erVar.setSelection(erVar.length());
+                            de0.b1(gd0Var.v0, brVar.f[length]);
                         }
                     }
                 }
-                org.telegram.ui.Components.ch0 ch0Var = ed0Var.a;
-                if (ch0Var != null) {
-                    ch0Var.start();
+                org.telegram.ui.Components.mh0 mh0Var = gd0Var.a;
+                if (mh0Var != null) {
+                    mh0Var.start();
                 }
                 if (i12 == 15) {
-                    fh0Var.getAnimatedDrawable().N(0, false, false);
-                    fh0Var.getAnimatedDrawable().start();
+                    ph0Var.getAnimatedDrawable().N(0, false, false);
+                    ph0Var.getAnimatedDrawable().start();
                     break;
                 }
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new sc0(ed0Var, 6));
+                org.telegram.messenger.g0.g3(new sc0(gd0Var, 6));
                 break;
             case 2:
-                nb0 nb0Var = ed0Var.x;
-                ed0Var.t0 = false;
+                nb0 nb0Var = gd0Var.x;
+                gd0Var.t0 = false;
                 while (true) {
-                    dr[] drVarArr2 = ed0Var.f.f;
-                    if (i11 < drVarArr2.length) {
-                        drVarArr2[i11].A(0.0f);
+                    er[] erVarArr2 = gd0Var.f.f;
+                    if (i11 < erVarArr2.length) {
+                        erVarArr2[i11].A(0.0f);
                         i11++;
-                    } else if (nb0Var.getCurrentView() != (ed0Var.i0 == 15 ? ed0Var.G : ed0Var.E)) {
+                    } else if (nb0Var.getCurrentView() != (gd0Var.i0 == 15 ? gd0Var.G : gd0Var.E)) {
                         nb0Var.showNext();
                         break;
                     }
                 }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new sc0(ed0Var, 4));
+                org.telegram.messenger.g0.g3(new sc0(gd0Var, 4));
                 break;
             case 4:
-                org.telegram.ui.Components.fh0 fh0Var2 = ed0Var.s;
-                fh0Var2.setAutoRepeat(true);
-                org.telegram.ui.Components.ch0 ch0Var2 = ed0Var.R;
-                ch0Var2.N(0, false, false);
-                ch0Var2.K(1);
-                fh0Var2.setAnimation(ch0Var2);
-                fh0Var2.d();
+                org.telegram.ui.Components.ph0 ph0Var2 = gd0Var.s;
+                ph0Var2.setAutoRepeat(true);
+                org.telegram.ui.Components.mh0 mh0Var2 = gd0Var.R;
+                mh0Var2.N(0, false, false);
+                mh0Var2.K(1);
+                ph0Var2.setAnimation(mh0Var2);
+                ph0Var2.d();
                 break;
             case 5:
                 try {
-                    ed0Var.v0.fragmentView.performHapticFeedback(3, 2);
+                    gd0Var.v0.fragmentView.performHapticFeedback(3, 2);
                 } catch (Exception unused) {
                 }
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ed0Var.getContext());
-                String M0 = org.telegram.messenger.hd.M0(2131742798, null);
-                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                t1Var.S = M0;
-                t1Var.U = org.telegram.messenger.hd.a0(null, null, 2131752534, org.telegram.messenger.k5.h(new StringBuilder("+"), ed0Var.d, pf.b.c()));
-                alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747831, null), null);
-                t1Var.setOnDismissListener(new ad0(ed0Var, i10));
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(gd0Var.getContext());
+                String M0 = org.telegram.messenger.gd.M0(2131742540, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.S = M0;
+                u1Var.U = org.telegram.messenger.gd.a0(null, null, 2131752523, org.telegram.messenger.n10.h(new StringBuilder("+"), gd0Var.d, pf.b.c()));
+                alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
+                u1Var.setOnDismissListener(new ad0(gd0Var, i10));
                 alertDialog$Builder.p();
                 break;
             case 6:
-                org.telegram.ui.Components.ch0 ch0Var3 = ed0Var.S;
-                ch0Var3.u0 = new sc0(ed0Var, 8);
-                org.telegram.ui.Components.fh0 fh0Var3 = ed0Var.s;
-                fh0Var3.setAutoRepeat(false);
-                ch0Var3.N(0, false, false);
-                fh0Var3.setAnimation(ch0Var3);
-                fh0Var3.d();
+                org.telegram.ui.Components.mh0 mh0Var3 = gd0Var.S;
+                mh0Var3.u0 = new sc0(gd0Var, 8);
+                org.telegram.ui.Components.ph0 ph0Var3 = gd0Var.s;
+                ph0Var3.setAutoRepeat(false);
+                mh0Var3.N(0, false, false);
+                ph0Var3.setAnimation(mh0Var3);
+                ph0Var3.d();
                 break;
             case 7:
-                ed0Var.postDelayed(new sc0(ed0Var, 9), 150L);
+                gd0Var.postDelayed(new sc0(gd0Var, 9), 150L);
                 break;
             case 8:
-                org.telegram.messenger.g0.h3(new sc0(ed0Var, 10));
+                org.telegram.messenger.g0.g3(new sc0(gd0Var, 10));
                 break;
             case 9:
-                ar arVar2 = ed0Var.f;
-                arVar2.e = false;
-                arVar2.f[0].requestFocus();
+                br brVar2 = gd0Var.f;
+                brVar2.e = false;
+                brVar2.f[0].requestFocus();
                 while (true) {
-                    dr[] drVarArr3 = arVar2.f;
-                    if (i11 >= drVarArr3.length) {
+                    er[] erVarArr3 = brVar2.f;
+                    if (i11 >= erVarArr3.length) {
                         break;
                     } else {
-                        drVarArr3[i11].A(0.0f);
+                        erVarArr3[i11].A(0.0f);
                         i11++;
                     }
                 }
             default:
-                org.telegram.ui.Components.fh0 fh0Var4 = ed0Var.s;
-                fh0Var4.setAutoRepeat(false);
-                fh0Var4.setAnimation(ed0Var.a);
+                org.telegram.ui.Components.ph0 ph0Var4 = gd0Var.s;
+                ph0Var4.setAutoRepeat(false);
+                ph0Var4.setAnimation(gd0Var.a);
                 break;
         }
     }

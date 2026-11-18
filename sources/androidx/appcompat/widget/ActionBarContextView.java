@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.mediarouter.app.w;
-import bg.v0;
+import bg.w0;
 import java.util.WeakHashMap;
 import l.k;
 import l.z;
@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public LinearLayout E;
@@ -36,7 +36,7 @@ public class ActionBarContextView extends ViewGroup {
     public final int I;
     public boolean J;
     public final int K;
-    public final v0 a;
+    public final w0 a;
     public final Context b;
     public ActionMenuView c;
     public h d;
@@ -83,7 +83,7 @@ public class ActionBarContextView extends ViewGroup {
         View findViewById = this.w.findViewById(R.id.action_mode_close_button);
         this.x = findViewById;
         findViewById.setOnClickListener(new w(aVar, 6));
-        k d = aVar.d();
+        k e10 = aVar.e();
         h hVar = this.d;
         if (hVar != null) {
             hVar.f();
@@ -97,14 +97,14 @@ public class ActionBarContextView extends ViewGroup {
         hVar2.x = true;
         hVar2.y = true;
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
-        d.b(this.d, this.b);
+        e10.b(this.d, this.b);
         h hVar3 = this.d;
         z zVar = hVar3.n;
         if (zVar == null) {
             z zVar2 = (z) hVar3.d.inflate(hVar3.f, (ViewGroup) this, false);
             hVar3.n = zVar2;
             zVar2.b(hVar3.c);
-            hVar3.d();
+            hVar3.e();
         }
         z zVar3 = hVar3.n;
         if (zVar != zVar3) {
@@ -198,14 +198,14 @@ public class ActionBarContextView extends ViewGroup {
         if (l0Var != null) {
             l0Var.b();
         }
-        v0 v0Var = this.a;
+        w0 w0Var = this.a;
         if (i7 != 0) {
             l0 a10 = i0.a(this);
             a10.a(0.0f);
             a10.c(j3);
-            ((ActionBarContextView) v0Var.c).f = a10;
-            v0Var.b = i7;
-            a10.d(v0Var);
+            ((ActionBarContextView) w0Var.c).f = a10;
+            w0Var.b = i7;
+            a10.d(w0Var);
             return a10;
         }
         if (getVisibility() != 0) {
@@ -214,9 +214,9 @@ public class ActionBarContextView extends ViewGroup {
         l0 a11 = i0.a(this);
         a11.a(1.0f);
         a11.c(j3);
-        ((ActionBarContextView) v0Var.c).f = a11;
-        v0Var.b = i7;
-        a11.d(v0Var);
+        ((ActionBarContextView) w0Var.c).f = a11;
+        w0Var.b = i7;
+        a11.d(w0Var);
         return a11;
     }
 
@@ -448,10 +448,10 @@ public class ActionBarContextView extends ViewGroup {
         super(context, attributeSet, i7);
         Drawable drawable;
         int resourceId;
-        v0 v0Var = new v0();
-        v0Var.c = this;
-        v0Var.a = false;
-        this.a = v0Var;
+        w0 w0Var = new w0();
+        w0Var.c = this;
+        w0Var.a = false;
+        this.a = w0Var;
         TypedValue typedValue = new TypedValue();
         if (context.getTheme().resolveAttribute(R.attr.actionBarPopupTheme, typedValue, true) && typedValue.resourceId != 0) {
             this.b = new ContextThemeWrapper(context, typedValue.resourceId);
@@ -460,7 +460,7 @@ public class ActionBarContextView extends ViewGroup {
         }
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.d, i7, 0);
         if (obtainStyledAttributes.hasValue(0) && (resourceId = obtainStyledAttributes.getResourceId(0, 0)) != 0) {
-            drawable = b5.a.b(context, resourceId);
+            drawable = c8.z.b(context, resourceId);
         } else {
             drawable = obtainStyledAttributes.getDrawable(0);
         }

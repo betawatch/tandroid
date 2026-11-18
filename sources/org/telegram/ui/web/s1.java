@@ -1,11 +1,11 @@
 package org.telegram.ui.web;
 
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s1 implements z10 {
+public final /* synthetic */ class s1 implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ t1 b;
 
@@ -14,7 +14,7 @@ public final /* synthetic */ class s1 implements z10 {
         this.b = t1Var;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         v1 v1Var = (v1) obj;
         switch (this.a) {

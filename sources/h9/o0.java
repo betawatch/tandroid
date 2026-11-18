@@ -3,15 +3,15 @@ package h9;
 import j$.util.Objects;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class o0 extends g2 {
+public final class o0 extends h2 {
     public int a;
     public Object b;
     public final /* synthetic */ Iterator c;
 
-    public o0(g2 g2Var) {
-        this.c = g2Var;
+    public o0(h2 h2Var) {
+        this.c = h2Var;
     }
 
     @Override // java.util.Iterator
@@ -22,9 +22,9 @@ public final class o0 extends g2 {
     @Override // java.util.Iterator
     public final Object next() {
         if (this.a <= 0) {
-            o1 o1Var = (o1) this.c.next();
-            this.b = o1Var.a;
-            this.a = o1Var.a();
+            p1 p1Var = (p1) this.c.next();
+            this.b = p1Var.a;
+            this.a = p1Var.a();
         }
         this.a--;
         Object obj = this.b;

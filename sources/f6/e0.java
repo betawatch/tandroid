@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e0 extends com.google.android.gms.common.api.j implements f0 {
     public static final j6.b H = new j6.b("CastClient", null);
@@ -66,7 +66,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
             if (i7 == 0) {
                 taskCompletionSource.setResult(null);
             } else {
-                taskCompletionSource.setException(q6.m.l(new Status(i7, null, null, null)));
+                taskCompletionSource.setException(q6.m.m(new Status(i7, null, null, null)));
             }
         }
     }
@@ -81,7 +81,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
                 if (i7 == 0) {
                     taskCompletionSource.setResult(new Status(0, null, null, null));
                 } else {
-                    taskCompletionSource.setException(q6.m.l(new Status(i7, null, null, null)));
+                    taskCompletionSource.setException(q6.m.m(new Status(i7, null, null, null)));
                 }
                 e0Var.q = null;
             } catch (Throwable th2) {
@@ -109,7 +109,7 @@ public final class e0 extends com.google.android.gms.common.api.j implements f0 
             try {
                 TaskCompletionSource taskCompletionSource = this.p;
                 if (taskCompletionSource != null) {
-                    taskCompletionSource.setException(q6.m.l(new Status(i7, null, null, null)));
+                    taskCompletionSource.setException(q6.m.m(new Status(i7, null, null, null)));
                 }
                 this.p = null;
             } catch (Throwable th2) {

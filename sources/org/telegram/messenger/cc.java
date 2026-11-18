@@ -1,19 +1,14 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class cc extends TLRPC.PhotoSize {
-    public final TLRPC.Photo a;
-    public final TLRPC.TL_inputPhoto b;
-
-    public cc(TLRPC.Photo photo) {
-        this.a = photo;
-        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-        tL_inputPhoto.id = photo.id;
-        tL_inputPhoto.file_reference = photo.file_reference;
-        tL_inputPhoto.access_hash = photo.access_hash;
-        this.b = tL_inputPhoto;
-    }
+public final class cc {
+    public TLRPC.Document a;
+    public String b;
+    public ArrayList c;
+    public ArrayList d;
+    public boolean e;
 }

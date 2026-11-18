@@ -1,57 +1,60 @@
 package hi;
 
-import java.util.List;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class j4 implements Runnable {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class j4 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m5 b;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ j4(m5 m5Var, int i7) {
+    public /* synthetic */ j4(int i7, FrameLayout frameLayout) {
         this.a = i7;
-        this.b = m5Var;
+        this.b = frameLayout;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        org.telegram.ui.ActionBar.h1 h1Var;
+        org.telegram.ui.ActionBar.h1 h1Var2;
+        org.telegram.ui.ActionBar.h1 h1Var3;
         switch (this.a) {
             case 0:
-                tg.m1 m1Var = this.b.N0;
-                if (m1Var != null) {
-                    m1Var.invalidate();
-                    break;
+                l5 l5Var = (l5) this.b;
+                l5Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (h1Var = l5Var.r1) != null && h1Var.isShowing()) {
+                    view.getHitRect(l5Var.t1);
+                    if (!l5Var.t1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        l5Var.r1.d(true);
+                        break;
+                    }
                 }
                 break;
             case 1:
-                new ug.x0((org.telegram.ui.ActionBar.e2) new bi.t6(this.b, 5), 14, true).show();
-                break;
-            case 2:
-                this.b.w0(false);
-                break;
-            default:
-                m5 m5Var = this.b;
-                boolean z10 = sg.k0.e(m5Var.p1).k;
-                int i7 = 0;
-                while (true) {
-                    List list = sg.g.c;
-                    if (i7 >= list.size()) {
+                org.telegram.ui.ActionBar.r0 r0Var = (org.telegram.ui.ActionBar.r0) this.b;
+                r0Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (h1Var2 = r0Var.d) != null && h1Var2.isShowing()) {
+                    view.getHitRect(r0Var.J);
+                    if (!r0Var.J.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        r0Var.d.d(true);
                         break;
-                    } else {
-                        sg.g gVar = (sg.g) list.get(i7);
-                        int m10 = z10 ? gVar.m() : gVar.e();
-                        String n10 = gVar.n();
-                        ai.a1 a1Var = new ai.a1(m5Var, gVar, m10, 15);
-                        j5 j5Var = new j5(m5Var, m5Var.getContext());
-                        j5Var.setIcon(m10);
-                        j5Var.setText(n10);
-                        j5Var.setSelected(false);
-                        j5Var.setOnClickListener(new ah.d(a1Var, 29));
-                        j5Var.setOnLongClickListener(new p4(m5Var, 0));
-                        m5Var.s1.a(j5Var, c8.ja.o(-1, 48));
-                        i7++;
                     }
                 }
+                break;
+            default:
+                tg.g0 g0Var = (tg.g0) this.b;
+                g0Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (h1Var3 = g0Var.B1) != null && h1Var3.isShowing()) {
+                    view.getHitRect(g0Var.D1);
+                    if (!g0Var.D1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        g0Var.B1.d(true);
+                        break;
+                    }
+                }
+                break;
         }
+        return false;
     }
 }

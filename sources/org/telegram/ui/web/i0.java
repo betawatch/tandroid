@@ -1,6 +1,6 @@
 package org.telegram.ui.web;
 
-import a8.p9;
+import a8.q9;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,8 +15,8 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import c8.za;
-import di.q9;
+import c8.cb;
+import di.t9;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
@@ -26,13 +26,13 @@ import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.s2;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.u2;
+import org.telegram.ui.ActionBar.x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class i0 extends WebViewClient {
     public boolean a = true;
@@ -59,7 +59,7 @@ public final class i0 extends WebViewClient {
             s0Var.e.b = System.currentTimeMillis();
             s0Var.e.c = v0.u(s0Var.getUrl());
             s0Var.e.d = z1.a(s0Var);
-            za.c(s0Var.e);
+            cb.c(s0Var.e);
         }
         s0Var.c("doUpdateVisitedHistory " + str + " " + z10);
         v0 v0Var = s0Var.R;
@@ -75,7 +75,7 @@ public final class i0 extends WebViewClient {
         s0 s0Var = this.e;
         s0Var.c("onPageCommitVisible " + str);
         boolean z10 = this.c;
-        if (z10 && !p9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
+        if (z10 && !q9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
             boolean z11 = v0.R0;
             if (v0Var.q()) {
                 s0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
@@ -84,12 +84,12 @@ public final class i0 extends WebViewClient {
         if (z10) {
             s0Var.O = true;
             String y22 = org.telegram.messenger.g0.y2(null, R.raw.webview_app_ext);
-            boolean z12 = r2.a;
+            boolean z12 = s2.a;
             s0Var.d(y22.replace("$DEBUG$", "true"));
         } else {
             s0Var.O = true;
             String y23 = org.telegram.messenger.g0.y2(null, R.raw.webview_ext);
-            boolean z13 = r2.a;
+            boolean z13 = s2.a;
             s0Var.d(y23.replace("$DEBUG$", "true"));
             s0Var.d(org.telegram.messenger.g0.y2(null, R.raw.webview_share));
         }
@@ -103,7 +103,7 @@ public final class i0 extends WebViewClient {
         s0Var.b = true;
         s0Var.c("onPageFinished");
         boolean z10 = this.c;
-        if (z10 && !p9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
+        if (z10 && !q9.a("DOCUMENT_START_SCRIPT") && (v0Var = s0Var.R) != null) {
             boolean z11 = v0.R0;
             if (v0Var.q()) {
                 s0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
@@ -118,12 +118,12 @@ public final class i0 extends WebViewClient {
         if (z10) {
             s0Var.O = true;
             String y22 = org.telegram.messenger.g0.y2(null, R.raw.webview_app_ext);
-            boolean z12 = r2.a;
+            boolean z12 = s2.a;
             s0Var.d(y22.replace("$DEBUG$", "true"));
         } else {
             s0Var.O = true;
             String y23 = org.telegram.messenger.g0.y2(null, R.raw.webview_ext);
-            boolean z13 = r2.a;
+            boolean z13 = s2.a;
             s0Var.d(y23.replace("$DEBUG$", "true"));
             s0Var.d(org.telegram.messenger.g0.y2(null, R.raw.webview_share));
         }
@@ -158,9 +158,9 @@ public final class i0 extends WebViewClient {
             boolean z11 = v0.R0;
         }
         s0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        u2 u2Var = s0Var.G;
-        if (u2Var != null) {
-            u2Var.dismiss();
+        x2 x2Var = s0Var.G;
+        if (x2Var != null) {
+            x2Var.dismiss();
             s0Var.G = null;
         }
         s0Var.e = null;
@@ -170,7 +170,7 @@ public final class i0 extends WebViewClient {
         s0Var.N = false;
         s0Var.c("onPageStarted " + str);
         if (s0Var.R != null && s0Var.h && ((str2 = s0Var.n) == null || !TextUtils.equals(str2, str))) {
-            org.telegram.messenger.g0.i3(this.b, 40L);
+            org.telegram.messenger.g0.h3(this.b, 40L);
         }
         v0 v0Var3 = s0Var.R;
         if (v0Var3 != null) {
@@ -271,11 +271,11 @@ public final class i0 extends WebViewClient {
             Context context = s0Var.getContext();
             v0 v0Var = s0Var.R;
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, v0Var == null ? null : v0Var.e);
-            org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-            t1Var.S = hd.M0(2131752104, null);
-            t1Var.U = org.telegram.messenger.g0.U2(hd.M0(2131752105, null), new h0(this, 2));
-            alertDialog$Builder.k(hd.M0(2131747831, null), null);
-            t1Var.setOnDismissListener(new q9(this, 11));
+            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+            u1Var.S = gd.M0(2131752093, null);
+            u1Var.U = org.telegram.messenger.g0.T2(gd.M0(2131752094, null), new h0(this, 2));
+            alertDialog$Builder.k(gd.M0(2131747638, null), null);
+            u1Var.setOnDismissListener(new t9(this, 11));
             alertDialog$Builder.p();
             return true;
         } catch (Exception e10) {
@@ -323,7 +323,7 @@ public final class i0 extends WebViewClient {
                                     if (next != null && !"unsafe-none".equals(next.toLowerCase()) && !"same-site".equals(next.toLowerCase())) {
                                         s0Var.c("<!> dangerous header CORS policy: " + key + ": " + next + " from " + webResourceRequest.getMethod() + " " + webResourceRequest.getUrl());
                                         s0Var.F = true;
-                                        org.telegram.messenger.g0.h3(new h0(this, 1));
+                                        org.telegram.messenger.g0.g3(new h0(this, 1));
                                         break;
                                     }
                                 }
@@ -430,7 +430,7 @@ public final class i0 extends WebViewClient {
                 return false;
             }
             if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (np.s1(s0Var.R.N).C4 != null && np.s1(s0Var.R.N).C4.contains(parse.getScheme())) {
+                if (mp.u1(s0Var.R.N).E4 != null && mp.u1(s0Var.R.N).E4.contains(parse.getScheme())) {
                     v0 v0Var = s0Var.R;
                     if (s0Var.f != null) {
                         c0 c0Var4 = v0Var.c;

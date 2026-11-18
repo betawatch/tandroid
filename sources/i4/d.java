@@ -1,7 +1,7 @@
 package i4;
 
-import a8.ha;
 import a8.ja;
+import a8.la;
 import a8.p0;
 import a8.r7;
 import a8.u7;
@@ -10,16 +10,17 @@ import android.text.TextUtils;
 import c4.l;
 import c4.m;
 import com.google.android.gms.internal.vision.e2;
-import di.b5;
+import di.e5;
 import e2.r0;
 import h2.h;
 import h2.j;
 import h2.l0;
-import h9.b2;
+import h9.a2;
+import h9.c2;
+import h9.f2;
 import h9.o;
 import h9.t0;
 import h9.v0;
-import h9.z1;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.ArrayDeque;
@@ -27,13 +28,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d implements m {
     public static final Pattern b = Pattern.compile("^([0-9][0-9]+):([0-9][0-9]):([0-9][0-9])(?:(\\.[0-9]+)|:([0-9][0-9])(?:\\.([0-9]+))?)?$");
@@ -43,7 +44,7 @@ public final class d implements m {
     public static final Pattern f = Pattern.compile("^([-+]?\\d+\\.?\\d*?)% ([-+]?\\d+\\.?\\d*?)%$");
     public static final Pattern h = Pattern.compile("^([-+]?\\d+\\.?\\d*?)px ([-+]?\\d+\\.?\\d*?)px$");
     public static final Pattern n = Pattern.compile("^(\\d+) (\\d+)$");
-    public static final b5 r = new b5(30.0f, 1, 1);
+    public static final e5 r = new e5(30.0f, 1, 1);
     public final XmlPullParserFactory a;
 
     public d() {
@@ -85,7 +86,7 @@ public final class d implements m {
             if (parseInt == 0 || parseInt2 == 0) {
                 z10 = false;
             }
-            ja.b(parseInt, parseInt2, "Invalid cell resolution %s %s", z10);
+            la.b(parseInt, parseInt2, "Invalid cell resolution %s %s", z10);
             return parseInt2;
         } catch (NumberFormatException unused) {
             h2.a.l("TtmlParser", "Ignoring malformed cell resolution: ".concat(attributeValue));
@@ -132,30 +133,30 @@ public final class d implements m {
         fVar.k = Float.parseFloat(group2);
     }
 
-    public static b5 e(XmlPullParser xmlPullParser) {
+    public static e5 e(XmlPullParser xmlPullParser) {
         float f10;
         String attributeValue = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRate");
         int parseInt = attributeValue != null ? Integer.parseInt(attributeValue) : 30;
         String attributeValue2 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "frameRateMultiplier");
         if (attributeValue2 != null) {
             String str = l0.a;
-            ja.e("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
+            la.e("frameRateMultiplier doesn't have 2 parts", attributeValue2.split(" ", -1).length == 2);
             f10 = Integer.parseInt(r2[0]) / Integer.parseInt(r2[1]);
         } else {
             f10 = 1.0f;
         }
-        b5 b5Var = r;
-        int i7 = b5Var.b;
+        e5 e5Var = r;
+        int i7 = e5Var.b;
         String attributeValue3 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "subFrameRate");
         if (attributeValue3 != null) {
             i7 = Integer.parseInt(attributeValue3);
         }
-        int i10 = b5Var.c;
+        int i10 = e5Var.c;
         String attributeValue4 = xmlPullParser.getAttributeValue("http://www.w3.org/ns/ttml#parameter", "tickRate");
         if (attributeValue4 != null) {
             i10 = Integer.parseInt(attributeValue4);
         }
-        return new b5(parseInt * f10, i7, i10);
+        return new e5(parseInt * f10, i7, i10);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -295,7 +296,7 @@ public final class d implements m {
                     }
                     String f26 = h2.a.f(xmlPullParser, "displayAlign");
                     if (f26 != null) {
-                        String c11 = ha.c(f26);
+                        String c11 = ja.c(f26);
                         c11.getClass();
                         if (c11.equals("center")) {
                             f16 = f12 + (f15 / 2.0f);
@@ -307,7 +308,7 @@ public final class d implements m {
                         float f27 = 1.0f / i7;
                         f17 = h2.a.f(xmlPullParser, "writingMode");
                         if (f17 != null) {
-                            String c12 = ha.c(f17);
+                            String c12 = ja.c(f17);
                             c12.getClass();
                             switch (c12.hashCode()) {
                                 case 3694:
@@ -382,7 +383,7 @@ public final class d implements m {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    public static c g(XmlPullParser xmlPullParser, c cVar, HashMap hashMap, b5 b5Var) {
+    public static c g(XmlPullParser xmlPullParser, c cVar, HashMap hashMap, e5 e5Var) {
         long j3;
         char c10;
         String[] split;
@@ -454,13 +455,13 @@ public final class d implements m {
                         continue;
                     }
                 case 1:
-                    j12 = i(attributeValue, b5Var);
+                    j12 = i(attributeValue, e5Var);
                     break;
                 case 2:
-                    j11 = i(attributeValue, b5Var);
+                    j11 = i(attributeValue, e5Var);
                     break;
                 case 3:
-                    j10 = i(attributeValue, b5Var);
+                    j10 = i(attributeValue, e5Var);
                     break;
                 case 4:
                     String trim = attributeValue.trim();
@@ -531,7 +532,7 @@ public final class d implements m {
         boolean z10;
         char c11;
         int i7;
-        b2 p10;
+        c2 p10;
         int i10;
         int hashCode;
         int i11;
@@ -684,7 +685,7 @@ public final class d implements m {
                     break;
                 case 3:
                     fVar2 = a(fVar2);
-                    String c13 = ha.c(attributeValue);
+                    String c13 = ja.c(attributeValue);
                     c13.getClass();
                     switch (c13.hashCode()) {
                         case -1364013995:
@@ -746,7 +747,7 @@ public final class d implements m {
                     fVar2.t = attributeValue;
                     break;
                 case 5:
-                    String c14 = ha.c(attributeValue);
+                    String c14 = ja.c(attributeValue);
                     c14.getClass();
                     switch (c14.hashCode()) {
                         case -1461280213:
@@ -812,7 +813,7 @@ public final class d implements m {
                         break;
                     }
                 case '\b':
-                    String c15 = ha.c(attributeValue);
+                    String c15 = ja.c(attributeValue);
                     c15.getClass();
                     switch (c15.hashCode()) {
                         case -618561360:
@@ -910,7 +911,7 @@ public final class d implements m {
                     fVar2 = a10;
                     break;
                 case 11:
-                    String c16 = ha.c(attributeValue);
+                    String c16 = ja.c(attributeValue);
                     c16.getClass();
                     if (c16.equals("all")) {
                         fVar2 = a(fVar2);
@@ -936,11 +937,11 @@ public final class d implements m {
                     fVar2 = a(fVar2);
                     Pattern pattern = b.d;
                     if (attributeValue != null) {
-                        String c17 = ha.c(attributeValue.trim());
+                        String c17 = ja.c(attributeValue.trim());
                         if (!c17.isEmpty()) {
                             String[] split = TextUtils.split(c17, b.d);
                             int length = split.length;
-                            t0 p11 = length != 0 ? length != 1 ? t0.p(split.length, (Object[]) split.clone()) : new h9.e2(split[0]) : z1.s;
+                            t0 p11 = length != 0 ? length != 1 ? t0.p(split.length, (Object[]) split.clone()) : new f2(split[0]) : a2.s;
                             String str = (String) o.m(o.p(b.h, p11), "outside");
                             int hashCode2 = str.hashCode();
                             if (hashCode2 != -1392885889) {
@@ -949,8 +950,8 @@ public final class d implements m {
                                         i7 = 2;
                                         p10 = o.p(b.e, p11);
                                         if (p10.isEmpty()) {
-                                            b2 p12 = o.p(b.g, p11);
-                                            b2 p13 = o.p(b.f, p11);
+                                            c2 p12 = o.p(b.g, p11);
+                                            c2 p13 = o.p(b.f, p11);
                                             if (p12.isEmpty() && p13.isEmpty()) {
                                                 bVar = new b(-1, 0, i7);
                                             } else {
@@ -1019,7 +1020,7 @@ public final class d implements m {
                     fVar2.r = bVar;
                     break;
                 case 14:
-                    String c18 = ha.c(attributeValue);
+                    String c18 = ja.c(attributeValue);
                     c18.getClass();
                     if (c18.equals("before")) {
                         fVar2 = a(fVar2);
@@ -1044,7 +1045,7 @@ public final class d implements m {
                     }
                 case 16:
                     fVar2 = a(fVar2);
-                    String c19 = ha.c(attributeValue);
+                    String c19 = ja.c(attributeValue);
                     c19.getClass();
                     switch (c19.hashCode()) {
                         case -1364013995:
@@ -1114,7 +1115,7 @@ public final class d implements m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static long i(String str, b5 b5Var) {
+    public static long i(String str, e5 e5Var) {
         double d2;
         double d10;
         Matcher matcher = b.matcher(str);
@@ -1128,11 +1129,11 @@ public final class d implements m {
             matcher.group(3).getClass();
             double parseLong3 = parseLong2 + Long.parseLong(r13);
             String group2 = matcher.group(4);
-            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / b5Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / b5Var.b) / b5Var.a : 0.0d)) * 1000000.0d);
+            return (long) ((parseLong3 + (group2 != null ? Double.parseDouble(group2) : 0.0d) + (matcher.group(5) != null ? Long.parseLong(r13) / e5Var.a : 0.0d) + (matcher.group(6) != null ? (Long.parseLong(r13) / e5Var.b) / e5Var.a : 0.0d)) * 1000000.0d);
         }
         Matcher matcher2 = c.matcher(str);
         if (!matcher2.matches()) {
-            throw new c4.f(r.b.k("Malformed time expression: ", str));
+            throw new c4.f(p5.c.k("Malformed time expression: ", str));
         }
         String group3 = matcher2.group(1);
         group3.getClass();
@@ -1140,28 +1141,28 @@ public final class d implements m {
         String group4 = matcher2.group(2);
         group4.getClass();
         switch (group4.hashCode()) {
-            case ns.n1 /* 102 */:
+            case ks.n1 /* 102 */:
                 if (group4.equals("f")) {
                     c10 = 0;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ns.p1 /* 104 */:
+            case ks.p1 /* 104 */:
                 if (group4.equals("h")) {
                     c10 = 1;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ns.u1 /* 109 */:
+            case ks.u1 /* 109 */:
                 if (group4.equals("m")) {
                     c10 = 2;
                     break;
                 }
                 c10 = 65535;
                 break;
-            case ns.B1 /* 116 */:
+            case ks.B1 /* 116 */:
                 if (group4.equals("t")) {
                     c10 = 3;
                     break;
@@ -1176,7 +1177,7 @@ public final class d implements m {
         }
         switch (c10) {
             case 0:
-                d2 = b5Var.a;
+                d2 = e5Var.a;
                 parseDouble /= d2;
                 break;
             case 1:
@@ -1186,7 +1187,7 @@ public final class d implements m {
                 d10 = 60.0d;
                 break;
             case 3:
-                d2 = b5Var.c;
+                d2 = e5Var.c;
                 parseDouble /= d2;
                 break;
             case 4:
@@ -1222,17 +1223,7 @@ public final class d implements m {
     }
 
     @Override // c4.m
-    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
-        u7.b(x(i7, i10, bArr), lVar, jVar);
-    }
-
-    @Override // c4.m
-    public final int Q() {
-        return 1;
-    }
-
-    @Override // c4.m
-    public final c4.d x(int i7, int i10, byte[] bArr) {
+    public final c4.d q(int i7, int i10, byte[] bArr) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             HashMap hashMap = new HashMap();
@@ -1242,7 +1233,7 @@ public final class d implements m {
             r0 r0Var = null;
             newPullParser.setInput(new ByteArrayInputStream(bArr, i7, i10), null);
             ArrayDeque arrayDeque = new ArrayDeque();
-            b5 b5Var = r;
+            e5 e5Var = r;
             int i11 = 0;
             int i12 = 15;
             r7 r7Var = null;
@@ -1252,11 +1243,11 @@ public final class d implements m {
                     String name = newPullParser.getName();
                     if (eventType == 2) {
                         if ("tt".equals(name)) {
-                            b5Var = e(newPullParser);
+                            e5Var = e(newPullParser);
                             i12 = c(newPullParser);
                             r0Var = j(newPullParser);
                         }
-                        b5 b5Var2 = b5Var;
+                        e5 e5Var2 = e5Var;
                         r0 r0Var2 = r0Var;
                         int i13 = i12;
                         if (b(name)) {
@@ -1264,7 +1255,7 @@ public final class d implements m {
                                 f(newPullParser, hashMap, i13, r0Var2, hashMap2, hashMap3);
                             } else {
                                 try {
-                                    c g10 = g(newPullParser, cVar, hashMap2, b5Var2);
+                                    c g10 = g(newPullParser, cVar, hashMap2, e5Var2);
                                     arrayDeque.push(g10);
                                     if (cVar != null) {
                                         if (cVar.m == null) {
@@ -1278,14 +1269,14 @@ public final class d implements m {
                             }
                             i12 = i13;
                             r0Var = r0Var2;
-                            b5Var = b5Var2;
+                            e5Var = e5Var2;
                         } else {
                             h2.a.g("TtmlParser", "Ignoring unsupported tag: " + newPullParser.getName());
                         }
                         i11++;
                         i12 = i13;
                         r0Var = r0Var2;
-                        b5Var = b5Var2;
+                        e5Var = e5Var2;
                     } else if (eventType == 4) {
                         cVar.getClass();
                         c a10 = c.a(newPullParser.getText());
@@ -1315,6 +1306,16 @@ public final class d implements m {
         } catch (XmlPullParserException e12) {
             throw new IllegalStateException("Unable to decode source", e12);
         }
+    }
+
+    @Override // c4.m
+    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+        u7.b(q(i7, i10, bArr), lVar, jVar);
+    }
+
+    @Override // c4.m
+    public final int y() {
+        return 1;
     }
 
     @Override // c4.m

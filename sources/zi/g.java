@@ -1,226 +1,128 @@
 package zi;
 
 import android.hardware.camera2.CameraCaptureSession;
-import android.hardware.camera2.CameraDevice;
 import android.hardware.camera2.CaptureRequest;
-import android.os.Handler;
-import android.util.Size;
-import android.view.Surface;
-import org.telegram.ui.f60;
+import android.hardware.camera2.CaptureResult;
+import android.hardware.camera2.TotalCaptureResult;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g extends CameraCaptureSession.StateCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
+public final class g extends CameraCaptureSession.CaptureCallback {
+    public final /* synthetic */ k a;
 
-    public /* synthetic */ g(l lVar, int i7) {
-        this.a = i7;
-        this.b = lVar;
+    public g(k kVar) {
+        this.a = kVar;
     }
 
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onClosed(CameraCaptureSession cameraCaptureSession) {
-        switch (this.a) {
-            case 0:
-                l lVar = this.b;
-                if (lVar.A == cameraCaptureSession) {
-                    lVar.A = null;
-                    lVar.C = null;
-                    lVar.m0 = false;
-                    break;
-                }
-                break;
-            default:
-                l lVar2 = this.b;
-                if (lVar2.z == cameraCaptureSession) {
-                    lVar2.z = null;
-                    lVar2.B = null;
-                    lVar2.P = false;
-                    lVar2.j.b("capture session closed");
-                    break;
-                }
-                break;
+    @Override // android.hardware.camera2.CameraCaptureSession.CaptureCallback
+    public final void onCaptureCompleted(CameraCaptureSession cameraCaptureSession, CaptureRequest captureRequest, TotalCaptureResult totalCaptureResult) {
+        int i7;
+        k kVar = this.a;
+        o oVar = kVar.j;
+        if (cameraCaptureSession != kVar.z) {
+            return;
         }
-    }
-
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onConfigureFailed(CameraCaptureSession cameraCaptureSession) {
-        switch (this.a) {
-            case 0:
-                cameraCaptureSession.close();
-                l lVar = this.b;
-                if (lVar.k0 && lVar.o0 != null && cameraCaptureSession.getDevice() == lVar.o0) {
-                    lVar.A("standby session configuration failed", null, true);
-                    break;
-                }
-                break;
-            default:
-                cameraCaptureSession.close();
-                if (this.b.y != null) {
-                    CameraDevice device = cameraCaptureSession.getDevice();
-                    l lVar2 = this.b;
-                    if (device == lVar2.y) {
-                        if (lVar2.z == cameraCaptureSession) {
-                            lVar2.z = null;
-                            lVar2.B = null;
-                        }
-                        if (lVar2.U) {
-                            l lVar3 = this.b;
-                            if (lVar3.y != null && !lVar3.Y) {
-                                l lVar4 = this.b;
-                                if (!lVar4.k0) {
-                                    if (lVar4.I != q0.c) {
-                                        lVar4.M(new IllegalStateException("Camera capture session configuration failed"));
-                                        break;
-                                    } else {
-                                        lVar4.B("60 fps session configuration failed", null);
-                                        break;
-                                    }
-                                } else {
-                                    lVar4.A("active session configuration failed", null, false);
-                                    break;
-                                }
-                            }
-                        }
-                        this.b.j.b("stale capture session configuration failure ignored");
-                        break;
+        if (kVar.P) {
+            Object tag = captureRequest.getTag();
+            if ((tag instanceof Integer) && ((Integer) tag).intValue() == kVar.T) {
+                kVar.Q++;
+                Integer num = (Integer) totalCaptureResult.get(CaptureResult.FLASH_MODE);
+                Integer num2 = (Integer) totalCaptureResult.get(CaptureResult.FLASH_STATE);
+                boolean z10 = !kVar.O ? !(num == null || num.intValue() == 0) : !(num != null && num.intValue() == 2);
+                boolean z11 = !kVar.O || num2 == null || num2.intValue() == 3 || num2.intValue() == 4;
+                if (z10 && z11) {
+                    oVar.b("torch result confirmed: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2 + ", frames=" + kVar.Q + ", retries=" + kVar.R);
+                    kVar.P = false;
+                } else {
+                    int i10 = kVar.Q;
+                    if (i10 == 3 && (i7 = kVar.R) == 0) {
+                        kVar.R = i7 + 1;
+                        kVar.Q = 0;
+                        oVar.b("torch result not applied; rebuilding request: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2);
+                        kVar.f();
+                    } else if (i10 >= 6) {
+                        oVar.b("torch result failed: enabled=" + kVar.O + ", resultMode=" + num + ", flashState=" + num2 + ", retries=" + kVar.R);
+                        kVar.P = false;
                     }
                 }
-                this.b.j.b("stale capture session configuration failure ignored: id=" + cameraCaptureSession.getDevice().getId());
-                break;
+            }
         }
-    }
-
-    @Override // android.hardware.camera2.CameraCaptureSession.StateCallback
-    public final void onConfigured(CameraCaptureSession cameraCaptureSession) {
-        Surface surface;
-        j jVar;
-        String str;
-        switch (this.a) {
-            case 0:
-                if (this.b.U) {
-                    l lVar = this.b;
-                    if (lVar.k0 && lVar.o0 != null) {
-                        CameraDevice device = cameraCaptureSession.getDevice();
-                        l lVar2 = this.b;
-                        CameraDevice cameraDevice = lVar2.o0;
-                        if (device == cameraDevice && (surface = lVar2.u) != null && (jVar = lVar2.p0) != null) {
-                            try {
-                                lVar2.A = cameraCaptureSession;
-                                lVar2.C = lVar2.w(cameraDevice, surface, jVar, false, true);
-                                CaptureRequest build = this.b.C.build();
-                                l lVar3 = this.b;
-                                cameraCaptureSession.setRepeatingRequest(build, lVar3.r1, lVar3.n);
-                                l lVar4 = this.b;
-                                lVar4.m0 = true;
-                                lVar4.j.b("standby capture session configured: id=" + cameraCaptureSession.getDevice().getId() + ", elapsedMs=" + l.z(this.b.E0));
-                                l.d(this.b);
-                                return;
-                            } catch (Exception e10) {
-                                this.b.A("standby request submission failed", e10, true);
-                                return;
-                            }
-                        }
-                    }
-                }
-                this.b.j.b("stale standby capture session ignored: id=" + cameraCaptureSession.getDevice().getId());
-                cameraCaptureSession.close();
-                return;
-            default:
-                if (this.b.U && this.b.y != null) {
-                    CameraDevice device2 = cameraCaptureSession.getDevice();
-                    l lVar5 = this.b;
-                    CameraDevice cameraDevice2 = lVar5.y;
-                    if (device2 == cameraDevice2) {
-                        lVar5.z = cameraCaptureSession;
-                        try {
-                            lVar5.F = lVar5.G;
-                            if (cameraDevice2 == null || lVar5.t == null) {
-                                throw new IllegalStateException("Camera request surfaces are unavailable");
-                            }
-                            lVar5.B = lVar5.w(cameraDevice2, lVar5.t, lVar5.k(), true, true);
-                            u uVar = this.b.v;
-                            if (uVar != null) {
-                                Handler handler = uVar.u;
-                                if (uVar.r0 && handler != null) {
-                                    handler.post(new r(uVar, 0));
-                                }
-                            }
-                            l lVar6 = this.b;
-                            boolean z10 = lVar6.k0 && lVar6.q0 != null;
-                            boolean z11 = lVar6.W && !z10;
-                            CameraCaptureSession cameraCaptureSession2 = lVar6.z;
-                            CaptureRequest.Builder builder = lVar6.B;
-                            if (cameraCaptureSession2 != null && builder != null) {
-                                cameraCaptureSession2.setRepeatingRequest(builder.build(), lVar6.r1, lVar6.n);
-                            }
-                            l lVar7 = this.b;
-                            if (lVar7.k0) {
-                                lVar7.l0 = true;
-                            }
-                            if (!z10) {
-                                lVar7.W = false;
-                            }
-                            if (z11) {
-                                lVar7.V = false;
-                            }
-                            lVar7.X = z11;
-                            p pVar = this.b.j;
-                            StringBuilder sb2 = new StringBuilder("capture session configured: facing=");
-                            sb2.append(this.b.F);
-                            sb2.append(", fpsRange=");
-                            sb2.append(this.b.J);
-                            sb2.append(", elapsedMs=");
-                            sb2.append(l.z(this.b.E0));
-                            sb2.append(", segmentElapsedMs=");
-                            sb2.append(l.z(this.b.C0));
-                            if (z11) {
-                                str = ", switchPath=SEQUENTIAL, switchElapsedMs=" + l.z(this.b.F0);
-                            } else {
-                                str = "";
-                            }
-                            sb2.append(str);
-                            pVar.b(sb2.toString());
-                            l lVar8 = this.b;
-                            lVar8.c.post(new a(lVar8, 9));
-                            l lVar9 = this.b;
-                            u7.i iVar = lVar9.k;
-                            n0 n0Var = lVar9.F;
-                            o0 o0Var = lVar9.H;
-                            q0 q0Var = lVar9.I;
-                            Size size = lVar9.q;
-                            l lVar10 = this.b;
-                            ((v0) iVar.a).i.post(new f60(iVar, new i(n0Var, o0Var, q0Var, size, lVar10.N, lVar10.F()), z11, 18));
-                            if (z10) {
-                                l.d(this.b);
-                                return;
-                            }
-                            n0 n0Var2 = this.b.E;
-                            l lVar11 = this.b;
-                            if (n0Var2 != lVar11.F) {
-                                lVar11.Y(lVar11.E);
-                                return;
-                            }
-                            return;
-                        } catch (Exception e11) {
-                            l lVar12 = this.b;
-                            if (lVar12.k0) {
-                                lVar12.A("active request submission failed", e11, false);
-                                return;
-                            } else if (lVar12.I == q0.c) {
-                                lVar12.B("60 fps request submission rejected", e11);
-                                return;
-                            } else {
-                                lVar12.M(e11);
-                                return;
-                            }
-                        }
-                    }
-                }
-                this.b.j.b("stale capture session ignored: deviceId=" + cameraCaptureSession.getDevice().getId());
-                cameraCaptureSession.close();
-                return;
+        Long l10 = (Long) totalCaptureResult.get(CaptureResult.SENSOR_TIMESTAMP);
+        if (l10 == null || l10.longValue() <= kVar.W0) {
+            return;
         }
+        long elapsedRealtimeNanos = SystemClock.elapsedRealtimeNanos();
+        if (kVar.V0 == 0) {
+            kVar.V0 = l10.longValue();
+            kVar.X0 = 1L;
+        } else {
+            long longValue = l10.longValue() - kVar.W0;
+            kVar.Z0++;
+            kVar.a1 += longValue;
+            double d = longValue;
+            kVar.b1 = (d * d) + kVar.b1;
+            long j3 = kVar.c1;
+            if (j3 == 0 || longValue < j3) {
+                kVar.c1 = longValue;
+            }
+            kVar.d1 = Math.max(kVar.d1, longValue);
+            if (longValue > 50000000) {
+                kVar.e1++;
+            }
+            if (longValue > 100000000) {
+                kVar.f1++;
+            }
+            kVar.X0++;
+        }
+        long j10 = kVar.Y0;
+        if (j10 != 0) {
+            long j11 = elapsedRealtimeNanos - j10;
+            kVar.g1++;
+            kVar.h1 += j11;
+            kVar.i1 = Math.max(kVar.i1, j11);
+        }
+        kVar.Y0 = elapsedRealtimeNanos;
+        kVar.W0 = l10.longValue();
+        long longValue2 = l10.longValue() - kVar.V0;
+        if (longValue2 < 3000000000L) {
+            return;
+        }
+        float f10 = ((kVar.X0 - 1) * 1.0E9f) / longValue2;
+        p0 p0Var = kVar.I;
+        int i11 = p0Var == null ? 0 : p0Var.a;
+        StringBuilder sb2 = new StringBuilder("camera capture rate: measuredFps=");
+        sb2.append(f10);
+        sb2.append(", requestedFps=");
+        sb2.append(kVar.h.a);
+        sb2.append(", activeFps=");
+        sb2.append(i11 == 0 ? "unknown" : Integer.valueOf(i11));
+        sb2.append(", targetMet=");
+        sb2.append(i11 == 0 || f10 >= ((float) i11) * 0.85f);
+        sb2.append(", fpsRange=");
+        sb2.append(kVar.J);
+        sb2.append(", sensorIntervalMs={avg=");
+        sb2.append(k.i(kVar.a1, kVar.Z0));
+        sb2.append(", min=");
+        sb2.append(kVar.c1 / 1000000.0f);
+        sb2.append(", max=");
+        sb2.append(kVar.d1 / 1000000.0f);
+        sb2.append(", jitter=");
+        sb2.append(k.U(kVar.b1, kVar.a1, kVar.Z0));
+        sb2.append("}, sensorGaps={over50ms=");
+        sb2.append(kVar.e1);
+        sb2.append(", over100ms=");
+        sb2.append(kVar.f1);
+        sb2.append("}, callbackIntervalMs={avg=");
+        sb2.append(k.i(kVar.h1, kVar.g1));
+        sb2.append(", max=");
+        sb2.append(kVar.i1 / 1000000.0f);
+        sb2.append("}");
+        oVar.b(sb2.toString());
+        kVar.N();
+        kVar.V0 = l10.longValue();
+        kVar.W0 = l10.longValue();
+        kVar.X0 = 1L;
+        kVar.Y0 = elapsedRealtimeNanos;
     }
 }

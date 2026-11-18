@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements com.google.android.gms.common.api.b {
     public final CastDevice a;
@@ -35,7 +35,7 @@ public final class e implements com.google.android.gms.common.api.b {
             return false;
         }
         e eVar = (e) obj;
-        if (q6.m.k(this.a, eVar.a)) {
+        if (q6.m.l(this.a, eVar.a)) {
             Bundle bundle = eVar.c;
             Bundle bundle2 = this.c;
             if (bundle2 != null && bundle != null) {
@@ -43,11 +43,11 @@ public final class e implements com.google.android.gms.common.api.b {
                     Set<String> keySet = bundle2.keySet();
                     if (keySet.containsAll(bundle.keySet())) {
                         for (String str : keySet) {
-                            if (!q6.m.k(bundle2.get(str), bundle.get(str))) {
+                            if (!q6.m.l(bundle2.get(str), bundle.get(str))) {
                                 break;
                             }
                         }
-                        if (q6.m.k(this.d, eVar.d)) {
+                        if (q6.m.l(this.d, eVar.d)) {
                             return true;
                         }
                     }

@@ -1,16 +1,16 @@
 package h2;
 
-import a8.ha;
 import a8.ja;
+import a8.la;
 import android.graphics.Color;
 import android.text.TextUtils;
 import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final Pattern a = Pattern.compile("^rgb\\((\\d{1,3}),(\\d{1,3}),(\\d{1,3})\\)$");
@@ -118,7 +118,7 @@ public abstract class h {
 
     public static int a(String str, boolean z10) {
         int parseInt;
-        ja.f(!TextUtils.isEmpty(str));
+        la.f(!TextUtils.isEmpty(str));
         String replace = str.replace(" ", "");
         if (replace.charAt(0) == '#') {
             int parseLong = (int) Long.parseLong(replace.substring(1), 16);
@@ -126,7 +126,7 @@ public abstract class h {
                 return (-16777216) | parseLong;
             }
             if (replace.length() == 9) {
-                return ((parseLong & ns.e4) << 24) | (parseLong >>> 8);
+                return ((parseLong & ks.e4) << 24) | (parseLong >>> 8);
             }
             throw new IllegalArgumentException();
         }
@@ -166,7 +166,7 @@ public abstract class h {
                 return Color.rgb(parseInt4, parseInt5, Integer.parseInt(group8, 10));
             }
         } else {
-            Integer num = (Integer) d.get(ha.c(replace));
+            Integer num = (Integer) d.get(ja.c(replace));
             if (num != null) {
                 return num.intValue();
             }

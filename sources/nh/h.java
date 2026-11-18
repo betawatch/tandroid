@@ -18,10 +18,10 @@ import org.telegram.messenger.g0;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lr;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h extends RecyclerView {
     public final e T0;
@@ -51,14 +51,14 @@ public final class h extends RecyclerView {
         f fVar = new f(this);
         fVar.m = false;
         fVar.C = false;
-        fVar.o(er.h);
+        fVar.o(lr.h);
         fVar.n(320L);
         setItemAnimator(fVar);
     }
 
     private float getMinChildY() {
         int childCount = getChildCount();
-        float f10 = 2.14748365E9f;
+        float f10 = 2.1474836E9f;
         for (int i7 = 0; i7 < childCount; i7++) {
             View childAt = getChildAt(i7);
             if (childAt.getVisibility() == 0) {

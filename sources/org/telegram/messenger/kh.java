@@ -7,7 +7,7 @@ import java.util.HashSet;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kh implements Runnable {
     public final /* synthetic */ int a = 2;
@@ -19,11 +19,11 @@ public final /* synthetic */ class kh implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ kh(bf bfVar, boolean z10, TLRPC.PhotoSize photoSize, gj gjVar, TLRPC.Photo photo, boolean z11, TLRPC.Document document) {
-        this.d = bfVar;
+    public /* synthetic */ kh(af afVar, boolean z10, TLRPC.PhotoSize photoSize, fj fjVar, TLRPC.Photo photo, boolean z11, TLRPC.Document document) {
+        this.d = afVar;
         this.b = z10;
         this.e = photoSize;
-        this.f = gjVar;
+        this.f = fjVar;
         this.h = photo;
         this.c = z11;
         this.n = document;
@@ -82,25 +82,25 @@ public final /* synthetic */ class kh implements Runnable {
         int i21 = 0;
         switch (i20) {
             case 0:
-                si siVar = (si) obj5;
+                ri riVar = (ri) obj5;
                 Integer num = (Integer) obj4;
                 ArrayList arrayList3 = (ArrayList) obj3;
                 ArrayList[] arrayListArr2 = (ArrayList[]) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                ArrayList arrayList4 = siVar.t0[1];
+                ArrayList arrayList4 = riVar.t0[1];
                 ArrayList arrayList5 = new ArrayList();
                 HashSet hashSet = new HashSet();
                 ArrayList arrayList6 = new ArrayList();
                 int intValue = num == null ? arrayList3.size() > 5 ? 1 : arrayList3.size() > 2 ? 2 : 3 : num.intValue();
                 int min = num == null ? Math.min(15, arrayList3.size()) : arrayList3.size();
-                boolean z12 = m10.i(siVar.currentAccount).q() || z11;
+                boolean z12 = j10.i(riVar.currentAccount).q() || z11;
                 if (z10) {
-                    str = m10.i(siVar.currentAccount).f0;
+                    str = j10.i(riVar.currentAccount).f0;
                     if (arrayListArr2[0] != null) {
                         if (str != null) {
-                            tL_messages_stickerSet2 = si.b0(siVar.currentAccount).p0(str);
+                            tL_messages_stickerSet2 = ri.d0(riVar.currentAccount).r0(str);
                             if (tL_messages_stickerSet2 == null) {
-                                tL_messages_stickerSet2 = si.b0(siVar.currentAccount).n0(str);
+                                tL_messages_stickerSet2 = ri.d0(riVar.currentAccount).p0(str);
                             }
                         } else {
                             tL_messages_stickerSet2 = null;
@@ -115,7 +115,7 @@ public final /* synthetic */ class kh implements Runnable {
                 int i22 = 0;
                 while (i22 < min) {
                     int i23 = i21;
-                    String replace = ((oi) arrayList3.get(i22)).a == null ? null : ((oi) arrayList3.get(i22)).a.replace("️", "");
+                    String replace = ((ni) arrayList3.get(i22)).a == null ? null : ((ni) arrayList3.get(i22)).a.replace("️", "");
                     if (TextUtils.isEmpty(replace)) {
                         arrayList = arrayList4;
                         i10 = intValue;
@@ -139,8 +139,8 @@ public final /* synthetic */ class kh implements Runnable {
                                             try {
                                                 i19 = i25;
                                                 try {
-                                                    e10 = org.telegram.ui.Components.g5.e(siVar.currentAccount, Long.parseLong(((String) arrayList7.get(i24)).substring(9)));
-                                                    V = gj.V(e10, null, null);
+                                                    e10 = org.telegram.ui.Components.o5.e(riVar.currentAccount, Long.parseLong(((String) arrayList7.get(i24)).substring(9)));
+                                                    V = fj.V(e10, null, null);
                                                 } catch (Exception unused) {
                                                 }
                                             } catch (Exception unused2) {
@@ -148,7 +148,7 @@ public final /* synthetic */ class kh implements Runnable {
                                             }
                                         } catch (Exception unused3) {
                                         }
-                                        if (e10 != null && V != null && V.replace("️", "").contains(replace) && (z12 || gj.m3(e10))) {
+                                        if (e10 != null && V != null && V.replace("️", "").contains(replace) && (z12 || fj.m3(e10))) {
                                             str2 = str;
                                             try {
                                                 if (!hashSet.contains(Long.valueOf(e10.id))) {
@@ -331,19 +331,19 @@ public final /* synthetic */ class kh implements Runnable {
                                                             if (arrayList6.size() >= intValue) {
                                                                 if (arrayList6.size() < intValue) {
                                                                     if (!arrayList6.isEmpty()) {
-                                                                        String str8 = ((oi) arrayList3.get(i22)).b;
+                                                                        String str8 = ((ni) arrayList3.get(i22)).b;
                                                                         int i38 = i23;
                                                                         while (i38 < arrayList6.size()) {
                                                                             TLRPC.Document document4 = (TLRPC.Document) arrayList6.get(i38);
                                                                             if (document4 != null) {
-                                                                                oi oiVar = new oi();
+                                                                                ni niVar = new ni();
                                                                                 StringBuilder sb2 = new StringBuilder("animated_");
                                                                                 i11 = intValue;
                                                                                 i12 = i38;
                                                                                 sb2.append(document4.id);
-                                                                                oiVar.a = sb2.toString();
-                                                                                oiVar.b = str8;
-                                                                                arrayList5.add(oiVar);
+                                                                                niVar.a = sb2.toString();
+                                                                                niVar.b = str8;
+                                                                                arrayList5.add(niVar);
                                                                             } else {
                                                                                 i11 = intValue;
                                                                                 i12 = i38;
@@ -412,38 +412,38 @@ public final /* synthetic */ class kh implements Runnable {
                 runnable2.run();
                 break;
             case 1:
-                np npVar = (np) obj5;
+                mp mpVar = (mp) obj5;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) obj2;
+                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) obj2;
                 TLObject tLObject = (TLObject) obj;
-                if (((yo) obj4).d(tL_error)) {
-                    org.telegram.ui.Components.t4.c0(npVar.currentAccount, tL_error, e2Var, tLObject, Boolean.valueOf(z11 && !z10));
+                if (((xo) obj4).e(tL_error)) {
+                    org.telegram.ui.Components.b5.c0(mpVar.currentAccount, tL_error, h2Var, tLObject, Boolean.valueOf(z11 && !z10));
                     break;
                 }
                 break;
             default:
-                bf bfVar = (bf) obj5;
+                af afVar = (af) obj5;
                 TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) obj4;
-                gj gjVar = (gj) obj3;
+                fj fjVar = (fj) obj3;
                 TLRPC.Photo photo = (TLRPC.Photo) obj2;
                 TLRPC.Document document5 = (TLRPC.Document) obj;
-                c cVar = bfVar.a;
-                HashMap hashMap = bfVar.d;
+                c cVar = afVar.a;
+                HashMap hashMap = afVar.d;
                 if (z11) {
-                    hashMap.put(w7.r(null, photoSize), gjVar);
-                    w7.G(cVar.a).V(gc.i(photoSize, photo), gjVar, "jpg", 3, 0);
+                    hashMap.put(w7.r(null, photoSize), fjVar);
+                    w7.G(cVar.a).V(fc.i(photoSize, photo), fjVar, "jpg", 3, 0);
                 }
                 if (z10) {
-                    hashMap.put(w7.r(null, document5), gjVar);
-                    w7.G(cVar.a).W(document5, gjVar, 3, 0);
+                    hashMap.put(w7.r(null, document5), fjVar);
+                    w7.G(cVar.a).W(document5, fjVar, 3, 0);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ kh(si siVar, Integer num, ArrayList arrayList, boolean z10, boolean z11, ArrayList[] arrayListArr, Runnable runnable) {
-        this.d = siVar;
+    public /* synthetic */ kh(ri riVar, Integer num, ArrayList arrayList, boolean z10, boolean z11, ArrayList[] arrayListArr, Runnable runnable) {
+        this.d = riVar;
         this.e = num;
         this.f = arrayList;
         this.b = z10;
@@ -452,11 +452,11 @@ public final /* synthetic */ class kh implements Runnable {
         this.n = runnable;
     }
 
-    public /* synthetic */ kh(np npVar, yo yoVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.e2 e2Var, TLObject tLObject, boolean z10, boolean z11) {
-        this.d = npVar;
-        this.e = yoVar;
+    public /* synthetic */ kh(mp mpVar, xo xoVar, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.h2 h2Var, TLObject tLObject, boolean z10, boolean z11) {
+        this.d = mpVar;
+        this.e = xoVar;
         this.f = tL_error;
-        this.h = e2Var;
+        this.h = h2Var;
         this.n = tLObject;
         this.b = z10;
         this.c = z11;

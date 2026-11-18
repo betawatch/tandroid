@@ -3,7 +3,7 @@ package f7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import c8.yb;
+import c8.bc;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -13,7 +13,7 @@ import java.util.Iterator;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q0 extends r6.a {
     public static final Parcelable.Creator<q0> CREATOR = new db.k(12);
@@ -82,7 +82,7 @@ public final class q0 extends r6.a {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static byte[] d(byte[] bArr) {
-        bg.v0 v0Var;
+        bg.w0 w0Var;
         q7.e0 e0Var;
         int i7 = q7.h0.a;
         q7.i0 i0Var = q7.g0.a;
@@ -91,28 +91,28 @@ public final class q0 extends r6.a {
         try {
             if (i0Var.h) {
                 try {
-                    v0Var = new bg.v0((MessageDigest) messageDigest.clone(), i10);
+                    w0Var = new bg.w0((MessageDigest) messageDigest.clone(), i10);
                 } catch (CloneNotSupportedException unused) {
                 }
-                MessageDigest messageDigest2 = (MessageDigest) v0Var.c;
+                MessageDigest messageDigest2 = (MessageDigest) w0Var.c;
                 byte[] bArr2 = b;
                 bArr2.getClass();
                 int length = bArr2.length;
-                if (!v0Var.a) {
+                if (!w0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr2, 0, length);
                 bArr.getClass();
                 int length2 = bArr.length;
-                if (v0Var.a) {
+                if (w0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
                 messageDigest2.update(bArr, 0, length2);
-                if (v0Var.a) {
+                if (w0Var.a) {
                     throw new IllegalStateException("Cannot re-use a Hasher after calling hash() on it");
                 }
-                v0Var.a = true;
-                int i11 = v0Var.b;
+                w0Var.a = true;
+                int i11 = w0Var.b;
                 if (i11 == messageDigest2.getDigestLength()) {
                     byte[] digest = messageDigest2.digest();
                     char[] cArr = q7.f0.a;
@@ -124,12 +124,12 @@ public final class q0 extends r6.a {
                 }
                 return (byte[]) e0Var.b.clone();
             }
-            v0Var = new bg.v0(MessageDigest.getInstance(messageDigest.getAlgorithm()), i10);
-            MessageDigest messageDigest22 = (MessageDigest) v0Var.c;
+            w0Var = new bg.w0(MessageDigest.getInstance(messageDigest.getAlgorithm()), i10);
+            MessageDigest messageDigest22 = (MessageDigest) w0Var.c;
             byte[] bArr22 = b;
             bArr22.getClass();
             int length3 = bArr22.length;
-            if (!v0Var.a) {
+            if (!w0Var.a) {
             }
         } catch (NoSuchAlgorithmException e10) {
             throw new AssertionError(e10);
@@ -197,8 +197,8 @@ public final class q0 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.d(parcel, 1, this.a);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.d(parcel, 1, this.a);
+        bc.s(parcel, r10);
     }
 }

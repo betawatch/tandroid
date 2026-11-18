@@ -1,21 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewTreeObserver;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pe implements ViewTreeObserver.OnDrawListener {
-    public final /* synthetic */ jt0 a;
-    public final /* synthetic */ en0 b;
+public final class pe extends yg {
+    public final Rect G;
+    public final /* synthetic */ ChatActivityEnterView H;
 
-    public pe(jt0 jt0Var, en0 en0Var) {
-        this.a = jt0Var;
-        this.b = en0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pe(ChatActivityEnterView chatActivityEnterView, Activity activity) {
+        super(activity, 24);
+        this.H = chatActivityEnterView;
+        this.G = new Rect();
     }
 
-    @Override // android.view.ViewTreeObserver.OnDrawListener
-    public final void onDraw() {
-        jt0 jt0Var = this.a;
-        jt0Var.post(new ki.n(this, jt0Var, this.b, 29));
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.H;
+        if (chatActivityEnterView.l1) {
+            if (chatActivityEnterView.n1 == null) {
+                chatActivityEnterView.n1 = getResources().getDrawable(R.drawable.input_dictation).mutate();
+                chatActivityEnterView.n1.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            }
+            int measuredWidth = getMeasuredWidth() / 2;
+            int measuredHeight = getMeasuredHeight() / 2;
+            int L = org.telegram.messenger.g0.L(12.0f);
+            chatActivityEnterView.n1.setBounds(measuredWidth - L, measuredHeight - L, measuredWidth + L, measuredHeight + L);
+            chatActivityEnterView.n1.draw(canvas);
+            return;
+        }
+        if (!chatActivityEnterView.b1) {
+            super.draw(canvas);
+            return;
+        }
+        int measuredWidth2 = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        Rect rect = this.G;
+        rect.set(0, 0, measuredWidth2, measuredHeight2);
+        rect.inset(org.telegram.messenger.g0.L(7.5f), org.telegram.messenger.g0.L(7.5f));
+        Drawable drawable = getCurrentState() == wg.b ? chatActivityEnterView.C4 : chatActivityEnterView.B4;
+        drawable.setBounds(rect);
+        drawable.draw(canvas);
     }
 }

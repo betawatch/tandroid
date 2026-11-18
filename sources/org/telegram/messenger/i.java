@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import com.android.billingclient.api.Purchase;
 import java.lang.reflect.Field;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dj0;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.lj0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements dj0, f5.h {
+public final /* synthetic */ class i implements lj0, f5.h {
     public final /* synthetic */ Object a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -34,24 +34,24 @@ public final /* synthetic */ class i implements dj0, f5.h {
         int i7 = fVar.a;
         sb2.append(i7 == 0 ? "OK" : Integer.valueOf(i7));
         sb2.append(" ");
-        org.telegram.ui.Cells.y0.t(fVar.c, sb2);
+        p5.c.s(fVar.c, sb2);
         if (runnable != null) {
             runnable.run();
         }
     }
 
-    @Override // org.telegram.ui.Components.dj0
+    @Override // org.telegram.ui.Components.lj0
     public int run() {
-        org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.a;
+        org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.a;
         String str = (String) this.b;
-        uj0 uj0Var = (uj0) this.c;
+        ck0 ck0Var = (ck0) this.c;
         int i7 = -1;
         try {
-            Field declaredField = e2Var.getClass().getDeclaredField(str);
+            Field declaredField = h2Var.getClass().getDeclaredField(str);
             declaredField.setAccessible(true);
-            v4.b0 b0Var = (v4.b0) uj0Var.getLayoutManager();
-            i7 = declaredField.getInt(e2Var);
-            b0Var.h1(i7, g0.L(60.0f));
+            v4.c0 c0Var = (v4.c0) ck0Var.getLayoutManager();
+            i7 = declaredField.getInt(h2Var);
+            c0Var.h1(i7, g0.L(60.0f));
             declaredField.setAccessible(false);
             return i7;
         } catch (Throwable unused) {

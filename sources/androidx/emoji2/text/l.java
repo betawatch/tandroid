@@ -6,12 +6,12 @@ import android.os.Looper;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
-import c8.qb;
+import c8.tb;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -220,7 +220,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i7);
                                         }
                                     } else if (a10 == 3) {
-                                        if (!bVar.K(charSequence, i11, i7, ((t) qVar.f).b)) {
+                                        if (!bVar.L(charSequence, i11, i7, ((t) qVar.f).b)) {
                                             if (zVar == null) {
                                                 zVar = new z((Spannable) new SpannableString(charSequence));
                                             }
@@ -230,7 +230,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (qVar.a == 2 && ((t) qVar.e).b != null && ((qVar.c > 1 || qVar.e()) && i12 < Integer.MAX_VALUE && !bVar.K(charSequence, i11, i7, ((t) qVar.e).b))) {
+                            if (qVar.a == 2 && ((t) qVar.e).b != null && ((qVar.c > 1 || qVar.e()) && i12 < Integer.MAX_VALUE && !bVar.L(charSequence, i11, i7, ((t) qVar.e).b))) {
                                 if (zVar == null) {
                                     zVar = new z(charSequence);
                                 }
@@ -287,7 +287,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        qb.a(iVar, "initCallback cannot be null");
+        tb.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

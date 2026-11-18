@@ -1,74 +1,184 @@
 package ki;
 
+import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
-import org.telegram.messenger.z10;
+import android.text.SpannableStringBuilder;
+import bi.e5;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.l5;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d4 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-
-    public /* synthetic */ d4(boolean[] zArr, ci.p0 p0Var, boolean[] zArr2, z10 z10Var, int[] iArr, int i7) {
-        this.b = zArr;
-        this.e = p0Var;
-        this.c = zArr2;
-        this.f = z10Var;
-        this.h = iArr;
-        this.d = i7;
-    }
-
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                Context context = (Context) this.e;
-                TLRPC.User user = (TLRPC.User) this.f;
-                org.telegram.ui.web.o oVar = (org.telegram.ui.web.o) this.h;
-                if (!this.b[0]) {
-                    boolean[] zArr = this.c;
-                    if (!zArr[0]) {
-                        zArr[0] = true;
-                        i4.e(context, this.d, user.id);
-                        oVar.a(Boolean.TRUE, "cancelled");
-                        break;
-                    }
-                }
-                break;
-            default:
-                ci.p0 p0Var = (ci.p0) this.e;
-                z10 z10Var = (z10) this.f;
-                int[] iArr = (int[]) this.h;
-                this.b[0] = true;
-                p0Var.run();
-                boolean[] zArr2 = this.c;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    z10Var.a(null);
-                }
-                if (iArr[0] >= 0) {
-                    ConnectionsManager.getInstance(this.d).cancelRequest(iArr[0], true);
-                    iArr[0] = -1;
-                    break;
-                }
-                break;
+public abstract class d4 {
+    public static void a(int i7, long j3, org.telegram.ui.web.o oVar) {
+        TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+        TLRPC.UserFull d2 = mp.u1(i7).d2(j3);
+        if (d2 == null) {
+            mp.u1(i7).c3(c22, 0, true, new e5(oVar, i7, c22, 1));
+        } else {
+            b(i7, c22, d2, oVar);
         }
     }
 
-    public /* synthetic */ d4(boolean[] zArr, boolean[] zArr2, Context context, int i7, TLRPC.User user, org.telegram.ui.web.o oVar) {
-        this.b = zArr;
-        this.c = zArr2;
-        this.e = context;
-        this.d = i7;
-        this.f = user;
-        this.h = oVar;
+    public static void b(final int i7, final TLRPC.User user, final TLRPC.UserFull userFull, final org.telegram.ui.web.o oVar) {
+        if (userFull.bot_can_manage_emoji_status) {
+            oVar.a(Boolean.FALSE, "allowed");
+            return;
+        }
+        Context W = org.telegram.messenger.g0.W(LaunchActivity.H1);
+        if (W == null) {
+            W = org.telegram.messenger.t0.b;
+        }
+        final Context context = W;
+        TLRPC.User f10 = j10.i(i7).f();
+        final boolean[] zArr = new boolean[1];
+        final boolean[] zArr2 = new boolean[1];
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, null);
+        c4 c4Var = new c4(f10);
+        int i10 = n6.L5;
+        int x02 = n6.x0(null, i10, false);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.c0 = c4Var;
+        u1Var.d0 = x02;
+        u1Var.e0 = -1;
+        alertDialog$Builder.n(i10, null);
+        alertDialog$Builder.a.U = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753086, o10.q(user), o10.q(user)));
+        alertDialog$Builder.k(gd.M0(2131753088, null), new org.telegram.ui.ActionBar.r1() { // from class: ki.x3
+            @Override // org.telegram.ui.ActionBar.r1
+            public final void h(org.telegram.ui.ActionBar.u1 u1Var2, int i11) {
+                int i12 = i7;
+                boolean q10 = j10.i(i12).q();
+                boolean[] zArr3 = zArr2;
+                boolean[] zArr4 = zArr;
+                org.telegram.ui.web.o oVar2 = oVar;
+                if (!q10) {
+                    new ug.z0((org.telegram.ui.ActionBar.h2) new a4(null), 12, false).show();
+                    if (zArr3[0] || zArr4[0]) {
+                        return;
+                    }
+                    zArr4[0] = true;
+                    oVar2.a(Boolean.TRUE, "cancelled");
+                    return;
+                }
+                zArr3[0] = true;
+                TLRPC.User user2 = user;
+                d4.e(context, i12, user2.id);
+                TL_bots.toggleUserEmojiStatusPermission toggleuseremojistatuspermission = new TL_bots.toggleUserEmojiStatusPermission();
+                toggleuseremojistatuspermission.bot = mp.u1(i12).s1(user2);
+                toggleuseremojistatuspermission.enabled = true;
+                ConnectionsManager.getInstance(i12).sendRequest(toggleuseremojistatuspermission, new bi.m1(zArr4, oVar2, userFull));
+            }
+        });
+        alertDialog$Builder.h(gd.M0(2131753087, null), null);
+        org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
+        u1Var2.show();
+        u1Var2.setOnDismissListener(new y3(zArr2, zArr, context, i7, user, oVar));
+    }
+
+    public static void c() {
+        Context context = org.telegram.messenger.t0.b;
+        if (context == null) {
+            return;
+        }
+        for (int i7 = 0; i7 < 4; i7++) {
+            context.getSharedPreferences("botemojistatus_" + i7, 0).edit().clear().apply();
+        }
+    }
+
+    public static boolean d(Activity activity, int i7, long j3) {
+        if (activity == null) {
+            return false;
+        }
+        return org.telegram.messenger.f3.w("requested_", j3, activity.getSharedPreferences("botemojistatus_" + i7, 0), false);
+    }
+
+    public static void e(Context context, int i7, long j3) {
+        if (context == null) {
+            return;
+        }
+        context.getSharedPreferences("botemojistatus_" + i7, 0).edit().putBoolean("requested_" + j3, true).apply();
+    }
+
+    public static void f(final int i7, final TLRPC.User user, long j3, final int i10, final org.telegram.ui.web.o oVar) {
+        TLRPC.Document e10 = o5.e(i7, j3);
+        if (e10 != null) {
+            g(i7, user, e10, i10, new u3(oVar, e10, 1));
+        } else {
+            o5.g(i7).b(j3, new l5() { // from class: ki.v3
+                @Override // org.telegram.ui.Components.l5
+                public final void a(TLRPC.Document document) {
+                    org.telegram.messenger.g0.g3(new jg.o1(i7, user, document, i10, oVar));
+                }
+            });
+        }
+    }
+
+    public static void g(int i7, TLRPC.User user, TLRPC.Document document, int i10, x10 x10Var) {
+        SpannableStringBuilder W2;
+        if (document instanceof TLRPC.TL_documentEmpty) {
+            x10Var.a("SUGGESTED_EMOJI_INVALID");
+            return;
+        }
+        Context W = org.telegram.messenger.g0.W(LaunchActivity.H1);
+        if (W == null) {
+            W = org.telegram.messenger.t0.b;
+        }
+        ConnectionsManager.getInstance(i7).getCurrentTime();
+        TLRPC.User f10 = j10.i(i7).f();
+        boolean[] zArr = new boolean[1];
+        boolean[] zArr2 = new boolean[1];
+        if (i10 > 0) {
+            int i11 = i10 / 86400;
+            int i12 = (i10 - (86400 * i11)) / 3600;
+            int round = Math.round((r9 - (i12 * 3600)) / 60.0f);
+            StringBuilder sb2 = new StringBuilder();
+            if (i11 > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(gd.G(i11, "BotEmojiStatusSetRequestForDay", new Object[0]));
+            }
+            if (i12 > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(gd.G(i12, "BotEmojiStatusSetRequestForHour", new Object[0]));
+            }
+            if (round > 0) {
+                if (sb2.length() > 0) {
+                    sb2.append(" ");
+                }
+                sb2.append(gd.G(round, "BotEmojiStatusSetRequestForMinute", new Object[0]));
+            }
+            W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753083, o10.q(user), sb2));
+        } else {
+            W2 = org.telegram.messenger.g0.W2(gd.a0(null, null, 2131753084, o10.q(user)));
+        }
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, W, null);
+        c4 c4Var = new c4(f10, document);
+        int i13 = n6.L5;
+        int x02 = n6.x0(null, i13, false);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.c0 = c4Var;
+        u1Var.d0 = x02;
+        u1Var.e0 = -1;
+        alertDialog$Builder.n(i13, null);
+        alertDialog$Builder.a.U = W2;
+        alertDialog$Builder.k(gd.M0(2131753089, null), new w3(i7, zArr2, document, i10, zArr, x10Var));
+        alertDialog$Builder.h(gd.M0(2131752578, null), null);
+        org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder.a;
+        u1Var2.show();
+        u1Var2.setOnDismissListener(new bi.k(zArr2, zArr, x10Var, 3));
     }
 }

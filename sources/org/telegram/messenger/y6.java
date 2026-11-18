@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final /* synthetic */ class y6 implements Runnable {
             case 4:
                 i7 i7Var2 = this.b;
                 if (i7Var2.j) {
-                    if (r2.a) {
+                    if (s2.a) {
                         a8.b("debug_loading: " + i7Var2.L0.getName() + " pause operation, clear requests");
                     }
                     i7Var2.e(null, false, true);
@@ -66,7 +66,7 @@ public final /* synthetic */ class y6 implements Runnable {
                             h7 h7Var = (h7) i7Var3.G0.get(i10);
                             if (h7Var.a != 0) {
                                 h7Var.j = true;
-                                h7Var.l = new mg(h7Var, iArr, y6Var, 20);
+                                h7Var.l = new yf(h7Var, iArr, y6Var, 20);
                                 iArr[0] = iArr[0] + 1;
                                 a8.b("cancelRequests cancel " + h7Var.a + " with callback");
                                 ConnectionsManager.getInstance(i7Var3.R).cancelRequest(h7Var.a, true, new b7(h7Var, 1));
@@ -76,7 +76,7 @@ public final /* synthetic */ class y6 implements Runnable {
                         }
                         for (int i12 = 0; i12 < 8; i12++) {
                             int i13 = (i12 << 16) | 2;
-                            if (iArr2[i12] > ((!i7Var3.j || b6.h()) ? TLObject.FLAG_20 : 262144)) {
+                            if (iArr2[i12] > ((!i7Var3.j || c6.h()) ? TLObject.FLAG_20 : 262144)) {
                                 ConnectionsManager.getInstance(i7Var3.R).discardConnection(i7Var3.u0 ? i7Var3.y0 : i7Var3.T, i13);
                             }
                         }

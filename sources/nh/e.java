@@ -4,9 +4,9 @@ import android.graphics.RenderNode;
 import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.g0;
-import v4.e1;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final /* synthetic */ h h;
@@ -16,8 +16,8 @@ public final class e extends d {
         this.e = -1;
     }
 
-    @Override // v4.h0
-    public final e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final f1 x(ViewGroup viewGroup, int i7) {
         c cVar = new c(viewGroup.getContext());
         cVar.setPadding(g0.L(22.0f), 0, g0.L(22.0f), 0);
         b bVar = new b(cVar);

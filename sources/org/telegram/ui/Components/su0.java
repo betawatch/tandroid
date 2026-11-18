@@ -1,38 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class su0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vu0 b;
+public final class su0 {
+    public org.telegram.messenger.bp a;
+    public org.telegram.ui.ActionBar.i6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public /* synthetic */ su0(vu0 vu0Var, int i7) {
-        this.a = i7;
-        this.b = vu0Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                vu0 vu0Var = this.b;
-                vu0Var.getClass();
-                vu0Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vu0Var.invalidate();
-                break;
-            case 1:
-                vu0 vu0Var2 = this.b;
-                vu0Var2.getClass();
-                vu0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                vu0 vu0Var3 = this.b;
-                vu0Var3.getClass();
-                vu0Var3.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vu0Var3.invalidate();
-                break;
+    public final void a(org.telegram.messenger.bp bpVar) {
+        this.a = bpVar;
+        if (bpVar == null) {
+            this.c = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.s8, this.b);
+            this.c = i0.a.f(this.e, this.c, 603979776);
+            this.d = i0.a.f(this.e, this.d, -1);
+            return;
         }
+        int c10 = bpVar.c(org.telegram.ui.ActionBar.n6.I.q());
+        int d = bpVar.d(org.telegram.ui.ActionBar.n6.I.q());
+        org.telegram.ui.ActionBar.i6 i6Var = this.b;
+        int f10 = i0.a.f(0.75f, d, c10);
+        int w02 = org.telegram.messenger.g0.B(f10) > 0.721f ? org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.v6, i6Var) : org.telegram.ui.ActionBar.n6.b(0.08f, -0.08f, f10);
+        this.c = w02;
+        this.d = org.telegram.messenger.g0.B(w02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.f(this.e, this.c, 603979776);
+        this.d = i0.a.f(this.e, this.d, -1);
     }
 }

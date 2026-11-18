@@ -1,13 +1,13 @@
 package l2;
 
-import a8.ha;
 import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.os.Build;
 import android.os.Looper;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n {
     public static final int C;
@@ -17,10 +17,10 @@ public final class n {
     public final Context a;
     public final h2.g0 b;
     public g9.t c;
-    public final f2.c d;
+    public final f2.d d;
     public g9.t e;
     public g9.t f;
-    public final f2.c g;
+    public final f2.d g;
     public final Looper h;
     public final int i;
     public final e2.e j;
@@ -43,24 +43,24 @@ public final class n {
 
     static {
         String str = h2.l0.a;
-        String c10 = ha.c(Build.DEVICE);
+        String c10 = ja.c(Build.DEVICE);
         C = (c10.contains("emulator") || c10.contains("emu64a") || c10.contains("emu64x") || c10.contains("generic")) ? 30000 : 10000;
         D = true;
     }
 
     public n(Context context) {
-        f2.c cVar = new f2.c(context, 1);
-        f2.c cVar2 = new f2.c(context, 2);
-        f2.c cVar3 = new f2.c(context, 3);
+        f2.d dVar = new f2.d(context, 1);
+        f2.d dVar2 = new f2.d(context, 2);
+        f2.d dVar3 = new f2.d(context, 3);
         d3.p pVar = new d3.p(3);
-        f2.c cVar4 = new f2.c(context, 4);
+        f2.d dVar4 = new f2.d(context, 4);
         context.getClass();
         this.a = context;
-        this.c = cVar;
-        this.d = cVar2;
-        this.e = cVar3;
+        this.c = dVar;
+        this.d = dVar2;
+        this.e = dVar3;
         this.f = pVar;
-        this.g = cVar4;
+        this.g = dVar4;
         String str = h2.l0.a;
         Looper myLooper = Looper.myLooper();
         this.h = myLooper == null ? Looper.getMainLooper() : myLooper;
@@ -90,7 +90,7 @@ public final class n {
     }
 
     public final f0 a() {
-        ja.p(!this.z);
+        la.p(!this.z);
         this.z = true;
         return new f0(this);
     }

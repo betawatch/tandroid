@@ -1,18 +1,57 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class vi extends rh.h {
-    public final /* synthetic */ an I;
+public final class vi extends org.telegram.ui.Components.ao {
+    public final /* synthetic */ bn B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vi(an anVar, ye yeVar) {
-        super(yeVar);
-        this.I = anVar;
+    public vi(bn bnVar, Context context, bn bnVar2, boolean z10, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, bnVar2, z10, i6Var);
+        this.B0 = bnVar;
     }
 
-    @Override // rh.h
-    public final r0.k1 b(r0.k1 k1Var) {
-        return this.I.P8(k1Var);
+    @Override // org.telegram.ui.Components.ao
+    public final boolean a() {
+        boolean z10;
+        bn bnVar = this.B0;
+        if (bnVar.mb || bnVar.isInPreviewMode()) {
+            return false;
+        }
+        z10 = ((org.telegram.ui.ActionBar.h2) bnVar).inBubbleMode;
+        if (z10 || bnVar.k0 == null || bnVar.H3) {
+            return false;
+        }
+        return !bnVar.fa() || bnVar.x4;
+    }
+
+    @Override // org.telegram.ui.Components.ao
+    public final boolean d() {
+        bn bnVar = this.B0;
+        TLRPC.User user = bnVar.f;
+        if (user != null && user.linked_community_id != 0) {
+            bnVar.showDialog(new li.d0(bnVar, bnVar.f.linked_community_id, null, null));
+            return true;
+        }
+        TLRPC.Chat chat = bnVar.e;
+        if (chat == null || chat.linked_community_id == 0) {
+            return false;
+        }
+        bnVar.showDialog(new li.d0(bnVar, bnVar.e.linked_community_id, null, null));
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ao
+    public final void f() {
+        bn bnVar = this.B0;
+        bnVar.Oa(bnVar.ea() ? "" : null);
+    }
+
+    @Override // org.telegram.ui.Components.ao
+    public final boolean o() {
+        return this.B0.g4 == 3;
     }
 }

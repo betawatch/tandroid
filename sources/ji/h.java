@@ -7,17 +7,17 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.xr;
-import org.telegram.messenger.z10;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.t2;
+import org.telegram.messenger.vr;
+import org.telegram.messenger.x10;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.w2;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.gf;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.pf;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
-public final /* synthetic */ class h implements z10 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class h implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
 
@@ -26,10 +26,10 @@ public final /* synthetic */ class h implements z10 {
         this.b = mVar;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         p pVar;
-        int u02;
+        int C0;
         int i7 = 0;
         switch (this.a) {
             case 0:
@@ -47,14 +47,14 @@ public final /* synthetic */ class h implements z10 {
             default:
                 m mVar2 = this.b;
                 if (!mVar2.n.trim().isEmpty()) {
-                    gf gfVar = mVar2.b;
+                    pf pfVar = mVar2.b;
                     String trim = mVar2.n.trim();
                     if (!trim.isEmpty() && mVar2.h != null) {
                         g0.r(mVar2.k0);
                         g0.r(mVar2.j0);
                         Drawable drawable = null;
-                        if (xr.k == mVar2) {
-                            xr.k = null;
+                        if (vr.k == mVar2) {
+                            vr.k = null;
                         }
                         c2 c2Var = mVar2.f;
                         if (c2Var != null) {
@@ -70,41 +70,36 @@ public final /* synthetic */ class h implements z10 {
                         mVar2.c = 3;
                         Log.d("VoiceLive", "review: voice paused, restyling " + trim.length() + " chars");
                         mVar2.h.setListening(false);
-                        gfVar.e();
+                        pfVar.e();
                         if (mVar2.H == null) {
                             mVar2.H = trim;
                         }
-                        boolean z10 = obj instanceof ai.h;
-                        mVar2.h.setStyleLabel(z10 ? ((ai.h) obj).a : null);
+                        boolean z10 = obj instanceof ai.g;
+                        mVar2.h.setStyleLabel(z10 ? ((ai.g) obj).a() : null);
                         p pVar2 = mVar2.h;
-                        ChatActivityEnterView chatActivityEnterView = gfVar.a;
+                        ChatActivityEnterView chatActivityEnterView = pfVar.a;
                         if (z10) {
-                            ai.h hVar = (ai.h) obj;
-                            long j3 = hVar.c;
+                            ai.g gVar = (ai.g) obj;
+                            long j3 = gVar.b;
                             if (j3 != 0) {
-                                drawable = g5.m(chatActivityEnterView.R, j3, null, 2);
-                            } else if (hVar.e) {
-                                drawable = new t2(chatActivityEnterView.getContext());
-                                if (j6.I.q()) {
-                                    u02 = -1;
+                                drawable = o5.m(chatActivityEnterView.R, j3, null, 2);
+                            } else if (gVar.d) {
+                                drawable = new w2(chatActivityEnterView.getContext());
+                                if (n6.I.q()) {
+                                    C0 = -1;
                                 } else {
-                                    int i10 = j6.G6;
-                                    int i11 = ChatActivityEnterView.N6;
-                                    u02 = chatActivityEnterView.u0(i10);
+                                    int i10 = n6.G6;
+                                    int i11 = ChatActivityEnterView.n7;
+                                    C0 = chatActivityEnterView.C0(i10);
                                 }
-                                drawable.setColorFilter(new PorterDuffColorFilter(u02, PorterDuff.Mode.SRC_IN));
-                            } else {
-                                String str2 = hVar.b;
-                                if (str2 != null) {
-                                    drawable = org.telegram.messenger.j6.f(str2);
-                                }
+                                drawable.setColorFilter(new PorterDuffColorFilter(C0, PorterDuff.Mode.SRC_IN));
                             }
                         }
                         pVar2.setStyleIcon(drawable);
                         mVar2.h.setReview(true);
                         mVar2.h.setBusy(true);
-                        gfVar.f(obj, mVar2.H, new h(mVar2, i7));
-                        g0.i3(mVar2.I, 400L);
+                        pfVar.f(obj, mVar2.H, new h(mVar2, i7));
+                        g0.h3(mVar2.I, 400L);
                         break;
                     }
                 }

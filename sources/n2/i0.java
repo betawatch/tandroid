@@ -1,7 +1,7 @@
 package n2;
 
-import a8.ja;
-import a8.ka;
+import a8.la;
+import a8.ma;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.media.AudioAttributes;
@@ -13,20 +13,20 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Pair;
-import c8.g1;
-import h9.s1;
+import c8.k1;
+import h9.t1;
+import hi.u5;
 import j$.util.Objects;
 import java.math.RoundingMode;
 import java.util.List;
-import kg.j1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i0 implements o {
     public final Context a;
     public final s0 b;
     public final l0 c;
-    public final ia.d d;
+    public final u5 d;
     public final float e;
     public h2.r f;
     public h2.g0 g;
@@ -43,7 +43,7 @@ public final class i0 implements o {
         this.c = l0Var;
         this.b = h0Var.c;
         this.h = h0Var.d;
-        this.d = context == null ? null : new ia.d(this, 13);
+        this.d = context == null ? null : new u5(this, 16);
         this.e = h0Var.e;
         this.g = h2.g0.a;
     }
@@ -138,7 +138,7 @@ public final class i0 implements o {
         int i15 = uVar.M;
         int i16 = uVar.K;
         if (Objects.equals(str, "audio/raw")) {
-            ja.f(h2.l0.M(i15));
+            la.f(h2.l0.M(i15));
             intValue = h2.l0.t(i16);
             i7 = h2.l0.u(i15) * i16;
             z10 = false;
@@ -165,7 +165,7 @@ public final class i0 implements o {
                     z12 = true;
                 } else {
                     int minBufferSize = AudioTrack.getMinBufferSize(i14, intValue, i15);
-                    ja.p(minBufferSize != -2);
+                    la.p(minBufferSize != -2);
                     if (i7 == -1) {
                         i7 = 1;
                     }
@@ -180,19 +180,19 @@ public final class i0 implements o {
                             int i17 = i15 == 5 ? 500000 : i15 == 8 ? 1000000 : 250000;
                             if (i10 != -1) {
                                 RoundingMode roundingMode = RoundingMode.CEILING;
-                                j3 = c8.s0.b(i10, 8);
+                                j3 = c8.u0.b(i10, 8);
                             } else {
                                 j3 = f3.b.j(i15);
-                                ja.p(j3 != -2147483647);
+                                la.p(j3 != -2147483647);
                             }
                             d = d2;
-                            i13 = g1.b((i17 * j3) / 1000000);
+                            i13 = k1.b((i17 * j3) / 1000000);
                         } else {
                             d = d2;
                             z12 = true;
                             int j10 = f3.b.j(i15);
-                            ja.p(j10 != -2147483647);
-                            i13 = g1.b((50000000 * j10) / 1000000);
+                            la.p(j10 != -2147483647);
+                            i13 = k1.b((50000000 * j10) / 1000000);
                         }
                         i12 = i7;
                     } else {
@@ -201,7 +201,7 @@ public final class i0 implements o {
                         long j11 = i14;
                         long j12 = i7;
                         i12 = i7;
-                        i13 = h2.l0.i(minBufferSize * 4, g1.b(((250000 * j11) * j12) / 1000000), g1.b(((750000 * j11) * j12) / 1000000));
+                        i13 = h2.l0.i(minBufferSize * 4, k1.b(((250000 * j11) * j12) / 1000000), k1.b(((750000 * j11) * j12) / 1000000));
                     }
                     i11 = (((Math.max(minBufferSize, (int) (i13 * d)) + i12) - 1) / i12) * i12;
                 }
@@ -271,7 +271,7 @@ public final class i0 implements o {
             Context context = eVar.a;
             if (eVar.k) {
                 eVar.h = null;
-                f2.h.d(context).unregisterAudioDeviceCallback(eVar.d);
+                f2.i.d(context).unregisterAudioDeviceCallback(eVar.d);
                 if (Build.VERSION.SDK_INT >= 32 && (dVar = eVar.g) != null) {
                     dVar.e();
                     eVar.g = null;
@@ -294,7 +294,7 @@ public final class i0 implements o {
         f();
         e eVar2 = this.i;
         if (eVar2 == null && (context = this.a) != null) {
-            e eVar3 = new e(context, new ki.e(this, 16), eVar, audioDeviceInfo);
+            e eVar3 = new e(context, new ki.e(this, 17), eVar, audioDeviceInfo);
             this.i = eVar3;
             if (eVar3.k) {
                 b10 = eVar3.h;
@@ -306,12 +306,12 @@ public final class i0 implements o {
                     dVar.a.registerContentObserver(dVar.b, false, dVar);
                 }
                 Context context2 = eVar3.a;
-                AudioManager d = f2.h.d(context2);
+                AudioManager d = f2.i.d(context2);
                 c cVar = eVar3.d;
                 Handler handler = eVar3.c;
                 d.registerAudioDeviceCallback(cVar, handler);
                 if (Build.VERSION.SDK_INT >= 32 && eVar3.g == null) {
-                    eVar3.g = new c3.d(context2, new j1(eVar3, 17), Boolean.valueOf(h2.l0.P(context2)));
+                    eVar3.g = new c3.d(context2, new kg.j0(eVar3, 21), Boolean.valueOf(h2.l0.P(context2)));
                 }
                 b10 = b.b(context2, context2.registerReceiver(eVar3.e, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG"), null, handler), eVar3.j, eVar3.i, eVar3.a());
                 eVar3.h = b10;
@@ -323,7 +323,7 @@ public final class i0 implements o {
                 Context context3 = eVar2.a;
                 e2.e eVar4 = eVar2.j;
                 List a10 = eVar2.a();
-                s1 s1Var = b.e;
+                t1 t1Var = b.e;
                 eVar2.b(b.b(context3, context3.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar4, audioDeviceInfo, a10));
             }
             e eVar5 = this.i;
@@ -332,7 +332,7 @@ public final class i0 implements o {
                 Context context4 = eVar5.a;
                 AudioDeviceInfo audioDeviceInfo2 = eVar5.i;
                 List a11 = eVar5.a();
-                s1 s1Var2 = b.e;
+                t1 t1Var2 = b.e;
                 eVar5.b(b.b(context4, context4.registerReceiver(null, new IntentFilter("android.media.action.HDMI_AUDIO_PLUG")), eVar, audioDeviceInfo2, a11));
             }
         }
@@ -349,7 +349,7 @@ public final class i0 implements o {
         String name = looper == null ? "null" : looper.getThread().getName();
         String name2 = myLooper != null ? myLooper.getThread().getName() : "null";
         if (!z10) {
-            throw new IllegalStateException(ka.a("AudioTrackAudioOutputProvider accessed on multiple threads: %s and %s", name, name2));
+            throw new IllegalStateException(ma.a("AudioTrackAudioOutputProvider accessed on multiple threads: %s and %s", name, name2));
         }
         this.j = myLooper;
     }

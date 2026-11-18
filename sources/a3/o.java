@@ -2,10 +2,10 @@ package a3;
 
 import e2.m1;
 import h9.i0;
-import h9.n1;
-import h9.q1;
+import h9.o1;
+import h9.r1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o extends q implements Comparable {
     public final boolean E;
@@ -50,7 +50,7 @@ public final class o extends q implements Comparable {
         this.s = i12;
         int i18 = str2 != null ? 1088 : nVar.A;
         int i19 = this.d.f;
-        q1 q1Var = s.l;
+        r1 r1Var = s.l;
         int bitCount = (i19 == 0 || i19 != i18) ? Integer.bitCount(i18 & i19) : Integer.MAX_VALUE;
         this.w = bitCount;
         e2.u uVar = this.d;
@@ -82,21 +82,21 @@ public final class o extends q implements Comparable {
         h9.w c10 = h9.w.a.c(this.f, oVar.f);
         Integer valueOf = Integer.valueOf(this.r);
         Integer valueOf2 = Integer.valueOf(oVar.r);
-        n1 n1Var = n1.b;
-        n1 n1Var2 = n1.c;
-        h9.w b10 = c10.b(valueOf, valueOf2, n1Var2);
+        o1 o1Var = o1.b;
+        o1 o1Var2 = o1.c;
+        h9.w b10 = c10.b(valueOf, valueOf2, o1Var2);
         int i7 = oVar.s;
         int i10 = this.s;
         h9.w a10 = b10.a(i10, i7);
         int i11 = oVar.w;
         int i12 = this.w;
-        h9.w c11 = a10.a(i12, i11).b(Integer.valueOf(this.x), Integer.valueOf(oVar.x), n1Var2).c(this.h, oVar.h);
+        h9.w c11 = a10.a(i12, i11).b(Integer.valueOf(this.x), Integer.valueOf(oVar.x), o1Var2).c(this.h, oVar.h);
         Boolean valueOf3 = Boolean.valueOf(this.n);
         Boolean valueOf4 = Boolean.valueOf(oVar.n);
         if (i10 != 0) {
-            n1Var = n1Var2;
+            o1Var = o1Var2;
         }
-        h9.w a11 = c11.b(valueOf3, valueOf4, n1Var).a(this.y, oVar.y);
+        h9.w a11 = c11.b(valueOf3, valueOf4, o1Var).a(this.y, oVar.y);
         if (i12 == 0) {
             a11 = a11.d(this.E, oVar.E);
         }

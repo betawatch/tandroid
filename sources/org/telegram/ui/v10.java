@@ -1,20 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class v10 extends v4.k {
-    public final /* synthetic */ c40 F;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.TextView;
 
-    public v10(c40 c40Var) {
-        this.F = c40Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class v10 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ f40 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v10(f40 f40Var, Context context) {
+        super(context);
+        this.b = f40Var;
+        this.a = new RectF();
     }
 
-    @Override // v4.k
-    public final void P(v4.e1 e1Var) {
-        c40 c40Var = this.F;
-        c40Var.L1.invalidate();
-        c40Var.Z3.invalidate();
-        c40Var.b.invalidate();
-        c40.P0(c40Var);
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), this.b.b3);
+        super.onDraw(canvas);
     }
 }

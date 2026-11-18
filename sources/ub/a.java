@@ -20,7 +20,7 @@ import z7.ma;
 import z7.oa;
 import z7.z6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public volatile Bitmap a;
@@ -30,7 +30,7 @@ public final class a {
     public final int e;
 
     public a(int i7, Bitmap bitmap) {
-        m.g(bitmap);
+        m.h(bitmap);
         this.a = bitmap;
         this.b = bitmap.getWidth();
         this.c = bitmap.getHeight();

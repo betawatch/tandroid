@@ -4,9 +4,9 @@ import android.content.SharedPreferences;
 import android.os.Looper;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a2 {
     public static final j6.b i = new j6.b("FeatureUsageAnalytics", null);
@@ -35,9 +35,9 @@ public final class a2 {
         SharedPreferences sharedPreferences = a2Var.b;
         String num = Integer.toString(a1Var.a);
         SharedPreferences.Editor edit = sharedPreferences.edit();
-        String k10 = r.b.k("feature_usage_timestamp_reported_feature_", num);
+        String k10 = p5.c.k("feature_usage_timestamp_reported_feature_", num);
         if (!sharedPreferences.contains(k10)) {
-            k10 = r.b.k("feature_usage_timestamp_detected_feature_", num);
+            k10 = p5.c.k("feature_usage_timestamp_detected_feature_", num);
         }
         edit.putLong(k10, System.currentTimeMillis()).apply();
         a2Var.f.add(a1Var);
@@ -107,9 +107,9 @@ public final class a2 {
                 return a1.U;
             case 29:
                 return a1.V;
-            case ns.T /* 30 */:
+            case ks.T /* 30 */:
                 return a1.W;
-            case ns.U /* 31 */:
+            case ks.U /* 31 */:
                 return a1.X;
             case 32:
                 return a1.Y;
@@ -149,15 +149,15 @@ public final class a2 {
                 return a1.p0;
             case 50:
                 return a1.q0;
-            case ns.o0 /* 51 */:
+            case ks.o0 /* 51 */:
                 return a1.r0;
-            case ns.p0 /* 52 */:
+            case ks.p0 /* 52 */:
                 return a1.s0;
-            case ns.q0 /* 53 */:
+            case ks.q0 /* 53 */:
                 return a1.t0;
-            case ns.r0 /* 54 */:
+            case ks.r0 /* 54 */:
                 return a1.u0;
-            case ns.s0 /* 55 */:
+            case ks.s0 /* 55 */:
                 return a1.v0;
             default:
                 return null;

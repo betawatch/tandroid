@@ -2,15 +2,15 @@ package hi;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class e9 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ ta b;
 
-    public /* synthetic */ e9(sa saVar, int i7) {
+    public /* synthetic */ e9(ta taVar, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = taVar;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -32,12 +32,12 @@ public final /* synthetic */ class e9 implements ValueAnimator.AnimatorUpdateLis
                 this.b.t1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             default:
-                sa saVar = this.b;
-                saVar.getClass();
-                saVar.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                saVar.n();
-                saVar.r.invalidate();
-                saVar.n.invalidate();
+                ta taVar = this.b;
+                taVar.getClass();
+                taVar.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                taVar.n();
+                taVar.r.invalidate();
+                taVar.n.invalidate();
                 break;
         }
     }

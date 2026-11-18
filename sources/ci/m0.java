@@ -1,10 +1,23 @@
 package ci;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class m0 {
-    public TLRPC.ShareTheme a;
-    public long b;
+    public final String a;
+    public final String b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
+    public final long f;
+    public final boolean g;
+
+    public m0(String str, String str2, boolean z10, boolean z11, boolean z12, long j3, boolean z13) {
+        this.a = str;
+        this.b = str2;
+        this.c = z10;
+        this.d = z11;
+        this.e = z12;
+        this.f = j3;
+        this.g = z13;
+    }
 }

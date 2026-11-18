@@ -1,70 +1,44 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.td0;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p9 implements s10 {
+public final /* synthetic */ class p9 implements q10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ x10 b;
 
-    public /* synthetic */ p9(Object obj, Object obj2, long j3, int i7) {
+    public /* synthetic */ p9(x10 x10Var, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j3;
+        this.b = x10Var;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((bi.z) this.d).a(((v9) this.c).b(this.b), (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                np npVar = (np) this.c;
-                li.i0 i0Var = (li.i0) this.d;
-                TLRPC.Bool bool = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (bool != null) {
-                    npVar.V2(0, this.b, true);
-                }
-                i0Var.a(bool, tL_error);
-                break;
-            case 2:
-                np npVar2 = (np) this.c;
-                li.i0 i0Var2 = (li.i0) this.d;
-                TLRPC.Bool bool2 = (TLRPC.Bool) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                if (bool2 != null) {
-                    npVar2.V2(0, this.b, true);
-                }
-                i0Var2.a(bool2, tL_error2);
-                break;
-            default:
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.c;
-                td0 td0Var = (td0) this.d;
-                TLRPC.auth_Authorization auth_authorization = (TLRPC.auth_Authorization) obj;
-                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                t1Var.dismiss();
-                long j3 = this.b;
-                if (tL_error3 == null) {
-                    td0Var.a(Long.valueOf(j3), auth_authorization, null);
+                TL_stars.starGiftUpgradeAttributes stargiftupgradeattributes = (TL_stars.starGiftUpgradeAttributes) obj;
+                x10 x10Var = this.b;
+                if (stargiftupgradeattributes == null) {
+                    x10Var.a(null);
                     break;
                 } else {
-                    td0Var.a(Long.valueOf(j3), null, tL_error3.text);
+                    x10Var.a(stargiftupgradeattributes.attributes);
+                    break;
+                }
+            default:
+                TLRPC.messages_FoundStickerSets messages_foundstickersets = (TLRPC.messages_FoundStickerSets) obj;
+                boolean z10 = messages_foundstickersets instanceof TLRPC.TL_messages_foundStickerSets;
+                x10 x10Var2 = this.b;
+                if (!z10) {
+                    x10Var2.a(new ArrayList());
+                    break;
+                } else {
+                    x10Var2.a(((TLRPC.TL_messages_foundStickerSets) messages_foundstickersets).sets);
                     break;
                 }
         }
-    }
-
-    public /* synthetic */ p9(np npVar, long j3, s10 s10Var, int i7) {
-        this.a = i7;
-        this.c = npVar;
-        this.b = j3;
-        this.d = s10Var;
     }
 }

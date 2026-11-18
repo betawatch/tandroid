@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.RemoteException;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f0 extends y {
     public final IBinder g;
@@ -23,7 +23,7 @@ public final class f0 extends y {
     public final boolean a() {
         IBinder iBinder = this.g;
         try {
-            m.g(iBinder);
+            m.h(iBinder);
             String interfaceDescriptor = iBinder.getInterfaceDescriptor();
             d dVar = this.h;
             String o4 = dVar.o();

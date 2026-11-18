@@ -1,41 +1,72 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ya extends r1.e {
+public final /* synthetic */ class ya implements r1.c {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ya(int i7) {
+    public /* synthetic */ ya(Object obj, int i7) {
         this.a = i7;
+        this.b = obj;
     }
 
-    @Override // r1.e
-    public final float a(Object obj) {
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
         switch (this.a) {
             case 0:
-                return ((cb) obj).inOutOffset;
-            case 1:
-                return ((org.telegram.ui.le0) obj).O;
-            default:
-                return ((org.telegram.ui.le0) obj).N;
-        }
-    }
-
-    @Override // r1.e
-    public final void b(Object obj, float f10) {
-        switch (this.a) {
-            case 0:
-                ((cb) obj).setInOutOffset(f10);
+                gc gcVar = (gc) this.b;
+                if (gcVar.d == gVar) {
+                    gcVar.d = null;
+                    break;
+                }
                 break;
             case 1:
-                org.telegram.ui.le0 le0Var = (org.telegram.ui.le0) obj;
-                le0Var.O = f10;
-                le0Var.invalidate();
+                ua uaVar = (ua) this.b;
+                if (!z10) {
+                    uaVar.run();
+                    break;
+                }
+                break;
+            case 2:
+                xk xkVar = (xk) this.b;
+                xkVar.m0 = null;
+                xkVar.n0 = 1.0f;
+                xkVar.m0();
+                break;
+            case 3:
+                on0 on0Var = (on0) this.b;
+                on0Var.q = false;
+                on0Var.dismiss();
+                break;
+            case 4:
+                pn0 pn0Var = (pn0) this.b;
+                pn0Var.s = false;
+                pn0Var.r = false;
+                if (!z10) {
+                    gVar.d();
+                }
+                if (gVar == pn0Var.f) {
+                    pn0Var.f = null;
+                    break;
+                }
+                break;
+            case 5:
+                yo0 yo0Var = (yo0) this.b;
+                yo0Var.A1.setVisibility(8);
+                yo0Var.v2.setVisibility(8);
+                wo0 wo0Var = yo0Var.H1;
+                wo0Var.f = null;
+                wo0Var.f();
+                yo0Var.x2 = null;
+                yo0Var.I2 = false;
                 break;
             default:
-                org.telegram.ui.le0 le0Var2 = (org.telegram.ui.le0) obj;
-                le0Var2.N = f10;
-                le0Var2.invalidate();
+                yo0 yo0Var2 = ((ho0) this.b).d;
+                yo0Var2.B1.setVisibility(8);
+                yo0Var2.C1.setVisibility(8);
+                yo0Var2.u2.setVisibility(8);
+                yo0Var2.x2 = null;
                 break;
         }
     }

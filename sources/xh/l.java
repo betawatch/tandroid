@@ -24,29 +24,30 @@ import java.util.Stack;
 import n2.o0;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ou;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.q9;
-import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.Components.l5;
-import org.telegram.ui.Components.lv0;
-import org.telegram.ui.Components.p5;
-import org.telegram.ui.Components.u70;
-import org.telegram.ui.Components.y70;
+import org.telegram.messenger.j6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.r9;
+import org.telegram.ui.Components.f80;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.j80;
+import org.telegram.ui.Components.l80;
+import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.t5;
+import org.telegram.ui.Components.x5;
+import wg.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class l extends TextView implements q9 {
+public class l extends TextView implements r9 {
     public static Field S;
     public static Class T;
     public static Method U;
-    public final e6 E;
+    public final i6 E;
     public CharacterStyle F;
-    public y70 G;
-    public y70 H;
-    public a80 I;
+    public j80 G;
+    public j80 H;
+    public l80 I;
     public PorterDuffColorFilter J;
     public final boolean K;
     public boolean L;
@@ -66,7 +67,7 @@ public class l extends TextView implements q9 {
     public final Path n;
     public boolean r;
     public int s;
-    public l5 w;
+    public t5 w;
     public boolean x;
     public final o0 y;
 
@@ -145,7 +146,7 @@ public class l extends TextView implements q9 {
         if (!z10 && this.O == getLayout() && this.P == length) {
             return;
         }
-        this.w = p5.update(this.s, this, this.w, getLayout());
+        this.w = x5.update(this.s, this, this.w, getLayout());
         this.O = getLayout();
         this.P = length;
     }
@@ -158,26 +159,26 @@ public class l extends TextView implements q9 {
             Layout layout = getLayout();
             ClickableSpan a10 = a((int) motionEvent.getX(), (int) motionEvent.getY());
             if (a10 != null && motionEvent.getAction() == 0) {
-                a80 a80Var = new a80(a10, this.E, motionEvent.getX(), motionEvent.getY(), 0);
-                a80Var.d(j6.w0(j6.Ce, this.E));
-                this.I = a80Var;
-                o0Var.b(a80Var, null);
+                l80 l80Var = new l80(a10, this.E, motionEvent.getX(), motionEvent.getY(), 0);
+                l80Var.d(n6.w0(n6.Ce, this.E));
+                this.I = l80Var;
+                o0Var.b(l80Var, null);
                 SpannableString spannableString = new SpannableString(layout.getText());
                 int spanStart = spannableString.getSpanStart(this.I.i);
                 int spanEnd = spannableString.getSpanEnd(this.I.i);
-                u70 b10 = this.I.b();
+                f80 b10 = this.I.b();
                 b10.d(layout, spanStart, this.K ? 0.0f : getPaddingTop());
                 layout.getSelectionPath(spanStart, spanEnd, b10);
-                g0.i3(new lv0(this, a80Var, a10, 27), ViewConfiguration.getLongPressTimeout());
+                g0.h3(new q(this, l80Var, a10, 1), ViewConfiguration.getLongPressTimeout());
                 return true;
             }
             if (motionEvent.getAction() == 1) {
                 o0Var.f(true);
-                a80 a80Var2 = this.I;
-                if (a80Var2 != null && (characterStyle = a80Var2.i) == a10) {
-                    y70 y70Var = this.G;
-                    if (y70Var != null) {
-                        y70Var.a((ClickableSpan) characterStyle);
+                l80 l80Var2 = this.I;
+                if (l80Var2 != null && (characterStyle = l80Var2.i) == a10) {
+                    j80 j80Var = this.G;
+                    if (j80Var != null) {
+                        j80Var.a((ClickableSpan) characterStyle);
                     } else if (characterStyle != null) {
                         ((ClickableSpan) characterStyle).onClick(this);
                     }
@@ -191,18 +192,18 @@ public class l extends TextView implements q9 {
                 this.I = null;
             }
         }
-        if (this.I == null && !(this.r && ((GestureDetector) ((ou) this.a.d).b).onTouchEvent(motionEvent))) {
+        if (this.I == null && !(this.r && ((GestureDetector) ((hn) this.a.d).b).onTouchEvent(motionEvent))) {
             return super.dispatchTouchEvent(motionEvent);
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Cells.q9
+    @Override // org.telegram.ui.Cells.r9
     public Layout getStaticTextLayout() {
         return getLayout();
     }
 
-    @Override // android.view.View, org.telegram.ui.Cells.p9
+    @Override // android.view.View, org.telegram.ui.Cells.q9
     public final void invalidate() {
         if (!this.Q) {
             this.Q = true;
@@ -279,9 +280,9 @@ public class l extends TextView implements q9 {
                 path.addRect(bounds.left + paddingLeft, bounds.top + paddingTop, bounds.right + paddingLeft, bounds.bottom + paddingTop, Path.Direction.CW);
             }
             canvas.clipPath(path, Region.Op.DIFFERENCE);
-            org.telegram.messenger.j6.n = this.x;
+            j6.n = this.x;
             super.onDraw(canvas);
-            org.telegram.messenger.j6.n = true;
+            j6.n = true;
             canvas.restore();
             f fVar = (f) arrayList2.get(0);
             if (fVar.m > 0.0f && fVar.n > 0.0f) {
@@ -298,7 +299,7 @@ public class l extends TextView implements q9 {
         if (this.w != null) {
             canvas.save();
             canvas.translate(paddingLeft, paddingTop);
-            p5.drawAnimatedEmojis(canvas, getLayout(), this.w, 0.0f, arrayList2, 0.0f, getHeight(), 0.0f, 1.0f, this.J);
+            x5.drawAnimatedEmojis(canvas, getLayout(), this.w, 0.0f, arrayList2, 0.0f, getHeight(), 0.0f, 1.0f, this.J);
             arrayList = arrayList2;
             canvas.restore();
         } else {
@@ -328,7 +329,7 @@ public class l extends TextView implements q9 {
         if (z10) {
             path.rewind();
             ((f) arrayList.get(0)).e(path);
-            canvas2.drawPath(path, j6.Fm);
+            canvas2.drawPath(path, n6.Fm);
         }
         canvas2.restore();
     }
@@ -372,22 +373,22 @@ public class l extends TextView implements q9 {
             o0 o0Var = this.y;
             o0Var.g();
             this.F = characterStyle;
-            d80 k10 = o0.k(getLayout(), characterStyle, getPaddingTop());
+            o80 k10 = o0.k(getLayout(), characterStyle, getPaddingTop());
             if (k10 != null) {
-                int w02 = j6.w0(j6.Ce, this.E);
-                k10.g(j6.r1(0.8f, w02), j6.r1(1.3f, w02), j6.r1(1.0f, w02), j6.r1(4.0f, w02));
+                int w02 = n6.w0(n6.Ce, this.E);
+                k10.g(n6.r1(0.8f, w02), n6.r1(1.3f, w02), n6.r1(1.0f, w02), n6.r1(4.0f, w02));
                 k10.x.setStrokeWidth(g0.N(1.25f));
                 o0Var.c(k10, null);
             }
         }
     }
 
-    public void setOnLinkLongPressListener(y70 y70Var) {
-        this.H = y70Var;
+    public void setOnLinkLongPressListener(j80 j80Var) {
+        this.H = j80Var;
     }
 
-    public void setOnLinkPressListener(y70 y70Var) {
-        this.G = y70Var;
+    public void setOnLinkPressListener(j80 j80Var) {
+        this.G = j80Var;
     }
 
     @Override // android.widget.TextView
@@ -409,7 +410,7 @@ public class l extends TextView implements q9 {
         this.x = z10;
     }
 
-    public l(Context context, e6 e6Var, boolean z10) {
+    public l(Context context, i6 i6Var, boolean z10) {
         super(context);
         ArrayList arrayList = new ArrayList();
         this.b = arrayList;
@@ -421,7 +422,7 @@ public class l extends TextView implements q9 {
         this.K = true;
         this.O = null;
         this.y = new o0(this);
-        this.E = e6Var;
+        this.E = i6Var;
         this.a = new gf.c(this, arrayList, new z(12, this, z10));
     }
 

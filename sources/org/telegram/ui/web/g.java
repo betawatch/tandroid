@@ -9,29 +9,30 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import java.net.URLDecoder;
 import java.text.BreakIterator;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j6;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c3;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.ActionBar.g3;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g extends a41 {
+public final class g extends k41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        a41.h(new g());
+        k41.h(new g());
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(20:89|(1:91)(1:147)|92|(1:(15:137|138|139|140|141|(5:125|(1:127)(1:132)|128|(1:130)|131)(1:101)|102|103|104|105|106|107|(1:109)|110|111)(1:136))(1:96)|97|(1:99)|125|(0)(0)|128|(0)|131|102|103|104|105|106|107|(0)|110|111) */
@@ -97,11 +98,11 @@ public final class g extends a41 {
     /* JADX WARN: Removed duplicated region for block: B:59:0x016d  */
     /* JADX WARN: Removed duplicated region for block: B:61:0x0157  */
     /* JADX WARN: Removed duplicated region for block: B:99:0x02da  */
-    @Override // org.telegram.ui.Components.a41
+    @Override // org.telegram.ui.Components.k41
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
         FrameLayout.LayoutParams layoutParams;
         Bitmap bitmap;
         boolean z11;
@@ -110,15 +111,15 @@ public final class g extends a41 {
         Bitmap bitmap2;
         String str2;
         h hVar = (h) view;
-        Object obj = b41Var.H;
-        if (!(obj instanceof gj)) {
+        Object obj = l41Var.I;
+        if (!(obj instanceof fj)) {
             if (obj instanceof w0) {
                 w0 w0Var = (w0) obj;
-                CharSequence charSequence = b41Var.m;
+                CharSequence charSequence = l41Var.n;
                 String charSequence2 = charSequence == null ? null : charSequence.toString();
                 FrameLayout.LayoutParams layoutParams2 = hVar.d;
-                e6 e6Var = hVar.a;
-                i9 i9Var = hVar.b;
+                i6 i6Var = hVar.a;
+                q9 q9Var = hVar.b;
                 TextView textView = hVar.f;
                 TextView textView2 = hVar.e;
                 hVar.updateColors();
@@ -144,12 +145,12 @@ public final class g extends a41 {
                                 }
                                 BreakIterator characterInstance = BreakIterator.getCharacterInstance();
                                 characterInstance.setText(r1);
-                                fq fqVar = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance.first(), characterInstance.next()), 1));
+                                mq mqVar = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance.first(), characterInstance.next()), 1));
                                 int L = org.telegram.messenger.g0.L(28.0f);
                                 int L2 = org.telegram.messenger.g0.L(28.0f);
-                                fqVar.h = L;
-                                fqVar.n = L2;
-                                i9Var.setImageDrawable(fqVar);
+                                mqVar.h = L;
+                                mqVar.n = L2;
+                                q9Var.setImageDrawable(mqVar);
                                 hVar.n.setVisibility(8);
                                 Uri parse = Uri.parse(str3);
                                 String str5 = vf.c.w(parse, null, null, vf.c.a(parse.getHost()), null);
@@ -157,9 +158,9 @@ public final class g extends a41 {
                                 textView.setText(str6);
                                 if (!TextUtils.isEmpty(charSequence2)) {
                                 }
-                                textView2.setText(org.telegram.messenger.j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
-                                textView.setText(org.telegram.messenger.j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                                hVar.h.setText(hd.E0().p0().format(w0Var.b));
+                                textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
+                                textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
+                                hVar.h.setText(gd.E0().p0().format(w0Var.b));
                                 hVar.r.a(false, false);
                                 FrameLayout.LayoutParams layoutParams3 = layoutParams;
                                 layoutParams3.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -175,14 +176,14 @@ public final class g extends a41 {
                             String charSequence3 = textView2.getText() == null ? "" : textView2.getText().toString();
                             BreakIterator characterInstance2 = BreakIterator.getCharacterInstance();
                             characterInstance2.setText(charSequence3);
-                            fq fqVar2 = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance2.first(), characterInstance2.next()), 1));
+                            mq mqVar2 = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance2.first(), characterInstance2.next()), 1));
                             int L3 = org.telegram.messenger.g0.L(28.0f);
                             int L22 = org.telegram.messenger.g0.L(28.0f);
-                            fqVar2.h = L3;
-                            fqVar2.n = L22;
-                            i9Var.setImageDrawable(fqVar2);
+                            mqVar2.h = L3;
+                            mqVar2.n = L22;
+                            q9Var.setImageDrawable(mqVar2);
                         } else {
-                            i9Var.setImageBitmap(bitmap);
+                            q9Var.setImageBitmap(bitmap);
                         }
                         hVar.n.setVisibility(8);
                         Uri parse2 = Uri.parse(str3);
@@ -190,12 +191,12 @@ public final class g extends a41 {
                         String str62 = URLDecoder.decode(str52.replaceAll("\\+", "%2b"), "UTF-8");
                         textView.setText(str62);
                         if (!TextUtils.isEmpty(charSequence2)) {
-                            textView2.setText(org.telegram.messenger.g0.w1(textView2.getText(), charSequence2, e6Var));
-                            textView.setText(org.telegram.messenger.g0.w1(textView.getText(), charSequence2, e6Var));
+                            textView2.setText(org.telegram.messenger.g0.w1(textView2.getText(), charSequence2, i6Var));
+                            textView.setText(org.telegram.messenger.g0.w1(textView.getText(), charSequence2, i6Var));
                         }
-                        textView2.setText(org.telegram.messenger.j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
-                        textView.setText(org.telegram.messenger.j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                        hVar.h.setText(hd.E0().p0().format(w0Var.b));
+                        textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
+                        textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
+                        hVar.h.setText(gd.E0().p0().format(w0Var.b));
                         hVar.r.a(false, false);
                         FrameLayout.LayoutParams layoutParams32 = layoutParams;
                         layoutParams32.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -213,12 +214,12 @@ public final class g extends a41 {
                 }
                 BreakIterator characterInstance22 = BreakIterator.getCharacterInstance();
                 characterInstance22.setText(charSequence3);
-                fq fqVar22 = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance22.first(), characterInstance22.next()), 1));
+                mq mqVar22 = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, charSequence3.isEmpty() ? "" : charSequence3.substring(characterInstance22.first(), characterInstance22.next()), 1));
                 int L32 = org.telegram.messenger.g0.L(28.0f);
                 int L222 = org.telegram.messenger.g0.L(28.0f);
-                fqVar22.h = L32;
-                fqVar22.n = L222;
-                i9Var.setImageDrawable(fqVar22);
+                mqVar22.h = L32;
+                mqVar22.n = L222;
+                q9Var.setImageDrawable(mqVar22);
                 hVar.n.setVisibility(8);
                 Uri parse22 = Uri.parse(str3);
                 String str522 = vf.c.w(parse22, null, null, vf.c.a(parse22.getHost()), null);
@@ -226,9 +227,9 @@ public final class g extends a41 {
                 textView.setText(str622);
                 if (!TextUtils.isEmpty(charSequence2)) {
                 }
-                textView2.setText(org.telegram.messenger.j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
-                textView.setText(org.telegram.messenger.j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
-                hVar.h.setText(hd.E0().p0().format(w0Var.b));
+                textView2.setText(j6.m(textView2.getText(), textView2.getPaint().getFontMetricsInt(), false, null, 0));
+                textView.setText(j6.m(textView.getText(), textView.getPaint().getFontMetricsInt(), false, null, 0));
+                hVar.h.setText(gd.E0().p0().format(w0Var.b));
                 hVar.r.a(false, false);
                 FrameLayout.LayoutParams layoutParams322 = layoutParams;
                 layoutParams322.rightMargin = org.telegram.messenger.g0.L(70.0f);
@@ -239,19 +240,19 @@ public final class g extends a41 {
             }
             return;
         }
-        gj gjVar = (gj) obj;
-        boolean z12 = b41Var.q;
-        CharSequence charSequence4 = b41Var.m;
+        fj fjVar = (fj) obj;
+        boolean z12 = l41Var.r;
+        CharSequence charSequence4 = l41Var.n;
         String charSequence5 = charSequence4 == null ? null : charSequence4.toString();
-        boolean z13 = b41Var.e;
+        boolean z13 = l41Var.e;
         FrameLayout.LayoutParams layoutParams4 = hVar.d;
-        e6 e6Var2 = hVar.a;
+        i6 i6Var2 = hVar.a;
         TextView textView3 = hVar.f;
-        i9 i9Var2 = hVar.b;
+        q9 q9Var2 = hVar.b;
         TextView textView4 = hVar.e;
         hVar.updateColors();
-        TLRPC.WebPage webPage = gj.m1(gjVar) != null ? gj.m1(gjVar).webpage : null;
-        String a10 = webPage != null ? webPage.url : k.a(gjVar);
+        TLRPC.WebPage webPage = fj.m1(fjVar) != null ? fj.m1(fjVar).webpage : null;
+        String a10 = webPage != null ? webPage.url : k.a(fjVar);
         z1 a11 = a2.b().a(org.telegram.messenger.g0.K0(a10, true));
         if (webPage != null && (str2 = webPage.title) != null) {
             textView4.setText(str2);
@@ -271,7 +272,7 @@ public final class g extends a41 {
                         textView4.setText(sb3.toString());
                     } catch (Exception unused3) {
                         textView4.setText("");
-                        i9Var2.b();
+                        q9Var2.b();
                         if (a11 == null) {
                         }
                         if (webPage != null) {
@@ -280,24 +281,24 @@ public final class g extends a41 {
                         }
                         BreakIterator characterInstance3 = BreakIterator.getCharacterInstance();
                         characterInstance3.setText(r1);
-                        fq fqVar3 = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance3.first(), characterInstance3.next()), 0));
+                        mq mqVar3 = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, r1.isEmpty() ? "" : r1.substring(characterInstance3.first(), characterInstance3.next()), 0));
                         int L4 = org.telegram.messenger.g0.L(28.0f);
                         int L5 = org.telegram.messenger.g0.L(28.0f);
-                        fqVar3.h = L4;
-                        fqVar3.n = L5;
-                        i9Var2.setImageDrawable(fqVar3);
+                        mqVar3.h = L4;
+                        mqVar3.n = L5;
+                        q9Var2.setImageDrawable(mqVar3);
                         hVar.h.setVisibility(8);
                         hVar.n.setVisibility(z12 ? 0 : 8);
-                        String a12 = webPage != null ? webPage.url : k.a(gjVar);
+                        String a12 = webPage != null ? webPage.url : k.a(fjVar);
                         Uri parse3 = Uri.parse(a12);
                         a12 = vf.c.w(parse3, null, null, vf.c.a(parse3.getHost()), null);
                         a12 = URLDecoder.decode(a12.replaceAll("\\+", "%2b"), "UTF-8");
-                        String str8 = c3.p(a12);
+                        String str8 = g3.p(a12);
                         textView3.setText(str8);
                         if (!TextUtils.isEmpty(charSequence5)) {
                         }
-                        textView4.setText(org.telegram.messenger.j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
-                        textView3.setText(org.telegram.messenger.j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
+                        textView4.setText(j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
+                        textView3.setText(j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
                         hVar.r.a(z11, false);
                         layoutParams4.rightMargin = org.telegram.messenger.g0.L(52.0f);
                         hVar.c.setLayoutParams(layoutParams4);
@@ -307,36 +308,36 @@ public final class g extends a41 {
                 } catch (Exception unused4) {
                     z11 = z13;
                 }
-                i9Var2.b();
+                q9Var2.b();
                 if (a11 == null && (bitmap2 = a11.i) != null) {
-                    i9Var2.setImageBitmap(bitmap2);
+                    q9Var2.setImageBitmap(bitmap2);
                 } else if (webPage != null || (photo = webPage.photo) == null) {
                     String charSequence6 = textView4.getText() == null ? "" : textView4.getText().toString();
                     BreakIterator characterInstance32 = BreakIterator.getCharacterInstance();
                     characterInstance32.setText(charSequence6);
-                    fq fqVar32 = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance32.first(), characterInstance32.next()), 0));
+                    mq mqVar32 = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance32.first(), characterInstance32.next()), 0));
                     int L42 = org.telegram.messenger.g0.L(28.0f);
                     int L52 = org.telegram.messenger.g0.L(28.0f);
-                    fqVar32.h = L42;
-                    fqVar32.n = L52;
-                    i9Var2.setImageDrawable(fqVar32);
+                    mqVar32.h = L42;
+                    mqVar32.n = L52;
+                    q9Var2.setImageDrawable(mqVar32);
                 } else {
-                    i9Var2.l(gc.i(w7.w(photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, true), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), gc.i(w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, false), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), 0, gjVar);
+                    q9Var2.l(fc.i(w7.w(photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, true), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), fc.i(w7.w(webPage.photo.sizes, org.telegram.messenger.g0.L(32.0f), true, null, false), webPage.photo), org.telegram.messenger.g0.L(32.0f) + "_" + org.telegram.messenger.g0.L(32.0f), 0, fjVar);
                 }
                 hVar.h.setVisibility(8);
                 hVar.n.setVisibility(z12 ? 0 : 8);
-                String a122 = webPage != null ? webPage.url : k.a(gjVar);
+                String a122 = webPage != null ? webPage.url : k.a(fjVar);
                 Uri parse32 = Uri.parse(a122);
                 a122 = vf.c.w(parse32, null, null, vf.c.a(parse32.getHost()), null);
                 a122 = URLDecoder.decode(a122.replaceAll("\\+", "%2b"), "UTF-8");
-                String str82 = c3.p(a122);
+                String str82 = g3.p(a122);
                 textView3.setText(str82);
                 if (!TextUtils.isEmpty(charSequence5)) {
-                    textView4.setText(org.telegram.messenger.g0.w1(textView4.getText(), charSequence5, e6Var2));
-                    textView3.setText(org.telegram.messenger.g0.w1(textView3.getText(), charSequence5, e6Var2));
+                    textView4.setText(org.telegram.messenger.g0.w1(textView4.getText(), charSequence5, i6Var2));
+                    textView3.setText(org.telegram.messenger.g0.w1(textView3.getText(), charSequence5, i6Var2));
                 }
-                textView4.setText(org.telegram.messenger.j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
-                textView3.setText(org.telegram.messenger.j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
+                textView4.setText(j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
+                textView3.setText(j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
                 hVar.r.a(z11, false);
                 layoutParams4.rightMargin = org.telegram.messenger.g0.L(52.0f);
                 hVar.c.setLayoutParams(layoutParams4);
@@ -346,7 +347,7 @@ public final class g extends a41 {
             textView4.setText(a11.d);
         }
         z11 = z13;
-        i9Var2.b();
+        q9Var2.b();
         if (a11 == null) {
         }
         if (webPage != null) {
@@ -355,24 +356,24 @@ public final class g extends a41 {
         }
         BreakIterator characterInstance322 = BreakIterator.getCharacterInstance();
         characterInstance322.setText(charSequence6);
-        fq fqVar322 = new fq(j6.d0(org.telegram.messenger.g0.L(6.0f), j6.r1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance322.first(), characterInstance322.next()), 0));
+        mq mqVar322 = new mq(n6.d0(org.telegram.messenger.g0.L(6.0f), n6.r1(0.1f, hVar.s)), new f(hVar, charSequence6.isEmpty() ? "" : charSequence6.substring(characterInstance322.first(), characterInstance322.next()), 0));
         int L422 = org.telegram.messenger.g0.L(28.0f);
         int L522 = org.telegram.messenger.g0.L(28.0f);
-        fqVar322.h = L422;
-        fqVar322.n = L522;
-        i9Var2.setImageDrawable(fqVar322);
+        mqVar322.h = L422;
+        mqVar322.n = L522;
+        q9Var2.setImageDrawable(mqVar322);
         hVar.h.setVisibility(8);
         hVar.n.setVisibility(z12 ? 0 : 8);
-        String a1222 = webPage != null ? webPage.url : k.a(gjVar);
+        String a1222 = webPage != null ? webPage.url : k.a(fjVar);
         Uri parse322 = Uri.parse(a1222);
         a1222 = vf.c.w(parse322, null, null, vf.c.a(parse322.getHost()), null);
         a1222 = URLDecoder.decode(a1222.replaceAll("\\+", "%2b"), "UTF-8");
-        String str822 = c3.p(a1222);
+        String str822 = g3.p(a1222);
         textView3.setText(str822);
         if (!TextUtils.isEmpty(charSequence5)) {
         }
-        textView4.setText(org.telegram.messenger.j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
-        textView3.setText(org.telegram.messenger.j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
+        textView4.setText(j6.m(textView4.getText(), textView4.getPaint().getFontMetricsInt(), false, null, 0));
+        textView3.setText(j6.m(textView3.getText(), textView3.getPaint().getFontMetricsInt(), false, null, 0));
         hVar.r.a(z11, false);
         layoutParams4.rightMargin = org.telegram.messenger.g0.L(52.0f);
         hVar.c.setLayoutParams(layoutParams4);
@@ -380,18 +381,18 @@ public final class g extends a41 {
         hVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final boolean c(b41 b41Var, b41 b41Var2) {
-        return b41Var.H == b41Var2.H && TextUtils.equals(b41Var.m, b41Var2.m);
+    @Override // org.telegram.ui.Components.k41
+    public final boolean c(l41 l41Var, l41 l41Var2) {
+        return l41Var.I == l41Var2.I && TextUtils.equals(l41Var.n, l41Var2.n);
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        return new h(context, e6Var);
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        return new h(context, i6Var);
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final boolean e(b41 b41Var, b41 b41Var2) {
-        return b41Var.H == b41Var2.H && TextUtils.isEmpty(b41Var.m) == TextUtils.isEmpty(b41Var2.m);
+    @Override // org.telegram.ui.Components.k41
+    public final boolean e(l41 l41Var, l41 l41Var2) {
+        return l41Var.I == l41Var2.I && TextUtils.isEmpty(l41Var.n) == TextUtils.isEmpty(l41Var2.n);
     }
 }

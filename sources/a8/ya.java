@@ -2,15 +2,15 @@ package a8;
 
 import c8.xf;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ya implements ua.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o5.r b;
+    public final /* synthetic */ o5.q b;
 
-    public /* synthetic */ ya(o5.r rVar, int i7) {
+    public /* synthetic */ ya(o5.q qVar, int i7) {
         this.a = i7;
-        this.b = rVar;
+        this.b = qVar;
     }
 
     @Override // ua.b

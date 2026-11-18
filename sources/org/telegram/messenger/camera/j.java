@@ -1,12 +1,11 @@
 package org.telegram.messenger.camera;
 
 import android.hardware.Camera;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements Camera.AutoFocusCallback {
-    @Override // android.hardware.Camera.AutoFocusCallback
-    public final void onAutoFocus(boolean z10, Camera camera) {
-        CameraSession.lambda$new$0(z10, camera);
+public abstract /* synthetic */ class j {
+    public static void a(CameraController.ErrorCallback errorCallback, int i7, Camera camera, CameraSessionWrapper cameraSessionWrapper) {
     }
 }

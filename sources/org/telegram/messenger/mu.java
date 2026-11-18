@@ -1,203 +1,94 @@
 package org.telegram.messenger;
 
-import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.beta.R;
+import java.io.File;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class mu extends cu {
-    public static Paint e0;
-    public final TL_iv.pageBlockMap X;
-    public final ImageReceiver Y;
-    public final int Z;
-    public final int a0;
-    public final int b0;
-    public boolean c0;
-    public Drawable d0;
+public final class mu extends lu {
+    public final TL_iv.pageBlockPhoto r0;
+    public final TLRPC.Photo s0;
+    public final TLRPC.PhotoSize t0;
+    public final TLRPC.TL_photoStrippedSize u0;
 
-    public mu(iv ivVar, Rect rect, int i7, TL_iv.pageBlockMap pageblockmap) {
-        super(ivVar, rect, i7);
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.Y = imageReceiver;
-        this.X = pageblockmap;
-        imageReceiver.A1 = true;
-        int i10 = pageblockmap.w;
-        i10 = i10 <= 0 ? 100 : i10;
-        int i11 = pageblockmap.h;
-        int i12 = i11 > 0 ? i11 : 100;
-        int i13 = this.c;
-        int max = (int) ((i13 / Math.max(1, i10)) * i12);
+    public mu(ev evVar, Rect rect, int i7, TL_iv.pageBlockPhoto pageblockphoto, boolean z10) {
+        super(evVar, rect, i7, z10);
+        this.r0 = pageblockphoto;
+        TLRPC.Photo v = evVar.v(pageblockphoto.photo_id);
+        this.s0 = v;
+        if (v != null) {
+            this.t0 = w7.w(v.sizes, g0.Z0(false), false, null, false);
+            this.u0 = w7.Q(v.sizes);
+        } else {
+            this.t0 = null;
+            this.u0 = null;
+        }
+        TLRPC.PhotoSize photoSize = this.t0;
+        int i10 = photoSize != null ? photoSize.w : 100;
+        int i11 = photoSize != null ? photoSize.h : 100;
+        int i12 = this.c;
+        int max = (int) ((i12 / Math.max(1, i10)) * i11);
         Point point = g0.q;
         int max2 = (int) (Math.max(point.x, point.y) * 0.55f);
         if (max > max2) {
-            i13 = (int) ((max2 / Math.max(1, i12)) * i10);
+            i12 = (int) ((max2 / Math.max(1, i11)) * i10);
             max = max2;
         }
-        this.Z = i13;
-        this.a0 = max;
-        float f10 = i13;
-        float f11 = max;
-        imageReceiver.y0(0.0f, 0.0f, f10, f11);
-        iv ivVar2 = this.a;
-        if (pageblockmap.geo == null) {
+        this.c0 = i12;
+        this.d0 = max;
+        m0();
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final void j0(boolean z10) {
+        TLRPC.PhotoSize photoSize;
+        TLRPC.Photo photo = this.s0;
+        if (photo == null || (photoSize = this.t0) == null) {
             return;
         }
-        int i14 = ivVar2.a;
-        int i15 = np.s1(i14).n3;
-        this.b0 = i15;
-        float f12 = g0.p;
-        int i16 = (int) (f10 / f12);
-        int i17 = (int) (f11 / f12);
-        int i18 = pageblockmap.zoom;
-        int i19 = i18 <= 0 ? 15 : i18;
-        if (i15 == 2) {
-            imageReceiver.q0(gc.p(k20.b(pageblockmap.geo, i16, i17, i19, Math.min(2, (int) Math.ceil(f12)))), null, null, null, ivVar2.b, 0);
-        } else {
-            TLRPC.GeoPoint geoPoint = pageblockmap.geo;
-            imageReceiver.o0(g0.e0(i14, geoPoint.lat, geoPoint._long, i16, i17, true, i19, -1), null, null, null, 0L);
-        }
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final int I() {
-        Rect rect = this.b;
-        return rect.top + this.a0 + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final int J() {
-        return K();
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final int K() {
-        Rect rect = this.b;
-        return rect.left + this.Z + rect.right;
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final void T() {
-        View view = this.W;
+        TLRPC.TL_photoStrippedSize tL_photoStrippedSize = this.u0;
+        fc i7 = tL_photoStrippedSize != null ? fc.i(tL_photoStrippedSize, photo) : null;
+        ev evVar = this.a;
         ImageReceiver imageReceiver = this.Y;
-        imageReceiver.H0(view);
-        imageReceiver.P();
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final void V() {
-        this.Y.R();
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final void W(Canvas canvas) {
-        Canvas canvas2;
-        View view;
-        if (e0 == null) {
-            e0 = new Paint(1);
-        }
-        Paint paint = e0;
-        int i7 = org.telegram.ui.ActionBar.j6.gf;
-        iv ivVar = this.a;
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(i7, ivVar.D));
-        boolean R = R();
-        boolean D = ivVar.D();
-        int i10 = 0;
-        int i11 = (R || D) ? 0 : ivVar.S;
-        if (!R && !D) {
-            i10 = ivVar.T;
-        }
-        ImageReceiver imageReceiver = this.Y;
-        int i12 = this.a0;
-        int i13 = this.Z;
-        if (D) {
-            RectF rectF = g0.P;
-            rectF.set(0.0f, 0.0f, i13, i12);
-            canvas.drawRoundRect(rectF, g0.L(12.0f), g0.L(12.0f), e0);
-            imageReceiver.J0(g0.L(12.0f));
-            canvas2 = canvas;
+        if (z10) {
+            imageReceiver.u0(null, null, fc.i(photoSize, photo), null, i7, "b1", null, photoSize.size, null, evVar.b, 1);
         } else {
-            canvas2 = canvas;
-            canvas2.drawRect(-i11, 0.0f, i13 + i10, i12, e0);
-        }
-        Drawable drawable = org.telegram.ui.ActionBar.j6.S4[ivVar.E() ? 1 : 0];
-        if (drawable != null) {
-            int intrinsicWidth = drawable.getIntrinsicWidth();
-            int intrinsicHeight = drawable.getIntrinsicHeight();
-            int i14 = (i13 - intrinsicWidth) / 2;
-            int i15 = (i12 - intrinsicHeight) / 2;
-            drawable.setBounds(i14, i15, intrinsicWidth + i14, intrinsicHeight + i15);
-            drawable.draw(canvas2);
-        }
-        imageReceiver.y0(-i11, 0.0f, i11 + i13 + i10, i12);
-        imageReceiver.h(canvas2, null);
-        if (this.b0 == 2 && imageReceiver.L()) {
-            if (this.d0 == null && (view = this.W) != null) {
-                this.d0 = view.getContext().getDrawable(R.drawable.map_pin).mutate();
-            }
-            if (this.d0 != null) {
-                int intrinsicWidth2 = (int) (r15.getIntrinsicWidth() * 0.8f);
-                int intrinsicHeight2 = (int) (this.d0.getIntrinsicHeight() * 0.8f);
-                int i16 = (i13 - intrinsicWidth2) / 2;
-                int i17 = (i12 / 2) - intrinsicHeight2;
-                this.d0.setAlpha((int) (imageReceiver.i1 * 255.0f));
-                this.d0.setBounds(i16, i17, intrinsicWidth2 + i16, intrinsicHeight2 + i17);
-                this.d0.draw(canvas2);
-            }
+            imageReceiver.u0(null, null, null, null, i7, "b1", null, photoSize.size, null, evVar.b, 1);
         }
     }
 
-    @Override // org.telegram.messenger.cu
-    public final boolean Y(MotionEvent motionEvent) {
-        View view;
-        int actionMasked = motionEvent.getActionMasked();
-        float x10 = motionEvent.getX();
-        Rect rect = this.b;
-        float f10 = x10 - rect.left;
-        float y10 = motionEvent.getY() - rect.top;
-        boolean z10 = f10 >= 0.0f && f10 <= ((float) this.Z) && y10 >= 0.0f && y10 <= ((float) this.a0);
-        if (actionMasked == 0) {
-            if (z10) {
-                this.c0 = true;
-                return true;
-            }
-        } else {
-            if (actionMasked != 1) {
-                if (actionMasked == 3) {
-                    this.c0 = false;
-                }
-                return this.c0;
-            }
-            if (this.c0) {
-                this.c0 = false;
-                if (z10) {
-                    TL_iv.pageBlockMap pageblockmap = this.X;
-                    if (pageblockmap.geo != null && (view = this.W) != null) {
-                        view.playSoundEffect(0);
-                        try {
-                            TLRPC.GeoPoint geoPoint = pageblockmap.geo;
-                            double d = geoPoint.lat;
-                            double d2 = geoPoint._long;
-                            this.W.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("geo:" + d + "," + d2 + "?q=" + d + "," + d2)));
-                            return true;
-                        } catch (Exception e10) {
-                            a8.g(e10, true);
-                            return true;
-                        }
-                    }
-                }
+    @Override // org.telegram.messenger.lu
+    public final boolean l0() {
+        TLRPC.PhotoSize photoSize = this.t0;
+        if (photoSize != null) {
+            ev evVar = this.a;
+            w7.G(evVar.a);
+            File J = w7.J(photoSize, null, true, true);
+            w7.G(evVar.a);
+            File J2 = w7.J(photoSize, null, false, true);
+            if (!J.exists() && (J2 == null || !J2.exists())) {
+                return false;
             }
         }
-        return false;
+        return true;
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final TL_iv.PageBlock n0() {
+        return this.r0;
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final String o0() {
+        return w7.r(null, this.t0);
+    }
+
+    @Override // org.telegram.messenger.lu
+    public final boolean r0() {
+        TL_iv.pageBlockPhoto pageblockphoto = this.r0;
+        return pageblockphoto != null && pageblockphoto.spoiler;
     }
 }

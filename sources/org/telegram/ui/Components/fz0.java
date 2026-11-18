@@ -1,96 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.TextureView;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.ArrayList;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fz0 extends TextureView {
-    public static Boolean f;
-    public dz0 a;
-    public final zy0 b;
-    public final ArrayList c;
-    public Runnable d;
-    public boolean e;
-
-    public fz0(Context context, Runnable runnable) {
-        super(context);
-        this.b = new zy0(this, 0);
-        this.c = new ArrayList();
-        this.d = runnable;
-        setOpaque(false);
-        setSurfaceTextureListener(new z30(this, 1));
-    }
-
-    public static void b(Runnable runnable) {
-        if (runnable == null) {
-            return;
-        }
-        if (Thread.currentThread() != Looper.getMainLooper().getThread()) {
-            org.telegram.messenger.g0.h3(runnable);
-        } else {
-            runnable.run();
+public class fz0 extends ViewSwitcher {
+    public final void a(CharSequence charSequence, boolean z10, boolean z11) {
+        if (z11 || !TextUtils.equals(charSequence, getCurrentView().getText())) {
+            if (!z10) {
+                getCurrentView().setText(charSequence);
+            } else {
+                getNextView().setText(charSequence);
+                showNext();
+            }
         }
     }
 
-    public static boolean c() {
-        if (f == null) {
-            f = Boolean.valueOf(org.telegram.messenger.np.e1().getBoolean("nothanos", false));
+    @Override // android.widget.ViewSwitcher, android.widget.ViewAnimator, android.view.ViewGroup
+    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
+        if (!(view instanceof TextView)) {
+            throw new IllegalArgumentException();
         }
-        Boolean bool = f;
-        return bool == null || !bool.booleanValue();
+        super.addView(view, i7, layoutParams);
     }
 
-    public final void a(View view) {
-        int i7 = 0;
-        int i10 = 0;
-        boolean z10 = false;
-        while (true) {
-            ArrayList arrayList = this.c;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            ez0 ez0Var = (ez0) arrayList.get(i10);
-            if (ez0Var.a == view) {
-                Runnable runnable = ez0Var.d;
-                if (runnable != null) {
-                    b(runnable);
-                    ez0Var.d = null;
-                }
-                arrayList.remove(i10);
-                i10--;
-                z10 = true;
-            }
-            i10++;
-        }
-        if (z10) {
-            return;
-        }
-        dz0 dz0Var = this.a;
-        ArrayList arrayList2 = dz0Var.X;
-        if (dz0Var.b.get()) {
-            Handler handler = dz0Var.getHandler();
-            if (handler != null) {
-                handler.sendMessage(handler.obtainMessage(5, view));
-                return;
-            }
-            while (i7 < arrayList2.size()) {
-                cz0 cz0Var = (cz0) arrayList2.get(i7);
-                if (cz0Var.a.contains(view)) {
-                    Runnable runnable2 = cz0Var.f;
-                    if (runnable2 != null) {
-                        b(runnable2);
-                        cz0Var.f = null;
-                    }
-                    arrayList2.remove(i7);
-                    i7--;
-                }
-                i7++;
-            }
-        }
+    public void setText(CharSequence charSequence) {
+        a(charSequence, true, false);
+    }
+
+    @Override // android.widget.ViewAnimator
+    public TextView getCurrentView() {
+        return (TextView) super.getCurrentView();
+    }
+
+    @Override // android.widget.ViewSwitcher
+    public TextView getNextView() {
+        return (TextView) super.getNextView();
     }
 }

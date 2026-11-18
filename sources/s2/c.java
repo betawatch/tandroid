@@ -1,14 +1,14 @@
 package s2;
 
-import a8.ja;
+import a8.la;
 import android.net.Uri;
 import android.os.SystemClock;
-import h9.g2;
+import h9.h2;
 import h9.i0;
 import h9.t0;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public final w a;
@@ -19,7 +19,7 @@ public final class c {
         this.c = dVar;
         this.a = wVar;
         HashMap hashMap = new HashMap();
-        g2 it = t0.q(wVar.b.keySet()).iterator();
+        h2 it = t0.q(wVar.b.keySet()).iterator();
         while (it.hasNext()) {
             String str = (String) it.next();
             Uri uri = (Uri) wVar.b.get(str);
@@ -30,20 +30,20 @@ public final class c {
     }
 
     public static m a(c cVar, Uri uri) {
-        b bVar = (b) r.b.i(cVar.b, uri, uri);
+        b bVar = (b) p5.c.i(cVar.b, uri, uri);
         bVar.getClass();
         return bVar.e;
     }
 
     public static void b(c cVar, Uri uri, boolean z10) {
-        b bVar = (b) r.b.i(cVar.b, uri, uri);
+        b bVar = (b) p5.c.i(cVar.b, uri, uri);
         bVar.getClass();
         bVar.c(z10 ? bVar.a() : bVar.a);
     }
 
     public static boolean c(c cVar, Uri uri, long j3) {
         HashMap hashMap = cVar.b;
-        b bVar = (b) r.b.i(hashMap, uri, uri);
+        b bVar = (b) p5.c.i(hashMap, uri, uri);
         bVar.getClass();
         bVar.r = SystemClock.elapsedRealtime() + j3;
         d dVar = cVar.c;
@@ -53,7 +53,7 @@ public final class c {
             if (!bVar2.b.equals(wVar.d) && elapsedRealtime > bVar2.r) {
                 Uri c10 = wVar.c();
                 String str = bVar2.b;
-                ja.p(wVar.b.containsKey(str));
+                la.p(wVar.b.containsKey(str));
                 wVar.d = str;
                 if (c10.equals(dVar.G)) {
                     dVar.g(bVar2.a);
@@ -79,12 +79,12 @@ public final class c {
                 c cVar2 = (c) dVar.d.get(c11);
                 cVar2.getClass();
                 HashMap hashMap2 = cVar2.b;
-                b bVar4 = (b) r.b.i(hashMap2, c11, c11);
+                b bVar4 = (b) p5.c.i(hashMap2, c11, c11);
                 bVar4.getClass();
                 if (elapsedRealtime2 > bVar4.r) {
                     dVar.G = c11;
                     Uri d = dVar.d(c11);
-                    b bVar5 = (b) r.b.i(hashMap2, c11, c11);
+                    b bVar5 = (b) p5.c.i(hashMap2, c11, c11);
                     bVar5.getClass();
                     bVar5.c(d);
                     z10 = true;

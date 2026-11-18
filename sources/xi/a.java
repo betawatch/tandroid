@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 import n2.o0;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class a {
     public static final Pattern g = Pattern.compile("[A-Za-z0-9][A-Za-z0-9_-]*(/[A-Za-z0-9][A-Za-z0-9_-]*)*");
@@ -119,7 +119,7 @@ public final class a {
         a10.e = string3;
         a10.f = string4 != null ? string4 : "";
         a10.b = i7;
-        a10.q(f10);
+        a10.p(f10);
         return a10.d();
     }
 
@@ -203,7 +203,7 @@ public final class a {
                             }
                         }
                         o0 a10 = a();
-                        a10.q(i7);
+                        a10.p(i7);
                         if (queryParameter == null) {
                             queryParameter = "";
                         }
@@ -236,7 +236,7 @@ public final class a {
                     if (i7 == 3) {
                     }
                     o0 a102 = a();
-                    a102.q(i7);
+                    a102.p(i7);
                     if (queryParameter == null) {
                     }
                     a102.c = queryParameter;
@@ -290,7 +290,7 @@ public final class a {
                 if (i7 == 3) {
                 }
                 o0 a1022 = a();
-                a1022.q(i7);
+                a1022.p(i7);
                 if (queryParameter == null) {
                 }
                 a1022.c = queryParameter;

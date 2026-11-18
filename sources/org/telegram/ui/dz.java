@@ -1,21 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_chatlists;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class dz extends bz {
-    public final /* synthetic */ ez F;
+public final /* synthetic */ class dz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ez b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dz(ez ezVar, Context context, org.telegram.ui.ActionBar.e2 e2Var, int i7, int i10) {
-        super(context, e2Var, i7, i10);
-        this.F = ezVar;
+    public /* synthetic */ dz(ez ezVar, int i7) {
+        this.a = i7;
+        this.b = ezVar;
     }
 
-    @Override // org.telegram.ui.bz
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        this.F.e.r0(tL_exportedChatlistInvite);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d();
+                break;
+            case 1:
+                this.b.a();
+                break;
+            default:
+                ez ezVar = this.b;
+                ezVar.b(ezVar.E);
+                break;
+        }
     }
 }

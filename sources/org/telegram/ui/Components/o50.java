@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o50 extends org.telegram.ui.Cells.y8 {
-    public final /* synthetic */ p50 E;
-    public final zj x;
-    public boolean y;
+public final class o50 extends e80 {
+    public final /* synthetic */ s50 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o50(p50 p50Var, Context context) {
-        super(context);
-        this.E = p50Var;
-        this.x = new zj(this, 9);
+    public o50(s50 s50Var, Context context, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.x2 x2Var, boolean z10) {
+        super(context, h2Var, x2Var, false, z10);
+        this.N = s50Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        zj zjVar = this.x;
-        org.telegram.messenger.g0.r(zjVar);
-        if (this.y) {
-            org.telegram.messenger.g0.i3(zjVar, 500L);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.messenger.g0.r(this.x);
+    @Override // org.telegram.ui.Components.e80
+    public final void e(SpannableStringBuilder spannableStringBuilder) {
+        x50 x50Var = this.N.c;
+        org.telegram.ui.ActionBar.n2 n2Var = x50Var.c;
+        int i7 = x50.i2;
+        gc Q = new lc(n2Var, x50Var.J0).Q(R.raw.forward, 36, spannableStringBuilder);
+        Q.r = false;
+        Q.k(true);
     }
 }

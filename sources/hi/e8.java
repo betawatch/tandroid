@@ -3,14 +3,14 @@ package hi;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class e8 extends n8 {
     public final /* synthetic */ l8 N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e8(l8 l8Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, b8 b8Var) {
-        super(context, e6Var, b8Var);
+    public e8(l8 l8Var, Context context, org.telegram.ui.ActionBar.i6 i6Var, b8 b8Var) {
+        super(context, i6Var, b8Var);
         this.N = l8Var;
     }
 

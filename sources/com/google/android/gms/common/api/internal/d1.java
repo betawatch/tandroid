@@ -6,7 +6,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d1 extends u0 {
     public final u b;
@@ -25,7 +25,7 @@ public final class d1 extends u0 {
 
     @Override // com.google.android.gms.common.api.internal.e1
     public final void a(Status status) {
-        this.c.trySetException(this.d.l(status));
+        this.c.trySetException(this.d.k(status));
     }
 
     @Override // com.google.android.gms.common.api.internal.e1

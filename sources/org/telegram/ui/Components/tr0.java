@@ -1,130 +1,134 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class tr0 extends FrameLayout {
-    public wi0 E;
-    public int F;
-    public bi.v1 G;
-    public hh0 H;
-    public boolean I;
-    public int J;
-    public boolean K;
-    public float L;
-    public boolean M;
-    public final Paint N;
-    public org.telegram.ui.ActionBar.e6 O;
-    public Drawable P;
-    public long a;
-    public boolean b;
-    public ObjectAnimator c;
-    public v4.k d;
-    public v4.v0 e;
-    public v4.v0 f;
-    public dq0 h;
-    public sr0 n;
-    public eq0 r;
-    public nq0 s;
-    public pq0 w;
-    public bq0 x;
-    public mq0 y;
+public final class tr0 extends bk0 {
+    public final Context c;
+    public TLRPC.ChatFull d;
+    public ArrayList e;
+    public final /* synthetic */ gt0 f;
 
-    public tr0(Context context) {
-        super(context);
-        this.N = new Paint();
+    public tr0(gt0 gt0Var, Context context) {
+        this.f = gt0Var;
+        this.c = context;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setDrawPageBackground(boolean z10) {
-        if (this.M != z10) {
-            this.M = z10;
-            invalidate();
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        return true;
+    }
+
+    @Override // v4.i0
+    public final int b() {
+        TLRPC.ChatFull chatFull = this.d;
+        if (chatFull != null && chatFull.participants.participants.isEmpty()) {
+            return 1;
         }
+        TLRPC.ChatFull chatFull2 = this.d;
+        if (chatFull2 != null) {
+            return chatFull2.participants.participants.size();
+        }
+        return 0;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void setWallpaper(Drawable drawable) {
-        Drawable drawable2 = this.P;
-        if (drawable2 != drawable) {
-            if (drawable2 != null) {
-                drawable2.setCallback(null);
+    @Override // v4.i0
+    public final int d(int i7) {
+        TLRPC.ChatFull chatFull = this.d;
+        return (chatFull == null || !chatFull.participants.participants.isEmpty()) ? 21 : 20;
+    }
+
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        String str;
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        boolean z13;
+        boolean z14;
+        boolean z15;
+        gt0 gt0Var = this.f;
+        org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
+        View view = f1Var.a;
+        if (view instanceof org.telegram.ui.Cells.qa) {
+            org.telegram.ui.Cells.qa qaVar = (org.telegram.ui.Cells.qa) view;
+            TLRPC.ChatParticipant chatParticipant = !this.e.isEmpty() ? this.d.participants.participants.get(((Integer) this.e.get(i7)).intValue()) : this.d.participants.participants.get(i7);
+            if (chatParticipant != null) {
+                if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                    TLRPC.ChannelParticipant channelParticipant = ((TLRPC.TL_chatChannelParticipant) chatParticipant).channelParticipant;
+                    String str2 = channelParticipant.rank;
+                    if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = org.telegram.messenger.gd.M0(2131752412, "ChannelCreator");
+                        }
+                        z14 = true;
+                        z15 = true;
+                        z13 = false;
+                    } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
+                        if (TextUtils.isEmpty(str2)) {
+                            str2 = org.telegram.messenger.gd.M0(2131752509, "ChannelAdmin");
+                        }
+                        z13 = channelParticipant.promoted_by == h2Var.getUserConfig().e();
+                        z14 = true;
+                        z15 = false;
+                    } else {
+                        z13 = false;
+                        z14 = false;
+                        z15 = false;
+                    }
+                    boolean z16 = z15;
+                    z12 = z13;
+                    z10 = z14;
+                    z11 = z16;
+                    str = str2;
+                } else {
+                    String str3 = chatParticipant.rank;
+                    if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = org.telegram.messenger.gd.M0(2131752412, "ChannelCreator");
+                        }
+                        str = str3;
+                        z10 = true;
+                        z11 = true;
+                        z12 = false;
+                    } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
+                        if (TextUtils.isEmpty(str3)) {
+                            str3 = org.telegram.messenger.gd.M0(2131752509, "ChannelAdmin");
+                        }
+                        z12 = chatParticipant.inviter_id == h2Var.getUserConfig().e();
+                        str = str3;
+                        z10 = true;
+                        z11 = false;
+                    } else {
+                        str = str3;
+                        z10 = false;
+                        z11 = false;
+                        z12 = false;
+                    }
+                }
+                TLRPC.User c22 = h2Var.getMessagesController().c2(Long.valueOf(chatParticipant.user_id));
+                qaVar.a(str, z10, z11, org.telegram.messenger.o10.C(c22) && org.telegram.messenger.v3.h(h2Var.getMessagesController().O0(Long.valueOf(-gt0Var.m1))), new n50(this, c22, str, z10, z11, z12, 1));
+                qaVar.d(c22, null, null, i7 != this.d.participants.participants.size() - 1);
             }
-            this.P = drawable;
-            if (drawable != null) {
-                drawable.setCallback(this);
-            }
-            invalidate();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        h(canvas);
-        super.dispatchDraw(canvas);
-        bi.v1 v1Var = this.G;
-        if (v1Var == null || v1Var.getVisibility() != 0) {
-            return;
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        gt0 gt0Var = this.f;
+        if (i7 != 20) {
+            org.telegram.ui.Cells.qa qaVar = new org.telegram.ui.Cells.qa(9, 0, this.c, gt0Var.I1, true, false);
+            qaVar.setLayoutParams(new v4.q0(-1, -2));
+            return new kj0(qaVar);
         }
-        zi0 fastScroll = this.h.getFastScroll();
-        if (fastScroll != null) {
-            float L = org.telegram.messenger.g0.L(36.0f) + fastScroll.getScrollBarY();
-            if (this.F == 9) {
-                L += org.telegram.messenger.g0.L(64.0f);
-            }
-            int i7 = this.F;
-            if (i7 == 8 || ys0.J0(i7)) {
-                L += org.telegram.messenger.g0.L(42.0f);
-            }
-            float measuredWidth = (getMeasuredWidth() - this.G.getMeasuredWidth()) - org.telegram.messenger.g0.L(16.0f);
-            this.G.setPivotX(r2.getMeasuredWidth());
-            this.G.setPivotY(0.0f);
-            this.G.setTranslationX(measuredWidth);
-            this.G.setTranslationY(L);
-        }
-        if (fastScroll.getProgress() > 0.85f) {
-            ys0.s(this, null, false);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        if (view == this.n) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j3);
-    }
-
-    public final void h(Canvas canvas) {
-        int min = Math.min(0, this.h.getTop());
-        int max = Math.max(getHeight(), this.h.getBottom());
-        int L = org.telegram.messenger.g0.L(2.0f);
-        if (this.P != null) {
-            canvas.save();
-            int i7 = -L;
-            canvas.clipRect(i7, min, getWidth() + L, max);
-            this.P.setBounds(i7, min, getWidth() + L, max);
-            this.P.draw(canvas);
-            canvas.restore();
-            return;
-        }
-        if (this.M) {
-            int w02 = org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.a7, this.O);
-            Paint paint = this.N;
-            paint.setColor(w02);
-            canvas.drawRect(-L, min, getWidth() + L, max, paint);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.P || super.verifyDrawable(drawable);
+        x3 X = gt0.X(7, gt0Var.m1, this.c, gt0Var.I1);
+        X.setLayoutParams(new v4.q0(-1, -1));
+        return new kj0(X);
     }
 }

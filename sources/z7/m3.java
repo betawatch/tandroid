@@ -1,12 +1,12 @@
 package z7;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m3 implements na.d {
     public static final m3 a = new m3();
 
     static {
-        r.b.u(r.b.o(d.class, r.b.q(r.b.o(d.class, new a(1)), 2)));
+        p5.c.u(yi.i.a(d.class, yi.i.b(yi.i.a(d.class, new a(1)), 2)));
     }
 
     @Override // na.a

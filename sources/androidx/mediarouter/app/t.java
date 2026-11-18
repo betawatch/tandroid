@@ -46,7 +46,7 @@ import java.util.HashSet;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t extends g.f {
     public static final int G0;
@@ -156,7 +156,7 @@ public final class t extends g.f {
         view.startAnimation(mVar);
     }
 
-    public final boolean h() {
+    public final boolean g() {
         return (this.m0 == null && this.l0 == null) ? false : true;
     }
 
@@ -376,7 +376,7 @@ public final class t extends g.f {
         if (mediaSessionCompat$Token != null && this.x) {
             wf.b bVar2 = new wf.b(this.s, mediaSessionCompat$Token);
             this.j0 = bVar2;
-            bVar2.N(qVar);
+            bVar2.O(qVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.j0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -484,7 +484,7 @@ public final class t extends g.f {
                 this.B0 = this.v0 ? this.C0 : this.D0;
                 t(false);
             }
-            if (h()) {
+            if (g()) {
                 MediaDescriptionCompat mediaDescriptionCompat = this.m0;
                 CharSequence charSequence = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.b;
                 boolean isEmpty = TextUtils.isEmpty(charSequence);

@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p {
     public int a;
@@ -81,7 +81,7 @@ public final class p {
         q6.m.a("Must set unregister function", ((q) this.d) != null);
         q6.m.a("Must set holder", ((o) this.e) != null);
         m mVar = ((o) this.e).b;
-        q6.m.h(mVar, "Key must not be null");
+        q6.m.i(mVar, "Key must not be null");
         return new a1(new h2.w(this, (o) this.e, (n6.c[]) this.f, this.b, this.a), new a1(this, mVar));
     }
 

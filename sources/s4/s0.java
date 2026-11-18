@@ -1,5 +1,6 @@
 package s4;
 
+import ai.e1;
 import android.graphics.Rect;
 import android.opengl.GLES20;
 import android.os.SystemClock;
@@ -8,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import androidx.recyclerview.widget.RecyclerView;
-import c8.gc;
+import c8.jc;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
@@ -18,17 +19,20 @@ import org.telegram.messenger.a8;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.z9;
-import org.telegram.ui.tp0;
+import org.telegram.ui.Components.ha;
+import org.telegram.ui.vp0;
+import org.telegram.ui.web.z0;
 import sg.u0;
 import sg.v0;
-import tg.n2;
-import ug.j1;
-import ug.s1;
-import v4.e1;
-import wg.c1;
+import tg.m2;
+import ug.m1;
+import ug.t1;
+import ug.u1;
+import v4.f1;
+import wg.d1;
+import wg.w0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -72,8 +76,8 @@ public final class s0 implements Runnable {
                     GLES20.glTexParameteri(3553, 10241, 9729);
                     GLES20.glUniform1i(v0Var.d("blured"), 1);
                     GLES20.glActiveTexture(33985);
-                    z9 z9Var = i0Var.F.m;
-                    GLES20.glBindTexture(3553, z9Var != null ? z9Var.s[2] : -1);
+                    ha haVar = i0Var.F.m;
+                    GLES20.glBindTexture(3553, haVar != null ? haVar.s[2] : -1);
                     if (i0Var.b == null || !(i0Var.i instanceof sg.d)) {
                         GLES20.glUniform1f(v0Var.d("eraser"), 0.0f);
                     } else {
@@ -124,7 +128,7 @@ public final class s0 implements Runnable {
                     GLES20.glVertexAttribPointer(1, 2, 5126, false, 8, (Buffer) i0Var.n);
                     GLES20.glEnableVertexAttribArray(1);
                     GLES20.glDrawArrays(5, 0, 4);
-                    gc.a();
+                    jc.a();
                     i7 = i0Var.q;
                     if (i7 != 0 && i0Var.d != null && i0Var.I > f10) {
                         i0Var.o(i7, i0Var.g(), i0Var.d, (i0Var.J * f11) + (i0Var.I * f11));
@@ -148,7 +152,7 @@ public final class s0 implements Runnable {
         u0 u0Var = ((sg.s0) this.b).E;
         if (!u0Var.s) {
             u0Var.s = true;
-            org.telegram.messenger.g0.h3(new q2.d(this, 10));
+            org.telegram.messenger.g0.g3(new z0(this, 13));
         }
         if (((sg.s0) this.b).h) {
             return;
@@ -199,9 +203,9 @@ public final class s0 implements Runnable {
                 a();
                 return;
             case 3:
-                tg.j jVar = ((tp0) this.b).C0;
-                if (jVar instanceof n2) {
-                    ((n2) jVar).getEditText();
+                tg.j jVar = ((vp0) this.b).C0;
+                if (jVar instanceof m2) {
+                    ((m2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -243,28 +247,28 @@ public final class s0 implements Runnable {
                 }
                 return;
             case 5:
-                ug.t0 t0Var = (ug.t0) this.b;
-                ArrayList arrayList = t0Var.o3;
-                if (t0Var.v3) {
-                    if (!arrayList.isEmpty() && (R = RecyclerView.R((j1) i5.c.h(1, arrayList))) >= 0) {
-                        View m10 = t0Var.g3.m(R + 1);
+                ug.v0 v0Var = (ug.v0) this.b;
+                ArrayList arrayList = v0Var.o3;
+                if (v0Var.v3) {
+                    if (!arrayList.isEmpty() && (R = RecyclerView.R((m1) i5.c.h(1, arrayList))) >= 0) {
+                        View m10 = v0Var.g3.m(R + 1);
                         if (m10 != null) {
-                            t0Var.l3 = false;
-                            t0Var.z1(m10, true);
-                            t0Var.w0(0, m10.getTop() - ((t0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), org.telegram.messenger.g0.H);
+                            v0Var.l3 = false;
+                            v0Var.z1(m10, true);
+                            v0Var.w0(0, m10.getTop() - ((v0Var.getMeasuredHeight() - m10.getMeasuredHeight()) / 2), org.telegram.messenger.g0.H);
                         }
                     }
-                    t0Var.A1();
+                    v0Var.A1();
                     return;
                 }
                 return;
             case 6:
-                s1 s1Var = (s1) this.b;
+                u1 u1Var = (u1) this.b;
                 try {
-                    ug.r1 r1Var2 = s1Var.a;
-                    if (r1Var2 != null) {
-                        r1Var2.g();
-                        s1Var.invalidate();
+                    t1 t1Var = u1Var.a;
+                    if (t1Var != null) {
+                        t1Var.g();
+                        u1Var.invalidate();
                         return;
                     }
                     return;
@@ -273,98 +277,98 @@ public final class s0 implements Runnable {
                     return;
                 }
             case 7:
-                v4.y yVar = (v4.y) this.b;
-                v4.v vVar = yVar.y;
-                if (yVar.c != null) {
+                v4.z zVar = (v4.z) this.b;
+                v4.w wVar = zVar.y;
+                if (zVar.c != null) {
                     long currentTimeMillis = System.currentTimeMillis();
-                    long j10 = yVar.S;
+                    long j10 = zVar.S;
                     long j11 = j10 != Long.MIN_VALUE ? currentTimeMillis - j10 : 0L;
-                    v4.o0 layoutManager = yVar.I.getLayoutManager();
-                    if (yVar.R == null) {
-                        yVar.R = new Rect();
+                    v4.p0 layoutManager = zVar.I.getLayoutManager();
+                    if (zVar.R == null) {
+                        zVar.R = new Rect();
                     }
-                    layoutManager.c(yVar.c.a, yVar.R);
+                    layoutManager.c(zVar.c.a, zVar.R);
                     if (layoutManager.d()) {
-                        int i11 = (int) (yVar.s + yVar.n);
-                        i7 = (i11 - yVar.R.left) - yVar.I.getPaddingLeft();
-                        float f10 = yVar.n;
+                        int i11 = (int) (zVar.s + zVar.n);
+                        i7 = (i11 - zVar.R.left) - zVar.I.getPaddingLeft();
+                        float f10 = zVar.n;
                         if (f10 < 0.0f) {
                         }
                         if (f10 > 0.0f) {
-                            i7 = ((yVar.c.a.getWidth() + i11) + yVar.R.right) - (yVar.I.getWidth() - yVar.I.getPaddingRight());
+                            i7 = ((zVar.c.a.getWidth() + i11) + zVar.R.right) - (zVar.I.getWidth() - zVar.I.getPaddingRight());
                             break;
                         }
                     }
                     i7 = 0;
                     if (layoutManager.e()) {
-                        int i12 = (int) (yVar.w + yVar.r);
-                        int paddingTop = (i12 - yVar.R.top) - yVar.I.getPaddingTop();
-                        float f11 = yVar.r;
-                        if ((f11 < 0.0f && paddingTop < 0) || (f11 > 0.0f && (paddingTop = ((yVar.c.a.getHeight() + i12) + yVar.R.bottom) - (yVar.I.getHeight() - yVar.I.getPaddingBottom())) > 0)) {
+                        int i12 = (int) (zVar.w + zVar.r);
+                        int paddingTop = (i12 - zVar.R.top) - zVar.I.getPaddingTop();
+                        float f11 = zVar.r;
+                        if ((f11 < 0.0f && paddingTop < 0) || (f11 > 0.0f && (paddingTop = ((zVar.c.a.getHeight() + i12) + zVar.R.bottom) - (zVar.I.getHeight() - zVar.I.getPaddingBottom())) > 0)) {
                             i10 = paddingTop;
                         }
                     }
                     if (i7 != 0) {
-                        int width = yVar.c.a.getWidth();
-                        yVar.I.getWidth();
-                        i7 = vVar.i(width, i7, j11);
+                        int width = zVar.c.a.getWidth();
+                        zVar.I.getWidth();
+                        i7 = wVar.i(width, i7, j11);
                     }
                     if (i10 != 0) {
-                        int height = yVar.c.a.getHeight();
-                        yVar.I.getHeight();
-                        i10 = vVar.i(height, i10, j11);
+                        int height = zVar.c.a.getHeight();
+                        zVar.I.getHeight();
+                        i10 = wVar.i(height, i10, j11);
                     }
                     if (i7 == 0 && i10 == 0) {
-                        yVar.S = Long.MIN_VALUE;
+                        zVar.S = Long.MIN_VALUE;
                         return;
                     }
-                    if (yVar.S == Long.MIN_VALUE) {
-                        yVar.S = currentTimeMillis;
+                    if (zVar.S == Long.MIN_VALUE) {
+                        zVar.S = currentTimeMillis;
                     }
-                    yVar.I.scrollBy(i7, i10);
-                    e1 e1Var = yVar.c;
-                    if (e1Var != null) {
-                        yVar.p(e1Var);
+                    zVar.I.scrollBy(i7, i10);
+                    f1 f1Var = zVar.c;
+                    if (f1Var != null) {
+                        zVar.p(f1Var);
                     }
-                    yVar.I.removeCallbacks(yVar.J);
-                    RecyclerView recyclerView = yVar.I;
+                    zVar.I.removeCallbacks(zVar.J);
+                    RecyclerView recyclerView = zVar.I;
                     WeakHashMap weakHashMap2 = r0.i0.a;
                     recyclerView.postOnAnimation(this);
                     return;
                 }
                 return;
             case 8:
-                wg.u0 u0Var = (wg.u0) this.b;
-                String str = u0Var.j2;
+                w0 w0Var = (w0) this.b;
+                String str = w0Var.j2;
                 if (str != null) {
-                    u0Var.f1(u0Var.n2, str, false);
+                    w0Var.g1(w0Var.n2, str, false);
                     return;
                 }
                 return;
             case 9:
-                c1 c1Var = (c1) this.b;
-                String str2 = c1Var.k2;
+                d1 d1Var = (d1) this.b;
+                String str2 = d1Var.j2;
                 if (str2 != null) {
-                    if (c1Var.t2 >= 0) {
-                        ConnectionsManager.getInstance(c1Var.a).cancelRequest(c1Var.t2, true);
-                        c1Var.t2 = -1;
+                    if (d1Var.r2 >= 0) {
+                        ConnectionsManager.getInstance(d1Var.a).cancelRequest(d1Var.r2, true);
+                        d1Var.r2 = -1;
                     }
                     TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
                     tL_contacts_search.q = str2;
-                    c1Var.t2 = ConnectionsManager.getInstance(c1Var.a).sendRequest(tL_contacts_search, new ai.e1(c1Var, 26));
+                    d1Var.r2 = ConnectionsManager.getInstance(d1Var.a).sendRequest(tL_contacts_search, new e1(d1Var, 28));
                     return;
                 }
                 return;
             default:
-                zi.v0 v0Var = (zi.v0) this.b;
-                if (v0Var.a0 == 5 && (f0Var = v0Var.W) != null && v0Var.z) {
+                zi.u0 u0Var = (zi.u0) this.b;
+                if (u0Var.a0 == 5 && (f0Var = u0Var.W) != null && u0Var.z) {
                     long l10 = f0Var.l();
-                    long j12 = v0Var.K;
-                    if (l10 < j12 || l10 >= v0Var.L) {
-                        v0Var.W.Z0(5, j12);
+                    long j12 = u0Var.K;
+                    if (l10 < j12 || l10 >= u0Var.L) {
+                        u0Var.W.Z0(5, j12);
                     }
-                    v0Var.d.getClass();
-                    v0Var.i.postDelayed(this, 33L);
+                    u0Var.d.getClass();
+                    u0Var.i.postDelayed(this, 33L);
                     return;
                 }
                 return;

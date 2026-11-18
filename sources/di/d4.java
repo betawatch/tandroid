@@ -1,27 +1,35 @@
 package di;
 
+import android.content.Context;
 import android.text.TextPaint;
-import android.text.style.ClickableSpan;
 import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d4 extends ClickableSpan {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ c6 b;
+public final class d4 extends TextView {
+    public final /* synthetic */ float a;
 
-    public d4(c6 c6Var, long j3) {
-        this.b = c6Var;
-        this.a = j3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d4(Context context, float f10) {
+        super(context);
+        this.a = f10;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.b.V1(this.a);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        if (View.MeasureSpec.getMode(i7) != 0) {
+            int size = (View.MeasureSpec.getSize(i7) - getPaddingLeft()) - getPaddingRight();
+            TextPaint textPaint = new TextPaint(getPaint());
+            float f10 = this.a;
+            textPaint.setTextSize(f10);
+            if (textPaint.measureText("0000 0000 0000 0000") > size && size > 0) {
+                f10 = (float) Math.floor((f10 * r3) / r1);
+            }
+            if (getTextSize() != f10) {
+                setTextSize(0, f10);
+            }
+        }
+        super.onMeasure(i7, i10);
     }
 }

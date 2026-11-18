@@ -5,7 +5,7 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
@@ -16,7 +16,7 @@ public final class n0 implements s0 {
 
     public n0(Application application, w4.e eVar, Bundle bundle) {
         r0 r0Var;
-        this.e = eVar.g();
+        this.e = eVar.h();
         this.d = eVar.m();
         this.c = bundle;
         this.a = application;
@@ -44,14 +44,14 @@ public final class n0 implements s0 {
         Constructor a10 = (!isAssignableFrom || this.a == null) ? o0.a(cls, o0.b) : o0.a(cls, o0.a);
         if (a10 == null) {
             if (this.a != null) {
-                return this.b.d(cls);
+                return this.b.f(cls);
             }
             if (q0.c == null) {
                 q0.c = new q0();
             }
             q0 q0Var = q0.c;
             kotlin.jvm.internal.j.b(q0Var);
-            return q0Var.d(cls);
+            return q0Var.f(cls);
         }
         m.p pVar = this.e;
         kotlin.jvm.internal.j.b(pVar);
@@ -88,7 +88,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 d(Class cls) {
+    public final p0 f(Class cls) {
         String canonicalName = cls.getCanonicalName();
         if (canonicalName != null) {
             return a(cls, canonicalName);
@@ -97,7 +97,7 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 e(Class cls, y1.b bVar) {
+    public final p0 g(Class cls, y1.b bVar) {
         q0 q0Var = q0.b;
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         String str = (String) linkedHashMap.get(q0Var);
@@ -113,6 +113,6 @@ public final class n0 implements s0 {
         Application application = (Application) linkedHashMap.get(q0.a);
         boolean isAssignableFrom = a.class.isAssignableFrom(cls);
         Constructor a10 = (!isAssignableFrom || application == null) ? o0.a(cls, o0.b) : o0.a(cls, o0.a);
-        return a10 == null ? this.b.e(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a10, j0.c(bVar)) : o0.b(cls, a10, application, j0.c(bVar));
+        return a10 == null ? this.b.g(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a10, j0.c(bVar)) : o0.b(cls, a10, application, j0.c(bVar));
     }
 }

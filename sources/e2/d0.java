@@ -1,12 +1,12 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.net.Uri;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d0 {
     public static final String i;
@@ -39,7 +39,7 @@ public final class d0 {
     }
 
     public d0(c0 c0Var) {
-        ja.p((c0Var.f && c0Var.b == null) ? false : true);
+        la.p((c0Var.f && c0Var.b == null) ? false : true);
         UUID uuid = c0Var.a;
         uuid.getClass();
         this.a = uuid;

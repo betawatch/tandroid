@@ -5,7 +5,6 @@ import a8.r7;
 import ab.c0;
 import android.content.Context;
 import android.support.v4.media.session.a0;
-import cb.c;
 import com.google.firebase.components.ComponentRegistrar;
 import d9.o;
 import e2.j0;
@@ -17,6 +16,8 @@ import gb.s;
 import gb.t;
 import gb.v;
 import h6.m;
+import hi.u5;
+import ib.c;
 import id.h;
 import java.util.List;
 import kotlin.jvm.internal.j;
@@ -28,7 +29,7 @@ import u9.q;
 import va.d;
 import zd.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
 
@@ -66,24 +67,24 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         iVar.a = o.b((g) e13);
         o b10 = o.b((Context) e10);
         iVar.b = b10;
-        iVar.c = ib.a.a(new ia.d(b10, 2));
+        iVar.c = ib.a.a(new u5(b10, 5));
         iVar.d = ib.a.a(t.a);
         iVar.e = o.b((d) e14);
-        iVar.f = ib.a.a(new c(iVar.a, 29));
+        iVar.f = ib.a.a(new d6.i(iVar.a, 25));
         o b11 = o.b((h) e12);
         iVar.g = b11;
         iVar.h = ib.a.a(new s(iVar.f, b11));
         iVar.i = o.b((h) e11);
         int i7 = 29;
-        iVar.j = ib.a.a(new wf.b(i7, iVar.c, ib.a.a(new r7(iVar.d, iVar.e, iVar.f, iVar.h, ib.a.a(new m(iVar.i, iVar.d, ib.a.a(new s(iVar.b, (ib.c) iVar.g)), false, 4)), 10))));
-        ib.c a10 = ib.a.a(t.b);
+        iVar.j = ib.a.a(new wf.b(i7, iVar.c, ib.a.a(new r7(iVar.d, iVar.e, iVar.f, iVar.h, ib.a.a(new m(iVar.i, iVar.d, ib.a.a(new s(iVar.b, (c) iVar.g)), false, 4)), 10))));
+        c a10 = ib.a.a(t.b);
         iVar.k = a10;
         iVar.l = ib.a.a(new q4.q(iVar.d, a10, false, 22));
-        iVar.m = ib.a.a(new r7(iVar.a, iVar.e, iVar.j, ib.a.a(new ob.c(o.b(f10), 26)), iVar.i, 6));
-        iVar.n = ib.a.a(new a0(iVar.b, iVar.g, ib.a.a(new d6.i(iVar.l, 22)), false, 28));
-        ib.c a11 = ib.a.a(new ga.d(iVar.j, iVar.l, iVar.m, iVar.d, iVar.n, ib.a.a(new wf.b(22, iVar.b, iVar.k)), iVar.i, 2));
+        iVar.m = ib.a.a(new r7(iVar.a, iVar.e, iVar.j, ib.a.a(new cb.c(o.b(f10), 27)), iVar.i, 6));
+        iVar.n = ib.a.a(new a0(iVar.b, iVar.g, ib.a.a(new ob.c(iVar.l, 25)), false, 28));
+        c a11 = ib.a.a(new ga.d(iVar.j, iVar.l, iVar.m, iVar.d, iVar.n, ib.a.a(new wf.b(22, iVar.b, iVar.k)), iVar.i, 2));
         iVar.o = a11;
-        iVar.p = ib.a.a(new c0(iVar.a, iVar.j, iVar.i, ib.a.a(new ob.c(a11, 27)), 3));
+        iVar.p = ib.a.a(new c0(iVar.a, iVar.j, iVar.i, ib.a.a(new cb.c(a11, 28)), 3));
         return iVar;
     }
 
@@ -92,7 +93,7 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         j0 a10 = u9.a.a(n.class);
         a10.d = LIBRARY_NAME;
         a10.a(u9.i.b(firebaseSessionsComponent));
-        a10.f = new e(5);
+        a10.f = new e(6);
         a10.c(2);
         u9.a b10 = a10.b();
         j0 a11 = u9.a.a(r.class);
@@ -103,7 +104,7 @@ public final class FirebaseSessionsRegistrar implements ComponentRegistrar {
         a11.a(u9.i.b(firebaseApp));
         a11.a(u9.i.b(firebaseInstallationsApi));
         a11.a(new u9.i(transportFactory, 1, 1));
-        a11.f = new e(6);
+        a11.f = new e(7);
         return hd.g.c(b10, a11.b(), i8.a(LIBRARY_NAME, "3.0.8"));
     }
 }

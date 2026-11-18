@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.util.Pair;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l1 {
     public static final h1 a = new h1();
@@ -117,7 +117,7 @@ public abstract class l1 {
     public int hashCode() {
         k1 k1Var = new k1();
         i1 i1Var = new i1();
-        int o4 = o() + ns.u3;
+        int o4 = o() + ks.u3;
         for (int i7 = 0; i7 < o(); i7++) {
             o4 = (o4 * 31) + m(i7, k1Var, 0L).hashCode();
         }
@@ -140,7 +140,7 @@ public abstract class l1 {
     }
 
     public final Pair j(k1 k1Var, i1 i1Var, int i7, long j3, long j10) {
-        ja.j(i7, o());
+        la.j(i7, o());
         m(i7, k1Var, j10);
         if (j3 == -9223372036854775807L) {
             j3 = k1Var.l;

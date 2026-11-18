@@ -1,47 +1,41 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Iterator;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mt0 implements org.telegram.messenger.j9, org.telegram.ui.Components.ij0, s40 {
-    public final /* synthetic */ pt0 a;
+public final /* synthetic */ class mt0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PrivacySettingsActivity b;
 
-    public /* synthetic */ mt0(pt0 pt0Var) {
-        this.a = pt0Var;
+    public /* synthetic */ mt0(PrivacySettingsActivity privacySettingsActivity, int i7) {
+        this.a = i7;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // org.telegram.ui.s40
-    public void a(ArrayList arrayList, boolean z10, boolean z11) {
-        Iterator it = arrayList.iterator();
-        if (it.hasNext()) {
-            throw null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        PrivacySettingsActivity privacySettingsActivity = this.b;
+        switch (i7) {
+            case 0:
+                privacySettingsActivity.a.f();
+                privacySettingsActivity.S = true;
+                break;
+            case 1:
+                privacySettingsActivity.c.dismiss();
+                break;
+            default:
+                org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(privacySettingsActivity.getParentActivity(), null);
+                obVar.d(R.raw.email_check_inbox, new String[0]);
+                obVar.b.setText(org.telegram.messenger.gd.M0(2131742553, null));
+                org.telegram.ui.Components.gc.g(privacySettingsActivity, obVar, 1500).j();
+                try {
+                    privacySettingsActivity.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                privacySettingsActivity.E0();
+                break;
         }
-        this.a.a0();
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public boolean b(int i7, View view) {
-        pt0 pt0Var = this.a;
-        if (i7 < pt0Var.r || i7 >= pt0Var.s) {
-            return false;
-        }
-        if (pt0Var.E != 1) {
-            throw null;
-        }
-        pt0Var.Z(Long.valueOf(pt0Var.getMessagesController().H0.keyAt(i7 - pt0Var.r)), view);
-        return true;
-    }
-
-    @Override // org.telegram.messenger.j9
-    public Object o(Object obj) {
-        pt0 pt0Var = this.a;
-        pt0Var.getClass();
-        if (((Integer) obj).intValue() == pt0Var.x) {
-            return Integer.valueOf(org.telegram.ui.ActionBar.j6.r1(0.12f, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.p7, false)));
-        }
-        return null;
     }
 }

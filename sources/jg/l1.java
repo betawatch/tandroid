@@ -3,52 +3,52 @@ package jg;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
-import fi.d6;
+import fi.b6;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.na;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.si;
-import org.telegram.messenger.t3;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.ma;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.tj0;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.wz;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l1 extends tj0 implements is {
-    public d6 E;
+public final class l1 extends bk0 implements fs {
+    public b6 E;
     public final Context c;
-    public final an f;
+    public final bn f;
     public int h;
     public int n;
-    public final e6 s;
+    public final i6 s;
     public final int w;
     public final boolean x;
     public String y;
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
-    public final int r = m10.t0;
-    public final hi.e1 F = new hi.e1(this, 22);
+    public final int r = j10.t0;
+    public final hi.k F = new hi.k(this, 26);
 
-    public l1(Context context, an anVar, e6 e6Var, int i7, boolean z10) {
-        this.s = e6Var;
+    public l1(Context context, bn bnVar, i6 i6Var, int i7, boolean z10) {
+        this.s = i6Var;
         this.c = context;
-        this.f = anVar;
+        this.f = bnVar;
         this.w = i7;
         this.x = z10;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        int i7 = e1Var.f;
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(v4.f1 f1Var) {
+        int i7 = f1Var.f;
         return i7 == 0 || i7 == 2;
     }
 
@@ -63,24 +63,24 @@ public final class l1 extends tj0 implements is {
         return arrayList.get(i7);
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         return this.e.size() + this.n;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         return i7 < this.e.size() ? 0 : 1;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.x5 && objArr[0] == this.E) {
+        if (i7 == ks.z5 && objArr[0] == this.E) {
             f();
         }
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final void f() {
         int b10 = b();
         ArrayList arrayList = this.e;
@@ -89,25 +89,25 @@ public final class l1 extends tj0 implements is {
         hashSet.clear();
         int i7 = this.r;
         int i10 = this.w;
-        ArrayList arrayList2 = i10 == 0 ? si.b0(i7).Z0 : na.a(i7).b(i10).a;
+        ArrayList arrayList2 = i10 == 0 ? ri.d0(i7).Z0 : ma.a(i7).b(i10).a;
         int i11 = 0;
         for (int i12 = 0; i12 < arrayList2.size(); i12++) {
-            gj gjVar = (gj) arrayList2.get(i12);
-            if ((!gjVar.z2() || gjVar.S2) && !hashSet.contains(Integer.valueOf(gjVar.e1()))) {
-                arrayList.add(gjVar);
-                hashSet.add(Integer.valueOf(gjVar.e1()));
+            fj fjVar = (fj) arrayList2.get(i12);
+            if ((!fjVar.z2() || fjVar.S2) && !hashSet.contains(Integer.valueOf(fjVar.e1()))) {
+                arrayList.add(fjVar);
+                hashSet.add(Integer.valueOf(fjVar.e1()));
             }
         }
         int i13 = this.n;
         this.h = arrayList.size();
         if (i10 != 0) {
-            if (!na.a(i7).b(i10).n && this.h != 0) {
-                i11 = Utilities.j(na.a(i7).b(i10).m - this.h, 3, 0);
+            if (!ma.a(i7).b(i10).n && this.h != 0) {
+                i11 = Utilities.j(ma.a(i7).b(i10).m - this.h, 3, 0);
             }
             this.n = i11;
         } else {
-            if (!si.b0(i7).W1() && this.h != 0) {
-                i11 = Utilities.j(si.b0(i7).j0() - this.h, 3, 0);
+            if (!ri.d0(i7).b2() && this.h != 0) {
+                i11 = Utilities.j(ri.d0(i7).l0() - this.h, 3, 0);
             }
             this.n = i11;
         }
@@ -122,13 +122,13 @@ public final class l1 extends tj0 implements is {
         o(b10, b11 - b10);
     }
 
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
         boolean z10;
         int i10;
         int i11;
-        int i12 = e1Var.f;
-        View view = e1Var.a;
+        int i12 = f1Var.f;
+        View view = f1Var.a;
         if (i12 != 0) {
             if (i12 == 2) {
                 ((k1) view).a(this.E);
@@ -138,13 +138,13 @@ public final class l1 extends tj0 implements is {
         }
         t2 t2Var = (t2) view;
         t2Var.t2 = true;
-        gj gjVar = (gj) E(i7);
-        long B0 = gj.B0(gjVar.k);
-        int i13 = gjVar.k.date;
+        fj fjVar = (fj) E(i7);
+        long B0 = fj.B0(fjVar.k);
+        int i13 = fjVar.k.date;
         if (this.x) {
             t2Var.s0 = true;
-            long P1 = gjVar.P1();
-            TLRPC.Message message = gjVar.k;
+            long P1 = fjVar.P1();
+            TLRPC.Message message = fjVar.k;
             TLRPC.MessageFwdHeader messageFwdHeader = message.fwd_from;
             if (messageFwdHeader == null || ((i10 = messageFwdHeader.date) == 0 && messageFwdHeader.saved_date == 0)) {
                 i11 = message.date;
@@ -159,32 +159,32 @@ public final class l1 extends tj0 implements is {
             z10 = false;
             B0 = P1;
         } else {
-            if (gjVar.P3() || t3.o0(this.r, B0)) {
-                B0 = gjVar.Z0();
+            if (fjVar.P3() || v3.o0(this.r, B0)) {
+                B0 = fjVar.Z0();
             }
             z10 = true;
             i10 = i13;
         }
-        t2Var.f0(B0, gjVar, i10, z10, false);
+        t2Var.d0(B0, fjVar, i10, z10, false);
         t2Var.setDialogCellDelegate(new i1(this));
     }
 
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
         View t2Var;
         View view;
         if (i7 != 0) {
-            e6 e6Var = this.s;
+            i6 i6Var = this.s;
             Context context = this.c;
             if (i7 == 1) {
-                pz pzVar = new pz(context, e6Var);
-                pzVar.setIsSingleCell(true);
-                pzVar.setViewType(7);
-                view = pzVar;
+                wz wzVar = new wz(context, i6Var);
+                wzVar.setIsSingleCell(true);
+                wzVar.setViewType(7);
+                view = wzVar;
             } else if (i7 != 2) {
                 t2Var = null;
             } else {
-                view = new k1(context, e6Var);
+                view = new k1(context, i6Var);
             }
             t2Var = view;
         } else {

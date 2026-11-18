@@ -23,9 +23,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.function.Consumer;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.dv0;
+import org.telegram.ui.Components.lv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class FilesMigrationService extends Service {
     public static boolean c = false;
@@ -35,14 +35,14 @@ public class FilesMigrationService extends Service {
     public int a;
     public int b;
 
-    public static void a(org.telegram.ui.yw ywVar) {
+    public static void a(org.telegram.ui.cx cxVar) {
         SharedPreferences sharedPreferences = t0.b.getSharedPreferences("systemConfig", 0);
         if (!Environment.isExternalStorageLegacy() || sharedPreferences.getBoolean("migration_to_scoped_storage_finished", false) || sharedPreferences.getInt("migration_to_scoped_storage_count", 0) >= 5 || f || e != null || d) {
             return;
         }
         if (Build.VERSION.SDK_INT >= 30) {
             File externalStorageDirectory = Environment.getExternalStorageDirectory();
-            if (!TextUtils.isEmpty(gz.h0)) {
+            if (!TextUtils.isEmpty(bz.h0)) {
                 ArrayList d12 = g0.d1();
                 int size = d12.size();
                 int i7 = 0;
@@ -51,7 +51,7 @@ public class FilesMigrationService extends Service {
                         break;
                     }
                     File file = (File) d12.get(i7);
-                    if (file.getAbsolutePath().startsWith(gz.h0)) {
+                    if (file.getAbsolutePath().startsWith(bz.h0)) {
                         externalStorageDirectory = file;
                         break;
                     }
@@ -64,39 +64,39 @@ public class FilesMigrationService extends Service {
             sharedPreferences.edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
             return;
         }
-        b9 b9Var = new b9((Context) ywVar.getParentActivity(), false);
-        b9Var.n1 = ywVar;
+        b9 b9Var = new b9((Context) cxVar.getParentActivity(), false);
+        b9Var.n1 = cxVar;
         b9Var.setCanceledOnTouchOutside(false);
-        Activity parentActivity = ywVar.getParentActivity();
-        LinearLayout e10 = k5.e(parentActivity, 1);
-        dv0 dv0Var = new dv0(parentActivity, b9Var.a);
-        dv0Var.setStickerNum(7);
-        dv0Var.getImageReceiver().W(1);
-        e10.addView(dv0Var, c8.ja.t(ns.a2, ns.a2, 1, 0, 16, 0, 0));
+        Activity parentActivity = cxVar.getParentActivity();
+        LinearLayout f10 = f3.f(parentActivity, 1);
+        lv0 lv0Var = new lv0(parentActivity, b9Var.a);
+        lv0Var.setStickerNum(7);
+        lv0Var.getImageReceiver().W(1);
+        f10.addView(lv0Var, c8.ma.t(ks.a2, ks.a2, 1, 0, 16, 0, 0));
         TextView textView = new TextView(parentActivity);
         textView.setGravity(8388611);
-        int i10 = org.telegram.ui.ActionBar.j6.j5;
-        k5.m(textView, i10, null, 1, 20.0f);
-        textView.setText(hd.M0(2131748431, null));
-        e10.addView(textView, c8.ja.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
+        int i10 = org.telegram.ui.ActionBar.n6.j5;
+        f3.l(textView, i10, null, 1, 20.0f);
+        textView.setText(gd.M0(2131748239, null));
+        f10.addView(textView, c8.ma.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(8388611);
         textView2.setTextSize(1, 15.0f);
-        org.telegram.ui.ActionBar.q6.U(textView2, i10, null);
-        textView2.setText(g0.X2(hd.M0(2131748432, null)));
-        e10.addView(textView2, c8.ja.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
+        org.telegram.ui.ActionBar.u6.U(textView2, i10, null);
+        textView2.setText(g0.W2(gd.M0(2131748240, null)));
+        f10.addView(textView2, c8.ma.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
         TextView textView3 = new TextView(parentActivity);
         textView3.setPadding(g0.L(34.0f), 0, g0.L(34.0f), 0);
         textView3.setGravity(17);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(g0.o());
-        textView3.setText(hd.M0(2131748433, null));
-        org.telegram.ui.ActionBar.q6.U(textView3, org.telegram.ui.ActionBar.j6.Ji, null);
-        textView3.setBackground(org.telegram.ui.ActionBar.y5.f(org.telegram.ui.ActionBar.j6.Fi, 6.0f));
-        e10.addView(textView3, c8.ja.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
+        textView3.setText(gd.M0(2131748241, null));
+        org.telegram.ui.ActionBar.u6.U(textView3, org.telegram.ui.ActionBar.n6.Ji, null);
+        textView3.setBackground(org.telegram.ui.ActionBar.b6.f(org.telegram.ui.ActionBar.n6.Fi, 6.0f));
+        f10.addView(textView3, c8.ma.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
         textView3.setOnClickListener(new a9(b9Var, 0));
         ScrollView scrollView = new ScrollView(parentActivity);
-        scrollView.addView(e10);
+        scrollView.addView(f10);
         b9Var.O = scrollView;
         e = b9Var;
         b9Var.show();
@@ -148,7 +148,7 @@ public class FilesMigrationService extends Service {
                                 }
                                 filesMigrationService.b++;
                                 if (System.currentTimeMillis() > 20 || filesMigrationService.b >= filesMigrationService.a - 1) {
-                                    g0.h3(new x0(filesMigrationService, filesMigrationService.b, 2));
+                                    g0.g3(new x0(filesMigrationService, filesMigrationService.b, 2));
                                 }
                             }
 
@@ -178,12 +178,12 @@ public class FilesMigrationService extends Service {
 
     @Override // android.app.Service
     public final int onStartCommand(Intent intent, int i7, int i10) {
-        at.i();
-        Notification build = f9.b.b(this, at.k0).setContentTitle(hd.M0(2131748430, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
+        xs.i();
+        Notification build = f9.b.b(this, xs.k0).setContentTitle(gd.M0(2131748238, null)).setAutoCancel(false).setSmallIcon(R.drawable.notification).build();
         d = true;
         new k2.k(this).start();
         try {
-            startForeground(ns.Y4, build);
+            startForeground(ks.Y4, build);
         } catch (Throwable th2) {
             a8.g(th2, true);
         }

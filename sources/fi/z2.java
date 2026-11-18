@@ -1,64 +1,136 @@
 package fi;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.ui.Components.li0;
+import hi.eb;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class z2 implements li0 {
-    public final /* synthetic */ b4 a;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public z2(b4 b4Var) {
-        this.a = b4Var;
+    public /* synthetic */ z2(Object obj, Object obj2, Object obj3, int i7) {
+        this.a = i7;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.li0
-    public final boolean B() {
-        return this.a.L0();
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public final void J(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i7, boolean z10) {
-        b4 b4Var = this.a;
-        Paint paint = b4Var.X1;
-        a8.b8 b8Var = b4Var.z1;
-        float f13 = -f11;
-        float f14 = -f12;
-        b8Var.k(f13, f14, b4Var.getMeasuredWidth() + f13, b4Var.getMeasuredHeight() + f14);
-        if (f10 > 0.0f) {
-            canvas.drawRoundRect(rectF, f10, f10, (Paint) b8Var.a);
-            canvas.drawRoundRect(rectF, f10, f10, paint);
-        } else {
-            canvas.drawRect(rectF, (Paint) b8Var.a);
-            canvas.drawRect(rectF, paint);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                b3 b3Var = (b3) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.c;
+                boolean[] zArr = (boolean[]) this.d;
+                z3 z3Var = b3Var.a;
+                z3Var.f3 = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                z3Var.invalidate();
+                if (z3Var.f3 > 0.8f && !zArr[0]) {
+                    zArr[0] = true;
+                    z3Var.a3 = true;
+                    try {
+                        z3Var.performHapticFeedback(3);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 1:
+                hi.l5 l5Var = (hi.l5) this.b;
+                View view = (View) this.c;
+                View view2 = (View) this.d;
+                l5Var.K0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l5Var.G0.invalidate();
+                l5Var.D0.invalidate();
+                l5Var.E0.invalidate();
+                int i7 = 0;
+                while (i7 < l5Var.G0.getChildCount()) {
+                    l5Var.G0.getChildAt(i7).setAlpha(((i7 == l5Var.J0 ? l5Var.K0 : i7 == l5Var.I0 ? 1.0f - l5Var.K0 : 0.0f) * 0.4f) + 0.6f);
+                    i7++;
+                }
+                float interpolation = lr.f.getInterpolation(l5Var.K0);
+                if (view != null && view2 != null) {
+                    float f10 = 1.0f - interpolation;
+                    float f11 = (f10 * 0.4f) + 0.6f;
+                    view.setScaleX(f11);
+                    view.setScaleY(f11);
+                    view.setTranslationY((Math.min(interpolation, 0.25f) * org.telegram.messenger.g0.L(16.0f)) / 0.25f);
+                    view.setAlpha(1.0f - (Math.min(interpolation, 0.25f) / 0.25f));
+                    float f12 = (interpolation * 0.4f) + 0.6f;
+                    view2.setScaleX(f12);
+                    view2.setScaleY(f12);
+                    view2.setTranslationY((Math.min(f10, 0.25f) * (-org.telegram.messenger.g0.L(16.0f))) / 0.25f);
+                    view2.setAlpha(1.0f - (Math.min(f10, 0.25f) / 0.25f));
+                    break;
+                }
+                break;
+            case 2:
+                eb ebVar = (eb) this.b;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
+                hi.v vVar = (hi.v) this.d;
+                ebVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Math.abs(floatValue - 0.5f);
+                if (floatValue >= 0.5f && !atomicBoolean.get()) {
+                    atomicBoolean.set(true);
+                    ebVar.setDrawable(vVar);
+                    break;
+                }
+                break;
+            case 3:
+                pi.j jVar = (pi.j) this.b;
+                org.telegram.ui.Cells.x1 x1Var = (org.telegram.ui.Cells.x1) this.c;
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.d;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (jVar.l) {
+                    x1Var.h0 = (-jVar.s) * floatValue2;
+                    x1Var.i0 = (-jVar.t) * floatValue2;
+                    x1Var.k0 = (-jVar.u) * floatValue2;
+                    x1Var.j0 = (-jVar.v) * floatValue2;
+                } else {
+                    x1Var.h0 = ((-jVar.s) * floatValue2) - q1Var.getAnimationOffsetX();
+                    x1Var.i0 = ((-jVar.t) * floatValue2) - q1Var.getAnimationOffsetX();
+                    x1Var.k0 = ((-jVar.u) * floatValue2) - q1Var.getTranslationY();
+                    x1Var.j0 = ((-jVar.v) * floatValue2) - q1Var.getTranslationY();
+                }
+                q1Var.invalidate();
+                break;
+            default:
+                tg.g0 g0Var = (tg.g0) this.b;
+                View view3 = (View) this.c;
+                View view4 = (View) this.d;
+                g0Var.S0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g0Var.P0.invalidate();
+                g0Var.M0.invalidate();
+                g0Var.N0.invalidate();
+                int i10 = 0;
+                while (i10 < g0Var.P0.getChildCount()) {
+                    g0Var.P0.getChildAt(i10).setAlpha(((i10 == g0Var.R0 ? g0Var.S0 : i10 == g0Var.Q0 ? 1.0f - g0Var.S0 : 0.0f) * 0.4f) + 0.6f);
+                    i10++;
+                }
+                float interpolation2 = lr.f.getInterpolation(g0Var.S0);
+                if (view3 != null && view4 != null) {
+                    float f13 = 1.0f - interpolation2;
+                    float f14 = (f13 * 0.4f) + 0.6f;
+                    view3.setScaleX(f14);
+                    view3.setScaleY(f14);
+                    view3.setTranslationY((Math.min(interpolation2, 0.25f) * org.telegram.messenger.g0.L(16.0f)) / 0.25f);
+                    view3.setAlpha(1.0f - (Math.min(interpolation2, 0.25f) / 0.25f));
+                    float f15 = (interpolation2 * 0.4f) + 0.6f;
+                    view4.setScaleX(f15);
+                    view4.setScaleY(f15);
+                    view4.setTranslationY((Math.min(f13, 0.25f) * (-org.telegram.messenger.g0.L(16.0f))) / 0.25f);
+                    view4.setAlpha(1.0f - (Math.min(f13, 0.25f) / 0.25f));
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public final void K() {
-        ((z8) this.a.A1).b(false);
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public final /* synthetic */ boolean L() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public final void h(View view, ch.p0 p0Var, boolean z10, boolean z11) {
-        b4 b4Var = this.a;
-        if (z10) {
-            org.telegram.ui.Components.t4.X(b4Var.m2, 1, b4Var.l1, new y2(this, z10, p0Var, view));
-        } else {
-            b4Var.l0(new aa.c0(this, view, p0Var, z10, z11));
-        }
-    }
-
-    @Override // org.telegram.ui.Components.li0
-    public final /* synthetic */ boolean r() {
-        return true;
     }
 }

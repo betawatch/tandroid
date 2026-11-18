@@ -1,112 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import java.util.Random;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mc {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public int g;
-    public float[] k;
-    public float[] l;
-    public float[] m;
-    public float[] n;
-    public float[] o;
-    public float[] p;
-    public float[] q;
-    public float[] r;
-    public float[] s;
-    public float[] t;
-    public float[] u;
-    public float[] v;
-    public float[] w;
-    public int x;
-    public int h = -11318601;
-    public final Paint i = new Paint(1);
-    public final Random j = new Random();
-    public int y = org.telegram.messenger.ns.e4;
+public class mc {
+    public View a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public long e;
+    public Runnable f;
+    public ValueAnimator g;
+    public final float h;
+    public boolean i;
+    public float j;
 
-    public final void a() {
-        int i7 = this.h;
-        Paint paint = this.i;
-        paint.setColor(i7);
-        paint.setAlpha((this.g * this.y) / org.telegram.messenger.ns.e4);
+    public mc(View view) {
+        this(view, 1.0f, 5.0f);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x0029, code lost:
-    
-        if (r3 > 1.0f) goto L4;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i7) {
-        float f10 = 0.18f / this.x;
-        float f11 = this.k[i7];
-        Random random = this.j;
-        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f11;
-        float[] fArr = this.l;
-        float f12 = nextFloat >= 0.0f ? 1.0f : 0.0f;
-        nextFloat = f12;
-        fArr[i7] = nextFloat;
-        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f10 * 0.35f) + this.m[i7];
-        float[] fArr2 = this.n;
-        float f13 = -f10;
-        if (nextFloat2 < f13) {
-            f10 = f13;
-        } else if (nextFloat2 <= f10) {
-            f10 = nextFloat2;
+    public final float a(float f10) {
+        return com.google.android.gms.internal.vision.e2.z(1.0f, this.j, f10, 1.0f - f10) * this.h;
+    }
+
+    public void b() {
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
         }
-        fArr2[i7] = f10;
-        this.p[i7] = org.telegram.ui.Cells.y0.g(random, 0.003f, 0.017f) * this.a;
-    }
-
-    public final void c(int i7) {
-        this.x = i7;
-        this.k = new float[i7];
-        this.l = new float[i7];
-        this.m = new float[i7];
-        this.n = new float[i7];
-        this.o = new float[i7];
-        this.p = new float[i7];
-        this.q = new float[i7];
-        this.r = new float[i7];
-        this.s = new float[i7];
-        this.t = new float[i7];
-        this.u = new float[i7];
-        this.v = new float[i7];
-        this.w = new float[i7];
-        for (int i10 = 0; i10 < this.x; i10++) {
-            float[] fArr = this.k;
-            Random random = this.j;
-            fArr[i10] = random.nextFloat();
-            this.m[i10] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
-            b(i10);
-            this.o[i10] = random.nextFloat();
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
         }
-        a();
     }
 
-    public final void d(float f10) {
-        for (int i7 = 0; i7 < this.x; i7++) {
-            float[] fArr = this.o;
-            float f11 = fArr[i7];
-            float f12 = this.p[i7];
-            lc lcVar = nc.H;
-            float f13 = (f12 * f10 * 8.2f) + (0.8f * f12) + f11;
-            fArr[i7] = f13;
-            if (f13 >= 1.0f) {
-                fArr[i7] = 0.0f;
-                this.k[i7] = this.l[i7];
-                this.m[i7] = this.n[i7];
-                b(i7);
+    public final void c(boolean z10) {
+        if (this.i != z10) {
+            this.i = z10;
+            ValueAnimator valueAnimator = this.g;
+            this.g = null;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z10 ? 1.0f : 0.0f);
+            this.g = ofFloat;
+            ofFloat.addUpdateListener(new w(this, 8));
+            this.g.addListener(new org.telegram.ui.on(2, this, z10));
+            if (this.i) {
+                this.g.setInterpolator(lr.f);
+                this.g.setDuration((long) (this.b * 60.0f));
+                this.g.setStartDelay(0L);
+            } else {
+                this.g.setInterpolator(new OvershootInterpolator(this.d));
+                this.g.setDuration((long) (this.c * 350.0f));
+                this.g.setStartDelay(this.e);
+            }
+            this.g.start();
         }
+    }
+
+    public mc(View view, float f10, float f11) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = view;
+        this.c = f10;
+        this.b = f10;
+        this.d = f11;
+    }
+
+    public mc(hi.j5 j5Var) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = j5Var;
+        this.b = 1.5f;
+        this.c = 1.0f;
+        this.d = 2.0f;
     }
 }

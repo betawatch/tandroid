@@ -1,13 +1,42 @@
 package fi;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class u7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v7 b;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class u7 extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha((int) (textPaint.getAlpha() * 0.66f));
+    public /* synthetic */ u7(v7 v7Var, int i7) {
+        this.a = i7;
+        this.b = v7Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                w7 w7Var = this.b.v;
+                w7Var.s = 0;
+                w7Var.requestLayout();
+                x7 x7Var = w7Var.K;
+                x7Var.L(x7Var.getWidth(), x7Var.getHeight());
+                x7Var.requestLayout();
+                break;
+            case 1:
+                w7 w7Var2 = this.b.v;
+                w7Var2.s = 0;
+                w7Var2.requestLayout();
+                x7 x7Var2 = w7Var2.K;
+                x7Var2.L(x7Var2.getWidth(), x7Var2.getHeight());
+                x7Var2.requestLayout();
+                break;
+            case 2:
+                v7 v7Var = this.b;
+                v7Var.v.post(new u7(v7Var, 3));
+                break;
+            default:
+                this.b.v.y = true;
+                break;
+        }
     }
 }

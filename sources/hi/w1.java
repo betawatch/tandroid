@@ -1,65 +1,17 @@
 package hi;
 
-import android.content.Context;
-import org.telegram.ui.Components.gv;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class w1 extends gv {
-    public final /* synthetic */ y1 h0;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class w1 extends FrameLayout {
+    public org.telegram.ui.Components.q9 a;
+    public int b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(y1 y1Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var, false, false, false, true, 0, null, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.v6, e6Var), false);
-        this.h0 = y1Var;
-    }
-
-    @Override // org.telegram.ui.Components.gv
-    public final boolean h(int i7) {
-        int i10;
-        int paddingTop;
-        c2 c2Var;
-        y1 y1Var = this.h0;
-        o1 o1Var = y1Var.b;
-        x1 x1Var = y1Var.c;
-        d2 d2Var = y1Var.f;
-        int i11 = 0;
-        if (this.d) {
-            return false;
-        }
-        if (d2Var != null && (c2Var = d2Var.h) != null) {
-            if (c2Var.getSelectedCategory() != null) {
-                o1.z1(o1Var, 0, 0);
-                d2Var.h.I1(null);
-            }
-            d2Var.h.G1();
-            d2Var.b();
-        }
-        if (x1Var != null) {
-            x1Var.D(null);
-        }
-        while (true) {
-            if (i11 >= x1Var.E.size()) {
-                i10 = -1;
-                break;
-            }
-            i10 = x1Var.E.keyAt(i11);
-            if (x1Var.E.valueAt(i11) == i7) {
-                break;
-            }
-            i11++;
-        }
-        if (i10 >= 0) {
-            float f10 = y1Var.n;
-            if (f10 >= 0.0f) {
-                paddingTop = o1Var.getPaddingTop();
-            } else {
-                f10 = y1Var.b();
-                y1Var.n = f10;
-                paddingTop = o1Var.getPaddingTop();
-            }
-            o1.z1(o1Var, i10, ((int) (f10 + paddingTop)) - org.telegram.messenger.g0.L(102.0f));
-        }
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) Math.max(org.telegram.messenger.g0.L(170.0f), (org.telegram.messenger.g0.q.y * 0.34999996f) - org.telegram.messenger.g0.L(142.0f)), TLObject.FLAG_30));
     }
 }

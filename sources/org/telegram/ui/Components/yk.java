@@ -1,66 +1,69 @@
 package org.telegram.ui.Components;
 
+import android.location.Location;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yk implements ViewTreeObserver.OnPreDrawListener {
+public final /* synthetic */ class yk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ kl b;
 
-    public /* synthetic */ yk(int i7, View view) {
+    public /* synthetic */ yk(kl klVar, int i7) {
         this.a = i7;
-        this.b = view;
+        this.b = klVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        RecyclerView recyclerView;
+    @Override // java.lang.Runnable
+    public final void run() {
+        Location location;
         switch (this.a) {
             case 0:
-                dl dlVar = (dl) this.b;
-                o7 o7Var = dlVar.b.V2;
-                float alpha = o7Var != null ? o7Var.getAlpha() : 0.0f;
-                if (alpha != dlVar.A0) {
-                    dlVar.A0 = alpha;
-                    dlVar.i0();
-                    break;
-                }
+                kl.T(this.b);
                 break;
             case 1:
-                org.telegram.ui.ActionBar.u3 u3Var = ((EditTextBoldCursor) this.b).Z0;
-                if (u3Var != null) {
-                    u3Var.c();
-                    break;
-                }
+                kl.V(this.b);
                 break;
             case 2:
-                ((k60) this.b).invalidate();
+                kl klVar = this.b;
+                double[] dArr = klVar.b.y4;
+                klVar.h0(dArr[0], dArr[1]);
                 break;
-            default:
-                it0 it0Var = (it0) this.b;
-                if (it0Var.a && it0Var.b > 0) {
-                    it0Var.f("PRE_DRAW_BEFORE", null, 0, 0, true);
-                }
-                it0Var.p();
-                if (it0Var.h0 && (recyclerView = it0Var.F) != null && !recyclerView.c0()) {
-                    float n10 = it0Var.n();
-                    if (!Float.isInfinite(n10)) {
-                        it0Var.h0 = false;
-                        it0Var.t(it0Var.F, Math.round(n10 - it0Var.V));
-                        it0Var.B();
+            case 3:
+                org.telegram.messenger.g0.g3(new yk(this.b, 6));
+                break;
+            case 4:
+                kl klVar2 = this.b;
+                jg.r0 r0Var = klVar2.L;
+                if (!klVar2.l0) {
+                    org.telegram.messenger.da daVar = klVar2.E;
+                    if (daVar != null && (location = klVar2.j0) != null) {
+                        location.setLatitude(((org.telegram.messenger.ab) daVar.d().b).a);
+                        klVar2.j0.setLongitude(((org.telegram.messenger.ab) klVar2.E.d().b).b);
                     }
-                }
-                if (it0Var.a && it0Var.b > 0) {
-                    it0Var.f("PRE_DRAW_AFTER", null, 0, 0, true);
-                    it0Var.b--;
-                    it0Var.c++;
+                    r0Var.L(klVar2.j0);
+                    r0Var.H();
+                    break;
+                } else {
+                    klVar2.l0 = false;
                     break;
                 }
                 break;
+            case 5:
+                View view = this.b.J;
+                if (view.getTag() == null) {
+                    view.animate().alpha(0.0f).setDuration(180L).start();
+                    break;
+                }
+                break;
+            case 6:
+                View view2 = this.b.J;
+                view2.setTag(1);
+                view2.animate().alpha(0.0f).setDuration(180L).start();
+                break;
+            default:
+                this.b.h0(0.0d, 0.0d);
+                break;
         }
-        return true;
     }
 }

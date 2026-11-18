@@ -1,25 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class yb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fb b;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.Typeface;
+import android.widget.ImageView;
 
-    public /* synthetic */ yb(fb fbVar, int i7) {
-        this.a = i7;
-        this.b = fbVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public class yb extends eb {
+    public final ImageView a;
+    public final k80 b;
+
+    public yb(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
+        int i7 = org.telegram.ui.ActionBar.n6.yj;
+        getThemedColor(i7);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        org.telegram.ui.ActionBar.u6.s(imageView, i7, i6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, c8.ma.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
+        k80 k80Var = new k80(context, null);
+        this.b = k80Var;
+        k80Var.setDisablePaddingsOffsetY(true);
+        k80Var.setSingleLine();
+        org.telegram.ui.ActionBar.u6.U(k80Var, i7, i6Var);
+        k80Var.setTypeface(Typeface.SANS_SERIF);
+        k80Var.setTextSize(1, 15.0f);
+        addView(k80Var, c8.ma.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.performHapticFeedback(3, 2);
-                break;
-            default:
-                this.b.performHapticFeedback(3, 2);
-                break;
-        }
+    @Override // org.telegram.ui.Components.lb
+    public CharSequence getAccessibilityText() {
+        return this.b.getText();
     }
 }

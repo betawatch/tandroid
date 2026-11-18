@@ -1,57 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.HashMap;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class a41 {
-    public final int a;
+public final class a41 extends v4.u0 {
+    public final /* synthetic */ h41 a;
 
-    public a41() {
-        int i7 = b41.J;
-        b41.J = i7 + 1;
-        this.a = i7;
+    public a41(h41 h41Var) {
+        this.a = h41Var;
     }
 
-    public static void h(a41 a41Var) {
-        if (b41.L == null) {
-            b41.L = new HashMap();
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        v4.u0 u0Var = this.a.E;
+        if (u0Var != null) {
+            u0Var.a(recyclerView, i7);
         }
-        if (b41.K == null) {
-            b41.K = new LongSparseArray();
+    }
+
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        h41 h41Var = this.a;
+        g41 g41Var = h41Var.s;
+        x31 x31Var = h41Var.n;
+        v4.u0 u0Var = h41Var.E;
+        if (u0Var != null) {
+            u0Var.b(x31Var, i7, i10);
         }
-        Class<?> cls = a41Var.getClass();
-        if (b41.L.containsKey(cls)) {
+        if (i10 <= 0 || x31Var.getAdapter() != g41Var || !h41Var.K || g41Var.r || g41Var.s) {
             return;
         }
-        b41.L.put(cls, a41Var);
-        b41.K.put(a41Var.a, a41Var);
-    }
-
-    public boolean c(b41 b41Var, b41 b41Var2) {
-        return b41Var.I(b41Var2);
-    }
-
-    public abstract View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var);
-
-    public boolean e(b41 b41Var, b41 b41Var2) {
-        return b41Var.J(b41Var2);
-    }
-
-    public boolean f() {
-        return !(this instanceof org.telegram.messenger.wt);
-    }
-
-    public boolean g() {
-        return this instanceof ti;
-    }
-
-    public void a(uj0 uj0Var, View view, b41 b41Var) {
-    }
-
-    public void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+        if (h41Var.r.N0() >= ((g41Var.x + 1) - ((g41Var.w + 1) * 10)) - 1) {
+            h41 h41Var2 = g41Var.y;
+            if (!h41Var2.K || g41Var.r || g41Var.s) {
+                return;
+            }
+            g41Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = g41Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(h41Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new e2(g41Var, 16));
+        }
     }
 }

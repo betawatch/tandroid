@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class v2 extends FrameLayout implements org.telegram.messenger.x5, org.telegram.ui.Cells.g9 {
+public final class v2 extends FrameLayout implements org.telegram.messenger.y5, org.telegram.ui.Cells.h9 {
     public static final /* synthetic */ int W = 0;
     public int E;
     public int F;
@@ -40,9 +40,9 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
     public boolean R;
     public boolean S;
     public boolean T;
-    public org.telegram.messenger.yi U;
+    public org.telegram.messenger.xi U;
     public boolean V;
-    public final n50 a;
+    public final p50 a;
     public final e4 b;
     public z2 c;
     public z2 d;
@@ -56,9 +56,9 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
     public boolean x;
     public int y;
 
-    public v2(Context context, n50 n50Var, e4 e4Var, int i7) {
+    public v2(Context context, p50 p50Var, e4 e4Var, int i7) {
         super(context);
-        this.a = n50Var;
+        this.a = p50Var;
         this.b = e4Var;
         setWillNotDraw(false);
         ImageReceiver imageReceiver = new ImageReceiver(this);
@@ -70,8 +70,8 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         this.r = radialProgress2;
         radialProgress2.d = -1;
         radialProgress2.setColors(1711276032, 2130706432, -1, -2500135);
-        this.L = org.telegram.messenger.z5.q(((g4) n50Var).Y).k();
-        a1 a1Var = new a1(context, n50Var, e4Var, 1);
+        this.L = org.telegram.messenger.a6.q(((g4) p50Var).Y).k();
+        a1 a1Var = new a1(context, p50Var, e4Var, 1);
         this.s = a1Var;
         j4 j4Var = new j4(context);
         this.h = j4Var;
@@ -81,10 +81,10 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         textureView.setOpaque(false);
         FrameLayout frameLayout = new FrameLayout(getContext());
         this.f = frameLayout;
-        j4Var.addView(textureView, c8.ja.e(-1, -2, 1));
-        frameLayout.addView(j4Var, c8.ja.e(-1, -1, 17));
-        addView(frameLayout, c8.ja.c(-2.0f, -1));
-        addView(a1Var, c8.ja.c(-2.0f, -1));
+        j4Var.addView(textureView, c8.ma.e(-1, -2, 1));
+        frameLayout.addView(j4Var, c8.ma.e(-1, -1, 17));
+        addView(frameLayout, c8.ma.c(-2.0f, -1));
+        addView(a1Var, c8.ma.c(-2.0f, -1));
     }
 
     private int getIconForCurrentState() {
@@ -101,12 +101,12 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         return i7 == 3 ? 0 : 4;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void C(boolean z10) {
         e(false);
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void N(String str) {
         this.r.p(true, 1.0f);
         if (!this.Q) {
@@ -128,7 +128,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
             boolean z10 = this.Q;
             e4 e4Var = this.b;
             if (z10) {
-                imageReceiver.r0(org.telegram.messenger.gc.b(this.P), null, org.telegram.messenger.gc.c(org.telegram.messenger.w7.w(this.P.thumbs, 40, false, null, false), this.P), "80_80_b", null, this.P.size, null, e4Var.F, 1);
+                imageReceiver.r0(org.telegram.messenger.fc.b(this.P), null, org.telegram.messenger.fc.c(org.telegram.messenger.w7.w(this.P.thumbs, 40, false, null, false), this.P), "80_80_b", null, this.P.size, null, e4Var.F, 1);
             } else {
                 org.telegram.messenger.w7.G(i7).W(this.P, e4Var.F, 1, 1);
             }
@@ -159,11 +159,11 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
     }
 
     public final void b(TL_iv.pageBlockVideo pageblockvideo, w2 w2Var, boolean z10, boolean z11) {
-        n50 n50Var;
+        p50 p50Var;
         VideoPlayerHolderBase videoPlayerHolderBase;
         TL_iv.pageBlockVideo pageblockvideo2 = this.M;
-        if (pageblockvideo2 != null && (videoPlayerHolderBase = (n50Var = this.a).x) != null && n50Var.y == this) {
-            a0.h hVar = n50Var.E;
+        if (pageblockvideo2 != null && (videoPlayerHolderBase = (p50Var = this.a).x) != null && p50Var.y == this) {
+            a0.h hVar = p50Var.E;
             long j3 = pageblockvideo2.video_id;
             w2 a10 = w2.a(videoPlayerHolderBase, this);
             this.N = a10;
@@ -179,7 +179,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         } else {
             this.P = null;
         }
-        this.Q = org.telegram.messenger.gj.K4(this.P) || org.telegram.messenger.gj.s3(this.P, false);
+        this.Q = org.telegram.messenger.fj.K4(this.P) || org.telegram.messenger.fj.s3(this.P, false);
         this.x = z11;
         this.s.setVisibility(4);
         e(false);
@@ -219,16 +219,16 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         if (this.V) {
             this.V = false;
             TL_iv.pageBlockVideo pageblockvideo = this.M;
-            n50 n50Var = this.a;
-            if (pageblockvideo != null && (videoPlayerHolderBase = n50Var.x) != null && n50Var.y == this) {
-                a0.h hVar = n50Var.E;
+            p50 p50Var = this.a;
+            if (pageblockvideo != null && (videoPlayerHolderBase = p50Var.x) != null && p50Var.y == this) {
+                a0.h hVar = p50Var.E;
                 long j3 = pageblockvideo.video_id;
                 w2 a10 = w2.a(videoPlayerHolderBase, this);
                 c(a10);
                 hVar.k(a10, j3);
             }
             imageReceiver.R();
-            org.telegram.messenger.z5.q(((g4) n50Var).Y).v(this);
+            org.telegram.messenger.a6.q(((g4) p50Var).Y).v(this);
         }
     }
 
@@ -252,7 +252,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
             return;
         }
         if (z12) {
-            org.telegram.messenger.z5.q(i7).v(this);
+            org.telegram.messenger.a6.q(i7).v(this);
             if (this.Q) {
                 this.J = -1;
             } else {
@@ -260,13 +260,13 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
             }
             radialProgress2.setIcon(getIconForCurrentState(), false, z10);
         } else {
-            org.telegram.messenger.z5.q(i7).a(r10, null, this);
+            org.telegram.messenger.a6.q(i7).a(r10, null, this);
             w2 w2Var = this.N;
             float f10 = 0.0f;
             if (w2Var == null || w2Var.b == null) {
                 if (org.telegram.messenger.w7.G(i7).S(r10)) {
                     this.J = 1;
-                    Float w10 = org.telegram.messenger.fc.D().w(r10);
+                    Float w10 = org.telegram.messenger.ec.D().w(r10);
                     if (w10 != null) {
                         f10 = w10.floatValue();
                     }
@@ -299,7 +299,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         return this.e;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public int getObserverTag() {
         return this.L;
     }
@@ -308,7 +308,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         return this.n;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void i(long j3, long j10) {
         this.r.p(true, Math.min(1.0f, j3 / j10));
         if (this.J != 1) {
@@ -316,7 +316,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         }
     }
 
-    @Override // org.telegram.ui.Cells.g9
+    @Override // org.telegram.ui.Cells.h9
     public final void k(ArrayList arrayList) {
         z2 z2Var = this.c;
         if (z2Var != null) {
@@ -367,12 +367,12 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         }
         imageReceiver.h(canvas, null);
         z2 z2Var = this.c;
-        n50 n50Var = this.a;
+        p50 p50Var = this.a;
         int i7 = 0;
         if (z2Var != null) {
             canvas.save();
             canvas.translate(this.y, this.E);
-            g4.t(n50Var, canvas, this, 0);
+            g4.t(p50Var, canvas, this, 0);
             this.c.d(canvas, this);
             canvas.restore();
             i7 = 1;
@@ -380,11 +380,11 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         if (this.d != null) {
             canvas.save();
             canvas.translate(this.y, this.E + this.F);
-            g4.t(n50Var, canvas, this, i7);
+            g4.t(p50Var, canvas, this, i7);
             this.d.d(canvas, this);
             canvas.restore();
         }
-        g4.s(canvas, n50Var, this.M, getMeasuredHeight());
+        g4.s(canvas, p50Var, this.M, getMeasuredHeight());
         super.onDraw(canvas);
         if (imageReceiver.R0) {
             this.r.draw(canvas);
@@ -395,7 +395,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);
-        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.hd.M0(2131753933, null));
+        StringBuilder sb2 = new StringBuilder(org.telegram.messenger.gd.M0(2131753931, null));
         if (this.c != null) {
             sb2.append(", ");
             sb2.append(this.c.d.getText());
@@ -451,7 +451,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                     } else {
                         i13 = org.telegram.messenger.g0.L(18.0f) + org.telegram.messenger.g0.L(i19 * 14);
                         this.y = i13;
-                        i14 = org.telegram.messenger.i20.w(18.0f, i13, i11);
+                        i14 = org.telegram.messenger.n10.x(18.0f, i13, i11);
                         L = i14;
                     }
                     TLRPC.Document document = this.P;
@@ -519,17 +519,17 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                                         if (this.Q) {
                                             w2 w2Var = this.N;
                                             if (w2Var == null || (bitmap = w2Var.b) == null) {
-                                                this.S = org.telegram.messenger.z5.q(i22).c(4, this.P.size);
+                                                this.S = org.telegram.messenger.a6.q(i22).c(4, this.P.size);
                                                 org.telegram.messenger.w7.G(i22);
                                                 File I = org.telegram.messenger.w7.I(this.P);
                                                 org.telegram.messenger.w7.G(i22);
                                                 File J = org.telegram.messenger.w7.J(this.P, null, true, true);
                                                 if (this.S || I.exists() || J.exists()) {
                                                     imageReceiver.O = null;
-                                                    imageReceiver.u0(null, null, org.telegram.messenger.gc.b(this.P), "200_200_pframe", org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
+                                                    imageReceiver.u0(null, null, org.telegram.messenger.fc.b(this.P), "200_200_pframe", org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
                                                 } else {
-                                                    imageReceiver.O = org.telegram.messenger.gc.b(this.P);
-                                                    imageReceiver.u0(null, null, null, null, org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
+                                                    imageReceiver.O = org.telegram.messenger.fc.b(this.P);
+                                                    imageReceiver.u0(null, null, null, null, org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, this.P.size, null, e4Var2.F, 1);
                                                 }
                                             } else {
                                                 imageReceiver.O = null;
@@ -537,7 +537,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                                             }
                                         } else {
                                             imageReceiver.O = null;
-                                            imageReceiver.r0(null, null, org.telegram.messenger.gc.c(w10, this.P), "80_80_b", null, 0L, null, e4Var2 != null ? e4Var2.F : null, 1);
+                                            imageReceiver.r0(null, null, org.telegram.messenger.fc.c(w10, this.P), "80_80_b", null, 0L, null, e4Var2 != null ? e4Var2.F : null, 1);
                                         }
                                     }
                                     imageReceiver.S0 = true;
@@ -580,7 +580,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                         if (o4 != null) {
                             int height = this.c.d.getHeight() + org.telegram.messenger.g0.L(4.0f);
                             this.F = height;
-                            i15 = org.telegram.messenger.k5.C(4.0f, height, i15);
+                            i15 = org.telegram.messenger.f3.C(4.0f, height, i15);
                             z2 z2Var = this.c;
                             z2Var.s = this.y;
                             z2Var.w = this.E;
@@ -588,7 +588,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
                         int i25 = i15;
                         TL_iv.pageBlockVideo pageblockvideo3 = this.M;
                         e4Var = e4Var2;
-                        z2 n10 = g4.n(this.a, this, null, pageblockvideo3.caption.credit, L, 0, pageblockvideo3, (e4Var2 == null || !e4Var2.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ou0.a(), 0, this.b);
+                        z2 n10 = g4.n(this.a, this, null, pageblockvideo3.caption.credit, L, 0, pageblockvideo3, (e4Var2 == null || !e4Var2.H) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.wu0.a(), 0, this.b);
                         this.d = n10;
                         if (n10 != null) {
                             i15 = this.d.d.getHeight() + org.telegram.messenger.g0.L(4.0f) + i25;
@@ -706,7 +706,7 @@ public final class v2 extends FrameLayout implements org.telegram.messenger.x5, 
         d();
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void o(long j3, long j10) {
     }
 }

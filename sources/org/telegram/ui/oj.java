@@ -1,23 +1,34 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class oj implements Runnable {
-    public final /* synthetic */ an a;
+import android.content.Context;
 
-    public oj(an anVar) {
-        this.a = anVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class oj extends org.telegram.ui.Components.to {
+    public final /* synthetic */ bn f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oj(bn bnVar, Context context) {
+        super(context);
+        this.f = bnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        an anVar = this.a;
-        org.telegram.messenger.gj gjVar = anVar.u5;
-        if (gjVar == null || anVar.k9 == null) {
-            return;
+    @Override // org.telegram.ui.Components.to
+    public final void a(boolean z10) {
+        bn bnVar = this.f;
+        bnVar.I7();
+        bnVar.G7();
+        bnVar.J7();
+        bnVar.K7();
+        ik ikVar = bnVar.Bb;
+        if (ikVar != null) {
+            ikVar.setTranslationY(bnVar.T9 + getCurrentHeight());
         }
-        int max = Math.max(0, gjVar.k.ttl_period - (anVar.getConnectionsManager().getCurrentTime() - anVar.u5.k.date));
-        anVar.k9.setSubtext(org.telegram.messenger.hd.a0(null, null, 2131753853, max < 86400 ? org.telegram.messenger.g0.g0(max, false, true) : org.telegram.messenger.hd.G(Math.round(max / 86400.0f), "Days", new Object[0])));
-        org.telegram.messenger.g0.i3(anVar.l9, 1000L);
+        if (!z10) {
+            bnVar.M9();
+        } else {
+            bnVar.aa = true;
+            bnVar.Rc();
+        }
     }
 }

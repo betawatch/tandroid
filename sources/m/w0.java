@@ -16,11 +16,11 @@ import android.util.TypedValue;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.TextView;
-import c8.mc;
+import c8.pc;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w0 {
     public final TextView a;
@@ -163,9 +163,9 @@ public final class w0 {
         Context context = textView.getContext();
         q a10 = q.a();
         int[] iArr = f.a.h;
-        h6.m z12 = h6.m.z(context, attributeSet, iArr, i7);
-        r0.i0.i(textView, textView.getContext(), iArr, attributeSet, (TypedArray) z12.c, i7);
-        TypedArray typedArray = (TypedArray) z12.c;
+        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
+        r0.i0.i(textView, textView.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
+        TypedArray typedArray = (TypedArray) D.c;
         int resourceId3 = typedArray.getResourceId(0, -1);
         if (typedArray.hasValue(3)) {
             this.b = c(context, a10, typedArray.getResourceId(3, 0));
@@ -186,13 +186,13 @@ public final class w0 {
         if (typedArray.hasValue(6)) {
             this.g = c(context, a10, typedArray.getResourceId(6, 0));
         }
-        z12.D();
-        boolean z13 = textView.getTransformationMethod() instanceof PasswordTransformationMethod;
+        D.G();
+        boolean z12 = textView.getTransformationMethod() instanceof PasswordTransformationMethod;
         int[] iArr2 = f.a.w;
         if (resourceId3 != -1) {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(resourceId3, iArr2);
             h6.m mVar = new h6.m(context, obtainStyledAttributes);
-            if (z13 || !obtainStyledAttributes.hasValue(14)) {
+            if (z12 || !obtainStyledAttributes.hasValue(14)) {
                 z10 = false;
                 z11 = false;
             } else {
@@ -202,7 +202,7 @@ public final class w0 {
             n(context, mVar);
             str2 = obtainStyledAttributes.hasValue(15) ? obtainStyledAttributes.getString(15) : null;
             str = (i11 < 26 || !obtainStyledAttributes.hasValue(13)) ? null : obtainStyledAttributes.getString(13);
-            mVar.D();
+            mVar.G();
         } else {
             z10 = false;
             z11 = false;
@@ -211,11 +211,11 @@ public final class w0 {
         }
         TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, iArr2, i7, 0);
         h6.m mVar2 = new h6.m(context, obtainStyledAttributes2);
-        if (!z13 && obtainStyledAttributes2.hasValue(14)) {
+        if (!z12 && obtainStyledAttributes2.hasValue(14)) {
             z11 = obtainStyledAttributes2.getBoolean(14, false);
             z10 = true;
         }
-        boolean z14 = z11;
+        boolean z13 = z11;
         if (obtainStyledAttributes2.hasValue(15)) {
             str2 = obtainStyledAttributes2.getString(15);
         }
@@ -227,9 +227,9 @@ public final class w0 {
             textView.setTextSize(0, 0.0f);
         }
         n(context, mVar2);
-        mVar2.D();
-        if (!z13 && z10) {
-            textView.setAllCaps(z14);
+        mVar2.G();
+        if (!z12 && z10) {
+            textView.setAllCaps(z13);
         }
         Typeface typeface = this.l;
         if (typeface != null) {
@@ -365,7 +365,7 @@ public final class w0 {
             }
         }
         if (obtainStyledAttributes4.hasValue(11)) {
-            if (!obtainStyledAttributes4.hasValue(11) || (resourceId = obtainStyledAttributes4.getResourceId(11, 0)) == 0 || (colorStateList = b5.a.a(context, resourceId)) == null) {
+            if (!obtainStyledAttributes4.hasValue(11) || (resourceId = obtainStyledAttributes4.getResourceId(11, 0)) == 0 || (colorStateList = c8.z.a(context, resourceId)) == null) {
                 colorStateList = obtainStyledAttributes4.getColorStateList(11);
             }
             if (Build.VERSION.SDK_INT >= 24) {
@@ -387,10 +387,10 @@ public final class w0 {
         int dimensionPixelSize3 = obtainStyledAttributes4.getDimensionPixelSize(19, -1);
         obtainStyledAttributes4.recycle();
         if (dimensionPixelSize != -1) {
-            mc.b(textView, dimensionPixelSize);
+            pc.b(textView, dimensionPixelSize);
         }
         if (dimensionPixelSize2 != -1) {
-            mc.c(textView, dimensionPixelSize2);
+            pc.c(textView, dimensionPixelSize2);
         }
         if (dimensionPixelSize3 != -1) {
             if (dimensionPixelSize3 < 0) {
@@ -419,7 +419,7 @@ public final class w0 {
         if (i10 >= 26 && obtainStyledAttributes.hasValue(13) && (string = obtainStyledAttributes.getString(13)) != null) {
             u0.d(textView, string);
         }
-        mVar.D();
+        mVar.G();
         Typeface typeface = this.l;
         if (typeface != null) {
             textView.setTypeface(typeface, this.j);
@@ -562,12 +562,12 @@ public final class w0 {
             j0Var.b = i15;
             j0Var.c = weakReference;
             try {
-                Typeface t6 = mVar.t(i13, this.j, j0Var);
-                if (t6 != null) {
+                Typeface w10 = mVar.w(i13, this.j, j0Var);
+                if (w10 != null) {
                     if (i10 < 28 || this.k == -1) {
-                        this.l = t6;
+                        this.l = w10;
                     } else {
-                        this.l = v0.a(Typeface.create(t6, 0), this.k, (this.j & 2) != 0);
+                        this.l = v0.a(Typeface.create(w10, 0), this.k, (this.j & 2) != 0);
                     }
                 }
                 this.m = this.l == null;

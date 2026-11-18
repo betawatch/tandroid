@@ -1,8 +1,8 @@
 package rc;
 
 import a8.p0;
+import bi.q3;
 import com.google.android.gms.internal.clearcut.y0;
-import di.w7;
 import e2.r0;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -15,11 +15,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ou;
-import org.telegram.ui.Wallet.x0;
-import org.telegram.ui.web.c1;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Wallet.h1;
+import org.telegram.ui.web.d1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
@@ -28,7 +28,7 @@ public final class u {
     public final ab.q d;
     public final p e;
     public final p f;
-    public c1 h;
+    public d1 h;
     public y i;
     public q j;
     public a0 k;
@@ -79,13 +79,13 @@ public final class u {
                 while (i7 < size) {
                     Object obj = arrayList.get(i7);
                     i7++;
-                    x0 x0Var = (x0) obj;
+                    h1 h1Var = (h1) obj;
                     try {
                         try {
-                            int i10 = 5;
-                            g0.h3(new w7(x0Var.a, i10, x0Var.b, x0Var, (u) qVar.b));
+                            int i10 = 6;
+                            g0.g3(new q3(h1Var.a, i10, h1Var.b, h1Var, (u) qVar.b));
                         } catch (Throwable unused) {
-                            x0Var.getClass();
+                            h1Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -104,7 +104,7 @@ public final class u {
             }
             r0Var.a = 2;
         }
-        this.d.g();
+        this.d.f();
         try {
             s sVar = this.a;
             try {
@@ -130,7 +130,7 @@ public final class u {
                 }
                 this.u = oVar;
                 this.b.a = 3;
-                this.d.g();
+                this.d.f();
                 i();
             } catch (v e10) {
                 Socket socket = sVar.g;
@@ -151,7 +151,7 @@ public final class u {
                 }
             }
             this.b.a = 5;
-            this.d.g();
+            this.d.f();
             throw e11;
         }
     }
@@ -171,7 +171,7 @@ public final class u {
                         r0Var.b = 3;
                     }
                     g(x.a(1000, null));
-                    this.d.g();
+                    this.d.f();
                     j();
                     return;
                 }
@@ -184,12 +184,12 @@ public final class u {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        x0 x0Var = (x0) obj;
+                        h1 h1Var = (h1) obj;
                         try {
                             try {
-                                x0Var.getClass();
+                                h1Var.getClass();
                             } catch (Throwable unused) {
-                                x0Var.getClass();
+                                h1Var.getClass();
                             }
                         } catch (Throwable unused2) {
                         }
@@ -215,7 +215,7 @@ public final class u {
         synchronized (this.b) {
             this.b.a = 5;
         }
-        this.d.g();
+        this.d.f();
         ab.q qVar = this.d;
         x xVar = this.s;
         x xVar2 = this.t;
@@ -226,14 +226,14 @@ public final class u {
         while (i7 < size) {
             Object obj = arrayList.get(i7);
             i7++;
-            x0 x0Var = (x0) obj;
+            h1 h1Var = (h1) obj;
             try {
                 try {
-                    x0Var.a((u) qVar.b, xVar, xVar2, z10);
+                    h1Var.a((u) qVar.b, xVar, xVar2, z10);
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                x0Var.getClass();
+                h1Var.getClass();
             }
         }
     }
@@ -303,7 +303,7 @@ public final class u {
         w wVar2;
         String str;
         try {
-            c1 c1Var = new c1(new BufferedInputStream(socket.getInputStream()), 1);
+            d1 d1Var = new d1(new BufferedInputStream(socket.getInputStream()), 1);
             try {
                 y yVar = new y(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
@@ -322,7 +322,7 @@ public final class u {
                 if (str2 != null && str2.length() != 0) {
                     arrayList.add(new String[]{"Authorization", "Basic " + d.a(k.a(str2))});
                 }
-                StringBuilder m10 = r.b.m(p10, "\r\n");
+                StringBuilder n10 = p5.c.n(p10, "\r\n");
                 int size = arrayList.size();
                 int i11 = 0;
                 int i12 = 0;
@@ -334,25 +334,25 @@ public final class u {
                     Object obj = arrayList.get(i12);
                     i12++;
                     String[] strArr = (String[]) obj;
-                    m10.append(strArr[0]);
-                    m10.append(": ");
-                    m10.append(strArr[1]);
-                    m10.append("\r\n");
+                    n10.append(strArr[0]);
+                    n10.append(": ");
+                    n10.append(strArr[1]);
+                    n10.append("\r\n");
                 }
-                m10.append("\r\n");
-                String sb2 = m10.toString();
+                n10.append("\r\n");
+                String sb2 = n10.toString();
                 ArrayList arrayList2 = (ArrayList) this.d.p();
                 int size2 = arrayList2.size();
                 int i13 = 0;
                 while (i13 < size2) {
                     Object obj2 = arrayList2.get(i13);
                     i13++;
-                    x0 x0Var = (x0) obj2;
+                    h1 h1Var = (h1) obj2;
                     try {
                         try {
-                            x0Var.getClass();
+                            h1Var.getClass();
                         } catch (Throwable unused) {
-                            x0Var.getClass();
+                            h1Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -360,9 +360,9 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    ou ouVar = new ou(this, 20);
+                    hn hnVar = new hn(this, 13);
                     try {
-                        String b10 = k.b(c1Var);
+                        String b10 = k.b(d1Var);
                         if (b10 == null || b10.length() == 0) {
                             throw new v(6, "The status line of the opening handshake response is empty.");
                         }
@@ -372,14 +372,14 @@ public final class u {
                             StringBuilder sb3 = null;
                             while (true) {
                                 try {
-                                    String b11 = k.b(c1Var);
+                                    String b11 = k.b(d1Var);
                                     if (b11 == null || b11.length() == 0) {
                                         break;
                                     }
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            ou.e1(sb3.toString(), treeMap);
+                                            hn.P(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -390,7 +390,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                ou.e1(sb3.toString(), treeMap);
+                                hn.P(sb3.toString(), treeMap);
                             }
                             if (y0Var.b != 101) {
                                 try {
@@ -400,7 +400,7 @@ public final class u {
                                 }
                                 if (i10 > 0) {
                                     try {
-                                        c1Var.b(i10, new byte[i10]);
+                                        d1Var.b(i10, new byte[i10]);
                                     } catch (Throwable unused4) {
                                     }
                                 }
@@ -433,7 +433,7 @@ public final class u {
                                                         throw new n(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", y0Var);
                                                     }
                                                     try {
-                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(r.b.v(a10, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
+                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(p5.c.v(a10, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
                                                             throw new n(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", y0Var);
                                                         }
                                                     } catch (Exception unused5) {
@@ -513,14 +513,14 @@ public final class u {
                                                                             }
                                                                             wVar2 = wVar;
                                                                             if (wVar2 != null) {
-                                                                                throw new n(16, r.b.k("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), y0Var);
+                                                                                throw new n(16, p5.c.k("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), y0Var);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) ouVar.b).c;
+                                                                            h hVar2 = ((u) hnVar.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
-                                                                            throw new n(17, r.b.k("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), y0Var);
+                                                                            throw new n(17, p5.c.k("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), y0Var);
                                                                         }
                                                                     }
                                                                 }
@@ -537,15 +537,15 @@ public final class u {
                                                             w wVar4 = (w) obj3;
                                                             if (wVar4 instanceof o) {
                                                                 if (wVar3 != null) {
-                                                                    throw new n(18, r.b.l("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), y0Var);
+                                                                    throw new n(18, p5.c.l("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), y0Var);
                                                                 }
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) ouVar.b).l = arrayList3;
+                                                        ((u) hnVar.b).l = arrayList3;
                                                     }
-                                                    ouVar.o1(y0Var, treeMap);
-                                                    this.h = c1Var;
+                                                    hnVar.U(y0Var, treeMap);
+                                                    this.h = d1Var;
                                                     this.i = yVar;
                                                     return treeMap;
                                                 }
@@ -593,12 +593,12 @@ public final class u {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                x0 x0Var = (x0) obj;
+                h1 h1Var = (h1) obj;
                 try {
                     try {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     } catch (Throwable unused) {
-                        x0Var.getClass();
+                        h1Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -611,12 +611,12 @@ public final class u {
             while (i7 < size2) {
                 Object obj2 = arrayList2.get(i7);
                 i7++;
-                x0 x0Var2 = (x0) obj2;
+                h1 h1Var2 = (h1) obj2;
                 try {
                     try {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     } catch (Throwable unused3) {
-                        x0Var2.getClass();
+                        h1Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }

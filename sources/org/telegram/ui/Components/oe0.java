@@ -1,15 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class oe0 extends re0 {
-    public final /* synthetic */ pe0 e;
+public final /* synthetic */ class oe0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ qe0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe0(pe0 pe0Var, Context context) {
-        super(pe0Var.s, context);
-        this.e = pe0Var;
+    public /* synthetic */ oe0(qe0 qe0Var, int i7) {
+        this.a = i7;
+        this.b = qe0Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                qe0 qe0Var = this.b;
+                qe0Var.getClass();
+                qe0Var.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qe0Var.invalidate();
+                break;
+            default:
+                qe0 qe0Var2 = this.b;
+                qe0Var2.getClass();
+                qe0Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                qe0Var2.invalidate();
+                break;
+        }
     }
 }

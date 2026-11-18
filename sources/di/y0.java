@@ -1,28 +1,12 @@
 package di;
 
-import android.os.Build;
-import c8.zc;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y0 implements ri.m, ri.n {
-    public final /* synthetic */ i1 a;
-
-    @Override // ri.n
-    public int e() {
-        return this.a.d1();
-    }
-
-    @Override // ri.m
-    public void l(int i7) {
-        i1 i1Var = this.a;
-        dh.g gVar = i1Var.n2;
-        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
-            return;
-        }
-        if (zc.a(i7, 4)) {
-            gVar.h(i1Var.Y0.e());
-        }
-        gVar.e(i1Var.s2, i1Var.b.getWidth(), i1Var.b.getHeight());
+public final class y0 extends v4.k {
+    @Override // v4.k
+    public final float A(View view) {
+        return 0.3f;
     }
 }

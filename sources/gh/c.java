@@ -3,12 +3,12 @@ package gh;
 import e2.a1;
 import h2.j;
 import h2.o;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import p4.c0;
-import p4.g1;
+import p4.i1;
 import p4.u;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements d, o, c0, j {
     public final /* synthetic */ int a;
@@ -25,10 +25,10 @@ public final /* synthetic */ class c implements d, o, c0, j {
     public void accept(Object obj) {
         switch (this.a) {
             case 4:
-                ((g1) obj).M(this.b, this.c);
+                ((i1) obj).M(this.b, this.c);
                 break;
             default:
-                ((g1) obj).t0(this.b, this.c);
+                ((i1) obj).t0(this.b, this.c);
                 break;
         }
     }
@@ -51,7 +51,7 @@ public final /* synthetic */ class c implements d, o, c0, j {
     }
 
     @Override // gh.d
-    public int j(e6 e6Var, boolean z10) {
+    public int j(i6 i6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 }

@@ -11,7 +11,7 @@ import java.io.FileDescriptor;
 import java.io.PrintWriter;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class v extends androidx.activity.l implements e0.a {
     public boolean M;
@@ -34,10 +34,10 @@ public abstract class v extends androidx.activity.l implements e0.a {
             public final void accept(Object obj) {
                 switch (i7) {
                     case 0:
-                        this.b.K.u();
+                        this.b.K.n();
                         break;
                     default:
-                        this.b.K.u();
+                        this.b.K.n();
                         break;
                 }
             }
@@ -54,10 +54,10 @@ public abstract class v extends androidx.activity.l implements e0.a {
             public final void accept(Object obj) {
                 switch (i10) {
                     case 0:
-                        this.b.K.u();
+                        this.b.K.n();
                         break;
                     default:
-                        this.b.K.u();
+                        this.b.K.n();
                         break;
                 }
             }
@@ -73,7 +73,7 @@ public abstract class v extends androidx.activity.l implements e0.a {
 
     public static boolean t(j0 j0Var) {
         boolean z10 = false;
-        for (s sVar : j0Var.c.u()) {
+        for (s sVar : j0Var.c.w()) {
             if (sVar != null) {
                 u uVar = sVar.L;
                 if ((uVar == null ? null : uVar.e) != null) {
@@ -143,14 +143,14 @@ public abstract class v extends androidx.activity.l implements e0.a {
         printWriter.print(" mStopped=");
         printWriter.print(this.O);
         if (getApplication() != null) {
-            new sg.h0(this, f()).c(str3, printWriter);
+            new sg.h0(this, g()).c(str3, printWriter);
         }
         ((u) this.K.b).d.w(str, fileDescriptor, printWriter, strArr);
     }
 
     @Override // androidx.activity.l, android.app.Activity
     public void onActivityResult(int i7, int i10, Intent intent) {
-        this.K.u();
+        this.K.n();
         super.onActivityResult(i7, i10, intent);
     }
 
@@ -210,14 +210,14 @@ public abstract class v extends androidx.activity.l implements e0.a {
 
     @Override // androidx.activity.l, android.app.Activity
     public void onRequestPermissionsResult(int i7, String[] strArr, int[] iArr) {
-        this.K.u();
+        this.K.n();
         super.onRequestPermissionsResult(i7, strArr, iArr);
     }
 
     @Override // android.app.Activity
     public void onResume() {
         cb.c cVar = this.K;
-        cVar.u();
+        cVar.n();
         super.onResume();
         this.N = true;
         ((u) cVar.b).d.A(true);
@@ -226,7 +226,7 @@ public abstract class v extends androidx.activity.l implements e0.a {
     @Override // android.app.Activity
     public void onStart() {
         cb.c cVar = this.K;
-        cVar.u();
+        cVar.n();
         u uVar = (u) cVar.b;
         super.onStart();
         this.O = false;
@@ -249,7 +249,7 @@ public abstract class v extends androidx.activity.l implements e0.a {
 
     @Override // android.app.Activity
     public final void onStateNotSaved() {
-        this.K.u();
+        this.K.n();
     }
 
     @Override // android.app.Activity

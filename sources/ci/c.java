@@ -19,10 +19,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.WeakHashMap;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c extends View {
     public static final long g0 = System.currentTimeMillis();
@@ -46,9 +46,9 @@ public final class c extends View {
     public m U;
     public float V;
     public float W;
-    public final ob.c a;
+    public final cb.c a;
     public float a0;
-    public g0 b;
+    public h0 b;
     public long b0;
     public final Paint c;
     public long c0;
@@ -66,7 +66,7 @@ public final class c extends View {
     public float x;
     public float y;
 
-    public c(Activity activity, ob.c cVar) {
+    public c(Activity activity, cb.c cVar) {
         super(activity);
         this.c = new Paint(1);
         Paint paint = new Paint(1);
@@ -287,8 +287,8 @@ public final class c extends View {
                                     float f33 = -L5;
                                     canvas2.saveLayerAlpha(f33, f33, L5, L5, (int) (f32 * 255.0f));
                                 }
-                                ob.c cVar2 = cVar.a;
-                                z0 z0Var = ((i0) cVar2.b).d;
+                                cb.c cVar2 = cVar.a;
+                                z0 z0Var = ((j0) cVar2.b).d;
                                 int[] iArr3 = cVar.Q;
                                 z0Var.getLocationOnScreen(iArr3);
                                 float f34 = 1.0f / f30;
@@ -296,7 +296,7 @@ public final class c extends View {
                                 canvas2.translate(-L, -L2);
                                 float f35 = iArr2[0] - iArr3[0];
                                 float f36 = iArr2[1] - iArr3[1];
-                                z0 z0Var2 = ((i0) cVar2.b).d;
+                                z0 z0Var2 = ((j0) cVar2.b).d;
                                 if (!z0Var2.j0(canvas2) && z0Var2.Z2 != null) {
                                     canvas2.save();
                                     canvas2.translate(-f35, -f36);
@@ -305,18 +305,18 @@ public final class c extends View {
                                         z0Var2.y(canvas2, bitmap);
                                     }
                                     canvas2.restore();
-                                } else if (v.f() && z0Var2.j0(canvas2)) {
+                                } else if (w.f() && z0Var2.j0(canvas2)) {
                                     canvas2.save();
                                     canvas2.translate(-f35, -f36);
                                     Object obj = z0Var2.I1;
                                     canvas2.save();
                                     canvas2.scale(9.0f, 9.0f);
-                                    v.c(canvas2, obj);
+                                    w.c(canvas2, obj);
                                     canvas2.restore();
                                     canvas2.restore();
                                 } else {
                                     x0 x0Var = z0Var2.n;
-                                    canvas2.drawColor(i0.a.o(x0Var != null ? i0.a.f(0.5f, x0Var.b, x0Var.c) : -12947803, ns.B3));
+                                    canvas2.drawColor(i0.a.o(x0Var != null ? i0.a.f(0.5f, x0Var.b, x0Var.c) : -12947803, ks.B3));
                                 }
                                 canvas2.translate(L, L2);
                                 canvas2.scale(f30, f30);
@@ -495,22 +495,22 @@ public final class c extends View {
         float f23;
         float f24;
         RectF rectF3;
-        g0 g0Var;
+        h0 h0Var;
         RectF rectF4;
         b bVar;
         float f25;
         boolean z14;
         float f26;
         float f27;
-        ob.c cVar2 = this.a;
-        i0 i0Var = (i0) cVar2.b;
-        i0 i0Var2 = (i0) cVar2.b;
-        ArrayList arrayList3 = i0Var.d.J;
+        cb.c cVar2 = this.a;
+        j0 j0Var = (j0) cVar2.b;
+        j0 j0Var2 = (j0) cVar2.b;
+        ArrayList arrayList3 = j0Var.d.J;
         long b10 = b();
-        g0 g0Var2 = this.b;
+        h0 h0Var2 = this.b;
         int[] iArr = this.h;
         RectF rectF5 = this.G;
-        if (g0Var2 != null) {
+        if (h0Var2 != null) {
             getLocationOnScreen(iArr);
             canvas.save();
             if (!Float.isNaN(this.L)) {
@@ -520,7 +520,7 @@ public final class c extends View {
                 Path path = this.K;
                 path.rewind();
                 path.addRoundRect(rectF5, rectF5.height() / 2.0f, rectF5.height() / 2.0f, Path.Direction.CW);
-                v.b(canvas, path);
+                w.b(canvas, path);
             }
             z10 = a(canvas, this.b, arrayList3, b10);
             cVar = this;
@@ -567,11 +567,11 @@ public final class c extends View {
                     f27 = cVar.W;
                     if (f27 >= f26) {
                         f11 = f25;
-                        cVar.W = org.telegram.ui.Cells.y0.e(min, 120.0f, f27, f26);
+                        cVar.W = org.telegram.ui.Cells.c0.f(min, 120.0f, f27, f26);
                     } else {
                         f11 = f25;
                         if (f27 > f26) {
-                            cVar.W = org.telegram.ui.Cells.y0.z(min, 250.0f, f27, f26);
+                            cVar.W = org.telegram.ui.Cells.c0.B(min, 250.0f, f27, f26);
                         }
                     }
                     float f29 = !cVar.d0 ? f11 : 0.45f;
@@ -692,9 +692,9 @@ public final class c extends View {
                 cVar.F = b11;
                 f15 = cVar.y;
                 if (f15 >= f14) {
-                    cVar.y = org.telegram.ui.Cells.y0.e(min3, 260.0f, f15, f14);
+                    cVar.y = org.telegram.ui.Cells.c0.f(min3, 260.0f, f15, f14);
                 } else if (f15 > f14) {
-                    cVar.y = org.telegram.ui.Cells.y0.z(min3, 260.0f, f15, f14);
+                    cVar.y = org.telegram.ui.Cells.c0.B(min3, 260.0f, f15, f14);
                 }
                 if (cVar.y <= 0.003f) {
                     rectF4 = rectF;
@@ -732,9 +732,9 @@ public final class c extends View {
                 float f34 = (c10 * f20) / f10;
                 rectF.set(width2 - f33, height - f34, f33 + width2, height + f34);
                 float height2 = rectF.height() / f10;
-                x0 x0Var = i0Var2.d.n;
+                x0 x0Var = j0Var2.d.n;
                 paint.setColor(x0Var == null ? x0Var.h : 872415231);
-                paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r4.h : 872415231) * f32));
+                paint.setAlpha((int) (Color.alpha(j0Var2.d.n == null ? r4.h : 872415231) * f32));
                 canvas.drawRoundRect(rectF, height2, height2, paint);
                 paint.setColor(872415231);
                 paint.setAlpha((int) (51.0f * f32));
@@ -749,7 +749,7 @@ public final class c extends View {
                 while (i7 < arrayList2.size()) {
                     b bVar3 = (b) arrayList2.get(i7);
                     int i18 = i7;
-                    float b12 = i20.b(i17, f28, org.telegram.messenger.g0.L(f18), (width2 - (cVar.x / f10)) + org.telegram.messenger.g0.L(8.0f));
+                    float b12 = n10.b(i17, f28, org.telegram.messenger.g0.L(f18), (width2 - (cVar.x / f10)) + org.telegram.messenger.g0.L(8.0f));
                     if (!bVar3.d) {
                         i17++;
                     }
@@ -767,7 +767,7 @@ public final class c extends View {
                     if (Math.abs(z18 - (z17 ? f12 : 1.0f)) > 0.004f || Math.abs(b12 - bVar3.b) > 0.5f) {
                         z16 = true;
                     }
-                    Drawable U = i0Var2.d.U(bVar3.a);
+                    Drawable U = j0Var2.d.U(bVar3.a);
                     if (U == null) {
                         i10 = i17;
                     } else {
@@ -791,7 +791,7 @@ public final class c extends View {
                         }
                         float f39 = L4 * f22 * min4;
                         if (f39 >= f21) {
-                            U.setAlpha(ns.e4);
+                            U.setAlpha(ks.e4);
                             float z19 = e2.z(bVar3.b, width2, min4, width2);
                             float f40 = f39 / f10;
                             U.setBounds((int) (z19 - f40), (int) (rectF8.centerY() - f40), (int) (z19 + f40), (int) (rectF8.centerY() + f40));
@@ -819,9 +819,9 @@ public final class c extends View {
                 if (f23 == f24 || !rectF2.equals(rectF3)) {
                     cVar.I = cVar.y;
                     rectF3.set(rectF2);
-                    g0Var = cVar.b;
-                    if (g0Var != null) {
-                        g0Var.invalidate();
+                    h0Var = cVar.b;
+                    if (h0Var != null) {
+                        h0Var.invalidate();
                     }
                 }
                 if (z13 && arrayList2.isEmpty() && arrayList.isEmpty()) {
@@ -862,9 +862,9 @@ public final class c extends View {
         float f342 = (c10 * f20) / f10;
         rectF.set(width22 - f332, height3 - f342, f332 + width22, height3 + f342);
         float height22 = rectF.height() / f10;
-        x0 x0Var2 = i0Var2.d.n;
+        x0 x0Var2 = j0Var2.d.n;
         paint.setColor(x0Var2 == null ? x0Var2.h : 872415231);
-        paint.setAlpha((int) (Color.alpha(i0Var2.d.n == null ? r4.h : 872415231) * f32));
+        paint.setAlpha((int) (Color.alpha(j0Var2.d.n == null ? r4.h : 872415231) * f32));
         canvas.drawRoundRect(rectF, height22, height22, paint);
         paint.setColor(872415231);
         paint.setAlpha((int) (51.0f * f32));
@@ -892,8 +892,8 @@ public final class c extends View {
         }
         cVar.I = cVar.y;
         rectF3.set(rectF2);
-        g0Var = cVar.b;
-        if (g0Var != null) {
+        h0Var = cVar.b;
+        if (h0Var != null) {
         }
         if (z13) {
         }
@@ -915,7 +915,7 @@ public final class c extends View {
                         b bVar = (b) arrayList.get(i7);
                         if (!bVar.d) {
                             if (Math.abs(motionEvent.getX() - bVar.b) < org.telegram.messenger.g0.L(34.0f) / 2.0f) {
-                                z0 z0Var = ((i0) this.a.b).d;
+                                z0 z0Var = ((j0) this.a.b).d;
                                 ArrayList arrayList2 = z0Var.J;
                                 if (i10 >= 0 && i10 < arrayList2.size()) {
                                     arrayList2.remove(i10);

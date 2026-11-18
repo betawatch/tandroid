@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class x8 extends FragmentContextView {
     public final /* synthetic */ int Y0 = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 Z0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 Z0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(i9 i9Var, Context context, i9 i9Var2, v8 v8Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i9Var2, v8Var, false, e6Var);
+    public x8(i9 i9Var, Context context, i9 i9Var2, v8 v8Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i9Var2, v8Var, false, i6Var);
         this.Z0 = i9Var;
     }
 
@@ -20,18 +20,18 @@ public final class x8 extends FragmentContextView {
         switch (this.Y0) {
             case 0:
                 i9 i9Var = (i9) this.Z0;
-                i9Var.J.i(i9Var.K, i7 == 0, true);
+                i9Var.I.j(i9Var.J, i7 == 0, true);
                 break;
             default:
-                u91 u91Var = (u91) this.Z0;
-                u91Var.V0.i(u91Var.G0, i7 == 0, true);
+                y91 y91Var = (y91) this.Z0;
+                y91Var.V0.j(y91Var.G0, i7 == 0, true);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x8(u91 u91Var, Context context, u91 u91Var2) {
-        super(context, u91Var2, null, false, null);
-        this.Z0 = u91Var;
+    public x8(y91 y91Var, Context context, y91 y91Var2) {
+        super(context, y91Var2, null, false, null);
+        this.Z0 = y91Var;
     }
 }

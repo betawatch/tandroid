@@ -1,26 +1,34 @@
 package zi;
 
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicLong;
-import org.telegram.messenger.a8;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class p {
-    public static final AtomicLong c = new AtomicLong(1);
-    public final long a = c.getAndIncrement();
-    public final long b = SystemClock.elapsedRealtime();
+public final /* synthetic */ class p implements SurfaceTexture.OnFrameAvailableListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final void a(String str, Throwable th2) {
-        a8.d(c() + str + ": " + th2);
-        a8.g(th2, true);
+    public /* synthetic */ p(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public final void b(String str) {
-        a8.b(c() + str);
-    }
-
-    public final String c() {
-        return "RoundVideo[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] ";
+    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
+    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        switch (this.a) {
+            case 0:
+                ((t) this.b).b(true);
+                return;
+            case 1:
+                ((t) this.b).b(false);
+                return;
+            default:
+                w0 w0Var = (w0) this.b;
+                synchronized (w0Var.b) {
+                    w0Var.m = true;
+                    w0Var.b.notifyAll();
+                }
+                return;
+        }
     }
 }

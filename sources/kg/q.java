@@ -3,27 +3,27 @@ package kg;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.messenger.tr;
+import org.telegram.messenger.rr;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.s4;
+import org.telegram.ui.Components.a5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.u1[] c;
     public final /* synthetic */ View d;
     public final /* synthetic */ EditTextBoldCursor e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ q(EditTextBoldCursor editTextBoldCursor, int i7, Object obj, org.telegram.ui.ActionBar.t1[] t1VarArr, View view, int i10) {
+    public /* synthetic */ q(EditTextBoldCursor editTextBoldCursor, int i7, Object obj, org.telegram.ui.ActionBar.u1[] u1VarArr, View view, int i10) {
         this.a = i10;
         this.e = editTextBoldCursor;
         this.b = i7;
         this.f = obj;
-        this.c = t1VarArr;
+        this.c = u1VarArr;
         this.d = view;
     }
 
@@ -36,7 +36,7 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                 if (i7 == 6) {
                     String obj = sVar.getText().toString();
                     if (obj.length() > 32) {
-                        org.telegram.messenger.g0.E3(sVar);
+                        org.telegram.messenger.g0.D3(sVar);
                     } else {
                         y d = y.d(this.b);
                         TL_account.TL_businessChatLink c10 = d.c(tL_businessChatLink.link);
@@ -47,12 +47,12 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                             tL_inputBusinessChatLink.title = obj;
                             d.b(c10, tL_inputBusinessChatLink, null);
                         }
-                        org.telegram.ui.ActionBar.t1[] t1VarArr = this.c;
-                        org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
-                        if (t1Var != null) {
-                            t1Var.dismiss();
+                        org.telegram.ui.ActionBar.u1[] u1VarArr = this.c;
+                        org.telegram.ui.ActionBar.u1 u1Var = u1VarArr[0];
+                        if (u1Var != null) {
+                            u1Var.dismiss();
                         }
-                        if (t1VarArr[0] == v.e) {
+                        if (u1VarArr[0] == v.e) {
                             v.e = null;
                         }
                         View view = this.d;
@@ -64,17 +64,17 @@ public final /* synthetic */ class q implements TextView.OnEditorActionListener 
                 }
                 break;
             default:
-                s4 s4Var = (s4) this.e;
-                tr trVar = (tr) this.f;
+                a5 a5Var = (a5) this.e;
+                rr rrVar = (rr) this.f;
                 if (i7 == 6) {
-                    String obj2 = s4Var.getText().toString();
+                    String obj2 = a5Var.getText().toString();
                     if (obj2.length() > this.b) {
-                        org.telegram.messenger.g0.E3(s4Var);
+                        org.telegram.messenger.g0.D3(a5Var);
                     } else {
-                        trVar.a(obj2);
-                        org.telegram.ui.ActionBar.t1 t1Var2 = this.c[0];
-                        if (t1Var2 != null) {
-                            t1Var2.dismiss();
+                        rrVar.a(obj2);
+                        org.telegram.ui.ActionBar.u1 u1Var2 = this.c[0];
+                        if (u1Var2 != null) {
+                            u1Var2.dismiss();
                         }
                         View view2 = this.d;
                         if (view2 != null) {

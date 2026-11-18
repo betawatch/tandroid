@@ -1,32 +1,9 @@
 package org.telegram.messenger;
 
-import android.util.Base64;
-import java.util.Arrays;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class xo {
-    public final long a;
-    public final long b;
-    public final byte[] c;
-
-    public xo(long j3, String str, long j10) {
-        this.a = j3;
-        this.b = j10;
-        this.c = Base64.decode(str, 8);
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof xo)) {
-            return false;
-        }
-        xo xoVar = (xo) obj;
-        return this.a == xoVar.a && this.b == xoVar.b && Arrays.equals(this.c, xoVar.c);
-    }
-
-    public xo(long j3, long j10, byte[] bArr) {
-        this.a = j3;
-        this.b = j10;
-        this.c = bArr;
-    }
+public interface xo {
+    boolean e(TLRPC.TL_error tL_error);
 }

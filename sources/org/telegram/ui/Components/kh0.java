@@ -1,22 +1,180 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kh0 {
-    public final TLObject a;
-    public final long b;
-    public int c;
+public class kh0 extends mh0 {
+    public volatile RLottieNative V0;
+    public boolean W0;
+    public boolean X0;
+    public volatile boolean Y0;
+    public boolean Z0;
+    public final int a1;
+    public int b1;
 
-    public kh0(int i7, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i7;
-        if (tLObject instanceof TLRPC.User) {
-            this.b = ((TLRPC.User) tLObject).id;
-        } else if (tLObject instanceof TLRPC.Chat) {
-            this.b = -((TLRPC.Chat) tLObject).id;
+    public kh0(String str, int i7, int i10) {
+        super(i7, i10);
+        String y22;
+        this.a1 = -1;
+        this.K = 1;
+        if ("🎲".equals(str)) {
+            y22 = org.telegram.messenger.g0.y2(null, R.raw.diceloop);
+            this.a1 = 60;
+        } else {
+            y22 = "🎯".equals(str) ? org.telegram.messenger.g0.y2(null, R.raw.dartloop) : null;
         }
+        getPaint().setFlags(2);
+        if (TextUtils.isEmpty(y22)) {
+            return;
+        }
+        this.n0 = RLottieNative.b(y22, this.e, null, null);
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public int B(Bitmap bitmap, boolean z10) {
+        RLottieNative rLottieNative;
+        int i7 = this.K;
+        if (i7 == 1) {
+            rLottieNative = this.n0;
+        } else if (i7 == 2) {
+            rLottieNative = this.V0;
+            if (this.Y0) {
+                this.b0 = this.b1 - 1;
+            }
+        } else {
+            rLottieNative = this.n0;
+        }
+        return rLottieNative.c(this.b0, bitmap, z10) < 0 ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public void C(boolean z10) {
+        this.l0 = false;
+        this.m0 = true;
+        n();
+        l();
+        if (this.Z0 || this.W0) {
+            this.X0 = true;
+            return;
+        }
+        if (this.Q != null || this.y0) {
+            this.W = true;
+            return;
+        }
+        D(z10);
+        bg.i iVar = this.C0;
+        if (iVar != null) {
+            RandomAccessFile randomAccessFile = iVar.s;
+            if (randomAccessFile != null) {
+                try {
+                    randomAccessFile.close();
+                } catch (IOException e10) {
+                    e10.printStackTrace();
+                }
+                iVar.s = null;
+            }
+            iVar.r = true;
+            this.C0 = null;
+        }
+        E();
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public final void D(boolean z10) {
+        RLottieNative rLottieNative = this.n0;
+        RLottieNative rLottieNative2 = this.V0;
+        this.n0 = null;
+        this.V0 = null;
+        if (rLottieNative == null && rLottieNative2 == null) {
+            return;
+        }
+        dw dwVar = new dw(25, rLottieNative, rLottieNative2);
+        if (z10) {
+            org.telegram.messenger.s5.a(dwVar);
+        } else {
+            Utilities.e.c(dwVar);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public void i() {
+        int i7 = this.K;
+        if (i7 != 1) {
+            if (i7 == 2) {
+                int i10 = this.b0 + 1;
+                if (i10 < this.b1) {
+                    this.b0 = i10;
+                    return;
+                } else {
+                    this.O = true;
+                    this.N++;
+                    return;
+                }
+            }
+            return;
+        }
+        int i11 = this.b0 + 1;
+        int i12 = this.a1;
+        if (i12 == -1) {
+            i12 = this.e[0];
+        }
+        if (i11 < i12) {
+            this.b0 = i11;
+            return;
+        }
+        this.b0 = 0;
+        this.O = false;
+        if (this.V0 != null) {
+            this.K = 2;
+        }
+        if (this.E) {
+            this.y = null;
+            this.E = false;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public int j() {
+        if (this.m0) {
+            return 3;
+        }
+        return (this.n0 == null || (this.K == 2 && this.V0 == null)) ? 2 : 1;
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public void p() {
+        if (this.W) {
+            n();
+            if (this.Q == null && this.n0 != null) {
+                D(true);
+            }
+        }
+        if (this.n0 == null && this.V0 == null && this.C0 == null) {
+            E();
+            return;
+        }
+        this.U = true;
+        if (!v()) {
+            stop();
+        }
+        if (this.l0) {
+            I();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public final boolean w() {
+        return this.Z0;
+    }
+
+    @Override // org.telegram.ui.Components.mh0
+    public final boolean z() {
+        return false;
     }
 }

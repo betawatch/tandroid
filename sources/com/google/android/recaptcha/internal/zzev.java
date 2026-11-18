@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
@@ -8,7 +8,7 @@ import kd.j;
 import kotlin.jvm.internal.r;
 import rd.l;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzev extends j implements l {
     Object zza;
@@ -51,7 +51,7 @@ final class zzev extends j implements l {
         int i7 = this.zzb;
         try {
             if (i7 == 0) {
-                b.c(obj);
+                h.b(obj);
                 zzgrVar = this.zzc;
                 zzfp zzfpVar = this.zzd;
                 zzye zzyeVar = this.zze;
@@ -60,11 +60,11 @@ final class zzev extends j implements l {
                 obj = new zzhf(48, new zzes(zzfpVar, zzyeVar, null), null);
             } else {
                 if (i7 != 1) {
-                    b.c(obj);
+                    h.b(obj);
                     return (zzyg) obj;
                 }
                 zzgrVar = (zzgr) this.zza;
-                b.c(obj);
+                h.b(obj);
             }
             this.zza = null;
             this.zzb = 2;

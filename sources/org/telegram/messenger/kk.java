@@ -1,149 +1,95 @@
 package org.telegram.messenger;
 
-import org.telegram.SQLite.SQLiteCursor;
-import org.telegram.tgnet.NativeByteBuffer;
+import java.util.ArrayList;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kk implements Runnable {
+public final /* synthetic */ class kk implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ kk(np npVar, long j3, int i7) {
-        this.a = i7;
-        this.b = npVar;
-        this.c = j3;
+    public /* synthetic */ kk(int i7, long j3, long j10, mp mpVar) {
+        this.a = 0;
+        this.b = mpVar;
+        this.d = j3;
+        this.c = i7;
+        this.e = j10;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x00e9, code lost:
-    
-        if (r5 == null) goto L47;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x00f9  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        SQLiteCursor sQLiteCursor;
-        NativeByteBuffer byteBufferValue;
-        int i7 = this.a;
-        long j3 = this.c;
-        np npVar = this.b;
-        switch (i7) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        TLRPC.Chat chat;
+        switch (this.a) {
             case 0:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 1:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 2:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 3:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 4:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 5:
-                ns.f(npVar.currentAccount).k(ns.E5, Long.valueOf(j3));
-                return;
-            case 6:
-                npVar.V2(0, j3, true);
-                return;
-            case 7:
-                long j10 = this.c;
-                np npVar2 = this.b;
-                SQLiteCursor sQLiteCursor2 = null;
-                r1 = null;
-                r1 = null;
-                r1 = null;
-                TLRPC.messages_SavedReactionTags messages_savedreactiontags = null;
-                try {
-                    sQLiteCursor = npVar2.getMessagesStorage().b.queryFinalized("SELECT data FROM saved_reaction_tags WHERE topic_id = ?", Long.valueOf(j10));
-                    try {
-                        try {
-                            if (sQLiteCursor.next() && (byteBufferValue = sQLiteCursor.byteBufferValue(0)) != null) {
-                                messages_savedreactiontags = TLRPC.messages_SavedReactionTags.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                mp mpVar = this.b;
+                long j3 = this.d;
+                long j10 = this.e;
+                if (tLObject != null) {
+                    TLRPC.updates_ChannelDifference updates_channeldifference = (TLRPC.updates_ChannelDifference) tLObject;
+                    a0.h hVar = new a0.h();
+                    int i7 = 0;
+                    for (int i10 = 0; i10 < updates_channeldifference.users.size(); i10++) {
+                        TLRPC.User user = updates_channeldifference.users.get(i10);
+                        hVar.k(user, user.id);
+                    }
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < updates_channeldifference.chats.size()) {
+                            chat = updates_channeldifference.chats.get(i11);
+                            if (chat.id != j3) {
+                                i11++;
                             }
-                        } catch (Exception e10) {
-                            e = e10;
-                            a8.g(e, true);
-                            break;
+                        } else {
+                            chat = null;
                         }
-                    } catch (Throwable th2) {
-                        th = th2;
-                        sQLiteCursor2 = sQLiteCursor;
-                        if (sQLiteCursor2 != null) {
-                            sQLiteCursor2.dispose();
+                    }
+                    TLRPC.Chat chat2 = chat;
+                    ArrayList arrayList = new ArrayList();
+                    if (!updates_channeldifference.other_updates.isEmpty()) {
+                        while (i7 < updates_channeldifference.other_updates.size()) {
+                            TLRPC.Update update = updates_channeldifference.other_updates.get(i7);
+                            if (update instanceof TL_update.TL_updateMessageID) {
+                                arrayList.add((TL_update.TL_updateMessageID) update);
+                                updates_channeldifference.other_updates.remove(i7);
+                                i7--;
+                            }
+                            i7++;
                         }
-                        throw th;
                     }
-                } catch (Exception e11) {
-                    e = e11;
-                    sQLiteCursor = null;
-                } catch (Throwable th3) {
-                    th = th3;
-                    if (sQLiteCursor2 != null) {
+                    mpVar.getMessagesStorage().m1(updates_channeldifference.users, updates_channeldifference.chats, true, true);
+                    g0.g3(new fi(15, mpVar, updates_channeldifference));
+                    mpVar.getMessagesStorage().a.c(new mk(mpVar, arrayList, j3, updates_channeldifference, chat2, hVar, this.c, j10));
+                    break;
+                } else if (tL_error != null) {
+                    g0.g3(new rl(mpVar, tL_error, j3, 0));
+                    mpVar.a1.e(j3);
+                    if (j10 != 0) {
+                        mpVar.getMessagesStorage().q1(j10);
+                        break;
                     }
-                    throw th;
                 }
-                sQLiteCursor.dispose();
-                g0.h3(new a4(npVar2, messages_savedreactiontags, j10, 17));
-                return;
-            case 8:
-                long j11 = -j3;
-                npVar.Z0.delete(j11);
-                npVar.A0.delete(j11);
-                npVar.B0.e(j11);
-                npVar.C0.delete(j11);
-                npVar.D0.e(j11);
-                return;
-            case 9:
-                npVar.getNotificationCenter().k(79, Long.valueOf(j3));
-                return;
-            case 10:
-                npVar.V2(0, j3, true);
-                return;
-            case 11:
-                npVar.n.remove(Long.valueOf(j3));
-                return;
-            case 12:
-                npVar.getNotificationCenter().k(ns.X3, Long.valueOf(j3));
-                return;
-            case 13:
-                npVar.V2(0, j3, true);
-                return;
-            case 14:
-                g0.h3(new kk(npVar, j3, 5));
-                return;
-            case 15:
-                g0.h3(new kk(npVar, j3, 22));
-                return;
-            case 16:
-                npVar.getNotificationCenter().k(ns.X4, Long.valueOf(j3), 0L);
-                return;
-            case 17:
-                npVar.V2(0, j3, true);
-                return;
-            case 18:
-                npVar.V2(0, j3, true);
-                return;
-            case 19:
-                npVar.V2(0, j3, true);
-                return;
-            case 20:
-                npVar.V2(0, j3, true);
-                return;
-            case 21:
-                npVar.V2(0, j3, true);
-                return;
+                break;
+            case 1:
+                g0.g3(new uj(this.b, this.c, this.d, this.e, 0));
+                break;
             default:
-                npVar.getNotificationsController().N(j3);
-                return;
+                g0.g3(new uj(this.b, this.c, this.d, this.e, 1));
+                break;
         }
+    }
+
+    public /* synthetic */ kk(mp mpVar, int i7, long j3, long j10, int i10) {
+        this.a = i10;
+        this.b = mpVar;
+        this.c = i7;
+        this.d = j3;
+        this.e = j10;
     }
 }

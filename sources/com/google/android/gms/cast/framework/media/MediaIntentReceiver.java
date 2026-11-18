@@ -15,7 +15,7 @@ import h6.i;
 import j6.b;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -33,7 +33,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (cVar == null || !cVar.b()) {
             return null;
         }
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         return cVar.j;
     }
 
@@ -127,7 +127,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
     public void onReceiveActionMediaButton(f fVar, Intent intent) {
         if ((fVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
-            m.g(extras);
+            m.h(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
                 togglePlayback((c) fVar);
@@ -146,7 +146,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 2));
         } else {
@@ -159,7 +159,7 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
             h.x(new i(remoteMediaClient, 1));
         } else {

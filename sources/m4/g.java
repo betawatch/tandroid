@@ -1,16 +1,16 @@
 package m4;
 
-import a8.ja;
-import c8.g1;
+import a8.la;
+import c8.k1;
 import e2.s0;
 import e2.t0;
 import f3.i0;
 import h2.l0;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements i {
     public final h2.x a;
@@ -106,10 +106,10 @@ public final class g implements i {
                             if (i24 != 0) {
                                 byte[] bArr = xVar2.a;
                                 int i25 = this.j;
-                                bArr[0] = (byte) ((i25 >> 24) & ns.e4);
-                                bArr[1] = (byte) ((i25 >> 16) & ns.e4);
-                                bArr[2] = (byte) ((i25 >> 8) & ns.e4);
-                                bArr[3] = (byte) (i25 & ns.e4);
+                                bArr[0] = (byte) ((i25 >> 24) & ks.e4);
+                                bArr[1] = (byte) ((i25 >> 16) & ks.e4);
+                                bArr[2] = (byte) ((i25 >> 8) & ks.e4);
+                                bArr[3] = (byte) (i25 & ks.e4);
                                 this.i = 4;
                                 this.j = 0;
                                 if (i24 != 3 && i24 != 4) {
@@ -171,7 +171,7 @@ public final class g implements i {
                                 b11 = bArr2[6];
                             }
                             i10 = b11 & 60;
-                            this.k = g1.b(l0.Y(this.l.L, (((i10 >> 2) | i7) + 1) * 32));
+                            this.k = k1.b(l0.Y(this.l.L, (((i10 >> 2) | i7) + 1) * 32));
                             xVar2.N(0);
                             this.g.b(18, xVar2);
                             this.h = 6;
@@ -181,7 +181,7 @@ public final class g implements i {
                             b10 = bArr2[4];
                         }
                         i10 = b10 & 252;
-                        this.k = g1.b(l0.Y(this.l.L, (((i10 >> 2) | i7) + 1) * 32));
+                        this.k = k1.b(l0.Y(this.l.L, (((i10 >> 2) | i7) + 1) * 32));
                         xVar2.N(0);
                         this.g.b(18, xVar2);
                         this.h = 6;
@@ -327,10 +327,10 @@ public final class g implements i {
                             int i41 = 65535;
                             for (int i42 = 0; i42 < i39; i42++) {
                                 byte b13 = bArr3[i42];
-                                int i43 = (((b13 & 255) >> 4) ^ ((i41 >> 12) & ns.e4)) & ns.e4;
+                                int i43 = (((b13 & 255) >> 4) ^ ((i41 >> 12) & ks.e4)) & ks.e4;
                                 int[] iArr = l0.k;
                                 int i44 = (iArr[i43] ^ ((i41 << 4) & 65535)) & 65535;
-                                i41 = (iArr[((b13 & 15) ^ ((i44 >> 12) & ns.e4)) & ns.e4] ^ ((i44 << 4) & 65535)) & 65535;
+                                i41 = (iArr[((b13 & 15) ^ ((i44 >> 12) & ks.e4)) & ks.e4] ^ ((i44 << 4) & 65535)) & 65535;
                             }
                             if (i40 != i41) {
                                 throw t0.a(null, "CRC check failed");
@@ -399,7 +399,7 @@ public final class g implements i {
                     if (i47 != this.m) {
                         break;
                     } else {
-                        ja.p(this.q != -9223372036854775807L);
+                        la.p(this.q != -9223372036854775807L);
                         this.g.c(this.q, this.n == 4 ? 0 : 1, this.m, 0, null);
                         this.q += this.k;
                         this.h = 0;

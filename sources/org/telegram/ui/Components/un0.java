@@ -1,115 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
+import android.os.Build;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class un0 extends FrameLayout {
+public final /* synthetic */ class un0 implements ri.m, r0.m, org.telegram.ui.ActionBar.f1, ri.n {
     public final /* synthetic */ int a;
-    public final /* synthetic */ po0 b;
+    public final /* synthetic */ yo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ un0(po0 po0Var, Context context, int i7) {
-        super(context);
+    public /* synthetic */ un0(yo0 yo0Var, int i7) {
         this.a = i7;
-        this.b = po0Var;
+        this.b = yo0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                po0 po0Var = this.b;
-                po0Var.S2.setBounds(0, (int) po0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                po0Var.S2.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, po0Var.q2, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // r0.m
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
+        yo0 yo0Var = this.b;
+        yo0Var.t0(g10);
+        i0.b f10 = l1Var.a.f(519);
+        if (!yo0Var.C2.equals(f10)) {
+            yo0Var.C2 = f10;
+            yo0Var.c.requestLayout();
         }
+        return r0.l1.b;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                po0 po0Var = this.b;
-                un0 un0Var = po0Var.n1;
-                float f10 = po0Var.r2;
-                if (f10 != 0.0f && f10 != un0Var.getTop() + po0Var.r2) {
-                    ValueAnimator valueAnimator = po0Var.s2;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = po0Var.r2 - (un0Var.getTop() + po0Var.q2);
-                    po0Var.q2 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    po0Var.s2 = ofFloat;
-                    ofFloat.addUpdateListener(new f60(this, 16));
-                    po0Var.s2.setInterpolator(er.f);
-                    po0Var.s2.setDuration(200L);
-                    po0Var.s2.start();
-                    po0Var.r2 = 0.0f;
-                }
-                po0Var.O1[1].setTranslationY((-(un0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))) + po0Var.q2 + po0Var.p2 + ((1.0f - getAlpha()) * (un0Var.getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // ri.n
+    public int e() {
+        yo0 yo0Var = this.b;
+        yo0Var.getClass();
+        return org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, yo0Var.J0);
     }
 
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+    @Override // org.telegram.ui.ActionBar.f1
+    public void j(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.h1 h1Var;
+        org.telegram.ui.ActionBar.h1 h1Var2;
         switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(org.telegram.messenger.hd.G(this.b.Q1.m(), "AccDescrShareInChats", new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i7);
-                if (i7 != 0) {
-                    this.b.O1[1].setTranslationY(0.0f);
+            case 2:
+                yo0 yo0Var = this.b;
+                yo0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h1Var = yo0Var.F2) != null && h1Var.isShowing()) {
+                    yo0Var.F2.d(true);
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i7);
+                yo0 yo0Var2 = this.b;
+                yo0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h1Var2 = yo0Var2.F2) != null && h1Var2.isShowing()) {
+                    yo0Var2.F2.d(true);
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // ri.m
+    public void l(int i7) {
+        yo0 yo0Var = this.b;
+        dh.g gVar = yo0Var.K2;
+        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
+            return;
+        }
+        if (c8.dd.a(i7, 4)) {
+            gVar.h(yo0Var.Y0.e());
+        }
+        gVar.e(yo0Var.P2, yo0Var.b.getWidth(), yo0Var.b.getHeight());
     }
 }

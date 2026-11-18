@@ -1,31 +1,31 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
 import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cf implements org.telegram.messenger.a20 {
+public final /* synthetic */ class cf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout b;
 
-    public /* synthetic */ cf(int i7, Object obj, Object obj2) {
+    public /* synthetic */ cf(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int i7) {
         this.a = i7;
-        this.b = obj;
-        this.c = obj2;
+        this.b = actionBarPopupWindow$ActionBarPopupWindowLayout;
     }
 
-    @Override // org.telegram.messenger.a20
-    public final Object a(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                an anVar = (an) this.b;
-                View view = (View) this.c;
-                anVar.l8((URLSpan) obj, false, anVar.u5, view instanceof org.telegram.ui.Cells.q1 ? (org.telegram.ui.Cells.q1) view : null);
-                return Boolean.TRUE;
+                this.b.getSwipeBack().b(true);
+                break;
+            case 1:
+                this.b.getSwipeBack().b(true);
+                break;
             default:
-                return th.c.d((View) obj, (String) this.b, (String) this.c, null, null);
+                this.b.getSwipeBack().b(true);
+                break;
         }
     }
 }

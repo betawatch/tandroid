@@ -5,7 +5,7 @@ import android.text.TextWatcher;
 import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v6 implements TextWatcher {
     public boolean a;
@@ -33,7 +33,7 @@ public final class v6 implements TextWatcher {
             this.a = true;
             editable.delete(i7, editable.length());
             t6 t6Var = this.c;
-            g0.E3(t6Var);
+            g0.D3(t6Var);
             try {
                 t6Var.performHapticFeedback(3, 2);
             } catch (Exception unused) {
@@ -45,8 +45,8 @@ public final class v6 implements TextWatcher {
             if (editable.length() <= 0 && this.e != null) {
                 z10 = false;
             }
-            textViewArr[0].setText(hd.M0(z10 ? 2131751354 : 2131746321, null));
-            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.j6.x0(null, z10 ? org.telegram.ui.ActionBar.j6.H5 : org.telegram.ui.ActionBar.j6.q7, false));
+            textViewArr[0].setText(gd.M0(z10 ? 2131751343 : 2131746126, null));
+            textViewArr[0].setTextColor(org.telegram.ui.ActionBar.n6.x0(null, z10 ? org.telegram.ui.ActionBar.n6.H5 : org.telegram.ui.ActionBar.n6.q7, false));
         }
     }
 

@@ -8,24 +8,24 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebView;
-import c8.za;
+import c8.cb;
 import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gz;
+import org.telegram.messenger.bz;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.u2;
+import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class s0 extends WebView {
     public static final /* synthetic */ int W = 0;
     public String E;
     public boolean F;
-    public u2 G;
+    public x2 G;
     public int H;
     public int I;
     public Runnable J;
@@ -38,7 +38,7 @@ public final class s0 extends WebView {
     public final HashMap Q;
     public v0 R;
     public boolean S;
-    public ob.c T;
+    public cb.c T;
     public u0 U;
     public Runnable V;
     public final int a;
@@ -97,7 +97,7 @@ public final class s0 extends WebView {
             return;
         }
         w0Var.d = a10;
-        za.c(w0Var);
+        cb.c(w0Var);
     }
 
     public final void b(z1 z1Var) {
@@ -135,7 +135,7 @@ public final class s0 extends WebView {
                 v0Var3.I();
                 z10 = true;
             }
-            if (gz.v0) {
+            if (bz.v0) {
                 setBackgroundColor(i10);
             }
         }
@@ -180,9 +180,9 @@ public final class s0 extends WebView {
     }
 
     public final void e(String str, z1 z1Var) {
-        u2 u2Var = this.G;
-        if (u2Var != null) {
-            u2Var.dismiss();
+        x2 x2Var = this.G;
+        if (x2Var != null) {
+            x2Var.dismiss();
             this.G = null;
         }
         b(z1Var);
@@ -278,9 +278,9 @@ public final class s0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str) {
-        u2 u2Var = this.G;
-        if (u2Var != null) {
-            u2Var.dismiss();
+        x2 x2Var = this.G;
+        if (x2Var != null) {
+            x2Var.dismiss();
             this.G = null;
         }
         if (!this.c) {
@@ -453,9 +453,9 @@ public final class s0 extends WebView {
 
     @Override // android.webkit.WebView
     public final void loadUrl(String str, Map map) {
-        u2 u2Var = this.G;
-        if (u2Var != null) {
-            u2Var.dismiss();
+        x2 x2Var = this.G;
+        if (x2Var != null) {
+            x2Var.dismiss();
             this.G = null;
         }
         if (!this.c) {

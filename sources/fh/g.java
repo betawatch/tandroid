@@ -1,6 +1,6 @@
 package fh;
 
-import a8.ca;
+import a8.ea;
 import a8.n7;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -15,14 +15,14 @@ import java.util.Arrays;
 import java.util.HashSet;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.u6;
 import ri.q;
 import ri.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g extends ri.e implements z5 {
+public final class g extends ri.e implements c6 {
     public static Path h0 = new Path();
     public int E;
     public int F;
@@ -42,7 +42,7 @@ public final class g extends ri.e implements z5 {
     public float W;
     public boolean X;
     public int Y;
-    public ca Z;
+    public ea Z;
     public boolean a0;
     public ui.a b0;
     public boolean c0;
@@ -59,7 +59,7 @@ public final class g extends ri.e implements z5 {
     public int y;
     public boolean s = true;
     public float J = -1.0f;
-    public int N = q6.b;
+    public int N = u6.b;
     public final l O = new l();
 
     public g(ui.a aVar, ui.a aVar2, ui.a aVar3) {
@@ -109,7 +109,7 @@ public final class g extends ri.e implements z5 {
 
     @Override // ri.e
     public final void a() {
-        ca o4 = o();
+        ea o4 = o();
         e eVar = this.g0;
         if (o4 != eVar || eVar == null) {
             return;
@@ -135,7 +135,7 @@ public final class g extends ri.e implements z5 {
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         ui.a aVar;
-        int i7 = q6.b;
+        int i7 = u6.b;
         if (this.N != i7) {
             this.N = i7;
             try {
@@ -157,7 +157,7 @@ public final class g extends ri.e implements z5 {
         if (fVar.m.isEmpty()) {
             return;
         }
-        ca o4 = o();
+        ea o4 = o();
         ui.a aVar2 = this.r;
         if (o4 == this.g0 && !canvas.isHardwareAccelerated()) {
             ui.a v = v(v(this.r));
@@ -212,7 +212,7 @@ public final class g extends ri.e implements z5 {
 
     @Override // ri.e
     public final boolean e() {
-        ca o4 = o();
+        ea o4 = o();
         e eVar = this.g0;
         return o4 != eVar || eVar == null || eVar.c();
     }
@@ -268,12 +268,12 @@ public final class g extends ri.e implements z5 {
 
     @Override // ri.e
     public final boolean j() {
-        ca o4 = o();
+        ea o4 = o();
         e eVar = this.g0;
         return o4 == eVar && eVar != null;
     }
 
-    public final ca k(ui.a aVar) {
+    public final ea k(ui.a aVar) {
         ui.a v = v(aVar);
         if (Color.alpha(this.y) == 255 || (v instanceof ui.c)) {
             return this.d0;
@@ -314,8 +314,8 @@ public final class g extends ri.e implements z5 {
         }
     }
 
-    public final ca o() {
-        ca k10;
+    public final ea o() {
+        ea k10;
         if (this.a0) {
             r rVar = this.b;
             ui.a aVar = !rVar.a ? this.n : (this.X && rVar.b && Build.VERSION.SDK_INT >= 33) ? this.f : this.h;
@@ -350,9 +350,9 @@ public final class g extends ri.e implements z5 {
             if (eVar3 != null) {
                 eVar3.h(k10 == eVar3 && this.X && this.b.b && i7 >= 33);
             }
-            ca caVar = this.Z;
-            if (caVar != k10 && caVar != null) {
-                caVar.a();
+            ea eaVar = this.Z;
+            if (eaVar != k10 && eaVar != null) {
+                eaVar.a();
             }
             this.Z = k10;
         }
@@ -453,9 +453,9 @@ public final class g extends ri.e implements z5 {
         n();
     }
 
-    @Override // ri.e, org.telegram.ui.ActionBar.z5
+    @Override // ri.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        this.N = q6.b;
+        this.N = u6.b;
         gh.a aVar = this.w;
         if (aVar == null) {
             return;
@@ -497,7 +497,7 @@ public final class g extends ri.e implements z5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 

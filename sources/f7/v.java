@@ -5,7 +5,7 @@ import android.os.Parcelable;
 import android.os.ResultReceiver;
 import android.util.Base64;
 import android.util.Log;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.fido.common.Transport;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v extends r6.a {
     public static final Parcelable.Creator<v> CREATOR = new db.k(13);
@@ -57,13 +57,13 @@ public final class v extends r6.a {
                 throw new IllegalArgumentException(e10);
             }
         }
-        q6.m.g(yVar);
+        q6.m.h(yVar);
         this.a = yVar;
-        q6.m.g(b0Var);
+        q6.m.h(b0Var);
         this.b = b0Var;
-        q6.m.g(bArr);
+        q6.m.h(bArr);
         this.c = bArr;
-        q6.m.g(arrayList);
+        q6.m.h(arrayList);
         this.d = arrayList;
         this.e = d;
         this.f = arrayList2;
@@ -126,7 +126,7 @@ public final class v extends r6.a {
         JSONObject jSONObject3 = jSONObject.getJSONObject("user");
         b0 b0Var = new b0(jSONObject3.getString("name"), x6.b.b(jSONObject3.getString("id")), jSONObject3.has("icon") ? jSONObject3.optString("icon") : null, jSONObject3.optString("displayName"));
         byte[] b11 = x6.b.b(jSONObject.getString("challenge"));
-        q6.m.g(b11);
+        q6.m.h(b11);
         JSONArray jSONArray3 = jSONObject.getJSONArray("pubKeyCredParams");
         ArrayList arrayList3 = new ArrayList();
         for (int i10 = 0; i10 < jSONArray3.length(); i10++) {
@@ -275,9 +275,9 @@ public final class v extends r6.a {
         v vVar = (v) obj;
         List list2 = vVar.d;
         List list3 = vVar.f;
-        if (q6.m.k(this.a, vVar.a) && q6.m.k(this.b, vVar.b) && Arrays.equals(this.c, vVar.c) && q6.m.k(this.e, vVar.e)) {
+        if (q6.m.l(this.a, vVar.a) && q6.m.l(this.b, vVar.b) && Arrays.equals(this.c, vVar.c) && q6.m.l(this.e, vVar.e)) {
             List list4 = this.d;
-            if (list4.containsAll(list2) && list2.containsAll(list4) && ((((list = this.f) == null && list3 == null) || (list != null && list3 != null && list.containsAll(list3) && list3.containsAll(list))) && q6.m.k(this.h, vVar.h) && q6.m.k(this.n, vVar.n) && q6.m.k(this.r, vVar.r) && q6.m.k(this.s, vVar.s) && q6.m.k(this.w, vVar.w) && q6.m.k(this.x, vVar.x))) {
+            if (list4.containsAll(list2) && list2.containsAll(list4) && ((((list = this.f) == null && list3 == null) || (list != null && list3 != null && list.containsAll(list3) && list3.containsAll(list))) && q6.m.l(this.h, vVar.h) && q6.m.l(this.n, vVar.n) && q6.m.l(this.r, vVar.r) && q6.m.l(this.s, vVar.s) && q6.m.l(this.w, vVar.w) && q6.m.l(this.x, vVar.x))) {
                 return true;
             }
         }
@@ -319,26 +319,26 @@ public final class v extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.k(parcel, 3, this.b, i7);
-        yb.c(parcel, 4, this.c);
-        yb.p(parcel, 5, this.d);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.k(parcel, 3, this.b, i7);
+        bc.c(parcel, 4, this.c);
+        bc.p(parcel, 5, this.d);
         Double d = this.e;
         if (d != null) {
-            yb.q(parcel, 6, 8);
+            bc.q(parcel, 6, 8);
             parcel.writeDouble(d.doubleValue());
         }
-        yb.p(parcel, 7, this.f);
-        yb.k(parcel, 8, this.h, i7);
-        yb.i(parcel, 9, this.n);
-        yb.k(parcel, 10, this.r, i7);
+        bc.p(parcel, 7, this.f);
+        bc.k(parcel, 8, this.h, i7);
+        bc.i(parcel, 9, this.n);
+        bc.k(parcel, 10, this.r, i7);
         e eVar = this.s;
-        yb.l(parcel, 11, eVar == null ? null : eVar.a);
-        yb.k(parcel, 12, this.w, i7);
-        yb.l(parcel, 13, this.x);
-        yb.k(parcel, 14, this.y, i7);
-        yb.s(parcel, r10);
+        bc.l(parcel, 11, eVar == null ? null : eVar.a);
+        bc.k(parcel, 12, this.w, i7);
+        bc.l(parcel, 13, this.x);
+        bc.k(parcel, 14, this.y, i7);
+        bc.s(parcel, r10);
     }
 
     public v(String str) {

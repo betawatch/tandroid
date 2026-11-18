@@ -4,7 +4,7 @@ import a8.d9;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
@@ -53,16 +53,16 @@ public final class q0 implements Runnable {
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            f5.x xVar = (f5.x) nVar.d;
+            f5.w wVar = (f5.w) nVar.d;
             if (intValue <= 0) {
                 ((Runnable) nVar.c).run();
                 return;
             }
             int i7 = nVar.a;
             int intValue2 = num.intValue();
-            xVar.getClass();
-            f5.f a11 = f5.a0.a(intValue2, "Billing override value was set by a license tester.");
-            xVar.F(93, i7, a11);
+            wVar.getClass();
+            f5.f a11 = f5.z.a(intValue2, "Billing override value was set by a license tester.");
+            wVar.G(93, i7, a11);
             ((q0.a) nVar.b).accept(a11);
         } catch (ExecutionException e10) {
             nVar.j(e10.getCause());

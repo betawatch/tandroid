@@ -1,60 +1,60 @@
 package vh;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.g0;
-import v4.b0;
-import v4.t0;
-import wg.c1;
-import wg.u0;
-import zh.l;
+import android.content.Context;
+import android.view.View;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.g10;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.m20;
+import org.telegram.ui.Components.oj0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d extends t0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class d implements oj0 {
+    public final /* synthetic */ i6 a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ g c;
 
-    public /* synthetic */ d(Object obj, int i7) {
-        this.a = i7;
-        this.b = obj;
+    public d(Context context, i6 i6Var, g gVar) {
+        this.c = gVar;
+        this.a = i6Var;
+        this.b = context;
     }
 
-    @Override // v4.t0
-    public void a(RecyclerView recyclerView, int i7) {
-        switch (this.a) {
-            case 1:
-                if (i7 == 1) {
-                    g0.v1(((u0) this.b).U1.getEditText());
-                    break;
-                }
-                break;
-            case 2:
-                if (i7 == 1) {
-                    g0.v1(((c1) this.b).V1.getEditText());
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.oj0
+    public final void c(int i7, View view) {
+        TLRPC.TL_help_country tL_help_country;
+        g gVar = this.c;
+        g10 g10Var = gVar.d2;
+        HashMap hashMap = gVar.f2;
+        if (i7 == 0 || (tL_help_country = (TLRPC.TL_help_country) gVar.Z1.G(i7 - 1).H) == null) {
+            return;
         }
-    }
-
-    @Override // v4.t0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        switch (this.a) {
-            case 0:
-                ((h) this.b).f1();
-                break;
-            case 3:
-                b0 b0Var = (b0) recyclerView.getLayoutManager();
-                l lVar = (l) this.b;
-                zh.e eVar = lVar.C;
-                if (lVar.x && !lVar.w && b0Var != null) {
-                    if (lVar.f.b() - b0Var.N0() < 10) {
-                        g0.r(eVar);
-                        g0.h3(eVar);
-                        break;
-                    }
-                }
-                break;
+        boolean z10 = false;
+        if (hashMap.containsKey(tL_help_country.iso2)) {
+            g10Var.c((m20) hashMap.remove(tL_help_country.iso2));
+        } else {
+            int size = hashMap.size();
+            int i10 = gVar.i2;
+            if (size >= i10) {
+                n10.u(gd.a0(null, null, 2131746919, Integer.valueOf(i10)), new lc(gVar.j2, this.a), R.raw.info, 36);
+                return;
+            }
+            m20 m20Var = new m20(this.b, tL_help_country);
+            m20Var.setOnClickListener(new a(gVar, 4));
+            g10Var.a(m20Var);
+            hashMap.put(tL_help_country.iso2, m20Var);
+            z10 = true;
         }
+        if (view instanceof ah.c) {
+            ((ah.c) view).c(z10, true);
+        }
+        gVar.Z1.O(true);
+        gVar.a2.c(hashMap.size(), true);
     }
 }

@@ -1,134 +1,110 @@
 package fi;
 
-import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class d6 extends k6 {
-    public final String C;
-    public final String D;
-    public final TL_stories.MediaArea E;
-    public final ArrayList F;
-    public boolean G;
-    public String H;
-    public int I;
-    public int J;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class d6 {
+    public final int a;
+    public final long b;
+    public final boolean c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public boolean i;
+    public final /* synthetic */ p6 j;
 
-    public d6(int i7, String str, String str2) {
-        super(i7, 0L, 3, -1, null);
-        this.F = new ArrayList();
-        this.H = "";
-        this.C = str2;
-        this.D = str;
-        this.E = null;
+    public d6(int i7, long j3, p6 p6Var) {
+        this.j = p6Var;
+        this.a = i7;
+        this.b = j3;
+        this.c = j3 == j10.i(i7).e();
+        d();
     }
 
-    @Override // fi.k6
-    public final gj f(int i7) {
-        if (i7 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.i;
-        if (i7 >= arrayList.size()) {
-            return null;
-        }
-        return (gj) arrayList.get(i7);
+    public final boolean a() {
+        return (this.c || this.j.i(this.b)) && this.f && this.h.size() < ((org.telegram.messenger.j0) mp.u1(this.a).A7.z.b).c;
     }
 
-    @Override // fi.k6
-    public final int g() {
-        return this.J;
-    }
-
-    @Override // fi.k6
-    public final ArrayList h() {
-        return this.F;
-    }
-
-    @Override // fi.k6
-    public final int i() {
-        return this.i.size();
-    }
-
-    @Override // fi.k6
-    public final boolean k() {
-        return this.G;
-    }
-
-    @Override // fi.k6
-    public final boolean l() {
-        return false;
-    }
-
-    @Override // fi.k6
-    public final boolean q(int i7, List list, boolean z10) {
-        if (this.G || this.H == null) {
-            return false;
-        }
-        TL_stories.TL_stories_searchPosts tL_stories_searchPosts = new TL_stories.TL_stories_searchPosts();
-        tL_stories_searchPosts.offset = this.H;
-        tL_stories_searchPosts.limit = i7;
-        String str = this.C;
-        if (str != null) {
-            tL_stories_searchPosts.flags |= 1;
-            tL_stories_searchPosts.hashtag = str;
-        }
-        TL_stories.MediaArea mediaArea = this.E;
-        if (mediaArea != null) {
-            tL_stories_searchPosts.flags |= 2;
-            tL_stories_searchPosts.area = mediaArea;
-        }
-        this.G = true;
-        String str2 = this.D;
-        boolean isEmpty = TextUtils.isEmpty(str2);
-        TLObject tLObject = null;
-        int i10 = this.c;
-        if (!isEmpty) {
-            TLObject f22 = np.s1(i10).f2(str2);
-            if (f22 == null) {
-                np.s1(i10).d2().a(str2, null, new n2(this, z10, i7, list));
-                return true;
+    public final i6 b(int i7) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i10 >= arrayList.size()) {
+                return null;
             }
-            tLObject = f22;
+            i6 i6Var = (i6) arrayList.get(i10);
+            if (i7 == i6Var.a) {
+                return i6Var;
+            }
+            i10++;
         }
-        if (tLObject != null) {
-            tL_stories_searchPosts.flags |= 4;
-            tL_stories_searchPosts.peer = np.k1(tLObject);
+    }
+
+    public final int c(int i7) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.h;
+            if (i10 >= arrayList.size()) {
+                return -1;
+            }
+            if (i7 == ((i6) arrayList.get(i10)).a) {
+                return i10;
+            }
+            i10++;
         }
-        this.I = ConnectionsManager.getInstance(i10).sendRequest(tL_stories_searchPosts, new ai.e1(this, 7));
-        return true;
     }
 
-    @Override // fi.k6
-    public final boolean r(int i7) {
-        return false;
+    public final void d() {
+        if (this.e || this.f) {
+            return;
+        }
+        this.e = true;
+        boolean z10 = this.d;
+        long j3 = this.b;
+        int i7 = this.a;
+        if (z10) {
+            TL_stories.TL_getAlbums tL_getAlbums = new TL_stories.TL_getAlbums();
+            tL_getAlbums.peer = mp.u1(i7).l1(j3);
+            ConnectionsManager.getInstance(i7).sendRequest(tL_getAlbums, new ai.e1(this, 8));
+        } else {
+            tr a02 = tr.a0(i7);
+            a02.a.c(new org.telegram.messenger.d4(a02, j3, new c6(this), 23));
+        }
     }
 
-    public d6(int i7, TL_stories.MediaArea mediaArea) {
-        super(i7, 0L, 3, -1, null);
-        this.F = new ArrayList();
-        this.H = "";
-        this.C = null;
-        this.D = null;
-        this.E = mediaArea;
+    public final void e() {
+        TL_stories.TL_reorderAlbums tL_reorderAlbums = new TL_stories.TL_reorderAlbums();
+        int i7 = this.a;
+        tL_reorderAlbums.peer = mp.u1(i7).l1(this.b);
+        tL_reorderAlbums.order = new ArrayList<>();
+        ArrayList arrayList = this.h;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            tL_reorderAlbums.order.add(Integer.valueOf(((i6) obj).a));
+        }
+        ConnectionsManager.getInstance(i7).sendRequest(tL_reorderAlbums, null);
     }
 
-    @Override // fi.k6
-    public final void j() {
-    }
-
-    @Override // fi.k6
-    public final void s() {
-    }
-
-    @Override // fi.k6
-    public final void x() {
+    public final void f(boolean z10) {
+        int i7 = this.a;
+        tr a02 = tr.a0(i7);
+        org.telegram.messenger.q5 q5Var = a02.a;
+        long j3 = this.b;
+        q5Var.c(new org.telegram.messenger.d4(a02, j3, this.h, 26));
+        if (z10) {
+            ks.f(i7).k(ks.l3, Long.valueOf(j3), this);
+        }
     }
 }

@@ -6,28 +6,28 @@ import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import org.telegram.messenger.m10;
+import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.p5;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.x5;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class s0 {
-    public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, m mVar, Paint.FontMetricsInt fontMetricsInt) {
+    public static void a(TLRPC.TL_availableReaction tL_availableReaction, LinkedHashMap linkedHashMap, ArrayList arrayList, SpannableStringBuilder spannableStringBuilder, n nVar, Paint.FontMetricsInt fontMetricsInt) {
         TLRPC.Document document = tL_availableReaction.activate_animation;
         long j3 = document.id;
-        p5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
+        x5 e10 = e(document, Long.valueOf(j3), fontMetricsInt);
         linkedHashMap.put(Long.valueOf(j3), e10);
         arrayList.add(Long.valueOf(j3));
         SpannableString spannableString = new SpannableString(tL_availableReaction.reaction);
         spannableString.setSpan(e10, 0, spannableString.length(), 33);
         spannableStringBuilder.append((CharSequence) spannableString);
-        if (mVar != null) {
-            mVar.x(Long.valueOf(j3), false);
+        if (nVar != null) {
+            nVar.x(Long.valueOf(j3), false);
         }
     }
 
@@ -81,28 +81,28 @@ public abstract class s0 {
         return (reaction instanceof TLRPC.TL_reactionCustomEmoji) && (reaction2 instanceof TLRPC.TL_reactionCustomEmoji) && ((TLRPC.TL_reactionCustomEmoji) reaction).document_id == ((TLRPC.TL_reactionCustomEmoji) reaction2).document_id;
     }
 
-    public static p5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
-        p5 p5Var;
+    public static x5 e(TLRPC.Document document, Long l10, Paint.FontMetricsInt fontMetricsInt) {
+        x5 x5Var;
         if (document != null) {
-            p5Var = new p5(document.id, 1.0f, fontMetricsInt);
-            p5Var.document = document;
+            x5Var = new x5(document.id, 1.0f, fontMetricsInt);
+            x5Var.document = document;
         } else {
-            p5Var = new p5(l10.longValue(), 1.0f, fontMetricsInt);
+            x5Var = new x5(l10.longValue(), 1.0f, fontMetricsInt);
         }
-        p5Var.cacheType = g5.f();
-        return p5Var;
+        x5Var.cacheType = o5.f();
+        return x5Var;
     }
 
     public static void f(long j3, int i7, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus) {
-        e2 Q = LaunchActivity.Q();
+        h2 Q = LaunchActivity.Q();
         if (Q == null || tL_premium_boostsStatus == null) {
             return;
         }
-        ug.j0 j0Var = new ug.j0(21, m10.t0, Q.getContext(), Q, Q.getResourceProvider());
-        j0Var.N2 = i7;
-        j0Var.z1(tL_premium_boostsStatus, true);
-        j0Var.B1(j3);
-        j0Var.M2 = new r0(Q, j3);
-        j0Var.show();
+        ug.l0 l0Var = new ug.l0(21, j10.t0, Q.getContext(), Q, Q.getResourceProvider());
+        l0Var.N2 = i7;
+        l0Var.A1(tL_premium_boostsStatus, true);
+        l0Var.C1(j3);
+        l0Var.M2 = new r0(Q, j3);
+        l0Var.show();
     }
 }

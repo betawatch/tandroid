@@ -2,7 +2,7 @@ package s4;
 
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,7 +17,7 @@ public final class l0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                SparseArray sparseArray = this.b.h;
+                SparseArray sparseArray = this.b.n;
                 int size = sparseArray.size();
                 for (int i7 = 0; i7 < size; i7++) {
                     ((o0) sparseArray.valueAt(i7)).getClass();
@@ -27,7 +27,7 @@ public final class l0 implements Runnable {
                 break;
             default:
                 m0 m0Var = this.b;
-                r0 r0Var = m0Var.i;
+                r0 r0Var = m0Var.r;
                 if (r0Var.E == m0Var) {
                     r0Var.p();
                     break;

@@ -1,146 +1,15 @@
 package org.telegram.ui.ActionBar;
 
 import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
-import android.view.View;
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.IdentityHashMap;
-import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class p6 implements q0.a {
-    public final IdentityHashMap a = new IdentityHashMap();
-    public boolean b;
-    public int c;
-    public HashSet d;
-    public boolean e;
-
-    public final void a() {
-        this.a.clear();
-        this.d = null;
-        this.e = false;
-    }
-
-    @Override // q0.a
-    public final void accept(Object obj) {
-        b((View) obj);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void b(View view) {
-        v4.v0 recycledViewPool;
-        if (view == 0 || this.a.put(view, Boolean.TRUE) != null) {
-            return;
-        }
-        int i7 = 0;
-        if (this.c == 0) {
-            if (view instanceof z5) {
-                try {
-                    ((z5) view).updateColors();
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                }
-            }
-            try {
-                q6.a0(view);
-            } catch (Exception e11) {
-                a8.g(e11, true);
-            }
-            Drawable background = view.getBackground();
-            if (background instanceof z5) {
-                try {
-                    ((z5) background).updateColors();
-                } catch (Exception e12) {
-                    a8.g(e12, true);
-                }
-                background.invalidateSelf();
-            }
-            Drawable foreground = view.getForeground();
-            if (foreground instanceof z5) {
-                try {
-                    ((z5) foreground).updateColors();
-                } catch (Exception e13) {
-                    a8.g(e13, true);
-                }
-                foreground.invalidateSelf();
-            }
-            view.invalidate();
-        } else {
-            HashSet hashSet = this.d;
-            if (view instanceof z5) {
-                ((z5) view).addColorKeys(hashSet);
-            }
-            l6 o4 = q6.o(view, false);
-            if (o4 != null) {
-                for (int i10 = 0; i10 < 6; i10++) {
-                    k6 k6Var = o4.a[i10];
-                    if (k6Var != null) {
-                        q6.f(k6Var, hashSet);
-                    }
-                }
-                if (o4.b != null) {
-                    for (int i11 = 0; i11 < o4.b.size(); i11++) {
-                        q6.f((k6) o4.b.get(i11), hashSet);
-                    }
-                }
-                if (o4.c != null) {
-                    for (int i12 = 0; i12 < o4.c.size(); i12++) {
-                        q6.f((k6) o4.c.get(i12), hashSet);
-                    }
-                }
-                k6 k6Var2 = o4.e;
-                if (k6Var2 != null) {
-                    q6.f(k6Var2, hashSet);
-                }
-                k6 k6Var3 = o4.f;
-                if (k6Var3 != null) {
-                    q6.f(k6Var3, hashSet);
-                }
-            }
-        }
-        if (!(view instanceof RecyclerView)) {
-            if (view instanceof ViewGroup) {
-                ViewGroup viewGroup = (ViewGroup) view;
-                while (i7 < viewGroup.getChildCount()) {
-                    b(viewGroup.getChildAt(i7));
-                    i7++;
-                }
-                return;
-            }
-            return;
-        }
-        RecyclerView recyclerView = (RecyclerView) view;
-        boolean z10 = this.b;
-        for (int i13 = 0; i13 < recyclerView.getChildCount(); i13++) {
-            b(recyclerView.getChildAt(i13));
-        }
-        for (int i14 = 0; i14 < recyclerView.getHiddenChildCount(); i14++) {
-            b(recyclerView.V(i14));
-        }
-        for (int i15 = 0; i15 < recyclerView.getAttachedScrapChildCount(); i15++) {
-            b(recyclerView.O(i15));
-        }
-        for (int i16 = 0; i16 < recyclerView.getCachedChildCount(); i16++) {
-            b(recyclerView.P(i16));
-        }
-        if (!z10 || (recycledViewPool = recyclerView.getRecycledViewPool()) == null) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        SparseArray sparseArray = recycledViewPool.a;
-        for (int i17 = 0; i17 < sparseArray.size(); i17++) {
-            ArrayList arrayList2 = ((v4.u0) sparseArray.valueAt(i17)).a;
-            for (int i18 = 0; i18 < arrayList2.size(); i18++) {
-                arrayList.add(((v4.e1) arrayList2.get(i18)).a);
-            }
-        }
-        while (i7 < arrayList.size()) {
-            b((View) arrayList.get(i7));
-            i7++;
-        }
-    }
+public final class p6 {
+    public final o6[] a = new o6[6];
+    public ArrayList b;
+    public ArrayList c;
+    public Drawable d;
+    public o6 e;
+    public o6 f;
 }

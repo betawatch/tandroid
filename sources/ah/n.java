@@ -11,19 +11,18 @@ import android.view.ViewGroup;
 import android.view.animation.LinearInterpolator;
 import android.widget.ScrollView;
 import hi.b8;
-import hi.e1;
-import hi.j3;
+import hi.k3;
 import hi.m8;
 import hi.n8;
 import java.util.ArrayList;
+import org.telegram.messenger.f3;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.m20;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -56,7 +55,7 @@ public final class n extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((f20) arrayList2.get(i10)).setOnClickListener(null);
+            ((m20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
         this.c = false;
@@ -69,11 +68,11 @@ public final class n extends ViewGroup {
         arrayList5.clear();
         this.e.clear();
         for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            f20 f20Var = (f20) arrayList2.get(i11);
-            arrayList5.add(f20Var);
-            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_X, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-            arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.ALPHA, 1.0f, 0.0f));
+            m20 m20Var = (m20) arrayList2.get(i11);
+            arrayList5.add(m20Var);
+            arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.SCALE_X, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+            arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.ALPHA, 1.0f, 0.0f));
         }
         requestLayout();
     }
@@ -89,7 +88,7 @@ public final class n extends ViewGroup {
         arrayList3.addAll(arrayList);
         arrayList.clear();
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-            ((f20) arrayList2.get(i10)).setOnClickListener(null);
+            ((m20) arrayList2.get(i10)).setOnClickListener(null);
         }
         c();
         if (z10) {
@@ -103,11 +102,11 @@ public final class n extends ViewGroup {
             arrayList5.clear();
             this.e.clear();
             for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                f20 f20Var = (f20) arrayList2.get(i11);
-                arrayList5.add(f20Var);
-                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_X, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.SCALE_Y, 1.0f, 0.01f));
-                arrayList4.add(ObjectAnimator.ofFloat(f20Var, (Property<f20, Float>) View.ALPHA, 1.0f, 0.0f));
+                m20 m20Var = (m20) arrayList2.get(i11);
+                arrayList5.add(m20Var);
+                arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.SCALE_X, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.SCALE_Y, 1.0f, 0.01f));
+                arrayList4.add(ObjectAnimator.ofFloat(m20Var, (Property<m20, Float>) View.ALPHA, 1.0f, 0.0f));
             }
         } else {
             for (int i12 = 0; i12 < arrayList2.size(); i12++) {
@@ -216,7 +215,7 @@ public final class n extends ViewGroup {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void onMeasure(int i7, int i10) {
-        int y10;
+        int z10;
         int i11;
         ?? r82;
         int i12;
@@ -224,11 +223,11 @@ public final class n extends ViewGroup {
         int i14;
         int i15;
         char c10;
-        int y11;
+        int z11;
         b8 b8Var;
         int i16;
         int i17;
-        boolean z10;
+        boolean z12;
         int i18;
         int i19;
         float f10;
@@ -253,7 +252,7 @@ public final class n extends ViewGroup {
                 while (i21 < childCount) {
                     View childAt = getChildAt(i21);
                     int i24 = childCount;
-                    if (childAt instanceof f20) {
+                    if (childAt instanceof m20) {
                         i12 = i21;
                         int i25 = i22;
                         childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -261,11 +260,11 @@ public final class n extends ViewGroup {
                         if (contains || childAt.getMeasuredWidth() + i25 <= L) {
                             i13 = i25;
                         } else {
-                            L2 = k5.C(4.0f, childAt.getMeasuredHeight(), L2);
+                            L2 = f3.C(4.0f, childAt.getMeasuredHeight(), L2);
                             i13 = 0;
                         }
                         if (childAt.getMeasuredWidth() + i23 > L) {
-                            L3 = k5.C(4.0f, childAt.getMeasuredHeight(), L3);
+                            L3 = f3.C(4.0f, childAt.getMeasuredHeight(), L3);
                             i23 = 0;
                         }
                         int L4 = g0.L(14.0f) + i13;
@@ -297,16 +296,16 @@ public final class n extends ViewGroup {
                                     }
                                 }
                                 if (!contains) {
-                                    i13 = k5.C(6.0f, childAt.getMeasuredWidth(), i13);
+                                    i13 = f3.C(6.0f, childAt.getMeasuredWidth(), i13);
                                 }
-                                i23 = k5.C(6.0f, childAt.getMeasuredWidth(), i23);
+                                i23 = f3.C(6.0f, childAt.getMeasuredWidth(), i23);
                                 i22 = i13;
                             }
                         }
                         i14 = L;
                         if (!contains) {
                         }
-                        i23 = k5.C(6.0f, childAt.getMeasuredWidth(), i23);
+                        i23 = f3.C(6.0f, childAt.getMeasuredWidth(), i23);
                         i22 = i13;
                     } else {
                         i14 = L;
@@ -319,18 +318,18 @@ public final class n extends ViewGroup {
                 int i26 = L;
                 int i27 = i22;
                 if (g0.Q1()) {
-                    y10 = g0.L(376.0f) / 3;
+                    z10 = g0.L(376.0f) / 3;
                 } else {
                     Point point = g0.q;
-                    y10 = i20.y(154.0f, Math.min(point.x, point.y), 3);
+                    z10 = n10.z(154.0f, Math.min(point.x, point.y), 3);
                 }
-                if (i26 - i27 < y10) {
+                if (i26 - i27 < z10) {
                     L2 += g0.L(36.0f);
                     i11 = 0;
                 } else {
                     i11 = i27;
                 }
-                if (i26 - i23 < y10) {
+                if (i26 - i23 < z10) {
                     L3 += g0.L(36.0f);
                 }
                 iVar.measure(View.MeasureSpec.makeMeasureSpec(i26 - i11, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -346,7 +345,7 @@ public final class n extends ViewGroup {
                         if (f13 != f14) {
                             r82 = 0;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(f13, f14);
-                            ofFloat.addUpdateListener(new h(oVar, 0 == true ? 1 : 0));
+                            ofFloat.addUpdateListener(new g(oVar, 0 == true ? 1 : 0));
                             arrayList.add(ofFloat);
                         } else {
                             r82 = 0;
@@ -395,7 +394,7 @@ public final class n extends ViewGroup {
                 int i31 = 0;
                 while (i29 < childCount2) {
                     View childAt2 = getChildAt(i29);
-                    if (childAt2 instanceof f20) {
+                    if (childAt2 instanceof m20) {
                         b8Var = b8Var2;
                         i16 = childCount2;
                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -403,21 +402,21 @@ public final class n extends ViewGroup {
                         if (contains2 || childAt2.getMeasuredWidth() + i30 <= L8) {
                             i17 = i30;
                         } else {
-                            i28 = k5.C(4.0f, childAt2.getMeasuredHeight(), i28);
+                            i28 = f3.C(4.0f, childAt2.getMeasuredHeight(), i28);
                             i17 = 0;
                         }
                         if (childAt2.getMeasuredWidth() + i31 > L8) {
-                            z10 = contains2;
-                            L10 = k5.C(4.0f, childAt2.getMeasuredHeight(), L10);
+                            z12 = contains2;
+                            L10 = f3.C(4.0f, childAt2.getMeasuredHeight(), L10);
                             i18 = 0;
                         } else {
-                            z10 = contains2;
+                            z12 = contains2;
                             i18 = i31;
                         }
                         int L11 = g0.L(7.0f) + i17;
                         i19 = L8;
                         if (!this.c) {
-                            if (z10) {
+                            if (z12) {
                                 childAt2.setTranslationX(g0.L(7.0f) + i18);
                                 childAt2.setTranslationY(L10);
                             } else if (arrayList2.isEmpty()) {
@@ -434,13 +433,13 @@ public final class n extends ViewGroup {
                                 }
                             }
                         }
-                        if (z10) {
+                        if (z12) {
                             f10 = 4.0f;
                         } else {
                             f10 = 4.0f;
-                            i17 = k5.C(4.0f, childAt2.getMeasuredWidth(), i17);
+                            i17 = f3.C(4.0f, childAt2.getMeasuredWidth(), i17);
                         }
-                        i31 = k5.C(f10, childAt2.getMeasuredWidth(), i18);
+                        i31 = f3.C(f10, childAt2.getMeasuredWidth(), i18);
                         i30 = i17;
                     } else {
                         b8Var = b8Var2;
@@ -455,16 +454,16 @@ public final class n extends ViewGroup {
                 b8 b8Var3 = b8Var2;
                 int i32 = L8;
                 if (g0.Q1()) {
-                    y11 = g0.L(394.0f) / 3;
+                    z11 = g0.L(394.0f) / 3;
                 } else {
                     Point point2 = g0.q;
-                    y11 = i20.y(136.0f, Math.min(point2.x, point2.y), 3);
+                    z11 = n10.z(136.0f, Math.min(point2.x, point2.y), 3);
                 }
-                if (i32 - i30 < y11) {
+                if (i32 - i30 < z11) {
                     i28 += g0.L(36.0f);
                     i30 = 0;
                 }
-                if (i32 - i31 < y11) {
+                if (i32 - i31 < z11) {
                     L10 += g0.L(36.0f);
                 }
                 iVar2.measure(View.MeasureSpec.makeMeasureSpec(i32 - i30, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(g0.L(28.0f), TLObject.FLAG_30));
@@ -480,7 +479,7 @@ public final class n extends ViewGroup {
                         float f20 = L14;
                         if (f19 != f20) {
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f19, f20);
-                            ofFloat2.addUpdateListener(new j3(n8Var, 7));
+                            ofFloat2.addUpdateListener(new k3(n8Var, 7));
                             arrayList.add(ofFloat2);
                         }
                         float f21 = L13;
@@ -510,7 +509,7 @@ public final class n extends ViewGroup {
                             b8Var3.run();
                         }
                         if (n8Var.M) {
-                            post(new e1(this, 12));
+                            post(new hi.k(this, 16));
                             n8Var.M = false;
                         }
                     }
@@ -519,7 +518,7 @@ public final class n extends ViewGroup {
                         iVar2.bringPointIntoView(iVar2.getSelectionStart());
                     }
                     if (n8Var.M) {
-                        n8Var.fullScroll(ns.O1);
+                        n8Var.fullScroll(ks.O1);
                         n8Var.M = false;
                     }
                 }

@@ -1,27 +1,25 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class y4 {
-    public static final y4 a;
-    public static final y4 b;
-    public static final /* synthetic */ y4[] c;
+public final /* synthetic */ class y4 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n5 b;
 
-    static {
-        y4 y4Var = new y4("GLASS", 0);
-        a = y4Var;
-        y4 y4Var2 = new y4("ACCENT", 1);
-        b = y4Var2;
-        c = new y4[]{y4Var, y4Var2};
+    public /* synthetic */ y4(n5 n5Var, int i7) {
+        this.a = i7;
+        this.b = n5Var;
     }
 
-    public static y4 valueOf(String str) {
-        return (y4) Enum.valueOf(y4.class, str);
-    }
-
-    public static y4[] values() {
-        return (y4[]) c.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.setVisibility(8);
+                break;
+            default:
+                this.b.setVisibility(8);
+                break;
+        }
     }
 }

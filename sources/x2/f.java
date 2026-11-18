@@ -1,8 +1,8 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class f extends r {
+public final class f extends s {
     public final long f;
     public final long g;
     public final long h;
@@ -39,7 +39,7 @@ public final class f extends r {
         this.i = z11;
     }
 
-    @Override // x2.r, e2.l1
+    @Override // x2.s, e2.l1
     public final e2.i1 f(int i7, e2.i1 i1Var, boolean z10) {
         this.e.f(0, i1Var, z10);
         long j3 = i1Var.e - this.f;
@@ -48,7 +48,7 @@ public final class f extends r {
         return i1Var;
     }
 
-    @Override // x2.r, e2.l1
+    @Override // x2.s, e2.l1
     public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
         this.e.m(0, k1Var, 0L);
         long j10 = k1Var.p;

@@ -1,58 +1,91 @@
 package c8;
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class vc {
-    public static v0.c a(String type, Bundle data) {
-        kotlin.jvm.internal.j.e(type, "type");
-        kotlin.jvm.internal.j.e(data, "data");
-        try {
-            int hashCode = type.hashCode();
-            if (hashCode != -1678407252) {
-                if (hashCode != -543568185) {
-                    if (hashCode == -95037569 && type.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
-                        try {
-                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON");
-                            kotlin.jvm.internal.j.b(string);
-                            return new v0.f(string, data);
-                        } catch (Exception unused) {
-                            throw new z0.a();
-                        }
-                    }
-                } else if (type.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
-                    return new v0.d("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
+        int i7 = 0;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            u9.a aVar = (u9.a) obj;
+            u9.g gVar = new u9.g(aVar);
+            for (u9.q qVar : aVar.b) {
+                boolean z10 = aVar.e == 0;
+                u9.h hVar = new u9.h(qVar, !z10);
+                if (!hashMap.containsKey(hVar)) {
+                    hashMap.put(hVar, new HashSet());
                 }
-                throw new z0.a();
-            }
-            if (type.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
-                try {
-                    String string2 = data.getString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON");
-                    kotlin.jvm.internal.j.b(string2);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("androidx.credentials.BUNDLE_KEY_RESPONSE_JSON", string2);
-                    v0.d dVar = new v0.d("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", bundle);
-                    if (string2.length() != 0) {
-                        try {
-                            new JSONObject(string2);
-                            return dVar;
-                        } catch (Exception unused2) {
-                        }
-                    }
-                    throw new IllegalArgumentException("responseJson must not be empty, and must be a valid JSON");
-                } catch (Exception unused3) {
-                    throw new z0.a();
+                Set set = (Set) hashMap.get(hVar);
+                if (!set.isEmpty() && z10) {
+                    throw new IllegalArgumentException("Multiple components provide " + qVar + ".");
                 }
+                set.add(gVar);
             }
-            throw new z0.a();
-        } catch (z0.a unused4) {
-            v0.d dVar2 = new v0.d(type, data);
-            if (type.length() > 0) {
-                return dVar2;
-            }
-            throw new IllegalArgumentException("type should not be empty");
         }
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (u9.g gVar2 : (Set) it.next()) {
+                for (u9.i iVar : gVar2.a.c) {
+                    if (iVar.c == 0) {
+                        Set<u9.g> set2 = (Set) hashMap.get(new u9.h(iVar.a, iVar.b == 2));
+                        if (set2 != null) {
+                            for (u9.g gVar3 : set2) {
+                                gVar2.b.add(gVar3);
+                                gVar3.c.add(gVar2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        HashSet hashSet = new HashSet();
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
+        }
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            u9.g gVar4 = (u9.g) it3.next();
+            if (gVar4.c.isEmpty()) {
+                hashSet2.add(gVar4);
+            }
+        }
+        while (!hashSet2.isEmpty()) {
+            u9.g gVar5 = (u9.g) hashSet2.iterator().next();
+            hashSet2.remove(gVar5);
+            i7++;
+            Iterator it4 = gVar5.b.iterator();
+            while (it4.hasNext()) {
+                u9.g gVar6 = (u9.g) it4.next();
+                gVar6.c.remove(gVar5);
+                if (gVar6.c.isEmpty()) {
+                    hashSet2.add(gVar6);
+                }
+            }
+        }
+        if (i7 == arrayList.size()) {
+            return;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            u9.g gVar7 = (u9.g) it5.next();
+            if (!gVar7.c.isEmpty() && !gVar7.b.isEmpty()) {
+                arrayList2.add(gVar7.a);
+            }
+        }
+        throw new u9.j("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

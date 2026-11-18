@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import sun.misc.Unsafe;
 
@@ -507,8 +507,8 @@ public final class p0 implements z0 {
                 case 27:
                 case 28:
                 case 29:
-                case ns.T /* 30 */:
-                case ns.U /* 31 */:
+                case ks.T /* 30 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -538,15 +538,15 @@ public final class p0 implements z0 {
                     i1.d(yVar, j3, m0.a(k10, k11));
                     yVar3 = yVar;
                     break;
-                case ns.o0 /* 51 */:
-                case ns.p0 /* 52 */:
-                case ns.q0 /* 53 */:
-                case ns.r0 /* 54 */:
-                case ns.s0 /* 55 */:
-                case ns.t0 /* 56 */:
-                case ns.u0 /* 57 */:
-                case ns.v0 /* 58 */:
-                case ns.w0 /* 59 */:
+                case ks.o0 /* 51 */:
+                case ks.p0 /* 52 */:
+                case ks.q0 /* 53 */:
+                case ks.r0 /* 54 */:
+                case ks.s0 /* 55 */:
+                case ks.t0 /* 56 */:
+                case ks.u0 /* 57 */:
+                case ks.v0 /* 58 */:
+                case ks.w0 /* 59 */:
                     if (q(i11, i10, yVar2)) {
                         i1.d(yVar, j3, i1.k(yVar2, j3));
                         i7 = iArr[i10 + 2];
@@ -554,18 +554,18 @@ public final class p0 implements z0 {
                     }
                     yVar3 = yVar;
                     break;
-                case ns.x0 /* 60 */:
-                case ns.F0 /* 68 */:
+                case ks.x0 /* 60 */:
+                case ks.F0 /* 68 */:
                     y(i10, yVar, yVar2);
                     yVar3 = yVar;
                     break;
-                case ns.y0 /* 61 */:
-                case ns.z0 /* 62 */:
-                case ns.A0 /* 63 */:
+                case ks.y0 /* 61 */:
+                case ks.z0 /* 62 */:
+                case ks.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ns.D0 /* 66 */:
-                case ns.E0 /* 67 */:
+                case ks.D0 /* 66 */:
+                case ks.E0 /* 67 */:
                     if (q(i11, i10, yVar2)) {
                         i1.d(yVar, j3, i1.k(yVar2, j3));
                         i7 = iArr[i10 + 2];
@@ -806,8 +806,8 @@ public final class p0 implements z0 {
                     case 27:
                     case 28:
                     case 29:
-                    case ns.T /* 30 */:
-                    case ns.U /* 31 */:
+                    case ks.T /* 30 */:
+                    case ks.U /* 31 */:
                     case 32:
                     case 33:
                     case 34:
@@ -829,24 +829,24 @@ public final class p0 implements z0 {
                     case 50:
                         z10 = a1.c(i1.k(yVar, j3), i1.k(yVar2, j3));
                         break;
-                    case ns.o0 /* 51 */:
-                    case ns.p0 /* 52 */:
-                    case ns.q0 /* 53 */:
-                    case ns.r0 /* 54 */:
-                    case ns.s0 /* 55 */:
-                    case ns.t0 /* 56 */:
-                    case ns.u0 /* 57 */:
-                    case ns.v0 /* 58 */:
-                    case ns.w0 /* 59 */:
-                    case ns.x0 /* 60 */:
-                    case ns.y0 /* 61 */:
-                    case ns.z0 /* 62 */:
-                    case ns.A0 /* 63 */:
+                    case ks.o0 /* 51 */:
+                    case ks.p0 /* 52 */:
+                    case ks.q0 /* 53 */:
+                    case ks.r0 /* 54 */:
+                    case ks.s0 /* 55 */:
+                    case ks.t0 /* 56 */:
+                    case ks.u0 /* 57 */:
+                    case ks.v0 /* 58 */:
+                    case ks.w0 /* 59 */:
+                    case ks.x0 /* 60 */:
+                    case ks.y0 /* 61 */:
+                    case ks.z0 /* 62 */:
+                    case ks.A0 /* 63 */:
                     case 64:
                     case 65:
-                    case ns.D0 /* 66 */:
-                    case ns.E0 /* 67 */:
-                    case ns.F0 /* 68 */:
+                    case ks.D0 /* 66 */:
+                    case ks.E0 /* 67 */:
+                    case ks.F0 /* 68 */:
                         long j10 = iArr[i7 + 2] & 1048575;
                         h1 h1Var15 = i1.d;
                         if (h1Var15.g(yVar, j10) == h1Var15.g(yVar2, j10)) {
@@ -978,8 +978,8 @@ public final class p0 implements z0 {
                 case 27:
                 case 28:
                 case 29:
-                case ns.T /* 30 */:
-                case ns.U /* 31 */:
+                case ks.T /* 30 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:
@@ -1004,7 +1004,7 @@ public final class p0 implements z0 {
                     floatToIntBits = k10.hashCode();
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.o0 /* 51 */:
+                case ks.o0 /* 51 */:
                     if (q(i13, i12, yVar)) {
                         i7 = i11 * 53;
                         doubleToLongBits2 = Double.doubleToLongBits(((Double) i1.k(yVar, j3)).doubleValue());
@@ -1014,7 +1014,7 @@ public final class p0 implements z0 {
                     } else {
                         break;
                     }
-                case ns.p0 /* 52 */:
+                case ks.p0 /* 52 */:
                     if (q(i13, i12, yVar)) {
                         i7 = i11 * 53;
                         floatToIntBits = Float.floatToIntBits(((Float) i1.k(yVar, j3)).floatValue());
@@ -1023,7 +1023,7 @@ public final class p0 implements z0 {
                     } else {
                         break;
                     }
-                case ns.q0 /* 53 */:
+                case ks.q0 /* 53 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1032,7 +1032,7 @@ public final class p0 implements z0 {
                     floatToIntBits = z.b(doubleToLongBits2);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.r0 /* 54 */:
+                case ks.r0 /* 54 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1041,7 +1041,7 @@ public final class p0 implements z0 {
                     floatToIntBits = z.b(doubleToLongBits2);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.s0 /* 55 */:
+                case ks.s0 /* 55 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1049,7 +1049,7 @@ public final class p0 implements z0 {
                     floatToIntBits = A(yVar, j3);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.t0 /* 56 */:
+                case ks.t0 /* 56 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1058,7 +1058,7 @@ public final class p0 implements z0 {
                     floatToIntBits = z.b(doubleToLongBits2);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.u0 /* 57 */:
+                case ks.u0 /* 57 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1066,7 +1066,7 @@ public final class p0 implements z0 {
                     floatToIntBits = A(yVar, j3);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     if (q(i13, i12, yVar)) {
                         i10 = i11 * 53;
                         boolean booleanValue = ((Boolean) i1.k(yVar, j3)).booleanValue();
@@ -1075,7 +1075,7 @@ public final class p0 implements z0 {
                     } else {
                         break;
                     }
-                case ns.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     if (q(i13, i12, yVar)) {
                         i7 = i11 * 53;
                         floatToIntBits = ((String) i1.k(yVar, j3)).hashCode();
@@ -1084,7 +1084,7 @@ public final class p0 implements z0 {
                     } else {
                         break;
                     }
-                case ns.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1093,7 +1093,7 @@ public final class p0 implements z0 {
                     floatToIntBits = k10.hashCode();
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1102,7 +1102,7 @@ public final class p0 implements z0 {
                     floatToIntBits = k10.hashCode();
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.z0 /* 62 */:
+                case ks.z0 /* 62 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1110,7 +1110,7 @@ public final class p0 implements z0 {
                     floatToIntBits = A(yVar, j3);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.A0 /* 63 */:
+                case ks.A0 /* 63 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1135,7 +1135,7 @@ public final class p0 implements z0 {
                     floatToIntBits = z.b(doubleToLongBits2);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.D0 /* 66 */:
+                case ks.D0 /* 66 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1143,7 +1143,7 @@ public final class p0 implements z0 {
                     floatToIntBits = A(yVar, j3);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.E0 /* 67 */:
+                case ks.E0 /* 67 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1152,7 +1152,7 @@ public final class p0 implements z0 {
                     floatToIntBits = z.b(doubleToLongBits2);
                     i11 = floatToIntBits + i7;
                     break;
-                case ns.F0 /* 68 */:
+                case ks.F0 /* 68 */:
                     if (!q(i13, i12, yVar)) {
                         break;
                     }
@@ -1740,7 +1740,7 @@ public final class p0 implements z0 {
         Unsafe unsafe = o;
         long j11 = this.a[i16 + 2] & 1048575;
         switch (i15) {
-            case ns.o0 /* 51 */:
+            case ks.o0 /* 51 */:
                 i17 = i7;
                 if (i13 != 1) {
                     return i17;
@@ -1750,7 +1750,7 @@ public final class p0 implements z0 {
                 m10 = i17 + 8;
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.p0 /* 52 */:
+            case ks.p0 /* 52 */:
                 i18 = i7;
                 if (i13 != 5) {
                     return i18;
@@ -1760,8 +1760,8 @@ public final class p0 implements z0 {
                 m10 = i18 + 4;
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.q0 /* 53 */:
-            case ns.r0 /* 54 */:
+            case ks.q0 /* 53 */:
+            case ks.r0 /* 54 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1771,8 +1771,8 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, valueOf3);
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.s0 /* 55 */:
-            case ns.z0 /* 62 */:
+            case ks.s0 /* 55 */:
+            case ks.z0 /* 62 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1782,7 +1782,7 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, valueOf3);
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.t0 /* 56 */:
+            case ks.t0 /* 56 */:
             case 65:
                 i17 = i7;
                 if (i13 != 1) {
@@ -1793,7 +1793,7 @@ public final class p0 implements z0 {
                 m10 = i17 + 8;
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.u0 /* 57 */:
+            case ks.u0 /* 57 */:
             case 64:
                 i18 = i7;
                 if (i13 != 5) {
@@ -1804,7 +1804,7 @@ public final class p0 implements z0 {
                 m10 = i18 + 4;
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.v0 /* 58 */:
+            case ks.v0 /* 58 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1813,7 +1813,7 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, valueOf3);
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.w0 /* 59 */:
+            case ks.w0 /* 59 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -1832,7 +1832,7 @@ public final class p0 implements z0 {
                 }
                 unsafe.putInt(obj, j11, i12);
                 return f10;
-            case ns.x0 /* 60 */:
+            case ks.x0 /* 60 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -1845,7 +1845,7 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, obj2);
                 unsafe.putInt(obj, j11, i12);
                 return j12;
-            case ns.y0 /* 61 */:
+            case ks.y0 /* 61 */:
                 if (i13 != 2) {
                     return i7;
                 }
@@ -1859,7 +1859,7 @@ public final class p0 implements z0 {
                 }
                 unsafe.putInt(obj, j11, i12);
                 return f11;
-            case ns.A0 /* 63 */:
+            case ks.A0 /* 63 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1880,7 +1880,7 @@ public final class p0 implements z0 {
                 }
                 b1Var.a(i11, Long.valueOf(i22));
                 return f12;
-            case ns.D0 /* 66 */:
+            case ks.D0 /* 66 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1891,7 +1891,7 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, valueOf3);
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.E0 /* 67 */:
+            case ks.E0 /* 67 */:
                 if (i13 != 0) {
                     return i7;
                 }
@@ -1902,7 +1902,7 @@ public final class p0 implements z0 {
                 unsafe.putObject(obj, j3, valueOf3);
                 unsafe.putInt(obj, j11, i12);
                 return m10;
-            case ns.F0 /* 68 */:
+            case ks.F0 /* 68 */:
                 if (i13 == 3) {
                     m10 = i(s(i16), bArr, i7, i10, (i11 & (-8)) | 4, lVar);
                     object = unsafe.getInt(obj, j11) == i12 ? unsafe.getObject(obj, j3) : null;
@@ -2112,7 +2112,7 @@ public final class p0 implements z0 {
                 }
                 throw c0.a();
             case 24:
-            case ns.U /* 31 */:
+            case ks.U /* 31 */:
             case 41:
             case 45:
                 if (i13 != 2) {
@@ -2235,7 +2235,7 @@ public final class p0 implements z0 {
                     break;
                 }
                 return i7;
-            case ns.T /* 30 */:
+            case ks.T /* 30 */:
             case 44:
                 if (i13 != 2) {
                     if (i13 == 0) {

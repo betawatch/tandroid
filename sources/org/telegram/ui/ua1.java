@@ -1,136 +1,66 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ua1 implements TextWatcher {
+public final /* synthetic */ class ua1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xa1 b;
+    public final /* synthetic */ bb1 b;
 
-    public /* synthetic */ ua1(xa1 xa1Var, int i7) {
+    public /* synthetic */ ua1(bb1 bb1Var, int i7) {
         this.a = i7;
-        this.b = xa1Var;
+        this.b = bb1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.ch0 ch0Var;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.getClass();
+                final int i7 = 0;
+                final bb1 bb1Var = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.wa1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i7) {
+                            case 0:
+                                bb1.g0(bb1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                bb1.m0(bb1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
                 break;
             case 1:
-                xa1 xa1Var = this.b;
-                if (!xa1Var.N) {
-                    int i7 = xa1Var.P;
-                    if (i7 != 0) {
-                        if (i7 != 1) {
-                            if (i7 == 8 && editable.length() > 0) {
-                                xa1Var.M0(true);
-                                break;
-                            }
-                        } else {
-                            try {
-                                xa1Var.g0[6].P((int) ((Math.min(1.0f, xa1Var.n.getLayout().getLineWidth(0) / xa1Var.n.getWidth()) * 142.0f) + 18.0f));
-                                xa1Var.a.d();
-                                break;
-                            } catch (Exception e10) {
-                                org.telegram.messenger.a8.g(e10, true);
-                                return;
-                            }
-                        }
-                    } else {
-                        org.telegram.ui.Components.ch0 animatedDrawable = xa1Var.a.getAnimatedDrawable();
-                        if (xa1Var.n.length() <= 0) {
-                            if (animatedDrawable != xa1Var.g0[3] || xa1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.ch0[] ch0VarArr = xa1Var.g0;
-                                if (animatedDrawable != ch0VarArr[5]) {
-                                    ch0VarArr[2].P(-1);
-                                    org.telegram.ui.Components.ch0 ch0Var2 = xa1Var.g0[2];
-                                    if (animatedDrawable != ch0Var2) {
-                                        xa1Var.a.setAnimation(ch0Var2);
-                                        xa1Var.g0[2].N(49, false, false);
-                                    }
-                                    xa1Var.a.d();
-                                    break;
-                                }
-                            }
-                            xa1Var.a.setAnimation(xa1Var.g0[4]);
-                            xa1Var.g0[4].T(false, 0.0f);
-                            xa1Var.a.d();
-                            break;
-                        } else if (xa1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.ch0[] ch0VarArr2 = xa1Var.g0;
-                            if (animatedDrawable != ch0VarArr2[3]) {
-                                org.telegram.ui.Components.ch0 ch0Var3 = ch0VarArr2[2];
-                                if (animatedDrawable == ch0Var3) {
-                                    if (ch0Var3.b0 < 49) {
-                                        ch0Var3.P(49);
-                                        break;
-                                    }
-                                } else {
-                                    xa1Var.a.setAnimation(ch0Var3);
-                                    xa1Var.g0[2].P(49);
-                                    xa1Var.g0[2].T(false, 0.0f);
-                                    xa1Var.a.d();
-                                    break;
-                                }
-                            }
-                        } else {
-                            org.telegram.ui.Components.ch0[] ch0VarArr3 = xa1Var.g0;
-                            if (animatedDrawable != ch0VarArr3[3] && animatedDrawable != (ch0Var = ch0VarArr3[5])) {
-                                xa1Var.a.setAnimation(ch0Var);
-                                xa1Var.g0[5].T(false, 0.0f);
-                                xa1Var.a.d();
-                                break;
-                            }
-                        }
-                    }
-                }
+                org.telegram.messenger.g0.g3(new xa1(this.b, tL_error, 0));
+                break;
+            case 2:
+                org.telegram.messenger.g0.g3(new xa1(this.b, tL_error, 1));
+                break;
+            case 3:
+                org.telegram.messenger.g0.g3(new xa1(this.b, tL_error, 2));
                 break;
             default:
-                xa1 xa1Var2 = this.b;
-                if (xa1Var2.G) {
-                    if (xa1Var2.F.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.g0.Y3(xa1Var2.F, true, 0.1f, true, true);
-                        break;
-                    } else if (xa1Var2.F.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        org.telegram.messenger.g0.Y3(xa1Var2.F, false, 0.1f, true, true);
-                        break;
+                final int i10 = 1;
+                final bb1 bb1Var2 = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.wa1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                bb1.g0(bb1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                bb1.m0(bb1Var2, tL_error, tLObject);
+                                break;
+                        }
                     }
-                }
+                });
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

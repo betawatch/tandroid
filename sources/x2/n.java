@@ -1,25 +1,25 @@
 package x2;
 
-import a8.ja;
+import a8.la;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class n implements d1 {
-    public final h9.s1 a;
+public final class n implements f1 {
+    public final h9.t1 a;
     public long b;
 
     public n(List list, List list2) {
         h9.f0 p10 = h9.i0.p();
-        ja.f(list.size() == list2.size());
+        la.f(list.size() == list2.size());
         for (int i7 = 0; i7 < list.size(); i7++) {
-            p10.c(new m((d1) list.get(i7), (List) list2.get(i7)));
+            p10.c(new m((f1) list.get(i7), (List) list2.get(i7)));
         }
         this.a = p10.f();
         this.b = -9223372036854775807L;
     }
 
-    @Override // x2.d1
+    @Override // x2.f1
     public final boolean c(l2.s0 s0Var) {
         boolean z10;
         boolean z11 = false;
@@ -31,14 +31,14 @@ public final class n implements d1 {
             int i7 = 0;
             z10 = false;
             while (true) {
-                h9.s1 s1Var = this.a;
-                if (i7 >= s1Var.d) {
+                h9.t1 t1Var = this.a;
+                if (i7 >= t1Var.d) {
                     break;
                 }
-                long e11 = ((m) s1Var.get(i7)).a.e();
+                long e11 = ((m) t1Var.get(i7)).a.e();
                 boolean z12 = e11 != Long.MIN_VALUE && e11 <= s0Var.a;
                 if (e11 == e10 || z12) {
-                    z10 |= ((m) s1Var.get(i7)).a.c(s0Var);
+                    z10 |= ((m) t1Var.get(i7)).a.c(s0Var);
                 }
                 i7++;
             }
@@ -47,16 +47,16 @@ public final class n implements d1 {
         return z11;
     }
 
-    @Override // x2.d1
+    @Override // x2.f1
     public final long e() {
         int i7 = 0;
         long j3 = Long.MAX_VALUE;
         while (true) {
-            h9.s1 s1Var = this.a;
-            if (i7 >= s1Var.d) {
+            h9.t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
                 break;
             }
-            long e10 = ((m) s1Var.get(i7)).a.e();
+            long e10 = ((m) t1Var.get(i7)).a.e();
             if (e10 != Long.MIN_VALUE) {
                 j3 = Math.min(j3, e10);
             }
@@ -68,39 +68,39 @@ public final class n implements d1 {
         return j3;
     }
 
-    @Override // x2.d1
+    @Override // x2.f1
     public final boolean g() {
         int i7 = 0;
         while (true) {
-            h9.s1 s1Var = this.a;
-            if (i7 >= s1Var.d) {
+            h9.t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
                 return false;
             }
-            if (((m) s1Var.get(i7)).a.g()) {
+            if (((m) t1Var.get(i7)).a.g()) {
                 return true;
             }
             i7++;
         }
     }
 
-    @Override // x2.d1
-    public final long s() {
+    @Override // x2.f1
+    public final long r() {
         int i7 = 0;
         long j3 = Long.MAX_VALUE;
         long j10 = Long.MAX_VALUE;
         while (true) {
-            h9.s1 s1Var = this.a;
-            if (i7 >= s1Var.d) {
+            h9.t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
                 break;
             }
-            m mVar = (m) s1Var.get(i7);
-            long s5 = mVar.a.s();
+            m mVar = (m) t1Var.get(i7);
+            long r10 = mVar.a.r();
             h9.i0 i0Var = mVar.b;
-            if ((i0Var.contains(1) || i0Var.contains(2) || i0Var.contains(4)) && s5 != Long.MIN_VALUE) {
-                j3 = Math.min(j3, s5);
+            if ((i0Var.contains(1) || i0Var.contains(2) || i0Var.contains(4)) && r10 != Long.MIN_VALUE) {
+                j3 = Math.min(j3, r10);
             }
-            if (s5 != Long.MIN_VALUE) {
-                j10 = Math.min(j10, s5);
+            if (r10 != Long.MIN_VALUE) {
+                j10 = Math.min(j10, r10);
             }
             i7++;
         }
@@ -115,15 +115,15 @@ public final class n implements d1 {
         return j11 != -9223372036854775807L ? j11 : j10;
     }
 
-    @Override // x2.d1
+    @Override // x2.f1
     public final void u(long j3) {
         int i7 = 0;
         while (true) {
-            h9.s1 s1Var = this.a;
-            if (i7 >= s1Var.d) {
+            h9.t1 t1Var = this.a;
+            if (i7 >= t1Var.d) {
                 return;
             }
-            ((m) s1Var.get(i7)).u(j3);
+            ((m) t1Var.get(i7)).u(j3);
             i7++;
         }
     }

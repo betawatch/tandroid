@@ -1,27 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.view.View;
+import android.widget.TextView;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x4 {
-    public static final x4 a;
-    public static final x4 b;
-    public static final /* synthetic */ x4[] c;
+public final /* synthetic */ class x4 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a5 b;
 
-    static {
-        x4 x4Var = new x4("ICON", 0);
-        a = x4Var;
-        x4 x4Var2 = new x4("TEXT", 1);
-        b = x4Var2;
-        c = new x4[]{x4Var, x4Var2};
+    public /* synthetic */ x4(a5 a5Var, int i7) {
+        this.a = i7;
+        this.b = a5Var;
     }
 
-    public static x4 valueOf(String str) {
-        return (x4) Enum.valueOf(x4.class, str);
-    }
-
-    public static x4[] values() {
-        return (x4[]) c.clone();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                a5 a5Var = this.b;
+                if (!a5Var.H && a5Var.G) {
+                    a5Var.o(true);
+                    break;
+                } else {
+                    j jVar = a5Var.W;
+                    if (jVar != null) {
+                        jVar.b(-1);
+                        break;
+                    }
+                }
+                break;
+            default:
+                a5 a5Var2 = this.b;
+                if (a5Var2.s.length() != 0) {
+                    a5Var2.s.setText("");
+                } else {
+                    TextView textView = a5Var2.x;
+                    if (textView != null && textView.getVisibility() == 0) {
+                        a5Var2.n();
+                    }
+                }
+                a5Var2.s.requestFocus();
+                org.telegram.messenger.g0.I3(a5Var2.s);
+                break;
+        }
     }
 }

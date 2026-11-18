@@ -7,10 +7,10 @@ import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import libcore.io.Memory;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -182,7 +182,7 @@ final class zzvc {
         long j10 = (-4) & j3;
         int i7 = unsafe.getInt(obj, j10);
         int i10 = ((~((int) j3)) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(ns.e4 << i10))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (i7 & (~(ks.e4 << i10))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,7 +190,7 @@ final class zzvc {
         Unsafe unsafe = zzf.zza;
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(ns.e4 << i7))));
+        unsafe.putInt(obj, j10, ((255 & b10) << i7) | (unsafe.getInt(obj, j10) & (~(ks.e4 << i7))));
     }
 
     public static double zza(Object obj, long j3) {
@@ -262,11 +262,11 @@ final class zzvc {
     }
 
     public static /* bridge */ /* synthetic */ boolean zzt(Object obj, long j3) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ns.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & ks.e4)) != 0;
     }
 
     public static /* bridge */ /* synthetic */ boolean zzu(Object obj, long j3) {
-        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ns.e4)) != 0;
+        return ((byte) ((zzf.zza.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & ks.e4)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

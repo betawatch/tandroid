@@ -1,36 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class iq0 implements org.telegram.ui.b50 {
-    public final /* synthetic */ ys0 a;
+public final class iq0 extends bs0 {
+    public final /* synthetic */ gt0 Q;
 
-    public iq0(ys0 ys0Var) {
-        this.a = ys0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iq0(gt0 gt0Var, Context context) {
+        super(context);
+        this.Q = gt0Var;
     }
 
-    @Override // org.telegram.ui.b50
-    public final void c(org.telegram.ui.c50 c50Var, long j3) {
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", j3);
-        bundle.putBoolean("just_created_chat", true);
-        c50Var.presentFragment(new org.telegram.ui.an(bundle), true);
-        mr0 mr0Var = this.a.S;
-        org.telegram.ui.ActionBar.e2 e2Var = mr0Var.r.y1;
-        if (mr0Var.n != 0) {
-            e2Var.getConnectionsManager().cancelRequest(mr0Var.n, true);
-            mr0Var.n = 0;
+    @Override // android.view.View
+    public final void setTranslationX(float f10) {
+        bs0 bs0Var;
+        float translationX = getTranslationX();
+        super.setTranslationX(f10);
+        gt0 gt0Var = this.Q;
+        bs0[] bs0VarArr = gt0Var.n0;
+        if (bs0VarArr[0] == this) {
+            float f11 = translationX - f10;
+            ri.q qVar = gt0Var.h2;
+            if (qVar != null) {
+                float f12 = gt0Var.i2 + f11;
+                gt0Var.i2 = f12;
+                int i7 = (int) f12;
+                if (i7 != 0) {
+                    gt0Var.i2 = f12 - i7;
+                    qVar.h(i7, 0);
+                }
+            }
         }
-        mr0Var.d.clear();
-        mr0Var.e = false;
-        mr0Var.h = false;
-        mr0Var.E(0L);
-        TLRPC.User a22 = e2Var.getMessagesController().a2(Long.valueOf(mr0Var.F()));
-        if (a22 != null) {
-            e2Var.getMessagesController().W2(a22, e2Var.getClassGuid(), true, null);
+        if (gt0Var.j1 && (bs0Var = bs0VarArr[0]) == this) {
+            float abs = Math.abs(bs0Var.getTranslationX()) / bs0VarArr[0].getMeasuredWidth();
+            gt0Var.l1(abs, bs0VarArr[1].F);
+            if (gt0Var.I()) {
+                int i10 = gt0Var.A0;
+                if (i10 == 2) {
+                    gt0Var.r0 = 1.0f - abs;
+                } else if (i10 == 1) {
+                    gt0Var.r0 = abs;
+                }
+                gt0Var.M1(abs);
+                float k02 = gt0Var.k0(abs);
+                gt0Var.s0 = k02;
+                gt0Var.u0.setVisibility((k02 == 0.0f || !gt0Var.I() || gt0Var.A0()) ? 4 : 0);
+            } else {
+                gt0Var.r0 = 0.0f;
+            }
+            gt0Var.I1(false);
         }
+        gt0Var.S();
+        gt0Var.U();
     }
 }

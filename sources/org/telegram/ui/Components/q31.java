@@ -1,48 +1,72 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q31 extends v4.t0 {
-    public final /* synthetic */ x31 a;
+public final class q31 extends v4.u0 {
+    public final /* synthetic */ int a = 1;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public q31(x31 x31Var) {
-        this.a = x31Var;
+    public q31(di.i4 i4Var, int i7) {
+        this.c = i4Var;
+        this.b = i7;
     }
 
-    @Override // v4.t0
+    @Override // v4.u0
     public final void a(RecyclerView recyclerView, int i7) {
-        v4.t0 t0Var = this.a.E;
-        if (t0Var != null) {
-            t0Var.a(recyclerView, i7);
+        org.telegram.ui.Wallet.j9 j9Var;
+        switch (this.a) {
+            case 0:
+                if (i7 == 0) {
+                    this.b = 0;
+                    break;
+                }
+                break;
+            default:
+                if (i7 == 1 && (j9Var = ((org.telegram.ui.Wallet.n6) ((di.i4) this.c).c).j0) != null) {
+                    j9Var.a();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // v4.t0
+    @Override // v4.u0
     public final void b(RecyclerView recyclerView, int i7, int i10) {
-        x31 x31Var = this.a;
-        w31 w31Var = x31Var.s;
-        n31 n31Var = x31Var.n;
-        v4.t0 t0Var = x31Var.E;
-        if (t0Var != null) {
-            t0Var.b(n31Var, i7, i10);
+        switch (this.a) {
+            case 0:
+                t31 t31Var = (t31) this.c;
+                h41 h41Var = t31Var.o1;
+                this.b += i10;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > org.telegram.messenger.g0.L(96.0f)) {
+                    View findFocus = h41Var.findFocus();
+                    if (findFocus == null) {
+                        findFocus = h41Var;
+                    }
+                    org.telegram.messenger.g0.v1(findFocus);
+                }
+                if (i10 != 0 && h41Var.c()) {
+                    t31Var.p1 = h41Var.getContentTopOffset();
+                    t31Var.b.invalidate();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.n6 n6Var = (org.telegram.ui.Wallet.n6) ((di.i4) this.c).c;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.q4(n6Var, 14));
+                    break;
+                } else {
+                    n6Var.I0();
+                    break;
+                }
         }
-        if (i10 <= 0 || n31Var.getAdapter() != w31Var || !x31Var.K || w31Var.r || w31Var.s) {
-            return;
-        }
-        if (x31Var.r.N0() >= ((w31Var.x + 1) - ((w31Var.w + 1) * 10)) - 1) {
-            x31 x31Var2 = w31Var.y;
-            if (!x31Var2.K || w31Var.r || w31Var.s) {
-                return;
-            }
-            w31Var.r = true;
-            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
-            tL_messages_getOldFeaturedStickers.offset = w31Var.n.size();
-            tL_messages_getOldFeaturedStickers.limit = 40;
-            ConnectionsManager.getInstance(x31Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new v1(w31Var, 16));
-        }
+    }
+
+    public q31(t31 t31Var) {
+        this.c = t31Var;
     }
 }

@@ -1,48 +1,47 @@
 package org.telegram.ui.Components;
 
+import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int[] c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 c;
+    public final /* synthetic */ AlertDialog$Builder d;
 
-    public /* synthetic */ k1(LinearLayout linearLayout, int[] iArr) {
-        this.b = linearLayout;
-        this.c = iArr;
+    public /* synthetic */ k1(TLRPC.User user, org.telegram.ui.ActionBar.h2 h2Var, AlertDialog$Builder alertDialog$Builder, int i7) {
+        this.a = i7;
+        this.b = user;
+        this.c = h2Var;
+        this.d = alertDialog$Builder;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.c[0] = ((Integer) view.getTag()).intValue();
-                LinearLayout linearLayout = this.b;
-                int childCount = linearLayout.getChildCount();
-                for (int i7 = 0; i7 < childCount; i7++) {
-                    View childAt = linearLayout.getChildAt(i7);
-                    if (childAt instanceof org.telegram.ui.Cells.i6) {
-                        ((org.telegram.ui.Cells.i6) childAt).c.a(childAt == view, true);
-                    }
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.h2 h2Var = this.c;
+                if (h2Var.getMessagesController().E(bundle, h2Var, null, null)) {
+                    h2Var.presentFragment(new ProfileActivity(bundle, null));
                 }
+                this.d.a.M0.run();
                 break;
             default:
-                LinearLayout linearLayout2 = this.b;
-                int childCount2 = linearLayout2.getChildCount();
-                for (int i10 = 0; i10 < childCount2; i10++) {
-                    org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) linearLayout2.getChildAt(i10);
-                    i6Var.c.a(i6Var == view, true);
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", this.b.id);
+                org.telegram.ui.ActionBar.h2 h2Var2 = this.c;
+                if (h2Var2.getMessagesController().E(bundle2, h2Var2, null, null)) {
+                    h2Var2.presentFragment(new ProfileActivity(bundle2, null));
                 }
-                this.c[0] = org.telegram.ui.Cells.s8.f[((Integer) view.getTag()).intValue()];
+                this.d.a.M0.run();
                 break;
         }
-    }
-
-    public /* synthetic */ k1(int[] iArr, LinearLayout linearLayout) {
-        this.c = iArr;
-        this.b = linearLayout;
     }
 }

@@ -1,23 +1,52 @@
 package a8;
 
-import java.lang.reflect.Method;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class ma {
-    public static void a(Throwable th2, Throwable exception) {
-        kotlin.jvm.internal.j.e(th2, "<this>");
-        kotlin.jvm.internal.j.e(exception, "exception");
-        if (th2 != exception) {
-            Integer num = nd.a.a;
-            if (num == null || num.intValue() >= 19) {
-                th2.addSuppressed(exception);
-                return;
+    public static String a(String str, Object... objArr) {
+        int indexOf;
+        String sb2;
+        String valueOf = String.valueOf(str);
+        int i7 = 0;
+        for (int i10 = 0; i10 < objArr.length; i10++) {
+            Object obj = objArr[i10];
+            if (obj == null) {
+                sb2 = "null";
+            } else {
+                try {
+                    sb2 = obj.toString();
+                } catch (Exception e10) {
+                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
+                    Logger.getLogger("com.google.common.base.Strings").log(Level.WARNING, "Exception during lenientFormat for " + str2, (Throwable) e10);
+                    StringBuilder u10 = p0.u("<", str2, " threw ");
+                    u10.append(e10.getClass().getName());
+                    u10.append(">");
+                    sb2 = u10.toString();
+                }
             }
-            Method method = md.a.a;
-            if (method != null) {
-                method.invoke(th2, exception);
-            }
+            objArr[i10] = sb2;
         }
+        StringBuilder sb3 = new StringBuilder((objArr.length * 16) + valueOf.length());
+        int i11 = 0;
+        while (i7 < objArr.length && (indexOf = valueOf.indexOf("%s", i11)) != -1) {
+            sb3.append((CharSequence) valueOf, i11, indexOf);
+            sb3.append(objArr[i7]);
+            i11 = indexOf + 2;
+            i7++;
+        }
+        sb3.append((CharSequence) valueOf, i11, valueOf.length());
+        if (i7 < objArr.length) {
+            sb3.append(" [");
+            sb3.append(objArr[i7]);
+            for (int i12 = i7 + 1; i12 < objArr.length; i12++) {
+                sb3.append(", ");
+                sb3.append(objArr[i12]);
+            }
+            sb3.append(']');
+        }
+        return sb3.toString();
     }
 }

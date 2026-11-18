@@ -1,147 +1,71 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v50 b;
-    public final /* synthetic */ String c;
+public final class u50 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
+    public int d;
+    public int e;
+    public final /* synthetic */ x50 f;
 
-    public /* synthetic */ u50(v50 v50Var, String str, int i7) {
-        this.a = i7;
-        this.b = v50Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u50(x50 x50Var, Context context) {
+        super(context);
+        this.f = x50Var;
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setBackground(org.telegram.ui.ActionBar.n6.M(46, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.R7, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Y7, false)));
+        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        imageView.setImageResource(R.drawable.large_income);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        addView(imageView, c8.ma.d(46, 46.0f, 19, 13.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        i5.c.x(textView, 1, 16.0f);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, null);
+        addView(textView, c8.ma.d(-1, -2.0f, 51, 72.0f, 9.0f, 0.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        textView2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(textView2, org.telegram.ui.ActionBar.n6.y6, null);
+        addView(textView2, c8.ma.d(-1, -2.0f, 51, 72.0f, 32.0f, 0.0f, 0.0f));
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r6v2 */
-    /* JADX WARN: Type inference failed for: r6v3, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r6v5 */
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        String K;
-        ArrayList arrayList;
-        boolean z10;
-        char c10;
-        Object obj;
-        switch (this.a) {
-            case 0:
-                v50 v50Var = this.b;
-                String str2 = this.c;
-                v50Var.getClass();
-                org.telegram.messenger.g0.h3(new u50(v50Var, str2, 1));
-                break;
-            case 1:
-                v50 v50Var2 = this.b;
-                String str3 = this.c;
-                jg.z1 z1Var = v50Var2.e;
-                org.telegram.ui.zr zrVar = v50Var2.n.h2;
-                boolean z11 = false;
-                boolean z12 = zrVar != null;
-                if (zrVar != null) {
-                    z11 = true;
-                }
-                z1Var.g(str3, true, z12, true, z11, 0L, false, 0, 0);
-                org.telegram.messenger.p5 p5Var = Utilities.g;
-                u50 u50Var = new u50(v50Var2, str3, 2);
-                v50Var2.h = u50Var;
-                p5Var.c(u50Var);
-                break;
-            default:
-                v50 v50Var3 = this.b;
-                String str4 = this.c;
-                ArrayList arrayList2 = v50Var3.n.Z1;
-                String lowerCase = str4.trim().toLowerCase();
-                if (lowerCase.length() != 0) {
-                    boolean z13 = true;
-                    ?? r62 = 0;
-                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.length() == 0) {
-                        S0 = null;
-                    }
-                    int i7 = (S0 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i7];
-                    strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i10 = 0;
-                    while (i10 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i10);
-                        boolean z14 = tLObject instanceof TLRPC.User;
-                        if (z14) {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            str = org.telegram.messenger.g5.m(r62, user.first_name, user.last_name).toLowerCase();
-                            K = org.telegram.messenger.q10.n(user);
-                        } else {
-                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                            str = chat.title;
-                            K = org.telegram.messenger.t3.K(chat, r62);
-                        }
-                        String S02 = org.telegram.messenger.hd.E0().S0(str, z13, r62);
-                        if (str.equals(S02)) {
-                            S02 = null;
-                        }
-                        char c11 = r62;
-                        int i11 = r62;
-                        while (true) {
-                            if (i11 < i7) {
-                                String str5 = strArr[i11];
-                                if (str.startsWith(str5) || i5.c.A(" ", str5, str) || (S02 != null && (S02.startsWith(str5) || i5.c.A(" ", str5, S02)))) {
-                                    c10 = 1;
-                                } else {
-                                    if (K != null && K.startsWith(str5)) {
-                                        c11 = 2;
-                                    }
-                                    c10 = c11;
-                                }
-                                if (c10 != 0) {
-                                    arrayList = arrayList2;
-                                    z10 = true;
-                                    if (c10 != 1) {
-                                        obj = null;
-                                        arrayList4.add(org.telegram.messenger.g0.r0(r.b.k("@", K), null, "@" + str5));
-                                    } else if (z14) {
-                                        TLRPC.User user2 = (TLRPC.User) tLObject;
-                                        arrayList4.add(org.telegram.messenger.g0.r0(user2.first_name, user2.last_name, str5));
-                                        obj = null;
-                                    } else {
-                                        obj = null;
-                                        arrayList4.add(org.telegram.messenger.g0.r0(((TLRPC.Chat) tLObject).title, null, str5));
-                                    }
-                                    arrayList3.add(tLObject);
-                                } else {
-                                    char c12 = c10;
-                                    z13 = true;
-                                    arrayList2 = arrayList2;
-                                    c11 = c12;
-                                    i11++;
-                                }
-                            } else {
-                                arrayList = arrayList2;
-                                z10 = z13;
-                            }
-                        }
-                        i10++;
-                        z13 = z10;
-                        arrayList2 = arrayList;
-                        r62 = 0;
-                    }
-                    org.telegram.messenger.g0.h3(new yf(v50Var3, arrayList3, arrayList4, 13));
-                    break;
-                } else {
-                    org.telegram.messenger.g0.h3(new yf(v50Var3, new ArrayList(), new ArrayList(), 13));
-                    break;
-                }
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int x02 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.R7, false);
+        int x03 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Y7, false);
+        ImageView imageView = this.a;
+        if (imageView != null) {
+            if (x02 == this.d && x03 == this.e) {
+                return;
+            }
+            this.d = x02;
+            this.e = x03;
+            imageView.setBackground(org.telegram.ui.ActionBar.n6.M(46, x02, x03));
+            invalidate();
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

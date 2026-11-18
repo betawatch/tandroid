@@ -1,86 +1,24 @@
 package b3;
 
-import a8.ja;
-import a8.sa;
-import android.os.Looper;
-import android.os.SystemClock;
-import h2.l0;
 import java.io.IOException;
-import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class o implements p {
-    public static final i d = new i(0, -9223372036854775807L, false);
-    public static final i e = new i(2, -9223372036854775807L, false);
-    public static final i f = new i(3, -9223372036854775807L, false);
-    public final c3.a a;
-    public k b;
-    public IOException c;
-
+public final class o extends IOException {
     /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public o(String str) {
-        this(new c3.a(Executors.newSingleThreadExecutor(new androidx.emoji2.text.a(r3, 1)), new a3.l(17)));
-        String concat = "ExoPlayer:Loader:".concat(str);
-        String str2 = l0.a;
-    }
-
-    @Override // b3.p
-    public final void a() {
-        IOException iOException = this.c;
-        if (iOException != null) {
-            throw iOException;
+    public o(Throwable th2) {
+        super(r0.toString(), th2);
+        String str;
+        StringBuilder sb2 = new StringBuilder("Unexpected ");
+        sb2.append(th2.getClass().getSimpleName());
+        if (th2.getMessage() != null) {
+            str = ": " + th2.getMessage();
+        } else {
+            str = "";
         }
-        k kVar = this.b;
-        if (kVar != null) {
-            int i7 = kVar.a;
-            IOException iOException2 = kVar.e;
-            if (iOException2 != null && kVar.f > i7) {
-                throw iOException2;
-            }
-        }
-    }
-
-    public final void b() {
-        k kVar = this.b;
-        kVar.getClass();
-        kVar.a(false);
-    }
-
-    public final boolean c() {
-        return this.c != null;
-    }
-
-    public final boolean d() {
-        return this.b != null;
-    }
-
-    public final void e(m mVar) {
-        k kVar = this.b;
-        if (kVar != null) {
-            kVar.a(true);
-        }
-        c3.a aVar = this.a;
-        if (mVar != null) {
-            aVar.execute(new sa(mVar, 12));
-        }
-        aVar.b.accept(aVar.a);
-    }
-
-    public final void f(l lVar, j jVar, int i7) {
-        Looper myLooper = Looper.myLooper();
-        myLooper.getClass();
-        this.c = null;
-        k kVar = new k(this, myLooper, lVar, jVar, i7, SystemClock.elapsedRealtime());
-        ja.p(this.b == null);
-        this.b = kVar;
-        kVar.b();
-    }
-
-    public o(c3.a aVar) {
-        this.a = aVar;
+        sb2.append(str);
     }
 }

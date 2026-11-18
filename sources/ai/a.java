@@ -9,10 +9,10 @@ import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.p20;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.x20;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -32,34 +32,34 @@ public final /* synthetic */ class a implements Runnable {
                 d.a(context);
                 break;
             case 1:
-                new p20(context).show();
+                new x20(context).show();
                 break;
             case 2:
-                new p20(context).show();
+                new x20(context).show();
                 break;
             case 3:
-                vf.c.t(context, hd.M0(2131744966, null));
+                vf.c.t(context, gd.M0(2131744731, null));
                 break;
             case 4:
-                vf.c.t(context, hd.M0(2131744966, null));
+                vf.c.t(context, gd.M0(2131744731, null));
                 break;
             case 5:
-                vf.c.t(context, hd.M0(2131747734, null));
+                vf.c.t(context, gd.M0(2131747541, null));
                 break;
             case 6:
-                vf.c.t(context, hd.M0(2131745019, null));
+                vf.c.t(context, gd.M0(2131744784, null));
                 break;
             case 7:
-                vf.c.t(context, hd.M0(2131744966, null));
+                vf.c.t(context, gd.M0(2131744731, null));
                 break;
             case 8:
-                vf.c.t(context, hd.M0(2131745044, null));
+                vf.c.t(context, gd.M0(2131744809, null));
                 break;
             case 9:
-                new p20(context).show();
+                new x20(context).show();
                 break;
             case 10:
-                vf.c.t(context, hd.M0(2131752506, null));
+                vf.c.t(context, gd.M0(2131752495, null));
                 break;
             case 11:
                 (Build.VERSION.SDK_INT >= 28 ? u4.f.a(Looper.getMainLooper()) : new Handler(Looper.getMainLooper())).postDelayed(new a(context, 12), new Random().nextInt(Math.max(1000, 1)) + 5000);

@@ -1,79 +1,157 @@
 package wg;
 
-import android.os.CountDownTimer;
+import android.content.Context;
 import android.view.View;
-import fi.w3;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import c8.ma;
 import java.util.ArrayList;
-import java.util.Date;
-import org.telegram.messenger.hd;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.Components.uj0;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.o10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.k80;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.d61;
+import ug.i1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j0 extends CountDownTimer {
-    public final /* synthetic */ o0 a;
+public final class j0 extends i1 {
+    public final ArrayList M2;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j0(o0 o0Var) {
-        super(Long.MAX_VALUE, 1000L);
-        this.a = o0Var;
-    }
-
-    @Override // android.os.CountDownTimer
-    public final void onTick(long j3) {
-        o0 o0Var = this.a;
-        uj0 uj0Var = o0Var.o1;
-        ArrayList arrayList = o0Var.U1;
-        ArrayList arrayList2 = new ArrayList(arrayList.size());
-        int size = arrayList.size();
-        int i7 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            TL_stories.TL_myBoost tL_myBoost = (TL_stories.TL_myBoost) obj;
-            if (tL_myBoost.cooldown_until_date > 0) {
-                arrayList2.add(tL_myBoost);
-            }
-            if (tL_myBoost.cooldown_until_date * 1000 < System.currentTimeMillis()) {
-                tL_myBoost.cooldown_until_date = 0;
-            }
-        }
-        if (arrayList2.isEmpty()) {
-            return;
-        }
-        for (int i10 = 0; i10 < uj0Var.getChildCount(); i10++) {
-            View childAt = uj0Var.getChildAt(i10);
-            if (childAt instanceof ah.r) {
-                ah.r rVar = (ah.r) childAt;
-                if (arrayList2.contains(rVar.getBoost())) {
-                    j5 j5Var = rVar.e;
-                    w3 w3Var = rVar.d;
-                    int i11 = rVar.K.cooldown_until_date;
-                    if (i11 > 0) {
-                        rVar.setSubtitle(hd.a0(null, null, 2131753594, ah.r.f((i11 * 1000) - System.currentTimeMillis())));
-                        w3Var.setAlpha(0.65f);
-                        j5Var.setAlpha(0.65f);
-                        rVar.i(false, 0.3f);
-                    } else {
-                        rVar.setSubtitle(hd.a0(null, null, 2131753661, hd.E0().o0().format(new Date(rVar.K.expires * 1000))));
-                        if (w3Var.getAlpha() < 1.0f) {
-                            w3Var.animate().alpha(1.0f).start();
-                            j5Var.animate().alpha(1.0f).start();
-                            rVar.i(true, 1.0f);
-                        } else {
-                            w3Var.setAlpha(1.0f);
-                            j5Var.setAlpha(1.0f);
-                            rVar.i(false, 1.0f);
-                        }
-                    }
+    public j0(h2 h2Var, int i7, ArrayList arrayList, i6 i6Var) {
+        super(h2Var, i7, null, null, null, i6Var);
+        ArrayList arrayList2 = new ArrayList();
+        this.M2 = arrayList2;
+        arrayList2.addAll(arrayList);
+        l1();
+        this.U0 = false;
+        this.v0 = false;
+        this.t0 = 0;
+        yg.a aVar = new yg.a(getContext(), this.J0);
+        aVar.setOnClickListener(new sh.b(this, 6));
+        aVar.setCloseStyle(true);
+        this.b.addView(aVar, ma.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+        ck0 ck0Var = this.o1;
+        int i10 = this.u0;
+        ck0Var.setPadding(i10, 0, i10, org.telegram.messenger.g0.L(64.0f));
+        Context context = getContext();
+        int i11 = i0.f;
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setClipChildren(false);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout2.setClipChildren(false);
+        if (arrayList2.size() == 1) {
+            frameLayout.addView(frameLayout2, ma.d(-1, 94.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+            i0 i0Var = new i0(context, 47.0f);
+            i0Var.d = false;
+            TLRPC.User user = (TLRPC.User) arrayList2.get(0);
+            b9 b9Var = i0Var.e;
+            b9Var.r(user);
+            i0Var.a.f(user, b9Var);
+            frameLayout2.addView(i0Var, 0, ma.e(94, 94, 17));
+        } else {
+            frameLayout.addView(frameLayout2, ma.d(-1, 83.0f, 0, 0.0f, 0.0f, 0.0f, 0.0f));
+            int i12 = 0;
+            for (int i13 = 0; i13 < arrayList2.size(); i13++) {
+                TLRPC.User user2 = (TLRPC.User) arrayList2.get(i13);
+                i0 i0Var2 = new i0(context, 41.5f);
+                b9 b9Var2 = i0Var2.e;
+                b9Var2.r(user2);
+                i0Var2.a.f(user2, b9Var2);
+                frameLayout2.addView(i0Var2, 0, ma.e(83, 83, 17));
+                i0Var2.setTranslationX(org.telegram.messenger.g0.L(29.0f) * (-i13));
+                if (i13 == 0 && arrayList2.size() > 3) {
+                    h0 h0Var = i0Var2.b;
+                    h0Var.setAlpha(1.0f);
+                    h0Var.b = arrayList2.size() - 3;
+                }
+                i12++;
+                if (i13 == 2) {
+                    break;
                 }
             }
+            frameLayout.setTranslationX((i12 - 1) * org.telegram.messenger.g0.L(14.5f));
+        }
+        this.x2 = frameLayout;
+        O();
+    }
+
+    public static void m1(ArrayList arrayList) {
+        h2 Q = LaunchActivity.Q();
+        if (Q == null) {
+            return;
+        }
+        j0 j0Var = new j0(Q, j10.t0, arrayList, Q.getResourceProvider());
+        j0Var.F2 = true;
+        j0Var.G2 = true;
+        j0Var.show();
+    }
+
+    @Override // ug.i1
+    public final void e1(int i7, View view) {
+        if (i7 == 0) {
+            view.setOutlineProvider(new bg.q0(22));
+            view.setClipToOutline(true);
+            u6.h(n6.a7, view, this.J0);
+            ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).topMargin = -org.telegram.messenger.g0.L(6.0f);
         }
     }
 
-    @Override // android.os.CountDownTimer
-    public final void onFinish() {
+    @Override // ug.i1
+    public final void f1(d61 d61Var) {
+        View view = this.x2;
+        ArrayList arrayList = this.M2;
+        d61Var.addView(view, ma.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+    }
+
+    @Override // ug.i1
+    public final void k1(boolean z10) {
+        String a02;
+        this.K2[0].setTextSize(1, 20.0f);
+        this.L2.setPadding(org.telegram.messenger.g0.L(30.0f), 0, org.telegram.messenger.g0.L(30.0f), 0);
+        this.L2.setLineSpacing(org.telegram.messenger.g0.L(2.0f), 1.0f);
+        k80 k80Var = this.K2[0];
+        ArrayList arrayList = this.M2;
+        k80Var.setText(gd.K0(arrayList.size(), "GiftPremiumGiftsSent"));
+        ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).bottomMargin = org.telegram.messenger.g0.L(16.0f);
+        ((ViewGroup.MarginLayoutParams) this.L2.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(4.0f);
+        int size = arrayList.size();
+        if (size == 1) {
+            a02 = gd.a0(null, null, 2131749481, gd.a0(null, null, 2131749483, o10.k((TLRPC.User) arrayList.get(0), true)));
+        } else if (size == 2) {
+            a02 = gd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749481, gd.a0("GiftPremiumUsersTwo", null, 2131749476, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true)));
+        } else if (size != 3) {
+            a02 = gd.G(arrayList.size() - 3, "GiftPremiumUsersPurchasedMany", gd.a0("GiftPremiumUsersThree", null, 2131749477, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true), o10.k((TLRPC.User) arrayList.get(2), true)));
+        } else {
+            a02 = gd.a0("GiftPremiumUsersPurchasedManyZero", null, 2131749481, gd.a0("GiftPremiumUsersThree", null, 2131749477, o10.k((TLRPC.User) arrayList.get(0), true), o10.k((TLRPC.User) arrayList.get(1), true), o10.k((TLRPC.User) arrayList.get(2), true)));
+        }
+        this.L2.setText(org.telegram.messenger.g0.W2(a02));
+        this.L2.append("\n");
+        this.L2.append("\n");
+        if (arrayList.size() == 1) {
+            this.L2.append(org.telegram.messenger.g0.W2(gd.a0("GiftPremiumGiftsSentStatusForUser", null, 2131749496, o10.k((TLRPC.User) arrayList.get(0), true))));
+        } else {
+            this.L2.append(org.telegram.messenger.g0.W2(gd.M0(2131749497, "GiftPremiumGiftsSentStatus")));
+        }
+    }
+
+    @Override // ug.i1
+    public final void l1() {
+        this.b2 = 1;
+        this.c2 = 0;
+        this.f2 = 1;
+        int size = this.T1.size();
+        int i7 = 1 + size;
+        this.g2 = i7;
+        this.b2 = size + 2;
+        this.j2 = i7;
     }
 }

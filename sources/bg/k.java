@@ -8,11 +8,11 @@ import android.view.View;
 import java.lang.reflect.Field;
 import java.util.Iterator;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.Components.t5;
+import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.b6;
+import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k implements Choreographer.FrameCallback {
     public static final long[] r;
@@ -133,11 +133,11 @@ public final class k implements Choreographer.FrameCallback {
         e(max).c.add(runnable);
     }
 
-    public final void b(s5 s5Var, int i7) {
+    public final void b(a6 a6Var, int i7) {
         c();
         int max = Math.max(1, Math.min(i7, 60));
-        g(s5Var);
-        e(max).b.add(s5Var);
+        g(a6Var);
+        e(max).b.add(a6Var);
     }
 
     @Override // android.view.Choreographer.FrameCallback
@@ -171,23 +171,23 @@ public final class k implements Choreographer.FrameCallback {
                         }
                         Iterator it2 = jVar.b.iterator();
                         while (it2.hasNext()) {
-                            s5 s5Var = (s5) it2.next();
-                            int i10 = s5Var.a;
-                            Object obj = s5Var.b;
+                            a6 a6Var = (a6) it2.next();
+                            int i10 = a6Var.a;
+                            Object obj = a6Var.b;
                             switch (i10) {
                                 case 0:
-                                    t5 t5Var = (t5) obj;
-                                    int i11 = t5Var.R0 + 1;
-                                    t5Var.R0 = i11;
+                                    b6 b6Var = (b6) obj;
+                                    int i11 = b6Var.R0 + 1;
+                                    b6Var.R0 = i11;
                                     if (i11 > 10) {
-                                        t5Var.S0 = true;
+                                        b6Var.S0 = true;
                                     }
-                                    t5Var.i();
-                                    if (!t5Var.V0) {
+                                    b6Var.i();
+                                    if (!b6Var.V0) {
                                         break;
                                     } else {
-                                        t5Var.U0 = true;
-                                        t5Var.t();
+                                        b6Var.U0 = true;
+                                        b6Var.t();
                                         break;
                                     }
                                 case 1:
@@ -195,7 +195,7 @@ public final class k implements Choreographer.FrameCallback {
                                     ((EditTextBoldCursor) obj).invalidate();
                                     break;
                                 default:
-                                    ch0.g((ch0) obj);
+                                    mh0.g((mh0) obj);
                                     break;
                             }
                         }
@@ -262,15 +262,15 @@ public final class k implements Choreographer.FrameCallback {
         }
     }
 
-    public final void g(s5 s5Var) {
+    public final void g(a6 a6Var) {
         c();
-        if (s5Var == null) {
+        if (a6Var == null) {
             return;
         }
         int i7 = 0;
         while (true) {
             SparseArray sparseArray = this.b;
-            if (i7 >= sparseArray.size() || ((j) sparseArray.valueAt(i7)).b.remove(s5Var)) {
+            if (i7 >= sparseArray.size() || ((j) sparseArray.valueAt(i7)).b.remove(a6Var)) {
                 return;
             } else {
                 i7++;

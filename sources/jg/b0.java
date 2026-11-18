@@ -1,31 +1,31 @@
 package jg;
 
 import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.cp0;
 import org.telegram.ui.lb;
-import org.telegram.ui.zo0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b0 extends v4.b0 {
+public final class b0 extends v4.c0 {
     public final /* synthetic */ int I;
 
     public /* synthetic */ b0(int i7) {
         this.I = i7;
     }
 
-    @Override // v4.b0
-    public int W0(v4.b1 b1Var) {
+    @Override // v4.c0
+    public int W0(v4.c1 c1Var) {
         switch (this.I) {
             case 5:
                 return 5000;
             case 9:
                 return org.telegram.messenger.g0.L(4000.0f);
             default:
-                return super.W0(b1Var);
+                return super.W0(c1Var);
         }
     }
 
-    @Override // v4.b0, v4.o0
+    @Override // v4.c0, v4.p0
     public boolean e() {
         switch (this.I) {
             case 1:
@@ -35,8 +35,8 @@ public final class b0 extends v4.b0 {
         }
     }
 
-    @Override // v4.b0, v4.o0
-    public void v0(RecyclerView recyclerView, v4.b1 b1Var, int i7) {
+    @Override // v4.c0, v4.p0
+    public void v0(RecyclerView recyclerView, v4.c1 c1Var, int i7) {
         switch (this.I) {
             case 4:
                 pi.l lVar = new pi.l(recyclerView.getContext(), 0);
@@ -44,17 +44,17 @@ public final class b0 extends v4.b0 {
                 w0(lVar);
                 break;
             case 15:
-                zo0 zo0Var = new zo0(recyclerView.getContext());
-                zo0Var.a = i7;
-                w0(zo0Var);
+                cp0 cp0Var = new cp0(recyclerView.getContext());
+                cp0Var.a = i7;
+                w0(cp0Var);
                 break;
             default:
-                super.v0(recyclerView, b1Var, i7);
+                super.v0(recyclerView, c1Var, i7);
                 break;
         }
     }
 
-    @Override // v4.b0, v4.o0
+    @Override // v4.c0, v4.p0
     public boolean y0() {
         switch (this.I) {
             case 0:

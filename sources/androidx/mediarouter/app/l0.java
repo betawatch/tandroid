@@ -20,12 +20,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.cf;
-import v4.e1;
+import org.telegram.ui.Cells.b5;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class l0 extends v4.h0 {
+public final class l0 extends v4.i0 {
     public final ArrayList c = new ArrayList();
     public final LayoutInflater d;
     public final Drawable e;
@@ -50,9 +50,9 @@ public final class l0 extends v4.h0 {
         G();
     }
 
-    @Override // v4.h0
-    public final void A(e1 e1Var) {
-        this.x.M.values().remove(e1Var);
+    @Override // v4.i0
+    public final void A(f1 f1Var) {
+        this.x.M.values().remove(f1Var);
     }
 
     public final void D(int i7, View view) {
@@ -90,7 +90,7 @@ public final class l0 extends v4.h0 {
         uVar.getClass();
         s4.x.b();
         for (s4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            cf b10 = n0Var.r.b(vVar);
+            b5 b10 = n0Var.r.b(vVar);
             if (b10 != null && (oVar = (s4.o) b10.a) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
@@ -171,12 +171,12 @@ public final class l0 extends v4.h0 {
         F();
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         return this.c.size() + 1;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         j0 j0Var;
         if (i7 == 0) {
@@ -187,9 +187,9 @@ public final class l0 extends v4.h0 {
         return j0Var.b;
     }
 
-    @Override // v4.h0
-    public final void t(e1 e1Var, int i7) {
-        cf b10;
+    @Override // v4.i0
+    public final void t(f1 f1Var, int i7) {
+        b5 b10;
         s4.o oVar;
         ArrayList arrayList = this.c;
         int i10 = (i7 == 0 ? this.r : (j0) arrayList.get(i7 - 1)).b;
@@ -197,8 +197,8 @@ public final class l0 extends v4.h0 {
         n0 n0Var = this.x;
         int i11 = 0;
         if (i10 == 1) {
-            n0Var.M.put(((s4.v) j0Var.a).c, (e0) e1Var);
-            h0 h0Var = (h0) e1Var;
+            n0Var.M.put(((s4.v) j0Var.a).c, (e0) f1Var);
+            h0 h0Var = (h0) f1Var;
             View view = h0Var.a;
             n0 n0Var2 = h0Var.B.x;
             if (n0Var2.j0 && DesugarCollections.unmodifiableList(n0Var2.r.v).size() > 1) {
@@ -213,14 +213,14 @@ public final class l0 extends v4.h0 {
             return;
         }
         if (i10 == 2) {
-            ((i0) e1Var).v.setText(j0Var.a.toString());
+            ((i0) f1Var).v.setText(j0Var.a.toString());
             return;
         }
         if (i10 != 3) {
             if (i10 != 4) {
                 throw new IllegalStateException();
             }
-            g0 g0Var = (g0) e1Var;
+            g0 g0Var = (g0) f1Var;
             View view2 = g0Var.v;
             s4.v vVar2 = (s4.v) j0Var.a;
             g0Var.A = vVar2;
@@ -235,8 +235,8 @@ public final class l0 extends v4.h0 {
             g0Var.y.setText(vVar2.d);
             return;
         }
-        n0Var.M.put(((s4.v) j0Var.a).c, (e0) e1Var);
-        k0 k0Var = (k0) e1Var;
+        n0Var.M.put(((s4.v) j0Var.a).c, (e0) f1Var);
+        k0 k0Var = (k0) f1Var;
         float f10 = k0Var.F;
         w wVar = k0Var.H;
         ImageView imageView2 = k0Var.A;
@@ -284,8 +284,8 @@ public final class l0 extends v4.h0 {
         checkBox.setAlpha((z10 || !v) ? 1.0f : f10);
     }
 
-    @Override // v4.h0
-    public final e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final f1 x(ViewGroup viewGroup, int i7) {
         LayoutInflater layoutInflater = this.d;
         if (i7 == 1) {
             return new h0(this, layoutInflater.inflate(R.layout.mr_cast_group_volume_item, viewGroup, false));

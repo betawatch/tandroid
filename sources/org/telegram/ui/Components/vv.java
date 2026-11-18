@@ -1,76 +1,56 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.MotionEvent;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class vv extends rg.d {
+public final class vv extends ck0 {
+    public boolean f3;
     public boolean g3;
-    public final /* synthetic */ ly h3;
+    public final /* synthetic */ ry h3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vv(ly lyVar, Context context) {
+    public vv(ry ryVar, Context context) {
         super(context, null);
-        this.h3 = lyVar;
+        this.h3 = ryVar;
     }
 
-    @Override // rg.d, org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.h3.o2.g();
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void l0(int i7) {
-        ly lyVar = this.h3;
-        gy gyVar = lyVar.A0;
-        if (lyVar.D0 != null) {
-            lyVar.C0.setUnderlineHeight(lyVar.E0.canScrollVertically(-1) ? org.telegram.messenger.g0.f1() : 0);
-        }
-        if (gyVar != null && getAdapter() == gyVar && gyVar.d == 0) {
-            gy gyVar2 = gyVar.P.x;
-            if (gyVar2.R.H0.G || gyVar2.E) {
-                return;
-            }
-            if (lyVar.F0.N0() + 50 > gyVar.b()) {
-                fy fyVar = gyVar.P;
-                Objects.requireNonNull(fyVar);
-                org.telegram.messenger.g0.h3(new uv(fyVar, 0));
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        ly lyVar = this.h3;
-        if (lyVar.f) {
-            return false;
-        }
         org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
-        vv vvVar = lyVar.E0;
-        lyVar.getMeasuredHeight();
-        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, vvVar, lyVar.h2, this.o2);
+        ry ryVar = this.h3;
+        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, ryVar.i0, ryVar.h2, this.o2);
     }
 
-    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        ly lyVar = this.h3;
-        if (lyVar.J0 && lyVar.z0.b() > 0) {
-            this.g3 = true;
-            lyVar.F0.h1(0, 0);
-            lyVar.J0 = false;
-            this.g3 = false;
+        ry ryVar = this.h3;
+        if (ryVar.r0 && ryVar.o0.H > 1) {
+            this.f3 = true;
+            ryVar.j0.h1(0, 0);
+            ryVar.p0.setVisibility(0);
+            ryVar.q0.k(0, 0);
+            ryVar.r0 = false;
+            this.f3 = false;
         }
         super.onLayout(z10, i7, i10, i11, i12);
-        lyVar.q(true);
+        ry.f(ryVar, true);
     }
 
-    @Override // org.telegram.ui.Components.uj0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
         if (this.g3) {
+            return;
+        }
+        this.h3.o0.f();
+        this.g3 = true;
+    }
+
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.f3) {
             return;
         }
         super.requestLayout();

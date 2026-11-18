@@ -1,79 +1,46 @@
 package sh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import bi.w3;
-import c8.ja;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.z10;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.y8;
+import java.util.ArrayList;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.web.z0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n extends FrameLayout {
-    public final y8 a;
-    public final TextView b;
-    public i c;
+public final class n {
+    public final int a;
+    public final TLRPC.InputPeer b;
+    public final int c;
+    public final byte[] d;
+    public final z0 e;
+    public final x10 f;
+    public String g;
+    public boolean h;
+    public boolean i;
+    public final ArrayList j = new ArrayList();
 
-    public n(int i7, Context context, e6 e6Var) {
-        super(context);
-        this.a = new y8(i7, this, g0.L(24.0f), g0.L(10.0f), g0.N(1.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        q6.U(textView, j6.E8, e6Var);
-        textView.setLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity(19);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextSize(1, 16.0f);
-        setPadding(g0.L(16.0f), 0, g0.L(68.0f), 0);
-        addView(textView, ja.g());
+    public n(int i7, TLRPC.InputPeer inputPeer, int i10, byte[] bArr, z0 z0Var, x10 x10Var) {
+        this.a = i7;
+        this.b = inputPeer;
+        this.c = i10;
+        this.d = bArr;
+        this.e = z0Var;
+        this.f = x10Var;
     }
 
-    public final u41 a(e2 e2Var, long j3, int i7, byte[] bArr, int i10, z10 z10Var) {
-        i iVar = this.c;
-        if (iVar != null) {
-            return iVar;
+    public final void a() {
+        if (this.h || this.i) {
+            return;
         }
-        m mVar = new m(e2Var.getCurrentAccount(), e2Var.getMessagesController().j1(j3), i7, bArr, new q2.d(this, 14), z10Var);
-        g0.i3(new q2.d(mVar, 15), 1000L);
-        i iVar2 = new i(e2Var, new h(mVar, 0), i10);
-        this.c = iVar2;
-        iVar2.g3.r = false;
-        iVar2.j(new w3(10, this, mVar));
-        return this.c;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int width = getWidth() - g0.L(11.0f);
-        y8 y8Var = this.a;
-        y8Var.setBounds(width - ((int) y8Var.c.d.f.a), g0.L(12.0f), getWidth() - g0.L(11.0f), g0.L(24.0f) + g0.L(12.0f));
-        y8Var.c(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    public void setText(String str) {
-        this.b.setText(str);
+        this.i = true;
+        TLRPC.TL_messages_getPollVotes tL_messages_getPollVotes = new TLRPC.TL_messages_getPollVotes();
+        String str = this.g;
+        tL_messages_getPollVotes.limit = str != null ? 10 : 15;
+        tL_messages_getPollVotes.peer = this.b;
+        tL_messages_getPollVotes.id = this.c;
+        tL_messages_getPollVotes.option = this.d;
+        tL_messages_getPollVotes.offset = str;
+        ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getPollVotes, new d3.b(1), new i(this, 1));
     }
 }

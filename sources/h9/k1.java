@@ -1,78 +1,20 @@
 package h9;
 
-import a8.ja;
-import a8.lb;
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.NavigableMap;
-import java.util.RandomAccess;
-import java.util.Set;
-import java.util.SortedMap;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k1 extends l implements a1, Serializable {
-    public final transient Map e;
-    public transient int f;
-    public transient j1 h;
+public final class k1 implements g9.t, Serializable {
+    public final int a;
 
-    public k1(Map map) {
-        ja.f(map.isEmpty());
-        this.e = map;
+    public k1() {
+        o.g(2, "expectedValuesPerKey");
+        this.a = 2;
     }
 
-    @Override // h9.i1
-    public final void clear() {
-        Map map = this.e;
-        Iterator it = map.values().iterator();
-        while (it.hasNext()) {
-            ((Collection) it.next()).clear();
-        }
-        map.clear();
-        this.f = 0;
-    }
-
-    @Override // h9.l
-    public final Map d() {
-        Map map = this.e;
-        return map instanceof NavigableMap ? new e(this, (NavigableMap) map) : map instanceof SortedMap ? new h(this, (SortedMap) map) : new lb(this, map, 2);
-    }
-
-    @Override // h9.l
-    public final Collection e() {
-        return new a8.n(this, 4);
-    }
-
-    @Override // h9.l
-    public final Set f() {
-        Map map = this.e;
-        return map instanceof NavigableMap ? new f(this, (NavigableMap) map) : map instanceof SortedMap ? new i(this, (SortedMap) map) : new d(this, map);
-    }
-
-    @Override // h9.l
-    public final Iterator g() {
-        return new b(this, 1);
-    }
-
-    @Override // h9.i1
-    public final Collection get(Object obj) {
-        Collection collection = (Collection) this.e.get(obj);
-        if (collection == null) {
-            collection = h();
-        }
-        List list = (List) collection;
-        return list instanceof RandomAccess ? new g(this, obj, list, null) : new a8.f(this, obj, list, (a8.f) null);
-    }
-
-    public final Collection h() {
-        return (List) this.h.get();
-    }
-
-    @Override // h9.i1
-    public final int size() {
-        return this.f;
+    @Override // g9.t
+    public final Object get() {
+        return new ArrayList(this.a);
     }
 }

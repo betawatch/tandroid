@@ -1,43 +1,147 @@
 package fi;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.lq;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class s7 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a8 b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class s7 {
+    public static CharSequence[] y;
+    public int a;
+    public Long b;
+    public Integer c;
+    public Integer d;
+    public boolean e;
+    public TLRPC.Document g;
+    public SpannableStringBuilder k;
+    public String l;
+    public boolean m;
+    public vy0 n;
+    public vy0 o;
+    public boolean p;
+    public boolean q;
+    public View r;
+    public Runnable s;
+    public int x;
+    public boolean f = true;
+    public final org.telegram.ui.Components.c6 h = new org.telegram.ui.Components.c6(0, 350, lr.h);
+    public final mc i = new mc((View) null);
+    public final org.telegram.ui.Cells.y j = org.telegram.ui.ActionBar.n6.a0(553648127, 0, 0);
+    public final Paint t = new Paint(1);
+    public final Paint u = new Paint(1);
+    public final Path v = new Path();
+    public final RectF w = new RectF();
 
-    public /* synthetic */ s7(a8 a8Var, float f10, float f11, int i7) {
-        this.a = i7;
-        this.b = a8Var;
-        this.c = f10;
-        this.d = f11;
+    public static CharSequence d() {
+        if (y == null) {
+            y = new CharSequence[2];
+        }
+        CharSequence[] charSequenceArr = y;
+        if (charSequenceArr[0] == null) {
+            charSequenceArr[0] = new SpannableStringBuilder("u");
+            lq lqVar = new lq(R.drawable.filled_widget_music, 0);
+            lqVar.c(org.telegram.messenger.g0.L(16.0f));
+            lqVar.H = 1.0f;
+            float f10 = -org.telegram.messenger.g0.L(1.0f);
+            float L = org.telegram.messenger.g0.L(1.0f);
+            lqVar.r = f10;
+            lqVar.s = L;
+            ((SpannableStringBuilder) y[0]).setSpan(lqVar, 0, 1, 33);
+        }
+        return y[0];
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                a8 a8Var = this.b;
-                a8Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a8Var.setScrollY((int) org.telegram.messenger.g0.T1(this.c, 0.0f, floatValue));
-                z7 z7Var = a8Var.c0;
-                z7Var.x = org.telegram.messenger.g0.T1(this.d, 0.0f, floatValue);
-                z7Var.invalidate();
-                break;
-            default:
-                a8 a8Var2 = this.b;
-                a8Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a8Var2.setScrollY((int) org.telegram.messenger.g0.T1(this.c, Math.min((a8Var2.getMeasuredHeight() - a8Var2.v0) - org.telegram.messenger.g0.L(64.0f), a8Var2.s0.getBottom() - a8Var2.getMeasuredHeight()), floatValue2));
-                z7 z7Var2 = a8Var2.c0;
-                z7Var2.x = org.telegram.messenger.g0.T1(this.d, 1.0f, floatValue2);
-                z7Var2.invalidate();
-                break;
+    public final void a(Canvas canvas, float f10) {
+        if (this.n == null) {
+            CharSequence charSequence = this.k;
+            if (charSequence == null) {
+                charSequence = "";
+            }
+            TLRPC.Document document = this.g;
+            this.n = new vy0(charSequence, document != null ? 12.0f : 14.0f, document != null ? null : org.telegram.messenger.g0.o());
+        }
+        if (this.o == null || this.m) {
+            String str = this.l;
+            this.o = new vy0(str != null ? str : "", 14.0f, null);
+        }
+        float d = this.h.d(this.f);
+        Paint paint = this.t;
+        paint.setColor(TLObject.FLAG_30);
+        int min = (int) Math.min(f10, Math.max(this.n.c, this.o.c) + org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(20.0f), org.telegram.messenger.g0.L(18.0f)));
+        this.x = min;
+        int W1 = org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(42.0f), org.telegram.messenger.g0.L(22.0f));
+        float f11 = min;
+        RectF rectF = this.w;
+        rectF.set(0.0f, 0.0f, f11, W1);
+        canvas.save();
+        float a10 = this.i.a(0.02f);
+        canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
+        float W12 = org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(11.0f));
+        canvas.drawRoundRect(rectF, W12, W12, paint);
+        canvas.save();
+        Path path = this.v;
+        path.rewind();
+        path.addRoundRect(rectF, W12, W12, Path.Direction.CW);
+        canvas.clipPath(path);
+        org.telegram.ui.Cells.y yVar = this.j;
+        yVar.setBounds(0, 0, min, W1);
+        yVar.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.clipRect(0, 0, org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(42.0f));
+        RectF rectF2 = org.telegram.messenger.g0.P;
+        rectF2.set(0.0f, 0.0f, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(42.0f));
+        Paint paint2 = this.u;
+        paint2.setColor(-1);
+        float f12 = 1.0f - d;
+        paint2.setAlpha((int) (255.0f * f12));
+        canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(5.0f), org.telegram.messenger.g0.L(5.0f), paint2);
+        canvas.restore();
+        int L = min - org.telegram.messenger.g0.L(20.0f);
+        if (f11 < f10) {
+            L = (int) Math.min(org.telegram.messenger.g0.L(12.0f) + L, f10 - org.telegram.messenger.g0.L(20.0f));
+        }
+        vy0 vy0Var = this.n;
+        float f13 = L;
+        vy0Var.p = f13;
+        vy0Var.c(org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(7.0f)), org.telegram.messenger.g0.W1(d, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(11.0f)), 1.0f, -1, canvas);
+        vy0 vy0Var2 = this.o;
+        vy0Var2.p = f13;
+        vy0Var2.c(org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(30.0f), f12, -1, canvas);
+        canvas.restore();
+    }
+
+    public final int b() {
+        return org.telegram.messenger.g0.L(this.f ? 22.0f : 42.0f);
+    }
+
+    public final void c() {
+        if (this.p || this.q || this.b == null || this.c == null || this.r == null) {
+            return;
+        }
+        this.q = true;
+        mp.u1(this.a).R1().g0(this.c.intValue(), this.b.longValue(), new ai.g0(this, 19));
+    }
+
+    public final void e(float f10, float f11, boolean z10) {
+        this.i.c(z10);
+        int[] iArr = z10 ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0];
+        org.telegram.ui.Cells.y yVar = this.j;
+        yVar.setState(iArr);
+        if (z10) {
+            yVar.setHotspot(f10, f11);
         }
     }
 }

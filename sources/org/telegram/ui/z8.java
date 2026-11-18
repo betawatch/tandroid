@@ -6,22 +6,22 @@ import android.graphics.Paint;
 import android.text.Layout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class z8 extends TextView {
     public final Paint a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public z8(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
-        this.b = e6Var;
+        this.b = i6Var;
         this.a = new Paint(1);
     }
 
     @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        int r12 = org.telegram.ui.ActionBar.j6.r1(0.8f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.z6, this.b));
+        int r12 = org.telegram.ui.ActionBar.n6.r1(0.8f, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.z6, this.b));
         Paint paint = this.a;
         paint.setColor(r12);
         paint.setStyle(Paint.Style.STROKE);

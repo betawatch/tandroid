@@ -1,13 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class b60 {
-    public final org.telegram.ui.ActionBar.z0 a;
-    public final int b;
+import android.os.Bundle;
 
-    public b60(org.telegram.ui.ActionBar.z0 z0Var, int i7) {
-        this.a = z0Var;
-        this.b = i7;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class b60 extends x5 {
+    public final /* synthetic */ cx f;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b60(Bundle bundle, cx cxVar) {
+        super(bundle);
+        this.f = cxVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || z11) {
+            return;
+        }
+        this.f.removeSelfFromStack();
     }
 }

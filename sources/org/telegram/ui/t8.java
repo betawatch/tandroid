@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,15 +22,15 @@ public final /* synthetic */ class t8 implements RequestDelegate {
     public final /* synthetic */ Object g;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ t8(int i7, FrameLayout frameLayout, TLRPC.InputGroupCall inputGroupCall, org.telegram.ui.ActionBar.u2 u2Var, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Components.z70 z70Var, String[] strArr) {
+    public /* synthetic */ t8(int i7, FrameLayout frameLayout, TLRPC.InputGroupCall inputGroupCall, org.telegram.ui.ActionBar.x2 x2Var, org.telegram.ui.ActionBar.i6 i6Var, org.telegram.ui.Components.k80 k80Var, String[] strArr) {
         this.a = 0;
         this.b = i7;
         this.c = inputGroupCall;
         this.d = strArr;
         this.e = frameLayout;
-        this.f = z70Var;
-        this.g = u2Var;
-        this.h = e6Var;
+        this.f = k80Var;
+        this.g = x2Var;
+        this.h = i6Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -47,42 +47,42 @@ public final /* synthetic */ class t8 implements RequestDelegate {
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) obj6;
                 String[] strArr = (String[]) obj5;
                 FrameLayout frameLayout = (FrameLayout) obj4;
-                org.telegram.ui.Components.z70 z70Var = (org.telegram.ui.Components.z70) obj3;
-                org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) obj2;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) obj;
+                org.telegram.ui.Components.k80 k80Var = (org.telegram.ui.Components.k80) obj3;
+                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) obj2;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj;
                 boolean z10 = tLObject instanceof TLRPC.Updates;
                 int i10 = this.b;
                 if (z10) {
-                    org.telegram.messenger.np.s1(i10).O3((TLRPC.Updates) tLObject, false);
+                    org.telegram.messenger.mp.u1(i10).V3((TLRPC.Updates) tLObject, false);
                 }
                 TL_phone.exportGroupCallInvite exportgroupcallinvite = new TL_phone.exportGroupCallInvite();
                 exportgroupcallinvite.call = inputGroupCall;
-                ConnectionsManager.getInstance(i10).sendRequest(exportgroupcallinvite, new di.k7(strArr, frameLayout, z70Var, u2Var, e6Var, 2));
+                ConnectionsManager.getInstance(i10).sendRequest(exportgroupcallinvite, new di.m7(strArr, frameLayout, k80Var, x2Var, i6Var, 2));
                 break;
             case 1:
                 ExternalActionActivity externalActionActivity = (ExternalActionActivity) obj6;
                 int[] iArr = (int[]) obj5;
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) obj4;
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) obj4;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj3;
                 String str = (String) obj2;
                 String str2 = (String) obj;
                 ArrayList arrayList = ExternalActionActivity.y;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) tLObject;
                 if (authorizationform == null) {
-                    org.telegram.messenger.g0.h3(new tp(externalActionActivity, t1Var, tL_error, 5));
+                    org.telegram.messenger.g0.g3(new up(externalActionActivity, u1Var, tL_error, 5));
                     break;
                 } else {
                     TL_account.getPassword getpassword = new TL_account.getPassword();
                     int i11 = this.b;
-                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new t8(externalActionActivity, t1Var, i11, authorizationform, getauthorizationform, str, str2, 2));
+                    iArr[0] = ConnectionsManager.getInstance(i11).sendRequest(getpassword, new t8(externalActionActivity, u1Var, i11, authorizationform, getauthorizationform, str, str2, 2));
                     break;
                 }
             case 2:
                 ArrayList arrayList2 = ExternalActionActivity.y;
-                org.telegram.messenger.g0.h3(new org.telegram.messenger.de((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.t1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
+                org.telegram.messenger.g0.g3(new org.telegram.messenger.ce((ExternalActionActivity) obj6, (org.telegram.ui.ActionBar.u1) obj5, tLObject, this.b, (TL_account.authorizationForm) obj4, (TL_account.getAuthorizationForm) obj3, (String) obj2, (String) obj));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new di.g8((kd0) obj6, tLObject, tL_error, (f5.i) obj5, this.b, (f5.m) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
+                org.telegram.messenger.g0.g3(new di.j8((ld0) obj6, tLObject, tL_error, (f5.i) obj5, this.b, (f5.m) obj4, (TLRPC.TL_inputStorePaymentAuthCode) obj3, (String) obj2, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
         }
     }

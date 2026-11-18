@@ -4,7 +4,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class eb0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -21,10 +21,10 @@ public final /* synthetic */ class eb0 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new gb0(this.b, tL_error, this.c, tLObject));
+                org.telegram.messenger.g0.g3(new gb0(this.b, tL_error, this.c, tLObject));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new gb0(this.b, tL_error, tLObject, this.c));
+                org.telegram.messenger.g0.g3(new gb0(this.b, tL_error, tLObject, this.c));
                 break;
         }
     }

@@ -2,14 +2,14 @@ package org.telegram.utils.recorder.audio;
 
 import a8.p0;
 import ai.f0;
-import di.f2;
+import di.i2;
 import java.io.File;
 import java.nio.ByteBuffer;
-import org.telegram.ui.d80;
-import yi.i;
+import org.telegram.ui.f80;
+import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -17,9 +17,9 @@ public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(long j3, i iVar, j jVar) {
+    public /* synthetic */ b(long j3, h hVar, j jVar) {
         this.c = jVar;
-        this.d = iVar;
+        this.d = hVar;
         this.b = j3;
     }
 
@@ -102,24 +102,24 @@ public final /* synthetic */ class b implements Runnable {
                 bVar.b(t6.toString());
                 if (exc3 == null) {
                     j jVar = (j) eVar.c;
-                    jVar.a((i) eVar.b, length);
+                    jVar.a((h) eVar.b, length);
                     jVar.i.post(new f0(eVar, eVar.a, j3, 5));
                 } else {
-                    ((j) eVar.c).i.post(new d80(eVar, eVar.a, exc3, 4));
+                    ((j) eVar.c).i.post(new f80(eVar, eVar.a, exc3, 4));
                 }
                 dVar.j.quitSafely();
                 dVar.l.clear();
                 return;
             default:
                 j jVar2 = (j) this.c;
-                i iVar = (i) this.d;
+                h hVar = (h) this.d;
                 try {
-                    bArr = AudioRecorderNative.e(iVar.b.getAbsolutePath());
+                    bArr = AudioRecorderNative.e(hVar.b.getAbsolutePath());
                 } catch (Throwable th4) {
                     jVar2.h.a("final waveform extraction failed", th4);
                     bArr = null;
                 }
-                jVar2.i.post(new f2(jVar2, iVar, this.b, bArr, 27));
+                jVar2.i.post(new i2(jVar2, hVar, this.b, bArr, 26));
                 return;
         }
     }

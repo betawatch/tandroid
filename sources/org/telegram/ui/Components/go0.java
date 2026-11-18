@@ -1,20 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class go0 extends org.telegram.ui.Cells.c7 {
-    public final /* synthetic */ io0 O;
+public final class go0 implements jg.f0 {
+    public final /* synthetic */ yo0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public go0(io0 io0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(0, context, e6Var);
-        this.O = io0Var;
+    public go0(yo0 yo0Var) {
+        this.a = yo0Var;
     }
 
-    @Override // org.telegram.ui.Cells.c7
-    public final String a() {
-        return this.O.f.W1 ? org.telegram.messenger.hd.M0(2131746184, null) : org.telegram.messenger.hd.M0(2131750488, null);
+    @Override // jg.f0
+    public final void a(a0.h hVar, ArrayList arrayList) {
+        int i7 = 0;
+        while (i7 < arrayList.size()) {
+            TLObject tLObject = ((jg.g0) arrayList.get(i7)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !org.telegram.messenger.v3.B((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i7);
+                i7--;
+            }
+            i7++;
+        }
+        yo0 yo0Var = this.a;
+        yo0Var.A2 = arrayList;
+        for (int i10 = 0; i10 < yo0Var.A2.size(); i10++) {
+            jg.g0 g0Var = (jg.g0) yo0Var.A2.get(i10);
+            TLObject tLObject2 = g0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                org.telegram.messenger.mp.u1(yo0Var.a).e4((TLRPC.User) g0Var.a, true, false);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                org.telegram.messenger.mp.u1(yo0Var.a).X3((TLRPC.Chat) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                org.telegram.messenger.mp.u1(yo0Var.a).b4((TLRPC.EncryptedChat) g0Var.a, true);
+            }
+        }
+        yo0Var.I1.f();
     }
 }

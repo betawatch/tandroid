@@ -4,20 +4,20 @@ import android.content.Context;
 import android.graphics.Canvas;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class y4 extends org.telegram.ui.Components.i9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 H;
+public final class y4 extends org.telegram.ui.Components.q9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 H;
     public final /* synthetic */ a5 I;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y4(a5 a5Var, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public y4(a5 a5Var, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         this.I = a5Var;
-        this.H = e6Var;
+        this.H = i6Var;
     }
 
-    @Override // org.telegram.ui.Components.i9, android.view.View
+    @Override // org.telegram.ui.Components.q9, android.view.View
     public final void onDraw(Canvas canvas) {
         a5 a5Var = this.I;
         if (a5Var.r == null) {
@@ -26,14 +26,14 @@ public final class y4 extends org.telegram.ui.Components.i9 {
         }
         float L = org.telegram.messenger.g0.L(1.0f);
         a5Var.O.F.set(L, L, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        fi.h7 h7Var = a5Var.O;
-        h7Var.a = false;
-        h7Var.b = false;
-        h7Var.v = true;
-        h7Var.o = false;
-        h7Var.J = this.H;
+        fi.e7 e7Var = a5Var.O;
+        e7Var.a = false;
+        e7Var.b = false;
+        e7Var.v = true;
+        e7Var.o = false;
+        e7Var.J = this.H;
         TL_stories.StoryItem storyItem = a5Var.r;
-        h7Var.d = storyItem;
-        fi.l7.h(storyItem.dialogId, canvas, this.a, h7Var);
+        e7Var.d = storyItem;
+        fi.i7.h(storyItem.dialogId, canvas, this.a, e7Var);
     }
 }

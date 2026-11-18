@@ -1,88 +1,26 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uh implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class uh implements org.telegram.ui.Components.hf0 {
+    public boolean a = true;
+    public final /* synthetic */ org.telegram.ui.Components.vi0 b;
 
-    public uh(c40 c40Var, Rect rect) {
-        this.a = 1;
-        this.d = c40Var;
-        this.c = rect;
-        this.b = new int[2];
+    public uh(org.telegram.ui.Components.vi0 vi0Var) {
+        this.b = vi0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        e30 e30Var;
-        switch (this.a) {
-            case 0:
-                an anVar = (an) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        anVar.P7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.g1 g1Var = anVar.f9;
-                    if (g1Var != null && g1Var.isShowing()) {
-                        View contentView = anVar.f9.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i7 = iArr[0];
-                        int i10 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i7;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i7, i10, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            anVar.P7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                c40 c40Var = (c40) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (e30Var = c40Var.e5) != null && e30Var.isShowing()) {
-                        c40Var.e5.dismiss();
-                        break;
-                    }
-                } else {
-                    e30 e30Var2 = c40Var.e5;
-                    if (e30Var2 != null && e30Var2.isShowing()) {
-                        View contentView2 = c40Var.e5.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i11 = iArr2[0];
-                        int i12 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i11;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i11, i12, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            c40Var.e5.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.hf0
+    public final void a(float f10, float f11) {
+        org.telegram.ui.Components.vi0 vi0Var = this.b;
+        if (f10 == 0.0f && !this.a) {
+            vi0Var.r(false);
+            this.a = true;
+        } else if (f10 == 1.0f && this.a) {
+            vi0Var.setAlpha(1.0f - f11);
+            if (f11 == 1.0f) {
+                this.a = false;
+            }
         }
-        return false;
-    }
-
-    public uh(an anVar, Rect rect) {
-        this.a = 0;
-        this.d = anVar;
-        this.c = rect;
-        this.b = new int[2];
     }
 }

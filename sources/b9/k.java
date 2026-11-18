@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.wearable.internal.DataItemAssetParcelable;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends r6.a {
     public static final Parcelable.Creator<k> CREATOR = new c(8);
@@ -22,11 +22,11 @@ public final class k extends r6.a {
         this.a = uri;
         HashMap hashMap = new HashMap();
         ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
-        q6.m.g(classLoader);
+        q6.m.h(classLoader);
         bundle.setClassLoader(classLoader);
         for (String str : bundle.keySet()) {
             Parcelable parcelable = bundle.getParcelable(str);
-            q6.m.g(parcelable);
+            q6.m.h(parcelable);
             hashMap.put(str, (DataItemAssetParcelable) parcelable);
         }
         this.b = hashMap;
@@ -56,17 +56,17 @@ public final class k extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
         Bundle bundle = new Bundle();
         ClassLoader classLoader = DataItemAssetParcelable.class.getClassLoader();
-        q6.m.g(classLoader);
+        q6.m.h(classLoader);
         bundle.setClassLoader(classLoader);
         for (Map.Entry entry : this.b.entrySet()) {
             bundle.putParcelable((String) entry.getKey(), new DataItemAssetParcelable((DataItemAssetParcelable) entry.getValue()));
         }
-        yb.b(parcel, 4, bundle);
-        yb.c(parcel, 5, this.c);
-        yb.s(parcel, r10);
+        bc.b(parcel, 4, bundle);
+        bc.c(parcel, 5, this.c);
+        bc.s(parcel, r10);
     }
 }

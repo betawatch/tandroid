@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class k {
     protected final l mLifecycleFragment;
@@ -23,9 +23,9 @@ public abstract class k {
     }
 
     public Activity getActivity() {
-        Activity e10 = this.mLifecycleFragment.e();
-        q6.m.g(e10);
-        return e10;
+        Activity c10 = this.mLifecycleFragment.c();
+        q6.m.h(c10);
+        return c10;
     }
 
     public abstract void onStop();
@@ -87,14 +87,14 @@ public abstract class k {
     public void onStart() {
     }
 
+    public static l getFragment(ContextWrapper contextWrapper) {
+        throw new UnsupportedOperationException();
+    }
+
     public void onCreate(Bundle bundle) {
     }
 
     public void onSaveInstanceState(Bundle bundle) {
-    }
-
-    public static l getFragment(ContextWrapper contextWrapper) {
-        throw new UnsupportedOperationException();
     }
 
     public void onActivityResult(int i7, int i10, Intent intent) {

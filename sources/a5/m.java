@@ -1,11 +1,11 @@
 package a5;
 
-import c8.j0;
+import c8.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class m extends l {
-    public i0.e[] a;
+    public i0.d[] a;
     public String b;
     public int c;
 
@@ -14,7 +14,7 @@ public abstract class m extends l {
         this.c = 0;
     }
 
-    public i0.e[] getPathData() {
+    public i0.d[] getPathData() {
         return this.a;
     }
 
@@ -22,19 +22,19 @@ public abstract class m extends l {
         return this.b;
     }
 
-    public void setPathData(i0.e[] eVarArr) {
-        if (!j0.a(this.a, eVarArr)) {
-            this.a = j0.e(eVarArr);
+    public void setPathData(i0.d[] dVarArr) {
+        if (!l0.a(this.a, dVarArr)) {
+            this.a = l0.e(dVarArr);
             return;
         }
-        i0.e[] eVarArr2 = this.a;
-        for (int i7 = 0; i7 < eVarArr.length; i7++) {
-            eVarArr2[i7].a = eVarArr[i7].a;
+        i0.d[] dVarArr2 = this.a;
+        for (int i7 = 0; i7 < dVarArr.length; i7++) {
+            dVarArr2[i7].a = dVarArr[i7].a;
             int i10 = 0;
             while (true) {
-                float[] fArr = eVarArr[i7].b;
+                float[] fArr = dVarArr[i7].b;
                 if (i10 < fArr.length) {
-                    eVarArr2[i7].b[i10] = fArr[i10];
+                    dVarArr2[i7].b[i10] = fArr[i10];
                     i10++;
                 }
             }
@@ -45,6 +45,6 @@ public abstract class m extends l {
         this.a = null;
         this.c = 0;
         this.b = mVar.b;
-        this.a = j0.e(mVar.a);
+        this.a = l0.e(mVar.a);
     }
 }

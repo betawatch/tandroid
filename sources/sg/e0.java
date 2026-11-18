@@ -1,8 +1,8 @@
 package sg;
 
-import org.telegram.messenger.ou;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements Runnable {
     public final /* synthetic */ int a;
@@ -19,9 +19,9 @@ public final /* synthetic */ class e0 implements Runnable {
             case 0:
                 i0 i0Var = this.b;
                 i0Var.c = null;
-                ou ouVar = i0Var.a;
-                if (ouVar != null) {
-                    ouVar.E0();
+                hn hnVar = i0Var.a;
+                if (hnVar != null) {
+                    hnVar.l();
                     break;
                 }
                 break;

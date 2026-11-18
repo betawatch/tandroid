@@ -12,11 +12,11 @@ import android.support.v4.media.RatingCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
-import c8.tb;
+import c8.wb;
 import h2.l0;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends MediaSession.Callback {
     public final /* synthetic */ int a;
@@ -158,15 +158,15 @@ public final class r extends MediaSession.Callback {
                         }
                     } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM")) {
                         if (o4 != null) {
-                            ((s) this.b).c((q4.h) tb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR));
+                            ((s) this.b).c((q4.h) wb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR));
                         }
                     } else if (str.equals("android.support.v4.media.session.command.ADD_QUEUE_ITEM_AT")) {
                         if (o4 != null) {
-                            ((s) this.b).d((q4.h) tb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR), o4.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX"));
+                            ((s) this.b).d((q4.h) wb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR), o4.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX"));
                         }
                     } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM")) {
                         if (o4 != null) {
-                            ((s) this.b).E((q4.h) tb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR));
+                            ((s) this.b).E((q4.h) wb.a(o4.getParcelable("android.support.v4.media.session.command.ARGUMENT_MEDIA_DESCRIPTION"), q4.h.CREATOR));
                         }
                     } else if (str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT")) {
                         List list = b10.h;
@@ -273,7 +273,7 @@ public final class r extends MediaSession.Callback {
                             }
                         } else if (str.equals("android.support.v4.media.session.action.SET_RATING")) {
                             if (o4 != null) {
-                                q4.y yVar = (q4.y) tb.a(o4.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING"), q4.y.CREATOR);
+                                q4.y yVar = (q4.y) wb.a(o4.getParcelable("android.support.v4.media.session.action.ARGUMENT_RATING"), q4.y.CREATOR);
                                 l0.o(o4.getBundle("android.support.v4.media.session.action.ARGUMENT_EXTRAS"));
                                 sVar2.L(yVar);
                             }

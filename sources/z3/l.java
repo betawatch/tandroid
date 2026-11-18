@@ -1,6 +1,6 @@
 package z3;
 
-import a8.ja;
+import a8.la;
 import com.google.android.gms.internal.vision.e2;
 import e2.p0;
 import e2.q0;
@@ -14,7 +14,7 @@ import f3.z;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import j$.util.Objects;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -22,9 +22,9 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import x2.p1;
+import x2.z0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l implements f3.o {
     public long A;
@@ -43,7 +43,7 @@ public final class l implements f3.o {
     public final ArrayDeque h;
     public final o i;
     public final ArrayList j;
-    public s1 k;
+    public t1 k;
     public int l;
     public int m;
     public long n;
@@ -65,7 +65,7 @@ public final class l implements f3.o {
         this.b = i7;
         this.c = (i7 & 256) != 0;
         g0 g0Var = i0.b;
-        this.k = s1.e;
+        this.k = t1.e;
         this.l = (i7 & 4) != 0 ? 3 : 0;
         this.i = new o();
         this.j = new ArrayList();
@@ -81,15 +81,15 @@ public final class l implements f3.o {
 
     @Override // f3.o
     public final boolean b(f3.p pVar) {
-        s1 s1Var;
+        t1 t1Var;
         f0 m10 = p.m(pVar, false, (this.b & 2) != 0);
         if (m10 != null) {
-            s1Var = i0.u(m10);
+            t1Var = i0.u(m10);
         } else {
             g0 g0Var = i0.b;
-            s1Var = s1.e;
+            t1Var = t1.e;
         }
-        this.k = s1Var;
+        this.k = t1Var;
         return m10 == null;
     }
 
@@ -185,16 +185,16 @@ public final class l implements f3.o {
                     int i17 = this.o;
                     x xVar3 = this.g;
                     if (i17 == 0) {
-                        if (!pVar.d(xVar3.a, 0, 8, true)) {
+                        if (!pVar.c(xVar3.a, 0, 8, true)) {
                             if (this.E == 2 && (i15 & 2) != 0) {
                                 f3.i0 d2 = this.B.d2(0, 4);
                                 o3.b bVar = this.F;
                                 q0 q0Var = bVar == null ? null : new q0(bVar);
                                 e2.t tVar = new e2.t();
                                 tVar.k = q0Var;
-                                r.b.s(tVar, d2);
+                                p5.c.r(tVar, d2);
                                 this.B.d1();
-                                this.B.f(new f3.t(-9223372036854775807L));
+                                this.B.j(new f3.t(-9223372036854775807L));
                             }
                             z12 = false;
                             if (z12) {
@@ -239,10 +239,10 @@ public final class l implements f3.o {
                         long j14 = (position + j12) - j13;
                         if (j12 != j13 && this.m == 1835365473) {
                             xVar2.K(8);
-                            pVar.c(0, 8, xVar2.a);
+                            pVar.b(0, 8, xVar2.a);
                             c.a(xVar2);
-                            pVar.m(xVar2.b);
-                            pVar.l();
+                            pVar.r(xVar2.b);
+                            pVar.n();
                         }
                         arrayDeque.push(new i2.c(this.m, j14));
                         if (this.n == this.o) {
@@ -252,8 +252,8 @@ public final class l implements f3.o {
                             this.o = 0;
                         }
                     } else if (i19 == 1835296868 || i19 == 1836476516 || i19 == 1751411826 || i19 == 1937011556 || i19 == 1937011827 || i19 == 1937011571 || i19 == 1668576371 || i19 == 1701606260 || i19 == 1937011555 || i19 == 1937011578 || i19 == 1937013298 || i19 == 1937007471 || i19 == 1668232756 || i19 == 1953196132 || i19 == 1718909296 || i19 == 1969517665 || i19 == 1801812339 || i19 == 1768715124) {
-                        ja.p(i18 == 8);
-                        ja.p(this.n <= 2147483647L);
+                        la.p(i18 == 8);
+                        la.p(this.n <= 2147483647L);
                         x xVar4 = new x((int) this.n);
                         System.arraycopy(xVar3.a, 0, xVar4.a, 0, 8);
                         this.p = xVar4;
@@ -392,14 +392,14 @@ public final class l implements f3.o {
                                             int i24 = nVar.b - (o4 + 8);
                                             if (c13 == 2192) {
                                                 ArrayList arrayList2 = new ArrayList();
-                                                List y11 = o.e.y(xVar6.y(i24, charset));
-                                                for (int i25 = 0; i25 < y11.size(); i25++) {
-                                                    List y12 = o.d.y((CharSequence) y11.get(i25));
-                                                    if (y12.size() != 3) {
+                                                List A = o.e.A(xVar6.y(i24, charset));
+                                                for (int i25 = 0; i25 < A.size(); i25++) {
+                                                    List A2 = o.d.A((CharSequence) A.get(i25));
+                                                    if (A2.size() != 3) {
                                                         throw t0.a(null, null);
                                                     }
                                                     try {
-                                                        arrayList2.add(new u3.a(Long.parseLong((String) y12.get(0)), 1 << (Integer.parseInt((String) y12.get(2)) - 1), Long.parseLong((String) y12.get(1))));
+                                                        arrayList2.add(new u3.a(Long.parseLong((String) A2.get(0)), 1 << (Integer.parseInt((String) A2.get(2)) - 1), Long.parseLong((String) A2.get(1))));
                                                     } catch (NumberFormatException e10) {
                                                         throw t0.a(e10, null);
                                                     }
@@ -513,7 +513,7 @@ public final class l implements f3.o {
                             i31 -= 8;
                         }
                         int i34 = i31;
-                        pVar.m((int) j24);
+                        pVar.r((int) j24);
                         String str = uVar.s;
                         String str2 = uVar.s;
                         if (!Objects.equals(str, "video/avc") ? !Objects.equals(str2, "video/hevc") || (i15 & 128) == 0 : (i15 & 32) == 0) {
@@ -582,8 +582,8 @@ public final class l implements f3.o {
                             } else if (kVar2.f != null && Objects.equals(str2, "audio/mpeg")) {
                                 u uVar2 = kVar2.f;
                                 xVar2.K(4);
-                                pVar.c(0, 4, xVar2.a);
-                                pVar.l();
+                                pVar.b(0, 4, xVar2.a);
+                                pVar.n();
                                 z zVar = new z();
                                 f3.i0 i0Var2 = kVar2.c;
                                 if (zVar.a(xVar2.m()) && !Objects.equals(uVar2.s, (String) zVar.g)) {
@@ -665,7 +665,7 @@ public final class l implements f3.o {
                             this.E = 1;
                         }
                         if (j26 < 262144) {
-                            pVar.m((int) j26);
+                            pVar.r((int) j26);
                         } else {
                             sVar.a = pVar.getPosition() + j26;
                             z10 = true;
@@ -894,11 +894,11 @@ public final class l implements f3.o {
                 }
                 q0 q0Var7 = q0Var3;
                 z11 = z13;
-                ArrayList i21 = c.i(cVar, wVar, -9223372036854775807L, null, z12, z14, new p1(5), this.c);
+                ArrayList i21 = c.i(cVar, wVar, -9223372036854775807L, null, z12, z14, new z0(6), this.c);
                 if (this.y) {
                     boolean z15 = arrayList.size() == i21.size() ? 1 : i7;
                     Locale locale = Locale.US;
-                    ja.o("The number of auxiliary track types from metadata (" + arrayList.size() + ") is not same as the number of auxiliary tracks (" + i21.size() + ")", z15);
+                    la.o("The number of auxiliary track types from metadata (" + arrayList.size() + ") is not same as the number of auxiliary tracks (" + i21.size() + ")", z15);
                 }
                 String b10 = p.b(i21);
                 int i22 = i7;
@@ -966,7 +966,7 @@ public final class l implements f3.o {
                             kVar = kVar3;
                         } else {
                             int min = Math.min(z16 ? tVar.b : iArr.length, 20);
-                            ja.p(j14 != -9223372036854775807L ? 1 : i7);
+                            la.p(j14 != -9223372036854775807L ? 1 : i7);
                             i10 = i22;
                             kVar = kVar3;
                             long min2 = Math.min(j14, 10000000L);
@@ -1019,7 +1019,7 @@ public final class l implements f3.o {
                                 a10.q = s0.n(str);
                                 if (Objects.equals(str3, "audio/mpeg")) {
                                     kVar2 = kVar;
-                                    r.b.s(a10, kVar2.c);
+                                    p5.c.r(a10, kVar2.c);
                                 } else {
                                     kVar2 = kVar;
                                     kVar2.f = new u(a10);
@@ -1118,7 +1118,7 @@ public final class l implements f3.o {
                 z10 = z17;
                 this.D = jArr;
                 this.B.d1();
-                this.B.f(new j(j13, this.C, i24));
+                this.B.j(new j(j13, this.C, i24));
                 arrayDeque.clear();
                 this.z = z10;
                 if (!this.w) {

@@ -6,7 +6,7 @@ import android.util.Log;
 import com.google.android.gms.common.api.Status;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b1 extends e1 {
     public final d b;
@@ -30,7 +30,7 @@ public final class b1 extends e1 {
         String simpleName = exc.getClass().getSimpleName();
         String localizedMessage = exc.getLocalizedMessage();
         try {
-            this.b.o(new Status(10, org.telegram.ui.Cells.y0.m(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
+            this.b.o(new Status(10, p5.c.m(simpleName, ": ", localizedMessage, new StringBuilder(simpleName.length() + 2 + String.valueOf(localizedMessage).length())), null, null));
         } catch (IllegalStateException e10) {
             Log.w("ApiCallRunner", "Exception reporting failure", e10);
         }

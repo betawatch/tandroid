@@ -1,61 +1,128 @@
 package wg;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import ug.i1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t implements z10 {
+public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y b;
+    public final /* synthetic */ a0 b;
 
-    public /* synthetic */ t(y yVar, int i7) {
+    public /* synthetic */ t(a0 a0Var, int i7) {
         this.a = i7;
-        this.b = yVar;
+        this.b = a0Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        final int i10 = 1;
+        final int i11 = 0;
+        final a0 a0Var = this.b;
+        switch (i7) {
             case 0:
-                y yVar = this.b;
-                yVar.dismiss();
-                org.telegram.messenger.g0.i3(new r(yVar, 2), 220L);
+                org.telegram.messenger.g0.v1(a0Var.o1);
                 break;
             case 1:
-                y yVar2 = this.b;
-                yVar2.m2.b(false);
-                h.j(yVar2.getContext(), (TLRPC.TL_error) obj);
+                ks.f(j10.t0).k(ks.X2, a0Var.X1, Boolean.TRUE);
                 break;
             case 2:
-                y yVar3 = this.b;
-                yVar3.j2 = yVar3.U1.indexOf(Integer.valueOf(((TLRPC.TL_premiumGiftCodeOption) obj).users));
-                yVar3.k1(true, true);
-                yVar3.j1(true);
+                ks.f(j10.t0).k(ks.X2, a0Var.X1, Boolean.FALSE);
                 break;
             case 3:
-                y yVar4 = this.b;
-                yVar4.dismiss();
-                org.telegram.messenger.g0.i3(new r(yVar4, 1), 220L);
-                break;
-            case 4:
-                y yVar5 = this.b;
-                yVar5.m2.b(false);
-                h.j(yVar5.getContext(), (TLRPC.TL_error) obj);
-                break;
-            case 5:
-                y yVar6 = this.b;
-                ArrayList arrayList = yVar6.b2;
-                arrayList.clear();
-                arrayList.addAll((List) obj);
-                yVar6.k1(true, true);
+                i1 i1Var = new i1(a0Var.s1, a0Var.a, null, a0Var.J0);
+                i1Var.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
+                    @Override // android.content.DialogInterface.OnDismissListener
+                    public final void onDismiss(DialogInterface dialogInterface) {
+                        switch (i10) {
+                            case 0:
+                                yg.r rVar = a0Var.c2.r;
+                                if (rVar != null) {
+                                    rVar.setPaused(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                yg.r rVar2 = a0Var.c2.r;
+                                if (rVar2 != null) {
+                                    rVar2.setPaused(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                i1Var.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
+                    @Override // android.content.DialogInterface.OnShowListener
+                    public final void onShow(DialogInterface dialogInterface) {
+                        switch (i10) {
+                            case 0:
+                                yg.r rVar = a0Var.c2.r;
+                                if (rVar != null) {
+                                    rVar.setPaused(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                yg.r rVar2 = a0Var.c2.r;
+                                if (rVar2 != null) {
+                                    rVar2.setPaused(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                i1Var.show();
                 break;
             default:
-                y yVar7 = this.b;
-                yVar7.m2.b(false);
-                h.j(yVar7.getContext(), (TLRPC.TL_error) obj);
+                i1 i1Var2 = new i1(a0Var.s1, a0Var.a, null, a0Var.J0);
+                i1Var2.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: wg.w
+                    @Override // android.content.DialogInterface.OnDismissListener
+                    public final void onDismiss(DialogInterface dialogInterface) {
+                        switch (i11) {
+                            case 0:
+                                yg.r rVar = a0Var.c2.r;
+                                if (rVar != null) {
+                                    rVar.setPaused(false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                yg.r rVar2 = a0Var.c2.r;
+                                if (rVar2 != null) {
+                                    rVar2.setPaused(false);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                i1Var2.setOnShowListener(new DialogInterface.OnShowListener() { // from class: wg.x
+                    @Override // android.content.DialogInterface.OnShowListener
+                    public final void onShow(DialogInterface dialogInterface) {
+                        switch (i11) {
+                            case 0:
+                                yg.r rVar = a0Var.c2.r;
+                                if (rVar != null) {
+                                    rVar.setPaused(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                yg.r rVar2 = a0Var.c2.r;
+                                if (rVar2 != null) {
+                                    rVar2.setPaused(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                i1Var2.show();
                 break;
         }
     }

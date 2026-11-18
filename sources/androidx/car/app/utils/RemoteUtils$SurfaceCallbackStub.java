@@ -6,7 +6,7 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.ISurfaceCallback;
 import androidx.lifecycle.o;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
     private final o mLifecycle;
@@ -58,12 +58,12 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onClick(float f10, float f11) {
-        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 0), "onClick", 3));
+        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 0), "onClick", 4));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onFling(float f10, float f11) {
-        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 2), "onFling", 3));
+        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 2), "onFling", 4));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
@@ -75,12 +75,12 @@ class RemoteUtils$SurfaceCallbackStub extends ISurfaceCallback.Stub {
                 lambda$onScale$6 = RemoteUtils$SurfaceCallbackStub.this.lambda$onScale$6(f10, f11, f12);
                 return lambda$onScale$6;
             }
-        }, "onScale", 3));
+        }, "onScale", 4));
     }
 
     @Override // androidx.car.app.ISurfaceCallback
     public void onScroll(float f10, float f11) {
-        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 1), "onScroll", 3));
+        h.a(new r((Object) this.mLifecycle, (Object) new d(this, f10, f11, 1), "onScroll", 4));
     }
 
     @Override // androidx.car.app.ISurfaceCallback

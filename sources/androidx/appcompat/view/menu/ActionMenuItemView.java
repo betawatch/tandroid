@@ -11,7 +11,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import c8.h9;
+import c8.j9;
 import f.a;
 import l.b;
 import l.c;
@@ -23,7 +23,7 @@ import m.i;
 import m.z0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i {
     public boolean E;
@@ -91,9 +91,9 @@ public class ActionMenuItemView extends z0 implements y, View.OnClickListener, i
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            h9.a(this, z12 ? null : this.n.e);
+            j9.a(this, z12 ? null : this.n.e);
         } else {
-            h9.a(this, charSequence2);
+            j9.a(this, charSequence2);
         }
     }
 

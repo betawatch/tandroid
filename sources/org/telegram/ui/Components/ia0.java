@@ -1,203 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ia0 extends View implements org.telegram.ui.ActionBar.z5 {
-    public final ArrayList a;
-    public float b;
-    public final org.telegram.ui.ActionBar.e6 c;
-    public final Paint d;
-    public int e;
-    public int f;
-    public Drawable h;
-    public float n;
-    public float r;
-    public final RectF s;
-    public org.telegram.messenger.z10 w;
+public final class ia0 extends org.telegram.ui.Cells.j9 {
+    public final /* synthetic */ oa0 w0;
 
-    public ia0(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.a = new ArrayList();
-        this.d = new Paint(1);
-        this.n = org.telegram.messenger.g0.L(14.0f);
-        this.r = org.telegram.messenger.g0.L(0.0f);
-        this.s = new RectF();
-        this.c = e6Var;
-        b();
+    public ia0(oa0 oa0Var) {
+        this.w0 = oa0Var;
+        this.g0 = oa0Var.d0.G;
     }
 
-    public final void a(int i7, String str) {
-        this.a.add(new ha0(i7, str));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.Ee));
-    }
-
-    public final void b() {
-        int[] iArr;
-        boolean q10 = org.telegram.ui.ActionBar.j6.I.q();
-        Paint paint = this.d;
-        if (q10) {
-            this.e = -1862270977;
-            this.f = -1325400065;
-            paint.setColor(285212671);
+    @Override // org.telegram.ui.Cells.v9
+    public final void I(int i7, int i10, org.telegram.messenger.fj fjVar) {
+        org.telegram.ui.rm rmVar;
+        org.telegram.messenger.fj fjVar2;
+        oa0 oa0Var = this.w0;
+        ia0 ia0Var = oa0Var.e;
+        int i11 = ia0Var.v - ia0Var.u;
+        ua0 ua0Var = oa0Var.d0;
+        if (i11 > org.telegram.messenger.mp.u1(ua0Var.x).r4) {
+            oa0Var.g();
             return;
         }
-        int i7 = org.telegram.ui.ActionBar.j6.Ee;
-        org.telegram.ui.ActionBar.e6 e6Var = this.c;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
-        if ((e6Var instanceof org.telegram.ui.ym) && (((org.telegram.ui.ym) e6Var).m() instanceof ra0) && (iArr = ((ra0) ((org.telegram.ui.ym) e6Var).m()).a) != null) {
-            w02 = org.telegram.messenger.g0.w0(org.telegram.messenger.g0.w0(iArr[0], iArr[1]), org.telegram.messenger.g0.w0(iArr[2], iArr[3]));
+        org.telegram.messenger.jj jjVar = ua0Var.d;
+        jjVar.e = ia0Var.u;
+        jjVar.f = ia0Var.v;
+        org.telegram.messenger.fj c10 = oa0Var.c(fjVar);
+        if (c10 != null && ((rmVar = ua0Var.d.d) == null || rmVar.m || (fjVar2 = rmVar.a) == null || fjVar2.e1() != c10.e1())) {
+            ua0Var.d.d = org.telegram.ui.rm.b(i7, i10, c10);
         }
-        this.e = org.telegram.ui.ActionBar.j6.c(-1606201797, w02);
-        this.f = org.telegram.ui.ActionBar.j6.c(-448573893, w02);
-        paint.setColor(org.telegram.ui.ActionBar.j6.c(814980216, w02));
+        ua0Var.b();
+        ua0Var.a(true);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 1) {
-            return;
+    @Override // org.telegram.ui.Cells.v9
+    public final boolean b() {
+        org.telegram.messenger.fj c10;
+        TLRPC.Message message;
+        oa0 oa0Var = this.w0;
+        if (oa0Var.a == 0 && (c10 = oa0Var.c(null)) != null && (message = c10.k) != null && message.rich_message != null) {
+            return false;
         }
-        float f10 = this.b;
-        double d = f10;
-        int floor = (int) Math.floor(d);
-        boolean z10 = floor >= 0 && floor < arrayList.size();
-        int ceil = (int) Math.ceil(d);
-        boolean z11 = ceil >= 0 && ceil < arrayList.size();
-        RectF rectF = this.s;
-        if (z10 && z11) {
-            org.telegram.messenger.g0.Z1(((ha0) arrayList.get(floor)).c, ((ha0) arrayList.get(ceil)).c, f10 - floor, rectF);
-        } else if (z10) {
-            rectF.set(((ha0) arrayList.get(floor)).c);
-        } else if (z11) {
-            rectF.set(((ha0) arrayList.get(ceil)).c);
-        }
-        Drawable drawable = this.h;
-        if (drawable != null) {
-            drawable.draw(canvas);
-        }
-        if (z10 || z11) {
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), this.d);
-        }
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            ha0 ha0Var = (ha0) arrayList.get(i7);
-            ha0Var.b.c(ha0Var.c.left + this.n, getMeasuredHeight() / 2.0f, 1.0f, i0.a.f(1.0f - Math.abs(f10 - i7), this.e, this.f), canvas);
-        }
+        org.telegram.messenger.jj jjVar = oa0Var.d0.d;
+        return jjVar == null || !jjVar.s;
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i7;
-        org.telegram.messenger.z10 z10Var;
-        ArrayList arrayList = this.a;
-        if (arrayList.size() > 1) {
-            float x10 = motionEvent.getX();
-            float y10 = motionEvent.getY();
-            int i10 = 0;
-            while (true) {
-                if (i10 >= arrayList.size()) {
-                    i7 = -1;
-                    break;
-                }
-                if (((ha0) arrayList.get(i10)).d.contains(x10, y10)) {
-                    i7 = ((ha0) arrayList.get(i10)).a;
-                    break;
-                }
-                i10++;
-            }
-            if (motionEvent.getAction() == 0) {
-                if (i7 != -1) {
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 && i7 != -1 && (z10Var = this.w) != null) {
-                z10Var.a(Integer.valueOf(i7));
-            }
+    @Override // org.telegram.ui.Cells.v9
+    public final boolean e() {
+        org.telegram.messenger.fj c10;
+        TLRPC.Message message;
+        oa0 oa0Var = this.w0;
+        int i7 = oa0Var.a;
+        if (i7 != 0 || oa0Var.d0.d.i) {
+            return false;
         }
-        return false;
+        return i7 != 0 || (c10 = oa0Var.c(null)) == null || (message = c10.k) == null || message.rich_message == null || org.telegram.messenger.iv.c(oa0Var.c(null));
     }
 
-    public int getColor() {
-        return this.e;
+    @Override // org.telegram.ui.Cells.v9
+    public final org.telegram.ui.ActionBar.i6 q() {
+        return this.g0;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        ArrayList arrayList;
-        super.onMeasure(i7, i10);
-        this.n = org.telegram.messenger.g0.L(14.0f);
-        float f10 = 0.0f;
-        this.r = org.telegram.messenger.g0.L(0.0f);
-        int i11 = 0;
-        while (true) {
-            arrayList = this.a;
-            if (i11 >= arrayList.size()) {
-                break;
-            }
-            if (i11 > 0) {
-                f10 += this.r;
-            }
-            f10 += ((ha0) arrayList.get(i11)).b.k() + this.n + this.n;
-            i11++;
-        }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        float L = (measuredHeight - org.telegram.messenger.g0.L(26.0f)) / 2.0f;
-        float L2 = (org.telegram.messenger.g0.L(26.0f) + measuredHeight) / 2.0f;
-        float f11 = measuredWidth;
-        float f12 = (f11 - f10) / 2.0f;
-        float f13 = f12;
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            float k10 = ((ha0) arrayList.get(i12)).b.k() + this.n + this.n;
-            ((ha0) arrayList.get(i12)).c.set(f13, L, f13 + k10, L2);
-            ((ha0) arrayList.get(i12)).d.set(((ha0) arrayList.get(i12)).c);
-            ((ha0) arrayList.get(i12)).d.inset((-this.r) / 2.0f, -L);
-            f13 += k10 + this.r;
-        }
-        Drawable drawable = this.h;
-        if (drawable != null) {
-            Rect rect = org.telegram.messenger.g0.Q;
-            drawable.getPadding(rect);
-            int i13 = measuredHeight / 2;
-            this.h.setBounds((((int) f12) - org.telegram.messenger.g0.L(3.0f)) - rect.left, (i13 - org.telegram.messenger.g0.L(16.0f)) - rect.top, org.telegram.messenger.g0.L(3.0f) + ((int) ((f11 + f10) / 2.0f)) + rect.right, org.telegram.messenger.g0.L(16.0f) + i13 + rect.bottom);
+    @Override // org.telegram.ui.Cells.j9, org.telegram.ui.Cells.v9
+    public final void w() {
+        super.w();
+        di.b1 b1Var = this.w0.f;
+        if (b1Var != null) {
+            b1Var.invalidate();
         }
     }
 
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        this.h = drawable;
-    }
-
-    public void setOnTabClick(org.telegram.messenger.z10 z10Var) {
-        this.w = z10Var;
-    }
-
-    public void setSelectedTab(float f10) {
-        this.b = f10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            b();
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+    @Override // org.telegram.ui.Cells.v9
+    public final boolean z(org.telegram.messenger.fj fjVar) {
+        oa0 oa0Var = this.w0;
+        return oa0Var.a == 0 && !oa0Var.d0.d.i && x();
     }
 }

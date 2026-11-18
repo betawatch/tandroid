@@ -1,47 +1,113 @@
 package kg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
+import org.telegram.messenger.f3;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.t8;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class z0 extends View {
-    public final Drawable a;
-    public final ImageReceiver b;
+public final /* synthetic */ class z0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d1 b;
 
-    public z0(a1 a1Var, Context context) {
-        super(context);
-        this.a = getContext().getResources().getDrawable(R.drawable.map_pin_photo).mutate();
-        t8 t8Var = new t8((e6) null);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.b = imageReceiver;
-        t8Var.r(a1Var.getUserConfig().f());
-        imageReceiver.i0(a1Var.getUserConfig().f(), t8Var, null);
+    public /* synthetic */ z0(d1 d1Var, int i7) {
+        this.a = i7;
+        this.b = d1Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        int L = org.telegram.messenger.g0.L(62.0f);
-        int L2 = org.telegram.messenger.g0.L(85.0f);
-        Drawable drawable = this.a;
-        drawable.setBounds(0, 0, L, L2);
-        drawable.draw(canvas);
-        int L3 = org.telegram.messenger.g0.L(62.0f);
-        ImageReceiver imageReceiver = this.b;
-        imageReceiver.J0(L3);
-        imageReceiver.y0(org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(50.0f), org.telegram.messenger.g0.L(50.0f));
-        imageReceiver.h(canvas, null);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(85.0f), TLObject.FLAG_30));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i7 = 1;
+                final d1 d1Var = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.x0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i10 = i7;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        d1 d1Var2 = d1Var;
+                        switch (i10) {
+                            case 0:
+                                d1Var2.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        d1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        f3.o(null, 2131743642, lc.b0(d1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    lc.e0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        d1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        d1Var2.b.b(false);
+                                        f3.o(null, 2131743642, lc.b0(d1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    d1Var2.b.b(false);
+                                    lc.e0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i10 = 0;
+                final d1 d1Var2 = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.x0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i102 = i10;
+                        TLObject tLObject2 = tLObject;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        d1 d1Var22 = d1Var2;
+                        switch (i102) {
+                            case 0:
+                                d1Var22.b.b(false);
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        d1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        f3.o(null, 2131743642, lc.b0(d1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    lc.e0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                if (tL_error2 == null) {
+                                    if (!(tLObject2 instanceof TLRPC.TL_boolFalse)) {
+                                        d1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        d1Var22.b.b(false);
+                                        f3.o(null, 2131743642, lc.b0(d1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    d1Var22.b.b(false);
+                                    lc.e0(tL_error2);
+                                    break;
+                                }
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

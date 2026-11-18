@@ -9,17 +9,17 @@ import android.os.Looper;
 import android.view.TextureView;
 import android.view.View;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.fr;
+import org.telegram.messenger.er;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.qc;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.pc;
 import org.telegram.messenger.voip.VoIPService;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public class TextureViewRenderer extends TextureView implements TextureView.SurfaceTextureListener, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "TextureViewRenderer";
@@ -101,7 +101,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
             if (i12 == 1) {
                 i7 = z10 ? 90 : -90;
             } else if (i12 == 3) {
-                i7 = z10 ? ns.t4 : -270;
+                i7 = z10 ? ks.t4 : -270;
             }
             i11 += i7;
         }
@@ -113,7 +113,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
             runnable.run();
         } else {
-            g0.h3(runnable);
+            g0.g3(runnable);
         }
     }
 
@@ -141,7 +141,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        i5.c.y(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        i5.c.z(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -317,9 +317,9 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
                             throw th2;
                         }
                     }
-                    fr frVar = new fr(this, i7, i10, i18, i17, 2);
-                    this.updateScreenRunnable = frVar;
-                    postOrRun(frVar);
+                    er erVar = new er(this, i7, i10, i18, i17, 2);
+                    this.updateScreenRunnable = erVar;
+                    postOrRun(erVar);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -398,7 +398,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     }
 
     public void setBackgroundRenderer(TextureView textureView) {
-        if (qc.e(512)) {
+        if (pc.e(512)) {
             this.backgroundRenderer = textureView;
             if (textureView != null) {
                 textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() { // from class: org.webrtc.TextureViewRenderer.1
@@ -570,7 +570,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         requestLayout();
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TextureEglRenderer extends EglRenderer implements TextureView.SurfaceTextureListener {
         private static final String TAG = "TextureEglRenderer";
         private int frameRotation;
@@ -640,7 +640,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
 
         @Override // org.webrtc.EglRenderer
         public void onFirstFrameRendered() {
-            g0.h3(new h(this, 3));
+            g0.g3(new h(this, 3));
         }
 
         @Override // org.webrtc.EglRenderer, org.webrtc.VideoSink

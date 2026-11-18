@@ -1,43 +1,41 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ HashSet d;
+public class a5 extends EditTextBoldCursor implements org.telegram.ui.ActionBar.c6 {
+    public boolean M1;
+    public int N1;
+    public org.telegram.ui.ActionBar.i6 O1;
+    public int P1;
 
-    public /* synthetic */ a5(c5 c5Var, ArrayList arrayList, HashSet hashSet, int i7) {
-        this.a = i7;
-        this.b = c5Var;
-        this.c = arrayList;
-        this.d = hashSet;
+    public final void A(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.M1 = true;
+        this.N1 = i7;
+        this.O1 = i6Var;
+        int w02 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
+        this.P1 = w02;
+        setCursorColor(w02);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new a5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                c5 c5Var = this.b;
-                c5Var.d(this.c);
-                HashSet hashSet = this.d;
-                if (!hashSet.isEmpty()) {
-                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
-                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
-                    ConnectionsManager.getInstance(c5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.v7(11, c5Var, arrayList));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        if (this.M1) {
+            hashSet.add(Integer.valueOf(this.N1));
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int w02;
+        try {
+            if (this.M1 && (w02 = org.telegram.ui.ActionBar.n6.w0(this.N1, this.O1)) != this.P1) {
+                this.P1 = w02;
+                setCursorColor(w02);
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 }

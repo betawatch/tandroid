@@ -1,7 +1,7 @@
 package i2;
 
-import a8.ja;
-import c8.g1;
+import a8.la;
+import c8.k1;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
@@ -10,7 +10,7 @@ import h2.x;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements p0 {
     public final String a;
@@ -27,23 +27,23 @@ public final class a implements p0 {
                 if (i10 == 23 && bArr.length == 4) {
                     z10 = true;
                 }
-                ja.f(z10);
+                la.f(z10);
                 break;
             case "auxiliary.tracks.interleaved":
                 if (i10 == 75 && bArr.length == 1 && ((b10 = bArr[0]) == 0 || b10 == 1)) {
                     z10 = true;
                 }
-                ja.f(z10);
+                la.f(z10);
                 break;
             case "auxiliary.tracks.length":
             case "auxiliary.tracks.offset":
                 if (i10 == 78 && bArr.length == 8) {
                     z10 = true;
                 }
-                ja.f(z10);
+                la.f(z10);
                 break;
             case "auxiliary.tracks.map":
-                ja.f(i10 == 0);
+                la.f(i10 == 0);
                 break;
         }
         this.a = str;
@@ -63,7 +63,7 @@ public final class a implements p0 {
     }
 
     public final ArrayList d() {
-        ja.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
+        la.o("Metadata is not an auxiliary tracks map", this.a.equals("auxiliary.tracks.map"));
         byte[] bArr = this.b;
         byte b10 = bArr[1];
         ArrayList arrayList = new ArrayList();
@@ -98,18 +98,18 @@ public final class a implements p0 {
             if (str.equals("auxiliary.tracks.map")) {
                 ArrayList d = d();
                 StringBuilder m10 = e2.m("track types = ");
-                new f5.g(String.valueOf(','), 1).a(m10, d.iterator());
+                new f5.g(String.valueOf(',')).a(m10, d.iterator());
                 sb2 = m10.toString();
             }
             sb2 = l0.f0(bArr);
         } else if (i7 == 1) {
             sb2 = l0.r(bArr);
         } else if (i7 == 23) {
-            ja.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
-            sb2 = String.valueOf(Float.intBitsToFloat(g1.c(bArr[0], bArr[1], bArr[2], bArr[3])));
+            la.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb2 = String.valueOf(Float.intBitsToFloat(k1.c(bArr[0], bArr[1], bArr[2], bArr[3])));
         } else if (i7 == 67) {
-            ja.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
-            sb2 = String.valueOf(g1.c(bArr[0], bArr[1], bArr[2], bArr[3]));
+            la.b(bArr.length, 4, "array too small: %s < %s", bArr.length >= 4);
+            sb2 = String.valueOf(k1.c(bArr[0], bArr[1], bArr[2], bArr[3]));
         } else if (i7 != 75) {
             if (i7 == 78) {
                 sb2 = String.valueOf(new x(bArr).G());

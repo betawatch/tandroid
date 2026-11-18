@@ -1,27 +1,161 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tq implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.ye0 b;
+public final class tq extends org.telegram.ui.Components.b51 {
+    public final gb1 e;
+    public final long f;
+    public final eb1 h;
+    public String n;
+    public org.telegram.ui.ActionBar.h5 r;
+    public boolean s = false;
 
-    public /* synthetic */ tq(org.telegram.ui.Components.ye0 ye0Var, int i7) {
-        this.a = i7;
-        this.b = ye0Var;
+    public tq(gb1 gb1Var, long j3, eb1 eb1Var) {
+        this.e = gb1Var;
+        this.f = j3;
+        this.h = eb1Var;
+        sq sqVar = new sq(this, 0);
+        if (gb1Var.c) {
+            sqVar.run();
+        } else {
+            gb1Var.f.add(sqVar);
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.b(true);
-                break;
-            default:
-                this.b.b(true);
-                break;
+    @Override // org.telegram.ui.Components.b51
+    public final void Z(ArrayList arrayList, org.telegram.ui.Components.z41 z41Var) {
+        boolean isEmpty = TextUtils.isEmpty(this.n);
+        long j3 = this.f;
+        if (isEmpty && j3 != 0) {
+            org.telegram.ui.Components.l41 c10 = org.telegram.ui.Components.l41.c(1, R.drawable.msg_archive_hide, org.telegram.messenger.gd.M0(2131751224, null));
+            c10.s = true;
+            arrayList.add(c10);
+            arrayList.add(org.telegram.ui.Components.l41.C(null));
         }
+        if (TextUtils.isEmpty(this.n)) {
+            i5.c.s(2131751223, null, arrayList);
+        }
+        ArrayList arrayList2 = this.e.e;
+        int size = arrayList2.size();
+        int i7 = 0;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList2.get(i10);
+            i10++;
+            TLRPC.Chat chat = (TLRPC.Chat) obj;
+            if (chat != null && !org.telegram.messenger.v3.n0(chat)) {
+                i7++;
+                if (!TextUtils.isEmpty(this.n)) {
+                    String lowerCase = this.n.toLowerCase();
+                    String M3 = org.telegram.messenger.g0.M3(lowerCase);
+                    String lowerCase2 = chat.title.toLowerCase();
+                    String M32 = org.telegram.messenger.g0.M3(lowerCase2);
+                    if (!lowerCase2.startsWith(lowerCase) && !i5.c.B(" ", lowerCase, lowerCase2) && !M32.startsWith(M3) && !M32.contains(" ".concat(M3))) {
+                    }
+                }
+                long j10 = chat.id;
+                org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(11);
+                l41Var.x = true;
+                l41Var.y = -j10;
+                l41Var.L(j3 == j10);
+                arrayList.add(l41Var);
+            }
+        }
+        if (TextUtils.isEmpty(this.n) && i7 == 0) {
+            org.telegram.ui.Components.l41 c11 = org.telegram.ui.Components.l41.c(2, R.drawable.msg_channel_create, org.telegram.messenger.gd.M0(2131751221, null));
+            c11.r = true;
+            arrayList.add(c11);
+        }
+        arrayList.add(org.telegram.ui.Components.l41.C(null));
+        org.telegram.ui.ActionBar.h5 h5Var = this.r;
+        if (h5Var != null) {
+            h5Var.setVisibility(i7 > 5 ? 0 : 8);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final CharSequence a0() {
+        return org.telegram.messenger.gd.M0(2131751220, null);
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final void b0(org.telegram.ui.Components.l41 l41Var, View view) {
+        int i7 = l41Var.d;
+        eb1 eb1Var = this.h;
+        if (i7 == 1) {
+            eb1Var.a(null);
+            finishFragment();
+            return;
+        }
+        if (i7 != 2) {
+            if (l41Var.a == 12) {
+                finishFragment();
+                eb1Var.a(getMessagesController().O0(Long.valueOf(-l41Var.y)));
+                return;
+            }
+            return;
+        }
+        this.s = true;
+        SharedPreferences g12 = org.telegram.messenger.mp.g1();
+        boolean z10 = org.telegram.messenger.s2.a;
+        presentFragment(new g(0));
+        g12.edit().putBoolean("channel_intro", true).apply();
+    }
+
+    @Override // org.telegram.ui.Components.b51
+    public final boolean c0(org.telegram.ui.Components.l41 l41Var, View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.b51, org.telegram.ui.ActionBar.h2
+    public final View createView(Context context) {
+        org.telegram.ui.ActionBar.g5 t6 = this.simpleActionBar.t();
+        getResourceProvider();
+        org.telegram.ui.ActionBar.h5 b10 = t6.b(0, R.drawable.outline_header_search);
+        b10.O();
+        b10.C0 = new bi.s1(this, 5);
+        this.r = b10;
+        b10.setSearchFieldHint(org.telegram.messenger.gd.M0(2131745641, null));
+        this.r.setContentDescription(org.telegram.messenger.gd.M0(2131745641, null));
+        this.r.setVisibility(8);
+        setHasOwnBackground(true);
+        super.createView(context);
+        this.a.r1();
+        this.a.setSectionsDrawBackground(true);
+        return this.fragmentView;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final org.telegram.ui.Components.ck0 getListViewForSimpleGlass() {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onResume() {
+        super.onResume();
+        if (this.s) {
+            gb1 gb1Var = this.e;
+            gb1Var.c = false;
+            gb1Var.f.add(new sq(this, 1));
+            this.s = false;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.h2
+    public final boolean useSimpleActionBar() {
+        return true;
     }
 }

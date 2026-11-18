@@ -1,27 +1,35 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mx extends org.telegram.ui.Components.a41 {
-    public static final /* synthetic */ int b = 0;
+public final class mx {
+    public float a;
+    public float b;
+    public boolean c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public boolean h;
+    public boolean i;
+    public ch.d j;
+    public long k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public float o;
+    public int p;
+    public TLRPC.Document q;
+    public final ImageReceiver r;
+    public String s;
 
-    static {
-        org.telegram.ui.Components.a41.h(new mx());
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, org.telegram.ui.Components.b41 b41Var, boolean z10, org.telegram.ui.Components.p41 p41Var, org.telegram.ui.Components.u41 u41Var) {
-        nx nxVar = (nx) view;
-        nxVar.n = (org.telegram.messenger.z10) b41Var.G;
-        nxVar.r = b41Var;
-        nxVar.b(b41Var.z, false);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, org.telegram.ui.Components.uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new nx(context, e6Var);
+    public mx() {
+        ImageReceiver imageReceiver = new ImageReceiver(null);
+        this.r = imageReceiver;
+        imageReceiver.A1 = true;
+        imageReceiver.b = true;
     }
 }

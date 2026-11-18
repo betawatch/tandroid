@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k1 extends androidx.fragment.app.s implements l {
     public static final WeakHashMap m0 = new WeakHashMap();
@@ -39,7 +39,7 @@ public final class k1 extends androidx.fragment.app.s implements l {
 
     @Override // androidx.fragment.app.s
     public final void G(Bundle bundle) {
-        this.l0.E(bundle);
+        this.l0.G(bundle);
     }
 
     @Override // androidx.fragment.app.s
@@ -66,7 +66,7 @@ public final class k1 extends androidx.fragment.app.s implements l {
 
     @Override // com.google.android.gms.common.api.internal.l
     public final void a(String str, k kVar) {
-        this.l0.B(str, kVar);
+        this.l0.D(str, kVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.l
@@ -95,6 +95,6 @@ public final class k1 extends androidx.fragment.app.s implements l {
     @Override // androidx.fragment.app.s
     public final void z(Bundle bundle) {
         super.z(bundle);
-        this.l0.C(bundle);
+        this.l0.E(bundle);
     }
 }

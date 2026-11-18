@@ -1,110 +1,75 @@
 package ki;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ja;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.zy;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Components.i9;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class k3 extends FrameLayout {
-    public final int a;
-    public final e6 b;
-    public final i9 c;
-    public final View d;
-    public final View e;
-    public final ImageView f;
-    public final TextView h;
-    public final TextView n;
-    public final ImageView r;
-    public boolean s;
+public final /* synthetic */ class k3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t3 b;
 
-    public k3(int i7, Context context, e6 e6Var) {
-        super(context);
+    public /* synthetic */ k3(t3 t3Var, int i7) {
         this.a = i7;
-        this.b = e6Var;
-        i9 i9Var = new i9(context);
-        this.c = i9Var;
-        i9Var.setRoundRadius(org.telegram.messenger.g0.L(46.0f));
-        addView(i9Var, ja.d(46, 46.0f, 19, 13.0f, 0.0f, 13.0f, 0.0f));
-        View view = new View(context);
-        this.d = view;
-        int L = org.telegram.messenger.g0.L(11.0f);
-        int i10 = j6.d6;
-        Drawable L2 = j6.L(L, j6.w0(i10, e6Var));
-        m6 M = q6.M(i10);
-        view.setBackground(L2);
-        q6.j(view, L2, M, null, e6Var);
-        addView(view, ja.d(22, 22.0f, 19, 40.0f, 15.0f, 0.0f, 0.0f));
-        View view2 = new View(context);
-        this.e = view2;
-        int L3 = org.telegram.messenger.g0.L(9.665f);
-        int i11 = j6.lk;
-        Drawable L4 = j6.L(L3, j6.w0(i11, e6Var));
-        m6 M2 = q6.M(i11);
-        view2.setBackground(L4);
-        q6.j(view2, L4, M2, null, e6Var);
-        addView(view2, ja.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        imageView.setScaleX(0.6f);
-        imageView.setScaleY(0.6f);
-        addView(imageView, ja.b(19.33f, 19.33f, 19, 41.33f, 15.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, ja.d(-1, -2.0f, 55, 66.0f, 8.66f, 10.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.h = textView;
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        textView.setTypeface(org.telegram.messenger.g0.o());
-        textView.setTextSize(1, 16.0f);
-        q6.U(textView, j6.G6, e6Var);
-        ns.i(textView);
-        TextView f10 = i20.f(linearLayout, textView, ja.t(-1, -2, 55, 6, 0, 24, 0), context);
-        this.n = f10;
-        f10.setMaxLines(1);
-        f10.setSingleLine(true);
-        f10.setEllipsize(truncateAt);
-        f10.setTextSize(1, 14.0f);
-        q6.U(f10, j6.z6, e6Var);
-        linearLayout.addView(f10, ja.t(-1, -2, 55, 6, 1, 24, 0));
-        ImageView imageView2 = new ImageView(context);
-        this.r = imageView2;
-        q6.s(imageView2, j6.M6, e6Var, PorterDuff.Mode.SRC_IN);
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView2, ja.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
+        this.b = t3Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.s) {
-            canvas.drawRect(org.telegram.messenger.g0.L(72.0f), getHeight() - 1, getWidth(), getHeight(), j6.k0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.ChatFull P0;
+        TLRPC.Peer peer;
+        switch (this.a) {
+            case 0:
+                this.b.n.R();
+                break;
+            case 1:
+                this.b.Q();
+                break;
+            case 2:
+                t3 t3Var = this.b;
+                if (!t3Var.U) {
+                    TLRPC.TL_messages_prolongWebView tL_messages_prolongWebView = new TLRPC.TL_messages_prolongWebView();
+                    tL_messages_prolongWebView.bot = mp.u1(t3Var.G).q1(t3Var.w);
+                    tL_messages_prolongWebView.peer = mp.u1(t3Var.G).l1(t3Var.x);
+                    tL_messages_prolongWebView.query_id = t3Var.y;
+                    tL_messages_prolongWebView.silent = false;
+                    if (t3Var.E != 0) {
+                        zy.C(t3Var.G);
+                        int i7 = t3Var.E;
+                        TLRPC.TL_inputReplyToMessage tL_inputReplyToMessage = new TLRPC.TL_inputReplyToMessage();
+                        tL_inputReplyToMessage.reply_to_msg_id = i7;
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMessage;
+                        if (t3Var.F != 0) {
+                            tL_inputReplyToMessage.monoforum_peer_id = mp.u1(t3Var.G).l1(t3Var.F);
+                            tL_messages_prolongWebView.reply_to.flags |= 32;
+                        }
+                        tL_messages_prolongWebView.flags |= 1;
+                    } else if (t3Var.F != 0) {
+                        TLRPC.TL_inputReplyToMonoForum tL_inputReplyToMonoForum = new TLRPC.TL_inputReplyToMonoForum();
+                        tL_messages_prolongWebView.reply_to = tL_inputReplyToMonoForum;
+                        tL_inputReplyToMonoForum.monoforum_peer_id = mp.u1(t3Var.G).l1(t3Var.F);
+                        tL_messages_prolongWebView.flags |= 1;
+                    }
+                    if (t3Var.x < 0 && (P0 = mp.u1(t3Var.G).P0(-t3Var.x)) != null && (peer = P0.default_send_as) != null) {
+                        tL_messages_prolongWebView.send_as = mp.u1(t3Var.G).o1(peer);
+                        tL_messages_prolongWebView.flags |= TLObject.FLAG_13;
+                    }
+                    ConnectionsManager.getInstance(t3Var.G).sendRequest(tL_messages_prolongWebView, new ai.e1(t3Var, 22));
+                    break;
+                }
+                break;
+            case 3:
+                t3 t3Var2 = this.b;
+                t3Var2.b.N1(t3Var2, 0);
+                t3Var2.n.n(false, false);
+                System.currentTimeMillis();
+                break;
+            default:
+                this.b.n.n(true, false);
+                break;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(58.0f), TLObject.FLAG_30));
     }
 }

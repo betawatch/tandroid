@@ -1,55 +1,40 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import android.location.Location;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class kd implements Runnable {
+public final /* synthetic */ class kd implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ rd b;
-    public final /* synthetic */ qd c;
+    public final /* synthetic */ qd b;
 
-    public /* synthetic */ kd(rd rdVar, qd qdVar, int i7) {
+    public /* synthetic */ kd(qd qdVar, int i7) {
         this.a = i7;
-        this.b = rdVar;
-        this.c = qdVar;
+        this.b = qdVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                rd rdVar = this.b;
-                ArrayList arrayList = rdVar.J;
-                qd qdVar = this.c;
-                arrayList.remove(qdVar);
-                rdVar.K.l(qdVar.a);
-                if (arrayList.isEmpty()) {
-                    rd.s();
-                }
-                ns.e().k(ns.D4, new Object[0]);
-                break;
-            case 1:
-                rd rdVar2 = this.b;
-                ArrayList arrayList2 = rdVar2.J;
-                qd qdVar2 = this.c;
-                arrayList2.remove(qdVar2);
-                rdVar2.K.l(qdVar2.a);
-                if (arrayList2.isEmpty()) {
-                    rd.s();
-                }
-                ns.e().k(ns.D4, new Object[0]);
+                this.b.m((Location) obj);
                 break;
             default:
-                rd rdVar3 = this.b;
-                ArrayList arrayList3 = rdVar3.J;
-                qd qdVar3 = this.c;
-                arrayList3.remove(qdVar3);
-                rdVar3.K.l(qdVar3.a);
-                if (arrayList3.isEmpty()) {
-                    rd.s();
+                qd qdVar = this.b;
+                Integer num = (Integer) obj;
+                qdVar.getClass();
+                int intValue = num.intValue();
+                boolean z10 = true;
+                if (intValue == 0) {
+                    Utilities.d.c(new i10(3, qdVar, z10));
+                    break;
+                } else if (intValue == 1) {
+                    Utilities.d.c(new ld(qdVar, num, 0));
+                    break;
+                } else if (intValue == 2) {
+                    Utilities.d.c(new hd(qdVar, 4));
+                    break;
                 }
-                ns.e().k(ns.D4, new Object[0]);
                 break;
         }
     }

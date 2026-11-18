@@ -1,42 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.io.Serializable;
-import org.telegram.tgnet.TLRPC;
+import android.widget.EditText;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y01 implements org.telegram.messenger.x10, org.telegram.messenger.y10, te.b {
-    public final /* synthetic */ p11 a;
+public final class y01 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ f11 c;
 
-    public /* synthetic */ y01(p11 p11Var) {
-        this.a = p11Var;
+    public y01(f11 f11Var, int i7, long j3) {
+        this.c = f11Var;
+        this.a = i7;
+        this.b = j3;
     }
 
-    @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        this.a.h();
-    }
-
-    @Override // org.telegram.messenger.y10
-    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
-        p11 p11Var = this.a;
-        boolean z10 = false;
-        if (!p11Var.K.k3 && !p11Var.y.k3) {
-            Object obj = b41Var.G;
-            if (obj instanceof TLRPC.TL_forumTopic) {
-                z10 = p11Var.o((TLRPC.TL_forumTopic) obj, view, false);
-            }
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        EditText editText = this.c.w;
+        if (i7 == 1 && editText.hasFocus()) {
+            org.telegram.messenger.g0.v1(editText);
+            editText.clearFocus();
         }
-        return Boolean.valueOf(z10);
     }
 
-    @Override // org.telegram.messenger.x10
-    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        p11.a(this.a, (b41) obj);
-    }
-
-    @Override // te.b
-    public /* synthetic */ void E(float f10, int i7) {
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        f11 f11Var = this.c;
+        f11Var.o();
+        v4.c0 c0Var = (v4.c0) recyclerView.getLayoutManager();
+        if (c0Var == null || c0Var.N0() < f11Var.s.c.size() - 3) {
+            return;
+        }
+        if (f11Var.j()) {
+            f11Var.k();
+            return;
+        }
+        boolean z10 = f11Var.d;
+        int i11 = this.a;
+        if (z10) {
+            org.telegram.messenger.mp.u1(i11).I1().g(false);
+            return;
+        }
+        org.telegram.messenger.e00 e00Var = org.telegram.messenger.mp.u1(i11).t7;
+        long j3 = -this.b;
+        if (e00Var.e(j3)) {
+            return;
+        }
+        e00Var.o(j3);
     }
 }

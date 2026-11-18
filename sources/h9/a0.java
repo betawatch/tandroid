@@ -2,7 +2,7 @@ package h9;
 
 import java.util.Collection;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a0 extends l0 {
     @Override // h9.l0
@@ -13,25 +13,25 @@ public abstract class a0 extends l0 {
     @Override // h9.l0
     /* renamed from: f */
     public final d0 values() {
-        r1 r1Var = ((r1) this).n;
-        t0 t0Var = r1Var.b;
+        s1 s1Var = ((s1) this).n;
+        t0 t0Var = s1Var.b;
         if (t0Var != null) {
             return t0Var;
         }
-        v1 d = r1Var.d();
-        r1Var.b = d;
+        w1 d = s1Var.d();
+        s1Var.b = d;
         return d;
     }
 
     @Override // h9.l0, java.util.Map
     public final Collection values() {
-        r1 r1Var = ((r1) this).n;
-        t0 t0Var = r1Var.b;
+        s1 s1Var = ((s1) this).n;
+        t0 t0Var = s1Var.b;
         if (t0Var != null) {
             return t0Var;
         }
-        v1 d = r1Var.d();
-        r1Var.b = d;
+        w1 d = s1Var.d();
+        s1Var.b = d;
         return d;
     }
 }

@@ -1,17 +1,17 @@
 package hi;
 
-import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.sp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class i7 extends lp {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class i7 extends sp {
     public final /* synthetic */ int i = 0;
 
     public /* synthetic */ i7(float f10, float f11, int i7) {
         super(f10, f11, i7);
     }
 
-    @Override // org.telegram.ui.Components.lp, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.sp, android.graphics.drawable.Drawable
     public final int getIntrinsicHeight() {
         switch (this.i) {
             case 0:
@@ -21,7 +21,7 @@ public final class i7 extends lp {
         }
     }
 
-    @Override // org.telegram.ui.Components.lp, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.sp, android.graphics.drawable.Drawable
     public final int getIntrinsicWidth() {
         switch (this.i) {
             case 0:

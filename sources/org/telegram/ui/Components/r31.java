@@ -1,28 +1,30 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r31 implements yv0 {
-    public final /* synthetic */ x31 a;
+public final class r31 implements zt0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ s31 c;
 
-    public r31(x31 x31Var) {
-        this.a = x31Var;
+    public r31(s31 s31Var) {
+        this.c = s31Var;
     }
 
-    @Override // org.telegram.ui.Components.yv0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.yv0
-    public final boolean c() {
-        return this.a.b.c();
-    }
-
-    @Override // org.telegram.ui.Components.yv0
-    public final void d(TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, boolean z11, int i7, int i10) {
-        this.a.b.f(document, obj, z11, i7);
+    @Override // org.telegram.ui.Components.zt0
+    public final void L(int i7, boolean z10) {
+        if (this.a == i7 && this.b == z10) {
+            return;
+        }
+        this.a = i7;
+        this.b = z10;
+        if (i7 > org.telegram.messenger.g0.L(20.0f)) {
+            s31 s31Var = this.c;
+            if (s31Var.h0) {
+                return;
+            }
+            s31Var.o0.r0 = false;
+            s31Var.h0 = true;
+        }
     }
 }

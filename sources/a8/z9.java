@@ -1,48 +1,27 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.os.Build;
+import android.webkit.WebView;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class z9 {
-    public static void a(kf.s sVar, kf.s sVar2, int i7) {
-        if (sVar == null || sVar2 == null || sVar == sVar2) {
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(i7);
-        sb2.append(sVar.g);
-        kf.p pVar = (kf.p) sVar.f;
-        kf.p pVar2 = (kf.p) sVar2.f;
-        while (pVar != pVar2) {
-            sb2.append(((kf.s) pVar).g);
-            kf.p pVar3 = (kf.p) pVar.f;
-            pVar.g();
-            pVar = pVar3;
-        }
-        sVar.g = sb2.toString();
-    }
-
-    public static void b(kf.p pVar, kf.p pVar2) {
-        kf.s sVar = null;
-        kf.s sVar2 = null;
-        int i7 = 0;
-        while (pVar != null) {
-            if (pVar instanceof kf.s) {
-                sVar2 = (kf.s) pVar;
-                if (sVar == null) {
-                    sVar = sVar2;
-                }
-                i7 = sVar2.g.length() + i7;
-            } else {
-                a(sVar, sVar2, i7);
-                sVar = null;
-                sVar2 = null;
-                i7 = 0;
-            }
-            if (pVar == pVar2) {
-                break;
-            } else {
-                pVar = (kf.p) pVar.f;
+    public static InvocationHandler a() {
+        ClassLoader classLoader;
+        if (Build.VERSION.SDK_INT >= 28) {
+            classLoader = d1.f.t();
+        } else {
+            try {
+                Method declaredMethod = WebView.class.getDeclaredMethod("getFactory", null);
+                declaredMethod.setAccessible(true);
+                classLoader = declaredMethod.invoke(null, null).getClass().getClassLoader();
+            } catch (IllegalAccessException | NoSuchMethodException | InvocationTargetException e10) {
+                throw new RuntimeException(e10);
             }
         }
-        a(sVar, sVar2, i7);
+        return (InvocationHandler) Class.forName("org.chromium.support_lib_glue.SupportLibReflectionUtil", false, classLoader).getDeclaredMethod("createWebViewProviderFactory", null).invoke(null, null);
     }
 }

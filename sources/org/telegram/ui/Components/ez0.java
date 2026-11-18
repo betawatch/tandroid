@@ -1,48 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Matrix;
-import android.view.View;
-import java.util.ArrayList;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ez0 {
-    public final View a;
-    public final ArrayList b;
-    public final Runnable c;
-    public Runnable d;
-    public final Bitmap e;
-    public final Matrix f;
-    public float g;
+public final class ez0 extends MetricAffectingSpan {
+    public final int a;
+    public final dz0 b;
 
-    public ez0(View view, Runnable runnable) {
-        this.g = 1.0f;
-        this.a = view;
-        this.b = null;
-        this.c = null;
-        this.d = runnable;
-        this.e = null;
-        this.f = null;
+    public ez0(dz0 dz0Var, int i7) {
+        this.b = dz0Var;
+        if (i7 > 0) {
+            this.a = i7;
+        }
     }
 
-    public ez0(ArrayList arrayList, lv0 lv0Var) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = arrayList;
-        this.c = null;
-        this.d = lv0Var;
-        this.e = null;
-        this.f = null;
+    public final void a(TextPaint textPaint) {
+        dz0 dz0Var = this.b;
+        if (c8.dd.a(dz0Var.a, 49152)) {
+            float textSize = textPaint.getTextSize();
+            textPaint.setTextSize(0.75f * textSize);
+            if (c8.dd.a(dz0Var.a, 32768)) {
+                textPaint.baselineShift -= (int) (textSize * 0.35f);
+            } else if (c8.dd.a(dz0Var.a, TLObject.FLAG_14)) {
+                textPaint.baselineShift += (int) (textSize * 0.12f);
+            }
+        }
     }
 
-    public ez0(Matrix matrix, Bitmap bitmap, Runnable runnable, Runnable runnable2) {
-        this.g = 1.0f;
-        this.a = null;
-        this.b = null;
-        this.c = runnable;
-        this.d = runnable2;
-        this.f = matrix;
-        this.e = bitmap;
+    public final dz0 b() {
+        return this.b;
+    }
+
+    public final boolean c() {
+        return (this.b.a & 256) > 0;
+    }
+
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i7 = this.a;
+        if (i7 != 0) {
+            textPaint.setTextSize(i7);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
+    }
+
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        int i7 = this.a;
+        if (i7 != 0) {
+            textPaint.setTextSize(i7);
+        }
+        a(textPaint);
+        textPaint.setFlags(textPaint.getFlags() | 128);
+        this.b.a(textPaint);
     }
 }

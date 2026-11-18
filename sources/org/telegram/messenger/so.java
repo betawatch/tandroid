@@ -1,137 +1,155 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import java.util.HashMap;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class so {
-    public static int q = 10;
-    public int a;
-    public String b;
-    public int d;
-    public volatile int e;
-    public int f;
-    public int g;
-    public int m;
-    public boolean n;
-    public final int o;
-    public boolean p;
-    public ArrayList c = new ArrayList();
-    public ArrayList h = new ArrayList();
-    public ArrayList i = new ArrayList();
-    public final LongSparseIntArray j = new LongSparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
+public final /* synthetic */ class so implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uo b;
 
-    public so() {
-        int i7 = q;
-        q = i7 + 1;
-        this.o = i7;
+    public /* synthetic */ so(uo uoVar, int i7) {
+        this.a = i7;
+        this.b = uoVar;
     }
 
-    public final boolean a(int i7, TLRPC.Dialog dialog) {
-        TLRPC.EncryptedChat a12;
-        if (dialog == null) {
-            return false;
-        }
-        long j3 = dialog.id;
-        if (m5.C(j3) && (a12 = np.s1(i7).a1(Integer.valueOf((int) (4294967295L & j3)))) != null) {
-            j3 = a12.user_id;
-        }
-        return this.h.contains(Long.valueOf(j3));
-    }
-
-    public final boolean b(c cVar, long j3) {
-        TLRPC.Dialog dialog = (TLRPC.Dialog) np.s1(cVar.a).R.f(j3);
-        if (dialog == null) {
-            return false;
-        }
-        return c(cVar, j3, dialog);
-    }
-
-    public final boolean c(c cVar, long j3, TLRPC.Dialog dialog) {
-        TLRPC.Chat M0;
-        if (this.i.contains(Long.valueOf(j3))) {
-            return false;
-        }
-        if (!this.h.contains(Long.valueOf(j3))) {
-            if (dialog.folder_id != 0) {
-                int i7 = this.g;
-                int i10 = np.D8;
-                if ((i7 & 128) != 0) {
-                    return false;
-                }
-            }
-            int i11 = cVar.a;
-            np s12 = np.s1(i11);
-            g5 r10 = g5.r(i11);
-            if ((this.g & 32) != 0 && s12.r2(dialog.id, 0L, null) && dialog.unread_mentions_count == 0) {
-                return false;
-            }
-            if ((this.g & 64) != 0 && s12.V0(dialog) == 0 && !dialog.unread_mark && dialog.unread_mentions_count == 0) {
-                return false;
-            }
-            if (j3 > 0) {
-                TLRPC.User a22 = s12.a2(Long.valueOf(j3));
-                if (a22 == null) {
-                    return false;
-                }
-                if (a22.bot) {
-                    if ((this.g & 16) == 0) {
-                        return false;
-                    }
-                } else if (a22.self || a22.contact || r10.x(j3)) {
-                    if ((this.g & 1) == 0) {
-                        return false;
-                    }
-                } else if ((this.g & 2) == 0) {
-                    return false;
-                }
-            } else {
-                if (j3 >= 0 || (M0 = s12.M0(Long.valueOf(-j3))) == null) {
-                    return false;
-                }
-                if (t3.Y(M0)) {
-                    int i12 = this.g;
-                    int i13 = np.E8;
-                    if ((i12 & i13) != i13) {
-                        return false;
-                    }
-                } else {
-                    if (t3.X(i11, M0)) {
-                        return false;
-                    }
-                    if (!t3.T(M0) || M0.megagroup) {
-                        if ((this.g & 4) == 0) {
-                            return false;
+    /* JADX WARN: Removed duplicated region for block: B:63:0x016a  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int i7;
+        int readInt32;
+        switch (this.a) {
+            case 0:
+                uo uoVar = this.b;
+                long j3 = uoVar.a;
+                SQLiteDatabase sQLiteDatabase = uoVar.h.getMessagesStorage().b;
+                HashMap hashMap = new HashMap();
+                SQLiteCursor sQLiteCursor = null;
+                int i10 = 0;
+                try {
+                    try {
+                        Locale locale = Locale.US;
+                        SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT count FROM dialog_photos_count WHERE uid = " + j3, new Object[0]);
+                        try {
+                            try {
+                                i7 = queryFinalized.next() ? queryFinalized.intValue(0) : 0;
+                                try {
+                                    queryFinalized.dispose();
+                                    try {
+                                        SQLiteCursor queryFinalized2 = sQLiteDatabase.queryFinalized("SELECT num, data FROM dialog_photos WHERE uid = " + j3, new Object[0]);
+                                        while (queryFinalized2.next()) {
+                                            try {
+                                                try {
+                                                    int intValue = queryFinalized2.intValue(0);
+                                                    NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(1);
+                                                    TLRPC.Photo TLdeserialize = (byteBufferValue == null || (readInt32 = byteBufferValue.readInt32(false)) == 1450380236) ? null : TLRPC.Photo.TLdeserialize(byteBufferValue, readInt32, false);
+                                                    if (TLdeserialize != null) {
+                                                        int max = Math.max(intValue + 1, i7);
+                                                        try {
+                                                            hashMap.put(Integer.valueOf(intValue), TLdeserialize);
+                                                            i7 = max;
+                                                        } catch (Exception unused) {
+                                                            sQLiteCursor = queryFinalized2;
+                                                            i10 = max;
+                                                            if (sQLiteCursor != null) {
+                                                                sQLiteCursor.dispose();
+                                                            }
+                                                            i7 = i10;
+                                                            g0.g3(new l7(uoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                            return;
+                                                        }
+                                                    }
+                                                } catch (Throwable th2) {
+                                                    th = th2;
+                                                    sQLiteCursor = queryFinalized2;
+                                                    if (sQLiteCursor != null) {
+                                                        sQLiteCursor.dispose();
+                                                    }
+                                                    throw th;
+                                                }
+                                            } catch (Exception unused2) {
+                                                sQLiteCursor = queryFinalized2;
+                                                i10 = i7;
+                                                if (sQLiteCursor != null) {
+                                                }
+                                                i7 = i10;
+                                                g0.g3(new l7(uoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                                                return;
+                                            }
+                                        }
+                                        queryFinalized2.dispose();
+                                    } catch (Exception unused3) {
+                                    }
+                                } catch (Exception unused4) {
+                                    sQLiteCursor = queryFinalized;
+                                }
+                            } catch (Throwable th3) {
+                                th = th3;
+                                sQLiteCursor = queryFinalized;
+                            }
+                        } catch (Exception unused5) {
+                            sQLiteCursor = queryFinalized;
                         }
-                    } else if ((this.g & 8) == 0) {
-                        return false;
+                    } catch (Exception unused6) {
                     }
+                    g0.g3(new l7(uoVar, Math.max(i7, hashMap.size()), hashMap, 16));
+                    return;
+                } catch (Throwable th4) {
+                    th = th4;
                 }
-            }
+                break;
+            default:
+                uo uoVar2 = this.b;
+                ArrayList arrayList = uoVar2.b;
+                long j10 = uoVar2.a;
+                SQLiteDatabase sQLiteDatabase2 = uoVar2.h.getMessagesStorage().b;
+                SQLitePreparedStatement sQLitePreparedStatement = null;
+                try {
+                    sQLiteDatabase2.executeFast("DELETE FROM dialog_photos WHERE uid = " + j10).stepThis().dispose();
+                    sQLiteDatabase2.executeFast("DELETE FROM dialog_photos_count WHERE uid = " + j10).stepThis().dispose();
+                    sQLiteDatabase2.executeFast("REPLACE INTO dialog_photos_count VALUES(" + j10 + ", " + arrayList.size() + ")").stepThis().dispose();
+                    sQLitePreparedStatement = sQLiteDatabase2.executeFast("REPLACE INTO dialog_photos VALUES(?, ?, ?, ?)");
+                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                        TLRPC.Photo photo = (TLRPC.Photo) arrayList.get(i11);
+                        if (photo != null) {
+                            if (photo.file_reference == null) {
+                                photo.file_reference = new byte[0];
+                            }
+                            sQLitePreparedStatement.requery();
+                            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(photo.getObjectSize());
+                            photo.serializeToStream(nativeByteBuffer);
+                            sQLitePreparedStatement.bindLong(1, j10);
+                            sQLitePreparedStatement.bindLong(2, photo.id);
+                            sQLitePreparedStatement.bindInteger(3, i11);
+                            sQLitePreparedStatement.bindByteBuffer(4, nativeByteBuffer);
+                            sQLitePreparedStatement.step();
+                            nativeByteBuffer.reuse();
+                        }
+                    }
+                    sQLitePreparedStatement.dispose();
+                    return;
+                } catch (Exception unused7) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                        return;
+                    }
+                    return;
+                } catch (Throwable th5) {
+                    if (sQLitePreparedStatement != null) {
+                        sQLitePreparedStatement.dispose();
+                    }
+                    throw th5;
+                }
         }
-        return true;
-    }
-
-    public final boolean d() {
-        int i7 = this.g;
-        int i10 = np.D8;
-        return (i7 & 512) > 0;
-    }
-
-    public final boolean e() {
-        return this.a == 0;
-    }
-
-    public final boolean f() {
-        if (!d()) {
-            return false;
-        }
-        int i7 = this.g;
-        int i10 = np.D8;
-        return (i7 & 1024) > 0;
     }
 }

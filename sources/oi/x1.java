@@ -8,9 +8,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class x1 extends Drawable {
     public final Context a;
@@ -23,7 +23,7 @@ public final class x1 extends Drawable {
 
     public x1(Context context, int i7) {
         Drawable g10 = i5.c.g(context, i7);
-        this.d = j6.d6;
+        this.d = n6.d6;
         this.g = true;
         this.a = context;
         this.b = g10;
@@ -43,12 +43,12 @@ public final class x1 extends Drawable {
         int centerX = bounds.centerX();
         int centerY = bounds.centerY();
         Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.ui.Cells.y0.A(2, centerX, drawable), org.telegram.ui.Cells.y0.y(2, centerY, drawable), org.telegram.ui.Cells.y0.w(2, centerX, drawable), org.telegram.ui.Cells.y0.h(2, centerY, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.c0.C(2, centerX, drawable), org.telegram.ui.Cells.c0.A(2, centerY, drawable), org.telegram.ui.Cells.c0.y(2, centerX, drawable), org.telegram.ui.Cells.c0.j(2, centerY, drawable));
         drawable.draw(canvas);
         if (this.g) {
             int L = org.telegram.messenger.g0.L(9.0f) + centerX;
             int L2 = org.telegram.messenger.g0.L(9.0f) + centerY;
-            int x02 = j6.x0(null, this.d, false);
+            int x02 = n6.x0(null, this.d, false);
             Drawable drawable2 = this.c;
             Context context = this.a;
             if (drawable2 == null) {

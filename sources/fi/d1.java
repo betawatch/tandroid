@@ -1,24 +1,38 @@
 package fi;
 
-import org.telegram.messenger.voip.Instance;
+import org.webrtc.VideoFrame;
+import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class d1 implements Instance.OnStateUpdatedListener {
-    public final /* synthetic */ e1 a;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class d1 implements VideoSink {
+    public volatile VideoSink a;
+    public volatile int b;
+    public volatile int c;
+    public final f2.a d = new f2.a(this, 6);
+    public final /* synthetic */ e1 e;
 
     public d1(e1 e1Var) {
-        this.a = e1Var;
+        this.e = e1Var;
     }
 
-    @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
-    public final void onStateUpdated(int i7, boolean z10) {
-        e1 e1Var = this.a;
-        boolean m10 = e1Var.m();
-        e1Var.E = i7;
-        org.telegram.messenger.a8.b("[LivePlayer] connectionState = " + i7);
-        if (m10 != e1Var.m()) {
-            org.telegram.messenger.g0.h3(new c1(this, 0));
+    @Override // org.webrtc.VideoSink
+    public final void onFrame(VideoFrame videoFrame) {
+        int rotatedWidth = videoFrame.getRotatedWidth();
+        int rotatedHeight = videoFrame.getRotatedHeight();
+        if (rotatedWidth != this.b || rotatedHeight != this.c) {
+            this.b = rotatedWidth;
+            this.c = rotatedHeight;
+            org.telegram.messenger.g0.g3(this.d);
         }
+        VideoSink videoSink = this.a;
+        if (videoSink != null) {
+            videoSink.onFrame(videoFrame);
+        }
+    }
+
+    @Override // org.webrtc.VideoSink
+    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
+        org.webrtc.d0.a(this, videoSink);
     }
 }

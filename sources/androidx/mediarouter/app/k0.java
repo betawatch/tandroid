@@ -14,9 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k0 extends e0 {
     public final ImageView A;
@@ -48,7 +48,7 @@ public final class k0 extends e0 {
         CheckBox checkBox = (CheckBox) view.findViewById(R.id.mr_cast_checkbox);
         this.E = checkBox;
         Context context = n0Var.E;
-        Drawable b10 = b5.a.b(context, R.drawable.mr_cast_checkbox);
+        Drawable b10 = c8.z.b(context, R.drawable.mr_cast_checkbox);
         if (c7.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }
@@ -66,7 +66,7 @@ public final class k0 extends e0 {
         if (vVar.g()) {
             return true;
         }
-        cf b10 = this.I.x.r.b(vVar);
+        b5 b10 = this.I.x.r.b(vVar);
         if (b10 == null) {
             return false;
         }

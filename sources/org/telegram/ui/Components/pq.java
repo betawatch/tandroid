@@ -1,195 +1,177 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.os.Build;
 import java.util.ArrayList;
-import java.util.TreeSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
+import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pq implements Runnable {
-    public final /* synthetic */ boolean[] E;
-    public final /* synthetic */ org.telegram.messenger.z10 F;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2 G;
-    public final /* synthetic */ a2 H;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 I;
-    public final /* synthetic */ org.telegram.ui.Cells.y8 J;
-    public final /* synthetic */ Context K;
-    public final /* synthetic */ boolean[] a;
-    public final /* synthetic */ int[] b;
-    public final /* synthetic */ org.telegram.ui.Cells.k3 c;
-    public final /* synthetic */ TreeSet d;
-    public final /* synthetic */ String[] e;
-    public final /* synthetic */ oq f;
-    public final /* synthetic */ org.telegram.ui.Cells.k3 h;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ ci.p0 r;
-    public final /* synthetic */ hi.d s;
-    public final /* synthetic */ boolean w;
-    public final /* synthetic */ int x;
-    public final /* synthetic */ TLRPC.User y;
+public class pq extends Path {
+    public static ArrayList g;
+    public int e;
+    public int f;
+    public boolean b = false;
+    public boolean c = true;
+    public float d = 0.0f;
+    public final ArrayList a = new ArrayList(1);
 
-    public /* synthetic */ pq(boolean[] zArr, int[] iArr, org.telegram.ui.Cells.k3 k3Var, TreeSet treeSet, String[] strArr, oq oqVar, org.telegram.ui.Cells.k3 k3Var2, int[] iArr2, ci.p0 p0Var, hi.d dVar, boolean z10, int i7, TLRPC.User user, boolean[] zArr2, org.telegram.messenger.z10 z10Var, org.telegram.ui.ActionBar.u2 u2Var, a2 a2Var, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.Cells.y8 y8Var, Context context) {
-        this.a = zArr;
-        this.b = iArr;
-        this.c = k3Var;
-        this.d = treeSet;
-        this.e = strArr;
-        this.f = oqVar;
-        this.h = k3Var2;
-        this.n = iArr2;
-        this.r = p0Var;
-        this.s = dVar;
-        this.w = z10;
-        this.x = i7;
-        this.y = user;
-        this.E = zArr2;
-        this.F = z10Var;
-        this.G = u2Var;
-        this.H = a2Var;
-        this.I = e6Var;
-        this.J = y8Var;
-        this.K = context;
+    public pq() {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        final org.telegram.ui.Cells.k3 k3Var = this.h;
-        org.telegram.ui.Cells.i3 i3Var = k3Var.d;
-        final boolean[] zArr = this.a;
-        if (zArr[0]) {
+    public final void a() {
+        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
             return;
         }
-        final int[] iArr = this.b;
-        if (iArr[0] >= 0) {
+        b(this.a);
+        this.b = true;
+    }
+
+    @Override // android.graphics.Path
+    public final void addRect(RectF rectF, Path.Direction direction) {
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            float f10 = rectF.left;
+            int i7 = this.e;
+            float f11 = f10 - i7;
+            float f12 = rectF.top;
+            int i10 = this.f;
+            super.addRect(f11, f12 - i10, rectF.right + i7, rectF.bottom + i10, direction);
             return;
         }
-        final org.telegram.ui.Cells.k3 k3Var2 = this.c;
-        String charSequence = k3Var2.getText().toString();
-        StringBuilder m10 = com.google.android.gms.internal.vision.e2.m(charSequence);
-        boolean a10 = sq.a(charSequence, "bot");
-        final TreeSet treeSet = this.d;
-        m10.append((a10 || sq.c(charSequence, treeSet) != null) ? "" : "bot");
-        String sb2 = m10.toString();
-        final String[] strArr = this.e;
-        if (!TextUtils.equals(strArr[0], sb2)) {
-            this.f.run();
+        ArrayList arrayList = this.a;
+        if (arrayList.size() <= 0 || !((RectF) i5.c.h(1, arrayList)).contains(rectF)) {
+            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) i5.c.h(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) i5.c.h(1, arrayList)).bottom) > this.d) {
+                ArrayList arrayList2 = g;
+                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
+                rectF2.set(rectF);
+                arrayList.add(rectF2);
+            } else {
+                ((RectF) i5.c.h(1, arrayList)).union(rectF);
+            }
+            this.b = false;
+        }
+    }
+
+    public final void b(List list) {
+        if (list.isEmpty()) {
             return;
         }
-        String trim = i3Var.getText().toString().trim();
-        boolean isEmpty = TextUtils.isEmpty(trim);
-        final int[] iArr2 = this.n;
-        if (isEmpty) {
-            int i7 = -iArr2[0];
-            iArr2[0] = i7;
-            org.telegram.messenger.g0.F3(i7, k3Var, null);
+        boolean z10 = false;
+        if (list.size() == 1) {
+            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
             return;
         }
-        this.r.run();
-        final hi.d dVar = this.s;
-        dVar.setLoading(true);
-        dVar.setEnabled(false);
-        i3Var.setEnabled(false);
-        k3Var2.d.setEnabled(false);
-        final TL_bots.createBot createbot = new TL_bots.createBot();
-        createbot.via_deeplink = this.w;
-        createbot.username = strArr[0];
-        createbot.name = trim;
-        final int i10 = this.x;
-        org.telegram.messenger.np s12 = org.telegram.messenger.np.s1(i10);
-        final TLRPC.User user = this.y;
-        createbot.manager_id = s12.q1(user);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i10);
-        d3.b bVar = new d3.b(1);
-        final boolean[] zArr2 = this.E;
-        final org.telegram.messenger.z10 z10Var = this.F;
-        final org.telegram.ui.ActionBar.u2 u2Var = this.G;
-        final a2 a2Var = this.H;
-        final org.telegram.ui.ActionBar.e6 e6Var = this.I;
-        final org.telegram.ui.Cells.y8 y8Var = this.J;
-        final Context context = this.K;
-        iArr[0] = connectionsManager.sendRequestTyped(createbot, bVar, new org.telegram.messenger.s10() { // from class: org.telegram.ui.Components.mq
-            @Override // org.telegram.messenger.s10
-            public final void a(Object obj, Object obj2) {
-                String p10;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                if (zArr[0]) {
-                    return;
-                }
-                iArr[0] = -1;
-                hi.d dVar2 = dVar;
-                dVar2.setLoading(false);
-                dVar2.setEnabled(true);
-                k3Var.d.setEnabled(true);
-                k3Var2.d.setEnabled(true);
-                int i11 = i10;
-                org.telegram.ui.ActionBar.u2 u2Var2 = u2Var;
-                if (user2 != null) {
-                    zArr2[0] = true;
-                    org.telegram.messenger.np.s1(i11).X3(user2, false, false);
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(user2);
-                    org.telegram.messenger.vr.a0(i11).m1(arrayList, null, false, false);
-                    z10Var.a(user2);
-                    u2Var2.dismiss();
-                    return;
-                }
-                if (tL_error != null) {
-                    String str = createbot.username;
-                    String str2 = tL_error.text;
-                    TreeSet treeSet2 = treeSet;
-                    a2 a2Var2 = a2Var;
-                    org.telegram.ui.ActionBar.e6 e6Var2 = e6Var;
-                    CharSequence d = sq.d(i11, str, treeSet2, str2, a2Var2, e6Var2);
-                    if (d != null) {
-                        strArr[0] = null;
-                        dVar2.setEnabled(false);
-                        org.telegram.ui.Cells.y8 y8Var2 = y8Var;
-                        y8Var2.setText(d);
-                        org.telegram.ui.ActionBar.q6.U(y8Var2.getTextView(), org.telegram.ui.ActionBar.j6.q7, e6Var2);
-                        int[] iArr3 = iArr2;
-                        int i12 = -iArr3[0];
-                        iArr3[0] = i12;
-                        org.telegram.messenger.g0.F3(i12, y8Var2, null);
-                    } else if ("BOT_CREATE_LIMIT_EXCEEDED".equalsIgnoreCase(tL_error.text)) {
-                        org.telegram.messenger.p0 p0Var = org.telegram.messenger.np.s1(i11).y7;
-                        boolean q10 = org.telegram.messenger.m10.i(i11).q();
-                        cc ccVar = new cc(u2Var2.F, e6Var2);
-                        String M0 = org.telegram.messenger.hd.M0(2131751735, null);
-                        SpannableStringBuilder O2 = org.telegram.messenger.g0.O2(q10 ? org.telegram.messenger.hd.a0(null, null, 2131751738, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c)) : org.telegram.messenger.hd.a0(null, null, 2131751737, Integer.valueOf(((org.telegram.messenger.j0) p0Var.M.b).c), Integer.valueOf(((org.telegram.messenger.j0) p0Var.L.b).c)), org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.xj, e6Var2), new fo(u2Var2, 4));
-                        od odVar = new od(24, u2Var2, context);
-                        int t6 = org.telegram.messenger.g0.t(O2, "@BotFather");
-                        if (t6 >= 0) {
-                            O2.setSpan(new org.telegram.ui.Cells.h(e6Var2, odVar, 6), t6, t6 + 10, 33);
-                        }
-                        xb I = ccVar.I(R.raw.error, M0, O2);
-                        I.j = 8000;
-                        I.j();
-                    } else {
-                        String str3 = tL_error.text;
-                        if (str3 != null && str3.startsWith("FLOOD_WAIT_")) {
-                            new cc(u2Var2.F, e6Var2).I(R.raw.error, org.telegram.messenger.hd.M0(2131751735, null), org.telegram.messenger.hd.a0(null, null, 2131751736, org.telegram.messenger.hd.z(Integer.parseInt(tL_error.text.substring(11))))).j();
-                        } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
-                            TLRPC.User user3 = user;
-                            if (TextUtils.isEmpty(org.telegram.messenger.q10.n(user3))) {
-                                p10 = org.telegram.messenger.q10.p(user3);
-                            } else {
-                                p10 = "@" + org.telegram.messenger.q10.n(user3);
+        RectF rectF = (RectF) list.get(0);
+        int size = list.size() - 1;
+        super.moveTo(rectF.left - this.e, rectF.top - this.f);
+        for (int i7 = 1; i7 < list.size(); i7++) {
+            RectF rectF2 = (RectF) list.get(i7);
+            if (rectF2.width() != 0.0f) {
+                float f10 = rectF.bottom;
+                int i10 = this.f;
+                float f11 = f10 + i10;
+                float f12 = rectF2.top;
+                if (f11 >= f12 - i10) {
+                    float f13 = rectF.left;
+                    if (f13 <= rectF2.right) {
+                        float f14 = rectF.right;
+                        float f15 = rectF2.left;
+                        if (f14 >= f15) {
+                            if (f13 != f15) {
+                                super.lineTo(f13 - this.e, f12);
+                                super.lineTo(rectF2.left - this.e, rectF2.top);
                             }
-                            new cc(u2Var2.F, e6Var2).Q(R.raw.error, 36, org.telegram.messenger.g0.P2(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.xj, e6Var2), org.telegram.messenger.hd.a0(null, null, 2131751730, p10))).j();
-                        } else {
-                            org.telegram.ui.Cells.y0.q(u2Var2.F, e6Var2, tL_error, false);
+                            rectF = rectF2;
                         }
                     }
-                    org.telegram.messenger.g0.v1(u2Var2.getCurrentFocus());
                 }
+                z10 = true;
+                size = i7;
+                break;
             }
-        }, 1024);
+        }
+        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
+        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
+        for (int i11 = size - 1; i11 >= 0; i11--) {
+            RectF rectF3 = (RectF) list.get(i11);
+            if (rectF3.width() != 0.0f) {
+                float f16 = rectF.right;
+                if (f16 != rectF3.right) {
+                    super.lineTo(f16 + this.e, rectF.top);
+                    super.lineTo(rectF3.right + this.e, rectF.top);
+                }
+                rectF = rectF3;
+            }
+        }
+        super.lineTo(rectF.right + this.e, rectF.top - this.f);
+        super.close();
+        if (z10) {
+            b(list.subList(size, list.size()));
+        }
+    }
+
+    @Override // android.graphics.Path
+    public void reset() {
+        super.reset();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    @Override // android.graphics.Path
+    public final void rewind() {
+        super.rewind();
+        if (Build.VERSION.SDK_INT < 34 || !this.c) {
+            return;
+        }
+        ArrayList arrayList = g;
+        ArrayList arrayList2 = this.a;
+        if (arrayList == null) {
+            g = new ArrayList(arrayList2.size());
+        }
+        g.addAll(arrayList2);
+        arrayList2.clear();
+        this.b = false;
+    }
+
+    public pq(int i7) {
+    }
+
+    @Override // android.graphics.Path
+    public void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
+        RectF rectF;
+        if (Build.VERSION.SDK_INT >= 34 && this.c) {
+            ArrayList arrayList = this.a;
+            if (arrayList.size() <= 0 || !((RectF) i5.c.h(1, arrayList)).contains(f10, f11, f12, f13)) {
+                if (arrayList.size() > 0 && Math.abs(f11 - ((RectF) i5.c.h(1, arrayList)).top) <= this.d && Math.abs(f13 - ((RectF) i5.c.h(1, arrayList)).bottom) <= this.d) {
+                    ((RectF) i5.c.h(1, arrayList)).union(f10, f11, f12, f13);
+                } else {
+                    ArrayList arrayList2 = g;
+                    if (arrayList2 != null && arrayList2.size() > 0) {
+                        rectF = (RectF) g.remove(0);
+                    } else {
+                        rectF = new RectF();
+                    }
+                    rectF.set(f10, f11, f12, f13);
+                    arrayList.add(rectF);
+                }
+                this.b = false;
+                return;
+            }
+            return;
+        }
+        int i7 = this.e;
+        float f14 = f10 - i7;
+        int i10 = this.f;
+        super.addRect(f14, f11 - i10, f12 + i7, f13 + i10, direction);
     }
 }

@@ -1,106 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.app.Activity;
 import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.core.widget.NestedScrollView;
-import org.telegram.tgnet.TLObject;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pp extends NestedScrollView {
-    public boolean a0;
-    public final /* synthetic */ tp b0;
+public final class pp extends hi.m3 {
+    public final /* synthetic */ int X0 = 0;
+    public final Object Y0;
+    public final Object Z0;
+
+    public pp(Activity activity, int i7, org.telegram.ui.Components.voip.l1 l1Var, boolean z10) {
+        super(activity, i7);
+        Paint paint = new Paint(1);
+        this.Y0 = paint;
+        this.Z0 = l1Var;
+        l1Var.a(this);
+        paint.setPathEffect(new CornerPathEffect(this.w));
+        if (z10) {
+            k(true);
+        }
+    }
+
+    @Override // hi.m3
+    public void c(Canvas canvas, float f10) {
+        switch (this.X0) {
+            case 1:
+                Paint paint = (Paint) this.Y0;
+                org.telegram.ui.Components.voip.l1 l1Var = (org.telegram.ui.Components.voip.l1) this.Z0;
+                paint.setShader(l1Var.b().getShader());
+                canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.G.getAlpha(), l1Var.b().getAlpha()) * f10), 31);
+                Path path = this.F0;
+                canvas.drawPath(path, paint);
+                if (l1Var.e) {
+                    paint.setShader(((Paint) l1Var.d.a).getShader());
+                    canvas.drawPath(path, paint);
+                }
+                canvas.restore();
+                break;
+            default:
+                super.c(canvas, f10);
+                break;
+        }
+    }
+
+    @Override // hi.m3, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.X0) {
+            case 1:
+                ((org.telegram.ui.Components.voip.l1) this.Z0).d(getX(), getY());
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // hi.m3, android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        switch (this.X0) {
+            case 0:
+                mh0[] mh0VarArr = (mh0[]) this.Y0;
+                return (mh0VarArr != null && (drawable == mh0VarArr[0] || drawable == mh0VarArr[1])) || super.verifyDrawable(drawable);
+            default:
+                return super.verifyDrawable(drawable);
+        }
+    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pp(tp tpVar, Context context) {
-        super(context);
-        this.b0 = tpVar;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        tp tpVar = this.b0;
-        int scrollY = (int) ((getScrollY() + (tpVar.r1 - tpVar.t0)) - getTranslationY());
-        Drawable drawable = tpVar.m1;
-        drawable.setBounds(0, scrollY, getMeasuredWidth(), org.telegram.messenger.g0.L(19.0f) + tpVar.o1.getMeasuredHeight() + scrollY + tpVar.t0);
-        drawable.draw(canvas);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            tp tpVar = this.b0;
-            if (tpVar.r1 != 0 && motionEvent.getY() < tpVar.r1) {
-                tpVar.dismiss();
-                return true;
+    public pp(Activity activity) {
+        super(activity, 3);
+        int i7 = 0;
+        this.Y0 = new mh0[2];
+        this.Z0 = new int[2];
+        r(true);
+        this.L = Layout.Alignment.ALIGN_NORMAL;
+        this.d = 3200L;
+        this.U = true;
+        this.e = true;
+        n(8.0f, 6.0f, 10.0f, 6.0f);
+        this.v0 = 0.0f;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        while (i7 < 2) {
+            ((mh0[]) this.Y0)[i7] = new mh0(i7 == 0 ? R.raw.ticks_single : R.raw.ticks_double, org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(24.0f));
+            ((mh0[]) this.Y0)[i7].setCallback(this);
+            if (i7 > 0) {
+                spannableStringBuilder.append((CharSequence) "\n");
             }
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) "x");
+            spannableStringBuilder.setSpan(new op(((mh0[]) this.Y0)[i7]), length, spannableStringBuilder.length(), 33);
+            spannableStringBuilder.append((CharSequence) org.telegram.messenger.gd.M0(i7 == 0 ? 2131749106 : 2131749107, null));
+            i7++;
         }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        tp.I0(this.b0);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x004a  */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i10);
-        tp tpVar = this.b0;
-        measureChildWithMargins(tpVar.o1, i7, 0, i10, 0);
-        int measuredHeight = tpVar.o1.getMeasuredHeight();
-        int i11 = (size / 5) * 3;
-        int i12 = size - i11;
-        if (!tpVar.q1 && measuredHeight - i12 >= org.telegram.messenger.g0.L(90.0f)) {
-            if (measuredHeight >= org.telegram.messenger.g0.L(90.0f) + (size / 2)) {
-                int L = org.telegram.messenger.g0.L(108.0f) + (measuredHeight / 2);
-                if (i12 < L) {
-                    i11 = size - L;
-                }
-                if (getPaddingTop() != i11) {
-                    this.a0 = true;
-                    setPadding(0, i11, 0, 0);
-                    this.a0 = false;
-                }
-                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-            }
-        }
-        i11 = size - measuredHeight;
-        if (getPaddingTop() != i11) {
-        }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
-        super.onScrollChanged(i7, i10, i11, i12);
-        tp.I0(this.b0);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.b0.J && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a0) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        tp.I0(this.b0);
+        v(spannableStringBuilder);
     }
 }

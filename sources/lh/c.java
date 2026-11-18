@@ -8,47 +8,47 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import bi.o;
-import c8.ja;
-import c8.na;
+import c8.ma;
+import c8.ra;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.oi;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.pi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
-    public final e6 a;
+    public final i6 a;
     public final r7 b;
     public final r7 c;
     public float d;
 
-    public c(Context context, e6 e6Var, oi oiVar, dh.c cVar) {
+    public c(Context context, i6 i6Var, pi piVar, dh.c cVar) {
         super(context);
         r7 r7Var = new r7(this);
         this.b = r7Var;
         r7 r7Var2 = new r7(this);
         this.c = r7Var2;
-        this.a = e6Var;
-        kh.a c10 = kh.a.c(context, cVar, oiVar, e6Var);
+        this.a = i6Var;
+        kh.a c10 = kh.a.c(context, cVar, piVar, i6Var);
         r7Var.b = c10;
-        int i7 = 8;
+        int i7 = 10;
         c10.setOnClickListener(new o(i7));
-        na.b((kh.a) r7Var.b, 0.065f, 2.0f);
-        kh.a c11 = kh.a.c(context, cVar, oiVar, e6Var);
+        ra.b((kh.a) r7Var.b, 0.065f, 2.0f);
+        kh.a c11 = kh.a.c(context, cVar, piVar, i6Var);
         r7Var2.b = c11;
         c11.setOnClickListener(new o(i7));
-        na.b((kh.a) r7Var2.b, 0.065f, 2.0f);
-        a(r7Var, hd.M0(2131746263, null), R.drawable.input_reply, false);
-        a(r7Var2, hd.M0(2131750587, null), R.drawable.input_forward, true);
+        ra.b((kh.a) r7Var2.b, 0.065f, 2.0f);
+        a(r7Var, gd.M0(2131746068, null), R.drawable.input_reply, false);
+        a(r7Var2, gd.M0(2131750571, null), R.drawable.input_forward, true);
         setOrientation(0);
         setClipChildren(false);
-        addView((kh.a) r7Var.b, ja.m(1.0f, 0, 56, 1, -1, 0));
-        addView((kh.a) r7Var2.b, ja.m(1.0f, 0, 56, -1, 1, 0));
+        addView((kh.a) r7Var.b, ma.m(1.0f, 0, 56, 1, -1, 0));
+        addView((kh.a) r7Var2.b, ma.m(1.0f, 0, 56, -1, 1, 0));
     }
 
     public final void a(r7 r7Var, String str, int i7, boolean z10) {
@@ -58,19 +58,19 @@ public final class c extends LinearLayout {
         textView.setTextSize(1, 15.0f);
         textView.setPadding(g0.L(21.0f), 0, g0.L(21.0f), 0);
         textView.setCompoundDrawablePadding(g0.L(6.0f));
-        int i10 = j6.Ol;
-        e6 e6Var = this.a;
-        q6.U(textView, i10, e6Var);
+        int i10 = n6.Ol;
+        i6 i6Var = this.a;
+        u6.U(textView, i10, i6Var);
         textView.setTypeface(g0.o());
         Drawable mutate = getContext().getResources().getDrawable(i7).mutate();
-        q6.x(this, mutate, j6.Nl, e6Var, PorterDuff.Mode.MULTIPLY);
+        u6.x(this, mutate, n6.Nl, i6Var, PorterDuff.Mode.MULTIPLY);
         Drawable drawable = z10 ? mutate : null;
         if (z10) {
             mutate = null;
         }
         textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, mutate, (Drawable) null);
         r7Var.c = textView;
-        ((kh.a) r7Var.b).addView(textView, ja.e(-2, -2, 17));
+        ((kh.a) r7Var.b).addView(textView, ma.e(-2, -2, 17));
     }
 
     public final void b(r7 r7Var) {

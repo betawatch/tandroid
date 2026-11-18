@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class xf implements Runnable {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class xf implements Runnable {
     }
 
     private final void b() {
-        fc fcVar = (fc) this.c;
+        ec ecVar = (ec) this.c;
         ImageReceiver imageReceiver = (ImageReceiver) this.d;
         int i7 = 0;
         while (true) {
@@ -95,17 +95,17 @@ public final /* synthetic */ class xf implements Runnable {
             int G = imageReceiver.G(i10);
             if (G != 0) {
                 if (i7 == 0) {
-                    HashMap hashMap = fcVar.l;
-                    SparseArray sparseArray = fcVar.m;
+                    HashMap hashMap = ecVar.l;
+                    SparseArray sparseArray = ecVar.m;
                     String str = (String) sparseArray.get(G);
                     if (str != null) {
-                        dc dcVar = (dc) hashMap.get(str);
-                        if (dcVar != null) {
-                            ArrayList arrayList = dcVar.c;
+                        cc ccVar = (cc) hashMap.get(str);
+                        if (ccVar != null) {
+                            ArrayList arrayList = ccVar.c;
                             int indexOf = arrayList.indexOf(imageReceiver);
                             if (indexOf >= 0) {
                                 arrayList.remove(indexOf);
-                                dcVar.d.remove(indexOf);
+                                ccVar.d.remove(indexOf);
                             }
                             if (arrayList.isEmpty()) {
                                 hashMap.remove(str);
@@ -114,9 +114,9 @@ public final /* synthetic */ class xf implements Runnable {
                         sparseArray.remove(G);
                     }
                 }
-                tb tbVar = (tb) fcVar.k.get(G);
-                if (tbVar != null) {
-                    tbVar.b(imageReceiver);
+                sb sbVar = (sb) ecVar.k.get(G);
+                if (sbVar != null) {
+                    sbVar.b(imageReceiver);
                 }
             }
             i7++;
@@ -156,24 +156,24 @@ public final /* synthetic */ class xf implements Runnable {
                 byteBuffer.limit(i7);
             }
         }
-        mediaController.N1.c(new x4(24, oVar, byteBuffer));
+        mediaController.N1.c(new z4(24, oVar, byteBuffer));
     }
 
     private final void d() {
         SQLiteCursor queryFinalized;
         TLRPC.Message message;
         NativeByteBuffer byteBufferValue;
-        si siVar = (si) this.c;
-        ur urVar = (ur) this.d;
+        ri riVar = (ri) this.c;
+        sr srVar = (sr) this.d;
         try {
-            if (urVar.b != 0) {
-                SQLiteDatabase sQLiteDatabase = siVar.getMessagesStorage().b;
+            if (srVar.b != 0) {
+                SQLiteDatabase sQLiteDatabase = riVar.getMessagesStorage().b;
                 Locale locale = Locale.US;
-                queryFinalized = sQLiteDatabase.queryFinalized("SELECT info FROM bot_keyboard_topics WHERE uid = " + urVar.a + " AND tid = " + urVar.b, new Object[0]);
+                queryFinalized = sQLiteDatabase.queryFinalized("SELECT info FROM bot_keyboard_topics WHERE uid = " + srVar.a + " AND tid = " + srVar.b, new Object[0]);
             } else {
-                SQLiteDatabase sQLiteDatabase2 = siVar.getMessagesStorage().b;
+                SQLiteDatabase sQLiteDatabase2 = riVar.getMessagesStorage().b;
                 Locale locale2 = Locale.US;
-                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT info FROM bot_keyboard WHERE uid = " + urVar.a, new Object[0]);
+                queryFinalized = sQLiteDatabase2.queryFinalized("SELECT info FROM bot_keyboard WHERE uid = " + srVar.a, new Object[0]);
             }
             if (!queryFinalized.next() || queryFinalized.isNull(0) || (byteBufferValue = queryFinalized.byteBufferValue(0)) == null) {
                 message = null;
@@ -183,7 +183,7 @@ public final /* synthetic */ class xf implements Runnable {
             }
             queryFinalized.dispose();
             if (message != null || this.b) {
-                g0.h3(new pg(siVar, message, urVar));
+                g0.g3(new og(riVar, message, srVar));
             }
         } catch (Exception e10) {
             a8.g(e10, true);
@@ -200,14 +200,14 @@ public final /* synthetic */ class xf implements Runnable {
     */
     private final void f() {
         SQLiteCursor queryFinalized;
-        vr vrVar = (vr) this.c;
+        tr trVar = (tr) this.c;
         TLRPC.UserFull userFull = (TLRPC.UserFull) this.d;
         TLRPC.User user = userFull.user;
         long j3 = user != null ? user.id : userFull.id;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         if (this.b) {
             try {
-                queryFinalized = vrVar.b.queryFinalized("SELECT uid FROM user_settings WHERE uid = " + j3, new Object[0]);
+                queryFinalized = trVar.b.queryFinalized("SELECT uid FROM user_settings WHERE uid = " + j3, new Object[0]);
                 try {
                     try {
                         boolean next = queryFinalized.next();
@@ -217,7 +217,7 @@ public final /* synthetic */ class xf implements Runnable {
                         }
                     } catch (Exception e10) {
                         e = e10;
-                        vrVar.o(e, true);
+                        trVar.o(e, true);
                         if (sQLitePreparedStatement != null) {
                             sQLitePreparedStatement.dispose();
                         }
@@ -250,7 +250,7 @@ public final /* synthetic */ class xf implements Runnable {
                 throw th;
             }
         }
-        SQLitePreparedStatement executeFast = vrVar.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
+        SQLitePreparedStatement executeFast = trVar.b.executeFast("REPLACE INTO user_settings VALUES(?, ?, ?)");
         try {
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(userFull.getObjectSize());
             userFull.serializeToStream(nativeByteBuffer);
@@ -261,15 +261,15 @@ public final /* synthetic */ class xf implements Runnable {
             executeFast.dispose();
             nativeByteBuffer.reuse();
             if ((userFull.flags & 2048) != 0) {
-                SQLitePreparedStatement executeFast2 = vrVar.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
+                SQLitePreparedStatement executeFast2 = trVar.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
                 executeFast2.bindInteger(1, userFull.folder_id);
                 executeFast2.bindLong(2, j3);
                 executeFast2.step();
                 executeFast2.dispose();
-                vrVar.K.l(j3);
+                trVar.K.l(j3);
             }
             if ((userFull.flags & TLObject.FLAG_14) != 0) {
-                executeFast = vrVar.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
+                executeFast = trVar.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
                 executeFast.bindInteger(1, userFull.ttl_period);
                 executeFast.bindLong(2, j3);
                 executeFast.step();
@@ -279,7 +279,7 @@ public final /* synthetic */ class xf implements Runnable {
             e = e12;
             sQLitePreparedStatement = executeFast;
             queryFinalized = null;
-            vrVar.o(e, true);
+            trVar.o(e, true);
             if (sQLitePreparedStatement != null) {
             }
             if (queryFinalized == null) {
@@ -297,10 +297,10 @@ public final /* synthetic */ class xf implements Runnable {
     }
 
     private final void g() {
-        vr vrVar = (vr) this.c;
-        vrVar.x1((so) this.d, this.b);
-        vrVar.j(false);
-        g0.h3(new nq(vrVar, 16));
+        tr trVar = (tr) this.c;
+        trVar.x1((ro) this.d, this.b);
+        trVar.j(false);
+        g0.g3(new pq(trVar, 15));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -314,20 +314,20 @@ public final /* synthetic */ class xf implements Runnable {
         SQLitePreparedStatement sQLitePreparedStatement;
         SQLiteDatabase sQLiteDatabase;
         boolean z10;
-        vr vrVar = (vr) this.c;
+        tr trVar = (tr) this.c;
         HashMap hashMap = (HashMap) this.d;
         SQLitePreparedStatement sQLitePreparedStatement2 = null;
         try {
             try {
-                if (r2.a) {
-                    a8.b(vrVar.currentAccount + " save contacts to db " + hashMap.size());
+                if (s2.a) {
+                    a8.b(trVar.currentAccount + " save contacts to db " + hashMap.size());
                 }
-                vrVar.b.executeFast("DELETE FROM user_contacts_v7 WHERE 1").stepThis().dispose();
-                vrVar.b.executeFast("DELETE FROM user_phones_v7 WHERE 1").stepThis().dispose();
-                vrVar.b.beginTransaction();
-                SQLitePreparedStatement executeFast = vrVar.b.executeFast("REPLACE INTO user_contacts_v7 VALUES(?, ?, ?, ?, ?)");
+                trVar.b.executeFast("DELETE FROM user_contacts_v7 WHERE 1").stepThis().dispose();
+                trVar.b.executeFast("DELETE FROM user_phones_v7 WHERE 1").stepThis().dispose();
+                trVar.b.beginTransaction();
+                SQLitePreparedStatement executeFast = trVar.b.executeFast("REPLACE INTO user_contacts_v7 VALUES(?, ?, ?, ?, ?)");
                 try {
-                    sQLitePreparedStatement = vrVar.b.executeFast("REPLACE INTO user_phones_v7 VALUES(?, ?, ?, ?)");
+                    sQLitePreparedStatement = trVar.b.executeFast("REPLACE INTO user_phones_v7 VALUES(?, ?, ?, ?)");
                     try {
                         Iterator it = hashMap.entrySet().iterator();
                         while (true) {
@@ -335,23 +335,23 @@ public final /* synthetic */ class xf implements Runnable {
                             if (!it.hasNext()) {
                                 break;
                             }
-                            d5 d5Var = (d5) ((Map.Entry) it.next()).getValue();
-                            ArrayList arrayList = d5Var.e;
-                            ArrayList arrayList2 = d5Var.g;
+                            f5 f5Var = (f5) ((Map.Entry) it.next()).getValue();
+                            ArrayList arrayList = f5Var.e;
+                            ArrayList arrayList2 = f5Var.g;
                             if (!arrayList.isEmpty() && !arrayList2.isEmpty()) {
                                 executeFast.requery();
-                                executeFast.bindString(1, d5Var.b);
-                                executeFast.bindInteger(2, d5Var.a);
-                                executeFast.bindString(3, d5Var.i);
-                                executeFast.bindString(4, d5Var.j);
-                                executeFast.bindInteger(5, d5Var.l);
+                                executeFast.bindString(1, f5Var.b);
+                                executeFast.bindInteger(2, f5Var.a);
+                                executeFast.bindString(3, f5Var.i);
+                                executeFast.bindString(4, f5Var.j);
+                                executeFast.bindInteger(5, f5Var.l);
                                 executeFast.step();
                                 for (int i7 = 0; i7 < arrayList.size(); i7++) {
                                     sQLitePreparedStatement.requery();
-                                    sQLitePreparedStatement.bindString(1, d5Var.b);
+                                    sQLitePreparedStatement.bindString(1, f5Var.b);
                                     sQLitePreparedStatement.bindString(2, (String) arrayList.get(i7));
                                     sQLitePreparedStatement.bindString(3, (String) arrayList2.get(i7));
-                                    sQLitePreparedStatement.bindInteger(4, ((Integer) d5Var.h.get(i7)).intValue());
+                                    sQLitePreparedStatement.bindInteger(4, ((Integer) f5Var.h.get(i7)).intValue());
                                     sQLitePreparedStatement.step();
                                 }
                             }
@@ -359,44 +359,44 @@ public final /* synthetic */ class xf implements Runnable {
                         executeFast.dispose();
                         try {
                             sQLitePreparedStatement.dispose();
-                            vrVar.b.commitTransaction();
+                            trVar.b.commitTransaction();
                             if (this.b) {
-                                vrVar.b.executeFast("DROP TABLE IF EXISTS user_contacts_v6;").stepThis().dispose();
-                                vrVar.b.executeFast("DROP TABLE IF EXISTS user_phones_v6;").stepThis().dispose();
+                                trVar.b.executeFast("DROP TABLE IF EXISTS user_contacts_v6;").stepThis().dispose();
+                                trVar.b.executeFast("DROP TABLE IF EXISTS user_phones_v6;").stepThis().dispose();
                                 sQLitePreparedStatement = null;
-                                vrVar.a.c(new zq(vrVar, z10 ? 1 : 0, false ? 1 : 0));
+                                trVar.a.c(new yq(trVar, z10 ? 1 : 0, false ? 1 : 0));
                             }
-                            SQLiteDatabase sQLiteDatabase2 = vrVar.b;
-                            vrVar = sQLiteDatabase2;
+                            SQLiteDatabase sQLiteDatabase2 = trVar.b;
+                            trVar = sQLiteDatabase2;
                             if (sQLiteDatabase2 != 0) {
                                 sQLiteDatabase2.commitTransaction();
                             }
                         } catch (Exception e10) {
                             e = e10;
-                            vrVar.o(e, true);
+                            trVar.o(e, true);
                             if (sQLitePreparedStatement2 != null) {
                                 sQLitePreparedStatement2.dispose();
                             }
                             if (sQLitePreparedStatement != null) {
                                 sQLitePreparedStatement.dispose();
                             }
-                            sQLiteDatabase = vrVar.b;
-                            vrVar = sQLiteDatabase;
+                            sQLiteDatabase = trVar.b;
+                            trVar = sQLiteDatabase;
                             if (sQLiteDatabase != 0) {
                                 sQLiteDatabase.commitTransaction();
-                                vrVar = sQLiteDatabase;
+                                trVar = sQLiteDatabase;
                             }
                         }
                     } catch (Exception e11) {
                         e = e11;
                         sQLitePreparedStatement2 = executeFast;
-                        vrVar.o(e, true);
+                        trVar.o(e, true);
                         if (sQLitePreparedStatement2 != null) {
                         }
                         if (sQLitePreparedStatement != null) {
                         }
-                        sQLiteDatabase = vrVar.b;
-                        vrVar = sQLiteDatabase;
+                        sQLiteDatabase = trVar.b;
+                        trVar = sQLiteDatabase;
                         if (sQLiteDatabase != 0) {
                         }
                     } catch (Throwable th2) {
@@ -408,7 +408,7 @@ public final /* synthetic */ class xf implements Runnable {
                         if (sQLitePreparedStatement != null) {
                             sQLitePreparedStatement.dispose();
                         }
-                        SQLiteDatabase sQLiteDatabase3 = vrVar.b;
+                        SQLiteDatabase sQLiteDatabase3 = trVar.b;
                         if (sQLiteDatabase3 != null) {
                             sQLiteDatabase3.commitTransaction();
                         }
@@ -435,12 +435,12 @@ public final /* synthetic */ class xf implements Runnable {
 
     private final void i() {
         int i7;
-        vr vrVar = (vr) this.c;
+        tr trVar = (tr) this.c;
         TLRPC.EncryptedChat encryptedChat = (TLRPC.EncryptedChat) this.d;
         SQLitePreparedStatement sQLitePreparedStatement = null;
         try {
             try {
-                sQLitePreparedStatement = vrVar.b.executeFast("UPDATE enc_chats SET seq_in = ?, seq_out = ?, use_count = ?, in_seq_no = ?, mtproto_seq = ? WHERE uid = ?");
+                sQLitePreparedStatement = trVar.b.executeFast("UPDATE enc_chats SET seq_in = ?, seq_out = ?, use_count = ?, in_seq_no = ?, mtproto_seq = ? WHERE uid = ?");
                 sQLitePreparedStatement.bindInteger(1, encryptedChat.seq_in);
                 sQLitePreparedStatement.bindInteger(2, encryptedChat.seq_out);
                 sQLitePreparedStatement.bindInteger(3, (encryptedChat.key_use_count_in << 16) | encryptedChat.key_use_count_out);
@@ -450,13 +450,13 @@ public final /* synthetic */ class xf implements Runnable {
                 sQLitePreparedStatement.step();
                 if (this.b && (i7 = encryptedChat.in_seq_no) != 0) {
                     long j3 = (int) (encryptedChat.id & 4294967295L);
-                    SQLiteDatabase sQLiteDatabase = vrVar.b;
+                    SQLiteDatabase sQLiteDatabase = trVar.b;
                     Locale locale = Locale.US;
                     sQLiteDatabase.executeFast("DELETE FROM messages_v2 WHERE mid IN (SELECT m.mid FROM messages_v2 as m LEFT JOIN messages_seq as s ON m.mid = s.mid WHERE m.uid = " + j3 + " AND m.date = 0 AND m.mid < 0 AND s.seq_out <= " + i7 + ") AND uid = " + j3).stepThis().dispose();
                 }
                 sQLitePreparedStatement.dispose();
             } catch (Exception e10) {
-                vrVar.o(e10, true);
+                trVar.o(e10, true);
                 if (sQLitePreparedStatement != null) {
                     sQLitePreparedStatement.dispose();
                 }
@@ -556,11 +556,11 @@ public final /* synthetic */ class xf implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:45:0x0167, code lost:
     
-        r10 = org.telegram.messenger.k5.i(r0, r5);
+        r10 = org.telegram.messenger.f3.h(r0, r5);
      */
     /* JADX WARN: Code restructure failed: missing block: B:46:0x016b, code lost:
     
-        r10.add(new org.telegram.messenger.gj(r2.currentAccount, r1, true, true));
+        r10.add(new org.telegram.messenger.fj(r2.currentAccount, r1, true, true));
      */
     /* JADX WARN: Code restructure failed: missing block: B:48:0x0178, code lost:
     
@@ -577,7 +577,7 @@ public final /* synthetic */ class xf implements Runnable {
      */
     /* JADX WARN: Code restructure failed: missing block: B:56:0x0189, code lost:
     
-        org.telegram.messenger.g0.h3(new org.telegram.messenger.xp(r2, r0, 2));
+        org.telegram.messenger.g0.g3(new org.telegram.messenger.wp(r2, r0, 1));
      */
     /* JADX WARN: Code restructure failed: missing block: B:57:0x0192, code lost:
     
@@ -618,7 +618,7 @@ public final /* synthetic */ class xf implements Runnable {
     private final void j() {
         boolean z10;
         SQLitePreparedStatement sQLitePreparedStatement;
-        vr vrVar = (vr) this.c;
+        tr trVar = (tr) this.c;
         a0.h hVar = (a0.h) this.d;
         a0.h hVar2 = new a0.h();
         boolean z11 = this.b;
@@ -626,7 +626,7 @@ public final /* synthetic */ class xf implements Runnable {
         if (z11) {
             try {
                 try {
-                    vrVar.b.beginTransaction();
+                    trVar.b.beginTransaction();
                 } catch (Throwable th2) {
                     th = th2;
                     if (sQLitePreparedStatement2 != null) {
@@ -637,18 +637,18 @@ public final /* synthetic */ class xf implements Runnable {
                 e = e10;
                 z10 = true;
                 sQLitePreparedStatement = null;
-                vrVar.o(e, z10);
+                trVar.o(e, z10);
             }
         }
         try {
-            sQLitePreparedStatement = vrVar.b.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
+            sQLitePreparedStatement = trVar.b.executeFast("DELETE FROM ephemeral_messages WHERE dialog_id = ? AND id = ?;");
             for (int i7 = 0; i7 < hVar.m(); i7++) {
                 try {
                     try {
                         long j3 = hVar.j(i7);
                         ArrayList arrayList = (ArrayList) hVar.n(i7);
                         if (arrayList != null) {
-                            hVar2.k(vrVar.Y(arrayList, j3), j3);
+                            hVar2.k(trVar.Y(arrayList, j3), j3);
                             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                                 sQLitePreparedStatement.requery();
                                 sQLitePreparedStatement.bindLong(1, j3);
@@ -659,7 +659,7 @@ public final /* synthetic */ class xf implements Runnable {
                     } catch (Exception e11) {
                         e = e11;
                         z10 = true;
-                        vrVar.o(e, z10);
+                        trVar.o(e, z10);
                     }
                 } catch (Throwable th3) {
                     th = th3;
@@ -673,18 +673,18 @@ public final /* synthetic */ class xf implements Runnable {
             for (int i11 = 0; i11 < hVar.m(); i11++) {
                 long j10 = hVar.j(i11);
                 ArrayList arrayList2 = (ArrayList) hVar.n(i11);
-                si mediaDataController = vrVar.getMediaDataController();
-                ur a10 = ur.a(j10, 0L);
+                ri mediaDataController = trVar.getMediaDataController();
+                sr a10 = sr.a(j10, 0L);
                 mediaDataController.getClass();
-                g0.h3(new kg(mediaDataController, sQLitePreparedStatement2, a10, 2));
+                g0.g3(new kg(mediaDataController, sQLitePreparedStatement2, a10, 2));
                 String join = TextUtils.join(",", arrayList2);
-                SQLiteDatabase sQLiteDatabase = vrVar.b;
+                SQLiteDatabase sQLiteDatabase = trVar.b;
                 Locale locale = Locale.US;
                 sQLiteDatabase.executeFast("DELETE FROM bot_keyboard WHERE mid IN(" + join + ") AND uid = " + j10).stepThis().dispose();
-                vrVar.b.executeFast("DELETE FROM bot_keyboard_topics WHERE mid IN(" + join + ") AND uid = " + j10).stepThis().dispose();
+                trVar.b.executeFast("DELETE FROM bot_keyboard_topics WHERE mid IN(" + join + ") AND uid = " + j10).stepThis().dispose();
             }
             if (z11) {
-                vrVar.b.commitTransaction();
+                trVar.b.commitTransaction();
             }
         } catch (Exception e12) {
             e = e12;
@@ -694,11 +694,11 @@ public final /* synthetic */ class xf implements Runnable {
 
     /* JADX WARN: Code restructure failed: missing block: B:146:0x0267, code lost:
     
-        if (org.telegram.messenger.t3.r0(r4) != false) goto L127;
+        if (org.telegram.messenger.v3.r0(r4) != false) goto L127;
      */
     /* JADX WARN: Code restructure failed: missing block: B:157:0x0286, code lost:
     
-        if (org.telegram.messenger.t3.r0(r4) != false) goto L127;
+        if (org.telegram.messenger.v3.r0(r4) != false) goto L127;
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:256:0x06cf  */
@@ -730,13 +730,13 @@ public final /* synthetic */ class xf implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        si siVar;
+        ri riVar;
         ArrayList arrayList;
         TLRPC.User user;
         ?? r15;
         boolean z10;
         ArrayList arrayList2;
-        si siVar2;
+        ri riVar2;
         ArrayList arrayList3;
         SQLiteCursor sQLiteCursor;
         String str;
@@ -763,33 +763,33 @@ public final /* synthetic */ class xf implements Runnable {
         SQLiteCursor sQLiteCursor4 = null;
         switch (this.a) {
             case 0:
-                si siVar3 = (si) this.c;
+                ri riVar3 = (ri) this.c;
                 boolean z12 = this.b;
                 ArrayList arrayList6 = (ArrayList) this.d;
                 try {
-                    if (gz.q == null) {
-                        gz.q = UUID.randomUUID().toString();
-                        t0.b.getSharedPreferences("mainconfig", 0).edit().putString("directShareHash2", gz.q).commit();
+                    if (bz.q == null) {
+                        bz.q = UUID.randomUUID().toString();
+                        t0.b.getSharedPreferences("mainconfig", 0).edit().putString("directShareHash2", bz.q).commit();
                     }
                     ArrayList arrayList7 = new ArrayList();
                     ArrayList arrayList8 = new ArrayList();
                     ArrayList arrayList9 = new ArrayList();
                     if (z12) {
                         g0.f.n(t0.b);
-                        siVar = siVar3;
+                        riVar = riVar3;
                     } else {
                         List e10 = g0.f.e(t0.b);
                         if (e10 == null || e10.isEmpty()) {
-                            siVar = siVar3;
+                            riVar = riVar3;
                         } else {
                             arrayList8.add("compose");
                             int i13 = 0;
                             while (i13 < arrayList6.size()) {
-                                arrayList8.add("did3_" + gj.B1(((TLRPC.TL_topPeer) arrayList6.get(i13)).peer));
+                                arrayList8.add("did3_" + fj.B1(((TLRPC.TL_topPeer) arrayList6.get(i13)).peer));
                                 i13++;
-                                siVar3 = siVar3;
+                                riVar3 = riVar3;
                             }
-                            siVar = siVar3;
+                            riVar = riVar3;
                             for (int i14 = 0; i14 < e10.size(); i14++) {
                                 String str3 = ((g0.b) e10.get(i14)).b;
                                 if (!arrayList8.remove(str3)) {
@@ -812,8 +812,8 @@ public final /* synthetic */ class xf implements Runnable {
                     g0.b bVar = new g0.b();
                     bVar.a = context;
                     bVar.b = "compose";
-                    bVar.e = hd.M0(2131748275, null);
-                    bVar.f = hd.M0(2131748275, null);
+                    bVar.e = gd.M0(2131748083, null);
+                    bVar.f = gd.M0(2131748083, null);
                     bVar.h = IconCompat.d(t0.b, R.drawable.shortcut_compose);
                     bVar.m = 0;
                     bVar.c = new Intent[]{intent};
@@ -836,45 +836,45 @@ public final /* synthetic */ class xf implements Runnable {
                         arrayList10.clear();
                     }
                     HashSet hashSet = new HashSet(1);
-                    hashSet.add(si.W1);
+                    hashSet.add(ri.Y1);
                     int i15 = 0;
                     while (i15 < arrayList6.size()) {
                         Intent intent2 = new Intent(t0.b, (Class<?>) OpenChatReceiver.class);
-                        long B1 = gj.B1(((TLRPC.TL_topPeer) arrayList6.get(i15)).peer);
-                        if (m5.E(B1)) {
+                        long B1 = fj.B1(((TLRPC.TL_topPeer) arrayList6.get(i15)).peer);
+                        if (n5.E(B1)) {
                             intent2.putExtra("userId", B1);
-                            user = siVar.getMessagesController().a2(Long.valueOf(B1));
+                            user = riVar.getMessagesController().c2(Long.valueOf(B1));
                             r15 = sQLiteCursor4;
                             arrayList = arrayList10;
                         } else {
                             arrayList = arrayList10;
                             long j3 = -B1;
-                            TLRPC.Chat M0 = siVar.getMessagesController().M0(Long.valueOf(j3));
+                            TLRPC.Chat O0 = riVar.getMessagesController().O0(Long.valueOf(j3));
                             intent2.putExtra("chatId", j3);
                             user = null;
-                            r15 = M0;
+                            r15 = O0;
                         }
-                        if ((user == null || q10.x(user)) && r15 == 0) {
+                        if ((user == null || o10.y(user)) && r15 == 0) {
                             z10 = z12;
                             arrayList2 = arrayList6;
-                            siVar2 = siVar;
+                            riVar2 = riVar;
                             arrayList3 = arrayList;
                             sQLiteCursor = null;
                         } else if (user != null) {
-                            str = g5.m(0, user.first_name, user.last_name);
+                            str = i5.m(0, user.first_name, user.last_name);
                             TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
                             if (userProfilePhoto != null) {
                                 fileLocation = userProfilePhoto.photo_small;
-                                si siVar4 = siVar;
-                                intent2.putExtra("currentAccount", siVar4.currentAccount);
+                                ri riVar4 = riVar;
+                                intent2.putExtra("currentAccount", riVar4.currentAccount);
                                 intent2.setAction("com.tmessages.openchat" + B1);
                                 intent2.putExtra("dialogId", B1);
-                                intent2.putExtra("hash", gz.q);
+                                intent2.putExtra("hash", bz.q);
                                 intent2.addFlags(67108864);
                                 if (fileLocation == null) {
                                     try {
                                         try {
-                                            siVar4.getFileLoader().getClass();
+                                            riVar4.getFileLoader().getClass();
                                             str2 = str;
                                             try {
                                                 try {
@@ -884,23 +884,23 @@ public final /* synthetic */ class xf implements Runnable {
                                                             int L = g0.L(48.0f);
                                                             Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
                                                             ?? canvas = new Canvas(createBitmap);
-                                                            if (si.Z1 == null) {
+                                                            if (ri.b2 == null) {
                                                                 try {
                                                                     bitmap = createBitmap;
-                                                                    si.Z1 = new Paint(3);
-                                                                    si.b2 = new RectF();
+                                                                    ri.b2 = new Paint(3);
+                                                                    ri.d2 = new RectF();
                                                                     Paint paint = new Paint(1);
-                                                                    si.a2 = paint;
-                                                                    siVar2 = siVar4;
+                                                                    ri.c2 = paint;
+                                                                    riVar2 = riVar4;
                                                                     try {
                                                                         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
                                                                         Path path = new Path();
-                                                                        si.c2 = path;
+                                                                        ri.e2 = path;
                                                                         z10 = z12;
                                                                         arrayList2 = arrayList6;
                                                                         try {
                                                                             path.addCircle(L / 2, L / 2, (L / 2) - g0.L(2.0f), Path.Direction.CW);
-                                                                            si.c2.toggleInverseFillType();
+                                                                            ri.e2.toggleInverseFillType();
                                                                         } catch (Throwable th2) {
                                                                             th = th2;
                                                                             sQLiteCursor3 = decodeFile;
@@ -919,7 +919,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                             bVar2.f = r2;
                                                                             bVar2.m = i15 + 1;
                                                                             bVar2.c = new Intent[]{intent2};
-                                                                            if (gz.x0) {
+                                                                            if (bz.x0) {
                                                                             }
                                                                             if (r19 == 0) {
                                                                             }
@@ -928,7 +928,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                             i15++;
                                                                             sQLiteCursor4 = sQLiteCursor;
                                                                             arrayList6 = arrayList2;
-                                                                            siVar = siVar2;
+                                                                            riVar = riVar2;
                                                                             z12 = z10;
                                                                             arrayList10 = arrayList3;
                                                                         }
@@ -952,7 +952,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                         bVar22.f = r2;
                                                                         bVar22.m = i15 + 1;
                                                                         bVar22.c = new Intent[]{intent2};
-                                                                        if (gz.x0) {
+                                                                        if (bz.x0) {
                                                                         }
                                                                         if (r19 == 0) {
                                                                         }
@@ -961,26 +961,26 @@ public final /* synthetic */ class xf implements Runnable {
                                                                         i15++;
                                                                         sQLiteCursor4 = sQLiteCursor;
                                                                         arrayList6 = arrayList2;
-                                                                        siVar = siVar2;
+                                                                        riVar = riVar2;
                                                                         z12 = z10;
                                                                         arrayList10 = arrayList3;
                                                                     }
                                                                 } catch (Throwable th4) {
                                                                     th = th4;
-                                                                    siVar2 = siVar4;
+                                                                    riVar2 = riVar4;
                                                                 }
                                                             } else {
                                                                 bitmap = createBitmap;
-                                                                siVar2 = siVar4;
+                                                                riVar2 = riVar4;
                                                                 z10 = z12;
                                                                 arrayList2 = arrayList6;
                                                             }
                                                             try {
-                                                                si.b2.set(g0.L(2.0f), g0.L(2.0f), g0.L(46.0f), g0.L(46.0f));
+                                                                ri.d2.set(g0.L(2.0f), g0.L(2.0f), g0.L(46.0f), g0.L(46.0f));
                                                                 sQLiteCursor = null;
                                                                 try {
-                                                                    canvas.drawBitmap(decodeFile, null, si.b2, si.Z1);
-                                                                    canvas.drawPath(si.c2, si.a2);
+                                                                    canvas.drawBitmap(decodeFile, null, ri.d2, ri.b2);
+                                                                    canvas.drawPath(ri.e2, ri.c2);
                                                                     try {
                                                                         canvas.setBitmap(null);
                                                                     } catch (Exception unused) {
@@ -1004,7 +1004,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                     bVar222.f = r2;
                                                                     bVar222.m = i15 + 1;
                                                                     bVar222.c = new Intent[]{intent2};
-                                                                    if (gz.x0) {
+                                                                    if (bz.x0) {
                                                                     }
                                                                     if (r19 == 0) {
                                                                     }
@@ -1013,7 +1013,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                     i15++;
                                                                     sQLiteCursor4 = sQLiteCursor;
                                                                     arrayList6 = arrayList2;
-                                                                    siVar = siVar2;
+                                                                    riVar = riVar2;
                                                                     z12 = z10;
                                                                     arrayList10 = arrayList3;
                                                                 }
@@ -1036,7 +1036,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                                 bVar2222.f = r2;
                                                                 bVar2222.m = i15 + 1;
                                                                 bVar2222.c = new Intent[]{intent2};
-                                                                if (gz.x0) {
+                                                                if (bz.x0) {
                                                                 }
                                                                 if (r19 == 0) {
                                                                 }
@@ -1045,18 +1045,18 @@ public final /* synthetic */ class xf implements Runnable {
                                                                 i15++;
                                                                 sQLiteCursor4 = sQLiteCursor;
                                                                 arrayList6 = arrayList2;
-                                                                siVar = siVar2;
+                                                                riVar = riVar2;
                                                                 z12 = z10;
                                                                 arrayList10 = arrayList3;
                                                             }
                                                         } catch (Throwable th7) {
                                                             th = th7;
-                                                            siVar2 = siVar4;
+                                                            riVar2 = riVar4;
                                                             z10 = z12;
                                                             arrayList2 = arrayList6;
                                                         }
                                                     } else {
-                                                        siVar2 = siVar4;
+                                                        riVar2 = riVar4;
                                                         z10 = z12;
                                                         arrayList2 = arrayList6;
                                                         sQLiteCursor = null;
@@ -1064,7 +1064,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                     }
                                                 } catch (Throwable th8) {
                                                     th = th8;
-                                                    siVar2 = siVar4;
+                                                    riVar2 = riVar4;
                                                     z10 = z12;
                                                     arrayList2 = arrayList6;
                                                     sQLiteCursor = null;
@@ -1084,7 +1084,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                     bVar22222.f = r2;
                                                     bVar22222.m = i15 + 1;
                                                     bVar22222.c = new Intent[]{intent2};
-                                                    if (gz.x0) {
+                                                    if (bz.x0) {
                                                     }
                                                     if (r19 == 0) {
                                                     }
@@ -1093,13 +1093,13 @@ public final /* synthetic */ class xf implements Runnable {
                                                     i15++;
                                                     sQLiteCursor4 = sQLiteCursor;
                                                     arrayList6 = arrayList2;
-                                                    siVar = siVar2;
+                                                    riVar = riVar2;
                                                     z12 = z10;
                                                     arrayList10 = arrayList3;
                                                 }
                                             } catch (Throwable th9) {
                                                 th = th9;
-                                                siVar2 = siVar4;
+                                                riVar2 = riVar4;
                                                 sQLiteCursor = null;
                                                 z10 = z12;
                                                 arrayList2 = arrayList6;
@@ -1119,7 +1119,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                 bVar222222.f = r2;
                                                 bVar222222.m = i15 + 1;
                                                 bVar222222.c = new Intent[]{intent2};
-                                                if (gz.x0) {
+                                                if (bz.x0) {
                                                 }
                                                 if (r19 == 0) {
                                                 }
@@ -1128,14 +1128,14 @@ public final /* synthetic */ class xf implements Runnable {
                                                 i15++;
                                                 sQLiteCursor4 = sQLiteCursor;
                                                 arrayList6 = arrayList2;
-                                                siVar = siVar2;
+                                                riVar = riVar2;
                                                 z12 = z10;
                                                 arrayList10 = arrayList3;
                                             }
                                         } catch (Throwable th10) {
                                             th = th10;
                                             str2 = str;
-                                            siVar2 = siVar4;
+                                            riVar2 = riVar4;
                                             sQLiteCursor = null;
                                         }
                                     } catch (Throwable th11) {
@@ -1144,7 +1144,7 @@ public final /* synthetic */ class xf implements Runnable {
                                     }
                                 } else {
                                     str2 = str;
-                                    siVar2 = siVar4;
+                                    riVar2 = riVar4;
                                     z10 = z12;
                                     arrayList2 = arrayList6;
                                     sQLiteCursor = null;
@@ -1160,7 +1160,7 @@ public final /* synthetic */ class xf implements Runnable {
                                 bVar2222222.f = str5;
                                 bVar2222222.m = i15 + 1;
                                 bVar2222222.c = new Intent[]{intent2};
-                                if (gz.x0) {
+                                if (bz.x0) {
                                     a0.g gVar = new a0.g(0);
                                     gVar.addAll(hashSet);
                                     bVar2222222.j = gVar;
@@ -1200,11 +1200,11 @@ public final /* synthetic */ class xf implements Runnable {
                                 }
                             }
                             fileLocation = null;
-                            si siVar42 = siVar;
-                            intent2.putExtra("currentAccount", siVar42.currentAccount);
+                            ri riVar42 = riVar;
+                            intent2.putExtra("currentAccount", riVar42.currentAccount);
                             intent2.setAction("com.tmessages.openchat" + B1);
                             intent2.putExtra("dialogId", B1);
-                            intent2.putExtra("hash", gz.q);
+                            intent2.putExtra("hash", bz.q);
                             intent2.addFlags(67108864);
                             if (fileLocation == null) {
                             }
@@ -1219,7 +1219,7 @@ public final /* synthetic */ class xf implements Runnable {
                             bVar22222222.f = str5;
                             bVar22222222.m = i15 + 1;
                             bVar22222222.c = new Intent[]{intent2};
-                            if (gz.x0) {
+                            if (bz.x0) {
                             }
                             if (r19 == 0) {
                             }
@@ -1230,11 +1230,11 @@ public final /* synthetic */ class xf implements Runnable {
                             TLRPC.ChatPhoto chatPhoto = r15.photo;
                             if (chatPhoto != null) {
                                 fileLocation = chatPhoto.photo_small;
-                                si siVar422 = siVar;
-                                intent2.putExtra("currentAccount", siVar422.currentAccount);
+                                ri riVar422 = riVar;
+                                intent2.putExtra("currentAccount", riVar422.currentAccount);
                                 intent2.setAction("com.tmessages.openchat" + B1);
                                 intent2.putExtra("dialogId", B1);
-                                intent2.putExtra("hash", gz.q);
+                                intent2.putExtra("hash", bz.q);
                                 intent2.addFlags(67108864);
                                 if (fileLocation == null) {
                                 }
@@ -1249,7 +1249,7 @@ public final /* synthetic */ class xf implements Runnable {
                                 bVar222222222.f = str5;
                                 bVar222222222.m = i15 + 1;
                                 bVar222222222.c = new Intent[]{intent2};
-                                if (gz.x0) {
+                                if (bz.x0) {
                                 }
                                 if (r19 == 0) {
                                 }
@@ -1257,11 +1257,11 @@ public final /* synthetic */ class xf implements Runnable {
                                 }
                             }
                             fileLocation = null;
-                            si siVar4222 = siVar;
-                            intent2.putExtra("currentAccount", siVar4222.currentAccount);
+                            ri riVar4222 = riVar;
+                            intent2.putExtra("currentAccount", riVar4222.currentAccount);
                             intent2.setAction("com.tmessages.openchat" + B1);
                             intent2.putExtra("dialogId", B1);
-                            intent2.putExtra("hash", gz.q);
+                            intent2.putExtra("hash", bz.q);
                             intent2.addFlags(67108864);
                             if (fileLocation == null) {
                             }
@@ -1276,7 +1276,7 @@ public final /* synthetic */ class xf implements Runnable {
                             bVar2222222222.f = str5;
                             bVar2222222222.m = i15 + 1;
                             bVar2222222222.c = new Intent[]{intent2};
-                            if (gz.x0) {
+                            if (bz.x0) {
                             }
                             if (r19 == 0) {
                             }
@@ -1286,7 +1286,7 @@ public final /* synthetic */ class xf implements Runnable {
                         i15++;
                         sQLiteCursor4 = sQLiteCursor;
                         arrayList6 = arrayList2;
-                        siVar = siVar2;
+                        riVar = riVar2;
                         z12 = z10;
                         arrayList10 = arrayList3;
                     }
@@ -1295,11 +1295,11 @@ public final /* synthetic */ class xf implements Runnable {
                     return;
                 }
             case 1:
-                np npVar = (np) this.c;
+                mp mpVar = (mp) this.c;
                 TLRPC.TL_messages_dialogs tL_messages_dialogs = (TLRPC.TL_messages_dialogs) this.d;
                 boolean z13 = this.b;
-                ConcurrentHashMap concurrentHashMap = npVar.Q;
-                ConcurrentHashMap concurrentHashMap2 = npVar.P;
+                ConcurrentHashMap concurrentHashMap = mpVar.Q;
+                ConcurrentHashMap concurrentHashMap2 = mpVar.P;
                 a0.h hVar = new a0.h();
                 a0.h hVar2 = new a0.h();
                 a0.h hVar3 = new a0.h(tL_messages_dialogs.users.size());
@@ -1321,7 +1321,7 @@ public final /* synthetic */ class xf implements Runnable {
                 int i18 = 0;
                 while (i18 < tL_messages_dialogs.messages.size()) {
                     TLRPC.Message message2 = tL_messages_dialogs.messages.get(i18);
-                    long j10 = npVar.A2;
+                    long j10 = mpVar.C2;
                     ArrayList arrayList12 = arrayList11;
                     if (j10 == 0 || j10 != message2.dialog_id) {
                         TLRPC.Peer peer = message2.peer_id;
@@ -1350,10 +1350,10 @@ public final /* synthetic */ class xf implements Runnable {
                             }
                         }
                     }
-                    gj gjVar = new gj(npVar.currentAccount, message2, hVar3, hVar4, false, false);
+                    fj fjVar = new fj(mpVar.currentAccount, message2, hVar3, hVar4, false, false);
                     arrayList5 = arrayList12;
-                    arrayList5.add(gjVar);
-                    long B0 = gj.B0(gjVar.k);
+                    arrayList5.add(fjVar);
+                    long B0 = fj.B0(fjVar.k);
                     ArrayList arrayList13 = (ArrayList) hVar2.f(B0);
                     if (arrayList13 == null) {
                         i10 = i18;
@@ -1361,25 +1361,25 @@ public final /* synthetic */ class xf implements Runnable {
                     } else {
                         i10 = i18;
                     }
-                    arrayList13.add(gjVar);
+                    arrayList13.add(fjVar);
                     hVar2.k(arrayList13, B0);
                     i18 = i10 + 1;
                     arrayList11 = arrayList5;
                 }
-                npVar.getFileLoader().l(arrayList11);
+                mpVar.getFileLoader().l(arrayList11);
                 int i19 = 0;
                 while (i19 < tL_messages_dialogs.dialogs.size()) {
                     TLRPC.Dialog dialog = tL_messages_dialogs.dialogs.get(i19);
-                    m5.x(dialog);
-                    long j13 = npVar.A2;
-                    if ((j13 == 0 || j13 != dialog.id) && (!m5.y(dialog) ? !(!m5.z(dialog.id) || (chat = (TLRPC.Chat) hVar4.f(-dialog.id)) == null || (chat.migrated_to == null && !t3.r0(chat))) : !((chat2 = (TLRPC.Chat) hVar4.f(-dialog.id)) == null || !t3.r0(chat2)))) {
+                    n5.x(dialog);
+                    long j13 = mpVar.C2;
+                    if ((j13 == 0 || j13 != dialog.id) && (!n5.y(dialog) ? !(!n5.z(dialog.id) || (chat = (TLRPC.Chat) hVar4.f(-dialog.id)) == null || (chat.migrated_to == null && !v3.r0(chat))) : !((chat2 = (TLRPC.Chat) hVar4.f(-dialog.id)) == null || !v3.r0(chat2)))) {
                         longSparseIntArray = longSparseIntArray3;
                     } else {
                         if (dialog.last_message_date == 0 && (arrayList4 = (ArrayList) hVar2.f(dialog.id)) != null) {
                             int i20 = Integer.MIN_VALUE;
                             for (int i21 = 0; i21 < arrayList4.size(); i21++) {
-                                gj gjVar2 = (gj) arrayList4.get(i21);
-                                if (gjVar2 != null && (message = gjVar2.k) != null && (i7 = message.date) > i20) {
+                                fj fjVar2 = (fj) arrayList4.get(i21);
+                                if (fjVar2 != null && (message = fjVar2.k) != null && (i7 = message.date) > i20) {
                                     i20 = i7;
                                 }
                             }
@@ -1414,7 +1414,7 @@ public final /* synthetic */ class xf implements Runnable {
                     i19++;
                     longSparseIntArray3 = longSparseIntArray;
                 }
-                g0.h3(new ey(npVar, tL_messages_dialogs, hVar, hVar2, z13, longSparseIntArray3));
+                g0.g3(new yx(mpVar, tL_messages_dialogs, hVar, hVar2, z13, longSparseIntArray3));
                 return;
             case 2:
                 h();
@@ -1444,11 +1444,11 @@ public final /* synthetic */ class xf implements Runnable {
                 i();
                 return;
             default:
-                vr vrVar = (vr) this.c;
+                tr trVar = (tr) this.c;
                 TLRPC.ChatFull chatFull = (TLRPC.ChatFull) this.d;
                 boolean z14 = this.b;
                 try {
-                    SQLiteCursor queryFinalized = vrVar.b.queryFinalized("SELECT online, inviter, links FROM chat_settings_v2 WHERE uid = " + chatFull.id, new Object[0]);
+                    SQLiteCursor queryFinalized = trVar.b.queryFinalized("SELECT online, inviter, links FROM chat_settings_v2 WHERE uid = " + chatFull.id, new Object[0]);
                     try {
                         if (queryFinalized.next()) {
                             i12 = queryFinalized.intValue(0);
@@ -1468,7 +1468,7 @@ public final /* synthetic */ class xf implements Runnable {
                         if (i11 >= 0) {
                             chatFull.invitesCount = i11;
                         }
-                        sQLitePreparedStatement = vrVar.b.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
+                        sQLitePreparedStatement = trVar.b.executeFast("REPLACE INTO chat_settings_v2 VALUES(?, ?, ?, ?, ?, ?, ?)");
                         try {
                             try {
                                 NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(chatFull.getObjectSize());
@@ -1484,13 +1484,13 @@ public final /* synthetic */ class xf implements Runnable {
                                 sQLitePreparedStatement.dispose();
                                 nativeByteBuffer.reuse();
                                 if (chatFull instanceof TLRPC.TL_channelFull) {
-                                    SQLiteCursor queryFinalized2 = vrVar.b.queryFinalized("SELECT inbox_max, outbox_max FROM dialogs WHERE did = " + (-chatFull.id), new Object[0]);
+                                    SQLiteCursor queryFinalized2 = trVar.b.queryFinalized("SELECT inbox_max, outbox_max FROM dialogs WHERE did = " + (-chatFull.id), new Object[0]);
                                     try {
                                         if (!queryFinalized2.next() || queryFinalized2.intValue(0) >= chatFull.read_inbox_max_id) {
                                             sQLitePreparedStatement2 = null;
                                         } else {
                                             int intValue2 = queryFinalized2.intValue(1);
-                                            sQLitePreparedStatement2 = vrVar.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ?, outbox_max = ? WHERE did = ?");
+                                            sQLitePreparedStatement2 = trVar.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ?, outbox_max = ? WHERE did = ?");
                                             try {
                                                 sQLitePreparedStatement2.bindInteger(1, chatFull.unread_count);
                                                 sQLitePreparedStatement2.bindInteger(2, chatFull.read_inbox_max_id);
@@ -1502,7 +1502,7 @@ public final /* synthetic */ class xf implements Runnable {
                                                 e = e11;
                                                 sQLiteCursor4 = queryFinalized2;
                                                 sQLitePreparedStatement = sQLitePreparedStatement2;
-                                                vrVar.o(e, true);
+                                                trVar.o(e, true);
                                                 if (sQLiteCursor4 != null) {
                                                 }
                                                 if (sQLitePreparedStatement == null) {
@@ -1523,7 +1523,7 @@ public final /* synthetic */ class xf implements Runnable {
                                         e = e12;
                                         sQLitePreparedStatement = null;
                                         sQLiteCursor4 = queryFinalized2;
-                                        vrVar.o(e, true);
+                                        trVar.o(e, true);
                                         if (sQLiteCursor4 != null) {
                                             sQLiteCursor4.dispose();
                                         }
@@ -1555,18 +1555,18 @@ public final /* synthetic */ class xf implements Runnable {
                         }
                         try {
                             if ((chatFull.flags & 2048) != 0) {
-                                executeFast = vrVar.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
+                                executeFast = trVar.b.executeFast("UPDATE dialogs SET folder_id = ? WHERE did = ?");
                                 try {
                                     executeFast.bindInteger(1, chatFull.folder_id);
                                     executeFast.bindLong(2, -chatFull.id);
                                     executeFast.step();
                                     executeFast.dispose();
-                                    vrVar.K.l(-chatFull.id);
+                                    trVar.K.l(-chatFull.id);
                                     sQLitePreparedStatement2 = null;
                                 } catch (Exception e14) {
                                     e = e14;
                                     sQLitePreparedStatement = executeFast;
-                                    vrVar.o(e, true);
+                                    trVar.o(e, true);
                                     if (sQLiteCursor4 != null) {
                                     }
                                     if (sQLitePreparedStatement == null) {
@@ -1581,7 +1581,7 @@ public final /* synthetic */ class xf implements Runnable {
                                     throw th;
                                 }
                             }
-                            executeFast = vrVar.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
+                            executeFast = trVar.b.executeFast("UPDATE dialogs SET ttl_period = ? WHERE did = ?");
                             executeFast.bindInteger(1, chatFull.ttl_period);
                             executeFast.bindLong(2, -chatFull.id);
                             executeFast.step();
@@ -1590,7 +1590,7 @@ public final /* synthetic */ class xf implements Runnable {
                         } catch (Exception e15) {
                             e = e15;
                             sQLitePreparedStatement = sQLitePreparedStatement2;
-                            vrVar.o(e, true);
+                            trVar.o(e, true);
                             if (sQLiteCursor4 != null) {
                             }
                             if (sQLitePreparedStatement == null) {

@@ -1,67 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rn0 extends uj0 {
-    public final /* synthetic */ int f3;
-    public final /* synthetic */ po0 g3;
+public final class rn0 {
+    public final zt a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ rn0(po0 po0Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
-        super(context, e6Var);
-        this.f3 = i7;
-        this.g3 = po0Var;
+    public rn0(View view) {
+        zt ztVar = new zt(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = ztVar;
+        g5.a aVar = Utilities.c;
+        this.c = org.telegram.messenger.g0.T1(5.0f, 9.0f, Utilities.l(aVar.nextFloat()));
+        this.d = org.telegram.messenger.g0.T1(2.5f, 5.0f, Utilities.l(aVar.nextFloat()));
+        this.e = org.telegram.messenger.g0.T1(2.5f, 5.2f, Utilities.l(aVar.nextFloat()));
     }
 
-    @Override // org.telegram.ui.Components.uj0
-    public final boolean E0(float f10) {
-        switch (this.f3) {
-            case 0:
-                po0 po0Var = this.g3;
-                if (f10 >= org.telegram.messenger.g0.L((!po0Var.d2 || po0Var.k2[1] == null) ? 58.0f : 111.0f) + po0Var.C2.b) {
-                }
-                break;
-            default:
-                po0 po0Var2 = this.g3;
-                if (f10 >= org.telegram.messenger.g0.L((!po0Var2.d2 || po0Var2.k2[1] == null) ? 58.0f : 111.0f) + po0Var2.C2.b) {
-                }
-                break;
+    public final void a(Canvas canvas, float f10) {
+        zt ztVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10);
+        canvas.translate(-0.0f, -0.0f);
+        if (f10 <= 0.0f || (ztVar = this.a) == null) {
+            return;
         }
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        switch (this.f3) {
-            case 0:
-                po0 po0Var = this.g3;
-                uj0 uj0Var = po0Var.A1;
-                if (uj0Var.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, org.telegram.messenger.g0.L((!po0Var.d2 || po0Var.k2[1] == null) ? 58.0f : 111.0f) + po0Var.l2, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (uj0Var.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-            default:
-                po0 po0Var2 = this.g3;
-                uj0 uj0Var2 = po0Var2.A1;
-                if (uj0Var2.getVisibility() != 8) {
-                    canvas.save();
-                    canvas.clipRect(0, org.telegram.messenger.g0.L((!po0Var2.d2 || po0Var2.k2[1] == null) ? 58.0f : 111.0f) + po0Var2.l2, getWidth(), getHeight());
-                }
-                super.draw(canvas);
-                if (uj0Var2.getVisibility() != 8) {
-                    canvas.restore();
-                    break;
-                }
-                break;
-        }
+        ztVar.run();
     }
 }

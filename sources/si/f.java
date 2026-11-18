@@ -7,13 +7,13 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.os.Build;
-import bg.c0;
-import c8.hc;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.j6;
+import bg.d0;
+import c8.kc;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.n6;
 import ri.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class f extends ri.e {
     public g E;
@@ -27,9 +27,9 @@ public final class f extends ri.e {
     public final RectF M;
     public final ui.a f;
     public final a h;
-    public final hc n;
-    public final hc r;
-    public hc s;
+    public final kc n;
+    public final kc r;
+    public kc s;
     public boolean w = true;
     public boolean x = true;
     public int y = 1;
@@ -39,13 +39,13 @@ public final class f extends ri.e {
         this.E = gVar;
         this.F = gVar;
         this.G = gVar;
-        this.J = ns.e4;
-        this.L = ns.e4;
+        this.J = ks.e4;
+        this.L = ks.e4;
         this.M = new RectF();
         this.f = aVar;
         this.h = aVar instanceof a ? (a) aVar : null;
         if (aVar instanceof ui.e) {
-            hc cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
+            kc cVar = Build.VERSION.SDK_INT >= 29 ? new c(this) : new b(this, false);
             this.n = cVar;
             this.r = cVar;
         } else {
@@ -81,7 +81,7 @@ public final class f extends ri.e {
         float f15 = (f12 + (z10 ? -0.0f : 0.0f)) * f14;
         float max2 = (Math.max(max * f14, 0.001f) * (z10 ? -1.0f : 1.0f)) + f15;
         int[] iArr = new int[8];
-        c0.a(c0.i, i7, iArr);
+        d0.a(d0.i, i7, iArr);
         int i13 = fVar.y;
         return (i13 == 1 || i13 == 4) ? new LinearGradient(0.0f, max2, 0.0f, f15, iArr, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(max2, 0.0f, f15, 0.0f, iArr, (float[]) null, Shader.TileMode.CLAMP);
     }
@@ -120,8 +120,8 @@ public final class f extends ri.e {
         canvas.clipRect(bounds);
         canvas.translate(bounds.left, bounds.top);
         if (!canvas.isHardwareAccelerated()) {
-            hc hcVar = this.s;
-            hcVar.getClass();
+            kc kcVar = this.s;
+            kcVar.getClass();
         }
         this.s.c(canvas);
         canvas.restore();
@@ -141,16 +141,16 @@ public final class f extends ri.e {
     @Override // ri.e
     public final void g(r rVar) {
         boolean z10 = rVar.a;
-        hc hcVar = this.r;
-        hc hcVar2 = z10 ? this.n : hcVar;
-        hc hcVar3 = this.s;
-        if (hcVar3 != hcVar2) {
-            if (hcVar3 != null) {
-                hcVar3.b();
+        kc kcVar = this.r;
+        kc kcVar2 = z10 ? this.n : kcVar;
+        kc kcVar3 = this.s;
+        if (kcVar3 != kcVar2) {
+            if (kcVar3 != null) {
+                kcVar3.b();
             }
-            this.s = hcVar2;
-            hcVar2.e(this.c / 255.0f);
-            if (this.s == hcVar) {
+            this.s = kcVar2;
+            kcVar2.e(this.c / 255.0f);
+            if (this.s == kcVar) {
                 this.x = true;
             } else {
                 this.w = true;
@@ -177,12 +177,12 @@ public final class f extends ri.e {
         this.x = true;
     }
 
-    @Override // ri.e, org.telegram.ui.ActionBar.z5
+    @Override // ri.e, org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         ui.c cVar = this.H;
         if (cVar != null) {
-            this.I = j6.r1(this.J / 255.0f, cVar.b);
-            this.K = j6.r1(this.L / 255.0f, this.H.b);
+            this.I = n6.r1(this.J / 255.0f, cVar.b);
+            this.K = n6.r1(this.L / 255.0f, this.H.b);
         }
         this.w = true;
         this.x = true;

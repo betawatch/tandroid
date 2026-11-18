@@ -1,64 +1,77 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import org.telegram.messenger.a20;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.we;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.u70;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e7 extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final class e7 extends FrameLayout {
+    public final org.telegram.ui.Components.q9 a;
+    public final b7 b;
+    public final TextView c;
+    public long d;
+    public long e;
+    public final int f;
+    public final org.telegram.ui.ActionBar.i6 h;
 
-    static {
-        a41.h(new e7());
+    public e7(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.f = j10.t0;
+        this.h = i6Var;
+        setWillNotDraw(false);
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+        this.a = q9Var;
+        q9Var.setRoundRadius(org.telegram.messenger.g0.L(28.0f));
+        addView(q9Var, c8.ma.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.j5, i6Var);
+        textView.setTextSize(1, 12.0f);
+        textView.setMaxLines(2);
+        textView.setGravity(49);
+        textView.setLines(2);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, c8.ma.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
+        this.b = new b7(this, i6Var, 1);
+        int i7 = org.telegram.ui.ActionBar.n6.i6;
+        Drawable a02 = org.telegram.ui.ActionBar.n6.a0(org.telegram.ui.ActionBar.n6.x0(null, i7, false), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        org.telegram.ui.ActionBar.q6 M = org.telegram.ui.ActionBar.u6.M(i7);
+        setBackground(a02);
+        org.telegram.ui.ActionBar.u6.j(this, a02, null, M, null);
     }
 
-    public static b41 i(we weVar, a20 a20Var) {
-        b41 K = b41.K(e7.class);
-        K.G = weVar;
-        K.H = a20Var;
-        return K;
+    public long getCurrentDialog() {
+        return this.d;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        f7 f7Var = (f7) view;
-        Object obj = b41Var.G;
-        if (obj instanceof gj) {
-            f7Var.f((gj) obj, z10);
-        } else if (obj instanceof we) {
-            we weVar = (we) obj;
-            f7Var.setTag(weVar);
-            f7Var.f(weVar.e, z10);
-        }
-        Object obj2 = b41Var.H;
-        if (obj2 instanceof a20) {
-            f7Var.setNeedPlayMessageListener((a20) obj2);
-        }
-        f7Var.e(b41Var.e, false);
+    public long getCurrentTopic() {
+        return this.e;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final boolean c(b41 b41Var, b41 b41Var2) {
-        return b41Var.d == b41Var2.d && b41Var.G == b41Var2.G;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(103.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        f7 f7Var = new f7(0, context, e6Var);
-        f7Var.setCheckForButtonPress(true);
-        return f7Var;
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final boolean e(b41 b41Var, b41 b41Var2) {
-        return b41Var.d == b41Var2.d && b41Var.G == b41Var2.G;
+    public void setAsNewBotForumTopic(boolean z10) {
+        this.c.setText(gd.M0(z10 ? 2131745240 : 2131745239, null));
+        org.telegram.ui.Components.q9 q9Var = this.a;
+        q9Var.setAnimatedEmojiDrawable(null);
+        qg.a aVar = new qg.a(qg.a.k[0]);
+        u70 u70Var = new u70(1, null);
+        u70Var.a("");
+        u70Var.i = 1.8f;
+        mq mqVar = new mq(aVar, u70Var, 0, 0);
+        mqVar.x = true;
+        q9Var.setImageDrawable(mqVar);
     }
 }

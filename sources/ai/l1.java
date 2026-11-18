@@ -1,26 +1,36 @@
 package ai;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Shader;
+import android.os.SystemClock;
+import android.text.Layout;
 import android.widget.EditText;
 import java.util.Arrays;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.nu0;
-import org.telegram.ui.Components.xe;
+import org.telegram.ui.Components.gf;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.pt;
+import org.telegram.ui.Components.vu0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class l1 {
-    public static final er E = new er(0.42d, 0.0d, 0.22d, 1.0d);
+    public static final lr J = new lr(0.42d, 0.0d, 0.22d, 1.0d);
     public final int[] A;
     public final float B;
-    public f0 C;
+    public boolean C;
     public boolean D;
+    public float E;
+    public float F;
+    public int[] G;
+    public Runnable H;
+    public boolean I;
     public final EditText b;
     public boolean d;
     public long e;
@@ -43,19 +53,20 @@ public final class l1 {
     public float y;
     public float z;
     public long a = 900;
-    public final nu0 c = new nu0(2600);
+    public final vu0 c = new vu0(2600);
     public float[] i = new float[0];
     public float[] j = new float[0];
     public final Paint o = new Paint(2);
 
-    public l1(xe xeVar) {
+    public l1(gf gfVar) {
         Paint paint = new Paint();
         this.p = paint;
         Paint paint2 = new Paint();
         this.q = paint2;
         this.u = new Matrix();
         this.A = new int[2];
-        this.b = xeVar;
+        this.F = 0.06f;
+        this.b = gfVar;
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.r = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, 0, -16777216, tileMode);
         this.s = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, -16777216, 0, tileMode);
@@ -65,7 +76,75 @@ public final class l1 {
         this.B = org.telegram.messenger.g0.L(22.0f);
     }
 
-    public final void a() {
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x004e, code lost:
+    
+        if (r1 != null) goto L10;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(long j3) {
+        this.a = j3;
+        EditText editText = this.b;
+        Layout layout = editText.getLayout();
+        this.l = 0;
+        if (layout != null && layout.getWidth() > 0 && layout.getHeight() > 0) {
+            Bitmap bitmap = null;
+            try {
+                bitmap = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(bitmap);
+                editText.getPaint().setColor(editText.getCurrentTextColor());
+                layout.draw(canvas);
+                this.l = f(1100, bitmap, false);
+            } catch (Throwable unused) {
+            }
+            bitmap.recycle();
+        }
+        this.n = 0;
+        this.m = 0;
+        this.e = SystemClock.uptimeMillis();
+        this.I = false;
+        this.d = true;
+        editText.invalidate();
+    }
+
+    public final boolean b(float f10, float f11, int i7, boolean z10) {
+        c();
+        EditText editText = this.b;
+        Layout layout = editText.getLayout();
+        if (layout == null || layout.getWidth() <= 0 || layout.getHeight() <= 0) {
+            return false;
+        }
+        try {
+            this.h = Bitmap.createBitmap(layout.getWidth() + org.telegram.messenger.g0.L(4.0f), layout.getHeight(), Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(this.h);
+            editText.getPaint().setColor(editText.getCurrentTextColor());
+            layout.draw(canvas);
+            this.w = editText.getScrollY();
+            this.x = Math.max(1, (editText.getHeight() - editText.getTotalPaddingTop()) - editText.getTotalPaddingBottom());
+            this.k = f(1200, this.h, true);
+            editText.getLocationInWindow(this.A);
+            this.y = (editText instanceof pt ? ((pt) editText).getOffsetY() : 0.0f) + ((editText.getTotalPaddingTop() + r1[1]) - this.w);
+            this.f = f10;
+            this.g = f11;
+            int i10 = this.v;
+            Paint paint = this.q;
+            if (i10 != i7 || paint.getColorFilter() == null) {
+                this.v = i7;
+                paint.setColorFilter(new PorterDuffColorFilter(this.v, PorterDuff.Mode.SRC_IN));
+            }
+            vu0 vu0Var = this.c;
+            vu0Var.a();
+            vu0Var.e(z10);
+            vu0Var.a = s0.k(z10);
+            vu0Var.Q = org.telegram.messenger.g0.L(10.0f);
+            return true;
+        } catch (Throwable unused) {
+            return false;
+        }
+    }
+
+    public final void c() {
         this.d = false;
         this.e = 0L;
         Bitmap bitmap = this.h;
@@ -76,13 +155,13 @@ public final class l1 {
         this.c.a();
     }
 
-    public final float b(float f10) {
-        float interpolation = E.getInterpolation(Math.max(0.0f, Math.min(1.0f, (f10 * 1000.0f) / (this.a - 60.0f))));
+    public final float d(float f10) {
+        float interpolation = J.getInterpolation(Math.max(0.0f, Math.min(1.0f, (f10 * 1000.0f) / (this.a - (this.F * 1000.0f)))));
         float f11 = this.f;
         return com.google.android.gms.internal.vision.e2.z(this.g, f11, interpolation, f11);
     }
 
-    public final void c(LinearGradient linearGradient, float f10, float f11) {
+    public final void e(LinearGradient linearGradient, float f10, float f11) {
         float sqrt = (float) Math.sqrt(1.809999942779541d);
         float f12 = 1.0f / sqrt;
         float f13 = 0.9f / sqrt;
@@ -96,16 +175,20 @@ public final class l1 {
         linearGradient.setLocalMatrix(matrix);
     }
 
-    public final int d(int i7, Bitmap bitmap, boolean z10) {
+    public final int f(int i7, Bitmap bitmap, boolean z10) {
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        int[] iArr = new int[width * height];
-        bitmap.getPixels(iArr, 0, width, 0, 0, width, height);
+        int[] iArr = this.G;
+        if (iArr == null || iArr.length < width * height) {
+            this.G = new int[width * height];
+        }
+        int[] iArr2 = this.G;
+        bitmap.getPixels(iArr2, 0, width, 0, 0, width, height);
         int max = Math.max(1, Math.round(org.telegram.messenger.g0.p * 0.8f));
         int i10 = 0;
         for (int i11 = 0; i11 < height; i11 += max) {
             for (int i12 = 0; i12 < width; i12 += max) {
-                if ((iArr[(i11 * width) + i12] >>> 24) > 90) {
+                if ((iArr2[(i11 * width) + i12] >>> 24) > 90) {
                     i10++;
                 }
             }
@@ -119,7 +202,7 @@ public final class l1 {
         int i14 = 0;
         for (int i15 = 0; i15 < height; i15 += max) {
             for (int i16 = 0; i16 < width; i16 += max) {
-                if ((iArr[(i15 * width) + i16] >>> 24) > 90) {
+                if ((iArr2[(i15 * width) + i16] >>> 24) > 90) {
                     if (z10) {
                         int i17 = this.w;
                         if (i15 >= i17 - max) {
@@ -127,13 +210,13 @@ public final class l1 {
                             }
                         }
                     }
-                    nu0 nu0Var = this.c;
-                    if (nu0Var.d() <= f10) {
+                    vu0 vu0Var = this.c;
+                    if (vu0Var.d() <= f10) {
                         int i18 = i14 + 1;
                         if (i18 * 3 <= fArr.length) {
                             float f11 = max;
-                            float d = ((nu0Var.d() - 0.5f) * f11) + i16;
-                            float d2 = ((nu0Var.d() - 0.5f) * f11) + i15;
+                            float d = ((vu0Var.d() - 0.5f) * f11) + i16;
+                            float d2 = ((vu0Var.d() - 0.5f) * f11) + i15;
                             int i19 = i14 * 3;
                             fArr[i19] = d;
                             fArr[i19 + 1] = d2;
@@ -148,7 +231,7 @@ public final class l1 {
         for (int i20 = 0; i20 < i14; i20++) {
             numArr[i20] = Integer.valueOf(i20);
         }
-        Arrays.sort(numArr, new k(1, fArr));
+        Arrays.sort(numArr, new l(1, fArr));
         float[] copyOf = Arrays.copyOf(fArr, i14 * 3);
         for (int i21 = 0; i21 < i14; i21++) {
             int i22 = i21 * 3;
@@ -165,7 +248,17 @@ public final class l1 {
         return i14;
     }
 
-    public final long e(float f10) {
+    public final float g() {
+        if (!this.d) {
+            return -1.0f;
+        }
+        if (this.e == 0) {
+            return 0.0f;
+        }
+        return J.getInterpolation(Math.min(1.0f, (SystemClock.uptimeMillis() - this.e) / this.a));
+    }
+
+    public final long h(float f10) {
         if (this.g <= this.f) {
             return 0L;
         }
@@ -173,7 +266,7 @@ public final class l1 {
         float f12 = 0.0f;
         for (int i7 = 0; i7 < 24; i7++) {
             float f13 = (f12 + f11) / 2.0f;
-            if (b(f13) < f10) {
+            if (d(f13) < f10) {
                 f12 = f13;
             } else {
                 f11 = f13;

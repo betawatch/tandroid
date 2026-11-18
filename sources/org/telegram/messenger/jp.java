@@ -1,12 +1,11 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class jp {
-    public ArrayList a;
-    public Integer b;
-    public long c;
-    public boolean d;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public boolean e;
 }

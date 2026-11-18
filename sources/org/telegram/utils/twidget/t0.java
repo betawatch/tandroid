@@ -1,76 +1,54 @@
 package org.telegram.utils.twidget;
 
-import android.content.ComponentName;
-import android.content.ServiceConnection;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.RemoteException;
+import android.os.SystemClock;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class t0 implements ServiceConnection {
-    public b a;
-    public int b;
-    public int c;
-    public boolean d;
-    public boolean e;
-    public final j0 f = new j0(this, 2);
-    public final /* synthetic */ u0 h;
+public final /* synthetic */ class t0 implements p0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x0 b;
+    public final /* synthetic */ byte[] c;
+    public final /* synthetic */ int d;
 
-    public t0(u0 u0Var) {
-        this.h = u0Var;
+    public /* synthetic */ t0(int i7, int i10, x0 x0Var, byte[] bArr) {
+        this.a = i10;
+        this.b = x0Var;
+        this.c = bArr;
+        this.d = i7;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v9, types: [org.telegram.utils.twidget.b] */
-    @Override // android.content.ServiceConnection
-    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        a aVar;
-        synchronized (this.h.b) {
-            try {
-                if (this.d) {
-                    final int i7 = this.b + 1;
-                    this.b = i7;
-                    try {
-                        iBinder.linkToDeath(new IBinder.DeathRecipient() { // from class: org.telegram.utils.twidget.s0
-                            @Override // android.os.IBinder.DeathRecipient
-                            public final void binderDied() {
-                                int i10 = i7;
-                                t0 t0Var = t0.this;
-                                t0Var.h.i(t0Var, i10);
-                            }
-                        }, 0);
-                        int i10 = z.b;
-                        IInterface queryLocalInterface = iBinder.queryLocalInterface("org.telegram.utils.twidget.IWidgetEngine");
-                        if (queryLocalInterface == null || !(queryLocalInterface instanceof b)) {
-                            a aVar2 = new a();
-                            aVar2.a = iBinder;
-                            aVar = aVar2;
-                        } else {
-                            aVar = (b) queryLocalInterface;
-                        }
-                        this.a = aVar;
-                        if (this.e) {
-                            try {
-                                aVar.b1();
-                            } catch (RemoteException unused) {
-                            }
-                        }
-                        this.h.b.notifyAll();
-                    } catch (RemoteException unused2) {
-                    }
+    @Override // org.telegram.utils.twidget.p0
+    public final Object run() {
+        switch (this.a) {
+            case 0:
+                x0 x0Var = this.b;
+                byte[] bArr = this.c;
+                int i7 = this.d;
+                byte[] i12 = x0Var.i1(bArr);
+                if (i12.length > 1048576) {
+                    throw new IllegalArgumentException("Signal too long");
                 }
-            } finally {
-            }
+                synchronized (x0Var) {
+                    long elapsedRealtime = SystemClock.elapsedRealtime();
+                    double min = Math.min(2000.0d, ((elapsedRealtime - x0Var.i) * 1.0d) + x0Var.f);
+                    x0Var.f = min;
+                    x0Var.i = elapsedRealtime;
+                    if (min < 1.0d) {
+                        throw new IllegalStateException("Widget engine: too many signals");
+                    }
+                    x0Var.f = min - 1.0d;
+                    x0Var.b.signal(i7, i12);
+                    return null;
+                }
+            default:
+                x0 x0Var2 = this.b;
+                byte[] bArr2 = this.c;
+                int i10 = this.d;
+                x0Var2.getClass();
+                if (bArr2 == null || bArr2.length > 262144) {
+                    throw new IllegalArgumentException("Text too long");
+                }
+                return Float.valueOf(x0Var2.b.textWidth(i10, bArr2));
         }
-    }
-
-    @Override // android.content.ServiceConnection
-    public final void onServiceDisconnected(ComponentName componentName) {
-        int i7;
-        synchronized (this.h.b) {
-            i7 = this.b;
-        }
-        this.h.i(this, i7);
     }
 }

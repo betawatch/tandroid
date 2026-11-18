@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u extends kd.j implements rd.l {
     public Throwable a;
@@ -42,7 +42,7 @@ public final class u extends kd.j implements rd.l {
             }
         }
         if (i7 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             this.b = 1;
             obj = b0.f(b0Var, true, this);
             if (obj == aVar) {
@@ -54,11 +54,11 @@ public final class u extends kd.j implements rd.l {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }
                 th2 = this.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 e1Var = new w0(((Number) obj).intValue(), th2);
                 return new gd.e(e1Var, Boolean.TRUE);
             }
-            af.b.c(obj);
+            b7.h.b(obj);
         }
         e1Var = (e1) obj;
         return new gd.e(e1Var, Boolean.TRUE);

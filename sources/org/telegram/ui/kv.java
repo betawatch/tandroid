@@ -1,70 +1,108 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.content.Context;
+import android.os.Bundle;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kv extends ChatActivityEnterView {
-    public final /* synthetic */ yw O6;
+public final class kv extends jg.m {
+    public final /* synthetic */ bx c0;
+    public final /* synthetic */ cx d0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kv(yw ywVar, Activity activity, rw rwVar) {
-        super(activity, rwVar, null, false, null);
-        this.O6 = ywVar;
+    public kv(cx cxVar, cx cxVar2, Context context, int i7, int i10, boolean z10, ArrayList arrayList, int i11, TLRPC.RequestPeerType requestPeerType, bx bxVar) {
+        super(cxVar2, context, i7, i10, z10, arrayList, i11, requestPeerType);
+        this.d0 = cxVar;
+        this.c0 = bxVar;
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void P0(float f10) {
-        yw ywVar = this.O6;
-        ywVar.A1.setInputBubbleHeight(f10);
-        ywVar.E3();
-        ywVar.F3();
+    @Override // jg.m
+    public final void K() {
+        this.d0.presentFragment(new k());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i7;
-        if (motionEvent.getAction() == 0) {
-            yw ywVar = this.O6;
-            Activity parentActivity = ywVar.getParentActivity();
-            i7 = ((org.telegram.ui.ActionBar.e2) ywVar).classGuid;
-            org.telegram.messenger.g0.a3(parentActivity, i7);
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        yw ywVar = this.O6;
-        int i7 = ywVar.U0;
-        kv kvVar = ywVar.D1;
-        return Math.max(1, i7 + (!TextUtils.isEmpty(kvVar == null ? "" : kvVar.getFieldText()) ? 1 : 0));
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        yw ywVar = this.O6;
-        ArrayList arrayList = ywVar.K2;
-        if (arrayList == null) {
-            return 0L;
-        }
-        int size = arrayList.size();
-        int i7 = 0;
-        long j3 = 0;
-        while (i7 < size) {
-            Object obj = arrayList.get(i7);
-            i7++;
-            long longValue = ((Long) obj).longValue();
-            long N1 = ywVar.getMessagesController().N1(longValue);
-            if (N1 <= 0 && longValue > 0) {
-                N1 = org.telegram.messenger.m5.k(ywVar.getMessagesController().J2(longValue));
+    @Override // jg.m
+    public final void L() {
+        cx cxVar = this.d0;
+        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, cxVar.getParentActivity(), null);
+        TLRPC.RequestPeerType requestPeerType = cxVar.H;
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+            Bundle f10 = p5.c.f(0, "step");
+            Boolean bool = cxVar.H.has_username;
+            if (bool != null) {
+                f10.putBoolean("forcePublic", bool.booleanValue());
             }
-            j3 += N1;
+            ad adVar = new ad(f10);
+            adVar.v0 = new m6(cxVar, adVar, u1Var, 2);
+            cxVar.presentFragment(adVar);
+            return;
         }
-        return j3;
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
+            Bundle bundle = new Bundle();
+            Boolean bool2 = cxVar.H.bot_participant;
+            bundle.putLongArray("result", (bool2 == null || !bool2.booleanValue()) ? new long[]{cxVar.getUserConfig().e()} : new long[]{cxVar.getUserConfig().e(), cxVar.I});
+            Boolean bool3 = cxVar.H.forum;
+            bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
+            bundle.putBoolean("canToggleTopics", false);
+            f50 f50Var = new f50(bundle);
+            f50Var.Z = new cw(cxVar, u1Var);
+            cxVar.presentFragment(f50Var);
+        }
+    }
+
+    @Override // jg.m
+    public final void M(TLRPC.User user) {
+        int i7;
+        i7 = ((org.telegram.ui.ActionBar.h2) this.d0).currentAccount;
+        org.telegram.messenger.mp.u1(i7).E3(null, user, null, 0, null, false, false);
+    }
+
+    @Override // jg.m
+    public final boolean T() {
+        return this.d0.T0 == 0;
+    }
+
+    @Override // jg.m, v4.i0
+    public final void f() {
+        b();
+        int i7 = bx.M;
+        try {
+            super.f();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+        cx cxVar = this.d0;
+        if (cxVar.T0 == 15) {
+            cxVar.k0.setVisibility(this.V ? 8 : 0);
+        }
+    }
+
+    @Override // jg.m, org.telegram.ui.Cells.p2
+    public final void l(org.telegram.ui.Cells.t2 t2Var) {
+        bx bxVar = this.c0;
+        bxVar.a.getClass();
+        this.d0.F4(t2Var, RecyclerView.R(t2Var), 0.0f, bxVar.d);
+    }
+
+    @Override // jg.m, org.telegram.ui.Cells.p2
+    public final void r(org.telegram.ui.Cells.t2 t2Var) {
+        int i7;
+        if (t2Var.getMessage() != null) {
+            cx cxVar = this.d0;
+            org.telegram.messenger.e00 e00Var = cxVar.getMessagesController().t7;
+            long j3 = -t2Var.getDialogId();
+            i7 = ((org.telegram.ui.ActionBar.h2) cxVar).currentAccount;
+            TLRPC.TL_forumTopic f10 = e00Var.f(j3, org.telegram.messenger.fj.b2(i7, t2Var.getMessage().k, true, false));
+            if (f10 != null) {
+                if (cxVar.n2) {
+                    cxVar.a4(t2Var.getDialogId(), f10.id, false, null);
+                } else {
+                    qg.c.n(cxVar, -t2Var.getDialogId(), f10, 0);
+                }
+            }
+        }
     }
 }

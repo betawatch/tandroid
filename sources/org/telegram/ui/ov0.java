@@ -1,30 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ov0 implements jp {
-    public final /* synthetic */ yw a;
-    public final /* synthetic */ pv0 b;
-
-    public ov0(pv0 pv0Var, yw ywVar) {
-        this.b = pv0Var;
-        this.a = ywVar;
-    }
-
-    @Override // org.telegram.ui.jp
-    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        ProfileActivity profileActivity = this.b.b;
-        profileActivity.N1 = true;
-        this.a.removeSelfFromStack();
-        org.telegram.messenger.ns notificationCenter = profileActivity.getNotificationCenter();
-        int i10 = org.telegram.messenger.ns.t;
-        notificationCenter.n(profileActivity, i10);
-        profileActivity.getNotificationCenter().k(i10, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.jp
-    public final void a(TLRPC.User user) {
+public final class ov0 extends iz {
+    @Override // org.telegram.ui.iz, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        canvas.save();
+        canvas.translate(org.telegram.messenger.g0.L(2.0f), 0.0f);
+        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
+        canvas.restore();
     }
 }

@@ -1,71 +1,33 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h3 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class h3 {
+    public final mp a;
+    public final ConnectionsManager b;
 
-    public /* synthetic */ h3(int i7, int i10, long j3, Object obj, Object obj2) {
-        this.a = i10;
-        this.d = obj;
-        this.b = i7;
-        this.e = obj2;
-        this.c = j3;
+    public h3(int i7) {
+        this.a = mp.u1(i7);
+        this.b = ConnectionsManager.getInstance(i7);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                i3 i3Var = (i3) this.d;
-                gj gjVar = (gj) this.e;
-                if (tLObject != null) {
-                    TL_stories.TL_stories_stories tL_stories_stories = (TL_stories.TL_stories_stories) tLObject;
-                    TL_stories.StoryItem storyItem = tL_stories_stories.stories.size() > 0 ? tL_stories_stories.stories.get(0) : null;
-                    if (storyItem == null) {
-                        storyItem = new TL_stories.TL_storyItemDeleted();
-                    }
-                    TL_stories.StoryItem storyItem2 = storyItem;
-                    storyItem2.lastUpdateTime = System.currentTimeMillis();
-                    storyItem2.id = this.b;
-                    g0.h3(new gm(i3Var, gjVar, this.c, storyItem2, 2));
-                    break;
-                }
-                break;
-            case 1:
-                g0.h3(new z1((si) this.d, tLObject, this.b, (z10) this.e, this.c));
-                break;
-            default:
-                np npVar = (np) this.d;
-                TLRPC.TL_help_promoData tL_help_promoData = (TLRPC.TL_help_promoData) this.e;
-                if (this.b == npVar.x2) {
-                    npVar.w2 = 0;
-                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
-                    if (tL_messages_peerDialogs == null || tL_messages_peerDialogs.dialogs.isEmpty()) {
-                        g0.h3(new tj(npVar, 24));
-                    } else {
-                        npVar.getMessagesStorage().m1(tL_help_promoData.users, tL_help_promoData.chats, true, true);
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
-                        tL_messages_dialogs.chats = tL_messages_peerDialogs.chats;
-                        tL_messages_dialogs.users = tL_messages_peerDialogs.users;
-                        tL_messages_dialogs.dialogs = tL_messages_peerDialogs.dialogs;
-                        tL_messages_dialogs.messages = tL_messages_peerDialogs.messages;
-                        npVar.getMessagesStorage().d1(tL_messages_dialogs, 2);
-                        g0.h3(new gm(npVar, tL_help_promoData, tL_messages_peerDialogs, this.c, 1));
-                    }
-                    npVar.v2 = false;
-                    break;
-                }
-                break;
-        }
+    public final void a(long j3, x10 x10Var) {
+        TL_stories.TL_premium_getBoostsStatus tL_premium_getBoostsStatus = new TL_stories.TL_premium_getBoostsStatus();
+        tL_premium_getBoostsStatus.peer = this.a.l1(j3);
+        this.b.sendRequest(tL_premium_getBoostsStatus, new d3(x10Var, 0));
+    }
+
+    public final void b(long j3, TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, x10 x10Var) {
+        g3 g3Var = new g3();
+        mp mpVar = this.a;
+        mpVar.B1(j3);
+        g3Var.j = j3;
+        g3Var.k = mpVar.O0(Long.valueOf(-j3));
+        e3 e3Var = new e3(g3Var, tL_premium_boostsStatus, x10Var, 0);
+        g1 g1Var = new g1(1, g3Var, x10Var);
+        ConnectionsManager.getInstance(j10.t0).sendRequest(new TL_stories.TL_premium_getMyBoosts(), new bi.m1(g1Var, mp.u1(j10.t0), e3Var, 27));
     }
 }

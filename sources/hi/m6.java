@@ -1,52 +1,41 @@
 package hi;
 
-import android.os.Bundle;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class m6 extends o6 {
-    public final /* synthetic */ TLRPC.User b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class m6 extends n6 {
+    public final /* synthetic */ TLRPC.Chat b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(String str, TLRPC.User user) {
+    public m6(String str, TLRPC.Chat chat) {
         super(str);
-        this.b = user;
+        this.b = chat;
     }
 
-    @Override // hi.o6
+    @Override // hi.n6
     public final String a() {
-        return hd.M0(2131743546, null);
+        return gd.M0(2131754819, null);
     }
 
-    @Override // hi.o6
+    @Override // hi.n6
     public final String b() {
-        return q10.p(this.b);
+        return this.b.title;
     }
 
-    @Override // hi.o6
-    public final void c(org.telegram.ui.ActionBar.e2 e2Var) {
-        TLRPC.User user = this.b;
-        if (user.id != m10.i(m10.t0).e()) {
-            e2Var.presentFragment(ProfileActivity.C4(user.id));
-            return;
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", user.id);
-        bundle.putBoolean("my_profile", true);
-        e2Var.presentFragment(new ProfileActivity(bundle, null));
+    @Override // hi.n6
+    public final void c(org.telegram.ui.ActionBar.h2 h2Var) {
+        h2Var.presentFragment(bn.ua(-this.b.id));
     }
 
-    @Override // hi.o6
+    @Override // hi.n6
     public final void d(ImageReceiver imageReceiver) {
-        org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
-        TLRPC.User user = this.b;
-        t8Var.r(user);
-        imageReceiver.i0(user, t8Var, null);
+        org.telegram.ui.Components.b9 b9Var = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+        TLRPC.Chat chat = this.b;
+        b9Var.q(chat);
+        imageReceiver.i0(chat, b9Var, null);
     }
 }

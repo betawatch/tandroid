@@ -1,16 +1,16 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 import android.text.TextUtils;
-import h9.s1;
+import h9.t1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements q0 {
-    public static final s1 r;
+    public static final t1 r;
     public final e2.k1 a;
     public final e2.i1 b;
     public final b3.e c;
@@ -69,7 +69,7 @@ public final class h implements q0 {
     }
 
     public static void a(int i7, int i10, String str, String str2) {
-        ja.i(i7 >= i10, "%s cannot be less than %s", str, str2);
+        la.i(i7 >= i10, "%s cannot be less than %s", str, str2);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x0079  */
@@ -87,20 +87,20 @@ public final class h implements q0 {
         boolean z10;
         long j3;
         float f10;
-        m2.j jVar = p0Var.a;
+        m2.i iVar = p0Var.a;
         long j10 = p0Var.d;
-        g gVar = (g) this.p.get(jVar);
+        g gVar = (g) this.p.get(iVar);
         gVar.getClass();
-        g gVar2 = (g) this.p.get(jVar);
+        g gVar2 = (g) this.p.get(iVar);
         gVar2.getClass();
         synchronized (gVar2) {
             i7 = gVar2.d;
         }
         int i10 = i7 * this.c.b;
-        g gVar3 = (g) this.p.get(jVar);
+        g gVar3 = (g) this.p.get(iVar);
         gVar3.getClass();
         boolean z11 = i10 >= gVar3.c;
-        if (jVar.equals(m2.j.c)) {
+        if (iVar.equals(m2.i.c)) {
             return !z11;
         }
         e2.l1 l1Var = p0Var.b;

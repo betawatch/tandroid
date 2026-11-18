@@ -7,7 +7,7 @@ import java.util.Iterator;
 import ri.p;
 import ri.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c {
     public final ui.a a;
@@ -72,7 +72,7 @@ public final class c {
             qVar.c.add(new p(view, gVar));
         }
         if (this.h != null && this.i != null && view != null) {
-            this.h.d(view, this.i, new ab.g(14, gVar, new WeakReference(view)), z10);
+            this.h.d(view, this.i, new ab.g(13, gVar, new WeakReference(view)), z10);
         }
         xe.b bVar2 = this.f;
         if (bVar2 != null) {

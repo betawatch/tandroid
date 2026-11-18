@@ -1,12 +1,12 @@
 package gb;
 
 import android.util.Log;
-import c8.ee;
+import c8.he;
 import j$.util.Objects;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d1 {
     public final jb.l a;
@@ -60,7 +60,7 @@ public final class d1 {
                 jd.a aVar = jd.a.a;
                 i7 = c1Var.e;
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     if (kotlin.jvm.internal.j.a(d1Var.k, str)) {
                         return gd.k.a;
                     }
@@ -79,7 +79,7 @@ public final class d1 {
                     }
                     a1Var = c1Var.b;
                     str = c1Var.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 for (aa.j jVar : ((Map) obj).values()) {
                     hb.e eVar = new hb.e(str);
@@ -189,7 +189,7 @@ public final class d1 {
         }
         g1 a10 = this.d.a();
         int i7 = yd.a.d;
-        long d = ee.d(a10.a - g1Var.a, yd.c.c);
+        long d = he.d(a10.a - g1Var.a, yd.c.c);
         jb.l lVar = this.a;
         yd.a c11 = lVar.a.c();
         if (c11 != null) {
@@ -203,7 +203,7 @@ public final class d1 {
             if (c10 > 0) {
             }
         }
-        c10 = ee.c(30, yd.c.e);
+        c10 = he.c(30, yd.c.e);
         boolean z10 = yd.a.b(d, c10) > 0;
         if (z10) {
             Log.d("FirebaseSessions", "Session " + n0Var.a + " is expired");

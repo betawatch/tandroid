@@ -2,11 +2,11 @@ package m4;
 
 import e2.t0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.io.EOFException;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d implements f3.o {
     public final int a;
@@ -39,29 +39,29 @@ public final class d implements f3.o {
         do {
             h2.x xVar = this.d;
             f3.l lVar = (f3.l) pVar;
-            lVar.h(xVar.a, 0, 2, false);
+            lVar.g(xVar.a, 0, 2, false);
             xVar.N(0);
             if ((xVar.H() & 65526) == 65520) {
                 i10++;
                 if (i10 >= 4 && i11 > 188) {
                     return true;
                 }
-                lVar.h(xVar.a, 0, 4, false);
+                lVar.g(xVar.a, 0, 4, false);
                 d4.f fVar = this.e;
                 fVar.J(14);
                 int j3 = fVar.j(13);
                 if (j3 <= 6) {
                     i7++;
                     lVar.f = 0;
-                    lVar.n(i7, false);
+                    lVar.x(i7, false);
                 } else {
-                    lVar.n(j3 - 6, false);
+                    lVar.x(j3 - 6, false);
                     i11 += j3;
                 }
             } else {
                 i7++;
                 lVar.f = 0;
-                lVar.n(i7, false);
+                lVar.x(i7, false);
             }
             i10 = 0;
             i11 = 0;
@@ -86,7 +86,7 @@ public final class d implements f3.o {
     @Override // f3.o
     public final List e() {
         h9.g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:69:0x010b A[RETURN] */
@@ -107,7 +107,7 @@ public final class d implements f3.o {
             h2.x xVar = this.d;
             if (!this.j) {
                 this.i = -1;
-                pVar.l();
+                pVar.n();
                 long j3 = 0;
                 if (pVar.getPosition() == 0) {
                     g(pVar);
@@ -115,7 +115,7 @@ public final class d implements f3.o {
                 int i12 = 0;
                 while (true) {
                     try {
-                        if (!pVar.h(xVar.a, i11, 2, true)) {
+                        if (!pVar.g(xVar.a, i11, 2, true)) {
                             break;
                         }
                         xVar.N(i11);
@@ -123,7 +123,7 @@ public final class d implements f3.o {
                             i12 = i11;
                             break;
                         }
-                        if (!pVar.h(xVar.a, i11, 4, true)) {
+                        if (!pVar.g(xVar.a, i11, 4, true)) {
                             break;
                         }
                         fVar.J(14);
@@ -134,13 +134,13 @@ public final class d implements f3.o {
                         }
                         j3 += j10;
                         i12++;
-                        if (i12 != 1000 && pVar.n(j10 - 6, true)) {
+                        if (i12 != 1000 && pVar.x(j10 - 6, true)) {
                             i11 = 0;
                         }
                     } catch (EOFException unused) {
                     }
                 }
-                pVar.l();
+                pVar.n();
                 if (i12 > 0) {
                     this.i = (int) (j3 / i12);
                 } else {
@@ -164,7 +164,7 @@ public final class d implements f3.o {
                         int i13 = this.i;
                         i7 = -1;
                         eVar = eVar2;
-                        qVar.f(new f3.k(length, this.h, (int) ((i13 * 8000000) / j11), i13, false, true));
+                        qVar.j(new f3.k(length, this.h, (int) ((i13 * 8000000) / j11), i13, false, true));
                         this.l = true;
                         if (z10) {
                             return i7;
@@ -181,7 +181,7 @@ public final class d implements f3.o {
                 }
                 i7 = -1;
                 eVar = eVar2;
-                this.f.f(new f3.t(-9223372036854775807L));
+                this.f.j(new f3.t(-9223372036854775807L));
                 this.l = true;
                 if (z10) {
                 }
@@ -197,7 +197,7 @@ public final class d implements f3.o {
         int i7 = 0;
         while (true) {
             h2.x xVar = this.d;
-            pVar.c(0, 10, xVar.a);
+            pVar.b(0, 10, xVar.a);
             xVar.N(0);
             if (xVar.D() != 4801587) {
                 break;
@@ -205,10 +205,10 @@ public final class d implements f3.o {
             xVar.O(3);
             int z10 = xVar.z();
             i7 += z10 + 10;
-            pVar.k(z10);
+            pVar.m(z10);
         }
-        pVar.l();
-        pVar.k(i7);
+        pVar.n();
+        pVar.m(i7);
         if (this.h == -1) {
             this.h = i7;
         }

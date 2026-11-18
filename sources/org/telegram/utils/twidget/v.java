@@ -1,49 +1,36 @@
 package org.telegram.utils.twidget;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.content.Context;
+import android.net.Uri;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class v extends LinkedHashMap {
+public final /* synthetic */ class v implements x, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Serializable b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ v(float f10, int i7, int i10, boolean z10) {
-        super(i7, f10, z10);
-        this.a = i10;
+    public /* synthetic */ v(int i7, Serializable serializable, Object obj) {
+        this.a = i7;
+        this.c = obj;
+        this.b = serializable;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public static Matcher b(String str, Pattern pattern, v vVar) {
-        Matcher matcher = (Matcher) vVar.get(pattern);
-        if (matcher != null) {
-            matcher.reset(str);
-            return matcher;
-        }
-        Matcher matcher2 = pattern.matcher(str);
-        vVar.put(pattern, matcher2);
-        return matcher2;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        vf.c.q((Context) this.c, Uri.parse((String) this.b), true, false);
     }
 
-    @Override // java.util.LinkedHashMap
-    public final boolean removeEldestEntry(Map.Entry entry) {
+    @Override // org.telegram.utils.twidget.x
+    public void run() {
         switch (this.a) {
             case 0:
-                if (size() > 8192) {
-                }
-                break;
-            case 1:
-                if (size() > 4) {
-                }
+                ((y) this.c).a((byte[]) this.b);
                 break;
             default:
-                if (size() > 32) {
-                }
+                ((WidgetEngineBackend) this.c).lambda$send$11((byte[]) this.b);
                 break;
         }
-        return false;
     }
 }

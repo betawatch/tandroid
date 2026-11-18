@@ -3,11 +3,11 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.au0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d extends y {
+public final class d extends z {
     public final /* synthetic */ k h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -35,18 +35,18 @@ public final class d extends y {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        st0 st0Var = this.h.L0;
-        if (st0Var != null) {
-            st0Var.P.add(this);
+        au0 au0Var = this.h.L0;
+        if (au0Var != null) {
+            au0Var.P.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        st0 st0Var = this.h.L0;
-        if (st0Var != null) {
-            st0Var.P.remove(this);
+        au0 au0Var = this.h.L0;
+        if (au0Var != null) {
+            au0Var.P.remove(this);
         }
     }
 

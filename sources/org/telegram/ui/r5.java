@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class r5 extends FrameLayout {
     public final /* synthetic */ t5 a;
@@ -18,13 +18,13 @@ public final class r5 extends FrameLayout {
         this.a = t5Var;
         final int i7 = 0;
         setWillNotDraw(false);
-        di.k4 k4Var = new di.k4(t5Var, getContext());
-        di.k4 k4Var2 = new di.k4(t5Var, getContext());
-        di.k4 k4Var3 = new di.k4(t5Var, getContext());
-        k4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.hd.M0(2131753664, null));
-        k4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.hd.M0(2131749553, null));
-        k4Var3.c(R.drawable.filled_info, org.telegram.messenger.hd.M0(2131750830, null));
-        k4Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
+        di.n4 n4Var = new di.n4(t5Var, getContext());
+        di.n4 n4Var2 = new di.n4(t5Var, getContext());
+        di.n4 n4Var3 = new di.n4(t5Var, getContext());
+        n4Var.c(R.drawable.filled_boost_plus, org.telegram.messenger.gd.M0(2131753662, null));
+        n4Var2.c(R.drawable.filled_gift_premium, org.telegram.messenger.gd.M0(2131749378, null));
+        n4Var3.c(R.drawable.filled_info, org.telegram.messenger.gd.M0(2131750819, null));
+        n4Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
             {
@@ -33,23 +33,23 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i10 = i7;
                 r5 r5Var = this.b;
                 switch (i10) {
                     case 0:
                         t5 t5Var2 = r5Var.a;
                         long j3 = t5Var2.S;
-                        org.telegram.messenger.e3 e3Var = t5Var2.V;
+                        org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i11 = ug.j0.S2;
-                        if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.j0 j0Var = new ug.j0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            j0Var.A1(e3Var);
-                            j0Var.z1(tL_premium_boostsStatus, true);
-                            j0Var.B1(j3);
-                            j0Var.c2 = null;
-                            t5Var2.showDialog(j0Var);
+                        int i11 = ug.l0.S2;
+                        if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
+                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            l0Var.B1(g3Var);
+                            l0Var.A1(tL_premium_boostsStatus, true);
+                            l0Var.C1(j3);
+                            l0Var.c2 = null;
+                            t5Var2.showDialog(l0Var);
                             break;
                         }
                         break;
@@ -57,22 +57,22 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        e6Var = ((org.telegram.ui.ActionBar.e2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, e6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.j0 j0Var2 = new ug.j0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        j0Var2.z1(t5Var4.U, true);
-                        j0Var2.B1(t5Var4.S);
-                        t5Var4.showDialog(j0Var2);
+                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        l0Var2.A1(t5Var4.U, true);
+                        l0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(l0Var2);
                         break;
                 }
             }
         });
         final int i10 = 1;
-        k4Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
+        n4Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
             {
@@ -81,23 +81,23 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i102 = i10;
                 r5 r5Var = this.b;
                 switch (i102) {
                     case 0:
                         t5 t5Var2 = r5Var.a;
                         long j3 = t5Var2.S;
-                        org.telegram.messenger.e3 e3Var = t5Var2.V;
+                        org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i11 = ug.j0.S2;
-                        if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.j0 j0Var = new ug.j0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            j0Var.A1(e3Var);
-                            j0Var.z1(tL_premium_boostsStatus, true);
-                            j0Var.B1(j3);
-                            j0Var.c2 = null;
-                            t5Var2.showDialog(j0Var);
+                        int i11 = ug.l0.S2;
+                        if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
+                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            l0Var.B1(g3Var);
+                            l0Var.A1(tL_premium_boostsStatus, true);
+                            l0Var.C1(j3);
+                            l0Var.c2 = null;
+                            t5Var2.showDialog(l0Var);
                             break;
                         }
                         break;
@@ -105,22 +105,22 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        e6Var = ((org.telegram.ui.ActionBar.e2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, e6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.j0 j0Var2 = new ug.j0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        j0Var2.z1(t5Var4.U, true);
-                        j0Var2.B1(t5Var4.S);
-                        t5Var4.showDialog(j0Var2);
+                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        l0Var2.A1(t5Var4.U, true);
+                        l0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(l0Var2);
                         break;
                 }
             }
         });
         final int i11 = 2;
-        k4Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
+        n4Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.p5
             public final /* synthetic */ r5 b;
 
             {
@@ -129,23 +129,23 @@ public final class r5 extends FrameLayout {
 
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                org.telegram.ui.ActionBar.e6 e6Var;
+                org.telegram.ui.ActionBar.i6 i6Var;
                 int i102 = i11;
                 r5 r5Var = this.b;
                 switch (i102) {
                     case 0:
                         t5 t5Var2 = r5Var.a;
                         long j3 = t5Var2.S;
-                        org.telegram.messenger.e3 e3Var = t5Var2.V;
+                        org.telegram.messenger.g3 g3Var = t5Var2.V;
                         TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = t5Var2.U;
-                        int i112 = ug.j0.S2;
-                        if (e3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
-                            ug.j0 j0Var = new ug.j0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
-                            j0Var.A1(e3Var);
-                            j0Var.z1(tL_premium_boostsStatus, true);
-                            j0Var.B1(j3);
-                            j0Var.c2 = null;
-                            t5Var2.showDialog(j0Var);
+                        int i112 = ug.l0.S2;
+                        if (g3Var != null && tL_premium_boostsStatus != null && t5Var2.getParentActivity() != null) {
+                            ug.l0 l0Var = new ug.l0(19, t5Var2.getCurrentAccount(), t5Var2.getParentActivity(), t5Var2, t5Var2.getResourceProvider());
+                            l0Var.B1(g3Var);
+                            l0Var.A1(tL_premium_boostsStatus, true);
+                            l0Var.C1(j3);
+                            l0Var.c2 = null;
+                            t5Var2.showDialog(l0Var);
                             break;
                         }
                         break;
@@ -153,27 +153,27 @@ public final class r5 extends FrameLayout {
                         t5 t5Var3 = r5Var.a;
                         t5Var3.y0(true);
                         long j10 = t5Var3.S;
-                        e6Var = ((org.telegram.ui.ActionBar.e2) t5Var3).resourceProvider;
-                        wg.l.I0(t5Var3, e6Var, j10, null);
+                        i6Var = ((org.telegram.ui.ActionBar.h2) t5Var3).resourceProvider;
+                        wg.l.J0(t5Var3, i6Var, j10, null);
                         wg.l.p1.I0 = new q5(r5Var, 0);
                         break;
                     default:
                         t5 t5Var4 = r5Var.a;
-                        ug.j0 j0Var2 = new ug.j0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
-                        j0Var2.z1(t5Var4.U, true);
-                        j0Var2.B1(t5Var4.S);
-                        t5Var4.showDialog(j0Var2);
+                        ug.l0 l0Var2 = new ug.l0(31, t5Var4.T, r5Var.getContext(), t5Var4, t5Var4.getResourceProvider());
+                        l0Var2.A1(t5Var4.U, true);
+                        l0Var2.C1(t5Var4.S);
+                        t5Var4.showDialog(l0Var2);
                         break;
                 }
             }
         });
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(k4Var, c8.ja.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        if (org.telegram.messenger.np.s1(t5Var.T).q4 && org.telegram.messenger.t3.N(t5Var.j0)) {
-            linearLayout.addView(k4Var2, c8.ja.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        linearLayout.addView(n4Var, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        if (org.telegram.messenger.mp.u1(t5Var.T).s4 && org.telegram.messenger.v3.N(t5Var.j0)) {
+            linearLayout.addView(n4Var2, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
         }
-        linearLayout.addView(k4Var3, c8.ja.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, c8.ja.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
+        linearLayout.addView(n4Var3, c8.ma.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+        addView(linearLayout, c8.ma.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
     }
 }

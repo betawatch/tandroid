@@ -1,160 +1,141 @@
 package oi;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.ez;
-import org.telegram.messenger.fc;
-import org.telegram.messenger.w7;
-import org.telegram.tgnet.TLRPC;
+import java.util.IdentityHashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.c20;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ef;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w4 b;
+public final class t4 implements fs {
+    public final int a;
+    public final h6.m b;
+    public fj c;
+    public e20 d;
+    public String e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
 
-    public /* synthetic */ t4(w4 w4Var, int i7) {
+    public t4(int i7, ef efVar, h6.m mVar) {
         this.a = i7;
-        this.b = w4Var;
+        this.b = mVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:100:0x0187, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x0113, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:74:0x0115, code lost:
-    
-        r1.recycle();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x0153, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x017e, code lost:
-    
-        if (r1.isRecycled() == false) goto L75;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        Bitmap bitmap;
-        switch (this.a) {
-            case 0:
-                w4 w4Var = this.b;
-                String str = w4Var.b;
-                TLRPC.Document document = w4Var.r;
-                String str2 = null;
-                if (document != null && !TextUtils.isEmpty(str)) {
-                    try {
-                        String str3 = document.mime_type;
-                        String lowerCase = str3 == null ? "" : str3.toLowerCase();
-                        bitmap = lowerCase.startsWith("image/") ? fc.K(str, null, 320.0f, 320.0f, true) : lowerCase.equals("video/mp4") ? ez.r(1, str) : null;
-                        if (bitmap != null) {
-                            try {
-                                ArrayList<TLRPC.DocumentAttribute> arrayList = document.attributes;
-                                int size = arrayList.size();
-                                int i7 = 0;
-                                while (true) {
-                                    if (i7 < size) {
-                                        TLRPC.DocumentAttribute documentAttribute = arrayList.get(i7);
-                                        i7++;
-                                        if (documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) {
-                                        }
-                                    } else {
-                                        TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
-                                        tL_documentAttributeImageSize.w = bitmap.getWidth();
-                                        tL_documentAttributeImageSize.h = bitmap.getHeight();
-                                        document.attributes.add(tL_documentAttributeImageSize);
-                                    }
-                                }
-                                TLRPC.PhotoSize Z = fc.Z(bitmap, 320.0f, 320.0f, 80, false);
-                                if (Z != null) {
-                                    document.thumbs.clear();
-                                    document.thumbs.add(Z);
-                                    document.flags |= 1;
-                                    w7.G(w4Var.a);
-                                    File J = w7.J(Z, null, true, true);
-                                    if (J != null && J.exists()) {
-                                        str2 = J.getAbsolutePath();
-                                    }
-                                    break;
-                                } else {
-                                    break;
-                                }
-                            } catch (Throwable unused) {
-                                if (bitmap != null) {
-                                    break;
-                                }
-                                w4Var.G = str2;
-                                org.telegram.messenger.g0.h3(new t4(w4Var, 2));
-                                return;
+    public static boolean c(ef efVar) {
+        if (!efVar.b) {
+            ArrayList arrayList = efVar.q;
+            ArrayList arrayList2 = (arrayList == null || arrayList.isEmpty()) ? efVar.p : efVar.q;
+            if (arrayList2 != null) {
+                int size = arrayList2.size();
+                for (int i7 = 0; i7 < size; i7++) {
+                    c20 c20Var = (c20) arrayList2.get(i7);
+                    if (c20Var != null) {
+                        if (c20Var.a == 0) {
+                            byte b10 = c20Var.b;
+                            if ((b10 & 1) != 0 || (b10 & 4) != 0) {
+                                return true;
                             }
-                        } else if (bitmap != null) {
-                            break;
                         }
-                    } catch (Throwable unused2) {
-                        bitmap = null;
-                    }
-                }
-                w4Var.G = str2;
-                org.telegram.messenger.g0.h3(new t4(w4Var, 2));
-                return;
-            case 1:
-                w4 w4Var2 = this.b;
-                String str4 = w4Var2.b;
-                try {
-                    BitmapFactory.Options options = new BitmapFactory.Options();
-                    options.inJustDecodeBounds = true;
-                    BitmapFactory.decodeFile(str4, options);
-                    String str5 = options.outMimeType;
-                    boolean z10 = str5 != null && (str5.equalsIgnoreCase("image/jpeg") || str5.equalsIgnoreCase("image/jpg"));
-                    float Z0 = org.telegram.messenger.g0.Z0(false);
-                    Bitmap K = fc.K(str4, null, Z0, Z0, true);
-                    if (K == null) {
-                        K = fc.K(str4, null, 800.0f, 800.0f, true);
-                    }
-                    if (K != null) {
-                        File file = new File(w7.z(4), "rich_jpeg_" + Math.abs(str4.hashCode()) + ".jpg");
-                        try {
-                            FileOutputStream fileOutputStream = new FileOutputStream(file);
-                            try {
-                                boolean compress = K.compress(Bitmap.CompressFormat.JPEG, 89, fileOutputStream);
-                                fileOutputStream.close();
-                                if (compress && file.length() > 0) {
-                                    if (z10) {
-                                        long length = new File(str4).length();
-                                        if (length > 0 && file.length() >= length) {
-                                        }
-                                    }
-                                    str4 = file.getAbsolutePath();
-                                }
-                            } finally {
-                            }
-                        } finally {
-                            K.recycle();
+                        ArrayList arrayList3 = c20Var.k;
+                        if (arrayList3 != null && !arrayList3.isEmpty()) {
+                            return true;
                         }
                     }
-                } catch (Throwable unused3) {
                 }
-                org.telegram.messenger.g0.h3(new u4(1, w4Var2, str4));
+            }
+        }
+        return false;
+    }
+
+    public final void a() {
+        if (this.n || this.h) {
+            return;
+        }
+        this.h = true;
+        if (this.c != null && this.d != null) {
+            try {
+                MediaController.B().i(this.c);
+            } catch (Throwable unused) {
+            }
+        }
+        d();
+    }
+
+    public final void b() {
+        if (this.n) {
+            return;
+        }
+        this.n = true;
+        d();
+        h6.m mVar = this.b;
+        s3 s3Var = (s3) mVar.d;
+        IdentityHashMap identityHashMap = s3Var.i4;
+        r rVar = (r) mVar.b;
+        identityHashMap.remove(rVar);
+        rVar.a = 3;
+        s3Var.t4((a) mVar.c, rVar);
+        s3Var.p3.onContentChanged();
+    }
+
+    public final void d() {
+        ks f10 = ks.f(this.a);
+        f10.n(this, ks.a2);
+        f10.n(this, ks.b2);
+        f10.n(this, ks.c2);
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        h6.m mVar = this.b;
+        a aVar = (a) mVar.c;
+        r rVar = (r) mVar.b;
+        s3 s3Var = (s3) mVar.d;
+        if (this.h || this.n || i10 != this.a || objArr.length == 0 || objArr[0] != this.c) {
+            return;
+        }
+        if (i7 != ks.b2) {
+            if (i7 == ks.c2) {
+                b();
                 return;
-            default:
-                w4 w4Var3 = this.b;
-                if (w4Var3.x || w4Var3.y) {
-                    return;
-                }
-                w4Var3.a(w4Var3.b);
-                return;
+            }
+            return;
+        }
+        long longValue = ((Long) objArr[3]).longValue();
+        rVar.f = ((Float) objArr[4]).floatValue();
+        View C1 = s3Var.C1(aVar);
+        if (C1 instanceof r4) {
+            C1.requestLayout();
+            C1.invalidate();
+        }
+        if (longValue > 0) {
+            this.n = true;
+            d();
+            String str = this.e;
+            e20 e20Var = this.d;
+            int i11 = e20Var.k;
+            int i12 = e20Var.l;
+            int ceil = (int) Math.ceil(e20Var.r / 1000.0d);
+            s3Var.i4.remove(rVar);
+            rVar.b = true;
+            rVar.e = str;
+            if (i11 > 0) {
+                rVar.j = i11;
+            }
+            if (i12 > 0) {
+                rVar.k = i12;
+            }
+            rVar.l = 0;
+            rVar.m = 0;
+            rVar.f = 0.0f;
+            s3Var.q4(aVar);
+            s3Var.O4((a) mVar.c, rVar, str, true, rVar.j, rVar.k, ceil);
         }
     }
 }

@@ -1,15 +1,15 @@
 package hi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ ta b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ c9(sa saVar, boolean z10, int i7) {
+    public /* synthetic */ c9(ta taVar, boolean z10, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = taVar;
         this.c = z10;
     }
 
@@ -20,19 +20,19 @@ public final /* synthetic */ class c9 implements Runnable {
                 this.b.e(this.c);
                 break;
             case 1:
-                sa saVar = this.b;
+                ta taVar = this.b;
                 if (!this.c) {
-                    saVar.K0.b(false, false);
+                    taVar.K0.b(false, false);
                     break;
                 } else {
-                    saVar.getClass();
+                    taVar.getClass();
                     break;
                 }
             default:
-                sa saVar2 = this.b;
-                saVar2.S = null;
-                saVar2.e = false;
-                saVar2.p(this.c);
+                ta taVar2 = this.b;
+                taVar2.S = null;
+                taVar2.e = false;
+                taVar2.p(this.c);
                 break;
         }
     }

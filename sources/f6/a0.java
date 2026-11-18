@@ -3,7 +3,7 @@ package f6;
 import android.os.Parcel;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a = 0;
@@ -23,7 +23,7 @@ public final /* synthetic */ class a0 implements com.google.android.gms.common.a
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         switch (this.a) {
             case 0:
-                q6.m.i("Not active connection", this.b.G != 1);
+                q6.m.j("Not active connection", this.b.G != 1);
                 if (this.d != null) {
                     j6.f fVar = (j6.f) xVar.n();
                     Parcel p12 = fVar.p1();
@@ -33,7 +33,7 @@ public final /* synthetic */ class a0 implements com.google.android.gms.common.a
                 taskCompletionSource.setResult(null);
                 break;
             default:
-                q6.m.i("Not active connection", this.b.G != 1);
+                q6.m.j("Not active connection", this.b.G != 1);
                 j6.f fVar2 = (j6.f) xVar.n();
                 Parcel p13 = fVar2.p1();
                 String str = this.c;

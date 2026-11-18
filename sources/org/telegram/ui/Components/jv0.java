@@ -1,85 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jv0 implements org.telegram.ui.ActionBar.l0, org.telegram.messenger.tr {
-    public final /* synthetic */ bw0 a;
+public final class jv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kv0 b;
 
-    public /* synthetic */ jv0(bw0 bw0Var) {
-        this.a = bw0Var;
+    public /* synthetic */ jv0(kv0 kv0Var, int i7) {
+        this.a = i7;
+        this.b = kv0Var;
     }
 
-    @Override // org.telegram.messenger.tr
-    public void a(String str) {
-        bw0 bw0Var = this.a;
-        new o30(bw0Var.getContext(), bw0Var.j2, null, bw0Var.J0).show();
-    }
-
-    @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
-        String str;
-        bw0 bw0Var = this.a;
-        org.telegram.ui.ActionBar.e2 e2Var = bw0Var.G1;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = bw0Var.N1;
-        if (tL_messages_stickerSet == null) {
-            return;
-        }
-        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-        if (stickerSet == null || !stickerSet.emojis) {
-            str = "https://" + org.telegram.messenger.np.s1(bw0Var.a).V2 + "/addstickers/" + bw0Var.N1.set.short_name;
-        } else {
-            str = "https://" + org.telegram.messenger.np.s1(bw0Var.a).V2 + "/addemoji/" + bw0Var.N1.set.short_name;
-        }
-        String str2 = str;
-        if (i7 == 1) {
-            Context context = bw0Var.I1;
-            if (context == null && e2Var != null) {
-                context = e2Var.getParentActivity();
-            }
-            if (context == null) {
-                context = bw0Var.getContext();
-            }
-            mv0 mv0Var = new mv0(bw0Var, context, str2, str2, bw0Var.J0);
-            if (e2Var == null) {
-                mv0Var.show();
-                return;
-            }
-            e2Var.showDialog(mv0Var);
-            if (e2Var instanceof org.telegram.ui.an) {
-                boolean V9 = ((org.telegram.ui.an) e2Var).V9();
-                mv0Var.i0 = V9;
-                mv0Var.n = V9;
-                return;
-            }
-            return;
-        }
-        if (i7 == 2) {
-            try {
-                org.telegram.messenger.g0.g(str2);
-                new cc((FrameLayout) bw0Var.b, bw0Var.J0).k(false).j();
-                return;
-            } catch (Exception e10) {
-                org.telegram.messenger.a8.g(e10, true);
-                return;
-            }
-        }
-        if (i7 == 3) {
-            if (bw0Var.M1) {
-                bw0Var.L0();
-                return;
-            } else {
-                bw0Var.N0();
-                return;
-            }
-        }
-        if (i7 == 4) {
-            gw0.c(bw0Var.N1.set, bw0Var.J0, bw0Var.getContext(), new d(bw0Var, 20));
-        } else if (i7 == 5) {
-            gw0.b(bw0Var.N1.set, bw0Var.J0, bw0Var.getContext(), new kv0(bw0Var, 2));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.s.setVisibility(8);
+                break;
+            case 1:
+                this.b.s.setVisibility(8);
+                break;
+            default:
+                this.b.s.setVisibility(8);
+                break;
         }
     }
 }

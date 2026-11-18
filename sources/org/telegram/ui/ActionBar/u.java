@@ -1,46 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.Outline;
+import android.graphics.Path;
+import android.os.Build;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ e2 b;
-    public final /* synthetic */ e2 c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ ActionBarLayout e;
+public final class u extends ViewOutlineProvider {
+    public final Path a = new Path();
 
-    public u(ActionBarLayout actionBarLayout, boolean z10, e2 e2Var, e2 e2Var2, boolean z11) {
-        this.e = actionBarLayout;
-        this.a = z10;
-        this.b = e2Var;
-        this.c = e2Var2;
-        this.d = z11;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        ActionBarLayout actionBarLayout = this.e;
-        if (actionBarLayout.d != this) {
-            return;
-        }
-        actionBarLayout.d = null;
-        if (this.a) {
-            e2 e2Var = this.b;
-            if (e2Var != null) {
-                e2Var.onTransitionAnimationStart(false, false);
-            }
-            this.c.onTransitionAnimationStart(true, false);
-            actionBarLayout.h0(true, true, this.d);
-            return;
-        }
-        Runnable runnable = actionBarLayout.e;
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            if (actionBarLayout.Y0) {
-                actionBarLayout.e.run();
-            } else {
-                org.telegram.messenger.g0.i3(actionBarLayout.e, 200L);
-            }
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        float L = org.telegram.messenger.g0.L(29.0f);
+        float L2 = org.telegram.messenger.g0.L(12.0f);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(0.0f, 0.0f, view.getWidth(), view.getHeight(), new float[]{L, L, L, L, L2, L2, L2, L2}, Path.Direction.CW);
+        if (Build.VERSION.SDK_INT >= 30) {
+            outline.setPath(path);
+        } else {
+            outline.setConvexPath(path);
         }
     }
 }

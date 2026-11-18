@@ -1,6 +1,5 @@
 package yf;
 
-import ai.e1;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import java.util.ArrayList;
@@ -9,18 +8,18 @@ import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import ug.t1;
+import wg.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public static volatile long g;
@@ -35,7 +34,7 @@ public final class c {
 
     public c(int i7) {
         this.c = i7;
-        this.a = m10.i(i7).n;
+        this.a = j10.i(i7).n;
         SharedPreferences d = d();
         try {
             g = d.getLong("hash", 0L);
@@ -43,7 +42,7 @@ public final class c {
         } catch (Exception e10) {
             a8.g(e10, true);
         }
-        g0.h3(new a(this, 0));
+        g0.g3(new a(this, 0));
     }
 
     public final void a(TLRPC.Document document) {
@@ -65,7 +64,7 @@ public final class c {
             f(true);
             this.f = true;
         }
-        Utilities.e.c(new t1(22, this, new ArrayList(this.e)));
+        Utilities.e.c(new r(14, this, new ArrayList(this.e)));
     }
 
     public final TLRPC.Document c(long j3) {
@@ -135,12 +134,12 @@ public final class c {
                 bVar.c = i11;
                 arrayList.add(bVar);
             } catch (Throwable th2) {
-                boolean z11 = r2.a;
+                boolean z11 = s2.a;
                 a8.g(th2, true);
             }
         }
         if (z10) {
-            g0.h3(new a(this, 1));
+            g0.g3(new a(this, 1));
         }
     }
 
@@ -149,7 +148,7 @@ public final class c {
         TL_account.getSavedRingtones getsavedringtones = new TL_account.getSavedRingtones();
         getsavedringtones.hash = g;
         if (z11) {
-            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new e1(this, 27));
+            ConnectionsManager.getInstance(this.c).sendRequest(getsavedringtones, new d(this, 1));
             return;
         }
         if (!this.f) {
@@ -170,7 +169,7 @@ public final class c {
             if (i7 >= arrayList.size()) {
                 edit.putInt("count", i10);
                 edit.apply();
-                ns.f(this.c).k(ns.e5, new Object[0]);
+                ks.f(this.c).k(ks.g5, new Object[0]);
                 return;
             }
             if (!((b) arrayList.get(i7)).d) {

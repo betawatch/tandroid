@@ -2,42 +2,44 @@ package a3;
 
 import aa.c0;
 import aa.f0;
+import ai.n0;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import e2.m1;
-import fi.f6;
+import fi.a6;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import oi.n3;
+import oi.p3;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p2;
-import org.telegram.messenger.qr;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.or;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.q2;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.yo;
+import org.telegram.messenger.xo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.q1;
-import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.u1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ew0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements p, l5.g, qr, q1, yo {
+public final /* synthetic */ class g implements p, ai.f, l5.g, or, r1, xo {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -64,7 +66,7 @@ public final /* synthetic */ class g implements p, l5.g, qr, q1, yo {
         if (this.b) {
             boolean z10 = true;
             CountDownLatch countDownLatch = new CountDownLatch(1);
-            new Thread(new f6(25, bVar, countDownLatch)).start();
+            new Thread(new a6(27, bVar, countDownLatch)).start();
             TimeUnit timeUnit = TimeUnit.SECONDS;
             ExecutorService executorService = f0.a;
             boolean z11 = false;
@@ -99,13 +101,38 @@ public final /* synthetic */ class g implements p, l5.g, qr, q1, yo {
         taskCompletionSource.trySetResult(bVar2);
     }
 
-    @Override // org.telegram.messenger.yo
-    public boolean d(TLRPC.TL_error tL_error) {
-        return ProfileActivity.d0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (e2) this.e, tL_error);
+    @Override // ai.f
+    public void c(TLRPC.TL_error tL_error, String str) {
+        n0 n0Var = (n0) this.c;
+        ai.g gVar = (ai.g) this.d;
+        ai.g gVar2 = (ai.g) this.e;
+        if (n0Var.r != 4) {
+            return;
+        }
+        if (str != null) {
+            g0.h3(new aa.r(n0Var, str, gVar2, 3), Math.max(0L, (n0Var.V + 1200) - SystemClock.uptimeMillis()));
+            return;
+        }
+        n0Var.r = 3;
+        n0Var.K = gVar;
+        n0Var.F.f(false);
+        n0Var.e(0L, 240L);
+        if (!this.b) {
+            n0Var.J = null;
+        }
+        n0Var.w.d(gVar.a(), false);
+        n0Var.w.setRevert(n0Var.J != null);
+        n0Var.B(false);
+        n0.E(tL_error);
+    }
+
+    @Override // org.telegram.messenger.xo
+    public boolean e(TLRPC.TL_error tL_error) {
+        return ProfileActivity.d0((ProfileActivity) this.c, (boolean[]) this.d, this.b, (h2) this.e, tL_error);
     }
 
     @Override // a3.p
-    public s1 f(int i7, m1 m1Var, int[] iArr) {
+    public t1 f(int i7, m1 m1Var, int[] iArr) {
         s sVar = (s) this.c;
         n nVar = (n) this.d;
         int[] iArr2 = (int[]) this.e;
@@ -119,47 +146,47 @@ public final /* synthetic */ class g implements p, l5.g, qr, q1, yo {
         return p10.f();
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(t1 t1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(u1 u1Var, int i7) {
         switch (this.a) {
-            case 3:
+            case 4:
                 boolean z10 = this.b;
                 c0 c0Var = (c0) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                n3 n3Var = (n3) this.e;
-                int i10 = n3Var.b;
+                p3 p3Var = (p3) this.e;
+                int i10 = p3Var.b;
                 if (!z10) {
                     c0Var.run();
                     break;
                 } else {
                     String trim = editTextBoldCursor.getText().toString().trim();
                     if (!TextUtils.isEmpty(trim)) {
-                        TL_iv.pageBlockButtonRow d = n3Var.d();
+                        TL_iv.pageBlockButtonRow d = p3Var.d();
                         TL_keyboard.PageButton pageButton = (d == null || i10 < 0 || i10 >= d.buttons.size()) ? null : d.buttons.get(i10);
                         TL_keyboard.InlineButtonType inlineButtonType = pageButton == null ? null : pageButton.type;
                         if ((inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType).user_id : 0L) > 0) {
                             TL_keyboard.TL_inlineButtonTypeUserProfile tL_inlineButtonTypeUserProfile = new TL_keyboard.TL_inlineButtonTypeUserProfile();
-                            TL_iv.pageBlockButtonRow d2 = n3Var.d();
+                            TL_iv.pageBlockButtonRow d2 = p3Var.d();
                             TL_keyboard.PageButton pageButton2 = (d2 == null || i10 < 0 || i10 >= d2.buttons.size()) ? null : d2.buttons.get(i10);
                             TL_keyboard.InlineButtonType inlineButtonType2 = pageButton2 != null ? pageButton2.type : null;
                             tL_inlineButtonTypeUserProfile.user_id = inlineButtonType2 instanceof TL_keyboard.TL_inlineButtonTypeUserProfile ? ((TL_keyboard.TL_inlineButtonTypeUserProfile) inlineButtonType2).user_id : 0L;
-                            n3Var.a(trim, tL_inlineButtonTypeUserProfile);
+                            p3Var.a(trim, tL_inlineButtonTypeUserProfile);
                             break;
                         }
                     }
                 }
                 break;
-            case 4:
-                an anVar = (an) this.c;
-                np npVar = (np) this.d;
+            case 5:
+                bn bnVar = (bn) this.c;
+                mp mpVar = (mp) this.d;
                 CharSequence charSequence = (CharSequence) this.e;
                 boolean z11 = this.b;
-                npVar.H2 = 1;
-                np.e1().edit().putInt("secretWebpage2", anVar.getMessagesController().H2).commit();
-                anVar.Y5 = null;
-                anVar.Cb(charSequence, z11);
+                mpVar.J2 = 1;
+                mp.g1().edit().putInt("secretWebpage2", bnVar.getMessagesController().J2).commit();
+                bnVar.Z5 = null;
+                bnVar.Cb(charSequence, z11);
                 break;
-            case 5:
+            case 6:
                 boolean z12 = this.b;
                 Context context = (Context) this.c;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.d;
@@ -180,41 +207,41 @@ public final /* synthetic */ class g implements p, l5.g, qr, q1, yo {
                     }
                 }
             default:
-                ew0 ew0Var = (ew0) this.c;
-                s10 s10Var = (s10) this.d;
+                lw0 lw0Var = (lw0) this.c;
+                q10 q10Var = (q10) this.d;
                 Context context2 = (Context) this.e;
                 boolean z13 = this.b;
-                String trim2 = ew0Var.getText().toString().trim();
-                if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(g0.N3(trim2.toString()))) {
-                    g0.v1(ew0Var);
-                    t1 t1Var2 = new t1(3, context2, z13 ? null : new fi.b());
-                    t1Var2.r(250L);
-                    s10Var.a(trim2, new bi.j(t1Var2, t1Var, ew0Var, 11));
+                String trim2 = lw0Var.getText().toString().trim();
+                if (!TextUtils.isEmpty(trim2) && !TextUtils.isEmpty(g0.M3(trim2.toString()))) {
+                    g0.v1(lw0Var);
+                    u1 u1Var2 = new u1(3, context2, z13 ? null : new fi.b());
+                    u1Var2.r(250L);
+                    q10Var.a(trim2, new bi.j(u1Var2, u1Var, lw0Var, 14));
                     break;
                 } else {
-                    ew0Var.setErrorText(".");
-                    g0.F3(-6.0f, ew0Var, null);
-                    p2.E.a();
-                    g0.J3(ew0Var);
+                    lw0Var.setErrorText(".");
+                    g0.E3(-6.0f, lw0Var, null);
+                    q2.E.a();
+                    g0.I3(lw0Var);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.qr
+    @Override // org.telegram.messenger.or
     public void run(long j3) {
-        li.e eVar = (li.e) this.c;
-        t1 t1Var = (t1) this.d;
+        li.g gVar = (li.g) this.c;
+        u1 u1Var = (u1) this.d;
         String str = (String) this.e;
-        eVar.getClass();
-        t1Var.dismiss();
+        gVar.getClass();
+        u1Var.dismiss();
         if (j3 == 0) {
             return;
         }
-        eVar.b = -j3;
-        eVar.c = eVar.getMessagesController().M0(Long.valueOf(j3));
-        eVar.a0(str, this.b);
+        gVar.b = -j3;
+        gVar.c = gVar.getMessagesController().O0(Long.valueOf(j3));
+        gVar.a0(str, this.b);
     }
 
     public /* synthetic */ g(Object obj, Object obj2, boolean z10, Object obj3, int i7) {

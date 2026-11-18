@@ -14,17 +14,17 @@ import android.view.View;
 import android.widget.ScrollView;
 import java.util.ArrayList;
 import java.util.HashSet;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.f20;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.m20;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.Components.u5 E;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.Components.c6 E;
     public final LinearGradient F;
     public final Paint G;
     public final Matrix H;
@@ -33,32 +33,32 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
     public float K;
     public int L;
     public boolean M;
-    public final org.telegram.ui.ActionBar.e6 a;
+    public final org.telegram.ui.ActionBar.i6 a;
     public final ah.i b;
     public final int c;
     public final ah.n d;
     public final ArrayList e;
-    public f20 f;
+    public m20 f;
     public final b8 h;
     public boolean n;
-    public z10 r;
-    public final org.telegram.ui.Components.u5 s;
+    public x10 r;
+    public final org.telegram.ui.Components.c6 s;
     public final LinearGradient w;
     public final Paint x;
     public final Matrix y;
 
-    public n8(Context context, org.telegram.ui.ActionBar.e6 e6Var, b8 b8Var) {
+    public n8(Context context, org.telegram.ui.ActionBar.i6 i6Var, b8 b8Var) {
         super(context);
         this.e = new ArrayList();
-        er erVar = er.h;
-        this.s = new org.telegram.ui.Components.u5(this, 0L, 300L, erVar);
+        lr lrVar = lr.h;
+        this.s = new org.telegram.ui.Components.c6(this, 0L, 300L, lrVar);
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
         this.w = linearGradient;
         Paint paint = new Paint(1);
         this.x = paint;
         this.y = new Matrix();
-        this.E = new org.telegram.ui.Components.u5(this, 0L, 300L, erVar);
+        this.E = new org.telegram.ui.Components.c6(this, 0L, 300L, lrVar);
         LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, org.telegram.messenger.g0.L(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
         this.F = linearGradient2;
         Paint paint2 = new Paint(1);
@@ -69,26 +69,26 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
         paint.setXfermode(new PorterDuffXfermode(mode));
         paint2.setShader(linearGradient2);
         paint2.setXfermode(new PorterDuffXfermode(mode));
-        this.a = e6Var;
+        this.a = i6Var;
         this.h = b8Var;
         setVerticalScrollBarEnabled(false);
-        org.telegram.messenger.g0.y3(this, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        org.telegram.messenger.g0.x3(this, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false));
         ah.n nVar = new ah.n(this, context);
         this.d = nVar;
-        addView(nVar, c8.ja.c(-2.0f, -1));
+        addView(nVar, c8.ma.c(-2.0f, -1));
         ah.i iVar = new ah.i(2, context, this);
         this.b = iVar;
         if (Build.VERSION.SDK_INT >= 25) {
             iVar.setRevealOnFocusHint(false);
         }
         iVar.setTextSize(1, 16.0f);
-        org.telegram.ui.ActionBar.q6.l(iVar, 34, org.telegram.ui.ActionBar.j6.Oi, e6Var);
-        org.telegram.ui.ActionBar.q6.U(iVar, org.telegram.ui.ActionBar.j6.G6, e6Var);
-        int i7 = org.telegram.ui.ActionBar.j6.Pi;
-        org.telegram.ui.ActionBar.q6.l(iVar, 30, i7, e6Var);
-        org.telegram.ui.ActionBar.q6.l(iVar, 36, i7, e6Var);
+        org.telegram.ui.ActionBar.u6.l(iVar, 34, org.telegram.ui.ActionBar.n6.Oi, i6Var);
+        org.telegram.ui.ActionBar.u6.U(iVar, org.telegram.ui.ActionBar.n6.G6, i6Var);
+        int i7 = org.telegram.ui.ActionBar.n6.Pi;
+        org.telegram.ui.ActionBar.u6.l(iVar, 30, i7, i6Var);
+        org.telegram.ui.ActionBar.u6.l(iVar, 36, i7, i6Var);
         iVar.setCursorWidth(1.5f);
-        iVar.setInputType(iVar.getInputType() | ns.G2);
+        iVar.setInputType(iVar.getInputType() | ks.G2);
         iVar.setSingleLine(true);
         iVar.setBackgroundDrawable(null);
         iVar.setVerticalScrollBarEnabled(false);
@@ -96,17 +96,17 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
         iVar.setTextIsSelectable(false);
         iVar.setPadding(0, 0, 0, 0);
         iVar.setImeOptions(268435462);
-        iVar.setGravity((hd.a0 ? 5 : 3) | 16);
+        iVar.setGravity((gd.a0 ? 5 : 3) | 16);
         nVar.addView(iVar);
-        iVar.setHintText(hd.M0(2131745836, null));
-        this.c = (int) iVar.getPaint().measureText(hd.M0(2131745836, null));
-        iVar.addTextChangedListener(new ah.j(this, 7));
+        iVar.setHintText(gd.M0(2131745641, null));
+        this.c = (int) iVar.getPaint().measureText(gd.M0(2131745641, null));
+        iVar.addTextChangedListener(new ah.j(this, 8));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float scrollY = getScrollY();
-        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, ns.e4, 31);
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, ks.e4, 31);
         super.dispatchDraw(canvas);
         canvas.save();
         float d = this.s.d(canScrollVertically(-1));
@@ -141,8 +141,8 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
             return false;
         }
         rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
-        rect.top = org.telegram.messenger.k5.C(20.0f, this.J, rect.top);
-        rect.bottom = org.telegram.messenger.k5.C(50.0f, this.J, rect.bottom);
+        rect.top = org.telegram.messenger.f3.C(20.0f, this.J, rect.top);
+        rect.bottom = org.telegram.messenger.f3.C(50.0f, this.J, rect.bottom);
         return super.requestChildRectangleOnScreen(view, rect, z10);
     }
 
@@ -154,8 +154,8 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
         }
     }
 
-    public void setOnSearchTextChange(z10 z10Var) {
-        this.r = z10Var;
+    public void setOnSearchTextChange(x10 x10Var) {
+        this.r = x10Var;
     }
 
     public void setText(CharSequence charSequence) {
@@ -164,25 +164,25 @@ public abstract class n8 extends ScrollView implements org.telegram.ui.ActionBar
         this.n = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
         ah.i iVar = this.b;
         if (iVar != null) {
             try {
-                iVar.setHintColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Oi, e6Var));
-                int i7 = org.telegram.ui.ActionBar.j6.Pi;
-                iVar.setCursorColor(org.telegram.ui.ActionBar.j6.w0(i7, e6Var));
-                iVar.setHandlesColor(org.telegram.ui.ActionBar.j6.w0(i7, e6Var));
+                iVar.setHintColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Oi, i6Var));
+                int i7 = org.telegram.ui.ActionBar.n6.Pi;
+                iVar.setCursorColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+                iVar.setHandlesColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
             } catch (Exception e10) {
                 org.telegram.messenger.a8.g(e10, true);
                 return;
             }
         }
-        org.telegram.messenger.g0.y3(this, org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        org.telegram.messenger.g0.x3(this, org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.d6, false));
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

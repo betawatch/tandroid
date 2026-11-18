@@ -9,9 +9,9 @@ import java.net.InetAddress;
 import java.util.Comparator;
 import java.util.Map;
 import v4.n;
-import v4.p;
+import v4.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements Comparator {
     public static final /* synthetic */ b b = new b(2);
@@ -83,17 +83,17 @@ public final class b implements Comparator {
                 int i7 = nVar.a - nVar2.a;
                 return i7 == 0 ? nVar.b - nVar2.b : i7;
             case 9:
-                p pVar = (p) obj;
-                p pVar2 = (p) obj2;
-                RecyclerView recyclerView = pVar.d;
-                if ((recyclerView == null) == (pVar2.d == null)) {
-                    boolean z11 = pVar.a;
-                    if (z11 == pVar2.a) {
-                        int i10 = pVar2.b - pVar.b;
+                q qVar = (q) obj;
+                q qVar2 = (q) obj2;
+                RecyclerView recyclerView = qVar.d;
+                if ((recyclerView == null) == (qVar2.d == null)) {
+                    boolean z11 = qVar.a;
+                    if (z11 == qVar2.a) {
+                        int i10 = qVar2.b - qVar.b;
                         if (i10 != 0) {
                             return i10;
                         }
-                        int i11 = pVar.c - pVar2.c;
+                        int i11 = qVar.c - qVar2.c;
                         if (i11 != 0) {
                             return i11;
                         }

@@ -1,62 +1,25 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ki0 implements TextWatcher {
+public final /* synthetic */ class ki0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ er b;
 
-    public /* synthetic */ ki0(PasscodeActivity passcodeActivity, int i7) {
+    public /* synthetic */ ki0(er erVar, int i7) {
         this.a = i7;
-        this.b = passcodeActivity;
+        this.b = erVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i7 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                fi0 fi0Var = passcodeActivity.T;
-                if (passcodeActivity.S) {
-                    passcodeActivity.n.removeCallbacks(fi0Var);
-                    fi0Var.run();
-                    break;
-                }
+                this.b.D(1.0f);
                 break;
             default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                fi0 fi0Var2 = passcodeActivity2.T;
-                if (passcodeActivity2.S) {
-                    passcodeActivity2.n.removeCallbacks(fi0Var2);
-                    fi0Var2.run();
-                    break;
-                }
+                this.b.D(1.0f);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

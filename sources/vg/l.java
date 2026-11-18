@@ -12,7 +12,7 @@ import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class l extends Thread {
     public final SurfaceTexture a;
@@ -110,7 +110,7 @@ public final class l extends Thread {
                 m.a(this.d, (nanoTime2 - nanoTime) / 1.0E9f);
                 if (!this.c) {
                     this.c = true;
-                    g0.h3(new k(this, i7));
+                    g0.g3(new k(this, i7));
                 }
                 nanoTime = nanoTime2;
             }
@@ -151,7 +151,7 @@ public final class l extends Thread {
                     } catch (Exception e10) {
                         if (!this.b) {
                             a8.g(e10, true);
-                            g0.h3(new k(this, 0));
+                            g0.g3(new k(this, 0));
                         }
                     }
                     m.b(this.d);

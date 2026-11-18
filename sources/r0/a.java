@@ -16,9 +16,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends View.AccessibilityDelegate {
     public final b a;
@@ -34,7 +34,7 @@ public final class a extends View.AccessibilityDelegate {
 
     @Override // android.view.View.AccessibilityDelegate
     public final AccessibilityNodeProvider getAccessibilityNodeProvider(View view) {
-        cf a10 = this.a.a(view);
+        b5 a10 = this.a.a(view);
         if (a10 != null) {
             return (AccessibilityNodeProvider) a10.a;
         }

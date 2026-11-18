@@ -5,51 +5,51 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import hi.c5;
-import org.telegram.messenger.gz;
-import org.telegram.ui.Components.y9;
+import hi.b5;
+import org.telegram.messenger.bz;
+import org.telegram.ui.Components.ga;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q0 extends org.telegram.ui.Cells.t0 {
-    public final y9 u2;
-    public final TextPaint v2;
-    public final /* synthetic */ s0 w2;
+public final class q0 extends org.telegram.ui.Cells.u0 {
+    public final ga C2;
+    public final TextPaint D2;
+    public final /* synthetic */ s0 E2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public q0(s0 s0Var, Context context, t0 t0Var) {
         super(context, t0Var, false);
-        this.w2 = s0Var;
-        this.u2 = new y9(s0Var.d, this, 10, false);
+        this.E2 = s0Var;
+        this.C2 = new ga(s0Var.d, this, 10, false);
         TextPaint textPaint = new TextPaint(1);
-        this.v2 = textPaint;
+        this.D2 = textPaint;
         textPaint.setTypeface(org.telegram.messenger.g0.o());
-        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, gz.W0) - 2));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, bz.W0) - 2));
         textPaint.setColor(-1);
     }
 
-    @Override // org.telegram.ui.Cells.t0
+    @Override // org.telegram.ui.Cells.u0
     public final Paint R(String str) {
         if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
-            return this.v2;
+            return this.D2;
         }
         if ("paintChatActionBackground".equals(str)) {
-            c5 c5Var = this.w2.h;
-            c5Var.w0 = true;
-            boolean z10 = c5Var.C0;
-            y9 y9Var = this.u2;
-            if (y9Var.r != z10) {
-                y9Var.r = z10;
-                if (y9Var.i == 10) {
+            b5 b5Var = this.E2.h;
+            b5Var.w0 = true;
+            boolean z10 = b5Var.C0;
+            ga gaVar = this.C2;
+            if (gaVar.r != z10) {
+                gaVar.r = z10;
+                if (gaVar.i == 10) {
                     ColorMatrix colorMatrix = new ColorMatrix();
                     colorMatrix.setSaturation(1.6f);
-                    org.telegram.messenger.g0.n2(colorMatrix, y9Var.r ? 0.97f : 0.92f);
-                    org.telegram.messenger.g0.h(colorMatrix, y9Var.r ? 0.12f : -0.06f);
-                    y9Var.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                    y9Var.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    org.telegram.messenger.g0.n2(colorMatrix, gaVar.r ? 0.97f : 0.92f);
+                    org.telegram.messenger.g0.h(colorMatrix, gaVar.r ? 0.12f : -0.06f);
+                    gaVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    gaVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 }
             }
-            Paint c10 = y9Var.c(1.0f);
+            Paint c10 = gaVar.c(1.0f);
             if (c10 != null) {
                 return c10;
             }

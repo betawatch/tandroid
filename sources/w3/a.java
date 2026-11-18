@@ -1,20 +1,20 @@
 package w3;
 
-import a8.ha;
-import c8.g1;
+import a8.ja;
+import c8.k1;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
 import e2.u;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements p0 {
     public final String a;
     public final String b;
 
     public a(String str, String str2) {
-        this.a = ha.d(str);
+        this.a = ja.d(str);
         this.b = str2;
     }
 
@@ -94,21 +94,21 @@ public final class a implements p0 {
         String str2 = this.b;
         switch (c10) {
             case 0:
-                Integer g10 = g1.g(str2);
+                Integer g10 = k1.g(str2);
                 if (g10 != null) {
                     n0Var.p = g10;
                     break;
                 }
                 break;
             case 1:
-                Integer g11 = g1.g(str2);
+                Integer g11 = k1.g(str2);
                 if (g11 != null) {
                     n0Var.D = g11;
                     break;
                 }
                 break;
             case 2:
-                Integer g12 = g1.g(str2);
+                Integer g12 = k1.g(str2);
                 if (g12 != null) {
                     n0Var.o = g12;
                     break;
@@ -127,7 +127,7 @@ public final class a implements p0 {
                 n0Var.g = str2;
                 break;
             case 7:
-                Integer g13 = g1.g(str2);
+                Integer g13 = k1.g(str2);
                 if (g13 != null) {
                     n0Var.C = g13;
                     break;

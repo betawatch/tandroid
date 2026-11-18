@@ -1,24 +1,36 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import java.util.ArrayList;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class li extends org.telegram.ui.Components.wu {
-    public final /* synthetic */ an R1;
+public final class li extends FrameLayout {
+    public final /* synthetic */ bn a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public li(an anVar, org.telegram.ui.ActionBar.e2 e2Var, Activity activity, org.telegram.ui.ActionBar.e6 e6Var, ArrayList arrayList) {
-        super(e2Var, activity, e6Var, arrayList);
-        this.R1 = anVar;
+    public li(bn bnVar, Activity activity) {
+        super(activity);
+        this.a = bnVar;
     }
 
-    @Override // org.telegram.ui.Components.wu, org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
-    public final void dismiss() {
-        super.dismiss();
-        an anVar = this.R1;
-        anVar.getClass();
-        anVar.x8(false, true, 0.0f);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+            this.a.P7(true);
+        }
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int min = Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(300.0f));
+        if (min == 0) {
+            min = org.telegram.messenger.g0.L(300.0f);
+        }
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_31));
     }
 }

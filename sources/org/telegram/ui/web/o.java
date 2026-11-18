@@ -1,25 +1,25 @@
 package org.telegram.ui.web;
 
-import fi.i7;
+import fi.f7;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements s10 {
+public final /* synthetic */ class o implements q10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ v0 b;
-    public final /* synthetic */ i7 c;
+    public final /* synthetic */ f7 c;
 
-    public /* synthetic */ o(v0 v0Var, i7 i7Var, int i7) {
+    public /* synthetic */ o(v0 v0Var, f7 f7Var, int i7) {
         this.a = i7;
         this.b = v0Var;
-        this.c = i7Var;
+        this.c = f7Var;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         c0 c0Var;
         switch (this.a) {
@@ -46,14 +46,14 @@ public final /* synthetic */ class o implements s10 {
                 v0 v0Var3 = this.b;
                 v0Var3.getClass();
                 if (((Boolean) obj).booleanValue()) {
-                    ki.r rVar = v0Var3.k0;
-                    rVar.e = true;
-                    rVar.k();
+                    ki.q qVar = v0Var3.k0;
+                    qVar.e = true;
+                    qVar.k();
                 }
                 v0Var3.v(this.c);
                 break;
             case 3:
-                i7 i7Var = this.c;
+                f7 f7Var = this.c;
                 Boolean bool3 = (Boolean) obj;
                 String str2 = (String) obj2;
                 boolean booleanValue = bool3.booleanValue();
@@ -65,7 +65,7 @@ public final /* synthetic */ class o implements s10 {
                     JSONObject jSONObject = new JSONObject();
                     jSONObject.put("status", bool3.booleanValue() ? "authorized" : "failed");
                     jSONObject.put("token", str2);
-                    v0Var4.x(i7Var, "biometry_auth_requested", jSONObject);
+                    v0Var4.x(f7Var, "biometry_auth_requested", jSONObject);
                     break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
@@ -75,12 +75,12 @@ public final /* synthetic */ class o implements s10 {
                 String str3 = (String) obj;
                 TLRPC.Document document = (TLRPC.Document) obj2;
                 v0 v0Var5 = this.b;
-                i7 i7Var2 = this.c;
+                f7 f7Var2 = this.c;
                 if (str3 != null) {
-                    v0Var5.x(i7Var2, "emoji_status_failed", v0.A(str3, "error"));
+                    v0Var5.x(f7Var2, "emoji_status_failed", v0.A(str3, "error"));
                     break;
                 } else {
-                    v0Var5.x(i7Var2, "emoji_status_set", null);
+                    v0Var5.x(f7Var2, "emoji_status_set", null);
                     c0 c0Var2 = v0Var5.c;
                     if (c0Var2 != null) {
                         c0Var2.d(document);

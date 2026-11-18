@@ -1,159 +1,379 @@
 package org.telegram.messenger;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.text.SpannableStringBuilder;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.Bundle;
+import android.widget.RemoteViews;
+import android.widget.RemoteViewsService;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class k5 {
-    public static float A(float f10, float f11, float f12, float f13) {
-        return (f10 - f11) * f12 * f13;
+public final class k5 implements RemoteViewsService.RemoteViewsFactory {
+    public ArrayList a;
+    public Context b;
+    public int c;
+    public c d;
+    public Paint e;
+    public RectF f;
+    public a0.h g;
+    public boolean h;
+
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final int getCount() {
+        if (this.h) {
+            return 1;
+        }
+        return ((int) Math.ceil(this.a.size() / 2.0f)) + 1;
     }
 
-    public static int B(float f10, int i7, int i10) {
-        return i10 - (i7 - g0.L(f10));
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final long getItemId(int i7) {
+        return i7;
     }
 
-    public static int C(float f10, int i7, int i10) {
-        return g0.L(f10) + i7 + i10;
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final RemoteViews getLoadingView() {
+        return null;
     }
 
-    public static int D(float f10, int i7, int i10) {
-        return (g0.L(f10) * i7) + i10;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0246  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x02bc  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x02c0  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x02a3  */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x0284  */
+    /* JADX WARN: Type inference failed for: r0v10 */
+    /* JADX WARN: Type inference failed for: r0v11 */
+    /* JADX WARN: Type inference failed for: r0v12, types: [org.telegram.tgnet.TLRPC$User] */
+    /* JADX WARN: Type inference failed for: r0v41, types: [org.telegram.ui.Components.b9] */
+    /* JADX WARN: Type inference failed for: r0v56 */
+    /* JADX WARN: Type inference failed for: r0v57 */
+    /* JADX WARN: Type inference failed for: r12v40 */
+    /* JADX WARN: Type inference failed for: r12v41 */
+    /* JADX WARN: Type inference failed for: r12v5 */
+    /* JADX WARN: Type inference failed for: r12v7 */
+    /* JADX WARN: Type inference failed for: r12v8, types: [org.telegram.tgnet.TLRPC$Chat] */
+    /* JADX WARN: Type inference failed for: r13v12, types: [android.graphics.Bitmap] */
+    /* JADX WARN: Type inference failed for: r13v19 */
+    /* JADX WARN: Type inference failed for: r13v26 */
+    /* JADX WARN: Type inference failed for: r14v22 */
+    /* JADX WARN: Type inference failed for: r14v23 */
+    /* JADX WARN: Type inference failed for: r14v24 */
+    /* JADX WARN: Type inference failed for: r14v5 */
+    /* JADX WARN: Type inference failed for: r14v6, types: [org.telegram.tgnet.TLObject] */
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final RemoteViews getViewAt(int i7) {
+        String str;
+        String str2;
+        ?? r12;
+        ?? r02;
+        TLRPC.FileLocation fileLocation;
+        ?? r14;
+        String str3;
+        int i10;
+        TLRPC.Dialog dialog;
+        int i11;
+        int i12;
+        int i13;
+        String format;
+        ?? r13;
+        Canvas canvas;
+        org.telegram.ui.Components.b9 b9Var;
+        TLRPC.UserProfilePhoto userProfilePhoto;
+        TLRPC.FileLocation fileLocation2;
+        ArrayList arrayList = this.a;
+        Context context = this.b;
+        c cVar = this.d;
+        String str4 = null;
+        if (this.h) {
+            RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.widget_deleted);
+            remoteViews.setTextViewText(R.id.widget_deleted_text, gd.M0(2131742616, null));
+            return remoteViews;
+        }
+        if (i7 >= getCount() - 1) {
+            RemoteViews remoteViews2 = new RemoteViews(context.getPackageName(), R.layout.widget_edititem);
+            remoteViews2.setTextViewText(R.id.widget_edititem_text, gd.M0(2131744021, null));
+            Bundle bundle = new Bundle();
+            bundle.putInt("appWidgetId", this.c);
+            bundle.putInt("appWidgetType", 1);
+            bundle.putInt("currentAccount", cVar.a);
+            Intent intent = new Intent();
+            intent.putExtras(bundle);
+            remoteViews2.setOnClickFillInIntent(R.id.widget_edititem, intent);
+            return remoteViews2;
+        }
+        RemoteViews remoteViews3 = new RemoteViews(context.getPackageName(), R.layout.contacts_widget_item);
+        int i14 = 0;
+        int i15 = 0;
+        while (i15 < 2) {
+            int i16 = (2 * i7) + i15;
+            if (i16 >= arrayList.size()) {
+                remoteViews3.setViewVisibility(i15 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, 4);
+                str3 = str4;
+                i12 = i14;
+            } else {
+                remoteViews3.setViewVisibility(i15 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, i14);
+                Long l10 = (Long) arrayList.get(i16);
+                if (n5.E(l10.longValue())) {
+                    TLRPC.User c22 = mp.u1(cVar.a).c2(l10);
+                    String M0 = o10.C(c22) ? gd.M0(2131745706, str4) : o10.A(c22) ? gd.M0(2131746071, str4) : o10.y(c22) ? gd.M0(2131749136, str4) : o10.k(c22, true);
+                    if (o10.A(c22) || o10.C(c22) || c22 == null || (userProfilePhoto = c22.photo) == null || (fileLocation2 = userProfilePhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
+                        String str5 = str4;
+                        str2 = M0;
+                        r12 = str5;
+                        r02 = c22;
+                        r14 = str5;
+                    } else {
+                        r14 = fileLocation2;
+                        str2 = M0;
+                        r12 = str4;
+                        r02 = c22;
+                    }
+                } else {
+                    TLRPC.Chat O0 = mp.u1(cVar.a).O0(Long.valueOf(-l10.longValue()));
+                    if (O0 != null) {
+                        str = O0.title;
+                        TLRPC.ChatPhoto chatPhoto = O0.photo;
+                        if (chatPhoto != null && (fileLocation = chatPhoto.photo_small) != null && fileLocation.volume_id != 0 && fileLocation.local_id != 0) {
+                            r14 = fileLocation;
+                            str2 = str;
+                            r12 = O0;
+                            r02 = str4;
+                        }
+                    } else {
+                        str = "";
+                    }
+                    String str6 = str4;
+                    str2 = str;
+                    r12 = O0;
+                    r02 = str6;
+                    r14 = str6;
+                }
+                remoteViews3.setTextViewText(i15 == 0 ? R.id.contacts_widget_item_text1 : R.id.contacts_widget_item_text2, str2);
+                if (r14 != 0) {
+                    try {
+                        w7.G(j10.t0);
+                        r13 = BitmapFactory.decodeFile(w7.J(r14, str4, true, true).toString());
+                    } catch (Throwable th2) {
+                        th = th2;
+                        str3 = str4;
+                        i10 = i14;
+                        a8.g(th, true);
+                        dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
+                        i11 = R.id.contacts_widget_item_badge_bg2;
+                        if (dialog != null) {
+                        }
+                        i12 = i10;
+                        if (i15 == 0) {
+                        }
+                        remoteViews3.setViewVisibility(i11, 8);
+                        Bundle bundle2 = new Bundle();
+                        if (n5.E(l10.longValue())) {
+                        }
+                        bundle2.putInt("currentAccount", cVar.a);
+                        Intent intent2 = new Intent();
+                        intent2.putExtras(bundle2);
+                        remoteViews3.setOnClickFillInIntent(i15 != 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, intent2);
+                        i15++;
+                        i14 = i12;
+                        str4 = str3;
+                    }
+                } else {
+                    r13 = str4;
+                }
+                int L = g0.L(48.0f);
+                Bitmap createBitmap = Bitmap.createBitmap(L, L, Bitmap.Config.ARGB_8888);
+                createBitmap.eraseColor(i14);
+                try {
+                    canvas = new Canvas(createBitmap);
+                    if (r13 == 0) {
+                        if (r02 != 0) {
+                            b9Var = new org.telegram.ui.Components.b9(i14, r02);
+                            if (o10.A(r02)) {
+                                b9Var.g(12);
+                            } else if (o10.C(r02)) {
+                                b9Var.g(1);
+                            }
+                        } else {
+                            ?? b9Var2 = new org.telegram.ui.Components.b9((org.telegram.ui.ActionBar.i6) null);
+                            int i17 = cVar.a;
+                            b9Var2.q(r12);
+                            b9Var = b9Var2;
+                        }
+                        b9Var.setBounds(i14, i14, L, L);
+                        b9Var.draw(canvas);
+                        i10 = i14;
+                    } else {
+                        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                        BitmapShader bitmapShader = new BitmapShader(r13, tileMode, tileMode);
+                        if (this.e == null) {
+                            this.e = new Paint(1);
+                            this.f = new RectF();
+                        }
+                        float width = L / r13.getWidth();
+                        canvas.save();
+                        canvas.scale(width, width);
+                        this.e.setShader(bitmapShader);
+                        i10 = i14;
+                        try {
+                            this.f.set(0.0f, 0.0f, r13.getWidth(), r13.getHeight());
+                            canvas.drawRoundRect(this.f, r13.getWidth(), r13.getHeight(), this.e);
+                            canvas.restore();
+                        } catch (Throwable th3) {
+                            th = th3;
+                            str3 = null;
+                            a8.g(th, true);
+                            dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
+                            i11 = R.id.contacts_widget_item_badge_bg2;
+                            if (dialog != null) {
+                            }
+                            i12 = i10;
+                            if (i15 == 0) {
+                            }
+                            remoteViews3.setViewVisibility(i11, 8);
+                            Bundle bundle22 = new Bundle();
+                            if (n5.E(l10.longValue())) {
+                            }
+                            bundle22.putInt("currentAccount", cVar.a);
+                            Intent intent22 = new Intent();
+                            intent22.putExtras(bundle22);
+                            remoteViews3.setOnClickFillInIntent(i15 != 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, intent22);
+                            i15++;
+                            i14 = i12;
+                            str4 = str3;
+                        }
+                    }
+                    str3 = null;
+                } catch (Throwable th4) {
+                    th = th4;
+                    i10 = i14;
+                }
+                try {
+                    canvas.setBitmap(null);
+                    remoteViews3.setImageViewBitmap(i15 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2, createBitmap);
+                } catch (Throwable th5) {
+                    th = th5;
+                    a8.g(th, true);
+                    dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
+                    i11 = R.id.contacts_widget_item_badge_bg2;
+                    if (dialog != null) {
+                    }
+                    i12 = i10;
+                    if (i15 == 0) {
+                    }
+                    remoteViews3.setViewVisibility(i11, 8);
+                    Bundle bundle222 = new Bundle();
+                    if (n5.E(l10.longValue())) {
+                    }
+                    bundle222.putInt("currentAccount", cVar.a);
+                    Intent intent222 = new Intent();
+                    intent222.putExtras(bundle222);
+                    remoteViews3.setOnClickFillInIntent(i15 != 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, intent222);
+                    i15++;
+                    i14 = i12;
+                    str4 = str3;
+                }
+                dialog = (TLRPC.Dialog) this.g.f(l10.longValue());
+                i11 = R.id.contacts_widget_item_badge_bg2;
+                if (dialog != null || (i13 = dialog.unread_count) <= 0) {
+                    i12 = i10;
+                    if (i15 == 0) {
+                        i11 = R.id.contacts_widget_item_badge_bg1;
+                    }
+                    remoteViews3.setViewVisibility(i11, 8);
+                } else {
+                    if (i13 > 99) {
+                        Object[] objArr = new Object[1];
+                        objArr[i10] = 99;
+                        format = String.format("%d+", objArr);
+                    } else {
+                        Object[] objArr2 = new Object[1];
+                        objArr2[i10] = Integer.valueOf(i13);
+                        format = String.format("%d", objArr2);
+                    }
+                    remoteViews3.setTextViewText(i15 == 0 ? R.id.contacts_widget_item_badge1 : R.id.contacts_widget_item_badge2, format);
+                    if (i15 == 0) {
+                        i11 = R.id.contacts_widget_item_badge_bg1;
+                    }
+                    i12 = i10;
+                    remoteViews3.setViewVisibility(i11, i12);
+                }
+                Bundle bundle2222 = new Bundle();
+                if (n5.E(l10.longValue())) {
+                    bundle2222.putLong("chatId", -l10.longValue());
+                } else {
+                    bundle2222.putLong("userId", l10.longValue());
+                }
+                bundle2222.putInt("currentAccount", cVar.a);
+                Intent intent2222 = new Intent();
+                intent2222.putExtras(bundle2222);
+                remoteViews3.setOnClickFillInIntent(i15 != 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, intent2222);
+            }
+            i15++;
+            i14 = i12;
+            str4 = str3;
+        }
+        return remoteViews3;
     }
 
-    public static float a(float f10, float f11, float f12, float f13) {
-        return ((f10 + f11) / f12) + f13;
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final int getViewTypeCount() {
+        return 2;
     }
 
-    public static int b(float f10, int i7, int i10) {
-        return Math.max(i10, g0.L(f10) + i7);
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final boolean hasStableIds() {
+        return true;
     }
 
-    public static int c(String str, String str2, SharedPreferences sharedPreferences, int i7) {
-        return sharedPreferences.getInt(str + str2, i7);
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final void onCreate() {
+        t0.w();
     }
 
-    public static SharedPreferences.Editor d(SharedPreferences.Editor editor, String str, String str2, String str3, String str4) {
-        return editor.remove(str).remove(str2).remove(str3).remove(str4);
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final void onDataSetChanged() {
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        c cVar = this.d;
+        if (cVar != null) {
+            int i7 = cVar.a;
+            if (j10.i(i7).p()) {
+                ArrayList arrayList2 = new ArrayList();
+                ArrayList arrayList3 = new ArrayList();
+                a0.h hVar = new a0.h();
+                tr a02 = tr.a0(i7);
+                int i10 = this.c;
+                a0.h hVar2 = this.g;
+                CountDownLatch countDownLatch = new CountDownLatch(1);
+                a02.a.c(new bg.c(a02, i10, arrayList, 1, hVar2, hVar, arrayList3, arrayList2, countDownLatch));
+                try {
+                    countDownLatch.await();
+                } catch (Exception e10) {
+                    a02.o(e10, true);
+                }
+                mp.u1(i7).f4(arrayList2, true);
+                mp.u1(i7).Z3(arrayList3, true);
+            }
+        }
     }
 
-    public static LinearLayout e(Activity activity, int i7) {
-        LinearLayout linearLayout = new LinearLayout(activity);
-        linearLayout.setOrientation(i7);
-        return linearLayout;
-    }
-
-    public static LinearLayout f(Context context, int i7) {
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(i7);
-        return linearLayout;
-    }
-
-    public static TextView g(Context context, int i7, float f10) {
-        TextView textView = new TextView(context);
-        textView.setTextSize(i7, f10);
-        return textView;
-    }
-
-    public static String h(StringBuilder sb2, String str, pf.b bVar) {
-        sb2.append(str);
-        return bVar.b(sb2.toString());
-    }
-
-    public static ArrayList i(a0.h hVar, long j3) {
-        ArrayList arrayList = new ArrayList();
-        hVar.k(arrayList, j3);
-        return arrayList;
-    }
-
-    public static ArrayList j(gj gjVar) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(gjVar);
-        return arrayList;
-    }
-
-    public static org.telegram.ui.ActionBar.u2 k(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        org.telegram.ui.ActionBar.u2 u2Var = new org.telegram.ui.ActionBar.u2(i7, context, e6Var, z10);
-        u2Var.O();
-        return u2Var;
-    }
-
-    public static void l(TextView textView, int i7, String str, int i10) {
-        textView.setGravity(i7);
-        textView.setText(hd.M0(i10, str));
-    }
-
-    public static void m(TextView textView, int i7, org.telegram.ui.ActionBar.e6 e6Var, int i10, float f10) {
-        org.telegram.ui.ActionBar.q6.U(textView, i7, e6Var);
-        textView.setTextSize(i10, f10);
-        textView.setTypeface(g0.o());
-    }
-
-    public static void n(String str, int i7, org.telegram.ui.Components.cc ccVar, int i10, int i11) {
-        ccVar.Q(i10, i11, hd.M0(i7, str)).j();
-    }
-
-    public static void o(String str, int i7, org.telegram.ui.Components.cc ccVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        ccVar.t(hd.M0(i7, str), e6Var).j();
-    }
-
-    public static void p(String str, String str2, int i7, Object[] objArr, SpannableStringBuilder spannableStringBuilder) {
-        spannableStringBuilder.append((CharSequence) g0.X2(hd.a0(str, str2, i7, objArr)));
-    }
-
-    public static void q(String str, String str2, int i7, Object[] objArr, TextView textView) {
-        textView.setText(g0.X2(hd.a0(str, str2, i7, objArr)));
-    }
-
-    public static void r(StringBuilder sb2, char c10, char c11, int i7) {
-        sb2.append(c10);
-        sb2.append(c11);
-        sb2.append(hd.M0(i7, null));
-    }
-
-    public static void s(SQLiteDatabase sQLiteDatabase, String str) {
-        sQLiteDatabase.executeFast(str).stepThis().dispose();
-    }
-
-    public static void t(SQLiteDatabase sQLiteDatabase, String str, String str2) {
-        sQLiteDatabase.executeFast(str).stepThis().dispose();
-        sQLiteDatabase.executeFast(str2).stepThis().dispose();
-    }
-
-    public static void u(SQLiteDatabase sQLiteDatabase, String str, String str2, String str3) {
-        sQLiteDatabase.executeFast(str).stepThis().dispose();
-        sQLiteDatabase.executeFast(str2).stepThis().dispose();
-        sQLiteDatabase.executeFast(str3).stepThis().dispose();
-    }
-
-    public static void v(SQLiteDatabase sQLiteDatabase, String str, String str2, String str3, String str4) {
-        sQLiteDatabase.executeFast(str).stepThis().dispose();
-        sQLiteDatabase.executeFast(str2).stepThis().dispose();
-        sQLiteDatabase.executeFast(str3).stepThis().dispose();
-        sQLiteDatabase.executeFast(str4).stepThis().dispose();
-    }
-
-    public static boolean w(String str, long j3, SharedPreferences sharedPreferences, boolean z10) {
-        return sharedPreferences.getBoolean(str + j3, z10);
-    }
-
-    public static /* synthetic */ boolean x(TLRPC.TL_inputMediaUploadedDocument tL_inputMediaUploadedDocument) {
-        return tL_inputMediaUploadedDocument != null;
-    }
-
-    public static float y(float f10, float f11, float f12, float f13) {
-        return f13 - ((f10 - f11) / f12);
-    }
-
-    public static int z(float f10, int i7, int i10) {
-        return (i7 - g0.L(f10)) - i10;
+    @Override // android.widget.RemoteViewsService.RemoteViewsFactory
+    public final void onDestroy() {
     }
 }

@@ -18,16 +18,16 @@ import android.os.Binder;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import c8.oc;
+import c8.rc;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import e2.s0;
-import h9.g2;
-import h9.s1;
+import h9.h2;
 import h9.t0;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class y {
     public static void a(AudioAttributes.Builder builder, boolean z10) {
@@ -53,22 +53,22 @@ public abstract class y {
                 }
                 i12++;
             }
-            if (i11 == 1 && oc.a == null) {
+            if (i11 == 1 && rc.a == null) {
                 int i13 = Build.VERSION.SDK_INT;
                 if (i13 < 37) {
                     int c10 = c(true);
                     if (i13 < 35) {
-                        oc.a = Boolean.valueOf(z10);
+                        rc.a = Boolean.valueOf(z10);
                         if (z10) {
                         }
                     } else {
-                        oc.a = Boolean.valueOf(z10);
+                        rc.a = Boolean.valueOf(z10);
                         if (z10) {
                         }
                     }
                 }
                 z10 = false;
-                oc.a = Boolean.valueOf(z10);
+                rc.a = Boolean.valueOf(z10);
                 if (z10) {
                 }
             }
@@ -88,11 +88,11 @@ public abstract class y {
             if (str != null) {
                 List e10 = u2.w.e(str, z10, false);
                 String c10 = u2.w.c(uVar);
-                Iterable e11 = c10 == null ? s1.e : u2.w.e(c10, z10, false);
+                Iterable e11 = c10 == null ? t1.e : u2.w.e(c10, z10, false);
                 h9.f0 p10 = h9.i0.p();
                 p10.d(e10);
                 p10.d(e11);
-                s1 f10 = p10.f();
+                t1 f10 = p10.f();
                 for (int i7 = 0; i7 < f10.d; i7++) {
                     if (((u2.o) f10.get(i7)).d != null && (videoCapabilities = ((u2.o) f10.get(i7)).d.getVideoCapabilities()) != null && (supportedPerformancePoints = videoCapabilities.getSupportedPerformancePoints()) != null && !supportedPerformancePoints.isEmpty()) {
                         MediaCodecInfo.VideoCapabilities.PerformancePoint performancePoint = new MediaCodecInfo.VideoCapabilities.PerformancePoint(1280, 720, 60);
@@ -110,7 +110,7 @@ public abstract class y {
         return 0;
     }
 
-    public static s1 d(e2.e eVar) {
+    public static t1 d(e2.e eVar) {
         h9.f0 p10 = h9.i0.p();
         h9.l0 l0Var = n2.b.h;
         t0 t0Var = l0Var.b;
@@ -118,7 +118,7 @@ public abstract class y {
             t0Var = l0Var.d();
             l0Var.b = t0Var;
         }
-        g2 it = t0Var.iterator();
+        h2 it = t0Var.iterator();
         while (it.hasNext()) {
             Integer num = (Integer) it.next();
             int intValue = num.intValue();

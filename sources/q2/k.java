@@ -1,64 +1,17 @@
 package q2;
 
-import h2.l0;
-import java.util.Iterator;
-import java.util.concurrent.CopyOnWriteArrayList;
-import org.telegram.ui.Components.lv0;
-import org.telegram.ui.Components.u11;
-import x2.f0;
+import x2.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k {
-    public final int a;
-    public final f0 b;
-    public final CopyOnWriteArrayList c;
+public interface k {
+    void K(int i7, g0 g0Var, Exception exc);
 
-    public k(CopyOnWriteArrayList copyOnWriteArrayList, int i7, f0 f0Var) {
-        this.c = copyOnWriteArrayList;
-        this.a = i7;
-        this.b = f0Var;
-    }
+    void N(int i7, g0 g0Var, int i10);
 
-    public final void a(nb.a aVar) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            j jVar = (j) it.next();
-            l0.W(jVar.a, new lv0(this, jVar.b, aVar, 20));
-        }
-    }
+    void c(int i7, g0 g0Var, nb.a aVar);
 
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, q2.l] */
-    public final void b() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            j jVar = (j) it.next();
-            l0.W(jVar.a, new i(this, jVar.b, 1));
-        }
-    }
+    void w(int i7, g0 g0Var);
 
-    public final void c(int i7) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            j jVar = (j) it.next();
-            l0.W(jVar.a, new u11(this, jVar.b, i7, 24));
-        }
-    }
-
-    public final void d(Exception exc) {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            j jVar = (j) it.next();
-            l0.W(jVar.a, new lv0(this, jVar.b, exc, 19));
-        }
-    }
-
-    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, q2.l] */
-    public final void e() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            j jVar = (j) it.next();
-            l0.W(jVar.a, new i(this, jVar.b, 0));
-        }
-    }
+    void z(int i7, g0 g0Var);
 }

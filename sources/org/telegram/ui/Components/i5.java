@@ -1,55 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i5 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class i5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashSet d;
 
-    public /* synthetic */ i5(Object obj, float f10, float f11, float f12, float f13, int i7) {
+    public /* synthetic */ i5(k5 k5Var, ArrayList arrayList, HashSet hashSet, int i7) {
         this.a = i7;
-        this.f = obj;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
-        this.e = f13;
+        this.b = k5Var;
+        this.c = arrayList;
+        this.d = hashSet;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i7 = this.a;
-        float f10 = this.e;
-        float f11 = this.d;
-        float f12 = this.c;
-        float f13 = this.b;
-        Object obj = this.f;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                p5 p5Var = (p5) obj;
-                p5Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p5Var.lastDrawnCy = org.telegram.messenger.g0.T1(f13, f12, floatValue);
-                p5Var.lastDrawnCx = org.telegram.messenger.g0.T1(f11, f10, floatValue);
+                org.telegram.messenger.g0.g3(new i5(this.b, this.c, this.d, 1));
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i10 = ChatActivityEnterView.N6;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float z10 = com.google.android.gms.internal.vision.e2.z(f12, f13, floatValue2, f13);
-                gn0 gn0Var = chatActivityEnterView.q0;
-                if (gn0Var != null) {
-                    gn0Var.setAlpha(((f10 - f11) * floatValue2) + f11);
-                    chatActivityEnterView.q0.setTranslationX(z10);
+                k5 k5Var = this.b;
+                k5Var.d(this.c);
+                HashSet hashSet = this.d;
+                if (!hashSet.isEmpty()) {
+                    ArrayList<Long> arrayList = new ArrayList<>(hashSet);
+                    TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                    tL_messages_getCustomEmojiDocuments.document_id = arrayList;
+                    ConnectionsManager.getInstance(k5Var.e).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.u7(11, k5Var, arrayList));
+                    break;
                 }
-                chatActivityEnterView.R0.setTranslationX(z10);
-                chatActivityEnterView.H = z10;
-                chatActivityEnterView.d2();
                 break;
         }
     }

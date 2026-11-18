@@ -2,7 +2,7 @@ package c4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class j extends k2.j implements d {
     public d a;
@@ -22,23 +22,23 @@ public abstract class j extends k2.j implements d {
     }
 
     @Override // c4.d
-    public final long i(int i7) {
+    public final long h(int i7) {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.i(i7) + this.b;
+        return dVar.h(i7) + this.b;
     }
 
     @Override // c4.d
-    public final List q(long j3) {
+    public final List m(long j3) {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.q(j3 - this.b);
+        return dVar.m(j3 - this.b);
     }
 
     @Override // c4.d
-    public final int u() {
+    public final int p() {
         d dVar = this.a;
         dVar.getClass();
-        return dVar.u();
+        return dVar.p();
     }
 }

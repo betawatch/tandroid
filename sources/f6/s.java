@@ -3,12 +3,12 @@ package f6;
 import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s extends r6.a {
     public static final Parcelable.Creator<s> CREATOR = new v(19);
@@ -179,39 +179,39 @@ public final class s extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.y;
         this.x = jSONObject == null ? null : jSONObject.toString();
-        int r10 = yb.r(parcel, 20293);
+        int r10 = bc.r(parcel, 20293);
         float f10 = this.a;
-        yb.q(parcel, 2, 4);
+        bc.q(parcel, 2, 4);
         parcel.writeFloat(f10);
         int i10 = this.b;
-        yb.q(parcel, 3, 4);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(i10);
         int i11 = this.c;
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(i11);
         int i12 = this.d;
-        yb.q(parcel, 5, 4);
+        bc.q(parcel, 5, 4);
         parcel.writeInt(i12);
         int i13 = this.e;
-        yb.q(parcel, 6, 4);
+        bc.q(parcel, 6, 4);
         parcel.writeInt(i13);
         int i14 = this.f;
-        yb.q(parcel, 7, 4);
+        bc.q(parcel, 7, 4);
         parcel.writeInt(i14);
         int i15 = this.h;
-        yb.q(parcel, 8, 4);
+        bc.q(parcel, 8, 4);
         parcel.writeInt(i15);
         int i16 = this.n;
-        yb.q(parcel, 9, 4);
+        bc.q(parcel, 9, 4);
         parcel.writeInt(i16);
-        yb.l(parcel, 10, this.r);
+        bc.l(parcel, 10, this.r);
         int i17 = this.s;
-        yb.q(parcel, 11, 4);
+        bc.q(parcel, 11, 4);
         parcel.writeInt(i17);
         int i18 = this.w;
-        yb.q(parcel, 12, 4);
+        bc.q(parcel, 12, 4);
         parcel.writeInt(i18);
-        yb.l(parcel, 13, this.x);
-        yb.s(parcel, r10);
+        bc.l(parcel, 13, this.x);
+        bc.s(parcel, r10);
     }
 }

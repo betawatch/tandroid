@@ -1,10 +1,10 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 import android.text.TextUtils;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
     public final String a;
@@ -14,8 +14,8 @@ public final class e {
     public final int e;
 
     public e(String str, e2.u uVar, e2.u uVar2, int i7, int i10) {
-        ja.f(i7 == 0 || i10 == 0);
-        ja.f(true ^ TextUtils.isEmpty(str));
+        la.f(i7 == 0 || i10 == 0);
+        la.f(true ^ TextUtils.isEmpty(str));
         this.a = str;
         uVar.getClass();
         this.b = uVar;

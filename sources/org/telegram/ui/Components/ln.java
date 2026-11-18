@@ -1,53 +1,42 @@
 package org.telegram.ui.Components;
 
-import java.util.concurrent.atomic.AtomicReference;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln implements Runnable {
+public final /* synthetic */ class ln implements View.OnKeyListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ ln(sn snVar, int i7) {
+    public /* synthetic */ ln(Object obj, int i7) {
         this.a = i7;
-        this.b = snVar;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i7, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                sn snVar = this.b;
-                AtomicReference atomicReference = snVar.n;
-                org.telegram.ui.ActionBar.j5 j5Var = (org.telegram.ui.ActionBar.j5) atomicReference.get();
-                if (j5Var != null) {
-                    snVar.removeView(j5Var);
-                    atomicReference.set(null);
-                    break;
+                pn pnVar = (pn) this.b;
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
+                if (i7 != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
+                    return false;
                 }
-                break;
-            case 1:
-                sn snVar2 = this.b;
-                AtomicReference atomicReference2 = snVar2.w;
-                org.telegram.ui.ActionBar.j5 j5Var2 = (org.telegram.ui.ActionBar.j5) atomicReference2.get();
-                if (j5Var2 != null) {
-                    snVar2.removeView(j5Var2);
-                    atomicReference2.set(null);
-                    if (!snVar2.b) {
-                        snVar2.setClipChildren(true);
-                        break;
-                    }
+                ImageView imageView = pnVar.f;
+                if (imageView != null) {
+                    imageView.callOnClick();
                 }
-                break;
+                return true;
             default:
-                sn snVar3 = this.b;
-                snVar3.k0 = false;
-                snVar3.i0.c(false);
-                if (snVar3.a()) {
-                    snVar3.f();
-                    break;
+                iu iuVar = (iu) this.b;
+                iuVar.getClass();
+                if (i7 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !iuVar.isShowing()) {
+                    return false;
                 }
-                break;
+                iuVar.dismiss();
+                return true;
         }
     }
 }

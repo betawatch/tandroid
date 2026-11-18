@@ -1,32 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.TextView;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class jb extends va {
-    public final i9 a;
-    public final TextView b;
+public final /* synthetic */ class jb implements r1.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lb b;
+    public final /* synthetic */ q0.a c;
 
-    public jb(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        i9 i9Var = new i9(getContext());
-        this.a = i9Var;
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        addView(i9Var, c8.ja.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
-        textView.setGravity(8388611);
-        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
-        org.telegram.ui.ActionBar.q6.U(textView, org.telegram.ui.ActionBar.j6.yj, e6Var);
-        textView.setTextSize(1, 15.0f);
-        textView.setTypeface(Typeface.SANS_SERIF);
-        addView(textView, c8.ja.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    public /* synthetic */ jb(q0.a aVar, lb lbVar, int i7) {
+        this.a = i7;
+        this.c = aVar;
+        this.b = lbVar;
     }
 
-    @Override // org.telegram.ui.Components.cb
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
+    @Override // r1.d
+    public final void a(r1.g gVar, float f10, float f11) {
+        switch (this.a) {
+            case 0:
+                ((xa) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+            default:
+                ((pl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+        }
     }
 }

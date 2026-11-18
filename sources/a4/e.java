@@ -11,11 +11,11 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e implements o {
     public q a;
@@ -68,7 +68,7 @@ public final class e implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:60:0x0178 A[RETURN] */
@@ -85,7 +85,7 @@ public final class e implements o {
             if (!g(pVar)) {
                 throw t0.a(null, "Failed to determine bitstream type");
             }
-            pVar.l();
+            pVar.n();
         }
         if (!this.c) {
             f3.i0 d2 = this.a.d2(0, 1);
@@ -105,7 +105,7 @@ public final class e implements o {
         int i12 = 3;
         if (i10 != 0) {
             if (i10 == 1) {
-                pVar.m((int) jVar2.f);
+                pVar.r((int) jVar2.f);
                 jVar2.h = 2;
                 return 0;
             }
@@ -124,10 +124,10 @@ public final class e implements o {
                 jVar2.a(-(m0 + 2));
             }
             if (!jVar2.l) {
-                b0 Y = jVar2.d.Y();
-                Y.getClass();
-                jVar2.c.f(Y);
-                jVar2.b.d(Y.h());
+                b0 f10 = jVar2.d.f();
+                f10.getClass();
+                jVar2.c.j(f10);
+                jVar2.b.d(f10.h());
                 jVar2.l = true;
             }
             if (jVar2.k <= 0 && !fVar.b(pVar)) {
@@ -202,7 +202,7 @@ public final class e implements o {
         if (gVar.a(pVar, true) && (gVar.a & 2) == 2) {
             int min = Math.min(gVar.e, 8);
             x xVar = new x(min);
-            pVar.c(0, min, xVar.a);
+            pVar.b(0, min, xVar.a);
             xVar.N(0);
             if (xVar.a() >= 5 && xVar.A() == 127 && xVar.C() == 1179402563) {
                 this.b = new d();

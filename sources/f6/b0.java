@@ -5,7 +5,7 @@ import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
@@ -29,7 +29,7 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 String str2 = this.d;
                 j6.x xVar = (j6.x) obj;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-                q6.m.i("Not connected to device", e0Var.G == 2);
+                q6.m.j("Not connected to device", e0Var.G == 2);
                 j6.f fVar = (j6.f) xVar.n();
                 Parcel p12 = fVar.p1();
                 p12.writeString(str);
@@ -56,7 +56,7 @@ public final /* synthetic */ class b0 implements com.google.android.gms.common.a
                 TaskCompletionSource taskCompletionSource2 = (TaskCompletionSource) obj2;
                 HashMap hashMap = e0Var2.C;
                 long incrementAndGet = e0Var2.r.incrementAndGet();
-                q6.m.i("Not connected to device", e0Var2.G == 2);
+                q6.m.j("Not connected to device", e0Var2.G == 2);
                 try {
                     hashMap.put(Long.valueOf(incrementAndGet), taskCompletionSource2);
                     j6.f fVar2 = (j6.f) xVar2.n();

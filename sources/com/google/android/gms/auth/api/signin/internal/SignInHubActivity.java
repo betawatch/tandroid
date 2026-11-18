@@ -9,6 +9,7 @@ import android.support.v4.media.session.a0;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.fragment.app.v;
+import cb.c;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
@@ -18,10 +19,9 @@ import d6.d;
 import d6.i;
 import java.lang.reflect.Modifier;
 import java.util.Set;
-import ob.c;
 import z1.a;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class SignInHubActivity extends v {
     public static boolean U = false;
@@ -49,11 +49,11 @@ public class SignInHubActivity extends v {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i V = i.V(this);
+                i B = i.B(this);
                 GoogleSignInOptions googleSignInOptions = this.Q.b;
-                synchronized (V) {
-                    synchronized (V) {
-                        ((b) V.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (B) {
+                    synchronized (B) {
+                        ((b) B.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -176,8 +176,8 @@ public class SignInHubActivity extends v {
     }
 
     public final void u() {
-        z1.b bVar = (z1.b) new a0(f(), z1.b.f).j(z1.b.class);
-        c cVar = new c(this, 14);
+        z1.b bVar = (z1.b) new a0(g(), z1.b.f).j(z1.b.class);
+        c cVar = new c(this, 15);
         boolean z10 = bVar.e;
         m mVar = bVar.d;
         if (z10) {

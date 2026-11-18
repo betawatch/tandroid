@@ -2,11 +2,12 @@ package u9;
 
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.List;
+import r0.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface e {
-    public static final r2.j B = new r2.j(27);
+    public static final f1 B = new f1(28);
 
-    List l(ComponentRegistrar componentRegistrar);
+    List k(ComponentRegistrar componentRegistrar);
 }

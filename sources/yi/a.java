@@ -8,12 +8,12 @@ import java.nio.ByteOrder;
 import ji.m;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.le;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.xr;
-import org.telegram.ui.n31;
+import org.telegram.messenger.ke;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.vr;
+import org.telegram.ui.qx0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class a implements Runnable {
                     dVar.f.b("AudioRecord started: minBufferBytes=" + minBufferSize + ", bufferBytes=" + max + ", sessionId=" + dVar.p.getAudioSessionId());
                     dVar.r = SystemClock.elapsedRealtime();
                     ac.e eVar = dVar.g;
-                    ((j) eVar.c).i.post(new n31(eVar, eVar.a, 4));
+                    ((j) eVar.c).i.post(new qx0(eVar, eVar.a, 5));
                     dVar.i.post(new a(dVar, 2));
                     return;
                 } catch (Throwable th2) {
@@ -87,10 +87,10 @@ public final /* synthetic */ class a implements Runnable {
                         throw new IllegalStateException("AudioRecord read failed: " + read);
                     }
                     byteBuffer.limit(read);
-                    m mVar = xr.k;
+                    m mVar = vr.k;
                     if (mVar != null && read > 0) {
                         try {
-                            mVar.m(byteBuffer, read, 48000, 2);
+                            mVar.o(byteBuffer, read, 48000, 2);
                         } catch (Throwable th3) {
                             a8.g(th3, true);
                         }
@@ -112,7 +112,7 @@ public final /* synthetic */ class a implements Runnable {
                             final long j11 = dVar2.q;
                             Handler handler = ((j) eVar2.c).i;
                             final long j12 = eVar2.a;
-                            handler.post(new Runnable() { // from class: yi.f
+                            handler.post(new Runnable() { // from class: yi.e
                                 @Override // java.lang.Runnable
                                 public final void run() {
                                     j jVar = (j) ac.e.this.c;
@@ -121,9 +121,9 @@ public final /* synthetic */ class a implements Runnable {
                                         long j13 = jVar.j();
                                         double d = sqrt;
                                         if (d >= 0.0d) {
-                                            MediaController mediaController = ((le) jVar.f.b).a;
+                                            MediaController mediaController = ((ke) jVar.f.b).a;
                                             mediaController.l1 = j13;
-                                            ns.f(mediaController.i1).k(ns.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
+                                            ks.f(mediaController.i1).k(ks.k2, Integer.valueOf(mediaController.h1), Double.valueOf(d / 2.0d));
                                         }
                                     }
                                 }

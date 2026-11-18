@@ -1,6 +1,35 @@
 package p5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.content.Context;
+import com.google.android.datatransport.cct.CctBackendFactory;
+import java.util.HashMap;
+import org.telegram.ui.md0;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface e {
+public final class e {
+    public final k8.a a;
+    public final md0 b;
+    public final HashMap c;
+
+    public e(Context context, md0 md0Var) {
+        k8.a aVar = new k8.a(context, 22);
+        this.c = new HashMap();
+        this.a = aVar;
+        this.b = md0Var;
+    }
+
+    public final synchronized f a(String str) {
+        if (this.c.containsKey(str)) {
+            return (f) this.c.get(str);
+        }
+        CctBackendFactory x02 = this.a.x0(str);
+        if (x02 == null) {
+            return null;
+        }
+        md0 md0Var = this.b;
+        f create = x02.create(new b((Context) md0Var.b, (x5.a) md0Var.c, (x5.a) md0Var.d, str));
+        this.c.put(str, create);
+        return create;
+    }
 }

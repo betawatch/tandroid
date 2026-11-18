@@ -1,84 +1,87 @@
 package fi;
 
-import android.animation.ValueAnimator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.fc;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.wu0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class e4 implements GestureDetector.OnGestureListener {
-    public final /* synthetic */ d5 a;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class e4 {
+    public final ImageReceiver a;
+    public int b;
+    public StaticLayout c;
+    public final TextPaint d;
+    public h5 e;
+    public final /* synthetic */ f4 f;
 
-    public e4(d5 d5Var) {
-        this.a = d5Var;
+    public e4(f4 f4Var) {
+        this.f = f4Var;
+        ImageReceiver imageReceiver = new ImageReceiver(f4Var);
+        this.a = imageReceiver;
+        TextPaint textPaint = new TextPaint(1);
+        this.d = textPaint;
+        imageReceiver.A1 = true;
+        imageReceiver.J0(org.telegram.messenger.g0.L(6.0f));
+        textPaint.setColor(-1);
+        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        d5 d5Var = this.a;
-        d5Var.d.abortAnimation();
-        ValueAnimator valueAnimator = d5Var.N;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            d5Var.N.cancel();
-            d5Var.N = null;
+    public final void a(int i7) {
+        f4 f4Var = this.f;
+        ArrayList arrayList = f4Var.F;
+        if (i7 < 0 || i7 >= arrayList.size()) {
+            return;
         }
-        d5Var.M = false;
-        d5Var.P.x = false;
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        d5 d5Var = this.a;
-        d5Var.d.fling((int) d5Var.e, 0, (int) (-f10), 0, (int) d5Var.f, (int) d5Var.h, 0, 0);
-        d5Var.invalidate();
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        d5 d5Var = this.a;
-        float f12 = d5Var.e + f10;
-        d5Var.e = f12;
-        float f13 = d5Var.f;
-        if (f12 < f13) {
-            d5Var.e = f13;
+        this.e = (h5) arrayList.get(i7);
+        boolean z10 = f4Var.w;
+        ImageReceiver imageReceiver = this.a;
+        if (z10) {
+            imageReceiver.P();
         }
-        float f14 = d5Var.e;
-        float f15 = d5Var.h;
-        if (f14 > f15) {
-            d5Var.e = f15;
-        }
-        d5Var.invalidate();
-        return false;
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final boolean onSingleTapUp(MotionEvent motionEvent) {
-        d5 d5Var = this.a;
-        ArrayList arrayList = d5Var.H;
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            g4 g4Var = (g4) arrayList.get(i7);
-            if (((g4) arrayList.get(i7)).a.Q0.contains(motionEvent.getX(), motionEvent.getY())) {
-                int i10 = d5Var.L;
-                int i11 = g4Var.b;
-                if (i10 != i11) {
-                    d5Var.c(i11, true, false);
-                } else {
-                    d5Var.O.o(false);
-                }
+        h5 h5Var = this.e;
+        TL_stories.StoryItem storyItem = h5Var.a;
+        if (storyItem != null) {
+            i7.x(imageReceiver, storyItem);
+        } else {
+            o6 o6Var = h5Var.b;
+            p10[] p10VarArr = i7.a;
+            if (o6Var.c.K) {
+                imageReceiver.r0(fc.g(o6Var.f), "320_180", null, null, null, 0L, null, null, 0);
+            } else {
+                imageReceiver.r0(fc.g(o6Var.e), "320_180", null, null, null, 0L, null, null, 0);
             }
         }
-        return false;
+        b();
     }
 
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onLongPress(MotionEvent motionEvent) {
-    }
-
-    @Override // android.view.GestureDetector.OnGestureListener
-    public final void onShowPress(MotionEvent motionEvent) {
+    public final void b() {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        TL_stories.StoryItem storyItem = this.e.a;
+        f4 f4Var = this.f;
+        if (storyItem != null) {
+            f4.a(f4Var, spannableStringBuilder, storyItem.views, false);
+        }
+        if (spannableStringBuilder.length() == 0) {
+            this.c = null;
+            return;
+        }
+        int i7 = (int) (f4Var.K + 1.0f);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        TextPaint textPaint = this.d;
+        StaticLayout c10 = wu0.c(spannableStringBuilder, textPaint, i7, alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 1, true);
+        this.c = c10;
+        if (c10.getLineCount() > 1) {
+            SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("");
+            f4.a(f4Var, spannableStringBuilder2, this.e.a.views, true);
+            this.c = wu0.c(spannableStringBuilder2, textPaint, (int) (f4Var.K + 1.0f), alignment, 0.0f, null, ConnectionsManager.DEFAULT_DATACENTER_ID, 2, true);
+        }
     }
 }

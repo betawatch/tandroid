@@ -14,12 +14,12 @@ import android.os.Build;
 import com.google.android.gms.internal.vision.e2;
 import java.util.HashMap;
 import java.util.Random;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.f3;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class f {
     public static final float S;
@@ -127,10 +127,10 @@ public final class f {
         return bitmap;
     }
 
-    public static e c(String str, int i7, gc.c cVar, float f10, ColorDrawable colorDrawable) {
+    public static e c(String str, int i7, gc.b bVar, float f10, ColorDrawable colorDrawable) {
         try {
             HashMap hashMap = new HashMap();
-            hashMap.put(bc.b.a, cVar);
+            hashMap.put(bc.b.a, bVar);
             hashMap.put(bc.b.c, 0);
             ji.q qVar = new ji.q(1);
             if (colorDrawable != null) {
@@ -139,7 +139,7 @@ public final class f {
             e eVar = new e();
             Bitmap a10 = qVar.a(str, i7, i7, hashMap, null, f10, 0, -1);
             eVar.b = a10.getWidth();
-            int i10 = ((cc.c) ic.b.b(str, cVar, hashMap).f).b;
+            int i10 = ((cc.c) ic.b.b(str, bVar, hashMap).f).b;
             eVar.e = i10;
             eVar.f = (eVar.b - (eVar.g * 2.0f)) / i10;
             int i11 = i10 * i10;
@@ -152,7 +152,7 @@ public final class f {
                     float f12 = i13 + 0.5f;
                     float f13 = eVar.f;
                     int i14 = (int) ((f12 * f13) + f11);
-                    int b10 = (int) i20.b(i12, 0.5f, f13, f11);
+                    int b10 = (int) n10.b(i12, 0.5f, f13, f11);
                     boolean z10 = false;
                     for (int i15 = -1; i15 <= 1 && !z10; i15++) {
                         z10 = Color.alpha(a10.getPixel(Math.max(0, Math.min(eVar.b - 1, ((int) ((((float) i15) * eVar.f) * 0.3f)) + i14)), b10)) > 40;
@@ -188,12 +188,12 @@ public final class f {
     }
 
     public static int d(float f10) {
-        return Math.max(0, Math.min(ns.e4, Math.round(f10 * 255.0f)));
+        return Math.max(0, Math.min(ks.e4, Math.round(f10 * 255.0f)));
     }
 
     public static float h(e eVar, float f10) {
         float f11 = 1.0f - f10;
-        return i20.b(eVar.e, 6.0f, 1.0f - (((f11 * 0.45f) + 0.55f) * (f11 * f11)), -1.5f);
+        return n10.b(eVar.e, 6.0f, 1.0f - (((f11 * 0.45f) + 0.55f) * (f11 * f11)), -1.5f);
     }
 
     public static boolean i(e eVar, int i7, int i10) {
@@ -304,7 +304,7 @@ public final class f {
                         float f12 = eVar.g;
                         float f13 = eVar.f;
                         fArr[i15] = ((i17 + 0.5f) * f13) + f12;
-                        eVar.o[i15] = i20.b(i16, 0.5f, f13, f12);
+                        eVar.o[i15] = n10.b(i16, 0.5f, f13, f12);
                         float f14 = hypot * 0.5f;
                         eVar.p[i15] = i21 ? f14 * 0.85f : f14 + (floor * 0.06f);
                         eVar.q[i15] = eVar.h[i20];
@@ -453,7 +453,7 @@ public final class f {
             return;
         }
         float f33 = 1.0f;
-        if (this.q == 2 && this.o < 1.0f && canvas.isHardwareAccelerated() && (Build.VERSION.SDK_INT < 29 || gz.o() != 2)) {
+        if (this.q == 2 && this.o < 1.0f && canvas.isHardwareAccelerated() && (Build.VERSION.SDK_INT < 29 || bz.o() != 2)) {
             if (this.p == 0) {
                 this.p = currentTimeMillis;
             }
@@ -587,7 +587,7 @@ public final class f {
                                 if (f48 < 0.08f) {
                                     f29 = f48 / 0.08f;
                                 } else {
-                                    y10 = k5.y(f48, 0.08f, 0.92f, 1.0f);
+                                    y10 = f3.y(f48, 0.08f, 0.92f, 1.0f);
                                     if (isNaN) {
                                         L = (rectF5.top - org.telegram.messenger.g0.L(56.0f)) - fArr10[i16];
                                         if (L > 0.0f) {
@@ -660,7 +660,7 @@ public final class f {
                                 if (bArr[i16] != 2) {
                                 }
                             } else {
-                                f29 = k5.y(f48, 0.35f, 0.65f, 1.0f);
+                                f29 = f3.y(f48, 0.35f, 0.65f, 1.0f);
                             }
                             y10 = f29;
                             if (isNaN) {
@@ -672,7 +672,7 @@ public final class f {
                             }
                         } else {
                             paint5.setColor(fVar.y);
-                            paint5.setAlpha(ns.e4);
+                            paint5.setAlpha(ks.e4);
                             float f60 = fArr9[i16];
                             float f61 = fArr11[i16];
                             float f62 = f60 / 2.0f;
@@ -731,22 +731,22 @@ public final class f {
                                     }
                                     float f68 = eVar5.g;
                                     float f69 = eVar5.f;
-                                    float f70 = org.telegram.ui.Cells.y0.f(i22 + 0.5f, f69, f68, f67, f65);
-                                    float f71 = ((((i21 + 0.5f) * f69) + f68) * f67) + f11;
-                                    float f72 = f70 - this.B;
-                                    float max4 = Math.max(f33, Math.abs(f72));
+                                    float g10 = org.telegram.ui.Cells.c0.g(i22 + 0.5f, f69, f68, f67, f65);
+                                    float f70 = ((((i21 + 0.5f) * f69) + f68) * f67) + f11;
+                                    float f71 = g10 - this.B;
+                                    float max4 = Math.max(f33, Math.abs(f71));
                                     f27 = f67;
                                     float nextFloat = (random.nextFloat() * org.telegram.messenger.g0.L(900.0f)) + org.telegram.messenger.g0.L(1000.0f);
                                     i13 = i22;
                                     float radians = (float) Math.toRadians((random.nextFloat() - 0.5f) * 36.0f);
                                     bArr[i24] = (byte) (random.nextFloat() < 0.12f ? 1 : 0);
-                                    fArr11[i24] = f70;
-                                    fArr10[i24] = f71;
+                                    fArr11[i24] = g10;
+                                    fArr10[i24] = f70;
                                     fArr9[i24] = ((random.nextFloat() * 0.6f) + 0.7f) * eVar5.f * f27;
                                     double d = radians;
-                                    fArr8[i24] = (Math.min(1.0f, max4 / (f12 * 0.5f)) * Math.signum(f72) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
+                                    fArr8[i24] = (Math.min(1.0f, max4 / (f12 * 0.5f)) * Math.signum(f71) * nextFloat * 0.18f) + (((float) Math.sin(d)) * nextFloat);
                                     fArr7[i24] = (-((float) Math.cos(d))) * nextFloat;
-                                    fArr6[i24] = org.telegram.ui.Cells.y0.g(random, 0.06f, 0.24f);
+                                    fArr6[i24] = org.telegram.ui.Cells.c0.h(random, 0.06f, 0.24f);
                                     fArr5[i24] = (-(((eVar5.e - 1) - i21) / 4)) * 0.018f;
                                     fArr4[i24] = random.nextFloat() * 90.0f;
                                     fArr3[i24] = (random.nextFloat() - 0.5f) * 720.0f;
@@ -767,11 +767,11 @@ public final class f {
                     if (max5 >= 1.0f) {
                         f26 = 1.0f;
                     } else if (max5 < f25) {
-                        float f73 = 1.0f - (max5 / f25);
-                        f26 = ((1.0f - (f73 * f73)) * 0.12f) + 0.92f;
+                        float f72 = 1.0f - (max5 / f25);
+                        f26 = ((1.0f - (f72 * f72)) * 0.12f) + 0.92f;
                     } else {
-                        float f74 = (max5 - f25) / 0.55f;
-                        f26 = 1.04f - ((f66 - (f74 * 2.0f)) * ((0.04f * f74) * f74));
+                        float f73 = (max5 - f25) / 0.55f;
+                        f26 = 1.04f - ((f66 - (f73 * 2.0f)) * ((0.04f * f73) * f73));
                     }
                     canvas.save();
                     canvas.scale(f26, f26, this.B, this.C);
@@ -794,19 +794,19 @@ public final class f {
             fVar = this;
             f16 = f65;
         }
-        float f75 = 0.5f;
-        float f76 = 0.45f;
+        float f74 = 0.5f;
+        float f75 = 0.45f;
         if (fVar.o >= 1.0f || (eVar = fVar.n) == null) {
             canvas2 = canvas;
-            float f77 = f15;
+            float f76 = f15;
             rectF = rectF4;
             f17 = min;
-            float f78 = f16;
+            float f77 = f16;
             f18 = 1.6f;
             f19 = 0.0f;
             e eVar6 = fVar.m;
             int i25 = eVar6.b;
-            rectF.set(f78, f77, f78 + f12, f77 + f12);
+            rectF.set(f77, f76, f77 + f12, f76 + f12);
             canvas2.drawBitmap(eVar6.a, eVar6.c, rectF, paint4);
         } else {
             e eVar7 = fVar.m;
@@ -842,8 +842,8 @@ public final class f {
             }
             float h = h(eVar, fVar.o);
             float h7 = h(eVar7, fVar.o);
-            float f79 = f12 / eVar.b;
-            float f80 = f12 / eVar7.b;
+            float f78 = f12 / eVar.b;
+            float f79 = f12 / eVar7.b;
             int i28 = 0;
             int i29 = 0;
             while (i28 < eVar.m) {
@@ -854,34 +854,34 @@ public final class f {
                     int i32 = iArr[i30 + 1];
                     i10 = i28;
                     int i33 = (i32 * eVar.e) + i31;
-                    float f81 = (eVar.i[i33] * 3.2f) + ((r9 - 1) - i32);
-                    if (h > f81) {
+                    float f80 = (eVar.i[i33] * 3.2f) + ((r9 - 1) - i32);
+                    if (h > f80) {
                         boolean[] zArr = fVar.s;
                         if (zArr[i33]) {
                             paint3 = paint4;
-                            f23 = f80;
+                            f23 = f79;
                         } else {
                             zArr[i33] = z10;
-                            float f82 = i26;
+                            float f81 = i26;
                             paint3 = paint4;
-                            float f83 = eVar.f;
-                            float f84 = org.telegram.ui.Cells.y0.f(i31 + 0.5f, f83, f82, f79, f16);
-                            float f85 = ((((i32 + 0.5f) * f83) + f82) * f79) + f15;
-                            float f86 = f83 * f79;
-                            float f87 = f84 - fVar.B;
-                            float f88 = f85 - fVar.C;
+                            float f82 = eVar.f;
+                            float g11 = org.telegram.ui.Cells.c0.g(i31 + 0.5f, f82, f81, f78, f16);
+                            float f83 = ((((i32 + 0.5f) * f82) + f81) * f78) + f15;
+                            float f84 = f82 * f78;
+                            float f85 = g11 - fVar.B;
+                            float f86 = f83 - fVar.C;
                             rectF3 = rectF4;
-                            f23 = f80;
-                            float max6 = Math.max(1.0f, (float) Math.hypot(f87, f88));
-                            float f89 = f87 / max6;
-                            float f90 = f88 / max6;
+                            f23 = f79;
+                            float max6 = Math.max(1.0f, (float) Math.hypot(f85, f86));
+                            float f87 = f85 / max6;
+                            float f88 = f86 / max6;
                             float nextFloat2 = random.nextFloat();
                             int i34 = nextFloat2 < 0.12f ? 2 : nextFloat2 < 0.7f ? 3 : 5;
                             int i35 = 0;
                             while (i35 < i34) {
-                                float f91 = f90;
+                                float f89 = f88;
                                 int i36 = fVar.l;
-                                float f92 = f86;
+                                float f90 = f84;
                                 if (i36 >= 2400) {
                                     i36 = -1;
                                 } else {
@@ -902,31 +902,31 @@ public final class f {
                                     r02 = 0;
                                 }
                                 bArr[i12] = (byte) r02;
-                                fArr11[i12] = ((random.nextFloat() - 0.5f) * f92 * 0.5f) + f84;
-                                fArr10[i12] = ((random.nextFloat() - 0.5f) * f92 * 0.5f) + f85;
+                                fArr11[i12] = ((random.nextFloat() - 0.5f) * f90 * 0.5f) + g11;
+                                fArr10[i12] = ((random.nextFloat() - 0.5f) * f90 * 0.5f) + f83;
                                 if (z11) {
                                     fArr9[i12] = org.telegram.messenger.g0.N((random.nextFloat() * 0.9f) + 0.9f);
                                 } else if (i35 != 0 || nextFloat2 >= 0.12f) {
-                                    fArr9[i12] = ((random.nextFloat() * 0.55f) + f45) * f92;
+                                    fArr9[i12] = ((random.nextFloat() * 0.55f) + f45) * f90;
                                 } else {
-                                    fArr9[i12] = ((random.nextFloat() * f76) + 1.25f) * f92;
+                                    fArr9[i12] = ((random.nextFloat() * f75) + 1.25f) * f90;
                                 }
                                 float nextFloat3 = (random.nextFloat() * org.telegram.messenger.g0.L(150.0f)) + org.telegram.messenger.g0.L(110.0f);
-                                float f93 = f89;
-                                float g10 = org.telegram.ui.Cells.y0.g(random, 0.35f, f76);
-                                fArr8[i12] = ((random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(90.0f)) + (f93 * nextFloat3 * g10);
-                                fArr7[i12] = e2.t(1.0f, g10, nextFloat3, (f91 * nextFloat3) * g10) - org.telegram.messenger.g0.L(30.0f);
-                                fArr6[i12] = org.telegram.ui.Cells.y0.g(random, 0.2f, f45);
+                                float f91 = f87;
+                                float h10 = org.telegram.ui.Cells.c0.h(random, 0.35f, f75);
+                                fArr8[i12] = ((random.nextFloat() - 0.5f) * org.telegram.messenger.g0.L(90.0f)) + (f91 * nextFloat3 * h10);
+                                fArr7[i12] = e2.t(1.0f, h10, nextFloat3, (f89 * nextFloat3) * h10) - org.telegram.messenger.g0.L(30.0f);
+                                fArr6[i12] = org.telegram.ui.Cells.c0.h(random, 0.2f, f45);
                                 fArr5[i12] = 0.0f;
                                 fArr4[i12] = random.nextFloat() * 90.0f;
                                 fArr3[i12] = (random.nextFloat() - 0.5f) * 720.0f;
                                 fArr2[i12] = Float.NaN;
                                 i35++;
                                 i34 = i34;
-                                f90 = f91;
-                                f86 = f92;
-                                f89 = f93;
-                                f76 = 0.45f;
+                                f88 = f89;
+                                f84 = f90;
+                                f87 = f91;
+                                f75 = 0.45f;
                             }
                             eVar4 = eVar;
                             i11 = i26;
@@ -934,16 +934,16 @@ public final class f {
                             i26 = i11;
                             paint4 = paint3;
                             rectF4 = rectF3;
-                            f80 = f23;
+                            f79 = f23;
                             eVar = eVar4;
                             f45 = 0.3f;
-                            f76 = 0.45f;
+                            f75 = 0.45f;
                         }
                     } else {
                         paint3 = paint4;
-                        f23 = f80;
+                        f23 = f79;
                         rectF3 = rectF4;
-                        float min4 = 1.0f - Math.min(1.0f, (f81 - h) / 2.2f);
+                        float min4 = 1.0f - Math.min(1.0f, (f80 - h) / 2.2f);
                         if (min4 > 0.0f) {
                             eVar3 = eVar;
                             f24 = org.telegram.messenger.g0.N(1.4f) * ((float) Math.sin((fVar.o * 60.0f) + (i32 * 7) + (i31 * 13))) * min4;
@@ -952,29 +952,29 @@ public final class f {
                             f24 = 0.0f;
                         }
                         float N = org.telegram.messenger.g0.N(1.5f) * (-min4);
-                        float f94 = i26;
-                        float f95 = i31;
-                        float f96 = eVar3.f;
-                        float f97 = (f95 * f96) + f94;
-                        float f98 = (i32 * f96) + f94;
-                        float f99 = f97 + f96;
+                        float f92 = i26;
+                        float f93 = i31;
+                        float f94 = eVar3.f;
+                        float f95 = (f93 * f94) + f92;
+                        float f96 = (i32 * f94) + f92;
+                        float f97 = f95 + f94;
                         i11 = i26;
-                        float f100 = f98 + f96;
+                        float f98 = f96 + f94;
                         eVar4 = eVar3;
-                        n(fVar.L, fVar.M, fVar.P, i29, r.b.e(f97, f79, f16, f24), r.b.e(f98, f79, f15, N), r.b.e(f99, f79, f16, f24), r.b.e(f100, f79, f15, N), f97, f98, f99, f100, (((int) e2.C(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.o());
+                        n(fVar.L, fVar.M, fVar.P, i29, p5.c.e(f95, f78, f16, f24), p5.c.e(f96, f78, f15, N), p5.c.e(f97, f78, f16, f24), p5.c.e(f98, f78, f15, N), f95, f96, f97, f98, (((int) e2.C(min4, 0.25f, 1.0f, 255.0f)) << 24) | fVar.o());
                         i29++;
                         i28 = i10 + 1;
                         i26 = i11;
                         paint4 = paint3;
                         rectF4 = rectF3;
-                        f80 = f23;
+                        f79 = f23;
                         eVar = eVar4;
                         f45 = 0.3f;
-                        f76 = 0.45f;
+                        f75 = 0.45f;
                     }
                 } else {
                     paint3 = paint4;
-                    f23 = f80;
+                    f23 = f79;
                     i10 = i28;
                 }
                 rectF3 = rectF4;
@@ -984,20 +984,20 @@ public final class f {
                 i26 = i11;
                 paint4 = paint3;
                 rectF4 = rectF3;
-                f80 = f23;
+                f79 = f23;
                 eVar = eVar4;
                 f45 = 0.3f;
-                f76 = 0.45f;
+                f75 = 0.45f;
             }
             Paint paint8 = paint4;
             RectF rectF6 = rectF4;
             f19 = 0.0f;
-            float f101 = 3.2f;
+            float f99 = 3.2f;
             boolean z12 = z10;
             int i37 = 0;
             int i38 = 0;
             while (true) {
-                f20 = f80;
+                f20 = f79;
                 if (i37 >= eVar7.m) {
                     break;
                 }
@@ -1006,45 +1006,45 @@ public final class f {
                     int i39 = i37 * 4;
                     int i40 = iArr2[i39];
                     int i41 = iArr2[i39 + 1];
-                    float e10 = r.b.e(eVar7.i[(i41 * eVar7.e) + i40], f101, (r5 - 1) - i41, 1.6f);
+                    float e10 = p5.c.e(eVar7.i[(i41 * eVar7.e) + i40], f99, (r5 - 1) - i41, 1.6f);
                     if (h7 <= e10) {
-                        f22 = f75;
-                        f80 = f20;
+                        f22 = f74;
+                        f79 = f20;
                         z12 = false;
-                        f101 = 3.2f;
+                        f99 = 3.2f;
                     } else {
                         float min5 = Math.min(1.0f, (h7 - e10) / 2.4f);
-                        float f102 = i27;
-                        float f103 = eVar7.f;
-                        float f104 = (i40 * f103) + f102;
-                        float f105 = (i41 * f103) + f102;
-                        float f106 = f104 + f103;
-                        float f107 = f105 + f103;
-                        float f108 = min5 - 1.0f;
-                        f101 = 3.2f;
-                        float f109 = (((f108 * 2.2f * f108) + (f108 * 3.2f * f108 * f108) + 1.0f) * 0.65f) + 0.35f;
-                        if (min5 >= 1.0f || (min5 > 0.4f && Math.abs(f109 - 1.0f) < f13)) {
-                            f22 = f75;
-                            f80 = f20;
-                            n(fVar.N, fVar.O, fVar.Q, i38, (f104 * f80) + f16, (f105 * f80) + f15, (f106 * f80) + f16, (f107 * f80) + f15, f104, f105, f106, f107, fVar.o() | (-16777216));
+                        float f100 = i27;
+                        float f101 = eVar7.f;
+                        float f102 = (i40 * f101) + f100;
+                        float f103 = (i41 * f101) + f100;
+                        float f104 = f102 + f101;
+                        float f105 = f103 + f101;
+                        float f106 = min5 - 1.0f;
+                        f99 = 3.2f;
+                        float f107 = (((f106 * 2.2f * f106) + (f106 * 3.2f * f106 * f106) + 1.0f) * 0.65f) + 0.35f;
+                        if (min5 >= 1.0f || (min5 > 0.4f && Math.abs(f107 - 1.0f) < f13)) {
+                            f22 = f74;
+                            f79 = f20;
+                            n(fVar.N, fVar.O, fVar.Q, i38, (f102 * f79) + f16, (f103 * f79) + f15, (f104 * f79) + f16, (f105 * f79) + f15, f102, f103, f104, f105, fVar.o() | (-16777216));
                             i38++;
                         } else {
-                            float f110 = ((f104 + f106) * f75 * f20) + f16;
-                            float f111 = ((f105 + f107) * f75 * f20) + f15;
-                            f22 = f75;
-                            f80 = f20;
-                            float D = e2.D(eVar7.f, f22, f80, f109);
-                            n(fVar.N, fVar.O, fVar.Q, i38, f110 - D, f111 - D, f110 + D, f111 + D, f104, f105, f106, f107, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.o());
+                            float f108 = ((f102 + f104) * f74 * f20) + f16;
+                            float f109 = ((f103 + f105) * f74 * f20) + f15;
+                            f22 = f74;
+                            f79 = f20;
+                            float D = e2.D(eVar7.f, f22, f79, f107);
+                            n(fVar.N, fVar.O, fVar.Q, i38, f108 - D, f109 - D, f108 + D, f109 + D, f102, f103, f104, f105, (((int) (Math.min(1.0f, min5 * 2.5f) * 255.0f)) << 24) | fVar.o());
                             i38++;
                             z12 = false;
                         }
                     }
                 } else {
-                    f22 = f75;
-                    f80 = f20;
+                    f22 = f74;
+                    f79 = f20;
                 }
                 i37++;
-                f75 = f22;
+                f74 = f22;
             }
             if (i29 == 0 && z12) {
                 fVar.o = 1.0f;
@@ -1081,12 +1081,12 @@ public final class f {
                 } else {
                     canvas2 = canvas;
                 }
-                float f112 = i7;
-                float f113 = eVar2.j;
-                float f114 = eVar2.f;
-                float f115 = f21;
-                float B = e2.B(f113, f114, f112, f115);
-                float B2 = e2.B(eVar2.k, f114, f112, f115);
+                float f110 = i7;
+                float f111 = eVar2.j;
+                float f112 = eVar2.f;
+                float f113 = f21;
+                float B = e2.B(f111, f112, f110, f113);
+                float B2 = e2.B(eVar2.k, f112, f110, f113);
                 canvas2.save();
                 canvas2.clipRect(B + f10, B + f11, B2 + f10, B2 + f11);
                 rectF = rectF2;
@@ -1106,7 +1106,7 @@ public final class f {
         float f16;
         float f17;
         float f18;
-        float x10;
+        float z10;
         int i7;
         float f19;
         float f20;
@@ -1148,14 +1148,14 @@ public final class f {
                             float c10 = (f13 - ((eVar.i[i18] * 0.06f) + e2.c((float) Math.hypot(f30 - f28, f31 - f28), f29, 0.52f, f26))) / 0.367f;
                             if (c10 > 0.0f) {
                                 if (c10 >= 1.0f) {
-                                    x10 = 1.0f;
+                                    z10 = 1.0f;
                                 } else {
                                     float f32 = 1.0f - c10;
-                                    x10 = org.telegram.ui.Cells.y0.x(f32, f32, f32, 1.0f);
+                                    z10 = org.telegram.ui.Cells.c0.z(f32, f32, f32, 1.0f);
                                 }
-                                float l10 = this.q == 2 ? (0.6f * x10) + 0.4f : l(c10);
+                                float l10 = this.q == 2 ? (0.6f * z10) + 0.4f : l(c10);
                                 if (this.q != 2) {
-                                    x10 = Math.min(1.0f, c10 * 6.0f);
+                                    z10 = Math.min(1.0f, c10 * 6.0f);
                                 }
                                 int i19 = eVar.j;
                                 if (i16 < i19 || i16 >= (i7 = eVar.k) || i15 < i19 || i15 >= i7) {
@@ -1183,10 +1183,10 @@ public final class f {
                                     float f42 = ((ceil2 - i21) / f39) * f27 * f35;
                                     f14 = f27;
                                     rectF.set(c11 - f41, c12 - f42, c11 + f41, c12 + f42);
-                                    paint2.setAlpha((int) (x10 * 255.0f));
+                                    paint2.setAlpha((int) (z10 * 255.0f));
                                     e eVar2 = this.n;
                                     canvas.drawBitmap(eVar.a, rect, rectF, paint2);
-                                    paint2.setAlpha(ns.e4);
+                                    paint2.setAlpha(ks.e4);
                                 }
                             }
                             f18 = f10;
@@ -1223,23 +1223,23 @@ public final class f {
                 if (f46 > 0.0f) {
                     float f47 = i14;
                     float f48 = eVar.f;
-                    float f49 = org.telegram.ui.Cells.y0.f(i23, f48, f47, f45, f44);
-                    float f50 = org.telegram.ui.Cells.y0.f(i24, f48, f47, f45, f43);
-                    float f51 = org.telegram.ui.Cells.y0.f(i23 + 7, f48, f47, f45, f44);
-                    float f52 = org.telegram.ui.Cells.y0.f(i24 + 7, f48, f47, f45, f43);
+                    float g10 = org.telegram.ui.Cells.c0.g(i23, f48, f47, f45, f44);
+                    float g11 = org.telegram.ui.Cells.c0.g(i24, f48, f47, f45, f43);
+                    float g12 = org.telegram.ui.Cells.c0.g(i23 + 7, f48, f47, f45, f44);
+                    float g13 = org.telegram.ui.Cells.c0.g(i24 + 7, f48, f47, f45, f43);
                     float l11 = l(f46);
                     canvas.save();
-                    canvas.scale(l11, l11, (f49 + f51) / 2.0f, (f50 + f52) / 2.0f);
-                    canvas.clipRect(f49 - 1.0f, f50 - 1.0f, f51 + 1.0f, f52 + 1.0f);
+                    canvas.scale(l11, l11, (g10 + g12) / 2.0f, (g11 + g13) / 2.0f);
+                    canvas.clipRect(g10 - 1.0f, g11 - 1.0f, g12 + 1.0f, g13 + 1.0f);
                     rectF.set(f44, f43, f44 + f12, f43 + f12);
-                    paint2.setAlpha(ns.e4);
+                    paint2.setAlpha(ks.e4);
                     canvas.drawBitmap(eVar.a, eVar.c, rectF, paint2);
                     canvas.restore();
                 }
                 i22++;
                 i11 = 1;
             }
-            paint2.setAlpha(ns.e4);
+            paint2.setAlpha(ks.e4);
             return;
         }
         m(eVar);
@@ -1256,110 +1256,110 @@ public final class f {
             paint3.setShader(new BitmapShader(bitmap3, tileMode, tileMode));
             this.J = eVar.a;
         }
-        float f53 = f12 / eVar.b;
+        float f49 = f12 / eVar.b;
         float min = Math.min(1.0f, Math.max(0.0f, f24) / 0.1f);
-        float f54 = eVar.f * 0.5f;
-        float f55 = 1.0f;
-        boolean z10 = true;
+        float f50 = eVar.f * 0.5f;
+        float f51 = 1.0f;
+        boolean z11 = true;
         int i28 = 0;
         int i29 = 0;
         int i30 = 0;
         while (i28 < eVar.m) {
-            float f56 = (f24 - eVar.p[i28]) / 0.434f;
-            if (f56 < 0.0f) {
-                f56 = 0.0f;
-            } else if (f56 > f55) {
-                f56 = f55;
+            float f52 = (f24 - eVar.p[i28]) / 0.434f;
+            if (f52 < 0.0f) {
+                f52 = 0.0f;
+            } else if (f52 > f51) {
+                f52 = f51;
             }
-            if (f56 < 0.5f) {
-                f20 = e2.D(f56, 4.0f, f56, f56);
+            if (f52 < 0.5f) {
+                f20 = e2.D(f52, 4.0f, f52, f52);
             } else {
-                float f57 = (f56 * (-2.0f)) + 2.0f;
-                f20 = f55 - (((f57 * f57) * f57) * 0.5f);
+                float f53 = (f52 * (-2.0f)) + 2.0f;
+                f20 = f51 - (((f53 * f53) * f53) * 0.5f);
             }
-            float f58 = (eVar.n[i28] * f53) + f22;
-            float f59 = (eVar.o[i28] * f53) + f23;
+            float f54 = (eVar.n[i28] * f49) + f22;
+            float f55 = (eVar.o[i28] * f49) + f23;
             if (eVar.q[i28]) {
-                float f60 = f20 > 0.75f ? 4.0f * (f20 - 0.75f) : 0.0f;
+                float f56 = f20 > 0.75f ? 4.0f * (f20 - 0.75f) : 0.0f;
                 paint = paint3;
-                if (f60 < f55) {
-                    float B = e2.B(f20, 0.8f, 0.2f, f54 * f53);
+                if (f56 < f51) {
+                    float B = e2.B(f20, 0.8f, 0.2f, f50 * f49);
                     int min2 = Math.min(7, (int) ((f20 * 7.0f) + 0.5f));
-                    float f61 = (f55 - f60) * min;
-                    if (f61 > 0.004f) {
-                        n(this.L, this.M, this.P, i29, f58 - B, f59 - B, f58 + B, f59 + B, min2 * 48, eVar.d, r7 + 48, r5 + 48, (((int) (f61 * 255.0f)) << 24) | o());
+                    float f57 = (f51 - f56) * min;
+                    if (f57 > 0.004f) {
+                        n(this.L, this.M, this.P, i29, f54 - B, f55 - B, f54 + B, f55 + B, min2 * 48, eVar.d, r7 + 48, r5 + 48, (((int) (f57 * 255.0f)) << 24) | o());
                         i29++;
                     }
-                    z10 = false;
+                    z11 = false;
                 }
-                if (f60 > 0.0f) {
-                    float f62 = i25;
+                if (f56 > 0.0f) {
+                    float f58 = i25;
                     int[] iArr = eVar.r;
-                    float f63 = iArr[i28 * 4];
-                    float f64 = eVar.f;
-                    float f65 = (f63 * f64) + f62;
-                    float f66 = (iArr[r5 + 1] * f64) + f62;
-                    float f67 = f65 + f64;
-                    float f68 = f66 + f64;
-                    n(this.N, this.O, this.Q, i30, (f65 * f53) + f22, (f66 * f53) + f23, (f67 * f53) + f22, (f68 * f53) + f23, f65, f66, f67, f68, (((int) (min * 255.0f)) << 24) | o());
+                    float f59 = iArr[i28 * 4];
+                    float f60 = eVar.f;
+                    float f61 = (f59 * f60) + f58;
+                    float f62 = (iArr[r5 + 1] * f60) + f58;
+                    float f63 = f61 + f60;
+                    float f64 = f62 + f60;
+                    n(this.N, this.O, this.Q, i30, (f61 * f49) + f22, (f62 * f49) + f23, (f63 * f49) + f22, (f64 * f49) + f23, f61, f62, f63, f64, (((int) (min * 255.0f)) << 24) | o());
                     i30++;
                 }
             } else {
                 paint = paint3;
-                float f69 = (f55 - f20) * 0.2f;
-                boolean z11 = f20 < f55 ? false : z10;
+                float f65 = (f51 - f20) * 0.2f;
+                boolean z12 = f20 < f51 ? false : z11;
                 if (f20 < 0.7f) {
-                    f21 = f69;
-                    y10 = f55;
+                    f21 = f65;
+                    y10 = f51;
                 } else {
-                    f21 = f69;
-                    y10 = k5.y(f20, 0.7f, 0.3f, f55);
+                    f21 = f65;
+                    y10 = f3.y(f20, 0.7f, 0.3f, f51);
                 }
-                float f70 = 0.9f * min * y10;
-                if (f21 <= 0.01f || f70 <= 0.004f) {
-                    z10 = z11;
+                float f66 = 0.9f * min * y10;
+                if (f21 <= 0.01f || f66 <= 0.004f) {
+                    z11 = z12;
                 } else {
-                    float f71 = f54 * f53 * f21;
-                    n(this.L, this.M, this.P, i29, f58 - f71, f59 - f71, f58 + f71, f59 + f71, 0.0f, eVar.d, 48.0f, r5 + 48, (((int) (f70 * 255.0f)) << 24) | o());
-                    z10 = z11;
+                    float f67 = f50 * f49 * f21;
+                    n(this.L, this.M, this.P, i29, f54 - f67, f55 - f67, f54 + f67, f55 + f67, 0.0f, eVar.d, 48.0f, r5 + 48, (((int) (f66 * 255.0f)) << 24) | o());
+                    z11 = z12;
                     i29++;
                 }
             }
             i28++;
             f24 = f13;
             paint3 = paint;
-            f55 = 1.0f;
+            f51 = 1.0f;
         }
         Paint paint4 = paint3;
         float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (f13 - 0.05f) / 0.45f));
-        float x11 = org.telegram.ui.Cells.y0.x(max, max, max, 1.0f);
-        if (x11 > 0.0f) {
+        float z13 = org.telegram.ui.Cells.c0.z(max, max, max, 1.0f);
+        if (z13 > 0.0f) {
             int i31 = eVar.j;
             while (i31 < eVar.k) {
                 int i32 = eVar.j;
                 int i33 = i30;
                 while (i32 < eVar.k) {
                     if (eVar.h[(eVar.e * i31) + i32]) {
-                        float f72 = i25;
-                        float f73 = eVar.f;
-                        float f74 = (i32 * f73) + f72;
-                        float f75 = (i31 * f73) + f72;
-                        f19 = x11;
-                        float f76 = f74 + f73;
-                        float f77 = f75 + f73;
-                        n(this.N, this.O, this.Q, i33, (f74 * f53) + f22, (f75 * f53) + f23, (f76 * f53) + f22, (f77 * f53) + f23, f74, f75, f76, f77, (((int) ((min * 255.0f) * f19)) << 24) | o());
+                        float f68 = i25;
+                        float f69 = eVar.f;
+                        float f70 = (i32 * f69) + f68;
+                        float f71 = (i31 * f69) + f68;
+                        f19 = z13;
+                        float f72 = f70 + f69;
+                        float f73 = f71 + f69;
+                        n(this.N, this.O, this.Q, i33, (f70 * f49) + f22, (f71 * f49) + f23, (f72 * f49) + f22, (f73 * f49) + f23, f70, f71, f72, f73, (((int) ((min * 255.0f) * f19)) << 24) | o());
                         i33++;
                     } else {
-                        f19 = x11;
+                        f19 = z13;
                     }
                     i32++;
-                    x11 = f19;
+                    z13 = f19;
                 }
                 i31++;
                 i30 = i33;
             }
         }
-        if (z10 && min >= 1.0f) {
+        if (z11 && min >= 1.0f) {
             rectF.set(f22, f23, f22 + f12, f23 + f12);
             canvas.drawBitmap(eVar.a, eVar.c, rectF, paint2);
             return;

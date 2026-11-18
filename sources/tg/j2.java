@@ -1,21 +1,48 @@
 package tg;
 
-import android.content.Context;
+import android.graphics.Insets;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.View;
+import android.view.WindowInsets;
+import org.telegram.ui.Components.w01;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j2 extends i0 {
-    public final /* synthetic */ l2 u0;
+public final class j2 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ k2 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(l2 l2Var, Context context, float f10) {
-        super(context, f10);
-        this.u0 = l2Var;
+    public j2(k2 k2Var) {
+        this.a = k2Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        this.u0.d.invalidate();
-        super.invalidate();
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        WindowInsets windowInsets2;
+        int i7;
+        int i10;
+        int i11;
+        int i12;
+        k2 k2Var = this.a;
+        w01 w01Var = k2Var.b;
+        Rect rect = k2Var.h;
+        int i13 = Build.VERSION.SDK_INT;
+        if (i13 >= 30) {
+            Insets insets = windowInsets.getInsets(647);
+            i7 = insets.left;
+            i10 = insets.top;
+            i11 = insets.right;
+            i12 = insets.bottom;
+            rect.set(i7, i10, i11, i12);
+        } else {
+            rect.set(windowInsets.getStableInsetLeft(), windowInsets.getStableInsetTop(), windowInsets.getStableInsetRight(), windowInsets.getStableInsetBottom());
+        }
+        w01Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        w01Var.requestLayout();
+        if (i13 < 30) {
+            return windowInsets.consumeSystemWindowInsets();
+        }
+        windowInsets2 = WindowInsets.CONSUMED;
+        return windowInsets2;
     }
 }

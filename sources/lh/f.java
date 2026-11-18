@@ -9,14 +9,14 @@ import android.graphics.Shader;
 import android.view.View;
 import java.util.HashSet;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f extends View implements z5 {
+public final class f extends View implements c6 {
     public LinearGradient E;
     public int F;
     public int G;
@@ -33,7 +33,7 @@ public final class f extends View implements z5 {
     public final Paint n;
     public LinearGradient r;
     public LinearGradient s;
-    public e6 w;
+    public i6 w;
     public final Paint x;
     public LinearGradient y;
 
@@ -50,7 +50,7 @@ public final class f extends View implements z5 {
         this.r = null;
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void addColorKeys(HashSet hashSet) {
         hashSet.add(Integer.valueOf(this.f));
     }
@@ -79,9 +79,9 @@ public final class f extends View implements z5 {
     public final void onDraw(Canvas canvas) {
         Canvas canvas2;
         super.onDraw(canvas);
-        if (j6.i1(this.w)) {
-            int x02 = j6.x0(null, j6.Ca, false);
-            int x03 = j6.x0(null, j6.Da, false);
+        if (n6.i1(this.w)) {
+            int x02 = n6.x0(null, n6.Ca, false);
+            int x03 = n6.x0(null, n6.Da, false);
             int measuredHeight = getMeasuredHeight();
             if (this.y == null || this.G != x02 || this.F != x03 || this.H != this.c || this.I != this.d || this.J != measuredHeight) {
                 this.G = x02;
@@ -103,7 +103,7 @@ public final class f extends View implements z5 {
             }
             if (this.d > 0) {
                 paint.setShader(this.E);
-                paint.setAlpha(ns.e4);
+                paint.setAlpha(ks.e4);
                 canvas2 = canvas;
                 canvas2.drawRect(0.0f, measuredHeight - this.d, getMeasuredWidth(), measuredHeight, paint);
             } else {
@@ -132,7 +132,7 @@ public final class f extends View implements z5 {
                 this.s = b(false);
             }
             paint2.setShader(this.s);
-            paint2.setAlpha(ns.e4);
+            paint2.setAlpha(ks.e4);
             canvas.drawRect(0.0f, getMeasuredHeight() - this.d, getMeasuredWidth(), getMeasuredHeight(), paint2);
         }
     }
@@ -189,8 +189,8 @@ public final class f extends View implements z5 {
         }
     }
 
-    public void setResourcesProvider(e6 e6Var) {
-        this.w = e6Var;
+    public void setResourcesProvider(i6 i6Var) {
+        this.w = i6Var;
     }
 
     public void setup(dh.c cVar) {
@@ -202,20 +202,20 @@ public final class f extends View implements z5 {
         if (this.e == null) {
             ui.c cVar = new ui.c();
             this.e = cVar;
-            cVar.a(j6.x0(null, i7, false));
+            cVar.a(n6.x0(null, i7, false));
             ui.c cVar2 = this.e;
             setup(new dh.c(cVar2, cVar2, cVar2));
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
+    @Override // org.telegram.ui.ActionBar.c6
     public final void updateColors() {
         int i7;
         ui.c cVar = this.e;
         if (cVar == null || (i7 = this.f) == -1) {
             return;
         }
-        cVar.a(j6.x0(null, i7, false));
+        cVar.a(n6.x0(null, i7, false));
         invalidate();
     }
 }

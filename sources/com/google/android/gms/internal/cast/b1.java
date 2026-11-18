@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.cast;
 
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b1 implements a0, e5 {
     public static final b1 a = new b1();
@@ -25,7 +25,7 @@ public final class b1 implements a0, e5 {
                                 int i13 = i11 + 2;
                                 int i14 = bArr[i12];
                                 if (i14 <= -65) {
-                                    if ((((i14 + ns.x1) + (i10 << 28)) >> 30) == 0) {
+                                    if ((((i14 + ks.x1) + (i10 << 28)) >> 30) == 0) {
                                         int i15 = i11 + 3;
                                         if (bArr[i13] <= 65471) {
                                             i11 += 4;
@@ -76,10 +76,10 @@ public final class b1 implements a0, e5 {
     public Object zza() {
         j6.b bVar = r6.n;
         j6.b bVar2 = g6.a.l;
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         g6.a aVar = g6.a.n;
-        q6.m.g(aVar);
-        q6.m.d("Must be called from the main thread.");
+        q6.m.h(aVar);
+        q6.m.e("Must be called from the main thread.");
         return aVar.e.a;
     }
 }

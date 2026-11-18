@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.RandomAccess;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class lb extends AbstractMap {
     public final /* synthetic */ int a;
@@ -32,9 +32,9 @@ public class lb extends AbstractMap {
 
     public h9.e0 b(Map.Entry entry) {
         Object key = entry.getKey();
-        h9.k1 k1Var = (h9.k1) this.e;
+        h9.l1 l1Var = (h9.l1) this.e;
         List list = (List) ((Collection) entry.getValue());
-        return new h9.e0(key, list instanceof RandomAccess ? new h9.g(k1Var, key, list, null) : new f(k1Var, key, list, (f) null));
+        return new h9.e0(key, list instanceof RandomAccess ? new h9.g(l1Var, key, list, null) : new f(l1Var, key, list, (f) null));
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -77,8 +77,8 @@ public class lb extends AbstractMap {
                     break;
                 }
             default:
-                h9.k1 k1Var = (h9.k1) this.e;
-                if (this.b != k1Var.e) {
+                h9.l1 l1Var = (h9.l1) this.e;
+                if (this.b != l1Var.e) {
                     d dVar4 = new d(this, (char) 0);
                     while (dVar4.hasNext()) {
                         dVar4.next();
@@ -86,7 +86,7 @@ public class lb extends AbstractMap {
                     }
                     break;
                 } else {
-                    k1Var.clear();
+                    l1Var.clear();
                     break;
                 }
         }
@@ -221,9 +221,9 @@ public class lb extends AbstractMap {
                 if (collection3 == null) {
                     return null;
                 }
-                h9.k1 k1Var = (h9.k1) this.e;
+                h9.l1 l1Var = (h9.l1) this.e;
                 List list3 = (List) collection3;
-                return list3 instanceof RandomAccess ? new h9.g(k1Var, obj, list3, null) : new f(k1Var, obj, list3, (f) null);
+                return list3 instanceof RandomAccess ? new h9.g(l1Var, obj, list3, null) : new f(l1Var, obj, list3, (f) null);
         }
     }
 
@@ -261,7 +261,7 @@ public class lb extends AbstractMap {
                 jgVar.a = cdVar2;
                 return cdVar2;
             default:
-                return ((h9.k1) this.e).keySet();
+                return ((h9.l1) this.e).keySet();
         }
     }
 
@@ -293,14 +293,14 @@ public class lb extends AbstractMap {
                 collection2.clear();
                 return arrayList2;
             default:
-                h9.k1 k1Var = (h9.k1) this.e;
+                h9.l1 l1Var = (h9.l1) this.e;
                 Collection collection3 = (Collection) this.b.remove(obj);
                 if (collection3 == null) {
                     return null;
                 }
-                Collection h = k1Var.h();
+                Collection h = l1Var.h();
                 h.addAll(collection3);
-                k1Var.f -= collection3.size();
+                l1Var.f -= collection3.size();
                 collection3.clear();
                 return h;
         }

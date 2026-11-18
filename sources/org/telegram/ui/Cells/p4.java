@@ -1,16 +1,16 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public interface p4 {
-    boolean a();
+    boolean b();
 
-    void b(boolean z10, boolean z11);
+    void c(boolean z10, boolean z11);
 
-    void c(TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11);
+    void d(TLRPC.ReactionCount reactionCount, boolean z10, float f10, float f11);
 
     float getAlpha();
 
@@ -22,7 +22,7 @@ public interface p4 {
 
     int getMeasuredHeight();
 
-    gj getMessageObject();
+    fj getMessageObject();
 
     float getPivotX();
 

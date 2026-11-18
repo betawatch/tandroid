@@ -1,26 +1,25 @@
 package v3;
 
-import c8.ba;
+import c8.da;
 import e2.p0;
 import e2.q0;
 import h2.k0;
 import h2.x;
-import j$.util.DesugarCollections;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import u7.i;
+import org.telegram.ui.Components.hn;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class c extends ba {
+public final class c extends da {
     public final x a = new x();
     public final d4.f b = new d4.f();
     public k0 c;
 
-    @Override // c8.ba
+    @Override // c8.da
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         b eVar;
         long j3;
@@ -81,9 +80,7 @@ public final class c extends ba {
                     xVar.A();
                     xVar.A();
                 }
-                i iVar = new i();
-                iVar.a = DesugarCollections.unmodifiableList(arrayList2);
-                arrayList.add(iVar);
+                arrayList.add(new hn(arrayList2));
             }
             eVar = new f(arrayList);
         } else if (j12 == 5) {

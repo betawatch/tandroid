@@ -1,29 +1,36 @@
 package fi;
 
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class t4 {
-    public final int a;
-    public final TL_stories.StoryView b;
-    public final TL_stories.StoryReaction c;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class t4 extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w4 b;
 
-    public t4(int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ t4(w4 w4Var, Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = null;
-        this.c = null;
+        this.b = w4Var;
     }
 
-    public t4(TL_stories.StoryView storyView) {
-        this.a = 1;
-        this.b = storyView;
-        this.c = null;
-    }
-
-    public t4(TL_stories.StoryReaction storyReaction) {
-        this.a = 1;
-        this.b = null;
-        this.c = storyReaction;
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.b.d.e), TLObject.FLAG_30));
+                break;
+            default:
+                a5 a5Var = this.b.d;
+                int i11 = a5Var.y.J;
+                if (i11 >= a5Var.r.getPaddingTop() && !a5Var.S) {
+                    i11 = 0;
+                }
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+                break;
+        }
     }
 }

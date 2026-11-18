@@ -9,17 +9,17 @@ import android.os.Handler;
 import android.os.Looper;
 import e2.e;
 import e2.u;
-import f2.h;
+import f2.i;
 import h2.l0;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import j$.util.Objects;
 import java.util.List;
 import l2.d0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d {
     public final Spatializer a;
@@ -28,7 +28,7 @@ public final class d {
     public final c d;
 
     public d(Context context, Runnable runnable, Boolean bool) {
-        AudioManager d = context == null ? null : h.d(context);
+        AudioManager d = context == null ? null : i.d(context);
         if (d == null || (bool != null && bool.booleanValue())) {
             this.a = null;
             this.b = false;
@@ -82,10 +82,10 @@ public final class d {
     public final List b() {
         if (this.a == null || !this.b || !c() || !d()) {
             g0 g0Var = i0.b;
-            return s1.e;
+            return t1.e;
         }
         if (Build.VERSION.SDK_INT < 36) {
-            return i0.u(Integer.valueOf(ns.b4));
+            return i0.u(Integer.valueOf(ks.b4));
         }
         Spatializer spatializer = this.a;
         spatializer.getClass();

@@ -1,67 +1,100 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.widget.FrameLayout;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i01 extends FrameLayout {
-    public final Path a;
-    public final Paint b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 e;
-    public final /* synthetic */ Integer f;
-    public final /* synthetic */ n11 h;
+public final class i01 implements org.telegram.ui.Components.rj0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
+    public final /* synthetic */ Integer d;
+    public final /* synthetic */ r11 e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i01(n11 n11Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.e6 e6Var, Integer num) {
-        super(context);
-        this.h = n11Var;
-        this.c = z10;
-        this.d = z11;
-        this.e = e6Var;
-        this.f = num;
-        this.a = new Path();
-        this.b = new Paint(1);
+    public i01(r11 r11Var, int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, Integer num) {
+        this.e = r11Var;
+        this.a = i7;
+        this.b = context;
+        this.c = i6Var;
+        this.d = num;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        n11 n11Var = this.h;
-        if (!n11Var.R0) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // org.telegram.ui.Components.rj0
+    public final boolean f(float f10, float f11, int i7, View view) {
+        r11 r11Var = this.e;
+        int i10 = r11Var.W;
+        int i11 = this.a;
+        if (i11 != 11 && i11 != 13 && r11Var.i1) {
+            boolean z10 = view instanceof b11;
+            if (z10 && (i11 == 1 || i11 == 8)) {
+                r11Var.l();
+                try {
+                    r11Var.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                b11 b11Var = (b11) view;
+                if (!b11Var.s && !org.telegram.messenger.j10.i(i10).q()) {
+                    org.telegram.ui.Components.x5 x5Var = b11Var.e;
+                    TLRPC.Document document = x5Var.document;
+                    if (document == null) {
+                        document = org.telegram.ui.Components.o5.e(i10, x5Var.documentId);
+                    }
+                    r11Var.p(b11Var, Long.valueOf(b11Var.e.documentId), document, b11Var.w, null);
+                    return true;
+                }
+                r11Var.T0 = b11Var;
+                r11Var.V0 = 0.0f;
+                r11Var.U0 = false;
+                if (b11Var.s) {
+                    r11Var.setBigReactionAnimatedEmoji(null);
+                    TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(i10).r.get(r11Var.T0.y.f);
+                    if (tL_availableReaction != null) {
+                        r11Var.W0.r0(org.telegram.messenger.fc.b(tL_availableReaction.select_animation), "60_60_pcache", null, null, null, 0L, "tgs", r11Var.T0.y, 0);
+                    }
+                } else {
+                    r11Var.setBigReactionAnimatedEmoji(new org.telegram.ui.Components.o5(4, i10, r11Var.T0.e.documentId));
+                }
+                r11Var.i0.invalidate();
+                r11Var.m();
+                return true;
+            }
+            if (z10) {
+                b11 b11Var2 = (b11) view;
+                if (b11Var2.e != null && (i11 == 0 || i11 == 12 || i11 == 9 || i11 == 10)) {
+                    TL_stars.TL_starGiftUnique tL_starGiftUnique = b11Var2.w;
+                    h01 h01Var = new h01(this, this.b, r11Var.V1, r11Var, b11Var2, this.c, view, tL_starGiftUnique);
+                    r11Var.Y0 = h01Var;
+                    h01Var.show();
+                    try {
+                        view.performHapticFeedback(0, 1);
+                    } catch (Exception unused2) {
+                    }
+                    return true;
+                }
+            }
         }
-        if (!this.c) {
-            super.dispatchDraw(canvas);
-            return;
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.rj0
+    public final void j() {
+        r11 r11Var = this.e;
+        if (r11Var.T0 != null) {
+            r11Var.U0 = true;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(r11Var.V0, 0.0f);
+            ofFloat.addUpdateListener(new iz0(this, 4));
+            ofFloat.addListener(new ay(this, 27));
+            ofFloat.setDuration(150L);
+            ofFloat.setInterpolator(org.telegram.ui.Components.lr.f);
+            ofFloat.start();
         }
-        canvas.save();
-        boolean z10 = this.d;
-        Paint paint = this.b;
-        if (z10) {
-            org.telegram.ui.ActionBar.j6.n(paint);
-        }
-        paint.setColor(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.G8, this.e));
-        paint.setAlpha((int) (getAlpha() * 255.0f));
-        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + org.telegram.messenger.g0.L(20.0f);
-        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
-        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
-        if (n11Var.n()) {
-            org.telegram.messenger.g0.P.set((width - (n11Var.b1 * width)) + getPaddingLeft(), com.google.android.gms.internal.vision.e2.z(1.0f, n11Var.c1, height, getPaddingTop()), ((width2 - width) * n11Var.b1) + getPaddingLeft() + width, getPaddingTop() + height);
-        } else {
-            org.telegram.messenger.g0.P.set((width - (n11Var.b1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * n11Var.b1) + getPaddingLeft() + width, (height * n11Var.c1) + getPaddingTop());
-        }
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(org.telegram.messenger.g0.P, org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(12.0f), Path.Direction.CW);
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
+    }
+
+    @Override // org.telegram.ui.Components.rj0
+    public final /* synthetic */ void r(float f10) {
     }
 }

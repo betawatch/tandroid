@@ -1,6 +1,6 @@
 package d3;
 
-import a8.ja;
+import a8.la;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.os.Trace;
@@ -8,10 +8,9 @@ import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
 import e2.x1;
 import h2.l0;
-import org.telegram.ui.Cells.y0;
-import x2.b1;
+import x2.d1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a extends l2.b {
     public final long J;
@@ -28,8 +27,8 @@ public abstract class a extends l2.b {
     public Surface U;
     public Surface V;
     public v W;
-    public q2.h X;
-    public q2.h Y;
+    public q2.g X;
+    public q2.g Y;
     public int Z;
     public boolean a0;
     public int b0;
@@ -207,7 +206,7 @@ public abstract class a extends l2.b {
                 return false;
             }
             k8.a aVar = this.c;
-            aVar.x0();
+            aVar.g0();
             int w10 = w(aVar, hVar2, 0);
             if (w10 == -5) {
                 K(aVar);
@@ -273,10 +272,10 @@ public abstract class a extends l2.b {
         if (this.Q != null) {
             return;
         }
-        q2.h hVar = this.Y;
-        y0.C(this.X, hVar);
-        this.X = hVar;
-        if (hVar != null && hVar.h() == null && this.X.g() == null) {
+        q2.g gVar = this.Y;
+        p5.c.w(this.X, gVar);
+        this.X = gVar;
+        if (gVar != null && gVar.h() == null && this.X.g() == null) {
             return;
         }
         try {
@@ -303,7 +302,7 @@ public abstract class a extends l2.b {
             h2.a.d("DecoderVideoRenderer", "Video codec error", e11);
             Handler handler2 = (Handler) bVar.b;
             if (handler2 != null) {
-                handler2.post(new c1.c(23, bVar, e11));
+                handler2.post(new c1.c(22, bVar, e11));
             }
             throw d(e11, this.O, false, 4001);
         }
@@ -314,9 +313,9 @@ public abstract class a extends l2.b {
         this.e0 = true;
         e2.u uVar = (e2.u) aVar.c;
         uVar.getClass();
-        q2.h hVar = (q2.h) aVar.b;
-        y0.C(this.Y, hVar);
-        this.Y = hVar;
+        q2.g gVar = (q2.g) aVar.b;
+        p5.c.w(this.Y, gVar);
+        this.Y = gVar;
         e2.u uVar2 = this.O;
         this.O = uVar;
         k2.e eVar2 = this.Q;
@@ -327,12 +326,12 @@ public abstract class a extends l2.b {
             uVar3.getClass();
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
-                handler.post(new aa.r(bVar, uVar3, (Object) null, 12));
+                handler.post(new aa.r(bVar, uVar3, (Object) null, 16));
                 return;
             }
             return;
         }
-        if (hVar != this.X) {
+        if (gVar != this.X) {
             String name = eVar2.getName();
             uVar2.getClass();
             eVar = new l2.e(name, uVar2, uVar, 0, 128);
@@ -353,7 +352,7 @@ public abstract class a extends l2.b {
         uVar4.getClass();
         Handler handler2 = (Handler) bVar.b;
         if (handler2 != null) {
-            handler2.post(new aa.r(bVar, uVar4, eVar, 12));
+            handler2.post(new aa.r(bVar, uVar4, eVar, 16));
         }
     }
 
@@ -371,11 +370,11 @@ public abstract class a extends l2.b {
             wf.b bVar = this.L;
             Handler handler = (Handler) bVar.b;
             if (handler != null) {
-                handler.post(new c1.c(24, bVar, name));
+                handler.post(new c1.c(23, bVar, name));
             }
             this.Q = null;
         }
-        y0.C(this.X, null);
+        p5.c.w(this.X, null);
         this.X = null;
     }
 
@@ -409,7 +408,7 @@ public abstract class a extends l2.b {
             this.b0 = 3;
             Surface surface2 = this.U;
             if (surface2 != null) {
-                bVar.O(surface2);
+                bVar.P(surface2);
             }
         }
     }
@@ -473,7 +472,7 @@ public abstract class a extends l2.b {
                 if (this.b0 != 3 || (surface = this.U) == null) {
                     return;
                 }
-                bVar.O(surface);
+                bVar.P(surface);
                 return;
             }
             return;
@@ -519,16 +518,16 @@ public abstract class a extends l2.b {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean m() {
-        boolean f10;
+        boolean h;
         if (this.O != null) {
             if (k()) {
-                f10 = this.E;
+                h = this.E;
             } else {
-                b1 b1Var = this.r;
-                b1Var.getClass();
-                f10 = b1Var.f();
+                d1 d1Var = this.r;
+                d1Var.getClass();
+                h = d1Var.h();
             }
-            if (f10 || this.S != null) {
+            if (h || this.S != null) {
                 if (this.b0 != 3) {
                 }
                 this.d0 = -9223372036854775807L;
@@ -552,7 +551,7 @@ public abstract class a extends l2.b {
         this.h0 = null;
         this.b0 = Math.min(this.b0, 0);
         try {
-            y0.C(this.Y, null);
+            p5.c.w(this.Y, null);
             this.Y = null;
             L();
         } finally {
@@ -626,12 +625,12 @@ public abstract class a extends l2.b {
         }
         if (this.O == null) {
             k8.a aVar = this.c;
-            aVar.x0();
+            aVar.g0();
             this.N.clear();
             int w10 = w(aVar, this.N, 2);
             if (w10 != -5) {
                 if (w10 == -4) {
-                    ja.p(this.N.isEndOfStream());
+                    la.p(this.N.isEndOfStream());
                     this.f0 = true;
                     this.g0 = true;
                     return;
@@ -656,7 +655,7 @@ public abstract class a extends l2.b {
                 wf.b bVar = this.L;
                 Handler handler = (Handler) bVar.b;
                 if (handler != null) {
-                    handler.post(new c1.c(23, bVar, e10));
+                    handler.post(new c1.c(22, bVar, e10));
                 }
                 throw d(e10, this.O, false, 4003);
             }
@@ -664,6 +663,6 @@ public abstract class a extends l2.b {
     }
 
     @Override // l2.b
-    public final void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
+    public final void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
     }
 }

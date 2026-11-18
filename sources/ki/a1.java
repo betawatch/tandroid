@@ -1,36 +1,43 @@
 package ki;
 
-import android.content.Context;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a1 implements z10 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1 a;
-    public final /* synthetic */ Context b;
+public final class a1 implements fs {
+    public final /* synthetic */ long a;
+    public final /* synthetic */ fs[] b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ TLRPC.TL_messages_preparedInlineMessage e;
-    public final /* synthetic */ e6 f;
-    public final /* synthetic */ org.telegram.ui.web.q g;
-    public final /* synthetic */ bi.h0 h;
+    public final /* synthetic */ y0 d;
 
-    public /* synthetic */ a1(org.telegram.ui.ActionBar.t1 t1Var, Context context, int i7, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, e6 e6Var, org.telegram.ui.web.q qVar, bi.h0 h0Var) {
-        this.a = t1Var;
-        this.b = context;
+    public a1(long j3, fs[] fsVarArr, int i7, y0 y0Var) {
+        this.a = j3;
+        this.b = fsVarArr;
         this.c = i7;
-        this.d = j3;
-        this.e = tL_messages_preparedInlineMessage;
-        this.f = e6Var;
-        this.g = qVar;
-        this.h = h0Var;
+        this.d = y0Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        this.a.dismiss();
-        new j1(this.b, this.c, this.d, this.e, null, (TLRPC.WebPage) obj, this.f, this.g, this.h).show();
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        a0.h hVar;
+        int i11 = ks.w0;
+        if (i7 != i11 || (hVar = (a0.h) objArr[0]) == null) {
+            return;
+        }
+        long j3 = this.a;
+        if (hVar.d(j3)) {
+            TLRPC.WebPage webPage = (TLRPC.WebPage) hVar.f(j3);
+            fs[] fsVarArr = this.b;
+            if (fsVarArr[0] != null) {
+                ks.f(this.c).n(fsVarArr[0], i11);
+                fsVarArr[0] = null;
+            }
+            if (!(webPage instanceof TLRPC.TL_webPage)) {
+                webPage = null;
+            }
+            this.d.a(webPage);
+        }
     }
 }

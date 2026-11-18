@@ -3,22 +3,22 @@ package bi;
 import android.content.Context;
 import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class s extends hi.d {
-    public final /* synthetic */ int l0;
+    public final /* synthetic */ int m0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var, boolean z10) {
-        super(context, e6Var, z10);
-        this.l0 = i7;
+    public /* synthetic */ s(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(context, i6Var, z10);
+        this.m0 = i7;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.l0) {
+        switch (this.m0) {
             case 0:
-                if (this.d0) {
+                if (this.e0) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
                 return false;
@@ -29,7 +29,7 @@ public final class s extends hi.d {
 
     @Override // hi.d
     public boolean j() {
-        switch (this.l0) {
+        switch (this.m0) {
             case 1:
                 return false;
             case 2:

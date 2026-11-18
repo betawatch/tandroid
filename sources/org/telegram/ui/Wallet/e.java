@@ -1,92 +1,152 @@
 package org.telegram.ui.Wallet;
 
-import java.io.InputStream;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import org.json.JSONObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.q10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.p51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
+public final /* synthetic */ class e implements q10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ TL_wallet.currencyRates c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e(f fVar, TL_wallet.currencyRates currencyrates, int i7) {
+    public /* synthetic */ e(Object obj, int i7) {
         this.a = i7;
-        this.b = fVar;
-        this.c = currencyrates;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        z41 z41Var;
+        String str;
         switch (this.a) {
             case 0:
-                f fVar = this.b;
-                TL_wallet.currencyRates currencyrates = this.c;
-                boolean z10 = true;
-                if (currencyrates == null || currencyrates.rates == null) {
-                    i7 = 1;
+                g gVar = (g) this.b;
+                TL_wallet.currencyRates currencyrates = (TL_wallet.currencyRates) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (tL_error == null) {
+                    Utilities.d.c(new f(gVar, currencyrates, 0));
+                    break;
                 } else {
-                    try {
-                        InputStream open = org.telegram.messenger.t0.b.getAssets().open("currencies.json");
-                        try {
-                            String str = h2.l0.a;
-                            JSONObject jSONObject = new JSONObject(new String(i9.f.b(open), g9.j.a));
-                            ArrayList<TL_wallet.currencyRate> arrayList = currencyrates.rates;
-                            int size = arrayList.size();
-                            int i10 = 0;
-                            while (i10 < size) {
-                                TL_wallet.currencyRate currencyrate = arrayList.get(i10);
-                                i10++;
-                                TL_wallet.currencyRate currencyrate2 = currencyrate;
-                                if (currencyrate2 != null) {
-                                    JSONObject optJSONObject = jSONObject.optJSONObject(currencyrate2.currency);
-                                    if (optJSONObject == null) {
-                                        String str2 = currencyrate2.currency;
-                                        currencyrate2.title = str2;
-                                        currencyrate2.symbol = str2;
-                                        currencyrate2.thousandsSeparator = ",";
-                                        currencyrate2.decimalSeparator = ".";
-                                        currencyrate2.spaceBetween = z10;
-                                        currencyrate2.exp = 2;
-                                    } else {
-                                        currencyrate2.title = optJSONObject.optString("title", currencyrate2.currency);
-                                        String optString = optJSONObject.optString("native", currencyrate2.currency);
-                                        currencyrate2.symbol = "AED".equals(currencyrate2.currency) ? "\u20c3" : "GEL".equals(currencyrate2.currency) ? "₾" : ("$".equals(optString) && !"USD".equals(currencyrate2.currency)) || "kr".equals(optString) ? optJSONObject.optString("symbol", currencyrate2.currency) : optString;
-                                        currencyrate2.thousandsSeparator = optJSONObject.optString("thousands_sep", ",");
-                                        currencyrate2.decimalSeparator = optJSONObject.optString("decimal_sep", ".");
-                                        currencyrate2.symbolLeft = optJSONObject.optBoolean("symbol_left");
-                                        currencyrate2.spaceBetween = optJSONObject.optBoolean("space_between");
-                                        currencyrate2.dropZeros = optJSONObject.optBoolean("drop_zeros");
-                                        currencyrate2.exp = optJSONObject.optInt("exp", 2);
-                                        if ("AED".equals(currencyrate2.currency)) {
-                                            currencyrate2.title = currencyrate2.title.replace("United Arab Emirates", "UAE");
-                                        } else if ("USD".equalsIgnoreCase(currencyrate2.currency)) {
-                                            currencyrate2.title = currencyrate2.title.replace("United States", "US");
-                                        }
-                                        z10 = true;
-                                    }
-                                }
-                            }
-                            open.close();
-                            i7 = 1;
-                        } finally {
-                        }
-                    } catch (Exception e10) {
-                        i7 = 1;
-                        org.telegram.messenger.a8.g(e10, true);
+                    p5.c.s(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
+                    break;
+                }
+            case 1:
+                j jVar = (j) this.b;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                String str2 = (String) obj2;
+                if (wallettransaction != null) {
+                    jVar.a(Long.valueOf(wallettransaction.fee), null);
+                    break;
+                } else {
+                    u0.n("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
+                    if (str2 == null) {
+                        str2 = "NULL_ERROR";
+                    }
+                    jVar.a(null, str2);
+                    break;
+                }
+            case 2:
+                ((q10) this.b).a((r0) obj, (String) obj2);
+                break;
+            case 3:
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                ((p51) this.b).a((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : l2.z(tL_error2, "closeSession"));
+                break;
+            case 4:
+                l2 l2Var = (l2) this.b;
+                TL_wallet.tonConnectSessions tonconnectsessions = (TL_wallet.tonConnectSessions) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                u0 u0Var = l2Var.b;
+                ArrayList arrayList = l2Var.d;
+                l2Var.e = -1;
+                if (tL_error3 == null && tonconnectsessions != null) {
+                    arrayList.clear();
+                    ArrayList<TL_wallet.tonConnectSession> arrayList2 = tonconnectsessions.sessions;
+                    if (arrayList2 != null) {
+                        arrayList.addAll(arrayList2);
+                    }
+                    u0Var.T();
+                    break;
+                } else {
+                    l2.z(tL_error3, "getSessions");
+                    u0Var.T();
+                    break;
+                }
+            case 5:
+                ((ArrayList) obj).add(l41.k(((e3) this.b).U1));
+                break;
+            case 6:
+                w3 w3Var = (w3) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                Bitmap bitmap2 = (Bitmap) obj2;
+                if (!w3Var.T && !w3Var.S) {
+                    w3Var.H = bitmap;
+                    w3Var.n.invalidate();
+                    w3Var.d();
+                    w3Var.F.a(bitmap2);
+                    w3Var.h.post(new q3(w3Var, 0));
+                    break;
+                } else {
+                    bitmap.recycle();
+                    bitmap2.recycle();
+                    break;
+                }
+                break;
+            case 7:
+                n6 n6Var = (n6) this.b;
+                TL_account.Password password = (TL_account.Password) obj;
+                if (password != null) {
+                    n6Var.V0 = true;
+                    n6Var.W0 = password.has_password;
+                    bi.d6 d6Var = n6Var.a;
+                    if (d6Var != null && (z41Var = d6Var.g3) != null) {
+                        z41Var.O(true);
+                        break;
                     }
                 }
-                org.telegram.messenger.g0.h3(new e(fVar, currencyrates, i7));
-                return;
+                break;
+            case 8:
+                w4 w4Var = (w4) this.b;
+                TL_toncenter.onrampSession onrampsession = (TL_toncenter.onrampSession) obj;
+                TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
+                if (onrampsession != null && !TextUtils.isEmpty(onrampsession.url)) {
+                    w4Var.a(null);
+                    org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                    if (T != null) {
+                        vf.c.t(T.getContext(), onrampsession.url);
+                        break;
+                    }
+                } else {
+                    if (tL_error4 == null || (str = tL_error4.text) == null) {
+                        str = "NO_SESSION";
+                    }
+                    w4Var.a(str);
+                    break;
+                }
+                break;
+            case 9:
+                WalletEngine2.HttpTransport.lambda$execute$0((z7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
+                break;
             default:
-                f fVar2 = this.b;
-                fVar2.d = this.c;
-                fVar2.c = false;
-                fVar2.b.L();
-                return;
+                ((na) this.b).h = false;
+                break;
         }
+    }
+
+    public /* synthetic */ e(u0 u0Var, j jVar) {
+        this.a = 1;
+        this.b = jVar;
     }
 }

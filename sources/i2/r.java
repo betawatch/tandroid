@@ -1,9 +1,9 @@
 package i2;
 
-import a8.ja;
+import a8.la;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r {
     public final boolean a;
@@ -25,7 +25,7 @@ public final class r {
     public r(q qVar) {
         int i7 = qVar.a;
         ByteBuffer byteBuffer = qVar.b;
-        ja.f(i7 == 1);
+        la.f(i7 == 1);
         int remaining = byteBuffer.remaining();
         byte[] bArr = new byte[remaining];
         byteBuffer.asReadOnlyBuffer().get(bArr);

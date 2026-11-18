@@ -1,20 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.io.Serializable;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q41 implements org.telegram.messenger.x10, org.telegram.messenger.y10 {
-    public final /* synthetic */ r41 a;
-
-    @Override // org.telegram.messenger.y10
-    public Boolean a(b41 b41Var, View view, Integer num, Float f10, Float f11) {
-        return Boolean.valueOf(this.a.c0(b41Var, view));
+public final class q41 extends p41 {
+    public q41(String str) {
+        super(str != null ? str.replace((char) 8238, ' ') : str, (dz0) null);
     }
 
-    @Override // org.telegram.messenger.x10
-    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
-        this.a.b0((b41) obj, (View) obj2);
+    @Override // org.telegram.ui.Components.p41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        textPaint.setTypeface(org.telegram.messenger.g0.o());
+        textPaint.setUnderlineText(false);
     }
 }

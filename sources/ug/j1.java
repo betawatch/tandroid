@@ -1,88 +1,86 @@
 package ug;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import c8.ja;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j1 extends FrameLayout {
-    public float a;
-    public final i1 b;
-    public final ImageReceiver c;
-    public final ImageReceiver d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public TLRPC.Document r;
-    public boolean s;
-    public final /* synthetic */ t0 w;
+public final class j1 extends v4.u0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j1(t0 t0Var, Context context) {
-        super(context);
-        this.w = t0Var;
-        this.f = true;
-        i1 i1Var = new i1(this, context);
-        this.b = i1Var;
-        ImageReceiver imageReceiver = new ImageReceiver(i1Var);
-        this.c = imageReceiver;
-        ImageReceiver imageReceiver2 = new ImageReceiver(i1Var);
-        this.d = imageReceiver2;
-        imageReceiver.u0 = false;
-        imageReceiver2.u0 = false;
-        setClipChildren(false);
-        addView(i1Var, ja.e(-1, -2, 21));
+    public /* synthetic */ j1(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    public final void a(boolean z10, boolean z11, boolean z12) {
-        boolean z13 = this.e;
-        i1 i1Var = this.b;
-        if (z13 != z11) {
-            this.e = z11;
-            if (!z12) {
-                this.h = z11 ? 1.0f : 0.0f;
-            }
-            i1Var.invalidate();
+    @Override // v4.u0
+    public void a(RecyclerView recyclerView, int i7) {
+        switch (this.a) {
+            case 0:
+                v0 v0Var = (v0) this.b;
+                if (i7 == 1) {
+                    v0Var.l3 = true;
+                }
+                if (i7 == 0) {
+                    m1 m1Var = null;
+                    for (int i10 = 0; i10 < recyclerView.getChildCount(); i10++) {
+                        m1 m1Var2 = (m1) v0Var.getChildAt(i10);
+                        if (m1Var == null || m1Var2.a > m1Var.a) {
+                            m1Var = m1Var2;
+                        }
+                    }
+                    if (m1Var != null) {
+                        v0Var.z1(m1Var, true);
+                        v0Var.l3 = false;
+                        v0Var.w0(0, m1Var.getTop() - ((v0Var.getMeasuredHeight() - m1Var.getMeasuredHeight()) / 2), org.telegram.messenger.g0.H);
+                    }
+                    v0Var.A1();
+                    break;
+                } else {
+                    org.telegram.messenger.g0.r(v0Var.m3);
+                    break;
+                }
+                break;
+            case 2:
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(((wg.w0) this.b).U1.getEditText());
+                    break;
+                }
+                break;
+            case 3:
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.v1(((wg.d1) this.b).V1.getEditText());
+                    break;
+                }
+                break;
         }
-        if (this.f != z10) {
-            this.f = z10;
-            if (!z12) {
-                this.n = z10 ? 1.0f : 0.0f;
-            }
-            i1Var.invalidate();
+    }
+
+    @Override // v4.u0
+    public void b(RecyclerView recyclerView, int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                v0 v0Var = (v0) this.b;
+                if (recyclerView.getScrollState() == 1) {
+                    v0Var.z1(null, true);
+                }
+                v0Var.invalidate();
+                break;
+            case 1:
+                ((vh.g) this.b).g1();
+                break;
+            case 4:
+                v4.c0 c0Var = (v4.c0) recyclerView.getLayoutManager();
+                zh.l lVar = (zh.l) this.b;
+                zh.e eVar = lVar.C;
+                if (lVar.x && !lVar.w && c0Var != null) {
+                    if (lVar.f.b() - c0Var.N0() < 10) {
+                        org.telegram.messenger.g0.r(eVar);
+                        org.telegram.messenger.g0.g3(eVar);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.P();
-        this.d.P();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.R();
-        this.d.R();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int i11 = (int) (this.w.s3 * 0.6f);
-        i1 i1Var = this.b;
-        ViewGroup.LayoutParams layoutParams = i1Var.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = i1Var.getLayoutParams();
-        int L = i11 - org.telegram.messenger.g0.L(16.0f);
-        layoutParams2.height = L;
-        layoutParams.width = L;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (i11 * 0.7f), TLObject.FLAG_30));
     }
 }

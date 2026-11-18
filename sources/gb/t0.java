@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t0 implements q0 {
     public static final double f = Math.random();
@@ -63,7 +63,7 @@ public final class t0 implements q0 {
                 jd.a aVar = jd.a.a;
                 i7 = s0Var.c;
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     hb.c cVar2 = hb.c.a;
                     s0Var.c = 1;
                     obj = cVar2.b(s0Var);
@@ -72,7 +72,7 @@ public final class t0 implements q0 {
                         if (i7 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         Boolean a10 = lVar.a.a();
                         if (!((a10 == null && (a10 = lVar.b.a()) == null) ? true : a10.booleanValue())) {
                             Log.d("FirebaseSessions", "Sessions SDK disabled through settings API. Events will not be sent.");
@@ -84,7 +84,7 @@ public final class t0 implements q0 {
                         Log.d("FirebaseSessions", "Sessions SDK has dropped this session due to sampling.");
                         return Boolean.FALSE;
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 values = ((Map) obj).values();
                 if ((values instanceof Collection) || !values.isEmpty()) {

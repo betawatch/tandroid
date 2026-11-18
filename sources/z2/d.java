@@ -1,13 +1,15 @@
 package z2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import v4.f0;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface d {
-    public static final x9.d D;
+    public static final f0 D;
 
     static {
-        x9.d dVar = new x9.d();
-        dVar.a = new nb.a(6);
-        D = dVar;
+        f0 f0Var = new f0();
+        f0Var.a = new nb.a(6);
+        D = f0Var;
     }
 }

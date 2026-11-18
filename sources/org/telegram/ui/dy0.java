@@ -1,45 +1,79 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dy0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.cc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ fi.i0 e;
+public final class dy0 extends FrameLayout {
+    public final org.telegram.ui.Components.m5 a;
+    public final /* synthetic */ ey0 b;
 
-    public /* synthetic */ dy0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.cc ccVar, Context context, fi.i0 i0Var, int i7) {
-        this.a = i7;
-        this.b = aVar;
-        this.c = ccVar;
-        this.d = context;
-        this.e = i0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dy0(ey0 ey0Var, Context context) {
+        super(context);
+        this.b = ey0Var;
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.G6, ey0Var.getResourceProvider());
+        textView.setText(org.telegram.messenger.gd.M0(2131751339, null));
+        addView(textView, c8.ma.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new org.telegram.ui.Components.m5(org.telegram.messenger.g0.L(24.0f), this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        fi.i0 i0Var = this.e;
-        Context context = this.d;
-        org.telegram.ui.Components.cc ccVar = this.c;
-        org.telegram.messenger.video.a aVar = this.b;
-        int i10 = 2;
-        switch (i7) {
-            case 0:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, i10), i0Var)).j();
-                break;
-            case 1:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, 5), i0Var)).j();
-                break;
-            default:
-                aVar.run();
-                ccVar.c(org.telegram.messenger.g0.S2(org.telegram.messenger.hd.M0(2131754487, null), -1, 2, new du(context, 6), i0Var)).j();
-                break;
+    public final void a(boolean z10) {
+        int i7;
+        int i10;
+        ey0 ey0Var = this.b;
+        i7 = ((org.telegram.ui.ActionBar.h2) ey0Var).currentAccount;
+        String S = org.telegram.messenger.ri.d0(i7).S();
+        org.telegram.ui.Components.m5 m5Var = this.a;
+        if (S != null && S.startsWith("animated_")) {
+            try {
+                m5Var.j(Long.parseLong(S.substring(9)), z10);
+                return;
+            } catch (Exception unused) {
+            }
         }
+        i10 = ((org.telegram.ui.ActionBar.h2) ey0Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) org.telegram.messenger.ri.d0(i10).r.get(S);
+        if (tL_availableReaction != null) {
+            m5Var.i(tL_availableReaction.static_icon, z10);
+        }
+    }
+
+    public final void b() {
+        int width = getWidth();
+        org.telegram.ui.Components.m5 m5Var = this.a;
+        m5Var.setBounds((width - m5Var.s) - org.telegram.messenger.g0.L(21.0f), (getHeight() - m5Var.s) / 2, getWidth() - org.telegram.messenger.g0.L(21.0f), (getHeight() + m5Var.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(50.0f), TLObject.FLAG_30));
     }
 }

@@ -1,9 +1,27 @@
 package yi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public interface g {
-    void D0(String str);
+public final class g {
+    public static final g a;
+    public static final g b;
+    public static final /* synthetic */ g[] c;
 
-    void F(String str, Throwable th2);
+    static {
+        g gVar = new g("DISABLED", 0);
+        a = gVar;
+        g gVar2 = new g("RNNOISE", 1);
+        b = gVar2;
+        c = new g[]{gVar, gVar2};
+    }
+
+    public static g valueOf(String str) {
+        return (g) Enum.valueOf(g.class, str);
+    }
+
+    public static g[] values() {
+        return (g[]) c.clone();
+    }
 }

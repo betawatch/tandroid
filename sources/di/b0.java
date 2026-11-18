@@ -1,11 +1,11 @@
 package di;
 
 import java.util.ArrayList;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b0 {
     public final int a;
@@ -44,7 +44,7 @@ public final class b0 {
         this.g = true;
         TL_payments.getConnectedStarRefBots getconnectedstarrefbots = new TL_payments.getConnectedStarRefBots();
         int i7 = this.a;
-        getconnectedstarrefbots.peer = np.s1(i7).j1(this.b);
+        getconnectedstarrefbots.peer = mp.u1(i7).l1(this.b);
         getconnectedstarrefbots.limit = 20;
         ArrayList arrayList = this.e;
         if (!arrayList.isEmpty()) {

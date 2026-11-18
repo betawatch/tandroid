@@ -10,32 +10,31 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ja;
-import hi.p5;
+import c8.ma;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
-    public final j5 a;
+    public final n5 a;
     public final xh.l b;
-    public final j5 c;
-    public final e6 d;
+    public final n5 c;
+    public final i6 d;
     public boolean e;
     public TL_account.TL_businessChatLink f;
 
-    public t(Context context, e6 e6Var) {
+    public t(Context context, i6 i6Var) {
         super(context);
-        this.d = e6Var;
+        this.d = i6Var;
         setWillNotDraw(false);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
@@ -43,61 +42,61 @@ public final class t extends FrameLayout {
         imageView.setPadding(org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f), org.telegram.messenger.g0.L(9.0f));
         imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
         int L = org.telegram.messenger.g0.L(36.0f);
-        int i7 = j6.Fi;
-        ShapeDrawable L2 = j6.L(L, j6.x0(null, i7, false));
-        m6 M = q6.M(i7);
+        int i7 = n6.Fi;
+        ShapeDrawable L2 = n6.L(L, n6.x0(null, i7, false));
+        q6 M = u6.M(i7);
         imageView.setBackground(L2);
-        q6.j(imageView, L2, M, null, null);
-        imageView.setOnClickListener(new p5(this, 7));
-        addView(imageView, ja.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
-        j5 j5Var = new j5(context);
-        this.a = j5Var;
-        j5Var.setTextSize(15);
-        q6.X(j5Var, j6.G6, null);
-        j5Var.setGravity(hd.a0 ? 5 : 3);
-        addView(j5Var, ja.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
-        j5 j5Var2 = new j5(context);
-        this.c = j5Var2;
-        j5Var2.setTextSize(14);
-        int i10 = j6.z6;
-        q6.X(j5Var2, i10, null);
-        j5Var2.setGravity(hd.a0 ? 3 : 5);
-        addView(j5Var2, ja.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
+        u6.j(imageView, L2, M, null, null);
+        imageView.setOnClickListener(new hi.o0(this, 9));
+        addView(imageView, ma.i(36.0f, 36.0f, 8388627, 14.0f, 0.0f, 14.0f, 0.0f));
+        n5 n5Var = new n5(context);
+        this.a = n5Var;
+        n5Var.setTextSize(15);
+        u6.X(n5Var, n6.G6, null);
+        n5Var.setGravity(gd.a0 ? 5 : 3);
+        addView(n5Var, ma.i(-1.0f, 20.0f, 55, 64.0f, 10.0f, 14.0f, 0.0f));
+        n5 n5Var2 = new n5(context);
+        this.c = n5Var2;
+        n5Var2.setTextSize(14);
+        int i10 = n6.z6;
+        u6.X(n5Var2, i10, null);
+        n5Var2.setGravity(gd.a0 ? 3 : 5);
+        addView(n5Var2, ma.i(-1.0f, 18.0f, 55, 64.0f, 10.66f, 14.0f, 0.0f));
         xh.l lVar = new xh.l(context);
         this.b = lVar;
         lVar.setTextSize(1, 13.0f);
         lVar.setMaxLines(1);
         lVar.setEllipsize(TextUtils.TruncateAt.END);
-        q6.U(lVar, i10, e6Var);
-        lVar.setGravity(hd.a0 ? 5 : 3);
+        u6.U(lVar, i10, i6Var);
+        lVar.setGravity(gd.a0 ? 5 : 3);
         lVar.r = false;
         lVar.setUseAlphaForEmoji(false);
-        ns.i(lVar);
-        addView(lVar, ja.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
+        ks.i(lVar);
+        addView(lVar, ma.i(-1.0f, 20.0f, 87, 64.0f, 0.0f, 14.0f, 6.0f));
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e) {
-            Paint W0 = j6.W0("paintDivider", this.d);
+            Paint W0 = n6.W0("paintDivider", this.d);
             if (W0 == null) {
-                W0 = j6.k0;
+                W0 = n6.k0;
             }
-            canvas.drawRect(org.telegram.messenger.g0.L(hd.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(hd.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
+            canvas.drawRect(org.telegram.messenger.g0.L(gd.a0 ? 0.0f : 64.0f), getMeasuredHeight() - 1, getWidth() - org.telegram.messenger.g0.L(gd.a0 ? 64.0f : 0.0f), getMeasuredHeight(), W0);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
         super.onLayout(z10, i7, i10, i11, i12);
-        boolean z11 = hd.a0;
-        j5 j5Var = this.c;
-        j5 j5Var2 = this.a;
+        boolean z11 = gd.a0;
+        n5 n5Var = this.c;
+        n5 n5Var2 = this.a;
         if (z11) {
-            j5Var2.setPadding(j5Var.getTextWidth(), 0, 0, 0);
+            n5Var2.setPadding(n5Var.getTextWidth(), 0, 0, 0);
         } else {
-            j5Var2.setPadding(0, 0, j5Var.getTextWidth(), 0);
+            n5Var2.setPadding(0, 0, n5Var.getTextWidth(), 0);
         }
     }
 

@@ -9,7 +9,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.WorkSource;
 import android.util.Log;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.io.ByteArrayOutputStream;
@@ -27,16 +27,16 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ff;
+import org.telegram.messenger.ef;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ii;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.vg;
+import org.telegram.ui.Components.eh;
+import org.telegram.ui.Components.qi;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x implements ii, com.google.android.gms.common.api.internal.q {
+public final class x implements qi, com.google.android.gms.common.api.internal.q {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -105,7 +105,7 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public boolean V1() {
         System.currentTimeMillis();
         return true;
@@ -133,19 +133,19 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         boolean z10;
         ?? r12;
         a0.l lVar;
-        u7.j jVar;
+        u7.i iVar;
         a0.l lVar2;
         switch (this.a) {
             case 1:
                 androidx.activity.n nVar = (androidx.activity.n) this.b;
                 LocationRequest locationRequest = (LocationRequest) this.c;
-                u7.l lVar3 = (u7.l) obj;
+                u7.k kVar = (u7.k) obj;
                 TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-                lVar3.getClass();
+                kVar.getClass();
                 com.google.android.gms.common.api.internal.o i7 = nVar.i();
                 com.google.android.gms.common.api.internal.m mVar = i7.b;
                 mVar.getClass();
-                q6.h0 h0Var = lVar3.B;
+                q6.h0 h0Var = kVar.B;
                 n6.c[] cVarArr = h0Var == null ? null : h0Var.b;
                 if (cVarArr != null) {
                     length = cVarArr.length;
@@ -165,15 +165,15 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
                         r12 = 1;
                         if (cVar.b() >= 1) {
                             z10 = true;
-                            lVar = lVar3.G;
+                            lVar = kVar.G;
                             synchronized (lVar) {
                                 try {
                                     try {
-                                        u7.j jVar2 = (u7.j) lVar3.G.get(mVar);
-                                        if (jVar2 != null && !z10) {
-                                            jVar2.n1(i7);
-                                            jVar = jVar2;
-                                            jVar2 = null;
+                                        u7.i iVar2 = (u7.i) kVar.G.get(mVar);
+                                        if (iVar2 != null && !z10) {
+                                            iVar2.n1(i7);
+                                            iVar = iVar2;
+                                            iVar2 = null;
                                             int identityHashCode = System.identityHashCode(mVar.a);
                                             String str = mVar.b;
                                             StringBuilder sb2 = new StringBuilder(str.length() + 1 + String.valueOf(identityHashCode).length());
@@ -182,7 +182,7 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
                                             sb2.append(identityHashCode);
                                             String sb3 = sb2.toString();
                                             if (z10) {
-                                                u7.y yVar = (u7.y) lVar3.n();
+                                                u7.x xVar = (u7.x) kVar.n();
                                                 int i11 = locationRequest.a;
                                                 lVar2 = lVar;
                                                 long j3 = locationRequest.b;
@@ -198,58 +198,58 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
                                                 String str2 = locationRequest.x;
                                                 boolean z12 = locationRequest.y;
                                                 WorkSource workSource = locationRequest.E;
-                                                u7.k kVar = locationRequest.F;
+                                                u7.j jVar = locationRequest.F;
                                                 String str3 = Build.VERSION.SDK_INT < 30 ? null : str2;
                                                 if (j10 == -1) {
                                                     j10 = j3;
                                                 } else if (i11 != 105) {
                                                     j10 = Math.min(j10, j3);
                                                 }
-                                                u7.m mVar2 = new u7.m(new LocationRequest(i11, j3, j10, Math.max(j11, j3), Long.MAX_VALUE, j12, i12, f10, z11, j13 == -1 ? j3 : j13, i13, i14, str3, z12, new WorkSource(workSource), kVar), null, false, false, null, false, false, null, Long.MAX_VALUE);
-                                                u7.h hVar = new u7.h(taskCompletionSource, jVar);
-                                                int i15 = u7.j.c;
-                                                IInterface queryLocalInterface = jVar.queryLocalInterface("com.google.android.gms.location.ILocationCallback");
-                                                IInterface iVar = queryLocalInterface instanceof j8.j ? (j8.j) queryLocalInterface : new j8.i(jVar, "com.google.android.gms.location.ILocationCallback", 10);
+                                                u7.l lVar3 = new u7.l(new LocationRequest(i11, j3, j10, Math.max(j11, j3), Long.MAX_VALUE, j12, i12, f10, z11, j13 == -1 ? j3 : j13, i13, i14, str3, z12, new WorkSource(workSource), jVar), null, false, false, null, false, false, null, Long.MAX_VALUE);
+                                                u7.h hVar = new u7.h(taskCompletionSource, iVar);
+                                                int i15 = u7.i.c;
+                                                IInterface queryLocalInterface = iVar.queryLocalInterface("com.google.android.gms.location.ILocationCallback");
+                                                IInterface iVar3 = queryLocalInterface instanceof j8.j ? (j8.j) queryLocalInterface : new j8.i(iVar, "com.google.android.gms.location.ILocationCallback", 10);
                                                 IInterface queryLocalInterface2 = hVar.queryLocalInterface("com.google.android.gms.location.internal.IFusedLocationProviderCallback");
-                                                IInterface vVar = queryLocalInterface2 instanceof u7.x ? (u7.x) queryLocalInterface2 : new u7.v(hVar, "com.google.android.gms.location.internal.IFusedLocationProviderCallback", 10);
-                                                Parcel p12 = yVar.p1();
+                                                IInterface uVar = queryLocalInterface2 instanceof u7.w ? (u7.w) queryLocalInterface2 : new u7.u(hVar, "com.google.android.gms.location.internal.IFusedLocationProviderCallback", 10);
+                                                Parcel p12 = xVar.p1();
                                                 int i16 = u7.d.a;
                                                 p12.writeInt(1);
-                                                int r10 = yb.r(p12, 20293);
-                                                yb.q(p12, 1, 4);
+                                                int r10 = bc.r(p12, 20293);
+                                                bc.q(p12, 1, 4);
                                                 p12.writeInt(1);
-                                                yb.k(p12, 2, mVar2, 0);
-                                                yb.f(p12, 5, iVar.asBinder());
-                                                yb.f(p12, 6, vVar.asBinder());
-                                                yb.l(p12, 8, sb3);
-                                                yb.s(p12, r10);
-                                                yVar.t1(p12, 59);
+                                                bc.k(p12, 2, lVar3, 0);
+                                                bc.f(p12, 5, iVar3.asBinder());
+                                                bc.f(p12, 6, uVar.asBinder());
+                                                bc.l(p12, 8, sb3);
+                                                bc.s(p12, r10);
+                                                xVar.t1(p12, 59);
                                             } else {
-                                                u7.y yVar2 = (u7.y) lVar3.n();
-                                                if (jVar2 == null) {
-                                                    jVar2 = null;
+                                                u7.x xVar2 = (u7.x) kVar.n();
+                                                if (iVar2 == null) {
+                                                    iVar2 = null;
                                                 }
                                                 u7.e eVar = new u7.e(null, taskCompletionSource);
-                                                Parcel p13 = yVar2.p1();
+                                                Parcel p13 = xVar2.p1();
                                                 int i17 = u7.d.a;
                                                 p13.writeInt(1);
-                                                int r11 = yb.r(p13, 20293);
-                                                yb.q(p13, 1, 4);
+                                                int r11 = bc.r(p13, 20293);
+                                                bc.q(p13, 1, 4);
                                                 p13.writeInt(2);
-                                                yb.f(p13, 2, jVar2);
-                                                yb.f(p13, 3, jVar);
-                                                yb.l(p13, 6, sb3);
-                                                yb.s(p13, r11);
+                                                bc.f(p13, 2, iVar2);
+                                                bc.f(p13, 3, iVar);
+                                                bc.l(p13, 6, sb3);
+                                                bc.s(p13, r11);
                                                 p13.writeInt(1);
                                                 locationRequest.writeToParcel(p13, 0);
                                                 u7.d.c(p13, eVar);
-                                                yVar2.t1(p13, 88);
+                                                xVar2.t1(p13, 88);
                                                 lVar2 = lVar;
                                             }
                                             return;
                                         }
-                                        jVar = new u7.j(nVar);
-                                        lVar3.G.put(mVar, jVar);
+                                        iVar = new u7.i(nVar);
+                                        kVar.G.put(mVar, iVar);
                                         int identityHashCode2 = System.identityHashCode(mVar.a);
                                         String str4 = mVar.b;
                                         StringBuilder sb22 = new StringBuilder(str4.length() + 1 + String.valueOf(identityHashCode2).length());
@@ -274,7 +274,7 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
                 }
                 z10 = false;
                 r12 = length;
-                lVar = lVar3.G;
+                lVar = kVar.G;
                 synchronized (lVar) {
                 }
             default:
@@ -290,15 +290,15 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         }
     }
 
-    public void b(v4.e1 e1Var, e2.r0 r0Var) {
+    public void b(v4.f1 f1Var, e2.r0 r0Var) {
         a0.f fVar = (a0.f) this.b;
-        v4.k1 k1Var = (v4.k1) fVar.get(e1Var);
-        if (k1Var == null) {
-            k1Var = v4.k1.a();
-            fVar.put(e1Var, k1Var);
+        v4.l1 l1Var = (v4.l1) fVar.get(f1Var);
+        if (l1Var == null) {
+            l1Var = v4.l1.a();
+            fVar.put(f1Var, l1Var);
         }
-        k1Var.c = r0Var;
-        k1Var.a |= 8;
+        l1Var.c = r0Var;
+        l1Var.a |= 8;
     }
 
     public File c() {
@@ -353,35 +353,30 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
-    public void d0(vg vgVar) {
-        vgVar.run();
-    }
-
-    public e2.r0 e(v4.e1 e1Var, int i7) {
-        v4.k1 k1Var;
+    public e2.r0 e(v4.f1 f1Var, int i7) {
+        v4.l1 l1Var;
         e2.r0 r0Var;
         a0.f fVar = (a0.f) this.b;
-        int d = fVar.d(e1Var);
-        if (d >= 0 && (k1Var = (v4.k1) fVar.i(d)) != null) {
-            int i10 = k1Var.a;
+        int d = fVar.d(f1Var);
+        if (d >= 0 && (l1Var = (v4.l1) fVar.i(d)) != null) {
+            int i10 = l1Var.a;
             if ((i10 & i7) != 0) {
                 int i11 = i10 & (~i7);
-                k1Var.a = i11;
+                l1Var.a = i11;
                 if (i7 == 4) {
-                    r0Var = k1Var.b;
+                    r0Var = l1Var.b;
                 } else {
                     if (i7 != 8) {
                         throw new IllegalArgumentException("Must provide flag PRE or POST");
                     }
-                    r0Var = k1Var.c;
+                    r0Var = l1Var.c;
                 }
                 if ((i11 & 12) == 0) {
                     fVar.g(d);
-                    k1Var.a = 0;
-                    k1Var.b = null;
-                    k1Var.c = null;
-                    v4.k1.d.u(k1Var);
+                    l1Var.a = 0;
+                    l1Var.b = null;
+                    l1Var.c = null;
+                    v4.l1.d.t(l1Var);
                 }
                 return r0Var;
             }
@@ -440,6 +435,11 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         throw new IllegalStateException(a8.p0.q("Missing required properties:", sb2));
     }
 
+    @Override // org.telegram.ui.Components.qi
+    public void f0(eh ehVar) {
+        ehVar.run();
+    }
+
     public void g() {
         try {
             ((FileLock) this.c).release();
@@ -449,20 +449,20 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ boolean g0() {
         return false;
     }
 
-    public void h(v4.e1 e1Var) {
-        v4.k1 k1Var = (v4.k1) ((a0.f) this.b).get(e1Var);
-        if (k1Var == null) {
+    public void h(v4.f1 f1Var) {
+        v4.l1 l1Var = (v4.l1) ((a0.f) this.b).get(f1Var);
+        if (l1Var == null) {
             return;
         }
-        k1Var.a &= -2;
+        l1Var.a &= -2;
     }
 
-    public void i(v4.e1 e1Var) {
+    public void i(v4.f1 f1Var) {
         a0.f fVar = (a0.f) this.b;
         a0.h hVar = (a0.h) this.c;
         int m10 = hVar.m() - 1;
@@ -470,7 +470,7 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
             if (m10 < 0) {
                 break;
             }
-            if (e1Var == hVar.n(m10)) {
+            if (f1Var == hVar.n(m10)) {
                 Object[] objArr = hVar.c;
                 Object obj = objArr[m10];
                 Object obj2 = a0.i.a;
@@ -482,32 +482,32 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
                 m10--;
             }
         }
-        v4.k1 k1Var = (v4.k1) fVar.get(e1Var);
-        if (k1Var != null) {
-            fVar.remove(e1Var);
-            k1Var.a = 0;
-            k1Var.b = null;
-            k1Var.c = null;
-            v4.k1.d.u(k1Var);
+        v4.l1 l1Var = (v4.l1) fVar.get(f1Var);
+        if (l1Var != null) {
+            fVar.remove(f1Var);
+            l1Var.a = 0;
+            l1Var.b = null;
+            l1Var.c = null;
+            v4.l1.d.t(l1Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10) {
-        ki kiVar = (ki) this.b;
+        si siVar = (si) this.b;
         try {
-            HashMap<Object, Object> selectedPhotos = kiVar.e2.getSelectedPhotos();
+            HashMap<Object, Object> selectedPhotos = siVar.e2.getSelectedPhotos();
             if (selectedPhotos.isEmpty()) {
                 return;
             }
-            ff ffVar = (ff) selectedPhotos.values().iterator().next();
-            String str = ffVar.h;
+            ef efVar = (ef) selectedPhotos.values().iterator().next();
+            String str = efVar.h;
             if (str == null) {
-                str = ffVar.I;
+                str = efVar.I;
             }
             g0 g0Var = (g0) this.c;
             g0Var.d0(g0Var.f0(str, true));
-            kiVar.dismiss();
+            siVar.dismiss();
         } catch (Throwable th2) {
             a8.g(th2, true);
         }
@@ -553,29 +553,29 @@ public final class x implements ii, com.google.android.gms.common.api.internal.q
         this.c = new BitmapShader(createBitmap, tileMode, tileMode);
     }
 
-    public x(g0 g0Var, ki kiVar) {
+    public x(g0 g0Var, si siVar) {
         this.a = 0;
         this.c = g0Var;
-        this.b = kiVar;
+        this.b = siVar;
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void R0(Object obj) {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void h1(TLRPC.User user) {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void K0() {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void v0() {
     }
 
-    @Override // org.telegram.ui.Components.ii
+    @Override // org.telegram.ui.Components.qi
     public /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10) {
     }
 }

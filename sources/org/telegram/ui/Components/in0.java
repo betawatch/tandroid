@@ -1,38 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class in0 {
-    public final ut a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final class in0 extends LinearLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public in0(View view) {
-        ut utVar = new ut(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = utVar;
-        g5.a aVar = Utilities.c;
-        this.c = org.telegram.messenger.g0.T1(5.0f, 9.0f, Utilities.l(aVar.nextFloat()));
-        this.d = org.telegram.messenger.g0.T1(2.5f, 5.0f, Utilities.l(aVar.nextFloat()));
-        this.e = org.telegram.messenger.g0.T1(2.5f, 5.2f, Utilities.l(aVar.nextFloat()));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public in0(Context context, int i7, int i10) {
+        super(context);
+        this.a = i7;
+        this.b = i10;
     }
 
-    public final void a(Canvas canvas, float f10) {
-        ut utVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * org.telegram.messenger.g0.L(0.5f) * f10);
-        canvas.translate(-0.0f, -0.0f);
-        if (f10 <= 0.0f || (utVar = this.a) == null) {
-            return;
-        }
-        utVar.run();
+    @Override // android.view.View
+    public final int getSuggestedMinimumWidth() {
+        return org.telegram.messenger.g0.L(260.0f);
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.b), View.MeasureSpec.getMode(i10)));
     }
 }

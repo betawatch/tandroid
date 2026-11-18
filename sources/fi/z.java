@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
+    public final /* synthetic */ t0 b;
 
-    public /* synthetic */ z(u0 u0Var, int i7) {
+    public /* synthetic */ z(t0 t0Var, int i7) {
         this.a = i7;
-        this.b = u0Var;
+        this.b = t0Var;
     }
 
     @Override // java.lang.Runnable
@@ -22,36 +22,36 @@ public final /* synthetic */ class z implements Runnable {
                 this.b.b();
                 break;
             default:
-                u0 u0Var = this.b;
-                ArrayList arrayList = u0Var.s;
-                z zVar = u0Var.F;
+                t0 t0Var = this.b;
+                ArrayList arrayList = t0Var.s;
+                z zVar = t0Var.F;
                 if (zVar != null) {
                     org.telegram.messenger.g0.r(zVar);
-                    u0Var.F = null;
+                    t0Var.F = null;
                 }
-                int currentTime = ConnectionsManager.getInstance(u0Var.O).getCurrentTime();
+                int currentTime = ConnectionsManager.getInstance(t0Var.O).getCurrentTime();
                 for (int size = arrayList.size() - 1; size >= 0; size--) {
-                    t0 t0Var = (t0) arrayList.get(size);
-                    ArrayList arrayList2 = t0Var.f;
+                    s0 s0Var = (s0) arrayList.get(size);
+                    ArrayList arrayList2 = s0Var.f;
                     int size2 = arrayList2.size();
                     int i7 = 0;
                     while (true) {
                         if (i7 < size2) {
                             Object obj = arrayList2.get(i7);
                             i7++;
-                            s0 s0Var = (s0) obj;
-                            long j3 = s0Var.g;
-                            if (j3 <= 0 || currentTime - s0Var.d > t.b(t0Var.a, (int) j3, 0)) {
+                            r0 r0Var = (r0) obj;
+                            long j3 = r0Var.g;
+                            if (j3 <= 0 || currentTime - r0Var.d > t.b(s0Var.a, (int) j3, 0)) {
                             }
                         } else {
                             arrayList.remove(size);
                         }
                     }
                 }
-                Collections.sort(arrayList, new a3.c(u0Var, 20));
-                u0Var.n.O(true);
-                u0Var.u(true);
-                u0Var.m();
+                Collections.sort(arrayList, new a3.c(t0Var, 20));
+                t0Var.n.O(true);
+                t0Var.u(true);
+                t0Var.m();
                 break;
         }
     }

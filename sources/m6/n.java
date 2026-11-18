@@ -1,7 +1,7 @@
 package m6;
 
-import a8.ja;
 import a8.l1;
+import a8.la;
 import a8.r7;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,7 +13,7 @@ import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import c8.zc;
+import c8.dd;
 import com.google.android.gms.internal.cast.l4;
 import com.google.android.gms.internal.cast.m0;
 import com.google.android.gms.internal.cast.q5;
@@ -22,9 +22,9 @@ import com.google.android.gms.internal.cast.x0;
 import com.google.android.gms.internal.play_billing.u;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import f5.a0;
 import f5.s;
-import f5.x;
+import f5.w;
+import f5.z;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,12 +34,12 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.uf;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.vf;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements OnSuccessListener, te.i {
     public static n e;
@@ -126,7 +126,7 @@ public final class n implements OnSuccessListener, te.i {
         synchronized (this.b) {
             try {
                 if (((Looper) this.c) == null) {
-                    ja.p(this.a == 0 && ((HandlerThread) this.d) == null);
+                    la.p(this.a == 0 && ((HandlerThread) this.d) == null);
                     HandlerThread handlerThread = new HandlerThread("ExoPlayer:Playback", -16);
                     this.d = handlerThread;
                     handlerThread.start();
@@ -149,7 +149,7 @@ public final class n implements OnSuccessListener, te.i {
             te.e eVar = (te.e) it.next();
             fArr[((Integer) eVar.a).intValue()] = eVar.c();
         }
-        ((uf) this.c).run();
+        ((vf) this.c).run();
     }
 
     @Override // te.i
@@ -161,7 +161,7 @@ public final class n implements OnSuccessListener, te.i {
         HandlerThread handlerThread;
         synchronized (this.b) {
             try {
-                ja.p(this.a > 0);
+                la.p(this.a > 0);
                 int i7 = this.a - 1;
                 this.a = i7;
                 if (i7 == 0 && (handlerThread = (HandlerThread) this.d) != null) {
@@ -177,7 +177,7 @@ public final class n implements OnSuccessListener, te.i {
 
     public void h(int i7, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = zc.b(this.a, 1 << i7, z10);
+        int b10 = dd.b(this.a, 1 << i7, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -186,12 +186,12 @@ public final class n implements OnSuccessListener, te.i {
     }
 
     public void j(Throwable th2) {
-        x xVar = (x) this.d;
+        w wVar = (w) this.d;
         if (th2 instanceof TimeoutException) {
-            xVar.F(ns.n1, 28, a0.p);
+            wVar.G(ks.n1, 28, z.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            xVar.F(95, 28, a0.p);
+            wVar.G(95, 28, z.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();
@@ -226,7 +226,7 @@ public final class n implements OnSuccessListener, te.i {
         SharedPreferences sharedPreferences = (SharedPreferences) this.d;
         Bundle bundle = (Bundle) obj;
         g6.g gVar = m0Var.a;
-        q6.m.g(gVar);
+        q6.m.h(gVar);
         com.google.android.gms.internal.cast.s sVar = m0Var.b;
         if (i7 != 3) {
             if (i7 == 2) {
@@ -238,7 +238,7 @@ public final class n implements OnSuccessListener, te.i {
                 if (sVar == null) {
                     v0 v0Var = new v0(x0Var, 0);
                     com.google.android.gms.internal.cast.s.i.b("register callback = %s", v0Var);
-                    q6.m.d("Must be called from the main thread.");
+                    q6.m.e("Must be called from the main thread.");
                     sVar.b.add(v0Var);
                     return;
                 }
@@ -251,7 +251,7 @@ public final class n implements OnSuccessListener, te.i {
         if (sVar != null) {
             v0 v0Var2 = new v0(r7Var, 1);
             com.google.android.gms.internal.cast.s.i.b("register callback = %s", v0Var2);
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             sVar.b.add(v0Var2);
         }
         if (i7 != 1) {
@@ -265,12 +265,12 @@ public final class n implements OnSuccessListener, te.i {
     public n(int i7) {
         switch (i7) {
             case 5:
-                g6 g6Var = new g6(true, true, true);
-                this.d = g6Var;
+                m6 m6Var = new m6(true, true, true);
+                this.d = m6Var;
                 Paint paint = new Paint(1);
-                g6Var.w(g0.L(13.0f));
-                g6Var.u(-1);
-                g6Var.x(g0.o());
+                m6Var.w(g0.L(13.0f));
+                m6Var.u(-1);
+                m6Var.x(g0.o());
                 paint.setColor(i0.a.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;

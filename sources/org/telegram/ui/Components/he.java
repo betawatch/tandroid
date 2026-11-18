@@ -1,80 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.messenger.beta.R;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class he extends jg {
-    public final /* synthetic */ int w0 = 0;
-    public final /* synthetic */ ChatActivityEnterView x0;
+public final class he extends View.AccessibilityDelegate {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public he(ChatActivityEnterView chatActivityEnterView, Activity activity, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(i7, activity, e6Var, true);
-        this.x0 = chatActivityEnterView;
-    }
-
-    @Override // org.telegram.ui.Components.jg
-    public boolean b() {
-        switch (this.w0) {
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
             case 0:
-                return this.x0.c();
-            default:
-                return super.b();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jg
-    public final boolean c() {
-        switch (this.w0) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.x0;
-                return !chatActivityEnterView.c() && chatActivityEnterView.H0 == Integer.MAX_VALUE;
-            default:
-                return !this.x0.Y3;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jg
-    public final boolean d() {
-        switch (this.w0) {
-            case 0:
-                org.telegram.ui.bg0 bg0Var = this.x0.M0;
-                return !(bg0Var == null || bg0Var.u0) || this.w > 0;
-            default:
-                return true;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.jg
-    public boolean j() {
-        switch (this.w0) {
-            case 0:
-                return this.x0.Q5;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.w0) {
-            case 0:
-                super.setAlpha(f10);
-                int i7 = ChatActivityEnterView.N6;
-                this.x0.T1();
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
                 break;
             default:
-                super.setAlpha(f10);
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
+                    break;
+                }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public he(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(R.drawable.input_done, context, e6Var, true);
-        this.x0 = chatActivityEnterView;
     }
 }

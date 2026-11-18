@@ -1,31 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.content.Context;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iy0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ly0 b;
+    public final /* synthetic */ org.telegram.messenger.video.a b;
+    public final /* synthetic */ org.telegram.ui.Components.lc c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ fi.h0 e;
 
-    public /* synthetic */ iy0(ly0 ly0Var, int i7) {
+    public /* synthetic */ iy0(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.lc lcVar, Context context, fi.h0 h0Var, int i7) {
         this.a = i7;
-        this.b = ly0Var;
+        this.b = aVar;
+        this.c = lcVar;
+        this.d = context;
+        this.e = h0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        fi.h0 h0Var = this.e;
+        Context context = this.d;
+        org.telegram.ui.Components.lc lcVar = this.c;
+        org.telegram.messenger.video.a aVar = this.b;
+        int i10 = 2;
+        switch (i7) {
             case 0:
-                ly0 ly0Var = this.b;
-                my0 my0Var = ly0Var.w;
-                if (ly0Var.a != 0) {
-                    my0Var.onBackPressed();
-                    break;
-                } else {
-                    my0Var.dismiss();
-                    break;
-                }
+                aVar.run();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.M0(2131754485, null), -1, 2, new fu(context, i10), h0Var)).j();
+                break;
+            case 1:
+                aVar.run();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.M0(2131754485, null), -1, 2, new fu(context, 5), h0Var)).j();
+                break;
             default:
-                org.telegram.messenger.g0.J3(this.b.n.d);
+                aVar.run();
+                lcVar.c(org.telegram.messenger.g0.R2(org.telegram.messenger.gd.M0(2131754485, null), -1, 2, new fu(context, 6), h0Var)).j();
                 break;
         }
     }

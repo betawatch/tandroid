@@ -4,17 +4,16 @@ import android.content.Context;
 import android.os.Process;
 import android.util.Log;
 import androidx.lifecycle.k0;
-import c8.d0;
-import c8.n0;
+import c8.f0;
+import c8.p0;
 import com.google.android.gms.internal.play_billing.s0;
-import hi.l0;
+import h9.g1;
 import java.util.LinkedHashSet;
 import java.util.List;
 import kotlin.jvm.internal.j;
 import kotlin.jvm.internal.m;
 import kotlin.jvm.internal.s;
 import m1.e0;
-import m1.f0;
 import o1.e;
 import p1.i;
 import q1.h;
@@ -24,7 +23,7 @@ import zd.b0;
 import zd.j0;
 import zd.t1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d {
     public static final /* synthetic */ g[] d;
@@ -45,7 +44,7 @@ public final class d {
         this.a = name;
         this.b = new ThreadLocal();
         final int i7 = 0;
-        l0 l0Var = new l0(new l(this) { // from class: ka.a
+        g1 g1Var = new g1(new l(this) { // from class: ka.a
             public final /* synthetic */ d b;
 
             {
@@ -67,7 +66,7 @@ public final class d {
                         LinkedHashSet keysToMigrate = p1.j.a;
                         j.e(sharedPreferencesName, "sharedPreferencesName");
                         j.e(keysToMigrate, "keysToMigrate");
-                        return d0.a(new o1.d(it, sharedPreferencesName, e.a, new b(keysToMigrate, null, 2), new i(3, null)));
+                        return f0.a(new o1.d(it, sharedPreferencesName, e.a, new b(keysToMigrate, null, 2), new i(3, null)));
                 }
             }
         }, 13);
@@ -94,7 +93,7 @@ public final class d {
                         LinkedHashSet keysToMigrate = p1.j.a;
                         j.e(sharedPreferencesName, "sharedPreferencesName");
                         j.e(keysToMigrate, "keysToMigrate");
-                        return d0.a(new o1.d(it, sharedPreferencesName, e.a, new b(keysToMigrate, null, 2), new i(3, null)));
+                        return f0.a(new o1.d(it, sharedPreferencesName, e.a, new b(keysToMigrate, null, 2), new i(3, null)));
                 }
             }
         };
@@ -102,8 +101,8 @@ public final class d {
         ge.d dVar2 = ge.d.c;
         t1 t1Var = new t1();
         dVar2.getClass();
-        ee.c b10 = b0.b(n0.c(dVar2, t1Var));
-        s0 s0Var = new s0(name, l0Var, lVar, b10);
+        ee.c b10 = b0.b(p0.c(dVar2, t1Var));
+        s0 s0Var = new s0(name, g1Var, lVar, b10);
         g property = d[0];
         j.e(property, "property");
         q1.d dVar3 = (q1.d) s0Var.b;
@@ -115,7 +114,7 @@ public final class d {
                         j.d(applicationContext, "applicationContext");
                         List list = (List) lVar.invoke(applicationContext);
                         o1.a aVar = new o1.a(1, applicationContext, s0Var);
-                        s0Var.b = new q1.d(new q1.d(new m1.b0(new f0(h.a, e0.b, new k0(aVar, 3)), d0.a(new be.l(list, (id.c) null, 8)), l0Var, b10)));
+                        s0Var.b = new q1.d(new q1.d(new m1.b0(new m1.f0(h.a, e0.b, new k0(aVar, 3)), f0.a(new be.l(list, (id.c) null, 8)), g1Var, b10)));
                     }
                     dVar = (q1.d) s0Var.b;
                     j.b(dVar);

@@ -2,7 +2,7 @@ package m3;
 
 import a8.va;
 import c4.k;
-import c8.l9;
+import c8.n9;
 import e2.q0;
 import e2.s0;
 import f3.o;
@@ -13,11 +13,12 @@ import f3.t;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.List;
+import p5.c;
 import z3.l;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
@@ -33,7 +34,7 @@ public final class a implements o {
 
     @Override // f3.o
     public final boolean b(p pVar) {
-        return l9.a((f3.l) pVar, true);
+        return n9.a((f3.l) pVar, true);
     }
 
     @Override // f3.o
@@ -63,7 +64,7 @@ public final class a implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     @Override // f3.o
@@ -74,11 +75,11 @@ public final class a implements o {
                 int i10 = this.i;
                 x xVar = this.a;
                 if (i10 == 0) {
-                    if (!pVar.d(xVar.a, 0, 8, true)) {
+                    if (!pVar.c(xVar.a, 0, 8, true)) {
                         q qVar = this.b;
                         qVar.getClass();
                         qVar.d1();
-                        this.b.f(new t(-9223372036854775807L));
+                        this.b.j(new t(-9223372036854775807L));
                         this.f = 4;
                         return -1;
                     }
@@ -103,13 +104,13 @@ public final class a implements o {
                     e2.t tVar = new e2.t();
                     tVar.q = s0.n("image/heic");
                     tVar.k = new q0(bVar);
-                    r.b.s(tVar, d2);
+                    c.r(tVar, d2);
                     this.f = 2;
                 } else {
                     this.f = 1;
                 }
             } else if (i7 == 1) {
-                pVar.m((int) (this.h - this.i));
+                pVar.r((int) (this.h - this.i));
                 this.i = 0;
                 this.f = 0;
             } else {
@@ -148,7 +149,7 @@ public final class a implements o {
                     q qVar4 = this.b;
                     qVar4.getClass();
                     qVar4.d1();
-                    this.b.f(new t(-9223372036854775807L));
+                    this.b.j(new t(-9223372036854775807L));
                     this.f = 4;
                 }
             }

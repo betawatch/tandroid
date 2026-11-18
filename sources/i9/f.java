@@ -1,12 +1,12 @@
 package i9;
 
-import c8.g1;
+import c8.k1;
 import java.io.InputStream;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class f {
     static {
@@ -50,7 +50,7 @@ public abstract class f {
                 i10 += read;
                 i7 += read;
             }
-            min = g1.e(min * (min < 4096 ? 4 : 2));
+            min = k1.e(min * (min < 4096 ? 4 : 2));
         }
         if (inputStream.read() == -1) {
             return a(arrayDeque, 2147483639);

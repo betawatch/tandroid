@@ -1,65 +1,40 @@
 package hi;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.gj0;
-import org.telegram.ui.Components.hj0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.jj0;
+import android.text.TextUtils;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.kv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
-    public final /* synthetic */ z2 c;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class w2 extends d3 {
+    public final /* synthetic */ e3 y;
 
-    public /* synthetic */ w2(x2 x2Var, z2 z2Var, int i7) {
-        this.a = i7;
-        this.b = x2Var;
-        this.c = z2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w2(e3 e3Var) {
+        super(e3Var);
+        this.y = e3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                di.c1 c1Var = this.b.c.d;
-                c1Var.getClass();
-                z2 z2Var = this.c;
-                int R = RecyclerView.R(z2Var);
-                if (R != -1) {
-                    gj0 gj0Var = c1Var.U0;
-                    if (gj0Var == null) {
-                        hj0 hj0Var = c1Var.V0;
-                        if (hj0Var != null) {
-                            hj0Var.f(0.0f, 0.0f, R, z2Var);
-                            break;
-                        }
-                    } else {
-                        gj0Var.b(R, z2Var);
-                        break;
-                    }
-                }
-                break;
-            default:
-                di.c1 c1Var2 = this.b.c.d;
-                c1Var2.getClass();
-                z2 z2Var2 = this.c;
-                int R2 = RecyclerView.R(z2Var2);
-                if (R2 != -1) {
-                    ij0 ij0Var = c1Var2.W0;
-                    if (ij0Var == null) {
-                        jj0 jj0Var = c1Var2.X0;
-                        if (jj0Var != null) {
-                            jj0Var.f(0.0f, 0.0f, R2, z2Var2);
-                            break;
-                        }
-                    } else {
-                        ij0Var.b(R2, z2Var2);
-                        break;
-                    }
-                }
-                break;
+    @Override // hi.d3
+    public final void F(boolean z10) {
+        e3 e3Var = this.y;
+        org.telegram.ui.ActionBar.r0 r0Var = e3Var.H;
+        if (r0Var != null) {
+            r0Var.setShowSearchProgress(z10);
+        }
+        e3Var.s.e(z10, true);
+    }
+
+    @Override // v4.i0
+    public final void f() {
+        kv0 kv0Var = this.y.s;
+        super.f();
+        if (TextUtils.isEmpty(this.f)) {
+            kv0Var.setStickerType(11);
+            kv0Var.d.setText(gd.M0(2131745565, null));
+        } else {
+            kv0Var.setStickerType(1);
+            kv0Var.d.setText(gd.a0(null, null, 2131747974, this.f));
         }
     }
 }

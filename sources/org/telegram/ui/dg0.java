@@ -1,83 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jg0 b;
+public final class dg0 extends org.telegram.ui.Cells.q1 {
+    public int Ad;
+    public int Bd;
+    public final /* synthetic */ eg0 Cd;
+    public int zd;
 
-    public /* synthetic */ dg0(jg0 jg0Var, int i7) {
-        this.a = i7;
-        this.b = jg0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dg0(eg0 eg0Var, Context context, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i7, true, null, i6Var);
+        this.Cd = eg0Var;
+        this.zd = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Ad = ConnectionsManager.DEFAULT_DATACENTER_ID;
+        this.Bd = -1;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i7 = 0;
-                final jg0 jg0Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.cg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i7) {
-                            case 0:
-                                jg0.Z(jg0Var, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jg0.b0(jg0Var, tL_error, tLObject);
-                                break;
-                            default:
-                                jg0.a0(jg0Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                final int i10 = 1;
-                final jg0 jg0Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.cg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                jg0.Z(jg0Var2, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jg0.b0(jg0Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                jg0.a0(jg0Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 2;
-                final jg0 jg0Var3 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: org.telegram.ui.cg0
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                jg0.Z(jg0Var3, tL_error, tLObject);
-                                break;
-                            case 1:
-                                jg0.b0(jg0Var3, tL_error, tLObject);
-                                break;
-                            default:
-                                jg0.a0(jg0Var3, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.Cells.q1
+    public final xh.e Y2() {
+        return xh.e.d(1, this, this.Cd.F);
+    }
+
+    @Override // android.view.View
+    public final boolean isPressed() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.q1, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        if (!this.ib.x0 || i10 == 0 || this.zd == Integer.MAX_VALUE || i12 == 0 || this.Ad == Integer.MAX_VALUE) {
+            return;
+        }
+        if (this.Bd == (getMessageObject() == null ? 0 : getMessageObject().e1())) {
+            if (!this.Cd.A0) {
+                setTranslationY(-(i10 - this.zd));
+                animate().translationY(0.0f).setDuration(320L).setInterpolator(org.telegram.ui.Components.lr.h).start();
+            }
+            this.zd = getTop();
+            this.Ad = getBottom();
+            this.Bd = getMessageObject() != null ? getMessageObject().e1() : 0;
         }
     }
 }

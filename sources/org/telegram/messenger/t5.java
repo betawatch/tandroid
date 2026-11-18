@@ -1,110 +1,46 @@
 package org.telegram.messenger;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.ArrayList;
-import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class t5 {
-    public static pz a(int i7) {
-        try {
-            pz pzVar = new pz();
-            iz izVar = new iz(256.0f, 256.0f, 204.8f);
-            pzVar.a.add(izVar);
-            pzVar.b.put(izVar, new Paint(1));
-            pzVar.e = 512;
-            pzVar.f = 512;
-            pzVar.f(i7, null, 0.65f, false);
-            return pzVar;
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return null;
-        }
-    }
+public final class t5 extends TLRPC.TL_document {
+    public final TLRPC.ThemeSettings a;
+    public final TLRPC.Document b;
+    public final org.telegram.ui.ActionBar.m6 c;
+    public final org.telegram.ui.ActionBar.k6 d;
 
-    public static pz b(int i7) {
-        Path path = new Path();
-        path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
-        path.close();
-        pz pzVar = new pz();
-        pzVar.a.add(path);
-        pzVar.b.put(path, new Paint(1));
-        pzVar.e = 512;
-        pzVar.f = 512;
-        pzVar.f(i7, null, 1.0f, false);
-        return pzVar;
-    }
-
-    public static pz c(float f10, int i7) {
-        pz h = qz.h(R.raw.map_placeholder, -65536);
-        if (h != null) {
-            h.f(i7, null, f10, false);
+    public t5(TLRPC.ThemeSettings themeSettings) {
+        this.a = themeSettings;
+        org.telegram.ui.ActionBar.m6 Q0 = org.telegram.ui.ActionBar.n6.Q0(org.telegram.ui.ActionBar.n6.r0(themeSettings));
+        this.c = Q0;
+        Q0.getClass();
+        org.telegram.ui.ActionBar.k6 k6Var = new org.telegram.ui.ActionBar.k6();
+        org.telegram.ui.ActionBar.m6.i(k6Var, themeSettings);
+        k6Var.b = Q0;
+        this.d = k6Var;
+        TLRPC.WallPaper wallPaper = themeSettings.wallpaper;
+        if (!(wallPaper instanceof TLRPC.TL_wallPaper)) {
+            this.id = -2147483648L;
+            this.dc_id = TLObject.FLAG_31;
+            return;
         }
-        return h;
-    }
-
-    public static pz d(ArrayList arrayList, int i7, float f10, boolean z10) {
-        int size = arrayList.size();
-        int i10 = 512;
-        int i11 = 512;
-        TLRPC.TL_photoPathSize tL_photoPathSize = null;
-        for (int i12 = 0; i12 < size; i12++) {
-            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) arrayList.get(i12);
-            if (photoSize instanceof TLRPC.TL_photoPathSize) {
-                tL_photoPathSize = (TLRPC.TL_photoPathSize) photoSize;
-            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z10) {
-                i10 = photoSize.w;
-                i11 = photoSize.h;
-            }
-        }
-        if (tL_photoPathSize == null || i10 == 0 || i11 == 0) {
-            return null;
-        }
-        pz j3 = qz.j(i10, i11, tL_photoPathSize.svgPath);
-        if (j3 != null) {
-            j3.f(i7, null, f10, false);
-        }
-        return j3;
-    }
-
-    public static pz e(TLRPC.Document document, int i7, float f10) {
-        return f(document, i7, f10, null);
-    }
-
-    public static pz f(TLRPC.Document document, int i7, float f10, org.telegram.ui.ActionBar.e6 e6Var) {
-        int i10;
-        int i11;
-        if (document == null) {
-            return null;
-        }
-        int size = document.thumbs.size();
-        for (int i12 = 0; i12 < size; i12++) {
-            TLRPC.PhotoSize photoSize = document.thumbs.get(i12);
-            if (photoSize instanceof TLRPC.TL_photoPathSize) {
-                int size2 = document.attributes.size();
-                for (int i13 = 0; i13 < size2; i13++) {
-                    TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i13);
-                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                        i10 = documentAttribute.w;
-                        i11 = documentAttribute.h;
-                        break;
-                    }
-                }
-                i10 = 512;
-                i11 = 512;
-                if (i10 == 0 || i11 == 0) {
-                    return null;
-                }
-                pz j3 = qz.j((int) (i10 * 1.0f), (int) (i11 * 1.0f), ((TLRPC.TL_photoPathSize) photoSize).svgPath);
-                if (j3 != null) {
-                    j3.f(i7, e6Var, f10, false);
-                }
-                return j3;
-            }
-        }
-        return null;
+        TLRPC.Document document = ((TLRPC.TL_wallPaper) wallPaper).document;
+        this.b = document;
+        this.id = document.id;
+        this.access_hash = document.access_hash;
+        this.file_reference = document.file_reference;
+        this.user_id = document.user_id;
+        this.date = document.date;
+        this.file_name = document.file_name;
+        this.mime_type = document.mime_type;
+        this.size = document.size;
+        this.thumbs = document.thumbs;
+        this.version = document.version;
+        this.dc_id = document.dc_id;
+        this.key = document.key;
+        this.iv = document.iv;
+        this.attributes = document.attributes;
     }
 }

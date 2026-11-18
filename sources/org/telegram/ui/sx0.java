@@ -1,34 +1,14 @@
 package org.telegram.ui;
 
-import android.transition.Transition;
+import android.content.ClipboardManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class sx0 implements Transition.TransitionListener {
-    public final /* synthetic */ Runnable a;
+public final /* synthetic */ class sx0 implements ClipboardManager.OnPrimaryClipChangedListener {
+    public final /* synthetic */ yx0 a;
 
-    public sx0(Runnable runnable) {
-        this.a = runnable;
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionEnd(Transition transition) {
-        this.a.run();
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionCancel(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionPause(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionResume(Transition transition) {
-    }
-
-    @Override // android.transition.Transition.TransitionListener
-    public final void onTransitionStart(Transition transition) {
+    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
+    public final void onPrimaryClipChanged() {
+        this.a.c0();
     }
 }

@@ -2,12 +2,12 @@ package ai;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadFactory;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Dictation.DictationLid;
 import org.telegram.ui.Wallet.WalletEngine2;
 import org.telegram.utils.twidget.WidgetEngineService;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y0 implements ThreadFactory {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class y0 implements ThreadFactory {
             case 1:
                 return new Thread(runnable, "ExoPlayer:AudioTrackReleaseThread");
             case 2:
-                return new Thread(runnable, "Lottie-" + ch0.Q0.getAndIncrement());
+                return new Thread(runnable, "Lottie-" + mh0.Q0.getAndIncrement());
             case 3:
-                return new Thread(runnable, "LottieLow-" + ch0.R0.getAndIncrement());
+                return new Thread(runnable, "LottieLow-" + mh0.R0.getAndIncrement());
             case 4:
                 return new Thread(runnable, "GramWalletStorage");
             case 5:
@@ -40,7 +40,7 @@ public final /* synthetic */ class y0 implements ThreadFactory {
                 thread.setDaemon(true);
                 return thread;
             case 7:
-                Thread thread2 = new Thread(new org.telegram.utils.twidget.j0(runnable, 4), "widget-sandbox-io");
+                Thread thread2 = new Thread(runnable, "widget-sandbox-io");
                 thread2.setDaemon(true);
                 return thread2;
             case 8:

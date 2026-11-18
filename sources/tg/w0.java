@@ -2,11 +2,11 @@ package tg;
 
 import android.content.Context;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.cj0;
+import org.telegram.ui.Components.kj0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class w0 extends v4.h0 {
+public final class w0 extends v4.i0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ y0 d;
 
@@ -15,14 +15,14 @@ public final class w0 extends v4.h0 {
         this.c = context;
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         return 14;
     }
 
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
-        x0 x0Var = (x0) e1Var.a;
+    @Override // v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        x0 x0Var = (x0) f1Var.a;
         ViewGroup.LayoutParams layoutParams = x0Var.getLayoutParams();
         y0 y0Var = this.d;
         layoutParams.height = ((y0Var.getHeight() - y0Var.getPaddingTop()) - y0Var.getPaddingBottom()) / 2;
@@ -35,8 +35,8 @@ public final class w0 extends v4.h0 {
         }
     }
 
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        return new cj0(new x0(this.d, this.c));
+    @Override // v4.i0
+    public final v4.f1 x(ViewGroup viewGroup, int i7) {
+        return new kj0(new x0(this.d, this.c));
     }
 }

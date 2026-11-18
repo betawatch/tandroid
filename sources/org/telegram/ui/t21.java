@@ -1,36 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class t21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u21 b;
+import android.content.Intent;
+import android.net.Uri;
 
-    public /* synthetic */ t21(u21 u21Var, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t21 implements org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
+
+    public /* synthetic */ t21(SessionsActivity sessionsActivity, int i7) {
         this.a = i7;
-        this.b = u21Var;
+        this.b = sessionsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String sb2;
-        int i7 = this.a;
-        u21 u21Var = this.b;
-        switch (i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public final void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
             case 0:
-                String str = u21Var.b.text;
-                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
-                    StringBuilder sb3 = new StringBuilder();
-                    org.telegram.ui.Cells.y0.r(null, 2131751105, sb3, "\n");
-                    sb3.append(u21Var.b.text);
-                    sb2 = sb3.toString();
-                } else {
-                    sb2 = org.telegram.messenger.hd.M0(2131754709, null);
+                SessionsActivity sessionsActivity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    sessionsActivity.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
                 }
-                org.telegram.ui.Components.t4.r0(u21Var.c, org.telegram.messenger.hd.M0(2131753894, null), sb2, null);
-                break;
             default:
-                org.telegram.ui.Components.t4.r0(u21Var.c, org.telegram.messenger.hd.M0(2131753894, null), org.telegram.messenger.hd.M0(2131751105, null), null);
+                SessionsActivity.b0(this.b);
                 break;
         }
     }

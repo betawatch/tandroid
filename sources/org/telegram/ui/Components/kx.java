@@ -1,37 +1,34 @@
 package org.telegram.ui.Components;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kx implements zx {
-    public final /* synthetic */ lx a;
+public final class kx {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
 
-    public kx(lx lxVar) {
-        this.a = lxVar;
+    public kx(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
     }
 
-    @Override // org.telegram.ui.Components.zx
-    public final void e() {
-        lx lxVar = this.a;
-        if (lxVar.G.W.G) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        lxVar.G.W.e(true);
-        lx.E(lxVar, new vs(7, this, arrayList), arrayList, true);
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        LinkedHashSet linkedHashSet = new LinkedHashSet();
-        String str = this.a.w;
-        vs vsVar = new vs(6, this, str);
-        if (org.telegram.messenger.j6.d(str)) {
-            av0.G3.c(org.telegram.messenger.m10.t0, str, new gh(3, linkedHashSet, vsVar));
-        } else {
-            vsVar.run();
-        }
+    public kx(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

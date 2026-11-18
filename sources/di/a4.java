@@ -1,56 +1,71 @@
 package di;
 
-import android.content.Context;
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.di;
+import org.telegram.ui.Components.eh;
+import org.telegram.ui.Components.ki;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a4 extends ClickableSpan {
-    public final /* synthetic */ boolean[] a;
+public final class a4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ String h;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public a4(boolean[] zArr, int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var, long j3, String str, String str2) {
-        this.a = zArr;
+    public /* synthetic */ a4(Object obj, int i7, Object obj2, int i10) {
+        this.a = i10;
+        this.d = obj;
         this.b = i7;
-        this.c = context;
-        this.d = e6Var;
-        this.e = j3;
-        this.f = str;
-        this.h = str2;
+        this.c = obj2;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        boolean[] zArr = this.a;
-        if (zArr[0]) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                f6 f6Var = (f6) this.d;
+                f6Var.X1();
+                j4 j4Var = f6Var.c2;
+                int i7 = this.b;
+                j4Var.setVisibility(i7 == 0 ? 0 : 8);
+                f6Var.o2.setVisibility(i7 == 1 ? 0 : 8);
+                f6Var.x2.setVisibility(i7 == 2 ? 0 : 8);
+                f6Var.z2.setVisibility(i7 == 3 ? 0 : 8);
+                f6Var.J2();
+                f6Var.Y2 = null;
+                Runnable runnable = (Runnable) this.c;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                si siVar = (si) this.d;
+                siVar.w2.setAlpha(0.0f);
+                siVar.w2.setTranslationY(org.telegram.messenger.g0.L(78.0f) + this.b);
+                di diVar = siVar.Z1;
+                ki kiVar = siVar.w2;
+                Float valueOf = Float.valueOf(1.0f);
+                diVar.getClass();
+                diVar.a(kiVar, valueOf);
+                siVar.V2.setAlpha(0.0f);
+                r1.g gVar = new r1.g((Object) siVar.x2, (r1.e) r1.g.p, 0.0f);
+                gVar.m.a(0.75f);
+                gVar.m.b(500.0f);
+                gVar.b(new org.telegram.ui.Components.i7(this, 3));
+                gVar.a(new bi.v0(4, this, (eh) this.c));
+                siVar.r3 = gVar;
+                gVar.h();
+                break;
+            default:
+                a8.xa xaVar = (a8.xa) this.d;
+                ((ck0) xaVar.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                xaVar.c = null;
+                break;
         }
-        zArr[0] = true;
-        int i7 = this.b;
-        k0 k0Var = new k0(zArr, i7, this.c, this.d, 1);
-        long j3 = this.e;
-        String str = this.f;
-        if (j3 != 0) {
-            k0Var.a(Long.valueOf(j3), str);
-            return;
-        }
-        TL_stars.getUniqueStarGift getuniquestargift = new TL_stars.getUniqueStarGift();
-        getuniquestargift.slug = this.h.concat("-1");
-        ConnectionsManager.getInstance(i7).sendRequest(getuniquestargift, new bi.v2(7, k0Var, str));
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setColor(textPaint.linkColor);
-        textPaint.setUnderlineText(false);
     }
 }

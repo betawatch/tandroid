@@ -12,11 +12,11 @@ import android.os.IInterface;
 import android.os.ResultReceiver;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import c8.ge;
-import c8.vc;
-import c8.w9;
-import c8.zb;
-import di.s2;
+import c8.cc;
+import c8.je;
+import c8.y9;
+import c8.yc;
+import di.w2;
 import f7.k;
 import f7.l;
 import f7.u;
@@ -31,7 +31,7 @@ import w0.g;
 import w0.h;
 import w0.i;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends ResultReceiver {
     public final /* synthetic */ int a;
@@ -51,7 +51,7 @@ public final class e extends ResultReceiver {
         Bundle bundle;
         v0.c a10;
         w0.d a11;
-        int i10 = 16;
+        int i10 = 18;
         int i11 = 0;
         int i12 = 2;
         q4.d dVar2 = null;
@@ -90,7 +90,7 @@ public final class e extends ResultReceiver {
                     if (a1.g.a(cancellationSignal)) {
                         return;
                     }
-                    fVar.g().execute(new a1.e(29, fVar, rVar));
+                    fVar.g().execute(new a1.e(28, fVar, rVar));
                     return;
                 } catch (i e11) {
                     CancellationSignal cancellationSignal2 = fVar.h;
@@ -107,7 +107,7 @@ public final class e extends ResultReceiver {
                     if (a1.g.a(cancellationSignal3)) {
                         return;
                     }
-                    fVar.g().execute(new c(i11, fVar, hVar));
+                    fVar.g().execute(new a1.e(29, fVar, hVar));
                     return;
                 }
             case 1:
@@ -154,7 +154,7 @@ public final class e extends ResultReceiver {
                         throw null;
                     }
                 }
-                u uVar = (u) zb.a(byteArrayExtra, u.CREATOR);
+                u uVar = (u) cc.a(byteArrayExtra, u.CREATOR);
                 j.d(uVar, "deserializeFromBytes(...)");
                 LinkedHashMap linkedHashMap = d1.g.a;
                 l lVar = uVar.d;
@@ -167,7 +167,7 @@ public final class e extends ResultReceiver {
                     j.d(rVar2, "getErrorCode(...)");
                     x0.a aVar = (x0.a) d1.g.a.get(rVar2);
                     String str = kVar.b;
-                    dVar = aVar == null ? new y0.a(new x0.a(26), r.b.k("unknown fido gms exception - ", str)) : (rVar2 == f7.r.x && str != null && xd.d.e(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
+                    dVar = aVar == null ? new y0.a(new x0.a(26), p5.c.k("unknown fido gms exception - ", str)) : (rVar2 == f7.r.x && str != null && xd.d.e(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
                 } else {
                     dVar = null;
                 }
@@ -195,7 +195,7 @@ public final class e extends ResultReceiver {
                     }
                     Executor executor4 = eVar.g;
                     if (executor4 != null) {
-                        executor4.execute(new c(19, eVar, f10));
+                        executor4.execute(new c(i10, eVar, f10));
                         return;
                     } else {
                         j.h("executor");
@@ -248,7 +248,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i18 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent3 = (Intent) w9.a(resultData);
+                Intent intent3 = (Intent) y9.a(resultData);
                 int i19 = b1.d.c;
                 if (i18 != i19) {
                     Log.w("CreatePublicKey", "Returned request code " + i19 + " does not match what was given " + i18);
@@ -277,7 +277,7 @@ public final class e extends ResultReceiver {
                     a10 = h1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
                 } else {
                     Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : vc.a(string, bundle);
+                    a10 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : yc.a(string, bundle);
                 }
                 if (a10 != null) {
                     CancellationSignal cancellationSignal10 = dVar6.h;
@@ -287,7 +287,7 @@ public final class e extends ResultReceiver {
                     }
                     Executor executor9 = dVar6.g;
                     if (executor9 != null) {
-                        executor9.execute(new s2(i10, dVar6, a10));
+                        executor9.execute(new w2(i10, dVar6, a10));
                         return;
                     } else {
                         j.h("executor");
@@ -306,7 +306,7 @@ public final class e extends ResultReceiver {
                         if (string2 == null) {
                             throw new IllegalArgumentException("Bundle was missing exception type.");
                         }
-                        a11 = ge.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
+                        a11 = je.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string2);
                     }
                 }
                 CancellationSignal cancellationSignal11 = dVar6.h;
@@ -340,7 +340,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i22 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent4 = (Intent) w9.a(resultData);
+                Intent intent4 = (Intent) y9.a(resultData);
                 Executor executor12 = aVar2.g;
                 if (executor12 == null) {
                     j.h("executor");
@@ -372,7 +372,7 @@ public final class e extends ResultReceiver {
                     return;
                 }
                 int i23 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent5 = (Intent) w9.a(resultData);
+                Intent intent5 = (Intent) y9.a(resultData);
                 Executor executor14 = aVar3.g;
                 if (executor14 == null) {
                     j.h("executor");
@@ -406,7 +406,7 @@ public final class e extends ResultReceiver {
                         }
                     }
                     pVar.b(dVar2);
-                    fVar2.e.c(b5.a.c(resultData));
+                    fVar2.e.c(b5.a.a(resultData));
                     fVar2.a();
                 }
                 return;

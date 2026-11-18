@@ -4,7 +4,7 @@ import java.util.Arrays;
 import q6.m;
 import tg.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements com.google.android.gms.common.api.b {
     public static final b c;
@@ -30,7 +30,7 @@ public final class b implements com.google.android.gms.common.api.b {
             return false;
         }
         b bVar = (b) obj;
-        return m.k(null, null) && this.a == bVar.a && m.k(this.b, bVar.b);
+        return m.l(null, null) && this.a == bVar.a && m.l(this.b, bVar.b);
     }
 
     public final int hashCode() {

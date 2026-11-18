@@ -1,94 +1,67 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import java.nio.ByteBuffer;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.ns;
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.FrameLayout;
+import c8.ma;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.t3;
+import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.t8;
-import org.webrtc.JavaI420Buffer;
-import org.webrtc.VideoFrame;
+import org.telegram.ui.Components.gk;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i1 {
-    public final ImageReceiver a;
-    public VideoFrame b;
+public final class i1 extends FrameLayout {
+    public final n2 a;
+    public boolean b;
+    public boolean c;
+    public final long d;
+    public final gk e;
+    public final /* synthetic */ j1 f;
 
-    public i1() {
-        ImageReceiver imageReceiver = new ImageReceiver(null);
-        this.a = imageReceiver;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        TLRPC.Chat chat = sharedInstance != null ? sharedInstance.getChat() : null;
-        t8 t8Var = new t8((e6) null);
-        if (chat != null) {
-            sharedInstance.getAccount();
-            t8Var.q(chat);
-            imageReceiver.d = sharedInstance.getAccount();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i1(j1 j1Var, Context context) {
+        super(context);
+        this.f = j1Var;
+        this.c = true;
+        this.d = SystemClock.elapsedRealtime();
+        this.e = new gk(this, 24);
+        setBackgroundColor(-16777216);
+        h hVar = new h(context);
+        addView(hVar, ma.c(-1.0f, -1));
+        n2 n2Var = new n2(context, false, false, false, false);
+        this.a = n2Var;
+        RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
+        m2 m2Var = n2Var.d;
+        m2Var.setScalingType(scalingType);
+        n2Var.b0 = 0;
+        m2Var.setRotateTextureWithScreen(true);
+        m2Var.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), null);
+        View view = n2Var.h;
+        if (view != null) {
+            view.setVisibility(8);
         }
-        imageReceiver.J0(60);
-        imageReceiver.h1 = new org.telegram.ui.ActionBar.z(this, 7);
-        imageReceiver.P();
-        imageReceiver.q0(chat != null ? gc.a(1, chat) : null, "100_100", t8Var, null, chat, 0);
-        a();
+        addView(n2Var, ma.c(-1.0f, -1));
+        t3 g10 = j1.g();
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (g10 == null || sharedInstance == null || sharedInstance.getChat() == null) {
+            return;
+        }
+        sharedInstance.getAccount();
+        hVar.a(sharedInstance.getChat());
     }
 
     public final void a() {
-        ByteBuffer byteBuffer;
-        Bitmap createBitmap = Bitmap.createBitmap(640, 360, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        canvas.drawColor(-14999773);
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.y0(260.0f, 120.0f, 120.0f, 120.0f);
-        imageReceiver.h(canvas, null);
-        int width = createBitmap.getWidth();
-        int height = createBitmap.getHeight();
-        int[] iArr = new int[width * height];
-        createBitmap.getPixels(iArr, 0, width, 0, 0, width, height);
-        JavaI420Buffer allocate = JavaI420Buffer.allocate(width, height);
-        ByteBuffer dataY = allocate.getDataY();
-        ByteBuffer dataU = allocate.getDataU();
-        ByteBuffer dataV = allocate.getDataV();
-        int strideY = allocate.getStrideY();
-        int strideU = allocate.getStrideU();
-        int strideV = allocate.getStrideV();
-        for (int i7 = 0; i7 < height; i7++) {
-            int i10 = 0;
-            while (i10 < width) {
-                int i11 = iArr[(i7 * width) + i10];
-                Bitmap bitmap = createBitmap;
-                int i12 = (i11 >> 16) & ns.e4;
-                int i13 = (i11 >> 8) & ns.e4;
-                int i14 = i11 & ns.e4;
-                int[] iArr2 = iArr;
-                int i15 = width;
-                dataY.put((i7 * strideY) + i10, (byte) (((((i14 * 25) + ((i13 * ns.N1) + (i12 * 66))) + 128) >> 8) + 16));
-                if ((i7 & 1) == 0 && (i10 & 1) == 0) {
-                    int i16 = i7 >> 1;
-                    int i17 = i10 >> 1;
-                    byteBuffer = dataY;
-                    dataU.put((i16 * strideU) + i17, (byte) (((((i14 * ns.x1) + ((i12 * (-38)) - (i13 * 74))) + 128) >> 8) + 128));
-                    dataV.put((i16 * strideV) + i17, (byte) ((((((i12 * ns.x1) - (i13 * 94)) - (i14 * 18)) + 128) >> 8) + 128));
-                } else {
-                    byteBuffer = dataY;
-                }
-                i10++;
-                createBitmap = bitmap;
-                iArr = iArr2;
-                width = i15;
-                dataY = byteBuffer;
-            }
+        boolean a10 = this.f.b.a(this.d);
+        if (this.c == a10) {
+            return;
         }
-        VideoFrame videoFrame = new VideoFrame(allocate, 0, 0L);
-        createBitmap.recycle();
-        VideoFrame videoFrame2 = this.b;
-        if (videoFrame2 != null) {
-            videoFrame2.release();
-        }
-        this.b = videoFrame;
+        this.c = a10;
+        n2 n2Var = this.a;
+        n2Var.animate().cancel();
+        n10.n(n2Var.animate(), a10 ? 1.0f : 0.0f, 200L);
     }
 }

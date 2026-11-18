@@ -1,132 +1,144 @@
 package u7;
 
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.WorkSource;
-import c8.yb;
+import c8.ac;
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.LocationRequest;
 import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class m extends r6.a {
-    public static final Parcelable.Creator<m> CREATOR = new n(0);
-    public final LocationRequest a;
+public final class m implements Parcelable.Creator {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: Removed duplicated region for block: B:11:0x006e  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0086  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x008a  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0097  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00c4  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x006a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public m(LocationRequest locationRequest, ArrayList arrayList, boolean z10, boolean z11, String str, boolean z12, boolean z13, String str2, long j3) {
-        k kVar;
-        long j10;
-        int i7 = locationRequest.a;
-        long j11 = locationRequest.b;
-        long j12 = locationRequest.c;
-        long j13 = locationRequest.d;
-        long j14 = locationRequest.e;
-        int i10 = locationRequest.f;
-        float f10 = locationRequest.h;
-        boolean z14 = locationRequest.n;
-        long j15 = locationRequest.r;
-        boolean z15 = z14;
-        int i11 = locationRequest.s;
-        int i12 = locationRequest.w;
-        String str3 = locationRequest.x;
-        boolean z16 = locationRequest.y;
-        WorkSource workSource = locationRequest.E;
-        k kVar2 = locationRequest.F;
-        if (arrayList == null) {
-            kVar = kVar2;
-        } else {
-            if (!arrayList.isEmpty()) {
-                workSource = new WorkSource();
-                kVar = kVar2;
-                j10 = j14;
-                int i13 = 0;
-                for (int size = arrayList.size(); i13 < size; size = size) {
-                    Object obj = arrayList.get(i13);
-                    i13++;
-                    q6.e eVar = (q6.e) obj;
-                    x6.f.a(workSource, eVar.a, eVar.b);
-                }
-                boolean z17 = true;
-                i11 = z10 ? 1 : i11;
-                i12 = z11 ? 2 : i12;
-                if (str == null) {
-                    if (Build.VERSION.SDK_INT < 30) {
-                        str3 = str;
+    public /* synthetic */ m(int i7) {
+        this.a = i7;
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Status status = null;
+        switch (this.a) {
+            case 0:
+                int z10 = ac.z(parcel);
+                boolean z11 = false;
+                boolean z12 = false;
+                boolean z13 = false;
+                boolean z14 = false;
+                LocationRequest locationRequest = null;
+                ArrayList arrayList = null;
+                String str = null;
+                String str2 = null;
+                long j3 = Long.MAX_VALUE;
+                while (parcel.dataPosition() < z10) {
+                    int readInt = parcel.readInt();
+                    char c10 = (char) readInt;
+                    if (c10 == 1) {
+                        locationRequest = (LocationRequest) ac.g(parcel, readInt, LocationRequest.CREATOR);
+                    } else if (c10 != 5) {
+                        switch (c10) {
+                            case '\b':
+                                z11 = ac.n(parcel, readInt);
+                                break;
+                            case '\t':
+                                z12 = ac.n(parcel, readInt);
+                                break;
+                            case '\n':
+                                str = ac.h(parcel, readInt);
+                                break;
+                            case 11:
+                                z13 = ac.n(parcel, readInt);
+                                break;
+                            case '\f':
+                                z14 = ac.n(parcel, readInt);
+                                break;
+                            case '\r':
+                                str2 = ac.h(parcel, readInt);
+                                break;
+                            case 14:
+                                j3 = ac.w(parcel, readInt);
+                                break;
+                            default:
+                                ac.y(parcel, readInt);
+                                break;
+                        }
+                    } else {
+                        arrayList = ac.l(parcel, readInt, q6.e.CREATOR);
                     }
-                } else if (str2 != null && Build.VERSION.SDK_INT < 30) {
-                    str3 = str2;
                 }
-                z16 = z12 ? true : z16;
-                z15 = z13 ? true : z15;
-                if (j3 != Long.MAX_VALUE) {
-                    if (j3 != -1 && j3 < 0) {
-                        z17 = false;
+                ac.m(parcel, z10);
+                return new l(locationRequest, arrayList, z11, z12, str, z13, z14, str2, j3);
+            case 1:
+                int z15 = ac.z(parcel);
+                p pVar = r.b;
+                int i7 = 0;
+                int i10 = 0;
+                int i11 = 0;
+                List list = s.e;
+                String str3 = null;
+                String str4 = null;
+                String str5 = null;
+                j jVar = null;
+                while (parcel.dataPosition() < z15) {
+                    int readInt2 = parcel.readInt();
+                    switch ((char) readInt2) {
+                        case 1:
+                            i7 = ac.u(parcel, readInt2);
+                            break;
+                        case 2:
+                            i10 = ac.u(parcel, readInt2);
+                            break;
+                        case 3:
+                            str3 = ac.h(parcel, readInt2);
+                            break;
+                        case 4:
+                            str4 = ac.h(parcel, readInt2);
+                            break;
+                        case 5:
+                            i11 = ac.u(parcel, readInt2);
+                            break;
+                        case 6:
+                            str5 = ac.h(parcel, readInt2);
+                            break;
+                        case 7:
+                            jVar = (j) ac.g(parcel, readInt2, j.CREATOR);
+                            break;
+                        case '\b':
+                            list = ac.l(parcel, readInt2, n6.c.CREATOR);
+                            break;
+                        default:
+                            ac.y(parcel, readInt2);
+                            break;
                     }
-                    q6.m.a("maxUpdateAgeMillis must be greater than or equal to 0, or IMPLICIT_MAX_UPDATE_AGE", z17);
-                    j15 = j3;
                 }
-                if (j12 != -1) {
-                    j12 = j11;
-                } else if (i7 != 105) {
-                    j12 = Math.min(j12, j11);
+                ac.m(parcel, z15);
+                return new j(i7, i10, str3, str4, str5, i11, list, jVar);
+            default:
+                int z16 = ac.z(parcel);
+                while (parcel.dataPosition() < z16) {
+                    int readInt3 = parcel.readInt();
+                    if (((char) readInt3) != 1) {
+                        ac.y(parcel, readInt3);
+                    } else {
+                        status = (Status) ac.g(parcel, readInt3, Status.CREATOR);
+                    }
                 }
-                this.a = new LocationRequest(i7, j11, j12, Math.max(j13, j11), Long.MAX_VALUE, j10, i10, f10, z15, j15 == -1 ? j11 : j15, i11, i12, str3, z16, new WorkSource(workSource), kVar);
-            }
-            kVar = kVar2;
-            workSource = null;
+                ac.m(parcel, z16);
+                return new t(status);
         }
-        j10 = j14;
-        boolean z172 = true;
-        if (z10) {
-        }
-        if (z11) {
-        }
-        if (str == null) {
-        }
-        if (z12) {
-        }
-        if (z13) {
-        }
-        if (j3 != Long.MAX_VALUE) {
-        }
-        if (j12 != -1) {
-        }
-        this.a = new LocationRequest(i7, j11, j12, Math.max(j13, j11), Long.MAX_VALUE, j10, i10, f10, z15, j15 == -1 ? j11 : j15, i11, i12, str3, z16, new WorkSource(workSource), kVar);
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof m) {
-            return q6.m.k(this.a, ((m) obj).a);
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i7) {
+        switch (this.a) {
+            case 0:
+                return new l[i7];
+            case 1:
+                return new j[i7];
+            default:
+                return new t[i7];
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a.toString();
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 1, this.a, i7);
-        yb.s(parcel, r10);
     }
 }

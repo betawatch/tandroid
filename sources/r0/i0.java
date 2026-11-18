@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -41,16 +41,16 @@ public abstract class i0 {
         return l0Var2;
     }
 
-    public static k1 b(View view, k1 k1Var) {
+    public static l1 b(View view, l1 l1Var) {
         int i7 = Build.VERSION.SDK_INT;
-        WindowInsets g10 = k1Var.g();
+        WindowInsets g10 = l1Var.g();
         if (g10 != null) {
             WindowInsets a10 = i7 >= 30 ? f0.a(view, g10) : y.a(view, g10);
             if (!a10.equals(g10)) {
-                return k1.h(view, a10);
+                return l1.h(view, a10);
             }
         }
-        return k1Var;
+        return l1Var;
     }
 
     public static boolean c(View view, KeyEvent keyEvent) {
@@ -210,15 +210,15 @@ public abstract class i0 {
         }
     }
 
-    public static k1 g(View view, k1 k1Var) {
-        WindowInsets g10 = k1Var.g();
+    public static l1 g(View view, l1 l1Var) {
+        WindowInsets g10 = l1Var.g();
         if (g10 != null) {
             WindowInsets b10 = y.b(view, g10);
             if (!b10.equals(g10)) {
-                return k1.h(view, b10);
+                return l1.h(view, b10);
             }
         }
-        return k1Var;
+        return l1Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Parcel;
 import android.os.RemoteException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class f {
     public static final j6.b b = new j6.b("Session", null);
@@ -22,7 +22,7 @@ public abstract class f {
     }
 
     public final String a() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         x xVar = this.a;
         if (xVar != null) {
             try {
@@ -39,7 +39,7 @@ public abstract class f {
     }
 
     public final boolean b() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         x xVar = this.a;
         if (xVar != null) {
             try {
@@ -57,7 +57,7 @@ public abstract class f {
     }
 
     public final boolean c() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         x xVar = this.a;
         if (xVar != null) {
             try {
@@ -90,7 +90,7 @@ public abstract class f {
     }
 
     public final int e() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         x xVar = this.a;
         if (xVar != null) {
             try {

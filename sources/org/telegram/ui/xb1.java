@@ -1,106 +1,88 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.KeyEvent;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.messenger.voip.VoIPServiceState;
-import org.webrtc.OrientationHelper;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xb1 extends org.telegram.ui.Components.voip.s2 {
-    public final Path s;
-    public final RectF w;
-    public tn0 x;
-    public final /* synthetic */ ec1 y;
+public final class xb1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hc1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xb1(Activity activity, boolean z10, ec1 ec1Var) {
-        super(activity);
-        this.y = ec1Var;
-        this.c = new h2.f((int[]) null);
-        this.a = activity;
-        setSystemUiVisibility(1792);
-        org.telegram.messenger.g0.g2(activity);
-        OrientationHelper.cameraRotationDisabled = true;
-        if (!z10) {
-            this.e = true;
-        }
-        this.s = new Path();
-        this.w = new RectF();
+    public /* synthetic */ xb1(hc1 hc1Var, int i7) {
+        this.a = i7;
+        this.b = hc1Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ec1 ec1Var = this.y;
-        if (!ec1Var.E0 || getAlpha() == 0.0f) {
-            super.dispatchDraw(canvas);
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        fi.s2 s2Var;
+        fi.s2 s2Var2;
+        int i7 = this.a;
+        hc1 hc1Var = this.b;
+        switch (i7) {
+            case 0:
+                hc1Var.i1 = null;
+                hc1Var.f1 = 1.0f;
+                hc1Var.Y0 = 0.0f;
+                hc1Var.Z0 = 0.0f;
+                hc1Var.s.invalidate();
+                break;
+            case 1:
+                org.telegram.ui.Components.voip.h2.d().a.setAlpha(1.0f);
+                org.telegram.messenger.g0.h3(new ru0(this, 26), 200L);
+                break;
+            case 2:
+                hc1Var.L0.e();
+                hc1Var.Z.setCornerRadius(-1.0f);
+                hc1Var.E0 = false;
+                hc1Var.Z.c0 = false;
+                hc1Var.q0 = hc1Var.p0;
+                hc1Var.y();
+                break;
+            case 3:
+                for (org.telegram.ui.Components.q9 q9Var : hc1Var.W) {
+                    org.telegram.ui.Components.o5 o5Var = q9Var.e;
+                    if (o5Var != null && (s2Var = o5Var.k) != null) {
+                        s2Var.u0 = true;
+                        s2Var.P0(false);
+                    }
+                }
+                break;
+            case 4:
+                hc1Var.s();
+                for (org.telegram.ui.Components.q9 q9Var2 : hc1Var.W) {
+                    org.telegram.ui.Components.o5 o5Var2 = q9Var2.e;
+                    if (o5Var2 != null && (s2Var2 = o5Var2.k) != null) {
+                        s2Var2.u0 = false;
+                        s2Var2.Q0();
+                    }
+                }
+                hc1Var.S.setVisibility(8);
+                break;
+            case 5:
+                hc1Var.F.setText(org.telegram.messenger.gd.M0(2131743253, null));
+                hc1Var.F.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
+                break;
+            case 6:
+                if (hc1Var.a0.getTag() == null) {
+                    hc1Var.a0.setVisibility(8);
+                    break;
+                }
+                break;
+            case 7:
+                hc1Var.Z.setTranslationX(0.0f);
+                hc1Var.Z.setTranslationY(0.0f);
+                hc1Var.Z.setScaleY(1.0f);
+                hc1Var.Z.setScaleX(1.0f);
+                hc1Var.Z.setVisibility(8);
+                break;
+            case 8:
+                hc1Var.E.setVisibility(8);
+                break;
+            default:
+                hc1Var.f0.setVisibility(8);
+                break;
         }
-        float scaleX = ec1Var.d0.getScaleX() * ec1Var.d0.getWidth();
-        float scaleY = ec1Var.d0.getScaleY() * ec1Var.d0.getHeight();
-        float x10 = ec1Var.d0.getX() + ((ec1Var.d0.getWidth() - scaleX) / 2.0f);
-        float y10 = ec1Var.d0.getY() + ((ec1Var.d0.getHeight() - scaleY) / 2.0f);
-        canvas.save();
-        Path path = this.s;
-        path.rewind();
-        RectF rectF = this.w;
-        rectF.set(x10, y10, scaleX + x10, scaleY + y10);
-        float L = org.telegram.messenger.g0.L(4.0f);
-        path.addRoundRect(rectF, L, L, Path.Direction.CW);
-        path.close();
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        VoIPServiceState sharedState;
-        ec1 ec1Var = this.y;
-        if (ec1Var.G0 || ec1Var.E0) {
-            return false;
-        }
-        int keyCode = keyEvent.getKeyCode();
-        if (keyCode == 4 && keyEvent.getAction() == 1) {
-            ec1Var.g();
-            return true;
-        }
-        if ((keyCode != 25 && keyCode != 24) || ec1Var.p0 != 15 || (sharedState = VoIPService.getSharedState()) == null) {
-            return super.dispatchKeyEvent(keyEvent);
-        }
-        sharedState.stopRinging();
-        return true;
-    }
-
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (this.y.l1) {
-            return;
-        }
-        super.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        if (Build.VERSION.SDK_INT < 33 || this.x != null) {
-            return;
-        }
-        this.x = ai.d.j(this, new qb1(this.y, 14));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        tn0 tn0Var;
-        if (Build.VERSION.SDK_INT >= 33 && (tn0Var = this.x) != null) {
-            ai.d.l(this, tn0Var);
-            this.x = null;
-        }
-        super.onDetachedFromWindow();
     }
 }

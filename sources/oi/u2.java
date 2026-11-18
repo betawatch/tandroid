@@ -1,30 +1,18 @@
 package oi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class u2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q3 b;
-    public final /* synthetic */ v4.m0 c;
+import j$.util.function.BiFunction$-CC;
+import java.util.function.BiFunction;
+import java.util.function.Function;
 
-    public /* synthetic */ u2(q3 q3Var, v4.m0 m0Var, int i7) {
-        this.a = i7;
-        this.b = q3Var;
-        this.c = m0Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class u2 implements BiFunction {
+    public /* synthetic */ BiFunction andThen(Function function) {
+        return BiFunction$-CC.$default$andThen(this, function);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.setItemAnimator(this.c);
-                break;
-            case 1:
-                this.b.setItemAnimator(this.c);
-                break;
-            default:
-                this.b.setItemAnimator(this.c);
-                break;
-        }
+    @Override // java.util.function.BiFunction
+    public final Object apply(Object obj, Object obj2) {
+        return Integer.valueOf(((Integer) obj2).intValue() + ((Integer) obj).intValue());
     }
 }

@@ -1,34 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class yk extends org.telegram.ui.Components.h10 {
-    public final /* synthetic */ an n1;
+public final class yk extends oq0 {
+    public final /* synthetic */ org.telegram.messenger.fj a;
+    public final /* synthetic */ org.telegram.messenger.ef b;
+    public final /* synthetic */ bn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yk(an anVar, Activity activity, org.telegram.ui.ActionBar.e2 e2Var) {
-        super(activity, e2Var);
-        this.n1 = anVar;
+    public yk(bn bnVar, org.telegram.messenger.fj fjVar, org.telegram.messenger.ef efVar) {
+        this.c = bnVar;
+        this.a = fjVar;
+        this.b = efVar;
     }
 
-    @Override // org.telegram.ui.Components.h10
-    public final void I0() {
-        an anVar = this.n1;
-        anVar.h8();
-        UndoView undoView = anVar.N3;
-        if (undoView == null) {
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11) {
+        return bn.P1(this.c, this.a, null, i7, z10, true);
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean P() {
+        bn bnVar = this.c;
+        if (bnVar.a0 == null || !bnVar.V9()) {
+            return false;
+        }
+        bnVar.a0.U();
+        return true;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final org.telegram.messenger.fj V() {
+        org.telegram.messenger.fj fjVar = this.c.H5;
+        org.telegram.messenger.fj fjVar2 = this.a;
+        if (fjVar == fjVar2) {
+            return fjVar2;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void e(CharSequence charSequence) {
+        this.c.a0.D1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+        bn bnVar = this.c;
+        if (bnVar.H5 != this.a) {
             return;
         }
-        undoView.j(75, 0L, null);
-        anVar.getMessagesController().k4(anVar.k6, "CONVERT_GIGAGROUP");
-    }
-
-    @Override // org.telegram.ui.Components.h10
-    public final void J0() {
-        an anVar = this.n1;
-        anVar.getMessagesController().S(anVar.getParentActivity(), anVar.e, anVar, new w0(this, 21));
+        org.telegram.messenger.ef efVar = this.b;
+        if (efVar.w || efVar.v || efVar.u || e20Var != null) {
+            bnVar.u(efVar, e20Var, z10, i10, 0, z11, 0L);
+        } else {
+            bnVar.a0.q0();
+        }
     }
 }

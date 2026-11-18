@@ -5,10 +5,10 @@ import android.graphics.Canvas;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.g0;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.um0;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class d extends FrameLayout {
     public final /* synthetic */ int a;
@@ -27,8 +27,8 @@ public final class d extends FrameLayout {
             case 0:
                 super.dispatchDraw(canvas);
                 h hVar = this.b;
-                um0 um0Var = hVar.G;
-                if (um0Var != null && um0Var.a()) {
+                cn0 cn0Var = hVar.G;
+                if (cn0Var != null && cn0Var.a()) {
                     hVar.G.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     hVar.G.draw(canvas);
                     break;
@@ -64,19 +64,19 @@ public final class d extends FrameLayout {
                         hVar.L = true;
                         fArr[0] = motionEvent.getX();
                         fArr[1] = motionEvent.getY();
-                        g0.i3(bVar, 500L);
+                        g0.h3(bVar, 500L);
                     } else {
                         hVar.L = false;
-                        lVar.G();
+                        lVar.H();
                         g0.r(bVar);
                     }
                 }
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     hVar.L = false;
-                    lVar.G();
+                    lVar.H();
                     g0.r(bVar);
-                } else if (actionMasked == 2 && lVar.q()) {
-                    lVar.M(motionEvent.getX());
+                } else if (actionMasked == 2 && lVar.s()) {
+                    lVar.L(motionEvent.getX());
                 }
                 if (hVar.t != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -92,7 +92,7 @@ public final class d extends FrameLayout {
                 obtain2.offsetLocation(motionEvent.getRawX() - motionEvent.getX(), motionEvent.getRawY() - motionEvent.getY());
                 boolean onTouchEvent = hVar.p.onTouchEvent(obtain2);
                 obtain2.recycle();
-                boolean z10 = !hVar.p.isInProgress() && hVar.q.B0(motionEvent);
+                boolean z10 = !hVar.p.isInProgress() && hVar.q.w0(motionEvent);
                 if (actionMasked == 1 || actionMasked == 3 || actionMasked == 6) {
                     hVar.r = false;
                     hVar.s = false;
@@ -125,14 +125,14 @@ public final class d extends FrameLayout {
         switch (this.a) {
             case 0:
                 h hVar = this.b;
-                m51 m51Var = hVar.F;
-                if (m51Var.j) {
-                    m51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
-                    m51Var.draw(canvas);
+                x51 x51Var = hVar.F;
+                if (x51Var.j) {
+                    x51Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                    x51Var.draw(canvas);
                 }
                 canvas.save();
                 canvas.translate(getLeft(), getTop());
-                hVar.b.o0(canvas, getRight() - getLeft(), getBottom() - getTop());
+                hVar.b.j0(canvas, getRight() - getLeft(), getBottom() - getTop());
                 canvas.restore();
                 break;
             default:

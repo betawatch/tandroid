@@ -3,15 +3,15 @@ package wi;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import fi.w2;
+import fi.u2;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.m51;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g extends f10 {
+public final class g extends m10 {
     public float a;
     public float b;
     public final /* synthetic */ int c;
@@ -22,7 +22,7 @@ public final class g extends f10 {
         this.c = i7;
     }
 
-    @Override // org.telegram.ui.Components.f10
+    @Override // org.telegram.ui.Components.m10
     public final boolean a() {
         h hVar = this.d;
         return (hVar.K || hVar.H || !hVar.c()) ? false : true;
@@ -31,7 +31,7 @@ public final class g extends f10 {
     @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
     public final boolean onDoubleTap(MotionEvent motionEvent) {
         h hVar = this.d;
-        m51 m51Var = hVar.F;
+        x51 x51Var = hVar.F;
         l lVar = hVar.b;
         if (hVar.b() && hVar.c()) {
             boolean z10 = motionEvent.getX() >= ((float) hVar.x) * 0.5f;
@@ -47,17 +47,17 @@ public final class g extends f10 {
                 return true;
             }
             if (l10 != j3) {
-                m51Var.e(true);
-                m51Var.d(!z10);
-                long j10 = m51Var.o + 10000;
-                m51Var.o = j10;
-                m51Var.p = hd.G((int) (j10 / 1000), "Seconds", new Object[0]);
+                x51Var.e(true);
+                x51Var.d(!z10);
+                long j10 = x51Var.o + 10000;
+                x51Var.o = j10;
+                x51Var.p = gd.G((int) (j10 / 1000), "Seconds", new Object[0]);
                 lVar.c(j3);
-                m51Var.g(0L);
+                x51Var.g(0L);
                 hVar.I = j3 / duration;
-                w2 w2Var = hVar.o;
-                if (w2Var != null) {
-                    w2Var.invalidate();
+                u2 u2Var = hVar.o;
+                if (u2Var != null) {
+                    u2Var.invalidate();
                 }
                 d dVar = hVar.m;
                 if (dVar != null) {
@@ -68,7 +68,7 @@ public final class g extends f10 {
                     hVar.o(true);
                     if (!hVar.w) {
                         hVar.w = true;
-                        g0.i3(hVar.P, 2500L);
+                        g0.h3(hVar.P, 2500L);
                     }
                 }
                 return true;
@@ -127,7 +127,7 @@ public final class g extends f10 {
                 hVar.D.d();
                 hVar.E.d();
                 hVar.L = false;
-                hVar.b.G();
+                hVar.b.H();
                 g0.r(hVar.N);
             }
         }
@@ -161,7 +161,7 @@ public final class g extends f10 {
             hVar.u = z10;
             hVar.o(z10);
             if (hVar.u) {
-                g0.i3(eVar, 2500L);
+                g0.h3(eVar, 2500L);
                 hVar.w = true;
             }
         }

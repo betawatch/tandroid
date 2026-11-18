@@ -1,21 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class uv implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zx b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
 
-    public /* synthetic */ uv(zx zxVar, int i7) {
-        this.a = i7;
-        this.b = zxVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class uv extends FrameLayout {
+    public final /* synthetic */ ry a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uv(ry ryVar, Context context) {
+        super(context);
+        this.a = ryVar;
     }
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        ry ryVar = this.a;
+        xv xvVar = ryVar.p0;
+        if (view != ryVar.i0) {
+            return super.drawChild(canvas, view, j3);
         }
-        this.b.e();
+        canvas.save();
+        canvas.clipRect(0.0f, xvVar.getY() + xvVar.getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
     }
 }

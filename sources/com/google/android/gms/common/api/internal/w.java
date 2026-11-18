@@ -6,21 +6,13 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w implements g0 {
     public final i0 a;
 
     public w(i0 i0Var) {
         this.a = i0Var;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.g0
-    public final boolean C() {
-        i0 i0Var = this.a;
-        i0Var.o.getClass();
-        i0Var.h();
-        return true;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -34,7 +26,7 @@ public final class w implements g0 {
             dVar.g.set((z0) a1Var.b);
             com.google.android.gms.common.api.d dVar2 = dVar.o;
             com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) f0Var.F.get(dVar2);
-            q6.m.h(cVar, "Appropriate Api was not requested.");
+            q6.m.i(cVar, "Appropriate Api was not requested.");
             if (!((q6.d) cVar).s() && i0Var.i.containsKey(dVar2)) {
                 dVar.o(new Status(17, null, null, null));
                 return dVar;
@@ -57,14 +49,18 @@ public final class w implements g0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.g0
-    public final void y(int i7) {
+    public final void s(int i7) {
         i0 i0Var = this.a;
         i0Var.h();
-        i0Var.p.i(i7);
+        i0Var.p.j(i7);
     }
 
     @Override // com.google.android.gms.common.api.internal.g0
-    public final void E() {
+    public final boolean t() {
+        i0 i0Var = this.a;
+        i0Var.o.getClass();
+        i0Var.h();
+        return true;
     }
 
     @Override // com.google.android.gms.common.api.internal.g0
@@ -72,7 +68,11 @@ public final class w implements g0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.g0
-    public final void c(Bundle bundle) {
+    public final void u() {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.g0
+    public final void e(Bundle bundle) {
     }
 
     @Override // com.google.android.gms.common.api.internal.g0

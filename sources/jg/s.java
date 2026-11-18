@@ -3,21 +3,21 @@ package jg;
 import android.view.View;
 import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i5;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.jw;
-import org.telegram.ui.yw;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.qj0;
+import org.telegram.ui.cx;
+import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements f0, ij0 {
+public final /* synthetic */ class s implements f0, qj0 {
     public final /* synthetic */ h0 a;
 
     public /* synthetic */ s(h0 h0Var) {
@@ -34,37 +34,37 @@ public final /* synthetic */ class s implements f0, ij0 {
             g0 g0Var = (g0) h0Var.u0.get(i10);
             TLObject tLObject = g0Var.a;
             if (tLObject instanceof TLRPC.User) {
-                np.s1(i7).X3((TLRPC.User) g0Var.a, true, false);
+                mp.u1(i7).e4((TLRPC.User) g0Var.a, true, false);
             } else if (tLObject instanceof TLRPC.Chat) {
-                np.s1(i7).Q3((TLRPC.Chat) g0Var.a, true);
+                mp.u1(i7).X3((TLRPC.Chat) g0Var.a, true);
             } else if (tLObject instanceof TLRPC.EncryptedChat) {
-                np.s1(i7).U3((TLRPC.EncryptedChat) g0Var.a, true);
+                mp.u1(i7).b4((TLRPC.EncryptedChat) g0Var.a, true);
             }
         }
         h0Var.G(null);
         h0Var.f();
     }
 
-    @Override // org.telegram.ui.Components.ij0
-    public boolean b(int i7, View view) {
-        TLRPC.User a22;
-        jw jwVar = this.a.V;
-        if (jwVar != null) {
+    @Override // org.telegram.ui.Components.qj0
+    public boolean c(int i7, View view) {
+        TLRPC.User c22;
+        mw mwVar = this.a.V;
+        if (mwVar != null) {
             Long l10 = (Long) view.getTag();
             long longValue = l10.longValue();
-            yw ywVar = jwVar.a;
-            if (ywVar.getParentActivity() != null && (a22 = ywVar.getMessagesController().a2(l10)) != null) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ywVar.getParentActivity());
-                String M0 = hd.M0(2131752234, null);
-                org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                t1Var.S = M0;
-                t1Var.U = org.telegram.messenger.g0.X2(hd.a0("ChatHintsDeleteAlert", null, 2131752235, g5.m(0, a22.first_name, a22.last_name)));
-                alertDialog$Builder.k(hd.M0(2131744855, null), new ai.d0(jwVar, longValue, 9));
-                alertDialog$Builder.h(hd.M0(2131752589, null), null);
-                ywVar.showDialog(t1Var);
-                TextView textView = (TextView) t1Var.d(-1);
+            cx cxVar = mwVar.a;
+            if (cxVar.getParentActivity() != null && (c22 = cxVar.getMessagesController().c2(l10)) != null) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(cxVar.getParentActivity());
+                String M0 = gd.M0(2131752223, null);
+                org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                u1Var.S = M0;
+                u1Var.U = org.telegram.messenger.g0.W2(gd.a0("ChatHintsDeleteAlert", null, 2131752224, i5.m(0, c22.first_name, c22.last_name)));
+                alertDialog$Builder.k(gd.M0(2131744620, null), new ai.d0(mwVar, longValue, 9));
+                alertDialog$Builder.h(gd.M0(2131752578, null), null);
+                cxVar.showDialog(u1Var);
+                TextView textView = (TextView) u1Var.d(-1);
                 if (textView != null) {
-                    q6.U(textView, j6.q7, ywVar.getResourceProvider());
+                    u6.U(textView, n6.q7, cxVar.getResourceProvider());
                 }
             }
         }

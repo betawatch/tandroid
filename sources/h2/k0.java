@@ -1,9 +1,9 @@
 package h2;
 
-import a8.ja;
+import a8.la;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k0 {
     public long a;
@@ -102,7 +102,7 @@ public final class k0 {
 
     public final synchronized void h(long j3, boolean z10) {
         try {
-            ja.p(this.a == 9223372036854775806L);
+            la.p(this.a == 9223372036854775806L);
             if (f()) {
                 return;
             }

@@ -1,6 +1,8 @@
 package ia;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import n2.f;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public boolean a;
@@ -13,9 +15,9 @@ public final class a {
         this.c = false;
     }
 
-    public n2.f a() {
+    public f a() {
         if (this.a || !(this.b || this.c)) {
-            return new n2.f(this);
+            return new f(this);
         }
         throw new IllegalStateException("Secondary offload attribute fields are true but primary isFormatSupported is false");
     }

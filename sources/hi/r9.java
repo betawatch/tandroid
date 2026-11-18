@@ -1,37 +1,33 @@
 package hi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class r9 extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class r9 extends CharacterStyle {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ sa d;
 
-    public /* synthetic */ r9(sa saVar, int i7, int i10, int i11) {
-        this.a = i11;
-        this.d = saVar;
-        this.b = i7;
-        this.c = i10;
+    public /* synthetic */ r9(int i7) {
+        this.a = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
         switch (this.a) {
             case 0:
-                this.d.M(this.b, this.c);
+                textPaint.setAlpha(128);
                 break;
-            default:
-                int i7 = this.b;
-                int i10 = this.c;
-                if (i7 != i10) {
-                    this.d.P(i7, i10);
-                    break;
-                }
+            case 1:
+                textPaint.setTextSize(textPaint.getTextSize() * 0.8f);
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.T2.getColor());
+                break;
+            case 2:
+                textPaint.setColor(org.telegram.ui.ActionBar.n6.o2.linkColor);
                 break;
         }
+    }
+
+    private final void a(TextPaint textPaint) {
     }
 }

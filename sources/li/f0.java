@@ -1,51 +1,51 @@
 package li;
 
-import org.telegram.messenger.is;
-import org.telegram.messenger.np;
-import org.telegram.messenger.nr;
-import org.telegram.messenger.qr;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.lr;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.or;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.t1;
-import org.telegram.ui.yw;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.cx;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f0 implements qr, nr {
+public final /* synthetic */ class f0 implements or, lr {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ is d;
+    public final /* synthetic */ fs d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ f0(t1 t1Var, e2 e2Var, int i7, long j3, boolean z10) {
-        this.d = t1Var;
-        this.e = e2Var;
+    public /* synthetic */ f0(u1 u1Var, h2 h2Var, int i7, long j3, boolean z10) {
+        this.d = u1Var;
+        this.e = h2Var;
         this.a = i7;
         this.b = j3;
         this.c = z10;
     }
 
-    @Override // org.telegram.messenger.nr
-    public void j(boolean z10) {
-        yw ywVar = (yw) this.d;
+    @Override // org.telegram.messenger.lr
+    public void d(boolean z10) {
+        cx cxVar = (cx) this.d;
         TLRPC.Chat chat = (TLRPC.Chat) this.e;
-        yw.x0(this.a, this.b, chat, ywVar, this.c, z10);
+        cx.j0(this.a, this.b, chat, cxVar, this.c, z10);
     }
 
-    @Override // org.telegram.messenger.qr
+    @Override // org.telegram.messenger.or
     public void run(long j3) {
-        t1 t1Var = (t1) this.d;
-        e2 e2Var = (e2) this.e;
-        t1Var.dismiss();
+        u1 u1Var = (u1) this.d;
+        h2 h2Var = (h2) this.e;
+        u1Var.dismiss();
         if (j3 == 0) {
             return;
         }
-        np.s1(this.a).Q2(-j3, this.b, false, this.c, new bi.n(e2Var, j3, 1));
+        mp.u1(this.a).W2(-j3, this.b, false, this.c, new bi.n(h2Var, j3, 1));
     }
 
-    public /* synthetic */ f0(yw ywVar, int i7, TLRPC.Chat chat, long j3, boolean z10) {
-        this.d = ywVar;
+    public /* synthetic */ f0(cx cxVar, int i7, TLRPC.Chat chat, long j3, boolean z10) {
+        this.d = cxVar;
         this.a = i7;
         this.e = chat;
         this.b = j3;

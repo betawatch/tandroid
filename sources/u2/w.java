@@ -1,20 +1,20 @@
 package u2;
 
-import a8.ha;
+import a8.ja;
 import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
-import di.p4;
+import di.s4;
 import e2.s0;
 import h9.f0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class w {
     public static final HashMap a = new HashMap();
@@ -24,7 +24,7 @@ public abstract class w {
             if (Build.VERSION.SDK_INT < 26 && Build.DEVICE.equals("R9") && arrayList.size() == 1 && ((o) arrayList.get(0)).a.equals("OMX.MTK.AUDIO.DECODER.RAW")) {
                 arrayList.add(o.i("OMX.google.raw.decoder", "audio/raw", "audio/raw", null, false, true, false, false));
             }
-            Collections.sort(arrayList, new p4(new i(), 4));
+            Collections.sort(arrayList, new s4(new i(), 4));
         }
         if (Build.VERSION.SDK_INT >= 32 || arrayList.size() <= 1 || !"OMX.qti.audio.decoder.flac".equals(((o) arrayList.get(0)).a)) {
             return;
@@ -110,7 +110,7 @@ public abstract class w {
                 if (list != null) {
                     return list;
                 }
-                ArrayList f10 = f(sVar, new f5.v(z10, z11, str.equals("video/mv-hevc")));
+                ArrayList f10 = f(sVar, new b3.j(z10, z11, str.equals("video/mv-hevc")));
                 if (z10 && f10.isEmpty() && Build.VERSION.SDK_INT == 23) {
                     f10 = f(sVar, new sa.d(25));
                     if (!f10.isEmpty()) {
@@ -151,21 +151,21 @@ public abstract class w {
             boolean u22 = uVar.u2();
             int i10 = 0;
             while (i10 < P1) {
-                MediaCodecInfo e10 = uVar.e(i10);
+                MediaCodecInfo f10 = uVar.f(i10);
                 int i11 = Build.VERSION.SDK_INT;
-                if (i11 < 29 || !e10.isAlias()) {
-                    String name = e10.getName();
-                    if (h(e10, name, u22, str2)) {
+                if (i11 < 29 || !f10.isAlias()) {
+                    String name = f10.getName();
+                    if (h(f10, name, u22, str2)) {
                         int i12 = i10;
-                        String d = d(e10, name, str2);
+                        String d = d(f10, name, str2);
                         if (d != null) {
                             try {
-                                capabilitiesForType = e10.getCapabilitiesForType(d);
+                                capabilitiesForType = f10.getCapabilitiesForType(d);
                                 x02 = uVar.x0("tunneled-playback", d, capabilitiesForType);
                                 N1 = uVar.N1("tunneled-playback", capabilitiesForType);
                                 z11 = sVar2.c;
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e10) {
+                                e = e10;
                                 z10 = u22;
                                 str = name;
                             }
@@ -175,18 +175,18 @@ public abstract class w {
                                     boolean N12 = uVar.N1("secure-playback", capabilitiesForType);
                                     if (z13 || !N12) {
                                         if (!z13 || x03) {
-                                            boolean i13 = i(e10, str2);
+                                            boolean i13 = i(f10, str2);
                                             z10 = u22;
                                             try {
-                                                j3 = j(e10, str2);
+                                                j3 = j(f10, str2);
                                                 if (i11 >= 29) {
-                                                    z12 = e10.isVendor();
+                                                    z12 = f10.isVendor();
                                                 } else {
-                                                    String c10 = ha.c(e10.getName());
+                                                    String c10 = ja.c(f10.getName());
                                                     z12 = (c10.startsWith("omx.google.") || c10.startsWith("c2.android.") || c10.startsWith("c2.google.")) ? false : true;
                                                 }
-                                            } catch (Exception e12) {
-                                                e = e12;
+                                            } catch (Exception e11) {
+                                                e = e11;
                                                 str = name;
                                                 i7 = i12;
                                                 if (Build.VERSION.SDK_INT != 23) {
@@ -202,8 +202,8 @@ public abstract class w {
                                                     try {
                                                         arrayList.add(o.i(name + ".secure", str2, d, capabilitiesForType, i13, j3, z14, true));
                                                         break;
-                                                    } catch (Exception e13) {
-                                                        e = e13;
+                                                    } catch (Exception e12) {
+                                                        e = e12;
                                                         if (Build.VERSION.SDK_INT != 23) {
                                                         }
                                                         h2.a.c("MediaCodecUtil", "Failed to query codec " + str + " (" + d + ")");
@@ -217,8 +217,8 @@ public abstract class w {
                                                 i7 = i12;
                                                 try {
                                                     arrayList.add(o.i(name, str2, d, capabilitiesForType, i13, j3, z12, false));
-                                                } catch (Exception e14) {
-                                                    e = e14;
+                                                } catch (Exception e13) {
+                                                    e = e13;
                                                     str = name;
                                                     if (Build.VERSION.SDK_INT != 23 || arrayList.isEmpty()) {
                                                         h2.a.c("MediaCodecUtil", "Failed to query codec " + str + " (" + d + ")");
@@ -252,15 +252,15 @@ public abstract class w {
                 u22 = z10;
             }
             return arrayList;
-        } catch (Exception e15) {
-            throw new t("Failed to query underlying media codecs", e15);
+        } catch (Exception e14) {
+            throw new t("Failed to query underlying media codecs", e14);
         }
     }
 
-    public static s1 g(i iVar, e2.u uVar, boolean z10, boolean z11) {
+    public static t1 g(i iVar, e2.u uVar, boolean z10, boolean z11) {
         List a10 = iVar.a(uVar.s, z10, z11);
         String c10 = c(uVar);
-        List a11 = c10 == null ? s1.e : iVar.a(c10, z10, z11);
+        List a11 = c10 == null ? t1.e : iVar.a(c10, z10, z11);
         f0 p10 = i0.p();
         p10.d(a10);
         p10.d(a11);
@@ -295,7 +295,7 @@ public abstract class w {
         if (s0.i(str)) {
             return true;
         }
-        String c10 = ha.c(mediaCodecInfo.getName());
+        String c10 = ja.c(mediaCodecInfo.getName());
         if (c10.startsWith("arc.")) {
             return false;
         }

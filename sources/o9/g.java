@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 import sg.h0;
 import u9.m;
 import v9.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object k = new Object();
@@ -45,13 +45,13 @@ public final class g {
         this.i = copyOnWriteArrayList;
         this.j = new CopyOnWriteArrayList();
         this.a = context;
-        q6.m.e(str);
+        q6.m.f(str);
         this.b = str;
         this.c = iVar;
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList b10 = new h0(4, context, new cf(ComponentDiscoveryService.class)).b();
+        ArrayList b10 = new h0(4, context, new b5(ComponentDiscoveryService.class)).b();
         Trace.endSection();
         Trace.beginSection("Runtime");
         j jVar = j.a;
@@ -141,8 +141,8 @@ public final class g {
         }
         synchronized (k) {
             a0.f fVar = l;
-            q6.m.i("FirebaseApp name [DEFAULT] already exists!", !fVar.containsKey("[DEFAULT]"));
-            q6.m.h(context, "Application context cannot be null.");
+            q6.m.j("FirebaseApp name [DEFAULT] already exists!", !fVar.containsKey("[DEFAULT]"));
+            q6.m.i(context, "Application context cannot be null.");
             gVar = new g(context, "[DEFAULT]", iVar);
             fVar.put("[DEFAULT]", gVar);
         }
@@ -151,7 +151,7 @@ public final class g {
     }
 
     public final void a() {
-        q6.m.i("FirebaseApp was deleted", !this.f.get());
+        q6.m.j("FirebaseApp was deleted", !this.f.get());
     }
 
     public final Object b(Class cls) {
@@ -180,7 +180,7 @@ public final class g {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.h("[DEFAULT]".equals(str));
+            this.d.g("[DEFAULT]".equals(str));
             ((sa.c) this.h.get()).c();
             return;
         }
@@ -225,8 +225,8 @@ public final class g {
 
     public final String toString() {
         ji.j jVar = new ji.j(this);
-        jVar.U(this.b, "name");
-        jVar.U(this.c, "options");
+        jVar.E(this.b, "name");
+        jVar.E(this.c, "options");
         return jVar.toString();
     }
 }

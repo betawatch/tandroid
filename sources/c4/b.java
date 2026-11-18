@@ -1,19 +1,19 @@
 package c4;
 
-import a8.ja;
+import a8.la;
 import h2.l0;
 import h9.g0;
 import h9.i0;
-import h9.n1;
-import h9.s1;
+import h9.o1;
+import h9.t1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements d {
-    public static final h9.n c = new h9.n(new a3.l(24), n1.b);
+    public static final h9.n c = new h9.n(new a3.l(25), o1.b);
     public final i0 a;
     public final long[] b;
 
@@ -22,13 +22,13 @@ public final class b implements d {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public b(s1 s1Var) {
+    public b(t1 t1Var) {
         long j3;
-        int i7 = s1Var.d;
+        int i7 = t1Var.d;
         long j10 = -9223372036854775807L;
         int i10 = 0;
         if (i7 == 1) {
-            g0 listIterator = s1Var.listIterator(0);
+            g0 listIterator = t1Var.listIterator(0);
             Object next = listIterator.next();
             if (listIterator.hasNext()) {
                 StringBuilder sb2 = new StringBuilder("expected one element but was: <");
@@ -55,7 +55,7 @@ public final class b implements d {
                 return;
             } else {
                 g0 g0Var = i0.b;
-                this.a = i0.v(i0Var, s1.e);
+                this.a = i0.v(i0Var, t1.e);
                 this.b = new long[]{j13, j12 + j13};
                 return;
             }
@@ -64,7 +64,7 @@ public final class b implements d {
         this.b = jArr;
         Arrays.fill(jArr, Long.MAX_VALUE);
         ArrayList arrayList = new ArrayList();
-        s1 w10 = i0.w(c, s1Var);
+        t1 w10 = i0.w(c, t1Var);
         int i11 = 0;
         while (i10 < w10.d) {
             a aVar2 = (a) w10.get(i10);
@@ -88,7 +88,7 @@ public final class b implements d {
                     }
                     if (j15 == j3) {
                         this.b[i11] = j16;
-                        arrayList.add(s1.e);
+                        arrayList.add(t1.e);
                         i11++;
                     }
                     i10++;
@@ -117,23 +117,23 @@ public final class b implements d {
     }
 
     @Override // c4.d
-    public final long i(int i7) {
-        ja.f(i7 < this.a.size());
+    public final long h(int i7) {
+        la.f(i7 < this.a.size());
         return this.b[i7];
     }
 
     @Override // c4.d
-    public final List q(long j3) {
+    public final List m(long j3) {
         int f10 = l0.f(this.b, j3, false);
         if (f10 != -1) {
             return (i0) this.a.get(f10);
         }
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     @Override // c4.d
-    public final int u() {
+    public final int p() {
         return this.a.size();
     }
 }

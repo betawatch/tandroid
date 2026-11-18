@@ -9,7 +9,7 @@ import javax.net.ssl.HttpsURLConnection;
 import org.json.JSONObject;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends kd.j implements rd.p {
     public int a;
@@ -57,7 +57,7 @@ public final class e extends kd.j implements rd.p {
             }
         }
         if (i7 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             URLConnection openConnection = f.a(this.b).openConnection();
             kotlin.jvm.internal.j.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
@@ -94,12 +94,12 @@ public final class e extends kd.j implements rd.p {
                 }
             }
         } else if (i7 == 1 || i7 == 2) {
-            af.b.c(obj);
+            b7.h.b(obj);
         } else {
             if (i7 != 3) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            af.b.c(obj);
+            b7.h.b(obj);
         }
         return kVar;
     }

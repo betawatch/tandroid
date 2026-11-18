@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.view.View;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n {
     public final Paint a;
@@ -26,11 +26,11 @@ public final class n {
     public boolean l;
     public float m;
     public float n;
-    public ug.w1 o;
-    public q2.d p;
+    public ug.x1 o;
+    public org.telegram.ui.web.z0 p;
 
     public n() {
-        this(64, ns.i3, ns.q2);
+        this(64, ks.i3, ks.q2);
     }
 
     public final void a(float f10, Canvas canvas, RectF rectF, View view) {
@@ -51,7 +51,7 @@ public final class n {
         int[] iArr = {0, i0.a.o(i7, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f10, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, ns.i3), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f10, 0.0f, new int[]{0, i0.a.o(i7, ks.i3), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -70,9 +70,9 @@ public final class n {
                     this.g = f10;
                     if (f10 > this.m) {
                         this.g = 0.0f;
-                        q2.d dVar = this.p;
-                        if (dVar != null) {
-                            dVar.run();
+                        org.telegram.ui.web.z0 z0Var = this.p;
+                        if (z0Var != null) {
+                            z0Var.run();
                         }
                     }
                     this.h = currentTimeMillis;
@@ -91,7 +91,7 @@ public final class n {
     }
 
     public n(int i7, int i10) {
-        this(i7, i10, ns.q2);
+        this(i7, i10, ks.q2);
     }
 
     public n(int i7, int i10, int i11) {

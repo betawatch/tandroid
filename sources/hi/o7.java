@@ -6,14 +6,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.z10;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public abstract class o7 extends FrameLayout implements m2 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class o7 extends FrameLayout implements n2 {
     public final n7 a;
     public final FrameLayout b;
     public final TextView c;
@@ -25,8 +25,8 @@ public abstract class o7 extends FrameLayout implements m2 {
     public float r;
     public int s;
     public ValueAnimator w;
-    public z10 x;
-    public z10 y;
+    public x10 x;
+    public x10 y;
 
     public o7(Context context) {
         super(context);
@@ -42,9 +42,9 @@ public abstract class o7 extends FrameLayout implements m2 {
         textView.setTextSize(1, 14.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextColor(-1);
-        textView.setText(hd.M0(2131744631, null));
-        frameLayout.addView(textView, c8.ja.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        n7Var.addView(frameLayout, c8.ja.s(-2, -1, ns.x1, 0.0f, 0.0f, 6.66f, 0.0f));
+        textView.setText(gd.M0(2131744396, null));
+        frameLayout.addView(textView, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        n7Var.addView(frameLayout, c8.ma.s(-2, -1, ks.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m7
             public final /* synthetic */ o7 b;
 
@@ -67,7 +67,7 @@ public abstract class o7 extends FrameLayout implements m2 {
                 }
             }
         });
-        c8.na.a(frameLayout);
+        c8.ra.a(frameLayout);
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.d = frameLayout2;
         TextView textView2 = new TextView(context);
@@ -75,9 +75,9 @@ public abstract class o7 extends FrameLayout implements m2 {
         textView2.setTextSize(1, 14.0f);
         textView2.setTypeface(org.telegram.messenger.g0.o());
         textView2.setTextColor(-1);
-        textView2.setText(hd.M0(2131744585, null));
-        frameLayout2.addView(textView2, c8.ja.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        n7Var.addView(frameLayout2, c8.ja.s(-2, -1, ns.x1, 0.0f, 0.0f, 6.66f, 0.0f));
+        textView2.setText(gd.M0(2131744350, null));
+        frameLayout2.addView(textView2, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        n7Var.addView(frameLayout2, c8.ma.s(-2, -1, ks.x1, 0.0f, 0.0f, 6.66f, 0.0f));
         frameLayout2.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m7
             public final /* synthetic */ o7 b;
 
@@ -100,7 +100,7 @@ public abstract class o7 extends FrameLayout implements m2 {
                 }
             }
         });
-        c8.na.a(frameLayout2);
+        c8.ra.a(frameLayout2);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.f = frameLayout3;
         TextView textView3 = new TextView(context);
@@ -108,9 +108,9 @@ public abstract class o7 extends FrameLayout implements m2 {
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(org.telegram.messenger.g0.o());
         textView3.setTextColor(-1);
-        textView3.setText(hd.M0(2131744450, null));
-        frameLayout3.addView(textView3, c8.ja.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
-        n7Var.addView(frameLayout3, c8.ja.t(-2, -1, ns.x1, 0, 0, 0, 0));
+        textView3.setText(gd.M0(2131744215, null));
+        frameLayout3.addView(textView3, c8.ma.d(-2, -2.0f, 80, 16.0f, 0.0f, 16.0f, 7.0f));
+        n7Var.addView(frameLayout3, c8.ma.t(-2, -1, ks.x1, 0, 0, 0, 0));
         final int i11 = 2;
         frameLayout3.setOnClickListener(new View.OnClickListener(this) { // from class: hi.m7
             public final /* synthetic */ o7 b;
@@ -134,8 +134,8 @@ public abstract class o7 extends FrameLayout implements m2 {
                 }
             }
         });
-        c8.na.a(frameLayout3);
-        addView(n7Var, c8.ja.e(-2, -1, ns.y1));
+        c8.ra.a(frameLayout3);
+        addView(n7Var, c8.ma.e(-2, -1, ks.y1));
     }
 
     public final void a(int i7) {
@@ -149,9 +149,9 @@ public abstract class o7 extends FrameLayout implements m2 {
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, i7);
         this.w = ofFloat;
-        ofFloat.addUpdateListener(new j3(this, 5));
+        ofFloat.addUpdateListener(new k3(this, 5));
         this.w.setDuration(320L);
-        this.w.setInterpolator(er.h);
+        this.w.setInterpolator(lr.h);
         this.w.start();
     }
 
@@ -160,27 +160,27 @@ public abstract class o7 extends FrameLayout implements m2 {
             return;
         }
         a(i7);
-        z10 z10Var = this.x;
-        if (z10Var != null) {
-            z10Var.a(Integer.valueOf(i7));
+        x10 x10Var = this.x;
+        if (x10Var != null) {
+            x10Var.a(Integer.valueOf(i7));
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (((m9) this).E.H()) {
+        if (((n9) this).E.H()) {
             return false;
         }
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View, hi.m2
+    @Override // android.view.View, hi.n2
     public final void invalidate() {
         super.invalidate();
         this.a.invalidate();
     }
 
-    @Override // hi.m2
+    @Override // hi.n2
     public void setInvert(float f10) {
         this.n = f10;
         this.c.setTextColor(i0.a.f(f10, -1, -16777216));
@@ -188,11 +188,11 @@ public abstract class o7 extends FrameLayout implements m2 {
         this.h.setTextColor(i0.a.f(f10, -1, -16777216));
     }
 
-    public void setOnSwitchModeListener(z10 z10Var) {
-        this.x = z10Var;
+    public void setOnSwitchModeListener(x10 x10Var) {
+        this.x = x10Var;
     }
 
-    public void setOnSwitchingModeListener(z10 z10Var) {
-        this.y = z10Var;
+    public void setOnSwitchingModeListener(x10 x10Var) {
+        this.y = x10Var;
     }
 }

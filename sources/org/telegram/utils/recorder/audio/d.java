@@ -8,9 +8,9 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import yi.h;
+import yi.g;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class d {
     public long A;
@@ -19,7 +19,7 @@ public final class d {
     public final File b;
     public final long c;
     public final long d;
-    public final h e;
+    public final g e;
     public final yi.b f;
     public final ac.e g;
     public final HandlerThread h;
@@ -42,12 +42,12 @@ public final class d {
     public final AtomicInteger m = new AtomicInteger();
     public final ByteBuffer s = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
 
-    public d(File file, File file2, long j3, long j10, h hVar, yi.b bVar, ac.e eVar) {
+    public d(File file, File file2, long j3, long j10, g gVar, yi.b bVar, ac.e eVar) {
         this.a = file;
         this.b = file2;
         this.c = j3;
         this.d = j10;
-        this.e = hVar;
+        this.e = gVar;
         this.f = bVar;
         this.g = eVar;
         HandlerThread handlerThread = new HandlerThread("AudioRecorderCapture", -16);

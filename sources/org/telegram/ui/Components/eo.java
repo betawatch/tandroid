@@ -1,51 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eo implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class eo implements org.telegram.messenger.jc {
+    public boolean a;
+    public final /* synthetic */ kg.g b;
+    public final /* synthetic */ go c;
 
-    public /* synthetic */ eo(Object obj, Context context, Object obj2, int i7, Object obj3, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = context;
-        this.e = obj2;
-        this.c = i7;
-        this.f = obj3;
+    public eo(kg.i iVar, kg.g gVar) {
+        this.c = iVar;
+        this.b = gVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                io ioVar = (io) this.d;
-                org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e;
-                ho hoVar = (ho) this.f;
-                ioVar.a();
-                t4.D(this.b, e6Var, new ai.s1(this.c, hoVar, 9));
-                break;
-            default:
-                org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) this.d;
-                fp fpVar = (fp) this.e;
-                TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = (TLRPC.TL_inputGroupCallSlug) this.f;
-                u2Var.dismiss();
-                Activity W = org.telegram.messenger.g0.W(this.b);
-                if (W != null) {
-                    org.telegram.messenger.np.e1().edit().putBoolean("callmiconstart", fpVar.a.q).apply();
-                    org.telegram.ui.Components.voip.c2.g(W, this.c, tL_inputGroupCallSlug, false, null, null);
-                    break;
-                }
-                break;
+    @Override // org.telegram.messenger.jc
+    public final void G0(int i7, Drawable drawable) {
+        mh0 mh0Var;
+        bg.i iVar;
+        if (this.a) {
+            return;
         }
+        if ((i7 == 0 || i7 == 3) && drawable != null) {
+            this.a = true;
+            boolean z10 = drawable instanceof mh0;
+            kg.g gVar = this.b;
+            if (z10 && (iVar = (mh0Var = (mh0) drawable).C0) != null && iVar.g()) {
+                mh0Var.B0 = new mg(17, this, gVar);
+            } else {
+                go.a(this.c);
+                gVar.run();
+            }
+        }
+    }
+
+    @Override // org.telegram.messenger.jc
+    public final /* synthetic */ void V(ImageReceiver imageReceiver) {
+    }
+
+    @Override // org.telegram.messenger.jc
+    public final void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
     }
 }

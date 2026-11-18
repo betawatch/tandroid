@@ -8,16 +8,15 @@ import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff E;
-    public static final /* synthetic */ ff F;
-    public static final /* synthetic */ ff G;
-    public static final /* synthetic */ ff x;
-    public static final /* synthetic */ ff y;
+    public static final /* synthetic */ ze.b E;
+    public static final /* synthetic */ ze.b F;
+    public static final /* synthetic */ ze.b G;
+    public static final /* synthetic */ ze.b x;
+    public static final /* synthetic */ ze.b y;
     public String e;
     public String f;
     public long h;
@@ -108,10 +107,10 @@ public final class k extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("HandlerBox[handlerType=");
-        c.u(ze.a.b(x, this, this));
+        c.w(ze.a.b(x, this, this));
         sb2.append(this.e);
         sb2.append(";name=");
-        c.u(ze.a.b(F, this, this));
+        c.w(ze.a.b(F, this, this));
         return p0.s(sb2, this.f, "]");
     }
 }

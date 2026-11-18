@@ -1,14 +1,15 @@
 package m1;
 
+import hi.w4;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d1 implements m0 {
     public final ie.d a = new ie.d();
-    public final gc.b b = new gc.b(17);
-    public final d6.i c = new d6.i(new c1(2, null));
+    public final w4 b = new w4(12);
+    public final ob.c c = new ob.c(new c1(2, null));
 
     public d1(String str) {
     }
@@ -36,7 +37,7 @@ public final class d1 implements m0 {
                 Object obj2 = jd.a.a;
                 i7 = b1Var.e;
                 if (i7 != 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     ie.d dVar2 = this.a;
                     boolean e10 = dVar2.e();
                     try {
@@ -67,7 +68,7 @@ public final class d1 implements m0 {
                     z10 = b1Var.b;
                     dVar = b1Var.a;
                     try {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                     } catch (Throwable th4) {
                         th2 = th4;
                         if (z10) {
@@ -126,7 +127,7 @@ public final class d1 implements m0 {
                     aVar = jd.a.a;
                     i7 = a1Var.e;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         a1Var.a = lVar;
                         dVar = this.a;
                         a1Var.b = dVar;
@@ -138,7 +139,7 @@ public final class d1 implements m0 {
                             }
                             aVar2 = (ie.a) a1Var.a;
                             try {
-                                af.b.c(obj);
+                                b7.h.b(obj);
                                 ((ie.d) aVar2).f(null);
                                 return obj;
                             } catch (Throwable th3) {
@@ -149,7 +150,7 @@ public final class d1 implements m0 {
                         }
                         ie.d dVar2 = a1Var.b;
                         rd.l lVar2 = (rd.l) a1Var.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         dVar = dVar2;
                         lVar = lVar2;
                     }

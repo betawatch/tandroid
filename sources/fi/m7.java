@@ -1,39 +1,38 @@
 package fi;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class m7 extends b4 {
-    public final /* synthetic */ n7 P3;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class m7 extends FrameLayout {
+    public z3 a;
+    public long b;
+    public ArrayList c;
+    public boolean d;
+    public final /* synthetic */ w e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m7(n7 n7Var, Context context, i9 i9Var, y3 y3Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i9Var, y3Var, e6Var);
-        this.P3 = n7Var;
+    public m7(w wVar, Context context) {
+        super(context);
+        this.e = wVar;
     }
 
-    @Override // fi.b4
-    public final boolean I0() {
-        return getParent() != null && ((Integer) ((View) getParent()).getTag()).intValue() == this.P3.f.getCurrentItem();
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        if (v.c) {
-            v.b.add(this);
-        } else {
-            super.invalidate();
+    public final void a(boolean z10) {
+        if (this.d != z10) {
+            this.d = z10;
+            invalidate();
+            this.a.setIsVisible(z10);
+            this.e.A();
         }
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i7, int i10, int i11, int i12) {
-        if (v.c) {
-            v.b.add(this);
-        } else {
-            super.invalidate(i7, i10, i11, i12);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            super.dispatchDraw(canvas);
         }
     }
 }

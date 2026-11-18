@@ -2,12 +2,12 @@ package e2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v implements a1 {
     public final a1 a;
 
-    public v(p4.g1 g1Var, a1 a1Var) {
+    public v(p4.i1 i1Var, a1 a1Var) {
         this.a = a1Var;
     }
 
@@ -62,18 +62,8 @@ public final class v implements a1 {
     }
 
     @Override // e2.a1
-    public final void a(int i7) {
-        this.a.a(i7);
-    }
-
-    @Override // e2.a1
-    public final void b(x1 x1Var) {
-        this.a.b(x1Var);
-    }
-
-    @Override // e2.a1
-    public final void c(boolean z10) {
-        this.a.c(z10);
+    public final void a(x1 x1Var) {
+        this.a.a(x1Var);
     }
 
     @Override // e2.a1
@@ -88,7 +78,7 @@ public final class v implements a1 {
 
     @Override // e2.a1
     public final void f(boolean z10) {
-        this.a.h(z10);
+        this.a.f(z10);
     }
 
     @Override // e2.a1
@@ -98,42 +88,52 @@ public final class v implements a1 {
 
     @Override // e2.a1
     public final void h(boolean z10) {
-        this.a.h(z10);
+        this.a.j(z10);
     }
 
     @Override // e2.a1
-    public final void i(int i7, boolean z10) {
-        this.a.i(i7, z10);
+    public final void i(int i7) {
+        this.a.i(i7);
     }
 
     @Override // e2.a1
-    public final void j(float f10) {
-        this.a.j(f10);
+    public final void j(boolean z10) {
+        this.a.j(z10);
     }
 
     @Override // e2.a1
-    public final void l(int i7) {
-        this.a.l(i7);
+    public final void k(int i7, boolean z10) {
+        this.a.k(i7, z10);
     }
 
     @Override // e2.a1
-    public final void m(o0 o0Var) {
-        this.a.m(o0Var);
+    public final void l(float f10) {
+        this.a.l(f10);
     }
 
     @Override // e2.a1
-    public final void n(e eVar) {
-        this.a.n(eVar);
+    public final void m(int i7) {
+        this.a.m(i7);
     }
 
     @Override // e2.a1
-    public final void o(o0 o0Var) {
-        this.a.o(o0Var);
+    public final void n(o0 o0Var) {
+        this.a.n(o0Var);
+    }
+
+    @Override // e2.a1
+    public final void o(e eVar) {
+        this.a.o(eVar);
     }
 
     @Override // e2.a1
     public final void onRenderedFirstFrame() {
         this.a.onRenderedFirstFrame();
+    }
+
+    @Override // e2.a1
+    public final void p(o0 o0Var) {
+        this.a.p(o0Var);
     }
 
     @Override // e2.a1

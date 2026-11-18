@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import android.app.Activity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class su implements org.telegram.messenger.z10 {
+public final /* synthetic */ class su implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Activity b;
 
@@ -13,14 +13,14 @@ public final /* synthetic */ class su implements org.telegram.messenger.z10 {
         this.b = activity;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
                 if (bool.booleanValue()) {
-                    if (!c8.ka.a()) {
-                        c8.ka.f();
+                    if (!c8.na.a()) {
+                        c8.na.f();
                         break;
                     } else {
                         this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
@@ -30,8 +30,8 @@ public final /* synthetic */ class su implements org.telegram.messenger.z10 {
                 break;
             default:
                 if (bool.booleanValue()) {
-                    if (!c8.ka.a()) {
-                        c8.ka.f();
+                    if (!c8.na.a()) {
+                        c8.na.f();
                         break;
                     } else {
                         this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);

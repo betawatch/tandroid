@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import ki.o1;
-import org.telegram.messenger.ns;
-import p4.q0;
+import ki.m1;
+import org.telegram.messenger.ks;
+import p4.r0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public abstract class j {
     public static int c;
-    public static final p a = new p(new q0(23), new q0(24));
+    public static final p a = new p(new r0(24), new r0(25));
     public static final LinkedHashMap b = new LinkedHashMap(8, 0.75f, true);
     public static final Object d = new Object();
     public static final ArrayList e = new ArrayList();
@@ -44,7 +44,7 @@ public abstract class j {
             int i12 = b10[i10 + 1];
             int i13 = b10[i10 + 2];
             if (i11 >= 0 && i12 <= i7 && i11 < i12) {
-                int i14 = i13 & ns.e4;
+                int i14 = i13 & ks.e4;
                 if (i14 != 0) {
                     spannable.setSpan(new c(i14), i11, i12, 33);
                 }
@@ -135,7 +135,7 @@ public abstract class j {
             } finally {
             }
         }
-        o d2 = a.d(fVar.a, str, new o1(i7, 4, j3, iVar2, fVar));
+        o d2 = a.d(fVar.a, str, new m1(i7, 4, j3, iVar2, fVar));
         synchronized (d) {
             try {
                 if (iVar2.b.get(Long.valueOf(j3)) == fVar) {

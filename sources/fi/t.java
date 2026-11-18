@@ -3,20 +3,20 @@ package fi;
 import j$.util.DesugarArrays;
 import j$.util.stream.Collectors;
 import java.util.ArrayList;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.wk;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.uk;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public abstract class t {
     public static int[] a() {
-        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, ns.D4, 10, -2013375, -1482439, -7666429, 500, 900, ns.e3, 7, -1214690, -1214690, -6606592, ns.Z3, 600, ns.g2, 4, -1926647, -1926647, -6668800, 100, ns.X4, ns.v1, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
+        return new int[]{10000, 3600, 400, 20, -10787210, -8681059, -14341066, 2000, 1800, ks.D4, 10, -2013375, -1482439, -7666429, 500, 900, ks.e3, 7, -1214690, -1214690, -6606592, ks.Z3, 600, ks.g2, 4, -1926647, -1926647, -6668800, 100, ks.X4, ks.v1, 3, -12539616, -12539616, -15244800, 50, 120, 80, 2, -12147733, -12147733, -16756594, 10, 60, 60, 1, -6988581, -6988581, -11991141, 0, 30, 30, 0, -6988581, -6988581, -11991141};
     }
 
     public static int b(int i7, int i10, int i11) {
-        int[] iArr = np.s1(i7).Y6;
+        int[] iArr = mp.u1(i7).a7;
         for (int i12 = 0; i12 < iArr.length / 7; i12++) {
             int i13 = i12 * 7;
             if (i10 >= iArr[i13]) {
@@ -180,6 +180,6 @@ public abstract class t {
     }
 
     public static String f(int[] iArr) {
-        return (String) DesugarArrays.stream(iArr).mapToObj(new wk(1)).collect(Collectors.joining(","));
+        return (String) DesugarArrays.stream(iArr).mapToObj(new uk(1)).collect(Collectors.joining(","));
     }
 }

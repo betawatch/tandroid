@@ -1,56 +1,46 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oj implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ oj(np npVar, ArrayList arrayList, int i7) {
+    public /* synthetic */ oj(mp mpVar, TLRPC.Chat chat, int i7) {
         this.a = i7;
-        this.b = npVar;
-        this.c = arrayList;
+        this.b = mpVar;
+        this.c = chat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        TLRPC.Chat chat = this.c;
+        mp mpVar = this.b;
+        switch (i7) {
             case 0:
-                this.b.getNotificationsController().K(this.c, true, false, null);
+                mpVar.j(chat);
                 break;
             case 1:
-                g0.h3(new oj(this.b, this.c, 3));
+                mpVar.getNotificationCenter().k(90, chat);
                 break;
             case 2:
-                g0.h3(new oj(this.b, this.c, 4));
+                mpVar.getClass();
+                mpVar.G(chat.id, true);
                 break;
             case 3:
-                this.b.getNotificationsController().K(this.c, true, false, null);
+                mpVar.getNotificationCenter().k(90, chat);
                 break;
             case 4:
-                this.b.getNotificationsController().K(this.c, true, false, null);
-                break;
-            case 5:
-                np npVar = this.b;
-                npVar.getClass();
-                int i7 = 0;
-                while (true) {
-                    ArrayList arrayList = this.c;
-                    if (i7 >= arrayList.size()) {
-                        break;
-                    } else {
-                        npVar.b4(npVar.j1(-((Long) arrayList.get(i7)).longValue()), 0L);
-                        i7++;
-                    }
-                }
-            case 6:
-                this.b.getNotificationsController().K(this.c, true, false, null);
+                mpVar.getNotificationCenter().k(ks.t5, Long.valueOf(chat.id), Boolean.valueOf(chat.forum), Boolean.valueOf(chat.forum_tabs), Boolean.valueOf(chat.forum_sidebar));
                 break;
             default:
-                g0.h3(new oj(this.b, this.c, 0));
+                mpVar.f5(null);
+                mpVar.getNotificationCenter().k(ks.V5, Long.valueOf(chat.id), Boolean.valueOf(chat.collapsed_in_dialogs));
+                mpVar.getNotificationCenter().k(3, new Object[0]);
                 break;
         }
     }

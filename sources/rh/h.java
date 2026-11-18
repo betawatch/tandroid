@@ -3,18 +3,19 @@ package rh;
 import android.graphics.Typeface;
 import android.provider.Settings;
 import android.view.View;
-import hi.g7;
+import hi.t6;
 import ji.j;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.ActionBar.i1;
-import org.telegram.ui.Components.lz;
-import r0.h1;
-import r0.k1;
+import org.telegram.ui.ActionBar.j1;
+import org.telegram.ui.Components.sz;
+import org.telegram.ui.web.z0;
+import r0.i1;
+import r0.l1;
 import te.k;
 import te.l;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class h implements f, e, c {
     public d E;
@@ -26,10 +27,10 @@ public class h implements f, e, c {
     public final l c = new l();
     public final l d = new l();
     public final h2.f e = new h2.f((int[]) null);
-    public final lz f;
+    public final sz f;
     public final Runnable h;
     public boolean n;
-    public k1 r;
+    public l1 r;
     public int s;
     public int w;
     public int x;
@@ -37,27 +38,27 @@ public class h implements f, e, c {
 
     /* JADX WARN: Multi-variable type inference failed */
     public h(Runnable runnable) {
-        g7 g7Var = new g7(this, 24);
-        lz lzVar = new lz();
-        lzVar.c = b.a;
-        lzVar.d = new q2.d(lzVar, 4);
-        lzVar.b = g7Var;
+        t6 t6Var = new t6(this, 25);
+        sz szVar = new sz();
+        szVar.c = b.a;
+        szVar.d = new z0(szVar, 7);
+        szVar.b = t6Var;
         Typeface typeface = g0.a;
         float f10 = 1.0f;
         try {
             f10 = Settings.Global.getFloat(t0.b.getContentResolver(), "animator_duration_scale", 1.0f);
         } catch (Exception unused) {
         }
-        lzVar.a = (long) (f10 * 250.0f * 1.1f);
-        this.f = lzVar;
+        szVar.a = (long) (f10 * 250.0f * 1.1f);
+        this.f = szVar;
         this.s = 1;
         this.y = new g(this, 0);
         this.h = runnable;
-        this.a = new te.c(0, new j(this, runnable, 0 == true ? 1 : 0, 27), i1.w, 250L);
+        this.a = new te.c(0, new j(this, runnable, 0 == true ? 1 : 0, 27), j1.w, 250L);
     }
 
     @Override // rh.c
-    public final void Q() {
+    public final void O() {
         View view = this.F;
         if (view != null) {
             view.postOnAnimation(new g(this, 1));
@@ -100,9 +101,9 @@ public class h implements f, e, c {
         return (this.E == null || this.H <= 0) ? Math.max(f(527).d, this.w) : Math.max(this.G, Math.max(f(527).d, this.w));
     }
 
-    public final i0.c f(int i7) {
-        k1 k1Var = this.r;
-        return k1Var != null ? k1Var.a.f(i7) : i0.c.e;
+    public final i0.b f(int i7) {
+        l1 l1Var = this.r;
+        return l1Var != null ? l1Var.a.f(i7) : i0.b.e;
     }
 
     public final void g(int i7) {
@@ -133,84 +134,84 @@ public class h implements f, e, c {
         this.s = z10 ? 3 : 2;
         j(this.r);
         if (z10) {
-            g0.i3(gVar, 1000L);
+            g0.h3(gVar, 1000L);
         }
     }
 
-    public final void j(k1 k1Var) {
-        k(k1Var, this.r != null);
+    public final void j(l1 l1Var) {
+        k(l1Var, this.r != null);
     }
 
-    public final void k(k1 k1Var, boolean z10) {
-        i0.c cVar;
+    public final void k(l1 l1Var, boolean z10) {
+        i0.b bVar;
         int i7;
-        te.c cVar2;
-        k1 b10 = b(k1Var);
+        te.c cVar;
+        l1 b10 = b(l1Var);
         this.r = b10;
-        i0.c cVar3 = i0.c.e;
+        i0.b bVar2 = i0.b.e;
         if (b10 != null) {
-            h1 h1Var = b10.a;
-            cVar = i0.c.a(h1Var.f(647), h1Var.g(647));
+            i1 i1Var = b10.a;
+            bVar = i0.b.a(i1Var.f(647), i1Var.g(647));
         } else {
-            cVar = cVar3;
+            bVar = bVar2;
         }
         if (b10 != null) {
-            cVar3 = b10.a.f(8);
+            bVar2 = b10.a.f(8);
         }
-        lz lzVar = this.f;
-        b bVar = (b) lzVar.c;
-        boolean z11 = cVar3.d > 0;
-        b bVar2 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
-        if (bVar != bVar2) {
-            lzVar.a(bVar2, false);
+        sz szVar = this.f;
+        b bVar3 = (b) szVar.c;
+        boolean z11 = bVar2.d > 0;
+        b bVar4 = !z10 ? z11 ? b.d : b.a : z11 ? b.c : b.b;
+        if (bVar3 != bVar4) {
+            szVar.a(bVar4, false);
         }
         int i10 = this.s;
         if (i10 == 2) {
             this.w = 0;
         }
-        if (i10 == 3 && cVar3.d > 0) {
+        if (i10 == 3 && bVar2.d > 0) {
             this.w = 0;
         }
-        i0.c a10 = i0.c.a(cVar3, i0.c.b(0, 0, 0, this.w));
+        i0.b a10 = i0.b.a(bVar2, i0.b.b(0, 0, 0, this.w));
         int i11 = a10.c;
         int i12 = a10.b;
         int i13 = a10.a;
         int i14 = a10.d;
-        i0.c a11 = i0.c.a(cVar, a10);
+        i0.b a11 = i0.b.a(bVar, a10);
         int i15 = a11.d;
         int i16 = a11.c;
         int i17 = a11.b;
         int i18 = a11.a;
         Runnable runnable = this.h;
-        te.c cVar4 = this.a;
+        te.c cVar2 = this.a;
         l lVar = this.d;
         l lVar2 = this.c;
         k kVar = this.b;
         if (z10) {
             if (kVar.b(i14 > 0 ? 1.0f : 0.0f)) {
                 i7 = i16;
-                cVar2 = cVar4;
+                cVar = cVar2;
             } else {
-                cVar2 = cVar4;
+                cVar = cVar2;
                 i7 = i16;
                 if (!lVar2.b(i18, i17, i16, i15) && !lVar.b(i13, i12, i11, i14)) {
-                    if (bVar != bVar2) {
+                    if (bVar3 != bVar4) {
                         runnable.run();
                     }
                 }
             }
-            cVar2.b();
+            cVar.b();
             kVar.c(false);
             lVar2.c(false);
             lVar.c(false);
             kVar.c = i14 > 0 ? 1.0f : 0.0f;
             lVar2.e(i18, i17, i7, i15);
             lVar.e(i13, i12, i11, i14);
-            te.c cVar5 = cVar2;
-            cVar5.c(0.0f);
-            cVar5.a(1.0f);
+            te.c cVar3 = cVar;
+            cVar3.c(0.0f);
+            cVar3.a(1.0f);
         } else {
-            cVar4.b();
+            cVar2.b();
             kVar.d(i14 > 0 ? 1.0f : 0.0f);
             lVar2.d(i18, i17, i16, i15);
             lVar.d(i13, i12, i11, i14);
@@ -220,8 +221,8 @@ public class h implements f, e, c {
     }
 
     @Override // rh.c
-    public final void m(k1 k1Var) {
-        k1 b10 = b(k1Var);
+    public final void m(l1 l1Var) {
+        l1 b10 = b(l1Var);
         this.G = b10 != null ? b10.a.f(8).d : 0;
         this.h.run();
     }
@@ -231,7 +232,7 @@ public class h implements f, e, c {
         this.H++;
     }
 
-    public k1 b(k1 k1Var) {
-        return k1Var;
+    public l1 b(l1 l1Var) {
+        return l1Var;
     }
 }

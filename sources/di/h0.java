@@ -4,42 +4,42 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import org.telegram.ui.Components.z70;
+import org.telegram.ui.Components.k80;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h0 extends LinearLayout {
     public final ImageView a;
-    public final z70 b;
-    public final z70 c;
+    public final k80 b;
+    public final k80 c;
 
-    public h0(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public h0(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
         super(context);
         setOrientation(0);
         setPadding(org.telegram.messenger.g0.L(i7 == 1 ? 11.0f : 32.0f), 0, org.telegram.messenger.g0.L(i7 == 1 ? 11.0f : 32.0f), org.telegram.messenger.g0.L(i7 == 1 ? 8.0f : 12.0f));
         ImageView imageView = new ImageView(context);
         this.a = imageView;
-        int i10 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.q6.s(imageView, i10, null, PorterDuff.Mode.SRC_IN);
+        int i10 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.u6.s(imageView, i10, null, PorterDuff.Mode.SRC_IN);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, c8.ja.t(24, 24, 51, 0, 6, 16, 0));
+        addView(imageView, c8.ma.t(24, 24, 51, 0, 6, 16, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        z70 z70Var = new z70(context, null);
-        this.b = z70Var;
-        z70Var.setTypeface(org.telegram.messenger.g0.o());
-        z70Var.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.q6.U(z70Var, i10, e6Var);
-        int i11 = org.telegram.ui.ActionBar.j6.Xc;
-        org.telegram.ui.ActionBar.q6.G(z70Var, i11, e6Var);
-        linearLayout.addView(z70Var, c8.ja.t(-1, -2, 7, 0, 0, 0, 3));
-        z70 z70Var2 = new z70(context, null);
-        this.c = z70Var2;
-        z70Var2.setTextSize(1, 14.0f);
-        org.telegram.ui.ActionBar.q6.U(z70Var2, org.telegram.ui.ActionBar.j6.z6, e6Var);
-        org.telegram.ui.ActionBar.q6.G(z70Var2, i11, e6Var);
-        linearLayout.addView(z70Var2, c8.ja.r(-1, -2, 7));
-        addView(linearLayout, c8.ja.q(-1, -2, 1.0f, 55, 0, 0, 0, 0));
+        k80 k80Var = new k80(context, null);
+        this.b = k80Var;
+        k80Var.setTypeface(org.telegram.messenger.g0.o());
+        k80Var.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(k80Var, i10, i6Var);
+        int i11 = org.telegram.ui.ActionBar.n6.Xc;
+        org.telegram.ui.ActionBar.u6.G(k80Var, i11, i6Var);
+        linearLayout.addView(k80Var, c8.ma.t(-1, -2, 7, 0, 0, 0, 3));
+        k80 k80Var2 = new k80(context, null);
+        this.c = k80Var2;
+        k80Var2.setTextSize(1, 14.0f);
+        org.telegram.ui.ActionBar.u6.U(k80Var2, org.telegram.ui.ActionBar.n6.z6, i6Var);
+        org.telegram.ui.ActionBar.u6.G(k80Var2, i11, i6Var);
+        linearLayout.addView(k80Var2, c8.ma.r(-1, -2, 7));
+        addView(linearLayout, c8.ma.q(-1, -2, 1.0f, 55, 0, 0, 0, 0));
     }
 
     public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {

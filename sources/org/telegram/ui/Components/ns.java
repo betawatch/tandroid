@@ -1,72 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ns implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ os b;
+public final class ns extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ v4.f1 b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewPropertyAnimator d;
+    public final /* synthetic */ rs e;
 
-    public /* synthetic */ ns(os osVar, int i7) {
-        this.a = i7;
-        this.b = osVar;
+    public ns(rs rsVar, v4.f1 f1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
+        this.e = rsVar;
+        this.b = f1Var;
+        this.d = viewPropertyAnimator;
+        this.c = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
-        Bitmap bitmap;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.c.setAlpha(1.0f);
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                os osVar = this.b;
-                try {
-                    i7 = osVar.x + 0;
-                    bitmap = osVar.b;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    osVar.F = true;
-                }
-                if (bitmap != null) {
-                    if (bitmap.getWidth() == osVar.y) {
-                        if (osVar.b.getHeight() != i7) {
-                        }
-                        osVar.b.eraseColor(0);
-                        osVar.c.save();
-                        osVar.c.translate(0.0f, 0);
-                        osVar.c(osVar.c);
-                        osVar.c.restore();
-                        osVar.b.prepareToDraw();
-                        org.telegram.messenger.g0.h3(osVar.I);
-                        break;
-                    }
-                }
-                Bitmap bitmap2 = osVar.b;
-                if (bitmap2 != null) {
-                    bitmap2.recycle();
-                }
-                osVar.b = Bitmap.createBitmap(osVar.y, i7, Bitmap.Config.ARGB_8888);
-                osVar.c = new Canvas(osVar.b);
-                osVar.b.eraseColor(0);
-                osVar.c.save();
-                osVar.c.translate(0.0f, 0);
-                osVar.c(osVar.c);
-                osVar.c.restore();
-                osVar.b.prepareToDraw();
-                org.telegram.messenger.g0.h3(osVar.I);
+                this.d.setListener(null);
+                this.c.setAlpha(1.0f);
+                rs rsVar = this.e;
+                v4.f1 f1Var = this.b;
+                rsVar.d(f1Var);
+                rsVar.x.remove(f1Var);
+                rsVar.A();
+                break;
             default:
-                os osVar2 = this.b;
-                osVar2.f = false;
-                osVar2.g();
-                if (!osVar2.a) {
-                    osVar2.j();
-                    break;
-                } else if (osVar2.w == osVar2.K) {
-                    osVar2.H = true;
+                this.d.setListener(null);
+                rs rsVar2 = this.e;
+                v4.f1 f1Var2 = this.b;
+                rsVar2.u(f1Var2);
+                rsVar2.v.remove(f1Var2);
+                rsVar2.A();
+                View view = f1Var2.a;
+                if (view instanceof org.telegram.ui.Cells.t2) {
+                    ((org.telegram.ui.Cells.t2) view).setMoving(false);
                     break;
                 }
                 break;
         }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.e.y();
+                break;
+            default:
+                this.e.getClass();
+                break;
+        }
+    }
+
+    public ns(rs rsVar, v4.f1 f1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
+        this.e = rsVar;
+        this.b = f1Var;
+        this.c = view;
+        this.d = viewPropertyAnimator;
     }
 }

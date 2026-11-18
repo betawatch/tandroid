@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MusicPlayerReceiver extends BroadcastReceiver {
     @Override // android.content.BroadcastReceiver
@@ -46,7 +46,7 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
         action.getClass();
         switch (action) {
             case "org.telegram.android.musicplayer.repeat":
-                gz.E((gz.S0 + 1) % 3);
+                bz.E((bz.S0 + 1) % 3);
                 break;
             case "org.telegram.android.musicplayer.close":
                 MediaController.B().q(true, true, false, false);
@@ -65,7 +65,7 @@ public class MusicPlayerReceiver extends BroadcastReceiver {
                 MediaController.B().V();
                 break;
             case "org.telegram.android.musicplayer.shuffle":
-                if (!gz.N0) {
+                if (!bz.N0) {
                     MediaController.B().l0(2);
                     break;
                 } else {

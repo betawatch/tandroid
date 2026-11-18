@@ -6,10 +6,10 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import hi.i9;
-import org.telegram.ui.Components.voip.o1;
+import hi.j9;
+import org.telegram.ui.Components.voip.n1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -40,7 +40,7 @@ public final class c {
         int i7 = this.a;
         b bVar = this.b;
         if (f11 == f10) {
-            bVar.E(f11, i7);
+            bVar.D(f11, i7);
             return;
         }
         int i10 = 1;
@@ -57,7 +57,7 @@ public final class c {
             if (this.h) {
                 this.h = false;
             }
-            bVar.E(f10, i7);
+            bVar.D(f10, i7);
             return;
         }
         this.g = f10;
@@ -66,8 +66,8 @@ public final class c {
         this.i = ofFloat;
         ofFloat.setDuration(j3);
         this.i.setInterpolator(this.c);
-        this.i.addUpdateListener(new i9(this, f11, f12, 6));
-        this.i.addListener(new o1(this, f11, f12, i10));
+        this.i.addUpdateListener(new j9(this, f11, f12, 6));
+        this.i.addListener(new n1(this, f11, f12, i10));
         long j10 = this.e;
         if (j10 != 0) {
             this.i.setStartDelay(j10);
@@ -102,7 +102,7 @@ public final class c {
     public final void c(float f10) {
         boolean b10 = b();
         if (d(f10, 1.0f) || b10) {
-            this.b.E(f10, this.a);
+            this.b.D(f10, this.a);
         }
     }
 
@@ -111,7 +111,7 @@ public final class c {
             return false;
         }
         this.f = f10;
-        this.b.G(this.a, f10, f11, this);
+        this.b.H(this.a, f10, f11, this);
         return true;
     }
 

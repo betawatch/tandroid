@@ -1,55 +1,88 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.beta.R;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.fj0;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.y40;
+import org.telegram.ui.yp;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k2 extends r2 {
-    public final /* synthetic */ u2 I;
+public final /* synthetic */ class k2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k2(u2 u2Var, Context context) {
-        super(u2Var, context);
-        this.I = u2Var;
+    public /* synthetic */ k2(Object obj, int i7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.ActionBar.r2, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.I.Z(canvas);
-    }
-
-    @Override // org.telegram.ui.ActionBar.r2, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        try {
-            return super.drawChild(canvas, view, j3);
-        } catch (Exception e10) {
-            a8.g(e10, true);
-            return true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i7;
+        switch (this.a) {
+            case 0:
+                x2 x2Var = (x2) this.c;
+                x2Var.getClass();
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                x2Var.C0(this.b, intValue, intValue);
+                break;
+            case 1:
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.c;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (q1Var.getMessageObject() != null && q1Var.getMessageObject().e1() == this.b) {
+                    q1Var.setSelectedBackgroundProgress(floatValue);
+                    break;
+                }
+                break;
+            case 2:
+                wt wtVar = (wt) this.c;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wtVar.d.setTranslationY(floatValue2);
+                int i10 = this.b;
+                float f10 = i10;
+                float f11 = 1.0f - (floatValue2 / f10);
+                wtVar.S = f11;
+                if (i10 > 0 && ((i7 = wtVar.M) == 2 || i7 == 3)) {
+                    wtVar.d.setAlpha(f11);
+                }
+                wtVar.c(floatValue2 - f10);
+                break;
+            case 3:
+                ((ry) this.c).R0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 4:
+                y40 y40Var = (y40) this.c;
+                if (this.b == y40Var.u0) {
+                    float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    if (floatValue3 >= 0.5f) {
+                        floatValue3 -= 1.0f;
+                    }
+                    y40Var.x.setRotationY(floatValue3 * 180.0f);
+                    break;
+                }
+                break;
+            case 5:
+                yp ypVar = (yp) this.c;
+                ypVar.getClass();
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                fj0 fj0Var = (fj0) ypVar.d;
+                fj0Var.b.put(this.b, f12);
+                fj0Var.d = true;
+                fj0Var.a.invalidate();
+                break;
+            default:
+                xh.f fVar = (xh.f) this.c;
+                fVar.getClass();
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fVar.n = floatValue4;
+                fVar.setAlpha((int) ((1.0f - floatValue4) * this.b));
+                fVar.p = true;
+                fVar.invalidateSelf();
+                break;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        setTag(R.id.bulletin_delegate_tag, new bi.t(7));
-    }
-
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        u2 u2Var = this.I;
-        u2Var.h = null;
-        u2Var.c.requestApplyInsets();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        setTag(R.id.bulletin_delegate_tag, null);
     }
 }

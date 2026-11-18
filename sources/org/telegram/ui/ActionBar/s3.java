@@ -1,43 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class s3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u3 b;
+public final class s3 implements ig.a {
+    public m6 a;
+    public TLRPC.TL_theme b;
+    public TLRPC.TL_chatThemeUniqueGift c;
+    public int d;
+    public int e = -1;
+    public SparseIntArray f;
+    public String g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
 
-    public /* synthetic */ s3(u3 u3Var, int i7) {
-        this.a = i7;
-        this.b = u3Var;
+    public final long a() {
+        TLRPC.TL_theme tL_theme = this.b;
+        if (tL_theme != null) {
+            return tL_theme.id;
+        }
+        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
+        if (tL_chatThemeUniqueGift != null) {
+            return tL_chatThemeUniqueGift.gift.gift_id;
+        }
+        return 0L;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                u3 u3Var = this.b;
-                View view = u3Var.m;
-                if (view.getWindowVisibility() == 0 && view.isShown()) {
-                    t3 t3Var = u3Var.s;
-                    t3Var.getClass();
-                    System.currentTimeMillis();
-                    t3Var.c = false;
-                    u3Var.s.a();
-                    break;
-                }
-                break;
-            default:
-                u3 u3Var2 = this.b;
-                View view2 = u3Var2.m;
-                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
-                    t3 t3Var2 = u3Var2.s;
-                    t3Var2.b = false;
-                    t3Var2.a();
-                    break;
-                }
-                break;
+    public final TLRPC.ThemeSettings b(int i7) {
+        ArrayList<TLRPC.ThemeSettings> arrayList;
+        TLRPC.TL_theme tL_theme = this.b;
+        if (tL_theme == null) {
+            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
+            if (tL_chatThemeUniqueGift != null) {
+                arrayList = tL_chatThemeUniqueGift.theme_settings;
+            }
+            return null;
         }
+        arrayList = tL_theme.settings;
+        if (arrayList != null && i7 >= 0 && arrayList.size() > i7) {
+            return arrayList.get(i7);
+        }
+        return null;
     }
 }

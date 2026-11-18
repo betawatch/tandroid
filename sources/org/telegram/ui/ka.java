@@ -8,10 +8,10 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class ka extends FrameLayout {
-    public final org.telegram.ui.Components.z70 a;
+    public final org.telegram.ui.Components.k80 a;
     public final org.telegram.ui.Cells.b2 b;
     public Integer c;
     public ValueAnimator d;
@@ -24,46 +24,46 @@ public final class ka extends FrameLayout {
         laVar.G = this;
         setPadding(org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(18.0f), org.telegram.messenger.g0.L(17.0f));
         setClipChildren(false);
-        org.telegram.ui.Components.z70 z70Var = new org.telegram.ui.Components.z70(activity, null);
-        this.a = z70Var;
-        z70Var.setTextSize(1, 15.0f);
-        int i7 = org.telegram.ui.ActionBar.j6.F6;
-        org.telegram.ui.ActionBar.q6.U(z70Var, i7, null);
-        z70Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        int i10 = org.telegram.ui.ActionBar.j6.J6;
-        org.telegram.ui.ActionBar.q6.G(z70Var, i10, null);
-        int i11 = org.telegram.ui.ActionBar.j6.K6;
-        org.telegram.ui.ActionBar.q6.C(z70Var, i11, null);
-        z70Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
+        org.telegram.ui.Components.k80 k80Var = new org.telegram.ui.Components.k80(activity, null);
+        this.a = k80Var;
+        k80Var.setTextSize(1, 15.0f);
+        int i7 = org.telegram.ui.ActionBar.n6.F6;
+        org.telegram.ui.ActionBar.u6.U(k80Var, i7, null);
+        k80Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        int i10 = org.telegram.ui.ActionBar.n6.J6;
+        org.telegram.ui.ActionBar.u6.G(k80Var, i10, null);
+        int i11 = org.telegram.ui.ActionBar.n6.K6;
+        org.telegram.ui.ActionBar.u6.C(k80Var, i11, null);
+        k80Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
         org.telegram.ui.Cells.b2 b2Var = new org.telegram.ui.Cells.b2(2, activity, this);
         laVar.H = b2Var;
         this.b = b2Var;
         b2Var.setTextSize(1, 15.0f);
-        org.telegram.ui.ActionBar.q6.U(b2Var, i7, null);
-        b2Var.setGravity(org.telegram.messenger.hd.a0 ? 5 : 3);
-        org.telegram.ui.ActionBar.q6.G(b2Var, i10, null);
-        org.telegram.ui.ActionBar.q6.C(b2Var, i11, null);
+        org.telegram.ui.ActionBar.u6.U(b2Var, i7, null);
+        b2Var.setGravity(org.telegram.messenger.gd.a0 ? 5 : 3);
+        org.telegram.ui.ActionBar.u6.G(b2Var, i10, null);
+        org.telegram.ui.ActionBar.u6.C(b2Var, i11, null);
         b2Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
-        addView(z70Var, c8.ja.e(-1, -2, 48));
-        addView(b2Var, c8.ja.e(-1, -2, 48));
+        addView(k80Var, c8.ma.e(-1, -2, 48));
+        addView(b2Var, c8.ma.e(-1, -2, 48));
         if (laVar.y == 0) {
-            z70Var.setText(org.telegram.messenger.g0.X2(org.telegram.messenger.hd.M0(2131743660, null)));
+            k80Var.setText(org.telegram.messenger.g0.W2(org.telegram.messenger.gd.M0(2131743423, null)));
             return;
         }
-        String M0 = org.telegram.messenger.hd.M0(2131752938, null);
+        String M0 = org.telegram.messenger.gd.M0(2131752927, null);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(M0);
         int indexOf = M0.indexOf(42);
         int lastIndexOf = M0.lastIndexOf(42);
         if (indexOf != -1 && lastIndexOf != -1 && indexOf != lastIndexOf) {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new org.telegram.ui.Components.f41("https://fragment.com", (org.telegram.ui.Components.wy0) null), indexOf, lastIndexOf - 1, 33);
+            spannableStringBuilder.setSpan(new org.telegram.ui.Components.p41("https://fragment.com", (org.telegram.ui.Components.dz0) null), indexOf, lastIndexOf - 1, 33);
         }
-        z70Var.setText(spannableStringBuilder);
+        k80Var.setText(spannableStringBuilder);
     }
 
     public static void a(final ka kaVar) {
-        org.telegram.ui.Components.z70 z70Var = kaVar.a;
+        org.telegram.ui.Components.k80 k80Var = kaVar.a;
         org.telegram.ui.Cells.b2 b2Var = kaVar.b;
         if (b2Var.getVisibility() == 0) {
             b2Var.measure(View.MeasureSpec.makeMeasureSpec((kaVar.getMeasuredWidth() - kaVar.getPaddingLeft()) - kaVar.getPaddingRight(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
@@ -74,8 +74,8 @@ public final class ka extends FrameLayout {
         }
         Integer num = kaVar.c;
         final int measuredHeight = num == null ? kaVar.getMeasuredHeight() : num.intValue();
-        final int height = z70Var.getHeight() + org.telegram.messenger.g0.L(27.0f) + ((b2Var.getVisibility() != 0 || TextUtils.isEmpty(b2Var.getText())) ? 0 : org.telegram.messenger.g0.L(8.0f) + b2Var.getMeasuredHeight());
-        final float translationY = z70Var.getTranslationY();
+        final int height = k80Var.getHeight() + org.telegram.messenger.g0.L(27.0f) + ((b2Var.getVisibility() != 0 || TextUtils.isEmpty(b2Var.getText())) ? 0 : org.telegram.messenger.g0.L(8.0f) + b2Var.getMeasuredHeight());
+        final float translationY = k80Var.getTranslationY();
         final float L = (b2Var.getVisibility() != 0 || TextUtils.isEmpty(b2Var.getText())) ? 0.0f : org.telegram.messenger.g0.L(8.0f) + b2Var.getMeasuredHeight();
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         kaVar.d = ofFloat;
@@ -91,7 +91,7 @@ public final class ka extends FrameLayout {
             }
         });
         kaVar.d.setDuration(200L);
-        kaVar.d.setInterpolator(org.telegram.ui.Components.er.h);
+        kaVar.d.setInterpolator(org.telegram.ui.Components.lr.h);
         kaVar.d.start();
     }
 

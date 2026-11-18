@@ -1,54 +1,43 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Rect;
 import android.view.View;
-import org.telegram.ui.Components.qm0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class w3 implements View.OnLayoutChangeListener {
+public final class w3 implements Runnable {
     public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ y3 b;
 
-    public w3(qm0 qm0Var, qm0 qm0Var2, qm0 qm0Var3) {
-        this.a = 1;
-        this.b = qm0Var;
-        this.c = qm0Var2;
-        this.d = qm0Var3;
+    public /* synthetic */ w3(y3 y3Var, int i7) {
+        this.a = i7;
+        this.b = y3Var;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Rect rect = (Rect) this.b;
-                rect.set(i7, i10, i11, i12);
-                Rect rect2 = (Rect) this.c;
-                rect2.set(i13, i14, i15, i16);
-                i4 i4Var = (i4) this.d;
-                g4 g4Var = i4Var.b;
-                if (g4Var.f() && !rect.equals(rect2)) {
-                    i4Var.h = true;
-                    if (g4Var.f()) {
-                        i4Var.c();
-                        break;
-                    }
+                y3 y3Var = this.b;
+                View view = y3Var.m;
+                if (view.getWindowVisibility() == 0 && view.isShown()) {
+                    x3 x3Var = y3Var.s;
+                    x3Var.getClass();
+                    System.currentTimeMillis();
+                    x3Var.c = false;
+                    y3Var.s.a();
+                    break;
                 }
                 break;
             default:
-                ((qm0) this.b).setProgress(org.telegram.ui.h5.n1);
-                ((qm0) this.c).setProgress(org.telegram.ui.h5.o1);
-                ((qm0) this.d).setProgress(org.telegram.ui.h5.p1);
+                y3 y3Var2 = this.b;
+                View view2 = y3Var2.m;
+                if (view2.getWindowVisibility() == 0 && view2.isShown()) {
+                    x3 x3Var2 = y3Var2.s;
+                    x3Var2.b = false;
+                    x3Var2.a();
+                    break;
+                }
                 break;
         }
-    }
-
-    public w3(i4 i4Var) {
-        this.a = 0;
-        this.d = i4Var;
-        this.b = new Rect();
-        this.c = new Rect();
     }
 }

@@ -1,29 +1,28 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class dd0 extends TimerTask {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ed0 b;
+public final class dd0 extends br {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ gd0 n;
 
-    public /* synthetic */ dd0(ed0 ed0Var, int i7) {
-        this.a = i7;
-        this.b = ed0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ dd0(gd0 gd0Var, Context context, int i7) {
+        super(context);
+        this.h = i7;
+        this.n = gd0Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.br
+    public final void a() {
+        switch (this.h) {
             case 0:
-                org.telegram.messenger.g0.h3(new iz(this, 26));
+                this.n.h(null);
                 break;
             default:
-                if (this.b.U != null) {
-                    org.telegram.messenger.g0.h3(new iz(this, 27));
-                    break;
-                }
+                this.n.h(null);
                 break;
         }
     }

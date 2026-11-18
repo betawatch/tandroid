@@ -1,6 +1,6 @@
 package f9;
 
-import a8.aa;
+import a8.ca;
 import android.app.IntentService;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -20,7 +20,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d extends IntentService {
     public final boolean a;
@@ -64,7 +64,7 @@ public abstract class d extends IntentService {
         boolean equals = str.equals("com.google.android.googlequicksearchbox");
         boolean z10 = this.a;
         if (equals || str.equals("com.google.android.apps.assistant")) {
-            if (!"user".equals(Build.TYPE) || aa.a(this, str)) {
+            if (!"user".equals(Build.TYPE) || ca.a(this, str)) {
                 if (intent.hasExtra("SearchActionVerificationClientExtraIntent")) {
                     Intent intent2 = (Intent) intent.getParcelableExtra("SearchActionVerificationClientExtraIntent");
                     if (z10) {
@@ -95,7 +95,7 @@ public abstract class d extends IntentService {
                             b10 = cVar.b(intent2, new Bundle());
                             Typeface typeface = g0.a;
                             if (b10) {
-                                g0.h3(new s(intent2, r2));
+                                g0.g3(new s(intent2, r2));
                             }
                             message = "";
                         } catch (RemoteException e10) {
@@ -158,11 +158,11 @@ public abstract class d extends IntentService {
         }
         super.onCreate();
         this.e = new c(this);
-        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || aa.a(this, "com.google.android.googlequicksearchbox"))) {
+        if (a("com.google.android.googlequicksearchbox") && (!"user".equals(Build.TYPE) || ca.a(this, "com.google.android.googlequicksearchbox"))) {
             bindService(this.c, this.e, 1);
         }
         this.f = new c(this);
-        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || aa.a(this, "com.google.android.apps.assistant"))) {
+        if (a("com.google.android.apps.assistant") && (!"user".equals(Build.TYPE) || ca.a(this, "com.google.android.apps.assistant"))) {
             bindService(this.d, this.f, 1);
         }
         if (Build.VERSION.SDK_INT >= 26) {

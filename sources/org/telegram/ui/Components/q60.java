@@ -1,80 +1,246 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.HorizontalScrollView;
 import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q60 extends FrameLayout {
-    public final /* synthetic */ v60 a;
+public final class q60 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q60(v60 v60Var, Context context) {
-        super(context);
-        this.a = v60Var;
+    public /* synthetic */ q60(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        v60 v60Var = this.a;
-        v60Var.m1.setBounds(0, v60Var.v1 - v60Var.t0, getMeasuredWidth(), getMeasuredHeight());
-        v60Var.m1.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            v60 v60Var = this.a;
-            if (v60Var.v1 != 0 && motionEvent.getY() < v60Var.v1) {
-                v60Var.dismiss();
-                return true;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 9:
+                ((df0) this.b).r1 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        v60.I0(this.a);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i10) - org.telegram.messenger.g0.m;
-        v60 v60Var = this.a;
-        TextView textView = v60Var.s1;
-        measureChildWithMargins(textView, i7, 0, i10, 0);
-        int measuredHeight = textView.getMeasuredHeight();
-        r60 r60Var = v60Var.q1;
-        ((FrameLayout.LayoutParams) r60Var.getLayoutParams()).topMargin = org.telegram.messenger.g0.L(65.0f) + measuredHeight;
-        getMeasuredWidth();
-        int C = org.telegram.messenger.k5.C(55.0f, org.telegram.messenger.k5.D(58.0f, v60Var.t1.size(), org.telegram.messenger.g0.L(80.0f)) + v60Var.t0, measuredHeight);
-        int i11 = size / 5;
-        int i12 = C < i11 * 3 ? size - C : i11 * 2;
-        if (r60Var.getPaddingTop() != i12) {
-            v60Var.u1 = true;
-            r60Var.setPadding(0, i12, 0, 0);
-            v60Var.u1 = false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                y60 y60Var = (y60) this.b;
+                u60 u60Var = y60Var.x;
+                if (u60Var != null) {
+                    u60Var.setProgress(1.0f);
+                    y60Var.x.invalidate();
+                }
+                y60Var.p0 = null;
+                break;
+            case 1:
+                org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) this.b;
+                ((g70) w0Var.e).B1 = false;
+                TextView[] textViewArr = (TextView[]) w0Var.b;
+                TextView textView = textViewArr[0];
+                textViewArr[0] = textViewArr[1];
+                textViewArr[1] = textView;
+                break;
+            case 2:
+                t70 t70Var = (t70) this.b;
+                if (!t70Var.f) {
+                    t70Var.c.setVisibility(8);
+                    break;
+                }
+                break;
+            case 3:
+                a80 a80Var = (a80) this.b;
+                FrameLayout frameLayout = a80Var.b;
+                hi.m5 m5Var = (hi.m5) a80Var.c;
+                if (m5Var.getParent() != null) {
+                    frameLayout.removeView(m5Var);
+                }
+                frameLayout.getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.ActionBar.i1) a80Var.d);
+                break;
+            case 4:
+                oa0 oa0Var = (oa0) this.b;
+                oa0Var.d0.h = null;
+                oa0Var.f(oa0Var.T, oa0Var.S);
+                break;
+            case 5:
+                NumberTextView numberTextView = (NumberTextView) this.b;
+                numberTextView.d = null;
+                numberTextView.b.clear();
+                break;
+            case 6:
+                pc0 pc0Var = (pc0) this.b;
+                pc0Var.T = null;
+                pc0Var.r.setText("");
+                hi.y7.a(pc0Var.s, false);
+                pc0Var.setVisibility(8);
+                pc0Var.b0 = 0.0f;
+                pc0Var.h(0.0f);
+                pc0Var.setAlpha(0.0f);
+                pc0Var.j();
+                break;
+            case 7:
+                AnimatorSet animatorSet = (AnimatorSet) this.b;
+                if (animatorSet != null) {
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            case 8:
+                we weVar = (we) this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) ((hi.y7) weVar.c).e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    ((hi.y7) weVar.c).e = null;
+                    break;
+                }
+                break;
+            case 9:
+                break;
+            case 10:
+                if0 if0Var = (if0) this.b;
+                if0Var.f = false;
+                if0Var.G = null;
+                break;
+            case 11:
+                ((xg0) this.b).b();
+                break;
+            case 12:
+                ((ei0) this.b).h.setVisibility(8);
+                break;
+            case 13:
+                ((Runnable) this.b).run();
+                break;
+            case 14:
+                ck0 ck0Var = (ck0) this.b;
+                View view = ck0Var.b1;
+                if (view != null) {
+                    view.setVisibility(8);
+                }
+                if (ck0Var.b1()) {
+                    ck0Var.invalidate();
+                    break;
+                }
+                break;
+            case 15:
+                el0 el0Var = (el0) this.b;
+                if (el0Var.s != null) {
+                    el0Var.j();
+                    el0Var.s.invalidate();
+                    el0Var.e.invalidate();
+                    el0Var.invalidate();
+                    el0Var.s = null;
+                    break;
+                }
+                break;
+            case 16:
+                ((il0) this.b).d = false;
+                break;
+            case 17:
+                ((rm0) this.b).P0.setVisibility(8);
+                break;
+            case 18:
+                pn0 pn0Var = (pn0) this.b;
+                if (animator == pn0Var.h) {
+                    pn0Var.h = null;
+                    break;
+                }
+                break;
+            case 19:
+                ((mo0) this.b).f = null;
+                break;
+            case 20:
+                bi.p2 p2Var = (bi.p2) this.b;
+                if (p2Var.getParent() != null) {
+                    ((ViewGroup) p2Var.getParent()).removeView(p2Var);
+                    break;
+                }
+                break;
+            case 21:
+                ir0 ir0Var = (ir0) this.b;
+                View view2 = ir0Var.c;
+                view2.setAlpha(1.0f);
+                v4.p0.x0(view2);
+                ir0Var.a.removeView(view2);
+                break;
+            case 22:
+                rt0 rt0Var = (rt0) this.b;
+                if (rt0Var.f == animator) {
+                    rt0Var.f = null;
+                    break;
+                }
+                break;
+            case 23:
+                iv0 iv0Var = (iv0) this.b;
+                iv0Var.setCategoriesShownT(((Float) iv0Var.x3.getAnimatedValue()).floatValue());
+                iv0Var.x3 = null;
+                break;
+            case 24:
+                iw0 iw0Var = (iw0) this.b;
+                iw0Var.x1.setVisibility(8);
+                iw0Var.A1.setImageDrawable(null);
+                break;
+            case 25:
+                int i7 = 0;
+                while (true) {
+                    ow0[] ow0VarArr = (ow0[]) this.b;
+                    if (i7 >= ow0VarArr.length) {
+                        break;
+                    } else {
+                        ow0 ow0Var = ow0VarArr[i7];
+                        if (ow0Var != null) {
+                            ow0Var.d = false;
+                        }
+                        i7++;
+                    }
+                }
+            case 26:
+                super.onAnimationEnd(animator);
+                ((pw0) this.b).I = null;
+                break;
+            case 27:
+                ((sw0) this.b).e = false;
+                break;
+            case 28:
+                ((cz0) this.b).setVisibility(4);
+                break;
+            default:
+                ((n01) this.b).setVisibility(8);
+                break;
         }
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.a.J && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a.u1) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 16:
+                il0 il0Var = (il0) this.b;
+                il0Var.d = true;
+                if (il0Var.getParent() instanceof HorizontalScrollView) {
+                    ((HorizontalScrollView) il0Var.getParent()).requestDisallowInterceptTouchEvent(false);
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
-        super.requestLayout();
+    }
+
+    public q60(ir0 ir0Var, v4.p0 p0Var) {
+        this.a = 21;
+        this.b = ir0Var;
+    }
+
+    private final void a(Animator animator) {
     }
 }

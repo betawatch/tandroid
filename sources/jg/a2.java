@@ -2,18 +2,18 @@ package jg;
 
 import android.text.TextUtils;
 import android.util.LongSparseArray;
-import bi.v2;
+import bi.g2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.si;
+import org.telegram.messenger.ri;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l31;
-import org.telegram.ui.Components.wp;
+import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a2 implements Runnable {
     public final /* synthetic */ c2 a;
@@ -53,10 +53,10 @@ public final class a2 implements Runnable {
     */
     public final void run() {
         int i7;
-        int i10;
         int A1;
         HashMap hashMap;
         int A12;
+        int i10;
         int i11;
         String str;
         c2 c2Var = this.a;
@@ -64,12 +64,12 @@ public final class a2 implements Runnable {
         HashMap hashMap3 = c2Var.I;
         HashMap hashMap4 = c2Var.J;
         ArrayList arrayList = c2Var.G;
-        l31 l31Var = c2Var.e;
+        v31 v31Var = c2Var.e;
         int i12 = c2Var.c;
         if (TextUtils.isEmpty(c2Var.S)) {
             return;
         }
-        wp progressDrawable = l31Var.b.h.getProgressDrawable();
+        dq progressDrawable = v31Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -78,35 +78,35 @@ public final class a2 implements Runnable {
         c2Var.Q = i13;
         ArrayList arrayList2 = new ArrayList(0);
         LongSparseArray longSparseArray = new LongSparseArray(0);
-        HashMap hashMap5 = si.b0(i12).e0;
+        HashMap hashMap5 = ri.d0(i12).e0;
         if (c2Var.S.length() <= 14) {
             String str2 = c2Var.S;
             int length = str2.length();
-            i10 = 1;
             int i14 = 0;
             while (i14 < length) {
-                int i15 = i12;
                 if (i14 < length - 1) {
+                    i10 = i12;
                     if (str2.charAt(i14) == 55356) {
-                        int i16 = i14 + 1;
+                        int i15 = i14 + 1;
                         i11 = length;
-                        if (str2.charAt(i16) >= 57339) {
+                        if (str2.charAt(i15) >= 57339) {
                         }
                     } else {
                         i11 = length;
                     }
                     if (str2.charAt(i14) == 8205) {
-                        int i17 = i14 + 1;
-                        if (str2.charAt(i17) != 9792) {
+                        int i16 = i14 + 1;
+                        if (str2.charAt(i16) != 9792) {
                         }
                         length = i11 - 2;
                         str = TextUtils.concat(str2.subSequence(0, i14), str2.subSequence(i14 + 2, str2.length()));
                         i14--;
                         str2 = str;
                         i14++;
-                        i12 = i15;
+                        i12 = i10;
                     }
                 } else {
+                    i10 = i12;
                     i11 = length;
                 }
                 if (str2.charAt(i14) == 65039) {
@@ -115,11 +115,11 @@ public final class a2 implements Runnable {
                     i14--;
                     str2 = str;
                     i14++;
-                    i12 = i15;
+                    i12 = i10;
                 } else {
                     length = i11;
                     i14++;
-                    i12 = i15;
+                    i12 = i10;
                 }
             }
             i7 = i12;
@@ -127,11 +127,11 @@ public final class a2 implements Runnable {
             if (arrayList3 != null && !arrayList3.isEmpty()) {
                 a();
                 arrayList2.addAll(arrayList3);
-                int i18 = 0;
-                for (int size = arrayList3.size(); i18 < size; size = size) {
-                    TLRPC.Document document = (TLRPC.Document) arrayList3.get(i18);
+                int i17 = 0;
+                for (int size = arrayList3.size(); i17 < size; size = size) {
+                    TLRPC.Document document = (TLRPC.Document) arrayList3.get(i17);
                     longSparseArray.put(document.id, document);
-                    i18++;
+                    i17++;
                     arrayList3 = arrayList3;
                 }
                 hashMap4.put(arrayList2, c2Var.S);
@@ -139,21 +139,20 @@ public final class a2 implements Runnable {
             }
         } else {
             i7 = i12;
-            i10 = 1;
         }
-        if (hashMap5 != null && !hashMap5.isEmpty() && c2Var.S.length() > i10) {
+        if (hashMap5 != null && !hashMap5.isEmpty() && c2Var.S.length() > 1) {
             String[] G0 = org.telegram.messenger.g0.G0();
-            if (!Arrays.equals(l31Var.a.b(), G0)) {
-                si.b0(i7).M(G0, false);
+            if (!Arrays.equals(v31Var.a.b(), G0)) {
+                ri.d0(i7).O(G0, false);
             }
-            l31Var.a.i(G0);
-            si.b0(i7).U(l31Var.a.b(), c2Var.S, false, new ai.r1(this, i13, hashMap5, 1), false);
+            v31Var.a.i(G0);
+            ri.d0(i7).W(v31Var.a.b(), c2Var.S, false, new ai.r1(this, i13, hashMap5, 2), false);
         }
-        ArrayList s02 = si.b0(i7).s0(0);
-        int size2 = s02.size();
-        int i19 = 0;
-        while (i19 < size2) {
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) s02.get(i19);
+        ArrayList u02 = ri.d0(i7).u0(0);
+        int size2 = u02.size();
+        int i18 = 0;
+        while (i18 < size2) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) u02.get(i18);
             int A13 = org.telegram.messenger.g0.A1(tL_messages_stickerSet.set.title, c2Var.S);
             if (A13 >= 0) {
                 if (A13 != 0) {
@@ -175,14 +174,14 @@ public final class a2 implements Runnable {
                     hashMap2.put(tL_messages_stickerSet, Boolean.TRUE);
                 }
             }
-            i19++;
+            i18++;
             hashMap4 = hashMap;
         }
         HashMap hashMap6 = hashMap4;
-        ArrayList s03 = si.b0(i7).s0(3);
-        int size3 = s03.size();
-        for (int i20 = 0; i20 < size3; i20++) {
-            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) s03.get(i20);
+        ArrayList u03 = ri.d0(i7).u0(3);
+        int size3 = u03.size();
+        for (int i19 = 0; i19 < size3; i19++) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) u03.get(i19);
             int A14 = org.telegram.messenger.g0.A1(tL_messages_stickerSet2.set.title, c2Var.S);
             if (A14 < 0) {
                 String str4 = tL_messages_stickerSet2.set.short_name;
@@ -198,16 +197,16 @@ public final class a2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap6.isEmpty()) {
-            l31Var.b(true);
+            v31Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = c2Var.S;
-        c2Var.O = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_searchStickerSets, new v2(18, this, tL_messages_searchStickerSets));
+        c2Var.O = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_searchStickerSets, new bi.k1(19, this, tL_messages_searchStickerSets));
         if (j6.h(c2Var.S)) {
             TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
             tL_messages_getStickers.emoticon = c2Var.S;
             tL_messages_getStickers.hash = 0L;
-            c2Var.P = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getStickers, new bi.l1(this, tL_messages_getStickers, arrayList2, longSparseArray, 9));
+            c2Var.P = ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getStickers, new g2(this, tL_messages_getStickers, arrayList2, longSparseArray, 9));
         }
         c2Var.f();
     }

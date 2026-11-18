@@ -1,12 +1,12 @@
 package y2;
 
-import a8.ja;
-import c8.q0;
+import a8.la;
+import c8.s0;
 import e2.u;
 import j2.b0;
 import sg.h0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends f {
     public final e s;
@@ -19,12 +19,12 @@ public final class k extends f {
         this.s = eVar;
     }
 
-    @Override // b3.l
-    public final void D() {
+    @Override // b3.m
+    public final void A() {
         this.y = true;
     }
 
-    @Override // b3.l
+    @Override // b3.m
     public final void a() {
         if (this.x == 0) {
             this.s.b(this.w, -9223372036854775807L, -9223372036854775807L);
@@ -37,7 +37,7 @@ public final class k extends f {
                 try {
                     int f10 = this.s.a.f(lVar, e.w);
                     boolean z10 = false;
-                    ja.p(f10 != 1);
+                    la.p(f10 != 1);
                     if (f10 == 0) {
                         z10 = true;
                     }
@@ -50,7 +50,7 @@ public final class k extends f {
                 }
             }
         } finally {
-            q0.a(this.r);
+            s0.a(this.r);
         }
     }
 }

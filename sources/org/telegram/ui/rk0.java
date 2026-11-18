@@ -1,11 +1,194 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rk0 extends org.telegram.ui.Cells.x8 {
-    public rk0(Context context) {
-        super(context);
+public final class rk0 implements TextWatcher {
+    public boolean a;
+    public String b;
+    public boolean c;
+    public int d;
+    public int e;
+    public boolean f;
+    public final char[] h = {',', '.', 1643, 12289, 11841, 65040, 65041, 65104, 65105, 65292, 65380, 699};
+    public final /* synthetic */ ml0 n;
+
+    public rk0(ml0 ml0Var) {
+        this.n = ml0Var;
+    }
+
+    public final int a(String str) {
+        int i7 = 0;
+        while (true) {
+            char[] cArr = this.h;
+            if (i7 >= cArr.length) {
+                return -1;
+            }
+            int indexOf = str.indexOf(cArr[i7]);
+            if (indexOf >= 0) {
+                return indexOf;
+            }
+            i7++;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i7;
+        ml0 ml0Var = this.n;
+        if (ml0Var.n0) {
+            return;
+        }
+        Long l10 = ml0Var.I0;
+        long longValue = l10 != null ? l10.longValue() : 0L;
+        String str = this.b;
+        if (str == null) {
+            str = org.telegram.messenger.gd.n(editable.toString());
+        }
+        int a10 = a(str);
+        boolean z10 = a10 >= 0;
+        String str2 = ml0Var.D0.invoice.currency;
+        str2.getClass();
+        i7 = 10;
+        switch (str2) {
+            case "BHD":
+            case "IQD":
+            case "JOD":
+            case "KWD":
+            case "LYD":
+            case "OMR":
+            case "TND":
+                i7 = 1000;
+                break;
+            case "BIF":
+            case "BYR":
+            case "CLP":
+            case "CVE":
+            case "DJF":
+            case "GNF":
+            case "ISK":
+            case "JPY":
+            case "KMF":
+            case "KRW":
+            case "MGA":
+            case "PYG":
+            case "RWF":
+            case "UGX":
+            case "UYI":
+            case "VND":
+            case "VUV":
+            case "XAF":
+            case "XOF":
+            case "XPF":
+                i7 = 1;
+                break;
+            case "CLF":
+                i7 = 10000;
+                break;
+            case "MRO":
+                break;
+            default:
+                i7 = 100;
+                break;
+        }
+        String substring = a10 >= 0 ? str.substring(0, a10) : str;
+        String str3 = "";
+        String substring2 = a10 >= 0 ? str.substring(a10 + 1) : "";
+        long longValue2 = Utilities.A(pf.b.d(substring, false)).longValue() * i7;
+        long longValue3 = Utilities.A(pf.b.d(substring2, false)).longValue();
+        String o4 = a8.p0.o(longValue3, "");
+        String str4 = "" + (i7 - 1);
+        if (a10 > 0 && o4.length() > str4.length()) {
+            longValue3 = Utilities.A(this.e - a10 < o4.length() ? o4.substring(0, str4.length()) : o4.substring(o4.length() - str4.length())).longValue();
+        }
+        Long valueOf = Long.valueOf(longValue2 + longValue3);
+        ml0Var.I0 = valueOf;
+        if (ml0Var.D0.invoice.max_tip_amount != 0) {
+            long longValue4 = valueOf.longValue();
+            long j3 = ml0Var.D0.invoice.max_tip_amount;
+            if (longValue4 > j3) {
+                ml0Var.I0 = Long.valueOf(j3);
+            }
+        }
+        int selectionStart = ml0Var.f[0].getSelectionStart();
+        ml0Var.n0 = true;
+        if (ml0Var.I0.longValue() == 0) {
+            ml0Var.f[0].setText("");
+        } else {
+            EditTextBoldCursor editTextBoldCursor = ml0Var.f[0];
+            str3 = org.telegram.messenger.gd.E0().q(ml0Var.I0.longValue(), false, z10, true, ml0Var.D0.invoice.currency);
+            editTextBoldCursor.setText(str3);
+        }
+        if (longValue < ml0Var.I0.longValue() && longValue != 0 && this.a && selectionStart >= 0) {
+            EditTextBoldCursor editTextBoldCursor2 = ml0Var.f[0];
+            editTextBoldCursor2.setSelection(Math.min(selectionStart, editTextBoldCursor2.length()));
+        } else if (this.c && this.d != ml0Var.f[0].length()) {
+            EditTextBoldCursor editTextBoldCursor3 = ml0Var.f[0];
+            editTextBoldCursor3.setSelection(Math.max(0, Math.min(selectionStart, editTextBoldCursor3.length())));
+        } else if (this.f || !z10 || a10 < 0) {
+            EditTextBoldCursor editTextBoldCursor4 = ml0Var.f[0];
+            editTextBoldCursor4.setSelection(editTextBoldCursor4.length());
+        } else {
+            int a11 = a(str3);
+            if (a11 > 0) {
+                ml0Var.f[0].setSelection(a11 + 1);
+            } else {
+                EditTextBoldCursor editTextBoldCursor5 = ml0Var.f[0];
+                editTextBoldCursor5.setSelection(editTextBoldCursor5.length());
+            }
+        }
+        this.f = z10;
+        ml0Var.R0();
+        this.b = null;
+        ml0Var.n0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        if (this.n.n0) {
+            return;
+        }
+        this.a = !TextUtils.isEmpty(charSequence);
+        this.b = null;
+        this.d = charSequence == null ? 0 : charSequence.length();
+        this.e = i7;
+        boolean z10 = i10 == 1 && i11 == 0;
+        this.c = z10;
+        if (!z10) {
+            return;
+        }
+        String n10 = org.telegram.messenger.gd.n(charSequence);
+        char charAt = n10.charAt(i7);
+        int a10 = a(n10);
+        String substring = a10 >= 0 ? n10.substring(a10 + 1) : "";
+        long longValue = Utilities.A(pf.b.d(substring, false)).longValue();
+        if ((charAt >= '0' && charAt <= '9') || (substring.length() != 0 && longValue == 0)) {
+            if (a10 <= 0 || i7 <= a10 || longValue != 0) {
+                return;
+            }
+            this.b = n10.substring(0, a10 - 1);
+            return;
+        }
+        while (true) {
+            int i12 = i7 - 1;
+            if (i12 < 0) {
+                return;
+            }
+            char charAt2 = n10.charAt(i12);
+            if (charAt2 >= '0' && charAt2 <= '9') {
+                this.b = n10.substring(0, i12) + n10.substring(i7);
+                return;
+            }
+            i7 = i12;
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

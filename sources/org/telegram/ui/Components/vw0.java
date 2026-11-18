@@ -1,25 +1,43 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class vw0 implements eb0, gb0 {
-    public final /* synthetic */ xw0 a;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    @Override // org.telegram.ui.Components.eb0
-    public String e(int i7) {
-        return this.a.n[i7];
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class vw0 extends ck0 {
+    public boolean f3;
+    public boolean g3;
+    public final /* synthetic */ yw0 h3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vw0(yw0 yw0Var, Context context) {
+        super(context, null);
+        this.h3 = yw0Var;
     }
 
-    @Override // org.telegram.ui.Components.gb0
-    public void m(ib0 ib0Var, int i7) {
-        xw0 xw0Var = this.a;
-        xw0Var.b();
-        org.telegram.messenger.gz.r1 = i7;
-        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.gz.r1).apply();
-        xw0Var.invalidate();
-        try {
-            ib0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void l0(int i7) {
+        boolean canScrollHorizontally = canScrollHorizontally(-1);
+        boolean canScrollHorizontally2 = canScrollHorizontally(1);
+        if (this.f3 == canScrollHorizontally && this.g3 == canScrollHorizontally2) {
+            return;
         }
+        bi.a3 a3Var = this.h3.d;
+        if (a3Var != null) {
+            a3Var.invalidate();
+        }
+        this.f3 = canScrollHorizontally;
+        this.g3 = canScrollHorizontally2;
+    }
+
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        org.telegram.ui.ls previewDelegate;
+        org.telegram.ui.ns p10 = org.telegram.ui.ns.p();
+        yw0 yw0Var = this.h3;
+        vw0 vw0Var = yw0Var.e;
+        previewDelegate = yw0Var.getPreviewDelegate();
+        return super.onInterceptTouchEvent(motionEvent) || p10.q(motionEvent, vw0Var, previewDelegate, this.o2);
     }
 }

@@ -1,22 +1,22 @@
 package bi;
 
 import android.content.Context;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.po0;
+import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class l0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ TL_stars.StarGift a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
 
-    public l0(Context context, TL_stars.StarGift starGift, org.telegram.ui.ActionBar.e6 e6Var) {
+    public l0(Context context, TL_stars.StarGift starGift, org.telegram.ui.ActionBar.i6 i6Var) {
         this.a = starGift;
         this.b = context;
-        this.c = e6Var;
+        this.c = i6Var;
     }
 
     @Override // org.telegram.ui.ActionBar.j
@@ -25,16 +25,16 @@ public final class l0 extends org.telegram.ui.ActionBar.j {
         TL_stars.StarGift starGift = this.a;
         if (i7 != 3 && i7 != 2) {
             if (i7 == 4) {
-                m0.g1(context, starGift, this.c);
+                m0.h1(context, starGift, this.c);
                 return;
             }
             return;
         }
-        String str = np.s1(m10.t0).V2 + "/auction/" + starGift.auction_slug;
+        String str = mp.u1(j10.t0).X2 + "/auction/" + starGift.auction_slug;
         if (i7 == 3) {
             org.telegram.messenger.g0.g(str);
         } else {
-            po0.N0(context, null, str, false, str).show();
+            yo0.O0(context, null, str, false, str).show();
         }
     }
 }

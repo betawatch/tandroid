@@ -1,9 +1,9 @@
 package org.webrtc;
 
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public class YuvHelper {
     public static void ABGRToI420(ByteBuffer byteBuffer, int i7, ByteBuffer byteBuffer2, int i10, ByteBuffer byteBuffer3, int i11, ByteBuffer byteBuffer4, int i12, int i13, int i14) {
@@ -38,7 +38,7 @@ public class YuvHelper {
         checkNotNull(byteBuffer2, "srcU");
         checkNotNull(byteBuffer3, "srcV");
         checkNotNull(byteBuffer4, "dst");
-        int i15 = i14 % ns.K2;
+        int i15 = i14 % ks.K2;
         int i16 = i15 == 0 ? i12 : i13;
         int i17 = i15 == 0 ? i13 : i12;
         int i18 = (i17 + 1) / 2;
@@ -81,7 +81,7 @@ public class YuvHelper {
         if (t6 != null) {
             return t6;
         }
-        throw new NullPointerException(r.b.v(str, " should not be null"));
+        throw new NullPointerException(p5.c.v(str, " should not be null"));
     }
 
     public static void copyPlane(ByteBuffer byteBuffer, int i7, ByteBuffer byteBuffer2, int i10, int i11, int i12) {

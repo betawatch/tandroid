@@ -1,331 +1,178 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uf0 extends np {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final Context e;
-    public final Paint f;
-    public i9 g;
+public final class uf0 implements ui.a, dh.b, si.a {
+    public final ui.a a;
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint();
+    public RadialGradient d;
+    public int e;
+    public float f;
     public final /* synthetic */ vf0 h;
 
-    public uf0(vf0 vf0Var, Context context, org.telegram.ui.vv0 vv0Var) {
+    public uf0(vf0 vf0Var, tf0 tf0Var) {
         this.h = vf0Var;
-        this.e = context;
-        this.g = vv0Var;
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-16777216);
+        this.a = tf0Var;
     }
 
-    @Override // c5.a
-    public final void a(c5.l lVar, Object obj) {
-        sf0 sf0Var = (sf0) obj;
-        View view = sf0Var.b;
-        if (view != null) {
-            lVar.removeView(view);
+    @Override // si.a
+    public final int a() {
+        return i().a();
+    }
+
+    @Override // dh.b
+    public final fh.g b() {
+        return new fh.g(this, this, this);
+    }
+
+    @Override // si.a
+    public final void d(float f10, float f11, int i7, Canvas canvas, RectF rectF) {
+        float f12;
+        int i10;
+        Canvas canvas2;
+        RectF rectF2;
+        vf0 vf0Var = this.h;
+        ui.a aVar = this.a;
+        float f13 = aVar != null ? vf0Var.l : 0.0f;
+        if (f13 < 1.0f) {
+            ri.c cVar = vf0Var.b;
+            if (cVar == null) {
+                cVar = null;
+            }
+            cVar.d(f10, f11, i7, canvas, rectF);
+            i10 = i7;
+            canvas2 = canvas;
+            rectF2 = rectF;
+            float f14 = 1.0f - vf0Var.k;
+            if (f14 > 0.0f) {
+                canvas2.save();
+                float f15 = 1.0f / i10;
+                canvas2.scale(f15, f15);
+                f12 = f10;
+                canvas2.translate(-f12, -f11);
+                h(canvas2, rectF2.left, rectF2.top, rectF2.right, rectF2.bottom, f14, i10 * 2);
+                canvas2.restore();
+            } else {
+                f12 = f10;
+            }
+        } else {
+            f12 = f10;
+            i10 = i7;
+            canvas2 = canvas;
+            rectF2 = rectF;
         }
-        if (sf0Var.a) {
+        if (f13 > 0.0f) {
+            if (f13 < 1.0f) {
+                canvas2.saveLayerAlpha(null, (int) (f13 * 255.0f));
+            }
+            (aVar instanceof si.a ? (si.a) aVar : null).d(f12, f11, i10, canvas2, rectF2);
+            if (f13 < 1.0f) {
+                canvas.restore();
+            }
+        }
+    }
+
+    @Override // si.a
+    public final int e() {
+        return i().e();
+    }
+
+    @Override // si.a
+    public final int f() {
+        return i().f();
+    }
+
+    @Override // si.a
+    public final boolean g() {
+        ri.c cVar = this.h.b;
+        if (cVar == null) {
+            cVar = null;
+        }
+        ui.a aVar = this.a;
+        si.a aVar2 = aVar instanceof si.a ? (si.a) aVar : null;
+        if (cVar == null || cVar.e() <= 1) {
+            return false;
+        }
+        return aVar == null || (aVar2 != null && aVar2.g());
+    }
+
+    public final void h(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15) {
+        vf0 vf0Var = this.h;
+        boolean z10 = vf0Var.j;
+        Paint paint = this.b;
+        if (!z10) {
+            paint.setShader(null);
+            paint.setColor(org.telegram.ui.ActionBar.n6.r1(f14, vf0Var.i));
+            canvas.drawRect(f10 - f15, f11 - f15, f12 + f15, f13 + f15, paint);
             return;
         }
-        qf0 qf0Var = sf0Var.c;
-        if (qf0Var.getImageReceiver().n0 != null) {
-            Drawable t6 = qf0Var.getImageReceiver().t();
-            if (t6 instanceof t5) {
-                ((t5) t6).w(qf0Var);
-            }
+        float f16 = f12 - f10;
+        float max = Math.max(1.0f, 0.65f * f16);
+        if (this.d == null || this.e != vf0Var.i || this.f != max) {
+            this.e = vf0Var.i;
+            this.f = max;
+            this.d = new RadialGradient(0.0f, 0.0f, max, org.telegram.ui.ActionBar.n6.r1(0.8f, vf0Var.i), vf0Var.i, Shader.TileMode.CLAMP);
         }
-        qf0Var.setRoundRadius(0);
-        lVar.removeView(qf0Var);
-        qf0Var.getImageReceiver().c();
+        canvas.save();
+        canvas.translate((f10 + f12) / 2.0f, (f11 + f13) / 2.0f);
+        paint.setShader(this.d);
+        paint.setColor(-16777216);
+        paint.setAlpha((int) (f14 * 255.0f));
+        canvas.drawRect(((f10 - f12) / 2.0f) - f15, ((f11 - f13) / 2.0f) - f15, (f16 / 2.0f) + f15, com.google.android.gms.internal.vision.e2.A(f13, f11, 2.0f, f15), paint);
+        canvas.restore();
     }
 
-    @Override // c5.a
-    public final int b() {
-        return this.c.size();
-    }
-
-    @Override // c5.a
-    public final int c(Object obj) {
-        int indexOf = this.c.indexOf((sf0) obj);
-        if (indexOf == -1) {
-            return -2;
+    public final si.a i() {
+        ri.c cVar = this.h.b;
+        if (cVar == null) {
+            cVar = null;
         }
-        return indexOf;
+        ui.a aVar = this.a;
+        si.a aVar2 = aVar instanceof si.a ? (si.a) aVar : null;
+        return (aVar2 == null || cVar.e() < aVar2.e()) ? cVar : aVar2;
     }
 
-    @Override // c5.a
-    public final CharSequence d(int i7) {
-        return (k(i7) + 1) + "/" + this.h.getRealCount();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x0269  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01a0  */
-    @Override // c5.a
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object e(c5.l lVar, int i7) {
-        int i10;
-        SparseArray sparseArray;
-        boolean z10;
-        boolean z11;
-        String str;
-        Bitmap n10;
-        sf0 sf0Var = (sf0) this.c.get(i7);
-        int k10 = k(i7);
+    @Override // ui.a
+    public final void o(float f10, float f11, float f12, float f13, Canvas canvas) {
+        ui.a aVar = this.a;
         vf0 vf0Var = this.h;
-        boolean z12 = vf0Var.j1;
-        SparseArray sparseArray2 = vf0Var.e1;
-        ArrayList arrayList = vf0Var.c1;
-        ArrayList arrayList2 = vf0Var.b1;
-        ArrayList arrayList3 = vf0Var.Y0;
-        ArrayList arrayList4 = vf0Var.Z0;
-        ArrayList arrayList5 = vf0Var.a1;
-        ArrayList arrayList6 = vf0Var.X0;
-        Context context = this.e;
-        if (z12 && k10 == 0) {
-            sf0Var.a = true;
-            if (sf0Var.b == null) {
-                sf0Var.b = new tf0(context);
-            }
-            if (sf0Var.b.getParent() == null) {
-                lVar.addView(sf0Var.b);
-            }
-            return sf0Var;
-        }
-        sf0Var.a = false;
-        tf0 tf0Var = sf0Var.b;
-        if (tf0Var != null && tf0Var.getParent() != null) {
-            lVar.removeView(sf0Var.b);
-        }
-        if (sf0Var.c == null) {
-            qf0 qf0Var = new qf0(vf0Var, context, i7, this.f);
-            sf0Var.c = qf0Var;
-            this.d.set(i7, qf0Var);
-        }
-        if (sf0Var.c.getParent() == null) {
-            lVar.addView(sf0Var.c);
-        }
-        sf0Var.c.getImageReceiver().x0 = true;
-        int i11 = vf0Var.j1 ? k10 - 1 : k10;
-        if (i11 != 0) {
-            i10 = k10;
-            sparseArray = sparseArray2;
-            if (i11 >= 0 && i11 < arrayList6.size()) {
-                org.telegram.messenger.gc gcVar = (org.telegram.messenger.gc) arrayList6.get(i11);
-                sf0Var.c.M = gcVar != null;
-                z10 = arrayList5.get(i11) == null;
-                org.telegram.messenger.gc gcVar2 = (org.telegram.messenger.gc) arrayList4.get(i11);
-                sf0Var.c.q((g51) arrayList5.get(i11), gcVar, null, (org.telegram.messenger.gc) arrayList3.get(i11), (org.telegram.messenger.gc) arrayList4.get(i11), (gcVar2 == null || !(gcVar2.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), "avatar_" + vf0Var.F0);
-                if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+        float f14 = aVar != null ? vf0Var.l : 0.0f;
+        if (f14 < 1.0f) {
+            if (vf0Var.b == null || !canvas.isHardwareAccelerated()) {
+                float f15 = vf0Var.k;
+                if (f15 > 0.0f) {
+                    int r12 = org.telegram.ui.ActionBar.n6.r1(f15 * 0.5f, -16777216);
+                    Paint paint = this.c;
+                    paint.setColor(r12);
+                    canvas.drawRect(f10, f11, f12, f13, paint);
                 }
-                sf0Var.c.getImageReceiver().h1 = new cf(this);
-                sf0Var.c.getImageReceiver().l1 = (byte) 2;
-                qf0 qf0Var2 = sf0Var.c;
-                int i12 = vf0Var.n1;
-                int i13 = vf0Var.o1;
-                qf0Var2.t(i12, i12, i13, i13);
-                sf0Var.c.setTag(Integer.valueOf(i10));
-                return sf0Var;
-            }
-            z10 = false;
-            if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
-            }
-            sf0Var.c.getImageReceiver().h1 = new cf(this);
-            sf0Var.c.getImageReceiver().l1 = (byte) 2;
-            qf0 qf0Var22 = sf0Var.c;
-            int i122 = vf0Var.n1;
-            int i132 = vf0Var.o1;
-            qf0Var22.t(i122, i122, i132, i132);
-            sf0Var.c.setTag(Integer.valueOf(i10));
-            return sf0Var;
-        }
-        i9 i9Var = this.g;
-        Drawable t6 = i9Var == null ? null : i9Var.getImageReceiver().t();
-        if (t6 instanceof t5) {
-            t5 t5Var = (t5) t6;
-            if (t5Var.s()) {
-                sf0Var.c.setImageDrawable(t6);
-                t5Var.f(sf0Var.c);
-                t5Var.S = true;
-                i10 = k10;
-                sparseArray = sparseArray2;
-                z10 = false;
-                if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
-                    SparseArray sparseArray3 = sparseArray;
-                    sf0Var.c.I = (RadialProgress2) sparseArray3.get(i11);
-                    qf0 qf0Var3 = sf0Var.c;
-                    if (qf0Var3.I == null) {
-                        qf0Var3.I = new RadialProgress2(qf0Var3, null);
-                        RadialProgress2 radialProgress2 = sf0Var.c.I;
-                        radialProgress2.E = 0.0f;
-                        radialProgress2.setIcon(10, false, false);
-                        sf0Var.c.I.setColors(1107296256, 1107296256, -1, -1);
-                        sparseArray3.append(i11, sf0Var.c.I);
-                    }
-                    if (vf0Var.h1) {
-                        vf0Var.invalidate();
-                    } else {
-                        vf0Var.postInvalidateOnAnimation();
-                    }
-                }
-                sf0Var.c.getImageReceiver().h1 = new cf(this);
-                sf0Var.c.getImageReceiver().l1 = (byte) 2;
-                qf0 qf0Var222 = sf0Var.c;
-                int i1222 = vf0Var.n1;
-                int i1322 = vf0Var.o1;
-                qf0Var222.t(i1222, i1222, i1322, i1322);
-                sf0Var.c.setTag(Integer.valueOf(i10));
-                return sf0Var;
-            }
-        }
-        if (i11 >= 0 && i11 < arrayList6.size()) {
-            org.telegram.messenger.gc gcVar3 = (org.telegram.messenger.gc) arrayList6.get(i11);
-            sf0Var.c.M = gcVar3 != null;
-            boolean z13 = arrayList5.get(i11) == null;
-            if (!vf0Var.K0 || gcVar3 == null) {
-                z11 = z13;
             } else {
-                z11 = z13;
-                if (gcVar3.p == 2) {
-                    str = "avatar";
-                    org.telegram.messenger.gc gcVar4 = (org.telegram.messenger.gc) arrayList4.get(i11);
-                    i9 i9Var2 = this.g;
-                    i10 = k10;
-                    n10 = (i9Var2 == null && vf0Var.f1) ? i9Var2.getImageReceiver().n() : null;
-                    StringBuilder sb2 = new StringBuilder("avatar_");
-                    sparseArray = sparseArray2;
-                    sb2.append(vf0Var.F0);
-                    String sb3 = sb2.toString();
-                    if (n10 == null && arrayList5.get(i11) == null) {
-                        qf0 qf0Var4 = sf0Var.c;
-                        org.telegram.messenger.gc gcVar5 = (org.telegram.messenger.gc) arrayList6.get(i11);
-                        org.telegram.messenger.gc gcVar6 = (org.telegram.messenger.gc) arrayList3.get(i11);
-                        int intValue = ((Integer) arrayList2.get(i11)).intValue();
-                        qf0Var4.getClass();
-                        qf0Var4.a.u0(gcVar5, str, gcVar6, null, null, null, new BitmapDrawable((Resources) null, n10), intValue, null, sb3, 1);
-                        qf0Var4.e();
-                    } else if (vf0Var.L0 == null) {
-                        sf0Var.c.q((g51) arrayList5.get(i11), (org.telegram.messenger.gc) arrayList6.get(i11), str, (org.telegram.messenger.gc) arrayList3.get(i11), vf0Var.L0, null, ((Integer) arrayList2.get(i11)).intValue(), sb3);
-                    } else {
-                        sf0Var.c.q((g51) arrayList5.get(i11), gcVar3, null, (org.telegram.messenger.gc) arrayList3.get(i11), (org.telegram.messenger.gc) arrayList4.get(i11), (gcVar4 == null || !(gcVar4.k instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i11)).intValue(), sb3);
-                    }
-                    z10 = z11;
-                    if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
-                    }
-                    sf0Var.c.getImageReceiver().h1 = new cf(this);
-                    sf0Var.c.getImageReceiver().l1 = (byte) 2;
-                    qf0 qf0Var2222 = sf0Var.c;
-                    int i12222 = vf0Var.n1;
-                    int i13222 = vf0Var.o1;
-                    qf0Var2222.t(i12222, i12222, i13222, i13222);
-                    sf0Var.c.setTag(Integer.valueOf(i10));
-                    return sf0Var;
-                }
+                vf0Var.b.o(f10, f11, f12, f13, canvas);
             }
-            str = null;
-            org.telegram.messenger.gc gcVar42 = (org.telegram.messenger.gc) arrayList4.get(i11);
-            i9 i9Var22 = this.g;
-            i10 = k10;
-            if (i9Var22 == null) {
+            float f16 = 1.0f - vf0Var.k;
+            if (f16 > 0.0f) {
+                h(canvas, f10, f11, f12, f13, f16, 0.0f);
             }
-            StringBuilder sb22 = new StringBuilder("avatar_");
-            sparseArray = sparseArray2;
-            sb22.append(vf0Var.F0);
-            String sb32 = sb22.toString();
-            if (n10 == null) {
-            }
-            if (vf0Var.L0 == null) {
-            }
-            z10 = z11;
-            if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
-            }
-            sf0Var.c.getImageReceiver().h1 = new cf(this);
-            sf0Var.c.getImageReceiver().l1 = (byte) 2;
-            qf0 qf0Var22222 = sf0Var.c;
-            int i122222 = vf0Var.n1;
-            int i132222 = vf0Var.o1;
-            qf0Var22222.t(i122222, i122222, i132222, i132222);
-            sf0Var.c.setTag(Integer.valueOf(i10));
-            return sf0Var;
         }
-        i10 = k10;
-        sparseArray = sparseArray2;
-        z10 = false;
-        if ((i11 >= 0 || i11 >= arrayList.size() || arrayList.get(i11) == null) ? z10 : true) {
+        if (f14 > 0.0f) {
+            if (f14 < 1.0f) {
+                canvas.saveLayerAlpha(f10, f11, f12, f13, (int) (f14 * 255.0f));
+            }
+            this.a.o(f10, f11, f12, f13, canvas);
+            if (f14 < 1.0f) {
+                canvas.restore();
+            }
         }
-        sf0Var.c.getImageReceiver().h1 = new cf(this);
-        sf0Var.c.getImageReceiver().l1 = (byte) 2;
-        qf0 qf0Var222222 = sf0Var.c;
-        int i1222222 = vf0Var.n1;
-        int i1322222 = vf0Var.o1;
-        qf0Var222222.t(i1222222, i1222222, i1322222, i1322222);
-        sf0Var.c.setTag(Integer.valueOf(i10));
-        return sf0Var;
     }
 
-    @Override // c5.a
-    public final boolean f(View view, Object obj) {
-        sf0 sf0Var = (sf0) obj;
-        return sf0Var.a ? view == sf0Var.b : view == sf0Var.c;
-    }
-
-    @Override // c5.a
-    public final void g() {
-        ArrayList arrayList;
-        int i7 = 0;
-        while (true) {
-            arrayList = this.d;
-            if (i7 >= arrayList.size()) {
-                break;
-            }
-            if (arrayList.get(i7) != null) {
-                ((i9) arrayList.get(i7)).getImageReceiver().c();
-            }
-            i7++;
-        }
-        ArrayList arrayList2 = this.c;
-        arrayList2.clear();
-        arrayList.clear();
-        vf0 vf0Var = this.h;
-        int size = vf0Var.Y0.size();
-        if (vf0Var.j1) {
-            size++;
-        }
-        org.telegram.messenger.vo voVar = vf0Var.T0;
-        int j3 = (j() * 2) + Math.max(voVar == null ? 0 : voVar.b.size(), size);
-        for (int i10 = 0; i10 < j3; i10++) {
-            arrayList2.add(new sf0());
-            arrayList.add(null);
-        }
-        super.g();
-    }
-
-    @Override // org.telegram.ui.Components.np
-    public final int j() {
-        vf0 vf0Var = this.h;
-        int size = vf0Var.Y0.size();
-        if (vf0Var.j1) {
-            size++;
-        }
-        if (size >= 2) {
-            return vf0Var.getOffscreenPageLimit();
-        }
-        return 0;
+    @Override // dh.b
+    public final /* synthetic */ void c(fh.g gVar) {
     }
 }

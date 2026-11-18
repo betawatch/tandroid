@@ -1,48 +1,41 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ez b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ gj d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ qy f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ qy n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ HashMap s;
-    public final /* synthetic */ boolean w;
+    public final /* synthetic */ zy b;
+    public final /* synthetic */ TLRPC.Message c;
+    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ lw(ez ezVar, TLObject tLObject, gj gjVar, String str, qy qyVar, boolean z10, qy qyVar2, Object obj, HashMap hashMap, boolean z11, int i7) {
+    public /* synthetic */ lw(zy zyVar, TLRPC.Message message, boolean z10, int i7) {
         this.a = i7;
-        this.b = ezVar;
-        this.c = tLObject;
-        this.d = gjVar;
-        this.e = str;
-        this.f = qyVar;
-        this.h = z10;
-        this.n = qyVar2;
-        this.r = obj;
-        this.s = hashMap;
-        this.w = z11;
+        this.b = zyVar;
+        this.c = message;
+        this.d = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                zy zyVar = this.b;
+                zyVar.getClass();
+                TLRPC.Message message = this.c;
+                zyVar.d0(message.id);
+                zyVar.i0(message.id, this.d);
                 break;
             case 1:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                zy zyVar2 = this.b;
+                zyVar2.getClass();
+                TLRPC.Message message2 = this.c;
+                zyVar2.d0(message2.id);
+                zyVar2.i0(message2.id, this.d);
                 break;
             default:
-                this.b.O(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.w);
+                this.b.g0(this.c, this.d);
                 break;
         }
     }

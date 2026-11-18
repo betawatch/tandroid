@@ -1,37 +1,25 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.ui.Components.oy0;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class na extends ReplacementSpan {
-    public final Paint a;
-    public final oy0 b;
-    public final /* synthetic */ int c;
+public final class na extends ClickableSpan {
+    public final /* synthetic */ g9 a;
 
-    public na(int i7, String str) {
-        this.c = i7;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(org.telegram.ui.ActionBar.j6.r1(0.1f, i7));
-        this.b = new oy0(str, 13.0f, org.telegram.messenger.g0.o());
+    public na(g9 g9Var) {
+        this.a = g9Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        RectF rectF = org.telegram.messenger.g0.P;
-        rectF.set(f10, (r12 - org.telegram.messenger.g0.L(20.0f)) / 2.0f, org.telegram.messenger.g0.L(12.0f) + f10 + this.b.c, (org.telegram.messenger.g0.L(20.0f) + r12) / 2.0f);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), this.a);
-        int i14 = this.c;
-        this.b.c(f10 + org.telegram.messenger.g0.L(6.0f), (i11 + i13) / 2.0f, 1.0f, i14, canvas);
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a.run();
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (org.telegram.messenger.g0.L(12.0f) + this.b.c);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

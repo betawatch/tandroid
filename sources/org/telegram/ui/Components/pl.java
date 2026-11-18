@@ -1,92 +1,61 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.util.Property;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pl extends AnimatorListenerAdapter {
+public final /* synthetic */ class pl implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ pl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i7) {
+    public /* synthetic */ pl(int i7, Object obj, boolean z10) {
         this.a = i7;
-        this.b = chatAttachAlertPhotoLayout;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         int i7 = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        boolean z10 = false;
+        boolean z11 = this.c;
+        Object obj2 = this.b;
         switch (i7) {
             case 0:
-                ImageView imageView = chatAttachAlertPhotoLayout.s0;
-                xl xlVar = chatAttachAlertPhotoLayout.Q;
-                imageView.setImageResource((xlVar == null || !xlVar.isFrontface()) ? R.drawable.camera_revert2 : R.drawable.camera_revert1);
-                ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.s0, (Property<ImageView, Float>) View.SCALE_X, 1.0f).setDuration(100L).start();
+                ArrayList arrayList = (ArrayList) obj2;
+                View view = (View) obj;
+                boolean z12 = ChatAttachAlertPhotoLayout.r1;
+                if (view instanceof org.telegram.ui.Cells.r5) {
+                    org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+                    org.telegram.messenger.ef photoEntry = r5Var.getPhotoEntry();
+                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.C)) && z11) {
+                        z10 = true;
+                    }
+                    r5Var.setHasSpoiler(z10);
+                    break;
+                }
                 break;
             case 1:
-                chatAttachAlertPhotoLayout.n0 = null;
-                break;
-            case 2:
-                chatAttachAlertPhotoLayout.g1.e();
-                chatAttachAlertPhotoLayout.e0 = false;
-                xl xlVar2 = chatAttachAlertPhotoLayout.Q;
-                if (xlVar2 != null) {
-                    xlVar2.invalidateOutline();
-                    chatAttachAlertPhotoLayout.Q.invalidate();
-                }
-                if (chatAttachAlertPhotoLayout.c0) {
-                    chatAttachAlertPhotoLayout.b.X3.K0();
-                }
-                xl xlVar3 = chatAttachAlertPhotoLayout.Q;
-                if (xlVar3 != null) {
-                    xlVar3.setSystemUiVisibility(1028);
-                }
-                ql qlVar = chatAttachAlertPhotoLayout.F;
-                if (qlVar != null) {
-                    qlVar.invalidate();
+                ArrayList arrayList2 = (ArrayList) obj2;
+                View view2 = (View) obj;
+                boolean z13 = ChatAttachAlertPhotoLayout.r1;
+                if (view2 instanceof org.telegram.ui.Cells.r5) {
+                    org.telegram.ui.Cells.r5 r5Var2 = (org.telegram.ui.Cells.r5) view2;
+                    org.telegram.messenger.ef photoEntry2 = r5Var2.getPhotoEntry();
+                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.C)) && z11) {
+                        z10 = true;
+                    }
+                    r5Var2.setHighQuality(z10);
                     break;
                 }
                 break;
             default:
-                s71 s71Var = chatAttachAlertPhotoLayout.m0;
-                chatAttachAlertPhotoLayout.g1.e();
-                chatAttachAlertPhotoLayout.j1 = false;
-                chatAttachAlertPhotoLayout.setAlertKeepScreenOn(false);
-                chatAttachAlertPhotoLayout.setCameraOpenProgress(0.0f);
-                chatAttachAlertPhotoLayout.e0 = false;
-                ql qlVar2 = chatAttachAlertPhotoLayout.F;
-                if (qlVar2 != null) {
-                    qlVar2.invalidate();
-                }
-                xl xlVar4 = chatAttachAlertPhotoLayout.Q;
-                if (xlVar4 != null) {
-                    xlVar4.invalidateOutline();
-                    chatAttachAlertPhotoLayout.Q.invalidate();
-                }
-                chatAttachAlertPhotoLayout.c0 = false;
-                bi.g2 g2Var = chatAttachAlertPhotoLayout.k0;
-                if (g2Var != null) {
-                    g2Var.setVisibility(8);
-                }
-                if (s71Var != null) {
-                    s71Var.setVisibility(8);
-                    s71Var.setTag(null);
-                }
-                ql qlVar3 = chatAttachAlertPhotoLayout.r;
-                if (qlVar3 != null) {
-                    qlVar3.setVisibility(8);
-                }
-                xl xlVar5 = chatAttachAlertPhotoLayout.Q;
-                if (xlVar5 != null) {
-                    xlVar5.setFpsLimit(30);
-                    chatAttachAlertPhotoLayout.Q.setSystemUiVisibility(1024);
+                Float f10 = (Float) obj;
+                fb fbVar = ((ab) obj2).b.p;
+                if (fbVar != null && !z11) {
+                    fbVar.c(r0.e.getHeight() - f10.floatValue());
                     break;
                 }
                 break;

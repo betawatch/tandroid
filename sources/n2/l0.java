@@ -5,7 +5,7 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.os.Build;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l0 {
     public final Context a;
@@ -30,7 +30,7 @@ public final class l0 {
         } else {
             Context context = this.a;
             if (context != null) {
-                String parameters = f2.h.d(context).getParameters("offloadVariableRateSupported");
+                String parameters = f2.i.d(context).getParameters("offloadVariableRateSupported");
                 this.b = Boolean.valueOf(parameters != null && parameters.equals("offloadVariableRateSupported=1"));
             } else {
                 this.b = Boolean.FALSE;

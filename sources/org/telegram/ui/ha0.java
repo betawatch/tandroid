@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Context;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class ha0 extends jg.r0 {
     public boolean e0;
     public final /* synthetic */ pa0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ha0(pa0 pa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.e6 e6Var, boolean z10, boolean z11) {
-        super(context, i7, j3, false, e6Var, false, z10, z11);
+    public ha0(pa0 pa0Var, Context context, int i7, long j3, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
+        super(context, i7, j3, false, i6Var, false, z10, z11);
         this.f0 = pa0Var;
         this.e0 = true;
     }
@@ -25,13 +25,13 @@ public final class ha0 extends jg.r0 {
     public final void N(ArrayList arrayList) {
         int i7;
         pa0 pa0Var = this.f0;
-        org.telegram.messenger.gj gjVar = pa0Var.E0;
-        if (gjVar != null && gjVar.C3()) {
+        org.telegram.messenger.fj fjVar = pa0Var.J0;
+        if (fjVar != null && fjVar.C3()) {
             if (arrayList != null) {
                 i7 = 0;
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {
                     la0 la0Var = (la0) arrayList.get(i10);
-                    if (la0Var != null && !org.telegram.messenger.q10.B(la0Var.c)) {
+                    if (la0Var != null && !org.telegram.messenger.o10.C(la0Var.c)) {
                         i7++;
                     }
                 }

@@ -1,45 +1,46 @@
 package c8;
 
-import android.os.Build;
-import android.os.Trace;
-import android.util.Log;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import org.telegram.messenger.ns;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class he {
-    public static long a;
-    public static Method b;
-
-    public static void a(String str) {
-        if (str.length() > 127) {
-            str = str.substring(0, ns.L1);
-        }
-        Trace.beginSection(str);
+    public static final long a(long j3) {
+        long j10 = (j3 << 1) + 1;
+        int i7 = yd.a.d;
+        int i10 = yd.b.a;
+        return j10;
     }
 
-    public static boolean b() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            return z4.a.a();
+    public static final long b(long j3) {
+        long j10 = j3 << 1;
+        int i7 = yd.a.d;
+        int i10 = yd.b.a;
+        return j10;
+    }
+
+    public static final long c(int i7, yd.c unit) {
+        kotlin.jvm.internal.j.e(unit, "unit");
+        return unit.compareTo(yd.c.d) <= 0 ? b(ie.a(i7, unit, yd.c.b)) : d(i7, unit);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x0043, code lost:
+    
+        if (r5 > 4611686018427387903L) goto L10;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final long d(long j3, yd.c unit) {
+        kotlin.jvm.internal.j.e(unit, "unit");
+        yd.c cVar = yd.c.b;
+        long a10 = ie.a(4611686018426999999L, cVar, unit);
+        if ((-a10) <= j3 && j3 <= a10) {
+            return b(ie.a(j3, unit, cVar));
         }
-        try {
-            if (b == null) {
-                a = Trace.class.getField("TRACE_TAG_APP").getLong(null);
-                b = Trace.class.getMethod("isTagEnabled", Long.TYPE);
-            }
-            return ((Boolean) b.invoke(null, Long.valueOf(a))).booleanValue();
-        } catch (Exception e10) {
-            if (!(e10 instanceof InvocationTargetException)) {
-                Log.v("Trace", "Unable to call isTagEnabled via reflection", e10);
-                return false;
-            }
-            Throwable cause = e10.getCause();
-            if (cause instanceof RuntimeException) {
-                throw ((RuntimeException) cause);
-            }
-            throw new RuntimeException(cause);
-        }
+        yd.c targetUnit = yd.c.c;
+        kotlin.jvm.internal.j.e(targetUnit, "targetUnit");
+        long convert = targetUnit.a.convert(j3, unit.a);
+        long j10 = convert >= -4611686018427387903L ? 4611686018427387903L : -4611686018427387903L;
+        convert = j10;
+        return a(convert);
     }
 }

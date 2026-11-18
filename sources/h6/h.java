@@ -24,9 +24,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements f6.f {
     public static final j6.b k = new j6.b("RemoteMediaClient", null);
@@ -53,7 +53,7 @@ public final class h implements f6.f {
         m mVar2 = new m(this);
         this.d = mVar2;
         this.c = mVar;
-        mVar.h = new gc.b(this, 1);
+        mVar.h = new d6.i(this, 27);
         mVar.c = mVar2;
         this.e = new c(this);
     }
@@ -77,7 +77,7 @@ public final class h implements f6.f {
     public final long a() {
         long o4;
         synchronized (this.a) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             o4 = this.c.o();
         }
         return o4;
@@ -87,7 +87,7 @@ public final class h implements f6.f {
         int i7;
         synchronized (this.a) {
             try {
-                q6.m.d("Must be called from the main thread.");
+                q6.m.e("Must be called from the main thread.");
                 f6.q e10 = e();
                 i7 = e10 != null ? e10.f : 0;
             } catch (Throwable th2) {
@@ -98,7 +98,7 @@ public final class h implements f6.f {
     }
 
     public final f6.o c() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         if (e10 == null) {
             return null;
@@ -113,7 +113,7 @@ public final class h implements f6.f {
     public final MediaInfo d() {
         MediaInfo mediaInfo;
         synchronized (this.a) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             f6.q qVar = this.c.f;
             mediaInfo = qVar == null ? null : qVar.a;
         }
@@ -123,7 +123,7 @@ public final class h implements f6.f {
     public final f6.q e() {
         f6.q qVar;
         synchronized (this.a) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             qVar = this.c.f;
         }
         return qVar;
@@ -133,7 +133,7 @@ public final class h implements f6.f {
         int i7;
         synchronized (this.a) {
             try {
-                q6.m.d("Must be called from the main thread.");
+                q6.m.e("Must be called from the main thread.");
                 f6.q e10 = e();
                 i7 = e10 != null ? e10.e : 1;
             } catch (Throwable th2) {
@@ -146,7 +146,7 @@ public final class h implements f6.f {
     public final long g() {
         long j3;
         synchronized (this.a) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             f6.q qVar = this.c.f;
             MediaInfo mediaInfo = qVar == null ? null : qVar.a;
             j3 = mediaInfo != null ? mediaInfo.e : 0L;
@@ -155,35 +155,35 @@ public final class h implements f6.f {
     }
 
     public final boolean h() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (i()) {
             return true;
         }
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         return (e10 != null && e10.e == 5) || m() || l() || k();
     }
 
     public final boolean i() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         return e10 != null && e10.e == 4;
     }
 
     public final boolean j() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         MediaInfo d = d();
         return d != null && d.b == 2;
     }
 
     public final boolean k() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         return (e10 == null || e10.x == 0) ? false : true;
     }
 
     public final boolean l() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         if (e10 == null) {
             return false;
@@ -195,13 +195,13 @@ public final class h implements f6.f {
     }
 
     public final boolean m() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         return e10 != null && e10.e == 2;
     }
 
     public final boolean n() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         f6.q e10 = e();
         return e10 != null && e10.I;
     }
@@ -260,7 +260,7 @@ public final class h implements f6.f {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         f6.o[] oVarArr = new f6.o[jSONArray.length()];
                                         for (int i11 = 0; i11 < jSONArray.length(); i11++) {
-                                            oVarArr[i11] = new d6.i(jSONArray.getJSONObject(i11)).P();
+                                            oVarArr[i11] = new ob.c(jSONArray.getJSONObject(i11)).C();
                                         }
                                         Iterator it = ((h) mVar.h.b).i.iterator();
                                         while (it.hasNext()) {
@@ -335,13 +335,13 @@ public final class h implements f6.f {
                                                 case -1785516855:
                                                     if (string2.equals("UPDATE")) {
                                                         int[] m12 = j6.m.m(jSONObject.getJSONArray("itemIds"));
-                                                        q6.m.h(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
+                                                        q6.m.i(m12, "A list of item IDs is expected in a QUEUE UPDATE message.");
                                                         JSONArray optJSONArray = jSONObject.optJSONArray("reorderItemIds");
                                                         if (optJSONArray != null) {
                                                             ArrayList c11 = j6.a.c(m12);
                                                             int optInt2 = jSONObject.optInt("insertBefore", 0);
                                                             int[] m13 = j6.m.m(optJSONArray);
-                                                            q6.m.g(m13);
+                                                            q6.m.h(m13);
                                                             ArrayList c12 = j6.a.c(m13);
                                                             Iterator it7 = ((h) mVar.h.b).i.iterator();
                                                             while (it7.hasNext()) {
@@ -416,9 +416,9 @@ public final class h implements f6.f {
                                                 }
                                                 if ((i10 & 32) != 0) {
                                                     mVar.e = SystemClock.elapsedRealtime();
-                                                    gc.b bVar2 = mVar.h;
-                                                    if (bVar2 != null) {
-                                                        bVar2.G0();
+                                                    d6.i iVar = mVar.h;
+                                                    if (iVar != null) {
+                                                        iVar.I();
                                                     }
                                                 }
                                                 if ((i10 & 64) != 0) {
@@ -430,7 +430,7 @@ public final class h implements f6.f {
                                             qVar2.b(jSONObject2, 0);
                                             mVar.f = qVar2;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ns.L1;
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -473,7 +473,7 @@ public final class h implements f6.f {
                                             qVar22.b(jSONObject2, 0);
                                             mVar.f = qVar22;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ns.L1;
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -498,7 +498,7 @@ public final class h implements f6.f {
                                             qVar222.b(jSONObject2, 0);
                                             mVar.f = qVar222;
                                             mVar.e = SystemClock.elapsedRealtime();
-                                            i10 = ns.L1;
+                                            i10 = ks.L1;
                                             if ((i10 & 1) != 0) {
                                             }
                                             if ((i10 & 2) != 0) {
@@ -571,14 +571,14 @@ public final class h implements f6.f {
     }
 
     public final void p(g gVar) {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (gVar != null) {
             this.i.add(gVar);
         }
     }
 
     public final BasePendingResult q(f6.p pVar) {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (!w()) {
             return t();
         }
@@ -588,10 +588,10 @@ public final class h implements f6.f {
     }
 
     public final void r() {
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         int f10 = f();
         if (f10 == 4 || f10 == 2) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             if (w()) {
                 x(new i(this, 5));
                 return;
@@ -600,7 +600,7 @@ public final class h implements f6.f {
                 return;
             }
         }
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 6));
         } else {
@@ -632,7 +632,7 @@ public final class h implements f6.f {
         if (f0Var == null) {
             return;
         }
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         String str = this.c.b;
         e0 e0Var = (e0) f0Var;
         j6.a.b(str);
@@ -643,7 +643,7 @@ public final class h implements f6.f {
         b10.c = new a0(e0Var, str, this);
         b10.a = 8413;
         e0Var.e(1, b10.a());
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 0));
         } else {
@@ -660,7 +660,7 @@ public final class h implements f6.f {
         if (f0Var != null) {
             this.c.n();
             this.e.c();
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             String str = this.c.b;
             e0 e0Var2 = (e0) f0Var;
             if (TextUtils.isEmpty(str)) {

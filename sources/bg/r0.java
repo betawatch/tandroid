@@ -4,24 +4,29 @@ import android.graphics.Outline;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r0 extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
+    public final /* synthetic */ int a = 0;
+    public float b;
 
-    public r0(int i7, float f10) {
-        this.a = i7;
-        this.b = f10;
+    public r0(int i7) {
+        this.b = i7;
     }
 
     @Override // android.view.ViewOutlineProvider
     public final void getOutline(View view, Outline outline) {
-        int width = view.getWidth();
-        int i7 = this.a;
-        int height = view.getHeight() - i7;
-        float f10 = this.b;
-        int i10 = this.a;
-        outline.setRoundRect(i10, i10, width - i7, height, f10);
+        switch (this.a) {
+            case 0:
+                outline.setRoundRect(view.getPaddingLeft(), view.getPaddingTop(), view.getMeasuredWidth() - view.getPaddingRight(), view.getMeasuredHeight() - view.getPaddingBottom(), this.b);
+                break;
+            default:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), org.telegram.messenger.g0.N(this.b));
+                break;
+        }
+    }
+
+    public r0(float f10) {
+        this.b = f10;
     }
 }

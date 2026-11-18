@@ -12,9 +12,8 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import org.telegram.messenger.t0;
 import org.telegram.messenger.w7;
-import r.b;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class EncryptedFileDataSource extends c {
     private int bytesRemaining;
@@ -22,7 +21,7 @@ public final class EncryptedFileDataSource extends c {
     private boolean opened;
     private Uri uri;
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class EncryptedFileDataSourceException extends IOException {
         public EncryptedFileDataSourceException(Throwable th2) {
             super(th2);
@@ -64,7 +63,7 @@ public final class EncryptedFileDataSource extends c {
         File file = new File(mVar.a.getPath());
         String name = file.getName();
         Pattern pattern = w7.J;
-        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), b.v(name, ".key")));
+        EncryptedFileInputStream encryptedFileInputStream = new EncryptedFileInputStream(file, new File(t0.b.getCacheDir(), p5.c.v(name, ".key")));
         this.fileInputStream = encryptedFileInputStream;
         encryptedFileInputStream.skip(mVar.e);
         int length = (int) file.length();

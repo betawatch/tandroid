@@ -1,68 +1,57 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.ym0;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class i0 extends FrameLayout {
-    public final int a;
-    public final ImageView b;
-    public final ImageView c;
-    public final h0 d;
+public final class i0 extends ym0 {
+    public final /* synthetic */ int n0;
 
-    public i0(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i0(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(context, i6Var, z10);
+        this.n0 = i7;
+    }
+
+    @Override // org.telegram.ui.Components.ym0, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.n0) {
+            case 0:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 1:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            case 2:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+            default:
+                if (motionEvent.getAction() == 0) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                break;
+        }
+        return d(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i0(Context context) {
         super(context);
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        addView(imageView, c8.ja.d(24, 24.0f, 51, 17.0f, 12.0f, 0.0f, 0.0f));
-        h0 h0Var = new h0(0, context, null, true);
-        this.d = h0Var;
-        h0Var.setReportChanges(true);
-        h0Var.setDelegate(new hi.l0(this, 27));
-        h0Var.setImportantForAccessibility(2);
-        addView(h0Var, c8.ja.d(-1, 38.0f, 51, 54.0f, 5.0f, 54.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        addView(imageView2, c8.ja.d(24, 24.0f, 53, 0.0f, 12.0f, 17.0f, 0.0f));
-        imageView.setImageResource(R.drawable.msg_brightness_low);
-        imageView2.setImageResource(R.drawable.msg_brightness_high);
-        this.a = 48;
+        this.n0 = 1;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        int i7 = org.telegram.ui.ActionBar.j6.m6;
-        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-        org.telegram.ui.ActionBar.q6.s(this.b, i7, null, mode);
-        org.telegram.ui.ActionBar.q6.s(this.c, i7, null, mode);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        this.d.getSeekBarAccessibilityDelegate().e(this, accessibilityNodeInfo);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(this.a), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public final boolean performAccessibilityAction(int i7, Bundle bundle) {
-        return super.performAccessibilityAction(i7, bundle) || this.d.getSeekBarAccessibilityDelegate().g(this, i7, bundle);
-    }
-
-    public void setProgress(float f10) {
-        this.d.setProgress(f10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i0(Context context, w61 w61Var) {
+        super(context, w61Var, false);
+        this.n0 = 3;
     }
 }

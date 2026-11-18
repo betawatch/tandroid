@@ -15,9 +15,9 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.ui.ah0;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a0 {
     public static final a0 e;
@@ -32,9 +32,9 @@ public final class a0 {
 
     static {
         int i7 = 28;
-        a0 a0Var = new a0("roboto", "PhotoEditorTypefaceRoboto", new ji.j(new r2.j(17), i7));
+        a0 a0Var = new a0("roboto", "PhotoEditorTypefaceRoboto", new ji.j(new r0.f1(18), i7));
         e = a0Var;
-        f = Arrays.asList(a0Var, new a0("italic", "PhotoEditorTypefaceItalic", new ji.j(new r2.j(18), i7)), new a0("serif", "PhotoEditorTypefaceSerif", new ji.j(new r2.j(19), i7)), new a0("condensed", "PhotoEditorTypefaceCondensed", new ji.j(new r2.j(20), i7)), new a0("mono", "PhotoEditorTypefaceMono", new ji.j(new r2.j(21), i7)), new a0("mw_bold", "PhotoEditorTypefaceMerriweather", new ji.j(new r2.j(22), i7)));
+        f = Arrays.asList(a0Var, new a0("italic", "PhotoEditorTypefaceItalic", new ji.j(new r0.f1(19), i7)), new a0("serif", "PhotoEditorTypefaceSerif", new ji.j(new r0.f1(20), i7)), new a0("condensed", "PhotoEditorTypefaceCondensed", new ji.j(new r0.f1(21), i7)), new a0("mono", "PhotoEditorTypefaceMono", new ji.j(new r0.f1(22), i7)), new a0("mw_bold", "PhotoEditorTypefaceMerriweather", new ji.j(new r0.f1(23), i7)));
         g = Arrays.asList("Google Sans", "Dancing Script", "Carrois Gothic SC", "Cutive Mono", "Droid Sans Mono", "Coming Soon");
     }
 
@@ -192,7 +192,7 @@ public final class a0 {
                 }
             }
         }
-        org.telegram.messenger.g0.h3(new bg.e(1, arrayList));
+        org.telegram.messenger.g0.g3(new bg.e(1, arrayList));
     }
 
     public static List c() {
@@ -202,7 +202,7 @@ public final class a0 {
         }
         if (arrayList == null && !i) {
             i = true;
-            Utilities.i.c(new ah0(19));
+            Utilities.i.c(new cd0(22));
         }
         return f;
     }
@@ -229,6 +229,6 @@ public final class a0 {
         this.a = str;
         this.c = str;
         this.b = null;
-        this.d = new ji.j(new org.telegram.ui.ActionBar.z(font, 21), 28);
+        this.d = new ji.j(new org.telegram.ui.ActionBar.p(font, 22), 28);
     }
 }

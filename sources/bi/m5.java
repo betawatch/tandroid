@@ -1,37 +1,37 @@
 package bi;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.vv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m5 extends org.telegram.ui.ActionBar.z0 {
-    public final int W;
-    public long a0;
-    public k5 b0;
+public final /* synthetic */ class m5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public m5(int i7, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(0, context, e6Var, false, false);
-        this.W = i7;
-        setPadding(org.telegram.messenger.g0.L(18.0f), 0, org.telegram.messenger.g0.L(18.0f), 0);
-        int i10 = org.telegram.ui.ActionBar.j6.E8;
-        int i11 = org.telegram.ui.ActionBar.j6.F8;
-        c(i10, i11);
-        g(org.telegram.ui.ActionBar.j6.w0(i11, e6Var), PorterDuff.Mode.SRC_IN);
-        this.c.setTranslationX(org.telegram.messenger.g0.L(2.0f));
-        a(2);
-        setBackground(null);
-        this.c.addOnAttachStateChangeListener(new x1(this, 3));
+    public /* synthetic */ m5(ProfileActivity profileActivity, int i7) {
+        this.a = i7;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.z0, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        if (View.MeasureSpec.getMode(i7) == Integer.MIN_VALUE) {
-            size = org.telegram.messenger.g0.L(250.0f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.X4(true);
+                break;
+            case 1:
+                this.b.X4(true);
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                vv0 vv0Var = profileActivity.O;
+                if (vv0Var != null) {
+                    vv0Var.k1(14);
+                    profileActivity.X4(false);
+                    break;
+                }
+                break;
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), i10);
     }
 }

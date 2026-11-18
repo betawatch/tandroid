@@ -5,9 +5,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements OnSuccessListener, OnFailureListener, g6.h {
     public final /* synthetic */ s a;
@@ -17,15 +17,11 @@ public final /* synthetic */ class q implements OnSuccessListener, OnFailureList
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void a(g6.f fVar, boolean z10) {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void c(g6.f fVar, int i7) {
-    }
-
-    @Override // g6.h
-    public /* bridge */ /* synthetic */ void d(g6.f fVar, int i7) {
+    public /* bridge */ /* synthetic */ void b(g6.f fVar, int i7) {
     }
 
     @Override // g6.h
@@ -33,7 +29,11 @@ public final /* synthetic */ class q implements OnSuccessListener, OnFailureList
     }
 
     @Override // g6.h
-    public void f(g6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void f(g6.f fVar, int i7) {
+    }
+
+    @Override // g6.h
+    public void h(g6.f fVar, String str) {
         f6.k kVar;
         j6.b bVar = s.i;
         s sVar = this.a;
@@ -51,7 +51,7 @@ public final /* synthetic */ class q implements OnSuccessListener, OnFailureList
                     f6.r rVar = sVar.h;
                     if (rVar != null && (kVar = rVar.a) != null) {
                         h6.h.k.b("resume SessionState", new Object[0]);
-                        q6.m.d("Must be called from the main thread.");
+                        q6.m.e("Must be called from the main thread.");
                         if (a10.w()) {
                             h6.h.x(new h6.j(a10, kVar, i7));
                         } else {
@@ -65,7 +65,7 @@ public final /* synthetic */ class q implements OnSuccessListener, OnFailureList
     }
 
     @Override // g6.h
-    public void i(g6.f fVar, int i7) {
+    public void k(g6.f fVar, int i7) {
         j6.b bVar = s.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i7));
         s sVar = this.a;
@@ -87,7 +87,7 @@ public final /* synthetic */ class q implements OnSuccessListener, OnFailureList
                             m10.c();
                             k1.v((k1) m10.b, i11);
                             b10.e((k1) m10.a());
-                            x0Var.a.a((p1) b10.a(), ns.H3);
+                            x0Var.a.a((p1) b10.a(), ks.H3);
                             x0Var.i = false;
                             x0Var.g = null;
                             break;

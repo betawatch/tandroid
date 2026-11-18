@@ -1,9 +1,9 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w0 {
     public static final w0 d = new w0(1.0f, 1.0f);
@@ -20,8 +20,8 @@ public final class w0 {
     }
 
     public w0(float f10, float f11) {
-        ja.f(f10 > 0.0f);
-        ja.f(f11 > 0.0f);
+        la.f(f10 > 0.0f);
+        la.f(f11 > 0.0f);
         this.a = f10;
         this.b = f11;
         this.c = Math.round(f10 * 1000.0f);

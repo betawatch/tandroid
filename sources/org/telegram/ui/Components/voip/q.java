@@ -7,12 +7,12 @@ import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import c8.ja;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.hh0;
+import c8.ma;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.hn0;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class q extends FrameLayout {
     public final p a;
@@ -25,13 +25,13 @@ public final class q extends FrameLayout {
         setWillNotDraw(false);
         p pVar = new p(activity);
         this.a = pVar;
-        addView(pVar, ja.e(52, 52, 5));
+        addView(pVar, ma.e(52, 52, 5));
         TransitionSet transitionSet = new TransitionSet();
         this.b = transitionSet;
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
         transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) er.f);
+        transitionSet.setInterpolator((TimeInterpolator) lr.f);
     }
 
     public final void a(View.OnClickListener onClickListener, boolean z10) {
@@ -43,14 +43,14 @@ public final class q extends FrameLayout {
             TransitionManager.beginDelayedTransition(this, this.b);
         }
         p pVar = this.a;
-        pVar.w = ns.e4;
+        pVar.w = ks.e4;
         pVar.n = -1;
         pVar.s = 0;
         pVar.r = org.telegram.messenger.g0.L(8.0f);
         ViewGroup.LayoutParams layoutParams = pVar.getLayoutParams();
         layoutParams.width = -1;
         pVar.setLayoutParams(layoutParams);
-        org.telegram.messenger.g0.i3(new hh0(29, this, onClickListener), 500L);
+        org.telegram.messenger.g0.h3(new hn0(24, this, onClickListener), 500L);
     }
 
     public p getEndCloseView() {

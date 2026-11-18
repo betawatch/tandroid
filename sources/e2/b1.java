@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b1 {
     public static final String j;
@@ -36,8 +36,8 @@ public final class b1 {
     }
 
     public b1(Object obj, int i7, l0 l0Var, Object obj2, int i10, long j3, long j10, int i11, int i12) {
-        ja.f(i7 >= 0);
-        ja.f(i10 >= 0);
+        la.f(i7 >= 0);
+        la.f(i10 >= 0);
         this.a = obj;
         this.b = i7;
         this.c = l0Var;
@@ -116,12 +116,12 @@ public final class b1 {
         if (i7 == -1) {
             return str;
         }
-        StringBuilder m10 = r.b.m(str, ", contentPos=");
-        m10.append(this.g);
-        m10.append(", adGroup=");
-        m10.append(i7);
-        m10.append(", ad=");
-        m10.append(this.i);
-        return m10.toString();
+        StringBuilder n10 = p5.c.n(str, ", contentPos=");
+        n10.append(this.g);
+        n10.append(", adGroup=");
+        n10.append(i7);
+        n10.append(", ad=");
+        n10.append(this.i);
+        return n10.toString();
     }
 }

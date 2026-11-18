@@ -7,23 +7,23 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.SystemClock;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.m10;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.j10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o9;
-import org.telegram.ui.Components.t8;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h extends View {
     public final ImageReceiver a;
     public final ImageReceiver b;
-    public final t8 c;
-    public final o9 d;
-    public final o9 e;
+    public final b9 c;
+    public final w9 d;
+    public final w9 e;
     public final Paint f;
     public final Paint h;
     public float n;
@@ -36,43 +36,43 @@ public final class h extends View {
         super(context);
         this.a = new ImageReceiver(this);
         this.b = new ImageReceiver(this);
-        this.c = new t8((e6) null);
-        o9 o9Var = new o9(9);
-        this.d = o9Var;
-        o9 o9Var2 = new o9(12);
-        this.e = o9Var2;
+        this.c = new b9((i6) null);
+        w9 w9Var = new w9(9);
+        this.d = w9Var;
+        w9 w9Var2 = new w9(12);
+        this.e = w9Var2;
         Paint paint = new Paint(1);
         this.f = paint;
         Paint paint2 = new Paint();
         this.h = paint2;
         paint2.setColor(TLObject.FLAG_31);
-        paint.setColor(j6.x0(null, j6.hh, false));
-        o9Var.a = 48.0f;
-        o9Var.b = 58.999996f;
-        o9Var2.a = 51.0f;
-        o9Var2.b = 61.0f;
-        o9Var.b();
-        o9Var2.b();
+        paint.setColor(n6.x0(null, n6.hh, false));
+        w9Var.a = 48.0f;
+        w9Var.b = 58.999996f;
+        w9Var2.a = 51.0f;
+        w9Var2.b = 61.0f;
+        w9Var.b();
+        w9Var2.b();
     }
 
     public final void a(TLObject tLObject) {
-        gc gcVar;
-        gc a10;
-        t8 t8Var = this.c;
-        t8Var.p(tLObject);
-        this.a.i0(tLObject, t8Var, null);
+        fc fcVar;
+        fc a10;
+        b9 b9Var = this.c;
+        b9Var.p(tLObject);
+        this.a.i0(tLObject, b9Var, null);
         if (tLObject instanceof TLRPC.User) {
-            a10 = gc.l(m10.t0, 1, (TLRPC.User) tLObject);
+            a10 = fc.l(j10.t0, 1, (TLRPC.User) tLObject);
         } else {
             if (!(tLObject instanceof TLRPC.Chat)) {
-                gcVar = null;
-                this.b.q0(gcVar, "50_50_b", new ColorDrawable(j6.x0(null, j6.kh, false)), null, tLObject, 0);
+                fcVar = null;
+                this.b.q0(fcVar, "50_50_b", new ColorDrawable(n6.x0(null, n6.kh, false)), null, tLObject, 0);
                 invalidate();
             }
-            a10 = gc.a(1, (TLRPC.Chat) tLObject);
+            a10 = fc.a(1, (TLRPC.Chat) tLObject);
         }
-        gcVar = a10;
-        this.b.q0(gcVar, "50_50_b", new ColorDrawable(j6.x0(null, j6.kh, false)), null, tLObject, 0);
+        fcVar = a10;
+        this.b.q0(fcVar, "50_50_b", new ColorDrawable(n6.x0(null, n6.kh, false)), null, tLObject, 0);
         invalidate();
     }
 
@@ -113,11 +113,11 @@ public final class h extends View {
         float min3 = (height / 2.0f) - (Math.min(width, r7) * 0.04f);
         if (this.s > 0.01f) {
             float f15 = this.n;
-            o9 o9Var = this.e;
-            o9Var.e(f15, 1.0f);
+            w9 w9Var = this.e;
+            w9Var.e(f15, 1.0f);
             float f16 = this.n;
-            o9 o9Var2 = this.d;
-            o9Var2.e(f16, 1.0f);
+            w9 w9Var2 = this.d;
+            w9Var2.e(f16, 1.0f);
             float f17 = (((this.n * 0.8f) + 1.0f) * min2) / 100.0f;
             canvas.save();
             canvas.translate(f14, min3);
@@ -125,9 +125,9 @@ public final class h extends View {
             int i7 = (int) (this.s * 76.0f);
             Paint paint = this.f;
             paint.setAlpha(i7);
-            o9Var.a(0.0f, 0.0f, canvas, paint);
+            w9Var.a(0.0f, 0.0f, canvas, paint);
             paint.setAlpha((int) (this.s * 110.0f));
-            o9Var2.a(0.0f, 0.0f, canvas, paint);
+            w9Var2.a(0.0f, 0.0f, canvas, paint);
             canvas.restore();
         }
         float f18 = (this.n * 0.2f * this.s) + 1.0f;

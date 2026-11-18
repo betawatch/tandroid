@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends kd.j implements rd.l {
     public final /* synthetic */ int a;
@@ -50,7 +50,7 @@ public final class e extends kd.j implements rd.l {
                 int i7 = this.b;
                 gd.k kVar = gd.k.a;
                 if (i7 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     o1.d dVar = (o1.d) this.c;
                     this.b = 1;
                     SharedPreferences.Editor edit = ((SharedPreferences) dVar.e.getValue()).edit();
@@ -86,7 +86,7 @@ public final class e extends kd.j implements rd.l {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return kVar;
             default:
@@ -96,10 +96,10 @@ public final class e extends kd.j implements rd.l {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     return obj;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 x xVar = (x) this.c;
                 this.b = 1;
                 Object invoke = xVar.invoke(this);

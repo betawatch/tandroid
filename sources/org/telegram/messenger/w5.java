@@ -1,74 +1,69 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteCursor;
+import java.util.Locale;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z5 b;
+    public final /* synthetic */ a6 b;
+    public final /* synthetic */ fj c;
 
-    public /* synthetic */ w5(z5 z5Var, int i7) {
+    public /* synthetic */ w5(a6 a6Var, fj fjVar, int i7) {
         this.a = i7;
-        this.b = z5Var;
+        this.b = a6Var;
+        this.c = fjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                z5 z5Var = this.b;
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
+                a6 a6Var = this.b;
+                fj fjVar = this.c;
                 try {
-                    z5Var.getMessagesStorage().b.executeFast("DELETE FROM downloading_documents WHERE state = 1 AND rowid NOT IN (SELECT rowid FROM downloading_documents WHERE state = 1 ORDER BY date DESC LIMIT 100)").stepThis().dispose();
-                    SQLiteCursor queryFinalized = z5Var.getMessagesStorage().b.queryFinalized("SELECT data, state FROM downloading_documents ORDER BY date DESC", new Object[0]);
-                    while (queryFinalized.next()) {
-                        NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
-                        int intValue = queryFinalized.intValue(1);
-                        if (byteBufferValue != null) {
-                            TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                            if (TLdeserialize != null) {
-                                TLdeserialize.readAttachPath(byteBufferValue, m10.i(z5Var.currentAccount).n);
-                                gj gjVar = new gj(z5Var.currentAccount, TLdeserialize, false, false);
-                                arrayList3.add(gjVar);
-                                if (intValue == 0) {
-                                    arrayList.add(gjVar);
-                                } else {
-                                    arrayList2.add(gjVar);
-                                }
-                            }
-                            byteBufferValue.reuse();
-                        }
-                    }
-                    queryFinalized.dispose();
+                    Locale locale = Locale.ENGLISH;
+                    a6Var.getMessagesStorage().b.executeFast("UPDATE downloading_documents SET state = 1, date = " + System.currentTimeMillis() + " WHERE hash = " + fjVar.F0().dc_id + " AND id = " + fjVar.F0().id).stepThis().dispose();
+                    a6Var.getMessagesStorage().b.executeFast("DELETE FROM downloading_documents WHERE state = 1 AND rowid NOT IN (SELECT rowid FROM downloading_documents WHERE state = 1 ORDER BY date DESC LIMIT 100)").stepThis().dispose();
+                    break;
                 } catch (Exception e10) {
                     a8.g(e10, true);
+                    return;
                 }
-                z5Var.getFileLoader().l(arrayList);
-                z5Var.getFileLoader().l(arrayList2);
-                g0.h3(new mg(z5Var, arrayList, arrayList2, 18));
-                break;
             case 1:
-                z5 z5Var2 = this.b;
-                z5Var2.getNotificationCenter().b(z5Var2, ns.Z1);
-                z5Var2.getNotificationCenter().b(z5Var2, ns.Y1);
-                z5Var2.getNotificationCenter().b(z5Var2, ns.X1);
-                z5Var2.getNotificationCenter().b(z5Var2, ns.W1);
-                z5Var2.getNotificationCenter().b(z5Var2, ns.R1);
-                z5Var2.getNotificationCenter().b(z5Var2, ns.S1);
-                z5Var2.s(false);
-                break;
-            default:
+                a6 a6Var2 = this.b;
+                fj fjVar2 = this.c;
                 try {
-                    this.b.getMessagesStorage().b.executeFast("DELETE FROM downloading_documents WHERE state = 1").stepThis().dispose();
+                    NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(fjVar2.k.getObjectSize());
+                    fjVar2.k.serializeToStream(nativeByteBuffer);
+                    SQLitePreparedStatement executeFast = a6Var2.getMessagesStorage().b.executeFast("REPLACE INTO downloading_documents VALUES(?, ?, ?, ?, ?)");
+                    executeFast.bindByteBuffer(1, nativeByteBuffer);
+                    executeFast.bindInteger(2, fjVar2.F0().dc_id);
+                    executeFast.bindLong(3, fjVar2.F0().id);
+                    executeFast.bindInteger(4, 0);
+                    executeFast.bindLong(5, System.currentTimeMillis());
+                    executeFast.step();
+                    executeFast.dispose();
+                    nativeByteBuffer.reuse();
                     break;
                 } catch (Exception e11) {
                     a8.g(e11, true);
+                    return;
+                }
+            default:
+                a6 a6Var3 = this.b;
+                fj fjVar3 = this.c;
+                try {
+                    SQLitePreparedStatement executeFast2 = a6Var3.getMessagesStorage().b.executeFast("DELETE FROM downloading_documents WHERE hash = ? AND id = ?");
+                    executeFast2.bindInteger(1, fjVar3.F0().dc_id);
+                    executeFast2.bindLong(2, fjVar3.F0().id);
+                    executeFast2.step();
+                    executeFast2.dispose();
+                    break;
+                } catch (Exception e12) {
+                    a8.g(e12, true);
                 }
         }
     }

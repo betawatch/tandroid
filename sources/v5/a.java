@@ -1,12 +1,12 @@
 package v5;
 
 import a8.p0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
-    public static final a f = new a(ns.e3, 10485760, 604800000, 10000, 81920);
+    public static final a f = new a(ks.e3, 10485760, 604800000, 10000, 81920);
     public final long a;
     public final int b;
     public final int c;

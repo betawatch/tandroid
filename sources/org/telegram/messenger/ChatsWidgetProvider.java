@@ -15,7 +15,7 @@ import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ChatsWidgetProvider extends AppWidgetProvider {
     public static void a(Context context, AppWidgetManager appWidgetManager, int i7) {
@@ -35,12 +35,12 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
             int i13 = sharedPreferences.getInt("account" + i7, -1);
             if (i13 == -1) {
                 SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putInt(i5.c.i(i7, "account"), m10.t0);
+                edit.putInt(i5.c.i(i7, "account"), j10.t0);
                 edit.putInt(TeXSymbolParser.TYPE_ATTR + i7, 0).commit();
             }
             ArrayList arrayList = new ArrayList();
             if (i13 >= 0) {
-                vr.a0(c.a(i13).a).q0(i7, 0, arrayList, null, null, false);
+                tr.a0(c.a(i13).a).q0(i7, 0, arrayList, null, null, false);
             }
             if (i11 != 1 && arrayList.size() > 1) {
                 i12 = (i11 == 2 || arrayList.size() <= 2) ? R.layout.shortcut_widget_layout_2 : (i11 == 3 || arrayList.size() <= 3) ? R.layout.shortcut_widget_layout_3 : R.layout.shortcut_widget_layout_4;
@@ -73,8 +73,8 @@ public class ChatsWidgetProvider extends AppWidgetProvider {
         for (int i7 = 0; i7 < iArr.length; i7++) {
             int i10 = sharedPreferences.getInt("account" + iArr[i7], -1);
             if (i10 >= 0) {
-                vr a02 = vr.a0(c.a(i10).a);
-                a02.a.c(new tp(a02, iArr[i7], 1));
+                tr a02 = tr.a0(c.a(i10).a);
+                a02.a.c(new rp(a02, iArr[i7], 1));
             }
             edit.remove("account" + iArr[i7]);
             edit.remove(TeXSymbolParser.TYPE_ATTR + iArr[i7]);

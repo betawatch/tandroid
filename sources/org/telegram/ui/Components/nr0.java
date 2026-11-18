@@ -1,22 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface nr0 {
-    void J();
+public final class nr0 extends at0 {
+    public final /* synthetic */ gt0 h;
 
-    void W();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nr0(gt0 gt0Var, Context context) {
+        super(gt0Var, context);
+        this.h = gt0Var;
+    }
 
-    boolean Y();
-
-    uj0 f();
-
-    TLRPC.Chat g();
-
-    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
-
-    boolean t();
+    @Override // v4.i0
+    public final void f() {
+        super.f();
+        gt0 gt0Var = this.h;
+        bs0 g02 = gt0Var.g0(0);
+        if (g02 == null || g02.n.getVisibility() != 0) {
+            return;
+        }
+        gt0Var.L.f();
+    }
 }

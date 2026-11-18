@@ -1,41 +1,54 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class o6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ ai.k0 c;
-    public final /* synthetic */ long[] d;
-    public final /* synthetic */ p6 e;
+import android.content.Context;
 
-    public /* synthetic */ o6(boolean[] zArr, ai.k0 k0Var, long[] jArr, p6 p6Var, int i7) {
-        this.a = i7;
-        this.b = zArr;
-        this.c = k0Var;
-        this.d = jArr;
-        this.e = p6Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class o6 extends org.telegram.ui.ActionBar.x2 {
+    public static final /* synthetic */ int n1 = 0;
+    public final /* synthetic */ int m1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o6(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        super(i7, context, i6Var, z10);
+        this.m1 = 2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.x2
+    public boolean I() {
+        switch (this.m1) {
             case 0:
-                org.telegram.messenger.g0.h3(new o6(this.b, this.c, this.d, this.e, 1));
+                return false;
+            default:
+                return super.I();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2
+    public void s0() {
+        switch (this.m1) {
+            case 2:
+                super.s0();
+                try {
+                    int w02 = org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.h5, this.J0);
+                    if (this.H0 != w02) {
+                        P(w02);
+                        break;
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
                 break;
             default:
-                this.b[0] = true;
-                this.c.f(1.0f);
-                long[] jArr = this.d;
-                long j3 = jArr[0];
-                p6 p6Var = this.e;
-                if (j3 <= 0) {
-                    p6Var.dismiss();
-                    break;
-                } else {
-                    org.telegram.messenger.g0.i3(new fq0(p6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
-                    break;
-                }
+                super.s0();
+                break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o6(int i7, Context context, boolean z10) {
+        super(context, z10);
+        this.m1 = i7;
     }
 }

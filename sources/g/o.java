@@ -8,7 +8,7 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o extends p {
     public final /* synthetic */ int c = 0;
@@ -123,10 +123,10 @@ public final class o extends p {
     public final void k() {
         switch (this.c) {
             case 0:
-                this.d.d(true);
+                this.d.e(true);
                 break;
             default:
-                this.d.d(true);
+                this.d.e(true);
                 break;
         }
     }

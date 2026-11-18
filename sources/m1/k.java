@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k extends kd.j implements rd.l {
     public Object a;
@@ -65,7 +65,7 @@ public final class k extends kd.j implements rd.l {
         ab.c0 c0Var = this.r;
         b0 b0Var = this.n;
         if (i10 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             dVar = new ie.d();
             oVar = new kotlin.jvm.internal.o();
             rVar = new kotlin.jvm.internal.r();
@@ -88,13 +88,13 @@ public final class k extends kd.j implements rd.l {
                     }
                     i7 = this.f;
                     obj3 = this.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     return new c(obj3, i7, ((Number) obj).intValue());
                 }
                 Object obj4 = (ie.a) this.c;
                 rVar4 = (kotlin.jvm.internal.r) this.b;
                 oVar3 = (kotlin.jvm.internal.o) this.a;
-                af.b.c(obj);
+                b7.h.b(obj);
                 obj2 = obj4;
                 try {
                     oVar3.a = true;
@@ -124,7 +124,7 @@ public final class k extends kd.j implements rd.l {
             rVar3 = (kotlin.jvm.internal.r) this.c;
             oVar2 = (kotlin.jvm.internal.o) this.b;
             aVar = (ie.a) this.a;
-            af.b.c(obj);
+            b7.h.b(obj);
             while (it.hasNext()) {
                 rd.p pVar = (rd.p) it.next();
                 this.a = aVar;
@@ -173,7 +173,7 @@ public final class k extends kd.j implements rd.l {
         rVar2 = (kotlin.jvm.internal.r) this.c;
         oVar = (kotlin.jvm.internal.o) this.b;
         dVar = (ie.a) this.a;
-        af.b.c(obj);
+        b7.h.b(obj);
         rVar.a = ((c) obj).b;
         j jVar2 = new j(dVar, oVar, rVar2, b0Var);
         List list = (List) c0Var.d;

@@ -1,98 +1,32 @@
 package org.telegram.utils.twidget;
 
-import android.os.SystemClock;
-import java.nio.charset.StandardCharsets;
-import org.json.JSONObject;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class d0 {
-    public static final String[] m = {"t.me", "telegram.me", "telegram.dog"};
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
-    public int d;
-    public int e;
-    public boolean i;
-    public boolean j;
-    public int l;
-    public long f = -4611686018427387904L;
-    public long g = -4611686018427387904L;
-    public long h = -4611686018427387904L;
-    public final long[] k = new long[10];
+public abstract class d0 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public d0(JSONObject jSONObject) {
-        boolean z10 = false;
-        boolean z11 = (jSONObject == null || (jSONObject != null && jSONObject.optBoolean("preview")) || !jSONObject.optBoolean("canQuery")) ? false : true;
-        this.a = z11;
-        this.b = z11 && jSONObject.optBoolean("backgroundQuery");
-        if (z11 && jSONObject.has("wallet") && !jSONObject.isNull("wallet")) {
-            z10 = true;
-        }
-        this.c = z10;
+    public d0(int i7, int i10, int i11, int i12) {
+        this.a = i7;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
-    public final synchronized boolean a(boolean z10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z10) {
-            long[] jArr = this.k;
-            int i7 = this.l;
-            if (elapsedRealtime - jArr[i7] >= 1000) {
-                jArr[i7] = elapsedRealtime;
-                this.l = (i7 + 1) % jArr.length;
-                return true;
-            }
-        }
-        return false;
-    }
+    public abstract Canvas a();
 
-    public final boolean b(long j3) {
-        return this.e < this.d && j3 - this.f <= 10000;
-    }
+    public abstract void b();
 
-    public final synchronized boolean c(boolean z10) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (z10 && b(elapsedRealtime)) {
-            this.e = this.d;
-            return true;
-        }
-        return false;
-    }
+    public abstract void c(Canvas canvas, float f10);
 
-    public final synchronized boolean d(String str, boolean z10, boolean z11) {
-        try {
-            if (this.a && !this.i && str != null && str.getBytes(StandardCharsets.UTF_8).length <= 64 && (!z10 || this.c)) {
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (!z11 || !b(elapsedRealtime)) {
-                    if (this.b && !z10 && elapsedRealtime - this.g >= 1000) {
-                        this.g = elapsedRealtime;
-                    }
-                    return false;
-                }
-                this.e = this.d;
-                this.j = z10;
-                this.i = true;
-                return true;
-            }
-            return false;
-        } finally {
-        }
-    }
+    public abstract void d();
 
-    public final synchronized boolean e(String str, boolean z10) {
-        try {
-            if (this.c && !this.i && str != null && str.length() <= 262144 && z10) {
-                long elapsedRealtime = SystemClock.elapsedRealtime();
-                if (b(elapsedRealtime)) {
-                    this.e = this.d;
-                } else if (elapsedRealtime - this.h > 10000) {
-                    return false;
-                }
-                this.i = true;
-                return true;
-            }
-            return false;
-        } finally {
-        }
+    public abstract boolean e();
+
+    public void f() {
     }
 }

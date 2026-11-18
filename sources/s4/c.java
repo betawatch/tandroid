@@ -1,8 +1,8 @@
 package s4;
 
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -19,14 +19,14 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                v vVar = ((e) ((ld0) this.b.f).d).d;
+                v vVar = ((e) ((md0) this.b.f).d).d;
                 if (vVar != null) {
                     vVar.j(this.c);
                     break;
                 }
                 break;
             default:
-                v vVar2 = ((e) ((ld0) this.b.f).d).d;
+                v vVar2 = ((e) ((md0) this.b.f).d).d;
                 if (vVar2 != null) {
                     vVar2.k(this.c);
                     break;

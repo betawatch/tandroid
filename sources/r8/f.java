@@ -2,14 +2,14 @@ package r8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.r;
 import java.util.ArrayList;
 import java.util.List;
 import q4.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends r6.a implements r {
     public static final Parcelable.Creator<f> CREATOR = new x(13);
@@ -28,9 +28,9 @@ public final class f extends r6.a implements r {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.n(parcel, 1, this.a);
-        yb.l(parcel, 2, this.b);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.n(parcel, 1, this.a);
+        bc.l(parcel, 2, this.b);
+        bc.s(parcel, r10);
     }
 }

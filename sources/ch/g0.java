@@ -5,22 +5,22 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.view.View;
-import fi.u2;
+import fi.s2;
 import j$.util.Objects;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.si;
-import org.telegram.messenger.t5;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.u5;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.g5;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g0 {
     public final ImageReceiver a;
-    public g5 b;
+    public o5 b;
     public p0 e;
     public View f;
     public boolean g;
@@ -28,7 +28,7 @@ public final class g0 {
     public int j;
     public PorterDuffColorFilter k;
     public final Rect c = new Rect();
-    public final int d = m10.t0;
+    public final int d = j10.t0;
     public float h = 1.0f;
 
     public g0(View view) {
@@ -39,12 +39,12 @@ public final class g0 {
     }
 
     public final void a(Canvas canvas) {
-        g5 g5Var = this.b;
+        o5 o5Var = this.b;
         Rect rect = this.c;
-        if (g5Var != null) {
-            u2 u2Var = g5Var.k;
-            if (u2Var != null) {
-                u2Var.J0((int) (rect.width() * 0.1f));
+        if (o5Var != null) {
+            s2 s2Var = o5Var.k;
+            if (s2Var != null) {
+                s2Var.J0((int) (rect.width() * 0.1f));
             }
             this.b.setColorFilter(this.k);
             this.b.setBounds(rect);
@@ -67,17 +67,17 @@ public final class g0 {
         ImageReceiver imageReceiver = this.a;
         if (z10) {
             imageReceiver.P();
-            g5 g5Var = this.b;
-            if (g5Var != null) {
-                g5Var.a(this.f);
+            o5 o5Var = this.b;
+            if (o5Var != null) {
+                o5Var.a(this.f);
                 return;
             }
             return;
         }
         imageReceiver.R();
-        g5 g5Var2 = this.b;
-        if (g5Var2 != null) {
-            g5Var2.n(this.f);
+        o5 o5Var2 = this.b;
+        if (o5Var2 != null) {
+            o5Var2.n(this.f);
         }
     }
 
@@ -102,31 +102,31 @@ public final class g0 {
         }
         ImageReceiver imageReceiver = this.a;
         imageReceiver.f();
-        g5 g5Var = this.b;
-        if (g5Var != null) {
-            g5Var.n(this.f);
+        o5 o5Var = this.b;
+        if (o5Var != null) {
+            o5Var.n(this.f);
             this.b = null;
         }
         this.e = p0Var;
         boolean z10 = this.i;
         String str = z10 ? "60_60_firstframe" : "60_60";
         if (p0Var.f != null) {
-            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) si.b0(this.d).r.get(p0Var.f);
+            TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) ri.d0(this.d).r.get(p0Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.r0(gc.b(tL_availableReaction.select_animation), str, null, null, t5.f(tL_availableReaction.select_animation, j6.m6, 0.2f, null), 0L, "tgs", p0Var, 0);
+                imageReceiver.r0(fc.b(tL_availableReaction.select_animation), str, null, null, u5.f(tL_availableReaction.select_animation, n6.m6, 0.2f, null), 0L, "tgs", p0Var, 0);
                 return;
             }
             return;
         }
-        g5 g5Var2 = new g5(z10 ? 13 : 1, m10.t0, p0Var.g);
-        this.b = g5Var2;
+        o5 o5Var2 = new o5(z10 ? 13 : 1, j10.t0, p0Var.g);
+        this.b = o5Var2;
         if (this.g) {
-            g5Var2.a(this.f);
+            o5Var2.a(this.f);
         }
-        g5 g5Var3 = this.b;
+        o5 o5Var3 = this.b;
         this.j = -16777216;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP);
         this.k = porterDuffColorFilter;
-        g5Var3.setColorFilter(porterDuffColorFilter);
+        o5Var3.setColorFilter(porterDuffColorFilter);
     }
 }

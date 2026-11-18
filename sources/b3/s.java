@@ -1,9 +1,50 @@
 package b3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.net.Uri;
+import h2.l0;
+import j2.b0;
+import java.io.IOException;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class s {
-    public int a;
-    public int b;
-    public float c;
+public final class s implements m {
+    public final long a = x2.u.g.getAndIncrement();
+    public final j2.m b;
+    public final int c;
+    public final b0 d;
+    public final r e;
+    public volatile Object f;
+
+    public s(j2.h hVar, j2.m mVar, int i7, r rVar) {
+        this.d = new b0(hVar);
+        this.b = mVar;
+        this.c = i7;
+        this.e = rVar;
+    }
+
+    @Override // b3.m
+    public final void a() {
+        this.d.b = 0L;
+        j2.k kVar = new j2.k(this.d, this.b);
+        try {
+            kVar.a();
+            Uri uri = this.d.a.getUri();
+            uri.getClass();
+            this.f = this.e.t(uri, kVar);
+            try {
+                kVar.close();
+            } catch (IOException unused) {
+            }
+        } finally {
+            String str = l0.a;
+            try {
+                kVar.close();
+            } catch (IOException unused2) {
+            }
+        }
+    }
+
+    @Override // b3.m
+    public final void A() {
+    }
 }

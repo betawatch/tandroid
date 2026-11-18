@@ -1,95 +1,49 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class bc {
-    public static final bc E;
-    public static final bc F;
-    public static final bc G;
-    public static final bc H;
-    public static final bc I;
-    public static final bc J;
-    public static final /* synthetic */ bc[] K;
-    public static final bc e;
-    public static final bc f;
-    public static final bc h;
-    public static final bc n;
-    public static final bc r;
-    public static final bc s;
-    public static final bc w;
-    public static final bc x;
-    public static final bc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final ac d;
+public final class bc extends eb {
+    public final q9 a;
+    public final k80 b;
+    public final k80 c;
 
-    static {
-        ac acVar = ac.e;
-        bc bcVar = new bc("PHOTO", 0, "PhotoSavedHint", 2131747264, acVar);
-        e = bcVar;
-        bc bcVar2 = new bc("PHOTOS", 1, "PhotosSavedHint", acVar);
-        f = bcVar2;
-        bc bcVar3 = new bc("VIDEO", 2, "VideoSavedHint", 2131743585, acVar);
-        h = bcVar3;
-        bc bcVar4 = new bc("VIDEOS", 3, "VideosSavedHint", acVar);
-        n = bcVar4;
-        bc bcVar5 = new bc("LIVEPHOTO", 4, "LivePhotoSavedHint", 2131748834, acVar);
-        r = bcVar5;
-        bc bcVar6 = new bc("LIVEPHOTOS", 5, "LivePhotosSavedHint", acVar);
-        s = bcVar6;
-        bc bcVar7 = new bc("MEDIA", 6, "MediaSavedHint", acVar);
-        w = bcVar7;
-        ac acVar2 = ac.d;
-        bc bcVar8 = new bc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", 2131747263, acVar2);
-        x = bcVar8;
-        bc bcVar9 = new bc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", 2131743584, acVar2);
-        y = bcVar9;
-        bc bcVar10 = new bc("GIF", 9, "GifSavedHint", 2131750470, ac.h);
-        E = bcVar10;
-        bc bcVar11 = new bc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", 2131750469, acVar2);
-        F = bcVar11;
-        ac acVar3 = ac.f;
-        bc bcVar12 = new bc("AUDIO", 11, "AudioSavedHint", 2131753908, acVar3);
-        G = bcVar12;
-        bc bcVar13 = new bc("AUDIOS", 12, "AudiosSavedHint", acVar3);
-        H = bcVar13;
-        bc bcVar14 = new bc("UNKNOWN", 13, "FileSavedHintLinked", 2131750828, acVar2);
-        I = bcVar14;
-        bc bcVar15 = new bc("UNKNOWNS", 14, "FilesSavedHintLinked", acVar2);
-        J = bcVar15;
-        K = new bc[]{bcVar, bcVar2, bcVar3, bcVar4, bcVar5, bcVar6, bcVar7, bcVar8, bcVar9, bcVar10, bcVar11, bcVar12, bcVar13, bcVar14, bcVar15};
+    public bc(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
+        int i7 = org.telegram.ui.ActionBar.n6.yj;
+        getThemedColor(i7);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.n6.wj));
+        q9 q9Var = new q9(context);
+        this.a = q9Var;
+        addView(q9Var, c8.ma.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        getThemedColor(i7);
+        int i10 = org.telegram.ui.ActionBar.n6.xj;
+        getThemedColor(i10);
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ma.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        k80 k80Var = new k80(context, null);
+        this.b = k80Var;
+        k80Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.u6.U(k80Var, i7, i6Var);
+        k80Var.setTextSize(1, 14.0f);
+        k80Var.setTypeface(org.telegram.messenger.g0.o());
+        linearLayout.addView(k80Var);
+        k80 k80Var2 = new k80(context, null);
+        this.c = k80Var2;
+        k80Var2.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
+        org.telegram.ui.ActionBar.u6.U(k80Var2, i7, i6Var);
+        org.telegram.ui.ActionBar.u6.G(k80Var2, i10, i6Var);
+        k80Var2.setTypeface(Typeface.SANS_SERIF);
+        k80Var2.setTextSize(1, 13.0f);
+        linearLayout.addView(k80Var2);
     }
 
-    public bc(String str, int i7, String str2, int i10, ac acVar) {
-        this.a = str2;
-        this.b = i10;
-        this.d = acVar;
-        this.c = false;
-    }
-
-    public static bc valueOf(String str) {
-        return (bc) Enum.valueOf(bc.class, str);
-    }
-
-    public static bc[] values() {
-        return (bc[]) K.clone();
-    }
-
-    public bc(String str, int i7, String str2, ac acVar) {
-        this.a = str2;
-        this.d = acVar;
-        this.b = 0;
-        this.c = true;
+    @Override // org.telegram.ui.Components.lb
+    public CharSequence getAccessibilityText() {
+        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
     }
 }

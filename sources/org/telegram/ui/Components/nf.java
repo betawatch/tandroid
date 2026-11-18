@@ -1,15 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.widget.FrameLayout;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class nf extends org.telegram.messenger.gj {
-    @Override // org.telegram.messenger.gj
-    public final boolean P3() {
-        return true;
+public final /* synthetic */ class nf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+
+    public /* synthetic */ nf(int i7, FrameLayout frameLayout) {
+        this.a = i7;
+        this.b = frameLayout;
     }
 
-    @Override // org.telegram.messenger.gj
-    public final boolean o5() {
-        return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.E2(this.b);
+                break;
+            default:
+                org.telegram.messenger.g0.E2(this.b);
+                break;
+        }
     }
 }

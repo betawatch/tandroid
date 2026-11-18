@@ -6,17 +6,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileAttribute;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q {
-    public static m1.b0 a(m1.y0 y0Var, hi.l0 l0Var, ee.c cVar, rd.a aVar) {
+    public static m1.b0 a(m1.y0 y0Var, h9.g1 g1Var, ee.c cVar, rd.a aVar) {
         hd.n nVar = hd.n.a;
         id.c cVar2 = null;
         try {
             System.loadLibrary("datastore_shared_counter");
-            return new m1.b0(new m1.f0(y0Var, new m1.y(cVar, 1), aVar), c8.d0.a(new be.l(nVar, cVar2, 8)), l0Var, cVar);
+            return new m1.b0(new m1.f0(y0Var, new m1.y(cVar, 1), aVar), c8.f0.a(new be.l(nVar, cVar2, 8)), g1Var, cVar);
         } catch (SecurityException | UnsatisfiedLinkError unused) {
-            return new m1.b0(new m1.f0(y0Var, m1.e0.b, aVar), c8.d0.a(new be.l(nVar, cVar2, 8)), l0Var, cVar);
+            return new m1.b0(new m1.f0(y0Var, m1.e0.b, aVar), c8.f0.a(new be.l(nVar, cVar2, 8)), g1Var, cVar);
         }
     }
 

@@ -7,15 +7,15 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public abstract class r8 extends View {
     public static final /* synthetic */ int a = 0;
 
@@ -25,7 +25,7 @@ public abstract class r8 extends View {
             return;
         }
         try {
-            String string = np.s1(i7).f7.getString("story_privacy2", null);
+            String string = mp.u1(i7).h7.getString("story_privacy2", null);
             if (string == null) {
                 o8Var = new o8();
             } else {
@@ -42,8 +42,8 @@ public abstract class r8 extends View {
                         hashSet.addAll((ArrayList) it.next());
                     }
                     if (!hashSet.isEmpty()) {
-                        vr a02 = vr.a0(i7);
-                        a02.a.c(new ai.a1(a02, hashSet, i7, 16));
+                        tr a02 = tr.a0(i7);
+                        a02.a.c(new ai.a1(a02, hashSet, i7, 17));
                     }
                 }
             }
@@ -54,8 +54,8 @@ public abstract class r8 extends View {
         d7Var.E0 = o8Var;
         d7Var.F0.clear();
         d7Var.F0.addAll(d7Var.E0.b);
-        if (m10.i(i7).q()) {
-            d7Var.I0 = np.s1(i7).f7.getInt("story_period", 86400);
+        if (j10.i(i7).q()) {
+            d7Var.I0 = mp.u1(i7).h7.getInt("story_period", 86400);
         } else {
             d7Var.I0 = 86400;
         }

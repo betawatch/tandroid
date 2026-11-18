@@ -13,14 +13,14 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import bi.x1;
+import bi.r2;
 import java.util.WeakHashMap;
 import m.j2;
 import m.r1;
 import org.telegram.messenger.beta.R;
 import r0.i0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public w E;
@@ -40,7 +40,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View x;
     public View y;
     public final androidx.mediarouter.app.i r = new androidx.mediarouter.app.i(this, 2);
-    public final x1 s = new x1(this, 8);
+    public final r2 s = new r2(this, 8);
     public int J = 0;
 
     public c0(Context context, k kVar, View view, int i7, boolean z10) {
@@ -67,11 +67,14 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void d() {
-        this.H = false;
-        h hVar = this.d;
-        if (hVar != null) {
-            hVar.notifyDataSetChanged();
+    public final void d(k kVar, boolean z10) {
+        if (kVar != this.c) {
+            return;
+        }
+        dismiss();
+        w wVar = this.E;
+        if (wVar != null) {
+            wVar.d(kVar, z10);
         }
     }
 
@@ -83,14 +86,11 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void e(k kVar, boolean z10) {
-        if (kVar != this.c) {
-            return;
-        }
-        dismiss();
-        w wVar = this.E;
-        if (wVar != null) {
-            wVar.e(kVar, z10);
+    public final void e() {
+        this.H = false;
+        h hVar = this.d;
+        if (hVar != null) {
+            hVar.notifyDataSetChanged();
         }
     }
 
@@ -152,7 +152,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
                 r1Var.addHeaderView(frameLayout, null, false);
             }
         }
-        j2Var.o(hVar);
+        j2Var.p(hVar);
         j2Var.g();
     }
 
@@ -196,7 +196,7 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.c.c(false);
             j2 j2Var = this.n;
             int i10 = j2Var.f;
-            int n10 = j2Var.n();
+            int o4 = j2Var.o();
             int i11 = this.J;
             View view = this.x;
             WeakHashMap weakHashMap = i0.a;
@@ -205,12 +205,12 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             }
             if (!vVar.b()) {
                 if (vVar.e != null) {
-                    vVar.d(i10, n10, true, true);
+                    vVar.d(i10, o4, true, true);
                 }
             }
             w wVar2 = this.E;
             if (wVar2 != null) {
-                wVar2.y(d0Var);
+                wVar2.C(d0Var);
             }
             return true;
         }

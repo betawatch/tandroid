@@ -1,16 +1,15 @@
 package y2;
 
-import a8.ja;
-import c8.q0;
+import a8.la;
 import e2.s0;
 import e2.u;
 import f3.i0;
 import h2.x;
 import j2.b0;
 import sg.h0;
-import x2.a1;
+import x2.c1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends a {
     public final int F;
@@ -27,21 +26,21 @@ public final class j extends a {
         this.H = eVar;
     }
 
-    @Override // b3.l
-    public final void D() {
+    @Override // b3.m
+    public final void A() {
         this.J = true;
     }
 
-    @Override // b3.l
+    @Override // b3.m
     public final void a() {
         h0 h0Var = this.y;
         h0Var.getClass();
         if (this.I == 0) {
             long j3 = this.G;
-            for (a1 a1Var : (a1[]) h0Var.c) {
-                if (a1Var.H != j3) {
-                    a1Var.H = j3;
-                    a1Var.B = true;
+            for (c1 c1Var : (c1[]) h0Var.c) {
+                if (c1Var.H != j3) {
+                    c1Var.H = j3;
+                    c1Var.B = true;
                 }
             }
             e eVar = this.H;
@@ -57,7 +56,7 @@ public final class j extends a {
             while (!this.J) {
                 try {
                     int f10 = this.H.a.f(lVar, e.w);
-                    ja.p(f10 != 1);
+                    la.p(f10 != 1);
                     if (!(f10 == 0)) {
                         break;
                     }
@@ -78,10 +77,10 @@ public final class j extends a {
                     f11.c(i12 * j13, 0, 0, 0, null);
                 }
             }
-            q0.a(this.r);
+            c8.s0.a(this.r);
             this.K = !this.J;
         } catch (Throwable th2) {
-            q0.a(this.r);
+            c8.s0.a(this.r);
             throw th2;
         }
     }

@@ -4,16 +4,16 @@ import android.os.Build;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import c8.ja;
+import c8.i0;
+import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.w4;
-import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Components.uj0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.a5;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class a {
     public final q a;
@@ -34,7 +34,7 @@ public final class a {
 
     public a(q qVar, n nVar) {
         this.a = qVar;
-        qVar.a = new z(this, 19);
+        qVar.a = new org.telegram.ui.ActionBar.p(this, 20);
         qVar.d = new ti.b(g0.L(48.0f));
         ui.c cVar = new ui.c();
         this.b = cVar;
@@ -92,7 +92,7 @@ public final class a {
         int i13 = -c(i7);
         int i14 = (i7 + i11) - i13;
         int i15 = -c(i10);
-        g0.A3(viewGroup, 0, i13, 0, i15);
+        g0.z3(viewGroup, 0, i13, 0, i15);
         viewGroup.setPadding(0, i14, 0, (i10 + i12) - i15);
     }
 
@@ -111,10 +111,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ns.q2;
+        fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = j6.r1(ns.q2 / 255.0f, cVar.b);
+            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -124,10 +124,10 @@ public final class a {
         fVar.F = gVar2;
         fVar.w = true;
         fVar.invalidateSelf();
-        fVar.L = ns.n3;
+        fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = j6.r1(ns.n3 / 255.0f, cVar2.b);
+            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -153,10 +153,10 @@ public final class a {
         fVar.w = true;
         fVar.updateColors();
         fVar.invalidateSelf();
-        fVar.J = ns.q2;
+        fVar.J = ks.q2;
         ui.c cVar = fVar.H;
         if (cVar != null) {
-            fVar.I = j6.r1(ns.q2 / 255.0f, cVar.b);
+            fVar.I = n6.r1(ks.q2 / 255.0f, cVar.b);
         }
         fVar.w = true;
         fVar.invalidateSelf();
@@ -166,10 +166,10 @@ public final class a {
         fVar.F = gVar2;
         fVar.w = true;
         fVar.invalidateSelf();
-        fVar.L = ns.n3;
+        fVar.L = 210;
         ui.c cVar2 = fVar.H;
         if (cVar2 != null) {
-            fVar.K = j6.r1(ns.n3 / 255.0f, cVar2.b);
+            fVar.K = n6.r1(210 / 255.0f, cVar2.b);
         }
         fVar.x = true;
         fVar.invalidateSelf();
@@ -180,33 +180,33 @@ public final class a {
         return fVar;
     }
 
-    public final void f(FrameLayout frameLayout, uj0 uj0Var, View view, e6 e6Var) {
+    public final void f(FrameLayout frameLayout, ck0 ck0Var, View view, i6 i6Var) {
         this.m = frameLayout;
-        this.n = uj0Var;
-        uj0Var.setCaptureSectionsDecoratorAllowed(true);
-        this.o = new di.f(9, uj0Var, frameLayout);
-        this.a.b(uj0Var);
-        uj0Var.setClipToPadding(false);
-        g(frameLayout, view, e6Var);
+        this.n = ck0Var;
+        ck0Var.setCaptureSectionsDecoratorAllowed(true);
+        this.o = new di.f(9, ck0Var, frameLayout);
+        this.a.b(ck0Var);
+        ck0Var.setClipToPadding(false);
+        g(frameLayout, view, i6Var);
     }
 
-    public final void g(FrameLayout frameLayout, View view, e6 e6Var) {
+    public final void g(FrameLayout frameLayout, View view, i6 i6Var) {
         if (view == null) {
             return;
         }
         g0.E2(view);
-        frameLayout.addView(view, ja.e(-1, -2, 48));
-        boolean z10 = view instanceof w4;
+        frameLayout.addView(view, ma.e(-1, -2, 48));
+        boolean z10 = view instanceof a5;
         dh.c cVar = this.c;
         if (z10) {
-            w4 w4Var = (w4) view;
-            w4Var.setExtraHeight(g0.L(6.0f));
-            gh.e l10 = c8.g0.l(e6Var);
-            w4Var.M = cVar;
-            w4Var.N = l10;
-            w4Var.p();
-            w4Var.o0 = this.d;
-            w4Var.p0 = this.e;
+            a5 a5Var = (a5) view;
+            a5Var.setExtraHeight(g0.L(6.0f));
+            gh.e m10 = i0.m(i6Var);
+            a5Var.M = cVar;
+            a5Var.N = m10;
+            a5Var.r();
+            a5Var.o0 = this.d;
+            a5Var.p0 = this.e;
             return;
         }
         if (view instanceof org.telegram.ui.ActionBar.k) {
@@ -215,7 +215,7 @@ public final class a {
             kVar.setCenterTitleAndGlass(true);
             kVar.setExtraHeight(g0.L(6.0f));
             kVar.U0 = true;
-            kVar.P(cVar, c8.g0.l(e6Var), false);
+            kVar.Q(cVar, i0.m(i6Var), false);
         }
     }
 }

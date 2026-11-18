@@ -1,38 +1,37 @@
 package i5;
 
 import ab.c0;
-import c8.mb;
+import c8.pb;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff F;
-    public static final /* synthetic */ ff G;
-    public static final /* synthetic */ ff H;
-    public static final /* synthetic */ ff I;
-    public static final /* synthetic */ ff J;
-    public static final /* synthetic */ ff K;
-    public static final /* synthetic */ ff L;
-    public static final /* synthetic */ ff M;
-    public static final /* synthetic */ ff N;
-    public static final /* synthetic */ ff O;
-    public static final /* synthetic */ ff P;
-    public static final /* synthetic */ ff Q;
-    public static final /* synthetic */ ff R;
-    public static final /* synthetic */ ff S;
-    public static final /* synthetic */ ff T;
-    public static final /* synthetic */ ff U;
-    public static final /* synthetic */ ff V;
-    public static final /* synthetic */ ff W;
-    public static final /* synthetic */ ff X;
-    public static final /* synthetic */ ff Y;
-    public static final /* synthetic */ ff Z;
-    public static final /* synthetic */ ff a0;
-    public static final /* synthetic */ ff b0;
-    public static final /* synthetic */ ff c0;
+    public static final /* synthetic */ ze.b F;
+    public static final /* synthetic */ ze.b G;
+    public static final /* synthetic */ ze.b H;
+    public static final /* synthetic */ ze.b I;
+    public static final /* synthetic */ ze.b J;
+    public static final /* synthetic */ ze.b K;
+    public static final /* synthetic */ ze.b L;
+    public static final /* synthetic */ ze.b M;
+    public static final /* synthetic */ ze.b N;
+    public static final /* synthetic */ ze.b O;
+    public static final /* synthetic */ ze.b P;
+    public static final /* synthetic */ ze.b Q;
+    public static final /* synthetic */ ze.b R;
+    public static final /* synthetic */ ze.b S;
+    public static final /* synthetic */ ze.b T;
+    public static final /* synthetic */ ze.b U;
+    public static final /* synthetic */ ze.b V;
+    public static final /* synthetic */ ze.b W;
+    public static final /* synthetic */ ze.b X;
+    public static final /* synthetic */ ze.b Y;
+    public static final /* synthetic */ ze.b Z;
+    public static final /* synthetic */ ze.b a0;
+    public static final /* synthetic */ ze.b b0;
+    public static final /* synthetic */ ze.b c0;
     public double E;
     public Date e;
     public Date f;
@@ -82,8 +81,8 @@ public final class z extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = mb.b(h5.b.j(byteBuffer));
-            this.f = mb.b(h5.b.j(byteBuffer));
+            this.e = pb.b(h5.b.j(byteBuffer));
+            this.f = pb.b(h5.b.j(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             h5.b.i(byteBuffer);
             long j3 = byteBuffer.getLong();
@@ -92,8 +91,8 @@ public final class z extends com.googlecode.mp4parser.c {
                 throw new RuntimeException("The tracks duration is bigger than Long.MAX_VALUE");
             }
         } else {
-            this.e = mb.b(h5.b.i(byteBuffer));
-            this.f = mb.b(h5.b.i(byteBuffer));
+            this.e = pb.b(h5.b.i(byteBuffer));
+            this.f = pb.b(h5.b.i(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             h5.b.i(byteBuffer);
             this.n = h5.b.i(byteBuffer);
@@ -116,14 +115,14 @@ public final class z extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.b(c10);
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(mb.a(this.e));
-            byteBuffer.putLong(mb.a(this.f));
+            byteBuffer.putLong(pb.a(this.e));
+            byteBuffer.putLong(pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) mb.a(this.e));
-            byteBuffer.putInt((int) mb.a(this.f));
+            byteBuffer.putInt((int) pb.a(this.e));
+            byteBuffer.putInt((int) pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) 0);
             byteBuffer.putInt((int) this.n);
@@ -150,33 +149,33 @@ public final class z extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("TrackHeaderBox[creationTime=");
-        c.u(ze.a.b(F, this, this));
+        c.w(ze.a.b(F, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        c.u(ze.a.b(G, this, this));
+        c.w(ze.a.b(G, this, this));
         sb2.append(this.f);
         sb2.append(";trackId=");
-        c.u(ze.a.b(H, this, this));
+        c.w(ze.a.b(H, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        c.u(ze.a.b(I, this, this));
+        c.w(ze.a.b(I, this, this));
         sb2.append(this.n);
         sb2.append(";layer=");
-        c.u(ze.a.b(J, this, this));
+        c.w(ze.a.b(J, this, this));
         sb2.append(this.r);
         sb2.append(";alternateGroup=");
-        c.u(ze.a.b(K, this, this));
+        c.w(ze.a.b(K, this, this));
         sb2.append(this.s);
         sb2.append(";volume=");
-        c.u(ze.a.b(L, this, this));
+        c.w(ze.a.b(L, this, this));
         sb2.append(this.w);
         sb2.append(";matrix=");
         sb2.append(this.x);
         sb2.append(";width=");
-        c.u(ze.a.b(M, this, this));
+        c.w(ze.a.b(M, this, this));
         sb2.append(this.y);
         sb2.append(";height=");
-        c.u(ze.a.b(N, this, this));
+        c.w(ze.a.b(N, this, this));
         sb2.append(this.E);
         sb2.append("]");
         return sb2.toString();

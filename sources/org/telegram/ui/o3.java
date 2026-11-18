@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class o3 {
     public TextPaint a;
@@ -35,15 +35,15 @@ public final class o3 {
     public final SparseArray z = new SparseArray();
     public final SparseArray A = new SparseArray();
 
-    public static void a(n50 n50Var, SparseArray sparseArray) {
+    public static void a(p50 p50Var, SparseArray sparseArray) {
         for (int i7 = 0; i7 < sparseArray.size(); i7++) {
             int keyAt = sparseArray.keyAt(i7);
             TextPaint textPaint = (TextPaint) sparseArray.valueAt(i7);
             if (textPaint != null) {
                 if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.G6, false));
+                    textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.G6, false));
                 } else {
-                    textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.J6, false));
+                    textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.J6, false));
                 }
             }
         }

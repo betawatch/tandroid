@@ -1,20 +1,30 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c31 extends sw0 {
-    public final /* synthetic */ k31 H;
+public final /* synthetic */ class c31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o31 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c31(k31 k31Var, k31 k31Var2, Context context) {
-        super(context, k31Var2);
-        this.H = k31Var;
+    public /* synthetic */ c31(o31 o31Var, int i7) {
+        this.a = i7;
+        this.b = o31Var;
     }
 
-    @Override // v4.h0
-    public final void f() {
-        this.H.c.g3.O(true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        o31 o31Var = this.b;
+        switch (i7) {
+            case 0:
+                org.telegram.messenger.mp.u1(o31Var.currentAccount).l0(null);
+                break;
+            case 1:
+                vf.c.t(o31Var.getParentActivity(), org.telegram.messenger.gd.M0(2131752143, null));
+                break;
+            default:
+                o31Var.c.g3.O(true);
+                break;
+        }
     }
 }

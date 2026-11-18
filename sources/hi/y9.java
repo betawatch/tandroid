@@ -1,22 +1,6 @@
 package hi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class y9 implements m2 {
-    public final /* synthetic */ sa a;
-
-    public y9(sa saVar) {
-        this.a = saVar;
-    }
-
-    @Override // hi.m2
-    public final void setInvert(float f10) {
-        sa saVar = this.a;
-        org.telegram.messenger.g0.o3(saVar.n, f10 > 0.5f);
-        org.telegram.messenger.g0.r3(saVar.n, f10 > 0.5f);
-    }
-
-    @Override // hi.m2
-    public final void invalidate() {
-    }
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class y9 extends ug.l0 {
 }

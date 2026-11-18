@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l8 implements Runnable {
     public final /* synthetic */ int a;
@@ -22,14 +22,14 @@ public final /* synthetic */ class l8 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ez sendMessagesHelper = this.b.getSendMessagesHelper();
+                zy sendMessagesHelper = this.b.getSendMessagesHelper();
                 Object[] objArr = this.d;
-                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (qy) objArr[4], ((Boolean) objArr[5]).booleanValue());
+                sendMessagesHelper.P(this.c, (ArrayList) objArr[1], (ArrayList) objArr[2], null, (ly) objArr[4], ((Boolean) objArr[5]).booleanValue());
                 break;
             default:
-                ez sendMessagesHelper2 = this.b.getSendMessagesHelper();
+                zy sendMessagesHelper2 = this.b.getSendMessagesHelper();
                 Object[] objArr2 = this.d;
-                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (qy) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
+                sendMessagesHelper2.P(this.c, (ArrayList) objArr2[1], (ArrayList) objArr2[2], null, (ly) objArr2[4], ((Boolean) objArr2[5]).booleanValue());
                 break;
         }
     }

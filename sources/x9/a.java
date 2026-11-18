@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import tg.z1;
 import u9.o;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final b c = new b();
@@ -16,7 +16,7 @@ public final class a {
 
     public a(o oVar) {
         this.a = oVar;
-        oVar.a(new z1(this, 15));
+        oVar.a(new z1(this, 16));
     }
 
     public final b a(String str) {
@@ -35,10 +35,10 @@ public final class a {
     }
 
     public final void d(String str, long j3, p1 p1Var) {
-        String k10 = r.b.k("Deferring native open session: ", str);
+        String k10 = p5.c.k("Deferring native open session: ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", k10, null);
         }
-        this.a.a(new h(str, j3, p1Var, 11));
+        this.a.a(new h(str, j3, p1Var, 12));
     }
 }

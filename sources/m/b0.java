@@ -9,7 +9,7 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
@@ -21,7 +21,7 @@ public abstract class b0 {
             Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
             ClipData clipData = dragEvent.getClipData();
             if (Build.VERSION.SDK_INT >= 31) {
-                dVar = new m2.i(clipData, 3);
+                dVar = new m2.h(clipData, 3);
             } else {
                 r0.e eVar = new r0.e();
                 eVar.b = clipData;
@@ -42,7 +42,7 @@ public abstract class b0 {
         activity.requestDragAndDropPermissions(dragEvent);
         ClipData clipData = dragEvent.getClipData();
         if (Build.VERSION.SDK_INT >= 31) {
-            dVar = new m2.i(clipData, 3);
+            dVar = new m2.h(clipData, 3);
         } else {
             r0.e eVar = new r0.e();
             eVar.b = clipData;

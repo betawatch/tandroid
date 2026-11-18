@@ -34,7 +34,9 @@ import com.google.android.gms.tasks.Tasks;
 import gb.h1;
 import gb.i1;
 import gb.u0;
-import h9.s1;
+import h9.g1;
+import h9.t1;
+import hi.u5;
 import j$.util.DesugarCollections;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.File;
@@ -57,11 +59,11 @@ import l.a0;
 import org.json.JSONObject;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import r0.k1;
 import r0.l0;
+import r0.l1;
 import s4.t0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListener, ib.b, g9.k, i6.a, j6.n {
     public final /* synthetic */ int a;
@@ -74,7 +76,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         this.b = obj2;
     }
 
-    public static String g(q qVar) {
+    public static String h(q qVar) {
         Collection<String> collection = (Collection) qVar.c;
         StringBuilder sb2 = new StringBuilder("com.google.android.gms.cast.CATEGORY_CAST");
         String str = (String) qVar.b;
@@ -126,109 +128,10 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         return sb2.toString();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0061  */
-    @Override // ce.c
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public Object G(ce.d dVar, kd.c cVar) {
-        ce.i iVar;
-        jd.a aVar;
-        int i7;
-        Throwable th2;
-        de.h hVar;
-        q qVar;
-        ce.d dVar2;
-        ce.c cVar2;
-        switch (this.a) {
-            case 10:
-                if (cVar instanceof ce.i) {
-                    iVar = (ce.i) cVar;
-                    int i10 = iVar.b;
-                    if ((i10 & TLObject.FLAG_31) != 0) {
-                        iVar.b = i10 - TLObject.FLAG_31;
-                        Object obj = iVar.a;
-                        aVar = jd.a.a;
-                        i7 = iVar.b;
-                        if (i7 != 0) {
-                            af.b.c(obj);
-                            de.h hVar2 = new de.h(dVar, iVar.getContext());
-                            try {
-                                m1.m mVar = (m1.m) this.b;
-                                iVar.d = this;
-                                iVar.e = dVar;
-                                iVar.f = hVar2;
-                                iVar.b = 1;
-                                if (mVar.invoke(hVar2, iVar) == aVar) {
-                                    return aVar;
-                                }
-                                qVar = this;
-                                dVar2 = dVar;
-                                hVar = hVar2;
-                            } catch (Throwable th3) {
-                                th2 = th3;
-                                hVar = hVar2;
-                                hVar.releaseIntercepted();
-                                throw th2;
-                            }
-                        } else {
-                            if (i7 != 1) {
-                                if (i7 != 2) {
-                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                                }
-                                af.b.c(obj);
-                                return gd.k.a;
-                            }
-                            hVar = iVar.f;
-                            dVar2 = iVar.e;
-                            qVar = iVar.d;
-                            try {
-                                af.b.c(obj);
-                            } catch (Throwable th4) {
-                                th2 = th4;
-                                hVar.releaseIntercepted();
-                                throw th2;
-                            }
-                        }
-                        hVar.releaseIntercepted();
-                        cVar2 = (ce.c) qVar.c;
-                        iVar.d = null;
-                        iVar.e = null;
-                        iVar.f = null;
-                        iVar.b = 2;
-                        if (cVar2.G(dVar2, iVar) == aVar) {
-                            return aVar;
-                        }
-                        return gd.k.a;
-                    }
-                }
-                iVar = new ce.i(this, cVar);
-                Object obj2 = iVar.a;
-                aVar = jd.a.a;
-                i7 = iVar.b;
-                if (i7 != 0) {
-                }
-                hVar.releaseIntercepted();
-                cVar2 = (ce.c) qVar.c;
-                iVar.d = null;
-                iVar.e = null;
-                iVar.f = null;
-                iVar.b = 2;
-                if (cVar2.G(dVar2, iVar) == aVar) {
-                }
-                return gd.k.a;
-            default:
-                Object G = ((wf.b) this.b).G(new ce.o(new kotlin.jvm.internal.o(), dVar, (ka.b) this.c), cVar);
-                return G == jd.a.a ? G : gd.k.a;
-        }
-    }
-
     @Override // r0.m
-    public k1 M0(View view, k1 k1Var) {
+    public l1 P0(View view, l1 l1Var) {
         c5.l lVar = (c5.l) this.c;
-        k1 g10 = i0.g(view, k1Var);
+        l1 g10 = i0.g(view, l1Var);
         if (g10.a.n()) {
             return g10;
         }
@@ -239,7 +142,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         rect.bottom = g10.a();
         int childCount = lVar.getChildCount();
         for (int i7 = 0; i7 < childCount; i7++) {
-            k1 b10 = i0.b(lVar.getChildAt(i7), g10);
+            l1 b10 = i0.b(lVar.getChildAt(i7), g10);
             rect.left = Math.min(b10.b(), rect.left);
             rect.top = Math.min(b10.d(), rect.top);
             rect.right = Math.min(b10.c(), rect.right);
@@ -253,7 +156,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         synchronized (((AtomicBoolean) this.c)) {
             if (!((AtomicBoolean) this.c).get()) {
                 try {
-                    b10 = ((di.o) this.b).b();
+                    b10 = ((ci.v) this.b).b();
                 } catch (ClassNotFoundException unused) {
                     ((AtomicBoolean) this.c).set(true);
                 } catch (Exception e10) {
@@ -274,7 +177,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
 
     @Override // g9.k, l5.e
     public Object apply(Object obj) {
-        return ((g9.k) ((ob.c) this.b).b).apply(obj);
+        return ((g9.k) ((g1) this.b).b).apply(obj);
     }
 
     public synchronized Map b() {
@@ -374,21 +277,21 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         mediaSession.setPlaybackState(wVar.x);
     }
 
+    @Override // j6.n
+    public void g(String str, long j3, long j10, long j11) {
+        j6.n nVar = (j6.n) this.b;
+        if (nVar != null) {
+            nVar.g(str, j3, j10, j11);
+        }
+    }
+
     @Override // fd.a
     public Object get() {
         return new u0((h1) ((ib.c) this.b).get(), (i1) ((ib.c) this.c).get());
     }
 
     @Override // j6.n
-    public void h(String str, long j3, long j10, long j11) {
-        j6.n nVar = (j6.n) this.b;
-        if (nVar != null) {
-            nVar.h(str, j3, j10, j11);
-        }
-    }
-
-    @Override // j6.n
-    public void k(String str, long j3, int i7, Object obj, long j10, long j11) {
+    public void j(String str, long j3, int i7, Object obj, long j10, long j11) {
         int i10;
         j6.m mVar = (j6.m) this.c;
         if (((j6.n) this.b) != null) {
@@ -404,7 +307,7 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
             } else {
                 i10 = i7;
             }
-            ((j6.n) this.b).k(str, j3, i10, obj, j10, j11);
+            ((j6.n) this.b).j(str, j3, i10, obj, j10, j11);
         }
     }
 
@@ -452,19 +355,19 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                 return Tasks.forResult(null);
             default:
                 ia.c cVar = (ia.c) this.c;
-                JSONObject jSONObject = (JSONObject) ((ba.e) this.b).c.a.submit(new aa.s(this, 3)).get();
+                JSONObject jSONObject = (JSONObject) ((ba.e) this.b).c.a.submit(new aa.s(this, 2)).get();
                 FileWriter fileWriter2 = null;
                 if (jSONObject != null) {
-                    ia.b S = ((ia.d) cVar.c).S(jSONObject);
-                    hi.l0 l0Var = (hi.l0) cVar.e;
-                    long j3 = S.c;
-                    l0Var.getClass();
+                    ia.b s5 = ((u5) cVar.c).s(jSONObject);
+                    g1 g1Var = (g1) cVar.e;
+                    long j3 = s5.c;
+                    g1Var.getClass();
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", "Writing settings to cache file...", null);
                     }
                     try {
                         jSONObject.put("expires_at", j3);
-                        fileWriter = new FileWriter((File) l0Var.b);
+                        fileWriter = new FileWriter((File) g1Var.b);
                         try {
                             try {
                                 fileWriter.write(jSONObject.toString());
@@ -480,12 +383,12 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                             Log.e("FirebaseCrashlytics", "Failed to cache settings", e);
                             aa.g.b(fileWriter, "Failed to close settings writer.");
                             ia.c.d("Loaded settings: ", jSONObject);
-                            String str = (String) ((ia.f) cVar.b).f;
+                            String str = (String) ((ia.e) cVar.b).f;
                             SharedPreferences.Editor edit = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
                             edit.putString("existing_instance_identifier", str);
                             edit.apply();
-                            ((AtomicReference) cVar.h).set(S);
-                            ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(S);
+                            ((AtomicReference) cVar.h).set(s5);
+                            ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(s5);
                             return Tasks.forResult(null);
                         }
                     } catch (Exception e11) {
@@ -498,19 +401,118 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
                     }
                     aa.g.b(fileWriter, "Failed to close settings writer.");
                     ia.c.d("Loaded settings: ", jSONObject);
-                    String str2 = (String) ((ia.f) cVar.b).f;
+                    String str2 = (String) ((ia.e) cVar.b).f;
                     SharedPreferences.Editor edit2 = ((Context) cVar.a).getSharedPreferences("com.google.firebase.crashlytics", 0).edit();
                     edit2.putString("existing_instance_identifier", str2);
                     edit2.apply();
-                    ((AtomicReference) cVar.h).set(S);
-                    ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(S);
+                    ((AtomicReference) cVar.h).set(s5);
+                    ((TaskCompletionSource) ((AtomicReference) cVar.i).get()).trySetResult(s5);
                 }
                 return Tasks.forResult(null);
         }
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:28:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0061  */
+    @Override // ce.c
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Object v(ce.d dVar, kd.c cVar) {
+        ce.i iVar;
+        jd.a aVar;
+        int i7;
+        Throwable th2;
+        de.h hVar;
+        q qVar;
+        ce.d dVar2;
+        ce.c cVar2;
+        switch (this.a) {
+            case 10:
+                if (cVar instanceof ce.i) {
+                    iVar = (ce.i) cVar;
+                    int i10 = iVar.b;
+                    if ((i10 & TLObject.FLAG_31) != 0) {
+                        iVar.b = i10 - TLObject.FLAG_31;
+                        Object obj = iVar.a;
+                        aVar = jd.a.a;
+                        i7 = iVar.b;
+                        if (i7 != 0) {
+                            b7.h.b(obj);
+                            de.h hVar2 = new de.h(dVar, iVar.getContext());
+                            try {
+                                m1.m mVar = (m1.m) this.b;
+                                iVar.d = this;
+                                iVar.e = dVar;
+                                iVar.f = hVar2;
+                                iVar.b = 1;
+                                if (mVar.invoke(hVar2, iVar) == aVar) {
+                                    return aVar;
+                                }
+                                qVar = this;
+                                dVar2 = dVar;
+                                hVar = hVar2;
+                            } catch (Throwable th3) {
+                                th2 = th3;
+                                hVar = hVar2;
+                                hVar.releaseIntercepted();
+                                throw th2;
+                            }
+                        } else {
+                            if (i7 != 1) {
+                                if (i7 != 2) {
+                                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                                }
+                                b7.h.b(obj);
+                                return gd.k.a;
+                            }
+                            hVar = iVar.f;
+                            dVar2 = iVar.e;
+                            qVar = iVar.d;
+                            try {
+                                b7.h.b(obj);
+                            } catch (Throwable th4) {
+                                th2 = th4;
+                                hVar.releaseIntercepted();
+                                throw th2;
+                            }
+                        }
+                        hVar.releaseIntercepted();
+                        cVar2 = (ce.c) qVar.c;
+                        iVar.d = null;
+                        iVar.e = null;
+                        iVar.f = null;
+                        iVar.b = 2;
+                        if (cVar2.v(dVar2, iVar) == aVar) {
+                            return aVar;
+                        }
+                        return gd.k.a;
+                    }
+                }
+                iVar = new ce.i(this, cVar);
+                Object obj2 = iVar.a;
+                aVar = jd.a.a;
+                i7 = iVar.b;
+                if (i7 != 0) {
+                }
+                hVar.releaseIntercepted();
+                cVar2 = (ce.c) qVar.c;
+                iVar.d = null;
+                iVar.e = null;
+                iVar.f = null;
+                iVar.b = 2;
+                if (cVar2.v(dVar2, iVar) == aVar) {
+                }
+                return gd.k.a;
+            default:
+                Object v = ((wf.b) this.b).v(new ce.o(new kotlin.jvm.internal.o(), dVar, (ka.b) this.c), cVar);
+                return v == jd.a.a ? v : gd.k.a;
+        }
+    }
+
     @Override // i6.a
-    public void x(Bitmap bitmap) {
+    public void v0(Bitmap bitmap) {
         wf.b bVar = (wf.b) this.b;
         bVar.c = bitmap;
         i6.f fVar = (i6.f) this.c;
@@ -643,9 +645,9 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         throw new IllegalArgumentException("tag must not be null or empty");
     }
 
-    public q(s1 s1Var, int[] iArr) {
+    public q(t1 t1Var, int[] iArr) {
         this.a = 25;
-        this.b = h9.i0.q(s1Var);
+        this.b = h9.i0.q(t1Var);
         this.c = iArr;
     }
 
@@ -655,9 +657,9 @@ public final class q implements SuccessContinuation, r0.m, ce.c, OnCompleteListe
         this.b = new Rect();
     }
 
-    public q(di.o oVar) {
+    public q(ci.v vVar) {
         this.a = 18;
-        this.b = oVar;
+        this.b = vVar;
         this.c = new AtomicBoolean(false);
     }
 }

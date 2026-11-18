@@ -1,7 +1,6 @@
 package be;
 
-import aa.b0;
-import c8.v0;
+import c8.x0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -10,9 +9,10 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import zd.b0;
 import zd.c2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class c implements g {
     public static final /* synthetic */ AtomicLongFieldUpdater b = AtomicLongFieldUpdater.newUpdater(c.class, "sendersAndCloseStatus$volatile");
@@ -123,7 +123,7 @@ public class c implements g {
     }
 
     public static final void d(c cVar, Object obj, zd.m mVar) {
-        mVar.resumeWith(af.b.b(cVar.o()));
+        mVar.resumeWith(b7.h.a(cVar.o()));
     }
 
     public static final int e(c cVar, k kVar, int i7, Object obj, long j3, Object obj2, boolean z10) {
@@ -151,8 +151,8 @@ public class c implements g {
                 kVar.o(i7, e.i);
                 return 0;
             }
-            b0 b0Var = e.k;
-            if (kVar.f.getAndSet((i7 * 2) + 1, b0Var) == b0Var) {
+            ee.t tVar = e.k;
+            if (kVar.f.getAndSet((i7 * 2) + 1, tVar) == tVar) {
                 return 5;
             }
             kVar.m(i7, true);
@@ -175,7 +175,7 @@ public class c implements g {
         }
         zd.l lVar = (zd.l) obj;
         k kVar = e.a;
-        b0 d2 = lVar.d(gd.k.a, null);
+        ee.t d2 = lVar.d(gd.k.a, null);
         if (d2 == null) {
             return false;
         }
@@ -206,8 +206,8 @@ public class c implements g {
                 }
             } else {
                 if (l10 != e.e) {
-                    b0 b0Var = e.k;
-                    if (l10 == b0Var) {
+                    ee.t tVar = e.k;
+                    if (l10 == tVar) {
                         kVar.n(i7, null);
                         return 5;
                     }
@@ -228,7 +228,7 @@ public class c implements g {
                         kVar.o(i7, e.i);
                         return 0;
                     }
-                    if (kVar.f.getAndSet((i7 * 2) + 1, b0Var) != b0Var) {
+                    if (kVar.f.getAndSet((i7 * 2) + 1, tVar) != tVar) {
                         kVar.m(i7, true);
                     }
                     return 5;
@@ -361,7 +361,7 @@ public class c implements g {
             if (e10 != 2) {
                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c;
                 if (e10 == 3) {
-                    zd.m l10 = zd.b0.l(v0.b(cVar));
+                    zd.m l10 = b0.l(x0.b(cVar));
                     Object obj3 = obj;
                     try {
                         int e11 = e(cVar3, kVar2, i12, obj3, j3, l10, false);
@@ -595,7 +595,7 @@ public class c implements g {
     */
     public final boolean g(Throwable th2, boolean z10) {
         c cVar;
-        b0 b0Var;
+        ee.t tVar;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         boolean z11;
         long j3;
@@ -613,14 +613,14 @@ public class c implements g {
                     cVar = this;
                 }
             } while (!atomicLongFieldUpdater.compareAndSet(cVar, j13, (j13 & 1152921504606846975L) + (1 << 60)));
-            b0Var = e.s;
+            tVar = e.s;
             while (true) {
                 atomicReferenceFieldUpdater = r;
-                if (!atomicReferenceFieldUpdater.compareAndSet(this, b0Var, th2)) {
+                if (!atomicReferenceFieldUpdater.compareAndSet(this, tVar, th2)) {
                     z11 = true;
                     break;
                 }
-                if (atomicReferenceFieldUpdater.get(this) != b0Var) {
+                if (atomicReferenceFieldUpdater.get(this) != tVar) {
                     z11 = false;
                     break;
                 }
@@ -650,8 +650,8 @@ public class c implements g {
                 loop3: while (true) {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = s;
                     obj = atomicReferenceFieldUpdater2.get(this);
-                    b0 b0Var2 = obj == null ? e.q : e.r;
-                    while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, b0Var2)) {
+                    ee.t tVar2 = obj == null ? e.q : e.r;
+                    while (!atomicReferenceFieldUpdater2.compareAndSet(this, obj, tVar2)) {
                         if (atomicReferenceFieldUpdater2.get(this) != obj) {
                             break;
                         }
@@ -666,10 +666,10 @@ public class c implements g {
             return z11;
         }
         cVar = this;
-        b0Var = e.s;
+        tVar = e.s;
         while (true) {
             atomicReferenceFieldUpdater = r;
-            if (!atomicReferenceFieldUpdater.compareAndSet(this, b0Var, th2)) {
+            if (!atomicReferenceFieldUpdater.compareAndSet(this, tVar, th2)) {
             }
         }
         if (z10) {
@@ -704,14 +704,14 @@ public class c implements g {
             bVar.getClass();
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ee.b.a;
             Object obj3 = atomicReferenceFieldUpdater.get(bVar);
-            b0 b0Var = ee.a.a;
+            ee.t tVar = ee.a.a;
             obj = null;
-            if (obj3 == b0Var) {
+            if (obj3 == tVar) {
                 break;
             }
             ee.b bVar2 = (ee.b) obj3;
             if (bVar2 == null) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(bVar, null, b0Var)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(bVar, null, tVar)) {
                     if (atomicReferenceFieldUpdater.get(bVar) != null) {
                         break;
                     }
@@ -1142,11 +1142,11 @@ public class c implements g {
                                 }
                             } else if (l11 != e.e && l11 != null) {
                                 if (!(l11 instanceof c2) && !(l11 instanceof v)) {
-                                    b0 b0Var = e.g;
-                                    if (l11 == b0Var || l11 == e.f) {
+                                    ee.t tVar = e.g;
+                                    if (l11 == tVar || l11 == e.f) {
                                         break loop0;
                                     }
-                                    if (l11 != b0Var) {
+                                    if (l11 != tVar) {
                                         break;
                                     }
                                 } else {
@@ -1338,16 +1338,16 @@ public class c implements g {
     }
 
     public final Object v(id.c cVar, Object obj) {
-        zd.m mVar = new zd.m(1, v0.b(cVar));
+        zd.m mVar = new zd.m(1, x0.b(cVar));
         mVar.s();
-        mVar.resumeWith(af.b.b(o()));
+        mVar.resumeWith(b7.h.a(o()));
         Object r10 = mVar.r();
         return r10 == jd.a.a ? r10 : gd.k.a;
     }
 
     public final void w(c2 c2Var, boolean z10) {
         if (c2Var instanceof zd.l) {
-            ((id.c) c2Var).resumeWith(af.b.b(z10 ? n() : o()));
+            ((id.c) c2Var).resumeWith(b7.h.a(z10 ? n() : o()));
             return;
         }
         if (!(c2Var instanceof b)) {
@@ -1362,7 +1362,7 @@ public class c implements g {
         if (m10 == null) {
             mVar.resumeWith(Boolean.FALSE);
         } else {
-            mVar.resumeWith(af.b.b(m10));
+            mVar.resumeWith(b7.h.a(m10));
         }
     }
 
@@ -1373,7 +1373,7 @@ public class c implements g {
             }
             zd.l lVar = (zd.l) obj;
             k kVar = e.a;
-            b0 d2 = lVar.d(obj2, null);
+            ee.t d2 = lVar.d(obj2, null);
             if (d2 == null) {
                 return false;
             }
@@ -1387,7 +1387,7 @@ public class c implements g {
         bVar.a = obj2;
         Boolean bool = Boolean.TRUE;
         k kVar2 = e.a;
-        b0 d10 = mVar.d(bool, null);
+        ee.t d10 = mVar.d(bool, null);
         if (d10 == null) {
             return false;
         }
@@ -1433,8 +1433,8 @@ public class c implements g {
                     }
                 }
             } else if (l11 != e.d) {
-                b0 b0Var = e.j;
-                if (l11 == b0Var) {
+                ee.t tVar = e.j;
+                if (l11 == tVar) {
                     return e.o;
                 }
                 if (l11 == e.h) {
@@ -1456,7 +1456,7 @@ public class c implements g {
                         kVar.n(i7, null);
                         return obj3;
                     }
-                    kVar.o(i7, b0Var);
+                    kVar.o(i7, tVar);
                     kVar.i();
                     if (z10) {
                         k();

@@ -3,8 +3,8 @@ package f6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.a1;
-import c8.yb;
+import c8.bc;
+import c8.c1;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,7 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends r6.a {
     public static final Parcelable.Creator<n> CREATOR = new v(13);
@@ -74,7 +74,7 @@ public final class n extends r6.a {
             if (mVar != null) {
                 jSONObject.put("containerMetadata", mVar.b());
             }
-            String b10 = a1.b(Integer.valueOf(this.f));
+            String b10 = c1.b(Integer.valueOf(this.f));
             if (b10 != null) {
                 jSONObject.put("repeatMode", b10);
             }
@@ -107,7 +107,7 @@ public final class n extends r6.a {
             return false;
         }
         n nVar = (n) obj;
-        return TextUtils.equals(this.a, nVar.a) && TextUtils.equals(this.b, nVar.b) && this.c == nVar.c && TextUtils.equals(this.d, nVar.d) && q6.m.k(this.e, nVar.e) && this.f == nVar.f && q6.m.k(this.h, nVar.h) && this.n == nVar.n && this.r == nVar.r && this.s == nVar.s;
+        return TextUtils.equals(this.a, nVar.a) && TextUtils.equals(this.b, nVar.b) && this.c == nVar.c && TextUtils.equals(this.d, nVar.d) && q6.m.l(this.e, nVar.e) && this.f == nVar.f && q6.m.l(this.h, nVar.h) && this.n == nVar.n && this.r == nVar.r && this.s == nVar.s;
     }
 
     public final int hashCode() {
@@ -116,28 +116,28 @@ public final class n extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.l(parcel, 2, this.a);
-        yb.l(parcel, 3, this.b);
+        int r10 = bc.r(parcel, 20293);
+        bc.l(parcel, 2, this.a);
+        bc.l(parcel, 3, this.b);
         int i10 = this.c;
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(i10);
-        yb.l(parcel, 5, this.d);
-        yb.k(parcel, 6, this.e, i7);
+        bc.l(parcel, 5, this.d);
+        bc.k(parcel, 6, this.e, i7);
         int i11 = this.f;
-        yb.q(parcel, 7, 4);
+        bc.q(parcel, 7, 4);
         parcel.writeInt(i11);
         List list = this.h;
-        yb.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
+        bc.p(parcel, 8, list == null ? null : DesugarCollections.unmodifiableList(list));
         int i12 = this.n;
-        yb.q(parcel, 9, 4);
+        bc.q(parcel, 9, 4);
         parcel.writeInt(i12);
         long j3 = this.r;
-        yb.q(parcel, 10, 8);
+        bc.q(parcel, 10, 8);
         parcel.writeLong(j3);
         boolean z10 = this.s;
-        yb.q(parcel, 11, 4);
+        bc.q(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

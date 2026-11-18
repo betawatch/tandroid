@@ -1,109 +1,176 @@
 package bg;
 
-import android.text.Editable;
-import android.text.Html;
-import java.util.ArrayDeque;
-import org.xml.sax.Attributes;
-import org.xml.sax.ContentHandler;
-import org.xml.sax.Locator;
-import org.xml.sax.XMLReader;
+import android.hardware.GeomagneticField;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.location.Location;
+import android.os.SystemClock;
+import android.view.WindowManager;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ca0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class m implements Html.TagHandler, ContentHandler {
-    public final pb.b a;
-    public ContentHandler b;
-    public Editable c;
-    public final ArrayDeque d = new ArrayDeque();
+public final class m implements SensorEventListener {
+    public float E;
+    public boolean F;
+    public float G;
+    public boolean H;
+    public long I;
+    public final ca0 a;
+    public SensorManager b;
+    public Sensor c;
+    public Sensor d;
+    public Sensor e;
+    public boolean f;
+    public final float[] h = new float[9];
+    public final float[] n = new float[9];
+    public final float[] r = new float[4];
+    public final float[] s = new float[3];
+    public final float[] w = new float[3];
+    public boolean x;
+    public float y;
 
-    public m(pb.b bVar) {
-        this.a = bVar;
+    public m(ca0 ca0Var) {
+        this.a = ca0Var;
     }
 
-    public static String a(String str, Attributes attributes) {
-        int length = attributes.getLength();
-        for (int i7 = 0; i7 < length; i7++) {
-            if (str.equals(attributes.getLocalName(i7))) {
-                return attributes.getValue(i7);
-            }
-        }
-        return null;
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void characters(char[] cArr, int i7, int i10) {
-        this.b.characters(cArr, i7, i10);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void endDocument() {
-        this.b.endDocument();
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void endElement(String str, String str2, String str3) {
-        if (!((Boolean) this.d.removeLast()).booleanValue()) {
-            this.b.endElement(str, str2, str3);
-        }
-        Editable editable = this.c;
-        this.a.getClass();
-        pb.b.G0(false, str2, editable, null);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void endPrefixMapping(String str) {
-        this.b.endPrefixMapping(str);
-    }
-
-    @Override // android.text.Html.TagHandler
-    public final void handleTag(boolean z10, String str, Editable editable, XMLReader xMLReader) {
-        if (this.b == null) {
-            this.c = editable;
-            this.b = xMLReader.getContentHandler();
-            xMLReader.setContentHandler(this);
-            this.d.addLast(Boolean.FALSE);
-        }
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void ignorableWhitespace(char[] cArr, int i7, int i10) {
-        this.b.ignorableWhitespace(cArr, i7, i10);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void processingInstruction(String str, String str2) {
-        this.b.processingInstruction(str, str2);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void setDocumentLocator(Locator locator) {
-        this.b.setDocumentLocator(locator);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void skippedEntity(String str) {
-        this.b.skippedEntity(str);
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void startDocument() {
-        this.b.startDocument();
-    }
-
-    @Override // org.xml.sax.ContentHandler
-    public final void startElement(String str, String str2, String str3, Attributes attributes) {
-        Editable editable = this.c;
-        this.a.getClass();
-        boolean G0 = pb.b.G0(true, str2, editable, attributes);
-        this.d.addLast(Boolean.valueOf(G0));
-        if (G0) {
+    public final void a(Location location) {
+        if (location == null) {
             return;
         }
-        this.b.startElement(str, str2, str3, attributes);
+        try {
+            this.y = new GeomagneticField((float) location.getLatitude(), (float) location.getLongitude(), (float) location.getAltitude(), System.currentTimeMillis()).getDeclination();
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
     }
 
-    @Override // org.xml.sax.ContentHandler
-    public final void startPrefixMapping(String str, String str2) {
-        this.b.startPrefixMapping(str, str2);
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x009f  */
+    /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x0091  */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        int i7;
+        int i10;
+        int i11;
+        WindowManager windowManager;
+        if (!this.f) {
+            return;
+        }
+        if (sensorEvent.sensor.getType() == 11) {
+            try {
+                float[] fArr = sensorEvent.values;
+                if (fArr.length > 4) {
+                    System.arraycopy(fArr, 0, this.r, 0, 4);
+                    SensorManager.getRotationMatrixFromVector(this.h, this.r);
+                } else {
+                    SensorManager.getRotationMatrixFromVector(this.h, fArr);
+                }
+            } catch (Exception unused) {
+                return;
+            }
+        } else if (sensorEvent.sensor.getType() == 1) {
+            System.arraycopy(sensorEvent.values, 0, this.s, 0, 3);
+            this.x = true;
+            return;
+        } else {
+            if (sensorEvent.sensor.getType() != 2) {
+                return;
+            }
+            System.arraycopy(sensorEvent.values, 0, this.w, 0, 3);
+            if (!this.x || !SensorManager.getRotationMatrix(this.h, null, this.s, this.w)) {
+                return;
+            }
+        }
+        try {
+            windowManager = (WindowManager) org.telegram.messenger.t0.b.getSystemService("window");
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
+        if (windowManager != null && windowManager.getDefaultDisplay() != null) {
+            i7 = windowManager.getDefaultDisplay().getRotation();
+            i10 = ks.N1;
+            if (i7 == 1) {
+                i11 = ks.O1;
+                if (i7 != 2) {
+                    if (i7 != 3) {
+                        i11 = 2;
+                        i10 = 1;
+                    } else {
+                        i10 = 130;
+                        i11 = 1;
+                    }
+                }
+            } else {
+                i11 = 129;
+                i10 = 2;
+            }
+            if (SensorManager.remapCoordinateSystem(this.h, i10, i11, this.n)) {
+                return;
+            }
+            float[] fArr2 = this.n;
+            float f10 = fArr2[1] - fArr2[2];
+            float f11 = fArr2[4] - fArr2[5];
+            if (f10 == 0.0f && f11 == 0.0f) {
+                return;
+            }
+            float degrees = (((float) Math.toDegrees(Math.atan2(f10, f11))) + this.y) % 360.0f;
+            if (degrees < 0.0f) {
+                degrees += 360.0f;
+            }
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            if (this.F) {
+                float exp = 1.0f - ((float) Math.exp((-(this.I == 0 ? 0.02f : Math.min(0.25f, (elapsedRealtime - r9) / 1000.0f))) / 0.12f));
+                float f12 = this.E;
+                float f13 = (degrees - f12) % 360.0f;
+                if (f13 > 180.0f) {
+                    f13 -= 360.0f;
+                } else if (f13 <= -180.0f) {
+                    f13 += 360.0f;
+                }
+                float f14 = ((f13 * exp) + f12) % 360.0f;
+                if (f14 < 0.0f) {
+                    f14 += 360.0f;
+                }
+                this.E = f14;
+            } else {
+                this.E = degrees;
+                this.F = true;
+            }
+            this.I = elapsedRealtime;
+            if (this.H) {
+                float f15 = (this.E - this.G) % 360.0f;
+                if (f15 > 180.0f) {
+                    f15 -= 360.0f;
+                } else if (f15 <= -180.0f) {
+                    f15 += 360.0f;
+                }
+                if (Math.abs(f15) < 0.3f) {
+                    return;
+                }
+            }
+            this.G = this.E;
+            this.H = true;
+            this.a.b.Q0(false);
+            return;
+        }
+        i7 = 0;
+        i10 = ks.N1;
+        if (i7 == 1) {
+        }
+        if (SensorManager.remapCoordinateSystem(this.h, i10, i11, this.n)) {
+        }
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i7) {
     }
 }

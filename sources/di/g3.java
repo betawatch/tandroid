@@ -1,53 +1,53 @@
 package di;
 
-import android.text.TextUtils;
-import org.telegram.messenger.z10;
+import android.os.Bundle;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g3 implements z10 {
+public final /* synthetic */ class g3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c6 b;
-    public final /* synthetic */ vf.b c;
-    public final /* synthetic */ wg.c1 d;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ g3(c6 c6Var, vf.b bVar, wg.c1 c1Var, int i7) {
+    public /* synthetic */ g3(long j3, int i7) {
         this.a = i7;
-        this.b = c6Var;
-        this.c = bVar;
-        this.d = c1Var;
+        this.b = j3;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        String str = (String) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.c.b();
-                c6 c6Var = this.b;
-                wg.c1 c1Var = this.d;
-                if (str == null) {
-                    if (c1Var != null) {
-                        c1Var.dismiss();
-                    }
-                    c6Var.dismiss();
-                    org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                    if (T instanceof org.telegram.ui.Wallet.y5) {
-                        ((org.telegram.ui.Wallet.y5) T).P0();
-                        break;
-                    }
-                } else {
-                    (c1Var != null ? new org.telegram.ui.Components.cc(c1Var.c, c6Var.J0) : c6Var.k()).e0(str, false);
+                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
+                if (T != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", this.b);
+                    bundle.putBoolean("my_profile", true);
+                    bundle.putBoolean("open_gifts", true);
+                    T.presentFragment(new ProfileActivity(bundle, null));
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.h2 T2 = LaunchActivity.T();
+                if (T2 != null) {
+                    T2.presentFragment(bn.ua(this.b));
+                    break;
+                }
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.h2 T3 = LaunchActivity.T();
+                if (T3 != null) {
+                    T3.presentFragment(bn.ua(this.b));
                     break;
                 }
                 break;
             default:
-                this.c.c(false);
-                if (!TextUtils.isEmpty(str)) {
-                    c6 c6Var2 = this.b;
-                    wg.c1 c1Var2 = this.d;
-                    (c1Var2 != null ? new org.telegram.ui.Components.cc(c1Var2.c, c6Var2.J0) : c6Var2.k()).e0(str, false);
+                org.telegram.ui.ActionBar.h2 T4 = LaunchActivity.T();
+                if (T4 != null) {
+                    T4.presentFragment(bn.ua(this.b));
                     break;
                 }
                 break;

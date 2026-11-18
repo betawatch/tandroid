@@ -15,23 +15,23 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
-    private z10 doneCallback;
+    private x10 doneCallback;
     private Exception exception;
     private File file;
     private long max_size = -1;
     private String overrideExt;
-    private z10 progressCallback;
+    private x10 progressCallback;
 
-    public HttpGetFileTask(z10 z10Var, z10 z10Var2) {
-        this.doneCallback = z10Var;
-        this.progressCallback = z10Var2;
+    public HttpGetFileTask(x10 x10Var, x10 x10Var2) {
+        this.doneCallback = x10Var;
+        this.progressCallback = x10Var2;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -64,8 +64,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
         r18.file.delete();
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x019e A[LOOP:0: B:2:0x0008->B:36:0x019e, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x01aa A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x019d A[LOOP:0: B:2:0x0008->B:36:0x019d, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x01a9 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r0v34 */
     /* JADX WARN: Type inference failed for: r0v36 */
     /* JADX WARN: Type inference failed for: r0v37 */
@@ -174,7 +174,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                         if (str2 == null) {
                             str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                         }
-                        this.file = d7.w(m10.t0, str2);
+                        this.file = d7.w(j10.t0, str2);
                     }
                     try {
                         bufferedInputStream = new BufferedInputStream(errorStream, TLObject.FLAG_14);
@@ -189,7 +189,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         r19 = obj;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                org.telegram.messenger.g0.h3(new org.telegram.ui.ActionBar.r0(this, 27));
+                                                org.telegram.messenger.g0.g3(new z0(this, 0));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -217,7 +217,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                 if (contentLengthLong > 0) {
                                                     float l10 = Utilities.l(j3 / contentLengthLong);
                                                     if (this.progressCallback != null) {
-                                                        org.telegram.messenger.g0.h3(new org.telegram.ui.a0(this, l10, 3));
+                                                        org.telegram.messenger.g0.g3(new org.telegram.ui.a0(this, l10, 3));
                                                     }
                                                 }
                                                 obj = r19;
@@ -315,12 +315,12 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
 
     @Override // android.os.AsyncTask
     public void onPostExecute(File file) {
-        z10 z10Var = this.doneCallback;
-        if (z10Var != null) {
+        x10 x10Var = this.doneCallback;
+        if (x10Var != null) {
             if (this.exception == null) {
-                z10Var.a(file);
+                x10Var.a(file);
             } else {
-                z10Var.a(null);
+                x10Var.a(null);
             }
         }
     }

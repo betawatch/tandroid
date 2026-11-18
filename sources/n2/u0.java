@@ -1,7 +1,7 @@
 package n2;
 
 import a8.b8;
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.media.AudioDeviceInfo;
 import android.media.MediaCrypto;
@@ -10,8 +10,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Pair;
-import di.p4;
-import h9.s1;
+import di.s4;
+import h9.t1;
+import hi.w4;
 import j$.util.Objects;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -19,11 +20,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import kg.t1;
 import l2.m1;
-import org.telegram.ui.Wallet.k8;
+import org.telegram.ui.wc1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u0 extends u2.r implements l2.t0 {
     public final Context a1;
@@ -126,9 +126,9 @@ public final class u0 extends u2.r implements l2.t0 {
 
     @Override // u2.r
     public final ArrayList Q(u2.i iVar, e2.u uVar, boolean z10) {
-        s1 g10;
+        t1 g10;
         if (uVar.s == null) {
-            g10 = s1.e;
+            g10 = t1.e;
         } else {
             if (((r0) this.c1).j(uVar) != 0) {
                 List e10 = u2.w.e("audio/raw", false, false);
@@ -141,7 +141,7 @@ public final class u0 extends u2.r implements l2.t0 {
         }
         HashMap hashMap = u2.w.a;
         ArrayList arrayList = new ArrayList(g10);
-        Collections.sort(arrayList, new p4(new k8(16, this.a1, uVar), 4));
+        Collections.sort(arrayList, new s4(new wc1(14, this.a1, uVar), 4));
         return arrayList;
     }
 
@@ -502,7 +502,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar = this.b1;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new t1(21, aVar, cVar));
+            handler.post(new kg.h0(24, aVar, cVar));
         }
     }
 
@@ -511,7 +511,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar = this.b1;
         Handler handler = (Handler) aVar.b;
         if (handler != null) {
-            handler.post(new t1(20, aVar, str));
+            handler.post(new kg.h0(23, aVar, str));
         }
     }
 
@@ -529,7 +529,7 @@ public final class u0 extends u2.r implements l2.t0 {
         k8.a aVar2 = this.b1;
         Handler handler = (Handler) aVar2.b;
         if (handler != null) {
-            handler.post(new ki.n(aVar2, uVar, e02, 8));
+            handler.post(new kg.i0(aVar2, uVar, e02, 12));
         }
         return e02;
     }
@@ -598,7 +598,7 @@ public final class u0 extends u2.r implements l2.t0 {
                         if (i12 < 29) {
                             z10 = false;
                         }
-                        ja.p(z10);
+                        la.p(z10);
                         r0Var.i = i13;
                     }
                 }
@@ -607,7 +607,7 @@ public final class u0 extends u2.r implements l2.t0 {
                 if (i12 < 29) {
                     z10 = false;
                 }
-                ja.p(z10);
+                la.p(z10);
                 r0Var2.i = 0;
             }
             ((r0) xVar).c(uVar, iArr);
@@ -656,13 +656,13 @@ public final class u0 extends u2.r implements l2.t0 {
         this.q1 = -9223372036854775807L;
         if (this.i1 != null && (i10 & 2) != 0) {
             lVar.getClass();
-            lVar.f(i7);
+            lVar.d(i7);
             return true;
         }
         x xVar = this.c1;
         if (z10) {
             if (lVar != null) {
-                lVar.f(i7);
+                lVar.d(i7);
             }
             this.P0.f += i11;
             ((r0) xVar).E = true;
@@ -674,7 +674,7 @@ public final class u0 extends u2.r implements l2.t0 {
                 return false;
             }
             if (lVar != null) {
-                lVar.f(i7);
+                lVar.d(i7);
             }
             this.P0.e += i11;
             return true;
@@ -746,7 +746,7 @@ public final class u0 extends u2.r implements l2.t0 {
         x xVar = this.c1;
         if (z12) {
             r0 r0Var = (r0) xVar;
-            ja.p(r0Var.P);
+            la.p(r0Var.P);
             if (!r0Var.V) {
                 r0Var.V = true;
                 r0Var.v();
@@ -758,14 +758,14 @@ public final class u0 extends u2.r implements l2.t0 {
                 r0Var2.v();
             }
         }
-        m2.j jVar = this.f;
-        jVar.getClass();
+        m2.i iVar = this.f;
+        iVar.getClass();
         r0 r0Var3 = (r0) xVar;
-        r0Var3.m = jVar;
+        r0Var3.m = iVar;
         h2.g0 g0Var = this.h;
         g0Var.getClass();
         ((i0) r0Var3.r).g = g0Var;
-        r0Var3.n = new gc.b(this, 20);
+        r0Var3.n = new w4(this, 15);
     }
 
     @Override // u2.r
@@ -814,7 +814,7 @@ public final class u0 extends u2.r implements l2.t0 {
                 p0();
                 n0();
             } finally {
-                org.telegram.ui.Cells.y0.C(this.Y, null);
+                p5.c.w(this.Y, null);
                 this.Y = null;
             }
         } finally {
@@ -868,7 +868,7 @@ public final class u0 extends u2.r implements l2.t0 {
     public final int z0(u2.i iVar, e2.u uVar) {
         int i7;
         r0 r0Var;
-        s1 g10;
+        t1 g10;
         boolean z10;
         boolean z11;
         int a10 = i5.c.a(1, 0, 0, 0);
@@ -894,7 +894,7 @@ public final class u0 extends u2.r implements l2.t0 {
                 r0Var = (r0) xVar;
                 if (r0Var.j(h2.l0.E(2, uVar.K, uVar.L)) != 0) {
                     if (str2 == null) {
-                        g10 = s1.e;
+                        g10 = t1.e;
                     } else {
                         if (r0Var.j(uVar) != 0) {
                             List e11 = u2.w.e("audio/raw", false, false);

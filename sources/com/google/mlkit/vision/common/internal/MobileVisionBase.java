@@ -13,7 +13,7 @@ import k8.a;
 import pb.e;
 import vb.d;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, s {
     public static final a e = new a("MobileVisionBase", "");
@@ -41,7 +41,7 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         this.b.d(this.d);
     }
 
-    public final synchronized Task g(ub.a aVar) {
+    public final synchronized Task h(ub.a aVar) {
         if (this.a.get()) {
             return Tasks.forException(new lb.a("This detector is already closed!", 14));
         }

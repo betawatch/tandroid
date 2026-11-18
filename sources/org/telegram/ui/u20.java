@@ -1,38 +1,43 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.voip.z b;
-    public final /* synthetic */ c40 c;
+public final class u20 extends fr0 {
+    public final /* synthetic */ f40 T;
 
-    public /* synthetic */ u20(c40 c40Var, org.telegram.ui.Components.voip.z zVar, int i7) {
-        this.a = i7;
-        this.c = c40Var;
-        this.b = zVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u20(f40 f40Var, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        super(viewGroup, viewGroup2);
+        this.T = f40Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.voip.z zVar = this.b;
-                if (zVar.getParent() != null) {
-                    this.c.b.removeView(zVar);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.Components.voip.z zVar2 = this.b;
-                if (zVar2.getParent() != null) {
-                    this.c.b.removeView(zVar2);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.fr0
+    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
+        f40 f40Var = this.T;
+        d20 d20Var = f40Var.m1;
+        e20 e20Var = f40Var.B4;
+        if (f10 > 0.0f) {
+            float x10 = f40Var.b.getX() + e20Var.getX();
+            float y10 = f40Var.b.getY() + e20Var.getY();
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(x10, y10, d20Var.getMeasuredWidth() + x10, d20Var.getMeasuredHeight() + y10);
+            canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
+            canvas.translate(x10, y10);
+            e20Var.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    @Override // org.telegram.ui.fr0
+    public final void e() {
+        d20 d20Var = this.T.m1;
+        super.e();
+        for (int i7 = 0; i7 < d20Var.getChildCount(); i7++) {
+            d20Var.getChildAt(i7).invalidate();
         }
     }
 }

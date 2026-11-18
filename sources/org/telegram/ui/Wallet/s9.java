@@ -1,70 +1,85 @@
 package org.telegram.ui.Wallet;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.TextUtils;
-import android.view.View;
+import org.telegram.messenger.s10;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s9 implements View.OnClickListener {
+public final /* synthetic */ class s9 implements s10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z9 b;
+    public final /* synthetic */ da b;
+    public final /* synthetic */ u0 c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ s9(z9 z9Var, int i7) {
+    public /* synthetic */ s9(da daVar, u0 u0Var, long j3, int i7) {
         this.a = i7;
-        this.b = z9Var;
+        this.b = daVar;
+        this.c = u0Var;
+        this.d = j3;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2, Object obj3) {
         switch (this.a) {
             case 0:
-                z9 z9Var = this.b;
-                if (z9Var.y != null) {
-                    org.telegram.messenger.g0.v1(z9Var.O);
-                    z9Var.m0(z9Var.y, null);
-                    break;
-                }
-                break;
-            case 1:
-                z9 z9Var2 = this.b;
-                if (z9Var2.y != null) {
-                    org.telegram.messenger.g0.v1(z9Var2.O);
-                    z9Var2.m0(z9Var2.y, null);
-                    break;
-                }
-                break;
-            case 2:
-                z9 z9Var3 = this.b;
-                ClipboardManager clipboardManager = (ClipboardManager) z9Var3.getParentActivity().getSystemService("clipboard");
-                if (clipboardManager != null && clipboardManager.hasPrimaryClip()) {
-                    ClipData primaryClip = clipboardManager.getPrimaryClip();
-                    if (primaryClip != null && primaryClip.getItemCount() != 0) {
-                        CharSequence coerceToText = primaryClip.getItemAt(0).coerceToText(z9Var3.getParentActivity());
-                        if (!TextUtils.isEmpty(coerceToText)) {
-                            z9Var3.O.setText(coerceToText.toString().trim());
-                            ah.i iVar = z9Var3.O;
-                            iVar.setSelection(iVar.length());
-                            break;
-                        } else {
-                            z9Var3.T = false;
-                            z9Var3.p0(true);
-                            break;
+                String str = (String) obj;
+                final x10 x10Var = (x10) obj3;
+                final da daVar = this.b;
+                final int i7 = 0;
+                this.c.m0(daVar.f, daVar.h, this.d, str, ((Boolean) obj2).booleanValue() ? daVar.r0() : null, null, daVar.n, new x10() { // from class: org.telegram.ui.Wallet.v9
+                    @Override // org.telegram.messenger.x10
+                    public final void a(Object obj4) {
+                        String str2 = (String) obj4;
+                        switch (i7) {
+                            case 0:
+                                x10Var.a(str2);
+                                if (!u0.L(str2) && str2 == null) {
+                                    da daVar2 = daVar;
+                                    daVar2.fragmentView.postDelayed(new n9(daVar2, 4), 220L);
+                                    break;
+                                }
+                                break;
+                            default:
+                                x10Var.a(str2);
+                                if (!u0.L(str2) && str2 == null) {
+                                    da daVar3 = daVar;
+                                    daVar3.fragmentView.postDelayed(new n9(daVar3, 4), 220L);
+                                    break;
+                                }
+                                break;
                         }
-                    } else {
-                        z9Var3.T = false;
-                        z9Var3.p0(true);
-                        break;
                     }
-                } else {
-                    z9Var3.T = false;
-                    z9Var3.p0(true);
-                    break;
-                }
+                }, new r9(daVar, 2));
                 break;
             default:
-                this.b.i0();
+                String str2 = (String) obj;
+                final x10 x10Var2 = (x10) obj3;
+                final da daVar2 = this.b;
+                final int i10 = 1;
+                this.c.m0(daVar2.f, daVar2.h, this.d, str2, ((Boolean) obj2).booleanValue() ? daVar2.r0() : null, null, daVar2.n, new x10() { // from class: org.telegram.ui.Wallet.v9
+                    @Override // org.telegram.messenger.x10
+                    public final void a(Object obj4) {
+                        String str22 = (String) obj4;
+                        switch (i10) {
+                            case 0:
+                                x10Var2.a(str22);
+                                if (!u0.L(str22) && str22 == null) {
+                                    da daVar22 = daVar2;
+                                    daVar22.fragmentView.postDelayed(new n9(daVar22, 4), 220L);
+                                    break;
+                                }
+                                break;
+                            default:
+                                x10Var2.a(str22);
+                                if (!u0.L(str22) && str22 == null) {
+                                    da daVar3 = daVar2;
+                                    daVar3.fragmentView.postDelayed(new n9(daVar3, 4), 220L);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                }, new r9(daVar2, 3));
                 break;
         }
     }

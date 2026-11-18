@@ -1,59 +1,92 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class wx0 extends n11 {
-    public final /* synthetic */ yx0 f2;
-    public final /* synthetic */ e11[] g2;
-    public final /* synthetic */ zx0 h2;
+public final class wx0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yx0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wx0(zx0 zx0Var, zx0 zx0Var2, Activity activity, Integer num, yx0 yx0Var, e11[] e11VarArr) {
-        super(zx0Var2, activity, false, num, 2, null);
-        this.h2 = zx0Var;
-        this.f2 = yx0Var;
-        this.g2 = e11VarArr;
+    public /* synthetic */ wx0(yx0 yx0Var, int i7) {
+        this.a = i7;
+        this.b = yx0Var;
     }
 
-    @Override // org.telegram.ui.n11
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i7;
-        if (l10 == null) {
-            return;
-        }
-        zx0 zx0Var = this.h2;
-        i7 = ((org.telegram.ui.ActionBar.e2) zx0Var).currentAccount;
-        org.telegram.messenger.si.b0(i7).a2("animated_" + l10);
-        yx0 yx0Var = this.f2;
-        if (yx0Var != null) {
-            yx0Var.a(true);
-        }
-        e11 e11Var = this.g2[0];
-        if (e11Var != null) {
-            zx0Var.n = null;
-            e11Var.dismiss();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                this.b.Z(true);
+                break;
+            case 1:
+                yx0 yx0Var = this.b;
+                if (!yx0Var.L) {
+                    EditTextBoldCursor editTextBoldCursor = yx0Var.a[1];
+                    int selectionStart = editTextBoldCursor.getSelectionStart();
+                    String obj = editTextBoldCursor.getText().toString();
+                    StringBuilder sb2 = new StringBuilder(obj.length());
+                    int i7 = 0;
+                    while (i7 < obj.length()) {
+                        int i10 = i7 + 1;
+                        String substring = obj.substring(i7, i10);
+                        if ("0123456789".contains(substring)) {
+                            sb2.append(substring);
+                        }
+                        i7 = i10;
+                    }
+                    yx0Var.L = true;
+                    int intValue = Utilities.z(sb2.toString()).intValue();
+                    if (intValue < 0 || intValue > 65535 || !obj.equals(sb2.toString())) {
+                        if (intValue < 0) {
+                            editTextBoldCursor.setText("0");
+                        } else if (intValue > 65535) {
+                            editTextBoldCursor.setText("65535");
+                        } else {
+                            editTextBoldCursor.setText(sb2.toString());
+                        }
+                    } else if (selectionStart >= 0) {
+                        editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
+                    }
+                    yx0Var.L = false;
+                    yx0Var.Z(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.Z(true);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.n11
-    public final void r(x01 x01Var, ch.p0 p0Var) {
-        int i7;
-        zx0 zx0Var = this.h2;
-        i7 = ((org.telegram.ui.ActionBar.e2) zx0Var).currentAccount;
-        org.telegram.messenger.si.b0(i7).a2(p0Var.f);
-        yx0 yx0Var = this.f2;
-        if (yx0Var != null) {
-            yx0Var.a(true);
-        }
-        e11 e11Var = this.g2[0];
-        if (e11Var != null) {
-            zx0Var.n = null;
-            e11Var.dismiss();
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void e(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void f(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

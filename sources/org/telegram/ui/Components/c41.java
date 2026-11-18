@@ -1,36 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c41 extends f41 {
-    public static boolean h = true;
-    public final int e;
-    public final wy0 f;
+public final class c41 implements gw0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ h41 b;
 
-    public c41(String str, int i7, wy0 wy0Var) {
-        super(str, (wy0) null);
-        this.e = i7;
-        this.f = wy0Var;
+    public c41(h41 h41Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = h41Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // org.telegram.ui.Components.f41, android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        int i7 = this.e;
-        if (i7 == 2) {
-            textPaint.setColor(-1);
-        } else if (i7 == 1) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, h ? org.telegram.ui.ActionBar.j6.Yc : org.telegram.ui.ActionBar.j6.Wc, false));
-        } else {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, h ? org.telegram.ui.ActionBar.j6.Xc : org.telegram.ui.ActionBar.j6.Vc, false));
+    @Override // org.telegram.ui.Components.gw0
+    public final void a() {
+        h41 h41Var = this.b;
+        v4.i0 adapter = h41Var.n.getAdapter();
+        g41 g41Var = h41Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i7 = 0;
+        if (adapter == g41Var) {
+            while (i7 < g41Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) g41Var.e.get(i7);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    g41Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i7++;
+            }
+            return;
         }
-        wy0 wy0Var = this.f;
-        if (wy0Var != null) {
-            wy0Var.a(textPaint);
-        } else {
-            textPaint.setUnderlineText(false);
+        jg.c2 c2Var = h41Var.w;
+        ArrayList arrayList = c2Var.F;
+        while (i7 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i7);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                c2Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i7++;
         }
     }
 }

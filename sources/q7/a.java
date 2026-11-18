@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a {
     public static volatile ab.b0 b;
@@ -101,7 +101,7 @@ public abstract class a {
                 } catch (Exception e10) {
                     String E = a8.p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
-                    l10 = r.b.l("<", E, " threw ", e10.getClass().getName(), ">");
+                    l10 = p5.c.l("<", E, " threw ", e10.getClass().getName(), ">");
                 }
             }
             objArr[i10] = l10;
@@ -210,15 +210,15 @@ public abstract class a {
     public static final void g(StringBuilder sb2, Iterator it, sa.d dVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(sa.d.E2(entry.getKey()));
+            sb2.append(sa.d.F2(entry.getKey()));
             sb2.append(" : ");
-            sb2.append(sa.d.E2(entry.getValue()));
+            sb2.append(sa.d.F2(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(sa.d.E2(entry2.getKey()));
+                sb2.append(sa.d.F2(entry2.getKey()));
                 sb2.append(" : ");
-                sb2.append(sa.d.E2(entry2.getValue()));
+                sb2.append(sa.d.F2(entry2.getValue()));
             }
         }
     }
@@ -364,22 +364,22 @@ public abstract class a {
         switch (b10) {
             case 24:
                 if (j3 < 24) {
-                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                    throw new androidx.datastore.preferences.protobuf.l(p5.c.j(j3, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
                 if (j3 < 256) {
-                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                    throw new androidx.datastore.preferences.protobuf.l(p5.c.j(j3, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
                 if (j3 < 65536) {
-                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                    throw new androidx.datastore.preferences.protobuf.l(p5.c.j(j3, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
                 if (j3 < 4294967296L) {
-                    throw new androidx.datastore.preferences.protobuf.l(r.b.j(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                    throw new androidx.datastore.preferences.protobuf.l(p5.c.j(j3, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:

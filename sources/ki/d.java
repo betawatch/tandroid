@@ -1,10 +1,10 @@
 package ki;
 
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class d implements Runnable {
             case 0:
                 kVar.W.g(kVar.b0.end_date != 0 ? ah.r.f((r4 - kVar.getConnectionsManager().getCurrentTime()) * 1000) : null, true);
                 if (kVar.b0.end_date != 0 && kVar.e0) {
-                    org.telegram.messenger.g0.i3(kVar.Y, 1000L);
+                    org.telegram.messenger.g0.h3(kVar.Y, 1000L);
                     break;
                 }
                 break;
             case 1:
                 TL_bots.updateStarRefProgram updatestarrefprogram = new TL_bots.updateStarRefProgram();
-                updatestarrefprogram.bot = kVar.getMessagesController().o1(kVar.S);
+                updatestarrefprogram.bot = kVar.getMessagesController().q1(kVar.S);
                 TL_payments.starRefProgram starrefprogram = kVar.b0;
                 updatestarrefprogram.commission_permille = starrefprogram.commission_permille;
                 int i11 = starrefprogram.duration_months;
@@ -42,12 +42,12 @@ public final /* synthetic */ class d implements Runnable {
                     updatestarrefprogram.flags &= -2;
                     starrefprogram.duration_months = i11 & (-2);
                 }
-                org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, kVar.getParentActivity(), null);
-                t1Var.r(150L);
-                kVar.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar, t1Var, i10));
+                org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, kVar.getParentActivity(), null);
+                u1Var.r(150L);
+                kVar.getConnectionsManager().sendRequest(updatestarrefprogram, new b(kVar, u1Var, i10));
                 break;
             default:
-                vf.c.t(kVar.getParentActivity(), hd.M0((kVar.Z || kVar.b0.end_date != 0) ? 2131754314 : 2131754327, null));
+                vf.c.t(kVar.getParentActivity(), gd.M0((kVar.Z || kVar.b0.end_date != 0) ? 2131754312 : 2131754325, null));
                 break;
         }
     }

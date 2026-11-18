@@ -18,7 +18,7 @@ import g6.y;
 import j6.b;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ReconnectionService extends Service {
     public static final b b = new b("ReconnectionService", null);
@@ -60,7 +60,7 @@ public class ReconnectionService extends Service {
             g.c.a(e10, "Unable to call %s on %s.", "getWrappedThis", y.class.getSimpleName());
             aVar = null;
         }
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         k kVar = c10.d;
         kVar.getClass();
         try {

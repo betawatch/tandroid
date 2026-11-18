@@ -7,7 +7,7 @@ import java.util.List;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public class Camera1Enumerator implements CameraEnumerator {
     private static final String TAG = "Camera1Enumerator";
@@ -91,7 +91,7 @@ public class Camera1Enumerator implements CameraEnumerator {
                 return i7;
             }
         }
-        throw new IllegalArgumentException(r.b.k("No such camera: ", str));
+        throw new IllegalArgumentException(p5.c.k("No such camera: ", str));
     }
 
     private static Camera.CameraInfo getCameraInfo(int i7) {

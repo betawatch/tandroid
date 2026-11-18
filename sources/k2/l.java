@@ -1,10 +1,10 @@
 package k2;
 
-import a8.ja;
+import a8.la;
 import java.util.ArrayDeque;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l implements e {
     public final k a;
@@ -45,11 +45,11 @@ public abstract class l implements e {
             try {
                 if (this.g != this.e.length && !this.k) {
                     z10 = false;
-                    ja.p(z10);
+                    la.p(z10);
                     this.n = j3;
                 }
                 z10 = true;
-                ja.p(z10);
+                la.p(z10);
                 this.n = j3;
             } catch (Throwable th2) {
                 throw th2;
@@ -66,7 +66,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                ja.p(this.i == null);
+                la.p(this.i == null);
                 int i7 = this.g;
                 if (i7 == 0) {
                     hVar = null;
@@ -231,7 +231,7 @@ public abstract class l implements e {
                 if (fVar != null) {
                     throw fVar;
                 }
-                ja.f(hVar == this.i);
+                la.f(hVar == this.i);
                 this.c.addLast(hVar);
                 if (!this.c.isEmpty() && this.h > 0) {
                     this.b.notify();
@@ -259,7 +259,7 @@ public abstract class l implements e {
     public final void o(int i7) {
         int i10 = this.g;
         h[] hVarArr = this.e;
-        ja.p(i10 == hVarArr.length);
+        la.p(i10 == hVarArr.length);
         for (h hVar : hVarArr) {
             hVar.b(i7);
         }

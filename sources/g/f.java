@@ -22,10 +22,10 @@ import androidx.core.widget.NestedScrollView;
 import java.util.WeakHashMap;
 import m.v1;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import r0.i0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class f extends u implements DialogInterface {
     public final e f;
@@ -36,7 +36,7 @@ public class f extends u implements DialogInterface {
     }
 
     public static int e(Context context, int i7) {
-        if (((i7 >>> 24) & ns.e4) >= 1) {
+        if (((i7 >>> 24) & ks.e4) >= 1) {
             return i7;
         }
         TypedValue typedValue = new TypedValue();

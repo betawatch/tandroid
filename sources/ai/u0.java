@@ -16,7 +16,7 @@ import java.util.LinkedHashMap;
 import java.util.Locale;
 import org.telegram.messenger.a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class u0 {
     public static final HashMap a = new HashMap();
@@ -43,40 +43,45 @@ public abstract class u0 {
         linkedHashMap.put(language, new Locale(language, country).toLanguageTag());
     }
 
-    public static ArrayList b(Context context, long j3) {
-        ArrayList arrayList = (ArrayList) a.get(Long.valueOf(j3));
-        if (arrayList != null && !arrayList.isEmpty()) {
-            return new ArrayList(arrayList);
-        }
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
+    public static void b(LinkedHashMap linkedHashMap, Context context) {
         try {
             InputMethodManager inputMethodManager = (InputMethodManager) context.getSystemService("input_method");
-            if (inputMethodManager != null) {
-                a(linkedHashMap, d(inputMethodManager.getCurrentInputMethodSubtype()));
-                String string = Settings.Secure.getString(context.getContentResolver(), "default_input_method");
-                for (InputMethodInfo inputMethodInfo : inputMethodManager.getEnabledInputMethodList()) {
-                    if (TextUtils.equals(inputMethodInfo.getId(), string)) {
-                        Iterator<InputMethodSubtype> it = inputMethodManager.getEnabledInputMethodSubtypeList(inputMethodInfo, true).iterator();
-                        while (it.hasNext()) {
-                            a(linkedHashMap, d(it.next()));
-                        }
+            if (inputMethodManager == null) {
+                return;
+            }
+            a(linkedHashMap, e(inputMethodManager.getCurrentInputMethodSubtype()));
+            String string = Settings.Secure.getString(context.getContentResolver(), "default_input_method");
+            for (InputMethodInfo inputMethodInfo : inputMethodManager.getEnabledInputMethodList()) {
+                if (TextUtils.equals(inputMethodInfo.getId(), string)) {
+                    Iterator<InputMethodSubtype> it = inputMethodManager.getEnabledInputMethodSubtypeList(inputMethodInfo, true).iterator();
+                    while (it.hasNext()) {
+                        a(linkedHashMap, e(it.next()));
                     }
                 }
             }
         } catch (Exception e10) {
             a8.g(e10, true);
         }
+    }
+
+    public static ArrayList c(Context context, long j3) {
+        ArrayList arrayList = (ArrayList) a.get(Long.valueOf(j3));
+        if (arrayList != null && !arrayList.isEmpty()) {
+            return new ArrayList(arrayList);
+        }
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        b(linkedHashMap, context);
         return new ArrayList(linkedHashMap.values());
     }
 
-    public static boolean c(String str, String str2) {
+    public static boolean d(String str, String str2) {
         if (str == null || str2 == null) {
             return false;
         }
         return Locale.forLanguageTag(str.replace('_', '-')).getLanguage().equals(Locale.forLanguageTag(str2.replace('_', '-')).getLanguage());
     }
 
-    public static Locale d(InputMethodSubtype inputMethodSubtype) {
+    public static Locale e(InputMethodSubtype inputMethodSubtype) {
         if (inputMethodSubtype == null || !"keyboard".equals(inputMethodSubtype.getMode())) {
             return null;
         }

@@ -4,14 +4,14 @@ import a8.qa;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ou;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class p extends q {
     public final Object a = new Object();
     public Executor b;
-    public ou c;
+    public hn c;
     public m d;
     public ArrayList e;
 

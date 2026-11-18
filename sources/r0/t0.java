@@ -3,7 +3,7 @@ package r0;
 import android.view.WindowInsetsAnimation;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t0 extends u0 {
     public final WindowInsetsAnimation e;
@@ -13,12 +13,12 @@ public final class t0 extends u0 {
         this.e = windowInsetsAnimation;
     }
 
-    public static i0.c e(WindowInsetsAnimation.Bounds bounds) {
-        return i0.c.c(bounds.getUpperBound());
+    public static i0.b e(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getUpperBound());
     }
 
-    public static i0.c f(WindowInsetsAnimation.Bounds bounds) {
-        return i0.c.c(bounds.getLowerBound());
+    public static i0.b f(WindowInsetsAnimation.Bounds bounds) {
+        return i0.b.c(bounds.getLowerBound());
     }
 
     public static void g(FrameLayout frameLayout, rh.d dVar) {

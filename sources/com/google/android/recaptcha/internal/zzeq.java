@@ -1,19 +1,18 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
-import af.b;
+import b5.a;
+import b7.h;
 import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.RecaptchaAction;
 import com.google.android.recaptcha.RecaptchaClient;
 import com.google.android.recaptcha.RecaptchaTasksClient;
 import gd.g;
-import jd.a;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import xd.c;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
     private static final c zza = new c("^[a-zA-Z0-9/_]{1,100}$");
@@ -27,7 +26,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         this.zzc = str;
         this.zzd = zzhhVar;
         int i7 = zzby.zza;
-        this.zze = bb.b(zzep.zza);
+        this.zze = a.c(zzep.zza);
     }
 
     public static final void zzd(zzeq zzeqVar, long j3, RecaptchaAction recaptchaAction) {
@@ -59,10 +58,10 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzekVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzekVar.zza;
-                a aVar = a.a;
+                jd.a aVar = jd.a.a;
                 i7 = zzekVar.zzc;
                 if (i7 != 0) {
-                    b.c(obj);
+                    h.b(obj);
                     zzhh zzhhVar = this.zzd;
                     zzem zzemVar = new zzem(this, j3, recaptchaAction, null);
                     zzekVar.zzc = 1;
@@ -74,14 +73,14 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.c(obj);
+                    h.b(obj);
                 }
                 return ((g) obj).a;
             }
         }
         zzekVar = new zzek(this, cVar);
         Object obj2 = zzekVar.zza;
-        a aVar2 = a.a;
+        jd.a aVar2 = jd.a.a;
         i7 = zzekVar.zzc;
         if (i7 != 0) {
         }
@@ -103,16 +102,16 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzeiVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzeiVar.zza;
-                Object obj2 = a.a;
+                Object obj2 = jd.a.a;
                 i7 = zzeiVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.c(obj);
+                    h.b(obj);
                     return ((g) obj).a;
                 }
-                b.c(obj);
+                h.b(obj);
                 zzeiVar.zzc = 1;
                 Object zze = zze(recaptchaAction, j3, zzeiVar);
                 return zze == obj2 ? obj2 : zze;
@@ -120,7 +119,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzeiVar = new zzei(this, cVar);
         Object obj3 = zzeiVar.zza;
-        Object obj22 = a.a;
+        Object obj22 = jd.a.a;
         i7 = zzeiVar.zzc;
         if (i7 == 0) {
         }
@@ -141,16 +140,16 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzejVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzejVar.zza;
-                Object obj2 = a.a;
+                Object obj2 = jd.a.a;
                 i7 = zzejVar.zzc;
                 if (i7 == 0) {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    b.c(obj);
+                    h.b(obj);
                     return ((g) obj).a;
                 }
-                b.c(obj);
+                h.b(obj);
                 zzejVar.zzc = 1;
                 Object obj3 = execute-0E7RQCE(recaptchaAction, 10000L, zzejVar);
                 return obj3 == obj2 ? obj2 : obj3;
@@ -158,7 +157,7 @@ public final class zzeq implements RecaptchaClient, RecaptchaTasksClient {
         }
         zzejVar = new zzej(this, cVar);
         Object obj4 = zzejVar.zza;
-        Object obj22 = a.a;
+        Object obj22 = jd.a.a;
         i7 = zzejVar.zzc;
         if (i7 == 0) {
         }

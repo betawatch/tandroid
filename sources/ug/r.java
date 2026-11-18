@@ -14,16 +14,16 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
-import hi.l3;
+import hi.m3;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.my;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.sy;
 import org.telegram.ui.t5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final /* synthetic */ LimitPreviewView E;
@@ -111,7 +111,7 @@ public final class r extends View {
                 ArrayList arrayList2 = qVar.b;
                 arrayList2.add(staticLayout);
                 arrayList2.add(new StaticLayout("" + this.f.charAt(length), textPaint, (int) this.e, alignment, 1.0f, 0.0f, false));
-                spannableStringBuilder3.setSpan(new my(false), length, length + 1, 0);
+                spannableStringBuilder3.setSpan(new sy(false), length, length + 1, 0);
             }
             length--;
         }
@@ -123,7 +123,7 @@ public final class r extends View {
             qVar2.f = ofFloat;
             ofFloat.addUpdateListener(new o(this, qVar2, 0));
             qVar2.f.addListener(new p(this, qVar2, 1));
-            qVar2.f.setInterpolator(er.g);
+            qVar2.f.setInterpolator(lr.g);
             qVar2.f.setDuration(250L);
             qVar2.f.setStartDelay(((arrayList.size() - 1) - i11) * 60);
             qVar2.f.start();
@@ -162,7 +162,7 @@ public final class r extends View {
         Paint paint = limitPreviewView.L;
         if (limitPreviewView.K) {
             measuredHeight = getMeasuredHeight();
-            ia.f d = ia.f.d();
+            ia.e d = ia.e.d();
             int measuredWidth = limitPreviewView.getMeasuredWidth();
             int measuredHeight2 = limitPreviewView.getMeasuredHeight();
             globalXOffset2 = limitPreviewView.getGlobalXOffset();
@@ -170,18 +170,18 @@ public final class r extends View {
             RectF rectF = org.telegram.messenger.g0.P;
             rectF.set(0.0f, org.telegram.messenger.g0.L(3.0f), getMeasuredWidth(), measuredHeight - org.telegram.messenger.g0.L(3.0f));
             float f10 = measuredHeight / 2.0f;
-            ia.f d2 = ia.f.d();
+            ia.e d2 = ia.e.d();
             if (((Paint) d2.d) == null) {
                 d2.d = new Paint(1);
             }
-            ((Paint) d2.d).setColor(j6.x0(null, j6.Fi, false));
+            ((Paint) d2.d).setColor(n6.x0(null, n6.Fi, false));
             canvas.drawRoundRect(rectF, f10, f10, (Paint) d2.d);
         } else {
             if (this.w) {
                 this.w = false;
                 c();
             }
-            ia.f d10 = ia.f.d();
+            ia.e d10 = ia.e.d();
             int measuredWidth2 = limitPreviewView.getMeasuredWidth();
             int measuredHeight3 = limitPreviewView.getMeasuredHeight();
             globalXOffset = limitPreviewView.getGlobalXOffset();
@@ -192,18 +192,18 @@ public final class r extends View {
             float f12 = f11 / 2.0f;
             boolean z10 = limitPreviewView.S;
             TextPaint textPaint = this.c;
-            canvas.drawRoundRect(rectF2, f12, f12, z10 ? paint : limitPreviewView.f0 != null ? textPaint : ia.f.d().e());
-            Paint e10 = ia.f.d().e();
+            canvas.drawRoundRect(rectF2, f12, f12, z10 ? paint : limitPreviewView.f0 != null ? textPaint : ia.e.d().e());
+            Paint e10 = ia.e.d().e();
             CornerPathEffect cornerPathEffect = this.b;
             e10.setPathEffect(cornerPathEffect);
             if (limitPreviewView.f0 != null) {
                 textPaint.setPathEffect(cornerPathEffect);
             }
             if (!limitPreviewView.S) {
-                paint = limitPreviewView.f0 != null ? textPaint : ia.f.d().e();
+                paint = limitPreviewView.f0 != null ? textPaint : ia.e.d().e();
             }
             canvas.drawPath(this.a, paint);
-            ia.f.d().e().setPathEffect(null);
+            ia.e.d().e().setPathEffect(null);
             if (limitPreviewView.f0 != null) {
                 textPaint.setPathEffect(null);
             }
@@ -277,7 +277,7 @@ public final class r extends View {
     public final void onMeasure(int i7, int i10) {
         SpannableStringBuilder spannableStringBuilder = this.f;
         TextPaint textPaint = this.c;
-        this.e = l3.h(spannableStringBuilder, textPaint);
+        this.e = m3.h(spannableStringBuilder, textPaint);
         this.d = new StaticLayout(this.f, textPaint, org.telegram.messenger.g0.L(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = 0.0f;
         for (int i11 = 0; i11 < this.d.getLineCount(); i11++) {

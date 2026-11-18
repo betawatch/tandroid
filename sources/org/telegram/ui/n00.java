@@ -1,10 +1,9 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n00 extends ug.r1 {
-    @Override // ug.r1
-    public final int b() {
-        return i0.a.o(org.telegram.ui.ActionBar.j6.F0(this.Q), org.telegram.messenger.ns.e3);
-    }
+public abstract class n00 extends LinearLayout {
+    public static final float a = 1.0f;
 }

@@ -3,7 +3,7 @@ package gb;
 import java.util.Locale;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u0 {
     public final h1 a;
@@ -25,6 +25,6 @@ public final class u0 {
         kotlin.jvm.internal.j.d(uuid, "toString(...)");
         String lowerCase = xd.l.c(uuid, "-", "").toLowerCase(Locale.ROOT);
         kotlin.jvm.internal.j.d(lowerCase, "toLowerCase(...)");
-        return new n0(n0Var != null ? n0Var.c + 1 : 0, this.a.a().b, lowerCase, (n0Var == null || (str = n0Var.b) == null) ? lowerCase : str);
+        return new n0(this.a.a().b, lowerCase, (n0Var == null || (str = n0Var.b) == null) ? lowerCase : str, n0Var != null ? n0Var.c + 1 : 0);
     }
 }

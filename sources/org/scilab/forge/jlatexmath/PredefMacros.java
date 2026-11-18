@@ -7,12 +7,12 @@ import java.util.Map;
 import java.util.StringTokenizer;
 import org.scilab.forge.jlatexmath.TeXFormula;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import r.b;
+import p5.c;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class PredefMacros {
     static {
@@ -150,7 +150,7 @@ public class PredefMacros {
         TeXFormula teXFormula = new TeXFormula("\\mathbb{G}\\mathsf{e}");
         teXFormula.add(new GeoGebraLogoAtom());
         teXFormula.add("\\mathsf{Gebra}");
-        return new ColorAtom(teXFormula.root, (Color) null, new Color(ns.n1, ns.n1, ns.n1));
+        return new ColorAtom(teXFormula.root, (Color) null, new Color(ks.n1, ks.n1, ks.n1));
     }
 
     public static final Atom Hstrok_macro(TeXParser teXParser, String[] strArr) {
@@ -259,13 +259,13 @@ public class PredefMacros {
             str = "mathring";
         } else if (charAt != '~') {
             switch (charAt) {
-                case ns.B1 /* 116 */:
+                case ks.B1 /* 116 */:
                     str = "tie";
                     break;
-                case ns.C1 /* 117 */:
+                case ks.C1 /* 117 */:
                     str = "breve";
                     break;
-                case ns.D1 /* 118 */:
+                case ks.D1 /* 118 */:
                     str = "check";
                     break;
                 default:
@@ -1254,7 +1254,7 @@ public class PredefMacros {
     public static final Atom newcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b.k("Invalid name for the command :", str));
+            throw new ParseException(c.k("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         Integer num = str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2));
@@ -1413,7 +1413,7 @@ public class PredefMacros {
     public static final Atom renewcommand_macro(TeXParser teXParser, String[] strArr) {
         String str = strArr[1];
         if (!teXParser.isValidName(str)) {
-            throw new ParseException(b.k("Invalid name for the command :", str));
+            throw new ParseException(c.k("Invalid name for the command :", str));
         }
         String str2 = strArr[3];
         NewCommandMacro.addReNewCommand(str.substring(1), strArr[2], (str2 == null ? new Integer(0) : Integer.valueOf(Integer.parseInt(str2))).intValue());

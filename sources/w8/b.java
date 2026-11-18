@@ -9,10 +9,10 @@ import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
 import java.nio.ByteBuffer;
 import java.util.HashSet;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends q {
     public final t8.a b;
@@ -43,10 +43,10 @@ public final class b extends q {
         }
     }
 
-    public final SparseArray e1(ld0 ld0Var) {
+    public final SparseArray e1(md0 md0Var) {
         ByteBuffer w10;
         a[] n10;
-        Bitmap bitmap = (Bitmap) ld0Var.d;
+        Bitmap bitmap = (Bitmap) md0Var.d;
         if (bitmap != null) {
             int width = bitmap.getWidth();
             int height = bitmap.getHeight();
@@ -62,8 +62,8 @@ public final class b extends q {
                 float blue = Color.blue(pixel);
                 w10.put(i11, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
                 if (i13 % 2 == 0 && i12 % 2 == 0) {
-                    float e10 = r.b.e(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
-                    float e11 = r.b.e(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    float e10 = p5.c.e(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float e11 = p5.c.e(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
                     int i14 = i10 + 1;
                     w10.put(i10, (byte) e10);
                     i10 += 2;
@@ -71,15 +71,15 @@ public final class b extends q {
                 }
             }
         } else {
-            w10 = ld0Var.w();
+            w10 = md0Var.w();
         }
         synchronized (this.d) {
             if (!this.e) {
                 throw new IllegalStateException("Cannot use detector after release()");
             }
             u2 u2Var = this.c;
-            m.g(w10);
-            n10 = u2Var.n(w10, g3.b(ld0Var));
+            m.h(w10);
+            n10 = u2Var.n(w10, g3.b(md0Var));
         }
         HashSet hashSet = new HashSet();
         SparseArray sparseArray = new SparseArray(n10.length);

@@ -16,14 +16,15 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import h2.w;
 import java.util.Collections;
 import java.util.Set;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
+import v4.f0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class j {
     public final Context a;
     public final String b;
-    public final x9.d c;
+    public final f0 c;
     public final e d;
     public final b e;
     public final com.google.android.gms.common.api.internal.a f;
@@ -37,23 +38,23 @@ public abstract class j {
         this(context, eVar, aVar, new i(rVar, Looper.getMainLooper()));
     }
 
-    public final ld0 a() {
-        ld0 ld0Var = new ld0(8, false);
+    public final md0 a() {
+        md0 md0Var = new md0(8, false);
         Set set = Collections.EMPTY_SET;
-        if (((a0.g) ld0Var.b) == null) {
-            ld0Var.b = new a0.g(0);
+        if (((a0.g) md0Var.b) == null) {
+            md0Var.b = new a0.g(0);
         }
-        ((a0.g) ld0Var.b).addAll(set);
+        ((a0.g) md0Var.b).addAll(set);
         Context context = this.a;
-        ld0Var.c = context.getClass().getName();
-        ld0Var.d = context.getPackageName();
-        return ld0Var;
+        md0Var.c = context.getClass().getName();
+        md0Var.d = context.getPackageName();
+        return md0Var;
     }
 
     public final Task b(a1 a1Var) {
-        q6.m.h(((com.google.android.gms.common.api.internal.o) ((w) a1Var.a).c).b, "Listener has already been released.");
+        q6.m.i(((com.google.android.gms.common.api.internal.o) ((w) a1Var.a).c).b, "Listener has already been released.");
         a1 a1Var2 = (a1) a1Var.b;
-        q6.m.h((com.google.android.gms.common.api.internal.m) a1Var2.a, "Listener has already been released.");
+        q6.m.i((com.google.android.gms.common.api.internal.m) a1Var2.a, "Listener has already been released.");
         w wVar = (w) a1Var.a;
         com.google.android.gms.common.api.internal.g gVar = this.k;
         gVar.getClass();
@@ -66,7 +67,7 @@ public abstract class j {
     }
 
     public final Task c(com.google.android.gms.common.api.internal.m mVar, int i7) {
-        q6.m.h(mVar, "Listener key cannot be null.");
+        q6.m.i(mVar, "Listener key cannot be null.");
         com.google.android.gms.common.api.internal.g gVar = this.k;
         gVar.getClass();
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
@@ -98,16 +99,16 @@ public abstract class j {
     }
 
     public j(Context context, e eVar, b bVar, i iVar) {
-        q6.m.h(context, "Null context is not permitted.");
-        q6.m.h(eVar, "Api must not be null.");
-        q6.m.h(iVar, "Settings must not be null; use Settings.DEFAULT_SETTINGS instead.");
+        q6.m.i(context, "Null context is not permitted.");
+        q6.m.i(eVar, "Api must not be null.");
+        q6.m.i(iVar, "Settings must not be null; use Settings.DEFAULT_SETTINGS instead.");
         Context applicationContext = context.getApplicationContext();
-        q6.m.h(applicationContext, "The provided context did not have an application context.");
+        q6.m.i(applicationContext, "The provided context did not have an application context.");
         this.a = applicationContext;
         int i7 = Build.VERSION.SDK_INT;
         String attributionTag = (i7 < 30 || i7 < 30) ? null : context.getAttributionTag();
         this.b = attributionTag;
-        this.c = i7 >= 31 ? new x9.d(context.getAttributionSource()) : null;
+        this.c = i7 >= 31 ? new f0(context.getAttributionSource()) : null;
         this.d = eVar;
         this.e = bVar;
         this.g = iVar.b;

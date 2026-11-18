@@ -1,29 +1,119 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uq0 {
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public View d;
-    public org.telegram.messenger.ic e;
-    public long f;
-    public long g;
-    public int[] h;
-    public int i;
-    public int j;
-    public boolean l;
-    public ClippingImageView m;
-    public int n;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public boolean s;
-    public float k = 1.0f;
-    public boolean o = true;
+public interface uq0 {
+    boolean A();
+
+    void B(int i7);
+
+    CharSequence C(int i7);
+
+    void D();
+
+    wq0 E(org.telegram.messenger.fj fjVar, TLRPC.FileLocation fileLocation, int i7, boolean z10, boolean z11);
+
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    boolean I();
+
+    void J();
+
+    boolean K();
+
+    boolean L();
+
+    void M(org.telegram.messenger.e20 e20Var);
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    boolean Q();
+
+    int R(Object obj);
+
+    int S(int i7);
+
+    boolean T();
+
+    boolean U();
+
+    org.telegram.messenger.fj V();
+
+    void W();
+
+    void X(int i7);
+
+    void Y(int i7);
+
+    boolean Z();
+
+    long a();
+
+    void a0(int i7);
+
+    boolean b();
+
+    String b0();
+
+    ArrayList c();
+
+    CharSequence c0(int i7);
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    org.telegram.messenger.hc j(int i7);
+
+    int k(int i7, org.telegram.messenger.e20 e20Var);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i7);
+
+    int y();
+
+    boolean z();
 }

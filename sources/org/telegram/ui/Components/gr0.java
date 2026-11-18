@@ -1,24 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class gr0 extends org.telegram.ui.cn {
-    public final /* synthetic */ ys0 f;
+public final class gr0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gr0(ys0 ys0Var, Context context, org.telegram.ui.ActionBar.o4 o4Var, Bundle bundle) {
-        super(context, o4Var, bundle);
-        this.f = ys0Var;
+    public /* synthetic */ gr0(gt0 gt0Var, int i7) {
+        this.a = i7;
+        this.b = gt0Var;
     }
 
-    @Override // org.telegram.ui.cn
-    public final void b(boolean z10) {
-        org.telegram.ui.ActionBar.q0 q0Var = this.f.q0;
-        if (q0Var != null) {
-            q0Var.setShowSearchProgress(z10);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.O0 = null;
+                break;
+            default:
+                gt0 gt0Var = this.b;
+                org.telegram.ui.ActionBar.r0 r0Var = gt0Var.q0;
+                bs0[] bs0VarArr = gt0Var.n0;
+                gt0Var.i1 = null;
+                if (gt0Var.l1) {
+                    bs0VarArr[1].setVisibility(8);
+                    if (r0Var == null || gt0Var.I()) {
+                        gt0Var.r0 = gt0Var.l0(0.0f);
+                        gt0Var.M1(0.0f);
+                    } else {
+                        gt0Var.setSearchItemVisibility(gt0Var.I0() ? 8 : 4);
+                        gt0Var.r0 = 0.0f;
+                    }
+                    gt0Var.I1(false);
+                    gt0Var.A0 = 0;
+                } else {
+                    bs0 bs0Var = bs0VarArr[0];
+                    bs0VarArr[0] = bs0VarArr[1];
+                    bs0VarArr[1] = bs0Var;
+                    bs0Var.setVisibility(8);
+                    if (r0Var != null && gt0Var.A0 == 2) {
+                        gt0Var.setSearchItemVisibility(gt0Var.I0() ? 8 : 4);
+                    }
+                    gt0Var.A0 = 0;
+                    gt0Var.l1(1.0f, bs0VarArr[0].F);
+                    gt0Var.Y0();
+                    gt0Var.u1();
+                }
+                gt0Var.j1 = false;
+                gt0Var.B1 = false;
+                gt0Var.A1 = false;
+                gt0Var.setHeaderEnabled(true);
+                gt0Var.L0.setEnabled(true);
+                break;
         }
     }
 }

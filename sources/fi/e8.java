@@ -1,61 +1,35 @@
 package fi;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class e8 extends TLObject {
-    public final TL_stories.StoryItem a;
-    public int b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class e8 {
+    public final w3 a;
+    public final org.telegram.ui.Components.c6 b;
+    public final TextPaint c;
+    public final StaticLayout d;
+    public final float e;
+    public final float f;
+    public float g;
+    public boolean h;
+    public int i;
 
-    public e8(TL_stories.StoryItem storyItem) {
-        this.b = 0;
-        this.a = storyItem;
-        boolean z10 = storyItem.translated;
-        this.b = z10 ? 1 : 0;
-        int i7 = (z10 ? 1 : 0) + (storyItem.detectedLng != null ? 2 : 0);
-        this.b = i7;
-        int i10 = i7 + (storyItem.translatedText != null ? 4 : 0);
-        this.b = i10;
-        this.b = i10 + (storyItem.translatedLng != null ? 8 : 0);
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        int readInt32 = inputSerializedData.readInt32(true);
-        this.b = readInt32;
-        boolean z11 = (readInt32 & 1) != 0;
-        TL_stories.StoryItem storyItem = this.a;
-        storyItem.translated = z11;
-        if ((readInt32 & 2) != 0) {
-            storyItem.detectedLng = inputSerializedData.readString(z10);
-        }
-        if ((this.b & 4) != 0) {
-            storyItem.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        }
-        if ((this.b & 8) != 0) {
-            storyItem.translatedLng = inputSerializedData.readString(z10);
-        }
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(1);
-        outputSerializedData.writeInt32(this.b);
-        int i7 = this.b & 2;
-        TL_stories.StoryItem storyItem = this.a;
-        if (i7 != 0) {
-            outputSerializedData.writeString(storyItem.detectedLng);
-        }
-        if ((this.b & 4) != 0) {
-            storyItem.translatedText.serializeToStream(outputSerializedData);
-        }
-        if ((this.b & 8) != 0) {
-            outputSerializedData.writeString(storyItem.translatedLng);
-        }
+    public e8(z3 z3Var, w3 w3Var) {
+        this.a = w3Var;
+        this.b = new org.telegram.ui.Components.c6(z3Var, 0L, 360L, lr.h);
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(org.telegram.messenger.g0.L(3.0f), 0.0f, org.telegram.messenger.g0.L(1.0f), 805306368);
+        StaticLayout staticLayout = new StaticLayout(gd.M0(2131744245, null), textPaint, org.telegram.messenger.g0.q.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        this.d = staticLayout;
+        this.e = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
+        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
     }
 }

@@ -1,13 +1,13 @@
 package gh;
 
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class e implements a {
-    public final e6 a;
+    public final i6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public class e implements a {
     public float n;
     public float r;
 
-    public e(e6 e6Var) {
-        this.a = e6Var;
+    public e(i6 i6Var) {
+        this.a = i6Var;
         float N = g0.N(1.0f);
         float N2 = g0.N(0.33333334f);
         this.n = N;
@@ -74,11 +74,11 @@ public class e implements a {
         if (dVar == null) {
             return 0;
         }
-        e6 e6Var = this.a;
-        if ((e6Var instanceof fi.b) || (e6Var == null ? j6.I.q() : e6Var.a())) {
+        i6 i6Var = this.a;
+        if ((i6Var instanceof fi.b) || (i6Var == null ? n6.I.q() : i6Var.d())) {
             z10 = true;
         }
-        return dVar.j(e6Var, z10);
+        return dVar.j(i6Var, z10);
     }
 
     public float b() {

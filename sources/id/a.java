@@ -1,9 +1,9 @@
 package id;
 
-import c8.n0;
+import c8.p0;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a implements f {
     public final g a;
@@ -19,7 +19,7 @@ public abstract class a implements f {
 
     @Override // id.h
     public f get(g gVar) {
-        return n0.a(this, gVar);
+        return p0.a(this, gVar);
     }
 
     @Override // id.f
@@ -29,11 +29,11 @@ public abstract class a implements f {
 
     @Override // id.h
     public h minusKey(g gVar) {
-        return n0.b(this, gVar);
+        return p0.b(this, gVar);
     }
 
     @Override // id.h
     public final h plus(h hVar) {
-        return n0.c(this, hVar);
+        return p0.c(this, hVar);
     }
 }

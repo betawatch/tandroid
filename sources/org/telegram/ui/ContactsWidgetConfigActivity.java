@@ -3,15 +3,15 @@ package org.telegram.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class ContactsWidgetConfigActivity extends ExternalActionActivity {
     public static final /* synthetic */ int G = 0;
     public int F = 0;
 
     @Override // org.telegram.ui.ExternalActionActivity
-    public final void d(Intent intent, boolean z10, boolean z11, boolean z12, int i7, int i10) {
-        if (c(intent, z10, z11, z12, i7, i10)) {
+    public final void e(Intent intent, boolean z10, boolean z11, boolean z12, int i7, int i10) {
+        if (d(intent, z10, z11, z12, i7, i10)) {
             Bundle extras = intent.getExtras();
             if (extras != null) {
                 this.F = extras.getInt("appWidgetId", 0);
@@ -20,15 +20,15 @@ public class ContactsWidgetConfigActivity extends ExternalActionActivity {
                 finish();
                 return;
             }
-            org.telegram.ui.Cells.y0.j(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            gx gxVar = new gx(1, this.F);
-            gxVar.E = new zr(this, 0);
+            org.telegram.ui.Cells.c0.l(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            kx kxVar = new kx(1, this.F);
+            kxVar.E = new zr(this, 0);
             if (org.telegram.messenger.g0.Q1()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.c(-1, gxVar);
+                    this.d.c(-1, kxVar);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.c(-1, gxVar);
+                this.c.c(-1, kxVar);
             }
             if (!org.telegram.messenger.g0.Q1()) {
                 this.e.setVisibility(8);

@@ -3,7 +3,7 @@ package sg;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class u extends AnimatorListenerAdapter {
     public final /* synthetic */ m0 a;
@@ -41,7 +41,7 @@ public final class u extends AnimatorListenerAdapter {
         boolean z10 = this.d;
         painting.c(j0Var, currentColor2, z10, null);
         if (z10 && (t0Var = u0Var.a) != null) {
-            t0Var.h0();
+            t0Var.e0();
         }
         Runnable runnable = this.e;
         if (runnable != null) {

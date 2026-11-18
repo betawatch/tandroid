@@ -1,15 +1,14 @@
 package p4;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 import android.text.TextUtils;
-import e2.q1;
-import h9.s1;
+import h9.t1;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d {
     public static final String h;
@@ -19,7 +18,7 @@ public final class d {
     public static final String l;
     public static final String m;
     public static final String n;
-    public final i1 a;
+    public final k1 a;
     public final int b;
     public final int c;
     public final Bundle d;
@@ -41,8 +40,8 @@ public final class d {
         n = Integer.toString(9, 36);
     }
 
-    public d(i1 i1Var, int i7, int i10, Bundle bundle, boolean z10, l9.a aVar, Object obj) {
-        this.a = i1Var;
+    public d(k1 k1Var, int i7, int i10, Bundle bundle, boolean z10, l9.a aVar, Object obj) {
+        this.a = k1Var;
         this.b = i7;
         this.c = i10;
         this.d = new Bundle(bundle);
@@ -60,31 +59,31 @@ public final class d {
                 if (obj instanceof Integer) {
                     obj = Long.valueOf(((Integer) obj).longValue());
                 }
-                ja.e("Parameter has incorrect type.", obj instanceof Long);
+                la.e("Parameter has incorrect type.", obj instanceof Long);
                 break;
             case 2:
-                ja.e("Parameter has incorrect type.", obj instanceof Integer);
+                la.e("Parameter has incorrect type.", obj instanceof Integer);
                 break;
             case 3:
-                ja.e("Parameter has incorrect type.", obj instanceof Boolean);
+                la.e("Parameter has incorrect type.", obj instanceof Boolean);
                 break;
             case 4:
                 if (obj instanceof Double) {
                     obj = Float.valueOf(((Double) obj).floatValue());
                 }
-                ja.e("Parameter has incorrect type.", obj instanceof Float);
+                la.e("Parameter has incorrect type.", obj instanceof Float);
                 break;
             case 5:
-                ja.e("Parameter has incorrect type.", obj instanceof e2.d1);
+                la.e("Parameter has incorrect type.", obj instanceof e2.d1);
                 break;
             case 6:
-                ja.e("Parameter has incorrect type.", obj instanceof e2.l0);
+                la.e("Parameter has incorrect type.", obj instanceof e2.l0);
                 break;
             case 7:
-                ja.e("Parameter has incorrect type.", obj instanceof e2.o0);
+                la.e("Parameter has incorrect type.", obj instanceof e2.o0);
                 break;
             case 8:
-                ja.e("Parameter has incorrect type.", obj instanceof q1);
+                la.e("Parameter has incorrect type.", obj instanceof e2.q1);
                 break;
         }
         return obj;
@@ -99,14 +98,14 @@ public final class d {
         return false;
     }
 
-    public static d d(i1 i1Var) {
-        String str = i1Var.b;
-        Bundle bundle = i1Var.c;
+    public static d d(k1 k1Var) {
+        String str = k1Var.b;
+        Bundle bundle = k1Var.c;
         if (str.startsWith("androidx.media3.session.PLAYER_COMMAND_")) {
             int parseInt = Integer.parseInt(str.substring(39));
             Object h7 = h(i(parseInt), bundle);
             c cVar = new c();
-            ja.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((i1) cVar.d) == null);
+            la.e("sessionCommand is already set. Only one of sessionCommand and playerCommand should be set.", ((k1) cVar.d) == null);
             cVar.a = parseInt;
             cVar.g = a(i(parseInt), h7);
             return cVar.a();
@@ -114,18 +113,18 @@ public final class d {
         int parseInt2 = Integer.parseInt(str.substring(40));
         Object h10 = h(parseInt2 == 40010 ? 5 : 0, bundle);
         c cVar2 = new c();
-        i1 i1Var2 = new i1(parseInt2);
-        ja.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", cVar2.a == -1);
-        cVar2.d = i1Var2;
-        cVar2.g = a(i1Var2.a == 40010 ? 5 : 0, h10);
+        k1 k1Var2 = new k1(parseInt2);
+        la.e("playerCommands is already set. Only one of sessionCommand and playerCommand should be set.", cVar2.a == -1);
+        cVar2.d = k1Var2;
+        cVar2.g = a(k1Var2.a == 40010 ? 5 : 0, h10);
         return cVar2.a();
     }
 
-    public static s1 g(List list) {
+    public static t1 g(List list) {
         int b10;
         if (list.isEmpty()) {
             h9.g0 g0Var = h9.i0.b;
-            return s1.e;
+            return t1.e;
         }
         int i7 = -1;
         int i10 = -1;
@@ -194,7 +193,7 @@ public final class d {
             case 8:
                 Bundle bundle5 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle5.getClass();
-                return q1.b(bundle5);
+                return e2.q1.b(bundle5);
             default:
                 return null;
         }
@@ -240,9 +239,9 @@ public final class d {
 
     public final boolean b() {
         Object obj = this.g;
-        i1 i1Var = this.a;
-        if (i1Var != null) {
-            int i7 = i1Var.a;
+        k1 k1Var = this.a;
+        if (k1Var != null) {
+            int i7 = k1Var.a;
             if (i7 != 0) {
                 return i7 == 40010 && obj != null;
             }
@@ -282,8 +281,8 @@ public final class d {
 
     public final d e(int i7) {
         String str;
-        i1 i1Var = this.a;
-        if (i1Var != null && i1Var.a == 0) {
+        k1 k1Var = this.a;
+        if (k1Var != null && k1Var.a == 0) {
             l9.a aVar = new l9.a(new int[]{i7});
             if (this.e.equals(aVar)) {
                 return this;
@@ -295,12 +294,12 @@ public final class d {
             bundle = new Bundle();
             l("androidx.media3.session.CUSTOM_COMMAND_PARAMETER", 9, bundle);
         }
-        if (i1Var != null) {
-            str = "androidx.media3.session.SESSION_COMMAND_" + i1Var.a;
+        if (k1Var != null) {
+            str = "androidx.media3.session.SESSION_COMMAND_" + k1Var.a;
         } else {
             str = "androidx.media3.session.PLAYER_COMMAND_" + this.b;
         }
-        return new d(new i1(str, bundle), -1, this.c, this.d, this.f, new l9.a(new int[]{i7}), null);
+        return new d(new k1(str, bundle), -1, this.c, this.d, this.f, new l9.a(new int[]{i7}), null);
     }
 
     public final boolean equals(Object obj) {
@@ -339,7 +338,7 @@ public final class d {
             }
             if (i7 == 29) {
                 if (obj != null) {
-                    c1Var.q0((q1) obj);
+                    c1Var.q0((e2.q1) obj);
                     return;
                 }
                 return;
@@ -429,9 +428,9 @@ public final class d {
 
     public final Bundle k(int i7) {
         Bundle bundle = new Bundle();
-        i1 i1Var = this.a;
-        if (i1Var != null) {
-            bundle.putBundle(h, i1Var.a());
+        k1 k1Var = this.a;
+        if (k1Var != null) {
+            bundle.putBundle(h, k1Var.a());
         }
         int i10 = this.b;
         if (i10 != -1) {
@@ -460,8 +459,8 @@ public final class d {
     }
 
     public final void l(String str, int i7, Bundle bundle) {
-        i1 i1Var = this.a;
-        int i10 = i1Var != null ? i1Var.a == 40010 ? 5 : 0 : i(this.b);
+        k1 k1Var = this.a;
+        int i10 = k1Var != null ? k1Var.a == 40010 ? 5 : 0 : i(this.b);
         Object obj = this.g;
         switch (i10) {
             case 1:
@@ -486,7 +485,7 @@ public final class d {
                 bundle.putBundle(str, ((e2.o0) obj).c(i7));
                 break;
             case 8:
-                bundle.putBundle(str, ((q1) obj).c());
+                bundle.putBundle(str, ((e2.q1) obj).c());
                 break;
         }
     }

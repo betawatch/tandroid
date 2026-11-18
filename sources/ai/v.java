@@ -2,11 +2,11 @@ package ai;
 
 import android.content.Context;
 import android.net.Uri;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.vr;
-import org.telegram.messenger.xp;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
+import org.telegram.messenger.wp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
@@ -16,7 +16,7 @@ import org.telegram.ui.e4;
 import org.telegram.ui.g4;
 import org.telegram.ui.k3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -40,7 +40,7 @@ public final /* synthetic */ class v implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        v4.e1 K;
+        v4.f1 K;
         int i7 = 0;
         switch (this.a) {
             case 0:
@@ -58,9 +58,9 @@ public final /* synthetic */ class v implements Runnable {
                     int i11 = r1Var.b;
                     android.support.v4.media.session.a0 a0Var = (android.support.v4.media.session.a0) r1Var.d;
                     if (!c2Var.j && i11 == c2Var.C) {
-                        String p10 = DictationAsr.p(str, str2, z10);
-                        c2Var.B = p10;
-                        if (!p10.trim().isEmpty()) {
+                        String o4 = DictationAsr.o(str, str2, z10);
+                        c2Var.B = o4;
+                        if (!o4.trim().isEmpty()) {
                             w wVar2 = c2Var.A;
                             String str3 = wVar2 != null ? wVar2.n : null;
                             if (str3 == null) {
@@ -68,9 +68,9 @@ public final /* synthetic */ class v implements Runnable {
                             }
                             c2Var.r(str3);
                         }
-                        int length = i10 <= 0 ? str.length() : DictationAsr.p(str, str2.substring(0, i10), z10).length();
+                        int length = i10 <= 0 ? str.length() : DictationAsr.o(str, str2.substring(0, i10), z10).length();
                         if (!c2Var.i) {
-                            c2Var.d.M(length, c2Var.B);
+                            c2Var.d.l(length, c2Var.B);
                         }
                     }
                     if (runnable != null) {
@@ -84,15 +84,15 @@ public final /* synthetic */ class v implements Runnable {
                 TLObject tLObject = (TLObject) this.f;
                 int i12 = this.b;
                 TLRPC.WebPage webPage = (TLRPC.WebPage) this.h;
-                gj gjVar = (gj) this.n;
+                fj fjVar = (fj) this.n;
                 boolean z11 = this.c;
                 String str4 = (String) this.d;
                 boolean z12 = tLObject instanceof TLRPC.TL_messages_webPage;
                 TLObject tLObject2 = tLObject;
                 if (z12) {
                     TLRPC.TL_messages_webPage tL_messages_webPage = (TLRPC.TL_messages_webPage) tLObject;
-                    np.s1(i12).Y3(tL_messages_webPage.users, false);
-                    np.s1(i12).S3(tL_messages_webPage.chats, false);
+                    mp.u1(i12).f4(tL_messages_webPage.users, false);
+                    mp.u1(i12).Z3(tL_messages_webPage.chats, false);
                     tLObject2 = tL_messages_webPage.webpage;
                 }
                 if (!(tLObject2 instanceof TLRPC.TL_webPage)) {
@@ -108,10 +108,10 @@ public final /* synthetic */ class v implements Runnable {
                                 while (true) {
                                     k3[] k3VarArr = g4Var.v0;
                                     if (i7 >= k3VarArr.length) {
-                                        if (gjVar != null) {
+                                        if (fjVar != null) {
                                             TLRPC.TL_messages_messages tL_messages_messages = new TLRPC.TL_messages_messages();
-                                            tL_messages_messages.messages.add(gjVar.k);
-                                            vr.a0(i12).h1(-2, 0, gjVar.r1 ? 1 : 0, gj.B0(gjVar.k), 0L, tL_messages_messages, false);
+                                            tL_messages_messages.messages.add(fjVar.k);
+                                            tr.a0(i12).h1(-2, 0, fjVar.r1 ? 1 : 0, fj.B0(fjVar.k), 0L, tL_messages_messages, false);
                                             break;
                                         }
                                     } else {
@@ -129,11 +129,11 @@ public final /* synthetic */ class v implements Runnable {
                     TLRPC.TL_webPage tL_webPage = (TLRPC.TL_webPage) tLObject2;
                     if (tL_webPage.cached_page != null) {
                         if (!g4Var.e0.isEmpty() && g4Var.e0.get(0) == webPage) {
-                            if (gjVar != null) {
-                                gjVar.k.media.webpage = tL_webPage;
+                            if (fjVar != null) {
+                                fjVar.k.media.webpage = tL_webPage;
                                 TLRPC.TL_messages_messages tL_messages_messages2 = new TLRPC.TL_messages_messages();
-                                tL_messages_messages2.messages.add(gjVar.k);
-                                vr.a0(i12).h1(-2, 0, gjVar.r1 ? 1 : 0, gj.B0(gjVar.k), 0L, tL_messages_messages2, false);
+                                tL_messages_messages2.messages.add(fjVar.k);
+                                tr.a0(i12).h1(-2, 0, fjVar.r1 ? 1 : 0, fj.B0(fjVar.k), 0L, tL_messages_messages2, false);
                             }
                             if (z11) {
                                 g4Var.e0.add(tL_webPage);
@@ -150,9 +150,9 @@ public final /* synthetic */ class v implements Runnable {
                         }
                         a0.h hVar = new a0.h(1);
                         hVar.k(tL_webPage, tL_webPage.id);
-                        vr a02 = vr.a0(i12);
-                        if (!vr.s0(hVar)) {
-                            a02.a.c(new xp(a02, hVar, i7));
+                        tr a02 = tr.a0(i12);
+                        if (!tr.s0(hVar)) {
+                            a02.a.c(new wp(a02, hVar, i7));
                             break;
                         }
                     }
@@ -160,7 +160,7 @@ public final /* synthetic */ class v implements Runnable {
                 break;
             default:
                 vf.b bVar = (vf.b) this.e;
-                org.telegram.ui.ActionBar.t1[] t1VarArr = (org.telegram.ui.ActionBar.t1[]) this.f;
+                org.telegram.ui.ActionBar.u1[] u1VarArr = (org.telegram.ui.ActionBar.u1[]) this.f;
                 TLObject tLObject3 = (TLObject) this.d;
                 int i15 = this.b;
                 Uri uri = (Uri) this.h;
@@ -170,21 +170,21 @@ public final /* synthetic */ class v implements Runnable {
                     bVar.b();
                 } else {
                     try {
-                        t1VarArr[0].dismiss();
+                        u1VarArr[0].dismiss();
                     } catch (Throwable unused) {
                     }
-                    t1VarArr[0] = null;
+                    u1VarArr[0] = null;
                 }
                 if (tLObject3 instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject3;
-                    np.s1(i15).Y3(webpagepreview.users, false);
-                    np.s1(i15).S3(webpagepreview.chats, false);
+                    mp.u1(i15).f4(webpagepreview.users, false);
+                    mp.u1(i15).Z3(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                         TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = (TLRPC.TL_messageMediaWebPage) messageMedia;
                         TLRPC.WebPage webPage2 = tL_messageMediaWebPage.webpage;
                         if ((webPage2 instanceof TLRPC.TL_webPage) && webPage2.cached_page != null) {
-                            ns.f(i15).k(91, tL_messageMediaWebPage.webpage, uri.toString());
+                            ks.f(i15).k(91, tL_messageMediaWebPage.webpage, uri.toString());
                             break;
                         }
                     }
@@ -194,19 +194,19 @@ public final /* synthetic */ class v implements Runnable {
         }
     }
 
-    public /* synthetic */ v(g4 g4Var, TLObject tLObject, int i7, TLRPC.WebPage webPage, gj gjVar, boolean z10, String str) {
+    public /* synthetic */ v(g4 g4Var, TLObject tLObject, int i7, TLRPC.WebPage webPage, fj fjVar, boolean z10, String str) {
         this.e = g4Var;
         this.f = tLObject;
         this.b = i7;
         this.h = webPage;
-        this.n = gjVar;
+        this.n = fjVar;
         this.c = z10;
         this.d = str;
     }
 
-    public /* synthetic */ v(vf.b bVar, org.telegram.ui.ActionBar.t1[] t1VarArr, TLObject tLObject, int i7, Uri uri, Context context, boolean z10) {
+    public /* synthetic */ v(vf.b bVar, org.telegram.ui.ActionBar.u1[] u1VarArr, TLObject tLObject, int i7, Uri uri, Context context, boolean z10) {
         this.e = bVar;
-        this.f = t1VarArr;
+        this.f = u1VarArr;
         this.d = tLObject;
         this.b = i7;
         this.h = uri;

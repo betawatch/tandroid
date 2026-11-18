@@ -1,8 +1,8 @@
 package sg;
 
-import a8.t9;
+import a8.w9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c1 extends f1 {
     public final /* synthetic */ int f;
@@ -75,7 +75,7 @@ public final class c1 extends f1 {
                 x0 x0Var = g1Var.h;
                 double atan2 = Math.atan2(x0Var.c - x0Var.j, x0Var.b - x0Var.i) + 1.5707963267948966d;
                 x0 x0Var2 = g1Var.h;
-                float a10 = (t9.a(x0Var2.b, x0Var2.c, x0Var2.i, x0Var2.j) * 5.5f) / 2.0f;
+                float a10 = (w9.a(x0Var2.b, x0Var2.c, x0Var2.i, x0Var2.j) * 5.5f) / 2.0f;
                 x0 x0Var3 = g1Var.h;
                 float f12 = x0Var3.b;
                 float f13 = x0Var3.c;
@@ -87,14 +87,14 @@ public final class c1 extends f1 {
                 this.d = f10;
                 this.e = f11;
                 x0 x0Var4 = this.g.h;
-                float a11 = t9.a(x0Var4.b, x0Var4.c, f10, f11);
+                float a11 = w9.a(x0Var4.b, x0Var4.c, f10, f11);
                 x0Var4.e = a11;
                 x0Var4.d = a11;
                 break;
             case 2:
                 g1 g1Var2 = this.g;
                 x0 x0Var5 = g1Var2.h;
-                float a12 = t9.a(x0Var5.b, x0Var5.c, f10, f11);
+                float a12 = w9.a(x0Var5.b, x0Var5.c, f10, f11);
                 x0Var5.e = a12;
                 x0Var5.d = a12;
                 g1Var2.h.h = (float) ((((float) Math.atan2(r0.c - f11, f10 - r0.b)) - 0.3141592653589793d) + r0.h);

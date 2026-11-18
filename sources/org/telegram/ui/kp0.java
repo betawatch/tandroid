@@ -1,22 +1,29 @@
 package org.telegram.ui;
 
-import android.media.MediaFormat;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kp0 implements d3.v {
-    public final /* synthetic */ PhotoViewer a;
+public final class kp0 extends org.telegram.ui.Components.l61 {
+    public final /* synthetic */ PhotoViewer i0;
 
-    public kp0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kp0(PhotoViewer photoViewer, Context context, qn0 qn0Var) {
+        super(context, qn0Var);
+        this.i0 = photoViewer;
     }
 
-    @Override // d3.v
-    public final void a(long j3, long j10, e2.u uVar, MediaFormat mediaFormat) {
-        org.telegram.ui.Components.u51 u51Var;
-        PhotoViewer photoViewer = this.a;
-        if (photoViewer.J4 && (u51Var = photoViewer.G2) != null) {
-            org.telegram.messenger.g0.h3(new jd0(29, this, u51Var));
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        PhotoViewer.Q(this.i0);
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i7) {
+        super.setVisibility(i7);
+        if (i7 == 0) {
+            PhotoViewer.Q(this.i0);
         }
     }
 }

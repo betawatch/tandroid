@@ -3,22 +3,22 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.tp0;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.vp0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c0 extends d {
     public final Paint h;
     public long n;
     public float r;
     public float s;
-    public final /* synthetic */ tp0 w;
+    public final /* synthetic */ vp0 w;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(tp0 tp0Var, Context context, cf cfVar) {
-        super(context, cfVar);
-        this.w = tp0Var;
+    public c0(vp0 vp0Var, Context context, b5 b5Var) {
+        super(context, b5Var);
+        this.w = vp0Var;
         Paint paint = new Paint();
         this.h = paint;
         setWillNotDraw(false);
@@ -46,24 +46,24 @@ public final class c0 extends d {
         super.onDraw(canvas);
         long min = Math.min(16L, System.currentTimeMillis() - this.n);
         this.n = System.currentTimeMillis();
-        tp0 tp0Var = this.w;
-        j jVar = tp0Var.C0;
+        vp0 vp0Var = this.w;
+        j jVar = vp0Var.C0;
         if (jVar == null || jVar.r || !jVar.n) {
             i7 = 0;
             i10 = 0;
         } else {
             i7 = jVar.getStickyX();
-            i10 = tp0Var.C0.getStickyY();
+            i10 = vp0Var.C0.getStickyY();
         }
         if (i7 != 0) {
             float f12 = this.r;
             if (f12 != 1.0f) {
-                this.r = org.telegram.ui.Cells.y0.e(min, 150.0f, f12, 1.0f);
+                this.r = org.telegram.ui.Cells.c0.f(min, 150.0f, f12, 1.0f);
                 invalidate();
                 if (i10 != 0) {
                     float f13 = this.s;
                     if (f13 != 1.0f) {
-                        this.s = org.telegram.ui.Cells.y0.e(min, 150.0f, f13, 1.0f);
+                        this.s = org.telegram.ui.Cells.c0.f(min, 150.0f, f13, 1.0f);
                         invalidate();
                         f10 = this.s;
                         Paint paint = this.h;
@@ -88,7 +88,7 @@ public final class c0 extends d {
                 if (i10 == 0) {
                     float f14 = this.s;
                     if (f14 != 0.0f) {
-                        this.s = org.telegram.ui.Cells.y0.z(min, 150.0f, f14, 0.0f);
+                        this.s = org.telegram.ui.Cells.c0.B(min, 150.0f, f14, 0.0f);
                         invalidate();
                     }
                 }
@@ -104,7 +104,7 @@ public final class c0 extends d {
         if (i7 == 0) {
             float f15 = this.r;
             if (f15 != 0.0f) {
-                this.r = org.telegram.ui.Cells.y0.z(min, 150.0f, f15, 0.0f);
+                this.r = org.telegram.ui.Cells.c0.B(min, 150.0f, f15, 0.0f);
                 invalidate();
             }
         }

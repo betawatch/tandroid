@@ -4,19 +4,19 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class ty implements RequestDelegate {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ vy b;
+    public final /* synthetic */ TLRPC.TL_stickers_createStickerSet a;
+    public final /* synthetic */ uy b;
 
-    public ty(vy vyVar, String str) {
-        this.b = vyVar;
-        this.a = str;
+    public ty(uy uyVar, TLRPC.TL_stickers_createStickerSet tL_stickers_createStickerSet) {
+        this.b = uyVar;
+        this.a = tL_stickers_createStickerSet;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        g0.h3(new pq(21, this, this.a));
+        g0.g3(new tl(this, tL_error, this.a, tLObject, 26));
     }
 }

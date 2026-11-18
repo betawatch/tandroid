@@ -1,25 +1,60 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.function.Supplier;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class lk implements Supplier {
+public final /* synthetic */ class lk implements RequestDelegate {
     public final /* synthetic */ int a;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ lk(int i7) {
+    public /* synthetic */ lk(int i7, long j3, long j10, mp mpVar) {
         this.a = i7;
+        this.b = mpVar;
+        this.c = j3;
+        this.d = j10;
     }
 
-    @Override // java.util.function.Supplier
-    public final Object get() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                return new HashSet();
+                mp mpVar = this.b;
+                mpVar.getClass();
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    mpVar.S3(tL_messages_affectedMessages.pts, tL_messages_affectedMessages.pts_count, this.c);
+                }
+                long j3 = this.d;
+                if (j3 != 0) {
+                    mpVar.getMessagesStorage().q1(j3);
+                    break;
+                }
+                break;
             default:
-                return new ArrayList();
+                mp mpVar2 = this.b;
+                if (tLObject != null) {
+                    TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
+                    if (!tL_messages_peerDialogs.dialogs.isEmpty()) {
+                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
+                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
+                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
+                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
+                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
+                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
+                        mpVar2.Q3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, mpVar2.V7, false, false, false);
+                    }
+                }
+                long j10 = this.c;
+                if (j10 != 0) {
+                    mpVar2.getMessagesStorage().q1(j10);
+                }
+                mpVar2.d1.e(this.d);
+                break;
         }
     }
 }

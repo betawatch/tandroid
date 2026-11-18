@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x7 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,7 +33,7 @@ public final /* synthetic */ class x7 implements Runnable {
                 break;
             default:
                 lg.f fVar = this.b;
-                int i11 = fVar.a == 1 ? np.s1(fVar.b).e0 : np.s1(fVar.b).f0;
+                int i11 = fVar.a == 1 ? mp.u1(fVar.b).e0 : mp.u1(fVar.b).f0;
                 ((ArrayList) fVar.e).clear();
                 if (fVar.a == 1 && !((ArrayList) fVar.d).isEmpty()) {
                     i7Var = (i7) ((ArrayList) fVar.d).get(0);
@@ -46,15 +46,15 @@ public final /* synthetic */ class x7 implements Runnable {
                             }
                             break;
                         }
-                        ((p5) fVar.f).a((x7) fVar.g);
-                        ((p5) fVar.f).d((x7) fVar.g, 250L);
+                        ((q5) fVar.f).a((x7) fVar.g);
+                        ((q5) fVar.f).d((x7) fVar.g, 250L);
                         i7 = 0;
                         boolean z10 = false;
                         int i13 = 0;
                         while (i7 < ((ArrayList) fVar.d).size()) {
                             i7 i7Var2 = i7 > 0 ? (i7) ((ArrayList) fVar.d).get(i7 - 1) : null;
                             i7 i7Var3 = (i7) ((ArrayList) fVar.d).get(i7);
-                            if (i7Var == null || i7Var3 == i7Var || (i7Var3.p0 == i7Var.p0 && b6.h())) {
+                            if (i7Var == null || i7Var3 == i7Var || (i7Var3.p0 == i7Var.p0 && c6.h())) {
                                 if (i7 > 0 && !z10) {
                                     if (fVar.a == 1 && i7Var2 != null && i7Var2.j && i7Var2.W0 >= 1048576 && i7Var3.W0 <= 0) {
                                         z10 = true;

@@ -1,9 +1,9 @@
 package p4;
 
 import android.os.Bundle;
-import c8.r9;
+import c8.t9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements l0 {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class g0 implements l0 {
                     w7.s sVar = d0Var.e;
                     d0Var.s(vVar);
                     sVar.getClass();
-                    r9.b(new m1(-6));
+                    t9.b(new o1(-6));
                     break;
                 }
                 break;
@@ -55,14 +55,14 @@ public final /* synthetic */ class g0 implements l0 {
                 break;
             case 9:
                 d0 d0Var2 = m0Var.h;
-                g1 g1Var = d0Var2.t;
-                if (!h2.l0.c0(g1Var, d0Var2.p)) {
-                    if (g1Var != null && g1Var.p0(1)) {
-                        g1Var.b();
+                i1 i1Var = d0Var2.t;
+                if (!h2.l0.c0(i1Var, d0Var2.p)) {
+                    if (i1Var != null && i1Var.p0(1)) {
+                        i1Var.b();
                         break;
                     }
                 } else {
-                    h2.l0.J(g1Var);
+                    h2.l0.J(i1Var);
                     break;
                 }
                 break;
@@ -73,10 +73,10 @@ public final /* synthetic */ class g0 implements l0 {
                 m0Var.h.t.g0();
                 break;
             default:
-                g1 g1Var2 = m0Var.h.t;
+                i1 i1Var2 = m0Var.h.t;
                 String str = h2.l0.a;
-                if (g1Var2 != null && g1Var2.p0(1)) {
-                    g1Var2.b();
+                if (i1Var2 != null && i1Var2.p0(1)) {
+                    i1Var2.b();
                     break;
                 }
                 break;
@@ -88,7 +88,7 @@ public final /* synthetic */ class g0 implements l0 {
         this.b = m0Var;
     }
 
-    public /* synthetic */ g0(m0 m0Var, i1 i1Var, Bundle bundle) {
+    public /* synthetic */ g0(m0 m0Var, k1 k1Var, Bundle bundle) {
         this.a = 0;
         this.b = m0Var;
     }

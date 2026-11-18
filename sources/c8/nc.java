@@ -1,31 +1,13 @@
 package c8;
 
-import java.io.Serializable;
+import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class nc {
-    public static String a(byte[] bArr) {
-        StringBuilder sb2 = new StringBuilder(bArr.length * 2);
-        for (byte b10 : bArr) {
-            sb2.append(String.format("%02x", Byte.valueOf(b10)));
+    public static void a(String str) {
+        if (Log.isLoggable("FirebaseAppIndex", 3) ? true : Log.isLoggable("FirebaseAppIndex", 3)) {
+            Log.d("FirebaseAppIndex", str);
         }
-        return sb2.toString();
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public static long[] b(Serializable serializable) {
-        if (!(serializable instanceof int[])) {
-            if (serializable instanceof long[]) {
-                return (long[]) serializable;
-            }
-            return null;
-        }
-        int[] iArr = (int[]) serializable;
-        long[] jArr = new long[iArr.length];
-        for (int i7 = 0; i7 < iArr.length; i7++) {
-            jArr[i7] = iArr[i7];
-        }
-        return jArr;
     }
 }

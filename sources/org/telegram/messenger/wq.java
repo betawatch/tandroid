@@ -8,20 +8,20 @@ import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
+    public final /* synthetic */ tr b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
     public final /* synthetic */ int e;
     public final /* synthetic */ int f;
     public final /* synthetic */ int h;
 
-    public /* synthetic */ wq(vr vrVar, int i7, int i10, int i11, int i12, long j3) {
+    public /* synthetic */ wq(tr trVar, int i7, int i10, int i11, int i12, long j3) {
         this.a = 0;
-        this.b = vrVar;
+        this.b = trVar;
         this.d = i7;
         this.e = i10;
         this.f = i11;
@@ -58,7 +58,7 @@ public final /* synthetic */ class wq implements Runnable {
         int intValue2;
         switch (this.a) {
             case 0:
-                vr vrVar = this.b;
+                tr trVar = this.b;
                 int i12 = this.d;
                 int i13 = this.e;
                 int i14 = this.f;
@@ -72,8 +72,8 @@ public final /* synthetic */ class wq implements Runnable {
                         ArrayList arrayList = new ArrayList();
                         arrayList.add(Integer.valueOf(i15));
                         sparseArray.put(max2, arrayList);
-                        g0.h3(new hr(vrVar, j3, arrayList, 6));
-                        SQLitePreparedStatement executeFast2 = vrVar.b.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
+                        g0.g3(new gr(trVar, j3, arrayList, 6));
+                        SQLitePreparedStatement executeFast2 = trVar.b.executeFast("REPLACE INTO enc_tasks_v4 VALUES(?, ?, ?, ?)");
                         for (int i16 = 0; i16 < sparseArray.size(); i16++) {
                             try {
                                 int keyAt = sparseArray.keyAt(i16);
@@ -89,7 +89,7 @@ public final /* synthetic */ class wq implements Runnable {
                             } catch (Exception e10) {
                                 e = e10;
                                 sQLitePreparedStatement4 = executeFast2;
-                                vrVar.o(e, true);
+                                trVar.o(e, true);
                                 if (sQLitePreparedStatement4 != null) {
                                     sQLitePreparedStatement4.dispose();
                                     return;
@@ -105,10 +105,10 @@ public final /* synthetic */ class wq implements Runnable {
                             }
                         }
                         executeFast2.dispose();
-                        SQLiteDatabase sQLiteDatabase3 = vrVar.b;
+                        SQLiteDatabase sQLiteDatabase3 = trVar.b;
                         Locale locale = Locale.US;
                         sQLiteDatabase3.executeFast("UPDATE messages_v2 SET ttl = 0 WHERE mid = " + i15 + " AND uid = " + j3).stepThis().dispose();
-                        vrVar.getMessagesController().n0(max2, j3, sparseArray);
+                        trVar.getMessagesController().o0(max2, j3, sparseArray);
                         return;
                     } catch (Exception e11) {
                         e = e11;
@@ -117,7 +117,7 @@ public final /* synthetic */ class wq implements Runnable {
                     th = th3;
                 }
             case 1:
-                vr vrVar2 = this.b;
+                tr trVar2 = this.b;
                 long j10 = this.c;
                 int i18 = this.d;
                 int i19 = this.e;
@@ -126,7 +126,7 @@ public final /* synthetic */ class wq implements Runnable {
                 SQLitePreparedStatement sQLitePreparedStatement5 = null;
                 try {
                     try {
-                        executeFast = vrVar2.b.executeFast("REPLACE INTO widget_heights VALUES(?, ?, ?, ?, ?, ?)");
+                        executeFast = trVar2.b.executeFast("REPLACE INTO widget_heights VALUES(?, ?, ?, ?, ?, ?)");
                     } catch (Exception e12) {
                         e = e12;
                     }
@@ -142,14 +142,14 @@ public final /* synthetic */ class wq implements Runnable {
                     executeFast.bindInteger(6, i21);
                     executeFast.step();
                     executeFast.dispose();
-                    SQLiteDatabase sQLiteDatabase4 = vrVar2.b;
+                    SQLiteDatabase sQLiteDatabase4 = trVar2.b;
                     Locale locale2 = Locale.US;
                     sQLiteDatabase4.executeFast("DELETE FROM widget_heights WHERE uid = " + j10 + " AND mid = " + i18 + " AND width NOT IN (SELECT width FROM widget_heights WHERE uid = " + j10 + " AND mid = " + i18 + " ORDER BY date DESC LIMIT 4)").stepThis().dispose();
                     return;
                 } catch (Exception e13) {
                     e = e13;
                     sQLitePreparedStatement5 = executeFast;
-                    vrVar2.o(e, true);
+                    trVar2.o(e, true);
                     if (sQLitePreparedStatement5 != null) {
                         sQLitePreparedStatement5.dispose();
                         return;
@@ -164,13 +164,13 @@ public final /* synthetic */ class wq implements Runnable {
                     throw th;
                 }
             default:
-                vr vrVar3 = this.b;
+                tr trVar3 = this.b;
                 long j11 = this.c;
                 int i22 = this.d;
                 int i23 = this.f;
                 int i24 = this.h;
                 try {
-                    SQLiteCursor queryFinalized = vrVar3.b.queryFinalized("SELECT unread_count, inbox_max, last_mid FROM dialogs WHERE did = " + j11, new Object[0]);
+                    SQLiteCursor queryFinalized = trVar3.b.queryFinalized("SELECT unread_count, inbox_max, last_mid FROM dialogs WHERE did = " + j11, new Object[0]);
                     try {
                         if (queryFinalized.next()) {
                             try {
@@ -184,12 +184,12 @@ public final /* synthetic */ class wq implements Runnable {
                                 sQLiteCursor = queryFinalized;
                                 sQLitePreparedStatement = null;
                                 try {
-                                    vrVar3.o(e, true);
+                                    trVar3.o(e, true);
                                     if (sQLitePreparedStatement != null) {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    sQLiteDatabase2 = vrVar3.b;
+                                    sQLiteDatabase2 = trVar3.b;
                                     if (sQLiteDatabase2 == null) {
                                     }
                                     sQLiteDatabase2.commitTransaction();
@@ -202,7 +202,7 @@ public final /* synthetic */ class wq implements Runnable {
                                     if (sQLiteCursor != null) {
                                         sQLiteCursor.dispose();
                                     }
-                                    sQLiteDatabase = vrVar3.b;
+                                    sQLiteDatabase = trVar3.b;
                                     if (sQLiteDatabase != null) {
                                         sQLiteDatabase.commitTransaction();
                                     }
@@ -216,7 +216,7 @@ public final /* synthetic */ class wq implements Runnable {
                                 }
                                 if (sQLiteCursor != null) {
                                 }
-                                sQLiteDatabase = vrVar3.b;
+                                sQLiteDatabase = trVar3.b;
                                 if (sQLiteDatabase != null) {
                                 }
                                 throw th;
@@ -228,12 +228,12 @@ public final /* synthetic */ class wq implements Runnable {
                             i7 = 0;
                         }
                         queryFinalized.dispose();
-                        vrVar3.b.beginTransaction();
-                        boolean C = m5.C(j11);
+                        trVar3.b.beginTransaction();
+                        boolean C = n5.C(j11);
                         int i25 = this.e;
                         if (C) {
                             i11 = i10;
-                            sQLitePreparedStatement2 = vrVar3.b.executeFast("UPDATE messages_v2 SET read_state = read_state | 1 WHERE uid = ? AND mid >= ? AND read_state IN(0,2) AND out = 0");
+                            sQLitePreparedStatement2 = trVar3.b.executeFast("UPDATE messages_v2 SET read_state = read_state | 1 WHERE uid = ? AND mid >= ? AND read_state IN(0,2) AND out = 0");
                             try {
                                 sQLitePreparedStatement2.requery();
                                 sQLitePreparedStatement2.bindLong(1, j11);
@@ -244,7 +244,7 @@ public final /* synthetic */ class wq implements Runnable {
                                     sQLiteCursor3 = null;
                                     max = 0;
                                 } else {
-                                    SQLiteCursor queryFinalized2 = vrVar3.b.queryFinalized("SELECT changes()", new Object[0]);
+                                    SQLiteCursor queryFinalized2 = trVar3.b.queryFinalized("SELECT changes()", new Object[0]);
                                     try {
                                         if (queryFinalized2.next()) {
                                             try {
@@ -253,12 +253,12 @@ public final /* synthetic */ class wq implements Runnable {
                                                 e = e15;
                                                 sQLiteCursor = queryFinalized2;
                                                 sQLitePreparedStatement = null;
-                                                vrVar3.o(e, true);
+                                                trVar3.o(e, true);
                                                 if (sQLitePreparedStatement != null) {
                                                 }
                                                 if (sQLiteCursor != null) {
                                                 }
-                                                sQLiteDatabase2 = vrVar3.b;
+                                                sQLiteDatabase2 = trVar3.b;
                                                 if (sQLiteDatabase2 == null) {
                                                 }
                                                 sQLiteDatabase2.commitTransaction();
@@ -271,7 +271,7 @@ public final /* synthetic */ class wq implements Runnable {
                                                 }
                                                 if (sQLiteCursor != null) {
                                                 }
-                                                sQLiteDatabase = vrVar3.b;
+                                                sQLiteDatabase = trVar3.b;
                                                 if (sQLiteDatabase != null) {
                                                 }
                                                 throw th;
@@ -286,12 +286,12 @@ public final /* synthetic */ class wq implements Runnable {
                                         e = e16;
                                         sQLitePreparedStatement = null;
                                         sQLiteCursor = queryFinalized2;
-                                        vrVar3.o(e, true);
+                                        trVar3.o(e, true);
                                         if (sQLitePreparedStatement != null) {
                                         }
                                         if (sQLiteCursor != null) {
                                         }
-                                        sQLiteDatabase2 = vrVar3.b;
+                                        sQLiteDatabase2 = trVar3.b;
                                         if (sQLiteDatabase2 == null) {
                                         }
                                         sQLiteDatabase2.commitTransaction();
@@ -304,7 +304,7 @@ public final /* synthetic */ class wq implements Runnable {
                                         }
                                         if (sQLiteCursor != null) {
                                         }
-                                        sQLiteDatabase = vrVar3.b;
+                                        sQLiteDatabase = trVar3.b;
                                         if (sQLiteDatabase != null) {
                                         }
                                         throw th;
@@ -314,12 +314,12 @@ public final /* synthetic */ class wq implements Runnable {
                                 e = e17;
                                 sQLiteCursor = null;
                                 sQLitePreparedStatement = sQLitePreparedStatement2;
-                                vrVar3.o(e, true);
+                                trVar3.o(e, true);
                                 if (sQLitePreparedStatement != null) {
                                 }
                                 if (sQLiteCursor != null) {
                                 }
-                                sQLiteDatabase2 = vrVar3.b;
+                                sQLiteDatabase2 = trVar3.b;
                                 if (sQLiteDatabase2 == null) {
                                 }
                                 sQLiteDatabase2.commitTransaction();
@@ -332,7 +332,7 @@ public final /* synthetic */ class wq implements Runnable {
                                 }
                                 if (sQLiteCursor != null) {
                                 }
-                                sQLiteDatabase = vrVar3.b;
+                                sQLiteDatabase = trVar3.b;
                                 if (sQLiteDatabase != null) {
                                 }
                                 throw th;
@@ -340,7 +340,7 @@ public final /* synthetic */ class wq implements Runnable {
                         } else {
                             try {
                                 i24 = Math.max(i7, i22);
-                                SQLitePreparedStatement executeFast3 = vrVar3.b.executeFast("UPDATE messages_v2 SET read_state = read_state | 1 WHERE uid = ? AND mid <= ? AND read_state IN(0,2) AND out = 0");
+                                SQLitePreparedStatement executeFast3 = trVar3.b.executeFast("UPDATE messages_v2 SET read_state = read_state | 1 WHERE uid = ? AND mid <= ? AND read_state IN(0,2) AND out = 0");
                                 try {
                                     executeFast3.requery();
                                     executeFast3.bindLong(1, j11);
@@ -352,7 +352,7 @@ public final /* synthetic */ class wq implements Runnable {
                                         sQLiteCursor2 = null;
                                         max = 0;
                                     } else {
-                                        SQLiteCursor queryFinalized3 = vrVar3.b.queryFinalized("SELECT changes()", new Object[0]);
+                                        SQLiteCursor queryFinalized3 = trVar3.b.queryFinalized("SELECT changes()", new Object[0]);
                                         try {
                                             int intValue4 = queryFinalized3.next() ? i25 + queryFinalized3.intValue(0) : 0;
                                             queryFinalized3.dispose();
@@ -362,12 +362,12 @@ public final /* synthetic */ class wq implements Runnable {
                                             e = e18;
                                             sQLitePreparedStatement = executeFast3;
                                             sQLiteCursor = queryFinalized3;
-                                            vrVar3.o(e, true);
+                                            trVar3.o(e, true);
                                             if (sQLitePreparedStatement != null) {
                                             }
                                             if (sQLiteCursor != null) {
                                             }
-                                            sQLiteDatabase2 = vrVar3.b;
+                                            sQLiteDatabase2 = trVar3.b;
                                             if (sQLiteDatabase2 == null) {
                                             }
                                             sQLiteDatabase2.commitTransaction();
@@ -380,20 +380,20 @@ public final /* synthetic */ class wq implements Runnable {
                                             }
                                             if (sQLiteCursor != null) {
                                             }
-                                            sQLiteDatabase = vrVar3.b;
+                                            sQLiteDatabase = trVar3.b;
                                             if (sQLiteDatabase != null) {
                                             }
                                             throw th;
                                         }
                                     }
                                     try {
-                                        SQLitePreparedStatement executeFast4 = vrVar3.b.executeFast("DELETE FROM unread_push_messages WHERE uid = ? AND mid <= ?");
+                                        SQLitePreparedStatement executeFast4 = trVar3.b.executeFast("DELETE FROM unread_push_messages WHERE uid = ? AND mid <= ?");
                                         executeFast4.requery();
                                         executeFast4.bindLong(1, j11);
                                         executeFast4.bindInteger(2, i24);
                                         executeFast4.step();
                                         executeFast4.dispose();
-                                        executeFast3 = vrVar3.b.executeFast("DELETE FROM unread_push_messages WHERE uid = ? AND date <= ?");
+                                        executeFast3 = trVar3.b.executeFast("DELETE FROM unread_push_messages WHERE uid = ? AND date <= ?");
                                         executeFast3.requery();
                                         executeFast3.bindLong(1, j11);
                                         executeFast3.bindInteger(2, i23);
@@ -404,14 +404,14 @@ public final /* synthetic */ class wq implements Runnable {
                                         e = e19;
                                         sQLitePreparedStatement = executeFast3;
                                         sQLiteCursor = sQLiteCursor2;
-                                        vrVar3.o(e, true);
+                                        trVar3.o(e, true);
                                         if (sQLitePreparedStatement != null) {
                                             sQLitePreparedStatement.dispose();
                                         }
                                         if (sQLiteCursor != null) {
                                             sQLiteCursor.dispose();
                                         }
-                                        sQLiteDatabase2 = vrVar3.b;
+                                        sQLiteDatabase2 = trVar3.b;
                                         if (sQLiteDatabase2 == null) {
                                             return;
                                         }
@@ -425,7 +425,7 @@ public final /* synthetic */ class wq implements Runnable {
                                         }
                                         if (sQLiteCursor != null) {
                                         }
-                                        sQLiteDatabase = vrVar3.b;
+                                        sQLiteDatabase = trVar3.b;
                                         if (sQLiteDatabase != null) {
                                         }
                                         throw th;
@@ -443,12 +443,12 @@ public final /* synthetic */ class wq implements Runnable {
                                 e = e21;
                                 sQLiteCursor = null;
                                 sQLitePreparedStatement = null;
-                                vrVar3.o(e, true);
+                                trVar3.o(e, true);
                                 if (sQLitePreparedStatement != null) {
                                 }
                                 if (sQLiteCursor != null) {
                                 }
-                                sQLiteDatabase2 = vrVar3.b;
+                                sQLiteDatabase2 = trVar3.b;
                                 if (sQLiteDatabase2 == null) {
                                 }
                                 sQLiteDatabase2.commitTransaction();
@@ -461,14 +461,14 @@ public final /* synthetic */ class wq implements Runnable {
                                 }
                                 if (sQLiteCursor != null) {
                                 }
-                                sQLiteDatabase = vrVar3.b;
+                                sQLiteDatabase = trVar3.b;
                                 if (sQLiteDatabase != null) {
                                 }
                                 throw th;
                             }
                         }
                         try {
-                            sQLitePreparedStatement2 = vrVar3.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ? WHERE did = ?");
+                            sQLitePreparedStatement2 = trVar3.b.executeFast("UPDATE dialogs SET unread_count = ?, inbox_max = ? WHERE did = ?");
                         } catch (Exception e22) {
                             e = e22;
                             sQLitePreparedStatement3 = null;
@@ -483,20 +483,20 @@ public final /* synthetic */ class wq implements Runnable {
                             sQLitePreparedStatement2.bindLong(3, j11);
                             sQLitePreparedStatement2.step();
                             sQLitePreparedStatement2.dispose();
-                            vrVar3.b.commitTransaction();
-                            if (vrVar3.u0(14, j11)) {
+                            trVar3.b.commitTransaction();
+                            if (trVar3.u0(14, j11)) {
                                 try {
-                                    vrVar3.g2(j11, i7, i24);
+                                    trVar3.g2(j11, i7, i24);
                                 } catch (Exception e23) {
                                     e = e23;
                                     sQLiteCursor = sQLiteCursor3;
                                     sQLitePreparedStatement = null;
-                                    vrVar3.o(e, true);
+                                    trVar3.o(e, true);
                                     if (sQLitePreparedStatement != null) {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    sQLiteDatabase2 = vrVar3.b;
+                                    sQLiteDatabase2 = trVar3.b;
                                     if (sQLiteDatabase2 == null) {
                                     }
                                     sQLiteDatabase2.commitTransaction();
@@ -509,31 +509,31 @@ public final /* synthetic */ class wq implements Runnable {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    sQLiteDatabase = vrVar3.b;
+                                    sQLiteDatabase = trVar3.b;
                                     if (sQLiteDatabase != null) {
                                     }
                                     throw th;
                                 }
                             }
-                            if (i11 == 0 || max != 0 || vrVar3.u0(13, j11)) {
+                            if (i11 == 0 || max != 0 || trVar3.u0(13, j11)) {
                                 sQLitePreparedStatement3 = null;
                             } else {
                                 LongSparseIntArray longSparseIntArray = new LongSparseIntArray();
                                 longSparseIntArray.put(j11, max);
                                 sQLitePreparedStatement3 = null;
                                 try {
-                                    vrVar3.W1(longSparseIntArray, null, true);
+                                    trVar3.W1(longSparseIntArray, null, true);
                                 } catch (Exception e24) {
                                     e = e24;
                                     SQLiteCursor sQLiteCursor4 = sQLiteCursor3;
                                     sQLitePreparedStatement = sQLitePreparedStatement3;
                                     sQLiteCursor = sQLiteCursor4;
-                                    vrVar3.o(e, true);
+                                    trVar3.o(e, true);
                                     if (sQLitePreparedStatement != null) {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    sQLiteDatabase2 = vrVar3.b;
+                                    sQLiteDatabase2 = trVar3.b;
                                     if (sQLiteDatabase2 == null) {
                                     }
                                     sQLiteDatabase2.commitTransaction();
@@ -547,7 +547,7 @@ public final /* synthetic */ class wq implements Runnable {
                                     }
                                     if (sQLiteCursor != null) {
                                     }
-                                    sQLiteDatabase = vrVar3.b;
+                                    sQLiteDatabase = trVar3.b;
                                     if (sQLiteDatabase != null) {
                                     }
                                     throw th;
@@ -555,11 +555,11 @@ public final /* synthetic */ class wq implements Runnable {
                             }
                             ArrayList arrayList3 = new ArrayList();
                             arrayList3.add(Long.valueOf(j11));
-                            vrVar3.l2(arrayList3);
+                            trVar3.l2(arrayList3);
                             if (sQLiteCursor3 != null) {
                                 sQLiteCursor3.dispose();
                             }
-                            sQLiteDatabase2 = vrVar3.b;
+                            sQLiteDatabase2 = trVar3.b;
                             if (sQLiteDatabase2 == null) {
                                 return;
                             }
@@ -567,12 +567,12 @@ public final /* synthetic */ class wq implements Runnable {
                             e = e25;
                             sQLiteCursor = sQLiteCursor3;
                             sQLitePreparedStatement = sQLitePreparedStatement2;
-                            vrVar3.o(e, true);
+                            trVar3.o(e, true);
                             if (sQLitePreparedStatement != null) {
                             }
                             if (sQLiteCursor != null) {
                             }
-                            sQLiteDatabase2 = vrVar3.b;
+                            sQLiteDatabase2 = trVar3.b;
                             if (sQLiteDatabase2 == null) {
                             }
                             sQLiteDatabase2.commitTransaction();
@@ -585,7 +585,7 @@ public final /* synthetic */ class wq implements Runnable {
                             }
                             if (sQLiteCursor != null) {
                             }
-                            sQLiteDatabase = vrVar3.b;
+                            sQLiteDatabase = trVar3.b;
                             if (sQLiteDatabase != null) {
                             }
                             throw th;
@@ -613,9 +613,9 @@ public final /* synthetic */ class wq implements Runnable {
         }
     }
 
-    public /* synthetic */ wq(vr vrVar, long j3, int i7, int i10, int i11, int i12, int i13) {
+    public /* synthetic */ wq(tr trVar, long j3, int i7, int i10, int i11, int i12, int i13) {
         this.a = i13;
-        this.b = vrVar;
+        this.b = trVar;
         this.c = j3;
         this.d = i7;
         this.e = i10;

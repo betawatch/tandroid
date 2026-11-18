@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import androidx.appcompat.widget.Toolbar;
 import java.util.ArrayList;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f3 implements l.x {
     public l.k a;
@@ -40,7 +40,7 @@ public final class f3 implements l.x {
                 ((ViewGroup) parent2).removeView(toolbar.r);
             }
             g3 h = Toolbar.h();
-            h.a = (toolbar.E & ns.x1) | 8388611;
+            h.a = (toolbar.E & ks.x1) | 8388611;
             h.b = 2;
             toolbar.r.setLayoutParams(h);
             toolbar.addView(toolbar.r);
@@ -69,7 +69,7 @@ public final class f3 implements l.x {
     }
 
     @Override // l.x
-    public final void d() {
+    public final void e() {
         if (this.b != null) {
             l.k kVar = this.a;
             if (kVar != null) {
@@ -123,6 +123,6 @@ public final class f3 implements l.x {
     }
 
     @Override // l.x
-    public final void e(l.k kVar, boolean z10) {
+    public final void d(l.k kVar, boolean z10) {
     }
 }

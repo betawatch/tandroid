@@ -3,10 +3,10 @@ package n6;
 import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public final int a;
@@ -113,7 +113,7 @@ public final class a extends r6.a {
             return false;
         }
         a aVar = (a) obj;
-        return this.b == aVar.b && q6.m.k(this.c, aVar.c) && q6.m.k(this.d, aVar.d) && q6.m.k(this.e, aVar.e);
+        return this.b == aVar.b && q6.m.l(this.c, aVar.c) && q6.m.l(this.d, aVar.d) && q6.m.l(this.e, aVar.e);
     }
 
     public final int hashCode() {
@@ -122,24 +122,24 @@ public final class a extends r6.a {
 
     public final String toString() {
         ji.j jVar = new ji.j(this);
-        jVar.U(d(this.b), "statusCode");
-        jVar.U(this.c, "resolution");
-        jVar.U(this.d, "message");
-        jVar.U(this.e, "clientMethodKey");
+        jVar.E(d(this.b), "statusCode");
+        jVar.E(this.c, "resolution");
+        jVar.E(this.d, "message");
+        jVar.E(this.e, "clientMethodKey");
         return jVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        yb.q(parcel, 2, 4);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.b);
-        yb.k(parcel, 3, this.c, i7);
-        yb.l(parcel, 4, this.d);
-        yb.i(parcel, 5, this.e);
-        yb.s(parcel, r10);
+        bc.k(parcel, 3, this.c, i7);
+        bc.l(parcel, 4, this.d);
+        bc.i(parcel, 5, this.e);
+        bc.s(parcel, r10);
     }
 
     public a(int i7, PendingIntent pendingIntent, String str) {

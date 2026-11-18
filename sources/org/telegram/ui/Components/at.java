@@ -1,27 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
+import android.graphics.Canvas;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class at implements org.telegram.messenger.z10 {
-    public final /* synthetic */ ft a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class at extends EdgeEffect {
+    public final int a;
+    public final ys b;
+    public final RecyclerView c;
+    public final mo d;
+    public boolean e;
 
-    public /* synthetic */ at(ft ftVar, int i7, int i10) {
-        this.a = ftVar;
-        this.b = i7;
-        this.c = i10;
+    public at(RecyclerView recyclerView, int i7, ys ysVar) {
+        super(recyclerView.getContext());
+        this.d = new mo(this, 9);
+        this.c = recyclerView;
+        this.a = i7;
+        this.b = ysVar;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        ft ftVar = this.a;
-        Editable text = ftVar.getText();
-        int i7 = this.b;
-        text.replace(i7, this.c, charSequence);
-        ftVar.setSelection(i7, charSequence.length() + i7);
+    public final void a() {
+        boolean b10 = b();
+        if (this.e != b10) {
+            this.e = b10;
+            ys ysVar = this.b;
+            if (ysVar != null) {
+                ysVar.a(this.a, b10);
+            }
+        }
+    }
+
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
+        }
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i7) {
+        super.onAbsorb(i7);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f10) {
+        super.onPull(f10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f10, float f11) {
+        float onPullDistance = super.onPullDistance(f10, f11);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i7, int i10) {
+        super.setSize(i7, i10);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f10, float f11) {
+        super.onPull(f10, f11);
+        a();
     }
 }

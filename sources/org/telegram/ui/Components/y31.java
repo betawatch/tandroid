@@ -1,56 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class y31 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
+public final class y31 extends vy {
+    public final /* synthetic */ h41 Y;
 
-    public y31(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y31(h41 h41Var, int i7, x31 x31Var) {
+        super(5, i7, x31Var);
+        this.Y = h41Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i7 = this.c;
-        if (i7 >= 0) {
-            this.b = org.telegram.ui.ActionBar.j6.v0(i7);
-        }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        int i10 = this.b;
-        if (i10 != 0) {
-            textPaint.setColor(i10);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+    @Override // org.telegram.ui.Components.vy
+    public final boolean D1() {
+        h41 h41Var = this.Y;
+        return h41Var.n.getAdapter() == h41Var.w;
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
+    @Override // v4.c0
+    public final boolean Y0() {
+        return org.telegram.messenger.gd.a0;
+    }
+
+    @Override // v4.t, v4.c0, v4.p0
+    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
+        int i10;
+        View m10;
+        h41 h41Var = this.Y;
+        if (h41Var.O) {
+            return super.o0(i7, x0Var, c1Var);
         }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+        int i11 = 0;
+        if (h41Var.M != null) {
+            return 0;
+        }
+        if (h41Var.N) {
+            while (true) {
+                i10 = 1;
+                if (i11 >= r()) {
+                    break;
+                }
+                x31 x31Var = h41Var.n;
+                View q10 = q(i11);
+                x31Var.getClass();
+                int R = RecyclerView.R(q10);
+                if (R < 1) {
+                    i10 = R;
+                    break;
+                }
+                i11++;
+            }
+            if (i10 == 0 && (m10 = h41Var.r.m(i10)) != null && m10.getTop() - i7 > org.telegram.messenger.g0.L(58.0f)) {
+                i7 = m10.getTop() - org.telegram.messenger.g0.L(58.0f);
+            }
+        }
+        return super.o0(i7, x0Var, c1Var);
     }
 
-    public y31() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    public y31(Typeface typeface, int i7) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i7;
+    @Override // v4.t, v4.c0, v4.p0
+    public final boolean y0() {
+        return false;
     }
 }

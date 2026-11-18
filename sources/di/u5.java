@@ -1,42 +1,40 @@
 package di;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.text.Spanned;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u5 extends AnimatorListenerAdapter {
+public final /* synthetic */ class u5 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w5 b;
+    public final /* synthetic */ z5 b;
 
-    public /* synthetic */ u5(w5 w5Var, int i7) {
+    public /* synthetic */ u5(z5 z5Var, int i7) {
         this.a = i7;
-        this.b = w5Var;
+        this.b = z5Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        View.OnClickListener onClickListener;
         switch (this.a) {
             case 0:
-                this.b.h0 = false;
-                break;
-            case 1:
-                this.b.h0 = false;
-                break;
-            case 2:
-                this.b.P.setVisibility(4);
-                break;
-            case 3:
-                w5 w5Var = this.b;
-                w5Var.w0 = w5Var.v0;
-                w5Var.d(w5Var.b0);
+                CharSequence text = this.b.w.getText();
+                if (text instanceof Spanned) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class);
+                    if (clickableSpanArr.length > 0) {
+                        clickableSpanArr[0].onClick(view);
+                        break;
+                    }
+                }
                 break;
             default:
-                w5 w5Var2 = this.b;
-                w5Var2.x0 = 1.0f;
-                w5Var2.b.setScaleX(1.0f);
-                w5Var2.b.setScaleY(w5Var2.x0);
-                w5Var2.invalidate();
+                z5 z5Var = this.b;
+                if (z5Var.P.getVisibility() == 0 && (onClickListener = z5Var.a0) != null) {
+                    onClickListener.onClick(view);
+                    break;
+                }
                 break;
         }
     }

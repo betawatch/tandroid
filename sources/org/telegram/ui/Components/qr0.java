@@ -1,46 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qr0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rr0 b;
-    public final /* synthetic */ String c;
+public final class qr0 extends dt0 {
+    public final /* synthetic */ gt0 H;
 
-    public /* synthetic */ qr0(rr0 rr0Var, String str, int i7) {
-        this.a = i7;
-        this.b = rr0Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qr0(gt0 gt0Var, Context context) {
+        super(gt0Var, context, 0, false);
+        this.H = gt0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rr0 rr0Var = this.b;
-                String str = this.c;
-                rr0Var.getClass();
-                org.telegram.messenger.g0.h3(new qr0(rr0Var, str, 1));
-                break;
-            default:
-                rr0 rr0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                rr0Var2.f = null;
-                if (!org.telegram.messenger.t3.T(rr0Var2.n) && rr0Var2.s.g1 != null) {
-                    arrayList = new ArrayList(rr0Var2.s.g1.participants.participants);
-                }
-                rr0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.g.c(new yf(rr0Var2, str2, arrayList, 24));
-                } else {
-                    rr0Var2.r = 1;
-                }
-                rr0Var2.e.g(str2, false, false, true, false, org.telegram.messenger.t3.T(rr0Var2.n) ? rr0Var2.n.id : 0L, false, 2, 1);
-                break;
+    @Override // org.telegram.ui.Components.dt0, v4.i0
+    public final void f() {
+        super.f();
+        gt0 gt0Var = this.H;
+        bs0 g02 = gt0Var.g0(8);
+        if (g02 != null && g02.n.getVisibility() == 0) {
+            gt0Var.g0.f();
+        }
+        if (g02 != null) {
+            xq0 xq0Var = g02.w;
+            fi.h6 h6Var = this.s;
+            xq0Var.e(h6Var != null && (h6Var.k() || (gt0Var.t0() && this.s.g() > 0)), true);
         }
     }
 }

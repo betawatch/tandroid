@@ -2,15 +2,15 @@ package org.telegram.ui.Cells;
 
 import android.text.SpannableStringBuilder;
 import android.view.View;
-import org.telegram.messenger.gj;
+import org.telegram.messenger.fj;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.ni0;
-import org.telegram.ui.om0;
-import org.telegram.ui.xz;
-import org.telegram.ui.zz;
+import org.telegram.ui.Components.ph0;
+import org.telegram.ui.a00;
+import org.telegram.ui.c00;
+import org.telegram.ui.qi0;
+import org.telegram.ui.qm0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -35,17 +35,17 @@ public final /* synthetic */ class a implements View.OnClickListener {
                     new bi.g(mVar.getContext()).show();
                     break;
                 } else {
-                    new bi.y(mVar.getContext(), null, null, (org.telegram.messenger.r9) mVar.e.get(0)).show();
+                    new bi.y(mVar.getContext(), null, null, (org.telegram.messenger.q9) mVar.e.get(0)).show();
                     break;
                 }
             case 2:
                 ((v) obj).toggle();
                 break;
             case 3:
-                fh0 fh0Var = ((z2) obj).f;
-                if (!fh0Var.b()) {
-                    fh0Var.setProgress(0.0f);
-                    fh0Var.d();
+                ph0 ph0Var = ((z2) obj).f;
+                if (!ph0Var.b()) {
+                    ph0Var.setProgress(0.0f);
+                    ph0Var.d();
                     break;
                 }
                 break;
@@ -61,32 +61,32 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 break;
             case 7:
                 a5 a5Var = (a5) obj;
-                a5Var.M.c(a5Var, true);
+                a5Var.M.b(a5Var, true);
                 break;
             case 8:
-                r5 r5Var = (r5) obj;
-                r5Var.d = r5Var.e[((Integer) ((RadioButton) view).getTag()).intValue()];
-                r5Var.b(true);
-                r5Var.c.onClick(r5Var);
+                s5 s5Var = (s5) obj;
+                s5Var.d = s5Var.e[((Integer) ((RadioButton) view).getTag()).intValue()];
+                s5Var.b(true);
+                s5Var.c.onClick(s5Var);
                 break;
             case 9:
-                v5 v5Var = (v5) obj;
-                u5 u5Var = v5Var.d;
-                if (u5Var != null) {
-                    om0.Z((om0) ((org.telegram.ui.l4) ((ni0) u5Var).b).e, v5Var.b[((Integer) view.getTag()).intValue()]);
+                w5 w5Var = (w5) obj;
+                v5 v5Var = w5Var.d;
+                if (v5Var != null) {
+                    qm0.Z((qm0) ((org.telegram.ui.l4) ((qi0) v5Var).b).e, w5Var.b[((Integer) view.getTag()).intValue()]);
                     break;
                 }
                 break;
             case 10:
-                o7 o7Var = (o7) obj;
-                if (o7Var.d != null) {
+                p7 p7Var = (p7) obj;
+                if (p7Var.d != null) {
                     int intValue = ((Integer) view.getTag()).intValue();
-                    m7 m7Var = o7Var.d;
-                    int i10 = o7Var.c[intValue];
-                    gj gjVar = o7Var.b[intValue];
-                    zz zzVar = ((xz) ((org.telegram.ui.f) m7Var).b).d;
-                    SpannableStringBuilder[] spannableStringBuilderArr = zz.t0;
-                    zzVar.f(i10, o7Var, gjVar, intValue);
+                    n7 n7Var = p7Var.d;
+                    int i10 = p7Var.c[intValue];
+                    fj fjVar = p7Var.b[intValue];
+                    c00 c00Var = ((a00) ((org.telegram.ui.f) n7Var).b).d;
+                    SpannableStringBuilder[] spannableStringBuilderArr = c00.t0;
+                    c00Var.f(i10, p7Var, fjVar, intValue);
                     break;
                 }
                 break;

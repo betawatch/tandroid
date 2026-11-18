@@ -2,14 +2,14 @@ package ri;
 
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public abstract class e extends Drawable {
     public final Rect a = new Rect();
     public r b = q.f();
-    public int c = ns.e4;
+    public int c = ks.e4;
     public float d;
     public float e;
 

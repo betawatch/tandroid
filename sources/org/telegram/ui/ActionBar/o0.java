@@ -1,79 +1,9 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.ui.ch;
-import org.telegram.ui.eh;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o0 {
-    public final int a;
-    public int b;
-    public int c;
-    public Drawable d;
-    public CharSequence e;
-    public boolean f;
-    public View g;
-    public eh h;
-    public int i;
-    public View j;
-    public ch k;
-    public int l = 0;
-    public int m = 0;
-    public Integer n;
-    public Integer o;
+public interface o0 {
+    void j();
 
-    public o0(int i7) {
-        this.a = i7;
-    }
-
-    public final void a(int i7, int i10) {
-        Integer num = this.n;
-        if (num == null || this.o == null || num.intValue() != i7 || this.o.intValue() != i10) {
-            this.n = Integer.valueOf(i7);
-            this.o = Integer.valueOf(i10);
-            View view = this.j;
-            if (view instanceof z0) {
-                ((z0) view).d(i7, i10);
-            }
-        }
-    }
-
-    public final void b(int i7) {
-        if (i7 != this.c) {
-            this.c = i7;
-            View view = this.j;
-            if (view instanceof z0) {
-                ((z0) view).setIcon(i7);
-            }
-        }
-    }
-
-    public final void c(ch chVar) {
-        this.k = chVar;
-        View view = this.j;
-        if (view != null) {
-            view.setOnClickListener(chVar);
-        }
-    }
-
-    public final void d(CharSequence charSequence) {
-        this.e = charSequence;
-        View view = this.j;
-        if (view instanceof z0) {
-            ((z0) view).setText(charSequence);
-        } else if (view instanceof TextView) {
-            ((TextView) view).setText(charSequence);
-        }
-    }
-
-    public final void e(int i7) {
-        this.l = i7;
-        View view = this.j;
-        if (view != null) {
-            view.setVisibility(i7);
-        }
-    }
+    void k();
 }

@@ -1,38 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ lm b;
-    public final /* synthetic */ TLRPC.Chat c;
+    public final /* synthetic */ mm b;
+    public final /* synthetic */ org.telegram.messenger.fj c;
 
-    public /* synthetic */ wl(lm lmVar, TLRPC.Chat chat, int i7) {
+    public /* synthetic */ wl(mm mmVar, org.telegram.messenger.fj fjVar, int i7) {
         this.a = i7;
-        this.b = lmVar;
-        this.c = chat;
+        this.b = mmVar;
+        this.c = fjVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        TLRPC.Chat chat = this.c;
-        lm lmVar = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                lmVar.n(chat);
+                mm mmVar = this.b;
+                bn bnVar = mmVar.a;
+                bnVar.h8();
+                UndoView undoView = bnVar.N3;
+                if (undoView != null) {
+                    int i7 = (bnVar.a0.getVisibility() != 0 || bnVar.T.getVisibility() == 0) ? 17 : 16;
+                    org.telegram.messenger.fj fjVar = this.c;
+                    undoView.k(0L, i7, fjVar.C0(), null, null, new wl(mmVar, fjVar, 2));
+                    break;
+                }
                 break;
             case 1:
-                lmVar.a(chat);
-                break;
-            case 2:
-                lmVar.a.Na(chat);
+                bn bnVar2 = this.b.a;
+                bnVar2.ac = this.c.e1();
+                bnVar2.bc = 0;
                 break;
             default:
-                org.telegram.ui.Components.cc.a0(lmVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.hd.a0(null, null, 2131742836, chat == null ? "" : chat.title)).k(true);
+                bn bnVar3 = this.b.a;
+                if (bnVar3.u7()) {
+                    org.telegram.messenger.xy b10 = org.telegram.messenger.xy.b(this.c.C0(), bnVar3.l6, bnVar3.F5, bnVar3.m4, null, false, null, null, null, true, 0, 0, null, false);
+                    b10.K = bnVar3.Y8();
+                    bnVar3.getSendMessagesHelper().r0(b10);
+                    break;
+                }
                 break;
         }
     }

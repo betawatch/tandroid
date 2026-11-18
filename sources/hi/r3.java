@@ -14,47 +14,47 @@ import j$.util.Objects;
 import java.io.File;
 import java.io.FileOutputStream;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.is;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lr;
 import org.webrtc.RendererCommon;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class r3 extends FrameLayout implements RendererCommon.RendererEvents, is {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class r3 extends FrameLayout implements RendererCommon.RendererEvents, fs {
     public boolean E;
     public int a;
     public final q3 b;
     public final SurfaceViewRenderer c;
     public final TextureViewRenderer d;
-    public final org.telegram.ui.Components.i9 e;
+    public final org.telegram.ui.Components.q9 e;
     public final TextureView f;
     public View h;
     public Runnable n;
     public boolean r;
     public long s;
-    public fi.a4 w;
+    public fi.y3 w;
     public boolean x;
     public float y;
 
     public r3(Context context, int i7) {
         super(context);
         this.a = i7;
-        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
-        this.e = i9Var;
-        i9Var.setAlpha(0.75f);
-        addView(i9Var, c8.ja.e(-1, -1, ns.E1));
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+        this.e = q9Var;
+        q9Var.setAlpha(0.75f);
+        addView(q9Var, c8.ma.e(-1, -1, ks.E1));
         TextureView textureView = new TextureView(context);
         this.f = textureView;
-        addView(textureView, c8.ja.e(-1, -1, ns.E1));
+        addView(textureView, c8.ma.e(-1, -1, ks.E1));
         TextureViewRenderer textureViewRenderer = new TextureViewRenderer(context);
         this.d = textureViewRenderer;
         textureViewRenderer.setOpaque(false);
@@ -62,14 +62,14 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         textureViewRenderer.setIsCamera(true);
         textureViewRenderer.setRotateTextureWithScreen(true);
         textureViewRenderer.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-        addView(textureViewRenderer, c8.ja.e(-1, -1, ns.E1));
+        addView(textureViewRenderer, c8.ma.e(-1, -1, ks.E1));
         textureViewRenderer.setAlpha(1.0f);
         this.c = null;
         q3 q3Var = new q3(context);
         this.b = q3Var;
         q3Var.setAlpha(0.0f);
         q3Var.setVisibility(8);
-        addView(q3Var, c8.ja.e(-1, -1, ns.E1));
+        addView(q3Var, c8.ma.e(-1, -1, ks.E1));
     }
 
     public final void a(Runnable runnable, boolean z10) {
@@ -80,7 +80,7 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         q3 q3Var = this.b;
         q3Var.setVisibility(0);
         d dVar = (d) q3Var.d;
-        q3Var.animate().alpha(this.E ? 1.0f : 0.0f).setInterpolator(er.h).setDuration(320L).withEndAction(new ai.q(7, this, z10)).start();
+        q3Var.animate().alpha(this.E ? 1.0f : 0.0f).setInterpolator(lr.h).setDuration(320L).withEndAction(new ch.k(6, this, z10)).start();
         dVar.setVisibility((!z10 || runnable == null) ? 8 : 0);
         dVar.setOnClickListener(runnable == null ? null : new bi.d0(3, runnable));
     }
@@ -89,18 +89,18 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(long j3, fi.a4 a4Var) {
+    public final void b(long j3, fi.y3 y3Var) {
         int i7;
-        fi.x0 x0Var;
-        fi.e1 e1Var;
-        fi.e1 e1Var2;
+        fi.w0 w0Var;
+        fi.c1 c1Var;
+        fi.c1 c1Var2;
         TextureViewRenderer textureViewRenderer;
         int L;
         int width;
-        if (a4Var == null) {
+        if (y3Var == null) {
             long j10 = this.s;
             if (j10 != 0 && this.r && (textureViewRenderer = this.d) != null) {
-                File file = new File(org.telegram.messenger.w7.z(4), r.b.j(j10, "live", ".jpg"));
+                File file = new File(org.telegram.messenger.w7.z(4), p5.c.j(j10, "live", ".jpg"));
                 Bitmap bitmap = textureViewRenderer.getBitmap();
                 if (bitmap != null) {
                     Paint paint = new Paint(3);
@@ -125,39 +125,39 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
                         org.telegram.messenger.a8.g(e10, true);
                     }
                     if (this.s != j3) {
-                        org.telegram.ui.Components.i9 i9Var = this.e;
+                        org.telegram.ui.Components.q9 q9Var = this.e;
                         if (j3 == 0) {
-                            i9Var.b();
+                            q9Var.b();
                         } else {
-                            String absolutePath = new File(org.telegram.messenger.w7.z(i7), r.b.j(j3, "live", ".jpg")).getAbsolutePath();
+                            String absolutePath = new File(org.telegram.messenger.w7.z(i7), p5.c.j(j3, "live", ".jpg")).getAbsolutePath();
                             if (j3 > 0) {
-                                TLRPC.User a22 = np.s1(this.a).a2(Long.valueOf(j3));
-                                gc l10 = gc.l(this.a, 1, a22);
-                                int d = a22 != null ? org.telegram.ui.Components.t8.d(a22.id) : i0.a.f(0.2f, -16777216, -1);
-                                i9Var.getImageReceiver().u0(gc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, a22, 0);
+                                TLRPC.User c22 = mp.u1(this.a).c2(Long.valueOf(j3));
+                                fc l10 = fc.l(this.a, 1, c22);
+                                int d = c22 != null ? org.telegram.ui.Components.b9.d(c22.id) : i0.a.f(0.2f, -16777216, -1);
+                                q9Var.getImageReceiver().u0(fc.g(absolutePath), "500_500_nocache", l10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d, -16777216), i0.a.f(0.4f, d, -16777216)}), 0L, null, c22, 0);
                             } else {
-                                TLRPC.Chat M0 = np.s1(this.a).M0(Long.valueOf(-j3));
-                                gc a10 = gc.a(1, M0);
-                                int d2 = M0 != null ? org.telegram.ui.Components.t8.d(M0.id) : i0.a.f(0.2f, -16777216, -1);
-                                i9Var.getImageReceiver().u0(gc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, M0, 0);
+                                TLRPC.Chat O0 = mp.u1(this.a).O0(Long.valueOf(-j3));
+                                fc a10 = fc.a(1, O0);
+                                int d2 = O0 != null ? org.telegram.ui.Components.b9.d(O0.id) : i0.a.f(0.2f, -16777216, -1);
+                                q9Var.getImageReceiver().u0(fc.g(absolutePath), "500_500_nocache", a10, "50_50_b2", null, null, new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{i0.a.f(0.2f, d2, -16777216), i0.a.f(0.4f, d2, -16777216)}), 0L, null, O0, 0);
                             }
                         }
                     }
                     this.s = j3;
-                    this.w = a4Var;
-                    if (this.r && a4Var != null && !a4Var.a) {
-                        a4Var.a = true;
-                        a4Var.b();
+                    this.w = y3Var;
+                    if (this.r && y3Var != null && !y3Var.a) {
+                        y3Var.a = true;
+                        y3Var.b();
                     }
-                    boolean z10 = a4Var == null && (e1Var2 = (fi.e1) a4Var.b) != null && e1Var2.n();
-                    if (a4Var == null && (e1Var = (fi.e1) a4Var.b) != null && e1Var.a()) {
-                        fi.e1 e1Var3 = (fi.e1) a4Var.b;
-                        Objects.requireNonNull(e1Var3);
-                        x0Var = new fi.x0(e1Var3, 12);
+                    boolean z10 = y3Var == null && (c1Var2 = (fi.c1) y3Var.b) != null && c1Var2.n();
+                    if (y3Var == null && (c1Var = (fi.c1) y3Var.b) != null && c1Var.a()) {
+                        fi.c1 c1Var3 = (fi.c1) y3Var.b;
+                        Objects.requireNonNull(c1Var3);
+                        w0Var = new fi.w0(c1Var3, 12);
                     } else {
-                        x0Var = null;
+                        w0Var = null;
                     }
-                    a(x0Var, z10);
+                    a(w0Var, z10);
                 }
             }
         }
@@ -165,23 +165,23 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         if (this.s != j3) {
         }
         this.s = j3;
-        this.w = a4Var;
+        this.w = y3Var;
         if (this.r) {
-            a4Var.a = true;
-            a4Var.b();
+            y3Var.a = true;
+            y3Var.b();
         }
-        if (a4Var == null) {
+        if (y3Var == null) {
         }
-        if (a4Var == null) {
+        if (y3Var == null) {
         }
-        x0Var = null;
-        a(x0Var, z10);
+        w0Var = null;
+        a(w0Var, z10);
     }
 
     public final void c(boolean z10, boolean z11) {
         if (z10 || !z11) {
             if (z11) {
-                i20.n(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), er.h, 320L);
+                n10.o(getTextureView().animate().alpha(z10 ? 1.0f : 0.0f), lr.h, 320L);
             } else {
                 getTextureView().animate().cancel();
                 getTextureView().setAlpha(z10 ? 1.0f : 0.0f);
@@ -222,25 +222,25 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         view.setTranslationY(((f12 - (measuredHeight3 * max2)) / 2.0f) - (this.y / 2.0f));
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        fi.e1 e1Var;
-        fi.x0 x0Var;
-        if (i7 == ns.G2) {
+        fi.c1 c1Var;
+        fi.w0 w0Var;
+        if (i7 == ks.G2) {
             long longValue = ((Long) objArr[0]).longValue();
-            fi.a4 a4Var = this.w;
-            if (a4Var == null || (e1Var = (fi.e1) a4Var.b) == null || e1Var.g() != longValue) {
+            fi.y3 y3Var = this.w;
+            if (y3Var == null || (c1Var = (fi.c1) y3Var.b) == null || c1Var.g() != longValue) {
                 return;
             }
-            boolean n10 = ((fi.e1) this.w.b).n();
-            if (((fi.e1) this.w.b).a()) {
-                fi.e1 e1Var2 = (fi.e1) this.w.b;
-                Objects.requireNonNull(e1Var2);
-                x0Var = new fi.x0(e1Var2, 12);
+            boolean n10 = ((fi.c1) this.w.b).n();
+            if (((fi.c1) this.w.b).a()) {
+                fi.c1 c1Var2 = (fi.c1) this.w.b;
+                Objects.requireNonNull(c1Var2);
+                w0Var = new fi.w0(c1Var2, 12);
             } else {
-                x0Var = null;
+                w0Var = null;
             }
-            a(x0Var, n10);
+            a(w0Var, n10);
         }
     }
 
@@ -310,7 +310,7 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         if (this.h == null) {
             View view = new View(getContext());
             this.h = view;
-            addView(view, c8.ja.g());
+            addView(view, c8.ma.g());
         }
         return this.h;
     }
@@ -351,7 +351,7 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
             textureViewRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), this);
             textureViewRenderer.setBackgroundRenderer(this.f);
         }
-        ns.f(this.a).c(this, ns.G2);
+        ks.f(this.a).c(this, ks.G2);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -367,7 +367,7 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
         if (textureViewRenderer != null) {
             textureViewRenderer.release();
         }
-        ns.f(this.a).n(this, ns.G2);
+        ks.f(this.a).n(this, ks.G2);
     }
 
     @Override // android.view.View
@@ -378,10 +378,10 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
     @Override // org.webrtc.RendererCommon.RendererEvents
     public final void onFirstFrameRendered() {
         if (!this.r) {
-            fi.a4 a4Var = this.w;
-            if (a4Var != null && !a4Var.a) {
-                a4Var.a = true;
-                a4Var.b();
+            fi.y3 y3Var = this.w;
+            if (y3Var != null && !y3Var.a) {
+                y3Var.a = true;
+                y3Var.b();
             }
             this.r = true;
         }
@@ -449,11 +449,11 @@ public final class r3 extends FrameLayout implements RendererCommon.RendererEven
             this.a = i7;
             return;
         }
-        ns f10 = ns.f(this.a);
-        int i10 = ns.G2;
+        ks f10 = ks.f(this.a);
+        int i10 = ks.G2;
         f10.n(this, i10);
         this.a = i7;
-        ns.f(i7).c(this, i10);
+        ks.f(i7).c(this, i10);
     }
 
     public void setKeyboardOffset(float f10) {

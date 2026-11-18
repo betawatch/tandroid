@@ -1,49 +1,66 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class be implements r4 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ be(ChatActivityEnterView chatActivityEnterView, int i7) {
-        this.a = i7;
-        this.b = chatActivityEnterView;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class be extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ChatActivityEnterView c;
+
+    public /* synthetic */ be(ChatActivityEnterView chatActivityEnterView, int i7, int i10) {
+        this.a = i10;
+        this.c = chatActivityEnterView;
+        this.b = i7;
     }
 
-    @Override // org.telegram.ui.Components.r4
-    public void L(int i7, int i10, boolean z10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                boolean k12 = this.b.k1(z10, i7, i10, 0L, true);
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                org.telegram.ui.bg0 bg0Var = chatActivityEnterView.M0;
-                if (bg0Var != null) {
-                    bg0Var.h(!k12);
-                    chatActivityEnterView.M0 = null;
-                    break;
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                au0 au0Var = chatActivityEnterView.a2;
+                chatActivityEnterView.o4 = false;
+                chatActivityEnterView.p4 = null;
+                cg cgVar = chatActivityEnterView.V0;
+                if (cgVar != null) {
+                    if (chatActivityEnterView.c7 == null) {
+                        cgVar.getLayoutParams().height = this.b;
+                    }
+                    chatActivityEnterView.V0.setLayerType(0, null);
                 }
+                if (au0Var != null) {
+                    au0Var.requestLayout();
+                    au0Var.setForeground(null);
+                    au0Var.setWillNotDraw(false);
+                }
+                if (chatActivityEnterView.n3 && chatActivityEnterView.O0()) {
+                    chatActivityEnterView.T1(0, chatActivityEnterView.T2, true, true);
+                }
+                dd ddVar = chatActivityEnterView.s0;
+                if (ddVar != null) {
+                    ddVar.run();
+                    chatActivityEnterView.s0 = null;
+                }
+                chatActivityEnterView.z4.e();
                 break;
-            case 1:
             default:
-                boolean k13 = this.b.k1(z10, i7, i10, 0L, true);
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                org.telegram.ui.bg0 bg0Var2 = chatActivityEnterView2.M0;
-                if (bg0Var2 != null) {
-                    bg0Var2.h(!k13);
-                    chatActivityEnterView2.M0 = null;
-                    break;
+                int i7 = this.b;
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                if (i7 == 0) {
+                    chatActivityEnterView2.o3 = 0;
                 }
-                break;
-            case 2:
-                this.b.k1(z10, i7, i10, 0L, true);
-                ChatActivityEnterView chatActivityEnterView3 = this.b;
-                org.telegram.ui.bg0 bg0Var3 = chatActivityEnterView3.M0;
-                if (bg0Var3 != null) {
-                    bg0Var3.i();
-                    chatActivityEnterView3.M0 = null;
-                    break;
+                chatActivityEnterView2.W0 = null;
+                chatActivityEnterView2.v2.setTranslationY(0.0f);
+                chatActivityEnterView2.v2.setVisibility(8);
+                chatActivityEnterView2.z4.e();
+                kg kgVar = chatActivityEnterView2.N3;
+                if (kgVar != null) {
+                    kgVar.x(0.0f);
                 }
+                chatActivityEnterView2.requestLayout();
                 break;
         }
     }

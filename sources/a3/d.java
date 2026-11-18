@@ -1,13 +1,13 @@
 package a3;
 
-import a8.ja;
+import a8.la;
 import android.os.SystemClock;
 import e2.m1;
 import h2.l0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d implements u {
     public final m1 a;
@@ -19,7 +19,7 @@ public abstract class d implements u {
 
     public d(m1 m1Var, int[] iArr) {
         int i7 = 0;
-        ja.p(iArr.length > 0);
+        la.p(iArr.length > 0);
         m1Var.getClass();
         this.a = m1Var;
         int length = iArr.length;

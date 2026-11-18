@@ -1,31 +1,62 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class to implements org.telegram.ui.s71 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ki b;
-    public final /* synthetic */ org.telegram.ui.vb c;
+public abstract class to extends FrameLayout {
+    public f71 a;
+    public float b;
+    public boolean c;
+    public float d;
+    public ValueAnimator e;
 
-    public /* synthetic */ to(ki kiVar, org.telegram.ui.vb vbVar, int i7) {
-        this.a = i7;
-        this.b = kiVar;
-        this.c = vbVar;
+    public abstract void a(boolean z10);
+
+    public final void b(boolean z10) {
+        this.c = z10;
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            this.e = null;
+            valueAnimator.cancel();
+        }
+        if (z10) {
+            setVisibility(0);
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new w(this, 14));
+        this.e.setInterpolator(lr.h);
+        this.e.setDuration(320L);
+        this.e.addListener(new org.telegram.ui.on(5, this, z10));
+        this.e.start();
     }
 
-    @Override // org.telegram.ui.s71
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                this.b.L();
-                this.c.a(tL_wallPaper);
-                break;
-            default:
-                this.b.L();
-                this.c.a(tL_wallPaper);
-                break;
+    public int getCurrentHeight() {
+        return (int) (getMeasuredHeight() * this.b);
+    }
+
+    @Override // android.view.View
+    public final boolean isShown() {
+        return this.c;
+    }
+
+    public void setShown(float f10) {
+        this.b = f10;
+        f71 f71Var = this.a;
+        if (f71Var != null) {
+            f71Var.setPivotX(f71Var.getWidth() / 2.0f);
+            this.a.setPivotY(0.0f);
+            this.a.setScaleX(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
+            this.a.setScaleY(org.telegram.messenger.g0.T1(0.8f, 1.0f, f10));
         }
+        setAlpha(f10);
+        invalidate();
+    }
+
+    public void setTabs(f71 f71Var) {
+        this.a = f71Var;
+        addView(f71Var, c8.ma.c(-1.0f, -1));
     }
 }

@@ -1,22 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class yu0 extends org.telegram.ui.Components.vf0 {
-    public final /* synthetic */ ProfileActivity t1;
+public final class yu0 implements kp {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ np b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yu0(ProfileActivity profileActivity, Context context, long j3, org.telegram.ui.ActionBar.k kVar, ou0 ou0Var, xu0 xu0Var, org.telegram.ui.Components.rf0 rf0Var, org.telegram.ui.Components.nf0 nf0Var) {
-        super(context, j3, kVar, ou0Var, xu0Var, rf0Var, nf0Var);
-        this.t1 = profileActivity;
+    public yu0(ProfileActivity profileActivity, TLRPC.Chat chat, np npVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = npVar;
     }
 
-    @Override // org.telegram.ui.Components.vf0
-    public final void setCustomAvatarProgress(float f10) {
-        ProfileActivity profileActivity = this.t1;
-        profileActivity.r5 = f10;
-        profileActivity.P3();
+    @Override // org.telegram.ui.kp
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.F2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.kp
+    public final void b(int i7, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User c22 = profileActivity.getMessagesController().c2(Long.valueOf(profileActivity.e1));
+        if (c22 == null || (chat = this.a) == null || profileActivity.e1 == 0) {
+            return;
+        }
+        np npVar = this.b;
+        if (!npVar.R || npVar.getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.h2 h2Var : npVar.getParentLayout().getFragmentStack()) {
+            if (h2Var instanceof lb) {
+                lb lbVar = (lb) h2Var;
+                lbVar.a1();
+                org.telegram.messenger.g0.g3(new lc0(lbVar, c22, chat, 28));
+                return;
+            }
+        }
     }
 }

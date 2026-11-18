@@ -4,7 +4,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends o {
     public final /* synthetic */ int r;
@@ -57,7 +57,7 @@ public final class l extends o {
                     jSONObject3.put("requestId", b11);
                     jSONObject3.put(TeXSymbolParser.TYPE_ATTR, "SET_PLAYBACK_RATE");
                     jSONObject3.put("playbackRate", d2);
-                    q6.m.h(mVar2.f, "mediaStatus should not be null");
+                    q6.m.i(mVar2.f, "mediaStatus should not be null");
                     jSONObject3.put("mediaSessionId", mVar2.f.b);
                 } catch (JSONException unused2) {
                 }

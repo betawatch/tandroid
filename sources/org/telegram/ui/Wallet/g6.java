@@ -1,63 +1,61 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.eq;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.n10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g6 extends eq {
-    public final /* synthetic */ h6 M;
+public final class g6 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.ActionBar.i6 a;
+    public final ImageView b;
+    public final TextView c;
+    public final TextView d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g6(h6 h6Var) {
-        super(R.drawable.wallet_gram_large, 0);
-        this.M = h6Var;
+    public g6(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.a = i6Var;
+        setPadding(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(8.0f));
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        addView(imageView, c8.ma.d(28, 28.0f, 51, 0.0f, 2.0f, 0.0f, 0.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setOrientation(1);
+        addView(linearLayout, c8.ma.d(-1, -2.0f, 55, 42.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        i5.c.x(textView, 1, 14.0f);
+        TextView f10 = n10.f(linearLayout, textView, c8.ma.t(-1, -2, 55, 0, 0, 0, 2), context);
+        this.d = f10;
+        f10.setTextSize(1, 14.0f);
+        linearLayout.addView(f10, c8.ma.t(-1, -2, 55, 0, 0, 0, 2));
+        updateColors();
     }
 
-    @Override // org.telegram.ui.Components.eq, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        h6 h6Var = this.M;
-        FrameLayout.LayoutParams layoutParams = h6Var.Q;
-        if (h6Var.j0) {
-            return;
-        }
-        this.x = 1.0f;
-        if (h6Var.a) {
-            float max = Math.max(0.0f, Math.min(1.0f, h6Var.U));
-            if (max == 0.0f) {
-                float intrinsicWidth = this.c.getIntrinsicWidth() * h6Var.b;
-                float intrinsicHeight = this.c.getIntrinsicHeight();
-                float f11 = h6Var.b;
-                float f12 = intrinsicHeight * f11;
-                float f13 = (f11 * f10) + layoutParams.leftMargin;
-                float height = ((h6Var.O.getHeight() / 2.0f) - (f12 / 2.0f)) + layoutParams.topMargin;
-                h6Var.f.set(f13, height, intrinsicWidth + f13, f12 + height);
-            }
-            if (max < 1.0f) {
-                if (h6Var.i0 == null) {
-                    h6Var.i0 = new p6(this.c.getIntrinsicWidth(), this.c.getIntrinsicHeight());
-                    h6Var.m();
-                }
-                Drawable drawable = this.c;
-                h6Var.i0.setBounds(drawable.getBounds());
-                p6 p6Var = h6Var.i0;
-                p6Var.i = h6Var.g0.c;
-                this.c = p6Var;
-                this.d = false;
-                this.x = 1.0f - max;
-                super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
-                this.c = drawable;
-                this.d = true;
-            }
-            this.x = max;
-            if (max == 0.0f) {
-                return;
-            }
-        }
-        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
+    public final void a(int i7, CharSequence charSequence, CharSequence charSequence2) {
+        this.b.setImageResource(i7);
+        this.c.setText(charSequence);
+        this.d.setText(charSequence2);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.G6));
+        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.n6.z6));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        int i7 = org.telegram.ui.ActionBar.n6.G6;
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.n6.w0(i7, i6Var), PorterDuff.Mode.SRC_IN));
+        this.c.setTextColor(org.telegram.ui.ActionBar.n6.w0(i7, i6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.z6, i6Var));
     }
 }

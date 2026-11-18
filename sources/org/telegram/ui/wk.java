@@ -1,48 +1,28 @@
 package org.telegram.ui;
 
+import android.graphics.Bitmap;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class wk extends mq0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ an c;
+public final class wk extends oq0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ bn c;
 
-    public wk(an anVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = anVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public wk(bn bnVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = bnVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final boolean T() {
-        return false;
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final org.telegram.messenger.hc j(int i7) {
+        return new org.telegram.messenger.hc(this.a, null, 0);
     }
 
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final org.telegram.messenger.ic j(int i7) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final void o(int i7, org.telegram.messenger.g20 g20Var, boolean z10, int i10, int i11, boolean z11) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
-        }
-        this.c.Kb(i10, arrayList, z10, z11);
-    }
-
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final boolean x(int i7) {
-        return this.b[i7];
-    }
-
-    @Override // org.telegram.ui.mq0, org.telegram.ui.sq0
-    public final int k(int i7, org.telegram.messenger.g20 g20Var) {
-        return i7;
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final void o(int i7, org.telegram.messenger.e20 e20Var, boolean z10, int i10, int i11, boolean z11) {
+        this.c.u((org.telegram.messenger.ef) this.b.get(0), e20Var, z10, i10, 0, z11, 0L);
     }
 }

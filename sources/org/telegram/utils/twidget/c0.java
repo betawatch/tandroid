@@ -1,32 +1,61 @@
 package org.telegram.utils.twidget;
 
 import android.graphics.Canvas;
+import android.graphics.Picture;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public abstract class c0 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+public final class c0 extends d0 {
+    public final Picture e;
+    public boolean f;
 
     public c0(int i7, int i10, int i11, int i12) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
+        super(i7, i10, i11, i12);
+        this.e = new Picture();
     }
 
-    public abstract Canvas a();
+    @Override // org.telegram.utils.twidget.d0
+    public final Canvas a() {
+        this.f = true;
+        return this.e.beginRecording(Math.max(1, this.c - this.a), Math.max(1, this.d - this.b));
+    }
 
-    public abstract void b();
+    @Override // org.telegram.utils.twidget.d0
+    public final void b() {
+        if (this.f) {
+            d();
+        }
+    }
 
-    public abstract void c(Canvas canvas, float f10);
+    @Override // org.telegram.utils.twidget.d0
+    public final void c(Canvas canvas, float f10) {
+        Canvas canvas2;
+        int save;
+        if (this.f || f10 <= 0.0f) {
+            return;
+        }
+        int i7 = this.b;
+        int i10 = this.a;
+        if (f10 < 1.0f) {
+            canvas2 = canvas;
+            save = canvas2.saveLayerAlpha(i10, i7, this.c, this.d, Math.round(f10 * 255.0f));
+        } else {
+            canvas2 = canvas;
+            save = canvas2.save();
+        }
+        canvas2.translate(i10, i7);
+        canvas2.drawPicture(this.e);
+        canvas2.restoreToCount(save);
+    }
 
-    public abstract void d();
+    @Override // org.telegram.utils.twidget.d0
+    public final void d() {
+        this.e.endRecording();
+        this.f = false;
+    }
 
-    public abstract boolean e();
-
-    public void f() {
+    @Override // org.telegram.utils.twidget.d0
+    public final boolean e() {
+        return true;
     }
 }

@@ -1,16 +1,15 @@
 package ic;
 
 import ab.b0;
-import gc.f;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
     public static final int[][] b = {new int[]{1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 0, 1, 0, 1}, new int[]{1, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1}};
-    public static final int[][] c = {new int[]{-1, -1, -1, -1, -1, -1, -1}, new int[]{6, 18, -1, -1, -1, -1, -1}, new int[]{6, 22, -1, -1, -1, -1, -1}, new int[]{6, 26, -1, -1, -1, -1, -1}, new int[]{6, 30, -1, -1, -1, -1, -1}, new int[]{6, 34, -1, -1, -1, -1, -1}, new int[]{6, 22, 38, -1, -1, -1, -1}, new int[]{6, 24, 42, -1, -1, -1, -1}, new int[]{6, 26, 46, -1, -1, -1, -1}, new int[]{6, 28, 50, -1, -1, -1, -1}, new int[]{6, 30, 54, -1, -1, -1, -1}, new int[]{6, 32, 58, -1, -1, -1, -1}, new int[]{6, 34, 62, -1, -1, -1, -1}, new int[]{6, 26, 46, 66, -1, -1, -1}, new int[]{6, 26, 48, 70, -1, -1, -1}, new int[]{6, 26, 50, 74, -1, -1, -1}, new int[]{6, 30, 54, 78, -1, -1, -1}, new int[]{6, 30, 56, 82, -1, -1, -1}, new int[]{6, 30, 58, 86, -1, -1, -1}, new int[]{6, 34, 62, 90, -1, -1, -1}, new int[]{6, 28, 50, 72, 94, -1, -1}, new int[]{6, 26, 50, 74, 98, -1, -1}, new int[]{6, 30, 54, 78, ns.n1, -1, -1}, new int[]{6, 28, 54, 80, ns.r1, -1, -1}, new int[]{6, 32, 58, 84, ns.v1, -1, -1}, new int[]{6, 30, 58, 86, ns.z1, -1, -1}, new int[]{6, 34, 62, 90, ns.D1, -1, -1}, new int[]{6, 26, 50, 74, 98, ns.G1, -1}, new int[]{6, 30, 54, 78, ns.n1, ns.K1, -1}, new int[]{6, 26, 52, 78, ns.p1, ns.O1, -1}, new int[]{6, 30, 56, 82, ns.t1, 134, -1}, new int[]{6, 34, 60, 86, ns.x1, ns.U1, -1}, new int[]{6, 30, 58, 86, ns.z1, ns.Y1, -1}, new int[]{6, 34, 62, 90, ns.D1, ns.c2, -1}, new int[]{6, 30, 54, 78, ns.n1, ns.K1, ns.g2}, new int[]{6, 24, 50, 76, ns.n1, 128, ns.k2}, new int[]{6, 28, 54, 80, ns.r1, ns.Q1, ns.o2}, new int[]{6, 32, 58, 84, ns.v1, ns.S1, ns.s2}, new int[]{6, 26, 54, 82, ns.v1, ns.U1, ns.w2}, new int[]{6, 30, 58, 86, ns.z1, ns.Y1, ns.A2}};
+    public static final int[][] c = {new int[]{-1, -1, -1, -1, -1, -1, -1}, new int[]{6, 18, -1, -1, -1, -1, -1}, new int[]{6, 22, -1, -1, -1, -1, -1}, new int[]{6, 26, -1, -1, -1, -1, -1}, new int[]{6, 30, -1, -1, -1, -1, -1}, new int[]{6, 34, -1, -1, -1, -1, -1}, new int[]{6, 22, 38, -1, -1, -1, -1}, new int[]{6, 24, 42, -1, -1, -1, -1}, new int[]{6, 26, 46, -1, -1, -1, -1}, new int[]{6, 28, 50, -1, -1, -1, -1}, new int[]{6, 30, 54, -1, -1, -1, -1}, new int[]{6, 32, 58, -1, -1, -1, -1}, new int[]{6, 34, 62, -1, -1, -1, -1}, new int[]{6, 26, 46, 66, -1, -1, -1}, new int[]{6, 26, 48, 70, -1, -1, -1}, new int[]{6, 26, 50, 74, -1, -1, -1}, new int[]{6, 30, 54, 78, -1, -1, -1}, new int[]{6, 30, 56, 82, -1, -1, -1}, new int[]{6, 30, 58, 86, -1, -1, -1}, new int[]{6, 34, 62, 90, -1, -1, -1}, new int[]{6, 28, 50, 72, 94, -1, -1}, new int[]{6, 26, 50, 74, 98, -1, -1}, new int[]{6, 30, 54, 78, ks.n1, -1, -1}, new int[]{6, 28, 54, 80, ks.r1, -1, -1}, new int[]{6, 32, 58, 84, ks.v1, -1, -1}, new int[]{6, 30, 58, 86, ks.z1, -1, -1}, new int[]{6, 34, 62, 90, ks.D1, -1, -1}, new int[]{6, 26, 50, 74, 98, ks.G1, -1}, new int[]{6, 30, 54, 78, ks.n1, ks.K1, -1}, new int[]{6, 26, 52, 78, ks.p1, ks.O1, -1}, new int[]{6, 30, 56, 82, ks.t1, 134, -1}, new int[]{6, 34, 60, 86, ks.x1, ks.U1, -1}, new int[]{6, 30, 58, 86, ks.z1, ks.Y1, -1}, new int[]{6, 34, 62, 90, ks.D1, ks.c2, -1}, new int[]{6, 30, 54, 78, ks.n1, ks.K1, ks.g2}, new int[]{6, 24, 50, 76, ks.n1, 128, ks.k2}, new int[]{6, 28, 54, 80, ks.r1, ks.Q1, ks.o2}, new int[]{6, 32, 58, 84, ks.v1, ks.S1, ks.s2}, new int[]{6, 26, 54, 82, ks.v1, ks.U1, ks.w2}, new int[]{6, 30, 58, 86, ks.z1, ks.Y1, ks.A2}};
     public static final int[][] d = {new int[]{8, 0}, new int[]{8, 1}, new int[]{8, 2}, new int[]{8, 3}, new int[]{8, 4}, new int[]{8, 5}, new int[]{8, 7}, new int[]{8, 8}, new int[]{7, 8}, new int[]{5, 8}, new int[]{4, 8}, new int[]{3, 8}, new int[]{2, 8}, new int[]{1, 8}, new int[]{0, 8}};
 
     public static int a(cc.c cVar, boolean z10) {
@@ -50,7 +49,7 @@ public abstract class c {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void b(cc.a aVar, gc.c cVar, f fVar, int i7, cc.c cVar2) {
+    public static void b(cc.a aVar, gc.b bVar, gc.e eVar, int i7, cc.c cVar) {
         int i10;
         int i11;
         byte[][] bArr;
@@ -62,31 +61,31 @@ public abstract class c {
         int i17;
         int i18;
         int i19;
-        byte[][] bArr2 = (byte[][]) cVar2.d;
-        int i20 = cVar2.b;
-        int i21 = cVar2.c;
+        byte[][] bArr2 = (byte[][]) cVar.d;
+        int i20 = cVar.b;
+        int i21 = cVar.c;
         for (byte[] bArr3 : bArr2) {
             Arrays.fill(bArr3, (byte) -1);
         }
         int length = a[0].length;
-        e(0, 0, cVar2);
+        e(0, 0, cVar);
         int i22 = i20 - length;
-        e(i22, 0, cVar2);
-        e(0, i22, cVar2);
-        d(0, 7, cVar2);
+        e(i22, 0, cVar);
+        e(0, i22, cVar);
+        d(0, 7, cVar);
         int i23 = i20 - 8;
-        d(i23, 7, cVar2);
-        d(0, i23, cVar2);
-        f(7, 0, cVar2);
+        d(i23, 7, cVar);
+        d(0, i23, cVar);
+        f(7, 0, cVar);
         int i24 = i21 - 8;
-        f(i24, 0, cVar2);
+        f(i24, 0, cVar);
         int i25 = i21 - 7;
-        f(7, i25, cVar2);
-        if (cVar2.e(8, i24) == 0) {
+        f(7, i25, cVar);
+        if (cVar.e(8, i24) == 0) {
             throw new b0();
         }
-        cVar2.g(8, i24, 1);
-        int i26 = fVar.a;
+        cVar.g(8, i24, 1);
+        int i26 = eVar.a;
         if (i26 < 2) {
             i10 = 0;
             i11 = 1;
@@ -103,7 +102,7 @@ public abstract class c {
                     int i29 = 0;
                     while (i29 < length3) {
                         int i30 = iArr[i29];
-                        if (i30 >= 0 && g(cVar2.e(i30, i28))) {
+                        if (i30 >= 0 && g(cVar.e(i30, i28))) {
                             int i31 = i30 - 2;
                             int i32 = i28 - 2;
                             bArr = bArr2;
@@ -118,7 +117,7 @@ public abstract class c {
                                 int i35 = 0;
                                 for (int i36 = 5; i35 < i36; i36 = 5) {
                                     int i37 = i35;
-                                    cVar2.g(i31 + i35, i32 + i34, iArr2[i37]);
+                                    cVar.g(i31 + i35, i32 + i34, iArr2[i37]);
                                     i35 = i37 + 1;
                                     length3 = length3;
                                 }
@@ -145,11 +144,11 @@ public abstract class c {
         while (i39 < i23) {
             int i40 = i39 + 1;
             int i41 = i40 % 2;
-            if (g(cVar2.e(i39, 6))) {
-                cVar2.g(i39, 6, i41);
+            if (g(cVar.e(i39, 6))) {
+                cVar.g(i39, 6, i41);
             }
-            if (g(cVar2.e(6, i39))) {
-                cVar2.g(6, i39, i41);
+            if (g(cVar.e(6, i39))) {
+                cVar.g(6, i39, i41);
             }
             i39 = i40;
         }
@@ -157,7 +156,7 @@ public abstract class c {
         if (i7 < 0 || i7 >= 8) {
             throw new b0("Invalid mask pattern");
         }
-        int i42 = (cVar.a << 3) | i7;
+        int i42 = (bVar.a << 3) | i7;
         aVar2.b(i42, 5);
         aVar2.b(c(i42, 1335), 10);
         cc.a aVar3 = new cc.a();
@@ -230,7 +229,7 @@ public abstract class c {
             while (i52 >= 0 && i52 < i21) {
                 for (int i55 = i10; i55 < 2; i55++) {
                     int i56 = i51 - i55;
-                    if (g(cVar2.e(i56, i52))) {
+                    if (g(cVar.e(i56, i52))) {
                         if (i53 < aVar.b) {
                             boolean d11 = aVar.d(i53);
                             i53++;

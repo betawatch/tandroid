@@ -1,148 +1,41 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.q10;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.dc;
-import org.telegram.ui.Components.oy0;
+import android.view.View;
+import org.telegram.ui.Components.mc;
+import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k0 {
-    public final q1 a;
-    public final org.telegram.ui.Components.t8[] b;
-    public final ImageReceiver[] c;
-    public final TextPaint d;
-    public final CharSequence e;
-    public StaticLayout f;
-    public final boolean g;
-    public final Drawable h;
-    public final Paint i;
-    public final Paint j;
-    public final oy0 k;
-    public boolean l;
-    public boolean m;
-    public final dc n;
-    public final TLObject o;
+public final class k0 extends mc {
+    public final /* synthetic */ int k;
+    public final /* synthetic */ Object l;
 
-    public k0(q1 q1Var, TLObject[] tLObjectArr, int i7) {
-        TLObject tLObject;
-        this.d = new TextPaint(1);
-        this.i = new Paint(1);
-        this.j = new Paint(1);
-        new Paint(1);
-        this.a = q1Var;
-        this.o = tLObjectArr[0];
-        this.n = new j0(q1Var, q1Var, 0);
-        this.c = new ImageReceiver[3];
-        this.b = new org.telegram.ui.Components.t8[3];
-        for (int i10 = 0; i10 < 3; i10++) {
-            this.c[i10] = new ImageReceiver(q1Var);
-            this.c[i10].H0(q1Var);
-            this.c[i10].J0(org.telegram.messenger.g0.L(54.0f));
-            this.b[i10] = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
-            if (i10 >= tLObjectArr.length || (tLObject = tLObjectArr[i10]) == null) {
-                Paint paint = new Paint(1);
-                int[] iArr = {org.telegram.ui.ActionBar.j6.w(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.ra, q1Var.Qb), org.telegram.ui.ActionBar.j6.r1(0.5f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.y6, q1Var.Qb)))};
-                paint.setColor(iArr[0]);
-                this.c[i10].w0(new org.telegram.ui.ActionBar.t2(q1Var, iArr, paint));
-            } else {
-                this.b[i10].p(tLObject);
-                this.c[i10].i0(tLObjectArr[i10], this.b[i10], null);
-            }
-        }
-        if (q1Var.O0) {
-            a();
-        }
-        this.d.setTextSize(org.telegram.messenger.g0.L(11.0f));
-        boolean q10 = m10.i(q1Var.a6).q();
-        this.e = hd.M0(q10 ? 2131748330 : 2131743854, null);
-        this.i.setStyle(Paint.Style.STROKE);
-        this.g = true;
-        this.h = q10 ? null : q1Var.getContext().getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
-        if (b(this.o) == null) {
-            this.k = null;
-        } else {
-            this.k = new oy0(i5.c.i(i7, "+"), 9.33f, org.telegram.messenger.g0.o());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k0(q1 q1Var, q1 q1Var2, int i7) {
+        super(q1Var);
+        this.k = i7;
+        this.l = q1Var2;
+    }
+
+    @Override // org.telegram.ui.Components.mc
+    public final void b() {
+        switch (this.k) {
+            case 0:
+                ((q1) this.l).q2();
+                break;
+            case 1:
+                ((q1) this.l).q2();
+                break;
+            default:
+                ((xw0) this.l).invalidateSelf();
+                break;
         }
     }
 
-    public static String b(TLObject tLObject) {
-        int i7;
-        if (tLObject instanceof TLRPC.Chat) {
-            int i10 = ((TLRPC.Chat) tLObject).participants_count;
-            if (i10 > 1) {
-                return hd.S(null, i10);
-            }
-        } else if ((tLObject instanceof TLRPC.User) && (i7 = ((TLRPC.User) tLObject).bot_active_users) > 1) {
-            return hd.S(null, i7);
-        }
-        return null;
-    }
-
-    public final void a() {
-        int i7 = 0;
-        while (true) {
-            ImageReceiver[] imageReceiverArr = this.c;
-            if (i7 >= imageReceiverArr.length) {
-                return;
-            }
-            imageReceiverArr[i7].P();
-            i7++;
-        }
-    }
-
-    public k0(q1 q1Var, TLObject tLObject) {
-        CharSequence charSequence;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.i = new Paint(1);
-        this.j = new Paint(1);
-        new Paint(1);
-        this.a = q1Var;
-        this.o = tLObject;
-        this.n = new j0(q1Var, q1Var, 1);
-        ImageReceiver[] imageReceiverArr = {r3};
-        this.c = imageReceiverArr;
-        ImageReceiver imageReceiver = new ImageReceiver(q1Var);
-        imageReceiver.H0(q1Var);
-        imageReceiverArr[0].J0(org.telegram.messenger.g0.L(54.0f));
-        if (q1Var.O0) {
-            a();
-        }
-        org.telegram.ui.Components.t8[] t8VarArr = {r3};
-        this.b = t8VarArr;
-        org.telegram.ui.Components.t8 t8Var = new org.telegram.ui.Components.t8((org.telegram.ui.ActionBar.e6) null);
-        t8Var.p(tLObject);
-        imageReceiverArr[0].i0(tLObject, t8VarArr[0], null);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(11.0f));
-        if (tLObject instanceof TLRPC.Chat) {
-            charSequence = ((TLRPC.Chat) tLObject).title;
-        } else if (tLObject instanceof TLRPC.User) {
-            charSequence = q10.p((TLRPC.User) tLObject);
-        } else {
-            charSequence = "";
-        }
-        try {
-            charSequence = org.telegram.messenger.j6.m(charSequence, textPaint.getFontMetricsInt(), false, null, 0);
-        } catch (Exception unused) {
-        }
-        this.e = charSequence;
-        this.i.setStyle(Paint.Style.STROKE);
-        this.g = false;
-        this.h = q1Var.getContext().getResources().getDrawable(R.drawable.mini_reply_user).mutate();
-        if (b(tLObject) == null) {
-            this.k = null;
-        } else {
-            this.k = new oy0(b(tLObject), 9.33f, org.telegram.messenger.g0.o());
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k0(xw0 xw0Var) {
+        super((View) null);
+        this.k = 2;
+        this.l = xw0Var;
     }
 }

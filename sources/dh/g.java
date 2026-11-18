@@ -7,10 +7,10 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.w;
 import java.util.ArrayList;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.si;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.ri;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g {
     public final boolean a;
@@ -28,7 +28,7 @@ public final class g {
     public Rect m;
 
     public g(boolean z10) {
-        boolean e10 = qc.e(262144);
+        boolean e10 = pc.e(262144);
         this.a = e10;
         this.c = true;
         this.d = (e10 || z10) ? 1 : 8;
@@ -173,7 +173,7 @@ public final class g {
                 if (i12 <= 0) {
                     return;
                 }
-                long p10 = si.p(si.p(0L, i7), i10);
+                long r10 = ri.r(ri.r(0L, i7), i10);
                 int i16 = 0;
                 boolean z11 = false;
                 while (true) {
@@ -182,22 +182,22 @@ public final class g {
                         break;
                     }
                     RenderNode renderNode = renderNodeArr[i16];
-                    p10 = si.p(p10, renderNode.getUniqueId());
+                    r10 = ri.r(r10, renderNode.getUniqueId());
                     for (int i17 = 0; i17 < this.k; i17++) {
                         f fVar4 = (f) arrayList.get(i17);
                         RenderNode d = d(i16, i17);
                         Rect rect3 = fVar4.d;
-                        p10 = si.p(si.p(si.p(si.p(si.p(p10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
+                        r10 = ri.r(ri.r(ri.r(ri.r(ri.r(r10, rect3.left), rect3.top), rect3.right), rect3.bottom), d.getUniqueId());
                     }
                     if (!renderNode.hasDisplayList()) {
                         z11 = true;
                     }
                     i16++;
                 }
-                if (p10 == this.g && !z11) {
+                if (r10 == this.g && !z11) {
                     return;
                 }
-                this.g = p10;
+                this.g = r10;
                 int i18 = 0;
                 while (true) {
                     RenderNode[] renderNodeArr2 = this.f;

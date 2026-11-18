@@ -4,7 +4,7 @@ import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
-import c8.ad;
+import c8.ed;
 import com.google.android.gms.internal.vision.e2;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a {
     public static final String[] D = {"crownGradient", "pavilionGradient", "lightSweep", "crownSweep", "rightCrownSweep", "leftCrownSweep", "pavilionSweep", "rightPavilionSweep", "leftPavilionSweep"};
@@ -53,7 +53,7 @@ public final class a {
         try {
             String[] strArr = {"diamond", "sparkle", "copy"};
             for (int i10 = 0; i10 < 3; i10++) {
-                this.a[i10] = ad.a(context, j(context, i10 == 2 ? "fullscreenVertex" : strArr[i10] + "Vertex"), j(context, strArr[i10] + "Fragment"));
+                this.a[i10] = ed.a(context, j(context, i10 == 2 ? "fullscreenVertex" : strArr[i10] + "Vertex"), j(context, strArr[i10] + "Fragment"));
             }
             float[] a10 = a(context, "frames");
             this.m = a10;

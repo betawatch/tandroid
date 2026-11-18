@@ -1,17 +1,17 @@
 package l2;
 
-import h9.s1;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements h2.o, p4.a1 {
+public final /* synthetic */ class w implements h2.o, p4.c1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ List b;
 
-    public /* synthetic */ w(int i7, s1 s1Var) {
+    public /* synthetic */ w(int i7, t1 t1Var) {
         this.a = i7;
-        this.b = s1Var;
+        this.b = t1Var;
     }
 
     @Override // h2.o
@@ -26,7 +26,7 @@ public final /* synthetic */ class w implements h2.o, p4.a1 {
         }
     }
 
-    @Override // p4.a1
+    @Override // p4.c1
     public Object k(p4.d0 d0Var, p4.v vVar, int i7) {
         switch (this.a) {
         }

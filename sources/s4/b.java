@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends Handler {
     public final ArrayList a = new ArrayList();
@@ -50,28 +50,28 @@ public final class b extends Handler {
             }
             if (z10) {
                 switch (i7) {
-                    case ns.g4 /* 257 */:
+                    case ks.g4 /* 257 */:
                         sVar.d(vVar);
                         break;
-                    case ns.h4 /* 258 */:
+                    case ks.h4 /* 258 */:
                         sVar.f(vVar);
                         break;
-                    case ns.i4 /* 259 */:
+                    case ks.i4 /* 259 */:
                         sVar.e(vVar);
                         break;
-                    case ns.j4 /* 260 */:
+                    case ks.j4 /* 260 */:
                         sVar.k(vVar);
                         break;
-                    case ns.k4 /* 261 */:
+                    case ks.k4 /* 261 */:
                         sVar.getClass();
                         break;
-                    case ns.l4 /* 262 */:
+                    case ks.l4 /* 262 */:
                         sVar.h(xVar, vVar, i10);
                         break;
-                    case ns.m4 /* 263 */:
+                    case ks.m4 /* 263 */:
                         sVar.j(xVar, vVar, i10);
                         break;
-                    case ns.n4 /* 264 */:
+                    case ks.n4 /* 264 */:
                         sVar.h(xVar, vVar, i10);
                         break;
                 }
@@ -113,13 +113,13 @@ public final class b extends Handler {
             }
         } else if (i7 != 264) {
             switch (i7) {
-                case ns.g4 /* 257 */:
+                case ks.g4 /* 257 */:
                     j0Var.v((v) obj);
                     break;
-                case ns.h4 /* 258 */:
+                case ks.h4 /* 258 */:
                     j0Var.w((v) obj);
                     break;
-                case ns.i4 /* 259 */:
+                case ks.i4 /* 259 */:
                     v vVar2 = (v) obj;
                     j0Var.getClass();
                     if (vVar2.c() != j0Var && (q10 = j0Var.q(vVar2)) >= 0) {

@@ -6,20 +6,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.r3;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.t3;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
-import org.telegram.messenger.z10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hw0;
+import org.telegram.ui.Components.ow0;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.c40;
-import org.telegram.ui.g20;
-import org.telegram.ui.o6;
-import org.telegram.ui.y6;
+import org.telegram.ui.f40;
+import org.telegram.ui.j20;
+import org.telegram.ui.n6;
+import org.telegram.ui.x6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l2 implements Runnable {
     public final /* synthetic */ int a;
@@ -37,7 +35,7 @@ public final /* synthetic */ class l2 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00e1 A[LOOP:0: B:20:0x00db->B:22:0x00e1, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00e3 A[LOOP:0: B:20:0x00dd->B:22:0x00e3, LOOP_END] */
     /* JADX WARN: Type inference failed for: r0v19, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r0v23, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r7v1, types: [java.lang.String] */
@@ -54,21 +52,21 @@ public final /* synthetic */ class l2 implements Runnable {
                 String str = (String) this.e;
                 boolean z10 = this.c;
                 if (o2Var.t.d) {
-                    g20 g20Var = o2Var.t.a;
+                    j20 j20Var = o2Var.t.a;
                     int i7 = o2Var.a;
-                    c40 c40Var = g20Var.a;
+                    f40 f40Var = j20Var.a;
                     if (i7 == 0) {
-                        TLRPC.Peer peer = c40Var.v2;
+                        TLRPC.Peer peer = f40Var.v2;
                         if (peer != null) {
-                            c40Var.o3.a(c40Var.o1.a, gj.B1(peer), j3, str, z10);
+                            f40Var.o3.a(f40Var.o1.a, fj.B1(peer), j3, str, z10);
                             return;
                         }
                         return;
                     }
-                    r3 r3Var = c40Var.V2;
-                    r1 = r3Var != null ? (TLRPC.GroupCallParticipant) r3Var.p.get(i7) : null;
+                    t3 t3Var = f40Var.V2;
+                    r1 = t3Var != null ? (TLRPC.GroupCallParticipant) t3Var.p.get(i7) : null;
                     if (r1 != null) {
-                        c40Var.o3.a(c40Var.o1.a, gj.B1(r1.peer), j3, str, z10);
+                        f40Var.o3.a(f40Var.o1.a, fj.B1(r1.peer), j3, str, z10);
                         return;
                     }
                     return;
@@ -78,93 +76,93 @@ public final /* synthetic */ class l2 implements Runnable {
                 ((VideoPlayerHolderBase) this.d).lambda$seekTo$12(this.b, this.c, (Runnable) this.e);
                 return;
             case 2:
-                y6.Z((y6) this.d, this.c, this.b, (o6) this.e);
+                x6.Z((x6) this.d, this.c, this.b, (n6) this.e);
                 return;
             case 3:
                 ProfileActivity profileActivity = (ProfileActivity) this.d;
                 long j10 = this.b;
                 ArrayList arrayList = (ArrayList) this.e;
                 boolean z11 = this.c;
-                RectF rectF = ProfileActivity.X6;
-                profileActivity.getMessagesController().P1().r0(j10, arrayList, z11, null);
+                RectF rectF = ProfileActivity.Z6;
+                profileActivity.getMessagesController().R1().r0(j10, arrayList, z11, null);
                 return;
             default:
-                org.telegram.ui.Wallet.p0 p0Var = (org.telegram.ui.Wallet.p0) this.d;
+                org.telegram.ui.Wallet.z0 z0Var = (org.telegram.ui.Wallet.z0) this.d;
                 long j11 = this.b;
                 boolean z12 = this.c;
                 org.telegram.ui.Wallet.k kVar = (org.telegram.ui.Wallet.k) this.e;
-                p0Var.getClass();
+                z0Var.getClass();
                 ArrayList arrayList2 = new ArrayList();
                 LinkedHashMap linkedHashMap = new LinkedHashMap();
                 try {
                     try {
+                        z0Var.f = null;
+                        try {
+                        } catch (Throwable th2) {
+                            th = th2;
+                        }
                     } catch (Exception e10) {
-                        a8.g(e10, true);
-                        r1 = e10 instanceof org.telegram.ui.Wallet.o0 ? e10.getMessage() : "STORAGE_BROKEN";
+                        z0Var.m(e10);
+                        r1 = e10 instanceof org.telegram.ui.Wallet.y0 ? e10.getMessage() : "STORAGE_BROKEN";
                         Iterator it2 = linkedHashMap.values().iterator();
                         while (it2.hasNext()) {
-                            ((org.telegram.ui.Wallet.i0) it2.next()).close();
+                            ((org.telegram.ui.Wallet.r0) it2.next()).close();
                         }
                     }
-                    try {
-                        synchronized (org.telegram.ui.Wallet.p0.f) {
-                            try {
-                                p0Var.c(j11);
-                                hw0 r10 = p0Var.r();
-                                if (r10.c == z12) {
-                                    if (((LinkedHashMap) r10.e).isEmpty()) {
-                                    }
-                                    it = linkedHashMap.values().iterator();
-                                    while (it.hasNext()) {
-                                        ((org.telegram.ui.Wallet.i0) it.next()).close();
-                                    }
-                                    p0Var.e(arrayList2);
-                                    org.telegram.messenger.g0.h3(new di.f2(p0Var, (z10) kVar, j11, (String) r1));
-                                    return;
-                                }
-                                if (z12 && !org.telegram.ui.Wallet.p0.i(p0Var.a)) {
-                                    throw new org.telegram.ui.Wallet.o0("AUTH_UNAVAILABLE");
-                                }
-                                if (!((LinkedHashMap) r10.e).isEmpty()) {
-                                    p0Var.b(j11, false);
-                                    for (String str2 : ((LinkedHashMap) r10.e).keySet()) {
-                                        linkedHashMap.put(str2, p0Var.h(r10, str2, j11));
-                                    }
-                                }
-                                r10.c = z12;
-                                ((LinkedHashMap) r10.e).clear();
-                                for (Map.Entry entry : linkedHashMap.entrySet()) {
-                                    ((LinkedHashMap) r10.e).put((String) entry.getKey(), p0Var.j(r10, (String) entry.getKey(), (org.telegram.ui.Wallet.i0) entry.getValue(), arrayList2, j11));
-                                }
-                                r10.d = false;
-                                synchronized (org.telegram.ui.Wallet.p0.f) {
-                                    p0Var.c(j11);
-                                    p0Var.v(r10, linkedHashMap);
-                                    p0Var.d(r10);
+                    synchronized (org.telegram.ui.Wallet.z0.g) {
+                        try {
+                            z0Var.c(j11);
+                            ow0 s5 = z0Var.s();
+                            if (s5.c == z12) {
+                                if (((LinkedHashMap) s5.e).isEmpty()) {
                                 }
                                 it = linkedHashMap.values().iterator();
                                 while (it.hasNext()) {
+                                    ((org.telegram.ui.Wallet.r0) it.next()).close();
                                 }
-                                p0Var.e(arrayList2);
-                                org.telegram.messenger.g0.h3(new di.f2(p0Var, (z10) kVar, j11, (String) r1));
+                                z0Var.e(arrayList2);
+                                org.telegram.messenger.g0.g3(new di.i2(z0Var, kVar, j11, r1));
                                 return;
-                            } catch (Throwable th2) {
-                                th = th2;
-                                throw th;
                             }
+                            if (z12 && !org.telegram.ui.Wallet.z0.i(z0Var.a)) {
+                                throw new org.telegram.ui.Wallet.y0("AUTH_UNAVAILABLE");
+                            }
+                            if (!((LinkedHashMap) s5.e).isEmpty()) {
+                                z0Var.b(j11, false);
+                                for (String str2 : ((LinkedHashMap) s5.e).keySet()) {
+                                    linkedHashMap.put(str2, z0Var.h(s5, str2, j11));
+                                }
+                            }
+                            s5.c = z12;
+                            ((LinkedHashMap) s5.e).clear();
+                            for (Map.Entry entry : linkedHashMap.entrySet()) {
+                                ((LinkedHashMap) s5.e).put((String) entry.getKey(), z0Var.j(s5, (String) entry.getKey(), (org.telegram.ui.Wallet.r0) entry.getValue(), arrayList2, j11));
+                            }
+                            s5.d = false;
+                            synchronized (org.telegram.ui.Wallet.z0.g) {
+                                z0Var.c(j11);
+                                z0Var.w(s5, linkedHashMap);
+                                z0Var.d(s5);
+                            }
+                            it = linkedHashMap.values().iterator();
+                            while (it.hasNext()) {
+                            }
+                            z0Var.e(arrayList2);
+                            org.telegram.messenger.g0.g3(new di.i2(z0Var, kVar, j11, r1));
+                            return;
+                        } catch (Throwable th3) {
+                            th = th3;
+                            throw th;
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
                     }
                 } catch (Throwable th4) {
                     Iterator it3 = linkedHashMap.values().iterator();
                     while (it3.hasNext()) {
-                        ((org.telegram.ui.Wallet.i0) it3.next()).close();
+                        ((org.telegram.ui.Wallet.r0) it3.next()).close();
                     }
-                    p0Var.e(arrayList2);
+                    z0Var.e(arrayList2);
                     throw th4;
                 }
-                break;
         }
     }
 
@@ -176,11 +174,11 @@ public final /* synthetic */ class l2 implements Runnable {
         this.e = obj2;
     }
 
-    public /* synthetic */ l2(y6 y6Var, boolean z10, long j3, o6 o6Var) {
+    public /* synthetic */ l2(x6 x6Var, boolean z10, long j3, n6 n6Var) {
         this.a = 2;
-        this.d = y6Var;
+        this.d = x6Var;
         this.c = z10;
         this.b = j3;
-        this.e = o6Var;
+        this.e = n6Var;
     }
 }

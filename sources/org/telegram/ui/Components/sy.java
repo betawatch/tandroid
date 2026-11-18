@@ -1,79 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sy implements Runnable {
+public final class sy extends ReplacementSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wy b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
 
-    public /* synthetic */ sy(wy wyVar, int i7, int i10, int i11) {
-        this.a = i11;
-        this.b = wyVar;
-        this.c = i7;
-        this.d = i10;
+    public /* synthetic */ sy(int i7) {
+        this.a = i7;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int i14 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                wy wyVar = this.b;
-                int i10 = this.c;
-                int i11 = this.d;
-                if (wyVar.X != i10 || wyVar.Y != i11) {
-                    wyVar.X = i10;
-                    wyVar.Y = i11;
-                    int o4 = org.telegram.messenger.gz.o();
-                    int i12 = 1920;
-                    if (o4 != 1) {
-                        if (o4 != 2) {
-                            i12 = 720;
-                        } else {
-                            Point point = org.telegram.messenger.g0.q;
-                            i12 = Math.min(1920, Math.max(point.x, point.y));
-                        }
-                    }
-                    if (org.telegram.messenger.gz.o() == 0 && ((i7 = wyVar.X) > 1280 || wyVar.Y > 1280)) {
-                        wyVar.X = i7 / 2;
-                        wyVar.Y /= 2;
-                    }
-                    int i13 = wyVar.X;
-                    if (i13 > i12 || wyVar.Y > i12) {
-                        int i14 = wyVar.Y;
-                        if (i13 > i14) {
-                            wyVar.Y = (int) (i14 / (i12 / i13));
-                            wyVar.X = i12;
-                        } else {
-                            wyVar.X = (int) (i13 / (i12 / i14));
-                            wyVar.Y = i12;
-                        }
-                    }
-                    wyVar.a0 = false;
-                    wyVar.f();
-                    wyVar.e0.run();
-                    break;
-                }
-                break;
+                return (int) paint.measureText(charSequence, i7, i10);
             case 1:
-                wy wyVar2 = this.b;
-                int i15 = this.c;
-                int i16 = this.d;
-                wyVar2.n = i15;
-                wyVar2.r = i16;
-                break;
+                return org.telegram.messenger.g0.L(16.0f);
+            case 2:
+                return org.telegram.messenger.g0.L(12.0f);
+            case 3:
+                return org.telegram.messenger.g0.L(12.0f);
             default:
-                wy wyVar3 = this.b;
-                int i17 = this.c;
-                int i18 = this.d;
-                z9 z9Var = wyVar3.J;
-                z9Var.l = i17;
-                z9Var.m = i18;
-                break;
+                return org.telegram.messenger.g0.L(16.0f);
         }
+    }
+
+    public /* synthetic */ sy(boolean z10) {
+        this.a = 0;
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void d(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+    }
+
+    private final void e(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
     }
 }

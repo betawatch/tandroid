@@ -1,15 +1,15 @@
 package hi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class y8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ ta b;
     public final /* synthetic */ Runnable c;
 
-    public /* synthetic */ y8(sa saVar, Runnable runnable, int i7) {
+    public /* synthetic */ y8(ta taVar, Runnable runnable, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = taVar;
         this.c = runnable;
     }
 
@@ -21,11 +21,11 @@ public final /* synthetic */ class y8 implements Runnable {
                 this.b.o0();
                 break;
             default:
-                sa saVar = this.b;
-                saVar.e(false);
-                org.telegram.messenger.g0.r(saVar.h2);
-                saVar.h2 = null;
-                saVar.T1 = false;
+                ta taVar = this.b;
+                taVar.e(false);
+                org.telegram.messenger.g0.r(taVar.h2);
+                taVar.h2 = null;
+                taVar.T1 = false;
                 this.c.run();
                 break;
         }

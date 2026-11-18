@@ -10,14 +10,14 @@ import android.graphics.drawable.Drawable;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import bg.s;
+import bg.t;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a extends c implements te.b {
     public final te.a d;
@@ -28,15 +28,15 @@ public final class a extends c implements te.b {
     public int r;
     public int s;
 
-    public a(Context context, e6 e6Var) {
-        super(e6Var);
-        this.d = new te.a(0, this, er.h, 320L, false);
+    public a(Context context, i6 i6Var) {
+        super(i6Var);
+        this.d = new te.a(0, this, lr.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = i5.c.g(context, org.telegram.messenger.beta.R.drawable.outline_poll_add_24);
-        this.h = new TextPaint(j6.P2);
-        int w02 = j6.w0(j6.i6, e6Var);
+        this.h = new TextPaint(n6.P2);
+        int w02 = n6.w0(n6.i6, i6Var);
         if (this.b != w02) {
-            j6.H1(this.a, w02, false);
+            n6.H1(this.a, w02, false);
             this.b = w02;
         }
         b();
@@ -44,7 +44,7 @@ public final class a extends c implements te.b {
     }
 
     @Override // te.b
-    public final void G(int i7, float f10, float f11, te.c cVar) {
+    public final void H(int i7, float f10, float f11, te.c cVar) {
         b();
         c();
         invalidateSelf();
@@ -73,7 +73,7 @@ public final class a extends c implements te.b {
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
         this.a.draw(canvas);
-        s.b(canvas, this.f, 1.0f - this.d.e);
+        t.b(canvas, this.f, 1.0f - this.d.e);
         if (this.n != null) {
             canvas.save();
             canvas.translate(g0.L(44.0f) + bounds.left, g0.L(13.66f) + bounds.top);
@@ -98,15 +98,15 @@ public final class a extends c implements te.b {
         float L = g0.L(22.33f) + rect.left;
         g0.L(27.0f);
         g0.L(44.0f);
-        s.d(this.f, L, exactCenterY, 17);
+        t.d(this.f, L, exactCenterY, 17);
         int width = rect.width() - g0.L(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
-            this.n = new StaticLayout(hd.M0(2131747184, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.n = new StaticLayout(gd.M0(2131746991, null), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 
     @Override // te.b
-    public final /* synthetic */ void E(float f10, int i7) {
+    public final /* synthetic */ void D(float f10, int i7) {
     }
 }

@@ -1,38 +1,55 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class em0 extends ds {
-    public final /* synthetic */ org.telegram.ui.yw g0;
-    public final /* synthetic */ org.telegram.ui.hw h0;
+public final class em0 extends kv0 {
+    public final /* synthetic */ int L;
+    public final /* synthetic */ org.telegram.ui.kw M;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public em0(org.telegram.ui.hw hwVar, uj0 uj0Var, Context context, int i7, int i10, org.telegram.ui.yw ywVar) {
-        super(uj0Var, context, i7, i10);
-        this.h0 = hwVar;
-        this.g0 = ywVar;
+    public /* synthetic */ em0(org.telegram.ui.kw kwVar, Context context, wz wzVar, int i7) {
+        super(context, wzVar, 1, null);
+        this.L = i7;
+        this.M = kwVar;
     }
 
-    @Override // org.telegram.ui.Components.p41
-    public final void O(boolean z10) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        super.O(z10);
-        wl0 wl0Var = this.h0.j0;
-        wl0Var.e(this.Z || this.a0 || (arrayList = this.S) == null || !arrayList.isEmpty() || (arrayList2 = this.T) == null || !arrayList2.isEmpty() || (arrayList3 = this.V) == null || !arrayList3.isEmpty() || (arrayList4 = this.U) == null || !arrayList4.isEmpty(), z10);
-        if (!TextUtils.isEmpty(this.e0)) {
-            wl0Var.d.setText(org.telegram.messenger.hd.M0(2131748167, null));
-            wl0Var.e.setVisibility(8);
-        } else {
-            wl0Var.d.setText(org.telegram.messenger.hd.M0(2131748231, null));
-            wl0Var.e.setVisibility(0);
-            wl0Var.e.setText(org.telegram.messenger.hd.M0(2131748232, null));
+    @Override // org.telegram.ui.Components.kv0, android.view.View
+    public final void setVisibility(int i7) {
+        switch (this.L) {
+            case 0:
+                if (this.M.P0.getTag() == null) {
+                    super.setVisibility(i7);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 1:
+                if (this.M.P0.getTag() == null) {
+                    super.setVisibility(i7);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (this.M.P0.getTag() == null) {
+                    super.setVisibility(i7);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            default:
+                if (this.M.P0.getTag() == null) {
+                    super.setVisibility(i7);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
         }
     }
 }

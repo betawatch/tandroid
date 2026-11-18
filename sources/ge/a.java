@@ -1,6 +1,6 @@
 package ge;
 
-import aa.b0;
+import ee.t;
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicLongFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
@@ -8,7 +8,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.jvm.internal.r;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends Thread {
     public static final /* synthetic */ AtomicIntegerFieldUpdater r = AtomicIntegerFieldUpdater.newUpdater(a.class, "workerCtl$volatile");
@@ -337,8 +337,8 @@ public final class a extends Thread {
                     this.h = false;
                     if (this.e == 0) {
                         Object obj = this.nextParkedWorker;
-                        b0 b0Var = c.w;
-                        if (obj != b0Var) {
+                        t tVar = c.w;
+                        if (obj != tVar) {
                             r.set(this, -1);
                             while (this.nextParkedWorker != c.w) {
                                 AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = r;
@@ -397,7 +397,7 @@ public final class a extends Thread {
                             }
                         } else {
                             c cVar4 = this.n;
-                            if (this.nextParkedWorker == b0Var) {
+                            if (this.nextParkedWorker == tVar) {
                                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.n;
                                 while (true) {
                                     long j10 = atomicLongFieldUpdater2.get(cVar4);

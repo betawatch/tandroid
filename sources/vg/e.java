@@ -13,15 +13,15 @@ import android.view.View;
 import android.view.ViewParent;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
-import hi.i9;
+import hi.j9;
 import java.util.ArrayList;
-import org.telegram.ui.Cells.x9;
-import org.telegram.ui.g71;
+import org.telegram.ui.Cells.y9;
+import org.telegram.ui.k71;
+import p4.o0;
 import tg.x1;
-import ug.s1;
-import ug.t1;
+import ug.u1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class e extends GLSurfaceView implements Choreographer.FrameCallback {
     public static final /* synthetic */ int L = 0;
@@ -34,7 +34,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
     public float K;
     public final f a;
     public final GestureDetector b;
-    public s1 c;
+    public u1 c;
     public ValueAnimator d;
     public boolean e;
     public boolean f;
@@ -60,7 +60,7 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
         this.a = new f(context, 1, 4);
         setRenderer(new d(this));
         setRenderMode(0);
-        this.b = new GestureDetector(context, new x9(1, this));
+        this.b = new GestureDetector(context, new y9(1, this));
     }
 
     public static void a(e eVar, int i7) {
@@ -122,12 +122,12 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
         this.d = ofFloat;
         ofFloat.setDuration(600L);
         this.d.setInterpolator(new OvershootInterpolator());
-        this.d.addUpdateListener(new i9(this, f10, f11, 7));
-        this.d.addListener(new g71(this, 22));
+        this.d.addUpdateListener(new j9(this, f10, f11, 7));
+        this.d.addListener(new k71(this, 22));
         this.d.start();
-        s1 s1Var = this.c;
-        if (s1Var != null) {
-            s1Var.b(Math.abs(f10 + f11));
+        u1 u1Var = this.c;
+        if (u1Var != null) {
+            u1Var.b(Math.abs(f10 + f11));
         }
     }
 
@@ -256,8 +256,8 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
         this.a.h = max / this.K;
     }
 
-    public void setStarParticlesView(s1 s1Var) {
-        this.c = s1Var;
+    public void setStarParticlesView(u1 u1Var) {
+        this.c = u1Var;
     }
 
     @Override // android.opengl.GLSurfaceView, android.view.SurfaceHolder.Callback
@@ -290,6 +290,6 @@ public abstract class e extends GLSurfaceView implements Choreographer.FrameCall
             this.I.add(new z0(5, runnable));
             arrayList = new ArrayList(this.I);
         }
-        super.surfaceRedrawNeededAsync(surfaceHolder, new t1(3, this, arrayList));
+        super.surfaceRedrawNeededAsync(surfaceHolder, new o0(25, this, arrayList));
     }
 }

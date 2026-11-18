@@ -17,11 +17,11 @@ import android.util.Log;
 import com.google.android.gms.dynamite.DynamiteModule$DynamiteLoaderClassLoader;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f {
     public static final s b;
@@ -58,7 +58,7 @@ public final class f {
             Class<?> loadClass = classLoader.loadClass(sb2.toString());
             Field declaredField = loadClass.getDeclaredField("MODULE_ID");
             Field declaredField2 = loadClass.getDeclaredField("MODULE_VERSION");
-            if (q6.m.k(declaredField.get(null), str)) {
+            if (q6.m.l(declaredField.get(null), str)) {
                 return declaredField2.getInt(null);
             }
             String valueOf = String.valueOf(declaredField.get(null));
@@ -113,9 +113,9 @@ public final class f {
         long longValue = l10.longValue();
         try {
             r72.set(Long.valueOf(SystemClock.uptimeMillis()));
-            d W = eVar.W(context, str, k);
-            int i11 = W.a;
-            int i12 = W.b;
+            d Q = eVar.Q(context, str, k);
+            int i11 = Q.a;
+            int i12 = Q.b;
             StringBuilder sb2 = new StringBuilder(String.valueOf(str).length() + 26 + String.valueOf(i11).length() + 19 + String.valueOf(str).length() + 1 + String.valueOf(i12).length());
             sb2.append("Considering local module ");
             sb2.append(str);
@@ -126,14 +126,14 @@ public final class f {
             sb2.append(":");
             sb2.append(i12);
             Log.i("DynamiteModule", sb2.toString());
-            int i13 = W.c;
+            int i13 = Q.c;
             if (i13 != 0) {
                 if (i13 == -1) {
-                    if (W.a != 0) {
+                    if (Q.a != 0) {
                         i13 = -1;
                     }
                 }
-                if (i13 != 1 || W.b != 0) {
+                if (i13 != 1 || Q.b != 0) {
                     if (i13 == -1) {
                         Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
                         f fVar2 = new f(applicationContext);
@@ -157,7 +157,7 @@ public final class f {
                     }
                     try {
                         try {
-                            i10 = W.b;
+                            i10 = Q.b;
                         } catch (b e10) {
                             e = e10;
                             context2 = context;
@@ -166,8 +166,8 @@ public final class f {
                             sb4.append("Failed to load remote module: ");
                             sb4.append(message);
                             Log.w("DynamiteModule", sb4.toString());
-                            i7 = W.a;
-                            if (i7 != 0 || eVar.W(context2, str, new l(i7)).c != -1) {
+                            i7 = Q.a;
+                            if (i7 != 0 || eVar.Q(context2, str, new l(i7)).c != -1) {
                                 throw new b("Remote load failed. No local fallback found.", e);
                             }
                             Log.i("DynamiteModule", "Selected local version of ".concat(String.valueOf(str)));
@@ -182,7 +182,7 @@ public final class f {
                         sb42.append("Failed to load remote module: ");
                         sb42.append(message2);
                         Log.w("DynamiteModule", sb42.toString());
-                        i7 = W.a;
+                        i7 = Q.a;
                         if (i7 != 0) {
                         }
                         throw new b("Remote load failed. No local fallback found.", e);
@@ -296,8 +296,8 @@ public final class f {
                     }
                 }
             }
-            int i14 = W.a;
-            int i15 = W.b;
+            int i14 = Q.a;
+            int i15 = Q.b;
             StringBuilder sb7 = new StringBuilder(String.valueOf(str).length() + 46 + String.valueOf(i14).length() + 23 + String.valueOf(i15).length() + 1);
             sb7.append("No acceptable module ");
             sb7.append(str);
@@ -371,21 +371,21 @@ public final class f {
                                         int f10 = f(context, str, z10, true);
                                         String str2 = e;
                                         if (str2 != null && !str2.isEmpty()) {
-                                            ClassLoader b10 = h.b();
-                                            if (b10 == null) {
+                                            ClassLoader c10 = h.c();
+                                            if (c10 == null) {
                                                 if (Build.VERSION.SDK_INT >= 29) {
                                                     a.b();
                                                     String str3 = e;
-                                                    q6.m.g(str3);
-                                                    b10 = a.a(ClassLoader.getSystemClassLoader(), str3);
+                                                    q6.m.h(str3);
+                                                    c10 = a.a(ClassLoader.getSystemClassLoader(), str3);
                                                 } else {
                                                     String str4 = e;
-                                                    q6.m.g(str4);
-                                                    b10 = new i(str4, ClassLoader.getSystemClassLoader());
+                                                    q6.m.h(str4);
+                                                    c10 = new i(str4, ClassLoader.getSystemClassLoader());
                                                 }
                                             }
-                                            g(b10);
-                                            declaredField.set(null, b10);
+                                            g(c10);
+                                            declaredField.set(null, c10);
                                             d = bool2;
                                             return f10;
                                         }
@@ -523,7 +523,7 @@ public final class f {
                 z10 = true;
             }
             h = Boolean.valueOf(z10);
-            if (z10 && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & ns.N1) == 0) {
+            if (z10 && (applicationInfo = resolveContentProvider.applicationInfo) != null && (applicationInfo.flags & ks.N1) == 0) {
                 Log.i("DynamiteModule", "Non-system-image GmsCore APK, forcing V1");
                 f = true;
             }

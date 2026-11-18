@@ -1,16 +1,17 @@
 package o2;
 
 import a3.u;
-import bg.v0;
+import b3.q;
+import bg.w0;
 import e2.s0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l {
-    public final b3.p a;
+    public final q a;
     public final xi.e b;
     public final int[] c;
     public final int d;
@@ -26,14 +27,14 @@ public final class l {
     public boolean n;
 
     /* JADX WARN: Type inference failed for: r0v0, types: [java.lang.Object, o2.l] */
-    public l(v0 v0Var, b3.p pVar, p2.c cVar, xi.e eVar, int i7, int[] iArr, u uVar, int i10, j2.h hVar, long j3, int i11, boolean z10, ArrayList arrayList, o oVar) {
+    public l(w0 w0Var, q qVar, p2.c cVar, xi.e eVar, int i7, int[] iArr, u uVar, int i10, j2.h hVar, long j3, int i11, boolean z10, ArrayList arrayList, o oVar) {
         p2.m mVar;
         j[] jVarArr;
         e2.u uVar2;
         f3.o hVar2;
         y2.e eVar2;
         ?? obj = new Object();
-        obj.a = pVar;
+        obj.a = qVar;
         obj.k = cVar;
         obj.b = eVar;
         obj.c = iArr;
@@ -53,29 +54,29 @@ public final class l {
         l lVar = obj;
         while (i13 < lVar.i.length) {
             p2.m mVar2 = (p2.m) a10.get(uVar.i(i13));
-            p2.b I = eVar.I(mVar2.b);
+            p2.b M = eVar.M(mVar2.b);
             j[] jVarArr2 = lVar.i;
-            p2.b bVar = I == null ? (p2.b) mVar2.b.get(i12) : I;
+            p2.b bVar = M == null ? (p2.b) mVar2.b.get(i12) : M;
             e2.u uVar3 = mVar2.a;
-            v0Var.getClass();
+            w0Var.getClass();
             String str = uVar3.r;
             if (!s0.l(str)) {
                 if (str != null && (str.startsWith("video/webm") || str.startsWith("audio/webm") || str.startsWith("application/webm") || str.startsWith("video/x-matroska") || str.startsWith("audio/x-matroska") || str.startsWith("application/x-matroska"))) {
                     mVar = mVar2;
                     uVar2 = uVar3;
                     jVarArr = jVarArr2;
-                    hVar2 = new x3.f((nb.a) v0Var.c, v0Var.a ? 1 : 3);
+                    hVar2 = new x3.f((nb.a) w0Var.c, w0Var.a ? 1 : 3);
                 } else if (Objects.equals(str, "image/jpeg")) {
                     hVar2 = new n3.a(1);
                 } else if (Objects.equals(str, "image/png")) {
                     hVar2 = new b4.a(0);
                 } else {
                     int i14 = z10 ? 4 : 0;
-                    int g10 = (v0Var.a ? i14 : i14 | 32) | z3.h.g(v0Var.b);
+                    int g10 = (w0Var.a ? i14 : i14 | 32) | z3.h.g(w0Var.b);
                     mVar = mVar2;
                     jVarArr = jVarArr2;
                     uVar2 = uVar3;
-                    hVar2 = new z3.h((nb.a) v0Var.c, g10, null, arrayList, oVar2);
+                    hVar2 = new z3.h((nb.a) w0Var.c, g10, null, arrayList, oVar2);
                 }
                 eVar2 = new y2.e(hVar2, i10, uVar2);
                 y2.e eVar3 = eVar2;
@@ -87,8 +88,8 @@ public final class l {
                 oVar2 = oVar;
                 d = j10;
                 i12 = 0;
-            } else if (v0Var.a) {
-                hVar2 = new c4.h(((nb.a) v0Var.c).f(uVar3), uVar3);
+            } else if (w0Var.a) {
+                hVar2 = new c4.h(((nb.a) w0Var.c).j(uVar3), uVar3);
             } else {
                 eVar2 = null;
                 mVar = mVar2;
@@ -131,11 +132,11 @@ public final class l {
     public final j b(int i7) {
         j[] jVarArr = this.i;
         j jVar = jVarArr[i7];
-        p2.b I = this.b.I(jVar.b.b);
-        if (I == null || I.equals(jVar.c)) {
+        p2.b M = this.b.M(jVar.b.b);
+        if (M == null || M.equals(jVar.c)) {
             return jVar;
         }
-        j jVar2 = new j(jVar.e, jVar.b, I, jVar.a, jVar.f, jVar.d);
+        j jVar2 = new j(jVar.e, jVar.b, M, jVar.a, jVar.f, jVar.d);
         jVarArr[i7] = jVar2;
         return jVar2;
     }

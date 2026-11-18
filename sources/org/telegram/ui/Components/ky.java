@@ -1,153 +1,250 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.os.SystemClock;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.widget.FrameLayout;
-import android.widget.HorizontalScrollView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class ky extends v4.t0 {
-    public final int a;
-    public boolean b;
-    public final /* synthetic */ ly c;
+public final /* synthetic */ class ky implements org.telegram.messenger.x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ly b;
 
-    public ky(ly lyVar, int i7) {
-        this.c = lyVar;
+    public /* synthetic */ ky(ly lyVar, int i7) {
         this.a = i7;
+        this.b = lyVar;
     }
 
-    @Override // v4.t0
-    public void a(RecyclerView recyclerView, int i7) {
-        ObjectAnimator objectAnimator;
-        yx yxVar;
-        ly lyVar = this.c;
-        ObjectAnimator[] objectAnimatorArr = lyVar.S0;
-        v4.a1 a1Var = recyclerView.getLayoutManager().e;
-        if (a1Var != null && a1Var.e) {
-            this.b = true;
-            return;
-        }
-        int i10 = this.a;
-        if (i7 != 0) {
-            if (i7 == 1) {
-                if (lyVar.K0) {
-                    lyVar.K0 = false;
-                }
-                if (i10 == 0) {
-                    yxVar = lyVar.H0;
-                } else if (i10 == 1) {
-                    yxVar = lyVar.W;
-                } else {
-                    if (i10 != 2) {
-                        throw new IllegalArgumentException(i5.c.i(i10, "Unexpected argument: "));
-                    }
-                    yxVar = lyVar.p0;
-                }
-                if (yxVar != null) {
-                    yxVar.b();
-                }
-                this.b = false;
-            }
-            if (!this.b && (objectAnimator = objectAnimatorArr[i10]) != null && objectAnimator.isRunning()) {
-                objectAnimatorArr[i10].cancel();
-            }
-            if (i10 == 0) {
-                if (lyVar.U0 == null) {
-                    jg.d1 d1Var = new jg.d1(lyVar, lyVar.d1, lyVar.u1.a(), lyVar.u1.f(), 1);
-                    lyVar.U0 = d1Var;
-                    d1Var.a();
-                }
-                lyVar.U0.b();
-                return;
-            }
-            return;
-        }
-        if (!this.b) {
-            int[] iArr = lyVar.R0;
-            mx mxVar = lyVar.u1;
-            if ((mxVar == null || !mxVar.z()) && i10 != 0) {
-                float N = org.telegram.messenger.g0.N(i10 == 1 ? 36.0f : 48.0f);
-                float f10 = iArr[i10] / (-N);
-                if (f10 <= 0.0f || f10 >= 1.0f) {
-                    uj0 x10 = lyVar.x(i10);
-                    int L = org.telegram.messenger.g0.L(i10 == 1 ? 38.0f : 48.0f);
-                    v4.e1 K = x10.K(0);
-                    if (K != null) {
-                        int bottom = K.a.getBottom();
-                        int i11 = iArr[i10];
-                        float f11 = (bottom - (L + i11)) / lyVar.c1;
-                        if (f11 > 0.0f || f11 < 1.0f) {
-                            lyVar.i(i10, i11, f11 > 0.5f);
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01c1, code lost:
+    
+        if (r7.charAt(r10) <= 57343) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x01de, code lost:
+    
+        if (r7.charAt(r10) != 9794) goto L81;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r7v12, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r7v8, types: [java.lang.CharSequence] */
+    @Override // org.telegram.messenger.x10
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a(Object obj) {
+        int A1;
+        int A12;
+        int i7 = this.a;
+        int i10 = 3;
+        ly lyVar = this.b;
+        switch (i7) {
+            case 0:
+                lyVar.a((Runnable) obj, true);
+                break;
+            case 1:
+                Runnable runnable = (Runnable) obj;
+                ArrayList arrayList = lyVar.s;
+                LongSparseArray longSparseArray = lyVar.w;
+                my myVar = lyVar.x;
+                HashMap hashMap = org.telegram.messenger.ri.d0(myVar.R.d1).e0;
+                HashSet hashSet = new HashSet();
+                ArrayList arrayList2 = new ArrayList();
+                for (ArrayList arrayList3 : hashMap.values()) {
+                    int size = arrayList3.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj2 = arrayList3.get(i11);
+                        i11++;
+                        TLRPC.Document document = (TLRPC.Document) obj2;
+                        if (!hashSet.contains(Long.valueOf(document.id)) && org.telegram.messenger.fj.X3(document)) {
+                            hashSet.add(Long.valueOf(document.id));
+                            arrayList2.add(document);
+                            longSparseArray.put(document.id, document);
                         }
                     }
-                } else {
-                    HorizontalScrollView y10 = lyVar.y(i10);
-                    int i12 = f10 > 0.5f ? (int) (-Math.ceil(N)) : 0;
-                    if (f10 > 0.5f) {
-                        lyVar.i(i10, i12, false);
-                    }
-                    if (i10 == 1) {
-                        lyVar.m(i12);
-                    }
-                    ObjectAnimator objectAnimator2 = objectAnimatorArr[i10];
-                    if (objectAnimator2 == null) {
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(y10, (Property<HorizontalScrollView, Float>) View.TRANSLATION_Y, y10.getTranslationY(), i12);
-                        objectAnimatorArr[i10] = ofFloat;
-                        ofFloat.addUpdateListener(new org.telegram.ui.ActionBar.h2(lyVar, i10, 3));
-                        objectAnimatorArr[i10].setDuration(200L);
-                    } else {
-                        objectAnimator2.setFloatValues(y10.getTranslationY(), i12);
-                    }
-                    objectAnimatorArr[i10].start();
                 }
-            }
-        }
-        if (lyVar.K0) {
-            lyVar.K0 = false;
-        }
-        this.b = false;
-    }
-
-    @Override // v4.t0
-    public void b(RecyclerView recyclerView, int i7, int i10) {
-        ly lyVar = this.c;
-        int i11 = this.a;
-        lyVar.p(i11);
-        ly.e(lyVar, i11, i10);
-        if (i11 == 0) {
-            lyVar.q(false);
-        } else if (i11 == 1) {
-            lyVar.l(false);
-        } else if (i11 == 2) {
-            ly.f(lyVar, false);
-        }
-        if (this.b) {
-            return;
-        }
-        float f10 = i10;
-        FrameLayout frameLayout = lyVar.n;
-        if (SystemClock.elapsedRealtime() - lyVar.E2 < ViewConfiguration.getTapTimeout()) {
-            return;
-        }
-        lyVar.I += f10;
-        int L = lyVar.h.getCurrentItem() == 0 ? org.telegram.messenger.g0.L(38.0f) : org.telegram.messenger.g0.L(48.0f);
-        float f11 = lyVar.I;
-        if (f11 >= L) {
-            lyVar.N(false);
-            return;
-        }
-        if (f11 <= (-L)) {
-            lyVar.N(true);
-        } else {
-            if ((frameLayout.getTag() != null || lyVar.I >= 0.0f) && (frameLayout.getTag() == null || lyVar.I <= 0.0f)) {
-                return;
-            }
-            lyVar.I = 0.0f;
+                ArrayList arrayList4 = org.telegram.messenger.ri.d0(myVar.R.d1).t0[0];
+                int size2 = arrayList4.size();
+                int i12 = 0;
+                while (i12 < size2) {
+                    Object obj3 = arrayList4.get(i12);
+                    i12++;
+                    TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) obj3;
+                    TLRPC.Document document2 = stickerSetCovered.cover;
+                    if (document2 != null && !hashSet.contains(Long.valueOf(document2.id)) && org.telegram.messenger.fj.X3(stickerSetCovered.cover)) {
+                        hashSet.add(Long.valueOf(stickerSetCovered.cover.id));
+                        arrayList2.add(stickerSetCovered.cover);
+                        TLRPC.Document document3 = stickerSetCovered.cover;
+                        longSparseArray.put(document3.id, document3);
+                    }
+                    ArrayList<TLRPC.Document> arrayList5 = stickerSetCovered.covers;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        int i13 = 0;
+                        while (i13 < size3) {
+                            TLRPC.Document document4 = arrayList5.get(i13);
+                            i13++;
+                            TLRPC.Document document5 = document4;
+                            Runnable runnable2 = runnable;
+                            if (!hashSet.contains(Long.valueOf(document5.id)) && org.telegram.messenger.fj.X3(document5)) {
+                                hashSet.add(Long.valueOf(document5.id));
+                                arrayList2.add(document5);
+                                longSparseArray.put(document5.id, document5);
+                            }
+                            runnable = runnable2;
+                        }
+                    }
+                    runnable = runnable;
+                }
+                Runnable runnable3 = runnable;
+                if (!arrayList2.isEmpty()) {
+                    arrayList.addAll(arrayList2);
+                    lyVar.f.put(arrayList, myVar.O);
+                    lyVar.h.add(arrayList);
+                }
+                runnable3.run();
+                break;
+            case 2:
+                lyVar.a((Runnable) obj, false);
+                break;
+            case 3:
+                org.telegram.messenger.ri.d0(lyVar.x.R.d1).d2(false, lyVar.a, new ph(6, lyVar, (Runnable) obj));
+                break;
+            case 4:
+                Runnable runnable4 = (Runnable) obj;
+                my myVar2 = lyVar.x;
+                ArrayList arrayList6 = lyVar.s;
+                if (lyVar.a.length() <= 14) {
+                    HashMap hashMap2 = org.telegram.messenger.ri.d0(myVar2.R.d1).e0;
+                    String str = lyVar.a;
+                    int length = str.length();
+                    int i14 = 0;
+                    String str2 = str;
+                    while (i14 < length) {
+                        if (i14 < length - 1) {
+                            if (str2.charAt(i14) == 55356) {
+                                int i15 = i14 + 1;
+                                if (str2.charAt(i15) >= 57339) {
+                                    break;
+                                }
+                            }
+                            if (str2.charAt(i14) == 8205) {
+                                int i16 = i14 + 1;
+                                if (str2.charAt(i16) != 9792) {
+                                    break;
+                                }
+                                length -= 2;
+                                str2 = TextUtils.concat(str2.subSequence(0, i14), str2.subSequence(i14 + 2, str2.length()));
+                                i14--;
+                                i14++;
+                                str2 = str2;
+                            }
+                        }
+                        if (str2.charAt(i14) == 65039) {
+                            length--;
+                            str2 = TextUtils.concat(str2.subSequence(0, i14), str2.subSequence(i14 + 1, str2.length()));
+                            i14--;
+                            i14++;
+                            str2 = str2;
+                        } else {
+                            i14++;
+                            str2 = str2;
+                        }
+                    }
+                    ArrayList arrayList7 = hashMap2 != null ? (ArrayList) hashMap2.get(str2.toString()) : null;
+                    if (arrayList7 != null && !arrayList7.isEmpty()) {
+                        arrayList6.addAll(arrayList7);
+                        int size4 = arrayList7.size();
+                        for (int i17 = 0; i17 < size4; i17++) {
+                            TLRPC.Document document6 = (TLRPC.Document) arrayList7.get(i17);
+                            lyVar.w.put(document6.id, document6);
+                        }
+                        lyVar.f.put(arrayList6, myVar2.O);
+                        lyVar.h.add(arrayList6);
+                    }
+                }
+                runnable4.run();
+                break;
+            case 5:
+                Runnable runnable5 = (Runnable) obj;
+                my myVar3 = lyVar.x;
+                ry ryVar = myVar3.R;
+                int i18 = ryVar.d1;
+                HashMap hashMap3 = org.telegram.messenger.ri.d0(i18).e0;
+                if (hashMap3 != null && !hashMap3.isEmpty() && lyVar.a.length() > 1) {
+                    String[] G0 = org.telegram.messenger.g0.G0();
+                    if (!Arrays.equals(ryVar.X0, G0)) {
+                        org.telegram.messenger.ri.d0(i18).O(G0, false);
+                    }
+                    ryVar.X0 = G0;
+                    org.telegram.messenger.ri.d0(i18).W(ryVar.X0, myVar3.O, true, new rm(lyVar, hashMap3, runnable5, i10), false);
+                    break;
+                } else {
+                    runnable5.run();
+                    break;
+                }
+            case 6:
+                Runnable runnable6 = (Runnable) obj;
+                HashMap hashMap4 = lyVar.d;
+                HashMap hashMap5 = lyVar.e;
+                ArrayList arrayList8 = lyVar.c;
+                my myVar4 = lyVar.x;
+                ArrayList u02 = org.telegram.messenger.ri.d0(myVar4.R.d1).u0(0);
+                ry ryVar2 = myVar4.R;
+                int i19 = ryVar2.d1;
+                int i20 = ryVar2.d1;
+                org.telegram.messenger.mp.u1(i19).y0(u02);
+                int size5 = u02.size();
+                for (int i21 = 0; i21 < size5; i21++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) u02.get(i21);
+                    int A13 = org.telegram.messenger.g0.A1(tL_messages_stickerSet.set.title, myVar4.O);
+                    if (A13 < 0) {
+                        String str3 = tL_messages_stickerSet.set.short_name;
+                        if (str3 != null && (A12 = org.telegram.messenger.g0.A1(str3, myVar4.O)) >= 0 && (A12 == 0 || tL_messages_stickerSet.set.short_name.charAt(A12 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet);
+                            hashMap4.put(tL_messages_stickerSet, Boolean.TRUE);
+                        }
+                    } else if (A13 == 0 || tL_messages_stickerSet.set.title.charAt(A13 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet);
+                        hashMap5.put(tL_messages_stickerSet, Integer.valueOf(A13));
+                    }
+                }
+                ArrayList u03 = org.telegram.messenger.ri.d0(i20).u0(3);
+                org.telegram.messenger.mp.u1(i20).y0(u03);
+                int size6 = u03.size();
+                for (int i22 = 0; i22 < size6; i22++) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = (TLRPC.TL_messages_stickerSet) u03.get(i22);
+                    int A14 = org.telegram.messenger.g0.A1(tL_messages_stickerSet2.set.title, myVar4.O);
+                    if (A14 < 0) {
+                        String str4 = tL_messages_stickerSet2.set.short_name;
+                        if (str4 != null && (A1 = org.telegram.messenger.g0.A1(str4, myVar4.O)) >= 0 && (A1 == 0 || tL_messages_stickerSet2.set.short_name.charAt(A1 - 1) == ' ')) {
+                            arrayList8.add(tL_messages_stickerSet2);
+                            hashMap4.put(tL_messages_stickerSet2, Boolean.TRUE);
+                        }
+                    } else if (A14 == 0 || tL_messages_stickerSet2.set.title.charAt(A14 - 1) == ' ') {
+                        arrayList8.add(tL_messages_stickerSet2);
+                        hashMap5.put(tL_messages_stickerSet2, Integer.valueOf(A14));
+                    }
+                }
+                runnable6.run();
+                break;
+            default:
+                Runnable runnable7 = (Runnable) obj;
+                my myVar5 = lyVar.x;
+                if (org.telegram.messenger.j6.d(myVar5.O)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = lyVar.a;
+                    tL_messages_getStickers.hash = 0L;
+                    myVar5.M = ConnectionsManager.getInstance(myVar5.R.d1).sendRequest(tL_messages_getStickers, new bi.m1(lyVar, tL_messages_getStickers, runnable7, 17));
+                    break;
+                } else {
+                    runnable7.run();
+                    break;
+                }
         }
     }
 }

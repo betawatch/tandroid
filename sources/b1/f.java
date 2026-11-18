@@ -10,7 +10,7 @@ import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
 import v0.n;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements rd.a {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class f implements rd.a {
                 break;
             case 1:
                 c1.f fVar = (c1.f) this.b;
-                fVar.g().execute(new c1.c(1, fVar, (n) this.c));
+                fVar.g().execute(new c1.c(0, fVar, (n) this.c));
                 break;
             default:
                 me.d dVar = (me.d) this.b;

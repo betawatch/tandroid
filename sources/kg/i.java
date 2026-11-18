@@ -1,11 +1,11 @@
 package kg;
 
-import org.telegram.ui.Components.xn;
+import org.telegram.ui.Components.go;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i extends xn {
-    @Override // org.telegram.ui.Components.xn, android.widget.LinearLayout, android.view.View
+public final class i extends go {
+    @Override // org.telegram.ui.Components.go, android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
         super.onMeasure(i7, i10);
         setPivotX(getMeasuredWidth() / 2.0f);

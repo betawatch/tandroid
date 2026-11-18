@@ -4,7 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class AppStartReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
@@ -14,6 +14,6 @@ public class AppStartReceiver extends BroadcastReceiver {
         if (intent == null || !"android.intent.action.BOOT_COMPLETED".equals(intent.getAction())) {
             return;
         }
-        g0.h3(new ai.o(22));
+        g0.g3(new ai.o(24));
     }
 }

@@ -17,11 +17,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.ou;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qa implements Runnable {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class qa implements Runnable {
         synchronized (ua.class) {
             a0Var = ua.k;
             if (a0Var == null) {
-                n0.c a10 = c8.x9.a(Resources.getSystem().getConfiguration());
+                n0.c a10 = c8.z9.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i10 = 0;
                 int i11 = 0;
@@ -140,7 +140,7 @@ public final /* synthetic */ class qa implements Runnable {
         synchronized (uf.class) {
             mVar = uf.k;
             if (mVar == null) {
-                n0.c a10 = c8.x9.a(Resources.getSystem().getConfiguration());
+                n0.c a10 = c8.z9.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
                 int i10 = 0;
                 int i11 = 0;
@@ -253,7 +253,7 @@ public final /* synthetic */ class qa implements Runnable {
                             m10.c();
                             com.google.android.gms.internal.cast.k1.v((com.google.android.gms.internal.cast.k1) m10.b, i11);
                             b10.e((com.google.android.gms.internal.cast.k1) m10.a());
-                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ns.G3);
+                            x0Var.a.a((com.google.android.gms.internal.cast.p1) b10.a(), ks.G3);
                             break;
                         default:
                             xa xaVar = new xa(10, 4);
@@ -268,7 +268,7 @@ public final /* synthetic */ class qa implements Runnable {
                     }
                 }
                 sVar.h = null;
-                q6.m.d("Must be called from the main thread.");
+                q6.m.e("Must be called from the main thread.");
                 if (a10.w()) {
                     a10.g = new TaskCompletionSource();
                     h6.h.k.b("create SessionState with cached mediaInfo and mediaStatus", new Object[0]);
@@ -295,13 +295,13 @@ public final /* synthetic */ class qa implements Runnable {
                 }
                 task.addOnSuccessListener(new com.google.android.gms.internal.cast.q(sVar)).addOnFailureListener(new com.google.android.gms.internal.cast.q(sVar));
                 com.google.android.gms.internal.cast.y yVar = sVar.c;
-                q6.m.g(yVar);
+                q6.m.h(yVar);
                 com.google.android.gms.internal.cast.r rVar2 = sVar.d;
-                q6.m.g(rVar2);
+                q6.m.h(rVar2);
                 yVar.postDelayed(rVar2, 10000L);
                 return;
             case 3:
-                l.e eVar = (l.e) ((ia.d) this.b).b;
+                l.e eVar = (l.e) ((hi.u5) this.b).b;
                 l.m mVar = (l.m) this.d;
                 l.d dVar = (l.d) this.c;
                 if (dVar != null) {
@@ -319,10 +319,10 @@ public final /* synthetic */ class qa implements Runnable {
                 ((ValueAnimator) this.b).start();
                 return;
             case 5:
-                ((ou) this.c).R0((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
+                ((hn) this.c).F((s4.p) this.b, (s4.m) this.d, (Collection) this.e);
                 return;
             case 6:
-                ((ou) this.c).R0((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
+                ((hn) this.c).F((s4.p) this.b, (s4.m) this.d, (ArrayList) this.e);
                 return;
             default:
                 y7.d9 d9Var = (y7.d9) this.c;
@@ -346,7 +346,7 @@ public final /* synthetic */ class qa implements Runnable {
                 synchronized (y7.d9.class) {
                     m9Var = y7.d9.j;
                     if (m9Var == null) {
-                        n0.c a12 = c8.x9.a(Resources.getSystem().getConfiguration());
+                        n0.c a12 = c8.z9.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i13 = 0;
                         while (i10 < a12.a.size()) {

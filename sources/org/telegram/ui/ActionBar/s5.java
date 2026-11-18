@@ -1,31 +1,81 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Point;
-import android.view.View;
-import c8.ga;
+import android.util.SparseIntArray;
+import org.telegram.ui.x71;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class s5 extends ga {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ View b;
+public final class s5 extends v4 {
+    public final /* synthetic */ int U;
+    public final /* synthetic */ Object V;
 
-    public s5(View view, boolean z10) {
-        this.a = z10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ s5(boolean z10, SparseIntArray sparseIntArray, int i7) {
+        super(2, z10, false, null);
+        this.U = i7;
+        this.V = sparseIntArray;
     }
 
-    @Override // c8.ga
-    public final void b(int i7, int i10) {
-        boolean z10 = this.a;
-        View view = this.b;
-        if (z10) {
-            view.invalidate();
-            return;
+    @Override // org.telegram.ui.ActionBar.v4
+    public int g(int i7) {
+        switch (this.U) {
+            case 0:
+                SparseIntArray sparseIntArray = (SparseIntArray) this.V;
+                int indexOfKey = sparseIntArray.indexOfKey(i7);
+                return indexOfKey > 0 ? sparseIntArray.valueAt(indexOfKey) : n6.hm[i7];
+            case 1:
+                return ((SparseIntArray) this.V).get(i7);
+            default:
+                return super.g(i7);
         }
-        Point point = org.telegram.messenger.g0.q;
-        if ((point.x <= point.y) == (i7 <= i10)) {
-            view.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.v4
+    public int i(int i7) {
+        switch (this.U) {
+            case 0:
+                return ((SparseIntArray) this.V).get(i7);
+            case 1:
+                return ((SparseIntArray) this.V).get(i7);
+            default:
+                return super.i(i7);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.v4
+    public void o(int i7, int i10, int i11) {
+        switch (this.U) {
+            case 2:
+                if (!((x71) this.V).f2) {
+                    super.o(i7, i10, i11);
+                    break;
+                }
+                break;
+            default:
+                super.o(i7, i10, i11);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.v4
+    public void p(int i7, int i10, int i11, int i12, int i13, int i14, boolean z10, boolean z11) {
+        switch (this.U) {
+            case 2:
+                if (!((x71) this.V).f2) {
+                    super.p(i7, i10, i11, i12, i13, i14, z10, z11);
+                    break;
+                }
+                break;
+            default:
+                super.p(i7, i10, i11, i12, i13, i14, z10, z11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s5(x71 x71Var, int i7, boolean z10) {
+        super(i7, true, z10, null);
+        this.U = 2;
+        this.V = x71Var;
     }
 }

@@ -1,87 +1,15 @@
 package fi;
 
 import android.content.Context;
-import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class e5 extends c5.l {
-    public boolean x0;
-    public final /* synthetic */ k5 y0;
-    public final /* synthetic */ k5 z0;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class e5 extends a5 {
+    public final /* synthetic */ f5 c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e5(k5 k5Var, Context context) {
-        super(context);
-        this.z0 = k5Var;
-        this.y0 = k5Var;
-    }
-
-    public final boolean A(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.x0 = true;
-        }
-        if (this.x0 && this.y0.y <= 0) {
-            try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
-    }
-
-    public final boolean B(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.x0 = true;
-        }
-        if (!this.x0 || this.y0.y > 0) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float y10 = motionEvent.getY();
-        currentTopOffset = this.z0.getCurrentTopOffset();
-        if (y10 >= currentTopOffset || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // c5.l, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        k5 k5Var = this.z0;
-        currentTopOffset = k5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = k5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - k5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // c5.l, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        k5 k5Var = this.z0;
-        currentTopOffset = k5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = k5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - k5Var.d) > org.telegram.messenger.g0.L(1.0f)) {
-            return false;
-        }
-        return B(motionEvent);
+    public e5(f5 f5Var, f9 f9Var, Context context, m4 m4Var, ai.g0 g0Var) {
+        super(f9Var, context, m4Var, g0Var);
+        this.c0 = f5Var;
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface ILocationServiceProvider {
     public static final int PRIORITY_BALANCED_POWER_ACCURACY = 1;
@@ -13,7 +13,7 @@ public interface ILocationServiceProvider {
     public static final int STATUS_SETTINGS_CHANGE_UNAVAILABLE = 2;
     public static final int STATUS_SUCCESS = 0;
 
-    void checkLocationSettings(ra raVar, q0.a aVar);
+    void checkLocationSettings(qa qaVar, q0.a aVar);
 
     boolean checkServices();
 
@@ -21,11 +21,11 @@ public interface ILocationServiceProvider {
 
     void init(Context context);
 
-    ra onCreateLocationRequest();
+    qa onCreateLocationRequest();
 
-    sa onCreateLocationServicesAPI(Context context, oa oaVar, pa paVar);
+    ra onCreateLocationServicesAPI(Context context, na naVar, oa oaVar);
 
-    void removeLocationUpdates(qa qaVar);
+    void removeLocationUpdates(pa paVar);
 
-    void requestLocationUpdates(ra raVar, qa qaVar);
+    void requestLocationUpdates(qa qaVar, pa paVar);
 }

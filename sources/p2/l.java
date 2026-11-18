@@ -5,13 +5,13 @@ import e2.u;
 import h9.i0;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.ou;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends m {
     public final j n;
-    public final ou r;
+    public final hn r;
 
     public l(u uVar, i0 i0Var, r rVar, ArrayList arrayList, List list, List list2) {
         super(uVar, i0Var, rVar, arrayList, list, list2);
@@ -19,11 +19,11 @@ public final class l extends m {
         long j3 = rVar.e;
         j jVar = j3 <= 0 ? null : new j(rVar.d, null, j3);
         this.n = jVar;
-        this.r = jVar == null ? new ou(new j(0L, null, -1L), 14) : null;
+        this.r = jVar == null ? new hn(new j(0L, null, -1L), 8) : null;
     }
 
     @Override // p2.m
-    public final String a() {
+    public final String b() {
         return null;
     }
 

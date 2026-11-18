@@ -1,222 +1,128 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.os.SystemClock;
-import android.view.animation.OvershootInterpolator;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.graphics.ColorFilter;
+import android.util.SparseIntArray;
+import android.view.View;
 import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ww extends os {
-    public int N;
-    public int O;
-    public ArrayList P;
-    public final ArrayList Q = new ArrayList();
-    public final OvershootInterpolator R = new OvershootInterpolator(3.0f);
-    public final /* synthetic */ yw S;
+public final class ww extends lv {
+    public final /* synthetic */ ry h0;
 
-    public ww(yw ywVar) {
-        this.S = ywVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ww(ry ryVar, Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, mv mvVar, boolean z11) {
+        super(context, i6Var, true, false, true, z10, 0, mvVar, org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.v6, i6Var), z11);
+        this.h0 = ryVar;
     }
 
-    @Override // org.telegram.ui.Components.os
-    public final void a(Canvas canvas, long j3, int i7, int i10, float f10) {
-        int i11;
-        yw ywVar = this.S;
-        ly lyVar = ywVar.n3;
-        ArrayList arrayList = this.P;
-        if (arrayList == null) {
+    @Override // org.telegram.ui.Components.lv
+    public final boolean d() {
+        return this.h0.V0;
+    }
+
+    @Override // org.telegram.ui.Components.lv
+    public final void e() {
+        ry ryVar = this.h0;
+        ArrayList arrayList = ryVar.o1;
+        if (arrayList.size() <= 0 || ((TLRPC.StickerSetCovered) arrayList.get(0)).set == null || org.telegram.messenger.mp.u1(ryVar.d1).i7.getLong("emoji_featured_hidden", 0L) == ((TLRPC.StickerSetCovered) arrayList.get(0)).set.id) {
             return;
         }
-        boolean z10 = true;
-        boolean z11 = arrayList.size() <= 4 || org.telegram.messenger.gz.o() == 0 || !org.telegram.messenger.qc.e(16388);
-        if (!z11) {
-            boolean z12 = lyVar.w2 > 0 && SystemClock.elapsedRealtime() - lyVar.w2 < ywVar.z1();
-            for (int i12 = 0; i12 < this.P.size(); i12++) {
-                ux uxVar = (ux) this.P.get(i12);
-                if (uxVar.h != 0.0f || uxVar.n != null || ((i11 = uxVar.a) > lyVar.u2 && i11 < lyVar.v2 && z12)) {
-                    break;
-                }
-            }
-        }
-        z10 = z11;
-        if (!z10) {
-            super.a(canvas, j3, i7, i10, 1.0f);
-            return;
-        }
-        i(System.currentTimeMillis());
-        d(canvas, 1.0f);
-        k();
+        org.telegram.messenger.j10.i(org.telegram.messenger.j10.t0);
     }
 
-    @Override // org.telegram.ui.Components.os
-    public final void c(Canvas canvas) {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.Q;
-            if (i7 >= arrayList.size()) {
-                return;
-            }
-            ux uxVar = (ux) arrayList.get(i7);
-            g5 g5Var = uxVar.b;
-            if (g5Var != null) {
-                org.telegram.messenger.hc hcVar = uxVar.f[this.L];
-                fi.u2 u2Var = g5Var.k;
-                if (u2Var != null) {
-                    u2Var.setAlpha(g5Var.l);
-                    g5Var.k.h(canvas, hcVar);
-                }
-            }
-            i7++;
-        }
+    @Override // org.telegram.ui.Components.lv
+    public final boolean g(fx fxVar) {
+        return fxVar.f || this.h0.q1.contains(Long.valueOf(fxVar.b.id));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0168  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x017f  */
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.lv
+    public final ColorFilter getEmojiColorFilter() {
+        return this.h0.f2;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0094  */
+    @Override // org.telegram.ui.Components.lv
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(Canvas canvas, float f10) {
-        float f11;
-        int i7;
-        g5 g5Var;
-        g5 g5Var2;
-        float f12;
-        float f13;
-        yw ywVar = this.S;
-        ly lyVar = ywVar.n3;
-        if (this.P != null) {
-            canvas.save();
-            float f14 = 0.0f;
-            canvas.translate(-this.O, 0.0f);
-            int i10 = 0;
-            float f15 = f10;
-            while (i10 < this.P.size()) {
-                ux uxVar = (ux) this.P.get(i10);
-                if (uxVar.getSpan() == null || (g5Var = (g5) lyVar.e2.get(uxVar.d.getDocumentId())) == null) {
-                    f11 = f14;
-                    i7 = i10;
-                } else {
-                    int height = (int) (uxVar.getHeight() * 0.03f);
-                    Rect rect = org.telegram.messenger.g0.Q;
-                    rect.set(uxVar.getPaddingLeft() + uxVar.getLeft(), height, uxVar.getRight() - uxVar.getPaddingRight(), ((uxVar.getMeasuredHeight() + height) - uxVar.getPaddingBottom()) - uxVar.getPaddingTop());
-                    float f16 = uxVar.h;
-                    float f17 = f16 != f14 ? (((1.0f - f16) * 0.2f) + 0.8f) * 1.0f : 1.0f;
-                    if (lyVar.w2 > 0) {
-                        i7 = i10;
-                        if (SystemClock.elapsedRealtime() - lyVar.w2 < ywVar.z1()) {
-                            if (lyVar.u2 >= 0 && lyVar.v2 >= 0 && lyVar.w2 > 0) {
-                                int R = RecyclerView.R(uxVar);
-                                int i11 = lyVar.u2;
-                                int i12 = R - i11;
-                                int i13 = lyVar.v2 - i11;
-                                if (i12 >= 0 && i12 < i13) {
-                                    float max = Math.max(600L, Math.min(55, r7 - i11) * 40);
-                                    g5Var2 = g5Var;
-                                    f11 = 0.0f;
-                                    float a10 = c8.i9.a(com.google.android.gms.internal.vision.e2.w(max, 0.45f, SystemClock.elapsedRealtime() - lyVar.w2, Math.max(400L, Math.min(45, lyVar.v2 - lyVar.u2) * 35)), 0.0f, 1.0f);
-                                    float f18 = f17;
-                                    float interpolation = er.g.getInterpolation(c8.i9.a((SystemClock.elapsedRealtime() - lyVar.w2) / max, 0.0f, 1.0f));
-                                    float f19 = i12;
-                                    float f20 = i13;
-                                    org.telegram.messenger.g0.s(a10, f19, f20, f20 / 5.0f);
-                                    float f21 = f20 / 4.0f;
-                                    float s5 = org.telegram.messenger.g0.s(interpolation, f19, f20, f21);
-                                    int i14 = i13 / 4;
-                                    f13 = ((this.R.getInterpolation(org.telegram.messenger.g0.s(interpolation, i12 + i14, i13 + i14, f21)) * 0.5f) + 0.5f) * f18;
-                                    f15 *= s5;
-                                    g5Var2.setAlpha((int) (255.0f * f15));
-                                    g5Var2.setBounds(rect);
-                                    g5Var2.setColorFilter(lyVar.f2);
-                                    if (f13 != 1.0f) {
-                                        canvas.save();
-                                        canvas.scale(f13, f13, rect.centerX(), rect.centerY());
-                                        g5Var2.draw(canvas);
-                                        canvas.restore();
-                                    } else {
-                                        g5Var2.draw(canvas);
-                                    }
-                                }
-                            }
-                            g5Var2 = g5Var;
-                            f12 = f17;
-                            f11 = 0.0f;
-                            f13 = f12;
-                            g5Var2.setAlpha((int) (255.0f * f15));
-                            g5Var2.setBounds(rect);
-                            g5Var2.setColorFilter(lyVar.f2);
-                            if (f13 != 1.0f) {
-                            }
-                        } else {
-                            f11 = 0.0f;
-                        }
-                    } else {
-                        f11 = f14;
-                        i7 = i10;
+    public final boolean h(int i7) {
+        Integer num;
+        int i10;
+        dy dyVar;
+        ry ryVar = this.h0;
+        ArrayList arrayList = ryVar.r1;
+        bx bxVar = ryVar.S;
+        if (ryVar.g0) {
+            return false;
+        }
+        qx qxVar = ryVar.T;
+        if (qxVar != null) {
+            qxVar.F(null, true);
+        }
+        sv svVar = ryVar.W;
+        if (svVar != null && (dyVar = svVar.r) != null) {
+            dyVar.I1(null);
+        }
+        if (i7 == 0) {
+            num = Integer.valueOf(ryVar.e0 ? 1 : 0);
+        } else {
+            i7--;
+            num = null;
+        }
+        if (num == null) {
+            char[] cArr = org.telegram.messenger.k6.a;
+            if (i7 < 8 && bxVar.s.indexOfKey(i7) >= 0) {
+                num = Integer.valueOf(bxVar.s.get(i7));
+            }
+        }
+        if (num == null) {
+            ArrayList<fx> emojipacks = ryVar.getEmojipacks();
+            char[] cArr2 = org.telegram.messenger.k6.a;
+            int i11 = i7 - 8;
+            if (emojipacks != null && i11 >= 0 && i11 < emojipacks.size()) {
+                int i12 = 0;
+                while (true) {
+                    if (i12 >= arrayList.size()) {
+                        i12 = -1;
+                        break;
                     }
-                    g5Var2 = g5Var;
-                    f12 = f17;
-                    f13 = f12;
-                    g5Var2.setAlpha((int) (255.0f * f15));
-                    g5Var2.setBounds(rect);
-                    g5Var2.setColorFilter(lyVar.f2);
-                    if (f13 != 1.0f) {
+                    if (((fx) arrayList.get(i12)).b.id == emojipacks.get(i11).b.id) {
+                        break;
                     }
+                    i12++;
                 }
-                i10 = i7 + 1;
-                f14 = f11;
+                SparseIntArray sparseIntArray = bxVar.s;
+                char[] cArr3 = org.telegram.messenger.k6.a;
+                num = Integer.valueOf(sparseIntArray.get(i12 + 8));
+                i10 = org.telegram.messenger.g0.L(-9.0f);
+                if (num != null) {
+                    ryVar.Q.C0();
+                    ryVar.V(num.intValue());
+                    ryVar.G(num.intValue(), i10);
+                    ryVar.n(0, null);
+                }
+                return true;
             }
-            canvas.restore();
         }
+        i10 = 0;
+        if (num != null) {
+        }
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.os
-    public final void g() {
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.Q;
-            if (i7 >= arrayList.size()) {
-                this.S.n3.Q.invalidate();
-                return;
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        if (getTranslationY() != f10) {
+            super.setTranslationY(f10);
+            ry ryVar = this.h0;
+            View view = ryVar.P;
+            if (view != null) {
+                view.setTranslationY(f10);
             }
-            org.telegram.messenger.hc[] hcVarArr = ((ux) arrayList.get(i7)).f;
-            if (hcVarArr != null) {
-                hcVarArr[this.L].a();
-            }
-            i7++;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.os
-    public final void i(long j3) {
-        g5 g5Var;
-        ly lyVar = this.S.n3;
-        ArrayList arrayList = this.Q;
-        arrayList.clear();
-        for (int i7 = 0; i7 < this.P.size(); i7++) {
-            ux uxVar = (ux) this.P.get(i7);
-            p5 span = uxVar.getSpan();
-            org.telegram.messenger.hc[] hcVarArr = uxVar.f;
-            if (span != null && (g5Var = (g5) lyVar.e2.get(uxVar.d.getDocumentId())) != null && g5Var.k != null) {
-                g5Var.s(j3);
-                fi.u2 u2Var = g5Var.k;
-                int i10 = this.L;
-                org.telegram.messenger.hc e02 = u2Var.e0(hcVarArr[i10], i10);
-                hcVarArr[i10] = e02;
-                e02.c = j3;
-                e02.b = 1.0f;
-                g5Var.setAlpha(org.telegram.messenger.ns.e4);
-                int height = (int) (uxVar.getHeight() * 0.03f);
-                Rect rect = org.telegram.messenger.g0.Q;
-                rect.set((uxVar.getPaddingLeft() + uxVar.getLeft()) - this.O, height, (uxVar.getRight() - uxVar.getPaddingRight()) - this.O, ((uxVar.getMeasuredHeight() + height) - uxVar.getPaddingTop()) - uxVar.getPaddingBottom());
-                hcVarArr[i10].b(rect);
-                uxVar.b = g5Var;
-                hcVarArr[i10].z = g5Var.c() ? lyVar.f2 : null;
-                arrayList.add(uxVar);
-            }
+            ryVar.K.invalidate();
         }
     }
 }

@@ -12,13 +12,13 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final x a;
@@ -54,7 +54,7 @@ public final class b implements o {
     @Override // f3.o
     public final boolean b(p pVar) {
         x xVar = this.a;
-        pVar.c(0, 12, xVar.a);
+        pVar.b(0, 12, xVar.a);
         xVar.N(0);
         if (xVar.o() != 1179011410) {
             return false;
@@ -96,7 +96,7 @@ public final class b implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x0032 A[RETURN] */
@@ -134,7 +134,7 @@ public final class b implements o {
                         if (!b(pVar)) {
                             throw t0.a(null, "AVI Header List not found");
                         }
-                        pVar.m(12);
+                        pVar.r(12);
                         this.e = 1;
                         return 0;
                     case 1:
@@ -231,8 +231,8 @@ public final class b implements o {
                                 return 0;
                             }
                         }
-                        pVar.c(0, 12, xVar.a);
-                        pVar.l();
+                        pVar.b(0, 12, xVar.a);
+                        pVar.n();
                         xVar.N(0);
                         dVar.getClass();
                         dVar.a = xVar.o();
@@ -241,7 +241,7 @@ public final class b implements o {
                         int o10 = xVar.o();
                         int i18 = dVar.a;
                         if (i18 == 1179011410) {
-                            pVar.m(12);
+                            pVar.r(12);
                             return 0;
                         }
                         if (i18 != 1414744396 || o10 != 1769369453) {
@@ -259,7 +259,7 @@ public final class b implements o {
                                 this.j = this.n;
                                 return 0;
                             }
-                            this.f.f(new f3.t(this.h));
+                            this.f.j(new f3.t(this.h));
                             this.p = true;
                         }
                         this.j = pVar.getPosition() + 12;
@@ -334,9 +334,9 @@ public final class b implements o {
                         }
                         this.p = true;
                         if (this.i.length == 0) {
-                            this.f.f(new f3.t(this.h));
+                            this.f.j(new f3.t(this.h));
                         } else {
-                            this.f.f(new f3.t(this, this.h, 2));
+                            this.f.j(new f3.t(this, this.h, 2));
                         }
                         this.e = 6;
                         this.j = this.m;
@@ -365,15 +365,15 @@ public final class b implements o {
                             return 0;
                         }
                         if ((pVar.getPosition() & 1) == 1) {
-                            pVar.m(1);
+                            pVar.r(1);
                         }
-                        pVar.c(0, 12, xVar.a);
+                        pVar.b(0, 12, xVar.a);
                         xVar.N(0);
                         int o17 = xVar.o();
                         if (o17 == 1414744396) {
                             xVar.N(8);
-                            pVar.m(xVar.o() == 1769369453 ? 12 : 8);
-                            pVar.l();
+                            pVar.r(xVar.o() == 1769369453 ? 12 : 8);
+                            pVar.n();
                             return 0;
                         }
                         int o18 = xVar.o();
@@ -381,8 +381,8 @@ public final class b implements o {
                             this.j = pVar.getPosition() + o18 + 8;
                             return 0;
                         }
-                        pVar.m(8);
-                        pVar.l();
+                        pVar.r(8);
+                        pVar.n();
                         for (e eVar6 : this.i) {
                             if (eVar6.c == o17 || eVar6.d == o17) {
                                 eVar3 = eVar6;
@@ -403,7 +403,7 @@ public final class b implements o {
                         throw new AssertionError();
                 }
             } else {
-                pVar.m((int) (j3 - position));
+                pVar.r((int) (j3 - position));
             }
         }
         z10 = false;

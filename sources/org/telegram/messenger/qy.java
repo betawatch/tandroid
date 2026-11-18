@@ -1,153 +1,86 @@
 package org.telegram.messenger;
 
+import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.tgnet.TLObject;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class qy {
-    public ArrayList A;
-    public ArrayList B;
-    public ArrayList C;
-    public ArrayList D;
-    public HashMap E;
-    public long F;
-    public int G;
-    public boolean H;
-    public boolean I;
-    public boolean J;
-    public Object K;
-    public final /* synthetic */ ez L;
-    public final long a;
-    public ArrayList b;
-    public TLObject c;
-    public TLObject d;
-    public int e;
-    public String f;
-    public TLRPC.PhotoSize g;
-    public TLObject h;
-    public TLRPC.PhotoSize i;
-    public TLRPC.InputFile j;
-    public boolean k;
-    public String l;
-    public gj m;
-    public TLRPC.EncryptedChat n;
-    public g20 o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean[] s;
-    public TLRPC.InputMedia t;
-    public ArrayList u;
-    public ArrayList v;
-    public ArrayList w;
-    public ArrayList x;
-    public ArrayList y;
-    public ArrayList z;
+    public String a;
+    public TLRPC.InputPeer g;
+    public long h;
+    public long i;
+    public long j;
+    public long k;
+    public int l;
+    public double m;
+    public long n;
+    public long o;
+    public final /* synthetic */ zy q;
+    public ArrayList b = new ArrayList();
+    public final HashSet c = new HashSet();
+    public final HashMap d = new HashMap();
+    public final HashMap e = new HashMap();
+    public final ArrayList f = new ArrayList();
+    public int p = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
-    public qy(ez ezVar, long j3) {
-        this.L = ezVar;
-        this.a = j3;
+    public qy(zy zyVar) {
+        this.q = zyVar;
     }
 
-    public final void a(TLObject tLObject, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, qy qyVar, boolean z10) {
-        ry ryVar = new ry();
-        ryVar.a = tLObject;
-        ryVar.c = arrayList;
-        ryVar.e = arrayList2;
-        ryVar.g = qyVar;
-        ryVar.f = arrayList3;
-        ryVar.i = z10;
-        if (this.b == null) {
-            this.b = new ArrayList();
+    public static void a(qy qyVar) {
+        TLRPC.TL_messages_startHistoryImport tL_messages_startHistoryImport = new TLRPC.TL_messages_startHistoryImport();
+        tL_messages_startHistoryImport.peer = qyVar.g;
+        tL_messages_startHistoryImport.import_id = qyVar.k;
+        qyVar.q.getConnectionsManager().sendRequest(tL_messages_startHistoryImport, new py(qyVar, tL_messages_startHistoryImport));
+    }
+
+    public final void b(String str, long j3, float f10) {
+        this.d.put(str, Float.valueOf(f10));
+        Long valueOf = Long.valueOf(j3);
+        HashMap hashMap = this.e;
+        hashMap.put(str, valueOf);
+        this.i = 0L;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            this.i = ((Long) ((Map.Entry) it.next()).getValue()).longValue() + this.i;
         }
-        this.b.add(ryVar);
-    }
-
-    public final void b(long j3) {
-        this.e = 4;
-        this.F = j3;
-        this.x = new ArrayList();
-        this.z = new ArrayList();
-        this.A = new ArrayList();
-        this.B = new ArrayList();
-        this.y = new ArrayList();
-        this.E = new HashMap();
-        this.u = new ArrayList();
-        this.v = new ArrayList();
-        this.w = new ArrayList();
-        this.C = new ArrayList();
-        this.D = new ArrayList();
-    }
-
-    public final void c() {
-        int i7 = this.e;
-        int i10 = ns.M;
-        ez ezVar = this.L;
-        if (i7 == 4) {
-            for (int i11 = 0; i11 < this.x.size(); i11++) {
-                gj gjVar = (gj) this.x.get(i11);
-                ezVar.getMessagesStorage().N0(gjVar.r1 ? 1 : 0, gjVar.k);
-                TLRPC.Message message = gjVar.k;
-                message.send_state = 2;
-                message.errorAllowedPriceStars = 0L;
-                message.errorNewPriceStars = 0L;
-                ezVar.getNotificationCenter().k(i10, Integer.valueOf(gjVar.e1()));
-                ezVar.d0(gjVar.e1());
-                ezVar.j0(gjVar.e1(), this.H);
-            }
-            ezVar.a.remove("group_" + this.F);
-        } else {
-            vr messagesStorage = ezVar.getMessagesStorage();
-            gj gjVar2 = this.m;
-            messagesStorage.N0(gjVar2.r1 ? 1 : 0, gjVar2.k);
-            TLRPC.Message message2 = this.m.k;
-            message2.send_state = 2;
-            message2.errorAllowedPriceStars = 0L;
-            message2.errorNewPriceStars = 0L;
-            ezVar.getNotificationCenter().k(i10, Integer.valueOf(this.m.e1()));
-            ezVar.d0(this.m.e1());
-            ezVar.j0(this.m.e1(), this.H);
-        }
-        d();
-    }
-
-    public final void d() {
-        ArrayList arrayList = this.b;
-        if (arrayList != null) {
-            int i7 = this.e;
-            if (i7 == 4 || i7 == 0) {
-                int size = arrayList.size();
-                for (int i10 = 0; i10 < size; i10++) {
-                    ry ryVar = (ry) this.b.get(i10);
-                    TLObject tLObject = ryVar.a;
-                    boolean z10 = tLObject instanceof TLRPC.TL_messages_sendEncryptedMultiMedia;
-                    ez ezVar = this.L;
-                    if (z10) {
-                        ezVar.getSecretChatHelper().k((TLRPC.TL_messages_sendEncryptedMultiMedia) ryVar.a, this);
-                    } else if (tLObject instanceof TLRPC.TL_messages_sendMultiMedia) {
-                        ezVar.P((TLRPC.TL_messages_sendMultiMedia) tLObject, ryVar.c, ryVar.e, ryVar.f, ryVar.g, ryVar.i);
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        if (!str.equals(this.a)) {
+            long j10 = this.i;
+            if (j10 != this.o) {
+                if (elapsedRealtime != this.n) {
+                    double d = (j10 - r2) / ((elapsedRealtime - r4) / 1000.0d);
+                    double d2 = this.m;
+                    if (d2 == 0.0d) {
+                        this.m = d;
                     } else {
-                        boolean z11 = tLObject instanceof TLRPC.TL_messages_sendMedia;
-                        if (z11) {
-                            TLRPC.TL_messages_sendMedia tL_messages_sendMedia = (TLRPC.TL_messages_sendMedia) tLObject;
-                            if (tL_messages_sendMedia.media instanceof TLRPC.TL_inputMediaPaidMedia) {
-                                ezVar.P(tL_messages_sendMedia, ryVar.c, ryVar.e, ryVar.f, ryVar.g, ryVar.i);
-                            }
-                        }
-                        if (z11) {
-                            TLRPC.TL_messages_sendMedia tL_messages_sendMedia2 = (TLRPC.TL_messages_sendMedia) tLObject;
-                            if (tL_messages_sendMedia2.media instanceof TLRPC.TL_inputMediaPoll) {
-                                ezVar.P(tL_messages_sendMedia2, ryVar.c, ryVar.e, ryVar.f, ryVar.g, ryVar.i);
-                            }
-                        }
-                        ezVar.N(tLObject, ryVar.b, ryVar.d, ryVar.g, ryVar.h, null, ryVar.i);
+                        this.m = (0.99d * d2) + (d * 0.01d);
                     }
+                    this.p = (int) (((this.h - j10) * 1000) / this.m);
+                    this.o = j10;
+                    this.n = elapsedRealtime;
                 }
-                this.b = null;
             }
         }
+        int i7 = (int) ((this.i / this.h) * 100.0f);
+        if (this.l != i7) {
+            this.l = i7;
+            this.q.getNotificationCenter().k(ks.v1, Long.valueOf(this.j));
+        }
+    }
+
+    public final void c(int i7) {
+        zy zyVar = this.q;
+        if (i7 == 100) {
+            zyVar.E.l(this.j);
+        }
+        zyVar.getNotificationCenter().k(ks.v1, Long.valueOf(this.j));
     }
 }

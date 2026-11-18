@@ -3,13 +3,13 @@ package gb;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p0 {
     public static final p0 a = new p0();
-    public static final cf b;
+    public static final b5 b;
 
     static {
         pa.d dVar = new pa.d();
@@ -20,7 +20,7 @@ public final class p0 {
         dVar.b(a.class, c.a);
         dVar.b(e0.class, f.a);
         dVar.d = true;
-        b = new cf(dVar);
+        b = new b5(dVar);
     }
 
     public static b a(o9.g gVar) {

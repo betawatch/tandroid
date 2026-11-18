@@ -1,23 +1,58 @@
 package bi;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cc;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t1 extends u6 {
-    public final /* synthetic */ s2 v2;
+public final class t1 extends ReplacementSpan {
+    public final TextPaint a;
+    public final Paint b;
+    public final RectF c;
+    public final boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t1(s2 s2Var, Context context, int i7, TL_stars.StarGift starGift, long j3, k1 k1Var, boolean z10, boolean z11) {
-        super(context, i7, starGift, null, j3, k1Var, z10, z11);
-        this.v2 = s2Var;
+    public t1(int i7, boolean z10) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new RectF();
+        this.d = z10;
+        textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
+        textPaint.setTextSize(org.telegram.messenger.g0.L(13.0f));
+        textPaint.setColor(i7);
+        paint.setColor(org.telegram.ui.ActionBar.n6.r1(0.08f, i7));
     }
 
-    @Override // bi.u6
-    public final cc e1() {
-        s2 s2Var = this.v2;
-        return new cc(s2Var.c, s2Var.J0);
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        TextPaint textPaint = this.a;
+        float measureText = textPaint.measureText(charSequence, i7, i10);
+        float f11 = (i11 + i13) / 2.0f;
+        RectF rectF = this.c;
+        rectF.set(f10, f11 - org.telegram.messenger.g0.L(9.5f), f10 + measureText + org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(9.5f) + f11);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), this.b);
+        if (this.d) {
+            int color = textPaint.getColor();
+            int r12 = org.telegram.ui.ActionBar.n6.r1(0.0f, color);
+            float L = f10 + org.telegram.messenger.g0.L(4.0f);
+            textPaint.setShader(new LinearGradient(L, 0.0f, L + measureText, 0.0f, new int[]{color, r12, r12, color}, new float[]{0.17f, 0.41f, 0.59f, 0.87f}, Shader.TileMode.CLAMP));
+        }
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        canvas.drawText(charSequence, i7, i10, f10 + org.telegram.messenger.g0.L(4.0f), f11 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f), textPaint);
+        textPaint.setShader(null);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return org.telegram.messenger.g0.L(11.0f) + ((int) Math.ceil(this.a.measureText(charSequence, i7, i10)));
     }
 }

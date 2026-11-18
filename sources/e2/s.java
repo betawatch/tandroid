@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.os.Build;
 import android.util.SparseBooleanArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s {
     public final SparseBooleanArray a;
@@ -15,7 +15,7 @@ public final class s {
 
     public final int a(int i7) {
         SparseBooleanArray sparseBooleanArray = this.a;
-        ja.j(i7, sparseBooleanArray.size());
+        la.j(i7, sparseBooleanArray.size());
         return sparseBooleanArray.keyAt(i7);
     }
 

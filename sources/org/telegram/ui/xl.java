@@ -1,33 +1,38 @@
 package org.telegram.ui;
 
-import android.graphics.RectF;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.q1 b;
-    public final /* synthetic */ RectF c;
+    public final /* synthetic */ mm b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ xl(org.telegram.ui.Cells.q1 q1Var, RectF rectF, int i7) {
+    public /* synthetic */ xl(mm mmVar, TLRPC.Chat chat, int i7) {
         this.a = i7;
-        this.b = q1Var;
-        this.c = rectF;
+        this.b = mmVar;
+        this.c = chat;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        TLRPC.Chat chat = this.c;
+        mm mmVar = this.b;
+        switch (i7) {
             case 0:
-                org.telegram.messenger.g0.i3(new xl(this.b, this.c, 1), 400L);
+                mmVar.n(chat);
+                break;
+            case 1:
+                mmVar.a(chat);
+                break;
+            case 2:
+                mmVar.a.Na(chat);
                 break;
             default:
-                RectF rectF = this.c;
-                org.telegram.ui.Cells.q1 q1Var = this.b;
-                if (q1Var.getScrimBlockBounds() == rectF) {
-                    q1Var.setScrimBlockBounds(null);
-                    break;
-                }
+                org.telegram.ui.Components.lc.b0(mmVar.a).Q(R.raw.contact_check, 36, org.telegram.messenger.gd.a0(null, null, 2131742578, chat == null ? "" : chat.title)).k(true);
                 break;
         }
     }

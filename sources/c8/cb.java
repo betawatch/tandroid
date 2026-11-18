@@ -1,52 +1,62 @@
 package c8;
 
-import android.util.SparseBooleanArray;
+import android.util.LongSparseArray;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.x10;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class cb {
-    public static e2.y0 a(e2.y0 y0Var, e2.y0 y0Var2) {
-        if (y0Var != null) {
-            e2.s sVar = y0Var.a;
-            if (y0Var2 != null) {
-                SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-                for (int i7 = 0; i7 < sVar.a.size(); i7++) {
-                    if (y0Var2.a(sVar.a(i7))) {
-                        int a10 = sVar.a(i7);
-                        a8.ja.p(!false);
-                        sparseBooleanArray.append(a10, true);
-                    }
-                }
-                a8.ja.p(!false);
-                return new e2.y0(new e2.s(sparseBooleanArray));
+    public static boolean a;
+    public static boolean b;
+    public static ArrayList c;
+    public static LongSparseArray d;
+    public static ArrayList e;
+
+    public static ArrayList a(x10 x10Var) {
+        boolean z10;
+        if (x10Var == null || b) {
+            z10 = false;
+        } else {
+            if (e == null) {
+                e = new ArrayList();
             }
+            e.add(x10Var);
+            z10 = true;
         }
-        return e2.y0.b;
+        b();
+        if (z10) {
+            return null;
+        }
+        return c;
     }
 
-    public static void b(e2.c1 c1Var, p4.w wVar) {
-        int i7 = wVar.b;
-        long j3 = wVar.c;
-        h9.i0 i0Var = wVar.a;
-        if (i7 == -1) {
-            if (c1Var.p0(20)) {
-                c1Var.N0(i0Var);
-                return;
-            } else {
-                if (i0Var.isEmpty()) {
-                    return;
-                }
-                c1Var.I((e2.l0) i0Var.get(0));
-                return;
-            }
+    public static void b() {
+        if (a || b) {
+            return;
         }
-        if (c1Var.p0(20)) {
-            c1Var.V(i0Var, wVar.b, j3);
+        a = true;
+        c = new ArrayList();
+        d = new LongSparseArray();
+        Utilities.e.c(new cd0(14));
+    }
+
+    public static void c(org.telegram.ui.web.w0 w0Var) {
+        if (w0Var == null || w0Var.d == null) {
+            return;
+        }
+        b();
+        org.telegram.ui.web.w0 w0Var2 = (org.telegram.ui.web.w0) d.get(w0Var.a);
+        if (w0Var2 != null) {
+            w0Var2.d = w0Var.d;
         } else {
-            if (i0Var.isEmpty()) {
-                return;
-            }
-            c1Var.f0((e2.l0) i0Var.get(0), j3);
+            c.add(w0Var);
+            d.put(w0Var.a, w0Var);
         }
+        int i7 = 13;
+        org.telegram.messenger.g0.r(new cd0(i7));
+        org.telegram.messenger.g0.h3(new cd0(i7), 1000L);
     }
 }

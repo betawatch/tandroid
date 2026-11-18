@@ -1,14 +1,14 @@
 package ei;
 
-import a8.ja;
+import a8.la;
 import d4.f;
 import i2.p;
 import i2.q;
 import i2.r;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a {
     public boolean a;
@@ -16,7 +16,7 @@ public final class a {
     public a(r rVar, q qVar) {
         int i7 = qVar.a;
         ByteBuffer byteBuffer = qVar.b;
-        ja.f(i7 == 6 || i7 == 3);
+        la.f(i7 == 6 || i7 == 3);
         int min = Math.min(4, byteBuffer.remaining());
         byte[] bArr = new byte[min];
         byteBuffer.asReadOnlyBuffer().get(bArr);
@@ -58,7 +58,7 @@ public final class a {
         if (j3 != 2 && j3 != 0 && !i11) {
             fVar.L(3);
         }
-        this.a = ((j3 == 3 || j3 == 0) ? ns.e4 : fVar.j(8)) != 0;
+        this.a = ((j3 == 3 || j3 == 0) ? ks.e4 : fVar.j(8)) != 0;
     }
 
     public void a(boolean z10) {

@@ -1,151 +1,17 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.WeakHashMap;
-import org.telegram.messenger.a8;
-import org.telegram.tgnet.TLObject;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l3 extends FrameLayout {
-    public o4 a;
-    public ActionBarLayout b;
-    public boolean c;
-    public final Paint d;
-    public r0.k1 e;
-    public i0.c f;
-    public i0.c h;
+public interface l3 {
+    Context getContext();
 
-    public l3(Activity activity) {
-        super(activity);
-        this.d = new Paint(1);
-        i0.c cVar = i0.c.e;
-        this.f = cVar;
-        this.h = cVar;
-        z zVar = new z(this, 4);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(this, zVar);
-        setSystemUiVisibility(1280);
-    }
+    RectF getRect();
 
-    @Override // android.view.ViewGroup
-    public final void addView(View view, int i7, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i7, layoutParams);
-        r0.k1 k1Var = this.e;
-        if (k1Var != null) {
-            if ((view instanceof ActionBarLayout) || view.getTag() == null) {
-                r0.i0.b(view, k1Var);
-            }
-        }
-    }
+    void setDrawingFromOverlay(boolean z10);
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ActionBarLayout actionBarLayout = this.b;
-        if (actionBarLayout != null && actionBarLayout.getParent() == this) {
-            this.b.Q(canvas, this);
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    public Paint getInternalNavbarPaint() {
-        return this.d;
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return ((ActionBarLayout) this.a).i();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        this.c = true;
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                try {
-                    childAt.layout(layoutParams.leftMargin, layoutParams.topMargin + getPaddingTop(), layoutParams.leftMargin + childAt.getMeasuredWidth(), layoutParams.topMargin + childAt.getMeasuredHeight() + getPaddingTop());
-                } catch (Exception e10) {
-                    a8.g(e10, true);
-                    boolean z11 = org.telegram.messenger.r2.a;
-                    throw e10;
-                }
-            }
-        }
-        this.c = false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        int size2 = View.MeasureSpec.getSize(i10);
-        setMeasuredDimension(size, size2);
-        i0.c cVar = this.f;
-        int i11 = (size - cVar.a) - cVar.c;
-        int i12 = (size2 - cVar.b) - cVar.d;
-        Point point = org.telegram.messenger.g0.q;
-        point.x = i11;
-        point.y = i12;
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            if (childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
-                int i14 = layoutParams.height;
-                int makeMeasureSpec2 = i14 > 0 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
-                if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).i0()) {
-                    childAt.forceLayout();
-                }
-                childAt.measure(makeMeasureSpec, makeMeasureSpec2);
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.c) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setActionBarLayout(ActionBarLayout actionBarLayout) {
-        this.b = actionBarLayout;
-    }
-
-    public void setInternalNavigationBarColor(int i7) {
-        Paint paint = this.d;
-        if (paint.getColor() != i7) {
-            paint.setColor(i7);
-            invalidate();
-            int childCount = getChildCount();
-            for (int i10 = 0; i10 < childCount; i10++) {
-                getChildAt(i10).invalidate();
-            }
-        }
-    }
-
-    public void setParentActionBarLayout(o4 o4Var) {
-        this.a = o4Var;
-    }
+    float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11);
 }

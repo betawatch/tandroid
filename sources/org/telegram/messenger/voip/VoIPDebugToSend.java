@@ -13,22 +13,22 @@ import java.util.HashMap;
 import java.util.zip.GZIPOutputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.voip.c2;
+import org.telegram.ui.Components.voip.b2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public final class Data {
         long access_hash;
         long callId;
@@ -56,7 +56,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        w7.G(this.currentAccount).f0(file.getAbsolutePath(), new li.v(5, this, savecalldebug));
+        w7.G(this.currentAccount).f0(file.getAbsolutePath(), new li.d(7, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -75,7 +75,7 @@ public class VoIPDebugToSend {
                         if (read == -1) {
                             gZIPOutputStream.close();
                             bufferedInputStream.close();
-                            org.telegram.messenger.g0.h3(new m(this, file, savecalldebug, i7));
+                            org.telegram.messenger.g0.g3(new m(this, file, savecalldebug, i7));
                             return;
                         }
                         gZIPOutputStream.write(bArr, 0, read);
@@ -93,7 +93,7 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$3(Data data, TL_phone.saveCallDebug savecalldebug, TLObject tLObject, TLRPC.TL_error tL_error) {
-        if (r2.a) {
+        if (s2.a) {
             a8.b("Sent debug logs, response = " + tLObject);
         }
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
@@ -121,7 +121,7 @@ public class VoIPDebugToSend {
     public void push(long j3, long j10, Instance.FinalState finalState, String str) {
         if (TextUtils.isEmpty(finalState.debugLog)) {
             try {
-                finalState.debugLog = VoIPService.getStringFromFile(c2.e("" + j3));
+                finalState.debugLog = VoIPService.getStringFromFile(b2.e("" + j3));
             } catch (Exception e10) {
                 e10.printStackTrace();
             }

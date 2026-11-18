@@ -2,27 +2,22 @@ package b7;
 
 import android.os.Looper;
 import android.util.Log;
-import com.google.android.gms.cast.framework.media.internal.ResourceProvider;
-import java.lang.reflect.InvocationTargetException;
-import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h {
     public static ClassLoader a;
     public static Thread b;
 
-    public static int a(String str) {
-        Integer num;
-        try {
-            Map map = ResourceProvider.a;
-            num = (Integer) ResourceProvider.class.getMethod("findResourceByName", String.class).invoke(null, str);
-        } catch (ClassNotFoundException | IllegalAccessException | NoSuchMethodException | InvocationTargetException unused) {
+    public static final gd.f a(Throwable exception) {
+        kotlin.jvm.internal.j.e(exception, "exception");
+        return new gd.f(exception);
+    }
+
+    public static final void b(Object obj) {
+        if (obj instanceof gd.f) {
+            throw ((gd.f) obj).a;
         }
-        if (num == null) {
-            return 0;
-        }
-        return num.intValue();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:12:0x00b0, code lost:
@@ -32,7 +27,7 @@ public abstract class h {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static synchronized ClassLoader b() {
+    public static synchronized ClassLoader c() {
         ClassLoader classLoader;
         SecurityException e10;
         Thread thread;

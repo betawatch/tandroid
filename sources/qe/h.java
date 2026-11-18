@@ -9,7 +9,7 @@ import android.content.pm.ServiceInfo;
 import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Handler;
-import c8.u9;
+import c8.w9;
 import h2.o0;
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,16 +20,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ActionBar.z;
-import org.telegram.ui.Components.u11;
+import org.telegram.messenger.ks;
+import org.telegram.ui.ActionBar.p;
+import org.telegram.ui.Components.h01;
 import s4.n;
 import s4.r0;
 import s4.s0;
 import s4.u;
 import s4.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public boolean a;
@@ -199,7 +199,7 @@ public final class h {
         int ordinal = ((pe.a) o0Var.f).ordinal();
         if (ordinal != 0) {
             if (ordinal == 1) {
-                u9 e10 = serializer.d().e();
+                w9 e10 = serializer.d().e();
                 if (kotlin.jvm.internal.j.a(e10, me.f.b) || kotlin.jvm.internal.j.a(e10, me.f.e)) {
                     me.d d = serializer.d();
                     kotlin.jvm.internal.j.e(d, "<this>");
@@ -320,13 +320,13 @@ public final class h {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((u4.c) this.c).y();
+            ((u4.c) this.c).A();
             return null;
         }
     }
 
     public void n(int i7, Serializable serializable) {
-        ((Executor) this.b).execute(new u11(this, i7, serializable, 27));
+        ((Executor) this.b).execute(new h01(this, i7, serializable, 28));
     }
 
     public void o() {
@@ -383,7 +383,7 @@ public final class h {
                     }
                     if (i12 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.G = new z(this, r0Var);
+                        r0Var.G = new p(this, r0Var);
                         if (!r0Var.x) {
                             r0Var.x = true;
                             r0Var.r();
@@ -473,10 +473,10 @@ public final class h {
                     break;
                 case 28:
                 case 29:
-                case ns.T /* 30 */:
+                case ks.T /* 30 */:
                     bArr = u4.d.e;
                     break;
-                case ns.U /* 31 */:
+                case ks.U /* 31 */:
                 case 32:
                 case 33:
                 case 34:

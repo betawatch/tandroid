@@ -1,130 +1,70 @@
 package u7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.Process;
-import c8.pc;
-import c8.yb;
-import java.util.Arrays;
-import java.util.List;
+import android.content.Context;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import m.o3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k extends r6.a {
-    public static final Parcelable.Creator<k> CREATOR = new n(1);
-    public final int a;
-    public final int b;
-    public final String c;
-    public final String d;
-    public final int e;
-    public final String f;
-    public final k h;
-    public final s n;
+public final class k extends q6.h {
+    public final a0.l F;
+    public final a0.l G;
+    public final a0.l H;
 
-    static {
-        Process.myUid();
-        Process.myPid();
+    public k(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, o3 o3Var) {
+        super(context, looper, 23, o3Var, kVar, lVar, 0);
+        this.F = new a0.l(0);
+        this.G = new a0.l(0);
+        this.H = new a0.l(0);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public k(int i7, int i10, String str, String str2, String str3, int i11, List list, k kVar) {
-        t tVar;
-        t tVar2;
-        s sVar;
-        this.a = i7;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
-        this.f = str3;
-        this.e = i11;
-        q qVar = s.b;
-        if (list instanceof p) {
-            sVar = (s) ((p) list);
-            if (sVar.k()) {
-                Object[] array = sVar.toArray(p.a);
-                int length = array.length;
-                if (length == 0) {
-                    tVar2 = t.e;
-                    sVar = tVar2;
-                } else {
-                    tVar = new t(length, array);
-                    sVar = tVar;
-                }
-            }
-        } else {
-            Object[] array2 = list.toArray();
-            int length2 = array2.length;
-            for (int i12 = 0; i12 < length2; i12++) {
-                if (array2[i12] == null) {
-                    throw new NullPointerException(i5.c.i(i12, "at index "));
-                }
-            }
-            if (length2 == 0) {
-                tVar2 = t.e;
-                sVar = tVar2;
-            } else {
-                tVar = new t(length2, array2);
-                sVar = tVar;
-            }
-        }
-        this.n = sVar;
-        this.h = kVar;
+    @Override // q6.d, com.google.android.gms.common.api.c
+    public final int d() {
+        return 11717000;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof k)) {
-            return false;
+    @Override // q6.d
+    public final IInterface i(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        k kVar = (k) obj;
-        return this.a == kVar.a && this.b == kVar.b && this.e == kVar.e && this.c.equals(kVar.c) && pc.a(this.d, kVar.d) && pc.a(this.f, kVar.f) && pc.a(this.h, kVar.h) && this.n.equals(kVar.n);
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.location.internal.IGoogleLocationManagerService");
+        return queryLocalInterface instanceof x ? (x) queryLocalInterface : new x(iBinder, "com.google.android.gms.location.internal.IGoogleLocationManagerService", 10);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), this.c, this.d, this.f});
+    @Override // q6.d
+    public final n6.c[] k() {
+        return j8.h.a;
     }
 
-    public final String toString() {
-        String str = this.c;
-        int length = str.length() + 18;
-        String str2 = this.d;
-        if (str2 != null) {
-            length += str2.length();
-        }
-        StringBuilder sb2 = new StringBuilder(length);
-        sb2.append(this.a);
-        sb2.append("/");
-        sb2.append(str);
-        if (str2 != null) {
-            sb2.append("[");
-            if (str2.startsWith(str)) {
-                sb2.append((CharSequence) str2, str.length(), str2.length());
-            } else {
-                sb2.append(str2);
-            }
-            sb2.append("]");
-        }
-        String str3 = this.f;
-        if (str3 != null) {
-            sb2.append("/");
-            sb2.append(Integer.toHexString(str3.hashCode()));
-        }
-        return sb2.toString();
+    @Override // q6.d
+    public final String o() {
+        return "com.google.android.gms.location.internal.IGoogleLocationManagerService";
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        yb.q(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        yb.l(parcel, 3, this.c);
-        yb.l(parcel, 4, this.d);
-        yb.q(parcel, 5, 4);
-        parcel.writeInt(this.e);
-        yb.l(parcel, 6, this.f);
-        yb.k(parcel, 7, this.h, i7);
-        yb.p(parcel, 8, this.n);
-        yb.s(parcel, r10);
+    @Override // q6.d
+    public final String p() {
+        return "com.google.android.location.internal.GoogleLocationManagerService.START";
+    }
+
+    @Override // q6.d
+    public final void v(int i7) {
+        super.v(i7);
+        synchronized (this.F) {
+            this.F.clear();
+        }
+        synchronized (this.G) {
+            this.G.clear();
+        }
+        synchronized (this.H) {
+            this.H.clear();
+        }
+    }
+
+    @Override // q6.d
+    public final boolean x() {
+        return true;
     }
 }

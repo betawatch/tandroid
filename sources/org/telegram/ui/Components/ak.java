@@ -1,36 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ak extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.xp b;
+public interface ak {
+    void A();
 
-    public ak(org.telegram.ui.xp xpVar) {
-        this.b = xpVar;
-    }
+    void T();
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((ck) this.b.d).V.e();
-                break;
-            default:
-                org.telegram.ui.xp xpVar = this.b;
-                View view = xpVar.b;
-                view.setAlpha(1.0f);
-                v4.o0.x0(view);
-                ((ck) xpVar.d).Y.r.removeView(view);
-                break;
-        }
-    }
+    void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10);
 
-    public ak(org.telegram.ui.xp xpVar, v4.o0 o0Var) {
-        this.b = xpVar;
-    }
+    void p(ArrayList arrayList, boolean z10, int i7, long j3);
 }

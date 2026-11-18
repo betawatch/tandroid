@@ -9,14 +9,14 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import ch.v;
+import ch.w;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n extends q {
     public float[] J1;
@@ -104,7 +104,7 @@ public final class n extends q {
             int min2 = ((int) Math.min(rectF.centerY(), (int) Math.min((Math.sin(Math.toRadians(r7)) * width) + rectF.centerY(), (Math.sin(Math.toRadians(r13)) * width) + rectF.centerY()))) - g0.L(50.0f);
             this.T1.setTranslationX(i14);
             this.T1.setTranslationY(min2);
-            g0.b4(this);
+            g0.a4(this);
         }
         x((this.H0 * this.h0.k) - g.l1);
     }
@@ -220,7 +220,7 @@ public final class n extends q {
                 valueAnimator.cancel();
             }
             float f13 = this.L1;
-            ValueAnimator e10 = g.e(oVar.r, f13 == 0.0f ? 0.0f : this.J1[i7] / f13, new v(7, this, oVar));
+            ValueAnimator e10 = g.e(oVar.r, f13 == 0.0f ? 0.0f : this.J1[i7] / f13, new w(7, this, oVar));
             oVar.s = e10;
             e10.start();
             i7++;
@@ -302,7 +302,7 @@ public final class n extends q {
             float f18 = this.A0.f;
             i7 = (int) (f18 * f18 * 255.0f);
         } else {
-            i7 = ns.e4;
+            i7 = ks.e4;
         }
         float f19 = 0.0f;
         if (this.M1) {
@@ -395,7 +395,7 @@ public final class n extends q {
                                 f17 = f16;
                                 i13 = i11;
                             }
-                            ((o) arrayList.get(i12)).c.setAlpha(ns.e4);
+                            ((o) arrayList.get(i12)).c.setAlpha(ks.e4);
                             f27 = (f28 * 360.0f) + f17;
                             i16 = i12 + 1;
                             i14 = i10;
@@ -409,7 +409,7 @@ public final class n extends q {
                     ((o) arrayList.get(i16)).c.setAntiAlias(!g.B1);
                     if (canvas == null) {
                     }
-                    ((o) arrayList.get(i12)).c.setAlpha(ns.e4);
+                    ((o) arrayList.get(i12)).c.setAlpha(ks.e4);
                     f27 = (f28 * 360.0f) + f17;
                     i16 = i12 + 1;
                     i14 = i10;
@@ -459,7 +459,7 @@ public final class n extends q {
                         canvas.drawText(this.S1[i19], (float) ((Math.cos(Math.toRadians(c11)) * d2) + rectF.centerX()), ((float) ((Math.sin(Math.toRadians(c11)) * d2) + rectF.centerY())) - ((textPaint2.ascent() + textPaint2.descent()) / f13), textPaint2);
                     }
                     canvas.restore();
-                    ((o) arrayList.get(i18)).c.setAlpha(ns.e4);
+                    ((o) arrayList.get(i18)).c.setAlpha(ks.e4);
                     f29 = 360.0f;
                     f15 = (f14 * 360.0f) + f12;
                 } else {
@@ -625,7 +625,7 @@ public final class n extends q {
                 Paint paint = fVar3.c;
                 Paint paint2 = fVar3.c;
                 paint.setStrokeWidth(length2);
-                paint2.setAlpha(ns.e4);
+                paint2.setAlpha(ks.e4);
                 paint2.setAntiAlias(false);
                 canvas.drawLines(fVar3.k, 0, fVar3.j, paint2);
             }

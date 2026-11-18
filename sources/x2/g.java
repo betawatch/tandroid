@@ -1,9 +1,9 @@
 package x2;
 
-import a8.ja;
+import a8.la;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends IOException {
     public g(int i7) {
@@ -24,7 +24,7 @@ public final class g extends IOException {
             } else if (i7 != 2) {
                 str = "unknown";
             } else {
-                ja.p((j3 == -9223372036854775807L || j10 == -9223372036854775807L) ? false : true);
+                la.p((j3 == -9223372036854775807L || j10 == -9223372036854775807L) ? false : true);
                 str = "start exceeds end. Start time: " + j3 + ", End time: " + j10;
             }
         } else {

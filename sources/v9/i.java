@@ -4,11 +4,11 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.logging.Logger;
-import o5.p;
+import o5.o;
 import pb.l;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i implements Executor {
     public static final Logger f = Logger.getLogger(i.class.getName());
@@ -19,19 +19,19 @@ public final class i implements Executor {
     public final l e = new l(this);
 
     public i(Executor executor) {
-        m.g(executor);
+        m.h(executor);
         this.a = executor;
     }
 
     @Override // java.util.concurrent.Executor
     public final void execute(Runnable runnable) {
-        m.g(runnable);
+        m.h(runnable);
         synchronized (this.b) {
             int i7 = this.c;
             if (i7 != 4 && i7 != 3) {
                 long j3 = this.d;
-                p pVar = new p(1, runnable);
-                this.b.add(pVar);
+                o oVar = new o(1, runnable);
+                this.b.add(oVar);
                 this.c = 2;
                 try {
                     this.a.execute(this.e);
@@ -52,7 +52,7 @@ public final class i implements Executor {
                         try {
                             int i10 = this.c;
                             boolean z10 = true;
-                            if ((i10 != 1 && i10 != 2) || !this.b.removeLastOccurrence(pVar)) {
+                            if ((i10 != 1 && i10 != 2) || !this.b.removeLastOccurrence(oVar)) {
                                 z10 = false;
                             }
                             if (!(e10 instanceof RejectedExecutionException) || z10) {

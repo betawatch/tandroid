@@ -1,34 +1,39 @@
 package r0;
 
+import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class g1 extends f1 {
-    public static final k1 s;
+public class g1 extends e1 {
+    public static final l1 r;
 
     static {
         WindowInsets windowInsets;
         windowInsets = WindowInsets.CONSUMED;
-        s = k1.h(null, windowInsets);
+        r = l1.h(null, windowInsets);
     }
 
-    public g1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var, windowInsets);
+    public g1(l1 l1Var, WindowInsets windowInsets) {
+        super(l1Var, windowInsets);
     }
 
-    @Override // r0.f1, r0.b1, r0.h1
-    public i0.c f(int i7) {
-        return i0.c.c(this.c.getInsets(j1.a(i7)));
+    @Override // r0.b1, r0.i1
+    public i0.b f(int i7) {
+        return i0.b.c(this.c.getInsets(j1.a(i7)));
     }
 
-    @Override // r0.f1, r0.b1, r0.h1
-    public i0.c g(int i7) {
-        return i0.c.c(this.c.getInsetsIgnoringVisibility(j1.a(i7)));
+    @Override // r0.b1, r0.i1
+    public i0.b g(int i7) {
+        return i0.b.c(this.c.getInsetsIgnoringVisibility(j1.a(i7)));
     }
 
-    @Override // r0.f1, r0.b1, r0.h1
+    @Override // r0.b1, r0.i1
     public boolean p(int i7) {
         return this.c.isVisible(j1.a(i7));
+    }
+
+    @Override // r0.b1, r0.i1
+    public final void d(View view) {
     }
 }

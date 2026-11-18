@@ -13,25 +13,25 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.text.TextUtils;
 import android.view.View;
-import hi.k3;
 import hi.l3;
+import hi.m3;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.f6;
-import org.telegram.messenger.gc;
+import org.telegram.messenger.fc;
 import org.telegram.messenger.h6;
-import org.telegram.messenger.i20;
 import org.telegram.messenger.i6;
 import org.telegram.messenger.j6;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.si;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class m0 extends View {
     public final float E;
@@ -46,7 +46,7 @@ public class m0 extends View {
     public float N;
     public float O;
     public final RectF P;
-    public final u5 Q;
+    public final c6 Q;
     public int a;
     public String b;
     public boolean c;
@@ -75,7 +75,7 @@ public class m0 extends View {
         this.F = 1.0f;
         this.P = new RectF();
         new Path();
-        this.Q = new u5(this, 350L, er.h);
+        this.Q = new c6(this, 350L, lr.h);
         this.E = f10;
         imageReceiver.B0 = true;
         imageReceiver.K0 = true;
@@ -89,7 +89,7 @@ public class m0 extends View {
         this.h = i5.c.g(context, R.drawable.map_pin3);
         textPaint.setTextSize(f10 * 24.0f);
         textPaint.setTypeface(org.telegram.messenger.g0.o1("fonts/rcondensedbold.ttf"));
-        ns.i(this);
+        ks.i(this);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x0079, code lost:
@@ -130,7 +130,7 @@ public class m0 extends View {
         return null;
     }
 
-    public static k3 c(String str) {
+    public static l3 c(String str) {
         f6 f10 = j6.f(str);
         if (f10 instanceof i6) {
             ((i6) f10).a = false;
@@ -138,7 +138,7 @@ public class m0 extends View {
         if (f10 == null) {
             return null;
         }
-        return new k3(f10, 8);
+        return new l3(f10, 8);
     }
 
     public final void a(Canvas canvas) {
@@ -162,7 +162,7 @@ public class m0 extends View {
         if (z10) {
             float d = this.Q.d(this.M);
             if (d > 0.0f) {
-                float b10 = i20.b(rectF2.left, 2.25f, f15, f10);
+                float b10 = n10.b(rectF2.left, 2.25f, f15, f10);
                 float f16 = f15 * 21.33f;
                 float A = com.google.android.gms.internal.vision.e2.A(this.O, f16, 2.0f, f11);
                 ImageReceiver imageReceiver = this.s;
@@ -174,7 +174,7 @@ public class m0 extends View {
                 canvas.restore();
             }
             if (d < 1.0f) {
-                float b11 = i20.b(rectF2.left, 2.25f, f15, f10);
+                float b11 = n10.b(rectF2.left, 2.25f, f15, f10);
                 float f17 = f15 * 21.33f;
                 float A2 = com.google.android.gms.internal.vision.e2.A(this.O, f17, 2.0f, f11);
                 ImageReceiver imageReceiver2 = this.r;
@@ -221,14 +221,14 @@ public class m0 extends View {
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName.short_name = "StaticEmoji";
             final int i10 = 0;
-            si.b0(i7).l0(tL_inputStickerSetShortName, 0, false, false, new z10(this) { // from class: tg.l0
+            ri.d0(i7).n0(tL_inputStickerSetShortName, 0, false, false, new x10(this) { // from class: tg.l0
                 public final /* synthetic */ m0 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.z10
+                @Override // org.telegram.messenger.x10
                 public final void a(Object obj) {
                     switch (i10) {
                         case 0:
@@ -237,8 +237,8 @@ public class m0 extends View {
                             String str2 = str;
                             TLRPC.Document b10 = m0.b((TLRPC.TL_messages_stickerSet) obj, str2);
                             m0Var.w = b10;
-                            m0Var.r.q0(gc.b(b10), "80_80", m0.c(str2), null, null, 0);
-                            m0Var.s.u0(gc.b(m0Var.x), "80_80", gc.b(m0Var.w), "80_80", null, null, m0.c(str2), 0L, null, null, 0);
+                            m0Var.r.q0(fc.b(b10), "80_80", m0.c(str2), null, null, 0);
+                            m0Var.s.u0(fc.b(m0Var.x), "80_80", fc.b(m0Var.w), "80_80", null, null, m0.c(str2), 0L, null, null, 0);
                             break;
                         default:
                             m0 m0Var2 = this.b;
@@ -247,7 +247,7 @@ public class m0 extends View {
                             TLRPC.Document b11 = m0.b((TLRPC.TL_messages_stickerSet) obj, str3);
                             m0Var2.x = b11;
                             if (b11 != null) {
-                                m0Var2.s.u0(gc.b(b11), "80_80", gc.b(m0Var2.w), "80_80", null, null, m0.c(str3), 0L, null, null, 0);
+                                m0Var2.s.u0(fc.b(b11), "80_80", fc.b(m0Var2.w), "80_80", null, null, m0.c(str3), 0L, null, null, 0);
                                 break;
                             }
                             break;
@@ -257,14 +257,14 @@ public class m0 extends View {
             TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
             tL_inputStickerSetShortName2.short_name = "RestrictedEmoji";
             final int i11 = 1;
-            si.b0(i7).l0(tL_inputStickerSetShortName2, 0, false, false, new z10(this) { // from class: tg.l0
+            ri.d0(i7).n0(tL_inputStickerSetShortName2, 0, false, false, new x10(this) { // from class: tg.l0
                 public final /* synthetic */ m0 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // org.telegram.messenger.z10
+                @Override // org.telegram.messenger.x10
                 public final void a(Object obj) {
                     switch (i11) {
                         case 0:
@@ -273,8 +273,8 @@ public class m0 extends View {
                             String str2 = str;
                             TLRPC.Document b10 = m0.b((TLRPC.TL_messages_stickerSet) obj, str2);
                             m0Var.w = b10;
-                            m0Var.r.q0(gc.b(b10), "80_80", m0.c(str2), null, null, 0);
-                            m0Var.s.u0(gc.b(m0Var.x), "80_80", gc.b(m0Var.w), "80_80", null, null, m0.c(str2), 0L, null, null, 0);
+                            m0Var.r.q0(fc.b(b10), "80_80", m0.c(str2), null, null, 0);
+                            m0Var.s.u0(fc.b(m0Var.x), "80_80", fc.b(m0Var.w), "80_80", null, null, m0.c(str2), 0L, null, null, 0);
                             break;
                         default:
                             m0 m0Var2 = this.b;
@@ -283,7 +283,7 @@ public class m0 extends View {
                             TLRPC.Document b11 = m0.b((TLRPC.TL_messages_stickerSet) obj, str3);
                             m0Var2.x = b11;
                             if (b11 != null) {
-                                m0Var2.s.u0(gc.b(b11), "80_80", gc.b(m0Var2.w), "80_80", null, null, m0.c(str3), 0L, null, null, 0);
+                                m0Var2.s.u0(fc.b(b11), "80_80", fc.b(m0Var2.w), "80_80", null, null, m0.c(str3), 0L, null, null, 0);
                                 break;
                             }
                             break;
@@ -291,8 +291,8 @@ public class m0 extends View {
                 }
             });
             z10 = true;
-            imageReceiver2.q0(gc.b(this.w), "80_80", c(str), null, null, 0);
-            imageReceiver.u0(gc.b(this.x), "80_80", gc.b(this.w), "80_80", null, null, c(str), 0L, null, null, 0);
+            imageReceiver2.q0(fc.b(this.w), "80_80", c(str), null, null, 0);
+            imageReceiver.u0(fc.b(this.x), "80_80", fc.b(this.w), "80_80", null, null, c(str), 0L, null, null, 0);
         }
         this.c = z10;
         requestLayout();
@@ -347,7 +347,7 @@ public class m0 extends View {
             if (min < 0.4f) {
                 f10 = 1.0f;
                 String str2 = this.b;
-                this.G = new StaticLayout(str2, textPaint, l3.a(str2, textPaint), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                this.G = new StaticLayout(str2, textPaint, m3.a(str2, textPaint), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
             } else {
                 f10 = 1.0f;
                 this.G = new StaticLayout(this.b, textPaint, (int) Math.ceil(measureText), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);

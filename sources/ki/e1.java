@@ -1,10 +1,22 @@
 package ki;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.ui.Components.au0;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class e1 extends org.telegram.ui.Cells.q1 {
-    @Override // org.telegram.ui.Cells.q1
-    public final boolean y2() {
+public final class e1 extends au0 {
+    @Override // org.telegram.ui.Components.au0
+    public final boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.au0
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.au0
+    public final boolean W() {
         return false;
     }
 }

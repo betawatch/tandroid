@@ -1,64 +1,67 @@
 package di;
 
-import android.app.Activity;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.UserInfoActivity;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u6 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ List e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class u6 implements x10 {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ x8 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ x10 d;
+    public final /* synthetic */ boolean[] e;
+    public final /* synthetic */ x10 f;
 
-    public /* synthetic */ u6(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, List list, int i7) {
-        this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.f = obj3;
-        this.d = obj4;
-        this.g = obj5;
-        this.e = list;
+    public /* synthetic */ u6(x8 x8Var, int i7, x10 x10Var, boolean[] zArr, x10 x10Var2) {
+        this.b = x8Var;
+        this.c = i7;
+        this.d = x10Var;
+        this.e = zArr;
+        this.f = x10Var2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        Boolean bool = (Boolean) obj;
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new g7(tLObject, (f5.m) this.b, (f5.f) this.c, (org.telegram.ui.Wallet.t1) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGiveaway) this.g, this.e, tL_error, 0));
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new g7(tLObject, (f5.m) this.b, (f5.f) this.c, (bi.v5) this.f, (Activity) this.d, (TLRPC.TL_inputStorePaymentStarsGift) this.g, this.e, tL_error, 1));
-                break;
-            case 2:
-                org.telegram.messenger.g0.h3(new g7((UserInfoActivity) this.b, tL_error, (TLObject) this.c, (TL_account.TL_birthday) this.f, (TLRPC.UserFull) this.d, tLObject, (int[]) this.g, (ArrayList) this.e));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new g7(tL_error, (z10) this.b, tLObject, this.e, (f5.f) this.c, (z10) this.f, (org.telegram.ui.ActionBar.e2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 9));
+                this.e[0] = true;
+                if (this.c > 0) {
+                    this.b.Q();
+                }
+                x10 x10Var = this.d;
+                if (x10Var != null) {
+                    x10Var.a(bool.booleanValue() ? "paid" : "failed");
+                }
+                x10 x10Var2 = this.f;
+                if (x10Var2 != null) {
+                    x10Var2.a(Boolean.TRUE);
+                    break;
+                }
                 break;
             default:
-                org.telegram.messenger.g0.h3(new g7(tL_error, (z10) this.b, tLObject, this.e, (f5.f) this.c, (z10) this.f, (org.telegram.ui.ActionBar.e2) this.d, (TLRPC.InputStorePaymentPurpose) this.g, 10));
+                if (this.c > 0) {
+                    this.b.Q();
+                }
+                x10 x10Var3 = this.d;
+                if (x10Var3 != null) {
+                    x10Var3.a(Boolean.TRUE);
+                }
+                this.e[0] = true;
+                x10 x10Var4 = this.f;
+                if (x10Var4 != null) {
+                    x10Var4.a(bool.booleanValue() ? "paid" : "failed");
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ u6(z10 z10Var, List list, f5.f fVar, z10 z10Var2, org.telegram.ui.ActionBar.e2 e2Var, TLRPC.InputStorePaymentPurpose inputStorePaymentPurpose, int i7) {
-        this.a = i7;
-        this.b = z10Var;
-        this.e = list;
-        this.c = fVar;
-        this.f = z10Var2;
-        this.d = e2Var;
-        this.g = inputStorePaymentPurpose;
+    public /* synthetic */ u6(x8 x8Var, boolean[] zArr, int i7, x10 x10Var, x10 x10Var2) {
+        this.b = x8Var;
+        this.e = zArr;
+        this.c = i7;
+        this.d = x10Var;
+        this.f = x10Var2;
     }
 }

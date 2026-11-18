@@ -1,16 +1,9 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class kb1 {
-    public final org.telegram.ui.ActionBar.e2 a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public float f;
+import java.util.ArrayList;
 
-    public kb1(org.telegram.ui.ActionBar.e2 e2Var) {
-        this.a = e2Var;
-    }
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public interface kb1 {
+    void c(int i7, ArrayList arrayList);
 }

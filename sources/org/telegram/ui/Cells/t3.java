@@ -1,12 +1,12 @@
 package org.telegram.ui.Cells;
 
 import android.text.TextPaint;
-import org.telegram.ui.Components.b00;
+import org.telegram.ui.Components.i00;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t3 extends b00 {
-    @Override // org.telegram.ui.Components.b00, android.text.style.CharacterStyle
+public final class t3 extends i00 {
+    @Override // org.telegram.ui.Components.i00, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
         textPaint.setUnderlineText(true);

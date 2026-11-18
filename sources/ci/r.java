@@ -11,23 +11,23 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.z51;
+import org.telegram.ui.d61;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class r extends HorizontalScrollView {
     public ab.g a;
-    public b0 b;
-    public final z51 c;
+    public c0 b;
+    public final d61 c;
     public final Paint d;
     public int e;
     public float f;
-    public final /* synthetic */ g0 h;
+    public final /* synthetic */ h0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(g0 g0Var, Context context) {
+    public r(h0 h0Var, Context context) {
         super(context);
-        this.h = g0Var;
+        this.h = h0Var;
         Paint paint = new Paint(1);
         this.d = paint;
         this.e = -1;
@@ -36,12 +36,12 @@ public final class r extends HorizontalScrollView {
         setOverScrollMode(2);
         setFillViewport(true);
         setWillNotDraw(false);
-        z51 z51Var = new z51(2, context, this);
-        this.c = z51Var;
-        z51Var.setOrientation(0);
-        z51Var.setGravity(16);
-        z51Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
-        addView(z51Var, new FrameLayout.LayoutParams(-2, -1));
+        d61 d61Var = new d61(1, context, this);
+        this.c = d61Var;
+        d61Var.setOrientation(0);
+        d61Var.setGravity(16);
+        d61Var.setPadding(org.telegram.messenger.g0.L(3.0f), 0, org.telegram.messenger.g0.L(3.0f), 0);
+        addView(d61Var, new FrameLayout.LayoutParams(-2, -1));
         paint.setColor(1560281087);
     }
 
@@ -49,15 +49,15 @@ public final class r extends HorizontalScrollView {
         if (i7 == this.e || i7 < 0) {
             return;
         }
-        z51 z51Var = this.c;
-        if (i7 >= z51Var.getChildCount()) {
+        d61 d61Var = this.c;
+        if (i7 >= d61Var.getChildCount()) {
             return;
         }
         this.e = i7;
         if (!z10) {
             this.f = Float.NaN;
         }
-        View childAt = z51Var.getChildAt(i7);
+        View childAt = d61Var.getChildAt(i7);
         int left = childAt.getLeft() - org.telegram.messenger.g0.L(30.0f);
         int L = org.telegram.messenger.g0.L(30.0f) + childAt.getRight();
         if (left >= getScrollX()) {
@@ -73,7 +73,7 @@ public final class r extends HorizontalScrollView {
         } else {
             scrollTo(left, 0);
         }
-        z51Var.invalidate();
+        d61Var.invalidate();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:16:0x00e7  */
@@ -84,35 +84,35 @@ public final class r extends HorizontalScrollView {
     */
     public final void draw(Canvas canvas) {
         float f10;
-        b0 b0Var;
+        c0 c0Var;
         ab.g gVar = this.a;
         if (gVar != null) {
             float scrollX = getScrollX();
             float width = getWidth() + getScrollX();
             float height = getHeight();
-            i0 i0Var = (i0) gVar.b;
+            j0 j0Var = (j0) gVar.b;
             r rVar = (r) gVar.c;
-            RectF rectF = i0Var.n0;
-            int[] iArr = i0Var.l0;
-            int[] iArr2 = i0Var.j0;
-            Path path = i0Var.m0;
-            RectF rectF2 = i0Var.i0;
-            if (i0Var.a0 != null && i0Var.d != null) {
-                float f11 = i0Var.b0;
+            RectF rectF = j0Var.n0;
+            int[] iArr = j0Var.l0;
+            int[] iArr2 = j0Var.j0;
+            Path path = j0Var.m0;
+            RectF rectF2 = j0Var.i0;
+            if (j0Var.a0 != null && j0Var.d != null) {
+                float f11 = j0Var.b0;
                 f10 = 2.0f;
-                rectF2.set(scrollX + f11, i0Var.c0 + 0.0f, width - f11, height - i0Var.d0);
+                rectF2.set(scrollX + f11, j0Var.c0 + 0.0f, width - f11, height - j0Var.d0);
                 canvas.save();
                 path.rewind();
                 path.addRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, Path.Direction.CW);
                 canvas.clipPath(path);
                 rVar.getLocationOnScreen(iArr2);
-                i0Var.d.getLocationOnScreen(iArr);
+                j0Var.d.getLocationOnScreen(iArr);
                 float max = Math.max(0.01f, rVar.getScaleX());
                 canvas.translate(scrollX, 0.0f);
                 float f12 = 1.0f / max;
                 canvas.scale(f12, f12);
                 rectF.set((rectF2.left - scrollX) * max, (rectF2.top - 0.0f) * max, (rectF2.right - scrollX) * max, (rectF2.bottom - 0.0f) * max);
-                z0 z0Var = i0Var.d;
+                z0 z0Var = j0Var.d;
                 int i7 = iArr2[0];
                 int i10 = iArr[0];
                 int i11 = iArr2[1];
@@ -121,24 +121,24 @@ public final class r extends HorizontalScrollView {
                 paint.setColor(z0Var.t0());
                 canvas.drawRect(rectF, paint);
                 canvas.restore();
-                if (i0Var.o0 == null) {
-                    i0Var.o0 = new Paint(1);
+                if (j0Var.o0 == null) {
+                    j0Var.o0 = new Paint(1);
                 }
-                Paint paint2 = i0Var.o0;
-                x0 x0Var = i0Var.d.n;
+                Paint paint2 = j0Var.o0;
+                x0 x0Var = j0Var.d.n;
                 paint2.setColor(x0Var != null ? x0Var.h : 872415231);
-                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, i0Var.o0);
+                canvas.drawRoundRect(rectF2, rectF2.height() / 2.0f, rectF2.height() / 2.0f, j0Var.o0);
                 super.draw(canvas);
-                b0Var = this.b;
-                if (b0Var == null) {
+                c0Var = this.b;
+                if (c0Var == null) {
                     float scrollX2 = getScrollX();
                     float width2 = getWidth() + getScrollX();
                     float height2 = getHeight();
-                    i0 i0Var2 = b0Var.a;
-                    RectF rectF3 = i0Var2.q0;
-                    float f13 = i0Var2.b0;
-                    rectF3.set(scrollX2 + f13, 0.0f + i0Var2.c0, width2 - f13, height2 - i0Var2.d0);
-                    i0Var2.p0.a(rectF3.height() / f10, 1.0f, 0, canvas, rectF3);
+                    j0 j0Var2 = c0Var.a;
+                    RectF rectF3 = j0Var2.q0;
+                    float f13 = j0Var2.b0;
+                    rectF3.set(scrollX2 + f13, 0.0f + j0Var2.c0, width2 - f13, height2 - j0Var2.d0);
+                    j0Var2.p0.a(rectF3.height() / f10, 1.0f, 0, canvas, rectF3);
                     return;
                 }
                 return;
@@ -146,14 +146,14 @@ public final class r extends HorizontalScrollView {
         }
         f10 = 2.0f;
         super.draw(canvas);
-        b0Var = this.b;
-        if (b0Var == null) {
+        c0Var = this.b;
+        if (c0Var == null) {
         }
     }
 
     public void setSections(ArrayList<o> arrayList) {
-        z51 z51Var = this.c;
-        z51Var.removeAllViews();
+        d61 d61Var = this.c;
+        d61Var.removeAllViews();
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
             o oVar = arrayList.get(i7);
             Context context = getContext();
@@ -161,7 +161,7 @@ public final class r extends HorizontalScrollView {
             p pVar = new p(this.h, context, i10, i10 == 2 ? (TLRPC.Document) oVar.c.get(0) : null);
             pVar.setOnClickListener(new q(this, i7, 0));
             pVar.setContentDescription(oVar.b);
-            z51Var.addView(pVar, new LinearLayout.LayoutParams(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(30.0f)));
+            d61Var.addView(pVar, new LinearLayout.LayoutParams(org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(30.0f)));
         }
         this.e = -1;
         this.f = Float.NaN;

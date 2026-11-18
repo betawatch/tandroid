@@ -2,13 +2,13 @@ package com.google.android.gms.internal.clearcut;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.xb;
+import c8.ac;
 
 /* loaded from: classes.dex */
 public final class c2 implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        int z10 = xb.z(parcel);
+        int z10 = ac.z(parcel);
         String str = null;
         String str2 = null;
         String str3 = null;
@@ -22,38 +22,38 @@ public final class c2 implements Parcelable.Creator {
             int readInt = parcel.readInt();
             switch ((char) readInt) {
                 case 2:
-                    str = xb.h(parcel, readInt);
+                    str = ac.h(parcel, readInt);
                     break;
                 case 3:
-                    i7 = xb.u(parcel, readInt);
+                    i7 = ac.u(parcel, readInt);
                     break;
                 case 4:
-                    i10 = xb.u(parcel, readInt);
+                    i10 = ac.u(parcel, readInt);
                     break;
                 case 5:
-                    str2 = xb.h(parcel, readInt);
+                    str2 = ac.h(parcel, readInt);
                     break;
                 case 6:
-                    str3 = xb.h(parcel, readInt);
+                    str3 = ac.h(parcel, readInt);
                     break;
                 case 7:
-                    z12 = xb.n(parcel, readInt);
+                    z12 = ac.n(parcel, readInt);
                     break;
                 case '\b':
-                    str4 = xb.h(parcel, readInt);
+                    str4 = ac.h(parcel, readInt);
                     break;
                 case '\t':
-                    z11 = xb.n(parcel, readInt);
+                    z11 = ac.n(parcel, readInt);
                     break;
                 case '\n':
-                    i11 = xb.u(parcel, readInt);
+                    i11 = ac.u(parcel, readInt);
                     break;
                 default:
-                    xb.y(parcel, readInt);
+                    ac.y(parcel, readInt);
                     break;
             }
         }
-        xb.m(parcel, z10);
+        ac.m(parcel, z10);
         return new b2(str, i7, i10, str2, str3, z12, str4, z11, i11);
     }
 

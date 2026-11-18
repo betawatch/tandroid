@@ -1,15 +1,15 @@
 package ci;
 
 import android.graphics.Canvas;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m extends uj0 {
+public final class m extends ck0 {
     public aa.k f3;
-    public c0 g3;
+    public d0 g3;
 
-    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ck0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int i7;
@@ -25,9 +25,9 @@ public final class m extends uj0 {
             kVar.x(canvas2);
         }
         super.dispatchDraw(canvas2);
-        c0 c0Var = this.g3;
-        if (c0Var != null) {
-            c0Var.x(canvas2);
+        d0 d0Var = this.g3;
+        if (d0Var != null) {
+            d0Var.x(canvas2);
             canvas2.restoreToCount(i7);
         }
     }

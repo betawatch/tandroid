@@ -1,32 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import android.text.TextPaint;
-import android.text.style.URLSpan;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d41 extends URLSpan {
-    public final wy0 a;
+public final class d41 implements ValueAnimator.AnimatorUpdateListener {
+    public int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ h41 c;
 
-    public d41(String str, wy0 wy0Var) {
-        super(str != null ? str.replace((char) 8238, ' ') : str);
-        this.a = wy0Var;
+    public d41(h41 h41Var, int i7) {
+        this.c = h41Var;
+        this.b = i7;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        vf.c.q(view.getContext(), Uri.parse(getURL()), true, true);
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        wy0 wy0Var = this.a;
-        if (wy0Var != null) {
-            wy0Var.a(textPaint);
-        }
-        textPaint.setUnderlineText(true);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.b);
+        h41 h41Var = this.c;
+        h41Var.O = true;
+        h41Var.n.scrollBy(0, floatValue - this.a);
+        h41Var.O = false;
+        this.a = floatValue;
     }
 }

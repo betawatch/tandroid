@@ -1,33 +1,24 @@
 package org.telegram.messenger;
 
-import android.util.Pair;
-import java.util.HashMap;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class zs {
-    public final long a;
-    public String b;
-    public final HashMap c;
-    public boolean d;
-    public long e;
+public abstract class zs {
+    public static final HashSet a;
 
-    public zs(String str, long j3, int i7, long j10, long j11) {
-        HashMap hashMap = new HashMap();
-        this.c = hashMap;
-        this.a = j3;
-        this.b = str;
-        hashMap.put(Integer.valueOf(i7), new Pair(Long.valueOf(j10), Long.valueOf(j11)));
-        this.e = j10;
-    }
-
-    public final long a() {
-        long j3 = -1;
-        for (Pair pair : this.c.values()) {
-            if (j3 == -1 || j3 > ((Long) pair.first).longValue()) {
-                j3 = ((Long) pair.first).longValue();
-            }
-        }
-        return j3;
+    static {
+        HashSet hashSet = new HashSet();
+        a = hashSet;
+        hashSet.add("com.google.android.projection.gearhead");
+        hashSet.add("com.google.android.mediasimulator");
+        hashSet.add("com.android.car.media");
+        hashSet.add("com.android.car.carlauncher");
+        hashSet.add("com.google.android.car.kitchensink");
+        hashSet.add("com.google.android.wearable.app");
+        hashSet.add("com.google.android.wearable.media.sessions");
+        hashSet.add("com.google.android.googlequicksearchbox");
+        hashSet.add("com.google.android.apps.gsa.staticplugins");
+        hashSet.add("com.google.android.bluetooth");
     }
 }

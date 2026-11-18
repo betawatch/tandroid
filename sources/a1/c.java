@@ -1,6 +1,5 @@
 package a1;
 
-import a3.n;
 import a3.p;
 import a8.b8;
 import a8.r7;
@@ -15,11 +14,10 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import bi.e0;
-import bi.f1;
-import bi.s2;
+import bg.q;
+import bi.a2;
+import bi.g1;
 import com.google.android.gms.common.api.h;
-import com.google.android.gms.common.api.internal.q;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -29,47 +27,48 @@ import com.google.android.gms.tasks.Tasks;
 import db.r;
 import db.t;
 import db.u;
-import di.e6;
-import di.lb;
-import di.n5;
+import di.h6;
+import di.pb;
+import di.q5;
+import di.r0;
 import di.s;
-import di.s0;
-import di.u8;
+import di.x8;
 import e2.m1;
 import h2.j;
 import h9.f0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import k2.i;
 import org.telegram.messenger.d1;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.v10;
 import org.telegram.messenger.x10;
-import org.telegram.messenger.z10;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.q1;
-import org.telegram.ui.Cells.t0;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.r4;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.u1;
+import org.telegram.ui.Cells.u0;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z4;
 import org.telegram.ui.Dictation.DictationAsr;
 import org.telegram.ui.Dictation.DictationLid;
-import org.telegram.ui.Wallet.t1;
-import org.telegram.ui.jl0;
-import r0.k1;
+import org.telegram.ui.Wallet.e0;
+import org.telegram.ui.ll0;
+import r0.l1;
 import r0.m;
+import ri.n;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, i1, bg.p, q1, m, org.telegram.messenger.q1, j, i, q, x10, r4, te.b, jl0 {
+public final /* synthetic */ class c implements OnSuccessListener, p, Continuation, OnCompleteListener, i1, q, r1, m, n, j, i, com.google.android.gms.common.api.internal.q, v10, z4, te.b, ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -79,69 +78,40 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     }
 
     @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        View view = ((e6) this.b).b;
-        if (view instanceof t0) {
-            ((t0) view).W();
+    public void H(int i7, float f10, float f11, te.c cVar) {
+        View view = ((h6) this.b).b;
+        if (view instanceof u0) {
+            ((u0) view).X();
         } else {
             view.invalidate();
         }
     }
 
-    @Override // org.telegram.ui.Components.r4
-    public void L(int i7, int i10, boolean z10) {
-        s0 s0Var = (s0) this.b;
+    @Override // org.telegram.ui.Components.z4
+    public void O(int i7, int i10, boolean z10) {
+        r0 r0Var = (r0) this.b;
         if (z10) {
             long j3 = i7;
-            if (s0Var.D1 != j3) {
-                s0Var.D1 = j3;
-                s0Var.t1.setText(s0.K0(j3));
+            if (r0Var.D1 != j3) {
+                r0Var.D1 = j3;
+                r0Var.t1.setText(r0.L0(j3));
             }
-            s0Var.J0(true);
+            r0Var.K0(true);
         }
     }
 
     @Override // r0.m
-    public k1 M0(View view, k1 k1Var) {
-        ((f1) this.b).r1.j(k1Var);
-        return k1.b;
+    public l1 P0(View view, l1 l1Var) {
+        ((g1) this.b).r1.j(l1Var);
+        return l1.b;
     }
 
-    @Override // org.telegram.messenger.q1
-    public void a(f5.f fVar, List list) {
-        int i7;
-        s2 s2Var = (s2) this.b;
-        ArrayList arrayList = s2Var.i2;
-        Iterator it = list.iterator();
-        long j3 = 0;
-        while (true) {
-            i7 = 0;
-            if (!it.hasNext()) {
-                break;
-            }
-            f5.m mVar = (f5.m) it.next();
-            int size = arrayList.size();
-            while (true) {
-                if (i7 < size) {
-                    Object obj = arrayList.get(i7);
-                    i7++;
-                    ug.j jVar = (ug.j) obj;
-                    if (jVar.h() != null && jVar.h().equals(mVar.c)) {
-                        jVar.h = mVar;
-                        if (jVar.f() > j3) {
-                            j3 = jVar.f();
-                        }
-                    }
-                }
-            }
-        }
-        int size2 = arrayList.size();
-        while (i7 < size2) {
-            Object obj2 = arrayList.get(i7);
-            i7++;
-            ((ug.j) obj2).g = j3;
-        }
-        g0.h3(new a3.f(s2Var, 20));
+    @Override // k2.i
+    public void a(k2.j jVar) {
+        d4.j jVar2 = (d4.j) this.b;
+        d4.i iVar = (d4.i) jVar;
+        iVar.clear();
+        jVar2.b.add(iVar);
     }
 
     @Override // com.google.android.gms.common.api.internal.q
@@ -173,7 +143,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     }
 
     @Override // ai.i1
-    public void b(long j3, long j10) {
+    public void c(long j3, long j10) {
         long[] jArr = (long[]) this.b;
         ExecutorService executorService = DictationLid.a;
         long[] jArr2 = (long[]) DictationAsr.h.get("tinylid.bin");
@@ -186,51 +156,50 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         long elapsedRealtime = SystemClock.elapsedRealtime();
         if (elapsedRealtime - jArr[0] > 100) {
             jArr[0] = elapsedRealtime;
-            DictationAsr.o();
+            DictationAsr.n();
         }
     }
 
-    @Override // k2.i
-    public void c(k2.j jVar) {
-        d4.j jVar2 = (d4.j) this.b;
-        d4.i iVar = (d4.i) jVar;
-        iVar.clear();
-        jVar2.b.add(iVar);
-    }
-
-    @Override // org.telegram.ui.jl0
-    public void e(int i7) {
+    @Override // org.telegram.ui.ll0
+    public void d(int i7) {
         switch (this.a) {
             case 28:
-                s10 s10Var = (s10) this.b;
+                q10 q10Var = (q10) this.b;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        s10Var.a(Boolean.FALSE, null);
+                        q10Var.a(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    s10Var.a(Boolean.TRUE, null);
+                    q10Var.a(Boolean.TRUE, null);
                     break;
                 }
                 break;
             default:
-                t1 t1Var = (t1) this.b;
+                e0 e0Var = (e0) this.b;
                 if (i7 != 1) {
                     if (i7 != 3) {
-                        t1Var.a(Boolean.FALSE, null);
+                        e0Var.a(Boolean.FALSE, null);
                         break;
                     }
                 } else {
-                    t1Var.a(Boolean.TRUE, null);
+                    e0Var.a(Boolean.TRUE, null);
                     break;
                 }
                 break;
         }
     }
 
+    @Override // ri.n
+    public int e() {
+        a2 a2Var = (a2) this.b;
+        a2Var.getClass();
+        return n6.w0(n6.a7, a2Var.J0);
+    }
+
     @Override // a3.p
-    public s1 f(int i7, m1 m1Var, int[] iArr) {
-        n nVar = (n) this.b;
+    public t1 f(int i7, m1 m1Var, int[] iArr) {
+        a3.n nVar = (a3.n) this.b;
         f0 p10 = i0.p();
         for (int i10 = 0; i10 < m1Var.a; i10++) {
             p10.c(new a3.j(i7, m1Var, i10, nVar, iArr[i10]));
@@ -238,40 +207,40 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
         return p10.f();
     }
 
-    @Override // bg.p
-    public void g(long j3) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(u1 u1Var, int i7) {
+        switch (this.a) {
+            case 12:
+                ((bi.e0) this.b).run();
+                break;
+            default:
+                ((x10) this.b).a(u1Var.h(i7, true, true));
+                break;
+        }
+    }
+
+    @Override // bg.q
+    public void i(long j3) {
         switch (this.a) {
             case 11:
                 ((bi.f) this.b).a(j3, true);
                 break;
             default:
-                ((n5) this.b).h();
+                ((q5) this.b).h();
                 break;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 12:
-                ((e0) this.b).run();
-                break;
-            default:
-                ((z10) this.b).a(t1Var.h(i7, true, true));
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.x10
-    public void m(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
         int i7;
-        org.telegram.ui.ActionBar.e6 e6Var;
+        i6 i6Var;
         switch (this.a) {
             case 22:
                 s sVar = (s) this.b;
-                b41 b41Var = (b41) obj;
+                l41 l41Var = (l41) obj;
                 di.t tVar = sVar.r;
-                if (!(b41Var.G instanceof TL_stars.StarsTransaction)) {
+                if (!(l41Var.H instanceof TL_stars.StarsTransaction)) {
                     if (sVar.h) {
                         sVar.h = false;
                         sVar.a();
@@ -280,15 +249,15 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 } else {
                     Context context = sVar.getContext();
                     long j3 = tVar.b;
-                    i7 = ((e2) tVar).currentAccount;
-                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) b41Var.G;
-                    e6Var = ((e2) tVar).resourceProvider;
-                    lb.k1(context, true, j3, i7, starsTransaction, e6Var);
+                    i7 = ((h2) tVar).currentAccount;
+                    TL_stars.StarsTransaction starsTransaction = (TL_stars.StarsTransaction) l41Var.H;
+                    i6Var = ((h2) tVar).resourceProvider;
+                    pb.l1(context, true, j3, i7, starsTransaction, i6Var);
                     break;
                 }
                 break;
             default:
-                u8.b((u8) this.b, (ArrayList) obj, (Integer) obj2, (Long) number, (ArrayList) serializable, (ArrayList) serializable2);
+                x8.b((x8) this.b, (ArrayList) obj, (Integer) obj2, (Long) number, (ArrayList) serializable, (ArrayList) serializable2);
                 break;
         }
     }
@@ -340,7 +309,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
                 }
                 Log.w("FirebaseMessaging", "FID_ALREADY_USED Detected. Retrying with FID cache clearing!");
                 ((va.c) ((va.d) r7Var.d)).c.c().delete();
-                return r7Var.F();
+                return r7Var.J();
             case 4:
                 ((b8) this.b).getClass();
                 Bundle bundle = (Bundle) task.getResult(IOException.class);
@@ -392,7 +361,7 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
             case 16:
                 c4.h hVar = (c4.h) this.b;
                 c4.a aVar = (c4.a) obj;
-                c4.g gVar = new c4.g(aVar.b, w7.s.k0(aVar.a, aVar.c));
+                c4.g gVar = new c4.g(aVar.b, w7.s.a0(aVar.a, aVar.c));
                 hVar.c.add(gVar);
                 long j3 = hVar.j;
                 if (j3 == -9223372036854775807L || aVar.d >= j3) {
@@ -407,6 +376,6 @@ public final /* synthetic */ class c implements OnSuccessListener, p, Continuati
     }
 
     @Override // te.b
-    public /* synthetic */ void E(float f10, int i7) {
+    public /* synthetic */ void D(float f10, int i7) {
     }
 }

@@ -4,8 +4,8 @@ import android.util.Log;
 import org.telegram.messenger.g0;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
@@ -22,7 +22,7 @@ public final class i implements Runnable {
                 m mVar = this.b;
                 if (mVar.c == 3) {
                     if (mVar.b.c()) {
-                        g0.i3(this, 300L);
+                        g0.h3(this, 300L);
                         break;
                     } else {
                         mVar.g("draft gone", true);
@@ -59,7 +59,7 @@ public final class i implements Runnable {
                             mVar2.P = f10;
                             mVar2.Q = f11;
                             mVar2.T = z10;
-                            mVar2.n();
+                            mVar2.p();
                             if (!z10) {
                                 int i7 = 0;
                                 for (boolean z11 : mVar2.f(mVar2.c(), mVar2.P, mVar2.Q)) {
@@ -76,16 +76,16 @@ public final class i implements Runnable {
                             }
                         }
                     }
-                    g0.i3(this, 50L);
+                    g0.h3(this, 50L);
                     break;
                 }
                 break;
             default:
                 m mVar3 = this.b;
                 if (mVar3.c != 0) {
-                    mVar3.s();
+                    mVar3.t();
                     if (mVar3.c != 0) {
-                        g0.i3(this, 250L);
+                        g0.h3(this, 250L);
                         break;
                     }
                 }

@@ -1,389 +1,344 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.util.SparseArray;
+import android.view.View;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class lz {
-    public char a;
-    public String b;
-    public int c;
-    public int d;
+public final class lz extends Drawable {
+    public static float v;
+    public static float w;
+    public static long x;
+    public static j2 y;
+    public static WeakReference z;
+    public Paint c;
+    public Paint d;
+    public int e;
+    public int f;
+    public ImageReceiver k;
+    public int m;
+    public Integer n;
+    public org.telegram.ui.ActionBar.i6 o;
+    public float p;
+    public static final int[] u = new int[2];
+    public static boolean A = pc.e(32);
+    public final ArrayList a = new ArrayList();
+    public final HashMap b = new HashMap();
+    public final Bitmap[] g = new Bitmap[3];
+    public final Canvas[] h = new Canvas[3];
+    public final LinearGradient[] i = new LinearGradient[3];
+    public final Matrix[] j = new Matrix[3];
+    public final int[] l = new int[2];
+    public float q = 1.0f;
+    public final SparseArray r = new SparseArray();
+    public boolean s = true;
+    public boolean t = false;
 
-    public static void c(char c10) {
-        throw new RuntimeException("Unexpected char '" + c10 + "'.");
+    public static void a(lz lzVar, Object obj, Paint paint) {
+        lzVar.a.add(obj);
+        lzVar.b.put(obj, new Paint(paint));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:105:0x00ee, code lost:
-    
-        r3 = r2;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x0086, code lost:
-    
-        if (r14 == false) goto L115;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:11:0x0127  */
-    /* JADX WARN: Removed duplicated region for block: B:120:? A[LOOP:6: B:115:0x0042->B:120:?, LOOP_END, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:121:0x004e  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x005f  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0143 A[ADDED_TO_REGION, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x002e A[LOOP:1: B:28:0x002e->B:34:?, LOOP_START] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0069  */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x00a5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x00f1  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x00f5  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x00fa A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x0109  */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x00b0  */
-    /* JADX WARN: Removed duplicated region for block: B:91:0x00c7 A[PHI: r4
-      0x00c7: PHI (r4v2 boolean) = (r4v1 boolean), (r4v0 boolean) binds: [B:109:0x00c0, B:88:0x00b2] A[DONT_GENERATE, DONT_INLINE]] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final float a() {
-        boolean z10;
-        int i7;
-        int i10;
-        int i11;
-        boolean z11;
-        char b10;
-        char c10;
-        char b11;
-        char b12;
-        int i12;
-        int i13;
-        char charAt;
-        d();
-        char c11 = this.a;
-        int i14 = 0;
-        boolean z12 = true;
-        if (c11 == '+') {
-            z10 = true;
-        } else if (c11 != '-') {
-            z10 = true;
-            float f10 = 0.0f;
-            switch (this.a) {
-                case '.':
-                    i7 = 0;
-                    i10 = 0;
-                    i11 = 0;
-                    z11 = false;
-                    if (this.a == '.') {
-                        char b13 = b();
-                        this.a = b13;
-                        switch (b13) {
-                            case '0':
-                                if (i7 == 0) {
-                                    while (true) {
-                                        char b14 = b();
-                                        this.a = b14;
-                                        i10--;
-                                        switch (b14) {
-                                        }
-                                    }
-                                }
-                                break;
-                            case '1':
-                            case '2':
-                            case ns.o0 /* 51 */:
-                            case ns.p0 /* 52 */:
-                            case ns.q0 /* 53 */:
-                            case ns.r0 /* 54 */:
-                            case ns.s0 /* 55 */:
-                            case ns.t0 /* 56 */:
-                            case ns.u0 /* 57 */:
-                                while (true) {
-                                    if (i7 < 9) {
-                                        i7++;
-                                        i10--;
-                                        i11 = (this.a - '0') + (i11 * 10);
-                                    }
-                                    char b15 = b();
-                                    this.a = b15;
-                                    switch (b15) {
-                                    }
-                                }
-                                break;
-                            default:
-                                if (!z11) {
-                                    c(b13);
-                                    throw null;
-                                }
-                                break;
-                        }
-                    }
-                    c10 = this.a;
-                    if (c10 != 'E' || c10 == 'e') {
-                        b11 = b();
-                        this.a = b11;
-                        if (b11 != '+') {
-                            if (b11 != '-') {
-                                switch (b11) {
-                                    case '0':
-                                    case '1':
-                                    case '2':
-                                    case ns.o0 /* 51 */:
-                                    case ns.p0 /* 52 */:
-                                    case ns.q0 /* 53 */:
-                                    case ns.r0 /* 54 */:
-                                    case ns.s0 /* 55 */:
-                                    case ns.t0 /* 56 */:
-                                    case ns.u0 /* 57 */:
-                                        switch (this.a) {
-                                            case '0':
-                                                while (true) {
-                                                    char b16 = b();
-                                                    this.a = b16;
-                                                    switch (b16) {
-                                                    }
-                                                }
-                                                break;
-                                            case '1':
-                                            case '2':
-                                            case ns.o0 /* 51 */:
-                                            case ns.p0 /* 52 */:
-                                            case ns.q0 /* 53 */:
-                                            case ns.r0 /* 54 */:
-                                            case ns.s0 /* 55 */:
-                                            case ns.t0 /* 56 */:
-                                            case ns.u0 /* 57 */:
-                                                int i15 = 0;
-                                                while (true) {
-                                                    if (i14 < 3) {
-                                                        i14++;
-                                                        i15 = (this.a - '0') + (i15 * 10);
-                                                    }
-                                                    char b17 = b();
-                                                    this.a = b17;
-                                                    switch (b17) {
-                                                    }
-                                                }
-                                                break;
-                                        }
-                                    default:
-                                        c(b11);
-                                        throw null;
-                                }
-                            } else {
-                                z12 = false;
-                            }
-                        }
-                        b12 = b();
-                        this.a = b12;
-                        switch (b12) {
-                            case '0':
-                            case '1':
-                            case '2':
-                            case ns.o0 /* 51 */:
-                            case ns.p0 /* 52 */:
-                            case ns.q0 /* 53 */:
-                            case ns.r0 /* 54 */:
-                            case ns.s0 /* 55 */:
-                            case ns.t0 /* 56 */:
-                            case ns.u0 /* 57 */:
-                                break;
-                            default:
-                                c(b12);
-                                throw null;
-                        }
-                    }
-                    if (!z12) {
-                        i14 = -i14;
-                    }
-                    i12 = i14 + i10;
-                    if (!z10) {
-                        i11 = -i11;
-                    }
-                    if (i12 >= -125 && i11 != 0) {
-                        if (i12 < 128) {
-                            f10 = i11 > 0 ? Float.POSITIVE_INFINITY : Float.NEGATIVE_INFINITY;
-                        } else if (i12 == 0) {
-                            f10 = i11;
-                        } else {
-                            if (i11 >= 67108864) {
-                                i11++;
-                            }
-                            double d = i11;
-                            double[] dArr = qz.a;
-                            f10 = (float) (i12 > 0 ? d * dArr[i12] : d / dArr[-i12]);
-                        }
-                    }
-                    while (true) {
-                        i13 = this.c;
-                        if (i13 < this.d && ((charAt = this.b.charAt(i13)) == '\t' || charAt == '\n' || charAt == ' ' || charAt == ',')) {
-                            this.a = b();
-                        }
-                    }
-                    return f10;
-                case '/':
-                default:
-                    f10 = Float.NaN;
-                    while (true) {
-                        i13 = this.c;
-                        if (i13 < this.d) {
-                            break;
-                        }
-                        this.a = b();
-                    }
-                    return f10;
-                case '0':
-                    while (true) {
-                        char b18 = b();
-                        this.a = b18;
-                        if (b18 != '.' && b18 != 'E' && b18 != 'e') {
-                            switch (b18) {
-                                case '0':
-                                case '1':
-                                case '2':
-                                case ns.o0 /* 51 */:
-                                case ns.p0 /* 52 */:
-                                case ns.q0 /* 53 */:
-                                case ns.r0 /* 54 */:
-                                case ns.s0 /* 55 */:
-                                case ns.t0 /* 56 */:
-                                case ns.u0 /* 57 */:
-                                    break;
-                                default:
-                                    while (true) {
-                                        i13 = this.c;
-                                        if (i13 < this.d) {
-                                        }
-                                        this.a = b();
-                                    }
-                                    return f10;
-                            }
-                        }
-                    }
-                    i7 = 0;
-                    i10 = 0;
-                    i11 = 0;
-                    while (true) {
-                        if (i7 >= 9) {
-                            i7++;
-                            i11 = (i11 * 10) + (this.a - '0');
-                        } else {
-                            i10++;
-                        }
-                        b10 = b();
-                        this.a = b10;
-                        switch (b10) {
-                        }
-                        z11 = true;
-                        if (this.a == '.') {
-                        }
-                        c10 = this.a;
-                        if (c10 != 'E') {
-                        }
-                        b11 = b();
-                        this.a = b11;
-                        if (b11 != '+') {
-                        }
-                        b12 = b();
-                        this.a = b12;
-                        switch (b12) {
-                        }
-                        if (!z12) {
-                        }
-                        i12 = i14 + i10;
-                        if (!z10) {
-                        }
-                        if (i12 >= -125) {
-                            if (i12 < 128) {
-                            }
-                        }
-                        while (true) {
-                            i13 = this.c;
-                            if (i13 < this.d) {
-                            }
-                            this.a = b();
-                        }
-                        return f10;
-                    }
-                    break;
-                case '1':
-                case '2':
-                case ns.o0 /* 51 */:
-                case ns.p0 /* 52 */:
-                case ns.q0 /* 53 */:
-                case ns.r0 /* 54 */:
-                case ns.s0 /* 55 */:
-                case ns.t0 /* 56 */:
-                case ns.u0 /* 57 */:
-                    i7 = 0;
-                    i10 = 0;
-                    i11 = 0;
-                    while (true) {
-                        if (i7 >= 9) {
-                        }
-                        b10 = b();
-                        this.a = b10;
-                        switch (b10) {
-                        }
-                        z11 = true;
-                        if (this.a == '.') {
-                        }
-                        c10 = this.a;
-                        if (c10 != 'E') {
-                        }
-                        b11 = b();
-                        this.a = b11;
-                        if (b11 != '+') {
-                        }
-                        b12 = b();
-                        this.a = b12;
-                        switch (b12) {
-                        }
-                        if (!z12) {
-                        }
-                        i12 = i14 + i10;
-                        if (!z10) {
-                        }
-                        if (i12 >= -125) {
-                        }
-                        while (true) {
-                            i13 = this.c;
-                            if (i13 < this.d) {
-                            }
-                            this.a = b();
-                        }
-                        return f10;
-                        break;
-                    }
-                    break;
+    /* renamed from: b, reason: merged with bridge method [inline-methods] */
+    public final lz clone() {
+        lz lzVar = new lz();
+        int i7 = 0;
+        while (true) {
+            ArrayList arrayList = this.a;
+            if (i7 >= arrayList.size()) {
+                lzVar.e = this.e;
+                lzVar.f = this.f;
+                return lzVar;
             }
-        } else {
-            z10 = false;
-        }
-        this.a = b();
-        float f102 = 0.0f;
-        switch (this.a) {
+            lzVar.a.add(arrayList.get(i7));
+            Paint paint = (Paint) this.b.get(arrayList.get(i7));
+            if (paint != null) {
+                Paint paint2 = new Paint();
+                paint2.setColor(paint.getColor());
+                paint2.setStrokeCap(paint.getStrokeCap());
+                paint2.setStrokeJoin(paint.getStrokeJoin());
+                paint2.setStrokeWidth(paint.getStrokeWidth());
+                paint2.setStyle(paint.getStyle());
+                lzVar.b.put(arrayList.get(i7), paint2);
+            }
+            i7++;
         }
     }
 
-    public final char b() {
-        int i7 = this.c;
-        int i10 = this.d;
-        if (i7 < i10) {
-            this.c = i7 + 1;
+    public final void c(Canvas canvas, boolean z10, int i7, long j3, float f10, float f11, float f12, float f13) {
+        int i10;
+        int i11 = this.m;
+        if (i11 >= 0) {
+            f(i11, this.o, this.p, z10);
         }
-        int i11 = this.c;
-        if (i11 == i10) {
-            return (char) 0;
+        float f14 = ((int) f12) / this.e;
+        float f15 = ((int) f13) / this.f;
+        float max = this.s ? Math.max(f14, f15) : Math.min(f14, f15);
+        LinearGradient[] linearGradientArr = this.i;
+        if (linearGradientArr[i7] != null) {
+            float f16 = w;
+            if (f16 > 0.0f && A) {
+                if (z10) {
+                    long j10 = j3 - x;
+                    long j11 = j10 > 64 ? 64L : j10;
+                    if (j11 > 0) {
+                        x = j3;
+                        v = a8.p0.f(j11, f16, 1800.0f, v);
+                        while (true) {
+                            float f17 = v;
+                            float f18 = w * 2.0f;
+                            if (f17 < f18) {
+                                break;
+                            } else {
+                                v = f17 - f18;
+                            }
+                        }
+                    }
+                } else if (y == null || z.get() == this) {
+                    long j12 = j3 - x;
+                    long j13 = j12 <= 64 ? j12 : 64L;
+                    long j14 = j13 < 0 ? 0L : j13;
+                    x = j3;
+                    v = a8.p0.f(j14, w, 1800.0f, v);
+                    while (true) {
+                        float f19 = v;
+                        float f20 = w;
+                        if (f19 < f20 / 2.0f) {
+                            break;
+                        } else {
+                            v = f19 - f20;
+                        }
+                    }
+                    z = new WeakReference(this);
+                    j2 j2Var = y;
+                    if (j2Var != null) {
+                        g0.r(j2Var);
+                    }
+                    j2 j2Var2 = new j2(18);
+                    y = j2Var2;
+                    g0.h3(j2Var2, ((int) (1000.0f / g0.r)) - 1);
+                }
+                ImageReceiver imageReceiver = this.k;
+                if (imageReceiver == null || z10) {
+                    i10 = 0;
+                } else {
+                    View view = imageReceiver.e;
+                    int[] iArr = u;
+                    if (view != null) {
+                        view.getLocationInWindow(iArr);
+                    }
+                    i10 = iArr[0];
+                }
+                int i12 = z10 ? i7 + 1 : 0;
+                Matrix[] matrixArr = this.j;
+                Matrix matrix = matrixArr[i12];
+                if (matrix != null) {
+                    matrix.reset();
+                    if (z10) {
+                        matrixArr[i12].postTranslate(((-i10) + v) - f10, 0.0f);
+                    } else {
+                        matrixArr[i12].postTranslate(((-i10) + v) - f10, 0.0f);
+                    }
+                    float f21 = 1.0f / max;
+                    matrixArr[i12].postScale(f21, f21);
+                    linearGradientArr[i12].setLocalMatrix(matrixArr[i12]);
+                    ImageReceiver imageReceiver2 = this.k;
+                    if (imageReceiver2 != null && !z10) {
+                        imageReceiver2.invalidate();
+                    }
+                }
+            }
         }
-        return this.b.charAt(i11);
+        canvas.save();
+        canvas.translate(f10, f11);
+        if (!this.s || this.t) {
+            canvas.translate(com.google.android.gms.internal.vision.e2.w(this.e, max, f12, 2.0f), com.google.android.gms.internal.vision.e2.w(this.f, max, f13, 2.0f));
+        }
+        canvas.scale(max, max);
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        for (int i13 = 0; i13 < size; i13++) {
+            Object obj = arrayList.get(i13);
+            if (obj instanceof Matrix) {
+                canvas.save();
+                canvas.concat((Matrix) obj);
+            } else if (obj == null) {
+                canvas.restore();
+            } else {
+                Paint paint = (Paint) this.r.get(i13);
+                if (paint == null) {
+                    paint = this.c;
+                }
+                if (z10) {
+                    paint = this.d;
+                } else if (paint == null) {
+                    paint = (Paint) this.b.get(obj);
+                }
+                int alpha = paint.getAlpha();
+                paint.setAlpha((int) (this.q * alpha));
+                if (obj instanceof Path) {
+                    canvas.drawPath((Path) obj, paint);
+                } else if (obj instanceof Rect) {
+                    canvas.drawRect((Rect) obj, paint);
+                } else if (obj instanceof RectF) {
+                    canvas.drawRect((RectF) obj, paint);
+                } else if (obj instanceof ez) {
+                    ez ezVar = (ez) obj;
+                    canvas.drawLine(ezVar.a, ezVar.b, ezVar.c, ezVar.d, paint);
+                } else if (obj instanceof dz) {
+                    dz dzVar = (dz) obj;
+                    canvas.drawCircle(dzVar.a, dzVar.b, dzVar.c, paint);
+                } else if (obj instanceof gz) {
+                    canvas.drawOval(((gz) obj).a, paint);
+                } else if (obj instanceof iz) {
+                    iz izVar = (iz) obj;
+                    RectF rectF = izVar.a;
+                    float f22 = izVar.b;
+                    canvas.drawRoundRect(rectF, f22, f22, paint);
+                }
+                paint.setAlpha(alpha);
+            }
+        }
+        canvas.restore();
     }
 
     public final void d() {
-        while (true) {
-            int i7 = this.c;
-            if (i7 >= this.d || !Character.isWhitespace(this.b.charAt(i7))) {
+        this.t = true;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas, false, 0, System.currentTimeMillis(), getBounds().left, getBounds().top, getBounds().width(), getBounds().height());
+    }
+
+    public final void e(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.m = i7;
+        this.o = i6Var;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r16v1, types: [android.graphics.LinearGradient] */
+    /* JADX WARN: Type inference failed for: r28v1 */
+    /* JADX WARN: Type inference failed for: r28v10 */
+    /* JADX WARN: Type inference failed for: r28v11 */
+    /* JADX WARN: Type inference failed for: r28v12 */
+    /* JADX WARN: Type inference failed for: r28v13 */
+    /* JADX WARN: Type inference failed for: r28v2 */
+    /* JADX WARN: Type inference failed for: r28v3 */
+    /* JADX WARN: Type inference failed for: r28v4 */
+    /* JADX WARN: Type inference failed for: r28v5 */
+    /* JADX WARN: Type inference failed for: r28v6 */
+    /* JADX WARN: Type inference failed for: r28v7 */
+    /* JADX WARN: Type inference failed for: r28v8 */
+    /* JADX WARN: Type inference failed for: r28v9 */
+    public final void f(int i7, org.telegram.ui.ActionBar.i6 i6Var, float f10, boolean z10) {
+        BitmapShader bitmapShader;
+        Integer num = this.n;
+        int w02 = num == null ? org.telegram.ui.ActionBar.n6.w0(i7, i6Var) : num.intValue();
+        this.o = i6Var;
+        int[] iArr = this.l;
+        if (iArr[z10 ? 1 : 0] != w02) {
+            this.p = f10;
+            this.m = i7;
+            iArr[z10 ? 1 : 0] = w02;
+            w = g0.q.x * 2;
+            boolean z11 = A;
+            HashMap hashMap = this.b;
+            if (!z11) {
+                int o4 = i0.a.o(w02, 70);
+                if (z10) {
+                    if (this.d == null) {
+                        this.d = new Paint(1);
+                    }
+                    this.d.setShader(null);
+                    this.d.setColor(o4);
+                    return;
+                }
+                for (Paint paint : hashMap.values()) {
+                    paint.setShader(null);
+                    paint.setColor(o4);
+                }
                 return;
+            }
+            float L = g0.L(180.0f) / w;
+            int argb = Color.argb((int) ((Color.alpha(w02) / 2) * this.p), Color.red(w02), Color.green(w02), Color.blue(w02));
+            float f11 = (1.0f - L) / 2.0f;
+            float f12 = L / 2.0f;
+            Shader.TileMode tileMode = Shader.TileMode.REPEAT;
+            LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, w, 0.0f, new int[]{0, 0, argb, 0, 0}, new float[]{0.0f, f11 - f12, f11, f12 + f11, 1.0f}, tileMode);
+            LinearGradient[] linearGradientArr = this.i;
+            linearGradientArr[z10 ? 1 : 0] = linearGradient;
+            if (Build.VERSION.SDK_INT >= 28) {
+                bitmapShader = new LinearGradient(0.0f, 0.0f, w, 0.0f, new int[]{argb, argb}, (float[]) null, tileMode);
             } else {
-                this.a = b();
+                Bitmap[] bitmapArr = this.g;
+                Bitmap bitmap = bitmapArr[z10 ? 1 : 0];
+                Canvas[] canvasArr = this.h;
+                if (bitmap == null) {
+                    bitmapArr[z10 ? 1 : 0] = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888);
+                    canvasArr[z10 ? 1 : 0] = new Canvas(bitmapArr[z10 ? 1 : 0]);
+                }
+                canvasArr[z10 ? 1 : 0].drawColor(argb);
+                bitmapShader = new BitmapShader(bitmapArr[z10 ? 1 : 0], tileMode, tileMode);
+            }
+            Matrix matrix = new Matrix();
+            this.j[z10 ? 1 : 0] = matrix;
+            linearGradientArr[z10 ? 1 : 0].setLocalMatrix(matrix);
+            if (z10) {
+                if (this.d == null) {
+                    this.d = new Paint(1);
+                }
+                this.d.setShader(new ComposeShader(linearGradientArr[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+            } else {
+                Iterator it = hashMap.values().iterator();
+                while (it.hasNext()) {
+                    ((Paint) it.next()).setShader(new ComposeShader(linearGradientArr[z10 ? 1 : 0], bitmapShader, PorterDuff.Mode.ADD));
+                }
             }
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.e;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.q = i7 / 255.0f;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

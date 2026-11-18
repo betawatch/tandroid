@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import c8.n0;
+import c8.p0;
 import d9.o;
 import id.c;
 import id.f;
@@ -26,7 +26,7 @@ import zd.s;
 import zd.t;
 import zd.y;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzde implements e0 {
     private final /* synthetic */ s zza;
@@ -64,7 +64,7 @@ public final class zzde implements e0 {
     public final f get(g gVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return n0.a(n1Var, gVar);
+        return p0.a(n1Var, gVar);
     }
 
     @Override // zd.a1
@@ -98,7 +98,7 @@ public final class zzde implements e0 {
         tVar.getClass();
         u.a(3, k1.a);
         u.a(3, l1.a);
-        return new o(tVar, 1);
+        return new o(tVar);
     }
 
     public final he.a getOnJoin() {
@@ -146,7 +146,7 @@ public final class zzde implements e0 {
     public final h minusKey(g gVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return n0.b(n1Var, gVar);
+        return p0.b(n1Var, gVar);
     }
 
     public final a1 plus(a1 a1Var) {
@@ -172,7 +172,7 @@ public final class zzde implements e0 {
     public final h plus(h hVar) {
         n1 n1Var = (n1) this.zza;
         n1Var.getClass();
-        return n0.c(n1Var, hVar);
+        return p0.c(n1Var, hVar);
     }
 
     public final /* synthetic */ boolean cancel(Throwable th2) {

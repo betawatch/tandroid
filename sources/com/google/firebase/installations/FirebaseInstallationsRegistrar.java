@@ -18,7 +18,7 @@ import v9.i;
 import va.c;
 import va.d;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-installations";
@@ -36,12 +36,12 @@ public class FirebaseInstallationsRegistrar implements ComponentRegistrar {
         a10.a(new u9.i(0, 1, e.class));
         a10.a(new u9.i(new q(a.class, ExecutorService.class), 1, 0));
         a10.a(new u9.i(new q(q9.b.class, Executor.class), 1, 0));
-        a10.f = new x(11);
+        a10.f = new x(12);
         u9.a b10 = a10.b();
         sa.d dVar = new sa.d(0);
         j0 a11 = u9.a.a(sa.d.class);
         a11.b = 1;
-        a11.f = new z1(dVar, 6);
+        a11.f = new z1(dVar, 7);
         return Arrays.asList(b10, a11.b(), i8.a(LIBRARY_NAME, "19.1.2"));
     }
 }

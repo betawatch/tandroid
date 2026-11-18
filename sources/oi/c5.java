@@ -1,112 +1,55 @@
 package oi;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import c8.ja;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
+import android.view.View;
+import org.telegram.messenger.j6;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.g9;
-import org.telegram.ui.Cells.h9;
-import org.telegram.ui.Cells.s9;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class c5 extends x implements org.telegram.ui.ActionBar.z5, g9 {
-    public final e6 n;
-    public final e1 r;
-    public a5 s;
-    public final ArrayList w;
-    public boolean x;
+public final class c5 extends k41 {
+    public static final /* synthetic */ int b = 0;
 
-    public c5(Context context, e6 e6Var) {
-        super(context);
-        this.w = new ArrayList();
-        this.n = e6Var;
-        f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
-        e1 e1Var = new e1(context, e6Var);
-        this.r = e1Var;
-        e1Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(1.0f));
-        e1Var.setAllowNewlines(false);
-        e1Var.setInputType(147457);
-        e1Var.setGravity(8388659);
-        e1Var.setTextSize(1, Math.max(8, gz.W0 - 2));
-        e1Var.setTypeface(org.telegram.messenger.g0.o1("fonts/rmedium.ttf"));
-        e1Var.setTextColorKey(j6.Fi);
-        e1Var.setAccentHint(true);
-        e1Var.setHint(hd.M0(2131754020, null));
-        e1Var.setListener(new gc.b(this, 24));
-        e1Var.setDelegate(new ki.e(this, 23));
-        addView(e1Var, ja.e(-1, -2, 51));
-        updateColors();
+    static {
+        k41.h(new c5());
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(j6.Fi));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        a5 a5Var = this.s;
-        h9 textSelectionHelper = a5Var != null ? ((x2) a5Var).a.getTextSelectionHelper() : null;
-        if (textSelectionHelper != null) {
-            ArrayList arrayList = this.w;
-            arrayList.clear();
-            k(arrayList);
-            for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                s9 s9Var = (s9) arrayList.get(i7);
-                canvas.save();
-                canvas.translate(s9Var.getX(), s9Var.getY());
-                textSelectionHelper.Z(canvas, this, i7);
-                canvas.restore();
-            }
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    public final void g() {
-        a aVar;
-        a5 a5Var = this.s;
-        if (a5Var == null || (aVar = this.a) == null) {
-            return;
-        }
-        long j3 = aVar.t;
-        TL_iv.RichText f10 = a6.f(this.r.getText());
-        q3 q3Var = ((x2) a5Var).a;
-        if (f10 == null || (f10 instanceof TL_iv.textEmpty)) {
-            q3Var.u3.remove(Long.valueOf(j3));
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        TL_iv.RichText richText;
+        d5 d5Var = (d5) view;
+        a aVar = (a) l41Var.H;
+        b5 b5Var = (b5) l41Var.I;
+        e1 e1Var = d5Var.r;
+        d5Var.a = aVar;
+        d5Var.s = b5Var;
+        d5Var.f(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(1.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(8.0f));
+        d5Var.c(aVar);
+        if (b5Var != null) {
+            richText = (TL_iv.RichText) ((z2) b5Var).a.u3.get(Long.valueOf(aVar.t));
         } else {
-            q3Var.u3.put(Long.valueOf(j3), f10);
+            richText = null;
         }
-    }
-
-    public a getRow() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Cells.g9
-    public final void k(ArrayList arrayList) {
-        e1 e1Var = this.r;
-        Layout layout = e1Var.getLayout();
-        if (layout == null) {
+        if (String.valueOf(e1Var.getText()).equals(b6.l(richText))) {
             return;
         }
-        arrayList.add(new z4(layout, e1Var.getPaddingLeft() + e1Var.getLeft(), e1Var.getPaddingTop() + e1Var.getTop(), 0));
+        e1Var.setTextSilently(j6.m(b6.r(richText, null, true), e1Var.getPaint().getFontMetricsInt(), false, null, 0));
+        e1Var.f();
     }
 
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        e1 e1Var = this.r;
-        e1Var.updateColors();
-        int i7 = j6.Fi;
-        e6 e6Var = this.n;
-        e1Var.setTextColor(j6.w0(i7, e6Var));
-        e1Var.setHintTextColor(j6.r1(0.5f, j6.w0(i7, e6Var)));
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        return new d5(context, i6Var);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean f() {
+        return false;
     }
 }

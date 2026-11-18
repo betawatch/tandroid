@@ -1,13 +1,12 @@
 package tg;
 
-import c8.ja;
-import hi.p4;
-import hi.p5;
+import c8.ma;
+import hi.o4;
 import java.util.List;
-import org.telegram.ui.Components.fz0;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.mz0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -23,10 +22,10 @@ public final /* synthetic */ class n implements Runnable {
         switch (this.a) {
             case 0:
                 g0 g0Var = this.b;
-                fz0 fz0Var = g0Var.K0;
-                if (fz0Var != null) {
+                mz0 mz0Var = g0Var.K0;
+                if (mz0Var != null) {
                     g0Var.K0 = null;
-                    g0Var.removeView(fz0Var);
+                    g0Var.removeView(mz0Var);
                     break;
                 }
                 break;
@@ -59,14 +58,14 @@ public final /* synthetic */ class n implements Runnable {
                         sg.g gVar = (sg.g) list.get(i7);
                         int m10 = z10 ? gVar.m() : gVar.e();
                         String n10 = gVar.n();
-                        u11 u11Var = new u11(g0Var3, gVar, m10, 26);
+                        h01 h01Var = new h01(g0Var3, gVar, m10, 27);
                         f0 f0Var = new f0(g0Var3, g0Var3.getContext());
                         f0Var.setIcon(m10);
                         f0Var.setText(n10);
                         f0Var.setSelected(false);
-                        f0Var.setOnClickListener(new p5(u11Var, 29));
-                        f0Var.setOnLongClickListener(new p4(g0Var3, 6));
-                        g0Var3.C1.a(f0Var, ja.o(-1, 48));
+                        f0Var.setOnClickListener(new sh.b(h01Var, 1));
+                        f0Var.setOnLongClickListener(new o4(g0Var3, 6));
+                        g0Var3.C1.a(f0Var, ma.o(-1, 48));
                         i7++;
                     }
                 }

@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
 import m.o3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class z0 extends q6.h {
     public final ExecutorService F;
@@ -47,7 +47,7 @@ public final class z0 extends q6.h {
         this.N = new g0(0);
         this.O = new g0(0);
         this.P = new g0(0);
-        q6.m.g(unconfigurableExecutorService);
+        q6.m.h(unconfigurableExecutorService);
         this.F = unconfigurableExecutorService;
         this.Q = a10;
         File file = new File(new File(context.getFilesDir(), "wearos_assets"), "streamtmp");
@@ -86,13 +86,13 @@ public final class z0 extends q6.h {
                         intent = new Intent("android.intent.action.VIEW", Uri.parse("market://details").buildUpon().appendQueryParameter("id", "com.google.android.wearable.app.cn").build());
                     }
                     PendingIntent activity = PendingIntent.getActivity(context, 0, intent, i8.b.a);
-                    q6.m.h(bVar, "Connection progress callbacks cannot be null.");
+                    q6.m.i(bVar, "Connection progress callbacks cannot be null.");
                     this.o = bVar;
                     c0Var.sendMessage(c0Var.obtainMessage(3, atomicInteger.get(), 6, activity));
                     return;
                 }
             } catch (PackageManager.NameNotFoundException unused) {
-                q6.m.h(bVar, "Connection progress callbacks cannot be null.");
+                q6.m.i(bVar, "Connection progress callbacks cannot be null.");
                 this.o = bVar;
                 c0Var.sendMessage(c0Var.obtainMessage(3, atomicInteger.get(), 16, null));
                 return;

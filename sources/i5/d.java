@@ -2,12 +2,11 @@ package i5;
 
 import a8.p0;
 import ab.c0;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff e;
+    public static final /* synthetic */ ze.b e;
 
     static {
         ze.a aVar = new ze.a(d.class, "ChunkOffsetBox.java");
@@ -21,7 +20,7 @@ public abstract class d extends com.googlecode.mp4parser.c {
         StringBuilder sb2 = new StringBuilder(getClass().getSimpleName());
         sb2.append("[entryCount=");
         u uVar = (u) this;
-        c.u(ze.a.b(u.h, uVar, uVar));
+        c.w(ze.a.b(u.h, uVar, uVar));
         return p0.n(uVar.f.length, "]", sb2);
     }
 }

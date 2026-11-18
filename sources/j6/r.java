@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends a8.q implements e {
     public final /* synthetic */ int b;
@@ -24,12 +24,12 @@ public final class r extends a8.q implements e {
         }
         Bundle bundle = (Bundle) com.google.android.gms.internal.cast.t.a(parcel, Bundle.CREATOR);
         com.google.android.gms.internal.cast.t.b(parcel);
-        z0(bundle);
+        y0(bundle);
         return true;
     }
 
     @Override // j6.e
-    public final void z0(Bundle bundle) {
+    public final void y0(Bundle bundle) {
         switch (this.b) {
             case 0:
                 this.c.setResult(bundle);

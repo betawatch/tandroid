@@ -21,7 +21,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import m.o3;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h1 implements r0 {
     public final Context a;
@@ -45,8 +45,8 @@ public final class h1 implements r0 {
         this.o = reentrantLock;
         this.c = looper;
         this.j = cVar;
-        this.d = new i0(context, f0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new ob.c(this, 12));
-        this.e = new i0(context, f0Var, reentrantLock, looper, eVar, fVar, o3Var, fVar3, eVar2, arrayList, new cb.c(this, 14));
+        this.d = new i0(context, f0Var, reentrantLock, looper, eVar, fVar2, null, fVar4, null, arrayList2, new cb.c(this, 13));
+        this.e = new i0(context, f0Var, reentrantLock, looper, eVar, fVar, o3Var, fVar3, eVar2, arrayList, new d6.i(this, 10));
         a0.f fVar5 = new a0.f(0);
         Iterator it = ((a0.c) fVar2.keySet()).iterator();
         while (it.hasNext()) {
@@ -72,7 +72,7 @@ public final class h1 implements r0 {
     @Override // com.google.android.gms.common.api.internal.r0
     public final d b(d dVar) {
         i0 i0Var = (i0) this.f.get(dVar.o);
-        q6.m.h(i0Var, "GoogleApiClient is not configured to use the API required for this call.");
+        q6.m.i(i0Var, "GoogleApiClient is not configured to use the API required for this call.");
         if (!i0Var.equals(this.e)) {
             i0 i0Var2 = this.d;
             i0Var2.getClass();
@@ -217,7 +217,7 @@ public final class h1 implements r0 {
             if (aVar4 != null && (aVar2 = this.m) != null && aVar2.c()) {
                 i0Var2.c();
                 n6.a aVar5 = this.l;
-                q6.m.g(aVar5);
+                q6.m.h(aVar5);
                 k(aVar5);
                 return;
             }
@@ -253,8 +253,8 @@ public final class h1 implements r0 {
                 this.p = 0;
             } else {
                 f0 f0Var = this.b;
-                q6.m.g(f0Var);
-                f0Var.j(this.k);
+                q6.m.h(f0Var);
+                f0Var.m(this.k);
             }
         }
         h();
@@ -268,7 +268,7 @@ public final class h1 implements r0 {
                 Log.wtf("CompositeGAC", "Attempted to call failure callbacks in CONNECTION_MODE_NONE. Callbacks should be disabled via GmsClientSupervisor", new Exception());
                 this.p = 0;
             }
-            this.b.g(aVar);
+            this.b.i(aVar);
         }
         h();
         this.p = 0;

@@ -1,6 +1,6 @@
 package c1;
 
-import a8.o9;
+import a8.p9;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -15,6 +15,7 @@ import f7.i;
 import f7.k;
 import f7.r;
 import f7.u;
+import hi.u5;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
 import kotlin.jvm.internal.j;
@@ -29,7 +30,7 @@ import v0.n;
 import v0.p;
 import w0.h;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends b1.d {
     public final Context e;
@@ -129,7 +130,7 @@ public final class f extends b1.d {
                     String str6 = kVar3.b;
                     x0.a aVar = (x0.a) d1.g.a.get(rVar);
                     if (aVar == null) {
-                        throw new y0.b(new x0.a(26), r.b.k("unknown fido gms exception - ", str6));
+                        throw new y0.b(new x0.a(26), p5.c.k("unknown fido gms exception - ", str6));
                     }
                     if (rVar == r.x && str6 != null && xd.d.e(str6, "Unable to get sync account")) {
                         throw new w0.g("Passkey retrieval was cancelled by the user.");
@@ -273,7 +274,7 @@ public final class f extends b1.d {
                     if (optString.length() == 0) {
                         throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
                     }
-                    cVar = new a6.c(true, o9.a(jSONObject), optString);
+                    cVar = new a6.c(true, p9.a(jSONObject), optString);
                 }
                 z10 = true;
             }
@@ -284,10 +285,9 @@ public final class f extends b1.d {
         a6.e eVar = new a6.e(dVar, aVar, a10.l, false, 0, cVar, bVar2, z11);
         t b10 = com.google.android.gms.common.api.internal.u.b();
         b10.d = new n6.c[]{new n6.c("auth_api_credentials_begin_sign_in", 8L)};
-        int i7 = 8;
-        b10.c = new ia.d(a10, eVar, i7);
+        b10.c = new u5(a10, eVar, 11);
         b10.b = false;
         b10.a = 1553;
-        a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 15)).addOnFailureListener(new ab.g(i7, this, cancellationSignal));
+        a10.e(0, b10.a()).addOnSuccessListener(new a1.c(new ae.d(2, cancellationSignal, this), 15)).addOnFailureListener(new ab.g(7, this, cancellationSignal));
     }
 }

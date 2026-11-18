@@ -1,12 +1,11 @@
 package gb;
 
-import a8.bb;
 import android.content.Context;
 import android.os.Process;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d0 {
     public final Context a;
@@ -21,7 +20,7 @@ public final class d0 {
         kotlin.jvm.internal.j.e(uuidGenerator, "uuidGenerator");
         this.a = appContext;
         final int i7 = 0;
-        this.b = bb.b(new rd.a(this) { // from class: gb.c0
+        this.b = b5.a.c(new rd.a(this) { // from class: gb.c0
             public final /* synthetic */ d0 b;
 
             {
@@ -39,9 +38,9 @@ public final class d0 {
             }
         });
         this.c = Process.myPid();
-        this.d = bb.b(new androidx.activity.d(uuidGenerator, 1));
+        this.d = b5.a.c(new androidx.activity.d(uuidGenerator, 1));
         final int i10 = 1;
-        this.e = bb.b(new rd.a(this) { // from class: gb.c0
+        this.e = b5.a.c(new rd.a(this) { // from class: gb.c0
             public final /* synthetic */ d0 b;
 
             {

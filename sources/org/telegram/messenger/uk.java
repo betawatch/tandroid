@@ -1,31 +1,19 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class uk implements Runnable {
+public final /* synthetic */ class uk implements IntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ TLRPC.Updates c;
-    public final /* synthetic */ boolean d;
 
-    public /* synthetic */ uk(np npVar, TLRPC.Updates updates, boolean z10, int i7) {
-        this.a = i7;
-        this.b = npVar;
-        this.c = updates;
-        this.d = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i7) {
         switch (this.a) {
             case 0:
-                this.b.O3(this.c, this.d);
-                break;
+                return new int[i7][];
             default:
-                Utilities.d.c(new uk(this.b, this.c, this.d, 0));
-                break;
+                return String.valueOf(i7);
         }
     }
 }

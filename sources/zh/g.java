@@ -3,34 +3,34 @@ package zh;
 import android.util.LongSparseArray;
 import android.view.View;
 import android.view.ViewGroup;
-import hi.q2;
+import hi.r2;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.j5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.t8;
-import org.telegram.ui.Components.tj0;
-import v4.e1;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.n5;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.kj0;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g extends tj0 {
+public final class g extends bk0 {
     public final /* synthetic */ l c;
 
     public g(l lVar) {
         this.c = lVar;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(e1 e1Var) {
-        return e1Var.f == 0;
+    @Override // org.telegram.ui.Components.bk0
+    public final boolean D(f1 f1Var) {
+        return f1Var.f == 0;
     }
 
     public final void E(List list) {
@@ -63,13 +63,13 @@ public final class g extends tj0 {
         }
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int b() {
         l lVar = this.c;
         return ((lVar.c.isEmpty() || !lVar.x) ? 0 : 1) + lVar.c.size() + (!lVar.B ? 1 : 0);
     }
 
-    @Override // v4.h0
+    @Override // v4.i0
     public final int d(int i7) {
         l lVar = this.c;
         if (i7 != 0 || lVar.B) {
@@ -78,12 +78,12 @@ public final class g extends tj0 {
         return 2;
     }
 
-    @Override // v4.h0
-    public final void t(e1 e1Var, int i7) {
+    @Override // v4.i0
+    public final void t(f1 f1Var, int i7) {
         l lVar = this.c;
         ArrayList arrayList = lVar.c;
-        int i10 = e1Var.f;
-        View view = e1Var.a;
+        int i10 = f1Var.f;
+        View view = f1Var.a;
         if (i10 != 0) {
             if (i10 == 2) {
                 view.requestLayout();
@@ -91,40 +91,40 @@ public final class g extends tj0 {
             }
             return;
         }
-        e5 e5Var = (e5) view;
+        f5 f5Var = (f5) view;
         int i11 = i7 - (!lVar.B ? 1 : 0);
         LongSparseArray longSparseArray = lVar.d;
         TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) arrayList.get(i11);
         boolean z10 = i11 != arrayList.size() - 1 || lVar.x;
-        j5 j5Var = e5Var.d;
-        e5Var.e = tL_chatInviteImporter;
-        e5Var.f = z10;
-        e5Var.setWillNotDraw(!z10);
+        n5 n5Var = f5Var.d;
+        f5Var.e = tL_chatInviteImporter;
+        f5Var.f = z10;
+        f5Var.setWillNotDraw(!z10);
         TLRPC.User user = (TLRPC.User) longSparseArray.get(tL_chatInviteImporter.user_id);
-        t8 t8Var = e5Var.a;
-        t8Var.r(user);
-        e5Var.b.f(user, t8Var);
-        e5Var.c.l(q10.p(user), false);
-        String s5 = hd.s(tL_chatInviteImporter.date, false);
+        b9 b9Var = f5Var.a;
+        b9Var.r(user);
+        f5Var.b.f(user, b9Var);
+        f5Var.c.l(o10.q(user), false);
+        String s5 = gd.s(tL_chatInviteImporter.date, false);
         if (tL_chatInviteImporter.via_chatlist) {
-            j5Var.l(hd.M0(2131749069, null), false);
+            n5Var.l(gd.M0(2131748877, null), false);
             return;
         }
         long j3 = tL_chatInviteImporter.approved_by;
         if (j3 == 0) {
-            j5Var.l(hd.a0("RequestedToJoinAt", null, 2131746160, s5), false);
+            n5Var.l(gd.a0("RequestedToJoinAt", null, 2131745965, s5), false);
             return;
         }
         TLRPC.User user2 = (TLRPC.User) longSparseArray.get(j3);
         if (user2 != null) {
-            j5Var.l(hd.a0("AddedBy", null, 2131754361, q10.j(user2, true), s5), false);
+            n5Var.l(gd.a0("AddedBy", null, 2131754359, o10.k(user2, true), s5), false);
         } else {
-            j5Var.l("", false);
+            n5Var.l("", false);
         }
     }
 
-    @Override // v4.h0
-    public final e1 x(ViewGroup viewGroup, int i7) {
+    @Override // v4.i0
+    public final f1 x(ViewGroup viewGroup, int i7) {
         View view;
         l lVar = this.c;
         boolean z10 = lVar.a;
@@ -137,21 +137,21 @@ public final class g extends tj0 {
         } else if (i7 == 3) {
             view = new View(viewGroup.getContext());
         } else if (i7 != 4) {
-            view = new e5(viewGroup.getContext(), lVar, z10);
+            view = new f5(viewGroup.getContext(), lVar, z10);
         } else {
-            e2 e2Var = lVar.g;
-            q2 q2Var = new q2(2, e2Var.getParentActivity(), e2Var.getResourceProvider());
+            h2 h2Var = lVar.g;
+            r2 r2Var = new r2(3, h2Var.getParentActivity(), h2Var.getResourceProvider());
             if (lVar.B) {
-                q6.h(j6.d6, q2Var, e2Var.getResourceProvider());
+                u6.h(n6.d6, r2Var, h2Var.getResourceProvider());
             }
-            q2Var.e(j6.d6, j6.a7, -1);
-            q2Var.setViewType(15);
-            q2Var.setMemberRequestButton(z10);
-            q2Var.setIsSingleCell(true);
-            q2Var.setItemsCount(1);
-            q2Var.setTag(-33024);
-            view = q2Var;
+            r2Var.e(n6.d6, n6.a7, -1);
+            r2Var.setViewType(15);
+            r2Var.setMemberRequestButton(z10);
+            r2Var.setIsSingleCell(true);
+            r2Var.setItemsCount(1);
+            r2Var.setTag(-33024);
+            view = r2Var;
         }
-        return new cj0(view);
+        return new kj0(view);
     }
 }

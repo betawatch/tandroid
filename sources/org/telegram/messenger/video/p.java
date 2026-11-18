@@ -1,28 +1,24 @@
 package org.telegram.messenger.video;
 
-import org.telegram.messenger.video.VideoPlayerHolderBase;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ VideoPlayerRewinder b;
 
-    public /* synthetic */ p(Object obj, long j3, int i7) {
+    public /* synthetic */ p(VideoPlayerRewinder videoPlayerRewinder, int i7) {
         this.a = i7;
-        this.c = obj;
-        this.b = j3;
+        this.b = videoPlayerRewinder;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((VideoPlayerHolderBase.2) this.c).lambda$onError$0(this.b);
+                this.b.lambda$updateRewindSpeed$0();
                 break;
             default:
-                ((VideoPlayerHolderBase) this.c).lambda$seekTo$11(this.b);
+                this.b.lambda$cancelRewind$1();
                 break;
         }
     }

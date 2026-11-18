@@ -1,65 +1,32 @@
 package bg;
 
-import android.graphics.Canvas;
 import android.graphics.Outline;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.os.Build;
-import android.os.Looper;
+import android.view.View;
 import android.view.ViewOutlineProvider;
-import org.telegram.ui.r3;
-import org.telegram.ui.yl0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class t0 {
-    public static final p0 a = new p0(0);
-    public static final p0 b = new p0(1);
-    public static Path c;
-    public static Outline d;
-    public static Rect e;
+public final class t0 extends ViewOutlineProvider {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ boolean e;
 
-    public static void a(Canvas canvas, yl0 yl0Var, r3 r3Var) {
-        Path path;
-        Outline outline;
-        Rect rect;
-        ViewOutlineProvider outlineProvider = yl0Var.getOutlineProvider();
-        if (canvas.isHardwareAccelerated() || Build.VERSION.SDK_INT < 24 || !yl0Var.getClipToOutline() || outlineProvider == null) {
-            r3Var.a(canvas);
-            return;
-        }
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            if (c == null) {
-                c = new Path();
-                d = new Outline();
-                e = new Rect();
-            }
-            path = c;
-            outline = d;
-            rect = e;
-            outline.setEmpty();
-            rect.setEmpty();
-        } else {
-            path = new Path();
-            outline = new Outline();
-            rect = new Rect();
-        }
-        Path path2 = path;
-        outlineProvider.getOutline(yl0Var, outline);
-        path2.rewind();
-        if (outline.isEmpty() || !outline.getRect(rect)) {
-            r3Var.a(canvas);
-            return;
-        }
-        float radius = outline.getRadius();
-        if (radius > 0.0f) {
-            path2.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, radius, radius, Path.Direction.CW);
-        } else {
-            path2.addRect(rect.left, rect.top, rect.right, rect.bottom, Path.Direction.CW);
-        }
-        int save = canvas.save();
-        canvas.clipPath(path2);
-        r3Var.a(canvas);
-        canvas.restoreToCount(save);
+    public t0(int i7, boolean z10, boolean z11, boolean z12, boolean z13) {
+        this.a = z10;
+        this.b = i7;
+        this.c = z11;
+        this.d = z12;
+        this.e = z13;
+    }
+
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        int width = view.getWidth();
+        int height = view.getHeight();
+        boolean z10 = this.a;
+        int i7 = this.b;
+        outline.setRoundRect(-(z10 ? 0 : i7), -(this.c ? 0 : i7), width + (this.d ? 0 : i7), height + (this.e ? 0 : i7), i7);
     }
 }

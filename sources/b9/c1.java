@@ -2,10 +2,10 @@ package b9;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c1 extends r6.a {
     public static final Parcelable.Creator<c1> CREATOR = new o0(9);
@@ -86,7 +86,7 @@ public final class c1 extends r6.a {
         sb2.append("', eventId=");
         sb2.append((int) this.n);
         sb2.append(", eventFlags=");
-        i5.c.y(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
+        i5.c.z(sb2, this.r, ", categoryId=", this.s, ", categoryCount=");
         sb2.append((int) this.w);
         sb2.append(", packageName='");
         sb2.append(this.x);
@@ -96,29 +96,29 @@ public final class c1 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 2, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.a);
         String str = this.b;
-        yb.l(parcel, 3, str);
-        yb.l(parcel, 4, this.c);
-        yb.l(parcel, 5, this.d);
-        yb.l(parcel, 6, this.e);
-        yb.l(parcel, 7, this.f);
+        bc.l(parcel, 3, str);
+        bc.l(parcel, 4, this.c);
+        bc.l(parcel, 5, this.d);
+        bc.l(parcel, 6, this.e);
+        bc.l(parcel, 7, this.f);
         String str2 = this.h;
         if (str2 != null) {
             str = str2;
         }
-        yb.l(parcel, 8, str);
-        yb.q(parcel, 9, 4);
+        bc.l(parcel, 8, str);
+        bc.q(parcel, 9, 4);
         parcel.writeInt(this.n);
-        yb.q(parcel, 10, 4);
+        bc.q(parcel, 10, 4);
         parcel.writeInt(this.r);
-        yb.q(parcel, 11, 4);
+        bc.q(parcel, 11, 4);
         parcel.writeInt(this.s);
-        yb.q(parcel, 12, 4);
+        bc.q(parcel, 12, 4);
         parcel.writeInt(this.w);
-        yb.l(parcel, 13, this.x);
-        yb.s(parcel, r10);
+        bc.l(parcel, 13, this.x);
+        bc.s(parcel, r10);
     }
 }

@@ -2,39 +2,39 @@ package ki;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class i extends a41 {
+public final class i extends k41 {
     static {
-        a41.h(new i());
+        k41.h(new i());
     }
 
-    public static b41 i(int i7, String str, String str2) {
-        b41 K = b41.K(i.class);
+    public static l41 i(int i7, String str, String str2) {
+        l41 K = l41.K(i.class);
         K.k = i7;
-        K.l = str;
-        K.m = str2;
+        K.m = str;
+        K.n = str2;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        ((j) view).a(b41Var.k, b41Var.l, b41Var.m);
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        ((j) view).a(l41Var.k, l41Var.m, l41Var.n);
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        return new j(context, e6Var, false);
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        return new j(context, i6Var, false);
     }
 
-    @Override // org.telegram.ui.Components.a41
+    @Override // org.telegram.ui.Components.k41
     public final boolean f() {
         return false;
     }

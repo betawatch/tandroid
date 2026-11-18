@@ -3,37 +3,37 @@ package ki;
 import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g extends a41 {
+public final class g extends k41 {
     static {
-        a41.h(new g());
+        k41.h(new g());
     }
 
-    public static b41 i(int i7, int i10, CharSequence charSequence, String str) {
-        b41 K = b41.K(g.class);
+    public static l41 i(int i7, int i10, CharSequence charSequence, String str) {
+        l41 K = l41.K(g.class);
         K.d = i7;
-        K.z = i10;
+        K.A = i10;
         K.k = R.drawable.filled_earn_stars;
-        K.l = charSequence;
-        K.m = str;
+        K.m = charSequence;
+        K.n = str;
         return K;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        ((h) view).a(b41Var.z, b41Var.k, b41Var.l, b41Var.m);
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        ((h) view).a(l41Var.A, l41Var.k, l41Var.m, l41Var.n);
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        return new h(context, e6Var);
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        return new h(context, i6Var);
     }
 }

@@ -1,70 +1,47 @@
 package org.telegram.ui;
 
 import android.view.View;
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class df implements View.OnClickListener {
+public final /* synthetic */ class df implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ Serializable h;
-    public final /* synthetic */ TLRPC.InputPeer n;
-    public final /* synthetic */ int[] r;
-    public final /* synthetic */ boolean s;
-    public final /* synthetic */ cf w;
-    public final /* synthetic */ Object x;
+    public final /* synthetic */ bn b;
 
-    public /* synthetic */ df(an anVar, int i7, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, cf cfVar, int i10) {
-        this.a = i10;
-        this.b = anVar;
-        this.c = i7;
-        this.d = arrayList;
-        this.e = str;
-        this.f = str2;
-        this.h = str3;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.x = obj;
-        this.s = z10;
-        this.w = cfVar;
+    public /* synthetic */ df(bn bnVar, int i7) {
+        this.a = i7;
+        this.b = bnVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        org.telegram.messenger.fj fjVar;
+        org.telegram.messenger.fj fjVar2;
         switch (this.a) {
             case 0:
-                an.s0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.x, this.s, this.w);
-                break;
+                bn bnVar = this.b;
+                org.telegram.messenger.fj fjVar3 = bnVar.v5;
+                if (fjVar3 == null) {
+                    return false;
+                }
+                if (org.telegram.messenger.g0.g(fjVar3.T0)) {
+                    new org.telegram.ui.Components.lc(org.telegram.ui.Components.cb.a(bnVar.getParentActivity()), bnVar.Ba).k(false).j();
+                }
+                return true;
             case 1:
-                an.E0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.x, this.s, this.w);
-                break;
+                return bn.H0(this.b);
             default:
-                an.z0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.x, this.s, this.w);
-                break;
+                bn bnVar2 = this.b;
+                int i7 = bnVar2.Sb;
+                if (i7 == 1 && (fjVar2 = bnVar2.H5) != null) {
+                    bnVar2.l(fjVar2.e1(), 0, true, 0, true, 0);
+                    return true;
+                }
+                if (bnVar2.x5 == null || i7 != 2 || (fjVar = bnVar2.F5) == null) {
+                    return false;
+                }
+                bnVar2.l(fjVar.e1(), 0, true, 0, true, 0);
+                return true;
         }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ df(an anVar, int i7, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, cf cfVar) {
-        this.a = 2;
-        this.b = anVar;
-        this.c = i7;
-        this.d = arrayList;
-        this.h = strArr;
-        this.e = str;
-        this.f = str2;
-        this.n = inputPeer;
-        this.r = iArr;
-        this.x = charSequence;
-        this.s = z10;
-        this.w = cfVar;
     }
 }

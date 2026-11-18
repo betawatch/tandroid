@@ -1,63 +1,55 @@
 package bi;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.webkit.JsPromptResult;
-import android.widget.TextView;
-import org.telegram.messenger.z10;
-import org.telegram.ui.Components.ft;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k3 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class k3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ o3 b;
 
-    public /* synthetic */ k3(Object obj, Object obj2, Object obj3, Object obj4, int i7) {
+    public /* synthetic */ k3(o3 o3Var, int i7) {
         this.a = i7;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+        this.b = o3Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                j3 j3Var = (j3) this.b;
-                if (i7 != 6) {
-                    return false;
+                o3 o3Var = this.b;
+                if (o3Var.l2) {
+                    o3Var.l2 = false;
+                    o3Var.d2.setLoading(false);
+                    o3Var.g1();
+                    break;
                 }
-                String obj = j3Var.getText().toString();
-                if (obj.length() <= 0 || obj.length() > 12) {
-                    org.telegram.messenger.g0.E3(j3Var);
-                } else {
-                    ((z10) this.c).a(obj);
-                    org.telegram.ui.ActionBar.t1 t1Var = ((org.telegram.ui.ActionBar.t1[]) this.d)[0];
-                    if (t1Var != null) {
-                        t1Var.dismiss();
-                    }
-                    View view = (View) this.e;
-                    if (view != null) {
-                        view.requestFocus();
+                break;
+            case 1:
+                o3 o3Var2 = this.b;
+                if (!o3Var2.j2) {
+                    o3Var2.j2 = true;
+                    o3Var2.i2 = false;
+                    o3Var2.h2 = false;
+                    o3Var2.dismiss();
+                    Runnable runnable = o3Var2.r2;
+                    if (runnable != null) {
+                        runnable.run();
                     }
                 }
-                return true;
+                if (!o3Var2.k2) {
+                    o3Var2.k2 = true;
+                    ai.a1 a1Var = o3Var2.t2;
+                    if (a1Var != null) {
+                        a1Var.run();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                this.b.f1();
+                break;
             default:
-                if (i7 != 6) {
-                    return false;
-                }
-                boolean[] zArr = (boolean[]) this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    ((JsPromptResult) this.c).confirm(((ft) this.d).getText().toString());
-                    ((org.telegram.ui.ActionBar.t1) this.e).dismiss();
-                }
-                return true;
+                this.b.dismiss();
+                break;
         }
     }
 }

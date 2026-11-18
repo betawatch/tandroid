@@ -2,7 +2,7 @@ package j6;
 
 import android.os.SystemClock;
 import android.util.Log;
-import c8.a1;
+import c8.c1;
 import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.Iterator;
@@ -12,14 +12,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m extends q {
     public static final String v;
     public long e;
     public f6.q f;
     public Long g;
-    public gc.b h;
+    public d6.i h;
     public int i;
     public final p j;
     public final p k;
@@ -125,7 +125,7 @@ public final class m extends q {
             if (i7 != 0) {
                 jSONObject.put("jump", i7);
             }
-            String b11 = a1.b(num);
+            String b11 = c1.b(num);
             if (b11 != null) {
                 jSONObject.put("repeatMode", b11);
             }
@@ -176,9 +176,9 @@ public final class m extends q {
     }
 
     public final void i() {
-        gc.b bVar = this.h;
-        if (bVar != null) {
-            h6.h hVar = (h6.h) bVar.b;
+        d6.i iVar = this.h;
+        if (iVar != null) {
+            h6.h hVar = (h6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -192,9 +192,9 @@ public final class m extends q {
     }
 
     public final void j() {
-        gc.b bVar = this.h;
-        if (bVar != null) {
-            h6.h hVar = (h6.h) bVar.b;
+        d6.i iVar = this.h;
+        if (iVar != null) {
+            h6.h hVar = (h6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -208,9 +208,9 @@ public final class m extends q {
     }
 
     public final void k() {
-        gc.b bVar = this.h;
-        if (bVar != null) {
-            h6.h hVar = (h6.h) bVar.b;
+        d6.i iVar = this.h;
+        if (iVar != null) {
+            h6.h hVar = (h6.h) iVar.b;
             Iterator it = hVar.h.iterator();
             if (it.hasNext()) {
                 it.next().getClass();
@@ -224,9 +224,9 @@ public final class m extends q {
     }
 
     public final void l() {
-        gc.b bVar = this.h;
-        if (bVar != null) {
-            h6.h hVar = (h6.h) bVar.b;
+        d6.i iVar = this.h;
+        if (iVar != null) {
+            h6.h hVar = (h6.h) iVar.b;
             Iterator it = hVar.j.values().iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {

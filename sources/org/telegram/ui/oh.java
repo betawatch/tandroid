@@ -1,90 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseArray;
 import android.util.SparseIntArray;
-import android.view.View;
-import java.util.List;
-import org.telegram.tgnet.TLRPC;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class oh extends c5.a {
+public final class oh implements c5.h {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
     public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ org.telegram.messenger.gj g;
-    public final /* synthetic */ org.telegram.ui.Components.lh0 h;
-    public final /* synthetic */ org.telegram.messenger.gj i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ c5.l l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ an p;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
 
-    public oh(an anVar, int i7, SparseArray sparseArray, boolean z10, List list, org.telegram.messenger.gj gjVar, org.telegram.ui.Components.lh0 lh0Var, org.telegram.messenger.gj gjVar2, SparseIntArray sparseIntArray, int i10, c5.l lVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i11) {
-        this.p = anVar;
+    public oh(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i7, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
         this.c = i7;
-        this.d = sparseArray;
-        this.e = z10;
-        this.f = list;
-        this.g = gjVar;
-        this.h = lh0Var;
-        this.i = gjVar2;
-        this.j = sparseIntArray;
-        this.k = i10;
-        this.l = lVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i11;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
     }
 
-    @Override // c5.a
-    public final void a(c5.l lVar, Object obj) {
-        lVar.removeView((View) obj);
+    @Override // c5.h
+    public final void a(int i7) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i7), true);
     }
 
-    @Override // c5.a
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // c5.a
-    public final Object e(c5.l lVar, int i7) {
-        int i10;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i7);
-        if (view != null) {
-            lVar.addView(view);
-            return view;
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
+            return;
         }
-        int i11 = this.e ? i7 - 1 : i7;
-        TLRPC.ReactionCount reactionCount = i11 >= 0 ? (TLRPC.ReactionCount) this.f.get(i11) : null;
-        Context context = lVar.getContext();
-        an anVar = this.p;
-        ym ymVar = anVar.Aa;
-        i10 = ((org.telegram.ui.ActionBar.e2) anVar).currentAccount;
-        org.telegram.ui.Components.vh0 vh0Var = new org.telegram.ui.Components.vh0(context, ymVar, i10, this.g, reactionCount, true);
-        org.telegram.ui.Components.lh0 lh0Var = this.h;
-        vh0Var.h(lh0Var.getSeenUsers());
-        vh0Var.H = new w0(this, 18);
-        vh0Var.F = new m2.d(17, this, this.i);
-        vh0Var.E = new ki.b4(this.j, i7, this.k, this.l, this.m, this.n);
-        if (i11 < 0) {
-            vh0Var.setPredictiveCount(this.o);
-            lh0Var.setSeenCallback(new f3(vh0Var, 1));
+        float f11 = -1.0f;
+        float f12 = -1.0f;
+        int i11 = 0;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i11 >= childCount) {
+                break;
+            }
+            org.telegram.ui.Components.fi0 fi0Var = (org.telegram.ui.Components.fi0) linearLayout.getChildAt(i11);
+            fi0Var.setOutlineProgress(i11 == i7 ? 1.0f - f10 : i11 == (i7 + 1) % this.c ? f10 : 0.0f);
+            if (i11 == i7) {
+                f11 = fi0Var.getX() - ((horizontalScrollView.getWidth() - fi0Var.getWidth()) / 2.0f);
+            }
+            if (i11 == i7 + 1) {
+                f12 = fi0Var.getX() - ((horizontalScrollView.getWidth() - fi0Var.getWidth()) / 2.0f);
+            }
+            i11++;
         }
-        lVar.addView(vh0Var);
-        sparseArray.put(i7, vh0Var);
-        return vh0Var;
+        if (f11 != -1.0f && f12 != -1.0f) {
+            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.z(f12, f11, f10, f11));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i7 + 1, 0) * f10) + ((1.0f - f10) * sparseIntArray.get(i7, 0))), false);
     }
 
-    @Override // c5.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    @Override // c5.h
+    public final void c(int i7) {
+        if (i7 == 0) {
+            this.a.set(false);
+        }
     }
 }

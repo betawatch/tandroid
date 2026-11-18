@@ -1,30 +1,30 @@
 package sg;
 
-import a8.t9;
+import a8.w9;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Matrix;
 import android.util.Log;
-import c8.i9;
-import fi.r5;
-import hi.g7;
+import c8.l9;
+import fi.p5;
+import hi.t6;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.p2;
-import org.telegram.messenger.r2;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.md;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.sp0;
+import org.telegram.messenger.q2;
+import org.telegram.messenger.s2;
+import org.telegram.ui.Components.kp0;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.wd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class v {
-    public static final er B = new er(0.0d, 0.5d, 0.0d, 1.0d);
+    public static final lr B = new lr(0.0d, 0.5d, 0.0d, 1.0d);
     public h A;
     public final u0 a;
     public boolean b;
@@ -57,7 +57,7 @@ public final class v {
     public v(u0 u0Var) {
         this.a = u0Var;
         Context context = u0Var.getContext();
-        g7 g7Var = new g7(this, 25);
+        t6 t6Var = new t6(this, 26);
         final b1 b1Var = new b1();
         b1Var.b = new ArrayList();
         b1Var.c = new ArrayList();
@@ -263,7 +263,7 @@ public final class v {
                                             }
                                         }
                                         x0Var = x0Var2;
-                                        if (r2.a) {
+                                        if (s2.a) {
                                             StringBuilder sb2 = new StringBuilder("took ");
                                             sb2.append(System.currentTimeMillis() - j10);
                                             sb2.append("ms to ");
@@ -272,13 +272,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.h3(new sp0(b1Var3, x0Var, i20, f11, 22));
+                                        org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
-                                    if (r2.a) {
+                                    if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.h3(new sp0(b1Var3, x0Var, i20, f11, 22));
+                                    org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
                                     b1Var3.j.set(false);
                                 }
                             } finally {
@@ -343,7 +343,7 @@ public final class v {
             }
         };
         b1Var.f = context;
-        b1Var.e = g7Var;
+        b1Var.e = t6Var;
         SharedPreferences sharedPreferences = context.getSharedPreferences("shapedetector_conf", 0);
         b1Var.g = sharedPreferences;
         b1Var.h = sharedPreferences.getBoolean("learning", false);
@@ -547,7 +547,7 @@ public final class v {
                                             }
                                         }
                                         x0Var = x0Var2;
-                                        if (r2.a) {
+                                        if (s2.a) {
                                             StringBuilder sb2 = new StringBuilder("took ");
                                             sb2.append(System.currentTimeMillis() - j10);
                                             sb2.append("ms to ");
@@ -556,13 +556,13 @@ public final class v {
                                             sb2.append(x0Var != null ? " (template#" + i20 + " shape#" + i22 + ")" : "");
                                             Log.i("shapedetector", sb2.toString());
                                         }
-                                        org.telegram.messenger.g0.h3(new sp0(b1Var3, x0Var, i20, f11, 22));
+                                        org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
                                         b1Var3.j.set(false);
                                     }
                                     x0Var = null;
-                                    if (r2.a) {
+                                    if (s2.a) {
                                     }
-                                    org.telegram.messenger.g0.h3(new sp0(b1Var3, x0Var, i20, f11, 22));
+                                    org.telegram.messenger.g0.g3(new kp0(b1Var3, x0Var, i20, f11, 23));
                                     b1Var3.j.set(false);
                                 }
                             } finally {
@@ -652,17 +652,17 @@ public final class v {
             this.j = false;
             this.b = false;
             if (z10 && (t0Var = u0Var.a) != null) {
-                t0Var.q0();
+                t0Var.n0();
             }
-            nt0 nt0Var = u0Var.getPainting().g;
+            vt0 vt0Var = u0Var.getPainting().g;
             m0 m0Var = this.g;
-            float a10 = t9.a((float) m0Var.a, (float) m0Var.b, 0.0f, 0.0f);
+            float a10 = w9.a((float) m0Var.a, (float) m0Var.b, 0.0f, 0.0f);
             m0 m0Var2 = this.g;
-            float max = Math.max(a10, t9.a((float) m0Var2.a, (float) m0Var2.b, nt0Var.a, 0.0f));
+            float max = Math.max(a10, w9.a((float) m0Var2.a, (float) m0Var2.b, vt0Var.a, 0.0f));
             m0 m0Var3 = this.g;
-            float a11 = t9.a((float) m0Var3.a, (float) m0Var3.b, 0.0f, nt0Var.b);
+            float a11 = w9.a((float) m0Var3.a, (float) m0Var3.b, 0.0f, vt0Var.b);
             m0 m0Var4 = this.g;
-            float max2 = Math.max(max, Math.max(a11, t9.a((float) m0Var4.a, (float) m0Var4.b, nt0Var.a, nt0Var.b))) / 0.84f;
+            float max2 = Math.max(max, Math.max(a11, w9.a((float) m0Var4.a, (float) m0Var4.b, vt0Var.a, vt0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
@@ -677,13 +677,13 @@ public final class v {
             m0 m0Var6 = new m0(m0Var5.a, m0Var5.b, 1.0d);
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.x = ofFloat;
-            ofFloat.addUpdateListener(new md(this, m0Var6, hVar, max2));
+            ofFloat.addUpdateListener(new wd(this, m0Var6, hVar, max2));
             this.x.addListener(new u(this, m0Var6, max2, hVar, z10, o0Var));
             this.x.setDuration(450L);
-            this.x.setInterpolator(er.h);
+            this.x.setInterpolator(lr.h);
             this.x.start();
             if (z10) {
-                p2.h.a();
+                q2.h.a();
             }
         }
     }
@@ -705,7 +705,7 @@ public final class v {
         t tVar = new t(this, j0Var, 0);
         boolean z11 = false;
         if (painting.L == null) {
-            painting.f.f(new r5(painting, j0Var, z10, z11, tVar, 5));
+            painting.f.f(new p5(painting, j0Var, z10, z11, tVar, 5));
         }
         this.f = false;
     }
@@ -742,7 +742,7 @@ public final class v {
             double d11 = f13;
             double d12 = (b11.a * d2) + (m0Var2.a * 2.0d * d11 * d) + (b10.a * d10);
             double d13 = (b11.b * d2) + (m0Var2.b * 2.0d * d11 * d) + (b10.b * d10);
-            double T1 = ((((b11.c * d2) + ((m0Var2.c * ((2.0f * f14) * f13)) + (b10.c * pow))) - 1.0d) * org.telegram.messenger.g0.T1(f10, 1.0f, i9.a(this.o / 16.0f, 0.0f, 1.0f))) + 1.0d;
+            double T1 = ((((b11.c * d2) + ((m0Var2.c * ((2.0f * f14) * f13)) + (b10.c * pow))) - 1.0d) * org.telegram.messenger.g0.T1(f10, 1.0f, l9.a(this.o / 16.0f, 0.0f, 1.0f))) + 1.0d;
             m0 m0Var4 = new m0(d12, d13, T1);
             if (this.c) {
                 m0Var4.d = true;

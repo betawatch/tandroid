@@ -1,13 +1,50 @@
 package bi;
 
-import android.view.ViewTreeObserver;
+import android.text.TextUtils;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements ViewTreeObserver.OnPreDrawListener {
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i7 = s2.u2;
-        return false;
+public final /* synthetic */ class j1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a2 b;
+
+    public /* synthetic */ j1(a2 a2Var, int i7) {
+        this.a = i7;
+        this.b = a2Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                a2 a2Var = this.b;
+                String str = a2Var.l2;
+                if (!TextUtils.isEmpty(str)) {
+                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
+                    tL_contacts_search.q = str;
+                    tL_contacts_search.limit = 50;
+                    a2Var.m2 = ConnectionsManager.getInstance(a2Var.a).sendRequest(tL_contacts_search, new k1(0, a2Var, str));
+                    break;
+                }
+                break;
+            case 1:
+                this.b.dismiss();
+                break;
+            case 2:
+                this.b.j2.O(false);
+                break;
+            default:
+                org.telegram.ui.ActionBar.h2 h2Var = this.b.s1;
+                if (h2Var != null) {
+                    org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
+                    f2Var.a = true;
+                    h2Var.showAsSheet(new PrivacyControlActivity(11, false), f2Var);
+                    break;
+                }
+                break;
+        }
     }
 }

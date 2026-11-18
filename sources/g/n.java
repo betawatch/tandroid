@@ -28,7 +28,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements Window.Callback {
     public final Window.Callback a;
@@ -75,7 +75,7 @@ public final class n implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.k(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -222,7 +222,7 @@ public final class n implements Window.Callback {
             if (i7 == 0) {
                 r q10 = sVar.q(i7);
                 if (q10.m) {
-                    sVar.h(q10, false);
+                    sVar.j(q10, false);
                     return;
                 }
                 return;
@@ -304,14 +304,14 @@ public final class n implements Window.Callback {
         c0 c0Var = new c0(context, callback);
         k.a aVar = sVar.y;
         if (aVar != null) {
-            aVar.b();
+            aVar.c();
         }
         q4.q qVar = new q4.q(21, sVar, c0Var);
         b0 r10 = sVar.r();
         if (r10 != null) {
             a0 a0Var = r10.i;
             if (a0Var != null) {
-                a0Var.b();
+                a0Var.c();
             }
             r10.c.setHideOnContentScrollEnabled(false);
             r10.f.e();
@@ -319,9 +319,9 @@ public final class n implements Window.Callback {
             l.k kVar = a0Var2.d;
             kVar.w();
             try {
-                if (((c0) a0Var2.e.b).E(a0Var2, kVar)) {
+                if (((c0) a0Var2.e.b).H(a0Var2, kVar)) {
                     r10.i = a0Var2;
-                    a0Var2.h();
+                    a0Var2.j();
                     r10.f.c(a0Var2);
                     r10.a(true);
                 } else {
@@ -339,7 +339,7 @@ public final class n implements Window.Callback {
             }
             k.a aVar2 = sVar.y;
             if (aVar2 != null) {
-                aVar2.b();
+                aVar2.c();
             }
             if (sVar.E == null) {
                 if (sVar.S) {
@@ -367,7 +367,7 @@ public final class n implements Window.Callback {
                 } else {
                     ViewStubCompat viewStubCompat = (ViewStubCompat) sVar.K.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
-                        viewStubCompat.setLayoutInflater(LayoutInflater.from(sVar.n()));
+                        viewStubCompat.setLayoutInflater(LayoutInflater.from(sVar.o()));
                         sVar.E = (ActionBarContextView) viewStubCompat.a();
                     }
                 }
@@ -388,8 +388,8 @@ public final class n implements Window.Callback {
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (c0Var.E(dVar, kVar2)) {
-                    dVar.h();
+                if (c0Var.H(dVar, kVar2)) {
+                    dVar.j();
                     sVar.E.c(dVar);
                     sVar.y = dVar;
                     if (sVar.J && (viewGroup = sVar.K) != null) {

@@ -2,7 +2,7 @@ package s4;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q0 extends q implements n0 {
     public final String a;
@@ -104,7 +104,7 @@ public final class q0 extends q implements n0 {
         m0 m0Var = this.f;
         if (m0Var != null) {
             int i10 = this.g;
-            Bundle f10 = r.b.f(i7, "unselectReason");
+            Bundle f10 = p5.c.f(i7, "unselectReason");
             int i11 = m0Var.d;
             m0Var.d = i11 + 1;
             m0Var.b(6, i11, i10, null, f10);

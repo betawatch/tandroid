@@ -1,67 +1,83 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.an;
+import java.util.ArrayList;
+import org.telegram.messenger.q10;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y8 implements Runnable {
+public final /* synthetic */ class y8 implements q10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p9 b;
+    public final /* synthetic */ d9 b;
+    public final /* synthetic */ vf.b c;
+    public final /* synthetic */ u0 d;
 
-    public /* synthetic */ y8(p9 p9Var, int i7) {
+    public /* synthetic */ y8(d9 d9Var, vf.b bVar, u0 u0Var, int i7) {
         this.a = i7;
-        this.b = p9Var;
+        this.b = d9Var;
+        this.c = bVar;
+        this.d = u0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        EditTextBoldCursor editTextBoldCursor;
-        int i7 = this.a;
-        p9 p9Var = this.b;
-        switch (i7) {
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                if (p9Var.J && (editTextBoldCursor = p9Var.I) != null && editTextBoldCursor.isAttachedToWindow() && p9Var.I.hasWindowFocus()) {
-                    p9Var.I.requestFocus();
-                    if (org.telegram.messenger.g0.J3(p9Var.I)) {
-                        p9Var.J = false;
-                        break;
+                r0 r0Var = (r0) obj;
+                String str = (String) obj2;
+                this.c.c(false);
+                d9 d9Var = this.b;
+                if (r0Var != null) {
+                    l9 l9Var = new l9();
+                    l9Var.h = true;
+                    ArrayList arrayList = l9Var.a;
+                    arrayList.clear();
+                    if (!r0Var.d()) {
+                        arrayList.addAll(r0Var.f());
                     }
-                }
-                break;
-            case 1:
-                float f10 = p9Var.c0;
-                if (f10 < 1.0f && p9Var.b0 == null) {
-                    r1.g gVar = new r1.g(new r1.f(f10));
-                    p9Var.b0 = gVar;
-                    r1.h hVar = new r1.h(1.0f);
-                    hVar.a(0.55f);
-                    hVar.b(65.0f);
-                    gVar.m = hVar;
-                    p9Var.b0.f(0.001f);
-                    p9Var.b0.b(new p3(p9Var, 2));
-                    p9Var.b0.a(new r6(p9Var, 1));
-                    p9Var.b0.h();
+                    l9Var.a0();
+                    l9Var.f = new c5(10, d9Var, this.d);
+                    d9Var.presentFragment(l9Var);
+                    break;
+                } else {
+                    lc b02 = lc.b0(d9Var);
+                    if (str == null) {
+                        str = "NULL_ERROR";
+                    }
+                    b02.f0(str, false);
                     break;
                 }
-                break;
-            case 2:
-                p9Var.e0.setLoading(false);
-                break;
-            case 3:
-                p9Var.e0.setLoading(false);
-                break;
-            case 4:
-                p9Var.w0();
-                break;
-            case 5:
-                p9Var.presentFragment(an.ua(p9Var.f.id));
-                break;
             default:
-                org.telegram.messenger.k5.n(null, 2131743201, cc.a0(p9Var), R.raw.copy, 36);
-                break;
+                o0 o0Var = (o0) obj;
+                String str2 = (String) obj2;
+                this.c.c(false);
+                d9 d9Var2 = this.b;
+                if (o0Var != null) {
+                    if (!d9Var2.f) {
+                        d9Var2.e.add(o0Var);
+                        l9 l9Var2 = new l9();
+                        r0 r0Var2 = o0Var.b;
+                        ArrayList arrayList2 = l9Var2.a;
+                        arrayList2.clear();
+                        if (!r0Var2.d()) {
+                            arrayList2.addAll(r0Var2.f());
+                        }
+                        l9Var2.a0();
+                        l9Var2.f = new p(d9Var2, this.d, o0Var);
+                        d9Var2.presentFragment(l9Var2);
+                        break;
+                    } else {
+                        o0Var.close();
+                        break;
+                    }
+                } else {
+                    lc b03 = lc.b0(d9Var2);
+                    if (str2 == null) {
+                        str2 = "NULL_ERROR";
+                    }
+                    b03.f0(str2, false);
+                    break;
+                }
         }
     }
 }

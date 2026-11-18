@@ -12,12 +12,12 @@ import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import m.r3;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
-import r0.k1;
+import r0.l1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i implements r0.m, l.w {
     public final /* synthetic */ s a;
@@ -26,14 +26,28 @@ public final class i implements r0.m, l.w {
         this.a = sVar;
     }
 
+    @Override // l.w
+    public boolean C(l.k kVar) {
+        Window.Callback callback;
+        if (kVar != kVar.k()) {
+            return true;
+        }
+        s sVar = this.a;
+        if (!sVar.P || (callback = sVar.f.getCallback()) == null || sVar.a0) {
+            return true;
+        }
+        callback.onMenuOpened(ks.t1, kVar);
+        return true;
+    }
+
     @Override // r0.m
-    public k1 M0(View view, k1 k1Var) {
+    public l1 P0(View view, l1 l1Var) {
         boolean z10;
         boolean z11;
-        int d = k1Var.d();
+        int d = l1Var.d();
         s sVar = this.a;
         Context context = sVar.e;
-        int d2 = k1Var.d();
+        int d2 = l1Var.d();
         ActionBarContextView actionBarContextView = sVar.E;
         if (actionBarContextView == null || !(actionBarContextView.getLayoutParams() instanceof ViewGroup.MarginLayoutParams)) {
             z10 = false;
@@ -46,7 +60,7 @@ public final class i implements r0.m, l.w {
                 }
                 Rect rect = sVar.m0;
                 Rect rect2 = sVar.n0;
-                rect.set(k1Var.b(), k1Var.d(), k1Var.c(), k1Var.a());
+                rect.set(l1Var.b(), l1Var.d(), l1Var.c(), l1Var.a());
                 ViewGroup viewGroup = sVar.K;
                 Method method = r3.a;
                 if (method != null) {
@@ -61,7 +75,7 @@ public final class i implements r0.m, l.w {
                 int i11 = rect.right;
                 ViewGroup viewGroup2 = sVar.K;
                 WeakHashMap weakHashMap = i0.a;
-                k1 a10 = r0.b0.a(viewGroup2);
+                l1 a10 = r0.b0.a(viewGroup2);
                 int b10 = a10 == null ? 0 : a10.b();
                 int c10 = a10 == null ? 0 : a10.c();
                 if (marginLayoutParams.topMargin == i7 && marginLayoutParams.leftMargin == i10 && marginLayoutParams.rightMargin == i11) {
@@ -120,11 +134,11 @@ public final class i implements r0.m, l.w {
         if (view6 != null) {
             view6.setVisibility(z10 ? 0 : 8);
         }
-        return i0.g(view, d != d2 ? k1Var.f(k1Var.b(), d2, k1Var.c(), k1Var.a()) : k1Var);
+        return i0.g(view, d != d2 ? l1Var.f(l1Var.b(), d2, l1Var.c(), l1Var.a()) : l1Var);
     }
 
     @Override // l.w
-    public void e(l.k kVar, boolean z10) {
+    public void d(l.k kVar, boolean z10) {
         r rVar;
         l.k k10 = kVar.k();
         int i7 = 0;
@@ -150,25 +164,11 @@ public final class i implements r0.m, l.w {
         }
         if (rVar != null) {
             if (!z11) {
-                sVar.h(rVar, z10);
+                sVar.j(rVar, z10);
             } else {
-                sVar.f(rVar.a, rVar, k10);
-                sVar.h(rVar, true);
+                sVar.g(rVar.a, rVar, k10);
+                sVar.j(rVar, true);
             }
         }
-    }
-
-    @Override // l.w
-    public boolean y(l.k kVar) {
-        Window.Callback callback;
-        if (kVar != kVar.k()) {
-            return true;
-        }
-        s sVar = this.a;
-        if (!sVar.P || (callback = sVar.f.getCallback()) == null || sVar.a0) {
-            return true;
-        }
-        callback.onMenuOpened(ns.t1, kVar);
-        return true;
     }
 }

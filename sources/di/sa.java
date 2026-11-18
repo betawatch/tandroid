@@ -1,49 +1,97 @@
 package di;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.xb0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class sa extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final class sa implements TextWatcher {
+    public boolean a;
+    public int b = 2;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ xb0 d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ hi.d h;
+    public final /* synthetic */ TextView n;
 
-    static {
-        a41.h(new sa());
+    public sa(EditTextBoldCursor editTextBoldCursor, xb0 xb0Var, long j3, boolean z10, hi.d dVar, TextView textView) {
+        this.c = editTextBoldCursor;
+        this.d = xb0Var;
+        this.e = j3;
+        this.f = z10;
+        this.h = dVar;
+        this.n = textView;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        ta taVar = (ta) view;
-        org.telegram.ui.Components.h6 h6Var = taVar.a;
-        ImageView imageView = taVar.b;
-        int i7 = taVar.c;
-        int i10 = b41Var.d;
-        boolean z11 = i7 == i10;
-        taVar.c = i10;
-        h6Var.c(b41Var.l, z11, true);
-        org.telegram.ui.ActionBar.j6.v0(b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6);
-        org.telegram.ui.ActionBar.q6.Y(h6Var, b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, null);
-        org.telegram.ui.ActionBar.q6.s(imageView, b41Var.q ? org.telegram.ui.ActionBar.j6.o6 : org.telegram.ui.ActionBar.j6.G6, null, PorterDuff.Mode.SRC_IN);
-        if (z11) {
-            imageView.animate().rotation(b41Var.f ? 0.0f : 180.0f).setDuration(340L).setInterpolator(er.h);
-        } else {
-            imageView.setRotation(b41Var.f ? 0.0f : 180.0f);
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0076  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a6  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        long j3;
+        xb0 xb0Var = this.d;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
         }
-        taVar.d = z10;
-        taVar.setWillNotDraw(!z10);
+        try {
+            j3 = TextUtils.isEmpty(editable) ? 0L : Long.parseLong(editable.toString());
+            try {
+                if (j3 > mp.u1(j10.t0).V5) {
+                    this.a = true;
+                    j3 = mp.u1(j10.t0).V5;
+                    editTextBoldCursor.setText(Long.toString(j3));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i7 = -this.b;
+                    this.b = i7;
+                    org.telegram.messenger.g0.E3(i7, xb0Var, null);
+                }
+            } catch (Exception unused) {
+                this.a = true;
+                long j10 = this.e;
+                editTextBoldCursor.setText(j10 <= 0 ? "" : Long.toString(j10));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                this.a = false;
+                if (!this.f) {
+                }
+                xb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                TextView textView = this.n;
+                if (j3 != 0) {
+                }
+            }
+        } catch (Exception unused2) {
+            j3 = 0;
+        }
+        this.a = false;
+        if (!this.f) {
+            this.h.setEnabled(j3 > 0);
+        }
+        xb0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.n;
+        if (j3 != 0) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + org.telegram.messenger.r1.i().f((long) ((j3 / 1000.0d) * mp.u1(j10.t0).f6), "USD"));
+        }
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, org.telegram.ui.ActionBar.e6 e6Var) {
-        return new ta(context);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

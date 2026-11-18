@@ -1,27 +1,84 @@
 package org.telegram.ui.Wallet;
 
+import android.content.Context;
 import android.view.View;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d4 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2 b;
+public final class d4 extends k41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ d4(org.telegram.ui.ActionBar.u2 u2Var, int i7) {
-        this.a = i7;
-        this.b = u2Var;
+    static {
+        k41.h(new d4());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            default:
-                this.b.dismiss();
-                break;
+    public static l41 i(TL_wallet.walletTransaction wallettransaction, e4 e4Var) {
+        l41 K = l41.K(d4.class);
+        c4 c4Var = new c4(wallettransaction);
+        c4Var.set(wallettransaction);
+        c4Var.id = wallettransaction.id;
+        c4Var.random_id = wallettransaction.random_id;
+        c4Var.gasless = wallettransaction.gasless;
+        c4Var.gaslessMessageBodyHash = wallettransaction.gaslessMessageBodyHash;
+        c4Var.normalMessageBodyHash = wallettransaction.normalMessageBodyHash;
+        c4Var.nft = wallettransaction.nft;
+        K.H = c4Var;
+        K.I = e4Var;
+        TL_wallet.WalletTransactionPeer walletTransactionPeer = wallettransaction.peer;
+        K.m = walletTransactionPeer == null ? null : e4Var.a(walletTransactionPeer.address);
+        return K;
+    }
+
+    public static boolean j(TL_wallet.walletTransaction wallettransaction, TL_wallet.walletTransaction wallettransaction2) {
+        TL_wallet.walletTransaction wallettransaction3 = wallettransaction instanceof c4 ? ((c4) wallettransaction).a : wallettransaction;
+        TL_wallet.walletTransaction wallettransaction4 = wallettransaction2 instanceof c4 ? ((c4) wallettransaction2).a : wallettransaction2;
+        return wallettransaction3 == wallettransaction4 || u0.t0(wallettransaction, wallettransaction2) || u0.t0(wallettransaction3, wallettransaction4);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        ((f4) view).h((TL_wallet.walletTransaction) l41Var.H, (e4) l41Var.I, z10);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean c(l41 l41Var, l41 l41Var2) {
+        Object obj = l41Var.H;
+        if (!(obj instanceof TL_wallet.walletTransaction)) {
+            return false;
         }
+        Object obj2 = l41Var2.H;
+        if (obj2 instanceof TL_wallet.walletTransaction) {
+            return ((TL_wallet.walletTransaction) obj).equals((TL_wallet.walletTransaction) obj2);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new f4(i7, context, i6Var);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean e(l41 l41Var, l41 l41Var2) {
+        Object obj = l41Var.H;
+        if (!(obj instanceof TL_wallet.walletTransaction)) {
+            return false;
+        }
+        Object obj2 = l41Var2.H;
+        if (obj2 instanceof TL_wallet.walletTransaction) {
+            return j((TL_wallet.walletTransaction) obj, (TL_wallet.walletTransaction) obj2);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean f() {
+        return true;
     }
 }

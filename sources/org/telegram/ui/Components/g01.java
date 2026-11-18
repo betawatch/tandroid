@@ -1,123 +1,129 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Animatable;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g01 extends LinearLayout implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final i9 b;
-    public final z70 c;
-    public final z70 d;
-    public int e;
-    public int f;
+public final class g01 extends ImageView {
+    public static final org.telegram.ui.Cells.g1 x = new org.telegram.ui.Cells.g1(Float.class, "radius", 3);
+    public final Paint a;
+    public final Matrix b;
+    public RadialGradient c;
+    public boolean d;
+    public float e;
+    public float f;
+    public float h;
+    public ph0 n;
+    public ColorFilter r;
+    public final int[] s;
+    public final int[] w;
 
-    public g01(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
+    public g01(Context context) {
         super(context);
-        this.e = 90;
-        this.a = e6Var;
-        setOrientation(1);
-        i9 i9Var = new i9(context);
-        this.b = i9Var;
-        i9Var.getImageReceiver().X(1);
-        i9Var.getImageReceiver().W(1);
-        i9Var.setOnClickListener(new y60(this, 19));
-        addView(i9Var, c8.ja.t(90, 90, 17, 0, 9, 0, 9));
-        z70 z70Var = new z70(context, null);
-        this.c = z70Var;
-        z70Var.setTextSize(1, 20.0f);
-        z70Var.setGravity(17);
-        z70Var.setTypeface(org.telegram.messenger.g0.o());
-        z70Var.setTextAlignment(4);
-        addView(z70Var, c8.ja.t(-1, -2, 17, 48, 0, 48, 10));
-        z70 z70Var2 = new z70(context, null);
-        this.d = z70Var2;
-        z70Var2.setTextSize(1, 14.0f);
-        z70Var2.setGravity(17);
-        z70Var2.setTextAlignment(4);
-        addView(z70Var2, c8.ja.t(-1, -2, 17, 48, 0, 48, 17));
-        updateColors();
+        this.a = new Paint(1);
+        this.b = new Matrix();
+        this.s = new int[2];
+        this.w = new int[2];
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2) {
-        z70 z70Var = this.c;
-        z70Var.setText(charSequence);
-        z70Var.setVisibility(0);
-        z70 z70Var2 = this.d;
-        z70Var2.setText(charSequence2);
-        z70Var2.setMaxWidth(hi.l3.a(charSequence2, z70Var2.getPaint()));
-        z70Var2.requestLayout();
-        updateColors();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void addColorKeys(HashSet hashSet) {
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.G6));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.Xc));
-        hashSet.add(Integer.valueOf(org.telegram.ui.ActionBar.j6.B6));
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
-    }
-
-    public void setEmoji(int i7) {
-        if (this.f != i7) {
-            this.f = i7;
-            ch0 ch0Var = new ch0(i7, org.telegram.messenger.g0.L(90.0f), org.telegram.messenger.g0.L(90.0f));
-            i9 i9Var = this.b;
-            i9Var.setImageDrawable(ch0Var);
-            i9Var.getImageReceiver().W(2);
+    public static void a(Bitmap bitmap, org.telegram.ui.ActionBar.p3 p3Var, ph0 ph0Var) {
+        Drawable drawable = ph0Var.getDrawable();
+        if (drawable != null && ph0Var.isAttachedToWindow() && bitmap.isMutable()) {
+            int[] iArr = new int[2];
+            RectF rectF = new RectF(drawable.getBounds());
+            ph0Var.getImageMatrix().mapRect(rectF);
+            ph0Var.getLocationInWindow(iArr);
+            rectF.offset(ph0Var.getPaddingLeft() + iArr[0], ph0Var.getPaddingTop() + iArr[1]);
+            if (p3Var != null) {
+                p3Var.getLocationInWindow(iArr);
+                rectF.offset(-iArr[0], -iArr[1]);
+            }
+            int max = Math.max(1, ((int) Math.floor(rectF.left)) - 1);
+            int min = Math.min(bitmap.getWidth(), ((int) Math.ceil(rectF.right)) + 1);
+            int max2 = Math.max(0, ((int) Math.floor(rectF.top)) - 1);
+            int min2 = Math.min(bitmap.getHeight(), ((int) Math.ceil(rectF.bottom)) + 1);
+            if (max >= min || max2 >= min2) {
+                return;
+            }
+            int i7 = min - max;
+            int[] iArr2 = new int[i7];
+            for (int i10 = max2; i10 < min2; i10++) {
+                Arrays.fill(iArr2, bitmap.getPixel(max - 1, i10));
+                bitmap.setPixels(iArr2, 0, i7, max, i10, i7, 1);
+            }
         }
     }
 
-    public void setEmojiSize(int i7) {
-        if (this.e != i7) {
-            this.e = i7;
-            updateColors();
+    public final void b(float f10, float f11, boolean z10) {
+        this.e = f10;
+        this.f = f11;
+        this.d = z10;
+        RadialGradient radialGradient = this.c;
+        Paint paint = this.a;
+        if (radialGradient == null) {
+            RadialGradient radialGradient2 = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{-16777216, -16777216, 0}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+            this.c = radialGradient2;
+            paint.setShader(radialGradient2);
+        }
+        paint.setXfermode(new PorterDuffXfermode(z10 ? PorterDuff.Mode.DST_OUT : PorterDuff.Mode.DST_IN));
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.c == null) {
+            super.onDraw(canvas);
+            return;
+        }
+        if (this.h >= 1.0f || this.d) {
+            int saveLayer = canvas.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
+            super.onDraw(canvas);
+            ph0 ph0Var = this.n;
+            Drawable drawable = ph0Var != null ? ph0Var.getDrawable() : 0;
+            if (drawable != 0 && this.n.isAttachedToWindow()) {
+                this.n.getLocationInWindow(this.s);
+                getLocationInWindow(this.w);
+                ColorFilter colorFilter = drawable.getColorFilter();
+                canvas.save();
+                canvas.translate(this.n.getPaddingLeft() + (r4[0] - r3[0]), this.n.getPaddingTop() + (r4[1] - r3[1]));
+                canvas.concat(this.n.getImageMatrix());
+                drawable.setColorFilter(this.r);
+                drawable.draw(canvas);
+                drawable.setColorFilter(colorFilter);
+                canvas.restore();
+                if ((drawable instanceof Animatable) && ((Animatable) drawable).isRunning()) {
+                    invalidate();
+                }
+            }
+            float f10 = this.h;
+            if (f10 >= 1.0f) {
+                float f11 = f10 / 100.0f;
+                Matrix matrix = this.b;
+                matrix.setScale(f11, f11);
+                matrix.postTranslate(this.e, this.f);
+                this.c.setLocalMatrix(matrix);
+                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
+            }
+            canvas.restoreToCount(saveLayer);
         }
     }
 
-    public void setEmojiStatic(int i7) {
-        if (this.f != i7) {
-            i9 i9Var = this.b;
-            i9Var.b();
-            this.f = i7;
-            i9Var.setImageResource(i7);
-        }
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.c.setVisibility(8);
-        z70 z70Var = this.d;
-        z70Var.setText(charSequence);
-        z70Var.setMaxWidth(hi.l3.a(charSequence, z70Var.getPaint()));
-        z70Var.requestLayout();
-        updateColors();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        int i7 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
-        z70 z70Var = this.c;
-        z70Var.setTextColor(w02);
-        int i10 = org.telegram.ui.ActionBar.j6.Xc;
-        z70Var.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(i10, e6Var));
-        if (z70Var.getVisibility() != 0) {
-            i7 = org.telegram.ui.ActionBar.j6.B6;
-        }
-        int w03 = org.telegram.ui.ActionBar.j6.w0(i7, e6Var);
-        z70 z70Var2 = this.d;
-        z70Var2.setTextColor(w03);
-        z70Var2.setLinkTextColor(org.telegram.ui.ActionBar.j6.w0(i10, e6Var));
-        int i11 = this.e;
-        this.b.setLayoutParams(c8.ja.t(i11, i11, 17, 0, z70Var.getVisibility() == 0 ? 0 : 9, 0, 9));
+    public void setRadius(float f10) {
+        this.h = f10;
+        invalidate();
     }
 }

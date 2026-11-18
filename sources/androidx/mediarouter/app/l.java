@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ boolean a;
@@ -41,7 +41,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
         s4.v vVar = tVar.r;
         int i10 = tVar.R.getLayoutParams().height;
         t.o(-1, tVar.R);
-        tVar.u(tVar.h());
+        tVar.u(tVar.g());
         View decorView = tVar.getWindow().getDecorView();
         decorView.measure(View.MeasureSpec.makeMeasureSpec(tVar.getWindow().getAttributes().width, TLObject.FLAG_30), 0);
         t.o(i10, tVar.R);
@@ -51,7 +51,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
             i7 = tVar.k(bitmap.getWidth(), bitmap.getHeight());
             tVar.L.setScaleType(bitmap.getWidth() >= bitmap.getHeight() ? ImageView.ScaleType.FIT_XY : ImageView.ScaleType.FIT_CENTER);
         }
-        int l10 = tVar.l(tVar.h());
+        int l10 = tVar.l(tVar.g());
         int size = tVar.X.size();
         int size2 = tVar.n() ? DesugarCollections.unmodifiableList(vVar.v).size() * tVar.f0 : 0;
         if (size > 0) {
@@ -75,7 +75,7 @@ public final class l implements ViewTreeObserver.OnGlobalLayoutListener {
             tVar.L.setVisibility(0);
             t.o(i7, tVar.L);
         }
-        if (!tVar.h() || max > height) {
+        if (!tVar.g() || max > height) {
             tVar.S.setVisibility(8);
         } else {
             tVar.S.setVisibility(0);

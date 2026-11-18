@@ -9,23 +9,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class v7 extends FrameLayout {
     public final /* synthetic */ int a = 0;
-    public final org.telegram.ui.Components.u5 b;
+    public final org.telegram.ui.Components.c6 b;
     public float c;
     public final Path d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.x2 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v7(li.d0 d0Var, Context context) {
         super(context);
         this.e = d0Var;
-        this.b = new org.telegram.ui.Components.u5(this, 250L, er.h);
+        this.b = new org.telegram.ui.Components.c6(this, 250L, lr.h);
         this.d = new Path();
     }
 
@@ -52,13 +52,13 @@ public final class v7 extends FrameLayout {
                         l8 l8Var = (l8) view;
                         float i10 = Utilities.i(1.0f - Math.abs(l8Var.getTranslationX() / l8Var.getMeasuredWidth()), 1.0f, f10);
                         float f11 = this.c;
-                        uj0 uj0Var = l8Var.f;
+                        ck0 ck0Var = l8Var.f;
                         FrameLayout frameLayout = l8Var.e;
-                        v4.b0 b0Var = l8Var.h;
-                        float f12 = (b0Var.t || l8Var.a == 0) ? org.telegram.messenger.g0.q.y : f10;
-                        for (int i11 = 0; i11 < uj0Var.getChildCount(); i11++) {
-                            View childAt = uj0Var.getChildAt(i11);
-                            if (b0Var.t) {
+                        v4.c0 c0Var = l8Var.h;
+                        float f12 = (c0Var.t || l8Var.a == 0) ? org.telegram.messenger.g0.q.y : f10;
+                        for (int i11 = 0; i11 < ck0Var.getChildCount(); i11++) {
+                            View childAt = ck0Var.getChildAt(i11);
+                            if (c0Var.t) {
                                 float y11 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();
                                 if (y11 < f12) {
@@ -114,10 +114,10 @@ public final class v7 extends FrameLayout {
                 this.c = 0.0f;
                 for (View view2 : viewPages2) {
                     if (view2 != null) {
-                        li.b0 b0Var2 = (li.b0) view2;
-                        this.c = (b0Var2.b() * Utilities.i(1.0f - Math.abs(b0Var2.getTranslationX() / b0Var2.getMeasuredWidth()), 1.0f, 0.0f)) + this.c;
-                        if (b0Var2.getVisibility() == 0) {
-                            b0Var2.c();
+                        li.b0 b0Var = (li.b0) view2;
+                        this.c = (b0Var.b() * Utilities.i(1.0f - Math.abs(b0Var.getTranslationX() / b0Var.getMeasuredWidth()), 1.0f, 0.0f)) + this.c;
+                        if (b0Var.getVisibility() == 0) {
+                            b0Var.c();
                         }
                     }
                 }
@@ -178,7 +178,7 @@ public final class v7 extends FrameLayout {
     public v7(q8 q8Var, Context context) {
         super(context);
         this.e = q8Var;
-        this.b = new org.telegram.ui.Components.u5(this, 250L, er.h);
+        this.b = new org.telegram.ui.Components.c6(this, 250L, lr.h);
         this.d = new Path();
     }
 }

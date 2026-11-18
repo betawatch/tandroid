@@ -1,306 +1,118 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.text.StaticLayout;
-import android.text.TextPaint;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class tw0 {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public StaticLayout b;
-    public final ArrayList c = new ArrayList(2);
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+    public final int a;
+    public final org.telegram.ui.Cells.u0 b;
+    public final org.telegram.ui.ActionBar.i6 c;
+    public final mh0 d;
+    public TL_account.TL_birthday e;
+    public vy0 f;
+    public vy0[] g;
+    public vy0[] h;
+    public boolean i;
+    public vy0 j;
+    public final RectF k = new RectF();
+    public final Paint l = new Paint(1);
+    public final mc m;
 
-    public tw0(org.telegram.ui.ActionBar.e6 e6Var) {
-        this.a = e6Var;
+    public tw0(int i7, org.telegram.ui.Cells.u0 u0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.a = i7;
+        this.b = u0Var;
+        this.c = i6Var;
+        mh0 mh0Var = new mh0(R.raw.cake, org.telegram.messenger.g0.L(66.0f), org.telegram.messenger.g0.L(66.0f), true, null);
+        this.d = mh0Var;
+        mh0Var.H(false);
+        this.m = new mc(u0Var);
     }
 
-    public static void c(StringBuilder sb2, int i7, boolean z10) {
-        if (sb2.length() > 0) {
-            if (z10) {
-                sb2.append(' ');
-                sb2.append(org.telegram.messenger.hd.M0(2131744345, null));
-                sb2.append(' ');
-            } else {
-                sb2.append(", ");
-            }
+    public final void a(Canvas canvas) {
+        int L = org.telegram.messenger.g0.L(66.0f);
+        org.telegram.ui.Cells.u0 u0Var = this.b;
+        int width = (u0Var.getWidth() - L) / 2;
+        int L2 = org.telegram.messenger.g0.L(13.0f) + L;
+        mh0 mh0Var = this.d;
+        mh0Var.setBounds(width, org.telegram.messenger.g0.L(13.0f), width + L, L2);
+        mh0Var.draw(canvas);
+        this.f.c((u0Var.getWidth() - this.f.k()) / 2.0f, org.telegram.messenger.g0.L(19.0f) + L, 1.0f, -1, canvas);
+        int i7 = (int) (this.f.i() + org.telegram.messenger.g0.L(19.0f) + L + org.telegram.messenger.g0.L(17.0f));
+        int i10 = 0;
+        for (int i11 = 0; i11 < this.g.length; i11++) {
+            i10 = (int) (Math.max(this.g[i11].k(), this.h[i11].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f) + i10);
         }
-        sb2.append(org.telegram.messenger.hd.M0(i7, null));
+        int width2 = (u0Var.getWidth() - i10) / 2;
+        int i12 = 0;
+        while (i12 < this.g.length) {
+            float max = Math.max(this.g[i12].k(), this.h[i12].k()) + org.telegram.messenger.g0.L(9.0f) + org.telegram.messenger.g0.L(9.0f);
+            float f10 = width2;
+            float f11 = (max / 2.0f) + f10;
+            int i13 = (int) (f10 + max);
+            vy0 vy0Var = this.g[i12];
+            vy0Var.c(f11 - (vy0Var.k() / 2.0f), i7, 0.75f, -1, canvas);
+            vy0 vy0Var2 = this.h[i12];
+            vy0Var2.c(f11 - (vy0Var2.k() / 2.0f), org.telegram.messenger.g0.L(16.0f) + i7, 1.0f, -1, canvas);
+            i12++;
+            width2 = i13;
+        }
+        if (this.i) {
+            int L3 = org.telegram.messenger.g0.L(38.0f) + i7;
+            canvas.save();
+            float k10 = this.j.k() + org.telegram.messenger.g0.L(26.0f);
+            float L4 = org.telegram.messenger.g0.L(30.0f);
+            float f12 = L3;
+            RectF rectF = this.k;
+            rectF.set((u0Var.getWidth() - k10) / 2.0f, f12, (u0Var.getWidth() + k10) / 2.0f, f12 + L4);
+            float a10 = this.m.a(0.1f);
+            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
+            float f13 = L4 / 2.0f;
+            canvas.drawRoundRect(rectF, f13, f13, this.l);
+            this.j.c(rectF.left + org.telegram.messenger.g0.L(13.0f), rectF.centerY(), 1.0f, -1, canvas);
+            canvas.restore();
+        }
     }
 
-    public final int a() {
-        return this.g;
+    public final void b() {
+        b5.l(this.b.getContext(), org.telegram.messenger.gd.M0(2131751661, null), org.telegram.messenger.gd.M0(2131751660, null), this.e, new y2(this, 13), null, true, false, this.c).C2();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:134:0x01b2, code lost:
-    
-        if (r3 != null) goto L96;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:135:0x01b4, code lost:
-    
-        r3 = r18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:137:0x01bb, code lost:
-    
-        if (r6.document != null) goto L100;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:138:0x01bd, code lost:
-    
-        r6 = r18;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:139:0x01c2, code lost:
-    
-        if (r3 == r6) goto L112;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:140:0x01c0, code lost:
-    
-        r6 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:141:0x01b7, code lost:
-    
-        r3 = 0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:147:0x019c, code lost:
-    
-        if ((r7 == null ? r18 : 0) != (r6.photo == null ? r18 : 0)) goto L77;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:155:0x01d3, code lost:
-    
-        if ((r3 != null ? r18 : 0) == (r6 != null ? r18 : 0)) goto L112;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:163:0x0130, code lost:
-    
-        if (r3.b == r15.b) goto L50;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:64:0x0187, code lost:
-    
-        if (r7.id != r11.id) goto L77;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:65:0x0189, code lost:
-    
-        r2 = r2 | 8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:66:0x019f, code lost:
-    
-        r3 = r3.document;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:67:0x01a1, code lost:
-    
-        if (r3 == null) goto L94;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x01a3, code lost:
-    
-        r7 = r6.document;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x01a5, code lost:
-    
-        if (r7 == null) goto L94;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:71:0x01ad, code lost:
-    
-        if (r3.id == r7.id) goto L112;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x01c7  */
-    /* JADX WARN: Removed duplicated region for block: B:154:0x01ce  */
-    /* JADX WARN: Removed duplicated region for block: B:156:0x01d1  */
-    /* JADX WARN: Removed duplicated region for block: B:157:0x01ca  */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x013f  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x014d  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x015b  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x016a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(org.telegram.messenger.gj gjVar) {
-        float f10;
-        int i7;
-        int i10;
-        int i11;
-        int i12;
-        TLRPC.SuggestedPost suggestedPost;
-        TLRPC.SuggestedPost suggestedPost2;
-        int i13;
-        TLRPC.MessageMedia messageMedia;
-        TLRPC.MessageMedia messageMedia2;
-        TLRPC.Message message;
-        TLRPC.SuggestedPost suggestedPost3 = (gjVar == null || (message = gjVar.k) == null) ? null : message.suggested_post;
-        if (suggestedPost3 == null) {
-            return;
+    public final void c(org.telegram.messenger.fj fjVar) {
+        TLRPC.TL_messageActionSuggestBirthday tL_messageActionSuggestBirthday = (TLRPC.TL_messageActionSuggestBirthday) fjVar.k.action;
+        this.e = tL_messageActionSuggestBirthday.birthday;
+        vy0 vy0Var = new vy0(TextUtils.concat(fjVar.v, ":"), 13.0f, null);
+        vy0Var.m(6);
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        vy0Var.a();
+        vy0Var.p(org.telegram.messenger.g0.L(174.0f) - org.telegram.messenger.g0.L(32.0f));
+        this.f = vy0Var;
+        int i7 = (tL_messageActionSuggestBirthday.birthday.flags & 1) != 0 ? 3 : 2;
+        vy0[] vy0VarArr = new vy0[i7];
+        this.g = vy0VarArr;
+        this.h = new vy0[i7];
+        vy0VarArr[0] = new vy0(org.telegram.messenger.gd.M0(2131751663, null), 11.0f, null);
+        this.h[0] = new vy0("" + tL_messageActionSuggestBirthday.birthday.day, 11.0f, org.telegram.messenger.g0.o());
+        this.g[1] = new vy0(org.telegram.messenger.gd.M0(2131751662, null), 11.0f, null);
+        vy0[] vy0VarArr2 = this.h;
+        StringBuilder sb2 = new StringBuilder("");
+        int i10 = tL_messageActionSuggestBirthday.birthday.month - 1;
+        sb2.append((i10 < 0 || i10 >= 12) ? i5.c.i(i10, "") : org.telegram.messenger.gd.M0(new int[]{2131748894, 2131750818, 2131748491, 2131754171, 2131748470, 2131748872, 2131748874, 2131753893, 2131745370, 2131747637, 2131747642, 2131751594}[i10], null));
+        vy0VarArr2[1] = new vy0(sb2.toString(), 11.0f, org.telegram.messenger.g0.o());
+        if ((tL_messageActionSuggestBirthday.birthday.flags & 1) != 0) {
+            this.g[2] = new vy0(org.telegram.messenger.gd.M0(2131751658, null), 11.0f, null);
+            this.h[2] = new vy0("" + tL_messageActionSuggestBirthday.birthday.year, 11.0f, org.telegram.messenger.g0.o());
         }
-        cg.a aVar = org.telegram.messenger.lj.b(suggestedPost3).a;
-        org.telegram.ui.ActionBar.e6 e6Var = this.a;
-        Paint d = e6Var != null ? e6Var.d("paintChatActionText3") : null;
-        if (d == null) {
-            d = org.telegram.ui.ActionBar.j6.V0("paintChatActionText3");
-        }
-        TextPaint textPaint = (TextPaint) d;
-        this.g = org.telegram.messenger.g0.L(14.0f) * 2;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        if (aVar != null && !aVar.k()) {
-            arrayList.add(new sw0(new oy0(org.telegram.messenger.hd.M0(2131744348, null), textPaint), new oy0(org.telegram.messenger.hd.g(aVar.f()), textPaint)));
-        }
-        if (suggestedPost3.schedule_date > 0) {
-            arrayList.add(new sw0(new oy0(org.telegram.messenger.hd.M0(2131744347, null), textPaint), new oy0(org.telegram.messenger.hd.g(org.telegram.messenger.hd.x(suggestedPost3.schedule_date, true)), textPaint)));
-        }
-        int size = arrayList.size();
-        float f11 = 0.0f;
-        float f12 = 0.0f;
-        int i14 = 0;
-        while (i14 < size) {
-            Object obj = arrayList.get(i14);
-            i14++;
-            sw0 sw0Var = (sw0) obj;
-            f11 = Math.max(f11, sw0Var.a.k());
-            f12 = Math.max(f12, sw0Var.b.k());
-            int i15 = ((int) sw0Var.a.i()) + this.g;
-            this.g = i15;
-            this.g = org.telegram.messenger.g0.L(7.0f) + i15;
-        }
-        int L = (int) (f12 + f11 + org.telegram.messenger.g0.L(11.0f));
-        int max = Math.max(L, org.telegram.messenger.g0.L(160.0f));
-        String l10 = org.telegram.messenger.m5.l(org.telegram.messenger.m10.t0, gjVar.Z0());
-        org.telegram.messenger.gj gjVar2 = gjVar.C;
-        TLRPC.Message message2 = gjVar2 != null ? gjVar2.k : null;
-        TLRPC.Message message3 = gjVar.k;
-        if (message2 == null || (suggestedPost = message2.suggested_post) == null || message3 == null || (suggestedPost2 = message3.suggested_post) == null) {
-            f10 = 11.0f;
-            i7 = 1;
-            i10 = 0;
-            i11 = 0;
-        } else {
-            f10 = 11.0f;
-            TL_stars.StarsAmount starsAmount = suggestedPost.price;
-            i10 = 0;
-            TL_stars.StarsAmount starsAmount2 = suggestedPost2.price;
-            cg.a l11 = cg.a.l(starsAmount);
-            cg.a l12 = cg.a.l(starsAmount2);
-            if (l11 == l12) {
-                i7 = 1;
-            } else {
-                if (l11 == null || l12 == null) {
-                    i7 = 1;
-                } else {
-                    i7 = 1;
-                    if (l11.a == l12.a) {
-                    }
-                }
-                i13 = 0;
-                i11 = i13 ^ 1;
-                if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
-                    i11 |= 2;
-                }
-                if (!TextUtils.equals(gjVar.v, gjVar.C.v)) {
-                    i11 |= 4;
-                }
-                if (!TextUtils.equals(gjVar.z, gjVar.C.z)) {
-                    i11 |= 4;
-                }
-                messageMedia = message2.media;
-                messageMedia2 = message3.media;
-                if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
-                    messageMedia = null;
-                }
-                if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
-                    messageMedia2 = null;
-                }
-                if (messageMedia == null && messageMedia2 != null) {
-                    if (messageMedia.getClass() == messageMedia2.getClass()) {
-                        TLRPC.Photo photo = messageMedia.photo;
-                        if (photo == null || (r11 = messageMedia2.photo) == null) {
-                        }
-                    }
-                    i11 |= 8;
-                }
-            }
-            i13 = i7;
-            i11 = i13 ^ 1;
-            if (suggestedPost.schedule_date != suggestedPost2.schedule_date) {
-            }
-            if (!TextUtils.equals(gjVar.v, gjVar.C.v)) {
-            }
-            if (!TextUtils.equals(gjVar.z, gjVar.C.z)) {
-            }
-            messageMedia = message2.media;
-            messageMedia2 = message3.media;
-            if (messageMedia instanceof TLRPC.TL_messageMediaEmpty) {
-            }
-            if (messageMedia2 instanceof TLRPC.TL_messageMediaEmpty) {
-            }
-            if (messageMedia == null) {
-            }
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        if (i11 != 0) {
-            org.telegram.messenger.gj gjVar3 = gjVar.C;
-            if (gjVar3 != null) {
-                org.telegram.messenger.m5.l(org.telegram.messenger.m10.t0, gjVar3.Z0());
-            }
-            StringBuilder sb2 = new StringBuilder();
-            int i16 = i11 & 4;
-            int i17 = i11 & 2;
-            int i18 = i11 & 8;
-            int i19 = i11 & 1;
-            int i20 = (i16 != 0 ? 1 : i10) + (i17 != 0 ? 1 : i10) + (i18 != 0 ? 1 : i10) + (i19 != 0 ? 1 : i10);
-            if (i19 != 0) {
-                c(sb2, 2131744341, i20 == 1 ? 1 : i10);
-                i12 = 1;
-            } else {
-                i12 = i10;
-            }
-            if (i17 != 0) {
-                i12++;
-                c(sb2, 2131744339, i20 == i12 ? 1 : i10);
-            }
-            if (i16 != 0) {
-                i12++;
-                c(sb2, 2131744340, i20 == i12 ? 1 : i10);
-            }
-            if (i18 != 0) {
-                c(sb2, 2131744342, i20 == i12 + 1 ? 1 : i10);
-            }
-            if (gjVar.P3()) {
-                Object[] objArr = new Object[1];
-                objArr[i10] = sb2;
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744343, objArr));
-            } else {
-                Object[] objArr2 = new Object[2];
-                objArr2[i10] = l10;
-                objArr2[1] = sb2;
-                spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744344, objArr2));
-            }
-        } else if (gjVar.P3()) {
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.M0(2131744338, null));
-        } else {
-            Object[] objArr3 = new Object[i7];
-            objArr3[i10] = l10;
-            spannableStringBuilder.append((CharSequence) org.telegram.messenger.hd.a0(null, null, 2131744346, objArr3));
-        }
-        this.b = new StaticLayout(org.telegram.messenger.g0.V2(spannableStringBuilder), textPaint, max, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        int i21 = i10;
-        for (int i22 = i21; i22 < this.b.getLineCount(); i22++) {
-            i21 = (int) Math.max(i21, this.b.getLineWidth(i22));
-        }
-        int height = this.b.getHeight() + this.g;
-        this.g = height;
-        this.g = org.telegram.messenger.g0.L(5.0f) + height;
-        int D = org.telegram.messenger.k5.D(24.0f, 2, Math.max(L, i21));
-        this.h = D;
-        this.d = (D - max) / 2;
-        this.e = (D - L) / 2;
-        this.f = (int) (org.telegram.messenger.g0.L(f10) + r1 + f11);
+        this.i = !fjVar.P3();
+        org.telegram.ui.ActionBar.i6 i6Var = this.c;
+        this.l.setColor(org.telegram.ui.ActionBar.n6.r1(0.12f, i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q() ? -1 : -16777216));
+        this.j = new vy0(org.telegram.messenger.gd.M0(2131744160, null), 14.0f, org.telegram.messenger.g0.o());
     }
 }

@@ -3,23 +3,23 @@ package org.telegram.messenger.voip;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Spannable;
-import bi.u2;
+import bi.d5;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import org.json.JSONObject;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.Wallet.p2;
-import org.telegram.ui.Wallet.s2;
-import org.telegram.utils.twidget.l1;
-import org.telegram.utils.twidget.y0;
+import org.telegram.ui.Wallet.w2;
+import org.telegram.ui.Wallet.z2;
+import org.telegram.utils.twidget.d1;
+import org.telegram.utils.twidget.p1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -46,7 +46,7 @@ public final /* synthetic */ class p implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        y0 y0Var;
+        d1 d1Var;
         TLRPC.User user;
         boolean z10;
         switch (this.a) {
@@ -54,73 +54,75 @@ public final /* synthetic */ class p implements Runnable {
                 VoIPPreNotificationService.lambda$show$1((Intent) this.e, (TL_phone.PhoneCall) this.f, (Context) this.h, this.b, this.c, this.d);
                 return;
             case 1:
-                l1 l1Var = (l1) this.e;
+                p1 p1Var = (p1) this.e;
                 int i7 = this.b;
                 long j3 = this.c;
                 JSONObject jSONObject = (JSONObject) this.f;
                 String str = (String) this.h;
                 boolean z11 = this.d;
-                if (l1Var.w || (y0Var = l1Var.L) == null) {
+                if (p1Var.A || (d1Var = p1Var.R) == null) {
                     return;
                 }
                 if (i7 != 19) {
-                    if (y0Var.e == null) {
-                        y0Var.b(3, null, j3);
+                    sa.d dVar = d1Var.e;
+                    if (dVar == null) {
+                        d1Var.b(3, null, j3);
                         return;
                     }
-                    org.telegram.utils.twidget.k0 h = org.telegram.utils.twidget.n0.h(y0Var);
+                    dVar.getClass();
+                    org.telegram.utils.twidget.k0 h = org.telegram.utils.twidget.n0.h(d1Var);
                     if (h == null || !h.i || (z11 && !org.telegram.utils.twidget.n0.F(h))) {
-                        y0Var.b(3, null, j3);
+                        d1Var.b(3, null, j3);
                         return;
                     }
                     TLRPC.TL_widgetQueryTypeData tL_widgetQueryTypeData = new TLRPC.TL_widgetQueryTypeData();
                     tL_widgetQueryTypeData.with_wallet = z11;
-                    org.telegram.utils.twidget.n0.w(h, y0Var, j3, tL_widgetQueryTypeData, str.getBytes(StandardCharsets.UTF_8));
+                    org.telegram.utils.twidget.n0.w(h, d1Var, j3, tL_widgetQueryTypeData, str.getBytes(StandardCharsets.UTF_8));
                     return;
                 }
-                if (y0Var.e == null) {
-                    y0Var.b(3, null, j3);
+                if (d1Var.e == null) {
+                    d1Var.b(3, null, j3);
                     return;
                 }
-                org.telegram.utils.twidget.k0 h7 = org.telegram.utils.twidget.n0.h(y0Var);
+                org.telegram.utils.twidget.k0 h7 = org.telegram.utils.twidget.n0.h(d1Var);
                 if (h7 != null) {
                     long j10 = h7.n;
                     if (j10 != 0) {
-                        user = np.s1(h7.b).a2(Long.valueOf(j10));
-                        e2 T = LaunchActivity.T();
+                        user = mp.u1(h7.b).c2(Long.valueOf(j10));
+                        h2 T = LaunchActivity.T();
                         if (h7 != null || !org.telegram.utils.twidget.n0.F(h7) || user == null || !user.bot) {
-                            y0Var.b(5, null, j3);
+                            d1Var.b(5, null, j3);
                             return;
                         }
                         if (T == null || T.getContext() == null) {
-                            y0Var.b(3, null, j3);
+                            d1Var.b(3, null, j3);
                             return;
                         }
                         byte[] bytes = jSONObject.optString("data").getBytes(StandardCharsets.UTF_8);
                         Context context = T.getContext();
                         int i10 = h7.b;
-                        e6 resourceProvider = T.getResourceProvider();
-                        org.telegram.utils.twidget.i0 i0Var = new org.telegram.utils.twidget.i0(h7, y0Var, j3, bytes);
-                        ArrayList arrayList = s2.a;
-                        p2 p2Var = new p2(new boolean[]{false}, i0Var);
-                        org.telegram.ui.Wallet.l0 x10 = org.telegram.ui.Wallet.l0.x(i10);
+                        i6 resourceProvider = T.getResourceProvider();
+                        org.telegram.utils.twidget.i0 i0Var = new org.telegram.utils.twidget.i0(h7, d1Var, j3, bytes);
+                        ArrayList arrayList = z2.a;
+                        w2 w2Var = new w2(new boolean[]{false}, i0Var);
+                        org.telegram.ui.Wallet.u0 D = org.telegram.ui.Wallet.u0.D(i10);
                         boolean[] zArr = {false};
-                        u2 u2Var = new u2(zArr, context, i10, user, jSONObject, resourceProvider, p2Var);
-                        if (x10.G()) {
-                            u2Var.run();
+                        d5 d5Var = new d5(zArr, context, i10, user, jSONObject, resourceProvider, w2Var);
+                        if (D.N()) {
+                            d5Var.run();
                             return;
                         }
-                        s2.a.add(u2Var);
-                        x10.m0(u2Var);
-                        org.telegram.messenger.g0.i3(new org.telegram.ui.Wallet.g(u2Var, zArr, p2Var, 8), 10000L);
+                        z2.a.add(d5Var);
+                        D.x0(d5Var);
+                        org.telegram.messenger.g0.h3(new org.telegram.ui.Wallet.p(d5Var, zArr, w2Var, 8), 10000L);
                         return;
                     }
                 }
                 user = null;
-                e2 T2 = LaunchActivity.T();
+                h2 T2 = LaunchActivity.T();
                 if (h7 != null) {
                 }
-                y0Var.b(5, null, j3);
+                d1Var.b(5, null, j3);
                 return;
             default:
                 qi.i iVar = (qi.i) this.e;
@@ -151,7 +153,7 @@ public final /* synthetic */ class p implements Runnable {
                                     }
                                 }
                                 if (z10) {
-                                    ns.e().k(ns.i4, new Object[0]);
+                                    ks.e().k(ks.k4, new Object[0]);
                                 }
                                 return;
                             }
@@ -173,8 +175,8 @@ public final /* synthetic */ class p implements Runnable {
         }
     }
 
-    public /* synthetic */ p(l1 l1Var, int i7, long j3, JSONObject jSONObject, String str, boolean z10) {
-        this.e = l1Var;
+    public /* synthetic */ p(p1 p1Var, int i7, long j3, JSONObject jSONObject, String str, boolean z10) {
+        this.e = p1Var;
         this.b = i7;
         this.c = j3;
         this.f = jSONObject;

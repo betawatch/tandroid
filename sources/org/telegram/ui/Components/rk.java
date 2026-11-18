@@ -1,68 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rk implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dl b;
+    public final /* synthetic */ xk b;
 
-    public /* synthetic */ rk(dl dlVar, int i7) {
+    public /* synthetic */ rk(xk xkVar, int i7) {
         this.a = i7;
-        this.b = dlVar;
+        this.b = xkVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Location location;
         switch (this.a) {
             case 0:
-                dl.T(this.b);
+                this.b.b0();
                 break;
             case 1:
-                dl.V(this.b);
+                xk xkVar = this.b;
+                EditTextBoldCursor editTextBoldCursor = xkVar.T;
+                if (!xkVar.L && !xkVar.O0 && !xkVar.b.J && xkVar.M0 && xkVar.U0 == null && editTextBoldCursor.hasFocus() && xkVar.isShown()) {
+                    org.telegram.messenger.g0.I3(editTextBoldCursor);
+                    break;
+                }
                 break;
             case 2:
-                dl dlVar = this.b;
-                double[] dArr = dlVar.b.y4;
-                dlVar.h0(dArr[0], dArr[1]);
+                xk xkVar2 = this.b;
+                if (!xkVar2.L && xkVar2.M0 && xkVar2.isShown()) {
+                    xkVar2.e0();
+                    break;
+                }
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new rk(this.b, 6));
+                xk xkVar3 = this.b;
+                if (!xkVar3.L) {
+                    float f10 = xkVar3.n0;
+                    if (f10 < 1.0f && xkVar3.m0 == null) {
+                        r1.g gVar = new r1.g(new r1.f(f10));
+                        xkVar3.m0 = gVar;
+                        r1.h hVar = new r1.h(1.0f);
+                        hVar.a(0.55f);
+                        hVar.b(65.0f);
+                        gVar.m = hVar;
+                        xkVar3.m0.f(0.001f);
+                        xkVar3.m0.b(new i7(xkVar3, 4));
+                        xkVar3.m0.a(new ya(xkVar3, 2));
+                        xkVar3.m0.h();
+                        break;
+                    }
+                }
                 break;
             case 4:
-                dl dlVar2 = this.b;
-                jg.r0 r0Var = dlVar2.L;
-                if (!dlVar2.l0) {
-                    org.telegram.messenger.ea eaVar = dlVar2.E;
-                    if (eaVar != null && (location = dlVar2.j0) != null) {
-                        location.setLatitude(((org.telegram.messenger.bb) eaVar.d().b).a);
-                        dlVar2.j0.setLongitude(((org.telegram.messenger.bb) dlVar2.E.d().b).b);
+                xk xkVar4 = this.b;
+                if (xkVar4.M0 && !xkVar4.L) {
+                    xkVar4.d0();
+                    if (xkVar4.N0) {
+                        xkVar4.e0();
+                        break;
                     }
-                    r0Var.L(dlVar2.j0);
-                    r0Var.H();
-                    break;
-                } else {
-                    dlVar2.l0 = false;
-                    break;
                 }
-                break;
-            case 5:
-                View view = this.b.J;
-                if (view.getTag() == null) {
-                    view.animate().alpha(0.0f).setDuration(180L).start();
-                    break;
-                }
-                break;
-            case 6:
-                View view2 = this.b.J;
-                view2.setTag(1);
-                view2.animate().alpha(0.0f).setDuration(180L).start();
                 break;
             default:
-                this.b.h0(0.0d, 0.0d);
+                xk xkVar5 = this.b;
+                if (!xkVar5.q0) {
+                    xkVar5.p0.setVisibility(4);
+                    break;
+                }
                 break;
         }
     }

@@ -5,15 +5,15 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.HorizontalScrollView;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class t1 extends HorizontalScrollView {
     public final h6.m a;
-    public final org.telegram.ui.Components.u5 b;
-    public final org.telegram.ui.Components.u5 c;
+    public final org.telegram.ui.Components.c6 b;
+    public final org.telegram.ui.Components.c6 c;
     public final /* synthetic */ z1 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,9 +21,9 @@ public final class t1 extends HorizontalScrollView {
         super(context);
         this.d = z1Var;
         this.a = new h6.m(29);
-        er erVar = er.h;
-        this.b = new org.telegram.ui.Components.u5(this, 300L, erVar);
-        this.c = new org.telegram.ui.Components.u5(this, 300L, erVar);
+        lr lrVar = lr.h;
+        this.b = new org.telegram.ui.Components.c6(this, 300L, lrVar);
+        this.c = new org.telegram.ui.Components.c6(this, 300L, lrVar);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -33,7 +33,7 @@ public final class t1 extends HorizontalScrollView {
         float d2 = this.c.d(canScrollHorizontally(1));
         if (d > 0.0f || d2 > 0.0f) {
             canvas2 = canvas;
-            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ns.e4, 31);
+            canvas2.saveLayerAlpha(getScrollX(), 0.0f, getWidth() + getScrollX(), getHeight(), ks.e4, 31);
         } else {
             canvas2 = canvas;
         }
@@ -44,12 +44,12 @@ public final class t1 extends HorizontalScrollView {
             if (d > 0.0f) {
                 RectF rectF = org.telegram.messenger.g0.P;
                 rectF.set(getScrollX(), 0.0f, org.telegram.messenger.g0.L(48.0f) + getScrollX(), getHeight());
-                mVar.m(canvas2, rectF, 0, d);
+                mVar.n(canvas2, rectF, 0, d);
             }
             if (d2 > 0.0f) {
                 RectF rectF2 = org.telegram.messenger.g0.P;
                 rectF2.set((getWidth() + getScrollX()) - org.telegram.messenger.g0.L(48.0f), 0.0f, getWidth() + getScrollX(), getHeight());
-                mVar.m(canvas2, rectF2, 2, d2);
+                mVar.n(canvas2, rectF2, 2, d2);
             }
             canvas2.restore();
         }

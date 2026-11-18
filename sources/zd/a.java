@@ -1,6 +1,6 @@
 package zd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a extends n1 implements id.c, z {
     public final id.h c;
@@ -27,16 +27,16 @@ public abstract class a extends n1 implements id.c, z {
         gd.k kVar = gd.k.a;
         if (ordinal == 0) {
             try {
-                ee.a.h(c8.v0.b(c8.v0.a(aVar, this, pVar)), kVar);
+                ee.a.h(c8.x0.b(c8.x0.a(aVar, this, pVar)), kVar);
                 return;
             } finally {
-                resumeWith(af.b.b(th));
+                resumeWith(b7.h.a(th));
             }
         }
         if (ordinal != 1) {
             if (ordinal == 2) {
                 kotlin.jvm.internal.j.e(pVar, "<this>");
-                c8.v0.b(c8.v0.a(aVar, this, pVar)).resumeWith(kVar);
+                c8.x0.b(c8.x0.a(aVar, this, pVar)).resumeWith(kVar);
                 return;
             }
             if (ordinal != 3) {
@@ -50,7 +50,7 @@ public abstract class a extends n1 implements id.c, z {
                         kotlin.jvm.internal.u.a(2, pVar);
                         invoke = pVar.invoke(aVar, this);
                     } else {
-                        invoke = c8.v0.c(pVar, aVar, this);
+                        invoke = c8.x0.c(pVar, aVar, this);
                     }
                     ee.a.g(hVar, l10);
                     if (invoke != jd.a.a) {

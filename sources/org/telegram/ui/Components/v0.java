@@ -1,40 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.LaunchActivity;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class v0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ v0(LaunchActivity launchActivity, int i7) {
+    public /* synthetic */ v0(int i7, Runnable runnable) {
         this.a = i7;
-        this.b = launchActivity;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public final void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.t0(new LanguageSelectActivity());
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             case 1:
-                this.b.t0(new org.telegram.ui.y6());
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.run();
                 break;
             default:
-                LaunchActivity launchActivity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    launchActivity.startActivity(intent);
+                Runnable runnable3 = this.b;
+                if (runnable3 != null) {
+                    runnable3.run();
                     break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
                 }
+                break;
         }
     }
 }

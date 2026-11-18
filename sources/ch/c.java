@@ -5,7 +5,7 @@ import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c {
     public float a;
@@ -37,7 +37,7 @@ public final class c {
         for (int i7 = 0; i7 < 20; i7++) {
             float b11 = b();
             float c11 = c();
-            float f11 = 2.14748365E9f;
+            float f11 = 2.1474836E9f;
             for (int i10 = 0; i10 < arrayList.size(); i10++) {
                 float f12 = ((c) arrayList.get(i10)).c - b11;
                 float f13 = ((c) arrayList.get(i10)).d - c11;

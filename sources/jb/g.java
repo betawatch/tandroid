@@ -1,8 +1,8 @@
 package jb;
 
-import c8.m1;
+import c8.h9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements oe.e {
     public static final g a;
@@ -77,10 +77,10 @@ public final /* synthetic */ class g implements oe.e {
 
     @Override // oe.e
     public final ke.a[] c() {
-        ke.a a10 = m1.a(oe.a.a);
-        ke.a a11 = m1.a(oe.c.a);
+        ke.a a10 = h9.a(oe.a.a);
+        ke.a a11 = h9.a(oe.c.a);
         oe.f fVar = oe.f.a;
-        return new ke.a[]{a10, a11, m1.a(fVar), m1.a(fVar), m1.a(oe.i.a)};
+        return new ke.a[]{a10, a11, h9.a(fVar), h9.a(fVar), h9.a(oe.i.a)};
     }
 
     @Override // ke.a

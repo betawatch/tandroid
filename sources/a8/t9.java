@@ -1,17 +1,24 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.os.Bundle;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class t9 {
-    public static float a(float f10, float f11, float f12, float f13) {
-        double d = f10 - f12;
-        double d2 = f11 - f13;
-        return (float) Math.sqrt((d2 * d2) + (d * d));
-    }
-
-    public static float b(int i7, int i10, int i11, int i12) {
-        double d = i7 - i11;
-        double d2 = i10 - i12;
-        return (float) Math.sqrt((d2 * d2) + (d * d));
+    public static final ArrayList a(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            d9.t tVar = (d9.t) obj;
+            Bundle bundle = new Bundle();
+            bundle.putInt("event_type", tVar.a);
+            bundle.putLong("event_timestamp", tVar.b);
+            arrayList2.add(bundle);
+        }
+        return arrayList2;
     }
 }

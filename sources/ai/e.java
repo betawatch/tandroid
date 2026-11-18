@@ -1,259 +1,83 @@
 package ai;
 
-import android.app.Activity;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import di.c6;
-import di.d3;
-import di.e3;
-import di.u8;
-import fi.h7;
-import fi.k7;
-import fi.l7;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Pattern;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.h00;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.s10;
-import org.telegram.messenger.so;
-import org.telegram.messenger.vr;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.RequestDelegateTimestamp;
-import org.telegram.tgnet.TLObject;
+import bi.m6;
+import di.f6;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ok0;
-import org.telegram.ui.Components.q4;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.an;
-import org.telegram.ui.de;
-import org.telegram.ui.wy;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
+public final /* synthetic */ class e implements q10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ e(c6 c6Var, TLObject tLObject, String str, TL_stars.InputSavedStarGift inputSavedStarGift, TLRPC.TL_error tL_error, long j3) {
-        this.a = 1;
-        this.d = c6Var;
-        this.e = tLObject;
-        this.b = str;
-        this.f = inputSavedStarGift;
-        this.h = tL_error;
-        this.c = j3;
+    public /* synthetic */ e(h hVar, boolean[] zArr, long j3, f fVar) {
+        this.c = hVar;
+        this.d = zArr;
+        this.b = j3;
+        this.e = fVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:45:0x01eb  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        TL_stars.SavedStarGift savedStarGift;
-        boolean z10;
-        TLRPC.Chat M0;
-        TLRPC.User a22;
-        int i7 = 1;
-        int i10 = 0;
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        TLRPC.TL_textWithEntities tL_textWithEntities;
         switch (this.a) {
             case 0:
-                i iVar = (i) this.d;
-                boolean[] zArr = (boolean[]) this.e;
-                h hVar = (h) this.f;
-                String str = (String) this.b;
-                g gVar = (g) this.h;
-                long j3 = this.c;
-                iVar.getClass();
+                h hVar = (h) this.c;
+                boolean[] zArr = (boolean[]) this.d;
+                f fVar = (f) this.e;
+                TLRPC.TL_composedMessageWithAI tL_composedMessageWithAI = (TLRPC.TL_composedMessageWithAI) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                hVar.b = -1;
                 if (!zArr[0]) {
                     zArr[0] = true;
-                    Log.d("Dictation", "AI server timeout (25 s): " + hVar.a + " → mock");
-                    iVar.b();
-                    i.c(hVar, str, gVar, j3);
-                    break;
+                    if (tL_composedMessageWithAI != null && (tL_textWithEntities = tL_composedMessageWithAI.result_text) != null && !TextUtils.isEmpty(tL_textWithEntities.text)) {
+                        org.telegram.messenger.g0.h3(new a1.e(10, fVar, tL_composedMessageWithAI), Math.max(0L, 900 - (System.currentTimeMillis() - this.b)));
+                        break;
+                    } else {
+                        fVar.c(tL_error, null);
+                        break;
+                    }
                 }
                 break;
             case 1:
-                c6 c6Var = (c6) this.d;
-                TLObject tLObject = (TLObject) this.e;
-                String str2 = (String) this.b;
-                TL_stars.InputSavedStarGift inputSavedStarGift = (TL_stars.InputSavedStarGift) this.f;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.h;
-                long j10 = this.c;
-                if (!(tLObject instanceof TLRPC.TL_payments_paymentResult)) {
-                    if (tL_error != null && "BALANCE_TOO_LOW".equals(tL_error.text)) {
-                        if (!np.s1(c6Var.a).k7) {
-                            u8 y10 = u8.y(c6Var.a, false);
-                            di.m1 m1Var = new di.m1(c6Var, j10, 6);
-                            y10.e = false;
-                            y10.q(m1Var, false, true);
-                            y10.e = true;
-                            break;
-                        } else {
-                            c6Var.g2.setLoading(false);
-                            u8.c0(c6Var.getContext(), c6Var.J0);
-                            break;
-                        }
-                    } else {
-                        c6Var.k().f0(tL_error, false);
-                        break;
-                    }
+                f6 f6Var = (f6) this.c;
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.d;
+                bi.a2 a2Var = (bi.a2) this.e;
+                TL_stars.starGiftDepositPayload stargiftdepositpayload = (TL_stars.starGiftDepositPayload) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (stargiftdepositpayload != null) {
+                    di.o2 o2Var = new di.o2(f6Var, new boolean[1], u1Var, a2Var, this.b, stargiftdepositpayload);
+                    c1.c cVar = new c1.c(29, new Runnable[]{org.telegram.ui.Wallet.u0.D(f6Var.a).k(stargiftdepositpayload, new m6(1, cVar, o2Var))}, o2Var);
+                    org.telegram.messenger.g0.h3(cVar, 5000L);
+                    break;
                 } else {
-                    TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject;
-                    np.s1(c6Var.a).Y3(tL_payments_paymentResult.updates.users, false);
-                    np.s1(c6Var.a).S3(tL_payments_paymentResult.updates.chats, false);
-                    u8.y(c6Var.a, false).S(false);
-                    u8.y(c6Var.a, false).O();
-                    if (!TextUtils.isEmpty(str2) && (savedStarGift = c6Var.B2) != null) {
-                        savedStarGift.flags &= -65537;
-                        savedStarGift.prepaid_upgrade_hash = null;
-                    }
-                    c6Var.n2 = true;
-                    c6Var.o3 = null;
-                    c6Var.m1(inputSavedStarGift, tL_payments_paymentResult.updates, new d3(c6Var, str2, i10));
-                    Utilities.d.c(new e3(c6Var, tL_payments_paymentResult, i10));
+                    u1Var.dismiss();
+                    new lc(a2Var.c, f6Var.J0).g0(tL_error2, false);
                     break;
                 }
-                break;
-            case 2:
-                u8 u8Var = (u8) this.d;
-                boolean[] zArr2 = (boolean[]) this.e;
-                long j11 = this.c;
-                TLObject tLObject2 = (TLObject) this.f;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) this.b;
-                s10 s10Var = (s10) this.h;
-                zArr2[0] = true;
-                u8Var.g(j11, tLObject2, tL_textWithEntities, s10Var);
-                break;
-            case 3:
-                u8 u8Var2 = (u8) this.d;
-                boolean[] zArr3 = (boolean[]) this.e;
-                TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift = (TLRPC.TL_payments_paymentFormStarGift) this.f;
-                TL_stars.StarGift starGift = (TL_stars.StarGift) this.b;
-                long j12 = this.c;
-                s10 s10Var2 = (s10) this.h;
-                zArr3[0] = true;
-                u8Var2.h(tL_payments_paymentFormStarGift, starGift, j12, null, true, s10Var2);
-                break;
-            case 4:
-                k7 k7Var = (k7) this.d;
-                TLObject tLObject3 = (TLObject) this.e;
-                long j13 = this.c;
-                View view = (View) this.f;
-                h7 h7Var = (h7) this.b;
-                np npVar = (np) this.h;
-                if (tLObject3 != null) {
-                    TL_stories.TL_stories_peerStories tL_stories_peerStories = (TL_stories.TL_stories_peerStories) tLObject3;
-                    np.s1(k7Var.a).Y3(tL_stories_peerStories.users, false);
-                    np.s1(k7Var.a).S3(tL_stories_peerStories.chats, false);
-                    TL_stories.PeerStories peerStories = tL_stories_peerStories.stories;
-                    if (!peerStories.stories.isEmpty()) {
-                        np.s1(k7Var.a).P1().d0(j13, peerStories);
-                        l7.n(peerStories, new di.f2(k7Var, view, j13, h7Var, 11));
-                        z10 = false;
-                        if (j13 > 0 && (a22 = npVar.a2(Long.valueOf(j13))) != null) {
-                            a22.stories_unavailable = true;
-                            vr.a0(k7Var.a).m1(Collections.singletonList(a22), null, false, true);
-                            npVar.X3(a22, false, false);
-                        }
-                        if (j13 < 0 && (M0 = npVar.M0(Long.valueOf(-j13))) != null) {
-                            M0.stories_unavailable = true;
-                            vr.a0(k7Var.a).m1(null, Collections.singletonList(M0), false, true);
-                            npVar.Q3(M0, false);
-                        }
-                        if (!z10) {
-                            view.invalidate();
-                            np.s1(k7Var.a).P1().h0(j13, false);
-                            break;
-                        }
-                    }
-                }
-                z10 = true;
-                if (j13 > 0) {
-                    a22.stories_unavailable = true;
-                    vr.a0(k7Var.a).m1(Collections.singletonList(a22), null, false, true);
-                    npVar.X3(a22, false, false);
-                }
-                if (j13 < 0) {
-                    M0.stories_unavailable = true;
-                    vr.a0(k7Var.a).m1(null, Collections.singletonList(M0), false, true);
-                    npVar.Q3(M0, false);
-                }
-                if (!z10) {
-                }
-                break;
-            case 5:
-                h00 h00Var = (h00) this.d;
-                TLObject tLObject4 = (TLObject) this.e;
-                long j14 = this.c;
-                TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) this.f;
-                a0.h hVar2 = (a0.h) this.b;
-                Runnable runnable = (Runnable) this.h;
-                TLRPC.TL_messages_forumTopics tL_messages_forumTopics2 = (TLRPC.TL_messages_forumTopics) tLObject4;
-                h00Var.getMessagesController().Y3(tL_messages_forumTopics2.users, false);
-                h00Var.getMessagesController().S3(tL_messages_forumTopics2.chats, false);
-                h00Var.u(j14, tL_messages_forumTopics.topics, hVar2, false, 2, -1);
-                h00Var.getMessagesStorage().C1(h00Var.getConnectionsManager().getCurrentTime(), -j14, (List) h00Var.a.f(j14), true);
-                h00Var.getMessagesStorage().j1(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 6:
-                ((ConnectionsManager) this.d).lambda$sendRequestInternal$7((RequestDelegate) this.e, (TLObject) this.f, (TLRPC.TL_error) this.b, (RequestDelegateTimestamp) this.h, this.c);
-                break;
-            case 7:
-                an anVar = (an) this.d;
-                m60 m60Var = (m60) this.e;
-                long j15 = this.c;
-                TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) this.f;
-                ArrayList arrayList = (ArrayList) this.b;
-                ok0 ok0Var = (ok0) this.h;
-                m60Var.n0 = true;
-                Activity parentActivity = anVar.getParentActivity();
-                long j16 = tL_messageEntityFormattedDate.date;
-                bg.e0 e0Var = new bg.e0(anVar, arrayList, j15, ok0Var, 3);
-                de deVar = new de(ok0Var, i7);
-                Pattern pattern = t4.a;
-                t4.H(parentActivity, j15, j16, 0, true, e0Var, deVar, new q4(null), null);
-                break;
             default:
-                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) this.d;
-                TLObject tLObject5 = (TLObject) this.e;
-                so soVar = (so) this.f;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.b;
-                Runnable runnable2 = (Runnable) this.h;
-                long j17 = this.c;
-                if (e2Var.getContext() != null) {
-                    if (tLObject5 instanceof TL_chatlists.TL_chatlists_exportedInvites) {
-                        TL_chatlists.TL_chatlists_exportedInvites tL_chatlists_exportedInvites = (TL_chatlists.TL_chatlists_exportedInvites) tLObject5;
-                        e2Var.getMessagesController().S3(tL_chatlists_exportedInvites.chats, false);
-                        e2Var.getMessagesController().Y3(tL_chatlists_exportedInvites.users, false);
-                        new wy(e2Var, soVar, tL_chatlists_exportedInvites.invites).show();
-                    } else if (tL_error2 == null || !"FILTER_ID_INVALID".equals(tL_error2.text) || soVar.e()) {
-                        k5.o(null, 2131743879, cc.a0(e2Var), null);
+                boolean[] zArr2 = (boolean[]) this.d;
+                bi.k2 k2Var = (bi.k2) this.c;
+                org.telegram.utils.twidget.d1 d1Var = (org.telegram.utils.twidget.d1) this.e;
+                TLRPC.TL_messages_botWidgetQueryAnswer tL_messages_botWidgetQueryAnswer = (TLRPC.TL_messages_botWidgetQueryAnswer) obj;
+                TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    org.telegram.messenger.g0.r(k2Var);
+                    long j3 = this.b;
+                    if (tL_messages_botWidgetQueryAnswer == null) {
+                        String str = tL_error3 != null ? tL_error3.text : "";
+                        d1Var.b("WIDGET_RESPONSE_TIMEOUT".equals(str) ? 1 : (str == null || !str.startsWith("FLOOD_WAIT")) ? 3 : 2, null, j3);
+                        break;
                     } else {
-                        new wy(e2Var, soVar, null).show();
-                    }
-                    if (runnable2 != null) {
-                        org.telegram.messenger.g0.i3(runnable2, Math.max(0L, 200 - (System.currentTimeMillis() - j17)));
+                        d1Var.b(0, org.telegram.utils.twidget.n0.C(tL_messages_botWidgetQueryAnswer.result), j3);
                         break;
                     }
                 }
@@ -261,33 +85,17 @@ public final /* synthetic */ class e implements Runnable {
         }
     }
 
-    public /* synthetic */ e(u8 u8Var, boolean[] zArr, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift, TL_stars.StarGift starGift, long j3, s10 s10Var) {
-        this.a = 3;
-        this.d = u8Var;
-        this.e = zArr;
-        this.f = tL_payments_paymentFormStarGift;
-        this.b = starGift;
-        this.c = j3;
-        this.h = s10Var;
+    public /* synthetic */ e(f6 f6Var, org.telegram.ui.ActionBar.u1 u1Var, bi.a2 a2Var, long j3) {
+        this.c = f6Var;
+        this.d = u1Var;
+        this.e = a2Var;
+        this.b = j3;
     }
 
-    public /* synthetic */ e(Object obj, Object obj2, long j3, Object obj3, Object obj4, Object obj5, int i7) {
-        this.a = i7;
-        this.d = obj;
-        this.e = obj2;
-        this.c = j3;
-        this.f = obj3;
-        this.b = obj4;
-        this.h = obj5;
-    }
-
-    public /* synthetic */ e(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, long j3, int i7) {
-        this.a = i7;
-        this.d = obj;
-        this.e = obj2;
-        this.f = obj3;
-        this.b = obj4;
-        this.h = obj5;
-        this.c = j3;
+    public /* synthetic */ e(boolean[] zArr, bi.k2 k2Var, org.telegram.utils.twidget.d1 d1Var, long j3) {
+        this.d = zArr;
+        this.c = k2Var;
+        this.e = d1Var;
+        this.b = j3;
     }
 }

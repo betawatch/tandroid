@@ -1,45 +1,43 @@
 package c8;
 
-import java.util.concurrent.Future;
+import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.RemoteException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class r9 {
-    public static Object a(Future future) {
-        Object obj;
-        boolean z10 = false;
-        if (!future.isDone()) {
-            throw new IllegalStateException(a8.ka.a("Future was expected to be done: %s", future));
+    public static v7.e a;
+
+    public static hi.u5 a(Bitmap bitmap) {
+        try {
+            v7.e eVar = a;
+            q6.m.i(eVar, "IBitmapDescriptorFactory is not initialized");
+            v7.c cVar = (v7.c) eVar;
+            Parcel p12 = cVar.p1();
+            v7.b.b(p12, bitmap);
+            Parcel o12 = cVar.o1(p12, 6);
+            a7.a m12 = a7.b.m1(o12.readStrongBinder());
+            o12.recycle();
+            return new hi.u5(m12);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
         }
-        while (true) {
-            try {
-                obj = future.get();
-                break;
-            } catch (InterruptedException unused) {
-                z10 = true;
-            } catch (Throwable th2) {
-                if (z10) {
-                    Thread.currentThread().interrupt();
-                }
-                throw th2;
-            }
-        }
-        if (z10) {
-            Thread.currentThread().interrupt();
-        }
-        return obj;
     }
 
-    public static m9.w b(Object obj) {
-        return obj == null ? m9.w.b : new m9.w(obj);
-    }
-
-    public static m9.p c(m9.y yVar, g9.k kVar) {
-        m9.p pVar = new m9.p();
-        yVar.getClass();
-        pVar.n = yVar;
-        pVar.r = kVar;
-        yVar.b(pVar, m9.r.a);
-        return pVar;
+    public static hi.u5 b(int i7) {
+        try {
+            v7.e eVar = a;
+            q6.m.i(eVar, "IBitmapDescriptorFactory is not initialized");
+            v7.c cVar = (v7.c) eVar;
+            Parcel p12 = cVar.p1();
+            p12.writeInt(i7);
+            Parcel o12 = cVar.o1(p12, 1);
+            a7.a m12 = a7.b.m1(o12.readStrongBinder());
+            o12.recycle();
+            return new hi.u5(m12);
+        } catch (RemoteException e10) {
+            throw new androidx.car.app.j(e10);
+        }
     }
 }

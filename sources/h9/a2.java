@@ -1,42 +1,98 @@
 package h9;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class a2 extends q1 implements Serializable {
-    public final q1 a;
+public final class a2 extends t0 {
+    public static final Object[] r;
+    public static final a2 s;
+    public final transient Object[] d;
+    public final transient int e;
+    public final transient Object[] f;
+    public final transient int h;
+    public final transient int n;
 
-    public a2(q1 q1Var) {
-        this.a = q1Var;
+    static {
+        Object[] objArr = new Object[0];
+        r = objArr;
+        s = new a2(0, 0, 0, objArr, objArr);
     }
 
-    @Override // h9.q1
-    public final q1 a() {
-        return this.a;
+    public a2(int i7, int i10, int i11, Object[] objArr, Object[] objArr2) {
+        this.d = objArr;
+        this.e = i7;
+        this.f = objArr2;
+        this.h = i10;
+        this.n = i11;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return this.a.compare(obj2, obj);
-    }
-
-    @Override // java.util.Comparator
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a2) {
-            return this.a.equals(((a2) obj).a);
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj != null) {
+            Object[] objArr = this.f;
+            if (objArr.length != 0) {
+                int v = o.v(obj);
+                while (true) {
+                    int i7 = v & this.h;
+                    Object obj2 = objArr[i7];
+                    if (obj2 == null) {
+                        return false;
+                    }
+                    if (obj2.equals(obj)) {
+                        return true;
+                    }
+                    v = i7 + 1;
+                }
+            }
         }
         return false;
     }
 
+    @Override // h9.t0, java.util.Collection, java.util.Set
     public final int hashCode() {
-        return -this.a.hashCode();
+        return this.e;
     }
 
-    public final String toString() {
-        return this.a + ".reverse()";
+    @Override // h9.d0
+    public final int i(int i7, Object[] objArr) {
+        Object[] objArr2 = this.d;
+        int i10 = this.n;
+        System.arraycopy(objArr2, 0, objArr, i7, i10);
+        return i7 + i10;
+    }
+
+    @Override // h9.d0
+    public final Object[] j() {
+        return this.d;
+    }
+
+    @Override // h9.d0
+    public final int k() {
+        return this.n;
+    }
+
+    @Override // h9.d0
+    public final int l() {
+        return 0;
+    }
+
+    @Override // h9.d0
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // h9.d0
+    /* renamed from: n */
+    public final h2 iterator() {
+        return f().listIterator(0);
+    }
+
+    @Override // h9.t0
+    public final i0 r() {
+        return i0.o(this.n, this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.n;
     }
 }

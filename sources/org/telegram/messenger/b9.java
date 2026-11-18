@@ -6,27 +6,27 @@ import android.content.Intent;
 import android.os.Build;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class b9 extends org.telegram.ui.ActionBar.u2 {
+public final class b9 extends org.telegram.ui.ActionBar.x2 {
     public final /* synthetic */ int m1 = 0;
-    public org.telegram.ui.ActionBar.e2 n1;
+    public org.telegram.ui.ActionBar.h2 n1;
 
     public /* synthetic */ b9(Context context, boolean z10) {
         super(context, z10);
     }
 
-    @Override // org.telegram.ui.ActionBar.u2
-    public boolean H() {
+    @Override // org.telegram.ui.ActionBar.x2
+    public boolean G() {
         switch (this.m1) {
             case 0:
                 return false;
             default:
-                return super.H();
+                return super.G();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u2
+    @Override // org.telegram.ui.ActionBar.x2
     public boolean I() {
         switch (this.m1) {
             case 0:
@@ -36,8 +36,8 @@ public final class b9 extends org.telegram.ui.ActionBar.u2 {
         }
     }
 
-    public void I0() {
-        Activity parentActivity = ((org.telegram.ui.yw) this.n1).getParentActivity();
+    public void J0() {
+        Activity parentActivity = ((org.telegram.ui.cx) this.n1).getParentActivity();
         boolean z10 = false;
         boolean z11 = parentActivity.checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") == 0;
         int i7 = Build.VERSION.SDK_INT;
@@ -66,14 +66,14 @@ public final class b9 extends org.telegram.ui.ActionBar.u2 {
         parentActivity.requestPermissions((String[]) arrayList.toArray(new String[arrayList.size()]), 4);
     }
 
-    @Override // org.telegram.ui.ActionBar.u2
+    @Override // org.telegram.ui.ActionBar.x2
     public void L() {
         switch (this.m1) {
             case 1:
                 super.L();
-                org.telegram.ui.Components.q8 q8Var = (org.telegram.ui.Components.q8) this.n1;
-                g0.a3(q8Var.getParentActivity(), q8Var.getClassGuid());
-                q8Var.T = null;
+                org.telegram.ui.Components.y8 y8Var = (org.telegram.ui.Components.y8) this.n1;
+                g0.Z2(y8Var.getParentActivity(), y8Var.getClassGuid());
+                y8Var.T = null;
                 break;
             default:
                 super.L();
@@ -81,7 +81,7 @@ public final class b9 extends org.telegram.ui.ActionBar.u2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         switch (this.m1) {
             case 0:
@@ -90,18 +90,18 @@ public final class b9 extends org.telegram.ui.ActionBar.u2 {
                 break;
             default:
                 super.dismiss();
-                org.telegram.ui.Components.q8 q8Var = (org.telegram.ui.Components.q8) this.n1;
-                q8Var.K.z1(q8Var.Z);
-                q8Var.f = true;
-                q8Var.fragmentView.invalidate();
-                q8Var.e.animate().setListener(new org.telegram.ui.Components.x5(this, 4)).alpha(0.0f).setDuration(200L).start();
+                org.telegram.ui.Components.y8 y8Var = (org.telegram.ui.Components.y8) this.n1;
+                y8Var.K.z1(y8Var.Z);
+                y8Var.f = true;
+                y8Var.fragmentView.invalidate();
+                y8Var.e.animate().setListener(new org.telegram.ui.Components.x(this, 5)).alpha(0.0f).setDuration(200L).start();
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b9(org.telegram.ui.Components.q8 q8Var, Activity activity) {
+    public b9(org.telegram.ui.Components.y8 y8Var, Activity activity) {
         super(activity, true);
-        this.n1 = q8Var;
+        this.n1 = y8Var;
     }
 }

@@ -10,7 +10,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l0 implements Map, Serializable, j$.util.Map {
     public transient t0 a;
@@ -23,11 +23,11 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         }
         Set entrySet = map.entrySet();
         xa xaVar = new xa(entrySet != null ? entrySet.size() : 4, 10);
-        xaVar.v(entrySet);
+        xaVar.x(entrySet);
         return xaVar.c(true);
     }
 
-    public abstract u1 c();
+    public abstract v1 c();
 
     @Override // java.util.Map
     public final void clear() {
@@ -59,7 +59,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         return values().contains(obj);
     }
 
-    public abstract v1 d();
+    public abstract w1 d();
 
     public abstract d0 e();
 
@@ -69,7 +69,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         if (t0Var != null) {
             return t0Var;
         }
-        u1 c10 = c();
+        v1 c10 = c();
         this.a = c10;
         return c10;
     }
@@ -126,7 +126,7 @@ public abstract class l0 implements Map, Serializable, j$.util.Map {
         if (t0Var != null) {
             return t0Var;
         }
-        v1 d = d();
+        w1 d = d();
         this.b = d;
         return d;
     }

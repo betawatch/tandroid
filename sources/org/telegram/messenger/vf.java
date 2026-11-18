@@ -3,17 +3,17 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class vf implements Runnable {
     public final /* synthetic */ int a = 0;
-    public final /* synthetic */ si b;
+    public final /* synthetic */ ri b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ ArrayList d;
     public final /* synthetic */ int e;
 
-    public /* synthetic */ vf(si siVar, boolean z10, int i7, ArrayList arrayList) {
-        this.b = siVar;
+    public /* synthetic */ vf(ri riVar, boolean z10, int i7, ArrayList arrayList) {
+        this.b = riVar;
         this.c = z10;
         this.e = i7;
         this.d = arrayList;
@@ -25,17 +25,17 @@ public final /* synthetic */ class vf implements Runnable {
         int i10 = this.e;
         ArrayList arrayList = this.d;
         boolean z10 = this.c;
-        si siVar = this.b;
+        ri riVar = this.b;
         switch (i7) {
             case 0:
-                SharedPreferences.Editor edit = np.s1(siVar.currentAccount).g7.edit();
+                SharedPreferences.Editor edit = mp.u1(riVar.currentAccount).i7.edit();
                 if (z10) {
-                    siVar.k0 = false;
-                    siVar.l0 = true;
+                    riVar.k0 = false;
+                    riVar.l0 = true;
                     edit.putLong("lastGifLoadTime", System.currentTimeMillis()).apply();
                 } else {
-                    siVar.h0[i10] = false;
-                    siVar.i0[i10] = true;
+                    riVar.h0[i10] = false;
+                    riVar.i0[i10] = true;
                     if (i10 == 0) {
                         edit.putLong("lastStickersLoadTime", System.currentTimeMillis()).apply();
                     } else if (i10 == 1) {
@@ -52,38 +52,38 @@ public final /* synthetic */ class vf implements Runnable {
                 }
                 if (arrayList != null) {
                     if (z10) {
-                        siVar.j0 = arrayList;
+                        riVar.j0 = arrayList;
                     } else {
-                        siVar.g0[i10] = arrayList;
+                        riVar.g0[i10] = arrayList;
                     }
                     if (i10 == 3) {
-                        siVar.n1();
+                        riVar.q1();
                     }
-                    siVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
+                    riVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
                     break;
                 }
                 break;
             default:
                 if (z10) {
-                    siVar.j0 = arrayList;
-                    siVar.k0 = false;
-                    siVar.l0 = true;
+                    riVar.j0 = arrayList;
+                    riVar.k0 = false;
+                    riVar.l0 = true;
                 } else {
-                    siVar.g0[i10] = arrayList;
-                    siVar.h0[i10] = false;
-                    siVar.i0[i10] = true;
+                    riVar.g0[i10] = arrayList;
+                    riVar.h0[i10] = false;
+                    riVar.i0[i10] = true;
                 }
                 if (i10 == 3) {
-                    siVar.n1();
+                    riVar.q1();
                 }
-                siVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
-                siVar.V0(i10, z10, false, false);
+                riVar.getNotificationCenter().k(86, Boolean.valueOf(z10), Integer.valueOf(i10));
+                riVar.Y0(i10, z10, false, false);
                 break;
         }
     }
 
-    public /* synthetic */ vf(si siVar, boolean z10, ArrayList arrayList, int i7) {
-        this.b = siVar;
+    public /* synthetic */ vf(ri riVar, boolean z10, ArrayList arrayList, int i7) {
+        this.b = riVar;
         this.c = z10;
         this.d = arrayList;
         this.e = i7;

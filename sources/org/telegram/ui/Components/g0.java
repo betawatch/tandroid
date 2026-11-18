@@ -1,27 +1,19 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t2 b;
+public final class g0 extends org.telegram.ui.i11 {
+    public final /* synthetic */ h0 e;
 
-    public /* synthetic */ g0(org.telegram.ui.ActionBar.t2 t2Var, int i7) {
-        this.a = i7;
-        this.b = t2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(h0 h0Var, f0 f0Var) {
+        super(f0Var);
+        this.e = h0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.invalidateSelf();
-                break;
-            default:
-                org.telegram.ui.ActionBar.t2 t2Var = this.b;
-                ((u5) t2Var.d).e(true, 0.0f);
-                t2Var.invalidateSelf();
-                break;
-        }
+    @Override // org.telegram.ui.i11, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.e2 = null;
     }
 }

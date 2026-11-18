@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import org.json.JSONObject;
 import q6.m;
 import r6.a;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -68,7 +68,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        m.e(string);
+        m.f(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.f = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -104,19 +104,19 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.l(parcel, 2, this.a);
-        yb.l(parcel, 3, this.b);
-        yb.l(parcel, 4, this.c);
-        yb.l(parcel, 5, this.d);
-        yb.k(parcel, 6, this.e, i7);
-        yb.l(parcel, 7, this.f);
-        yb.q(parcel, 8, 8);
+        int r10 = bc.r(parcel, 20293);
+        bc.l(parcel, 2, this.a);
+        bc.l(parcel, 3, this.b);
+        bc.l(parcel, 4, this.c);
+        bc.l(parcel, 5, this.d);
+        bc.k(parcel, 6, this.e, i7);
+        bc.l(parcel, 7, this.f);
+        bc.q(parcel, 8, 8);
         parcel.writeLong(this.h);
-        yb.l(parcel, 9, this.n);
-        yb.p(parcel, 10, this.r);
-        yb.l(parcel, 11, this.s);
-        yb.l(parcel, 12, this.w);
-        yb.s(parcel, r10);
+        bc.l(parcel, 9, this.n);
+        bc.p(parcel, 10, this.r);
+        bc.l(parcel, 11, this.s);
+        bc.l(parcel, 12, this.w);
+        bc.s(parcel, r10);
     }
 }

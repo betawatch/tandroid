@@ -9,19 +9,19 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.web.e1;
-import p4.q0;
+import p4.o0;
+import p4.r0;
 import r.a;
-import r.d;
+import r.c;
 import w.b;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
     private final a mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<d, Executor> mListeners = new HashMap();
+    private final Map<c, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
@@ -53,17 +53,17 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
 
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
-        for (Map.Entry<d, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new e1(13, entry, convertAndRecast));
+        for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new o0(5, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public void addListener(Executor executor, d dVar) {
+    public void addListener(Executor executor, c cVar) {
         this.mListeners.isEmpty();
-        Objects.requireNonNull(dVar);
+        Objects.requireNonNull(cVar);
         throw new ClassCastException();
     }
 
@@ -72,10 +72,10 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new j(this, z10, bVar, 12));
     }
 
-    public boolean removeListener(d dVar) {
-        Map<d, Executor> map = this.mListeners;
-        Objects.requireNonNull(dVar);
-        map.remove(dVar);
+    public boolean removeListener(c cVar) {
+        Map<c, Executor> map = this.mListeners;
+        Objects.requireNonNull(cVar);
+        map.remove(cVar);
         if (!this.mListeners.isEmpty()) {
             return false;
         }
@@ -86,7 +86,7 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
         int i7 = this.mResultType;
         b bVar = this.mBundle;
         aVar.getClass();
-        g.d("unsubscribeCarHardwareResult", new q0(aVar, i7, bVar));
+        g.d("unsubscribeCarHardwareResult", new r0(aVar, i7, bVar));
         return true;
     }
 }

@@ -3,18 +3,18 @@ package bi;
 import android.content.Context;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.i6 c;
     public final /* synthetic */ TL_stars.StarGift d;
 
-    public /* synthetic */ f0(Context context, org.telegram.ui.ActionBar.e6 e6Var, TL_stars.StarGift starGift, int i7) {
+    public /* synthetic */ f0(int i7, Context context, TL_stars.StarGift starGift, org.telegram.ui.ActionBar.i6 i6Var) {
         this.a = i7;
         this.b = context;
-        this.c = e6Var;
+        this.c = i6Var;
         this.d = starGift;
     }
 
@@ -22,12 +22,12 @@ public final /* synthetic */ class f0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.e6 e6Var = this.c;
-                m0.g1(this.b, this.d, e6Var);
+                org.telegram.ui.ActionBar.i6 i6Var = this.c;
+                m0.h1(this.b, this.d, i6Var);
                 break;
             default:
-                org.telegram.ui.ActionBar.e6 e6Var2 = this.c;
-                m0.g1(this.b, this.d, e6Var2);
+                org.telegram.ui.ActionBar.i6 i6Var2 = this.c;
+                m0.h1(this.b, this.d, i6Var2);
                 break;
         }
     }

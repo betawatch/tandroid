@@ -1,22 +1,37 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class o1 extends r {
-    public final e2.l0 f;
+public final class o1 implements d1 {
+    public final d1 a;
+    public final long b;
 
-    public o1(e2.l1 l1Var, e2.l0 l0Var) {
-        super(l1Var);
-        this.f = l0Var;
+    public o1(d1 d1Var, long j3) {
+        this.a = d1Var;
+        this.b = j3;
     }
 
-    @Override // x2.r, e2.l1
-    public final e2.k1 m(int i7, e2.k1 k1Var, long j3) {
-        super.m(i7, k1Var, j3);
-        e2.l0 l0Var = this.f;
-        k1Var.c = l0Var;
-        e2.g0 g0Var = l0Var.b;
-        k1Var.b = null;
-        return k1Var;
+    @Override // x2.d1
+    public final void a() {
+        this.a.a();
+    }
+
+    @Override // x2.d1
+    public final boolean h() {
+        return this.a.h();
+    }
+
+    @Override // x2.d1
+    public final int j(long j3) {
+        return this.a.j(j3 - this.b);
+    }
+
+    @Override // x2.d1
+    public final int m(k8.a aVar, k2.h hVar, int i7) {
+        int m10 = this.a.m(aVar, hVar, i7);
+        if (m10 == -4) {
+            hVar.e += this.b;
+        }
+        return m10;
     }
 }

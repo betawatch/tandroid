@@ -1,101 +1,130 @@
 package di;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RadialGradient;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.ui.Components.er;
+import android.view.View;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class x4 extends Drawable {
-    public Drawable g;
-    public int h;
-    public int i;
-    public final Paint b = new Paint(1);
-    public final Shader[] c = new Shader[2];
-    public final Matrix d = new Matrix();
-    public final org.telegram.ui.Components.u5 e = new org.telegram.ui.Components.u5(1.0f, new ch.w(this, 18), 0, 420, er.h);
-    public final RectF f = new RectF();
-    public final int a = 1;
+public final class x4 extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final RadialGradient[] d;
+    public final Matrix e;
+    public final org.telegram.ui.Components.c6 f;
+    public final RadialGradient h;
+    public final Path n;
+    public int r;
+    public int s;
+
+    public x4(Context context) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = new Paint(1);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = new RadialGradient[2];
+        this.e = new Matrix();
+        this.f = new org.telegram.ui.Components.c6(1.0f, this, 0L, 420L, lr.h);
+        this.h = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{0, -1, -1, 0}, new float[]{0.15f, 0.35f, 0.65f, 0.88f}, Shader.TileMode.CLAMP);
+        this.n = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
+    }
 
     public final void a(int i7, int i10) {
-        if (this.h == i7 && this.i == i10) {
+        if (this.r == i7 && this.s == i10) {
             return;
         }
-        Shader[] shaderArr = this.c;
-        shaderArr[0] = shaderArr[1];
-        if (this.a == 0) {
-            this.h = i7;
-            this.i = i10;
-            shaderArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        } else {
-            float L = org.telegram.messenger.g0.L(340.0f);
-            this.h = i7;
-            this.i = i10;
-            shaderArr[1] = new RadialGradient(0.0f, 0.0f, L, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-        }
-        this.e.e(true, 0.0f);
-        invalidateSelf();
+        RadialGradient[] radialGradientArr = this.d;
+        radialGradientArr[0] = radialGradientArr[1];
+        this.r = i7;
+        this.s = i10;
+        radialGradientArr[1] = new RadialGradient(0.0f, 0.0f, 100.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.f.e(true, 0.0f);
+        invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        RectF rectF = this.f;
-        rectF.set(bounds);
-        rectF.right = rectF.width() + rectF.left;
-        int i7 = 0;
-        float e10 = this.e.e(false, 1.0f);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f10;
+        float f11 = 1.0f;
+        float e10 = this.f.e(false, 1.0f);
+        float currentTimeMillis = ((System.currentTimeMillis() % 15000) / 15000.0f) * 360.0f;
+        if (getAlpha() > 0.0f) {
+            invalidate();
+        }
+        Paint.Style style = Paint.Style.STROKE;
+        Paint paint = this.b;
+        paint.setStyle(style);
+        paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
+        Path path = this.n;
+        path.rewind();
+        float width = getWidth() / 2.0f;
+        float height = getHeight() / 2.0f;
+        float min = Math.min(getWidth(), getHeight()) / 2.0f;
+        for (int i7 = 0; i7 < 6; i7++) {
+            float e11 = p5.c.e(i7, 60.0f, 12.5f, currentTimeMillis);
+            path.moveTo(width, height);
+            double d = ((e11 - 12.5f) / 180.0f) * 3.141592653589793d;
+            path.lineTo((((float) Math.cos(d)) * min) + width, (((float) Math.sin(d)) * min) + height);
+            double d2 = ((e11 + 12.5f) / 180.0f) * 3.141592653589793d;
+            path.lineTo((((float) Math.cos(d2)) * min) + width, (((float) Math.sin(d2)) * min) + height);
+            path.lineTo(width, height);
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), ks.e4, 31);
+        int i10 = 0;
         while (true) {
-            Shader[] shaderArr = this.c;
-            if (i7 >= shaderArr.length) {
-                break;
+            RadialGradient[] radialGradientArr = this.d;
+            int length = radialGradientArr.length;
+            Matrix matrix = this.e;
+            if (i10 >= length) {
+                matrix.reset();
+                float f12 = min / 100.0f;
+                matrix.postScale(f12, f12);
+                matrix.postTranslate(width, height);
+                RadialGradient radialGradient = this.h;
+                radialGradient.setLocalMatrix(matrix);
+                Paint paint2 = this.c;
+                paint2.setShader(radialGradient);
+                canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint2);
+                canvas.restore();
+                return;
             }
-            if (shaderArr[i7] != null) {
-                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.25d);
+            if (radialGradientArr[i10] == null) {
+                f10 = e10;
+            } else {
+                f10 = e10;
+                float pow = (float) Math.pow(f11 - Math.abs(i10 - e10), 0.5d);
                 if (pow > 0.0f) {
-                    Matrix matrix = this.d;
                     matrix.reset();
-                    if (this.a == 1) {
-                        matrix.postTranslate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
-                    } else {
-                        matrix.postScale(getBounds().width() / 100.0f, 1.0f);
-                    }
-                    shaderArr[i7].setLocalMatrix(matrix);
-                    Shader shader = shaderArr[i7];
-                    Paint paint = this.b;
-                    paint.setShader(shader);
-                    paint.setAlpha((int) (pow * 255.0f));
-                    canvas.drawRoundRect(rectF, 0.0f, 0.0f, paint);
+                    float f13 = min / 100.0f;
+                    matrix.postScale(f13, f13);
+                    matrix.postTranslate(width, height);
+                    radialGradientArr[i10].setLocalMatrix(matrix);
+                    RadialGradient radialGradient2 = radialGradientArr[i10];
+                    Paint paint3 = this.a;
+                    paint3.setShader(radialGradient2);
+                    float f14 = pow * 255.0f;
+                    paint3.setAlpha((int) (0.3f * f14));
+                    paint.setShader(radialGradientArr[i10]);
+                    paint.setAlpha((int) f14);
+                    canvas.drawPath(path, paint3);
+                    canvas.drawPath(path, paint);
                 }
             }
-            i7++;
+            i10++;
+            e10 = f10;
+            f11 = 1.0f;
         }
-        if (this.g != null) {
-            canvas.save();
-            canvas.translate(rectF.centerX(), org.telegram.messenger.g0.L(145.0f));
-            w0.a(canvas, 0, this.g, rectF.width(), org.telegram.messenger.g0.L(290.0f), 2.0f, 1.0f);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

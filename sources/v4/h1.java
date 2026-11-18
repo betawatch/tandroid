@@ -1,41 +1,64 @@
 package v4;
 
-import android.content.Context;
-import android.util.DisplayMetrics;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Wallet.u5;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class h1 extends c0 {
-    public final /* synthetic */ u5 r;
+public abstract class h1 extends n0 {
+    public boolean m;
+    public boolean n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(u5 u5Var, Context context) {
-        super(context);
-        this.r = u5Var;
+    public h1() {
+        this.a = null;
+        this.b = new ArrayList();
+        this.c = 120L;
+        this.d = 120L;
+        this.e = 250L;
+        this.f = 250L;
+        this.g = 250L;
+        this.l = 0L;
+        this.m = true;
     }
 
-    @Override // v4.c0, v4.a1
-    public final void g(View view, z0 z0Var) {
-        RecyclerView recyclerView = this.r.a;
-        if (recyclerView == null) {
-            return;
+    @Override // v4.n0
+    public boolean a(f1 f1Var, e2.r0 r0Var, e2.r0 r0Var2) {
+        int i7;
+        int i10;
+        if (r0Var != null && ((i7 = r0Var.a) != (i10 = r0Var2.a) || r0Var.b != r0Var2.b || this.n)) {
+            return r(f1Var, r0Var, i7, r0Var.b, i10, r0Var2.b);
         }
-        o0 layoutManager = recyclerView.getLayoutManager();
-        layoutManager.getClass();
-        int[] iArr = {0, o0.z(view) - layoutManager.F()};
-        int i7 = iArr[0];
-        int i10 = iArr[1];
-        int m10 = m(Math.max(Math.abs(i7), Math.abs(i10)));
-        if (m10 > 0) {
-            z0Var.b(i7, i10, m10, this.j);
-        }
+        p(f1Var);
+        return true;
     }
 
-    @Override // v4.c0
-    public final float l(DisplayMetrics displayMetrics) {
-        return 100.0f / displayMetrics.densityDpi;
+    public abstract void p(f1 f1Var);
+
+    public abstract boolean q(f1 f1Var, f1 f1Var2, e2.r0 r0Var, int i7, int i10, int i11, int i12);
+
+    public abstract boolean r(f1 f1Var, e2.r0 r0Var, int i7, int i10, int i11, int i12);
+
+    public abstract void s(f1 f1Var, e2.r0 r0Var);
+
+    public boolean t(f1 f1Var) {
+        return !this.m || f1Var.h();
+    }
+
+    public final void u(f1 f1Var) {
+        w(f1Var);
+        d(f1Var);
+    }
+
+    public final void v(f1 f1Var) {
+        x(f1Var);
+        d(f1Var);
+    }
+
+    public void y() {
+    }
+
+    public void w(f1 f1Var) {
+    }
+
+    public void x(f1 f1Var) {
     }
 }

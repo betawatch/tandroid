@@ -2,28 +2,28 @@ package oi;
 
 import android.text.Editable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public interface d1 {
-    void B();
+    void A(int i7, int i10);
 
-    void I(CharSequence charSequence);
+    void E0();
 
-    void Z(e1 e1Var, int i7, int i10);
+    boolean E1(boolean z10);
 
-    void b0(Editable editable);
+    boolean J(e1 e1Var);
 
-    void d(e1 e1Var);
+    void b1(CharSequence charSequence);
 
-    boolean g();
+    boolean d2(e1 e1Var);
 
-    boolean h0(boolean z10);
+    void e(e1 e1Var);
 
-    void m(int i7, int i10);
+    boolean o();
 
-    boolean o(e1 e1Var);
+    void r1(e1 e1Var, int i7, int i10);
 
-    boolean q0(e1 e1Var);
+    void s1(Editable editable);
 
-    void z(e1 e1Var);
+    void x0(e1 e1Var);
 }

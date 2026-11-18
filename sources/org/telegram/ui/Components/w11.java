@@ -1,58 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import org.telegram.messenger.beta.R;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class w11 extends Drawable {
-    public final ch0 a;
-    public int b;
-    public final TextPaint c;
+public final /* synthetic */ class w11 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y11 b;
 
-    public w11(TextPaint textPaint) {
-        a5.b bVar = new a5.b(this, 8);
-        this.c = textPaint;
-        float textSize = textPaint.getTextSize() * 0.89f;
-        ch0 ch0Var = new ch0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = ch0Var;
-        ch0Var.setCallback(bVar);
-        ch0Var.K(1);
-        ch0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        ch0Var.J(true);
-        ch0Var.start();
+    public /* synthetic */ w11(y11 y11Var, int i7) {
+        this.a = i7;
+        this.b = y11Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int color = this.c.getColor();
-        int i7 = this.b;
-        ch0 ch0Var = this.a;
-        if (color != i7) {
-            ch0Var.a0 = true;
-            ch0Var.Q(color, "Comp 1");
-            ch0Var.o();
-            ch0Var.J(true);
-            ch0Var.V(0L);
-            this.b = color;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                y11 y11Var = this.b;
+                y11Var.getClass();
+                y11Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y11Var.h();
+                y11Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                y11 y11Var2 = this.b;
+                y11Var2.M = max;
+                y11Var2.h.invalidate();
+                break;
         }
-        ch0Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

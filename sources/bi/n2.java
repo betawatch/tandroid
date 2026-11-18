@@ -1,113 +1,23 @@
 package bi;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import di.ac;
-import org.telegram.messenger.qc;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n2 extends Drawable {
-    public final int a;
-    public final RectF b;
-    public final Path c;
-    public final Paint d;
-    public final ac e;
-    public boolean f;
-    public a3.f g;
-    public ai.g0 h;
-    public boolean i;
+public final class n2 extends a9 {
+    public final /* synthetic */ j3 v2;
 
-    public n2(int i7) {
-        this(i0.a.o(i7, 128), i7);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public n2(j3 j3Var, Context context, int i7, TL_stars.StarGift starGift, long j3, d2 d2Var, boolean z10, boolean z11) {
+        super(context, i7, starGift, null, j3, d2Var, z10, z11);
+        this.v2 = j3Var;
     }
 
-    public final void a() {
-        boolean z10 = this.e != null && this.i && qc.e(131072);
-        if (this.f == z10) {
-            return;
-        }
-        this.f = z10;
-        if (z10) {
-            bg.k d = bg.k.d();
-            a3.f fVar = new a3.f(this, 23);
-            this.g = fVar;
-            d.a(15, fVar);
-        } else {
-            bg.k.d().f(this.g);
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Paint paint = this.d;
-        Path path = this.c;
-        canvas.drawPath(path, paint);
-        ac acVar = this.e;
-        if (acVar != null) {
-            if (this.f || !this.i) {
-                canvas.save();
-                canvas.clipPath(path);
-                if (this.g == null) {
-                    acVar.d();
-                }
-                acVar.a(canvas, this.a);
-                canvas.restore();
-                if (this.g == null) {
-                    invalidateSelf();
-                }
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float min = Math.min(rect.width(), rect.height()) / 2.0f;
-        RectF rectF = this.b;
-        rectF.set(rect);
-        Path path = this.c;
-        path.rewind();
-        path.addRoundRect(rectF, min, min, Path.Direction.CW);
-        ac acVar = this.e;
-        if (acVar != null) {
-            acVar.g(rectF);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.d.setAlpha(i7);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.d.setColorFilter(colorFilter);
-    }
-
-    public n2(int i7, int i10) {
-        this.b = new RectF();
-        this.c = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.a = i7;
-        paint.setColor(i10);
-        if (Build.VERSION.SDK_INT >= 29) {
-            this.e = new ac(1, 25);
-        } else {
-            this.e = null;
-        }
+    @Override // bi.a9
+    public final lc f1() {
+        j3 j3Var = this.v2;
+        return new lc(j3Var.c, j3Var.J0);
     }
 }

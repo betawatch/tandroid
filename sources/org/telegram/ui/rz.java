@@ -1,65 +1,89 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
-import java.util.HashSet;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class rz extends View implements org.telegram.ui.ActionBar.z5 {
-    public final org.telegram.ui.Components.g6 a;
-    public fh.g b;
-    public String c;
+public final class rz extends v4.u0 {
+    public final /* synthetic */ c00 a;
 
-    public rz(Activity activity) {
-        super(activity);
-        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(true, false, false);
-        this.a = g6Var;
-        g6Var.u(-1);
-        g6Var.b = 17;
-        g6Var.x(org.telegram.messenger.g0.o());
-        g6Var.w(org.telegram.messenger.g0.L(14.0f));
-        g6Var.setCallback(this);
+    public rz(c00 c00Var) {
+        this.a = c00Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        org.telegram.ui.Components.g6 g6Var = this.a;
-        int N = (int) (org.telegram.messenger.g0.N(30.0f) + g6Var.c());
-        int width = (getWidth() - N) / 2;
-        int i7 = N + width;
-        fh.g gVar = this.b;
-        if (gVar != null) {
-            gVar.setBounds(width, 0, i7, getHeight());
-            this.b.draw(canvas);
-        }
-        g6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
-        this.a.setBounds(0, 0, i7, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        fh.g gVar = this.b;
-        if (gVar != null) {
-            gVar.updateColors();
-            invalidate();
+    @Override // v4.u0
+    public final void a(RecyclerView recyclerView, int i7) {
+        if (i7 == 1) {
+            org.telegram.messenger.g0.v1(this.a.L.getCurrentFocus());
         }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return super.verifyDrawable(drawable) || drawable == this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // v4.u0
+    public final void b(RecyclerView recyclerView, int i7, int i10) {
+        c00 c00Var = this.a;
+        uz uzVar = c00Var.n0;
+        v4.c0 c0Var = c00Var.k0;
+        te.a aVar = c00Var.a;
+        lz lzVar = c00Var.o0;
+        if (recyclerView.getAdapter() == null || c00Var.d == null) {
+            return;
+        }
+        int L0 = c0Var.L0();
+        int N0 = c0Var.N0();
+        int abs = Math.abs(N0 - L0) + 1;
+        int b10 = recyclerView.getAdapter().b();
+        if (!c00Var.N && abs > 0 && N0 >= b10 - 10 && !c00Var.O) {
+            org.telegram.messenger.g0.g3(new lz(this, 1));
+        }
+        if (c00Var.d != c00Var.V) {
+            View pinnedHeader = c00Var.b.getPinnedHeader();
+            if (pinnedHeader instanceof org.telegram.ui.Cells.x3) {
+                org.telegram.ui.Cells.x3 x3Var = (org.telegram.ui.Cells.x3) pinnedHeader;
+                CharSequence text = x3Var.getText();
+                if (!TextUtils.isEmpty(text) && x3Var.getAlpha() > 0.0f) {
+                    String charSequence = text.toString();
+                    if (!TextUtils.equals(uzVar.c, charSequence)) {
+                        uzVar.c = charSequence;
+                        uzVar.a.t(charSequence, true, true);
+                    }
+                    if (i10 != 0) {
+                        org.telegram.messenger.g0.r(lzVar);
+                        org.telegram.messenger.g0.h3(lzVar, 1650L);
+                        aVar.a(true, true);
+                        return;
+                    }
+                    return;
+                }
+            }
+            org.telegram.messenger.g0.r(lzVar);
+            aVar.a(false, true);
+            return;
+        }
+        if (i10 != 0 && !c00Var.f.isEmpty() && TextUtils.isEmpty(c00Var.R)) {
+            org.telegram.messenger.g0.r(lzVar);
+            org.telegram.messenger.g0.h3(lzVar, 1650L);
+            aVar.a(true, true);
+        }
+        v4.f1 K = recyclerView.K(L0);
+        if (K == null || K.f != 0) {
+            return;
+        }
+        View view = K.a;
+        if (view instanceof org.telegram.ui.Cells.p7) {
+            org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+            org.telegram.messenger.fj fjVar = p7Var.e <= 0 ? null : p7Var.b[0];
+            if (fjVar != null) {
+                int i11 = fjVar.k.date;
+                uzVar.getClass();
+                String u10 = org.telegram.messenger.gd.u(i11, false);
+                if (TextUtils.equals(uzVar.c, u10)) {
+                    return;
+                }
+                uzVar.c = u10;
+                uzVar.a.t(u10, true, true);
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@ package l2;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d {
     public int a;
@@ -34,10 +34,10 @@ public final class d {
         String str = h2.l0.a;
         Locale locale = Locale.US;
         StringBuilder n10 = i5.c.n("DecoderCounters {\n decoderInits=", i7, ",\n decoderReleases=", i10, "\n queuedInputBuffers=");
-        i5.c.y(n10, i11, "\n skippedInputBuffers=", i12, "\n renderedOutputBuffers=");
-        i5.c.y(n10, i13, "\n skippedOutputBuffers=", i14, "\n droppedBuffers=");
-        i5.c.y(n10, i15, "\n droppedInputBuffers=", i16, "\n maxConsecutiveDroppedBuffers=");
-        i5.c.y(n10, i17, "\n droppedToKeyframeEvents=", i18, "\n totalVideoFrameProcessingOffsetUs=");
+        i5.c.z(n10, i11, "\n skippedInputBuffers=", i12, "\n renderedOutputBuffers=");
+        i5.c.z(n10, i13, "\n skippedOutputBuffers=", i14, "\n droppedBuffers=");
+        i5.c.z(n10, i15, "\n droppedInputBuffers=", i16, "\n maxConsecutiveDroppedBuffers=");
+        i5.c.z(n10, i17, "\n droppedToKeyframeEvents=", i18, "\n totalVideoFrameProcessingOffsetUs=");
         n10.append(j3);
         n10.append("\n videoFrameProcessingOffsetCount=");
         n10.append(i19);

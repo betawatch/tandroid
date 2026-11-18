@@ -1,9 +1,9 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r1 {
     public static final String f;
@@ -28,7 +28,7 @@ public final class r1 {
         int i7 = m1Var.a;
         this.a = i7;
         boolean z11 = false;
-        ja.f(i7 == iArr.length && i7 == zArr.length);
+        la.f(i7 == iArr.length && i7 == zArr.length);
         this.b = m1Var;
         if (z10 && i7 > 1) {
             z11 = true;

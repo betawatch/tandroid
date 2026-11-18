@@ -1,21 +1,28 @@
 package di;
 
-import java.util.function.ToDoubleFunction;
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
+import c8.dd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements ToDoubleFunction {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class x0 implements ri.m, ri.n {
+    public final /* synthetic */ h1 a;
 
-    public /* synthetic */ x0(int i7) {
-        this.a = i7;
+    @Override // ri.n
+    public int e() {
+        return this.a.e1();
     }
 
-    @Override // java.util.function.ToDoubleFunction
-    public final double applyAsDouble(Object obj) {
-        switch (this.a) {
+    @Override // ri.m
+    public void l(int i7) {
+        h1 h1Var = this.a;
+        dh.g gVar = h1Var.n2;
+        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
+            return;
         }
-        return ((TLRPC.TL_topPeer) obj).rating;
+        if (dd.a(i7, 4)) {
+            gVar.h(h1Var.Y0.e());
+        }
+        gVar.e(h1Var.s2, h1Var.b.getWidth(), h1Var.b.getHeight());
     }
 }

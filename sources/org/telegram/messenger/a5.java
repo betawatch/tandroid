@@ -1,42 +1,378 @@
 package org.telegram.messenger;
 
+import android.text.TextUtils;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g5 b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ HashMap d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ c1 e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ a5(g5 g5Var, HashMap hashMap, HashMap hashMap2, int i7) {
-        this.a = i7;
-        this.b = g5Var;
-        this.c = hashMap;
-        this.d = hashMap2;
+    public /* synthetic */ a5(i5 i5Var, int i7, ArrayList arrayList, ArrayList arrayList2, a0.h hVar, boolean z10) {
+        this.e = i5Var;
+        this.b = i7;
+        this.c = arrayList;
+        this.f = arrayList2;
+        this.h = hVar;
+        this.d = z10;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00e2  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0127 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00f1  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        switch (this.a) {
+        int i7;
+        long j3;
+        HashMap hashMap;
+        HashMap hashMap2;
+        ArrayList arrayList;
+        a0.h hVar;
+        int i10;
+        ConcurrentHashMap concurrentHashMap;
+        int i11;
+        long r10;
+        int i12;
+        boolean z10;
+        int i13;
+        TLRPC.InputMedia inputMedia;
+        TLRPC.InputMedia inputMedia2;
+        int i14 = this.a;
+        Object obj = this.h;
+        Object obj2 = this.f;
+        c1 c1Var = this.e;
+        int i15 = 1;
+        switch (i14) {
             case 0:
-                g5 g5Var = this.b;
-                Utilities.e.c(new a5(g5Var, this.c, this.d, 1));
-                if (!g5Var.e) {
-                    g5Var.e = true;
-                    vr messagesStorage = g5Var.getMessagesStorage();
-                    messagesStorage.a.c(new zq(messagesStorage, false, 0));
+                long j10 = 0;
+                final i5 i5Var = (i5) c1Var;
+                ArrayList arrayList2 = (ArrayList) obj2;
+                a0.h hVar2 = (a0.h) obj;
+                ArrayList arrayList3 = i5Var.x;
+                if (s2.a) {
+                    a8.b("done loading contacts");
+                }
+                int i16 = this.b;
+                ArrayList arrayList4 = this.c;
+                if (i16 == 1) {
+                    if (arrayList4.isEmpty()) {
+                        j3 = 1000;
+                    } else {
+                        j3 = 1000;
+                        if (Math.abs((System.currentTimeMillis() / 1000) - i5Var.getUserConfig().r) < 86400) {
+                            i7 = i16;
+                        }
+                    }
+                    ArrayList arrayList5 = new ArrayList(arrayList4);
+                    Collections.sort(arrayList5, new jg.w(13));
+                    int size = arrayList5.size();
+                    int i17 = -1;
+                    while (i17 < size) {
+                        if (i17 == -1) {
+                            i11 = i16;
+                            r10 = ri.r(j10, i5Var.getUserConfig().h);
+                        } else {
+                            i11 = i16;
+                            r10 = ri.r(j10, ((TLRPC.TL_contact) arrayList5.get(i17)).user_id);
+                        }
+                        j10 = r10;
+                        i17++;
+                        i16 = i11;
+                    }
+                    i7 = i16;
+                    i5Var.A(j10, false);
+                    if (arrayList4.isEmpty()) {
+                        g0.g3(new m4(i5Var, 9));
+                        break;
+                    }
+                } else {
+                    i7 = i16;
+                    j3 = 1000;
+                }
+                if (i7 == 0) {
+                    i5Var.getUserConfig().r = (int) (System.currentTimeMillis() / j3);
+                    i5Var.getUserConfig().v(false);
+                }
+                int i18 = 0;
+                final boolean z11 = false;
+                while (i18 < arrayList4.size()) {
+                    TLRPC.TL_contact tL_contact = (TLRPC.TL_contact) arrayList4.get(i18);
+                    if (mp.u1(i5Var.currentAccount).c2(Long.valueOf(tL_contact.user_id)) == null && tL_contact.user_id != i5Var.getUserConfig().e()) {
+                        arrayList4.remove(i18);
+                        i18--;
+                        z11 = true;
+                    }
+                    i18++;
+                }
+                int i19 = i7;
+                if (i19 != 1) {
+                    i5Var.getMessagesStorage().m1(arrayList2, null, true, true);
+                    i5Var.getMessagesStorage().c1(arrayList4, i19 != 2);
+                }
+                Collator u10 = i5.u();
+                Collections.sort(arrayList4, new u4(hVar2, u10, i15));
+                ConcurrentHashMap concurrentHashMap2 = new ConcurrentHashMap(20, 1.0f, 2);
+                final HashMap hashMap3 = new HashMap();
+                final HashMap hashMap4 = new HashMap();
+                final ArrayList arrayList6 = new ArrayList();
+                final ArrayList arrayList7 = new ArrayList();
+                if (i5Var.r) {
+                    hashMap = null;
+                    hashMap2 = null;
+                } else {
+                    hashMap = new HashMap();
+                    hashMap2 = new HashMap();
+                }
+                int i20 = 0;
+                while (i20 < arrayList4.size()) {
+                    TLRPC.TL_contact tL_contact2 = (TLRPC.TL_contact) arrayList4.get(i20);
+                    int i21 = i20;
+                    int i22 = i19;
+                    TLRPC.User user = (TLRPC.User) hVar2.f(tL_contact2.user_id);
+                    if (user == null) {
+                        arrayList = arrayList4;
+                        hVar = hVar2;
+                        concurrentHashMap = concurrentHashMap2;
+                    } else {
+                        arrayList = arrayList4;
+                        concurrentHashMap2.put(Long.valueOf(tL_contact2.user_id), tL_contact2);
+                        if (hashMap == null || TextUtils.isEmpty(user.phone)) {
+                            hVar = hVar2;
+                            i10 = 0;
+                        } else {
+                            hashMap.put(user.phone, tL_contact2);
+                            hVar = hVar2;
+                            i10 = 0;
+                            hashMap2.put(user.phone.substring(Math.max(0, r3.length() - 7)), tL_contact2);
+                        }
+                        String k10 = o10.k(user, true);
+                        concurrentHashMap = concurrentHashMap2;
+                        if (k10.length() > 1) {
+                            k10 = k10.substring(i10, 1);
+                        }
+                        String upperCase = k10.length() == 0 ? "#" : k10.toUpperCase();
+                        String str = (String) i5Var.F.get(upperCase);
+                        if (str != null) {
+                            upperCase = str;
+                        }
+                        ArrayList arrayList8 = (ArrayList) hashMap3.get(upperCase);
+                        if (arrayList8 == null) {
+                            arrayList8 = new ArrayList();
+                            hashMap3.put(upperCase, arrayList8);
+                            arrayList6.add(upperCase);
+                        }
+                        arrayList8.add(tL_contact2);
+                        if (user.mutual_contact) {
+                            ArrayList arrayList9 = (ArrayList) hashMap4.get(upperCase);
+                            if (arrayList9 == null) {
+                                arrayList9 = new ArrayList();
+                                hashMap4.put(upperCase, arrayList9);
+                                arrayList7.add(upperCase);
+                            }
+                            arrayList9.add(tL_contact2);
+                        }
+                    }
+                    i20 = i21 + 1;
+                    hVar2 = hVar;
+                    arrayList4 = arrayList;
+                    concurrentHashMap2 = concurrentHashMap;
+                    i19 = i22;
+                }
+                final int i23 = i19;
+                final ArrayList arrayList10 = arrayList4;
+                final ConcurrentHashMap concurrentHashMap3 = concurrentHashMap2;
+                Collections.sort(arrayList6, new v4(u10, 4));
+                Collections.sort(arrayList7, new v4(u10, 5));
+                final boolean z12 = this.d;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.b5
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        i5 i5Var2 = i5.this;
+                        ArrayList arrayList11 = arrayList10;
+                        ConcurrentHashMap concurrentHashMap4 = concurrentHashMap3;
+                        HashMap hashMap5 = hashMap3;
+                        HashMap hashMap6 = hashMap4;
+                        ArrayList arrayList12 = arrayList6;
+                        ArrayList arrayList13 = arrayList7;
+                        int i24 = i23;
+                        boolean z13 = z12;
+                        boolean z14 = z11;
+                        i5Var2.f0 = arrayList11;
+                        i5Var2.g0 = concurrentHashMap4;
+                        i5Var2.h0 = hashMap5;
+                        i5Var2.j0 = hashMap6;
+                        i5Var2.i0 = arrayList12;
+                        i5Var2.k0 = arrayList13;
+                        i5Var2.n = true;
+                        if (i24 != 2) {
+                            synchronized (i5Var2.c) {
+                                i5Var2.b = false;
+                            }
+                        }
+                        Utilities.h.c(new y4(i5Var2, new ArrayList(i5Var2.f0), 0));
+                        i5Var2.N();
+                        i5Var2.getNotificationCenter().k(ks.O, new Object[0]);
+                        if (i24 == 1 || z13) {
+                            i5Var2.J(false);
+                        } else {
+                            i5Var2.L();
+                        }
+                        if (z14) {
+                            i5Var2.A(0L, false);
+                        }
+                    }
+                });
+                if (!arrayList3.isEmpty() && i5Var.h && i5Var.r) {
+                    i5Var.c(arrayList3, null, null, null);
+                    arrayList3.clear();
+                }
+                if (hashMap != null) {
+                    g0.g3(new c5(i5Var, hashMap, hashMap2, 0));
+                    break;
+                } else {
+                    i5Var.h = true;
                     break;
                 }
                 break;
             default:
-                g5 g5Var2 = this.b;
-                HashMap hashMap = this.c;
-                HashMap hashMap2 = this.d;
-                g5Var2.l0 = hashMap;
-                g5Var2.m0 = hashMap2;
+                zy zyVar = (zy) c1Var;
+                TLObject tLObject = (TLObject) obj2;
+                ly lyVar = (ly) obj;
+                boolean z13 = tLObject instanceof TLRPC.TL_messages_sendMultiMedia;
+                int i24 = this.b;
+                ArrayList arrayList11 = this.c;
+                boolean z14 = this.d;
+                if (z13) {
+                    TLRPC.TL_messages_sendMultiMedia tL_messages_sendMultiMedia = (TLRPC.TL_messages_sendMultiMedia) tLObject;
+                    int size2 = tL_messages_sendMultiMedia.multi_media.size();
+                    z10 = false;
+                    for (int i25 = 0; i25 < size2; i25++) {
+                        if (i24 < 0 ? lyVar.y.get(i25) != null : i24 == i25) {
+                            zyVar.i0(((fj) arrayList11.get(i25)).e1(), z14);
+                            TLRPC.TL_inputSingleMedia tL_inputSingleMedia = tL_messages_sendMultiMedia.multi_media.get(i25);
+                            TLRPC.InputMedia inputMedia3 = tL_inputSingleMedia.media;
+                            if (inputMedia3 instanceof TLRPC.TL_inputMediaPhoto) {
+                                tL_inputSingleMedia.media = (TLRPC.InputMedia) lyVar.A.get(i25);
+                            } else if (inputMedia3 instanceof TLRPC.TL_inputMediaDocument) {
+                                tL_inputSingleMedia.media = (TLRPC.InputMedia) lyVar.A.get(i25);
+                            }
+                            lyVar.o = (e20) lyVar.w.get(i25);
+                            lyVar.l = (String) lyVar.v.get(i25);
+                            TLRPC.PhotoSize photoSize = (TLRPC.PhotoSize) lyVar.u.get(i25);
+                            lyVar.g = photoSize;
+                            lyVar.p = true;
+                            if (tL_inputSingleMedia.media.file == null || photoSize != null) {
+                                z10 = true;
+                            }
+                            zyVar.M(lyVar, i25);
+                        }
+                    }
+                    i12 = 0;
+                } else {
+                    i12 = 0;
+                    if (tLObject instanceof TLRPC.TL_messages_sendMedia) {
+                        TLRPC.TL_inputMediaPaidMedia tL_inputMediaPaidMedia = (TLRPC.TL_inputMediaPaidMedia) ((TLRPC.TL_messages_sendMedia) tLObject).media;
+                        int size3 = tL_inputMediaPaidMedia.extended_media.size();
+                        z10 = false;
+                        for (0; i13 < size3; i13 + 1) {
+                            if (i24 >= 0) {
+                                i13 = i24 != i13 ? i13 + 1 : 0;
+                                zyVar.i0(((fj) arrayList11.get(i13)).e1(), z14);
+                                inputMedia = tL_inputMediaPaidMedia.extended_media.get(i13);
+                                if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
+                                    if (inputMedia instanceof TLRPC.TL_inputMediaDocument) {
+                                        ArrayList<TLRPC.InputMedia> arrayList12 = tL_inputMediaPaidMedia.extended_media;
+                                        inputMedia2 = (TLRPC.InputMedia) lyVar.A.get(i13);
+                                        arrayList12.set(i13, inputMedia2);
+                                    }
+                                    lyVar.o = (e20) lyVar.w.get(i13);
+                                    lyVar.l = (String) lyVar.v.get(i13);
+                                    TLRPC.PhotoSize photoSize2 = (TLRPC.PhotoSize) lyVar.u.get(i13);
+                                    lyVar.g = photoSize2;
+                                    lyVar.p = true;
+                                    if (inputMedia.file != null || photoSize2 != null) {
+                                        z10 = true;
+                                    }
+                                    zyVar.M(lyVar, i13);
+                                } else {
+                                    ArrayList<TLRPC.InputMedia> arrayList13 = tL_inputMediaPaidMedia.extended_media;
+                                    inputMedia2 = (TLRPC.InputMedia) lyVar.A.get(i13);
+                                    arrayList13.set(i13, inputMedia2);
+                                }
+                                inputMedia = inputMedia2;
+                                lyVar.o = (e20) lyVar.w.get(i13);
+                                lyVar.l = (String) lyVar.v.get(i13);
+                                TLRPC.PhotoSize photoSize22 = (TLRPC.PhotoSize) lyVar.u.get(i13);
+                                lyVar.g = photoSize22;
+                                lyVar.p = true;
+                                if (inputMedia.file != null) {
+                                }
+                                z10 = true;
+                                zyVar.M(lyVar, i13);
+                            } else {
+                                if (lyVar.y.get(i13) == null) {
+                                }
+                                zyVar.i0(((fj) arrayList11.get(i13)).e1(), z14);
+                                inputMedia = tL_inputMediaPaidMedia.extended_media.get(i13);
+                                if (inputMedia instanceof TLRPC.TL_inputMediaPhoto) {
+                                }
+                                inputMedia = inputMedia2;
+                                lyVar.o = (e20) lyVar.w.get(i13);
+                                lyVar.l = (String) lyVar.v.get(i13);
+                                TLRPC.PhotoSize photoSize222 = (TLRPC.PhotoSize) lyVar.u.get(i13);
+                                lyVar.g = photoSize222;
+                                lyVar.p = true;
+                                if (inputMedia.file != null) {
+                                }
+                                z10 = true;
+                                zyVar.M(lyVar, i13);
+                            }
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (!z10) {
+                    for (int i26 = i12; i26 < arrayList11.size(); i26++) {
+                        TLRPC.Message message = ((fj) arrayList11.get(i26)).k;
+                        zyVar.getMessagesStorage().N0(z14 ? 1 : 0, message);
+                        message.send_state = 2;
+                        message.errorAllowedPriceStars = 0L;
+                        message.errorNewPriceStars = 0L;
+                        ks notificationCenter = zyVar.getNotificationCenter();
+                        Object[] objArr = new Object[1];
+                        objArr[i12] = Integer.valueOf(message.id);
+                        notificationCenter.k(23, objArr);
+                        zyVar.d0(message.id);
+                        zyVar.i0(message.id, z14);
+                    }
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ a5(zy zyVar, TLObject tLObject, int i7, ly lyVar, ArrayList arrayList, boolean z10) {
+        this.e = zyVar;
+        this.f = tLObject;
+        this.b = i7;
+        this.h = lyVar;
+        this.c = arrayList;
+        this.d = z10;
     }
 }

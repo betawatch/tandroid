@@ -13,14 +13,14 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import org.telegram.messenger.a8;
-import org.telegram.ui.web.e1;
-import p4.q0;
+import p4.o0;
+import p4.r0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class p implements AutoCloseable {
-    public final q0 b;
-    public final q0 c;
+    public final r0 b;
+    public final r0 c;
     public long r;
     public boolean s;
     public a w;
@@ -33,9 +33,9 @@ public final class p implements AutoCloseable {
     public final long f = 8388608;
     public final ExecutorService d = Executors.newSingleThreadExecutor(new y0(8));
 
-    public p(q0 q0Var, q0 q0Var2) {
-        this.b = q0Var;
-        this.c = q0Var2;
+    public p(r0 r0Var, r0 r0Var2) {
+        this.b = r0Var;
+        this.c = r0Var2;
     }
 
     public static String b(String str) {
@@ -78,7 +78,7 @@ public final class p implements AutoCloseable {
                     try {
                         try {
                             this.b.getClass();
-                            a b10 = q0.b();
+                            a b10 = r0.b();
                             try {
                                 LinkedHashSet linkedHashSet = new LinkedHashSet();
                                 Collections.addAll(linkedHashSet, b10.a.a());
@@ -206,7 +206,7 @@ public final class p implements AutoCloseable {
                 ArrayList arrayList2 = new ArrayList();
                 arrayList2.add(oVar);
                 this.n.put(nVar, arrayList2);
-                this.d.execute(new e1(12, this, nVar));
+                this.d.execute(new o0(4, this, nVar));
                 return oVar;
             } catch (Throwable th2) {
                 throw th2;

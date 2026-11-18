@@ -3,7 +3,7 @@ package ai;
 import android.os.SystemClock;
 import org.telegram.ui.Dictation.DictationLid;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final class x1 implements Runnable {
                             c2Var.H = c10;
                             c2Var.E = true;
                             byte[] b10 = c2Var.u.b(0, c10);
-                            DictationLid.a.execute(new a1.e(17, b10, new v1(0, this, b10)));
+                            DictationLid.a.execute(new a1.e(16, b10, new v1(0, this, b10)));
                             break;
                         }
                     }
@@ -38,15 +38,15 @@ public final class x1 implements Runnable {
                 c2 c2Var2 = this.b;
                 if (!c2Var2.j) {
                     c2Var2.f.postDelayed(this, 700L);
-                    if (!c2Var2.Y && !c2Var2.i && (zVar = c2Var2.u) != null) {
-                        int i7 = c2Var2.a0;
+                    if (!c2Var2.W && !c2Var2.i && (zVar = c2Var2.u) != null) {
+                        int i7 = c2Var2.Y;
                         int c11 = zVar.c();
-                        if (c11 - c2Var2.b0 >= 16000) {
-                            c2Var2.b0 = c11;
-                            c2Var2.Y = true;
-                            int max = Math.max(c2Var2.Z, c11 - 960000);
+                        if (c11 - c2Var2.Z >= 16000) {
+                            c2Var2.Z = c11;
+                            c2Var2.W = true;
+                            int max = Math.max(c2Var2.X, c11 - 960000);
                             if (!DictationLid.f() || !DictationLid.e(c2Var2.q) || c2Var2.s >= 3) {
-                                DictationLid.a.execute(new a1.e(17, c2Var2.u.b(max, c11), new y1(this, i7, 0)));
+                                DictationLid.a.execute(new a1.e(16, c2Var2.u.b(max, c11), new y1(this, i7, 0)));
                                 break;
                             } else {
                                 DictationLid.j(c2Var2.u.b(max, c11), 2000, new s1(this, i7, 1));
@@ -60,9 +60,9 @@ public final class x1 implements Runnable {
                 c2 c2Var3 = this.b;
                 if (!c2Var3.j) {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
-                    double d = elapsedRealtime - c2Var3.j0;
+                    double d = elapsedRealtime - c2Var3.h0;
                     float sin = (((float) Math.sin(d / 90.0d)) * 0.03f) + 0.04f;
-                    if (elapsedRealtime < c2Var3.h0) {
+                    if (elapsedRealtime < c2Var3.f0) {
                         sin = (((float) Math.random()) * 0.12f) + (((float) Math.sin(d / 61.0d)) * 0.28f * ((float) Math.sin((d / 173.0d) + 1.3d))) + 0.45f;
                     }
                     c2Var3.d.h(Math.max(0.0f, Math.min(1.0f, sin)));

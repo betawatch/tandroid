@@ -1,12 +1,12 @@
 package bi;
 
-import org.telegram.ui.Components.cc;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j0 extends u6 {
-    @Override // bi.u6
-    public final cc e1() {
-        return new cc(this.c, this.J0);
+public final class j0 extends a9 {
+    @Override // bi.a9
+    public final lc f1() {
+        return new lc(this.c, this.J0);
     }
 }

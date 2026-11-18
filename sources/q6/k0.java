@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class k0 implements Handler.Callback {
     public final /* synthetic */ l0 a;
@@ -60,7 +60,7 @@ public final class k0 implements Handler.Callback {
                     }
                     if (componentName == null) {
                         String str = i0Var3.b;
-                        m.g(str);
+                        m.h(str);
                         componentName = new ComponentName(str, "unknown");
                     }
                     j0Var2.onServiceDisconnected(componentName);

@@ -1,13 +1,13 @@
 package m4;
 
-import a8.ja;
+import a8.la;
 import e2.s0;
 import e2.t0;
 import f3.i0;
 import java.util.Collections;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t implements i {
     public final String a;
@@ -190,7 +190,7 @@ public final class t implements i {
                                 xVar2.N(0);
                             }
                             this.e.b(i13, xVar2);
-                            ja.p(this.l != -9223372036854775807L);
+                            la.p(this.l != -9223372036854775807L);
                             this.e.c(this.l, 1, i13, 0, null);
                             this.l += this.t;
                             if (this.q) {
@@ -203,7 +203,7 @@ public final class t implements i {
                     }
                 } else {
                     int A2 = xVar.A();
-                    if ((A2 & ns.B3) == 224) {
+                    if ((A2 & ks.B3) == 224) {
                         this.k = A2;
                         this.h = 2;
                     } else if (A2 != 86) {

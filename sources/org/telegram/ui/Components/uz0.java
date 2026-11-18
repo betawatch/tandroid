@@ -1,10 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.ui.Components.ThemeEditorView;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uz0 extends wp {
-    @Override // org.telegram.ui.Components.wp
-    public final int a() {
-        return -6182737;
+public final class uz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ThemeEditorView.EditorAlert b;
+
+    public uz0(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
+        this.b = editorAlert;
+        this.a = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        AnimatorSet[] animatorSetArr = this.b.x1;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        animatorSetArr[0] = null;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.b;
+        AnimatorSet[] animatorSetArr = editorAlert.x1;
+        AnimatorSet animatorSet = animatorSetArr[0];
+        if (animatorSet == null || !animatorSet.equals(animator)) {
+            return;
+        }
+        if (!this.a) {
+            editorAlert.w1[0].setVisibility(4);
+        }
+        animatorSetArr[0] = null;
     }
 }

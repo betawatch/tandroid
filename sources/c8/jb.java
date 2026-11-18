@@ -1,42 +1,52 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.util.SparseBooleanArray;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class jb {
-    public static void a(int i7, int i10) {
-        String a10;
-        if (i7 < 0 || i7 >= i10) {
-            if (i7 < 0) {
-                a10 = kb.a("%s (%s) must not be negative", "index", Integer.valueOf(i7));
-            } else {
-                if (i10 < 0) {
-                    StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + 15);
-                    sb2.append("negative size: ");
-                    sb2.append(i10);
-                    throw new IllegalArgumentException(sb2.toString());
+    public static e2.y0 a(e2.y0 y0Var, e2.y0 y0Var2) {
+        if (y0Var != null) {
+            e2.s sVar = y0Var.a;
+            if (y0Var2 != null) {
+                SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+                for (int i7 = 0; i7 < sVar.a.size(); i7++) {
+                    if (y0Var2.a(sVar.a(i7))) {
+                        int a10 = sVar.a(i7);
+                        a8.la.p(!false);
+                        sparseBooleanArray.append(a10, true);
+                    }
                 }
-                a10 = kb.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
+                a8.la.p(!false);
+                return new e2.y0(new e2.s(sparseBooleanArray));
             }
-            throw new IndexOutOfBoundsException(a10);
         }
+        return e2.y0.b;
     }
 
-    public static void b(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? c(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? c(i10, i11, "end index") : kb.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
+    public static void b(e2.c1 c1Var, p4.w wVar) {
+        int i7 = wVar.b;
+        long j3 = wVar.c;
+        h9.i0 i0Var = wVar.a;
+        if (i7 == -1) {
+            if (c1Var.p0(20)) {
+                c1Var.N0(i0Var);
+                return;
+            } else {
+                if (i0Var.isEmpty()) {
+                    return;
+                }
+                c1Var.I((e2.l0) i0Var.get(0));
+                return;
+            }
         }
-    }
-
-    public static String c(int i7, int i10, String str) {
-        if (i7 < 0) {
-            return kb.a("%s (%s) must not be negative", str, Integer.valueOf(i7));
+        if (c1Var.p0(20)) {
+            c1Var.V(i0Var, wVar.b, j3);
+        } else {
+            if (i0Var.isEmpty()) {
+                return;
+            }
+            c1Var.f0((e2.l0) i0Var.get(0), j3);
         }
-        if (i10 >= 0) {
-            return kb.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
-        }
-        StringBuilder sb2 = new StringBuilder(String.valueOf(i10).length() + 15);
-        sb2.append("negative size: ");
-        sb2.append(i10);
-        throw new IllegalArgumentException(sb2.toString());
     }
 }

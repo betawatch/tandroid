@@ -11,7 +11,7 @@ import androidx.emoji2.text.l;
 import java.nio.ByteBuffer;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends InputConnectionWrapper {
     public final EditText a;
@@ -45,13 +45,13 @@ public final class b extends InputConnectionWrapper {
     public final boolean deleteSurroundingText(int i7, int i10) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return s.p0(this, editableText, i7, i10, false) || super.deleteSurroundingText(i7, i10);
+        return s.m0(this, editableText, i7, i10, false) || super.deleteSurroundingText(i7, i10);
     }
 
     @Override // android.view.inputmethod.InputConnectionWrapper, android.view.inputmethod.InputConnection
     public final boolean deleteSurroundingTextInCodePoints(int i7, int i10) {
         Editable editableText = this.a.getEditableText();
         this.b.getClass();
-        return s.p0(this, editableText, i7, i10, true) || super.deleteSurroundingTextInCodePoints(i7, i10);
+        return s.m0(this, editableText, i7, i10, true) || super.deleteSurroundingTextInCodePoints(i7, i10);
     }
 }

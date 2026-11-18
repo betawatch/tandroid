@@ -1,40 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class mo extends x2 {
-    public final /* synthetic */ np e;
+public final class mo extends y2 {
+    public final /* synthetic */ mp e;
 
-    public mo(np npVar) {
-        this.e = npVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mo(mp mpVar) {
+        super(3600000);
+        this.e = mpVar;
     }
 
-    @Override // org.telegram.messenger.x2
-    public final /* bridge */ /* synthetic */ boolean b(Object obj) {
-        return true;
+    @Override // org.telegram.messenger.y2
+    public final void e(int i7, Object obj, q10 q10Var) {
+        tr.a0(i7).a.c(new x0(i7, q10Var, 7));
     }
 
-    @Override // org.telegram.messenger.x2
-    public final void e(int i7, Object obj, s10 s10Var) {
-        this.e.getMessagesStorage().a.c(new io(i7, (v2) s10Var, 1));
+    @Override // org.telegram.messenger.y2
+    public final void f(int i7, Object obj, long j3, x2 x2Var) {
+        TL_account.getWebBrowserSettings getwebbrowsersettings = new TL_account.getWebBrowserSettings();
+        getwebbrowsersettings.hash = j3;
+        this.e.getConnectionsManager().sendRequestTyped(getwebbrowsersettings, new d3.b(1), new d(x2Var, 6));
     }
 
-    @Override // org.telegram.messenger.x2
-    public final void f(int i7, Object obj, long j3, w2 w2Var) {
-        TLRPC.TL_messages_getAvailableEffects tL_messages_getAvailableEffects = new TLRPC.TL_messages_getAvailableEffects();
-        tL_messages_getAvailableEffects.hash = (int) j3;
-        this.e.getConnectionsManager().sendRequest(tL_messages_getAvailableEffects, new jo(w2Var, 1));
-    }
-
-    @Override // org.telegram.messenger.x2
+    @Override // org.telegram.messenger.y2
     public final void g(int i7, Object obj, Object obj2) {
-        vr.a0(i7).a.c(new x0(i7, (TLRPC.messages_AvailableEffects) obj2, 6));
+        tr.a0(i7).a.c(new x0(i7, (TL_account.TL_webBrowserSettings) obj2, 8));
     }
 
-    @Override // org.telegram.messenger.x2
-    public final void h(int i7, long j3) {
-        this.e.f7.edit().putLong("effects_last_" + i7, j3).apply();
+    @Override // org.telegram.messenger.y2
+    public final /* bridge */ /* synthetic */ boolean j(Object obj) {
+        return false;
     }
 }

@@ -15,11 +15,10 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.j;
 import m.p;
-import r.b;
 import w4.c;
 import w4.e;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -35,7 +34,7 @@ public final class Recreator implements r {
         }
         tVar.m().b(this);
         e eVar = this.a;
-        Bundle c10 = eVar.g().c("androidx.savedstate.Restarter");
+        Bundle c10 = eVar.h().c("androidx.savedstate.Restarter");
         if (c10 == null) {
             return;
         }
@@ -61,23 +60,23 @@ public final class Recreator implements r {
                         if (!(eVar instanceof u0)) {
                             throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
                         }
-                        t0 f10 = ((u0) eVar).f();
-                        p g10 = eVar.g();
-                        f10.getClass();
-                        LinkedHashMap linkedHashMap = f10.a;
+                        t0 g10 = ((u0) eVar).g();
+                        p h = eVar.h();
+                        g10.getClass();
+                        LinkedHashMap linkedHashMap = g10.a;
                         Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
                         while (it.hasNext()) {
                             String key = (String) it.next();
                             j.e(key, "key");
                             p0 p0Var = (p0) linkedHashMap.get(key);
                             j.b(p0Var);
-                            j0.a(p0Var, g10, eVar.m());
+                            j0.a(p0Var, h, eVar.m());
                         }
                         if (!new HashSet(linkedHashMap.keySet()).isEmpty()) {
-                            g10.g();
+                            h.g();
                         }
                     } catch (Exception e10) {
-                        throw new RuntimeException(b.k("Failed to instantiate ", str2), e10);
+                        throw new RuntimeException(p5.c.k("Failed to instantiate ", str2), e10);
                     }
                 } catch (NoSuchMethodException e11) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e11);

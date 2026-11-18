@@ -12,7 +12,7 @@ import com.google.android.gms.internal.play_billing.u;
 import d6.i;
 import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class ProxyBillingActivityV2 extends l {
     public c K;
@@ -25,9 +25,9 @@ public class ProxyBillingActivityV2 extends l {
     @Override // androidx.activity.l, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        this.K = r(new i(this, 17), new e0(3));
-        this.L = r(new ob.c(this, 19), new e0(3));
-        this.M = r(new cb.c(this, 23), new e0(3));
+        this.K = r(new ob.c(this, 20), new e0(3));
+        this.L = r(new cb.c(this, 20), new e0(3));
+        this.M = r(new i(this, 19), new e0(3));
         if (bundle != null) {
             if (bundle.containsKey("alternative_billing_only_dialog_result_receiver")) {
                 this.N = (ResultReceiver) bundle.getParcelable("alternative_billing_only_dialog_result_receiver");

@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.Set;
 import m.o3;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h extends d implements com.google.android.gms.common.api.c {
     public final Set E;
@@ -29,8 +29,8 @@ public abstract class h extends d implements com.google.android.gms.common.api.c
         }
         l0 l0Var = l0.h;
         Object obj = n6.d.d;
-        m.g(kVar);
-        m.g(lVar);
+        m.h(kVar);
+        m.h(lVar);
         Set set = (Set) o3Var.b;
         Iterator it = set.iterator();
         while (it.hasNext()) {

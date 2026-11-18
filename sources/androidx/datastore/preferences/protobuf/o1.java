@@ -3,9 +3,9 @@ package androidx.datastore.preferences.protobuf;
 import a8.s6;
 import java.nio.charset.Charset;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o1 {
     public final /* synthetic */ int a;
@@ -158,7 +158,7 @@ public final class o1 {
                                 char charAt4 = str.charAt(i18);
                                 if (Character.isSurrogatePair(charAt3, charAt4)) {
                                     int codePoint = Character.toCodePoint(charAt3, charAt4);
-                                    bArr[i16] = (byte) ((codePoint >>> 18) | ns.P3);
+                                    bArr[i16] = (byte) ((codePoint >>> 18) | ks.P3);
                                     bArr[i16 + 1] = (byte) (((codePoint >>> 12) & 63) | 128);
                                     int i19 = i16 + 3;
                                     bArr[i16 + 2] = (byte) (((codePoint >>> 6) & 63) | 128);
@@ -219,7 +219,7 @@ public final class o1 {
                                     char charAt6 = str.charAt(i22);
                                     if (Character.isSurrogatePair(charAt5, charAt6)) {
                                         int codePoint2 = Character.toCodePoint(charAt5, charAt6);
-                                        n1.j(bArr, j12, (byte) ((codePoint2 >>> 18) | ns.P3));
+                                        n1.j(bArr, j12, (byte) ((codePoint2 >>> 18) | ks.P3));
                                         n1.j(bArr, j12 + j10, (byte) (((codePoint2 >>> 12) & 63) | 128));
                                         long j14 = j12 + 3;
                                         n1.j(bArr, j12 + 2, (byte) (((codePoint2 >>> 6) & 63) | 128));

@@ -3,9 +3,9 @@ package ch;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.mi0;
+import org.telegram.ui.Components.vi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class z extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final class z extends AnimatorListenerAdapter {
                 b0 b0Var = this.b;
                 b0.a(b0Var, false);
                 b0Var.j = 0.0f;
-                mi0 mi0Var = b0Var.n;
-                mi0Var.setCustomEmojiEnterProgress(Utilities.i(0.0f, 1.0f, 0.0f));
-                mi0Var.setSkipDraw(false);
+                vi0 vi0Var = b0Var.n;
+                vi0Var.setCustomEmojiEnterProgress(Utilities.i(0.0f, 1.0f, 0.0f));
+                vi0Var.setSkipDraw(false);
                 b0Var.c.setVisibility(8);
                 b0Var.f();
                 break;

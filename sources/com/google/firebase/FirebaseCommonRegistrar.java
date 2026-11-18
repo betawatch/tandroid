@@ -22,7 +22,7 @@ import u9.a;
 import u9.i;
 import u9.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -40,7 +40,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         ArrayList arrayList = new ArrayList();
         j0 a10 = a.a(b.class);
         a10.a(new i(2, 0, cb.a.class));
-        a10.f = new l(25);
+        a10.f = new l(26);
         arrayList.add(a10.b());
         q qVar = new q(q9.a.class, Executor.class);
         j0 j0Var = new j0(c.class, new Class[]{e.class, f.class});
@@ -56,10 +56,10 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         arrayList.add(i8.a("device-name", b(Build.PRODUCT)));
         arrayList.add(i8.a("device-model", b(Build.DEVICE)));
         arrayList.add(i8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(i8.b("android-target-sdk", new a0(8)));
-        arrayList.add(i8.b("android-min-sdk", new a0(9)));
-        arrayList.add(i8.b("android-platform", new a0(10)));
-        arrayList.add(i8.b("android-installer", new a0(11)));
+        arrayList.add(i8.b("android-target-sdk", new a0(9)));
+        arrayList.add(i8.b("android-min-sdk", new a0(10)));
+        arrayList.add(i8.b("android-platform", new a0(11)));
+        arrayList.add(i8.b("android-installer", new a0(12)));
         try {
             gd.b.b.getClass();
             str = "2.1.20";

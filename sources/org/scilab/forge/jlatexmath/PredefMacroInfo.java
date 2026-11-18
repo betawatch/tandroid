@@ -1,9 +1,8 @@
 package org.scilab.forge.jlatexmath;
 
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
@@ -71,9 +70,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.textstyle_macros(teXParser, strArr);
                 case 29:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case ns.T /* 30 */:
+                case ks.T /* 30 */:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case ns.U /* 31 */:
+                case ks.U /* 31 */:
                     return PredefMacros.mathit_macro(teXParser, strArr);
                 case 32:
                     return PredefMacros.it_macro(teXParser, strArr);
@@ -103,431 +102,431 @@ class PredefMacroInfo extends MacroInfo {
                 case 48:
                 case 49:
                 case 50:
-                case ns.o0 /* 51 */:
-                case ns.p0 /* 52 */:
-                case ns.q0 /* 53 */:
-                case ns.r0 /* 54 */:
-                case ns.s0 /* 55 */:
-                case ns.t0 /* 56 */:
-                case ns.u0 /* 57 */:
+                case ks.o0 /* 51 */:
+                case ks.p0 /* 52 */:
+                case ks.q0 /* 53 */:
+                case ks.r0 /* 54 */:
+                case ks.s0 /* 55 */:
+                case ks.t0 /* 56 */:
+                case ks.u0 /* 57 */:
                     return PredefMacros.accentbis_macros(teXParser, strArr);
-                case ns.v0 /* 58 */:
+                case ks.v0 /* 58 */:
                     return PredefMacros.T_macro(teXParser, strArr);
-                case ns.w0 /* 59 */:
+                case ks.w0 /* 59 */:
                     return PredefMacros.accentbis_macros(teXParser, strArr);
-                case ns.x0 /* 60 */:
+                case ks.x0 /* 60 */:
                     return PredefMacros.accent_macro(teXParser, strArr);
-                case ns.y0 /* 61 */:
+                case ks.y0 /* 61 */:
                     return PredefMacros.grkaccent_macro(teXParser, strArr);
-                case ns.z0 /* 62 */:
-                case ns.A0 /* 63 */:
+                case ks.z0 /* 62 */:
+                case ks.A0 /* 63 */:
                 case 64:
                 case 65:
-                case ns.D0 /* 66 */:
-                case ns.E0 /* 67 */:
-                case ns.F0 /* 68 */:
-                case ns.G0 /* 69 */:
-                case ns.H0 /* 70 */:
-                case ns.I0 /* 71 */:
-                case ns.J0 /* 72 */:
-                case ns.K0 /* 73 */:
-                case ns.L0 /* 74 */:
-                case ns.M0 /* 75 */:
+                case ks.D0 /* 66 */:
+                case ks.E0 /* 67 */:
+                case ks.F0 /* 68 */:
+                case ks.G0 /* 69 */:
+                case ks.H0 /* 70 */:
+                case ks.I0 /* 71 */:
+                case ks.J0 /* 72 */:
+                case ks.K0 /* 73 */:
+                case ks.L0 /* 74 */:
+                case ks.M0 /* 75 */:
                     return PredefMacros.accent_macros(teXParser, strArr);
-                case ns.N0 /* 76 */:
+                case ks.N0 /* 76 */:
                     return PredefMacros.nbsp_macro(teXParser, strArr);
-                case ns.O0 /* 77 */:
+                case ks.O0 /* 77 */:
                     return PredefMacros.smallmatrixATATenv_macro(teXParser, strArr);
-                case ns.P0 /* 78 */:
+                case ks.P0 /* 78 */:
                     return PredefMacros.matrixATATenv_macro(teXParser, strArr);
-                case ns.Q0 /* 79 */:
+                case ks.Q0 /* 79 */:
                     return PredefMacros.overrightarrow_macro(teXParser, strArr);
                 case 80:
                     return PredefMacros.overleftarrow_macro(teXParser, strArr);
-                case ns.S0 /* 81 */:
+                case ks.S0 /* 81 */:
                     return PredefMacros.overleftrightarrow_macro(teXParser, strArr);
-                case ns.T0 /* 82 */:
+                case ks.T0 /* 82 */:
                     return PredefMacros.underrightarrow_macro(teXParser, strArr);
-                case ns.U0 /* 83 */:
+                case ks.U0 /* 83 */:
                     return PredefMacros.underleftarrow_macro(teXParser, strArr);
-                case ns.V0 /* 84 */:
+                case ks.V0 /* 84 */:
                     return PredefMacros.underleftrightarrow_macro(teXParser, strArr);
-                case ns.W0 /* 85 */:
+                case ks.W0 /* 85 */:
                     return PredefMacros.xleftarrow_macro(teXParser, strArr);
-                case ns.X0 /* 86 */:
+                case ks.X0 /* 86 */:
                     return PredefMacros.xrightarrow_macro(teXParser, strArr);
-                case ns.Y0 /* 87 */:
+                case ks.Y0 /* 87 */:
                     return PredefMacros.underbrace_macro(teXParser, strArr);
-                case ns.Z0 /* 88 */:
+                case ks.Z0 /* 88 */:
                     return PredefMacros.overbrace_macro(teXParser, strArr);
-                case ns.a1 /* 89 */:
+                case ks.a1 /* 89 */:
                     return PredefMacros.underbrack_macro(teXParser, strArr);
-                case ns.b1 /* 90 */:
+                case ks.b1 /* 90 */:
                     return PredefMacros.overbrack_macro(teXParser, strArr);
-                case ns.c1 /* 91 */:
+                case ks.c1 /* 91 */:
                     return PredefMacros.underparen_macro(teXParser, strArr);
-                case ns.d1 /* 92 */:
+                case ks.d1 /* 92 */:
                     return PredefMacros.overparen_macro(teXParser, strArr);
-                case ns.e1 /* 93 */:
-                case ns.f1 /* 94 */:
+                case ks.e1 /* 93 */:
+                case ks.f1 /* 94 */:
                     return PredefMacros.sqrt_macro(teXParser, strArr);
-                case ns.g1 /* 95 */:
+                case ks.g1 /* 95 */:
                     return PredefMacros.overline_macro(teXParser, strArr);
                 case 96:
                     return PredefMacros.underline_macro(teXParser, strArr);
-                case ns.i1 /* 97 */:
+                case ks.i1 /* 97 */:
                     return PredefMacros.mathop_macro(teXParser, strArr);
-                case ns.j1 /* 98 */:
+                case ks.j1 /* 98 */:
                     return PredefMacros.mathpunct_macro(teXParser, strArr);
-                case ns.k1 /* 99 */:
+                case ks.k1 /* 99 */:
                     return PredefMacros.mathord_macro(teXParser, strArr);
-                case ns.l1 /* 100 */:
+                case ks.l1 /* 100 */:
                     return PredefMacros.mathrel_macro(teXParser, strArr);
                 case 101:
                     return PredefMacros.mathinner_macro(teXParser, strArr);
-                case ns.n1 /* 102 */:
+                case ks.n1 /* 102 */:
                     return PredefMacros.mathbin_macro(teXParser, strArr);
-                case ns.o1 /* 103 */:
+                case ks.o1 /* 103 */:
                     return PredefMacros.mathopen_macro(teXParser, strArr);
-                case ns.p1 /* 104 */:
+                case ks.p1 /* 104 */:
                     return PredefMacros.mathclose_macro(teXParser, strArr);
-                case ns.q1 /* 105 */:
+                case ks.q1 /* 105 */:
                     return PredefMacros.joinrel_macro(teXParser, strArr);
-                case ns.r1 /* 106 */:
+                case ks.r1 /* 106 */:
                     return PredefMacros.smash_macro(teXParser, strArr);
-                case ns.s1 /* 107 */:
+                case ks.s1 /* 107 */:
                     return PredefMacros.vdots_macro(teXParser, strArr);
-                case ns.t1 /* 108 */:
+                case ks.t1 /* 108 */:
                     return PredefMacros.ddots_macro(teXParser, strArr);
-                case ns.u1 /* 109 */:
+                case ks.u1 /* 109 */:
                     return PredefMacros.iddots_macro(teXParser, strArr);
-                case ns.v1 /* 110 */:
+                case ks.v1 /* 110 */:
                     return PredefMacros.nolimits_macro(teXParser, strArr);
-                case ns.w1 /* 111 */:
+                case ks.w1 /* 111 */:
                     return PredefMacros.limits_macro(teXParser, strArr);
-                case ns.x1 /* 112 */:
+                case ks.x1 /* 112 */:
                     return PredefMacros.normal_macro(teXParser, strArr);
-                case ns.y1 /* 113 */:
+                case ks.y1 /* 113 */:
                     return PredefMacros.leftparenthesis_macro(teXParser, strArr);
-                case ns.z1 /* 114 */:
+                case ks.z1 /* 114 */:
                     return PredefMacros.leftbracket_macro(teXParser, strArr);
-                case ns.A1 /* 115 */:
+                case ks.A1 /* 115 */:
                     return PredefMacros.left_macro(teXParser, strArr);
-                case ns.B1 /* 116 */:
+                case ks.B1 /* 116 */:
                     return PredefMacros.middle_macro(teXParser, strArr);
-                case ns.C1 /* 117 */:
+                case ks.C1 /* 117 */:
                     return PredefMacros.cr_macro(teXParser, strArr);
-                case ns.D1 /* 118 */:
+                case ks.D1 /* 118 */:
                     return PredefMacros.multicolumn_macro(teXParser, strArr);
-                case ns.E1 /* 119 */:
+                case ks.E1 /* 119 */:
                     return PredefMacros.hdotsfor_macro(teXParser, strArr);
                 case 120:
                     return PredefMacros.arrayATATenv_macro(teXParser, strArr);
-                case ns.F1 /* 121 */:
+                case ks.F1 /* 121 */:
                     return PredefMacros.alignATATenv_macro(teXParser, strArr);
-                case ns.G1 /* 122 */:
+                case ks.G1 /* 122 */:
                     return PredefMacros.alignedATATenv_macro(teXParser, strArr);
-                case ns.H1 /* 123 */:
+                case ks.H1 /* 123 */:
                     return PredefMacros.flalignATATenv_macro(teXParser, strArr);
-                case ns.I1 /* 124 */:
+                case ks.I1 /* 124 */:
                     return PredefMacros.alignatATATenv_macro(teXParser, strArr);
-                case ns.J1 /* 125 */:
+                case ks.J1 /* 125 */:
                     return PredefMacros.alignedatATATenv_macro(teXParser, strArr);
-                case ns.K1 /* 126 */:
+                case ks.K1 /* 126 */:
                     return PredefMacros.multlineATATenv_macro(teXParser, strArr);
-                case ns.L1 /* 127 */:
+                case ks.L1 /* 127 */:
                     return PredefMacros.gatherATATenv_macro(teXParser, strArr);
                 case 128:
                     return PredefMacros.gatheredATATenv_macro(teXParser, strArr);
-                case ns.N1 /* 129 */:
+                case ks.N1 /* 129 */:
                     return PredefMacros.shoveright_macro(teXParser, strArr);
-                case ns.O1 /* 130 */:
+                case ks.O1 /* 130 */:
                     return PredefMacros.shoveleft_macro(teXParser, strArr);
-                case ns.P1 /* 131 */:
+                case ks.P1 /* 131 */:
                     return PredefMacros.backslashcr_macro(teXParser, strArr);
-                case ns.Q1 /* 132 */:
+                case ks.Q1 /* 132 */:
                     return PredefMacros.newenvironment_macro(teXParser, strArr);
                 case 133:
                     return PredefMacros.renewenvironment_macro(teXParser, strArr);
                 case 134:
                     return PredefMacros.makeatletter_macro(teXParser, strArr);
-                case ns.R1 /* 135 */:
+                case ks.R1 /* 135 */:
                     return PredefMacros.makeatother_macro(teXParser, strArr);
-                case ns.S1 /* 136 */:
-                case ns.T1 /* 137 */:
+                case ks.S1 /* 136 */:
+                case ks.T1 /* 137 */:
                     return PredefMacros.fbox_macro(teXParser, strArr);
-                case ns.U1 /* 138 */:
+                case ks.U1 /* 138 */:
                     return PredefMacros.stackrel_macro(teXParser, strArr);
-                case ns.V1 /* 139 */:
+                case ks.V1 /* 139 */:
                     return PredefMacros.stackbin_macro(teXParser, strArr);
-                case ns.W1 /* 140 */:
+                case ks.W1 /* 140 */:
                     return PredefMacros.accentset_macro(teXParser, strArr);
-                case ns.X1 /* 141 */:
+                case ks.X1 /* 141 */:
                     return PredefMacros.underaccent_macro(teXParser, strArr);
-                case ns.Y1 /* 142 */:
+                case ks.Y1 /* 142 */:
                     return PredefMacros.undertilde_macro(teXParser, strArr);
-                case ns.Z1 /* 143 */:
+                case ks.Z1 /* 143 */:
                     return PredefMacros.overset_macro(teXParser, strArr);
-                case ns.a2 /* 144 */:
+                case ks.a2 /* 144 */:
                     return PredefMacros.Braket_macro(teXParser, strArr);
-                case ns.b2 /* 145 */:
+                case ks.b2 /* 145 */:
                     return PredefMacros.Set_macro(teXParser, strArr);
-                case ns.c2 /* 146 */:
+                case ks.c2 /* 146 */:
                     return PredefMacros.underset_macro(teXParser, strArr);
-                case ns.d2 /* 147 */:
+                case ks.d2 /* 147 */:
                     return PredefMacros.boldsymbol_macro(teXParser, strArr);
-                case ns.e2 /* 148 */:
+                case ks.e2 /* 148 */:
                     return PredefMacros.LaTeX_macro(teXParser, strArr);
-                case ns.f2 /* 149 */:
+                case ks.f2 /* 149 */:
                     return PredefMacros.GeoGebra_macro(teXParser, strArr);
-                case ns.g2 /* 150 */:
+                case ks.g2 /* 150 */:
                     return PredefMacros.big_macro(teXParser, strArr);
-                case ns.h2 /* 151 */:
+                case ks.h2 /* 151 */:
                     return PredefMacros.Big_macro(teXParser, strArr);
-                case ns.i2 /* 152 */:
+                case ks.i2 /* 152 */:
                     return PredefMacros.bigg_macro(teXParser, strArr);
-                case ns.j2 /* 153 */:
+                case ks.j2 /* 153 */:
                     return PredefMacros.Bigg_macro(teXParser, strArr);
-                case ns.k2 /* 154 */:
+                case ks.k2 /* 154 */:
                     return PredefMacros.bigl_macro(teXParser, strArr);
-                case ns.l2 /* 155 */:
+                case ks.l2 /* 155 */:
                     return PredefMacros.Bigl_macro(teXParser, strArr);
-                case ns.m2 /* 156 */:
+                case ks.m2 /* 156 */:
                     return PredefMacros.biggl_macro(teXParser, strArr);
-                case ns.n2 /* 157 */:
+                case ks.n2 /* 157 */:
                     return PredefMacros.Biggl_macro(teXParser, strArr);
-                case ns.o2 /* 158 */:
+                case ks.o2 /* 158 */:
                     return PredefMacros.bigr_macro(teXParser, strArr);
-                case ns.p2 /* 159 */:
+                case ks.p2 /* 159 */:
                     return PredefMacros.Bigr_macro(teXParser, strArr);
-                case ns.q2 /* 160 */:
+                case ks.q2 /* 160 */:
                     return PredefMacros.biggr_macro(teXParser, strArr);
-                case ns.r2 /* 161 */:
+                case ks.r2 /* 161 */:
                     return PredefMacros.Biggr_macro(teXParser, strArr);
-                case ns.s2 /* 162 */:
+                case ks.s2 /* 162 */:
                     return PredefMacros.displaystyle_macro(teXParser, strArr);
-                case ns.t2 /* 163 */:
+                case ks.t2 /* 163 */:
                     return PredefMacros.textstyle_macro(teXParser, strArr);
-                case ns.u2 /* 164 */:
+                case ks.u2 /* 164 */:
                     return PredefMacros.scriptstyle_macro(teXParser, strArr);
-                case ns.v2 /* 165 */:
+                case ks.v2 /* 165 */:
                     return PredefMacros.scriptscriptstyle_macro(teXParser, strArr);
-                case ns.w2 /* 166 */:
+                case ks.w2 /* 166 */:
                     return PredefMacros.sideset_macro(teXParser, strArr);
-                case ns.x2 /* 167 */:
+                case ks.x2 /* 167 */:
                     return PredefMacros.prescript_macro(teXParser, strArr);
-                case ns.y2 /* 168 */:
+                case ks.y2 /* 168 */:
                     return PredefMacros.rotatebox_macro(teXParser, strArr);
-                case ns.z2 /* 169 */:
+                case ks.z2 /* 169 */:
                     return PredefMacros.reflectbox_macro(teXParser, strArr);
-                case ns.A2 /* 170 */:
+                case ks.A2 /* 170 */:
                     return PredefMacros.scalebox_macro(teXParser, strArr);
-                case ns.B2 /* 171 */:
+                case ks.B2 /* 171 */:
                     return PredefMacros.resizebox_macro(teXParser, strArr);
-                case ns.C2 /* 172 */:
+                case ks.C2 /* 172 */:
                     return PredefMacros.raisebox_macro(teXParser, strArr);
-                case ns.D2 /* 173 */:
+                case ks.D2 /* 173 */:
                     return PredefMacros.shadowbox_macro(teXParser, strArr);
-                case ns.E2 /* 174 */:
+                case ks.E2 /* 174 */:
                     return PredefMacros.ovalbox_macro(teXParser, strArr);
-                case ns.F2 /* 175 */:
+                case ks.F2 /* 175 */:
                     return PredefMacros.doublebox_macro(teXParser, strArr);
-                case ns.G2 /* 176 */:
+                case ks.G2 /* 176 */:
                     return PredefMacros.phantom_macro(teXParser, strArr);
-                case ns.H2 /* 177 */:
+                case ks.H2 /* 177 */:
                     return PredefMacros.hphantom_macro(teXParser, strArr);
-                case ns.I2 /* 178 */:
+                case ks.I2 /* 178 */:
                     return PredefMacros.vphantom_macro(teXParser, strArr);
-                case ns.J2 /* 179 */:
+                case ks.J2 /* 179 */:
                     return PredefMacros.spATbreve_macro(teXParser, strArr);
-                case ns.K2 /* 180 */:
+                case ks.K2 /* 180 */:
                     return PredefMacros.spAThat_macro(teXParser, strArr);
-                case ns.L2 /* 181 */:
+                case ks.L2 /* 181 */:
                     return PredefMacros.definecolor_macro(teXParser, strArr);
-                case ns.M2 /* 182 */:
+                case ks.M2 /* 182 */:
                     return PredefMacros.textcolor_macro(teXParser, strArr);
-                case ns.N2 /* 183 */:
+                case ks.N2 /* 183 */:
                     return PredefMacros.fgcolor_macro(teXParser, strArr);
-                case ns.O2 /* 184 */:
+                case ks.O2 /* 184 */:
                     return PredefMacros.bgcolor_macro(teXParser, strArr);
-                case ns.P2 /* 185 */:
+                case ks.P2 /* 185 */:
                     return PredefMacros.colorbox_macro(teXParser, strArr);
-                case ns.Q2 /* 186 */:
+                case ks.Q2 /* 186 */:
                     return PredefMacros.fcolorbox_macro(teXParser, strArr);
-                case ns.R2 /* 187 */:
+                case ks.R2 /* 187 */:
                     return PredefMacros.cedilla_macro(teXParser, strArr);
-                case ns.S2 /* 188 */:
+                case ks.S2 /* 188 */:
                     return PredefMacros.IJ_macro(teXParser, strArr);
-                case ns.T2 /* 189 */:
+                case ks.T2 /* 189 */:
                     return PredefMacros.IJ_macro(teXParser, strArr);
-                case ns.U2 /* 190 */:
+                case ks.U2 /* 190 */:
                     return PredefMacros.TStroke_macro(teXParser, strArr);
-                case ns.V2 /* 191 */:
+                case ks.V2 /* 191 */:
                     return PredefMacros.TStroke_macro(teXParser, strArr);
-                case ns.W2 /* 192 */:
+                case ks.W2 /* 192 */:
                     return PredefMacros.LCaron_macro(teXParser, strArr);
-                case ns.X2 /* 193 */:
+                case ks.X2 /* 193 */:
                     return PredefMacros.tcaron_macro(teXParser, strArr);
-                case ns.Y2 /* 194 */:
+                case ks.Y2 /* 194 */:
                     return PredefMacros.LCaron_macro(teXParser, strArr);
-                case ns.Z2 /* 195 */:
+                case ks.Z2 /* 195 */:
                     return PredefMacros.ogonek_macro(teXParser, strArr);
-                case ns.a3 /* 196 */:
+                case ks.a3 /* 196 */:
                     return PredefMacros.cong_macro(teXParser, strArr);
-                case ns.b3 /* 197 */:
+                case ks.b3 /* 197 */:
                     return PredefMacros.doteq_macro(teXParser, strArr);
-                case ns.c3 /* 198 */:
+                case ks.c3 /* 198 */:
                     return PredefMacros.jlmDynamic_macro(teXParser, strArr);
-                case ns.d3 /* 199 */:
+                case ks.d3 /* 199 */:
                     return PredefMacros.jlmExternalFont_macro(teXParser, strArr);
-                case ns.e3 /* 200 */:
+                case ks.e3 /* 200 */:
                     return PredefMacros.jlmText_macro(teXParser, strArr);
-                case ns.f3 /* 201 */:
+                case ks.f3 /* 201 */:
                     return PredefMacros.jlmTextit_macro(teXParser, strArr);
-                case ns.g3 /* 202 */:
+                case ks.g3 /* 202 */:
                     return PredefMacros.jlmTextbf_macro(teXParser, strArr);
                 case 203:
                     return PredefMacros.jlmTextitbf_macro(teXParser, strArr);
-                case ns.i3 /* 204 */:
+                case ks.i3 /* 204 */:
                     return PredefMacros.DeclareMathSizes_macro(teXParser, strArr);
-                case ns.j3 /* 205 */:
+                case ks.j3 /* 205 */:
                     return PredefMacros.magnification_macro(teXParser, strArr);
-                case ns.k3 /* 206 */:
+                case ks.k3 /* 206 */:
                     return PredefMacros.hline_macro(teXParser, strArr);
-                case ns.l3 /* 207 */:
-                case 208:
-                case ns.m3 /* 209 */:
-                case ns.n3 /* 210 */:
-                case ns.o3 /* 211 */:
-                case ns.p3 /* 212 */:
-                case ns.q3 /* 213 */:
-                case ns.r3 /* 214 */:
-                case ns.s3 /* 215 */:
-                case ns.t3 /* 216 */:
+                case ks.l3 /* 207 */:
+                case ks.m3 /* 208 */:
+                case ks.n3 /* 209 */:
+                case 210:
+                case ks.o3 /* 211 */:
+                case ks.p3 /* 212 */:
+                case ks.q3 /* 213 */:
+                case ks.r3 /* 214 */:
+                case ks.s3 /* 215 */:
+                case ks.t3 /* 216 */:
                     return PredefMacros.size_macros(teXParser, strArr);
-                case ns.u3 /* 217 */:
+                case ks.u3 /* 217 */:
                     return PredefMacros.jlatexmathcumsup_macro(teXParser, strArr);
-                case ns.v3 /* 218 */:
+                case ks.v3 /* 218 */:
                     return PredefMacros.jlatexmathcumsub_macro(teXParser, strArr);
-                case ns.w3 /* 219 */:
+                case ks.w3 /* 219 */:
                     return PredefMacros.hstrok_macro(teXParser, strArr);
-                case ns.x3 /* 220 */:
+                case ks.x3 /* 220 */:
                     return PredefMacros.Hstrok_macro(teXParser, strArr);
-                case ns.y3 /* 221 */:
+                case ks.y3 /* 221 */:
                     return PredefMacros.dstrok_macro(teXParser, strArr);
-                case ns.z3 /* 222 */:
+                case ks.z3 /* 222 */:
                     return PredefMacros.Dstrok_macro(teXParser, strArr);
-                case ns.A3 /* 223 */:
+                case ks.A3 /* 223 */:
                     return PredefMacros.dotminus_macro(teXParser, strArr);
-                case ns.B3 /* 224 */:
+                case ks.B3 /* 224 */:
                     return PredefMacros.ratio_macro(teXParser, strArr);
-                case ns.C3 /* 225 */:
+                case ks.C3 /* 225 */:
                     return PredefMacros.smallfrowneq_macro(teXParser, strArr);
-                case ns.D3 /* 226 */:
+                case ks.D3 /* 226 */:
                     return PredefMacros.geoprop_macro(teXParser, strArr);
-                case 227:
+                case ks.E3 /* 227 */:
                     return PredefMacros.minuscolon_macro(teXParser, strArr);
-                case ns.E3 /* 228 */:
+                case ks.F3 /* 228 */:
                     return PredefMacros.minuscoloncolon_macro(teXParser, strArr);
-                case ns.F3 /* 229 */:
+                case 229:
                     return PredefMacros.simcolon_macro(teXParser, strArr);
-                case ns.G3 /* 230 */:
+                case ks.G3 /* 230 */:
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);
-                case ns.H3 /* 231 */:
+                case ks.H3 /* 231 */:
                     return PredefMacros.approxcolon_macro(teXParser, strArr);
-                case ns.I3 /* 232 */:
+                case ks.I3 /* 232 */:
                     return PredefMacros.approxcoloncolon_macro(teXParser, strArr);
-                case TLRPC.LAYER /* 233 */:
+                case ks.J3 /* 233 */:
                     return PredefMacros.coloncolon_macro(teXParser, strArr);
-                case ns.J3 /* 234 */:
+                case 234:
                     return PredefMacros.equalscolon_macro(teXParser, strArr);
-                case ns.K3 /* 235 */:
+                case 235:
                     return PredefMacros.equalscoloncolon_macro(teXParser, strArr);
-                case ns.L3 /* 236 */:
+                case ks.L3 /* 236 */:
                     return PredefMacros.colonminus_macro(teXParser, strArr);
-                case ns.M3 /* 237 */:
+                case ks.M3 /* 237 */:
                     return PredefMacros.coloncolonminus_macro(teXParser, strArr);
-                case ns.N3 /* 238 */:
+                case ks.N3 /* 238 */:
                     return PredefMacros.colonequals_macro(teXParser, strArr);
-                case ns.O3 /* 239 */:
+                case ks.O3 /* 239 */:
                     return PredefMacros.coloncolonequals_macro(teXParser, strArr);
-                case ns.P3 /* 240 */:
+                case ks.P3 /* 240 */:
                     return PredefMacros.colonsim_macro(teXParser, strArr);
-                case ns.Q3 /* 241 */:
+                case ks.Q3 /* 241 */:
                     return PredefMacros.coloncolonsim_macro(teXParser, strArr);
-                case ns.R3 /* 242 */:
+                case ks.R3 /* 242 */:
                     return PredefMacros.colonapprox_macro(teXParser, strArr);
-                case ns.S3 /* 243 */:
+                case ks.S3 /* 243 */:
                     return PredefMacros.coloncolonapprox_macro(teXParser, strArr);
-                case ns.T3 /* 244 */:
+                case ks.T3 /* 244 */:
                     return PredefMacros.kern_macro(teXParser, strArr);
-                case ns.U3 /* 245 */:
+                case ks.U3 /* 245 */:
                     return PredefMacros.char_macro(teXParser, strArr);
-                case ns.V3 /* 246 */:
-                case ns.W3 /* 247 */:
+                case ks.V3 /* 246 */:
+                case ks.W3 /* 247 */:
                     return PredefMacros.romannumeral_macro(teXParser, strArr);
-                case ns.X3 /* 248 */:
+                case ks.X3 /* 248 */:
                     return PredefMacros.textcircled_macro(teXParser, strArr);
-                case ns.Y3 /* 249 */:
+                case ks.Y3 /* 249 */:
                     return PredefMacros.textsc_macro(teXParser, strArr);
-                case ns.Z3 /* 250 */:
+                case ks.Z3 /* 250 */:
                     return PredefMacros.sc_macro(teXParser, strArr);
-                case ns.a4 /* 251 */:
-                case ns.b4 /* 252 */:
-                case ns.c4 /* 253 */:
-                case ns.d4 /* 254 */:
-                case ns.e4 /* 255 */:
+                case ks.a4 /* 251 */:
+                case ks.b4 /* 252 */:
+                case ks.c4 /* 253 */:
+                case ks.d4 /* 254 */:
+                case ks.e4 /* 255 */:
                 case 256:
-                case ns.g4 /* 257 */:
-                case ns.h4 /* 258 */:
-                case ns.i4 /* 259 */:
-                case ns.j4 /* 260 */:
+                case ks.g4 /* 257 */:
+                case ks.h4 /* 258 */:
+                case ks.i4 /* 259 */:
+                case ks.j4 /* 260 */:
                     return PredefMacros.muskip_macros(teXParser, strArr);
-                case ns.k4 /* 261 */:
+                case ks.k4 /* 261 */:
                     return PredefMacros.quad_macro(teXParser, strArr);
-                case ns.l4 /* 262 */:
+                case ks.l4 /* 262 */:
                     return PredefMacros.surd_macro(teXParser, strArr);
-                case ns.m4 /* 263 */:
+                case ks.m4 /* 263 */:
                     return PredefMacros.iint_macro(teXParser, strArr);
-                case ns.n4 /* 264 */:
+                case ks.n4 /* 264 */:
                     return PredefMacros.iiint_macro(teXParser, strArr);
-                case ns.o4 /* 265 */:
+                case ks.o4 /* 265 */:
                     return PredefMacros.iiiint_macro(teXParser, strArr);
-                case ns.p4 /* 266 */:
+                case ks.p4 /* 266 */:
                     return PredefMacros.idotsint_macro(teXParser, strArr);
-                case ns.q4 /* 267 */:
+                case ks.q4 /* 267 */:
                     return PredefMacros.int_macro(teXParser, strArr);
-                case ns.r4 /* 268 */:
+                case ks.r4 /* 268 */:
                     return PredefMacros.oint_macro(teXParser, strArr);
-                case ns.s4 /* 269 */:
+                case ks.s4 /* 269 */:
                     return PredefMacros.lmoustache_macro(teXParser, strArr);
-                case ns.t4 /* 270 */:
+                case ks.t4 /* 270 */:
                     return PredefMacros.rmoustache_macro(teXParser, strArr);
-                case ns.u4 /* 271 */:
+                case ks.u4 /* 271 */:
                     return PredefMacros.insertBreakMark_macro(teXParser, strArr);
-                case ns.v4 /* 272 */:
+                case ks.v4 /* 272 */:
                     return PredefMacros.jlmXML_macro(teXParser, strArr);
-                case ns.w4 /* 273 */:
+                case ks.w4 /* 273 */:
                     return PredefMacros.above_macro(teXParser, strArr);
-                case ns.x4 /* 274 */:
+                case ks.x4 /* 274 */:
                     return PredefMacros.abovewithdelims_macro(teXParser, strArr);
-                case ns.y4 /* 275 */:
+                case ks.y4 /* 275 */:
                     return PredefMacros.st_macro(teXParser, strArr);
-                case ns.z4 /* 276 */:
+                case ks.z4 /* 276 */:
                     return PredefMacros.fcscore_macro(teXParser, strArr);
-                case ns.A4 /* 277 */:
+                case ks.A4 /* 277 */:
                     return PredefMacros.textstyle_macros(teXParser, strArr);
-                case ns.B4 /* 278 */:
+                case ks.B4 /* 278 */:
                     return PredefMacros.qquad_macro(teXParser, strArr);
-                case ns.C4 /* 279 */:
+                case ks.C4 /* 279 */:
                     return PredefMacros.longdiv_macro(teXParser, strArr);
-                case ns.D4 /* 280 */:
+                case ks.D4 /* 280 */:
                     return PredefMacros.questeq_macro(teXParser, strArr);
-                case ns.E4 /* 281 */:
+                case ks.E4 /* 281 */:
                     return PredefMacros.bangle_macro(teXParser, strArr);
-                case ns.F4 /* 282 */:
+                case ks.F4 /* 282 */:
                     return PredefMacros.brace_macro(teXParser, strArr);
-                case ns.G4 /* 283 */:
+                case ks.G4 /* 283 */:
                     return PredefMacros.brack_macro(teXParser, strArr);
                 default:
                     return null;

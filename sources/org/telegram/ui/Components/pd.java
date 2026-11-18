@@ -1,56 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.graphics.RectF;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements r4, org.telegram.messenger.oc {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ org.telegram.messenger.is c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class pd implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ pd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10) {
-        this.c = chatActivityEnterView;
-        this.d = document;
-        this.a = str;
-        this.e = obj;
-        this.f = cjVar;
-        this.b = z10;
+    public /* synthetic */ pd(ChatActivityEnterView chatActivityEnterView, int i7) {
+        this.a = i7;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.r4
-    public void L(int i7, int i10, boolean z10) {
-        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        TLRPC.Document document = (TLRPC.Document) this.d;
-        org.telegram.messenger.cj cjVar = (org.telegram.messenger.cj) this.f;
-        int i11 = ChatActivityEnterView.N6;
-        chatActivityEnterView.d(document, this.a, this.e, cjVar, this.b, z10, i7, i10);
-    }
-
-    @Override // org.telegram.messenger.oc
-    public void a(String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = (ProfileActivity) this.c;
-        String[] strArr = (String[]) this.d;
-        boolean[] zArr = (boolean[]) this.e;
-        bi.u2 u2Var = (bi.u2) this.f;
-        RectF rectF = ProfileActivity.X6;
-        strArr[0] = str;
-        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.oy0.d0().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || org.telegram.messenger.t3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
-        u2Var.run();
-    }
-
-    public /* synthetic */ pd(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, bi.u2 u2Var) {
-        this.c = profileActivity;
-        this.d = strArr;
-        this.e = zArr;
-        this.a = str;
-        this.b = z10;
-        this.f = u2Var;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i7 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i7) {
+            case 0:
+                se seVar = chatActivityEnterView.x2;
+                if (seVar != null) {
+                    seVar.setTranslationX(seVar.a);
+                    break;
+                }
+                break;
+            case 1:
+                se seVar2 = chatActivityEnterView.x2;
+                if (seVar2 != null) {
+                    seVar2.setTranslationX(seVar2.a);
+                    break;
+                }
+                break;
+            case 2:
+                chatActivityEnterView.a2.invalidate();
+                break;
+            case 3:
+                chatActivityEnterView.a2.invalidate();
+                break;
+            case 4:
+                int i10 = ChatActivityEnterView.n7;
+                chatActivityEnterView.x0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                cg cgVar = chatActivityEnterView.V0;
+                if (cgVar != null) {
+                    cgVar.Z();
+                    break;
+                }
+                break;
+            case 5:
+                chatActivityEnterView.x2.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 6:
+                int i11 = ChatActivityEnterView.n7;
+                chatActivityEnterView.B2.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                if (!chatActivityEnterView.d1) {
+                    chatActivityEnterView.i1.setAlpha(chatActivityEnterView.I1 ? 1.0f : chatActivityEnterView.B2.getTransformToSeekbarProgressStep3());
+                    chatActivityEnterView.i1.invalidate();
+                }
+                chatActivityEnterView.S0();
+                break;
+            case 7:
+                int i12 = ChatActivityEnterView.n7;
+                chatActivityEnterView.getClass();
+                chatActivityEnterView.w(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 8:
+                int i13 = ChatActivityEnterView.n7;
+                chatActivityEnterView.getClass();
+                chatActivityEnterView.z6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pg pgVar = chatActivityEnterView.C2;
+                if (pgVar != null) {
+                    pgVar.invalidate();
+                }
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.B2;
+                if (recordCircle != null) {
+                    recordCircle.invalidate();
+                    break;
+                }
+                break;
+            case 9:
+                int i14 = ChatActivityEnterView.n7;
+                chatActivityEnterView.getClass();
+                chatActivityEnterView.B5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.r();
+                break;
+            case 10:
+                int i15 = ChatActivityEnterView.n7;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.N1 = floatValue;
+                jh.f z02 = chatActivityEnterView.z0();
+                if (z02 != null) {
+                    z02.setInputBubbleExtraAlpha(1.0f - floatValue);
+                }
+                de deVar = chatActivityEnterView.f1;
+                if (deVar != null) {
+                    deVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                int i16 = ChatActivityEnterView.n7;
+                chatActivityEnterView.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.k2.setScaleX(org.telegram.messenger.g0.T1(0.6f, 1.0f, floatValue2));
+                chatActivityEnterView.k2.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, floatValue2));
+                chatActivityEnterView.k2.setAlpha(floatValue2);
+                break;
+        }
     }
 }

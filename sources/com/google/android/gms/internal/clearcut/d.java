@@ -76,8 +76,8 @@ public abstract class d {
         return h.booleanValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00ce A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cf  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00cc A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00cd  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -89,7 +89,7 @@ public abstract class d {
         }
         this.a.getClass();
         Object obj = null;
-        if (e() ? ((Boolean) c(new d6.i("gms:phenotype:phenotype_flag:debug_bypass_phenotype", 10))).booleanValue() : false) {
+        if (e() ? ((Boolean) c(new aa.b0("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
             String valueOf = String.valueOf(this.b);
             Log.w("PhenotypeFlag", valueOf.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(valueOf) : new String("Bypass reading Phenotype values for flag: "));
         } else if (this.a.a != null) {

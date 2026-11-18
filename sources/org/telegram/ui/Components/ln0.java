@@ -1,75 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.view.KeyEvent;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowInsets;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ln0 implements ri.m, r0.m, org.telegram.ui.ActionBar.e1, ri.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ po0 b;
+public final class ln0 extends FrameLayout {
+    public final /* synthetic */ xe a;
 
-    public /* synthetic */ ln0(po0 po0Var, int i7) {
-        this.a = i7;
-        this.b = po0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ln0(xe xeVar, Context context) {
+        super(context);
+        this.a = xeVar;
     }
 
-    @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        WindowInsets g10 = k1Var.g();
-        po0 po0Var = this.b;
-        po0Var.t0(g10);
-        i0.c f10 = k1Var.a.f(519);
-        if (!po0Var.C2.equals(f10)) {
-            po0Var.C2 = f10;
-            po0Var.c.requestLayout();
-        }
-        return r0.k1.b;
-    }
-
-    @Override // ri.n
-    public int e() {
-        po0 po0Var = this.b;
-        po0Var.getClass();
-        return org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, po0Var.J0);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e1
-    public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
-        org.telegram.ui.ActionBar.g1 g1Var2;
-        switch (this.a) {
-            case 2:
-                po0 po0Var = this.b;
-                po0Var.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = po0Var.F2) != null && g1Var.isShowing()) {
-                    po0Var.F2.d(true);
-                    break;
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        xe xeVar = this.a;
+        View contentView = xeVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + xeVar.E;
+        iArr[1] = iArr[1] + xeVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (org.telegram.messenger.g0.m + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
                 }
-                break;
-            default:
-                po0 po0Var2 = this.b;
-                po0Var2.getClass();
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var2 = po0Var2.F2) != null && g1Var2.isShowing()) {
-                    po0Var2.F2.d(true);
-                    break;
-                }
-                break;
+            }
         }
-    }
-
-    @Override // ri.m
-    public void l(int i7) {
-        po0 po0Var = this.b;
-        dh.g gVar = po0Var.K2;
-        if (Build.VERSION.SDK_INT < 31 || gVar == null) {
-            return;
+        if (!xeVar.A && !xeVar.D) {
+            xeVar.D = true;
+            xeVar.l(new r1.g[0]);
         }
-        if (c8.zc.a(i7, 4)) {
-            gVar.h(po0Var.Y0.e());
-        }
-        gVar.e(po0Var.P2, po0Var.b.getWidth(), po0Var.b.getHeight());
+        return true;
     }
 }

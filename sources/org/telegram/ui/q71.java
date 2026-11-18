@@ -1,11 +1,10 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q71 {
-    public final /* synthetic */ r71 a;
-
-    public q71(r71 r71Var) {
-        this.a = r71Var;
+public final class q71 extends org.telegram.messenger.fj {
+    @Override // org.telegram.messenger.fj
+    public final boolean k5() {
+        return false;
     }
 }

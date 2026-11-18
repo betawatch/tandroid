@@ -6,16 +6,16 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wh implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ si b;
+    public final /* synthetic */ ri b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ wh(si siVar, String str, int i7) {
+    public /* synthetic */ wh(ri riVar, String str, int i7) {
         this.a = i7;
-        this.b = siVar;
+        this.b = riVar;
         this.c = str;
     }
 
@@ -24,9 +24,9 @@ public final /* synthetic */ class wh implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i7 = 0;
-                final si siVar = this.b;
+                final ri riVar = this.b;
                 final String str = this.c;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.tf
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.tf
                     @Override // java.lang.Runnable
                     public final void run() {
                         char c10;
@@ -34,42 +34,42 @@ public final /* synthetic */ class wh implements RequestDelegate {
                         ArrayList arrayList2;
                         switch (i7) {
                             case 0:
-                                si siVar2 = siVar;
+                                ri riVar2 = riVar;
                                 String str2 = str;
                                 TLObject tLObject2 = tLObject;
-                                HashMap hashMap = siVar2.L0;
+                                HashMap hashMap = riVar2.L0;
                                 ArrayList arrayList3 = (ArrayList) hashMap.get(str2);
                                 if (arrayList3 != null) {
                                     for (int i10 = 0; i10 < arrayList3.size(); i10++) {
                                         if (tLObject2 != null) {
-                                            ((s10) arrayList3.get(i10)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
+                                            ((q10) arrayList3.get(i10)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
                                         } else {
-                                            ((s10) arrayList3.get(i10)).a(Boolean.FALSE, null);
+                                            ((q10) arrayList3.get(i10)).a(Boolean.FALSE, null);
                                         }
                                     }
                                 }
                                 hashMap.remove(str2);
                                 break;
                             default:
-                                si siVar3 = siVar;
+                                ri riVar3 = riVar;
                                 String str3 = str;
                                 TLObject tLObject3 = tLObject;
-                                ArrayList arrayList4 = (ArrayList) siVar3.b0.get(str3);
+                                ArrayList arrayList4 = (ArrayList) riVar3.b0.get(str3);
                                 if (tLObject3 != null) {
                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
                                     TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                                     if (stickerSet != null) {
-                                        siVar3.J.k(tL_messages_stickerSet, stickerSet.id);
+                                        riVar3.J.k(tL_messages_stickerSet, stickerSet.id);
                                         String str4 = tL_messages_stickerSet.set.short_name;
                                         if (str4 != null) {
-                                            siVar3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
+                                            riVar3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
                                         }
                                     }
                                     int size = arrayList4.size();
                                     int i11 = 0;
                                     while (i11 < size) {
                                         TLRPC.Message message = (TLRPC.Message) arrayList4.get(i11);
-                                        TLRPC.Document G0 = gj.G0(message);
+                                        TLRPC.Document G0 = fj.G0(message);
                                         int size2 = tL_messages_stickerSet.documents.size();
                                         int i12 = 0;
                                         while (true) {
@@ -106,13 +106,13 @@ public final /* synthetic */ class wh implements RequestDelegate {
                                         }
                                     }
                                 }
-                                ns notificationCenter = siVar3.getNotificationCenter();
+                                ks notificationCenter = riVar3.getNotificationCenter();
                                 Object[] objArr = new Object[1];
                                 objArr[c10] = arrayList;
-                                notificationCenter.k(ns.q1, objArr);
-                                vr messagesStorage = siVar3.getMessagesStorage();
+                                notificationCenter.k(ks.q1, objArr);
+                                tr messagesStorage = riVar3.getMessagesStorage();
                                 messagesStorage.getClass();
-                                Utilities.d.c(new sp(messagesStorage, arrayList, 15));
+                                Utilities.d.c(new qp(messagesStorage, arrayList, 18));
                                 break;
                         }
                     }
@@ -120,9 +120,9 @@ public final /* synthetic */ class wh implements RequestDelegate {
                 break;
             default:
                 final int i10 = 1;
-                final si siVar2 = this.b;
+                final ri riVar2 = this.b;
                 final String str2 = this.c;
-                g0.h3(new Runnable() { // from class: org.telegram.messenger.tf
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.tf
                     @Override // java.lang.Runnable
                     public final void run() {
                         char c10;
@@ -130,42 +130,42 @@ public final /* synthetic */ class wh implements RequestDelegate {
                         ArrayList arrayList2;
                         switch (i10) {
                             case 0:
-                                si siVar22 = siVar2;
+                                ri riVar22 = riVar2;
                                 String str22 = str2;
                                 TLObject tLObject2 = tLObject;
-                                HashMap hashMap = siVar22.L0;
+                                HashMap hashMap = riVar22.L0;
                                 ArrayList arrayList3 = (ArrayList) hashMap.get(str22);
                                 if (arrayList3 != null) {
                                     for (int i102 = 0; i102 < arrayList3.size(); i102++) {
                                         if (tLObject2 != null) {
-                                            ((s10) arrayList3.get(i102)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
+                                            ((q10) arrayList3.get(i102)).a(Boolean.TRUE, (TLRPC.TL_messages_stickerSet) tLObject2);
                                         } else {
-                                            ((s10) arrayList3.get(i102)).a(Boolean.FALSE, null);
+                                            ((q10) arrayList3.get(i102)).a(Boolean.FALSE, null);
                                         }
                                     }
                                 }
                                 hashMap.remove(str22);
                                 break;
                             default:
-                                si siVar3 = siVar2;
+                                ri riVar3 = riVar2;
                                 String str3 = str2;
                                 TLObject tLObject3 = tLObject;
-                                ArrayList arrayList4 = (ArrayList) siVar3.b0.get(str3);
+                                ArrayList arrayList4 = (ArrayList) riVar3.b0.get(str3);
                                 if (tLObject3 != null) {
                                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) tLObject3;
                                     TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
                                     if (stickerSet != null) {
-                                        siVar3.J.k(tL_messages_stickerSet, stickerSet.id);
+                                        riVar3.J.k(tL_messages_stickerSet, stickerSet.id);
                                         String str4 = tL_messages_stickerSet.set.short_name;
                                         if (str4 != null) {
-                                            siVar3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
+                                            riVar3.O.put(str4.toLowerCase(), tL_messages_stickerSet);
                                         }
                                     }
                                     int size = arrayList4.size();
                                     int i11 = 0;
                                     while (i11 < size) {
                                         TLRPC.Message message = (TLRPC.Message) arrayList4.get(i11);
-                                        TLRPC.Document G0 = gj.G0(message);
+                                        TLRPC.Document G0 = fj.G0(message);
                                         int size2 = tL_messages_stickerSet.documents.size();
                                         int i12 = 0;
                                         while (true) {
@@ -202,13 +202,13 @@ public final /* synthetic */ class wh implements RequestDelegate {
                                         }
                                     }
                                 }
-                                ns notificationCenter = siVar3.getNotificationCenter();
+                                ks notificationCenter = riVar3.getNotificationCenter();
                                 Object[] objArr = new Object[1];
                                 objArr[c10] = arrayList;
-                                notificationCenter.k(ns.q1, objArr);
-                                vr messagesStorage = siVar3.getMessagesStorage();
+                                notificationCenter.k(ks.q1, objArr);
+                                tr messagesStorage = riVar3.getMessagesStorage();
                                 messagesStorage.getClass();
-                                Utilities.d.c(new sp(messagesStorage, arrayList, 15));
+                                Utilities.d.c(new qp(messagesStorage, arrayList, 18));
                                 break;
                         }
                     }

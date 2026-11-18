@@ -3,25 +3,24 @@ package org.telegram.ui.web;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.View;
-import hi.c5;
-import hi.p5;
+import hi.b5;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.l41;
-import org.telegram.ui.qv0;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.o41;
+import org.telegram.ui.qw0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements s10 {
+public final /* synthetic */ class b implements q10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -30,7 +29,7 @@ public final /* synthetic */ class b implements s10 {
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         int i7 = this.a;
         final int i10 = 1;
@@ -43,7 +42,7 @@ public final /* synthetic */ class b implements s10 {
                 i iVar = kVar.E;
                 ArrayList arrayList2 = kVar.y;
                 if (!kVar.b && arrayList2.isEmpty()) {
-                    arrayList.add(b41.k(kVar.d));
+                    arrayList.add(l41.k(kVar.d));
                 }
                 SharedPreferences sharedPreferences = kVar.getContext().getSharedPreferences("webhistory", 0);
                 ArrayList arrayList3 = new ArrayList();
@@ -59,7 +58,7 @@ public final /* synthetic */ class b implements s10 {
                             arrayList4.add(jVar);
                             i12++;
                         }
-                        Collections.sort(arrayList4, new qv0(8));
+                        Collections.sort(arrayList4, new qw0(7));
                         int size = arrayList4.size();
                         int i13 = 0;
                         while (i13 < size) {
@@ -76,7 +75,7 @@ public final /* synthetic */ class b implements s10 {
                 arrayList2.size();
                 arrayList3.size();
                 if (!arrayList2.isEmpty()) {
-                    arrayList.add(b41.k(kVar.w));
+                    arrayList.add(l41.k(kVar.w));
                 }
                 int i14 = 0;
                 while (i14 < arrayList2.size()) {
@@ -105,19 +104,19 @@ public final /* synthetic */ class b implements s10 {
                         }
                     };
                     int i15 = d.b;
-                    b41 K = b41.K(d.class);
-                    K.z = 1;
-                    K.l = str;
-                    K.D = onClickListener;
-                    K.q = z10;
-                    K.r = z11;
-                    K.G = Boolean.TRUE;
-                    K.H = kVar;
+                    l41 K = l41.K(d.class);
+                    K.A = 1;
+                    K.m = str;
+                    K.E = onClickListener;
+                    K.r = z10;
+                    K.s = z11;
+                    K.H = Boolean.TRUE;
+                    K.I = kVar;
                     arrayList.add(K);
                     i14++;
                 }
                 if (!arrayList3.isEmpty()) {
-                    arrayList.add(b41.s(hd.M0(2131742912, null), hd.M0(2131742916, null), new p5(kVar, 26)));
+                    arrayList.add(l41.s(gd.M0(2131742654, null), gd.M0(2131742658, null), new hi.o0(kVar, 28)));
                     int i16 = 0;
                     while (i16 < arrayList3.size()) {
                         final String str2 = (String) arrayList3.get(i16);
@@ -145,14 +144,14 @@ public final /* synthetic */ class b implements s10 {
                             }
                         };
                         int i17 = d.b;
-                        b41 K2 = b41.K(d.class);
-                        K2.z = 0;
-                        K2.l = str2;
-                        K2.D = onClickListener2;
-                        K2.q = z12;
-                        K2.r = z13;
-                        K2.G = Boolean.TRUE;
-                        K2.H = kVar;
+                        l41 K2 = l41.K(d.class);
+                        K2.A = 0;
+                        K2.m = str2;
+                        K2.E = onClickListener2;
+                        K2.r = z12;
+                        K2.s = z13;
+                        K2.H = Boolean.TRUE;
+                        K2.I = kVar;
                         arrayList.add(K2);
                         i16++;
                     }
@@ -160,76 +159,76 @@ public final /* synthetic */ class b implements s10 {
                 if (iVar != null) {
                     ArrayList arrayList5 = iVar.a;
                     if (!arrayList5.isEmpty()) {
-                        arrayList.add(b41.r(hd.M0(2131742913, null)));
+                        arrayList.add(l41.r(gd.M0(2131742655, null)));
                         while (i11 < arrayList5.size()) {
-                            gj gjVar = (gj) arrayList5.get(i11);
-                            if (!TextUtils.isEmpty(k.a(gjVar))) {
+                            fj fjVar = (fj) arrayList5.get(i11);
+                            if (!TextUtils.isEmpty(k.a(fjVar))) {
                                 int i18 = g.b;
-                                b41 K3 = b41.K(g.class);
-                                K3.z = 3;
-                                K3.q = true;
-                                K3.H = gjVar;
+                                l41 K3 = l41.K(g.class);
+                                K3.A = 3;
+                                K3.r = true;
+                                K3.I = fjVar;
                                 arrayList.add(K3);
                             }
                             i11++;
                         }
                         if (!iVar.f) {
-                            arrayList.add(b41.q(arrayList.size(), 32));
-                            arrayList.add(b41.q(arrayList.size(), 32));
-                            arrayList.add(b41.q(arrayList.size(), 32));
+                            arrayList.add(l41.q(arrayList.size(), 32));
+                            arrayList.add(l41.q(arrayList.size(), 32));
+                            arrayList.add(l41.q(arrayList.size(), 32));
                             break;
                         }
                     }
                 }
                 break;
             case 1:
-                c5 c5Var = (c5) obj3;
-                c5Var.z0 = ((Integer) obj).intValue();
-                c5Var.A0 = ((Integer) obj2).intValue();
-                org.telegram.messenger.g0.i3(new q2.d(c5Var, 16), 60L);
+                b5 b5Var = (b5) obj3;
+                b5Var.z0 = ((Integer) obj).intValue();
+                b5Var.A0 = ((Integer) obj2).intValue();
+                org.telegram.messenger.g0.h3(new z0(b5Var, 19), 60L);
                 break;
             case 2:
-                vh.h hVar = (vh.h) obj3;
+                vh.g gVar = (vh.g) obj3;
                 ArrayList arrayList6 = (ArrayList) obj;
-                ArrayList arrayList7 = hVar.W1;
+                ArrayList arrayList7 = gVar.W1;
                 if (arrayList7 != null && !arrayList7.isEmpty()) {
                     int L = org.telegram.messenger.g0.L(13.0f) + ((org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.L(68.0f));
-                    int L2 = org.telegram.messenger.g0.L(88.0f) + hVar.h2;
-                    arrayList6.add(b41.E(0, L2));
+                    int L2 = org.telegram.messenger.g0.L(88.0f) + gVar.h2;
+                    arrayList6.add(l41.E(0, L2));
                     int i19 = L - L2;
                     int size2 = arrayList7.size();
                     int i20 = 0;
                     while (i20 < size2) {
                         Object obj5 = arrayList7.get(i20);
                         i20++;
-                        for (TLRPC.TL_help_country tL_help_country : (List) hVar.V1.get((String) obj5)) {
-                            if (TextUtils.isEmpty(hVar.Y1) || wg.u0.g1(tL_help_country, org.telegram.messenger.g0.N3(hVar.Y1).toLowerCase())) {
+                        for (TLRPC.TL_help_country tL_help_country : (List) gVar.V1.get((String) obj5)) {
+                            if (TextUtils.isEmpty(gVar.Y1) || wg.w0.h1(tL_help_country, org.telegram.messenger.g0.M3(gVar.Y1).toLowerCase())) {
                                 i19 -= org.telegram.messenger.g0.L(44.0f);
-                                boolean containsKey = hVar.f2.containsKey(tL_help_country.iso2);
-                                int i21 = vh.g.b;
-                                b41 K4 = b41.K(vh.g.class);
-                                K4.l = tL_help_country.iso2;
-                                K4.G = tL_help_country;
+                                boolean containsKey = gVar.f2.containsKey(tL_help_country.iso2);
+                                int i21 = vh.f.b;
+                                l41 K4 = l41.K(vh.f.class);
+                                K4.m = tL_help_country.iso2;
+                                K4.H = tL_help_country;
                                 K4.e = containsKey;
                                 arrayList6.add(K4);
                             }
                         }
                     }
-                    arrayList6.add(b41.E(1, Math.max(0, i19)));
+                    arrayList6.add(l41.E(1, Math.max(0, i19)));
                     break;
                 }
                 break;
             case 3:
                 ArrayList arrayList8 = (ArrayList) obj;
-                l41 l41Var = ((vh.i) obj3).U1;
-                if (l41Var != null) {
-                    arrayList8.add(b41.D(org.telegram.messenger.g0.L(12.0f)));
-                    arrayList8.add(b41.h(0, 0, l41Var));
+                o41 o41Var = ((vh.h) obj3).U1;
+                if (o41Var != null) {
+                    arrayList8.add(l41.D(org.telegram.messenger.g0.L(12.0f)));
+                    arrayList8.add(l41.h(0, 0, o41Var));
                     break;
                 }
                 break;
             default:
-                ((li.v) obj3).a((TL_stats.TL_statsPollStats) obj);
+                ((li.d) obj3).a((TL_stats.TL_statsPollStats) obj);
                 break;
         }
     }

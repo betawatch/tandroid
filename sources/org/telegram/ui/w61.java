@@ -1,300 +1,229 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.util.DisplayMetrics;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class w61 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
+public final class w61 implements org.telegram.ui.ActionBar.i6 {
+    public org.telegram.ui.ActionBar.i6 a;
+    public final SparseIntArray b = new SparseIntArray();
+    public final Paint c = new Paint(3);
+    public final Paint d = new Paint(3);
+    public final Paint e;
+    public final TextPaint f;
+    public final TextPaint g;
+    public final TextPaint h;
+    public Bitmap i;
+    public BitmapShader j;
+    public Matrix k;
+    public final /* synthetic */ x71 l;
+    public final /* synthetic */ x71 m;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w61(Object obj, Context context, Object obj2, int i7) {
-        super(context);
-        this.a = i7;
-        this.c = obj;
-        this.b = obj2;
+    public w61(x71 x71Var) {
+        this.m = x71Var;
+        this.l = x71Var;
+        Paint paint = new Paint(3);
+        this.e = paint;
+        TextPaint textPaint = new TextPaint();
+        this.f = textPaint;
+        TextPaint textPaint2 = new TextPaint();
+        this.g = textPaint2;
+        TextPaint textPaint3 = new TextPaint();
+        this.h = textPaint3;
+        textPaint.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.bz.W0) - 2));
+        textPaint2.setTextSize(org.telegram.messenger.g0.L(Math.max(16, org.telegram.messenger.bz.W0) - 2));
+        textPaint3.setTextSize(org.telegram.messenger.g0.L(15.0f));
+        textPaint3.setTypeface(org.telegram.messenger.g0.o());
+        paint.setColor(352321536);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                super.dispatchDraw(canvas);
-                ((org.telegram.ui.Wallet.y5) this.c).getClass();
-                break;
-            case 2:
-            case 4:
-            default:
-                super.dispatchDraw(canvas);
-                break;
-            case 3:
-                bg.c0 c0Var = (bg.c0) this.c;
-                c0Var.b(org.telegram.ui.ActionBar.j6.r1(0.65f, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, (org.telegram.ui.ActionBar.e6) this.b)));
-                c0Var.draw(canvas);
-                super.dispatchDraw(canvas);
-                break;
-            case 5:
-                ((ug.z0) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(0.0f, org.telegram.messenger.g0.L(2.0f), getMeasuredWidth(), org.telegram.messenger.g0.L(18.0f) + getMeasuredHeight());
-                canvas.save();
-                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                ug.z0 z0Var = (ug.z0) this.b;
-                z0Var.f.setAlpha(((ug.x0) this.c).F1);
-                canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(24.0f) - 1, org.telegram.messenger.g0.L(24.0f) - 1, z0Var.f);
-                canvas.restore();
-                super.dispatchDraw(canvas);
-                break;
+    public final void a(Drawable drawable, Drawable drawable2, Float f10) {
+        int i7 = org.telegram.ui.ActionBar.n6.cd;
+        int k10 = k(i7);
+        int k11 = k(org.telegram.ui.ActionBar.n6.dd);
+        if (drawable == null) {
+            drawable = drawable2;
         }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 3:
-                super.dispatchTouchEvent(motionEvent);
-                return true;
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j3) {
-        boolean z10;
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.Wallet.y5 y5Var = (org.telegram.ui.Wallet.y5) this.c;
-                if (view != y5Var.t0 || !y5Var.G) {
-                    return super.drawChild(canvas, view, j3);
+        boolean z10 = drawable instanceof org.telegram.ui.Components.bb0;
+        TextPaint textPaint = this.g;
+        TextPaint textPaint2 = this.f;
+        if ((z10 || (drawable instanceof BitmapDrawable)) && org.telegram.messenger.bz.o() != 0 && org.telegram.messenger.pc.e(32)) {
+            Bitmap bitmap = z10 ? ((org.telegram.ui.Components.bb0) drawable).k : drawable instanceof BitmapDrawable ? ((BitmapDrawable) drawable).getBitmap() : null;
+            if (this.i != bitmap) {
+                this.i = bitmap;
+                Bitmap bitmap2 = this.i;
+                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                this.j = new BitmapShader(bitmap2, tileMode, tileMode);
+                if (this.k == null) {
+                    this.k = new Matrix();
                 }
-                int save = canvas.save();
-                canvas.concat(y5Var.J);
-                boolean drawChild = super.drawChild(canvas, view, j3);
-                canvas.restoreToCount(save);
-                return drawChild;
-            case 4:
-                Path path = (Path) this.b;
-                tg.f0 f0Var = (tg.f0) this.c;
-                if (f0Var.h == null || (!((z10 = f0Var.f) && view == f0Var.d) && (z10 || view != f0Var.c))) {
-                    return super.drawChild(canvas, view, j3);
-                }
-                float measuredWidth = ((z10 ? f0Var.e : 1.0f - f0Var.e) * getMeasuredWidth()) / 2.0f;
-                canvas.save();
-                path.rewind();
-                path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild2 = super.drawChild(canvas, view, j3);
-                canvas.restore();
-                return drawChild2;
-            default:
-                return super.drawChild(canvas, view, j3);
+            }
+            textPaint2.setColor(-1);
+            textPaint.setColor(-1);
+            textPaint2.linkColor = -1;
+            this.h.setColor(-1);
+        } else {
+            this.i = null;
+            this.j = null;
+            int i10 = org.telegram.ui.ActionBar.n6.Zc;
+            textPaint2.setColor(k(i10));
+            textPaint.setColor(k(i10));
+            textPaint2.linkColor = k(org.telegram.ui.ActionBar.n6.ad);
+        }
+        Paint paint = this.c;
+        paint.setColor(k10);
+        Paint paint2 = this.d;
+        paint2.setColor(k11);
+        if (this.j == null || !(this.b.indexOfKey(i7) < 0 || z10 || (drawable instanceof BitmapDrawable))) {
+            paint.setColorFilter(null);
+            paint.setShader(null);
+            paint2.setColorFilter(null);
+            paint2.setShader(null);
+            return;
+        }
+        ColorMatrix colorMatrix = new ColorMatrix();
+        if (z10) {
+            if (((org.telegram.ui.Components.bb0) drawable).q >= 0.0f) {
+                colorMatrix.setSaturation(1.6f);
+                org.telegram.messenger.g0.n2(colorMatrix, d() ? 0.97f : 0.92f);
+                org.telegram.messenger.g0.h(colorMatrix, d() ? 0.12f : -0.06f);
+            } else {
+                colorMatrix.setSaturation(1.1f);
+                org.telegram.messenger.g0.n2(colorMatrix, d() ? 0.4f : 0.8f);
+                org.telegram.messenger.g0.h(colorMatrix, d() ? 0.08f : -0.06f);
+            }
+        } else {
+            colorMatrix.setSaturation(1.6f);
+            org.telegram.messenger.g0.n2(colorMatrix, d() ? 0.9f : 0.84f);
+            org.telegram.messenger.g0.h(colorMatrix, d() ? -0.04f : 0.06f);
+        }
+        if (z10) {
+            float f11 = ((org.telegram.ui.Components.bb0) drawable).q;
+            if (f10 != null) {
+                f11 = f10.floatValue();
+            }
+            if (f11 >= 0.0f) {
+                colorMatrix.setSaturation(1.8f);
+                org.telegram.messenger.g0.n2(colorMatrix, 0.97f);
+                org.telegram.messenger.g0.h(colorMatrix, 0.03f);
+            } else {
+                colorMatrix.setSaturation(0.5f);
+                org.telegram.messenger.g0.n2(colorMatrix, 0.35f);
+                org.telegram.messenger.g0.h(colorMatrix, 0.03f);
+            }
+        } else {
+            colorMatrix.setSaturation(1.6f);
+            org.telegram.messenger.g0.n2(colorMatrix, 0.97f);
+            org.telegram.messenger.g0.h(colorMatrix, 0.06f);
+        }
+        paint.setShader(this.j);
+        paint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+        paint.setAlpha(org.telegram.messenger.ks.e4);
+        paint2.setShader(this.j);
+        ColorMatrix colorMatrix2 = new ColorMatrix(colorMatrix);
+        org.telegram.messenger.g0.n2(colorMatrix2, 0.85f);
+        paint2.setColorFilter(new ColorMatrixColorFilter(colorMatrix2));
+        paint2.setAlpha(org.telegram.messenger.ks.e4);
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final boolean d() {
+        p71 p71Var = this.m.r1;
+        if (p71Var != null) {
+            return p71Var.d();
+        }
+        p71 p71Var2 = this.l.r1;
+        if (p71Var2 != null) {
+            return p71Var2.d();
+        }
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        return i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q();
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final void e(float f10, float f11, int i7, int i10) {
+        BitmapShader bitmapShader;
+        Bitmap bitmap = this.i;
+        if (bitmap == null || (bitmapShader = this.j) == null) {
+            org.telegram.ui.ActionBar.n6.r(f10, f11, i7, i10);
+        } else {
+            org.telegram.ui.ActionBar.n6.s(bitmap, bitmapShader, this.k, i7, i10, f10, f11);
         }
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.a) {
-            case 0:
-                super.invalidate();
-                ai.l0 l0Var = ((t71) this.c).v0;
-                if (l0Var != null) {
-                    l0Var.invalidate();
-                    break;
-                }
-                break;
-            case 1:
+    @Override // org.telegram.ui.ActionBar.i6
+    public final ColorFilter f() {
+        return org.telegram.ui.ActionBar.n6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final Paint g(String str) {
+        str.getClass();
+        switch (str) {
+            case "paintChatActionText2":
+                return this.g;
+            case "paintChatActionBackground":
+                return this.c;
+            case "paintChatBotButton":
+                return this.h;
+            case "paintChatActionBackgroundDarken":
+                return this.e;
+            case "paintChatActionBackgroundSelected":
+                return this.d;
+            case "paintChatActionText":
+                return this.f;
             default:
-                super.invalidate();
-                break;
-            case 2:
-                super.invalidate();
-                ((pg.i) this.c).invalidate();
-                break;
+                org.telegram.ui.ActionBar.i6 i6Var = this.a;
+                return i6Var != null ? i6Var.g(str) : org.telegram.ui.ActionBar.n6.V0(str);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 1:
-                super.onAttachedToWindow();
-                getViewTreeObserver().addOnPreDrawListener((org.telegram.ui.Wallet.l5) this.b);
-                break;
-            default:
-                super.onAttachedToWindow();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final Drawable getDrawable(String str) {
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        return i6Var != null ? i6Var.getDrawable(str) : org.telegram.ui.ActionBar.n6.R0(str);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 1:
-                getViewTreeObserver().removeOnPreDrawListener((org.telegram.ui.Wallet.l5) this.b);
-                super.onDetachedFromWindow();
-                break;
-            default:
-                super.onDetachedFromWindow();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final boolean h() {
+        return org.telegram.messenger.bz.H0;
     }
 
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                int[] iArr = (int[]) this.b;
-                t71 t71Var = (t71) this.c;
-                if (!org.telegram.messenger.g0.D) {
-                    getLocationInWindow(iArr);
-                    if (t71Var.u0.getTranslationY() != iArr[1]) {
-                        t71Var.u0.setTranslationY(-r6);
-                        t71Var.v0.invalidate();
-                    }
-                    if (SystemClock.elapsedRealtime() < t71Var.R) {
-                        invalidate();
-                        break;
-                    }
-                }
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int i(int i7) {
+        return k(i7);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.a) {
-            case 5:
-                super.onMeasure(i7, org.telegram.messenger.i20.B(2.0f, ((ug.x0) this.c).u1, TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final boolean j() {
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        return i6Var != null ? i6Var.j() : org.telegram.ui.ActionBar.n6.d1();
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i7, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 3:
-                super.onSizeChanged(i7, i10, i11, i12);
-                bg.c0 c0Var = (bg.c0) this.c;
-                c0Var.setBounds(0, 0, i7, i10);
-                c0Var.c(0, org.telegram.messenger.g0.L(24.0f) + getPaddingBottom());
-                break;
-            default:
-                super.onSizeChanged(i7, i10, i11, i12);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int k(int i7) {
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        return i6Var != null ? i6Var.k(i7) : org.telegram.ui.ActionBar.n6.v0(i7);
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        DisplayMetrics displayMetrics;
-        float f10;
-        switch (this.a) {
-            case 2:
-                pg.i iVar = (pg.i) this.c;
-                pg.d dVar = iVar.r;
-                boolean onTouchEvent = ((GestureDetector) ((org.telegram.messenger.ou) this.b).b).onTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 0) {
-                    org.telegram.messenger.g0.i3(dVar, 200L);
-                } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    org.telegram.messenger.g0.r(dVar);
-                    if (!iVar.h) {
-                        r1.h hVar = iVar.c.m;
-                        if (((float) hVar.i) >= getWidth() / 2.0f) {
-                            displayMetrics = getResources().getDisplayMetrics();
-                            f10 = 2.14748365E9f;
-                        } else {
-                            displayMetrics = getResources().getDisplayMetrics();
-                            f10 = -2.14748365E9f;
-                        }
-                        hVar.i = pg.i.a(displayMetrics, f10);
-                        iVar.d.m.i = pg.i.b(getResources().getDisplayMetrics(), (float) iVar.d.m.i);
-                        iVar.c.h();
-                        iVar.d.h();
-                    }
-                    iVar.n = false;
-                    iVar.f = false;
-                    iVar.h = false;
-                }
-                return onTouchEvent;
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int m(int i7) {
+        org.telegram.ui.ActionBar.i6 i6Var = this.a;
+        return i6Var != null ? i6Var.m(i7) : k(i7);
     }
 
-    @Override // android.view.View
-    public void setTranslationX(float f10) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationX(f10);
-                ((pg.i) this.c).invalidate();
-                break;
-            default:
-                super.setTranslationX(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        switch (this.a) {
-            case 2:
-                super.setTranslationY(f10);
-                ((pg.i) this.c).invalidate();
-                break;
-            default:
-                super.setTranslationY(f10);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w61(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context);
-        this.a = 3;
-        this.c = new bg.c0(8);
-        this.b = e6Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w61(org.telegram.ui.Wallet.y5 y5Var, Context context) {
-        super(context);
-        this.a = 1;
-        this.c = y5Var;
-        this.b = new org.telegram.ui.Wallet.l5(0, this);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w61(Context context, t71 t71Var) {
-        super(context);
-        this.a = 0;
-        this.c = t71Var;
-        this.b = new int[2];
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w61(tg.f0 f0Var, Context context) {
-        super(context);
-        this.a = 4;
-        this.c = f0Var;
-        this.b = new Path();
+    @Override // org.telegram.ui.ActionBar.i6
+    public final /* synthetic */ void l(int i7, int i10) {
     }
 }

@@ -1,15 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xc0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ed0 b;
+    public final /* synthetic */ gd0 b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ xc0(ed0 ed0Var, int i7, int i10) {
+    public /* synthetic */ xc0(gd0 gd0Var, int i7, int i10) {
         this.a = i10;
-        this.b = ed0Var;
+        this.b = gd0Var;
         this.c = i7;
     }
 
@@ -17,7 +17,7 @@ public final /* synthetic */ class xc0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new xc0(this.b, this.c, 1));
+                org.telegram.messenger.g0.g3(new xc0(this.b, this.c, 1));
                 break;
             case 1:
                 this.b.z(this.c);

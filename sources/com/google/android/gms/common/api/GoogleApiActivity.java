@@ -10,9 +10,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.internal.cast.y;
-import org.telegram.ui.Cells.y0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -72,7 +71,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             return;
         }
         if (pendingIntent == null) {
-            q6.m.g(num);
+            q6.m.h(num);
             n6.d.e.e(this, num.intValue(), this);
             this.a = 1;
             return;
@@ -88,7 +87,7 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                     com.google.android.gms.common.api.internal.g.e(this).h(new n6.a(22, null, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
                     String obj = pendingIntent.toString();
-                    String m10 = y0.m("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
+                    String m10 = p5.c.m("Activity not found while launching ", obj, ".", new StringBuilder(obj.length() + 36));
                     if (Build.FINGERPRINT.contains("generic")) {
                         m10 = m10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }

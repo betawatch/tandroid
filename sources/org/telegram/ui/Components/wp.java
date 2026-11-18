@@ -1,219 +1,106 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.view.animation.DecelerateInterpolator;
+import android.view.MotionEvent;
+import android.view.View;
+import androidx.core.widget.NestedScrollView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class wp extends Drawable {
-    public final Paint a;
-    public long b;
-    public final RectF c;
-    public float d;
-    public boolean e;
-    public int f;
-    public int g;
+public final class wp extends NestedScrollView {
+    public boolean a0;
+    public final /* synthetic */ aq b0;
 
-    public wp() {
-        this(2.0f);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wp(aq aqVar, Context context) {
+        super(context);
+        this.b0 = aqVar;
     }
 
-    public abstract int a();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        aq aqVar = this.b0;
+        int scrollY = (int) ((getScrollY() + (aqVar.r1 - aqVar.t0)) - getTranslationY());
+        Drawable drawable = aqVar.m1;
+        drawable.setBounds(0, scrollY, getMeasuredWidth(), org.telegram.messenger.g0.L(19.0f) + aqVar.o1.getMeasuredHeight() + scrollY + aqVar.t0);
+        drawable.draw(canvas);
+    }
 
-    /* JADX WARN: Removed duplicated region for block: B:32:0x014a  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x016e  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0180  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01b7  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01c0  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0157  */
-    @Override // android.graphics.drawable.Drawable
+    @Override // androidx.core.widget.NestedScrollView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            aq aqVar = this.b0;
+            if (aqVar.r1 != 0 && motionEvent.getY() < aqVar.r1) {
+                aqVar.dismiss();
+                return true;
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        aq.J0(this.b0);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x004a  */
+    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        float y10;
-        Paint paint;
-        float f14;
-        long currentTimeMillis = System.currentTimeMillis();
-        int a10 = a();
-        Paint paint2 = this.a;
-        if (a10 != 0) {
-            this.g = Color.alpha(a10);
-            paint2.setColor(i0.a.o(a10, org.telegram.messenger.ns.e4));
-        }
-        long j3 = this.b;
-        if (j3 != 0) {
-            long j10 = currentTimeMillis - j3;
-            boolean z10 = this.e;
-            if (z10 || this.d != 0.0f) {
-                float f15 = ((j10 * 360) / 500.0f) + this.d;
-                this.d = f15;
-                if (z10 || f15 < 720.0f) {
-                    this.d = f15 - (((int) (f15 / 720.0f)) * 720);
-                } else {
-                    this.d = 0.0f;
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i10);
+        aq aqVar = this.b0;
+        measureChildWithMargins(aqVar.o1, i7, 0, i10, 0);
+        int measuredHeight = aqVar.o1.getMeasuredHeight();
+        int i11 = (size / 5) * 3;
+        int i12 = size - i11;
+        if (!aqVar.q1 && measuredHeight - i12 >= org.telegram.messenger.g0.L(90.0f)) {
+            if (measuredHeight >= org.telegram.messenger.g0.L(90.0f) + (size / 2)) {
+                int L = org.telegram.messenger.g0.L(108.0f) + (measuredHeight / 2);
+                if (i12 < L) {
+                    i11 = size - L;
                 }
-                invalidateSelf();
-            }
-        }
-        if (this.g == 255 || getBounds() == null || getBounds().isEmpty()) {
-            canvas2 = canvas;
-            canvas2.save();
-        } else {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, this.g, 31);
-        }
-        canvas2.translate(org.telegram.messenger.g0.L(24.0f) / 2, org.telegram.messenger.g0.L(24.0f) / 2);
-        canvas2.rotate(-45.0f);
-        float f16 = this.d;
-        if (f16 < 0.0f || f16 >= 90.0f) {
-            if (f16 >= 90.0f && f16 < 180.0f) {
-                f13 = org.telegram.messenger.k5.y(f16, 90.0f, 90.0f, 1.0f);
-                f11 = 0.0f;
-                f10 = 0.0f;
-                f12 = 1.0f;
-            } else if (f16 < 180.0f || f16 >= 270.0f) {
-                if (f16 >= 270.0f && f16 < 360.0f) {
-                    y10 = (f16 - 270.0f) / 90.0f;
-                } else if (f16 >= 360.0f && f16 < 450.0f) {
-                    y10 = org.telegram.messenger.k5.y(f16, 360.0f, 90.0f, 1.0f);
-                } else if (f16 >= 450.0f && f16 < 540.0f) {
-                    f11 = (f16 - 450.0f) / 90.0f;
-                    f13 = 0.0f;
-                    f12 = 0.0f;
-                    f10 = 0.0f;
-                } else if (f16 >= 540.0f && f16 < 630.0f) {
-                    f13 = (f16 - 540.0f) / 90.0f;
-                    f12 = 0.0f;
-                    f10 = 0.0f;
-                    f11 = 1.0f;
-                } else if (f16 < 630.0f || f16 >= 720.0f) {
-                    f10 = 0.0f;
-                    f11 = 1.0f;
-                    f13 = f11;
-                } else {
-                    f12 = (f16 - 630.0f) / 90.0f;
-                    f10 = 0.0f;
-                    f11 = 1.0f;
-                    f13 = 1.0f;
+                if (getPaddingTop() != i11) {
+                    this.a0 = true;
+                    setPadding(0, i11, 0, 0);
+                    this.a0 = false;
                 }
-                f10 = y10;
-                f11 = 0.0f;
-                f13 = f11;
-            } else {
-                f12 = org.telegram.messenger.k5.y(f16, 180.0f, 90.0f, 1.0f);
-                f11 = 0.0f;
-                f13 = 0.0f;
-                f10 = 0.0f;
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
             }
-            if (f11 == 0.0f) {
-                paint = paint2;
-                canvas2.drawLine(0.0f, 0.0f, 0.0f, this.f * f11, paint);
-            } else {
-                paint = paint2;
-            }
-            if (f13 != 0.0f) {
-                canvas.drawLine((-this.f) * f13, 0.0f, 0.0f, 0.0f, paint);
-            }
-            if (f12 != 0.0f) {
-                canvas.drawLine(0.0f, (-this.f) * f12, 0.0f, 0.0f, paint);
-            }
-            if (f10 != 1.0f) {
-                float f17 = this.f;
-                canvas.drawLine(f17 * f10, 0.0f, f17, 0.0f, paint);
-            }
-            canvas.restore();
-            int centerX = getBounds().centerX();
-            int centerY = getBounds().centerY();
-            int i7 = this.f;
-            float f18 = centerX - i7;
-            float f19 = centerY - i7;
-            float f20 = centerX + i7;
-            float f21 = centerY + i7;
-            RectF rectF = this.c;
-            rectF.set(f18, f19, f20, f21);
-            f14 = this.d;
-            float f22 = (f14 >= 360.0f ? f14 - 360.0f : 0.0f) - 45.0f;
-            if (f14 >= 360.0f) {
-                f14 = 720.0f - f14;
-            }
-            canvas.drawArc(rectF, f22, f14, false, paint);
-            this.b = currentTimeMillis;
         }
-        f11 = 1.0f - (f16 / 90.0f);
-        f10 = 0.0f;
-        f13 = 1.0f;
-        f12 = f13;
-        if (f11 == 0.0f) {
+        i11 = size - measuredHeight;
+        if (getPaddingTop() != i11) {
         }
-        if (f13 != 0.0f) {
-        }
-        if (f12 != 0.0f) {
-        }
-        if (f10 != 1.0f) {
-        }
-        canvas.restore();
-        int centerX2 = getBounds().centerX();
-        int centerY2 = getBounds().centerY();
-        int i72 = this.f;
-        float f182 = centerX2 - i72;
-        float f192 = centerY2 - i72;
-        float f202 = centerX2 + i72;
-        float f212 = centerY2 + i72;
-        RectF rectF2 = this.c;
-        rectF2.set(f182, f192, f202, f212);
-        f14 = this.d;
-        float f222 = (f14 >= 360.0f ? f14 - 360.0f : 0.0f) - 45.0f;
-        if (f14 >= 360.0f) {
-        }
-        canvas.drawArc(rectF2, f222, f14, false, paint);
-        this.b = currentTimeMillis;
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(24.0f);
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final void onScrollChanged(int i7, int i10, int i11, int i12) {
+        super.onScrollChanged(i7, i10, i11, i12);
+        aq.J0(this.b0);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(24.0f);
+    @Override // androidx.core.widget.NestedScrollView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.b0.J && super.onTouchEvent(motionEvent);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a0) {
+            return;
+        }
+        super.requestLayout();
     }
 
-    public wp(float f10) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        new DecelerateInterpolator();
-        this.c = new RectF();
-        this.g = org.telegram.messenger.ns.e4;
-        paint.setColor(-1);
-        paint.setStrokeWidth(org.telegram.messenger.g0.L(f10));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStyle(Paint.Style.STROKE);
-        this.f = org.telegram.messenger.g0.L(8.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // android.view.View
+    public final void setTranslationY(float f10) {
+        super.setTranslationY(f10);
+        aq.J0(this.b0);
     }
 }

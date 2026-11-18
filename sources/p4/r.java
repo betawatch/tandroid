@@ -1,6 +1,6 @@
 package p4;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Build;
@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Display;
 import android.view.WindowManager;
-import h9.s1;
+import h9.t1;
 import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r {
     public static final AtomicReference n = new AtomicReference(null);
@@ -24,9 +24,9 @@ public final class r {
     public final Bundle f;
     public h2.d g;
     public final boolean h;
-    public final s1 i;
-    public final s1 j;
-    public final s1 k;
+    public final t1 i;
+    public final t1 j;
+    public final t1 k;
     public final boolean l;
     public boolean m;
 
@@ -36,22 +36,22 @@ public final class r {
         applicationContext.getClass();
         this.a = applicationContext;
         this.b = c1Var;
-        ja.f(c1Var.P());
+        la.f(c1Var.P());
         this.c = "";
         this.d = sVar;
         this.e = new Bundle();
         this.f = new Bundle();
         h9.g0 g0Var = h9.i0.b;
-        s1 s1Var = s1.e;
-        this.i = s1Var;
-        this.j = s1Var;
+        t1 t1Var = t1.e;
+        this.i = t1Var;
+        this.j = t1Var;
         this.h = true;
         this.l = true;
-        this.k = s1Var;
+        this.k = t1Var;
     }
 
     public final x a() {
-        ja.p(!this.m);
+        la.p(!this.m);
         this.m = true;
         Object obj = x.b;
         int intValue = ((Integer) d0.C.get()).intValue();
@@ -62,14 +62,14 @@ public final class r {
         }
         h2.d dVar = this.g;
         if (dVar == null) {
-            bg.v0 v0Var = new bg.v0();
-            v0Var.c = context;
-            v0Var.b = -1;
-            v0Var.b = intValue;
-            v0Var.a = true;
-            this.g = new j2.i(v0Var);
+            bg.w0 w0Var = new bg.w0();
+            w0Var.c = context;
+            w0Var.b = -1;
+            w0Var.b = intValue;
+            w0Var.a = true;
+            this.g = new j2.i(w0Var);
         } else {
-            this.g = new f5.v(dVar, intValue, 11);
+            this.g = new b3.j(dVar, intValue, 10);
         }
         if (i7 == 29) {
             h2.d dVar2 = this.g;

@@ -2,29 +2,41 @@ package org.telegram.ui.ActionBar;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x3 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
+public final class x3 {
+    public final m4 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public boolean e = true;
+    public boolean f;
+    public long g;
 
-    public /* synthetic */ x3(g4 g4Var, int i7) {
-        this.a = i7;
-        this.b = g4Var;
+    public x3(m4 m4Var) {
+        this.a = m4Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.g();
-                break;
-            case 1:
-                this.b.g();
-                break;
-            default:
-                this.b.g();
-                break;
+    public final void a() {
+        if (this.f) {
+            boolean z10 = this.b;
+            m4 m4Var = this.a;
+            if (z10 || this.c || this.d || !this.e) {
+                k4 k4Var = m4Var.b;
+                if (k4Var.f()) {
+                    k4Var.G = true;
+                    k4Var.x.start();
+                    k4Var.D.setEmpty();
+                    return;
+                }
+                return;
+            }
+            View view = m4Var.a;
+            a4 a4Var = m4Var.l;
+            view.removeOnLayoutChangeListener(a4Var);
+            m4Var.a.addOnLayoutChangeListener(a4Var);
+            m4Var.c();
+            this.g = System.currentTimeMillis();
         }
     }
 }

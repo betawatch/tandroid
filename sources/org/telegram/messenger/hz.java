@@ -1,227 +1,389 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.lang.reflect.Array;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class hz extends c1 {
-    public final byte[] a;
-    public long b;
-    public final long[][] c;
-    public final long[][] d;
-    public final int[][] e;
-    public final int[][] f;
-    public final long[] h;
-    public final int[] n;
-    public final RandomAccessFile r;
-    public final bg.d0 s;
-    public final j6.o w;
-    public static final p5 x = new p5("statsSaveQueue");
-    public static final b7.j y = new b7.j(2);
-    public static volatile hz[] E = new hz[4];
+public final class hz {
+    public char a;
+    public String b;
+    public int c;
+    public int d;
 
-    public hz(int i7) {
-        super(i7);
-        this.a = new byte[8];
-        Class cls = Long.TYPE;
-        this.c = (long[][]) Array.newInstance((Class<?>) cls, 3, 8);
-        this.d = (long[][]) Array.newInstance((Class<?>) cls, 3, 8);
-        Class cls2 = Integer.TYPE;
-        this.e = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
-        this.f = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
-        this.h = new long[3];
-        this.n = new int[3];
-        this.s = new bg.d0(32);
-        this.w = new j6.o(this, 16);
-        File h = t0.h();
-        if (i7 != 0) {
-            h = new File(t0.h(), i5.c.j(i7, "account", "/"));
-            h.mkdirs();
+    public static void c(char c10) {
+        throw new RuntimeException("Unexpected char '" + c10 + "'.");
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:105:0x00ee, code lost:
+    
+        r3 = r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:49:0x0086, code lost:
+    
+        if (r14 == false) goto L115;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:114:0x003f  */
+    /* JADX WARN: Removed duplicated region for block: B:116:0x0044  */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:120:? A[LOOP:6: B:115:0x0042->B:120:?, LOOP_END, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:121:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0143 A[ADDED_TO_REGION, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x002e A[LOOP:1: B:28:0x002e->B:34:?, LOOP_START] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x00a5 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x00fa A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0101  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0109  */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x002a  */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x00b0  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x00c7 A[PHI: r4
+      0x00c7: PHI (r4v2 boolean) = (r4v1 boolean), (r4v0 boolean) binds: [B:109:0x00c0, B:88:0x00b2] A[DONT_GENERATE, DONT_INLINE]] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final float a() {
+        boolean z10;
+        int i7;
+        int i10;
+        int i11;
+        boolean z11;
+        char b10;
+        char c10;
+        char b11;
+        char b12;
+        int i12;
+        int i13;
+        char charAt;
+        d();
+        char c11 = this.a;
+        int i14 = 0;
+        boolean z12 = true;
+        if (c11 == '+') {
+            z10 = true;
+        } else if (c11 != '-') {
+            z10 = true;
+            float f10 = 0.0f;
+            switch (this.a) {
+                case '.':
+                    i7 = 0;
+                    i10 = 0;
+                    i11 = 0;
+                    z11 = false;
+                    if (this.a == '.') {
+                        char b13 = b();
+                        this.a = b13;
+                        switch (b13) {
+                            case '0':
+                                if (i7 == 0) {
+                                    while (true) {
+                                        char b14 = b();
+                                        this.a = b14;
+                                        i10--;
+                                        switch (b14) {
+                                        }
+                                    }
+                                }
+                                break;
+                            case '1':
+                            case '2':
+                            case ks.o0 /* 51 */:
+                            case ks.p0 /* 52 */:
+                            case ks.q0 /* 53 */:
+                            case ks.r0 /* 54 */:
+                            case ks.s0 /* 55 */:
+                            case ks.t0 /* 56 */:
+                            case ks.u0 /* 57 */:
+                                while (true) {
+                                    if (i7 < 9) {
+                                        i7++;
+                                        i10--;
+                                        i11 = (this.a - '0') + (i11 * 10);
+                                    }
+                                    char b15 = b();
+                                    this.a = b15;
+                                    switch (b15) {
+                                    }
+                                }
+                                break;
+                            default:
+                                if (!z11) {
+                                    c(b13);
+                                    throw null;
+                                }
+                                break;
+                        }
+                    }
+                    c10 = this.a;
+                    if (c10 != 'E' || c10 == 'e') {
+                        b11 = b();
+                        this.a = b11;
+                        if (b11 != '+') {
+                            if (b11 != '-') {
+                                switch (b11) {
+                                    case '0':
+                                    case '1':
+                                    case '2':
+                                    case ks.o0 /* 51 */:
+                                    case ks.p0 /* 52 */:
+                                    case ks.q0 /* 53 */:
+                                    case ks.r0 /* 54 */:
+                                    case ks.s0 /* 55 */:
+                                    case ks.t0 /* 56 */:
+                                    case ks.u0 /* 57 */:
+                                        switch (this.a) {
+                                            case '0':
+                                                while (true) {
+                                                    char b16 = b();
+                                                    this.a = b16;
+                                                    switch (b16) {
+                                                    }
+                                                }
+                                                break;
+                                            case '1':
+                                            case '2':
+                                            case ks.o0 /* 51 */:
+                                            case ks.p0 /* 52 */:
+                                            case ks.q0 /* 53 */:
+                                            case ks.r0 /* 54 */:
+                                            case ks.s0 /* 55 */:
+                                            case ks.t0 /* 56 */:
+                                            case ks.u0 /* 57 */:
+                                                int i15 = 0;
+                                                while (true) {
+                                                    if (i14 < 3) {
+                                                        i14++;
+                                                        i15 = (this.a - '0') + (i15 * 10);
+                                                    }
+                                                    char b17 = b();
+                                                    this.a = b17;
+                                                    switch (b17) {
+                                                    }
+                                                }
+                                                break;
+                                        }
+                                    default:
+                                        c(b11);
+                                        throw null;
+                                }
+                            } else {
+                                z12 = false;
+                            }
+                        }
+                        b12 = b();
+                        this.a = b12;
+                        switch (b12) {
+                            case '0':
+                            case '1':
+                            case '2':
+                            case ks.o0 /* 51 */:
+                            case ks.p0 /* 52 */:
+                            case ks.q0 /* 53 */:
+                            case ks.r0 /* 54 */:
+                            case ks.s0 /* 55 */:
+                            case ks.t0 /* 56 */:
+                            case ks.u0 /* 57 */:
+                                break;
+                            default:
+                                c(b12);
+                                throw null;
+                        }
+                    }
+                    if (!z12) {
+                        i14 = -i14;
+                    }
+                    i12 = i14 + i10;
+                    if (!z10) {
+                        i11 = -i11;
+                    }
+                    if (i12 >= -125 && i11 != 0) {
+                        if (i12 < 128) {
+                            f10 = i11 > 0 ? Float.POSITIVE_INFINITY : Float.NEGATIVE_INFINITY;
+                        } else if (i12 == 0) {
+                            f10 = i11;
+                        } else {
+                            if (i11 >= 67108864) {
+                                i11++;
+                            }
+                            double d = i11;
+                            double[] dArr = mz.a;
+                            f10 = (float) (i12 > 0 ? d * dArr[i12] : d / dArr[-i12]);
+                        }
+                    }
+                    while (true) {
+                        i13 = this.c;
+                        if (i13 < this.d && ((charAt = this.b.charAt(i13)) == '\t' || charAt == '\n' || charAt == ' ' || charAt == ',')) {
+                            this.a = b();
+                        }
+                    }
+                    return f10;
+                case '/':
+                default:
+                    f10 = Float.NaN;
+                    while (true) {
+                        i13 = this.c;
+                        if (i13 < this.d) {
+                            break;
+                        }
+                        this.a = b();
+                    }
+                    return f10;
+                case '0':
+                    while (true) {
+                        char b18 = b();
+                        this.a = b18;
+                        if (b18 != '.' && b18 != 'E' && b18 != 'e') {
+                            switch (b18) {
+                                case '0':
+                                case '1':
+                                case '2':
+                                case ks.o0 /* 51 */:
+                                case ks.p0 /* 52 */:
+                                case ks.q0 /* 53 */:
+                                case ks.r0 /* 54 */:
+                                case ks.s0 /* 55 */:
+                                case ks.t0 /* 56 */:
+                                case ks.u0 /* 57 */:
+                                    break;
+                                default:
+                                    while (true) {
+                                        i13 = this.c;
+                                        if (i13 < this.d) {
+                                        }
+                                        this.a = b();
+                                    }
+                                    return f10;
+                            }
+                        }
+                    }
+                    i7 = 0;
+                    i10 = 0;
+                    i11 = 0;
+                    while (true) {
+                        if (i7 >= 9) {
+                            i7++;
+                            i11 = (i11 * 10) + (this.a - '0');
+                        } else {
+                            i10++;
+                        }
+                        b10 = b();
+                        this.a = b10;
+                        switch (b10) {
+                        }
+                        z11 = true;
+                        if (this.a == '.') {
+                        }
+                        c10 = this.a;
+                        if (c10 != 'E') {
+                        }
+                        b11 = b();
+                        this.a = b11;
+                        if (b11 != '+') {
+                        }
+                        b12 = b();
+                        this.a = b12;
+                        switch (b12) {
+                        }
+                        if (!z12) {
+                        }
+                        i12 = i14 + i10;
+                        if (!z10) {
+                        }
+                        if (i12 >= -125) {
+                            if (i12 < 128) {
+                            }
+                        }
+                        while (true) {
+                            i13 = this.c;
+                            if (i13 < this.d) {
+                            }
+                            this.a = b();
+                        }
+                        return f10;
+                    }
+                    break;
+                case '1':
+                case '2':
+                case ks.o0 /* 51 */:
+                case ks.p0 /* 52 */:
+                case ks.q0 /* 53 */:
+                case ks.r0 /* 54 */:
+                case ks.s0 /* 55 */:
+                case ks.t0 /* 56 */:
+                case ks.u0 /* 57 */:
+                    i7 = 0;
+                    i10 = 0;
+                    i11 = 0;
+                    while (true) {
+                        if (i7 >= 9) {
+                        }
+                        b10 = b();
+                        this.a = b10;
+                        switch (b10) {
+                        }
+                        z11 = true;
+                        if (this.a == '.') {
+                        }
+                        c10 = this.a;
+                        if (c10 != 'E') {
+                        }
+                        b11 = b();
+                        this.a = b11;
+                        if (b11 != '+') {
+                        }
+                        b12 = b();
+                        this.a = b12;
+                        switch (b12) {
+                        }
+                        if (!z12) {
+                        }
+                        i12 = i14 + i10;
+                        if (!z10) {
+                        }
+                        if (i12 >= -125) {
+                        }
+                        while (true) {
+                            i13 = this.c;
+                            if (i13 < this.d) {
+                            }
+                            this.a = b();
+                        }
+                        return f10;
+                        break;
+                    }
+                    break;
+            }
+        } else {
+            z10 = false;
         }
-        try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(new File(h, "stats2.dat"), "rw");
-            this.r = randomAccessFile;
-            if (randomAccessFile.length() > 0) {
-                boolean z10 = false;
-                for (int i10 = 0; i10 < 3; i10++) {
-                    for (int i11 = 0; i11 < 7; i11++) {
-                        this.r.readFully(this.a, 0, 8);
-                        this.c[i10][i11] = d(this.a);
-                        this.r.readFully(this.a, 0, 8);
-                        this.d[i10][i11] = d(this.a);
-                        this.r.readFully(this.a, 0, 4);
-                        this.e[i10][i11] = c(this.a);
-                        this.r.readFully(this.a, 0, 4);
-                        this.f[i10][i11] = c(this.a);
-                    }
-                    this.r.readFully(this.a, 0, 4);
-                    this.n[i10] = c(this.a);
-                    this.r.readFully(this.a, 0, 8);
-                    this.h[i10] = d(this.a);
-                    long[] jArr = this.h;
-                    if (jArr[i10] == 0) {
-                        jArr[i10] = System.currentTimeMillis();
-                        z10 = true;
-                    }
-                }
-                for (int i12 = 0; i12 < 3; i12++) {
-                    this.r.readFully(this.a, 0, 8);
-                    this.c[i12][7] = d(this.a);
-                    this.r.readFully(this.a, 0, 8);
-                    this.d[i12][7] = d(this.a);
-                    this.r.readFully(this.a, 0, 4);
-                    this.e[i12][7] = c(this.a);
-                    this.r.readFully(this.a, 0, 4);
-                    this.f[i12][7] = c(this.a);
-                }
-                if (z10) {
-                    m();
-                    return;
-                }
+        this.a = b();
+        float f102 = 0.0f;
+        switch (this.a) {
+        }
+    }
+
+    public final char b() {
+        int i7 = this.c;
+        int i10 = this.d;
+        if (i7 < i10) {
+            this.c = i7 + 1;
+        }
+        int i11 = this.c;
+        if (i11 == i10) {
+            return (char) 0;
+        }
+        return this.b.charAt(i11);
+    }
+
+    public final void d() {
+        while (true) {
+            int i7 = this.c;
+            if (i7 >= this.d || !Character.isWhitespace(this.b.charAt(i7))) {
                 return;
+            } else {
+                this.a = b();
             }
-        } catch (Exception unused) {
-        }
-        SharedPreferences sharedPreferences = i7 == 0 ? t0.b.getSharedPreferences("stats", 0) : t0.b.getSharedPreferences("stats" + i7, 0);
-        boolean z11 = false;
-        for (int i13 = 0; i13 < 3; i13++) {
-            this.n[i13] = sharedPreferences.getInt("callsTotalTime" + i13, 0);
-            this.h[i13] = sharedPreferences.getLong("resetStatsDate" + i13, 0L);
-            for (int i14 = 0; i14 < 8; i14++) {
-                this.c[i13][i14] = sharedPreferences.getLong(a8.p0.m(i13, i14, "sentBytes", "_"), 0L);
-                this.d[i13][i14] = sharedPreferences.getLong(a8.p0.m(i13, i14, "receivedBytes", "_"), 0L);
-                this.e[i13][i14] = sharedPreferences.getInt(a8.p0.m(i13, i14, "sentItems", "_"), 0);
-                this.f[i13][i14] = sharedPreferences.getInt(a8.p0.m(i13, i14, "receivedItems", "_"), 0);
-            }
-            long[] jArr2 = this.h;
-            if (jArr2[i13] == 0) {
-                jArr2[i13] = System.currentTimeMillis();
-                z11 = true;
-            }
-        }
-        if (z11) {
-            m();
-        }
-    }
-
-    public static byte[] a(hz hzVar, long j3) {
-        byte[] bArr = hzVar.a;
-        bArr[0] = (byte) (j3 >>> 56);
-        bArr[1] = (byte) (j3 >>> 48);
-        bArr[2] = (byte) (j3 >>> 40);
-        bArr[3] = (byte) (j3 >>> 32);
-        bArr[4] = (byte) (j3 >>> 24);
-        bArr[5] = (byte) (j3 >>> 16);
-        bArr[6] = (byte) (j3 >>> 8);
-        bArr[7] = (byte) j3;
-        return bArr;
-    }
-
-    public static byte[] b(hz hzVar, int i7) {
-        byte[] bArr = hzVar.a;
-        bArr[0] = (byte) (i7 >>> 24);
-        bArr[1] = (byte) (i7 >>> 16);
-        bArr[2] = (byte) (i7 >>> 8);
-        bArr[3] = (byte) i7;
-        return bArr;
-    }
-
-    public static int c(byte[] bArr) {
-        return (bArr[3] & 255) | (bArr[0] << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8);
-    }
-
-    public static long d(byte[] bArr) {
-        return ((bArr[0] & 255) << 56) | ((bArr[1] & 255) << 48) | ((bArr[2] & 255) << 40) | ((bArr[3] & 255) << 32) | ((bArr[4] & 255) << 24) | ((bArr[5] & 255) << 16) | ((bArr[6] & 255) << 8) | (255 & bArr[7]);
-    }
-
-    public static hz e(int i7) {
-        hz hzVar;
-        hz hzVar2 = E[i7];
-        if (hzVar2 != null) {
-            return hzVar2;
-        }
-        synchronized (hz.class) {
-            try {
-                hzVar = E[i7];
-                if (hzVar == null) {
-                    hz[] hzVarArr = E;
-                    hz hzVar3 = new hz(i7);
-                    hzVarArr[i7] = hzVar3;
-                    hzVar = hzVar3;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return hzVar;
-    }
-
-    public final long f(int i7, int i10) {
-        long[][] jArr = this.d;
-        if (i10 != 1) {
-            return jArr[i7][i10];
-        }
-        long[] jArr2 = jArr[i7];
-        return ((((jArr2[6] - jArr2[5]) - jArr2[3]) - jArr2[2]) - jArr2[4]) - jArr2[7];
-    }
-
-    public final long g(int i7, int i10) {
-        long[][] jArr = this.c;
-        if (i10 != 1) {
-            return jArr[i7][i10];
-        }
-        long[] jArr2 = jArr[i7];
-        return ((((jArr2[6] - jArr2[5]) - jArr2[3]) - jArr2[2]) - jArr2[4]) - jArr2[7];
-    }
-
-    public final void h(int i7, int i10, long j3) {
-        long[] jArr = this.d[i7];
-        jArr[i10] = jArr[i10] + j3;
-        m();
-    }
-
-    public final void i(int i7, int i10, int i11) {
-        int[] iArr = this.f[i7];
-        iArr[i10] = iArr[i10] + i11;
-        m();
-    }
-
-    public final void j(int i7, int i10, long j3) {
-        long[] jArr = this.c[i7];
-        jArr[i10] = jArr[i10] + j3;
-        m();
-    }
-
-    public final void k(int i7, int i10, int i11) {
-        int[] iArr = this.e[i7];
-        iArr[i10] = iArr[i10] + i11;
-        m();
-    }
-
-    public final void l(int i7) {
-        this.h[i7] = System.currentTimeMillis();
-        for (int i10 = 0; i10 < 8; i10++) {
-            this.c[i7][i10] = 0;
-            this.d[i7][i10] = 0;
-            this.e[i7][i10] = 0;
-            this.f[i7][i10] = 0;
-        }
-        this.n[i7] = 0;
-        m();
-    }
-
-    public final void m() {
-        long currentTimeMillis = System.currentTimeMillis();
-        b7.j jVar = y;
-        if (Math.abs(currentTimeMillis - ((Long) jVar.get()).longValue()) >= 2000) {
-            jVar.set(Long.valueOf(currentTimeMillis));
-            p5 p5Var = x;
-            j6.o oVar = this.w;
-            p5Var.a(oVar);
-            p5Var.c(oVar);
         }
     }
 }

@@ -1,11 +1,11 @@
 package j2;
 
-import a8.ha;
+import a8.ja;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class v extends j {
     public final int b;
@@ -17,7 +17,7 @@ public class v extends j {
 
     public static v a(IOException iOException, int i7) {
         String message = iOException.getMessage();
-        int i10 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !ha.c(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
+        int i10 = iOException instanceof SocketTimeoutException ? 2002 : iOException instanceof InterruptedIOException ? 1004 : (message == null || !ja.c(message).matches("cleartext.*not permitted.*")) ? 2001 : 2007;
         return i10 == 2007 ? new u("Cleartext HTTP traffic not permitted. See https://developer.android.com/guide/topics/media/issues/cleartext-not-permitted", iOException, 2007) : new v(iOException, i10, i7);
     }
 

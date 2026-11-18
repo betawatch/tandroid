@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class na implements ka {
     public final u9.m a;
@@ -15,8 +15,8 @@ public final class na implements ka {
     public na(Context context, ja jaVar) {
         this.b = jaVar;
         m5.a aVar = m5.a.e;
-        o5.t.b(context);
-        o5.r c10 = o5.t.a().c(aVar);
+        o5.s.b(context);
+        o5.q c10 = o5.s.a().c(aVar);
         if (m5.a.d.contains(new l5.c("json"))) {
             new u9.m(new a8.ya(c10, 6));
         }
@@ -29,7 +29,7 @@ public final class na implements ka {
         na.d dVar;
         ja jaVar = this.b;
         jaVar.getClass();
-        o5.s sVar = (o5.s) this.a.get();
+        o5.r rVar = (o5.r) this.a.get();
         jaVar.getClass();
         qa qaVar = qa.c;
         y7.f7 f7Var = (y7.f7) h0Var.b;
@@ -55,7 +55,7 @@ public final class na implements ka {
                 throw new na.b("No encoder for ".concat(String.valueOf(l7.class)));
             }
             dVar.a(l7Var, fVar);
-            sVar.a(new l5.a(null, byteArrayOutputStream.toByteArray(), l5.d.b, null), new n2.a0(7));
+            rVar.a(new l5.a(null, byteArrayOutputStream.toByteArray(), l5.d.b, null), new n2.a0(8));
         } catch (UnsupportedEncodingException e10) {
             throw new UnsupportedOperationException("Failed to covert logging to UTF-8 byte array", e10);
         }

@@ -1,194 +1,50 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hb1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ib1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+public final class hb1 extends org.telegram.ui.Components.k41 {
+    public static final /* synthetic */ int b = 0;
 
-    public /* synthetic */ hb1(ib1 ib1Var, String str, boolean z10, boolean z11, int i7) {
-        this.a = i7;
-        this.b = ib1Var;
-        this.c = str;
-        this.d = z10;
-        this.e = z11;
+    static {
+        org.telegram.ui.Components.k41.h(new hb1());
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:78:0x00cd, code lost:
-    
-        if (r21 == false) goto L35;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:79:0x00cf, code lost:
-    
-        r22 = r4;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x00e6, code lost:
-    
-        if (r4 == false) goto L35;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0186 A[LOOP:1: B:29:0x0106->B:47:0x0186, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0145 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r9v23 */
-    /* JADX WARN: Type inference failed for: r9v24 */
-    /* JADX WARN: Type inference failed for: r9v9, types: [int] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z10;
-        String str;
-        boolean z11;
-        ArrayList arrayList;
-        boolean z12;
-        switch (this.a) {
-            case 0:
-                ib1 ib1Var = this.b;
-                String str2 = this.c;
-                boolean z13 = this.d;
-                boolean z14 = this.e;
-                ib1Var.getClass();
-                org.telegram.messenger.g0.h3(new hb1(ib1Var, str2, z13, z14, 1));
-                break;
-            case 1:
-                ib1 ib1Var2 = this.b;
-                String str3 = this.c;
-                boolean z15 = this.d;
-                boolean z16 = this.e;
-                ib1Var2.f.g(str3, true, z15, z16, ib1Var2.w.H, 0L, false, 0, 0);
-                org.telegram.messenger.p5 p5Var = Utilities.g;
-                hb1 hb1Var = new hb1(ib1Var2, str3, z16, z15, 2);
-                ib1Var2.h = hb1Var;
-                p5Var.c(hb1Var);
-                break;
-            default:
-                ib1 ib1Var3 = this.b;
-                String str4 = this.c;
-                boolean z17 = this.d;
-                boolean z18 = this.e;
-                ArrayList arrayList2 = ib1Var3.r;
-                String lowerCase = str4.trim().toLowerCase();
-                if (lowerCase.length() == 0) {
-                    org.telegram.messenger.g0.h3(new q21(ib1Var3, new ArrayList(), new ArrayList(), 9));
-                    break;
-                } else {
-                    boolean z19 = false;
-                    String S0 = org.telegram.messenger.hd.E0().S0(lowerCase, true, false);
-                    if (lowerCase.equals(S0) || S0.length() == 0) {
-                        S0 = null;
-                    }
-                    int i7 = (S0 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i7];
-                    strArr[0] = lowerCase;
-                    if (S0 != null) {
-                        strArr[1] = S0;
-                    }
-                    ArrayList arrayList3 = new ArrayList();
-                    ArrayList arrayList4 = new ArrayList();
-                    int i10 = 0;
-                    while (i10 < arrayList2.size()) {
-                        TLObject tLObject = (TLObject) arrayList2.get(i10);
-                        String[] strArr2 = new String[3];
-                        boolean z20 = tLObject instanceof TLRPC.User;
-                        if (!z20) {
-                            z10 = z17;
-                            TLRPC.Chat chat = (TLRPC.Chat) tLObject;
-                            strArr2[z19 ? 1 : 0] = chat.title.toLowerCase();
-                            str = chat.username;
-                            break;
-                        } else {
-                            TLRPC.User user = (TLRPC.User) tLObject;
-                            z10 = z17;
-                            strArr2[z19 ? 1 : 0] = org.telegram.messenger.g5.m(z19 ? 1 : 0, user.first_name, user.last_name).toLowerCase();
-                            str = org.telegram.messenger.q10.n(user);
-                            if (org.telegram.messenger.q10.z(user)) {
-                                strArr2[2] = org.telegram.messenger.hd.M0(2131746266, null).toLowerCase();
-                            } else if (org.telegram.messenger.q10.B(user)) {
-                                if (ib1Var3.w.H) {
-                                    strArr2[2] = org.telegram.messenger.hd.M0(2131745901, null).toLowerCase();
-                                } else {
-                                    z11 = z18;
-                                    arrayList = arrayList2;
-                                    z12 = true;
-                                }
-                            } else if (user.bot) {
-                            }
-                            z11 = z18;
-                            String S02 = org.telegram.messenger.hd.E0().S0(strArr2[z19 ? 1 : 0], true, z19);
-                            strArr2[1] = S02;
-                            if (strArr2[z19 ? 1 : 0].equals(S02)) {
-                                strArr2[1] = null;
-                            }
-                            int i11 = z19 ? 1 : 0;
-                            int i12 = i11;
-                            boolean z21 = z19;
-                            while (i12 < i7) {
-                                String str5 = strArr[i12];
-                                int i13 = i11;
-                                for (?? r92 = z21; r92 < 3; r92++) {
-                                    String str6 = strArr2[r92];
-                                    if (str6 != null) {
-                                        if (str6.startsWith(str5)) {
-                                            arrayList = arrayList2;
-                                        } else {
-                                            arrayList = arrayList2;
-                                            if (i5.c.A(" ", str5, str6)) {
-                                            }
-                                        }
-                                        i11 = 1;
-                                        if (i11 == 0 && str != null && str.toLowerCase().startsWith(str5)) {
-                                            i11 = 2;
-                                        }
-                                        if (i11 == 0) {
-                                            z12 = true;
-                                            if (i11 != 1) {
-                                                arrayList4.add(org.telegram.messenger.g0.r0(r.b.k("@", str), null, "@" + str5));
-                                            } else if (z20) {
-                                                TLRPC.User user2 = (TLRPC.User) tLObject;
-                                                arrayList4.add(org.telegram.messenger.g0.r0(user2.first_name, user2.last_name, str5));
-                                            } else {
-                                                arrayList4.add(org.telegram.messenger.g0.r0(((TLRPC.Chat) tLObject).title, null, str5));
-                                            }
-                                            arrayList3.add(tLObject);
-                                        } else {
-                                            i12++;
-                                            arrayList2 = arrayList;
-                                            z21 = false;
-                                        }
-                                    } else {
-                                        arrayList = arrayList2;
-                                    }
-                                    arrayList2 = arrayList;
-                                }
-                                arrayList = arrayList2;
-                                i11 = i13;
-                                if (i11 == 0) {
-                                    i11 = 2;
-                                }
-                                if (i11 == 0) {
-                                }
-                            }
-                            arrayList = arrayList2;
-                            z12 = true;
-                        }
-                        i10++;
-                        z17 = z10;
-                        z18 = z11;
-                        arrayList2 = arrayList;
-                        z19 = false;
-                    }
-                    org.telegram.messenger.g0.h3(new q21(ib1Var3, arrayList3, arrayList4, 9));
-                    break;
-                }
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.e51 e51Var) {
+        ib1 ib1Var = (ib1) view;
+        int i7 = l41Var.k;
+        CharSequence charSequence = l41Var.m;
+        CharSequence charSequence2 = l41Var.n;
+        boolean z11 = l41Var.r;
+        boolean z12 = l41Var.s;
+        int i10 = l41Var.A;
+        TextView textView = ib1Var.e;
+        ImageView imageView = ib1Var.f;
+        ib1Var.h = z11;
+        ib1Var.n = z12;
+        ib1Var.b.setImageResource(i7);
+        if (i10 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i10);
+        } else {
+            imageView.setVisibility(8);
         }
+        ib1Var.d.setText(charSequence);
+        textView.setText(charSequence2);
+        textView.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int L = org.telegram.messenger.g0.L(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        ib1Var.c.setPadding(0, L, 0, L);
+        ib1Var.updateColors();
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, org.telegram.ui.Components.ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new ib1(context, i6Var);
     }
 }

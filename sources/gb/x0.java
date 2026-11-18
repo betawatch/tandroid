@@ -1,6 +1,6 @@
 package gb;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x0 extends kd.j implements rd.q {
     public int a;
@@ -27,7 +27,7 @@ public final class x0 extends kd.j implements rd.q {
         jd.a aVar = jd.a.a;
         int i7 = this.a;
         if (i7 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             ce.d dVar = this.b;
             Throwable th2 = this.c;
             n0 a10 = this.d.b.a(null);
@@ -35,7 +35,7 @@ public final class x0 extends kd.j implements rd.q {
             StringBuilder sb2 = new StringBuilder("Init session datastore failed with exception message: ");
             sb2.append(th2.getMessage());
             sb2.append(". Emit fallback session ");
-            r.b.t(sb2, a10.a, "FirebaseSessions");
+            p5.c.t(sb2, a10.a, "FirebaseSessions");
             this.b = null;
             this.a = 1;
             if (dVar.a(j0Var, this) == aVar) {
@@ -45,7 +45,7 @@ public final class x0 extends kd.j implements rd.q {
             if (i7 != 1) {
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-            af.b.c(obj);
+            b7.h.b(obj);
         }
         return gd.k.a;
     }

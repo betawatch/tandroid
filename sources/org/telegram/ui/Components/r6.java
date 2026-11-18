@@ -1,80 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.MediaController;
+import android.graphics.Typeface;
+import android.widget.TextView;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r6 implements org.telegram.ui.ActionBar.l0, ij0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y7 b;
-
-    public /* synthetic */ r6(y7 y7Var, int i7) {
-        this.a = i7;
-        this.b = y7Var;
-    }
-
-    @Override // org.telegram.ui.Components.ij0
-    public boolean b(int i7, View view) {
-        boolean z10 = view instanceof org.telegram.ui.Cells.w;
-        y7 y7Var = this.b;
-        if (!z10) {
-            y7Var.getClass();
-            return false;
-        }
-        if (y7Var.O0()) {
-            return false;
-        }
-        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) view;
-        y7Var.X0(wVar, wVar.getMessageObject());
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.l0
-    public void g(int i7) {
-        switch (this.a) {
-            case 0:
-                y7 y7Var = this.b;
-                y7Var.getClass();
-                if (i7 >= 0) {
-                    float[] fArr = y7.U2;
-                    if (i7 < 6) {
-                        MediaController.B().m0(true, fArr[i7]);
-                        y7Var.a1(true);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                y7 y7Var2 = this.b;
-                if (i7 == 1 || i7 == 2) {
-                    boolean z10 = org.telegram.messenger.gz.O0;
-                    if ((z10 && i7 == 1) || (org.telegram.messenger.gz.N0 && i7 == 2)) {
-                        MediaController.B().l0(0);
-                    } else {
-                        MediaController.B().l0(i7);
-                    }
-                    y7Var2.u1.f();
-                    if (z10 != org.telegram.messenger.gz.O0) {
-                        y7Var2.s1.C0();
-                        y7Var2.S0(false);
-                    }
-                } else if (i7 == 4) {
-                    if (org.telegram.messenger.gz.S0 == 1) {
-                        org.telegram.messenger.gz.E(0);
-                    } else {
-                        org.telegram.messenger.gz.E(1);
-                    }
-                } else if (org.telegram.messenger.gz.S0 == 2) {
-                    org.telegram.messenger.gz.E(0);
-                } else {
-                    org.telegram.messenger.gz.E(2);
-                }
-                y7Var2.c1();
-                break;
-            default:
-                this.b.P0(i7);
-                break;
-        }
+public final class r6 extends eb {
+    public r6(LaunchActivity launchActivity, org.telegram.ui.y80 y80Var) {
+        super(launchActivity, null);
+        org.telegram.ui.Cells.q qVar = new org.telegram.ui.Cells.q(getContext());
+        TextView textView = new TextView(getContext());
+        addView(qVar, c8.ma.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, org.telegram.messenger.g0.L(8.0f), 0, org.telegram.messenger.g0.L(8.0f));
+        org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.yj, null);
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, c8.ma.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+        qVar.setImageDrawable(launchActivity.getDrawable(y80Var.b));
+        qVar.setOuterPadding(org.telegram.messenger.g0.L(8.0f));
+        qVar.setBackgroundOuterPadding(org.telegram.messenger.g0.L(24.0f));
+        qVar.setForeground(y80Var.c);
+        org.telegram.messenger.f3.q(null, null, 2131754236, new Object[]{org.telegram.messenger.gd.M0(y80Var.d, null)}, textView);
     }
 }

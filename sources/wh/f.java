@@ -2,10 +2,10 @@ package wh;
 
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class f {
     public static final DecelerateInterpolator a = new DecelerateInterpolator();
@@ -32,24 +32,24 @@ public abstract class f {
     static {
         LinearInterpolator linearInterpolator = new LinearInterpolator();
         b = linearInterpolator;
-        c = h.i(new DecelerateInterpolator(), 0, ns.P3, ns.P3, false);
-        d = h.i(linearInterpolator, 0, ns.P3, ns.P3, false);
-        e = h.i(new DecelerateInterpolator(), ns.x3, ns.P3, ns.P3, false);
-        f = h.i(new er(0.7f, -0.6f, 0.4f, 1.0f), 0, ns.e3, 560, false);
-        g = h.i(new er(0.7f, -0.6f, 0.4f, 1.0f), ns.e3, 400, 560, true);
-        h = h.i(new DecelerateInterpolator(), 0, ns.g2, 560, false);
-        i = h.i(new DecelerateInterpolator(), ns.n3, 425, 560, false);
-        er erVar = er.h;
-        j = h.i(erVar, 0, ns.r5, 560, false);
-        k = h.i(erVar, 40, ns.r5, 560, false);
-        l = h.i(new DecelerateInterpolator(), 0, ns.Z3, 560, false);
-        m = h.i(erVar, 0, 460, 560, false);
-        n = h.i(erVar, 0, ns.w5, 560, false);
-        o = h.i(new DecelerateInterpolator(), ns.g2, ns.Z3, 560, false);
-        p = h.i(new DecelerateInterpolator(), ns.e3, 480, 560, false);
-        q = h.i(erVar, 60, ns.r5, 560, false);
-        r = h.i(erVar, 90, 380, 560, false);
-        s = h.i(erVar, ns.v1, 440, 560, false);
-        t = h.i(new DecelerateInterpolator(), ns.e3, 460, 560, false);
+        c = h.i(new DecelerateInterpolator(), 0, ks.P3, ks.P3, false);
+        d = h.i(linearInterpolator, 0, ks.P3, ks.P3, false);
+        e = h.i(new DecelerateInterpolator(), ks.x3, ks.P3, ks.P3, false);
+        f = h.i(new lr(0.7f, -0.6f, 0.4f, 1.0f), 0, ks.e3, 560, false);
+        g = h.i(new lr(0.7f, -0.6f, 0.4f, 1.0f), ks.e3, 400, 560, true);
+        h = h.i(new DecelerateInterpolator(), 0, ks.g2, 560, false);
+        i = h.i(new DecelerateInterpolator(), 210, 425, 560, false);
+        lr lrVar = lr.h;
+        j = h.i(lrVar, 0, ks.r5, 560, false);
+        k = h.i(lrVar, 40, ks.r5, 560, false);
+        l = h.i(new DecelerateInterpolator(), 0, ks.Z3, 560, false);
+        m = h.i(lrVar, 0, 460, 560, false);
+        n = h.i(lrVar, 0, ks.w5, 560, false);
+        o = h.i(new DecelerateInterpolator(), ks.g2, ks.Z3, 560, false);
+        p = h.i(new DecelerateInterpolator(), ks.e3, 480, 560, false);
+        q = h.i(lrVar, 60, ks.r5, 560, false);
+        r = h.i(lrVar, 90, 380, 560, false);
+        s = h.i(lrVar, ks.v1, 440, 560, false);
+        t = h.i(new DecelerateInterpolator(), ks.e3, 460, 560, false);
     }
 }

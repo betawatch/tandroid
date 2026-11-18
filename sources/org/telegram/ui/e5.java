@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -15,25 +15,25 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((f5) this.b).b.P();
                 break;
             case 1:
-                ((org.telegram.ui.Components.e5) this.b).a();
+                ((org.telegram.ui.Components.m5) this.b).a();
                 break;
             case 2:
-                org.telegram.messenger.ns.e().c((os) this.b, org.telegram.messenger.ns.i4);
+                org.telegram.messenger.ks.e().c((os) this.b, org.telegram.messenger.ks.k4);
                 break;
             case 3:
-                ((p50) this.b).b.P();
+                ((r50) this.b).b.P();
                 break;
             case 4:
-                org.telegram.ui.Components.e5 e5Var = ((em0) this.b).i;
-                if (e5Var != null) {
-                    e5Var.a();
+                org.telegram.ui.Components.m5 m5Var = ((gm0) this.b).i;
+                if (m5Var != null) {
+                    m5Var.a();
                     break;
                 }
                 break;
             default:
-                f31 f31Var = (f31) this.b;
-                f31Var.h.a();
-                f31Var.n.a();
+                j31 j31Var = (j31) this.b;
+                j31Var.h.a();
+                j31Var.n.a();
                 break;
         }
     }
@@ -45,25 +45,25 @@ public final class e5 implements View.OnAttachStateChangeListener {
                 ((f5) this.b).b.R();
                 break;
             case 1:
-                ((org.telegram.ui.Components.e5) this.b).b();
+                ((org.telegram.ui.Components.m5) this.b).b();
                 break;
             case 2:
-                org.telegram.messenger.ns.e().n((os) this.b, org.telegram.messenger.ns.i4);
+                org.telegram.messenger.ks.e().n((os) this.b, org.telegram.messenger.ks.k4);
                 break;
             case 3:
-                ((p50) this.b).b.R();
+                ((r50) this.b).b.R();
                 break;
             case 4:
-                org.telegram.ui.Components.e5 e5Var = ((em0) this.b).i;
-                if (e5Var != null) {
-                    e5Var.b();
+                org.telegram.ui.Components.m5 m5Var = ((gm0) this.b).i;
+                if (m5Var != null) {
+                    m5Var.b();
                     break;
                 }
                 break;
             default:
-                f31 f31Var = (f31) this.b;
-                f31Var.h.b();
-                f31Var.n.b();
+                j31 j31Var = (j31) this.b;
+                j31Var.h.b();
+                j31Var.n.b();
                 break;
         }
     }

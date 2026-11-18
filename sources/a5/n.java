@@ -10,9 +10,9 @@ import android.graphics.PathMeasure;
 import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import java.util.ArrayList;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n {
     public static final Matrix p = new Matrix();
@@ -38,7 +38,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = ns.e4;
+        this.l = ks.e4;
         this.m = null;
         this.n = null;
         this.o = new a0.f(0);
@@ -85,9 +85,9 @@ public final class n {
                 if (abs != 0.0f) {
                     Path path = this.a;
                     path.reset();
-                    i0.e[] eVarArr = mVar.a;
-                    if (eVarArr != null) {
-                        i0.e.b(eVarArr, path);
+                    i0.d[] dVarArr = mVar.a;
+                    if (dVarArr != null) {
+                        i0.d.b(dVarArr, path);
                     }
                     Path path2 = this.b;
                     path2.reset();
@@ -143,7 +143,7 @@ public final class n {
                                 f11 = 255.0f;
                             } else {
                                 paint2.setShader(null);
-                                paint2.setAlpha(ns.e4);
+                                paint2.setAlpha(ks.e4);
                                 int i14 = xaVar.b;
                                 float f21 = jVar.h;
                                 PorterDuff.Mode mode = q.w;
@@ -178,7 +178,7 @@ public final class n {
                                 paint4.setAlpha(Math.round(jVar.g * f11));
                             } else {
                                 paint4.setShader(null);
-                                paint4.setAlpha(ns.e4);
+                                paint4.setAlpha(ks.e4);
                                 int i15 = xaVar2.b;
                                 float f22 = jVar.g;
                                 PorterDuff.Mode mode2 = q.w;
@@ -222,7 +222,7 @@ public final class n {
         this.i = 0.0f;
         this.j = 0.0f;
         this.k = 0.0f;
-        this.l = ns.e4;
+        this.l = ks.e4;
         this.m = null;
         this.n = null;
         a0.f fVar = new a0.f(0);

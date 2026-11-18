@@ -13,17 +13,17 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class PipRoundVideoView implements org.telegram.messenger.is {
+public class PipRoundVideoView implements org.telegram.messenger.fs {
     public static PipRoundVideoView G;
     public DecelerateInterpolator E;
     public final RectF F = new RectF();
-    public he0 a;
+    public re0 a;
     public int b;
     public TextureView c;
     public ImageView d;
-    public ie0 e;
+    public se0 e;
     public Bitmap f;
     public int h;
     public int n;
@@ -59,7 +59,7 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
             if (G == this) {
                 G = null;
             }
-            org.telegram.messenger.ns.f(this.b).n(this, org.telegram.messenger.ns.e2);
+            org.telegram.messenger.ks.f(this.b).n(this, org.telegram.messenger.ks.e2);
             return;
         }
         TextureView textureView = this.c;
@@ -70,7 +70,7 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
             int width = this.c.getWidth();
             int height = this.c.getHeight();
             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-            this.f = org.telegram.messenger.xr.c(width, height);
+            this.f = org.telegram.messenger.vr.c(width, height);
         }
         try {
             this.c.getBitmap(this.f);
@@ -93,12 +93,12 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.E == null) {
             this.E = new DecelerateInterpolator();
         }
-        this.r.addListener(new org.telegram.ui.nn(18, this, z10));
+        this.r.addListener(new org.telegram.ui.on(18, this, z10));
         this.r.setInterpolator(this.E);
         this.r.start();
     }
@@ -109,17 +109,17 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
         }
         G = this;
         this.s = runnable;
-        he0 he0Var = new he0(this, launchActivity);
-        this.a = he0Var;
-        he0Var.setWillNotDraw(false);
+        re0 re0Var = new re0(this, launchActivity);
+        this.a = re0Var;
+        re0Var.setWillNotDraw(false);
         this.h = org.telegram.messenger.g0.L(126.0f);
         this.n = org.telegram.messenger.g0.L(126.0f);
-        ie0 ie0Var = new ie0(0, launchActivity, this);
-        this.e = ie0Var;
-        ie0Var.setOutlineProvider(new bg.p0(13));
+        se0 se0Var = new se0(0, launchActivity, this);
+        this.e = se0Var;
+        se0Var.setOutlineProvider(new bg.q0(13));
         this.e.setClipToOutline(true);
         this.e.a(1.0f, 0);
-        this.a.addView(this.e, c8.ja.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
+        this.a.addView(this.e, c8.ma.d(120, 120.0f, 51, 3.0f, 3.0f, 0.0f, 0.0f));
         this.a.setAlpha(1.0f);
         this.a.setScaleX(0.8f);
         this.a.setScaleY(0.8f);
@@ -127,10 +127,10 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
         float N = (org.telegram.messenger.g0.N(2.0f) + org.telegram.messenger.g0.N(120.0f)) / org.telegram.messenger.g0.N(120.0f);
         this.c.setScaleX(N);
         this.c.setScaleY(N);
-        this.e.addView(this.c, c8.ja.c(-1.0f, -1));
+        this.e.addView(this.c, c8.ma.c(-1.0f, -1));
         ImageView imageView = new ImageView(launchActivity);
         this.d = imageView;
-        this.e.addView(imageView, c8.ja.c(-1.0f, -1));
+        this.e.addView(imageView, c8.ma.c(-1.0f, -1));
         this.d.setVisibility(4);
         this.x = (WindowManager) launchActivity.getSystemService("window");
         SharedPreferences sharedPreferences = org.telegram.messenger.t0.b.getSharedPreferences("pipconfig", 0);
@@ -152,24 +152,24 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
             layoutParams2.gravity = 51;
             layoutParams2.type = 99;
             layoutParams2.flags = 16777736;
-            org.telegram.messenger.g0.x3(this.x, this.a, layoutParams2);
+            org.telegram.messenger.g0.w3(this.x, this.a, layoutParams2);
             this.x.addView(this.a, this.w);
-            int i12 = org.telegram.messenger.m10.t0;
+            int i12 = org.telegram.messenger.j10.t0;
             this.b = i12;
-            org.telegram.messenger.ns.f(i12).c(this, org.telegram.messenger.ns.e2);
+            org.telegram.messenger.ks.f(i12).c(this, org.telegram.messenger.ks.e2);
             c(true);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        ie0 ie0Var;
-        if (i7 != org.telegram.messenger.ns.e2 || (ie0Var = this.e) == null) {
+        se0 se0Var;
+        if (i7 != org.telegram.messenger.ks.e2 || (se0Var = this.e) == null) {
             return;
         }
-        ie0Var.invalidate();
+        se0Var.invalidate();
     }
 
     public final void e(boolean z10) {
@@ -179,12 +179,12 @@ public class PipRoundVideoView implements org.telegram.messenger.is {
         }
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.r = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<he0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.ALPHA, z10 ? 1.0f : 0.0f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_X, z10 ? 1.0f : 0.8f), ObjectAnimator.ofFloat(this.a, (Property<re0, Float>) View.SCALE_Y, z10 ? 1.0f : 0.8f));
         this.r.setDuration(150L);
         if (this.E == null) {
             this.E = new DecelerateInterpolator();
         }
-        this.r.addListener(new je0(this, 0));
+        this.r.addListener(new te0(this, 0));
         this.r.setInterpolator(this.E);
         this.r.start();
     }

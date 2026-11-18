@@ -1,36 +1,32 @@
 package a8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class q9 {
-    public static void a(int i7, int i10) {
-        String a10;
-        if (i7 < 0 || i7 >= i10) {
-            if (i7 < 0) {
-                a10 = r9.a("%s (%s) must not be negative", "index", Integer.valueOf(i7));
-            } else {
-                if (i10 < 0) {
-                    throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
-                }
-                a10 = r9.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i7), Integer.valueOf(i10));
+    public static boolean a(String str) {
+        e5.b bVar = e5.k.a;
+        Set<e5.d> unmodifiableSet = DesugarCollections.unmodifiableSet(e5.c.c);
+        HashSet hashSet = new HashSet();
+        for (e5.d dVar : unmodifiableSet) {
+            if (((e5.c) dVar).a.equals(str)) {
+                hashSet.add(dVar);
             }
-            throw new IndexOutOfBoundsException(a10);
         }
-    }
-
-    public static void b(int i7, int i10, int i11) {
-        if (i7 < 0 || i10 < i7 || i10 > i11) {
-            throw new IndexOutOfBoundsException((i7 < 0 || i7 > i11) ? c(i7, i11, "start index") : (i10 < 0 || i10 > i11) ? c(i10, i11, "end index") : r9.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i10), Integer.valueOf(i7)));
+        if (hashSet.isEmpty()) {
+            throw new RuntimeException("Unknown feature ".concat(str));
         }
-    }
-
-    public static String c(int i7, int i10, String str) {
-        if (i7 < 0) {
-            return r9.a("%s (%s) must not be negative", str, Integer.valueOf(i7));
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            e5.c cVar = (e5.c) ((e5.d) it.next());
+            if (cVar.a() || cVar.b()) {
+                return true;
+            }
         }
-        if (i10 >= 0) {
-            return r9.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i7), Integer.valueOf(i10));
-        }
-        throw new IllegalArgumentException(i5.c.i(i10, "negative size: "));
+        return false;
     }
 }

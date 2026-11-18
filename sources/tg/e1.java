@@ -7,26 +7,26 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import c8.ja;
+import c8.ma;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.pg;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.ph0;
+import org.telegram.ui.Components.yg;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e1 extends FrameLayout implements is {
+public final class e1 extends FrameLayout implements fs {
     public static final List x = Arrays.asList(new b1(0, 1, 20, 0), new b1(0, 2, 20, 40), new b1(1, 0, 0, 20), new b1(1, 2, 60, 40), new b1(2, 0, 40, 20), new b1(2, 1, 40, 60));
     public int a;
-    public final fh0 b;
+    public final ph0 b;
     public final ImageView c;
     public final ImageView d;
     public final View e;
@@ -73,18 +73,18 @@ public final class e1 extends FrameLayout implements is {
                 }
             }
         });
-        addView(view, ja.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
-        fh0 fh0Var = new fh0(context);
-        this.b = fh0Var;
-        fh0Var.f(R.raw.photo_text_allign, 24, 24, null);
-        ch0 animatedDrawable = fh0Var.getAnimatedDrawable();
+        addView(view, ma.d(24, 24.0f, 48, 0.0f, 0.0f, 16.0f, 0.0f));
+        ph0 ph0Var = new ph0(context);
+        this.b = ph0Var;
+        ph0Var.f(R.raw.photo_text_allign, 24, 24, null);
+        mh0 animatedDrawable = ph0Var.getAnimatedDrawable();
         final int i10 = 1;
         animatedDrawable.h = true;
         animatedDrawable.P(20);
         animatedDrawable.M(20);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        fh0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        fh0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
+        ph0Var.setColorFilter(new PorterDuffColorFilter(-1, mode));
+        ph0Var.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
 
             {
@@ -113,8 +113,8 @@ public final class e1 extends FrameLayout implements is {
                 }
             }
         });
-        fh0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        addView(fh0Var, ja.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        ph0Var.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
+        addView(ph0Var, ma.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView = new ImageView(context);
         this.c = imageView;
         imageView.setImageResource(R.drawable.msg_text_outlined);
@@ -149,12 +149,12 @@ public final class e1 extends FrameLayout implements is {
                 }
             }
         });
-        addView(imageView, ja.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView, ma.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         ImageView imageView2 = new ImageView(context);
         this.d = imageView2;
         imageView2.setImageResource(R.drawable.msg_add);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(j6.h0(1090519039, 1, -1));
+        imageView2.setBackground(n6.h0(1090519039, 1, -1));
         final int i12 = 3;
         imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: tg.a1
             public final /* synthetic */ e1 b;
@@ -186,7 +186,7 @@ public final class e1 extends FrameLayout implements is {
             }
         });
         imageView2.setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        addView(imageView2, ja.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
+        addView(imageView2, ma.d(28, 28.0f, 16, 0.0f, 0.0f, 16.0f, 0.0f));
         d1 d1Var = new d1(context);
         this.f = d1Var;
         d1Var.setCurrent(true);
@@ -220,7 +220,7 @@ public final class e1 extends FrameLayout implements is {
                 }
             }
         });
-        addView(d1Var, ja.p(-2, -2, 0.0f, 21));
+        addView(d1Var, ma.p(-2, -2, 0.0f, 21));
     }
 
     public final void a(int i7) {
@@ -229,7 +229,7 @@ public final class e1 extends FrameLayout implements is {
         }
         if (this.s != i7) {
             this.s = i7;
-            org.telegram.messenger.g0.Q3(this.d, i7);
+            org.telegram.messenger.g0.P3(this.d, i7);
         }
     }
 
@@ -252,9 +252,9 @@ public final class e1 extends FrameLayout implements is {
         int i10 = this.a;
         this.a = i7;
         List list = x;
-        fh0 fh0Var = this.b;
+        ph0 ph0Var = this.b;
         if (i10 == i7) {
-            ch0 animatedDrawable = fh0Var.getAnimatedDrawable();
+            mh0 animatedDrawable = ph0Var.getAnimatedDrawable();
             b1 b1Var = (b1) list.get(0);
             Iterator it = list.iterator();
             while (true) {
@@ -287,7 +287,7 @@ public final class e1 extends FrameLayout implements is {
                 break;
             }
         }
-        ch0 animatedDrawable2 = fh0Var.getAnimatedDrawable();
+        mh0 animatedDrawable2 = ph0Var.getAnimatedDrawable();
         animatedDrawable2.M(b1Var3.c);
         animatedDrawable2.P(b1Var3.d);
         animatedDrawable2.start();
@@ -296,10 +296,10 @@ public final class e1 extends FrameLayout implements is {
         }
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         String str;
-        if (i7 != ns.C5 || (str = this.w) == null) {
+        if (i7 != ks.E5 || (str = this.w) == null) {
             return;
         }
         setTypeface(str);
@@ -314,7 +314,7 @@ public final class e1 extends FrameLayout implements is {
         int i10 = i7 != 1 ? i7 != 2 ? i7 != 3 ? R.drawable.msg_photo_text_framed : R.drawable.msg_photo_text_regular : R.drawable.msg_photo_text_framed3 : R.drawable.msg_photo_text_framed2;
         ImageView imageView = this.c;
         if (z10) {
-            org.telegram.messenger.g0.Q3(imageView, i10);
+            org.telegram.messenger.g0.P3(imageView, i10);
         } else {
             imageView.setImageResource(i10);
         }
@@ -324,7 +324,7 @@ public final class e1 extends FrameLayout implements is {
         return this.e;
     }
 
-    public pg getEmojiButton() {
+    public yg getEmojiButton() {
         return null;
     }
 
@@ -335,13 +335,13 @@ public final class e1 extends FrameLayout implements is {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ns.e().c(this, ns.C5);
+        ks.e().c(this, ks.E5);
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ns.e().n(this, ns.C5);
+        ks.e().n(this, ks.E5);
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -398,7 +398,7 @@ public final class e1 extends FrameLayout implements is {
                 d1Var.setTypeface(a0Var.d());
                 String str2 = a0Var.c;
                 if (str2 == null) {
-                    str2 = hd.N0(a0Var.b);
+                    str2 = gd.N0(a0Var.b);
                 }
                 d1Var.setText(str2);
                 return;

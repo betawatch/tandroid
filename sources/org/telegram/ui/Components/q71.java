@@ -1,761 +1,304 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import org.telegram.tgnet.TLObject;
+import android.os.AsyncTask;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q71 {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public boolean D;
-    public boolean E;
-    public boolean F;
-    public boolean G;
-    public int H;
-    public int I;
-    public float J;
-    public float K;
-    public int L;
-    public long M;
-    public float N;
-    public float O;
-    public float P;
-    public float Q;
-    public int R;
-    public final p71 a;
-    public final float b;
-    public final Handler c = new Handler(Looper.getMainLooper());
-    public final Paint d;
-    public final Matrix e;
-    public final float[] f;
-    public final float[] g;
-    public final Path h;
-    public final RectF i;
-    public final float[] j;
-    public final o71 k;
-    public final o71 l;
-    public final org.telegram.utils.twidget.e0 m;
-    public final o71 n;
-    public org.telegram.utils.twidget.j1 o;
-    public org.telegram.utils.twidget.y0 p;
-    public boolean q;
-    public boolean r;
-    public long s;
-    public long t;
-    public float u;
-    public float v;
-    public boolean w;
-    public boolean x;
-    public boolean y;
-    public boolean z;
+public final class q71 extends AsyncTask {
+    public final /* synthetic */ int a;
+    public String b;
+    public final String[] c;
+    public final /* synthetic */ w71 d;
 
-    /* JADX WARN: Type inference failed for: r1v11, types: [org.telegram.ui.Components.o71] */
-    /* JADX WARN: Type inference failed for: r1v12, types: [org.telegram.ui.Components.o71] */
-    /* JADX WARN: Type inference failed for: r1v14, types: [org.telegram.ui.Components.o71] */
-    public q71(p71 p71Var, float f10) {
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.e = new Matrix();
-        this.f = new float[9];
-        this.g = new float[7];
-        this.h = new Path();
-        this.i = new RectF();
-        this.j = new float[8];
-        final int i7 = 0;
-        this.k = new Runnable(this) { // from class: org.telegram.ui.Components.o71
-            public final /* synthetic */ q71 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                org.telegram.utils.twidget.y0 y0Var;
-                switch (i7) {
-                    case 0:
-                        this.b.k(false, false, false);
-                        break;
-                    case 1:
-                        q71 q71Var = this.b;
-                        if (q71Var.w && q71Var.x) {
-                            q71Var.a(q71Var.m.f(SystemClock.uptimeMillis()));
-                            q71Var.o();
-                            break;
-                        }
-                        break;
-                    default:
-                        q71 q71Var2 = this.b;
-                        if (q71Var2.o != null && (y0Var = q71Var2.p) != null) {
-                            org.telegram.utils.twidget.j1 d = y0Var.d();
-                            org.telegram.utils.twidget.j1 j1Var = q71Var2.o;
-                            if (d == j1Var) {
-                                j1Var.a.f();
-                                q71Var2.a.h();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        final int i10 = 1;
-        this.l = new Runnable(this) { // from class: org.telegram.ui.Components.o71
-            public final /* synthetic */ q71 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                org.telegram.utils.twidget.y0 y0Var;
-                switch (i10) {
-                    case 0:
-                        this.b.k(false, false, false);
-                        break;
-                    case 1:
-                        q71 q71Var = this.b;
-                        if (q71Var.w && q71Var.x) {
-                            q71Var.a(q71Var.m.f(SystemClock.uptimeMillis()));
-                            q71Var.o();
-                            break;
-                        }
-                        break;
-                    default:
-                        q71 q71Var2 = this.b;
-                        if (q71Var2.o != null && (y0Var = q71Var2.p) != null) {
-                            org.telegram.utils.twidget.j1 d = y0Var.d();
-                            org.telegram.utils.twidget.j1 j1Var = q71Var2.o;
-                            if (d == j1Var) {
-                                j1Var.a.f();
-                                q71Var2.a.h();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        this.m = new org.telegram.utils.twidget.e0();
-        final int i11 = 2;
-        this.n = new Runnable(this) { // from class: org.telegram.ui.Components.o71
-            public final /* synthetic */ q71 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                org.telegram.utils.twidget.y0 y0Var;
-                switch (i11) {
-                    case 0:
-                        this.b.k(false, false, false);
-                        break;
-                    case 1:
-                        q71 q71Var = this.b;
-                        if (q71Var.w && q71Var.x) {
-                            q71Var.a(q71Var.m.f(SystemClock.uptimeMillis()));
-                            q71Var.o();
-                            break;
-                        }
-                        break;
-                    default:
-                        q71 q71Var2 = this.b;
-                        if (q71Var2.o != null && (y0Var = q71Var2.p) != null) {
-                            org.telegram.utils.twidget.j1 d = y0Var.d();
-                            org.telegram.utils.twidget.j1 j1Var = q71Var2.o;
-                            if (d == j1Var) {
-                                j1Var.a.f();
-                                q71Var2.a.h();
-                                break;
-                            }
-                        }
-                        break;
-                }
-            }
-        };
-        this.L = -1;
-        this.a = p71Var;
-        this.b = f10;
-        paint.setTextSize(f10 * 14.0f);
-        paint.setColor(-8355712);
-    }
-
-    public static int j(MotionEvent motionEvent) {
-        int metaState = motionEvent.getMetaState();
-        return ((metaState & 2) != 0 ? 1 : 0) | ((metaState & TLObject.FLAG_12) != 0 ? 2 : 0) | ((65536 & metaState) != 0 ? 4 : 0) | ((metaState & 1) != 0 ? 8 : 0);
-    }
-
-    public final void a(int i7) {
-        if (i7 == -1) {
-            return;
-        }
-        this.L = i7;
-        if ((i7 & 32) != 0 && !this.A) {
-            this.A = true;
-            this.p.o(3, this.P, this.Q, 0, true, this.E, this.I, this.H);
-        }
-        int i10 = i7 & 3;
-        p71 p71Var = this.a;
-        if (i10 == 2) {
-            g();
-            if (((i7 >> 6) & 7) != 1 || this.D) {
-                return;
-            }
-            this.D = true;
-            p71Var.d();
-            return;
-        }
-        if (i10 == 1 && n() && !this.C) {
-            if (this.B) {
-                p71Var.b(true);
-            } else {
-                h();
-            }
+    public q71(w71 w71Var, String str, int i7) {
+        this.a = i7;
+        switch (i7) {
+            case 1:
+                this.d = w71Var;
+                this.c = new String[4];
+                this.b = str;
+                break;
+            case 2:
+                this.d = w71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 3:
+                this.d = w71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            case 4:
+                this.d = w71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
+            default:
+                this.d = w71Var;
+                this.c = new String[2];
+                this.b = str;
+                break;
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:89:0x01e9  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(Canvas canvas, int i7) {
-        org.telegram.utils.twidget.l1 l1Var;
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        int i10;
-        boolean z13;
-        int i11;
-        char c10;
-        double d;
-        int i12;
-        float[] fArr;
-        char c11;
-        float[] fArr2;
-        this.R = i7;
-        org.telegram.utils.twidget.y0 y0Var = this.p;
-        org.telegram.utils.twidget.j1 d2 = y0Var == null ? null : y0Var.d();
-        float f10 = this.b;
-        if (d2 != null) {
-            org.telegram.utils.twidget.k1[] k1VarArr = d2.b;
-            org.telegram.utils.twidget.c0 c0Var = d2.a;
-            int i13 = d2.d;
-            if (i13 > 0) {
-                if (!d2.a()) {
-                    this.p.c();
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        switch (this.a) {
+            case 0:
+                String[] strArr = this.c;
+                Locale locale = Locale.US;
+                String str = "http://www.aparat.com/video/video/embed/vt/frame/showvideo/yes/videohash/" + this.b;
+                this.d.getClass();
+                String c10 = w71.c(this, str, null, true);
+                if (isCancelled()) {
+                    return null;
                 }
-                org.telegram.utils.twidget.j1 j1Var = this.o;
-                boolean z14 = true;
-                if (d2 != j1Var) {
-                    boolean z15 = j1Var == null;
-                    this.o = d2;
-                    Handler handler = this.c;
-                    o71 o71Var = this.n;
-                    handler.removeCallbacks(o71Var);
-                    if (org.telegram.messenger.gz.K0) {
-                        if (z15) {
-                            c0Var.f();
-                        } else {
-                            handler.postDelayed(o71Var, 333L);
+                try {
+                    Matcher matcher = w71.s0.matcher(c10);
+                    if (matcher.find()) {
+                        JSONArray jSONArray = new JSONArray(matcher.group(1));
+                        for (int i7 = 0; i7 < jSONArray.length(); i7++) {
+                            JSONArray jSONArray2 = jSONArray.getJSONArray(i7);
+                            if (jSONArray2.length() != 0) {
+                                JSONObject jSONObject = jSONArray2.getJSONObject(0);
+                                if (jSONObject.has("file")) {
+                                    strArr[0] = jSONObject.getString("file");
+                                    strArr[1] = "other";
+                                }
+                            }
                         }
                     }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
                 }
-                boolean z16 = Math.abs(i13 - i7) > 1;
-                if (z16) {
-                    canvas.save();
-                    float f11 = i7 / i13;
-                    canvas.scale(f11, f11);
+                if (isCancelled()) {
+                    return null;
                 }
-                char c12 = 0;
-                c0Var.c(canvas, 1.0f);
-                if (k1VarArr.length > 0) {
-                    double nanoTime = (System.nanoTime() / 1.0E9d) + d2.c;
-                    int length = k1VarArr.length;
-                    int i14 = 0;
-                    boolean z17 = false;
-                    while (i14 < length) {
-                        org.telegram.utils.twidget.k1 k1Var = k1VarArr[i14];
-                        float[] fArr3 = k1Var.g;
-                        float[] fArr4 = k1Var.c;
-                        org.telegram.utils.twidget.c0 c0Var2 = k1Var.a;
-                        boolean z18 = z14;
-                        int length2 = fArr3.length / 8;
-                        if (length2 == 0 || !c0Var2.e()) {
-                            i10 = length;
-                            z13 = z16;
-                            i11 = i14;
-                            c10 = c12;
-                        } else {
-                            i11 = i14;
-                            i10 = length;
-                            double max = Math.max(0.0d, nanoTime - k1Var.d);
-                            double d10 = k1Var.e;
-                            if (d10 <= 0.0d) {
-                                d = 1.0d;
-                            } else if (k1Var.f) {
-                                d = (max % d10) / d10;
-                                z17 = z18 ? 1 : 0;
-                            } else {
-                                double min = Math.min(1.0d, max / d10);
-                                z17 |= min < 1.0d ? z18 ? 1 : 0 : false;
-                                d = min;
-                            }
-                            float[] fArr5 = k1Var.g;
-                            float f12 = (float) d;
-                            int i15 = 0;
-                            while (true) {
-                                i12 = i15 + 1;
-                                if (i12 >= length2 || fArr5[i12 * 8] > f12) {
-                                    break;
-                                }
-                                i15 = i12;
-                            }
-                            int min2 = Math.min(i12, length2 - 1);
-                            int i16 = i15 * 8;
-                            float f13 = fArr5[i16];
-                            int i17 = min2 * 8;
-                            float f14 = fArr5[i17];
-                            float max2 = Math.max(0.0f, Math.min(1.0f, (min2 == i15 || f14 <= f13) ? 0.0f : (f12 - f13) / (f14 - f13)));
-                            int i18 = 0;
-                            while (true) {
-                                z13 = z16;
-                                fArr = this.g;
-                                if (i18 >= 7) {
-                                    break;
-                                }
-                                float f15 = fArr5[i16 + 1 + i18];
-                                fArr[i18] = com.google.android.gms.internal.vision.e2.z(fArr5[i17 + 1 + i18], f15, max2, f15);
-                                i18++;
-                                z16 = z13;
-                            }
-                            canvas.save();
-                            float[] fArr6 = k1Var.b;
-                            if (fArr6 != null) {
-                                float f16 = fArr6[0];
-                                float f17 = f16 * f10;
-                                float f18 = fArr6[z18 ? 1 : 0];
-                                char c13 = 7;
-                                float f19 = f18 * f10;
-                                float f20 = (f16 + fArr6[2]) * f10;
-                                float f21 = (f18 + fArr6[3]) * f10;
-                                RectF rectF = this.i;
-                                rectF.set(f17, f19, f20, f21);
-                                if (fArr4 == null) {
-                                    canvas.clipRect(rectF);
-                                    c11 = c13;
-                                } else {
-                                    int i19 = 0;
-                                    while (true) {
-                                        fArr2 = this.j;
-                                        if (i19 >= 8) {
-                                            break;
-                                        }
-                                        fArr2[i19] = fArr4[i19] * f10;
-                                        i19++;
-                                    }
-                                    Path path = this.h;
-                                    path.rewind();
-                                    path.addRoundRect(rectF, fArr2, Path.Direction.CW);
-                                    canvas.clipPath(path);
-                                    c11 = c13;
-                                }
-                            } else {
-                                c11 = 7;
-                            }
-                            float f22 = fArr[0];
-                            float[] fArr7 = this.f;
-                            fArr7[0] = f22;
-                            fArr7[z18 ? 1 : 0] = fArr[2];
-                            fArr7[2] = fArr[4] * f10;
-                            fArr7[3] = fArr[z18 ? 1 : 0];
-                            fArr7[4] = fArr[3];
-                            fArr7[5] = fArr[5] * f10;
-                            fArr7[6] = 0.0f;
-                            fArr7[c11] = 0.0f;
-                            c10 = 0;
-                            fArr7[8] = 1.0f;
-                            Matrix matrix = this.e;
-                            matrix.setValues(fArr7);
-                            canvas.concat(matrix);
-                            c0Var2.c(canvas, Math.max(0.0f, Math.min(1.0f, fArr[6])));
-                            canvas.restore();
-                        }
-                        char c14 = c10;
-                        i14 = i11 + 1;
-                        c12 = c14;
-                        z14 = z18 ? 1 : 0;
-                        length = i10;
-                        z16 = z13;
+                return strArr[0];
+            case 1:
+                String[] strArr2 = this.c;
+                Locale locale2 = Locale.US;
+                String str2 = "https://coub.com/api/v2/coubs/" + this.b + ".json";
+                this.d.getClass();
+                String c11 = w71.c(this, str2, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject2 = new JSONObject(c11).getJSONObject("file_versions").getJSONObject("mobile");
+                    String string = jSONObject2.getString(MediaStreamTrack.VIDEO_TRACK_KIND);
+                    String string2 = jSONObject2.getJSONArray(MediaStreamTrack.AUDIO_TRACK_KIND).getString(0);
+                    if (string != null && string2 != null) {
+                        strArr2[0] = string;
+                        strArr2[1] = "other";
+                        strArr2[2] = string2;
+                        strArr2[3] = "other";
                     }
-                    z10 = z16;
-                    boolean z19 = z14;
-                    z11 = false;
-                    if (z17 && this.q) {
-                        z12 = z19;
-                        if (z10) {
-                            canvas.restore();
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr2[0];
+            case 2:
+                String[] strArr3 = this.c;
+                String str3 = this.b;
+                this.d.getClass();
+                String c12 = w71.c(this, str3, null, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    Matcher matcher2 = w71.t0.matcher(c12);
+                    if (matcher2.find()) {
+                        strArr3[0] = new JSONObject(matcher2.group(1)).getJSONArray("quality_options").getJSONObject(0).getString("source");
+                        strArr3[1] = "other";
+                    }
+                } catch (Exception e12) {
+                    org.telegram.messenger.a8.g(e12, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr3[0];
+            case 3:
+                String[] strArr4 = this.c;
+                HashMap hashMap = new HashMap();
+                hashMap.put("Client-ID", "jzkbprff40iqj646a697cyrvl0zt2m6");
+                int indexOf = this.b.indexOf(38);
+                if (indexOf > 0) {
+                    this.b = this.b.substring(0, indexOf);
+                }
+                Locale locale3 = Locale.US;
+                String str4 = "https://api.twitch.tv/kraken/streams/" + this.b + "?stream_type=all";
+                this.d.getClass();
+                String c13 = w71.c(this, str4, hashMap, false);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    new JSONObject(c13).getJSONObject("stream");
+                    JSONObject jSONObject3 = new JSONObject(w71.c(this, "https://api.twitch.tv/api/channels/" + this.b + "/access_token", hashMap, false));
+                    String encode = URLEncoder.encode(jSONObject3.getString("sig"), "UTF-8");
+                    String encode2 = URLEncoder.encode(jSONObject3.getString("token"), "UTF-8");
+                    URLEncoder.encode("https://youtube.googleapis.com/v/" + this.b, "UTF-8");
+                    String str5 = "allow_source=true&allow_audio_only=true&allow_spectre=true&player=twitchweb&segment_preference=4&p=" + ((int) (Math.random() * 1.0E7d)) + "&sig=" + encode + "&token=" + encode2;
+                    strArr4[0] = "https://usher.ttvnw.net/api/channel/hls/" + this.b + ".m3u8?" + str5;
+                    strArr4[1] = "hls";
+                } catch (Exception e13) {
+                    org.telegram.messenger.a8.g(e13, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr4[0];
+            default:
+                String[] strArr5 = this.c;
+                Locale locale4 = Locale.US;
+                String str6 = "https://player.vimeo.com/video/" + this.b + "/config";
+                this.d.getClass();
+                String c14 = w71.c(this, str6, null, true);
+                if (isCancelled()) {
+                    return null;
+                }
+                try {
+                    JSONObject jSONObject4 = new JSONObject(c14).getJSONObject("request").getJSONObject("files");
+                    if (jSONObject4.has("hls")) {
+                        JSONObject jSONObject5 = jSONObject4.getJSONObject("hls");
+                        try {
+                            strArr5[0] = jSONObject5.getString("url");
+                        } catch (Exception unused) {
+                            strArr5[0] = jSONObject5.getJSONObject("cdns").getJSONObject(jSONObject5.getString("default_cdn")).getString("url");
                         }
-                        return z12;
+                        strArr5[1] = "hls";
+                    } else if (jSONObject4.has("progressive")) {
+                        strArr5[1] = "other";
+                        strArr5[0] = jSONObject4.getJSONArray("progressive").getJSONObject(0).getString("url");
+                    }
+                } catch (Exception e14) {
+                    org.telegram.messenger.a8.g(e14, true);
+                }
+                if (isCancelled()) {
+                    return null;
+                }
+                return strArr5[0];
+        }
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                w71 w71Var = this.d;
+                if (str == null) {
+                    if (!isCancelled()) {
+                        w71Var.h();
+                        break;
                     }
                 } else {
-                    z10 = z16;
-                    z11 = false;
+                    w71Var.x = true;
+                    w71Var.y = str;
+                    w71Var.E = this.c[1];
+                    if (w71Var.s) {
+                        w71Var.i();
+                    }
+                    w71Var.j(false, true);
+                    w71Var.g0.d(true, true);
+                    break;
                 }
-                z12 = z11;
-                if (z10) {
+                break;
+            case 1:
+                String str2 = (String) obj;
+                w71 w71Var2 = this.d;
+                if (str2 == null) {
+                    if (!isCancelled()) {
+                        w71Var2.h();
+                        break;
+                    }
+                } else {
+                    w71Var2.x = true;
+                    w71Var2.y = str2;
+                    String[] strArr = this.c;
+                    w71Var2.E = strArr[1];
+                    w71Var2.F = strArr[2];
+                    w71Var2.G = strArr[3];
+                    if (w71Var2.s) {
+                        w71Var2.i();
+                    }
+                    w71Var2.j(false, true);
+                    w71Var2.g0.d(true, true);
+                    break;
                 }
-                return z12;
-            }
-        }
-        if (this.r) {
-            return false;
-        }
-        org.telegram.utils.twidget.y0 y0Var2 = this.p;
-        if (y0Var2 != null) {
-            y0Var2.c();
-        }
-        org.telegram.utils.twidget.y0 y0Var3 = this.p;
-        canvas.drawText(org.telegram.messenger.hd.M0(((y0Var3 != null && (l1Var = y0Var3.f) != null) ? l1Var.N : null) == null ? 2131742875 : 2131742876, null), 12.0f * f10, f10 * 28.0f, this.d);
-        return false;
-    }
-
-    public final void c() {
-        if (this.F) {
-            this.F = false;
-            org.telegram.utils.twidget.y0 y0Var = this.p;
-            if (y0Var != null && !this.r) {
-                y0Var.e(this.J, this.K, 1, 0);
-            }
-            this.a.f("auto");
-        }
-    }
-
-    public final void d() {
-        o71 o71Var = this.k;
-        Handler handler = this.c;
-        handler.removeCallbacks(o71Var);
-        handler.removeCallbacks(this.l);
-        this.w = false;
-        this.x = false;
-    }
-
-    public final void e() {
-        org.telegram.utils.twidget.y0 y0Var;
-        if (this.G) {
-            this.G = false;
-            this.A = true;
-        }
-        if (!this.w || this.A || (y0Var = this.p) == null) {
-            return;
-        }
-        this.A = true;
-        y0Var.o(3, this.P, this.Q, 0, true, this.E, this.I, this.H);
-    }
-
-    public final void f() {
-        if (this.G) {
-            this.G = false;
-            org.telegram.utils.twidget.y0 y0Var = this.p;
-            if (y0Var != null) {
-                y0Var.o(0, this.N, this.O, 0, true, this.E, this.I, this.H);
-            }
-        }
-    }
-
-    public final void g() {
-        if (this.C) {
-            return;
-        }
-        this.C = true;
-        if (this.B) {
-            this.a.b(false);
-        }
-    }
-
-    public final void h() {
-        if (this.B || this.C) {
-            return;
-        }
-        this.B = true;
-        this.a.b(true);
-    }
-
-    public final float i(float f10) {
-        int i7;
-        return (!org.telegram.messenger.hd.a0 || (i7 = this.R) <= 0) ? f10 : (i7 / this.b) - f10;
-    }
-
-    public final void k(boolean z10, boolean z11, boolean z12) {
-        if (!this.w || this.x) {
-            return;
-        }
-        this.c.removeCallbacks(this.k);
-        this.x = true;
-        int b10 = this.m.b(this.M, i(this.N), this.O, z10, z11, z12, this.E, this.H);
-        boolean z13 = false;
-        boolean z14 = (b10 & 2048) != 0;
-        this.y = z10 && !z14;
-        if (z12 && !z14) {
-            z13 = true;
-        }
-        this.z = z13;
-        a(b10);
-        if (this.P != this.N || this.Q != this.O) {
-            a(this.m.d(SystemClock.uptimeMillis(), i(this.P), this.Q));
-        }
-        if (this.y || this.z || this.E) {
-            h();
-            if ((this.y || this.E) && !this.C) {
-                this.a.b(true);
-            }
-        } else {
-            g();
-        }
-        o();
-    }
-
-    public final void l(MotionEvent motionEvent, boolean z10) {
-        org.telegram.utils.twidget.y0 y0Var;
-        org.telegram.utils.twidget.l1 l1Var;
-        int actionMasked = motionEvent.getActionMasked();
-        if (!z10 || actionMasked == 10 || (y0Var = this.p) == null || this.r || (l1Var = y0Var.f) == null || !l1Var.C) {
-            c();
-            return;
-        }
-        this.F = true;
-        float x10 = motionEvent.getX();
-        float f10 = this.b;
-        this.J = x10 / f10;
-        float y10 = motionEvent.getY() / f10;
-        this.K = y10;
-        this.p.e(this.J, y10, 0, j(motionEvent));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0042, code lost:
-    
-        if (r3 != 6) goto L143;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x01cb  */
-    /* JADX WARN: Removed duplicated region for block: B:128:0x0138  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0055  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x015f  */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x017e  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean m(MotionEvent motionEvent) {
-        org.telegram.utils.twidget.l1 l1Var;
-        int i7;
-        int actionMasked;
-        int actionIndex;
-        int pointerCount;
-        int actionMasked2 = motionEvent.getActionMasked();
-        boolean z10 = this.w;
-        boolean z11 = z10 && (actionMasked2 == 1 || actionMasked2 == 3);
-        org.telegram.utils.twidget.y0 y0Var = this.p;
-        if (y0Var != null && !this.r && ((((l1Var = y0Var.f) != null && l1Var.C) || z11) && (actionMasked2 != 3 || z10))) {
-            int actionMasked3 = motionEvent.getActionMasked();
-            if (actionMasked3 != 0) {
-                if (actionMasked3 != 1) {
-                    if (actionMasked3 == 2) {
-                        i7 = 1;
-                    } else if (actionMasked3 == 3) {
-                        i7 = 3;
-                    } else if (actionMasked3 != 5) {
+                break;
+            case 2:
+                String str3 = (String) obj;
+                w71 w71Var3 = this.d;
+                if (str3 == null) {
+                    if (!isCancelled()) {
+                        w71Var3.h();
+                        break;
                     }
-                    actionMasked = motionEvent.getActionMasked();
-                    float f10 = this.b;
-                    if (actionMasked == 0) {
-                        long uptimeMillis = SystemClock.uptimeMillis();
-                        if (uptimeMillis - this.s < 100 && Math.abs(motionEvent.getX() - this.u) < 1.0f && Math.abs(motionEvent.getY() - this.v) < 1.0f) {
-                            if (motionEvent.getDownTime() != 0) {
-                                this.t = motionEvent.getDownTime();
-                            }
-                            if (!this.E && motionEvent.getToolType(0) == 3 && !this.x) {
-                                this.E = true;
-                                this.H = (motionEvent.getButtonState() & 2) != 0 ? 2 : 0;
-                                this.I = j(motionEvent);
-                                c();
-                            }
-                            f();
-                            return true;
-                        }
-                        e();
-                        this.s = uptimeMillis;
-                        this.t = motionEvent.getDownTime();
-                        this.u = motionEvent.getX();
-                        this.v = motionEvent.getY();
-                        d();
-                        this.w = true;
-                        boolean z12 = motionEvent.getToolType(0) == 3;
-                        this.E = z12;
-                        this.H = (!z12 || (motionEvent.getButtonState() & 2) == 0) ? 0 : 2;
-                        this.I = j(motionEvent);
-                        if (this.E) {
-                            c();
-                        }
-                        this.G = motionEvent.getDownTime() == 0 && motionEvent.getToolType(0) == 0;
-                        this.A = false;
-                        this.D = false;
-                        this.B = false;
-                        this.C = false;
-                        this.L = -1;
-                        this.M = uptimeMillis;
-                        float x10 = motionEvent.getX() / f10;
-                        this.P = x10;
-                        this.N = x10;
-                        float y10 = motionEvent.getY() / f10;
-                        this.Q = y10;
-                        this.O = y10;
-                        this.c.postDelayed(this.k, 150L);
-                    } else if (this.w && motionEvent.getActionMasked() != 5 && motionEvent.getActionMasked() != 6) {
-                        this.P = motionEvent.getX() / f10;
-                        this.Q = motionEvent.getY() / f10;
+                } else {
+                    w71Var3.x = true;
+                    w71Var3.y = str3;
+                    w71Var3.E = this.c[1];
+                    if (w71Var3.s) {
+                        w71Var3.i();
                     }
-                    if (actionMasked2 != 0) {
-                        f();
-                    }
-                    if (!this.G && (!this.A || actionMasked2 == 0)) {
-                        actionIndex = (i7 != 1 || i7 == 3) ? 0 : motionEvent.getActionIndex();
-                        pointerCount = (i7 != 1 || i7 == 3) ? motionEvent.getPointerCount() : actionIndex + 1;
-                        while (actionIndex < pointerCount) {
-                            boolean z13 = (actionIndex == 0 && this.w) ? this.E : motionEvent.getToolType(actionIndex) == 3;
-                            float f11 = f10;
-                            this.p.o(i7, motionEvent.getX(actionIndex) / f11, motionEvent.getY(actionIndex) / f11, motionEvent.getPointerId(actionIndex), actionIndex == 0, z13, j(motionEvent), (z13 && actionIndex == 0 && this.w) ? this.H : 0);
-                            actionIndex++;
-                            f10 = f11;
-                        }
-                    }
-                    if (this.w) {
-                        long uptimeMillis2 = SystemClock.uptimeMillis();
-                        int actionMasked4 = motionEvent.getActionMasked();
-                        if (actionMasked4 == 1) {
-                            if (!this.x) {
-                                k(false, false, false);
-                            }
-                            a(this.m.g(uptimeMillis2, i(this.P), this.Q));
-                            d();
-                            g();
-                        } else {
-                            if (actionMasked4 == 2) {
-                                if (this.x) {
-                                    a(this.m.d(uptimeMillis2, i(this.P), this.Q));
-                                    return true;
-                                }
-                                h();
-                                return true;
-                            }
-                            if (actionMasked4 == 3) {
-                                this.m.a();
-                                d();
-                                g();
-                                return true;
-                            }
-                        }
-                    }
-                    return true;
+                    w71Var3.j(false, true);
+                    w71Var3.g0.d(true, true);
+                    break;
                 }
-                i7 = 2;
-                actionMasked = motionEvent.getActionMasked();
-                float f102 = this.b;
-                if (actionMasked == 0) {
-                }
-                if (actionMasked2 != 0) {
-                }
-                if (!this.G) {
-                    if (i7 != 1) {
+                break;
+            case 3:
+                String str4 = (String) obj;
+                w71 w71Var4 = this.d;
+                if (str4 == null) {
+                    if (!isCancelled()) {
+                        w71Var4.h();
+                        break;
                     }
-                    if (i7 != 1) {
+                } else {
+                    w71Var4.x = true;
+                    w71Var4.y = str4;
+                    w71Var4.E = this.c[1];
+                    if (w71Var4.s) {
+                        w71Var4.i();
                     }
-                    while (actionIndex < pointerCount) {
+                    w71Var4.j(false, true);
+                    w71Var4.g0.d(true, true);
+                    break;
+                }
+                break;
+            default:
+                String str5 = (String) obj;
+                w71 w71Var5 = this.d;
+                if (str5 == null) {
+                    if (!isCancelled()) {
+                        w71Var5.h();
+                        break;
                     }
+                } else {
+                    w71Var5.x = true;
+                    w71Var5.y = str5;
+                    w71Var5.E = this.c[1];
+                    if (w71Var5.s) {
+                        w71Var5.i();
+                    }
+                    w71Var5.j(false, true);
+                    w71Var5.g0.d(true, true);
+                    break;
                 }
-                if (this.w) {
-                }
-                return true;
-            }
-            i7 = 0;
-            actionMasked = motionEvent.getActionMasked();
-            float f1022 = this.b;
-            if (actionMasked == 0) {
-            }
-            if (actionMasked2 != 0) {
-            }
-            if (!this.G) {
-            }
-            if (this.w) {
-            }
-            return true;
+                break;
         }
-        return false;
-    }
-
-    public final boolean n() {
-        int i7 = this.L;
-        int i10 = (i7 >> 2) & 7;
-        if ((i7 & 3) == 1) {
-            return i10 == 4 || i10 == 5 || i10 == 3;
-        }
-        return false;
-    }
-
-    public final void o() {
-        Handler handler = this.c;
-        o71 o71Var = this.l;
-        handler.removeCallbacks(o71Var);
-        double c10 = this.m.c();
-        if (!this.w || c10 < 0.0d) {
-            return;
-        }
-        handler.postDelayed(o71Var, Math.max(0L, ((long) Math.ceil(c10)) - SystemClock.uptimeMillis()));
-    }
-
-    public final void p(boolean z10) {
-        if (this.q == z10) {
-            return;
-        }
-        this.q = z10;
-        org.telegram.utils.twidget.y0 y0Var = this.p;
-        if (y0Var == null || this.r) {
-            return;
-        }
-        y0Var.m(z10);
-    }
-
-    public final void q() {
-        if (this.p == null) {
-            return;
-        }
-        if (this.r) {
-            this.r = false;
-            this.p = null;
-            return;
-        }
-        e();
-        c();
-        this.p.m(false);
-        org.telegram.utils.twidget.y0 y0Var = this.p;
-        if (y0Var.h == this) {
-            y0Var.h = null;
-        }
-        this.p = null;
-        this.c.removeCallbacks(this.n);
-        this.o = null;
-        d();
-        this.m.e();
     }
 }

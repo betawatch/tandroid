@@ -2,11 +2,11 @@ package b9;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends r6.a {
     public static final Parcelable.Creator<b> CREATOR = new c(0);
@@ -16,8 +16,8 @@ public final class b extends r6.a {
     public b(String str, ArrayList arrayList) {
         this.a = str;
         this.b = arrayList;
-        q6.m.g(str);
-        q6.m.g(arrayList);
+        q6.m.h(str);
+        q6.m.h(arrayList);
     }
 
     public final boolean equals(Object obj) {
@@ -46,14 +46,14 @@ public final class b extends r6.a {
     }
 
     public final String toString() {
-        return r.b.l("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
+        return p5.c.l("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.l(parcel, 2, this.a);
-        yb.p(parcel, 3, this.b);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.l(parcel, 2, this.a);
+        bc.p(parcel, 3, this.b);
+        bc.s(parcel, r10);
     }
 }

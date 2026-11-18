@@ -12,7 +12,7 @@ import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class BasePendingResult<R extends com.google.android.gms.common.api.r> extends k8 {
     public static final b7.j n = new b7.j(1);
@@ -111,8 +111,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                     return;
                 }
                 g();
-                q6.m.i("Results have already been set", !g());
-                q6.m.i("Result has already been consumed", !this.j);
+                q6.m.j("Results have already been set", !g());
+                q6.m.j("Result has already been consumed", !this.j);
                 k(rVar);
             } catch (Throwable th2) {
                 throw th2;
@@ -123,7 +123,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public final void i(h6.q qVar) {
         synchronized (this.a) {
             try {
-                q6.m.i("Result has already been consumed.", !this.j);
+                q6.m.j("Result has already been consumed.", !this.j);
                 if (f()) {
                     return;
                 }
@@ -144,8 +144,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public final com.google.android.gms.common.api.r j() {
         com.google.android.gms.common.api.r rVar;
         synchronized (this.a) {
-            q6.m.i("Result has already been consumed.", !this.j);
-            q6.m.i("Result is not ready.", g());
+            q6.m.j("Result has already been consumed.", !this.j);
+            q6.m.j("Result is not ready.", g());
             rVar = this.h;
             this.h = null;
             this.f = null;
@@ -155,7 +155,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         if (z0Var != null) {
             ((Set) z0Var.a.a).remove(this);
         }
-        q6.m.g(rVar);
+        q6.m.h(rVar);
         return rVar;
     }
 

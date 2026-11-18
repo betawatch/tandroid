@@ -1,28 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m91 extends rg.a {
-    public final TLRPC.TL_forumTopic c;
+public final class m91 extends v4.k {
+    public Runnable F;
+    public int G;
+    public final /* synthetic */ y91 H;
 
-    public m91(int i7, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i7, true);
-        this.c = tL_forumTopic;
+    public m91(y91 y91Var) {
+        this.H = y91Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && m91.class == obj.getClass()) {
-            m91 m91Var = (m91) obj;
-            int i7 = this.a;
-            if (i7 == m91Var.a && i7 == 0 && this.c.id == m91Var.c.id) {
-                return true;
+    @Override // v4.k
+    public final void F() {
+        if (this.G == -1) {
+            this.G = this.H.getNotificationCenter().q(null, this.G, false);
+            Runnable runnable = this.F;
+            if (runnable != null) {
+                org.telegram.messenger.g0.r(runnable);
+                this.F = null;
             }
         }
-        return false;
+    }
+
+    @Override // v4.k
+    public final void N() {
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+            this.F = null;
+        }
+        l91 l91Var = new l91(this, 0);
+        this.F = l91Var;
+        org.telegram.messenger.g0.g3(l91Var);
+    }
+
+    @Override // v4.k, v4.n0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.F;
+        if (runnable != null) {
+            org.telegram.messenger.g0.r(runnable);
+        }
+        l91 l91Var = new l91(this, 1);
+        this.F = l91Var;
+        org.telegram.messenger.g0.g3(l91Var);
+    }
+
+    @Override // v4.k
+    public final void z(v4.f1 f1Var) {
+        y91 y91Var = this.H;
+        View view = y91Var.d1;
+        if (view == f1Var.a) {
+            view.setTranslationX(0.0f);
+            d91 d91Var = y91Var.P;
+            if (d91Var != null) {
+                d91Var.G.clear();
+            }
+            View view2 = y91Var.d1;
+            if (view2 instanceof v91) {
+                v91 v91Var = (v91) view2;
+                v91Var.setTopicIcon(v91Var.d5);
+            }
+            y91Var.d1 = null;
+        }
     }
 }

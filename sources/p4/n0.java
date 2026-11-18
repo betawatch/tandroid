@@ -2,38 +2,38 @@ package p4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class n0 implements y0, z0, h2.j {
-    public final /* synthetic */ c1 a;
+public final /* synthetic */ class n0 implements a1, b1, h2.j {
+    public final /* synthetic */ e1 a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ n0(c1 c1Var, int i7, int i10) {
-        this.a = c1Var;
+    public /* synthetic */ n0(e1 e1Var, int i7, int i10) {
+        this.a = e1Var;
         this.b = i7;
         this.c = i10;
     }
 
-    @Override // p4.z0
-    public void a(g1 g1Var, v vVar, List list) {
-        c1 c1Var = this.a;
-        g1Var.s0(list, c1Var.m1(vVar, g1Var, this.b), c1Var.m1(vVar, g1Var, this.c));
+    @Override // p4.b1
+    public void a(i1 i1Var, v vVar, List list) {
+        e1 e1Var = this.a;
+        i1Var.s0(list, e1Var.m1(vVar, i1Var, this.b), e1Var.m1(vVar, i1Var, this.c));
     }
 
     @Override // h2.j
     public void accept(Object obj) {
-        c1 c1Var = this.a;
-        ((d0) c1Var.a.get()).getClass();
-        b1 b1Var = c1Var.i;
-        if (b1Var != null) {
-            b1Var.setFixedSize(this.b, this.c);
+        e1 e1Var = this.a;
+        ((d0) e1Var.a.get()).getClass();
+        d1 d1Var = e1Var.i;
+        if (d1Var != null) {
+            d1Var.setFixedSize(this.b, this.c);
         }
     }
 
-    @Override // p4.y0
-    public void c(g1 g1Var, v vVar) {
-        c1 c1Var = this.a;
-        g1Var.R(c1Var.m1(vVar, g1Var, this.b), c1Var.m1(vVar, g1Var, this.c));
+    @Override // p4.a1
+    public void c(i1 i1Var, v vVar) {
+        e1 e1Var = this.a;
+        i1Var.R(e1Var.m1(vVar, i1Var, this.b), e1Var.m1(vVar, i1Var, this.c));
     }
 }

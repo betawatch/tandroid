@@ -18,18 +18,18 @@ import android.graphics.drawable.Drawable;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.StateSet;
-import c8.i0;
+import c8.k0;
 import m.m2;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int K = 0;
     public boolean E;
     public b F;
-    public i0 G;
+    public k0 G;
     public boolean J;
     public b a;
     public Rect b;
@@ -42,7 +42,7 @@ public final class e extends Drawable implements Drawable.Callback {
     public long w;
     public a5.b x;
     public b y;
-    public int e = ns.e4;
+    public int e = ks.e4;
     public int h = -1;
     public int H = -1;
     public int I = -1;
@@ -93,7 +93,7 @@ public final class e extends Drawable implements Drawable.Callback {
             bVar2.b = resources2;
             int i12 = resources2.getDisplayMetrics().densityDpi;
             if (i12 == 0) {
-                i12 = ns.q2;
+                i12 = ks.q2;
             }
             int i13 = bVar2.c;
             bVar2.c = i12;
@@ -229,14 +229,14 @@ public final class e extends Drawable implements Drawable.Callback {
             long j3 = this.s;
             if (j3 != 0) {
                 if (j3 > uptimeMillis) {
-                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / ns.e4);
+                    drawable2.setAlpha(((255 - (((int) ((j3 - uptimeMillis) * 255)) / this.a.y)) * this.e) / ks.e4);
                     z11 = true;
                     drawable = this.d;
                     if (drawable == null) {
                         long j10 = this.w;
                         if (j10 != 0) {
                             if (j10 > uptimeMillis) {
-                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / ns.e4);
+                                drawable.setAlpha(((((int) ((j10 - uptimeMillis) * 255)) / this.a.z) * this.e) / ks.e4);
                                 if (z10 && z12) {
                                     scheduleSelf(this.r, uptimeMillis + 16);
                                     return;
@@ -299,7 +299,7 @@ public final class e extends Drawable implements Drawable.Callback {
             bVar.b = resources;
             int i11 = resources.getDisplayMetrics().densityDpi;
             if (i11 == 0) {
-                i11 = ns.q2;
+                i11 = ks.q2;
             }
             int i12 = bVar.c;
             bVar.c = i11;
@@ -759,9 +759,9 @@ public final class e extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable
     public final void jumpToCurrentState() {
         e();
-        i0 i0Var = this.G;
-        if (i0Var != null) {
-            i0Var.d();
+        k0 k0Var = this.G;
+        if (k0Var != null) {
+            k0Var.d();
             this.G = null;
             h(this.H);
             this.H = -1;
@@ -836,23 +836,23 @@ public final class e extends Drawable implements Drawable.Callback {
     */
     public final boolean onStateChange(int[] iArr) {
         int i7;
-        i0 aVar;
+        k0 aVar;
         b bVar = this.F;
         int f10 = bVar.f(iArr);
         if (f10 < 0) {
             f10 = bVar.f(StateSet.WILD_CARD);
         }
         if (f10 != this.h) {
-            i0 i0Var = this.G;
-            if (i0Var != null) {
+            k0 k0Var = this.G;
+            if (k0Var != null) {
                 if (f10 != this.H) {
-                    if (f10 == this.I && i0Var.a()) {
-                        i0Var.b();
+                    if (f10 == this.I && k0Var.a()) {
+                        k0Var.b();
                         this.H = this.I;
                         this.I = f10;
                     } else {
                         i7 = this.H;
-                        i0Var.d();
+                        k0Var.d();
                     }
                 }
                 r4 = true;
@@ -1003,10 +1003,10 @@ public final class e extends Drawable implements Drawable.Callback {
     @Override // android.graphics.drawable.Drawable
     public final boolean setVisible(boolean z10, boolean z11) {
         boolean j3 = j(z10, z11);
-        i0 i0Var = this.G;
-        if (i0Var != null && (j3 || z11)) {
+        k0 k0Var = this.G;
+        if (k0Var != null && (j3 || z11)) {
             if (z10) {
-                i0Var.c();
+                k0Var.c();
                 return j3;
             }
             jumpToCurrentState();

@@ -1,27 +1,56 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.tc1;
+import org.telegram.ui.uc1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ej implements kj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.d5 b;
+public final class ej extends org.telegram.ui.Cells.ua {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ bk0 y;
 
-    public /* synthetic */ ej(org.telegram.messenger.d5 d5Var, int i7) {
-        this.a = i7;
-        this.b = d5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ej(bk0 bk0Var, Context context, int i7) {
+        super(context, 5);
+        this.x = i7;
+        this.y = bk0Var;
     }
 
-    @Override // org.telegram.ui.Components.kj
-    public final String run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Cells.ua
+    public final void a(int i7, Object obj) {
+        switch (this.x) {
             case 0:
-                ArrayList arrayList = this.b.e;
-                return arrayList.isEmpty() ? "" : pf.b.c().b((String) arrayList.get(0));
+                q0.a aVar = ((fj) ((qa) this.y).f).y;
+                if (aVar != null) {
+                    aVar.accept(obj);
+                    break;
+                }
+                break;
+            case 1:
+                WallpapersListActivity.w0(((tc1) this.y).d, this, obj, i7);
+                break;
             default:
-                ArrayList arrayList2 = this.b.e;
-                return arrayList2.isEmpty() ? "" : pf.b.c().b((String) arrayList2.get(0));
+                ((uc1) this.y).F.presentFragment(new org.telegram.ui.x71(obj, null, true));
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Cells.ua
+    public boolean b(Object obj, int i7) {
+        switch (this.x) {
+            case 1:
+                return WallpapersListActivity.x0(((tc1) this.y).d, this, obj, i7);
+            default:
+                return super.b(obj, i7);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ej(qa qaVar, Context context) {
+        super(context, 1);
+        this.x = 0;
+        this.y = qaVar;
     }
 }

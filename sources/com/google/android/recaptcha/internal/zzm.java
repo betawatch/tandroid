@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -9,7 +9,7 @@ import kd.j;
 import rd.p;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzm extends j implements p {
     Object zza;
@@ -40,16 +40,16 @@ final class zzm extends j implements p {
 
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        Object b10;
+        Object a10;
         zzgr zzgrVar;
         a aVar = a.a;
         int i7 = this.zzb;
         try {
         } catch (zzcg e10) {
-            b10 = b.b(e10);
+            a10 = h.a(e10);
         }
         if (i7 == 0) {
-            b.c(obj);
+            h.b(obj);
             zzgrVar = this.zzc;
             zzg zzgVar = this.zzd;
             long j3 = this.zze;
@@ -63,18 +63,18 @@ final class zzm extends j implements p {
             return aVar;
         }
         if (i7 != 1) {
-            b.c(obj);
-            b10 = k.a;
-            return new g(b10);
+            h.b(obj);
+            a10 = k.a;
+            return new g(a10);
         }
         zzgrVar = (zzgr) this.zza;
-        b.c(obj);
+        h.b(obj);
         this.zza = null;
         this.zzb = 2;
         if (((zzhf) obj).zza(zzgrVar.zza(), this) == aVar) {
             return aVar;
         }
-        b10 = k.a;
-        return new g(b10);
+        a10 = k.a;
+        return new g(a10);
     }
 }

@@ -13,13 +13,15 @@ import android.os.SystemClock;
 import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.o9;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class s2 extends View {
+    public long E;
     public final Paint a;
     public final Paint b;
     public final Paint c;
@@ -30,11 +32,11 @@ public final class s2 extends View {
     public LinearGradient n;
     public LinearGradient r;
     public int s;
-    public final o9 w;
-    public final o9 x;
-    public long y;
+    public final String w;
+    public final w9 x;
+    public final w9 y;
 
-    public s2(Activity activity, e6 e6Var) {
+    public s2(Activity activity, i6 i6Var) {
         super(activity);
         Paint paint = new Paint(1);
         this.a = paint;
@@ -46,11 +48,12 @@ public final class s2 extends View {
         this.d = new Paint(1);
         TextPaint textPaint = new TextPaint(1);
         this.e = textPaint;
-        this.w = new o9(12);
-        this.x = new o9(11);
-        int w02 = j6.w0(j6.Fi, e6Var);
+        this.w = gd.M0(2131745051, null) + " · ";
+        this.x = new w9(12);
+        this.y = new w9(11);
+        int w02 = n6.w0(n6.Fi, i6Var);
         this.h = w02;
-        j6.w0(j6.j5, e6Var);
+        n6.w0(n6.j5, i6Var);
         paint.setColor(w02);
         paint2.setStyle(Paint.Style.STROKE);
         paint2.setStrokeWidth(org.telegram.messenger.g0.N(1.6f));
@@ -65,7 +68,7 @@ public final class s2 extends View {
     }
 
     public static float a(float f10) {
-        return org.telegram.ui.Cells.y0.f((((float) Math.sin((f10 * 0.113f) + 0.4f)) * 0.5f) + 0.5f, 0.2f, (((((float) Math.sin((0.053f * f10) + 1.7f)) * 0.5f) + 0.5f) * 0.35f) + (((((float) Math.sin(0.021f * f10)) * 0.5f) + 0.5f) * 0.45f), 0.82f, 0.18f);
+        return org.telegram.ui.Cells.c0.g((((float) Math.sin((f10 * 0.113f) + 0.4f)) * 0.5f) + 0.5f, 0.2f, (((((float) Math.sin((0.053f * f10) + 1.7f)) * 0.5f) + 0.5f) * 0.35f) + (((((float) Math.sin(0.021f * f10)) * 0.5f) + 0.5f) * 0.45f), 0.82f, 0.18f);
     }
 
     @Override // android.view.View
@@ -91,7 +94,7 @@ public final class s2 extends View {
         float f24;
         float f25;
         float f26;
-        float d;
+        float e10;
         int i10;
         float f27;
         float f28;
@@ -184,10 +187,11 @@ public final class s2 extends View {
         }
         canvas2.save();
         canvas2.clipRect(f11, 0.0f, f34, f36);
-        float measureText = paint2.measureText("Hey! Running ten minutes late, see you at the café near the station · ");
+        String str = this.w;
+        float measureText = paint2.measureText(str);
         float descent = f58 - ((paint2.descent() + paint2.ascent()) / 2.0f);
         for (float L7 = (org.telegram.messenger.g0.L(4.0f) + f11) - (measureText - ((org.telegram.messenger.g0.L(55.0f) * uptimeMillis) % measureText)); L7 < f34; L7 += measureText) {
-            canvas2.drawText("Hey! Running ten minutes late, see you at the café near the station · ", L7, descent, paint2);
+            canvas2.drawText(str, L7, descent, paint2);
         }
         canvas2.restore();
         if (this.n == null || this.s != width) {
@@ -224,7 +228,7 @@ public final class s2 extends View {
         canvas2.drawRect(0.0f, 0.0f, f34, f13, this.c);
         canvas2.restoreToCount(i7);
         long uptimeMillis2 = SystemClock.uptimeMillis();
-        long j3 = this.y;
+        long j3 = this.E;
         if (j3 == 0) {
             min = 16;
             f17 = f10;
@@ -232,47 +236,47 @@ public final class s2 extends View {
             f17 = f10;
             min = Math.min(64L, uptimeMillis2 - j3);
         }
-        this.y = uptimeMillis2;
-        o9 o9Var = this.w;
-        float f62 = o9Var.a;
-        o9 o9Var2 = this.x;
+        this.E = uptimeMillis2;
+        w9 w9Var = this.x;
+        float f62 = w9Var.a;
+        w9 w9Var2 = this.y;
         if (f62 == 0.0f) {
-            o9Var2.a = org.telegram.messenger.g0.L(1.0f) + f16;
+            w9Var2.a = org.telegram.messenger.g0.L(1.0f) + f16;
             f18 = 0.6f;
-            o9Var2.b = (org.telegram.messenger.g0.L(12.0f) * 0.6f) + org.telegram.messenger.g0.L(1.0f) + f16;
-            o9Var.a = org.telegram.messenger.g0.L(3.0f) + f16;
-            o9Var.b = (org.telegram.messenger.g0.L(10.0f) * 0.6f) + org.telegram.messenger.g0.L(3.0f) + f16;
-            o9Var2.b();
-            o9Var.b();
-            o9Var.d.setColor(i0.a.o(i13, 48));
-            o9Var2.d.setColor(i0.a.o(i13, 72));
+            w9Var2.b = (org.telegram.messenger.g0.L(12.0f) * 0.6f) + org.telegram.messenger.g0.L(1.0f) + f16;
+            w9Var.a = org.telegram.messenger.g0.L(3.0f) + f16;
+            w9Var.b = (org.telegram.messenger.g0.L(10.0f) * 0.6f) + org.telegram.messenger.g0.L(3.0f) + f16;
+            w9Var2.b();
+            w9Var.b();
+            w9Var.d.setColor(i0.a.o(i13, 48));
+            w9Var2.d.setColor(i0.a.o(i13, 72));
         } else {
             f18 = 0.6f;
         }
         float a10 = (a(-f15) * f18) + 0.25f;
-        o9Var.d(true, a10);
-        o9Var2.d(false, a10);
-        o9Var.f(min);
-        o9Var2.f(min);
-        o9Var.e(o9Var.t, 1.01f);
-        o9Var2.e(o9Var2.t, 1.02f);
+        w9Var.d(true, a10);
+        w9Var2.d(false, a10);
+        w9Var.f(min);
+        w9Var2.f(min);
+        w9Var.e(w9Var.t, 1.01f);
+        w9Var2.e(w9Var2.t, 1.02f);
         canvas2.save();
-        float f63 = (o9Var.t * 0.5f) + 0.878f;
+        float f63 = (w9Var.t * 0.5f) + 0.878f;
         float f64 = f17;
         canvas2.scale(f63, f63, f64, f61);
-        o9Var.a(f64, f61, canvas2, o9Var.d);
+        w9Var.a(f64, f61, canvas2, w9Var.d);
         canvas2.restore();
         canvas2.save();
-        float f65 = (o9Var2.t * 0.5f) + 0.926f;
+        float f65 = (w9Var2.t * 0.5f) + 0.926f;
         canvas2.scale(f65, f65, f64, f61);
-        o9Var2.a(f64, f61, canvas2, o9Var2.d);
+        w9Var2.a(f64, f61, canvas2, w9Var2.d);
         canvas2.restore();
         int i14 = 0;
         while (i14 < 96) {
-            double d2 = i14;
+            double d = i14;
             int i15 = i13;
-            float abs2 = (float) (Math.abs(Math.sin(78.233d * d2) * 43758.5453d) % 1.0d);
-            float abs3 = (float) (Math.abs(Math.sin((d2 * 12.9898d) + 4.1d) * 43758.5453d) % 1.0d);
+            float abs2 = (float) (Math.abs(Math.sin(78.233d * d) * 43758.5453d) % 1.0d);
+            float abs3 = (float) (Math.abs(Math.sin((d * 12.9898d) + 4.1d) * 43758.5453d) % 1.0d);
             float f66 = (((abs3 * 7.0f) + uptimeMillis) / ((1.6f * abs2) + 2.4f)) % f57;
             float f67 = abs3 > 0.5f ? f57 : -1.0f;
             if (f66 < 0.55f) {
@@ -280,21 +284,21 @@ public final class s2 extends View {
                 float f69 = f59;
                 float f70 = f68 * f68;
                 f19 = f64;
-                float f71 = org.telegram.ui.Cells.y0.f(abs2, 0.4f, f18, ((1.25f * f70) + 0.15f) * f67 * 3.1415927f, 3.1415927f);
+                float g10 = org.telegram.ui.Cells.c0.g(abs2, 0.4f, f18, ((1.25f * f70) + 0.15f) * f67 * 3.1415927f, 3.1415927f);
                 f21 = 0.4f;
                 float z11 = com.google.android.gms.internal.vision.e2.z(f57, f70, (org.telegram.messenger.g0.L(18.0f) * abs2) + org.telegram.messenger.g0.L(34.0f), org.telegram.messenger.g0.L(4.0f) + f16);
-                double d10 = f71;
+                double d2 = g10;
                 f20 = uptimeMillis;
-                float cos = (((float) Math.cos(d10)) * z11) + f19;
-                float sin = f61 - (((abs2 * 0.2f) + 0.62f) * (((float) Math.sin(d10)) * z11));
+                float cos = (((float) Math.cos(d2)) * z11) + f19;
+                float sin = f61 - (((abs2 * 0.2f) + 0.62f) * (((float) Math.sin(d2)) * z11));
                 float L8 = (L3 - org.telegram.messenger.g0.L(6.0f)) - (org.telegram.messenger.g0.L(26.0f) * abs2);
-                float f72 = org.telegram.ui.Cells.y0.f(org.telegram.messenger.g0.L(13.0f), abs3, org.telegram.messenger.g0.L(f69), f67, f61);
+                float g11 = org.telegram.ui.Cells.c0.g(org.telegram.messenger.g0.L(13.0f), abs3, org.telegram.messenger.g0.L(f69), f67, f61);
                 float min2 = Math.min(1.0f, f68 / 0.35f);
                 f22 = f60;
                 f57 = 1.0f;
                 float C2 = com.google.android.gms.internal.vision.e2.C(min2, 2.0f, f69, min2 * min2);
                 float z12 = com.google.android.gms.internal.vision.e2.z(cos, L8, C2, L8);
-                f25 = com.google.android.gms.internal.vision.e2.z(sin, f72, C2, f72);
+                f25 = com.google.android.gms.internal.vision.e2.z(sin, g11, C2, g11);
                 f24 = z12;
                 f23 = abs2;
             } else {
@@ -302,52 +306,52 @@ public final class s2 extends View {
                 f20 = uptimeMillis;
                 f21 = 0.4f;
                 f22 = f60;
-                float f73 = (f66 - 0.55f) / 0.45f;
-                float f74 = f57 - f73;
-                float f75 = f57 - (f74 * f74);
-                float L9 = (org.telegram.messenger.g0.L(16.0f) * f75) + org.telegram.messenger.g0.L(3.0f) + f16;
-                double d11 = (f57 - f75) * f67 * 0.55f * 3.1415927f;
+                float f71 = (f66 - 0.55f) / 0.45f;
+                float f72 = f57 - f71;
+                float f73 = f57 - (f72 * f72);
+                float L9 = (org.telegram.messenger.g0.L(16.0f) * f73) + org.telegram.messenger.g0.L(3.0f) + f16;
+                double d10 = (f57 - f73) * f67 * 0.55f * 3.1415927f;
                 f23 = abs2;
-                float cos2 = (((float) Math.cos(d11)) * L9) + f19;
-                float x10 = org.telegram.ui.Cells.y0.x((float) Math.sin(d11), L9, 0.7f, f61);
-                float f76 = f73 * f73;
-                float L10 = cos2 + ((((org.telegram.messenger.g0.L(26.0f) * f23) + (f12 + org.telegram.messenger.g0.L(8.0f))) - cos2) * f76);
-                float L11 = (((((abs3 - 0.5f) * org.telegram.messenger.g0.L(4.0f)) + (f22 - org.telegram.messenger.g0.L(6.0f))) - x10) * f76) + x10;
+                float cos2 = (((float) Math.cos(d10)) * L9) + f19;
+                float z13 = org.telegram.ui.Cells.c0.z((float) Math.sin(d10), L9, 0.7f, f61);
+                float f74 = f71 * f71;
+                float L10 = cos2 + ((((org.telegram.messenger.g0.L(26.0f) * f23) + (f12 + org.telegram.messenger.g0.L(8.0f))) - cos2) * f74);
+                float L11 = (((((abs3 - 0.5f) * org.telegram.messenger.g0.L(4.0f)) + (f22 - org.telegram.messenger.g0.L(6.0f))) - z13) * f74) + z13;
                 f24 = L10;
                 f25 = L11;
             }
             float sin2 = (float) Math.sin(f66 * 3.141592653589793d);
             i13 = i15;
-            int f77 = i0.a.f((abs3 * 0.25f) + 0.12f, i13, -1);
+            int f75 = i0.a.f((abs3 * 0.25f) + 0.12f, i13, -1);
             Paint paint3 = this.d;
-            paint3.setColor(f77);
-            boolean z13 = f23 > 0.87f;
-            if (z13) {
-                d = org.telegram.messenger.g0.N(1.1f);
+            paint3.setColor(f75);
+            boolean z14 = f23 > 0.87f;
+            if (z14) {
+                e10 = org.telegram.messenger.g0.N(1.1f);
                 f26 = 0.6f;
             } else {
                 f26 = 0.6f;
-                d = org.telegram.ui.Cells.y0.d(0.6f, f23, org.telegram.messenger.g0.N(0.5f));
+                e10 = org.telegram.ui.Cells.c0.e(0.6f, f23, org.telegram.messenger.g0.N(0.5f));
             }
-            float f78 = d;
-            if (z13) {
+            float f76 = e10;
+            if (z14) {
                 float sin3 = (((float) Math.sin((f20 * 6.0f) + i14)) * f21) + f26;
                 paint3.setAlpha((int) (70.0f * sin2 * sin3));
-                canvas2.drawCircle(f24, f25, 3.2f * f78, paint3);
+                canvas2.drawCircle(f24, f25, 3.2f * f76, paint3);
                 paint3.setAlpha((int) (sin2 * 255.0f * sin3));
                 f28 = 0.6f;
                 paint3.setStrokeWidth(org.telegram.messenger.g0.N(0.6f));
                 f30 = 3.0f;
-                float f79 = f78 * 3.0f * sin3;
+                float f77 = f76 * 3.0f * sin3;
                 i10 = i14;
-                float f80 = f25;
+                float f78 = f25;
                 f29 = f19;
-                canvas2.drawLine(f24 - f79, f80, f24 + f79, f25, paint3);
-                float f81 = f24;
+                canvas2.drawLine(f24 - f77, f78, f24 + f77, f25, paint3);
+                float f79 = f24;
                 f27 = f24;
-                f31 = f80;
+                f31 = f78;
                 canvas2 = canvas;
-                canvas2.drawLine(f27, f80 - f79, f81, f80 + f79, paint3);
+                canvas2.drawLine(f27, f78 - f77, f79, f78 + f77, paint3);
             } else {
                 i10 = i14;
                 f27 = f24;
@@ -357,7 +361,7 @@ public final class s2 extends View {
                 f31 = f25;
             }
             paint3.setAlpha((int) com.google.android.gms.internal.vision.e2.B(f23, 0.55f, 0.45f, sin2 * 255.0f));
-            canvas2.drawCircle(f27, f31, f78, paint3);
+            canvas2.drawCircle(f27, f31, f76, paint3);
             i14 = i10 + 1;
             f64 = f29;
             f60 = f22;
@@ -365,11 +369,11 @@ public final class s2 extends View {
             uptimeMillis = f20;
             f18 = f28;
         }
-        float f82 = f64;
-        canvas2.drawCircle(f82, f61, f16, this.a);
+        float f80 = f64;
+        canvas2.drawCircle(f80, f61, f16, this.a);
         float L12 = org.telegram.messenger.g0.L(30.0f) / 2.0f;
         Drawable drawable = this.f;
-        drawable.setBounds((int) (f82 - L12), (int) (f61 - L12), (int) (f82 + L12), (int) (f61 + L12));
+        drawable.setBounds((int) (f80 - L12), (int) (f61 - L12), (int) (f80 + L12), (int) (f61 + L12));
         drawable.draw(canvas2);
         invalidate();
     }

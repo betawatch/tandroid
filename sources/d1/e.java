@@ -1,6 +1,6 @@
 package d1;
 
-import a8.o9;
+import a8.p9;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -35,7 +35,7 @@ import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import q7.s0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends b1.d {
     public final Context e;
@@ -152,7 +152,7 @@ public final class e extends b1.d {
             }
         }
         JSONObject jSONObject = new JSONObject(str2);
-        byte[] a10 = o9.a(jSONObject);
+        byte[] a10 = p9.a(jSONObject);
         JSONObject jSONObject2 = jSONObject.getJSONObject("user");
         String str3 = "id";
         String string = jSONObject2.getString("id");

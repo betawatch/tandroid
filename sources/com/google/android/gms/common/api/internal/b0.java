@@ -3,7 +3,7 @@ package com.google.android.gms.common.api.internal;
 import android.os.Bundle;
 import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final /* synthetic */ c0 a;
@@ -15,9 +15,9 @@ public final class b0 implements com.google.android.gms.common.api.k, com.google
     @Override // com.google.android.gms.common.api.k
     public final void onConnected(Bundle bundle) {
         c0 c0Var = this.a;
-        q6.m.g(c0Var.I);
+        q6.m.h(c0Var.I);
         r8.a aVar = c0Var.w;
-        q6.m.g(aVar);
+        q6.m.h(aVar);
         aVar.B(new a0(c0Var));
     }
 
@@ -30,7 +30,7 @@ public final class b0 implements com.google.android.gms.common.api.k, com.google
         try {
             if (c0Var.x && !aVar.b()) {
                 c0Var.g();
-                c0Var.d();
+                c0Var.c();
             } else {
                 c0Var.h(aVar);
             }

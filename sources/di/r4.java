@@ -1,151 +1,113 @@
 package di;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.RectF;
-import android.opengl.Matrix;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.Components.er;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r4 {
-    public final s4 a;
-    public ai.r d;
-    public int f;
+public final class r4 extends Drawable {
+    public final Paint a;
+    public final LinearGradient[] b;
+    public final Matrix c;
+    public final org.telegram.ui.Components.c6 d;
+    public final Path e;
+    public final ec f;
     public int g;
-    public float j;
-    public float k;
-    public final ArrayList b = new ArrayList();
-    public int c = 0;
-    public boolean e = false;
-    public final float[] h = new float[16];
-    public float[] i = new float[16];
-    public boolean l = false;
+    public int h;
 
-    public r4(s4 s4Var) {
-        this.a = s4Var;
+    public r4() {
+        Paint paint = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.a = new Paint(1);
+        this.b = new LinearGradient[2];
+        this.c = new Matrix();
+        this.d = new org.telegram.ui.Components.c6(1.0f, new ca.r(this, 19), 0L, 420L, lr.h);
+        this.e = new Path();
+        this.f = new ec(1, 45);
+        Paint.Style style = Paint.Style.STROKE;
+        paint.setStyle(style);
+        paint.setColor(117440511);
+        paint.setStrokeWidth(org.telegram.messenger.g0.N(1.0f));
+        paint2.setStyle(style);
+        paint2.setColor(301989887);
+        paint2.setStrokeWidth(org.telegram.messenger.g0.N(0.6666667f));
     }
 
-    public final void a(int i7) {
-        this.b.add(new q4(3, 0.0f, 0.0f, i7, -1, 0.0f, null, null));
-    }
-
-    public final void b() {
-        ai.r rVar;
-        boolean z10 = this.e;
-        s4 s4Var = this.a;
-        if (!z10) {
-            int i7 = this.c;
-            ArrayList arrayList = this.b;
-            if (i7 < arrayList.size()) {
-                q4 q4Var = (q4) arrayList.get(this.c);
-                this.c++;
-                int i10 = q4Var.a;
-                int i11 = q4Var.e;
-                float f10 = q4Var.b;
-                int i12 = q4Var.d;
-                int c10 = p1.g.c(i10);
-                if (c10 == 0) {
-                    Runnable runnable = q4Var.h;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    b();
-                    return;
-                }
-                if (c10 == 1) {
-                    s4Var.d = (q4Var.c * 0.01f) + s4Var.d;
-                    s4Var.e = (f10 * 0.01f) + s4Var.e;
-                    this.f = 1;
-                    this.g = 1;
-                    return;
-                }
-                if (c10 == 2) {
-                    this.f = i12;
-                    this.g = i12;
-                    return;
-                }
-                if (c10 == 3) {
-                    System.arraycopy(s4Var.c, 0, this.h, 0, 16);
-                    float f11 = q4Var.f;
-                    float[] fArr = new float[16];
-                    Matrix.setIdentityM(fArr, 0);
-                    if (f11 != 0.0f) {
-                        Matrix.rotateM(fArr, 0, -f11, 0.0f, 0.0f, 1.0f);
-                    }
-                    if (i11 == 0) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i11 == 1) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 0.0f, 1.0f, 0.0f);
-                    } else if (i11 == 2) {
-                        Matrix.rotateM(fArr, 0, 90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i11 == 3) {
-                        Matrix.rotateM(fArr, 0, -90.0f, 1.0f, 0.0f, 0.0f);
-                    } else if (i11 == 4) {
-                        Matrix.rotateM(fArr, 0, 180.0f, 0.0f, 1.0f, 0.0f);
-                    }
-                    this.i = fArr;
-                    this.g = i12;
-                    this.f = i12;
-                    this.j = s4Var.d;
-                    this.k = s4Var.e;
-                    return;
-                }
-                if (c10 != 4) {
-                    if (c10 != 5) {
-                        return;
-                    }
-                    s4Var.f = f10 > 0.0f;
-                    b();
-                    return;
-                }
-                this.l = true;
-                View view = q4Var.g;
-                ValueAnimator valueAnimator = s4Var.H;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    s4Var.H = null;
-                }
-                RectF rectF = new RectF();
-                rectF.left = view.getX() - s4Var.getX();
-                rectF.top = view.getY() - s4Var.getY();
-                rectF.right = rectF.left + view.getWidth();
-                rectF.bottom = rectF.top + view.getHeight();
-                org.telegram.messenger.g0.E2(view);
-                int childCount = s4Var.getChildCount();
-                s4Var.addView(view, c8.ja.e(64, 64, 17));
-                s4Var.w.add(Integer.valueOf(i11));
-                s4Var.x.put(Integer.valueOf(childCount), Integer.valueOf(i11));
-                s4Var.y.put(Integer.valueOf(childCount), rectF);
-                s4Var.G = childCount;
-                s4Var.F = 0.0f;
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                s4Var.H = ofFloat;
-                ofFloat.addUpdateListener(new ah.h(s4Var, 7));
-                s4Var.H.addListener(new ai.j0(s4Var, 6));
-                s4Var.H.setDuration(i12 * 16);
-                s4Var.H.setInterpolator(er.h);
-                s4Var.H.start();
-                return;
-            }
-        }
-        s4Var.I = null;
-        if (this.e || (rVar = this.d) == null) {
+    public final void a(int i7, int i10) {
+        if (this.g == i7 && this.h == i10) {
             return;
         }
-        rVar.run();
+        LinearGradient[] linearGradientArr = this.b;
+        linearGradientArr[0] = linearGradientArr[1];
+        this.g = i7;
+        this.h = i10;
+        linearGradientArr[1] = new LinearGradient(0.0f, 0.0f, 100.0f, 0.0f, new int[]{i7, i10}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.d.e(true, 0.0f);
+        invalidateSelf();
     }
 
-    public final void c(float f10, float f11) {
-        this.b.add(new q4(2, f10, f11, 0, -1, 0.0f, null, null));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        org.telegram.messenger.g0.P.set(getBounds());
+        float L = org.telegram.messenger.g0.L(24.0f);
+        int i7 = 0;
+        float e10 = this.d.e(false, 1.0f);
+        while (true) {
+            LinearGradient[] linearGradientArr = this.b;
+            if (i7 >= linearGradientArr.length) {
+                Path path = this.e;
+                path.rewind();
+                RectF rectF = org.telegram.messenger.g0.P;
+                path.addRoundRect(rectF, L, L, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                ec ecVar = this.f;
+                ecVar.g(rectF);
+                ecVar.h = 30.0f;
+                ecVar.d();
+                ecVar.a(canvas, org.telegram.ui.ActionBar.n6.r1(0.6f, -1));
+                invalidateSelf();
+                canvas.restore();
+                org.telegram.messenger.g0.P(canvas, rectF, L);
+                return;
+            }
+            if (linearGradientArr[i7] != null) {
+                float pow = (float) Math.pow(1.0f - Math.abs(i7 - e10), 0.5d);
+                if (pow > 0.0f) {
+                    Matrix matrix = this.c;
+                    matrix.reset();
+                    RectF rectF2 = org.telegram.messenger.g0.P;
+                    matrix.postScale(rectF2.width() / 100.0f, 1.0f);
+                    linearGradientArr[i7].setLocalMatrix(matrix);
+                    LinearGradient linearGradient = linearGradientArr[i7];
+                    Paint paint = this.a;
+                    paint.setShader(linearGradient);
+                    paint.setAlpha((int) (pow * 255.0f));
+                    canvas.drawRoundRect(rectF2, L, L, paint);
+                }
+            }
+            i7++;
+        }
     }
 
-    public final void d(boolean z10) {
-        this.b.add(new q4(6, z10 ? 1.0f : -1.0f, 0.0f, 0, -1, 0.0f, null, null));
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public final void e(w4 w4Var, int i7, float f10) {
-        this.b.add(new q4(5, 0.0f, 0.0f, 32, i7, f10, w4Var, null));
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

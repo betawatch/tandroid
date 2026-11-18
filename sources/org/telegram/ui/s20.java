@@ -1,31 +1,19 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class s20 implements br0 {
-    public final /* synthetic */ c40 a;
+public final class s20 extends AnimatorListenerAdapter {
+    public final /* synthetic */ f40 a;
 
-    public s20(c40 c40Var) {
-        this.a = c40Var;
+    public s20(f40 f40Var) {
+        this.a = f40Var;
     }
 
-    @Override // org.telegram.ui.br0
-    public final void G0(org.telegram.messenger.gj gjVar) {
-        c40 c40Var = this.a;
-        c40Var.L1.I0(true);
-        c40Var.b4.f.K0(org.telegram.messenger.g0.L(13.0f), org.telegram.messenger.g0.L(13.0f), 0, 0);
-        c40Var.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.br0
-    public final void I(org.telegram.messenger.gj gjVar) {
-        this.a.b.invalidate();
-    }
-
-    @Override // org.telegram.ui.br0
-    public final /* synthetic */ TextureView g0() {
-        return null;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.S2 = null;
     }
 }

@@ -5,19 +5,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.telephony.TelephonyManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class CallReceiver extends BroadcastReceiver {
     public static final /* synthetic */ int a = 0;
 
     public static void a() {
         String str = null;
-        String string = gz.q().getString("last_call_phone_number", null);
-        if (string != null && System.currentTimeMillis() - gz.q().getLong("last_call_time", 0L) < 54000000) {
+        String string = bz.q().getString("last_call_phone_number", null);
+        if (string != null && System.currentTimeMillis() - bz.q().getLong("last_call_time", 0L) < 54000000) {
             str = string;
         }
         if (str != null) {
-            ns.e().k(ns.h4, str);
+            ks.e().k(ks.j4, str);
         }
     }
 
@@ -25,8 +25,8 @@ public class CallReceiver extends BroadcastReceiver {
     public final void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.PHONE_STATE") && TelephonyManager.EXTRA_STATE_RINGING.equals(intent.getStringExtra("state"))) {
             String d = pf.b.d(intent.getStringExtra("incoming_number"), false);
-            gz.q().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
-            ns.e().k(ns.h4, d);
+            bz.q().edit().putString("last_call_phone_number", d).putLong("last_call_time", System.currentTimeMillis()).apply();
+            ks.e().k(ks.j4, d);
         }
     }
 }

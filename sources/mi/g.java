@@ -6,61 +6,61 @@ import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.t3;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n5;
+import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.i9;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.t8;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
-import v4.p0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.b9;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q9;
+import org.telegram.ui.Components.z41;
+import v4.q0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g extends a41 {
+public final class g extends k41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        a41.h(new g());
+        k41.h(new g());
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
         h hVar = (h) view;
-        f fVar = (f) b41Var.G;
+        f fVar = (f) l41Var.H;
         TLRPC.User user = fVar.b;
         long j3 = fVar.a;
-        e eVar = (e) b41Var.H;
+        e eVar = (e) l41Var.I;
         boolean z11 = fVar.c;
-        boolean z12 = !b41Var.j;
-        i9 i9Var = hVar.c;
+        boolean z12 = !l41Var.j;
+        q9 q9Var = hVar.c;
         TextView textView = hVar.n;
         TextView textView2 = hVar.d;
         hVar.F = eVar;
         hVar.G = j3;
         hVar.H = user.id;
         int i7 = hVar.b;
-        TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
-        TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(j3));
-        hVar.f.setText(m5.l(m10.t0, j3));
-        hVar.h.setText(g0.Q2(hd.a0(null, null, a22 != null ? 2131751898 : t3.V(M0) ? 2131751897 : 2131751896, m5.u(user)), j6.Zl, null, new o(21), false));
-        if (a22 != null) {
+        TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+        TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+        hVar.f.setText(n5.l(j10.t0, j3));
+        hVar.h.setText(g0.Q2(gd.a0(null, null, c22 != null ? 2131751887 : v3.V(O0) ? 2131751886 : 2131751885, n5.u(user)), n6.Zl, null, new o(23), false));
+        if (c22 != null) {
             textView2.setVisibility(8);
-        } else if (M0 == null || M0.participants_count <= 0) {
+        } else if (O0 == null || O0.participants_count <= 0) {
             textView2.setVisibility(8);
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("* ");
             spannableStringBuilder.setSpan(hVar.s, 0, 1, 33);
-            long j10 = M0.participants_count;
-            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? hd.E(j10, ',') : g0.o0((int) j10, 1000000)));
+            long j10 = O0.participants_count;
+            spannableStringBuilder.append((CharSequence) (j10 < 1000000 ? gd.E(j10, ',') : g0.o0((int) j10, 1000000)));
             textView2.setText(spannableStringBuilder);
             textView2.setVisibility(0);
         }
@@ -70,26 +70,26 @@ public final class g extends a41 {
             textView.setVisibility(8);
         }
         hVar.y = z12;
-        if (a22 != null) {
-            i9Var.f(a22, new t8(0, a22));
+        if (c22 != null) {
+            q9Var.f(c22, new b9(0, c22));
         } else {
-            i9Var.f(M0, new t8(M0));
+            q9Var.f(O0, new b9(O0));
         }
-        hVar.e.f(user, new t8(0, user));
+        hVar.e.f(user, new b9(0, user));
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        h hVar = new h(i7, context, e6Var);
-        hVar.setLayoutParams(new p0(-1, -2));
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        h hVar = new h(i7, context, i6Var);
+        hVar.setLayoutParams(new q0(-1, -2));
         hVar.setClickable(false);
         return hVar;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final boolean e(b41 b41Var, b41 b41Var2) {
-        f fVar = (f) b41Var.G;
-        f fVar2 = (f) b41Var2.G;
-        return fVar.a == fVar2.a && m5.d(fVar.b) == m5.d(fVar2.b);
+    @Override // org.telegram.ui.Components.k41
+    public final boolean e(l41 l41Var, l41 l41Var2) {
+        f fVar = (f) l41Var.H;
+        f fVar2 = (f) l41Var2.H;
+        return fVar.a == fVar2.a && n5.d(fVar.b) == n5.d(fVar2.b);
     }
 }

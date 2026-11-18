@@ -1,21 +1,21 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b implements i1 {
     public boolean E;
     public boolean F;
-    public x2.f0 H;
+    public x2.g0 H;
     public a3.s I;
     public final int b;
     public m1 d;
     public int e;
-    public m2.j f;
+    public m2.i f;
     public h2.g0 h;
     public int n;
-    public x2.b1 r;
+    public x2.d1 r;
     public e2.u[] s;
     public long w;
     public long x;
@@ -29,9 +29,9 @@ public abstract class b implements i1 {
     }
 
     public final int B(long j3) {
-        x2.b1 b1Var = this.r;
-        b1Var.getClass();
-        return b1Var.n(j3 - this.w);
+        x2.d1 d1Var = this.r;
+        d1Var.getClass();
+        return d1Var.j(j3 - this.w);
     }
 
     public abstract int C(e2.u uVar);
@@ -91,10 +91,10 @@ public abstract class b implements i1 {
     public abstract void p(long j3, boolean z10, boolean z11);
 
     public final int w(k8.a aVar, k2.h hVar, int i7) {
-        x2.b1 b1Var = this.r;
-        b1Var.getClass();
-        int q10 = b1Var.q(aVar, hVar, i7);
-        if (q10 == -4) {
+        x2.d1 d1Var = this.r;
+        d1Var.getClass();
+        int m10 = d1Var.m(aVar, hVar, i7);
+        if (m10 == -4) {
             if (hVar.isEndOfStream()) {
                 this.y = Long.MIN_VALUE;
                 return this.E ? -4 : -3;
@@ -102,9 +102,9 @@ public abstract class b implements i1 {
             long j3 = hVar.e + this.w;
             hVar.e = j3;
             this.y = Math.max(this.y, j3);
-            return q10;
+            return m10;
         }
-        if (q10 == -5) {
+        if (m10 == -5) {
             e2.u uVar = (e2.u) aVar.c;
             uVar.getClass();
             long j10 = uVar.x;
@@ -114,21 +114,21 @@ public abstract class b implements i1 {
                 aVar.c = new e2.u(a10);
             }
         }
-        return q10;
+        return m10;
     }
 
     public abstract void x(long j3, long j10);
 
-    public final void y(e2.u[] uVarArr, x2.b1 b1Var, long j3, long j10, x2.f0 f0Var) {
-        ja.p(!this.E);
-        this.r = b1Var;
-        this.H = f0Var;
+    public final void y(e2.u[] uVarArr, x2.d1 d1Var, long j3, long j10, x2.g0 g0Var) {
+        la.p(!this.E);
+        this.r = d1Var;
+        this.H = g0Var;
         if (this.y == Long.MIN_VALUE) {
             this.y = j3;
         }
         this.s = uVarArr;
         this.w = j10;
-        u(uVarArr, j3, j10, f0Var);
+        u(uVarArr, j3, j10, g0Var);
     }
 
     public final void z(long j3, boolean z10, boolean z11) {
@@ -169,6 +169,6 @@ public abstract class b implements i1 {
     public void o(boolean z10, boolean z11) {
     }
 
-    public void u(e2.u[] uVarArr, long j3, long j10, x2.f0 f0Var) {
+    public void u(e2.u[] uVarArr, long j3, long j10, x2.g0 g0Var) {
     }
 }

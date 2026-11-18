@@ -1,23 +1,13 @@
 package c8;
 
-import android.os.Build;
-import android.widget.EdgeEffect;
+import android.text.InputFilter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class lc {
-    public static float a(EdgeEffect edgeEffect) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            return u0.c.b(edgeEffect);
-        }
-        return 0.0f;
-    }
+    public abstract InputFilter[] a(InputFilter[] inputFilterArr);
 
-    public static float b(EdgeEffect edgeEffect, float f10, float f11) {
-        if (Build.VERSION.SDK_INT >= 31) {
-            return u0.c.c(edgeEffect, f10, f11);
-        }
-        u0.b.a(edgeEffect, f10, f11);
-        return f10;
-    }
+    public abstract void b(boolean z10);
+
+    public abstract void c(boolean z10);
 }

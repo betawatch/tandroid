@@ -1,8 +1,8 @@
 package i9;
 
-import a8.ja;
+import a8.la;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c extends d {
     /* JADX WARN: Illegal instructions before constructor call */
@@ -12,13 +12,13 @@ public final class c extends d {
     public c(String str, String str2) {
         super(new a(str, r3), (Character) '=');
         char[] charArray = str2.toCharArray();
-        ja.f(charArray.length == 64);
+        la.f(charArray.length == 64);
     }
 
     @Override // i9.d
     public final void b(StringBuilder sb2, byte[] bArr, int i7) {
         int i10 = 0;
-        ja.n(0, i7, bArr.length);
+        la.n(0, i7, bArr.length);
         for (int i11 = i7; i11 >= 3; i11 -= 3) {
             int i12 = i10 + 2;
             int i13 = ((bArr[i10 + 1] & 255) << 8) | ((bArr[i10] & 255) << 16);

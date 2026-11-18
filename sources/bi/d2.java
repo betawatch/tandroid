@@ -1,25 +1,50 @@
 package bi;
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d2 extends org.telegram.ui.Components.e5 {
-    public final /* synthetic */ e2 N;
+public final /* synthetic */ class d2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j3 b;
+    public final /* synthetic */ x10 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d2(e2 e2Var, ViewGroup viewGroup, int i7) {
-        super(i7, viewGroup);
-        this.N = e2Var;
+    public /* synthetic */ d2(j3 j3Var, x10 x10Var, int i7) {
+        this.a = i7;
+        this.b = j3Var;
+        this.c = x10Var;
     }
 
-    @Override // org.telegram.ui.Components.e5, org.telegram.ui.Components.m5
-    public final void invalidate() {
-        super.invalidate();
-        Drawable drawable = this.N;
-        if (drawable.getCallback() != null) {
-            drawable.getCallback().invalidateDrawable(drawable);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j3 j3Var = this.b;
+                x10 x10Var = this.c;
+                if (x10Var != null) {
+                    j3Var.getClass();
+                    x10Var.a(Boolean.FALSE);
+                }
+                j3Var.dismiss();
+                break;
+            case 1:
+                j3 j3Var2 = this.b;
+                x10 x10Var2 = this.c;
+                if (x10Var2 != null) {
+                    j3Var2.getClass();
+                    x10Var2.a(Boolean.FALSE);
+                }
+                j3Var2.dismiss();
+                break;
+            default:
+                j3 j3Var3 = this.b;
+                x10 x10Var3 = this.c;
+                if (x10Var3 != null) {
+                    j3Var3.getClass();
+                    x10Var3.a(Boolean.FALSE);
+                }
+                j3Var3.dismiss();
+                break;
         }
     }
 }

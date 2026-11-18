@@ -25,10 +25,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.ou;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements Handler.Callback {
     public static final Status F = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -194,8 +194,8 @@ public final class g implements Handler.Callback {
         if (oVar != null && !oVar.b) {
             return false;
         }
-        int n02 = this.h.n0(203400000);
-        return n02 == -1 || n02 == 0;
+        int S = this.h.S(203400000);
+        return S == -1 || S == 0;
     }
 
     public final boolean g(n6.a aVar, int i7) {
@@ -233,7 +233,7 @@ public final class g implements Handler.Callback {
                 t b12 = u.b();
                 b12.d = new n6.c[]{n7.b.b};
                 b12.b = false;
-                b12.c = new ou(rVar, 23);
+                b12.c = new hn(rVar, 16);
                 dVar2.e(2, b12.a());
                 return true;
             }
@@ -278,7 +278,7 @@ public final class g implements Handler.Callback {
                 throw new ClassCastException();
             case 3:
                 for (l0 l0Var2 : concurrentHashMap.values()) {
-                    q6.m.c(l0Var2.o.y);
+                    q6.m.d(l0Var2.o.y);
                     l0Var2.m = null;
                     l0Var2.o();
                 }
@@ -370,7 +370,7 @@ public final class g implements Handler.Callback {
             case 9:
                 if (concurrentHashMap.containsKey(message.obj)) {
                     l0 l0Var4 = (l0) concurrentHashMap.get(message.obj);
-                    q6.m.c(l0Var4.o.y);
+                    q6.m.d(l0Var4.o.y);
                     if (l0Var4.k) {
                         l0Var4.o();
                         return true;
@@ -393,7 +393,7 @@ public final class g implements Handler.Callback {
                 if (concurrentHashMap.containsKey(message.obj)) {
                     l0 l0Var6 = (l0) concurrentHashMap.get(message.obj);
                     g gVar2 = l0Var6.o;
-                    q6.m.c(gVar2.y);
+                    q6.m.d(gVar2.y);
                     boolean z11 = l0Var6.k;
                     if (z11) {
                         if (z11) {
@@ -412,7 +412,7 @@ public final class g implements Handler.Callback {
             case 12:
                 if (concurrentHashMap.containsKey(message.obj)) {
                     l0 l0Var7 = (l0) concurrentHashMap.get(message.obj);
-                    q6.m.c(l0Var7.o.y);
+                    q6.m.d(l0Var7.o.y);
                     q6.d dVar = (q6.d) l0Var7.b;
                     if (dVar.s() && l0Var7.f.isEmpty()) {
                         a1 a1Var = l0Var7.d;
@@ -461,7 +461,7 @@ public final class g implements Handler.Callback {
                                     if (i12 >= length) {
                                         break;
                                     }
-                                    if (!q6.m.k(f10[i12], cVar2)) {
+                                    if (!q6.m.l(f10[i12], cVar2)) {
                                         i12++;
                                     } else if (i12 >= 0) {
                                         arrayList.add(e1Var2);

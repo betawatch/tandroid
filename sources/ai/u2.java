@@ -8,16 +8,15 @@ import android.location.LocationManager;
 import android.text.TextUtils;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import di.k7;
-import di.u8;
-import fi.b4;
-import fi.e3;
-import hi.h4;
-import hi.kb;
+import di.m7;
+import di.x8;
+import fi.c3;
+import fi.z3;
 import hi.lb;
 import hi.mb;
 import hi.nb;
-import hi.qb;
+import hi.ob;
+import hi.rb;
 import j$.util.DesugarTimeZone;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -26,35 +25,34 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ez;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.zy;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Cells.q8;
-import org.telegram.ui.Components.bc;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.t61;
-import org.telegram.ui.Components.u61;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Components.d71;
+import org.telegram.ui.Components.e71;
+import org.telegram.ui.Components.f71;
+import org.telegram.ui.Components.kc;
+import org.telegram.ui.Components.lc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.f60;
+import org.telegram.ui.a80;
+import org.telegram.ui.bn;
 import org.telegram.ui.gc;
 import org.telegram.ui.hc;
-import org.telegram.ui.pv0;
+import org.telegram.ui.rv0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u2 implements z10 {
+public final /* synthetic */ class u2 implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -66,15 +64,15 @@ public final /* synthetic */ class u2 implements z10 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x014c  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x0197 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // org.telegram.messenger.z10
+    /* JADX WARN: Removed duplicated region for block: B:75:0x014a  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0195 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    @Override // org.telegram.messenger.x10
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Object obj) {
         int[] iArr;
-        u61 u61Var;
+        e71 e71Var;
         r4 = false;
         boolean z10 = false;
         switch (this.a) {
@@ -82,33 +80,33 @@ public final /* synthetic */ class u2 implements z10 {
                 x2 x2Var = (x2) this.c;
                 Integer num = (Integer) obj;
                 if (this.b) {
-                    cc.a0(x2Var).Q(R.raw.ic_delete, 36, num + " local transcriptions deleted").j();
+                    lc.b0(x2Var).Q(R.raw.ic_delete, 36, gd.G(num.intValue(), "SpeechToTextTranscriptionsDeleted", new Object[0])).j();
                     break;
                 }
                 break;
             case 1:
-                u8 u8Var = (u8) this.c;
+                x8 x8Var = (x8) this.c;
                 HashSet hashSet = (HashSet) obj;
                 if (this.b) {
-                    ez.C(u8Var.a).f(new ArrayList(hashSet));
+                    zy.C(x8Var.a).f(new ArrayList(hashSet));
                     break;
                 } else {
-                    u8Var.getClass();
+                    x8Var.getClass();
                     break;
                 }
             case 2:
-                b4 b4Var = (b4) this.c;
+                z3 z3Var = (z3) this.c;
                 boolean z11 = this.b;
-                e3 e3Var = b4Var.M0;
-                e6 e6Var = b4Var.l0;
-                new cc(e3Var, e6Var).o(z11 ? bc.h : bc.e, e6Var).j();
+                c3 c3Var = z3Var.M0;
+                i6 i6Var = z3Var.l0;
+                new lc(c3Var, i6Var).o(z11 ? kc.h : kc.e, i6Var).j();
                 break;
             case 3:
-                z10 z10Var = (z10) this.c;
+                x10 x10Var = (x10) this.c;
                 boolean z12 = this.b;
                 Location location = (Location) obj;
                 if (location == null) {
-                    z10Var.a(null);
+                    x10Var.a(null);
                     break;
                 } else {
                     Activity activity = LaunchActivity.H1;
@@ -116,43 +114,43 @@ public final /* synthetic */ class u2 implements z10 {
                         activity = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
                     }
                     if (activity == null || activity.isFinishing()) {
-                        z10Var.a(null);
+                        x10Var.a(null);
                         break;
                     } else {
-                        org.telegram.ui.ActionBar.t1 t1Var = z12 ? new org.telegram.ui.ActionBar.t1(3, activity, new fi.b()) : null;
+                        org.telegram.ui.ActionBar.u1 u1Var = z12 ? new org.telegram.ui.ActionBar.u1(3, activity, new fi.b()) : null;
                         if (z12) {
-                            t1Var.r(200L);
+                            u1Var.r(200L);
                         }
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
-                        kb kbVar = new kb(z12, t1Var, z10Var, r4 ? 1 : 0);
+                        lb lbVar = new lb(z12, u1Var, x10Var, r4 ? 1 : 0);
                         Date date = new Date();
                         Calendar calendar = Calendar.getInstance(DesugarTimeZone.getTimeZone("UTC"));
                         calendar.setTime(date);
                         String str = Math.round(latitude * 1000.0d) + ":" + Math.round(longitude * 1000.0d) + "at" + (((calendar.getTimeInMillis() / 1000) / 60) / 60);
-                        if (qb.b == null || !TextUtils.equals(qb.a, str)) {
+                        if (rb.b == null || !TextUtils.equals(rb.a, str)) {
                             int[] iArr2 = new int[1];
-                            np s12 = np.s1(m10.t0);
-                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(m10.t0);
-                            String str2 = s12.W5;
-                            TLObject f22 = s12.f2(str2);
-                            TLRPC.User[] userArr = {f22 instanceof TLRPC.User ? (TLRPC.User) f22 : null};
-                            mb mbVar = new mb(s12, userArr, latitude, longitude, iArr2, connectionsManager, kbVar, str);
+                            mp u12 = mp.u1(j10.t0);
+                            ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+                            String str2 = u12.Y5;
+                            TLObject h22 = u12.h2(str2);
+                            TLRPC.User[] userArr = {h22 instanceof TLRPC.User ? (TLRPC.User) h22 : null};
+                            nb nbVar = new nb(u12, userArr, latitude, longitude, iArr2, connectionsManager, lbVar, str);
                             if (userArr[0] == 0) {
                                 TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                                 tL_contacts_resolveUsername.username = str2;
                                 iArr = iArr2;
-                                iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new k7(iArr2, s12, userArr, mbVar, kbVar, 1));
+                                iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new m7(iArr2, u12, userArr, nbVar, lbVar, 1));
                             } else {
                                 iArr = iArr2;
-                                mbVar.run();
+                                nbVar.run();
                             }
-                            r2 = new h4(17, iArr, connectionsManager);
+                            r2 = new hi.r1(19, iArr, connectionsManager);
                         } else {
-                            kbVar.a(qb.b);
+                            lbVar.a(rb.b);
                         }
                         if (z12 && r2 != null) {
-                            t1Var.setOnCancelListener(new lb(r2, r4 ? 1 : 0));
+                            u1Var.setOnCancelListener(new mb(r2, r4 ? 1 : 0));
                             break;
                         }
                     }
@@ -180,12 +178,12 @@ public final /* synthetic */ class u2 implements z10 {
                                     if (context != null) {
                                         try {
                                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-                                            int i7 = j6.L5;
-                                            alertDialog$Builder.m(R.raw.permission_request_location, 72, j6.x0(null, i7, false), null);
+                                            int i7 = n6.L5;
+                                            alertDialog$Builder.m(R.raw.permission_request_location, 72, n6.x0(null, i7, false), null);
                                             alertDialog$Builder.n(i7, null);
-                                            alertDialog$Builder.a.U = hd.M0(2131749530, null);
-                                            alertDialog$Builder.k(hd.M0(2131751160, null), new nb(context, r4 ? 1 : 0));
-                                            alertDialog$Builder.h(hd.M0(2131752589, null), null);
+                                            alertDialog$Builder.a.U = gd.M0(2131749355, null);
+                                            alertDialog$Builder.k(gd.M0(2131751149, null), new ob(context, r4 ? 1 : 0));
+                                            alertDialog$Builder.h(gd.M0(2131752578, null), null);
                                             alertDialog$Builder.p();
                                         } catch (Exception e10) {
                                             a8.g(e10, true);
@@ -193,9 +191,9 @@ public final /* synthetic */ class u2 implements z10 {
                                     }
                                 } else {
                                     try {
-                                        final z10[] z10VarArr = {u2Var};
+                                        final x10[] x10VarArr = {u2Var};
                                         final LocationListener[] locationListenerArr = {null};
-                                        LocationListener locationListener = new LocationListener() { // from class: hi.ob
+                                        LocationListener locationListener = new LocationListener() { // from class: hi.pb
                                             @Override // android.location.LocationListener
                                             public final void onLocationChanged(Location location3) {
                                                 LocationListener[] locationListenerArr2 = locationListenerArr;
@@ -204,11 +202,11 @@ public final /* synthetic */ class u2 implements z10 {
                                                     locationManager.removeUpdates(locationListener2);
                                                     locationListenerArr2[0] = null;
                                                 }
-                                                z10[] z10VarArr2 = z10VarArr;
-                                                z10 z10Var2 = z10VarArr2[0];
-                                                if (z10Var2 != null) {
-                                                    z10Var2.a(location3);
-                                                    z10VarArr2[0] = null;
+                                                x10[] x10VarArr2 = x10VarArr;
+                                                x10 x10Var2 = x10VarArr2[0];
+                                                if (x10Var2 != null) {
+                                                    x10Var2.a(location3);
+                                                    x10VarArr2[0] = null;
                                                 }
                                             }
                                         };
@@ -246,7 +244,7 @@ public final /* synthetic */ class u2 implements z10 {
                 gcVar.invalidate();
                 break;
             case 6:
-                an anVar = (an) this.c;
+                bn bnVar = (bn) this.c;
                 boolean z15 = this.b;
                 View view2 = (View) obj;
                 if (view2 instanceof org.telegram.ui.Cells.q1) {
@@ -254,26 +252,26 @@ public final /* synthetic */ class u2 implements z10 {
                     if (q1Var.W6 && q1Var.Y6) {
                         z10 = true;
                     }
-                    if (z10 != z15 && anVar.aa()) {
+                    if (z10 != z15 && bnVar.aa()) {
                         q1Var.W6 = z15;
-                        q1Var.Y6 = anVar.aa();
+                        q1Var.Y6 = bnVar.aa();
                         q1Var.F6 = true;
                         q1Var.forceLayout();
                         break;
                     }
-                } else if (view2 instanceof org.telegram.ui.Cells.t0) {
-                    ((org.telegram.ui.Cells.t0) view2).f0 = z15;
+                } else if (view2 instanceof org.telegram.ui.Cells.u0) {
+                    ((org.telegram.ui.Cells.u0) view2).f0 = z15;
                     break;
                 }
                 break;
             case 7:
-                v61 v61Var = (v61) this.c;
+                f71 f71Var = (f71) this.c;
                 boolean z16 = this.b;
                 View view3 = (View) obj;
-                v61Var.w.getClass();
+                f71Var.w.getClass();
                 int R = RecyclerView.R(view3);
-                if (view3 instanceof t61) {
-                    ((t61) view3).setReordering(z16 && (u61Var = v61Var.E) != null && ((cf) u61Var).l(R));
+                if (view3 instanceof d71) {
+                    ((d71) view3).setReordering(z16 && (e71Var = f71Var.E) != null && e71Var.h(R));
                     break;
                 }
                 break;
@@ -281,21 +279,21 @@ public final /* synthetic */ class u2 implements z10 {
                 View view4 = (View) this.c;
                 boolean z17 = this.b;
                 if (((Boolean) obj).booleanValue()) {
-                    ((q8) view4).setChecked(!z17);
+                    ((r8) view4).setChecked(!z17);
                     break;
                 }
                 break;
             case 9:
-                pv0 pv0Var = (pv0) this.c;
+                rv0 rv0Var = (rv0) this.c;
                 boolean z18 = this.b;
-                ProfileActivity profileActivity = pv0Var.b;
+                ProfileActivity profileActivity = rv0Var.b;
                 if (profileActivity.getParentActivity() != null) {
-                    cc.a0(profileActivity).o(z18 ? bc.h : bc.e, null).j();
+                    lc.b0(profileActivity).o(z18 ? kc.h : kc.e, null).j();
                     break;
                 }
                 break;
             case 10:
-                org.telegram.messenger.g0.h3(new f60((org.telegram.ui.web.k) this.c, (String) obj, this.b, 15));
+                org.telegram.messenger.g0.g3(new a80((org.telegram.ui.web.k) this.c, (String) obj, this.b, 14));
                 break;
             default:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.c;

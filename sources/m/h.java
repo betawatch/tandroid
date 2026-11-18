@@ -11,10 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import androidx.appcompat.widget.ActionMenuView;
+import hi.u5;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements l.x {
     public int E;
@@ -39,7 +40,7 @@ public final class h implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray I = new SparseBooleanArray();
-    public final ia.d N = new ia.d(this, 9);
+    public final u5 N = new u5(this, 12);
 
     public h(Context context) {
         this.a = context;
@@ -192,9 +193,22 @@ public final class h implements l.x {
         return z10;
     }
 
+    @Override // l.x
+    public final void d(l.k kVar, boolean z10) {
+        f();
+        d dVar = this.K;
+        if (dVar != null && dVar.b()) {
+            dVar.i.dismiss();
+        }
+        l.w wVar = this.e;
+        if (wVar != null) {
+            wVar.d(kVar, z10);
+        }
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     @Override // l.x
-    public final void d() {
+    public final void e() {
         int i7;
         ViewGroup viewGroup = (ViewGroup) this.n;
         ArrayList arrayList = null;
@@ -287,19 +301,6 @@ public final class h implements l.x {
             }
         }
         ((ActionMenuView) this.n).setOverflowReserved(this.x);
-    }
-
-    @Override // l.x
-    public final void e(l.k kVar, boolean z10) {
-        f();
-        d dVar = this.K;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
-        }
-        l.w wVar = this.e;
-        if (wVar != null) {
-            wVar.e(kVar, z10);
-        }
     }
 
     public final boolean f() {
@@ -436,7 +437,7 @@ public final class h implements l.x {
                 }
                 l.w wVar = this.e;
                 if (wVar != null) {
-                    wVar.y(d0Var);
+                    wVar.C(d0Var);
                 }
                 return true;
             }

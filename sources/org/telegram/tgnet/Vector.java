@@ -2,19 +2,19 @@ package org.telegram.tgnet;
 
 import j$.util.Objects;
 import java.util.ArrayList;
-import org.telegram.messenger.a20;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
+import org.telegram.messenger.y10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.lx0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class Vector<T extends TLObject> extends TLObject {
     public static final int constructor = 481674261;
     private final TLDeserializer<T> itemDeserializer;
     public final ArrayList<T> objects = new ArrayList<>();
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class Int extends TLObject {
         public int value;
 
@@ -37,7 +37,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class Long extends TLObject {
         public long value;
 
@@ -60,7 +60,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class Strings extends TLObject {
         public final ArrayList<String> values = new ArrayList<>();
 
@@ -78,7 +78,7 @@ public class Vector<T extends TLObject> extends TLObject {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     @FunctionalInterface
     public interface TLDeserializer<T extends TLObject> {
         T deserialize(InputSerializedData inputSerializedData, int i7, boolean z10);
@@ -103,7 +103,7 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "StarGift", i7, z10);
             return null;
         }
-        Vector<Int> vector = new Vector<>(new s(19));
+        Vector<Int> vector = new Vector<>(new s(20));
         vector.readParams(inputSerializedData, z10);
         return vector;
     }
@@ -113,7 +113,7 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "Vector", i7, z10);
             return null;
         }
-        Vector<Int> vector = new Vector<>(new s(19));
+        Vector<Int> vector = new Vector<>(new s(20));
         vector.readParams(inputSerializedData, z10);
         return vector;
     }
@@ -128,7 +128,7 @@ public class Vector<T extends TLObject> extends TLObject {
         return strings;
     }
 
-    private static <T> ArrayList<T> deserialize(InputSerializedData inputSerializedData, a20 a20Var, boolean z10) {
+    private static <T> ArrayList<T> deserialize(InputSerializedData inputSerializedData, y10 y10Var, boolean z10) {
         int readInt32 = inputSerializedData.readInt32(z10);
         if (readInt32 != 481674261) {
             TLParseException.doThrowOrLog(inputSerializedData, "Vector", readInt32, z10);
@@ -139,11 +139,11 @@ public class Vector<T extends TLObject> extends TLObject {
             TLParseException.doThrowOrLog(inputSerializedData, "VectorWrongSize", readInt32, z10);
             return new ArrayList<>();
         }
-        ex0 ex0Var = (ArrayList<T>) new ArrayList(readInt322);
+        lx0 lx0Var = (ArrayList<T>) new ArrayList(readInt322);
         for (int i7 = 0; i7 < readInt322; i7++) {
-            ex0Var.add(a20Var.a(Boolean.valueOf(z10)));
+            lx0Var.add(y10Var.a(Boolean.valueOf(z10)));
         }
-        return ex0Var;
+        return lx0Var;
     }
 
     public static ArrayList<byte[]> deserializeByteArray(InputSerializedData inputSerializedData, boolean z10) {
@@ -227,11 +227,11 @@ public class Vector<T extends TLObject> extends TLObject {
         return arrayList;
     }
 
-    public static <T> void serialize(OutputSerializedData outputSerializedData, z10 z10Var, ArrayList<T> arrayList) {
+    public static <T> void serialize(OutputSerializedData outputSerializedData, x10 x10Var, ArrayList<T> arrayList) {
         outputSerializedData.writeInt32(constructor);
         outputSerializedData.writeInt32(arrayList.size());
         for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            z10Var.a(arrayList.get(i7));
+            x10Var.a(arrayList.get(i7));
         }
     }
 

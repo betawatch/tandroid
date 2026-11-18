@@ -1,207 +1,159 @@
 package i0;
 
-import a0.l;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Typeface;
-import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Trace;
+import android.os.ParcelFileDescriptor;
+import android.system.ErrnoException;
+import android.system.Os;
+import android.system.OsConstants;
 import android.util.Log;
-import androidx.biometric.o;
-import c8.he;
-import c8.k0;
-import fi.f6;
-import h2.j0;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
+import c8.m0;
+import c8.n0;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import m9.u;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class f {
-    public static final k0 a;
-    public static final a0.j b;
+public class f extends m0 {
+    public static Class a = null;
+    public static Constructor b = null;
+    public static Method c = null;
+    public static Method d = null;
+    public static boolean e = false;
 
-    static {
-        he.a("TypefaceCompat static init");
-        int i7 = Build.VERSION.SDK_INT;
-        if (i7 >= 29) {
-            a = new k();
-        } else if (i7 >= 28) {
-            a = new j();
-        } else if (i7 >= 26) {
-            a = new i();
-        } else {
-            if (i7 >= 24) {
-                Method method = h.c;
-                if (method == null) {
-                    Log.w("TypefaceCompatApi24Impl", "Unable to collect necessary private methods.Fallback to legacy implementation.");
-                }
-                if (method != null) {
-                    a = new h();
-                }
+    public static boolean g(Object obj, String str, int i7, boolean z10) {
+        h();
+        try {
+            try {
+                return ((Boolean) c.invoke(obj, str, Integer.valueOf(i7), Boolean.valueOf(z10))).booleanValue();
+            } catch (InvocationTargetException e10) {
+                e = e10;
+                throw new RuntimeException(e);
             }
-            a = new g();
+        } catch (IllegalAccessException | InvocationTargetException e11) {
+            e = e11;
         }
-        b = new a0.j(16);
-        Trace.endSection();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0029, code lost:
-    
-        if (r1.equals(r5) == false) goto L15;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static Typeface a(Context context, h0.d dVar, Resources resources, int i7, String str, int i10, int i11, j0 j0Var) {
-        Typeface a10;
-        Typeface typeface;
-        List unmodifiableList;
-        int i12 = 18;
-        if (dVar instanceof h0.g) {
-            h0.g gVar = (h0.g) dVar;
-            String str2 = gVar.e;
-            a10 = null;
-            boolean z10 = false;
-            if (str2 != null && !str2.isEmpty()) {
-                typeface = Typeface.create(str2, 0);
-                Typeface create = Typeface.create(Typeface.DEFAULT, 0);
-                if (typeface != null) {
+    public static void h() {
+        Method method;
+        Class<?> cls;
+        Method method2;
+        if (e) {
+            return;
+        }
+        e = true;
+        Constructor<?> constructor = null;
+        try {
+            cls = Class.forName("android.graphics.FontFamily");
+            Constructor<?> constructor2 = cls.getConstructor(null);
+            method2 = cls.getMethod("addFontWeightStyle", String.class, Integer.TYPE, Boolean.TYPE);
+            method = Typeface.class.getMethod("createFromFamiliesWithDefault", Array.newInstance(cls, 1).getClass());
+            constructor = constructor2;
+        } catch (ClassNotFoundException | NoSuchMethodException e10) {
+            Log.e("TypefaceCompatApi21Impl", e10.getClass().getName(), e10);
+            method = null;
+            cls = null;
+            method2 = null;
+        }
+        b = constructor;
+        a = cls;
+        c = method2;
+        d = method;
+    }
+
+    @Override // c8.m0
+    public Typeface a(Context context, h0.e eVar, Resources resources, int i7) {
+        h();
+        try {
+            Object newInstance = b.newInstance(null);
+            for (h0.f fVar : eVar.a) {
+                File d2 = n0.d(context);
+                if (d2 == null) {
+                    return null;
                 }
-            }
-            typeface = null;
-            if (typeface != null) {
-                new Handler(Looper.getMainLooper()).post(new f6(i12, j0Var, typeface));
-                return typeface;
-            }
-            boolean z11 = gVar.d == 0;
-            int i13 = gVar.c;
-            Handler handler = new Handler(Looper.getMainLooper());
-            d6.i iVar = new d6.i(28);
-            iVar.b = j0Var;
-            o0.d dVar2 = gVar.b;
-            int i14 = 2;
-            if (dVar2 != null) {
-                Object[] objArr = {gVar.a, dVar2};
-                ArrayList arrayList = new ArrayList(2);
-                for (int i15 = 0; i15 < 2; i15++) {
-                    Object obj = objArr[i15];
-                    Objects.requireNonNull(obj);
-                    arrayList.add(obj);
-                }
-                unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-            } else {
-                Object[] objArr2 = {gVar.a};
-                ArrayList arrayList2 = new ArrayList(1);
-                Object obj2 = objArr2[0];
-                Objects.requireNonNull(obj2);
-                arrayList2.add(obj2);
-                unmodifiableList = DesugarCollections.unmodifiableList(arrayList2);
-            }
-            o oVar = new o(handler, 4);
-            k8.a aVar = new k8.a(iVar, oVar, z10, 6);
-            int i16 = 24;
-            if (!z11) {
-                String a11 = o0.g.a(i11, unmodifiableList);
-                Typeface typeface2 = (Typeface) o0.g.a.a(a11);
-                if (typeface2 != null) {
-                    oVar.execute(new u(i16, iVar, typeface2));
-                    a10 = typeface2;
-                } else {
-                    f5.u uVar = new f5.u(aVar, i14);
-                    synchronized (o0.g.c) {
-                        try {
-                            l lVar = o0.g.d;
-                            ArrayList arrayList3 = (ArrayList) lVar.get(a11);
-                            if (arrayList3 != null) {
-                                arrayList3.add(uVar);
-                            } else {
-                                ArrayList arrayList4 = new ArrayList();
-                                arrayList4.add(uVar);
-                                lVar.put(a11, arrayList4);
-                                o0.e eVar = new o0.e(a11, context, unmodifiableList, i11, 1);
-                                ThreadPoolExecutor threadPoolExecutor = o0.g.b;
-                                f5.u uVar2 = new f5.u(a11, 3);
-                                Handler handler2 = Looper.myLooper() == null ? new Handler(Looper.getMainLooper()) : new Handler();
-                                a9.h hVar = new a9.h();
-                                hVar.b = eVar;
-                                hVar.c = uVar2;
-                                hVar.d = handler2;
-                                threadPoolExecutor.execute(hVar);
-                            }
-                        } finally {
-                        }
+                try {
+                    if (!n0.b(d2, resources, fVar.f)) {
+                        return null;
                     }
+                    if (!g(newInstance, d2.getPath(), fVar.b, fVar.c)) {
+                        return null;
+                    }
+                    d2.delete();
+                } catch (RuntimeException unused) {
+                    return null;
+                } finally {
+                    d2.delete();
                 }
-            } else {
-                if (unmodifiableList.size() > 1) {
-                    throw new IllegalArgumentException("Fallbacks with blocking fetches are not supported for performance reasons");
-                }
-                o0.d dVar3 = (o0.d) unmodifiableList.get(0);
-                a0.j jVar = o0.g.a;
-                ArrayList arrayList5 = new ArrayList(1);
-                Object obj3 = new Object[]{dVar3}[0];
-                Objects.requireNonNull(obj3);
-                arrayList5.add(obj3);
-                String a12 = o0.g.a(i11, DesugarCollections.unmodifiableList(arrayList5));
-                Typeface typeface3 = (Typeface) o0.g.a.a(a12);
-                if (typeface3 != null) {
-                    oVar.execute(new u(i16, iVar, typeface3));
-                    a10 = typeface3;
-                } else if (i13 == -1) {
-                    Object[] objArr3 = {dVar3};
-                    ArrayList arrayList6 = new ArrayList(1);
-                    Object obj4 = objArr3[0];
-                    Objects.requireNonNull(obj4);
-                    arrayList6.add(obj4);
-                    o0.f b10 = o0.g.b(a12, context, DesugarCollections.unmodifiableList(arrayList6), i11);
-                    aVar.R0(b10);
-                    a10 = b10.a;
-                } else {
+            }
+            h();
+            try {
+                Object newInstance2 = Array.newInstance((Class<?>) a, 1);
+                Array.set(newInstance2, 0, newInstance);
+                return (Typeface) d.invoke(null, newInstance2);
+            } catch (IllegalAccessException | InvocationTargetException e10) {
+                throw new RuntimeException(e10);
+            }
+        } catch (IllegalAccessException | InstantiationException | InvocationTargetException e11) {
+            throw new RuntimeException(e11);
+        }
+    }
+
+    @Override // c8.m0
+    public Typeface b(Context context, o0.h[] hVarArr, int i7) {
+        File file;
+        String readlink;
+        if (hVarArr.length >= 1) {
+            try {
+                ParcelFileDescriptor openFileDescriptor = context.getContentResolver().openFileDescriptor(f(hVarArr, i7).a, "r", null);
+                if (openFileDescriptor != null) {
                     try {
                         try {
-                            try {
-                                o0.f fVar = (o0.f) o0.g.b.submit(new o0.e(a12, context, dVar3, i11, 0)).get(i13, TimeUnit.MILLISECONDS);
-                                aVar.R0(fVar);
-                                a10 = fVar.a;
-                            } catch (TimeoutException unused) {
-                                throw new InterruptedException("timeout");
-                            }
-                        } catch (InterruptedException e10) {
-                            throw e10;
-                        } catch (ExecutionException e11) {
-                            throw new RuntimeException(e11);
+                            readlink = Os.readlink("/proc/self/fd/" + openFileDescriptor.getFd());
+                        } finally {
                         }
-                    } catch (InterruptedException unused2) {
-                        ((o) aVar.c).execute(new j6.o((d6.i) aVar.b, -3));
+                    } catch (ErrnoException unused) {
                     }
+                    try {
+                        if (OsConstants.S_ISREG(Os.stat(readlink).st_mode)) {
+                            file = new File(readlink);
+                            if (file != null && file.canRead()) {
+                                Typeface createFromFile = Typeface.createFromFile(file);
+                                openFileDescriptor.close();
+                                return createFromFile;
+                            }
+                            FileInputStream fileInputStream = new FileInputStream(openFileDescriptor.getFileDescriptor());
+                            Typeface d2 = d(context, fileInputStream);
+                            fileInputStream.close();
+                            openFileDescriptor.close();
+                            return d2;
+                        }
+                        Typeface d22 = d(context, fileInputStream);
+                        fileInputStream.close();
+                        openFileDescriptor.close();
+                        return d22;
+                    } finally {
+                    }
+                    file = null;
+                    if (file != null) {
+                        Typeface createFromFile2 = Typeface.createFromFile(file);
+                        openFileDescriptor.close();
+                        return createFromFile2;
+                    }
+                    FileInputStream fileInputStream2 = new FileInputStream(openFileDescriptor.getFileDescriptor());
+                } else if (openFileDescriptor != null) {
+                    openFileDescriptor.close();
+                    return null;
                 }
-            }
-        } else {
-            a10 = a.a(context, (h0.e) dVar, resources, i11);
-            if (a10 != null) {
-                new Handler(Looper.getMainLooper()).post(new f6(i12, j0Var, a10));
-            } else {
-                j0Var.b();
+            } catch (IOException unused2) {
             }
         }
-        if (a10 != null) {
-            b.b(b(resources, i7, str, i10, i11), a10);
-        }
-        return a10;
-    }
-
-    public static String b(Resources resources, int i7, String str, int i10, int i11) {
-        return resources.getResourcePackageName(i7) + '-' + str + '-' + i10 + '-' + i7 + '-' + i11;
+        return null;
     }
 }

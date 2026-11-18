@@ -1,92 +1,140 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fm extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ org.telegram.messenger.gj V2;
-    public final /* synthetic */ lm W2;
+public final class fm extends vf.b {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ org.telegram.ui.Cells.z e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fm(lm lmVar, Activity activity, an anVar, ArrayList arrayList, boolean z10, boolean z11, org.telegram.ui.ActionBar.e6 e6Var, boolean z12, org.telegram.messenger.gj gjVar) {
-        super(activity, anVar, arrayList, null, null, z10, null, null, false, false, z11, null, e6Var);
-        this.W2 = lmVar;
-        this.V2 = gjVar;
-        this.W1 = z12;
+    public /* synthetic */ fm(Object obj, org.telegram.ui.Cells.z zVar, int i7) {
+        this.d = i7;
+        this.f = obj;
+        this.e = zVar;
     }
 
-    @Override // org.telegram.ui.Components.po0, org.telegram.ui.ActionBar.u2
-    public final void L() {
-        int i7;
-        an anVar = this.W2.a;
-        Activity parentActivity = anVar.getParentActivity();
-        i7 = ((org.telegram.ui.ActionBar.e2) anVar).classGuid;
-        org.telegram.messenger.g0.a3(parentActivity, i7);
-        super.L();
-        if (anVar.a0.getVisibility() == 0) {
-            anVar.fragmentView.requestLayout();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        lm lmVar = this.W2;
-        an anVar = lmVar.a;
-        int i10 = an.ld;
-        anVar.h8();
-        if (lmVar.a.N3 == null || !z10) {
-            return;
-        }
-        if (hVar.m() != 1) {
-            lmVar.a.N3.k(0L, 53, Integer.valueOf(i7), Integer.valueOf(hVar.m()), null, null);
-        } else {
-            if (((TLRPC.Dialog) hVar.n(0)).id == lmVar.a.getUserConfig().e() && org.telegram.ui.Components.cc.a0(lmVar.a).g0(i7, ((TLRPC.Dialog) hVar.n(0)).id)) {
-                return;
-            }
-            lmVar.a.N3.k(((TLRPC.Dialog) hVar.n(0)).id, 53, Integer.valueOf(i7), tL_forumTopic, null, null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.po0
-    public final void S0(final View view) {
-        an anVar = this.W2.a;
-        hi.la b10 = view instanceof org.telegram.ui.Cells.c7 ? hi.na.b((org.telegram.ui.Cells.c7) view) : null;
-        ArrayList arrayList = new ArrayList();
-        org.telegram.messenger.gj gjVar = this.V2;
-        org.telegram.messenger.bj bjVar = gjVar.c1() != 0 ? (org.telegram.messenger.bj) anVar.O6.f(gjVar.c1()) : null;
-        if (bjVar != null) {
-            arrayList.addAll(bjVar.d);
-        } else {
-            arrayList.add(gjVar);
-        }
-        final hi.sa D = hi.sa.D(anVar.getParentActivity(), this.a);
-        D.S = new org.telegram.messenger.w10() { // from class: org.telegram.ui.am
-            @Override // org.telegram.messenger.w10
-            public final void a(Object obj, Object obj2, Object obj3, Object obj4) {
-                Runnable runnable = (Runnable) obj2;
-                Long l10 = (Long) obj4;
-                boolean booleanValue = ((Boolean) obj3).booleanValue();
-                hi.sa saVar = D;
-                hi.la laVar = null;
-                if (booleanValue) {
-                    fm fmVar = fm.this;
-                    org.telegram.messenger.g0.h3(new zg(7, fmVar, l10));
-                    fmVar.dismiss();
-                    saVar.X(null);
-                } else {
-                    View view2 = view;
-                    if ((view2 instanceof org.telegram.ui.Cells.c7) && view2.isAttachedToWindow()) {
-                        laVar = hi.na.b((org.telegram.ui.Cells.c7) view2);
-                    }
-                    saVar.X(laVar);
+    @Override // vf.b
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 3), 250L);
+                    break;
                 }
-                org.telegram.messenger.g0.h3(runnable);
-            }
-        };
-        D.T(b10, hi.d7.y(arrayList));
+                break;
+            case 1:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 4), 250L);
+                    break;
+                }
+                break;
+            case 2:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 5), 250L);
+                    break;
+                }
+                break;
+            case 3:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 6), 250L);
+                    break;
+                }
+                break;
+            case 4:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 7), 250L);
+                    break;
+                }
+                break;
+            case 5:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new fj(((mm) this.f).a, 8), 250L);
+                    break;
+                }
+                break;
+            default:
+                if (!z10) {
+                    org.telegram.messenger.g0.h3(new ci(1, this, (org.telegram.ui.Cells.u0) this.e), 250L);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // vf.b
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                mm mmVar = (mm) this.f;
+                bn bnVar = mmVar.a;
+                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.e;
+                bnVar.ac = q1Var.getMessageObject().e1();
+                bn bnVar2 = mmVar.a;
+                bnVar2.bc = 2;
+                bnVar2.cc = null;
+                q1Var.invalidate();
+                break;
+            case 1:
+                mm mmVar2 = (mm) this.f;
+                bn bnVar3 = mmVar2.a;
+                org.telegram.ui.Cells.q1 q1Var2 = (org.telegram.ui.Cells.q1) this.e;
+                bnVar3.ac = q1Var2.getMessageObject().e1();
+                bn bnVar4 = mmVar2.a;
+                bnVar4.bc = 2;
+                bnVar4.cc = null;
+                q1Var2.invalidate();
+                break;
+            case 2:
+                mm mmVar3 = (mm) this.f;
+                bn bnVar5 = mmVar3.a;
+                org.telegram.ui.Cells.q1 q1Var3 = (org.telegram.ui.Cells.q1) this.e;
+                bnVar5.ac = q1Var3.getMessageObject().e1();
+                bn bnVar6 = mmVar3.a;
+                bnVar6.bc = 2;
+                bnVar6.cc = null;
+                q1Var3.invalidate();
+                break;
+            case 3:
+                mm mmVar4 = (mm) this.f;
+                bn bnVar7 = mmVar4.a;
+                org.telegram.ui.Cells.q1 q1Var4 = (org.telegram.ui.Cells.q1) this.e;
+                bnVar7.ac = q1Var4.getMessageObject().e1();
+                bn bnVar8 = mmVar4.a;
+                bnVar8.bc = 2;
+                bnVar8.cc = null;
+                q1Var4.invalidate();
+                break;
+            case 4:
+                mm mmVar5 = (mm) this.f;
+                bn bnVar9 = mmVar5.a;
+                org.telegram.ui.Cells.q1 q1Var5 = (org.telegram.ui.Cells.q1) this.e;
+                bnVar9.ac = q1Var5.getMessageObject().e1();
+                bn bnVar10 = mmVar5.a;
+                bnVar10.bc = 2;
+                bnVar10.cc = null;
+                q1Var5.invalidate();
+                break;
+            case 5:
+                mm mmVar6 = (mm) this.f;
+                bn bnVar11 = mmVar6.a;
+                org.telegram.ui.Cells.q1 q1Var6 = (org.telegram.ui.Cells.q1) this.e;
+                bnVar11.ac = q1Var6.getMessageObject().e1();
+                bn bnVar12 = mmVar6.a;
+                bnVar12.bc = 2;
+                bnVar12.cc = null;
+                q1Var6.invalidate();
+                break;
+            default:
+                fl flVar = (fl) this.f;
+                bn bnVar13 = flVar.a.R;
+                org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) this.e;
+                bnVar13.ac = u0Var.getMessageObject().e1();
+                bn bnVar14 = flVar.a.R;
+                bnVar14.bc = 4;
+                bnVar14.cc = null;
+                u0Var.getMessageObject().r = true;
+                u0Var.invalidate();
+                break;
+        }
     }
 }

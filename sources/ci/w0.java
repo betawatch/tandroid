@@ -6,9 +6,9 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.g5;
+import org.telegram.ui.Components.o5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class w0 {
     public TLRPC.Document A;
@@ -20,8 +20,8 @@ public final class w0 {
     public boolean G;
     public int a;
     public Drawable[] b;
-    public g5 c;
-    public g5 d;
+    public o5 c;
+    public o5 d;
     public Bitmap e;
     public Bitmap f;
     public long g;

@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.nio.channels.FileLock;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h1 implements id.g {
     public static final h1 a = new h1();
@@ -37,7 +37,7 @@ public final class h1 implements id.g {
                     }
                     j3 = o0Var.b;
                     fileOutputStream = o0Var.a;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     o0Var2 = o0Var;
                     j3 *= 2;
                     if (j3 <= 60000) {
@@ -62,7 +62,7 @@ public final class h1 implements id.g {
                     kotlin.jvm.internal.j.d(lock2, "lockFileStream.getChanne…LUE, /* shared= */ false)");
                     return lock2;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 j3 = 10;
                 o0Var2 = o0Var;
                 if (j3 <= 60000) {

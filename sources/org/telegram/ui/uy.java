@@ -1,118 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.style.ImageSpan;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class uy extends bz {
-    public final /* synthetic */ vy F;
+public final class uy extends ImageSpan {
+    public int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uy(vy vyVar, Context context, int i7, int i10) {
-        super(context, null, i7, i10);
-        this.F = vyVar;
-    }
-
-    @Override // org.telegram.ui.bz
-    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
-        vy vyVar = this.F;
-        vyVar.d.V1.remove(tL_exportedChatlistInvite);
-        vyVar.d.g1();
-        vyVar.d.h1(true);
-    }
-
-    @Override // org.telegram.ui.bz
-    public final void c() {
-        org.telegram.ui.Components.m60 F = org.telegram.ui.Components.m60.F(this.F.d.c, null, this);
-        final int i7 = 0;
-        F.c(R.drawable.msg_copy, org.telegram.messenger.hd.M0(2131751762, null), new Runnable(this) { // from class: org.telegram.ui.ty
-            public final /* synthetic */ uy b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i7) {
-                    case 0:
-                        uy uyVar = this.b;
-                        String str = uyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.cc(uyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, false);
-        final int i10 = 1;
-        F.c(R.drawable.msg_qrcode, org.telegram.messenger.hd.M0(2131750472, null), new Runnable(this) { // from class: org.telegram.ui.ty
-            public final /* synthetic */ uy b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i10) {
-                    case 0:
-                        uy uyVar = this.b;
-                        String str = uyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.cc(uyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, false);
-        final int i11 = 2;
-        F.c(R.drawable.msg_delete, org.telegram.messenger.hd.M0(2131751534, null), new Runnable(this) { // from class: org.telegram.ui.ty
-            public final /* synthetic */ uy b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // java.lang.Runnable
-            public final void run() {
-                switch (i11) {
-                    case 0:
-                        uy uyVar = this.b;
-                        String str = uyVar.y;
-                        if (str != null && org.telegram.messenger.g0.g(str)) {
-                            new org.telegram.ui.Components.cc(uyVar.F.d.W1, null).k(false).j();
-                            break;
-                        }
-                        break;
-                    case 1:
-                        this.b.d();
-                        break;
-                    default:
-                        this.b.a();
-                        break;
-                }
-            }
-        }, true);
-        if (org.telegram.messenger.hd.a0) {
-            F.i = 3;
+    @Override // android.text.style.DynamicDrawableSpan, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        if (paint.getColor() != this.a && getDrawable() != null) {
+            Drawable drawable = getDrawable();
+            int color = paint.getColor();
+            this.a = color;
+            drawable.setColorFilter(new PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
         }
-        F.Z();
+        super.draw(canvas, charSequence, i7, i10, f10, i11, i12, i13, paint);
     }
 }

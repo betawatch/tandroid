@@ -5,7 +5,7 @@ import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
@@ -15,11 +15,11 @@ public final class e {
     public final p e;
 
     public e(Context context, g6.b bVar, p pVar) {
-        String g10;
+        String h;
         ArrayList arrayList = bVar.b;
         String str = bVar.a;
         if (DesugarCollections.unmodifiableList(arrayList).isEmpty()) {
-            g10 = f6.y.a(str);
+            h = f6.y.a(str);
         } else {
             List unmodifiableList = DesugarCollections.unmodifiableList(bVar.b);
             if (str == null) {
@@ -28,12 +28,12 @@ public final class e {
             if (unmodifiableList == null) {
                 throw new IllegalArgumentException("namespaces cannot be null");
             }
-            g10 = q4.q.g(new q4.q(str, unmodifiableList, false, 20));
+            h = q4.q.h(new q4.q(str, unmodifiableList, false, 20));
         }
         this.c = new g6.j(this);
         this.a = context.getApplicationContext();
-        q6.m.e(g10);
-        this.b = g10;
+        q6.m.f(h);
+        this.b = h;
         this.d = bVar;
         this.e = pVar;
     }

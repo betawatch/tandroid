@@ -1,55 +1,54 @@
 package h9;
 
-import a8.ia;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class o1 {
-    public final Object a;
-    public int b;
-    public final /* synthetic */ p1 c;
+public final class o1 extends r1 implements Serializable {
+    public static final o1 b = new o1(0);
+    public static final o1 c = new o1(1);
+    public final /* synthetic */ int a;
 
-    public o1(p1 p1Var, int i7) {
-        this.c = p1Var;
-        this.a = p1Var.a[i7];
-        this.b = i7;
+    public /* synthetic */ o1(int i7) {
+        this.a = i7;
     }
 
-    public final int a() {
-        int i7 = this.b;
-        Object obj = this.a;
-        p1 p1Var = this.c;
-        if (i7 == -1 || i7 >= p1Var.c || !ia.a(obj, p1Var.a[i7])) {
-            this.b = p1Var.c(obj);
+    @Override // h9.r1
+    public final r1 a() {
+        switch (this.a) {
+            case 0:
+                return c;
+            default:
+                return b;
         }
-        int i10 = this.b;
-        if (i10 == -1) {
-            return 0;
-        }
-        return p1Var.b[i10];
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof o1) {
-            o1 o1Var = (o1) obj;
-            if (a() == o1Var.a() && ia.a(this.a, o1Var.a)) {
-                return true;
-            }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Comparable comparable = (Comparable) obj;
+                Comparable comparable2 = (Comparable) obj2;
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            default:
+                Comparable comparable3 = (Comparable) obj;
+                Comparable comparable4 = (Comparable) obj2;
+                comparable3.getClass();
+                if (comparable3 == comparable4) {
+                    return 0;
+                }
+                return comparable4.compareTo(comparable3);
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        Object obj = this.a;
-        return (obj == null ? 0 : obj.hashCode()) ^ a();
     }
 
     public final String toString() {
-        String valueOf = String.valueOf(this.a);
-        int a10 = a();
-        if (a10 == 1) {
-            return valueOf;
+        switch (this.a) {
+            case 0:
+                return "Ordering.natural()";
+            default:
+                return "Ordering.natural().reverse()";
         }
-        return valueOf + " x " + a10;
     }
 }

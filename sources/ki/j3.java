@@ -1,140 +1,101 @@
 package ki;
 
-import android.content.Context;
-import android.graphics.drawable.ShapeDrawable;
-import android.text.SpannableStringBuilder;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.t8;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.fz;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import org.telegram.messenger.a8;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class j3 extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final class j3 extends FrameLayout implements c6 {
+    public Path a;
+    public float b;
+    public int c;
+    public boolean d;
+    public int e;
+    public int f;
+    public View h;
+    public z n;
 
-    static {
-        a41.h(new j3());
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void addColorKeys(HashSet hashSet) {
+        hashSet.add(Integer.valueOf(n6.Uf));
+        hashSet.add(Integer.valueOf(n6.Fi));
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        Object obj = b41Var.G;
-        if (!(obj instanceof TL_payments.connectedBotStarRef)) {
-            if (obj instanceof TL_payments.starRefProgram) {
-                k3 k3Var = (k3) view;
-                TL_payments.starRefProgram starrefprogram = (TL_payments.starRefProgram) obj;
-                boolean z11 = b41Var.r;
-                TLRPC.User a22 = np.s1(k3Var.a).a2(Long.valueOf(starrefprogram.bot_id));
-                t8 t8Var = new t8((e6) null);
-                t8Var.r(a22);
-                k3Var.c.f(a22, t8Var);
-                k3Var.h.setText(q10.p(a22));
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                if (starrefprogram.commission_permille > 0) {
-                    spannableStringBuilder.append((CharSequence) " d");
-                    fz fzVar = new fz();
-                    int i7 = j6.lk;
-                    fzVar.f = j6.w0(i7, null);
-                    fzVar.r = i7;
-                    fzVar.s = null;
-                    fzVar.n = true;
-                    fzVar.w = k.J0(starrefprogram.commission_permille);
-                    if (fzVar.c != null) {
-                        fzVar.c = null;
-                        fzVar.a();
-                    }
-                    spannableStringBuilder.setSpan(fzVar, 1, 2, 33);
-                }
-                int i10 = starrefprogram.duration_months;
-                if (i10 == 0) {
-                    spannableStringBuilder.append((CharSequence) hd.M0(2131748986, null));
-                } else if (i10 < 12 || i10 % 12 != 0) {
-                    spannableStringBuilder.append((CharSequence) hd.G(i10, "Months", new Object[0]));
-                } else {
-                    spannableStringBuilder.append((CharSequence) hd.G(i10 / 12, "Years", new Object[0]));
-                }
-                k3Var.n.setText(spannableStringBuilder);
-                k3Var.r.setVisibility(z11 ? 0 : 8);
-                k3Var.d.setVisibility(8);
-                k3Var.f.setVisibility(8);
-                k3Var.e.setVisibility(8);
-                k3Var.s = z10;
-                k3Var.setWillNotDraw(!z10);
-                return;
-            }
-            return;
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        float height = (getHeight() - org.telegram.messenger.g0.L(32.0f)) / 2.0f;
+        float max = Math.max((getWidth() - this.f) - org.telegram.messenger.g0.L(4.0f), getHeight()) * this.b;
+        float L = org.telegram.messenger.g0.L(16.0f) + max;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(org.telegram.messenger.g0.L(14.0f) - max, (org.telegram.messenger.g0.L(4.0f) + height) - max, org.telegram.messenger.g0.L(6.0f) + this.f + max, (getHeight() - org.telegram.messenger.g0.L(12.0f)) + max);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(rectF, L, L, Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.drawColor(this.e);
+        canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.b) / 0.5f)) * 255.0f), 31);
+        canvas.translate(org.telegram.messenger.g0.L(10.0f), height);
+        z zVar = this.n;
+        if (zVar != null) {
+            zVar.setDrawBackgroundDrawable(false);
+            this.n.draw(canvas);
+            this.n.setDrawBackgroundDrawable(true);
         }
-        k3 k3Var2 = (k3) view;
-        TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj;
-        boolean z12 = b41Var.r;
-        e6 e6Var = k3Var2.b;
-        View view2 = k3Var2.e;
-        ImageView imageView = k3Var2.f;
-        TLRPC.User a23 = np.s1(k3Var2.a).a2(Long.valueOf(connectedbotstarref.bot_id));
-        t8 t8Var2 = new t8((e6) null);
-        t8Var2.r(a23);
-        k3Var2.c.f(a23, t8Var2);
-        TextView textView = k3Var2.h;
-        textView.setText(org.telegram.messenger.j6.m(q10.p(a23), textView.getPaint().getFontMetricsInt(), false, null, 0));
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        if (connectedbotstarref.commission_permille > 0) {
-            spannableStringBuilder2.append((CharSequence) " d");
-            fz fzVar2 = new fz();
-            int i11 = j6.lk;
-            fzVar2.f = j6.w0(i11, null);
-            fzVar2.r = i11;
-            fzVar2.s = null;
-            fzVar2.n = true;
-            fzVar2.w = k.J0(connectedbotstarref.commission_permille);
-            if (fzVar2.c != null) {
-                fzVar2.c = null;
-                fzVar2.a();
-            }
-            spannableStringBuilder2.setSpan(fzVar2, 1, 2, 33);
-        }
-        int i12 = connectedbotstarref.duration_months;
-        if (i12 == 0) {
-            spannableStringBuilder2.append((CharSequence) hd.M0(2131748986, null));
-        } else if (i12 < 12 || i12 % 12 != 0) {
-            spannableStringBuilder2.append((CharSequence) hd.G(i12, "Months", new Object[0]));
-        } else {
-            spannableStringBuilder2.append((CharSequence) hd.G(i12 / 12, "Years", new Object[0]));
-        }
-        k3Var2.n.setText(spannableStringBuilder2);
-        k3Var2.r.setVisibility(z12 ? 0 : 8);
-        k3Var2.d.setVisibility(0);
-        imageView.setVisibility(0);
-        view2.setVisibility(0);
-        ShapeDrawable L = j6.L(org.telegram.messenger.g0.L(9.665f), j6.w0(connectedbotstarref.revoked ? j6.nk : j6.lk, e6Var));
-        m6 M = q6.M(connectedbotstarref.revoked ? j6.nk : j6.lk);
-        view2.setBackground(L);
-        q6.j(view2, L, M, null, e6Var);
-        imageView.setImageResource(connectedbotstarref.revoked ? R.drawable.msg_link_2 : R.drawable.msg_limit_links);
-        imageView.setScaleX(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        imageView.setScaleY(connectedbotstarref.revoked ? 0.8f : 0.6f);
-        k3Var2.s = z10;
-        k3Var2.setWillNotDraw(!z10);
+        canvas.restore();
+        canvas.translate((1.0f - this.b) * (-org.telegram.messenger.g0.L(8.0f)), 0.0f);
+        super.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        return new k3(i7, context, e6Var);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        int size = View.MeasureSpec.getSize(i10);
+        int height = getParent() instanceof View ? ((View) getParent()).getHeight() : 0;
+        if (height > 0) {
+            size = Math.min(size, height);
+        }
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.getMode(i10)));
+    }
+
+    public void setBotMenuButton(z zVar) {
+        this.n = zVar;
+        invalidate();
+    }
+
+    public void setMeasuredButtonWidth(int i7) {
+        this.f = i7;
+        invalidate();
+    }
+
+    public void setProgress(float f10) {
+        this.b = f10;
+        this.e = i0.a.f(f10, n6.x0(null, n6.Uf, false), this.c);
+        for (int i7 = 0; i7 < getChildCount(); i7++) {
+            getChildAt(i7).setAlpha(f10);
+        }
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        try {
+            if (this.d) {
+                this.c = n6.x0(null, n6.Fi, false);
+            }
+            if (this.e != 0) {
+                this.e = i0.a.f(this.b, n6.x0(null, n6.Uf, false), this.c);
+                invalidate();
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
     }
 }

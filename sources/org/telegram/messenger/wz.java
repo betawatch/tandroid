@@ -1,25 +1,156 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
-public class wz {
-    public final String c;
-    public int d;
-    public final /* synthetic */ xz e;
-    public long b = -1;
-    public final long a = System.currentTimeMillis();
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.TLRPC;
 
-    public wz(xz xzVar, String str) {
-        this.e = xzVar;
-        this.c = str;
-        xzVar.a++;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes.dex */
+public final /* synthetic */ class wz implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e00 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ long f;
+
+    public /* synthetic */ wz(e00 e00Var, long j3, ArrayList arrayList, boolean z10, long j10, int i7) {
+        this.a = i7;
+        this.b = e00Var;
+        this.c = j3;
+        this.d = arrayList;
+        this.e = z10;
+        this.f = j10;
     }
 
-    public String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.c);
-        sb2.append(": ");
-        sb2.append(this.b < 0 ? "not done" : a8.p0.r(new StringBuilder(), this.b - this.a, "ms"));
-        return sb2.toString();
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x018e  */
+    /* JADX WARN: Removed duplicated region for block: B:49:? A[ADDED_TO_REGION, REMOVE, RETURN, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r6v4 */
+    /* JADX WARN: Type inference failed for: r6v9 */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        long j3;
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        SQLiteCursor sQLiteCursor;
+        NativeByteBuffer byteBufferValue;
+        switch (this.a) {
+            case 0:
+                e00 e00Var = this.b;
+                e00Var.getMessagesStorage().a.c(new wz(e00Var, this.c, this.d, this.e, this.f, 1));
+                break;
+            default:
+                long j10 = this.c;
+                ArrayList arrayList3 = this.d;
+                long j11 = this.f;
+                e00 e00Var2 = this.b;
+                a0.h hVar = e00Var2.e;
+                try {
+                    SQLiteDatabase sQLiteDatabase = e00Var2.getMessagesStorage().b;
+                    Locale locale = Locale.US;
+                    int i7 = 0;
+                    SQLiteCursor queryFinalized = sQLiteDatabase.queryFinalized("SELECT topic_id, top_message FROM topics WHERE did = " + j10 + " AND top_message IN (" + TextUtils.join(",", arrayList3) + ")", new Object[0]);
+                    arrayList = null;
+                    while (queryFinalized.next()) {
+                        try {
+                            if (arrayList == null) {
+                                arrayList = new ArrayList();
+                            }
+                            TLRPC.TL_forumTopic tL_forumTopic = new TLRPC.TL_forumTopic();
+                            tL_forumTopic.id = queryFinalized.intValue(0);
+                            tL_forumTopic.top_message = queryFinalized.intValue(1);
+                            if (this.e) {
+                                tL_forumTopic.from_id = e00Var2.getMessagesController().B1(tL_forumTopic.id);
+                            } else {
+                                tL_forumTopic.from_id = e00Var2.getMessagesController().B1(e00Var2.getUserConfig().e());
+                            }
+                            tL_forumTopic.notify_settings = new TLRPC.TL_peerNotifySettings();
+                            arrayList.add(tL_forumTopic);
+                        } catch (Exception e10) {
+                            e = e10;
+                            j3 = j11;
+                        }
+                    }
+                    queryFinalized.dispose();
+                    if (arrayList != null) {
+                        int i10 = 0;
+                        while (i10 < arrayList.size()) {
+                            TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) arrayList.get(i10);
+                            SQLiteDatabase sQLiteDatabase2 = e00Var2.getMessagesStorage().b;
+                            Locale locale2 = Locale.US;
+                            SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j10 + " AND topic_id = " + tL_forumTopic2.id + " ORDER BY mid DESC LIMIT 1", new Object[i7]);
+                            if (!queryFinalized2.next() || (byteBufferValue = queryFinalized2.byteBufferValue(1)) == null) {
+                                long j12 = j11;
+                                sQLiteCursor = queryFinalized2;
+                                j3 = j12;
+                            } else {
+                                TLRPC.Message TLdeserialize = TLRPC.Message.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(i7), i7);
+                                long j13 = j11;
+                                try {
+                                    TLdeserialize.readAttachPath(byteBufferValue, e00Var2.getUserConfig().n);
+                                    byteBufferValue.reuse();
+                                    sQLiteCursor = queryFinalized2;
+                                    j3 = j13;
+                                } catch (Exception e11) {
+                                    e = e11;
+                                    j3 = j13;
+                                    e.printStackTrace();
+                                    arrayList2 = arrayList;
+                                    e00Var2.getMessagesStorage().J0(arrayList2, j10);
+                                    if (arrayList2 != null) {
+                                        return;
+                                    }
+                                }
+                                try {
+                                    hVar.l(e00.p(tL_forumTopic2.top_message, j3));
+                                    int i11 = TLdeserialize.id;
+                                    tL_forumTopic2.top_message = i11;
+                                    tL_forumTopic2.topMessage = TLdeserialize;
+                                    tL_forumTopic2.groupedMessages = null;
+                                    hVar.k(tL_forumTopic2, e00.p(i11, j3));
+                                } catch (Exception e12) {
+                                    e = e12;
+                                    e.printStackTrace();
+                                    arrayList2 = arrayList;
+                                    e00Var2.getMessagesStorage().J0(arrayList2, j10);
+                                    if (arrayList2 != null) {
+                                    }
+                                }
+                            }
+                            sQLiteCursor.dispose();
+                            i10++;
+                            j11 = j3;
+                            i7 = 0;
+                        }
+                        j3 = j11;
+                        for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                            SQLiteDatabase sQLiteDatabase3 = e00Var2.getMessagesStorage().b;
+                            Locale locale3 = Locale.US;
+                            sQLiteDatabase3.executeFast("UPDATE topics SET top_message = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).top_message + " WHERE did = " + j10 + " AND topic_id = " + ((TLRPC.TL_forumTopic) arrayList.get(i12)).id).stepThis().dispose();
+                        }
+                    } else {
+                        j3 = j11;
+                    }
+                } catch (Exception e13) {
+                    e = e13;
+                    j3 = j11;
+                    arrayList = null;
+                }
+                arrayList2 = arrayList;
+                e00Var2.getMessagesStorage().J0(arrayList2, j10);
+                if (arrayList2 != null) {
+                    g0.g3(new br(e00Var2, arrayList2, j3, 7));
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -3,15 +3,15 @@ package r2;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Pair;
-import c8.g1;
+import c8.k1;
 import e2.m1;
 import e2.u;
 import h2.l0;
 import h9.g0;
-import h9.g2;
+import h9.h2;
 import h9.i0;
-import h9.s1;
 import h9.t0;
+import h9.t1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import j2.c0;
@@ -19,49 +19,48 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import org.telegram.messenger.ou;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cf;
-import org.telegram.utils.twidget.v;
+import org.telegram.ui.Cells.b5;
+import org.telegram.ui.Components.hn;
 import s2.w;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h {
     public final c a;
     public final j2.h b;
     public final j2.h c;
-    public final cf d;
+    public final b5 d;
     public final w[] e;
     public final u[] f;
     public final s2.d g;
     public final m1 h;
     public final List i;
-    public final m2.j k;
+    public final m2.i k;
     public boolean l;
     public x2.b n;
     public Uri o;
     public Uri p;
     public boolean q;
     public a3.u r;
-    public final ou j = new ou(19);
+    public final hn j = new hn();
     public byte[] m = l0.b;
     public long s = -9223372036854775807L;
 
-    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, cf cfVar, c0 c0Var, cf cfVar2, List list, m2.j jVar) {
+    public h(c cVar, s2.d dVar, w[] wVarArr, u[] uVarArr, b5 b5Var, c0 c0Var, b5 b5Var2, List list, m2.i iVar) {
         this.a = cVar;
         this.g = dVar;
         this.e = wVarArr;
         this.f = uVarArr;
-        this.d = cfVar2;
+        this.d = b5Var2;
         this.i = list;
-        this.k = jVar;
-        j2.h createDataSource = ((j2.g) cfVar.a).createDataSource();
+        this.k = iVar;
+        j2.h createDataSource = ((j2.g) b5Var.a).createDataSource();
         this.b = createDataSource;
         if (c0Var != null) {
             createDataSource.addTransferListener(c0Var);
         }
-        this.c = ((j2.g) cfVar.a).createDataSource();
+        this.c = ((j2.g) b5Var.a).createDataSource();
         this.h = new m1("", uVarArr);
         ArrayList arrayList = new ArrayList();
         for (int i7 = 0; i7 < wVarArr.length; i7++) {
@@ -70,7 +69,7 @@ public final class h {
             }
         }
         m1 m1Var = this.h;
-        int[] f10 = g1.f(arrayList);
+        int[] f10 = k1.f(arrayList);
         f fVar = new f(m1Var, f10);
         fVar.g = fVar.b(m1Var.d[f10[0]]);
         this.r = fVar;
@@ -115,13 +114,13 @@ public final class h {
         wVar.getClass();
         HashMap hashMap = wVar.b;
         int size = hashMap.size();
-        g2 it = t0.q(hashMap.values()).iterator();
+        h2 it = t0.q(hashMap.values()).iterator();
         int i7 = 0;
         while (it.hasNext()) {
             Uri uri2 = (Uri) it.next();
             s2.c cVar2 = (s2.c) dVar.d.get(uri2);
             if (cVar2 != null) {
-                s2.b bVar = (s2.b) r.b.i(cVar2.b, uri2, uri2);
+                s2.b bVar = (s2.b) p5.c.i(cVar2.b, uri2, uri2);
                 bVar.getClass();
                 if (elapsedRealtime <= bVar.r) {
                     i7++;
@@ -157,7 +156,7 @@ public final class h {
                 int i11 = (int) (longValue - j11);
                 if (i11 < 0 || i0Var2.size() < i11) {
                     g0 g0Var = i0.b;
-                    list = s1.e;
+                    list = t1.e;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     if (i11 < i0Var2.size()) {
@@ -312,8 +311,8 @@ public final class h {
         if (uri == null) {
             return null;
         }
-        ou ouVar = this.j;
-        byte[] bArr = (byte[]) ((v) ouVar.b).remove(uri);
+        hn hnVar = this.j;
+        byte[] bArr = (byte[]) ((org.telegram.utils.twidget.w) hnVar.b).remove(uri);
         if (bArr != null) {
             return null;
         }

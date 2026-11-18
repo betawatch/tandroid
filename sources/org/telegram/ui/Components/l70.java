@@ -1,44 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l70 implements org.telegram.ui.ActionBar.q1, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class l70 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t70 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ l70(t70 t70Var, int i7) {
+    public /* synthetic */ l70(int i7, Object obj, boolean z10) {
         this.a = i7;
-        this.b = t70Var;
+        this.b = obj;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                s70 s70Var = this.b.r;
-                if (s70Var != null) {
-                    s70Var.j();
-                    break;
-                }
+                p70 p70Var = (p70) this.b;
+                p70.K0(p70Var.getContext(), p70Var.o1, p70Var.t1, this.c);
+                break;
+            case 1:
+                p70 p70Var2 = (p70) this.b;
+                p70.K0(p70Var2.getContext(), p70Var2.o1, p70Var2.t1, this.c);
                 break;
             default:
-                s70 s70Var2 = this.b.r;
-                if (s70Var2 != null) {
-                    s70Var2.e();
+                hi.ta taVar = (hi.ta) this.b;
+                taVar.A2 = false;
+                taVar.Y0.x(7, true);
+                if (this.c) {
+                    taVar.p(true);
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e1
-    public void j(KeyEvent keyEvent) {
-        t70 t70Var = this.b;
-        t70Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && t70Var.s.isShowing()) {
-            t70Var.s.d(true);
         }
     }
 }

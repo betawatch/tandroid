@@ -1,7 +1,7 @@
 package org.telegram.tgnet.tl.legacy;
 
 import android.text.TextUtils;
-import org.telegram.messenger.fd;
+import org.telegram.messenger.ed;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLObject;
@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class TL_legacy_message {
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer118 extends TLRPC.TL_message {
         public static final int constructor = -181507201;
 
@@ -64,7 +64,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -153,7 +153,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer123 extends TLRPC.TL_message {
         public static final int constructor = 1487813065;
 
@@ -200,7 +200,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -297,7 +297,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer131 extends TLRPC.TL_message {
         public static final int constructor = -1125940270;
 
@@ -344,7 +344,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -447,7 +447,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer135 extends TLRPC.TL_message {
         public static final int constructor = -2049520670;
 
@@ -495,7 +495,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -600,7 +600,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer169 extends TLRPC.TL_message {
         public static final int constructor = 940666592;
 
@@ -649,7 +649,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -762,7 +762,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer173 extends TLRPC.TL_message {
         public static final int constructor = 1992213009;
 
@@ -814,7 +814,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -930,7 +930,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer175 extends TLRPC.TL_message {
         public static final int constructor = 508332649;
 
@@ -985,7 +985,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -1104,7 +1104,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer176 extends TLRPC.TL_message {
         public static final int constructor = -1502839044;
 
@@ -1159,7 +1159,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -1284,7 +1284,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer179 extends TLRPC.TL_message {
         public static final int constructor = 592953125;
 
@@ -1345,7 +1345,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -1476,7 +1476,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer180 extends TLRPC.TL_message {
         public static final int constructor = -1109353426;
 
@@ -1537,7 +1537,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -1674,7 +1674,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer195 extends TLRPC.TL_message {
         public static final int constructor = -1808510398;
 
@@ -1736,7 +1736,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -1881,7 +1881,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer199 extends TLRPC.TL_message {
         public static final int constructor = -1761756183;
 
@@ -1943,7 +1943,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -2094,7 +2094,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer205 extends TLRPC.TL_message {
         public static final int constructor = -356721331;
 
@@ -2156,7 +2156,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -2313,7 +2313,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer216 extends TLRPC.TL_message {
         public static final int constructor = -1743401272;
 
@@ -2377,7 +2377,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -2546,7 +2546,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer220 extends TLRPC.TL_message {
         public static final int constructor = -1188071729;
 
@@ -2610,7 +2610,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -2785,7 +2785,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer222 extends TLRPC.TL_message {
         public static final int constructor = -1665888023;
 
@@ -2849,7 +2849,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -3030,7 +3030,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer224 extends TLRPC.TL_message {
         public static final int constructor = 988112002;
 
@@ -3097,7 +3097,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);
@@ -3283,7 +3283,7 @@ public class TL_legacy_message {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class TL_message_layer226 extends TLRPC.TL_message {
         public static final int constructor = -1779470549;
 
@@ -3353,7 +3353,7 @@ public class TL_legacy_message {
                 this.reply_markup = TLRPC.ReplyMarkup.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 128)) {
-                this.entities = Vector.deserialize(inputSerializedData, new fd(8), z10);
+                this.entities = Vector.deserialize(inputSerializedData, new ed(9), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
                 this.views = inputSerializedData.readInt32(z10);

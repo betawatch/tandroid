@@ -3,7 +3,7 @@ package xi;
 import org.telegram.messenger.g0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class b implements Runnable {
                     if (i7 != 0) {
                         b bVar2 = new b(eVar2, dVar4, 2);
                         eVar2.d = bVar2;
-                        g0.i3(bVar2, 20000L);
+                        g0.h3(bVar2, 20000L);
                         ki.e eVar3 = dVar4.a;
                         ((ConnectionsManager) eVar3.b).checkWebProxyInternal(dVar4.b, i7, new c(eVar2, dVar4));
                         break;

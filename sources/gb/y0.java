@@ -2,7 +2,7 @@ package gb;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class y0 implements ce.d {
     public final /* synthetic */ int a;
@@ -45,7 +45,7 @@ public final class y0 implements ce.d {
                         jd.a aVar = jd.a.a;
                         i7 = oVar.b;
                         if (i7 != 0) {
-                            af.b.c(obj2);
+                            b7.h.b(obj2);
                             ce.d dVar = (ce.d) this.b;
                             m1.e1 e1Var = (m1.e1) obj;
                             if (e1Var instanceof m1.w0) {
@@ -66,7 +66,7 @@ public final class y0 implements ce.d {
                             if (i7 != 1) {
                                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
-                            af.b.c(obj2);
+                            b7.h.b(obj2);
                         }
                         return gd.k.a;
                     }
@@ -80,7 +80,7 @@ public final class y0 implements ce.d {
                 return gd.k.a;
             default:
                 m1.b0 b0Var = (m1.b0) this.b;
-                return ((b0Var.h.B() instanceof m1.l0) || (e10 = m1.b0.e(b0Var, true, cVar)) != jd.a.a) ? gd.k.a : e10;
+                return ((b0Var.h.E() instanceof m1.l0) || (e10 = m1.b0.e(b0Var, true, cVar)) != jd.a.a) ? gd.k.a : e10;
         }
     }
 }

@@ -1,38 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r90 extends n61 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ka0 b;
+public final class r90 extends v4.o0 {
+    public final /* synthetic */ s90 a;
 
-    public r90(ka0 ka0Var, Context context) {
-        this.b = ka0Var;
-        this.a = context;
+    public r90(s90 s90Var) {
+        this.a = s90Var;
     }
 
-    @Override // org.telegram.ui.Components.n61
-    public final void b(View view, int i7, int i10) {
-        ea0 ea0Var = (ea0) view;
-        ea0Var.i();
-        ea0Var.l(false);
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final View d(int i7) {
-        return new ea0(this.b, this.a, i7);
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.n61
-    public final int h(int i7) {
-        return ((ha0) this.b.e.a.get(i7)).a;
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        int R;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        v4.p0 layoutManager = recyclerView.getLayoutManager();
+        t90 t90Var = this.a.j3;
+        if (layoutManager != t90Var.d || (R = RecyclerView.R(view)) == 0 || t90Var.f.N()) {
+            return;
+        }
+        if (t90Var.f.I() == null && t90Var.f.V == null) {
+            rect.top = org.telegram.messenger.g0.L(2.0f);
+        } else {
+            if (R == 0) {
+                return;
+            }
+            R--;
+            m90 m90Var = t90Var.d;
+            m90Var.B1();
+            if (R > m90Var.U) {
+                rect.top = org.telegram.messenger.g0.L(2.0f);
+            }
+        }
+        rect.right = t90Var.d.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

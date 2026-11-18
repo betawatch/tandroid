@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u implements Handler.Callback {
     public final com.google.android.gms.common.api.internal.d0 a;
@@ -26,7 +26,7 @@ public final class u implements Handler.Callback {
     }
 
     public final void a(com.google.android.gms.common.api.l lVar) {
-        m.g(lVar);
+        m.h(lVar);
         synchronized (this.r) {
             try {
                 ArrayList arrayList = this.d;

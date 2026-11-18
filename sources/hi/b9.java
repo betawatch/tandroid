@@ -9,74 +9,208 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.CameraView;
-import org.telegram.messenger.gf;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.ff;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cf;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.r71;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.wy;
+import org.telegram.ui.Components.b81;
+import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.cz;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.q1, r71, j51, w7, b7 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, r0.m, org.telegram.ui.ActionBar.r1, b81, u51, w7, b7 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sa b;
+    public final /* synthetic */ ta b;
 
-    public /* synthetic */ b9(sa saVar, int i7) {
+    public /* synthetic */ b9(ta taVar, int i7) {
         this.a = i7;
-        this.b = saVar;
+        this.b = taVar;
     }
 
     @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        i0.c I0 = org.telegram.messenger.g0.I0(k1Var, false);
+    public r0.l1 P0(View view, r0.l1 l1Var) {
+        i0.b I0 = org.telegram.messenger.g0.I0(l1Var, false);
         int i7 = I0.a;
-        sa saVar = this.b;
-        saVar.Z = i7;
-        saVar.a0 = I0.b;
-        saVar.b0 = I0.c;
-        saVar.c0 = I0.d;
-        saVar.n.requestLayout();
-        return r0.k1.b;
+        ta taVar = this.b;
+        taVar.Z = i7;
+        taVar.a0 = I0.b;
+        taVar.b0 = I0.c;
+        taVar.c0 = I0.d;
+        taVar.n.requestLayout();
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.ui.Components.u51
+    public void a(cz czVar) {
+        ff ffVar;
+        ta taVar = this.b;
+        if (czVar == null) {
+            taVar.getClass();
+            return;
+        }
+        d7 d7Var = taVar.L1;
+        if (d7Var == null || (ffVar = d7Var.a1) == null) {
+            return;
+        }
+        czVar.d(new org.telegram.ui.Cells.b5(ffVar));
+    }
+
+    @Override // org.telegram.ui.Components.b81
+    public void b(float f10) {
+        ta taVar = this.b;
+        w9 w9Var = taVar.C0;
+        if (w9Var != null) {
+            taVar.U1 = f10;
+            w9Var.setZoom(f10);
+        }
+        taVar.i0(true);
+    }
+
+    @Override // hi.b7
+    public Bitmap c(BitmapFactory.Options options) {
+        return BitmapFactory.decodeFile(this.b.L1.L.getAbsolutePath(), options);
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 2:
+                ta taVar = this.b;
+                taVar.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    taVar.b.startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 3:
+                ta taVar2 = this.b;
+                taVar2.getClass();
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    taVar2.b.startActivity(intent2);
+                    break;
+                } catch (Exception e11) {
+                    org.telegram.messenger.a8.g(e11, true);
+                    return;
+                }
+            case 4:
+            case 6:
+            default:
+                ta taVar3 = this.b;
+                try {
+                    Intent intent3 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent3.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    taVar3.b.startActivity(intent3);
+                    break;
+                } catch (Exception e12) {
+                    org.telegram.messenger.a8.g(e12, true);
+                }
+            case 5:
+                ta taVar4 = this.b;
+                taVar4.getClass();
+                try {
+                    Intent intent4 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent4.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+                    taVar4.b.startActivity(intent4);
+                    break;
+                } catch (Exception e13) {
+                    org.telegram.messenger.a8.g(e13, true);
+                    return;
+                }
+            case 7:
+                ta taVar5 = this.b;
+                int i10 = taVar5.c;
+                d7 d7Var = taVar5.L1;
+                if (d7Var != null) {
+                    d7Var.D0 = mp.u1(i10).j5();
+                    taVar5.W1 = !taVar5.L1.c;
+                    taVar5.h(null);
+                    taVar5.k();
+                    taVar5.l();
+                    taVar5.x();
+                    d7 d7Var2 = taVar5.L1;
+                    d7Var2.i(true);
+                    d7Var2.C0 = taVar5.d1.getText();
+                    taVar5.L1 = null;
+                    taVar5.V(d7Var2, true);
+                    b1 b1Var = mp.u1(i10).R1().w;
+                    if (d7Var2.c) {
+                        b1Var.d(d7Var2);
+                    } else {
+                        ArrayList arrayList = b1Var.b;
+                        if (!d7Var2.u) {
+                            b1Var.e(d7Var2);
+                            d7Var2.b = Utilities.b.nextLong();
+                            a1 a1Var = new a1(d7Var2);
+                            arrayList.remove(d7Var2);
+                            arrayList.add(0, d7Var2);
+                            b1Var.a(a1Var);
+                        }
+                    }
+                    taVar5.J(0, true);
+                    break;
+                }
+                break;
+            case 8:
+                ta taVar6 = this.b;
+                d7 d7Var3 = taVar6.L1;
+                if (d7Var3 != null && !d7Var3.g && ((!d7Var3.n || d7Var3.u) && d7Var3.c)) {
+                    mp.u1(taVar6.c).R1().w.b(taVar6.L1);
+                    taVar6.L1 = null;
+                }
+                d7 d7Var4 = taVar6.L1;
+                if (d7Var4 != null && (d7Var4.o || d7Var4.g || (d7Var4.n && !d7Var4.u))) {
+                    taVar6.p(true);
+                    break;
+                } else {
+                    taVar6.J(0, true);
+                    break;
+                }
+                break;
+        }
     }
 
     @Override // hi.w7
-    public void a(final o8 o8Var, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i7, h4 h4Var, final e1 e1Var) {
+    public void i(final o8 o8Var, final boolean z10, final boolean z11, boolean z12, final boolean z13, final TLRPC.InputPeer inputPeer, final int i7, r1 r1Var, final k kVar) {
         int i10 = 0;
         switch (this.a) {
             case 9:
                 ArrayList arrayList = o8Var.b;
-                sa saVar = this.b;
-                if (saVar.L1 != null) {
-                    saVar.Y0.x(5, true);
-                    saVar.L1.E0 = o8Var;
-                    int i11 = saVar.c;
+                ta taVar = this.b;
+                if (taVar.L1 != null) {
+                    taVar.Y0.x(5, true);
+                    taVar.L1.E0 = o8Var;
+                    int i11 = taVar.c;
                     int i12 = r8.a;
                     SerializedData serializedData = new SerializedData(true);
                     r8.c(serializedData, o8Var);
                     SerializedData serializedData2 = new SerializedData(serializedData.length());
                     serializedData.cleanup();
                     r8.c(serializedData2, o8Var);
-                    np.s1(i11).f7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
+                    mp.u1(i11).h7.edit().putString("story_privacy2", Utilities.f(serializedData2.toByteArray())).apply();
                     serializedData2.cleanup();
-                    d7 d7Var = saVar.L1;
+                    d7 d7Var = taVar.L1;
                     d7Var.G0 = z12;
                     d7Var.H0 = z11;
                     d7Var.F0.clear();
-                    saVar.L1.F0.addAll(arrayList);
-                    d7 d7Var2 = saVar.L1;
+                    taVar.L1.F0.addAll(arrayList);
+                    d7 d7Var2 = taVar.L1;
                     d7Var2.l = true;
                     d7Var2.v0 = inputPeer;
-                    ArrayList arrayList2 = saVar.I1;
+                    ArrayList arrayList2 = taVar.I1;
                     if (arrayList2 != null) {
                         int size = arrayList2.size();
                         int i13 = 0;
@@ -94,28 +228,28 @@ public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, 
                             d7Var3.v0 = inputPeer;
                         }
                     }
-                    saVar.h(new y8(saVar, h4Var, i10));
+                    taVar.h(new y8(taVar, r1Var, i10));
                     break;
                 }
                 break;
             default:
                 String[] strArr = z13 ? new String[0] : new String[]{"android.permission.CAMERA", "android.permission.RECORD_AUDIO"};
-                final sa saVar2 = this.b;
-                c8.ka.b(strArr, new z10() { // from class: hi.z8
-                    @Override // org.telegram.messenger.z10
+                final ta taVar2 = this.b;
+                c8.na.b(strArr, new x10() { // from class: hi.z8
+                    @Override // org.telegram.messenger.x10
                     public final void a(Object obj2) {
                         boolean z14;
                         final boolean z15;
-                        final sa saVar3 = sa.this;
-                        int i14 = saVar3.c;
+                        final ta taVar3 = ta.this;
+                        int i14 = taVar3.c;
                         boolean booleanValue = ((Boolean) obj2).booleanValue();
-                        final e1 e1Var2 = e1Var;
+                        final k kVar2 = kVar;
                         if (!booleanValue) {
-                            e1Var2.run();
+                            kVar2.run();
                             return;
                         }
-                        v9 v9Var = saVar3.C0;
-                        if (v9Var == null || v9Var.isFrontface()) {
+                        w9 w9Var = taVar3.C0;
+                        if (w9Var == null || w9Var.isFrontface()) {
                             z14 = true;
                             z15 = true;
                         } else {
@@ -126,7 +260,7 @@ public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, 
                         tL_startLive.noforwards = z14 ^ z11;
                         TLRPC.InputPeer inputPeer2 = inputPeer;
                         tL_startLive.peer = inputPeer2 == null ? new TLRPC.TL_inputPeerSelf() : inputPeer2;
-                        final long e10 = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? m10.i(i14).e() : org.telegram.messenger.m5.n(inputPeer2);
+                        final long e10 = (inputPeer2 == null || (inputPeer2 instanceof TLRPC.TL_inputPeerSelf)) ? j10.i(i14).e() : org.telegram.messenger.n5.n(inputPeer2);
                         tL_startLive.privacy_rules.addAll(o8Var.b);
                         tL_startLive.random_id = Utilities.b.nextLong();
                         final boolean z16 = z13;
@@ -136,7 +270,7 @@ public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, 
                         ConnectionsManager.getInstance(i14).sendRequest(tL_startLive, new RequestDelegate() { // from class: hi.a9
                             @Override // org.telegram.tgnet.RequestDelegate
                             public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-                                org.telegram.messenger.g0.h3(new di.o7(sa.this, tLObject, tL_startLive, z16, e10, z15, tL_error, e1Var2));
+                                org.telegram.messenger.g0.g3(new di.r7(ta.this, tLObject, tL_startLive, z16, e10, z15, tL_error, kVar2));
                             }
                         });
                     }
@@ -145,151 +279,19 @@ public final /* synthetic */ class b9 implements CameraView.CameraViewDelegate, 
         }
     }
 
-    @Override // org.telegram.ui.Components.j51
-    public void b(wy wyVar) {
-        gf gfVar;
-        sa saVar = this.b;
-        if (wyVar == null) {
-            saVar.getClass();
-            return;
-        }
-        d7 d7Var = saVar.L1;
-        if (d7Var == null || (gfVar = d7Var.a1) == null) {
-            return;
-        }
-        wyVar.d(new cf(gfVar));
-    }
-
-    @Override // org.telegram.ui.Components.r71
-    public void c(float f10) {
-        sa saVar = this.b;
-        v9 v9Var = saVar.C0;
-        if (v9Var != null) {
-            saVar.U1 = f10;
-            v9Var.setZoom(f10);
-        }
-        saVar.i0(true);
-    }
-
-    @Override // hi.b7
-    public Bitmap d(BitmapFactory.Options options) {
-        return BitmapFactory.decodeFile(this.b.L1.L.getAbsolutePath(), options);
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        switch (this.a) {
-            case 2:
-                sa saVar = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    saVar.b.startActivity(intent);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
-                    return;
-                }
-            case 3:
-                sa saVar2 = this.b;
-                try {
-                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent2.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    saVar2.b.startActivity(intent2);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
-                }
-            case 4:
-            case 6:
-            default:
-                sa saVar3 = this.b;
-                try {
-                    Intent intent3 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent3.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    saVar3.b.startActivity(intent3);
-                    break;
-                } catch (Exception e12) {
-                    org.telegram.messenger.a8.g(e12, true);
-                }
-            case 5:
-                sa saVar4 = this.b;
-                try {
-                    Intent intent4 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent4.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
-                    saVar4.b.startActivity(intent4);
-                    break;
-                } catch (Exception e13) {
-                    org.telegram.messenger.a8.g(e13, true);
-                    return;
-                }
-            case 7:
-                sa saVar5 = this.b;
-                int i10 = saVar5.c;
-                d7 d7Var = saVar5.L1;
-                if (d7Var != null) {
-                    d7Var.D0 = np.s1(i10).Y4();
-                    saVar5.W1 = !saVar5.L1.c;
-                    saVar5.h(null);
-                    saVar5.k();
-                    saVar5.l();
-                    saVar5.x();
-                    d7 d7Var2 = saVar5.L1;
-                    d7Var2.i(true);
-                    d7Var2.C0 = saVar5.d1.getText();
-                    saVar5.L1 = null;
-                    saVar5.V(d7Var2, true);
-                    a1 a1Var = np.s1(i10).P1().w;
-                    if (d7Var2.c) {
-                        a1Var.d(d7Var2);
-                    } else {
-                        ArrayList arrayList = a1Var.b;
-                        if (!d7Var2.u) {
-                            a1Var.e(d7Var2);
-                            d7Var2.b = Utilities.b.nextLong();
-                            z0 z0Var = new z0(d7Var2);
-                            arrayList.remove(d7Var2);
-                            arrayList.add(0, d7Var2);
-                            a1Var.a(z0Var);
-                        }
-                    }
-                    saVar5.J(0, true);
-                    break;
-                }
-                break;
-            case 8:
-                sa saVar6 = this.b;
-                d7 d7Var3 = saVar6.L1;
-                if (d7Var3 != null && !d7Var3.g && ((!d7Var3.n || d7Var3.u) && d7Var3.c)) {
-                    np.s1(saVar6.c).P1().w.b(saVar6.L1);
-                    saVar6.L1 = null;
-                }
-                d7 d7Var4 = saVar6.L1;
-                if (d7Var4 != null && (d7Var4.o || d7Var4.g || (d7Var4.n && !d7Var4.u))) {
-                    saVar6.p(true);
-                    break;
-                } else {
-                    saVar6.J(0, true);
-                    break;
-                }
-                break;
-        }
-    }
-
     @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
     public void onCameraInit() {
-        sa saVar = this.b;
-        String B = saVar.B();
-        if (TextUtils.equals(B, saVar.E())) {
+        ta taVar = this.b;
+        String B = taVar.B();
+        if (TextUtils.equals(B, taVar.E())) {
             B = null;
         }
-        saVar.d0(saVar.g0 == 0 ? B : null);
-        s71 s71Var = saVar.W0;
-        if (s71Var != null) {
-            saVar.U1 = 0.0f;
-            s71Var.b(false, 0.0f);
+        taVar.d0(taVar.g0 == 0 ? B : null);
+        c81 c81Var = taVar.W0;
+        if (c81Var != null) {
+            taVar.U1 = 0.0f;
+            c81Var.b(false, 0.0f);
         }
-        saVar.l0(true);
+        taVar.l0(true);
     }
 }

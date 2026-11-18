@@ -1,156 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.graphics.CornerPathEffect;
-import android.graphics.Path;
-import android.os.Build;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u70 extends iq {
-    public static CornerPathEffect w;
-    public static int x;
-    public Layout h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public final boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public float q;
-    public float r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
+public final class u70 extends Drawable {
+    public static final Paint k = new Paint();
+    public static TextPaint l;
+    public static TextPaint m;
+    public static TextPaint n;
+    public StaticLayout b;
+    public float c;
+    public float d;
+    public float e;
+    public final int g;
+    public final TextPaint h;
+    public final org.telegram.ui.ActionBar.i6 j;
+    public final RectF a = new RectF();
+    public final StringBuilder f = new StringBuilder(5);
+    public float i = 1.0f;
 
-    public u70() {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.c = false;
-    }
-
-    public static CornerPathEffect c() {
-        if (w == null || x != org.telegram.messenger.g0.L(5.0f)) {
-            int L = org.telegram.messenger.g0.L(5.0f);
-            x = L;
-            w = new CornerPathEffect(L);
+    public u70(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        this.g = i7;
+        this.j = i6Var;
+        if (i7 == 0) {
+            if (l == null) {
+                l = new TextPaint(1);
+            }
+            l.setTextSize(org.telegram.messenger.g0.L(28.0f));
+            k.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Ai, i6Var));
+            l.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Bi, i6Var));
+            this.h = l;
+            return;
         }
-        return w;
+        if (i7 == 1) {
+            if (m == null) {
+                m = new TextPaint(1);
+            }
+            m.setColor(-1);
+            m.setTextSize(org.telegram.messenger.g0.L(13.0f));
+            m.setTypeface(Typeface.create(Typeface.DEFAULT, 1));
+            this.h = m;
+            return;
+        }
+        if (n == null) {
+            n = new TextPaint(1);
+        }
+        n.setColor(-1);
+        n.setTextSize(org.telegram.ui.ActionBar.n6.d3.getTextSize() * 0.75f);
+        n.setTypeface(Typeface.create(Typeface.DEFAULT, 1));
+        this.h = n;
     }
 
-    @Override // org.telegram.ui.Components.iq, android.graphics.Path
-    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        Layout layout = this.h;
-        if (layout == null) {
-            f(f10, f11, f12, f13, direction);
+    public final void a(String str) {
+        StringBuilder sb2 = this.f;
+        sb2.setLength(0);
+        if (str != null && str.length() > 0) {
+            sb2.append(str.substring(0, 1));
+        }
+        if (sb2.length() <= 0) {
+            this.b = null;
             return;
         }
         try {
-            float f14 = this.l;
-            float f15 = f11 + f14;
-            float f16 = f13 + f14;
-            float f17 = this.j;
-            if (f17 == -1.0f) {
-                this.j = f15;
-            } else if (f17 != f15) {
-                this.j = f15;
-                this.i++;
+            StaticLayout staticLayout = new StaticLayout(sb2.toString().toUpperCase(), this.h, org.telegram.messenger.g0.L(100.0f), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.b = staticLayout;
+            if (staticLayout.getLineCount() > 0) {
+                this.e = this.b.getLineLeft(0);
+                this.c = this.b.getLineWidth(0);
+                this.d = this.b.getLineBottom(0);
             }
-            float lineRight = layout.getLineRight(this.i);
-            float lineLeft = this.h.getLineLeft(this.i);
-            if (f10 < lineRight) {
-                if (f10 > lineLeft || f12 > lineLeft) {
-                    if (f12 > lineRight) {
-                        f12 = lineRight;
-                    }
-                    if (f10 < lineLeft) {
-                        f10 = lineLeft;
-                    }
-                    float f18 = this.k;
-                    float f19 = f10 + f18;
-                    float f20 = f12 + f18;
-                    if (Build.VERSION.SDK_INT < 28) {
-                        f16 -= f16 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
-                    } else if (f16 - f15 > this.p) {
-                        f16 = this.l + (f16 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
-                    }
-                    int i7 = this.o;
-                    if (i7 < 0) {
-                        f16 += i7;
-                    } else if (i7 > 0) {
-                        f15 += i7;
-                    }
-                    float f21 = f15;
-                    float f22 = f16;
-                    if (this.m) {
-                        f(f19 - (org.telegram.messenger.g0.L(5.0f) / 2.0f), f21, f20 + (org.telegram.messenger.g0.L(5.0f) / 2.0f), f22, direction);
-                    } else {
-                        f(f19, f21, f20, f22, direction);
-                    }
-                }
-            }
-        } catch (Exception unused) {
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    public final void d(Layout layout, int i7, float f10) {
-        e(layout, i7, 0.0f, f10);
-    }
-
-    public final void e(Layout layout, int i7, float f10, float f11) {
-        int lineCount;
-        if (layout == null) {
-            this.h = null;
-            this.i = 0;
-            this.j = -1.0f;
-            this.k = f10;
-            this.l = f11;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        if (bounds == null) {
             return;
         }
-        this.h = layout;
-        this.i = layout.getLineForOffset(i7);
-        this.j = -1.0f;
-        this.k = f10;
-        this.l = f11;
-        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
-            return;
+        if (this.g == 0) {
+            int i7 = org.telegram.ui.ActionBar.n6.Ai;
+            org.telegram.ui.ActionBar.i6 i6Var = this.j;
+            int w02 = org.telegram.ui.ActionBar.n6.w0(i7, i6Var);
+            Paint paint = k;
+            paint.setColor(w02);
+            this.h.setColor(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Bi, i6Var));
+            float f10 = bounds.left;
+            float f11 = bounds.top;
+            float f12 = bounds.right;
+            float f13 = bounds.bottom;
+            RectF rectF = this.a;
+            rectF.set(f10, f11, f12, f13);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), paint);
         }
-        int i10 = lineCount - 1;
-        this.p = layout.getLineBottom(i10) - layout.getLineTop(i10);
-    }
-
-    public final void f(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        float f14 = this.r;
-        float f15 = f10 - f14;
-        float f16 = this.q;
-        float f17 = f11 - f16;
-        float f18 = f12 + f14;
-        float f19 = f13 + f16;
-        this.s = Math.min(this.s, Math.min(f15, f18));
-        this.u = Math.min(this.u, Math.min(f17, f19));
-        this.t = Math.max(this.t, Math.max(f15, f18));
-        this.v = Math.max(this.v, Math.max(f17, f19));
-        super.addRect(f15, f17, f18, f19, direction);
-    }
-
-    @Override // org.telegram.ui.Components.iq, android.graphics.Path
-    public final void reset() {
-        if (this.n) {
-            super.reset();
+        canvas.save();
+        float f14 = this.i;
+        if (f14 != 1.0f) {
+            canvas.scale(f14, f14, bounds.centerX(), bounds.centerY());
         }
+        if (this.b != null) {
+            float width = bounds.width();
+            canvas.translate(com.google.android.gms.internal.vision.e2.A(width, this.c, 2.0f, bounds.left) - this.e, com.google.android.gms.internal.vision.e2.A(width, this.d, 2.0f, bounds.top));
+            this.b.draw(canvas);
+        }
+        canvas.restore();
     }
 
-    public u70(int i7) {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.m = true;
-        this.c = false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        this.h.setAlpha(i7);
+        k.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,42 +1,39 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c01 extends v4.s {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ n11 R;
+public final /* synthetic */ class c01 implements org.telegram.messenger.x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c01(n11 n11Var, int i7) {
-        super(40);
-        this.Q = i7;
-        this.R = n11Var;
+    public /* synthetic */ c01(LinkedHashSet linkedHashSet, Runnable runnable, int i7) {
+        this.a = i7;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // v4.b0, v4.o0
-    public final void v0(RecyclerView recyclerView, v4.b1 b1Var, int i7) {
-        switch (this.Q) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
             case 0:
-                try {
-                    hi.l1 l1Var = new hi.l1(3, recyclerView.getContext(), this);
-                    l1Var.a = i7;
-                    w0(l1Var);
-                    break;
-                } catch (Exception e10) {
-                    org.telegram.messenger.a8.g(e10, true);
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
                 }
+                this.c.run();
+                break;
             default:
-                try {
-                    hi.l1 l1Var2 = new hi.l1(5, recyclerView.getContext(), this);
-                    l1Var2.a = i7;
-                    w0(l1Var2);
-                    break;
-                } catch (Exception e11) {
-                    org.telegram.messenger.a8.g(e11, true);
-                    return;
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
                 }
+                this.c.run();
+                break;
         }
     }
 }

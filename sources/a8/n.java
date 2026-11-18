@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class n extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -38,7 +38,7 @@ public class n extends AbstractCollection {
                 ((h9.l) this.b).clear();
                 break;
             case 5:
-                ((h9.k1) this.b).clear();
+                ((h9.l1) this.b).clear();
                 break;
             case 6:
                 ((h9.s) this.b).clear();
@@ -71,7 +71,7 @@ public class n extends AbstractCollection {
                 Collection collection = (Collection) lVar.b().get(key);
                 return collection != null && collection.contains(value);
             case 5:
-                return ((h9.k1) this.b).c(obj);
+                return ((h9.l1) this.b).c(obj);
             case 7:
                 return ((AbstractMap) this.b).containsValue(obj);
         }
@@ -109,7 +109,7 @@ public class n extends AbstractCollection {
             case 4:
                 return ((h9.l) this.b).g();
             case 5:
-                return new h9.b((h9.k1) this.b, 0);
+                return new h9.b((h9.l1) this.b, 0);
             case 6:
                 h9.s sVar = (h9.s) this.b;
                 Map d = sVar.d();
@@ -165,7 +165,7 @@ public class n extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry4 : abstractMap.entrySet()) {
-                        if (ia.a(obj, entry4.getValue())) {
+                        if (ka.a(obj, entry4.getValue())) {
                             abstractMap.remove(entry4.getKey());
                             return true;
                         }
@@ -297,7 +297,7 @@ public class n extends AbstractCollection {
             case 4:
                 return ((h9.l) this.b).size();
             case 5:
-                return ((h9.k1) this.b).f;
+                return ((h9.l1) this.b).f;
             case 6:
                 return ((h9.s) this.b).size();
             default:

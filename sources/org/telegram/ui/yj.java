@@ -1,37 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class yj extends dr0 {
-    public yj(ViewGroup viewGroup, ViewGroup viewGroup2) {
-        super(viewGroup, viewGroup2);
+public final class yj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bn b;
+
+    public /* synthetic */ yj(bn bnVar, int i7) {
+        this.a = i7;
+        this.b = bnVar;
     }
 
-    @Override // org.telegram.ui.dr0
-    public final void c(Canvas canvas, float f10, float f11, float f12, float f13, float f14) {
-        if (f10 > 0.0f) {
-            View view = this.e;
-            if (view instanceof org.telegram.ui.Cells.q1) {
-                org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) view;
-                int max = (int) Math.max(f13, f12);
-                int min = (int) Math.min(f14, q1Var.getMeasuredHeight() + f12);
-                RectF rectF = org.telegram.messenger.g0.P;
-                rectF.set(f11, max, q1Var.getMeasuredWidth() + f11, min);
-                canvas.saveLayerAlpha(rectF, (int) (f10 * 255.0f), 31);
-                canvas.translate(f11, f12 + q1Var.getPaddingTop());
-                q1Var.Mb = true;
-                q1Var.j1(canvas);
-                if (q1Var.G3() && q1Var.getCurrentMessagesGroup() == null) {
-                    q1Var.y1(1.0f, canvas, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.ah ahVar;
+        FrameLayout frameLayout;
+        switch (this.a) {
+            case 0:
+                bn bnVar = this.b;
+                AnimatorSet animatorSet = bnVar.sa;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    bnVar.sa.start();
+                    break;
                 }
-                q1Var.Mb = false;
-                canvas.restore();
-            }
+                break;
+            default:
+                bn bnVar2 = this.b;
+                if (bnVar2.d3 == this && (ahVar = bnVar2.b1) != null && (frameLayout = bnVar2.c3) != null) {
+                    ahVar.j(frameLayout, false, true);
+                    break;
+                }
+                break;
         }
     }
 }

@@ -16,16 +16,16 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.zip.GZIPOutputStream;
-import org.telegram.ui.Components.mg;
+import org.telegram.ui.Components.vg;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g implements Closeable {
     public final f a;
     public final String b;
     public final InputStream c;
     public final long d;
-    public final mg e = new mg(this, 1);
+    public final vg e = new vg(this, 1);
     public final HashMap f = new HashMap();
     public int h;
     public boolean n;

@@ -1,10 +1,10 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.net.Uri;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final String i;
@@ -47,8 +47,8 @@ public final class a {
     public a(int i7, int i10, int[] iArr, l0[] l0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
         Uri uri;
         int i11 = 0;
-        ja.f(iArr.length == l0VarArr.length);
-        ja.f(iArr.length == bVarArr.length);
+        la.f(iArr.length == l0VarArr.length);
+        la.f(iArr.length == bVarArr.length);
         this.a = i7;
         this.b = i10;
         this.e = iArr;

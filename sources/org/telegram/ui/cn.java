@@ -1,72 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class cn extends FrameLayout {
-    public final bn a;
-    public final org.telegram.ui.ActionBar.o4 b;
-    public View c;
-    public int d;
-    public boolean e;
+public final class cn extends bn {
+    public final /* synthetic */ dn vd;
 
-    public cn(Context context, org.telegram.ui.ActionBar.o4 o4Var, Bundle bundle) {
-        super(context);
-        this.e = true;
-        this.b = o4Var;
-        bn bnVar = new bn(this, bundle);
-        this.a = bnVar;
-        bnVar.lb = true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cn(dn dnVar, Bundle bundle) {
+        super(bundle);
+        this.vd = dnVar;
     }
 
-    public void a() {
-        int i7;
-        bn bnVar = this.a;
-        if (bnVar.onFragmentCreate()) {
-            this.c = bnVar.fragmentView;
-            bnVar.setParentLayout(this.b);
-            View view = this.c;
-            if (view == null) {
-                this.c = bnVar.createView(getContext());
-            } else {
-                ViewGroup viewGroup = (ViewGroup) view.getParent();
-                if (viewGroup != null) {
-                    bnVar.onRemoveFromParent();
-                    viewGroup.removeView(this.c);
-                }
-            }
-            aj ajVar = bnVar.A0;
-            if (ajVar != null && (i7 = this.d) != 0) {
-                ajVar.setPadding(0, i7, 0, 0);
-            }
-            bnVar.Sa();
-            addView(this.c, c8.ja.c(-1.0f, -1));
-            if (this.e) {
-                bnVar.onResume();
-            }
-        }
+    @Override // org.telegram.ui.bn
+    public final void ya(boolean z10) {
+        this.vd.b(z10);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-    }
-
-    public void setTopPadding(int i7) {
-        this.d = i7;
-    }
-
-    public void b(boolean z10) {
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void setNavigationBarColor(int i7) {
     }
 }

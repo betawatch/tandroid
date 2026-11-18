@@ -9,21 +9,21 @@ import android.os.RemoteException;
 import android.util.Log;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m0 implements IBinder.DeathRecipient {
     public final Messenger a;
     public final g.c b;
     public final Messenger c;
     public int f;
-    public int g;
-    public final /* synthetic */ r0 i;
+    public int h;
+    public final /* synthetic */ r0 r;
     public int d = 1;
     public int e = 1;
-    public final SparseArray h = new SparseArray();
+    public final SparseArray n = new SparseArray();
 
     public m0(r0 r0Var, Messenger messenger) {
-        this.i = r0Var;
+        this.r = r0Var;
         this.a = messenger;
         g.c cVar = new g.c(this);
         this.b = cVar;
@@ -60,18 +60,18 @@ public final class m0 implements IBinder.DeathRecipient {
 
     @Override // android.os.IBinder.DeathRecipient
     public final void binderDied() {
-        this.i.s.post(new l0(this, 1));
+        this.r.s.post(new l0(this, 1));
     }
 
     public final void c(int i7, int i10) {
-        Bundle f10 = r.b.f(i10, "volume");
+        Bundle f10 = p5.c.f(i10, "volume");
         int i11 = this.d;
         this.d = i11 + 1;
         b(7, i11, i7, null, f10);
     }
 
     public final void d(int i7, int i10) {
-        Bundle f10 = r.b.f(i10, "volume");
+        Bundle f10 = p5.c.f(i10, "volume");
         int i11 = this.d;
         this.d = i11 + 1;
         b(8, i11, i7, null, f10);

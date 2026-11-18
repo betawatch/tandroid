@@ -14,9 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class NotificationImageProvider extends ContentProvider implements is {
+public class NotificationImageProvider extends ContentProvider implements fs {
     public static String d;
     public static UriMatcher e;
     public final HashSet a = new HashSet();
@@ -28,9 +28,9 @@ public class NotificationImageProvider extends ContentProvider implements is {
         return 0;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.Y1) {
+        if (i7 == ks.Y1) {
             synchronized (this.b) {
                 try {
                     String str = (String) objArr[0];
@@ -65,8 +65,8 @@ public class NotificationImageProvider extends ContentProvider implements is {
 
     @Override // android.content.ContentProvider
     public final boolean onCreate() {
-        for (int i7 = 0; i7 < m10.c(); i7++) {
-            ns.f(i7).b(this, ns.Y1);
+        for (int i7 = 0; i7 < j10.c(); i7++) {
+            ks.f(i7).b(this, ks.Y1);
         }
         return true;
     }
@@ -106,7 +106,7 @@ public class NotificationImageProvider extends ContentProvider implements is {
             }
             while (!file.exists()) {
                 if (System.currentTimeMillis() - longValue >= 3000) {
-                    if (r2.a) {
+                    if (s2.a) {
                         a8.l("Waiting for " + str2 + " to download timed out");
                     }
                     if (TextUtils.isEmpty(queryParameter2)) {
@@ -140,8 +140,8 @@ public class NotificationImageProvider extends ContentProvider implements is {
 
     @Override // android.content.ContentProvider
     public final void shutdown() {
-        for (int i7 = 0; i7 < m10.c(); i7++) {
-            ns.f(i7).n(this, ns.Y1);
+        for (int i7 = 0; i7 < j10.c(); i7++) {
+            ks.f(i7).n(this, ks.Y1);
         }
     }
 

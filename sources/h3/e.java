@@ -1,13 +1,13 @@
 package h3;
 
-import a8.ja;
+import a8.la;
 import f3.a0;
 import f3.c0;
 import f3.i0;
 import h2.l0;
 import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
     public final d a;
@@ -33,7 +33,7 @@ public final class e {
         if (a10 != 1 && a10 != 2) {
             z10 = false;
         }
-        ja.f(z10);
+        la.f(z10);
         int i11 = (((i7 % 10) + 48) << 8) | ((i7 / 10) + 48);
         this.c = (a10 == 2 ? 1667497984 : 1651965952) | i11;
         long j3 = dVar.b * 1000000;

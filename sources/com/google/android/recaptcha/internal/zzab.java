@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.e;
 import gd.k;
 import hd.r;
@@ -9,7 +9,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzab extends j implements p {
     final /* synthetic */ zzxp zza;
@@ -35,7 +35,7 @@ final class zzab extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        b.c(obj);
+        h.b(obj);
         zzxp zzxpVar = this.zza;
         if (zzxpVar.zzl().length() != 0) {
             zzad.zzb(this.zzb).zzb(r.c(new e("_GRECAPTCHA_KC", zzxpVar.zzl())));

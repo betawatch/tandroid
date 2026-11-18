@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class er0 extends po0 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.e2 V2;
+public final class er0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ gt0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public er0(Context context, String str, String str2, org.telegram.ui.ActionBar.e6 e6Var, org.telegram.ui.ActionBar.e2 e2Var) {
-        super(context, null, str, false, str2, false, e6Var);
-        this.V2 = e2Var;
+    public er0(gt0 gt0Var) {
+        this.a = gt0Var;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        org.telegram.messenger.g0.i3(new org.telegram.ui.f0(this.V2, hVar, i7, 20), 100L);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+        gt0 gt0Var = this.a;
+        if (gt0Var.q0 == null) {
+            return;
+        }
+        gt0Var.q0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - gt0Var.q0.getRight());
     }
 }

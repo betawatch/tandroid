@@ -1,6 +1,6 @@
 package androidx.media3.decoder.ffmpeg;
 
-import a8.ja;
+import a8.la;
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
 import e2.u;
 import h2.l0;
@@ -12,9 +12,9 @@ import k2.f;
 import k2.h;
 import k2.j;
 import k2.l;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -88,12 +88,12 @@ public final class FfmpegAudioDecoder extends l {
                 byte[] bArr5 = (byte[]) list.get(1);
                 byte[] bArr6 = new byte[bArr4.length + bArr5.length + 6];
                 bArr6[0] = (byte) (bArr4.length >> 8);
-                bArr6[1] = (byte) (bArr4.length & ns.e4);
+                bArr6[1] = (byte) (bArr4.length & ks.e4);
                 System.arraycopy(bArr4, 0, bArr6, 2, bArr4.length);
                 bArr6[bArr4.length + 2] = 0;
                 bArr6[bArr4.length + 3] = 0;
                 bArr6[bArr4.length + 4] = (byte) (bArr5.length >> 8);
-                bArr6[bArr4.length + 5] = (byte) (bArr5.length & ns.e4);
+                bArr6[bArr4.length + 5] = (byte) (bArr5.length & ks.e4);
                 System.arraycopy(bArr5, 0, bArr6, bArr4.length + 6, bArr5.length);
                 bArr = bArr6;
                 break;
@@ -181,7 +181,7 @@ public final class FfmpegAudioDecoder extends l {
         this.r = i7;
         ByteBuffer byteBuffer = simpleDecoderOutputBuffer.b;
         byteBuffer.getClass();
-        ja.f(i7 >= byteBuffer.limit());
+        la.f(i7 >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i7).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);

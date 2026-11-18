@@ -6,17 +6,17 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.TLObject;
-import v4.f1;
-import v4.w0;
+import v4.g1;
+import v4.x0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends r0.b {
     public final /* synthetic */ int d = 0;
     public final Object e;
 
-    public g(f1 f1Var) {
-        this.e = f1Var;
+    public g(g1 g1Var) {
+        this.e = g1Var;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
@@ -75,9 +75,9 @@ public final class g extends r0.b {
                 break;
             default:
                 this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
-                f1 f1Var = (f1) this.e;
-                boolean e10 = f1Var.e();
-                RecyclerView recyclerView = f1Var.d;
+                g1 g1Var = (g1) this.e;
+                boolean e10 = g1Var.e();
+                RecyclerView recyclerView = g1Var.d;
                 if (!e10 && recyclerView.getLayoutManager() != null) {
                     recyclerView.getLayoutManager().T(view, cVar);
                     break;
@@ -105,14 +105,14 @@ public final class g extends r0.b {
                 }
                 return false;
             default:
-                f1 f1Var = (f1) this.e;
+                g1 g1Var = (g1) this.e;
                 if (super.d(view, i7, bundle)) {
                     return true;
                 }
-                boolean e10 = f1Var.e();
-                RecyclerView recyclerView = f1Var.d;
+                boolean e10 = g1Var.e();
+                RecyclerView recyclerView = g1Var.d;
                 if (!e10 && recyclerView.getLayoutManager() != null) {
-                    w0 w0Var = recyclerView.getLayoutManager().b.b;
+                    x0 x0Var = recyclerView.getLayoutManager().b.b;
                 }
                 return false;
         }

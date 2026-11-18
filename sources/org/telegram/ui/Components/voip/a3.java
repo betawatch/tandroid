@@ -1,32 +1,44 @@
 package org.telegram.ui.Components.voip;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class a3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f3 b;
-    public final /* synthetic */ int c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ a3(f3 f3Var, int i7, int i10) {
-        this.a = i10;
-        this.b = f3Var;
-        this.c = i7;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class a3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d3 b;
+
+    public /* synthetic */ a3(d3 d3Var, int i7) {
+        this.a = i7;
+        this.b = d3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new a3(this.b, this.c, 2));
+                d3 d3Var = this.b;
+                d3Var.getClass();
+                d3Var.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d3Var.invalidate();
                 break;
             case 1:
-                org.telegram.messenger.g0.h3(new a3(this.b, this.c, 3));
+                d3 d3Var2 = this.b;
+                d3Var2.getClass();
+                d3Var2.x = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                d3Var2.invalidate();
                 break;
             case 2:
-                this.b.c(this.c);
+                d3 d3Var3 = this.b;
+                d3Var3.getClass();
+                d3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                d3Var3.invalidate();
                 break;
             default:
-                this.b.a(this.c);
+                d3 d3Var4 = this.b;
+                d3Var4.getClass();
+                d3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                d3Var4.invalidate();
                 break;
         }
     }

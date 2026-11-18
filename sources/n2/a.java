@@ -1,11 +1,11 @@
 package n2;
 
 import android.os.Build;
-import h9.g2;
+import h9.h2;
 import j$.util.Objects;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final a d;
@@ -31,7 +31,7 @@ public final class a {
         this.a = i7;
         h9.t0 q10 = h9.t0.q(set);
         this.c = q10;
-        g2 it = q10.iterator();
+        h2 it = q10.iterator();
         int i10 = 0;
         while (it.hasNext()) {
             i10 = Math.max(i10, Integer.bitCount(((Integer) it.next()).intValue()));

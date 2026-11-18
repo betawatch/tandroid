@@ -13,26 +13,25 @@ import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.util.Rational;
 import android.view.View;
-import bg.u0;
-import c8.ja;
-import c8.kd;
+import bg.v0;
+import c8.ma;
+import c8.nd;
 import com.google.android.gms.internal.vision.e2;
 import e2.c1;
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
 import org.telegram.ui.LaunchActivity;
 import p4.r;
 import p4.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class p {
     public final l2.i a;
     public LaunchActivity b;
     public q c;
-    public u0 d;
+    public v0 d;
     public n e;
     public n f;
     public o g;
@@ -68,7 +67,7 @@ public final class p {
         String str = this.r;
         if (str == null || !str.equals(this.n)) {
             this.n = this.r;
-            g0.v3(this.b, b10);
+            g0.u3(this.b, b10);
         }
     }
 
@@ -77,12 +76,12 @@ public final class p {
         StringBuilder sb2 = this.s;
         boolean z10 = false;
         sb2.setLength(0);
-        int L = nVar.a.L();
+        int J = nVar.a.J();
         l lVar = nVar.a;
-        int b02 = lVar.b0();
-        if (L > 0 && b02 > 0) {
-            float f10 = L / b02;
-            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(ns.K3, 100) : new Rational(L, b02);
+        int a02 = lVar.a0();
+        if (J > 0 && a02 > 0) {
+            float f10 = J / a02;
+            Rational rational = f10 < 0.45f ? new Rational(45, 100) : f10 > 2.35f ? new Rational(235, 100) : new Rational(J, a02);
             builder.setAspectRatio(rational);
             sb2.append(rational);
         }
@@ -99,7 +98,7 @@ public final class p {
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = this.t;
         arrayList2.clear();
-        lVar.j0(this.b.getMaxNumPictureInPictureActions(), arrayList2);
+        lVar.h0(this.b.getMaxNumPictureInPictureActions(), arrayList2);
         for (int i10 = 0; i10 < arrayList2.size(); i10++) {
             k kVar = (k) arrayList2.get(i10);
             Intent intent = new Intent("org.telegram.utils.pip.ACTION");
@@ -160,9 +159,9 @@ public final class p {
             g0.E2(qVar);
             this.c = null;
         }
-        u0 u0Var = this.d;
-        if (u0Var != null) {
-            u0Var.b();
+        v0 v0Var = this.d;
+        if (v0Var != null) {
+            v0Var.a();
             this.d = null;
         }
         this.b = null;
@@ -183,9 +182,9 @@ public final class p {
         this.h = null;
         this.i = false;
         this.o = false;
-        u0 u0Var = this.d;
-        if (u0Var != null) {
-            u0Var.c(false);
+        v0 v0Var = this.d;
+        if (v0Var != null) {
+            v0Var.b(false);
         }
         q qVar = this.c;
         if (qVar != null) {
@@ -196,8 +195,8 @@ public final class p {
             l lVar = nVar.a;
             if (view != null) {
                 nVar.c = nVar.d;
-                lVar.a(view);
-                lVar.x(view);
+                lVar.d(view);
+                lVar.w(view);
                 iVar.f();
                 return;
             }
@@ -214,13 +213,13 @@ public final class p {
                 surfaceTexture = f9.b.d();
             }
             if (surfaceTexture != null) {
-                nVar.a.C(surfaceTexture);
+                nVar.a.D(surfaceTexture);
             }
         } else {
             nVar.c = 1;
             hVar.j = oVar;
             g0.E2(oVar);
-            hVar.i.addView(oVar, 0, ja.c(-1.0f, -1));
+            hVar.i.addView(oVar, 0, ma.c(-1.0f, -1));
             hVar.a();
             hVar.k();
         }
@@ -314,22 +313,22 @@ public final class p {
         this.e = null;
         this.o = true;
         nVar.d = nVar.c;
-        View w10 = nVar.e == null ? lVar.w(this.b) : null;
-        boolean z10 = w10 != null && rect.isEmpty();
-        u0 u0Var = this.d;
-        if (u0Var != null && !z10) {
-            u0Var.c(true);
+        View v = nVar.e == null ? lVar.v(this.b) : null;
+        boolean z10 = v != null && rect.isEmpty();
+        v0 v0Var = this.d;
+        if (v0Var != null && !z10) {
+            v0Var.b(true);
         }
-        if (w10 != null) {
+        if (v != null) {
             if (z10) {
-                w10.setVisibility(4);
+                v.setVisibility(4);
             }
-            this.c.a(w10, rect);
-            lVar.Y(w10);
+            this.c.a(v, rect);
+            lVar.X(v);
         } else if (nVar.c != 1 || (hVar = nVar.e) == null) {
             oVar = new o(this.b);
             this.c.a(oVar, rect);
-            lVar.j(oVar);
+            lVar.i(oVar);
         } else {
             o oVar2 = hVar.j;
             hVar.j = null;
@@ -343,7 +342,7 @@ public final class p {
         }
         this.c.bringToFront();
         this.g = oVar;
-        this.h = w10;
+        this.h = v;
         nVar.c = 2;
         k(nVar);
     }
@@ -363,7 +362,7 @@ public final class p {
             k(this.f);
             return;
         }
-        if (!kd.b(launchActivity) || kd.a(this.b)) {
+        if (!nd.b(launchActivity) || nd.a(this.b)) {
             nVar = null;
         } else {
             ArrayList arrayList = (ArrayList) this.a.c;
@@ -373,7 +372,7 @@ public final class p {
                     nVar = (n) arrayList.get(size);
                     int i7 = nVar.c;
                     l lVar = nVar.a;
-                    if (i7 == 0 && lVar.D() == null && lVar.F() && lVar.N()) {
+                    if (i7 == 0 && lVar.E() == null && lVar.G() && lVar.N()) {
                         break;
                     } else {
                         size--;
@@ -384,7 +383,7 @@ public final class p {
                         n nVar3 = (n) arrayList.get(size2);
                         int i10 = nVar3.c;
                         l lVar2 = nVar3.a;
-                        if (i10 == 1 && lVar2.N() && ((hVar = nVar3.e) == null ? !(!nVar3.f || nVar3.g) : !(hVar.f || hVar.k != null)) && (nVar == null || lVar2.d() > nVar.a.d())) {
+                        if (i10 == 1 && lVar2.N() && ((hVar = nVar3.e) == null ? !(!nVar3.f || nVar3.g) : !(hVar.f || hVar.k != null)) && (nVar == null || lVar2.e() > nVar.a.e())) {
                             nVar = nVar3;
                         }
                     }
@@ -393,7 +392,7 @@ public final class p {
                             n nVar4 = (n) arrayList.get(size3);
                             int i11 = nVar4.c;
                             l lVar3 = nVar4.a;
-                            if (i11 == 0 && lVar3.T() && lVar3.N() && (nVar == null || lVar3.d() > nVar.a.d())) {
+                            if (i11 == 0 && lVar3.S() && lVar3.N() && (nVar == null || lVar3.e() > nVar.a.e())) {
                                 nVar = nVar4;
                             }
                         }
@@ -408,22 +407,22 @@ public final class p {
         } else if (this.j) {
             this.j = false;
             this.n = null;
-            g0.c3(this.b);
+            g0.b3(this.b);
         }
         h();
     }
 
     public final void k(n nVar) {
-        c1 R = nVar != null ? nVar.a.R() : null;
-        if (R == null) {
+        c1 Q = nVar != null ? nVar.a.Q() : null;
+        if (Q == null) {
             h();
             return;
         }
         x xVar = this.k;
-        if (xVar == null || xVar.a.t.a != R) {
+        if (xVar == null || xVar.a.t.a != Q) {
             h();
             try {
-                r rVar = new r(this.b, R);
+                r rVar = new r(this.b, Q);
                 rVar.c = "utils-pip-media-session";
                 this.k = rVar.a();
             } catch (Exception e10) {

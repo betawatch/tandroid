@@ -1,44 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.R;
 import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class gn extends org.telegram.ui.Cells.z5 {
-    public final /* synthetic */ org.telegram.ui.l4 G;
+public final class gn extends v4.d0 {
+    public final /* synthetic */ kg.c0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gn(org.telegram.ui.l4 l4Var, Context context, int i7) {
-        super(context, i7, null, null);
-        this.G = l4Var;
+    public gn(kg.c0 c0Var, Context context) {
+        super(context);
+        this.r = c0Var;
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void h(bi.u uVar, ActionMode actionMode) {
-        if (uVar.isFocused() && uVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.an.C8(menu, ((org.telegram.ui.an) ((jn) this.G.e).b.a2).h, false, true, true, true);
+    @Override // v4.d0
+    public final int k(int i7, View view) {
+        int i10;
+        rn rnVar = (rn) this.r.V;
+        if (rnVar.W0) {
+            i7 = -1;
         }
+        int k10 = super.k(i7, view);
+        if (rnVar.W0) {
+            k10 += org.telegram.messenger.g0.L(160.0f);
+        }
+        if (!rnVar.W0) {
+            k10 = org.telegram.messenger.f3.B(7.0f, rnVar.S0 - org.telegram.messenger.g0.m, k10);
+        }
+        if (rnVar.W0 && k10 == 0 && (i10 = rnVar.X0) >= 0) {
+            rn.P(rnVar, i10);
+            rnVar.X0 = -1;
+        }
+        rnVar.W0 = false;
+        return k10;
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void j(boolean z10) {
-        jn.R((jn) this.G.e, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final void k(org.telegram.ui.Cells.z5 z5Var) {
-        jn.S((jn) this.G.e, z5Var);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final void l(bi.u uVar) {
-        ((jn) this.G.e).b.h1(uVar, true);
+    @Override // v4.d0
+    public final int m(int i7) {
+        return super.m(i7) * 2;
     }
 }

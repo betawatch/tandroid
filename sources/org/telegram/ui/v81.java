@@ -1,57 +1,48 @@
 package org.telegram.ui;
 
+import android.app.Activity;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.TextView;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v81 implements zh.c, org.telegram.messenger.yo, r0.m, org.telegram.ui.Components.jj0 {
-    public final /* synthetic */ u91 a;
+public final class v81 extends r11 {
+    public boolean f2;
+    public final /* synthetic */ w81 g2;
 
-    public /* synthetic */ v81(u91 u91Var) {
-        this.a = u91Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v81(w81 w81Var, w81 w81Var2, Activity activity) {
+        super(w81Var2, activity, false, null, 3, null);
+        this.g2 = w81Var;
+        this.f2 = true;
     }
 
-    @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        int i7 = k1Var.a.f(519).d;
-        u91 u91Var = this.a;
-        u91Var.g1 = i7;
-        q91 q91Var = u91Var.s0;
-        if (q91Var != null) {
-            q91Var.setPadding(0, 0, 0, i7);
+    @Override // org.telegram.ui.r11, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        if (this.f2) {
+            this.f2 = false;
+            this.g2.f.s(null);
         }
-        q81 q81Var = u91Var.n;
-        if (q81Var != null) {
-            ((TextView) q81Var.d).setTranslationY((-u91Var.g1) - u91Var.f1);
+    }
+
+    @Override // org.telegram.ui.r11
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i7;
+        int i10;
+        w81 w81Var = this.g2;
+        i7 = ((org.telegram.ui.ActionBar.h2) w81Var).currentAccount;
+        boolean z10 = false;
+        if (!TextUtils.isEmpty(org.telegram.messenger.j10.i(i7).f0)) {
+            org.telegram.messenger.ri mediaDataController = w81Var.getMediaDataController();
+            i10 = ((org.telegram.ui.ActionBar.h2) w81Var).currentAccount;
+            TLRPC.TL_messages_stickerSet p02 = mediaDataController.p0(org.telegram.messenger.j10.i(i10).f0);
+            if ((p02 == null ? 0L : p02.set.id) == org.telegram.messenger.ri.s0(document)) {
+                z10 = true;
+            }
         }
-        u91Var.h.setTranslationY(((-u91Var.Y0) - u91Var.g1) - u91Var.f1);
-        u91Var.F0();
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.messenger.yo
-    public boolean d(TLRPC.TL_error tL_error) {
-        return u91.Z(this.a, tL_error);
-    }
-
-    @Override // zh.c
-    public void e(boolean z10, boolean z11) {
-        u91 u91Var = this.a;
-        u91Var.V0.i(u91Var.S0.b(), z10, z11);
-    }
-
-    @Override // org.telegram.ui.Components.jj0
-    public boolean f(float f10, float f11, int i7, View view) {
-        return u91.b0(this.a, view, f10);
-    }
-
-    @Override // org.telegram.ui.Components.jj0
-    public /* synthetic */ void q(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.jj0
-    public /* synthetic */ void i() {
+        w81Var.g0(l10, z10);
     }
 }

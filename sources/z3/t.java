@@ -1,10 +1,10 @@
 package z3;
 
-import a8.ja;
+import a8.la;
 import h2.l0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t {
     public final q a;
@@ -19,9 +19,9 @@ public final class t {
     public final boolean j;
 
     public t(q qVar, long[] jArr, int[] iArr, int i7, long[] jArr2, int[] iArr2, int[] iArr3, boolean z10, long j3, int i10) {
-        ja.f(iArr.length == jArr2.length);
-        ja.f(jArr.length == jArr2.length);
-        ja.f(iArr2.length == jArr2.length);
+        la.f(iArr.length == jArr2.length);
+        la.f(jArr.length == jArr2.length);
+        la.f(iArr2.length == jArr2.length);
         this.a = qVar;
         this.c = jArr;
         this.d = iArr;

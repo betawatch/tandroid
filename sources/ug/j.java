@@ -1,10 +1,10 @@
 package ug;
 
 import com.google.android.gms.internal.vision.e2;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class j {
     public final TLRPC.TL_premiumGiftOption a;
@@ -27,10 +27,10 @@ public final class j {
         TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
         if (tL_premiumGiftOption == null) {
             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-            if (tL_premiumGiftCodeOption != null && (r2.b() || tL_premiumGiftCodeOption.store_product == null)) {
+            if (tL_premiumGiftCodeOption != null && (s2.b() || tL_premiumGiftCodeOption.store_product == null)) {
                 return tL_premiumGiftCodeOption.currency;
             }
-        } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
+        } else if (s2.b() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.currency;
         }
         f5.m mVar = this.h;
@@ -56,7 +56,7 @@ public final class j {
     public final String c() {
         TLRPC.TL_premiumGiftOption tL_premiumGiftOption;
         TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption;
-        if (r2.b() || (((tL_premiumGiftOption = this.a) != null && tL_premiumGiftOption.store_product == null) || ((tL_premiumGiftCodeOption = this.b) != null && tL_premiumGiftCodeOption.store_product == null))) {
+        if (s2.b() || (((tL_premiumGiftOption = this.a) != null && tL_premiumGiftOption.store_product == null) || ((tL_premiumGiftCodeOption = this.b) != null && tL_premiumGiftCodeOption.store_product == null))) {
             return org.telegram.messenger.r1.i().f(e(), a());
         }
         if (this.h == null) {
@@ -85,10 +85,10 @@ public final class j {
         TLRPC.TL_premiumGiftOption tL_premiumGiftOption = this.a;
         if (tL_premiumGiftOption == null) {
             TLRPC.TL_premiumGiftCodeOption tL_premiumGiftCodeOption = this.b;
-            if (tL_premiumGiftCodeOption != null && (r2.b() || tL_premiumGiftCodeOption.store_product == null)) {
+            if (tL_premiumGiftCodeOption != null && (s2.b() || tL_premiumGiftCodeOption.store_product == null)) {
                 return tL_premiumGiftCodeOption.amount;
             }
-        } else if (r2.b() || tL_premiumGiftOption.store_product == null) {
+        } else if (s2.b() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.amount;
         }
         f5.m mVar = this.h;

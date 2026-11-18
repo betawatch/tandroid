@@ -1,49 +1,68 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.voip.VoIPService;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class k20 implements org.telegram.ui.ActionBar.o2 {
-    public final /* synthetic */ c40 a;
+public final class k20 extends org.telegram.ui.Components.wt {
+    public final /* synthetic */ f40 W;
 
-    public k20(c40 c40Var) {
-        this.a = c40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k20(f40 f40Var, LaunchActivity launchActivity, l30 l30Var, org.telegram.ui.ActionBar.h2 h2Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(launchActivity, l30Var, h2Var, 5, true, i6Var);
+        this.W = f40Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void v() {
-        CountDownLatch groupCallBottomSheetLatch;
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
-            groupCallBottomSheetLatch.countDown();
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view != getEditText()) {
+            return super.drawChild(canvas, view, j3);
         }
-        c40 c40Var = this.a;
-        if (c40Var.E3 == 6) {
-            SharedPreferences e12 = org.telegram.messenger.np.e1();
-            if (e12.getBoolean("reminderhint", false)) {
-                return;
-            }
-            e12.edit().putBoolean("reminderhint", true).commit();
-            if (c40Var.i2 == null) {
-                org.telegram.ui.Components.b30 b30Var = new org.telegram.ui.Components.b30(c40Var.getContext(), 8);
-                c40Var.i2 = b30Var;
-                b30Var.setAlpha(0.0f);
-                c40Var.i2.setVisibility(4);
-                c40Var.i2.setShowingDuration(4000L);
-                c40Var.b.addView(c40Var.i2, c8.ja.d(-2, -2.0f, 51, 19.0f, 0.0f, 19.0f, 0.0f));
-                c40Var.i2.setText(org.telegram.messenger.hd.M0(2131743438, null));
-                c40Var.i2.b();
-            }
-            c40Var.i2.setExtraTranslationY(-org.telegram.messenger.g0.m);
-            c40Var.i2.c(c40Var.w1);
+        canvas.save();
+        f40 f40Var = this.W;
+        f40Var.C1.getEditText().setTranslationY(view.getMeasuredHeight() - f40Var.A5.f);
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void f() {
+        super.f();
+        org.telegram.ui.Components.ry emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.x0 = false;
+            emojiView.y2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(this.W.b.getPaddingBottom());
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final boolean x() {
-        return true;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, i10);
+        te.c cVar = this.W.A5;
+        if (cVar.f == 0.0f) {
+            cVar.c(getMeasuredHeight());
+        } else {
+            cVar.a(getMeasuredHeight());
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void p() {
+        rh.h hVar = this.W.B3;
+        int max = this.e ? Math.max(0, getEmojiPadding()) : this.O ? Math.max(0, getKeyboardHeight()) : 0;
+        if (max > 0) {
+            hVar.g(max);
+        } else {
+            hVar.i(false);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.wt
+    public final void y() {
+        this.W.b.requestApplyInsets();
     }
 }

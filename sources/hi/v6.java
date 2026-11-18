@@ -14,36 +14,36 @@ import java.util.ArrayList;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.hp;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.qc;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.gp;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ji;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.tj0;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.Components.v00;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.ri;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class v6 extends org.telegram.ui.Components.ja implements is, org.telegram.messenger.x5, te.b {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class v6 extends org.telegram.ui.Components.sa implements fs, org.telegram.messenger.y5, te.b {
     public boolean A2;
     public boolean B2;
     public int C2;
     public String D2;
     public int E2;
-    public final r6 F2;
+    public final q6 F2;
     public boolean G2;
     public final te.a T1;
     public final int U1;
@@ -52,19 +52,19 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
     public final ArrayList X1;
     public final ArrayList Y1;
     public final ArrayList Z1;
-    public final hp a2;
-    public final z10 b2;
-    public gj c2;
+    public final gp a2;
+    public final x10 b2;
+    public fj c2;
     public boolean d2;
     public boolean e2;
     public final FrameLayout f2;
-    public final ji g2;
+    public final ri g2;
     public final dh.g h2;
     public final ui.c i2;
     public final dh.c j2;
-    public final t6 k2;
-    public p41 l2;
-    public gj m2;
+    public final s6 k2;
+    public z41 l2;
+    public fj m2;
     public String n2;
     public int o2;
     public boolean p2;
@@ -72,7 +72,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
     public boolean r2;
     public String s2;
     public int t2;
-    public final r6 u2;
+    public final q6 u2;
     public String v2;
     public boolean w2;
     public boolean x2;
@@ -80,19 +80,19 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
     public TLRPC.User z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    /* JADX WARN: Type inference failed for: r1v1, types: [hi.r6] */
-    /* JADX WARN: Type inference failed for: r1v3, types: [hi.r6] */
-    public v6(Context context, boolean z10, v6 v6Var, z10 z10Var, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(2, context, e6Var, true);
+    /* JADX WARN: Type inference failed for: r1v1, types: [hi.q6] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [hi.q6] */
+    public v6(Context context, boolean z10, v6 v6Var, x10 x10Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(2, context, i6Var, true);
         final int i7 = 2;
         final int i10 = 1;
-        er erVar = er.h;
-        this.T1 = new te.a(0, this, erVar, 380L, false);
+        lr lrVar = lr.h;
+        this.T1 = new te.a(0, this, lrVar, 380L, false);
         this.X1 = new ArrayList();
         this.Y1 = new ArrayList();
         this.Z1 = new ArrayList();
         this.t2 = -1;
-        this.u2 = new Runnable(this) { // from class: hi.r6
+        this.u2 = new Runnable(this) { // from class: hi.q6
             public final /* synthetic */ v6 b;
 
             {
@@ -133,7 +133,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                     TLRPC.Peer peer = tL_message.peer_id;
                                     cursor = cursor2;
                                     try {
-                                        long e10 = m10.i(v6Var2.a).e();
+                                        long e10 = j10.i(v6Var2.a).e();
                                         tL_peerUser.user_id = e10;
                                         peer.user_id = e10;
                                         tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -168,7 +168,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                         tL_documentAttributeFilename.file_name = file.getName();
                                         tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                        arrayList.add(new gj(v6Var2.a, tL_message, false, true));
+                                        arrayList.add(new fj(v6Var2.a, tL_message, false, true));
                                         i11--;
                                         cursor2 = cursor;
                                         r42 = 1;
@@ -195,20 +195,20 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                         } catch (Exception e11) {
                             org.telegram.messenger.a8.g(e11, true);
                         }
-                        org.telegram.messenger.g0.h3(new h4(9, v6Var2, arrayList));
+                        org.telegram.messenger.g0.g3(new r1(11, v6Var2, arrayList));
                         return;
                     case 1:
-                        this.b.h1();
+                        this.b.i1();
                         return;
                     default:
-                        this.b.g1();
+                        this.b.h1();
                         return;
                 }
             }
         };
         this.C2 = -1;
         this.E2 = -2000000000;
-        this.F2 = new Runnable(this) { // from class: hi.r6
+        this.F2 = new Runnable(this) { // from class: hi.q6
             public final /* synthetic */ v6 b;
 
             {
@@ -249,7 +249,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                     TLRPC.Peer peer = tL_message.peer_id;
                                     cursor = cursor2;
                                     try {
-                                        long e10 = m10.i(v6Var2.a).e();
+                                        long e10 = j10.i(v6Var2.a).e();
                                         tL_peerUser.user_id = e10;
                                         peer.user_id = e10;
                                         tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -284,7 +284,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                         TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                         tL_documentAttributeFilename.file_name = file.getName();
                                         tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                        arrayList.add(new gj(v6Var2.a, tL_message, false, true));
+                                        arrayList.add(new fj(v6Var2.a, tL_message, false, true));
                                         i11--;
                                         cursor2 = cursor;
                                         r42 = 1;
@@ -311,30 +311,30 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                         } catch (Exception e11) {
                             org.telegram.messenger.a8.g(e11, true);
                         }
-                        org.telegram.messenger.g0.h3(new h4(9, v6Var2, arrayList));
+                        org.telegram.messenger.g0.g3(new r1(11, v6Var2, arrayList));
                         return;
                     case 1:
-                        this.b.h1();
+                        this.b.i1();
                         return;
                     default:
-                        this.b.g1();
+                        this.b.h1();
                         return;
                 }
             }
         };
         this.v1 = 0.35f;
         O();
-        Y0();
+        Z0();
         this.D1 = org.telegram.messenger.g0.L(4.0f);
         this.E1 = org.telegram.messenger.g0.L(-20.0f);
         this.V1 = z10;
-        this.U1 = org.telegram.messenger.z5.q(this.a).k();
+        this.U1 = org.telegram.messenger.a6.q(this.a).k();
         this.W1 = v6Var;
-        this.b2 = z10Var;
-        ui.c d = this.Y0.d(new s6(this));
+        this.b2 = x10Var;
+        ui.c d = this.Y0.d(new r6(this));
         this.i2 = d;
         final int i11 = 0;
-        if (Build.VERSION.SDK_INT < 31 || !gz.f()) {
+        if (Build.VERSION.SDK_INT < 31 || !bz.f()) {
             this.h2 = null;
             this.j2 = new dh.c(d, d, d);
         } else {
@@ -348,47 +348,47 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             dh.c cVar = new dh.c(fVar, fVar, fVar);
             this.j2 = cVar;
             cVar.k = true;
-            int L = qc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
+            int L = pc.e(262144) ? org.telegram.messenger.g0.L(8.0f) : org.telegram.messenger.g0.L(48.0f);
             cVar.d = L;
             cVar.e = L;
             cVar.j = this.Y0;
         }
-        this.k2 = new t6(this, i11);
-        int i12 = org.telegram.ui.ActionBar.j6.a7;
-        ji jiVar = new ji(i12, context, e6Var);
-        this.g2 = jiVar;
-        jiVar.setVisibility(4);
+        this.k2 = new s6(this, 0);
+        int i12 = org.telegram.ui.ActionBar.n6.a7;
+        ri riVar = new ri(i12, context, i6Var);
+        this.g2 = riVar;
+        riVar.setVisibility(4);
         FrameLayout frameLayout = new FrameLayout(context);
         this.f2 = frameLayout;
-        v00 v00Var = new v00(context, e6Var);
-        v00Var.r.setOnFocusChangeListener(new u6(this, i11));
-        v00Var.x = true;
-        v00Var.setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
-        v00Var.updateColors();
-        v00Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        v00Var.r.addTextChangedListener(new ah.j(this, 6));
-        v00Var.r.setHint(hd.M0(2131745836, null));
-        frameLayout.addView(jiVar, c8.ja.g());
-        frameLayout.addView(v00Var, c8.ja.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
-        v00Var.setupBlurredBackground(this.j2.c(v00Var, c8.g0.n(e6Var), false));
+        c10 c10Var = new c10(context, i6Var);
+        c10Var.r.setOnFocusChangeListener(new u6(this, i11));
+        c10Var.x = true;
+        c10Var.setPadding(org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.messenger.g0.L(3.0f));
+        c10Var.updateColors();
+        c10Var.setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
+        c10Var.r.addTextChangedListener(new ah.j(this, 7));
+        c10Var.r.setHint(gd.M0(2131745641, null));
+        frameLayout.addView(riVar, c8.ma.g());
+        frameLayout.addView(c10Var, c8.ma.d(-1, 48.0f, 51, 0.0f, 8.0f, 0.0f, 4.0f));
+        c10Var.setupBlurredBackground(this.j2.c(c10Var, c8.i0.o(i6Var), false));
         frameLayout.setPadding(org.telegram.messenger.g0.L(8.0f) + this.u0, 0, org.telegram.messenger.g0.L(8.0f) + this.u0, 0);
-        this.b.addView(frameLayout, c8.ja.e(-1, -2, 55));
+        this.b.addView(frameLayout, c8.ma.e(-1, -2, 55));
         w0(i12);
-        uj0 uj0Var = this.o1;
+        ck0 ck0Var = this.o1;
         int i13 = this.u0;
-        uj0Var.setPadding(i13, 0, i13, 0);
+        ck0Var.setPadding(i13, 0, i13, 0);
         this.o1.r1();
         v4.k kVar = new v4.k();
         kVar.m = false;
         kVar.C = false;
-        kVar.o(erVar);
+        kVar.o(lrVar);
         kVar.n(350L);
         this.o1.setItemAnimator(kVar);
         if (z10) {
             this.a2 = null;
             if (this.V1 && !this.G2) {
                 this.G2 = true;
-                Utilities.e.c(new Runnable(this) { // from class: hi.r6
+                Utilities.e.c(new Runnable(this) { // from class: hi.q6
                     public final /* synthetic */ v6 b;
 
                     {
@@ -429,7 +429,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                             TLRPC.Peer peer = tL_message.peer_id;
                                             cursor = cursor2;
                                             try {
-                                                long e10 = m10.i(v6Var2.a).e();
+                                                long e10 = j10.i(v6Var2.a).e();
                                                 tL_peerUser.user_id = e10;
                                                 peer.user_id = e10;
                                                 tL_message.date = (int) (System.currentTimeMillis() / 1000);
@@ -464,7 +464,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                                 TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
                                                 tL_documentAttributeFilename.file_name = file.getName();
                                                 tL_message.media.document.attributes.add(tL_documentAttributeFilename);
-                                                arrayList.add(new gj(v6Var2.a, tL_message, false, true));
+                                                arrayList.add(new fj(v6Var2.a, tL_message, false, true));
                                                 i112--;
                                                 cursor2 = cursor;
                                                 r42 = 1;
@@ -491,13 +491,13 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                                 } catch (Exception e11) {
                                     org.telegram.messenger.a8.g(e11, true);
                                 }
-                                org.telegram.messenger.g0.h3(new h4(9, v6Var2, arrayList));
+                                org.telegram.messenger.g0.g3(new r1(11, v6Var2, arrayList));
                                 return;
                             case 1:
-                                this.b.h1();
+                                this.b.i1();
                                 return;
                             default:
-                                this.b.g1();
+                                this.b.h1();
                                 return;
                         }
                     }
@@ -505,54 +505,54 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             }
         } else {
             int i14 = this.a;
-            hp hpVar = new hp(i14, m10.i(i14).e());
-            this.a2 = hpVar;
-            hpVar.b();
+            gp gpVar = new gp(i14, j10.i(i14).e());
+            this.a2 = gpVar;
+            gpVar.b();
+            i1();
             h1();
-            g1();
         }
-        this.o1.setOnScrollListener(new bi.z4(this, 15));
-        this.o1.setOnItemClickListener(new fi.f0(this, z10Var, e6Var, 1));
+        this.o1.setOnScrollListener(new bi.q1(this, 16));
+        this.o1.setOnItemClickListener(new bi.p1(this, x10Var, i6Var, 2));
         this.Y0.b(this.o1);
         this.Y0.i(this.b);
         ri.q qVar = this.Y0;
-        qVar.a = new s6(this);
+        qVar.a = new r6(this);
         qVar.d = new ti.b(org.telegram.messenger.g0.L(48.0f));
     }
 
-    public static boolean i1(String str, String str2, String str3) {
+    public static boolean j1(String str, String str2, String str3) {
         if (str3 == null) {
             return false;
         }
         String lowerCase = str3.toLowerCase();
-        if (lowerCase.startsWith(str) || i5.c.A(" ", str, lowerCase)) {
+        if (lowerCase.startsWith(str) || i5.c.B(" ", str, lowerCase)) {
             return true;
         }
-        String N3 = org.telegram.messenger.g0.N3(lowerCase);
-        return N3.startsWith(str2) || N3.contains(" ".concat(str2));
+        String M3 = org.telegram.messenger.g0.M3(lowerCase);
+        return M3.startsWith(str2) || M3.contains(" ".concat(str2));
     }
 
     @Override // te.b
-    public final void G(int i7, float f10, float f11, te.c cVar) {
+    public final void H(int i7, float f10, float f11, te.c cVar) {
         if (i7 == 0) {
-            ji jiVar = this.g2;
-            jiVar.setAlpha(f10);
-            jiVar.setVisibility(f10 > 0.0f ? 0 : 4);
+            ri riVar = this.g2;
+            riVar.setAlpha(f10);
+            riVar.setVisibility(f10 > 0.0f ? 0 : 4);
         }
     }
 
-    @Override // org.telegram.ui.Components.ja
-    public final tj0 L0(uj0 uj0Var) {
-        p41 p41Var = new p41(uj0Var, getContext(), this.a, 0, false, new q6(this, 0), this.J0);
-        this.l2 = p41Var;
-        p41Var.r = false;
-        return p41Var;
+    @Override // org.telegram.ui.Components.sa
+    public final bk0 M0(ck0 ck0Var) {
+        z41 z41Var = new z41(ck0Var, getContext(), this.a, 0, false, new p6(this, 0), this.J0);
+        this.l2 = z41Var;
+        z41Var.r = false;
+        return z41Var;
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void N(String str) {
-        gj gjVar = this.c2;
-        if (gjVar == null || !TextUtils.equals(gjVar.S0(), str)) {
+        fj fjVar = this.c2;
+        if (fjVar == null || !TextUtils.equals(fjVar.S0(), str)) {
             return;
         }
         this.b2.a(this.c2);
@@ -563,18 +563,34 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         dismiss();
     }
 
-    @Override // org.telegram.ui.Components.ja
-    public final CharSequence O0() {
-        return hd.M0(2131744608, null);
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence P0() {
+        return gd.M0(2131744373, null);
     }
 
-    @Override // org.telegram.ui.Components.ja
-    public final void W0(Canvas canvas, View view) {
-        j1();
-        super.W0(canvas, view);
+    @Override // org.telegram.ui.Components.sa
+    public final void X0(Canvas canvas, View view) {
+        k1();
+        super.X0(canvas, view);
     }
 
-    public final int d1(boolean z10, ArrayList arrayList, String str, ArrayList arrayList2, boolean z11, boolean z12, int i7) {
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == ks.V3) {
+            this.l2.O(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    public final void dismiss() {
+        super.dismiss();
+        if (this.m2 != null && MediaController.B().I(this.m2)) {
+            MediaController.B().q(true, true, false, false);
+        }
+        this.m2 = null;
+    }
+
+    public final int e1(boolean z10, ArrayList arrayList, String str, ArrayList arrayList2, boolean z11, boolean z12, int i7) {
         int i10;
         int i11;
         int i12 = 0;
@@ -582,7 +598,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             ArrayList arrayList3 = new ArrayList();
             String str2 = this.n2;
             String lowerCase = str2 == null ? null : str2.toLowerCase();
-            String N3 = org.telegram.messenger.g0.N3(lowerCase);
+            String M3 = org.telegram.messenger.g0.M3(lowerCase);
             int size = arrayList2.size();
             int i13 = 0;
             while (true) {
@@ -592,19 +608,19 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                 }
                 Object obj = arrayList2.get(i13);
                 i13++;
-                gj gjVar = (gj) obj;
+                fj fjVar = (fj) obj;
                 if (!z10) {
-                    gjVar.K5(this.n2, true);
-                    arrayList3.add(gjVar);
+                    fjVar.K5(this.n2, true);
+                    arrayList3.add(fjVar);
                 } else if (TextUtils.isEmpty(lowerCase) || arrayList2 == this.Y1) {
-                    gjVar.K5(null, true);
-                    arrayList3.add(gjVar);
+                    fjVar.K5(null, true);
+                    arrayList3.add(fjVar);
                 } else {
-                    String y12 = gjVar.y1(true);
-                    String w12 = gjVar.w1(true);
-                    if (i1(lowerCase, N3, y12) || i1(lowerCase, N3, w12)) {
-                        gjVar.K5(this.n2, true);
-                        arrayList3.add(gjVar);
+                    String y12 = fjVar.y1(true);
+                    String w12 = fjVar.w1(true);
+                    if (j1(lowerCase, M3, y12) || j1(lowerCase, M3, w12)) {
+                        fjVar.K5(this.n2, true);
+                        arrayList3.add(fjVar);
                     }
                 }
             }
@@ -612,32 +628,32 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
                 if (arrayList.isEmpty() || arrayList.size() <= 1) {
                     i11 = 0;
                 } else {
-                    arrayList.add(b41.C(null));
+                    arrayList.add(l41.C(null));
                     i11 = org.telegram.messenger.g0.L(12.0f);
                 }
                 this.l2.V();
-                arrayList.add(b41.u(str));
+                arrayList.add(l41.u(str));
                 int size2 = arrayList3.size();
                 while (i12 < size2) {
                     Object obj2 = arrayList3.get(i12);
                     i12++;
-                    di.pa paVar = new di.pa(this, i10);
-                    int i14 = org.telegram.ui.Cells.e7.b;
-                    b41 K = b41.K(org.telegram.ui.Cells.e7.class);
-                    K.G = (gj) obj2;
-                    K.H = paVar;
+                    di.ta taVar = new di.ta(this, i10);
+                    int i14 = org.telegram.ui.Cells.f7.b;
+                    l41 K = l41.K(org.telegram.ui.Cells.f7.class);
+                    K.H = (fj) obj2;
+                    K.I = taVar;
                     arrayList.add(K);
                     i11 += org.telegram.messenger.g0.L(56.0f);
                 }
                 if (z11) {
-                    arrayList.add(b41.p(4));
-                    arrayList.add(b41.p(4));
-                    arrayList.add(b41.p(4));
+                    arrayList.add(l41.p(4));
+                    arrayList.add(l41.p(4));
+                    arrayList.add(l41.p(4));
                     i11 += org.telegram.messenger.g0.L(56.0f) * 3;
                 }
                 if (z12 && !z11) {
-                    b41 c10 = b41.c(i7, R.drawable.arrow_more, hd.M0(2131745339, null));
-                    c10.q = true;
+                    l41 c10 = l41.c(i7, R.drawable.arrow_more, gd.M0(2131745144, null));
+                    c10.r = true;
                     arrayList.add(c10);
                     i11 += org.telegram.messenger.g0.L(50.0f);
                 }
@@ -648,23 +664,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         return 0;
     }
 
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.T3) {
-            this.l2.O(true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
-    public final void dismiss() {
-        super.dismiss();
-        if (this.m2 != null && MediaController.B().I(this.m2)) {
-            MediaController.B().q(true, true, false, false);
-        }
-        this.m2 = null;
-    }
-
-    public final void e1() {
+    public final void f1() {
         if (this.C2 >= 0) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.C2, true);
         }
@@ -676,7 +676,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         this.y2 = false;
     }
 
-    public final void f1() {
+    public final void g1() {
         if (this.t2 >= 0) {
             ConnectionsManager.getInstance(this.a).cancelRequest(this.t2, true);
         }
@@ -687,9 +687,14 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         this.r2 = false;
     }
 
-    public final void g1() {
+    @Override // org.telegram.messenger.y5
+    public final int getObserverTag() {
+        return this.U1;
+    }
+
+    public final void h1() {
         String str;
-        String str2 = ((org.telegram.messenger.n0) np.s1(this.a).y7.F.b).c;
+        String str2 = ((org.telegram.messenger.n0) mp.u1(this.a).A7.K.b).c;
         if (TextUtils.isEmpty(str2)) {
             return;
         }
@@ -699,7 +704,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             str4 = "";
         }
         if (!TextUtils.equals(str3, str4)) {
-            e1();
+            f1();
         }
         if (this.x2 || TextUtils.isEmpty(this.n2) || this.n2.length() < 3) {
             return;
@@ -707,22 +712,22 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         ArrayList arrayList = this.Z1;
         if (arrayList.isEmpty() || this.w2) {
             if (this.z2 == null) {
-                TLObject f22 = np.s1(this.a).f2(str2);
-                this.z2 = f22 instanceof TLRPC.User ? (TLRPC.User) f22 : null;
+                TLObject h22 = mp.u1(this.a).h2(str2);
+                this.z2 = h22 instanceof TLRPC.User ? (TLRPC.User) h22 : null;
             }
             if (this.z2 == null) {
                 if (this.A2 || this.B2) {
                     return;
                 }
                 this.A2 = true;
-                np.s1(this.a).d2().a(str2, null, new ai.g0(this, 29));
+                mp.u1(this.a).f2().a(str2, null, new t6(this, 0));
                 return;
             }
             this.x2 = true;
-            TLRPC.User f10 = m10.i(this.a).f();
+            TLRPC.User f10 = j10.i(this.a).f();
             TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
-            tL_messages_getInlineBotResults.bot = np.s1(this.a).q1(this.z2);
-            tL_messages_getInlineBotResults.peer = np.n1(f10);
+            tL_messages_getInlineBotResults.bot = mp.u1(this.a).s1(this.z2);
+            tL_messages_getInlineBotResults.peer = mp.p1(f10);
             if (arrayList.isEmpty() || (str = this.v2) == null) {
                 str = "";
             }
@@ -731,17 +736,12 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             String str6 = str5 != null ? str5 : "";
             this.D2 = str6;
             tL_messages_getInlineBotResults.query = str6;
-            this.C2 = ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getInlineBotResults, new d3.b(1), new q6(this, 1));
+            this.C2 = ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_messages_getInlineBotResults, new d3.b(1), new p6(this, 1));
             this.l2.O(true);
         }
     }
 
-    @Override // org.telegram.messenger.x5
-    public final int getObserverTag() {
-        return this.U1;
-    }
-
-    public final void h1() {
+    public final void i1() {
         if (this.V1) {
             return;
         }
@@ -751,7 +751,7 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             str2 = "";
         }
         if (!TextUtils.equals(str, str2)) {
-            f1();
+            g1();
         }
         if (this.q2) {
             return;
@@ -767,10 +767,10 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
             tL_messages_searchGlobal.q = str4;
             tL_messages_searchGlobal.limit = 20;
             if (arrayList.size() > 0) {
-                gj gjVar = (gj) i5.c.h(1, arrayList);
-                tL_messages_searchGlobal.offset_id = gjVar.e1();
+                fj fjVar = (fj) i5.c.h(1, arrayList);
+                tL_messages_searchGlobal.offset_id = fjVar.e1();
                 tL_messages_searchGlobal.offset_rate = this.o2;
-                tL_messages_searchGlobal.offset_peer = np.s1(this.a).j1(gj.B1(gjVar.k.peer_id));
+                tL_messages_searchGlobal.offset_peer = mp.u1(this.a).l1(fj.B1(fjVar.k.peer_id));
             } else {
                 tL_messages_searchGlobal.offset_rate = 0;
                 tL_messages_searchGlobal.offset_id = 0;
@@ -781,15 +781,15 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
         }
     }
 
-    public final void j1() {
+    public final void k1() {
         float f10 = org.telegram.messenger.g0.q.y;
         int i7 = 0;
         while (true) {
-            uj0 uj0Var = this.o1;
-            if (i7 >= uj0Var.getChildCount()) {
+            ck0 ck0Var = this.o1;
+            if (i7 >= ck0Var.getChildCount()) {
                 break;
             }
-            View childAt = uj0Var.getChildAt(i7);
+            View childAt = ck0Var.getChildAt(i7);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f10) {
                 f10 = childAt.getY();
             }
@@ -802,41 +802,41 @@ public final class v6 extends org.telegram.ui.Components.ja implements is, org.t
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        ns.f(this.a).c(this, ns.T3);
+        ks.f(this.a).c(this, ks.V3);
     }
 
     @Override // android.app.Dialog, android.view.Window.Callback
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        ns.f(this.a).n(this, ns.T3);
+        ks.f(this.a).n(this, ks.V3);
     }
 
-    @Override // org.telegram.ui.ActionBar.u2
+    @Override // org.telegram.ui.ActionBar.x2
     public final void s0() {
         try {
             super.s0();
             ui.c cVar = this.i2;
             if (cVar != null) {
-                cVar.a(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.d6, this.J0));
+                cVar.a(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.d6, this.J0));
             }
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void C(boolean z10) {
     }
 
     @Override // te.b
-    public final /* synthetic */ void E(float f10, int i7) {
+    public final /* synthetic */ void D(float f10, int i7) {
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void i(long j3, long j10) {
     }
 
-    @Override // org.telegram.messenger.x5
+    @Override // org.telegram.messenger.y5
     public final void o(long j3, long j10) {
     }
 }

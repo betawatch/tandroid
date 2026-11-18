@@ -10,18 +10,18 @@ import android.text.TextUtils;
 import com.google.android.gms.internal.vision.e2;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.g5;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.i5;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n5;
+import org.telegram.messenger.o10;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e6;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Cells.q1;
-import org.telegram.ui.Components.t8;
+import org.telegram.ui.Components.b9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d implements ValueAnimator.AnimatorUpdateListener {
     public final h a;
@@ -45,8 +45,8 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         ImageReceiver imageReceiver;
         String str;
         String str2;
-        t8 t8Var = new t8((e6) null);
-        int i7 = m10.t0;
+        b9 b9Var = new b9((i6) null);
+        int i7 = j10.t0;
         this.l = 1.0f;
         this.m = true;
         this.o = 0.0f;
@@ -57,40 +57,40 @@ public final class d implements ValueAnimator.AnimatorUpdateListener {
         q1 q1Var = hVar.E;
         this.b = q1Var;
         this.d = j3;
-        t8Var.p = 1.0f;
-        if (m5.E(j3)) {
-            TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(j3));
-            t8Var.r(a22);
-            if (q10.B(a22)) {
-                str2 = hd.M0(2131745901, null);
-                t8Var.g(1);
-                t8Var.p = 0.75f;
+        b9Var.p = 1.0f;
+        if (n5.E(j3)) {
+            TLRPC.User c22 = mp.u1(i7).c2(Long.valueOf(j3));
+            b9Var.r(c22);
+            if (o10.C(c22)) {
+                str2 = gd.M0(2131745706, null);
+                b9Var.g(1);
+                b9Var.p = 0.75f;
                 imageReceiver = imageReceiver2;
-                imageReceiver.r0(null, null, null, null, t8Var, 0L, null, a22, 0);
+                imageReceiver.r0(null, null, null, null, b9Var, 0L, null, c22, 0);
                 imageReceiver.J0(g0.L(g.a / 2.0f));
                 imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
-                Paint a23 = q1Var.a2("paintChatActionText");
-                if (str2 != null || a23 == null) {
+                Paint a22 = q1Var.a2("paintChatActionText");
+                if (str2 != null || a22 == null) {
                 }
                 int L = g0.q.x - g0.L(48);
-                TextPaint textPaint = new TextPaint(a23);
+                TextPaint textPaint = new TextPaint(a22);
                 this.h = new StaticLayout(TextUtils.ellipsize(str2, textPaint, L, TextUtils.TruncateAt.END), textPaint, (int) Math.ceil(textPaint.measureText(r5, 0, r5.length())), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 return;
             }
             imageReceiver = imageReceiver2;
-            str = a22 != null ? g5.m(0, a22.first_name, a22.last_name) : "";
-            imageReceiver.i0(a22, t8Var, null);
+            str = c22 != null ? i5.m(0, c22.first_name, c22.last_name) : "";
+            imageReceiver.i0(c22, b9Var, null);
         } else {
             imageReceiver = imageReceiver2;
-            TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
-            str = M0 != null ? M0.title : "";
-            t8Var.q(M0);
-            imageReceiver.i0(M0, t8Var, null);
+            TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+            str = O0 != null ? O0.title : "";
+            b9Var.q(O0);
+            imageReceiver.i0(O0, b9Var, null);
         }
         str2 = str;
         imageReceiver.J0(g0.L(g.a / 2.0f));
         imageReceiver.y0(0.0f, 0.0f, g0.L(r2), g0.L(r2));
-        Paint a232 = q1Var.a2("paintChatActionText");
+        Paint a222 = q1Var.a2("paintChatActionText");
         if (str2 != null) {
         }
     }

@@ -9,15 +9,15 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
-import c8.i9;
+import c8.l9;
 import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Array;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -139,7 +139,7 @@ public abstract class c {
                         float f14 = 100.0f;
                         c10 = (f12 >= 0.0f || f12 > 100.0f) ? (char) 0 : c11;
                         if (f10 == 1.0f || c10 != 0) {
-                            int b10 = i9.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, ns.e4);
+                            int b10 = l9.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, ks.e4);
                             if (c10 == 0) {
                                 a a10 = a.a(color);
                                 float f15 = a10.a;
@@ -290,7 +290,7 @@ public abstract class c {
                 }
                 if (f10 == 1.0f) {
                 }
-                int b102 = i9.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, ns.e4);
+                int b102 = l9.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, ks.e4);
                 if (c10 == 0) {
                 }
                 color = (16777215 & color) | (b102 << 24);

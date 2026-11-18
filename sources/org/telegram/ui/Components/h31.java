@@ -1,30 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.Canvas;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h31 implements rt0 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ i31 c;
-
-    public h31(i31 i31Var) {
-        this.c = i31Var;
-    }
-
-    @Override // org.telegram.ui.Components.rt0
-    public final void L(int i7, boolean z10) {
-        if (this.a == i7 && this.b == z10) {
-            return;
-        }
-        this.a = i7;
-        this.b = z10;
-        if (i7 > org.telegram.messenger.g0.L(20.0f)) {
-            i31 i31Var = this.c;
-            if (i31Var.h0) {
-                return;
-            }
-            i31Var.o0.r0 = false;
-            i31Var.h0 = true;
-        }
+public final class h31 extends xh.l {
+    @Override // xh.l, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        nu0.a(canvas, getLayout());
+        canvas.restore();
     }
 }

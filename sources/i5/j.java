@@ -3,13 +3,12 @@ package i5;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ ff d;
-    public static final /* synthetic */ ff e;
+    public static final /* synthetic */ ze.b d;
+    public static final /* synthetic */ ze.b e;
     public String a;
     public long b;
     public LinkedList c;
@@ -52,10 +51,10 @@ public final class j extends com.googlecode.mp4parser.a {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        c.u(ze.a.b(d, this, this));
+        c.w(ze.a.b(d, this, this));
         sb2.append(this.a);
         sb2.append(";minorVersion=");
-        c.u(ze.a.b(e, this, this));
+        c.w(ze.a.b(e, this, this));
         sb2.append(this.b);
         for (String str : this.c) {
             sb2.append(";compatibleBrand=");

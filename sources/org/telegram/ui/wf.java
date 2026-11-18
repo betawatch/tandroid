@@ -1,105 +1,45 @@
 package org.telegram.ui;
 
 import android.content.DialogInterface;
+import com.google.android.gms.tasks.CancellationTokenSource;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wf implements Runnable {
+public final /* synthetic */ class wf implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ an b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.t1[] c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ wf(an anVar, org.telegram.ui.ActionBar.t1[] t1VarArr, int i7, int i10) {
-        this.a = i10;
-        this.b = anVar;
-        this.c = t1VarArr;
-        this.d = i7;
+    public /* synthetic */ wf(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ActionBar.t1[] t1VarArr = this.c;
-                org.telegram.ui.ActionBar.t1 t1Var = t1VarArr[0];
-                if (t1Var != null) {
-                    final int i7 = 1;
-                    final an anVar = this.b;
-                    final int i10 = this.d;
-                    t1Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.ng
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i7) {
-                                case 0:
-                                    anVar.getConnectionsManager().cancelRequest(i10, true);
-                                    break;
-                                case 1:
-                                    anVar.getConnectionsManager().cancelRequest(i10, true);
-                                    break;
-                                default:
-                                    anVar.getConnectionsManager().cancelRequest(i10, true);
-                                    break;
-                            }
-                        }
-                    });
-                    anVar.showDialog(t1VarArr[0]);
-                    break;
-                }
+                bn bnVar = (bn) this.b;
+                bnVar.t9 = true;
+                bnVar.r9 = 0;
+                bnVar.Ub = 0;
+                bnVar.b5 = 0;
+                bnVar.O9();
+                bnVar.uc(false);
                 break;
             case 1:
-                org.telegram.ui.ActionBar.t1[] t1VarArr2 = this.c;
-                org.telegram.ui.ActionBar.t1 t1Var2 = t1VarArr2[0];
-                if (t1Var2 != null) {
-                    final int i11 = 0;
-                    final an anVar2 = this.b;
-                    final int i12 = this.d;
-                    t1Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.ng
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i11) {
-                                case 0:
-                                    anVar2.getConnectionsManager().cancelRequest(i12, true);
-                                    break;
-                                case 1:
-                                    anVar2.getConnectionsManager().cancelRequest(i12, true);
-                                    break;
-                                default:
-                                    anVar2.getConnectionsManager().cancelRequest(i12, true);
-                                    break;
-                            }
-                        }
-                    });
-                    anVar2.showDialog(t1VarArr2[0]);
-                    break;
-                }
+                rn rnVar = (rn) this.b;
+                rnVar.N0 = false;
+                rnVar.b = null;
+                rnVar.O0 = false;
+                break;
+            case 2:
+                ((vo) this.b).n = null;
+                break;
+            case 3:
+                ((r90) this.b).b();
                 break;
             default:
-                org.telegram.ui.ActionBar.t1[] t1VarArr3 = this.c;
-                org.telegram.ui.ActionBar.t1 t1Var3 = t1VarArr3[0];
-                if (t1Var3 != null) {
-                    final int i13 = 2;
-                    final an anVar3 = this.b;
-                    final int i14 = this.d;
-                    t1Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.ng
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i13) {
-                                case 0:
-                                    anVar3.getConnectionsManager().cancelRequest(i14, true);
-                                    break;
-                                case 1:
-                                    anVar3.getConnectionsManager().cancelRequest(i14, true);
-                                    break;
-                                default:
-                                    anVar3.getConnectionsManager().cancelRequest(i14, true);
-                                    break;
-                            }
-                        }
-                    });
-                    anVar3.showDialog(t1VarArr3[0]);
-                    break;
-                }
+                ((CancellationTokenSource) this.b).cancel();
                 break;
         }
     }

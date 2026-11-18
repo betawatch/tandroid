@@ -1,6 +1,6 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 import ai.r1;
 import android.content.Context;
 import android.graphics.Rect;
@@ -17,6 +17,8 @@ import android.view.SurfaceHolder;
 import android.view.TextureView;
 import e2.s1;
 import e2.x1;
+import h9.t1;
+import hi.f9;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,10 +27,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
-import kg.t1;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.y51;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f0 extends com.google.android.gms.common.api.q implements p {
     public final ei.a A;
@@ -45,7 +46,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     public boolean L;
     public final o1 M;
     public p1 N;
-    public x2.g1 O;
+    public x2.i1 O;
     public e2.y0 P;
     public e2.o0 Q;
     public e2.o0 R;
@@ -90,10 +91,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     public g1 p0;
     public final boolean q;
     public int q0;
-    public final x2.e0 r;
+    public final x2.f0 r;
     public long r0;
-    public final m2.e s;
-    public n51 s0;
+    public final m2.d s;
+    public y51 s0;
     public final Looper t;
     public final ArrayList t0;
     public final b3.d u;
@@ -131,7 +132,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             Context context = nVar.a;
             h2.g0 g0Var = nVar.b;
             qVar.e = context.getApplicationContext();
-            qVar.s = new m2.e(g0Var);
+            qVar.s = new m2.d(g0Var);
             qVar.h0 = nVar.i;
             qVar.a0 = nVar.j;
             qVar.Y = nVar.k;
@@ -142,7 +143,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             qVar.x = new a0();
             b[] b10 = ((j) nVar.c.get()).b(new Handler(nVar.h), zVar, zVar, zVar, zVar);
             qVar.g = b10;
-            ja.p(b10.length > 0);
+            la.p(b10.length > 0);
             qVar.h = new b[b10.length];
             int i7 = 0;
             while (true) {
@@ -156,7 +157,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             }
             a3.x xVar = (a3.x) nVar.e.get();
             qVar.i = xVar;
-            qVar.r = (x2.e0) nVar.d.get();
+            qVar.r = (x2.f0) nVar.d.get();
             b3.g c10 = b3.g.c(nVar.g.b);
             qVar.u = c10;
             qVar.q = nVar.l;
@@ -169,45 +170,45 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             qVar.t = looper;
             qVar.v = g0Var;
             qVar.f = qVar;
-            qVar.m = new h2.r(new CopyOnWriteArraySet(), looper, looper.getThread(), g0Var, new i0.b(qVar, 24), true);
+            qVar.m = new h2.r(new CopyOnWriteArraySet(), looper, looper.getThread(), g0Var, new f9(qVar, 25), true);
             CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet();
             qVar.n = copyOnWriteArraySet;
             qVar.p = new ArrayList();
-            qVar.O = new x2.e1();
+            qVar.O = new x2.g1();
             b[] bVarArr2 = qVar.g;
             a3.y yVar = new a3.y(new m1[bVarArr2.length], new a3.u[bVarArr2.length], s1.b, null);
             qVar.b = yVar;
             qVar.o = new e2.i1();
             SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
             for (int i11 : new int[]{1, 2, 3, 13, 14, 15, 16, 17, 18, 19, 31, 20, 30, 21, 35, 22, 24, 27, 28, 32}) {
-                ja.p(!false);
+                la.p(!false);
                 sparseBooleanArray.append(i11, true);
             }
             xVar.getClass();
-            ja.p(!false);
+            la.p(!false);
             sparseBooleanArray.append(29, true);
-            ja.p(!false);
+            la.p(!false);
             e2.s sVar = new e2.s(sparseBooleanArray);
             qVar.c = new e2.y0(sVar);
             SparseBooleanArray sparseBooleanArray2 = new SparseBooleanArray();
             for (int i12 = 0; i12 < sVar.a.size(); i12++) {
                 int a10 = sVar.a(i12);
-                ja.p(!false);
+                la.p(!false);
                 sparseBooleanArray2.append(a10, true);
             }
-            ja.p(!false);
+            la.p(!false);
             sparseBooleanArray2.append(4, true);
-            ja.p(!false);
+            la.p(!false);
             sparseBooleanArray2.append(10, true);
-            ja.p(!false);
+            la.p(!false);
             qVar.P = new e2.y0(new e2.s(sparseBooleanArray2));
             qVar.j = g0Var.a(looper, null);
             u uVar = new u(qVar, 0);
             qVar.k = uVar;
             qVar.p0 = g1.k(yVar);
             qVar.s.W(qVar, looper);
-            m2.j jVar = new m2.j(nVar.A);
-            o0 o0Var2 = new o0(qVar.e, qVar.g, qVar.h, xVar, yVar, (q0) nVar.f.get(), c10, qVar.H, qVar.I, qVar.s, qVar.N, nVar.r, nVar.s, looper, g0Var, uVar, jVar, qVar.x, nVar.B);
+            m2.i iVar = new m2.i(nVar.A);
+            o0 o0Var2 = new o0(qVar.e, qVar.g, qVar.h, xVar, yVar, (q0) nVar.f.get(), c10, qVar.H, qVar.I, qVar.s, qVar.N, nVar.r, nVar.s, looper, g0Var, uVar, iVar, qVar.x, nVar.B);
             Looper looper2 = o0Var2.s;
             h2.i0 i0Var = o0Var2.n;
             qVar.l = o0Var2;
@@ -222,22 +223,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             qVar.f0 = true;
             qVar.I0(qVar.s);
             Handler handler = new Handler(looper);
-            m2.e eVar = qVar.s;
+            m2.d dVar = qVar.s;
             c10.getClass();
-            eVar.getClass();
+            dVar.getClass();
             cb.c cVar = c10.c;
             cVar.getClass();
             CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) cVar.b;
             Iterator it = copyOnWriteArrayList.iterator();
             while (it.hasNext()) {
                 b3.c cVar2 = (b3.c) it.next();
-                if (cVar2.b == eVar) {
+                if (cVar2.b == dVar) {
                     cVar2.c = true;
                     copyOnWriteArrayList.remove(cVar2);
                 }
             }
             int i13 = 1;
-            copyOnWriteArrayList.add(new b3.c(handler, eVar));
+            copyOnWriteArrayList.add(new b3.c(handler, dVar));
             copyOnWriteArraySet.add(qVar.w);
             int i14 = Build.VERSION.SDK_INT;
             qVar = qVar;
@@ -246,7 +247,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     Context context2 = qVar.e;
                     boolean z11 = nVar.y;
                     h2.i0 a11 = g0Var.a(looper2, null);
-                    aa.c0 c0Var = new aa.c0(context2, z11, (Object) qVar, jVar, 6);
+                    aa.c0 c0Var = new aa.c0(context2, z11, (Object) qVar, iVar, 6);
                     qVar = qVar;
                     a11.d(c0Var);
                 } catch (Throwable th2) {
@@ -264,14 +265,14 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             cVar3.f = 0;
             cVar3.d = uVar2;
             qVar.C = cVar3;
-            cVar3.A(new kg.j1((Object) qVar, 12));
+            cVar3.A(new kg.j0((Object) qVar, 16));
             Context context3 = nVar.a;
             Looper looper3 = nVar.h;
             z zVar2 = qVar.w;
             ab.q qVar2 = new ab.q();
             qVar2.b = context3.getApplicationContext();
             qVar2.d = g0Var.a(looper2, null);
-            qVar2.c = new f2.a(qVar2, g0Var.a(looper3, null), zVar2);
+            qVar2.c = new f2.b(qVar2, g0Var.a(looper3, null), zVar2);
             qVar.y = qVar2;
             qVar2.z();
             if (nVar.u != Integer.MAX_VALUE && nVar.v != Integer.MAX_VALUE && nVar.w != Integer.MAX_VALUE && nVar.x != Integer.MAX_VALUE) {
@@ -295,10 +296,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 qVar.G = new ji.j(1);
                 qVar.D = new h2.e0(qVar, qVar.w, qVar.v, nVar.u, nVar.v, nVar.w, nVar.x);
                 i0Var.b(38, qVar.M).b();
-                e2.e eVar2 = qVar.a0;
+                e2.e eVar = qVar.a0;
                 i0Var.getClass();
                 h2.h0 c11 = h2.i0.c();
-                c11.a = i0Var.a.obtainMessage(31, 0, 0, eVar2);
+                c11.a = i0Var.a.obtainMessage(31, 0, 0, eVar);
                 c11.b();
                 qVar.t1(1, 3, qVar.a0);
                 qVar.t1(2, 4, Integer.valueOf(qVar.Y));
@@ -326,10 +327,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             qVar.G = new ji.j(1);
             qVar.D = new h2.e0(qVar, qVar.w, qVar.v, nVar.u, nVar.v, nVar.w, nVar.x);
             i0Var.b(38, qVar.M).b();
-            e2.e eVar22 = qVar.a0;
+            e2.e eVar2 = qVar.a0;
             i0Var.getClass();
             h2.h0 c112 = h2.i0.c();
-            c112.a = i0Var.a.obtainMessage(31, 0, 0, eVar22);
+            c112.a = i0Var.a.obtainMessage(31, 0, 0, eVar2);
             c112.b();
             qVar.t1(1, 3, qVar.a0);
             qVar.t1(2, 4, Integer.valueOf(qVar.Y));
@@ -477,7 +478,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         if (!equals) {
             this.a0 = eVar;
             t1(1, 3, eVar);
-            rVar.c(20, new ki.e(eVar, 3));
+            rVar.c(20, new ki.e(eVar, 4));
         }
         e2.e eVar2 = this.a0;
         h2.i0 i0Var = this.l.n;
@@ -519,15 +520,15 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         e2.k1 k1Var = (e2.k1) this.a;
         e2.i1 i1Var = this.o;
         e2.l1 l1Var = g1Var2.a;
-        x2.f0 f0Var = g1Var2.b;
+        x2.g0 g0Var = g1Var2.b;
         e2.l1 l1Var2 = g1Var.a;
-        x2.f0 f0Var2 = g1Var.b;
+        x2.g0 g0Var2 = g1Var.b;
         if (l1Var2.p() && l1Var.p()) {
             pair = new Pair(Boolean.FALSE, -1);
         } else if (l1Var2.p() != l1Var.p()) {
             pair = new Pair(Boolean.TRUE, 3);
-        } else if (l1Var.m(l1Var.g(f0Var.a, i1Var).c, k1Var, 0L).a.equals(l1Var2.m(l1Var2.g(f0Var2.a, i1Var).c, k1Var, 0L).a)) {
-            pair = (z10 && i10 == 0 && f0Var.d < f0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i10 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
+        } else if (l1Var.m(l1Var.g(g0Var.a, i1Var).c, k1Var, 0L).a.equals(l1Var2.m(l1Var2.g(g0Var2.a, i1Var).c, k1Var, 0L).a)) {
+            pair = (z10 && i10 == 0 && g0Var.d < g0Var2.d) ? new Pair(Boolean.TRUE, 0) : (z10 && i10 == 1 && z11) ? new Pair(Boolean.TRUE, 2) : new Pair(Boolean.FALSE, -1);
         } else {
             if (z10 && i10 == 0) {
                 i12 = 1;
@@ -604,8 +605,8 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             }
             if (i10 == 0) {
                 if (g1Var2.b.b()) {
-                    x2.f0 f0Var3 = g1Var2.b;
-                    j12 = i1Var2.a(f0Var3.b, f0Var3.c);
+                    x2.g0 g0Var3 = g1Var2.b;
+                    j12 = i1Var2.a(g0Var3.b, g0Var3.c);
                     m12 = m1(g1Var2);
                 } else if (g1Var2.b.e != -1) {
                     j12 = m1(this.p0);
@@ -627,8 +628,8 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             }
             long h02 = h2.l0.h0(j12);
             long h03 = h2.l0.h0(m12);
-            x2.f0 f0Var4 = g1Var2.b;
-            e2.b1 b1Var = new e2.b1(obj, i13, l0Var2, obj2, i14, h02, h03, f0Var4.b, f0Var4.c);
+            x2.g0 g0Var4 = g1Var2.b;
+            e2.b1 b1Var = new e2.b1(obj, i13, l0Var2, obj2, i14, h02, h03, g0Var4.b, g0Var4.c);
             e2.k1 k1Var2 = (e2.k1) this.a;
             int o02 = o0();
             int B = B();
@@ -649,8 +650,8 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             int i18 = B;
             long h04 = h2.l0.h0(j3);
             long h05 = this.p0.b.b() ? h2.l0.h0(m1(this.p0)) : h04;
-            x2.f0 f0Var5 = this.p0.b;
-            this.m.c(11, new r1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, f0Var5.b, f0Var5.c), 3));
+            x2.g0 g0Var5 = this.p0.b;
+            this.m.c(11, new r1(i10, b1Var, new e2.b1(obj3, o02, l0Var3, obj4, i18, h04, h05, g0Var5.b, g0Var5.c), 4));
         } else {
             z12 = booleanValue;
             z13 = equals2;
@@ -668,22 +669,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i19) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -712,22 +713,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                         switch (i20) {
                             case 0:
                                 g1 g1Var4 = g1Var;
-                                a1Var.f(g1Var4.g);
                                 a1Var.h(g1Var4.g);
+                                a1Var.j(g1Var4.g);
                                 break;
                             case 1:
                                 g1 g1Var5 = g1Var;
                                 a1Var.D(g1Var5.e, g1Var5.l);
                                 break;
                             case 2:
-                                a1Var.l(g1Var.e);
+                                a1Var.m(g1Var.e);
                                 break;
                             case 3:
                                 g1 g1Var6 = g1Var;
-                                a1Var.i(g1Var6.m, g1Var6.l);
+                                a1Var.k(g1Var6.m, g1Var6.l);
                                 break;
                             case 4:
-                                a1Var.d(g1Var.n);
+                                a1Var.g(g1Var.n);
                                 break;
                             case 5:
                                 a1Var.P(g1Var.m());
@@ -764,22 +765,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i21) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -812,22 +813,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i22) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -857,22 +858,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i23) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -902,22 +903,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i24) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -947,22 +948,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i25) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -992,22 +993,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i26) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -1037,22 +1038,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i27) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -1082,22 +1083,22 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                     switch (i28) {
                         case 0:
                             g1 g1Var4 = g1Var;
-                            a1Var.f(g1Var4.g);
                             a1Var.h(g1Var4.g);
+                            a1Var.j(g1Var4.g);
                             break;
                         case 1:
                             g1 g1Var5 = g1Var;
                             a1Var.D(g1Var5.e, g1Var5.l);
                             break;
                         case 2:
-                            a1Var.l(g1Var.e);
+                            a1Var.m(g1Var.e);
                             break;
                         case 3:
                             g1 g1Var6 = g1Var;
-                            a1Var.i(g1Var6.m, g1Var6.l);
+                            a1Var.k(g1Var6.m, g1Var6.l);
                             break;
                         case 4:
-                            a1Var.d(g1Var.n);
+                            a1Var.g(g1Var.n);
                             break;
                         case 5:
                             a1Var.P(g1Var.m());
@@ -1199,7 +1200,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             String name2 = looper.getThread().getName();
             String str = h2.l0.a;
             Locale locale = Locale.US;
-            String l10 = r.b.l("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
+            String l10 = p5.c.l("Player is accessed on the wrong thread.\nCurrent thread: '", name, "'\nExpected thread: '", name2, "'\nSee https://developer.android.com/guide/topics/media/issues/player-accessed-on-wrong-thread");
             if (this.f0) {
                 throw new IllegalStateException(l10);
             }
@@ -1294,7 +1295,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     @Override // e2.c1
     public final void R(int i7, int i10) {
         F1();
-        ja.f(i7 >= 0 && i10 >= i7);
+        la.f(i7 >= 0 && i10 >= i7);
         int size = this.p.size();
         int min = Math.min(i10, size);
         if (i7 >= size || i7 == min) {
@@ -1391,17 +1392,17 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             z10 = iVar.c(o0Var.L);
         }
         if (!z10) {
-            this.m.e(10, new i0.b(23));
+            this.m.e(10, new f9(24));
         }
         this.m.d();
         this.j.a.removeCallbacksAndMessages(null);
         b3.d dVar = this.u;
-        m2.e eVar = this.s;
+        m2.d dVar2 = this.s;
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) ((b3.g) dVar).c.b;
         Iterator it = copyOnWriteArrayList.iterator();
         while (it.hasNext()) {
             b3.c cVar = (b3.c) it.next();
-            if (cVar.b == eVar) {
+            if (cVar.b == dVar2) {
                 cVar.c = true;
                 copyOnWriteArrayList.remove(cVar);
             }
@@ -1416,10 +1417,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         this.p0 = c10;
         c10.q = c10.s;
         this.p0.r = 0L;
-        m2.e eVar2 = this.s;
-        h2.i0 i0Var = eVar2.n;
+        m2.d dVar3 = this.s;
+        h2.i0 i0Var = dVar3.n;
         i0Var.getClass();
-        i0Var.d(new kg.j1(eVar2, 15));
+        i0Var.d(new kg.j0(dVar3, 19));
         s1();
         Surface surface = this.U;
         if (surface != null) {
@@ -1436,14 +1437,14 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         if (i7 == -1) {
             return;
         }
-        ja.f(i7 >= 0);
+        la.f(i7 >= 0);
         e2.l1 l1Var = this.p0.a;
         if (l1Var.p() || i7 < l1Var.o()) {
-            m2.e eVar = this.s;
-            if (!eVar.r) {
-                m2.a Q = eVar.Q();
-                eVar.r = true;
-                eVar.V(Q, -1, new ki.e(Q, 10));
+            m2.d dVar = this.s;
+            if (!dVar.r) {
+                m2.a Q = dVar.Q();
+                dVar.r = true;
+                dVar.V(Q, -1, new ki.e(Q, 11));
             }
             this.J++;
             if (p()) {
@@ -1451,7 +1452,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 l0 l0Var = new l0(this.p0);
                 l0Var.f(1);
                 f0 f0Var = this.k.b;
-                f0Var.j.d(new t1(11, f0Var, l0Var));
+                f0Var.j.d(new kg.h0(14, f0Var, l0Var));
                 return;
             }
             g1 g1Var = this.p0;
@@ -1497,7 +1498,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         F1();
         ArrayList g12 = g1(list);
         F1();
-        ja.f(i7 >= 0);
+        la.f(i7 >= 0);
         int min = Math.min(i7, this.p.size());
         if (!this.p0.a.p()) {
             D1(e1(this.p0, min, g12), 0, false, 5, -9223372036854775807L, -1, false);
@@ -1553,9 +1554,9 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 this.O = this.O.f(i7, arrayList2.size());
                 l1 l1Var2 = new l1(arrayList3, this.O);
                 g1 o12 = o1(g1Var, l1Var2, l1(l1Var, l1Var2, k1(g1Var), i1(g1Var)));
-                x2.g1 g1Var2 = this.O;
+                x2.i1 i1Var = this.O;
                 h2.i0 i0Var = this.l.n;
-                j0 j0Var = new j0(arrayList2, g1Var2, -1, -9223372036854775807L);
+                j0 j0Var = new j0(arrayList2, i1Var, -1, -9223372036854775807L);
                 i0Var.getClass();
                 h2.h0 c10 = h2.i0.c();
                 c10.a = i0Var.a.obtainMessage(18, i7, 0, j0Var);
@@ -1610,7 +1611,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             }
             Long l10 = o0Var.h;
             if (l10 != null) {
-                ja.f(l10.longValue() >= 0);
+                la.f(l10.longValue() >= 0);
                 a10.h = l10;
             }
             e2.d1 d1Var = o0Var.i;
@@ -1743,12 +1744,12 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             return A();
         }
         g1 g1Var = this.p0;
-        x2.f0 f0Var = g1Var.b;
+        x2.g0 g0Var = g1Var.b;
         e2.l1 l1Var = g1Var.a;
-        Object obj = f0Var.a;
+        Object obj = g0Var.a;
         e2.i1 i1Var = this.o;
         l1Var.g(obj, i1Var);
-        return h2.l0.h0(i1Var.a(f0Var.b, f0Var.c));
+        return h2.l0.h0(i1Var.a(g0Var.b, g0Var.c));
     }
 
     @Override // e2.c1
@@ -1757,7 +1758,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         a1Var.getClass();
         h2.r rVar = this.m;
         if (rVar.i) {
-            ja.p(Thread.currentThread() == rVar.a);
+            la.p(Thread.currentThread() == rVar.a);
         }
         CopyOnWriteArraySet copyOnWriteArraySet = rVar.d;
         Iterator it = copyOnWriteArraySet.iterator();
@@ -1768,7 +1769,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 qVar.d = true;
                 if (pVar != null && qVar.c) {
                     qVar.c = false;
-                    pVar.e(qVar.a, qVar.b.d());
+                    pVar.g(qVar.a, qVar.b.d());
                 }
                 copyOnWriteArraySet.remove(qVar);
             }
@@ -1797,10 +1798,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     }
 
     public final long i1(g1 g1Var) {
-        x2.f0 f0Var = g1Var.b;
+        x2.g0 g0Var = g1Var.b;
         long j3 = g1Var.c;
         e2.l1 l1Var = g1Var.a;
-        if (!f0Var.b()) {
+        if (!g0Var.b()) {
             return h2.l0.h0(j1(g1Var));
         }
         Object obj = g1Var.b.a;
@@ -1931,21 +1932,21 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
 
     public final g1 o1(g1 g1Var, e2.l1 l1Var, Pair pair) {
         List list;
-        ja.f(l1Var.p() || pair != null);
+        la.f(l1Var.p() || pair != null);
         e2.l1 l1Var2 = g1Var.a;
         long i12 = i1(g1Var);
         g1 j3 = g1Var.j(l1Var);
         if (l1Var.p()) {
-            x2.f0 f0Var = g1.u;
+            x2.g0 g0Var = g1.u;
             long S = h2.l0.S(this.r0);
-            g1 c10 = j3.d(f0Var, S, S, S, 0L, x2.q1.d, this.b, h9.s1.e).c(f0Var);
+            g1 c10 = j3.d(g0Var, S, S, S, 0L, x2.r1.d, this.b, t1.e).c(g0Var);
             c10.q = c10.s;
             return c10;
         }
         Object obj = j3.b.a;
         String str = h2.l0.a;
         boolean equals = obj.equals(pair.first);
-        x2.f0 f0Var2 = !equals ? new x2.f0(pair.first) : j3.b;
+        x2.g0 g0Var2 = !equals ? new x2.g0(pair.first) : j3.b;
         long longValue = ((Long) pair.second).longValue();
         long S2 = h2.l0.S(i12);
         if (!l1Var2.p()) {
@@ -1955,40 +1956,40 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             }
         }
         if (!equals || longValue < S2) {
-            x2.f0 f0Var3 = f0Var2;
-            ja.p(!f0Var3.b());
-            x2.q1 q1Var = !equals ? x2.q1.d : j3.h;
+            x2.g0 g0Var3 = g0Var2;
+            la.p(!g0Var3.b());
+            x2.r1 r1Var = !equals ? x2.r1.d : j3.h;
             a3.y yVar = !equals ? this.b : j3.i;
             if (equals) {
                 list = j3.j;
             } else {
-                h9.g0 g0Var = h9.i0.b;
-                list = h9.s1.e;
+                h9.g0 g0Var4 = h9.i0.b;
+                list = t1.e;
             }
-            g1 c11 = j3.d(f0Var3, longValue, longValue, longValue, 0L, q1Var, yVar, list).c(f0Var3);
+            g1 c11 = j3.d(g0Var3, longValue, longValue, longValue, 0L, r1Var, yVar, list).c(g0Var3);
             c11.q = longValue;
             return c11;
         }
         if (longValue != S2) {
-            x2.f0 f0Var4 = f0Var2;
-            ja.p(!f0Var4.b());
+            x2.g0 g0Var5 = g0Var2;
+            la.p(!g0Var5.b());
             long max = Math.max(0L, j3.r - (longValue - S2));
             long j10 = j3.q;
             if (j3.k.equals(j3.b)) {
                 j10 = longValue + max;
             }
-            g1 d = j3.d(f0Var4, longValue, longValue, longValue, max, j3.h, j3.i, j3.j);
+            g1 d = j3.d(g0Var5, longValue, longValue, longValue, max, j3.h, j3.i, j3.j);
             d.q = j10;
             return d;
         }
         int b10 = l1Var.b(j3.k.a);
-        if (b10 != -1 && l1Var.f(b10, this.o, false).c == l1Var.g(f0Var2.a, this.o).c) {
+        if (b10 != -1 && l1Var.f(b10, this.o, false).c == l1Var.g(g0Var2.a, this.o).c) {
             return j3;
         }
-        l1Var.g(f0Var2.a, this.o);
-        long a10 = f0Var2.b() ? this.o.a(f0Var2.b, f0Var2.c) : this.o.d;
-        x2.f0 f0Var5 = f0Var2;
-        g1 c12 = j3.d(f0Var5, j3.s, j3.s, j3.d, a10 - j3.s, j3.h, j3.i, j3.j).c(f0Var5);
+        l1Var.g(g0Var2.a, this.o);
+        long a10 = g0Var2.b() ? this.o.a(g0Var2.b, g0Var2.c) : this.o.d;
+        x2.g0 g0Var6 = g0Var2;
+        g1 c12 = j3.d(g0Var6, j3.s, j3.s, j3.d, a10 - j3.s, j3.h, j3.i, j3.j).c(g0Var6);
         c12.q = a10;
         return c12;
     }
@@ -2027,7 +2028,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         if (E0.equals(q1Var)) {
             return;
         }
-        this.m.e(19, new ki.e(q1Var, 4));
+        this.m.e(19, new ki.e(q1Var, 5));
     }
 
     public final void q1(int i7, int i10) {
@@ -2036,9 +2037,9 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
             return;
         }
         this.Z = new h2.y(i7, i10);
-        n51 n51Var = this.s0;
-        if (n51Var != null) {
-            n51Var.execute(new jg.q(this, i7, i10, 1));
+        y51 y51Var = this.s0;
+        if (y51Var != null) {
+            y51Var.execute(new jg.q(this, i7, i10, 1));
             return;
         }
         this.m.e(24, new gh.c(i7, i10, 1));
@@ -2080,11 +2081,11 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 o12 = n1(o12, 4);
             }
         }
-        x2.g1 g1Var2 = this.O;
+        x2.i1 i1Var = this.O;
         h2.i0 i0Var = this.l.n;
         i0Var.getClass();
         h2.h0 c10 = h2.i0.c();
-        c10.a = i0Var.a.obtainMessage(20, i7, i10, g1Var2);
+        c10.a = i0Var.a.obtainMessage(20, i7, i10, i1Var);
         c10.b();
         return o12;
     }
@@ -2092,7 +2093,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     @Override // e2.c1
     public final void s0(List list, int i7, int i10) {
         F1();
-        ja.f(i7 >= 0 && i10 >= i7);
+        la.f(i7 >= 0 && i10 >= i7);
         ArrayList arrayList = this.p;
         int size = arrayList.size();
         if (i7 > size) {
@@ -2114,7 +2115,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
                 b0 b0Var = (b0) arrayList.get(i12);
                 e2.l1 l1Var = b0Var.c;
                 e2.l0 l0Var = (e2.l0) list.get(i12 - i7);
-                b0Var.c = l1Var instanceof x2.o1 ? new x2.o1(((x2.o1) l1Var).e, l0Var) : new x2.o1(l1Var, l0Var);
+                b0Var.c = l1Var instanceof x2.q1 ? new x2.q1(((x2.q1) l1Var).e, l0Var) : new x2.q1(l1Var, l0Var);
             }
             D1(this.p0.j(new l1(arrayList, this.O)), 0, false, 4, -9223372036854775807L, -1, false);
             return;
@@ -2152,7 +2153,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     public final void stop() {
         F1();
         A1(null);
-        this.e0 = new g2.c(this.p0.s, h9.s1.e);
+        this.e0 = new g2.c(this.p0.s, t1.e);
     }
 
     @Override // e2.c1
@@ -2165,9 +2166,9 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         for (b bVar : this.g) {
             if (i7 == -1 || bVar.b == i7) {
                 j1 h12 = h1(bVar);
-                ja.p(!h12.f);
+                la.p(!h12.f);
                 h12.c = i10;
-                ja.p(!h12.f);
+                la.p(!h12.f);
                 h12.d = obj;
                 h12.b();
             }
@@ -2175,9 +2176,9 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         for (b bVar2 : this.h) {
             if (bVar2 != null && (i7 == -1 || bVar2.b == i7)) {
                 j1 h13 = h1(bVar2);
-                ja.p(!h13.f);
+                la.p(!h13.f);
                 h13.c = i10;
-                ja.p(!h13.f);
+                la.p(!h13.f);
                 h13.d = obj;
                 h13.b();
             }
@@ -2193,7 +2194,7 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
     @Override // e2.c1
     public final void u0(int i7, int i10, int i11) {
         F1();
-        ja.f(i7 >= 0 && i7 <= i10 && i11 >= 0);
+        la.f(i7 >= 0 && i7 <= i10 && i11 >= 0);
         ArrayList arrayList = this.p;
         int size = arrayList.size();
         int min = Math.min(i10, size);
@@ -2208,10 +2209,10 @@ public final class f0 extends com.google.android.gms.common.api.q implements p {
         l1 l1Var = new l1(arrayList, this.O);
         g1 g1Var = this.p0;
         g1 o12 = o1(g1Var, l1Var, l1(y02, l1Var, k1(g1Var), i1(this.p0)));
-        x2.g1 g1Var2 = this.O;
+        x2.i1 i1Var = this.O;
         o0 o0Var = this.l;
         o0Var.getClass();
-        o0Var.n.b(19, new k0(i7, min, min2, g1Var2)).b();
+        o0Var.n.b(19, new k0(i7, min, min2, i1Var)).b();
         D1(o12, 0, false, 5, -9223372036854775807L, -1, false);
     }
 

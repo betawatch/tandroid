@@ -1,21 +1,51 @@
 package q2;
 
-import android.os.Looper;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface n {
-    public static final sa.d A = new sa.d(21);
+public final class n implements g {
+    public final f a;
 
-    h A(k kVar, e2.u uVar);
+    public n(f fVar) {
+        this.a = fVar;
+    }
 
-    int E1(e2.u uVar);
+    @Override // q2.g
+    public final UUID a() {
+        return e2.l.b;
+    }
 
-    m L(k kVar, e2.u uVar);
+    @Override // q2.g
+    public final boolean d() {
+        return false;
+    }
 
-    void a();
+    @Override // q2.g
+    public final int e() {
+        return 1;
+    }
 
-    void r1(Looper looper, m2.j jVar);
+    @Override // q2.g
+    public final boolean f(String str) {
+        return false;
+    }
 
-    void release();
+    @Override // q2.g
+    public final f g() {
+        return this.a;
+    }
+
+    @Override // q2.g
+    public final k2.b h() {
+        return null;
+    }
+
+    @Override // q2.g
+    public final void b(j jVar) {
+    }
+
+    @Override // q2.g
+    public final void c(j jVar) {
+    }
 }

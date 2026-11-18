@@ -1,31 +1,54 @@
 package h9;
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class f2 implements Iterator {
-    public final Iterator a;
+public final class f2 extends t0 {
+    public final transient Object d;
 
-    public f2(Iterator it) {
-        it.getClass();
-        this.a = it;
+    public f2(Object obj) {
+        obj.getClass();
+        this.d = obj;
     }
 
-    public abstract Object a(Object obj);
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext();
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.d.equals(obj);
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        return a(this.a.next());
+    @Override // h9.t0, h9.d0
+    public final i0 f() {
+        return i0.u(this.d);
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.a.remove();
+    @Override // h9.t0, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.d.hashCode();
+    }
+
+    @Override // h9.d0
+    public final int i(int i7, Object[] objArr) {
+        objArr[i7] = this.d;
+        return i7 + 1;
+    }
+
+    @Override // h9.d0
+    public final boolean m() {
+        return false;
+    }
+
+    @Override // h9.d0
+    /* renamed from: n */
+    public final h2 iterator() {
+        return new z0(this.d);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return 1;
+    }
+
+    @Override // java.util.AbstractCollection
+    public final String toString() {
+        return "[" + this.d.toString() + ']';
     }
 }

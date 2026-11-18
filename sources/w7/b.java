@@ -1,11 +1,11 @@
 package w7;
 
 import a8.i0;
-import c8.fd;
+import c8.id;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends i0 implements ListIterator {
     public final int b;
@@ -16,7 +16,7 @@ public final class b extends i0 implements ListIterator {
     public b(d dVar, int i7) {
         super(7);
         int size = dVar.size();
-        fd.b(i7, size);
+        id.b(i7, size);
         this.b = size;
         this.c = i7;
         this.d = dVar;

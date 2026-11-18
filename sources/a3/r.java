@@ -2,13 +2,13 @@ package a3;
 
 import e2.m1;
 import h9.i0;
-import h9.n1;
-import h9.q1;
+import h9.o1;
+import h9.r1;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends q {
     public final int E;
@@ -131,7 +131,7 @@ public final class r extends q {
                         this.E = i15;
                         int i29 = this.d.f;
                         int i30 = nVar.p;
-                        q1 q1Var = s.l;
+                        r1 r1Var = s.l;
                         this.F = (i29 == 0 && i29 == i30) ? Integer.MAX_VALUE : Integer.bitCount(i29 & i30);
                         int i31 = this.d.f;
                         this.H = (i31 == 0 && (i31 & 1) == 0) ? false : true;
@@ -283,7 +283,7 @@ public final class r extends q {
                 this.E = i15;
                 int i292 = this.d.f;
                 int i302 = nVar.p;
-                q1 q1Var2 = s.l;
+                r1 r1Var2 = s.l;
                 this.F = (i292 == 0 && i292 == i302) ? Integer.MAX_VALUE : Integer.bitCount(i292 & i302);
                 int i312 = this.d.f;
                 this.H = (i312 == 0 && (i312 & 1) == 0) ? false : true;
@@ -351,7 +351,7 @@ public final class r extends q {
             this.E = i15;
             int i2922 = this.d.f;
             int i3022 = nVar.p;
-            q1 q1Var22 = s.l;
+            r1 r1Var22 = s.l;
             this.F = (i2922 == 0 && i2922 == i3022) ? Integer.MAX_VALUE : Integer.bitCount(i2922 & i3022);
             int i3122 = this.d.f;
             this.H = (i3122 == 0 && (i3122 & 1) == 0) ? false : true;
@@ -411,7 +411,7 @@ public final class r extends q {
         this.E = i15;
         int i29222 = this.d.f;
         int i30222 = nVar.p;
-        q1 q1Var222 = s.l;
+        r1 r1Var222 = s.l;
         this.F = (i29222 == 0 && i29222 == i30222) ? Integer.MAX_VALUE : Integer.bitCount(i29222 & i30222);
         int i31222 = this.d.f;
         this.H = (i31222 == 0 && (i31222 & 1) == 0) ? false : true;
@@ -455,8 +455,8 @@ public final class r extends q {
         h9.w c10 = h9.w.a.c(rVar.n, rVar2.n);
         Integer valueOf = Integer.valueOf(rVar.y);
         Integer valueOf2 = Integer.valueOf(rVar2.y);
-        n1 n1Var = n1.c;
-        return c10.b(valueOf, valueOf2, n1Var).a(rVar.E, rVar2.E).a(rVar.F, rVar2.F).b(Integer.valueOf(rVar.G), Integer.valueOf(rVar2.G), n1Var).c(rVar.H, rVar2.H).a(rVar.I, rVar2.I).c(rVar.r, rVar2.r).c(rVar.e, rVar2.e).c(rVar.h, rVar2.h).b(Integer.valueOf(rVar.x), Integer.valueOf(rVar2.x), n1Var).c(rVar.L, rVar2.L).c(rVar.N, rVar2.N).e();
+        o1 o1Var = o1.c;
+        return c10.b(valueOf, valueOf2, o1Var).a(rVar.E, rVar2.E).a(rVar.F, rVar2.F).b(Integer.valueOf(rVar.G), Integer.valueOf(rVar2.G), o1Var).c(rVar.H, rVar2.H).a(rVar.I, rVar2.I).c(rVar.r, rVar2.r).c(rVar.e, rVar2.e).c(rVar.h, rVar2.h).b(Integer.valueOf(rVar.x), Integer.valueOf(rVar2.x), o1Var).c(rVar.L, rVar2.L).c(rVar.N, rVar2.N).e();
     }
 
     @Override // a3.q

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
@@ -9,7 +9,7 @@ import rd.p;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzfx extends j implements p {
     Object zza;
@@ -58,7 +58,7 @@ final class zzfx extends j implements p {
         int i7 = this.zzb;
         try {
             if (i7 == 0) {
-                b.c(obj);
+                h.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
                 long j3 = this.zzd;
@@ -73,18 +73,18 @@ final class zzfx extends j implements p {
             } else if (i7 == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                b.c(obj);
+                h.b(obj);
             } else {
                 if (i7 != 2) {
                     if (i7 != 3) {
-                        b.c(obj);
+                        h.b(obj);
                         zzgb zzgbVar = this.zzc;
                         zzdsVar = zzdv.zzb;
                         zzgbVar.zzf = zzdsVar;
                         return Boolean.valueOf(((t) this.zze).C(k.a));
                     }
                     zzgrVar3 = (zzgr) this.zzf;
-                    b.c(obj);
+                    h.b(obj);
                     this.zzf = null;
                     this.zzb = 4;
                     if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
@@ -96,7 +96,7 @@ final class zzfx extends j implements p {
                     return Boolean.valueOf(((t) this.zze).C(k.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                b.c(obj);
+                h.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
                 zzgbVar3.zze = zzxnVar;

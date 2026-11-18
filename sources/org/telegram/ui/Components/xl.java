@@ -1,83 +1,71 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.camera.CameraView;
+import android.view.MotionEvent;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xl extends CameraView {
-    public final bi.e1 a;
-    public boolean b;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
+public final class xl extends ck0 {
+    public final /* synthetic */ int f3;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout g3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
-        super(context, z10, z11);
-        this.c = chatAttachAlertPhotoLayout;
-        this.a = new bi.e1(this, 8);
+    public /* synthetic */ xl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(context, i6Var);
+        this.f3 = i7;
+        this.g3 = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        ki kiVar = chatAttachAlertPhotoLayout.b;
-        if (org.telegram.messenger.g0.m0) {
-            return;
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 1:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.g3.b.Z3[0] - org.telegram.messenger.g0.L(80.0f)) {
+                    break;
+                }
+                break;
         }
-        if (this.b || (!chatAttachAlertPhotoLayout.e0 && chatAttachAlertPhotoLayout.c0)) {
-            super.dispatchDraw(canvas);
-            return;
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.f3) {
+            case 1:
+                super.onLayout(z10, i7, i10, i11, i12);
+                PhotoViewer.p1().r0();
+                break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                break;
         }
-        float translationY = (kiVar.b.getTranslationY() + (kiVar.E2[1] + chatAttachAlertPhotoLayout.X0)) - chatAttachAlertPhotoLayout.Q.getTranslationY();
-        hi.i iVar = kiVar.C4;
-        int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + org.telegram.messenger.g0.L(8.0f) : 0.0f), getMeasuredHeight());
-        boolean z10 = chatAttachAlertPhotoLayout.e0;
-        if (z10) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            float f10 = chatAttachAlertPhotoLayout.o1;
-            boolean z11 = ChatAttachAlertPhotoLayout.r1;
-            float f11 = 1.0f - chatAttachAlertPhotoLayout.f0;
-            rectF.set((0.0f * f11) + f10, (f11 * chatAttachAlertPhotoLayout.a0) + chatAttachAlertPhotoLayout.l1, chatAttachAlertPhotoLayout.n1, org.telegram.messenger.g0.T1(Math.min(min, chatAttachAlertPhotoLayout.m1), getMeasuredHeight(), chatAttachAlertPhotoLayout.f0));
-        } else {
-            if (!z10 && !chatAttachAlertPhotoLayout.c0) {
-                RectF rectF2 = org.telegram.messenger.g0.P;
-                boolean z12 = ChatAttachAlertPhotoLayout.r1;
-                rectF2.set(0.0f, chatAttachAlertPhotoLayout.a0, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-                return;
-            }
-            org.telegram.messenger.g0.P.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+    }
+
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.f3) {
+            case 1:
+                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.g3.b.Z3[0] - org.telegram.messenger.g0.L(80.0f)) {
+                    break;
+                }
+                break;
         }
-        canvas.save();
-        canvas.clipRect(org.telegram.messenger.g0.P);
-        super.dispatchDraw(canvas);
-        canvas.restore();
+        return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        xb.a(chatAttachAlertPhotoLayout.Q, this.a);
-        chatAttachAlertPhotoLayout.F.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        xb.h(this.c.Q);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i7) {
-        super.setVisibility(i7);
-        this.c.F.invalidate();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void showTexture(boolean z10, boolean z11) {
-        super.showTexture(z10, z11);
-        this.c.F.invalidate();
+    @Override // org.telegram.ui.Components.ck0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        switch (this.f3) {
+            case 0:
+                if (!this.g3.K0) {
+                    super.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.requestLayout();
+                break;
+        }
     }
 }

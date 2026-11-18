@@ -1,6 +1,6 @@
 package v9;
 
-import bg.e0;
+import bg.f0;
 import com.google.android.gms.internal.cast.f4;
 import java.util.Collection;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f implements ScheduledExecutorService, AutoCloseable {
     public final ExecutorService a;
@@ -59,7 +59,7 @@ public final class f implements ScheduledExecutorService, AutoCloseable {
 
     @Override // java.util.concurrent.ScheduledExecutorService
     public final ScheduledFuture schedule(Runnable runnable, long j3, TimeUnit timeUnit) {
-        return new h(new e0(this, runnable, j3, timeUnit, 7));
+        return new h(new f0(this, runnable, j3, timeUnit, 8));
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService
@@ -99,7 +99,7 @@ public final class f implements ScheduledExecutorService, AutoCloseable {
 
     @Override // java.util.concurrent.ScheduledExecutorService
     public final ScheduledFuture schedule(Callable callable, long j3, TimeUnit timeUnit) {
-        return new h(new e0(this, callable, j3, timeUnit, 8));
+        return new h(new f0(this, callable, j3, timeUnit, 9));
     }
 
     @Override // java.util.concurrent.ExecutorService

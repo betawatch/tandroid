@@ -1,13 +1,13 @@
 package x2;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import android.os.Handler;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l extends a {
     public final HashMap h = new HashMap();
@@ -49,17 +49,17 @@ public abstract class l extends a {
         hashMap.clear();
     }
 
-    public abstract f0 u(Object obj, f0 f0Var);
+    public abstract g0 u(Object obj, g0 g0Var);
 
     public abstract void x(Object obj, a aVar, e2.l1 l1Var);
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v2, types: [x2.g0, x2.i] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [x2.h0, x2.i] */
     public final void y(final Integer num, a aVar) {
         HashMap hashMap = this.h;
-        ja.f(!hashMap.containsKey(num));
-        ?? r12 = new g0() { // from class: x2.i
-            @Override // x2.g0
+        la.f(!hashMap.containsKey(num));
+        ?? r12 = new h0() { // from class: x2.i
+            @Override // x2.h0
             public final void a(a aVar2, e2.l1 l1Var) {
                 l.this.x(num, aVar2, l1Var);
             }
@@ -72,23 +72,23 @@ public abstract class l extends a {
         xa xaVar = aVar.c;
         xaVar.getClass();
         CopyOnWriteArrayList copyOnWriteArrayList = (CopyOnWriteArrayList) xaVar.d;
-        i0 i0Var = new i0();
-        i0Var.a = handler;
-        i0Var.b = jVar;
-        copyOnWriteArrayList.add(i0Var);
+        j0 j0Var = new j0();
+        j0Var.a = handler;
+        j0Var.b = jVar;
+        copyOnWriteArrayList.add(j0Var);
         Handler handler2 = this.i;
         handler2.getClass();
-        q2.k kVar = aVar.d;
-        kVar.getClass();
-        CopyOnWriteArrayList copyOnWriteArrayList2 = kVar.c;
-        q2.j jVar2 = new q2.j();
-        jVar2.a = handler2;
-        jVar2.b = jVar;
-        copyOnWriteArrayList2.add(jVar2);
+        q2.j jVar2 = aVar.d;
+        jVar2.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = jVar2.c;
+        q2.i iVar = new q2.i();
+        iVar.a = handler2;
+        iVar.b = jVar;
+        copyOnWriteArrayList2.add(iVar);
         j2.c0 c0Var = this.j;
-        m2.j jVar3 = this.g;
-        jVar3.getClass();
-        aVar.l(r12, c0Var, jVar3);
+        m2.i iVar2 = this.g;
+        iVar2.getClass();
+        aVar.l(r12, c0Var, iVar2);
         if (this.b.isEmpty()) {
             aVar.d(r12);
         }

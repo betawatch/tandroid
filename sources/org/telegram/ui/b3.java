@@ -6,12 +6,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b3 extends FrameLayout {
     public final LinearLayout a;
     public boolean b;
-    public final org.telegram.ui.Components.i9 c;
+    public final org.telegram.ui.Components.q9 c;
     public final TextView d;
     public final TextView e;
     public final TextView f;
@@ -28,37 +28,37 @@ public final class b3 extends FrameLayout {
         linearLayout.setPadding(org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(24.0f), org.telegram.messenger.g0.L(32.0f), org.telegram.messenger.g0.L(24.0f));
         linearLayout.setOrientation(1);
         linearLayout.setGravity(3);
-        addView(linearLayout, c8.ja.e(-2, -2, 17));
-        org.telegram.ui.Components.i9 i9Var = new org.telegram.ui.Components.i9(context);
-        this.c = i9Var;
-        linearLayout.addView(i9Var, c8.ja.o(100, 100));
+        addView(linearLayout, c8.ma.e(-2, -2, 17));
+        org.telegram.ui.Components.q9 q9Var = new org.telegram.ui.Components.q9(context);
+        this.c = q9Var;
+        linearLayout.addView(q9Var, c8.ma.o(100, 100));
         TextView textView = new TextView(context);
         this.d = textView;
         textView.setTextSize(1, 19.0f);
         textView.setTypeface(org.telegram.messenger.g0.o());
         textView.setTextColor(-1);
-        TextView f10 = org.telegram.messenger.i20.f(linearLayout, textView, c8.ja.t(-2, -2, 3, 0, 4, 0, 2), context);
+        TextView f10 = org.telegram.messenger.n10.f(linearLayout, textView, c8.ma.t(-2, -2, 3, 0, 4, 0, 2), context);
         this.e = f10;
         f10.setTextSize(1, 15.0f);
         f10.setTextColor(-1);
         f10.setSingleLine(false);
         f10.setMaxLines(3);
-        TextView f11 = org.telegram.messenger.i20.f(linearLayout, f10, c8.ja.t(-2, -2, 3, 0, 0, 0, 1), context);
+        TextView f11 = org.telegram.messenger.n10.f(linearLayout, f10, c8.ma.t(-2, -2, 3, 0, 0, 0, 1), context);
         this.f = f11;
         f11.setTextSize(1, 12.0f);
         f11.setTextColor(-1);
         f11.setAlpha(0.4f);
-        linearLayout.addView(f11, c8.ja.r(-2, -2, 3));
+        linearLayout.addView(f11, c8.ma.r(-2, -2, 3));
         hi.d dVar = new hi.d(context, null, true);
         this.h = dVar;
         dVar.setMinWidth(org.telegram.messenger.g0.L(140.0f));
-        dVar.i(org.telegram.messenger.hd.M0(2131746340, null), false, true);
-        linearLayout.addView(dVar, c8.ja.t(-2, 40, 3, 0, 12, 0, 0));
+        dVar.i(org.telegram.messenger.gd.M0(2131746145, null), false, true);
+        linearLayout.addView(dVar, c8.ma.t(-2, 40, 3, 0, 12, 0, 0));
     }
 
     public final void a(String str, String str2) {
-        this.d.setText(org.telegram.messenger.hd.M0(2131742922, null));
-        org.telegram.messenger.k5.q(null, null, 2131742924, new Object[]{str}, this.e);
+        this.d.setText(org.telegram.messenger.gd.M0(2131742664, null));
+        org.telegram.messenger.f3.q(null, null, 2131742666, new Object[]{str}, this.e);
         this.f.setText(str2);
     }
 
@@ -90,6 +90,6 @@ public final class b3 extends FrameLayout {
             return;
         }
         this.b = true;
-        org.telegram.messenger.si.b0(org.telegram.messenger.m10.t0).c2(this.c, "tg_placeholders_android", "🧐", "100_100");
+        org.telegram.messenger.ri.d0(org.telegram.messenger.j10.t0).h2(this.c, "tg_placeholders_android", "🧐", "100_100");
     }
 }

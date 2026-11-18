@@ -15,34 +15,34 @@ import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.beta.R;
+import org.telegram.messenger.bp;
 import org.telegram.messenger.cp;
-import org.telegram.messenger.dp;
-import org.telegram.messenger.gc;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
 import org.telegram.messenger.w7;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.oy0;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.vy0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class i0 extends View {
     public final Drawable E;
     public final Paint F;
     public boolean G;
-    public oy0 H;
+    public vy0 H;
     public final Paint I;
     public boolean J;
-    public oy0 K;
+    public vy0 K;
     public boolean L;
-    public oy0 M;
+    public vy0 M;
     public boolean N;
     public final TextPaint O;
     public StaticLayout P;
@@ -72,17 +72,17 @@ public class i0 extends View {
     public final Path j0;
     public final RectF k0;
     public final RectF l0;
-    public final u5 m0;
+    public final c6 m0;
     public float n;
-    public final u5 n0;
-    public final u5 o0;
-    public final u5 p0;
-    public final u5 q0;
+    public final c6 n0;
+    public final c6 o0;
+    public final c6 p0;
+    public final c6 q0;
     public final TextPaint r;
-    public final u5 r0;
+    public final c6 r0;
     public StaticLayout s;
-    public final u5 s0;
-    public final u5 t0;
+    public final c6 s0;
+    public final c6 t0;
     public float w;
     public float x;
     public final RectF y;
@@ -105,15 +105,15 @@ public class i0 extends View {
         this.j0 = new Path();
         this.k0 = new RectF();
         this.l0 = new RectF();
-        er erVar = er.h;
-        this.m0 = new u5(this, 0L, 350L, erVar);
-        this.n0 = new u5(this, 0L, 350L, erVar);
-        this.o0 = new u5(this, 0L, 350L, erVar);
-        this.p0 = new u5(this, 0L, 350L, erVar);
-        this.q0 = new u5(this, 0L, 350L, erVar);
-        this.r0 = new u5(this, 0L, 350L, erVar);
-        this.s0 = new u5(this, 0L, 350L, erVar);
-        this.t0 = new u5(this, 0L, 350L, erVar);
+        lr lrVar = lr.h;
+        this.m0 = new c6(this, 0L, 350L, lrVar);
+        this.n0 = new c6(this, 0L, 350L, lrVar);
+        this.o0 = new c6(this, 0L, 350L, lrVar);
+        this.p0 = new c6(this, 0L, 350L, lrVar);
+        this.q0 = new c6(this, 0L, 350L, lrVar);
+        this.r0 = new c6(this, 0L, 350L, lrVar);
+        this.s0 = new c6(this, 0L, 350L, lrVar);
+        this.t0 = new c6(this, 0L, 350L, lrVar);
         this.e = f10;
         imageReceiver.K0 = true;
         this.f = (int) (f10 * 3.0f);
@@ -140,8 +140,8 @@ public class i0 extends View {
         float f18;
         float d;
         float f19;
-        oy0 oy0Var;
-        oy0 oy0Var2;
+        vy0 vy0Var;
+        vy0 vy0Var2;
         Canvas canvas2 = canvas;
         d();
         float e10 = this.s0.e(false, this.b0);
@@ -169,21 +169,21 @@ public class i0 extends View {
             float d11 = this.m0.d(this.G);
             float f22 = (7.33f * f20) + 0.0f;
             f11 = 2.0f;
-            oy0 oy0Var3 = this.H;
-            if (oy0Var3 == null || d11 <= 0.0f) {
+            vy0 vy0Var3 = this.H;
+            if (vy0Var3 == null || d11 <= 0.0f) {
                 f12 = d11;
                 f10 = 1.0f;
                 f13 = d10;
                 direction = direction2;
                 f14 = f22;
             } else {
-                float t6 = com.google.android.gms.internal.vision.e2.t(1.0f, d11, (15.0f * f20) + this.H.i(), (oy0Var3.i() / 2.0f) + f22);
+                float t6 = com.google.android.gms.internal.vision.e2.t(1.0f, d11, (15.0f * f20) + this.H.i(), (vy0Var3.i() / 2.0f) + f22);
                 direction = direction2;
                 f12 = d11;
                 f10 = 1.0f;
-                oy0Var3.c(f20 * 10.0f, t6, d10, -15033089, canvas2);
+                vy0Var3.c(f20 * 10.0f, t6, d10, -15033089, canvas2);
                 f13 = d10;
-                f14 = org.telegram.ui.Cells.y0.f(f20, 7.0f, this.H.i(), f12, f22);
+                f14 = org.telegram.ui.Cells.c0.g(f20, 7.0f, this.H.i(), f12, f22);
             }
             float e12 = this.r0.e(false, this.d0);
             Paint paint2 = this.I;
@@ -197,28 +197,28 @@ public class i0 extends View {
             canvas2.drawPath(path2, paint2);
             canvas2.save();
             canvas2.clipPath(path2);
-            paint2.setAlpha(ns.e4);
+            paint2.setAlpha(ks.e4);
             canvas2.drawRect(f20 * 10.0f, f14, 13.0f * f20, f23, paint2);
             float f24 = f14;
             canvas.restore();
             float f25 = (5.66f * f20) + f24;
             if (this.L) {
-                oy0 oy0Var4 = this.M;
-                if (oy0Var4 != null) {
-                    float i11 = (oy0Var4.i() / 2.0f) + f25;
+                vy0 vy0Var4 = this.M;
+                if (vy0Var4 != null) {
+                    float i11 = (vy0Var4.i() / 2.0f) + f25;
                     int color = paint2.getColor();
                     f15 = e10;
                     d10 = f13;
                     f17 = f24;
                     f18 = 2.66f;
-                    oy0Var4.c(f20 * 20.0f, i11, d10, color, canvas);
-                    f16 = r.b.e(f20, 2.66f, this.M.i(), f25);
-                    if (this.J || (oy0Var2 = this.K) == null) {
+                    vy0Var4.c(f20 * 20.0f, i11, d10, color, canvas);
+                    f16 = p5.c.e(f20, 2.66f, this.M.i(), f25);
+                    if (this.J || (vy0Var2 = this.K) == null) {
                         canvas2 = canvas;
                     } else {
                         canvas2 = canvas;
-                        oy0Var2.c(f20 * 20.0f, (oy0Var2.i() / 2.0f) + f16, d10, i0.a.f(d2, -13421773, -1), canvas2);
-                        f16 = r.b.e(f20, f18, this.K.i(), f16);
+                        vy0Var2.c(f20 * 20.0f, (vy0Var2.i() / 2.0f) + f16, d10, i0.a.f(d2, -13421773, -1), canvas2);
+                        f16 = p5.c.e(f20, f18, this.K.i(), f16);
                     }
                     if (this.N && this.P != null) {
                         canvas2.save();
@@ -227,7 +227,7 @@ public class i0 extends View {
                         this.O.setAlpha((int) (255.0f * d10));
                         this.P.draw(canvas2);
                         canvas2.restore();
-                        f16 = r.b.e(f20, f18, this.P.getHeight(), f16);
+                        f16 = p5.c.e(f20, f18, this.P.getHeight(), f16);
                     }
                     d = this.n0.d(this.S);
                     if (d > 0.0f) {
@@ -243,12 +243,12 @@ public class i0 extends View {
                         imageReceiver.y0(f26, f27, width, height);
                         imageReceiver.setAlpha(d * d10);
                         imageReceiver.h(canvas2, null);
-                        f16 = i20.b(f20 * f18, this.e0, f10 - d12, f16);
+                        f16 = n10.b(f20 * f18, this.e0, f10 - d12, f16);
                     }
                     f19 = (5.0f * f20) + (7.0f * f20) + f16;
-                    oy0Var = this.H;
-                    if (oy0Var != null && f10 - f12 > 0.0f) {
-                        oy0Var.c(f20 * 10.0f, org.telegram.ui.Cells.y0.f(f20, 15.0f, this.H.i(), f12, (oy0Var.i() / 2.0f) + f19), d10, -15033089, canvas2);
+                    vy0Var = this.H;
+                    if (vy0Var != null && f10 - f12 > 0.0f) {
+                        vy0Var.c(f20 * 10.0f, org.telegram.ui.Cells.c0.g(f20, 15.0f, this.H.i(), f12, (vy0Var.i() / 2.0f) + f19), d10, -15033089, canvas2);
                         this.H.i();
                     }
                     canvas2.restore();
@@ -273,15 +273,15 @@ public class i0 extends View {
                 this.O.setAlpha((int) (255.0f * d10));
                 this.P.draw(canvas2);
                 canvas2.restore();
-                f16 = r.b.e(f20, f18, this.P.getHeight(), f16);
+                f16 = p5.c.e(f20, f18, this.P.getHeight(), f16);
             }
             d = this.n0.d(this.S);
             if (d > 0.0f) {
             }
             f19 = (5.0f * f20) + (7.0f * f20) + f16;
-            oy0Var = this.H;
-            if (oy0Var != null) {
-                oy0Var.c(f20 * 10.0f, org.telegram.ui.Cells.y0.f(f20, 15.0f, this.H.i(), f12, (oy0Var.i() / 2.0f) + f19), d10, -15033089, canvas2);
+            vy0Var = this.H;
+            if (vy0Var != null) {
+                vy0Var.c(f20 * 10.0f, org.telegram.ui.Cells.c0.g(f20, 15.0f, this.H.i(), f12, (vy0Var.i() / 2.0f) + f19), d10, -15033089, canvas2);
                 this.H.i();
             }
             canvas2.restore();
@@ -367,27 +367,27 @@ public class i0 extends View {
             this.c0 = 0.0f;
             this.b0 = 0.0f;
             this.d0 = 0.0f;
-            int e11 = q10.e(m10.i(this.a).f());
-            dp dpVar = np.s1(this.a).r4;
-            cp d = (dpVar == null || e11 < 7) ? null : dpVar.d(e11);
+            int f16 = o10.f(j10.i(this.a).f());
+            cp cpVar = mp.u1(this.a).t4;
+            bp d = (cpVar == null || f16 < 7) ? null : cpVar.d(f16);
             if (d == null) {
-                int[] iArr = j6.r8;
-                f10 = j6.x0(null, iArr[e11 % iArr.length], false);
+                int[] iArr = n6.r8;
+                f10 = n6.x0(null, iArr[f16 % iArr.length], false);
             } else {
                 f10 = d.f();
             }
             this.I.setColor(f10);
             this.c0 = (7.33f * f14) + this.c0;
             this.G = this.a0.f;
-            oy0 oy0Var = new oy0(str2, 16.0f, null);
-            oy0Var.a.setTextSize(16.0f * f14);
-            float f16 = 20.0f * f14;
-            oy0Var.p(f15 - f16);
-            this.H = oy0Var;
-            this.b0 = Math.max(this.b0, Math.min(f16 + oy0Var.c, f15));
-            float f17 = 7.0f * f14;
-            this.c0 = this.H.i() + this.c0 + f17;
-            this.S = webPage.photo != null || gj.K4(webPage.document);
+            vy0 vy0Var = new vy0(str2, 16.0f, null);
+            vy0Var.a.setTextSize(16.0f * f14);
+            float f17 = 20.0f * f14;
+            vy0Var.p(f15 - f17);
+            this.H = vy0Var;
+            this.b0 = Math.max(this.b0, Math.min(f17 + vy0Var.c, f15));
+            float f18 = 7.0f * f14;
+            this.c0 = this.H.i() + this.c0 + f18;
+            this.S = webPage.photo != null || fj.K4(webPage.document);
             h0 h0Var = this.a0;
             boolean z10 = h0Var.e;
             this.T = !z10;
@@ -406,7 +406,7 @@ public class i0 extends View {
                     i7 = 0;
                     i10 = 0;
                 }
-                imageReceiver.r0(gc.i(w11, webPage.photo), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : gc.i(w10, webPage.photo), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
+                imageReceiver.r0(fc.i(w11, webPage.photo), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : fc.i(w10, webPage.photo), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
             } else {
                 f11 = 48.0f;
                 TLRPC.Document document = webPage.document;
@@ -420,7 +420,7 @@ public class i0 extends View {
                         i7 = 0;
                         i10 = 0;
                     }
-                    imageReceiver.r0(gc.c(w13, webPage.document), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : gc.c(w12, webPage.document), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
+                    imageReceiver.r0(fc.c(w13, webPage.document), com.google.android.gms.internal.vision.e2.j(i13, "_", i13), this.V ? null : fc.c(w12, webPage.document), this.V ? null : com.google.android.gms.internal.vision.e2.j(i13, "_", i13), null, 0L, null, null, 0);
                 } else {
                     i7 = 0;
                     i10 = 0;
@@ -432,12 +432,12 @@ public class i0 extends View {
             if (isEmpty) {
                 i11 = 0;
             } else {
-                oy0 oy0Var2 = new oy0(webPage.site_name, 14.0f, org.telegram.messenger.g0.o());
-                oy0Var2.a.setTextSize(f14 * 14.0f);
-                float f18 = f14 * 40.0f;
-                oy0Var2.p((int) Math.ceil((f15 - f18) - ((this.S && this.T) ? f14 * 60.0f : 0.0f)));
-                this.M = oy0Var2;
-                this.b0 = Math.max(this.b0, Math.min(f18 + oy0Var2.c + ((this.S && this.T) ? f14 * 60.0f : 0.0f), f15));
+                vy0 vy0Var2 = new vy0(webPage.site_name, 14.0f, org.telegram.messenger.g0.o());
+                vy0Var2.a.setTextSize(f14 * 14.0f);
+                float f19 = f14 * 40.0f;
+                vy0Var2.p((int) Math.ceil((f15 - f19) - ((this.S && this.T) ? f14 * 60.0f : 0.0f)));
+                this.M = vy0Var2;
+                this.b0 = Math.max(this.b0, Math.min(f19 + vy0Var2.c + ((this.S && this.T) ? f14 * 60.0f : 0.0f), f15));
                 this.d0 = (f14 * 2.66f) + this.M.i() + this.d0;
                 i11 = this.M.b.getLineCount();
             }
@@ -447,14 +447,14 @@ public class i0 extends View {
                 f12 = 2.66f;
                 f13 = f14;
             } else {
-                oy0 oy0Var3 = new oy0(webPage.title, 14.0f, org.telegram.messenger.g0.o());
-                oy0Var3.a.setTextSize(f14 * 14.0f);
-                float f19 = f14 * 40.0f;
+                vy0 vy0Var3 = new vy0(webPage.title, 14.0f, org.telegram.messenger.g0.o());
+                vy0Var3.a.setTextSize(f14 * 14.0f);
+                float f20 = f14 * 40.0f;
                 f12 = 2.66f;
                 f13 = f14;
-                oy0Var3.p((int) Math.ceil((f15 - f19) - ((this.S && this.T) ? f14 * 60.0f : 0.0f)));
-                this.K = oy0Var3;
-                this.b0 = Math.max(this.b0, Math.min(f19 + oy0Var3.c + ((this.S && this.T) ? 60.0f * f13 : 0.0f), f15));
+                vy0Var3.p((int) Math.ceil((f15 - f20) - ((this.S && this.T) ? f14 * 60.0f : 0.0f)));
+                this.K = vy0Var3;
+                this.b0 = Math.max(this.b0, Math.min(f20 + vy0Var3.c + ((this.S && this.T) ? 60.0f * f13 : 0.0f), f15));
                 this.d0 = (f13 * 2.66f) + this.K.i() + this.d0;
                 i11 += this.K.b.getLineCount();
             }
@@ -463,9 +463,9 @@ public class i0 extends View {
             if (!isEmpty3) {
                 TextPaint textPaint = this.O;
                 textPaint.setTextSize(f13 * 14.0f);
-                float f20 = f13 * 40.0f;
+                float f21 = f13 * 40.0f;
                 int i14 = 3 - i11;
-                this.P = org.telegram.ui.Cells.q1.I1(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f15 - f20)), (int) Math.ceil(Math.max(1.0f, f15 - ((40 + ((this.S && this.T) ? 60 : 0)) * f13))), i14, 4);
+                this.P = org.telegram.ui.Cells.q1.I1(webPage.description, textPaint, (int) Math.ceil(Math.max(1.0f, f15 - f21)), (int) Math.ceil(Math.max(1.0f, f15 - ((40 + ((this.S && this.T) ? 60 : 0)) * f13))), i14, 4);
                 this.Q = 0.0f;
                 this.R = Float.MAX_VALUE;
                 int i15 = 0;
@@ -474,7 +474,7 @@ public class i0 extends View {
                     this.R = Math.min(this.R, this.P.getLineLeft(i15));
                     i15++;
                 }
-                this.b0 = Math.max(this.b0, Math.min(f20 + this.Q, f15));
+                this.b0 = Math.max(this.b0, Math.min(f21 + this.Q, f15));
                 this.d0 = (f13 * f12) + this.d0 + this.P.getHeight();
             }
             if (this.S && !this.T) {
@@ -485,9 +485,9 @@ public class i0 extends View {
                 }
                 this.d0 = (f13 * f12) + this.d0 + this.e0;
             }
-            float f21 = f17 + this.d0;
-            this.d0 = f21;
-            this.c0 = (f13 * 11.0f) + this.c0 + f21;
+            float f22 = f18 + this.d0;
+            this.d0 = f22;
+            this.c0 = (f13 * 11.0f) + this.c0 + f22;
         } else {
             if (TextUtils.isEmpty(this.a0.b)) {
                 String str3 = this.a0.c;
@@ -498,11 +498,11 @@ public class i0 extends View {
             } else {
                 str = this.a0.b;
             }
-            float f22 = (this.b - i12) - i12;
+            float f23 = (this.b - i12) - i12;
             RectF rectF = this.y;
-            float f23 = f22 - ((((rectF.left + 30.0f) + 3.25f) + rectF.right) * f14);
+            float f24 = f23 - ((((rectF.left + 30.0f) + 3.25f) + rectF.right) * f14);
             this.n = 1.0f;
-            double d2 = f23;
+            double d2 = f24;
             float ceil = (int) Math.ceil(d2);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
             TextPaint textPaint2 = this.r;
@@ -516,7 +516,7 @@ public class i0 extends View {
             if (this.s.getLineCount() > 2) {
                 this.n = 0.3f;
             } else {
-                this.n = Math.min(1.0f, f23 / this.w);
+                this.n = Math.min(1.0f, f24 / this.w);
             }
             this.b0 = (this.w * this.n) + ((rectF.left + 30.0f + 3.25f + rectF.right) * f14);
             this.c0 = Math.max(f14 * 30.0f, this.s.getHeight() * this.n) + ((rectF.top + rectF.bottom) * f14);

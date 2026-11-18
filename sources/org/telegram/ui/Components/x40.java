@@ -1,37 +1,19 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class x40 {
-    public final int a;
+    public final boolean a;
     public final int b;
+    public final int c;
+    public final long d;
+    public final long e;
 
-    public x40(int i7, int i10) {
-        this.a = i7;
-        this.b = i10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && x40.class == obj.getClass()) {
-            x40 x40Var = (x40) obj;
-            if (this.a == x40Var.a && this.b == x40Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IntSize(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        return a8.p0.n(this.b, ")", sb2);
+    public x40(int i7, int i10, long j3, long j10, boolean z10) {
+        this.a = z10;
+        this.b = i7;
+        this.c = i10;
+        this.d = j3;
+        this.e = j10;
     }
 }

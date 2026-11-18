@@ -1,13 +1,15 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface yv0 {
-    boolean b();
+public final class yv0 extends org.telegram.ui.oq0 {
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean Q() {
+        return true;
+    }
 
-    boolean c();
-
-    void d(TLRPC.Document document, String str, Object obj, org.telegram.messenger.cj cjVar, boolean z10, boolean z11, int i7, int i10);
+    @Override // org.telegram.ui.oq0, org.telegram.ui.uq0
+    public final boolean z() {
+        return false;
+    }
 }

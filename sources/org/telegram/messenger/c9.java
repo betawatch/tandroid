@@ -8,7 +8,7 @@ import java.security.KeyPairGenerator;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c9 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,11 +25,11 @@ public final /* synthetic */ class c9 implements Runnable {
         switch (this.a) {
             case 0:
                 boolean z10 = this.b;
-                KeyPairGenerator keyPairGenerator = xr.f;
+                KeyPairGenerator keyPairGenerator = vr.f;
                 if (keyPairGenerator == null) {
                     try {
                         keyPairGenerator = KeyPairGenerator.getInstance("RSA", "AndroidKeyStore");
-                        xr.f = keyPairGenerator;
+                        vr.f = keyPairGenerator;
                     } catch (Exception e10) {
                         a8.g(e10, true);
                         keyPairGenerator = null;
@@ -51,7 +51,7 @@ public final /* synthetic */ class c9 implements Runnable {
                         Configuration configuration2 = resources2.getConfiguration();
                         configuration2.setLocale(locale);
                         resources2.updateConfiguration(configuration2, resources2.getDisplayMetrics());
-                        g0.h3(new c9(i7, z10));
+                        g0.g3(new c9(i7, z10));
                         break;
                     } catch (InvalidAlgorithmParameterException e11) {
                         a8.g(e11, true);
@@ -66,20 +66,20 @@ public final /* synthetic */ class c9 implements Runnable {
                 }
                 break;
             case 1:
-                ns.e().k(ns.Q1, Boolean.valueOf(this.b));
+                ks.e().k(ks.Q1, Boolean.valueOf(this.b));
                 break;
             case 2:
                 boolean z11 = this.b;
-                Iterator it = qc.n.iterator();
+                Iterator it = pc.n.iterator();
                 while (it.hasNext()) {
-                    z10 z10Var = (z10) it.next();
-                    if (z10Var != null) {
-                        z10Var.a(Boolean.valueOf(z11));
+                    x10 x10Var = (x10) it.next();
+                    if (x10Var != null) {
+                        x10Var.a(Boolean.valueOf(z11));
                     }
                 }
                 break;
             default:
-                ns.e().k(ns.n4, Boolean.FALSE, Boolean.valueOf(this.b));
+                ks.e().k(ks.p4, Boolean.FALSE, Boolean.valueOf(this.b));
                 break;
         }
     }

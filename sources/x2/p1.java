@@ -1,44 +1,141 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class p1 implements g9.k, ua.a, t3.g {
-    public final /* synthetic */ int a;
+public final class p1 implements e0, d0 {
+    public final e0 a;
+    public final long b;
+    public d0 c;
 
-    public /* synthetic */ p1(int i7) {
-        this.a = i7;
+    public p1(e0 e0Var, long j3) {
+        this.a = e0Var;
+        this.b = j3;
     }
 
-    @Override // g9.k, l5.e
-    public Object apply(Object obj) {
-        switch (this.a) {
-            case 0:
-                return Integer.valueOf(((e2.m1) obj).c);
-            case 1:
-            case 2:
-            default:
-                return (z3.q) obj;
-            case 3:
-                return Long.valueOf(((c4.a) obj).b);
-            case 4:
-                return Long.valueOf(((c4.a) obj).c);
+    @Override // x2.e0
+    public final long b(a3.u[] uVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j3) {
+        d1[] d1VarArr2 = new d1[d1VarArr.length];
+        int i7 = 0;
+        while (true) {
+            d1 d1Var = null;
+            if (i7 >= d1VarArr.length) {
+                break;
+            }
+            o1 o1Var = (o1) d1VarArr[i7];
+            if (o1Var != null) {
+                d1Var = o1Var.a;
+            }
+            d1VarArr2[i7] = d1Var;
+            i7++;
         }
+        e0 e0Var = this.a;
+        long j10 = this.b;
+        long b10 = e0Var.b(uVarArr, zArr, d1VarArr2, zArr2, j3 - j10);
+        for (int i10 = 0; i10 < d1VarArr.length; i10++) {
+            d1 d1Var2 = d1VarArr2[i10];
+            if (d1Var2 == null) {
+                d1VarArr[i10] = null;
+            } else {
+                d1 d1Var3 = d1VarArr[i10];
+                if (d1Var3 == null || ((o1) d1Var3).a != d1Var2) {
+                    d1VarArr[i10] = new o1(d1Var2, j10);
+                }
+            }
+        }
+        return b10 + j10;
     }
 
-    @Override // ua.a
-    public void b(ua.b bVar) {
-        bVar.get().getClass();
-        throw new ClassCastException();
+    @Override // x2.f1
+    public final boolean c(l2.s0 s0Var) {
+        l2.r0 r0Var = new l2.r0();
+        long j3 = s0Var.a;
+        r0Var.b = s0Var.b;
+        r0Var.c = s0Var.c;
+        r0Var.a = j3 - this.b;
+        return this.a.c(new l2.s0(r0Var));
     }
 
-    @Override // t3.g
-    public boolean c(int i7, int i10, int i11, int i12, int i13) {
-        if (i10 == 67 && i11 == 79 && i12 == 77 && (i13 == 77 || i7 == 2)) {
-            return true;
+    @Override // x2.e1
+    public final void c0(f1 f1Var) {
+        d0 d0Var = this.c;
+        d0Var.getClass();
+        d0Var.c0(this);
+    }
+
+    @Override // x2.f1
+    public final long e() {
+        long e10 = this.a.e();
+        if (e10 == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
         }
-        if (i10 == 77 && i11 == 76 && i12 == 76) {
-            return i13 == 84 || i7 == 2;
+        return e10 + this.b;
+    }
+
+    @Override // x2.e0
+    public final long f(long j3, l2.p1 p1Var) {
+        long j10 = this.b;
+        return this.a.f(j3 - j10, p1Var) + j10;
+    }
+
+    @Override // x2.f1
+    public final boolean g() {
+        return this.a.g();
+    }
+
+    @Override // x2.e0
+    public final void i() {
+        this.a.i();
+    }
+
+    @Override // x2.e0
+    public final long k(long j3) {
+        long j10 = this.b;
+        return this.a.k(j3 - j10) + j10;
+    }
+
+    @Override // x2.d0
+    public final void m(e0 e0Var) {
+        d0 d0Var = this.c;
+        d0Var.getClass();
+        d0Var.m(this);
+    }
+
+    @Override // x2.e0
+    public final void n(long j3) {
+        this.a.n(j3 - this.b);
+    }
+
+    @Override // x2.e0
+    public final long o() {
+        long o4 = this.a.o();
+        if (o4 == -9223372036854775807L) {
+            return -9223372036854775807L;
         }
-        return false;
+        return o4 + this.b;
+    }
+
+    @Override // x2.e0
+    public final r1 q() {
+        return this.a.q();
+    }
+
+    @Override // x2.f1
+    public final long r() {
+        long r10 = this.a.r();
+        if (r10 == Long.MIN_VALUE) {
+            return Long.MIN_VALUE;
+        }
+        return r10 + this.b;
+    }
+
+    @Override // x2.e0
+    public final void t(d0 d0Var, long j3) {
+        this.c = d0Var;
+        this.a.t(this, j3 - this.b);
+    }
+
+    @Override // x2.f1
+    public final void u(long j3) {
+        this.a.u(j3 - this.b);
     }
 }

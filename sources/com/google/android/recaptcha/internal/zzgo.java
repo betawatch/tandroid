@@ -4,7 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import c8.d0;
+import c8.f0;
 import hd.n;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ import kotlin.jvm.internal.f;
 import kotlin.jvm.internal.j;
 import rd.l;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgo extends SQLiteOpenHelper {
     public static final zzgn zza = new zzgn(null);
@@ -101,6 +101,6 @@ public final class zzgo extends SQLiteOpenHelper {
     }
 
     public final boolean zzf(zzgp zzgpVar) {
-        return zza(d0.a(zzgpVar)) == 1;
+        return zza(f0.a(zzgpVar)) == 1;
     }
 }

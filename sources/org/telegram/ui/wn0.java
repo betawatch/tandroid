@@ -1,44 +1,36 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
+import android.app.Activity;
+import android.window.OnBackInvokedCallback;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wn0 implements Runnable {
+public final /* synthetic */ class wn0 implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ wn0(PhotoViewer photoViewer, int i7) {
+    public /* synthetic */ wn0(Object obj, int i7) {
         this.a = i7;
-        this.b = photoViewer;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        PhotoViewer photoViewer = this.b;
-        switch (i7) {
+    public final void onBackInvoked() {
+        switch (this.a) {
             case 0:
-                photoViewer.n7 = null;
-                break;
-            case 1:
-                Drawable[] drawableArr = PhotoViewer.Z8;
-                photoViewer.y3();
-                break;
-            case 2:
-                photoViewer.E1.e(photoViewer.J2, photoViewer.K2, photoViewer.L2, photoViewer.P2, photoViewer.R2, photoViewer.O2, photoViewer.p2(true), photoViewer.p2(true), photoViewer.M2, photoViewer.N2, 0.0f, 0.0f, photoViewer.Q2);
-                photoViewer.c3(0);
-                break;
-            case 3:
-                Drawable[] drawableArr2 = PhotoViewer.Z8;
-                photoViewer.z0(true, false);
-                break;
-            case 4:
-                Drawable[] drawableArr3 = PhotoViewer.Z8;
-                photoViewer.d3(1, false);
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                Activity activity = photoViewer.E;
+                if (!(activity instanceof LaunchActivity)) {
+                    if (photoViewer.P1()) {
+                        photoViewer.z0(true, false);
+                        break;
+                    }
+                } else {
+                    ((LaunchActivity) activity).onBackPressed();
+                    break;
+                }
                 break;
             default:
-                PhotoViewer.L(photoViewer);
+                ((tb1) this.b).run();
                 break;
         }
     }

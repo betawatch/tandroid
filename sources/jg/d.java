@@ -1,20 +1,20 @@
 package jg;
 
 import java.util.Comparator;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
+    public final /* synthetic */ mp b;
     public final /* synthetic */ int c;
 
-    public /* synthetic */ d(np npVar, int i7, int i10) {
+    public /* synthetic */ d(mp mpVar, int i7, int i10) {
         this.a = i10;
-        this.b = npVar;
+        this.b = mpVar;
         this.c = i7;
     }
 
@@ -47,24 +47,24 @@ public final /* synthetic */ class d implements Comparator {
         switch (this.a) {
             case 0:
                 Long valueOf = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                np npVar = this.b;
-                TLRPC.User a22 = npVar.a2(valueOf);
-                TLRPC.User a23 = npVar.a2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                mp mpVar = this.b;
+                TLRPC.User c22 = mpVar.c2(valueOf);
+                TLRPC.User c23 = mpVar.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i15 = this.c;
-                if (a22 != null) {
-                    if (a22.self) {
+                if (c22 != null) {
+                    if (c22.self) {
                         i7 = i15 + 50000;
                     } else {
-                        TLRPC.UserStatus userStatus = a22.status;
+                        TLRPC.UserStatus userStatus = c22.status;
                         if (userStatus != null) {
                             i7 = userStatus.expires;
                         }
                     }
-                    if (a23 != null) {
-                        if (a23.self) {
+                    if (c23 != null) {
+                        if (c23.self) {
                             i10 = i15 + 50000;
                         } else {
-                            TLRPC.UserStatus userStatus2 = a23.status;
+                            TLRPC.UserStatus userStatus2 = c23.status;
                             if (userStatus2 != null) {
                                 i10 = userStatus2.expires;
                             }
@@ -95,7 +95,7 @@ public final /* synthetic */ class d implements Comparator {
                     }
                 }
                 i7 = 0;
-                if (a23 != null) {
+                if (c23 != null) {
                 }
                 i10 = 0;
                 if (i7 > 0) {
@@ -109,24 +109,24 @@ public final /* synthetic */ class d implements Comparator {
                 break;
             case 1:
                 Long valueOf2 = Long.valueOf(((TLRPC.TL_contact) obj2).user_id);
-                np npVar2 = this.b;
-                TLRPC.User a24 = npVar2.a2(valueOf2);
-                TLRPC.User a25 = npVar2.a2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
+                mp mpVar2 = this.b;
+                TLRPC.User c24 = mpVar2.c2(valueOf2);
+                TLRPC.User c25 = mpVar2.c2(Long.valueOf(((TLRPC.TL_contact) obj).user_id));
                 int i16 = this.c;
-                if (a24 != null) {
-                    if (a24.self) {
+                if (c24 != null) {
+                    if (c24.self) {
                         i11 = i16 + 50000;
                     } else {
-                        TLRPC.UserStatus userStatus3 = a24.status;
+                        TLRPC.UserStatus userStatus3 = c24.status;
                         if (userStatus3 != null) {
                             i11 = userStatus3.expires;
                         }
                     }
-                    if (a25 != null) {
-                        if (a25.self) {
+                    if (c25 != null) {
+                        if (c25.self) {
                             i12 = i16 + 50000;
                         } else {
-                            TLRPC.UserStatus userStatus4 = a25.status;
+                            TLRPC.UserStatus userStatus4 = c25.status;
                             if (userStatus4 != null) {
                                 i12 = userStatus4.expires;
                             }
@@ -157,7 +157,7 @@ public final /* synthetic */ class d implements Comparator {
                     }
                 }
                 i11 = 0;
-                if (a25 != null) {
+                if (c25 != null) {
                 }
                 i12 = 0;
                 if (i11 > 0) {
@@ -173,24 +173,24 @@ public final /* synthetic */ class d implements Comparator {
                 TLObject tLObject = (TLObject) obj;
                 TLObject tLObject2 = (TLObject) obj2;
                 boolean z10 = tLObject2 instanceof TLRPC.TL_contact;
-                np npVar3 = this.b;
-                TLRPC.User a26 = z10 ? npVar3.a2(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
-                TLRPC.User a27 = tLObject instanceof TLRPC.TL_contact ? npVar3.a2(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
+                mp mpVar3 = this.b;
+                TLRPC.User c26 = z10 ? mpVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject2).user_id)) : null;
+                TLRPC.User c27 = tLObject instanceof TLRPC.TL_contact ? mpVar3.c2(Long.valueOf(((TLRPC.TL_contact) tLObject).user_id)) : null;
                 int i17 = this.c;
-                if (a26 != null) {
-                    if (a26.self) {
+                if (c26 != null) {
+                    if (c26.self) {
                         i13 = i17 + 50000;
                     } else {
-                        TLRPC.UserStatus userStatus5 = a26.status;
+                        TLRPC.UserStatus userStatus5 = c26.status;
                         if (userStatus5 != null) {
                             i13 = userStatus5.expires;
                         }
                     }
-                    if (a27 != null) {
-                        if (a27.self) {
+                    if (c27 != null) {
+                        if (c27.self) {
                             i14 = i17 + 50000;
                         } else {
-                            TLRPC.UserStatus userStatus6 = a27.status;
+                            TLRPC.UserStatus userStatus6 = c27.status;
                             if (userStatus6 != null) {
                                 i14 = userStatus6.expires;
                             }
@@ -221,7 +221,7 @@ public final /* synthetic */ class d implements Comparator {
                     }
                 }
                 i13 = 0;
-                if (a27 != null) {
+                if (c27 != null) {
                 }
                 i14 = 0;
                 if (i13 > 0) {

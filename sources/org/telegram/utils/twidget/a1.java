@@ -1,20 +1,13 @@
 package org.telegram.utils.twidget;
 
-import a8.r7;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class a1 {
-    public Canvas a;
-    public int b;
-    public Object c;
-    public int d;
-    public int e;
-    public Bitmap f;
-    public final Matrix g = new Matrix();
-    public float h;
-    public r7 i;
+    public final d0 a;
+    public final int b;
+
+    public a1(d0 d0Var, int i7) {
+        this.a = d0Var;
+        this.b = i7;
+    }
 }

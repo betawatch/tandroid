@@ -1,9 +1,9 @@
 package e2;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d1 {
     public static final String a;
@@ -18,12 +18,12 @@ public abstract class d1 {
         int i7 = bundle.getInt(str, -1);
         if (i7 == 0) {
             String str2 = w.d;
-            ja.f(bundle.getInt(str, -1) == 0);
+            la.f(bundle.getInt(str, -1) == 0);
             return bundle.getBoolean(w.d, false) ? new w(bundle.getBoolean(w.e, false)) : new w();
         }
         if (i7 == 1) {
             String str3 = u0.c;
-            ja.f(bundle.getInt(str, -1) == 1);
+            la.f(bundle.getInt(str, -1) == 1);
             float f10 = bundle.getFloat(u0.c, -1.0f);
             return f10 == -1.0f ? new u0() : new u0(f10);
         }
@@ -32,11 +32,11 @@ public abstract class d1 {
                 throw new IllegalArgumentException(i5.c.i(i7, "Unknown RatingType: "));
             }
             String str4 = g1.d;
-            ja.f(bundle.getInt(str, -1) == 3);
+            la.f(bundle.getInt(str, -1) == 3);
             return bundle.getBoolean(g1.d, false) ? new g1(bundle.getBoolean(g1.e, false)) : new g1();
         }
         String str5 = e1.d;
-        ja.f(bundle.getInt(str, -1) == 2);
+        la.f(bundle.getInt(str, -1) == 2);
         int i10 = bundle.getInt(e1.d, 5);
         float f11 = bundle.getFloat(e1.e, -1.0f);
         return f11 == -1.0f ? new e1(i10) : new e1(i10, f11);

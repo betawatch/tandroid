@@ -1,19 +1,33 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.messenger.q10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class g0 implements AutoCloseable {
-    public TL_wallet.sendTransfer a;
-    public i0 b;
-    public byte[] c;
+public final class g0 implements Runnable {
+    public volatile boolean a;
+    public Runnable b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ q10 h;
+    public final /* synthetic */ u0 n;
 
-    @Override // java.lang.AutoCloseable
-    public final void close() {
-        i0 i0Var = this.b;
-        if (i0Var != null) {
-            i0Var.close();
+    public g0(u0 u0Var, String str, long j3, String str2, byte[] bArr, q10 q10Var) {
+        this.n = u0Var;
+        this.c = str;
+        this.d = j3;
+        this.e = str2;
+        this.f = bArr;
+        this.h = q10Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final synchronized void run() {
+        if (this.a) {
+            return;
         }
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new e0(1, this, this.h));
     }
 }

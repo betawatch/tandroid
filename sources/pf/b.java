@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b {
     public static volatile b j;
@@ -74,10 +74,10 @@ public final class b {
                 a8.g(e13, true);
             }
             this.d = Locale.getDefault().getCountry().toLowerCase();
-            this.f = new HashMap(ns.e4);
-            this.g = new HashMap(ns.e4);
+            this.f = new HashMap(ks.e4);
+            this.g = new HashMap(ks.e4);
             this.h = new HashMap(10);
-            this.i = new HashMap(ns.e4);
+            this.i = new HashMap(ks.e4);
             int f10 = f(0);
             int i7 = 4;
             int i10 = (f10 * 12) + 4;
@@ -248,7 +248,7 @@ public final class b {
                 cVar.e = g12;
                 int indexOf = g12.indexOf("[[");
                 if (indexOf != -1) {
-                    cVar.e = r.b.v(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
+                    cVar.e = p5.c.v(cVar.e.substring(0, indexOf), cVar.e.substring(cVar.e.indexOf("]]") + 2));
                 }
                 arrayList4.add(cVar);
                 i14++;

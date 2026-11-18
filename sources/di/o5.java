@@ -1,155 +1,82 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Camera;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ns;
+import java.util.ArrayList;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o5 extends View {
-    public float E;
-    public float F;
-    public final Camera G;
-    public final h6.m H;
-    public final RectF I;
-    public j5 a;
-    public j5 b;
-    public j5 c;
-    public float d;
-    public float e;
-    public float f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
-    public i5 s;
-    public i5 w;
-    public i5 x;
-    public float y;
+public final class o5 {
+    public final z5 a;
+    public t5 b;
+    public t5 c;
+    public t5 d;
+    public k5 h;
+    public k5 i;
+    public k5 j;
+    public k5 k;
+    public TL_stars.TL_starGiftUnique l;
+    public long m;
+    public k1 r;
+    public k1 s;
+    public float t;
+    public boolean u;
+    public boolean v;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public float n = 0.0f;
+    public boolean o = false;
+    public boolean p = false;
+    public boolean q = false;
 
-    public o5(Context context) {
-        super(context);
-        this.G = new Camera();
-        this.H = new h6.m(29);
-        this.I = new RectF();
+    public o5(z5 z5Var) {
+        this.a = z5Var;
+        z5Var.c.addOnAttachStateChangeListener(new bi.r2(this, 4));
     }
 
-    public final void a(Canvas canvas, i5 i5Var, float f10, float f11, float f12, int[] iArr, int[] iArr2, int[] iArr3) {
-        if (i5Var != null) {
-            Matrix matrix = i5Var.d;
-            Paint paint = i5Var.c;
-            if (paint == null) {
-                return;
-            }
-            float f13 = (f10 - 0.5f) / 1.5f;
-            float l10 = Utilities.l(1.0f - Math.abs(f13));
-            float max = Math.max(0.8f * f11, org.telegram.messenger.g0.L(180.0f));
-            float x10 = org.telegram.ui.Cells.y0.x(f13, max, 1.8f, f11 / 2.0f);
-            float min = Math.min(org.telegram.messenger.g0.L(176.0f), f12) / 2.0f;
-            float f14 = x10 - max;
-            float f15 = x10 + max;
-            canvas.saveLayerAlpha(f14, 0.0f, f15, f12, ns.e4, 31);
-            matrix.reset();
-            matrix.postTranslate(x10, min);
-            i5Var.e.setLocalMatrix(matrix);
-            paint.setAlpha((int) (l10 * 255.0f));
-            canvas.drawRect(f14, 0.0f, f15, f12, paint);
-            canvas.save();
-            float L = org.telegram.messenger.g0.L(90.0f);
-            RectF rectF = this.I;
-            rectF.set(f14, 0.0f, f14 + L, f12);
-            h6.m mVar = this.H;
-            mVar.m(canvas, rectF, 0, 1.0f);
-            rectF.set(f15 - L, 0.0f, f15, f12);
-            mVar.m(canvas, rectF, 2, 1.0f);
-            canvas.restore();
-            canvas.restore();
-            for (int i7 = 0; i7 < iArr.length; i7++) {
-                float width = (getWidth() / (iArr.length - 1)) * i7;
-                iArr[i7] = org.telegram.ui.ActionBar.j6.w(iArr[i7], org.telegram.ui.ActionBar.j6.r1(l10 * ((width < f14 || width > f15) ? 0.0f : Math.min(Utilities.l((width - f14) / max), Utilities.l(1.0f - ((width - (f15 - max)) / max)))), i5Var.g));
-            }
-            for (int i10 = 0; i10 < iArr2.length; i10++) {
-                float width2 = (getWidth() / (iArr2.length - 1)) * i10;
-                iArr2[i10] = org.telegram.ui.ActionBar.j6.w(iArr2[i10], org.telegram.ui.ActionBar.j6.r1(l10 * ((width2 < f14 || width2 > f15) ? 0.0f : Math.min(Utilities.l((width2 - f14) / max), Utilities.l(1.0f - ((width2 - (f15 - max)) / max)))), i5Var.f));
-            }
-            for (int i11 = 0; i11 < iArr3.length; i11++) {
-                float width3 = (getWidth() / (iArr2.length - 1)) * i11;
-                iArr3[i11] = org.telegram.ui.ActionBar.j6.w(iArr3[i11], org.telegram.ui.ActionBar.j6.r1(l10 * ((width3 < f14 || width3 > f15) ? 0.0f : Math.min(Utilities.l((width3 - f14) / max), Utilities.l(1.0f - ((width3 - (f15 - max)) / max)))), i5Var.h));
-            }
+    public final void a() {
+        this.o = false;
+        this.a.c.c();
+        k5 k5Var = this.h;
+        if (k5Var != null) {
+            k5Var.a();
         }
+        k5 k5Var2 = this.i;
+        if (k5Var2 != null) {
+            k5Var2.a();
+        }
+        k5 k5Var3 = this.j;
+        if (k5Var3 != null) {
+            k5Var3.a();
+        }
+        k5 k5Var4 = this.k;
+        if (k5Var4 != null) {
+            k5Var4.a();
+        }
+        c();
     }
 
-    public final void b(Canvas canvas, j5 j5Var, float f10, boolean z10) {
-        if (j5Var == null) {
-            return;
+    public final void b() {
+        if (this.o && !this.v) {
+            this.v = true;
+            org.telegram.messenger.g0.g3(new i5(this, 1));
         }
-        ImageReceiver imageReceiver = j5Var.d;
-        float f11 = f10;
-        if (z10) {
-            f11 = Math.max(0.5f, f11);
-        }
-        float f12 = imageReceiver.L0;
-        float f13 = imageReceiver.M0;
-        float f14 = imageReceiver.N0;
-        float f15 = imageReceiver.O0;
-        float alpha = imageReceiver.getAlpha();
-        float f16 = (f11 - 0.5f) / 1.5f;
-        float l10 = Utilities.l(1.0f - Math.abs(f16));
-        float width = (getWidth() / 2.0f) - (org.telegram.messenger.g0.L(220.0f) * f16);
-        float L = org.telegram.messenger.g0.L(80.0f);
-        float T1 = org.telegram.messenger.g0.T1(0.85f, 1.0f, l10);
-        float L2 = org.telegram.messenger.g0.L(160.0f);
-        canvas.save();
-        float f17 = ((L2 / 2.0f) * f16) + width;
-        canvas.translate(f17, L);
-        Camera camera = this.G;
-        camera.save();
-        camera.rotateY(f16 * (-30.0f));
-        camera.applyToCanvas(canvas);
-        camera.restore();
-        canvas.translate(-f17, -L);
-        float f18 = L2 * T1;
-        float f19 = f18 / 2.0f;
-        imageReceiver.y0(width - f19, L - f19, f18, f18);
-        imageReceiver.setAlpha(l10);
-        imageReceiver.h(canvas, null);
-        imageReceiver.y0(f12, f13, f14, f15);
-        imageReceiver.setAlpha(alpha);
-        canvas.restore();
     }
 
     public final void c() {
-        boolean z10 = (this.a == null && this.b == null && this.c == null && this.s == null && this.w == null && this.x == null) ? false : true;
-        this.c = null;
-        this.b = null;
-        this.a = null;
-        this.f = 0.0f;
-        this.e = 0.0f;
-        this.d = 0.0f;
-        this.r = false;
-        this.n = false;
-        this.h = false;
-        this.x = null;
-        this.w = null;
-        this.s = null;
-        this.F = 0.0f;
-        this.E = 0.0f;
-        this.y = 0.0f;
-        if (z10) {
-            invalidate();
+        if (this.o) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        b(canvas, this.a, this.d, this.h);
-        b(canvas, this.b, this.e, this.n);
-        b(canvas, this.c, this.f, this.r);
+        ArrayList arrayList = this.e;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            Object obj = arrayList.get(i7);
+            i7++;
+            ((m5) obj).a();
+        }
+        arrayList.clear();
+        this.f.clear();
+        this.g.clear();
     }
 }

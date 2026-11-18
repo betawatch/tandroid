@@ -6,43 +6,44 @@ import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
 import java.util.Collections;
-import kg.l0;
+import kg.o0;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.p5;
-import org.telegram.messenger.t3;
-import org.telegram.messenger.ti;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.q5;
+import org.telegram.messenger.si;
+import org.telegram.messenger.v3;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.e2;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Cells.d5;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.e5;
-import org.telegram.ui.Components.cv0;
-import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.pz;
-import org.telegram.ui.Components.uj0;
-import ug.t1;
+import org.telegram.ui.Cells.f5;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.pp0;
+import org.telegram.ui.Components.wz;
+import ug.j1;
+import wg.r;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class l implements d5 {
+public abstract class l implements e5 {
     public final boolean a;
     public boolean b;
-    public final e2 g;
+    public final h2 g;
     public final FrameLayout h;
-    public final ti i;
+    public final si i;
     public final long j;
     public final int k;
     public final boolean l;
     public FrameLayout m;
-    public cv0 n;
-    public cv0 o;
-    public uj0 p;
-    public pz q;
+    public kv0 n;
+    public kv0 o;
+    public ck0 p;
+    public wz q;
     public TLRPC.TL_chatInviteImporter r;
     public k s;
     public String t;
@@ -59,17 +60,17 @@ public abstract class l implements d5 {
     public boolean A = true;
     public boolean B = true;
     public final e C = new e(this, 0);
-    public final vh.d D = new vh.d(this, 3);
+    public final j1 D = new j1(this, 4);
 
-    public l(e2 e2Var, FrameLayout frameLayout, long j3, boolean z10) {
-        this.g = e2Var;
+    public l(h2 h2Var, FrameLayout frameLayout, long j3, boolean z10) {
+        this.g = h2Var;
         this.h = frameLayout;
         this.j = j3;
-        int currentAccount = e2Var.getCurrentAccount();
+        int currentAccount = h2Var.getCurrentAccount();
         this.k = currentAccount;
-        this.a = t3.U(currentAccount, j3);
+        this.a = v3.U(currentAccount, j3);
         this.l = z10;
-        this.i = ti.b(currentAccount);
+        this.i = si.b(currentAccount);
     }
 
     public static void k(View view, boolean z10, boolean z11) {
@@ -92,46 +93,46 @@ public abstract class l implements d5 {
         view.animate().alpha(f10).setDuration(150L).start();
     }
 
-    public final cv0 a() {
+    public final kv0 a() {
         if (this.n == null) {
-            e2 e2Var = this.g;
-            cv0 cv0Var = new cv0(e2Var.getParentActivity(), null, 16, e2Var.getResourceProvider());
-            this.n = cv0Var;
+            h2 h2Var = this.g;
+            kv0 kv0Var = new kv0(h2Var.getParentActivity(), null, 16, h2Var.getResourceProvider());
+            this.n = kv0Var;
             boolean z10 = this.a;
-            cv0Var.d.setText(hd.M0(z10 ? 2131748146 : 2131748195, null));
-            this.n.e.setText(hd.M0(z10 ? 2131748145 : 2131748194, null));
+            kv0Var.d.setText(gd.M0(z10 ? 2131747954 : 2131748003, null));
+            this.n.e.setText(gd.M0(z10 ? 2131747953 : 2131748002, null));
             this.n.setAnimateLayoutChange(true);
             this.n.setVisibility(8);
         }
         return this.n;
     }
 
-    public final pz b() {
+    public final wz b() {
         if (this.q == null) {
-            e2 e2Var = this.g;
-            pz pzVar = new pz(e2Var.getParentActivity(), e2Var.getResourceProvider());
-            this.q = pzVar;
-            pzVar.setAlpha(0.0f);
+            h2 h2Var = this.g;
+            wz wzVar = new wz(h2Var.getParentActivity(), h2Var.getResourceProvider());
+            this.q = wzVar;
+            wzVar.setAlpha(0.0f);
             if (this.B) {
-                q6.h(j6.d6, this.q, e2Var.getResourceProvider());
+                u6.h(n6.d6, this.q, h2Var.getResourceProvider());
             }
-            this.q.e(j6.d6, j6.a7, -1);
+            this.q.e(n6.d6, n6.a7, -1);
             this.q.setViewType(15);
             this.q.setMemberRequestButton(this.a);
         }
         return this.q;
     }
 
-    public final cv0 c() {
+    public final kv0 c() {
         if (this.o == null) {
-            e2 e2Var = this.g;
-            cv0 cv0Var = new cv0(e2Var.getParentActivity(), null, 1, e2Var.getResourceProvider());
-            this.o = cv0Var;
+            h2 h2Var = this.g;
+            kv0 kv0Var = new kv0(h2Var.getParentActivity(), null, 1, h2Var.getResourceProvider());
+            this.o = kv0Var;
             if (this.B) {
-                q6.h(j6.d6, cv0Var, e2Var.getResourceProvider());
+                u6.h(n6.d6, kv0Var, h2Var.getResourceProvider());
             }
-            this.o.d.setText(hd.M0(2131748167, null));
-            this.o.e.setText(hd.M0(2131745807, null));
+            this.o.d.setText(gd.M0(2131747975, null));
+            this.o.e.setText(gd.M0(2131745612, null));
             this.o.setAnimateLayoutChange(true);
             this.o.setVisibility(8);
         }
@@ -146,9 +147,9 @@ public abstract class l implements d5 {
         TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = new TLRPC.TL_messages_hideChatJoinRequest();
         tL_messages_hideChatJoinRequest.approved = z10;
         int i7 = this.k;
-        tL_messages_hideChatJoinRequest.peer = np.s1(i7).j1(-this.j);
-        tL_messages_hideChatJoinRequest.user_id = np.s1(i7).q1(user);
-        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_hideChatJoinRequest, new l0(this, tL_chatInviteImporter, z10, user, tL_messages_hideChatJoinRequest));
+        tL_messages_hideChatJoinRequest.peer = mp.u1(i7).l1(-this.j);
+        tL_messages_hideChatJoinRequest.user_id = mp.u1(i7).s1(user);
+        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_hideChatJoinRequest, new o0(this, tL_chatInviteImporter, z10, user, tL_messages_hideChatJoinRequest));
     }
 
     public final void e() {
@@ -161,7 +162,7 @@ public abstract class l implements d5 {
                 z10 = false;
             }
         }
-        g0.h3(new fp0(17, this, z10));
+        g0.g3(new pp0(18, this, z10));
     }
 
     public void f(String str, boolean z10, boolean z11) {
@@ -170,38 +171,38 @@ public abstract class l implements d5 {
         ArrayList arrayList = this.e;
         if (isEmpty) {
             z12 = !arrayList.isEmpty() || z10;
-            cv0 cv0Var = this.n;
-            if (cv0Var != null) {
-                cv0Var.setVisibility(z12 ? 4 : 0);
+            kv0 kv0Var = this.n;
+            if (kv0Var != null) {
+                kv0Var.setVisibility(z12 ? 4 : 0);
             }
-            cv0 cv0Var2 = this.o;
-            if (cv0Var2 != null) {
-                cv0Var2.setVisibility(4);
+            kv0 kv0Var2 = this.o;
+            if (kv0Var2 != null) {
+                kv0Var2.setVisibility(4);
             }
         } else {
             z12 = !this.c.isEmpty() || z10;
-            cv0 cv0Var3 = this.n;
-            if (cv0Var3 != null) {
-                cv0Var3.setVisibility(4);
+            kv0 kv0Var3 = this.n;
+            if (kv0Var3 != null) {
+                kv0Var3.setVisibility(4);
             }
-            cv0 cv0Var4 = this.o;
-            if (cv0Var4 != null) {
-                cv0Var4.setVisibility(z12 ? 4 : 0);
+            kv0 kv0Var4 = this.o;
+            if (kv0Var4 != null) {
+                kv0Var4.setVisibility(z12 ? 4 : 0);
             }
         }
         k(this.p, z12, true);
         if (arrayList.isEmpty()) {
-            cv0 cv0Var5 = this.n;
-            if (cv0Var5 != null) {
-                cv0Var5.setVisibility(0);
+            kv0 kv0Var5 = this.n;
+            if (kv0Var5 != null) {
+                kv0Var5.setVisibility(0);
             }
-            cv0 cv0Var6 = this.o;
-            if (cv0Var6 != null) {
-                cv0Var6.setVisibility(4);
+            kv0 kv0Var6 = this.o;
+            if (kv0Var6 != null) {
+                kv0Var6.setVisibility(4);
             }
             k(this.q, false, false);
             if (this.y && this.l) {
-                this.g.getActionBar().s().i(true);
+                this.g.getActionBar().t().i(true);
             }
         }
     }
@@ -297,7 +298,7 @@ public abstract class l implements d5 {
             arrayList4.addAll(tL_messages_chatInviteImporters.importers);
             if (this.l) {
                 z15 = false;
-                this.g.getActionBar().s().j(0).setVisibility(arrayList4.isEmpty() ? 8 : 0);
+                this.g.getActionBar().t().j(0).setVisibility(arrayList4.isEmpty() ? 8 : 0);
                 f(str, z11, z15);
                 this.x = arrayList2.size() >= tL_messages_chatInviteImporters.count ? z13 : z15;
                 if (z17 == ((arrayList2.isEmpty() && this.x) ? z13 : z15)) {
@@ -320,18 +321,18 @@ public abstract class l implements d5 {
     }
 
     public final void h(View view) {
-        if (view instanceof e5) {
+        if (view instanceof f5) {
             if (this.y) {
                 g0.v1(this.g.getParentActivity().getCurrentFocus());
             }
-            g0.i3(new t1(28, this, (e5) view), this.y ? 100L : 0L);
+            g0.h3(new r(20, this, (f5) view), this.y ? 100L : 0L);
         }
     }
 
     public final void i(boolean z10) {
         int i7;
-        uj0 uj0Var = this.p;
-        if (uj0Var == null || (i7 = !this.f.c.B ? 1 : 0) < 0 || i7 >= uj0Var.getChildCount()) {
+        ck0 ck0Var = this.p;
+        if (ck0Var == null || (i7 = !this.f.c.B ? 1 : 0) < 0 || i7 >= ck0Var.getChildCount()) {
             return;
         }
         this.p.getChildAt(i7).setEnabled(z10);
@@ -355,30 +356,30 @@ public abstract class l implements d5 {
             this.f.E(this.e);
             k(this.p, true, true);
             k(this.q, false, false);
-            cv0 cv0Var = this.o;
-            if (cv0Var != null) {
-                cv0Var.setVisibility(4);
+            kv0 kv0Var = this.o;
+            if (kv0Var != null) {
+                kv0Var.setVisibility(4);
             }
             if (str == null && this.l) {
-                this.g.getActionBar().s().j(0).setVisibility(this.e.isEmpty() ? 8 : 0);
+                this.g.getActionBar().t().j(0).setVisibility(this.e.isEmpty() ? 8 : 0);
             }
         } else {
             this.f.E(Collections.EMPTY_LIST);
             k(this.p, false, false);
             k(this.q, true, true);
-            p5 p5Var = Utilities.g;
+            q5 q5Var = Utilities.g;
             e eVar = new e(this, 2);
             this.u = eVar;
-            p5Var.d(eVar, 300L);
+            q5Var.d(eVar, 300L);
         }
         if (str != null) {
-            cv0 cv0Var2 = this.n;
-            if (cv0Var2 != null) {
-                cv0Var2.setVisibility(4);
+            kv0 kv0Var2 = this.n;
+            if (kv0Var2 != null) {
+                kv0Var2.setVisibility(4);
             }
-            cv0 cv0Var3 = this.o;
-            if (cv0Var3 != null) {
-                cv0Var3.setVisibility(4);
+            kv0 kv0Var3 = this.o;
+            if (kv0Var3 != null) {
+                kv0Var3.setVisibility(4);
             }
         }
     }

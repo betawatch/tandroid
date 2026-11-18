@@ -1,6 +1,6 @@
 package j2;
 
-import a8.ja;
+import a8.la;
 import android.content.Context;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -32,7 +32,7 @@ public final class n implements h {
         this.b = new ArrayList();
     }
 
-    public static void b(h hVar, c0 c0Var) {
+    public static void e(h hVar, c0 c0Var) {
         if (hVar != null) {
             hVar.addTransferListener(c0Var);
         }
@@ -55,13 +55,13 @@ public final class n implements h {
         c0Var.getClass();
         this.c.addTransferListener(c0Var);
         this.b.add(c0Var);
-        b(this.d, c0Var);
-        b(this.e, c0Var);
-        b(this.f, c0Var);
-        b(this.h, c0Var);
-        b(this.n, c0Var);
-        b(this.r, c0Var);
-        b(this.s, c0Var);
+        e(this.d, c0Var);
+        e(this.e, c0Var);
+        e(this.f, c0Var);
+        e(this.h, c0Var);
+        e(this.n, c0Var);
+        e(this.r, c0Var);
+        e(this.s, c0Var);
     }
 
     @Override // j2.h
@@ -93,7 +93,7 @@ public final class n implements h {
 
     @Override // j2.h
     public final long open(m mVar) {
-        ja.p(this.w == null);
+        la.p(this.w == null);
         Uri uri = mVar.a;
         String scheme = uri.getScheme();
         String str = l0.a;

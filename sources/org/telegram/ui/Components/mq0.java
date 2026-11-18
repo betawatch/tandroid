@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mq0 extends ClippingImageView {
-    public final /* synthetic */ uj0 S;
+public final class mq0 extends v4.t {
+    public final /* synthetic */ gt0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mq0(Context context, sr0 sr0Var) {
-        super(context);
-        this.S = sr0Var;
+    public mq0(gt0 gt0Var) {
+        super(3);
+        this.Q = gt0Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.S.invalidate();
+    @Override // v4.t, v4.c0, v4.p0
+    public final int o0(int i7, v4.x0 x0Var, v4.c1 c1Var) {
+        if (this.Q.r1) {
+            i7 = 0;
+        }
+        return super.o0(i7, x0Var, c1Var);
+    }
+
+    @Override // v4.t, v4.c0, v4.p0
+    public final boolean y0() {
+        return false;
     }
 }

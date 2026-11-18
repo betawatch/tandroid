@@ -1,13 +1,13 @@
 package y7;
 
-import c8.yd;
+import c8.fe;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class k9 extends h9 implements List, RandomAccess {
     public static final i9 b = new i9(m9.e, 0);
@@ -104,7 +104,7 @@ public abstract class k9 extends h9 implements List, RandomAccess {
     @Override // java.util.List
     /* renamed from: l, reason: merged with bridge method [inline-methods] */
     public k9 subList(int i7, int i10) {
-        yd.b(i7, i10, size());
+        fe.b(i7, i10, size());
         int i11 = i10 - i7;
         return i11 == size() ? this : i11 == 0 ? m9.e : new j9(this, i7, i11);
     }
@@ -132,7 +132,7 @@ public abstract class k9 extends h9 implements List, RandomAccess {
     public final i9 listIterator(int i7) {
         int size = size();
         if (i7 < 0 || i7 > size) {
-            throw new IndexOutOfBoundsException(yd.c(i7, size, "index"));
+            throw new IndexOutOfBoundsException(fe.c(i7, size, "index"));
         }
         return isEmpty() ? b : new i9(this, i7);
     }

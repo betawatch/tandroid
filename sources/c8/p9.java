@@ -1,43 +1,18 @@
 package c8;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.RemoteException;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class p9 {
-    public static v7.e a;
-
-    public static ia.d a(Bitmap bitmap) {
-        try {
-            v7.e eVar = a;
-            q6.m.h(eVar, "IBitmapDescriptorFactory is not initialized");
-            v7.c cVar = (v7.c) eVar;
-            Parcel p12 = cVar.p1();
-            v7.b.b(p12, bitmap);
-            Parcel o12 = cVar.o1(p12, 6);
-            a7.a m12 = a7.b.m1(o12.readStrongBinder());
-            o12.recycle();
-            return new ia.d(m12);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
+    public static long a(h2.x xVar, int i7, int i10) {
+        xVar.N(i7);
+        if (xVar.a() < 5) {
+            return -9223372036854775807L;
         }
-    }
-
-    public static ia.d b(int i7) {
-        try {
-            v7.e eVar = a;
-            q6.m.h(eVar, "IBitmapDescriptorFactory is not initialized");
-            v7.c cVar = (v7.c) eVar;
-            Parcel p12 = cVar.p1();
-            p12.writeInt(i7);
-            Parcel o12 = cVar.o1(p12, 1);
-            a7.a m12 = a7.b.m1(o12.readStrongBinder());
-            o12.recycle();
-            return new ia.d(m12);
-        } catch (RemoteException e10) {
-            throw new androidx.car.app.j(e10);
+        int m10 = xVar.m();
+        if ((8388608 & m10) != 0 || ((2096896 & m10) >> 8) != i10 || (m10 & 32) == 0 || xVar.A() < 7 || xVar.a() < 7 || (xVar.A() & 16) != 16) {
+            return -9223372036854775807L;
         }
+        xVar.k(0, 6, new byte[6]);
+        return ((r0[0] & 255) << 25) | ((r0[1] & 255) << 17) | ((r0[2] & 255) << 9) | ((r0[3] & 255) << 1) | ((255 & r0[4]) >> 7);
     }
 }

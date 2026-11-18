@@ -1,224 +1,276 @@
 package org.telegram.messenger;
 
 import android.text.TextUtils;
+import android.util.Pair;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ vr b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ tr b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ tp(vr vrVar, int i7, int i10) {
+    public /* synthetic */ tp(tr trVar, int i7, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = vrVar;
-        this.c = i7;
+        this.b = trVar;
+        this.d = i7;
+        this.c = arrayList;
     }
 
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00ac  */
+    /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        boolean z10;
-        int i7 = this.a;
-        SQLiteCursor sQLiteCursor = null;
-        int i10 = 2;
-        int i11 = 3;
-        int i12 = this.c;
-        vr vrVar = this.b;
-        switch (i7) {
+        SQLitePreparedStatement sQLitePreparedStatement;
+        SQLitePreparedStatement sQLitePreparedStatement2;
+        TLRPC.PhotoSize photoSize;
+        Exception e10;
+        SQLiteDatabase sQLiteDatabase;
+        SQLitePreparedStatement executeFast;
+        switch (this.a) {
             case 0:
-                vrVar.getDownloadController().t(i12);
-                return;
-            case 1:
-                vrVar.getClass();
+                int i7 = this.d;
+                ArrayList arrayList = this.c;
+                tr trVar = this.b;
+                trVar.getClass();
                 try {
-                    vrVar.b.executeFast("DELETE FROM shortcut_widget WHERE id = " + i12).stepThis().dispose();
+                    trVar.b.beginTransaction();
+                    trVar.b.executeFast("DELETE FROM shortcut_widget WHERE id = " + i7).stepThis().dispose();
+                    SQLitePreparedStatement executeFast2 = trVar.b.executeFast("REPLACE INTO shortcut_widget VALUES(?, ?, ?)");
+                    if (arrayList.isEmpty()) {
+                        executeFast2.requery();
+                        executeFast2.bindInteger(1, i7);
+                        executeFast2.bindLong(2, -1L);
+                        executeFast2.bindInteger(3, 0);
+                        executeFast2.step();
+                    } else {
+                        int size = arrayList.size();
+                        for (int i10 = 0; i10 < size; i10++) {
+                            long j3 = ((sr) arrayList.get(i10)).a;
+                            executeFast2.requery();
+                            executeFast2.bindInteger(1, i7);
+                            executeFast2.bindLong(2, j3);
+                            executeFast2.bindInteger(3, i10);
+                            executeFast2.step();
+                        }
+                    }
+                    executeFast2.dispose();
+                    trVar.b.commitTransaction();
                     return;
-                } catch (Exception e10) {
-                    vrVar.o(e10, true);
+                } catch (Exception e11) {
+                    trVar.o(e11, true);
                     return;
                 }
-            case 2:
-                vr vrVar2 = this.b;
+            case 1:
+                ArrayList arrayList2 = this.c;
+                tr trVar2 = this.b;
+                trVar2.getClass();
+                SQLiteCursor sQLiteCursor = null;
                 try {
                     try {
-                        ArrayList arrayList = new ArrayList();
-                        ArrayList arrayList2 = new ArrayList();
                         ArrayList arrayList3 = new ArrayList();
-                        a0.h hVar = new a0.h();
-                        SQLiteCursor queryFinalized = i12 >= 0 ? vrVar2.b.queryFinalized(String.format(Locale.US, "SELECT did, last_mid, unread_count, date FROM dialogs WHERE unread_count > 0 AND folder_id = %1$d", Integer.valueOf(i12)), new Object[0]) : vrVar2.b.queryFinalized("SELECT did, last_mid, unread_count, date FROM dialogs WHERE unread_count > 0", new Object[0]);
+                        SQLiteDatabase sQLiteDatabase2 = trVar2.b;
+                        Locale locale = Locale.US;
+                        SQLiteCursor queryFinalized = sQLiteDatabase2.queryFinalized("SELECT did, folder_id FROM dialogs WHERE pinned > 0 AND did NOT IN (" + TextUtils.join(",", arrayList2) + ")", new Object[0]);
                         while (queryFinalized.next()) {
                             try {
                                 long longValue = queryFinalized.longValue(0);
-                                if (!m5.D(longValue)) {
-                                    rr rrVar = new rr();
-                                    rrVar.a = queryFinalized.intValue(1);
-                                    rrVar.c = queryFinalized.intValue(2);
-                                    rrVar.b = queryFinalized.intValue(3);
-                                    hVar.k(rrVar, longValue);
-                                    if (m5.C(longValue)) {
-                                        int i13 = (int) (longValue & 4294967295L);
-                                        if (!arrayList3.contains(Integer.valueOf(i13))) {
-                                            arrayList3.add(Integer.valueOf(i13));
-                                        }
-                                    } else if (m5.z(longValue)) {
-                                        long j3 = -longValue;
-                                        if (!arrayList2.contains(Long.valueOf(j3))) {
-                                            arrayList2.add(Long.valueOf(j3));
-                                        }
-                                    } else if (!arrayList.contains(Long.valueOf(longValue))) {
-                                        arrayList.add(Long.valueOf(longValue));
-                                    }
+                                if (queryFinalized.intValue(1) == this.d && !n5.C(longValue) && !n5.D(longValue)) {
+                                    arrayList3.add(Long.valueOf(queryFinalized.longValue(0)));
                                 }
-                            } catch (Exception e11) {
-                                e = e11;
+                            } catch (Exception e12) {
+                                e = e12;
+                                sQLitePreparedStatement2 = null;
                                 sQLiteCursor = queryFinalized;
-                                vrVar2.o(e, true);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                    return;
-                                }
-                                return;
                             } catch (Throwable th2) {
                                 th = th2;
+                                sQLitePreparedStatement = null;
                                 sQLiteCursor = queryFinalized;
                                 if (sQLiteCursor != null) {
                                     sQLiteCursor.dispose();
+                                }
+                                if (sQLitePreparedStatement != null) {
+                                    sQLitePreparedStatement.dispose();
                                 }
                                 throw th;
                             }
                         }
                         queryFinalized.dispose();
-                        ArrayList arrayList4 = new ArrayList();
-                        ArrayList arrayList5 = new ArrayList();
-                        ArrayList arrayList6 = new ArrayList();
-                        if (!arrayList3.isEmpty()) {
-                            vrVar2.V(TextUtils.join(",", arrayList3), arrayList6, arrayList);
+                        if (arrayList3.isEmpty()) {
+                            return;
                         }
-                        if (!arrayList.isEmpty()) {
-                            vrVar2.n0(arrayList, arrayList4, false);
+                        sQLitePreparedStatement2 = trVar2.b.executeFast("UPDATE dialogs SET pinned = ? WHERE did = ?");
+                        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+                            try {
+                                long longValue2 = ((Long) arrayList3.get(i11)).longValue();
+                                sQLitePreparedStatement2.requery();
+                                sQLitePreparedStatement2.bindInteger(1, 0);
+                                sQLitePreparedStatement2.bindLong(2, longValue2);
+                                sQLitePreparedStatement2.step();
+                            } catch (Exception e13) {
+                                e = e13;
+                                trVar2.o(e, true);
+                                if (sQLiteCursor != null) {
+                                    sQLiteCursor.dispose();
+                                }
+                                if (sQLitePreparedStatement2 != null) {
+                                    sQLitePreparedStatement2.dispose();
+                                    return;
+                                }
+                                return;
+                            }
                         }
-                        if (!arrayList2.isEmpty()) {
-                            vrVar2.Q(TextUtils.join(",", arrayList2), arrayList5);
-                        }
-                        g0.h3(new jn(vrVar2, arrayList4, arrayList5, arrayList6, hVar, 13));
+                        sQLitePreparedStatement2.dispose();
                         return;
                     } catch (Throwable th3) {
                         th = th3;
                     }
-                } catch (Exception e12) {
-                    e = e12;
+                } catch (Exception e14) {
+                    e = e14;
+                    sQLitePreparedStatement2 = null;
+                } catch (Throwable th4) {
+                    th = th4;
+                    sQLitePreparedStatement = null;
                 }
-            case 3:
-                try {
-                    if (i12 == 0) {
-                        vrVar.b.executeFast("DELETE FROM download_queue WHERE 1").stepThis().dispose();
+                break;
+            case 2:
+                a6 downloadController = this.b.getDownloadController();
+                HashMap hashMap = downloadController.f;
+                ArrayList arrayList4 = this.c;
+                if (arrayList4.isEmpty()) {
+                    return;
+                }
+                int i12 = this.d;
+                ArrayList arrayList5 = i12 == 1 ? downloadController.b : i12 == 2 ? downloadController.c : i12 == 4 ? downloadController.e : downloadController.d;
+                for (int i13 = 0; i13 < arrayList4.size(); i13++) {
+                    b6 b6Var = (b6) arrayList4.get(i13);
+                    TLObject tLObject = b6Var.a;
+                    String str = null;
+                    if (tLObject instanceof TLRPC.Document) {
+                        str = w7.r(null, (TLRPC.Document) tLObject);
+                        photoSize = null;
+                    } else if (tLObject instanceof TLRPC.Photo) {
+                        photoSize = w7.w(((TLRPC.Photo) tLObject).sizes, g0.Z0(false), false, null, false);
+                        str = w7.r(null, photoSize);
                     } else {
-                        SQLiteDatabase sQLiteDatabase = vrVar.b;
-                        Locale locale = Locale.US;
-                        sQLiteDatabase.executeFast("DELETE FROM download_queue WHERE type = " + i12).stepThis().dispose();
+                        photoSize = null;
                     }
-                    return;
-                } catch (Exception e13) {
-                    vrVar.o(e13, true);
-                    return;
-                }
-            case 4:
-                vrVar.l(i12);
-                return;
-            case 5:
-                try {
-                    try {
-                        ArrayList arrayList7 = new ArrayList();
-                        SQLiteDatabase sQLiteDatabase2 = vrVar.b;
-                        Locale locale2 = Locale.US;
-                        SQLiteCursor queryFinalized2 = sQLiteDatabase2.queryFinalized("SELECT uid, type, data, parent FROM download_queue WHERE type = " + i12 + " ORDER BY date DESC LIMIT 3", new Object[0]);
-                        while (queryFinalized2.next()) {
-                            try {
-                                a6 a6Var = new a6();
-                                a6Var.b = queryFinalized2.intValue(1);
-                                a6Var.c = queryFinalized2.longValue(0);
-                                a6Var.f = queryFinalized2.stringValue(3);
-                                NativeByteBuffer byteBufferValue = queryFinalized2.byteBufferValue(2);
-                                if (byteBufferValue != null) {
-                                    TLRPC.MessageMedia TLdeserialize = TLRPC.MessageMedia.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(false), false);
-                                    byteBufferValue.reuse();
-                                    TLRPC.Document document = TLdeserialize.document;
-                                    if (document != null) {
-                                        a6Var.a = document;
-                                        if (!gj.K4(document)) {
-                                            if (!gj.Q4(TLdeserialize.document)) {
-                                                if (gj.i4(TLdeserialize.document)) {
-                                                }
-                                                z10 = false;
-                                                a6Var.d = z10;
-                                            }
-                                        }
-                                        int i14 = TLdeserialize.ttl_seconds;
-                                        if ((i14 > 0 && i14 <= 60) || i14 == Integer.MAX_VALUE) {
-                                            z10 = true;
-                                            a6Var.d = z10;
-                                        }
-                                        z10 = false;
-                                        a6Var.d = z10;
-                                    } else {
-                                        TLRPC.Photo photo = TLdeserialize.photo;
-                                        if (photo != null) {
-                                            a6Var.a = photo;
-                                            int i15 = TLdeserialize.ttl_seconds;
-                                            a6Var.d = (i15 > 0 && i15 <= 60) || i15 == Integer.MAX_VALUE;
-                                        }
-                                    }
-                                    a6Var.e = (TLdeserialize.flags & TLObject.FLAG_31) != 0;
-                                }
-                                arrayList7.add(a6Var);
-                            } catch (Exception e14) {
-                                e = e14;
-                                sQLiteCursor = queryFinalized2;
-                                vrVar.o(e, true);
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                return;
-                            } catch (Throwable th4) {
-                                th = th4;
-                                sQLiteCursor = queryFinalized2;
-                                if (sQLiteCursor != null) {
-                                    sQLiteCursor.dispose();
-                                }
-                                throw th;
+                    if (str != null && !hashMap.containsKey(str)) {
+                        if (photoSize != null) {
+                            downloadController.getFileLoader().V(fc.i(photoSize, (TLRPC.Photo) b6Var.a), b6Var.f, null, 0, b6Var.d ? 2 : b6Var.e ? 1 : 0);
+                        } else {
+                            TLObject tLObject2 = b6Var.a;
+                            if (tLObject2 instanceof TLRPC.Document) {
+                                downloadController.getFileLoader().W((TLRPC.Document) tLObject2, b6Var.f, 0, b6Var.d ? 2 : 0);
                             }
                         }
-                        queryFinalized2.dispose();
-                        g0.h3(new op(vrVar, i12, arrayList7, i10));
-                    } catch (Throwable th5) {
-                        th = th5;
+                        arrayList5.add(b6Var);
+                        hashMap.put(str, b6Var);
+                        downloadController.h.put(new Pair(Long.valueOf(b6Var.c), Integer.valueOf(b6Var.b)), b6Var);
                     }
-                } catch (Exception e15) {
-                    e = e15;
                 }
                 return;
             default:
-                np messagesController = vrVar.getMessagesController();
-                m10 userConfig = messagesController.getUserConfig();
-                int i16 = this.c;
-                if (userConfig.g(i16)[0] != 2147483647L) {
-                    messagesController.U2(i16, 0, 10, false, new rk(messagesController, i16, i11));
+                ArrayList arrayList6 = this.c;
+                tr trVar3 = this.b;
+                trVar3.getClass();
+                int i14 = this.d;
+                SQLitePreparedStatement sQLitePreparedStatement3 = null;
+                try {
+                    if (i14 == 1) {
+                        try {
+                            trVar3.b.executeFast("DELETE FROM wallpapers2 WHERE num >= -1").stepThis().dispose();
+                        } catch (Exception e15) {
+                            e10 = e15;
+                            trVar3.o(e10, true);
+                            sQLiteDatabase = trVar3.b;
+                            if (sQLiteDatabase != null) {
+                                sQLiteDatabase.commitTransaction();
+                            }
+                            if (sQLitePreparedStatement3 == null) {
+                                sQLitePreparedStatement3.dispose();
+                                return;
+                            }
+                            return;
+                        }
+                    }
+                    trVar3.b.beginTransaction();
+                    executeFast = i14 != 0 ? trVar3.b.executeFast("REPLACE INTO wallpapers2 VALUES(?, ?, ?)") : trVar3.b.executeFast("UPDATE wallpapers2 SET data = ? WHERE uid = ?");
+                } catch (Throwable th5) {
+                    th = th5;
+                }
+                try {
+                    int size2 = arrayList6.size();
+                    for (int i15 = 0; i15 < size2; i15++) {
+                        TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) arrayList6.get(i15);
+                        executeFast.requery();
+                        NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(wallPaper.getObjectSize());
+                        wallPaper.serializeToStream(nativeByteBuffer);
+                        if (i14 != 0) {
+                            executeFast.bindLong(1, wallPaper.id);
+                            executeFast.bindByteBuffer(2, nativeByteBuffer);
+                            if (i14 < 0) {
+                                executeFast.bindInteger(3, i14);
+                            } else {
+                                executeFast.bindInteger(3, i14 == 2 ? -1 : i15);
+                            }
+                        } else {
+                            executeFast.bindByteBuffer(1, nativeByteBuffer);
+                            executeFast.bindLong(2, wallPaper.id);
+                        }
+                        executeFast.step();
+                        nativeByteBuffer.reuse();
+                    }
+                    executeFast.dispose();
+                    trVar3.b.commitTransaction();
+                    SQLiteDatabase sQLiteDatabase3 = trVar3.b;
+                    if (sQLiteDatabase3 != null) {
+                        sQLiteDatabase3.commitTransaction();
+                        return;
+                    }
                     return;
-                } else if (i16 != 1) {
-                    messagesController.i4(i16);
-                    return;
-                } else {
-                    messagesController.l0 = false;
-                    messagesController.D();
-                    return;
+                } catch (Exception e16) {
+                    e10 = e16;
+                    sQLitePreparedStatement3 = executeFast;
+                    trVar3.o(e10, true);
+                    sQLiteDatabase = trVar3.b;
+                    if (sQLiteDatabase != null) {
+                    }
+                    if (sQLitePreparedStatement3 == null) {
+                    }
+                } catch (Throwable th6) {
+                    th = th6;
+                    sQLitePreparedStatement3 = executeFast;
+                    SQLiteDatabase sQLiteDatabase4 = trVar3.b;
+                    if (sQLiteDatabase4 != null) {
+                        sQLiteDatabase4.commitTransaction();
+                    }
+                    if (sQLitePreparedStatement3 != null) {
+                        sQLitePreparedStatement3.dispose();
+                    }
+                    throw th;
                 }
         }
+    }
+
+    public /* synthetic */ tp(tr trVar, ArrayList arrayList, int i7) {
+        this.a = 1;
+        this.b = trVar;
+        this.c = arrayList;
+        this.d = i7;
     }
 }

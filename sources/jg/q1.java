@@ -1,18 +1,18 @@
 package jg;
 
-import hi.h4;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.x4;
-import org.telegram.ui.Components.vj;
-import org.telegram.ui.u50;
-import org.telegram.ui.v50;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.z4;
+import org.telegram.ui.Components.ck;
+import org.telegram.ui.Components.hn0;
+import org.telegram.ui.w50;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class q1 extends TimerTask {
     public final /* synthetic */ int a;
@@ -38,31 +38,31 @@ public final class q1 extends TimerTask {
                 }
                 String str = (String) this.b;
                 s1Var.getClass();
-                org.telegram.messenger.g0.h3(new h4(21, s1Var, str));
+                org.telegram.messenger.g0.g3(new hi.r1(24, s1Var, str));
                 return;
             case 1:
                 synchronized (((MediaController) this.c).x1) {
-                    org.telegram.messenger.g0.h3(new x4(25, this, (gj) this.b));
+                    org.telegram.messenger.g0.g3(new z4(25, this, (fj) this.b));
                 }
                 return;
             case 2:
                 try {
-                    ((Timer) ((vj) this.c).h).cancel();
-                    ((vj) this.c).h = null;
+                    ((Timer) ((ck) this.c).h).cancel();
+                    ((ck) this.c).h = null;
                 } catch (Exception e11) {
                     a8.g(e11, true);
                 }
-                Utilities.g.c(new org.telegram.ui.Components.voip.u(3, (vj) this.c, (String) this.b));
+                Utilities.g.c(new hn0(28, (ck) this.c, (String) this.b));
                 return;
             default:
-                v50 v50Var = (v50) this.c;
+                x50 x50Var = (x50) this.c;
                 try {
-                    v50Var.f.cancel();
-                    v50Var.f = null;
+                    x50Var.f.cancel();
+                    x50Var.f = null;
                 } catch (Exception e12) {
                     a8.g(e12, true);
                 }
-                org.telegram.messenger.g0.h3(new u50(this, (String) this.b, 0));
+                org.telegram.messenger.g0.g3(new w50(this, (String) this.b, 0));
                 return;
         }
     }

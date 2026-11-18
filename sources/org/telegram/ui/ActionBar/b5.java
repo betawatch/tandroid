@@ -1,71 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b5 implements te.f, we.a {
-    public final View a;
-    public boolean b;
-    public float c = 1.0f;
-    public float d = 1.0f;
-    public float e = 1.0f;
+public final class b5 {
+    public static final b5 a;
+    public static final b5 b;
+    public static final /* synthetic */ b5[] c;
 
-    public b5(View view) {
-        this.a = view;
+    static {
+        b5 b5Var = new b5("ICON", 0);
+        a = b5Var;
+        b5 b5Var2 = new b5("TEXT", 1);
+        b = b5Var2;
+        c = new b5[]{b5Var, b5Var2};
     }
 
-    @Override // we.a
-    public final void a() {
-        View view = this.a;
-        if (c5.h(view)) {
-            return;
-        }
-        if (view instanceof d5) {
-            ((d5) view).Y();
-        } else {
-            view.setVisibility(8);
-        }
-        c(1.0f, 1.0f);
+    public static b5 valueOf(String str) {
+        return (b5) Enum.valueOf(b5.class, str);
     }
 
-    @Override // te.f
-    public final /* synthetic */ int b(boolean z10) {
-        return 0;
-    }
-
-    public final void c(float f10, float f11) {
-        float f12 = this.c;
-        if (f12 == f10 && this.d == f11) {
-            return;
-        }
-        View view = this.a;
-        if (f12 == 1.0f) {
-            this.e = view.getAlpha();
-        }
-        this.c = f10;
-        this.d = f11;
-        view.setAlpha(this.e * f10);
-        float min = Math.min(org.telegram.messenger.g0.T1(0.6f, 1.0f, f10), f11);
-        view.setScaleX(min);
-        view.setScaleY(min);
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof b5) && ((b5) obj).a == this.a;
-    }
-
-    @Override // te.f
-    public final int getHeight() {
-        return this.a.getMeasuredHeight();
-    }
-
-    @Override // te.f
-    public final int getWidth() {
-        return c5.f(this.a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
+    public static b5[] values() {
+        return (b5[]) c.clone();
     }
 }

@@ -4,7 +4,7 @@ import android.os.Bundle;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ac0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -30,7 +30,7 @@ public final /* synthetic */ class ac0 implements Runnable {
         dc0 dc0Var = this.b;
         switch (i7) {
             case 0:
-                ce0 ce0Var = dc0Var.b0;
+                de0 de0Var = dc0Var.b0;
                 dc0Var.N = false;
                 dc0Var.w.invalidate();
                 if (tLObject == null) {
@@ -40,29 +40,29 @@ public final /* synthetic */ class ac0 implements Runnable {
                                 if (!tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                                     if (!tL_error.text.startsWith("FLOOD_WAIT")) {
                                         if (tL_error.code != -1000) {
-                                            String M0 = org.telegram.messenger.hd.M0(2131746071, null);
+                                            String M0 = org.telegram.messenger.gd.M0(2131745876, null);
                                             StringBuilder sb2 = new StringBuilder();
-                                            org.telegram.ui.Cells.y0.r(null, 2131751105, sb2, "\n");
+                                            org.telegram.ui.Cells.c0.u(null, 2131751094, sb2, "\n");
                                             sb2.append(tL_error.text);
-                                            ce0Var.D1(M0, sb2.toString());
+                                            de0Var.D1(M0, sb2.toString());
                                             break;
                                         }
                                     } else {
-                                        ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131750687, null));
+                                        de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131750671, null));
                                         break;
                                     }
                                 } else {
                                     dc0Var.c(true);
-                                    ce0Var.M1(0, true, null, true);
-                                    ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131752021, null));
+                                    de0Var.M1(0, true, null, true);
+                                    de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131752010, null));
                                     break;
                                 }
                             } else {
-                                ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131749183, null));
+                                de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748991, null));
                                 break;
                             }
                         } else {
-                            ce0Var.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131749179, null));
+                            de0Var.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748987, null));
                             break;
                         }
                     }
@@ -70,38 +70,38 @@ public final /* synthetic */ class ac0 implements Runnable {
                     dc0Var.T = bundle;
                     TLRPC.TL_auth_sentCode tL_auth_sentCode = (TLRPC.TL_auth_sentCode) tLObject;
                     dc0Var.U = tL_auth_sentCode;
-                    ce0Var.y1(bundle, tL_auth_sentCode, true);
+                    de0Var.y1(bundle, tL_auth_sentCode, true);
                     break;
                 }
                 break;
             default:
-                ce0 ce0Var2 = dc0Var.b0;
+                de0 de0Var2 = dc0Var.b0;
                 dc0Var.S = false;
                 if (tL_error == null) {
-                    ce0Var2.y1(bundle, (TLRPC.TL_auth_sentCode) tLObject, true);
+                    de0Var2.y1(bundle, (TLRPC.TL_auth_sentCode) tLObject, true);
                 } else {
                     String str2 = tL_error.text;
                     if (str2 != null) {
                         if (str2.contains("PHONE_NUMBER_INVALID")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131749179, null));
+                            de0Var2.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748987, null));
                         } else if (tL_error.text.contains("PHONE_CODE_EMPTY") || tL_error.text.contains("PHONE_CODE_INVALID")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131749183, null));
+                            de0Var2.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131748991, null));
                         } else if (tL_error.text.contains("PHONE_CODE_EXPIRED")) {
                             dc0Var.c(true);
-                            ce0Var2.M1(0, true, null, true);
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131752021, null));
+                            de0Var2.M1(0, true, null, true);
+                            de0Var2.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131752010, null));
                         } else if (tL_error.text.startsWith("FLOOD_WAIT")) {
-                            ce0Var2.D1(org.telegram.messenger.hd.M0(2131746071, null), org.telegram.messenger.hd.M0(2131750687, null));
+                            de0Var2.D1(org.telegram.messenger.gd.M0(2131745876, null), org.telegram.messenger.gd.M0(2131750671, null));
                         } else if (tL_error.code != -1000) {
-                            String M02 = org.telegram.messenger.hd.M0(2131746071, null);
+                            String M02 = org.telegram.messenger.gd.M0(2131745876, null);
                             StringBuilder sb3 = new StringBuilder();
-                            org.telegram.ui.Cells.y0.r(null, 2131751105, sb3, "\n");
+                            org.telegram.ui.Cells.c0.u(null, 2131751094, sb3, "\n");
                             sb3.append(tL_error.text);
-                            ce0Var2.D1(M02, sb3.toString());
+                            de0Var2.D1(M02, sb3.toString());
                         }
                     }
                 }
-                ce0Var2.C1(false, true);
+                de0Var2.C1(false, true);
                 break;
         }
     }

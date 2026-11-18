@@ -16,20 +16,20 @@ import java.util.Collection;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class Utilities {
     public static final Pattern a = Pattern.compile("[\\-0-9]+");
     public static final SecureRandom b;
     public static final g5.a c;
-    public static volatile p5 d;
-    public static volatile p5 e;
-    public static volatile p5 f;
-    public static volatile p5 g;
-    public static volatile p5 h;
-    public static volatile p5 i;
-    public static volatile p5 j;
-    public static volatile q5 k;
+    public static volatile q5 d;
+    public static volatile q5 e;
+    public static volatile q5 f;
+    public static volatile q5 g;
+    public static volatile q5 h;
+    public static volatile q5 i;
+    public static volatile q5 j;
+    public static volatile r5 k;
     public static final char[] l;
 
     static {
@@ -37,23 +37,23 @@ public class Utilities {
         b = secureRandom;
         long nextLong = secureRandom.nextLong();
         g5.a aVar = new g5.a(0L);
-        long a10 = a8.ga.a(nextLong);
+        long a10 = a8.ia.a(nextLong);
         aVar.a = a10;
-        long a11 = a8.ga.a(a10);
+        long a11 = a8.ia.a(a10);
         aVar.b = a11;
         if (aVar.a == 0 && a11 == 0) {
-            long a12 = a8.ga.a(3735928559L);
+            long a12 = a8.ia.a(3735928559L);
             aVar.a = a12;
-            aVar.b = a8.ga.a(a12);
+            aVar.b = a8.ia.a(a12);
         }
         c = aVar;
-        d = new p5("stageQueue");
-        e = new p5("globalQueue");
-        f = new p5("cacheClearQueue");
-        g = new p5("searchQueue");
-        h = new p5("phoneBookQueue");
-        i = new p5("themeQueue");
-        j = new p5("externalNetworkQueue");
+        d = new q5("stageQueue");
+        e = new q5("globalQueue");
+        f = new q5("cacheClearQueue");
+        g = new q5("searchQueue");
+        h = new q5("phoneBookQueue");
+        i = new q5("themeQueue");
+        j = new q5("externalNetworkQueue");
         l = "0123456789ABCDEF".toCharArray();
         try {
             FileInputStream fileInputStream = new FileInputStream(new File("/dev/urandom"));
@@ -81,14 +81,14 @@ public class Utilities {
         return Long.valueOf(j3);
     }
 
-    public static void B(Runnable runnable, z10... z10VarArr) {
-        if (z10VarArr.length == 0) {
+    public static void B(Runnable runnable, x10... x10VarArr) {
+        if (x10VarArr.length == 0) {
             runnable.run();
             return;
         }
-        sz szVar = new sz(new int[]{0}, z10VarArr, runnable, 2);
-        for (z10 z10Var : z10VarArr) {
-            z10Var.a(szVar);
+        oz ozVar = new oz(new int[]{0}, x10VarArr, runnable, 2);
+        for (x10 x10Var : x10VarArr) {
+            x10Var.a(ozVar);
         }
     }
 
@@ -110,7 +110,7 @@ public class Utilities {
         }
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ns.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(L, L2) / ks.g2));
         return createBitmap;
     }
 
@@ -123,7 +123,7 @@ public class Utilities {
         canvas.scale(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
         canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
         canvas.restore();
-        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ns.g2));
+        stackBlurBitmap(createBitmap, Math.max(10, Math.max(max, max2) / ks.g2));
         return createBitmap;
     }
 
@@ -372,9 +372,9 @@ public class Utilities {
         return (float) Math.sqrt((f15 * f15) + (f14 * f14));
     }
 
-    public static void u(int i7, z10... z10VarArr) {
-        if (z10VarArr.length > i7) {
-            z10VarArr[i7].a(new x0(i7, z10VarArr, 14));
+    public static void u(int i7, x10... x10VarArr) {
+        if (x10VarArr.length > i7) {
+            x10VarArr[i7].a(new x0(i7, x10VarArr, 14));
         }
     }
 

@@ -1,8 +1,8 @@
 package li;
 
-import v4.e1;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class a0 extends v4.k {
     public final /* synthetic */ b0 F;
@@ -30,7 +30,7 @@ public final class a0 extends v4.k {
     }
 
     @Override // v4.k
-    public final void P(e1 e1Var) {
+    public final void P(f1 f1Var) {
         b0 b0Var = this.F;
         d0 d0Var = b0Var.f;
         int i7 = d0.Q1;
@@ -48,8 +48,8 @@ public final class a0 extends v4.k {
         b0Var.c.invalidate();
     }
 
-    @Override // v4.g1
-    public final boolean t(e1 e1Var) {
+    @Override // v4.h1
+    public final boolean t(f1 f1Var) {
         return true;
     }
 }

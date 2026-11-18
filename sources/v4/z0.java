@@ -1,54 +1,22 @@
 package v4;
 
-import android.util.Log;
-import android.view.animation.Interpolator;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class z0 {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public Interpolator e;
-    public boolean f;
-    public int g;
+public final class z0 extends j1.b {
+    public static final Parcelable.Creator<z0> CREATOR = new c5.j(4);
+    public Parcelable c;
 
-    public final void a(RecyclerView recyclerView) {
-        int i7 = this.d;
-        if (i7 >= 0) {
-            this.d = -1;
-            recyclerView.d0(i7);
-            this.f = false;
-            return;
-        }
-        if (!this.f) {
-            this.g = 0;
-            return;
-        }
-        Interpolator interpolator = this.e;
-        if (interpolator != null && this.c < 1) {
-            throw new IllegalStateException("If you provide an interpolator, you must set a positive duration");
-        }
-        int i10 = this.c;
-        if (i10 < 1) {
-            throw new IllegalStateException("Scroll duration must be a positive number");
-        }
-        recyclerView.s0.b(this.a, this.b, i10, interpolator);
-        int i11 = this.g + 1;
-        this.g = i11;
-        if (i11 > 10) {
-            Log.e("RecyclerView", "Smooth Scroll action is being updated too frequently. Make sure you are not changing it unless necessary");
-        }
-        this.f = false;
+    public z0(Parcel parcel, ClassLoader classLoader) {
+        super(parcel, classLoader);
+        this.c = parcel.readParcelable(classLoader == null ? p0.class.getClassLoader() : classLoader);
     }
 
-    public final void b(int i7, int i10, int i11, Interpolator interpolator) {
-        this.a = i7;
-        this.b = i10;
-        this.c = i11;
-        this.e = interpolator;
-        this.f = true;
+    @Override // j1.b, android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i7) {
+        super.writeToParcel(parcel, i7);
+        parcel.writeParcelable(this.c, 0);
     }
 }

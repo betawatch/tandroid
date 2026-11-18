@@ -38,7 +38,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
@@ -163,7 +163,7 @@ public final class b {
         int i7 = this.c.b().a.a;
         g.getClass();
         try {
-            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), ea.a.a.o(q2Var));
+            g(dVar.b(str, p0.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), ea.a.a.v(q2Var));
         } catch (IOException e10) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e10);
         }

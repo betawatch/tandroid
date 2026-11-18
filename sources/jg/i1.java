@@ -1,13 +1,13 @@
 package jg;
 
-import fi.b7;
-import org.telegram.messenger.np;
+import fi.y6;
+import org.telegram.messenger.mp;
 import org.telegram.ui.Cells.p2;
 import org.telegram.ui.Cells.t2;
-import org.telegram.ui.Components.uj0;
-import org.telegram.ui.an;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class i1 implements p2 {
     public final /* synthetic */ l1 a;
@@ -24,10 +24,10 @@ public final class i1 implements p2 {
     @Override // org.telegram.ui.Cells.p2
     public final void u(t2 t2Var) {
         l1 l1Var = this.a;
-        an anVar = l1Var.f;
-        if (np.s1(l1Var.r).P1().K(t2Var.getDialogId())) {
-            anVar.getOrCreateStoryViewer().getClass();
-            anVar.getOrCreateStoryViewer().J(l1Var.c, t2Var.getDialogId(), b7.a((uj0) t2Var.getParent()));
+        bn bnVar = l1Var.f;
+        if (mp.u1(l1Var.r).R1().K(t2Var.getDialogId())) {
+            bnVar.getOrCreateStoryViewer().getClass();
+            bnVar.getOrCreateStoryViewer().J(l1Var.c, t2Var.getDialogId(), y6.a((ck0) t2Var.getParent()));
         }
     }
 

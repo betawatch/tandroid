@@ -1,70 +1,34 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.EditText;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e90 implements TextWatcher {
+public final class e90 extends EditText {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i90 b;
 
-    public /* synthetic */ e90(i90 i90Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ e90(Context context, int i7) {
+        super(context);
         this.a = i7;
-        this.b = i90Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
         switch (this.a) {
             case 0:
-                i90 i90Var = this.b;
-                if (!i90Var.O) {
-                    if (editable.toString().equals("0")) {
-                        i90Var.G.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                i90Var.b0(parseInt);
-                                break;
-                            } else {
-                                i90Var.c0();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            i90Var.c0();
-                            return;
-                        }
-                    }
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
                 }
                 break;
             default:
-                org.telegram.messenger.j6.l(editable, this.b.L.getPaint().getFontMetricsInt(), false);
+                if (motionEvent.getAction() == 1) {
+                    setCursorVisible(true);
+                }
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
+        return super.onTouchEvent(motionEvent);
     }
 }

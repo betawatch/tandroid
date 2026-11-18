@@ -16,7 +16,7 @@ import java.util.concurrent.Callable;
 import org.telegram.ui.Dictation.DictationLid;
 import org.webrtc.audio.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Callable {
     public final /* synthetic */ int a;
@@ -41,27 +41,27 @@ public final /* synthetic */ class i implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                c0 q10 = c0.q();
-                q10.getClass();
+                c0 s5 = c0.s();
+                s5.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
                 }
-                ((ArrayDeque) q10.e).offer(intent);
+                ((ArrayDeque) s5.e).offer(intent);
                 Intent intent2 = new Intent("com.google.firebase.MESSAGING_EVENT");
                 intent2.setPackage(context.getPackageName());
-                synchronized (q10) {
+                synchronized (s5) {
                     try {
-                        str = (String) q10.b;
+                        str = (String) s5.b;
                         if (str == null) {
                             ResolveInfo resolveService = context.getPackageManager().resolveService(intent2, 0);
                             if (resolveService != null && (serviceInfo = resolveService.serviceInfo) != null) {
                                 if (context.getPackageName().equals(serviceInfo.packageName) && (str2 = serviceInfo.name) != null) {
                                     if (str2.startsWith(".")) {
-                                        q10.b = context.getPackageName() + serviceInfo.name;
+                                        s5.b = context.getPackageName() + serviceInfo.name;
                                     } else {
-                                        q10.b = serviceInfo.name;
+                                        s5.b = serviceInfo.name;
                                     }
-                                    str = (String) q10.b;
+                                    str = (String) s5.b;
                                 }
                                 Log.e("FirebaseMessaging", "Error resolving target intent service, skipping classname enforcement. Resolved service was: " + serviceInfo.packageName + "/" + serviceInfo.name);
                                 str = null;
@@ -79,7 +79,7 @@ public final /* synthetic */ class i implements Callable {
                     intent2.setClassName(context.getPackageName(), str);
                 }
                 try {
-                    if (q10.w(context)) {
+                    if (s5.y(context)) {
                         startService = m0.d(context, intent2);
                     } else {
                         startService = context.startService(intent2);
@@ -105,8 +105,8 @@ public final /* synthetic */ class i implements Callable {
                 j2.i iVar = (j2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
                 boolean z10 = iVar.d;
-                Bitmap b10 = bg.n0.b(bArr.length, iVar.c, bArr);
-                return z10 ? bg.n0.e(b10) : b10;
+                Bitmap b10 = bg.o0.b(bArr.length, iVar.c, bArr);
+                return z10 ? bg.o0.e(b10) : b10;
             case 3:
                 j2.i iVar2 = (j2.i) this.b;
                 Uri uri = (Uri) this.c;
@@ -130,9 +130,9 @@ public final /* synthetic */ class i implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i12);
-                    Bitmap b11 = bg.n0.b(copyOf.length, i10, copyOf);
+                    Bitmap b11 = bg.o0.b(copyOf.length, i10, copyOf);
                     if (z11) {
-                        b11 = bg.n0.e(b11);
+                        b11 = bg.o0.e(b11);
                     }
                     nVar.close();
                     return b11;

@@ -1,1308 +1,1818 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.Gravity;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewPropertyAnimator;
-import android.view.animation.Interpolator;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import c8.ja;
-import di.ub;
-import java.util.HashSet;
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.r10;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.er;
+import android.graphics.Color;
+import android.util.SparseArray;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class w4 extends FrameLayout implements te.b, is, z5, q4 {
-    public CharSequence E;
-    public CharSequence F;
-    public boolean G;
-    public boolean H;
-    public fh.g I;
-    public fh.g J;
-    public fh.g K;
-    public float L;
-    public dh.c M;
-    public gh.e N;
-    public gh.a O;
-    public dh.c P;
-    public r10 Q;
-    public g5 R;
-    public q0 S;
-    public final te.a T;
-    public final te.a U;
-    public final te.a V;
-    public j W;
-    public final e6 a;
-    public boolean a0;
-    public final ub b;
-    public int b0;
-    public final v4 c;
-    public boolean c0;
-    public c5 d;
-    public boolean d0;
-    public c5 e;
-    public int e0;
-    public org.telegram.ui.Components.h6 f;
-    public int f0;
-    public int g0;
-    public org.telegram.ui.Components.h6 h;
-    public int h0;
-    public int i0;
-    public int j0;
-    public boolean k0;
-    public boolean l0;
-    public boolean m0;
-    public z4 n;
-    public boolean n0;
-    public dh.c o0;
-    public ui.d p0;
-    public final RectF q0;
-    public FrameLayout r;
-    public int r0;
-    public ah.i s;
-    public boolean s0;
-    public float t0;
-    public ImageView w;
-    public TextView x;
-    public d5 y;
+public abstract class w4 implements r2 {
+    public static final double[] a = {0.819022437996703d, 0.3619062600528904d, -0.1288737815209879d, 0.0329836539323885d, 0.9292868615863434d, 0.0361446663506424d, 0.0481771893596242d, 0.2642395317527308d, 0.6335478284694309d};
+    public static final double[] b = {1.2268798758459243d, -0.5578149944602171d, 0.2813910456659647d, -0.0405757452148008d, 1.112286803280317d, -0.0717110580655164d, -0.0763729366746601d, -0.4214933324022432d, 1.5869240198367816d};
+    public static final double[] c = {0.210454268309314d, 0.7936177747023054d, -0.0040720430116193d, 1.9779985324311684d, -2.42859224204858d, 0.450593709617411d, 0.0259040424655478d, 0.7827717124575296d, -0.8086757549230774d};
+    public static final double[] d = {1.0d, 0.3963377773761749d, 0.2158037573099136d, 1.0d, -0.1055613458156586d, -0.0638541728258133d, 1.0d, -0.0894841775298119d, -1.2914855480194092d};
+    public static final double[] e = {0.41239079926595934d, 0.357584339383878d, 0.1804807884018343d, 0.21263900587151027d, 0.715168678767756d, 0.07219231536073371d, 0.01933081871559182d, 0.11919477979462598d, 0.9505321522496607d};
+    public static final double[] f = {3.2409699419045226d, -1.537383177570094d, -0.4986107602930034d, -0.9692436362808796d, 1.8759675015077202d, 0.04155505740717559d, 0.05563007969699366d, -0.20397695888897652d, 1.0569715142428786d};
+    public static SparseArray h;
+    public static HashMap n;
 
-    public w4(Context context, e6 e6Var) {
-        super(context);
-        this.L = -1.0f;
-        er erVar = er.h;
-        this.T = new te.a(0, this, erVar, 380L, false);
-        this.U = new te.a(1, this, erVar, 380L, false);
-        this.V = new te.a(2, this, erVar, 250L, false);
-        this.a0 = true;
-        this.n0 = true;
-        this.q0 = new RectF();
-        this.t0 = 1.0f;
-        this.a = e6Var;
-        setClipChildren(false);
-        setWillNotDraw(false);
-        z();
-        v4 v4Var = new v4(this, context);
-        this.c = v4Var;
-        addView(v4Var, ja.e(-1, -2, 51));
-        ub ubVar = new ub(this, context);
-        this.b = ubVar;
-        ubVar.setVisibility(8);
-        ubVar.setContentDescription(hd.M0(2131754878, null));
-        ubVar.setOnClickListener(new t4(this, 0));
-        addView(ubVar, ja.e(46, 46, 51));
+    public static SparseArray a() {
+        SparseArray sparseArray = new SparseArray();
+        sparseArray.put(n6.g5, "wallpaperFileOffset");
+        sparseArray.put(n6.h5, "dialogBackground");
+        sparseArray.put(n6.i5, "dialogBackgroundGray");
+        sparseArray.put(n6.j5, "dialogTextBlack");
+        sparseArray.put(n6.k5, "dialogTextLink");
+        sparseArray.put(n6.l5, "dialogLinkSelection");
+        sparseArray.put(n6.m5, "dialogTextBlue");
+        sparseArray.put(n6.n5, "dialogTextBlue2");
+        sparseArray.put(n6.o5, "dialogTextBlue4");
+        sparseArray.put(n6.p5, "dialogTextGray");
+        sparseArray.put(n6.q5, "dialogTextGray2");
+        sparseArray.put(n6.r5, "dialogTextGray3");
+        sparseArray.put(n6.s5, "dialogTextGray4");
+        sparseArray.put(n6.t5, "dialogTextHint");
+        sparseArray.put(n6.u5, "dialogInputField");
+        sparseArray.put(n6.v5, "dialogInputFieldActivated");
+        sparseArray.put(n6.w5, "dialogCheckboxSquareBackground");
+        sparseArray.put(n6.x5, "dialogCheckboxSquareCheck");
+        sparseArray.put(n6.y5, "dialogCheckboxSquareUnchecked");
+        sparseArray.put(n6.z5, "dialogCheckboxSquareDisabled");
+        sparseArray.put(n6.A5, "dialogScrollGlow");
+        sparseArray.put(n6.B5, "dialogRoundCheckBox");
+        sparseArray.put(n6.C5, "dialogRoundCheckBoxCheck");
+        sparseArray.put(n6.D5, "dialogRadioBackground");
+        sparseArray.put(n6.E5, "dialogRadioBackgroundChecked");
+        sparseArray.put(n6.F5, "dialogLineProgress");
+        sparseArray.put(n6.G5, "dialogLineProgressBackground");
+        sparseArray.put(n6.H5, "dialogButton");
+        sparseArray.put(n6.I5, "dialogButtonSelector");
+        sparseArray.put(n6.J5, "dialogIcon");
+        sparseArray.put(n6.K5, "dialogGrayLine");
+        sparseArray.put(n6.L5, "dialogTopBackground");
+        sparseArray.put(n6.M5, "dialog_inlineProgressBackground");
+        sparseArray.put(n6.N5, "dialog_inlineProgress");
+        sparseArray.put(n6.O5, "dialogSearchBackground");
+        sparseArray.put(n6.P5, "dialogSearchHint");
+        sparseArray.put(n6.Bj, "bot_loadingIcon");
+        sparseArray.put(n6.Cj, "gift_ribbon");
+        sparseArray.put(n6.Dj, "gift_ribbon_soldout");
+        sparseArray.put(n6.Q5, "dialogSearchIcon");
+        sparseArray.put(n6.R5, "dialogSearchText");
+        sparseArray.put(n6.S5, "dialogFloatingButton");
+        sparseArray.put(n6.T5, "dialogFloatingButtonPressed");
+        sparseArray.put(n6.U5, "dialogFloatingIcon");
+        sparseArray.put(n6.V5, "dialogShadowLine");
+        sparseArray.put(n6.W5, "dialogEmptyImage");
+        sparseArray.put(n6.X5, "dialogEmptyText");
+        sparseArray.put(n6.Y5, "dialogSwipeRemove");
+        sparseArray.put(n6.Z5, "dialogReactionMentionBackground");
+        sparseArray.put(n6.d6, "windowBackgroundWhite");
+        sparseArray.put(n6.e6, "windowBackgroundUnchecked");
+        sparseArray.put(n6.f6, "windowBackgroundChecked");
+        sparseArray.put(n6.g6, "windowBackgroundCheckText");
+        sparseArray.put(n6.h6, "progressCircle");
+        sparseArray.put(n6.i6, "listSelectorSDK21");
+        sparseArray.put(n6.k6, "windowBackgroundWhiteInputField");
+        sparseArray.put(n6.l6, "windowBackgroundWhiteInputFieldActivated");
+        sparseArray.put(n6.o7, "pollCreateIcons");
+        sparseArray.put(n6.am, "wallet_comment");
+        sparseArray.put(n6.bm, "wallet_out_commentBorder");
+        sparseArray.put(n6.cm, "wallet_inputCurrency");
+        sparseArray.put(n6.m6, "windowBackgroundWhiteGrayIcon");
+        sparseArray.put(n6.n6, "windowBackgroundWhiteBlueText");
+        sparseArray.put(n6.o6, "windowBackgroundWhiteBlueText2");
+        sparseArray.put(n6.p6, "windowBackgroundWhiteBlueText3");
+        sparseArray.put(n6.q6, "windowBackgroundWhiteBlueText4");
+        sparseArray.put(n6.r6, "windowBackgroundWhiteBlueText5");
+        sparseArray.put(n6.s6, "windowBackgroundWhiteBlueText6");
+        sparseArray.put(n6.t6, "windowBackgroundWhiteBlueText7");
+        sparseArray.put(n6.u6, "windowBackgroundWhiteBlueButton");
+        sparseArray.put(n6.v6, "windowBackgroundWhiteBlueIcon");
+        sparseArray.put(n6.w6, "windowBackgroundWhiteGreenText");
+        sparseArray.put(n6.x6, "windowBackgroundWhiteGreenText2");
+        sparseArray.put(n6.y6, "windowBackgroundWhiteGrayText");
+        sparseArray.put(n6.z6, "windowBackgroundWhiteGrayText2");
+        sparseArray.put(n6.A6, "windowBackgroundWhiteGrayText3");
+        sparseArray.put(n6.B6, "windowBackgroundWhiteGrayText4");
+        sparseArray.put(n6.C6, "windowBackgroundWhiteGrayText5");
+        sparseArray.put(n6.D6, "windowBackgroundWhiteGrayText6");
+        sparseArray.put(n6.E6, "windowBackgroundWhiteGrayText7");
+        sparseArray.put(n6.F6, "windowBackgroundWhiteGrayText8");
+        sparseArray.put(n6.G6, "windowBackgroundWhiteBlackText");
+        sparseArray.put(n6.H6, "windowBackgroundWhiteHintText");
+        sparseArray.put(n6.I6, "windowBackgroundWhiteValueText");
+        sparseArray.put(n6.J6, "windowBackgroundWhiteLinkText");
+        sparseArray.put(n6.K6, "windowBackgroundWhiteLinkSelection");
+        sparseArray.put(n6.L6, "windowBackgroundWhiteBlueHeader");
+        sparseArray.put(n6.M6, "switchTrack");
+        sparseArray.put(n6.N6, "switchTrackChecked");
+        sparseArray.put(n6.O6, "switchTrackBlue");
+        sparseArray.put(n6.P6, "switchTrackBlueChecked");
+        sparseArray.put(n6.Q6, "switchTrackBlueThumb");
+        sparseArray.put(n6.R6, "switchTrackBlueThumbChecked");
+        sparseArray.put(n6.S6, "switchTrackBlueSelector");
+        sparseArray.put(n6.T6, "switchTrackBlueSelectorChecked");
+        sparseArray.put(n6.U6, "switch2Track");
+        sparseArray.put(n6.V6, "switch2TrackChecked");
+        sparseArray.put(n6.W6, "checkboxSquareBackground");
+        sparseArray.put(n6.X6, "checkboxSquareCheck");
+        sparseArray.put(n6.Y6, "checkboxSquareUnchecked");
+        sparseArray.put(n6.Z6, "checkboxSquareDisabled");
+        sparseArray.put(n6.a7, "windowBackgroundGray");
+        sparseArray.put(n6.b7, "windowBackgroundGrayShadow");
+        sparseArray.put(n6.c7, "emptyListPlaceholder");
+        sparseArray.put(n6.d7, "divider");
+        sparseArray.put(n6.e7, "graySection");
+        sparseArray.put(n6.f7, "key_graySectionText");
+        sparseArray.put(n6.g7, "radioBackground");
+        sparseArray.put(n6.h7, "radioBackgroundChecked");
+        sparseArray.put(n6.i7, "checkbox");
+        sparseArray.put(n6.j7, "checkboxDisabled");
+        sparseArray.put(n6.k7, "checkboxCheck");
+        sparseArray.put(n6.l7, "fastScrollActive");
+        sparseArray.put(n6.m7, "fastScrollInactive");
+        sparseArray.put(n6.n7, "fastScrollText");
+        sparseArray.put(n6.p7, "text_RedRegular");
+        sparseArray.put(n6.q7, "text_RedBold");
+        sparseArray.put(n6.r7, "fill_RedNormal");
+        sparseArray.put(n6.s7, "fill_RedDark");
+        sparseArray.put(n6.t7, "inappPlayerPerformer");
+        sparseArray.put(n6.u7, "inappPlayerTitle");
+        sparseArray.put(n6.v7, "inappPlayerBackground");
+        sparseArray.put(n6.w7, "inappPlayerPlayPause");
+        sparseArray.put(n6.x7, "inappPlayerClose");
+        sparseArray.put(n6.y7, "returnToCallBackground");
+        sparseArray.put(n6.z7, "returnToCallMutedBackground");
+        sparseArray.put(n6.A7, "returnToCallText");
+        sparseArray.put(n6.B7, "contextProgressInner1");
+        sparseArray.put(n6.C7, "contextProgressOuter1");
+        sparseArray.put(n6.D7, "contextProgressInner2");
+        sparseArray.put(n6.E7, "contextProgressOuter2");
+        sparseArray.put(n6.F7, "contextProgressInner3");
+        sparseArray.put(n6.G7, "contextProgressOuter3");
+        sparseArray.put(n6.H7, "contextProgressInner4");
+        sparseArray.put(n6.I7, "contextProgressOuter4");
+        sparseArray.put(n6.J7, "avatar_text");
+        sparseArray.put(n6.K7, "avatar_backgroundSaved");
+        sparseArray.put(n6.L7, "avatar_background2Saved");
+        sparseArray.put(n6.M7, "avatar_backgroundArchived");
+        sparseArray.put(n6.N7, "avatar_backgroundArchivedHidden");
+        sparseArray.put(n6.O7, "avatar_backgroundRed");
+        sparseArray.put(n6.P7, "avatar_backgroundOrange");
+        sparseArray.put(n6.Q7, "avatar_backgroundViolet");
+        sparseArray.put(n6.R7, "avatar_backgroundGreen");
+        sparseArray.put(n6.S7, "avatar_backgroundCyan");
+        sparseArray.put(n6.T7, "avatar_backgroundBlue");
+        sparseArray.put(n6.U7, "avatar_backgroundPink");
+        sparseArray.put(n6.V7, "avatar_background2Red");
+        sparseArray.put(n6.W7, "avatar_background2Orange");
+        sparseArray.put(n6.X7, "avatar_background2Violet");
+        sparseArray.put(n6.Y7, "avatar_background2Green");
+        sparseArray.put(n6.Z7, "avatar_background2Cyan");
+        sparseArray.put(n6.a8, "avatar_background2Blue");
+        sparseArray.put(n6.b8, "avatar_background2Pink");
+        sparseArray.put(n6.d8, "avatar_backgroundInProfileBlue");
+        sparseArray.put(n6.e8, "avatar_backgroundActionBarBlue");
+        sparseArray.put(n6.f8, "avatar_actionBarSelectorBlue");
+        sparseArray.put(n6.g8, "avatar_actionBarIconBlue");
+        sparseArray.put(n6.h8, "avatar_subtitleInProfileBlue");
+        sparseArray.put(n6.i8, "avatar_nameInMessageRed");
+        sparseArray.put(n6.j8, "avatar_nameInMessageOrange");
+        sparseArray.put(n6.k8, "avatar_nameInMessageViolet");
+        sparseArray.put(n6.l8, "avatar_nameInMessageGreen");
+        sparseArray.put(n6.m8, "avatar_nameInMessageCyan");
+        sparseArray.put(n6.n8, "avatar_nameInMessageBlue");
+        sparseArray.put(n6.o8, "avatar_nameInMessagePink");
+        sparseArray.put(n6.s8, "actionBarDefault");
+        sparseArray.put(n6.t8, "actionBarDefaultSelector");
+        sparseArray.put(n6.u8, "actionBarWhiteSelector");
+        sparseArray.put(n6.v8, "actionBarDefaultIcon");
+        sparseArray.put(n6.w8, "actionBarActionModeDefault");
+        sparseArray.put(n6.x8, "actionBarActionModeDefaultTop");
+        sparseArray.put(n6.y8, "actionBarActionModeDefaultIcon");
+        sparseArray.put(n6.z8, "actionBarActionModeDefaultSelector");
+        sparseArray.put(n6.lb, "actionBarActionModeReaction");
+        sparseArray.put(n6.mb, "actionBarActionModeReactionText");
+        sparseArray.put(n6.nb, "actionBarActionModeReactionDot");
+        sparseArray.put(n6.A8, "actionBarDefaultTitle");
+        sparseArray.put(n6.B8, "actionBarDefaultSubtitle");
+        sparseArray.put(n6.C8, "actionBarDefaultSearch");
+        sparseArray.put(n6.D8, "actionBarDefaultSearchPlaceholder");
+        sparseArray.put(n6.E8, "actionBarDefaultSubmenuItem");
+        sparseArray.put(n6.F8, "actionBarDefaultSubmenuItemIcon");
+        sparseArray.put(n6.G8, "actionBarDefaultSubmenuBackground");
+        sparseArray.put(n6.H8, "actionBarDefaultSubmenuSeparator");
+        sparseArray.put(n6.I8, "actionBarTabActiveText");
+        sparseArray.put(n6.J8, "actionBarTabUnactiveText");
+        sparseArray.put(n6.K8, "actionBarTabLine");
+        sparseArray.put(n6.L8, "actionBarTabSelector");
+        sparseArray.put(n6.gi, "table_background");
+        sparseArray.put(n6.hi, "table_border");
+        sparseArray.put(n6.il, "chat_inTableBackground");
+        sparseArray.put(n6.jl, "chat_outTableBackground");
+        sparseArray.put(n6.kl, "chat_inTableBorder");
+        sparseArray.put(n6.ll, "chat_outTableBorder");
+        sparseArray.put(n6.ml, "chat_inDivider");
+        sparseArray.put(n6.nl, "chat_outDivider");
+        sparseArray.put(n6.ol, "chat_inArticleCodeBackground");
+        sparseArray.put(n6.pl, "chat_outArticleCodeBackground");
+        sparseArray.put(n6.ql, "chat_inArticleCodeScrollbarBackground");
+        sparseArray.put(n6.rl, "chat_inArticleCodeScrollbar");
+        sparseArray.put(n6.sl, "chat_outArticleCodeScrollbarBackground");
+        sparseArray.put(n6.tl, "chat_outArticleCodeScrollbar");
+        sparseArray.put(n6.ul, "chat_inArticleDetailsArrow");
+        sparseArray.put(n6.vl, "chat_outArticleDetailsArrow");
+        sparseArray.put(n6.wl, "chat_inArticleDetailsLine");
+        sparseArray.put(n6.xl, "chat_outArticleDetailsLine");
+        sparseArray.put(n6.M8, "actionBarDefaultArchived");
+        sparseArray.put(n6.N8, "actionBarDefaultArchivedSelector");
+        sparseArray.put(n6.O8, "actionBarDefaultArchivedIcon");
+        sparseArray.put(n6.P8, "actionBarDefaultArchivedTitle");
+        sparseArray.put(n6.Q8, "actionBarDefaultArchivedSearch");
+        sparseArray.put(n6.R8, "actionBarDefaultSearchArchivedPlaceholder");
+        sparseArray.put(n6.S8, "actionBarBrowser");
+        sparseArray.put(n6.T8, "chats_onlineCircle");
+        sparseArray.put(n6.U8, "chats_unreadCounter");
+        sparseArray.put(n6.V8, "chats_unreadCounterMuted");
+        sparseArray.put(n6.W8, "chats_unreadCounterText");
+        sparseArray.put(n6.X8, "chats_name");
+        sparseArray.put(n6.Y8, "chats_nameArchived");
+        sparseArray.put(n6.Z8, "chats_secretName");
+        sparseArray.put(n6.a9, "chats_secretIcon");
+        sparseArray.put(n6.b9, "chats_pinnedIcon");
+        sparseArray.put(n6.c9, "chats_archiveBackground");
+        sparseArray.put(n6.d9, "chats_archivePinBackground");
+        sparseArray.put(n6.e9, "chats_archiveIcon");
+        sparseArray.put(n6.f9, "chats_archiveText");
+        sparseArray.put(n6.g9, "chats_message");
+        sparseArray.put(n6.h9, "chats_messageArchived");
+        sparseArray.put(n6.i9, "chats_message_threeLines");
+        sparseArray.put(n6.j9, "chats_draft");
+        sparseArray.put(n6.k9, "chats_nameMessage");
+        sparseArray.put(n6.l9, "chats_nameMessageArchived");
+        sparseArray.put(n6.m9, "chats_nameMessage_threeLines");
+        sparseArray.put(n6.n9, "chats_nameMessageArchived_threeLines");
+        sparseArray.put(n6.o9, "chats_attachMessage");
+        sparseArray.put(n6.p9, "chats_actionMessage");
+        sparseArray.put(n6.q9, "chats_date");
+        sparseArray.put(n6.r9, "chats_date_bold");
+        sparseArray.put(n6.s9, "chats_pinnedOverlay");
+        sparseArray.put(n6.t9, "chats_tabletSelectedOverlay");
+        sparseArray.put(n6.u9, "chats_sentCheck");
+        sparseArray.put(n6.v9, "chats_sentReadCheck");
+        sparseArray.put(n6.w9, "chats_sentClock");
+        sparseArray.put(n6.x9, "chats_sentError");
+        sparseArray.put(n6.y9, "chats_sentErrorIcon");
+        sparseArray.put(n6.z9, "chats_verifiedBackground");
+        sparseArray.put(n6.A9, "chats_verifiedCheck");
+        sparseArray.put(n6.B9, "chats_muteIcon");
+        sparseArray.put(n6.C9, "chats_mentionIcon");
+        sparseArray.put(n6.D9, "chats_menuTopShadow");
+        sparseArray.put(n6.E9, "chats_menuTopShadowCats");
+        sparseArray.put(n6.F9, "chats_menuBackground");
+        sparseArray.put(n6.G9, "chats_menuItemText");
+        sparseArray.put(n6.H9, "chats_menuItemCheck");
+        sparseArray.put(n6.I9, "chats_menuItemIcon");
+        sparseArray.put(n6.J9, "chats_menuName");
+        sparseArray.put(n6.K9, "chats_menuPhone");
+        sparseArray.put(n6.L9, "chats_menuPhoneCats");
+        sparseArray.put(n6.M9, "chats_menuTopBackgroundCats");
+        sparseArray.put(n6.N9, "chats_menuTopBackground");
+        sparseArray.put(n6.O9, "chats_actionIcon");
+        sparseArray.put(n6.P9, "chats_actionBackground");
+        sparseArray.put(n6.Q9, "chats_actionPressedBackground");
+        sparseArray.put(n6.R9, "chats_archivePullDownBackground");
+        sparseArray.put(n6.S9, "chats_archivePullDownBackgroundActive");
+        sparseArray.put(n6.T9, "chats_tabUnreadActiveBackground");
+        sparseArray.put(n6.U9, "chats_tabUnreadUnactiveBackground");
+        sparseArray.put(n6.V9, "chat_attachCheckBoxCheck");
+        sparseArray.put(n6.W9, "chat_attachCheckBoxBackground");
+        sparseArray.put(n6.X9, "chat_attachPhotoBackground");
+        sparseArray.put(n6.Y9, "chat_attachActiveTab");
+        sparseArray.put(n6.Z9, "chat_attachUnactiveTab");
+        sparseArray.put(n6.aa, "chat_attachPermissionImage");
+        sparseArray.put(n6.ba, "chat_attachPermissionMark");
+        sparseArray.put(n6.ca, "chat_attachPermissionText");
+        sparseArray.put(n6.da, "chat_attachEmptyImage");
+        sparseArray.put(n6.ea, "chat_inPollCorrectAnswer");
+        sparseArray.put(n6.fa, "chat_outPollCorrectAnswer");
+        sparseArray.put(n6.ga, "chat_inPollWrongAnswer");
+        sparseArray.put(n6.ha, "chat_outPollWrongAnswer");
+        sparseArray.put(n6.ia, "chat_attachIcon");
+        sparseArray.put(n6.ja, "chat_attachGalleryBackground");
+        sparseArray.put(n6.ka, "chat_attachAudioBackground");
+        sparseArray.put(n6.la, "chat_attachContactBackground");
+        sparseArray.put(n6.ma, "chat_attachContactText");
+        sparseArray.put(n6.na, "chat_attachLocationBackground");
+        sparseArray.put(n6.oa, "chat_attachPollBackground");
+        sparseArray.put(n6.pa, "chat_status");
+        sparseArray.put(n6.qa, "chat_inDownCall");
+        sparseArray.put(n6.zb, "chat_outUpCall");
+        sparseArray.put(n6.ra, "chat_inBubble");
+        sparseArray.put(n6.ua, "chat_compact_background");
+        sparseArray.put(n6.va, "chat_compact_backgroundGradient");
+        sparseArray.put(n6.wa, "chat_compact_glassOutline");
+        sparseArray.put(n6.xa, "chat_compact_glassShadow");
+        sparseArray.put(n6.ya, "chat_compact_glassHairline");
+        sparseArray.put(n6.za, "chat_compact_topicSeparatorText");
+        sparseArray.put(n6.Aa, "chat_compact_inputGlassOutline");
+        sparseArray.put(n6.Ba, "chat_compact_buttonGlassOutline");
+        sparseArray.put(n6.Ca, "chat_compact_fadeEdge");
+        sparseArray.put(n6.Da, "chat_compact_fadeMiddle");
+        sparseArray.put(n6.Ea, "chat_compact_actionBackground");
+        sparseArray.put(n6.Fa, "chat_compact_actionText");
+        sparseArray.put(n6.Ga, "chat_compact_actionIcon");
+        sparseArray.put(n6.Ha, "chat_compact_botButtonText");
+        sparseArray.put(n6.Ia, "chat_compact_pullingDownText");
+        sparseArray.put(n6.Ja, "chat_compact_topicEmptyText");
+        sparseArray.put(n6.Ka, "chat_compact_progress");
+        sparseArray.put(n6.La, "chat_compact_outBackground");
+        sparseArray.put(n6.Ma, "chat_compact_outTimeText");
+        sparseArray.put(n6.Na, "chat_compact_outCheck");
+        sparseArray.put(n6.Oa, "chat_compact_outReplyBackground");
+        sparseArray.put(n6.Pa, "chat_compact_outReplyLine");
+        sparseArray.put(n6.Qa, "chat_compact_outReplyText");
+        sparseArray.put(n6.Ra, "chat_compact_inTimeText");
+        sparseArray.put(n6.Sa, "chat_compact_replyText");
+        sparseArray.put(n6.Ta, "chat_compact_sideButtonIcon");
+        sparseArray.put(n6.Ua, "chat_compact_inAudioDuration");
+        sparseArray.put(n6.Va, "chat_compact_inWaveform");
+        sparseArray.put(n6.Wa, "chat_compact_inWaveformBackground");
+        sparseArray.put(n6.Xa, "chat_compact_inTranscribeButton");
+        sparseArray.put(n6.Ya, "chat_compact_outTranscribeButton");
+        sparseArray.put(n6.Za, "chat_compact_spokenWord");
+        sparseArray.put(n6.ab, "chat_outSpokenWord");
+        sparseArray.put(n6.bb, "chat_compact_outAccent");
+        sparseArray.put(n6.cb, "chat_compact_outAccentFill");
+        sparseArray.put(n6.db, "chat_compact_outAccentIcon");
+        sparseArray.put(n6.eb, "chat_compact_outSecondaryText");
+        sparseArray.put(n6.fb, "chat_compact_outAccentLight");
+        sparseArray.put(n6.gb, "chat_compact_outAccentBorder");
+        sparseArray.put(n6.hb, "chat_compact_reactionBackground");
+        sparseArray.put(n6.ib, "chat_compact_reactionText");
+        sparseArray.put(n6.jb, "chat_compact_reactionBackgroundSelected");
+        sparseArray.put(n6.kb, "chat_compact_reactionTextSelected");
+        sparseArray.put(n6.Uc, "chat_inBubbleSelected");
+        sparseArray.put(n6.sa, "chat_inBubbleSelectedOverlay");
+        sparseArray.put(n6.ta, "chat_inBubbleShadow");
+        sparseArray.put(n6.rb, "chat_outBubble");
+        sparseArray.put(n6.ub, "chat_outBubbleGradient");
+        sparseArray.put(n6.vb, "chat_outBubbleGradient2");
+        sparseArray.put(n6.wb, "chat_outBubbleGradient3");
+        sparseArray.put(n6.Rc, "chat_outBubbleGradientAnimated");
+        sparseArray.put(n6.Sc, "chat_outBubbleGradientSelectedOverlay");
+        sparseArray.put(n6.sb, "chat_outBubbleSelected");
+        sparseArray.put(n6.Pc, "chat_outBubbleSelectedOverlay");
+        sparseArray.put(n6.tb, "chat_outBubbleShadow");
+        sparseArray.put(n6.Vc, "chat_messageTextIn");
+        sparseArray.put(n6.Wc, "chat_messageTextOut");
+        sparseArray.put(n6.Xc, "chat_messageLinkIn");
+        sparseArray.put(n6.Yc, "chat_messageLinkOut");
+        sparseArray.put(n6.Zc, "chat_serviceText");
+        sparseArray.put(n6.ad, "chat_serviceLink");
+        sparseArray.put(n6.bd, "chat_serviceIcon");
+        sparseArray.put(n6.cd, "chat_serviceBackground");
+        sparseArray.put(n6.dd, "chat_serviceBackgroundSelected");
+        sparseArray.put(n6.ed, "chat_serviceBackgroundSelector");
+        sparseArray.put(n6.Jd, "chat_inQuote");
+        sparseArray.put(n6.Kd, "chat_outQuote");
+        sparseArray.put(n6.fd, "chat_muteIcon");
+        sparseArray.put(n6.gd, "chat_lockIcon");
+        sparseArray.put(n6.Ab, "chat_outSentCheck");
+        sparseArray.put(n6.Bb, "chat_outSentCheckSelected");
+        sparseArray.put(n6.Cb, "chat_outSentCheckRead");
+        sparseArray.put(n6.Db, "chat_outSentCheckReadSelected");
+        sparseArray.put(n6.Eb, "chat_outSentClock");
+        sparseArray.put(n6.Fb, "chat_outSentClockSelected");
+        sparseArray.put(n6.hd, "chat_inSentClock");
+        sparseArray.put(n6.id, "chat_inSentClockSelected");
+        sparseArray.put(n6.jd, "chat_mediaSentCheck");
+        sparseArray.put(n6.kd, "chat_mediaSentClock");
+        sparseArray.put(n6.ld, "chat_inMediaIcon");
+        sparseArray.put(n6.Gb, "chat_outMediaIcon");
+        sparseArray.put(n6.md, "chat_inMediaIconSelected");
+        sparseArray.put(n6.Hb, "chat_outMediaIconSelected");
+        sparseArray.put(n6.nd, "chat_mediaTimeBackground");
+        sparseArray.put(n6.Ib, "chat_outViews");
+        sparseArray.put(n6.Jb, "chat_outViewsSelected");
+        sparseArray.put(n6.od, "chat_inViews");
+        sparseArray.put(n6.pd, "chat_inViewsSelected");
+        sparseArray.put(n6.qd, "chat_mediaViews");
+        sparseArray.put(n6.Kb, "chat_outMenu");
+        sparseArray.put(n6.Lb, "chat_outMenuSelected");
+        sparseArray.put(n6.rd, "chat_inMenu");
+        sparseArray.put(n6.sd, "chat_inMenuSelected");
+        sparseArray.put(n6.td, "chat_mediaMenu");
+        sparseArray.put(n6.Mb, "chat_outInstant");
+        sparseArray.put(n6.Nb, "chat_outInstantSelected");
+        sparseArray.put(n6.ud, "chat_inInstant");
+        sparseArray.put(n6.vd, "chat_inInstantSelected");
+        sparseArray.put(n6.wd, "chat_sentError");
+        sparseArray.put(n6.xd, "chat_sentErrorIcon");
+        sparseArray.put(n6.yd, "chat_selectedBackground");
+        sparseArray.put(n6.zd, "chat_previewDurationText");
+        sparseArray.put(n6.Ad, "chat_previewGameText");
+        sparseArray.put(n6.Bd, "chat_inPreviewInstantText");
+        sparseArray.put(n6.Ob, "chat_outPreviewInstantText");
+        sparseArray.put(n6.Cd, "chat_secretTimeText");
+        sparseArray.put(n6.Dd, "chat_stickerNameText");
+        sparseArray.put(n6.Ed, "chat_botButtonText");
+        sparseArray.put(n6.Fd, "chat_inForwardedNameText");
+        sparseArray.put(n6.Pb, "chat_outForwardedNameText");
+        sparseArray.put(n6.Gd, "chat_inPsaNameText");
+        sparseArray.put(n6.Qc, "chat_outPsaNameText");
+        sparseArray.put(n6.Hd, "chat_inViaBotNameText");
+        sparseArray.put(n6.Qb, "chat_outViaBotNameText");
+        sparseArray.put(n6.Id, "chat_stickerViaBotNameText");
+        sparseArray.put(n6.Ld, "chat_inReplyLine");
+        sparseArray.put(n6.Rb, "chat_outReplyLine");
+        sparseArray.put(n6.Sb, "chat_outReplyLine2");
+        sparseArray.put(n6.Md, "chat_stickerReplyLine");
+        sparseArray.put(n6.Nd, "chat_inReplyNameText");
+        sparseArray.put(n6.Tb, "chat_outReplyNameText");
+        sparseArray.put(n6.Od, "chat_stickerReplyNameText");
+        sparseArray.put(n6.Pd, "chat_inReplyMessageText");
+        sparseArray.put(n6.Ub, "chat_outReplyMessageText");
+        sparseArray.put(n6.Qd, "chat_inReplyMediaMessageText");
+        sparseArray.put(n6.Vb, "chat_outReplyMediaMessageText");
+        sparseArray.put(n6.Rd, "chat_inReplyMediaMessageSelectedText");
+        sparseArray.put(n6.Wb, "chat_outReplyMediaMessageSelectedText");
+        sparseArray.put(n6.Sd, "chat_stickerReplyMessageText");
+        sparseArray.put(n6.Td, "chat_inPreviewLine");
+        sparseArray.put(n6.Xb, "chat_outPreviewLine");
+        sparseArray.put(n6.Ud, "chat_inSiteNameText");
+        sparseArray.put(n6.Yb, "chat_outSiteNameText");
+        sparseArray.put(n6.Vd, "chat_inContactNameText");
+        sparseArray.put(n6.Zb, "chat_outContactNameText");
+        sparseArray.put(n6.Wd, "chat_inContactPhoneText");
+        sparseArray.put(n6.Xd, "chat_inContactPhoneSelectedText");
+        sparseArray.put(n6.ac, "chat_outContactPhoneText");
+        sparseArray.put(n6.bc, "chat_outContactPhoneSelectedText");
+        sparseArray.put(n6.Yd, "chat_mediaProgress");
+        sparseArray.put(n6.Zd, "chat_inAudioProgress");
+        sparseArray.put(n6.hc, "chat_outAudioProgress");
+        sparseArray.put(n6.ae, "chat_inAudioSelectedProgress");
+        sparseArray.put(n6.ic, "chat_outAudioSelectedProgress");
+        sparseArray.put(n6.be, "chat_mediaTimeText");
+        sparseArray.put(n6.ce, "chat_adminText");
+        sparseArray.put(n6.de, "chat_adminSelectedText");
+        sparseArray.put(n6.fc, "chat_outAdminText");
+        sparseArray.put(n6.gc, "chat_outAdminSelectedText");
+        sparseArray.put(n6.ee, "chat_inTimeText");
+        sparseArray.put(n6.jc, "chat_outTimeText");
+        sparseArray.put(n6.fe, "chat_inTimeSelectedText");
+        sparseArray.put(n6.ec, "chat_outTimeSelectedText");
+        sparseArray.put(n6.ge, "chat_inAudioPerfomerText");
+        sparseArray.put(n6.he, "chat_inAudioPerfomerSelectedText");
+        sparseArray.put(n6.cc, "chat_outAudioPerfomerText");
+        sparseArray.put(n6.dc, "chat_outAudioPerfomerSelectedText");
+        sparseArray.put(n6.ie, "chat_inAudioTitleText");
+        sparseArray.put(n6.kc, "chat_outAudioTitleText");
+        sparseArray.put(n6.je, "chat_inAudioDurationText");
+        sparseArray.put(n6.lc, "chat_outAudioDurationText");
+        sparseArray.put(n6.ke, "chat_inAudioDurationSelectedText");
+        sparseArray.put(n6.mc, "chat_outAudioDurationSelectedText");
+        sparseArray.put(n6.le, "chat_inAudioSeekbar");
+        sparseArray.put(n6.me, "chat_inAudioCacheSeekbar");
+        sparseArray.put(n6.nc, "chat_outAudioSeekbar");
+        sparseArray.put(n6.oc, "chat_outAudioCacheSeekbar");
+        sparseArray.put(n6.ne, "chat_inAudioSeekbarSelected");
+        sparseArray.put(n6.pc, "chat_outAudioSeekbarSelected");
+        sparseArray.put(n6.oe, "chat_inAudioSeekbarFill");
+        sparseArray.put(n6.qc, "chat_outAudioSeekbarFill");
+        sparseArray.put(n6.pe, "chat_inVoiceSeekbar");
+        sparseArray.put(n6.rc, "chat_outVoiceSeekbar");
+        sparseArray.put(n6.qe, "chat_inVoiceSeekbarSelected");
+        sparseArray.put(n6.sc, "chat_outVoiceSeekbarSelected");
+        sparseArray.put(n6.re, "chat_inVoiceSeekbarFill");
+        sparseArray.put(n6.tc, "chat_outVoiceSeekbarFill");
+        sparseArray.put(n6.se, "chat_inFileProgress");
+        sparseArray.put(n6.uc, "chat_outFileProgress");
+        sparseArray.put(n6.te, "chat_inFileProgressSelected");
+        sparseArray.put(n6.vc, "chat_outFileProgressSelected");
+        sparseArray.put(n6.ue, "chat_inFileNameText");
+        sparseArray.put(n6.wc, "chat_outFileNameText");
+        sparseArray.put(n6.ve, "chat_inFileInfoText");
+        sparseArray.put(n6.xc, "chat_outFileInfoText");
+        sparseArray.put(n6.we, "chat_inFileInfoSelectedText");
+        sparseArray.put(n6.yc, "chat_outFileInfoSelectedText");
+        sparseArray.put(n6.xe, "chat_inFileBackground");
+        sparseArray.put(n6.zc, "chat_outFileBackground");
+        sparseArray.put(n6.ye, "chat_inFileBackgroundSelected");
+        sparseArray.put(n6.Ac, "chat_outFileBackgroundSelected");
+        sparseArray.put(n6.ze, "chat_inVenueInfoText");
+        sparseArray.put(n6.Bc, "chat_outVenueInfoText");
+        sparseArray.put(n6.Ae, "chat_inVenueInfoSelectedText");
+        sparseArray.put(n6.Cc, "chat_outVenueInfoSelectedText");
+        sparseArray.put(n6.Be, "chat_mediaInfoText");
+        sparseArray.put(n6.Ce, "chat_linkSelectBackground");
+        sparseArray.put(n6.Dc, "chat_outLinkSelectBackground");
+        sparseArray.put(n6.De, "chat_textSelectBackground");
+        sparseArray.put(n6.Ee, "chat_wallpaper");
+        sparseArray.put(n6.Fe, "chat_wallpaper_gradient_to");
+        sparseArray.put(n6.Ge, "key_chat_wallpaper_gradient_to2");
+        sparseArray.put(n6.He, "key_chat_wallpaper_gradient_to3");
+        sparseArray.put(n6.Ie, "chat_wallpaper_gradient_rotation");
+        sparseArray.put(n6.Je, "chat_messagePanelBackground");
+        sparseArray.put(n6.Ke, "chat_messagePanelShadow");
+        sparseArray.put(n6.Le, "chat_messagePanelText");
+        sparseArray.put(n6.Me, "chat_messagePanelHint");
+        sparseArray.put(n6.Ne, "chat_messagePanelCursor");
+        sparseArray.put(n6.Oe, "chat_messagePanelIcons");
+        sparseArray.put(n6.Pe, "chat_messagePanelSend");
+        sparseArray.put(n6.Qe, "key_chat_messagePanelVoiceLock");
+        sparseArray.put(n6.Re, "key_chat_messagePanelVoiceLockBackground");
+        sparseArray.put(n6.Se, "key_chat_messagePanelVoiceLockShadow");
+        sparseArray.put(n6.Te, "chat_topPanelBackground");
+        sparseArray.put(n6.Ue, "chat_topPanelClose");
+        sparseArray.put(n6.Ve, "chat_topPanelLine");
+        sparseArray.put(n6.We, "chat_topPanelTitle");
+        sparseArray.put(n6.Xe, "chat_topPanelMessage");
+        sparseArray.put(n6.Ye, "chat_addContact");
+        sparseArray.put(n6.Ze, "chat_inLoader");
+        sparseArray.put(n6.af, "chat_inLoaderSelected");
+        sparseArray.put(n6.Ec, "chat_outLoader");
+        sparseArray.put(n6.Fc, "chat_outLoaderSelected");
+        sparseArray.put(n6.bf, "chat_inLoaderPhoto");
+        sparseArray.put(n6.cf, "chat_mediaLoaderPhoto");
+        sparseArray.put(n6.df, "chat_mediaLoaderPhotoSelected");
+        sparseArray.put(n6.ef, "chat_mediaLoaderPhotoIcon");
+        sparseArray.put(n6.ff, "chat_mediaLoaderPhotoIconSelected");
+        sparseArray.put(n6.gf, "chat_inLocationBackground");
+        sparseArray.put(n6.hf, "chat_inLocationIcon");
+        sparseArray.put(n6.Gc, "chat_outLocationIcon");
+        sparseArray.put(n6.jf, "chat_inContactBackground");
+        sparseArray.put(n6.kf, "chat_inContactIcon");
+        sparseArray.put(n6.Hc, "chat_outContactBackground");
+        sparseArray.put(n6.Ic, "chat_outContactIcon");
+        sparseArray.put(n6.lf, "chat_replyPanelIcons");
+        sparseArray.put(n6.mf, "chat_replyPanelClose");
+        sparseArray.put(n6.nf, "chat_replyPanelName");
+        sparseArray.put(n6.of, "chat_replyPanelLine");
+        sparseArray.put(n6.pf, "chat_searchPanelIcons");
+        sparseArray.put(n6.qf, "chat_searchPanelText");
+        sparseArray.put(n6.rf, "chat_secretChatStatusText");
+        sparseArray.put(n6.sf, "chat_fieldOverlayText");
+        sparseArray.put(n6.tf, "chat_stickersHintPanel");
+        sparseArray.put(n6.uf, "chat_botSwitchToInlineText");
+        sparseArray.put(n6.vf, "chat_unreadMessagesStartArrowIcon");
+        sparseArray.put(n6.wf, "chat_unreadMessagesStartText");
+        sparseArray.put(n6.xf, "chat_unreadMessagesStartBackground");
+        sparseArray.put(n6.yf, "chat_inlineResultIcon");
+        sparseArray.put(n6.zf, "chat_emojiPanelBackground");
+        sparseArray.put(n6.Af, "chat_emojiSearchBackground");
+        sparseArray.put(n6.Bf, "chat_emojiSearchIcon");
+        sparseArray.put(n6.Cf, "chat_emojiPanelShadowLine");
+        sparseArray.put(n6.Df, "chat_emojiPanelEmptyText");
+        sparseArray.put(n6.Ef, "chat_emojiPanelIcon");
+        sparseArray.put(n6.Ff, "chat_emojiBottomPanelIcon");
+        sparseArray.put(n6.Gf, "chat_emojiPanelIconSelected");
+        sparseArray.put(n6.Hf, "chat_emojiPanelStickerPackSelector");
+        sparseArray.put(n6.If, "chat_emojiPanelStickerPackSelectorLine");
+        sparseArray.put(n6.Jf, "chat_emojiPanelBackspace");
+        sparseArray.put(n6.Kf, "chat_emojiPanelTrendingTitle");
+        sparseArray.put(n6.Lf, "chat_emojiPanelStickerSetName");
+        sparseArray.put(n6.Mf, "chat_emojiPanelStickerSetNameHighlight");
+        sparseArray.put(n6.Nf, "chat_emojiPanelStickerSetNameIcon");
+        sparseArray.put(n6.Of, "chat_emojiPanelTrendingDescription");
+        sparseArray.put(n6.Pf, "chat_botKeyboardButtonText");
+        sparseArray.put(n6.Qf, "chat_botKeyboardButtonBackground");
+        sparseArray.put(n6.Rf, "chat_botKeyboardButtonBackgroundPressed");
+        sparseArray.put(n6.Sf, "chat_emojiPanelNewTrending");
+        sparseArray.put(n6.Tf, "chat_messagePanelVoicePressed");
+        sparseArray.put(n6.Uf, "chat_messagePanelVoiceBackground");
+        sparseArray.put(n6.Vf, "chat_messagePanelVoiceDelete");
+        sparseArray.put(n6.Wf, "chat_messagePanelVoiceDuration");
+        sparseArray.put(n6.Xf, "chat_recordedVoicePlayPause");
+        sparseArray.put(n6.Yf, "chat_recordedVoiceProgress");
+        sparseArray.put(n6.Zf, "chat_recordedVoiceProgressInner");
+        sparseArray.put(n6.ag, "chat_recordedVoiceDot");
+        sparseArray.put(n6.bg, "chat_recordedVoiceBackground");
+        sparseArray.put(n6.cg, "chat_recordedVoiceDarkerBackground");
+        sparseArray.put(n6.dg, "chat_recordVoiceCancel");
+        sparseArray.put(n6.eg, "chat_recordTime");
+        sparseArray.put(n6.fg, "chat_messagePanelCancelInlineBot");
+        sparseArray.put(n6.gg, "chat_gifSaveHintText");
+        sparseArray.put(n6.hg, "chat_gifSaveHintBackground");
+        sparseArray.put(n6.ig, "chat_goDownButton");
+        sparseArray.put(n6.jg, "chat_goDownButtonCounter");
+        sparseArray.put(n6.kg, "chat_goDownButtonCounterBackground");
+        sparseArray.put(n6.Mc, "chat_outTextSelectionHighlight");
+        sparseArray.put(n6.lg, "chat_inTextSelectionHighlight");
+        sparseArray.put(n6.mg, "chat_TextSelectionCursor");
+        sparseArray.put(n6.Nc, "chat_outTextSelectionCursor");
+        sparseArray.put(n6.ng, "chat_inBubbleLocationPlaceholder");
+        sparseArray.put(n6.Oc, "chat_outBubbleLocationPlaceholder");
+        sparseArray.put(n6.og, "chat_BlurAlpha");
+        sparseArray.put(n6.pg, "chat_BlurAlphaSlow");
+        sparseArray.put(n6.qg, "chat_editMediaButton");
+        sparseArray.put(n6.rg, "chat_msgIvButtonDefaultIn");
+        sparseArray.put(n6.sg, "chat_msgIvButtonDefaultInPressed");
+        sparseArray.put(n6.tg, "chat_msgIvButtonDefaultInText");
+        sparseArray.put(n6.ug, "chat_msgIvButtonPrimaryIn");
+        sparseArray.put(n6.vg, "chat_msgIvButtonPrimaryInPressed");
+        sparseArray.put(n6.wg, "chat_msgIvButtonPrimaryInText");
+        sparseArray.put(n6.xg, "chat_msgIvButtonDangerIn");
+        sparseArray.put(n6.yg, "chat_msgIvButtonDangerInPressed");
+        sparseArray.put(n6.zg, "chat_msgIvButtonDangerInText");
+        sparseArray.put(n6.Ag, "chat_msgIvButtonSuccessIn");
+        sparseArray.put(n6.Bg, "chat_msgIvButtonSuccessInPressed");
+        sparseArray.put(n6.Cg, "chat_msgIvButtonSuccessInText");
+        sparseArray.put(n6.Dg, "chat_msgIvButtonDefaultInlineIn");
+        sparseArray.put(n6.Eg, "chat_msgIvButtonDefaultInlineInPressed");
+        sparseArray.put(n6.Fg, "chat_msgIvButtonDefaultInlineInText");
+        sparseArray.put(n6.Gg, "chat_msgIvButtonDefaultOut");
+        sparseArray.put(n6.Hg, "chat_msgIvButtonDefaultOutPressed");
+        sparseArray.put(n6.Ig, "chat_msgIvButtonDefaultOutText");
+        sparseArray.put(n6.Jg, "chat_msgIvButtonPrimaryOut");
+        sparseArray.put(n6.Kg, "chat_msgIvButtonPrimaryOutPressed");
+        sparseArray.put(n6.Lg, "chat_msgIvButtonPrimaryOutText");
+        sparseArray.put(n6.Mg, "chat_msgIvButtonDangerOut");
+        sparseArray.put(n6.Ng, "chat_msgIvButtonDangerOutPressed");
+        sparseArray.put(n6.Og, "chat_msgIvButtonDangerOutText");
+        sparseArray.put(n6.Pg, "chat_msgIvButtonSuccessOut");
+        sparseArray.put(n6.Qg, "chat_msgIvButtonSuccessOutPressed");
+        sparseArray.put(n6.Rg, "chat_msgIvButtonSuccessOutText");
+        sparseArray.put(n6.Sg, "chat_msgIvButtonDefaultInlineOut");
+        sparseArray.put(n6.Tg, "chat_msgIvButtonDefaultInlineOutPressed");
+        sparseArray.put(n6.Ug, "chat_msgIvButtonDefaultInlineOutText");
+        sparseArray.put(n6.Vg, "voipgroup_listSelector");
+        sparseArray.put(n6.Wg, "voipgroup_inviteMembersBackground");
+        sparseArray.put(n6.Xg, "voipgroup_actionBar");
+        sparseArray.put(n6.Yg, "voipgroup_actionBarItems");
+        sparseArray.put(n6.Zg, "voipgroup_actionBarItemsSelector");
+        sparseArray.put(n6.ah, "voipgroup_actionBarUnscrolled");
+        sparseArray.put(n6.bh, "voipgroup_listViewBackgroundUnscrolled");
+        sparseArray.put(n6.ch, "voipgroup_lastSeenTextUnscrolled");
+        sparseArray.put(n6.dh, "voipgroup_mutedIconUnscrolled");
+        sparseArray.put(n6.eh, "voipgroup_nameText");
+        sparseArray.put(n6.fh, "voipgroup_lastSeenText");
+        sparseArray.put(n6.gh, "voipgroup_listeningText");
+        sparseArray.put(n6.hh, "voipgroup_speakingText");
+        sparseArray.put(n6.ih, "voipgroup_mutedIcon");
+        sparseArray.put(n6.jh, "voipgroup_mutedByAdminIcon");
+        sparseArray.put(n6.kh, "voipgroup_listViewBackground");
+        sparseArray.put(n6.lh, "voipgroup_dialogBackground");
+        sparseArray.put(n6.mh, "voipgroup_leaveCallMenu");
+        sparseArray.put(n6.nh, "voipgroup_checkMenu");
+        sparseArray.put(n6.oh, "voipgroup_soundButton");
+        sparseArray.put(n6.ph, "voipgroup_soundButtonActive");
+        sparseArray.put(n6.qh, "voipgroup_soundButtonActiveScrolled");
+        sparseArray.put(n6.rh, "voipgroup_soundButton2");
+        sparseArray.put(n6.sh, "voipgroup_soundButtonActive2");
+        sparseArray.put(n6.th, "voipgroup_soundButtonActive2Scrolled");
+        sparseArray.put(n6.uh, "voipgroup_leaveButton");
+        sparseArray.put(n6.vh, "voipgroup_leaveButtonScrolled");
+        sparseArray.put(n6.wh, "voipgroup_muteButton");
+        sparseArray.put(n6.xh, "voipgroup_muteButton2");
+        sparseArray.put(n6.yh, "voipgroup_muteButton3");
+        sparseArray.put(n6.zh, "voipgroup_unmuteButton");
+        sparseArray.put(n6.Ah, "voipgroup_unmuteButton2");
+        sparseArray.put(n6.Bh, "voipgroup_disabledButton");
+        sparseArray.put(n6.Ch, "voipgroup_rtmpButton");
+        sparseArray.put(n6.Dh, "voipgroup_disabledButtonActive");
+        sparseArray.put(n6.Eh, "voipgroup_disabledButtonActiveScrolled");
+        sparseArray.put(n6.Fh, "voipgroup_connectingProgress");
+        sparseArray.put(n6.Gh, "voipgroup_scrollUp");
+        sparseArray.put(n6.Hh, "voipgroup_searchPlaceholder");
+        sparseArray.put(n6.Ih, "voipgroup_searchBackground");
+        sparseArray.put(n6.Jh, "voipgroup_searchText");
+        sparseArray.put(n6.Kh, "voipgroup_overlayGreen1");
+        sparseArray.put(n6.Lh, "voipgroup_overlayGreen2");
+        sparseArray.put(n6.Mh, "voipgroup_overlayBlue1");
+        sparseArray.put(n6.Nh, "voipgroup_overlayBlue2");
+        sparseArray.put(n6.Oh, "voipgroup_topPanelGreen1");
+        sparseArray.put(n6.Ph, "voipgroup_topPanelGreen2");
+        sparseArray.put(n6.Qh, "voipgroup_topPanelBlue1");
+        sparseArray.put(n6.Rh, "voipgroup_topPanelBlue2");
+        sparseArray.put(n6.Sh, "voipgroup_topPanelGray");
+        sparseArray.put(n6.Th, "voipgroup_overlayAlertGradientMuted");
+        sparseArray.put(n6.Uh, "voipgroup_overlayAlertGradientMuted2");
+        sparseArray.put(n6.Vh, "voipgroup_overlayAlertGradientUnmuted");
+        sparseArray.put(n6.Wh, "voipgroup_overlayAlertGradientUnmuted2");
+        sparseArray.put(n6.Xh, "voipgroup_overlayAlertMutedByAdmin");
+        sparseArray.put(n6.Yh, "voipgroup_overlayAlertMutedByAdmin2");
+        sparseArray.put(n6.Zh, "voipgroup_mutedByAdminGradient");
+        sparseArray.put(n6.ai, "voipgroup_mutedByAdminGradient2");
+        sparseArray.put(n6.bi, "voipgroup_mutedByAdminGradient3");
+        sparseArray.put(n6.ci, "voipgroup_mutedByAdminMuteButton");
+        sparseArray.put(n6.di, "voipgroup_mutedByAdminMuteButtonDisabled");
+        sparseArray.put(n6.ei, "voipgroup_windowBackgroundWhiteInputField");
+        sparseArray.put(n6.fi, "voipgroup_windowBackgroundWhiteInputFieldActivated");
+        sparseArray.put(n6.ii, "passport_authorizeBackground");
+        sparseArray.put(n6.ji, "passport_authorizeBackgroundSelected");
+        sparseArray.put(n6.ki, "passport_authorizeText");
+        sparseArray.put(n6.li, "profile_creatorIcon");
+        sparseArray.put(n6.ti, "chat_tagAdmin");
+        sparseArray.put(n6.ui, "chat_tagCreator");
+        sparseArray.put(n6.mi, "profile_title");
+        sparseArray.put(n6.ni, "profile_actionIcon");
+        sparseArray.put(n6.oi, "profile_actionBackground");
+        sparseArray.put(n6.pi, "profile_actionPressedBackground");
+        sparseArray.put(n6.qi, "profile_verifiedBackground");
+        sparseArray.put(n6.ri, "profile_verifiedCheck");
+        sparseArray.put(n6.si, "profile_status");
+        sparseArray.put(n6.vi, "profile_tabText");
+        sparseArray.put(n6.wi, "profile_tabSelectedText");
+        sparseArray.put(n6.xi, "profile_tabSelectedLine");
+        sparseArray.put(n6.yi, "profile_tabSelector");
+        sparseArray.put(n6.zi, "sharedMedia_startStopLoadIcon");
+        sparseArray.put(n6.Ai, "sharedMedia_linkPlaceholder");
+        sparseArray.put(n6.Bi, "sharedMedia_linkPlaceholderText");
+        sparseArray.put(n6.Ci, "sharedMedia_photoPlaceholder");
+        sparseArray.put(n6.Di, "featuredStickers_addedIcon");
+        sparseArray.put(n6.Ei, "featuredStickers_buttonProgress");
+        sparseArray.put(n6.Fi, "featuredStickers_addButton");
+        sparseArray.put(n6.Gi, "featuredStickers_addButton2");
+        sparseArray.put(n6.Hi, "featuredStickers_addButtonPressed");
+        sparseArray.put(n6.Ii, "featuredStickers_removeButtonText");
+        sparseArray.put(n6.Ji, "featuredStickers_buttonText");
+        sparseArray.put(n6.Ki, "featuredStickers_unread");
+        sparseArray.put(n6.ob, "buttonNeutral");
+        sparseArray.put(n6.pb, "buttonNeutralText");
+        sparseArray.put(n6.Li, "stickers_menu");
+        sparseArray.put(n6.Mi, "stickers_menuSelector");
+        sparseArray.put(n6.Ni, "changephoneinfo_image2");
+        sparseArray.put(n6.Oi, "groupcreate_hintText");
+        sparseArray.put(n6.Pi, "groupcreate_cursor");
+        sparseArray.put(n6.Qi, "groupcreate_sectionShadow");
+        sparseArray.put(n6.Ri, "groupcreate_sectionText");
+        sparseArray.put(n6.Si, "groupcreate_spanText");
+        sparseArray.put(n6.Ti, "groupcreate_spanBackground");
+        sparseArray.put(n6.Ui, "groupcreate_spanDelete");
+        sparseArray.put(n6.Vi, "contacts_inviteBackground");
+        sparseArray.put(n6.Wi, "contacts_inviteText");
+        sparseArray.put(n6.Xi, "login_progressInner");
+        sparseArray.put(n6.Yi, "login_progressOuter");
+        sparseArray.put(n6.Zi, "picker_enabledButton");
+        sparseArray.put(n6.aj, "picker_disabledButton");
+        sparseArray.put(n6.bj, "picker_badge");
+        sparseArray.put(n6.cj, "picker_badgeText");
+        sparseArray.put(n6.dj, "location_sendLocationBackground");
+        sparseArray.put(n6.ej, "location_sendLocationIcon");
+        sparseArray.put(n6.fj, "location_sendLocationText");
+        sparseArray.put(n6.gj, "location_sendLiveLocationBackground");
+        sparseArray.put(n6.hj, "location_sendLiveLocationIcon");
+        sparseArray.put(n6.ij, "location_sendLiveLocationText");
+        sparseArray.put(n6.jj, "location_liveLocationProgress");
+        sparseArray.put(n6.kj, "location_placeLocationBackground");
+        sparseArray.put(n6.lj, "location_actionIcon");
+        sparseArray.put(n6.mj, "location_actionActiveIcon");
+        sparseArray.put(n6.nj, "location_actionBackground");
+        sparseArray.put(n6.oj, "location_actionPressedBackground");
+        sparseArray.put(n6.pj, "dialog_liveLocationProgress");
+        sparseArray.put(n6.qj, "files_folderIcon");
+        sparseArray.put(n6.rj, "files_folderIconBackground");
+        sparseArray.put(n6.sj, "files_iconText");
+        sparseArray.put(n6.tj, "sessions_devicesImage");
+        sparseArray.put(n6.uj, "calls_callReceivedGreenIcon");
+        sparseArray.put(n6.vj, "calls_callReceivedRedIcon");
+        sparseArray.put(n6.wj, "undo_background");
+        sparseArray.put(n6.xj, "undo_cancelColor");
+        sparseArray.put(n6.yj, "undo_infoColor");
+        sparseArray.put(n6.zj, "key_sheet_scrollUp");
+        sparseArray.put(n6.Aj, "key_sheet_other");
+        sparseArray.put(n6.Ej, "player_actionBarSelector");
+        sparseArray.put(n6.Fj, "player_actionBarTitle");
+        sparseArray.put(n6.Gj, "player_actionBarSubtitle");
+        sparseArray.put(n6.Hj, "player_actionBarItems");
+        sparseArray.put(n6.Ij, "player_background");
+        sparseArray.put(n6.Jj, "player_time");
+        sparseArray.put(n6.Kj, "player_progressBackground");
+        sparseArray.put(n6.Lj, "key_player_progressCachedBackground");
+        sparseArray.put(n6.Mj, "player_progress");
+        sparseArray.put(n6.Nj, "player_button");
+        sparseArray.put(n6.Oj, "player_buttonActive");
+        sparseArray.put(n6.Pj, "statisticChartSignature");
+        sparseArray.put(n6.Qj, "statisticChartSignatureAlpha");
+        sparseArray.put(n6.Rj, "statisticChartHintLine");
+        sparseArray.put(n6.Sj, "statisticChartActiveLine");
+        sparseArray.put(n6.Tj, "statisticChartInactivePickerChart");
+        sparseArray.put(n6.Uj, "statisticChartActivePickerChart");
+        sparseArray.put(n6.Vj, "statisticChartRipple");
+        sparseArray.put(n6.Wj, "statisticChartBackZoomColor");
+        sparseArray.put(n6.Xj, "statisticChartChevronColor");
+        sparseArray.put(n6.Yj, "statisticChartLine_blue");
+        sparseArray.put(n6.Zj, "statisticChartLine_green");
+        sparseArray.put(n6.ak, "statisticChartLine_red");
+        sparseArray.put(n6.bk, "statisticChartLine_golden");
+        sparseArray.put(n6.ck, "statisticChartLine_lightblue");
+        sparseArray.put(n6.dk, "statisticChartLine_lightgreen");
+        sparseArray.put(n6.ek, "statisticChartLine_orange");
+        sparseArray.put(n6.fk, "statisticChartLine_indigo");
+        sparseArray.put(n6.gk, "statisticChartLine_purple");
+        sparseArray.put(n6.hk, "statisticChartLine_cyan");
+        sparseArray.put(n6.ik, "statisticChartLineEmpty");
+        sparseArray.put(n6.jk, "color_lightblue");
+        sparseArray.put(n6.kk, "color_blue");
+        sparseArray.put(n6.lk, "color_green");
+        sparseArray.put(n6.mk, "color_lightgreen");
+        sparseArray.put(n6.nk, "color_red");
+        sparseArray.put(n6.ok, "color_orange");
+        sparseArray.put(n6.pk, "color_yellow");
+        sparseArray.put(n6.qk, "color_purple");
+        sparseArray.put(n6.rk, "color_cyan");
+        sparseArray.put(n6.Jc, "chat_outReactionButtonBackground");
+        sparseArray.put(n6.tk, "chat_inReactionButtonBackground");
+        sparseArray.put(n6.uk, "chat_outReactionButtonText");
+        sparseArray.put(n6.vk, "chat_inReactionButtonText");
+        sparseArray.put(n6.wk, "chat_inReactionButtonTextSelected");
+        sparseArray.put(n6.xk, "chat_outReactionButtonTextSelected");
+        sparseArray.put(n6.yk, "chat_reactionServiceButtonBackgroundSelected");
+        sparseArray.put(n6.zk, "chat_reactionServiceButtonTextSelected");
+        sparseArray.put(n6.Bk, "premiumGradient0");
+        sparseArray.put(n6.Ck, "premiumGradient1");
+        sparseArray.put(n6.Dk, "premiumGradient2");
+        sparseArray.put(n6.Ek, "premiumGradient3");
+        sparseArray.put(n6.Fk, "premiumGradient4");
+        sparseArray.put(n6.Gk, "premiumGradientBackground1");
+        sparseArray.put(n6.Hk, "premiumGradientBackground2");
+        sparseArray.put(n6.Ik, "premiumGradientBackground3");
+        sparseArray.put(n6.Jk, "premiumGradientBackground4");
+        sparseArray.put(n6.Kk, "premiumGradientBackgroundOverlay");
+        sparseArray.put(n6.Lk, "premiumStartSmallStarsColor");
+        sparseArray.put(n6.Mk, "premiumStarGradient1");
+        sparseArray.put(n6.Nk, "premiumStarGradient2");
+        sparseArray.put(n6.Ok, "premiumCoinGradient1");
+        sparseArray.put(n6.Pk, "premiumCoinGradient2");
+        sparseArray.put(n6.Qk, "premiumStartSmallStarsColor2");
+        sparseArray.put(n6.Rk, "premiumGradientBottomSheet1");
+        sparseArray.put(n6.Sk, "premiumGradientBottomSheet2");
+        sparseArray.put(n6.Tk, "premiumGradientBottomSheet3");
+        sparseArray.put(n6.Uk, "topics_unreadCounter");
+        sparseArray.put(n6.Vk, "topics_unreadCounterMuted");
+        sparseArray.put(n6.Yk, "stories_circle1");
+        sparseArray.put(n6.Zk, "stories_circle2");
+        sparseArray.put(n6.al, "stories_circle_dialog1");
+        sparseArray.put(n6.bl, "stories_circle_dialog2");
+        sparseArray.put(n6.cl, "stories_circle_closeFriends1");
+        sparseArray.put(n6.dl, "stories_circle_closeFriends2");
+        sparseArray.put(n6.el, "stories_circle_live1");
+        sparseArray.put(n6.fl, "stories_circle_live2");
+        sparseArray.put(n6.gl, "chat_inCodeBackground");
+        sparseArray.put(n6.hl, "chat_outCodeBackground");
+        sparseArray.put(n6.zl, "code_keyword");
+        sparseArray.put(n6.Al, "code_operator");
+        sparseArray.put(n6.Bl, "code_constant");
+        sparseArray.put(n6.Cl, "code_string");
+        sparseArray.put(n6.Dl, "code_number");
+        sparseArray.put(n6.El, "code_comment");
+        sparseArray.put(n6.Fl, "code_function");
+        sparseArray.put(n6.Gl, "iv_background");
+        sparseArray.put(n6.Hl, "iv_backgroundGray");
+        sparseArray.put(n6.Jl, "iv_navigationBackground");
+        sparseArray.put(n6.Il, "iv_ab_progress");
+        sparseArray.put(n6.Ak, "reactionStarSelector");
+        sparseArray.put(n6.a6, "dialogCardShadow");
+        sparseArray.put(n6.b6, "dialogGiftsBackground");
+        sparseArray.put(n6.c6, "dialogGiftsTabText");
+        sparseArray.put(n6.Ml, "share_icon");
+        sparseArray.put(n6.Kl, "share_linkText");
+        sparseArray.put(n6.Ll, "share_linkBackground");
+        sparseArray.put(n6.Nl, "glass_defaultIcon");
+        sparseArray.put(n6.Ol, "glass_defaultText");
+        sparseArray.put(n6.Rl, "glass_tabSelected");
+        sparseArray.put(n6.Pl, "glass_targetMainTabs");
+        sparseArray.put(n6.Ql, "glass_targetMainTopPanel");
+        sparseArray.put(n6.Sl, "glass_tabSelectedText");
+        sparseArray.put(n6.Tl, "glass_tabUnselected");
+        sparseArray.put(n6.Vl, "botKeyboard_button_danger");
+        sparseArray.put(n6.Ul, "botKeyboard_button_primary");
+        sparseArray.put(n6.Wl, "botKeyboard_button_success");
+        sparseArray.put(n6.Yl, "telegram_color");
+        sparseArray.put(n6.Zl, "telegram_color_text");
+        sparseArray.put(n6.Xl, "telegram_color_dialogsLogo");
+        return sparseArray;
     }
 
-    public static void B(View view, float f10) {
-        view.setAlpha(f10);
-        view.setVisibility(f10 > 0.0f ? 0 : 4);
+    public static int[] b() {
+        int[] iArr = new int[n6.f5];
+        iArr[n6.g5] = 0;
+        iArr[n6.h5] = -1;
+        iArr[n6.i5] = -986896;
+        iArr[n6.j5] = -15065823;
+        iArr[n6.k5] = -14255946;
+        iArr[n6.l5] = 862104035;
+        iArr[n6.m5] = -13660983;
+        iArr[n6.n5] = -12937771;
+        iArr[n6.o5] = -15095832;
+        iArr[n6.p5] = -13333567;
+        iArr[n6.q5] = -9079435;
+        iArr[n6.r5] = -6710887;
+        iArr[n6.s5] = -5000269;
+        iArr[n6.t5] = -6842473;
+        iArr[n6.J5] = -15065823;
+        iArr[n6.K5] = -2960686;
+        iArr[n6.L5] = -14054705;
+        iArr[n6.u5] = -2368549;
+        iArr[n6.v5] = -14509328;
+        iArr[n6.w5] = -14509328;
+        iArr[n6.x5] = -1;
+        iArr[n6.y5] = -9211021;
+        iArr[n6.z5] = -5197648;
+        iArr[n6.D5] = -5000269;
+        iArr[n6.E5] = -14509328;
+        iArr[n6.F5] = -11371101;
+        iArr[n6.G5] = -2368549;
+        iArr[n6.H5] = -14054705;
+        iArr[n6.I5] = 251658240;
+        iArr[n6.A5] = -657673;
+        iArr[n6.B5] = -14509328;
+        iArr[n6.C5] = -1;
+        iArr[n6.M5] = -151981323;
+        iArr[n6.N5] = -9735304;
+        iArr[n6.O5] = -854795;
+        iArr[n6.P5] = -6774617;
+        iArr[n6.Q5] = -6182737;
+        iArr[n6.R5] = -14540254;
+        iArr[n6.S5] = -14509328;
+        iArr[n6.T5] = 251658240;
+        iArr[n6.U5] = -1;
+        iArr[n6.V5] = 301989888;
+        iArr[n6.W5] = -6314840;
+        iArr[n6.X5] = -7565164;
+        iArr[n6.Y5] = -1743531;
+        iArr[n6.Z5] = -1352098;
+        iArr[n6.a6] = 385875968;
+        iArr[n6.b6] = -657673;
+        iArr[n6.c6] = -11118244;
+        iArr[n6.Bj] = -855310;
+        iArr[n6.Cj] = -12147470;
+        iArr[n6.Dj] = -3389625;
+        iArr[n6.Ml] = -9538955;
+        iArr[n6.Kl] = -14540254;
+        iArr[n6.Ll] = 251658240;
+        iArr[n6.d6] = -1;
+        iArr[n6.e6] = -6905171;
+        iArr[n6.f6] = -14509328;
+        iArr[n6.g6] = -1;
+        iArr[n6.h6] = -14904349;
+        iArr[n6.m6] = -15065823;
+        iArr[n6.n6] = -12545331;
+        iArr[n6.o6] = -12937771;
+        iArr[n6.p6] = -14255946;
+        iArr[n6.q6] = -14904349;
+        iArr[n6.r6] = -11759926;
+        iArr[n6.s6] = -12940081;
+        iArr[n6.t6] = -13141330;
+        iArr[n6.u6] = -14776109;
+        iArr[n6.v6] = -13132315;
+        iArr[n6.w6] = -14248148;
+        iArr[n6.x6] = -13129704;
+        iArr[n6.p7] = -3397335;
+        iArr[n6.q7] = -3389625;
+        iArr[n6.r7] = -1352098;
+        iArr[n6.y6] = -8354940;
+        iArr[n6.z6] = -8223094;
+        iArr[n6.A6] = -6710887;
+        iArr[n6.B6] = -8355712;
+        iArr[n6.C6] = -6052957;
+        iArr[n6.D6] = -9079435;
+        iArr[n6.E6] = -3750202;
+        iArr[n6.F6] = -9605774;
+        iArr[n6.G6] = -15065823;
+        iArr[n6.H6] = -5723992;
+        iArr[n6.I6] = -14054705;
+        iArr[n6.J6] = -14054705;
+        iArr[n6.K6] = 862104035;
+        iArr[n6.L6] = -14054705;
+        iArr[n6.k6] = -2368549;
+        iArr[n6.l6] = -14509328;
+        iArr[n6.M6] = -5853773;
+        iArr[n6.N6] = -14509328;
+        iArr[n6.O6] = -8879478;
+        iArr[n6.P6] = -15697468;
+        iArr[n6.Q6] = -1;
+        iArr[n6.R6] = -1;
+        iArr[n6.S6] = 390089299;
+        iArr[n6.T6] = 553797505;
+        iArr[n6.U6] = -688514;
+        iArr[n6.V6] = -14509328;
+        iArr[n6.W6] = -14509328;
+        iArr[n6.X6] = -1;
+        iArr[n6.Y6] = -9211021;
+        iArr[n6.Z6] = -5197648;
+        iArr[n6.i6] = 251658240;
+        iArr[n6.j6] = 486539280;
+        iArr[n6.g7] = -5000269;
+        iArr[n6.h7] = -14509328;
+        iArr[n6.a7] = -921101;
+        iArr[n6.b7] = -16777216;
+        iArr[n6.c7] = -9209733;
+        iArr[n6.d7] = -2500135;
+        iArr[n6.e7] = -657931;
+        iArr[n6.f7] = -8222838;
+        iArr[n6.B7] = -4202506;
+        iArr[n6.C7] = -13920542;
+        iArr[n6.D7] = -4202506;
+        iArr[n6.E7] = -1;
+        iArr[n6.F7] = -5000269;
+        iArr[n6.G7] = -1;
+        iArr[n6.H7] = -3486256;
+        iArr[n6.I7] = -13683656;
+        iArr[n6.l7] = -14509328;
+        iArr[n6.m7] = -3551791;
+        iArr[n6.n7] = -1;
+        iArr[n6.o7] = -7301735;
+        iArr[n6.am] = -657931;
+        iArr[n6.bm] = -2500135;
+        iArr[n6.cm] = -14575287;
+        iArr[n6.J7] = -1;
+        iArr[n6.K7] = -9847303;
+        iArr[n6.L7] = -12541983;
+        iArr[n6.M7] = -4668724;
+        iArr[n6.N7] = -14509328;
+        iArr[n6.O7] = -31650;
+        iArr[n6.V7] = -2862522;
+        iArr[n6.P7] = -83109;
+        iArr[n6.W7] = -622282;
+        iArr[n6.Q7] = -4811527;
+        iArr[n6.X7] = -9674273;
+        iArr[n6.R7] = -6631068;
+        iArr[n6.Y7] = -12142013;
+        iArr[n6.S7] = -10761245;
+        iArr[n6.Z7] = -13264172;
+        iArr[n6.T7] = -10702854;
+        iArr[n6.a8] = -12547377;
+        iArr[n6.U7] = -30036;
+        iArr[n6.b8] = -2534028;
+        iArr[n6.c8] = -6181963;
+        iArr[n6.d8] = -1;
+        iArr[n6.e8] = -657931;
+        iArr[n6.h8] = -15065823;
+        iArr[n6.f8] = 303701281;
+        iArr[n6.g8] = -15065823;
+        iArr[n6.i8] = -3387319;
+        iArr[n6.j8] = -2722014;
+        iArr[n6.k8] = -6988581;
+        iArr[n6.l8] = -12539616;
+        iArr[n6.m8] = -13590854;
+        iArr[n6.n8] = -13202735;
+        iArr[n6.o8] = -3714933;
+        iArr[n6.s8] = -1;
+        iArr[n6.v8] = -15065823;
+        iArr[n6.w8] = -1;
+        iArr[n6.x8] = 268435456;
+        iArr[n6.y8] = -15065823;
+        iArr[n6.A8] = -15065823;
+        iArr[n6.B8] = -8814210;
+        iArr[n6.t8] = 303701281;
+        iArr[n6.u8] = 303701281;
+        iArr[n6.C8] = -15065823;
+        iArr[n6.D8] = -8814210;
+        iArr[n6.E8] = -15065823;
+        iArr[n6.F8] = -15065823;
+        iArr[n6.G8] = -1;
+        iArr[n6.H8] = -657931;
+        iArr[n6.z8] = -1907998;
+        iArr[n6.lb] = -986896;
+        iArr[n6.mb] = -8223094;
+        iArr[n6.nb] = -4144960;
+        iArr[n6.I8] = -14054705;
+        iArr[n6.J8] = -8946561;
+        iArr[n6.K8] = -14054705;
+        iArr[n6.T9] = -10048031;
+        iArr[n6.U9] = -3814964;
+        iArr[n6.L8] = 303701281;
+        iArr[n6.S8] = -1;
+        iArr[n6.gi] = -526345;
+        iArr[n6.hi] = -2039584;
+        iArr[n6.M8] = -1;
+        iArr[n6.N8] = 303701281;
+        iArr[n6.O8] = -15065823;
+        iArr[n6.P8] = -15065823;
+        iArr[n6.Q8] = -15065823;
+        iArr[n6.R8] = -8156010;
+        iArr[n6.T8] = -11810020;
+        iArr[n6.U8] = -14509328;
+        iArr[n6.V8] = -4275257;
+        iArr[n6.W8] = -1;
+        iArr[n6.c9] = -14509328;
+        iArr[n6.d9] = -6313293;
+        iArr[n6.e9] = -1;
+        iArr[n6.f9] = -1;
+        iArr[n6.X8] = -15065823;
+        iArr[n6.Y8] = -15065823;
+        iArr[n6.Z8] = -16734706;
+        iArr[n6.a9] = -15093466;
+        iArr[n6.b9] = -7236972;
+        iArr[n6.g9] = -9078662;
+        iArr[n6.h9] = -7237231;
+        iArr[n6.i9] = -7434095;
+        iArr[n6.j9] = -2274503;
+        iArr[n6.k9] = -14054705;
+        iArr[n6.l9] = -7631473;
+        iArr[n6.m9] = -12434359;
+        iArr[n6.n9] = -10592674;
+        iArr[n6.o9] = -14054705;
+        iArr[n6.p9] = -14054705;
+        iArr[n6.q9] = -8092024;
+        iArr[n6.r9] = -7236715;
+        iArr[n6.s9] = 134217728;
+        iArr[n6.t9] = 251658240;
+        iArr[n6.u9] = -12146122;
+        iArr[n6.v9] = -12146122;
+        iArr[n6.w9] = -9061026;
+        iArr[n6.x9] = -2796974;
+        iArr[n6.y9] = -1;
+        iArr[n6.z9] = -13391642;
+        iArr[n6.A9] = -1;
+        iArr[n6.B9] = -4341308;
+        iArr[n6.C9] = -1;
+        iArr[n6.F9] = -1;
+        iArr[n6.G9] = -12303292;
+        iArr[n6.H9] = -10907718;
+        iArr[n6.I9] = -7827048;
+        iArr[n6.J9] = -1;
+        iArr[n6.K9] = -1;
+        iArr[n6.L9] = -4004353;
+        iArr[n6.O9] = -1;
+        iArr[n6.P9] = -10114592;
+        iArr[n6.Q9] = -11100714;
+        iArr[n6.M9] = -10907718;
+        iArr[n6.R9] = -3749428;
+        iArr[n6.S9] = -14509328;
+        iArr[n6.V9] = -1;
+        iArr[n6.W9] = -14509328;
+        iArr[n6.X9] = 201326592;
+        iArr[n6.Y9] = -13391883;
+        iArr[n6.Z9] = -7169634;
+        iArr[n6.aa] = -13421773;
+        iArr[n6.ba] = -1945520;
+        iArr[n6.ca] = -9472134;
+        iArr[n6.da] = -3355444;
+        iArr[n6.ia] = -1;
+        iArr[n6.ja] = -12214795;
+        iArr[n6.ka] = -1351584;
+        iArr[n6.la] = -868277;
+        iArr[n6.ma] = -2121728;
+        iArr[n6.na] = -10436011;
+        iArr[n6.oa] = -868277;
+        iArr[n6.ea] = -10436011;
+        iArr[n6.fa] = -10436011;
+        iArr[n6.ga] = -1351584;
+        iArr[n6.ha] = -1351584;
+        iArr[n6.pa] = -14054705;
+        iArr[n6.qa] = -16725933;
+        iArr[n6.zb] = -16725933;
+        iArr[n6.gd] = -14540254;
+        iArr[n6.fd] = -8814210;
+        iArr[n6.ra] = -1;
+        iArr[n6.Uc] = -1247235;
+        iArr[n6.ta] = -14862509;
+        iArr[n6.ua] = -1;
+        iArr[n6.va] = 134217728;
+        iArr[n6.wa] = 603979776;
+        iArr[n6.xa] = 335544320;
+        iArr[n6.ya] = 218103808;
+        iArr[n6.za] = -16777216;
+        iArr[n6.Aa] = 603979776;
+        iArr[n6.Ba] = 603979776;
+        iArr[n6.Ca] = -1;
+        iArr[n6.Da] = -1543503873;
+        iArr[n6.Ea] = 218103808;
+        iArr[n6.Fa] = -16777216;
+        iArr[n6.Ga] = -16777216;
+        iArr[n6.Ha] = -16777216;
+        iArr[n6.Ia] = -16777216;
+        iArr[n6.Ja] = -16777216;
+        iArr[n6.Ka] = -16777216;
+        iArr[n6.La] = 251658240;
+        iArr[n6.Ma] = -8354940;
+        iArr[n6.Na] = -15065823;
+        iArr[n6.Oa] = 218103808;
+        iArr[n6.Pa] = -15065823;
+        iArr[n6.Qa] = -15065823;
+        iArr[n6.Ra] = -2136888653;
+        iArr[n6.Sa] = -8354940;
+        iArr[n6.Ta] = -15065823;
+        iArr[n6.Ua] = -15065823;
+        iArr[n6.Va] = -15065823;
+        iArr[n6.Wa] = 1293557025;
+        iArr[n6.Xa] = -15065823;
+        iArr[n6.Ya] = -15065823;
+        iArr[n6.Za] = -15065823;
+        iArr[n6.ab] = -8863118;
+        iArr[n6.bb] = -15065823;
+        iArr[n6.cb] = -15065823;
+        iArr[n6.db] = -1;
+        iArr[n6.eb] = -8354940;
+        iArr[n6.fb] = 437919009;
+        iArr[n6.gb] = 639245601;
+        iArr[n6.hb] = 218103808;
+        iArr[n6.ib] = -15065823;
+        iArr[n6.jb] = -15065823;
+        iArr[n6.kb] = -1;
+        iArr[n6.rb] = -1048610;
+        iArr[n6.Sc] = 335544320;
+        iArr[n6.sb] = -2492475;
+        iArr[n6.tb] = -14781172;
+        iArr[n6.ld] = -1;
+        iArr[n6.md] = -1050370;
+        iArr[n6.Gb] = -1048610;
+        iArr[n6.Hb] = -1967921;
+        iArr[n6.Vc] = -16777216;
+        iArr[n6.Wc] = -16777216;
+        iArr[n6.Xc] = -14255946;
+        iArr[n6.Yc] = -14255946;
+        iArr[n6.Zc] = -1;
+        iArr[n6.ad] = -1;
+        iArr[n6.bd] = -1;
+        iArr[n6.nd] = 1711276032;
+        iArr[n6.Ab] = -10637232;
+        iArr[n6.Bb] = -10637232;
+        iArr[n6.Cb] = -10637232;
+        iArr[n6.Db] = -10637232;
+        iArr[n6.Eb] = -9061026;
+        iArr[n6.Fb] = -9061026;
+        iArr[n6.hd] = -6182221;
+        iArr[n6.id] = -7094838;
+        iArr[n6.jd] = -1;
+        iArr[n6.kd] = -1;
+        iArr[n6.od] = -6182221;
+        iArr[n6.pd] = -7094838;
+        iArr[n6.Ib] = -9522601;
+        iArr[n6.Jb] = -9522601;
+        iArr[n6.qd] = -1;
+        iArr[n6.rd] = -4801083;
+        iArr[n6.sd] = -6766130;
+        iArr[n6.Kb] = -7221634;
+        iArr[n6.Lb] = -7221634;
+        iArr[n6.td] = -1;
+        iArr[n6.Mb] = -11162801;
+        iArr[n6.Nb] = -12019389;
+        iArr[n6.ud] = -14054705;
+        iArr[n6.vd] = -13600331;
+        iArr[n6.wd] = -2411211;
+        iArr[n6.xd] = -1;
+        iArr[n6.yd] = 671781104;
+        iArr[n6.zd] = -1;
+        iArr[n6.Ad] = -1;
+        iArr[n6.Bd] = -14054705;
+        iArr[n6.Ob] = -11162801;
+        iArr[n6.Cd] = -1776928;
+        iArr[n6.Dd] = -1;
+        iArr[n6.Ed] = -1;
+        iArr[n6.Fd] = -13072697;
+        iArr[n6.Pb] = -11162801;
+        iArr[n6.Gd] = -10838983;
+        iArr[n6.Qc] = -10838983;
+        iArr[n6.Hd] = -14054705;
+        iArr[n6.Qb] = -11162801;
+        iArr[n6.Id] = -1;
+        iArr[n6.Ld] = -10903592;
+        iArr[n6.Rb] = -9520791;
+        iArr[n6.Sb] = -12539616;
+        iArr[n6.Md] = -1;
+        iArr[n6.Nd] = -14054705;
+        iArr[n6.Tb] = -11162801;
+        iArr[n6.Od] = -1;
+        iArr[n6.Pd] = -16777216;
+        iArr[n6.Ub] = -16777216;
+        iArr[n6.Qd] = -6182221;
+        iArr[n6.Vb] = -10112933;
+        iArr[n6.Rd] = -7752511;
+        iArr[n6.Wb] = -10112933;
+        iArr[n6.Sd] = -1;
+        iArr[n6.Td] = -9390872;
+        iArr[n6.Xb] = -7812741;
+        iArr[n6.Ud] = -14054705;
+        iArr[n6.Yb] = -11162801;
+        iArr[n6.Vd] = -11625772;
+        iArr[n6.Zb] = -11162801;
+        iArr[n6.Wd] = -13683656;
+        iArr[n6.Xd] = -13683656;
+        iArr[n6.ac] = -13286860;
+        iArr[n6.bc] = -13286860;
+        iArr[n6.Yd] = -1;
+        iArr[n6.Zd] = -1;
+        iArr[n6.hc] = -1048610;
+        iArr[n6.ae] = -1050370;
+        iArr[n6.ic] = -1967921;
+        iArr[n6.be] = -1;
+        iArr[n6.ce] = -4143413;
+        iArr[n6.de] = -7752511;
+        iArr[n6.fc] = -9391780;
+        iArr[n6.gc] = -9391780;
+        iArr[n6.ee] = -6182221;
+        iArr[n6.fe] = -7752511;
+        iArr[n6.jc] = -9391780;
+        iArr[n6.ec] = -9391780;
+        iArr[n6.ge] = -13683656;
+        iArr[n6.he] = -13683656;
+        iArr[n6.cc] = -13286860;
+        iArr[n6.dc] = -13286860;
+        iArr[n6.ie] = -11625772;
+        iArr[n6.kc] = -11162801;
+        iArr[n6.je] = -6182221;
+        iArr[n6.lc] = -10112933;
+        iArr[n6.ke] = -7752511;
+        iArr[n6.mc] = -10112933;
+        iArr[n6.le] = -1774864;
+        iArr[n6.me] = 1071966960;
+        iArr[n6.nc] = -4463700;
+        iArr[n6.oc] = 1069278124;
+        iArr[n6.ne] = -4399384;
+        iArr[n6.pc] = -5644906;
+        iArr[n6.oe] = -14509328;
+        iArr[n6.qc] = -8863118;
+        iArr[n6.pe] = -2169365;
+        iArr[n6.rc] = -4463700;
+        iArr[n6.qe] = -4399384;
+        iArr[n6.sc] = -5644906;
+        iArr[n6.re] = -14509328;
+        iArr[n6.tc] = -8863118;
+        iArr[n6.se] = -1314571;
+        iArr[n6.uc] = -2427453;
+        iArr[n6.te] = -3413258;
+        iArr[n6.vc] = -3806041;
+        iArr[n6.ue] = -14054705;
+        iArr[n6.wc] = -11162801;
+        iArr[n6.ve] = -6182221;
+        iArr[n6.xc] = -10112933;
+        iArr[n6.we] = -7752511;
+        iArr[n6.yc] = -10112933;
+        iArr[n6.xe] = -1314571;
+        iArr[n6.zc] = -2427453;
+        iArr[n6.ye] = -3413258;
+        iArr[n6.Ac] = -3806041;
+        iArr[n6.ze] = -6182221;
+        iArr[n6.Bc] = -10112933;
+        iArr[n6.Ae] = -7752511;
+        iArr[n6.Cc] = -10112933;
+        iArr[n6.Be] = -1;
+        iArr[n6.Ce] = 862104035;
+        iArr[n6.Dc] = 862104035;
+        iArr[n6.De] = 1717742051;
+        iArr[n6.zf] = -986379;
+        iArr[n6.Af] = -1709586;
+        iArr[n6.Bf] = -7036497;
+        iArr[n6.Cf] = 301989888;
+        iArr[n6.Df] = -7038047;
+        iArr[n6.Ef] = -6445909;
+        iArr[n6.Ff] = -7564905;
+        iArr[n6.Gf] = -10589834;
+        iArr[n6.Hf] = -1907225;
+        iArr[n6.If] = -11097104;
+        iArr[n6.Jf] = -7564905;
+        iArr[n6.Kf] = -14540254;
+        iArr[n6.Lf] = -8221804;
+        iArr[n6.Mf] = -14184997;
+        iArr[n6.Nf] = -5130564;
+        iArr[n6.Of] = -7697782;
+        iArr[n6.Pf] = -263961532;
+        iArr[n6.Qf] = 1723646920;
+        iArr[n6.Rf] = 1719700628;
+        iArr[n6.vf] = -6113849;
+        iArr[n6.wf] = -11102772;
+        iArr[n6.xf] = -1;
+        iArr[n6.gf] = -1314571;
+        iArr[n6.hf] = -6113849;
+        iArr[n6.Gc] = -7880840;
+        iArr[n6.jf] = -14509328;
+        iArr[n6.kf] = -1;
+        iArr[n6.Hc] = -8863118;
+        iArr[n6.Ic] = -1048610;
+        iArr[n6.pf] = -9999761;
+        iArr[n6.qf] = -9999761;
+        iArr[n6.rf] = -8421505;
+        iArr[n6.sf] = -14054705;
+        iArr[n6.tf] = -1;
+        iArr[n6.lf] = -14509328;
+        iArr[n6.mf] = -7432805;
+        iArr[n6.nf] = -14054705;
+        iArr[n6.of] = -1513240;
+        iArr[n6.Je] = -1;
+        iArr[n6.Le] = -16777216;
+        iArr[n6.Me] = -8025468;
+        iArr[n6.Ne] = -11230757;
+        iArr[n6.Ke] = -16777216;
+        iArr[n6.Oe] = -7432805;
+        iArr[n6.Xf] = -1;
+        iArr[n6.ag] = -2468275;
+        iArr[n6.bg] = -10637848;
+        iArr[n6.cg] = -14710309;
+        iArr[n6.Yf] = -5120257;
+        iArr[n6.Zf] = -1;
+        iArr[n6.dg] = -12937772;
+        iArr[n6.Pe] = -14509328;
+        iArr[n6.Qe] = -5987164;
+        iArr[n6.Re] = -1;
+        iArr[n6.Se] = -16777216;
+        iArr[n6.eg] = -7432805;
+        iArr[n6.Sf] = -11688214;
+        iArr[n6.gg] = -1;
+        iArr[n6.hg] = -501273800;
+        iArr[n6.ig] = -1;
+        iArr[n6.jg] = -1;
+        iArr[n6.kg] = -14509328;
+        iArr[n6.fg] = -5395027;
+        iArr[n6.Tf] = -1;
+        iArr[n6.Uf] = -14509328;
+        iArr[n6.Vf] = -9211021;
+        iArr[n6.Wf] = -1;
+        iArr[n6.yf] = -11037236;
+        iArr[n6.Te] = -1;
+        iArr[n6.Ue] = -8288378;
+        iArr[n6.Ve] = -12605201;
+        iArr[n6.We] = -14054705;
+        iArr[n6.Xe] = -9011588;
+        iArr[n6.Ye] = -14054705;
+        iArr[n6.Ze] = -14509328;
+        iArr[n6.af] = -10114080;
+        iArr[n6.Ec] = -8863118;
+        iArr[n6.Fc] = -9783964;
+        iArr[n6.bf] = -6113080;
+        iArr[n6.cf] = 1711276032;
+        iArr[n6.df] = 2130706432;
+        iArr[n6.ef] = -1;
+        iArr[n6.ff] = -2500135;
+        iArr[n6.ed] = 553648127;
+        iArr[n6.Jd] = -12215336;
+        iArr[n6.Kd] = -9783200;
+        iArr[n6.li] = -12937771;
+        iArr[n6.ni] = -8288630;
+        iArr[n6.oi] = -1;
+        iArr[n6.pi] = 303701281;
+        iArr[n6.qi] = -14509328;
+        iArr[n6.ri] = -1;
+        iArr[n6.mi] = -14540254;
+        iArr[n6.si] = -14540254;
+        iArr[n6.ti] = -12539616;
+        iArr[n6.ui] = -6988581;
+        iArr[n6.vi] = -7893872;
+        iArr[n6.wi] = -12937771;
+        iArr[n6.xi] = -11557143;
+        iArr[n6.yi] = 251658240;
+        iArr[n6.Ej] = 251658240;
+        iArr[n6.Fj] = -13683656;
+        iArr[n6.Gj] = -7697782;
+        iArr[n6.Hj] = -7697782;
+        iArr[n6.Ij] = -1;
+        iArr[n6.Jj] = -7564650;
+        iArr[n6.Kj] = -1315344;
+        iArr[n6.Lj] = -3810064;
+        iArr[n6.Mj] = -11228437;
+        iArr[n6.Nj] = -13421773;
+        iArr[n6.Oj] = -11753238;
+        iArr[n6.zj] = -1973016;
+        iArr[n6.Aj] = -3551789;
+        iArr[n6.qj] = -1;
+        iArr[n6.rj] = -10637333;
+        iArr[n6.sj] = -1;
+        iArr[n6.tj] = -6908266;
+        iArr[n6.ii] = -12211217;
+        iArr[n6.ji] = -12542501;
+        iArr[n6.ki] = -1;
+        iArr[n6.dj] = -12149258;
+        iArr[n6.ej] = -1;
+        iArr[n6.fj] = -14906664;
+        iArr[n6.gj] = -11550140;
+        iArr[n6.hj] = -1;
+        iArr[n6.ij] = -13194460;
+        iArr[n6.jj] = -13262875;
+        iArr[n6.kj] = -11753238;
+        iArr[n6.lj] = -12959675;
+        iArr[n6.mj] = -12414746;
+        iArr[n6.nj] = -1;
+        iArr[n6.oj] = -855310;
+        iArr[n6.pj] = -13262875;
+        iArr[n6.uj] = -16725933;
+        iArr[n6.vj] = -47032;
+        iArr[n6.Di] = -14509328;
+        iArr[n6.Ei] = -1;
+        iArr[n6.Fi] = -14509328;
+        iArr[n6.Gi] = -11093264;
+        iArr[n6.Hi] = -14513967;
+        iArr[n6.Ii] = -11496493;
+        iArr[n6.Ji] = -1;
+        iArr[n6.Ki] = -11688214;
+        iArr[n6.ob] = -1776412;
+        iArr[n6.pb] = -15065823;
+        iArr[n6.t7] = -15065823;
+        iArr[n6.u7] = -15065823;
+        iArr[n6.v7] = -1;
+        iArr[n6.w7] = -14509328;
+        iArr[n6.x7] = -7763066;
+        iArr[n6.y7] = -12279325;
+        iArr[n6.z7] = -6445135;
+        iArr[n6.A7] = -1;
+        iArr[n6.zi] = -13196562;
+        iArr[n6.Ai] = -986123;
+        iArr[n6.Bi] = -4735293;
+        iArr[n6.Ci] = -1182729;
+        iArr[n6.i7] = -10567099;
+        iArr[n6.k7] = -1;
+        iArr[n6.j7] = -5195326;
+        iArr[n6.Li] = -4801083;
+        iArr[n6.Mi] = 251658240;
+        iArr[n6.Ni] = -14509328;
+        iArr[n6.Oi] = -6182221;
+        iArr[n6.Pi] = -11361317;
+        iArr[n6.Qi] = -16777216;
+        iArr[n6.Ri] = -8617336;
+        iArr[n6.Si] = -14540254;
+        iArr[n6.Ti] = -855310;
+        iArr[n6.Ui] = -1;
+        iArr[n6.Vi] = -11157919;
+        iArr[n6.Wi] = -1;
+        iArr[n6.Xi] = -1971470;
+        iArr[n6.Yi] = -10313520;
+        iArr[n6.Zi] = -15095832;
+        iArr[n6.aj] = -6710887;
+        iArr[n6.bj] = -14043401;
+        iArr[n6.cj] = -1;
+        iArr[n6.uf] = -12348980;
+        iArr[n6.wj] = -366530760;
+        iArr[n6.xj] = -8008961;
+        iArr[n6.yj] = -1;
+        iArr[n6.Mc] = 775919907;
+        iArr[n6.lg] = 1348643299;
+        iArr[n6.mg] = -12476440;
+        iArr[n6.Nc] = -12476440;
+        iArr[n6.Oc] = 506491665;
+        iArr[n6.ng] = 508584819;
+        iArr[n6.og] = -1308622848;
+        iArr[n6.pg] = -1056964608;
+        iArr[n6.qg] = -15033089;
+        iArr[n6.rg] = -1184275;
+        iArr[n6.sg] = -1184275;
+        iArr[n6.tg] = -15065823;
+        iArr[n6.ug] = -14509328;
+        iArr[n6.vg] = -14509328;
+        iArr[n6.wg] = -459521;
+        iArr[n6.xg] = -464151;
+        iArr[n6.yg] = -464151;
+        iArr[n6.zg] = -3387319;
+        iArr[n6.Ag] = -1510172;
+        iArr[n6.Bg] = -1510172;
+        iArr[n6.Cg] = -12539616;
+        iArr[n6.Dg] = -1444870;
+        iArr[n6.Eg] = -1444870;
+        iArr[n6.Fg] = -14054705;
+        iArr[n6.Gg] = -2296629;
+        iArr[n6.Hg] = -2296629;
+        iArr[n6.Ig] = -11293879;
+        iArr[n6.Jg] = -11293879;
+        iArr[n6.Kg] = -11293879;
+        iArr[n6.Lg] = -328455;
+        iArr[n6.Mg] = -1381941;
+        iArr[n6.Ng] = -1381941;
+        iArr[n6.Og] = -3387319;
+        iArr[n6.Pg] = -2296629;
+        iArr[n6.Qg] = -2296629;
+        iArr[n6.Rg] = -12539616;
+        iArr[n6.Sg] = -2296629;
+        iArr[n6.Tg] = -2296629;
+        iArr[n6.Ug] = -11293879;
+        iArr[n6.Pj] = 2133140777;
+        iArr[n6.Qj] = 2133140777;
+        iArr[n6.Rj] = 437792059;
+        iArr[n6.Sj] = 855638016;
+        iArr[n6.Tj] = -1713180935;
+        iArr[n6.Uj] = -658846503;
+        iArr[n6.Vj] = 746495415;
+        iArr[n6.Wj] = -15692829;
+        iArr[n6.Xj] = -2959913;
+        iArr[n6.Yj] = -13467675;
+        iArr[n6.Zj] = -10369198;
+        iArr[n6.ak] = -2075818;
+        iArr[n6.bk] = -1333971;
+        iArr[n6.ck] = -10966803;
+        iArr[n6.dk] = -7352519;
+        iArr[n6.ek] = -881607;
+        iArr[n6.fk] = -8422925;
+        iArr[n6.gk] = -6325784;
+        iArr[n6.hk] = -12529462;
+        iArr[n6.ik] = -1118482;
+        iArr[n6.kk] = -13467675;
+        iArr[n6.lk] = -10369198;
+        iArr[n6.nk] = -2075818;
+        iArr[n6.pk] = -1333971;
+        iArr[n6.jk] = -10966803;
+        iArr[n6.mk] = -7352519;
+        iArr[n6.ok] = -881607;
+        iArr[n6.qk] = -6325784;
+        iArr[n6.rk] = -12529462;
+        iArr[n6.nh] = -9718023;
+        iArr[n6.wh] = -8919716;
+        iArr[n6.xh] = -8528726;
+        iArr[n6.yh] = -11089922;
+        iArr[n6.Jh] = -1;
+        iArr[n6.Hh] = -8024684;
+        iArr[n6.Ih] = -13616313;
+        iArr[n6.mh] = -35467;
+        iArr[n6.Gh] = -13023660;
+        iArr[n6.oh] = 2100052301;
+        iArr[n6.ph] = 2099422443;
+        iArr[n6.qh] = -2110540545;
+        iArr[n6.rh] = 2099796282;
+        iArr[n6.sh] = 2098771793;
+        iArr[n6.th] = -2111520954;
+        iArr[n6.uh] = 2113363036;
+        iArr[n6.vh] = -2100212396;
+        iArr[n6.Fh] = -14107905;
+        iArr[n6.Bh] = -14933463;
+        iArr[n6.Ch] = -14010285;
+        iArr[n6.Dh] = -13878715;
+        iArr[n6.Eh] = -2106088964;
+        iArr[n6.zh] = -11297032;
+        iArr[n6.Ah] = -10038021;
+        iArr[n6.ah] = -15130842;
+        iArr[n6.bh] = -14538189;
+        iArr[n6.ch] = -8024684;
+        iArr[n6.dh] = -8485236;
+        iArr[n6.Xg] = -15789289;
+        iArr[n6.Yg] = -1;
+        iArr[n6.Zg] = 515562495;
+        iArr[n6.jh] = -36752;
+        iArr[n6.ih] = -9471616;
+        iArr[n6.fh] = -8813686;
+        iArr[n6.eh] = -1;
+        iArr[n6.kh] = -14933463;
+        iArr[n6.lh] = -14933463;
+        iArr[n6.gh] = -11683585;
+        iArr[n6.hh] = -8917379;
+        iArr[n6.Vg] = 251658239;
+        iArr[n6.Wg] = -14538189;
+        iArr[n6.Mh] = -13906177;
+        iArr[n6.Nh] = -16156957;
+        iArr[n6.Kh] = -15551198;
+        iArr[n6.Lh] = -16722239;
+        iArr[n6.Qh] = -10434565;
+        iArr[n6.Rh] = -11427847;
+        iArr[n6.Oh] = -11350435;
+        iArr[n6.Ph] = -16731712;
+        iArr[n6.Sh] = -8021590;
+        iArr[n6.Th] = -14455406;
+        iArr[n6.Uh] = -13873813;
+        iArr[n6.Vh] = -15955316;
+        iArr[n6.Wh] = -14136203;
+        iArr[n6.Zh] = -11033346;
+        iArr[n6.ai] = -1026983;
+        iArr[n6.bi] = -9015575;
+        iArr[n6.Xh] = -9998178;
+        iArr[n6.Yh] = -13676424;
+        iArr[n6.ci] = 2138612735;
+        iArr[n6.di] = 863544319;
+        iArr[n6.ei] = -2368549;
+        iArr[n6.fi] = -14509328;
+        iArr[n6.Jc] = -8863118;
+        iArr[n6.tk] = -14509328;
+        iArr[n6.vk] = -14054705;
+        iArr[n6.uk] = -11162801;
+        iArr[n6.wk] = -1;
+        iArr[n6.xk] = -1;
+        iArr[n6.yk] = -1;
+        iArr[n6.zk] = -16777216;
+        iArr[n6.Bk] = -11875005;
+        iArr[n6.Ck] = -11164161;
+        iArr[n6.Dk] = -5806081;
+        iArr[n6.Ek] = -2401123;
+        iArr[n6.Fk] = -816858;
+        iArr[n6.Gk] = -11164161;
+        iArr[n6.Hk] = -5806081;
+        iArr[n6.Ik] = -2401123;
+        iArr[n6.Jk] = -816858;
+        iArr[n6.Kk] = -1;
+        iArr[n6.Mk] = -1;
+        iArr[n6.Nk] = -1839878;
+        iArr[n6.Ok] = -15436801;
+        iArr[n6.Pk] = -4167942;
+        iArr[n6.Lk] = i0.a.o(-1, 90);
+        iArr[n6.Qk] = i0.a.o(-1, 90);
+        iArr[n6.Rk] = -10773017;
+        iArr[n6.Sk] = -5535779;
+        iArr[n6.Tk] = -1600322;
+        iArr[n6.Uk] = -11613090;
+        iArr[n6.Vk] = -7631473;
+        iArr[n6.Wk] = -79802;
+        iArr[n6.Xk] = -1273334;
+        iArr[n6.Yk] = -13852932;
+        iArr[n6.Zk] = -13647485;
+        iArr[n6.al] = -13852932;
+        iArr[n6.bl] = -13647485;
+        iArr[n6.cl] = -8270291;
+        iArr[n6.dl] = -15155914;
+        iArr[n6.el] = -38053;
+        iArr[n6.fl] = -374668;
+        iArr[n6.gl] = -9467746;
+        iArr[n6.hl] = 305952003;
+        iArr[n6.il] = -526345;
+        iArr[n6.jl] = -2166580;
+        iArr[n6.kl] = -2039584;
+        iArr[n6.ll] = -3548234;
+        iArr[n6.ml] = -1710619;
+        iArr[n6.nl] = 862894441;
+        iArr[n6.ol] = -920071;
+        iArr[n6.ql] = -1972501;
+        iArr[n6.rl] = -3813931;
+        iArr[n6.sl] = -1774628;
+        iArr[n6.tl] = -3353150;
+        iArr[n6.ul] = -6380376;
+        iArr[n6.vl] = -8084613;
+        iArr[n6.wl] = -2565928;
+        iArr[n6.xl] = -3417915;
+        iArr[n6.zl] = -2075818;
+        iArr[n6.Al] = -11682817;
+        iArr[n6.Bl] = -8422925;
+        iArr[n6.Cl] = -13123293;
+        iArr[n6.Dl] = -13467675;
+        iArr[n6.El] = Integer.MIN_VALUE;
+        iArr[n6.Fl] = -881607;
+        iArr[n6.Gl] = -1;
+        iArr[n6.Hl] = -986896;
+        iArr[n6.Il] = -14509328;
+        iArr[n6.Jl] = -986896;
+        iArr[n6.Ak] = 1089514271;
+        iArr[n6.Nl] = -1726275033;
+        iArr[n6.Ol] = -1726275033;
+        iArr[n6.Pl] = -1;
+        iArr[n6.Ql] = -1;
+        iArr[n6.Rl] = -15035930;
+        iArr[n6.Sl] = -15892529;
+        iArr[n6.Tl] = -15065823;
+        iArr[n6.Vl] = -2406842;
+        iArr[n6.Ul] = -14509328;
+        iArr[n6.Wl] = -12537547;
+        iArr[n6.Xl] = -15299621;
+        iArr[n6.Yl] = -14509328;
+        iArr[n6.Zl] = -14054705;
+        return iArr;
     }
 
-    public static void C(View view, int i7, int i10, int i11) {
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        marginLayoutParams.leftMargin = i7;
-        marginLayoutParams.topMargin = i10;
-        marginLayoutParams.rightMargin = i11;
-    }
-
-    public static /* synthetic */ void c(w4 w4Var, int i7, KeyEvent keyEvent) {
-        if (i7 != 3) {
-            if (keyEvent == null) {
-                return;
-            }
-            if ((keyEvent.getAction() != 1 || keyEvent.getKeyCode() != 84) && (keyEvent.getAction() != 0 || keyEvent.getKeyCode() != 66)) {
-                return;
-            }
+    public static String c(int i7) {
+        if (h == null) {
+            h = a();
         }
-        org.telegram.messenger.g0.v1(w4Var.s);
-        m0 searchListener = w4Var.getSearchListener();
-        if (searchListener != null) {
-            searchListener.k(w4Var.s);
+        return (String) h.get(i7);
+    }
+
+    public static double[] d(double[] dArr, double[] dArr2) {
+        double d2 = dArr[0];
+        double d10 = dArr2[0];
+        double d11 = dArr[1];
+        double d12 = dArr2[1];
+        double d13 = dArr[2];
+        double d14 = dArr2[2];
+        return new double[]{(d13 * d14) + (d11 * d12) + (d2 * d10), (dArr[5] * d14) + (dArr[4] * d12) + (dArr[3] * d10), (dArr[8] * d14) + (dArr[7] * d12) + (dArr[6] * d10)};
+    }
+
+    public static double[] e(int i7) {
+        return new double[]{Color.red(i7) / 255.0d, Color.green(i7) / 255.0d, Color.blue(i7) / 255.0d};
+    }
+
+    public static double[] f(double[] dArr) {
+        double[] d2 = d(a, d(e, dArr));
+        for (int i7 = 0; i7 < 3; i7++) {
+            d2[i7] = Math.cbrt(d2[i7]);
         }
+        double[] d10 = d(c, d2);
+        double d11 = d10[0];
+        double d12 = d10[1];
+        double d13 = d10[2];
+        return new double[]{d11, Math.sqrt(Math.pow(d13, 2.0d) + Math.pow(d12, 2.0d)), (Math.abs(d12) >= 2.0E-4d || Math.abs(d13) >= 2.0E-4d) ? ((((Math.atan2(d13, d12) * 180.0d) / 3.141592653589793d) % 360.0d) + 360.0d) % 360.0d : Double.NaN};
     }
 
-    private int getRowTop() {
-        if (this.a0) {
-            return org.telegram.messenger.g0.m;
-        }
-        return 0;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public m0 getSearchListener() {
-        d5 d5Var = this.y;
-        if (d5Var != null) {
-            return d5Var.getSearchListener();
-        }
-        return null;
-    }
-
-    private float getSearchPillLeft() {
-        return org.telegram.messenger.g0.L(((Drawable) this.b.c) != null ? 58.0f : 6.0f);
-    }
-
-    public final void A(int i7, boolean z10) {
-        String E = hd.E(i7, ' ');
-        o();
-        this.f.c(E, z10 && w() && this.H, true);
-    }
-
-    public final void D(CharSequence charSequence, boolean z10, long j3, Interpolator interpolator) {
-        if (!w()) {
-            setTitle(charSequence);
-            return;
-        }
-        v4 v4Var = this.c;
-        v4Var.b(0);
-        v4Var.b(1);
-        j5[] j5VarArr = (j5[]) v4Var.c;
-        j5 j5Var = j5VarArr[0];
-        j5 j5Var2 = j5VarArr[1];
-        j5VarArr[0] = j5Var2;
-        j5VarArr[1] = j5Var;
-        j5Var2.animate().cancel();
-        j5Var2.k(charSequence);
-        j5Var2.setVisibility(0);
-        j5Var2.setAlpha(0.0f);
-        int L = org.telegram.messenger.g0.L(16.0f);
-        if (!z10) {
-            L = -L;
-        }
-        j5Var2.setTranslationY(L);
-        j5Var2.animate().alpha(1.0f).translationY(0.0f).setDuration(j3).setInterpolator(interpolator).start();
-        j5Var.animate().cancel();
-        j5Var.animate().alpha(0.0f).translationY(z10 ? -org.telegram.messenger.g0.L(16.0f) : org.telegram.messenger.g0.L(16.0f)).setDuration(j3).setInterpolator(interpolator).withEndAction(new u4(j5Var, 1)).start();
-        v4Var.requestLayout();
-    }
-
-    public final void F() {
-        if (this.e == null || this.H) {
-            return;
-        }
-        this.H = true;
-        c5 c5Var = this.d;
-        if (c5Var != null) {
-            c5Var.g();
-        }
-        ah.i iVar = this.s;
-        if (iVar != null && this.G) {
-            org.telegram.messenger.g0.v1(iVar);
-        }
-        this.U.a(true, w());
-        j();
-        this.b.b(true, w());
-        ns.e().k(ns.r4, new Object[0]);
-    }
-
-    @Override // te.b
-    public void G(int i7, float f10, float f11, te.c cVar) {
-        if (i7 != 2) {
-            j();
-            return;
-        }
-        ImageView imageView = this.w;
-        if (imageView != null) {
-            imageView.setAlpha(f10);
-            float f12 = (f10 * 0.5f) + 0.5f;
-            this.w.setScaleX(f12);
-            this.w.setScaleY(f12);
-            this.w.setVisibility(f10 > 0.0f ? 0 : 4);
-        }
-    }
-
-    public final void H() {
-        ah.i iVar = this.s;
-        int i7 = j6.G6;
-        e6 e6Var = this.a;
-        iVar.setTextColor(j6.w0(i7, e6Var));
-        this.x.setTextColor(j6.w0(i7, e6Var));
-        this.s.setHintTextColor(j6.w0(j6.H6, e6Var));
-        this.s.setCursorColor(j6.w0(i7, e6Var));
-        this.s.setHighlightColor(j6.w0(j6.lg, e6Var));
-        this.s.setHandlesColor(j6.w0(j6.mg, e6Var));
-        this.w.setColorFilter(new PorterDuffColorFilter(j6.w0(j6.m6, e6Var), PorterDuff.Mode.SRC_IN));
-        this.w.setBackground(j6.h0(this.i0, 1, -1));
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final /* synthetic */ boolean a() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final boolean b(q0 q0Var, RectF rectF) {
-        if (q0Var.getParent() == this.d && getSearchFactor() == 0.0f && getActionModeFactor() == 0.0f) {
-            n(rectF);
-            return true;
-        }
-        float L = org.telegram.messenger.g0.L(23.0f);
-        View view = (View) q0Var.getParent();
-        float width = (q0Var.getWidth() / 2.0f) + q0Var.getX() + (view != null ? view.getX() : 0.0f);
-        float currentActionBarHeight = (k.getCurrentActionBarHeight() / 2.0f) + getRowTop();
-        rectF.set(width - L, currentActionBarHeight - L, width + L, currentActionBarHeight + L);
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final /* synthetic */ boolean d() {
-        return true;
-    }
-
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.n4) {
-            updateColors();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        z4 z4Var;
-        this.c0 = this.d0;
-        int L = org.telegram.messenger.g0.L(6.0f);
-        if (this.I != null) {
-            ub ubVar = this.b;
-            if (ubVar.getVisibility() == 0 && ubVar.getAlpha() > 0.0f) {
-                float width = (ubVar.getWidth() / 2.0f) + ubVar.getX();
-                float height = (ubVar.getHeight() / 2.0f) + ubVar.getY();
-                float scaleX = ubVar.getScaleX() * (ubVar.getWidth() / 2.0f);
-                float scaleY = ubVar.getScaleY() * (ubVar.getHeight() / 2.0f);
-                this.I.setBounds(((int) (width - scaleX)) - L, ((int) (height - scaleY)) - L, ((int) (width + scaleX)) + L, ((int) (height + scaleY)) + L);
-                this.I.setAlpha((int) (ubVar.getAlpha() * 255.0f));
-                this.I.draw(canvas);
-            }
-        }
-        if (this.K != null && (z4Var = this.n) != null && z4Var.c == y4.a && z4Var.getVisibility() == 0 && this.n.getAlpha() > 0.0f) {
-            float width2 = (this.n.getWidth() / 2.0f) + this.n.getX();
-            float height2 = (this.n.getHeight() / 2.0f) + this.n.getY();
-            float scaleX2 = this.n.getScaleX() * (this.n.getWidth() / 2.0f);
-            float scaleY2 = this.n.getScaleY() * (this.n.getHeight() / 2.0f);
-            this.K.setBounds(((int) (width2 - scaleX2)) - L, ((int) (height2 - scaleY2)) - L, ((int) (width2 + scaleX2)) + L, ((int) (height2 + scaleY2)) + L);
-            this.K.setAlpha((int) (this.n.getAlpha() * 255.0f));
-            this.K.draw(canvas);
-        }
-        if (this.J != null) {
-            RectF rectF = this.q0;
-            float n10 = n(rectF);
-            q0 q0Var = this.S;
-            boolean z10 = q0Var != null && q0Var.getParent() == this.d;
-            if (n10 > 0.0f && rectF.width() > 0.0f && !z10) {
-                float height3 = rectF.height() / 2.0f;
-                if (Math.abs(height3 - this.L) > 0.5f) {
-                    this.L = height3;
-                    this.J.r(height3);
-                }
-                this.J.setBounds(((int) rectF.left) - L, ((int) rectF.top) - L, ((int) rectF.right) + L, ((int) rectF.bottom) + L);
-                this.J.setAlpha((int) (n10 * 255.0f));
-                this.J.draw(canvas);
-            }
-        }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j3) {
-        q0 q0Var;
-        if (view == this.d && (q0Var = this.S) != null && q0Var.getParent() == this.d) {
-            return false;
-        }
-        if (view != this.r || getSearchFactor() >= 1.0f) {
-            return super.drawChild(canvas, view, j3);
-        }
-        RectF rectF = this.q0;
-        n(rectF);
-        canvas.save();
-        canvas.clipRect(rectF);
-        boolean drawChild = super.drawChild(canvas, view, j3);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final boolean e() {
-        return this.n0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final /* synthetic */ boolean f() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final fh.g g(g5 g5Var) {
-        dh.c cVar = this.o0;
-        if (cVar == null) {
-            cVar = this.M;
-        }
-        if (cVar == null) {
-            return null;
-        }
-        fh.g c10 = cVar.c(g5Var, null, false);
-        c10.p(this.N);
-        i20.r(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
-        return c10;
-    }
-
-    public j getActionBarMenuOnItemClick() {
-        return this.W;
-    }
-
-    public c5 getActionMode() {
-        return this.e;
-    }
-
-    public float getActionModeFactor() {
-        return this.U.e;
-    }
-
-    public org.telegram.ui.Components.h6 getActionModeTitle() {
-        o();
-        return this.f;
-    }
-
-    public View getBackButton() {
-        return this.b;
-    }
-
-    public Drawable getBackButtonDrawable() {
-        return (Drawable) this.b.c;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public int getButtonsGlassBackgroundColor() {
-        gh.a aVar = this.O;
-        if (aVar == null) {
-            aVar = this.N;
-        }
-        if (aVar != null) {
-            return aVar.A2();
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public gh.a getButtonsGlassColorProvider() {
-        gh.a aVar = this.O;
-        return aVar != null ? aVar : this.N;
-    }
-
-    public z4 getDoneButton() {
-        return this.n;
-    }
-
-    public int getExtraHeight() {
-        return this.b0;
-    }
-
-    public c5 getMenu() {
-        return this.d;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public /* bridge */ /* synthetic */ int getMenuDimAlpha() {
-        return -1;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public /* bridge */ /* synthetic */ int getMenuExtraBelow() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public gh.a getMenuGlassColorProvider() {
-        return this.N;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public /* bridge */ /* synthetic */ int getMenuMaxHeight() {
-        return 0;
-    }
-
-    public g5 getMenuOverlay() {
-        r10 r10Var = this.Q;
-        if (r10Var != null) {
-            return (g5) r10Var.run();
-        }
-        return null;
-    }
-
-    public float getMenuPillLeft() {
-        RectF rectF = this.q0;
-        n(rectF);
-        return rectF.left;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public e6 getMenuResourcesProvider() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public /* bridge */ /* synthetic */ int getMenuRise() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public View getMenuView() {
-        return this.d;
-    }
-
-    public boolean getOccupyStatusBar() {
-        return this.a0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public g5 getOpenMenuOverlay() {
-        return this.R;
-    }
-
-    public float getSearchFactor() {
-        return this.T.e;
-    }
-
-    public EditTextBoldCursor getSearchField() {
-        s();
-        return this.s;
-    }
-
-    public String getSubtitle() {
-        CharSequence charSequence = (CharSequence) this.c.f;
-        if (charSequence != null) {
-            return charSequence.toString();
-        }
-        return null;
-    }
-
-    public j5 getSubtitleTextView() {
-        return (j5) this.c.d;
-    }
-
-    public String getTitle() {
-        j5 j5Var = ((j5[]) this.c.c)[0];
-        CharSequence text = j5Var != null ? j5Var.getText() : null;
-        if (text != null) {
-            return text.toString();
-        }
-        return null;
-    }
-
-    public Paint.FontMetricsInt getTitleFontMetricsInt() {
-        v4 v4Var = this.c;
-        v4Var.b(0);
-        return ((j5[]) v4Var.c)[0].getTextPaint().getFontMetricsInt();
-    }
-
-    public j5 getTitleTextView() {
-        return ((j5[]) this.c.c)[0];
-    }
-
-    public j5 getTitleTextView2() {
-        return ((j5[]) this.c.c)[1];
-    }
-
-    public float getTitlesAlpha() {
-        return this.t0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public final void h(g5 g5Var, q0 q0Var) {
-        this.R = g5Var;
-        this.S = q0Var;
-        invalidate();
-    }
-
-    public final void j() {
-        float searchFactor = getSearchFactor();
-        float actionModeFactor = getActionModeFactor();
-        float f10 = 1.0f - actionModeFactor;
-        float f11 = searchFactor * f10;
-        float f12 = (1.0f - searchFactor) * f10;
-        float f13 = this.t0 * f12;
-        float T1 = org.telegram.messenger.g0.T1(1.0f, 0.94f, Math.max(searchFactor, actionModeFactor));
-        v4 v4Var = this.c;
-        B(v4Var, f13);
-        v4Var.setScaleX(T1);
-        v4Var.setScaleY(T1);
-        z4 z4Var = this.n;
-        if (z4Var != null) {
-            float visibleFactor = z4Var.getVisibleFactor() * f12;
-            B(this.n, visibleFactor);
-            float T12 = this.n.c == y4.a ? org.telegram.messenger.g0.T1(0.6f, 1.0f, visibleFactor) : org.telegram.messenger.g0.T1(0.8f, 1.0f, f12);
-            this.n.setScaleX(T12);
-            this.n.setScaleY(T12);
-        }
-        c5 c5Var = this.d;
-        if (c5Var != null) {
-            c5Var.setTranslationX(-t(false));
-            B(this.d, f12);
-            float T13 = org.telegram.messenger.g0.T1(0.7f, 1.0f, f12);
-            this.d.setPivotX(r11.getWidth() - org.telegram.messenger.g0.L(19.0f));
-            this.d.setPivotY(r11.getHeight() / 2.0f);
-            this.d.setScaleX(T13);
-            this.d.setScaleY(T13);
-        }
-        int childCount = getChildCount();
-        for (int i7 = 0; i7 < childCount; i7++) {
-            View childAt = getChildAt(i7);
-            if (!x(childAt) && childAt.getVisibility() != 8) {
-                B(childAt, f12);
-            }
-        }
-        c5 c5Var2 = this.e;
-        if (c5Var2 != null) {
-            B(c5Var2, actionModeFactor);
-            float T14 = org.telegram.messenger.g0.T1(0.7f, 1.0f, actionModeFactor);
-            this.e.setPivotX(r5.getWidth() - org.telegram.messenger.g0.L(19.0f));
-            this.e.setPivotY(r5.getHeight() / 2.0f);
-            this.e.setScaleX(T14);
-            this.e.setScaleY(T14);
-        }
-        org.telegram.ui.Components.h6 h6Var = this.f;
-        if (h6Var != null) {
-            B(h6Var, actionModeFactor);
-            this.f.setTranslationX((-org.telegram.messenger.g0.L(16.0f)) * f10);
-        }
-        org.telegram.ui.Components.h6 h6Var2 = this.h;
-        if (h6Var2 != null) {
-            B(h6Var2, actionModeFactor);
-            this.h.setTranslationX((-org.telegram.messenger.g0.L(16.0f)) * f10);
-        }
-        FrameLayout frameLayout = this.r;
-        if (frameLayout != null) {
-            B(frameLayout, f11);
-            RectF rectF = this.q0;
-            n(rectF);
-            this.r.setTranslationX(Math.max(0.0f, rectF.left - getSearchPillLeft()));
-        }
-        ub ubVar = this.b;
-        if (((Drawable) ubVar.c) != null) {
-            ubVar.setVisibility(0);
-            ubVar.setAlpha(1.0f);
-            ubVar.setScaleX(1.0f);
-            ubVar.setScaleY(1.0f);
-        } else {
-            ubVar.setVisibility(actionModeFactor <= 0.0f ? 8 : 0);
-            ubVar.setAlpha(actionModeFactor);
-            ubVar.setScaleX(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
-            ubVar.setScaleY(org.telegram.messenger.g0.T1(0.6f, 1.0f, actionModeFactor));
-        }
-        ubVar.invalidate();
-        invalidate();
-    }
-
-    public final void k() {
-        TextView textView;
-        if (this.s == null) {
-            return;
-        }
-        m0 searchListener = getSearchListener();
-        boolean z10 = this.s.length() > 0 || ((textView = this.x) != null && textView.getVisibility() == 0 && (searchListener == null || searchListener.m())) || (searchListener != null && searchListener.d());
-        this.V.a(z10, w() && this.G);
-        this.w.setEnabled(z10);
-    }
-
-    public final void l() {
-        m0 searchListener = getSearchListener();
-        if (searchListener == null || searchListener.a()) {
-            this.x.setVisibility(8);
-            k();
-            if (searchListener != null) {
-                searchListener.f();
-            }
-        }
-    }
-
-    public final void m(boolean z10) {
-        if (this.G) {
-            m0 searchListener = getSearchListener();
-            if (searchListener == null || searchListener.b()) {
-                this.G = false;
-                this.s.clearFocus();
-                if (z10) {
-                    org.telegram.messenger.g0.v1(this.s);
-                }
-                this.T.a(false, w());
-                j();
-                if (searchListener != null) {
-                    searchListener.h();
-                }
-            }
-        }
-    }
-
-    public final float n(RectF rectF) {
-        float f10;
-        float f11;
-        float f12;
-        int L = org.telegram.messenger.g0.L(6.0f);
-        float L2 = org.telegram.messenger.g0.L(23.0f);
-        float currentActionBarHeight = (k.getCurrentActionBarHeight() / 2.0f) + getRowTop();
-        float searchFactor = getSearchFactor();
-        float actionModeFactor = getActionModeFactor();
-        c5 c5Var = this.d;
-        float pillWidth = (c5Var == null || c5Var.getVisibility() == 8) ? 0.0f : this.d.getPillWidth();
-        c5 c5Var2 = this.e;
-        float pillWidth2 = c5Var2 != null ? c5Var2.getPillWidth() : 0.0f;
-        if (pillWidth <= 0.0f) {
-            f10 = actionModeFactor;
-            pillWidth = pillWidth2;
-        } else if (pillWidth2 <= 0.0f) {
-            f10 = 1.0f - actionModeFactor;
-        } else {
-            pillWidth = org.telegram.messenger.g0.T1(pillWidth, pillWidth2, actionModeFactor);
-            f10 = 1.0f;
-        }
-        float f13 = (1.0f - actionModeFactor) * searchFactor;
-        float f14 = L2 * 2.0f;
-        float f15 = pillWidth / f14;
-        float T1 = org.telegram.messenger.g0.T1(0.8f, 1.0f, f10) * Math.min(1.0f, f15);
-        float width = (getWidth() - L) - t(false);
-        float max = width - Math.max(pillWidth, f14);
-        float f16 = currentActionBarHeight - L2;
-        float f17 = currentActionBarHeight + L2;
-        if (T1 < 1.0f) {
-            float f18 = (max + width) / 2.0f;
-            float t6 = com.google.android.gms.internal.vision.e2.t(1.0f, T1, L2, (width - max) / 2.0f);
-            float f19 = f18 - t6;
-            width = f18 + t6;
-            float f20 = L2 * T1;
-            float f21 = currentActionBarHeight - f20;
-            f12 = currentActionBarHeight + f20;
-            f11 = f21;
-            max = f19;
-        } else {
-            f11 = f16;
-            f12 = f17;
-        }
-        rectF.set(org.telegram.messenger.g0.T1(max, getSearchPillLeft(), f13), org.telegram.messenger.g0.T1(f11, f16, f13), org.telegram.messenger.g0.T1(width, getWidth() - L, f13), org.telegram.messenger.g0.T1(f12, f17, f13));
-        return org.telegram.messenger.g0.T1(Math.min(1.0f, f15) * f10, 1.0f, f13);
-    }
-
-    public final c5 o() {
-        if (this.e == null) {
-            c5 c5Var = new c5(getContext(), this, true);
-            this.e = c5Var;
-            View view = this.b;
-            addView(c5Var, indexOfChild(view), ja.e(-2, -2, 53));
-            org.telegram.ui.Components.h6 h6Var = new org.telegram.ui.Components.h6(getContext(), true, true, true);
-            this.f = h6Var;
-            h6Var.setTextSize(org.telegram.messenger.g0.L(18.0f));
-            this.f.setTypeface(org.telegram.messenger.g0.o());
-            this.f.setTextColor(this.h0);
-            this.f.setGravity(19);
-            this.f.setEllipsizeByGradient(true);
-            this.f.b(0.6f, 320L, er.h);
-            addView(this.f, indexOfChild(view), ja.e(-1, -2, 51));
-            j();
-        }
-        return this.e;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.d0 = true;
-        ns.e().c(this, ns.n4);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.d0 = false;
-        this.c0 = false;
-        ns.e().n(this, ns.n4);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        int i13;
-        int i14;
-        int i15;
-        super.onLayout(z10, i7, i10, i11, i12);
-        int rowTop = getRowTop();
-        int currentActionBarHeight = k.getCurrentActionBarHeight();
-        int i16 = i11 - i7;
-        int childCount = getChildCount();
-        for (int i17 = 0; i17 < childCount; i17++) {
-            View childAt = getChildAt(i17);
-            if (!x(childAt) && childAt.getVisibility() != 8) {
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
-                int measuredWidth = childAt.getMeasuredWidth();
-                int measuredHeight = childAt.getMeasuredHeight();
-                int absoluteGravity = Gravity.getAbsoluteGravity(layoutParams.gravity, getLayoutDirection()) & 7;
-                if (absoluteGravity == 5) {
-                    i14 = i16 - measuredWidth;
-                    i15 = layoutParams.rightMargin;
-                } else if (absoluteGravity == 1) {
-                    i14 = ((i16 - measuredWidth) / 2) + layoutParams.leftMargin;
-                    i15 = layoutParams.rightMargin;
-                } else {
-                    i13 = layoutParams.leftMargin;
-                    int e10 = (i5.c.e(currentActionBarHeight, measuredHeight, 2, rowTop) + layoutParams.topMargin) - layoutParams.bottomMargin;
-                    childAt.layout(i13, e10, measuredWidth + i13, measuredHeight + e10);
-                }
-                i13 = i14 - i15;
-                int e102 = (i5.c.e(currentActionBarHeight, measuredHeight, 2, rowTop) + layoutParams.topMargin) - layoutParams.bottomMargin;
-                childAt.layout(i13, e102, measuredWidth + i13, measuredHeight + e102);
-            }
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        int rowTop = getRowTop();
-        int currentActionBarHeight = k.getCurrentActionBarHeight();
-        int i11 = rowTop + currentActionBarHeight + this.b0;
-        ub ubVar = this.b;
-        boolean z10 = ((Drawable) ubVar.c) != null;
-        int L = ((currentActionBarHeight - org.telegram.messenger.g0.L(46.0f)) / 2) + rowTop;
-        C(ubVar, org.telegram.messenger.g0.L(6.0f), L, 0);
-        c5 c5Var = this.d;
-        float targetPillWidth = (c5Var == null || c5Var.getVisibility() == 8) ? 0.0f : this.d.getTargetPillWidth();
-        float t6 = t(true);
-        int max = Math.max(Math.max(z10 ? org.telegram.messenger.g0.L(64.0f) : org.telegram.messenger.g0.L(18.0f), (targetPillWidth > 0.0f || t6 > 0.0f) ? org.telegram.messenger.g0.L(18.0f) + ((int) (targetPillWidth + t6)) : 0), this.r0);
-        v4 v4Var = this.c;
-        if (v4Var.b != max) {
-            v4Var.b = max;
-            v4Var.requestLayout();
-        }
-        C(v4Var, 0, rowTop, 0);
-        v4Var.getLayoutParams().height = currentActionBarHeight;
-        c5 c5Var2 = this.d;
-        if (c5Var2 != null) {
-            C(c5Var2, 0, rowTop, org.telegram.messenger.g0.L(10.0f));
-            this.d.getLayoutParams().height = currentActionBarHeight;
-        }
-        c5 c5Var3 = this.e;
-        if (c5Var3 != null) {
-            C(c5Var3, 0, rowTop, org.telegram.messenger.g0.L(10.0f));
-            this.e.getLayoutParams().height = currentActionBarHeight;
-        }
-        if (this.f != null) {
-            c5 c5Var4 = this.e;
-            int L2 = org.telegram.messenger.g0.L(18.0f) + ((int) (c5Var4 != null ? c5Var4.getTargetPillWidth() : 0.0f));
-            org.telegram.ui.Components.h6 h6Var = this.h;
-            if (h6Var == null || h6Var.getTag() == null) {
-                C(this.f, org.telegram.messenger.g0.L(66.0f), rowTop, L2);
-                this.f.getLayoutParams().height = currentActionBarHeight;
+    public static double[] g(double[] dArr) {
+        double pow;
+        double[] dArr2 = new double[3];
+        for (int i7 = 0; i7 < dArr.length; i7++) {
+            if (Math.abs(dArr[i7]) <= 0.04045d) {
+                pow = dArr[i7] / 12.92d;
             } else {
-                int i12 = (currentActionBarHeight / 2) + rowTop;
-                C(this.f, org.telegram.messenger.g0.L(66.0f), i12 - org.telegram.messenger.g0.L(22.0f), L2);
-                this.f.getLayoutParams().height = org.telegram.messenger.g0.L(22.0f);
-                C(this.h, org.telegram.messenger.g0.L(66.0f), org.telegram.messenger.g0.L(1.0f) + i12, L2);
-                this.h.getLayoutParams().height = org.telegram.messenger.g0.L(18.0f);
+                double d2 = dArr[i7];
+                pow = Math.pow((Math.abs(d2) + 0.055d) / 1.055d, 2.4d) * (d2 < 0.0d ? -1 : 1);
             }
+            dArr2[i7] = pow;
         }
-        FrameLayout frameLayout = this.r;
-        if (frameLayout != null) {
-            C(frameLayout, (int) getSearchPillLeft(), L, org.telegram.messenger.g0.L(6.0f));
-        }
-        z4 z4Var = this.n;
-        if (z4Var != null) {
-            C(z4Var, 0, L, org.telegram.messenger.g0.L(6.0f));
-        }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30));
+        return dArr2;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        super.onTouchEvent(motionEvent);
-        return !this.s0;
-    }
-
-    public final void p() {
-        dh.c cVar = this.P;
-        if (cVar == null) {
-            cVar = this.M;
-        }
-        if (cVar == null) {
-            return;
-        }
-        gh.a aVar = this.O;
-        if (aVar == null) {
-            aVar = this.N;
-        }
-        fh.g c10 = cVar.c(this, null, false);
-        c10.p(aVar);
-        i20.r(c10, org.telegram.messenger.g0.L(23.0f), 6.0f);
-        this.I = c10;
-        fh.g c11 = cVar.c(this, null, false);
-        c11.p(aVar);
-        i20.r(c11, org.telegram.messenger.g0.L(23.0f), 6.0f);
-        this.J = c11;
-        fh.g c12 = cVar.c(this, null, false);
-        c12.p(aVar);
-        i20.r(c12, org.telegram.messenger.g0.L(23.0f), 6.0f);
-        this.K = c12;
-        this.L = org.telegram.messenger.g0.L(23.0f);
-        invalidate();
-    }
-
-    public final z4 q(String str) {
-        if (this.n == null) {
-            z4 z4Var = new z4(getContext(), this, str);
-            this.n = z4Var;
-            addView(z4Var, indexOfChild(this.b), ja.e(-2, 46, 53));
-            j();
-        }
-        return this.n;
-    }
-
-    public final c5 r() {
-        if (this.d == null) {
-            c5 c5Var = new c5(getContext(), this, false);
-            this.d = c5Var;
-            addView(c5Var, indexOfChild(this.b), ja.e(-2, -2, 53));
-            j();
-        }
-        return this.d;
-    }
-
-    public final void s() {
-        if (this.r != null) {
-            return;
-        }
-        Context context = getContext();
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.r = frameLayout;
-        int i7 = 4;
-        frameLayout.setVisibility(4);
-        addView(this.r, indexOfChild(this.b), ja.e(-1, 46, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(0);
-        this.r.addView(linearLayout, ja.d(-1, -1.0f, 51, 18.0f, 0.0f, 42.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.x = textView;
-        int i10 = 1;
-        textView.setTextSize(1, 17.0f);
-        this.x.setSingleLine(true);
-        this.x.setEllipsize(TextUtils.TruncateAt.END);
-        this.x.setGravity(19);
-        this.x.setPadding(0, 0, org.telegram.messenger.g0.L(4.0f), 0);
-        this.x.setVisibility(8);
-        linearLayout.addView(this.x, ja.o(-2, -1));
-        ah.i iVar = new ah.i(i7, context, this);
-        this.s = iVar;
-        iVar.setTextSize(1, 17.0f);
-        this.s.setSingleLine(true);
-        this.s.setBackground(null);
-        this.s.setPadding(0, 0, 0, 0);
-        this.s.setGravity(19);
-        ah.i iVar2 = this.s;
-        iVar2.setInputType(iVar2.getInputType() | TLObject.FLAG_19);
-        this.s.setImeOptions(33554435);
-        this.s.setTextIsSelectable(false);
-        this.s.setCursorSize(org.telegram.messenger.g0.L(20.0f));
-        this.s.setCursorWidth(1.5f);
-        CharSequence charSequence = this.E;
-        if (charSequence != null) {
-            this.s.setHint(charSequence);
-        }
-        this.s.setOnEditorActionListener(new di.m(this, i7));
-        this.s.addTextChangedListener(new ah.j(this, 15));
-        linearLayout.addView(this.s, ja.l(1.0f, 0, -1));
-        ImageView imageView = new ImageView(context);
-        this.w = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.w.setImageResource(R.drawable.ic_close_white);
-        this.w.setContentDescription(hd.M0(2131752099, null));
-        this.w.setOnClickListener(new t4(this, i10));
-        this.r.addView(this.w, ja.d(42, 42.0f, 21, 0.0f, 0.0f, 2.0f, 0.0f));
-        H();
-        k();
-        G(2, this.V.e, 0.0f, null);
-    }
-
-    public void setActionBarMenuOnItemClick(j jVar) {
-        this.W = jVar;
-    }
-
-    public void setBackButtonContentDescription(CharSequence charSequence) {
-        this.b.setContentDescription(charSequence);
-    }
-
-    public void setBackButtonDrawable(Drawable drawable) {
-        this.b.c(drawable);
-        j();
-        requestLayout();
-    }
-
-    public void setBackButtonImage(int i7) {
-        setBackButtonDrawable(i7 != 0 ? getContext().getDrawable(i7).mutate() : null);
-    }
-
-    public void setBackButtonImageAnimated(int i7) {
-        Drawable mutate = getContext().getDrawable(i7).mutate();
-        ub ubVar = this.b;
-        Drawable drawable = (Drawable) ubVar.c;
-        boolean z10 = drawable != null;
-        te.c cVar = (te.c) ubVar.f;
-        if (drawable == null || !((w4) ubVar.h).w()) {
-            ubVar.c(mutate);
-        } else {
-            Drawable drawable2 = (Drawable) ubVar.c;
-            ubVar.c(mutate);
-            ubVar.d = drawable2;
-            cVar.c(0.0f);
-            cVar.a(1.0f);
-        }
-        if (z10) {
-            return;
-        }
-        j();
-        requestLayout();
-    }
-
-    public void setButtonsGlass(dh.c cVar) {
-        this.P = cVar;
-        if (this.M != null) {
-            p();
-        }
-    }
-
-    public void setButtonsGlassColorProvider(gh.a aVar) {
-        this.O = aVar;
-        if (aVar == null) {
-            aVar = this.N;
-        }
-        fh.g gVar = this.I;
-        if (gVar != null) {
-            gVar.p(aVar);
-            this.J.p(aVar);
-            this.K.p(aVar);
-        }
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        super.setEnabled(z10);
-        this.b.setEnabled(z10);
-        c5 c5Var = this.d;
-        if (c5Var != null) {
-            c5Var.setEnabled(z10);
-        }
-        z4 z4Var = this.n;
-        if (z4Var != null) {
-            z4Var.setEnabled(z10);
-        }
-    }
-
-    public void setExtraHeight(int i7) {
-        if (this.b0 != i7) {
-            this.b0 = i7;
-            requestLayout();
-        }
-    }
-
-    public void setForceSkipTouches(boolean z10) {
-        this.s0 = z10;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public void setMenuGlassFrostedProgress(float f10) {
-        ui.d dVar = this.p0;
-        if (dVar != null) {
-            dVar.j(f10);
-        }
-    }
-
-    public void setMenuGlassStroke(boolean z10) {
-        this.n0 = z10;
-    }
-
-    public void setMenuOverlayProvider(r10 r10Var) {
-        this.Q = r10Var;
-    }
-
-    public void setOccupyStatusBar(boolean z10) {
-        if (this.a0 != z10) {
-            this.a0 = z10;
-            requestLayout();
-        }
-    }
-
-    public void setSearchFieldCaption(CharSequence charSequence) {
-        s();
-        this.x.setText(charSequence);
-        this.x.setVisibility(TextUtils.isEmpty(charSequence) ? 8 : 0);
-        k();
-    }
-
-    public void setSearchFieldHint(CharSequence charSequence) {
-        this.E = charSequence;
-        ah.i iVar = this.s;
-        if (iVar != null) {
-            iVar.setHint(charSequence);
-        }
-    }
-
-    public void setSearchFieldText(CharSequence charSequence) {
-        ah.i iVar = this.s;
-        if (iVar == null) {
-            this.F = charSequence;
-            return;
-        }
-        iVar.setText(charSequence);
-        if (TextUtils.isEmpty(charSequence)) {
-            return;
-        }
-        this.s.setSelection(charSequence.length());
-    }
-
-    public void setSearchItem(d5 d5Var) {
-        if (d5Var == null && this.y != null && this.G) {
-            m(true);
-        }
-        this.y = d5Var;
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.c.c(charSequence);
-    }
-
-    public void setSubtitleAnimated(CharSequence charSequence) {
-        if (!w()) {
-            setSubtitle(charSequence);
-            return;
-        }
-        v4 v4Var = this.c;
-        j5 j5Var = (j5) v4Var.d;
-        if (j5Var == null || j5Var.getVisibility() == 8 || TextUtils.isEmpty(charSequence) || TextUtils.equals((CharSequence) v4Var.f, charSequence)) {
-            if (TextUtils.equals((CharSequence) v4Var.f, charSequence)) {
-                return;
+    public static int h(String str) {
+        if (n == null) {
+            if (h == null) {
+                h = a();
             }
-            v4Var.c(charSequence);
-            return;
+            HashMap hashMap = new HashMap();
+            for (int i7 = 0; i7 < h.size(); i7++) {
+                hashMap.put((String) h.valueAt(i7), Integer.valueOf(h.keyAt(i7)));
+            }
+            n = hashMap;
         }
-        v4Var.f = charSequence;
-        if (((j5) v4Var.e) == null) {
-            v4Var.e = v4Var.a();
+        if (((Integer) n.get(str)) == null) {
+            return -1;
         }
-        j5 j5Var2 = (j5) v4Var.d;
-        j5 j5Var3 = (j5) v4Var.e;
-        v4Var.d = j5Var3;
-        v4Var.e = j5Var2;
-        j5Var3.animate().cancel();
-        ((j5) v4Var.d).l(charSequence, false);
-        ((j5) v4Var.d).setVisibility(0);
-        ((j5) v4Var.d).setAlpha(0.0f);
-        ((j5) v4Var.d).setTranslationY(org.telegram.messenger.g0.L(6.0f));
-        ViewPropertyAnimator duration = ((j5) v4Var.d).animate().alpha(1.0f).translationY(0.0f).setDuration(380L);
-        er erVar = er.h;
-        duration.setInterpolator(erVar).start();
-        j5Var2.animate().cancel();
-        j5Var2.animate().alpha(0.0f).translationY(-org.telegram.messenger.g0.L(6.0f)).setDuration(380L).setInterpolator(erVar).withEndAction(new u4(j5Var2, 0)).start();
-        v4Var.requestLayout();
+        return ((Integer) n.get(str)).intValue();
     }
 
-    public void setSubtitleColor(int i7) {
-        this.l0 = true;
-        this.f0 = i7;
-        this.c.d();
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        v4 v4Var = this.c;
-        v4Var.b(0);
-        j5[] j5VarArr = (j5[]) v4Var.c;
-        j5 j5Var = j5VarArr[1];
-        if (j5Var != null) {
-            j5Var.animate().cancel();
-            j5VarArr[1].setVisibility(8);
-        }
-        j5VarArr[0].animate().cancel();
-        j5VarArr[0].setAlpha(1.0f);
-        j5VarArr[0].setTranslationY(0.0f);
-        j5VarArr[0].k(charSequence);
-        j5VarArr[0].setVisibility(TextUtils.isEmpty(charSequence) ? 4 : 0);
-    }
-
-    public void setTitleColor(int i7) {
-        this.k0 = true;
-        this.e0 = i7;
-        this.c.d();
-    }
-
-    public void setTitleMinSideInset(int i7) {
-        if (this.r0 != i7) {
-            this.r0 = i7;
-            requestLayout();
-        }
-    }
-
-    public void setTitlesAlpha(float f10) {
-        if (this.t0 != f10) {
-            this.t0 = f10;
-            j();
-        }
-    }
-
-    public final float t(boolean z10) {
-        float actionModeFactor;
-        z4 z4Var = this.n;
-        if (z4Var == null) {
-            return 0.0f;
-        }
-        if (z4Var.getVisibility() == 8 && z10) {
-            return 0.0f;
-        }
-        if (z10) {
-            actionModeFactor = this.n.getTargetVisibleFactor();
-        } else {
-            actionModeFactor = (1.0f - getActionModeFactor()) * (1.0f - getSearchFactor()) * this.n.getVisibleFactor();
-        }
-        return (org.telegram.messenger.g0.L(12.0f) + this.n.getButtonWidth()) * actionModeFactor;
-    }
-
-    public final void u() {
-        c5 c5Var = this.e;
-        if (c5Var == null || !this.H) {
-            return;
-        }
-        this.H = false;
-        c5Var.g();
-        this.U.a(false, w());
-        j();
-        this.b.b(false, w());
-        ns.e().k(ns.r4, new Object[0]);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        z();
-        this.c.d();
-        this.b.d();
-        c5 c5Var = this.d;
-        if (c5Var != null) {
-            c5Var.i();
-        }
-        c5 c5Var2 = this.e;
-        if (c5Var2 != null) {
-            c5Var2.i();
-        }
-        org.telegram.ui.Components.h6 h6Var = this.f;
-        if (h6Var != null) {
-            h6Var.setTextColor(this.h0);
-        }
-        z4 z4Var = this.n;
-        if (z4Var != null) {
-            z4Var.c();
-        }
-        org.telegram.ui.Components.h6 h6Var2 = this.h;
-        if (h6Var2 != null) {
-            h6Var2.setTextColor(this.f0);
-        }
-        if (this.s != null) {
-            H();
-        }
-        fh.g gVar = this.I;
-        if (gVar != null) {
-            gVar.updateColors();
-        }
-        fh.g gVar2 = this.J;
-        if (gVar2 != null) {
-            gVar2.updateColors();
-        }
-        invalidate();
-    }
-
-    public final boolean v() {
-        return this.e != null && this.H;
-    }
-
-    public final boolean w() {
-        return this.c0 && this.d0;
-    }
-
-    public final boolean x(View view) {
-        return view == this.b || view == this.c || view == this.d || view == this.e || view == this.f || view == this.h || view == this.r || view == this.n;
-    }
-
-    public final boolean y(boolean z10, boolean z11) {
-        m0 searchListener;
-        boolean z12 = false;
-        if (this.y == null || this.G || this.H || !((searchListener = getSearchListener()) == null || searchListener.c())) {
-            return false;
-        }
-        s();
-        this.G = true;
-        c5 c5Var = this.d;
-        if (c5Var != null) {
-            c5Var.g();
-        }
-        ah.i iVar = this.s;
-        CharSequence charSequence = this.F;
-        if (charSequence == null) {
-            charSequence = "";
-        }
-        iVar.setText(charSequence);
-        this.F = null;
-        this.s.requestFocus();
-        if (z10) {
-            org.telegram.messenger.g0.J3(this.s);
-        }
-        if (z11 && w()) {
-            z12 = true;
-        }
-        this.T.a(true, z12);
-        j();
-        if (searchListener != null) {
-            searchListener.i();
-        }
+    @Override // org.telegram.ui.ActionBar.r2
+    public boolean x() {
         return true;
     }
 
-    public final void z() {
-        boolean z10 = this.k0;
-        e6 e6Var = this.a;
-        if (!z10) {
-            this.e0 = j6.w0(j6.G6, e6Var);
-        }
-        if (!this.l0) {
-            this.f0 = j6.w0(j6.y6, e6Var);
-        }
-        if (!this.m0) {
-            this.g0 = j6.w0(j6.G6, e6Var);
-        }
-        this.h0 = j6.w0(j6.G6, e6Var);
-        int i7 = j6.i6;
-        this.i0 = j6.w0(i7, e6Var);
-        this.j0 = j6.w0(i7, e6Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
-    }
-
-    @Override // org.telegram.ui.ActionBar.q4
-    public View getMenuHostView() {
-        return this;
-    }
-
-    @Override // te.b
-    public final /* synthetic */ void E(float f10, int i7) {
+    @Override // org.telegram.ui.ActionBar.r2
+    public void v() {
     }
 }

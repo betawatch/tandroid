@@ -1,14 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class m21 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
-    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(Math.min((int) (org.telegram.messenger.g0.q.y * 0.33f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30));
+public final class m21 extends v4.k {
+    public final /* synthetic */ y21 F;
+
+    public m21(y21 y21Var) {
+        this.F = y21Var;
+    }
+
+    @Override // v4.k
+    public final void O() {
+        this.F.b.invalidate();
+    }
+
+    @Override // v4.k
+    public final void P(v4.f1 f1Var) {
+        this.F.b.invalidate();
     }
 }

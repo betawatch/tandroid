@@ -67,7 +67,7 @@ import java.util.function.Supplier;
 import m.o3;
 import sg.h0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p {
     public static final h r = new h(1);
@@ -150,8 +150,8 @@ public final class p {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:216:0x01ed  */
-    /* JADX WARN: Removed duplicated region for block: B:267:0x03df  */
+    /* JADX WARN: Removed duplicated region for block: B:216:0x01e7  */
+    /* JADX WARN: Removed duplicated region for block: B:267:0x03d9  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0143 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r11v24 */
     /* JADX WARN: Type inference failed for: r11v25, types: [int] */
@@ -210,7 +210,7 @@ public final class p {
                     ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).d(hVar.c(str3, false));
                     ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.e).b).getReference()).d(hVar.c(str3, true));
                     ((AtomicMarkableReference) o3Var.g).set(hVar.d(str3), false);
-                    f5.v vVar = (f5.v) o3Var.f;
+                    ca.q qVar = (ca.q) o3Var.f;
                     File b10 = dVar2.b(str3, "rollouts-state");
                     if (!b10.exists() || b10.length() == 0) {
                         ca.h.g(b10, "The file has a length of zero for session: " + str3);
@@ -232,7 +232,7 @@ public final class p {
                                     ca.h.f(b10);
                                     g.b(fileInputStream2, "Failed to close rollouts state file.");
                                     list2 = Collections.EMPTY_LIST;
-                                    synchronized (vVar) {
+                                    synchronized (qVar) {
                                     }
                                 }
                             } catch (Throwable th3) {
@@ -251,19 +251,19 @@ public final class p {
                             throw th;
                         }
                     }
-                    synchronized (vVar) {
-                        ((ArrayList) vVar.c).clear();
-                        if (list2.size() > vVar.b) {
-                            Log.w("FirebaseCrashlytics", "Ignored 0 entries when adding rollout assignments. Maximum allowable: " + vVar.b, null);
-                            ((ArrayList) vVar.c).addAll(list2.subList(0, vVar.b));
+                    synchronized (qVar) {
+                        qVar.a.clear();
+                        if (list2.size() > qVar.b) {
+                            Log.w("FirebaseCrashlytics", "Ignored 0 entries when adding rollout assignments. Maximum allowable: " + qVar.b, null);
+                            qVar.a.addAll(list2.subList(0, qVar.b));
                         } else {
-                            ((ArrayList) vVar.c).addAll(list2);
+                            qVar.a.addAll(list2);
                         }
                     }
                     e0 e0Var = this.m;
                     ApplicationExitInfo e12 = e0Var.e(str3, historicalProcessExitReasons, new m(1));
                     if (e12 == null) {
-                        String k10 = r.b.k("No relevant ApplicationExitInfo occurred during session: ", str3);
+                        String k10 = p5.c.k("No relevant ApplicationExitInfo occurred during session: ", str3);
                         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                             Log.v("FirebaseCrashlytics", k10, null);
                         }
@@ -392,7 +392,7 @@ public final class p {
                             s0Var.c = new v0(w0Var, null, null, valueOf, a13, null, i11);
                             s0Var.d = uVar.b(i11);
                             t0 a15 = s0Var.a();
-                            String k11 = r.b.k("Persisting anr for session ", str3);
+                            String k11 = p5.c.k("Persisting anr for session ", str3);
                             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                                 Log.d("FirebaseCrashlytics", k11, null);
                             }
@@ -410,7 +410,7 @@ public final class p {
                     arrayList = arrayList2;
                     i7 = 4;
                     i10 = 8;
-                    String k12 = r.b.k("No ApplicationExitInfo available. Session: ", str3);
+                    String k12 = p5.c.k("No ApplicationExitInfo available. Session: ", str3);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", k12, null);
                     }
@@ -433,7 +433,7 @@ public final class p {
             }
         }
         if (z11 && this.j.c(str3)) {
-            String k13 = r.b.k("Finalizing native report for session ", str3);
+            String k13 = p5.c.k("Finalizing native report for session ", str3);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 th2 = null;
                 Log.v("FirebaseCrashlytics", k13, null);
@@ -503,7 +503,7 @@ public final class p {
         if (d.size() > i21) {
             while (d.size() > i21) {
                 String str10 = (String) d.last();
-                String k14 = r.b.k("Removing session over cap: ", str10);
+                String k14 = p5.c.k("Removing session over cap: ", str10);
                 if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                     Log.d("FirebaseCrashlytics", k14, null);
                 }
@@ -512,7 +512,7 @@ public final class p {
             }
         }
         for (String str11 : d) {
-            String k15 = r.b.k("Finalizing report for session ", str11);
+            String k15 = p5.c.k("Finalizing report for session ", str11);
             if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                 Log.v("FirebaseCrashlytics", k15, null);
             }
@@ -624,7 +624,7 @@ public final class p {
                                     e = e21;
                                 }
                             }
-                            ga.b.g(z14 ? new File((File) dVar5.h, ((n0) t2Var4).b) : new File((File) dVar5.f, ((n0) t2Var4).b), ea.a.a.o(a24));
+                            ga.b.g(z14 ? new File((File) dVar5.h, ((n0) t2Var4).b) : new File((File) dVar5.f, ((n0) t2Var4).b), ea.a.a.v(a24));
                         } catch (IOException e22) {
                             e = e22;
                         }
@@ -661,7 +661,7 @@ public final class p {
         int i7;
         Integer num;
         long currentTimeMillis = System.currentTimeMillis() / 1000;
-        String k10 = r.b.k("Opening a new session with ID ", str);
+        String k10 = p5.c.k("Opening a new session with ID ", str);
         if (Log.isLoggable("FirebaseCrashlytics", 3)) {
             Log.d("FirebaseCrashlytics", k10, null);
         }
@@ -709,11 +709,11 @@ public final class p {
                 str2 = str7;
                 str3 = str10;
                 i7 = 4;
-                ((ba.e) o3Var.b).b.a(new ai.r((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((f5.v) o3Var.f).o(), 3));
+                ((ba.e) o3Var.b).b.a(new ai.s((Object) o3Var, str, (Object) ((ca.e) ((AtomicMarkableReference) ((ab.q) o3Var.d).b).getReference()).a(), (Object) ((ca.q) o3Var.f).a(), 4));
             }
         }
         ca.f fVar3 = this.i;
-        ((ca.d) fVar3.b).b();
+        ((ca.d) fVar3.b).f();
         fVar3.b = ca.f.c;
         if (str != null) {
             fVar3.b = new ca.o(((ga.d) fVar3.a).b(str, "userlog"));
@@ -844,7 +844,7 @@ public final class p {
         String str22 = ((n0) t2Var).b;
         try {
             ga.b.g.getClass();
-            ga.b.g(dVar.b(str22, "report"), ea.a.a.o(a12));
+            ga.b.g(dVar.b(str22, "report"), ea.a.a.v(a12));
             File b12 = dVar.b(str22, "start-time");
             long j3 = ((n0) t2Var).d;
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(b12), ga.b.e);
@@ -855,7 +855,7 @@ public final class p {
             } finally {
             }
         } catch (IOException e10) {
-            String k11 = r.b.k("Could not persist report for session ", str22);
+            String k11 = p5.c.k("Could not persist report for session ", str22);
             if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                 Log.d("FirebaseCrashlytics", k11, e10);
             }

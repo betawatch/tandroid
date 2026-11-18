@@ -1,55 +1,94 @@
 package fi;
 
 import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class w3 extends org.telegram.ui.ActionBar.j5 {
-    public final /* synthetic */ int N0;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class w3 {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final Drawable d;
+    public final Drawable e;
+    public final ColorDrawable f;
+    public final a8.b8 g = new a8.b8(5);
+    public final RectF h = new RectF();
+    public final RectF i = new RectF();
+    public final RectF j = new RectF();
+    public final RectF k;
+    public final Paint l;
+    public final Drawable m;
+    public final Drawable n;
+    public final Drawable o;
+    public final Drawable p;
+    public final Drawable q;
+    public final Drawable r;
+    public final Drawable s;
+    public final mh0 t;
+    public final mh0 u;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w3(Context context, int i7) {
-        super(context);
-        this.N0 = i7;
+    public w3(Context context) {
+        new RectF();
+        this.k = new RectF();
+        this.l = new Paint();
+        this.m = context.getDrawable(R.drawable.media_share);
+        this.o = context.getDrawable(R.drawable.media_like);
+        this.n = context.getDrawable(R.drawable.media_repost);
+        Drawable drawable = context.getDrawable(R.drawable.media_like_active);
+        this.p = drawable;
+        drawable.setColorFilter(new PorterDuffColorFilter(-53704, PorterDuff.Mode.MULTIPLY));
+        this.q = context.getDrawable(R.drawable.media_more);
+        this.r = context.getDrawable(R.drawable.menu_stream_pip);
+        this.s = context.getDrawable(R.drawable.msg_delete);
+        this.u = new mh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        mh0 mh0Var = new mh0(R.raw.media_mute_unmute, org.telegram.messenger.g0.L(28.0f), org.telegram.messenger.g0.L(28.0f), true, null);
+        this.t = mh0Var;
+        mh0Var.N(20, false, true);
+        mh0Var.stop();
+        Paint paint = new Paint(1);
+        this.a = paint;
+        paint.setColor(1442840575);
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        paint2.setColor(-1);
+        int o4 = i0.a.o(-16777216, ks.n1);
+        this.d = context.getDrawable(R.drawable.shadow_story_top);
+        this.e = context.getDrawable(R.drawable.shadow_story_bottom);
+        Paint paint3 = new Paint();
+        this.c = paint3;
+        paint3.setColor(o4);
+        this.f = new ColorDrawable(i0.a.f(0.1f, -16777216, -1));
     }
 
-    @Override // org.telegram.ui.ActionBar.j5
-    public boolean k(CharSequence charSequence) {
-        switch (this.N0) {
-            case 2:
-                return l(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            case 3:
-                return l(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            case 4:
-            default:
-                return super.k(charSequence);
-            case 5:
-                return l(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
+    public final void a(boolean z10, boolean z11) {
+        mh0 mh0Var = this.u;
+        if (!z11) {
+            mh0Var.N(z10 ? 20 : 0, false, false);
+            mh0Var.P(z10 ? 20 : 0);
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5
-    public boolean l(CharSequence charSequence, boolean z10) {
-        switch (this.N0) {
-            case 1:
-                return super.l(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), z10);
-            case 4:
-                return super.l(org.telegram.messenger.j6.m(charSequence, getPaint().getFontMetricsInt(), false, null, 0), false);
-            default:
-                return super.l(charSequence, z10);
+        if (z10) {
+            if (mh0Var.b0 > 20) {
+                mh0Var.N(0, false, false);
+            }
+            mh0Var.P(20);
+            mh0Var.start();
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onMeasure(int i7, int i10) {
-        switch (this.N0) {
-            case 0:
-                super.onMeasure(i7, i10);
-                setPivotY(getMeasuredHeight() / 2.0f);
-                break;
-            default:
-                super.onMeasure(i7, i10);
-                break;
+        int i7 = mh0Var.b0;
+        if (i7 == 0 || i7 >= 43) {
+            return;
         }
+        mh0Var.P(43);
+        mh0Var.start();
     }
 }

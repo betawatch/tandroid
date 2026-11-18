@@ -3,17 +3,17 @@ package org.telegram.ui;
 import java.util.Collections;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tu implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yw b;
+    public final /* synthetic */ cx b;
     public final /* synthetic */ long c;
     public final /* synthetic */ boolean d;
 
-    public /* synthetic */ tu(yw ywVar, long j3, boolean z10, int i7) {
+    public /* synthetic */ tu(cx cxVar, long j3, boolean z10, int i7) {
         this.a = i7;
-        this.b = ywVar;
+        this.b = cxVar;
         this.c = j3;
         this.d = z10;
     }
@@ -25,33 +25,33 @@ public final /* synthetic */ class tu implements Runnable {
         int i7 = this.a;
         boolean z10 = this.d;
         long j3 = this.c;
-        yw ywVar = this.b;
+        cx cxVar = this.b;
         switch (i7) {
             case 0:
-                yw ywVar2 = this.b;
-                fi.s6 P1 = ywVar2.getMessagesController().P1();
+                cx cxVar2 = this.b;
+                fi.p6 R1 = cxVar2.getMessagesController().R1();
                 long j10 = this.c;
                 boolean z11 = this.d;
-                P1.l0(j10, z11, false);
+                R1.l0(j10, z11, false);
                 k8.a aVar = new k8.a(15, false);
-                aVar.b = new tu(ywVar2, j10, z11, 1);
-                aVar.c = new tu(ywVar2, j10, z11, 2);
+                aVar.b = new tu(cxVar2, j10, z11, 1);
+                aVar.c = new tu(cxVar2, j10, z11, 2);
                 if (j10 >= 0) {
-                    TLRPC.User a22 = ywVar2.getMessagesController().a2(Long.valueOf(j10));
-                    str = org.telegram.messenger.g5.m(15, a22.first_name, null);
-                    chat = a22;
+                    TLRPC.User c22 = cxVar2.getMessagesController().c2(Long.valueOf(j10));
+                    str = org.telegram.messenger.i5.m(15, c22.first_name, null);
+                    chat = c22;
                 } else {
-                    TLRPC.Chat M0 = ywVar2.getMessagesController().M0(Long.valueOf(-j10));
-                    str = M0.title;
-                    chat = M0;
+                    TLRPC.Chat O0 = cxVar2.getMessagesController().O0(Long.valueOf(-j10));
+                    str = O0.title;
+                    chat = O0;
                 }
-                ywVar2.T = org.telegram.ui.Components.cc.X().V(Collections.singletonList(chat), ywVar2.q4() ? org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("StoriesMovedToDialogs", null, 2131744758, str)) : org.telegram.messenger.g0.X2(org.telegram.messenger.hd.a0("StoriesMovedToContacts", null, 2131744759, org.telegram.messenger.g5.m(15, str, null))), null, aVar).j();
+                cxVar2.T = org.telegram.ui.Components.lc.Y().V(Collections.singletonList(chat), cxVar2.t4() ? org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("StoriesMovedToDialogs", null, 2131744523, str)) : org.telegram.messenger.g0.W2(org.telegram.messenger.gd.a0("StoriesMovedToContacts", null, 2131744524, org.telegram.messenger.i5.m(15, str, null))), null, aVar).j();
                 break;
             case 1:
-                ywVar.getMessagesController().P1().l0(j3, !z10, false);
+                cxVar.getMessagesController().R1().l0(j3, !z10, false);
                 break;
             default:
-                ywVar.getMessagesController().P1().l0(j3, z10, true);
+                cxVar.getMessagesController().R1().l0(j3, z10, true);
                 break;
         }
     }

@@ -15,13 +15,14 @@ import android.util.Log;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import b9.c0;
 import b9.l0;
-import c8.x9;
+import c8.z9;
 import com.google.android.gms.common.api.internal.k;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import f6.d0;
 import f6.e0;
+import hi.w4;
 import j6.w;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -38,7 +39,7 @@ import m9.u;
 import org.telegram.messenger.WearAuthListenerService;
 import org.telegram.messenger.j1;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.bg;
+import org.telegram.ui.Components.jg;
 import sg.h0;
 import y7.f7;
 import z7.k7;
@@ -49,7 +50,7 @@ import z7.ra;
 import z7.ta;
 import z7.va;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -121,7 +122,7 @@ public final /* synthetic */ class h implements Runnable {
             }
             k10 = i10.k(new m(i7, 2, bundle, 0));
         }
-        k10.addOnCompleteListener(m6.d.c, new gc.b((CountDownLatch) this.d, 18));
+        k10.addOnCompleteListener(m6.d.c, new w4((CountDownLatch) this.d, 13));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x002e, code lost:
@@ -185,7 +186,7 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 return;
             case 2:
-                super/*f5.b*/.c((cb.c) this.c, (j1) this.d);
+                super/*f5.b*/.c((d6.i) this.c, (j1) this.d);
                 return;
             case 3:
                 super/*f5.b*/.a((f5.g) this.c, (f5.h) this.d);
@@ -223,7 +224,7 @@ public final /* synthetic */ class h implements Runnable {
                 ((Handler) this.d).post(new u(25, (f5.u) this.c, obj));
                 return;
             case 9:
-                ((bg) this.d).K((File) this.c, (ArrayList) this.b);
+                ((jg) this.d).K((File) this.c, (ArrayList) this.b);
                 return;
             case 10:
                 x4.e eVar = (x4.e) this.d;
@@ -263,7 +264,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e12) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e12);
-                    throw new RuntimeException(r.b.k("Unable to write bitmap to file ", str3), e12);
+                    throw new RuntimeException(p5.c.k("Unable to write bitmap to file ", str3), e12);
                 }
             default:
                 ma maVar = (ma) this.b;
@@ -287,7 +288,7 @@ public final /* synthetic */ class h implements Runnable {
                 synchronized (ma.class) {
                     vaVar = ma.j;
                     if (vaVar == null) {
-                        n0.c a10 = x9.a(Resources.getSystem().getConfiguration());
+                        n0.c a10 = z9.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i12 = 0;
                         while (i7 < a10.a.size()) {

@@ -1,54 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
+import android.graphics.RectF;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class xd implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.an a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final /* synthetic */ class xd implements z4, org.telegram.messenger.nc {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ org.telegram.messenger.fs c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public xd(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.an anVar, Activity activity) {
+    public /* synthetic */ xd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, Object obj, org.telegram.messenger.bj bjVar, boolean z10) {
         this.c = chatActivityEnterView;
-        this.a = anVar;
-        this.b = activity;
+        this.d = document;
+        this.a = str;
+        this.e = obj;
+        this.f = bjVar;
+        this.b = z10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i7;
-        org.telegram.ui.an anVar = this.a;
-        if (anVar == null) {
-            return;
-        }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.O2 = !chatActivityEnterView.O2;
-        if (chatActivityEnterView.f0 == null) {
-            chatActivityEnterView.f0 = new br(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.j6.Nl);
-        }
-        chatActivityEnterView.f0.a(chatActivityEnterView.O2, true);
-        chatActivityEnterView.q2.setImageDrawable(chatActivityEnterView.f0);
-        org.telegram.messenger.np.s1(chatActivityEnterView.R).e7.edit().putBoolean("silent_" + chatActivityEnterView.y3, chatActivityEnterView.O2).commit();
-        org.telegram.messenger.at.t(chatActivityEnterView.R).c0(chatActivityEnterView.y3, anVar == null ? 0L : anVar.b(), true);
-        anVar.h8();
-        UndoView undoView = anVar.N3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.O2 ? 54 : 55, 0L, null);
-        }
-        ImageView imageView = chatActivityEnterView.q2;
-        if (chatActivityEnterView.O2) {
-            str = "AccDescrChanSilentOn";
-            i7 = 2131754906;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i7 = 2131754907;
-        }
-        imageView.setContentDescription(org.telegram.messenger.hd.M0(i7, str));
-        chatActivityEnterView.a2(true);
+    @Override // org.telegram.ui.Components.z4
+    public void O(int i7, int i10, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+        TLRPC.Document document = (TLRPC.Document) this.d;
+        org.telegram.messenger.bj bjVar = (org.telegram.messenger.bj) this.f;
+        int i11 = ChatActivityEnterView.n7;
+        chatActivityEnterView.d(document, this.a, this.e, bjVar, this.b, z10, i7, i10);
+    }
+
+    @Override // org.telegram.messenger.nc
+    public void a(String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = (ProfileActivity) this.c;
+        String[] strArr = (String[]) this.d;
+        boolean[] zArr = (boolean[]) this.e;
+        bi.d5 d5Var = (bi.d5) this.f;
+        RectF rectF = ProfileActivity.Z6;
+        strArr[0] = str;
+        zArr[0] = str != null && (!str.equals(this.a) || str.equals("und")) && ((this.b && !org.telegram.ui.sy0.d0().contains(str)) || ((chat = profileActivity.F2) != null && ((chat.has_link || org.telegram.messenger.v3.t0(chat)) && ("uk".equals(str) || "ru".equals(str)))));
+        d5Var.run();
+    }
+
+    public /* synthetic */ xd(ProfileActivity profileActivity, String[] strArr, boolean[] zArr, String str, boolean z10, bi.d5 d5Var) {
+        this.c = profileActivity;
+        this.d = strArr;
+        this.e = zArr;
+        this.a = str;
+        this.b = z10;
+        this.f = d5Var;
     }
 }

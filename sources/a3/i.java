@@ -5,12 +5,11 @@ import e2.m1;
 import e2.o1;
 import h2.l0;
 import h9.i0;
-import h9.n1;
-import h9.q1;
+import h9.r1;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i extends q implements Comparable {
     public final boolean E;
@@ -242,14 +241,14 @@ public final class i extends q implements Comparable {
     public final int compareTo(i iVar) {
         boolean z10 = this.r;
         boolean z11 = this.f;
-        q1 a10 = (z11 && z10) ? s.l : s.l.a();
+        r1 a10 = (z11 && z10) ? s.l : s.l.a();
         boolean z12 = iVar.r;
         int i7 = iVar.L;
         h9.w c10 = h9.w.a.c(z10, z12);
         Integer valueOf = Integer.valueOf(this.w);
         Integer valueOf2 = Integer.valueOf(iVar.w);
-        n1 n1Var = n1.c;
-        h9.w b10 = c10.b(valueOf, valueOf2, n1Var).a(this.s, iVar.s).a(this.x, iVar.x).b(Integer.valueOf(this.y), Integer.valueOf(iVar.y), n1Var).c(this.I, iVar.I).c(this.F, iVar.F).b(Integer.valueOf(this.G), Integer.valueOf(iVar.G), n1Var).a(this.H, iVar.H).c(z11, iVar.f).b(Integer.valueOf(this.M), Integer.valueOf(iVar.M), n1Var);
+        h9.o1 o1Var = h9.o1.c;
+        h9.w b10 = c10.b(valueOf, valueOf2, o1Var).a(this.s, iVar.s).a(this.x, iVar.x).b(Integer.valueOf(this.y), Integer.valueOf(iVar.y), o1Var).c(this.I, iVar.I).c(this.F, iVar.F).b(Integer.valueOf(this.G), Integer.valueOf(iVar.G), o1Var).a(this.H, iVar.H).c(z11, iVar.f).b(Integer.valueOf(this.M), Integer.valueOf(iVar.M), o1Var);
         boolean z13 = this.n.F;
         int i10 = this.L;
         if (z13) {

@@ -1,37 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lk b;
+public final class kk implements org.telegram.messenger.nr {
+    public final /* synthetic */ bn a;
 
-    public /* synthetic */ kk(lk lkVar, int i7) {
-        this.a = i7;
-        this.b = lkVar;
+    public kk(bn bnVar) {
+        this.a = bnVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                qj qjVar = this.b.I.a0;
-                if (qjVar != null) {
-                    qjVar.W0();
-                    break;
-                }
-                break;
-            default:
-                qj qjVar2 = this.b.I.a0;
-                if (qjVar2 != null) {
-                    qjVar2.U0 = false;
-                    org.telegram.ui.Components.sf sfVar = qjVar2.V0;
-                    if (sfVar != null) {
-                        sfVar.u(false);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.nr
+    public final void a(int i7) {
+        this.a.ha(i7);
     }
 }

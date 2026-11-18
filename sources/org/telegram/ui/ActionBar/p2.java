@@ -1,57 +1,83 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.view.WindowManager;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p2 implements ValueAnimator.AnimatorUpdateListener {
+public final class p2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r2 b;
+    public final /* synthetic */ x2 b;
 
-    public /* synthetic */ p2(r2 r2Var, int i7) {
+    public /* synthetic */ p2(x2 x2Var, int i7) {
         this.a = i7;
-        this.b = r2Var;
+        this.b = x2Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
         switch (this.a) {
             case 0:
-                r2 r2Var = this.b;
-                u2 u2Var = r2Var.H;
-                u2Var.b.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                u2Var.h0();
-                u2Var.q0(u2Var.b.getTranslationY());
-                r2Var.invalidate();
-                break;
-            case 1:
-                u2 u2Var2 = this.b.H;
-                k2 k2Var = u2Var2.c;
-                if (k2Var != null) {
-                    k2Var.invalidate();
+                x2 x2Var = this.b;
+                AnimatorSet animatorSet = x2Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    x2Var.A0 = null;
+                    x2Var.B0 = 0;
+                    break;
                 }
-                u2Var2.h0();
-                break;
-            case 2:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r2 r2Var2 = this.b;
-                r2Var2.E = floatValue;
-                u2 u2Var3 = r2Var2.H;
-                u2Var3.b.setTranslationX(floatValue);
-                u2Var3.c.invalidate();
-                break;
-            case 3:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r2 r2Var3 = this.b;
-                r2Var3.E = floatValue2;
-                u2 u2Var4 = r2Var3.H;
-                u2Var4.b.setTranslationX(floatValue2);
-                u2Var4.c.invalidate();
                 break;
             default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                u2 u2Var5 = this.b.H;
-                u2Var5.Z.setAlpha(u2Var5.p0 ? (int) (u2Var5.q0 * floatValue3) : 0);
+                x2 x2Var2 = this.b;
+                AnimatorSet animatorSet2 = x2Var2.A0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    x2Var2.A0 = null;
+                    x2Var2.B0 = 0;
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i7 = this.a;
+        x2 x2Var = this.b;
+        switch (i7) {
+            case 0:
+                AnimatorSet animatorSet = x2Var.A0;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    x2Var.A0 = null;
+                    x2Var.B0 = 0;
+                    x2Var.v();
+                    r2 r2Var = x2Var.z0;
+                    if (r2Var != null) {
+                        r2Var.v();
+                    }
+                    if (x2Var.K) {
+                        x2Var.c.setLayerType(0, null);
+                    }
+                    if (x2Var.W) {
+                        WindowManager.LayoutParams attributes = x2Var.getWindow().getAttributes();
+                        attributes.flags &= -1025;
+                        x2Var.getWindow().setAttributes(attributes);
+                    }
+                }
+                if (x2Var.L0) {
+                    ks.e().k(99, 512);
+                }
+                x2Var.M0.e();
+                break;
+            default:
+                AnimatorSet animatorSet2 = x2Var.A0;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    x2Var.A0 = null;
+                    x2Var.B0 = 0;
+                    org.telegram.messenger.g0.g3(new oi.a2(this, 9));
+                }
+                ks.e().k(99, 512);
                 break;
         }
     }

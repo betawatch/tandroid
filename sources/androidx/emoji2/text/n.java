@@ -3,39 +3,40 @@ package androidx.emoji2.text;
 import a8.b8;
 import a8.u6;
 import android.content.Context;
+import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.CancellationSignal;
-import c8.v0;
+import c8.x0;
 import e2.s0;
 import h2.l0;
+import java.security.Signature;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.lt;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+import org.telegram.messenger.ht;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements k, u2.k {
     public final Context a;
 
-    public n(Context context, int i7) {
-        switch (i7) {
-            case 1:
-                context.getClass();
-                this.a = context;
-                break;
-            case 2:
-                this.a = context;
-                break;
-            case 3:
-                kotlin.jvm.internal.j.e(context, "context");
-                this.a = context;
-                break;
-            default:
-                this.a = context.getApplicationContext();
-                break;
+    public /* synthetic */ n(Context context, char c10) {
+        this.a = context;
+    }
+
+    public static FingerprintManager e(Context context) {
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 == 23) {
+            return (FingerprintManager) context.getSystemService(FingerprintManager.class);
         }
+        if (i7 <= 23 || !context.getPackageManager().hasSystemFeature("android.hardware.fingerprint")) {
+            return null;
+        }
+        return (FingerprintManager) context.getSystemService(FingerprintManager.class);
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -50,7 +51,7 @@ public final class n implements k, u2.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static int d(e2.u uVar) {
+    public static int f(e2.u uVar) {
         String str = uVar.s;
         if (str == null || !s0.k(str)) {
             return i5.c.a(0, 0, 0, 0);
@@ -86,37 +87,94 @@ public final class n implements k, u2.k {
     public void a(u6 u6Var) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new a("EmojiCompatInitializer", 0));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new aa.r(this, u6Var, threadPoolExecutor, 5));
+        threadPoolExecutor.execute(new aa.r(this, u6Var, threadPoolExecutor, 6));
     }
 
-    public Object b(Context context, v0.e eVar, lt ltVar) {
-        zd.m mVar = new zd.m(1, v0.b(ltVar));
+    public void b(h6.m mVar, ca.i iVar, ob.c cVar) {
+        CancellationSignal cancellationSignal;
+        CancellationSignal cancellationSignal2;
+        FingerprintManager.CryptoObject cryptoObject = null;
+        if (iVar != null) {
+            synchronized (iVar) {
+                try {
+                    if (((CancellationSignal) iVar.c) == null) {
+                        CancellationSignal cancellationSignal3 = new CancellationSignal();
+                        iVar.c = cancellationSignal3;
+                        if (iVar.b) {
+                            cancellationSignal3.cancel();
+                        }
+                    }
+                    cancellationSignal2 = (CancellationSignal) iVar.c;
+                } finally {
+                }
+            }
+            cancellationSignal = cancellationSignal2;
+        } else {
+            cancellationSignal = null;
+        }
+        FingerprintManager e10 = e(this.a);
+        if (e10 != null) {
+            if (mVar != null) {
+                Mac mac = (Mac) mVar.d;
+                Signature signature = (Signature) mVar.b;
+                Cipher cipher = (Cipher) mVar.c;
+                if (cipher != null) {
+                    cryptoObject = new FingerprintManager.CryptoObject(cipher);
+                } else if (signature != null) {
+                    cryptoObject = new FingerprintManager.CryptoObject(signature);
+                } else if (mac != null) {
+                    cryptoObject = new FingerprintManager.CryptoObject(mac);
+                }
+            }
+            e10.authenticate(cryptoObject, cancellationSignal, 0, new k0.a(cVar, 0), null);
+        }
+    }
+
+    public Object c(Context context, v0.e eVar, ht htVar) {
+        zd.m mVar = new zd.m(1, x0.b(htVar));
         mVar.s();
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new be.q(cancellationSignal, 1));
-        u7.i iVar = new u7.i(mVar);
-        d3.b bVar = new d3.b(3);
+        je.b bVar = new je.b(mVar);
+        d3.b bVar2 = new d3.b(3);
         kotlin.jvm.internal.j.e(context, "context");
-        v0.i b10 = o5.j.b(new o5.j(this.a), eVar);
-        if (b10 == null) {
-            iVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
+        v0.i x10 = b5.x(new b5(this.a), eVar);
+        if (x10 == null) {
+            bVar.a(new w0.c(1, "createCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
         } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
-            iVar.a(new w0.c(3, "createCredential is not supported on this device"));
+            bVar.a(new w0.c(3, "createCredential is not supported on this device"));
         } else {
-            b10.onCreateCredential(context, eVar, cancellationSignal, bVar, iVar);
+            x10.onCreateCredential(context, eVar, cancellationSignal, bVar2, bVar);
         }
         Object r10 = mVar.r();
         jd.a aVar = jd.a.a;
         return r10;
     }
 
-    public void c(Context context, v0.m mVar, CancellationSignal cancellationSignal, Executor executor, v0.g gVar) {
+    public void d(Context context, v0.m mVar, CancellationSignal cancellationSignal, Executor executor, v0.g gVar) {
         kotlin.jvm.internal.j.e(executor, "executor");
-        v0.i b10 = o5.j.b(new o5.j(context), mVar);
-        if (b10 == null) {
+        v0.i x10 = b5.x(new b5(context), mVar);
+        if (x10 == null) {
             gVar.a(new w0.h(1, "getCredentialAsync no provider dependencies found - please ensure the desired provider dependencies are added"));
         } else {
-            b10.onGetCredential(context, mVar, cancellationSignal, executor, gVar);
+            x10.onGetCredential(context, mVar, cancellationSignal, executor, gVar);
+        }
+    }
+
+    public n(Context context, int i7) {
+        switch (i7) {
+            case 2:
+                context.getClass();
+                this.a = context;
+                break;
+            case 3:
+            default:
+                this.a = context.getApplicationContext();
+                break;
+            case 4:
+                kotlin.jvm.internal.j.e(context, "context");
+                this.a = context;
+                break;
         }
     }
 }

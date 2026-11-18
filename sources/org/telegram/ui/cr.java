@@ -1,58 +1,181 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class cr implements ActionMode.Callback {
-    public final /* synthetic */ dr a;
+public final /* synthetic */ class cr implements org.telegram.ui.Components.st0, org.telegram.ui.Components.tt0, org.telegram.messenger.mc, org.telegram.ui.ActionBar.r1, org.telegram.ui.Components.qb0, org.telegram.ui.Components.ob0 {
+    public final /* synthetic */ int a;
 
-    public cr(dr drVar) {
-        this.a = drVar;
+    public /* synthetic */ cr(int i7) {
+        this.a = i7;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        ClipboardManager clipboardManager;
-        ClipData primaryClip;
-        int i7;
-        if (menuItem.getItemId() != 16908322) {
-            return true;
+    @Override // org.telegram.ui.Components.tt0
+    public void c(Object obj, float f10) {
+        er erVar = (er) obj;
+        switch (this.a) {
+            case 1:
+                erVar.M1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 2:
+            case 4:
+            default:
+                erVar.P1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 3:
+                erVar.N1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 5:
+                erVar.O1 = f10;
+                if (erVar.getParent() != null) {
+                    ((View) erVar.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
-        dr drVar = this.a;
-        ar arVar = drVar.getParent() instanceof ar ? (ar) drVar.getParent() : null;
-        if (arVar != null && (clipboardManager = (ClipboardManager) drVar.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
-            String charSequence = primaryClip.getItemAt(0).getText().toString();
-            try {
-                i7 = Integer.parseInt(charSequence);
-            } catch (Exception unused) {
-                i7 = -1;
-            }
-            if (i7 > 0) {
-                arVar.c(charSequence, true);
-            }
+    }
+
+    @Override // org.telegram.ui.Components.st0
+    public float get(Object obj) {
+        er erVar = (er) obj;
+        switch (this.a) {
+            case 0:
+                return erVar.M1;
+            case 1:
+            case 3:
+            default:
+                return erVar.P1;
+            case 2:
+                return erVar.N1;
+            case 4:
+                return erVar.O1;
         }
-        drVar.m();
-        return true;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        menu.add(0, R.id.paste, 0, R.string.paste);
-        return true;
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        switch (this.a) {
+            case 10:
+                u1Var.dismiss();
+                break;
+            default:
+                u1Var.dismiss();
+                break;
+        }
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return true;
+    @Override // org.telegram.ui.Components.ob0
+    public String i(int i7) {
+        switch (this.a) {
+            case 12:
+                if (i7 == 0) {
+                    return org.telegram.messenger.gd.M0(2131748339, null);
+                }
+                Calendar calendar = Calendar.getInstance();
+                int i10 = calendar.get(1);
+                calendar.add(6, i7);
+                long timeInMillis = calendar.getTimeInMillis();
+                if (calendar.get(1) != i10) {
+                    return org.telegram.messenger.gd.E0().y0().format(timeInMillis);
+                }
+                return org.telegram.messenger.gd.E0().A0().format(timeInMillis) + ", " + org.telegram.messenger.gd.E0().w0().format(timeInMillis);
+            case 13:
+                if (i7 == 0) {
+                    return org.telegram.messenger.gd.M0(2131748339, null);
+                }
+                Calendar calendar2 = Calendar.getInstance();
+                int i11 = calendar2.get(1);
+                calendar2.add(6, i7);
+                long timeInMillis2 = calendar2.getTimeInMillis();
+                int i12 = calendar2.get(1);
+                if (i12 != i11 || i7 >= 7) {
+                    return i12 == i11 ? org.telegram.messenger.gd.E0().w0().format(timeInMillis2) : org.telegram.messenger.gd.E0().y0().format(timeInMillis2);
+                }
+                return org.telegram.messenger.gd.E0().A0().format(timeInMillis2) + ", " + org.telegram.messenger.gd.E0().w0().format(timeInMillis2);
+            case 14:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 15:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 16:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 17:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 18:
+                Calendar calendar3 = Calendar.getInstance();
+                calendar3.set(5, 1);
+                calendar3.set(2, i7);
+                return calendar3.getDisplayName(2, 1, Locale.getDefault());
+            case 19:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 20:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 21:
+                if (i7 == 0) {
+                    return org.telegram.messenger.gd.M0(2131748339, null);
+                }
+                Calendar calendar4 = Calendar.getInstance();
+                int i13 = calendar4.get(1);
+                calendar4.add(6, i7);
+                long timeInMillis3 = calendar4.getTimeInMillis();
+                return calendar4.get(1) == i13 ? org.telegram.messenger.gd.E0().w0().format(timeInMillis3) : org.telegram.messenger.gd.E0().y0().format(timeInMillis3);
+            case 22:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 23:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 24:
+            default:
+                return String.format("%02d", Integer.valueOf(i7));
+            case 25:
+                return org.telegram.messenger.gd.G(i7 + 1, "Times", new Object[0]);
+            case 26:
+                return org.telegram.messenger.gd.G(i7 + 1, "Minutes", new Object[0]);
+            case 27:
+                return org.telegram.messenger.gd.M0(2131747715, null);
+            case 28:
+                if (i7 == 0) {
+                    return org.telegram.messenger.gd.M0(2131748339, null);
+                }
+                Calendar calendar5 = Calendar.getInstance();
+                int i14 = calendar5.get(1);
+                calendar5.add(6, i7);
+                long timeInMillis4 = calendar5.getTimeInMillis();
+                if (calendar5.get(1) != i14) {
+                    return org.telegram.messenger.gd.E0().y0().format(timeInMillis4);
+                }
+                return org.telegram.messenger.gd.E0().A0().format(timeInMillis4) + ", " + org.telegram.messenger.gd.E0().w0().format(timeInMillis4);
+        }
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
+    @Override // org.telegram.ui.Components.qb0
+    public void n(org.telegram.ui.Components.sb0 sb0Var, int i7) {
+        Pattern pattern = org.telegram.ui.Components.b5.a;
+    }
+
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        switch (this.a) {
+            case 8:
+                org.telegram.messenger.a8.g(exc, true);
+                break;
+            default:
+                org.telegram.messenger.a8.g(exc, true);
+                break;
+        }
     }
 }

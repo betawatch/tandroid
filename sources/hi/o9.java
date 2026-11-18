@@ -1,49 +1,42 @@
 package hi;
 
-import org.telegram.messenger.hd;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class o9 implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ p9 b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q9 b;
 
-    public /* synthetic */ o9(p9 p9Var, Runnable runnable, boolean z10) {
-        this.b = p9Var;
-        this.c = runnable;
-        this.d = z10;
+    public /* synthetic */ o9(q9 q9Var, int i7) {
+        this.a = i7;
+        this.b = q9Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i7 = this.a;
-        boolean z10 = this.d;
-        Runnable runnable = this.c;
-        p9 p9Var = this.b;
-        switch (i7) {
+        switch (this.a) {
             case 0:
-                p9Var.g(runnable, z10);
+                ta taVar = this.b.a;
+                a6 a6Var = taVar.D0;
+                if (a6Var != null) {
+                    a6Var.c(false);
+                }
+                if (taVar.R1 && taVar.S1 && taVar.C0 != null) {
+                    taVar.i0(false);
+                    CameraController.getInstance().stopVideoRecording(taVar.C0.getCameraSessionRecording(), false, false);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.a.J(1, true);
+                break;
+            case 2:
+                this.b.a.J(1, true);
                 break;
             default:
-                runnable.run();
-                sa saVar = p9Var.a;
-                i3 i3Var = saVar.U0;
-                i3Var.a.t(hd.M0(z10 ? 2131744660 : 2131744661, null), false, true);
-                i3Var.invalidate();
-                saVar.g(true, true);
-                saVar.c0(true);
-                saVar.J0.a(false, true);
-                saVar.K0.b(true, true);
-                saVar.h0(true, true);
+                this.b.a.J(1, true);
                 break;
         }
-    }
-
-    public /* synthetic */ o9(p9 p9Var, boolean z10, Runnable runnable) {
-        this.b = p9Var;
-        this.d = z10;
-        this.c = runnable;
     }
 }

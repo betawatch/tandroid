@@ -1,31 +1,25 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class cx0 extends gx0 {
-    public int d;
+public final /* synthetic */ class cx0 implements ob0, qb0 {
+    public final /* synthetic */ ex0 a;
 
-    @Override // org.telegram.ui.Components.gx0
-    public final int a(px0 px0Var, ix0 ix0Var, bx0 bx0Var, int i7, boolean z10) {
-        return Math.max(0, this.a - bx0Var.a(ix0Var, i7));
+    @Override // org.telegram.ui.Components.ob0
+    public String i(int i7) {
+        return this.a.n[i7];
     }
 
-    @Override // org.telegram.ui.Components.gx0
-    public final void b(int i7, int i10) {
-        super.b(i7, i10);
-        this.d = Math.max(this.d, i7 + i10);
-    }
-
-    @Override // org.telegram.ui.Components.gx0
-    public final void c() {
-        super.c();
-        this.d = TLObject.FLAG_31;
-    }
-
-    @Override // org.telegram.ui.Components.gx0
-    public final int d(boolean z10) {
-        return Math.max(super.d(z10), this.d);
+    @Override // org.telegram.ui.Components.qb0
+    public void n(sb0 sb0Var, int i7) {
+        ex0 ex0Var = this.a;
+        ex0Var.b();
+        org.telegram.messenger.bz.r1 = i7;
+        org.telegram.messenger.t0.b.getSharedPreferences("mainconfig", 0).edit().putInt("ChatSwipeAction", org.telegram.messenger.bz.r1).apply();
+        ex0Var.invalidate();
+        try {
+            sb0Var.performHapticFeedback(3, 2);
+        } catch (Exception unused) {
+        }
     }
 }

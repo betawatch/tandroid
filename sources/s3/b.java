@@ -1,6 +1,6 @@
 package s3;
 
-import a8.ja;
+import a8.la;
 import com.google.android.gms.internal.vision.e2;
 import e2.n0;
 import e2.p0;
@@ -9,7 +9,7 @@ import j$.util.Objects;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements p0 {
     public final int a;
@@ -20,7 +20,7 @@ public final class b implements p0 {
     public final int f;
 
     public b(int i7, String str, String str2, String str3, boolean z10, int i10) {
-        ja.f(i10 == -1 || i10 > 0);
+        la.f(i10 == -1 || i10 > 0);
         this.a = i7;
         this.b = str;
         this.c = str2;

@@ -3,9 +3,9 @@ package wf;
 import android.net.Uri;
 import android.os.Bundle;
 import f6.l;
-import v4.w0;
+import v4.x0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
     public final String a;
@@ -26,7 +26,7 @@ public final class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(w0 w0Var) {
+    public e(x0 x0Var) {
         String str;
         int i7;
         l lVar;
@@ -36,7 +36,7 @@ public final class e {
         String str2;
         String str3;
         int i10;
-        str = (String) w0Var.c;
+        str = (String) x0Var.c;
         this.a = str;
         str.getClass();
         i7 = 3;
@@ -44,33 +44,33 @@ public final class e {
             case "image/jpeg":
             case "image/png":
                 i7 = 4;
-                lVar = (l) w0Var.f;
+                lVar = (l) x0Var.f;
                 lVar = lVar == null ? new l(i7) : lVar;
                 bundle = lVar.b;
                 sb2 = new StringBuilder();
                 sb3 = new StringBuilder();
-                str2 = (String) w0Var.g;
+                str2 = (String) x0Var.g;
                 if (str2 != null) {
                     sb2.append(str2);
                 }
-                str3 = (String) w0Var.h;
+                str3 = (String) x0Var.h;
                 if (str3 != null) {
                     sb3.append(str3);
                 }
-                i10 = w0Var.a;
-                if (i10 != 0 && w0Var.b != 0) {
+                i10 = x0Var.a;
+                if (i10 != 0 && x0Var.b != 0) {
                     l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
                     bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
-                    int i11 = w0Var.b;
+                    int i11 = x0Var.b;
                     l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
                     bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i11);
                     if (sb3.length() > 0) {
                         sb3.append(' ');
                     }
                     sb3.append("(");
-                    sb3.append(w0Var.a);
+                    sb3.append(x0Var.a);
                     sb3.append("x");
-                    sb3.append(w0Var.b);
+                    sb3.append(x0Var.b);
                     sb3.append(")");
                 }
                 if (sb2.length() > 0) {
@@ -86,31 +86,31 @@ public final class e {
             case "application/x-mpegURL":
             case "video/mp4":
                 i7 = 1;
-                lVar = (l) w0Var.f;
+                lVar = (l) x0Var.f;
                 if (lVar == null) {
                 }
                 bundle = lVar.b;
                 sb2 = new StringBuilder();
                 sb3 = new StringBuilder();
-                str2 = (String) w0Var.g;
+                str2 = (String) x0Var.g;
                 if (str2 != null) {
                 }
-                str3 = (String) w0Var.h;
+                str3 = (String) x0Var.h;
                 if (str3 != null) {
                 }
-                i10 = w0Var.a;
+                i10 = x0Var.a;
                 if (i10 != 0) {
                     l.c(2, "com.google.android.gms.cast.metadata.WIDTH");
                     bundle.putInt("com.google.android.gms.cast.metadata.WIDTH", i10);
-                    int i112 = w0Var.b;
+                    int i112 = x0Var.b;
                     l.c(2, "com.google.android.gms.cast.metadata.HEIGHT");
                     bundle.putInt("com.google.android.gms.cast.metadata.HEIGHT", i112);
                     if (sb3.length() > 0) {
                     }
                     sb3.append("(");
-                    sb3.append(w0Var.a);
+                    sb3.append(x0Var.a);
                     sb3.append("x");
-                    sb3.append(w0Var.b);
+                    sb3.append(x0Var.b);
                     sb3.append(")");
                     break;
                 }
@@ -124,19 +124,19 @@ public final class e {
                     lVar = null;
                     break;
                 }
-                lVar = (l) w0Var.f;
+                lVar = (l) x0Var.f;
                 if (lVar == null) {
                 }
                 bundle = lVar.b;
                 sb2 = new StringBuilder();
                 sb3 = new StringBuilder();
-                str2 = (String) w0Var.g;
+                str2 = (String) x0Var.g;
                 if (str2 != null) {
                 }
-                str3 = (String) w0Var.h;
+                str3 = (String) x0Var.h;
                 if (str3 != null) {
                 }
-                i10 = w0Var.a;
+                i10 = x0Var.a;
                 if (i10 != 0) {
                 }
                 if (sb2.length() > 0) {
@@ -146,9 +146,9 @@ public final class e {
                 break;
         }
         this.b = lVar;
-        this.c = (Uri) w0Var.d;
-        this.d = (String) w0Var.e;
-        this.e = w0Var.a;
-        this.f = w0Var.b;
+        this.c = (Uri) x0Var.d;
+        this.d = (String) x0Var.e;
+        this.e = x0Var.a;
+        this.f = x0Var.b;
     }
 }

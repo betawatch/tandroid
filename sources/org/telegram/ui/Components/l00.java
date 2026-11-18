@@ -1,146 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
+import java.util.Iterator;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class l00 extends FrameLayout {
-    public final RectF a;
-    public final /* synthetic */ FragmentContextView b;
+public final /* synthetic */ class l00 implements org.telegram.ui.ActionBar.m0, te.i, org.telegram.ui.ActionBar.r1, it0 {
+    public final /* synthetic */ FragmentContextView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l00(FragmentContextView fragmentContextView, Context context) {
-        super(context);
-        this.b = fragmentContextView;
-        this.a = new RectF();
+    public /* synthetic */ l00(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float f10;
-        super.dispatchDraw(canvas);
-        FragmentContextView fragmentContextView = this.b;
-        org.telegram.ui.ActionBar.e2 e2Var = fragmentContextView.h;
-        g6 g6Var = fragmentContextView.k0;
-        if (fragmentContextView.V == 4 && fragmentContextView.i0) {
-            int L = org.telegram.messenger.g0.L(24.0f) + ((int) Math.ceil(g6Var.c()));
-            if (L != fragmentContextView.g0) {
-                LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, L, 0.0f, new int[]{-10121218, -6983683}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
-                fragmentContextView.e0 = linearGradient;
-                fragmentContextView.d0.setShader(linearGradient);
-                fragmentContextView.g0 = L;
-            }
-            org.telegram.messenger.r3 groupCall = fragmentContextView.n.getGroupCall();
-            if (e2Var == null || groupCall == null || !groupCall.j()) {
-                f10 = 0.0f;
-            } else {
-                long currentTimeMillis = (groupCall.b.schedule_date * 1000) - e2Var.getConnectionsManager().getCurrentTimeMillis();
-                f10 = currentTimeMillis >= 0 ? currentTimeMillis < 5000 ? 1.0f - (currentTimeMillis / 5000.0f) : 0.0f : 1.0f;
-                if (currentTimeMillis < 6000) {
-                    invalidate();
-                }
-            }
-            fragmentContextView.f0.reset();
-            fragmentContextView.f0.postTranslate((-fragmentContextView.g0) * 0.7f * f10, 0.0f);
-            fragmentContextView.e0.setLocalMatrix(fragmentContextView.f0);
-            int measuredWidth = (getMeasuredWidth() - L) - org.telegram.messenger.g0.L(10.0f);
-            int L2 = org.telegram.messenger.g0.L(10.0f);
-            float f11 = measuredWidth;
-            float f12 = L2;
-            float L3 = org.telegram.messenger.g0.L(28.0f) + L2;
-            RectF rectF = this.a;
-            rectF.set(f11, f12, measuredWidth + L, L3);
-            canvas.save();
-            float a10 = fragmentContextView.l0.a(0.1f);
-            canvas.scale(a10, a10, rectF.centerX(), rectF.centerY());
-            canvas.translate(f11, f12);
-            RectF rectF2 = org.telegram.messenger.g0.P;
-            rectF2.set(0.0f, 0.0f, L, org.telegram.messenger.g0.L(28.0f));
-            canvas.drawRoundRect(rectF2, org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), fragmentContextView.d0);
-            canvas.translate(org.telegram.messenger.g0.L(12.0f), org.telegram.messenger.g0.L(6.0f));
-            g6Var.setBounds(0, 0, org.telegram.messenger.g0.q.x, org.telegram.messenger.g0.L(16.0f));
-            g6Var.draw(canvas);
-            canvas.restore();
+    @Override // org.telegram.ui.Components.it0
+    public void b(org.telegram.messenger.pd pdVar) {
+        float[] fArr = FragmentContextView.X0;
+        this.a.k(pdVar);
+    }
+
+    @Override // te.i
+    public void f(te.j jVar) {
+        FragmentContextView fragmentContextView = this.a;
+        te.j jVar2 = fragmentContextView.V0;
+        float f10 = 1.0f - jVar2.a.d.c.a;
+        fragmentContextView.d.setAlpha(f10);
+        fragmentContextView.d.setScaleX(org.telegram.messenger.g0.T1(0.7f, 1.0f, f10));
+        fragmentContextView.d.setScaleY(org.telegram.messenger.g0.T1(0.7f, 1.0f, f10));
+        Iterator it = jVar2.iterator();
+        while (it.hasNext()) {
+            te.e eVar = (te.e) it.next();
+            float c10 = eVar.c();
+            Object obj = eVar.a;
+            float T1 = org.telegram.messenger.g0.T1(0.7f, 1.0f, c10);
+            nh.c cVar = ((w00) obj).b;
+            cVar.setAlpha(eVar.c());
+            cVar.setScaleX(T1);
+            cVar.setScaleY(T1);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        qg qgVar;
-        org.telegram.messenger.r3 groupCall;
-        FragmentContextView fragmentContextView = this.b;
-        if (fragmentContextView.V == 4 && fragmentContextView.i0 && fragmentContextView.l0 != null) {
-            boolean contains = this.a.contains(motionEvent.getX(), motionEvent.getY());
-            if (motionEvent.getAction() == 0) {
-                fragmentContextView.l0.c(contains);
-            } else if (motionEvent.getAction() == 2) {
-                if (!contains) {
-                    fragmentContextView.l0.c(false);
-                }
-            } else if (motionEvent.getAction() == 1) {
-                if (contains) {
-                    k00 k00Var = fragmentContextView.n0;
-                    org.telegram.ui.ActionBar.e2 e2Var = fragmentContextView.h;
-                    if (e2Var != null && (qgVar = fragmentContextView.n) != null && (groupCall = qgVar.getGroupCall()) != null && groupCall.b != null) {
-                        if (fragmentContextView.T0 != 0) {
-                            e2Var.getConnectionsManager().cancelRequest(fragmentContextView.T0, true);
-                            fragmentContextView.T0 = 0;
-                        }
-                        TL_phone.toggleGroupCallStartSubscription togglegroupcallstartsubscription = new TL_phone.toggleGroupCallStartSubscription();
-                        togglegroupcallstartsubscription.call = groupCall.g(groupCall.a);
-                        TLRPC.GroupCall groupCall2 = groupCall.b;
-                        boolean z10 = !fragmentContextView.j0;
-                        fragmentContextView.j0 = z10;
-                        groupCall2.schedule_start_subscribed = z10;
-                        togglegroupcallstartsubscription.subscribed = z10;
-                        fragmentContextView.T0 = e2Var.getConnectionsManager().sendRequest(togglegroupcallstartsubscription, null);
-                        if (fragmentContextView.m0) {
-                            org.telegram.messenger.g0.r(k00Var);
-                            fragmentContextView.m0 = false;
-                        }
-                        k00Var.run();
-                        cc a02 = cc.a0(e2Var);
-                        boolean z11 = fragmentContextView.j0;
-                        org.telegram.messenger.k5.n(null, z11 ? 2131748780 : 2131748781, a02, z11 ? R.raw.silent_unmute : R.raw.silent_mute, 36);
-                    }
-                }
-                fragmentContextView.l0.c(false);
-            } else if (motionEvent.getAction() == 3) {
-                fragmentContextView.l0.c(false);
+    @Override // org.telegram.ui.ActionBar.m0
+    public void g(int i7) {
+        float[] fArr = FragmentContextView.X0;
+        if (i7 >= 0) {
+            float[] fArr2 = FragmentContextView.X0;
+            if (i7 >= 6) {
+                return;
             }
-        } else {
-            dc dcVar = fragmentContextView.l0;
-            if (dcVar != null) {
-                dcVar.c(false);
+            MediaController B = MediaController.B();
+            FragmentContextView fragmentContextView = this.a;
+            float C = B.C(fragmentContextView.a0);
+            float f10 = fArr2[i7];
+            MediaController.B().m0(fragmentContextView.a0, f10);
+            if (C != f10) {
+                fragmentContextView.l(C, f10, false);
             }
         }
-        dc dcVar2 = fragmentContextView.l0;
-        return (dcVar2 != null && dcVar2.i) || super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        FragmentContextView fragmentContextView = this.b;
-        w8 w8Var = fragmentContextView.c0;
-        if (w8Var == null || w8Var.getVisibility() != 0) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.h2 h2Var = fragmentContextView.h;
+        if (!(h2Var instanceof org.telegram.ui.cx)) {
+            org.telegram.messenger.qd.f(h2Var.getCurrentAccount()).k(fragmentContextView.n.a());
             return;
         }
-        fragmentContextView.c0.invalidate();
+        for (int i10 = 0; i10 < 4; i10++) {
+            Utilities.d.c(new org.telegram.messenger.hd(org.telegram.messenger.qd.f(i10), 6));
+        }
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b.k0 || super.verifyDrawable(drawable);
+    @Override // te.i
+    public /* synthetic */ void a() {
     }
 }

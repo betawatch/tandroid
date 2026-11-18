@@ -5,9 +5,9 @@ import f3.i0;
 import java.util.Arrays;
 import java.util.Collections;
 import l2.l0;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -29,7 +29,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new l0(ns.I2);
+        this.e = new l0(ks.I2);
         this.b = new h2.x();
     }
 
@@ -175,7 +175,7 @@ public final class n implements i {
                                         tVar.z = j14;
                                         tVar.E = f10;
                                         tVar.u = Collections.singletonList(copyOf);
-                                        r.b.s(tVar, i0Var);
+                                        p5.c.r(tVar, i0Var);
                                         this.j = true;
                                     } else {
                                         f10 = j10 / j11;
@@ -202,7 +202,7 @@ public final class n implements i {
                                         tVar2.z = j142;
                                         tVar2.E = f10;
                                         tVar2.u = Collections.singletonList(copyOf);
-                                        r.b.s(tVar2, i0Var);
+                                        p5.c.r(tVar2, i0Var);
                                         this.j = true;
                                     }
                                 } else if (j3 < 7) {
@@ -230,7 +230,7 @@ public final class n implements i {
                                     tVar22.z = j1422;
                                     tVar22.E = f10;
                                     tVar22.u = Collections.singletonList(copyOf);
-                                    r.b.s(tVar22, i0Var);
+                                    p5.c.r(tVar22, i0Var);
                                     this.j = true;
                                 } else {
                                     h2.a.l("H263Reader", "Invalid aspect ratio");
@@ -258,7 +258,7 @@ public final class n implements i {
                                     tVar222.z = j14222;
                                     tVar222.E = f10;
                                     tVar222.u = Collections.singletonList(copyOf);
-                                    r.b.s(tVar222, i0Var);
+                                    p5.c.r(tVar222, i0Var);
                                     this.j = true;
                                 }
                             } else {

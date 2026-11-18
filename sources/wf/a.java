@@ -3,19 +3,20 @@ package wf;
 import android.util.Log;
 import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
-import f5.k;
+import f6.k;
 import h6.g;
 import h6.h;
 import h6.j;
+import oi.y3;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends g {
     public final h a;
     public final g6.g b;
     public final g6.c c;
-    public k d;
+    public y3 d;
     public int e;
     public int f;
     public int g;
@@ -94,14 +95,14 @@ public final class a extends g {
             return;
         }
         String i7 = d.i();
-        e h = this.g < this.d.a.size() ? this.d.h(this.g) : d.l;
-        MediaInfo mediaInfo = new MediaInfo(d.j(i7, h.d) + ("?index=" + this.g + "&attempt=" + this.h), 1, h.a, h.b, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
+        e j3 = this.g < this.d.a.size() ? this.d.j(this.g) : d.l;
+        MediaInfo mediaInfo = new MediaInfo(d.j(i7, j3.d) + ("?index=" + this.g + "&attempt=" + this.h), 1, j3.a, j3.b, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
         Boolean bool = Boolean.TRUE;
         if (Double.compare(1.0d, 2.0d) > 0 || Double.compare(1.0d, 0.5d) < 0) {
             throw new IllegalArgumentException("playbackRate must be between PLAYBACK_RATE_MIN and PLAYBACK_RATE_MAX");
         }
-        f6.k kVar = new f6.k(mediaInfo, null, bool, -1L, 1.0d, null, null, null, null, null, null, 0L);
-        m.d("Must be called from the main thread.");
+        k kVar = new k(mediaInfo, null, bool, -1L, 1.0d, null, null, null, null, null, null, 0L);
+        m.e("Must be called from the main thread.");
         h hVar = this.a;
         if (hVar.w()) {
             h.x(new j(hVar, kVar, 1));

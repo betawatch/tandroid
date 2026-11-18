@@ -1,134 +1,173 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.widget.EditText;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class lr0 extends tj0 {
-    public final Context c;
-    public TLRPC.ChatFull d;
-    public ArrayList e;
-    public final /* synthetic */ ys0 f;
+public final class lr0 extends org.telegram.ui.ActionBar.n0 {
+    public final /* synthetic */ gt0 a;
 
-    public lr0(ys0 ys0Var, Context context) {
-        this.f = ys0Var;
-        this.c = context;
+    public lr0(gt0 gt0Var) {
+        this.a = gt0Var;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean D(v4.e1 e1Var) {
-        return true;
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void g() {
+        this.a.q0.setTranslationX(((View) r0.getParent()).getMeasuredWidth() - r0.getRight());
     }
 
-    @Override // v4.h0
-    public final int b() {
-        TLRPC.ChatFull chatFull = this.d;
-        if (chatFull != null && chatFull.participants.participants.isEmpty()) {
-            return 1;
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void h() {
+        gt0 gt0Var = this.a;
+        ar0 ar0Var = gt0Var.M0;
+        ImageView imageView = gt0Var.u0;
+        gt0Var.Y0 = false;
+        gt0Var.Z0 = null;
+        org.telegram.ui.ActionBar.r0 r0Var = gt0Var.p0;
+        if (r0Var != null) {
+            r0Var.setVisibility(0);
         }
-        TLRPC.ChatFull chatFull2 = this.d;
-        if (chatFull2 != null) {
-            return chatFull2.participants.participants.size();
+        if (imageView != null && gt0Var.k0(0.0f) > 0.5f) {
+            imageView.setVisibility(0);
         }
-        return 0;
+        if (ar0Var != null) {
+            ar0Var.d.M(new org.telegram.ui.hq(2));
+            ar0Var.h = 0L;
+            ar0Var.g(false);
+        }
+        or0 or0Var = gt0Var.W;
+        if (or0Var != null) {
+            org.telegram.ui.cn cnVar = or0Var.a;
+            org.telegram.ui.tm tmVar = cnVar.Vc;
+            if (tmVar != null) {
+                tmVar.h();
+            }
+            cnVar.H3 = false;
+            cnVar.r0 = false;
+            cnVar.Pc(false);
+            cnVar.qd();
+        }
+        gt0Var.X0 = false;
+        gt0Var.setSearchItemVisibility(0);
+        gt0Var.j0.G(null, true);
+        gt0Var.l0.G(null, true);
+        gt0Var.k0.G(null, true);
+        gt0Var.m0.F(null, true);
+        ss0 ss0Var = gt0Var.V;
+        if (ss0Var != null) {
+            ss0Var.E(null, null);
+        }
+        gt0Var.X0(false);
+        ph0 ph0Var = gt0Var.v0;
+        if (ph0Var != null) {
+            ph0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(lr.h).start();
+        }
+        if (gt0Var.C0) {
+            gt0Var.C0 = false;
+        } else {
+            gt0Var.B1(false);
+        }
     }
 
-    @Override // v4.h0
-    public final int d(int i7) {
-        TLRPC.ChatFull chatFull = this.d;
-        return (chatFull == null || !chatFull.participants.participants.isEmpty()) ? 21 : 20;
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void i() {
+        gt0 gt0Var = this.a;
+        gt0Var.Y0 = true;
+        ar0 ar0Var = gt0Var.M0;
+        if (ar0Var != null) {
+            ar0Var.g((gt0Var.getSelectedTab() == 11 || gt0Var.getSelectedTab() == 12) && ar0Var.a());
+        }
+        ImageView imageView = gt0Var.u0;
+        if (imageView != null) {
+            imageView.setVisibility(8);
+        }
+        org.telegram.ui.ActionBar.r0 r0Var = gt0Var.p0;
+        if (r0Var != null) {
+            r0Var.setVisibility(8);
+        }
+        gt0Var.setSearchItemVisibility(8);
+        gt0Var.X0(true);
+        ph0 ph0Var = gt0Var.v0;
+        if (ph0Var != null) {
+            ph0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(lr.h).start();
+        }
     }
 
-    @Override // v4.h0
-    public final void t(v4.e1 e1Var, int i7) {
-        String str;
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        boolean z14;
-        boolean z15;
-        ys0 ys0Var = this.f;
-        org.telegram.ui.ActionBar.e2 e2Var = ys0Var.y1;
-        View view = e1Var.a;
-        if (view instanceof org.telegram.ui.Cells.pa) {
-            org.telegram.ui.Cells.pa paVar = (org.telegram.ui.Cells.pa) view;
-            TLRPC.ChatParticipant chatParticipant = !this.e.isEmpty() ? this.d.participants.participants.get(((Integer) this.e.get(i7)).intValue()) : this.d.participants.participants.get(i7);
-            if (chatParticipant != null) {
-                if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
-                    TLRPC.ChannelParticipant channelParticipant = ((TLRPC.TL_chatChannelParticipant) chatParticipant).channelParticipant;
-                    String str2 = channelParticipant.rank;
-                    if (channelParticipant instanceof TLRPC.TL_channelParticipantCreator) {
-                        if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.hd.M0(2131752423, "ChannelCreator");
-                        }
-                        z14 = true;
-                        z15 = true;
-                        z13 = false;
-                    } else if (channelParticipant instanceof TLRPC.TL_channelParticipantAdmin) {
-                        if (TextUtils.isEmpty(str2)) {
-                            str2 = org.telegram.messenger.hd.M0(2131752520, "ChannelAdmin");
-                        }
-                        z13 = channelParticipant.promoted_by == e2Var.getUserConfig().e();
-                        z14 = true;
-                        z15 = false;
-                    } else {
-                        z13 = false;
-                        z14 = false;
-                        z15 = false;
-                    }
-                    boolean z16 = z15;
-                    z12 = z13;
-                    z10 = z14;
-                    z11 = z16;
-                    str = str2;
-                } else {
-                    String str3 = chatParticipant.rank;
-                    if (chatParticipant instanceof TLRPC.TL_chatParticipantCreator) {
-                        if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.hd.M0(2131752423, "ChannelCreator");
-                        }
-                        str = str3;
-                        z10 = true;
-                        z11 = true;
-                        z12 = false;
-                    } else if (chatParticipant instanceof TLRPC.TL_chatParticipantAdmin) {
-                        if (TextUtils.isEmpty(str3)) {
-                            str3 = org.telegram.messenger.hd.M0(2131752520, "ChannelAdmin");
-                        }
-                        z12 = chatParticipant.inviter_id == e2Var.getUserConfig().e();
-                        str = str3;
-                        z10 = true;
-                        z11 = false;
-                    } else {
-                        str = str3;
-                        z10 = false;
-                        z11 = false;
-                        z12 = false;
-                    }
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void k(EditTextBoldCursor editTextBoldCursor) {
+        or0 or0Var = this.a.W;
+        if (or0Var != null) {
+            or0Var.a.L9();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n0
+    public final void l(EditText editText) {
+        ss0 ss0Var;
+        String obj = editText.getText().toString();
+        gt0 gt0Var = this.a;
+        or0 or0Var = gt0Var.W;
+        if (or0Var != null) {
+            org.telegram.ui.cn cnVar = or0Var.a;
+            org.telegram.ui.ActionBar.r0 r0Var = cnVar.k0;
+            if (r0Var != null) {
+                cnVar.I3 = obj;
+                r0Var.Q(obj, false);
+            }
+            if (TextUtils.isEmpty(obj) && gt0Var.Z0 == null) {
+                org.telegram.ui.cn cnVar2 = or0Var.a;
+                org.telegram.ui.tm tmVar = cnVar2.Vc;
+                if (tmVar != null) {
+                    tmVar.h();
                 }
-                TLRPC.User a22 = e2Var.getMessagesController().a2(Long.valueOf(chatParticipant.user_id));
-                paVar.a(str, z10, z11, org.telegram.messenger.q10.B(a22) && org.telegram.messenger.t3.h(e2Var.getMessagesController().M0(Long.valueOf(-ys0Var.m1))), new f50(this, a22, str, z10, z11, z12, 1));
-                paVar.d(a22, null, null, i7 != this.d.participants.participants.size() - 1);
+                cnVar2.H3 = false;
+                cnVar2.r0 = false;
+                cnVar2.Pc(false);
+                cnVar2.qd();
             }
         }
-    }
-
-    @Override // v4.h0
-    public final v4.e1 x(ViewGroup viewGroup, int i7) {
-        ys0 ys0Var = this.f;
-        if (i7 != 20) {
-            org.telegram.ui.Cells.pa paVar = new org.telegram.ui.Cells.pa(9, 0, this.c, ys0Var.I1, true, false);
-            paVar.setLayoutParams(new v4.p0(-1, -2));
-            return new cj0(paVar);
+        gt0Var.setSearchItemVisibility(8);
+        gt0Var.X0 = (obj.length() == 0 && gt0Var.Z0 == null) ? false : true;
+        gt0Var.post(new ap0(this, 2));
+        int i7 = gt0Var.n0[0].F;
+        if (i7 == 1) {
+            ds0 ds0Var = gt0Var.j0;
+            if (ds0Var == null) {
+                return;
+            }
+            ds0Var.G(obj, true);
+            return;
         }
-        p3 X = ys0.X(7, ys0Var.m1, this.c, ys0Var.I1);
-        X.setLayoutParams(new v4.p0(-1, -1));
-        return new cj0(X);
+        if (i7 == 3) {
+            ds0 ds0Var2 = gt0Var.l0;
+            if (ds0Var2 == null) {
+                return;
+            }
+            ds0Var2.G(obj, true);
+            return;
+        }
+        if (i7 == 4) {
+            ds0 ds0Var3 = gt0Var.k0;
+            if (ds0Var3 == null) {
+                return;
+            }
+            ds0Var3.G(obj, true);
+            return;
+        }
+        if (i7 == 7) {
+            zr0 zr0Var = gt0Var.m0;
+            if (zr0Var == null) {
+                return;
+            }
+            zr0Var.F(obj, true);
+            return;
+        }
+        if (i7 != 11 || (ss0Var = gt0Var.V) == null) {
+            return;
+        }
+        ss0Var.E(gt0Var.Z0, obj);
     }
 }

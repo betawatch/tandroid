@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements Iterable {
     public final d a;
@@ -23,13 +23,13 @@ public final class h implements Iterable {
         if (interpolator == null || j3 <= 0) {
             this.c = null;
         } else {
-            this.c = new c(0, new cf(this), interpolator, j3);
+            this.c = new c(0, new b5(this), interpolator, j3);
         }
     }
 
     public final void f(float f10) {
         g gVar = this.d;
-        boolean z10 = gVar.a.s(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
+        boolean z10 = gVar.a.D(f10) || (gVar.c.a(f10) || (gVar.g.a(f10) || (gVar.f.a(f10) || (gVar.e.a(f10) || (gVar.d.a(f10) || gVar.b.a(f10))))));
         ArrayList arrayList = this.b;
         int size = arrayList.size();
         int i7 = 0;
@@ -45,7 +45,7 @@ public final class h implements Iterable {
             z10 = z11 || z10;
         }
         if (z10) {
-            this.a.b0();
+            this.a.m1();
             if (f10 == 1.0f) {
                 l(true);
             }
@@ -166,9 +166,9 @@ public final class h implements Iterable {
             k();
             kVar3.c = f18;
         }
-        if (dVar.q()) {
+        if (dVar.C()) {
             k();
-            dVar.v();
+            dVar.H();
         }
     }
 
@@ -212,7 +212,7 @@ public final class h implements Iterable {
         gVar.f.c(z10);
         gVar.g.c(z10);
         gVar.c.c(z10);
-        gVar.a.n(z10);
+        gVar.a.x(z10);
     }
 
     public final void m(List list, boolean z10) {
@@ -256,7 +256,7 @@ public final class h implements Iterable {
             }
             g.a(gVar, size2, false);
             j(false);
-            this.a.b0();
+            this.a.m1();
             return;
         }
         if (list != null && !list.isEmpty()) {

@@ -1,61 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.ui.Components.z30;
-import org.webrtc.EglBase;
-import org.webrtc.EglRenderer;
-import org.webrtc.GlRectDrawer;
-import org.webrtc.VideoFrame;
-import org.webrtc.VideoSink;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u0 implements VideoSink {
-    public final EglRenderer a;
-    public SurfaceTexture b;
-    public boolean c;
+public final class u0 implements c5.h {
+    public int a = 0;
+    public int b;
+    public final /* synthetic */ w0 c;
 
-    public u0(wi.o oVar) {
-        EglRenderer eglRenderer = new EglRenderer("pip-egl");
-        this.a = eglRenderer;
-        eglRenderer.init(VideoCapturerDevice.getEglBase().getEglBaseContext(), EglBase.CONFIG_PLAIN, new GlRectDrawer());
-        oVar.setSurfaceTextureListener(new z30(this, 3));
-        SurfaceTexture surfaceTexture = oVar.getSurfaceTexture();
-        if (surfaceTexture == null || oVar.a == null) {
-            return;
-        }
-        int width = oVar.getWidth();
-        int height = oVar.getHeight();
-        if (this.c || this.b == surfaceTexture) {
-            return;
-        }
-        this.b = surfaceTexture;
-        if (width > 0 && height > 0) {
-            eglRenderer.setLayoutAspectRatio(width / height);
-        }
-        eglRenderer.createEglSurface(surfaceTexture);
+    public u0(w0 w0Var) {
+        this.c = w0Var;
     }
 
-    public final void a() {
-        if (this.c) {
+    /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [boolean] */
+    @Override // c5.h
+    public final void a(int i7) {
+        int i10 = this.a;
+        w0 w0Var = this.c;
+        if (i10 == 0) {
+            if (i7 <= w0Var.E) {
+                w0Var.n = 1;
+            } else {
+                w0Var.n = 2;
+            }
+            w0.a(w0Var);
             return;
         }
-        this.c = true;
-        this.a.release();
-        this.b = null;
-    }
-
-    @Override // org.webrtc.VideoSink
-    public final void onFrame(VideoFrame videoFrame) {
-        if (this.c) {
-            return;
+        if (i7 <= w0Var.E) {
+            this.b = 1;
+        } else {
+            this.b = 2;
         }
-        this.a.onFrame(videoFrame);
     }
 
-    @Override // org.webrtc.VideoSink
-    public final /* synthetic */ void setParentSink(VideoSink videoSink) {
-        org.webrtc.d0.a(this, videoSink);
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        w0 w0Var = this.c;
+        w0Var.y = i7;
+        w0Var.x = f10;
+        w0Var.d();
+    }
+
+    @Override // c5.h
+    public final void c(int i7) {
+        this.a = i7;
+        if (i7 == 0) {
+            int i10 = this.b;
+            w0 w0Var = this.c;
+            w0Var.n = i10;
+            w0.a(w0Var);
+        }
     }
 }

@@ -3,7 +3,7 @@ package j6;
 import android.os.Looper;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p {
     public static final Object i = new Object();
@@ -37,7 +37,7 @@ public final class p {
             this.f = currentTimeMillis;
         }
         if (nVar2 != null) {
-            nVar2.h(this.c, j10, j11, currentTimeMillis);
+            nVar2.g(this.c, j10, j11, currentTimeMillis);
         }
         synchronized (obj) {
             try {
@@ -95,8 +95,8 @@ public final class p {
                 if (this.g != null) {
                     long currentTimeMillis = System.currentTimeMillis();
                     n nVar = this.g;
-                    q6.m.g(nVar);
-                    nVar.k(this.c, this.e, i7, obj, this.f, currentTimeMillis);
+                    q6.m.h(nVar);
+                    nVar.j(this.c, this.e, i7, obj, this.f, currentTimeMillis);
                 }
                 this.e = -1L;
                 this.g = null;

@@ -1,18 +1,18 @@
 package li;
 
 import android.view.View;
-import di.va;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.n61;
-import org.telegram.ui.Wallet.u2;
-import org.telegram.ui.Wallet.w2;
-import org.telegram.ui.jm0;
-import org.telegram.ui.kt;
-import org.telegram.ui.nt;
+import di.za;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.y61;
+import org.telegram.ui.Wallet.b3;
+import org.telegram.ui.Wallet.d3;
+import org.telegram.ui.lm0;
+import org.telegram.ui.mt;
+import org.telegram.ui.pt;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class x extends n61 {
+public final class x extends y61 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -22,59 +22,59 @@ public final class x extends n61 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.y61
     public final void b(View view, int i7, int i10) {
         switch (this.a) {
             case 0:
                 ((b0) view).getClass();
                 break;
             case 1:
-                kt ktVar = (kt) view;
-                ktVar.g3 = i7;
-                ktVar.n3.clear();
-                ktVar.u3 = ktVar.z1(6) + ktVar.B1(6) <= 0;
-                ktVar.C1();
-                ktVar.D1(false);
-                ktVar.v0(0);
+                mt mtVar = (mt) view;
+                mtVar.g3 = i7;
+                mtVar.n3.clear();
+                mtVar.u3 = mtVar.z1(6) + mtVar.B1(6) <= 0;
+                mtVar.C1();
+                mtVar.D1(false);
+                mtVar.v0(0);
                 break;
             case 3:
-                if (view instanceof u2) {
-                    ((u2) view).getClass();
+                if (view instanceof b3) {
+                    ((b3) view).getClass();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.y61
     public final View d(int i7) {
         switch (this.a) {
             case 0:
                 d0 d0Var = (d0) this.b;
                 return i7 == 2 ? d0Var.x1 : i7 == 0 ? d0Var.v1 : d0Var.w1;
             case 1:
-                nt ntVar = (nt) this.b;
-                kt ktVar = new kt(ntVar, ntVar.getParentActivity());
-                ntVar.e.add(ktVar);
-                return ktVar;
+                pt ptVar = (pt) this.b;
+                mt mtVar = new mt(ptVar, ptVar.getParentActivity());
+                ptVar.e.add(mtVar);
+                return mtVar;
             case 2:
-                jm0 jm0Var = (jm0) this.b;
+                lm0 lm0Var = (lm0) this.b;
                 if (i7 == 1) {
-                    return jm0Var.h;
+                    return lm0Var.h;
                 }
                 if (i7 == 0) {
-                    return jm0Var.n;
+                    return lm0Var.n;
                 }
                 return null;
             case 3:
-                return (View) ((w2) this.b).n1.get(i7);
+                return (View) ((d3) this.b).n1.get(i7);
             default:
-                va vaVar = (va) this.b;
-                return i7 != 1 ? i7 != 2 ? (sg.o) vaVar.b : (sg.p) vaVar.d : (sg.n) vaVar.c;
+                za zaVar = (za) this.b;
+                return i7 != 1 ? i7 != 2 ? (sg.o) zaVar.b : (sg.p) zaVar.d : (sg.n) zaVar.c;
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.y61
     public final int e() {
         switch (this.a) {
             case 0:
@@ -84,25 +84,25 @@ public final class x extends n61 {
             case 2:
                 return 2;
             case 3:
-                return ((w2) this.b).n1.size();
+                return ((d3) this.b).n1.size();
             default:
                 return 3;
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.y61
     public CharSequence g(int i7) {
         switch (this.a) {
             case 1:
-                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : hd.M0(2131748295, null) : hd.M0(2131748293, null) : hd.M0(2131748296, null) : hd.M0(2131748297, null);
+                return i7 != 0 ? i7 != 1 ? i7 != 2 ? i7 != 3 ? "" : gd.M0(2131748103, null) : gd.M0(2131748101, null) : gd.M0(2131748104, null) : gd.M0(2131748105, null);
             case 4:
-                return i7 != 1 ? i7 != 2 ? hd.M0(2131747669, null).toUpperCase() : hd.M0(2131747668, null).toUpperCase() : hd.M0(2131747663, null).toUpperCase();
+                return i7 != 1 ? i7 != 2 ? gd.M0(2131747476, null).toUpperCase() : gd.M0(2131747475, null).toUpperCase() : gd.M0(2131747470, null).toUpperCase();
             default:
                 return super.g(i7);
         }
     }
 
-    @Override // org.telegram.ui.Components.n61
+    @Override // org.telegram.ui.Components.y61
     public int h(int i7) {
         switch (this.a) {
             case 0:

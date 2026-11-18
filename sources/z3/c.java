@@ -1,9 +1,8 @@
 package z3;
 
-import a8.ja;
-import aa.b0;
+import a8.la;
 import android.util.Pair;
-import c8.g1;
+import c8.k1;
 import com.google.android.gms.internal.vision.e2;
 import e2.p0;
 import e2.q0;
@@ -16,7 +15,7 @@ import h2.l0;
 import h2.x;
 import h9.f0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -25,11 +24,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ff;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.of;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final byte[] a;
@@ -100,16 +100,16 @@ public abstract class c {
 
     public static int d(x xVar) {
         int A = xVar.A();
-        int i7 = A & ns.L1;
+        int i7 = A & ks.L1;
         while ((A & 128) == 128) {
             A = xVar.A();
-            i7 = (i7 << 7) | (A & ns.L1);
+            i7 = (i7 << 7) | (A & ks.L1);
         }
         return i7;
     }
 
     public static int e(int i7) {
-        return (i7 >> 24) & ns.e4;
+        return (i7 >> 24) & ks.e4;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:25:0x008a, code lost:
@@ -259,7 +259,7 @@ public abstract class c {
                             } else {
                                 int A = xVar.A();
                                 i11 = A & 15;
-                                i12 = (A & ns.P3) >> 4;
+                                i12 = (A & ks.P3) >> 4;
                             }
                             if (xVar.A() == 1) {
                                 num2 = num3;
@@ -303,10 +303,10 @@ public abstract class c {
         if (r11 == 0) goto L52;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:102:0x0b1c  */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0b30  */
-    /* JADX WARN: Removed duplicated region for block: B:271:0x093c  */
-    /* JADX WARN: Removed duplicated region for block: B:362:0x0882  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x0b1b  */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0b2f  */
+    /* JADX WARN: Removed duplicated region for block: B:271:0x093b  */
+    /* JADX WARN: Removed duplicated region for block: B:362:0x0881  */
     /* JADX WARN: Removed duplicated region for block: B:412:0x015f  */
     /* JADX WARN: Removed duplicated region for block: B:415:0x0170  */
     /* JADX WARN: Removed duplicated region for block: B:419:0x01b2  */
@@ -315,16 +315,16 @@ public abstract class c {
     /* JADX WARN: Removed duplicated region for block: B:437:0x022d  */
     /* JADX WARN: Removed duplicated region for block: B:446:0x024c  */
     /* JADX WARN: Removed duplicated region for block: B:448:0x0256  */
-    /* JADX WARN: Removed duplicated region for block: B:600:0x05b2  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x087f  */
-    /* JADX WARN: Removed duplicated region for block: B:654:0x06af  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0886  */
+    /* JADX WARN: Removed duplicated region for block: B:600:0x05b1  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x087e  */
+    /* JADX WARN: Removed duplicated region for block: B:654:0x06ae  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0885  */
     /* JADX WARN: Removed duplicated region for block: B:686:0x01ff A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:688:0x01c4  */
     /* JADX WARN: Removed duplicated region for block: B:689:0x01b5  */
     /* JADX WARN: Removed duplicated region for block: B:690:0x0178  */
     /* JADX WARN: Removed duplicated region for block: B:691:0x0162  */
-    /* JADX WARN: Removed duplicated region for block: B:95:0x0ada  */
+    /* JADX WARN: Removed duplicated region for block: B:95:0x0ad9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -370,7 +370,7 @@ public abstract class c {
         boolean z13;
         int i22;
         x xVar3;
-        s1 s1Var;
+        t1 t1Var;
         long j16;
         b bVar;
         boolean z14;
@@ -604,7 +604,7 @@ public abstract class c {
                                                         int i47 = m17 - 16;
                                                         byte[] bArr = new byte[i47];
                                                         xVar7.k(i38, i47, bArr);
-                                                        s1Var = i0.u(bArr);
+                                                        t1Var = i0.u(bArr);
                                                         str5 = "application/x-quicktime-tx3g";
                                                         xVar3 = xVar7;
                                                         i17 = m16;
@@ -617,7 +617,7 @@ public abstract class c {
                                                             tVar3.r = s0.n(str5);
                                                             tVar3.d = str;
                                                             tVar3.w = j16;
-                                                            tVar3.u = s1Var;
+                                                            tVar3.u = t1Var;
                                                             j0Var3.d = new u(tVar3);
                                                         }
                                                         str2 = str;
@@ -632,7 +632,7 @@ public abstract class c {
                                                         i19 = i45;
                                                         i20 = i46;
                                                         j16 = 0;
-                                                        s1Var = null;
+                                                        t1Var = null;
                                                         if (str5 != null) {
                                                         }
                                                         str2 = str;
@@ -660,18 +660,18 @@ public abstract class c {
                                                                 i21 = i14;
                                                                 xVar2 = xVar3;
                                                             } else {
-                                                                ja.p(bArr2.length == 64);
+                                                                la.p(bArr2.length == 64);
                                                                 ArrayList arrayList7 = new ArrayList(16);
                                                                 xVar3 = xVar7;
                                                                 int i49 = 0;
                                                                 while (i49 < bArr2.length - 3) {
                                                                     byte[] bArr3 = bArr2;
                                                                     int i50 = i45;
-                                                                    int c11 = g1.c(bArr2[i49], bArr3[i49 + 1], bArr3[i49 + 2], bArr3[i49 + 3]);
-                                                                    int i51 = (c11 >> 16) & ns.e4;
-                                                                    int i52 = ((c11 >> 8) & ns.e4) - 128;
-                                                                    int i53 = (c11 & ns.e4) - 128;
-                                                                    arrayList7.add(String.format("%06x", Integer.valueOf(l0.i(((i53 * 17790) / 10000) + i51, 0, ns.e4) | (l0.i((i51 - ((i53 * 3455) / 10000)) - ((i52 * 7169) / 10000), 0, ns.e4) << 8) | (l0.i(((i52 * 14075) / 10000) + i51, 0, ns.e4) << 16))));
+                                                                    int c11 = k1.c(bArr2[i49], bArr3[i49 + 1], bArr3[i49 + 2], bArr3[i49 + 3]);
+                                                                    int i51 = (c11 >> 16) & ks.e4;
+                                                                    int i52 = ((c11 >> 8) & ks.e4) - 128;
+                                                                    int i53 = (c11 & ks.e4) - 128;
+                                                                    arrayList7.add(String.format("%06x", Integer.valueOf(l0.i(((i53 * 17790) / 10000) + i51, 0, ks.e4) | (l0.i((i51 - ((i53 * 3455) / 10000)) - ((i52 * 7169) / 10000), 0, ks.e4) << 8) | (l0.i(((i52 * 14075) / 10000) + i51, 0, ks.e4) << 16))));
                                                                     i49 += 4;
                                                                     bArr2 = bArr3;
                                                                     i46 = i46;
@@ -682,11 +682,11 @@ public abstract class c {
                                                                 i19 = i45;
                                                                 i20 = i46;
                                                                 StringBuilder n10 = i5.c.n("size: ", x10, "x", x11, "\npalette: ");
-                                                                n10.append(new f5.g(", ", 1).e(arrayList7));
+                                                                n10.append(new f5.g(", ").e(arrayList7));
                                                                 n10.append("\n");
                                                                 String sb2 = n10.toString();
                                                                 String str6 = l0.a;
-                                                                s1Var = i0.u(sb2.getBytes(StandardCharsets.UTF_8));
+                                                                t1Var = i0.u(sb2.getBytes(StandardCharsets.UTF_8));
                                                                 str5 = "application/vobsub";
                                                             }
                                                         } else {
@@ -694,7 +694,7 @@ public abstract class c {
                                                             i17 = m16;
                                                             i19 = i45;
                                                             i20 = i46;
-                                                            s1Var = null;
+                                                            t1Var = null;
                                                             str5 = null;
                                                         }
                                                         j16 = Long.MAX_VALUE;
@@ -711,7 +711,7 @@ public abstract class c {
                                                 i19 = i45;
                                                 i20 = i46;
                                                 j16 = Long.MAX_VALUE;
-                                                s1Var = null;
+                                                t1Var = null;
                                                 if (str5 != null) {
                                                 }
                                                 str2 = str;
@@ -840,7 +840,7 @@ public abstract class c {
                     } else {
                         i10 = i39;
                     }
-                    i11 = (m12 == 0 && m13 == -65536 && (m14 == 65536 || m14 == -65536) && m15 == 0) ? ns.t4 : ((m12 == -65536 || m12 == 65536) && m13 == 0 && m14 == 0 && m15 == -65536) ? ns.K2 : 0;
+                    i11 = (m12 == 0 && m13 == -65536 && (m14 == 65536 || m14 == -65536) && m15 == 0) ? ks.t4 : ((m12 == -65536 || m12 == 65536) && m13 == 0 && m14 == 0 && m15 == -65536) ? ks.K2 : 0;
                     xVar5.O(16);
                     short x102 = xVar5.x();
                     xVar5.O(2);
@@ -908,7 +908,7 @@ public abstract class c {
                         x xVar9 = e20.c;
                         sVar.e = xVar9;
                         xVar9.N(12);
-                        sVar.b = xVar9.E() & ns.e4;
+                        sVar.b = xVar9.E() & ks.e4;
                         sVar.a = xVar9.E();
                         bVar = sVar;
                     }
@@ -1114,8 +1114,8 @@ public abstract class c {
                                         i28 = i58;
                                         boolean z20 = z16;
                                         arrayList3 = arrayList8;
-                                        i5.c.y(sb3, qVar3.a, ": remainingSynchronizationSamples ", i26, ", remainingSamplesAtTimestampDelta ");
-                                        i5.c.y(sb3, i64, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
+                                        i5.c.z(sb3, qVar3.a, ": remainingSynchronizationSamples ", i26, ", remainingSamplesAtTimestampDelta ");
+                                        i5.c.z(sb3, i64, ", remainingSamplesInChunk ", i27, ", remainingTimestampDeltaChanges ");
                                         sb3.append(i57);
                                         sb3.append(", remainingSamplesAtTimestampOffset ");
                                         sb3.append(i60);
@@ -1221,7 +1221,7 @@ public abstract class c {
                                 jArr5 = qVar3.i;
                                 RoundingMode roundingMode = RoundingMode.DOWN;
                                 long a05 = l0.a0(j35, 1000000L, j36, roundingMode);
-                                int[] f10 = g1.f(arrayList3);
+                                int[] f10 = k1.f(arrayList3);
                                 if (jArr5 != null) {
                                     if (!z12) {
                                         l0.Z(jArr4, j36);
@@ -1409,7 +1409,7 @@ public abstract class c {
                                             a14.x = true;
                                             qVar3 = qVar3.a(new u(a14));
                                         }
-                                        tVar = new t(qVar3, jArr14, iArr16, i106, jArr18, iArr17, g1.f(arrayList9), z18, a012, jArr14.length);
+                                        tVar = new t(qVar3, jArr14, iArr16, i106, jArr18, iArr17, k1.f(arrayList9), z18, a012, jArr14.length);
                                         arrayList4 = arrayList2;
                                         arrayList4.add(tVar);
                                         i37 = i7 + 1;
@@ -1449,7 +1449,7 @@ public abstract class c {
                         jArr5 = qVar3.i;
                         RoundingMode roundingMode3 = RoundingMode.DOWN;
                         long a052 = l0.a0(j352, 1000000L, j362, roundingMode3);
-                        int[] f102 = g1.f(arrayList3);
+                        int[] f102 = k1.f(arrayList3);
                         if (jArr5 != null) {
                         }
                         tVar = tVar2;
@@ -1653,7 +1653,7 @@ public abstract class c {
     
         r15 = r1.m() + r13;
         r13 = r1.m();
-        r0 = (r13 >> 24) & org.telegram.messenger.ns.e4;
+        r0 = (r13 >> 24) & org.telegram.messenger.ks.e4;
      */
     /* JADX WARN: Code restructure failed: missing block: B:17:0x0069, code lost:
     
@@ -1950,7 +1950,7 @@ public abstract class c {
                             }
                         }
                         if (i17 == 12) {
-                            i10 = ns.P3;
+                            i10 = ks.P3;
                         } else if (i17 == 13) {
                             i10 = 120;
                         } else if (i17 != 21) {
@@ -2020,24 +2020,24 @@ public abstract class c {
         return q0Var3;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0b34, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x0b36, code lost:
     
         if (r10 == null) goto L479;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0b36, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:24:0x0b38, code lost:
     
         r0 = r10.b;
         r1 = "video/dolby-vision";
      */
-    /* JADX WARN: Code restructure failed: missing block: B:25:0x0b3f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0b41, code lost:
     
         if (r1 != null) goto L482;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0b41, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0b43, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0b42, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:28:0x0b44, code lost:
     
         r2 = new e2.t();
         r2.a = java.lang.Integer.toString(r62);
@@ -2057,59 +2057,59 @@ public abstract class c {
         r2.v = r34;
         r2.d = r63;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0b85, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x0b87, code lost:
     
         if (r16 == null) goto L485;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0b87, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0b89, code lost:
     
         r29 = r16.array();
      */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0b90, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0b92, code lost:
     
         r2.H = new e2.m(r8, r30, r9, r29, r31, r32);
         r10 = r37;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x0ba5, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x0ba7, code lost:
     
         if (r10 == null) goto L489;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x0ba7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x0ba9, code lost:
     
-        r2.h = c8.g1.e(r10.a);
-        r2.i = c8.g1.e(r10.b);
+        r2.h = c8.k1.e(r10.a);
+        r2.i = c8.k1.e(r10.b);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x0bcc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:34:0x0bce, code lost:
     
         r66.d = new e2.u(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:35:0x0bd3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x0bd5, code lost:
     
         return;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0bb8, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x0bba, code lost:
     
         r10 = r38;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:37:0x0bba, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:37:0x0bbc, code lost:
     
         if (r10 == null) goto L492;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0bbc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0bbe, code lost:
     
-        r2.h = c8.g1.e(r10.a);
-        r2.i = c8.g1.e(r10.b);
+        r2.h = c8.k1.e(r10.a);
+        r2.i = c8.k1.e(r10.b);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:39:0x0b8e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:39:0x0b90, code lost:
     
         r29 = null;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x0b3b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x0b3d, code lost:
     
         r0 = r18;
         r1 = r35;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:445:0x0977, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:445:0x0979, code lost:
     
         if (r1 != 3) goto L424;
      */
@@ -2128,7 +2128,7 @@ public abstract class c {
         int i21;
         e2.r rVar2;
         int i22;
-        b0 b0Var;
+        ee.t tVar;
         int i23;
         String str3;
         int i24;
@@ -2156,7 +2156,7 @@ public abstract class c {
         int i39;
         String str5;
         int i40;
-        u7.i iVar;
+        hn hnVar;
         String str6;
         int i41;
         int i42;
@@ -2187,7 +2187,7 @@ public abstract class c {
         int i49 = 8;
         List list = null;
         ByteBuffer byteBuffer = null;
-        b0 b0Var2 = null;
+        ee.t tVar2 = null;
         String str9 = null;
         byte[] bArr = null;
         int i50 = -1;
@@ -2217,7 +2217,7 @@ public abstract class c {
                 i21 = i57;
                 rVar2 = rVar4;
                 i22 = i50;
-                b0Var = b0Var2;
+                tVar = tVar2;
                 break;
             }
             xVar.N(i47);
@@ -2227,7 +2227,7 @@ public abstract class c {
                 i15 = H;
                 i16 = H2;
                 f10 = f12;
-                b0Var = b0Var2;
+                tVar = tVar2;
                 i17 = i55;
                 i18 = i56;
                 i19 = i58;
@@ -2395,7 +2395,7 @@ public abstract class c {
                                     i42 = (xVar.A() >> 5) & 7;
                                     int A3 = xVar.A() & 63;
                                     int A4 = xVar.A();
-                                    int i90 = (A4 >> 1) & ns.L1;
+                                    int i90 = (A4 >> 1) & ks.L1;
                                     str6 = (A4 & 1) != 0 ? "H" : "L";
                                     i43 = xVar.A();
                                     xVar.O(A3);
@@ -2479,7 +2479,7 @@ public abstract class c {
                                 i25 = H;
                                 Locale locale = Locale.US;
                                 String str13 = "vvc1." + i41 + "." + str6 + i43;
-                                s1 u10 = i0.u(bArr2);
+                                t1 u10 = i0.u(bArr2);
                                 i58 = i94 + 8;
                                 j0Var.a = i89;
                                 i29 = i49;
@@ -2503,7 +2503,7 @@ public abstract class c {
                             if (m11 == 1986361461) {
                                 xVar.N(i60 + 8);
                                 int i109 = xVar.b;
-                                u7.i iVar2 = null;
+                                hn hnVar2 = null;
                                 while (i109 - i60 < m10) {
                                     xVar.N(i109);
                                     int m12 = xVar.m();
@@ -2515,7 +2515,7 @@ public abstract class c {
                                             if (i110 - i109 >= m12) {
                                                 str5 = str10;
                                                 i40 = i109;
-                                                iVar = null;
+                                                hnVar = null;
                                                 break;
                                             }
                                             xVar.N(i110);
@@ -2526,13 +2526,13 @@ public abstract class c {
                                                 int A9 = xVar.A();
                                                 str5 = str10;
                                                 i40 = i109;
-                                                iVar = new u7.i(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i49));
+                                                hnVar = new hn(new ia.a((A9 & 1) == 1, (A9 & 2) == 2, (A9 & 8) == i49), 29);
                                             } else {
                                                 i110 += m13;
                                                 i49 = 8;
                                             }
                                         }
-                                        iVar2 = iVar;
+                                        hnVar2 = hnVar;
                                     } else {
                                         str5 = str10;
                                         i40 = i109;
@@ -2541,9 +2541,9 @@ public abstract class c {
                                     str10 = str5;
                                     i49 = 8;
                                 }
-                                ff ffVar = iVar2 == null ? null : new ff(iVar2, 28);
-                                if (ffVar != null) {
-                                    ia.a aVar = (ia.a) ((u7.i) ffVar.b).a;
+                                of ofVar = hnVar2 == null ? null : new of(hnVar2, 29);
+                                if (ofVar != null) {
+                                    ia.a aVar = (ia.a) ((hn) ofVar.b).b;
                                     if (eVar4 == null || ((i0) eVar4.a).size() < 2) {
                                         i39 = i50;
                                         if (i39 == -1) {
@@ -2568,7 +2568,7 @@ public abstract class c {
                                     i27 = i48;
                                     i28 = i24;
                                     i29 = 8;
-                                    b0Var2 = b0.a(xVar);
+                                    tVar2 = ee.t.a(xVar);
                                 } else {
                                     int i112 = 11;
                                     if (m11 == 1987076931) {
@@ -2877,9 +2877,9 @@ public abstract class c {
                                                 int i131 = 0;
                                                 xVar.k(0, i130, bArr7);
                                                 byte[] bArr8 = h2.g.a;
-                                                ja.c(i130, "Invalid APV CSD length: %s", i130 >= 17);
+                                                la.c(i130, "Invalid APV CSD length: %s", i130 >= 17);
                                                 byte b11 = bArr7[0];
-                                                ja.c(b11, "Invalid APV CSD version: %s", b11 == 1);
+                                                la.c(b11, "Invalid APV CSD version: %s", b11 == 1);
                                                 int i132 = bArr7[5] & 255;
                                                 int i133 = bArr7[6] & 255;
                                                 int i134 = bArr7[7] & 255;
@@ -2888,7 +2888,7 @@ public abstract class c {
                                                 StringBuilder n10 = i5.c.n("apv1.apvf", i132, ".apvl", i133, ".apvb");
                                                 n10.append(i134);
                                                 str9 = n10.toString();
-                                                s1 u11 = i0.u(bArr7);
+                                                t1 u11 = i0.u(bArr7);
                                                 x xVar2 = new x(bArr7);
                                                 d4.f fVar2 = new d4.f(bArr7, i130);
                                                 i29 = 8;

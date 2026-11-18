@@ -1,27 +1,25 @@
 package be;
 
-import aa.b0;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final k a = new k(-1, null, null, 0);
     public static final int b = ee.a.j(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
     public static final int c = ee.a.j(10000, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
-    public static final b0 d = new b0("BUFFERED", 1);
-    public static final b0 e = new b0("SHOULD_BUFFER", 1);
-    public static final b0 f = new b0("S_RESUMING_BY_RCV", 1);
-    public static final b0 g = new b0("RESUMING_BY_EB", 1);
-    public static final b0 h = new b0("POISONED", 1);
-    public static final b0 i = new b0("DONE_RCV", 1);
-    public static final b0 j = new b0("INTERRUPTED_SEND", 1);
-    public static final b0 k = new b0("INTERRUPTED_RCV", 1);
-    public static final b0 l = new b0("CHANNEL_CLOSED", 1);
-    public static final b0 m = new b0("SUSPEND", 1);
-    public static final b0 n = new b0("SUSPEND_NO_WAITER", 1);
-    public static final b0 o = new b0("FAILED", 1);
-    public static final b0 p = new b0("NO_RECEIVE_RESULT", 1);
-    public static final b0 q = new b0("CLOSE_HANDLER_CLOSED", 1);
-    public static final b0 r = new b0("CLOSE_HANDLER_INVOKED", 1);
-    public static final b0 s = new b0("NO_CLOSE_CAUSE", 1);
+    public static final ee.t d = new ee.t("BUFFERED", 0);
+    public static final ee.t e = new ee.t("SHOULD_BUFFER", 0);
+    public static final ee.t f = new ee.t("S_RESUMING_BY_RCV", 0);
+    public static final ee.t g = new ee.t("RESUMING_BY_EB", 0);
+    public static final ee.t h = new ee.t("POISONED", 0);
+    public static final ee.t i = new ee.t("DONE_RCV", 0);
+    public static final ee.t j = new ee.t("INTERRUPTED_SEND", 0);
+    public static final ee.t k = new ee.t("INTERRUPTED_RCV", 0);
+    public static final ee.t l = new ee.t("CHANNEL_CLOSED", 0);
+    public static final ee.t m = new ee.t("SUSPEND", 0);
+    public static final ee.t n = new ee.t("SUSPEND_NO_WAITER", 0);
+    public static final ee.t o = new ee.t("FAILED", 0);
+    public static final ee.t p = new ee.t("NO_RECEIVE_RESULT", 0);
+    public static final ee.t q = new ee.t("CLOSE_HANDLER_CLOSED", 0);
+    public static final ee.t r = new ee.t("CLOSE_HANDLER_INVOKED", 0);
+    public static final ee.t s = new ee.t("NO_CLOSE_CAUSE", 0);
 }

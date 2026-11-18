@@ -1,116 +1,95 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.text.TextUtils;
-import j$.util.stream.IntStream;
-import java.util.Arrays;
-import java.util.stream.IntStream;
+import android.animation.ObjectAnimator;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import java.util.ArrayList;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f6 implements CharSequence {
-    public final CharSequence[] a;
-    public final int b;
+public final class f6 {
+    public static final org.telegram.ui.Cells.o8 h = new org.telegram.ui.Cells.o8("progress", 3);
+    public final TextPaint c;
+    public ObjectAnimator d;
+    public final org.telegram.ui.Cells.q1 g;
+    public final ArrayList a = new ArrayList();
+    public final ArrayList b = new ArrayList();
+    public float e = 0.0f;
+    public int f = 1;
 
-    public f6(CharSequence charSequence) {
-        if (charSequence == null) {
-            this.a = new CharSequence[0];
-            this.b = 0;
-            return;
+    public f6(org.telegram.ui.Cells.q1 q1Var, TextPaint textPaint) {
+        this.c = textPaint;
+        this.g = q1Var;
+    }
+
+    public final int a() {
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        float f10 = 0.0f;
+        for (int i7 = 0; i7 < size; i7++) {
+            f10 += ((StaticLayout) arrayList.get(i7)).getLineWidth(0);
         }
-        this.b = charSequence.length();
-        int i7 = 0;
-        for (int i10 = 0; i10 < this.b; i10++) {
-            if (charSequence.charAt(i10) == ' ') {
-                i7++;
+        return (int) Math.ceil(f10);
+    }
+
+    public final void b(int i7, boolean z10) {
+        float f10;
+        ArrayList arrayList;
+        int i10 = this.f;
+        ArrayList arrayList2 = this.a;
+        if (i10 != i7 || arrayList2.isEmpty()) {
+            ObjectAnimator objectAnimator = this.d;
+            if (objectAnimator != null) {
+                objectAnimator.cancel();
+                this.d = null;
             }
-        }
-        this.a = new CharSequence[i7 + 1];
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            int i14 = this.b;
-            if (i11 > i14) {
-                return;
+            ArrayList arrayList3 = this.b;
+            arrayList3.clear();
+            arrayList3.addAll(arrayList2);
+            arrayList2.clear();
+            Locale locale = Locale.US;
+            int i11 = this.f;
+            StringBuilder sb2 = new StringBuilder();
+            sb2.append(i11);
+            String sb3 = sb2.toString();
+            StringBuilder sb4 = new StringBuilder();
+            sb4.append(i7);
+            String sb5 = sb4.toString();
+            boolean z11 = i7 > this.f;
+            this.f = i7;
+            float f11 = 0.0f;
+            this.e = 0.0f;
+            int i12 = 0;
+            while (i12 < sb5.length()) {
+                int i13 = i12 + 1;
+                String substring = sb5.substring(i12, i13);
+                String substring2 = (arrayList3.isEmpty() || i12 >= sb3.length()) ? null : sb3.substring(i12, i13);
+                if (substring2 == null || !substring2.equals(substring)) {
+                    f10 = f11;
+                    arrayList = arrayList3;
+                    arrayList2.add(new StaticLayout(substring, this.c, (int) Math.ceil(r14.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+                } else {
+                    arrayList2.add((StaticLayout) arrayList3.get(i12));
+                    arrayList3.set(i12, null);
+                    f10 = f11;
+                    arrayList = arrayList3;
+                }
+                f11 = f10;
+                i12 = i13;
+                arrayList3 = arrayList;
             }
-            if (i11 == i14 || charSequence.charAt(i11) == ' ') {
-                int i15 = i12 + 1;
-                this.a[i12] = charSequence.subSequence(i13, (i11 < this.b ? 1 : 0) + i11);
-                i13 = i11 + 1;
-                i12 = i15;
+            float f12 = f11;
+            ArrayList arrayList4 = arrayList3;
+            if (z10 && !arrayList4.isEmpty()) {
+                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, h, z11 ? -1.0f : 1.0f, f12);
+                this.d = ofFloat;
+                ofFloat.setDuration(150L);
+                this.d.addListener(new x(this, 1));
+                this.d.start();
             }
-            i11++;
+            this.g.invalidate();
         }
-    }
-
-    @Override // java.lang.CharSequence
-    public final char charAt(int i7) {
-        int i10 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i10 >= charSequenceArr.length) {
-                return (char) 0;
-            }
-            if (i7 < charSequenceArr[i10].length()) {
-                return charSequenceArr[i10].charAt(i7);
-            }
-            i7 -= charSequenceArr[i10].length();
-            i10++;
-        }
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ IntStream chars() {
-        return IntStream.Wrapper.convert(chars());
-    }
-
-    @Override // java.lang.CharSequence
-    public /* synthetic */ java.util.stream.IntStream codePoints() {
-        return IntStream.Wrapper.convert(codePoints());
-    }
-
-    @Override // java.lang.CharSequence
-    public final int length() {
-        return this.a.length;
-    }
-
-    @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i7, int i10) {
-        return TextUtils.concat((CharSequence[]) Arrays.copyOfRange(this.a, i7, i10));
-    }
-
-    @Override // java.lang.CharSequence
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder();
-        int i7 = 0;
-        while (true) {
-            CharSequence[] charSequenceArr = this.a;
-            if (i7 >= charSequenceArr.length) {
-                return sb2.toString();
-            }
-            sb2.append(charSequenceArr[i7]);
-            i7++;
-        }
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream chars() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).chars());
-        return convert;
-    }
-
-    @Override // java.lang.CharSequence
-    public final j$.util.stream.IntStream codePoints() {
-        j$.util.stream.IntStream convert;
-        if (Build.VERSION.SDK_INT < 24) {
-            return null;
-        }
-        convert = IntStream.VivifiedWrapper.convert(TextUtils.concat(this.a).codePoints());
-        return convert;
     }
 }

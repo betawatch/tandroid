@@ -1,112 +1,262 @@
 package oi;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.ui.Cells.s9;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.Components.hh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class z4 implements s9 {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public final int c;
-    public final int d;
-
-    public /* synthetic */ z4(Object obj, int i7, int i10, int i11) {
-        this.a = i11;
-        this.b = obj;
-        this.c = i7;
-        this.d = i10;
-    }
-
-    @Override // org.telegram.ui.Cells.s9
-    public final Layout a() {
-        switch (this.a) {
-            case 0:
-                return (Layout) this.b;
-            case 1:
-                return (Layout) this.b;
-            case 2:
-                return (Layout) this.b;
-            default:
-                return ((s9) this.b).a();
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.s9
-    public final /* synthetic */ Rect c() {
-        switch (this.a) {
+public abstract class z4 {
+    public static Object a(Spanned spanned, int i7, int i10, Class cls) {
+        for (Object obj : spanned.getSpans(i7, Math.max(i7, i10), cls)) {
+            int spanStart = spanned.getSpanStart(obj);
+            int spanEnd = spanned.getSpanEnd(obj);
+            if (spanStart <= i7 && spanEnd >= i10) {
+                return obj;
+            }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.Cells.s9
-    public final CharSequence getPrefix() {
-        switch (this.a) {
-            case 0:
-                return null;
-            case 1:
-                return null;
-            case 2:
-                return null;
-            default:
-                return ((s9) this.b).getPrefix();
+    /* JADX WARN: Multi-variable type inference failed */
+    public static ArrayList b(CharSequence charSequence) {
+        int i7;
+        boolean z10;
+        ArrayList arrayList = new ArrayList();
+        if (charSequence == null) {
+            TL_iv.pageBlockParagraph pageblockparagraph = new TL_iv.pageBlockParagraph();
+            pageblockparagraph.text = new TL_iv.textEmpty();
+            arrayList.add(pageblockparagraph);
+            return arrayList;
         }
+        Spanned spanned = charSequence instanceof Spanned ? (Spanned) charSequence : null;
+        ArrayList arrayList2 = new ArrayList();
+        arrayList2.add(0);
+        for (int i10 = 0; i10 < charSequence.length(); i10++) {
+            if (charSequence.charAt(i10) == '\n') {
+                arrayList2.add(Integer.valueOf(i10 + 1));
+            }
+        }
+        int size = arrayList2.size();
+        int[] iArr = new int[size];
+        for (int i11 = 0; i11 < size; i11++) {
+            iArr[i11] = ((Integer) arrayList2.get(i11)).intValue();
+        }
+        int length = charSequence.length();
+        int i12 = 0;
+        while (i12 < size) {
+            int i13 = iArr[i12];
+            i12++;
+            boolean z11 = true;
+            int i14 = i12 < size ? iArr[i12] - 1 : length;
+            qi.g gVar = spanned == null ? null : (qi.g) a(spanned, i13, i14, qi.g.class);
+            hh0 hh0Var = (spanned == null || gVar != null) ? 0 : (hh0) a(spanned, i13, i14, hh0.class);
+            if (gVar == null && hh0Var == 0) {
+                CharSequence subSequence = charSequence.subSequence(i13, i14);
+                TL_iv.pageBlockParagraph pageblockparagraph2 = new TL_iv.pageBlockParagraph();
+                pageblockparagraph2.text = b6.f(subSequence);
+                arrayList.add(pageblockparagraph2);
+            } else {
+                qi.g gVar2 = gVar != null ? gVar : hh0Var;
+                while (true) {
+                    if (i12 >= size) {
+                        i7 = length;
+                        z10 = z11;
+                        break;
+                    }
+                    int i15 = iArr[i12];
+                    z10 = z11;
+                    int i16 = i12 + 1;
+                    if (i16 < size) {
+                        i7 = length;
+                        length = iArr[i16] - 1;
+                    } else {
+                        i7 = length;
+                    }
+                    if ((gVar != null ? a(spanned, i15, length, qi.g.class) : a(spanned, i15, length, hh0.class)) != gVar2) {
+                        break;
+                    }
+                    i14 = length;
+                    i12 = i16;
+                    z11 = z10;
+                    length = i7;
+                }
+                CharSequence subSequence2 = charSequence.subSequence(i13, i14);
+                if (gVar != null) {
+                    TL_iv.pageBlockPreformatted pageblockpreformatted = new TL_iv.pageBlockPreformatted();
+                    pageblockpreformatted.text = b6.f(subSequence2);
+                    String str = gVar.a;
+                    if (str == null) {
+                        str = "";
+                    }
+                    pageblockpreformatted.language = str;
+                    arrayList.add(pageblockpreformatted);
+                } else {
+                    TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
+                    pageblockblockquote.text = b6.f(subSequence2);
+                    pageblockblockquote.caption = new TL_iv.textEmpty();
+                    pageblockblockquote.collapsed = (hh0Var == 0 || !hh0Var.e) ? false : z10;
+                    arrayList.add(pageblockblockquote);
+                }
+                length = i7;
+            }
+        }
+        if (arrayList.isEmpty()) {
+            TL_iv.pageBlockParagraph pageblockparagraph3 = new TL_iv.pageBlockParagraph();
+            pageblockparagraph3.text = new TL_iv.textEmpty();
+            arrayList.add(pageblockparagraph3);
+        }
+        return arrayList;
     }
 
-    @Override // org.telegram.ui.Cells.s9
-    public final int getRow() {
-        switch (this.a) {
-            case 0:
-                return 0;
-            case 1:
-                return 0;
-            case 2:
-                return 1;
-            default:
-                return ((s9) this.b).getRow();
+    public static boolean c(TL_iv.RichText richText) {
+        if (richText == null || (richText instanceof TL_iv.textEmpty) || (richText instanceof TL_iv.textPlain) || (richText instanceof TL_iv.textCustomEmoji)) {
+            return false;
         }
+        if (!(richText instanceof TL_iv.textConcat)) {
+            if ((richText instanceof TL_iv.textMarked) || (richText instanceof TL_iv.textSubscript) || (richText instanceof TL_iv.textSuperscript) || (richText instanceof TL_iv.textMath) || (richText instanceof TL_iv.textButton)) {
+                return true;
+            }
+            return c(richText.text);
+        }
+        ArrayList<TL_iv.RichText> arrayList = ((TL_iv.textConcat) richText).texts;
+        int size = arrayList.size();
+        int i7 = 0;
+        while (i7 < size) {
+            TL_iv.RichText richText2 = arrayList.get(i7);
+            i7++;
+            if (c(richText2)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // org.telegram.ui.Cells.s9
-    public final CharSequence getText() {
-        switch (this.a) {
-            case 0:
-                return ((Layout) this.b).getText();
-            case 1:
-                return ((Layout) this.b).getText();
-            case 2:
-                return ((Layout) this.b).getText();
-            default:
-                return ((s9) this.b).getText();
+    public static boolean d(ArrayList arrayList, HashMap hashMap) {
+        boolean c10;
+        TL_iv.RichText richText;
+        if (arrayList != null) {
+            int size = arrayList.size();
+            int i7 = 0;
+            while (i7 < size) {
+                Object obj = arrayList.get(i7);
+                i7++;
+                a aVar = (a) obj;
+                if (aVar == null) {
+                    c10 = false;
+                } else {
+                    ArrayList arrayList2 = aVar.k;
+                    if (!aVar.i && aVar.c <= 0) {
+                        TL_iv.PageBlock pageBlock = aVar.b;
+                        if (!(pageBlock instanceof TL_iv.pageBlockPullquote)) {
+                            boolean z10 = pageBlock instanceof TL_iv.pageBlockBlockquote;
+                            if (arrayList2.size() + (z10 ? 1 : 0) <= 1 && (!z10 || (richText = ((TL_iv.pageBlockBlockquote) pageBlock).caption) == null || (richText instanceof TL_iv.textEmpty) || b6.l(richText).isEmpty())) {
+                                if (hashMap != null && !arrayList2.isEmpty()) {
+                                    int size2 = arrayList2.size();
+                                    int i10 = 0;
+                                    while (i10 < size2) {
+                                        Object obj2 = arrayList2.get(i10);
+                                        i10++;
+                                        TL_iv.RichText richText2 = (TL_iv.RichText) hashMap.get((Long) obj2);
+                                        if (richText2 != null && !(richText2 instanceof TL_iv.textEmpty) && !b6.l(richText2).isEmpty()) {
+                                            break;
+                                        }
+                                    }
+                                }
+                                if ((pageBlock instanceof TL_iv.pageBlockParagraph) || (pageBlock instanceof TL_iv.pageBlockPreformatted) || z10) {
+                                    c10 = c(pageBlock.text);
+                                }
+                            }
+                        }
+                    }
+                    c10 = true;
+                }
+                if (c10) {
+                    return true;
+                }
+            }
         }
+        return false;
     }
 
-    @Override // org.telegram.ui.Cells.s9
-    public final int getX() {
-        switch (this.a) {
-            case 0:
-                return this.c;
-            case 1:
-                return this.c;
-            case 2:
-                return this.c;
-            default:
-                return ((s9) this.b).getX() + this.c;
+    public static SpannableStringBuilder e(a aVar, boolean z10) {
+        SpannableStringBuilder r10;
+        if (z10) {
+            TL_iv.PageBlock pageBlock = aVar.b;
+            r10 = b6.r(pageBlock != null ? pageBlock.text : null, pageBlock, false);
+        } else {
+            TL_iv.PageBlock pageBlock2 = aVar.b;
+            r10 = b6.r(pageBlock2 != null ? pageBlock2.text : null, pageBlock2, true);
         }
+        if (!(aVar.b instanceof TL_iv.pageBlockPreformatted)) {
+            return r10;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(r10);
+        spannableStringBuilder.setSpan(new qi.g(((TL_iv.pageBlockPreformatted) aVar.b).language, spannableStringBuilder.toString(), true), 0, spannableStringBuilder.length(), 33);
+        return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Cells.s9
-    public final int getY() {
-        switch (this.a) {
-            case 0:
-                return this.d;
-            case 1:
-                return this.d;
-            case 2:
-                return this.d;
-            default:
-                return ((s9) this.b).getY() + this.d;
+    public static SpannableStringBuilder f(List list, boolean z10) {
+        ArrayList arrayList = new ArrayList();
+        int i7 = 0;
+        while (list != null && i7 < list.size()) {
+            a aVar = (a) list.get(i7);
+            if (aVar.k.isEmpty()) {
+                TL_iv.PageBlock pageBlock = aVar.b;
+                if ((pageBlock instanceof TL_iv.pageBlockBlockquote) || (pageBlock instanceof TL_iv.pageBlockPullquote)) {
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(z10 ? b6.r(pageBlock.text, pageBlock, false) : b6.r(pageBlock.text, pageBlock, true));
+                    TL_iv.PageBlock pageBlock2 = aVar.b;
+                    boolean z11 = (pageBlock2 instanceof TL_iv.pageBlockBlockquote) && ((TL_iv.pageBlockBlockquote) pageBlock2).collapsed;
+                    if (spannableStringBuilder.length() > 0) {
+                        hh0.b(spannableStringBuilder, 0, spannableStringBuilder.length(), z11);
+                    }
+                    arrayList.add(spannableStringBuilder);
+                } else {
+                    arrayList.add(e(aVar, z10));
+                }
+                i7++;
+            } else {
+                long longValue = ((Long) aVar.k.get(0)).longValue();
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
+                int i10 = i7;
+                while (i10 < list.size() && !((a) list.get(i10)).k.isEmpty() && ((Long) ((a) list.get(i10)).k.get(0)).longValue() == longValue) {
+                    if (i10 > i7) {
+                        spannableStringBuilder2.append('\n');
+                    }
+                    spannableStringBuilder2.append((CharSequence) e((a) list.get(i10), z10));
+                    i10++;
+                }
+                if (spannableStringBuilder2.length() > 0) {
+                    hh0.b(spannableStringBuilder2, 0, spannableStringBuilder2.length(), false);
+                }
+                arrayList.add(spannableStringBuilder2);
+                i7 = i10;
+            }
         }
+        SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            if (i11 > 0) {
+                spannableStringBuilder3.append('\n');
+            }
+            spannableStringBuilder3.append((CharSequence) arrayList.get(i11));
+        }
+        return spannableStringBuilder3;
+    }
+
+    public static SpannableStringBuilder g(ArrayList arrayList) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(f(arrayList, true));
+        int length = spannableStringBuilder.length();
+        b6.o(spannableStringBuilder, 0, length, 65536, false, null);
+        b6.o(spannableStringBuilder, 0, length, TLObject.FLAG_14, false, null);
+        b6.o(spannableStringBuilder, 0, length, 32768, false, null);
+        for (q qVar : (q[]) spannableStringBuilder.getSpans(0, length, q.class)) {
+            spannableStringBuilder.removeSpan(qVar);
+        }
+        return spannableStringBuilder;
     }
 }

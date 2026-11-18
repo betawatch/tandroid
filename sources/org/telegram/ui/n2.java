@@ -5,7 +5,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n2 extends View {
     public final /* synthetic */ o2 a;
@@ -24,7 +24,7 @@ public final class n2 extends View {
             return;
         }
         int b10 = o2Var.c.b();
-        int L = org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.k5.D(6.0f, b10 - 1, org.telegram.messenger.g0.L(7.0f) * b10);
+        int L = org.telegram.messenger.g0.L(4.0f) + org.telegram.messenger.f3.D(6.0f, b10 - 1, org.telegram.messenger.g0.L(7.0f) * b10);
         float f10 = o2Var.x + o2Var.w;
         if (L < getMeasuredWidth()) {
             i7 = (getMeasuredWidth() - L) / 2.0f;

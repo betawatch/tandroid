@@ -1,83 +1,186 @@
 package org.telegram.ui.Cells;
 
 import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.i20;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.d80;
-import org.telegram.ui.Components.oy0;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.OvershootInterpolator;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Random;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.x60;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c0 {
-    public final Runnable a;
-    public boolean b;
-    public float c;
-    public int d;
-    public float e;
-    public int f;
-    public int g;
-    public oy0 h;
-    public TL_keyboard.KeyboardInlineButton i;
-    public org.telegram.messenger.o2 j;
-    public org.telegram.messenger.m2 k;
-    public boolean l;
-    public boolean m;
-    public final Path n = new Path();
-    public final Paint o = new Paint(1);
-    public final RectF p = new RectF();
-    public final float[] q = new float[8];
-    public d80 r;
-    public y s;
-    public Drawable t;
-    public org.telegram.ui.Components.g5 u;
-    public boolean v;
-    public float w;
-    public ValueAnimator x;
-
-    public c0(Runnable runnable) {
-        this.a = runnable;
+public abstract /* synthetic */ class c0 {
+    public static int A(int i7, int i10, Drawable drawable) {
+        return i10 - (drawable.getIntrinsicHeight() / i7);
     }
 
-    public final float a() {
-        if (this.v) {
-            float f10 = this.w;
-            if (f10 != 1.0f) {
-                float min = (Math.min(40.0f, 1000.0f / org.telegram.messenger.g0.r) / 100.0f) + f10;
-                this.w = min;
-                this.w = Utilities.i(min, 1.0f, 0.0f);
-                this.a.run();
-            }
-        }
-        return com.google.android.gms.internal.vision.e2.z(1.0f, this.w, 0.04f, 0.96f);
+    public static float B(float f10, float f11, float f12, float f13) {
+        return Math.max(f13, f12 - (f10 / f11));
     }
 
-    public final void b(boolean z10) {
-        ValueAnimator valueAnimator;
-        if (this.v != z10) {
-            this.v = z10;
-            this.a.run();
-            if (z10 && (valueAnimator = this.x) != null) {
-                valueAnimator.removeAllListeners();
-                this.x.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f10 = this.w;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
-                this.x = ofFloat;
-                ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new ki.s3(this, 23));
-                i20.k(2.0f, this.x);
-                this.x.setDuration(350L);
-                this.x.start();
-            }
+    public static int C(int i7, int i10, Drawable drawable) {
+        return i10 - (drawable.getIntrinsicWidth() / i7);
+    }
+
+    public static /* synthetic */ String D(int i7) {
+        if (i7 == 1) {
+            return "PAID";
         }
+        if (i7 == 2) {
+            return "CANCELLED";
+        }
+        if (i7 == 3) {
+            return "PENDING";
+        }
+        if (i7 == 4) {
+            return "FAILED";
+        }
+        throw null;
+    }
+
+    public static boolean a(fj fjVar) {
+        return fjVar != null && fj.B0(fjVar.k) == 1271266957;
+    }
+
+    public static void b(RecyclerView recyclerView) {
+        recyclerView.C0();
+        v4.p0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager instanceof v4.c0) {
+            ((v4.c0) layoutManager).h1(0, 0);
+        } else {
+            recyclerView.v0(0);
+        }
+    }
+
+    public static float c(RecyclerView recyclerView) {
+        int i7 = qt0.m0;
+        v4.p0 layoutManager = recyclerView.getLayoutManager();
+        if (layoutManager == null || !recyclerView.canScrollVertically(-1)) {
+            return 0.0f;
+        }
+        if (layoutManager.m(0) == null) {
+            return Float.POSITIVE_INFINITY;
+        }
+        return Math.max(0.0f, (recyclerView.getPaddingTop() - v4.p0.z(r0)) + ((ViewGroup.MarginLayoutParams) ((v4.q0) r0.getLayoutParams())).topMargin);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void d(x60 x60Var, boolean z10) {
+        ((View) x60Var).setVisibility(z10 ? 4 : 0);
+    }
+
+    public static float e(float f10, float f11, float f12) {
+        return (org.telegram.messenger.g0.N(f10) * f11) + f12;
+    }
+
+    public static float f(float f10, float f11, float f12, float f13) {
+        return Math.min(f13, (f10 / f11) + f12);
+    }
+
+    public static float g(float f10, float f11, float f12, float f13, float f14) {
+        return (((f10 * f11) + f12) * f13) + f14;
+    }
+
+    public static float h(Random random, float f10, float f11) {
+        return (random.nextFloat() * f10) + f11;
+    }
+
+    public static int i(float f10, int i7, int i10) {
+        return (i7 - org.telegram.messenger.g0.L(f10)) + i10;
+    }
+
+    public static int j(int i7, int i10, Drawable drawable) {
+        return (drawable.getIntrinsicHeight() / i7) + i10;
+    }
+
+    public static int k(wz wzVar, int i7) {
+        return wzVar.c(wzVar.getMeasuredWidth()) + i7;
+    }
+
+    public static Bundle l(int i7, String str, String str2, boolean z10) {
+        Bundle bundle = new Bundle();
+        bundle.putBoolean(str, z10);
+        bundle.putInt(str2, i7);
+        return bundle;
+    }
+
+    public static TextView m(FrameLayout frameLayout, TextView textView, FrameLayout.LayoutParams layoutParams, Context context) {
+        frameLayout.addView(textView, layoutParams);
+        return new TextView(context);
+    }
+
+    public static Integer n(int i7, ArrayList arrayList, int i10, ArrayList arrayList2, int i11) {
+        arrayList.add(gd.M0(i7, null));
+        arrayList2.add(Integer.valueOf(i10));
+        return Integer.valueOf(i11);
+    }
+
+    public static Integer o(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num, int i10) {
+        arrayList.add(gd.M0(i7, null));
+        arrayList2.add(num);
+        return Integer.valueOf(i10);
+    }
+
+    public static r1.h p(float f10, float f11, float f12) {
+        r1.h hVar = new r1.h(f10);
+        hVar.b(f11);
+        hVar.a(f12);
+        return hVar;
+    }
+
+    public static void q(float f10, ValueAnimator valueAnimator) {
+        valueAnimator.setInterpolator(new OvershootInterpolator(f10));
+    }
+
+    public static void r(int i7, String str, ArrayList arrayList) {
+        arrayList.add(new p6(i7, str));
+    }
+
+    public static void s(int i7, ArrayList arrayList, ArrayList arrayList2, Integer num) {
+        arrayList.add(gd.M0(i7, null));
+        arrayList2.add(num);
+    }
+
+    public static void t(FrameLayout frameLayout, org.telegram.ui.ActionBar.i6 i6Var, TLRPC.TL_error tL_error, boolean z10) {
+        new lc(frameLayout, i6Var).g0(tL_error, z10);
+    }
+
+    public static void u(String str, int i7, StringBuilder sb2, String str2) {
+        sb2.append(gd.M0(i7, str));
+        sb2.append(str2);
+    }
+
+    public static void v(String str, int i7, ArrayList arrayList, int i10, ArrayList arrayList2) {
+        arrayList.add(gd.M0(i7, str));
+        arrayList2.add(Integer.valueOf(i10));
+    }
+
+    public static /* synthetic */ boolean w(TLRPC.TL_game tL_game) {
+        return tL_game != null;
+    }
+
+    public static float x(float f10, float f11, float f12, float f13) {
+        return Math.max(f13, (f10 - f11) / f12);
+    }
+
+    public static int y(int i7, int i10, Drawable drawable) {
+        return (drawable.getIntrinsicWidth() / i7) + i10;
+    }
+
+    public static float z(float f10, float f11, float f12, float f13) {
+        return f13 - ((f10 * f11) * f12);
     }
 }

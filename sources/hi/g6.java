@@ -1,35 +1,44 @@
 package hi;
 
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class g6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k6 b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g6 implements CameraView.CameraViewDelegate, CameraController.VideoTakeCallback {
+    public final /* synthetic */ j6 a;
 
-    public /* synthetic */ g6(k6 k6Var, int i7) {
-        this.a = i7;
-        this.b = k6Var;
+    public /* synthetic */ g6(j6 j6Var) {
+        this.a = j6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.c();
-                break;
-            default:
-                k6 k6Var = this.b;
-                k6Var.a.animate().scaleX(1.0f).scaleY(1.0f).setInterpolator(er.h).setDuration(280L).start();
-                k6Var.c = System.currentTimeMillis();
-                k6Var.invalidate();
-                try {
-                    k6Var.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-                org.telegram.messenger.g0.i3(k6Var.h, 59500L);
-                break;
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public void onCameraInit() {
+        j6 j6Var = this.a;
+        i6 i6Var = j6Var.a;
+        if (j6Var.c > 0) {
+            return;
+        }
+        CameraController.getInstance().recordVideo(i6Var.getCameraSessionObject(), j6Var.b, false, new g6(j6Var), new f6(j6Var, 1), i6Var, true);
+    }
+
+    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
+    public void onFinishVideoRecording(String str, long j3) {
+        long currentTimeMillis = System.currentTimeMillis();
+        j6 j6Var = this.a;
+        j6Var.d = currentTimeMillis;
+        org.telegram.messenger.g0.r(j6Var.h);
+        if (j6Var.y) {
+            return;
+        }
+        if (j3 <= 1000) {
+            j6Var.a(false);
+            return;
+        }
+        j6Var.a.destroy(true, null);
+        fi.b0 b0Var = j6Var.n;
+        if (b0Var != null) {
+            b0Var.a(j6Var.b, str, Long.valueOf(j3));
         }
     }
 }

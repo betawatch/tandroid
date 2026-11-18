@@ -1,6 +1,6 @@
 package androidx.biometric;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -12,7 +12,7 @@ public final class j implements androidx.lifecycle.a0 {
     }
 
     @Override // androidx.lifecycle.a0
-    public final void o(Object obj) {
+    public final void A(Object obj) {
         switch (this.a) {
             case 0:
                 CharSequence charSequence = (CharSequence) obj;

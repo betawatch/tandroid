@@ -1,15 +1,15 @@
 package di;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c6 b;
+    public final /* synthetic */ f6 b;
     public final /* synthetic */ long c;
 
-    public /* synthetic */ m1(c6 c6Var, long j3, int i7) {
+    public /* synthetic */ m1(f6 f6Var, long j3, int i7) {
         this.a = i7;
-        this.b = c6Var;
+        this.b = f6Var;
         this.c = j3;
     }
 
@@ -17,54 +17,54 @@ public final /* synthetic */ class m1 implements Runnable {
     public final void run() {
         int i7 = this.a;
         long j3 = this.c;
-        c6 c6Var = this.b;
+        f6 f6Var = this.b;
         switch (i7) {
             case 0:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 1:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 2:
-                l1 l1Var = c6Var.q3;
-                c6Var.t2(1, true, null);
+                k1 k1Var = f6Var.t3;
+                f6Var.H2(1, true, null);
                 if (j3 > 0) {
-                    org.telegram.messenger.g0.r(l1Var);
-                    org.telegram.messenger.g0.h3(l1Var);
+                    org.telegram.messenger.g0.r(k1Var);
+                    org.telegram.messenger.g0.g3(k1Var);
                     break;
                 }
                 break;
             case 3:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 4:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 5:
-                c6Var.U1(j3);
+                f6Var.d2(j3);
                 break;
             case 6:
-                bb bbVar = new bb(c6Var.getContext(), c6Var.J0, this.c, 10, null, new s2(4, c6Var, new boolean[]{false}), 0L);
-                bbVar.setOnDismissListener(new k3(c6Var, 0));
-                bbVar.show();
+                fb fbVar = new fb(f6Var.getContext(), f6Var.J0, this.c, 10, null, new w2(4, f6Var, new boolean[]{false}), 0L);
+                fbVar.setOnDismissListener(new n3(f6Var, 0));
+                fbVar.show();
                 break;
             case 7:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 8:
-                c6Var.U1(j3);
+                f6Var.d2(j3);
                 break;
             case 9:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             case 10:
-                c6Var.U1(j3);
+                f6Var.d2(j3);
                 break;
             case 11:
-                c6Var.V1(j3);
+                f6Var.h2(j3);
                 break;
             default:
-                c6Var.U1(j3);
+                f6Var.d2(j3);
                 break;
         }
     }

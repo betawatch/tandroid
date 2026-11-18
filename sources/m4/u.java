@@ -1,11 +1,11 @@
 package m4;
 
-import a8.ja;
+import a8.la;
 import e2.s0;
 import f3.i0;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final h2.x a;
@@ -105,7 +105,7 @@ public final class u implements i {
                 int i13 = this.i + min2;
                 this.i = i13;
                 if (i13 >= this.m) {
-                    ja.p(this.n != -9223372036854775807L);
+                    la.p(this.n != -9223372036854775807L);
                     this.f.c(this.n, 1, this.m, 0, null);
                     this.n += this.l;
                     this.i = 0;

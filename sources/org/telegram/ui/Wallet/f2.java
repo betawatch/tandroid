@@ -1,45 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f2 implements View.OnClickListener {
+public final class f2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r2 b;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ h2 c;
+    public final /* synthetic */ d3 d;
 
-    public /* synthetic */ f2(r2 r2Var, int i7) {
+    public /* synthetic */ f2(boolean[] zArr, h2 h2Var, d3 d3Var, int i7) {
         this.a = i7;
-        this.b = r2Var;
+        this.b = zArr;
+        this.c = h2Var;
+        this.d = d3Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                r2 r2Var = this.b;
-                if (!r2Var.a() && !r2Var.d) {
-                    r2Var.d = false;
-                    if (!r2Var.f) {
-                        r2Var.f = true;
-                        r2Var.b.c();
-                    }
-                    if (!r2Var.e) {
-                        r2Var.a.dismiss();
+                if (!this.b[0]) {
+                    if (!this.c.m) {
+                        this.d.dismiss();
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.h3(this, 1000L);
                         break;
                     }
                 }
                 break;
             default:
-                r2 r2Var2 = this.b;
-                if (!r2Var2.a() && !r2Var2.d) {
-                    r2Var2.d = false;
-                    if (!r2Var2.f) {
-                        r2Var2.f = true;
-                        r2Var2.b.c();
-                    }
-                    if (!r2Var2.e) {
-                        r2Var2.a.dismiss();
+                if (!this.b[0]) {
+                    if (!this.c.m) {
+                        this.d.dismiss();
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.h3(this, 1000L);
                         break;
                     }
                 }

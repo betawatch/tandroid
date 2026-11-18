@@ -1,14 +1,14 @@
 package l2;
 
 import android.os.Bundle;
-import org.telegram.messenger.j9;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.xb;
-import org.telegram.ui.je0;
+import org.telegram.messenger.i9;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.le0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v implements h2.o, p.a, j9, h2.j {
+public final /* synthetic */ class v implements h2.o, p.a, i9, h2.j {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
 
@@ -18,21 +18,21 @@ public final /* synthetic */ class v implements h2.o, p.a, j9, h2.j {
     }
 
     @Override // p.a
-    public xb a(cc ccVar) {
-        return ccVar.k(this.b);
+    public gc a(lc lcVar) {
+        return lcVar.k(this.b);
     }
 
     @Override // h2.j
     public void accept(Object obj) {
         switch (this.a) {
             case 4:
-                ((p4.g1) obj).X(this.b);
+                ((p4.i1) obj).X(this.b);
                 break;
             case 5:
-                ((p4.g1) obj).r0(this.b);
+                ((p4.i1) obj).r0(this.b);
                 break;
             default:
-                ((p4.g1) obj).x(this.b);
+                ((p4.i1) obj).x(this.b);
                 break;
         }
     }
@@ -44,16 +44,16 @@ public final /* synthetic */ class v implements h2.o, p.a, j9, h2.j {
                 ((e2.a1) obj).t(this.b);
                 break;
             default:
-                ((e2.a1) obj).c(this.b);
+                ((e2.a1) obj).f(this.b);
                 break;
         }
     }
 
-    @Override // org.telegram.messenger.j9
-    public Object o(Object obj) {
+    @Override // org.telegram.messenger.i9
+    public Object m(Object obj) {
         Bundle k10 = a8.p0.k("afterSignup", this.b);
-        je0 je0Var = new je0();
-        je0Var.r0(k10);
-        return je0Var;
+        le0 le0Var = new le0();
+        le0Var.r0(k10);
+        return le0Var;
     }
 }

@@ -1,6 +1,6 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ec0 implements Runnable {
     public final /* synthetic */ int a;
@@ -16,9 +16,9 @@ public final /* synthetic */ class ec0 implements Runnable {
         switch (this.a) {
             case 0:
                 gc0 gc0Var = this.b;
-                org.telegram.ui.Components.fh0 fh0Var = gc0Var.e;
-                fh0Var.getAnimatedDrawable().N(0, false, false);
-                fh0Var.d();
+                org.telegram.ui.Components.ph0 ph0Var = gc0Var.e;
+                ph0Var.getAnimatedDrawable().N(0, false, false);
+                ph0Var.d();
                 lb0 lb0Var = gc0Var.a;
                 if (lb0Var != null) {
                     lb0Var.f[0].requestFocus();
@@ -30,11 +30,11 @@ public final /* synthetic */ class ec0 implements Runnable {
                 int i7 = 0;
                 gc0Var2.x = false;
                 while (true) {
-                    dr[] drVarArr = gc0Var2.a.f;
-                    if (i7 >= drVarArr.length) {
+                    er[] erVarArr = gc0Var2.a.f;
+                    if (i7 >= erVarArr.length) {
                         break;
                     } else {
-                        drVarArr[i7].A(0.0f);
+                        erVarArr[i7].A(0.0f);
                         i7++;
                     }
                 }
@@ -52,11 +52,11 @@ public final /* synthetic */ class ec0 implements Runnable {
                 lb0Var2.e = false;
                 lb0Var2.f[0].requestFocus();
                 while (true) {
-                    dr[] drVarArr2 = lb0Var2.f;
-                    if (i10 >= drVarArr2.length) {
+                    er[] erVarArr2 = lb0Var2.f;
+                    if (i10 >= erVarArr2.length) {
                         break;
                     } else {
-                        drVarArr2[i10].A(0.0f);
+                        erVarArr2[i10].A(0.0f);
                         i10++;
                     }
                 }

@@ -4,9 +4,9 @@ import a8.m1;
 import android.os.Looper;
 import androidx.lifecycle.p0;
 import java.util.concurrent.Executor;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class z extends p0 {
     public androidx.lifecycle.z A;
@@ -55,7 +55,7 @@ public class z extends p0 {
         if (vVar != null) {
             return 15;
         }
-        return ns.e4;
+        return ks.e4;
     }
 
     public final void d(e eVar) {

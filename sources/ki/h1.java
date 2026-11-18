@@ -1,34 +1,528 @@
 package ki;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import org.telegram.ui.yw;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import c8.ma;
+import hi.e7;
+import hi.w5;
+import java.io.File;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.ec;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.w7;
+import org.telegram.messenger.zy;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.Components.z41;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class h1 extends yw {
-    public final /* synthetic */ bi.h0 D4;
-    public final /* synthetic */ j1 E4;
+public final class h1 extends sa {
+    public final int T1;
+    public final String U1;
+    public z41 V1;
+    public final e1 W1;
+    public boolean X1;
+    public boolean Y1;
+    public final bi.h0 Z1;
+    public int a2;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(j1 j1Var, Bundle bundle, bi.h0 h0Var) {
-        super(bundle);
-        this.E4 = j1Var;
-        this.D4 = h0Var;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r11v1 */
+    /* JADX WARN: Type inference failed for: r11v13 */
+    /* JADX WARN: Type inference failed for: r11v2, types: [boolean, int] */
+    public h1(Context context, int i7, long j3, TLRPC.TL_messages_preparedInlineMessage tL_messages_preparedInlineMessage, File file, TLRPC.WebPage webPage, i6 i6Var, org.telegram.ui.web.q qVar, bi.h0 h0Var) {
+        super(context, null, false, false, i6Var);
+        ?? r11;
+        int i10;
+        g1 e12;
+        String str;
+        String absolutePath;
+        boolean z10;
+        char c10;
+        TLRPC.TL_document tL_document;
+        TLRPC.TL_photo tL_photo;
+        int i11;
+        TLRPC.TL_photo tL_photo2;
+        this.X1 = false;
+        this.Y1 = false;
+        this.T1 = i7;
+        this.U1 = o10.q(mp.u1(i7).c2(Long.valueOf(j3)));
+        this.Z1 = h0Var;
+        Z0();
+        this.D1 = org.telegram.messenger.g0.L(4.0f);
+        this.E1 = org.telegram.messenger.g0.L(-10.0f);
+        TLRPC.BotInlineResult botInlineResult = tL_messages_preparedInlineMessage.result;
+        if (file != null && file.exists() && webPage == null) {
+            str = botInlineResult.type;
+            absolutePath = file.getAbsolutePath();
+            str.getClass();
+            z10 = true;
+            switch (str) {
+                case "sticker":
+                case "gif":
+                case "file":
+                case "audio":
+                case "video":
+                case "voice":
+                    TLRPC.TL_document tL_document2 = new TLRPC.TL_document();
+                    tL_document2.id = 0L;
+                    tL_document2.size = 0L;
+                    tL_document2.dc_id = 0;
+                    tL_document2.mime_type = botInlineResult.content.mime_type;
+                    tL_document2.file_reference = new byte[0];
+                    tL_document2.date = ConnectionsManager.getInstance(i7).getCurrentTime();
+                    TLRPC.TL_documentAttributeFilename tL_documentAttributeFilename = new TLRPC.TL_documentAttributeFilename();
+                    tL_document2.attributes.add(tL_documentAttributeFilename);
+                    switch (str.hashCode()) {
+                        case -1890252483:
+                            if (str.equals("sticker")) {
+                                c10 = 0;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        case 102340:
+                            if (str.equals("gif")) {
+                                c10 = 1;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        case 3143036:
+                            if (str.equals("file")) {
+                                c10 = 2;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        case 93166550:
+                            if (str.equals(MediaStreamTrack.AUDIO_TRACK_KIND)) {
+                                c10 = 3;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        case 112202875:
+                            if (str.equals(MediaStreamTrack.VIDEO_TRACK_KIND)) {
+                                c10 = 4;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        case 112386354:
+                            if (str.equals("voice")) {
+                                c10 = 5;
+                                break;
+                            }
+                            c10 = 65535;
+                            break;
+                        default:
+                            c10 = 65535;
+                            break;
+                    }
+                    switch (c10) {
+                        case 0:
+                            TLRPC.TL_documentAttributeSticker tL_documentAttributeSticker = new TLRPC.TL_documentAttributeSticker();
+                            tL_documentAttributeSticker.alt = "";
+                            tL_documentAttributeSticker.stickerset = new TLRPC.TL_inputStickerSetEmpty();
+                            tL_document2.attributes.add(tL_documentAttributeSticker);
+                            TLRPC.TL_documentAttributeImageSize tL_documentAttributeImageSize = new TLRPC.TL_documentAttributeImageSize();
+                            int[] g12 = fj.g1(botInlineResult);
+                            tL_documentAttributeImageSize.w = g12[0];
+                            tL_documentAttributeImageSize.h = g12[1];
+                            tL_document2.attributes.add(tL_documentAttributeImageSize);
+                            tL_documentAttributeFilename.file_name = "sticker.webp";
+                            try {
+                                if (botInlineResult.thumb != null) {
+                                    Bitmap K = ec.K(new File(w7.z(4), Utilities.a(botInlineResult.thumb.url) + "." + ec.B(botInlineResult.thumb.url, "webp")).getAbsolutePath(), null, 90.0f, 90.0f, true);
+                                    if (K != null) {
+                                        TLRPC.PhotoSize Z = ec.Z(K, 90.0f, 90.0f, 55, false);
+                                        if (Z != null) {
+                                            tL_document2.thumbs.add(Z);
+                                            tL_document2.flags |= 1;
+                                        }
+                                        K.recycle();
+                                        break;
+                                    }
+                                }
+                            } catch (Throwable th2) {
+                                a8.g(th2, true);
+                                break;
+                            }
+                            break;
+                        case 1:
+                            tL_documentAttributeFilename.file_name = "animation.gif";
+                            if (!absolutePath.endsWith("mp4")) {
+                                tL_document2.mime_type = "image/gif";
+                                break;
+                            } else {
+                                tL_document2.mime_type = "video/mp4";
+                                tL_document2.attributes.add(new TLRPC.TL_documentAttributeAnimated());
+                                break;
+                            }
+                        case 2:
+                            int lastIndexOf = botInlineResult.content.mime_type.lastIndexOf(47);
+                            if (lastIndexOf == -1) {
+                                tL_documentAttributeFilename.file_name = "file";
+                                break;
+                            } else {
+                                tL_documentAttributeFilename.file_name = "file." + botInlineResult.content.mime_type.substring(lastIndexOf + 1);
+                                break;
+                            }
+                        case 3:
+                            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = new TLRPC.TL_documentAttributeAudio();
+                            tL_documentAttributeAudio.duration = fj.f1(botInlineResult);
+                            tL_documentAttributeAudio.title = botInlineResult.title;
+                            int i12 = tL_documentAttributeAudio.flags;
+                            tL_documentAttributeAudio.flags = i12 | 1;
+                            String str2 = botInlineResult.description;
+                            if (str2 != null) {
+                                tL_documentAttributeAudio.performer = str2;
+                                tL_documentAttributeAudio.flags = i12 | 3;
+                            }
+                            tL_documentAttributeFilename.file_name = "audio.mp3";
+                            tL_document2.attributes.add(tL_documentAttributeAudio);
+                            break;
+                        case 4:
+                            tL_documentAttributeFilename.file_name = "video.mp4";
+                            TLRPC.TL_documentAttributeVideo tL_documentAttributeVideo = new TLRPC.TL_documentAttributeVideo();
+                            int[] g13 = fj.g1(botInlineResult);
+                            tL_documentAttributeVideo.w = g13[0];
+                            tL_documentAttributeVideo.h = g13[1];
+                            tL_documentAttributeVideo.duration = fj.f1(botInlineResult);
+                            tL_documentAttributeVideo.supports_streaming = true;
+                            tL_document2.attributes.add(tL_documentAttributeVideo);
+                            try {
+                                if (botInlineResult.thumb != null) {
+                                    Bitmap K2 = ec.K(new File(w7.z(4), Utilities.a(botInlineResult.thumb.url) + "." + ec.B(botInlineResult.thumb.url, "jpg")).getAbsolutePath(), null, 90.0f, 90.0f, true);
+                                    if (K2 != null) {
+                                        TLRPC.PhotoSize Z2 = ec.Z(K2, 90.0f, 90.0f, 55, false);
+                                        if (Z2 != null) {
+                                            tL_document2.thumbs.add(Z2);
+                                            tL_document2.flags |= 1;
+                                        }
+                                        K2.recycle();
+                                        break;
+                                    }
+                                }
+                            } catch (Throwable th3) {
+                                a8.g(th3, true);
+                                break;
+                            }
+                            break;
+                        case 5:
+                            TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio2 = new TLRPC.TL_documentAttributeAudio();
+                            tL_documentAttributeAudio2.duration = fj.f1(botInlineResult);
+                            tL_documentAttributeAudio2.voice = true;
+                            tL_documentAttributeFilename.file_name = "audio.ogg";
+                            tL_document2.attributes.add(tL_documentAttributeAudio2);
+                            break;
+                    }
+                    if (tL_documentAttributeFilename.file_name == null) {
+                        tL_documentAttributeFilename.file_name = "file";
+                    }
+                    if (tL_document2.mime_type == null) {
+                        tL_document2.mime_type = "application/octet-stream";
+                    }
+                    if (tL_document2.thumbs.isEmpty()) {
+                        TLRPC.TL_photoSize tL_photoSize = new TLRPC.TL_photoSize();
+                        int[] g14 = fj.g1(botInlineResult);
+                        tL_photoSize.w = g14[0];
+                        z10 = true;
+                        tL_photoSize.h = g14[1];
+                        tL_photoSize.size = 0;
+                        tL_photoSize.location = new TLRPC.TL_fileLocationUnavailable();
+                        tL_photoSize.type = "x";
+                        tL_document2.thumbs.add(tL_photoSize);
+                        tL_document2.flags |= 1;
+                    } else {
+                        z10 = true;
+                    }
+                    tL_document = tL_document2;
+                    tL_photo = null;
+                    break;
+                case "photo":
+                    if (file.exists()) {
+                        i11 = 0;
+                        tL_photo2 = zy.C(i7).A(absolutePath, null, false);
+                    } else {
+                        i11 = 0;
+                        tL_photo2 = null;
+                    }
+                    if (tL_photo2 == null) {
+                        tL_photo2 = new TLRPC.TL_photo();
+                        tL_photo2.date = ConnectionsManager.getInstance(i7).getCurrentTime();
+                        tL_photo2.file_reference = new byte[i11];
+                        TLRPC.TL_photoSize tL_photoSize2 = new TLRPC.TL_photoSize();
+                        int[] g15 = fj.g1(botInlineResult);
+                        tL_photoSize2.w = g15[i11];
+                        tL_photoSize2.h = g15[1];
+                        tL_photoSize2.size = 1;
+                        tL_photoSize2.location = new TLRPC.TL_fileLocationUnavailable();
+                        tL_photoSize2.type = "x";
+                        tL_photo2.sizes.add(tL_photoSize2);
+                    }
+                    tL_photo = tL_photo2;
+                    tL_document = null;
+                    z10 = true;
+                    break;
+                default:
+                    tL_photo = null;
+                    tL_document = null;
+                    break;
+            }
+            i10 = i7;
+            r11 = z10;
+            e12 = e1(i10, j3, botInlineResult, tL_photo, tL_document, null);
+        } else {
+            r11 = 1;
+            i10 = i7;
+            e12 = e1(i10, j3, botInlineResult, null, null, webPage);
+        }
+        g1 g1Var = e12;
+        org.telegram.ui.Cells.u0 u0Var = new org.telegram.ui.Cells.u0(context, i6Var, false);
+        u0Var.setDelegate(new b1());
+        u0Var.setCustomText(gd.M0(2131752968, null));
+        c1 c1Var = new c1(context, i10);
+        c1Var.setDelegate(new d1());
+        c1Var.y3(g1Var, null, false, false, false, false);
+        LinearLayout g10 = org.telegram.messenger.f3.g(context, r11);
+        g10.addView(u0Var, ma.o(-1, -2));
+        g10.addView(c1Var, ma.o(-1, -2));
+        e1 e1Var = new e1(context, null);
+        this.W1 = e1Var;
+        e1Var.U(w5.e(null, i10, j3, n6.I.q()));
+        e1Var.addView(g10, ma.d(-1, -1.0f, ks.E1, 4.0f, 8.0f, 4.0f, 8.0f));
+        FrameLayout frameLayout = new FrameLayout(context);
+        hi.d g11 = n10.g(24, context, i6Var, r11);
+        g11.i(gd.M0(2131752967, null), false, r11);
+        g11.setOnClickListener(new di.q0(this, tL_messages_preparedInlineMessage, h0Var, i10, j3, qVar));
+        frameLayout.addView(g11, ma.d(-1, 48.0f, ks.E1, 10.0f, 10.0f, 10.0f, 10.0f));
+        ViewGroup viewGroup = this.b;
+        int i13 = this.u0;
+        viewGroup.addView(frameLayout, ma.f(-2.0f, -1, 87, i13, 0, i13, 0));
+        ck0 ck0Var = this.o1;
+        int i14 = this.u0;
+        ck0Var.setPadding(i14, 0, i14, org.telegram.messenger.g0.L(68.0f) + r11);
+        this.o1.r1();
+        int i15 = n6.a7;
+        v0(n6.w0(i15, this.J0));
+        Q(i15);
+        this.V1.O(false);
     }
 
-    @Override // org.telegram.ui.yw
-    public final boolean U3() {
-        return true;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r8v7, types: [org.telegram.tgnet.TLRPC$Photo] */
+    /* JADX WARN: Type inference failed for: r9v0, types: [org.telegram.tgnet.TLRPC$TL_document] */
+    /* JADX WARN: Type inference failed for: r9v1, types: [org.telegram.tgnet.TLRPC$Document] */
+    /* JADX WARN: Type inference failed for: r9v2, types: [org.telegram.tgnet.TLRPC$Document] */
+    public static g1 e1(int i7, long j3, TLRPC.BotInlineResult botInlineResult, TLRPC.TL_photo tL_photo, TLRPC.TL_document tL_document, TLRPC.WebPage webPage) {
+        TLRPC.ReplyMarkup replyMarkup;
+        TLRPC.TL_photo tL_photo2 = tL_photo;
+        if (tL_photo == null) {
+            tL_photo2 = botInlineResult.photo;
+        }
+        if (tL_document == 0) {
+            tL_document = botInlineResult.document;
+        }
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.out = false;
+        tL_message.flags |= 2048;
+        tL_message.via_bot_id = j3;
+        tL_message.date = ConnectionsManager.getInstance(i7).getCurrentTime();
+        tL_message.peer_id = mp.u1(i7).B1(j10.i(i7).e());
+        tL_message.from_id = mp.u1(i7).B1(j10.i(i7).e());
+        TLRPC.BotInlineMessage botInlineMessage = botInlineResult.send_message;
+        if (botInlineMessage != null) {
+            if (botInlineMessage instanceof TLRPC.TL_botInlineMessageText) {
+                TLRPC.TL_botInlineMessageText tL_botInlineMessageText = (TLRPC.TL_botInlineMessageText) botInlineMessage;
+                tL_message.message = tL_botInlineMessageText.message;
+                tL_message.entities = tL_botInlineMessageText.entities;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaContact) {
+                TLRPC.TL_botInlineMessageMediaContact tL_botInlineMessageMediaContact = (TLRPC.TL_botInlineMessageMediaContact) botInlineMessage;
+                TLRPC.TL_messageMediaContact tL_messageMediaContact = new TLRPC.TL_messageMediaContact();
+                tL_messageMediaContact.phone_number = tL_botInlineMessageMediaContact.phone_number;
+                tL_messageMediaContact.first_name = tL_botInlineMessageMediaContact.first_name;
+                tL_messageMediaContact.last_name = tL_botInlineMessageMediaContact.last_name;
+                tL_messageMediaContact.vcard = tL_botInlineMessageMediaContact.vcard;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaContact;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaGeo) {
+                TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
+                tL_messageMediaGeo.geo = ((TLRPC.TL_botInlineMessageMediaGeo) botInlineMessage).geo;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaGeo;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaVenue) {
+                TLRPC.TL_botInlineMessageMediaVenue tL_botInlineMessageMediaVenue = (TLRPC.TL_botInlineMessageMediaVenue) botInlineMessage;
+                TLRPC.TL_messageMediaVenue tL_messageMediaVenue = new TLRPC.TL_messageMediaVenue();
+                tL_messageMediaVenue.geo = tL_botInlineMessageMediaVenue.geo;
+                tL_messageMediaVenue.title = tL_botInlineMessageMediaVenue.title;
+                tL_messageMediaVenue.address = tL_botInlineMessageMediaVenue.address;
+                tL_messageMediaVenue.venue_id = tL_botInlineMessageMediaVenue.venue_id;
+                tL_messageMediaVenue.provider = tL_botInlineMessageMediaVenue.venue_type;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaVenue;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaAuto) {
+                TLRPC.TL_botInlineMessageMediaAuto tL_botInlineMessageMediaAuto = (TLRPC.TL_botInlineMessageMediaAuto) botInlineMessage;
+                tL_message.message = tL_botInlineMessageMediaAuto.message;
+                if (TLObject.hasFlag(tL_botInlineMessageMediaAuto.flags, 2)) {
+                    tL_message.flags |= 128;
+                    tL_message.entities = tL_botInlineMessageMediaAuto.entities;
+                }
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaInvoice) {
+                TLRPC.TL_botInlineMessageMediaInvoice tL_botInlineMessageMediaInvoice = (TLRPC.TL_botInlineMessageMediaInvoice) botInlineMessage;
+                TLRPC.TL_messageMediaInvoice tL_messageMediaInvoice = new TLRPC.TL_messageMediaInvoice();
+                tL_messageMediaInvoice.shipping_address_requested = tL_botInlineMessageMediaInvoice.shipping_address_requested;
+                tL_messageMediaInvoice.test = tL_botInlineMessageMediaInvoice.test;
+                tL_messageMediaInvoice.title = tL_botInlineMessageMediaInvoice.title;
+                tL_messageMediaInvoice.description = tL_botInlineMessageMediaInvoice.description;
+                if (TLObject.hasFlag(tL_botInlineMessageMediaInvoice.flags, 1)) {
+                    tL_messageMediaInvoice.flags |= 128;
+                    tL_messageMediaInvoice.webPhoto = tL_botInlineMessageMediaInvoice.photo;
+                }
+                tL_messageMediaInvoice.currency = tL_botInlineMessageMediaInvoice.currency;
+                tL_messageMediaInvoice.total_amount = tL_botInlineMessageMediaInvoice.total_amount;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaInvoice;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageMediaWebPage) {
+                TLRPC.TL_botInlineMessageMediaWebPage tL_botInlineMessageMediaWebPage = (TLRPC.TL_botInlineMessageMediaWebPage) botInlineMessage;
+                TLRPC.TL_messageMediaWebPage tL_messageMediaWebPage = new TLRPC.TL_messageMediaWebPage();
+                tL_messageMediaWebPage.force_large_media = tL_botInlineMessageMediaWebPage.force_large_media;
+                tL_messageMediaWebPage.force_small_media = tL_botInlineMessageMediaWebPage.force_small_media;
+                tL_messageMediaWebPage.manual = tL_botInlineMessageMediaWebPage.manual;
+                tL_messageMediaWebPage.safe = tL_botInlineMessageMediaWebPage.safe;
+                tL_message.invert_media = tL_botInlineMessageMediaWebPage.invert_media;
+                tL_message.message = tL_botInlineMessageMediaWebPage.message;
+                if (webPage != null) {
+                    tL_messageMediaWebPage.webpage = webPage;
+                } else {
+                    TLRPC.TL_webPage tL_webPage = new TLRPC.TL_webPage();
+                    if (TLObject.hasFlag(tL_botInlineMessageMediaWebPage.flags, 2)) {
+                        tL_message.flags |= 128;
+                        tL_message.entities = tL_botInlineMessageMediaWebPage.entities;
+                    }
+                    String str = tL_botInlineMessageMediaWebPage.url;
+                    tL_webPage.display_url = str;
+                    tL_webPage.url = str;
+                    tL_messageMediaWebPage.webpage = tL_webPage;
+                }
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaWebPage;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageRichMessage) {
+                tL_message.flags2 |= TLObject.FLAG_13;
+                tL_message.rich_message = ((TLRPC.TL_botInlineMessageRichMessage) botInlineMessage).rich_message;
+            } else if (botInlineMessage instanceof TLRPC.TL_botInlineMessageWidget) {
+                TLRPC.TL_botInlineMessageWidget tL_botInlineMessageWidget = (TLRPC.TL_botInlineMessageWidget) botInlineMessage;
+                TLRPC.TL_messageMediaWidget tL_messageMediaWidget = new TLRPC.TL_messageMediaWidget();
+                tL_messageMediaWidget.width = tL_botInlineMessageWidget.width;
+                tL_messageMediaWidget.height = tL_botInlineMessageWidget.height;
+                tL_messageMediaWidget.payload = tL_botInlineMessageWidget.payload;
+                tL_messageMediaWidget.public_data = tL_botInlineMessageWidget.public_data;
+                tL_messageMediaWidget.public_data_hash = tL_botInlineMessageWidget.public_data_hash;
+                tL_messageMediaWidget.chat_data = tL_botInlineMessageWidget.chat_data;
+                tL_messageMediaWidget.widget_id = tL_botInlineMessageWidget.widget_id;
+                tL_message.message = tL_botInlineMessageWidget.message;
+                tL_message.entities = tL_botInlineMessageWidget.entities;
+                tL_message.invert_media = tL_botInlineMessageWidget.invert_media;
+                tL_message.flags |= 512;
+                tL_message.media = tL_messageMediaWidget;
+            }
+        }
+        boolean z10 = botInlineResult.send_message instanceof TLRPC.TL_botInlineMessageWidget;
+        if (tL_photo2 != null) {
+            TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = new TLRPC.TL_messageMediaPhoto();
+            tL_messageMediaPhoto.photo = tL_photo2;
+            tL_message.flags |= 512;
+            tL_message.media = tL_messageMediaPhoto;
+        } else if (tL_document != 0) {
+            TLRPC.TL_messageMediaDocument tL_messageMediaDocument = new TLRPC.TL_messageMediaDocument();
+            tL_messageMediaDocument.flags = 1 | tL_messageMediaDocument.flags;
+            tL_messageMediaDocument.voice = "voice".equalsIgnoreCase(botInlineResult.type);
+            tL_messageMediaDocument.round = "round".equalsIgnoreCase(botInlineResult.type);
+            tL_messageMediaDocument.document = tL_document;
+            tL_message.flags |= 512;
+            tL_message.media = tL_messageMediaDocument;
+        }
+        TLRPC.BotInlineMessage botInlineMessage2 = botInlineResult.send_message;
+        if (botInlineMessage2 != null && (replyMarkup = botInlineMessage2.reply_markup) != null) {
+            tL_message.flags |= 64;
+            tL_message.reply_markup = replyMarkup;
+        }
+        return new g1(i7, tL_message, z10, botInlineResult);
     }
 
-    @Override // org.telegram.ui.yw, org.telegram.ui.ActionBar.e2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        j1 j1Var = this.E4;
-        if (j1Var.Y1) {
+    public static void f1(Context context, int i7, long j3, String str, i6 i6Var, org.telegram.ui.web.q qVar, bi.h0 h0Var) {
+        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
+        u1Var.r(500L);
+        TLRPC.TL_messages_getPreparedInlineMessage tL_messages_getPreparedInlineMessage = new TLRPC.TL_messages_getPreparedInlineMessage();
+        tL_messages_getPreparedInlineMessage.bot = mp.u1(i7).q1(j3);
+        tL_messages_getPreparedInlineMessage.id = str;
+        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getPreparedInlineMessage, new ii.f(i7, u1Var, context, j3, i6Var, qVar, h0Var));
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final bk0 M0(ck0 ck0Var) {
+        z41 z41Var = new z41(ck0Var, getContext(), this.T1, 0, true, new e7(this, 19), this.J0);
+        this.V1 = z41Var;
+        return z41Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence P0() {
+        return gd.M0(2131752970, null);
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    public final void dismiss() {
+        super.dismiss();
+        if (this.X1 || this.Y1) {
             return;
         }
-        j1Var.Y1 = true;
-        this.D4.a("USER_DECLINED", null);
+        this.Y1 = true;
+        bi.h0 h0Var = this.Z1;
+        if (h0Var != null) {
+            h0Var.a("USER_DECLINED", null);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        ck0 ck0Var = this.o1;
+        ck0Var.v0(Math.max((ck0Var.getAdapter() == null ? 0 : ck0Var.getAdapter().b()) - 1, 0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2
+    public final void s0() {
+        try {
+            super.s0();
+            int w02 = n6.w0(n6.a7, this.J0);
+            if (w02 != this.a2) {
+                this.a2 = w02;
+                v0(w02);
+            }
+        } catch (Exception e10) {
+            a8.g(e10, true);
+        }
     }
 }

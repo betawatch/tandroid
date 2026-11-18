@@ -1,15 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class z51 {
-    public final double a;
-    public final int b;
-    public final int c;
+public interface z51 {
+    boolean t();
 
-    public z51(int i7, int i10, double d) {
-        this.a = d;
-        this.b = i7;
-        this.c = i10;
-    }
+    void x(boolean z10, float[] fArr);
 }

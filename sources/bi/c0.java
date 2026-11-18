@@ -1,17 +1,17 @@
 package bi;
 
 import android.text.style.ClickableSpan;
-import org.telegram.ui.Components.a80;
+import org.telegram.ui.Components.l80;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ hi.l3 b;
+    public final /* synthetic */ hi.m3 b;
 
-    public /* synthetic */ c0(hi.l3 l3Var, int i7) {
+    public /* synthetic */ c0(hi.m3 m3Var, int i7) {
         this.a = i7;
-        this.b = l3Var;
+        this.b = m3Var;
     }
 
     @Override // java.lang.Runnable
@@ -27,7 +27,7 @@ public final /* synthetic */ class c0 implements Runnable {
                 org.telegram.messenger.g0.E2(this.b);
                 break;
             case 3:
-                this.b.z();
+                this.b.A();
                 break;
             default:
                 this.b.getClass();
@@ -35,8 +35,8 @@ public final /* synthetic */ class c0 implements Runnable {
         }
     }
 
-    public /* synthetic */ c0(hi.l3 l3Var, a80 a80Var, ClickableSpan clickableSpan) {
+    public /* synthetic */ c0(hi.m3 m3Var, l80 l80Var, ClickableSpan clickableSpan) {
         this.a = 4;
-        this.b = l3Var;
+        this.b = m3Var;
     }
 }

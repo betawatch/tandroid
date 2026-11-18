@@ -3,17 +3,17 @@ package oi;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
-import c8.ja;
+import c8.ma;
 import j$.util.Objects;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.ly;
-import org.telegram.ui.Components.m60;
-import org.telegram.ui.Components.ng;
-import org.telegram.ui.bg0;
+import org.telegram.ui.Components.ry;
+import org.telegram.ui.Components.wg;
+import org.telegram.ui.Components.y60;
+import org.telegram.ui.eg0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,15 +26,16 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        k5 U2;
-        n5 q10;
+        l5 U2;
+        o5 q10;
         int i7 = this.a;
-        final int i10 = 0;
+        int i10 = 5;
+        final int i11 = 0;
         TL_iv.pageTableCell pagetablecell = null;
-        r5 = null;
+        r6 = null;
         TL_iv.pageBlockMath pageblockmath = null;
         pagetablecell = null;
-        final int i11 = 1;
+        final int i12 = 1;
         final z1 z1Var = this.b;
         switch (i7) {
             case 0:
@@ -47,16 +48,16 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                d2 d2Var = z1Var.Q.R3;
-                if (d2Var != null) {
-                    d2Var.k();
+                e2 e2Var = z1Var.Q.R3;
+                if (e2Var != null) {
+                    e2Var.k();
                     break;
                 }
                 break;
             case 3:
-                d2 d2Var2 = z1Var.Q.R3;
-                if (d2Var2 != null) {
-                    d2Var2.i();
+                e2 e2Var2 = z1Var.Q.R3;
+                if (e2Var2 != null) {
+                    e2Var2.i();
                     break;
                 }
                 break;
@@ -67,24 +68,24 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                 z1 z1Var2 = this.b;
                 if (!z1Var2.C0) {
                     if (z1Var2.B0 == null) {
-                        ly lyVar = new ly(z1Var2, true, false, false, z1Var2.getParentActivity(), true, null, z1Var2.P, true, z1Var2.getResourceProvider(), false, false);
-                        z1Var2.B0 = lyVar;
-                        lyVar.setVisibility(8);
-                        ly lyVar2 = z1Var2.B0;
-                        lyVar2.y2 = false;
-                        lyVar2.setDelegate(new q1(z1Var2));
+                        ry ryVar = new ry(z1Var2, true, false, false, z1Var2.getParentActivity(), true, null, z1Var2.P, true, z1Var2.getResourceProvider(), false, false);
+                        z1Var2.B0 = ryVar;
+                        ryVar.setVisibility(8);
+                        ry ryVar2 = z1Var2.B0;
+                        ryVar2.y2 = false;
+                        ryVar2.setDelegate(new q1(z1Var2));
                         int indexOfChild = z1Var2.P.indexOfChild(z1Var2.b0);
                         if (indexOfChild < 0) {
                             indexOfChild = z1Var2.P.getChildCount();
                         }
-                        FrameLayout.LayoutParams e10 = ja.e(-1, z1Var2.o0(), 87);
+                        FrameLayout.LayoutParams e10 = ma.e(-1, z1Var2.o0(), 87);
                         e10.bottomMargin = z1Var2.U0;
                         z1Var2.P.addView(z1Var2.B0, indexOfChild, e10);
                     }
                     int o02 = z1Var2.o0();
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) z1Var2.B0.getLayoutParams();
                     if (layoutParams == null) {
-                        layoutParams = ja.e(-1, o02, 87);
+                        layoutParams = ma.e(-1, o02, 87);
                     } else {
                         layoutParams.height = o02;
                     }
@@ -98,88 +99,88 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                         org.telegram.messenger.g0.v1(S2);
                     }
                     z1Var2.m0();
-                    z1Var2.c0.j(ng.d, true);
+                    z1Var2.c0.j(wg.d, true);
                     break;
                 } else {
                     z1Var2.p0(true);
                     e1 S22 = z1Var2.Q.S2();
                     if (S22 != null) {
                         S22.O();
-                        org.telegram.messenger.g0.J3(S22);
+                        org.telegram.messenger.g0.I3(S22);
                         break;
                     }
                 }
                 break;
             case 6:
-                m60 m60Var = z1Var.y0;
-                if (m60Var != null) {
-                    m60Var.u();
+                y60 y60Var = z1Var.y0;
+                if (y60Var != null) {
+                    y60Var.v();
                     z1Var.y0 = null;
                 }
-                final m60 H = m60.H(z1Var, view);
-                H.Q = true;
+                final y60 I = y60.I(z1Var, view);
+                I.T = true;
                 a T2 = z1Var.Q.T2();
-                H.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, hd.M0(2131753999, null), new j1(z1Var, T2, 5));
-                H.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, hd.M0(2131754005, null), new j1(z1Var, T2, 6));
-                H.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, hd.M0(2131754002, null), new j1(z1Var, T2, 7));
-                H.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, hd.M0(2131754004, null), new j1(z1Var, T2, 8));
+                I.j(T2 == null || !T2.b(), R.drawable.field_carret_empty, null, gd.M0(2131753997, null), new j1(z1Var, T2, 5));
+                I.j((T2 == null || !T2.b() || T2.a() || T2.c()) ? false : true, R.drawable.iv_list, null, gd.M0(2131754003, null), new j1(z1Var, T2, 6));
+                I.j(T2 != null && T2.b() && !T2.a() && T2.c(), R.drawable.iv_ordered_list, null, gd.M0(2131754000, null), new j1(z1Var, T2, 7));
+                I.j(T2 != null && T2.b() && T2.a() && !T2.c(), R.drawable.iv_todo, null, gd.M0(2131754002, null), new j1(z1Var, T2, 8));
                 boolean z10 = T2 != null && (T2.b instanceof TL_iv.pageBlockDetails);
-                String M0 = hd.M0(2131753987, null);
-                q3 q3Var = z1Var.Q;
-                Objects.requireNonNull(q3Var);
-                H.j(z10, R.drawable.iv_details, null, M0, new b(q3Var, i11));
+                String M0 = gd.M0(2131753985, null);
+                s3 s3Var = z1Var.Q;
+                Objects.requireNonNull(s3Var);
+                I.j(z10, R.drawable.iv_details, null, M0, new b(s3Var, i12));
                 boolean p22 = z1Var.Q.p2();
                 boolean s22 = z1Var.Q.s2();
                 if (p22 || s22) {
-                    H.k();
+                    I.k();
                     if (p22) {
-                        H.c(R.drawable.iv_list_tab, hd.M0(2131754013, null), new Runnable() { // from class: oi.m1
+                        I.c(R.drawable.iv_list_tab, gd.M0(2131754011, null), new Runnable() { // from class: oi.m1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i10) {
+                                switch (i11) {
                                     case 0:
                                         z1Var.Q.u3(false);
-                                        H.u();
+                                        I.v();
                                         break;
                                     default:
                                         z1Var.Q.u3(true);
-                                        H.u();
+                                        I.v();
                                         break;
                                 }
                             }
                         }, false);
                     }
                     if (s22) {
-                        H.c(R.drawable.iv_list_untab, hd.M0(2131753998, null), new Runnable() { // from class: oi.m1
+                        I.c(R.drawable.iv_list_untab, gd.M0(2131753996, null), new Runnable() { // from class: oi.m1
                             @Override // java.lang.Runnable
                             public final void run() {
-                                switch (i11) {
+                                switch (i12) {
                                     case 0:
                                         z1Var.Q.u3(false);
-                                        H.u();
+                                        I.v();
                                         break;
                                     default:
                                         z1Var.Q.u3(true);
-                                        H.u();
+                                        I.v();
                                         break;
                                 }
                             }
                         }, false);
                     }
                 }
-                H.U = true;
-                H.Z();
-                z1Var.y0 = H;
+                I.X = true;
+                I.a0();
+                z1Var.y0 = I;
                 break;
             case 7:
-                m60 m60Var2 = z1Var.y0;
-                if (m60Var2 != null) {
-                    m60Var2.u();
+                y60 y60Var2 = z1Var.y0;
+                if (y60Var2 != null) {
+                    y60Var2.v();
                     z1Var.y0 = null;
                 }
-                q3 q3Var2 = z1Var.Q;
-                k5 k5Var = q3Var2.q4;
-                if (k5Var == null && (U2 = q3Var2.U2()) != null && U2.getModel() != null) {
+                s3 s3Var2 = z1Var.Q;
+                l5 l5Var = s3Var2.q4;
+                if (l5Var == null && (U2 = s3Var2.U2()) != null && U2.getModel() != null) {
                     View findFocus = z1Var.Q.findFocus();
                     if ((findFocus instanceof e1) && (q10 = U2.q((e1) findFocus)) != null) {
                         pagetablecell = q10.b;
@@ -190,20 +191,20 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                             U2.w.invalidate();
                             U2.v();
                         }
-                        k5Var = U2;
+                        l5Var = U2;
                     }
                 }
-                if (k5Var != null && k5Var.getModel() != null && !k5Var.I.isEmpty()) {
-                    z1Var.Q.I4(k5Var);
+                if (l5Var != null && l5Var.getModel() != null && !l5Var.I.isEmpty()) {
+                    z1Var.Q.I4(l5Var);
                     break;
                 } else {
-                    z1Var.Q.V1(y5.u(2, 2));
+                    z1Var.Q.V1(z5.u(2, 2));
                     break;
                 }
             case 8:
-                m60 m60Var3 = z1Var.y0;
-                if (m60Var3 != null) {
-                    m60Var3.u();
+                y60 y60Var3 = z1Var.y0;
+                if (y60Var3 != null) {
+                    y60Var3.v();
                     z1Var.y0 = null;
                 }
                 a T22 = z1Var.Q.T2();
@@ -213,7 +214,7 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                         pageblockmath = (TL_iv.pageBlockMath) pageBlock;
                     }
                 }
-                o.Z(z1Var.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new li.v(3, z1Var, pageblockmath), z1Var.getResourceProvider());
+                o.Z(z1Var.getParentActivity(), (pageblockmath == null || TextUtils.isEmpty(pageblockmath.source)) ? "" : pageblockmath.source, new li.d(i10, z1Var, pageblockmath), z1Var.getResourceProvider());
                 break;
             case 9:
                 z1Var.Q.j4 = null;
@@ -221,9 +222,9 @@ public final /* synthetic */ class g1 implements View.OnClickListener {
                 break;
             case 10:
                 z1Var.w0();
-                bg0 bg0Var = z1Var.P0;
-                if (bg0Var != null) {
-                    bg0Var.h(true);
+                eg0 eg0Var = z1Var.P0;
+                if (eg0Var != null) {
+                    eg0Var.h(true);
                     z1Var.P0 = null;
                     break;
                 }

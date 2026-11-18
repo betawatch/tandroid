@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k5 implements Runnable {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class k5 implements Runnable {
                     countDownLatch.await();
                 } catch (InterruptedException unused) {
                 }
-                org.telegram.messenger.ns.f(t5Var2.T).d(new k5(t5Var2, 4));
+                org.telegram.messenger.ks.f(t5Var2.T).d(new k5(t5Var2, 4));
                 break;
             case 2:
                 t5 t5Var3 = this.b;
@@ -43,7 +43,7 @@ public final /* synthetic */ class k5 implements Runnable {
                 t5Var4.J0(true);
                 break;
             default:
-                org.telegram.messenger.g0.h3(new k5(this.b, 0));
+                org.telegram.messenger.g0.g3(new k5(this.b, 0));
                 break;
         }
     }

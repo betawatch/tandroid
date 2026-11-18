@@ -1,16 +1,75 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class eb extends fb implements db {
-    public z70 d;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-    @Override // org.telegram.ui.Components.fb
-    public void setTextColor(int i7) {
-        super.setTextColor(i7);
-        z70 z70Var = this.d;
-        if (z70Var != null) {
-            z70Var.setTextColor(i7);
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public abstract class eb extends lb {
+    private db button;
+    private int childrenMeasuredWidth;
+    org.telegram.ui.ActionBar.i6 resourcesProvider;
+    public zb timerView;
+    private boolean wrapWidth;
+
+    public eb(Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
+        this.resourcesProvider = i6Var;
+    }
+
+    public db getButton() {
+        return this.button;
+    }
+
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i7, int i10, int i11, int i12) {
+        db dbVar = this.button;
+        if (dbVar != null && view != dbVar) {
+            i10 = org.telegram.ui.Cells.c0.i(12.0f, dbVar.getMeasuredWidth(), i10);
         }
+        super.measureChildWithMargins(view, i7, i10, i11, i12);
+        if (view != this.button) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        this.childrenMeasuredWidth = 0;
+        if (this.wrapWidth) {
+            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_31);
+        }
+        super.onMeasure(i7, i10);
+        if (this.button == null || View.MeasureSpec.getMode(i7) != Integer.MIN_VALUE) {
+            return;
+        }
+        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
+    }
+
+    public void setButton(db dbVar) {
+        db dbVar2 = this.button;
+        if (dbVar2 != null) {
+            removeCallback(dbVar2);
+            removeView(this.button);
+        }
+        this.button = dbVar;
+        if (dbVar != null) {
+            addCallback(dbVar);
+            addView(dbVar, 0, c8.ma.h(-2.0f, -2.0f, 8388629));
+        }
+    }
+
+    public void setTimer() {
+        zb zbVar = new zb(getContext(), this.resourcesProvider);
+        this.timerView = zbVar;
+        zbVar.b = 5000L;
+        addView(zbVar, c8.ma.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public void setWrapWidth() {
+        this.wrapWidth = true;
     }
 }

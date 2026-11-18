@@ -1,51 +1,85 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class i20 implements jg.y1 {
-    public final /* synthetic */ j20 a;
+public final class i20 extends TextView {
+    public final Paint[] a;
+    public final /* synthetic */ org.telegram.ui.g30 b;
 
-    public i20(j20 j20Var) {
-        this.a = j20Var;
-    }
-
-    @Override // jg.y1
-    public final a0.h K() {
-        return this.a.x.Z1;
-    }
-
-    @Override // jg.y1
-    public final /* synthetic */ a0.h U() {
-        return null;
-    }
-
-    @Override // jg.y1
-    public final /* synthetic */ boolean e0(int i7) {
-        return true;
-    }
-
-    @Override // jg.y1
-    public final void i(int i7) {
-        j20 j20Var = this.a;
-        k20 k20Var = j20Var.x;
-        if (i7 < 0 || i7 != j20Var.n || j20Var.h) {
-            return;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i20(org.telegram.ui.g30 g30Var, Context context) {
+        super(context);
+        this.b = g30Var;
+        this.a = new Paint[g30Var.p1.length];
+        int i7 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i7 >= paintArr.length) {
+                return;
+            }
+            paintArr[i7] = new Paint(1);
+            i7++;
         }
-        int i10 = j20Var.f - 1;
-        boolean z10 = k20Var.u1.getVisibility() == 0;
-        j20Var.f();
-        if (j20Var.f > i10) {
-            k20Var.O0(i10);
-        }
-        if (j20Var.d.e() || !k20Var.o1.R0()) {
-            return;
-        }
-        k20Var.u1.e(false, z10);
     }
 
-    @Override // jg.y1
-    public final /* synthetic */ void l0(ArrayList arrayList) {
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7;
+        RectF rectF = org.telegram.messenger.g0.P;
+        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        org.telegram.ui.g30 g30Var = this.b;
+        int i10 = g30Var.r1;
+        Paint[] paintArr = this.a;
+        paintArr[i10].setAlpha(org.telegram.messenger.ks.e4);
+        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paintArr[g30Var.r1]);
+        float f10 = g30Var.q1;
+        if (f10 > 0.0f && (i7 = g30Var.r1 + 1) < paintArr.length) {
+            paintArr[i7].setAlpha((int) (f10 * 255.0f));
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(6.0f), org.telegram.messenger.g0.L(6.0f), paintArr[g30Var.r1 + 1]);
+        }
+        super.onDraw(canvas);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003e  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0029  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
+        int i13;
+        int i14;
+        super.onSizeChanged(i7, i10, i11, i12);
+        int i15 = 0;
+        while (true) {
+            Paint[] paintArr = this.a;
+            if (i15 >= paintArr.length) {
+                return;
+            }
+            int i16 = -9015575;
+            if (i15 == 0) {
+                i13 = -9015575;
+                i16 = -11033346;
+            } else if (i15 == 1) {
+                i16 = -8919716;
+                i13 = -11089922;
+            } else {
+                i13 = -1026983;
+                i14 = -1792170;
+                paintArr[i15].setShader(i14 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13, i14}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13}, (float[]) null, Shader.TileMode.CLAMP));
+                i15++;
+            }
+            i14 = 0;
+            paintArr[i15].setShader(i14 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13, i14}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i16, i13}, (float[]) null, Shader.TileMode.CLAMP));
+            i15++;
+        }
     }
 }

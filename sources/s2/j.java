@@ -2,10 +2,10 @@ package s2;
 
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final String x;
@@ -13,7 +13,7 @@ public final class j extends k {
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public j(String str, long j3, long j10, String str2, String str3) {
-        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j3, j10, false, s1.e);
+        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j3, j10, false, t1.e);
         g0 g0Var = i0.b;
     }
 

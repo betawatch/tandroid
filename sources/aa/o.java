@@ -3,7 +3,7 @@ package aa;
 import android.os.Bundle;
 import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o implements Callable {
     public final /* synthetic */ long a;
@@ -16,9 +16,9 @@ public final class o implements Callable {
 
     @Override // java.util.concurrent.Callable
     public final Object call() {
-        Bundle f10 = r.b.f(1, "fatal");
+        Bundle f10 = p5.c.f(1, "fatal");
         f10.putLong("timestamp", this.a);
-        this.b.k.O(f10);
+        this.b.k.M(f10);
         return null;
     }
 }

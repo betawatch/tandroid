@@ -1,25 +1,76 @@
 package c8;
 
 import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
+import android.util.SparseArray;
+import android.util.TypedValue;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class z {
-    public static SharedPreferences a;
-
-    public static SharedPreferences a(Context context) {
-        SharedPreferences sharedPreferences;
-        synchronized (SharedPreferences.class) {
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0046, code lost:
+    
+        if (r5.c == r8.hashCode()) goto L21;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ColorStateList a(Context context, int i7) {
+        ColorStateList colorStateList;
+        ColorStateList colorStateList2;
+        h0.h hVar;
+        Resources resources = context.getResources();
+        Resources.Theme theme = context.getTheme();
+        h0.i iVar = new h0.i(resources, theme);
+        synchronized (h0.j.c) {
             try {
-                if (a == null) {
-                    a = (SharedPreferences) ac.a(new a2.b(context, 4));
+                SparseArray sparseArray = (SparseArray) h0.j.b.get(iVar);
+                colorStateList = null;
+                if (sparseArray != null && sparseArray.size() > 0 && (hVar = (h0.h) sparseArray.get(i7)) != null) {
+                    if (hVar.b.equals(resources.getConfiguration())) {
+                        if (theme == null) {
+                            if (hVar.c != 0) {
+                            }
+                            colorStateList2 = hVar.a;
+                        }
+                        if (theme != null) {
+                        }
+                    }
+                    sparseArray.remove(i7);
                 }
-                sharedPreferences = a;
-            } catch (Throwable th2) {
-                throw th2;
+                colorStateList2 = null;
+            } finally {
             }
         }
-        return sharedPreferences;
+        if (colorStateList2 != null) {
+            return colorStateList2;
+        }
+        ThreadLocal threadLocal = h0.j.a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
+        }
+        resources.getValue(i7, typedValue, true);
+        int i10 = typedValue.type;
+        if (i10 < 28 || i10 > 31) {
+            try {
+                colorStateList = h0.c.a(resources, resources.getXml(i7), theme);
+            } catch (Exception e10) {
+                Log.w("ResourcesCompat", "Failed to inflate ColorStateList, leaving it to the framework", e10);
+            }
+        }
+        if (colorStateList == null) {
+            return resources.getColorStateList(i7, theme);
+        }
+        h0.j.a(iVar, i7, colorStateList, theme);
+        return colorStateList;
+    }
+
+    public static Drawable b(Context context, int i7) {
+        return m.m2.d().g(context, i7);
     }
 }

@@ -4,14 +4,14 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.np;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.f3;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.t9;
-import org.telegram.ui.uw;
+import org.telegram.ui.Components.ba;
+import org.telegram.ui.yw;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
     public boolean a;
@@ -45,9 +45,9 @@ public final class l extends FrameLayout {
         m mVar = this.b;
         int size = mVar.N.size();
         int i13 = mVar.r;
-        boolean z10 = i13 == 0 && mVar.h == 0 && np.s1(mVar.G).R.f(2305843009213693952L | ((long) 1)) != null;
+        boolean z10 = i13 == 0 && mVar.h == 0 && mp.u1(mVar.G).R.f(2305843009213693952L | ((long) 1)) != null;
         View view = (View) getParent();
-        int i14 = view instanceof t9 ? ((t9) view).f3 : 0;
+        int i14 = view instanceof ba ? ((ba) view).f3 : 0;
         boolean z11 = mVar.K;
         int paddingTop = view.getPaddingTop();
         int paddingBottom = view.getPaddingBottom();
@@ -73,12 +73,12 @@ public final class l extends FrameLayout {
                     size2 = (org.telegram.messenger.g0.q.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - org.telegram.messenger.g0.m;
                 }
                 int i16 = size2 - i14;
-                int L = org.telegram.messenger.g0.L(gz.p1 ? 76.0f : 70.0f);
+                int L = org.telegram.messenger.g0.L(bz.p1 ? 76.0f : 70.0f);
                 int i17 = 0;
                 for (int i18 = 0; i18 < size; i18++) {
                     if (((k) mVar.N.get(i18)).a == 0) {
                         if (((k) mVar.N.get(i18)).f && !z11) {
-                            i17 += org.telegram.messenger.g0.L(gz.p1 ? 86.0f : 91.0f);
+                            i17 += org.telegram.messenger.g0.L(bz.p1 ? 86.0f : 91.0f);
                         }
                         i17 += L;
                     } else {
@@ -90,7 +90,7 @@ public final class l extends FrameLayout {
                 int i19 = (size - 1) + i17;
                 ArrayList arrayList = mVar.d;
                 if (arrayList != null) {
-                    i19 = k5.C(52.0f, (mVar.d.size() - 1) + (org.telegram.messenger.g0.L(58.0f) * arrayList.size()), i19);
+                    i19 = f3.C(52.0f, (mVar.d.size() - 1) + (org.telegram.messenger.g0.L(58.0f) * arrayList.size()), i19);
                 }
                 int i20 = z10 ? L + 1 : 0;
                 if (i19 < i16) {
@@ -99,8 +99,8 @@ public final class l extends FrameLayout {
                         i11 -= org.telegram.messenger.g0.m;
                         if (!z11 && !mVar.T) {
                             i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                            if (getParent() instanceof uw) {
-                                i12 = ((uw) getParent()).A3;
+                            if (getParent() instanceof yw) {
+                                i12 = ((yw) getParent()).A3;
                                 i11 -= i12;
                             }
                         }
@@ -113,8 +113,8 @@ public final class l extends FrameLayout {
                             i11 -= org.telegram.messenger.g0.m;
                             if (!z11 && !mVar.T) {
                                 i11 -= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-                                if (getParent() instanceof uw) {
-                                    i12 = ((uw) getParent()).A3;
+                                if (getParent() instanceof yw) {
+                                    i12 = ((yw) getParent()).A3;
                                     i11 -= i12;
                                 }
                             }

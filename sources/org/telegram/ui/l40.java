@@ -1,47 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l40 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w40 b;
+public final class l40 extends ug.l0 {
+    public final /* synthetic */ m40 T2;
 
-    public /* synthetic */ l40(w40 w40Var, int i7) {
-        this.a = i7;
-        this.b = w40Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l40(m40 m40Var, m40 m40Var2, Activity activity, int i7, int i10, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(i7, i10, activity, m40Var2, i6Var);
+        this.T2 = m40Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                w40 w40Var = this.b;
-                w40Var.Y = null;
-                w40Var.a0.b();
-                w40Var.h.b();
-                w40Var.p0();
-                w40Var.w0();
-                w40Var.x0();
-                break;
-            case 1:
-                w40 w40Var2 = this.b;
-                w40Var2.f.r.clearFocus();
-                w40Var2.f.r.requestFocus();
-                org.telegram.messenger.g0.J3(w40Var2.f.r);
-                break;
-            case 2:
-                this.b.t0();
-                break;
-            case 3:
-                w40 w40Var3 = this.b;
-                w40Var3.s0(w40Var3.q0());
-                break;
-            default:
-                w40 w40Var4 = this.b;
-                w40Var4.s0(w40Var4.q0());
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    public final void dismiss() {
+        super.dismiss();
+        this.T2.C0 = false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2
+    public final void v() {
+        this.T2.C0 = false;
     }
 }

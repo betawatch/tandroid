@@ -1,81 +1,44 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
+import android.text.TextUtils;
+import org.telegram.messenger.PushListenerController;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class nt implements is {
-    public static final nt c;
-    public static final List d;
-    public boolean a;
-    public as b;
+public final class nt implements PushListenerController.IPushListenerServiceProvider {
+    public static final nt b = new nt();
+    public Boolean a;
 
-    static {
-        nt ntVar = new nt();
-        ntVar.b = new as(ntVar, 2);
-        c = ntVar;
-        d = Arrays.asList(5, 10, 15, 30, 60);
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final String getLogTitle() {
+        return "Google Play Services";
     }
 
-    public final void a() {
-        this.a = false;
-        if (gz.a1) {
-            ArrayList arrayList = new ArrayList(gz.z1);
-            Collections.sort(arrayList, new gl(12));
-            int size = arrayList.size();
-            int i7 = 0;
-            while (i7 < size) {
-                Object obj = arrayList.get(i7);
-                i7++;
-                fz fzVar = (fz) obj;
-                if (fzVar != gz.B1 && !fzVar.c && fzVar.d) {
-                    SharedPreferences.Editor edit = np.e1().edit();
-                    edit.putBoolean("proxy_enabled", true);
-                    fzVar.a.i(edit);
-                    edit.apply();
-                    gz.B1 = fzVar;
-                    ns.e().k(ns.A4, new Object[0]);
-                    ns.e().k(ns.C4, new Object[0]);
-                    ConnectionsManager.setProxySettings(true, gz.B1.a);
-                    return;
-                }
-            }
-        }
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final int getPushType() {
+        return 2;
     }
 
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        as asVar = this.b;
-        if (i7 == ns.B4) {
-            int i11 = gz.a;
-            if (np.e1().getBoolean("proxy_enabled", false) && gz.B1 != null && gz.a1 && gz.z1.size() > 1 && this.a) {
-                a();
-                return;
-            }
-            return;
-        }
-        if (i7 == ns.A4) {
-            g0.r(asVar);
-            return;
-        }
-        if (i7 == ns.T1 && i10 == m10.t0) {
-            int i12 = gz.a;
-            if (((!np.e1().getBoolean("proxy_enabled", false) || gz.B1 == null) && !gz.a1) || gz.z1.size() <= 1) {
-                return;
-            }
-            if (ConnectionsManager.getInstance(i10).getConnectionState() != 4) {
-                g0.r(asVar);
-            } else {
-                if (this.a) {
-                    return;
-                }
-                g0.i3(asVar, ((Integer) d.get(gz.b1)).intValue() * 1000);
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final boolean hasServices() {
+        if (this.a == null) {
+            try {
+                this.a = Boolean.valueOf(n6.d.e.d(t0.b, n6.e.a) == 0);
+            } catch (Exception e10) {
+                a8.g(e10, true);
+                this.a = Boolean.FALSE;
             }
         }
+        return this.a.booleanValue();
+    }
+
+    @Override // org.telegram.messenger.PushListenerController.IPushListenerServiceProvider
+    public final void onRequestPushToken() {
+        if (!TextUtils.isEmpty(bz.g)) {
+            boolean z10 = s2.a;
+        } else if (s2.a) {
+            a8.b("FCM Registration not found.");
+        }
+        Utilities.e.c(new xr(this, 3));
     }
 }

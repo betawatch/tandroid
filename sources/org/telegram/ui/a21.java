@@ -1,23 +1,80 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a21 implements View.OnClickListener {
-    public final /* synthetic */ i21 a;
+public final class a21 implements org.telegram.messenger.fs {
+    public final int a;
+    public final TLRPC.Chat b;
+    public TLRPC.ChannelParticipantsFilter c;
+    public boolean f;
+    public boolean h;
+    public boolean r;
+    public boolean s;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public int n = -1;
 
-    public a21(i21 i21Var) {
-        this.a = i21Var;
+    public a21(int i7, long j3, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
+        this.a = i7;
+        this.b = org.telegram.messenger.mp.u1(i7).O0(Long.valueOf(j3));
+        TLRPC.ChatFull P0 = org.telegram.messenger.mp.u1(i7).P0(j3);
+        this.c = channelParticipantsFilter;
+        if (P0 == null) {
+            if (!this.s) {
+                this.s = true;
+                org.telegram.messenger.ks.f(i7).c(this, org.telegram.messenger.ks.T);
+            }
+            org.telegram.messenger.mp.u1(i7).b3(0, j3, false);
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.fh0 fh0Var = this.a.o1;
-        if (fh0Var.b() || fh0Var.getAnimatedDrawable() == null) {
+    public final void a() {
+        if (this.s) {
+            this.s = false;
+            int i7 = this.a;
+            org.telegram.messenger.ks.f(i7).n(this, org.telegram.messenger.ks.T);
+            if (this.n >= 0) {
+                ConnectionsManager.getInstance(i7).cancelRequest(this.n, true);
+                this.n = -1;
+            }
+            this.f = false;
+        }
+    }
+
+    public final void b() {
+        if (this.f || this.h) {
             return;
         }
-        fh0Var.getAnimatedDrawable().M(40);
-        fh0Var.d();
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
+        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
+            return;
+        }
+        this.f = true;
+        TLRPC.Chat chat = this.b;
+        if (org.telegram.messenger.v3.T(chat)) {
+            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+            tL_channels_getParticipants.channel = org.telegram.messenger.mp.k1(chat);
+            tL_channels_getParticipants.filter = this.c;
+            tL_channels_getParticipants.limit = 30;
+            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
+            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new d3.b(1), new a5(this, 25));
+        }
+    }
+
+    @Override // org.telegram.messenger.fs
+    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
+        if (i7 == org.telegram.messenger.ks.T) {
+            long j3 = ((TLRPC.ChatFull) objArr[0]).id;
+            TLRPC.Chat chat = this.b;
+            if (j3 == chat.id && !org.telegram.messenger.v3.T(chat) && this.f) {
+                this.f = false;
+                b();
+            }
+        }
     }
 }

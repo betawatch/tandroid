@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.SparseIntArray;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u8 implements Runnable {
     public final /* synthetic */ int a;
@@ -21,7 +21,7 @@ public final /* synthetic */ class u8 implements Runnable {
                 y8 y8Var = this.b;
                 y8Var.L = t0.b.getSharedPreferences("uploadinfo", 0);
                 y8Var.i = t0.p();
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("start upload on slow network = " + y8Var.i);
                 }
                 int i7 = y8Var.i ? 1 : 8;

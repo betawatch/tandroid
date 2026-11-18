@@ -1,88 +1,72 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n1 extends FrameLayout {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public boolean e;
+public final class n1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Object d;
 
-    public n1(Context context) {
-        super(context);
-        this.d = 68;
-        this.e = true;
+    public /* synthetic */ n1(Object obj, float f10, float f11, int i7) {
+        this.a = i7;
+        this.d = obj;
+        this.b = f10;
+        this.c = f11;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        if (this.e) {
-            int childCount = (int) (((getChildCount() - this.a) / 2.0f) * ((this.c * 2) + this.b));
-            for (int i13 = 0; i13 < getChildCount(); i13++) {
-                View childAt = getChildAt(i13);
-                if (childAt.getVisibility() != 8) {
-                    int i14 = this.c;
-                    childAt.layout(childCount + i14, 0, childAt.getMeasuredWidth() + i14 + childCount, childAt.getMeasuredHeight());
-                    childCount = childAt.getMeasuredWidth() + (this.c * 2) + childCount;
-                }
+    public void a() {
+        te.c cVar = (te.c) this.d;
+        if (cVar.h) {
+            cVar.d(this.b + this.c, 1.0f);
+            if (cVar.h) {
+                cVar.h = false;
             }
-            return;
-        }
-        int measuredWidth = this.a > 0 ? (getMeasuredWidth() - this.b) / (this.a - 1) : 0;
-        int i15 = 0;
-        for (int i16 = 0; i16 < getChildCount(); i16++) {
-            View childAt2 = getChildAt(i16);
-            if (childAt2.getVisibility() != 8) {
-                int i17 = i15 * measuredWidth;
-                childAt2.layout(i17, 0, childAt2.getMeasuredWidth() + i17, childAt2.getMeasuredHeight());
-                i15++;
-            }
+            cVar.b.D(cVar.f, cVar.a);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        int size = View.MeasureSpec.getSize(i7);
-        this.a = 0;
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            if (getChildAt(i11).getVisibility() != 8) {
-                this.a++;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                a();
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        this.b = org.telegram.messenger.g0.L(this.d);
-        this.c = ((size / getChildCount()) - this.b) / 2;
-        int i12 = 0;
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            if (getChildAt(i13).getVisibility() != 8) {
-                getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30), i10);
-                if (getChildAt(i13).getMeasuredHeight() > i12) {
-                    i12 = getChildAt(i13).getMeasuredHeight();
-                }
-            }
-        }
-        setMeasuredDimension(size, Math.max(i12, org.telegram.messenger.g0.L(80.0f)));
     }
 
-    public void setChildSize(int i7) {
-        this.d = i7;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                q1 q1Var = (q1) this.d;
+                q1Var.P = false;
+                q1Var.N = true;
+                q1Var.a0 = this.b;
+                q1Var.b0 = this.c;
+                q1Var.requestLayout();
+                break;
+            default:
+                a();
+                break;
+        }
     }
 
-    public void setUseStartPadding(boolean z10) {
-        this.e = z10;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                ((te.c) this.d).getClass();
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

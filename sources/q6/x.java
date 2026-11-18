@@ -4,9 +4,9 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x extends r6.a {
     public static final Parcelable.Creator<x> CREATOR = new q4.x(6);
@@ -54,20 +54,20 @@ public final class x extends r6.a {
             IInterface queryLocalInterface2 = iBinder2.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
             obj2 = queryLocalInterface2 instanceof i ? (i) queryLocalInterface2 : new m0(iBinder2, "com.google.android.gms.common.internal.IAccountAccessor", 9);
         }
-        return m.k(m0Var, obj2);
+        return m.l(m0Var, obj2);
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 1, 4);
         parcel.writeInt(this.a);
-        yb.f(parcel, 2, this.b);
-        yb.k(parcel, 3, this.c, i7);
-        yb.q(parcel, 4, 4);
+        bc.f(parcel, 2, this.b);
+        bc.k(parcel, 3, this.c, i7);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        yb.q(parcel, 5, 4);
+        bc.q(parcel, 5, 4);
         parcel.writeInt(this.e ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

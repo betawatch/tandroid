@@ -1,32 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.view.View;
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dl b;
-    public final /* synthetic */ org.telegram.messenger.ya c;
-
-    public /* synthetic */ uk(dl dlVar, org.telegram.messenger.ya yaVar, int i7) {
-        this.a = i7;
-        this.b = dlVar;
-        this.c = yaVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.ya yaVar = this.c;
-                try {
-                    ((a8.r7) yaVar).w();
-                } catch (Exception unused) {
-                }
-                org.telegram.messenger.g0.h3(new uk(this.b, yaVar, 1));
-                break;
-            default:
-                dl.S(this.b, this.c);
-                break;
-        }
+public final class uk extends LinearLayout {
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(0, 0));
     }
 }

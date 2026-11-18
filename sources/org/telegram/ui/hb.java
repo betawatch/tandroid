@@ -3,17 +3,17 @@ package org.telegram.ui;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class hb implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ View a;
-    public final /* synthetic */ v4.e1 b;
+    public final /* synthetic */ v4.f1 b;
     public final /* synthetic */ ib c;
 
-    public hb(ib ibVar, View view, v4.e1 e1Var) {
+    public hb(ib ibVar, View view, v4.f1 f1Var) {
         this.c = ibVar;
         this.a = view;
-        this.b = e1Var;
+        this.b = f1Var;
     }
 
     @Override // android.view.ViewTreeObserver.OnPreDrawListener
@@ -36,21 +36,21 @@ public final class hb implements ViewTreeObserver.OnPreDrawListener {
         if (view2 instanceof org.telegram.ui.Cells.q1) {
             int heightWithKeyboard = (lbVar.Y.getHeightWithKeyboard() - org.telegram.messenger.g0.L(48.0f)) - lbVar.w.getTop();
             float y10 = view.getY();
-            kVar3 = ((org.telegram.ui.ActionBar.e2) lbVar).actionBar;
-            ((org.telegram.ui.Cells.q1) view).B3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getMeasuredWidth(), lbVar.Y.getBackgroundSizeY(), 0, 0, 0);
+            kVar3 = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
+            ((org.telegram.ui.Cells.q1) view).C3(i7, measuredHeight2 - i7, heightWithKeyboard, 0.0f, (y10 + kVar3.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getMeasuredWidth(), lbVar.Y.getBackgroundSizeY(), 0, 0, 0);
             return true;
         }
-        if (!(view2 instanceof org.telegram.ui.Cells.t0)) {
+        if (!(view2 instanceof org.telegram.ui.Cells.u0)) {
             return true;
         }
-        kVar = ((org.telegram.ui.ActionBar.e2) lbVar).actionBar;
+        kVar = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
         if (kVar == null || lbVar.Y == null) {
             return true;
         }
-        org.telegram.ui.Cells.t0 t0Var = (org.telegram.ui.Cells.t0) view;
+        org.telegram.ui.Cells.u0 u0Var = (org.telegram.ui.Cells.u0) view;
         float y11 = view.getY();
-        kVar2 = ((org.telegram.ui.ActionBar.e2) lbVar).actionBar;
-        t0Var.j0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
+        kVar2 = ((org.telegram.ui.ActionBar.h2) lbVar).actionBar;
+        u0Var.l0((y11 + kVar2.getMeasuredHeight()) - lbVar.Y.getBackgroundTranslationY(), lbVar.Y.getBackgroundSizeY());
         return true;
     }
 }

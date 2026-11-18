@@ -1,46 +1,77 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.util.SparseArray;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class sl implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ np b;
-    public final /* synthetic */ bg.u c;
+    public final /* synthetic */ mp b;
+    public final /* synthetic */ SparseArray c;
 
-    public /* synthetic */ sl(np npVar, bg.u uVar, int i7) {
+    public /* synthetic */ sl(mp mpVar, SparseArray sparseArray, int i7) {
         this.a = i7;
-        this.b = npVar;
-        this.c = uVar;
+        this.b = mpVar;
+        this.c = sparseArray;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i7 = this.a;
-        bg.u uVar = this.c;
-        np npVar = this.b;
+        SparseArray sparseArray = this.c;
+        mp mpVar = this.b;
+        char c10 = 2;
         switch (i7) {
             case 0:
-                a0.h hVar = uVar.c;
-                int m10 = hVar.m();
-                for (int i10 = 0; i10 < m10; i10++) {
-                    npVar.getNotificationCenter().k(49, Long.valueOf(hVar.j(i10)), hVar.n(i10), Boolean.FALSE);
-                }
-                break;
-            case 1:
-                a0.h hVar2 = uVar.c;
-                int m11 = hVar2.m();
-                for (int i11 = 0; i11 < m11; i11++) {
-                    npVar.getNotificationCenter().k(49, Long.valueOf(hVar2.j(i11)), hVar2.n(i11), Boolean.FALSE);
+                int i10 = 0;
+                while (i10 < sparseArray.size()) {
+                    int keyAt = sparseArray.keyAt(i10);
+                    long[] jArr = (long[]) sparseArray.valueAt(i10);
+                    mpVar.getSendMessagesHelper().d0((int) jArr[1]);
+                    ks notificationCenter = mpVar.getNotificationCenter();
+                    Integer valueOf = Integer.valueOf((int) jArr[1]);
+                    Integer valueOf2 = Integer.valueOf(keyAt);
+                    Long valueOf3 = Long.valueOf(jArr[0]);
+                    Boolean bool = Boolean.FALSE;
+                    char c11 = c10;
+                    Object[] objArr = new Object[7];
+                    objArr[0] = valueOf;
+                    objArr[1] = valueOf2;
+                    objArr[c11] = null;
+                    objArr[3] = valueOf3;
+                    objArr[4] = 0L;
+                    objArr[5] = -1;
+                    objArr[6] = bool;
+                    notificationCenter.k(21, objArr);
+                    ks notificationCenter2 = mpVar.getNotificationCenter();
+                    Integer valueOf4 = Integer.valueOf((int) jArr[1]);
+                    Integer valueOf5 = Integer.valueOf(keyAt);
+                    Long valueOf6 = Long.valueOf(jArr[0]);
+                    Object[] objArr2 = new Object[7];
+                    objArr2[0] = valueOf4;
+                    objArr2[1] = valueOf5;
+                    objArr2[c11] = null;
+                    objArr2[3] = valueOf6;
+                    objArr2[4] = 0L;
+                    objArr2[5] = -1;
+                    objArr2[6] = bool;
+                    notificationCenter2.k(22, objArr2);
+                    i10++;
+                    c10 = c11;
                 }
                 break;
             default:
-                a0.h hVar3 = uVar.c;
-                if (!hVar3.i()) {
-                    int m12 = hVar3.m();
-                    for (int i12 = 0; i12 < m12; i12++) {
-                        npVar.getNotificationCenter().k(1, Long.valueOf(hVar3.j(i12)), hVar3.n(i12), Boolean.FALSE, 0);
-                    }
-                    break;
+                for (int i11 = 0; i11 < sparseArray.size(); i11++) {
+                    int keyAt2 = sparseArray.keyAt(i11);
+                    long[] jArr2 = (long[]) sparseArray.valueAt(i11);
+                    mpVar.getSendMessagesHelper().d0((int) jArr2[1]);
+                    ks notificationCenter3 = mpVar.getNotificationCenter();
+                    Integer valueOf7 = Integer.valueOf((int) jArr2[1]);
+                    Integer valueOf8 = Integer.valueOf(keyAt2);
+                    Long valueOf9 = Long.valueOf(jArr2[0]);
+                    Boolean bool2 = Boolean.FALSE;
+                    notificationCenter3.k(21, valueOf7, valueOf8, null, valueOf9, 0L, -1, bool2);
+                    mpVar.getNotificationCenter().k(22, Integer.valueOf((int) jArr2[1]), Integer.valueOf(keyAt2), null, Long.valueOf(jArr2[0]), 0L, -1, bool2);
                 }
                 break;
         }

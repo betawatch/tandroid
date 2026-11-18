@@ -1,30 +1,18 @@
 package c8;
 
-import android.os.Build;
-import android.util.Log;
+import android.os.StrictMode;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class dc {
-    public static void a(Object obj, String str, String str2) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, String.format(str2, obj));
+    public static Object a(Callable callable) {
+        StrictMode.ThreadPolicy threadPolicy = StrictMode.getThreadPolicy();
+        try {
+            StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
+            return callable.call();
+        } finally {
+            StrictMode.setThreadPolicy(threadPolicy);
         }
-    }
-
-    public static void b(String str, String str2, Exception exc) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 6)) {
-            Log.e(c10, str2, exc);
-        }
-    }
-
-    public static String c(String str) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return "TRuntime.".concat(str);
-        }
-        String concat = "TRuntime.".concat(str);
-        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

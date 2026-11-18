@@ -9,7 +9,7 @@ import java.net.URL;
 import org.telegram.messenger.d1;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements Runnable {
     public static final d1 c = new d1("RevokeAccessOperation", new String[0]);
@@ -17,7 +17,7 @@ public final class c implements Runnable {
     public final s b;
 
     public c(String str) {
-        m.e(str);
+        m.f(str);
         this.a = str;
         this.b = new s(null, 0);
     }

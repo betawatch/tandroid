@@ -1,12 +1,11 @@
 package h2;
 
-import a8.ja;
+import a8.la;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import fi.c1;
 import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ import m.w0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class j0 {
     public int a;
@@ -96,7 +95,7 @@ public class j0 {
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new c1(this, 23));
+        new Handler(Looper.getMainLooper()).post(new f2.a(this, 27));
     }
 
     public synchronized void c() {
@@ -187,7 +186,7 @@ public class j0 {
     }
 
     public Object k() {
-        ja.p(this.b > 0);
+        la.p(this.b > 0);
         Object[] objArr = (Object[]) this.d;
         int i7 = this.a;
         Object obj = objArr[i7];
@@ -231,7 +230,7 @@ public class j0 {
         return put;
     }
 
-    public int m(f5.v vVar, int[] iArr) {
+    public int m(b3.j jVar, int[] iArr) {
         int i7 = this.a;
         while (true) {
             int i10 = 1;
@@ -244,7 +243,7 @@ public class j0 {
                 int i13 = i7 - 1;
                 int i14 = 0;
                 while (i13 >= 0) {
-                    if (vVar.n(i12 + i13)) {
+                    if (jVar.n(i12 + i13)) {
                         i14 += i10;
                     }
                     i13--;

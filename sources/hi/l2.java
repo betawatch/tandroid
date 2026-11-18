@@ -1,14 +1,50 @@
 package hi;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class l2 extends ImageView implements m2 {
-    @Override // hi.m2
-    public void setInvert(float f10) {
-        setColorFilter(new PorterDuffColorFilter(i0.a.f(f10, -1, -16777216), PorterDuff.Mode.MULTIPLY));
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class l2 extends View {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o2 b;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l2(o2 o2Var, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.b = o2Var;
+    }
+
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                o2 o2Var = this.b;
+                o2Var.q.reset();
+                o2Var.b(canvas, true);
+                break;
+            default:
+                o2 o2Var2 = this.b;
+                o2Var2.q.reset();
+                o2Var2.q.postTranslate(-getX(), (-getY()) + org.telegram.messenger.g0.m);
+                o2Var2.q.postScale(1.0f / getScaleX(), 1.0f / getScaleY(), getPivotX(), getPivotY());
+                o2Var2.b(canvas, false);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(i7, i10);
+                this.b.g();
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
     }
 }

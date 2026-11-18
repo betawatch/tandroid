@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
+import b5.a;
 import gd.i;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgl {
     public static final /* synthetic */ int zza = 0;
@@ -16,12 +16,12 @@ public final class zzgl {
 
     public static final void zzb(zzwk zzwkVar, String str, zzwa zzwaVar) {
         int i7 = zzby.zza;
-        i b10 = bb.b(zzgi.zza);
-        i b11 = bb.b(zzgj.zza);
+        i c10 = a.c(zzgi.zza);
+        i c11 = a.c(zzgj.zza);
         if (zzwaVar != null) {
             zzwkVar.zzt(zzwaVar);
         }
-        for (zzca zzcaVar : ((zzcc) bb.b(zzgk.zza).getValue()).zza()) {
+        for (zzca zzcaVar : ((zzcc) a.c(zzgk.zza).getValue()).zza()) {
             zzwkVar.zzq(0);
         }
         if (zzwkVar.zzz()) {
@@ -32,9 +32,9 @@ public final class zzgl {
             int zzD = zzwkVar.zzD();
             zzco.zza(zzwl.zza(zzD) + 10000, zzwkVar.zzf() * 1000);
         }
-        zzwkVar.zzv(((zzgh) b10.getValue()).zza(str));
+        zzwkVar.zzv(((zzgh) c10.getValue()).zza(str));
         zzzl zzi = zzzm.zzi();
         zzi.zze(zzwkVar);
-        ((zzgs) b11.getValue()).zza((zzzm) zzi.zzk());
+        ((zzgs) c11.getValue()).zza((zzzm) zzi.zzk());
     }
 }

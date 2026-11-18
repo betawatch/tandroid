@@ -1,65 +1,60 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kz0 implements Runnable {
+public final class kz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pz0 b;
+    public final /* synthetic */ org.telegram.ui.Components.al0 b;
 
-    public /* synthetic */ kz0(pz0 pz0Var, int i7) {
+    public /* synthetic */ kz0(org.telegram.ui.Components.al0 al0Var, int i7) {
         this.a = i7;
-        this.b = pz0Var;
+        this.b = al0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                pz0 pz0Var = this.b;
-                kz0 kz0Var = pz0Var.a0;
-                if (pz0Var.x != null) {
-                    pz0Var.b0 = r2.S() / pz0Var.x.U();
-                    nz0 nz0Var = pz0Var.O;
-                    if (nz0Var != null) {
-                        nz0Var.pc = (pz0Var.x.U() - pz0Var.x.S()) / 1000;
-                        pz0Var.O.T3();
-                        org.telegram.ui.Components.tm0 seekBarWaveform = pz0Var.O.getSeekBarWaveform();
-                        if (seekBarWaveform != null) {
-                            float f10 = pz0Var.b0;
-                            seekBarWaveform.J = true;
-                            seekBarWaveform.K = f10;
-                            org.telegram.ui.Cells.q1 q1Var = seekBarWaveform.n;
-                            if (q1Var != null) {
-                                q1Var.invalidate();
-                            }
-                        }
-                    }
-                    if (pz0Var.x.d0()) {
-                        org.telegram.messenger.g0.r(kz0Var);
-                        org.telegram.messenger.g0.i3(kz0Var, 16L);
-                        break;
-                    }
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
+                secretMediaViewer.Y.getNextView().setText((CharSequence) null);
+                wp0 wp0Var = secretMediaViewer.Z;
+                wp0Var.m0 = false;
+                if (wp0Var.n0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) wp0Var.p0.getLayoutParams()).topMargin = wp0Var.n0;
+                    wp0Var.n0 = -1;
+                    wp0Var.requestLayout();
+                    break;
                 }
-                break;
-            case 1:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 2:
-                super/*android.app.Dialog*/.dismiss();
                 break;
             default:
-                pz0 pz0Var2 = this.b;
-                if (pz0Var2.d == null) {
-                    org.telegram.messenger.g0.h3(new kz0(pz0Var2, 2));
-                    org.telegram.ui.Cells.q1 q1Var2 = pz0Var2.P;
-                    if (q1Var2 != null) {
-                        q1Var2.setVisibility(0);
-                        pz0Var2.P.invalidate();
+                ((SecretMediaViewer) this.b.b).Y.setTranslationY(0.0f);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                wp0 wp0Var = ((SecretMediaViewer) this.b.b).Z;
+                Method method = wp0Var.g0;
+                if (method != null) {
+                    try {
+                        method.invoke(wp0Var, null);
+                        break;
+                    } catch (Exception e10) {
+                        org.telegram.messenger.a8.g(e10, true);
+                        return;
                     }
                 }
-                MediaController.B().F0();
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

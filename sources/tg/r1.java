@@ -13,33 +13,33 @@ import android.graphics.Rect;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
-import c8.ja;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.k5;
+import c8.ma;
+import org.telegram.messenger.f3;
+import org.telegram.messenger.n10;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.pi0;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.yi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class r1 extends j {
     public final Path A0;
     public boolean B0;
     public boolean C0;
-    public final u5 D0;
+    public final c6 D0;
     public final int r0;
     public boolean s0;
-    public final u5 t0;
-    public final nt0 u0;
+    public final c6 t0;
+    public final vt0 u0;
     public final TextureView v0;
     public final Bitmap w0;
     public final Rect x0;
     public final Rect y0;
     public float z0;
 
-    public r1(Context context, PointF pointF, nt0 nt0Var, String str) {
+    public r1(Context context, PointF pointF, vt0 vt0Var, String str) {
         super(context, pointF);
         this.r0 = -1;
         this.s0 = false;
@@ -50,12 +50,12 @@ public final class r1 extends j {
         this.A0 = new Path();
         this.B0 = true;
         this.C0 = true;
-        er erVar = er.h;
-        this.D0 = new u5(this, 0L, 350L, erVar);
+        lr lrVar = lr.h;
+        this.D0 = new c6(this, 0L, 350L, lrVar);
         new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         setRotation(0.0f);
         setScale(1.0f);
-        this.u0 = nt0Var;
+        this.u0 = vt0Var;
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
         this.w0 = decodeFile;
         if (decodeFile != null) {
@@ -64,8 +64,8 @@ public final class r1 extends j {
         }
         TextureView textureView = new TextureView(context);
         this.v0 = textureView;
-        addView(textureView, ja.c(-1.0f, -1));
-        this.t0 = new u5(this, 0L, 500L, erVar);
+        addView(textureView, ma.c(-1.0f, -1));
+        this.t0 = new c6(this, 0L, 500L, lrVar);
         k();
         setWillNotDraw(false);
     }
@@ -89,7 +89,7 @@ public final class r1 extends j {
         canvas.save();
         float d = this.t0.d(this.s0);
         canvas.scale(1.0f - (d * 2.0f), 1.0f, getMeasuredWidth() / 2.0f, 0.0f);
-        canvas.skew(0.0f, k5.A(1.0f, d, 4.0f * d, 0.25f));
+        canvas.skew(0.0f, f3.A(1.0f, d, 4.0f * d, 0.25f));
         float d2 = this.D0.d(this.C0);
         float width = (view.getWidth() / 2.0f) + view.getX();
         float height = (view.getHeight() / 2.0f) + view.getY();
@@ -135,28 +135,28 @@ public final class r1 extends j {
         return this.r0;
     }
 
-    public nt0 getBaseSize() {
+    public vt0 getBaseSize() {
         return this.u0;
     }
 
     @Override // tg.j
-    public pi0 getSelectionBounds() {
+    public yi0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new pi0();
+            return new yi0();
         }
         float scaleX = viewGroup.getScaleX();
         float L = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float L2 = (org.telegram.messenger.g0.L(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
-        float x10 = i20.x(L, 2.0f, getPositionX(), scaleX);
-        return new pi0(x10, i20.x(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + x10) - x10, L2 * scaleX);
+        float y10 = n10.y(L, 2.0f, getPositionX(), scaleX);
+        return new yi0(y10, n10.y(L2, 2.0f, getPositionY(), scaleX), ((L * scaleX) + y10) - y10, L2 * scaleX);
     }
 
     @Override // tg.j
     public final void k() {
-        nt0 nt0Var = this.u0;
-        float f10 = nt0Var.a / 2.0f;
-        float f11 = nt0Var.b / 2.0f;
+        vt0 vt0Var = this.u0;
+        float f10 = vt0Var.a / 2.0f;
+        float f11 = vt0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -174,9 +174,9 @@ public final class r1 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i7, int i10) {
-        nt0 nt0Var = this.u0;
-        int i11 = (int) nt0Var.a;
-        int i12 = (int) nt0Var.b;
+        vt0 vt0Var = this.u0;
+        int i11 = (int) vt0Var.a;
+        int i12 = (int) vt0Var.b;
         TextureView textureView = this.v0;
         if (textureView != null) {
             float f10 = this.z0;

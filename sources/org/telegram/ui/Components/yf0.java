@@ -1,15 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface yf0 {
-    void a(float f10);
+public final class yf0 implements c5.h {
+    public final /* synthetic */ fg0 a;
 
-    void b(gx gxVar, Canvas canvas);
+    public yf0(fg0 fg0Var) {
+        this.a = fg0Var;
+    }
 
-    void c(float f10);
+    @Override // c5.h
+    public final void a(int i7) {
+        fg0 fg0Var = this.a;
+        int i10 = fg0Var.p1;
+        boolean z10 = i7 >= i10;
+        if (i7 != i10) {
+            fg0Var.getClass();
+            fg0Var.p1 = i7;
+        }
+        org.telegram.messenger.uo uoVar = fg0Var.T0;
+        if (uoVar != null) {
+            eg0 eg0Var = fg0Var.E0;
+            uoVar.b(i7 - (eg0Var != null ? eg0Var.j() : 0), z10);
+        }
+    }
 
-    void d(int i7, int i10);
+    @Override // c5.h
+    public final void b(float f10, int i7, int i10) {
+        org.telegram.messenger.fc fcVar;
+        fg0 fg0Var = this.a;
+        fg0Var.B(f10, i7);
+        if (i10 == 0) {
+            int k10 = fg0Var.E0.k(i7);
+            if (fg0Var.j1) {
+                k10--;
+            }
+            fg0Var.getCurrentItemView();
+            int childCount = fg0Var.getChildCount();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                View childAt = fg0Var.getChildAt(i11);
+                if (childAt instanceof q9) {
+                    eg0 eg0Var = fg0Var.E0;
+                    int k11 = eg0Var.k(eg0Var.d.indexOf(childAt));
+                    if (fg0Var.j1) {
+                        k11--;
+                    }
+                    ImageReceiver imageReceiver = ((q9) childAt).getImageReceiver();
+                    boolean z10 = imageReceiver.u0;
+                    if (k11 >= 0 && k11 < fg0Var.X0.size()) {
+                        if (k11 == k10) {
+                            if (!z10) {
+                                imageReceiver.u0 = true;
+                                imageReceiver.P0(false);
+                            }
+                            org.telegram.messenger.fc fcVar2 = (org.telegram.messenger.fc) fg0Var.X0.get(k11);
+                            if (fcVar2 != null) {
+                                org.telegram.messenger.w7 G = org.telegram.messenger.w7.G(fg0Var.M0);
+                                TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated = fcVar2.f;
+                                if (tL_fileLocationToBeDeprecated != null) {
+                                    org.telegram.messenger.w7.K.c(new org.telegram.messenger.z4(9, G, tL_fileLocationToBeDeprecated));
+                                }
+                            }
+                        } else if (z10) {
+                            b6 m10 = imageReceiver.m();
+                            if (m10 != null && (fcVar = (org.telegram.messenger.fc) fg0Var.X0.get(k11)) != null) {
+                                m10.y(fcVar.j, false, true);
+                            }
+                            imageReceiver.u0 = false;
+                            imageReceiver.Q0();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @Override // c5.h
+    public final void c(int i7) {
+    }
 }

@@ -5,9 +5,10 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.bz;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class x {
     public boolean a;
@@ -29,13 +30,13 @@ public final class x {
 
     public static x c(android.support.v4.media.session.a0 a0Var, o2 o2Var) {
         long nativeSessionNew;
-        long k10 = DictationAsr.k((t) a0Var.b);
-        if (k10 == 0) {
+        long j3 = DictationAsr.j((t) a0Var.b);
+        if (j3 == 0) {
             return null;
         }
         x xVar = new x(a0Var, o2Var);
         String str = (String) a0Var.c;
-        nativeSessionNew = DictationAsr.nativeSessionNew(k10, str, str.split(",")[0]);
+        nativeSessionNew = DictationAsr.nativeSessionNew(j3, str, str.split(",")[0], bz.o() == 0 ? 2 : 4);
         xVar.c = nativeSessionNew;
         if (nativeSessionNew != 0) {
             return xVar;
@@ -58,9 +59,9 @@ public final class x {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00c9  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x015d  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00da  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x015c  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x016e  */
     /* JADX WARN: Removed duplicated region for block: B:61:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -96,7 +97,7 @@ public final class x {
                                     }
                                 } catch (Exception e10) {
                                     e = e10;
-                                    Log.e("Dictation", "tinyasr: events ".concat(str), e);
+                                    Log.e("Dictation", "tinyasr: unreadable events (" + str.length() + " chars)", e);
                                     z12 = z13;
                                     if (z11) {
                                     }
@@ -108,14 +109,14 @@ public final class x {
                             }
                         } else if (optString.equals("partial")) {
                             StringBuilder sb3 = new StringBuilder();
-                            this.a = DictationAsr.h(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
-                            DictationAsr.n(sb3, jSONObject.optJSONArray("open"), null);
-                            DictationAsr.n(sb3, jSONObject.optJSONArray("tail"), null);
+                            this.a = DictationAsr.g(jSONObject.optJSONArray("open"), jSONObject.optJSONArray("tail"));
+                            DictationAsr.m(sb3, jSONObject.optJSONArray("open"), null);
+                            DictationAsr.m(sb3, jSONObject.optJSONArray("tail"), null);
                             this.h = sb3.toString();
                             z11 = true;
                         }
                     } else if (optString.equals("commit")) {
-                        DictationAsr.n(sb2, jSONObject.optJSONArray("words"), null);
+                        DictationAsr.m(sb2, jSONObject.optJSONArray("words"), null);
                         z11 = true;
                     }
                 } catch (Exception e11) {
@@ -142,7 +143,7 @@ public final class x {
             o2Var.i = str2.isEmpty();
             String trim = sb4.substring(o2Var.g).trim();
             if (trim.length() > 180 && str2.isEmpty()) {
-                org.telegram.messenger.g0.h3(new l2(o2Var, o2Var.f, trim, z10, 0));
+                org.telegram.messenger.g0.g3(new l2(o2Var, o2Var.f, trim, z10, 0));
                 p2 p2Var = o2Var.t;
                 long j3 = p2Var.f;
                 p2Var.f = 1 + j3;
@@ -151,11 +152,11 @@ public final class x {
                 o2Var.m.reset();
                 trim = "";
             }
-            String p10 = DictationAsr.p(trim, str2, z14);
-            if (!p10.equals(o2Var.j)) {
-                o2Var.j = p10;
+            String o4 = DictationAsr.o(trim, str2, z14);
+            if (!o4.equals(o2Var.j)) {
+                o2Var.j = o4;
                 boolean z15 = 0;
-                org.telegram.messenger.g0.h3(new l2(o2Var, o2Var.f, p10, z15, 0));
+                org.telegram.messenger.g0.g3(new l2(o2Var, o2Var.f, o4, z15, 0));
                 i7 = z15;
                 this.b = (z12 || ((String) this.h).isEmpty()) ? i7 : z10;
                 if (z12 && ((String) this.h).isEmpty() && sb2.length() > 0) {

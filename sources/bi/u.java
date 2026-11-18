@@ -13,19 +13,19 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.Components.ft;
-import org.telegram.ui.b11;
-import org.telegram.ui.f01;
+import org.telegram.ui.Components.mt;
+import org.telegram.ui.f11;
+import org.telegram.ui.j01;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u extends ft {
+public final class u extends mt {
     public final /* synthetic */ int e2;
     public final /* synthetic */ Object f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ u(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
-        super(context, e6Var);
+    public /* synthetic */ u(FrameLayout frameLayout, Context context, org.telegram.ui.ActionBar.i6 i6Var, int i7) {
+        super(context, i6Var);
         this.e2 = i7;
         this.f2 = frameLayout;
     }
@@ -45,7 +45,7 @@ public final class u extends ft {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt
+    @Override // org.telegram.ui.Components.pt
     public int e() {
         switch (this.e2) {
             case 1:
@@ -78,7 +78,7 @@ public final class u extends ft {
         switch (this.e2) {
             case 1:
                 InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-                if (((org.telegram.ui.Cells.z5) this.f2).s) {
+                if (((org.telegram.ui.Cells.a6) this.f2).s) {
                     editorInfo.imeOptions &= -1073741825;
                 }
                 return onCreateInputConnection;
@@ -92,12 +92,12 @@ public final class u extends ft {
         }
     }
 
-    @Override // org.telegram.ui.Components.ft, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.kt, android.widget.TextView, android.view.View
+    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
     public void onDraw(Canvas canvas) {
         switch (this.e2) {
             case 1:
                 super.onDraw(canvas);
-                ((org.telegram.ui.Cells.z5) this.f2).getClass();
+                ((org.telegram.ui.Cells.a6) this.f2).getClass();
                 break;
             default:
                 super.onDraw(canvas);
@@ -110,12 +110,12 @@ public final class u extends ft {
         switch (this.e2) {
             case 1:
                 super.onFocusChanged(z10, i7, rect);
-                ((org.telegram.ui.Cells.z5) this.f2).j(z10);
+                ((org.telegram.ui.Cells.a6) this.f2).j(z10);
                 break;
             case 2:
                 if (z10) {
-                    ((f01) this.f2).G.q();
-                    org.telegram.messenger.g0.i3(new b11(this, 0), 200L);
+                    ((j01) this.f2).G.q();
+                    org.telegram.messenger.g0.h3(new f11(this, 0), 200L);
                 }
                 super.onFocusChanged(z10, i7, rect);
                 break;
@@ -125,12 +125,12 @@ public final class u extends ft {
         }
     }
 
-    @Override // org.telegram.ui.Components.kt, android.view.View
+    @Override // org.telegram.ui.Components.pt, android.view.View
     public void onSizeChanged(int i7, int i10, int i11, int i12) {
         switch (this.e2) {
             case 3:
                 super.onSizeChanged(i7, i10, i11, i12);
-                postOnAnimation(new q2.d(this, 13));
+                postOnAnimation(new org.telegram.ui.web.z0(this, 16));
                 break;
             default:
                 super.onSizeChanged(i7, i10, i11, i12);
@@ -138,7 +138,7 @@ public final class u extends ft {
         }
     }
 
-    @Override // org.telegram.ui.Components.ft, android.widget.EditText, android.widget.TextView
+    @Override // org.telegram.ui.Components.mt, android.widget.EditText, android.widget.TextView
     public boolean onTextContextMenuItem(int i7) {
         ClipData primaryClip;
         switch (this.e2) {
@@ -159,7 +159,7 @@ public final class u extends ft {
                     if (!TextUtils.isEmpty(sb2)) {
                         arrayList.add(sb2);
                     }
-                    if (((org.telegram.ui.Cells.z5) this.f2).m(arrayList)) {
+                    if (((org.telegram.ui.Cells.a6) this.f2).m(arrayList)) {
                     }
                 }
                 break;
@@ -173,28 +173,28 @@ public final class u extends ft {
             case 1:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((org.telegram.ui.Cells.z5) this.f2).l(this);
+                        ((org.telegram.ui.Cells.a6) this.f2).l(this);
                     }
                     break;
                 }
                 break;
             case 2:
-                if (motionEvent.getAction() != 1 || !((f01) this.f2).G.u()) {
+                if (motionEvent.getAction() != 1 || !((j01) this.f2).G.u()) {
                     break;
                 } else {
-                    org.telegram.messenger.g0.i3(new b11(this, 1), 200L);
+                    org.telegram.messenger.g0.h3(new f11(this, 1), 200L);
                     break;
                 }
         }
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.ft, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback, int i7) {
         switch (this.e2) {
             case 1:
                 ActionMode startActionMode = super.startActionMode(callback, i7);
-                ((org.telegram.ui.Cells.z5) this.f2).h(this, startActionMode);
+                ((org.telegram.ui.Cells.a6) this.f2).h(this, startActionMode);
                 return startActionMode;
             default:
                 return super.startActionMode(callback, i7);
@@ -202,18 +202,18 @@ public final class u extends ft {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(Context context, org.telegram.ui.ActionBar.e6 e6Var, Drawable drawable) {
-        super(context, e6Var);
+    public u(Context context, org.telegram.ui.ActionBar.i6 i6Var, Drawable drawable) {
+        super(context, i6Var);
         this.e2 = 0;
         this.f2 = drawable;
     }
 
-    @Override // org.telegram.ui.Components.ft, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
+    @Override // org.telegram.ui.Components.mt, org.telegram.ui.Components.EditTextBoldCursor, android.view.View
     public ActionMode startActionMode(ActionMode.Callback callback) {
         switch (this.e2) {
             case 1:
                 ActionMode startActionMode = super.startActionMode(callback);
-                ((org.telegram.ui.Cells.z5) this.f2).h(this, startActionMode);
+                ((org.telegram.ui.Cells.a6) this.f2).h(this, startActionMode);
                 return startActionMode;
             default:
                 return super.startActionMode(callback);

@@ -1,45 +1,34 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.view.View;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t41 extends v4.k {
-    public final /* synthetic */ u41 F;
+public final /* synthetic */ class t41 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UndoView b;
 
-    public t41(u41 u41Var) {
-        this.F = u41Var;
+    public /* synthetic */ t41(UndoView undoView, int i7) {
+        this.a = i7;
+        this.b = undoView;
     }
 
-    @Override // v4.k
-    public final void M() {
-        u41 u41Var = this.F;
-        if (u41Var.b1()) {
-            u41Var.invalidate();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i7 = this.a;
+        UndoView undoView = this.b;
+        switch (i7) {
+            case 0:
+                int i10 = UndoView.j0;
+                if (undoView.a()) {
+                    undoView.d(1, false);
+                    break;
+                }
+                break;
+            default:
+                int i11 = UndoView.j0;
+                undoView.d(1, false);
+                break;
         }
-        u41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void O() {
-        u41 u41Var = this.F;
-        if (u41Var.b1()) {
-            u41Var.invalidate();
-        }
-        u41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void P(v4.e1 e1Var) {
-        u41 u41Var = this.F;
-        u41Var.invalidate();
-        u41Var.F1();
-    }
-
-    @Override // v4.k
-    public final void Q() {
-        u41 u41Var = this.F;
-        if (u41Var.b1()) {
-            u41Var.invalidate();
-        }
-        u41Var.F1();
     }
 }

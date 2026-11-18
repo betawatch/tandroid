@@ -1,30 +1,111 @@
 package fi;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.bp;
+import org.telegram.messenger.j10;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.p10;
+import org.telegram.ui.Components.zt;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class g7 extends ImageReceiver {
-    public final /* synthetic */ Runnable[] K1;
-    public final /* synthetic */ i7 L1;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class g7 {
+    public final int a;
+    public final zt b;
+    public final p10 c;
+    public int d;
+    public int e;
+    public final org.telegram.ui.Components.f5 f;
+    public final org.telegram.ui.Components.f5 g;
+    public boolean h;
+    public bp i;
+    public int j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g7(Runnable[] runnableArr, i7 i7Var) {
-        super(null);
-        this.K1 = runnableArr;
-        this.L1 = i7Var;
+    public g7(View view) {
+        zt ztVar = new zt(1, view);
+        this.a = j10.t0;
+        this.b = ztVar;
+        lr lrVar = lr.h;
+        this.f = new org.telegram.ui.Components.f5(ztVar, 350L, lrVar);
+        this.g = new org.telegram.ui.Components.f5(ztVar, 350L, lrVar);
+        p10 p10Var = new p10();
+        this.c = p10Var;
+        p10Var.a = true;
+        p10Var.b = true;
+        b(false);
+        p10Var.c.setStrokeWidth(org.telegram.messenger.g0.N(2.0f));
+        p10Var.c.setStyle(Paint.Style.STROKE);
+        p10Var.c.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean x0(Drawable drawable, String str, int i7, boolean z10, int i10) {
-        boolean x02 = super.x0(drawable, str, i7, z10, i10);
-        Runnable runnable = this.K1[0];
-        if (runnable != null) {
-            org.telegram.messenger.g0.r(runnable);
-            ((f6) this.L1.d).run();
+    public final Paint a(RectF rectF) {
+        int m10;
+        int n10;
+        int i7 = this.j;
+        int i10 = org.telegram.ui.ActionBar.u6.b;
+        org.telegram.ui.Components.f5 f5Var = this.g;
+        org.telegram.ui.Components.f5 f5Var2 = this.f;
+        if (i7 != i10) {
+            this.j = i10;
+            try {
+                if (this.h) {
+                    m10 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Yk, false);
+                    n10 = org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Zk, false);
+                } else {
+                    bp bpVar = this.i;
+                    if (bpVar != null) {
+                        m10 = bpVar.m(org.telegram.ui.ActionBar.n6.I.q());
+                        n10 = this.i.n(org.telegram.ui.ActionBar.n6.I.q());
+                    }
+                }
+                if (m10 != this.d || n10 != this.e) {
+                    this.d = m10;
+                    this.e = n10;
+                    f5Var2.a(m10, true);
+                    f5Var.a(n10, true);
+                }
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
         }
-        org.telegram.messenger.g0.h3(new c1(this, 12));
-        return x02;
+        int a10 = f5Var2.a(this.d, false);
+        int a11 = f5Var.a(this.e, false);
+        p10 p10Var = this.c;
+        p10Var.d(a10, a11, 0, 0);
+        p10Var.b(rectF.left, rectF.top, rectF.right, rectF.bottom);
+        return p10Var.c;
+    }
+
+    public final void b(boolean z10) {
+        this.h = true;
+        this.i = null;
+        this.j = org.telegram.ui.ActionBar.u6.b;
+        d(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Yk, false), org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.Zk, false), z10);
+    }
+
+    public final void c(bp bpVar, boolean z10) {
+        this.i = bpVar;
+        this.j = org.telegram.ui.ActionBar.u6.b;
+        if (bpVar == null) {
+            b(z10);
+        } else {
+            this.h = false;
+            d(bpVar.m(org.telegram.ui.ActionBar.n6.I.q()), bpVar.n(org.telegram.ui.ActionBar.n6.I.q()), z10);
+        }
+    }
+
+    public final void d(int i7, int i10, boolean z10) {
+        this.d = i7;
+        this.e = i10;
+        if (!z10) {
+            this.f.a(i7, true);
+            this.g.a(i10, true);
+        }
+        zt ztVar = this.b;
+        if (ztVar != null) {
+            ztVar.run();
+        }
     }
 }

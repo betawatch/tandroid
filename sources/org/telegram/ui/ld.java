@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ld implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
@@ -24,82 +24,82 @@ public final /* synthetic */ class ld implements TextView.OnEditorActionListener
         switch (this.a) {
             case 0:
                 xd xdVar = (xd) this.b;
-                z41 z41Var = (z41) this.c;
+                c51 c51Var = (c51) this.c;
                 if (i7 == 5) {
                     TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
                     hd hdVar = new hd(xdVar, twoStepVerificationActivity, 1);
                     twoStepVerificationActivity.a0 = 1;
                     twoStepVerificationActivity.c0 = hdVar;
                     xdVar.H0.setLoading(true);
-                    twoStepVerificationActivity.x0(new id(xdVar, z41Var, twoStepVerificationActivity, 1));
+                    twoStepVerificationActivity.x0(new id(xdVar, c51Var, twoStepVerificationActivity, 1));
                     break;
                 }
                 break;
             case 1:
-                org.telegram.ui.ActionBar.t1 t1Var = (org.telegram.ui.ActionBar.t1) this.b;
-                ki.o1 o1Var = (ki.o1) this.c;
-                if ((i7 == 6 || keyEvent.getKeyCode() == 66) && t1Var.isShowing()) {
-                    o1Var.h(t1Var, 0);
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.b;
+                ki.m1 m1Var = (ki.m1) this.c;
+                if ((i7 == 6 || keyEvent.getKeyCode() == 66) && u1Var.isShowing()) {
+                    m1Var.h(u1Var, 0);
                     break;
                 }
                 break;
             case 2:
                 l4 l4Var = (l4) this.b;
-                org.telegram.ui.Components.hn hnVar = (org.telegram.ui.Components.hn) this.c;
-                org.telegram.ui.Components.jn jnVar = (org.telegram.ui.Components.jn) l4Var.e;
-                b61 b61Var = jnVar.s;
+                org.telegram.ui.Components.pn pnVar = (org.telegram.ui.Components.pn) this.c;
+                org.telegram.ui.Components.rn rnVar = (org.telegram.ui.Components.rn) l4Var.e;
+                f61 f61Var = rnVar.s;
                 if (i7 == 5) {
-                    View F = b61Var.F(hnVar);
-                    v4.e1 T = F == null ? null : b61Var.T(F);
+                    View F = f61Var.F(pnVar);
+                    v4.f1 T = F == null ? null : f61Var.T(F);
                     if (T != null && (b10 = T.b()) != -1) {
-                        int i10 = b10 - jnVar.u0;
-                        int i11 = jnVar.N;
+                        int i10 = b10 - rnVar.u0;
+                        int i11 = rnVar.N;
                         int i12 = i11 - 1;
-                        if (i10 == i12 && i11 < jnVar.K) {
-                            jnVar.U();
+                        if (i10 == i12 && i11 < rnVar.K) {
+                            rnVar.U();
                             break;
                         } else if (i10 != i12) {
-                            v4.e1 K = b61Var.K(b10 + 1);
+                            v4.f1 K = f61Var.K(b10 + 1);
                             if (K != null) {
                                 View view = K.a;
-                                if (view instanceof org.telegram.ui.Cells.z5) {
-                                    ((org.telegram.ui.Cells.z5) view).getTextView().requestFocus();
+                                if (view instanceof org.telegram.ui.Cells.a6) {
+                                    ((org.telegram.ui.Cells.a6) view).getTextView().requestFocus();
                                     break;
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.v1(hnVar.getTextView());
+                            org.telegram.messenger.g0.v1(pnVar.getTextView());
                             break;
                         }
                     }
                 }
                 break;
             default:
-                lr0 lr0Var = (lr0) this.b;
-                kr0 kr0Var = (kr0) this.c;
-                nr0 nr0Var = lr0Var.d;
+                nr0 nr0Var = (nr0) this.b;
+                mr0 mr0Var = (mr0) this.c;
+                pr0 pr0Var = nr0Var.d;
                 if (i7 == 5) {
-                    b61 b61Var2 = nr0Var.c;
-                    View F2 = b61Var2.F(kr0Var);
-                    v4.e1 T2 = F2 == null ? null : b61Var2.T(F2);
+                    f61 f61Var2 = pr0Var.c;
+                    View F2 = f61Var2.F(mr0Var);
+                    v4.f1 T2 = F2 == null ? null : f61Var2.T(F2);
                     if (T2 != null && (b11 = T2.b()) != -1) {
-                        int i13 = b11 - nr0Var.o0;
-                        int i14 = nr0Var.E;
+                        int i13 = b11 - pr0Var.o0;
+                        int i14 = pr0Var.E;
                         int i15 = i14 - 1;
-                        if (i13 == i15 && i14 < nr0Var.n) {
-                            nr0Var.k0();
+                        if (i13 == i15 && i14 < pr0Var.n) {
+                            pr0Var.k0();
                             break;
                         } else if (i13 != i15) {
-                            v4.e1 K2 = nr0Var.c.K(b11 + 1);
+                            v4.f1 K2 = pr0Var.c.K(b11 + 1);
                             if (K2 != null) {
                                 View view2 = K2.a;
-                                if (view2 instanceof org.telegram.ui.Cells.z5) {
-                                    ((org.telegram.ui.Cells.z5) view2).getTextView().requestFocus();
+                                if (view2 instanceof org.telegram.ui.Cells.a6) {
+                                    ((org.telegram.ui.Cells.a6) view2).getTextView().requestFocus();
                                     break;
                                 }
                             }
                         } else {
-                            org.telegram.messenger.g0.v1(kr0Var.getTextView());
+                            org.telegram.messenger.g0.v1(mr0Var.getTextView());
                             break;
                         }
                     }

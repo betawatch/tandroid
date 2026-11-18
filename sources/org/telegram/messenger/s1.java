@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class s1 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                g0.h3(new b4(16, (v1) this.b, tLObject));
+                g0.g3(new w3(16, (v1) this.b, tLObject));
                 break;
             case 1:
-                g0.h3(new b4(2, (z5) this.b, tLObject));
+                g0.g3(new w3(2, (a6) this.b, tLObject));
                 break;
             case 2:
                 i7 i7Var = (i7) this.b;
@@ -79,21 +79,21 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                 }
                 break;
             case 3:
-                g0.h3(new a((Runnable) this.b, 24));
+                g0.g3(new a((Runnable) this.b, 24));
                 break;
             case 4:
-                ap apVar = (ap) this.b;
-                if (apVar != null) {
+                zo zoVar = (zo) this.b;
+                if (zoVar != null) {
                     TLRPC.ChannelParticipant channelParticipant = tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null;
-                    apVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
+                    zoVar.a((tL_error != null || channelParticipant == null || channelParticipant.left) ? false : true, channelParticipant != null ? channelParticipant.admin_rights : null, channelParticipant != null ? channelParticipant.rank : null);
                     break;
                 }
                 break;
             case 5:
-                g0.h3(new fi(27, (gp) this.b, tLObject));
+                g0.g3(new fi(27, (fp) this.b, tLObject));
                 break;
             case 6:
-                hp hpVar = (hp) this.b;
+                gp gpVar = (gp) this.b;
                 ArrayList arrayList = new ArrayList();
                 if (tLObject instanceof TLRPC.TL_savedMusic) {
                     ArrayList<TLRPC.Document> arrayList2 = ((TLRPC.TL_savedMusic) tLObject).documents;
@@ -102,24 +102,24 @@ public final /* synthetic */ class s1 implements RequestDelegate {
                     while (i11 < size) {
                         TLRPC.Document document = arrayList2.get(i11);
                         i11++;
-                        arrayList.add(hpVar.d(document));
+                        arrayList.add(gpVar.d(document));
                     }
                 }
-                g0.h3(new kg(hpVar, tLObject, arrayList, 15));
+                g0.g3(new kg(gpVar, tLObject, arrayList, 15));
                 break;
             case 7:
-                h00 h00Var = (h00) this.b;
+                e00 e00Var = (e00) this.b;
                 if (tLObject != null) {
-                    h00Var.getMessagesController().O3((TLRPC.Updates) tLObject, false);
+                    e00Var.getMessagesController().V3((TLRPC.Updates) tLObject, false);
                     break;
                 } else {
-                    h00Var.getClass();
+                    e00Var.getClass();
                     break;
                 }
             default:
-                m10 m10Var = (m10) this.b;
-                m10Var.getClass();
-                g0.h3(new pq(24, m10Var, tLObject));
+                j10 j10Var = (j10) this.b;
+                j10Var.getClass();
+                g0.g3(new rq(25, j10Var, tLObject));
                 break;
         }
     }

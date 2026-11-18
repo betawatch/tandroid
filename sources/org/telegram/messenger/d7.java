@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d7 implements Runnable {
     public final /* synthetic */ int a;
@@ -38,22 +38,22 @@ public final /* synthetic */ class d7 implements Runnable {
             default:
                 i7 i7Var3 = this.b;
                 String str = i7Var3.P0;
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("finished downloading file to " + i7Var3.L0 + " time = " + (System.currentTimeMillis() - i7Var3.d1) + " dc = " + i7Var3.T + " size = " + g0.i0(i7Var3.b0, false, false));
                 }
                 if (this.c) {
                     int i7 = i7Var3.b1;
                     if (i7 == 50331648) {
-                        hz.e(i7Var3.R).i(t0.f(), 3, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 3, 1);
                     } else if (i7 == 33554432) {
-                        hz.e(i7Var3.R).i(t0.f(), 2, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 2, 1);
                     } else if (i7 == 16777216) {
-                        hz.e(i7Var3.R).i(t0.f(), 4, 1);
+                        cz.e(i7Var3.R).i(t0.f(), 4, 1);
                     } else if (i7 == 67108864) {
                         if (str == null || !(str.toLowerCase().endsWith("mp3") || str.toLowerCase().endsWith("m4a"))) {
-                            hz.e(i7Var3.R).i(t0.f(), 5, 1);
+                            cz.e(i7Var3.R).i(t0.f(), 5, 1);
                         } else {
-                            hz.e(i7Var3.R).i(t0.f(), 7, 1);
+                            cz.e(i7Var3.R).i(t0.f(), 7, 1);
                         }
                     }
                 }

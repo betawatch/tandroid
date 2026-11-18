@@ -1,50 +1,117 @@
 package li;
 
-import org.telegram.messenger.is;
-import org.telegram.messenger.np;
-import org.telegram.messenger.qr;
-import org.telegram.ui.ActionBar.t1;
+import android.view.View;
+import org.telegram.messenger.w10;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements qr {
+public final /* synthetic */ class c implements w10, h2.o {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t1 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ is e;
 
-    public /* synthetic */ c(is isVar, t1 t1Var, long j3, boolean z10, int i7) {
-        this.a = i7;
-        this.e = isVar;
-        this.b = t1Var;
-        this.c = j3;
-        this.d = z10;
+    @Override // org.telegram.messenger.w10
+    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+        switch (this.a) {
+        }
+        return Boolean.FALSE;
     }
 
-    @Override // org.telegram.messenger.qr
-    public final void run(long j3) {
+    @Override // h2.o
+    public void invoke(Object obj) {
+        m2.b bVar = (m2.b) obj;
         switch (this.a) {
-            case 0:
-                e eVar = (e) this.e;
-                eVar.getClass();
-                this.b.dismiss();
-                if (j3 != 0) {
-                    eVar.b = -j3;
-                    eVar.c = eVar.getMessagesController().M0(Long.valueOf(j3));
-                    eVar.b0(this.c, this.d);
-                    break;
-                }
+            case 2:
+                bVar.getClass();
+                break;
+            case 3:
+                bVar.getClass();
+                break;
+            case 4:
+                bVar.getClass();
+                break;
+            case 5:
+                bVar.getClass();
+                break;
+            case 6:
+                bVar.getClass();
+                break;
+            case 7:
+                bVar.getClass();
+                break;
+            case 8:
+                bVar.getClass();
+                break;
+            case 9:
+                bVar.getClass();
+                break;
+            case 10:
+                bVar.getClass();
+                break;
+            case 11:
+                bVar.getClass();
+                break;
+            case 12:
+                bVar.getClass();
+                break;
+            case 13:
+                bVar.getClass();
+                break;
+            case 14:
+                bVar.getClass();
+                break;
+            case 15:
+                bVar.getClass();
+                break;
+            case 16:
+                bVar.getClass();
+                break;
+            case 17:
+                bVar.getClass();
+                break;
+            case 18:
+                bVar.getClass();
+                break;
+            case 19:
+                bVar.getClass();
+                break;
+            case 20:
+                bVar.getClass();
+                break;
+            case 21:
+                bVar.getClass();
+                break;
+            case 22:
+                bVar.getClass();
+                break;
+            case 23:
+                bVar.getClass();
+                break;
+            case 24:
+                bVar.getClass();
+                break;
+            case 25:
+                bVar.getClass();
+                break;
+            case 26:
+                bVar.getClass();
+                break;
+            case 27:
+                bVar.getClass();
+                break;
+            case 28:
+                bVar.getClass();
                 break;
             default:
-                d0 d0Var = (d0) this.e;
-                d0Var.getClass();
-                this.b.dismiss();
-                if (j3 != 0) {
-                    d0Var.K0(np.s1(d0Var.a).M0(Long.valueOf(j3)), this.c, this.d);
-                    break;
-                }
+                bVar.getClass();
                 break;
         }
+    }
+
+    public /* synthetic */ c(m2.a aVar, int i7, int i10, char c10) {
+        this.a = i10;
+    }
+
+    public /* synthetic */ c(m2.a aVar, String str, long j3, long j10, int i7) {
+        this.a = i7;
     }
 }

@@ -1,33 +1,115 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.SurfaceView;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class se0 {
-    public int a;
-    public ArrayList b;
-    public String c;
-    public final byte[] d;
-    public boolean e;
-    public int f = 10;
+public final class se0 extends org.telegram.ui.j4 {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public se0(TLRPC.TL_messages_votesList tL_messages_votesList, byte[] bArr) {
-        this.a = tL_messages_votesList.count;
-        this.b = tL_messages_votesList.votes;
-        this.c = tL_messages_votesList.next_offset;
-        this.d = bArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ se0(int i7, Context context, Object obj) {
+        super(context);
+        this.h = i7;
+        this.n = obj;
     }
 
-    public final int a() {
-        if (this.b.size() <= 15) {
-            return 0;
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.h) {
+            case 2:
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                Drawable[] drawableArr = PhotoViewer.Z8;
+                photoViewer.getClass();
+                super.draw(canvas);
+                break;
+            default:
+                super.draw(canvas);
+                break;
         }
-        return this.e ? 1 : 2;
     }
 
-    public final int b() {
-        return this.e ? Math.min(this.f, this.b.size()) : this.b.size();
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        org.telegram.messenger.fj fjVar;
+        switch (this.h) {
+            case 0:
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                PipRoundVideoView pipRoundVideoView = (PipRoundVideoView) this.n;
+                if (view == pipRoundVideoView.c && (fjVar = MediaController.B().v0) != null) {
+                    pipRoundVideoView.F.set(org.telegram.messenger.g0.N(1.5f), org.telegram.messenger.g0.N(1.5f), getMeasuredWidth() - org.telegram.messenger.g0.N(1.5f), getMeasuredHeight() - org.telegram.messenger.g0.N(1.5f));
+                    canvas.drawArc(pipRoundVideoView.F, -90.0f, fjVar.b0 * 360.0f, false, org.telegram.ui.ActionBar.n6.k2);
+                }
+                return drawChild;
+            case 1:
+            default:
+                return super.drawChild(canvas, view, j3);
+            case 2:
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                if (view == photoViewer.E3 && photoViewer.g4) {
+                    return true;
+                }
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // org.telegram.ui.j4, android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.h) {
+            case 1:
+                super.onMeasure(i7, i10);
+                w71 w71Var = (w71) this.n;
+                if (w71Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = w71Var.d.getLayoutParams();
+                    layoutParams.width = getMeasuredWidth();
+                    layoutParams.height = getMeasuredHeight();
+                    ImageView imageView = w71Var.e;
+                    if (imageView != null) {
+                        ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
+                        layoutParams2.width = getMeasuredWidth();
+                        layoutParams2.height = getMeasuredHeight();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                super.onMeasure(i7, i10);
+                PhotoViewer photoViewer = (PhotoViewer) this.n;
+                ImageView imageView2 = photoViewer.x3;
+                if (imageView2 != null) {
+                    ViewGroup.LayoutParams layoutParams3 = imageView2.getLayoutParams();
+                    layoutParams3.width = getMeasuredWidth();
+                    layoutParams3.height = getMeasuredHeight();
+                }
+                TextureView textureView = photoViewer.C2;
+                if (textureView instanceof v51) {
+                    textureView.setPivotX(textureView.getMeasuredWidth() / 2);
+                    photoViewer.F2.setPivotX(photoViewer.C2.getMeasuredWidth() / 2);
+                } else {
+                    if (textureView != null) {
+                        textureView.setPivotX(0.0f);
+                    }
+                    SurfaceView surfaceView = photoViewer.D2;
+                    if (surfaceView != null) {
+                        surfaceView.setPivotX(0.0f);
+                    }
+                    photoViewer.F2.setPivotX(0.0f);
+                }
+                photoViewer.s0();
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
     }
 }

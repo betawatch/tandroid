@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class a8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -43,21 +43,21 @@ public final class a8 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                org.telegram.ui.Components.xb.e();
+                org.telegram.ui.Components.gc.e();
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
             case 2:
-                if (((w21) this.b).a.getImageReceiver().B() != null && !((w21) this.b).a.getImageReceiver().B().l0) {
-                    ((w21) this.b).a.getImageReceiver().B().N(0, false, false);
-                    ((w21) this.b).a.getImageReceiver().B().H(false);
+                if (((a31) this.b).a.getImageReceiver().B() != null && !((a31) this.b).a.getImageReceiver().B().l0) {
+                    ((a31) this.b).a.getImageReceiver().B().N(0, false, false);
+                    ((a31) this.b).a.getImageReceiver().B().H(false);
                     break;
                 }
                 break;
             case 3:
-                vf.c.t((Context) this.b, org.telegram.messenger.hd.M0(2131745255, null));
+                vf.c.t((Context) this.b, org.telegram.messenger.gd.M0(2131745020, null));
                 break;
             default:
-                ((u91) this.b).L0(true);
+                ((y91) this.b).L0(true);
                 break;
         }
     }

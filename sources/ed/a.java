@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import kf.p;
 import kf.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends h {
     public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
@@ -16,7 +16,7 @@ public final class a extends h {
         String a10 = a(e);
         if (a10 != null) {
             String k10 = e2.k(a10, 1, 1);
-            kf.k kVar = new kf.k(1, r.b.k("mailto:", k10), null);
+            kf.k kVar = new kf.k(1, p5.c.k("mailto:", k10), null);
             kVar.b(new s(k10));
             return kVar;
         }

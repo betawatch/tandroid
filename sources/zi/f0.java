@@ -1,32 +1,112 @@
 package zi;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.net.Uri;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.d50;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.t61;
+import org.telegram.ui.Components.y40;
+import org.telegram.ui.ee;
+import org.telegram.ui.rj;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ v0 b;
-    public final /* synthetic */ Exception c;
+    public final /* synthetic */ u0 b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ f0(v0 v0Var, Exception exc, int i7) {
+    public /* synthetic */ f0(u0 u0Var, long j3, int i7) {
         this.a = i7;
-        this.b = v0Var;
-        this.c = exc;
+        this.b = u0Var;
+        this.c = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        File file;
+        rj rjVar;
+        t61 t61Var;
         switch (this.a) {
             case 0:
-                this.b.h(this.c);
-                break;
-            case 1:
-                this.b.h(this.c);
-                break;
-            case 2:
-                this.b.h(this.c);
+                u0 u0Var = this.b;
+                long j3 = this.c;
+                if (u0Var.a0 == 6) {
+                    u0Var.I = j3;
+                    u0Var.O = 0L;
+                    u0Var.K = 0L;
+                    u0Var.L = j3;
+                    u0Var.x(2);
+                    u0Var.l.V(u0Var.U, u0Var.I * 1000, u0Var.r);
+                    break;
+                }
                 break;
             default:
-                this.b.h(this.c);
+                u0 u0Var2 = this.b;
+                long j10 = this.c;
+                if (u0Var2.a0 == 4) {
+                    u0Var2.O = j10;
+                    long min = Math.min(u0Var2.q, j10);
+                    u0Var2.I = min;
+                    u0Var2.K = 0L;
+                    u0Var2.L = min;
+                    u0Var2.b.setSurfaceTextureListener(null);
+                    u0Var2.b.setTransform(u0Var2.h);
+                    l2.f0 a10 = new l2.n(u0Var2.a).a();
+                    u0Var2.W = a10;
+                    a10.z1(u0Var2.b);
+                    u0Var2.W.m0(e2.l0.b(Uri.fromFile(u0Var2.V)));
+                    u0Var2.W.k(0);
+                    u0Var2.W.T(1.0f);
+                    u0Var2.W.I0(u0Var2.Z);
+                    u0Var2.W.a();
+                    u0Var2.W.Z0(5, u0Var2.K);
+                    u0Var2.m.b("preview player prepared: durationMs=" + u0Var2.I + ", trim=" + u0Var2.K + ".." + u0Var2.L);
+                    u0Var2.x(5);
+                    of ofVar = u0Var2.d;
+                    long j11 = u0Var2.I;
+                    long j12 = u0Var2.K;
+                    long j13 = u0Var2.L;
+                    ((y40) ofVar.b).w.setProgress(((float) j11) / 60000.0f);
+                    y40 y40Var = (y40) ofVar.b;
+                    y40Var.k0 = false;
+                    y40Var.I.setAlpha(0.0f);
+                    y40 y40Var2 = (y40) ofVar.b;
+                    if (y40Var2.V == null) {
+                        u0 u0Var3 = y40Var2.P;
+                        if (u0Var3 == null) {
+                            file = null;
+                        } else {
+                            u0.v();
+                            file = u0Var3.V;
+                        }
+                        if (file != null) {
+                            y40 y40Var3 = (y40) ofVar.b;
+                            y40Var3.U = y40Var3.t(file, j11, null);
+                            y40 y40Var4 = (y40) ofVar.b;
+                            e20 e20Var = y40Var4.U;
+                            e20Var.a = j12 > 0 ? j12 : -1L;
+                            e20Var.b = j13 < j11 ? j13 : -1L;
+                            ks.f(y40Var4.f).k(ks.s2, Integer.valueOf(((y40) ofVar.b).h), ((y40) ofVar.b).U, file.getAbsolutePath(), new ArrayList());
+                            float max = Math.max(1L, j11);
+                            y40 y40Var5 = (y40) ofVar.b;
+                            float f10 = j12 / max;
+                            float f11 = j13 / max;
+                            d50 d50Var = y40Var5.b;
+                            if (d50Var != null && (rjVar = ((ee) d50Var).b.a0) != null && (t61Var = rjVar.g1) != null) {
+                                float max2 = Math.max(0.0f, Math.min(1.0f, f10));
+                                t61Var.b = max2;
+                                t61Var.c = Math.max(max2, Math.min(1.0f, f11));
+                                t61Var.invalidate();
+                            }
+                        }
+                    }
+                    u0Var2.r();
+                    break;
+                }
                 break;
         }
     }

@@ -1,33 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c3 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z10 b;
+public final class c3 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public boolean d;
 
-    public /* synthetic */ c3(z10 z10Var, int i7) {
+    public c3(int i7, int i10, int i11) {
         this.a = i7;
-        this.b = z10Var;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                g0.h3(new mg(tLObject, this.b, tL_error));
-                break;
-            default:
-                z10 z10Var = this.b;
-                if (z10Var != null) {
-                    z10Var.a(tLObject instanceof TLRPC.TL_channels_channelParticipant ? ((TLRPC.TL_channels_channelParticipant) tLObject).participant : null);
-                    break;
-                }
-                break;
+    public static void a(c3 c3Var, String str) {
+        if (c3Var.d) {
+            return;
         }
+        c3Var.d = true;
+        ConnectionsManager.native_receivedCaptchaResult(c3Var.a, c3Var.b, c3Var.c, str);
     }
 }

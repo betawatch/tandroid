@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
+import b5.a;
 import gd.c;
 import hd.g;
 import java.net.HttpURLConnection;
@@ -12,16 +12,16 @@ import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
 import kotlin.jvm.internal.j;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
         int i7 = zzby.zza;
-        this.zza = bb.b(zzhb.zza);
+        this.zza = a.c(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
@@ -112,10 +112,10 @@ public final class zzhc implements zzha {
                 case 29:
                     str = "POST_EXECUTE";
                     break;
-                case ns.T /* 30 */:
+                case ks.T /* 30 */:
                     str = "SIGNAL_MANAGER_INITIALIZATION";
                     break;
-                case ns.U /* 31 */:
+                case ks.U /* 31 */:
                     str = "SIGNAL_MANAGER_COLLECT_SIGNALS";
                     break;
                 case 32:

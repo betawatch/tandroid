@@ -2,7 +2,7 @@ package wi;
 
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -20,19 +20,19 @@ public final class e implements Runnable {
                 h hVar = this.b;
                 hVar.q();
                 if (hVar.b.h()) {
-                    g0.i3(this, 500L);
+                    g0.h3(this, 500L);
                     break;
                 }
                 break;
             default:
                 h hVar2 = this.b;
-                if (!hVar2.b.q()) {
+                if (!hVar2.b.s()) {
                     hVar2.u = false;
                     hVar2.o(false);
                     hVar2.w = false;
                     break;
                 } else {
-                    g0.i3(this, 1500L);
+                    g0.h3(this, 1500L);
                     break;
                 }
         }

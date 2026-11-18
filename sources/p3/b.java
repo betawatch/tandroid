@@ -1,6 +1,6 @@
 package p3;
 
-import c8.ba;
+import c8.da;
 import d4.f;
 import e2.q0;
 import h2.x;
@@ -10,9 +10,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class b extends ba {
+public final class b extends da {
     public final /* synthetic */ int a;
 
     public static q3.a c(x xVar) {
@@ -23,7 +23,7 @@ public final class b extends ba {
         return new q3.a(v, v10, xVar.u(), xVar.u(), Arrays.copyOfRange(xVar.a, xVar.b, xVar.c));
     }
 
-    @Override // c8.ba
+    @Override // c8.da
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         switch (this.a) {
             case 0:

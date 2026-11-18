@@ -1,7 +1,7 @@
 package s2;
 
-import a8.ja;
-import a8.ka;
+import a8.la;
+import a8.ma;
 import a8.p0;
 import android.net.Uri;
 import android.text.TextUtils;
@@ -30,11 +30,11 @@ import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class s implements b3.q {
+public final class s implements b3.r {
     public final p a;
     public final m b;
     public static final Pattern c = Pattern.compile("AVERAGE-BANDWIDTH=(\\d+)\\b");
@@ -140,12 +140,12 @@ public final class s implements b3.q {
         return new e2.r(str, true, qVarArr2);
     }
 
-    public static e2.q c(String str, String str2, HashMap hashMap, org.telegram.utils.twidget.v vVar) {
-        String i7 = i(str, l0, "1", hashMap, vVar);
+    public static e2.q c(String str, String str2, HashMap hashMap, org.telegram.utils.twidget.w wVar) {
+        String i7 = i(str, l0, "1", hashMap, wVar);
         boolean equals = "urn:uuid:edef8ba9-79d6-4ace-a3c8-27dcd51d21ed".equals(str2);
         Pattern pattern = m0;
         if (equals) {
-            String j3 = j(str, pattern, hashMap, vVar);
+            String j3 = j(str, pattern, hashMap, wVar);
             return new e2.q(e2.l.e, null, "video/mp4", Base64.decode(j3.substring(j3.indexOf(44)), 0));
         }
         if ("com.widevine".equals(str2)) {
@@ -156,7 +156,7 @@ public final class s implements b3.q {
         if (!"com.microsoft.playready".equals(str2) || !"1".equals(i7)) {
             return null;
         }
-        String j10 = j(str, pattern, hashMap, vVar);
+        String j10 = j(str, pattern, hashMap, wVar);
         byte[] decode = Base64.decode(j10.substring(j10.indexOf(44)), 0);
         UUID uuid2 = e2.l.f;
         return new e2.q(uuid2, null, "video/mp4", z3.p.a(uuid2, null, decode));
@@ -186,7 +186,7 @@ public final class s implements b3.q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static m d(p pVar, m mVar, ld0 ld0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
+    public static m d(p pVar, m mVar, md0 md0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
         HashMap hashMap;
         Iterator it;
         g gVar;
@@ -292,7 +292,7 @@ public final class s implements b3.q {
             int i23 = i18;
             String str19 = "POINT";
             l lVar2 = lVar;
-            if (!ld0Var.A()) {
+            if (!md0Var.A()) {
                 ArrayList arrayList16 = arrayList12;
                 ArrayList arrayList17 = arrayList13;
                 ArrayList arrayList18 = arrayList14;
@@ -369,13 +369,13 @@ public final class s implements b3.q {
                 }
                 return new m(i21, uri.toString(), arrayList19, j15, z14, j19, z13, i19, j17, i22, j16, j14, z12, z15, j19 != 0, rVar6, arrayList16, arrayList17, lVar2, hashMap6, arrayList21, jVar2);
             }
-            String D = ld0Var.D();
+            String D = md0Var.D();
             HashMap hashMap7 = hashMap4;
             if (D.startsWith("#EXT")) {
                 arrayList15.add(D);
             }
             if (D.startsWith("#EXT-X-PLAYLIST-TYPE")) {
-                String j32 = j(D, S, hashMap3, vVar);
+                String j32 = j(D, S, hashMap3, wVar);
                 if ("VOD".equals(j32)) {
                     i21 = 1;
                 } else if ("EVENT".equals(j32)) {
@@ -392,33 +392,33 @@ public final class s implements b3.q {
                 if (D.startsWith("#EXT-X-START")) {
                     arrayList = arrayList15;
                     linkedHashMap = linkedHashMap3;
-                    long parseDouble = (long) (Double.parseDouble(j(D, e0, Collections.EMPTY_MAP, vVar)) * 1000000.0d);
-                    z14 = f(D, B0, vVar);
+                    long parseDouble = (long) (Double.parseDouble(j(D, e0, Collections.EMPTY_MAP, wVar)) * 1000000.0d);
+                    z14 = f(D, B0, wVar);
                     j15 = parseDouble;
                 } else {
                     arrayList = arrayList15;
                     linkedHashMap = linkedHashMap3;
                     if (D.startsWith("#EXT-X-SERVER-CONTROL")) {
-                        double g10 = g(D, T, -9.223372036854776E18d, vVar);
+                        double g10 = g(D, T, -9.223372036854776E18d, wVar);
                         long j33 = g10 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g10 * 1000000.0d);
-                        boolean f10 = f(D, U, vVar);
-                        double g11 = g(D, W, -9.223372036854776E18d, vVar);
+                        boolean f10 = f(D, U, wVar);
+                        double g11 = g(D, W, -9.223372036854776E18d, wVar);
                         long j34 = g11 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g11 * 1000000.0d);
-                        double g12 = g(D, X, -9.223372036854776E18d, vVar);
+                        double g12 = g(D, X, -9.223372036854776E18d, wVar);
                         arrayList15 = arrayList;
                         i18 = i23;
                         hashMap4 = hashMap7;
                         linkedHashMap3 = linkedHashMap;
-                        lVar = new l(j33, f10, j34, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(D, Y, vVar));
+                        lVar = new l(j33, f10, j34, g12 == -9.223372036854776E18d ? -9223372036854775807L : (long) (g12 * 1000000.0d), f(D, Y, wVar));
                     } else if (D.startsWith("#EXT-X-PART-INF")) {
-                        j14 = (long) (Double.parseDouble(j(D, Q, Collections.EMPTY_MAP, vVar)) * 1000000.0d);
+                        j14 = (long) (Double.parseDouble(j(D, Q, Collections.EMPTY_MAP, wVar)) * 1000000.0d);
                     } else {
                         boolean startsWith = D.startsWith("#EXT-X-MAP");
                         Pattern pattern = g0;
                         Pattern pattern2 = m0;
                         if (startsWith) {
-                            String j35 = j(D, pattern2, hashMap3, vVar);
-                            String i26 = i(D, pattern, null, hashMap3, vVar);
+                            String j35 = j(D, pattern2, hashMap3, wVar);
+                            String i26 = i(D, pattern, null, hashMap3, wVar);
                             if (i26 != null) {
                                 String str24 = l0.a;
                                 String[] split = i26.split("@", -1);
@@ -451,9 +451,9 @@ public final class s implements b3.q {
                             ArrayList arrayList26 = arrayList13;
                             ArrayList arrayList27 = arrayList14;
                             if (D.startsWith("#EXT-X-TARGETDURATION")) {
-                                j16 = Integer.parseInt(j(D, N, Collections.EMPTY_MAP, vVar)) * 1000000;
+                                j16 = Integer.parseInt(j(D, N, Collections.EMPTY_MAP, wVar)) * 1000000;
                             } else if (D.startsWith("#EXT-X-MEDIA-SEQUENCE")) {
-                                j20 = Long.parseLong(j(D, Z, Collections.EMPTY_MAP, vVar));
+                                j20 = Long.parseLong(j(D, Z, Collections.EMPTY_MAP, wVar));
                                 i18 = i23;
                                 j17 = j20;
                                 lVar = lVar2;
@@ -464,24 +464,24 @@ public final class s implements b3.q {
                                 arrayList14 = arrayList27;
                                 arrayList13 = arrayList26;
                             } else if (D.startsWith("#EXT-X-VERSION")) {
-                                i22 = Integer.parseInt(j(D, R, Collections.EMPTY_MAP, vVar));
+                                i22 = Integer.parseInt(j(D, R, Collections.EMPTY_MAP, wVar));
                             } else {
                                 if (D.startsWith("#EXT-X-DEFINE")) {
-                                    String i27 = i(D, r0, null, hashMap3, vVar);
-                                    String i28 = i(D, s0, null, hashMap3, vVar);
+                                    String i27 = i(D, r0, null, hashMap3, wVar);
+                                    String i28 = i(D, s0, null, hashMap3, wVar);
                                     if (i27 != null) {
-                                        m(i27, hashMap3);
-                                        hashMap3.put(i27, j(D, C0, hashMap3, vVar));
+                                        l(i27, hashMap3);
+                                        hashMap3.put(i27, j(D, C0, hashMap3, wVar));
                                     } else if (i28 != null) {
-                                        m(i28, hashMap3);
+                                        l(i28, hashMap3);
                                         String queryParameter = uri.getQueryParameter(i28);
                                         if (queryParameter == null) {
                                             throw t0.b("QUERYPARAM \"" + i28 + "\" not found in playlist URI", null);
                                         }
                                         hashMap3.put(i28, queryParameter);
                                     } else {
-                                        String j38 = j(D, D0, hashMap3, vVar);
-                                        m(j38, hashMap3);
+                                        String j38 = j(D, D0, hashMap3, wVar);
+                                        l(j38, hashMap3);
                                         String str27 = (String) pVar2.l.get(j38);
                                         if (str27 != null) {
                                             hashMap3.put(j38, str27);
@@ -503,11 +503,11 @@ public final class s implements b3.q {
                                     str5 = uri2;
                                     treeMap = treeMap2;
                                 } else if (D.startsWith("#EXTINF")) {
-                                    j23 = new BigDecimal(j(D, a0, Collections.EMPTY_MAP, vVar)).multiply(new BigDecimal(1000000L)).longValue();
-                                    str15 = i(D, b0, str14, hashMap3, vVar);
+                                    j23 = new BigDecimal(j(D, a0, Collections.EMPTY_MAP, wVar)).multiply(new BigDecimal(1000000L)).longValue();
+                                    str15 = i(D, b0, str14, hashMap3, wVar);
                                 } else if (D.startsWith("#EXT-X-SKIP")) {
-                                    int parseInt = Integer.parseInt(j(D, V, Collections.EMPTY_MAP, vVar));
-                                    ja.p((mVar2 == null || !arrayList12.isEmpty()) ? i17 : 1);
+                                    int parseInt = Integer.parseInt(j(D, V, Collections.EMPTY_MAP, wVar));
+                                    la.p((mVar2 == null || !arrayList12.isEmpty()) ? i17 : 1);
                                     String str28 = l0.a;
                                     long j39 = mVar2.k;
                                     i0 i0Var = mVar2.r;
@@ -573,15 +573,15 @@ public final class s implements b3.q {
                                 } else {
                                     str2 = str14;
                                     if (D.startsWith("#EXT-X-KEY")) {
-                                        String j44 = j(D, j0, hashMap3, vVar);
-                                        String i34 = i(D, k0, "identity", hashMap3, vVar);
+                                        String j44 = j(D, j0, hashMap3, wVar);
+                                        String i34 = i(D, k0, "identity", hashMap3, wVar);
                                         if ("NONE".equals(j44)) {
                                             treeMap2.clear();
                                             rVar7 = null;
                                             str16 = null;
                                             str17 = null;
                                         } else {
-                                            String i35 = i(D, n0, null, hashMap3, vVar);
+                                            String i35 = i(D, n0, null, hashMap3, wVar);
                                             if (!"identity".equals(i34)) {
                                                 String str31 = str18;
                                                 if (str31 == null) {
@@ -589,7 +589,7 @@ public final class s implements b3.q {
                                                 } else {
                                                     str18 = str31;
                                                 }
-                                                e2.q c12 = c(D, i34, hashMap3, vVar);
+                                                e2.q c12 = c(D, i34, hashMap3, wVar);
                                                 if (c12 != null) {
                                                     treeMap2.put(i34, c12);
                                                     str17 = i35;
@@ -597,7 +597,7 @@ public final class s implements b3.q {
                                                     str16 = null;
                                                 }
                                             } else if ("AES-128".equals(j44)) {
-                                                str16 = j(D, pattern2, hashMap3, vVar);
+                                                str16 = j(D, pattern2, hashMap3, wVar);
                                                 str17 = i35;
                                             }
                                             str17 = i35;
@@ -612,7 +612,7 @@ public final class s implements b3.q {
                                     } else {
                                         String str32 = str18;
                                         if (D.startsWith("#EXT-X-BYTERANGE")) {
-                                            String j45 = j(D, f0, hashMap3, vVar);
+                                            String j45 = j(D, f0, hashMap3, wVar);
                                             String str33 = l0.a;
                                             String[] split2 = j45.split("@", -1);
                                             j13 = Long.parseLong(split2[i17]);
@@ -687,8 +687,8 @@ public final class s implements b3.q {
                                                 str14 = str2;
                                                 z15 = true;
                                             } else if (D.startsWith("#EXT-X-RENDITION-REPORT")) {
-                                                long h7 = h(D, c0, vVar);
-                                                Matcher b11 = org.telegram.utils.twidget.v.b(D, d0, vVar);
+                                                long h7 = h(D, c0, wVar);
+                                                Matcher b11 = org.telegram.utils.twidget.w.b(D, d0, wVar);
                                                 if (b11.find()) {
                                                     String group = b11.group(1);
                                                     group.getClass();
@@ -696,14 +696,14 @@ public final class s implements b3.q {
                                                 } else {
                                                     i12 = -1;
                                                 }
-                                                arrayList27.add(new i(Uri.parse(h2.e.f(uri2, j(D, pattern2, hashMap3, vVar))), h7, i12));
+                                                arrayList27.add(new i(Uri.parse(h2.e.f(uri2, j(D, pattern2, hashMap3, wVar))), h7, i12));
                                             } else if (D.startsWith("#EXT-X-PRELOAD-HINT")) {
                                                 h hVar5 = hVar2;
-                                                if (hVar5 == null && "PART".equals(j(D, p0, hashMap3, vVar))) {
+                                                if (hVar5 == null && "PART".equals(j(D, p0, hashMap3, wVar))) {
                                                     e2.r rVar9 = rVar7;
-                                                    String j46 = j(D, pattern2, hashMap3, vVar);
-                                                    long h10 = h(D, h0, vVar);
-                                                    long h11 = h(D, i0, vVar);
+                                                    String j46 = j(D, pattern2, hashMap3, wVar);
+                                                    long h10 = h(D, h0, wVar);
+                                                    long h11 = h(D, i0, wVar);
                                                     String hexString = str16 == null ? null : str26 != null ? str26 : Long.toHexString(j20);
                                                     if (rVar9 != null || treeMap2.isEmpty()) {
                                                         rVar = rVar9;
@@ -797,11 +797,11 @@ public final class s implements b3.q {
                                                 h hVar7 = hVar2;
                                                 if (D.startsWith("#EXT-X-PART")) {
                                                     String hexString2 = str == null ? null : str26 != null ? str26 : Long.toHexString(j20);
-                                                    String j48 = j(D, pattern2, hashMap3, vVar);
-                                                    long parseDouble2 = (long) (Double.parseDouble(j(D, O, Collections.EMPTY_MAP, vVar)) * 1000000.0d);
-                                                    boolean f11 = f(D, z0, vVar) | (z12 && arrayList26.isEmpty());
-                                                    boolean f12 = f(D, A0, vVar);
-                                                    String i36 = i(D, pattern, null, hashMap3, vVar);
+                                                    String j48 = j(D, pattern2, hashMap3, wVar);
+                                                    long parseDouble2 = (long) (Double.parseDouble(j(D, O, Collections.EMPTY_MAP, wVar)) * 1000000.0d);
+                                                    boolean f11 = f(D, z0, wVar) | (z12 && arrayList26.isEmpty());
+                                                    boolean f12 = f(D, A0, wVar);
+                                                    String i36 = i(D, pattern, null, hashMap3, wVar);
                                                     if (i36 != null) {
                                                         String str34 = l0.a;
                                                         String[] split3 = i36.split("@", -1);
@@ -878,21 +878,21 @@ public final class s implements b3.q {
                                                 } else {
                                                     str5 = uri2;
                                                     if (D.startsWith("#EXT-X-DATERANGE")) {
-                                                        if (i(D, F0, str2, hashMap3, vVar).equals("com.apple.hls.interstitial")) {
-                                                            String j50 = j(D, E0, hashMap3, vVar);
-                                                            String i37 = i(D, L0, null, hashMap3, vVar);
+                                                        if (i(D, F0, str2, hashMap3, wVar).equals("com.apple.hls.interstitial")) {
+                                                            String j50 = j(D, E0, hashMap3, wVar);
+                                                            String i37 = i(D, L0, null, hashMap3, wVar);
                                                             Uri parse = i37 != null ? Uri.parse(i37) : null;
                                                             arrayList4 = arrayList26;
-                                                            String i38 = i(D, M0, null, hashMap3, vVar);
+                                                            String i38 = i(D, M0, null, hashMap3, wVar);
                                                             Uri parse2 = i38 != null ? Uri.parse(i38) : null;
                                                             rVar7 = rVar11;
-                                                            String i39 = i(D, G0, null, hashMap3, vVar);
+                                                            String i39 = i(D, G0, null, hashMap3, wVar);
                                                             long S2 = i39 != null ? l0.S(l0.V(i39)) : -9223372036854775807L;
-                                                            String i40 = i(D, I0, null, hashMap3, vVar);
+                                                            String i40 = i(D, I0, null, hashMap3, wVar);
                                                             long S3 = i40 != null ? l0.S(l0.V(i40)) : -9223372036854775807L;
                                                             ArrayList arrayList29 = new ArrayList();
                                                             str2 = str2;
-                                                            String i41 = i(D, H0, null, hashMap3, vVar);
+                                                            String i41 = i(D, H0, null, hashMap3, wVar);
                                                             if (i41 != null) {
                                                                 String str35 = l0.a;
                                                                 treeMap = treeMap2;
@@ -947,18 +947,18 @@ public final class s implements b3.q {
                                                                 treeMap = treeMap2;
                                                             }
                                                             arrayList27 = arrayList27;
-                                                            double g13 = g(D, P, -1.0d, vVar);
+                                                            double g13 = g(D, P, -1.0d, wVar);
                                                             long j51 = g13 >= 0.0d ? (long) (g13 * 1000000.0d) : -9223372036854775807L;
                                                             h hVar8 = hVar7;
-                                                            double g14 = g(D, J0, -1.0d, vVar);
+                                                            double g14 = g(D, J0, -1.0d, wVar);
                                                             long j52 = g14 >= 0.0d ? (long) (g14 * 1000000.0d) : -9223372036854775807L;
-                                                            boolean f13 = f(D, K0, vVar);
-                                                            double g15 = g(D, N0, Double.MIN_VALUE, vVar);
+                                                            boolean f13 = f(D, K0, wVar);
+                                                            double g15 = g(D, N0, Double.MIN_VALUE, wVar);
                                                             long j53 = g15 != Double.MIN_VALUE ? (long) (g15 * 1000000.0d) : -9223372036854775807L;
-                                                            double g16 = g(D, O0, -1.0d, vVar);
+                                                            double g16 = g(D, O0, -1.0d, wVar);
                                                             long j54 = g16 >= 0.0d ? (long) (g16 * 1000000.0d) : -9223372036854775807L;
                                                             ArrayList arrayList30 = new ArrayList();
-                                                            String i44 = i(D, P0, null, hashMap3, vVar);
+                                                            String i44 = i(D, P0, null, hashMap3, wVar);
                                                             if (i44 != null) {
                                                                 String str36 = l0.a;
                                                                 String[] split5 = i44.split(",", -1);
@@ -980,7 +980,7 @@ public final class s implements b3.q {
                                                                 str8 = str32;
                                                             }
                                                             ArrayList arrayList31 = new ArrayList();
-                                                            String i47 = i(D, Q0, null, hashMap3, vVar);
+                                                            String i47 = i(D, Q0, null, hashMap3, wVar);
                                                             if (i47 != null) {
                                                                 String str37 = l0.a;
                                                                 String[] split6 = i47.split(",", -1);
@@ -999,27 +999,27 @@ public final class s implements b3.q {
                                                                     split6 = strArr2;
                                                                 }
                                                             }
-                                                            Boolean valueOf = i(D, R0, null, hashMap3, vVar) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
-                                                            String i50 = i(D, S0, null, hashMap3, vVar);
+                                                            Boolean valueOf = i(D, R0, null, hashMap3, wVar) != null ? Boolean.valueOf(!r4.equals("NO")) : null;
+                                                            String i50 = i(D, S0, null, hashMap3, wVar);
                                                             if (i50 != null) {
                                                                 if (i50.equals("RANGE")) {
                                                                     str19 = "RANGE";
                                                                 }
-                                                                i15 = i(D, T0, null, hashMap3, vVar);
+                                                                i15 = i(D, T0, null, hashMap3, wVar);
                                                                 if (i15 != null) {
                                                                     str10 = "PRIMARY";
                                                                     if (!i15.equals("PRIMARY")) {
                                                                         str10 = "HIGHLIGHT";
                                                                     }
-                                                                    double g17 = g(D, U0, -1.0d, vVar);
+                                                                    double g17 = g(D, U0, -1.0d, wVar);
                                                                     long j55 = g17 >= 0.0d ? (long) (g17 * 1000000.0d) : -9223372036854775807L;
                                                                     str11 = str19;
-                                                                    double g18 = g(D, V0, -1.0d, vVar);
+                                                                    double g18 = g(D, V0, -1.0d, wVar);
                                                                     long j56 = g18 >= 0.0d ? (long) (g18 * 1000000.0d) : -9223372036854775807L;
-                                                                    String i51 = i(D, W0, null, hashMap3, vVar);
+                                                                    String i51 = i(D, W0, null, hashMap3, wVar);
                                                                     ArrayList arrayList32 = new ArrayList();
                                                                     String substring = D.substring(17);
-                                                                    b10 = org.telegram.utils.twidget.v.b(substring, Y0, vVar);
+                                                                    b10 = org.telegram.utils.twidget.w.b(substring, Y0, wVar);
                                                                     while (true) {
                                                                         str12 = str11;
                                                                         if (b10.find()) {
@@ -1136,22 +1136,22 @@ public final class s implements b3.q {
                                                                                 default:
                                                                                     matcher = b10;
                                                                                     String k10 = e2.k(group2, 1, 0);
-                                                                                    String v = r.b.v(k10, "=");
+                                                                                    String v = p5.c.v(k10, "=");
                                                                                     int length4 = v.length() + substring.indexOf(v);
                                                                                     z10 = f13;
                                                                                     String substring2 = substring.substring(length4, (substring.length() == length4 + 1 ? 1 : 2) + length4);
                                                                                     if (substring2.startsWith("\"")) {
-                                                                                        eVar = new e(0, k10, j(substring, Pattern.compile(k10 + "=\"((?:.|\f)+?)\""), hashMap3, vVar));
+                                                                                        eVar = new e(0, k10, j(substring, Pattern.compile(k10 + "=\"((?:.|\f)+?)\""), hashMap3, wVar));
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
                                                                                     } else if (substring2.equals("0x") || substring2.equals("0X")) {
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
-                                                                                        eVar = new e(1, k10, j(substring, Pattern.compile(k10 + "=(0[xX][A-F0-9]+)"), hashMap3, vVar));
+                                                                                        eVar = new e(1, k10, j(substring, Pattern.compile(k10 + "=(0[xX][A-F0-9]+)"), hashMap3, wVar));
                                                                                     } else {
                                                                                         arrayList11 = arrayList12;
                                                                                         arrayList10 = arrayList29;
-                                                                                        eVar = new e(k10, Double.parseDouble(j(substring, Pattern.compile(k10 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP, vVar)));
+                                                                                        eVar = new e(k10, Double.parseDouble(j(substring, Pattern.compile(k10 + "=([\\d\\.]+)\\b"), Collections.EMPTY_MAP, wVar)));
                                                                                     }
                                                                                     arrayList32.add(eVar);
                                                                                     break;
@@ -1174,42 +1174,42 @@ public final class s implements b3.q {
                                                                             } else {
                                                                                 Uri uri6 = fVar2.c;
                                                                                 if (uri6 != null) {
-                                                                                    ja.i(uri6.equals(parse), "Can't change assetUri from %s to %s", fVar2.c, parse);
+                                                                                    la.i(uri6.equals(parse), "Can't change assetUri from %s to %s", fVar2.c, parse);
                                                                                 }
                                                                                 fVar2.c = parse;
                                                                             }
                                                                             if (parse2 != null) {
                                                                                 Uri uri7 = fVar2.d;
                                                                                 if (uri7 != null) {
-                                                                                    ja.i(uri7.equals(parse2), "Can't change assetListUri from %s to %s", fVar2.d, parse2);
+                                                                                    la.i(uri7.equals(parse2), "Can't change assetListUri from %s to %s", fVar2.d, parse2);
                                                                                 }
                                                                                 fVar2.d = parse2;
                                                                             }
                                                                             if (S2 != -9223372036854775807L) {
                                                                                 long j57 = fVar2.e;
                                                                                 if (j57 != -9223372036854775807L) {
-                                                                                    ja.g(j57 == S2, "Can't change startDateUnixUs from %s to %s", j57, S2);
+                                                                                    la.g(j57 == S2, "Can't change startDateUnixUs from %s to %s", j57, S2);
                                                                                 }
                                                                                 fVar2.e = S2;
                                                                             }
                                                                             if (S3 != -9223372036854775807L) {
                                                                                 long j58 = fVar2.f;
                                                                                 if (j58 != -9223372036854775807L) {
-                                                                                    ja.g(j58 == S3, "Can't change endDateUnixUs from %s to %s", j58, S3);
+                                                                                    la.g(j58 == S3, "Can't change endDateUnixUs from %s to %s", j58, S3);
                                                                                 }
                                                                                 fVar2.f = S3;
                                                                             }
                                                                             if (j51 != -9223372036854775807L) {
                                                                                 long j59 = fVar2.g;
                                                                                 if (j59 != -9223372036854775807L) {
-                                                                                    ja.g(j59 == j51, "Can't change durationUs from %s to %s", j59, j51);
+                                                                                    la.g(j59 == j51, "Can't change durationUs from %s to %s", j59, j51);
                                                                                 }
                                                                                 fVar2.g = j51;
                                                                             }
                                                                             if (j52 != -9223372036854775807L) {
                                                                                 long j60 = fVar2.h;
                                                                                 if (j60 != -9223372036854775807L) {
-                                                                                    ja.g(j60 == j52, "Can't change plannedDurationUs from %s to %s", j60, j52);
+                                                                                    la.g(j60 == j52, "Can't change plannedDurationUs from %s to %s", j60, j52);
                                                                                 }
                                                                                 fVar2.h = j52;
                                                                             }
@@ -1254,7 +1254,7 @@ public final class s implements b3.q {
                                                                                         }
                                                                                     }
                                                                                     sb2.append(sb4.toString());
-                                                                                    ja.e(sb2.toString(), equals);
+                                                                                    la.e(sb2.toString(), equals);
                                                                                 }
                                                                                 fVar2.i = arrayList6;
                                                                             }
@@ -1264,14 +1264,14 @@ public final class s implements b3.q {
                                                                             if (j53 != -9223372036854775807L) {
                                                                                 long j61 = fVar2.k;
                                                                                 if (j61 != -9223372036854775807L) {
-                                                                                    ja.g(j61 == j53, "Can't change resumeOffsetUs from %s to %s", j61, j53);
+                                                                                    la.g(j61 == j53, "Can't change resumeOffsetUs from %s to %s", j61, j53);
                                                                                 }
                                                                                 fVar2.k = j53;
                                                                             }
                                                                             if (j54 != -9223372036854775807L) {
                                                                                 long j62 = fVar2.l;
                                                                                 if (j62 != -9223372036854775807L) {
-                                                                                    ja.g(j62 == j54, "Can't change playoutLimitUs from %s to %s", j62, j54);
+                                                                                    la.g(j62 == j54, "Can't change playoutLimitUs from %s to %s", j62, j54);
                                                                                 }
                                                                                 fVar2.l = j54;
                                                                             }
@@ -1310,7 +1310,7 @@ public final class s implements b3.q {
                                                                                         }
                                                                                     }
                                                                                     sb5.append(sb7.toString());
-                                                                                    ja.e(sb5.toString(), equals2);
+                                                                                    la.e(sb5.toString(), equals2);
                                                                                 }
                                                                                 fVar2.m = arrayList9;
                                                                             }
@@ -1348,7 +1348,7 @@ public final class s implements b3.q {
                                                                                         }
                                                                                     }
                                                                                     sb8.append(sb10.toString());
-                                                                                    ja.e(sb8.toString(), equals3);
+                                                                                    la.e(sb8.toString(), equals3);
                                                                                 }
                                                                                 fVar2.n = arrayList8;
                                                                             }
@@ -1364,7 +1364,7 @@ public final class s implements b3.q {
                                                                                         arrayList7 = arrayList32;
                                                                                         Object[] objArr = {str38, eVar3.d, Double.valueOf(eVar3.c), eVar2.d, Double.valueOf(eVar2.c)};
                                                                                         if (!equals4) {
-                                                                                            throw new IllegalArgumentException(ka.a("Can't change %s from %s %s to %s %s", objArr));
+                                                                                            throw new IllegalArgumentException(ma.a("Can't change %s from %s %s to %s %s", objArr));
                                                                                         }
                                                                                     } else {
                                                                                         arrayList7 = arrayList32;
@@ -1377,42 +1377,42 @@ public final class s implements b3.q {
                                                                             if (valueOf != null) {
                                                                                 Boolean bool2 = fVar2.o;
                                                                                 if (bool2 != null) {
-                                                                                    ja.i(bool2.equals(valueOf), "Can't change contentMayVary from %s to %s", fVar2.o, valueOf);
+                                                                                    la.i(bool2.equals(valueOf), "Can't change contentMayVary from %s to %s", fVar2.o, valueOf);
                                                                                 }
                                                                                 fVar2.o = valueOf;
                                                                             }
                                                                             if (str12 != null) {
                                                                                 String str39 = fVar2.p;
                                                                                 if (str39 != null) {
-                                                                                    ja.i(str39.equals(str12), "Can't change timelineOccupies from %s to %s", fVar2.p, str12);
+                                                                                    la.i(str39.equals(str12), "Can't change timelineOccupies from %s to %s", fVar2.p, str12);
                                                                                 }
                                                                                 fVar2.p = str12;
                                                                             }
                                                                             if (str10 != null) {
                                                                                 String str40 = fVar2.q;
                                                                                 if (str40 != null) {
-                                                                                    ja.i(str40.equals(str10), "Can't change timelineStyle from %s to %s", fVar2.q, str10);
+                                                                                    la.i(str40.equals(str10), "Can't change timelineStyle from %s to %s", fVar2.q, str10);
                                                                                 }
                                                                                 fVar2.q = str10;
                                                                             }
                                                                             if (j55 != -9223372036854775807L) {
                                                                                 long j63 = fVar2.r;
                                                                                 if (j63 != -9223372036854775807L) {
-                                                                                    ja.g(j63 == j55, "Can't change skipControlOffsetUs from %s to %s", j63, j55);
+                                                                                    la.g(j63 == j55, "Can't change skipControlOffsetUs from %s to %s", j63, j55);
                                                                                 }
                                                                                 fVar2.r = j55;
                                                                             }
                                                                             if (j56 != -9223372036854775807L) {
                                                                                 long j64 = fVar2.s;
                                                                                 if (j64 != -9223372036854775807L) {
-                                                                                    ja.g(j64 == j56, "Can't change skipControlDurationUs from %s to %s", j64, j56);
+                                                                                    la.g(j64 == j56, "Can't change skipControlDurationUs from %s to %s", j64, j56);
                                                                                 }
                                                                                 fVar2.s = j56;
                                                                             }
                                                                             if (i51 != null) {
                                                                                 String str41 = fVar2.t;
                                                                                 if (str41 != null) {
-                                                                                    ja.i(str41.equals(i51), "Can't change skipControlLabelId from %s to %s", fVar2.t, i51);
+                                                                                    la.i(str41.equals(i51), "Can't change skipControlLabelId from %s to %s", fVar2.t, i51);
                                                                                 }
                                                                                 fVar2.t = i51;
                                                                             }
@@ -1452,17 +1452,17 @@ public final class s implements b3.q {
                                                                     }
                                                                 }
                                                                 str10 = null;
-                                                                double g172 = g(D, U0, -1.0d, vVar);
+                                                                double g172 = g(D, U0, -1.0d, wVar);
                                                                 if (g172 >= 0.0d) {
                                                                 }
                                                                 str11 = str19;
-                                                                double g182 = g(D, V0, -1.0d, vVar);
+                                                                double g182 = g(D, V0, -1.0d, wVar);
                                                                 if (g182 >= 0.0d) {
                                                                 }
-                                                                String i512 = i(D, W0, null, hashMap3, vVar);
+                                                                String i512 = i(D, W0, null, hashMap3, wVar);
                                                                 ArrayList arrayList322 = new ArrayList();
                                                                 String substring3 = D.substring(17);
-                                                                b10 = org.telegram.utils.twidget.v.b(substring3, Y0, vVar);
+                                                                b10 = org.telegram.utils.twidget.w.b(substring3, Y0, wVar);
                                                                 while (true) {
                                                                     str12 = str11;
                                                                     if (b10.find()) {
@@ -1476,21 +1476,21 @@ public final class s implements b3.q {
                                                                 }
                                                             }
                                                             str19 = null;
-                                                            i15 = i(D, T0, null, hashMap3, vVar);
+                                                            i15 = i(D, T0, null, hashMap3, wVar);
                                                             if (i15 != null) {
                                                             }
                                                             str10 = null;
-                                                            double g1722 = g(D, U0, -1.0d, vVar);
+                                                            double g1722 = g(D, U0, -1.0d, wVar);
                                                             if (g1722 >= 0.0d) {
                                                             }
                                                             str11 = str19;
-                                                            double g1822 = g(D, V0, -1.0d, vVar);
+                                                            double g1822 = g(D, V0, -1.0d, wVar);
                                                             if (g1822 >= 0.0d) {
                                                             }
-                                                            String i5122 = i(D, W0, null, hashMap3, vVar);
+                                                            String i5122 = i(D, W0, null, hashMap3, wVar);
                                                             ArrayList arrayList3222 = new ArrayList();
                                                             String substring32 = D.substring(17);
-                                                            b10 = org.telegram.utils.twidget.v.b(substring32, Y0, vVar);
+                                                            b10 = org.telegram.utils.twidget.w.b(substring32, Y0, wVar);
                                                             while (true) {
                                                                 str12 = str11;
                                                                 if (b10.find()) {
@@ -1549,7 +1549,7 @@ public final class s implements b3.q {
                                                     } else {
                                                         String hexString3 = str == null ? null : str26 != null ? str26 : Long.toHexString(j20);
                                                         long j65 = j20 + 1;
-                                                        String k11 = k(D, hashMap3, vVar);
+                                                        String k11 = k(D, hashMap3, wVar);
                                                         j jVar6 = (j) hashMap7.get(k11);
                                                         if (j13 == -1) {
                                                             j11 = 0;
@@ -1710,7 +1710,7 @@ public final class s implements b3.q {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static p e(ld0 ld0Var, Uri uri, org.telegram.utils.twidget.v vVar) {
+    public static p e(md0 md0Var, Uri uri, org.telegram.utils.twidget.w wVar) {
         int i7;
         char c10;
         ArrayList arrayList;
@@ -1763,7 +1763,7 @@ public final class s implements b3.q {
         boolean z11 = false;
         boolean z12 = false;
         while (true) {
-            boolean A = ld0Var.A();
+            boolean A = md0Var.A();
             Pattern pattern = m0;
             ArrayList arrayList17 = arrayList13;
             boolean z13 = z11;
@@ -1786,12 +1786,12 @@ public final class s implements b3.q {
                     Uri uri3 = oVar4.a;
                     e2.u uVar = oVar4.b;
                     if (hashSet2.add(uri3)) {
-                        ja.p(uVar.l == null);
+                        la.p(uVar.l == null);
                         ArrayList arrayList26 = (ArrayList) hashMap6.get(oVar4.a);
                         arrayList26.getClass();
                         hashMap = hashMap6;
                         hashSet = hashSet2;
-                        q0 q0Var = new q0(new r2.s(null, null, arrayList26));
+                        q0 q0Var = new q0(new r2.r(null, null, arrayList26));
                         e2.t a10 = uVar.a();
                         a10.k = q0Var;
                         arrayList25.add(new o(oVar4.a, new e2.u(a10), oVar4.c, oVar4.d, oVar4.e, oVar4.f, oVar4.g, oVar4.h));
@@ -1809,24 +1809,24 @@ public final class s implements b3.q {
                 while (i18 < arrayList18.size()) {
                     ArrayList arrayList28 = arrayList18;
                     String str7 = (String) arrayList28.get(i18);
-                    String j3 = j(str7, t0, hashMap5, vVar);
-                    String j10 = j(str7, pattern2, hashMap5, vVar);
+                    String j3 = j(str7, t0, hashMap5, wVar);
+                    String j10 = j(str7, pattern2, hashMap5, wVar);
                     ArrayList arrayList29 = arrayList25;
                     ArrayList arrayList30 = arrayList27;
-                    String i19 = i(str7, M, null, hashMap5, vVar);
+                    String i19 = i(str7, M, null, hashMap5, wVar);
                     e2.t tVar = new e2.t();
                     e2.u uVar3 = uVar2;
                     tVar.a = p0.E(j3, ":", j10);
                     tVar.b = j10;
                     tVar.q = s0.n("application/x-mpegURL");
-                    boolean f10 = f(str7, x0, vVar);
+                    boolean f10 = f(str7, x0, wVar);
                     ?? r29 = f10;
-                    if (f(str7, y0, vVar)) {
+                    if (f(str7, y0, wVar)) {
                         r29 = (f10 ? 1 : 0) | 2;
                     }
-                    tVar.e = f(str7, w0, vVar) ? r29 | 4 : r29;
+                    tVar.e = f(str7, w0, wVar) ? r29 | 4 : r29;
                     int i20 = i18;
-                    String i21 = i(str7, u0, null, hashMap5, vVar);
+                    String i21 = i(str7, u0, null, hashMap5, wVar);
                     if (TextUtils.isEmpty(i21)) {
                         arrayList18 = arrayList28;
                         i7 = 0;
@@ -1846,13 +1846,13 @@ public final class s implements b3.q {
                         }
                     }
                     tVar.f = i7;
-                    tVar.d = i(str7, q0, null, hashMap5, vVar);
-                    String i22 = i(str7, pattern, null, hashMap5, vVar);
+                    tVar.d = i(str7, q0, null, hashMap5, wVar);
+                    String i22 = i(str7, pattern, null, hashMap5, wVar);
                     Uri g11 = i22 == null ? null : h2.e.g(uri2, i22);
                     String str9 = uri2;
                     Pattern pattern3 = pattern;
-                    q0 q0Var2 = new q0(new r2.s(j3, j10, Collections.EMPTY_LIST));
-                    String j11 = j(str7, o0, hashMap5, vVar);
+                    q0 q0Var2 = new q0(new r2.r(j3, j10, Collections.EMPTY_LIST));
+                    String j11 = j(str7, o0, hashMap5, wVar);
                     switch (j11.hashCode()) {
                         case -959297733:
                             if (j11.equals("SUBTITLES")) {
@@ -1925,7 +1925,7 @@ public final class s implements b3.q {
                         case 1:
                             ArrayList arrayList31 = arrayList21;
                             arrayList = arrayList20;
-                            String j12 = j(str7, v0, hashMap5, vVar);
+                            String j12 = j(str7, v0, hashMap5, wVar);
                             if (j12.startsWith("CC")) {
                                 parseInt = Integer.parseInt(j12.substring(2));
                                 str2 = "application/cea-608";
@@ -1964,7 +1964,7 @@ public final class s implements b3.q {
                                 str3 = null;
                             }
                             o oVar5 = oVar2;
-                            String i26 = i(str7, r, null, hashMap5, vVar);
+                            String i26 = i(str7, r, null, hashMap5, wVar);
                             if (i26 != null) {
                                 String str10 = l0.a;
                                 tVar.J = Integer.parseInt(i26.split("/", 2)[0]);
@@ -2039,7 +2039,7 @@ public final class s implements b3.q {
                 }
                 return new p(uri.toString(), arrayList19, arrayList25, arrayList20, arrayList21, arrayList22, arrayList17, uVar2, z13 ? Collections.EMPTY_LIST : arrayList27, z14, hashMap5, arrayList23);
             }
-            String D = ld0Var.D();
+            String D = md0Var.D();
             ArrayList arrayList34 = arrayList12;
             if (D.startsWith("#EXT")) {
                 arrayList16.add(D);
@@ -2047,13 +2047,13 @@ public final class s implements b3.q {
             boolean startsWith = D.startsWith("#EXT-X-I-FRAME-STREAM-INF");
             ArrayList arrayList35 = arrayList16;
             if (D.startsWith("#EXT-X-DEFINE")) {
-                String i28 = i(D, pattern2, null, hashMap5, vVar);
+                String i28 = i(D, pattern2, null, hashMap5, wVar);
                 if (i28 != null) {
-                    m(i28, hashMap5);
-                    hashMap5.put(i28, j(D, C0, hashMap5, vVar));
+                    l(i28, hashMap5);
+                    hashMap5.put(i28, j(D, C0, hashMap5, wVar));
                 } else {
-                    String j13 = j(D, s0, hashMap5, vVar);
-                    m(j13, hashMap5);
+                    String j13 = j(D, s0, hashMap5, wVar);
+                    l(j13, hashMap5);
                     String queryParameter = uri.getQueryParameter(j13);
                     if (queryParameter == null) {
                         throw t0.b("QUERYPARAM \"" + j13 + "\" not found in playlist URI", null);
@@ -2081,9 +2081,9 @@ public final class s implements b3.q {
             } else if (D.startsWith("#EXT-X-MEDIA")) {
                 arrayList14.add(D);
             } else if (D.startsWith("#EXT-X-SESSION-KEY")) {
-                e2.q c11 = c(D, i(D, k0, "identity", hashMap5, vVar), hashMap5, vVar);
+                e2.q c11 = c(D, i(D, k0, "identity", hashMap5, wVar), hashMap5, wVar);
                 if (c11 != null) {
-                    String j14 = j(D, j0, hashMap5, vVar);
+                    String j14 = j(D, j0, hashMap5, wVar);
                     arrayList15.add(new e2.r(("SAMPLE-AES-CENC".equals(j14) || "SAMPLE-AES-CTR".equals(j14)) ? "cenc" : "cbcs", true, c11));
                 }
             } else if (D.startsWith("#EXT-X-STREAM-INF") || startsWith) {
@@ -2095,8 +2095,8 @@ public final class s implements b3.q {
                     z10 = contains;
                     i10 = 0;
                 }
-                int parseInt2 = Integer.parseInt(j(D, n, Collections.EMPTY_MAP, vVar));
-                Matcher b10 = org.telegram.utils.twidget.v.b(D, c, vVar);
+                int parseInt2 = Integer.parseInt(j(D, n, Collections.EMPTY_MAP, wVar));
+                Matcher b10 = org.telegram.utils.twidget.w.b(D, c, wVar);
                 if (b10.find()) {
                     arrayList3 = arrayList15;
                     String group = b10.group(1);
@@ -2107,11 +2107,11 @@ public final class s implements b3.q {
                     i11 = -1;
                 }
                 arrayList4 = arrayList11;
-                String i29 = i(D, s, null, hashMap5, vVar);
+                String i29 = i(D, s, null, hashMap5, wVar);
                 arrayList5 = arrayList10;
-                String i30 = i(D, w, null, hashMap5, vVar);
+                String i30 = i(D, w, null, hashMap5, wVar);
                 arrayList6 = arrayList14;
-                String i31 = i(D, x, null, hashMap5, vVar);
+                String i31 = i(D, x, null, hashMap5, wVar);
                 if (i31 != null) {
                     String str11 = l0.a;
                     String[] split2 = i31.split(",", 2)[0].split("/", -1);
@@ -2163,12 +2163,12 @@ public final class s implements b3.q {
                         } else {
                             mVar = null;
                         }
-                        boolean equals = TextUtils.equals(i(D, E, null, hashMap5, vVar), "true");
-                        String i34 = i(D, y, null, hashMap5, vVar);
-                        String i35 = i(D, F, null, hashMap5, vVar);
-                        String i36 = i(D, G, null, hashMap5, vVar);
-                        String i37 = i(D, H, null, hashMap5, vVar);
-                        i13 = i(D, I, null, hashMap5, vVar);
+                        boolean equals = TextUtils.equals(i(D, E, null, hashMap5, wVar), "true");
+                        String i34 = i(D, y, null, hashMap5, wVar);
+                        String i35 = i(D, F, null, hashMap5, wVar);
+                        String i36 = i(D, G, null, hashMap5, wVar);
+                        String i37 = i(D, H, null, hashMap5, wVar);
+                        i13 = i(D, I, null, hashMap5, wVar);
                         if (i13 != null) {
                             str6 = i35;
                             String[] split3 = i13.split("x", -1);
@@ -2188,21 +2188,21 @@ public final class s implements b3.q {
                             i15 = -1;
                         }
                         ArrayList arrayList36 = arrayList9;
-                        String i38 = i(D, J, null, hashMap5, vVar);
+                        String i38 = i(D, J, null, hashMap5, wVar);
                         float parseFloat = i38 != null ? Float.parseFloat(i38) : -1.0f;
-                        String i39 = i(D, K, null, hashMap5, vVar);
-                        String i40 = i(D, d, null, hashMap5, vVar);
-                        String i41 = i(D, e, null, hashMap5, vVar);
-                        String i42 = i(D, f, null, hashMap5, vVar);
-                        String i43 = i(D, h, null, hashMap5, vVar);
-                        String i44 = i(D, L, null, hashMap5, vVar);
+                        String i39 = i(D, K, null, hashMap5, wVar);
+                        String i40 = i(D, d, null, hashMap5, wVar);
+                        String i41 = i(D, e, null, hashMap5, wVar);
+                        String i42 = i(D, f, null, hashMap5, wVar);
+                        String i43 = i(D, h, null, hashMap5, wVar);
+                        String i44 = i(D, L, null, hashMap5, wVar);
                         if (startsWith) {
-                            g10 = h2.e.g(uri2, j(D, pattern, hashMap5, vVar));
+                            g10 = h2.e.g(uri2, j(D, pattern, hashMap5, wVar));
                         } else {
-                            if (!ld0Var.A()) {
+                            if (!md0Var.A()) {
                                 throw t0.b("#EXT-X-STREAM-INF must be followed by another line", null);
                             }
-                            g10 = h2.e.g(uri2, k(ld0Var.D(), hashMap5, vVar));
+                            g10 = h2.e.g(uri2, k(md0Var.D(), hashMap5, wVar));
                         }
                         Uri uri4 = g10;
                         e2.t tVar2 = new e2.t();
@@ -2229,7 +2229,7 @@ public final class s implements b3.q {
                             arrayList8 = new ArrayList();
                             hashMap3.put(uri4, arrayList8);
                         }
-                        arrayList8.add(new r2.r(i11, i40, parseInt2, i41, i42, i43));
+                        arrayList8.add(new r2.q(i11, i40, parseInt2, i41, i42, i43));
                         z11 = z10;
                         z12 = z14;
                         arrayList9 = arrayList7;
@@ -2263,24 +2263,24 @@ public final class s implements b3.q {
                     if (sb2 != null) {
                     }
                     mVar = mVar2;
-                    boolean equals2 = TextUtils.equals(i(D, E, null, hashMap5, vVar), "true");
-                    String i342 = i(D, y, null, hashMap5, vVar);
-                    String i352 = i(D, F, null, hashMap5, vVar);
-                    String i362 = i(D, G, null, hashMap5, vVar);
-                    String i372 = i(D, H, null, hashMap5, vVar);
-                    i13 = i(D, I, null, hashMap5, vVar);
+                    boolean equals2 = TextUtils.equals(i(D, E, null, hashMap5, wVar), "true");
+                    String i342 = i(D, y, null, hashMap5, wVar);
+                    String i352 = i(D, F, null, hashMap5, wVar);
+                    String i362 = i(D, G, null, hashMap5, wVar);
+                    String i372 = i(D, H, null, hashMap5, wVar);
+                    i13 = i(D, I, null, hashMap5, wVar);
                     if (i13 != null) {
                     }
                     ArrayList arrayList362 = arrayList9;
-                    String i382 = i(D, J, null, hashMap5, vVar);
+                    String i382 = i(D, J, null, hashMap5, wVar);
                     if (i382 != null) {
                     }
-                    String i392 = i(D, K, null, hashMap5, vVar);
-                    String i402 = i(D, d, null, hashMap5, vVar);
-                    String i412 = i(D, e, null, hashMap5, vVar);
-                    String i422 = i(D, f, null, hashMap5, vVar);
-                    String i432 = i(D, h, null, hashMap5, vVar);
-                    String i442 = i(D, L, null, hashMap5, vVar);
+                    String i392 = i(D, K, null, hashMap5, wVar);
+                    String i402 = i(D, d, null, hashMap5, wVar);
+                    String i412 = i(D, e, null, hashMap5, wVar);
+                    String i422 = i(D, f, null, hashMap5, wVar);
+                    String i432 = i(D, h, null, hashMap5, wVar);
+                    String i442 = i(D, L, null, hashMap5, wVar);
                     if (startsWith) {
                     }
                     Uri uri42 = g10;
@@ -2306,7 +2306,7 @@ public final class s implements b3.q {
                     arrayList8 = (ArrayList) hashMap3.get(uri42);
                     if (arrayList8 == null) {
                     }
-                    arrayList8.add(new r2.r(i11, i402, parseInt2, i412, i422, i432));
+                    arrayList8.add(new r2.q(i11, i402, parseInt2, i412, i422, i432));
                     z11 = z10;
                     z12 = z14;
                     arrayList9 = arrayList7;
@@ -2320,24 +2320,24 @@ public final class s implements b3.q {
                     arrayList14 = arrayList6;
                 }
                 mVar = null;
-                boolean equals22 = TextUtils.equals(i(D, E, null, hashMap5, vVar), "true");
-                String i3422 = i(D, y, null, hashMap5, vVar);
-                String i3522 = i(D, F, null, hashMap5, vVar);
-                String i3622 = i(D, G, null, hashMap5, vVar);
-                String i3722 = i(D, H, null, hashMap5, vVar);
-                i13 = i(D, I, null, hashMap5, vVar);
+                boolean equals22 = TextUtils.equals(i(D, E, null, hashMap5, wVar), "true");
+                String i3422 = i(D, y, null, hashMap5, wVar);
+                String i3522 = i(D, F, null, hashMap5, wVar);
+                String i3622 = i(D, G, null, hashMap5, wVar);
+                String i3722 = i(D, H, null, hashMap5, wVar);
+                i13 = i(D, I, null, hashMap5, wVar);
                 if (i13 != null) {
                 }
                 ArrayList arrayList3622 = arrayList9;
-                String i3822 = i(D, J, null, hashMap5, vVar);
+                String i3822 = i(D, J, null, hashMap5, wVar);
                 if (i3822 != null) {
                 }
-                String i3922 = i(D, K, null, hashMap5, vVar);
-                String i4022 = i(D, d, null, hashMap5, vVar);
-                String i4122 = i(D, e, null, hashMap5, vVar);
-                String i4222 = i(D, f, null, hashMap5, vVar);
-                String i4322 = i(D, h, null, hashMap5, vVar);
-                String i4422 = i(D, L, null, hashMap5, vVar);
+                String i3922 = i(D, K, null, hashMap5, wVar);
+                String i4022 = i(D, d, null, hashMap5, wVar);
+                String i4122 = i(D, e, null, hashMap5, wVar);
+                String i4222 = i(D, f, null, hashMap5, wVar);
+                String i4322 = i(D, h, null, hashMap5, wVar);
+                String i4422 = i(D, L, null, hashMap5, wVar);
                 if (startsWith) {
                 }
                 Uri uri422 = g10;
@@ -2363,7 +2363,7 @@ public final class s implements b3.q {
                 arrayList8 = (ArrayList) hashMap3.get(uri422);
                 if (arrayList8 == null) {
                 }
-                arrayList8.add(new r2.r(i11, i4022, parseInt2, i4122, i4222, i4322));
+                arrayList8.add(new r2.q(i11, i4022, parseInt2, i4122, i4222, i4322));
                 z11 = z10;
                 z12 = z14;
                 arrayList9 = arrayList7;
@@ -2396,16 +2396,16 @@ public final class s implements b3.q {
         }
     }
 
-    public static boolean f(String str, Pattern pattern, org.telegram.utils.twidget.v vVar) {
-        Matcher b10 = org.telegram.utils.twidget.v.b(str, pattern, vVar);
+    public static boolean f(String str, Pattern pattern, org.telegram.utils.twidget.w wVar) {
+        Matcher b10 = org.telegram.utils.twidget.w.b(str, pattern, wVar);
         if (b10.find()) {
             return "YES".equals(b10.group(1));
         }
         return false;
     }
 
-    public static double g(String str, Pattern pattern, double d2, org.telegram.utils.twidget.v vVar) {
-        Matcher b10 = org.telegram.utils.twidget.v.b(str, pattern, vVar);
+    public static double g(String str, Pattern pattern, double d2, org.telegram.utils.twidget.w wVar) {
+        Matcher b10 = org.telegram.utils.twidget.w.b(str, pattern, wVar);
         if (!b10.find()) {
             return d2;
         }
@@ -2414,8 +2414,8 @@ public final class s implements b3.q {
         return Double.parseDouble(group);
     }
 
-    public static long h(String str, Pattern pattern, org.telegram.utils.twidget.v vVar) {
-        Matcher b10 = org.telegram.utils.twidget.v.b(str, pattern, vVar);
+    public static long h(String str, Pattern pattern, org.telegram.utils.twidget.w wVar) {
+        Matcher b10 = org.telegram.utils.twidget.w.b(str, pattern, wVar);
         if (!b10.find()) {
             return -1L;
         }
@@ -2424,25 +2424,25 @@ public final class s implements b3.q {
         return Long.parseLong(group);
     }
 
-    public static String i(String str, Pattern pattern, String str2, Map map, org.telegram.utils.twidget.v vVar) {
-        Matcher b10 = org.telegram.utils.twidget.v.b(str, pattern, vVar);
+    public static String i(String str, Pattern pattern, String str2, Map map, org.telegram.utils.twidget.w wVar) {
+        Matcher b10 = org.telegram.utils.twidget.w.b(str, pattern, wVar);
         if (b10.find()) {
             str2 = b10.group(1);
             str2.getClass();
         }
-        return (map.isEmpty() || str2 == null) ? str2 : k(str2, map, vVar);
+        return (map.isEmpty() || str2 == null) ? str2 : k(str2, map, wVar);
     }
 
-    public static String j(String str, Pattern pattern, Map map, org.telegram.utils.twidget.v vVar) {
-        String i7 = i(str, pattern, null, map, vVar);
+    public static String j(String str, Pattern pattern, Map map, org.telegram.utils.twidget.w wVar) {
+        String i7 = i(str, pattern, null, map, wVar);
         if (i7 != null) {
             return i7;
         }
         throw t0.b("Couldn't match " + pattern.pattern() + " in " + str, null);
     }
 
-    public static String k(String str, Map map, org.telegram.utils.twidget.v vVar) {
-        Matcher b10 = org.telegram.utils.twidget.v.b(str, X0, vVar);
+    public static String k(String str, Map map, org.telegram.utils.twidget.w wVar) {
+        Matcher b10 = org.telegram.utils.twidget.w.b(str, X0, wVar);
         StringBuffer stringBuffer = new StringBuffer();
         while (b10.find()) {
             String group = b10.group(1);
@@ -2454,7 +2454,7 @@ public final class s implements b3.q {
         return stringBuffer.toString();
     }
 
-    public static void m(String str, HashMap hashMap) {
+    public static void l(String str, HashMap hashMap) {
         if (hashMap.containsKey(str)) {
             throw t0.b("duplicate variable name \"" + str + "\"", null);
         }
@@ -2462,15 +2462,15 @@ public final class s implements b3.q {
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0074 A[Catch: all -> 0x009f, LOOP:0: B:13:0x0074->B:38:0x0074, LOOP_START, TryCatch #4 {all -> 0x009f, blocks: (B:3:0x001a, B:5:0x0023, B:7:0x002b, B:10:0x0034, B:13:0x0074, B:15:0x007a, B:18:0x0085, B:57:0x008d, B:20:0x00a1, B:22:0x00a9, B:24:0x00b1, B:26:0x00b9, B:28:0x00c1, B:30:0x00c9, B:32:0x00d1, B:34:0x00d9, B:36:0x00e2, B:41:0x00e6, B:75:0x0108, B:76:0x010e, B:80:0x003b, B:82:0x0041, B:87:0x004a, B:89:0x0053, B:94:0x005c, B:96:0x0062, B:98:0x0068, B:100:0x006d), top: B:2:0x001a }] */
     /* JADX WARN: Removed duplicated region for block: B:75:0x0108 A[Catch: all -> 0x009f, TRY_ENTER, TryCatch #4 {all -> 0x009f, blocks: (B:3:0x001a, B:5:0x0023, B:7:0x002b, B:10:0x0034, B:13:0x0074, B:15:0x007a, B:18:0x0085, B:57:0x008d, B:20:0x00a1, B:22:0x00a9, B:24:0x00b1, B:26:0x00b9, B:28:0x00c1, B:30:0x00c9, B:32:0x00d1, B:34:0x00d9, B:36:0x00e2, B:41:0x00e6, B:75:0x0108, B:76:0x010e, B:80:0x003b, B:82:0x0041, B:87:0x004a, B:89:0x0053, B:94:0x005c, B:96:0x0062, B:98:0x0068, B:100:0x006d), top: B:2:0x001a }] */
-    @Override // b3.q
+    @Override // b3.r
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object l(Uri uri, j2.k kVar) {
+    public final Object t(Uri uri, j2.k kVar) {
         String trim;
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(kVar));
         ArrayDeque arrayDeque = new ArrayDeque();
-        org.telegram.utils.twidget.v vVar = new org.telegram.utils.twidget.v(0.75f, 16, 2, true);
+        org.telegram.utils.twidget.w wVar = new org.telegram.utils.twidget.w(0.75f, 16, 2, true);
         try {
             int read = bufferedReader.read();
             boolean z10 = false;
@@ -2499,7 +2499,7 @@ public final class s implements b3.q {
                             arrayDeque.add(trim);
                         } else {
                             arrayDeque.add(trim);
-                            p e10 = e(new ld0(arrayDeque, bufferedReader), uri, vVar);
+                            p e10 = e(new md0(arrayDeque, bufferedReader), uri, wVar);
                             try {
                                 bufferedReader.close();
                             } catch (IOException unused2) {
@@ -2509,7 +2509,7 @@ public final class s implements b3.q {
                     }
                 }
                 arrayDeque.add(trim);
-                m d2 = d(this.a, this.b, new ld0(arrayDeque, bufferedReader), uri, vVar);
+                m d2 = d(this.a, this.b, new md0(arrayDeque, bufferedReader), uri, wVar);
                 try {
                     bufferedReader.close();
                 } catch (IOException unused3) {

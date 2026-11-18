@@ -12,8 +12,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ja;
-import di.lb;
+import c8.ma;
+import di.pb;
 import j6.o;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -21,22 +21,22 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
-import ki.s3;
+import ki.n3;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.messenger.r1;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.p6;
-import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.t6;
+import org.telegram.ui.ActionBar.u6;
 import org.telegram.ui.Cells.y;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.fq;
-import org.telegram.ui.Components.o5;
+import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.w5;
 import org.telegram.ui.xd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean E;
@@ -45,7 +45,7 @@ public class e extends FrameLayout {
     public boolean H;
     public Drawable I;
     public y J;
-    public final e6 K;
+    public final i6 K;
     public final o L;
     public DecimalFormat M;
     public boolean a;
@@ -62,7 +62,7 @@ public class e extends FrameLayout {
     public final SimpleDateFormat x;
     public boolean y;
 
-    public e(Context context, e6 e6Var) {
+    public e(Context context, i6 i6Var) {
         super(context);
         this.n = new SimpleDateFormat("E, ");
         this.r = new SimpleDateFormat("MMM dd");
@@ -71,7 +71,7 @@ public class e extends FrameLayout {
         this.x = new SimpleDateFormat(" HH:mm");
         this.H = true;
         this.L = new o(this, 4);
-        this.K = e6Var;
+        this.K = i6Var;
         setPadding(g0.L(8.0f), g0.L(8.0f), g0.L(8.0f), g0.L(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
         this.b = linearLayout;
@@ -92,11 +92,11 @@ public class e extends FrameLayout {
         radialProgressView.setSize(g0.L(12.0f));
         radialProgressView.setStrokeWidth(g0.L(0.5f));
         radialProgressView.setVisibility(8);
-        addView(linearLayout, ja.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
-        addView(textView, ja.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(textView2, ja.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
-        addView(imageView, ja.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
-        addView(radialProgressView, ja.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(linearLayout, ma.d(-2, -2.0f, 0, 0.0f, 22.0f, 0.0f, 0.0f));
+        addView(textView, ma.d(-2, -2.0f, 8388611, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(textView2, ma.d(-2, -2.0f, 8388613, 4.0f, 0.0f, 4.0f, 0.0f));
+        addView(imageView, ma.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
+        addView(radialProgressView, ma.d(18, 18.0f, 8388661, 0.0f, 2.0f, 0.0f, 0.0f));
         b();
     }
 
@@ -108,20 +108,20 @@ public class e extends FrameLayout {
     }
 
     public void b() {
-        int i7 = j6.j5;
+        int i7 = n6.j5;
         TextView textView = this.d;
-        e6 e6Var = this.K;
-        q6.U(textView, i7, e6Var);
-        q6.U(this.e, i7, e6Var);
-        int i10 = j6.Xj;
-        q6.s(this.f, i10, e6Var, PorterDuff.Mode.SRC_ATOP);
-        this.h.setProgressColor(j6.w0(i10, e6Var));
+        i6 i6Var = this.K;
+        u6.U(textView, i7, i6Var);
+        u6.U(this.e, i7, i6Var);
+        int i10 = n6.Xj;
+        u6.s(this.f, i10, i6Var, PorterDuff.Mode.SRC_ATOP);
+        this.h.setProgressColor(n6.w0(i10, i6Var));
         this.I = getContext().getResources().getDrawable(R.drawable.stats_tooltip).mutate();
         int L = g0.L(4.0f);
-        this.J = j6.k0(L, L, L, L, j6.w0(j6.h5, e6Var), j6.w0(j6.i6, e6Var), -16777216);
-        fq fqVar = new fq(this.I, this.J, g0.L(3.0f), g0.L(3.0f));
-        fqVar.x = true;
-        setBackground(fqVar);
+        this.J = n6.k0(L, L, L, L, n6.w0(n6.h5, i6Var), n6.w0(n6.i6, i6Var), -16777216);
+        mq mqVar = new mq(this.I, this.J, g0.L(3.0f), g0.L(3.0f));
+        mqVar.x = true;
+        setBackground(mqVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -175,7 +175,7 @@ public class e extends FrameLayout {
                 LinearLayout linearLayout = (LinearLayout) c0Var.e;
                 TextView textView2 = (TextView) c0Var.d;
                 TextView textView3 = (TextView) c0Var.c;
-                o5 o5Var = (o5) c0Var.b;
+                w5 w5Var = (w5) c0Var.b;
                 if (linearLayout.getMeasuredHeight() == 0) {
                     linearLayout.requestLayout();
                 }
@@ -201,7 +201,7 @@ public class e extends FrameLayout {
                             i14 = 2;
                         }
                         decimalFormat2.setMaximumFractionDigits(i14);
-                        charSequence = xd.K("TON " + this.M.format(j11 / 1.0E9d), o5Var.getPaint(), 0.82f, 0.0f, false);
+                        charSequence = xd.K("TON " + this.M.format(j11 / 1.0E9d), w5Var.getPaint(), 0.82f, 0.0f, false);
                     } else {
                         charSequence = "≈" + r1.i().f((long) (j11 / f10), "USD");
                     }
@@ -218,36 +218,36 @@ public class e extends FrameLayout {
                         charSequence = String.format("%.2f", Float.valueOf(f11)) + g0.g0[i22];
                     }
                 } else if (i20 == 0) {
-                    charSequence = lb.a1(false, i5.c.l(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
+                    charSequence = pb.b1(false, i5.c.l(j11, ' ', new StringBuilder("XTR ")), 0.7f, null);
                 } else {
                     charSequence = "≈" + r1.i().f((long) (j11 / f10), "USD");
                 }
-                o5Var.setText(charSequence);
+                w5Var.setText(charSequence);
                 if (i10 == 1) {
-                    textView3.setText(hd.a0(null, null, i20 == 0 ? 2131752251 : 2131752250, aVar.d));
+                    textView3.setText(gd.a0(null, null, i20 == 0 ? 2131752240 : 2131752239, aVar.d));
                 } else if (i10 == 2) {
-                    textView3.setText(lb.a1(false, hd.a0(null, null, i20 == 0 ? 2131752249 : 2131752250, aVar.d), 0.7f, null));
+                    textView3.setText(pb.b1(false, gd.a0(null, null, i20 == 0 ? 2131752238 : 2131752239, aVar.d), 0.7f, null));
                 } else {
                     textView3.setText(aVar.d);
                 }
                 int i23 = aVar.g;
-                e6 e6Var = this.K;
-                if (i23 < 0 || !j6.f1(i23)) {
-                    p6 p6Var = q6.a;
-                    o5Var.setTag(R.id.theme_bind, null);
-                    o5Var.setTextColor(j6.D0().q() ? aVar.i : aVar.h);
+                i6 i6Var = this.K;
+                if (i23 < 0 || !n6.f1(i23)) {
+                    t6 t6Var = u6.a;
+                    w5Var.setTag(R.id.theme_bind, null);
+                    w5Var.setTextColor(n6.D0().q() ? aVar.i : aVar.h);
                 } else {
-                    q6.U(o5Var, aVar.g, e6Var);
+                    u6.U(w5Var, aVar.g, i6Var);
                 }
-                int i24 = j6.j5;
-                q6.U(textView3, i24, e6Var);
+                int i24 = n6.j5;
+                u6.U(textView3, i24, i6Var);
                 if (!this.F || textView2 == null) {
                     i11 = i21;
                     i12 = 2;
                     i13 = 1;
                 } else {
                     textView2.setVisibility(0);
-                    q6.U(textView2, i24, e6Var);
+                    u6.U(textView2, i24, i6Var);
                     i11 = i21;
                     float f12 = ((f) arrayList.get(i11)).a.a[i7] / j10;
                     if (f12 >= 0.1f || f12 == 0.0f) {
@@ -288,7 +288,7 @@ public class e extends FrameLayout {
     public final void d(boolean z10, boolean z11) {
         o oVar = this.L;
         if (z10) {
-            g0.i3(oVar, 300L);
+            g0.h3(oVar, 300L);
             return;
         }
         g0.r(oVar);
@@ -299,7 +299,7 @@ public class e extends FrameLayout {
         }
         this.f.animate().setDuration(80L).alpha(1.0f).start();
         if (radialProgressView.getVisibility() == 0) {
-            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new s3(this, 3)).start();
+            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new n3(this, 3)).start();
         }
     }
 

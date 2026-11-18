@@ -10,12 +10,12 @@ import android.graphics.RenderEffect;
 import android.graphics.RenderNode;
 import android.graphics.RuntimeShader;
 import android.support.v4.media.session.w;
-import c8.hc;
+import c8.kc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class e extends hc {
+public final class e extends kc {
     public final RenderNode a = w.o();
     public final RuntimeShader b = r0.d();
     public int c = -1;
@@ -30,7 +30,7 @@ public final class e extends hc {
         this.i = fVar;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void a(Rect rect, RectF rectF) {
         float f10;
         a aVar;
@@ -113,7 +113,7 @@ public final class e extends hc {
         } else {
             beginRecording.save();
             beginRecording.translate(-rectF.left, -rectF.top);
-            fVar.f.b0(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
+            fVar.f.o(rectF.left, rectF.top, rectF.right, rectF.bottom, beginRecording);
             beginRecording.restore();
         }
         this.a.endRecording();
@@ -121,23 +121,23 @@ public final class e extends hc {
         fVar.w = false;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void b() {
         this.a.discardDisplayList();
         this.c = -1;
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void c(Canvas canvas) {
         canvas.drawRenderNode(this.a);
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final boolean d() {
         return this.a.hasDisplayList();
     }
 
-    @Override // c8.hc
+    @Override // c8.kc
     public final void e(float f10) {
         this.a.setAlpha(f10);
     }

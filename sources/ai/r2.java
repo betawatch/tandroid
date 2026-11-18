@@ -4,14 +4,13 @@ import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ja;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k5;
+import c8.ma;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class r2 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -20,17 +19,6 @@ public final class r2 extends LinearLayout {
     public /* synthetic */ r2(Context context, int i7) {
         super(context);
         this.a = i7;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchSetPressed(boolean z10) {
-        switch (this.a) {
-            case 9:
-                break;
-            default:
-                super.dispatchSetPressed(z10);
-                break;
-        }
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -48,7 +36,6 @@ public final class r2 extends LinearLayout {
             case 3:
             case 6:
             case 7:
-            case 9:
             default:
                 super.onMeasure(i7, i10);
                 break;
@@ -61,17 +48,17 @@ public final class r2 extends LinearLayout {
             case 8:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(org.telegram.messenger.g0.L(220.0f), View.MeasureSpec.getSize(i7)), View.MeasureSpec.getMode(i7)), i10);
                 break;
-            case 10:
+            case 9:
                 super.onMeasure(i7, i10);
                 setPivotY(0.0f);
                 setPivotX(0.0f);
                 break;
-            case 11:
+            case 10:
                 super.onMeasure(i7, i10);
                 setPivotY(0.0f);
                 setPivotX(getMeasuredWidth());
                 break;
-            case 12:
+            case 11:
                 super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), org.telegram.messenger.g0.L(800.0f)), TLObject.FLAG_30));
                 break;
         }
@@ -80,27 +67,25 @@ public final class r2 extends LinearLayout {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public r2(Context context) {
         super(context);
-        this.a = 13;
+        this.a = 12;
         setOrientation(1);
         setPadding(org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f), org.telegram.messenger.g0.L(16.0f));
-        TextView g10 = k5.g(context, 1, 14.0f);
-        int i7 = j6.G6;
-        q6.U(g10, i7, null);
-        g10.setTypeface(org.telegram.messenger.g0.o());
-        g10.setText(hd.M0(2131754944, null));
-        addView(g10);
         TextView textView = new TextView(context);
         textView.setTextSize(1, 14.0f);
-        q6.U(textView, i7, null);
-        textView.setText(org.telegram.messenger.g0.X2(hd.M0(2131754946, null)));
-        addView(textView, ja.q(-1, -2, 0.0f, 0, 0, 0, 0, 0));
+        int i7 = n6.G6;
+        u6.U(textView, i7, null);
+        textView.setTypeface(org.telegram.messenger.g0.o());
+        textView.setText(gd.M0(2131754944, null));
+        addView(textView);
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
-        q6.U(textView2, i7, null);
-        textView2.setText(org.telegram.messenger.g0.X2(hd.M0(2131754945, null)));
-        addView(textView2, ja.q(-1, -2, 0.0f, 0, 0, 24, 0, 0));
-    }
-
-    private final void a(boolean z10) {
+        u6.U(textView2, i7, null);
+        textView2.setText(org.telegram.messenger.g0.W2(gd.M0(2131754946, null)));
+        addView(textView2, ma.q(-1, -2, 0.0f, 0, 0, 0, 0, 0));
+        TextView textView3 = new TextView(context);
+        textView3.setTextSize(1, 14.0f);
+        u6.U(textView3, i7, null);
+        textView3.setText(org.telegram.messenger.g0.W2(gd.M0(2131754945, null)));
+        addView(textView3, ma.q(-1, -2, 0.0f, 0, 0, 24, 0, 0));
     }
 }

@@ -20,7 +20,7 @@ import java.io.ByteArrayInputStream;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class n1 extends WebViewClient {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class n1 extends WebViewClient {
         if (!TextUtils.isEmpty(str)) {
             Uri parse = Uri.parse(str);
             if ("tg".equals(parse.getScheme())) {
-                ((zc1) this.b).finishFragment(false);
+                ((cd1) this.b).finishFragment(false);
                 try {
                     Intent intent = new Intent("android.intent.action.VIEW", parse);
                     intent.setComponent(new ComponentName(org.telegram.messenger.t0.b.getPackageName(), LaunchActivity.class.getName()));
@@ -73,11 +73,11 @@ public final class n1 extends WebViewClient {
         switch (i7) {
             case 1:
                 super.onPageFinished(webView, str);
-                org.telegram.ui.Components.bu buVar = (org.telegram.ui.Components.bu) obj;
-                ImageView imageView = buVar.x1;
-                if (!buVar.y1) {
-                    buVar.s1.setVisibility(4);
-                    buVar.r1.setVisibility(4);
+                org.telegram.ui.Components.gu guVar = (org.telegram.ui.Components.gu) obj;
+                ImageView imageView = guVar.x1;
+                if (!guVar.y1) {
+                    guVar.s1.setVisibility(4);
+                    guVar.r1.setVisibility(4);
                     imageView.setEnabled(true);
                     imageView.setAlpha(1.0f);
                     break;
@@ -85,11 +85,11 @@ public final class n1 extends WebViewClient {
                 break;
             case 2:
                 super.onPageFinished(webView, str);
-                bq0 bq0Var = (bq0) obj;
-                View view = bq0Var.r;
-                if (!bq0Var.y) {
-                    bq0Var.n.setVisibility(4);
-                    bq0Var.h.setVisibility(4);
+                dq0 dq0Var = (dq0) obj;
+                View view = dq0Var.r;
+                if (!dq0Var.y) {
+                    dq0Var.n.setVisibility(4);
+                    dq0Var.h.setVisibility(4);
                     view.setEnabled(true);
                     view.setAlpha(1.0f);
                     break;
@@ -97,14 +97,14 @@ public final class n1 extends WebViewClient {
                 break;
             case 3:
                 super.onPageFinished(webView, str);
-                zc1 zc1Var = (zc1) obj;
-                org.telegram.ui.Components.hq hqVar = zc1Var.c;
-                if (hqVar != null && hqVar.getVisibility() == 0) {
+                cd1 cd1Var = (cd1) obj;
+                org.telegram.ui.Components.oq oqVar = cd1Var.c;
+                if (oqVar != null && oqVar.getVisibility() == 0) {
                     AnimatorSet animatorSet = new AnimatorSet();
-                    zc1Var.b.getContentView().setVisibility(0);
-                    zc1Var.b.setEnabled(true);
-                    animatorSet.playTogether(ObjectAnimator.ofFloat(zc1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(zc1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(zc1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(zc1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(zc1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(zc1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
-                    animatorSet.addListener(new g71(this, 13));
+                    cd1Var.b.getContentView().setVisibility(0);
+                    cd1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(cd1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(cd1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(cd1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(cd1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(cd1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(cd1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new k71(this, 13));
                     animatorSet.setDuration(150L);
                     animatorSet.start();
                     break;
@@ -179,10 +179,10 @@ public final class n1 extends WebViewClient {
                     LaunchActivity launchActivity = LaunchActivity.H1;
                     if (launchActivity == null || !launchActivity.isFinishing()) {
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, ((q1) obj).getContext(), null);
-                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                        t1Var.S = org.telegram.messenger.hd.M0(2131752104, null);
-                        t1Var.U = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new fq0(this, 8));
-                        alertDialog$Builder.k(org.telegram.messenger.hd.M0(2131747831, null), null);
+                        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+                        u1Var.S = org.telegram.messenger.gd.M0(2131752093, null);
+                        u1Var.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new hq0(this, 8));
+                        alertDialog$Builder.k(org.telegram.messenger.gd.M0(2131747638, null), null);
                         alertDialog$Builder.p();
                     }
                     return true;
@@ -191,14 +191,14 @@ public final class n1 extends WebViewClient {
                     return false;
                 }
             case 1:
-                org.telegram.ui.Components.bu buVar = (org.telegram.ui.Components.bu) obj;
+                org.telegram.ui.Components.gu guVar = (org.telegram.ui.Components.gu) obj;
                 try {
-                    if (org.telegram.messenger.g0.M1(buVar.getContext())) {
-                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, buVar.getContext(), buVar.J0);
-                        org.telegram.ui.ActionBar.t1 t1Var2 = alertDialog$Builder2.a;
-                        t1Var2.S = org.telegram.messenger.hd.M0(2131752104, null);
-                        t1Var2.U = org.telegram.messenger.g0.U2(org.telegram.messenger.hd.M0(2131752105, null), new org.telegram.ui.Components.fo(this, 11));
-                        alertDialog$Builder2.k(org.telegram.messenger.hd.M0(2131747831, null), null);
+                    if (org.telegram.messenger.g0.M1(guVar.getContext())) {
+                        AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(0, guVar.getContext(), guVar.J0);
+                        org.telegram.ui.ActionBar.u1 u1Var2 = alertDialog$Builder2.a;
+                        u1Var2.S = org.telegram.messenger.gd.M0(2131752093, null);
+                        u1Var2.U = org.telegram.messenger.g0.T2(org.telegram.messenger.gd.M0(2131752094, null), new org.telegram.ui.Components.mo(this, 11));
+                        alertDialog$Builder2.k(org.telegram.messenger.gd.M0(2131747638, null), null);
                         alertDialog$Builder2.p();
                     }
                     return true;
@@ -224,10 +224,10 @@ public final class n1 extends WebViewClient {
         switch (this.a) {
             case 2:
                 String uri = webResourceRequest.getUrl().toString();
-                if (!((bq0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                if (!((dq0) this.b).y || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
                     return null;
                 }
-                Utilities.j.c(new org.telegram.ui.Components.yf(this, uri, webResourceRequest, 17));
+                Utilities.j.c(new org.telegram.ui.Components.k7(this, uri, webResourceRequest, 20));
                 return null;
             case 3:
             default:
@@ -257,14 +257,14 @@ public final class n1 extends WebViewClient {
                 }
                 break;
             case 1:
-                if (!((org.telegram.ui.Components.bu) this.b).y1) {
+                if (!((org.telegram.ui.Components.gu) this.b).y1) {
                     break;
                 } else {
                     vf.c.t(webView.getContext(), str);
                     break;
                 }
             case 2:
-                if (!((bq0) this.b).y) {
+                if (!((dq0) this.b).y) {
                     break;
                 } else {
                     vf.c.t(webView.getContext(), str);

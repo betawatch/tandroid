@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kv0 extends org.telegram.ui.ActionBar.w4 {
-    public final /* synthetic */ ProfileActivity u0;
+public final class kv0 extends org.telegram.ui.Components.yo0 {
+    public final /* synthetic */ ProfileActivity V2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kv0(ProfileActivity profileActivity, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.u0 = profileActivity;
+    public kv0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.V2 = profileActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.w4, te.b
-    public final void G(int i7, float f10, float f11, te.c cVar) {
-        super.G(i7, f10, f11, cVar);
-        RectF rectF = ProfileActivity.X6;
-        this.u0.z5();
+    @Override // org.telegram.ui.Components.yo0
+    public final void S0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            org.telegram.messenger.g0.h3(new tr0(this, hVar, i7, 16), 250L);
+        }
     }
 }

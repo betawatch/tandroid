@@ -1,6 +1,6 @@
 package m1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class v extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -90,7 +90,7 @@ public final class v extends kd.j implements rd.p {
                     }
                 }
                 if (z13 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     boolean z15 = this.c;
                     this.c = z15;
                     this.b = 1;
@@ -106,7 +106,7 @@ public final class v extends kd.j implements rd.p {
                         }
                         z10 = this.c;
                         th2 = (Throwable) this.f;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         i7 = ((Number) obj).intValue();
                         w0 w0Var = new w0(i7, th2);
                         z11 = z10;
@@ -114,7 +114,7 @@ public final class v extends kd.j implements rd.p {
                         return new gd.e(e1Var, Boolean.valueOf(z11));
                     }
                     boolean z16 = this.c;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     z13 = z16;
                 }
                 e1Var = (e1) obj;
@@ -125,7 +125,7 @@ public final class v extends kd.j implements rd.p {
                 int i11 = this.b;
                 b0 b0Var2 = this.d;
                 if (i11 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     z12 = this.c;
                     this.c = z12;
                     this.b = 1;
@@ -139,12 +139,12 @@ public final class v extends kd.j implements rd.p {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         obj2 = this.f;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         i10 = ((Number) obj).intValue();
                         return new c(obj2, obj2 != null ? obj2.hashCode() : 0, i10);
                     }
                     z12 = this.c;
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 if (!z12) {
                     obj2 = obj;

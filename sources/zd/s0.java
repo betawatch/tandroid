@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class s0 extends t0 implements g0 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater h = AtomicReferenceFieldUpdater.newUpdater(s0.class, Object.class, "_queue$volatile");
@@ -38,7 +38,7 @@ public abstract class s0 extends t0 implements g0 {
     public final long j() {
         Runnable runnable;
         q0 q0Var;
-        aa.b0 b0Var = b0.c;
+        ee.t tVar = b0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         if (!k()) {
             n();
@@ -48,7 +48,7 @@ public abstract class s0 extends t0 implements g0 {
                     break;
                 }
                 if (!(obj instanceof ee.m)) {
-                    if (obj != b0Var) {
+                    if (obj != tVar) {
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, null)) {
                             if (atomicReferenceFieldUpdater.get(this) != obj) {
                                 break;
@@ -83,7 +83,7 @@ public abstract class s0 extends t0 implements g0 {
                         if (((int) (1073741823 & j3)) != ((int) ((j3 & 1152921503533105152L) >> 30))) {
                             return 0L;
                         }
-                    } else if (obj2 == b0Var) {
+                    } else if (obj2 == tVar) {
                         return Long.MAX_VALUE;
                     }
                 }
@@ -121,7 +121,7 @@ public abstract class s0 extends t0 implements g0 {
     public final void n() {
         q0 q0Var;
         r0 r0Var = (r0) n.get(this);
-        if (r0Var == null || ee.u.b.get(r0Var) == 0) {
+        if (r0Var == null || ee.v.b.get(r0Var) == 0) {
             return;
         }
         long nanoTime = System.nanoTime();
@@ -196,7 +196,7 @@ public abstract class s0 extends t0 implements g0 {
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0024, code lost:
     
-        if ((ee.u.b.get(r0) == 0) == false) goto L29;
+        if ((ee.v.b.get(r0) == 0) == false) goto L29;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -269,13 +269,13 @@ public abstract class s0 extends t0 implements g0 {
         q0 c10;
         v1.a.set(null);
         r.set(this, 1);
-        aa.b0 b0Var = b0.c;
+        ee.t tVar = b0.c;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(this);
             if (obj != null) {
                 if (!(obj instanceof ee.m)) {
-                    if (obj != b0Var) {
+                    if (obj != tVar) {
                         ee.m mVar = new ee.m(8, true);
                         mVar.a((Runnable) obj);
                         while (!atomicReferenceFieldUpdater.compareAndSet(this, obj, mVar)) {
@@ -290,7 +290,7 @@ public abstract class s0 extends t0 implements g0 {
                 ((ee.m) obj).b();
                 break;
             }
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, b0Var)) {
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, tVar)) {
                 if (atomicReferenceFieldUpdater.get(this) != null) {
                     break;
                 }
@@ -306,7 +306,7 @@ public abstract class s0 extends t0 implements g0 {
                 return;
             }
             synchronized (r0Var) {
-                c10 = ee.u.b.get(r0Var) > 0 ? r0Var.c(0) : null;
+                c10 = ee.v.b.get(r0Var) > 0 ? r0Var.c(0) : null;
             }
             if (c10 == null) {
                 return;

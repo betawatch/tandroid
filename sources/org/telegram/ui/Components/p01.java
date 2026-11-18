@@ -1,63 +1,74 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class p01 extends v4.o {
-    public final /* synthetic */ int b = 1;
-    public ArrayList c;
-    public ArrayList d;
+public abstract class p01 extends View {
+    public final q01 a;
+    public org.telegram.messenger.x10 b;
+    public final org.telegram.ui.ActionBar.i6 c;
+    public int d;
 
-    public /* synthetic */ p01() {
+    public p01(int i7, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.c = i6Var;
+        q01 q01Var = new q01(i7, this, i6Var, false);
+        this.a = q01Var;
+        q01Var.s = new ap0(this, 19);
     }
 
-    @Override // v4.o
-    public final boolean a(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                throw null;
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.a(aVar2);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.i6 i6Var = this.c;
+        if (i6Var != null) {
+            i6Var.e(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.n6.r(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        }
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(33.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(org.telegram.messenger.fj fjVar) {
+        q01 q01Var = this.a;
+        q01Var.e(fjVar);
+        if (isAttachedToWindow()) {
+            q01Var.a();
         }
     }
 
-    @Override // v4.o
-    public final boolean b(int i7, int i10) {
-        switch (this.b) {
-            case 0:
-                throw null;
-            default:
-                rg.a aVar = (rg.a) this.c.get(i7);
-                rg.a aVar2 = (rg.a) this.d.get(i10);
-                if (aVar.a != aVar2.a) {
-                    return false;
-                }
-                return aVar.equals(aVar2);
-        }
+    public void setBackgroundHeight(int i7) {
+        this.d = i7;
     }
 
-    @Override // v4.o
-    public final int d() {
-        switch (this.b) {
-        }
-        return this.d.size();
-    }
-
-    @Override // v4.o
-    public final int e() {
-        switch (this.b) {
-        }
-        return this.c.size();
-    }
-
-    public p01(ArrayList arrayList, ArrayList arrayList2) {
-        this.c = arrayList;
-        this.d = arrayList2;
+    public void setOnTopicClickListener(org.telegram.messenger.x10 x10Var) {
+        this.b = x10Var;
     }
 }

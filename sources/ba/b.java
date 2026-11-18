@@ -3,20 +3,20 @@ package ba;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import org.telegram.ui.ActionBar.q1;
-import org.telegram.ui.ActionBar.t1;
+import org.telegram.ui.ActionBar.r1;
+import org.telegram.ui.ActionBar.u1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements Continuation, q1 {
+public final /* synthetic */ class b implements Continuation, r1 {
     public final /* synthetic */ Runnable a;
 
     public /* synthetic */ b(Runnable runnable) {
         this.a = runnable;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(t1 t1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(u1 u1Var, int i7) {
         this.a.run();
     }
 

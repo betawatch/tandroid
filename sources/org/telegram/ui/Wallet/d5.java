@@ -1,44 +1,35 @@
 package org.telegram.ui.Wallet;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.de;
+import android.content.Context;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.ui.cd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class d5 implements TextWatcher {
-    public final /* synthetic */ String[] a;
-    public final /* synthetic */ r b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ de d;
+public final /* synthetic */ class d5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
 
-    public d5(String[] strArr, r rVar, Runnable[] runnableArr, de deVar) {
-        this.a = strArr;
-        this.b = rVar;
-        this.c = runnableArr;
-        this.d = deVar;
+    public /* synthetic */ d5(Context context, int i7) {
+        this.a = i7;
+        this.b = context;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a[0] = editable.toString();
-        this.b.run();
-        Runnable[] runnableArr = this.c;
-        Runnable runnable = runnableArr[0];
-        if (runnable != null) {
-            runnable.run();
-            runnableArr[0] = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        Context context = this.b;
+        switch (i7) {
+            case 0:
+                vf.c.v(context, gd.M0(2131743961, null), false);
+                break;
+            case 1:
+                vf.c.v(context, gd.M0(2131743961, null), false);
+                break;
+            default:
+                new p6(context.getApplicationContext(), R.drawable.wallet_card_qr, 46, new cd0(11));
+                break;
         }
-        de deVar = this.d;
-        org.telegram.messenger.g0.r(deVar);
-        org.telegram.messenger.g0.i3(deVar, 1000L);
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
     }
 }

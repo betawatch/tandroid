@@ -1,6 +1,6 @@
 package u9;
 
-import c8.tc;
+import c8.wc;
 import e2.j0;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 import tg.z1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -46,7 +46,7 @@ public final class a {
         j0Var.g = new HashSet();
         hashSet.add(qVar);
         for (q qVar2 : qVarArr) {
-            tc.a(qVar2, "Null interface");
+            wc.a(qVar2, "Null interface");
         }
         Collections.addAll((HashSet) j0Var.c, qVarArr);
         return j0Var;
@@ -58,10 +58,10 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(q.a(cls));
         for (Class cls2 : clsArr) {
-            tc.a(cls2, "Null interface");
+            wc.a(cls2, "Null interface");
             hashSet.add(q.a(cls2));
         }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new z1(obj, 6), hashSet3);
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new z1(obj, 7), hashSet3);
     }
 
     public final String toString() {

@@ -3,11 +3,12 @@ package h6;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import java.util.Iterator;
+import zi.k0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class o extends BasePendingResult {
-    public ob.c o;
+    public k0 o;
     public final boolean p;
     public final /* synthetic */ h q;
 
@@ -27,7 +28,7 @@ public abstract class o extends BasePendingResult {
 
     public final j6.n o() {
         if (this.o == null) {
-            this.o = new ob.c(this, 28);
+            this.o = new k0(this);
         }
         return this.o;
     }

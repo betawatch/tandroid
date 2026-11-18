@@ -1,7 +1,7 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
 import android.webkit.WebView;
+import b7.h;
 import gd.k;
 import id.c;
 import jd.a;
@@ -9,7 +9,7 @@ import kd.j;
 import rd.p;
 import zd.t;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzli extends j implements p {
     Object zza;
@@ -41,10 +41,10 @@ final class zzli extends j implements p {
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                b.c(obj);
+                h.b(obj);
                 zza = str;
             } else {
-                b.c(obj);
+                h.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;

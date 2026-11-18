@@ -1,30 +1,27 @@
 package hi;
 
 import android.content.Context;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
 import java.util.Calendar;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.rw0;
-import org.telegram.ui.Components.wu;
+import org.telegram.ui.Components.bv;
+import org.telegram.ui.Components.vm;
+import org.telegram.ui.Components.yw0;
 import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.c00;
-import org.telegram.ui.dx;
-import org.telegram.ui.ek0;
-import org.telegram.ui.g00;
-import org.telegram.ui.gx;
+import org.telegram.ui.aj0;
+import org.telegram.ui.f00;
+import org.telegram.ui.hk0;
+import org.telegram.ui.hx;
+import org.telegram.ui.j00;
+import org.telegram.ui.kx;
 import org.telegram.ui.ns;
-import org.telegram.ui.xi0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class p1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
@@ -39,6 +36,7 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
     @Override // android.view.View.OnTouchListener
     public final boolean onTouch(View view, MotionEvent motionEvent) {
         boolean r10;
+        boolean z10;
         int i7;
         int i10;
         String M0;
@@ -47,68 +45,59 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
         int i12;
         int i13;
         int i14;
-        int i15 = this.a;
-        boolean z10 = true;
+        int i15;
+        int i16;
+        boolean z11;
+        int i17 = this.a;
         Object obj = this.c;
         Object obj2 = this.b;
-        switch (i15) {
+        switch (i17) {
             case 0:
-                t1 t1Var = (t1) obj2;
+                u1 u1Var = (u1) obj2;
                 ns p10 = ns.p();
-                di.c1 c1Var = t1Var.b;
-                q1 q1Var = t1Var.f;
-                i2 i2Var = t1Var.r;
-                int i16 = i2.C1;
-                return p10.r(motionEvent, c1Var, (bi.b6) obj, q1Var, i2Var.J0);
+                di.b1 b1Var = u1Var.b;
+                q1 q1Var = u1Var.f;
+                j2 j2Var = u1Var.r;
+                int i18 = j2.C1;
+                return p10.r(motionEvent, b1Var, (bi.i8) obj, q1Var, j2Var.J0);
             case 1:
-                org.telegram.ui.ActionBar.g1 g1Var = (org.telegram.ui.ActionBar.g1) obj2;
-                ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj;
-                if (motionEvent.getAction() == 0) {
-                    Drawable backgroundDrawable = actionBarPopupWindow$ActionBarPopupWindowLayout.getBackgroundDrawable();
-                    RectF rectF = org.telegram.messenger.g0.P;
-                    rectF.set(backgroundDrawable.getBounds());
-                    rectF.offset(actionBarPopupWindow$ActionBarPopupWindowLayout.getX(), actionBarPopupWindow$ActionBarPopupWindowLayout.getY());
-                    if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                        g1Var.dismiss();
-                        return true;
-                    }
+                org.telegram.ui.Components.f8 f8Var = (org.telegram.ui.Components.f8) obj2;
+                org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) obj;
+                if (motionEvent.getAction() != 0) {
+                    return false;
                 }
+                org.telegram.ui.Components.g8 g8Var = f8Var.n;
+                g8Var.B1.t(g8Var.s1.T(wVar));
                 return false;
             case 2:
-                org.telegram.ui.Components.x7 x7Var = (org.telegram.ui.Components.x7) obj2;
-                org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) obj;
-                if (motionEvent.getAction() == 0) {
-                    org.telegram.ui.Components.y7 y7Var = x7Var.n;
-                    y7Var.B1.t(y7Var.s1.T(wVar));
-                }
-                return false;
+                bv bvVar = (bv) obj2;
+                return ns.p().r(motionEvent, bvVar.r1, (vm) obj, bvVar.I1, bvVar.J0);
             case 3:
-                wu wuVar = (wu) obj2;
-                return ns.p().r(motionEvent, wuVar.r1, (om) obj, wuVar.I1, wuVar.J0);
-            case 4:
-                r10 = ns.p().r(motionEvent, r5.e, (org.telegram.ui.Components.j) obj, r5.getPreviewDelegate(), ((rw0) obj2).b);
+                r10 = ns.p().r(motionEvent, r4.e, (org.telegram.ui.Components.n) obj, r4.getPreviewDelegate(), ((yw0) obj2).b);
                 return r10;
-            case 5:
-                dx dxVar = (dx) obj2;
+            case 4:
+                hx hxVar = (hx) obj2;
                 org.telegram.ui.Cells.h4 h4Var = (org.telegram.ui.Cells.h4) obj;
-                dxVar.getClass();
-                if (motionEvent.getAction() == 0) {
-                    gx gxVar = dxVar.f;
-                    gxVar.c.t(gxVar.b.T(h4Var));
+                hxVar.getClass();
+                if (motionEvent.getAction() != 0) {
+                    return false;
                 }
+                kx kxVar = hxVar.f;
+                kxVar.c.t(kxVar.b.T(h4Var));
                 return false;
-            case 6:
-                g00 g00Var = (g00) obj2;
-                c00 c00Var = (c00) obj;
-                if (motionEvent.getAction() == 0) {
-                    FiltersSetupActivity filtersSetupActivity = g00Var.e;
-                    filtersSetupActivity.c.t(filtersSetupActivity.a.T(c00Var));
+            case 5:
+                j00 j00Var = (j00) obj2;
+                f00 f00Var = (f00) obj;
+                if (motionEvent.getAction() != 0) {
+                    return false;
                 }
+                FiltersSetupActivity filtersSetupActivity = j00Var.e;
+                filtersSetupActivity.c.t(filtersSetupActivity.a.T(f00Var));
                 return false;
             default:
-                ek0 ek0Var = (ek0) obj2;
+                hk0 hk0Var = (hk0) obj2;
                 Context context = (Context) obj;
-                if (ek0Var.getParentActivity() == null) {
+                if (hk0Var.getParentActivity() == null) {
                     return false;
                 }
                 if (motionEvent.getAction() != 1) {
@@ -123,20 +112,21 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                     int intValue = ((Integer) editTextBoldCursor.getTag()).intValue();
                     if (intValue == 8) {
                         try {
-                            M0 = hd.M0(2131747467, null);
                             i10 = 0;
+                            M0 = gd.M0(2131747274, null);
                             str = null;
                             i11 = 20;
                             i7 = 0;
                         } catch (Exception e10) {
                             e = e10;
+                            z10 = true;
                             org.telegram.messenger.a8.g(e, z10);
                             return z10;
                         }
                     } else {
                         i7 = -120;
                         i10 = -18;
-                        M0 = hd.M0(2131747468, null);
+                        M0 = gd.M0(2131747275, null);
                         str = null;
                         i11 = 0;
                     }
@@ -150,14 +140,21 @@ public final /* synthetic */ class p1 implements View.OnTouchListener {
                         i13 = -1;
                         i14 = -1;
                     }
-                    int i17 = i10;
-                    int i18 = i13;
-                    String str2 = str;
-                    AlertDialog$Builder w10 = org.telegram.ui.Components.t4.w(context, i7, i11, i17, i12, i14, i18, M0, intValue == 8, new ai.r1(ek0Var, intValue, editTextBoldCursor, 14));
                     if (intValue == 8) {
-                        w10.h(hd.M0(2131747465, str2), new xi0(1, ek0Var, editTextBoldCursor));
+                        i15 = i10;
+                        i16 = i13;
+                        z11 = true;
+                    } else {
+                        i15 = i10;
+                        i16 = i13;
+                        z11 = false;
                     }
-                    ek0Var.showDialog(w10.a);
+                    String str2 = str;
+                    AlertDialog$Builder w10 = org.telegram.ui.Components.b5.w(context, i7, i11, i15, i12, i14, i16, M0, z11, new ai.r1(hk0Var, intValue, editTextBoldCursor, 15));
+                    if (intValue == 8) {
+                        w10.h(gd.M0(2131747272, str2), new aj0(0, hk0Var, editTextBoldCursor));
+                    }
+                    hk0Var.showDialog(w10.a);
                     return true;
                 } catch (Exception e11) {
                     e = e11;

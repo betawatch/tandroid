@@ -1,18 +1,21 @@
 package c8;
 
+import android.content.Intent;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class y9 {
-    public static boolean a(int i7) {
-        if (i7 == 8 || i7 == 7) {
-            return true;
+    public static Object a(Bundle bundle) {
+        if (Build.VERSION.SDK_INT >= 34) {
+            return ai.d.f(bundle);
         }
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 31 || !(i7 == 26 || i7 == 27)) {
-            return i10 >= 33 && i7 == 30;
+        Parcelable parcelable = bundle.getParcelable("RESULT_DATA");
+        if (Intent.class.isInstance(parcelable)) {
+            return parcelable;
         }
-        return true;
+        return null;
     }
 }

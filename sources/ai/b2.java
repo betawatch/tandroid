@@ -5,7 +5,7 @@ import android.os.SystemClock;
 import android.speech.RecognitionListener;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b2 implements RecognitionListener {
     public final int a;
@@ -55,10 +55,9 @@ public final class b2 implements RecognitionListener {
         int i7 = this.a;
         if (j3 > 400 || i7 != c2Var.k) {
             this.b = elapsedRealtime;
-            StringBuilder m10 = i5.c.m(i7, "session ", " partial \"");
+            StringBuilder m10 = i5.c.m(i7, "session ", " partial ");
             m10.append(i2.c(a10));
-            m10.append("\"");
-            r.b.t(m10, i7 != c2Var.k ? " (stale)" : "", "Dictation");
+            p5.c.t(m10, i7 != c2Var.k ? " (stale)" : "", "Dictation");
         }
         c2Var.k(i7, a10);
     }
@@ -91,9 +90,8 @@ public final class b2 implements RecognitionListener {
             return;
         }
         int i7 = this.a;
-        StringBuilder m10 = i5.c.m(i7, "session ", " segment \"");
+        StringBuilder m10 = i5.c.m(i7, "session ", " segment ");
         m10.append(i2.c(a10));
-        m10.append("\"");
         Log.d("Dictation", m10.toString());
         i2 i2Var = c2Var.g;
         boolean z10 = false;

@@ -1,102 +1,81 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.graphics.Point;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class w7 implements fi.e9, org.telegram.messenger.nr {
-    public final /* synthetic */ i8 a;
+public final class w7 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ org.telegram.messenger.fs c;
 
-    public /* synthetic */ w7(i8 i8Var) {
-        this.a = i8Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w7(org.telegram.messenger.fs fsVar, Context context, int i7) {
+        super(context);
+        this.a = i7;
+        this.c = fsVar;
+        this.b = -1;
     }
 
-    @Override // fi.e9
-    public void d(long j3, int i7, fi.g3 g3Var) {
-        i8 i8Var = this.a;
-        if (i8Var.b == null) {
-            g3Var.run();
-        }
-        i8Var.b.post(g3Var);
-    }
-
-    @Override // org.telegram.messenger.nr
-    public void j(boolean z10) {
-        org.telegram.ui.ActionBar.o4 o4Var;
-        org.telegram.ui.ActionBar.o4 o4Var2;
-        org.telegram.ui.ActionBar.o4 o4Var3;
-        org.telegram.ui.ActionBar.o4 o4Var4;
-        i8 i8Var = this.a;
-        i8Var.finishFragment();
-        o4Var = ((org.telegram.ui.ActionBar.e2) i8Var).parentLayout;
-        if (o4Var != null) {
-            o4Var2 = ((org.telegram.ui.ActionBar.e2) i8Var).parentLayout;
-            if (o4Var2.getFragmentStack().size() >= 2) {
-                o4Var3 = ((org.telegram.ui.ActionBar.e2) i8Var).parentLayout;
-                List fragmentStack = o4Var3.getFragmentStack();
-                o4Var4 = ((org.telegram.ui.ActionBar.e2) i8Var).parentLayout;
-                org.telegram.ui.ActionBar.e2 e2Var = (org.telegram.ui.ActionBar.e2) fragmentStack.get(o4Var4.getFragmentStack().size() - 2);
-                if (e2Var instanceof an) {
-                    ((an) e2Var).j8(i8Var.Q, i8Var.R + 86400, z10);
-                    return;
-                }
-                return;
-            }
-        }
-        an anVar = i8Var.O;
-        if (anVar != null) {
-            anVar.j8(i8Var.Q, i8Var.R + 86400, z10);
-        }
-    }
-
-    @Override // fi.e9
-    public boolean l(long j3, int i7, int i10, int i11, fi.f9 f9Var) {
-        i8 i8Var = this.a;
-        if (i8Var.b != null) {
-            int i12 = 0;
-            while (true) {
-                if (i12 >= i8Var.b.getChildCount()) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z10, i7, i10, i11, i12);
+                int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
+                if (this.b != measuredWidth) {
+                    this.b = measuredWidth;
+                    ((i8) this.c).M.f();
                     break;
                 }
-                View childAt = i8Var.b.getChildAt(i12);
-                if (childAt instanceof f8) {
-                    f8 f8Var = (f8) childAt;
-                    if (f8Var.n == null) {
-                        continue;
-                    } else {
-                        for (int i13 = 0; i13 < f8Var.n.size(); i13++) {
-                            ArrayList arrayList = ((g8) f8Var.n.valueAt(i13)).b;
-                            if (arrayList != null && arrayList.contains(Integer.valueOf(i10))) {
-                                int keyAt = f8Var.n.keyAt(i13);
-                                i8Var.i0 = keyAt;
-                                ImageReceiver imageReceiver = (ImageReceiver) f8Var.r.get(keyAt);
-                                if (imageReceiver != null) {
-                                    f9Var.c = imageReceiver;
-                                    if (i8Var.j0 == null) {
-                                        i8Var.j0 = new w0(this, 11);
-                                    }
-                                    f9Var.e = i8Var.j0;
-                                    f9Var.a = f8Var;
-                                    f9Var.g = i8Var.fragmentView;
-                                    f9Var.h = org.telegram.messenger.g0.L(36.0f);
-                                    f9Var.i = i8Var.fragmentView.getBottom();
-                                    f9Var.b = null;
-                                    return true;
-                                }
-                            }
-                        }
-                    }
+                break;
+            case 1:
+                super.onLayout(z10, i7, i10, i11, i12);
+                int i13 = i12 - i10;
+                int i14 = this.b;
+                if (i14 != -1 && Math.abs(i14 - i13) > org.telegram.messenger.g0.L(20.0f)) {
+                    ((np) this.c).b.y0(r3.W - 1);
                 }
-                i12++;
-            }
+                this.b = i13;
+                break;
+            default:
+                super.onLayout(z10, i7, i10, i11, i12);
+                Point point = org.telegram.messenger.g0.q;
+                int i15 = point.x + point.y;
+                int i16 = this.b;
+                if (i16 > 0 && i16 != i15) {
+                    setVisibility(8);
+                    org.telegram.ui.Components.z10 z10Var = (org.telegram.ui.Components.z10) this.c;
+                    z10Var.y = false;
+                    z10Var.a();
+                }
+                this.b = i15;
+                break;
         }
-        return false;
     }
 
-    @Override // fi.e9
-    public /* synthetic */ void c(boolean z10) {
+    @Override // android.view.View
+    public void setVisibility(int i7) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i7);
+                if (i7 == 8) {
+                    this.b = -1;
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i7);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w7(i8 i8Var, Context context) {
+        super(context);
+        this.a = 0;
+        this.c = i8Var;
     }
 }

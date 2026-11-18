@@ -1,68 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.TimeAnimator;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pu0 {
-    public final e5 a;
-    public Drawable b;
+public final class pu0 extends TimeAnimator {
+    public int a;
+    public int b;
+    public ValueAnimator.AnimatorUpdateListener c;
+    public Float d;
+    public float[] e;
 
-    public pu0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+    @Override // android.animation.ValueAnimator
+    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
+        this.c = animatorUpdateListener;
     }
 
-    public final e5 a(TLObject tLObject, int i7, boolean z10) {
-        return tLObject instanceof TLRPC.User ? b((TLRPC.User) tLObject, null, i7, z10) : tLObject instanceof TLRPC.Chat ? b(null, (TLRPC.Chat) tLObject, i7, z10) : b(null, null, i7, z10);
+    @Override // android.animation.ValueAnimator, android.animation.Animator
+    public final void end() {
+        this.c = null;
+        super.end();
     }
 
-    public final e5 b(TLRPC.User user, TLRPC.Chat chat, int i7, boolean z10) {
-        e5 e5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new fq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
+    @Override // android.animation.ValueAnimator
+    public final Object getAnimatedValue() {
+        return this.d;
+    }
+
+    @Override // android.animation.ValueAnimator
+    public final void setFloatValues(float[] fArr) {
+        super.setFloatValues(fArr);
+        this.e = fArr;
+    }
+
+    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
+    public final void start() {
+        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.ou0
+            @Override // android.animation.TimeAnimator.TimeListener
+            public final void onTimeUpdate(TimeAnimator timeAnimator, long j3, long j10) {
+                int i7;
+                pu0 pu0Var = pu0.this;
+                int i10 = pu0Var.a;
+                if (i10 <= 0 || (i7 = pu0Var.b) <= 0) {
+                    pu0Var.end();
+                    return;
+                }
+                int i11 = i10 - 1;
+                pu0Var.a = i11;
+                if (pu0Var.c != null) {
+                    float[] fArr = pu0Var.e;
+                    if (fArr == null || fArr.length != 2) {
+                        pu0Var.end();
+                        return;
+                    }
+                    float interpolation = pu0Var.getInterpolator().getInterpolation(1.0f - (i11 / i7));
+                    float[] fArr2 = pu0Var.e;
+                    float f10 = fArr2[0];
+                    pu0Var.d = Float.valueOf(((fArr2[1] - f10) * interpolation) + f10);
+                    pu0Var.c.onAnimationUpdate(pu0Var);
+                }
             }
-            this.b = drawable;
-            e5Var.g(drawable, z10);
-            e5Var.k(null);
-            return e5Var;
-        }
-        if (chat != null && org.telegram.messenger.m5.f(chat.emoji_status) != 0) {
-            e5Var.j(org.telegram.messenger.m5.f(chat.emoji_status), z10);
-            e5Var.k(Integer.valueOf(i7));
-            return e5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new fq(org.telegram.ui.ActionBar.j6.f1, org.telegram.ui.ActionBar.j6.i1);
-            }
-            this.b = drawable2;
-            e5Var.g(drawable2, z10);
-            e5Var.k(null);
-            return e5Var;
-        }
-        if (user != null && org.telegram.messenger.m5.f(user.emoji_status) != 0) {
-            e5Var.j(org.telegram.messenger.m5.f(user.emoji_status), z10);
-            e5Var.k(Integer.valueOf(i7));
-            return e5Var;
-        }
-        if (user == null || !user.premium) {
-            e5Var.g(null, z10);
-            e5Var.k(null);
-            return e5Var;
-        }
-        e5Var.g((Drawable) ia.f.d().f, z10);
-        e5Var.k(Integer.valueOf(i7));
-        return e5Var;
-    }
-
-    public pu0(int i7, View view) {
-        this.a = new e5(org.telegram.messenger.g0.L(i7), view);
+        });
+        int duration = (int) (getDuration() / org.telegram.messenger.g0.t);
+        this.a = duration;
+        this.b = duration;
+        super.start();
     }
 }

@@ -1,43 +1,76 @@
 package di;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.o10;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class b4 extends ClickableSpan {
+public final /* synthetic */ class b4 implements x10 {
     public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ b4(int i7) {
-        this.a = i7;
+    public /* synthetic */ b4(Object obj, Object obj2, Object obj3, int i7, String str, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.e = obj2;
+        this.f = obj3;
+        this.b = i7;
+        this.c = str;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        int i7 = this.a;
+        Object obj2 = this.f;
+        Object obj3 = this.e;
+        Object obj4 = this.d;
+        switch (i7) {
             case 0:
+                Context context = (Context) obj3;
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                ((boolean[]) obj4)[0] = false;
+                if (arrayList != null) {
+                    new h1(context, i6Var, this.b, this.c, arrayList, false).show();
+                    break;
+                }
                 break;
             default:
-                vf.c.t(view.getContext(), "https://t.me/BotFather");
+                LaunchActivity launchActivity = (LaunchActivity) obj4;
+                mp mpVar = (mp) obj3;
+                vf.b bVar = (vf.b) obj2;
+                Long l10 = (Long) obj;
+                String str = LaunchActivity.C1;
+                TLRPC.User c22 = (l10 == null || l10.longValue() <= 0 || l10.longValue() == Long.MAX_VALUE) ? null : mpVar.c2(l10);
+                int i10 = this.b;
+                if (c22 != null && !o10.C(c22)) {
+                    launchActivity.Y(i10, c22, this.c, bVar);
+                    break;
+                } else {
+                    if (bVar != null) {
+                        bVar.b();
+                    }
+                    if (c22 == null) {
+                        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                        if (Q != null) {
+                            org.telegram.messenger.f3.o(null, 2131747942, org.telegram.ui.Components.lc.b0(Q), null);
+                            break;
+                        }
+                    } else {
+                        launchActivity.m0(i10, c22.id, null);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setUnderlineText(false);
-                textPaint.setColor(-1);
-                break;
-            default:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-        }
-    }
-
-    private final void a(View view) {
     }
 }

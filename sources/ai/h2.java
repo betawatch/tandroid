@@ -6,16 +6,13 @@ import android.graphics.Matrix;
 import android.graphics.Shader;
 import android.os.SystemClock;
 import android.text.Editable;
-import android.text.style.CharacterStyle;
-import android.util.Log;
 import android.view.inputmethod.BaseInputConnection;
 import android.widget.EditText;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class h2 {
-    public static long o;
     public final TextView a;
     public int b;
     public int c;
@@ -93,19 +90,6 @@ public final class h2 {
             this.i = d2Var2;
             editable.setSpan(d2Var2, max, length, 33);
         }
-        StringBuilder sb2 = new StringBuilder();
-        for (Object obj3 : (CharacterStyle[]) editable.getSpans(0, length, CharacterStyle.class)) {
-            sb2.append(' ');
-            sb2.append(obj3.getClass().getSimpleName());
-            sb2.append('[');
-            sb2.append(editable.getSpanStart(obj3));
-            sb2.append(',');
-            sb2.append(editable.getSpanEnd(obj3));
-            sb2.append(')');
-        }
-        StringBuilder n10 = i5.c.n("draft from=", max, " len=", length, " spans:");
-        n10.append((Object) sb2);
-        Log.d("DICTDBG", n10.toString());
         g();
     }
 

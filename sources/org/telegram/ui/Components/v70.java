@@ -2,78 +2,130 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.MotionEvent;
-import android.view.ViewConfiguration;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class v70 extends org.telegram.ui.ActionBar.j5 {
-    public final n2.o0 N0;
-    public final Paint O0;
-    public a80 P0;
+public final class v70 extends View {
+    public static DecelerateInterpolator w;
+    public static Paint x;
+    public long a;
+    public float b;
+    public float c;
+    public long d;
+    public float e;
+    public float f;
+    public int h;
+    public int n;
+    public final RectF r;
+    public org.telegram.ui.Components.voip.n s;
 
     public v70(Context context) {
         super(context);
-        this.N0 = new n2.o0(this);
-        this.O0 = new Paint(1);
-    }
-
-    private int getLinkColor() {
-        return i0.a.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
-    }
-
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public void onDraw(Canvas canvas) {
-        if (isClickable()) {
-            RectF rectF = org.telegram.messenger.g0.P;
-            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
-            int linkColor = getLinkColor();
-            Paint paint = this.O0;
-            paint.setColor(linkColor);
-            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
+        this.f = 1.0f;
+        this.r = new RectF();
+        if (w == null) {
+            w = new DecelerateInterpolator();
+            Paint paint = new Paint(1);
+            x = paint;
+            paint.setStrokeCap(Paint.Cap.ROUND);
+            x.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         }
-        super.onDraw(canvas);
-        if (isClickable() && this.N0.h(canvas)) {
+    }
+
+    public final void a(boolean z10, float f10) {
+        if (z10) {
+            this.c = this.e;
+        } else {
+            this.e = f10;
+            this.c = f10;
+        }
+        if (f10 != 1.0f) {
+            this.f = 1.0f;
+        }
+        this.b = f10;
+        this.d = 0L;
+        this.a = System.currentTimeMillis();
+        invalidate();
+    }
+
+    public float getCurrentProgress() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i7 = this.h;
+        RectF rectF = this.r;
+        if (i7 != 0 && this.e != 1.0f) {
+            x.setColor(i7);
+            x.setAlpha((int) (this.f * 255.0f));
+            getWidth();
+            rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+            canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        }
+        x.setColor(this.n);
+        x.setAlpha((int) (this.f * 255.0f));
+        rectF.set(0.0f, 0.0f, getWidth() * this.e, getHeight());
+        canvas.drawRoundRect(rectF, getHeight() / 2.0f, getHeight() / 2.0f, x);
+        if (this.f > 0.0f) {
+            if (this.s == null) {
+                org.telegram.ui.Components.voip.n nVar = new org.telegram.ui.Components.voip.n(org.telegram.messenger.ks.q2, 0);
+                this.s = nVar;
+                nVar.k = false;
+                nVar.n = 0.8f;
+                nVar.m = 1.2f;
+            }
+            this.s.f = getMeasuredWidth();
+            this.s.a(getHeight() / 2.0f, canvas, rectF, null);
+            invalidate();
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j3 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        float f10 = this.e;
+        if (f10 != 1.0f) {
+            float f11 = this.b;
+            if (f10 != f11) {
+                float f12 = this.c;
+                float f13 = f11 - f12;
+                if (f13 > 0.0f) {
+                    long j10 = this.d + j3;
+                    this.d = j10;
+                    if (j10 >= 300) {
+                        this.e = f11;
+                        this.c = f11;
+                        this.d = 0L;
+                    } else {
+                        this.e = (w.getInterpolation(j10 / 300.0f) * f13) + f12;
+                    }
+                }
+                invalidate();
+            }
+        }
+        float f14 = this.e;
+        if (f14 < 1.0f || f14 != 1.0f) {
+            return;
+        }
+        float f15 = this.f;
+        if (f15 != 0.0f) {
+            float f16 = f15 - (j3 / 200.0f);
+            this.f = f16;
+            if (f16 <= 0.0f) {
+                this.f = 0.0f;
+            }
             invalidate();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.j5, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!isClickable()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        n2.o0 o0Var = this.N0;
-        if (o0Var != null) {
-            if (motionEvent.getAction() == 0) {
-                a80 a80Var = new a80(null, null, motionEvent.getX(), motionEvent.getY(), 0);
-                a80Var.d(getLinkColor());
-                this.P0 = a80Var;
-                o0Var.b(a80Var, null);
-                u70 b10 = this.P0.b();
-                b10.e(null, 0, 0.0f, 0.0f);
-                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
-                org.telegram.messenger.g0.i3(new vs(21, this, a80Var), ViewConfiguration.getLongPressTimeout());
-                return true;
-            }
-            if (motionEvent.getAction() == 1) {
-                o0Var.f(true);
-                if (this.P0 != null) {
-                    performClick();
-                }
-                this.P0 = null;
-                return true;
-            }
-            if (motionEvent.getAction() == 3) {
-                o0Var.f(true);
-                this.P0 = null;
-                return true;
-            }
-        }
-        return this.P0 != null || super.onTouchEvent(motionEvent);
+    public void setBackColor(int i7) {
+        this.h = i7;
+    }
+
+    public void setProgressColor(int i7) {
+        this.n = i7;
     }
 }

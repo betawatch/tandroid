@@ -1,11 +1,79 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.os.Bundle;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fp implements DialogInterface.OnClickListener {
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i7) {
+public final /* synthetic */ class fp implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ np b;
+
+    public /* synthetic */ fp(np npVar, int i7) {
+        this.a = i7;
+        this.b = npVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        np npVar = this.b;
+        int i10 = 1;
+        switch (i7) {
+            case 0:
+                TLRPC.User user = npVar.w;
+                kp kpVar = npVar.Y0;
+                if (kpVar != null) {
+                    kpVar.b(0, npVar.L ? npVar.N : null, null, npVar.T);
+                }
+                Bundle k10 = a8.p0.k("scrollToTopOnResume", true);
+                k10.putLong("chat_id", npVar.x.id);
+                if (!npVar.getMessagesController().E(k10, npVar, null, null)) {
+                    npVar.y0(false);
+                    break;
+                } else {
+                    bn bnVar = new bn(k10);
+                    npVar.presentFragment(bnVar, true);
+                    if (org.telegram.ui.Components.lc.a(bnVar)) {
+                        boolean z10 = npVar.a1;
+                        if (!z10 || !npVar.L) {
+                            if (!z10 && !npVar.M && npVar.L) {
+                                org.telegram.ui.Components.lc.C(user.first_name, bnVar).j();
+                                break;
+                            }
+                        } else {
+                            String str = user.first_name;
+                            org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(bnVar.getParentActivity(), bnVar.Ba);
+                            obVar.d(R.raw.ic_admin, "Shield");
+                            org.telegram.messenger.f3.q("UserAddedAsAdminHint", null, 2131743531, new Object[]{str}, obVar.b);
+                            org.telegram.ui.Components.gc.g(bnVar, obVar, 1500).j();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                npVar.w0(false);
+                break;
+            default:
+                if (npVar.r) {
+                    long j3 = npVar.n;
+                    org.telegram.ui.ActionBar.u1[] u1VarArr = {new org.telegram.ui.ActionBar.u1(3, npVar.getParentActivity(), null)};
+                    npVar.getMessagesController().o5(npVar.s, j3, true, false, true, new zf(u1VarArr, 2), new zf(u1VarArr, 3));
+                    u1VarArr[0].r(300L);
+                }
+                kp kpVar2 = npVar.Y0;
+                if (kpVar2 != null) {
+                    TLRPC.TL_chatAdminRights tL_chatAdminRights = npVar.N;
+                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!npVar.H || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!npVar.F || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
+                        i10 = 0;
+                    }
+                    kpVar2.b(i10, tL_chatAdminRights, npVar.P, npVar.T);
+                    npVar.finishFragment();
+                    break;
+                }
+                break;
+        }
     }
 }

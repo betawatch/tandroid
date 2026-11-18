@@ -10,13 +10,13 @@ import h2.l0;
 import h2.x;
 import i2.s;
 import java.math.RoundingMode;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a implements b {
     public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
-    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, ns.s1, ns.D1, ns.O1, ns.Z1, ns.n2, ns.D2, ns.U2, ns.m3, ns.G3, ns.c4, ns.C4, ns.e5, ns.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
+    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, ks.s1, ks.D1, ks.O1, ks.Z1, ks.n2, ks.D2, ks.U2, ks.n3, ks.G3, ks.c4, ks.C4, ks.e5, ks.I5, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
     public final q a;
     public final i0 b;
     public final s c;
@@ -94,7 +94,7 @@ public final class a implements b {
     @Override // n4.b
     public final void c(int i7, long j3) {
         e eVar = new e(this.c, this.d, i7, j3);
-        this.a.f(eVar);
+        this.a.j(eVar);
         u uVar = this.h;
         i0 i0Var = this.b;
         i0Var.g(uVar);

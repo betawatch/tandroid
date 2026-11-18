@@ -2,11 +2,11 @@ package bi;
 
 import android.view.View;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.i20;
-import org.telegram.ui.Components.cc;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.n10;
+import org.telegram.ui.Components.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -29,11 +29,11 @@ public final /* synthetic */ class m implements View.OnClickListener {
                 int value = yVar.Y1.getValue();
                 int e10 = (int) yVar.h2.e();
                 if (value >= e10) {
-                    yVar.g1(value);
+                    yVar.h1(value);
                     break;
                 } else {
-                    org.telegram.messenger.g0.E3(yVar.W1);
-                    i20.t(hd.G(e10, "Gift2AuctionMinimumBidIncreased", new Object[0]), new cc(yVar.c, yVar.J0), R.raw.info, 36);
+                    org.telegram.messenger.g0.D3(yVar.W1);
+                    n10.u(gd.G(e10, "Gift2AuctionMinimumBidIncreased", new Object[0]), new lc(yVar.c, yVar.J0), R.raw.info, 36);
                     break;
                 }
             default:

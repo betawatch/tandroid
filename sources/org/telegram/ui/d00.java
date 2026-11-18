@@ -1,16 +1,36 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class d00 extends FrameLayout {
-    public org.telegram.ui.Components.fh0 a;
+public final /* synthetic */ class d00 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FiltersSetupActivity b;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30), i10);
+    public /* synthetic */ d00(FiltersSetupActivity filtersSetupActivity, int i7) {
+        this.a = i7;
+        this.b = filtersSetupActivity;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                FiltersSetupActivity filtersSetupActivity = this.b;
+                filtersSetupActivity.getClass();
+                filtersSetupActivity.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 1:
+                FiltersSetupActivity filtersSetupActivity2 = this.b;
+                filtersSetupActivity2.a.e1(new zr(filtersSetupActivity2, 12), 700, true);
+                break;
+            case 2:
+                FiltersSetupActivity filtersSetupActivity3 = this.b;
+                filtersSetupActivity3.getClass();
+                filtersSetupActivity3.showDialog(new ug.z0((org.telegram.ui.ActionBar.h2) filtersSetupActivity3, 9, true));
+                break;
+            default:
+                this.b.getMessagesController().i3(true, null);
+                break;
+        }
     }
 }

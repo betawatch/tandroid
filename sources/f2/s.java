@@ -1,124 +1,201 @@
 package f2;
 
+import a8.la;
 import h2.l0;
+import java.math.RoundingMode;
 import java.nio.ByteBuffer;
-import org.telegram.messenger.ns;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class s extends n {
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0046  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0117 A[ADDED_TO_REGION, LOOP:7: B:48:0x0117->B:49:0x0119, LOOP_START, PHI: r0
-      0x0117: PHI (r0v1 int) = (r0v0 int), (r0v2 int) binds: [B:15:0x0044, B:49:0x0119] A[DONT_GENERATE, DONT_INLINE]] */
-    @Override // f2.m
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(ByteBuffer byteBuffer) {
-        int i7;
-        int position = byteBuffer.position();
-        int limit = byteBuffer.limit();
-        int i10 = limit - position;
-        int i11 = this.b.c;
-        if (i11 != 3) {
-            if (i11 != 4) {
-                if (i11 != 21) {
-                    if (i11 != 22) {
-                        if (i11 != 268435456) {
-                            if (i11 != 1342177280) {
-                                if (i11 != 1610612736) {
-                                    if (i11 != 1879048192) {
-                                        throw new IllegalStateException();
-                                    }
-                                    i10 /= 4;
-                                }
-                            }
-                        }
-                        ByteBuffer l10 = l(i10);
-                        i7 = this.b.c;
-                        if (i7 == 3) {
-                            while (position < limit) {
-                                l10.put((byte) 0);
-                                l10.put((byte) ((byteBuffer.get(position) & 255) - 128));
-                                position++;
-                            }
-                        } else if (i7 == 4) {
-                            while (position < limit) {
-                                short h = (short) (l0.h(byteBuffer.getFloat(position), -1.0f, 1.0f) * 32767.0f);
-                                l10.put((byte) (h & 255));
-                                l10.put((byte) ((h >> 8) & ns.e4));
-                                position += 4;
-                            }
-                        } else if (i7 == 21) {
-                            while (position < limit) {
-                                l10.put(byteBuffer.get(position + 1));
-                                l10.put(byteBuffer.get(position + 2));
-                                position += 3;
-                            }
-                        } else if (i7 == 22) {
-                            while (position < limit) {
-                                l10.put(byteBuffer.get(position + 2));
-                                l10.put(byteBuffer.get(position + 3));
-                                position += 4;
-                            }
-                        } else if (i7 == 268435456) {
-                            while (position < limit) {
-                                l10.put(byteBuffer.get(position + 1));
-                                l10.put(byteBuffer.get(position));
-                                position += 2;
-                            }
-                        } else if (i7 == 1342177280) {
-                            while (position < limit) {
-                                l10.put(byteBuffer.get(position + 1));
-                                l10.put(byteBuffer.get(position));
-                                position += 3;
-                            }
-                        } else if (i7 == 1610612736) {
-                            while (position < limit) {
-                                l10.put(byteBuffer.get(position + 1));
-                                l10.put(byteBuffer.get(position));
-                                position += 4;
-                            }
-                        } else {
-                            if (i7 != 1879048192) {
-                                throw new IllegalStateException();
-                            }
-                            while (position < limit) {
-                                short max = (short) (Math.max(-1.0d, Math.min(byteBuffer.getDouble(position), 1.0d)) * 32767.0d);
-                                l10.put((byte) (max & 255));
-                                l10.put((byte) ((max >> 8) & ns.e4));
-                                position += 8;
-                            }
-                        }
-                        byteBuffer.position(byteBuffer.limit());
-                        l10.flip();
-                    }
+public final class s implements n {
+    public int b;
+    public float c;
+    public float d;
+    public k e;
+    public k f;
+    public k g;
+    public k h;
+    public boolean i;
+    public r j;
+    public ByteBuffer k;
+    public ByteBuffer l;
+    public long m;
+    public long n;
+    public boolean o;
+
+    @Override // f2.n
+    public final boolean a() {
+        if (this.o) {
+            r rVar = this.j;
+            if (rVar != null) {
+                la.p(rVar.k >= 0);
+                if (rVar.i.o() * rVar.k * rVar.b == 0) {
                 }
-                i10 /= 3;
             }
-            i10 /= 2;
-            ByteBuffer l102 = l(i10);
-            i7 = this.b.c;
-            if (i7 == 3) {
-            }
-            byteBuffer.position(byteBuffer.limit());
-            l102.flip();
+            return true;
         }
-        i10 *= 2;
-        ByteBuffer l1022 = l(i10);
-        i7 = this.b.c;
-        if (i7 == 3) {
-        }
-        byteBuffer.position(byteBuffer.limit());
-        l1022.flip();
+        return false;
     }
 
     @Override // f2.n
-    public final j h(j jVar) {
-        int i7 = jVar.c;
-        if (i7 == 3 || i7 == 2 || i7 == 268435456 || i7 == 21 || i7 == 1342177280 || i7 == 22 || i7 == 1610612736 || i7 == 4 || i7 == 1879048192) {
-            return i7 != 2 ? new j(jVar.a, jVar.b, 2) : j.e;
+    public final ByteBuffer b() {
+        r rVar = this.j;
+        if (rVar != null) {
+            q qVar = rVar.i;
+            int i7 = rVar.b;
+            la.p(rVar.k >= 0);
+            int o4 = qVar.o() * rVar.k * i7;
+            if (o4 > 0) {
+                if (this.k.capacity() < o4) {
+                    this.k = ByteBuffer.allocateDirect(o4).order(ByteOrder.nativeOrder());
+                } else {
+                    this.k.clear();
+                }
+                ByteBuffer byteBuffer = this.k;
+                la.p(rVar.k >= 0);
+                int min = Math.min(byteBuffer.remaining() / (qVar.o() * i7), rVar.k);
+                qVar.b(min, byteBuffer);
+                rVar.k -= min;
+                System.arraycopy(qVar.h(), min * i7, qVar.h(), 0, rVar.k * i7);
+                this.k.flip();
+                this.n += o4;
+                this.l = this.k;
+            }
         }
-        throw new l(jVar);
+        ByteBuffer byteBuffer2 = this.l;
+        this.l = n.a;
+        return byteBuffer2;
+    }
+
+    @Override // f2.n
+    public final void c(ByteBuffer byteBuffer) {
+        if (byteBuffer.hasRemaining()) {
+            r rVar = this.j;
+            rVar.getClass();
+            this.m += byteBuffer.remaining();
+            int remaining = byteBuffer.remaining();
+            int i7 = rVar.b;
+            q qVar = rVar.i;
+            int o4 = remaining / (qVar.o() * i7);
+            qVar.p(o4);
+            qVar.a(remaining, byteBuffer);
+            rVar.j += o4;
+            rVar.b();
+        }
+    }
+
+    @Override // f2.n
+    public final void d(l lVar) {
+        if (isActive()) {
+            k kVar = this.e;
+            this.g = kVar;
+            k kVar2 = this.f;
+            this.h = kVar2;
+            if (this.i) {
+                this.j = new r(kVar.a, kVar.b, this.c, this.d, kVar2.a, kVar.c == 4);
+            } else {
+                r rVar = this.j;
+                if (rVar != null) {
+                    rVar.j = 0;
+                    rVar.k = 0;
+                    rVar.l = 0;
+                    rVar.m = 0;
+                    rVar.n = 0;
+                    rVar.o = 0;
+                    rVar.p = 0;
+                    rVar.q = 0.0d;
+                    rVar.i.flush();
+                }
+            }
+        }
+        this.l = n.a;
+        this.m = 0L;
+        this.n = 0L;
+        this.o = false;
+    }
+
+    @Override // f2.n
+    public final k e(k kVar) {
+        int i7 = kVar.c;
+        if (i7 != 2 && i7 != 4) {
+            throw new m(kVar);
+        }
+        int i10 = this.b;
+        if (i10 == -1) {
+            i10 = kVar.a;
+        }
+        this.e = kVar;
+        k kVar2 = new k(i10, kVar.b, i7);
+        this.f = kVar2;
+        this.i = true;
+        return kVar2;
+    }
+
+    @Override // f2.n
+    public final void f() {
+        r rVar = this.j;
+        if (rVar != null) {
+            int i7 = rVar.j;
+            float f10 = rVar.c;
+            float f11 = rVar.d;
+            double d = f10 / f11;
+            int i10 = rVar.k + ((int) (((((((i7 - r6) / d) + rVar.o) + rVar.q) + rVar.l) / (rVar.e * f11)) + 0.5d));
+            rVar.q = 0.0d;
+            q qVar = rVar.i;
+            int i11 = rVar.h * 2;
+            qVar.p(i11 + i7);
+            qVar.c(i7 * rVar.b, i11);
+            rVar.j = i11 + rVar.j;
+            rVar.b();
+            if (rVar.k > i10) {
+                rVar.k = Math.max(i10, 0);
+            }
+            rVar.j = 0;
+            rVar.o = 0;
+            rVar.l = 0;
+        }
+        this.o = true;
+    }
+
+    @Override // f2.n
+    public final long g(long j3) {
+        if (this.n < 1024) {
+            return (long) (j3 / this.c);
+        }
+        long j10 = this.m;
+        this.j.getClass();
+        long o4 = j10 - (r2.i.o() * (r2.j * r2.b));
+        int i7 = this.h.a;
+        int i10 = this.g.a;
+        return i7 == i10 ? l0.a0(j3, this.n, o4, RoundingMode.DOWN) : l0.a0(j3, this.n * i10, o4 * i7, RoundingMode.DOWN);
+    }
+
+    @Override // f2.n
+    public final boolean isActive() {
+        if (this.f.a != -1) {
+            return Math.abs(this.c - 1.0f) >= 1.0E-4f || Math.abs(this.d - 1.0f) >= 1.0E-4f || this.f.a != this.e.a;
+        }
+        return false;
+    }
+
+    @Override // f2.n
+    public final void reset() {
+        this.c = 1.0f;
+        this.d = 1.0f;
+        k kVar = k.e;
+        this.e = kVar;
+        this.f = kVar;
+        this.g = kVar;
+        this.h = kVar;
+        ByteBuffer byteBuffer = n.a;
+        this.k = byteBuffer;
+        this.l = byteBuffer;
+        this.b = -1;
+        this.i = false;
+        this.j = null;
+        this.m = 0L;
+        this.n = 0L;
+        this.o = false;
     }
 }

@@ -6,17 +6,17 @@ import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class c2 extends HorizontalScrollView {
-    public final /* synthetic */ n50 a;
+    public final /* synthetic */ p50 a;
     public final /* synthetic */ e2 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(e2 e2Var, Context context, n50 n50Var) {
+    public c2(e2 e2Var, Context context, p50 p50Var) {
         super(context);
         this.b = e2Var;
-        this.a = n50Var;
+        this.a = p50Var;
     }
 
     @Override // android.view.View
@@ -24,10 +24,10 @@ public final class c2 extends HorizontalScrollView {
         e2 e2Var;
         TL_iv.pageBlockPreformatted pageblockpreformatted;
         super.onScrollChanged(i7, i10, i11, i12);
-        n50 n50Var = this.a;
-        if (n50Var.d != null) {
-            n50Var.d = null;
-            n50Var.f = null;
+        p50 p50Var = this.a;
+        if (p50Var.d != null) {
+            p50Var.d = null;
+            p50Var.f = null;
         }
         e2 e2Var2 = this.b;
         TL_iv.pageBlockPreformatted pageblockpreformatted2 = e2Var2.f;

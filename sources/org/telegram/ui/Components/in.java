@@ -1,11 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public interface in {
-    void c(TLRPC.MessageMedia messageMedia, Editable editable, sh.d dVar, ArrayList arrayList, boolean z10, int i7, long j3);
+public final class in extends yw0 {
+    @Override // org.telegram.ui.Components.yw0
+    public final int d() {
+        return 3;
+    }
 }

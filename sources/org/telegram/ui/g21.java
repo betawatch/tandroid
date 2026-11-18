@@ -2,25 +2,21 @@ package org.telegram.ui;
 
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g21 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.kg a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ i21 c;
+public final class g21 implements View.OnLongClickListener {
+    public final /* synthetic */ TLRPC.TL_authorization a;
+    public final /* synthetic */ m21 b;
 
-    public g21(i21 i21Var, org.telegram.ui.Components.kg kgVar, TLRPC.TL_authorization tL_authorization) {
-        this.c = i21Var;
-        this.a = kgVar;
-        this.b = tL_authorization;
+    public g21(m21 m21Var, TLRPC.TL_authorization tL_authorization) {
+        this.b = m21Var;
+        this.a = tL_authorization;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        ((Switch) this.a.f).c(!r0.h, true);
-        this.b.call_requests_disabled = !((Switch) r4.f).h;
-        i21.J0(this.c);
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        m21.J0(this.b, this.a.country);
+        return true;
     }
 }

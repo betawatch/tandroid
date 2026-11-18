@@ -1,18 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import a8.bb;
-import af.b;
+import b5.a;
+import b7.h;
 import com.google.android.recaptcha.RecaptchaAction;
 import gd.c;
 import java.util.concurrent.TimeUnit;
-import jd.a;
 import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
 import rd.l;
 import zd.b0;
 import zd.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzgb implements zzdw {
     private final zzfp zza;
@@ -26,7 +25,7 @@ public final class zzgb implements zzdw {
         zzdu zzduVar;
         this.zza = zzfpVar;
         int i7 = zzby.zza;
-        this.zzc = bb.b(zzfv.zza);
+        this.zzc = a.c(zzfv.zza);
         zzduVar = zzdv.zza;
         this.zzf = zzduVar;
     }
@@ -59,10 +58,10 @@ public final class zzgb implements zzdw {
             if ((i10 & TLObject.FLAG_31) != 0) {
                 zzfrVar.zzc = i10 - TLObject.FLAG_31;
                 Object obj = zzfrVar.zza;
-                Object obj2 = a.a;
+                Object obj2 = jd.a.a;
                 i7 = zzfrVar.zzc;
                 if (i7 != 0) {
-                    b.c(obj);
+                    h.b(obj);
                     zzcs zzcsVar2 = new zzcs();
                     zzfrVar.zzd = zzcsVar2;
                     zzfrVar.zzc = 1;
@@ -75,7 +74,7 @@ public final class zzgb implements zzdw {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     zzcsVar = zzfrVar.zzd;
-                    b.c(obj);
+                    h.b(obj);
                 }
                 zzcsVar.zzc();
                 return new Long(zzcsVar.zza(TimeUnit.MILLISECONDS));
@@ -83,7 +82,7 @@ public final class zzgb implements zzdw {
         }
         zzfrVar = new zzfr(this, cVar);
         Object obj3 = zzfrVar.zza;
-        Object obj22 = a.a;
+        Object obj22 = jd.a.a;
         i7 = zzfrVar.zzc;
         if (i7 != 0) {
         }

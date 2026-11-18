@@ -2,15 +2,15 @@ package b3;
 
 import android.os.Handler;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public final Handler a;
-    public final m2.e b;
+    public final m2.d b;
     public boolean c;
 
-    public c(Handler handler, m2.e eVar) {
+    public c(Handler handler, m2.d dVar) {
         this.a = handler;
-        this.b = eVar;
+        this.b = dVar;
     }
 }

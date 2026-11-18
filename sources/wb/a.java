@@ -4,7 +4,7 @@ import android.support.v4.media.session.a0;
 import java.util.Arrays;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -28,7 +28,7 @@ public final class a {
             return false;
         }
         a aVar = (a) obj;
-        return m.k(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && m.k(this.d, aVar.d);
+        return m.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && m.l(this.d, aVar.d);
     }
 
     public final int hashCode() {

@@ -1,6 +1,6 @@
 package ai;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,41 +14,43 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.ni;
 import org.telegram.messenger.oi;
-import org.telegram.messenger.pi;
-import org.telegram.messenger.r3;
-import org.telegram.messenger.si;
-import org.telegram.messenger.tr;
-import org.telegram.messenger.v10;
+import org.telegram.messenger.ri;
+import org.telegram.messenger.rr;
+import org.telegram.messenger.t10;
+import org.telegram.messenger.t3;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.ib0;
-import org.telegram.ui.Components.ol0;
-import org.telegram.ui.Components.s4;
-import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.a5;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.lb;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.wl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasscodeActivity;
 import org.telegram.ui.SessionsActivity;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.an;
-import org.telegram.ui.d30;
-import org.telegram.ui.h30;
-import org.telegram.ui.ld0;
+import org.telegram.ui.Wallet.n6;
+import org.telegram.ui.bn;
+import org.telegram.ui.g30;
+import org.telegram.ui.k30;
+import org.telegram.ui.md0;
 import org.telegram.ui.pa0;
 import org.telegram.ui.sg;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q1, h2.o, NativeInstance.PayloadCallback, v10, p4.l0, h2.j, w5.b {
+public final /* synthetic */ class r1 implements org.telegram.ui.ActionBar.r1, oi, h2.o, NativeInstance.PayloadCallback, t10, p4.l0, h2.j, w5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -68,29 +70,29 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void accept(Object obj) {
-        p4.m1 m1Var;
+        p4.o1 o1Var;
         p4.d0 d0Var = (p4.d0) this.c;
         p4.v vVar = (p4.v) this.d;
         try {
-            m1Var = (p4.m1) ((m9.y) obj).get();
-            ja.k(m1Var, "SessionResult must not be null");
+            o1Var = (p4.o1) ((m9.y) obj).get();
+            la.k(o1Var, "SessionResult must not be null");
         } catch (InterruptedException e10) {
             e = e10;
             h2.a.m("MediaSessionStub", "Session operation failed", e);
-            m1Var = new p4.m1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+            o1Var = new p4.o1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         } catch (CancellationException e11) {
             h2.a.m("MediaSessionStub", "Session operation cancelled", e11);
-            m1Var = new p4.m1(1);
+            o1Var = new p4.o1(1);
         } catch (ExecutionException e12) {
             e = e12;
             h2.a.m("MediaSessionStub", "Session operation failed", e);
-            m1Var = new p4.m1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
+            o1Var = new p4.o1(!(e.getCause() instanceof UnsupportedOperationException) ? -6 : -1);
         }
-        p4.c1.r1(d0Var, vVar, this.b, m1Var);
+        p4.e1.r1(d0Var, vVar, this.b, o1Var);
     }
 
-    @Override // org.telegram.messenger.pi
-    public void c(String str, ArrayList arrayList) {
+    @Override // org.telegram.messenger.oi
+    public void e(String str, ArrayList arrayList) {
         jg.a2 a2Var = (jg.a2) this.c;
         HashMap hashMap = (HashMap) this.d;
         jg.c2 c2Var = a2Var.a;
@@ -102,7 +104,7 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
         int size = arrayList.size();
         boolean z10 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            String str2 = ((oi) arrayList.get(i10)).a;
+            String str2 = ((ni) arrayList.get(i10)).a;
             ArrayList arrayList2 = hashMap != null ? (ArrayList) hashMap.get(str2) : null;
             if (arrayList2 != null && !arrayList2.isEmpty()) {
                 a2Var.a();
@@ -132,7 +134,7 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
         String str = hVar.a;
         e2.z zVar = new e2.z();
         h9.g0 g0Var = h9.i0.b;
-        h9.s1 s1Var = h9.s1.e;
+        h9.t1 t1Var = h9.t1.e;
         List list = Collections.EMPTY_LIST;
         e2.e0 e0Var = new e2.e0();
         e2.h0 h0Var = e2.h0.d;
@@ -225,14 +227,25 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
     @Override // w5.b
     public Object g() {
         ia.c cVar = (ia.c) this.c;
-        ((ld0) cVar.d).H((o5.i) this.d, this.b + 1, false);
+        ((md0) cVar.d).H((o5.i) this.d, this.b + 1, false);
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
+            case 1:
+                n6.N0(this.b, (Context) this.c, (i6) this.d);
+                break;
             case 2:
+            case 4:
+            case 5:
+            case 10:
+            case 15:
+            default:
+                StickersActivity.f0((StickersActivity) this.c, (ArrayList) this.d, this.b);
+                break;
+            case 3:
                 kg.s sVar = (kg.s) this.c;
                 TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) this.d;
                 String obj = sVar.getText().toString();
@@ -246,88 +259,81 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
                         tL_inputBusinessChatLink.title = obj;
                         d.b(c10, tL_inputBusinessChatLink, null);
                     }
-                    t1Var.dismiss();
+                    u1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.E3(sVar);
+                    org.telegram.messenger.g0.D3(sVar);
                     break;
                 }
-            case 3:
-            case 4:
-            case 9:
-            case 14:
-            default:
-                StickersActivity.f0((StickersActivity) this.c, (ArrayList) this.d, this.b);
-                break;
-            case 5:
-                an anVar = (an) this.c;
-                anVar.getMessagesController().C3(anVar.e, anVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
-                xb B = cc.B(anVar, true, null, null, anVar.Aa);
-                B.j();
-                cb cbVar = B.e;
-                cbVar.postDelayed(new sg(0, cbVar), 550L);
-                break;
             case 6:
-                an.M0((an) this.c, this.b, (gj) this.d);
+                bn bnVar = (bn) this.c;
+                bnVar.getMessagesController().J3(bnVar.e, bnVar.f, this.b, false, !r10[1], ((boolean[]) this.d)[0]);
+                gc B = lc.B(bnVar, true, null, null, bnVar.Ba);
+                B.j();
+                lb lbVar = B.e;
+                lbVar.postDelayed(new sg(0, lbVar), 550L);
                 break;
             case 7:
-                s4 s4Var = (s4) this.c;
-                tr trVar = (tr) this.d;
-                String trim = s4Var.getText().toString().trim();
+                bn.M0((bn) this.c, this.b, (fj) this.d);
+                break;
+            case 8:
+                a5 a5Var = (a5) this.c;
+                rr rrVar = (rr) this.d;
+                String trim = a5Var.getText().toString().trim();
                 if (trim.length() <= this.b && !trim.isEmpty()) {
-                    trVar.a(trim);
-                    t1Var.dismiss();
+                    rrVar.a(trim);
+                    u1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.E3(s4Var);
+                    org.telegram.messenger.g0.D3(a5Var);
                     break;
                 }
                 break;
-            case 8:
-                ol0 ol0Var = (ol0) this.c;
+            case 9:
+                wl0 wl0Var = (wl0) this.c;
                 TLRPC.Reaction reaction = (TLRPC.Reaction) this.d;
-                String obj2 = ol0Var.getText().toString();
+                String obj2 = wl0Var.getText().toString();
                 if (obj2.length() <= 12) {
-                    np.s1(this.b).l4(ch.p0.d(reaction), obj2);
-                    t1Var.dismiss();
+                    mp.u1(this.b).t4(ch.p0.d(reaction), obj2);
+                    u1Var.dismiss();
                     break;
                 } else {
-                    org.telegram.messenger.g0.E3(ol0Var);
+                    org.telegram.messenger.g0.D3(wl0Var);
                     break;
                 }
-            case 10:
-                d30 d30Var = (d30) this.c;
+            case 11:
+                g30 g30Var = (g30) this.c;
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.d;
-                h30 h30Var = d30Var.s1;
-                r3 r3Var = h30Var.b.V2;
+                k30 k30Var = g30Var.s1;
+                t3 t3Var = k30Var.b.V2;
                 String obj3 = editTextBoldCursor.getText().toString();
                 int i10 = this.b;
-                r3Var.A(i10, obj3);
+                t3Var.A(i10, obj3);
                 org.telegram.messenger.g0.v1(editTextBoldCursor);
-                h30Var.b.n1().j(i10 == 0 ? 39 : 100, 0L, null);
+                k30Var.b.o1().j(i10 == 0 ? 39 : 100, 0L, null);
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().playStartRecordSound();
                     break;
                 }
                 break;
-            case 11:
+            case 12:
                 LaunchActivity launchActivity = (LaunchActivity) this.c;
                 HashMap hashMap = (HashMap) this.d;
                 ArrayList arrayList = launchActivity.e0;
-                if (!arrayList.isEmpty() && org.telegram.messenger.g0.J1((org.telegram.ui.ActionBar.e2) i5.c.h(1, arrayList))) {
+                if (!arrayList.isEmpty() && org.telegram.messenger.g0.J1((org.telegram.ui.ActionBar.h2) i5.c.h(1, arrayList))) {
                     pa0 pa0Var = new pa0(0);
-                    pa0Var.H0 = new s1(hashMap, this.b, 14);
+                    pa0Var.M0 = new s1(hashMap, this.b, 14);
                     launchActivity.t0(pa0Var);
                     break;
                 }
                 break;
-            case 12:
+            case 13:
                 ((pa0) this.c).I0(900, this.b, (TLRPC.User) this.d);
                 break;
-            case 13:
-                PasscodeActivity.Z((PasscodeActivity) this.c, (ib0) this.d, this.b);
+            case 14:
+                PasscodeActivity.Z((PasscodeActivity) this.c, (sb0) this.d, this.b);
                 break;
-            case 15:
+            case 16:
                 SessionsActivity.c0((SessionsActivity) this.c, this.b, (boolean[]) this.d);
                 break;
         }
@@ -339,24 +345,24 @@ public final /* synthetic */ class r1 implements pi, org.telegram.ui.ActionBar.q
         e2.b1 b1Var2 = (e2.b1) this.d;
         e2.a1 a1Var = (e2.a1) obj;
         int i7 = this.b;
-        a1Var.g(i7);
+        a1Var.i(i7);
         a1Var.s(b1Var, b1Var2, i7);
     }
 
-    @Override // org.telegram.messenger.v10
-    public void l(Object obj, TLRPC.Document document, Boolean bool) {
+    @Override // org.telegram.messenger.t10
+    public void m(Object obj, TLRPC.Document document, Boolean bool) {
         Context context = (Context) this.c;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
         int i7 = this.b;
-        String V = gj.V(document, "😀", Integer.valueOf(i7));
+        String V = fj.V(document, "😀", Integer.valueOf(i7));
         String str = TextUtils.isEmpty(V) ? "😀" : V;
-        org.telegram.ui.ActionBar.t1 t1Var = new org.telegram.ui.ActionBar.t1(3, context, null);
+        org.telegram.ui.ActionBar.u1 u1Var = new org.telegram.ui.ActionBar.u1(3, context, null);
         TLRPC.TL_stickers_addStickerToSet tL_stickers_addStickerToSet = new TLRPC.TL_stickers_addStickerToSet();
-        tL_stickers_addStickerToSet.stickerset = si.Z(tL_messages_stickerSet.set);
-        tL_stickers_addStickerToSet.sticker = si.a0(document, str);
-        ConnectionsManager.getInstance(m10.t0).sendRequest(tL_stickers_addStickerToSet, new bg.k0(t1Var, i7, document, obj, tL_stickers_addStickerToSet, 8));
+        tL_stickers_addStickerToSet.stickerset = ri.b0(tL_messages_stickerSet.set);
+        tL_stickers_addStickerToSet.sticker = ri.c0(document, str);
+        ConnectionsManager.getInstance(j10.t0).sendRequest(tL_stickers_addStickerToSet, new bg.l0(u1Var, i7, document, obj, tL_stickers_addStickerToSet, 8));
         try {
-            t1Var.r(350L);
+            u1Var.r(350L);
         } catch (Exception unused) {
         }
     }

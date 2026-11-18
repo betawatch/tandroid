@@ -1,73 +1,41 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class dl0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ kl0 c;
+public final class dl0 implements kl0 {
+    public final /* synthetic */ ml0 a;
 
-    public /* synthetic */ dl0(kl0 kl0Var, boolean z10, int i7) {
-        this.a = i7;
-        this.c = kl0Var;
-        this.b = z10;
+    public dl0(ml0 ml0Var) {
+        this.a = ml0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                kl0 kl0Var = this.c;
-                AnimatorSet animatorSet = kl0Var.w;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    kl0Var.w = null;
-                    break;
-                }
-                break;
-            default:
-                kl0 kl0Var2 = this.c;
-                AnimatorSet animatorSet2 = kl0Var2.w;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    kl0Var2.w = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.kl0
+    public final void a(TL_account.Password password) {
+        this.a.b0 = password;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                kl0 kl0Var = this.c;
-                AnimatorSet animatorSet = kl0Var.w;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        kl0Var.r.setVisibility(4);
-                        break;
-                    } else {
-                        kl0Var.n.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                kl0 kl0Var2 = this.c;
-                AnimatorSet animatorSet2 = kl0Var2.w;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        kl0Var2.s.setVisibility(4);
-                        break;
-                    } else {
-                        kl0Var2.V.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.kl0
+    public final void b() {
+        this.a.g0 = null;
+    }
+
+    @Override // org.telegram.ui.kl0
+    public final boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard) {
+        ml0 ml0Var = this.a;
+        kl0 kl0Var = ml0Var.U;
+        if (kl0Var != null) {
+            kl0Var.c(str, str2, z10, tL_inputPaymentCredentialsGooglePay, tL_paymentSavedCredentialsCard);
         }
+        if (ml0Var.T0) {
+            ml0Var.removeSelfFromStack();
+        }
+        return ml0Var.U != null;
+    }
+
+    @Override // org.telegram.ui.kl0
+    public final /* synthetic */ void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo) {
     }
 }

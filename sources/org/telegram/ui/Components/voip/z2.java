@@ -1,26 +1,33 @@
 package org.telegram.ui.Components.voip;
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.ui.Components.du0;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class z2 extends View {
-    public du0 a;
-    public boolean b;
+public final /* synthetic */ class z2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e3 b;
+    public final /* synthetic */ int c;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        du0 du0Var;
-        if (this.b || (du0Var = this.a) == null) {
-            return;
-        }
-        du0Var.b(canvas, this);
+    public /* synthetic */ z2(e3 e3Var, int i7, int i10) {
+        this.a = i10;
+        this.b = e3Var;
+        this.c = i7;
     }
 
-    public void setState(boolean z10) {
-        this.b = z10;
-        invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.messenger.g0.g3(new z2(this.b, this.c, 2));
+                break;
+            case 1:
+                org.telegram.messenger.g0.g3(new z2(this.b, this.c, 3));
+                break;
+            case 2:
+                this.b.c(this.c);
+                break;
+            default:
+                this.b.a(this.c);
+                break;
+        }
     }
 }

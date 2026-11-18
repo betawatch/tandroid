@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k1 {
     public j1 a;
@@ -18,7 +18,7 @@ public final class k1 {
     public final void b(UUID uuid, Runnable runnable) {
         this.b.put(uuid, runnable);
         this.c.add(uuid);
-        org.telegram.messenger.g0.h3(new q2.d(this, 11));
+        org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 14));
     }
 
     public final void c() {
@@ -33,6 +33,6 @@ public final class k1 {
         hashMap.remove(uuid);
         arrayList.remove(size);
         runnable.run();
-        org.telegram.messenger.g0.h3(new q2.d(this, 11));
+        org.telegram.messenger.g0.g3(new org.telegram.ui.web.z0(this, 14));
     }
 }

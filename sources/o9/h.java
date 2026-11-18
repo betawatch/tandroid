@@ -10,7 +10,7 @@ import kotlin.jvm.internal.j;
 import u9.q;
 import zd.v0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements u9.d, r {
     public static final h b = new h(0);
@@ -24,7 +24,7 @@ public final class h implements u9.d, r {
     }
 
     @Override // u9.d
-    public Object i(r7 r7Var) {
+    public Object e(r7 r7Var) {
         switch (this.a) {
             case 0:
                 Object e10 = r7Var.e(new q(q9.a.class, Executor.class));
@@ -46,7 +46,7 @@ public final class h implements u9.d, r {
     }
 
     @Override // com.google.android.gms.common.api.internal.r
-    public Exception l(Status status) {
+    public Exception k(Status status) {
         int i7 = status.a;
         int i10 = status.a;
         String str = status.b;

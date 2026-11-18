@@ -11,9 +11,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class p0 {
     public static /* synthetic */ void A(Object obj) {
@@ -40,7 +40,7 @@ public abstract /* synthetic */ class p0 {
 
     public static c4.b a(c4.m mVar, byte[] bArr, int i7) {
         h9.f0 p10 = h9.i0.p();
-        mVar.K(bArr, 0, i7, c4.l.c, new a1.c(p10, 17));
+        mVar.v(bArr, 0, i7, c4.l.c, new a1.c(p10, 17));
         return new c4.b(p10.f());
     }
 
@@ -167,9 +167,9 @@ public abstract /* synthetic */ class p0 {
                 return 29;
             case 29:
                 return 30;
-            case ns.T /* 30 */:
+            case ks.T /* 30 */:
                 return 31;
-            case ns.U /* 31 */:
+            case ks.U /* 31 */:
                 return 32;
             case 32:
                 return 33;
@@ -209,174 +209,174 @@ public abstract /* synthetic */ class p0 {
                 return 50;
             case 50:
                 return 51;
-            case ns.o0 /* 51 */:
+            case ks.o0 /* 51 */:
                 return 52;
-            case ns.p0 /* 52 */:
+            case ks.p0 /* 52 */:
                 return 53;
-            case ns.q0 /* 53 */:
+            case ks.q0 /* 53 */:
                 return 54;
-            case ns.r0 /* 54 */:
+            case ks.r0 /* 54 */:
                 return 55;
-            case ns.s0 /* 55 */:
+            case ks.s0 /* 55 */:
                 return 56;
-            case ns.t0 /* 56 */:
+            case ks.t0 /* 56 */:
                 return 57;
-            case ns.u0 /* 57 */:
+            case ks.u0 /* 57 */:
                 return 58;
-            case ns.v0 /* 58 */:
+            case ks.v0 /* 58 */:
                 return 59;
-            case ns.w0 /* 59 */:
+            case ks.w0 /* 59 */:
                 return 60;
-            case ns.x0 /* 60 */:
+            case ks.x0 /* 60 */:
                 return 61;
-            case ns.y0 /* 61 */:
+            case ks.y0 /* 61 */:
                 return 62;
-            case ns.z0 /* 62 */:
+            case ks.z0 /* 62 */:
                 return 63;
-            case ns.A0 /* 63 */:
+            case ks.A0 /* 63 */:
                 return 64;
             case 64:
                 return 65;
             case 65:
                 return 66;
-            case ns.D0 /* 66 */:
+            case ks.D0 /* 66 */:
                 return 67;
-            case ns.E0 /* 67 */:
+            case ks.E0 /* 67 */:
                 return 68;
-            case ns.F0 /* 68 */:
+            case ks.F0 /* 68 */:
                 return 69;
-            case ns.G0 /* 69 */:
+            case ks.G0 /* 69 */:
                 return 70;
-            case ns.H0 /* 70 */:
+            case ks.H0 /* 70 */:
                 return 71;
-            case ns.I0 /* 71 */:
+            case ks.I0 /* 71 */:
                 return 72;
-            case ns.J0 /* 72 */:
+            case ks.J0 /* 72 */:
                 return 73;
-            case ns.K0 /* 73 */:
+            case ks.K0 /* 73 */:
                 return 74;
-            case ns.L0 /* 74 */:
+            case ks.L0 /* 74 */:
                 return 75;
-            case ns.M0 /* 75 */:
+            case ks.M0 /* 75 */:
                 return 76;
-            case ns.N0 /* 76 */:
+            case ks.N0 /* 76 */:
                 return 77;
-            case ns.O0 /* 77 */:
+            case ks.O0 /* 77 */:
                 return 78;
-            case ns.P0 /* 78 */:
+            case ks.P0 /* 78 */:
                 return 79;
-            case ns.Q0 /* 79 */:
+            case ks.Q0 /* 79 */:
                 return 80;
             default:
                 switch (i7) {
                     case 96:
                         return 87;
-                    case ns.i1 /* 97 */:
+                    case ks.i1 /* 97 */:
                         return 88;
-                    case ns.j1 /* 98 */:
+                    case ks.j1 /* 98 */:
                         return 89;
-                    case ns.k1 /* 99 */:
+                    case ks.k1 /* 99 */:
                         return 90;
-                    case ns.l1 /* 100 */:
+                    case ks.l1 /* 100 */:
                         return 91;
                     case 101:
                         return 92;
-                    case ns.n1 /* 102 */:
+                    case ks.n1 /* 102 */:
                         return 83;
-                    case ns.o1 /* 103 */:
+                    case ks.o1 /* 103 */:
                         return 86;
-                    case ns.p1 /* 104 */:
+                    case ks.p1 /* 104 */:
                         return 93;
-                    case ns.q1 /* 105 */:
+                    case ks.q1 /* 105 */:
                         return 94;
-                    case ns.r1 /* 106 */:
+                    case ks.r1 /* 106 */:
                         return 95;
-                    case ns.s1 /* 107 */:
+                    case ks.s1 /* 107 */:
                         return 96;
-                    case ns.t1 /* 108 */:
+                    case ks.t1 /* 108 */:
                         return 97;
-                    case ns.u1 /* 109 */:
+                    case ks.u1 /* 109 */:
                         return 98;
-                    case ns.v1 /* 110 */:
+                    case ks.v1 /* 110 */:
                         return 99;
-                    case ns.w1 /* 111 */:
+                    case ks.w1 /* 111 */:
                         return 100;
-                    case ns.x1 /* 112 */:
+                    case ks.x1 /* 112 */:
                         return 101;
-                    case ns.y1 /* 113 */:
-                        return ns.n1;
-                    case ns.z1 /* 114 */:
-                        return ns.o1;
-                    case ns.A1 /* 115 */:
-                        return ns.p1;
-                    case ns.B1 /* 116 */:
-                        return ns.q1;
-                    case ns.C1 /* 117 */:
-                        return ns.r1;
-                    case ns.D1 /* 118 */:
-                        return ns.s1;
-                    case ns.E1 /* 119 */:
-                        return ns.t1;
+                    case ks.y1 /* 113 */:
+                        return ks.n1;
+                    case ks.z1 /* 114 */:
+                        return ks.o1;
+                    case ks.A1 /* 115 */:
+                        return ks.p1;
+                    case ks.B1 /* 116 */:
+                        return ks.q1;
+                    case ks.C1 /* 117 */:
+                        return ks.r1;
+                    case ks.D1 /* 118 */:
+                        return ks.s1;
+                    case ks.E1 /* 119 */:
+                        return ks.t1;
                     case 120:
-                        return ns.u1;
-                    case ns.F1 /* 121 */:
-                        return ns.v1;
-                    case ns.G1 /* 122 */:
-                        return ns.w1;
-                    case ns.H1 /* 123 */:
-                        return ns.x1;
-                    case ns.I1 /* 124 */:
-                        return ns.y1;
-                    case ns.J1 /* 125 */:
-                        return ns.z1;
-                    case ns.K1 /* 126 */:
-                        return ns.C1;
-                    case ns.L1 /* 127 */:
-                        return ns.E1;
+                        return ks.u1;
+                    case ks.F1 /* 121 */:
+                        return ks.v1;
+                    case ks.G1 /* 122 */:
+                        return ks.w1;
+                    case ks.H1 /* 123 */:
+                        return ks.x1;
+                    case ks.I1 /* 124 */:
+                        return ks.y1;
+                    case ks.J1 /* 125 */:
+                        return ks.z1;
+                    case ks.K1 /* 126 */:
+                        return ks.C1;
+                    case ks.L1 /* 127 */:
+                        return ks.E1;
                     case 128:
                         return 120;
-                    case ns.N1 /* 129 */:
-                        return ns.F1;
-                    case ns.O1 /* 130 */:
-                        return ns.G1;
-                    case ns.P1 /* 131 */:
-                        return ns.H1;
-                    case ns.Q1 /* 132 */:
-                        return ns.I1;
+                    case ks.N1 /* 129 */:
+                        return ks.F1;
+                    case ks.O1 /* 130 */:
+                        return ks.G1;
+                    case ks.P1 /* 131 */:
+                        return ks.H1;
+                    case ks.Q1 /* 132 */:
+                        return ks.I1;
                     case 133:
-                        return ns.J1;
+                        return ks.J1;
                     case 134:
-                        return ns.K1;
-                    case ns.R1 /* 135 */:
-                        return ns.L1;
-                    case ns.S1 /* 136 */:
+                        return ks.K1;
+                    case ks.R1 /* 135 */:
+                        return ks.L1;
+                    case ks.S1 /* 136 */:
                         return 128;
-                    case ns.T1 /* 137 */:
-                        return ns.N1;
-                    case ns.U1 /* 138 */:
-                        return ns.O1;
-                    case ns.V1 /* 139 */:
-                        return ns.P1;
-                    case ns.W1 /* 140 */:
-                        return ns.Q1;
-                    case ns.X1 /* 141 */:
+                    case ks.T1 /* 137 */:
+                        return ks.N1;
+                    case ks.U1 /* 138 */:
+                        return ks.O1;
+                    case ks.V1 /* 139 */:
+                        return ks.P1;
+                    case ks.W1 /* 140 */:
+                        return ks.Q1;
+                    case ks.X1 /* 141 */:
                         return 133;
-                    case ns.Y1 /* 142 */:
+                    case ks.Y1 /* 142 */:
                         return 134;
-                    case ns.Z1 /* 143 */:
-                        return ns.R1;
-                    case ns.a2 /* 144 */:
-                        return ns.S1;
-                    case ns.b2 /* 145 */:
-                        return ns.A1;
-                    case ns.c2 /* 146 */:
-                        return ns.B1;
-                    case ns.d2 /* 147 */:
-                        return ns.D1;
-                    case ns.e2 /* 148 */:
-                        return ns.T1;
-                    case ns.f2 /* 149 */:
-                        return ns.U1;
+                    case ks.Z1 /* 143 */:
+                        return ks.R1;
+                    case ks.a2 /* 144 */:
+                        return ks.S1;
+                    case ks.b2 /* 145 */:
+                        return ks.A1;
+                    case ks.c2 /* 146 */:
+                        return ks.B1;
+                    case ks.d2 /* 147 */:
+                        return ks.D1;
+                    case ks.e2 /* 148 */:
+                        return ks.T1;
+                    case ks.f2 /* 149 */:
+                        return ks.U1;
                     default:
                         return 0;
                 }
@@ -460,9 +460,9 @@ public abstract /* synthetic */ class p0 {
                 return 27;
             case 29:
                 return 28;
-            case ns.T /* 30 */:
+            case ks.T /* 30 */:
                 return 29;
-            case ns.U /* 31 */:
+            case ks.U /* 31 */:
                 return 30;
             case 32:
                 return 31;
@@ -502,182 +502,182 @@ public abstract /* synthetic */ class p0 {
                 return 48;
             case 50:
                 return 49;
-            case ns.o0 /* 51 */:
+            case ks.o0 /* 51 */:
                 return 50;
-            case ns.p0 /* 52 */:
+            case ks.p0 /* 52 */:
                 return 51;
-            case ns.q0 /* 53 */:
+            case ks.q0 /* 53 */:
                 return 52;
-            case ns.r0 /* 54 */:
+            case ks.r0 /* 54 */:
                 return 53;
-            case ns.s0 /* 55 */:
+            case ks.s0 /* 55 */:
                 return 54;
-            case ns.t0 /* 56 */:
+            case ks.t0 /* 56 */:
                 return 55;
-            case ns.u0 /* 57 */:
+            case ks.u0 /* 57 */:
                 return 56;
-            case ns.v0 /* 58 */:
+            case ks.v0 /* 58 */:
                 return 57;
-            case ns.w0 /* 59 */:
+            case ks.w0 /* 59 */:
                 return 58;
-            case ns.x0 /* 60 */:
+            case ks.x0 /* 60 */:
                 return 59;
-            case ns.y0 /* 61 */:
+            case ks.y0 /* 61 */:
                 return 60;
-            case ns.z0 /* 62 */:
+            case ks.z0 /* 62 */:
                 return 61;
-            case ns.A0 /* 63 */:
+            case ks.A0 /* 63 */:
                 return 62;
             case 64:
                 return 63;
             case 65:
                 return 64;
-            case ns.D0 /* 66 */:
+            case ks.D0 /* 66 */:
                 return 65;
-            case ns.E0 /* 67 */:
+            case ks.E0 /* 67 */:
                 return 66;
-            case ns.F0 /* 68 */:
+            case ks.F0 /* 68 */:
                 return 67;
-            case ns.G0 /* 69 */:
+            case ks.G0 /* 69 */:
                 return 68;
-            case ns.H0 /* 70 */:
+            case ks.H0 /* 70 */:
                 return 69;
-            case ns.I0 /* 71 */:
+            case ks.I0 /* 71 */:
                 return 70;
-            case ns.J0 /* 72 */:
+            case ks.J0 /* 72 */:
                 return 71;
-            case ns.K0 /* 73 */:
+            case ks.K0 /* 73 */:
                 return 72;
-            case ns.L0 /* 74 */:
+            case ks.L0 /* 74 */:
                 return 73;
-            case ns.M0 /* 75 */:
+            case ks.M0 /* 75 */:
                 return 74;
-            case ns.N0 /* 76 */:
+            case ks.N0 /* 76 */:
                 return 75;
-            case ns.O0 /* 77 */:
+            case ks.O0 /* 77 */:
                 return 76;
-            case ns.P0 /* 78 */:
+            case ks.P0 /* 78 */:
                 return 77;
-            case ns.Q0 /* 79 */:
+            case ks.Q0 /* 79 */:
                 return 78;
             case 80:
                 return 79;
-            case ns.S0 /* 81 */:
+            case ks.S0 /* 81 */:
                 return 90;
-            case ns.T0 /* 82 */:
+            case ks.T0 /* 82 */:
                 return 91;
-            case ns.U0 /* 83 */:
-                return ns.n1;
-            case ns.V0 /* 84 */:
+            case ks.U0 /* 83 */:
+                return ks.n1;
+            case ks.V0 /* 84 */:
                 return 93;
-            case ns.W0 /* 85 */:
+            case ks.W0 /* 85 */:
                 return 94;
-            case ns.X0 /* 86 */:
-                return ns.o1;
-            case ns.Y0 /* 87 */:
+            case ks.X0 /* 86 */:
+                return ks.o1;
+            case ks.Y0 /* 87 */:
                 return 96;
-            case ns.Z0 /* 88 */:
+            case ks.Z0 /* 88 */:
                 return 97;
-            case ns.a1 /* 89 */:
+            case ks.a1 /* 89 */:
                 return 98;
-            case ns.b1 /* 90 */:
+            case ks.b1 /* 90 */:
                 return 99;
-            case ns.c1 /* 91 */:
+            case ks.c1 /* 91 */:
                 return 100;
-            case ns.d1 /* 92 */:
+            case ks.d1 /* 92 */:
                 return 101;
-            case ns.e1 /* 93 */:
-                return ns.p1;
-            case ns.f1 /* 94 */:
-                return ns.q1;
-            case ns.g1 /* 95 */:
-                return ns.r1;
+            case ks.e1 /* 93 */:
+                return ks.p1;
+            case ks.f1 /* 94 */:
+                return ks.q1;
+            case ks.g1 /* 95 */:
+                return ks.r1;
             case 96:
-                return ns.s1;
-            case ns.i1 /* 97 */:
-                return ns.t1;
-            case ns.j1 /* 98 */:
-                return ns.u1;
-            case ns.k1 /* 99 */:
-                return ns.v1;
-            case ns.l1 /* 100 */:
-                return ns.w1;
+                return ks.s1;
+            case ks.i1 /* 97 */:
+                return ks.t1;
+            case ks.j1 /* 98 */:
+                return ks.u1;
+            case ks.k1 /* 99 */:
+                return ks.v1;
+            case ks.l1 /* 100 */:
+                return ks.w1;
             case 101:
-                return ns.x1;
-            case ns.n1 /* 102 */:
-                return ns.y1;
-            case ns.o1 /* 103 */:
-                return ns.z1;
-            case ns.p1 /* 104 */:
-                return ns.A1;
-            case ns.q1 /* 105 */:
-                return ns.B1;
-            case ns.r1 /* 106 */:
-                return ns.C1;
-            case ns.s1 /* 107 */:
-                return ns.D1;
-            case ns.t1 /* 108 */:
-                return ns.E1;
-            case ns.u1 /* 109 */:
+                return ks.x1;
+            case ks.n1 /* 102 */:
+                return ks.y1;
+            case ks.o1 /* 103 */:
+                return ks.z1;
+            case ks.p1 /* 104 */:
+                return ks.A1;
+            case ks.q1 /* 105 */:
+                return ks.B1;
+            case ks.r1 /* 106 */:
+                return ks.C1;
+            case ks.s1 /* 107 */:
+                return ks.D1;
+            case ks.t1 /* 108 */:
+                return ks.E1;
+            case ks.u1 /* 109 */:
                 return 120;
-            case ns.v1 /* 110 */:
-                return ns.F1;
-            case ns.w1 /* 111 */:
-                return ns.G1;
-            case ns.x1 /* 112 */:
-                return ns.H1;
-            case ns.y1 /* 113 */:
-                return ns.I1;
-            case ns.z1 /* 114 */:
-                return ns.J1;
-            case ns.A1 /* 115 */:
-                return ns.b2;
-            case ns.B1 /* 116 */:
-                return ns.c2;
-            case ns.C1 /* 117 */:
-                return ns.K1;
-            case ns.D1 /* 118 */:
-                return ns.d2;
-            case ns.E1 /* 119 */:
-                return ns.L1;
+            case ks.v1 /* 110 */:
+                return ks.F1;
+            case ks.w1 /* 111 */:
+                return ks.G1;
+            case ks.x1 /* 112 */:
+                return ks.H1;
+            case ks.y1 /* 113 */:
+                return ks.I1;
+            case ks.z1 /* 114 */:
+                return ks.J1;
+            case ks.A1 /* 115 */:
+                return ks.b2;
+            case ks.B1 /* 116 */:
+                return ks.c2;
+            case ks.C1 /* 117 */:
+                return ks.K1;
+            case ks.D1 /* 118 */:
+                return ks.d2;
+            case ks.E1 /* 119 */:
+                return ks.L1;
             case 120:
                 return 128;
-            case ns.F1 /* 121 */:
-                return ns.N1;
-            case ns.G1 /* 122 */:
-                return ns.O1;
-            case ns.H1 /* 123 */:
-                return ns.P1;
-            case ns.I1 /* 124 */:
-                return ns.Q1;
-            case ns.J1 /* 125 */:
+            case ks.F1 /* 121 */:
+                return ks.N1;
+            case ks.G1 /* 122 */:
+                return ks.O1;
+            case ks.H1 /* 123 */:
+                return ks.P1;
+            case ks.I1 /* 124 */:
+                return ks.Q1;
+            case ks.J1 /* 125 */:
                 return 133;
-            case ns.K1 /* 126 */:
+            case ks.K1 /* 126 */:
                 return 134;
-            case ns.L1 /* 127 */:
-                return ns.R1;
+            case ks.L1 /* 127 */:
+                return ks.R1;
             case 128:
-                return ns.S1;
-            case ns.N1 /* 129 */:
-                return ns.T1;
-            case ns.O1 /* 130 */:
-                return ns.U1;
-            case ns.P1 /* 131 */:
-                return ns.V1;
-            case ns.Q1 /* 132 */:
-                return ns.W1;
+                return ks.S1;
+            case ks.N1 /* 129 */:
+                return ks.T1;
+            case ks.O1 /* 130 */:
+                return ks.U1;
+            case ks.P1 /* 131 */:
+                return ks.V1;
+            case ks.Q1 /* 132 */:
+                return ks.W1;
             case 133:
-                return ns.X1;
+                return ks.X1;
             case 134:
-                return ns.Y1;
-            case ns.R1 /* 135 */:
-                return ns.Z1;
-            case ns.S1 /* 136 */:
-                return ns.a2;
-            case ns.T1 /* 137 */:
-                return ns.e2;
-            case ns.U1 /* 138 */:
-                return ns.f2;
+                return ks.Y1;
+            case ks.R1 /* 135 */:
+                return ks.Z1;
+            case ks.S1 /* 136 */:
+                return ks.a2;
+            case ks.T1 /* 137 */:
+                return ks.e2;
+            case ks.U1 /* 138 */:
+                return ks.f2;
             default:
                 throw null;
         }

@@ -1,60 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pu extends View {
-    public org.telegram.messenger.hc[] a;
-    public fi.u2 b;
-    public p5 c;
-    public ValueAnimator d;
-    public float e;
+public final class pu extends g.p {
+    public final /* synthetic */ bv c;
 
-    public TLRPC.Document getDocument() {
-        p5 p5Var = this.c;
-        if (p5Var == null) {
-            return null;
-        }
-        TLRPC.Document document = p5Var.document;
-        if (document != null) {
-            return document;
-        }
-        return g5.e(org.telegram.messenger.m10.t0, p5Var.getDocumentId());
+    public pu(bv bvVar) {
+        this.c = bvVar;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setPadding(org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f), org.telegram.messenger.g0.L(2.0f));
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i7), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z10) {
-            super.setPressed(z10);
-            invalidate();
-            if (z10 && (valueAnimator = this.d) != null) {
-                valueAnimator.removeAllListeners();
-                this.d.cancel();
-            }
-            if (z10) {
-                return;
-            }
-            float f10 = this.e;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
-                this.d = ofFloat;
-                ofFloat.addUpdateListener(new c6(this, 17));
-                this.d.addListener(new x5(this, 23));
-                org.telegram.messenger.i20.k(5.0f, this.d);
-                this.d.setDuration(350L);
-                this.d.start();
-            }
+    @Override // g.p
+    public final int i(int i7) {
+        TLRPC.StickerSet stickerSet;
+        bv bvVar = this.c;
+        v4.t tVar = bvVar.y1;
+        nu nuVar = bvVar.p1;
+        hi.w wVar = bvVar.r1;
+        if (wVar.getAdapter() == null || wVar.getAdapter().d(i7) != 1) {
+            return tVar.J;
         }
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            ArrayList[] arrayListArr = nuVar.c;
+            if (i10 >= arrayListArr.length) {
+                break;
+            }
+            int size = arrayListArr[i10].size();
+            if (nuVar.c.length > 1) {
+                size = Math.min(tVar.J * 2, size);
+            }
+            i11 += size + 2;
+            if (i7 < i11) {
+                break;
+            }
+            i10++;
+        }
+        ArrayList arrayList = nuVar.b;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (arrayList == null || i10 >= arrayList.size()) ? null : (TLRPC.TL_messages_stickerSet) nuVar.b.get(i10);
+        return (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null || stickerSet.emojis) ? 5 : 8;
     }
 }

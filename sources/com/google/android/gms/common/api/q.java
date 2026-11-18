@@ -1,8 +1,7 @@
 package com.google.android.gms.common.api;
 
 import android.os.Bundle;
-import c8.g1;
-import c8.t0;
+import c8.v0;
 import e2.c1;
 import e2.k1;
 import e2.l1;
@@ -15,7 +14,7 @@ import java.util.List;
 import l2.f0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class q implements c1 {
     public Object a;
@@ -208,7 +207,7 @@ public abstract class q implements c1 {
 
     public abstract void V0();
 
-    public abstract r0.k1 W0(r0.k1 k1Var, List list);
+    public abstract r0.l1 W0(r0.l1 l1Var, List list);
 
     public void X0() {
         synchronized (this.a) {
@@ -426,8 +425,8 @@ public abstract class q implements c1 {
             return 100;
         }
         String str = l0.a;
-        long d = t0.d(d02, 100L);
-        return l0.i(g1.e((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? d02 / (duration / 100) : d / duration), 0, 100);
+        long d = v0.d(d02, 100L);
+        return l0.i(c8.k1.e((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? d02 / (duration / 100) : d / duration), 0, 100);
     }
 
     public q(String str, Bundle data) {

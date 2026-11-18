@@ -1,6 +1,6 @@
 package o2;
 
-import a8.ja;
+import a8.la;
 import a8.xa;
 import android.net.Uri;
 import android.os.Handler;
@@ -9,12 +9,13 @@ import android.os.SystemClock;
 import android.util.SparseArray;
 import b3.q;
 import b3.r;
-import c8.t0;
-import e2.e0;
+import b3.s;
+import c8.v0;
 import e2.f0;
 import e2.g0;
 import e2.l0;
 import e2.m0;
+import h9.g1;
 import j$.util.Objects;
 import j2.b0;
 import j2.c0;
@@ -26,13 +27,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import x2.d0;
-import x2.t;
+import x2.e0;
+import x2.u;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h extends x2.a {
-    public b3.o A;
+    public b3.p A;
     public c0 B;
     public IOException C;
     public Handler D;
@@ -52,20 +53,20 @@ public final class h extends x2.a {
     public final j2.g i;
     public final xa j;
     public final nb.a k;
-    public final q2.n l;
+    public final q2.m l;
     public final qb.a m;
     public final xi.e n;
     public final long o;
     public final long p;
     public final xa q;
-    public final q r;
-    public final hi.l0 s;
+    public final r r;
+    public final g1 s;
     public final Object t;
     public final SparseArray u;
     public final c v;
     public final c w;
     public final f x;
-    public final b3.p y;
+    public final q y;
     public j2.h z;
 
     static {
@@ -74,7 +75,7 @@ public final class h extends x2.a {
 
     /* JADX WARN: Type inference failed for: r2v11, types: [o2.c] */
     /* JADX WARN: Type inference failed for: r2v12, types: [o2.c] */
-    public h(l0 l0Var, j2.g gVar, q qVar, xa xaVar, nb.a aVar, q2.n nVar, qb.a aVar2, long j3, long j10) {
+    public h(l0 l0Var, j2.g gVar, r rVar, xa xaVar, nb.a aVar, q2.m mVar, qb.a aVar2, long j3, long j10) {
         this.O = l0Var;
         this.P = l0Var.c;
         g0 g0Var = l0Var.b;
@@ -84,9 +85,9 @@ public final class h extends x2.a {
         this.F = uri;
         this.G = null;
         this.i = gVar;
-        this.r = qVar;
+        this.r = rVar;
         this.j = xaVar;
-        this.l = nVar;
+        this.l = mVar;
         this.m = aVar2;
         this.o = j3;
         this.p = j10;
@@ -99,7 +100,7 @@ public final class h extends x2.a {
         this.x = new f(this);
         this.M = -9223372036854775807L;
         this.K = -9223372036854775807L;
-        this.s = new hi.l0(this, 16);
+        this.s = new g1(this, 16);
         this.y = new d(this);
         final int i7 = 0;
         this.v = new Runnable(this) { // from class: o2.c
@@ -166,12 +167,12 @@ public final class h extends x2.a {
         return false;
     }
 
-    public final void A(f5.a aVar, q qVar) {
+    public final void A(f5.a aVar, r rVar) {
         j2.h hVar = this.z;
         Uri parse = Uri.parse(aVar.c);
         Map map = Collections.EMPTY_MAP;
-        ja.k(parse, "The uri must be set.");
-        this.A.f(new r(hVar, new j2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, qVar), new f(this), 1);
+        la.k(parse, "The uri must be set.");
+        this.A.f(new s(hVar, new j2.m(parse, 1, null, map, 0L, -1L, null, 1), 5, rVar), new f(this), 1);
     }
 
     public final synchronized void B(f0 f0Var) {
@@ -193,11 +194,11 @@ public final class h extends x2.a {
         }
         this.H = false;
         Map map = Collections.EMPTY_MAP;
-        ja.k(uri, "The uri must be set.");
-        r rVar = new r(this.z, new j2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
-        hi.l0 l0Var = this.s;
+        la.k(uri, "The uri must be set.");
+        s sVar = new s(this.z, new j2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, this.r);
+        g1 g1Var = this.s;
         this.m.getClass();
-        this.A.f(rVar, l0Var, 3);
+        this.A.f(sVar, g1Var, 3);
     }
 
     @Override // x2.a
@@ -209,17 +210,17 @@ public final class h extends x2.a {
     }
 
     @Override // x2.a
-    public final d0 c(x2.f0 f0Var, h6.m mVar, long j3) {
-        int intValue = ((Integer) f0Var.a).intValue() - this.N;
-        xa b10 = b(f0Var);
-        q2.k kVar = new q2.k(this.d.c, 0, f0Var);
+    public final e0 c(x2.g0 g0Var, h6.m mVar, long j3) {
+        int intValue = ((Integer) g0Var.a).intValue() - this.N;
+        xa b10 = b(g0Var);
+        q2.j jVar = new q2.j(this.d.c, 0, g0Var);
         int i7 = this.N + intValue;
         p2.c cVar = this.G;
         c0 c0Var = this.B;
         long j10 = this.K;
-        m2.j jVar = this.g;
-        jVar.getClass();
-        b bVar = new b(i7, cVar, this.n, intValue, this.j, c0Var, this.l, kVar, this.m, b10, j10, this.y, mVar, this.k, this.x, jVar);
+        m2.i iVar = this.g;
+        iVar.getClass();
+        b bVar = new b(i7, cVar, this.n, intValue, this.j, c0Var, this.l, jVar, this.m, b10, j10, this.y, mVar, this.k, this.x, iVar);
         this.u.put(i7, bVar);
         return bVar;
     }
@@ -238,24 +239,24 @@ public final class h extends x2.a {
     public final void m(c0 c0Var) {
         this.B = c0Var;
         Looper myLooper = Looper.myLooper();
-        m2.j jVar = this.g;
-        jVar.getClass();
-        q2.n nVar = this.l;
-        nVar.r1(myLooper, jVar);
-        nVar.a();
+        m2.i iVar = this.g;
+        iVar.getClass();
+        q2.m mVar = this.l;
+        mVar.r1(myLooper, iVar);
+        mVar.a();
         if (this.h) {
             z(false);
             return;
         }
         this.z = this.i.createDataSource();
-        this.A = new b3.o("DashMediaSource");
+        this.A = new b3.p("DashMediaSource");
         this.D = h2.l0.q(null);
         C();
     }
 
     @Override // x2.a
-    public final void o(d0 d0Var) {
-        b bVar = (b) d0Var;
+    public final void o(e0 e0Var) {
+        b bVar = (b) e0Var;
         p pVar = bVar.y;
         pVar.r = true;
         pVar.d.removeCallbacksAndMessages(null);
@@ -270,9 +271,9 @@ public final class h extends x2.a {
     public final void q() {
         this.H = false;
         this.z = null;
-        b3.o oVar = this.A;
-        if (oVar != null) {
-            oVar.e(null);
+        b3.p pVar = this.A;
+        if (pVar != null) {
+            pVar.e(null);
             this.A = null;
         }
         f0 f0Var = i().c;
@@ -311,7 +312,7 @@ public final class h extends x2.a {
 
     public final void w() {
         boolean z10;
-        b3.o oVar = this.A;
+        b3.p pVar = this.A;
         d dVar = new d(this);
         synchronized (c3.b.b) {
             z10 = c3.b.c;
@@ -320,19 +321,19 @@ public final class h extends x2.a {
             dVar.b();
             return;
         }
-        if (oVar == null) {
-            oVar = new b3.o("SntpClient");
+        if (pVar == null) {
+            pVar = new b3.p("SntpClient");
         }
-        oVar.f(new qb.a(5), new cb.c(dVar, 9), 1);
+        pVar.f(new qb.a(5), new d6.i(dVar, 5), 1);
     }
 
-    public final void x(r rVar, long j3, long j10) {
-        long j11 = rVar.a;
-        j2.m mVar = rVar.b;
-        b0 b0Var = rVar.d;
-        t tVar = new t(mVar, b0Var.c, b0Var.d, j3, j10, b0Var.b);
+    public final void x(s sVar, long j3, long j10) {
+        long j11 = sVar.a;
+        j2.m mVar = sVar.b;
+        b0 b0Var = sVar.d;
+        u uVar = new u(mVar, b0Var.c, b0Var.d, j3, j10, b0Var.b);
         this.m.getClass();
-        this.q.n(tVar, rVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        this.q.o(uVar, sVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 
     public final void y(IOException iOException) {
@@ -454,7 +455,7 @@ public final class h extends x2.a {
                     }
                     sparseArray = sparseArray3;
                     z14 = true;
-                    bVar.H.f0(bVar);
+                    bVar.H.c0(bVar);
                 } else {
                     sparseArray = sparseArray3;
                     z14 = true;
@@ -504,8 +505,8 @@ public final class h extends x2.a {
             boolean z16 = (i18 == i16 || i18 == 2) ? false : true;
             if ((!v || !z16) && !list2.isEmpty()) {
                 i c11 = ((p2.m) list2.get(0)).c();
-                if (c11 != null && c11.v0(d10, S) != 0) {
-                    S2 = Math.max(S2, c11.b(c11.y(d10, S)) + S2);
+                if (c11 != null && c11.z(d10, S) != 0) {
+                    S2 = Math.max(S2, c11.a(c11.h(d10, S)) + S2);
                 }
             }
             i17++;
@@ -540,16 +541,16 @@ public final class h extends x2.a {
                         j10 = S2;
                         break;
                     }
-                    long v02 = c10.v0(d2, S);
-                    if (v02 == j3) {
+                    long z17 = c10.z(d2, S);
+                    if (z17 == j3) {
                         hVar2 = this;
                         j10 = S2;
                         j11 = j23;
                         break;
                     } else {
                         j18 = S2;
-                        long y10 = (c10.y(d2, S) + v02) - 1;
-                        j22 = Math.min(j22, c10.i(y10, d2) + c10.b(y10) + j23);
+                        long h = (c10.h(d2, S) + z17) - 1;
+                        j22 = Math.min(j22, c10.e(h, d2) + c10.a(h) + j23);
                     }
                 } else {
                     j18 = S2;
@@ -568,7 +569,7 @@ public final class h extends x2.a {
         if (hVar2.G.d) {
             for (int i21 = 0; i21 < list3.size(); i21++) {
                 i c12 = ((p2.m) ((p2.a) list3.get(i21)).c.get(0)).c();
-                if (c12 != null && !c12.g0()) {
+                if (c12 != null && !c12.t()) {
                 }
             }
             z11 = true;
@@ -579,7 +580,7 @@ public final class h extends x2.a {
                     long j25 = j11 - j12;
                     cVar = hVar2.G;
                     if (cVar.d) {
-                        ja.p(cVar.a != -9223372036854775807L);
+                        la.p(cVar.a != -9223372036854775807L);
                         long S4 = (S - h2.l0.S(hVar2.G.a)) - j12;
                         f0 f0Var2 = hVar2.i().c;
                         long h02 = h2.l0.h0(S4);
@@ -588,7 +589,7 @@ public final class h extends x2.a {
                         if (j26 != -9223372036854775807L) {
                             j16 = Math.min(h02, j26);
                         } else {
-                            e0 e0Var = hVar2.G.j;
+                            e2.e0 e0Var = hVar2.G.j;
                             if (e0Var != null) {
                                 long j27 = e0Var.c;
                                 if (j27 != -9223372036854775807L) {
@@ -601,7 +602,7 @@ public final class h extends x2.a {
                         if (h03 < j3 && j16 > j3) {
                             h03 = j3;
                         }
-                        boolean z17 = z11;
+                        boolean z18 = z11;
                         long j28 = hVar2.G.c;
                         if (j28 != -9223372036854775807L) {
                             h03 = Math.min(h03 + j28, h02);
@@ -611,7 +612,7 @@ public final class h extends x2.a {
                         if (j30 != -9223372036854775807L) {
                             j29 = h2.l0.j(j30, j29, h02);
                         } else {
-                            e0 e0Var2 = hVar2.G.j;
+                            e2.e0 e0Var2 = hVar2.G.j;
                             if (e0Var2 != null) {
                                 long j31 = e0Var2.b;
                                 if (j31 != -9223372036854775807L) {
@@ -627,7 +628,7 @@ public final class h extends x2.a {
                         long j34 = f0Var.a;
                         if (j34 == -9223372036854775807L) {
                             p2.c cVar4 = hVar2.G;
-                            e0 e0Var3 = cVar4.j;
+                            e2.e0 e0Var3 = cVar4.j;
                             if (e0Var3 != null) {
                                 long j35 = e0Var3.a;
                                 if (j35 != -9223372036854775807L) {
@@ -648,23 +649,23 @@ public final class h extends x2.a {
                         long j36 = j33;
                         float f12 = f0Var2.d;
                         if (f12 == -3.4028235E38f) {
-                            e0 e0Var4 = hVar2.G.j;
+                            e2.e0 e0Var4 = hVar2.G.j;
                             f12 = e0Var4 != null ? e0Var4.d : -3.4028235E38f;
                         }
                         float f13 = f0Var2.e;
                         if (f13 == -3.4028235E38f) {
-                            e0 e0Var5 = hVar2.G.j;
+                            e2.e0 e0Var5 = hVar2.G.j;
                             f13 = e0Var5 != null ? e0Var5.e : -3.4028235E38f;
                         }
                         if (f12 == -3.4028235E38f && f13 == -3.4028235E38f) {
                             f10 = f13;
-                            e0 e0Var6 = hVar2.G.j;
+                            e2.e0 e0Var6 = hVar2.G.j;
                             j17 = S4;
-                            z12 = z17;
+                            z12 = z18;
                             if (e0Var6 == null || e0Var6.a == -9223372036854775807L) {
                                 f12 = 1.0f;
                                 f11 = 1.0f;
-                                e0 e0Var7 = new e0();
+                                e2.e0 e0Var7 = new e2.e0();
                                 e0Var7.a = j34;
                                 e0Var7.b = j32;
                                 e0Var7.c = j36;
@@ -681,10 +682,10 @@ public final class h extends x2.a {
                         } else {
                             f10 = f13;
                             j17 = S4;
-                            z12 = z17;
+                            z12 = z18;
                         }
                         f11 = f10;
-                        e0 e0Var72 = new e0();
+                        e2.e0 e0Var72 = new e2.e0();
                         e0Var72.a = j34;
                         e0Var72.b = j32;
                         e0Var72.c = j36;
@@ -737,15 +738,15 @@ public final class h extends x2.a {
                                 i7 = i22;
                                 i c13 = ((p2.m) list6.get(0)).c();
                                 if (c13 != null) {
-                                    long D = (c13.D(d11, S8) + (S9 + S7)) - S8;
-                                    if (D > j3 && (D < S10 - 100000 || (D > S10 && D < S10 + 100000))) {
-                                        S10 = D;
+                                    long i23 = (c13.i(d11, S8) + (S9 + S7)) - S8;
+                                    if (i23 > j3 && (i23 < S10 - 100000 || (i23 > S10 && i23 < S10 + 100000))) {
+                                        S10 = i23;
                                     }
                                 }
                             }
                             i22 = i7 + 1;
                         }
-                        handler.postDelayed(cVar2, t0.b(S10, 1000L, RoundingMode.CEILING));
+                        handler.postDelayed(cVar2, v0.b(S10, 1000L, RoundingMode.CEILING));
                     }
                     if (hVar2.H) {
                         hVar2.C();

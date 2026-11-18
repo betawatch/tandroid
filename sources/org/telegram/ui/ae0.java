@@ -1,52 +1,94 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.RadialProgressView;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ae0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f b;
-    public final /* synthetic */ pd0 c;
+public final class ae0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ int b2;
+    public final /* synthetic */ ce0 c2;
 
-    public /* synthetic */ ae0(int i7, f fVar, pd0 pd0Var) {
-        this.a = i7;
-        this.b = fVar;
-        this.c = pd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ae0(ce0 ce0Var, Context context, int i7) {
+        super(context);
+        this.b2 = i7;
+        this.c2 = ce0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        pd0 pd0Var = this.c;
-        f fVar = this.b;
-        switch (i7) {
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i7, Rect rect) {
+        int i10 = this.b2;
+        float f10 = 1.0f;
+        ce0 ce0Var = this.c2;
+        switch (i10) {
             case 0:
-                int i10 = pd0.G;
-                pd0Var.a();
-                org.telegram.messenger.g0.i3(new ae0(1, fVar, pd0Var), 150L);
+                super.onFocusChanged(z10, i7, rect);
+                org.telegram.ui.Components.xb0 xb0Var = ce0Var.f;
+                if (!z10 && !ce0Var.b.isFocused()) {
+                    f10 = 0.0f;
+                }
+                xb0Var.b(f10, f10, true);
+                if (z10) {
+                    ce0Var.h0.c.setEditText(this);
+                    break;
+                }
                 break;
             default:
-                be0 be0Var = (be0) fVar.b;
-                be0Var.h(null);
-                RadialProgressView radialProgressView = be0Var.h0.O.d;
-                RadialProgressView radialProgressView2 = pd0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.K = radialProgressView2.K;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.b(85L);
+                super.onFocusChanged(z10, i7, rect);
+                de0 de0Var = ce0Var.h0;
+                org.telegram.ui.Components.xb0 xb0Var2 = ce0Var.f;
+                if (!z10 && !ce0Var.a.isFocused()) {
+                    f10 = 0.0f;
+                }
+                xb0Var2.b(f10, f10, true);
+                if (!z10) {
+                    if (ce0Var.F == 2) {
+                        ce0Var.setCountryButtonText(null);
+                        break;
+                    }
+                } else {
+                    de0Var.c.setEditText(this);
+                    de0Var.c.setDispatchBackWhenEmpty(true);
+                    if (ce0Var.F == 2) {
+                        ce0Var.setCountryButtonText(org.telegram.messenger.gd.M0(2131742601, null));
+                        break;
+                    }
+                }
                 break;
         }
+    }
+
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public boolean onKeyDown(int i7, KeyEvent keyEvent) {
+        switch (this.b2) {
+            case 1:
+                ce0 ce0Var = this.c2;
+                ae0 ae0Var = ce0Var.a;
+                if (i7 == 67 && ce0Var.b.length() == 0) {
+                    ae0Var.requestFocus();
+                    ae0Var.setSelection(ae0Var.length());
+                    ae0Var.dispatchKeyEvent(keyEvent);
+                }
+                return super.onKeyDown(i7, keyEvent);
+            default:
+                return super.onKeyDown(i7, keyEvent);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.b2) {
+            case 1:
+                if (motionEvent.getAction() == 0 && !de0.b1(this.c2.h0, this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

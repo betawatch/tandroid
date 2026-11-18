@@ -1,47 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ve extends ki.w {
-    public boolean s;
-    public final /* synthetic */ ChatActivityEnterView w;
+public final class ve implements s61, qj0 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ve(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
-        this.w = chatActivityEnterView;
-        this.a = null;
-        Paint paint = new Paint(1);
-        this.d = paint;
-        this.f = true;
-        this.b = new e2.r0();
-        di.c1 c1Var = new di.c1(5, context, this);
-        this.c = c1Var;
-        c1Var.setOverScrollMode(2);
-        c1Var.setClipToPadding(false);
-        c1Var.setClipToOutline(true);
-        c1Var.j(new bi.z4(this, 20));
-        addView(c1Var);
-        paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.zj, false));
-        fh.g gVar = this.r;
-        if (gVar != null) {
-            gVar.updateColors();
-        }
-        invalidate();
-        setClipChildren(false);
-        this.s = false;
+    public /* synthetic */ ve(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        if (this.s) {
-            return;
+    public void a() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        ValueAnimator valueAnimator = chatActivityEnterView.A5;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
-        this.s = true;
-        this.w.W1();
+        chatActivityEnterView.C5 = 0.0f;
+        chatActivityEnterView.B5 = 0.0f;
+        ph0 ph0Var = chatActivityEnterView.h1;
+        if (ph0Var != null) {
+            ph0Var.setRotation(0.0f);
+            chatActivityEnterView.h1.setPivotX(r2.getWidth() / 2.0f);
+            chatActivityEnterView.h1.setPivotY(r2.getHeight() / 2.0f);
+            if (chatActivityEnterView.h1.getAnimatedDrawable() == chatActivityEnterView.y5) {
+                chatActivityEnterView.h1.setProgress(0.0f);
+            }
+        }
+        org.telegram.ui.ci ciVar = chatActivityEnterView.x5;
+        chatActivityEnterView.x5 = null;
+        if (ciVar != null) {
+            ciVar.run();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.qj0
+    public boolean c(int i7, View view) {
+        if (!(view instanceof ki.x)) {
+            return false;
+        }
+        String str = ((ki.x) view).getCommand() + " ";
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.setFieldText(str);
+        chatActivityEnterView.n0.c();
+        return true;
     }
 }

@@ -5,11 +5,11 @@ import android.text.method.PasswordTransformationMethod;
 import android.text.method.TransformationMethod;
 import android.util.SparseArray;
 import android.widget.TextView;
-import c8.ic;
+import c8.lc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class f extends ic {
+public final class f extends lc {
     public final TextView a;
     public final d b;
     public boolean c = true;
@@ -19,7 +19,7 @@ public final class f extends ic {
         this.b = new d(textView);
     }
 
-    @Override // c8.ic
+    @Override // c8.lc
     public final InputFilter[] a(InputFilter[] inputFilterArr) {
         if (!this.c) {
             SparseArray sparseArray = new SparseArray(1);
@@ -60,14 +60,14 @@ public final class f extends ic {
         }
     }
 
-    @Override // c8.ic
+    @Override // c8.lc
     public final void b(boolean z10) {
         if (z10) {
             d();
         }
     }
 
-    @Override // c8.ic
+    @Override // c8.lc
     public final void c(boolean z10) {
         this.c = z10;
         d();

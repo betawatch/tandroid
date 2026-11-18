@@ -3,9 +3,9 @@ package di;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.jf0;
+import org.telegram.ui.mf0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -26,44 +26,44 @@ public final /* synthetic */ class v implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                org.telegram.messenger.g0.h3(new bi.e0((e0) this.d, (d0) this.e, this.b, tLObject, this.c, 1));
+                org.telegram.messenger.g0.g3(new bi.e0((e0) this.d, (d0) this.e, this.b, tLObject, this.c, 3));
                 break;
             case 1:
                 hi.d dVar = (hi.d) this.d;
-                org.telegram.ui.ActionBar.u2[] u2VarArr = (org.telegram.ui.ActionBar.u2[]) this.e;
-                org.telegram.messenger.g0.h3(new w7(this.b, 1, this.c, dVar, u2VarArr));
+                org.telegram.ui.ActionBar.x2[] x2VarArr = (org.telegram.ui.ActionBar.x2[]) this.e;
+                org.telegram.messenger.g0.g3(new bi.q3(this.b, 2, this.c, dVar, x2VarArr));
                 break;
             case 2:
-                org.telegram.messenger.g0.h3(new bi.e0((fi.s6) this.d, tLObject, this.b, (String) this.e, this.c, 3));
+                org.telegram.messenger.g0.g3(new bi.e0((fi.p6) this.d, tLObject, this.b, (String) this.e, this.c, 5));
                 break;
             case 3:
-                org.telegram.messenger.g0.h3(new u7(tLObject, this.b, (hi.d) this.d, (org.telegram.ui.ActionBar.u2) this.e, this.c, tL_error));
+                org.telegram.messenger.g0.g3(new bi.l4(tLObject, this.b, (hi.d) this.d, (org.telegram.ui.ActionBar.x2) this.e, this.c, tL_error));
                 break;
             default:
-                org.telegram.messenger.g0.h3(new u7((jf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e));
+                org.telegram.messenger.g0.g3(new bi.l4((mf0) this.d, tL_error, tLObject, this.c, this.b, (TLRPC.Chat) this.e, 7));
                 break;
         }
     }
 
-    public /* synthetic */ v(int i7, hi.d dVar, org.telegram.ui.ActionBar.u2 u2Var, long j3) {
+    public /* synthetic */ v(int i7, hi.d dVar, org.telegram.ui.ActionBar.x2 x2Var, long j3) {
         this.a = 3;
         this.b = i7;
         this.d = dVar;
-        this.e = u2Var;
+        this.e = x2Var;
         this.c = j3;
     }
 
-    public /* synthetic */ v(fi.s6 s6Var, int i7, String str, long j3) {
+    public /* synthetic */ v(fi.p6 p6Var, int i7, String str, long j3) {
         this.a = 2;
-        this.d = s6Var;
+        this.d = p6Var;
         this.b = i7;
         this.e = str;
         this.c = j3;
     }
 
-    public /* synthetic */ v(jf0 jf0Var, long j3, int i7, TLRPC.Chat chat) {
+    public /* synthetic */ v(mf0 mf0Var, long j3, int i7, TLRPC.Chat chat) {
         this.a = 4;
-        this.d = jf0Var;
+        this.d = mf0Var;
         this.c = j3;
         this.b = i7;
         this.e = chat;

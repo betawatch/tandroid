@@ -5,18 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.view.KeyEvent;
-import fi.f6;
+import fi.a6;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
-import org.telegram.messenger.z5;
-import org.telegram.ui.Components.dg;
-import org.telegram.ui.Components.dk;
-import org.telegram.ui.tp;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.lg;
+import org.telegram.ui.up;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -48,7 +47,7 @@ public final class f extends BroadcastReceiver {
                     return;
                 }
             case 3:
-                ((Executor) ((h2.w) this.b).c).execute(new f6(21, this, context));
+                ((Executor) ((h2.w) this.b).c).execute(new a6(23, this, context));
                 break;
             case 4:
                 n2.e eVar = (n2.e) this.b;
@@ -58,10 +57,10 @@ public final class f extends BroadcastReceiver {
                 }
                 break;
             case 5:
-                ((z5) this.b).g();
+                ((org.telegram.messenger.a6) this.b).g();
                 break;
             case 6:
-                if (r2.a) {
+                if (s2.a) {
                     a8.b("file system changed");
                 }
                 org.telegram.messenger.a aVar = new org.telegram.messenger.a(this, 12);
@@ -69,23 +68,23 @@ public final class f extends BroadcastReceiver {
                     aVar.run();
                     break;
                 } else {
-                    org.telegram.messenger.g0.i3(aVar, 1000L);
+                    org.telegram.messenger.g0.h3(aVar, 1000L);
                     break;
                 }
             case 7:
                 t0.d.post(new org.telegram.messenger.a(this, 14));
                 break;
             case 8:
-                dg dgVar = new dg(this, 25);
+                lg lgVar = new lg(this, 25);
                 if (!"android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    dgVar.run();
+                    lgVar.run();
                     break;
                 } else {
-                    ((dk) this.b).r.postDelayed(dgVar, 1000L);
+                    ((kk) this.b).r.postDelayed(lgVar, 1000L);
                     break;
                 }
             case 9:
-                org.telegram.messenger.g0.h3(new tp(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
+                org.telegram.messenger.g0.g3(new up(this, intent.getStringExtra("mode") != null ? intent.getStringExtra("mode") : "toggle", intent.getStringExtra("style") != null ? intent.getStringExtra("style") : "reveal", 20));
                 break;
             case 10:
                 p4.b bVar = (p4.b) this.b;
@@ -108,7 +107,7 @@ public final class f extends BroadcastReceiver {
                         nVar = pVar.e;
                     }
                     if (nVar != null) {
-                        nVar.a.u0(intent.getIntExtra("action_id", -1));
+                        nVar.a.p0(intent.getIntExtra("action_id", -1));
                         break;
                     }
                 }

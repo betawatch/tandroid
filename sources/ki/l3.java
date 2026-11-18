@@ -1,39 +1,32 @@
 package ki;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class l3 extends a41 {
-    public static final /* synthetic */ int b = 0;
+public final /* synthetic */ class l3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ t3 b;
 
-    static {
-        a41.h(new l3());
+    public /* synthetic */ l3(t3 t3Var, int i7) {
+        this.a = i7;
+        this.b = t3Var;
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
-        m3 m3Var = (m3) view;
-        CharSequence charSequence = b41Var.l;
-        CharSequence charSequence2 = b41Var.m;
-        m3Var.setText(charSequence);
-        m3Var.r.setText(charSequence2);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        return new m3(context, e6Var);
-    }
-
-    @Override // org.telegram.ui.Components.a41
-    public final boolean f() {
-        return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                l2 l2Var = this.b.n;
+                if (l2Var.getWebView() != null) {
+                    l2Var.getWebView().setScrollY(intValue);
+                    break;
+                }
+                break;
+            default:
+                this.b.J.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

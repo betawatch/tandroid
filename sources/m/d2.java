@@ -17,7 +17,7 @@ import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d2 implements l.b0 {
     public static final Method Q;
@@ -93,7 +93,7 @@ public abstract class d2 implements l.b0 {
         if (obtainStyledAttributes2.hasValue(2)) {
             xVar.setOverlapAnchor(obtainStyledAttributes2.getBoolean(2, false));
         }
-        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : b5.a.b(context, resourceId));
+        xVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : c8.z.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.P = xVar;
         xVar.setInputMethodMode(1);
@@ -140,9 +140,9 @@ public abstract class d2 implements l.b0 {
         Context context = this.a;
         x xVar = this.P;
         if (r1Var2 == null) {
-            r1 p10 = p(context, !this.O);
-            this.c = p10;
-            p10.setAdapter(this.b);
+            r1 q10 = q(context, !this.O);
+            this.c = q10;
+            q10.setAdapter(this.b);
             this.c.setOnItemClickListener(this.G);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -279,7 +279,7 @@ public abstract class d2 implements l.b0 {
         this.L.post(this.K);
     }
 
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         this.P.setBackgroundDrawable(drawable);
     }
 
@@ -288,14 +288,14 @@ public abstract class d2 implements l.b0 {
         this.r = true;
     }
 
-    public final int n() {
+    public final int o() {
         if (this.r) {
             return this.h;
         }
         return 0;
     }
 
-    public void o(ListAdapter listAdapter) {
+    public void p(ListAdapter listAdapter) {
         c5.i iVar = this.E;
         if (iVar == null) {
             this.E = new c5.i(this, 2);
@@ -315,7 +315,7 @@ public abstract class d2 implements l.b0 {
         }
     }
 
-    public r1 p(Context context, boolean z10) {
+    public r1 q(Context context, boolean z10) {
         return new r1(context, z10);
     }
 

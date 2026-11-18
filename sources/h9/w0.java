@@ -2,9 +2,9 @@ package h9;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class w0 extends f2 {
+public final class w0 extends g2 {
     public final /* synthetic */ g9.k b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -13,7 +13,7 @@ public final class w0 extends f2 {
         this.b = kVar;
     }
 
-    @Override // h9.f2
+    @Override // h9.g2
     public final Object a(Object obj) {
         return this.b.apply(obj);
     }

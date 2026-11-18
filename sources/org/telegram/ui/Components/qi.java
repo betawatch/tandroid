@@ -1,23 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class qi extends FragmentContextView {
-    public final /* synthetic */ FrameLayout Y0;
-    public final /* synthetic */ vi Z0;
+public interface qi {
+    void K0();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi(vi viVar, Context context, org.telegram.ui.ActionBar.e2 e2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.e6 e6Var, FrameLayout frameLayout2) {
-        super(context, e2Var, frameLayout, false, e6Var);
-        this.Z0 = viVar;
-        this.Y0 = frameLayout2;
-    }
+    void R0(Object obj);
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i7) {
-        this.Z0.y.i(this.Y0, i7 == 0, true);
-    }
+    boolean V1();
+
+    void b2(ArrayList arrayList, CharSequence charSequence, boolean z10, int i7, int i10, long j3, boolean z11, long j10);
+
+    void f0(eh ehVar);
+
+    boolean g0();
+
+    void h1(TLRPC.User user);
+
+    void v0();
+
+    void y1(int i7, boolean z10, boolean z11, int i10, int i11, long j3, boolean z12, boolean z13, long j10);
 }

@@ -1,114 +1,29 @@
 package bi;
 
-import android.util.SparseIntArray;
-import c8.i9;
-import di.j8;
-import di.l9;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.xb;
-import org.telegram.ui.Components.zz;
-import org.telegram.ui.ln0;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w2 implements z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class w2 extends h8 {
+    public final /* synthetic */ ViewTreeObserver V;
+    public final /* synthetic */ f2 W;
 
-    public /* synthetic */ w2(int i7, kg.j1 j1Var, aa.c0 c0Var) {
-        this.a = 3;
-        this.b = i7;
-        this.c = j1Var;
-        this.d = c0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w2(long j3, String str, long j10, org.telegram.ui.ActionBar.i6 i6Var, ViewTreeObserver viewTreeObserver, f2 f2Var) {
+        super(j3, str, j10, i6Var);
+        this.V = viewTreeObserver;
+        this.W = f2Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                i4 i4Var = (i4) this.c;
-                int i7 = this.b;
-                c4 c4Var = (c4) this.d;
-                ArrayList arrayList = (ArrayList) obj;
-                org.telegram.ui.ActionBar.e2 e2Var = i4Var.a;
-                j8 j8Var = i4Var.e;
-                j8Var.a(i7, arrayList);
-                c4Var.f(true);
-                i4Var.f(true);
-                i4Var.o();
-                TL_stars.TL_starGiftCollection c10 = j8Var.c(i7);
-                if (c10 != null) {
-                    if (arrayList.size() <= 1) {
-                        if (arrayList.size() == 1) {
-                            TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) arrayList.get(0);
-                            xb R = cc.a0(e2Var).R(savedStarGift.gift.getDocument(), org.telegram.messenger.g0.X2(hd.a0(null, null, 2131750393, di.c6.A1(savedStarGift.gift), c10.title)));
-                            R.r = false;
-                            R.j();
-                            break;
-                        }
-                    } else {
-                        xb R2 = cc.a0(e2Var).R(((TL_stars.SavedStarGift) arrayList.get(0)).gift.getDocument(), org.telegram.messenger.g0.X2(hd.K("Gift2AddedToCollectionMany", arrayList.size(), ',', c10.title)));
-                        R2.r = false;
-                        R2.j();
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                org.telegram.messenger.g0.h3(new ci.p0((TLRPC.UserFull) obj, (org.telegram.ui.web.o) this.c, this.b, (TLRPC.User) this.d, 9));
-                break;
-            case 2:
-                org.telegram.ui.ActionBar.e2 e2Var2 = (org.telegram.ui.ActionBar.e2) this.c;
-                TLRPC.Chat chat = (TLRPC.Chat) this.d;
-                TLRPC.Chat chat2 = (TLRPC.Chat) obj;
-                e2Var2.showDialog(new ni.a(e2Var2.getContext(), chat, -chat2.id, new l9(e2Var2, this.b, chat2, chat, 1)));
-                break;
-            case 3:
-                org.telegram.messenger.g0.h3(new ci.p0(this.b, (kg.j1) this.c, (SparseIntArray) obj, (aa.c0) this.d, 12));
-                break;
-            case 4:
-                org.telegram.ui.n6 n6Var = (org.telegram.ui.n6) this.c;
-                int[] iArr = (int[]) this.d;
-                int i10 = this.b;
-                float f10 = iArr[0];
-                float f11 = i10;
-                n6Var.a(Float.valueOf((i9.a(((Float) obj).floatValue(), 0.0f, 1.0f) * (1.0f / f11)) + (f10 / f11)), Boolean.FALSE);
-                break;
-            case 5:
-                zz zzVar = (zz) this.c;
-                z10 z10Var = (z10) this.d;
-                int i11 = this.b;
-                zzVar.getClass();
-                zzVar.w2 = ((Boolean) obj).booleanValue();
-                zzVar.dismiss();
-                z10Var.a(Integer.valueOf(i11));
-                break;
-            default:
-                Utilities.i.c(new ai.g1((tg.e2) this.c, this.b, (List) obj, new ArrayList(), (ln0) this.d, 27));
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onPause() {
+        super.onPause();
+        this.V.removeOnPreDrawListener(this.W);
     }
 
-    public /* synthetic */ w2(Object obj, int i7, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i7;
-        this.d = obj2;
-    }
-
-    public /* synthetic */ w2(Object obj, Object obj2, int i7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = i7;
+    @Override // org.telegram.ui.ActionBar.h2
+    public final void onResume() {
+        super.onResume();
+        this.V.addOnPreDrawListener(this.W);
     }
 }

@@ -12,14 +12,14 @@ import java.io.StringReader;
 import java.util.function.Function;
 import java.util.regex.Pattern;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.v00;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n5;
+import org.telegram.messenger.s00;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ps;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Function {
     public final /* synthetic */ int a;
@@ -89,15 +89,15 @@ public final /* synthetic */ class l implements Function {
             case 5:
                 return String.valueOf((Long) obj);
             case 6:
-                return np.a((int[]) obj);
+                return mp.a((int[]) obj);
             case 7:
-                return ((v00) obj).b;
+                return ((s00) obj).b;
             case 8:
-                return Long.valueOf(m5.o((TLRPC.Peer) obj));
+                return Long.valueOf(n5.o((TLRPC.Peer) obj));
             case 9:
-                return Long.valueOf(((gj) obj).Z0());
+                return Long.valueOf(((fj) obj).Z0());
             case 10:
-                return Integer.valueOf(((gj) obj).e1());
+                return Integer.valueOf(((fj) obj).e1());
             case 11:
                 TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
                 if (channelParticipant == null) {
@@ -105,15 +105,13 @@ public final /* synthetic */ class l implements Function {
                 }
                 return channelParticipant.banned_rights;
             case 12:
-                return Long.valueOf(m5.o(((TLRPC.GroupCallParticipant) obj).peer));
+                return Long.valueOf(n5.o(((TLRPC.GroupCallParticipant) obj).peer));
             case 13:
-                return Long.valueOf(m5.o(((TLRPC.GroupCallParticipant) obj).peer));
+                return Long.valueOf(n5.o(((TLRPC.GroupCallParticipant) obj).peer));
             case 14:
                 return ((ps) obj).a;
-            case 15:
-                return ((ps) obj).a;
             default:
-                return new org.telegram.utils.twidget.h(((Integer) obj).intValue());
+                return ((ps) obj).a;
         }
     }
 

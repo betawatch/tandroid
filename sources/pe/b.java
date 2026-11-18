@@ -4,18 +4,18 @@ import a4.k;
 import ca.i;
 import h2.o0;
 import kotlin.jvm.internal.j;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 import qe.f;
 import qe.h;
 import w7.s;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b {
     public static final b d = new b();
     public final o0 a = new o0();
     public final s b = re.a.a;
-    public final cf c = new cf(12);
+    public final b5 c = new b5(15);
 
     public final Object a(ke.a deserializer, String str) {
         byte b10;

@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.g;
 import gd.k;
 import id.c;
@@ -12,7 +12,7 @@ import zd.b0;
 import zd.s;
 import zd.t;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzlk extends j implements p {
     int zza;
@@ -65,7 +65,7 @@ final class zzlk extends j implements p {
     */
     public final Object invokeSuspend(Object obj) {
         Map map;
-        Object b10;
+        Object a10;
         zzhk zzhkVar;
         Object zza;
         Object zza2;
@@ -85,10 +85,10 @@ final class zzlk extends j implements p {
             if (sVar != null) {
                 ((t) sVar).Q(zza3);
             }
-            b10 = b.b(zza3);
+            a10 = h.a(zza3);
         }
         if (i10 == 0) {
-            b.c(obj);
+            h.b(obj);
             zzhkVar = (zzhk) this.zzd;
             zzdj zzn = this.zzb.zzn();
             zzmc zzmcVar = zzmc.zzd;
@@ -97,11 +97,11 @@ final class zzlk extends j implements p {
             zza = zzn.zza(zzmcVar, this);
         } else if (i10 == 1) {
             zzhkVar = (zzhk) this.zzd;
-            b.c(obj);
+            h.b(obj);
             zza = obj;
         } else if (i10 == 2) {
             zzhkVar = (zzhk) this.zzd;
-            b.c(obj);
+            h.b(obj);
             zza2 = obj;
             if (!((Boolean) zza2).booleanValue()) {
                 zzly zzlyVar2 = this.zzb;
@@ -114,14 +114,14 @@ final class zzlk extends j implements p {
             this.zza = 5;
         } else if (i10 == 3) {
             zzhkVar = (zzhk) this.zzd;
-            b.c(obj);
+            h.b(obj);
             zzu = obj;
             this.zzd = null;
             this.zza = 4;
         } else {
             if (i10 != 4) {
                 if (i10 != 5) {
-                    b.c(obj);
+                    h.b(obj);
                     i7 = obj;
                     zzxx zzxxVar = (zzxx) i7;
                     zzxw zzf = zzxx.zzf();
@@ -133,15 +133,15 @@ final class zzlk extends j implements p {
                     zzf3.zze(zzxxVar.zzj());
                     zzf3.zzf(zzxxVar.zzM());
                     zzf.zzs(zzf3);
-                    b10 = zzf.zzk();
-                    return new g(b10);
+                    a10 = zzf.zzk();
+                    return new g(a10);
                 }
-                b.c(obj);
-                t a10 = b0.a();
+                h.b(obj);
+                t a11 = b0.a();
                 zzly zzlyVar3 = this.zzb;
                 map2 = zzlyVar3.zzd;
                 String str2 = this.zzc;
-                map2.put(str2, a10);
+                map2.put(str2, a11);
                 zzze zzf4 = zzzf.zzf();
                 zzf4.zze(str2);
                 byte[] zzd = ((zzzf) zzf4.zzk()).zzd();
@@ -149,7 +149,7 @@ final class zzlk extends j implements p {
                 zzD = zzlyVar3.zzD();
                 b0.q(zzD.zzb(), new zzlj(zzlyVar3, zzi, null));
                 this.zza = 6;
-                i7 = a10.i(this);
+                i7 = a11.i(this);
                 if (i7 == aVar) {
                     return aVar;
                 }
@@ -163,16 +163,16 @@ final class zzlk extends j implements p {
                 zzf32.zze(zzxxVar2.zzj());
                 zzf32.zzf(zzxxVar2.zzM());
                 zzf5.zzs(zzf32);
-                b10 = zzf5.zzk();
-                return new g(b10);
+                a10 = zzf5.zzk();
+                return new g(a10);
             }
-            b.c(obj);
+            h.b(obj);
             s zzz2 = this.zzb.zzz();
             this.zzd = null;
             this.zza = 5;
         }
         if (((Boolean) zza).booleanValue()) {
-            return new g(b.b(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
+            return new g(h.a(new zzcg(zzce.zzb, zzcd.zzay, null, null, 12, null)));
         }
         zzdj zzn2 = this.zzb.zzn();
         zzmc zzmcVar2 = zzmc.zzc;

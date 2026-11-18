@@ -1,29 +1,37 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Point;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class f71 extends org.telegram.ui.Components.po0 {
-    public final /* synthetic */ i71 V2;
+public final class f71 extends c8.ia {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.messenger.fs b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f71(i71 i71Var, Activity activity, String str, String str2) {
-        super(activity, null, str, false, str2, false, null);
-        this.V2 = i71Var;
+    public /* synthetic */ f71(org.telegram.messenger.fs fsVar, int i7) {
+        this.a = i7;
+        this.b = fsVar;
     }
 
-    @Override // org.telegram.ui.Components.po0
-    public final void R0(a0.h hVar, int i7, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
-        if (z10) {
-            int m10 = hVar.m();
-            i71 i71Var = this.V2;
-            if (m10 == 1) {
-                i71Var.a.n0.m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i7), 61);
-            } else {
-                i71Var.a.n0.k(0L, 61, Integer.valueOf(i7), Integer.valueOf(hVar.m()), null, null);
-            }
+    @Override // c8.ia
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((hc1) this.b).w.invalidate();
+                break;
+        }
+    }
+
+    @Override // c8.ia
+    public void b(int i7, int i10) {
+        switch (this.a) {
+            case 0:
+                Point point = org.telegram.messenger.g0.q;
+                if ((point.x <= point.y) == (i7 <= i10)) {
+                    ((x71) this.b).z0.invalidate();
+                    break;
+                }
+                break;
         }
     }
 }

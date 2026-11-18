@@ -1,7 +1,16 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.os.Build;
+import org.telegram.messenger.mp;
+import org.telegram.ui.Dictation.DictationAsr;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b1 {
-    public static l8.a a;
+    public static boolean a() {
+        if (mp.g1().getBoolean("design_voice_live_transcript", true) && DictationAsr.B()) {
+            return !DictationAsr.x() || (Build.VERSION.SDK_INT >= 33 && ai.d.h());
+        }
+        return false;
+    }
 }

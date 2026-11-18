@@ -1,16 +1,13 @@
 package aa;
 
-import ai.j1;
 import android.util.Log;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.Callable;
 import org.chromium.support_lib_boundary.JsReplyProxyBoundaryInterface;
-import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Callable {
     public final /* synthetic */ int a;
@@ -48,23 +45,19 @@ public final /* synthetic */ class s implements Callable {
                 }
                 return Boolean.valueOf(z10);
             case 1:
-                ArrayList arrayList = (ArrayList) this.b;
-                ai.t[] tVarArr = DictationAsr.a;
-                return Integer.valueOf(DictationAsr.u("silero_vad.onnx", j1.f(arrayList, "silero-vad"), null));
-            case 2:
                 return new e5.f((JsReplyProxyBoundaryInterface) this.b);
             default:
                 ia.c cVar = (ia.c) ((q4.q) this.b).c;
                 f5.g gVar = (f5.g) cVar.f;
-                ia.f fVar = (ia.f) cVar.b;
+                ia.e eVar = (ia.e) cVar.b;
                 String str2 = gVar.a;
                 ba.e.b();
                 try {
-                    HashMap c10 = f5.g.c(fVar);
+                    HashMap c10 = f5.g.c(eVar);
                     android.support.v4.media.session.a0 a0Var = new android.support.v4.media.session.a0(str2, c10);
                     a0Var.m("User-Agent", "Crashlytics Android SDK/20.1.1");
                     a0Var.m("X-CRASHLYTICS-DEVELOPER-TOKEN", "470fa2b4ae81cd56ecbcda9735803434cec591fa");
-                    f5.g.b(a0Var, fVar);
+                    f5.g.b(a0Var, eVar);
                     String str3 = "Requesting settings from " + str2;
                     if (Log.isLoggable("FirebaseCrashlytics", 3)) {
                         Log.d("FirebaseCrashlytics", str3, null);

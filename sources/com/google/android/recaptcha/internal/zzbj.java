@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
+import b7.h;
 import gd.k;
 import id.c;
 import java.util.Timer;
@@ -8,7 +8,7 @@ import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzbj extends j implements p {
     final /* synthetic */ zzbo zza;
@@ -36,7 +36,7 @@ final class zzbj extends j implements p {
     public final Object invokeSuspend(Object obj) {
         boolean z10;
         a aVar = a.a;
-        b.c(obj);
+        h.b(obj);
         zzhk zzhkVar = (zzhk) this.zzb;
         zzbo zzboVar = this.zza;
         z10 = zzboVar.zzg;

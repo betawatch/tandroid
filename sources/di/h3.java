@@ -1,62 +1,89 @@
 package di;
 
-import java.util.ArrayList;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ys0;
-import org.telegram.ui.zg;
+import android.text.TextUtils;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h3 implements z10 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class h3 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f6 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ h3(int i7, long j3, TLRPC.Document document) {
-        this.b = i7;
-        this.c = j3;
-        this.d = document;
+    public /* synthetic */ h3(f6 f6Var, String str, int i7) {
+        this.a = i7;
+        this.b = f6Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        TLRPC.StickerSet stickerSet;
+    @Override // java.lang.Runnable
+    public final void run() {
         int i7 = this.a;
-        int i10 = this.b;
-        long j3 = this.c;
-        Object obj2 = this.d;
-        int i11 = 0;
+        String str = this.c;
+        f6 f6Var = this.b;
         switch (i7) {
             case 0:
-                TLRPC.Document document = (TLRPC.Document) obj2;
-                if (((Boolean) obj).booleanValue()) {
-                    u8.y(i10, false).P(j3);
-                    org.telegram.messenger.g0.h3(new aa.r((Object) new l3(j3, i11), (Object) document, (Object) hd.M0(2131750102, null), 19));
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 1:
+                long j3 = f6Var.T1;
+                f6Var.g2.setLoading(false);
+                if (!TextUtils.isEmpty(str)) {
+                    f6Var.dismiss();
+                    org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                    if (Q != null) {
+                        if (Q instanceof bn) {
+                            bn bnVar = (bn) Q;
+                            if (bnVar.a() == j3) {
+                                org.telegram.ui.Components.lc.b0(bnVar).I(R.raw.gift, gd.M0(2131744861, null), org.telegram.messenger.g0.W2(gd.a0(null, null, 2131744859, org.telegram.messenger.n5.t(j3)))).k(true);
+                                break;
+                            }
+                        }
+                        ks f10 = ks.f(f6Var.a);
+                        Long valueOf = Long.valueOf(j3);
+                        Boolean bool = Boolean.FALSE;
+                        f10.k(6, valueOf, bool);
+                        ks.f(f6Var.a).k(5, Long.valueOf(j3), bool);
+                        bn ua2 = bn.ua(j3);
+                        ua2.whenFullyVisible(new w2(3, f6Var, ua2));
+                        Q.presentFragment(ua2);
+                        break;
+                    }
+                } else {
+                    f6Var.H2(0, true, null);
                     break;
                 }
                 break;
-            case 1:
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                org.telegram.messenger.g0.i3(new zg(22, (org.telegram.ui.Components.xb) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? hd.M0(2131754435, null) : i10 == 1 ? org.telegram.messenger.g0.X2(hd.a0("TopicContainsEmojiPackSingle", null, 2131744022, stickerSet.title)) : i10 == 2 ? org.telegram.messenger.g0.X2(hd.a0("StoryContainsEmojiPackSingle", null, 2131744699, stickerSet.title)) : org.telegram.messenger.g0.X2(hd.a0("MessageContainsEmojiPackSingle", null, 2131748596, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j3)));
+            case 2:
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 3:
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 4:
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 5:
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 6:
+                vf.c.v(f6Var.getContext(), mp.u1(f6Var.a).K6 + str, false);
+                break;
+            case 7:
+                org.telegram.messenger.g0.g(str);
+                org.telegram.ui.Components.gc k10 = f6Var.k().k(false);
+                k10.t = true;
+                k10.j();
                 break;
             default:
-                ((ys0) obj2).getStoriesController().b(i10, j3, (ArrayList) obj);
+                f6Var.dismiss();
+                vf.c.t(f6Var.getContext(), "https://" + mp.u1(f6Var.a).X2 + "/" + str);
                 break;
         }
-    }
-
-    public /* synthetic */ h3(int i7, org.telegram.ui.Components.xb xbVar, long j3) {
-        this.b = i7;
-        this.d = xbVar;
-        this.c = j3;
-    }
-
-    public /* synthetic */ h3(ys0 ys0Var, long j3, int i7) {
-        this.d = ys0Var;
-        this.c = j3;
-        this.b = i7;
     }
 }

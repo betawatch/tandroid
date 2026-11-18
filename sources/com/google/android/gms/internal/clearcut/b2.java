@@ -2,7 +2,7 @@ package com.google.android.gms.internal.clearcut;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 
 /* loaded from: classes.dex */
@@ -19,7 +19,7 @@ public final class b2 extends r6.a {
     public final int r;
 
     public b2(String str, int i7, int i10, String str2, o1 o1Var) {
-        q6.m.g(str);
+        q6.m.h(str);
         this.a = str;
         this.b = i7;
         this.c = i10;
@@ -37,7 +37,7 @@ public final class b2 extends r6.a {
         }
         if (obj instanceof b2) {
             b2 b2Var = (b2) obj;
-            if (q6.m.k(this.a, b2Var.a) && this.b == b2Var.b && this.c == b2Var.c && q6.m.k(this.h, b2Var.h) && q6.m.k(this.d, b2Var.d) && q6.m.k(this.e, b2Var.e) && this.f == b2Var.f && this.n == b2Var.n && this.r == b2Var.r) {
+            if (q6.m.l(this.a, b2Var.a) && this.b == b2Var.b && this.c == b2Var.c && q6.m.l(this.h, b2Var.h) && q6.m.l(this.d, b2Var.d) && q6.m.l(this.e, b2Var.e) && this.f == b2Var.f && this.n == b2Var.n && this.r == b2Var.r) {
                 return true;
             }
         }
@@ -71,22 +71,22 @@ public final class b2 extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.l(parcel, 2, this.a);
-        yb.q(parcel, 3, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.l(parcel, 2, this.a);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        yb.l(parcel, 5, this.d);
-        yb.l(parcel, 6, this.e);
-        yb.q(parcel, 7, 4);
+        bc.l(parcel, 5, this.d);
+        bc.l(parcel, 6, this.e);
+        bc.q(parcel, 7, 4);
         parcel.writeInt(this.f ? 1 : 0);
-        yb.l(parcel, 8, this.h);
-        yb.q(parcel, 9, 4);
+        bc.l(parcel, 8, this.h);
+        bc.q(parcel, 9, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        yb.q(parcel, 10, 4);
+        bc.q(parcel, 10, 4);
         parcel.writeInt(this.r);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 
     public b2(String str, int i7, int i10, String str2, String str3, boolean z10, String str4, boolean z11, int i11) {

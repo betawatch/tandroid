@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u extends kd.i implements rd.p {
     public Object b;
@@ -44,7 +44,7 @@ public final class u extends kd.i implements rd.p {
         jd.a aVar = jd.a.a;
         int i10 = this.e;
         if (i10 == 0) {
-            af.b.c(obj);
+            b7.h.b(obj);
             cVar = (wd.c) this.f;
             arrayList = new ArrayList(20);
             it = this.h;
@@ -56,7 +56,7 @@ public final class u extends kd.i implements rd.p {
                         Iterator it2 = this.c;
                         t tVar2 = (t) this.b;
                         wd.c cVar3 = (wd.c) this.f;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         tVar2.i();
                         while (true) {
                             int i11 = tVar2.b;
@@ -101,7 +101,7 @@ public final class u extends kd.i implements rd.p {
                     } else if (i10 == 4) {
                         tVar = (t) this.b;
                         cVar2 = (wd.c) this.f;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         tVar.i();
                     } else if (i10 != 5) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -127,13 +127,13 @@ public final class u extends kd.i implements rd.p {
                     }
                     return gd.k.a;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 return gd.k.a;
             }
             i7 = this.d;
             it = this.c;
             cVar = (wd.c) this.f;
-            af.b.c(obj);
+            b7.h.b(obj);
             arrayList = new ArrayList(20);
         }
         wd.c cVar4 = cVar;

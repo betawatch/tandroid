@@ -6,7 +6,7 @@ import zd.b0;
 import zd.b1;
 import zd.n1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class r extends zd.a implements s, g {
     public final c d;
@@ -37,16 +37,16 @@ public final class r extends zd.a implements s, g {
             if (atomicReferenceFieldUpdater.get(cVar) != null) {
                 while (true) {
                     Object obj = atomicReferenceFieldUpdater.get(cVar);
-                    aa.b0 b0Var = e.q;
-                    if (obj != b0Var) {
+                    ee.t tVar = e.q;
+                    if (obj != tVar) {
                         if (obj == e.r) {
                             throw new IllegalStateException("Another handler was already registered and successfully invoked");
                         }
                         throw new IllegalStateException(("Another handler is already registered: " + obj).toString());
                     }
-                    aa.b0 b0Var2 = e.r;
-                    while (!atomicReferenceFieldUpdater.compareAndSet(cVar, b0Var, b0Var2)) {
-                        if (atomicReferenceFieldUpdater.get(cVar) != b0Var) {
+                    ee.t tVar2 = e.r;
+                    while (!atomicReferenceFieldUpdater.compareAndSet(cVar, tVar, tVar2)) {
+                        if (atomicReferenceFieldUpdater.get(cVar) != tVar) {
                             break;
                         }
                     }

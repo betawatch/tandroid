@@ -2,9 +2,9 @@ package org.telegram.ui;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fa0 extends v4.t0 {
+public final class fa0 extends v4.u0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ pa0 b;
 
@@ -13,7 +13,7 @@ public final class fa0 extends v4.t0 {
         this.b = pa0Var;
     }
 
-    @Override // v4.t0
+    @Override // v4.u0
     public final void a(RecyclerView recyclerView, int i7) {
         switch (this.a) {
             case 0:
@@ -37,12 +37,12 @@ public final class fa0 extends v4.t0 {
         }
     }
 
-    @Override // v4.t0
+    @Override // v4.u0
     public void b(RecyclerView recyclerView, int i7, int i10) {
         switch (this.a) {
             case 1:
                 pa0 pa0Var = this.b;
-                pa0Var.K0(false);
+                pa0Var.N0(false);
                 if (pa0Var.I != null) {
                     pa0Var.K += i10;
                     break;

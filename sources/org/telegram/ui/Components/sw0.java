@@ -1,13 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.animation.ValueAnimator;
+import android.text.StaticLayout;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class sw0 {
-    public final oy0 a;
-    public final oy0 b;
+    public final EditTextBoldCursor a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public StaticLayout d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public float h;
+    public float i;
+    public ValueAnimator j;
 
-    public sw0(oy0 oy0Var, oy0 oy0Var2) {
-        this.a = oy0Var;
-        this.b = oy0Var2;
+    public sw0(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 }

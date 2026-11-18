@@ -7,21 +7,21 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.u5;
+import org.telegram.ui.Components.c6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.si;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class j extends FrameLayout {
     public final /* synthetic */ int a = 0;
     public int b;
     public final Object c;
     public final Object d;
-    public final /* synthetic */ is e;
+    public final /* synthetic */ fs e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public j(n nVar, Context context) {
@@ -29,7 +29,7 @@ public final class j extends FrameLayout {
         this.e = nVar;
         this.b = -1;
         this.c = new Rect();
-        this.d = new u5(this, 220L, er.h);
+        this.d = new c6(this, 220L, lr.h);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -38,11 +38,11 @@ public final class j extends FrameLayout {
             case 1:
                 h6.m mVar = (h6.m) this.d;
                 Path path = (Path) this.c;
-                ki kiVar = (ki) this.e;
-                fh.g gVar = kiVar.z2;
+                si siVar = (si) this.e;
+                fh.g gVar = siVar.z2;
                 if (gVar != null) {
-                    gVar.setBounds(0, (int) kiVar.T3, getMeasuredWidth(), getMeasuredHeight());
-                    kiVar.z2.draw(canvas);
+                    gVar.setBounds(0, (int) siVar.T3, getMeasuredWidth(), getMeasuredHeight());
+                    siVar.z2.draw(canvas);
                 }
                 float L = org.telegram.messenger.g0.L(20.0f);
                 int L2 = org.telegram.messenger.g0.L(7.0f);
@@ -54,12 +54,12 @@ public final class j extends FrameLayout {
                 path.addRoundRect(rectF, L, L, Path.Direction.CW);
                 canvas.save();
                 canvas.clipPath(path);
-                canvas.saveLayerAlpha(rectF, ns.e4, 31);
+                canvas.saveLayerAlpha(rectF, ks.e4, 31);
                 super.dispatchDraw(canvas);
                 rectF.set(getPaddingLeft(), f10, getWidth() - getPaddingRight(), org.telegram.messenger.g0.L(6.0f) + L2);
-                mVar.m(canvas, rectF, 1, 1.0f);
+                mVar.n(canvas, rectF, 1, 1.0f);
                 rectF.set(getPaddingLeft(), (getHeight() - L3) - org.telegram.messenger.g0.L(6.0f), getWidth() - getPaddingRight(), getHeight() - L3);
-                mVar.m(canvas, rectF, 3, 1.0f);
+                mVar.n(canvas, rectF, 3, 1.0f);
                 canvas.restore();
                 canvas.restore();
                 break;
@@ -74,9 +74,9 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 0:
                 float width = getWidth() / 2.0f;
-                u5 u5Var = (u5) this.d;
+                c6 c6Var = (c6) this.d;
                 n nVar = (n) this.e;
-                float e10 = u5Var.e(false, nVar.n.getWidth());
+                float e10 = c6Var.e(false, nVar.n.getWidth());
                 Rect rect = (Rect) this.c;
                 float f10 = e10 / 2.0f;
                 rect.set((int) (width - (nVar.n.getScaleX() * f10)), (int) (((1.0f - nVar.n.getScaleY()) * nVar.n.getHeight()) + nVar.n.getY()), (int) ((nVar.n.getScaleX() * f10) + width), (int) (nVar.n.getY() + nVar.n.getHeight()));
@@ -93,13 +93,13 @@ public final class j extends FrameLayout {
         switch (this.a) {
             case 1:
                 int i13 = this.b;
-                ki kiVar = (ki) this.e;
-                int top = i13 - kiVar.w1.getTop();
+                si siVar = (si) this.e;
+                int top = i13 - siVar.w1.getTop();
                 super.onLayout(z10, i7, i10, i11, i12);
                 this.b = getHeight();
-                if (kiVar.w1.getVisibility() == 0 && getHeight() - kiVar.w1.getTop() != top) {
-                    kiVar.w1.setTranslationY(kiVar.w1.getTranslationY() + ((getHeight() - kiVar.w1.getTop()) - top));
-                    kiVar.w1.animate().translationY(0.0f).setDuration(320L).setInterpolator(er.h).start();
+                if (siVar.w1.getVisibility() == 0 && getHeight() - siVar.w1.getTop() != top) {
+                    siVar.w1.setTranslationY(siVar.w1.getTranslationY() + ((getHeight() - siVar.w1.getTop()) - top));
+                    siVar.w1.animate().translationY(0.0f).setDuration(320L).setInterpolator(lr.h).start();
                     break;
                 }
                 break;
@@ -129,9 +129,9 @@ public final class j extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(ki kiVar, Context context) {
+    public j(si siVar, Context context) {
         super(context);
-        this.e = kiVar;
+        this.e = siVar;
         this.c = new Path();
         this.d = new h6.m(29);
     }

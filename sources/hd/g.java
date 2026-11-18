@@ -1,12 +1,12 @@
 package hd;
 
-import c8.d0;
+import c8.f0;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class g extends d0 {
+public abstract class g extends f0 {
     public static int b(List list) {
         kotlin.jvm.internal.j.e(list, "<this>");
         return list.size() - 1;

@@ -8,17 +8,17 @@ import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
 import m.o3;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import q6.h;
 import q6.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends h {
     public final q F;
 
     public e(Context context, Looper looper, o3 o3Var, q qVar, k kVar, l lVar) {
-        super(context, looper, ns.t4, o3Var, kVar, lVar, 0);
+        super(context, looper, ks.t4, o3Var, kVar, lVar, 0);
         this.F = qVar;
     }
 

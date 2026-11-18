@@ -1,9 +1,32 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.ui.Components.mk0;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class ea {
-    public static boolean a(char c10) {
-        return c10 == ' ' || c10 == '\t' || c10 == '\n' || c10 == '\r' || c10 == '\f';
+    public static void a(mk0 mk0Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        mk0Var.r(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.Fi, i6Var), i6Var != null ? i6Var.d() : org.telegram.ui.ActionBar.n6.I.q());
+    }
+
+    public static int b(oi.a aVar) {
+        if (aVar == null) {
+            return 0;
+        }
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(oi.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r3, 1, 16, 12));
+    }
+
+    public static int d(oi.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return org.telegram.messenger.g0.L(com.google.android.gms.internal.vision.e2.v(r3, 1, 16, 8));
     }
 }

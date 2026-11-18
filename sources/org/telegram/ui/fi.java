@@ -1,29 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fi implements org.telegram.messenger.is {
+public final class fi implements org.telegram.messenger.fs {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ci.p0 b;
-    public final /* synthetic */ an c;
-    public final /* synthetic */ an d;
+    public final /* synthetic */ bi.u4 b;
+    public final /* synthetic */ bn c;
+    public final /* synthetic */ bn d;
 
-    public fi(an anVar, int i7, ci.p0 p0Var, an anVar2) {
-        this.d = anVar;
+    public fi(bn bnVar, int i7, bi.u4 u4Var, bn bnVar2) {
+        this.d = bnVar;
         this.a = i7;
-        this.b = p0Var;
-        this.c = anVar2;
+        this.b = u4Var;
+        this.c = bnVar2;
     }
 
-    @Override // org.telegram.messenger.is
+    @Override // org.telegram.messenger.fs
     public final void didReceivedNotification(int i7, int i10, Object... objArr) {
         int i11;
-        int i12 = org.telegram.messenger.ns.D;
+        int i12 = org.telegram.messenger.ks.D;
         if (i7 == i12 && ((Integer) objArr[10]).intValue() == this.a) {
             this.b.run();
-            org.telegram.messenger.g0.i3(new l2.x(this.c, i7, i10, objArr, 10), 50L);
-            i11 = ((org.telegram.ui.ActionBar.e2) this.d).currentAccount;
-            org.telegram.messenger.ns.f(i11).n(this, i12);
+            org.telegram.messenger.g0.h3(new l2.x(this.c, i7, i10, objArr, 10), 50L);
+            i11 = ((org.telegram.ui.ActionBar.h2) this.d).currentAccount;
+            org.telegram.messenger.ks.f(i11).n(this, i12);
         }
     }
 }

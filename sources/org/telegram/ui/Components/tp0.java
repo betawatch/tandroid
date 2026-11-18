@@ -1,18 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.Interpolator;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tp0 implements Interpolator {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class tp0 implements org.telegram.messenger.rr, org.telegram.ui.ActionBar.r1 {
+    public final /* synthetic */ gt0 a;
+    public final /* synthetic */ TL_stories.StoryItem b;
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f10) {
-        switch (this.a) {
-        }
-        float f11 = f10 - 1.0f;
-        return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+    public /* synthetic */ tp0(gt0 gt0Var, TL_stories.StoryItem storyItem) {
+        this.a = gt0Var;
+        this.b = storyItem;
+    }
+
+    @Override // org.telegram.messenger.rr
+    public void a(String str) {
+        r0.getStoriesController().r(r0.m1, str, new ph(10, this.a, this.b));
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        ArrayList arrayList = new ArrayList(1);
+        arrayList.add(this.b);
+        gt0 gt0Var = this.a;
+        org.telegram.ui.ActionBar.h2 h2Var = gt0Var.y1;
+        h2Var.getMessagesController().R1().s(arrayList, gt0Var.m1);
+        lc.b0(h2Var).Q(R.raw.ic_delete, 36, org.telegram.messenger.gd.G(1, "StoriesDeleted", new Object[0])).j();
+        gt0Var.V(false);
     }
 }

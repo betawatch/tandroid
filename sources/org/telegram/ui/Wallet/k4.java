@@ -1,32 +1,48 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import org.telegram.ui.Components.o80;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class k4 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ y5 b;
+public final class k4 extends o80 {
+    public final Paint M;
+    public final /* synthetic */ m4 N;
 
-    public /* synthetic */ k4(y5 y5Var, int i7) {
-        this.a = i7;
-        this.b = y5Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k4(m4 m4Var, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(i6Var);
+        this.N = m4Var;
+        Paint paint = new Paint(1);
+        this.M = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                y5 y5Var = this.b;
-                y5Var.getClass();
-                y5Var.N0(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                y5 y5Var2 = this.b;
-                y5Var2.getClass();
-                y5Var2.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                y5Var2.U0();
-                break;
+    @Override // org.telegram.ui.Components.o80
+    public final void b(Canvas canvas, Path path) {
+        super.b(canvas, path);
+        m4 m4Var = this.N;
+        RectF rectF = m4Var.f;
+        if (m4Var.o0 != null) {
+            canvas.saveLayer(rectF, null);
+            m4Var.o0.c((org.telegram.messenger.g0.L(206.0f) - m4Var.o0.k()) / 2.0f, (rectF.bottom - org.telegram.messenger.g0.L(7.0f)) - m4Var.o0.i(), 1.0f, -1, canvas);
+            Shader shader = this.x.getShader();
+            Paint paint = this.M;
+            paint.setShader(shader);
+            canvas.drawRect(rectF, paint);
+            canvas.restore();
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        this.N.a.invalidate();
     }
 }

@@ -1,144 +1,62 @@
 package u7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import c8.xb;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.location.LocationRequest;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class n implements Parcelable.Creator {
-    public final /* synthetic */ int a;
+public abstract class n {
+    public static final StringBuilder a;
 
-    public /* synthetic */ n(int i7) {
-        this.a = i7;
+    static {
+        Locale locale = Locale.ROOT;
+        new SimpleDateFormat("MM-dd HH:mm:ss.SSS", locale);
+        new SimpleDateFormat("MM-dd HH:mm:ss", locale);
+        a = new StringBuilder(33);
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        Status status = null;
-        switch (this.a) {
-            case 0:
-                int z10 = xb.z(parcel);
-                boolean z11 = false;
-                boolean z12 = false;
-                boolean z13 = false;
-                boolean z14 = false;
-                LocationRequest locationRequest = null;
-                ArrayList arrayList = null;
-                String str = null;
-                String str2 = null;
-                long j3 = Long.MAX_VALUE;
-                while (parcel.dataPosition() < z10) {
-                    int readInt = parcel.readInt();
-                    char c10 = (char) readInt;
-                    if (c10 == 1) {
-                        locationRequest = (LocationRequest) xb.g(parcel, readInt, LocationRequest.CREATOR);
-                    } else if (c10 != 5) {
-                        switch (c10) {
-                            case '\b':
-                                z11 = xb.n(parcel, readInt);
-                                break;
-                            case '\t':
-                                z12 = xb.n(parcel, readInt);
-                                break;
-                            case '\n':
-                                str = xb.h(parcel, readInt);
-                                break;
-                            case 11:
-                                z13 = xb.n(parcel, readInt);
-                                break;
-                            case '\f':
-                                z14 = xb.n(parcel, readInt);
-                                break;
-                            case '\r':
-                                str2 = xb.h(parcel, readInt);
-                                break;
-                            case 14:
-                                j3 = xb.w(parcel, readInt);
-                                break;
-                            default:
-                                xb.y(parcel, readInt);
-                                break;
-                        }
-                    } else {
-                        arrayList = xb.l(parcel, readInt, q6.e.CREATOR);
-                    }
-                }
-                xb.m(parcel, z10);
-                return new m(locationRequest, arrayList, z11, z12, str, z13, z14, str2, j3);
-            case 1:
-                int z15 = xb.z(parcel);
-                q qVar = s.b;
-                int i7 = 0;
-                int i10 = 0;
-                int i11 = 0;
-                List list = t.e;
-                String str3 = null;
-                String str4 = null;
-                String str5 = null;
-                k kVar = null;
-                while (parcel.dataPosition() < z15) {
-                    int readInt2 = parcel.readInt();
-                    switch ((char) readInt2) {
-                        case 1:
-                            i7 = xb.u(parcel, readInt2);
-                            break;
-                        case 2:
-                            i10 = xb.u(parcel, readInt2);
-                            break;
-                        case 3:
-                            str3 = xb.h(parcel, readInt2);
-                            break;
-                        case 4:
-                            str4 = xb.h(parcel, readInt2);
-                            break;
-                        case 5:
-                            i11 = xb.u(parcel, readInt2);
-                            break;
-                        case 6:
-                            str5 = xb.h(parcel, readInt2);
-                            break;
-                        case 7:
-                            kVar = (k) xb.g(parcel, readInt2, k.CREATOR);
-                            break;
-                        case '\b':
-                            list = xb.l(parcel, readInt2, n6.c.CREATOR);
-                            break;
-                        default:
-                            xb.y(parcel, readInt2);
-                            break;
-                    }
-                }
-                xb.m(parcel, z15);
-                return new k(i7, i10, str3, str4, str5, i11, list, kVar);
-            default:
-                int z16 = xb.z(parcel);
-                while (parcel.dataPosition() < z16) {
-                    int readInt3 = parcel.readInt();
-                    if (((char) readInt3) != 1) {
-                        xb.y(parcel, readInt3);
-                    } else {
-                        status = (Status) xb.g(parcel, readInt3, Status.CREATOR);
-                    }
-                }
-                xb.m(parcel, z16);
-                return new u(status);
+    public static void a(long j3, StringBuilder sb2) {
+        if (j3 == 0) {
+            sb2.append("0s");
+            return;
         }
-    }
-
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i7) {
-        switch (this.a) {
-            case 0:
-                return new m[i7];
-            case 1:
-                return new k[i7];
-            default:
-                return new u[i7];
+        sb2.ensureCapacity(sb2.length() + 27);
+        boolean z10 = false;
+        if (j3 < 0) {
+            sb2.append("-");
+            if (j3 != Long.MIN_VALUE) {
+                j3 = -j3;
+            } else {
+                j3 = Long.MAX_VALUE;
+                z10 = true;
+            }
+        }
+        if (j3 >= 86400000) {
+            sb2.append(j3 / 86400000);
+            sb2.append("d");
+            j3 %= 86400000;
+        }
+        if (true == z10) {
+            j3 = 25975808;
+        }
+        if (j3 >= 3600000) {
+            sb2.append(j3 / 3600000);
+            sb2.append("h");
+            j3 %= 3600000;
+        }
+        if (j3 >= 60000) {
+            sb2.append(j3 / 60000);
+            sb2.append("m");
+            j3 %= 60000;
+        }
+        if (j3 >= 1000) {
+            sb2.append(j3 / 1000);
+            sb2.append("s");
+            j3 %= 1000;
+        }
+        if (j3 > 0) {
+            sb2.append(j3);
+            sb2.append("ms");
         }
     }
 }

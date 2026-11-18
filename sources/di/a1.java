@@ -1,96 +1,32 @@
 package di;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
+import android.view.View;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a1 extends w5 {
-    public final float[] E0;
-    public final Path F0;
-    public final float[] G0;
-    public final /* synthetic */ i1 H0;
+public final class a1 extends z41 {
+    public final /* synthetic */ h1 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(i1 i1Var, Context context, org.telegram.ui.ActionBar.e6 e6Var, ch.w wVar, bi.o oVar, bi.o oVar2, bi.o oVar3, bi.o oVar4, bi.o oVar5, bi.o oVar6) {
-        super(context, e6Var, wVar, oVar, null, oVar2, oVar3, oVar4, oVar5, oVar6);
-        this.H0 = i1Var;
-        this.E0 = new float[3];
-        this.F0 = new Path();
-        this.G0 = new float[8];
+    public a1(h1 h1Var, ck0 ck0Var, Context context, int i7, bi.b bVar, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(ck0Var, context, i7, 0, true, bVar, i6Var);
+        this.Q = h1Var;
     }
 
-    @Override // di.w5
-    public final void d(b5 b5Var) {
-        super.d(b5Var);
-        this.H0.h1(true);
-    }
-
-    @Override // di.w5, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.F0);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // di.w5
-    public final int getFinalHeight() {
-        return org.telegram.messenger.g0.L(315.0f);
-    }
-
-    @Override // di.w5
-    public final float getRealHeight() {
-        return org.telegram.messenger.g0.L(315.0f);
-    }
-
-    @Override // di.w5
-    public final void k(int i7) {
-        i1 i1Var = this.H0;
-        ImageView imageView = i1Var.i2;
-        if (imageView != null && org.telegram.ui.ActionBar.j6.H1(imageView.getBackground(), i7, false)) {
-            i1Var.i2.invalidate();
+    @Override // org.telegram.ui.Components.z41, v4.i0
+    public final void t(v4.f1 f1Var, int i7) {
+        super.t(f1Var, i7);
+        View view = f1Var.a;
+        if (view instanceof f1) {
+            f1 f1Var2 = (f1) view;
+            c1 c1Var = f1Var2.w;
+            boolean g12 = this.Q.g1(c1Var);
+            f1Var2.c.f(g12, false);
+            f1Var2.r.a(g12, false);
+            f1Var2.setOnClickListener(new ai.v2(13, this, c1Var));
         }
-        ImageView imageView2 = i1Var.j2;
-        if (imageView2 != null && org.telegram.ui.ActionBar.j6.H1(imageView2.getBackground(), i7, false)) {
-            i1Var.j2.invalidate();
-        }
-        for (e1 e1Var : i1Var.V1) {
-            Drawable background = e1Var.getBackground();
-            org.telegram.ui.Components.h6 h6Var = (org.telegram.ui.Components.h6) e1Var.d;
-            if (org.telegram.ui.ActionBar.j6.H1(background, i7, false)) {
-                e1Var.invalidate();
-            }
-            int f10 = i0.a.f(0.33f, i7, -1);
-            float[] fArr = this.E0;
-            Color.colorToHSV(f10, fArr);
-            fArr[1] = Math.min(1.0f, fArr[1] * 1.1f);
-            fArr[2] = Math.min(1.0f, fArr[2] * 1.1f);
-            int HSVToColor = Color.HSVToColor(fArr);
-            if (h6Var.getSizeableBackground() instanceof m5) {
-                ((m5) h6Var.getSizeableBackground()).b.setColor(HSVToColor);
-                h6Var.invalidate();
-            } else if (org.telegram.ui.ActionBar.j6.H1(h6Var.getSizeableBackground(), HSVToColor, false)) {
-                h6Var.invalidate();
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i7, int i10, int i11, int i12) {
-        super.onSizeChanged(i7, i10, i11, i12);
-        float L = org.telegram.messenger.g0.L(12.0f);
-        float[] fArr = this.G0;
-        fArr[3] = L;
-        fArr[2] = L;
-        fArr[1] = L;
-        fArr[0] = L;
-        Path path = this.F0;
-        path.rewind();
-        path.addRoundRect(0.0f, 0.0f, i7, i10, this.G0, Path.Direction.CW);
     }
 }

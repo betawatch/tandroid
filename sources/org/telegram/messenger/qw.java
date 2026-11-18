@@ -1,41 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.HashMap;
+import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qw implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ez b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ zy b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ List d;
 
-    public /* synthetic */ qw(ez ezVar, TLRPC.Message message, boolean z10, int i7) {
+    public /* synthetic */ qw(zy zyVar, String str, List list, int i7) {
         this.a = i7;
-        this.b = ezVar;
-        this.c = message;
-        this.d = z10;
+        this.b = zyVar;
+        this.c = str;
+        this.d = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ez ezVar = this.b;
-                ezVar.getClass();
-                TLRPC.Message message = this.c;
-                ezVar.d0(message.id);
-                ezVar.i0(message.id, this.d);
-                break;
-            case 1:
-                ez ezVar2 = this.b;
-                ezVar2.getClass();
-                TLRPC.Message message2 = this.c;
-                ezVar2.d0(message2.id);
-                ezVar2.i0(message2.id, this.d);
+                HashMap hashMap = this.b.r;
+                String str = this.c;
+                hashMap.remove(str);
+                this.d.remove(str);
                 break;
             default:
-                this.b.g0(this.c, this.d);
+                HashMap hashMap2 = this.b.r;
+                String str2 = this.c;
+                hashMap2.remove(str2);
+                this.d.remove(str2);
                 break;
         }
     }

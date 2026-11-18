@@ -20,17 +20,17 @@ import e0.q;
 import q6.s;
 import q6.t;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object d = new Object();
     public static final d e = new d();
     public s6.d c;
 
-    public static e0 g(Context context, cb.c cVar) {
+    public static e0 g(Context context, d6.i iVar) {
         IntentFilter intentFilter = new IntentFilter("android.intent.action.PACKAGE_ADDED");
         intentFilter.addDataScheme("package");
-        e0 e0Var = new e0(cVar);
+        e0 e0Var = new e0(iVar);
         int i7 = Build.VERSION.SDK_INT;
         if (i7 >= 33) {
             f0.b.b(context, e0Var, intentFilter);
@@ -43,7 +43,7 @@ public final class d extends e {
         if (g.c(context)) {
             return e0Var;
         }
-        cVar.z();
+        iVar.A();
         e0Var.b();
         return null;
     }
@@ -83,7 +83,7 @@ public final class d extends e {
         }
         FragmentManager fragmentManager = googleApiActivity.getFragmentManager();
         b bVar = new b();
-        q6.m.h(alertDialog, "Cannot display null dialog");
+        q6.m.i(alertDialog, "Cannot display null dialog");
         alertDialog.setOnCancelListener(null);
         alertDialog.setOnDismissListener(null);
         bVar.a = alertDialog;
@@ -114,7 +114,7 @@ public final class d extends e {
         String e10 = (i7 == 6 || i7 == 19) ? s.e(context, "common_google_play_services_resolution_required_text", s.d(context)) : s.b(context, i7);
         Resources resources = context.getResources();
         Object systemService = context.getSystemService("notification");
-        q6.m.g(systemService);
+        q6.m.h(systemService);
         NotificationManager notificationManager = (NotificationManager) systemService;
         q qVar = new q(context, null);
         qVar.t = true;
@@ -149,7 +149,7 @@ public final class d extends e {
             qVar.f(e10);
         }
         if (x6.b.d()) {
-            q6.m.j(x6.b.d());
+            q6.m.k(x6.b.d());
             synchronized (d) {
             }
             NotificationChannel notificationChannel = notificationManager.getNotificationChannel("com.google.android.gms.availability");

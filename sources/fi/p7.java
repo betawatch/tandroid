@@ -1,38 +1,43 @@
 package fi;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class p7 extends FrameLayout {
-    public b4 a;
-    public long b;
-    public ArrayList c;
-    public boolean d;
-    public final /* synthetic */ w e;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p7 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x7 b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p7(w wVar, Context context) {
-        super(context);
-        this.e = wVar;
+    public /* synthetic */ p7(x7 x7Var, float f10, float f11, int i7) {
+        this.a = i7;
+        this.b = x7Var;
+        this.c = f10;
+        this.d = f11;
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            invalidate();
-            this.a.setIsVisible(z10);
-            this.e.A();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.d) {
-            super.dispatchDraw(canvas);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                x7 x7Var = this.b;
+                x7Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x7Var.setScrollY((int) org.telegram.messenger.g0.T1(this.c, 0.0f, floatValue));
+                w7 w7Var = x7Var.c0;
+                w7Var.x = org.telegram.messenger.g0.T1(this.d, 0.0f, floatValue);
+                w7Var.invalidate();
+                break;
+            default:
+                x7 x7Var2 = this.b;
+                x7Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x7Var2.setScrollY((int) org.telegram.messenger.g0.T1(this.c, Math.min((x7Var2.getMeasuredHeight() - x7Var2.v0) - org.telegram.messenger.g0.L(64.0f), x7Var2.s0.getBottom() - x7Var2.getMeasuredHeight()), floatValue2));
+                w7 w7Var2 = x7Var2.c0;
+                w7Var2.x = org.telegram.messenger.g0.T1(this.d, 1.0f, floatValue2);
+                w7Var2.invalidate();
+                break;
         }
     }
 }

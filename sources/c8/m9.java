@@ -1,83 +1,104 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class m9 {
-    public static int a(d4.f fVar, int i7, int i10, int i11) {
-        a8.ja.f(Math.max(Math.max(i7, i10), i11) <= 31);
-        int i12 = (1 << i7) - 1;
-        int i13 = (1 << i10) - 1;
-        s0.a(s0.a(i12, i13), 1 << i11);
-        if (fVar.b() < i7) {
-            return -1;
-        }
-        int j3 = fVar.j(i7);
-        if (j3 == i12) {
-            if (fVar.b() < i10) {
-                return -1;
-            }
-            int j10 = fVar.j(i10);
-            j3 += j10;
-            if (j10 == i13) {
-                if (fVar.b() < i11) {
-                    return -1;
-                }
-                return fVar.j(i11) + j3;
-            }
-        }
-        return j3;
-    }
-
-    public static void b(d4.f fVar) {
-        fVar.L(3);
-        fVar.L(8);
-        boolean i7 = fVar.i();
-        boolean i10 = fVar.i();
-        if (i7) {
-            fVar.L(5);
-        }
-        if (i10) {
-            fVar.L(6);
-        }
-    }
-
-    public static void c(d4.f fVar) {
-        int j3;
-        int j10 = fVar.j(2);
-        if (j10 == 0) {
-            fVar.L(6);
-            return;
-        }
-        int a10 = a(fVar, 5, 8, 16) + 1;
-        if (j10 == 1) {
-            fVar.L(a10 * 7);
-            return;
-        }
-        if (j10 == 2) {
-            boolean i7 = fVar.i();
-            int i10 = i7 ? 1 : 5;
-            int i11 = i7 ? 7 : 5;
-            int i12 = i7 ? 8 : 6;
-            int i13 = 0;
-            while (i13 < a10) {
-                if (fVar.i()) {
-                    fVar.L(7);
-                    j3 = 0;
+    /* JADX WARN: Removed duplicated region for block: B:16:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0093  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0096  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0042  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0022  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:28:0x0084 -> B:13:0x0067). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x0087 -> B:13:0x0067). Please report as a decompilation issue!!! */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object a(List list, m1.j jVar, kd.c cVar) {
+        m1.d dVar;
+        int i7;
+        List list2;
+        kotlin.jvm.internal.r rVar;
+        Iterator it;
+        Throwable th2;
+        if (cVar instanceof m1.d) {
+            dVar = (m1.d) cVar;
+            int i10 = dVar.d;
+            if ((i10 & TLObject.FLAG_31) != 0) {
+                dVar.d = i10 - TLObject.FLAG_31;
+                Object obj = dVar.c;
+                Object obj2 = jd.a.a;
+                i7 = dVar.d;
+                if (i7 != 0) {
+                    b7.h.b(obj);
+                    ArrayList arrayList = new ArrayList();
+                    m1.f fVar = new m1.f(list, arrayList, null);
+                    dVar.a = arrayList;
+                    dVar.d = 1;
+                    if (jVar.a(fVar, dVar) == obj2) {
+                        return obj2;
+                    }
+                    list2 = arrayList;
                 } else {
-                    if (fVar.j(2) == 3 && fVar.j(i11) * i10 != 0) {
-                        fVar.K();
+                    if (i7 != 1) {
+                        if (i7 != 2) {
+                            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                        }
+                        it = dVar.b;
+                        rVar = (kotlin.jvm.internal.r) dVar.a;
+                        try {
+                            b7.h.b(obj);
+                        } catch (Throwable th3) {
+                            Object obj3 = rVar.a;
+                            if (obj3 == null) {
+                                rVar.a = th3;
+                            } else {
+                                af.b.a((Throwable) obj3, th3);
+                            }
+                        }
+                        while (it.hasNext()) {
+                            rd.l lVar = (rd.l) it.next();
+                            dVar.a = rVar;
+                            dVar.b = it;
+                            dVar.d = 2;
+                            if (lVar.invoke(dVar) == obj2) {
+                                return obj2;
+                            }
+                        }
+                        th2 = (Throwable) rVar.a;
+                        if (th2 == null) {
+                            return gd.k.a;
+                        }
+                        throw th2;
                     }
-                    j3 = fVar.j(i12) * i10;
-                    if (j3 != 0 && j3 != 180) {
-                        fVar.K();
-                    }
-                    fVar.K();
+                    list2 = (List) dVar.a;
+                    b7.h.b(obj);
                 }
-                if (j3 != 0 && j3 != 180 && fVar.i()) {
-                    i13++;
+                rVar = new kotlin.jvm.internal.r();
+                it = list2.iterator();
+                while (it.hasNext()) {
                 }
-                i13++;
+                th2 = (Throwable) rVar.a;
+                if (th2 == null) {
+                }
             }
+        }
+        dVar = new m1.d(cVar);
+        Object obj4 = dVar.c;
+        Object obj22 = jd.a.a;
+        i7 = dVar.d;
+        if (i7 != 0) {
+        }
+        rVar = new kotlin.jvm.internal.r();
+        it = list2.iterator();
+        while (it.hasNext()) {
+        }
+        th2 = (Throwable) rVar.a;
+        if (th2 == null) {
         }
     }
 }

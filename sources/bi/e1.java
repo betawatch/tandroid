@@ -1,20 +1,18 @@
 package bi;
 
 import android.widget.FrameLayout;
-import fi.i9;
-import fi.z8;
-import hi.sa;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.n7;
-import org.telegram.ui.Components.wa;
-import org.telegram.ui.Components.xb;
-import org.telegram.ui.Components.xl;
-import org.telegram.ui.Components.y80;
+import fi.f9;
+import hi.ta;
+import org.telegram.ui.Components.em;
+import org.telegram.ui.Components.fb;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.i90;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.lb;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class e1 implements wa {
+public final class e1 implements fb {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -23,127 +21,121 @@ public final class e1 implements wa {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wa
-    public final void b(xb xbVar) {
-        fi.u3 u3Var;
+    @Override // org.telegram.ui.Components.fb
+    public final void b(gc gcVar) {
+        fi.s3 s3Var;
         switch (this.a) {
             case 0:
-                cb cbVar = xbVar.e;
-                f1 f1Var = (f1) this.b;
-                fh.g c10 = f1Var.p1.c(cbVar, null, true);
-                gh.e eVar = new gh.e(f1Var.J0);
-                eVar.e = new g0.e(11);
-                float N = org.telegram.messenger.g0.N(0.5f);
-                float N2 = org.telegram.messenger.g0.N(0.5f);
-                eVar.f = N;
-                eVar.h = N2;
-                c10.p(eVar);
+                lb lbVar = gcVar.e;
+                g1 g1Var = (g1) this.b;
+                fh.g c10 = g1Var.p1.c(lbVar, null, true);
+                c10.p(c8.i0.c(g1Var.J0));
                 c10.r(org.telegram.messenger.g0.L(16.0f));
-                cbVar.setCustomBackground(c10);
+                lbVar.setCustomBackground(c10);
                 break;
             case 2:
-                if (xbVar.a == 2 && (u3Var = ((fi.e3) this.b).y.A1) != null) {
-                    i9 i9Var = ((z8) u3Var).d;
-                    i9Var.Y0 = true;
-                    i9Var.V();
+                if (gcVar.a == 2 && (s3Var = ((fi.c3) this.b).y.A1) != null) {
+                    f9 f9Var = ((fi.w8) s3Var).d;
+                    f9Var.Y0 = true;
+                    f9Var.V();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wa
-    public final void d(xb xbVar) {
-        fi.u3 u3Var;
+    @Override // org.telegram.ui.Components.fb
+    public final void d(gc gcVar) {
+        fi.s3 s3Var;
         switch (this.a) {
             case 2:
-                if (xbVar.a == 2 && (u3Var = ((fi.e3) this.b).y.A1) != null) {
-                    i9 i9Var = ((z8) u3Var).d;
-                    i9Var.Y0 = false;
-                    i9Var.V();
+                if (gcVar.a == 2 && (s3Var = ((fi.c3) this.b).y.A1) != null) {
+                    f9 f9Var = ((fi.w8) s3Var).d;
+                    f9Var.Y0 = false;
+                    f9Var.V();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final int f(int i7) {
         int editTextHeight;
         int L;
-        i0.c cVar;
+        i0.b bVar;
         switch (this.a) {
             case 0:
                 return 0;
             case 1:
                 return (int) ((ch.b0) ((ai.k0) this.b).c).u;
             case 2:
-                if (((fi.e3) this.b).y.h2) {
+                if (((fi.c3) this.b).y.h2) {
                     return 0;
                 }
                 return org.telegram.messenger.g0.L(64.0f);
             case 3:
-                return ((fi.c5) this.b).r.getPaddingBottom();
+                return ((fi.a5) this.b).r.getPaddingBottom();
             case 4:
                 return 0;
             case 5:
-                editTextHeight = ((sa) this.b).d1.getEditTextHeight();
+                editTextHeight = ((ta) this.b).d1.getEditTextHeight();
                 L = org.telegram.messenger.g0.L(12.0f);
                 break;
             case 6:
-                return ((n7) this.b).e.y1.getHeight();
+                return ((org.telegram.ui.Components.u7) this.b).e.y1.getHeight();
             case 7:
-                wa waVar = (wa) this.b;
-                if (waVar == null) {
+                fb fbVar = (fb) this.b;
+                if (fbVar == null) {
                     return 0;
                 }
-                return waVar.f(i7);
+                return fbVar.f(i7);
             case 8:
                 editTextHeight = org.telegram.messenger.g0.L(126.0f);
-                L = ((xl) this.b).c.b.R();
+                L = ((em) this.b).c.b.R();
                 break;
             case 9:
-                cVar = ((org.telegram.ui.ActionBar.e2) ((y80) this.b)).mSystemInsets;
-                editTextHeight = cVar.d;
+                bVar = ((org.telegram.ui.ActionBar.h2) ((i90) this.b)).mSystemInsets;
+                editTextHeight = bVar.d;
                 L = org.telegram.messenger.g0.L(72.0f);
                 break;
             case 10:
-                FrameLayout frameLayout = ((bw0) this.b).w1;
+                FrameLayout frameLayout = ((iw0) this.b).w1;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             default:
                 org.telegram.ui.web.v0 v0Var = (org.telegram.ui.web.v0) this.b;
-                if (!(v0Var.getParent() instanceof ki.x3)) {
+                if (!(v0Var.getParent() instanceof ki.s3)) {
                     return 0;
                 }
-                ki.x3 x3Var = (ki.x3) v0Var.getParent();
-                return (int) ((x3Var.getSwipeOffsetY() + x3Var.getOffsetY()) - x3Var.getTopActionBarOffsetY());
+                ki.s3 s3Var = (ki.s3) v0Var.getParent();
+                return (int) ((s3Var.getSwipeOffsetY() + s3Var.getOffsetY()) - s3Var.getTopActionBarOffsetY());
         }
         return L + editTextHeight;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final boolean g(int i7) {
         switch (this.a) {
             case 2:
@@ -151,20 +143,20 @@ public final class e1 implements wa {
                 }
                 break;
             case 7:
-                wa waVar = (wa) this.b;
-                if (waVar == null || !waVar.g(i7)) {
+                fb fbVar = (fb) this.b;
+                if (fbVar == null || !fbVar.g(i7)) {
                 }
                 break;
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final int h(int i7) {
         switch (this.a) {
             case 7:
-                wa waVar = (wa) this.b;
-                if (waVar != null) {
+                fb fbVar = (fb) this.b;
+                if (fbVar != null) {
                     break;
                 } else {
                     break;
@@ -173,49 +165,49 @@ public final class e1 implements wa {
         return 0;
     }
 
-    private final /* synthetic */ void A(xb xbVar) {
+    private final /* synthetic */ void A(gc gcVar) {
     }
 
-    private final /* synthetic */ void B(xb xbVar) {
+    private final /* synthetic */ void B(gc gcVar) {
     }
 
-    private final /* synthetic */ void C(xb xbVar) {
+    private final /* synthetic */ void C(gc gcVar) {
     }
 
-    private final /* synthetic */ void D(xb xbVar) {
+    private final /* synthetic */ void D(gc gcVar) {
     }
 
-    private final /* synthetic */ void E(xb xbVar) {
+    private final /* synthetic */ void E(gc gcVar) {
     }
 
-    private final /* synthetic */ void F(xb xbVar) {
+    private final /* synthetic */ void F(gc gcVar) {
     }
 
-    private final /* synthetic */ void G(xb xbVar) {
+    private final /* synthetic */ void G(gc gcVar) {
     }
 
-    private final /* synthetic */ void H(xb xbVar) {
+    private final /* synthetic */ void H(gc gcVar) {
     }
 
-    private final /* synthetic */ void I(xb xbVar) {
+    private final /* synthetic */ void I(gc gcVar) {
     }
 
-    private final /* synthetic */ void J(xb xbVar) {
+    private final /* synthetic */ void J(gc gcVar) {
     }
 
-    private final /* synthetic */ void K(xb xbVar) {
+    private final /* synthetic */ void K(gc gcVar) {
     }
 
-    private final /* synthetic */ void L(xb xbVar) {
+    private final /* synthetic */ void L(gc gcVar) {
     }
 
-    private final /* synthetic */ void M(xb xbVar) {
+    private final /* synthetic */ void M(gc gcVar) {
     }
 
-    private final /* synthetic */ void N(xb xbVar) {
+    private final /* synthetic */ void N(gc gcVar) {
     }
 
-    private final /* synthetic */ void O(xb xbVar) {
+    private final /* synthetic */ void O(gc gcVar) {
     }
 
     private final /* synthetic */ void i(float f10) {
@@ -254,21 +246,21 @@ public final class e1 implements wa {
     private final /* synthetic */ void t(float f10) {
     }
 
-    private final /* synthetic */ void u(xb xbVar) {
+    private final /* synthetic */ void u(gc gcVar) {
     }
 
-    private final /* synthetic */ void v(xb xbVar) {
+    private final /* synthetic */ void v(gc gcVar) {
     }
 
-    private final /* synthetic */ void w(xb xbVar) {
+    private final /* synthetic */ void w(gc gcVar) {
     }
 
-    private final /* synthetic */ void x(xb xbVar) {
+    private final /* synthetic */ void x(gc gcVar) {
     }
 
-    private final /* synthetic */ void y(xb xbVar) {
+    private final /* synthetic */ void y(gc gcVar) {
     }
 
-    private final /* synthetic */ void z(xb xbVar) {
+    private final /* synthetic */ void z(gc gcVar) {
     }
 }

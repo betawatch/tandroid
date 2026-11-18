@@ -8,15 +8,15 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lr;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k extends ViewGroup {
     public final j E;
     public final FrameLayout a;
-    public final o2 b;
+    public final n2 b;
     public final int c;
     public final int d;
     public boolean e;
@@ -42,19 +42,19 @@ public final class k extends ViewGroup {
         frameLayout.setOutlineProvider(new fh.a(this, 6));
         frameLayout.setClipToOutline(true);
         frameLayout.setElevation(org.telegram.messenger.g0.L(2.0f));
-        o2 o2Var = new o2(context, false, true, false, false);
-        this.b = o2Var;
+        n2 n2Var = new n2(context, false, true, false, false);
+        this.b = n2Var;
         RendererCommon.ScalingType scalingType = RendererCommon.ScalingType.SCALE_ASPECT_FILL;
-        n2 n2Var = o2Var.d;
-        n2Var.setScalingType(scalingType);
-        n2Var.setEnableHardwareScaler(true);
-        n2Var.setMirror(true);
-        o2Var.b0 = 0;
-        View view = o2Var.h;
+        m2 m2Var = n2Var.d;
+        m2Var.setScalingType(scalingType);
+        m2Var.setEnableHardwareScaler(true);
+        m2Var.setMirror(true);
+        n2Var.b0 = 0;
+        View view = n2Var.h;
         if (view != null) {
             view.setVisibility(8);
         }
-        frameLayout.addView(o2Var);
+        frameLayout.addView(n2Var);
         frameLayout.setAlpha(0.0f);
         frameLayout.setScaleX(0.6f);
         frameLayout.setScaleY(0.6f);
@@ -113,10 +113,10 @@ public final class k extends ViewGroup {
             this.f = z12;
             frameLayout.animate().cancel();
             if (!z12) {
-                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(er.g).withEndAction(new i(this, 1)).start();
+                frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setDuration(180L).setInterpolator(lr.g).withEndAction(new i(this, 1)).start();
             } else {
                 frameLayout.setVisibility(0);
-                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(er.h).withEndAction(null).start();
+                frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(220L).setInterpolator(lr.h).withEndAction(null).start();
             }
         }
     }

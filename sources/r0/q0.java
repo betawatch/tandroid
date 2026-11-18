@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q0 extends u0 {
     public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
@@ -31,10 +31,10 @@ public final class q0 extends u0 {
         }
     }
 
-    public static void f(View view, k1 k1Var, boolean z10) {
+    public static void f(View view, l1 l1Var, boolean z10) {
         com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
-            i7.a = k1Var;
+            i7.a = l1Var;
             if (!z10) {
                 z10 = true;
             }
@@ -42,21 +42,21 @@ public final class q0 extends u0 {
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                f(viewGroup.getChildAt(i10), k1Var, z10);
+                f(viewGroup.getChildAt(i10), l1Var, z10);
             }
         }
     }
 
-    public static void g(View view, k1 k1Var, List list) {
+    public static void g(View view, l1 l1Var, List list) {
         com.google.android.gms.common.api.q i7 = i(view);
         if (i7 != null) {
-            i7.W0(k1Var, list);
+            i7.W0(l1Var, list);
             return;
         }
         if (view instanceof ViewGroup) {
             ViewGroup viewGroup = (ViewGroup) view;
             for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-                g(viewGroup.getChildAt(i10), k1Var, list);
+                g(viewGroup.getChildAt(i10), l1Var, list);
             }
         }
     }

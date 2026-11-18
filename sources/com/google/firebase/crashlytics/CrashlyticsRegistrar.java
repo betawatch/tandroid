@@ -18,7 +18,7 @@ import tg.z1;
 import u9.i;
 import u9.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class CrashlyticsRegistrar implements ComponentRegistrar {
     public static final /* synthetic */ int d = 0;
@@ -36,7 +36,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         map.put(dVar, new hb.a(new CountDownLatch(1)));
         StringBuilder sb2 = new StringBuilder("Dependency to ");
         sb2.append(dVar);
-        r.b.t(sb2, " added.", "FirebaseSessions");
+        p5.c.t(sb2, " added.", "FirebaseSessions");
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
@@ -51,7 +51,7 @@ public class CrashlyticsRegistrar implements ComponentRegistrar {
         a10.a(new i(0, 2, x9.a.class));
         a10.a(new i(0, 2, p9.a.class));
         a10.a(new i(0, 2, fb.a.class));
-        a10.f = new z1(this, 7);
+        a10.f = new z1(this, 8);
         a10.c(2);
         return Arrays.asList(a10.b(), i8.a("fire-cls", "20.1.1"));
     }

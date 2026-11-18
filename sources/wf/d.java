@@ -29,18 +29,18 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
 import org.telegram.messenger.t0;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.mg;
+import org.telegram.ui.Components.vg;
 import ug.x;
-import v4.w0;
+import v4.x0;
 import yc.f;
 import yc.g;
 import yc.i;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final e l;
@@ -54,7 +54,7 @@ public final class d extends i {
     public final AtomicInteger k;
 
     static {
-        e eVar = new e(new w0(Uri.parse("file:///android_asset/cast/default.png"), "image/png", "/assets/default"));
+        e eVar = new e(new x0(Uri.parse("file:///android_asset/cast/default.png"), "image/png", "/assets/default"));
         l = eVar;
         e[] eVarArr = {eVar};
         HashMap hashMap = new HashMap();
@@ -69,7 +69,7 @@ public final class d extends i {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new x(15);
+        this.f = new x(16);
         this.g = new sa.d(11);
         this.e = new ExtendedDefaultDataSourceFactory(t0.b, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -94,7 +94,7 @@ public final class d extends i {
             }
         }
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(String.valueOf(ipAddress & ns.e4) + '.' + ((ipAddress >> 8) & ns.e4) + '.' + ((ipAddress >> 16) & ns.e4) + '.' + ((ipAddress >> 24) & ns.e4));
+        sb2.append(String.valueOf(ipAddress & ks.e4) + '.' + ((ipAddress >> 8) & ks.e4) + '.' + ((ipAddress >> 16) & ks.e4) + '.' + ((ipAddress >> 24) & ks.e4));
         sb2.append(":61578");
         return sb2.toString();
     }
@@ -165,23 +165,23 @@ public final class d extends i {
         m10.append(" ");
         m10.append(dVar.f);
         m10.append(" ");
-        r.b.t(m10, (String) dVar.i.get("range"), "CAST_SERVER");
+        p5.c.t(m10, (String) dVar.i.get("range"), "CAST_SERVER");
         try {
             g k10 = k(dVar);
-            mg mgVar = k10.e;
-            mgVar.put("Access-Control-Allow-Origin", "*");
-            mgVar.put("Access-Control-Max-Age", "3628800");
-            mgVar.put("Access-Control-Allow-Methods", "*");
-            mgVar.put("Access-Control-Allow-Headers", "*");
+            vg vgVar = k10.e;
+            vgVar.put("Access-Control-Allow-Origin", "*");
+            vgVar.put("Access-Control-Max-Age", "3628800");
+            vgVar.put("Access-Control-Allow-Methods", "*");
+            vgVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
             g c10 = i.c(f.n, "text/plain", "Error reading file");
-            mg mgVar2 = c10.e;
-            mgVar2.put("Access-Control-Allow-Origin", "*");
-            mgVar2.put("Access-Control-Max-Age", "3628800");
-            mgVar2.put("Access-Control-Allow-Methods", "*");
-            mgVar2.put("Access-Control-Allow-Headers", "*");
+            vg vgVar2 = c10.e;
+            vgVar2.put("Access-Control-Allow-Origin", "*");
+            vgVar2.put("Access-Control-Max-Age", "3628800");
+            vgVar2.put("Access-Control-Allow-Methods", "*");
+            vgVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }

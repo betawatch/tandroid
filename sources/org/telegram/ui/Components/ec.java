@@ -1,95 +1,118 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class ec extends z70 {
-    public final Path M;
-    public final RectF N;
-    public fc O;
-    public fc P;
+public final class ec extends db implements org.telegram.ui.ActionBar.c6 {
+    public final org.telegram.ui.ActionBar.i6 a;
+    public Runnable b;
+    public Runnable c;
+    public gc d;
+    public final TextView e;
+    public boolean f;
+    public final Drawable h;
+    public final Drawable n;
 
-    public ec(Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
-        this.M = new Path();
-        this.N = new RectF();
+    public ec(Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10, boolean z11) {
+        super(context);
+        this.a = i6Var;
+        int i7 = org.telegram.ui.ActionBar.n6.xj;
+        int k10 = i6Var != null ? i6Var.k(i7) : org.telegram.ui.ActionBar.n6.x0(null, i7, false);
+        if (z10) {
+            TextView textView = new TextView(context);
+            this.e = textView;
+            textView.setBackground(org.telegram.ui.ActionBar.n6.h0((k10 & 16777215) | 419430400, 7, -1));
+            this.h = textView.getBackground();
+            i5.c.x(textView, 1, 14.0f);
+            org.telegram.messenger.n10.r(textView, i7, i6Var, null, 2131743648);
+            textView.setGravity(16);
+            float f10 = z11 ? 34.0f : 12.0f;
+            boolean z12 = org.telegram.messenger.gd.a0;
+            c8.xa.a(textView, z12 ? 12.0f : f10, 8.0f, z12 ? f10 : 12.0f, 8.0f);
+            addView(textView, c8.ma.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        }
+        if (z11) {
+            ImageView imageView = new ImageView(getContext());
+            imageView.setImageResource(R.drawable.chats_undo);
+            org.telegram.ui.ActionBar.u6.s(imageView, i7, i6Var, PorterDuff.Mode.MULTIPLY);
+            if (!z10) {
+                imageView.setBackground(org.telegram.ui.ActionBar.n6.h0((k10 & 16777215) | 419430400, 1, -1));
+                this.n = imageView.getBackground();
+            }
+            c8.xa.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            addView(imageView, c8.ma.h(56.0f, 48.0f, 16));
+        }
+        setOnClickListener(new n0(this, 4));
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        if (this.P == null || getMeasuredWidth() <= 0) {
+    @Override // org.telegram.ui.Components.ib
+    public final void c(gc gcVar) {
+        this.d = gcVar;
+    }
+
+    @Override // org.telegram.ui.Components.ib
+    public final void d() {
+        this.d = null;
+        Runnable runnable = this.c;
+        if (runnable == null || this.f) {
             return;
         }
-        SpannableString spannableString = new SpannableString(" btn");
-        spannableString.setSpan(this.P, 1, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.P.a()) - org.telegram.messenger.g0.L(4.0f), TextUtils.TruncateAt.END));
-        spannableStringBuilder.append((CharSequence) spannableString);
-        setText(spannableStringBuilder);
-        this.P = null;
+        runnable.run();
     }
 
-    @Override // org.telegram.ui.Components.z70, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Layout layout;
-        fc fcVar;
-        Runnable runnable;
-        fc fcVar2;
-        int action = motionEvent.getAction();
-        float x10 = motionEvent.getX() - getPaddingLeft();
-        int y10 = ((int) motionEvent.getY()) - getPaddingTop();
-        if ((getText() instanceof Spanned) && (layout = getLayout()) != null && y10 >= 0 && y10 < layout.getHeight()) {
-            int lineForVertical = layout.getLineForVertical(y10);
-            Spanned spanned = (Spanned) getText();
-            fc[] fcVarArr = (fc[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), fc.class);
-            for (int i7 = 0; i7 < fcVarArr.length; i7++) {
-                fcVar = fcVarArr[i7];
-                int spanStart = spanned.getSpanStart(fcVar);
-                int spanEnd = spanned.getSpanEnd(fcVar);
-                Path path = this.M;
-                layout.getSelectionPath(spanStart, spanEnd, path);
-                RectF rectF = this.N;
-                path.computeBounds(rectF, true);
-                if (rectF.contains(x10, y10)) {
-                    break;
-                }
-            }
+    public final void e(CharSequence charSequence) {
+        TextView textView = this.e;
+        if (textView != null) {
+            textView.setText(charSequence);
         }
-        fcVar = null;
-        if (action == 0) {
-            this.O = fcVar;
-            if (fcVar != null) {
-                fcVar.c(this, true);
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            fc fcVar3 = this.O;
-            if (fcVar3 != null) {
-                fcVar3.c(this, false);
-                if (action == 1 && (runnable = this.O.d) != null) {
-                    runnable.run();
-                }
-            }
-            this.O = null;
-        } else if (action == 2 && (fcVar2 = this.O) != null && fcVar2 != fcVar) {
-            fcVar2.c(this, false);
-            this.O = null;
-        }
-        return this.O != null || super.onTouchEvent(motionEvent);
     }
 
-    public ec(Context context) {
-        super(context, null);
-        this.M = new Path();
-        this.N = new RectF();
+    public final void f() {
+        if (this.d != null) {
+            this.f = true;
+            Runnable runnable = this.b;
+            if (runnable != null) {
+                runnable.run();
+            }
+            gc gcVar = this.d;
+            if (gcVar != null) {
+                gcVar.b();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        Drawable drawable;
+        try {
+            int i7 = org.telegram.ui.ActionBar.n6.xj;
+            org.telegram.ui.ActionBar.i6 i6Var = this.a;
+            int k10 = ((i6Var != null ? i6Var.k(i7) : org.telegram.ui.ActionBar.n6.x0(null, i7, false)) & 16777215) | 419430400;
+            TextView textView = this.e;
+            if (textView != null && (drawable = this.h) != null && textView.getBackground() == drawable) {
+                org.telegram.ui.ActionBar.n6.H1(drawable, k10, true);
+            }
+            Drawable drawable2 = this.n;
+            if (drawable2 != null) {
+                org.telegram.ui.ActionBar.n6.H1(drawable2, k10, true);
+            }
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    }
+
+    public ec(Context context, org.telegram.ui.ActionBar.i6 i6Var, boolean z10) {
+        this(context, i6Var, z10, !z10);
     }
 }

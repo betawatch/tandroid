@@ -1,9 +1,9 @@
 package b9;
 
 import android.os.Parcel;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class a extends a8.q implements d0 {
     public a() {
@@ -11,12 +11,12 @@ public abstract class a extends a8.q implements d0 {
     }
 
     @Override // b9.d0
-    public void I() {
+    public void H() {
         throw new UnsupportedOperationException();
     }
 
     @Override // b9.d0
-    public void P(u0 u0Var) {
+    public void O(u0 u0Var) {
         throw new UnsupportedOperationException();
     }
 
@@ -36,7 +36,7 @@ public abstract class a extends a8.q implements d0 {
             case 7:
                 u0 u0Var = (u0) i8.a.a(parcel, u0.CREATOR);
                 i8.a.b(parcel);
-                P(u0Var);
+                O(u0Var);
                 break;
             case 8:
                 throw a8.p0.v(parcel);
@@ -46,7 +46,7 @@ public abstract class a extends a8.q implements d0 {
                 throw a8.p0.v(parcel);
             case 11:
                 i8.a.b(parcel);
-                I();
+                H();
                 break;
             case 12:
                 throw a8.p0.v(parcel);
@@ -69,7 +69,7 @@ public abstract class a extends a8.q implements d0 {
             case 21:
             case 24:
             case 25:
-            case ns.U /* 31 */:
+            case ks.U /* 31 */:
             case 32:
             case 33:
             default:
@@ -86,7 +86,7 @@ public abstract class a extends a8.q implements d0 {
                 throw a8.p0.v(parcel);
             case 29:
                 throw a8.p0.v(parcel);
-            case ns.T /* 30 */:
+            case ks.T /* 30 */:
                 throw a8.p0.v(parcel);
             case 34:
                 throw a8.p0.v(parcel);

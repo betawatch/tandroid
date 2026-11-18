@@ -1,125 +1,450 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
+import android.graphics.Bitmap;
+import android.text.TextUtils;
+import java.io.File;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import java.util.HashMap;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.tl.TL_stories;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class iw implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ TLObject r;
+    public final /* synthetic */ TL_stories.StoryItem E;
+    public final /* synthetic */ bw F;
+    public final /* synthetic */ long G;
+    public final /* synthetic */ boolean H;
+    public final /* synthetic */ long I;
+    public final /* synthetic */ Runnable J;
+    public final /* synthetic */ sh.g a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ c d;
+    public final /* synthetic */ CharSequence e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ ArrayList h;
+    public final /* synthetic */ fj n;
+    public final /* synthetic */ fj r;
+    public final /* synthetic */ fj s;
+    public final /* synthetic */ boolean w;
+    public final /* synthetic */ int x;
+    public final /* synthetic */ int y;
 
-    public /* synthetic */ iw(ez ezVar, ArrayList arrayList, boolean z10, boolean z11, TLRPC.Message message, ArrayList arrayList2, ArrayList arrayList3, int i7) {
-        this.e = ezVar;
-        this.f = arrayList;
-        this.c = z10;
-        this.d = z11;
-        this.r = message;
+    public /* synthetic */ iw(sh.g gVar, ArrayList arrayList, long j3, c cVar, CharSequence charSequence, boolean z10, ArrayList arrayList2, fj fjVar, fj fjVar2, fj fjVar3, boolean z11, int i7, int i10, TL_stories.StoryItem storyItem, bw bwVar, long j10, boolean z12, long j11, Runnable runnable) {
+        this.a = gVar;
+        this.b = arrayList;
+        this.c = j3;
+        this.d = cVar;
+        this.e = charSequence;
+        this.f = z10;
         this.h = arrayList2;
-        this.n = arrayList3;
-        this.b = i7;
+        this.n = fjVar;
+        this.r = fjVar2;
+        this.s = fjVar3;
+        this.w = z11;
+        this.x = i7;
+        this.y = i10;
+        this.E = storyItem;
+        this.F = bwVar;
+        this.G = j10;
+        this.H = z12;
+        this.I = j11;
+        this.J = runnable;
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00c2  */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:51:0x00f5  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0118  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0135  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x013c  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x015e A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0173  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x017e  */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x012d  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0123  */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x00d3  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
         int i7;
-        int i10 = this.a;
-        TLObject tLObject = this.r;
-        Object obj = this.n;
-        Object obj2 = this.h;
-        Serializable serializable = this.f;
-        Object obj3 = this.e;
-        switch (i10) {
-            case 0:
-                ez ezVar = (ez) obj3;
-                vr messagesStorage = ezVar.getMessagesStorage();
-                boolean z10 = this.c;
-                messagesStorage.j1((ArrayList) serializable, true, false, false, 0, false, !z10 ? 1 : 0, 0L);
-                g0.h3(new di.ea(ezVar, this.d, (TLRPC.Message) tLObject, (ArrayList) obj2, z10, (ArrayList) obj, this.b));
-                break;
-            default:
-                org.telegram.ui.ca caVar = (org.telegram.ui.ca) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                TLRPC.TL_username tL_username = (TLRPC.TL_username) tLObject;
-                org.telegram.ui.la laVar = caVar.a;
-                ArrayList arrayList = laVar.x;
-                ArrayList arrayList2 = laVar.w;
-                arrayList.remove((String) serializable);
-                boolean z11 = ((TLObject) obj2) instanceof TLRPC.TL_boolTrue;
-                int i11 = this.b;
-                boolean z12 = this.c;
-                TLRPC.TL_username tL_username2 = null;
-                if (z11) {
-                    laVar.n0(i11, z12, false);
-                } else {
-                    boolean z13 = this.d;
-                    if (tL_error == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
-                        laVar.o0(tL_username, z13, true);
-                    } else {
-                        tL_username.active = z12;
-                        laVar.n0(i11, z12, false);
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, laVar.getParentActivity(), laVar.getResourceProvider());
-                        String M0 = hd.M0(2131743672, null);
-                        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-                        t1Var.S = M0;
-                        t1Var.U = hd.M0(2131743673, null);
-                        alertDialog$Builder.k(hd.M0(2131747831, null), new ab.j(caVar, tL_username, z13, 4));
-                        alertDialog$Builder.p();
-                    }
-                }
-                i7 = ((org.telegram.ui.ActionBar.e2) laVar).currentAccount;
-                TLRPC.User a22 = np.s1(i7).a2(Long.valueOf(laVar.l0()));
-                laVar.getMessagesController().u5(a22, tL_username.username, tL_username.active);
-                if (laVar.y != 0 && arrayList2 != null) {
-                    int size = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        Object obj4 = arrayList2.get(i12);
-                        i12++;
-                        if (((TLRPC.TL_username) obj4).active) {
-                            break;
+        ArrayList arrayList;
+        sh.g gVar;
+        final String str;
+        TLRPC.TL_document tL_document;
+        final TLRPC.TL_document tL_document2;
+        int i10;
+        final HashMap hashMap;
+        Bitmap bitmap;
+        sh.g gVar2 = this.a;
+        long j3 = gVar2 != null ? gVar2.c : 0L;
+        int i11 = 1;
+        boolean z10 = gVar2 != null;
+        ArrayList arrayList2 = this.b;
+        int size = arrayList2.size();
+        long j10 = j3 != 0 ? j3 : 0L;
+        int i12 = 0;
+        int i13 = 0;
+        while (i12 < size) {
+            final fj fjVar = (fj) arrayList2.get(i12);
+            String str2 = fjVar.k.attachPath;
+            File file = new File(str2);
+            final long j11 = this.c;
+            boolean C = n5.C(j11);
+            if (!C && size > i11 && i13 % 10 == 0 && gVar2 == null) {
+                j10 = Utilities.b.nextLong();
+                i13 = 0;
+            }
+            if (str2 == null || str2.length() <= 0) {
+                i7 = i11;
+                arrayList = arrayList2;
+            } else {
+                StringBuilder n10 = p5.c.n(str2, MediaStreamTrack.AUDIO_TRACK_KIND);
+                i7 = i11;
+                arrayList = arrayList2;
+                n10.append(file.length());
+                str2 = n10.toString();
+            }
+            final c cVar = this.d;
+            if (!C && !TextUtils.isEmpty(str2) && !z10) {
+                Object[] g02 = tr.a0(cVar.a).g0(!C ? i7 : 4, str2);
+                if (g02 != null) {
+                    Object obj = g02[0];
+                    gVar = gVar2;
+                    if (obj instanceof TLRPC.TL_document) {
+                        tL_document = (TLRPC.TL_document) obj;
+                        String str3 = (String) g02[i7];
+                        zy.w(cVar, C, tL_document, str2, null, 0L, false);
+                        str = str3;
+                        if (tL_document == null) {
+                            tL_document = (TLRPC.TL_document) fjVar.k.media.document;
                         }
-                    }
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < size2) {
-                            Object obj5 = arrayList2.get(i13);
-                            i13++;
-                            TLRPC.TL_username tL_username3 = (TLRPC.TL_username) obj5;
-                            if (tL_username3.editable) {
-                                tL_username2 = tL_username3;
+                        tL_document2 = tL_document;
+                        if (tL_document2 != null && tL_document2.thumbs.isEmpty()) {
+                            rf.a a10 = rf.a.a(file);
+                            bitmap = a10 == null ? a10.o : null;
+                            if (bitmap != null) {
+                                i10 = i13;
+                                TLRPC.PhotoSize Z = ec.Z(bitmap, 132.0f, 132.0f, 55, C);
+                                if (Z != null) {
+                                    tL_document2.thumbs.add(Z);
+                                    tL_document2.flags |= 1;
+                                }
+                                bitmap.recycle();
+                                if (!C && mp.u1(cVar.a).c1(Integer.valueOf((int) (4294967295L & j11))) == null) {
+                                    return;
+                                }
+                                int i14 = i7;
+                                CharSequence[] charSequenceArr = new CharSequence[i14];
+                                charSequenceArr[0] = this.e;
+                                ArrayList Y = i12 != 0 ? ri.d0(cVar.a).Y(charSequenceArr, i14, i14) : null;
+                                String charSequence = i12 != 0 ? charSequenceArr[0].toString() : null;
+                                hashMap = new HashMap();
+                                if (str2 != null) {
+                                    hashMap.put("originalPath", str2);
+                                }
+                                if (str != null) {
+                                    hashMap.put("parentObject", str);
+                                }
+                                int i15 = i10 + 1;
+                                hashMap.put("groupId", "" + j10);
+                                if (!this.f && ((gVar == null && i15 == 10) || i12 == size - 1)) {
+                                    hashMap.put("final", "1");
+                                }
+                                ArrayList arrayList3 = this.h;
+                                int intValue = arrayList3 == null ? ((Integer) arrayList3.get(i12)).intValue() : 0;
+                                long j12 = j10;
+                                final fj fjVar2 = this.n;
+                                final fj fjVar3 = this.r;
+                                final String str4 = charSequence;
+                                final ArrayList arrayList4 = Y;
+                                final fj fjVar4 = this.s;
+                                final boolean z11 = this.w;
+                                final sh.g gVar3 = gVar;
+                                final int i16 = intValue;
+                                final int i17 = this.x;
+                                final int i18 = this.y;
+                                final TL_stories.StoryItem storyItem = this.E;
+                                final bw bwVar = this.F;
+                                final long j13 = this.G;
+                                final boolean z12 = this.H;
+                                final long j14 = this.I;
+                                g0.g3(new Runnable() { // from class: org.telegram.messenger.yw
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        fj fjVar5 = fj.this;
+                                        c cVar2 = cVar;
+                                        TLRPC.TL_document tL_document3 = tL_document2;
+                                        fj fjVar6 = fjVar;
+                                        HashMap hashMap2 = hashMap;
+                                        String str5 = str;
+                                        if (fjVar5 != null) {
+                                            zy.C(cVar2.a).t(fjVar5, null, null, null, tL_document3, fjVar6.k.attachPath, null, hashMap2, false, false, str5);
+                                            return;
+                                        }
+                                        xy e10 = xy.e(tL_document3, null, fjVar6.k.attachPath, j11, fjVar3, fjVar4, str4, arrayList4, hashMap2, z11, i17, i18, 0, str5, false);
+                                        e10.H = storyItem;
+                                        e10.K = bwVar;
+                                        e10.O = j13;
+                                        e10.L = z12;
+                                        e10.Q = j14;
+                                        e10.j = gVar3;
+                                        e10.k = i16;
+                                        zy.C(cVar2.a).r0(e10);
+                                    }
+                                });
+                                i12++;
+                                gVar2 = gVar3;
+                                size = size;
+                                j10 = j12;
+                                i13 = i15;
+                                arrayList2 = arrayList;
+                                i11 = 1;
                             }
                         }
+                        i10 = i13;
+                        if (!C) {
+                        }
+                        int i142 = i7;
+                        CharSequence[] charSequenceArr2 = new CharSequence[i142];
+                        charSequenceArr2[0] = this.e;
+                        if (i12 != 0) {
+                        }
+                        if (i12 != 0) {
+                        }
+                        hashMap = new HashMap();
+                        if (str2 != null) {
+                        }
+                        if (str != null) {
+                        }
+                        int i152 = i10 + 1;
+                        hashMap.put("groupId", "" + j10);
+                        if (!this.f) {
+                            hashMap.put("final", "1");
+                        }
+                        ArrayList arrayList32 = this.h;
+                        if (arrayList32 == null) {
+                        }
+                        long j122 = j10;
+                        final fj fjVar22 = this.n;
+                        final fj fjVar32 = this.r;
+                        final String str42 = charSequence;
+                        final ArrayList arrayList42 = Y;
+                        final fj fjVar42 = this.s;
+                        final boolean z112 = this.w;
+                        final sh.g gVar32 = gVar;
+                        final int i162 = intValue;
+                        final int i172 = this.x;
+                        final int i182 = this.y;
+                        final TL_stories.StoryItem storyItem2 = this.E;
+                        final bw bwVar2 = this.F;
+                        final long j132 = this.G;
+                        final boolean z122 = this.H;
+                        final long j142 = this.I;
+                        g0.g3(new Runnable() { // from class: org.telegram.messenger.yw
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                fj fjVar5 = fj.this;
+                                c cVar2 = cVar;
+                                TLRPC.TL_document tL_document3 = tL_document2;
+                                fj fjVar6 = fjVar;
+                                HashMap hashMap2 = hashMap;
+                                String str5 = str;
+                                if (fjVar5 != null) {
+                                    zy.C(cVar2.a).t(fjVar5, null, null, null, tL_document3, fjVar6.k.attachPath, null, hashMap2, false, false, str5);
+                                    return;
+                                }
+                                xy e10 = xy.e(tL_document3, null, fjVar6.k.attachPath, j11, fjVar32, fjVar42, str42, arrayList42, hashMap2, z112, i172, i182, 0, str5, false);
+                                e10.H = storyItem2;
+                                e10.K = bwVar2;
+                                e10.O = j132;
+                                e10.L = z122;
+                                e10.Q = j142;
+                                e10.j = gVar32;
+                                e10.k = i162;
+                                zy.C(cVar2.a).r0(e10);
+                            }
+                        });
+                        i12++;
+                        gVar2 = gVar32;
+                        size = size;
+                        j10 = j122;
+                        i13 = i152;
+                        arrayList2 = arrayList;
+                        i11 = 1;
                     }
-                    if (tL_username2 != null) {
-                        laVar.o0(tL_username2, true, false);
-                        laVar.getMessagesController().u5(a22, tL_username2.username, tL_username2.active);
-                        break;
+                    str = null;
+                    tL_document = null;
+                    if (tL_document == null) {
                     }
+                    tL_document2 = tL_document;
+                    if (tL_document2 != null) {
+                        rf.a a102 = rf.a.a(file);
+                        if (a102 == null) {
+                        }
+                        if (bitmap != null) {
+                        }
+                    }
+                    i10 = i13;
+                    if (!C) {
+                    }
+                    int i1422 = i7;
+                    CharSequence[] charSequenceArr22 = new CharSequence[i1422];
+                    charSequenceArr22[0] = this.e;
+                    if (i12 != 0) {
+                    }
+                    if (i12 != 0) {
+                    }
+                    hashMap = new HashMap();
+                    if (str2 != null) {
+                    }
+                    if (str != null) {
+                    }
+                    int i1522 = i10 + 1;
+                    hashMap.put("groupId", "" + j10);
+                    if (!this.f) {
+                    }
+                    ArrayList arrayList322 = this.h;
+                    if (arrayList322 == null) {
+                    }
+                    long j1222 = j10;
+                    final fj fjVar222 = this.n;
+                    final fj fjVar322 = this.r;
+                    final String str422 = charSequence;
+                    final ArrayList arrayList422 = Y;
+                    final fj fjVar422 = this.s;
+                    final boolean z1122 = this.w;
+                    final sh.g gVar322 = gVar;
+                    final int i1622 = intValue;
+                    final int i1722 = this.x;
+                    final int i1822 = this.y;
+                    final TL_stories.StoryItem storyItem22 = this.E;
+                    final bw bwVar22 = this.F;
+                    final long j1322 = this.G;
+                    final boolean z1222 = this.H;
+                    final long j1422 = this.I;
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.yw
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            fj fjVar5 = fj.this;
+                            c cVar2 = cVar;
+                            TLRPC.TL_document tL_document3 = tL_document2;
+                            fj fjVar6 = fjVar;
+                            HashMap hashMap2 = hashMap;
+                            String str5 = str;
+                            if (fjVar5 != null) {
+                                zy.C(cVar2.a).t(fjVar5, null, null, null, tL_document3, fjVar6.k.attachPath, null, hashMap2, false, false, str5);
+                                return;
+                            }
+                            xy e10 = xy.e(tL_document3, null, fjVar6.k.attachPath, j11, fjVar322, fjVar422, str422, arrayList422, hashMap2, z1122, i1722, i1822, 0, str5, false);
+                            e10.H = storyItem22;
+                            e10.K = bwVar22;
+                            e10.O = j1322;
+                            e10.L = z1222;
+                            e10.Q = j1422;
+                            e10.j = gVar322;
+                            e10.k = i1622;
+                            zy.C(cVar2.a).r0(e10);
+                        }
+                    });
+                    i12++;
+                    gVar2 = gVar322;
+                    size = size;
+                    j10 = j1222;
+                    i13 = i1522;
+                    arrayList2 = arrayList;
+                    i11 = 1;
                 }
-                break;
+            }
+            gVar = gVar2;
+            str = null;
+            tL_document = null;
+            if (tL_document == null) {
+            }
+            tL_document2 = tL_document;
+            if (tL_document2 != null) {
+            }
+            i10 = i13;
+            if (!C) {
+            }
+            int i14222 = i7;
+            CharSequence[] charSequenceArr222 = new CharSequence[i14222];
+            charSequenceArr222[0] = this.e;
+            if (i12 != 0) {
+            }
+            if (i12 != 0) {
+            }
+            hashMap = new HashMap();
+            if (str2 != null) {
+            }
+            if (str != null) {
+            }
+            int i15222 = i10 + 1;
+            hashMap.put("groupId", "" + j10);
+            if (!this.f) {
+            }
+            ArrayList arrayList3222 = this.h;
+            if (arrayList3222 == null) {
+            }
+            long j12222 = j10;
+            final fj fjVar2222 = this.n;
+            final fj fjVar3222 = this.r;
+            final String str4222 = charSequence;
+            final ArrayList arrayList4222 = Y;
+            final fj fjVar4222 = this.s;
+            final boolean z11222 = this.w;
+            final sh.g gVar3222 = gVar;
+            final int i16222 = intValue;
+            final int i17222 = this.x;
+            final int i18222 = this.y;
+            final TL_stories.StoryItem storyItem222 = this.E;
+            final bw bwVar222 = this.F;
+            final long j13222 = this.G;
+            final boolean z12222 = this.H;
+            final long j14222 = this.I;
+            g0.g3(new Runnable() { // from class: org.telegram.messenger.yw
+                @Override // java.lang.Runnable
+                public final void run() {
+                    fj fjVar5 = fj.this;
+                    c cVar2 = cVar;
+                    TLRPC.TL_document tL_document3 = tL_document2;
+                    fj fjVar6 = fjVar;
+                    HashMap hashMap2 = hashMap;
+                    String str5 = str;
+                    if (fjVar5 != null) {
+                        zy.C(cVar2.a).t(fjVar5, null, null, null, tL_document3, fjVar6.k.attachPath, null, hashMap2, false, false, str5);
+                        return;
+                    }
+                    xy e10 = xy.e(tL_document3, null, fjVar6.k.attachPath, j11, fjVar3222, fjVar4222, str4222, arrayList4222, hashMap2, z11222, i17222, i18222, 0, str5, false);
+                    e10.H = storyItem222;
+                    e10.K = bwVar222;
+                    e10.O = j13222;
+                    e10.L = z12222;
+                    e10.Q = j14222;
+                    e10.j = gVar3222;
+                    e10.k = i16222;
+                    zy.C(cVar2.a).r0(e10);
+                }
+            });
+            i12++;
+            gVar2 = gVar3222;
+            size = size;
+            j10 = j12222;
+            i13 = i15222;
+            arrayList2 = arrayList;
+            i11 = 1;
         }
-    }
-
-    public /* synthetic */ iw(org.telegram.ui.ca caVar, String str, TLObject tLObject, int i7, boolean z10, TLRPC.TL_error tL_error, TLRPC.TL_username tL_username, boolean z11) {
-        this.e = caVar;
-        this.f = str;
-        this.h = tLObject;
-        this.b = i7;
-        this.c = z10;
-        this.n = tL_error;
-        this.r = tL_username;
-        this.d = z11;
+        Runnable runnable = this.J;
+        if (runnable != null) {
+            g0.g3(runnable);
+        }
     }
 }

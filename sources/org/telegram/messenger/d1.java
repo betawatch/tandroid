@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.util.Log;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d1 {
     public int a;
@@ -29,10 +29,7 @@ public final class d1 {
         this.c = sb2;
         this.b = str;
         int i7 = 2;
-        Object[] objArr = {str, 23};
-        if (!(str.length() <= 23)) {
-            throw new IllegalArgumentException(String.format("tag \"%s\" is longer than the %d character maximum", objArr));
-        }
+        q6.m.c(str.length() <= 23, "tag \"%s\" is longer than the %d character maximum", str, 23);
         while (i7 <= 7 && !Log.isLoggable(this.b, i7)) {
             i7++;
         }

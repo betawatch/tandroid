@@ -8,10 +8,10 @@ import c8.de;
 import c8.eb;
 import c8.tf;
 import java.io.File;
-import yi.i;
+import yi.h;
 import yi.j;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements tf {
     public final long a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class e implements tf {
         this.c = bArr == null ? null : (byte[]) bArr.clone();
     }
 
-    public e(long j3, i iVar, j jVar) {
+    public e(long j3, h hVar, j jVar) {
         this.c = jVar;
         this.a = j3;
-        this.b = iVar;
+        this.b = hVar;
     }
 }

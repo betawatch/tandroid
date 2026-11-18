@@ -1,13 +1,13 @@
 package org.telegram.utils.twidget;
 
 import java.util.ArrayList;
-import org.telegram.messenger.m5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.t3;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.n5;
+import org.telegram.messenger.v3;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.hk0;
+import org.telegram.ui.Components.pk0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class k0 {
     public boolean A;
@@ -35,9 +35,9 @@ public final class k0 {
     public long q;
     public TLRPC.TL_messageMediaWidget r;
     public String s;
-    public y0 t;
-    public hk0 u;
-    public hk0 w;
+    public d1 t;
+    public pk0 u;
+    public pk0 w;
     public int x;
     public long y;
     public boolean z;
@@ -65,12 +65,12 @@ public final class k0 {
         this.l = tL_messageMediaWidget.widget_id;
         String str2 = null;
         if (!z10 && !z12) {
-            if (m5.E(j3)) {
+            if (n5.E(j3)) {
                 str2 = "private";
             } else {
-                TLRPC.Chat M0 = np.s1(i7).M0(Long.valueOf(-j3));
-                if (M0 != null) {
-                    str2 = !t3.T(M0) ? "group" : M0.megagroup ? "supergroup" : "channel";
+                TLRPC.Chat O0 = mp.u1(i7).O0(Long.valueOf(-j3));
+                if (O0 != null) {
+                    str2 = !v3.T(O0) ? "group" : O0.megagroup ? "supergroup" : "channel";
                 }
             }
         }

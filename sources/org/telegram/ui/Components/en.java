@@ -1,73 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.content.Intent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class en extends org.telegram.ui.Cells.z5 {
-    public final /* synthetic */ int G;
-    public final /* synthetic */ org.telegram.ui.l4 H;
+public final class en implements ak {
+    public final /* synthetic */ org.telegram.messenger.x10 a;
+    public final /* synthetic */ fi.n2 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.h2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public en(org.telegram.ui.l4 l4Var, Context context, int i7, org.telegram.ui.ActionBar.e6 e6Var, int i10) {
-        super(context, i7, null, e6Var);
-        this.H = l4Var;
-        this.G = i10;
+    public en(fi.n2 n2Var, org.telegram.messenger.x10 x10Var, org.telegram.ui.ActionBar.h2 h2Var) {
+        this.a = x10Var;
+        this.b = n2Var;
+        this.c = h2Var;
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void h(bi.u uVar, ActionMode actionMode) {
-        jn jnVar = (jn) this.H.e;
-        if (!jnVar.n && this.G == 11 && uVar.isFocused() && uVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
-            }
-            org.telegram.ui.an.C8(menu, ((org.telegram.ui.an) jnVar.b.a2).h, false, true, true, true);
+    @Override // org.telegram.ui.Components.ak
+    public final void A() {
+        try {
+            Intent intent = new Intent("android.intent.action.GET_CONTENT");
+            intent.setType("*/*");
+            this.c.getParentActivity().startActivityForResult(intent, 28);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
     }
 
-    @Override // org.telegram.ui.Cells.z5
-    public final void j(boolean z10) {
-        jn.R((jn) this.H.e, this, z10);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final void k(org.telegram.ui.Cells.z5 z5Var) {
-        jn.S((jn) this.H.e, z5Var);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final void l(bi.u uVar) {
-        ((jn) this.H.e).b.h1(uVar, true);
-    }
-
-    @Override // org.telegram.ui.Cells.z5
-    public final boolean m(ArrayList arrayList) {
-        jn jnVar = (jn) this.H.e;
-        if (arrayList.isEmpty()) {
-            return false;
+    @Override // org.telegram.ui.Components.ak
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
+        if (!arrayList.isEmpty()) {
+            this.a.a(new th.c((String) arrayList.get(0)));
         }
-        bi.u uVar = this.d;
-        uVar.getText().replace(uVar.getSelectionStart(), uVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-        int i7 = 0;
-        while (!arrayList.isEmpty() && i7 < jnVar.K) {
-            for (int length = jnVar.L.length - 1; length > i7; length--) {
-                CharSequence[] charSequenceArr = jnVar.L;
-                charSequenceArr[length] = charSequenceArr[length - 1];
-            }
-            jnVar.L[i7] = (CharSequence) arrayList.remove(0);
-            jnVar.N++;
-            i7++;
+        this.b.a(true);
+    }
+
+    @Override // org.telegram.ui.Components.ak
+    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
+        if (!arrayList.isEmpty()) {
+            this.a.a(new th.d((org.telegram.messenger.yy) arrayList.get(0)));
         }
-        jnVar.n0();
-        jnVar.l0 = (jnVar.u0 + i7) - 1;
-        jnVar.s.setItemAnimator(jnVar.w);
-        jnVar.r.f();
-        return true;
+        this.b.a(true);
+    }
+
+    @Override // org.telegram.ui.Components.ak
+    public final /* synthetic */ void T() {
     }
 }

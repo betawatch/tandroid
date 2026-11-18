@@ -4,21 +4,21 @@ import android.content.Context;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.widget.FrameLayout;
-import c8.ja;
+import c8.ma;
 import java.util.Iterator;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements te.i {
-    public final e6 a;
+    public final i6 a;
     public final ab.q b;
     public final te.j c;
 
-    public m(Context context, e6 e6Var, ab.q qVar) {
+    public m(Context context, i6 i6Var, ab.q qVar) {
         super(context);
-        this.c = new te.j(this, er.h, 350L);
-        this.a = e6Var;
+        this.c = new te.j(this, lr.h, 350L);
+        this.a = i6Var;
         this.b = qVar;
     }
 
@@ -43,17 +43,17 @@ public abstract class m extends FrameLayout implements te.i {
             charSequence2 = charSequence;
         }
         l lVar = new l(this, getContext());
-        int i7 = j6.Xl;
-        e6 e6Var = this.a;
-        q6.U(lVar, i7, e6Var);
-        q6.G(lVar, i7, e6Var);
+        int i7 = n6.Xl;
+        i6 i6Var = this.a;
+        u6.U(lVar, i7, i6Var);
+        u6.G(lVar, i7, i6Var);
         lVar.setTextSize(1, 14.0f);
         lVar.setAlpha(0.0f);
         lVar.setText(charSequence2);
         if (z11) {
             qVar.c(lVar);
         }
-        addView(lVar, ja.c(-2.0f, -2));
+        addView(lVar, ma.c(-2.0f, -2));
         jVar.f(lVar, true);
     }
 
@@ -62,10 +62,10 @@ public abstract class m extends FrameLayout implements te.i {
         while (it.hasNext()) {
             te.e eVar = (te.e) it.next();
             l lVar = (l) eVar.a;
-            int i7 = j6.Xl;
-            e6 e6Var = this.a;
-            lVar.setTextColor(j6.w0(i7, e6Var));
-            ((l) eVar.a).setLinkTextColor(j6.w0(i7, e6Var));
+            int i7 = n6.Xl;
+            i6 i6Var = this.a;
+            lVar.setTextColor(n6.w0(i7, i6Var));
+            ((l) eVar.a).setLinkTextColor(n6.w0(i7, i6Var));
         }
     }
 

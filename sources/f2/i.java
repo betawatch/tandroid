@@ -1,108 +1,173 @@
 package f2;
 
-import a8.ja;
-import h9.i0;
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
+import android.app.RemoteInput;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Icon;
+import android.hardware.display.DisplayManager;
+import android.media.AudioFocusRequest;
+import android.media.AudioManager;
+import android.os.Build;
+import android.os.Looper;
+import android.view.Display;
+import android.view.MenuItem;
+import di.w2;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class i {
-    public final i0 a;
-    public final ArrayList b = new ArrayList();
-    public ByteBuffer[] c = new ByteBuffer[0];
-    public boolean d;
+public abstract class i {
+    public static AudioManager a;
 
-    public i(i0 i0Var) {
-        this.a = i0Var;
-        j jVar = j.e;
-        this.d = false;
-    }
-
-    public final void a() {
-        k kVar = k.b;
-        ArrayList arrayList = this.b;
-        arrayList.clear();
-        this.d = false;
-        long j3 = kVar.a;
-        int i7 = 0;
-        while (true) {
-            i0 i0Var = this.a;
-            if (i7 >= i0Var.size()) {
-                break;
-            }
-            m mVar = (m) i0Var.get(i7);
-            mVar.d(new k(j3));
-            if (mVar.isActive()) {
-                j3 = mVar.g(j3);
-                ja.p(j3 >= 0);
-                arrayList.add(mVar);
-            }
-            i7++;
+    public static void a(AudioManager audioManager, h hVar) {
+        if (Build.VERSION.SDK_INT < 26) {
+            audioManager.abandonAudioFocus(hVar.b);
+            return;
         }
-        this.c = new ByteBuffer[arrayList.size()];
-        for (int i10 = 0; i10 <= b(); i10++) {
-            this.c[i10] = ((m) arrayList.get(i10)).b();
+        Object obj = hVar.f;
+        obj.getClass();
+        audioManager.abandonAudioFocusRequest((AudioFocusRequest) obj);
+    }
+
+    public static Icon b(Bitmap bitmap) {
+        return Icon.createWithAdaptiveBitmap(bitmap);
+    }
+
+    public static boolean c(Context context) {
+        Display.HdrCapabilities hdrCapabilities;
+        DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+        Display display = displayManager != null ? displayManager.getDisplay(0) : null;
+        if (display == null || !display.isHdr() || (hdrCapabilities = display.getHdrCapabilities()) == null) {
+            return false;
         }
+        for (int i7 : hdrCapabilities.getSupportedHdrTypes()) {
+            if (i7 == 1) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public final int b() {
-        return this.c.length - 1;
-    }
-
-    public final boolean c() {
-        return this.d && ((m) this.b.get(b())).a() && !this.c[b()].hasRemaining();
-    }
-
-    public final boolean d() {
-        return !this.b.isEmpty();
-    }
-
-    public final void e(ByteBuffer byteBuffer) {
-        boolean z10;
-        for (boolean z11 = true; z11; z11 = z10) {
-            z10 = false;
-            int i7 = 0;
-            while (i7 <= b()) {
-                if (!this.c[i7].hasRemaining()) {
-                    ArrayList arrayList = this.b;
-                    m mVar = (m) arrayList.get(i7);
-                    if (!mVar.a()) {
-                        ByteBuffer byteBuffer2 = i7 > 0 ? this.c[i7 - 1] : byteBuffer.hasRemaining() ? byteBuffer : m.a;
-                        long remaining = byteBuffer2.remaining();
-                        mVar.c(byteBuffer2);
-                        this.c[i7] = mVar.b();
-                        z10 |= remaining - ((long) byteBuffer2.remaining()) > 0 || this.c[i7].hasRemaining();
-                    } else if (!this.c[i7].hasRemaining() && i7 < b()) {
-                        ((m) arrayList.get(i7 + 1)).f();
+    public static synchronized AudioManager d(Context context) {
+        synchronized (i.class) {
+            synchronized (i.class) {
+                try {
+                    Context applicationContext = context.getApplicationContext();
+                    if (applicationContext != null) {
+                        a = null;
                     }
+                    AudioManager audioManager = a;
+                    if (audioManager != null) {
+                        return audioManager;
+                    }
+                    Looper myLooper = Looper.myLooper();
+                    if (myLooper != null && myLooper != Looper.getMainLooper()) {
+                        h2.i iVar = new h2.i();
+                        h2.a.e().execute(new w2(19, applicationContext, iVar));
+                        iVar.b();
+                        AudioManager audioManager2 = a;
+                        audioManager2.getClass();
+                        return audioManager2;
+                    }
+                    AudioManager audioManager3 = (AudioManager) applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
+                    a = audioManager3;
+                    audioManager3.getClass();
+                    return audioManager3;
+                } catch (Throwable th2) {
+                    throw th2;
                 }
-                i7++;
             }
         }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0025, code lost:
+    
+        if (r0 == Integer.MIN_VALUE) goto L17;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int e(AudioManager audioManager, h hVar) {
+        int volumeControlStream;
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 26) {
+            Object obj = hVar.f;
+            obj.getClass();
+            return audioManager.requestAudioFocus((AudioFocusRequest) obj);
         }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        i0 i0Var = ((i) obj).a;
-        i0 i0Var2 = this.a;
-        if (i0Var2.size() != i0Var.size()) {
-            return false;
-        }
-        for (int i7 = 0; i7 < i0Var2.size(); i7++) {
-            if (i0Var2.get(i7) != i0Var.get(i7)) {
-                return false;
+        AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener = hVar.b;
+        e2.e eVar = hVar.d;
+        eVar.getClass();
+        if (i7 >= 26) {
+            try {
+                volumeControlStream = eVar.b().getVolumeControlStream();
+            } catch (RuntimeException unused) {
             }
+        } else {
+            if ((eVar.b & 1) != 1) {
+                switch (eVar.c) {
+                    case 2:
+                        volumeControlStream = 0;
+                        break;
+                    case 3:
+                        volumeControlStream = 8;
+                        break;
+                    case 4:
+                        volumeControlStream = 4;
+                        break;
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 9:
+                    case 10:
+                        volumeControlStream = 5;
+                        break;
+                    case 6:
+                        volumeControlStream = 2;
+                        break;
+                    case 11:
+                        volumeControlStream = 10;
+                        break;
+                    case 12:
+                    default:
+                        volumeControlStream = 3;
+                        break;
+                    case 13:
+                        break;
+                }
+            }
+            volumeControlStream = 1;
         }
-        return true;
+        return audioManager.requestAudioFocus(onAudioFocusChangeListener, volumeControlStream, hVar.a);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
+    public static void f(RemoteInput.Builder builder, String str) {
+        builder.setAllowDataType(str, true);
+    }
+
+    public static void g(MenuItem menuItem, char c10, int i7) {
+        menuItem.setAlphabeticShortcut(c10, i7);
+    }
+
+    public static void h(MenuItem menuItem, CharSequence charSequence) {
+        menuItem.setContentDescription(charSequence);
+    }
+
+    public static void i(MenuItem menuItem, ColorStateList colorStateList) {
+        menuItem.setIconTintList(colorStateList);
+    }
+
+    public static void j(MenuItem menuItem, PorterDuff.Mode mode) {
+        menuItem.setIconTintMode(mode);
+    }
+
+    public static void k(MenuItem menuItem, char c10, int i7) {
+        menuItem.setNumericShortcut(c10, i7);
+    }
+
+    public static void l(MenuItem menuItem, CharSequence charSequence) {
+        menuItem.setTooltipText(charSequence);
     }
 }

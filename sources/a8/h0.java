@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h0 extends AbstractSet {
     public final /* synthetic */ int a;
@@ -19,8 +19,8 @@ public abstract class h0 extends AbstractSet {
                 return e8.a(this, collection);
             default:
                 collection.getClass();
-                if (collection instanceof h9.m1) {
-                    collection = ((h9.y1) ((h9.m1) collection)).o();
+                if (collection instanceof h9.n1) {
+                    collection = ((h9.z1) ((h9.n1) collection)).o();
                 }
                 boolean z10 = false;
                 if (!(collection instanceof Set) || collection.size() <= size()) {

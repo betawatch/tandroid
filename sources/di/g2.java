@@ -1,87 +1,45 @@
 package di;
 
-import java.util.ArrayList;
-import org.telegram.messenger.np;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g2 implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ f6 b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ long e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ g2(c6 c6Var, TLRPC.TL_inputInvoiceStarGiftTransfer tL_inputInvoiceStarGiftTransfer, long j3, long j10, z10 z10Var) {
-        this.d = c6Var;
-        this.e = tL_inputInvoiceStarGiftTransfer;
-        this.b = j3;
-        this.c = j10;
-        this.f = z10Var;
+    public /* synthetic */ g2(f6 f6Var, long j3, long j10, x10 x10Var, long j11) {
+        this.b = f6Var;
+        this.c = j3;
+        this.d = j10;
+        this.f = x10Var;
+        this.e = j11;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                final c6 c6Var = (c6) this.d;
-                final TLRPC.TL_inputInvoiceStarGiftTransfer tL_inputInvoiceStarGiftTransfer = (TLRPC.TL_inputInvoiceStarGiftTransfer) this.e;
-                final z10 z10Var = (z10) this.f;
-                final long j3 = this.b;
-                final long j10 = this.c;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: di.n2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        TLObject tLObject2 = tLObject;
-                        boolean z10 = tLObject2 instanceof TLRPC.PaymentForm;
-                        c6 c6Var2 = c6.this;
-                        z10 z10Var2 = z10Var;
-                        if (!z10) {
-                            TLRPC.TL_error tL_error2 = tL_error;
-                            z10Var2.a(tL_error2);
-                            org.telegram.ui.Components.xb Y = c6Var2.k().Y(tL_error2);
-                            Y.t = true;
-                            Y.j();
-                            return;
-                        }
-                        TLRPC.PaymentForm paymentForm = (TLRPC.PaymentForm) tLObject2;
-                        int i7 = 0;
-                        np.s1(c6Var2.a).Y3(paymentForm.users, false);
-                        TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-                        tL_payments_sendStarsForm.form_id = paymentForm.form_id;
-                        tL_payments_sendStarsForm.invoice = tL_inputInvoiceStarGiftTransfer;
-                        ArrayList<TLRPC.TL_labeledPrice> arrayList = paymentForm.invoice.prices;
-                        int size = arrayList.size();
-                        long j11 = 0;
-                        while (i7 < size) {
-                            TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i7);
-                            i7++;
-                            j11 += tL_labeledPrice.amount;
-                        }
-                        ConnectionsManager.getInstance(c6Var2.a).sendRequest(tL_payments_sendStarsForm, new c2(c6Var2, j3, j10, z10Var2, j11));
-                    }
-                });
+                org.telegram.messenger.g0.g3(new u2(this.b, (org.telegram.ui.ActionBar.u1) this.f, tLObject, this.c, this.d, this.e, tL_error));
                 break;
             default:
-                ((GroupCallMessagesController) this.d).lambda$sendCallMessage$6((org.telegram.messenger.voip.f) this.e, (GroupCallMessage) this.f, this.b, this.c, tLObject, tL_error);
+                org.telegram.messenger.g0.g3(new u2(this.b, tLObject, this.c, this.d, (x10) this.f, tL_error, this.e));
                 break;
         }
     }
 
-    public /* synthetic */ g2(GroupCallMessagesController groupCallMessagesController, org.telegram.messenger.voip.f fVar, GroupCallMessage groupCallMessage, long j3, long j10) {
-        this.d = groupCallMessagesController;
-        this.e = fVar;
-        this.f = groupCallMessage;
-        this.b = j3;
-        this.c = j10;
+    public /* synthetic */ g2(f6 f6Var, org.telegram.ui.ActionBar.u1 u1Var, long j3, long j10, long j11) {
+        this.b = f6Var;
+        this.f = u1Var;
+        this.c = j3;
+        this.d = j10;
+        this.e = j11;
     }
 }

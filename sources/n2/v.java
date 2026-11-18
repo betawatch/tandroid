@@ -1,29 +1,29 @@
 package n2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface v {
-    void G();
+    void D1();
 
-    void T(Exception exc);
+    void M0();
 
-    void W();
+    void Q();
 
-    void a(int i7);
+    void W1(long j3, int i7, long j10);
 
-    void b(long j3);
+    void Y0(Exception exc);
 
-    void c(boolean z10);
+    void a0();
 
-    void f(s0 s0Var);
+    void b0(s0 s0Var);
 
-    void n0();
+    void d(int i7);
 
-    void q();
+    void f(boolean z10);
 
-    void t();
+    void j(long j3);
 
-    void u(s0 s0Var);
+    void k(s0 s0Var);
 
-    void w0(long j3, int i7, long j10);
+    void o1();
 }

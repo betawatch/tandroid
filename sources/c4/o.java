@@ -1,6 +1,6 @@
 package c4;
 
-import a8.ja;
+import a8.la;
 import com.google.android.gms.internal.vision.e2;
 import e2.s0;
 import e2.t;
@@ -11,7 +11,7 @@ import h2.l0;
 import h2.x;
 import java.io.EOFException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class o implements i0 {
     public final i0 a;
@@ -66,7 +66,7 @@ public final class o implements i0 {
             return;
         }
         int i14 = i10;
-        ja.e("DRM on subtitles is not supported", h0Var == null);
+        la.e("DRM on subtitles is not supported", h0Var == null);
         int i15 = (this.e - i11) - i14;
         try {
             mVar = this.g;
@@ -95,7 +95,7 @@ public final class o implements i0 {
             }
         }
         try {
-            mVar.K(bArr, i12, i14, lVar, nVar);
+            mVar.v(bArr, i12, i14, lVar, nVar);
             i14 = i14;
         } catch (RuntimeException e12) {
             e = e12;
@@ -138,12 +138,12 @@ public final class o implements i0 {
     public final void g(u uVar) {
         uVar.s.getClass();
         String str = uVar.s;
-        ja.f(s0.h(str) == 3);
+        la.f(s0.h(str) == 3);
         boolean equals = uVar.equals(this.h);
         k kVar = this.b;
         if (!equals) {
             this.h = uVar;
-            this.g = kVar.L(uVar) ? kVar.f(uVar) : null;
+            this.g = kVar.H(uVar) ? kVar.j(uVar) : null;
         }
         m mVar = this.g;
         i0 i0Var = this.a;
@@ -156,7 +156,7 @@ public final class o implements i0 {
         a10.j = str;
         a10.w = Long.MAX_VALUE;
         a10.P = kVar.O(uVar);
-        r.b.s(a10, i0Var);
+        p5.c.r(a10, i0Var);
     }
 
     public final void h(int i7) {

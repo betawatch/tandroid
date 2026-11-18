@@ -1,83 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r00 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public RadialGradient g;
-    public final int i;
-    public int j;
-    public int k;
-    public int l;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
-    public final int m = org.telegram.ui.ActionBar.j6.Oh;
-    public final int n = org.telegram.ui.ActionBar.j6.Ph;
-    public final int o = org.telegram.ui.ActionBar.j6.Qh;
-    public final int p = org.telegram.ui.ActionBar.j6.Rh;
-    public final int q = org.telegram.ui.ActionBar.j6.Zh;
-    public final int r = org.telegram.ui.ActionBar.j6.ai;
-    public final int s = org.telegram.ui.ActionBar.j6.bi;
+public final class r00 implements Runnable {
+    public final /* synthetic */ FragmentContextView a;
 
-    public r00(int i7) {
-        this.i = i7;
-        a();
+    public r00(FragmentContextView fragmentContextView) {
+        this.a = fragmentContextView;
     }
 
-    public final void a() {
-        int i7 = this.i;
-        if (i7 == 0) {
-            int x02 = org.telegram.ui.ActionBar.j6.x0(null, this.m, false);
-            this.j = x02;
-            int x03 = org.telegram.ui.ActionBar.j6.x0(null, this.n, false);
-            this.k = x03;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x02, x03}, (float[]) null, Shader.TileMode.CLAMP);
+    @Override // java.lang.Runnable
+    public final void run() {
+        FragmentContextView fragmentContextView = this.a;
+        org.telegram.ui.ActionBar.h2 h2Var = fragmentContextView.h;
+        if (fragmentContextView.h0 == null || !(h2Var instanceof org.telegram.ui.bn)) {
+            fragmentContextView.m0 = false;
             return;
         }
-        if (i7 == 1) {
-            int x04 = org.telegram.ui.ActionBar.j6.x0(null, this.o, false);
-            this.j = x04;
-            int x05 = org.telegram.ui.ActionBar.j6.x0(null, this.p, false);
-            this.k = x05;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x04, x05}, (float[]) null, Shader.TileMode.CLAMP);
+        org.telegram.messenger.t3 groupCall = fragmentContextView.n.getGroupCall();
+        if (groupCall == null || !groupCall.j()) {
+            fragmentContextView.i0 = false;
+            fragmentContextView.m0 = false;
             return;
         }
-        if (i7 == 3) {
-            int x06 = org.telegram.ui.ActionBar.j6.x0(null, this.q, false);
-            this.j = x06;
-            int x07 = org.telegram.ui.ActionBar.j6.x0(null, this.s, false);
-            this.l = x07;
-            int x08 = org.telegram.ui.ActionBar.j6.x0(null, this.r, false);
-            this.k = x08;
-            this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{x06, x07, x08}, new float[]{0.0f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+        int currentTime = groupCall.b.schedule_date - h2Var.getConnectionsManager().getCurrentTime();
+        String G = currentTime >= 86400 ? org.telegram.messenger.gd.G(Math.round(currentTime / 86400.0f), "Days", new Object[0]) : org.telegram.messenger.g0.j0(currentTime);
+        m6 m6Var = fragmentContextView.k0;
+        if (!fragmentContextView.j0) {
+            G = org.telegram.messenger.gd.M0(2131743203, null);
         }
-    }
-
-    public final void b(Paint paint) {
-        int i7 = this.i;
-        if (i7 != 0 && i7 != 1 && i7 != 3) {
-            paint.setShader(null);
-            paint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Sh, false));
-        } else {
-            if (org.telegram.messenger.qc.e(512)) {
-                paint.setShader(this.g);
-                return;
-            }
-            paint.setShader(null);
-            if (i7 == 3) {
-                paint.setColor(i0.a.f(0.5f, i0.a.f(0.5f, this.j, this.k), this.l));
-            } else {
-                paint.setColor(i0.a.f(0.5f, this.j, this.k));
-            }
-        }
+        m6Var.t(G, true, true);
+        org.telegram.messenger.g0.h3(fragmentContextView.n0, 1000L);
+        fragmentContextView.s.invalidate();
     }
 }

@@ -14,13 +14,13 @@ import h2.l0;
 import h2.x;
 import h9.g0;
 import h9.i0;
-import h9.s1;
+import h9.t1;
 import java.util.ArrayList;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class h implements m {
     public static final byte[] n = {0, 7, 8, 15};
@@ -67,16 +67,16 @@ public final class h implements m {
         iArr[0] = 0;
         for (int i7 = 1; i7 < 16; i7++) {
             if (i7 < 8) {
-                iArr[i7] = d(ns.e4, (i7 & 1) != 0 ? 255 : 0, (i7 & 2) != 0 ? 255 : 0, (i7 & 4) != 0 ? 255 : 0);
+                iArr[i7] = d(ks.e4, (i7 & 1) != 0 ? 255 : 0, (i7 & 2) != 0 ? 255 : 0, (i7 & 4) != 0 ? 255 : 0);
             } else {
                 int i10 = i7 & 1;
-                int i11 = ns.L1;
+                int i11 = ks.L1;
                 int i12 = i10 != 0 ? 127 : 0;
                 int i13 = (i7 & 2) != 0 ? 127 : 0;
                 if ((i7 & 4) == 0) {
                     i11 = 0;
                 }
-                iArr[i7] = d(ns.e4, i12, i13, i11);
+                iArr[i7] = d(ks.e4, i12, i13, i11);
             }
         }
         return iArr;
@@ -87,7 +87,7 @@ public final class h implements m {
         int[] iArr = new int[256];
         iArr[0] = 0;
         for (int i10 = 0; i10 < 256; i10++) {
-            int i11 = ns.e4;
+            int i11 = ks.e4;
             if (i10 < 8) {
                 int i12 = (i10 & 1) != 0 ? 255 : 0;
                 int i13 = (i10 & 2) != 0 ? 255 : 0;
@@ -96,8 +96,8 @@ public final class h implements m {
                 }
                 iArr[i10] = d(63, i12, i13, i11);
             } else {
-                int i14 = i10 & ns.S1;
-                int i15 = ns.A2;
+                int i14 = i10 & ks.S1;
+                int i15 = ks.A2;
                 if (i14 == 0) {
                     int i16 = ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0);
                     int i17 = ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0);
@@ -105,7 +105,7 @@ public final class h implements m {
                     if ((i10 & 64) == 0) {
                         i15 = 0;
                     }
-                    iArr[i10] = d(ns.e4, i16, i17, i7 + i15);
+                    iArr[i10] = d(ks.e4, i16, i17, i7 + i15);
                 } else if (i14 == 8) {
                     int i18 = ((i10 & 1) != 0 ? 85 : 0) + ((i10 & 16) != 0 ? 170 : 0);
                     int i19 = ((i10 & 2) != 0 ? 85 : 0) + ((i10 & 32) != 0 ? 170 : 0);
@@ -113,11 +113,11 @@ public final class h implements m {
                     if ((i10 & 64) == 0) {
                         i15 = 0;
                     }
-                    iArr[i10] = d(ns.L1, i18, i19, i7 + i15);
+                    iArr[i10] = d(ks.L1, i18, i19, i7 + i15);
                 } else if (i14 == 128) {
-                    iArr[i10] = d(ns.e4, ((i10 & 1) != 0 ? 43 : 0) + ns.L1 + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ns.L1 + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ns.L1 + ((i10 & 64) == 0 ? 0 : 85));
+                    iArr[i10] = d(ks.e4, ((i10 & 1) != 0 ? 43 : 0) + ks.L1 + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ks.L1 + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ks.L1 + ((i10 & 64) == 0 ? 0 : 85));
                 } else if (i14 == 136) {
-                    iArr[i10] = d(ns.e4, ((i10 & 1) != 0 ? 43 : 0) + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ((i10 & 64) == 0 ? 0 : 85));
+                    iArr[i10] = d(ks.e4, ((i10 & 1) != 0 ? 43 : 0) + ((i10 & 16) != 0 ? 85 : 0), ((i10 & 2) != 0 ? 43 : 0) + ((i10 & 32) != 0 ? 85 : 0), ((i10 & 4) == 0 ? 0 : 43) + ((i10 & 64) == 0 ? 0 : 85));
                 }
             }
         }
@@ -446,7 +446,7 @@ public final class h implements m {
             double d = i11;
             double d2 = i12 - 128;
             double d10 = j3 - 128;
-            iArr2[j12] = d((byte) (255 - (j10 & ns.e4)), l0.i((int) ((1.402d * d2) + d), 0, ns.e4), l0.i((int) ((d - (0.34414d * d10)) - (d2 * 0.71414d)), 0, ns.e4), l0.i((int) ((d10 * 1.772d) + d), 0, ns.e4));
+            iArr2[j12] = d((byte) (255 - (j10 & ks.e4)), l0.i((int) ((1.402d * d2) + d), 0, ks.e4), l0.i((int) ((d - (0.34414d * d10)) - (d2 * 0.71414d)), 0, ks.e4), l0.i((int) ((d10 * 1.772d) + d), 0, ks.e4));
             i15 = i10;
             i16 = 0;
             j11 = j11;
@@ -485,7 +485,24 @@ public final class h implements m {
     }
 
     @Override // c4.m
-    public final void K(byte[] bArr, int i7, int i10, l lVar, j jVar) {
+    public final /* synthetic */ c4.d q(int i7, int i10, byte[] bArr) {
+        return p0.a(this, bArr, i10);
+    }
+
+    @Override // c4.m
+    public final void reset() {
+        g gVar = this.f;
+        gVar.c.clear();
+        gVar.d.clear();
+        gVar.e.clear();
+        gVar.f.clear();
+        gVar.g.clear();
+        gVar.h = null;
+        gVar.i = null;
+    }
+
+    @Override // c4.m
+    public final void v(byte[] bArr, int i7, int i10, l lVar, j jVar) {
         g gVar;
         boolean z10;
         c4.a aVar;
@@ -652,7 +669,7 @@ public final class h implements m {
         cc.c cVar4 = gVar.i;
         if (cVar4 == null) {
             g0 g0Var = i0.b;
-            aVar = new c4.a(-9223372036854775807L, -9223372036854775807L, s1.e);
+            aVar = new c4.a(-9223372036854775807L, -9223372036854775807L, t1.e);
         } else {
             b bVar2 = gVar.h;
             if (bVar2 == null) {
@@ -787,24 +804,7 @@ public final class h implements m {
     }
 
     @Override // c4.m
-    public final int Q() {
+    public final int y() {
         return 2;
-    }
-
-    @Override // c4.m
-    public final void reset() {
-        g gVar = this.f;
-        gVar.c.clear();
-        gVar.d.clear();
-        gVar.e.clear();
-        gVar.f.clear();
-        gVar.g.clear();
-        gVar.h = null;
-        gVar.i = null;
-    }
-
-    @Override // c4.m
-    public final /* synthetic */ c4.d x(int i7, int i10, byte[] bArr) {
-        return p0.a(this, bArr, i10);
     }
 }

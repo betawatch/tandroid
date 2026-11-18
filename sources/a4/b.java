@@ -1,13 +1,13 @@
 package a4;
 
-import a8.ja;
+import a8.la;
 import f3.b0;
 import f3.p;
 import h2.l0;
 import java.io.EOFException;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements h {
     public final g a;
@@ -24,7 +24,7 @@ public final class b implements h {
     public long x;
 
     public b(j jVar, long j3, long j10, long j11, long j12, boolean z10) {
-        ja.f(j3 >= 0 && j10 > j3);
+        la.f(j3 >= 0 && j10 > j3);
         this.d = jVar;
         this.b = j3;
         this.c = j10;
@@ -38,7 +38,7 @@ public final class b implements h {
     }
 
     @Override // a4.h
-    public final b0 Y() {
+    public final b0 f() {
         if (this.f != 0) {
             return new a(this);
         }
@@ -75,7 +75,7 @@ public final class b implements h {
                     long position2 = pVar.getPosition();
                     if (gVar.b(pVar, this.s)) {
                         gVar.a(pVar, false);
-                        pVar.l();
+                        pVar.n();
                         long j14 = this.n;
                         long j15 = gVar.b;
                         long j16 = j14 - j15;
@@ -130,11 +130,11 @@ public final class b implements h {
                 gVar.b(pVar, -1L);
                 gVar.a(pVar, false);
                 if (gVar.b > this.n) {
-                    pVar.l();
+                    pVar.n();
                     this.e = 4;
                     return -(this.w + j10);
                 }
-                pVar.m(gVar.d + gVar.e);
+                pVar.r(gVar.d + gVar.e);
                 this.r = pVar.getPosition();
                 this.w = gVar.b;
             }
@@ -150,11 +150,11 @@ public final class b implements h {
             throw new EOFException();
         }
         gVar.a(pVar, false);
-        pVar.m(gVar.d + gVar.e);
+        pVar.r(gVar.d + gVar.e);
         long j21 = gVar.b;
         while ((gVar.a & 4) != 4 && gVar.b(pVar, -1L) && pVar.getPosition() < j12 && gVar.a(pVar, true)) {
             try {
-                pVar.m(gVar.d + gVar.e);
+                pVar.r(gVar.d + gVar.e);
                 j21 = gVar.b;
             } catch (EOFException unused) {
             }

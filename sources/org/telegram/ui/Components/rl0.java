@@ -1,18 +1,102 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class rl0 {
-    public ch.p0 a;
-    public int b;
-    public String c;
-    public int d;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import java.util.HashSet;
+import org.telegram.messenger.beta.R;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof rl0)) {
-            return false;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public abstract class rl0 extends FrameLayout implements org.telegram.ui.ActionBar.c6 {
+    public final View a;
+    public final ImageView b;
+    public final hi.c2 c;
+    public final ah.i d;
+    public final org.telegram.ui.ActionBar.i6 e;
+
+    public rl0(Context context, float f10, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context);
+        this.e = i6Var;
+        View view = new View(context);
+        this.a = view;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.n6.d0(org.telegram.messenger.g0.L(18.0f), org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.O5, i6Var)));
+        addView(view, c8.ma.i(-1.0f, 36.0f, 8388659, f10, 11.0f, f10, 0.0f));
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        org.telegram.ui.ActionBar.u6.s(imageView, org.telegram.ui.ActionBar.n6.Q5, i6Var, PorterDuff.Mode.MULTIPLY);
+        addView(imageView, c8.ma.i(36.0f, 36.0f, 8388659, f10 + 2.0f, 11.0f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.b = imageView2;
+        imageView2.setScaleType(scaleType);
+        hi.c2 c2Var = new hi.c2(3, this);
+        this.c = c2Var;
+        imageView2.setImageDrawable(c2Var);
+        c2Var.f = org.telegram.messenger.g0.L(7.0f);
+        imageView2.setScaleX(0.1f);
+        imageView2.setScaleY(0.1f);
+        imageView2.setAlpha(0.0f);
+        addView(imageView2, c8.ma.i(36.0f, 36.0f, 8388661, f10, 11.0f, f10, 0.0f));
+        imageView2.setOnClickListener(new h70(this, 10));
+        ah.i iVar = new ah.i(8, context, this);
+        this.d = iVar;
+        iVar.setTextSize(1, 16.0f);
+        org.telegram.ui.ActionBar.u6.D(iVar, org.telegram.ui.ActionBar.n6.P5, i6Var);
+        org.telegram.ui.ActionBar.u6.U(iVar, org.telegram.ui.ActionBar.n6.R5, i6Var);
+        iVar.setBackgroundDrawable(null);
+        iVar.setPadding(0, 0, 0, 0);
+        iVar.setMaxLines(1);
+        iVar.setLines(1);
+        iVar.setSingleLine(true);
+        iVar.setGravity(c8.ma.y() | 16);
+        iVar.setImeOptions(268435459);
+        org.telegram.ui.ActionBar.u6.l(iVar, 30, org.telegram.ui.ActionBar.n6.Di, i6Var);
+        iVar.setCursorSize(org.telegram.messenger.g0.L(20.0f));
+        iVar.setCursorWidth(1.5f);
+        float f11 = f10 + 2.0f;
+        addView(iVar, c8.ma.i(-1.0f, 40.0f, 8388659, f11 + 38.0f, 9.0f, f11 + 30.0f, 0.0f));
+        iVar.addTextChangedListener(new ah.j(this, 25));
+        iVar.setOnEditorActionListener(new g(this, 7));
+    }
+
+    public abstract void a(String str);
+
+    public dq getProgressDrawable() {
+        return this.c;
+    }
+
+    public View getSearchBackground() {
+        return this.a;
+    }
+
+    public EditTextBoldCursor getSearchEditText() {
+        return this.d;
+    }
+
+    public void setHint(String str) {
+        this.d.setHint(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        View view = this.a;
+        if (view != null) {
+            try {
+                org.telegram.ui.ActionBar.n6.C1(org.telegram.ui.ActionBar.n6.w0(org.telegram.ui.ActionBar.n6.O5, this.e), view.getBackground());
+                view.invalidate();
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+                return;
+            }
         }
-        rl0 rl0Var = (rl0) obj;
-        return this.b == rl0Var.b && this.a.h == rl0Var.a.h && this.d == rl0Var.d;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.c6
+    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
     }
 }

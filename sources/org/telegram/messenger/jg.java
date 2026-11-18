@@ -4,17 +4,17 @@ import org.telegram.SQLite.SQLiteCursor;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class jg implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ si b;
+    public final /* synthetic */ ri b;
     public final /* synthetic */ String c;
     public final /* synthetic */ boolean d;
 
-    public /* synthetic */ jg(si siVar, String str, boolean z10, int i7) {
+    public /* synthetic */ jg(ri riVar, String str, boolean z10, int i7) {
         this.a = i7;
-        this.b = siVar;
+        this.b = riVar;
         this.c = str;
         this.d = z10;
     }
@@ -26,17 +26,17 @@ public final /* synthetic */ class jg implements Runnable {
         int i7 = 0;
         switch (this.a) {
             case 0:
-                this.b.c1(this.c, this.d, false);
+                this.b.f1(this.c, this.d, false);
                 return;
             default:
-                si siVar = this.b;
+                ri riVar = this.b;
                 String str = this.c;
                 SQLiteCursor sQLiteCursor = null;
                 r5 = null;
                 r5 = null;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = null;
                 try {
-                    queryFinalized = siVar.getMessagesStorage().b.queryFinalized("SELECT data, date FROM stickers_dice WHERE emoji = ?", str);
+                    queryFinalized = riVar.getMessagesStorage().b.queryFinalized("SELECT data, date FROM stickers_dice WHERE emoji = ?", str);
                 } catch (Throwable th2) {
                     th = th2;
                     tL_messages_stickerSet = null;
@@ -58,7 +58,7 @@ public final /* synthetic */ class jg implements Runnable {
                     try {
                         a8.g(th, true);
                         tL_messages_stickerSet2 = tL_messages_stickerSet;
-                        siVar.s1(str, this.d, tL_messages_stickerSet2, true, i7);
+                        riVar.v1(str, this.d, tL_messages_stickerSet2, true, i7);
                         return;
                     } finally {
                         if (sQLiteCursor != null) {
@@ -66,7 +66,7 @@ public final /* synthetic */ class jg implements Runnable {
                         }
                     }
                 }
-                siVar.s1(str, this.d, tL_messages_stickerSet2, true, i7);
+                riVar.v1(str, this.d, tL_messages_stickerSet2, true, i7);
                 return;
         }
     }

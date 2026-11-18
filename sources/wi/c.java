@@ -1,8 +1,9 @@
 package wi;
 
 import android.content.SharedPreferences;
+import org.telegram.ui.Components.hn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c implements r1.c {
     public final /* synthetic */ int a;
@@ -18,12 +19,12 @@ public final /* synthetic */ class c implements r1.c {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                ((SharedPreferences) u7.i.b().a).edit().putFloat("x", f10).apply();
+                ((SharedPreferences) hn.m().b).edit().putFloat("x", f10).apply();
                 hVar.a.b.f();
                 break;
             case 1:
                 h hVar2 = (h) this.b;
-                ((SharedPreferences) u7.i.b().a).edit().putFloat("y", f10).apply();
+                ((SharedPreferences) hn.m().b).edit().putFloat("y", f10).apply();
                 hVar2.a.b.f();
                 break;
             default:

@@ -1,585 +1,158 @@
 package org.telegram.messenger;
 
-import android.os.Bundle;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
+import android.util.SparseArray;
+import java.math.BigInteger;
+import java.util.regex.Pattern;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_update;
-import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class tv {
-    public final int a;
-    public boolean b;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public int g;
-    public int h;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean o;
-    public final ArrayList c = new ArrayList();
-    public final ArrayList i = new ArrayList();
-    public final ArrayList j = new ArrayList();
-    public final rv n = new rv(this, 4);
-    public final a0.h p = new a0.h();
+public final /* synthetic */ class tv implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xv b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public tv(int i7) {
+    public /* synthetic */ tv(xv xvVar, TLRPC.EncryptedChat encryptedChat, int i7) {
         this.a = i7;
-        this.b = np.s1(i7).f7.getBoolean("savedMessagesUnsupported", true);
+        this.b = xvVar;
+        this.c = encryptedChat;
     }
 
-    public static ArrayList d(ArrayList arrayList) {
-        ArrayList arrayList2 = new ArrayList();
-        for (int i7 = 0; i7 < arrayList.size(); i7++) {
-            sv svVar = (sv) arrayList.get(i7);
-            if (svVar.b) {
-                arrayList2.add(Long.valueOf(svVar.a));
-            }
-        }
-        return arrayList2;
-    }
-
-    public static void h() {
-        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
-        if (Q == null) {
-            return;
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("user_id", m10.i(Q.getCurrentAccount()).e());
-        Q.presentFragment(new org.telegram.ui.an(bundle));
-    }
-
-    public static boolean k(ArrayList arrayList, ArrayList arrayList2) {
-        if (arrayList.size() == arrayList2.size()) {
-            for (int i7 = 0; i7 < arrayList.size(); i7++) {
-                if (Objects.equals(arrayList.get(i7), arrayList2.get(i7))) {
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean o(ArrayList arrayList, ArrayList arrayList2) {
-        if (k(arrayList2, d(arrayList))) {
-            return false;
-        }
-        ArrayList arrayList3 = new ArrayList();
-        int i7 = 0;
-        while (i7 < arrayList.size()) {
-            sv svVar = (sv) arrayList.get(i7);
-            if (svVar.b) {
-                svVar.b = false;
-                arrayList3.add(svVar);
-                arrayList.remove(i7);
-                i7--;
-            }
-            i7++;
-        }
-        arrayList.addAll(arrayList3);
-        ArrayList arrayList4 = new ArrayList();
-        int i10 = 0;
-        while (i10 < arrayList.size()) {
-            sv svVar2 = (sv) arrayList.get(i10);
-            int indexOf = arrayList2.indexOf(Long.valueOf(svVar2.a));
-            if (indexOf >= 0) {
-                svVar2.k = indexOf;
-                svVar2.b = true;
-                arrayList4.add(svVar2);
-                arrayList.remove(i10);
-                i10--;
-            }
-            i10++;
-        }
-        Collections.sort(arrayList, new gl(14));
-        Collections.sort(arrayList4, new gl(15));
-        arrayList.addAll(0, arrayList4);
-        return true;
-    }
-
-    public final void a() {
-        this.c.clear();
-        this.i.clear();
-        this.e = false;
-        this.g = 0;
-        this.h = 0;
-        this.f = false;
-        this.l = true;
-        boolean z10 = this.o;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        byte[] bArr;
         int i7 = this.a;
-        if (!z10) {
-            this.o = true;
-            vr a02 = vr.a0(i7);
-            a02.a.c(new pq(this, a02));
-        }
-        this.b = true;
-        np.s1(i7).f7.edit().remove("savedMessagesUnsupported").apply();
-    }
-
-    public final void b() {
-        this.g = 0;
-        this.j.clear();
-        this.i.clear();
-        this.c.clear();
-        l();
-    }
-
-    public final int c() {
-        return this.f ? this.j.size() : this.e ? this.g - this.h : this.c.size();
-    }
-
-    public final boolean e() {
-        if (c() <= 0) {
-            return false;
-        }
-        long e10 = m10.i(this.a).e();
-        ArrayList arrayList = this.j;
-        return (arrayList.size() == 1 && ((sv) arrayList.get(0)).a == e10) ? false : true;
-    }
-
-    public final void f(long j3, z10 z10Var) {
-        sv svVar;
-        int i7 = 0;
-        while (true) {
-            ArrayList arrayList = this.j;
-            if (i7 >= arrayList.size()) {
-                svVar = null;
-                break;
-            }
-            svVar = (sv) arrayList.get(i7);
-            if (svVar.a == j3) {
-                break;
-            } else {
-                i7++;
-            }
-        }
-        if (svVar != null && svVar.e > 0 && svVar.i) {
-            if (z10Var != null) {
-                z10Var.a(Boolean.TRUE);
-                return;
-            }
-            return;
-        }
-        a0.h hVar = this.p;
-        ArrayList arrayList2 = (ArrayList) hVar.f(j3);
-        if (arrayList2 != null) {
-            if (z10Var != null) {
-                arrayList2.add(z10Var);
-                return;
-            }
-            return;
-        }
-        ArrayList arrayList3 = new ArrayList();
-        if (z10Var != null) {
-            arrayList3.add(z10Var);
-        }
-        hVar.k(arrayList3, j3);
-        TLRPC.TL_messages_getSavedHistory tL_messages_getSavedHistory = new TLRPC.TL_messages_getSavedHistory();
-        int i10 = this.a;
-        tL_messages_getSavedHistory.peer = np.s1(i10).j1(j3);
-        tL_messages_getSavedHistory.limit = 1;
-        tL_messages_getSavedHistory.hash = 0L;
-        tL_messages_getSavedHistory.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        tL_messages_getSavedHistory.offset_date = ConnectionsManager.DEFAULT_DATACENTER_ID;
-        tL_messages_getSavedHistory.add_offset = -1;
-        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getSavedHistory, new v4(this, j3, 2));
-    }
-
-    public final void g(boolean z10) {
-        boolean z11;
-        this.m = z10;
-        if (!this.d && !this.f && !(z11 = this.k)) {
-            boolean z12 = this.l;
-            int i7 = this.a;
-            if (z12) {
-                if (z10) {
-                    return;
-                }
-                this.d = true;
-                TLRPC.TL_messages_getSavedDialogs tL_messages_getSavedDialogs = new TLRPC.TL_messages_getSavedDialogs();
-                ArrayList arrayList = this.i;
-                sv svVar = arrayList.isEmpty() ? null : (sv) i5.c.h(1, arrayList);
-                if (svVar != null) {
-                    tL_messages_getSavedDialogs.offset_id = svVar.c;
-                    tL_messages_getSavedDialogs.offset_date = svVar.c();
-                    tL_messages_getSavedDialogs.offset_peer = np.s1(i7).j1(svVar.a);
-                } else {
-                    tL_messages_getSavedDialogs.offset_id = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    tL_messages_getSavedDialogs.offset_date = 0;
-                    tL_messages_getSavedDialogs.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                }
-                tL_messages_getSavedDialogs.limit = 20;
-                ArrayList arrayList2 = new ArrayList();
-                int size = arrayList.size();
-                ArrayList arrayList3 = this.j;
-                arrayList2.addAll(arrayList3.subList(Math.min(size, arrayList3.size()), Math.min(arrayList.size() + tL_messages_getSavedDialogs.limit, arrayList3.size())));
-                for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                    sv svVar2 = (sv) arrayList2.get(i10);
-                    long p10 = si.p(tL_messages_getSavedDialogs.hash, svVar2.b ? 1L : 0L);
-                    tL_messages_getSavedDialogs.hash = p10;
-                    long p11 = si.p(p10, Math.abs(svVar2.a));
-                    tL_messages_getSavedDialogs.hash = p11;
-                    long p12 = si.p(p11, svVar2.c);
-                    tL_messages_getSavedDialogs.hash = p12;
-                    tL_messages_getSavedDialogs.hash = si.p(p12, svVar2.c());
-                }
-                ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getSavedDialogs, new r4(8, this, arrayList2));
-                return;
-            }
-            rv rvVar = new rv(this, 0);
-            if (!z11) {
-                this.k = true;
-                long e10 = m10.i(i7).e();
-                vr a02 = vr.a0(i7);
-                a02.a.c(new gm(this, a02, e10, rvVar, 18));
-            }
-        }
-    }
-
-    public final void i(TLRPC.Update update) {
-        boolean z10 = false;
-        if (update instanceof TL_update.TL_updateSavedDialogPinned) {
-            TL_update.TL_updateSavedDialogPinned tL_updateSavedDialogPinned = (TL_update.TL_updateSavedDialogPinned) update;
-            TLRPC.DialogPeer dialogPeer = tL_updateSavedDialogPinned.peer;
-            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
-                long o4 = m5.o(((TLRPC.TL_dialogPeer) dialogPeer).peer);
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(Long.valueOf(o4));
-                z10 = n(arrayList, tL_updateSavedDialogPinned.pinned, false);
-            }
-        } else if (update instanceof TL_update.TL_updatePinnedSavedDialogs) {
-            TL_update.TL_updatePinnedSavedDialogs tL_updatePinnedSavedDialogs = (TL_update.TL_updatePinnedSavedDialogs) update;
-            ArrayList arrayList2 = new ArrayList(tL_updatePinnedSavedDialogs.order.size());
-            for (int i7 = 0; i7 < tL_updatePinnedSavedDialogs.order.size(); i7++) {
-                TLRPC.DialogPeer dialogPeer2 = tL_updatePinnedSavedDialogs.order.get(i7);
-                if (dialogPeer2 instanceof TLRPC.TL_dialogPeer) {
-                    arrayList2.add(Long.valueOf(m5.o(((TLRPC.TL_dialogPeer) dialogPeer2).peer)));
-                }
-            }
-            boolean o10 = o(this.i, arrayList2);
-            boolean o11 = o(this.c, arrayList2);
-            if (o10 || o11) {
-                z10 = true;
-            }
-        }
-        if (z10) {
-            l();
-        }
-    }
-
-    public final int j(long j3) {
-        int i7 = 0;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.j;
-            if (i10 >= arrayList.size()) {
-                break;
-            }
-            if (((sv) arrayList.get(i10)).a == j3) {
-                arrayList.remove(i10);
-                i11++;
-                i10--;
-            }
-            i10++;
-        }
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.i;
-            if (i12 >= arrayList2.size()) {
-                break;
-            }
-            if (((sv) arrayList2.get(i12)).a == j3) {
-                arrayList2.remove(i12);
-                i13++;
-                i12--;
-            }
-            i12++;
-        }
-        while (true) {
-            ArrayList arrayList3 = this.c;
-            if (i7 >= arrayList3.size()) {
-                return Math.max(i11, i13);
-            }
-            if (((sv) arrayList3.get(i7)).a == j3) {
-                arrayList3.remove(i7);
-                i7--;
-            }
-            i7++;
-        }
-    }
-
-    public final void l() {
-        m();
-        rv rvVar = this.n;
-        g0.r(rvVar);
-        g0.i3(rvVar, 450L);
-    }
-
-    public final void m() {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3 = this.j;
-        arrayList3.clear();
-        HashSet hashSet = new HashSet();
-        int i7 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i7 >= arrayList.size()) {
-                break;
-            }
-            sv svVar = (sv) arrayList.get(i7);
-            if (svVar.b && !hashSet.contains(Long.valueOf(svVar.a)) && !svVar.d()) {
-                arrayList3.add(svVar);
-                hashSet.add(Long.valueOf(svVar.a));
-            }
-            i7++;
-        }
-        int i10 = 0;
-        while (true) {
-            arrayList2 = this.i;
-            if (i10 >= arrayList2.size()) {
-                break;
-            }
-            sv svVar2 = (sv) arrayList2.get(i10);
-            if (svVar2.b && !hashSet.contains(Long.valueOf(svVar2.a)) && !svVar2.d()) {
-                arrayList3.add(svVar2);
-                hashSet.add(Long.valueOf(svVar2.a));
-            }
-            i10++;
-        }
-        ArrayList arrayList4 = new ArrayList();
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            sv svVar3 = (sv) arrayList2.get(i11);
-            if (!hashSet.contains(Long.valueOf(svVar3.a)) && !svVar3.d()) {
-                arrayList4.add(svVar3);
-                hashSet.add(Long.valueOf(svVar3.a));
-            }
-        }
-        if (!this.f) {
-            for (int i12 = 0; i12 < arrayList.size(); i12++) {
-                sv svVar4 = (sv) arrayList.get(i12);
-                if (!hashSet.contains(Long.valueOf(svVar4.a)) && !svVar4.d()) {
-                    arrayList4.add(svVar4);
-                    hashSet.add(Long.valueOf(svVar4.a));
-                }
-            }
-        }
-        Collections.sort(arrayList4, new gl(16));
-        arrayList3.addAll(arrayList4);
-        int i13 = this.a;
-        ns.f(i13).k(ns.g3, new Object[0]);
-        if (e() || !np.s1(i13).p6) {
-            return;
-        }
-        np.s1(i13).O4(false);
-    }
-
-    public final boolean n(ArrayList arrayList, boolean z10, boolean z11) {
-        ArrayList d = d(this.j);
-        ArrayList arrayList2 = new ArrayList(d);
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            Long l10 = (Long) arrayList.get(size);
-            l10.getClass();
-            if (z10 && !arrayList2.contains(l10)) {
-                arrayList2.add(0, l10);
-            } else if (!z10) {
-                arrayList2.remove(l10);
-            }
-        }
-        int i7 = this.a;
-        if (arrayList2.size() <= (m10.i(i7).q() ? np.s1(i7).o6 : np.s1(i7).n6) && !k(d, arrayList2)) {
-            if (z11) {
-                p(arrayList2);
-                return true;
-            }
-            boolean o4 = o(this.i, arrayList2);
-            boolean o10 = o(this.c, arrayList2);
-            if (o4 || o10) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final void p(ArrayList arrayList) {
-        boolean o4 = o(this.i, arrayList);
-        boolean o10 = o(this.c, arrayList);
-        if (!o4 && !o10) {
-            return;
-        }
-        TLRPC.TL_messages_reorderPinnedSavedDialogs tL_messages_reorderPinnedSavedDialogs = new TLRPC.TL_messages_reorderPinnedSavedDialogs();
-        tL_messages_reorderPinnedSavedDialogs.force = true;
-        int i7 = 0;
-        while (true) {
-            int size = arrayList.size();
-            int i10 = this.a;
-            if (i7 >= size) {
-                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_reorderPinnedSavedDialogs, null);
-                l();
-                return;
-            } else {
-                long longValue = ((Long) arrayList.get(i7)).longValue();
-                TLRPC.TL_inputDialogPeer tL_inputDialogPeer = new TLRPC.TL_inputDialogPeer();
-                tL_inputDialogPeer.peer = np.s1(i10).j1(longValue);
-                tL_messages_reorderPinnedSavedDialogs.order.add(tL_inputDialogPeer);
-                i7++;
-            }
-        }
-    }
-
-    public final boolean q(ArrayList arrayList) {
-        ArrayList arrayList2;
-        a0.h hVar;
-        boolean z10;
-        ArrayList arrayList3;
-        int i7;
-        boolean z11;
-        int i10 = 0;
-        if (arrayList == null) {
-            return false;
-        }
-        a0.h hVar2 = new a0.h();
-        a0.h hVar3 = new a0.h();
-        new HashSet();
-        int i11 = this.a;
-        long e10 = m10.i(i11).e();
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            TLRPC.Message message = (TLRPC.Message) arrayList.get(i12);
-            long Q1 = gj.Q1(e10, message);
-            if (Q1 == e10 || (message.id >= 0 && (message.send_state == 0 || message.fwd_from == null))) {
-                TLRPC.Message message2 = (TLRPC.Message) hVar2.f(Q1);
-                if (message2 == null || message2.id < message.id) {
-                    hVar2.k(message, Q1);
-                }
-                Integer num = (Integer) hVar3.f(Q1);
-                hVar3.k(Integer.valueOf((num == null ? 0 : num.intValue()) + 1), Q1);
-            }
-        }
-        int i13 = 0;
-        boolean z12 = false;
-        while (i13 < hVar2.m()) {
-            long j3 = hVar2.j(i13);
-            TLRPC.Message message3 = (TLRPC.Message) hVar2.n(i13);
-            Integer num2 = (Integer) hVar3.f(j3);
-            int i14 = i10;
-            while (true) {
-                arrayList2 = this.c;
-                if (i14 >= arrayList2.size()) {
-                    hVar = hVar2;
-                    z10 = false;
+        TLRPC.EncryptedChat encryptedChat = this.c;
+        xv xvVar = this.b;
+        switch (i7) {
+            case 0:
+                SparseArray sparseArray = xvVar.e;
+                if (tL_error != null) {
+                    sparseArray.remove(encryptedChat.id);
                     break;
-                }
-                sv svVar = (sv) arrayList2.get(i14);
-                hVar = hVar2;
-                if (svVar.a == j3) {
-                    int i15 = svVar.c;
-                    int i16 = message3.id;
-                    if (i15 < i16 || (i16 < 0 && message3.date > svVar.c())) {
-                        if (svVar.c < message3.id) {
-                            int i17 = 0;
-                            for (int i18 = 0; i18 < arrayList.size(); i18++) {
-                                if (((TLRPC.Message) arrayList.get(i18)).id > svVar.c) {
-                                    i17++;
-                                }
-                            }
-                            svVar.e += i17;
+                } else {
+                    TLRPC.messages_DhConfig messages_dhconfig = (TLRPC.messages_DhConfig) tLObject;
+                    if (tLObject instanceof TLRPC.TL_messages_dhConfig) {
+                        byte[] bArr2 = messages_dhconfig.p;
+                        int i10 = messages_dhconfig.g;
+                        Pattern pattern = Utilities.a;
+                        if (!ConnectionsManager.native_isGoodPrime(bArr2, i10)) {
+                            sparseArray.remove(encryptedChat.id);
+                            xvVar.f(encryptedChat.id, false);
+                            break;
+                        } else {
+                            tr messagesStorage = xvVar.getMessagesStorage();
+                            byte[] bArr3 = messages_dhconfig.p;
+                            messagesStorage.H();
+                            messagesStorage.y = bArr3;
+                            tr messagesStorage2 = xvVar.getMessagesStorage();
+                            int i11 = messages_dhconfig.g;
+                            messagesStorage2.H();
+                            messagesStorage2.E = i11;
+                            tr messagesStorage3 = xvVar.getMessagesStorage();
+                            int i12 = messages_dhconfig.version;
+                            messagesStorage3.H();
+                            messagesStorage3.x = i12;
+                            tr messagesStorage4 = xvVar.getMessagesStorage();
+                            tr messagesStorage5 = xvVar.getMessagesStorage();
+                            messagesStorage5.H();
+                            int i13 = messagesStorage5.x;
+                            tr messagesStorage6 = xvVar.getMessagesStorage();
+                            messagesStorage6.H();
+                            int i14 = messagesStorage6.E;
+                            tr messagesStorage7 = xvVar.getMessagesStorage();
+                            messagesStorage7.H();
+                            messagesStorage4.a.c(new l2.x(messagesStorage4, i13, i14, messagesStorage7.y, 7));
                         }
-                        gj gjVar = new gj(i11, message3, false, false);
-                        svVar.d = gjVar;
-                        svVar.c = gjVar.e1();
-                        z12 = true;
                     }
-                    num2 = Integer.valueOf(num2 != null ? Math.max(num2.intValue(), svVar.e) : svVar.e);
-                    z10 = true;
-                } else {
-                    i14++;
-                    hVar2 = hVar;
-                }
-            }
-            if (!z10) {
-                sv a10 = sv.a(i11, message3);
-                if (num2 != null) {
-                    a10.e = num2.intValue();
-                }
-                arrayList2.add(a10);
-                z12 = true;
-            }
-            int i19 = 0;
-            while (true) {
-                arrayList3 = this.i;
-                if (i19 >= arrayList3.size()) {
-                    i7 = 0;
-                    z11 = false;
-                    break;
-                }
-                sv svVar2 = (sv) arrayList3.get(i19);
-                if (svVar2.a == j3) {
-                    int i20 = svVar2.c;
-                    int i21 = message3.id;
-                    if (i20 < i21 || (i21 < 0 && message3.date > svVar2.c())) {
-                        if (svVar2.c < message3.id) {
-                            int i22 = 0;
-                            for (int i23 = 0; i23 < arrayList.size(); i23++) {
-                                if (((TLRPC.Message) arrayList.get(i23)).id > svVar2.c) {
-                                    i22++;
-                                }
-                            }
-                            svVar2.e += i22;
-                        }
-                        i7 = 0;
-                        gj gjVar2 = new gj(i11, message3, false, false);
-                        svVar2.d = gjVar2;
-                        svVar2.c = gjVar2.e1();
-                        z12 = true;
+                    byte[] bArr4 = new byte[256];
+                    for (int i15 = 0; i15 < 256; i15++) {
+                        bArr4[i15] = (byte) (((byte) (Utilities.b.nextDouble() * 256.0d)) ^ messages_dhconfig.random[i15]);
+                    }
+                    encryptedChat.a_or_b = bArr4;
+                    encryptedChat.seq_in = -1;
+                    encryptedChat.seq_out = 0;
+                    tr messagesStorage8 = xvVar.getMessagesStorage();
+                    messagesStorage8.H();
+                    int i16 = 1;
+                    BigInteger bigInteger = new BigInteger(1, messagesStorage8.y);
+                    xvVar.getMessagesStorage().H();
+                    BigInteger modPow = BigInteger.valueOf(r5.E).modPow(new BigInteger(1, bArr4), bigInteger);
+                    BigInteger bigInteger2 = new BigInteger(1, encryptedChat.g_a);
+                    if (!Utilities.w(bigInteger2, bigInteger)) {
+                        sparseArray.remove(encryptedChat.id);
+                        xvVar.f(encryptedChat.id, false);
+                        break;
                     } else {
-                        i7 = 0;
+                        byte[] byteArray = modPow.toByteArray();
+                        if (byteArray.length > 256) {
+                            byte[] bArr5 = new byte[256];
+                            System.arraycopy(byteArray, 1, bArr5, 0, 256);
+                            byteArray = bArr5;
+                        }
+                        byte[] byteArray2 = bigInteger2.modPow(new BigInteger(1, bArr4), bigInteger).toByteArray();
+                        if (byteArray2.length <= 256) {
+                            if (byteArray2.length < 256) {
+                                bArr = new byte[256];
+                                System.arraycopy(byteArray2, 0, bArr, 256 - byteArray2.length, byteArray2.length);
+                                for (int i17 = 0; i17 < 256 - byteArray2.length; i17++) {
+                                    bArr[i17] = 0;
+                                }
+                            }
+                            byte[] n10 = Utilities.n(byteArray2);
+                            byte[] bArr6 = new byte[8];
+                            System.arraycopy(n10, n10.length - 8, bArr6, 0, 8);
+                            encryptedChat.auth_key = byteArray2;
+                            encryptedChat.key_create_date = xvVar.getConnectionsManager().getCurrentTime();
+                            TLRPC.TL_messages_acceptEncryption tL_messages_acceptEncryption = new TLRPC.TL_messages_acceptEncryption();
+                            tL_messages_acceptEncryption.g_b = byteArray;
+                            TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat = new TLRPC.TL_inputEncryptedChat();
+                            tL_messages_acceptEncryption.peer = tL_inputEncryptedChat;
+                            tL_inputEncryptedChat.chat_id = encryptedChat.id;
+                            tL_inputEncryptedChat.access_hash = encryptedChat.access_hash;
+                            tL_messages_acceptEncryption.key_fingerprint = Utilities.g(bArr6);
+                            xvVar.getConnectionsManager().sendRequest(tL_messages_acceptEncryption, new tv(xvVar, encryptedChat, i16), 64);
+                            break;
+                        } else {
+                            bArr = new byte[256];
+                            System.arraycopy(byteArray2, byteArray2.length - 256, bArr, 0, 256);
+                        }
+                        byteArray2 = bArr;
+                        byte[] n102 = Utilities.n(byteArray2);
+                        byte[] bArr62 = new byte[8];
+                        System.arraycopy(n102, n102.length - 8, bArr62, 0, 8);
+                        encryptedChat.auth_key = byteArray2;
+                        encryptedChat.key_create_date = xvVar.getConnectionsManager().getCurrentTime();
+                        TLRPC.TL_messages_acceptEncryption tL_messages_acceptEncryption2 = new TLRPC.TL_messages_acceptEncryption();
+                        tL_messages_acceptEncryption2.g_b = byteArray;
+                        TLRPC.TL_inputEncryptedChat tL_inputEncryptedChat2 = new TLRPC.TL_inputEncryptedChat();
+                        tL_messages_acceptEncryption2.peer = tL_inputEncryptedChat2;
+                        tL_inputEncryptedChat2.chat_id = encryptedChat.id;
+                        tL_inputEncryptedChat2.access_hash = encryptedChat.access_hash;
+                        tL_messages_acceptEncryption2.key_fingerprint = Utilities.g(bArr62);
+                        xvVar.getConnectionsManager().sendRequest(tL_messages_acceptEncryption2, new tv(xvVar, encryptedChat, i16), 64);
                     }
-                    num2 = Integer.valueOf(num2 != null ? Math.max(num2.intValue(), svVar2.e) : svVar2.e);
-                    z11 = true;
-                } else {
-                    i19++;
                 }
-            }
-            if (!z11) {
-                sv a11 = sv.a(i11, message3);
-                if (num2 != null) {
-                    a11.e = num2.intValue();
+            default:
+                xvVar.e.remove(encryptedChat.id);
+                if (tL_error == null) {
+                    TLRPC.EncryptedChat encryptedChat2 = (TLRPC.EncryptedChat) tLObject;
+                    encryptedChat2.auth_key = encryptedChat.auth_key;
+                    encryptedChat2.user_id = encryptedChat.user_id;
+                    encryptedChat2.seq_in = encryptedChat.seq_in;
+                    encryptedChat2.seq_out = encryptedChat.seq_out;
+                    encryptedChat2.key_create_date = encryptedChat.key_create_date;
+                    encryptedChat2.key_use_count_in = encryptedChat.key_use_count_in;
+                    encryptedChat2.key_use_count_out = encryptedChat.key_use_count_out;
+                    xvVar.getMessagesStorage().V1(encryptedChat2);
+                    xvVar.getMessagesController().b4(encryptedChat2, false);
+                    g0.g3(new qv(xvVar, encryptedChat2, 2));
+                    break;
                 }
-                arrayList3.add(a11);
-                z12 = true;
-            }
-            i13++;
-            i10 = i7;
-            hVar2 = hVar;
-        }
-        return z12;
-    }
-
-    public final boolean r(int i7, long j3, boolean z10) {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.j;
-            if (i10 >= arrayList.size()) {
                 break;
-            }
-            sv svVar = (sv) arrayList.get(i10);
-            if (svVar.a != j3) {
-                i10++;
-            } else if (svVar.e != i7 || (!svVar.i && z10)) {
-                svVar.e = i7;
-                svVar.i = true;
-                return true;
-            }
         }
-        return false;
     }
 }

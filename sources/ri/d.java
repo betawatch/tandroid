@@ -11,9 +11,9 @@ import android.support.v4.media.session.w;
 import android.widget.FrameLayout;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class d {
     public static final ColorMatrixColorFilter v = new ColorMatrixColorFilter(new ColorMatrix());
@@ -43,8 +43,8 @@ public final class d {
         for (int i10 = 0; i10 < dVar.b; i10++) {
             b bVar = (b) dVar.a.get(i10);
             if (bVar.a.intersects(f10, f11, f12, f13)) {
-                RectF rectF = r.b.a(i7) ? bVar.d : bVar.c;
-                int i11 = r.b.a(i7) ? bVar.p : bVar.o;
+                RectF rectF = p5.c.a(i7) ? bVar.d : bVar.c;
+                int i11 = p5.c.a(i7) ? bVar.p : bVar.o;
                 RenderNode a10 = bVar.a(i7);
                 canvas.save();
                 canvas.clipRect(bVar.a);
@@ -61,8 +61,8 @@ public final class d {
         for (int i11 = 0; i11 < dVar.b; i11++) {
             b bVar = (b) dVar.a.get(i11);
             if (RectF.intersects(bVar.a, rectF)) {
-                RectF rectF2 = r.b.a(i7) ? bVar.d : bVar.c;
-                int i12 = r.b.a(i7) ? bVar.p : bVar.o;
+                RectF rectF2 = p5.c.a(i7) ? bVar.d : bVar.c;
+                int i12 = p5.c.a(i7) ? bVar.p : bVar.o;
                 canvas.save();
                 float f12 = i10 * 2;
                 RectF rectF3 = bVar.a;
@@ -96,7 +96,7 @@ public final class d {
             return this.h;
         }
         if (c10 != 3) {
-            throw new IllegalArgumentException("Unknown source index: ".concat(r.b.w(i7)));
+            throw new IllegalArgumentException("Unknown source index: ".concat(p5.c.x(i7)));
         }
         this.j = true;
         return this.i;
@@ -124,8 +124,8 @@ public final class d {
                     beginRecording.scale(f10, f10);
                     beginRecording.drawRenderNode(bVar2.e);
                     beginRecording.restore();
-                    beginRecording.drawRect(bVar2.a, j6.Jm);
-                    beginRecording.drawRect(rectF2, j6.Im);
+                    beginRecording.drawRect(bVar2.a, n6.Jm);
+                    beginRecording.drawRect(rectF2, n6.Im);
                 }
                 this.e.endRecording();
                 return;

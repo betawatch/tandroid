@@ -7,29 +7,29 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.hc;
-import org.telegram.messenger.qc;
-import org.telegram.ui.Components.ch0;
-import org.telegram.ui.Components.os;
+import org.telegram.messenger.gc;
+import org.telegram.messenger.pc;
+import org.telegram.ui.Components.mh0;
+import org.telegram.ui.Components.vs;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class m1 extends os {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class m1 extends vs {
     public int N;
     public int O;
     public ArrayList P;
     public final ArrayList Q = new ArrayList();
-    public final boolean R = qc.e(8200);
+    public final boolean R = pc.e(8200);
     public final /* synthetic */ o1 S;
 
     public m1(o1 o1Var) {
         this.S = o1Var;
     }
 
-    public static void m(Canvas canvas, org.telegram.ui.Components.g5 g5Var, n1 n1Var, float f10) {
-        if (g5Var != null) {
-            g5Var.setAlpha((int) (f10 * 255.0f));
-            g5Var.draw(canvas);
+    public static void m(Canvas canvas, org.telegram.ui.Components.o5 o5Var, n1 n1Var, float f10) {
+        if (o5Var != null) {
+            o5Var.setAlpha((int) (f10 * 255.0f));
+            o5Var.draw(canvas);
         } else if (n1Var.f != null) {
             canvas.save();
             ImageReceiver imageReceiver = n1Var.f;
@@ -40,7 +40,7 @@ public final class m1 extends os {
         }
     }
 
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.vs
     public final void a(Canvas canvas, long j3, int i7, int i10, float f10) {
         if (this.P == null) {
             return;
@@ -64,7 +64,7 @@ public final class m1 extends os {
         k();
     }
 
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.vs
     public final void c(Canvas canvas) {
         int i7 = 0;
         while (true) {
@@ -74,18 +74,18 @@ public final class m1 extends os {
             }
             n1 n1Var = (n1) arrayList.get(i7);
             n1Var.getClass();
-            org.telegram.ui.Components.g5 g5Var = n1Var.d;
-            if (g5Var != null) {
-                g5Var.setColorFilter(this.S.p3);
+            org.telegram.ui.Components.o5 o5Var = n1Var.d;
+            if (o5Var != null) {
+                o5Var.setColorFilter(this.S.p3);
             }
             n1Var.r.h(canvas, n1Var.n[this.L]);
             i7++;
         }
     }
 
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.vs
     public final void d(Canvas canvas, float f10) {
-        org.telegram.ui.Components.g5 g5Var;
+        org.telegram.ui.Components.o5 o5Var;
         if (this.P != null) {
             canvas.save();
             canvas.translate(-this.O, 0.0f);
@@ -96,32 +96,32 @@ public final class m1 extends os {
                 float alpha = n1Var.getAlpha() * f10;
                 Rect rect = org.telegram.messenger.g0.Q;
                 rect.set(n1Var.getPaddingLeft() + ((int) n1Var.getX()), n1Var.getPaddingTop(), (n1Var.getWidth() + ((int) n1Var.getX())) - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
-                org.telegram.ui.Components.g5 g5Var2 = n1Var.d;
-                if (g5Var2 != null) {
-                    g5Var2.setBounds(rect);
+                org.telegram.ui.Components.o5 o5Var2 = n1Var.d;
+                if (o5Var2 != null) {
+                    o5Var2.setBounds(rect);
                 }
                 ImageReceiver imageReceiver = n1Var.f;
                 if (imageReceiver != null) {
                     imageReceiver.z0(rect);
                 }
                 PorterDuffColorFilter porterDuffColorFilter = this.S.p3;
-                if (porterDuffColorFilter != null && (g5Var = n1Var.d) != null) {
-                    g5Var.setColorFilter(porterDuffColorFilter);
+                if (porterDuffColorFilter != null && (o5Var = n1Var.d) != null) {
+                    o5Var.setColorFilter(porterDuffColorFilter);
                 }
                 if (scale != 1.0f) {
                     canvas.save();
                     canvas.scale(scale, scale, rect.centerX(), rect.centerY());
-                    m(canvas, g5Var2, n1Var, alpha);
+                    m(canvas, o5Var2, n1Var, alpha);
                     canvas.restore();
                 } else {
-                    m(canvas, g5Var2, n1Var, alpha);
+                    m(canvas, o5Var2, n1Var, alpha);
                 }
             }
             canvas.restore();
         }
     }
 
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.vs
     public final void g() {
         int i7 = 0;
         while (true) {
@@ -130,9 +130,9 @@ public final class m1 extends os {
                 this.S.invalidate();
                 return;
             }
-            hc hcVar = ((n1) arrayList.get(i7)).n[this.L];
-            if (hcVar != null) {
-                hcVar.a();
+            gc gcVar = ((n1) arrayList.get(i7)).n[this.L];
+            if (gcVar != null) {
+                gcVar.a();
             }
             i7++;
         }
@@ -140,7 +140,7 @@ public final class m1 extends os {
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x00df  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x00f9  */
-    @Override // org.telegram.ui.Components.os
+    @Override // org.telegram.ui.Components.vs
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -155,18 +155,18 @@ public final class m1 extends os {
         for (int i10 = 0; i10 < this.P.size(); i10++) {
             n1 n1Var = (n1) this.P.get(i10);
             n1Var.getClass();
-            hc[] hcVarArr = n1Var.n;
-            org.telegram.ui.Components.g5 g5Var = n1Var.d;
-            ImageReceiver imageReceiver = g5Var != null ? g5Var.k : n1Var.f;
+            gc[] gcVarArr = n1Var.n;
+            org.telegram.ui.Components.o5 o5Var = n1Var.d;
+            ImageReceiver imageReceiver = o5Var != null ? o5Var.k : n1Var.f;
             if (imageReceiver != null) {
                 imageReceiver.setAlpha(n1Var.getAlpha());
-                org.telegram.ui.Components.g5 g5Var2 = n1Var.d;
-                if (g5Var2 != null) {
-                    g5Var2.setColorFilter(this.S.p3);
+                org.telegram.ui.Components.o5 o5Var2 = n1Var.d;
+                if (o5Var2 != null) {
+                    o5Var2.setColorFilter(this.S.p3);
                 }
                 int i11 = this.L;
-                hc e02 = imageReceiver.e0(hcVarArr[i11], i11);
-                hcVarArr[i11] = e02;
+                gc e02 = imageReceiver.e0(gcVarArr[i11], i11);
+                gcVarArr[i11] = e02;
                 e02.c = j3;
                 n1Var.r = imageReceiver;
                 if (imageReceiver.B() != null) {
@@ -177,9 +177,9 @@ public final class m1 extends os {
                 }
                 Rect rect = org.telegram.messenger.g0.Q;
                 rect.set(n1Var.getPaddingLeft(), n1Var.getPaddingTop(), n1Var.getWidth() - n1Var.getPaddingRight(), n1Var.getHeight() - n1Var.getPaddingBottom());
-                ch0 B = imageReceiver.B();
+                mh0 B = imageReceiver.B();
                 if (B == null || (i7 = B.c) == 0) {
-                    org.telegram.ui.Components.t5 m10 = imageReceiver.m();
+                    org.telegram.ui.Components.b6 m10 = imageReceiver.m();
                     if (m10 == null || m10.getIntrinsicHeight() == 0) {
                         Bitmap n10 = imageReceiver.n();
                         if (n10 != null) {
@@ -200,7 +200,7 @@ public final class m1 extends os {
                                 rect.bottom = (int) (rect.centerY() + width2);
                             }
                             rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
-                            hcVarArr[i11].b(rect);
+                            gcVarArr[i11].b(rect);
                             arrayList.add(n1Var);
                         }
                     } else {
@@ -216,7 +216,7 @@ public final class m1 extends os {
                 if (intrinsicWidth >= 1.0f) {
                 }
                 rect.offset((n1Var.getLeft() + ((int) n1Var.getTranslationX())) - this.O, 0);
-                hcVarArr[i11].b(rect);
+                gcVarArr[i11].b(rect);
                 arrayList.add(n1Var);
             }
         }

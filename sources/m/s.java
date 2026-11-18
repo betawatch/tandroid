@@ -21,10 +21,11 @@ import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
-import c8.mc;
+import c8.i9;
+import c8.pc;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.n, u0.k {
     public final h2.c a;
@@ -100,7 +101,7 @@ public final class s extends EditText implements r0.n, u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mc.d(super.getCustomSelectionActionModeCallback());
+        return pc.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -143,10 +144,10 @@ public final class s extends EditText implements r0.n, u0.k {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
         w0.h(editorInfo, onCreateInputConnection, this);
-        c8.n1.a(editorInfo, onCreateInputConnection, this);
+        i9.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e10 = r0.i0.e(this)) != null) {
             t0.b.b(editorInfo, e10);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new org.telegram.ui.ActionBar.z(this, 23));
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new org.telegram.ui.ActionBar.p(this, 24));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -192,7 +193,7 @@ public final class s extends EditText implements r0.n, u0.k {
         ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
             if (i10 >= 31) {
-                dVar = new m2.i(primaryClip, 1);
+                dVar = new m2.h(primaryClip, 1);
             } else {
                 r0.e eVar = new r0.e();
                 eVar.b = primaryClip;
@@ -243,7 +244,7 @@ public final class s extends EditText implements r0.n, u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(mc.e(callback, this));
+        super.setCustomSelectionActionModeCallback(pc.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

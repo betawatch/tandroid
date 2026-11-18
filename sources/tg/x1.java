@@ -4,7 +4,7 @@ import ai.r2;
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final /* synthetic */ class x1 implements ValueAnimator.AnimatorUpdateLis
                 e2Var.S = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 1:
-                l2 l2Var = (l2) obj;
+                k2 k2Var = (k2) obj;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                l2Var.E = floatValue;
-                r2 r2Var = l2Var.c;
+                k2Var.E = floatValue;
+                r2 r2Var = k2Var.c;
                 r2Var.setAlpha(floatValue);
-                r2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
-                r2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, l2Var.E));
-                l2Var.b.invalidate();
+                r2Var.setScaleX(org.telegram.messenger.g0.T1(0.9f, 1.0f, k2Var.E));
+                r2Var.setScaleY(org.telegram.messenger.g0.T1(0.9f, 1.0f, k2Var.E));
+                k2Var.b.invalidate();
                 break;
             case 2:
                 LimitPreviewView limitPreviewView = (LimitPreviewView) obj;
@@ -43,17 +43,17 @@ public final /* synthetic */ class x1 implements ValueAnimator.AnimatorUpdateLis
                 limitPreviewView.c0 = floatValue2 < 0.5f ? (floatValue2 / 0.5f) * (-7.0f) : (1.0f - ((floatValue2 - 0.5f) / 0.5f)) * (-7.0f);
                 break;
             case 3:
-                ug.q0 q0Var = (ug.q0) obj;
-                q0Var.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                q0Var.f.invalidate();
-                ug.p0 p0Var = q0Var.h;
-                if (p0Var != null) {
-                    p0Var.invalidate();
+                ug.s0 s0Var = (ug.s0) obj;
+                s0Var.P = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                s0Var.f.invalidate();
+                ug.r0 r0Var = s0Var.h;
+                if (r0Var != null) {
+                    r0Var.invalidate();
                     break;
                 }
                 break;
             case 4:
-                ((ug.s1) obj).a.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ((ug.u1) obj).a.o = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 5:
                 ((vg.e) obj).a.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();

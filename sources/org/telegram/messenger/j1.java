@@ -12,12 +12,12 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.xa1;
+import org.telegram.ui.Components.um0;
+import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, hi.b7, kc, RequestTimeDelegate, mm0, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDelegate, OnTokenCanceledListener, OnSuccessListener, OnFailureListener, hi.b7, jc, RequestTimeDelegate, um0, org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -26,8 +26,33 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         this.b = obj;
     }
 
-    @Override // org.telegram.messenger.kc
-    public void I(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // org.telegram.ui.Components.um0
+    public void a(float f10) {
+        fj fjVar = ((xt) this.b).X;
+        if (fjVar == null) {
+            return;
+        }
+        fjVar.b0 = f10;
+        MediaController.B().i0(fjVar, f10);
+    }
+
+    @Override // hi.b7
+    public Bitmap c(BitmapFactory.Options options) {
+        ef efVar = (ef) this.b;
+        String str = efVar.i;
+        if (str == null) {
+            str = efVar.I;
+        }
+        return BitmapFactory.decodeFile(str, options);
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        ((org.telegram.ui.bn) this.b).presentFragment(new bb1(6, null));
+    }
+
+    @Override // org.telegram.messenger.jc
+    public void m0(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
         MusicPlayerService musicPlayerService = (MusicPlayerService) this.b;
         if (!z10) {
             boolean z13 = MusicPlayerService.s;
@@ -35,37 +60,12 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
             if (TextUtils.isEmpty(musicPlayerService.n)) {
                 return;
             }
-            gj gjVar = MediaController.B().v0;
-            if (gjVar != null) {
-                musicPlayerService.a(gjVar, true);
+            fj fjVar = MediaController.B().v0;
+            if (fjVar != null) {
+                musicPlayerService.a(fjVar, true);
             }
             musicPlayerService.n = null;
         }
-    }
-
-    @Override // hi.b7
-    public Bitmap d(BitmapFactory.Options options) {
-        ff ffVar = (ff) this.b;
-        String str = ffVar.i;
-        if (str == null) {
-            str = ffVar.I;
-        }
-        return BitmapFactory.decodeFile(str, options);
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public void e(float f10) {
-        gj gjVar = ((au) this.b).X;
-        if (gjVar == null) {
-            return;
-        }
-        gjVar.b0 = f10;
-        MediaController.B().i0(gjVar, f10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
-        ((org.telegram.ui.an) this.b).presentFragment(new xa1(6, null));
     }
 
     @Override // com.google.android.gms.tasks.OnTokenCanceledListener
@@ -80,23 +80,23 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
     public void onComplete(Object obj) {
         switch (this.a) {
             case 1:
-                d4 d4Var = (d4) this.b;
+                f4 f4Var = (f4) this.b;
                 Pair pair = (Pair) obj;
                 if (pair == null) {
-                    d4Var.getClass();
+                    f4Var.getClass();
                     break;
                 } else {
-                    d4Var.a.put((Long) pair.first, (Bitmap) pair.second);
+                    f4Var.a.put((Long) pair.first, (Bitmap) pair.second);
                     break;
                 }
             default:
-                org.telegram.ui.ActionBar.n3 n3Var = (org.telegram.ui.ActionBar.n3) this.b;
+                org.telegram.ui.ActionBar.r3 r3Var = (org.telegram.ui.ActionBar.r3) this.b;
                 Bitmap bitmap = (Bitmap) obj;
                 if (bitmap == null) {
-                    n3Var.a(null);
+                    r3Var.a(null);
                     break;
                 } else {
-                    n3Var.a(new gg.a(bitmap, 0, null));
+                    r3Var.a(new gg.a(bitmap, 0, null));
                     break;
                 }
         }
@@ -110,17 +110,17 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        ((nc) this.b).r(exc);
+        ((mc) this.b).q(exc);
     }
 
     @Override // com.google.android.gms.tasks.OnSuccessListener
     public void onSuccess(Object obj) {
-        ((oc) this.b).a((String) obj);
+        ((nc) this.b).a((String) obj);
     }
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j3) {
-        g0.h3(new od((fz) this.b, j3, 1));
+        g0.g3(new nd((az) this.b, j3, 2));
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -134,15 +134,15 @@ public final /* synthetic */ class j1 implements ResultCallback, WriteToSocketDe
         Utilities.d.c(new u8((y8) this.b, 3));
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void A(ImageReceiver imageReceiver) {
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void V(ImageReceiver imageReceiver) {
     }
 
-    @Override // org.telegram.ui.Components.mm0
+    @Override // org.telegram.ui.Components.um0
     public /* synthetic */ void g(float f10) {
     }
 
-    @Override // org.telegram.messenger.kc
-    public /* synthetic */ void O(int i7, Drawable drawable) {
+    @Override // org.telegram.messenger.jc
+    public /* synthetic */ void G0(int i7, Drawable drawable) {
     }
 }

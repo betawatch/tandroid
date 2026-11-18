@@ -1,328 +1,1462 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-import android.util.SparseIntArray;
+import android.content.SharedPreferences;
+import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayList;
+import java.util.Set;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mj implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ c1 c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ mp b;
 
-    public /* synthetic */ mj(c1 c1Var, long j3, Object obj, int i7) {
+    public /* synthetic */ mj(mp mpVar, int i7) {
         this.a = i7;
-        this.c = c1Var;
-        this.b = j3;
-        this.d = obj;
+        this.b = mpVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        Integer num;
-        Integer num2;
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                np npVar = (np) this.c;
-                long j3 = this.b;
-                jp jpVar = (jp) this.d;
-                npVar.getClass();
-                Integer num3 = null;
-                if (tLObject instanceof TLRPC.messages_SponsoredMessages) {
-                    TLRPC.messages_SponsoredMessages messages_sponsoredmessages = (TLRPC.messages_SponsoredMessages) tLObject;
-                    if (messages_sponsoredmessages.messages.isEmpty()) {
-                        num2 = null;
-                    } else {
-                        if ((messages_sponsoredmessages instanceof TLRPC.TL_messages_sponsoredMessages) && (messages_sponsoredmessages.flags & 1) > 0) {
-                            num3 = Integer.valueOf(messages_sponsoredmessages.posts_between);
-                        }
-                        ArrayList arrayList = new ArrayList();
-                        g0.h3(new fi(11, npVar, messages_sponsoredmessages));
-                        a0.h hVar = new a0.h();
-                        a0.h hVar2 = new a0.h();
-                        int i7 = 0;
-                        for (int i10 = 0; i10 < messages_sponsoredmessages.users.size(); i10++) {
-                            TLRPC.User user = messages_sponsoredmessages.users.get(i10);
-                            hVar.k(user, user.id);
-                        }
-                        for (int i11 = 0; i11 < messages_sponsoredmessages.chats.size(); i11++) {
-                            TLRPC.Chat chat = messages_sponsoredmessages.chats.get(i11);
-                            hVar2.k(chat, chat.id);
-                        }
-                        int size = messages_sponsoredmessages.messages.size();
-                        int i12 = -10000000;
-                        while (i7 < size) {
-                            TLRPC.TL_sponsoredMessage tL_sponsoredMessage = messages_sponsoredmessages.messages.get(i7);
-                            TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                            if (!tL_sponsoredMessage.entities.isEmpty()) {
-                                tL_message.entities = tL_sponsoredMessage.entities;
-                                tL_message.flags |= 128;
-                            }
-                            tL_message.peer_id = npVar.z1(j3);
-                            tL_message.flags |= 256;
-                            tL_message.date = npVar.getConnectionsManager().getCurrentTime();
-                            int i13 = i12 - 1;
-                            tL_message.id = i12;
-                            tL_message.message = tL_sponsoredMessage.message;
-                            TLRPC.MessageMedia messageMedia = tL_sponsoredMessage.media;
-                            if (messageMedia != null) {
-                                tL_message.flags |= 512;
-                            }
-                            tL_message.media = messageMedia;
-                            gj gjVar = new gj(npVar.currentAccount, (TLRPC.Message) tL_message, hVar, hVar2, true, true);
-                            gjVar.R0 = tL_sponsoredMessage.random_id;
-                            gjVar.S0 = tL_sponsoredMessage.title;
-                            gjVar.T0 = tL_sponsoredMessage.url;
-                            gjVar.U0 = tL_sponsoredMessage.recommended;
-                            gjVar.V0 = tL_sponsoredMessage.photo;
-                            gjVar.W0 = tL_sponsoredMessage.sponsor_info;
-                            gjVar.X0 = tL_sponsoredMessage.additional_info;
-                            gjVar.Y0 = tL_sponsoredMessage.button_text;
-                            gjVar.b1 = tL_sponsoredMessage.can_report;
-                            gjVar.Z0 = tL_sponsoredMessage.color;
-                            gjVar.a1 = tL_sponsoredMessage.media;
-                            gjVar.L5();
-                            gjVar.B2 = new ArrayList();
-                            gjVar.r0(true);
-                            arrayList.add(gjVar);
-                            i7++;
-                            i12 = i13;
-                        }
-                        num2 = num3;
-                        num3 = arrayList;
-                    }
-                    num = num2;
-                } else {
-                    num = null;
-                }
-                g0.h3(new im(npVar, num3, j3, jpVar, num, 1));
-                break;
-            case 1:
-                si siVar = (si) this.c;
-                long j10 = this.b;
-                TLRPC.TL_messages_getMessages tL_messages_getMessages = (TLRPC.TL_messages_getMessages) this.d;
-                if (tL_error == null) {
-                    TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                    si.K1(messages_messages.messages);
-                    if (!messages_messages.messages.isEmpty()) {
-                        fc.X(messages_messages.messages);
-                        siVar.k(messages_messages.messages, messages_messages.users, messages_messages.chats, false, false);
-                        siVar.getMessagesStorage().m1(messages_messages.users, messages_messages.chats, true, true);
-                        ArrayList<TLRPC.Message> arrayList2 = messages_messages.messages;
-                        if (!arrayList2.isEmpty()) {
-                            siVar.getMessagesStorage().a.c(new a4(siVar, arrayList2, j10, 14));
-                            break;
-                        }
-                    }
-                }
-                siVar.getMessagesStorage().c2(j10, tL_messages_getMessages.id, false, -1, 0, false, null);
-                break;
-            case 2:
-                np npVar2 = (np) this.c;
-                long j11 = this.b;
-                TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
+                mp mpVar = this.b;
+                ConcurrentHashMap concurrentHashMap = mpVar.Q;
+                ConcurrentHashMap concurrentHashMap2 = mpVar.P;
                 if (tLObject != null) {
                     TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs = (TLRPC.TL_messages_peerDialogs) tLObject;
-                    if (!tL_messages_peerDialogs.dialogs.isEmpty() && !tL_messages_peerDialogs.chats.isEmpty()) {
-                        TLRPC.TL_dialog tL_dialog = (TLRPC.TL_dialog) tL_messages_peerDialogs.dialogs.get(0);
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs = new TLRPC.TL_messages_dialogs();
-                        tL_messages_dialogs.dialogs.addAll(tL_messages_peerDialogs.dialogs);
-                        tL_messages_dialogs.messages.addAll(tL_messages_peerDialogs.messages);
-                        tL_messages_dialogs.users.addAll(tL_messages_peerDialogs.users);
-                        tL_messages_dialogs.chats.addAll(tL_messages_peerDialogs.chats);
-                        npVar2.J3(tL_messages_dialogs, null, null, tL_dialog.folder_id, 0, 1, npVar2.P7, false, false, false);
+                    ArrayList arrayList = new ArrayList();
+                    for (int i7 = 0; i7 < tL_messages_peerDialogs.dialogs.size(); i7++) {
+                        TLRPC.Dialog dialog = tL_messages_peerDialogs.dialogs.get(i7);
+                        n5.x(dialog);
+                        Integer num = (Integer) concurrentHashMap2.get(Long.valueOf(dialog.id));
+                        if (num == null) {
+                            num = 0;
+                        }
+                        concurrentHashMap2.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(dialog.read_inbox_max_id, num.intValue())));
+                        if (num.intValue() == 0) {
+                            if (dialog.peer.channel_id != 0) {
+                                TL_update.TL_updateReadChannelInbox tL_updateReadChannelInbox = new TL_update.TL_updateReadChannelInbox();
+                                tL_updateReadChannelInbox.channel_id = dialog.peer.channel_id;
+                                tL_updateReadChannelInbox.max_id = dialog.read_inbox_max_id;
+                                tL_updateReadChannelInbox.still_unread_count = dialog.unread_count;
+                                arrayList.add(tL_updateReadChannelInbox);
+                            } else {
+                                TL_update.TL_updateReadHistoryInbox tL_updateReadHistoryInbox = new TL_update.TL_updateReadHistoryInbox();
+                                tL_updateReadHistoryInbox.peer = dialog.peer;
+                                tL_updateReadHistoryInbox.max_id = dialog.read_inbox_max_id;
+                                arrayList.add(tL_updateReadHistoryInbox);
+                            }
+                        }
+                        Integer num2 = (Integer) concurrentHashMap.get(Long.valueOf(dialog.id));
+                        if (num2 == null) {
+                            num2 = 0;
+                        }
+                        concurrentHashMap.put(Long.valueOf(dialog.id), Integer.valueOf(Math.max(dialog.read_outbox_max_id, num2.intValue())));
+                        if (dialog.read_outbox_max_id > num2.intValue()) {
+                            if (dialog.peer.channel_id != 0) {
+                                TL_update.TL_updateReadChannelOutbox tL_updateReadChannelOutbox = new TL_update.TL_updateReadChannelOutbox();
+                                tL_updateReadChannelOutbox.channel_id = dialog.peer.channel_id;
+                                tL_updateReadChannelOutbox.max_id = dialog.read_outbox_max_id;
+                                arrayList.add(tL_updateReadChannelOutbox);
+                            } else {
+                                TL_update.TL_updateReadHistoryOutbox tL_updateReadHistoryOutbox = new TL_update.TL_updateReadHistoryOutbox();
+                                tL_updateReadHistoryOutbox.peer = dialog.peer;
+                                tL_updateReadHistoryOutbox.max_id = dialog.read_outbox_max_id;
+                                arrayList.add(tL_updateReadHistoryOutbox);
+                            }
+                        }
+                    }
+                    if (!arrayList.isEmpty()) {
+                        mpVar.U3(arrayList, null, null, false, 0);
+                        break;
                     }
                 }
-                if (j11 != 0) {
-                    npVar2.getMessagesStorage().q1(j11);
-                }
-                npVar2.c1.e(chat2.id);
                 break;
-            case 3:
-                np npVar3 = (np) this.c;
-                long j12 = this.b;
-                TLRPC.TL_messages_getMessagesViews tL_messages_getMessagesViews = (TLRPC.TL_messages_getMessagesViews) this.d;
-                if (tLObject != null) {
-                    TLRPC.TL_messages_messageViews tL_messages_messageViews = (TLRPC.TL_messages_messageViews) tLObject;
-                    a0.h hVar3 = new a0.h();
-                    a0.h hVar4 = new a0.h();
-                    a0.h hVar5 = new a0.h();
-                    SparseIntArray sparseIntArray = (SparseIntArray) hVar3.f(j12);
-                    SparseIntArray sparseIntArray2 = (SparseIntArray) hVar4.f(j12);
-                    SparseArray sparseArray = (SparseArray) hVar5.f(j12);
-                    for (int i14 = 0; i14 < tL_messages_getMessagesViews.id.size() && i14 < tL_messages_messageViews.views.size(); i14++) {
-                        TLRPC.TL_messageViews tL_messageViews = tL_messages_messageViews.views.get(i14);
-                        if ((tL_messageViews.flags & 1) != 0) {
-                            if (sparseIntArray == null) {
-                                sparseIntArray = new SparseIntArray();
-                                hVar3.k(sparseIntArray, j12);
-                            }
-                            sparseIntArray.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.views);
-                        }
-                        if ((tL_messageViews.flags & 2) != 0) {
-                            if (sparseIntArray2 == null) {
-                                sparseIntArray2 = new SparseIntArray();
-                                hVar4.k(sparseIntArray2, j12);
-                            }
-                            sparseIntArray2.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.forwards);
-                        }
-                        if ((tL_messageViews.flags & 4) != 0) {
-                            if (sparseArray == null) {
-                                sparseArray = new SparseArray();
-                                hVar5.k(sparseArray, j12);
-                            }
-                            sparseArray.put(tL_messages_getMessagesViews.id.get(i14).intValue(), tL_messageViews.replies);
-                        }
-                    }
-                    npVar3.getMessagesStorage().m1(tL_messages_messageViews.users, tL_messages_messageViews.chats, true, true);
-                    npVar3.getMessagesStorage().a1(hVar3, hVar4, hVar5, false);
-                    g0.h3(new jn(npVar3, tL_messages_messageViews, hVar3, hVar4, hVar5, 8));
+            case 1:
+                if (tL_error == null && (tLObject instanceof TLRPC.TL_messages_affectedMessages)) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    this.b.T3(tL_messages_affectedMessages.pts, -1, tL_messages_affectedMessages.pts_count);
                     break;
                 }
                 break;
-            case 4:
-                np npVar4 = (np) this.c;
-                long j13 = this.b;
-                TLRPC.TL_messages_setChatAvailableReactions tL_messages_setChatAvailableReactions = (TLRPC.TL_messages_setChatAvailableReactions) this.d;
+            case 2:
+                mp mpVar2 = this.b;
+                mpVar2.getClass();
                 if (tLObject != null) {
-                    npVar4.O3((TLRPC.Updates) tLObject, false);
-                    TLRPC.ChatFull N0 = npVar4.N0(j13);
-                    if (N0 != null) {
-                        if (N0 instanceof TLRPC.TL_chatFull) {
-                            N0.flags |= 262144;
+                    mpVar2.V3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
+            case 3:
+                mp mpVar3 = this.b;
+                mpVar3.H2 = false;
+                if (tLObject instanceof TLRPC.TL_help_termsOfServiceUpdateEmpty) {
+                    mpVar3.I2 = ((TLRPC.TL_help_termsOfServiceUpdateEmpty) tLObject).expires;
+                } else if (tLObject instanceof TLRPC.TL_help_termsOfServiceUpdate) {
+                    TLRPC.TL_help_termsOfServiceUpdate tL_help_termsOfServiceUpdate = (TLRPC.TL_help_termsOfServiceUpdate) tLObject;
+                    mpVar3.I2 = tL_help_termsOfServiceUpdate.expires;
+                    g0.g3(new fi(19, mpVar3, tL_help_termsOfServiceUpdate));
+                } else {
+                    mpVar3.I2 = mpVar3.getConnectionsManager().getCurrentTime() + 3600;
+                }
+                mpVar3.g7.edit().putInt("nextTosCheckTime", mpVar3.I2).commit();
+                break;
+            case 4:
+                if (tL_error == null) {
+                    final int i10 = 5;
+                    final mp mpVar4 = this.b;
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            Set set;
+                            int i11 = i10;
+                            mp mpVar5 = mpVar4;
+                            TLObject tLObject2 = tLObject;
+                            switch (i11) {
+                                case 0:
+                                    mpVar5.U0 = false;
+                                    ArrayList arrayList2 = mpVar5.W0;
+                                    arrayList2.clear();
+                                    if (tLObject2 instanceof Vector) {
+                                        arrayList2.addAll(((Vector) tLObject2).objects);
+                                    }
+                                    mpVar5.getNotificationCenter().k(ks.S2, new Object[0]);
+                                    break;
+                                case 1:
+                                    mpVar5.v2 = false;
+                                    SharedPreferences.Editor edit = mpVar5.g7.edit();
+                                    edit.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                    edit.commit();
+                                    mpVar5.getUserConfig().U = true;
+                                    mpVar5.getUserConfig().v(false);
+                                    break;
+                                case 2:
+                                    if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                        TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                        SharedPreferences.Editor edit2 = mpVar5.g7.edit();
+                                        edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                        TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                        if (reactionNotificationsFrom != null) {
+                                            edit2.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                        }
+                                        edit2.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                        TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                        if (reactionNotificationsFrom2 != null) {
+                                            edit2.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                        }
+                                        edit2.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                        mpVar5.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit2, 0L, 0L, 4);
+                                        edit2.apply();
+                                        mpVar5.getNotificationCenter().k(42, new Object[0]);
+                                        break;
+                                    }
+                                    break;
+                                case 3:
+                                    mpVar5.u2--;
+                                    if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                        TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                        SharedPreferences.Editor edit3 = mpVar5.g7.edit();
+                                        edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                        TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                        if (reactionNotificationsFrom3 != null) {
+                                            edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                        }
+                                        edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                        TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                        if (reactionNotificationsFrom4 != null) {
+                                            edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                        }
+                                        edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                        mpVar5.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                        edit3.apply();
+                                    }
+                                    if (mpVar5.u2 == 0) {
+                                        mpVar5.getUserConfig().T = true;
+                                        mpVar5.getUserConfig().v(false);
+                                        break;
+                                    }
+                                    break;
+                                case 4:
+                                    if (tLObject2 instanceof TL_account.contentSettings) {
+                                        mpVar5.s8 = (TL_account.contentSettings) tLObject2;
+                                        mpVar5.r8 = System.currentTimeMillis();
+                                    }
+                                    mpVar5.p8 = false;
+                                    TL_account.contentSettings contentsettings = mpVar5.s8;
+                                    if (contentsettings != null && (set = mpVar5.F4) != null) {
+                                        if (contentsettings.sensitive_enabled) {
+                                            set.add("sensitive");
+                                        } else {
+                                            set.remove("sensitive");
+                                        }
+                                        SharedPreferences sharedPreferences = mpVar5.h7;
+                                        if (sharedPreferences != null) {
+                                            sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar5.F4).apply();
+                                        }
+                                    }
+                                    ArrayList arrayList3 = mpVar5.q8;
+                                    if (arrayList3 != null) {
+                                        int size = arrayList3.size();
+                                        int i12 = 0;
+                                        while (i12 < size) {
+                                            Object obj = arrayList3.get(i12);
+                                            i12++;
+                                            ((x10) obj).a(mpVar5.s8);
+                                        }
+                                        mpVar5.q8.clear();
+                                        mpVar5.q8 = null;
+                                    }
+                                    mpVar5.getNotificationCenter().k(ks.U3, new Object[0]);
+                                    break;
+                                case 5:
+                                    TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                    mpVar5.f4(tL_help_recentMeUrls.users, false);
+                                    mpVar5.Z3(tL_help_recentMeUrls.chats, false);
+                                    ArrayList arrayList4 = mpVar5.s;
+                                    arrayList4.clear();
+                                    arrayList4.addAll(tL_help_recentMeUrls.urls);
+                                    mpVar5.getNotificationCenter().k(3, new Object[0]);
+                                    break;
+                                default:
+                                    if (tLObject2 instanceof Vector) {
+                                        Vector vector = (Vector) tLObject2;
+                                        int size2 = vector.objects.size();
+                                        int i13 = 0;
+                                        while (true) {
+                                            mp mpVar6 = mpVar4;
+                                            if (i13 >= size2) {
+                                                mpVar6.getUserConfig().x = true;
+                                                mpVar6.getUserConfig().v(false);
+                                                mpVar6.getNotificationCenter().k(2, 256);
+                                                mpVar6.g2 = false;
+                                                break;
+                                            } else {
+                                                TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector.objects.get(i13);
+                                                if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                    TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                    long j3 = peer.user_id;
+                                                    if (j3 == 0) {
+                                                        long j10 = peer.chat_id;
+                                                        j3 = j10 != 0 ? -j10 : -peer.channel_id;
+                                                    }
+                                                    long j11 = j3;
+                                                    mpVar6.getMessagesStorage().F1(j11, true);
+                                                    TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar6.R.f(j11);
+                                                    if (dialog2 != null && !dialog2.unread_mark) {
+                                                        dialog2.unread_mark = true;
+                                                        if (dialog2.unread_count == 0) {
+                                                            mpVar6.u2(j11, 0L, null);
+                                                        }
+                                                    }
+                                                }
+                                                i13++;
+                                            }
+                                        }
+                                    }
+                                    break;
+                            }
                         }
-                        if (N0 instanceof TLRPC.TL_channelFull) {
-                            N0.flags |= TLObject.FLAG_30;
-                        }
-                        N0.available_reactions = tL_messages_setChatAvailableReactions.available_reactions;
-                        npVar4.getMessagesStorage().N1(N0, false);
-                    }
-                    g0.h3(new kk(npVar4, j13, 16));
+                    });
                     break;
                 }
                 break;
             case 5:
-                g0.h3(new gm((np) this.c, tLObject, this.b, (Runnable) this.d, 4));
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages2 = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    this.b.T3(tL_messages_affectedMessages2.pts, -1, tL_messages_affectedMessages2.pts_count);
+                    break;
+                }
                 break;
             case 6:
-                np npVar5 = (np) this.c;
-                TLRPC.TL_channels_inviteToChannel tL_channels_inviteToChannel = (TLRPC.TL_channels_inviteToChannel) this.d;
-                long j14 = this.b;
-                if (tL_error != null) {
-                    g0.h3(new mg(npVar5, tL_error, tL_channels_inviteToChannel, 1));
-                    break;
-                } else if (tLObject instanceof TLRPC.TL_messages_invitedUsers) {
-                    TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) tLObject;
-                    npVar5.O3(tL_messages_invitedUsers.updates, false);
-                    g0.h3(new a4(npVar5, tL_messages_invitedUsers, j14, 4));
+                final int i11 = 3;
+                final mp mpVar5 = this.b;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i11;
+                        mp mpVar52 = mpVar5;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList2 = mpVar52.W0;
+                                arrayList2.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList2.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit = mpVar52.g7.edit();
+                                edit.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                    edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit2.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit2.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit2, 0L, 0L, 4);
+                                    edit2.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList3 = mpVar52.q8;
+                                if (arrayList3 != null) {
+                                    int size = arrayList3.size();
+                                    int i12 = 0;
+                                    while (i12 < size) {
+                                        Object obj = arrayList3.get(i12);
+                                        i12++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList4 = mpVar52.s;
+                                arrayList4.clear();
+                                arrayList4.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    int size2 = vector.objects.size();
+                                    int i13 = 0;
+                                    while (true) {
+                                        mp mpVar6 = mpVar5;
+                                        if (i13 >= size2) {
+                                            mpVar6.getUserConfig().x = true;
+                                            mpVar6.getUserConfig().v(false);
+                                            mpVar6.getNotificationCenter().k(2, 256);
+                                            mpVar6.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector.objects.get(i13);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j3 = peer.user_id;
+                                                if (j3 == 0) {
+                                                    long j10 = peer.chat_id;
+                                                    j3 = j10 != 0 ? -j10 : -peer.channel_id;
+                                                }
+                                                long j11 = j3;
+                                                mpVar6.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar6.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar6.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i13++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 7:
+                mp mpVar6 = this.b;
+                mpVar6.getClass();
+                if (tLObject instanceof Vector) {
+                    ArrayList<T> arrayList2 = ((Vector) tLObject).objects;
+                    ArrayList arrayList3 = new ArrayList();
+                    for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                        if (arrayList2.get(i12) instanceof TLRPC.User) {
+                            arrayList3.add((TLRPC.User) arrayList2.get(i12));
+                        }
+                    }
+                    mpVar6.getMessagesController().f4(arrayList3, false);
                     break;
                 }
                 break;
-            case 7:
-                np npVar6 = (np) this.c;
-                ai.g0 g0Var = (ai.g0) this.d;
-                long j15 = this.b;
-                if (tLObject instanceof TLRPC.TL_exportedContactToken) {
-                    npVar6.Y7 = (TLRPC.TL_exportedContactToken) tLObject;
-                    g0.i3(new fi(22, npVar6, g0Var), Math.max(0L, 0 - (System.currentTimeMillis() - j15)));
-                    break;
-                } else {
-                    npVar6.X7 = false;
-                    break;
-                }
             case 8:
-                np npVar7 = (np) this.c;
-                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) this.d;
-                long j16 = this.b;
-                TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                if (messages_messages2 != null) {
-                    int i15 = messages_messages2.count;
-                    if (i15 == 0) {
-                        i15 = messages_messages2.messages.size();
-                    }
-                    int i16 = i15;
-                    vr messagesStorage = npVar7.getMessagesStorage();
-                    messagesStorage.a.c(new uq(messagesStorage, 0L, -inputPeer.channel_id, i16, 7));
-                }
-                if (j16 != 0) {
-                    npVar7.getMessagesStorage().q1(j16);
+                mp mpVar7 = this.b;
+                mpVar7.getClass();
+                if (tLObject != null) {
+                    mpVar7.V3((TLRPC.Updates) tLObject, false);
                     break;
                 }
                 break;
             case 9:
-                np npVar8 = (np) this.c;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.d;
-                long j17 = this.b;
-                if (tLObject != null) {
-                    TLRPC.messages_Messages messages_messages3 = (TLRPC.messages_Messages) tLObject;
-                    npVar8.e4(messages_messages3.messages, dialog.id);
-                    if (messages_messages3.messages.isEmpty()) {
-                        g0.h3(new qn(npVar8, dialog, 0));
-                    } else {
-                        if (r2.a) {
-                            a8.b("checkLastDialogMessage for " + dialog.id + " has message");
-                        }
-                        TLRPC.TL_messages_dialogs tL_messages_dialogs2 = new TLRPC.TL_messages_dialogs();
-                        TLRPC.Message message = messages_messages3.messages.get(0);
-                        TLRPC.TL_dialog tL_dialog2 = new TLRPC.TL_dialog();
-                        tL_dialog2.flags = dialog.flags;
-                        tL_dialog2.top_message = message.id;
-                        tL_dialog2.last_message_date = message.date;
-                        tL_dialog2.notify_settings = dialog.notify_settings;
-                        tL_dialog2.pts = dialog.pts;
-                        tL_dialog2.unread_count = dialog.unread_count;
-                        tL_dialog2.unread_mark = dialog.unread_mark;
-                        tL_dialog2.unread_mentions_count = dialog.unread_mentions_count;
-                        tL_dialog2.unread_reactions_count = dialog.unread_reactions_count;
-                        tL_dialog2.unread_poll_votes_count = dialog.unread_poll_votes_count;
-                        tL_dialog2.read_inbox_max_id = dialog.read_inbox_max_id;
-                        tL_dialog2.read_outbox_max_id = dialog.read_outbox_max_id;
-                        tL_dialog2.pinned = dialog.pinned;
-                        tL_dialog2.pinnedNum = dialog.pinnedNum;
-                        tL_dialog2.folder_id = dialog.folder_id;
-                        long j18 = dialog.id;
-                        tL_dialog2.id = j18;
-                        message.dialog_id = j18;
-                        tL_messages_dialogs2.users.addAll(messages_messages3.users);
-                        tL_messages_dialogs2.chats.addAll(messages_messages3.chats);
-                        tL_messages_dialogs2.dialogs.add(tL_dialog2);
-                        tL_messages_dialogs2.messages.addAll(messages_messages3.messages);
-                        tL_messages_dialogs2.count = 1;
-                        Utilities.d.c(new xf((Object) npVar8, (Object) tL_messages_dialogs2, false, 1));
-                        npVar8.getMessagesStorage().j1(messages_messages3.messages, true, true, false, npVar8.getDownloadController().l(), true, 0, 0L);
+                mp mpVar8 = this.b;
+                if (tL_error == null) {
+                    mpVar8.getClass();
+                    mpVar8.M2 = System.currentTimeMillis();
+                    mpVar8.P2 = false;
+                    mpVar8.O2 = 0;
+                } else {
+                    long j3 = mpVar8.M2;
+                    if (j3 != 0) {
+                        mpVar8.M2 = j3 + 5000;
                     }
                 }
-                if (j17 != 0) {
-                    npVar8.getMessagesStorage().q1(j17);
-                }
-                g0.h3(new qn(npVar8, dialog, 1));
+                mpVar8.N2 = 0;
                 break;
             case 10:
-                h00 h00Var = (h00) this.c;
-                long j19 = this.b;
-                org.telegram.ui.Components.gh ghVar = (org.telegram.ui.Components.gh) this.d;
-                h00Var.getClass();
-                g0.h3(new gm(h00Var, tLObject, j19, ghVar, 19));
+                mp mpVar9 = this.b;
+                if (tL_error == null) {
+                    mpVar9.P2 = true;
+                } else {
+                    long j10 = mpVar9.M2;
+                    if (j10 != 0) {
+                        mpVar9.M2 = j10 + 5000;
+                    }
+                }
+                mpVar9.N2 = 0;
                 break;
             case 11:
-                g0.h3(new im((c10) this.c, (w00) this.d, tLObject, tL_error, this.b, 6));
+                final int i13 = 1;
+                final mp mpVar10 = this.b;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i13;
+                        mp mpVar52 = mpVar10;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList22 = mpVar52.W0;
+                                arrayList22.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList22.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit = mpVar52.g7.edit();
+                                edit.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                    edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit2.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit2.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit2, 0L, 0L, 4);
+                                    edit2.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList32 = mpVar52.q8;
+                                if (arrayList32 != null) {
+                                    int size = arrayList32.size();
+                                    int i122 = 0;
+                                    while (i122 < size) {
+                                        Object obj = arrayList32.get(i122);
+                                        i122++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList4 = mpVar52.s;
+                                arrayList4.clear();
+                                arrayList4.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    int size2 = vector.objects.size();
+                                    int i132 = 0;
+                                    while (true) {
+                                        mp mpVar62 = mpVar10;
+                                        if (i132 >= size2) {
+                                            mpVar62.getUserConfig().x = true;
+                                            mpVar62.getUserConfig().v(false);
+                                            mpVar62.getNotificationCenter().k(2, 256);
+                                            mpVar62.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector.objects.get(i132);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j32 = peer.user_id;
+                                                if (j32 == 0) {
+                                                    long j102 = peer.chat_id;
+                                                    j32 = j102 != 0 ? -j102 : -peer.channel_id;
+                                                }
+                                                long j11 = j32;
+                                                mpVar62.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar62.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar62.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i132++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 12:
+                mp mpVar11 = this.b;
+                mpVar11.getClass();
+                if (tLObject != null) {
+                    mpVar11.V3((TLRPC.Updates) tLObject, false);
+                    g0.g3(new rj(mpVar11, 27));
+                    break;
+                }
+                break;
+            case 13:
+                if (tLObject != null) {
+                    mp mpVar12 = this.b;
+                    mpVar12.V3((TLRPC.Updates) tLObject, false);
+                    g0.g3(new rj(mpVar12, 24));
+                    break;
+                }
+                break;
+            case 14:
+                mp mpVar13 = this.b;
+                mpVar13.getClass();
+                if (tL_error == null) {
+                    TLRPC.TL_messages_affectedMessages tL_messages_affectedMessages3 = (TLRPC.TL_messages_affectedMessages) tLObject;
+                    mpVar13.T3(tL_messages_affectedMessages3.pts, -1, tL_messages_affectedMessages3.pts_count);
+                    break;
+                }
+                break;
+            case 15:
+                final int i14 = 6;
+                final mp mpVar14 = this.b;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i14;
+                        mp mpVar52 = mpVar14;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList22 = mpVar52.W0;
+                                arrayList22.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList22.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit = mpVar52.g7.edit();
+                                edit.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                    edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit2.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit2.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit2, 0L, 0L, 4);
+                                    edit2.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList32 = mpVar52.q8;
+                                if (arrayList32 != null) {
+                                    int size = arrayList32.size();
+                                    int i122 = 0;
+                                    while (i122 < size) {
+                                        Object obj = arrayList32.get(i122);
+                                        i122++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList4 = mpVar52.s;
+                                arrayList4.clear();
+                                arrayList4.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    int size2 = vector.objects.size();
+                                    int i132 = 0;
+                                    while (true) {
+                                        mp mpVar62 = mpVar14;
+                                        if (i132 >= size2) {
+                                            mpVar62.getUserConfig().x = true;
+                                            mpVar62.getUserConfig().v(false);
+                                            mpVar62.getNotificationCenter().k(2, 256);
+                                            mpVar62.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector.objects.get(i132);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j32 = peer.user_id;
+                                                if (j32 == 0) {
+                                                    long j102 = peer.chat_id;
+                                                    j32 = j102 != 0 ? -j102 : -peer.channel_id;
+                                                }
+                                                long j11 = j32;
+                                                mpVar62.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar62.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar62.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i132++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 16:
+                mp mpVar15 = this.b;
+                mpVar15.getClass();
+                if (tLObject != null) {
+                    mpVar15.V3((TLRPC.Updates) tLObject, false);
+                    g0.g3(new qn(mpVar15, 0));
+                    break;
+                }
+                break;
+            case 17:
+                final int i15 = 2;
+                final mp mpVar16 = this.b;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i15;
+                        mp mpVar52 = mpVar16;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList22 = mpVar52.W0;
+                                arrayList22.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList22.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit = mpVar52.g7.edit();
+                                edit.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                    edit2.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit2.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit2.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit2.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit2, 0L, 0L, 4);
+                                    edit2.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList32 = mpVar52.q8;
+                                if (arrayList32 != null) {
+                                    int size = arrayList32.size();
+                                    int i122 = 0;
+                                    while (i122 < size) {
+                                        Object obj = arrayList32.get(i122);
+                                        i122++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList4 = mpVar52.s;
+                                arrayList4.clear();
+                                arrayList4.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    int size2 = vector.objects.size();
+                                    int i132 = 0;
+                                    while (true) {
+                                        mp mpVar62 = mpVar16;
+                                        if (i132 >= size2) {
+                                            mpVar62.getUserConfig().x = true;
+                                            mpVar62.getUserConfig().v(false);
+                                            mpVar62.getNotificationCenter().k(2, 256);
+                                            mpVar62.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector.objects.get(i132);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j32 = peer.user_id;
+                                                if (j32 == 0) {
+                                                    long j102 = peer.chat_id;
+                                                    j32 = j102 != 0 ? -j102 : -peer.channel_id;
+                                                }
+                                                long j11 = j32;
+                                                mpVar62.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar62.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar62.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i132++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 18:
+                boolean z10 = tLObject instanceof Vector;
+                mp mpVar17 = this.b;
+                if (z10) {
+                    ArrayList arrayList4 = new ArrayList();
+                    Vector vector = (Vector) tLObject;
+                    for (int i16 = 0; i16 < vector.objects.size(); i16++) {
+                        arrayList4.add((TLRPC.DialogFilter) vector.objects.get(i16));
+                    }
+                    tr messagesStorage = mpVar17.getMessagesStorage();
+                    messagesStorage.a.c(new kg(messagesStorage, arrayList4, new qn(mpVar17, 10), 22));
+                    break;
+                } else if (tLObject instanceof TLRPC.TL_messages_dialogFilters) {
+                    TLRPC.TL_messages_dialogFilters tL_messages_dialogFilters = (TLRPC.TL_messages_dialogFilters) tLObject;
+                    boolean z11 = mpVar17.D7;
+                    boolean z12 = tL_messages_dialogFilters.tags_enabled;
+                    if (z11 != z12) {
+                        SharedPreferences.Editor edit = mpVar17.h7.edit();
+                        mpVar17.D7 = z12;
+                        edit.putBoolean("folderTags", z12).apply();
+                        g0.g3(new qn(mpVar17, 11));
+                    }
+                    tr messagesStorage2 = mpVar17.getMessagesStorage();
+                    messagesStorage2.a.c(new kg(messagesStorage2, tL_messages_dialogFilters.filters, new qn(mpVar17, 12), 22));
+                    break;
+                } else {
+                    g0.g3(new qn(mpVar17, 13));
+                    break;
+                }
+            case 19:
+                if (tL_error == null) {
+                    mp mpVar18 = this.b;
+                    TLRPC.User c22 = mpVar18.c2(Long.valueOf(mpVar18.getUserConfig().e()));
+                    if (c22 == null) {
+                        c22 = mpVar18.getUserConfig().f();
+                        mpVar18.e4(c22, true, false);
+                    } else {
+                        mpVar18.getUserConfig().w(c22);
+                    }
+                    if (c22 != null) {
+                        TLRPC.TL_photos_photo tL_photos_photo = (TLRPC.TL_photos_photo) tLObject;
+                        ArrayList<TLRPC.PhotoSize> arrayList5 = tL_photos_photo.photo.sizes;
+                        TLRPC.PhotoSize w10 = w7.w(arrayList5, 100, false, null, false);
+                        TLRPC.PhotoSize w11 = w7.w(arrayList5, 1000, false, null, false);
+                        TLRPC.TL_userProfilePhoto tL_userProfilePhoto = new TLRPC.TL_userProfilePhoto();
+                        c22.photo = tL_userProfilePhoto;
+                        tL_userProfilePhoto.photo_id = tL_photos_photo.photo.id;
+                        if (w10 != null) {
+                            tL_userProfilePhoto.photo_small = w10.location;
+                        }
+                        if (w11 != null) {
+                            tL_userProfilePhoto.photo_big = w11.location;
+                        }
+                        mpVar18.W0(c22.id).f();
+                        mpVar18.W0(c22.id).a(0, 80);
+                        ArrayList arrayList6 = new ArrayList();
+                        arrayList6.add(c22);
+                        mpVar18.getMessagesStorage().m1(arrayList6, null, false, true);
+                        g0.g3(new rj(mpVar18, 0));
+                        break;
+                    }
+                }
+                break;
+            case 20:
+                this.b.getConnectionsManager().cleanup(false);
+                g0.g3(new a(tLObject, 23));
+                break;
+            case 21:
+                mp mpVar19 = this.b;
+                mpVar19.getClass();
+                if (tL_error == null) {
+                    mpVar19.V3((TLRPC.Updates) tLObject, false);
+                    break;
+                }
+                break;
+            case 22:
+                if (tLObject instanceof TLRPC.TL_help_peerColors) {
+                    final TLRPC.TL_help_peerColors tL_help_peerColors = (TLRPC.TL_help_peerColors) tLObject;
+                    final int i17 = 0;
+                    final mp mpVar20 = this.b;
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.ml
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i17) {
+                                case 0:
+                                    mp mpVar21 = mpVar20;
+                                    mpVar21.h8 = false;
+                                    mpVar21.t4 = cp.c(0, tL_help_peerColors);
+                                    mpVar21.h7.edit().putString("peerColors", mpVar21.t4.toString()).apply();
+                                    break;
+                                default:
+                                    mp mpVar22 = mpVar20;
+                                    mpVar22.i8 = false;
+                                    mpVar22.u4 = cp.c(1, tL_help_peerColors);
+                                    mpVar22.h7.edit().putString("profilePeerColors", mpVar22.u4.toString()).apply();
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
+            case 23:
+                if (tLObject instanceof TLRPC.TL_help_peerColors) {
+                    final TLRPC.TL_help_peerColors tL_help_peerColors2 = (TLRPC.TL_help_peerColors) tLObject;
+                    final int i18 = 1;
+                    final mp mpVar21 = this.b;
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.ml
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i18) {
+                                case 0:
+                                    mp mpVar212 = mpVar21;
+                                    mpVar212.h8 = false;
+                                    mpVar212.t4 = cp.c(0, tL_help_peerColors2);
+                                    mpVar212.h7.edit().putString("peerColors", mpVar212.t4.toString()).apply();
+                                    break;
+                                default:
+                                    mp mpVar22 = mpVar21;
+                                    mpVar22.i8 = false;
+                                    mpVar22.u4 = cp.c(1, tL_help_peerColors2);
+                                    mpVar22.h7.edit().putString("profilePeerColors", mpVar22.u4.toString()).apply();
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
+                break;
+            case 24:
+                mp mpVar22 = this.b;
+                mpVar22.k2 = false;
+                if (tL_error == null) {
+                    TLRPC.TL_updates_state tL_updates_state = (TLRPC.TL_updates_state) tLObject;
+                    mpVar22.getMessagesStorage().H1(tL_updates_state.date);
+                    mpVar22.getMessagesStorage().I1(tL_updates_state.pts);
+                    mpVar22.getMessagesStorage().K1(tL_updates_state.seq);
+                    mpVar22.getMessagesStorage().J1(tL_updates_state.qts);
+                    for (int i19 = 0; i19 < 3; i19++) {
+                        mpVar22.W3(i19, 2);
+                    }
+                    tr messagesStorage3 = mpVar22.getMessagesStorage();
+                    tr messagesStorage4 = mpVar22.getMessagesStorage();
+                    messagesStorage4.H();
+                    int i20 = messagesStorage4.w;
+                    tr messagesStorage5 = mpVar22.getMessagesStorage();
+                    messagesStorage5.H();
+                    int i21 = messagesStorage5.r;
+                    tr messagesStorage6 = mpVar22.getMessagesStorage();
+                    messagesStorage6.H();
+                    int i22 = messagesStorage6.n;
+                    tr messagesStorage7 = mpVar22.getMessagesStorage();
+                    messagesStorage7.H();
+                    messagesStorage3.A1(i20, i21, i22, messagesStorage7.s);
+                    break;
+                } else if (tL_error.code != 401) {
+                    mpVar22.k2 = true;
+                    mpVar22.getConnectionsManager().sendRequest(new TLRPC.TL_updates_getState(), new mj(mpVar22, 24));
+                    break;
+                }
+                break;
+            case 25:
+                final int i23 = 4;
+                final mp mpVar23 = this.b;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i23;
+                        mp mpVar52 = mpVar23;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList22 = mpVar52.W0;
+                                arrayList22.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList22.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                edit2.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit2.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit22 = mpVar52.g7.edit();
+                                    edit22.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit22.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit22.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit22.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit22.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit22, 0L, 0L, 4);
+                                    edit22.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList32 = mpVar52.q8;
+                                if (arrayList32 != null) {
+                                    int size = arrayList32.size();
+                                    int i122 = 0;
+                                    while (i122 < size) {
+                                        Object obj = arrayList32.get(i122);
+                                        i122++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList42 = mpVar52.s;
+                                arrayList42.clear();
+                                arrayList42.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector2 = (Vector) tLObject2;
+                                    int size2 = vector2.objects.size();
+                                    int i132 = 0;
+                                    while (true) {
+                                        mp mpVar62 = mpVar23;
+                                        if (i132 >= size2) {
+                                            mpVar62.getUserConfig().x = true;
+                                            mpVar62.getUserConfig().v(false);
+                                            mpVar62.getNotificationCenter().k(2, 256);
+                                            mpVar62.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector2.objects.get(i132);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j32 = peer.user_id;
+                                                if (j32 == 0) {
+                                                    long j102 = peer.chat_id;
+                                                    j32 = j102 != 0 ? -j102 : -peer.channel_id;
+                                                }
+                                                long j11 = j32;
+                                                mpVar62.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar62.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar62.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i132++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                g0.h3(new im((c10) this.c, (x00) this.d, tLObject, tL_error, this.b, 5));
+                final mp mpVar24 = this.b;
+                mpVar24.getClass();
+                final int i24 = 0;
+                g0.g3(new Runnable() { // from class: org.telegram.messenger.qk
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        Set set;
+                        int i112 = i24;
+                        mp mpVar52 = mpVar24;
+                        TLObject tLObject2 = tLObject;
+                        switch (i112) {
+                            case 0:
+                                mpVar52.U0 = false;
+                                ArrayList arrayList22 = mpVar52.W0;
+                                arrayList22.clear();
+                                if (tLObject2 instanceof Vector) {
+                                    arrayList22.addAll(((Vector) tLObject2).objects);
+                                }
+                                mpVar52.getNotificationCenter().k(ks.S2, new Object[0]);
+                                break;
+                            case 1:
+                                mpVar52.v2 = false;
+                                SharedPreferences.Editor edit2 = mpVar52.g7.edit();
+                                edit2.putBoolean("EnableContactJoined", tLObject2 instanceof TLRPC.TL_boolFalse);
+                                edit2.commit();
+                                mpVar52.getUserConfig().U = true;
+                                mpVar52.getUserConfig().v(false);
+                                break;
+                            case 2:
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit22 = mpVar52.g7.edit();
+                                    edit22.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom = tL_reactionsNotifySettings.messages_notify_from;
+                                    if (reactionNotificationsFrom != null) {
+                                        edit22.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit22.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom2 = tL_reactionsNotifySettings.stories_notify_from;
+                                    if (reactionNotificationsFrom2 != null) {
+                                        edit22.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom2 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit22.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings.sound, edit22, 0L, 0L, 4);
+                                    edit22.apply();
+                                    mpVar52.getNotificationCenter().k(42, new Object[0]);
+                                    break;
+                                }
+                                break;
+                            case 3:
+                                mpVar52.u2--;
+                                if (tLObject2 instanceof TL_account.TL_reactionsNotifySettings) {
+                                    TL_account.TL_reactionsNotifySettings tL_reactionsNotifySettings2 = (TL_account.TL_reactionsNotifySettings) tLObject2;
+                                    SharedPreferences.Editor edit3 = mpVar52.g7.edit();
+                                    edit3.putBoolean("EnableReactionsMessages", tL_reactionsNotifySettings2.messages_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom3 = tL_reactionsNotifySettings2.messages_notify_from;
+                                    if (reactionNotificationsFrom3 != null) {
+                                        edit3.putBoolean("EnableReactionsMessagesContacts", reactionNotificationsFrom3 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsStories", tL_reactionsNotifySettings2.stories_notify_from != null);
+                                    TL_account.ReactionNotificationsFrom reactionNotificationsFrom4 = tL_reactionsNotifySettings2.stories_notify_from;
+                                    if (reactionNotificationsFrom4 != null) {
+                                        edit3.putBoolean("EnableReactionsStoriesContacts", reactionNotificationsFrom4 instanceof TL_account.TL_reactionNotificationsFromContacts);
+                                    }
+                                    edit3.putBoolean("EnableReactionsPreview", tL_reactionsNotifySettings2.show_previews);
+                                    mpVar52.getNotificationsController().h0.a(tL_reactionsNotifySettings2.sound, edit3, 0L, 0L, 4);
+                                    edit3.apply();
+                                }
+                                if (mpVar52.u2 == 0) {
+                                    mpVar52.getUserConfig().T = true;
+                                    mpVar52.getUserConfig().v(false);
+                                    break;
+                                }
+                                break;
+                            case 4:
+                                if (tLObject2 instanceof TL_account.contentSettings) {
+                                    mpVar52.s8 = (TL_account.contentSettings) tLObject2;
+                                    mpVar52.r8 = System.currentTimeMillis();
+                                }
+                                mpVar52.p8 = false;
+                                TL_account.contentSettings contentsettings = mpVar52.s8;
+                                if (contentsettings != null && (set = mpVar52.F4) != null) {
+                                    if (contentsettings.sensitive_enabled) {
+                                        set.add("sensitive");
+                                    } else {
+                                        set.remove("sensitive");
+                                    }
+                                    SharedPreferences sharedPreferences = mpVar52.h7;
+                                    if (sharedPreferences != null) {
+                                        sharedPreferences.edit().putStringSet("ignoreRestrictionReasons", mpVar52.F4).apply();
+                                    }
+                                }
+                                ArrayList arrayList32 = mpVar52.q8;
+                                if (arrayList32 != null) {
+                                    int size = arrayList32.size();
+                                    int i122 = 0;
+                                    while (i122 < size) {
+                                        Object obj = arrayList32.get(i122);
+                                        i122++;
+                                        ((x10) obj).a(mpVar52.s8);
+                                    }
+                                    mpVar52.q8.clear();
+                                    mpVar52.q8 = null;
+                                }
+                                mpVar52.getNotificationCenter().k(ks.U3, new Object[0]);
+                                break;
+                            case 5:
+                                TLRPC.TL_help_recentMeUrls tL_help_recentMeUrls = (TLRPC.TL_help_recentMeUrls) tLObject2;
+                                mpVar52.f4(tL_help_recentMeUrls.users, false);
+                                mpVar52.Z3(tL_help_recentMeUrls.chats, false);
+                                ArrayList arrayList42 = mpVar52.s;
+                                arrayList42.clear();
+                                arrayList42.addAll(tL_help_recentMeUrls.urls);
+                                mpVar52.getNotificationCenter().k(3, new Object[0]);
+                                break;
+                            default:
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector2 = (Vector) tLObject2;
+                                    int size2 = vector2.objects.size();
+                                    int i132 = 0;
+                                    while (true) {
+                                        mp mpVar62 = mpVar24;
+                                        if (i132 >= size2) {
+                                            mpVar62.getUserConfig().x = true;
+                                            mpVar62.getUserConfig().v(false);
+                                            mpVar62.getNotificationCenter().k(2, 256);
+                                            mpVar62.g2 = false;
+                                            break;
+                                        } else {
+                                            TLRPC.DialogPeer dialogPeer = (TLRPC.DialogPeer) vector2.objects.get(i132);
+                                            if (dialogPeer instanceof TLRPC.TL_dialogPeer) {
+                                                TLRPC.Peer peer = ((TLRPC.TL_dialogPeer) dialogPeer).peer;
+                                                long j32 = peer.user_id;
+                                                if (j32 == 0) {
+                                                    long j102 = peer.chat_id;
+                                                    j32 = j102 != 0 ? -j102 : -peer.channel_id;
+                                                }
+                                                long j11 = j32;
+                                                mpVar62.getMessagesStorage().F1(j11, true);
+                                                TLRPC.Dialog dialog2 = (TLRPC.Dialog) mpVar62.R.f(j11);
+                                                if (dialog2 != null && !dialog2.unread_mark) {
+                                                    dialog2.unread_mark = true;
+                                                    if (dialog2.unread_count == 0) {
+                                                        mpVar62.u2(j11, 0L, null);
+                                                    }
+                                                }
+                                            }
+                                            i132++;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ mj(c1 c1Var, Object obj, long j3, int i7) {
-        this.a = i7;
-        this.c = c1Var;
-        this.d = obj;
-        this.b = j3;
     }
 }

@@ -1,20 +1,6 @@
 package o5;
 
-import java.io.Closeable;
-import org.telegram.ui.Components.ff;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class k implements Closeable {
-    public fd.a a;
-    public d9.o b;
-    public fd.a c;
-    public ff d;
-    public fd.a e;
-    public fd.a f;
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        ((v5.g) ((v5.d) this.e.get())).close();
-    }
+public interface k {
 }

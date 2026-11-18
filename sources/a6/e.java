@@ -2,11 +2,11 @@ package a6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends r6.a {
     public static final Parcelable.Creator<e> CREATOR = new w.a(1);
@@ -20,9 +20,9 @@ public final class e extends r6.a {
     public final boolean n;
 
     public e(d dVar, a aVar, String str, boolean z10, int i7, c cVar, b bVar, boolean z11) {
-        m.g(dVar);
+        m.h(dVar);
         this.a = dVar;
-        m.g(aVar);
+        m.h(aVar);
         this.b = aVar;
         this.c = str;
         this.d = z10;
@@ -37,7 +37,7 @@ public final class e extends r6.a {
             return false;
         }
         e eVar = (e) obj;
-        return m.k(this.a, eVar.a) && m.k(this.b, eVar.b) && m.k(this.f, eVar.f) && m.k(this.h, eVar.h) && m.k(this.c, eVar.c) && this.d == eVar.d && this.e == eVar.e && this.n == eVar.n;
+        return m.l(this.a, eVar.a) && m.l(this.b, eVar.b) && m.l(this.f, eVar.f) && m.l(this.h, eVar.h) && m.l(this.c, eVar.c) && this.d == eVar.d && this.e == eVar.e && this.n == eVar.n;
     }
 
     public final int hashCode() {
@@ -46,18 +46,18 @@ public final class e extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 1, this.a, i7);
-        yb.k(parcel, 2, this.b, i7);
-        yb.l(parcel, 3, this.c);
-        yb.q(parcel, 4, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 1, this.a, i7);
+        bc.k(parcel, 2, this.b, i7);
+        bc.l(parcel, 3, this.c);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        yb.q(parcel, 5, 4);
+        bc.q(parcel, 5, 4);
         parcel.writeInt(this.e);
-        yb.k(parcel, 6, this.f, i7);
-        yb.k(parcel, 7, this.h, i7);
-        yb.q(parcel, 8, 4);
+        bc.k(parcel, 6, this.f, i7);
+        bc.k(parcel, 7, this.h, i7);
+        bc.q(parcel, 8, 4);
         parcel.writeInt(this.n ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

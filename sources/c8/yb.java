@@ -1,206 +1,166 @@
 package c8;
 
-import android.os.Bundle;
-import android.os.IBinder;
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.List;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.os.Build;
+import android.util.SparseArray;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.Window;
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class yb {
-    public static void a(Parcel parcel, int i7, Boolean bool) {
-        if (bool == null) {
-            return;
+    public static boolean a = false;
+    public static Method b = null;
+    public static boolean c = false;
+    public static Field d;
+
+    public static boolean a(View view, KeyEvent keyEvent) {
+        ArrayList arrayList;
+        int size;
+        int indexOfKey;
+        WeakHashMap weakHashMap = r0.i0.a;
+        if (Build.VERSION.SDK_INT >= 28) {
+            return false;
         }
-        q(parcel, i7, 4);
-        parcel.writeInt(bool.booleanValue() ? 1 : 0);
+        ArrayList arrayList2 = r0.h0.d;
+        r0.h0 h0Var = (r0.h0) view.getTag(R.id.tag_unhandled_key_event_manager);
+        WeakReference weakReference = null;
+        if (h0Var == null) {
+            h0Var = new r0.h0();
+            h0Var.a = null;
+            h0Var.b = null;
+            h0Var.c = null;
+            view.setTag(R.id.tag_unhandled_key_event_manager, h0Var);
+        }
+        WeakReference weakReference2 = h0Var.c;
+        if (weakReference2 != null && weakReference2.get() == keyEvent) {
+            return false;
+        }
+        h0Var.c = new WeakReference(keyEvent);
+        if (h0Var.b == null) {
+            h0Var.b = new SparseArray();
+        }
+        SparseArray sparseArray = h0Var.b;
+        if (keyEvent.getAction() == 1 && (indexOfKey = sparseArray.indexOfKey(keyEvent.getKeyCode())) >= 0) {
+            weakReference = (WeakReference) sparseArray.valueAt(indexOfKey);
+            sparseArray.removeAt(indexOfKey);
+        }
+        if (weakReference == null) {
+            weakReference = (WeakReference) sparseArray.get(keyEvent.getKeyCode());
+        }
+        if (weakReference == null) {
+            return false;
+        }
+        View view2 = (View) weakReference.get();
+        if (view2 == null || !view2.isAttachedToWindow() || (arrayList = (ArrayList) view2.getTag(R.id.tag_unhandled_key_listeners)) == null || (size = arrayList.size() - 1) < 0) {
+            return true;
+        }
+        arrayList.get(size).getClass();
+        throw new ClassCastException();
     }
 
-    public static void b(Parcel parcel, int i7, Bundle bundle) {
-        if (bundle == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeBundle(bundle);
-        s(parcel, r10);
-    }
-
-    public static void c(Parcel parcel, int i7, byte[] bArr) {
-        if (bArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeByteArray(bArr);
-        s(parcel, r10);
-    }
-
-    public static void d(Parcel parcel, int i7, byte[][] bArr) {
-        if (bArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeInt(bArr.length);
-        for (byte[] bArr2 : bArr) {
-            parcel.writeByteArray(bArr2);
-        }
-        s(parcel, r10);
-    }
-
-    public static void e(Parcel parcel, int i7, Float f10) {
-        if (f10 == null) {
-            return;
-        }
-        q(parcel, i7, 4);
-        parcel.writeFloat(f10.floatValue());
-    }
-
-    public static void f(Parcel parcel, int i7, IBinder iBinder) {
-        if (iBinder == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeStrongBinder(iBinder);
-        s(parcel, r10);
-    }
-
-    public static void g(Parcel parcel, int i7, int[] iArr) {
-        if (iArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeIntArray(iArr);
-        s(parcel, r10);
-    }
-
-    public static void h(Parcel parcel, int i7, List list) {
-        if (list == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        int size = list.size();
-        parcel.writeInt(size);
-        for (int i10 = 0; i10 < size; i10++) {
-            parcel.writeInt(((Integer) list.get(i10)).intValue());
-        }
-        s(parcel, r10);
-    }
-
-    public static void i(Parcel parcel, int i7, Integer num) {
-        if (num == null) {
-            return;
-        }
-        q(parcel, i7, 4);
-        parcel.writeInt(num.intValue());
-    }
-
-    public static void j(Parcel parcel, int i7, long[] jArr) {
-        if (jArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeLongArray(jArr);
-        s(parcel, r10);
-    }
-
-    public static void k(Parcel parcel, int i7, Parcelable parcelable, int i10) {
-        if (parcelable == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcelable.writeToParcel(parcel, i10);
-        s(parcel, r10);
-    }
-
-    public static void l(Parcel parcel, int i7, String str) {
-        if (str == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeString(str);
-        s(parcel, r10);
-    }
-
-    public static void m(Parcel parcel, int i7, String[] strArr) {
-        if (strArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeStringArray(strArr);
-        s(parcel, r10);
-    }
-
-    public static void n(Parcel parcel, int i7, List list) {
-        if (list == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeStringList(list);
-        s(parcel, r10);
-    }
-
-    public static void o(Parcel parcel, int i7, Parcelable[] parcelableArr, int i10) {
-        if (parcelableArr == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        parcel.writeInt(parcelableArr.length);
-        for (Parcelable parcelable : parcelableArr) {
-            if (parcelable == null) {
-                parcel.writeInt(0);
-            } else {
-                int dataPosition = parcel.dataPosition();
-                parcel.writeInt(1);
-                int dataPosition2 = parcel.dataPosition();
-                parcelable.writeToParcel(parcel, i10);
-                int dataPosition3 = parcel.dataPosition();
-                parcel.setDataPosition(dataPosition);
-                parcel.writeInt(dataPosition3 - dataPosition2);
-                parcel.setDataPosition(dataPosition3);
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:63:? A[RETURN, SYNTHETIC] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static boolean b(r0.i iVar, View view, Window.Callback callback, KeyEvent keyEvent) {
+        DialogInterface.OnKeyListener onKeyListener;
+        Window window;
+        boolean z10 = false;
+        if (iVar != null) {
+            if (Build.VERSION.SDK_INT >= 28) {
+                return iVar.i(keyEvent);
+            }
+            if (callback instanceof Activity) {
+                Activity activity = (Activity) callback;
+                activity.onUserInteraction();
+                Window window2 = activity.getWindow();
+                if (window2.hasFeature(8)) {
+                    ActionBar actionBar = activity.getActionBar();
+                    if (keyEvent.getKeyCode() == 82 && actionBar != null) {
+                        if (!a) {
+                            try {
+                                b = actionBar.getClass().getMethod("onMenuKeyEvent", KeyEvent.class);
+                            } catch (NoSuchMethodException unused) {
+                            }
+                            a = true;
+                        }
+                        Method method = b;
+                        if (method != null) {
+                            try {
+                                Object invoke = method.invoke(actionBar, keyEvent);
+                                if (invoke != null) {
+                                    z10 = ((Boolean) invoke).booleanValue();
+                                }
+                            } catch (IllegalAccessException | InvocationTargetException unused2) {
+                            }
+                        }
+                        if (z10) {
+                            return true;
+                        }
+                    }
+                }
+                if (window2.superDispatchKeyEvent(keyEvent)) {
+                    return true;
+                }
+                View decorView = window2.getDecorView();
+                if (r0.i0.c(decorView, keyEvent)) {
+                    return true;
+                }
+                return keyEvent.dispatch(activity, decorView != null ? decorView.getKeyDispatcherState() : null, activity);
+            }
+            if (callback instanceof Dialog) {
+                Dialog dialog = (Dialog) callback;
+                if (!c) {
+                    try {
+                        Field declaredField = Dialog.class.getDeclaredField("mOnKeyListener");
+                        d = declaredField;
+                        declaredField.setAccessible(true);
+                    } catch (NoSuchFieldException unused3) {
+                    }
+                    c = true;
+                }
+                Field field = d;
+                if (field != null) {
+                    try {
+                        onKeyListener = (DialogInterface.OnKeyListener) field.get(dialog);
+                    } catch (IllegalAccessException unused4) {
+                    }
+                    if (onKeyListener == null && onKeyListener.onKey(dialog, keyEvent.getKeyCode(), keyEvent)) {
+                        return true;
+                    }
+                    window = dialog.getWindow();
+                    if (!window.superDispatchKeyEvent(keyEvent)) {
+                        return true;
+                    }
+                    View decorView2 = window.getDecorView();
+                    if (r0.i0.c(decorView2, keyEvent)) {
+                        return true;
+                    }
+                    return keyEvent.dispatch(dialog, decorView2 != null ? decorView2.getKeyDispatcherState() : null, dialog);
+                }
+                onKeyListener = null;
+                if (onKeyListener == null) {
+                }
+                window = dialog.getWindow();
+                if (!window.superDispatchKeyEvent(keyEvent)) {
+                }
+            } else if ((view != null && r0.i0.c(view, keyEvent)) || iVar.i(keyEvent)) {
+                return true;
             }
         }
-        s(parcel, r10);
-    }
-
-    public static void p(Parcel parcel, int i7, List list) {
-        if (list == null) {
-            return;
-        }
-        int r10 = r(parcel, i7);
-        int size = list.size();
-        parcel.writeInt(size);
-        for (int i10 = 0; i10 < size; i10++) {
-            Parcelable parcelable = (Parcelable) list.get(i10);
-            if (parcelable == null) {
-                parcel.writeInt(0);
-            } else {
-                int dataPosition = parcel.dataPosition();
-                parcel.writeInt(1);
-                int dataPosition2 = parcel.dataPosition();
-                parcelable.writeToParcel(parcel, 0);
-                int dataPosition3 = parcel.dataPosition();
-                parcel.setDataPosition(dataPosition);
-                parcel.writeInt(dataPosition3 - dataPosition2);
-                parcel.setDataPosition(dataPosition3);
-            }
-        }
-        s(parcel, r10);
-    }
-
-    public static void q(Parcel parcel, int i7, int i10) {
-        parcel.writeInt(i7 | (i10 << 16));
-    }
-
-    public static int r(Parcel parcel, int i7) {
-        parcel.writeInt(i7 | (-65536));
-        parcel.writeInt(0);
-        return parcel.dataPosition();
-    }
-
-    public static void s(Parcel parcel, int i7) {
-        int dataPosition = parcel.dataPosition();
-        parcel.setDataPosition(i7 - 4);
-        parcel.writeInt(dataPosition - i7);
-        parcel.setDataPosition(dataPosition);
+        return false;
     }
 }

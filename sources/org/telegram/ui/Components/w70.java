@@ -1,27 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class w70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n2.o0 b;
-    public final /* synthetic */ a80 c;
+import android.view.KeyEvent;
 
-    public /* synthetic */ w70(n2.o0 o0Var, a80 a80Var, int i7) {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w70 implements org.telegram.ui.ActionBar.r1, org.telegram.ui.ActionBar.f1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e80 b;
+
+    public /* synthetic */ w70(e80 e80Var, int i7) {
         this.a = i7;
-        this.b = o0Var;
-        this.c = a80Var;
+        this.b = e80Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
         switch (this.a) {
             case 0:
-                this.b.n(this.c, false);
+                d80 d80Var = this.b.r;
+                if (d80Var != null) {
+                    d80Var.i();
+                    break;
+                }
                 break;
             default:
-                this.b.n(this.c, false);
+                d80 d80Var2 = this.b.r;
+                if (d80Var2 != null) {
+                    d80Var2.e();
+                    break;
+                }
                 break;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f1
+    public void j(KeyEvent keyEvent) {
+        e80 e80Var = this.b;
+        e80Var.getClass();
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && e80Var.s.isShowing()) {
+            e80Var.s.d(true);
         }
     }
 }

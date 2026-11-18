@@ -1,6 +1,6 @@
 package s2;
 
-import a8.ja;
+import a8.la;
 import a8.p0;
 import android.net.Uri;
 import e2.t0;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class w {
     public final v a;
@@ -77,7 +77,7 @@ public final class w {
             num2.getClass();
             int intValue = num2.intValue() + 1;
             if (intValue <= 1) {
-                ja.c(intValue, "invalid count: %s", intValue >= 0);
+                la.c(intValue, "invalid count: %s", intValue >= 0);
                 str2 = intValue == 0 ? "" : ".";
             } else {
                 long j3 = 1 * intValue;

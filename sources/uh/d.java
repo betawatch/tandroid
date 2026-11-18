@@ -3,39 +3,39 @@ package uh;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.view.View;
-import bg.s;
+import bg.t;
 import org.telegram.messenger.g0;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.gh0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.m6;
+import org.telegram.ui.Components.qh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d extends c {
-    public final g6 d;
-    public final gh0 e;
+    public final m6 d;
+    public final qh0 e;
     public final te.a f;
     public float h;
 
-    public d(View view, e6 e6Var) {
-        super(e6Var);
-        gh0 gh0Var = new gh0(view);
-        this.e = gh0Var;
-        gh0Var.d(null, true, false);
-        gh0Var.v = 650.0f;
-        gh0Var.e(false, 0.69f);
-        gh0Var.p.setStrokeWidth(g0.L(1.5f));
-        this.f = new te.a(view, er.h, 260L);
-        g6 g6Var = new g6(true, false, false);
-        this.d = g6Var;
-        g6Var.x(g0.o());
-        g6Var.w(g0.L(13.0f));
-        g6Var.b = 17;
-        int w02 = j6.w0(j6.i6, e6Var);
+    public d(View view, i6 i6Var) {
+        super(i6Var);
+        qh0 qh0Var = new qh0(view);
+        this.e = qh0Var;
+        qh0Var.d(null, true, false);
+        qh0Var.v = 650.0f;
+        qh0Var.e(false, 0.69f);
+        qh0Var.p.setStrokeWidth(g0.L(1.5f));
+        this.f = new te.a(view, lr.h, 260L);
+        m6 m6Var = new m6(true, false, false);
+        this.d = m6Var;
+        m6Var.x(g0.o());
+        m6Var.w(g0.L(13.0f));
+        m6Var.b = 17;
+        int w02 = n6.w0(n6.i6, i6Var);
         if (this.b != w02) {
-            j6.H1(this.a, w02, false);
+            n6.H1(this.a, w02, false);
             this.b = w02;
         }
     }
@@ -68,7 +68,7 @@ public final class d extends c {
     public final void draw(Canvas canvas) {
         float f10 = this.f.e;
         if (f10 < 1.0f) {
-            s.b(canvas, this.d, 1.0f - f10);
+            t.b(canvas, this.d, 1.0f - f10);
         }
         if (f10 > 0.0f) {
             float exactCenterX = getBounds().exactCenterX();

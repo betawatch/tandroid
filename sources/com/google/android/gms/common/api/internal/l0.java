@@ -20,9 +20,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Set;
 import m.o3;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
     public final com.google.android.gms.common.api.c b;
@@ -43,23 +43,23 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     public l0(g gVar, com.google.android.gms.common.api.j jVar) {
         this.o = gVar;
         Looper looper = gVar.y.getLooper();
-        ld0 a10 = jVar.a();
+        md0 a10 = jVar.a();
         a0.g gVar2 = (a0.g) a10.b;
         String str = (String) a10.d;
         String str2 = (String) a10.c;
         q8.a aVar = q8.a.a;
         o3 o3Var = new o3(gVar2, null, str, str2, aVar);
         a9.e eVar = jVar.d.a;
-        q6.m.g(eVar);
+        q6.m.h(eVar);
         com.google.android.gms.common.api.c a11 = eVar.a(jVar.a, looper, o3Var, jVar.e, this, this);
-        x9.d dVar = jVar.c;
-        if (dVar == null || !(a11 instanceof q6.d)) {
+        v4.f0 f0Var = jVar.c;
+        if (f0Var == null || !(a11 instanceof q6.d)) {
             String str3 = jVar.b;
             if (str3 != null && (a11 instanceof q6.d)) {
                 ((q6.d) a11).x = str3;
             }
         } else {
-            ((q6.d) a11).y = dVar;
+            ((q6.d) a11).y = f0Var;
         }
         this.b = a11;
         this.c = jVar.f;
@@ -71,14 +71,14 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
         }
         Context context = gVar.e;
         com.google.android.gms.internal.cast.y yVar = gVar.y;
-        ld0 a12 = jVar.a();
+        md0 a12 = jVar.a();
         this.j = new x0(context, yVar, new o3((a0.g) a12.b, null, (String) a12.d, (String) a12.c, aVar));
     }
 
     public final void a() {
         Object obj = this.b;
         g gVar = this.o;
-        q6.m.c(gVar.y);
+        q6.m.d(gVar.y);
         this.m = null;
         i(n6.a.f);
         if (this.k) {
@@ -115,7 +115,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void b(int i7) {
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         this.m = null;
         this.k = true;
         String str = ((q6.d) this.b).f;
@@ -254,7 +254,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void f(Status status, Exception exc, boolean z10) {
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         if ((status == null) == (exc == null)) {
             throw new IllegalArgumentException("Status XOR exception should be null");
         }
@@ -273,7 +273,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void g(Status status) {
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         f(status, null, false);
     }
 
@@ -296,7 +296,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
         if (it.next() != null) {
             throw new ClassCastException();
         }
-        if (q6.m.k(aVar, n6.a.f)) {
+        if (q6.m.l(aVar, n6.a.f)) {
             q6.d dVar = (q6.d) this.b;
             if (!dVar.s() || dVar.g == null) {
                 throw new RuntimeException("Failed to connect when checking package");
@@ -327,7 +327,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void k(n6.a aVar) {
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         Object obj = this.b;
         String name = obj.getClass().getName();
         String valueOf = String.valueOf(aVar);
@@ -343,12 +343,12 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     public final void l(n6.a aVar, RuntimeException runtimeException) {
         r8.a aVar2;
         g gVar = this.o;
-        q6.m.c(gVar.y);
+        q6.m.d(gVar.y);
         x0 x0Var = this.j;
         if (x0Var != null && (aVar2 = x0Var.i) != null) {
             aVar2.a();
         }
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         this.m = null;
         SparseIntArray sparseIntArray = (SparseIntArray) gVar.h.b;
         synchronized (sparseIntArray) {
@@ -375,7 +375,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
             return;
         }
         if (runtimeException != null) {
-            q6.m.c(gVar.y);
+            q6.m.d(gVar.y);
             f(null, runtimeException, false);
             return;
         }
@@ -400,7 +400,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
     }
 
     public final void m(e1 e1Var) {
-        q6.m.c(this.o.y);
+        q6.m.d(this.o.y);
         boolean s5 = ((q6.d) this.b).s();
         LinkedList linkedList = this.a;
         if (s5) {
@@ -423,7 +423,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
 
     public final void n() {
         g gVar = this.o;
-        q6.m.c(gVar.y);
+        q6.m.d(gVar.y);
         Status status = g.F;
         g(status);
         this.d.b(status, false);
@@ -432,23 +432,23 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
         }
         i(new n6.a(4, null, null));
         if (((q6.d) this.b).s()) {
-            gVar.y.post(new sa(new d6.i(this, 9), 20));
+            gVar.y.post(new sa(new ob.c(this, 13), 20));
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final void o() {
         g gVar = this.o;
-        q6.m.c(gVar.y);
+        q6.m.d(gVar.y);
         com.google.android.gms.common.api.c cVar = this.b;
         q6.d dVar = (q6.d) cVar;
         if (dVar.s() || dVar.t()) {
             return;
         }
         try {
-            int m0 = gVar.h.m0(gVar.e, cVar);
-            if (m0 != 0) {
-                n6.a aVar = new n6.a(m0, null, null);
+            int R = gVar.h.R(gVar.e, cVar);
+            if (R != 0) {
+                n6.a aVar = new n6.a(R, null, null);
                 String name = cVar.getClass().getName();
                 String aVar2 = aVar.toString();
                 StringBuilder sb2 = new StringBuilder(name.length() + 35 + aVar2.length());
@@ -463,7 +463,7 @@ public final class l0 implements com.google.android.gms.common.api.k, com.google
             o0 o0Var = new o0(gVar, cVar, this.c);
             if (cVar.f()) {
                 x0 x0Var = this.j;
-                q6.m.g(x0Var);
+                q6.m.h(x0Var);
                 r8.a aVar3 = x0Var.i;
                 if (aVar3 != null) {
                     aVar3.a();

@@ -6,25 +6,25 @@ import android.text.InputFilter;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import c8.ja;
-import di.fc;
+import c8.ma;
+import di.jc;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class r extends fc {
+public final class r extends jc {
     public final /* synthetic */ y n0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(y yVar, Context context, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, e6Var);
+    public r(y yVar, Context context, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(context, i6Var);
         this.n0 = yVar;
     }
 
-    @Override // di.fc
+    @Override // di.jc
     public final boolean d(float f10) {
         int i7 = 0;
         if (getProgress() <= 0.99d && f10 <= getMeasuredWidth() * 0.9f) {
@@ -33,25 +33,25 @@ public final class r extends fc {
         y yVar = this.n0;
         Context context = yVar.getContext();
         Activity W = org.telegram.messenger.g0.W(context);
-        org.telegram.ui.ActionBar.e2 Q = LaunchActivity.Q();
+        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
         if (W != null) {
             W.getCurrentFocus();
         }
         View[] viewArr = new View[1];
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, context, yVar.J0);
-        String M0 = hd.M0(2131750343, null);
-        org.telegram.ui.ActionBar.t1 t1Var = alertDialog$Builder.a;
-        t1Var.S = M0;
-        t1Var.U = hd.a0(null, null, 2131750342, Integer.valueOf(yVar.h2.d.gifts_per_round));
+        String M0 = gd.M0(2131750327, null);
+        org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+        u1Var.S = M0;
+        u1Var.U = gd.a0(null, null, 2131750326, Integer.valueOf(yVar.h2.d.gifts_per_round));
         u uVar = new u(context, yVar.J0, i5.c.g(context, R.drawable.star_small_inner));
         uVar.setTextSize(1, 18.0f);
-        org.telegram.ui.ActionBar.q6.U(uVar, org.telegram.ui.ActionBar.j6.j5, yVar.J0);
-        org.telegram.ui.ActionBar.q6.l(uVar, 34, org.telegram.ui.ActionBar.j6.Oi, yVar.J0);
-        uVar.setHintText(hd.M0(2131750341, null));
+        org.telegram.ui.ActionBar.u6.U(uVar, org.telegram.ui.ActionBar.n6.j5, yVar.J0);
+        org.telegram.ui.ActionBar.u6.l(uVar, 34, org.telegram.ui.ActionBar.n6.Oi, yVar.J0);
+        uVar.setHintText(gd.M0(2131750325, null));
         uVar.setFocusable(true);
         uVar.setInputType(2);
         uVar.setFilters(new InputFilter[]{new InputFilter.LengthFilter(9)});
-        org.telegram.ui.ActionBar.q6.F(uVar, org.telegram.ui.ActionBar.j6.k6, org.telegram.ui.ActionBar.j6.l6, org.telegram.ui.ActionBar.j6.p7, yVar.J0);
+        org.telegram.ui.ActionBar.u6.F(uVar, org.telegram.ui.ActionBar.n6.k6, org.telegram.ui.ActionBar.n6.l6, org.telegram.ui.ActionBar.n6.p7, yVar.J0);
         uVar.setImeOptions(268435462);
         uVar.setBackgroundDrawable(null);
         uVar.l1 = org.telegram.messenger.g0.L(24.0f);
@@ -59,28 +59,28 @@ public final class r extends fc {
         uVar.addTextChangedListener(new v(i7, yVar, viewArr));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        linearLayout.addView(uVar, ja.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
+        linearLayout.addView(uVar, ma.k(24.0f, 0.0f, 24.0f, 10.0f, -1, -2));
         alertDialog$Builder.c();
         alertDialog$Builder.o(linearLayout);
-        t1Var.a = org.telegram.messenger.g0.L(300.0f);
-        alertDialog$Builder.k(hd.M0(2131750345, null), new ab.g(3, yVar, uVar));
-        alertDialog$Builder.h(hd.M0(2131752589, null), new a3.l(19));
-        org.telegram.ui.ActionBar.t1[] t1VarArr = {t1Var};
+        u1Var.a = org.telegram.messenger.g0.L(300.0f);
+        alertDialog$Builder.k(gd.M0(2131750329, null), new ab.g(2, yVar, uVar));
+        alertDialog$Builder.h(gd.M0(2131752578, null), new a3.l(19));
+        org.telegram.ui.ActionBar.u1[] u1VarArr = {u1Var};
         if (Q != null) {
-            org.telegram.messenger.g0.Z2(W, Q.getClassGuid());
+            org.telegram.messenger.g0.Y2(W, Q.getClassGuid());
         }
-        t1VarArr[0].setOnDismissListener(new k(uVar, Q, W, 0));
-        t1VarArr[0].setOnShowListener(new l(uVar, 0));
-        t1VarArr[0].show();
-        View d = t1VarArr[0].d(-1);
+        u1VarArr[0].setOnDismissListener(new k(uVar, Q, W, 0));
+        u1VarArr[0].setOnShowListener(new l(uVar, 0));
+        u1VarArr[0].show();
+        View d = u1VarArr[0].d(-1);
         viewArr[0] = d;
         d.setAlpha(0.6f);
-        t1VarArr[0].k0 = false;
+        u1VarArr[0].k0 = false;
         uVar.setSelection(uVar.getText().length());
         return true;
     }
 
-    @Override // di.fc, android.view.View
+    @Override // di.jc, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - org.telegram.messenger.g0.L(48.0f)) {
             return false;
@@ -89,14 +89,14 @@ public final class r extends fc {
         return true;
     }
 
-    @Override // di.fc
+    @Override // di.jc
     public final void e(int i7) {
-        y.d1(this.n0, i7);
+        y.e1(this.n0, i7);
     }
 
-    @Override // di.fc
+    @Override // di.jc
     public final void setValue(int i7) {
         super.setValue(i7);
-        y.d1(this.n0, i7);
+        y.e1(this.n0, i7);
     }
 }

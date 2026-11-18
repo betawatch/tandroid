@@ -1,25 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class na implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cb b;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    public /* synthetic */ na(cb cbVar, int i7) {
-        this.a = i7;
-        this.b = cbVar;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class na extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ au0 G1;
+    public final /* synthetic */ sa H1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public na(sa saVar, Context context, au0 au0Var) {
+        super(context, null);
+        this.H1 = saVar;
+        this.G1 = au0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.onExitTransitionStart();
-                break;
-            default:
-                this.b.onEnterTransitionStart();
-                break;
+    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        sa saVar = this.H1;
+        if (saVar.G1 && saVar.H1) {
+            return false;
         }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f10) {
+        if (getAlpha() != f10) {
+            super.setAlpha(f10);
+            this.G1.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.H1.b1();
     }
 }

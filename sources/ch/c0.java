@@ -2,12 +2,12 @@ package ch;
 
 import android.text.TextUtils;
 import android.view.View;
-import di.v0;
-import oi.y5;
+import di.u0;
+import oi.z5;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.t4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class c0 implements View.OnFocusChangeListener {
     public final void onFocusChange(View view, boolean z10) {
         switch (this.a) {
             case 0:
-                l lVar = (l) this.b;
+                m mVar = (m) this.b;
                 if (!z10) {
-                    lVar.J();
+                    mVar.J();
                     break;
                 } else {
-                    lVar.K(true);
-                    Runnable runnable = lVar.g2;
+                    mVar.K(true);
+                    Runnable runnable = mVar.g2;
                     if (runnable != null) {
                         runnable.run();
                         break;
@@ -41,18 +41,15 @@ public final /* synthetic */ class c0 implements View.OnFocusChangeListener {
                 pVar.b(f10, f10, true);
                 break;
             case 2:
-                ((di.p0) this.b).Z1.c(z10, !TextUtils.isEmpty(r2.a2.getText()));
+                ((di.r0) this.b).q1.c(z10, !TextUtils.isEmpty(r2.r1.getText()));
                 break;
             case 3:
-                ((di.s0) this.b).q1.c(z10, !TextUtils.isEmpty(r2.r1.getText()));
+                ((u0) this.b).m1.c(z10, !TextUtils.isEmpty(r2.n1.getText()));
                 break;
             case 4:
-                ((v0) this.b).m1.c(z10, !TextUtils.isEmpty(r2.n1.getText()));
+                z5.a((z5) this.b, z10);
                 break;
             case 5:
-                y5.a((y5) this.b, z10);
-                break;
-            case 6:
                 EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) ((t4) this.b).f;
                 if (!z10 && TextUtils.isEmpty(editTextBoldCursor.getText())) {
                     editTextBoldCursor.setText("0");

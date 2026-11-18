@@ -11,7 +11,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public class NumberTextView extends View {
     public final ArrayList a;
@@ -126,7 +126,7 @@ public class NumberTextView extends View {
             ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z11 ? -1.0f : 1.0f, f12);
             this.d = ofFloat;
             ofFloat.setDuration(this.h ? 180L : 150L);
-            this.d.addListener(new h60(this, 5));
+            this.d.addListener(new q60(this, 5));
             this.d.start();
         }
         invalidate();
@@ -185,7 +185,7 @@ public class NumberTextView extends View {
                         canvas.translate(0.0f, this.e * L);
                     }
                 } else {
-                    textPaint.setAlpha(org.telegram.messenger.ns.e4);
+                    textPaint.setAlpha(org.telegram.messenger.ks.e4);
                 }
             } else if (f12 < 0.0f) {
                 if (staticLayout != null) {
@@ -200,11 +200,11 @@ public class NumberTextView extends View {
                         textPaint.setAlpha((int) ((this.e + 1.0f) * 255.0f));
                         canvas.translate(0.0f, this.e * L);
                     } else {
-                        textPaint.setAlpha(org.telegram.messenger.ns.e4);
+                        textPaint.setAlpha(org.telegram.messenger.ks.e4);
                     }
                 }
             } else if (staticLayout2 != null) {
-                textPaint.setAlpha(org.telegram.messenger.ns.e4);
+                textPaint.setAlpha(org.telegram.messenger.ks.e4);
             }
             if (staticLayout2 != null) {
                 staticLayout2.draw(canvas);
@@ -250,6 +250,6 @@ public class NumberTextView extends View {
         a(this.f, false);
     }
 
-    public void setOnTextWidthProgressChangedListener(jb0 jb0Var) {
+    public void setOnTextWidthProgressChangedListener(tb0 tb0Var) {
     }
 }

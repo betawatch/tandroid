@@ -2,10 +2,10 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x extends r6.a {
     public static final Parcelable.Creator<x> CREATOR = new db.k(16);
@@ -13,7 +13,7 @@ public final class x extends r6.a {
     public final o b;
 
     public x(String str, int i7) {
-        q6.m.g(str);
+        q6.m.h(str);
         try {
             this.a = a0.a(str);
             try {
@@ -39,16 +39,16 @@ public final class x extends r6.a {
     }
 
     public final String toString() {
-        return r.b.l("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
+        return p5.c.l("PublicKeyCredentialParameters{\n type=", String.valueOf(this.a), ", \n algorithm=", String.valueOf(this.b), "\n }");
     }
 
     /* JADX WARN: Type inference failed for: r0v3, types: [f7.a, java.lang.Enum] */
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
+        int r10 = bc.r(parcel, 20293);
         this.a.getClass();
-        yb.l(parcel, 2, "public-key");
-        yb.i(parcel, 3, Integer.valueOf(this.b.a.a()));
-        yb.s(parcel, r10);
+        bc.l(parcel, 2, "public-key");
+        bc.i(parcel, 3, Integer.valueOf(this.b.a.a()));
+        bc.s(parcel, r10);
     }
 }

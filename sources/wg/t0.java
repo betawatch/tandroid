@@ -1,25 +1,66 @@
 package wg;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.e6;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t0 extends ah.o {
-    public final /* synthetic */ u0 L;
+public final /* synthetic */ class t0 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t0(u0 u0Var, Context context, e6 e6Var) {
-        super(context, e6Var);
-        this.L = u0Var;
+    public /* synthetic */ t0(w0 w0Var, int i7) {
+        this.a = i7;
+        this.b = w0Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
-        super.onLayout(z10, i7, i10, i11, i12);
-        int L = org.telegram.messenger.g0.L(78.0f) + getMeasuredHeight();
-        u0 u0Var = this.L;
-        u0Var.l2 = L;
-        u0Var.k2.G();
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                w0 w0Var = this.b;
+                ArrayList arrayList = w0Var.c2;
+                s4.s0 s0Var = w0Var.r2;
+                w0Var.j2 = str;
+                int i7 = w0Var.n2;
+                if (i7 == 1) {
+                    org.telegram.messenger.g0.r(s0Var);
+                    org.telegram.messenger.g0.h3(s0Var, 350L);
+                    break;
+                } else if (i7 == 2) {
+                    if (!TextUtils.isEmpty(str)) {
+                        org.telegram.messenger.g0.r(s0Var);
+                        org.telegram.messenger.g0.h3(s0Var, 350L);
+                        break;
+                    } else {
+                        org.telegram.messenger.g0.r(s0Var);
+                        arrayList.clear();
+                        arrayList.addAll(s.e(w0Var.m2.id));
+                        w0Var.n1(false, true);
+                        w0Var.k1(true);
+                        break;
+                    }
+                } else if (i7 == 3) {
+                    w0Var.n1(false, true);
+                    w0Var.k1(true);
+                    break;
+                }
+                break;
+            default:
+                List list = (List) obj;
+                w0 w0Var2 = this.b;
+                ArrayList arrayList2 = w0Var2.c2;
+                if (!TextUtils.isEmpty(w0Var2.j2)) {
+                    arrayList2.clear();
+                    arrayList2.addAll(list);
+                    w0Var2.o1(true, true);
+                    w0Var2.k1(true);
+                    break;
+                }
+                break;
+        }
     }
 }

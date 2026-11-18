@@ -1,67 +1,127 @@
 package org.telegram.messenger;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.util.Pair;
-import java.util.Arrays;
-import java.util.List;
+import android.graphics.Rect;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class h4 {
-    public static final List a = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
-    public static final Paint b = new Paint(2);
+public final class h4 extends f6 {
+    public static final Paint i = new Paint(2);
+    public static final Rect j = new Rect();
+    public i4 c;
+    public i4 d;
+    public org.telegram.ui.Components.c6 e;
+    public org.telegram.ui.Components.c6 f;
+    public i4 g;
+    public i4 h;
 
-    public static f4 a(String str, Integer num, Integer num2) {
-        Pair c10;
-        if (str == null || (c10 = c(str)) == null) {
-            return null;
-        }
-        if (num == null) {
-            num = (Integer) c10.first;
-        }
-        g4 g4Var = new g4(num.intValue(), 0);
-        if (num2 == null) {
-            num2 = (Integer) c10.second;
-        }
-        g4 g4Var2 = new g4(num2.intValue(), 1);
-        f4 f4Var = new f4();
-        f4Var.c = g4Var;
-        f4Var.d = g4Var2;
-        return f4Var;
-    }
-
-    public static int b(String str) {
-        if (str == null) {
-            return -1;
-        }
-        return a.indexOf(str.substring(str.length() - 2));
-    }
-
-    public static Pair c(String str) {
+    public static void c(Canvas canvas, i4 i4Var, Rect rect, float f10) {
         int i7;
-        String[] split;
-        if (str.startsWith("🤝")) {
-            if (str.length() != 2) {
-                if (str.length() == 4) {
-                    i7 = b(str);
-                    r3 = i7 >= 0 ? i7 : -1;
-                    split = str.split("\u200d");
-                    if (split.length == 2 || !split[0].startsWith("\u1faf1") || !split[1].startsWith("\u1faf2")) {
-                        return null;
-                    }
-                    if (split[0].length() != 2 && (split[0].length() != 4 || (i7 = b(split[0])) < 0)) {
-                        return null;
-                    }
-                    if (split[1].length() == 2 || (split[1].length() == 4 && (r3 = b(split[1])) >= 0)) {
-                        return new Pair(Integer.valueOf(i7), Integer.valueOf(r3));
-                    }
-                    return null;
-                }
+        Bitmap bitmap = (Bitmap) i4.e.get(i4Var.c);
+        if (bitmap != null) {
+            Paint paint = i4Var.d ? j4.b : i;
+            if (f10 < 1.0f) {
+                i7 = paint.getAlpha();
+                paint.setAlpha((int) (i7 * f10));
+            } else {
+                i7 = ks.e4;
             }
-            return new Pair(Integer.valueOf(r3), Integer.valueOf(r3));
+            canvas.drawBitmap(bitmap, (Rect) null, rect, paint);
+            if (f10 < 1.0f) {
+                paint.setAlpha(i7);
+            }
         }
-        i7 = -1;
-        split = str.split("\u200d");
-        return split.length == 2 ? null : null;
+    }
+
+    @Override // org.telegram.messenger.f6
+    public final boolean a() {
+        i4 i4Var = this.c;
+        SparseArray sparseArray = i4.e;
+        return sparseArray.indexOfKey(i4Var.c) >= 0 && sparseArray.indexOfKey(this.d.c) >= 0;
+    }
+
+    @Override // org.telegram.messenger.f6
+    public final void b() {
+        if (a()) {
+            return;
+        }
+        this.c.a();
+        this.d.a();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds;
+        if (!a()) {
+            b();
+            Paint paint = j6.d;
+            paint.setColor(this.b);
+            Rect bounds2 = getBounds();
+            canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), bounds2.width() * 0.4f, paint);
+            return;
+        }
+        if (this.a) {
+            Rect bounds3 = getBounds();
+            int centerX = bounds3.centerX();
+            int centerY = bounds3.centerY();
+            boolean z10 = this.a;
+            int i7 = z10 ? j6.c : j6.b;
+            bounds = j;
+            bounds.left = centerX - (i7 / 2);
+            bounds.right = ((z10 ? j6.c : j6.b) / 2) + centerX;
+            bounds.top = centerY - ((z10 ? j6.c : j6.b) / 2);
+            bounds.bottom = ((z10 ? j6.c : j6.b) / 2) + centerY;
+        } else {
+            bounds = getBounds();
+        }
+        if (canvas.quickReject(bounds.left, bounds.top, bounds.right, bounds.bottom, Canvas.EdgeType.AA)) {
+            return;
+        }
+        if (this.g != null) {
+            if (this.e == null) {
+                this.e = new org.telegram.ui.Components.c6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.lr.g);
+            }
+            float e10 = this.e.e(false, 1.0f);
+            c(canvas, this.g, bounds, Math.min(1.0f, e10 * 1.5f));
+            c(canvas, this.c, bounds, 1.0f - e10);
+            if (e10 >= 1.0f) {
+                this.c = this.g;
+                this.g = null;
+            }
+        } else {
+            c(canvas, this.c, bounds, 1.0f);
+        }
+        if (this.h == null) {
+            c(canvas, this.d, bounds, 1.0f);
+            return;
+        }
+        if (this.f == null) {
+            this.f = new org.telegram.ui.Components.c6(0.0f, new a(this, 4), 0L, 320L, org.telegram.ui.Components.lr.g);
+        }
+        float e11 = this.f.e(false, 1.0f);
+        c(canvas, this.h, bounds, Math.min(1.0f, 1.5f * e11));
+        c(canvas, this.d, bounds, 1.0f - e11);
+        if (e11 >= 1.0f) {
+            this.d = this.h;
+            this.h = null;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i7) {
+        i.setAlpha(i7);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

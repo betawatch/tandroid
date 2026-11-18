@@ -2,42 +2,42 @@ package oi;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.a41;
-import org.telegram.ui.Components.b41;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.Components.u41;
-import org.telegram.ui.Components.uj0;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class c0 extends a41 {
+public final class c0 extends k41 {
     public static final /* synthetic */ int b = 0;
 
     static {
-        a41.h(new c0());
+        k41.h(new c0());
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final void b(View view, b41 b41Var, boolean z10, p41 p41Var, u41 u41Var) {
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
         d0 d0Var = (d0) view;
-        a aVar = (a) b41Var.G;
-        b0 b0Var = (b0) b41Var.H;
+        a aVar = (a) l41Var.H;
+        b0 b0Var = (b0) l41Var.I;
         d0Var.a = aVar;
         d0Var.F = b0Var;
         d0Var.c(aVar);
         d0Var.h();
     }
 
-    @Override // org.telegram.ui.Components.a41
-    public final View d(Context context, uj0 uj0Var, int i7, e6 e6Var) {
-        d0 d0Var = new d0(i7, context, e6Var);
-        d0Var.setBackground(new w1(j6.w0(j6.d6, e6Var)));
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, i6 i6Var) {
+        d0 d0Var = new d0(i7, context, i6Var);
+        d0Var.setBackground(new w1(n6.w0(n6.d6, i6Var)));
         return d0Var;
     }
 
-    @Override // org.telegram.ui.Components.a41
+    @Override // org.telegram.ui.Components.k41
     public final boolean f() {
         return false;
     }

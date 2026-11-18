@@ -1,45 +1,48 @@
 package hi;
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class p0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ u0 b;
-    public final /* synthetic */ File c;
+    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ p0(u0 u0Var, File file, int i7) {
+    public /* synthetic */ p0(v0 v0Var, int i7) {
         this.a = i7;
-        this.b = u0Var;
-        this.c = file;
+        this.b = v0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i7 = this.a;
+        v0 v0Var = this.b;
+        switch (i7) {
             case 0:
-                u0 u0Var = this.b;
-                if (u0Var.c && u0Var.r != null) {
-                    MediaController.d0(this.c.getAbsolutePath(), u0Var.getContext(), 1, null, null, new q0(u0Var, 1));
-                    break;
-                }
+                v0Var.b();
                 break;
             case 1:
-                u0 u0Var2 = this.b;
-                d7 d7Var = u0Var2.r;
-                File file = this.c;
-                d7Var.c(file);
-                if (u0Var2.c && u0Var2.r != null) {
-                    org.telegram.messenger.g0.h3(new p0(u0Var2, file, 2));
-                    break;
+                v0Var.e = false;
+                s0 s0Var = v0Var.s;
+                if (s0Var != null) {
+                    s0Var.a(true);
+                    v0Var.s = null;
                 }
+                u0 u0Var = v0Var.n;
+                if (u0Var != null) {
+                    u0Var.a();
+                }
+                v0Var.c = false;
+                v0Var.d();
                 break;
             default:
-                String absolutePath = this.c.getAbsolutePath();
-                u0 u0Var3 = this.b;
-                MediaController.d0(absolutePath, u0Var3.getContext(), 0, null, null, new q0(u0Var3, 2));
+                if (v0Var.c && v0Var.r != null) {
+                    v0Var.n.b(R.raw.error, 3500, gd.N0("VideoConvertFail"));
+                    v0Var.c = false;
+                    v0Var.d();
+                    break;
+                }
                 break;
         }
     }

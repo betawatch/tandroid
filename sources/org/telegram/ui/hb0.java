@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class hb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -33,11 +33,11 @@ public final /* synthetic */ class hb0 implements Runnable {
                 lb0Var.e = false;
                 lb0Var.f[0].requestFocus();
                 while (true) {
-                    dr[] drVarArr = lb0Var.f;
-                    if (i7 >= drVarArr.length) {
+                    er[] erVarArr = lb0Var.f;
+                    if (i7 >= erVarArr.length) {
                         break;
                     } else {
-                        drVarArr[i7].A(0.0f);
+                        erVarArr[i7].A(0.0f);
                         i7++;
                     }
                 }
@@ -52,19 +52,19 @@ public final /* synthetic */ class hb0 implements Runnable {
                 ob0Var3.S = false;
                 int i10 = 0;
                 while (true) {
-                    dr[] drVarArr2 = ob0Var3.a.f;
-                    if (i10 >= drVarArr2.length) {
+                    er[] erVarArr2 = ob0Var3.a.f;
+                    if (i10 >= erVarArr2.length) {
                         if (nb0Var.getCurrentView() != ob0Var3.e) {
                             nb0Var.showNext();
                             FrameLayout frameLayout = ob0Var3.h;
                             if (ob0Var3.f.getVisibility() != 0 && ob0Var3.a0.G != 3 && !ob0Var3.Q) {
                                 z10 = true;
                             }
-                            org.telegram.messenger.g0.Y3(frameLayout, z10, 1.0f, true, true);
+                            org.telegram.messenger.g0.X3(frameLayout, z10, 1.0f, true, true);
                             break;
                         }
                     } else {
-                        drVarArr2[i10].A(0.0f);
+                        erVarArr2[i10].A(0.0f);
                         i10++;
                     }
                 }
@@ -75,11 +75,11 @@ public final /* synthetic */ class hb0 implements Runnable {
                 lb0Var2.e = false;
                 lb0Var2.f[0].requestFocus();
                 while (true) {
-                    dr[] drVarArr3 = lb0Var2.f;
-                    if (i11 >= drVarArr3.length) {
+                    er[] erVarArr3 = lb0Var2.f;
+                    if (i11 >= erVarArr3.length) {
                         break;
                     } else {
-                        drVarArr3[i11].A(0.0f);
+                        erVarArr3[i11].A(0.0f);
                         i11++;
                     }
                 }
@@ -91,9 +91,9 @@ public final /* synthetic */ class hb0 implements Runnable {
                 break;
             default:
                 ob0 ob0Var4 = this.b;
-                org.telegram.ui.Components.fh0 fh0Var = ob0Var4.x;
-                fh0Var.getAnimatedDrawable().N(0, false, false);
-                fh0Var.d();
+                org.telegram.ui.Components.ph0 ph0Var = ob0Var4.x;
+                ph0Var.getAnimatedDrawable().N(0, false, false);
+                ph0Var.d();
                 lb0 lb0Var3 = ob0Var4.a;
                 if (lb0Var3 != null && lb0Var3.f != null) {
                     lb0Var3.setText("");

@@ -1,16 +1,16 @@
 package sc;
 
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 import tc.g;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b {
-    public final ld0 a;
+    public final md0 a;
     public final Exception b;
 
-    public b(ld0 ld0Var, g gVar) {
+    public b(md0 md0Var, g gVar) {
         this.b = gVar;
-        this.a = ld0Var;
+        this.a = md0Var;
     }
 }

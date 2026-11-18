@@ -1,23 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.widget.ImageView;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class zl extends s8 {
-    public final /* synthetic */ am F;
+public final class zl implements CameraView.CameraViewDelegate {
+    public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zl(am amVar, Context context) {
-        super(context);
-        this.F = amVar;
+    public zl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
+        this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.s8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        am amVar = this.F;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(amVar.w.L0, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(amVar.w.L0, TLObject.FLAG_30));
+    @Override // org.telegram.messenger.camera.CameraView.CameraViewDelegate
+    public final void onCameraInit() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
+        ImageView imageView = chatAttachAlertPhotoLayout.s0;
+        ImageView[] imageViewArr = chatAttachAlertPhotoLayout.T;
+        String currentFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode();
+        String nextFlashMode = chatAttachAlertPhotoLayout.Q.getCameraSession().getNextFlashMode();
+        if (currentFlashMode == null || nextFlashMode == null) {
+            return;
+        }
+        if (currentFlashMode.equals(nextFlashMode)) {
+            for (int i7 = 0; i7 < 2; i7++) {
+                imageViewArr[i7].setVisibility(4);
+                imageViewArr[i7].setAlpha(0.0f);
+                imageViewArr[i7].setTranslationY(0.0f);
+            }
+        } else {
+            ChatAttachAlertPhotoLayout.r0(imageViewArr[0], chatAttachAlertPhotoLayout.Q.getCameraSession().getCurrentFlashMode());
+            int i10 = 0;
+            while (i10 < 2) {
+                imageViewArr[i10].setVisibility(i10 == 0 ? 0 : 4);
+                imageViewArr[i10].setAlpha((i10 == 0 && chatAttachAlertPhotoLayout.c0) ? 1.0f : 0.0f);
+                imageViewArr[i10].setTranslationY(0.0f);
+                i10++;
+            }
+        }
+        imageView.setImageResource(chatAttachAlertPhotoLayout.Q.isFrontface() ? R.drawable.camera_revert1 : R.drawable.camera_revert2);
+        imageView.setVisibility(chatAttachAlertPhotoLayout.Q.hasFrontFaceCamera() ? 0 : 4);
+        if (chatAttachAlertPhotoLayout.c0) {
+            return;
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        chatAttachAlertPhotoLayout.P = animatorSet;
+        animatorSet.playTogether(ObjectAnimator.ofFloat(chatAttachAlertPhotoLayout.Q, (Property<em, Float>) View.ALPHA, 0.0f, 1.0f));
+        chatAttachAlertPhotoLayout.P.setDuration(180L);
+        chatAttachAlertPhotoLayout.P.addListener(new x(this, 14));
+        chatAttachAlertPhotoLayout.P.start();
     }
 }

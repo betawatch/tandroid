@@ -1,6 +1,6 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u4 implements na.d {
     public static final u4 a = new u4();
@@ -17,11 +17,11 @@ public final class u4 implements na.d {
 
     @Override // na.a
     public final void a(Object obj, Object obj2) {
-        ta taVar = (ta) obj;
+        ua uaVar = (ua) obj;
         na.e eVar = (na.e) obj2;
-        eVar.a(b, taVar.a);
-        eVar.a(c, taVar.b);
-        eVar.a(d, taVar.c);
+        eVar.a(b, uaVar.a);
+        eVar.a(c, uaVar.b);
+        eVar.a(d, uaVar.c);
         eVar.a(e, null);
         eVar.a(f, null);
         eVar.a(g, null);

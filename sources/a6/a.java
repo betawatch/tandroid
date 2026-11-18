@@ -2,13 +2,13 @@ package a6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new w.a(3);
@@ -28,7 +28,7 @@ public final class a extends r6.a {
         m.a("filterByAuthorizedAccounts and requestVerifiedPhoneNumber must not both be true; the Verified Phone Number feature only works in sign-ups.", z13);
         this.a = z10;
         if (z10) {
-            m.h(str, "serverClientId must be provided if Google ID tokens are requested");
+            m.i(str, "serverClientId must be provided if Google ID tokens are requested");
         }
         this.b = str;
         this.c = str2;
@@ -48,7 +48,7 @@ public final class a extends r6.a {
             return false;
         }
         a aVar = (a) obj;
-        return this.a == aVar.a && m.k(this.b, aVar.b) && m.k(this.c, aVar.c) && this.d == aVar.d && m.k(this.e, aVar.e) && m.k(this.f, aVar.f) && this.h == aVar.h;
+        return this.a == aVar.a && m.l(this.b, aVar.b) && m.l(this.c, aVar.c) && this.d == aVar.d && m.l(this.e, aVar.e) && m.l(this.f, aVar.f) && this.h == aVar.h;
     }
 
     public final int hashCode() {
@@ -57,17 +57,17 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.q(parcel, 1, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.q(parcel, 1, 4);
         parcel.writeInt(this.a ? 1 : 0);
-        yb.l(parcel, 2, this.b);
-        yb.l(parcel, 3, this.c);
-        yb.q(parcel, 4, 4);
+        bc.l(parcel, 2, this.b);
+        bc.l(parcel, 3, this.c);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.d ? 1 : 0);
-        yb.l(parcel, 5, this.e);
-        yb.n(parcel, 6, this.f);
-        yb.q(parcel, 7, 4);
+        bc.l(parcel, 5, this.e);
+        bc.n(parcel, 6, this.f);
+        bc.q(parcel, 7, 4);
         parcel.writeInt(this.h ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

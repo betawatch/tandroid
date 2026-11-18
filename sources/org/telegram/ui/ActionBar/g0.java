@@ -1,29 +1,154 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.ImageView;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.kq;
+import org.telegram.ui.Components.m80;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.b20;
+import org.telegram.ui.bb1;
+import org.telegram.ui.yo0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g0 extends AnimatorListenerAdapter {
+public final class g0 extends ImageView {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ g0(q0 q0Var, int i7) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g0(int i7, Context context, Object obj) {
+        super(context);
         this.a = i7;
-        this.b = q0Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                q0 q0Var = this.b;
-                q0Var.s.setVisibility(4);
-                q0Var.w = null;
+                getBackground().draw(canvas);
+                super.draw(canvas);
                 break;
             default:
-                this.b.w = null;
+                super.draw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.a) {
+            case 2:
+                super.invalidate();
+                b20 b20Var = (b20) this.b;
+                b20Var.g0.invalidate();
+                b20Var.invalidate();
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.a) {
+            case 0:
+                r0 r0Var = (r0) this.b;
+                super.onDetachedFromWindow();
+                clearAnimation();
+                if (getTag() != null) {
+                    r0Var.s.setAlpha(1.0f);
+                    r0Var.s.setRotation(0.0f);
+                    r0Var.s.setScaleX(1.0f);
+                    r0Var.s.setScaleY(1.0f);
+                    break;
+                } else {
+                    r0Var.s.setVisibility(4);
+                    r0Var.s.setAlpha(0.0f);
+                    r0Var.s.setRotation(45.0f);
+                    r0Var.s.setScaleX(0.0f);
+                    r0Var.s.setScaleY(0.0f);
+                    break;
+                }
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 4:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                accessibilityNodeInfo.setCheckable(true);
+                accessibilityNodeInfo.setChecked(((bb1) this.b).n.getTransformationMethod() == null);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void onMeasure(int i7, int i10) {
+        switch (this.a) {
+            case 2:
+                super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i7, i10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f10) {
+        switch (this.a) {
+            case 1:
+                super.setAlpha(f10);
+                ((kq) this.b).y.invalidate();
+                break;
+            default:
+                super.setAlpha(f10);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f10) {
+        switch (this.a) {
+            case 3:
+                super.setTranslationY(f10);
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                ArrayList arrayList = photoViewer.i1;
+                if (arrayList != null) {
+                    int size = arrayList.size();
+                    int i7 = 0;
+                    while (i7 < size) {
+                        Object obj = arrayList.get(i7);
+                        i7++;
+                        ((hi.m3) obj).setTranslationY(f10);
+                    }
+                }
+                yo0 yo0Var = photoViewer.h1;
+                if (yo0Var != null) {
+                    yo0Var.setTranslationY(f10);
+                }
+                m80 m80Var = photoViewer.g1;
+                if (m80Var != null) {
+                    m80Var.setTranslationY(f10);
+                    break;
+                }
+                break;
+            default:
+                super.setTranslationY(f10);
                 break;
         }
     }

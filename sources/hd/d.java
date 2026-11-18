@@ -1,7 +1,7 @@
 package hd;
 
 import a8.p0;
-import c8.b0;
+import c8.d0;
 import java.lang.reflect.Array;
 import java.util.AbstractList;
 import java.util.Collection;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends AbstractList implements List {
     public static final Object[] d = new Object[0];
@@ -520,7 +520,7 @@ public final class d extends AbstractList implements List {
 
     @Override // java.util.AbstractList
     public final void removeRange(int i7, int i10) {
-        b0.a(i7, i10, this.c);
+        d0.a(i7, i10, this.c);
         int i11 = i10 - i7;
         if (i11 == 0) {
             return;

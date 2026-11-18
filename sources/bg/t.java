@@ -1,33 +1,94 @@
 package bg;
 
-import java.util.ArrayList;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.k5;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_ephemeral;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.NinePatchDrawable;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public class t {
-    public final ArrayList a = new ArrayList();
-    public final a0.h b = new a0.h();
-    public final a0.h c = new a0.h();
+public abstract class t {
+    public static final Rect a = new Rect();
 
-    public static void a(t tVar, TL_ephemeral.EphemeralMessage ephemeralMessage, TLRPC.TL_message tL_message, gj gjVar) {
-        a0.h hVar = tVar.c;
-        long B0 = gj.B0(tL_message);
-        tVar.a.add(ephemeralMessage);
-        a0.h hVar2 = tVar.b;
-        TLRPC.TL_messages_messages tL_messages_messages = (TLRPC.TL_messages_messages) hVar2.f(B0);
-        if (tL_messages_messages == null) {
-            tL_messages_messages = new TLRPC.TL_messages_messages();
-            hVar2.k(tL_messages_messages, B0);
+    static {
+        new Rect();
+        new RectF();
+    }
+
+    public static void a(Canvas canvas, Drawable drawable, float f10, float f11, float f12) {
+        float N = f10 - org.telegram.messenger.g0.N(36.0f);
+        float N2 = f11 - org.telegram.messenger.g0.N(36.0f);
+        float N3 = f12 / org.telegram.messenger.g0.N(72.0f);
+        d(drawable, org.telegram.messenger.g0.N(9.66f) + N, org.telegram.messenger.g0.N(4.66f) + N2, 53);
+        canvas.save();
+        canvas.scale(N3, N3, f10, f11);
+        drawable.draw(canvas);
+        canvas.restore();
+    }
+
+    public static void b(Canvas canvas, Drawable drawable, float f10) {
+        if (drawable == null || f10 == 0.0f) {
+            return;
         }
-        tL_messages_messages.messages.add(tL_message);
-        ArrayList arrayList = (ArrayList) hVar.f(B0);
-        if (arrayList == null) {
-            arrayList = k5.i(hVar, B0);
+        if (f10 == 1.0f) {
+            drawable.draw(canvas);
+            return;
         }
-        arrayList.add(gjVar);
+        canvas.save();
+        canvas.scale(f10, f10, drawable.getBounds().exactCenterX(), drawable.getBounds().exactCenterY());
+        drawable.draw(canvas);
+        canvas.restore();
+    }
+
+    public static void c(Rect rect, float f10, float f11, int i7, int i10, int i11) {
+        int i12 = i11 & 7;
+        int round = i12 != 3 ? i12 != 5 ? Math.round(f10 - (i7 / 2.0f)) : Math.round(f10 - i7) : Math.round(f10);
+        int i13 = i11 & ks.x1;
+        int round2 = i13 != 48 ? i13 != 80 ? Math.round(f11 - (i10 / 2.0f)) : Math.round(f11 - i10) : Math.round(f11);
+        rect.set(round, round2, i7 + round, i10 + round2);
+    }
+
+    public static void d(Drawable drawable, float f10, float f11, int i7) {
+        if (drawable == null) {
+            return;
+        }
+        e(drawable, f10, f11, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), i7);
+    }
+
+    public static void e(Drawable drawable, float f10, float f11, int i7, int i10, int i11) {
+        if (drawable != null) {
+            Rect rect = a;
+            c(rect, f10, f11, i7, i10, i11);
+            drawable.setBounds(rect);
+        }
+    }
+
+    public static void f(ImageReceiver imageReceiver, float f10, float f11, int i7, int i10) {
+        if (imageReceiver != null) {
+            Rect rect = a;
+            c(rect, f10, f11, i7, i10, 17);
+            imageReceiver.z0(rect);
+        }
+    }
+
+    public static void g(Drawable drawable, int i7, int i10, int i11, int i12) {
+        Rect rect = a;
+        if (drawable.getPadding(rect)) {
+            drawable.setBounds(i7 - rect.left, i10 - rect.top, i11 + rect.right, i12 + rect.bottom);
+        } else {
+            drawable.setBounds(i7, i10, i11, i12);
+        }
+    }
+
+    public static void h(NinePatchDrawable ninePatchDrawable, Rect rect) {
+        Rect rect2 = a;
+        if (ninePatchDrawable.getPadding(rect2)) {
+            ninePatchDrawable.setBounds(rect.left - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
+        } else {
+            ninePatchDrawable.setBounds(rect);
+        }
     }
 }

@@ -6,7 +6,7 @@ import android.text.TextPaint;
 import android.text.style.CharacterStyle;
 import android.text.style.UpdateAppearance;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e2 extends CharacterStyle implements UpdateAppearance {
     public final long a;
@@ -27,7 +27,7 @@ public final class e2 extends CharacterStyle implements UpdateAppearance {
         textPaint.setColor(i0.a.f(h2.b(Math.max(0.0f, Math.min(1.0f, (uptimeMillis - this.a) / 750.0f))), this.c, this.d));
         if (this.b > 0) {
             float max = 1.0f - Math.max(0.0f, Math.min(1.0f, (uptimeMillis - r5) / 220.0f));
-            textPaint.setAlpha((int) (Color.alpha(r2) * org.telegram.ui.Cells.y0.x(max, max, max, 1.0f)));
+            textPaint.setAlpha((int) (Color.alpha(r2) * org.telegram.ui.Cells.c0.z(max, max, max, 1.0f)));
         }
     }
 }

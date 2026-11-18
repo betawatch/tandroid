@@ -2,11 +2,10 @@ package com.google.android.gms.common.api;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import java.util.Arrays;
-import org.telegram.ui.Cells.y0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends r6.a {
     public static final Parcelable.Creator<g> CREATOR = u.b;
@@ -31,7 +30,7 @@ public final class g extends r6.a {
             return false;
         }
         g gVar = (g) obj;
-        return q6.m.k(this.a, gVar.a) && this.c == gVar.c && this.b == gVar.b;
+        return q6.m.l(this.a, gVar.a) && this.c == gVar.c && this.b == gVar.b;
     }
 
     public final int hashCode() {
@@ -40,7 +39,7 @@ public final class g extends r6.a {
 
     public final String toString() {
         String valueOf = String.valueOf(this.a);
-        return y0.m("ApiMetadata(complianceOptions=", valueOf, ")", new StringBuilder(valueOf.length() + 31));
+        return p5.c.m("ApiMetadata(complianceOptions=", valueOf, ")", new StringBuilder(valueOf.length() + 31));
     }
 
     @Override // android.os.Parcelable
@@ -51,10 +50,10 @@ public final class g extends r6.a {
             return;
         }
         parcel.writeInt(-204102970);
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 1, this.a, i7);
-        yb.q(parcel, 2, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 1, this.a, i7);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.b ? 1 : 0);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

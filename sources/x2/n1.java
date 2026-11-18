@@ -1,141 +1,93 @@
 package x2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import a8.la;
+import android.net.Uri;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class n1 implements d0, c0 {
-    public final d0 a;
-    public final long b;
-    public c0 c;
+public final class n1 extends a {
+    public final j2.m h;
+    public final j2.g i;
+    public final e2.u j;
+    public final qb.a l;
+    public final j1 n;
+    public final e2.l0 o;
+    public j2.c0 p;
+    public final long k = -9223372036854775807L;
+    public final boolean m = true;
 
-    public n1(d0 d0Var, long j3) {
-        this.a = d0Var;
-        this.b = j3;
-    }
-
-    @Override // x2.d0
-    public final long b(a3.u[] uVarArr, boolean[] zArr, b1[] b1VarArr, boolean[] zArr2, long j3) {
-        b1[] b1VarArr2 = new b1[b1VarArr.length];
-        int i7 = 0;
-        while (true) {
-            b1 b1Var = null;
-            if (i7 >= b1VarArr.length) {
-                break;
-            }
-            m1 m1Var = (m1) b1VarArr[i7];
-            if (m1Var != null) {
-                b1Var = m1Var.a;
-            }
-            b1VarArr2[i7] = b1Var;
-            i7++;
+    public n1(e2.k0 k0Var, wf.b bVar, qb.a aVar) {
+        e2.g0 g0Var;
+        this.i = bVar;
+        this.l = aVar;
+        boolean z10 = true;
+        e2.z zVar = new e2.z();
+        e2.c0 c0Var = new e2.c0();
+        List list = Collections.EMPTY_LIST;
+        h9.t1 t1Var = h9.t1.e;
+        e2.e0 e0Var = new e2.e0();
+        e2.h0 h0Var = e2.h0.d;
+        Uri uri = Uri.EMPTY;
+        String uri2 = k0Var.a.toString();
+        uri2.getClass();
+        h9.i0 q10 = h9.i0.q(h9.i0.u(k0Var));
+        if (c0Var.b != null && c0Var.a == null) {
+            z10 = false;
         }
-        d0 d0Var = this.a;
-        long j10 = this.b;
-        long b10 = d0Var.b(uVarArr, zArr, b1VarArr2, zArr2, j3 - j10);
-        for (int i10 = 0; i10 < b1VarArr.length; i10++) {
-            b1 b1Var2 = b1VarArr2[i10];
-            if (b1Var2 == null) {
-                b1VarArr[i10] = null;
-            } else {
-                b1 b1Var3 = b1VarArr[i10];
-                if (b1Var3 == null || ((m1) b1Var3).a != b1Var2) {
-                    b1VarArr[i10] = new m1(b1Var2, j10);
-                }
-            }
+        la.p(z10);
+        if (uri != null) {
+            g0Var = new e2.g0(uri, null, c0Var.a != null ? new e2.d0(c0Var) : null, null, list, null, q10, -9223372036854775807L);
+        } else {
+            g0Var = null;
         }
-        return b10 + j10;
+        e2.l0 l0Var = new e2.l0(uri2, new e2.b0(zVar), g0Var, new e2.f0(e0Var), e2.o0.L, h0Var);
+        this.o = l0Var;
+        e2.t tVar = new e2.t();
+        String str = k0Var.b;
+        tVar.r = e2.s0.n(str == null ? "text/x-unknown" : str);
+        tVar.d = k0Var.c;
+        tVar.e = k0Var.d;
+        tVar.f = k0Var.e;
+        tVar.b = k0Var.f;
+        String str2 = k0Var.g;
+        tVar.a = str2 != null ? str2 : null;
+        this.j = new e2.u(tVar);
+        Map map = Collections.EMPTY_MAP;
+        Uri uri3 = k0Var.a;
+        la.k(uri3, "The uri must be set.");
+        this.h = new j2.m(uri3, 1, null, map, 0L, -1L, null, 1);
+        this.n = new j1(-9223372036854775807L, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, 0L, 0L, true, false, false, null, l0Var, null);
     }
 
-    @Override // x2.d1
-    public final boolean c(l2.s0 s0Var) {
-        l2.r0 r0Var = new l2.r0();
-        long j3 = s0Var.a;
-        r0Var.b = s0Var.b;
-        r0Var.c = s0Var.c;
-        r0Var.a = j3 - this.b;
-        return this.a.c(new l2.s0(r0Var));
+    @Override // x2.a
+    public final e0 c(g0 g0Var, h6.m mVar, long j3) {
+        return new m1(this.h, this.i, this.p, this.j, this.k, this.l, b(g0Var), this.m, null);
     }
 
-    @Override // x2.d1
-    public final long e() {
-        long e10 = this.a.e();
-        if (e10 == Long.MIN_VALUE) {
-            return Long.MIN_VALUE;
-        }
-        return e10 + this.b;
+    @Override // x2.a
+    public final e2.l0 i() {
+        return this.o;
     }
 
-    @Override // x2.c1
-    public final void f0(d1 d1Var) {
-        c0 c0Var = this.c;
-        c0Var.getClass();
-        c0Var.f0(this);
+    @Override // x2.a
+    public final void m(j2.c0 c0Var) {
+        this.p = c0Var;
+        n(this.n);
     }
 
-    @Override // x2.d1
-    public final boolean g() {
-        return this.a.g();
+    @Override // x2.a
+    public final void o(e0 e0Var) {
+        ((m1) e0Var).r.e(null);
     }
 
-    @Override // x2.d0
-    public final long h(long j3, l2.p1 p1Var) {
-        long j10 = this.b;
-        return this.a.h(j3 - j10, p1Var) + j10;
+    @Override // x2.a
+    public final void k() {
     }
 
-    @Override // x2.d0
-    public final void i() {
-        this.a.i();
-    }
-
-    @Override // x2.d0
-    public final long j(long j3) {
-        long j10 = this.b;
-        return this.a.j(j3 - j10) + j10;
-    }
-
-    @Override // x2.c0
-    public final void k(d0 d0Var) {
-        c0 c0Var = this.c;
-        c0Var.getClass();
-        c0Var.k(this);
-    }
-
-    @Override // x2.d0
-    public final void l(long j3) {
-        this.a.l(j3 - this.b);
-    }
-
-    @Override // x2.d0
-    public final long o() {
-        long o4 = this.a.o();
-        if (o4 == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        return o4 + this.b;
-    }
-
-    @Override // x2.d0
-    public final q1 p() {
-        return this.a.p();
-    }
-
-    @Override // x2.d1
-    public final long s() {
-        long s5 = this.a.s();
-        if (s5 == Long.MIN_VALUE) {
-            return Long.MIN_VALUE;
-        }
-        return s5 + this.b;
-    }
-
-    @Override // x2.d0
-    public final void t(c0 c0Var, long j3) {
-        this.c = c0Var;
-        this.a.t(this, j3 - this.b);
-    }
-
-    @Override // x2.d1
-    public final void u(long j3) {
-        this.a.u(j3 - this.b);
+    @Override // x2.a
+    public final void q() {
     }
 }

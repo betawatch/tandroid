@@ -6,7 +6,7 @@ import c8.sf;
 import c8.uf;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class ab extends com.google.android.gms.common.api.q {
     public final /* synthetic */ int b;
@@ -33,8 +33,8 @@ public final class ab extends com.google.android.gms.common.api.q {
                 ((w7.o) obj).getClass();
                 qb.a aVar = new qb.a(27);
                 m5.a aVar2 = m5.a.e;
-                o5.t.b(b10);
-                o5.t.a().c(aVar2);
+                o5.s.b(b10);
+                o5.s.a().c(aVar2);
                 m5.a.d.contains(new l5.c("json"));
                 arrayList.add(aVar);
                 return new w7.p(c12.b(), (pb.k) c12.a(pb.k.class));

@@ -1,6 +1,6 @@
 package t2;
 
-import a8.ja;
+import a8.la;
 import android.graphics.Bitmap;
 import android.os.Trace;
 import androidx.emoji2.text.n;
@@ -10,9 +10,9 @@ import java.util.ArrayDeque;
 import k2.h;
 import l2.h0;
 import l2.o0;
-import x2.f0;
+import x2.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends l2.b {
     public final n J;
@@ -53,7 +53,7 @@ public final class f extends l2.b {
     @Override // l2.b
     public final int C(u uVar) {
         this.J.getClass();
-        return n.d(uVar);
+        return n.f(uVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:68:0x0161, code lost:
@@ -74,7 +74,7 @@ public final class f extends l2.b {
                 a aVar = (a) this.U.c();
                 if (aVar != null) {
                     if (!aVar.isEndOfStream()) {
-                        ja.k(aVar.a, "Non-EOS buffer came back from the decoder without bitmap.");
+                        la.k(aVar.a, "Non-EOS buffer came back from the decoder without bitmap.");
                         this.Y = aVar.a;
                         aVar.release();
                     } else {
@@ -203,7 +203,7 @@ public final class f extends l2.b {
         h hVar2;
         if (!this.Z || this.a0 == null) {
             k8.a aVar = this.c;
-            aVar.x0();
+            aVar.g0();
             b bVar = this.U;
             if (bVar != null && this.R != 3 && !this.M) {
                 if (this.V == null) {
@@ -319,8 +319,8 @@ public final class f extends l2.b {
             uVar.getClass();
             n nVar = this.J;
             nVar.getClass();
-            int d = n.d(uVar);
-            if (d != i5.c.a(4, 0, 0, 0) && d != i5.c.a(3, 0, 0, 0)) {
+            int f10 = n.f(uVar);
+            if (f10 != i5.c.a(4, 0, 0, 0) && f10 != i5.c.a(3, 0, 0, 0)) {
                 throw d(new c("Provided decoder factory can't create decoder for format."), this.T, false, 4005);
             }
             b bVar = this.U;
@@ -428,7 +428,7 @@ public final class f extends l2.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(u[] uVarArr, long j3, long j10, f0 f0Var) {
+    public final void u(u[] uVarArr, long j3, long j10, g0 g0Var) {
         if (this.O.b != -9223372036854775807L) {
             ArrayDeque arrayDeque = this.L;
             if (arrayDeque.isEmpty()) {
@@ -452,13 +452,13 @@ public final class f extends l2.b {
         }
         if (this.T == null) {
             k8.a aVar = this.c;
-            aVar.x0();
+            aVar.g0();
             h hVar = this.K;
             hVar.clear();
             int w10 = w(aVar, hVar, 2);
             if (w10 != -5) {
                 if (w10 == -4) {
-                    ja.p(hVar.isEndOfStream());
+                    la.p(hVar.isEndOfStream());
                     this.M = true;
                     this.N = true;
                     return;

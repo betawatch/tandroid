@@ -1,44 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class mh implements org.telegram.ui.Components.c8 {
-    public final /* synthetic */ an a;
+public final class mh extends org.telegram.ui.Components.bv {
+    public final /* synthetic */ nh R1;
 
-    public mh(an anVar) {
-        this.a = anVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mh(nh nhVar, org.telegram.ui.ActionBar.h2 h2Var, Activity activity, org.telegram.ui.ActionBar.i6 i6Var, ArrayList arrayList) {
+        super(h2Var, activity, i6Var, arrayList);
+        this.R1 = nhVar;
     }
 
-    @Override // org.telegram.ui.Components.c8
-    public final void R0(int i7, int i10) {
-        an anVar = this.a;
-        anVar.getMessagesController().J4(i7, anVar.k6);
-        if (anVar.r8 == null && anVar.q8 == null) {
-            return;
-        }
-        anVar.h8();
-        UndoView undoView = anVar.N3;
-        if (undoView == null) {
-            return;
-        }
-        long j3 = anVar.k6;
-        TLRPC.User user = anVar.f;
-        TLRPC.UserFull userFull = anVar.r8;
-        undoView.k(j3, i10, user, Integer.valueOf(userFull != null ? userFull.ttl_period : anVar.q8.ttl_period), null, null);
-    }
-
-    @Override // org.telegram.ui.Components.c8
+    @Override // org.telegram.ui.Components.bv, org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
-        org.telegram.ui.ActionBar.g1 g1Var = this.a.f9;
-        if (g1Var != null) {
-            g1Var.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.c8
-    public final /* synthetic */ void g1() {
+        super.dismiss();
+        bn bnVar = this.R1.p;
+        bnVar.getClass();
+        bnVar.x8(false, true, 0.0f);
     }
 }

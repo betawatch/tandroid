@@ -1,21 +1,27 @@
 package c8;
 
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class w9 {
-    public static Object a(Bundle bundle) {
-        if (Build.VERSION.SDK_INT >= 34) {
-            return ai.d.f(bundle);
+    public final /* synthetic */ int a = 1;
+
+    public int hashCode() {
+        switch (this.a) {
+            case 1:
+                return toString().hashCode();
+            default:
+                return super.hashCode();
         }
-        Parcelable parcelable = bundle.getParcelable("RESULT_DATA");
-        if (Intent.class.isInstance(parcelable)) {
-            return parcelable;
+    }
+
+    public String toString() {
+        switch (this.a) {
+            case 1:
+                String b10 = kotlin.jvm.internal.s.a(getClass()).b();
+                kotlin.jvm.internal.j.b(b10);
+                return b10;
+            default:
+                return super.toString();
         }
-        return null;
     }
 }

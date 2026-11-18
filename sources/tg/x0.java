@@ -3,9 +3,9 @@ package tg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class x0 extends View {
     public int a;
@@ -17,7 +17,7 @@ public final class x0 extends View {
         super(context);
         this.c = y0Var;
         setPadding(org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f));
-        setLayoutParams(new v4.p0(-2, 0));
+        setLayoutParams(new v4.q0(-2, 0));
     }
 
     @Override // android.view.View
@@ -34,7 +34,7 @@ public final class x0 extends View {
         y0.A1(width, height, min, this.a, canvas);
         if (this.b != 0.0f) {
             y0Var.g3.setColor(this.a);
-            y0Var.g3.setAlpha(ns.e4);
+            y0Var.g3.setAlpha(ks.e4);
             canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - org.telegram.messenger.g0.L(2.0f), y0Var.g3);
         }
     }

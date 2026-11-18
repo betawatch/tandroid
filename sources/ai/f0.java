@@ -1,13 +1,13 @@
 package ai;
 
-import bi.v3;
+import bi.d6;
 import java.util.HashMap;
-import org.telegram.messenger.fp;
-import org.telegram.messenger.np;
-import org.telegram.ui.Components.p41;
-import org.telegram.ui.qn;
+import org.telegram.messenger.ep;
+import org.telegram.messenger.mp;
+import org.telegram.ui.Components.z41;
+import org.telegram.ui.rn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements Runnable {
     public final /* synthetic */ int a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class f0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        p41 p41Var;
+        z41 z41Var;
         switch (this.a) {
             case 0:
                 n0 n0Var = (n0) this.d;
@@ -34,32 +34,32 @@ public final /* synthetic */ class f0 implements Runnable {
                 n0Var.e(j3, Math.max(120L, j10 - j3));
                 break;
             case 1:
-                np npVar = (np) this.d;
+                mp mpVar = (mp) this.d;
                 long j11 = this.b;
                 long j12 = this.c;
-                a0.h hVar = npVar.R1;
-                HashMap hashMap = npVar.T1;
+                a0.h hVar = mpVar.T1;
+                HashMap hashMap = mpVar.V1;
                 if (j11 == 0) {
-                    fp fpVar = (fp) hVar.f(j12);
-                    if (fpVar != null) {
-                        npVar.R(fpVar);
-                        npVar.Q1.remove(fpVar);
+                    ep epVar = (ep) hVar.f(j12);
+                    if (epVar != null) {
+                        mpVar.R(epVar);
+                        mpVar.S1.remove(epVar);
                         hVar.l(j12);
                         break;
                     }
                 } else {
                     String str = j12 + "_" + j11;
-                    fp fpVar2 = (fp) hashMap.get(str);
-                    if (fpVar2 != null) {
-                        npVar.R(fpVar2);
-                        npVar.S1.remove(fpVar2);
+                    ep epVar2 = (ep) hashMap.get(str);
+                    if (epVar2 != null) {
+                        mpVar.R(epVar2);
+                        mpVar.U1.remove(epVar2);
                         hashMap.remove(str);
                         break;
                     }
                 }
                 break;
             case 2:
-                qn.b0((qn) this.d, this.b, this.c);
+                rn.b0((rn) this.d, this.b, this.c);
                 break;
             case 3:
                 org.telegram.ui.web.n1 n1Var = (org.telegram.ui.web.n1) this.d;
@@ -67,9 +67,9 @@ public final /* synthetic */ class f0 implements Runnable {
                 long j14 = this.c;
                 n1Var.h = j13;
                 n1Var.n = j14;
-                v3 v3Var = n1Var.a;
-                if (v3Var != null && (p41Var = v3Var.g3) != null && v3Var.H) {
-                    p41Var.O(true);
+                d6 d6Var = n1Var.a;
+                if (d6Var != null && (z41Var = d6Var.g3) != null && d6Var.H) {
+                    z41Var.O(true);
                     break;
                 }
                 break;
@@ -101,12 +101,12 @@ public final /* synthetic */ class f0 implements Runnable {
                         if (i7 != 9) {
                             if (!jVar2.v) {
                                 if (i7 == 4) {
-                                    yi.i iVar = jVar2.z;
-                                    if (iVar != null) {
+                                    yi.h hVar2 = jVar2.z;
+                                    if (hVar2 != null) {
                                         long j20 = jVar2.j();
                                         jVar2.r = 0L;
                                         jVar2.s = j20;
-                                        jVar2.j.execute(new org.telegram.utils.recorder.audio.c(1, jVar2, iVar));
+                                        jVar2.j.execute(new org.telegram.utils.recorder.audio.c(1, jVar2, hVar2));
                                         break;
                                     } else {
                                         jVar2.g(new IllegalStateException("Output generation is missing"));

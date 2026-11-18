@@ -3,7 +3,7 @@ package tc;
 import a8.p0;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class g extends Exception {
     public final String a;
@@ -16,7 +16,7 @@ public abstract class g extends Exception {
     @Override // java.lang.Throwable
     public final String toString() {
         String str = this.a;
-        return p0.s(new StringBuilder(), super.toString(), str != null ? r.b.k("; request-id: ", str) : "");
+        return p0.s(new StringBuilder(), super.toString(), str != null ? p5.c.k("; request-id: ", str) : "");
     }
 
     public g(String str, String str2, IOException iOException) {

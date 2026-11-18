@@ -1,39 +1,49 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class za1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UserInfoActivity b;
+import android.widget.TextView;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-    public /* synthetic */ za1(UserInfoActivity userInfoActivity, int i7) {
-        this.a = i7;
-        this.b = userInfoActivity;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class za1 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ bb1 a;
+
+    public za1(bb1 bb1Var) {
+        this.a = bb1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.presentFragment(new PrivacyControlActivity(9, true));
-                break;
-            case 1:
-                bi.v3 v3Var = this.b.y;
-                if (v3Var != null) {
-                    v3Var.g3.O(true);
-                    break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i7) {
+        org.telegram.ui.ActionBar.s4 s4Var;
+        bb1 bb1Var = this.a;
+        if (i7 == -1) {
+            if (bb1Var.H >= 0) {
+                s4Var = ((org.telegram.ui.ActionBar.h2) bb1Var).parentLayout;
+                if (s4Var.getFragmentStack().size() == 1) {
+                    bb1Var.N0();
+                    return;
                 }
-                break;
-            case 2:
-                UserInfoActivity userInfoActivity = this.b;
-                userInfoActivity.getClass();
-                userInfoActivity.presentFragment(new PrivacyControlActivity(11, false));
-                break;
-            default:
-                UserInfoActivity userInfoActivity2 = this.b;
-                userInfoActivity2.getClass();
-                userInfoActivity2.presentFragment(new PremiumPreviewFragment(0, "add_account"));
-                break;
+            }
+            bb1Var.finishFragment();
+            return;
+        }
+        if (i7 == 1) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(bb1Var.getParentActivity());
+            TL_account.Password password = bb1Var.V;
+            String M0 = (password == null || !password.has_password) ? org.telegram.messenger.gd.M0(2131752567, null) : org.telegram.messenger.gd.M0(2131752575, null);
+            String M02 = org.telegram.messenger.gd.M0(2131752574, null);
+            String M03 = org.telegram.messenger.gd.M0(2131754950, null);
+            org.telegram.ui.ActionBar.u1 u1Var = alertDialog$Builder.a;
+            u1Var.U = M0;
+            u1Var.S = M02;
+            alertDialog$Builder.k(M03, new qi0(this, 22));
+            alertDialog$Builder.h(org.telegram.messenger.gd.M0(2131752578, null), null);
+            bb1Var.showDialog(u1Var);
+            TextView textView = (TextView) u1Var.d(-1);
+            if (textView != null) {
+                org.telegram.ui.ActionBar.u6.U(textView, org.telegram.ui.ActionBar.n6.q7, null);
+            }
         }
     }
 }

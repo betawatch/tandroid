@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class i {
     public final ab.q a;
@@ -28,7 +28,7 @@ public abstract class i {
     }
 
     public final Task a(final Executor executor, final Callable callable, final CancellationToken cancellationToken) {
-        q6.m.j(this.b.get() > 0);
+        q6.m.k(this.b.get() > 0);
         if (cancellationToken.isCancellationRequested()) {
             return Tasks.forCanceled();
         }
@@ -98,7 +98,7 @@ public abstract class i {
     public abstract void c();
 
     public final void d(Executor executor) {
-        q6.m.j(this.b.get() > 0);
+        q6.m.k(this.b.get() > 0);
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         this.a.E(new l(2, this, taskCompletionSource), executor);
         taskCompletionSource.getTask();

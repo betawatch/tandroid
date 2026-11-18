@@ -11,32 +11,33 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import c8.i9;
-import c8.kd;
-import fi.w2;
+import c8.l9;
+import c8.nd;
+import fi.u2;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.ff;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.mt0;
-import org.telegram.ui.Components.um0;
-import org.telegram.ui.g71;
+import org.telegram.ui.Components.cn0;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.Components.of;
+import org.telegram.ui.Components.ut0;
+import org.telegram.ui.Components.x51;
+import org.telegram.ui.k71;
 import tg.x1;
 import ug.x;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class h {
-    public static final mt0 Q = new mt0(new x(21), new x(22));
-    public static final mt0 R = new mt0(new x(23), new x(24));
+    public static final ut0 Q = new ut0(new x(22), new x(23));
+    public static final ut0 R = new ut0(new x(24), new x(25));
     public float B;
     public float C;
     public r1.g D;
     public r1.g E;
-    public um0 G;
+    public cn0 G;
     public boolean H;
     public float I;
     public float J;
@@ -55,9 +56,9 @@ public final class h {
     public ImageView l;
     public d m;
     public ImageView n;
-    public w2 o;
+    public u2 o;
     public ScaleGestureDetector p;
-    public ff q;
+    public of q;
     public boolean r;
     public boolean s;
     public View t;
@@ -69,7 +70,7 @@ public final class h {
     public final WindowManager.LayoutParams e = new WindowManager.LayoutParams();
     public float z = 1.0f;
     public float A = 1.4f;
-    public final m51 F = new m51(false);
+    public final x51 F = new x51(false);
     public final float[] M = new float[2];
     public final b N = new b(this, 1);
     public final e O = new e(this, 0);
@@ -82,7 +83,7 @@ public final class h {
     }
 
     public static float e(float f10, float f11) {
-        return i9.a(f10, m(), (g0.q.y - f11) - m());
+        return l9.a(f10, m(), (g0.q.y - f11) - m());
     }
 
     public static int i(float f10) {
@@ -92,11 +93,11 @@ public final class h {
 
     public static void j(RectF rectF, int i7, int i10) {
         float f10 = (i7 <= 0 || i10 <= 0) ? 0.5625f : i10 / i7;
-        u7.i b10 = u7.i.b();
-        float f11 = ((SharedPreferences) b10.a).getFloat("scale_factor", 1.0f);
+        hn m10 = hn.m();
+        float f11 = ((SharedPreferences) m10.b).getFloat("scale_factor", 1.0f);
         float i11 = i(f10) * f11;
         float i12 = ((int) (i(f10) * f10)) * f11;
-        SharedPreferences sharedPreferences = (SharedPreferences) b10.a;
+        SharedPreferences sharedPreferences = (SharedPreferences) m10.b;
         float f12 = sharedPreferences.getFloat("x", -1.0f);
         float f13 = sharedPreferences.getFloat("y", -1.0f);
         float n10 = f12 != -1.0f ? n(f12, i11) : (g0.q.x - i11) - m();
@@ -118,7 +119,7 @@ public final class h {
         if (this.g) {
             return;
         }
-        boolean z10 = this.b.p() && kd.a(this.c);
+        boolean z10 = this.b.p() && nd.a(this.c);
         this.f = z10;
         WindowManager windowManager = (WindowManager) (z10 ? t0.b : this.c).getSystemService("window");
         this.d = windowManager;
@@ -138,7 +139,7 @@ public final class h {
         layoutParams.x = (int) this.B;
         layoutParams.y = (int) this.C;
         try {
-            g0.x3(windowManager, this.h, layoutParams);
+            g0.w3(windowManager, this.h, layoutParams);
             this.d.addView(this.h, this.e);
             this.g = true;
             l2.i.g("floating window added, overlay=" + this.f);
@@ -153,7 +154,7 @@ public final class h {
 
     public final boolean c() {
         l lVar = this.b;
-        if (lVar.t0()) {
+        if (lVar.o0()) {
             return lVar.l() != -9223372036854775807L && lVar.getDuration() >= 15000;
         }
         return false;
@@ -173,25 +174,25 @@ public final class h {
         this.L = false;
         this.r = false;
         this.t = null;
-        this.b.G();
+        this.b.H();
     }
 
-    public final void f(vg.o oVar) {
+    public final void f(v4.p pVar) {
         l();
-        o oVar2 = this.j;
+        o oVar = this.j;
         this.j = null;
-        if (oVar2 != null) {
-            g0.E2(oVar2);
+        if (oVar != null) {
+            g0.E2(oVar);
         }
         View view = this.k;
         if (view != null) {
             g0.E2(view);
             this.k = null;
         }
-        oVar.run();
-        if (oVar2 != null) {
-            SurfaceTexture surfaceTexture = oVar2.a;
-            oVar2.a = null;
+        pVar.run();
+        if (oVar != null) {
+            SurfaceTexture surfaceTexture = oVar.a;
+            oVar.a = null;
             if (surfaceTexture != null) {
                 surfaceTexture.release();
             }
@@ -213,9 +214,9 @@ public final class h {
 
     public final int h() {
         l lVar = this.b;
-        int L = lVar.L();
-        int b02 = lVar.b0();
-        return i((L <= 0 || b02 <= 0) ? 0.5625f : b02 / L);
+        int J = lVar.J();
+        int a02 = lVar.a0();
+        return i((J <= 0 || a02 <= 0) ? 0.5625f : a02 / J);
     }
 
     public final void k() {
@@ -243,9 +244,9 @@ public final class h {
         }
         ValueAnimator duration = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f).setDuration(200L);
         this.v = duration;
-        duration.setInterpolator(er.f);
+        duration.setInterpolator(lr.f);
         this.v.addUpdateListener(new x1(this, 7));
-        this.v.addListener(new g71(this, 25));
+        this.v.addListener(new k71(this, 25));
         this.v.start();
     }
 
@@ -257,7 +258,7 @@ public final class h {
         g0.r(eVar);
         if (this.b.h()) {
             this.n.setImageResource(R.drawable.pip_pause_large);
-            g0.i3(eVar, 500L);
+            g0.h3(eVar, 500L);
         } else if (this.H) {
             this.n.setImageResource(R.drawable.pip_replay_large);
         } else {
@@ -274,7 +275,7 @@ public final class h {
         if (duration > 0) {
             this.I = lVar.l() / duration;
         }
-        this.J = Math.max(this.J, lVar.c0());
+        this.J = Math.max(this.J, lVar.b0());
         this.o.invalidate();
     }
 

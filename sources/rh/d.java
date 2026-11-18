@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.PathInterpolator;
 import android.widget.FrameLayout;
-import c8.zc;
+import c8.dd;
 import com.google.android.gms.common.api.q;
 import java.util.Iterator;
 import java.util.List;
@@ -16,13 +16,13 @@ import java.util.WeakHashMap;
 import jh.k;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import r0.k1;
+import r0.l1;
 import r0.p0;
 import r0.q0;
 import r0.t0;
 import r0.v0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class d extends q {
     public static final RectF e;
@@ -52,8 +52,8 @@ public final class d extends q {
         }
     }
 
-    public static k1 e1(k1 k1Var, View view, View view2) {
-        if (view == null || view2 == null || k1Var == null) {
+    public static l1 e1(l1 l1Var, View view, View view2) {
+        if (view == null || view2 == null || l1Var == null) {
             return null;
         }
         RectF rectF = e;
@@ -67,9 +67,9 @@ public final class d extends q {
         int width = view2.getWidth() - rect.right;
         int height = view2.getHeight() - rect.bottom;
         if (i7 == 0 && i10 == 0 && width == 0 && height == 0) {
-            return k1Var;
+            return l1Var;
         }
-        return k1Var.a.m(Math.max(0, i7), Math.max(0, i10), Math.max(0, width), Math.max(0, height));
+        return l1Var.a.m(Math.max(0, i7), Math.max(0, i10), Math.max(0, width), Math.max(0, height));
     }
 
     @Override // com.google.android.gms.common.api.q
@@ -79,28 +79,28 @@ public final class d extends q {
         if (i7 == 0) {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((c) it.next()).Q();
+                ((c) it.next()).O();
             }
         }
     }
 
     @Override // com.google.android.gms.common.api.q
-    public final k1 W0(k1 k1Var, List list) {
+    public final l1 W0(l1 l1Var, List list) {
         Iterator it = list.iterator();
         int i7 = 0;
         while (it.hasNext()) {
             i7 |= ((v0) it.next()).a.c();
         }
-        if (zc.a(i7, 8)) {
+        if (dd.a(i7, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 c cVar = (c) it2.next();
-                k1 e12 = e1(k1Var, cVar.S(), this.b);
+                l1 e12 = e1(l1Var, cVar.S(), this.b);
                 if (e12 != null) {
                     cVar.m(e12);
                 }
             }
         }
-        return k1Var;
+        return l1Var;
     }
 }

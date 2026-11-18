@@ -15,7 +15,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final float[][] a = {new float[]{0.401288f, 0.650173f, -0.051461f}, new float[]{-0.250268f, 1.204414f, 0.045854f}, new float[]{-0.002079f, 0.048952f, 0.953127f}};
@@ -36,7 +36,7 @@ public abstract class b {
                 return new xa(obj, obj, typedValue.data, 9);
             }
             try {
-                xaVar = xa.f(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
+                xaVar = xa.g(typedArray.getResources(), typedArray.getResourceId(i7, 0), theme);
             } catch (Exception e10) {
                 Log.e("ComplexColorCompat", "Failed to inflate ComplexColor.", e10);
                 xaVar = null;

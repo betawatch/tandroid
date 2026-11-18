@@ -1,27 +1,32 @@
 package ki;
 
-import android.content.Context;
-import c8.ja;
-import org.telegram.messenger.hd;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.z70;
+import org.telegram.messenger.i9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class m3 extends n4 {
-    public final z70 r;
+public final /* synthetic */ class m3 implements org.telegram.ui.ActionBar.r1, r3, i9 {
+    public final /* synthetic */ t3 a;
 
-    public m3(Context context, e6 e6Var) {
-        super(context, e6Var);
-        z70 z70Var = new z70(context, e6Var);
-        this.r = z70Var;
-        z70Var.setTextSize(1, 14.0f);
-        q6.U(z70Var, j6.z6, e6Var);
-        q6.G(z70Var, j6.L6, e6Var);
-        z70Var.setPadding(org.telegram.messenger.g0.L(4.0f), 0, org.telegram.messenger.g0.L(4.0f), 0);
-        addView(z70Var, ja.d(-2, -2.0f, (hd.a0 ? 3 : 5) | 48, 10.0f, 14.0f, 10.0f, 0.0f));
+    public /* synthetic */ m3(t3 t3Var) {
+        this.a = t3Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        this.a.b.dismiss();
+    }
+
+    @Override // org.telegram.messenger.i9
+    public Object m(Object obj) {
+        return Boolean.valueOf(this.a.b.p3.getKeyboardHeight() >= org.telegram.messenger.g0.L(20.0f));
+    }
+
+    @Override // ki.r3
+    public void s(boolean z10) {
+        t3 t3Var = this.a;
+        if (t3Var.P()) {
+            return;
+        }
+        t3Var.K.e(0.0f);
     }
 }

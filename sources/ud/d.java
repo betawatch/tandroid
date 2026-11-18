@@ -1,9 +1,9 @@
 package ud;
 
-import c8.s9;
+import c8.u9;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class d implements Iterable {
     public final int a;
@@ -18,7 +18,7 @@ public class d implements Iterable {
             throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
         this.a = i7;
-        this.b = s9.a(i7, i10, i11);
+        this.b = u9.a(i7, i10, i11);
         this.c = i11;
     }
 

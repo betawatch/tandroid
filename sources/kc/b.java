@@ -2,13 +2,12 @@ package kc;
 
 import i5.c;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b extends a {
-    public static final /* synthetic */ ff n;
-    public static final /* synthetic */ ff r;
+    public static final /* synthetic */ ze.b n;
+    public static final /* synthetic */ ze.b r;
 
     static {
         ze.a aVar = new ze.a(b.class, "ESDescriptorBox.java");
@@ -19,7 +18,7 @@ public final class b extends a {
     }
 
     public final boolean equals(Object obj) {
-        c.u(ze.a.c(n, this, this, obj));
+        c.w(ze.a.c(n, this, this, obj));
         if (this == obj) {
             return true;
         }
@@ -32,7 +31,7 @@ public final class b extends a {
     }
 
     public final int hashCode() {
-        c.u(ze.a.b(r, this, this));
+        c.w(ze.a.b(r, this, this));
         ByteBuffer byteBuffer = this.e;
         if (byteBuffer != null) {
             return byteBuffer.hashCode();

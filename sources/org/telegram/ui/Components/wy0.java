@@ -1,74 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.style.ReplacementSpan;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class wy0 {
-    public int a;
+public final class wy0 extends ReplacementSpan {
+    public static final /* synthetic */ int f = 0;
+    public ImageReceiver a;
     public int b;
     public int c;
-    public TLRPC.MessageEntity d;
-    public boolean e;
+    public final boolean d;
+    public final int e;
 
-    public wy0() {
+    public wy0(View view, Bitmap bitmap, int i7, int i10, int i11, int i12) {
+        this.b = i7;
+        this.c = i10;
+        ImageReceiver imageReceiver = new ImageReceiver(view);
+        this.a = imageReceiver;
+        imageReceiver.K0 = true;
+        imageReceiver.v0(bitmap);
+        imageReceiver.p1 = new PorterDuffColorFilter(i11, PorterDuff.Mode.SRC_IN);
+        this.e = i12;
+        this.d = true;
     }
 
-    public final void a(TextPaint textPaint) {
-        Typeface typeface;
-        if (this.e) {
-            typeface = (this.a & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/mw_bolditalic.ttf") : org.telegram.messenger.g0.o1("fonts/mw_bold.ttf");
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i7, int i10, float f10, int i11, int i12, int i13, Paint paint) {
+        int i14 = this.b;
+        int i15 = this.c;
+        ImageReceiver imageReceiver = this.a;
+        canvas.save();
+        if (this.d) {
+            imageReceiver.y0((int) f10, i12 - (i15 - this.e), i14, i15);
         } else {
-            int i7 = this.a;
-            if ((i7 & 4) == 0 && (i7 & 2048) == 0) {
-                int i10 = i7 & 1;
-                typeface = (i10 == 0 || (i7 & 2) == 0) ? i10 != 0 ? org.telegram.messenger.g0.o() : (i7 & 2) != 0 ? org.telegram.messenger.g0.o1("fonts/ritalic.ttf") : null : org.telegram.messenger.g0.o1("fonts/rmediumitalic.ttf");
+            imageReceiver.y0((int) f10, i5.c.e(org.telegram.messenger.f3.z(4.0f, i13, i11), i15, 2, i11), i14, i15);
+        }
+        imageReceiver.h(canvas, null);
+        canvas.restore();
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i7, int i10, Paint.FontMetricsInt fontMetricsInt) {
+        int i11 = this.c;
+        if (fontMetricsInt != null) {
+            if (this.d) {
+                int i12 = this.e;
+                int i13 = -(i11 - i12);
+                fontMetricsInt.ascent = i13;
+                fontMetricsInt.top = i13;
+                fontMetricsInt.descent = i12;
+                fontMetricsInt.bottom = i12;
             } else {
-                typeface = Typeface.MONOSPACE;
+                int L = ((-i11) / 2) - org.telegram.messenger.g0.L(4.0f);
+                fontMetricsInt.ascent = L;
+                fontMetricsInt.top = L;
+                int L2 = (i11 - (i11 / 2)) - org.telegram.messenger.g0.L(4.0f);
+                fontMetricsInt.descent = L2;
+                fontMetricsInt.bottom = L2;
             }
         }
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        if ((this.a & 16) != 0) {
-            textPaint.setFlags(textPaint.getFlags() | 8);
-        } else {
-            textPaint.setFlags(textPaint.getFlags() & (-9));
-        }
-        int i11 = this.a;
-        if ((i11 & 8) == 0 && (i11 & TLObject.FLAG_13) == 0) {
-            textPaint.setFlags(textPaint.getFlags() & (-17));
-        } else {
-            textPaint.setFlags(textPaint.getFlags() | 16);
-        }
-        if ((this.a & 512) != 0) {
-            textPaint.bgColor = org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.R9, false);
-        }
-        int i12 = this.a;
-        if ((i12 & TLObject.FLAG_13) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.q7, false));
-        } else if ((i12 & TLObject.FLAG_12) != 0) {
-            textPaint.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Fi, false));
-        }
-    }
-
-    public final void b(wy0 wy0Var) {
-        TLRPC.MessageEntity messageEntity;
-        this.a |= wy0Var.a;
-        if (this.d != null || (messageEntity = wy0Var.d) == null) {
-            return;
-        }
-        this.d = messageEntity;
-    }
-
-    public wy0(wy0 wy0Var) {
-        this.a = wy0Var.a;
-        this.b = wy0Var.b;
-        this.c = wy0Var.c;
-        this.d = wy0Var.d;
-        this.e = wy0Var.e;
+        return this.b;
     }
 }

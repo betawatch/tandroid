@@ -6,7 +6,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class u0 implements SensorEventListener {
     public long a;
@@ -45,9 +45,9 @@ public final class u0 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
         w0 w0Var = this.d;
-        kg.j1 j1Var = w0Var.q;
-        if (j1Var != null) {
-            org.telegram.messenger.g0.r(j1Var);
+        kg.j0 j0Var = w0Var.q;
+        if (j0Var != null) {
+            org.telegram.messenger.g0.r(j0Var);
             w0Var.q = null;
         }
         if (w0Var.l || w0Var.k == null) {
@@ -65,9 +65,9 @@ public final class u0 implements SensorEventListener {
             a();
             return;
         }
-        kg.j1 j1Var2 = new kg.j1(this, 7);
-        w0Var.q = j1Var2;
-        org.telegram.messenger.g0.i3(j1Var2, j3 - currentTimeMillis);
+        kg.j0 j0Var2 = new kg.j0(this, 11);
+        w0Var.q = j0Var2;
+        org.telegram.messenger.g0.h3(j0Var2, j3 - currentTimeMillis);
     }
 
     @Override // android.hardware.SensorEventListener

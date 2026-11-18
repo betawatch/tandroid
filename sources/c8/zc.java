@@ -1,13 +1,80 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.os.Bundle;
+import org.json.JSONObject;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class zc {
-    public static boolean a(int i7, int i10) {
-        return (i7 & i10) != 0;
-    }
-
-    public static int b(int i7, int i10, boolean z10) {
-        return z10 ? i7 | i10 : i7 & (~i10);
+    public static com.google.android.gms.common.api.q a(String str, Bundle data) {
+        kotlin.jvm.internal.j.e(data, "data");
+        try {
+            switch (str.hashCode()) {
+                case -1678407252:
+                    if (str.equals("androidx.credentials.TYPE_DIGITAL_CREDENTIAL")) {
+                        try {
+                            String string = data.getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON");
+                            kotlin.jvm.internal.j.b(string);
+                            v0.l lVar = new v0.l("androidx.credentials.TYPE_DIGITAL_CREDENTIAL", data);
+                            if (string.length() != 0) {
+                                try {
+                                    new JSONObject(string);
+                                    return lVar;
+                                } catch (Exception unused) {
+                                }
+                            }
+                            throw new IllegalArgumentException("credentialJson must not be empty, and must be a valid JSON");
+                        } catch (Exception unused2) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                case -1072734346:
+                    if (str.equals("androidx.credentials.TYPE_RESTORE_CREDENTIAL")) {
+                        String string2 = data.getString("androidx.credentials.BUNDLE_KEY_GET_RESTORE_CREDENTIAL_RESPONSE");
+                        if (string2 == null) {
+                            throw new w0.k("The device does not contain a restore credential.");
+                        }
+                        v0.l lVar2 = new v0.l("androidx.credentials.TYPE_RESTORE_CREDENTIAL", data);
+                        if (string2.length() != 0) {
+                            try {
+                                new JSONObject(string2);
+                                return lVar2;
+                            } catch (Exception unused3) {
+                            }
+                        }
+                        throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
+                    }
+                    throw new z0.a();
+                case -543568185:
+                    if (str.equals("android.credentials.TYPE_PASSWORD_CREDENTIAL")) {
+                        try {
+                            String string3 = data.getString("androidx.credentials.BUNDLE_KEY_ID");
+                            String string4 = data.getString("androidx.credentials.BUNDLE_KEY_PASSWORD");
+                            kotlin.jvm.internal.j.b(string3);
+                            kotlin.jvm.internal.j.b(string4);
+                            return new v0.l(string4, 2, data);
+                        } catch (Exception unused4) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                case -95037569:
+                    if (str.equals("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL")) {
+                        try {
+                            String string5 = data.getString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON");
+                            kotlin.jvm.internal.j.b(string5);
+                            return new v0.l(string5, 3, data);
+                        } catch (Exception unused5) {
+                            throw new z0.a();
+                        }
+                    }
+                    throw new z0.a();
+                default:
+                    throw new z0.a();
+            }
+        } catch (z0.a unused6) {
+            return new v0.l(str, 0, data);
+        }
     }
 }

@@ -3,10 +3,9 @@ package ze;
 import ab.c0;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import org.telegram.ui.Components.ff;
-import ug.l0;
+import ug.n0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -57,16 +56,16 @@ public final class a {
         }
     }
 
-    public static c0 b(ff ffVar, Object obj, Object obj2) {
+    public static c0 b(b bVar, Object obj, Object obj2) {
         boolean z10 = false;
-        return new c0(ffVar, obj, obj2, c, z10, 16);
+        return new c0(bVar, obj, obj2, c, z10, 16);
     }
 
-    public static c0 c(ff ffVar, Object obj, Object obj2, Object obj3) {
-        return new c0(ffVar, obj, obj2, new Object[]{obj3}, false, 16);
+    public static c0 c(b bVar, Object obj, Object obj2, Object obj3) {
+        return new c0(bVar, obj, obj2, new Object[]{obj3}, false, 16);
     }
 
-    public final l0 d(String str, String str2, String str3, String str4, String str5) {
+    public final n0 d(String str, String str2, String str3, String str4, String str5) {
         int parseInt = Integer.parseInt("1", 16);
         ClassLoader classLoader = this.a;
         Class a10 = a(classLoader, str2);
@@ -89,18 +88,18 @@ public final class a {
             clsArr2[i11] = a(classLoader, stringTokenizer3.nextToken());
         }
         Class a11 = a(classLoader, str5);
-        l0 l0Var = new l0(2);
-        l0Var.b = parseInt;
-        l0Var.c = str;
-        l0Var.e = a10;
-        l0Var.g = clsArr;
-        l0Var.h = a11;
-        return l0Var;
+        n0 n0Var = new n0(2);
+        n0Var.b = parseInt;
+        n0Var.c = str;
+        n0Var.e = a10;
+        n0Var.g = clsArr;
+        n0Var.h = a11;
+        return n0Var;
     }
 
-    public final ff e(l0 l0Var) {
-        ff ffVar = new ff(29);
-        ffVar.b = l0Var;
-        return ffVar;
+    public final b e(n0 n0Var) {
+        b bVar = new b();
+        bVar.b = n0Var;
+        return bVar;
     }
 }

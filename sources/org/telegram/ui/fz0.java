@@ -1,66 +1,122 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class fz0 extends Fade {
+public final /* synthetic */ class fz0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fz0(SecretMediaViewer secretMediaViewer, boolean z10, boolean z11, int i7) {
-        super(1);
+    public /* synthetic */ fz0(SecretMediaViewer secretMediaViewer, int i7) {
         this.a = i7;
+        this.b = secretMediaViewer;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        int i10 = 4;
+        SecretMediaViewer secretMediaViewer = this.b;
         switch (i7) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z10;
-                this.c = z11;
-                break;
-        }
-    }
-
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.Y) {
-                    onAppear.addListener(new xx(this, 25));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new ez0(this, 0));
+                secretMediaViewer.J0 = null;
+                secretMediaViewer.l0 = 0;
+                secretMediaViewer.e.setLayerType(0, null);
+                secretMediaViewer.e.setVisibility(4);
+                secretMediaViewer.s = false;
+                secretMediaViewer.M = null;
+                secretMediaViewer.L = false;
+                secretMediaViewer.j();
+                new ArrayList();
+                org.telegram.messenger.g0.h3(new fz0(secretMediaViewer, i10), 50L);
+                break;
+            case 1:
+                ai.k0 k0Var = secretMediaViewer.e;
+                if (k0Var != null) {
+                    k0Var.setLayerType(0, null);
+                    secretMediaViewer.e.setVisibility(4);
+                    secretMediaViewer.l0 = 0;
+                    secretMediaViewer.s = false;
+                    secretMediaViewer.M = null;
+                    secretMediaViewer.L = false;
+                    secretMediaViewer.j();
+                    new ArrayList();
+                    org.telegram.messenger.g0.h3(new fz0(secretMediaViewer, i10), 50L);
+                    secretMediaViewer.e.setScaleX(1.0f);
+                    secretMediaViewer.e.setScaleY(1.0f);
+                    break;
                 }
-                return onAppear;
+                break;
+            case 2:
+                lp0 lp0Var = secretMediaViewer.E;
+                if (lp0Var != null) {
+                    long S = lp0Var.S();
+                    long U = secretMediaViewer.E.U();
+                    if (U == -9223372036854775807L) {
+                        S = 0;
+                        U = 0;
+                    }
+                    if (U > 0) {
+                        org.telegram.ui.Components.h61 h61Var = secretMediaViewer.P;
+                        if (!h61Var.f) {
+                            h61Var.h(false, S / U);
+                            secretMediaViewer.Q.invalidate();
+                        }
+                    }
+                    int[] iArr = secretMediaViewer.i1;
+                    Arrays.fill(iArr, 0);
+                    int[] iArr2 = secretMediaViewer.j1;
+                    Arrays.fill(iArr2, 0);
+                    lp0 lp0Var2 = secretMediaViewer.E;
+                    if (lp0Var2 != null) {
+                        long max = Math.max(0L, lp0Var2.S()) / 1000;
+                        long max2 = Math.max(0L, secretMediaViewer.E.U()) / 1000;
+                        iArr[0] = (int) (max / 60);
+                        iArr[1] = (int) (max % 60);
+                        iArr2[0] = (int) (max2 / 60);
+                        iArr2[1] = (int) (max2 % 60);
+                    }
+                    int i11 = iArr[0];
+                    String format = i11 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i11 / 60), Integer.valueOf(iArr[0] % 60), Integer.valueOf(iArr[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i11), Integer.valueOf(iArr[1]));
+                    int i12 = iArr2[0];
+                    String format2 = i12 >= 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Integer.valueOf(i12 / 60), Integer.valueOf(iArr2[0] % 60), Integer.valueOf(iArr2[1])) : String.format(Locale.ROOT, "%02d:%02d", Integer.valueOf(i12), Integer.valueOf(iArr2[1]));
+                    org.telegram.ui.ActionBar.n5 n5Var = secretMediaViewer.R;
+                    Locale locale = Locale.ROOT;
+                    n5Var.l(format + " / " + format2, false);
+                    if (secretMediaViewer.E.d0()) {
+                        org.telegram.messenger.g0.h3(secretMediaViewer.h1, 17L);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                secretMediaViewer.n(false, true);
+                break;
             default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                org.telegram.messenger.hc hcVar = secretMediaViewer.h0;
+                if (hcVar != null) {
+                    hcVar.a();
+                    secretMediaViewer.h0 = null;
+                }
+                secretMediaViewer.h.w0(null);
+                try {
+                    if (secretMediaViewer.d.getParent() != null) {
+                        ((WindowManager) secretMediaViewer.b.getSystemService("window")).removeView(secretMediaViewer.d);
+                    }
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                }
+                secretMediaViewer.i0 = false;
+                break;
         }
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
-            case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.Y) {
-                    onDisappear.addListener(new xx(this, 26));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new ez0(this, 1));
-                }
-                return onDisappear;
-            default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-        }
+    public /* synthetic */ fz0(SecretMediaViewer secretMediaViewer, wq0 wq0Var, int i7) {
+        this.a = i7;
+        this.b = secretMediaViewer;
     }
 }

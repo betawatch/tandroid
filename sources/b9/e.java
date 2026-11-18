@@ -3,10 +3,10 @@ package b9;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends r6.a {
     public static final Parcelable.Creator<e> CREATOR = new c(1);
@@ -60,14 +60,14 @@ public final class e extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.q(parcel, 3, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.q(parcel, 3, 4);
         parcel.writeInt(this.b);
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(this.c);
-        yb.q(parcel, 5, 4);
+        bc.q(parcel, 5, 4);
         parcel.writeInt(this.d);
-        yb.s(parcel, r10);
+        bc.s(parcel, r10);
     }
 }

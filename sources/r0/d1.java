@@ -4,19 +4,19 @@ import android.view.DisplayCutout;
 import android.view.WindowInsets;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class d1 extends c1 {
-    public d1(k1 k1Var, WindowInsets windowInsets) {
-        super(k1Var, windowInsets);
+    public d1(l1 l1Var, WindowInsets windowInsets) {
+        super(l1Var, windowInsets);
     }
 
-    @Override // r0.h1
-    public k1 a() {
-        return k1.h(null, this.c.consumeDisplayCutout());
+    @Override // r0.i1
+    public l1 a() {
+        return l1.h(null, this.c.consumeDisplayCutout());
     }
 
-    @Override // r0.h1
+    @Override // r0.i1
     public h e() {
         DisplayCutout displayCutout = this.c.getDisplayCutout();
         if (displayCutout == null) {
@@ -25,7 +25,7 @@ public class d1 extends c1 {
         return new h(displayCutout);
     }
 
-    @Override // r0.b1, r0.h1
+    @Override // r0.b1, r0.i1
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -37,7 +37,7 @@ public class d1 extends c1 {
         return Objects.equals(this.c, d1Var.c) && Objects.equals(this.g, d1Var.g) && b1.B(this.h, d1Var.h);
     }
 
-    @Override // r0.h1
+    @Override // r0.i1
     public int hashCode() {
         return this.c.hashCode();
     }

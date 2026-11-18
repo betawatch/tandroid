@@ -10,27 +10,30 @@ import android.graphics.PointF;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Build;
+import android.support.v4.media.session.a0;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.animation.AnimationUtils;
+import bi.g1;
+import bi.v7;
 import ch.b0;
 import ch.e0;
-import ch.l;
 import ch.m;
 import ch.n0;
-import ch.o;
+import ch.p;
 import ch.q0;
 import ch.s0;
-import ci.a0;
-import ci.i0;
+import ci.j0;
 import ci.s;
 import ci.t;
-import ci.x;
+import ci.y;
 import ci.z0;
 import com.google.android.gms.internal.vision.e2;
 import d3.h0;
 import di.c0;
-import di.c6;
+import di.f6;
+import di.o2;
+import di.p8;
 import e2.x1;
 import h2.l0;
 import java.io.File;
@@ -39,37 +42,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import kotlin.jvm.internal.j;
 import l2.f0;
-import l2.y;
-import li.p;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.a8;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.k5;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.t1;
 import org.telegram.ui.Cells.p4;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.mi0;
-import org.telegram.ui.Components.p5;
-import org.telegram.ui.Components.xb;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.om0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.lc;
+import org.telegram.ui.Components.vi0;
+import org.telegram.ui.Components.x5;
+import org.telegram.ui.qm0;
 import q4.q;
 import v0.g;
 import v0.n;
-import w0.h;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -82,12 +79,12 @@ public final /* synthetic */ class c implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:189:0x0434, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:192:0x042c, code lost:
     
-        if (r5 == null) goto L180;
+        if (r6 == null) goto L183;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x029c  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x0297  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -95,114 +92,108 @@ public final /* synthetic */ class c implements Runnable {
     public final void run() {
         RLottieNative rLottieNative;
         ci.e eVar;
-        cc a02;
-        int i7;
-        int i10;
-        TLRPC.Chat M0;
-        int i11 = 10;
+        TLRPC.Chat O0;
+        int i7 = 10;
         Bitmap bitmap = null;
-        final int i12 = 0;
+        final int i10 = 0;
         r10 = false;
         r10 = false;
         r10 = false;
         boolean z10 = false;
-        final int i13 = 1;
+        final int i11 = 1;
         switch (this.a) {
             case 0:
-                ((f) this.b).f().a((h) this.c);
-                return;
-            case 1:
                 ((f) this.b).f().onResult((n) this.c);
                 return;
-            case 2:
-                o oVar = (o) this.b;
-                p5 p5Var = (p5) this.c;
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(oVar.h.getText());
-                p5[] p5VarArr = (p5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), p5.class);
-                int length = p5VarArr.length;
-                while (i12 < length) {
-                    p5 p5Var2 = p5VarArr[i12];
-                    if (p5Var2 == p5Var) {
-                        int editTextSelectionEnd = oVar.h.getEditTextSelectionEnd();
-                        int spanEnd = spannableStringBuilder.getSpanEnd(p5Var2);
-                        int spanStart = spannableStringBuilder.getSpanStart(p5Var2);
-                        oVar.h.getText().delete(spanStart, spanEnd);
-                        int i14 = spanEnd - spanStart;
-                        l lVar = oVar.h;
+            case 1:
+                p pVar = (p) this.b;
+                x5 x5Var = (x5) this.c;
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(pVar.h.getText());
+                x5[] x5VarArr = (x5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), x5.class);
+                int length = x5VarArr.length;
+                while (i10 < length) {
+                    x5 x5Var2 = x5VarArr[i10];
+                    if (x5Var2 == x5Var) {
+                        int editTextSelectionEnd = pVar.h.getEditTextSelectionEnd();
+                        int spanEnd = spannableStringBuilder.getSpanEnd(x5Var2);
+                        int spanStart = spannableStringBuilder.getSpanStart(x5Var2);
+                        pVar.h.getText().delete(spanStart, spanEnd);
+                        int i12 = spanEnd - spanStart;
+                        m mVar = pVar.h;
                         if (spanEnd <= editTextSelectionEnd) {
-                            editTextSelectionEnd -= i14;
+                            editTextSelectionEnd -= i12;
                         }
-                        lVar.setSelection(editTextSelectionEnd);
+                        mVar.setSelection(editTextSelectionEnd);
                         return;
                     }
-                    i12++;
+                    i10++;
                 }
                 return;
-            case 3:
-                o oVar2 = (o) this.b;
+            case 2:
+                p pVar2 = (p) this.b;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) this.c;
-                if (oVar2.X != null && tL_error.text.equals("BOOSTS_REQUIRED")) {
-                    s0.f(-oVar2.T, oVar2.Y, oVar2.X);
+                if (pVar2.X != null && tL_error.text.equals("BOOSTS_REQUIRED")) {
+                    s0.f(-pVar2.T, pVar2.Y, pVar2.X);
                     return;
                 }
                 String str = tL_error.text;
                 if (str.equals("REACTIONS_TOO_MANY")) {
-                    str = hd.G(oVar2.O, "ReactionMaxCountError", new Object[0]);
+                    str = gd.G(pVar2.O, "ReactionMaxCountError", new Object[0]);
                 }
-                cc.a0(oVar2).t(str, null).j();
+                lc.b0(pVar2).t(str, null).j();
                 return;
-            case 4:
-                m mVar = (m) this.b;
-                p5 p5Var3 = (p5) this.c;
-                o oVar3 = mVar.g2;
-                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(oVar3.h.getText());
-                for (p5 p5Var4 : (p5[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), p5.class)) {
-                    if (p5Var4 == p5Var3) {
-                        int editTextSelectionEnd2 = oVar3.h.getEditTextSelectionEnd();
-                        int spanEnd2 = spannableStringBuilder2.getSpanEnd(p5Var4);
-                        int spanStart2 = spannableStringBuilder2.getSpanStart(p5Var4);
-                        oVar3.h.getText().delete(spanStart2, spanEnd2);
-                        int i15 = spanEnd2 - spanStart2;
-                        l lVar2 = oVar3.h;
+            case 3:
+                ch.n nVar = (ch.n) this.b;
+                x5 x5Var3 = (x5) this.c;
+                p pVar3 = nVar.g2;
+                SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(pVar3.h.getText());
+                for (x5 x5Var4 : (x5[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), x5.class)) {
+                    if (x5Var4 == x5Var3) {
+                        int editTextSelectionEnd2 = pVar3.h.getEditTextSelectionEnd();
+                        int spanEnd2 = spannableStringBuilder2.getSpanEnd(x5Var4);
+                        int spanStart2 = spannableStringBuilder2.getSpanStart(x5Var4);
+                        pVar3.h.getText().delete(spanStart2, spanEnd2);
+                        int i13 = spanEnd2 - spanStart2;
+                        m mVar2 = pVar3.h;
                         if (spanEnd2 <= editTextSelectionEnd2) {
-                            editTextSelectionEnd2 -= i15;
+                            editTextSelectionEnd2 -= i13;
                         }
-                        lVar2.setSelection(editTextSelectionEnd2);
+                        mVar2.setSelection(editTextSelectionEnd2);
                         return;
                     }
                 }
                 return;
-            case 5:
+            case 4:
                 b0 b0Var = (b0) this.b;
-                mi0 mi0Var = (mi0) this.c;
+                vi0 vi0Var = (vi0) this.c;
                 b0Var.l = true;
                 b0Var.a.invalidate();
-                mi0Var.d1 = false;
-                mi0Var.invalidate();
+                vi0Var.d1 = false;
+                vi0Var.invalidate();
                 b0Var.c(true);
                 return;
-            case 6:
+            case 5:
                 e0 e0Var = (e0) this.b;
                 ch.b bVar = (ch.b) this.c;
                 e0Var.getText().delete(e0Var.getText().getSpanStart(bVar), e0Var.getText().getSpanEnd(bVar));
                 e0Var.setCursorVisible(true);
                 e0Var.setLongClickable(true);
                 return;
-            case 7:
+            case 6:
                 q0 q0Var = (q0) this.b;
                 n0 n0Var = (n0) this.c;
                 q0Var.getClass();
                 TLRPC.ReactionCount reactionCount = n0Var.a;
                 z zVar = q0Var.w;
                 if (e2.s(zVar)) {
-                    ((p4) zVar).c(reactionCount, true, 0.0f, 0.0f);
+                    ((p4) zVar).d(reactionCount, true, 0.0f, 0.0f);
                 }
                 n0Var.X.c(false);
                 q0Var.P = null;
                 q0Var.Q = false;
                 q0Var.R = null;
                 return;
-            case 8:
+            case 7:
                 s sVar = (s) this.b;
                 if (((TLRPC.Document) this.c) != null) {
                     sVar.e();
@@ -211,18 +202,18 @@ public final /* synthetic */ class c implements Runnable {
                     sVar.getClass();
                     return;
                 }
-            case 9:
+            case 8:
                 t tVar = (t) this.b;
                 File file = (File) this.c;
-                int i16 = tVar.c;
+                int i14 = tVar.c;
                 try {
                     rLottieNative = RLottieNative.a(file.getAbsolutePath(), null, null, null, 0, null);
                     if (rLottieNative != null) {
                         try {
                             Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                            Bitmap createBitmap = Bitmap.createBitmap(i16, i16, config);
+                            Bitmap createBitmap = Bitmap.createBitmap(i14, i14, config);
                             rLottieNative.c(0, createBitmap, true);
-                            Bitmap createBitmap2 = Bitmap.createBitmap(i16, i16, config);
+                            Bitmap createBitmap2 = Bitmap.createBitmap(i14, i14, config);
                             Paint paint = new Paint(2);
                             paint.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                             new Canvas(createBitmap2).drawBitmap(createBitmap, 0.0f, 0.0f, paint);
@@ -246,9 +237,9 @@ public final /* synthetic */ class c implements Runnable {
                     th = th3;
                     rLottieNative = null;
                 }
-                g0.h3(new c(i11, tVar, bitmap));
+                g0.g3(new c(9, tVar, bitmap));
                 return;
-            case 10:
+            case 9:
                 t tVar2 = (t) this.b;
                 Bitmap bitmap2 = (Bitmap) this.c;
                 tVar2.h = true;
@@ -265,38 +256,38 @@ public final /* synthetic */ class c implements Runnable {
                     }
                     return;
                 }
-            case 11:
-                a0 a0Var = (a0) this.b;
+            case 10:
+                ci.b0 b0Var2 = (ci.b0) this.b;
                 q qVar = (q) this.c;
-                if (a0Var.W) {
+                if (b0Var2.W) {
                     return;
                 }
-                a0Var.e();
-                a0Var.a.j((String) qVar.b);
+                b0Var2.e();
+                b0Var2.a.i((String) qVar.b);
                 return;
-            case 12:
+            case 11:
                 sa saVar = (sa) this.b;
                 q qVar2 = (q) this.c;
-                a0 a0Var2 = (a0) saVar.b;
-                if (a0Var2.m0 || a0Var2.W || a0Var2.V) {
+                ci.b0 b0Var3 = (ci.b0) saVar.b;
+                if (b0Var3.m0 || b0Var3.W || b0Var3.V) {
                     return;
                 }
-                a0Var2.m0 = true;
-                a0Var2.i0 = false;
-                a0Var2.performHapticFeedback(3, 2);
+                b0Var3.m0 = true;
+                b0Var3.i0 = false;
+                b0Var3.performHapticFeedback(3, 2);
                 PointF[] pointFArr = (PointF[]) qVar2.c;
                 Object[] objArr = pointFArr.length >= 3 ? 1 : null;
                 if (objArr != null) {
-                    a0Var2.n0 = pointFArr;
-                    a0Var2.invalidate();
+                    b0Var3.n0 = pointFArr;
+                    b0Var3.invalidate();
                 }
-                g0.i3(new c(11, a0Var2, qVar2), objArr != null ? 450L : 0L);
+                g0.h3(new c(i7, b0Var3, qVar2), objArr != null ? 450L : 0L);
+                return;
+            case 12:
+                j0.Z((j0) this.b, (AnimatorSet) this.c);
                 return;
             case 13:
-                i0.Z((i0) this.b, (AnimatorSet) this.c);
-                return;
-            case 14:
-                i0 i0Var = (i0) this.b;
+                j0 j0Var = (j0) this.b;
                 Bitmap bitmap3 = (Bitmap) this.c;
                 File file2 = new File(g0.E0(), "qr_code_" + System.currentTimeMillis() + ".png");
                 try {
@@ -311,72 +302,72 @@ public final /* synthetic */ class c implements Runnable {
                 }
                 bitmap3.recycle();
                 if (z10) {
-                    g0.h3(new c(16, i0Var, file2));
+                    g0.g3(new c(15, j0Var, file2));
                     return;
                 }
                 return;
-            case 15:
-                final i0 i0Var2 = (i0) this.b;
-                a0 a0Var3 = (a0) this.c;
-                if (a0.d(i0Var2.getParentActivity())) {
-                    a0Var3.e();
-                    x xVar = new x(i13);
-                    z10 z10Var = new z10() { // from class: ci.d0
-                        @Override // org.telegram.messenger.z10
+            case 14:
+                final j0 j0Var2 = (j0) this.b;
+                ci.b0 b0Var4 = (ci.b0) this.c;
+                if (ci.b0.d(j0Var2.getParentActivity())) {
+                    b0Var4.e();
+                    y yVar = new y(i11);
+                    x10 x10Var = new x10() { // from class: ci.e0
+                        @Override // org.telegram.messenger.x10
                         public final void a(Object obj) {
-                            int i17 = i12;
-                            i0 i0Var3 = i0Var2;
-                            switch (i17) {
+                            int i15 = i10;
+                            j0 j0Var3 = j0Var2;
+                            switch (i15) {
                                 case 0:
                                     String str2 = (String) obj;
-                                    if (i0Var3.getParentActivity() != null) {
-                                        vf.c.t(i0Var3.getParentActivity(), str2);
+                                    if (j0Var3.getParentActivity() != null) {
+                                        vf.c.t(j0Var3.getParentActivity(), str2);
                                         break;
                                     }
                                     break;
                                 default:
-                                    z0 z0Var = i0Var3.d;
-                                    if (z0Var != null && !i0Var3.isFinished) {
-                                        z0Var.d1(R.drawable.msg_download, hd.M0(2131746471, null), null);
+                                    z0 z0Var = j0Var3.d;
+                                    if (z0Var != null && !j0Var3.isFinished) {
+                                        z0Var.d1(R.drawable.msg_download, gd.M0(2131746276, null), null);
                                         break;
                                     }
                                     break;
                             }
                         }
                     };
-                    om0 om0Var = new om0(10, false, false, null);
-                    om0Var.H = 1;
-                    om0Var.I = false;
-                    om0Var.y = false;
-                    om0Var.W = new android.support.v4.media.session.a0(xVar, i0Var2, z10Var, false, 19);
-                    i0Var2.presentFragment(om0Var);
+                    qm0 qm0Var = new qm0(10, false, false, null);
+                    qm0Var.H = 1;
+                    qm0Var.I = false;
+                    qm0Var.y = false;
+                    qm0Var.W = new a0(yVar, j0Var2, x10Var, false, 19);
+                    j0Var2.presentFragment(qm0Var);
                     return;
                 }
                 return;
-            case 16:
-                final i0 i0Var3 = (i0) this.b;
+            case 15:
+                final j0 j0Var3 = (j0) this.b;
                 File file3 = (File) this.c;
-                Activity parentActivity = i0Var3.getParentActivity();
+                Activity parentActivity = j0Var3.getParentActivity();
                 if (parentActivity == null) {
                     return;
                 }
-                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new z10() { // from class: ci.d0
-                    @Override // org.telegram.messenger.z10
+                MediaController.d0(file3.getAbsolutePath(), parentActivity, 0, file3.getName(), "image/png", new x10() { // from class: ci.e0
+                    @Override // org.telegram.messenger.x10
                     public final void a(Object obj) {
-                        int i17 = i13;
-                        i0 i0Var32 = i0Var3;
-                        switch (i17) {
+                        int i15 = i11;
+                        j0 j0Var32 = j0Var3;
+                        switch (i15) {
                             case 0:
                                 String str2 = (String) obj;
-                                if (i0Var32.getParentActivity() != null) {
-                                    vf.c.t(i0Var32.getParentActivity(), str2);
+                                if (j0Var32.getParentActivity() != null) {
+                                    vf.c.t(j0Var32.getParentActivity(), str2);
                                     break;
                                 }
                                 break;
                             default:
-                                z0 z0Var = i0Var32.d;
-                                if (z0Var != null && !i0Var32.isFinished) {
-                                    z0Var.d1(R.drawable.msg_download, hd.M0(2131746471, null), null);
+                                z0 z0Var = j0Var32.d;
+                                if (z0Var != null && !j0Var32.isFinished) {
+                                    z0Var.d1(R.drawable.msg_download, gd.M0(2131746276, null), null);
                                     break;
                                 }
                                 break;
@@ -384,7 +375,7 @@ public final /* synthetic */ class c implements Runnable {
                     }
                 });
                 return;
-            case 17:
+            case 16:
                 z0 z0Var = (z0) this.b;
                 ci.e eVar2 = (ci.e) this.c;
                 ci.f fVar = z0Var.t0;
@@ -403,33 +394,33 @@ public final /* synthetic */ class c implements Runnable {
                     fVar.o = 1.0f;
                     return;
                 }
-                int i17 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
+                int i15 = (Build.VERSION.SDK_INT >= 29 ? 1 : 0) ^ 1;
                 if (fVar.o < 1.0f && (eVar = fVar.n) != null) {
                     eVar3 = eVar;
                 }
                 fVar.n = eVar3;
                 fVar.m = eVar2;
                 fVar.o = 0.0f;
-                fVar.q = i17;
+                fVar.q = i15;
                 fVar.p = System.currentTimeMillis();
                 boolean[] zArr = fVar.s;
                 if (zArr != null) {
                     int length2 = zArr.length;
-                    int i18 = fVar.n.e;
-                    if (length2 >= i18 * i18) {
+                    int i16 = fVar.n.e;
+                    if (length2 >= i16 * i16) {
                         Arrays.fill(zArr, false);
-                        fVar.G = i17 == 1;
+                        fVar.G = i15 == 1;
                         return;
                     }
                 }
-                int i19 = fVar.n.e;
-                fVar.s = new boolean[i19 * i19];
-                fVar.G = i17 == 1;
+                int i17 = fVar.n.e;
+                fVar.s = new boolean[i17 * i17];
+                fVar.G = i15 == 1;
+                return;
+            case 17:
+                ((x10) this.b).a((ci.e) this.c);
                 return;
             case 18:
-                ((z10) this.b).a((ci.e) this.c);
-                return;
-            case 19:
                 d1.e eVar4 = (d1.e) this.b;
                 v0.f fVar2 = (v0.f) this.c;
                 g gVar = eVar4.f;
@@ -440,73 +431,73 @@ public final /* synthetic */ class c implements Runnable {
                     j.h("callback");
                     throw null;
                 }
-            case 20:
-                ((d3.e) ((q) this.b).c).h.b((x1) this.c);
+            case 19:
+                ((d3.e) ((q) this.b).c).h.a((x1) this.c);
                 return;
-            case 21:
+            case 20:
                 wf.b bVar2 = (wf.b) this.b;
                 l2.c cVar = (l2.c) this.c;
                 h0 h0Var = (h0) bVar2.c;
                 String str2 = l0.a;
-                ji.j.T(((l2.z) h0Var).a.G, cVar);
+                ji.j.z(((l2.z) h0Var).a.G, cVar);
                 return;
-            case 22:
+            case 21:
                 wf.b bVar3 = (wf.b) this.b;
                 x1 x1Var = (x1) this.c;
                 h0 h0Var2 = (h0) bVar3.c;
                 String str3 = l0.a;
                 f0 f0Var = ((l2.z) h0Var2).a;
                 f0Var.k0 = x1Var;
-                f0Var.m.e(25, new y(x1Var));
+                f0Var.m.e(25, new l2.y(x1Var));
                 return;
-            case 23:
+            case 22:
                 wf.b bVar4 = (wf.b) this.b;
                 Exception exc = (Exception) this.c;
                 h0 h0Var3 = (h0) bVar4.c;
                 String str4 = l0.a;
-                m2.e eVar5 = ((l2.z) h0Var3).a.s;
-                m2.a U = eVar5.U();
-                eVar5.V(U, 1030, new p(U, exc, 2));
+                m2.d dVar = ((l2.z) h0Var3).a.s;
+                m2.a U = dVar.U();
+                dVar.V(U, 1030, new li.c(U, exc, 3));
                 return;
-            case 24:
+            case 23:
                 wf.b bVar5 = (wf.b) this.b;
                 String str5 = (String) this.c;
                 h0 h0Var4 = (h0) bVar5.c;
                 String str6 = l0.a;
-                m2.e eVar6 = ((l2.z) h0Var4).a.s;
-                m2.a U2 = eVar6.U();
-                eVar6.V(U2, 1019, new p(U2, str5, 9));
+                m2.d dVar2 = ((l2.z) h0Var4).a.s;
+                m2.a U2 = dVar2.U();
+                dVar2.V(U2, 1019, new li.c(U2, str5, 10));
                 return;
-            case 25:
-                di.b0 b0Var2 = (di.b0) this.b;
+            case 24:
+                di.b0 b0Var5 = (di.b0) this.b;
                 TLObject tLObject = (TLObject) this.c;
-                int i20 = b0Var2.a;
-                ArrayList arrayList = b0Var2.e;
-                b0Var2.i = 0;
+                int i18 = b0Var5.a;
+                ArrayList arrayList = b0Var5.e;
+                b0Var5.i = 0;
                 if (tLObject instanceof TL_payments.connectedStarRefBots) {
                     TL_payments.connectedStarRefBots connectedstarrefbots = (TL_payments.connectedStarRefBots) tLObject;
-                    np.s1(i20).Y3(connectedstarrefbots.users, false);
-                    if (b0Var2.c <= 0) {
+                    mp.u1(i18).f4(connectedstarrefbots.users, false);
+                    if (b0Var5.c <= 0) {
                         arrayList.clear();
                     }
-                    b0Var2.c = connectedstarrefbots.count;
+                    b0Var5.c = connectedstarrefbots.count;
                     arrayList.addAll(connectedstarrefbots.connected_bots);
-                    b0Var2.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList.size() >= b0Var2.c;
+                    b0Var5.d = connectedstarrefbots.connected_bots.isEmpty() || arrayList.size() >= b0Var5.c;
                 } else {
-                    b0Var2.h = true;
-                    b0Var2.d = true;
+                    b0Var5.h = true;
+                    b0Var5.d = true;
                 }
-                b0Var2.g = false;
-                ns.f(i20).k(ns.L3, Long.valueOf(b0Var2.b));
+                b0Var5.g = false;
+                ks.f(i18).k(ks.N3, Long.valueOf(b0Var5.b));
                 return;
-            case 26:
+            case 25:
                 c0 c0Var = (c0) this.b;
                 TLObject tLObject2 = (TLObject) this.c;
-                int i21 = c0Var.a;
+                int i19 = c0Var.a;
                 ArrayList arrayList2 = c0Var.e;
                 if (tLObject2 instanceof TL_payments.suggestedStarRefBots) {
                     TL_payments.suggestedStarRefBots suggestedstarrefbots = (TL_payments.suggestedStarRefBots) tLObject2;
-                    np.s1(i21).Y3(suggestedstarrefbots.users, false);
+                    mp.u1(i19).f4(suggestedstarrefbots.users, false);
                     if (c0Var.c <= 0) {
                         arrayList2.clear();
                     }
@@ -519,37 +510,42 @@ public final /* synthetic */ class c implements Runnable {
                     c0Var.d = true;
                 }
                 c0Var.h = false;
-                ns.f(i21).k(ns.K3, Long.valueOf(c0Var.b));
+                ks.f(i19).k(ks.M3, Long.valueOf(c0Var.b));
+                return;
+            case 26:
+                f6 f6Var = (f6) this.b;
+                Long l10 = (Long) this.c;
+                String str7 = (l10.longValue() >= 0 || (O0 = mp.u1(f6Var.a).O0(Long.valueOf(-l10.longValue()))) == null) ? "" : O0.title;
+                gc Q = f6Var.k().Q(R.raw.contact_check, 36, g0.W2(TextUtils.isEmpty(str7) ? gd.M0(2131749444, null) : gd.a0(null, null, 2131749445, str7)));
+                Q.t = true;
+                Q.j();
                 return;
             case 27:
-                c6.g1((c6) this.b, (TL_stars.TL_payments_uniqueStarGift) this.c);
+                f6 f6Var2 = (f6) this.b;
+                g1 g1Var = (g1) this.c;
+                if (g1Var != null) {
+                    f6Var2.getClass();
+                    g1Var.dismiss();
+                    f6Var2.O0 = true;
+                }
+                f6Var2.dismiss();
                 return;
             case 28:
-                t1 t1Var = (t1) this.b;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                t1Var.dismiss();
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
-                if (T != null) {
-                    if (tL_error2 == null || !"STARGIFT_ALREADY_BURNED".equalsIgnoreCase(tL_error2.text)) {
-                        a02 = cc.a0(T);
-                        i7 = R.raw.error;
-                        i10 = 2131743881;
-                    } else {
-                        a02 = cc.a0(T);
-                        i7 = R.raw.fire_on;
-                        i10 = 2131743880;
-                    }
-                    k5.n(null, i10, a02, i7, 36);
+                p8 p8Var = (p8) this.b;
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) this.c;
+                if (p8Var instanceof v7) {
+                    ((v7) p8Var).n(tL_starGiftUnique);
                     return;
                 }
                 return;
             default:
-                c6 c6Var = (c6) this.b;
-                Long l10 = (Long) this.c;
-                String str7 = (l10.longValue() >= 0 || (M0 = np.s1(c6Var.a).M0(Long.valueOf(-l10.longValue()))) == null) ? "" : M0.title;
-                xb Q = c6Var.k().Q(R.raw.contact_check, 36, g0.X2(TextUtils.isEmpty(str7) ? hd.M0(2131749616, null) : hd.a0(null, null, 2131749617, str7)));
-                Q.t = true;
-                Q.j();
+                Runnable[] runnableArr = (Runnable[]) this.b;
+                o2 o2Var = (o2) this.c;
+                Runnable runnable = runnableArr[0];
+                if (runnable != null) {
+                    runnable.run();
+                }
+                o2Var.a(0L);
                 return;
         }
     }

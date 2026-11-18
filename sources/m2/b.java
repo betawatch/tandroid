@@ -3,26 +3,27 @@ package m2;
 import e2.c1;
 import e2.v0;
 import e2.x1;
-import x2.b0;
+import ji.j;
+import x2.c0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface b {
-    void A(c1 c1Var, ji.j jVar);
+    void A(c1 c1Var, j jVar);
 
     void C(a aVar, int i7);
 
     void G(v0 v0Var);
 
-    void k(b0 b0Var);
+    void b(c0 c0Var);
+
+    void c(a aVar, int i7, long j3);
 
     void onRenderedFirstFrame(a aVar);
 
     void onSeekStarted(a aVar);
 
-    void p(a aVar, int i7, long j3);
-
-    void r(a aVar, b0 b0Var);
+    void r(a aVar, c0 c0Var);
 
     void w(x1 x1Var);
 

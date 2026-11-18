@@ -8,7 +8,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gd implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -17,10 +17,10 @@ public final /* synthetic */ class gd implements View.OnClickListener {
     public final /* synthetic */ FrameLayout d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ gd(int i7, hi.d dVar, org.telegram.ui.ActionBar.u2 u2Var, long j3) {
+    public /* synthetic */ gd(int i7, hi.d dVar, org.telegram.ui.ActionBar.x2 x2Var, long j3) {
         this.b = i7;
         this.d = dVar;
-        this.e = u2Var;
+        this.e = x2Var;
         this.c = j3;
     }
 
@@ -36,19 +36,19 @@ public final /* synthetic */ class gd implements View.OnClickListener {
                         dVar.setLoading(true);
                         TLRPC.TL_payments_getStarsRevenueAdsAccountUrl tL_payments_getStarsRevenueAdsAccountUrl = new TLRPC.TL_payments_getStarsRevenueAdsAccountUrl();
                         int i7 = this.b;
-                        tL_payments_getStarsRevenueAdsAccountUrl.peer = org.telegram.messenger.np.s1(i7).j1(this.c);
-                        ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new v7(2, xdVar, context));
+                        tL_payments_getStarsRevenueAdsAccountUrl.peer = org.telegram.messenger.mp.u1(i7).l1(this.c);
+                        ConnectionsManager.getInstance(i7).sendRequest(tL_payments_getStarsRevenueAdsAccountUrl, new u7(2, xdVar, context));
                         break;
                     }
                 }
                 break;
             default:
                 hi.d dVar2 = (hi.d) this.d;
-                org.telegram.ui.ActionBar.u2 u2Var = (org.telegram.ui.ActionBar.u2) this.e;
+                org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) this.e;
                 TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
                 createconferencecall.random_id = Utilities.b.nextInt();
                 int i10 = this.b;
-                ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new di.v(i10, dVar2, u2Var, this.c));
+                ConnectionsManager.getInstance(i10).sendRequest(createconferencecall, new di.v(i10, dVar2, x2Var, this.c));
                 break;
         }
     }

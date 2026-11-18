@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.WindowManager;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -46,17 +46,17 @@ public final /* synthetic */ class z implements Runnable {
                 float currentProgress = 0.7f - g4Var3.i0.e0.getCurrentProgress();
                 if (currentProgress > 0.0f) {
                     float f10 = currentProgress < 0.25f ? 0.01f : 0.02f;
-                    org.telegram.ui.Components.k70 k70Var = g4Var3.i0.e0;
-                    k70Var.a(true, k70Var.getCurrentProgress() + f10);
-                    org.telegram.messenger.g0.i3(g4Var3.k0, 100L);
+                    org.telegram.ui.Components.v70 v70Var = g4Var3.i0.e0;
+                    v70Var.a(true, v70Var.getCurrentProgress() + f10);
+                    org.telegram.messenger.g0.h3(g4Var3.k0, 100L);
                     break;
                 }
                 break;
             case 4:
-                org.telegram.messenger.g0.h3(new z(this.b, 2));
+                org.telegram.messenger.g0.g3(new z(this.b, 2));
                 break;
             case 5:
-                org.telegram.messenger.g0.h3(new z(this.b, 2));
+                org.telegram.messenger.g0.g3(new z(this.b, 2));
                 break;
             case 6:
                 this.b.L.a(true);
@@ -81,11 +81,11 @@ public final /* synthetic */ class z implements Runnable {
                 }
                 break;
             default:
-                org.telegram.ui.ActionBar.e2 T = LaunchActivity.T();
+                org.telegram.ui.ActionBar.h2 T = LaunchActivity.T();
                 if (T != null) {
-                    org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                    c2Var.a = true;
-                    T.showAsSheet(new org.telegram.ui.web.n1(new q(this.b, 3)), c2Var);
+                    org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2();
+                    f2Var.a = true;
+                    T.showAsSheet(new org.telegram.ui.web.n1(new q(this.b, 3)), f2Var);
                     break;
                 }
                 break;

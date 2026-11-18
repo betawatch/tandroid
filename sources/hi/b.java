@@ -2,8 +2,8 @@ package hi;
 
 import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ d b;
@@ -19,13 +19,13 @@ public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateList
             case 0:
                 d dVar = this.b;
                 dVar.getClass();
-                dVar.T = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                dVar.U = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
                 dVar.invalidate();
                 break;
             case 1:
                 d dVar2 = this.b;
                 dVar2.getClass();
-                dVar2.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                dVar2.d0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 dVar2.invalidate();
                 break;
             case 2:

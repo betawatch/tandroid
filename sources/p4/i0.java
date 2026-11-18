@@ -1,6 +1,6 @@
 package p4;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements l0 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class i0 implements l0 {
         m0 m0Var = this.b;
         switch (i7) {
             case 0:
-                g1 g1Var = m0Var.h.t;
+                i1 i1Var = m0Var.h.t;
                 int i12 = n.a;
                 if (i11 != -1 && i11 != 0) {
                     if (i11 == 1) {
@@ -36,10 +36,10 @@ public final /* synthetic */ class i0 implements l0 {
                         h2.a.l("LegacyConversions", "Unrecognized PlaybackStateCompat.RepeatMode: " + i11 + " was converted to `Player.REPEAT_MODE_OFF`");
                     }
                 }
-                g1Var.k(i10);
+                i1Var.k(i10);
                 return;
             default:
-                g1 g1Var2 = m0Var.h.t;
+                i1 i1Var2 = m0Var.h.t;
                 int i13 = n.a;
                 if (i11 != -1 && i11 != 0) {
                     if (i11 != 1 && i11 != 2) {
@@ -47,7 +47,7 @@ public final /* synthetic */ class i0 implements l0 {
                     }
                     z10 = true;
                 }
-                g1Var2.x(z10);
+                i1Var2.x(z10);
                 return;
         }
     }

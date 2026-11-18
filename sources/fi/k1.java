@@ -1,51 +1,38 @@
 package fi;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.lp;
+import java.util.ArrayList;
+import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class k1 extends View {
-    public final /* synthetic */ int a = 1;
-    public final lp b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class k1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m1 b;
 
-    public k1(Context context) {
-        super(context);
-        this.b = new lp(org.telegram.messenger.g0.L(36.0f), org.telegram.messenger.g0.L(2.0f), -13522392);
+    public /* synthetic */ k1(m1 m1Var, int i7) {
+        this.a = i7;
+        this.b = m1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                int L = org.telegram.messenger.g0.L(1.0f);
-                int width = (getWidth() - L) - L;
-                int height = (getHeight() - L) - L;
-                lp lpVar = this.b;
-                lpVar.setBounds(L, L, width, height);
-                lpVar.draw(canvas);
-                invalidate();
+                m1 m1Var = this.b;
+                m1Var.invalidate();
+                m1Var.b();
                 break;
             default:
-                int width2 = getWidth();
-                int height2 = getHeight();
-                lp lpVar2 = this.b;
-                lpVar2.setBounds(0, 0, width2, height2);
-                lpVar2.b(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.m5, false));
-                lpVar2.setAlpha(ns.e4);
-                lpVar2.draw(canvas);
-                invalidate();
-                super.onDraw(canvas);
+                ArrayList arrayList = this.b.e;
+                int size = arrayList.size();
+                int i7 = 0;
+                while (i7 < size) {
+                    Object obj = arrayList.get(i7);
+                    i7++;
+                    ((mh0) obj).C(true);
+                }
+                arrayList.clear();
                 break;
         }
-    }
-
-    public k1(Activity activity) {
-        super(activity);
-        this.b = new lp(org.telegram.messenger.g0.L(30.0f), org.telegram.messenger.g0.L(3.0f), org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.m5, false));
     }
 }

@@ -1,6 +1,6 @@
 package n4;
 
-import a8.ja;
+import a8.la;
 import android.util.Pair;
 import b3.i;
 import e2.t0;
@@ -12,13 +12,13 @@ import f3.s;
 import h2.l0;
 import h2.x;
 import h9.g0;
-import h9.s1;
+import h9.t1;
 import j2.l;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
@@ -53,7 +53,7 @@ public final class c implements o {
     @Override // f3.o
     public final List e() {
         g0 g0Var = h9.i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:73:0x0213, code lost:
@@ -78,17 +78,17 @@ public final class c implements o {
         int i10 = this.c;
         int i11 = 4;
         if (i10 == 0) {
-            ja.p(pVar.getPosition() == 0);
+            la.p(pVar.getPosition() == 0);
             int i12 = this.f;
             if (i12 != -1) {
-                pVar.m(i12);
+                pVar.r(i12);
                 this.c = 4;
                 return 0;
             }
             if (!d.a(pVar)) {
                 throw t0.a(null, "Unsupported or unrecognized wav file type.");
             }
-            pVar.m((int) (pVar.j() - pVar.getPosition()));
+            pVar.r((int) (pVar.l() - pVar.getPosition()));
             this.c = 1;
             return 0;
         }
@@ -97,13 +97,13 @@ public final class c implements o {
             x xVar = new x(8);
             i b10 = i.b(pVar, xVar);
             if (b10.a != 1685272116) {
-                pVar.l();
+                pVar.n();
             } else {
-                pVar.k(8);
+                pVar.m(8);
                 xVar.N(0);
-                pVar.c(0, 8, xVar.a);
+                pVar.b(0, 8, xVar.a);
                 j3 = xVar.p();
-                pVar.m(((int) b10.b) + 8);
+                pVar.r(((int) b10.b) + 8);
             }
             this.d = j3;
             this.c = 2;
@@ -114,15 +114,15 @@ public final class c implements o {
                 if (i10 != 4) {
                     throw new IllegalStateException();
                 }
-                ja.p(this.g != -1);
+                la.p(this.g != -1);
                 long position = this.g - pVar.getPosition();
                 b bVar = this.e;
                 bVar.getClass();
                 return bVar.a(pVar, position) ? -1 : 0;
             }
-            pVar.l();
+            pVar.n();
             i b11 = d.b(1684108385, pVar, new x(8));
-            pVar.m(8);
+            pVar.r(8);
             Pair create = Pair.create(Long.valueOf(pVar.getPosition()), Long.valueOf(b11.b));
             this.f = ((Long) create.first).intValue();
             long longValue = ((Long) create.second).longValue();
@@ -144,8 +144,8 @@ public final class c implements o {
         }
         x xVar2 = new x(16);
         long j11 = d.b(1718449184, pVar, xVar2).b;
-        ja.p(j11 >= 16);
-        pVar.c(0, 16, xVar2.a);
+        la.p(j11 >= 16);
+        pVar.b(0, 16, xVar2.a);
         xVar2.N(0);
         int t6 = xVar2.t();
         int t10 = xVar2.t();
@@ -156,7 +156,7 @@ public final class c implements o {
         int i13 = ((int) j11) - 16;
         if (i13 > 0) {
             bArr = new byte[i13];
-            pVar.c(0, i13, bArr);
+            pVar.b(0, i13, bArr);
             if (t6 == 65534 && i13 == 24) {
                 x xVar3 = new x(bArr);
                 xVar3.t();
@@ -181,7 +181,7 @@ public final class c implements o {
         } else {
             bArr = l0.b;
         }
-        pVar.m((int) (pVar.j() - pVar.getPosition()));
+        pVar.r((int) (pVar.l() - pVar.getPosition()));
         i2.s sVar2 = new i2.s();
         sVar2.a = t10;
         sVar2.b = s5;

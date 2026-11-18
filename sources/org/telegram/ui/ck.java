@@ -1,17 +1,15 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class ck extends qn {
-    public boolean U0;
+import android.app.Activity;
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.U0) {
-            return;
-        }
-        n0();
-        this.U0 = true;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final class ck extends org.telegram.ui.Components.p31 {
+    public final /* synthetic */ bn E;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ck(bn bnVar, Activity activity, bn bnVar2, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(activity, i6Var, bnVar2);
+        this.E = bnVar;
     }
 }

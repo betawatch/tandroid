@@ -3,24 +3,24 @@ package org.telegram.ui;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements cr0, org.telegram.ui.Components.ij0, org.telegram.ui.ActionBar.e1 {
+public final /* synthetic */ class s implements er0, org.telegram.ui.Components.qj0, org.telegram.ui.ActionBar.f1 {
     public final /* synthetic */ g4 a;
 
     public /* synthetic */ s(g4 g4Var) {
         this.a = g4Var;
     }
 
-    @Override // org.telegram.ui.cr0
+    @Override // org.telegram.ui.er0
     public void a(float[] fArr) {
         g4 g4Var = this.a;
         fArr[0] = g4Var.K0;
         fArr[1] = g4Var.v0[0].b.getMeasuredHeight();
     }
 
-    @Override // org.telegram.ui.Components.ij0
-    public boolean b(int i7, View view) {
+    @Override // org.telegram.ui.Components.qj0
+    public boolean c(int i7, View view) {
         g4 g4Var = this.a;
         g4Var.getClass();
         if (!(view instanceof g2)) {
@@ -31,12 +31,12 @@ public final /* synthetic */ class s implements cr0, org.telegram.ui.Components.
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e1
+    @Override // org.telegram.ui.ActionBar.f1
     public void j(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.g1 g1Var;
+        org.telegram.ui.ActionBar.h1 h1Var;
         g4 g4Var = this.a;
         g4Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (g1Var = g4Var.I) != null && g1Var.isShowing()) {
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (h1Var = g4Var.I) != null && h1Var.isShowing()) {
             g4Var.I.d(true);
         }
     }

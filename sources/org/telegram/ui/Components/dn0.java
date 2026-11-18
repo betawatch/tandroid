@@ -1,31 +1,26 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class dn0 implements za {
-    public final /* synthetic */ xb a;
-    public final /* synthetic */ oe b;
+public final class dn0 extends sb {
+    public int c;
 
-    public dn0(oe oeVar, xb xbVar) {
-        this.b = oeVar;
-        this.a = xbVar;
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final void a() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final void b() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void c(xb xbVar) {
-    }
-
-    @Override // org.telegram.ui.Components.za
-    public final /* synthetic */ void d() {
+    @Override // org.telegram.ui.Components.lb, org.telegram.ui.ActionBar.c6
+    public final void updateColors() {
+        super.updateColors();
+        try {
+            int themedColor = getThemedColor(org.telegram.ui.ActionBar.n6.yj);
+            q9 q9Var = this.a;
+            if (q9Var != null && themedColor != this.c) {
+                this.c = themedColor;
+                q9Var.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.SRC_IN));
+            }
+            invalidate();
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
+        }
     }
 }

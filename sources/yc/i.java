@@ -12,9 +12,9 @@ import java.nio.charset.Charset;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
-import org.telegram.ui.ActionBar.v;
+import org.telegram.ui.ActionBar.w;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Logger d;
@@ -94,19 +94,19 @@ public abstract class i {
     public final void f() {
         this.a = new ServerSocket();
         this.a.setReuseAddress(true);
-        v vVar = new v(this);
-        Thread thread = new Thread(vVar);
+        w wVar = new w(this);
+        Thread thread = new Thread(wVar);
         this.b = thread;
         thread.setDaemon(true);
         this.b.setName("NanoHttpd Main Listener");
         this.b.start();
-        while (!vVar.b && ((IOException) vVar.c) == null) {
+        while (!wVar.b && ((IOException) wVar.c) == null) {
             try {
                 Thread.sleep(10L);
             } catch (Throwable unused) {
             }
         }
-        IOException iOException = (IOException) vVar.c;
+        IOException iOException = (IOException) wVar.c;
         if (iOException != null) {
             throw iOException;
         }

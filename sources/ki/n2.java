@@ -1,37 +1,34 @@
 package ki;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class n2 extends AnimatorListenerAdapter {
+public final /* synthetic */ class n2 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ u1 c;
-    public final /* synthetic */ x2 d;
+    public final /* synthetic */ o2 b;
 
-    public n2(x2 x2Var, int i7, int i10, u1 u1Var) {
-        this.d = x2Var;
+    public /* synthetic */ n2(o2 o2Var, int i7) {
         this.a = i7;
-        this.b = i10;
-        this.c = u1Var;
+        this.b = o2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int f10 = i0.a.f(1.0f, this.a, this.b);
-        x2 x2Var = this.d;
-        x2Var.S = f10;
-        x2Var.l();
-        w2 w2Var = x2Var.f;
-        w2Var.invalidate();
-        u2 u2Var = x2Var.Y;
-        u2Var.setBackgroundColor(x2Var.S);
-        u1 u1Var = this.c;
-        u1Var.b(u2Var, 1.0f);
-        x2Var.a = u1Var.a(j6.zj);
-        w2Var.invalidate();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                t2 t2Var = this.b.d;
+                if (tLObject instanceof TLRPC.TL_updates) {
+                    mp.u1(t2Var.I).V3((TLRPC.TL_updates) tLObject, false);
+                }
+                org.telegram.messenger.g0.g3(new t1(t2Var, 16));
+                break;
+            default:
+                org.telegram.messenger.g0.g3(new kg.i0(this.b, tLObject, tL_error, 6));
+                break;
+        }
     }
 }

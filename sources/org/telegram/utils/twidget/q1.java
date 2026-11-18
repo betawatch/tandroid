@@ -1,259 +1,125 @@
 package org.telegram.utils.twidget;
 
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.text.TextPaint;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.ArrayList;
-import org.json.JSONArray;
+import java.util.Locale;
+import org.json.JSONObject;
+import org.telegram.messenger.a8;
+import org.telegram.messenger.bz;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.pk0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class q1 {
-    public static final TextPaint b = new TextPaint();
-    public final ArrayList a;
+public abstract class q1 {
+    public static final int[] a = {n6.ra, n6.Vc, n6.ee, n6.Xc, n6.Nd};
+    public static final int[] b = {n6.rb, n6.Wc, n6.jc, n6.Yc, n6.Tb};
+    public static final int[] c = {n6.ub, n6.vb, n6.wb};
 
-    public q1(ArrayList arrayList) {
-        this.a = arrayList;
+    public static String a(i6 i6Var, boolean z10) {
+        boolean d = i6Var != null ? i6Var.d() : n6.I.q();
+        int[] iArr = z10 ? b : a;
+        try {
+            int w10 = n6.w(d ? -16777216 : -1, b(i6Var, z10));
+            int w02 = n6.w0(iArr[1], i6Var);
+            int w03 = n6.w0(iArr[2], i6Var);
+            int w04 = n6.w0(iArr[3], i6Var);
+            int w05 = n6.w0(iArr[4], i6Var);
+            int w06 = n6.w0(n6.Fi, i6Var);
+            int w07 = n6.w0(n6.Ji, i6Var);
+            int w11 = n6.w(w10, n6.r1(0.1f, w05));
+            JSONObject jSONObject = new JSONObject();
+            jSONObject.put("bg_color", c(w10, w10));
+            jSONObject.put("text_color", c(w02, w10));
+            jSONObject.put("hint_color", c(w03, w10));
+            jSONObject.put("link_color", c(w04, w10));
+            jSONObject.put("button_color", c(w06, w10));
+            jSONObject.put("button_text_color", c(w07, w06));
+            jSONObject.put("secondary_bg_color", c(w11, w10));
+            jSONObject.put("accent_text_color", c(w05, w10));
+            jSONObject.put("subtitle_text_color", c(w03, w10));
+            jSONObject.put("destructive_text_color", c(n6.w0(n6.p7, i6Var), w10));
+            jSONObject.put("section_bg_color", c(w10, w10));
+            jSONObject.put("section_header_text_color", c(w05, w10));
+            jSONObject.put("section_separator_color", c(n6.r1(0.12f, w02), w10));
+            jSONObject.put("header_bg_color", c(w11, w10));
+            jSONObject.put("bottom_bar_bg_color", c(w11, w10));
+            JSONObject jSONObject2 = new JSONObject();
+            jSONObject2.put("text", c(w05, w10));
+            JSONObject jSONObject3 = new JSONObject();
+            jSONObject3.put("colorScheme", d ? "dark" : "light");
+            jSONObject3.put("params", jSONObject);
+            jSONObject3.put("button", jSONObject2);
+            jSONObject3.put("text", f());
+            return jSONObject3.toString();
+        } catch (Exception e10) {
+            a8.g(e10, true);
+            return a8.p0.s(new StringBuilder("{\"colorScheme\":\""), d ? "dark" : "light", "\"}");
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x021d  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0225  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0232  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static q1 a(String str, o oVar, float f10) {
-        o1 o1Var;
-        ArrayList arrayList;
-        int i7;
-        float f11;
-        float f12;
-        float f13;
-        float f14;
-        float f15;
-        float f16;
-        float f17;
-        Paint paint;
-        int i10;
-        float f18;
-        JSONArray jSONArray = new JSONArray(str);
-        if (jSONArray.length() == 0) {
-            return null;
-        }
-        ArrayList arrayList2 = new ArrayList();
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < jSONArray.length()) {
-            int optInt = jSONArray.getJSONArray(i12).optInt(i11);
-            int i13 = i12;
-            while (i13 < jSONArray.length() && jSONArray.getJSONArray(i13).optInt(i11) == optInt) {
-                i13++;
-            }
-            ArrayList arrayList3 = new ArrayList();
-            float[] fArr = new float[64];
-            float f19 = Float.MAX_VALUE;
-            float f20 = -3.4028235E38f;
-            float f21 = -3.4028235E38f;
-            n1 n1Var = null;
-            float f22 = Float.MAX_VALUE;
-            while (i12 < i13) {
-                JSONArray jSONArray2 = jSONArray.getJSONArray(i12);
-                float optDouble = ((float) jSONArray2.optDouble(1)) * f10;
-                JSONArray jSONArray3 = jSONArray;
-                ArrayList arrayList4 = arrayList2;
-                float optDouble2 = ((float) jSONArray2.optDouble(2)) * f10;
-                int i14 = i12;
-                float optDouble3 = ((float) jSONArray2.optDouble(3)) * f10;
-                float optDouble4 = ((float) jSONArray2.optDouble(4)) * f10;
-                ArrayList arrayList5 = arrayList3;
-                float optDouble5 = ((float) jSONArray2.optDouble(7)) * f10;
-                float optDouble6 = ((float) jSONArray2.optDouble(8)) * f10;
-                String optString = jSONArray2.optString(9);
-                if (!optString.isEmpty()) {
-                    JSONArray optJSONArray = jSONArray2.optJSONArray(10);
-                    if (optJSONArray == null || optJSONArray.length() != 6 || Math.abs(optJSONArray.optDouble(1)) >= 1.0E-4d || Math.abs(optJSONArray.optDouble(2)) >= 1.0E-4d || optJSONArray.optDouble(0) <= 0.0d || optJSONArray.optDouble(3) <= 0.0d) {
-                        f11 = optDouble;
-                        f12 = optDouble4;
-                        f13 = optDouble3;
-                        f14 = optDouble5;
-                        f15 = 1.0f;
-                        f16 = optDouble2;
-                    } else {
-                        f15 = (float) optJSONArray.optDouble(0);
-                        float optDouble7 = (float) optJSONArray.optDouble(3);
-                        f11 = (((float) optJSONArray.optDouble(4)) * f10) + (f15 * optDouble);
-                        f16 = (((float) optJSONArray.optDouble(5)) * f10) + (optDouble7 * optDouble2);
-                        f13 = optDouble3 * f15;
-                        f12 = optDouble4 * optDouble7;
-                        f14 = optDouble5 * f15;
-                        optDouble6 *= f15;
-                    }
-                    if (f13 > 0.0f || f12 > 0.0f) {
-                        float f23 = (f12 / 2.0f) + f16;
-                        if (n1Var != null) {
-                            StringBuilder sb2 = n1Var.d;
-                            f17 = f12;
-                            if (f23 >= n1Var.a && f23 <= n1Var.b) {
-                                if (f11 - n1Var.c > 1.0f && ((sb2.length() <= 0 || !Character.isWhitespace(sb2.charAt(sb2.length() - 1))) && !Character.isWhitespace(optString.charAt(0)))) {
-                                    sb2.append(' ');
-                                    n1Var.e.add(Float.valueOf(n1Var.c));
-                                }
-                                arrayList = arrayList5;
-                                n1Var.a = Math.min(n1Var.a, f16);
-                                float f24 = f13;
-                                float f25 = f16 + f17;
-                                n1Var.b = Math.max(n1Var.b, f25);
-                                float f26 = optDouble6;
-                                paint = (Paint) ((ConcurrentHashMap) oVar.a).get(Integer.valueOf(jSONArray2.optInt(6)));
-                                i7 = i13;
-                                if (fArr.length < optString.length()) {
-                                    fArr = new float[optString.length()];
-                                }
-                                if (paint != null) {
-                                    paint.getTextWidths(optString, fArr);
-                                }
-                                float f27 = f11;
-                                i10 = 0;
-                                while (i10 < optString.length()) {
-                                    float[] fArr2 = fArr;
-                                    n1Var.d.append(optString.charAt(i10));
-                                    n1Var.e.add(Float.valueOf(f27));
-                                    if (paint == null) {
-                                        f18 = (((i10 + 1) * f24) / optString.length()) + f11;
-                                    } else {
-                                        f18 = (fArr2[i10] * f15) + (Character.isLowSurrogate(optString.charAt(i10)) ? 0.0f : f14) + f27;
-                                        if (optString.charAt(i10) == ' ' || optString.charAt(i10) == 160) {
-                                            f18 += f26;
-                                        }
-                                    }
-                                    f27 = f18;
-                                    i10++;
-                                    fArr = fArr2;
-                                }
-                                n1Var.c = Math.max(f27, f11 + f24);
-                                float min = Math.min(f19, f11);
-                                float min2 = Math.min(f22, f16);
-                                float max = Math.max(f20, n1Var.c);
-                                f22 = min2;
-                                f19 = min;
-                                f21 = Math.max(f21, f25);
-                                f20 = max;
-                                i12 = i14 + 1;
-                                arrayList3 = arrayList;
-                                jSONArray = jSONArray3;
-                                arrayList2 = arrayList4;
-                                i13 = i7;
-                            }
-                        } else {
-                            f17 = f12;
-                        }
-                        if (n1Var != null) {
-                            StringBuilder sb3 = n1Var.d;
-                            if (sb3.length() > 0 && (sb3.length() <= 0 || !Character.isWhitespace(sb3.charAt(sb3.length() - 1)))) {
-                                sb3.append(' ');
-                                n1Var.e.add(Float.valueOf(n1Var.c));
-                            }
-                        }
-                        n1Var = new n1();
-                        arrayList = arrayList5;
-                        arrayList.add(n1Var);
-                        n1Var.a = Math.min(n1Var.a, f16);
-                        float f242 = f13;
-                        float f252 = f16 + f17;
-                        n1Var.b = Math.max(n1Var.b, f252);
-                        float f262 = optDouble6;
-                        paint = (Paint) ((ConcurrentHashMap) oVar.a).get(Integer.valueOf(jSONArray2.optInt(6)));
-                        i7 = i13;
-                        if (fArr.length < optString.length()) {
-                        }
-                        if (paint != null) {
-                        }
-                        float f272 = f11;
-                        i10 = 0;
-                        while (i10 < optString.length()) {
-                        }
-                        n1Var.c = Math.max(f272, f11 + f242);
-                        float min3 = Math.min(f19, f11);
-                        float min22 = Math.min(f22, f16);
-                        float max2 = Math.max(f20, n1Var.c);
-                        f22 = min22;
-                        f19 = min3;
-                        f21 = Math.max(f21, f252);
-                        f20 = max2;
-                        i12 = i14 + 1;
-                        arrayList3 = arrayList;
-                        jSONArray = jSONArray3;
-                        arrayList2 = arrayList4;
-                        i13 = i7;
-                    } else if (n1Var != null) {
-                        n1Var.d.append('\n');
-                        n1Var.e.add(Float.valueOf(n1Var.c));
-                        n1Var = null;
+    public static int b(i6 i6Var, boolean z10) {
+        int w02 = n6.w0(z10 ? b[0] : a[0], i6Var);
+        if (z10) {
+            int[] iArr = c;
+            int i7 = iArr[0];
+            if ((i6Var != null ? i6Var.m(i7) : n6.lm.get(i7)) != 0) {
+                int red = Color.red(w02);
+                int green = Color.green(w02);
+                int blue = Color.blue(w02);
+                int i10 = 1;
+                for (int i11 : iArr) {
+                    int m10 = i6Var != null ? i6Var.m(i11) : n6.lm.get(i11);
+                    if (m10 != 0) {
+                        int red2 = Color.red(m10) + red;
+                        int green2 = Color.green(m10) + green;
+                        i10++;
+                        blue = Color.blue(m10) + blue;
+                        green = green2;
+                        red = red2;
                     }
                 }
-                arrayList = arrayList5;
-                i7 = i13;
-                i12 = i14 + 1;
-                arrayList3 = arrayList;
-                jSONArray = jSONArray3;
-                arrayList2 = arrayList4;
-                i13 = i7;
+                return Color.argb(Color.alpha(w02), red / i10, green / i10, blue / i10);
             }
-            JSONArray jSONArray4 = jSONArray;
-            ArrayList arrayList6 = arrayList2;
-            ArrayList arrayList7 = arrayList3;
-            int i15 = i13;
-            if (arrayList7.isEmpty()) {
-                o1Var = null;
-            } else {
-                StringBuilder sb4 = new StringBuilder();
-                int[] iArr = new int[arrayList7.size() + 1];
-                int[] iArr2 = new int[arrayList7.size() + 1];
-                float[][] fArr3 = new float[arrayList7.size()][];
-                int floor = (int) Math.floor(f19);
-                int floor2 = (int) Math.floor(f22);
-                int i16 = 0;
-                while (i16 < arrayList7.size()) {
-                    n1 n1Var2 = (n1) arrayList7.get(i16);
-                    iArr[i16] = sb4.length();
-                    StringBuilder sb5 = n1Var2.d;
-                    ArrayList arrayList8 = n1Var2.e;
-                    sb4.append((CharSequence) sb5);
-                    iArr2[i16] = Math.round(n1Var2.a) - floor2;
-                    float[] fArr4 = new float[arrayList8.size() + 1];
-                    int i17 = 0;
-                    while (i17 < arrayList8.size()) {
-                        fArr4[i17] = ((Float) arrayList8.get(i17)).floatValue() - floor;
-                        i17++;
-                        sb4 = sb4;
-                    }
-                    fArr4[arrayList8.size()] = n1Var2.c - floor;
-                    fArr3[i16] = fArr4;
-                    i16++;
-                    sb4 = sb4;
-                }
-                StringBuilder sb6 = sb4;
-                iArr[arrayList7.size()] = sb6.length();
-                iArr2[arrayList7.size()] = Math.round(f21) - floor2;
-                for (int i18 = 1; i18 < arrayList7.size(); i18++) {
-                    iArr2[i18] = Math.max(iArr2[i18 - 1], iArr2[i18]);
-                }
-                String sb7 = sb6.toString();
-                int ceil = ((int) Math.ceil(f20)) - floor;
-                int i19 = iArr2[arrayList7.size()];
-                o1Var = new o1(sb7, floor, floor2, ceil, iArr, iArr2, fArr3);
-            }
-            arrayList2 = arrayList6;
-            if (o1Var != null) {
-                arrayList2.add(o1Var);
-            }
-            jSONArray = jSONArray4;
-            i12 = i15;
-            i11 = 0;
         }
-        if (arrayList2.isEmpty()) {
-            return null;
+        return w02;
+    }
+
+    public static String c(int i7, int i10) {
+        int w10 = n6.w(i10, i7);
+        return String.format(Locale.US, "#%02x%02x%02x", Integer.valueOf(Color.red(w10)), Integer.valueOf(Color.green(w10)), Integer.valueOf(Color.blue(w10)));
+    }
+
+    public static String d(boolean z10) {
+        return a8.p0.s(new StringBuilder("{\"colorScheme\":\""), z10 ? "dark" : "light", "\"}");
+    }
+
+    public static int e(i6 i6Var, boolean z10) {
+        int i7 = (i6Var == null ? !n6.I.q() : !i6Var.d()) ? 0 : 1;
+        for (int i10 : z10 ? b : a) {
+            i7 = (i7 * 31) + n6.w0(i10, i6Var);
         }
-        return new q1(arrayList2);
+        if (z10) {
+            for (int i11 : c) {
+                i7 = (i7 * 31) + (i6Var != null ? i6Var.m(i11) : n6.lm.get(i11));
+            }
+        }
+        int w02 = (((n6.w0(n6.p7, i6Var) + ((n6.w0(n6.Ji, i6Var) + ((n6.w0(n6.Fi, i6Var) + (i7 * 31)) * 31)) * 31)) * 31) + bz.W0) * 31;
+        TextPaint textPaint = n6.o2;
+        return pk0.j0() + ((w02 + (textPaint != null ? Float.floatToIntBits(textPaint.getTextSize()) : 0)) * 31);
+    }
+
+    public static JSONObject f() {
+        JSONObject jSONObject = new JSONObject();
+        jSONObject.put("fontSize", bz.W0);
+        TextPaint textPaint = n6.o2;
+        if (textPaint != null && textPaint.getTextSize() > 0.0f) {
+            Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+            jSONObject.put("lineHeight", Math.round(Math.max(1.0f, Math.min(3.0f, ((fontMetrics.descent - fontMetrics.ascent) + fontMetrics.leading) / textPaint.getTextSize())) * 100.0f) / 100.0d);
+        }
+        jSONObject.put("padding", "8px " + Math.round(pk0.j0() / org.telegram.messenger.g0.p) + "px");
+        return jSONObject;
     }
 }

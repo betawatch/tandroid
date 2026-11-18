@@ -11,10 +11,10 @@ import h2.x;
 import h9.i0;
 import java.util.ArrayList;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import q4.q;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends j {
     public k n;
@@ -41,7 +41,7 @@ public final class l extends j {
         kVar.getClass();
         int i7 = kVar.b;
         z zVar = (z) kVar.c;
-        int i10 = !((ei.a[]) kVar.f)[(b10 >> 1) & (ns.e4 >>> (8 - i7))].a ? zVar.e : zVar.f;
+        int i10 = !((ei.a[]) kVar.f)[(b10 >> 1) & (ks.e4 >>> (8 - i7))].a ? zVar.e : zVar.f;
         long j3 = this.p ? (this.o + i10) / 4 : 0;
         byte[] bArr = xVar.a;
         int length = bArr.length;
@@ -87,7 +87,7 @@ public final class l extends j {
             xVar.o();
             int A2 = xVar.A();
             int pow = (int) Math.pow(2.0d, A2 & 15);
-            int pow2 = (int) Math.pow(2.0d, (A2 & ns.P3) >> 4);
+            int pow2 = (int) Math.pow(2.0d, (A2 & ks.P3) >> 4);
             xVar.A();
             ?? copyOf = Arrays.copyOf(xVar.a, xVar.c);
             z zVar2 = new z();

@@ -1,17 +1,38 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class sr {
-    public final long a;
-    public final TLRPC.TL_messageReactions b;
-    public final TLRPC.TL_messageReactions c;
+    public long a;
+    public long b;
 
-    public sr(long j3, TLRPC.Message message, TLRPC.Message message2) {
-        this.a = gj.Q1(j3, message2);
-        this.b = message.reactions;
-        this.c = message2.reactions;
+    public static sr a(long j3, long j10) {
+        sr srVar = new sr();
+        srVar.a = j3;
+        srVar.b = j10;
+        return srVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && sr.class == obj.getClass()) {
+            sr srVar = (sr) obj;
+            if (this.a == srVar.a && this.b == srVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.a), Long.valueOf(this.b));
+    }
+
+    public final String toString() {
+        return "TopicKey{dialogId=" + this.a + ", topicId=" + this.b + '}';
     }
 }

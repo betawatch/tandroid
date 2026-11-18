@@ -2,15 +2,15 @@ package kg;
 
 import java.util.ArrayList;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.vr;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.tr;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class x implements RequestDelegate {
             case 0:
                 final int i7 = 1;
                 final y yVar = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: kg.w
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.w
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i10 = i7;
@@ -39,8 +39,8 @@ public final /* synthetic */ class x implements RequestDelegate {
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
                                     yVar2.b.add(tL_businessChatLink);
-                                    ns.f(i11).k(ns.J1, new Object[0]);
-                                    ns.f(i11).k(ns.K1, tL_businessChatLink);
+                                    ks.f(i11).k(ks.J1, new Object[0]);
+                                    ks.f(i11).k(ks.K1, tL_businessChatLink);
                                     yVar2.f();
                                     break;
                                 }
@@ -52,10 +52,10 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
                                     arrayList.addAll(businesschatlinks.links);
-                                    np.s1(i12).Y3(businesschatlinks.users, false);
-                                    np.s1(i12).S3(businesschatlinks.chats, false);
-                                    vr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
-                                    ns.f(i12).k(ns.J1, new Object[0]);
+                                    mp.u1(i12).f4(businesschatlinks.users, false);
+                                    mp.u1(i12).Z3(businesschatlinks.chats, false);
+                                    tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
+                                    ks.f(i12).k(ks.J1, new Object[0]);
                                     yVar2.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);
@@ -70,7 +70,7 @@ public final /* synthetic */ class x implements RequestDelegate {
             default:
                 final int i10 = 0;
                 final y yVar2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: kg.w
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: kg.w
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i102 = i10;
@@ -82,8 +82,8 @@ public final /* synthetic */ class x implements RequestDelegate {
                                 if (tLObject2 instanceof TL_account.TL_businessChatLink) {
                                     TL_account.TL_businessChatLink tL_businessChatLink = (TL_account.TL_businessChatLink) tLObject2;
                                     yVar22.b.add(tL_businessChatLink);
-                                    ns.f(i11).k(ns.J1, new Object[0]);
-                                    ns.f(i11).k(ns.K1, tL_businessChatLink);
+                                    ks.f(i11).k(ks.J1, new Object[0]);
+                                    ks.f(i11).k(ks.K1, tL_businessChatLink);
                                     yVar22.f();
                                     break;
                                 }
@@ -95,10 +95,10 @@ public final /* synthetic */ class x implements RequestDelegate {
                                     TL_account.businessChatLinks businesschatlinks = (TL_account.businessChatLinks) tLObject2;
                                     arrayList.clear();
                                     arrayList.addAll(businesschatlinks.links);
-                                    np.s1(i12).Y3(businesschatlinks.users, false);
-                                    np.s1(i12).S3(businesschatlinks.chats, false);
-                                    vr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
-                                    ns.f(i12).k(ns.J1, new Object[0]);
+                                    mp.u1(i12).f4(businesschatlinks.users, false);
+                                    mp.u1(i12).Z3(businesschatlinks.chats, false);
+                                    tr.a0(i12).m1(businesschatlinks.users, businesschatlinks.chats, true, true);
+                                    ks.f(i12).k(ks.J1, new Object[0]);
                                     yVar22.f();
                                 } else {
                                     a8.g(new RuntimeException("Unexpected response from server!"), true);

@@ -9,7 +9,7 @@ import android.os.Parcelable;
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class q extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -109,7 +109,7 @@ public abstract class q extends Binder implements IInterface {
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 }
-                f5.w wVar = (f5.w) this;
+                f5.v vVar = (f5.v) this;
                 if (i7 != 1) {
                     return false;
                 }
@@ -119,7 +119,7 @@ public abstract class q extends Binder implements IInterface {
                 if (dataAvail > 0) {
                     throw new BadParcelableException(i5.c.i(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                wVar.b.a(Integer.valueOf(readInt));
+                vVar.b.a(Integer.valueOf(readInt));
                 return true;
             case 4:
                 if (i7 > 16777215) {
@@ -266,7 +266,7 @@ public abstract class q extends Binder implements IInterface {
                             Status status4 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.m mVar = (j7.m) t7.a.a(parcel, j7.m.CREATOR);
                             h1(parcel);
-                            fVar.I0(status4, mVar);
+                            fVar.H0(status4, mVar);
                             break;
                         case 2:
                             Status status5 = (Status) t7.a.a(parcel, Status.CREATOR);
@@ -297,7 +297,7 @@ public abstract class q extends Binder implements IInterface {
                             Status status10 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.f fVar2 = (j7.f) t7.a.a(parcel, j7.f.CREATOR);
                             h1(parcel);
-                            fVar.x0(status10, fVar2);
+                            fVar.w0(status10, fVar2);
                             break;
                         case 8:
                             Status status11 = (Status) t7.a.a(parcel, Status.CREATOR);
@@ -314,7 +314,7 @@ public abstract class q extends Binder implements IInterface {
                             Status status13 = (Status) t7.a.a(parcel, Status.CREATOR);
                             j7.r rVar = (j7.r) t7.a.a(parcel, j7.r.CREATOR);
                             h1(parcel);
-                            fVar.J0(status13, rVar);
+                            fVar.I0(status13, rVar);
                             break;
                         case 11:
                             Status status14 = (Status) t7.a.a(parcel, Status.CREATOR);

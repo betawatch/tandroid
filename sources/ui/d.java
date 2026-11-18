@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class d implements a, dh.b, si.a {
     public final a a;
@@ -37,40 +37,6 @@ public final class d implements a, dh.b, si.a {
         fh.g gVar = new fh.g(this, this, this);
         c(gVar);
         return gVar;
-    }
-
-    @Override // ui.a
-    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
-        float f14;
-        float f15;
-        float f16;
-        float f17;
-        Canvas canvas2;
-        if (this.d < 1.0f) {
-            this.a.b0(f10, f11, f12, f13, canvas);
-            f14 = f10;
-            canvas2 = canvas;
-            f17 = f13;
-            f16 = f12;
-            f15 = f11;
-        } else {
-            f14 = f10;
-            f15 = f11;
-            f16 = f12;
-            f17 = f13;
-            canvas2 = canvas;
-        }
-        float f18 = this.d;
-        if (f18 > 0.0f) {
-            if (f18 < 1.0f) {
-                canvas2.saveLayerAlpha(f14, f15, f16, f17, (int) (f18 * 255.0f));
-            }
-            Canvas canvas3 = canvas2;
-            this.b.b0(f14, f15, f16, f17, canvas3);
-            if (this.d < 1.0f) {
-                canvas3.restore();
-            }
-        }
     }
 
     @Override // dh.b
@@ -143,6 +109,40 @@ public final class d implements a, dh.b, si.a {
                 fh.g gVar = (fh.g) it.next();
                 gVar.updateColors();
                 gVar.invalidateSelf();
+            }
+        }
+    }
+
+    @Override // ui.a
+    public final void o(float f10, float f11, float f12, float f13, Canvas canvas) {
+        float f14;
+        float f15;
+        float f16;
+        float f17;
+        Canvas canvas2;
+        if (this.d < 1.0f) {
+            this.a.o(f10, f11, f12, f13, canvas);
+            f14 = f10;
+            canvas2 = canvas;
+            f17 = f13;
+            f16 = f12;
+            f15 = f11;
+        } else {
+            f14 = f10;
+            f15 = f11;
+            f16 = f12;
+            f17 = f13;
+            canvas2 = canvas;
+        }
+        float f18 = this.d;
+        if (f18 > 0.0f) {
+            if (f18 < 1.0f) {
+                canvas2.saveLayerAlpha(f14, f15, f16, f17, (int) (f18 * 255.0f));
+            }
+            Canvas canvas3 = canvas2;
+            this.b.o(f14, f15, f16, f17, canvas3);
+            if (this.d < 1.0f) {
+                canvas3.restore();
             }
         }
     }

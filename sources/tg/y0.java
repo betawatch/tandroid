@@ -6,14 +6,14 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.view.View;
-import bi.b6;
-import org.telegram.messenger.ns;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.Components.uj0;
+import bi.i8;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class y0 extends uj0 {
+public abstract class y0 extends ck0 {
     public static final Paint k3;
     public static final Paint l3;
     public static final Path m3;
@@ -44,10 +44,10 @@ public abstract class y0 extends uj0 {
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(org.telegram.messenger.g0.L(2.0f));
         setPadding(org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f), org.telegram.messenger.g0.L(8.0f));
-        setLayoutManager(new v4.s(7));
+        setLayoutManager(new v4.t(7));
         setAdapter(new w0(this, context));
         setOverScrollMode(2);
-        setOnItemClickListener(new b6(this, 21));
+        setOnItemClickListener(new i8(this, 21));
     }
 
     public static void A1(float f10, float f11, float f12, int i7, Canvas canvas) {
@@ -59,7 +59,7 @@ public abstract class y0 extends uj0 {
         }
         RectF rectF = org.telegram.messenger.g0.P;
         rectF.set(f10 - f12, f11 - f12, f10 + f12, f11 + f12);
-        paint.setAlpha(ns.e4);
+        paint.setAlpha(ks.e4);
         canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
         Path path = m3;
         path.rewind();
@@ -104,7 +104,7 @@ public abstract class y0 extends uj0 {
     }
 
     public final void B1(boolean z10, float f10) {
-        float interpolation = z10 ? er.g.getInterpolation(f10) : er.i.getInterpolation(f10);
+        float interpolation = z10 ? lr.g.getInterpolation(f10) : lr.i.getInterpolation(f10);
         float childCount = 1.0f / (getChildCount() - 1);
         for (int i7 = 0; i7 < getChildCount(); i7++) {
             View childAt = getChildAt(i7);

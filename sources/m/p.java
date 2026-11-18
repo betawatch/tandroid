@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class p {
     public Parcelable a;
@@ -121,33 +121,33 @@ public final class p {
         CompoundButton compoundButton = (CompoundButton) this.f;
         Context context = compoundButton.getContext();
         int[] iArr = f.a.m;
-        h6.m z10 = h6.m.z(context, attributeSet, iArr, i7);
-        TypedArray typedArray = (TypedArray) z10.c;
-        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) z10.c, i7);
+        h6.m D = h6.m.D(context, attributeSet, iArr, i7);
+        TypedArray typedArray = (TypedArray) D.c;
+        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) D.c, i7);
         try {
             if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
                 try {
-                    compoundButton.setButtonDrawable(b5.a.b(compoundButton.getContext(), resourceId2));
+                    compoundButton.setButtonDrawable(c8.z.b(compoundButton.getContext(), resourceId2));
                 } catch (Resources.NotFoundException unused) {
                 }
                 if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(z10.o(2));
+                    compoundButton.setButtonTintList(D.s(2));
                 }
                 if (typedArray.hasValue(3)) {
                     compoundButton.setButtonTintMode(l1.b(typedArray.getInt(3, -1), null));
                 }
-                z10.D();
+                D.G();
             }
             if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(b5.a.b(compoundButton.getContext(), resourceId));
+                compoundButton.setButtonDrawable(c8.z.b(compoundButton.getContext(), resourceId));
             }
             if (typedArray.hasValue(2)) {
             }
             if (typedArray.hasValue(3)) {
             }
-            z10.D();
+            D.G();
         } catch (Throwable th2) {
-            z10.D();
+            D.G();
             throw th2;
         }
     }

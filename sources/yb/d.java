@@ -36,7 +36,7 @@ import q6.k;
 import q6.m;
 import q6.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends pb.e {
     public boolean d = true;
@@ -46,7 +46,7 @@ public final class d extends pb.e {
     public final wa h;
 
     public d(xb.a aVar, a aVar2, ua uaVar) {
-        m.h(aVar, "ImageLabelerOptions can not be null");
+        m.i(aVar, "ImageLabelerOptions can not be null");
         this.f = aVar2;
         this.g = uaVar;
         t8 t8Var = new t8();
@@ -129,15 +129,15 @@ public final class d extends pb.e {
             int i11 = aVar.e;
             if (i11 == -1) {
                 Bitmap bitmap = aVar.a;
-                m.g(bitmap);
+                m.h(bitmap);
                 i7 = bitmap.getAllocationByteCount();
             } else {
                 if (i11 == 17 || i11 == 842094169) {
-                    m.g(null);
+                    m.h(null);
                     throw null;
                 }
                 if (i11 == 35) {
-                    m.g(null);
+                    m.h(null);
                     throw null;
                 }
                 i7 = 0;

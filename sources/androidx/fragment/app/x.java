@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
-import r0.k1;
+import r0.l1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x extends FrameLayout {
     public final ArrayList a;
@@ -135,15 +135,15 @@ public final class x extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final WindowInsets dispatchApplyWindowInsets(WindowInsets insets) {
-        k1 g10;
+        l1 g10;
         kotlin.jvm.internal.j.e(insets, "insets");
-        k1 h = k1.h(null, insets);
+        l1 h = l1.h(null, insets);
         View.OnApplyWindowInsetsListener onApplyWindowInsetsListener = this.c;
         if (onApplyWindowInsetsListener != null) {
             kotlin.jvm.internal.j.b(onApplyWindowInsetsListener);
             WindowInsets onApplyWindowInsets = onApplyWindowInsetsListener.onApplyWindowInsets(this, insets);
             kotlin.jvm.internal.j.d(onApplyWindowInsets, "onApplyWindowInsetsListe…lyWindowInsets(v, insets)");
-            g10 = k1.h(null, onApplyWindowInsets);
+            g10 = l1.h(null, onApplyWindowInsets);
         } else {
             g10 = r0.i0.g(this, h);
         }

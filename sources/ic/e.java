@@ -4,28 +4,28 @@ import ab.q;
 import cc.f;
 import h6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e {
-    public final gc.e a;
+    public final gc.d a;
     public final int b;
     public final int c;
     public final int d;
     public final /* synthetic */ m e;
 
-    public e(m mVar, gc.e eVar, int i7, int i10, int i11) {
+    public e(m mVar, gc.d dVar, int i7, int i10, int i11) {
         this.e = mVar;
-        this.a = eVar;
+        this.a = dVar;
         this.b = i7;
         this.c = i10;
         this.d = i11;
     }
 
     public final int a() {
-        gc.e eVar = this.a;
-        gc.e eVar2 = gc.e.h;
+        gc.d dVar = this.a;
+        gc.d dVar2 = gc.d.h;
         int i7 = this.d;
-        if (eVar != eVar2) {
+        if (dVar != dVar2) {
             return i7;
         }
         q qVar = (q) this.e.d;
@@ -38,10 +38,10 @@ public final class e {
     public final String toString() {
         q qVar = (q) this.e.d;
         StringBuilder sb2 = new StringBuilder();
-        gc.e eVar = this.a;
-        sb2.append(eVar);
+        gc.d dVar = this.a;
+        sb2.append(dVar);
         sb2.append('(');
-        if (eVar == gc.e.n) {
+        if (dVar == gc.d.n) {
             f fVar = (f) qVar.c;
             sb2.append(fVar.a[this.c].charset().displayName());
         } else {

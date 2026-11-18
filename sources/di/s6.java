@@ -1,0 +1,150 @@
+package di;
+
+import android.content.Context;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.or;
+import org.telegram.messenger.q10;
+import org.telegram.messenger.vm;
+import org.telegram.messenger.wm;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_update;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.t80;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class s6 implements RequestDelegate {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ TLObject i;
+
+    public /* synthetic */ s6(x8 x8Var, q10 q10Var, long j3, String str, Context context, org.telegram.ui.ActionBar.i6 i6Var, TLRPC.ChatInvite chatInvite, String str2) {
+        this.d = x8Var;
+        this.e = q10Var;
+        this.c = j3;
+        this.f = str;
+        this.b = context;
+        this.h = i6Var;
+        this.i = chatInvite;
+        this.g = str2;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final x8 x8Var = (x8) this.d;
+                final q10 q10Var = (q10) this.e;
+                final String str = (String) this.f;
+                final org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) this.h;
+                final TLRPC.ChatInvite chatInvite = (TLRPC.ChatInvite) this.i;
+                final String str2 = (String) this.g;
+                final long j3 = this.c;
+                final Context context = this.b;
+                org.telegram.messenger.g0.g3(new Runnable() { // from class: di.g7
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        t80 t80Var;
+                        x8 x8Var2 = x8.this;
+                        TLObject tLObject2 = tLObject;
+                        q10 q10Var2 = q10Var;
+                        long j10 = j3;
+                        String str3 = str;
+                        TLRPC.TL_error tL_error2 = tL_error;
+                        Context context2 = context;
+                        org.telegram.ui.ActionBar.i6 i6Var2 = i6Var;
+                        TLRPC.ChatInvite chatInvite2 = chatInvite;
+                        String str4 = str2;
+                        org.telegram.ui.ActionBar.h2 Q = LaunchActivity.Q();
+                        org.telegram.ui.Components.lc b02 = !org.telegram.messenger.g0.u1(Q) ? org.telegram.ui.Components.lc.b0(Q) : org.telegram.ui.Components.lc.Y();
+                        int i7 = 1;
+                        if (!(tLObject2 instanceof TLRPC.TL_payments_paymentResult)) {
+                            if (tL_error2 == null || !"BALANCE_TOO_LOW".equals(tL_error2.text)) {
+                                q10Var2.a(0L, Boolean.FALSE);
+                                b02.Q(R.raw.error, 36, gd.a0(null, null, 2131743641, tL_error2 != null ? tL_error2.text : "FAILED_SEND_STARS")).j();
+                                return;
+                            } else if (mp.u1(x8Var2.a).m7) {
+                                q10Var2.a(0L, Boolean.FALSE);
+                                x8.c0(context2, i6Var2);
+                                return;
+                            } else {
+                                boolean[] zArr = {false};
+                                fb fbVar = new fb(context2, i6Var2, j10, 1, chatInvite2.title, new ai.b(x8Var2, zArr, str4, chatInvite2, q10Var2), 0L);
+                                fbVar.setOnDismissListener(new n7(0, q10Var2, zArr));
+                                fbVar.show();
+                                return;
+                            }
+                        }
+                        TLRPC.TL_payments_paymentResult tL_payments_paymentResult = (TLRPC.TL_payments_paymentResult) tLObject2;
+                        Utilities.d.c(new l7(x8Var2, tL_payments_paymentResult, i7));
+                        TLRPC.Updates updates = tL_payments_paymentResult.updates;
+                        TLRPC.Update update = updates.update;
+                        long j11 = update instanceof TL_update.TL_updateChannel ? -((TL_update.TL_updateChannel) update).channel_id : 0L;
+                        if (updates.updates != null) {
+                            for (int i10 = 0; i10 < tL_payments_paymentResult.updates.updates.size(); i10++) {
+                                if (tL_payments_paymentResult.updates.updates.get(i10) instanceof TL_update.TL_updateChannel) {
+                                    j11 = -((TL_update.TL_updateChannel) tL_payments_paymentResult.updates.updates.get(i10)).channel_id;
+                                }
+                            }
+                        }
+                        q10Var2.a(Long.valueOf(j11), Boolean.TRUE);
+                        if (j11 == 0) {
+                            b02.I(R.raw.stars_send, gd.M0(2131744759, null), org.telegram.messenger.g0.W2(gd.G((int) j10, "StarsSubscriptionCompletedText", str3))).j();
+                        }
+                        LaunchActivity launchActivity = LaunchActivity.H1;
+                        if (launchActivity != null && (t80Var = launchActivity.w0) != null) {
+                            t80Var.c(true);
+                        }
+                        x8Var2.R(true);
+                        x8Var2.Q();
+                    }
+                });
+                break;
+            default:
+                mp mpVar = (mp) this.d;
+                org.telegram.ui.ActionBar.u1 u1Var = (org.telegram.ui.ActionBar.u1) this.e;
+                or orVar = (or) this.f;
+                Runnable runnable = (Runnable) this.g;
+                org.telegram.ui.ActionBar.h2 h2Var = (org.telegram.ui.ActionBar.h2) this.h;
+                TLRPC.TL_messages_migrateChat tL_messages_migrateChat = (TLRPC.TL_messages_migrateChat) this.i;
+                Context context2 = this.b;
+                if (tL_error != null) {
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    org.telegram.messenger.g0.g3(new wm(mpVar, orVar, context2, u1Var, tL_error, h2Var, tL_messages_migrateChat, 0));
+                    break;
+                } else {
+                    if (context2 != null) {
+                        org.telegram.messenger.g0.g3(new vm(0, context2, u1Var));
+                    }
+                    TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+                    mpVar.V3(updates, false);
+                    org.telegram.messenger.g0.g3(new org.telegram.messenger.d4(orVar, updates, this.c, 17));
+                    break;
+                }
+        }
+    }
+
+    public /* synthetic */ s6(mp mpVar, Context context, org.telegram.ui.ActionBar.u1 u1Var, or orVar, long j3, Runnable runnable, org.telegram.ui.ActionBar.h2 h2Var, TLRPC.TL_messages_migrateChat tL_messages_migrateChat) {
+        this.d = mpVar;
+        this.b = context;
+        this.e = u1Var;
+        this.f = orVar;
+        this.c = j3;
+        this.g = runnable;
+        this.h = h2Var;
+        this.i = tL_messages_migrateChat;
+    }
+}

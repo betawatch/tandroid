@@ -1,79 +1,45 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jp0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ca.i b;
+public final class jp0 extends org.telegram.ui.Components.xz {
+    public final /* synthetic */ so0 e;
+    public final /* synthetic */ PhotoViewer f;
 
-    public /* synthetic */ jp0(ca.i iVar, int i7) {
-        this.a = i7;
-        this.b = iVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jp0(PhotoViewer photoViewer, so0 so0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = so0Var;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x005d, code lost:
-    
-        if (r2 != 7) goto L31;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        e2.m mVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.c;
-                nq0 nq0Var = photoViewer.F2;
-                if (nq0Var != null) {
-                    org.telegram.ui.Components.u51 u51Var = photoViewer.G2;
-                    if (nq0Var.e != u51Var) {
-                        nq0Var.c = false;
-                        nq0Var.d = false;
-                        if (nq0Var.b) {
-                            nq0Var.a++;
-                            nq0Var.b = false;
-                        }
-                        nq0Var.setImageResource(R.color.transparent);
-                    }
-                    if (u51Var != null) {
-                        l2.f0 f0Var = u51Var.d;
-                        if (f0Var != null) {
-                            try {
-                                f0Var.F1();
-                                e2.u uVar = f0Var.S;
-                                if (uVar != null && (mVar = uVar.I) != null) {
-                                    int i7 = mVar.c;
-                                    if (i7 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long U = u51Var.U() - u51Var.S();
-                        if (!nq0Var.c && !nq0Var.d && !nq0Var.b && U < 5250.0f) {
-                            Uri uri = u51Var.G;
-                            int i10 = nq0Var.a + 1;
-                            nq0Var.a = i10;
-                            Utilities.e.c(new org.telegram.ui.Components.u11(nq0Var, uri, i10, 8));
-                            nq0Var.b = true;
-                        }
-                    }
-                    nq0Var.e = u51Var;
-                    break;
-                }
-                break;
-            case 1:
-                nq0.a(((PhotoViewer) this.b.c).F2);
-                break;
-            default:
-                nq0.a(((PhotoViewer) this.b.c).F2);
-                break;
-        }
+    @Override // org.telegram.ui.Components.wm0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.m3;
+        sb2.append(org.telegram.messenger.gd.G(iArr[0], "Minutes", new Object[0]));
+        sb2.append(' ');
+        sb2.append(org.telegram.messenger.gd.G(iArr[1], "Seconds", new Object[0]));
+        String sb3 = sb2.toString();
+        StringBuilder sb4 = new StringBuilder();
+        int[] iArr2 = photoViewer.n3;
+        sb4.append(org.telegram.messenger.gd.G(iArr2[0], "Minutes", new Object[0]));
+        sb4.append(' ');
+        sb4.append(org.telegram.messenger.gd.G(iArr2[1], "Seconds", new Object[0]));
+        return org.telegram.messenger.gd.a0("AccDescrPlayerDuration", null, 2131754806, sb3, sb4.toString());
+    }
+
+    @Override // org.telegram.ui.Components.xz
+    public final float k() {
+        return this.f.q3.c();
+    }
+
+    @Override // org.telegram.ui.Components.xz
+    public final void l(float f10) {
+        this.e.a(f10);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.q3.h(false, f10);
+        photoViewer.r3.invalidate();
     }
 }

@@ -1,90 +1,59 @@
 package hi;
 
-import java.io.File;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEncodingService;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.is;
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.TLRPC;
+import android.net.Uri;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.x10;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class r0 implements is {
-    public final int a;
-    public final File b;
-    public gj c;
-    public final p0 d;
-    public final q0 e;
-    public final o0 f;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class r0 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v0 b;
 
-    public r0(int i7, d7 d7Var, File file, p0 p0Var, q0 q0Var, o0 o0Var) {
+    public /* synthetic */ r0(v0 v0Var, int i7) {
         this.a = i7;
-        this.b = file;
-        this.d = p0Var;
-        this.e = q0Var;
-        this.f = o0Var;
-        if (this.c != null) {
-            return;
-        }
-        ns.f(i7).b(this, ns.a2);
-        ns.f(i7).b(this, ns.b2);
-        ns.f(i7).b(this, ns.c2);
-        TLRPC.TL_message tL_message = new TLRPC.TL_message();
-        tL_message.id = 1;
-        tL_message.attachPath = file.getAbsolutePath();
-        this.c = new gj(i7, tL_message, null, false, false);
-        d7Var.s(new ai.g0(this, 22));
+        this.b = v0Var;
     }
 
-    public final void a(boolean z10) {
-        if (this.c == null) {
-            return;
-        }
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         int i7 = this.a;
-        ns.f(i7).n(this, ns.a2);
-        ns.f(i7).n(this, ns.b2);
-        ns.f(i7).n(this, ns.c2);
-        if (z10) {
-            MediaController.B().i(this.c);
-        }
-        this.c = null;
-    }
-
-    @Override // org.telegram.messenger.is
-    public final void didReceivedNotification(int i7, int i10, Object... objArr) {
-        if (i7 == ns.a2) {
-            return;
-        }
-        if (i7 != ns.b2) {
-            if (i7 == ns.c2 && ((gj) objArr[0]) == this.c) {
-                a(false);
-                try {
-                    File file = this.b;
-                    if (file != null) {
-                        file.delete();
-                    }
-                } catch (Exception unused) {
+        v0 v0Var = this.b;
+        switch (i7) {
+            case 0:
+                Float f10 = (Float) obj;
+                u0 u0Var = v0Var.n;
+                if (u0Var != null) {
+                    u0Var.setProgress(f10.floatValue());
+                    break;
                 }
-                this.f.run();
-                return;
-            }
-            return;
-        }
-        if (((gj) objArr[0]) == this.c) {
-            ((Long) objArr[2]).getClass();
-            long longValue = ((Long) objArr[3]).longValue();
-            Float f10 = (Float) objArr[4];
-            f10.getClass();
-            this.e.a(f10);
-            if (longValue > 0) {
-                this.d.run();
-                VideoEncodingService videoEncodingService = VideoEncodingService.e;
-                if (videoEncodingService != null) {
-                    videoEncodingService.stopSelf();
+                break;
+            case 1:
+                Uri uri = (Uri) obj;
+                if (v0Var.c && v0Var.r != null) {
+                    v0Var.n.b(R.raw.ic_save_to_gallery, 3500, gd.N0("VideoSavedHint"));
+                    v0Var.c = false;
+                    v0Var.d();
+                    v0Var.w = uri;
+                    break;
                 }
-                a(false);
-            }
+                break;
+            default:
+                Uri uri2 = (Uri) obj;
+                v0Var.c = false;
+                v0Var.d();
+                u0 u0Var2 = v0Var.n;
+                if (u0Var2 != null) {
+                    u0Var2.a();
+                    v0Var.n = null;
+                }
+                u0 u0Var3 = new u0(v0Var.getContext());
+                v0Var.n = u0Var3;
+                u0Var3.b(R.raw.ic_save_to_gallery, 2500, gd.N0("PhotoSavedHint"));
+                v0Var.b.addView(v0Var.n);
+                v0Var.w = uri2;
+                break;
         }
     }
 }

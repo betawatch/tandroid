@@ -2,68 +2,78 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g80 extends View implements org.telegram.ui.ActionBar.z5 {
-    public final TextPaint a;
-    public final Paint b;
-    public final String c;
-    public final Rect d;
-    public View e;
+public abstract class g80 extends org.telegram.ui.ActionBar.n5 {
+    public final n2.o0 N0;
+    public final Paint O0;
+    public l80 P0;
 
     public g80(Context context) {
         super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        this.d = new Rect();
-        this.c = org.telegram.messenger.hd.M0(2131748727, null);
-        textPaint.setTextSize(org.telegram.messenger.g0.L(14.0f));
-        updateColors();
+        this.N0 = new n2.o0(this);
+        this.O0 = new Paint(1);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        View view = this.e;
-        Rect rect = this.d;
-        float width = view != null ? ((((getWidth() - rect.width()) - org.telegram.messenger.g0.L(8.0f)) - this.e.getPaddingLeft()) - this.e.getPaddingRight()) / 2.0f : org.telegram.messenger.g0.L(64.0f);
-        Paint paint = this.b;
-        canvas.drawLine((((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f)) - width, getHeight() / 2.0f, ((getWidth() - rect.width()) / 2.0f) - org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, paint);
-        canvas.drawLine(((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f), getHeight() / 2.0f, ((rect.width() + getWidth()) / 2.0f) + org.telegram.messenger.g0.L(8.0f) + width, getHeight() / 2.0f, paint);
-        canvas.drawText(this.c, (getWidth() - rect.width()) / 2.0f, (rect.height() + getHeight()) / 2.0f, this.a);
+    private int getLinkColor() {
+        return i0.a.o(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        View view = this.e;
-        if (view != null) {
-            i7 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(view.getMeasuredWidth()), TLObject.FLAG_30);
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
+    public void onDraw(Canvas canvas) {
+        if (isClickable()) {
+            RectF rectF = org.telegram.messenger.g0.P;
+            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
+            int linkColor = getLinkColor();
+            Paint paint = this.O0;
+            paint.setColor(linkColor);
+            canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(4.0f), org.telegram.messenger.g0.L(4.0f), paint);
         }
-        super.onMeasure(i7, i10);
-        String str = this.c;
-        this.a.getTextBounds(str, 0, str.length(), this.d);
+        super.onDraw(canvas);
+        if (isClickable() && this.N0.h(canvas)) {
+            invalidate();
+        }
     }
 
-    public void setMeasureAfter(View view) {
-        this.e = view;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        this.a.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.y6, false));
-        this.b.setColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.zj, false));
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+    @Override // org.telegram.ui.ActionBar.n5, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (!isClickable()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        n2.o0 o0Var = this.N0;
+        if (o0Var != null) {
+            if (motionEvent.getAction() == 0) {
+                l80 l80Var = new l80(null, null, motionEvent.getX(), motionEvent.getY(), 0);
+                l80Var.d(getLinkColor());
+                this.P0 = l80Var;
+                o0Var.b(l80Var, null);
+                f80 b10 = this.P0.b();
+                b10.e(null, 0, 0.0f, 0.0f);
+                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
+                org.telegram.messenger.g0.h3(new dw(17, this, l80Var), ViewConfiguration.getLongPressTimeout());
+                return true;
+            }
+            if (motionEvent.getAction() == 1) {
+                o0Var.f(true);
+                if (this.P0 != null) {
+                    performClick();
+                }
+                this.P0 = null;
+                return true;
+            }
+            if (motionEvent.getAction() == 3) {
+                o0Var.f(true);
+                this.P0 = null;
+                return true;
+            }
+        }
+        return this.P0 != null || super.onTouchEvent(motionEvent);
     }
 }

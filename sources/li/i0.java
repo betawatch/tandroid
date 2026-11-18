@@ -1,13 +1,13 @@
 package li;
 
 import java.util.ArrayList;
-import org.telegram.messenger.s10;
+import org.telegram.messenger.q10;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class i0 implements s10 {
+public final /* synthetic */ class i0 implements q10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ k0 b;
 
@@ -16,7 +16,7 @@ public final /* synthetic */ class i0 implements s10 {
         this.b = k0Var;
     }
 
-    @Override // org.telegram.messenger.s10
+    @Override // org.telegram.messenger.q10
     public final void a(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
@@ -32,7 +32,7 @@ public final /* synthetic */ class i0 implements s10 {
                         break;
                     }
                 } else {
-                    k0Var.c.f0(tL_error, false);
+                    k0Var.c.g0(tL_error, false);
                     break;
                 }
                 break;
@@ -54,7 +54,7 @@ public final /* synthetic */ class i0 implements s10 {
                     k0Var2.a();
                     j0 j0Var2 = k0Var2.h;
                     if (j0Var2 != null) {
-                        j0Var2.I();
+                        j0Var2.F();
                         break;
                     }
                 }
@@ -66,7 +66,7 @@ public final /* synthetic */ class i0 implements s10 {
                     k0Var3.getClass();
                     break;
                 } else {
-                    k0Var3.c.f0(tL_error2, false);
+                    k0Var3.c.g0(tL_error2, false);
                     break;
                 }
         }

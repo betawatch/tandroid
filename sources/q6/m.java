@@ -9,7 +9,7 @@ import com.google.android.gms.internal.vision.e2;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class m {
     public static final Object a = new Object();
@@ -28,7 +28,13 @@ public abstract class m {
         }
     }
 
-    public static void c(Handler handler) {
+    public static void c(boolean z10, String str, Object... objArr) {
+        if (!z10) {
+            throw new IllegalArgumentException(String.format(str, objArr));
+        }
+    }
+
+    public static void d(Handler handler) {
         Looper myLooper = Looper.myLooper();
         if (myLooper != handler.getLooper()) {
             String name = myLooper != null ? myLooper.getThread().getName() : "null current looper";
@@ -40,60 +46,60 @@ public abstract class m {
         }
     }
 
-    public static void d(String str) {
+    public static void e(String str) {
         if (Looper.getMainLooper() != Looper.myLooper()) {
             throw new IllegalStateException(str);
         }
     }
 
-    public static void e(String str) {
+    public static void f(String str) {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException("Given String is empty or null");
         }
     }
 
-    public static void f(String str, String str2) {
+    public static void g(String str, String str2) {
         if (TextUtils.isEmpty(str)) {
             throw new IllegalArgumentException(str2);
         }
     }
 
-    public static void g(Object obj) {
+    public static void h(Object obj) {
         if (obj == null) {
             throw new NullPointerException("null reference");
         }
     }
 
-    public static void h(Object obj, String str) {
+    public static void i(Object obj, String str) {
         if (obj == null) {
             throw new NullPointerException(str);
         }
     }
 
-    public static void i(String str, boolean z10) {
+    public static void j(String str, boolean z10) {
         if (!z10) {
             throw new IllegalStateException(String.valueOf(str));
         }
     }
 
-    public static void j(boolean z10) {
+    public static void k(boolean z10) {
         if (!z10) {
             throw new IllegalStateException();
         }
     }
 
-    public static boolean k(Object obj, Object obj2) {
+    public static boolean l(Object obj, Object obj2) {
         if (obj != obj2) {
             return obj != null && obj.equals(obj2);
         }
         return true;
     }
 
-    public static com.google.android.gms.common.api.f l(Status status) {
+    public static com.google.android.gms.common.api.f m(Status status) {
         return status.c != null ? new com.google.android.gms.common.api.p(status) : new com.google.android.gms.common.api.f(status);
     }
 
-    public static Task m(k8 k8Var, l lVar) {
+    public static Task n(k8 k8Var, l lVar) {
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
         k8Var.b(new v(k8Var, taskCompletionSource, lVar));
         return taskCompletionSource.getTask();

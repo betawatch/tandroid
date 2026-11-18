@@ -5,13 +5,13 @@ import android.os.Build;
 import android.os.Process;
 import android.os.StrictMode;
 import androidx.car.app.j;
-import c8.kb;
+import c8.nb;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class d {
     public static String a;
@@ -53,7 +53,7 @@ public abstract class d {
                     }
                     try {
                         String readLine = bufferedReader.readLine();
-                        m.g(readLine);
+                        m.h(readLine);
                         str = readLine.trim();
                     } catch (IOException unused2) {
                     } catch (Throwable th3) {
@@ -80,7 +80,7 @@ public abstract class d {
                     Object invoke = Process.class.getDeclaredMethod("isIsolated", null).invoke(null, null);
                     Object[] objArr = new Object[0];
                     if (invoke == null) {
-                        throw new j(kb.a("expected a non-null reference", objArr));
+                        throw new j(nb.a("expected a non-null reference", objArr));
                     }
                     bool = (Boolean) invoke;
                 } catch (ReflectiveOperationException unused) {

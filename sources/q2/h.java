@@ -1,23 +1,31 @@
 package q2;
 
-import java.util.UUID;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public interface h {
-    UUID a();
+public final /* synthetic */ class h implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j b;
+    public final /* synthetic */ Object c;
 
-    void b(k kVar);
+    public /* synthetic */ h(j jVar, k kVar, int i7) {
+        this.a = i7;
+        this.b = jVar;
+        this.c = kVar;
+    }
 
-    void c(k kVar);
-
-    boolean d();
-
-    int e();
-
-    boolean f(String str);
-
-    g g();
-
-    k2.b h();
+    /* JADX WARN: Type inference failed for: r2v0, types: [java.lang.Object, q2.k] */
+    /* JADX WARN: Type inference failed for: r2v1, types: [java.lang.Object, q2.k] */
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                j jVar = this.b;
+                this.c.z(jVar.a, jVar.b);
+                break;
+            default:
+                j jVar2 = this.b;
+                this.c.w(jVar2.a, jVar2.b);
+                break;
+        }
+    }
 }

@@ -1,108 +1,56 @@
 package fi;
 
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ns;
-import org.telegram.tgnet.tl.TL_stories;
+import java.io.File;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.e20;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class n6 extends k6 {
-    public final ArrayList C;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class n6 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o6 b;
 
-    public n6(int i7, ArrayList arrayList) {
-        super(i7, 0L, 3, -1, null);
-        this.C = new ArrayList();
-        F(arrayList);
+    public /* synthetic */ n6(o6 o6Var, int i7) {
+        this.a = i7;
+        this.b = o6Var;
     }
 
-    public final void F(ArrayList arrayList) {
-        int i7;
-        ArrayList arrayList2 = this.i;
-        arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            int size = arrayList.size();
-            i7 = this.c;
-            if (i10 >= size) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        int i7 = this.a;
+        o6 o6Var = this.b;
+        switch (i7) {
+            case 0:
+                hi.d7 d7Var = o6Var.c;
+                d7Var.c0 = (TLRPC.Document) obj;
+                TLRPC.TL_inputFileStoryDocument tL_inputFileStoryDocument = new TLRPC.TL_inputFileStoryDocument();
+                TLRPC.Document document = d7Var.c0;
+                int i10 = mp.I8;
+                TLRPC.TL_inputDocument tL_inputDocument = new TLRPC.TL_inputDocument();
+                tL_inputDocument.id = document.id;
+                tL_inputDocument.access_hash = document.access_hash;
+                tL_inputDocument.file_reference = document.file_reference;
+                tL_inputFileStoryDocument.doc = tL_inputDocument;
+                o6Var.c(tL_inputFileStoryDocument);
                 break;
-            }
-            TL_stories.StoryItem storyItem = (TL_stories.StoryItem) arrayList.get(i10);
-            if (storyItem != null) {
-                storyItem.messageId = arrayList2.size();
-                gj gjVar = new gj(i7, storyItem);
-                gjVar.r0(false);
-                ArrayList arrayList3 = new ArrayList();
-                arrayList3.add(Integer.valueOf(arrayList2.size()));
-                this.C.add(arrayList3);
-                arrayList2.add(gjVar);
-                i11++;
-            }
-            i10++;
+            default:
+                e20 e20Var = (e20) obj;
+                o6Var.G = e20Var;
+                o6Var.F.r0 = e20Var;
+                o6Var.E = e20Var.r / 1000;
+                if (!e20Var.c()) {
+                    if (new File(o6Var.F.r0.o).renameTo(new File(o6Var.e))) {
+                        org.telegram.messenger.w7.G(o6Var.N.a).h0(false, 33554432, o6Var.e, false);
+                        break;
+                    }
+                } else {
+                    MediaController.B().h0(o6Var.F, false, false, false);
+                    break;
+                }
+                break;
         }
-        if (i11 > 0) {
-            ns.f(i7).k(ns.x5, this);
-        }
-    }
-
-    @Override // fi.k6
-    public final gj f(int i7) {
-        if (i7 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.i;
-        if (i7 >= arrayList.size()) {
-            return null;
-        }
-        return (gj) arrayList.get(i7);
-    }
-
-    @Override // fi.k6
-    public final int g() {
-        return this.i.size();
-    }
-
-    @Override // fi.k6
-    public final ArrayList h() {
-        return new ArrayList(this.C);
-    }
-
-    @Override // fi.k6
-    public final int i() {
-        return this.i.size();
-    }
-
-    @Override // fi.k6
-    public final boolean k() {
-        return false;
-    }
-
-    @Override // fi.k6
-    public final boolean l() {
-        return false;
-    }
-
-    @Override // fi.k6
-    public final boolean q(int i7, List list, boolean z10) {
-        return false;
-    }
-
-    @Override // fi.k6
-    public final boolean r(int i7) {
-        return false;
-    }
-
-    @Override // fi.k6
-    public final void j() {
-    }
-
-    @Override // fi.k6
-    public final void s() {
-    }
-
-    @Override // fi.k6
-    public final void x() {
     }
 }

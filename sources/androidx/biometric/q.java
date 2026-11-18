@@ -23,7 +23,7 @@ import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class q extends androidx.fragment.app.s {
     public final Handler l0 = new Handler(Looper.getMainLooper());
@@ -353,13 +353,13 @@ public class q extends androidx.fragment.app.s {
             }
         }
         Context applicationContext = K().getApplicationContext();
-        t tVar = new t(applicationContext, false);
-        FingerprintManager b11 = t.b(applicationContext);
-        if (b11 == null || !b11.isHardwareDetected()) {
+        androidx.emoji2.text.n nVar5 = new androidx.emoji2.text.n(applicationContext, (char) 0);
+        FingerprintManager e11 = androidx.emoji2.text.n.e(applicationContext);
+        if (e11 == null || !e11.isHardwareDetected()) {
             i7 = 12;
         } else {
-            FingerprintManager b12 = t.b(applicationContext);
-            i7 = (b12 == null || !b12.hasEnrolledFingerprints()) ? 11 : 0;
+            FingerprintManager e12 = androidx.emoji2.text.n.e(applicationContext);
+            i7 = (e12 == null || !e12.hasEnrolledFingerprints()) ? 11 : 0;
         }
         if (i7 != 0) {
             T(i7, o1.a(applicationContext, i7));
@@ -423,9 +423,9 @@ public class q extends androidx.fragment.app.s {
                 a0Var2.c = new ob.c(a0Var2, 3);
             }
             try {
-                tVar.a(mVar, iVar, (ob.c) a0Var2.c);
-            } catch (NullPointerException e11) {
-                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e11);
+                nVar5.b(mVar, iVar, (ob.c) a0Var2.c);
+            } catch (NullPointerException e13) {
+                Log.e("BiometricFragment", "Got NPE while authenticating with fingerprint.", e13);
                 T(1, o1.a(applicationContext, 1));
             }
         }

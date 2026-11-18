@@ -1,24 +1,154 @@
 package ug;
 
-import android.content.Context;
-import org.telegram.ui.ActionBar.e6;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.util.Pair;
+import java.util.HashMap;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.pc;
+import org.telegram.messenger.v3;
+import org.telegram.messenger.x10;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ec;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class z extends q0 {
-    public final /* synthetic */ j0 S;
+public final /* synthetic */ class z implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(j0 j0Var, Context context, e6 e6Var) {
-        super(context, e6Var, true);
-        this.S = j0Var;
+    public /* synthetic */ z(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.S.b2) {
-            return;
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway;
+        int i7 = this.a;
+        Object obj2 = this.b;
+        switch (i7) {
+            case 0:
+                ((l0) obj2).z1((HashMap) obj);
+                break;
+            case 1:
+                u1 u1Var = (u1) obj2;
+                boolean e10 = pc.e(131072);
+                if (u1Var.e != e10) {
+                    u1Var.e = e10;
+                    u1Var.invalidate();
+                    break;
+                }
+                break;
+            case 2:
+                vh.g.e1((vh.g) obj2, (Pair) obj);
+                break;
+            case 3:
+                fj fjVar = (fj) obj2;
+                TLRPC.payments_GiveawayInfo payments_giveawayinfo = (TLRPC.payments_GiveawayInfo) obj;
+                TLRPC.MessageMedia messageMedia = fjVar.k.media;
+                if (messageMedia instanceof TLRPC.TL_messageMediaGiveawayResults) {
+                    TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageMedia;
+                    tL_messageMediaGiveaway = new TLRPC.TL_messageMediaGiveaway();
+                    tL_messageMediaGiveaway.prize_description = tL_messageMediaGiveawayResults.prize_description;
+                    tL_messageMediaGiveaway.months = tL_messageMediaGiveawayResults.months;
+                    tL_messageMediaGiveaway.quantity = tL_messageMediaGiveawayResults.winners_count + tL_messageMediaGiveawayResults.unclaimed_count;
+                    tL_messageMediaGiveaway.only_new_subscribers = tL_messageMediaGiveawayResults.only_new_subscribers;
+                    tL_messageMediaGiveaway.until_date = tL_messageMediaGiveawayResults.until_date;
+                    if ((tL_messageMediaGiveawayResults.flags & 32) != 0) {
+                        tL_messageMediaGiveaway.flags |= 32;
+                        tL_messageMediaGiveaway.stars = tL_messageMediaGiveawayResults.stars;
+                    }
+                } else {
+                    tL_messageMediaGiveaway = (TLRPC.TL_messageMediaGiveaway) messageMedia;
+                }
+                TLRPC.TL_messageMediaGiveaway tL_messageMediaGiveaway2 = tL_messageMediaGiveaway;
+                long j3 = 1000 * fjVar.k.date;
+                h2 Q = LaunchActivity.Q();
+                if (Q != null) {
+                    String b10 = wg.h.b(fjVar);
+                    TLRPC.Chat O0 = mp.u1(j10.t0).O0(Long.valueOf(-fjVar.Z0()));
+                    boolean z10 = O0 != null && v3.V(O0);
+                    ob obVar = new ob(Q.getParentActivity(), Q.getResourceProvider());
+                    if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfoResults) {
+                        obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                        obVar.b.setText(gd.M0(2131753369, null));
+                    } else if (payments_giveawayinfo instanceof TLRPC.TL_payments_giveawayInfo) {
+                        if (((TLRPC.TL_payments_giveawayInfo) payments_giveawayinfo).participating) {
+                            obVar.c(R.raw.forward, 30, 30, new String[0]);
+                            obVar.b.setText(gd.M0(2131753367, null));
+                        } else {
+                            obVar.c(R.raw.chats_infotip, 30, 30, new String[0]);
+                            obVar.b.setText(gd.M0(2131753368, null));
+                        }
+                    }
+                    obVar.b.setSingleLine(false);
+                    obVar.b.setMaxLines(2);
+                    ec ecVar = new ec(Q.getParentActivity(), Q.getResourceProvider(), true);
+                    ecVar.e(gd.M0(2131748818, null));
+                    ecVar.b = new ai.n(payments_giveawayinfo, z10, b10, j3, tL_messageMediaGiveaway2, Q);
+                    obVar.setButton(ecVar);
+                    gc.g(Q, obVar, 2750).j();
+                    break;
+                }
+                break;
+            case 4:
+                wg.q0 q0Var = (wg.q0) obj2;
+                q0Var.W1.setLoading(false);
+                wg.h.j(q0Var.getContext(), (TLRPC.TL_error) obj);
+                break;
+            case 5:
+                wh.h hVar = (wh.h) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                Matrix matrix = hVar.L;
+                if (!hVar.U) {
+                    hVar.J = bitmap;
+                    Bitmap bitmap2 = hVar.J;
+                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                    hVar.K = new BitmapShader(bitmap2, tileMode, tileMode);
+                    Paint paint = new Paint(2);
+                    hVar.M = paint;
+                    paint.setShader(hVar.K);
+                    ColorMatrix colorMatrix = new ColorMatrix();
+                    org.telegram.messenger.g0.i(colorMatrix, n6.I.q() ? 0.08f : 1.25f);
+                    org.telegram.messenger.g0.h(colorMatrix, n6.I.q() ? 0.02f : -0.15f);
+                    hVar.M.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                    matrix.reset();
+                    matrix.setScale(15.0f, 15.0f);
+                    hVar.K.setLocalMatrix(matrix);
+                    break;
+                } else {
+                    hVar.J.recycle();
+                    break;
+                }
+            case 6:
+                HashMap hashMap = ((xg.b) obj2).x;
+                hashMap.clear();
+                hashMap.putAll((HashMap) obj);
+                break;
+            case 7:
+                ((xg.e) obj2).F((TLObject) obj);
+                break;
+            default:
+                HashMap hashMap2 = ((xg.h) obj2).r;
+                hashMap2.clear();
+                hashMap2.putAll((HashMap) obj);
+                break;
         }
-        super.invalidate();
     }
 }

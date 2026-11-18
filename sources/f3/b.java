@@ -1,6 +1,6 @@
 package f3;
 
-import a8.ja;
+import a8.la;
 import android.util.Base64;
 import e2.q0;
 import e2.t0;
@@ -9,10 +9,10 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -21,12 +21,12 @@ public abstract class b {
     public static final int[] d = {48000, 44100, 32000};
     public static final int[] e = {24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE};
     public static final int[] f = {2, 1, 2, 3, 3, 4, 4, 5};
-    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, ns.x1, 128, ns.q2, ns.W2, ns.B3, 256, ns.r5, 384, 448, 512, 576, 640};
-    public static final int[] h = {69, 87, ns.p1, ns.F1, ns.V1, ns.E2, 208, ns.S3, ns.B4, ns.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
+    public static final int[] g = {32, 40, 48, 56, 64, 80, 96, ks.x1, 128, ks.q2, ks.W2, ks.B3, 256, ks.r5, 384, 448, 512, 576, 640};
+    public static final int[] h = {69, 87, ks.p1, ks.F1, ks.V1, ks.E2, ks.m3, ks.S3, ks.B4, ks.T5, 417, 487, 557, 696, 835, 975, 1114, 1253, 1393};
     public static final int[] i = {2002, 2000, 1920, 1601, 1600, 1001, 1000, 960, 800, 800, 480, 400, 400, 2048};
     public static final int[] j = {1, 2, 2, 2, 2, 3, 3, 4, 4, 5, 6, 6, 6, 7, 8, 8};
     public static final int[] k = {-1, 8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, -1, -1, 11025, 22050, 44100, -1, -1, 12000, 24000, 48000, -1, -1};
-    public static final int[] l = {64, ns.x1, 128, ns.W2, ns.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
+    public static final int[] l = {64, ks.x1, 128, ks.W2, ks.B3, 256, 384, 448, 512, 640, 768, 896, 1024, 1152, 1280, 1536, 1920, 2048, 2304, 2560, 2688, 2816, 2823, 2944, 3072, 3840, TLObject.FLAG_12, 6144, 7680};
     public static final int[] m = {8000, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 32000, 64000, 128000, 22050, 44100, 88200, 176400, 352800, 12000, 24000, 48000, 96000, 192000, 384000};
     public static final int[] n = {5, 8, 10, 12};
     public static final int[] o = {6, 9, 12, 15};
@@ -120,7 +120,7 @@ public abstract class b {
                 if ((j12 & 128) != 0) {
                     return false;
                 }
-                int i19 = (j12 & ns.K1) >> 1;
+                int i19 = (j12 & ks.K1) >> 1;
                 if ((i19 >= 2 && i19 <= 7) || (i19 >= 13 && i19 <= 31)) {
                     h2.a.g("FlacFrameReader", "Ignoring frame where first subframe has a reserved type: " + i19);
                     return false;
@@ -202,7 +202,7 @@ public abstract class b {
             for (i0 i0Var : i0VarArr) {
                 xVar.N(i10);
                 i0Var.b(i7, xVar);
-                ja.p(j3 != -9223372036854775807L);
+                la.p(j3 != -9223372036854775807L);
                 i0Var.c(j3, 1, i7, 0, null);
             }
         }
@@ -228,9 +228,9 @@ public abstract class b {
         bArr[1] = 64;
         bArr[2] = -1;
         bArr[3] = -1;
-        bArr[4] = (byte) ((i7 >> 16) & ns.e4);
-        bArr[5] = (byte) ((i7 >> 8) & ns.e4);
-        bArr[6] = (byte) (i7 & ns.e4);
+        bArr[4] = (byte) ((i7 >> 16) & ks.e4);
+        bArr[5] = (byte) ((i7 >> 8) & ks.e4);
+        bArr[6] = (byte) (i7 & ks.e4);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:10:0x0060  */
@@ -287,9 +287,9 @@ public abstract class b {
             return ((((i10 == 3 ? u[i12 - 1] : v[i12 - 1]) * 12) / i14) + i15) * 4;
         }
         int i16 = i10 == 3 ? i11 == 2 ? w[i12 - 1] : x[i12 - 1] : y[i12 - 1];
-        int i17 = ns.a2;
+        int i17 = ks.a2;
         if (i10 == 3) {
-            return ((i16 * ns.a2) / i14) + i15;
+            return ((i16 * ks.a2) / i14) + i15;
         }
         if (i11 == 1) {
             i17 = 72;
@@ -653,7 +653,7 @@ public abstract class b {
     public static int s(int i7, h2.x xVar) {
         switch (i7) {
             case 1:
-                return ns.W2;
+                return ks.W2;
             case 2:
             case 3:
             case 4:

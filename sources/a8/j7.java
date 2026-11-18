@@ -2,7 +2,7 @@ package a8;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class j7 {
     /* JADX WARN: Removed duplicated region for block: B:18:0x0033  */
@@ -23,13 +23,13 @@ public abstract class j7 {
                     jd.a aVar = jd.a.a;
                     i7 = pVar.c;
                     if (i7 != 0) {
-                        af.b.c(obj);
+                        b7.h.b(obj);
                         if (pVar.getContext().get(zd.y.b) != sVar) {
                             throw new IllegalStateException("awaitClose() can only be invoked from the producer context");
                         }
                         pVar.a = k0Var;
                         pVar.c = 1;
-                        zd.m mVar = new zd.m(1, c8.v0.b(pVar));
+                        zd.m mVar = new zd.m(1, c8.x0.b(pVar));
                         mVar.s();
                         ((be.r) sVar).T(new be.q(mVar, 0));
                         if (mVar.r() == aVar) {
@@ -40,7 +40,7 @@ public abstract class j7 {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
                         k0Var = pVar.a;
-                        af.b.c(obj);
+                        b7.h.b(obj);
                     }
                     k0Var.invoke();
                     return gd.k.a;

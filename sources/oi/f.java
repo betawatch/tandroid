@@ -4,7 +4,7 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -24,13 +24,13 @@ public final /* synthetic */ class f implements Runnable {
         o oVar = this.b;
         switch (i7) {
             case 0:
-                q3 q3Var = oVar.r;
-                View C1 = q3Var.C1(aVar);
-                if (!(C1 instanceof j4)) {
-                    q3Var.g3.O(false);
+                s3 s3Var = oVar.r;
+                View C1 = s3Var.C1(aVar);
+                if (!(C1 instanceof l4)) {
+                    s3Var.g3.O(false);
                     break;
                 } else {
-                    ((j4) C1).g(aVar, q3Var.getMapDelegate());
+                    ((l4) C1).g(aVar, s3Var.getMapDelegate());
                     break;
                 }
             case 1:
@@ -49,18 +49,18 @@ public final /* synthetic */ class f implements Runnable {
                 oVar.r.Y4(aVar, new TL_iv.pageBlockParagraph());
                 break;
             case 6:
-                q3 q3Var2 = oVar.r;
-                ArrayList arrayList = q3.A4;
+                s3 s3Var2 = oVar.r;
+                ArrayList arrayList = s3.A4;
                 TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
                 pageblockblockquote.caption = new TL_iv.textEmpty();
-                q3Var2.X4(this.c, pageblockblockquote, 0, 0, false, false);
+                s3Var2.X4(this.c, pageblockblockquote, 0, 0, false, false);
                 break;
             case 7:
-                q3 q3Var3 = oVar.r;
-                ArrayList arrayList2 = q3.A4;
+                s3 s3Var3 = oVar.r;
+                ArrayList arrayList2 = s3.A4;
                 TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
                 pageblockpullquote.caption = new TL_iv.textEmpty();
-                q3Var3.X4(this.c, pageblockpullquote, 0, 0, false, false);
+                s3Var3.X4(this.c, pageblockpullquote, 0, 0, false, false);
                 break;
             case 8:
                 oVar.r.Y4(aVar, new TL_iv.pageBlockPreformatted());

@@ -1,30 +1,98 @@
 package c8;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import java.math.RoundingMode;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class v0 {
-    /* JADX WARN: Multi-variable type inference failed */
-    public static id.c a(id.c cVar, id.c cVar2, rd.p pVar) {
-        kotlin.jvm.internal.j.e(pVar, "<this>");
-        if (pVar instanceof kd.a) {
-            return ((kd.a) pVar).create(cVar, cVar2);
+    public static long a(long j3, long j10) {
+        long j11 = j3 + j10;
+        if (((j3 ^ j10) < 0) || ((j3 ^ j11) >= 0)) {
+            return j11;
         }
-        id.h context = cVar2.getContext();
-        return context == id.i.a ? new jd.b(cVar2, cVar, pVar) : new jd.c(cVar2, context, pVar, cVar);
+        throw new ArithmeticException(a8.p0.r(a8.p0.t(j3, "overflow: checkedAdd(", ", "), j10, ")"));
     }
 
-    public static id.c b(id.c cVar) {
-        id.c intercepted;
-        kotlin.jvm.internal.j.e(cVar, "<this>");
-        kd.c cVar2 = cVar instanceof kd.c ? (kd.c) cVar : null;
-        return (cVar2 == null || (intercepted = cVar2.intercepted()) == null) ? cVar : intercepted;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public static long b(long j3, long j10, RoundingMode roundingMode) {
+        roundingMode.getClass();
+        long j11 = j3 / j10;
+        long j12 = j3 - (j10 * j11);
+        if (j12 == 0) {
+            return j11;
+        }
+        int i7 = ((int) ((j3 ^ j10) >> 63)) | 1;
+        switch (j9.e.a[roundingMode.ordinal()]) {
+            case 1:
+                w0.b(j12 == 0);
+                return j11;
+            case 2:
+                return j11;
+            case 3:
+                if (i7 >= 0) {
+                    return j11;
+                }
+                return j11 + i7;
+            case 4:
+                return j11 + i7;
+            case 5:
+                if (i7 <= 0) {
+                    return j11;
+                }
+                return j11 + i7;
+            case 6:
+            case 7:
+            case 8:
+                long abs = Math.abs(j12);
+                long abs2 = abs - (Math.abs(j10) - abs);
+                if (abs2 == 0) {
+                    if (roundingMode != RoundingMode.HALF_UP && (roundingMode != RoundingMode.HALF_EVEN || (1 & j11) == 0)) {
+                        return j11;
+                    }
+                } else if (abs2 <= 0) {
+                    return j11;
+                }
+                return j11 + i7;
+            default:
+                throw new AssertionError();
+        }
     }
 
-    public static Object c(rd.p pVar, Object obj, id.c cVar) {
-        kotlin.jvm.internal.j.e(pVar, "<this>");
-        id.h context = cVar.getContext();
-        Object dVar = context == id.i.a ? new jd.d(cVar) : new jd.e(cVar, context);
-        kotlin.jvm.internal.u.a(2, pVar);
-        return pVar.invoke(obj, dVar);
+    public static long c(long j3, long j10) {
+        w0.a(j3, "a");
+        w0.a(j10, "b");
+        if (j3 == 0) {
+            return j10;
+        }
+        if (j10 == 0) {
+            return j3;
+        }
+        int numberOfTrailingZeros = Long.numberOfTrailingZeros(j3);
+        long j11 = j3 >> numberOfTrailingZeros;
+        int numberOfTrailingZeros2 = Long.numberOfTrailingZeros(j10);
+        long j12 = j10 >> numberOfTrailingZeros2;
+        while (j11 != j12) {
+            long j13 = j11 - j12;
+            long j14 = (j13 >> 63) & j13;
+            long j15 = (j13 - j14) - j14;
+            j12 += j14;
+            j11 = j15 >> Long.numberOfTrailingZeros(j15);
+        }
+        return j11 << Math.min(numberOfTrailingZeros, numberOfTrailingZeros2);
+    }
+
+    public static long d(long j3, long j10) {
+        int numberOfLeadingZeros = Long.numberOfLeadingZeros(~j10) + Long.numberOfLeadingZeros(j10) + Long.numberOfLeadingZeros(~j3) + Long.numberOfLeadingZeros(j3);
+        if (numberOfLeadingZeros > 65) {
+            return j3 * j10;
+        }
+        long j11 = ((j3 ^ j10) >>> 63) + Long.MAX_VALUE;
+        if (!((numberOfLeadingZeros < 64) | ((j10 == Long.MIN_VALUE) & (j3 < 0)))) {
+            long j12 = j3 * j10;
+            if (j3 == 0 || j12 / j3 == j10) {
+                return j12;
+            }
+        }
+        return j11;
     }
 }

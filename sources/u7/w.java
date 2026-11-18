@@ -1,26 +1,11 @@
 package u7;
 
-import android.os.Parcel;
+import android.os.IInterface;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class w extends a8.q implements x {
-    public w() {
-        super("com.google.android.gms.location.internal.IFusedLocationProviderCallback", 11);
-    }
+public interface w extends IInterface {
+    void P0(t tVar);
 
-    @Override // a8.q
-    public final boolean l1(Parcel parcel, int i7) {
-        if (i7 != 1) {
-            if (i7 != 2) {
-                return false;
-            }
-            zze();
-            return true;
-        }
-        u uVar = (u) d.a(parcel, u.CREATOR);
-        d.b(parcel);
-        Q0(uVar);
-        return true;
-    }
+    void zze();
 }

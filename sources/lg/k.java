@@ -7,11 +7,11 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.text.TextPaint;
 import com.google.android.gms.internal.vision.e2;
-import fi.f4;
+import fi.d4;
 import java.util.ArrayList;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.n6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k extends g {
     @Override // lg.g
@@ -47,7 +47,7 @@ public final class k extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e10 = g.e(this.k0, this.m0, new f4(this, 4));
+                    ValueAnimator e10 = g.e(this.k0, this.m0, new d4(this, 4));
                     this.e0 = e10;
                     e10.start();
                 }
@@ -442,7 +442,7 @@ public final class k extends g {
                     } else {
                         if (charSequenceArr == null || arrayList.size() < 2) {
                             i13 = i19;
-                            textPaint2.setColor(j6.w0(j6.Pj, this.X0));
+                            textPaint2.setColor(n6.w0(n6.Pj, this.X0));
                             textPaint2.setAlpha((int) e2.D(dVar2.f, this.f, f13, f10));
                         } else {
                             i13 = i19;
@@ -500,9 +500,9 @@ public final class k extends g {
         int size = arrayList.size();
         long j3 = 0;
         for (int i11 = 0; i11 < size; i11++) {
-            long Y0 = ((ng.f) arrayList.get(i11)).n ? (long) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.Y0(i7, i10) * ((mg.c) this.i0).l[i11]) : 0L;
-            if (Y0 > j3) {
-                j3 = Y0;
+            long U0 = ((ng.f) arrayList.get(i11)).n ? (long) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.U0(i7, i10) * ((mg.c) this.i0).l[i11]) : 0L;
+            if (U0 > j3) {
+                j3 = U0;
             }
         }
         return j3;
@@ -517,9 +517,9 @@ public final class k extends g {
         int size = arrayList.size();
         long j3 = Long.MAX_VALUE;
         for (int i11 = 0; i11 < size; i11++) {
-            long a12 = ((ng.f) arrayList.get(i11)).n ? (int) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.a1(i7, i10) * ((mg.c) this.i0).l[i11]) : 2147483647L;
-            if (a12 < j3) {
-                j3 = a12;
+            long Z0 = ((ng.f) arrayList.get(i11)).n ? (int) (((mg.a) ((mg.c) this.i0).d.get(i11)).b.Z0(i7, i10) * ((mg.c) this.i0).l[i11]) : 2147483647L;
+            if (Z0 < j3) {
+                j3 = Z0;
             }
         }
         return j3;

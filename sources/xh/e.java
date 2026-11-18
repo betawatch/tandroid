@@ -10,21 +10,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.HashMap;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gz;
-import org.telegram.ui.Components.n40;
-import org.telegram.ui.Components.z30;
-import org.telegram.ui.eh0;
+import org.telegram.ui.Components.h40;
+import org.telegram.ui.Components.v40;
+import org.telegram.ui.hh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class e {
     public static HashMap n;
     public final double a;
     public final double b;
     public final int c;
-    public final eh0 d;
-    public final n40 e;
+    public final hh0 d;
+    public final v40 e;
     public d f;
     public final int g;
     public final int h;
@@ -34,19 +34,19 @@ public final class e {
     public int l = 0;
     public final c m = new c(this, 0);
 
-    public e(int i7, eh0 eh0Var, int i10, int i11) {
+    public e(int i7, hh0 hh0Var, int i10, int i11) {
         double d = 1.0d / ((int) g0.r);
         this.a = d;
         this.b = d * 4.0d;
         this.c = i7;
         this.g = i10;
         this.h = i11;
-        this.d = eh0Var;
-        n40 n40Var = new n40(2, eh0Var.getContext(), this);
-        this.e = n40Var;
-        n40Var.setSurfaceTextureListener(new z30(this, 4));
-        n40Var.setOpaque(false);
-        eh0Var.addView(n40Var);
+        this.d = hh0Var;
+        v40 v40Var = new v40(2, hh0Var.getContext(), this);
+        this.e = v40Var;
+        v40Var.setSurfaceTextureListener(new h40(this, 4));
+        v40Var.setOpaque(false);
+        hh0Var.addView(v40Var);
     }
 
     public static e d(int i7, View view, ViewGroup viewGroup) {
@@ -59,7 +59,7 @@ public final class e {
         }
         e eVar = (e) n.get(Integer.valueOf(i7));
         if (eVar == null) {
-            int o4 = gz.o();
+            int o4 = bz.o();
             if (o4 == 1) {
                 Point point = g0.q;
                 min = Math.min(900, (int) (((point.x + point.y) / 2.0f) * 0.8f));
@@ -75,9 +75,9 @@ public final class e {
             }
             HashMap hashMap = n;
             Integer valueOf = Integer.valueOf(i7);
-            eh0 eh0Var = new eh0(viewGroup.getContext(), 22);
-            viewGroup.addView(eh0Var);
-            e eVar2 = new e(i7, eh0Var, min, min);
+            hh0 hh0Var = new hh0(viewGroup.getContext(), 22);
+            viewGroup.addView(hh0Var);
+            e eVar2 = new e(i7, hh0Var, min, min);
             hashMap.put(valueOf, eVar2);
             eVar = eVar2;
         }
@@ -132,7 +132,7 @@ public final class e {
         }
         c cVar = this.m;
         g0.r(cVar);
-        g0.i3(cVar, 30L);
+        g0.h3(cVar, 30L);
     }
 
     public final void c(Canvas canvas, View view, int i7, int i10, float f10, boolean z10) {
@@ -159,9 +159,9 @@ public final class e {
         if (num.intValue() % 4 == 3) {
             canvas.scale(1.0f, -1.0f, i11 / 2.0f, i12 / 2.0f);
         }
-        n40 n40Var = this.e;
+        v40 v40Var = this.e;
         if (z10) {
-            Bitmap bitmap = n40Var.getBitmap();
+            Bitmap bitmap = v40Var.getBitmap();
             if (bitmap != null) {
                 Paint paint = new Paint(7);
                 paint.setColor(-1);
@@ -169,8 +169,8 @@ public final class e {
                 bitmap.recycle();
             }
         } else {
-            n40Var.setAlpha(f10);
-            n40Var.draw(canvas);
+            v40Var.setAlpha(f10);
+            v40Var.draw(canvas);
         }
         canvas.restore();
     }

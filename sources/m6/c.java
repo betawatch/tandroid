@@ -17,9 +17,8 @@ import f5.s;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
-import org.telegram.ui.Cells.y0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c {
     public static int h;
@@ -102,7 +101,7 @@ public final class c {
         }
         intent.putExtras(bundle);
         a(this.b, intent);
-        intent.putExtra("kid", y0.m("|ID|", c10, "|", new StringBuilder(String.valueOf(c10).length() + 5)));
+        intent.putExtra("kid", p5.c.m("|ID|", c10, "|", new StringBuilder(String.valueOf(c10).length() + 5)));
         if (Log.isLoggable("Rpc", 3)) {
             Log.d("Rpc", "Sending ".concat(String.valueOf(intent.getExtras())));
         }

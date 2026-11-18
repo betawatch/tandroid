@@ -1,44 +1,83 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.beta.R;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.z10;
-import org.telegram.ui.Components.cc;
-import org.telegram.ui.Components.xb;
+import org.telegram.ui.oa0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g8 implements z10 {
+public final /* synthetic */ class g8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p8 b;
+    public final /* synthetic */ r8 b;
 
-    public /* synthetic */ g8(p8 p8Var, int i7) {
+    public /* synthetic */ g8(r8 r8Var, int i7) {
         this.a = i7;
-        this.b = p8Var;
+        this.b = r8Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        p8 p8Var = this.b;
-        switch (i7) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        e8 j3;
+        switch (this.a) {
             case 0:
-                l0.x(p8Var.currentAccount).z(new t1(3, p8Var, (z10) obj), true, false);
-                break;
-            case 1:
-                String str = (String) obj;
-                if (str == null) {
-                    xb I = cc.a0(p8Var).I(R.raw.contact_check, hd.M0(2131743188, null), hd.M0(2131743186, null));
-                    I.j = 5000;
-                    I.j();
-                    p8Var.a.g3.O(true);
-                    break;
-                } else {
-                    cc.a0(p8Var).e0(str, false);
+                r8 r8Var = this.b;
+                if (r8Var.r0 && r8Var.h0 != null) {
+                    r8Var.r0 = false;
+                    r8Var.q0 = true;
+                    r8Var.removeCallbacks(r8Var.C1);
+                    ((oa0) r8Var.d.b).X();
+                    r8Var.getParent().requestDisallowInterceptTouchEvent(true);
+                    r8Var.performHapticFeedback(4);
+                    e8 j10 = r8Var.j(r8Var.h0);
+                    if (j10 != null) {
+                        j10.o();
+                        j10.animate().scaleX(0.94f).scaleY(0.94f).setDuration(100L).start();
+                    }
+                    r8Var.f0();
                     break;
                 }
+                break;
+            case 1:
+                r8 r8Var2 = this.b;
+                r8Var2.t0 = false;
+                r8Var2.h0 = null;
+                r8Var2.f0();
+                break;
+            case 2:
+                this.b.Q();
+                break;
             default:
-                p8.f0(p8Var, (Boolean) obj);
+                r8 r8Var3 = this.b;
+                q8 q8Var = r8Var3.h0;
+                if (q8Var != null && !r8Var3.n0) {
+                    if (!r8Var3.v0) {
+                        if (r8Var3.q0 && (j3 = r8Var3.j(q8Var)) != null) {
+                            r8Var3.S(j3);
+                            break;
+                        }
+                    } else {
+                        r8Var3.o0 = true;
+                        r8Var3.i0 = q8Var;
+                        r8Var3.C0 = Float.NaN;
+                        r8Var3.F0 = Float.NaN;
+                        r8Var3.D0 = 0.0f;
+                        r8Var3.M0 = false;
+                        r8Var3.E0 = q8Var.i.b;
+                        q8Var.q.a(0.0f);
+                        q8 q8Var2 = r8Var3.h0;
+                        p8 p8Var = q8Var2.l;
+                        p8Var.d = 260.0f;
+                        p8Var.e = 0.58f;
+                        p8Var.b = 1.0f;
+                        long j11 = r8Var3.O0 + 1;
+                        r8Var3.O0 = j11;
+                        q8Var2.I = j11;
+                        fi.s2 s2Var = q8Var2.c;
+                        s2Var.v0 = true;
+                        s2Var.P0(false);
+                        r8Var3.performHapticFeedback(0);
+                        r8Var3.f0();
+                        break;
+                    }
+                }
                 break;
         }
     }

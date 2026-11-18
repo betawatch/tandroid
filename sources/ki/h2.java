@@ -1,431 +1,58 @@
 package ki;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h2 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
+public final class h2 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ t2 d;
 
-    public /* synthetic */ h2(x2 x2Var, int i7) {
-        this.a = i7;
-        this.b = x2Var;
+    public h2(t2 t2Var, boolean z10, float f10, float f11) {
+        this.d = t2Var;
+        this.a = z10;
+        this.b = f10;
+        this.c = f11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                org.telegram.messenger.g0.h3(new kg.t1(5, this.b, tL_error));
-                break;
-            case 1:
-                final int i7 = 1;
-                final x2 x2Var = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.e2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i7) {
-                            case 0:
-                                x2 x2Var2 = x2Var;
-                                if (tL_error == null) {
-                                    k4 k4Var = x2Var2.x0;
-                                    if (k4Var != null) {
-                                        k4Var.a(tLObject);
-                                        x2Var2.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var2.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                x2 x2Var3 = x2Var;
-                                if (tL_error == null) {
-                                    k4 k4Var2 = x2Var3.x0;
-                                    if (k4Var2 != null) {
-                                        k4Var2.a(tLObject);
-                                        x2Var3.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var3.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                x2 x2Var4 = x2Var;
-                                if (tL_error == null) {
-                                    k4 k4Var3 = x2Var4.x0;
-                                    if (k4Var3 != null) {
-                                        k4Var3.a(tLObject);
-                                        x2Var4.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                x2 x2Var5 = x2Var;
-                                if (tL_error == null) {
-                                    k4 k4Var4 = x2Var5.x0;
-                                    if (k4Var4 != null) {
-                                        k4Var4.a(tLObject);
-                                        x2Var5.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                x2 x2Var6 = x2Var;
-                                if (tL_error == null) {
-                                    k4 k4Var5 = x2Var6.x0;
-                                    if (k4Var5 != null) {
-                                        k4Var5.a(tLObject);
-                                        x2Var6.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i10 = 4;
-                final x2 x2Var2 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.e2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                x2 x2Var22 = x2Var2;
-                                if (tL_error == null) {
-                                    k4 k4Var = x2Var22.x0;
-                                    if (k4Var != null) {
-                                        k4Var.a(tLObject);
-                                        x2Var22.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                x2 x2Var3 = x2Var2;
-                                if (tL_error == null) {
-                                    k4 k4Var2 = x2Var3.x0;
-                                    if (k4Var2 != null) {
-                                        k4Var2.a(tLObject);
-                                        x2Var3.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var3.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                x2 x2Var4 = x2Var2;
-                                if (tL_error == null) {
-                                    k4 k4Var3 = x2Var4.x0;
-                                    if (k4Var3 != null) {
-                                        k4Var3.a(tLObject);
-                                        x2Var4.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                x2 x2Var5 = x2Var2;
-                                if (tL_error == null) {
-                                    k4 k4Var4 = x2Var5.x0;
-                                    if (k4Var4 != null) {
-                                        k4Var4.a(tLObject);
-                                        x2Var5.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                x2 x2Var6 = x2Var2;
-                                if (tL_error == null) {
-                                    k4 k4Var5 = x2Var6.x0;
-                                    if (k4Var5 != null) {
-                                        k4Var5.a(tLObject);
-                                        x2Var6.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i11 = 0;
-                final x2 x2Var3 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.e2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                x2 x2Var22 = x2Var3;
-                                if (tL_error == null) {
-                                    k4 k4Var = x2Var22.x0;
-                                    if (k4Var != null) {
-                                        k4Var.a(tLObject);
-                                        x2Var22.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                x2 x2Var32 = x2Var3;
-                                if (tL_error == null) {
-                                    k4 k4Var2 = x2Var32.x0;
-                                    if (k4Var2 != null) {
-                                        k4Var2.a(tLObject);
-                                        x2Var32.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                x2 x2Var4 = x2Var3;
-                                if (tL_error == null) {
-                                    k4 k4Var3 = x2Var4.x0;
-                                    if (k4Var3 != null) {
-                                        k4Var3.a(tLObject);
-                                        x2Var4.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var4.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                x2 x2Var5 = x2Var3;
-                                if (tL_error == null) {
-                                    k4 k4Var4 = x2Var5.x0;
-                                    if (k4Var4 != null) {
-                                        k4Var4.a(tLObject);
-                                        x2Var5.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                x2 x2Var6 = x2Var3;
-                                if (tL_error == null) {
-                                    k4 k4Var5 = x2Var6.x0;
-                                    if (k4Var5 != null) {
-                                        k4Var5.a(tLObject);
-                                        x2Var6.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                final int i12 = 2;
-                final x2 x2Var4 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.e2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                x2 x2Var22 = x2Var4;
-                                if (tL_error == null) {
-                                    k4 k4Var = x2Var22.x0;
-                                    if (k4Var != null) {
-                                        k4Var.a(tLObject);
-                                        x2Var22.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                x2 x2Var32 = x2Var4;
-                                if (tL_error == null) {
-                                    k4 k4Var2 = x2Var32.x0;
-                                    if (k4Var2 != null) {
-                                        k4Var2.a(tLObject);
-                                        x2Var32.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                x2 x2Var42 = x2Var4;
-                                if (tL_error == null) {
-                                    k4 k4Var3 = x2Var42.x0;
-                                    if (k4Var3 != null) {
-                                        k4Var3.a(tLObject);
-                                        x2Var42.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var42.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                x2 x2Var5 = x2Var4;
-                                if (tL_error == null) {
-                                    k4 k4Var4 = x2Var5.x0;
-                                    if (k4Var4 != null) {
-                                        k4Var4.a(tLObject);
-                                        x2Var5.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var5.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                x2 x2Var6 = x2Var4;
-                                if (tL_error == null) {
-                                    k4 k4Var5 = x2Var6.x0;
-                                    if (k4Var5 != null) {
-                                        k4Var5.a(tLObject);
-                                        x2Var6.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i13 = 3;
-                final x2 x2Var5 = this.b;
-                org.telegram.messenger.g0.h3(new Runnable() { // from class: ki.e2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                x2 x2Var22 = x2Var5;
-                                if (tL_error == null) {
-                                    k4 k4Var = x2Var22.x0;
-                                    if (k4Var != null) {
-                                        k4Var.a(tLObject);
-                                        x2Var22.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var22.getClass();
-                                    break;
-                                }
-                                break;
-                            case 1:
-                                x2 x2Var32 = x2Var5;
-                                if (tL_error == null) {
-                                    k4 k4Var2 = x2Var32.x0;
-                                    if (k4Var2 != null) {
-                                        k4Var2.a(tLObject);
-                                        x2Var32.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var32.getClass();
-                                    break;
-                                }
-                                break;
-                            case 2:
-                                x2 x2Var42 = x2Var5;
-                                if (tL_error == null) {
-                                    k4 k4Var3 = x2Var42.x0;
-                                    if (k4Var3 != null) {
-                                        k4Var3.a(tLObject);
-                                        x2Var42.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var42.getClass();
-                                    break;
-                                }
-                                break;
-                            case 3:
-                                x2 x2Var52 = x2Var5;
-                                if (tL_error == null) {
-                                    k4 k4Var4 = x2Var52.x0;
-                                    if (k4Var4 != null) {
-                                        k4Var4.a(tLObject);
-                                        x2Var52.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var52.getClass();
-                                    break;
-                                }
-                                break;
-                            default:
-                                x2 x2Var6 = x2Var5;
-                                if (tL_error == null) {
-                                    k4 k4Var5 = x2Var6.x0;
-                                    if (k4Var5 != null) {
-                                        k4Var5.a(tLObject);
-                                        x2Var6.s();
-                                        break;
-                                    }
-                                } else {
-                                    x2Var6.getClass();
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        t2 t2Var = this.d;
+        l2 l2Var = t2Var.E;
+        q2 q2Var = t2Var.Y;
+        k2 k2Var = t2Var.x;
+        t2Var.j0 = false;
+        boolean z10 = this.a;
+        if (z10) {
+            k2Var.setForceOffsetY(-org.telegram.messenger.g0.L(24.0f));
+            k2Var.setTopActionBarOffsetY(-org.telegram.messenger.g0.L(24.0f));
+            k2Var.setSwipeOffsetY(0.0f);
+        } else {
+            t2Var.I();
+            t2Var.L();
+            float L = org.telegram.messenger.g0.L(24.0f);
+            float f10 = this.b;
+            k2Var.setForceOffsetY(f10 - L);
+            k2Var.setTopActionBarOffsetY(f10 - org.telegram.messenger.g0.L(24.0f));
+            k2Var.setSwipeOffsetY(0.0f);
         }
+        float f11 = z10 ? t2Var.i0 : 1.0f - t2Var.i0;
+        t2Var.h0 = f11;
+        q2Var.setAlpha(1.0f - f11);
+        q2Var.setTranslationY((-org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) * t2Var.h0);
+        t2Var.o0.setAlpha(t2Var.h0);
+        if (z10) {
+            q2Var.setVisibility(8);
+        }
+        k2Var.setSwipeOffsetAnimationDisallowed(false);
+        k2Var.setTranslationX(org.telegram.messenger.g0.T1(this.c, 0.0f, t2Var.i0));
+        t2Var.n0.setTranslationX(0.0f);
+        t2Var.f.invalidate();
+        l2Var.setViewPortHeightOffset(0.0f);
+        l2Var.n(true, true);
+        t2Var.H();
     }
 }

@@ -2,13 +2,12 @@ package i5;
 
 import ab.c0;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t extends a {
-    public static final /* synthetic */ ff f;
-    public static final /* synthetic */ ff h;
+    public static final /* synthetic */ ze.b f;
+    public static final /* synthetic */ ze.b h;
     public float e;
 
     static {
@@ -41,7 +40,7 @@ public final class t extends a {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("SoundMediaHeaderBox[balance=");
-        c.u(ze.a.b(f, this, this));
+        c.w(ze.a.b(f, this, this));
         sb2.append(this.e);
         sb2.append("]");
         return sb2.toString();

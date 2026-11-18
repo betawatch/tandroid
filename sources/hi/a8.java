@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.messenger.np;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class a8 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ l8 b;
@@ -40,7 +40,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                     ArrayList arrayList2 = q8Var.o1;
                     HashMap hashMap3 = q8Var.t1;
                     ArrayList arrayList3 = q8Var.s1;
-                    np s12 = np.s1(i13);
+                    mp u12 = mp.u1(i13);
                     int i14 = l8Var.a;
                     if (i14 == 5) {
                         c8 c8Var = q8Var.Q1;
@@ -53,12 +53,12 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         TLRPC.TL_editCloseFriends tL_editCloseFriends = new TLRPC.TL_editCloseFriends();
                         tL_editCloseFriends.id.addAll(arrayList);
                         dVar.setLoading(true);
-                        ConnectionsManager.getInstance(q8Var.a).sendRequest(tL_editCloseFriends, new bi.v2(16, l8Var, s12));
+                        ConnectionsManager.getInstance(q8Var.a).sendRequest(tL_editCloseFriends, new bi.k1(17, l8Var, u12));
                         break;
                     } else if (i14 == 0) {
                         int i15 = q8Var.I1;
                         if (i15 == 3) {
-                            o8Var = new o8(q8Var.I1, q8Var.a, new ArrayList(q8.R0(arrayList3, hashMap3)));
+                            o8Var = new o8(q8Var.I1, q8Var.a, new ArrayList(q8.S0(arrayList3, hashMap3)));
                             ArrayList arrayList4 = o8Var.c;
                             arrayList4.clear();
                             arrayList4.addAll(arrayList3);
@@ -68,7 +68,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         } else if (i15 == 2) {
                             o8Var = new o8(i15, q8Var.a, q8Var.r1);
                         } else if (i15 == 4) {
-                            o8Var = new o8(q8Var.I1, q8Var.a, new ArrayList(q8.R0(arrayList2, hashMap2)));
+                            o8Var = new o8(q8Var.I1, q8Var.a, new ArrayList(q8.S0(arrayList2, hashMap2)));
                             ArrayList arrayList5 = o8Var.c;
                             arrayList5.clear();
                             arrayList5.addAll(arrayList2);
@@ -78,73 +78,73 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                         } else {
                             o8Var = new o8(i15, q8Var.a, (ArrayList) null);
                         }
-                        q8Var.N0(o8Var, new fi.q3(q8Var, 1), false);
+                        q8Var.O0(o8Var, new fi.o3(q8Var, 1), false);
                         break;
                     } else if (i14 == 2) {
                         if (q8Var.U1) {
-                            q8Var.M0();
-                            q8Var.N0(new o8(2, q8Var.a, arrayList), new fi.q3(q8Var, 1), false);
+                            q8Var.N0();
+                            q8Var.O0(new o8(2, q8Var.a, arrayList), new fi.o3(q8Var, 1), false);
                             break;
                         } else {
-                            q8Var.M0();
-                            q8Var.m1.C(0);
+                            q8Var.N0();
+                            q8Var.m1.A(0);
                             break;
                         }
                     } else if (i14 != 3) {
                         int i16 = 6;
                         if (i14 == 6) {
-                            HashSet R0 = q8.R0(arrayList, hashMap);
+                            HashSet S0 = q8.S0(arrayList, hashMap);
                             dVar.setLoading(true);
-                            fi.s6 P1 = np.s1(q8Var.a).P1();
+                            fi.p6 R1 = mp.u1(q8Var.a).R1();
                             b8 b8Var = new b8(l8Var, i11);
-                            int i17 = P1.a;
+                            int i17 = R1.a;
                             TLRPC.TL_contacts_setBlocked tL_contacts_setBlocked = new TLRPC.TL_contacts_setBlocked();
                             tL_contacts_setBlocked.my_stories_from = true;
-                            HashSet hashSet = P1.L;
+                            HashSet hashSet = R1.L;
                             tL_contacts_setBlocked.limit = hashSet.size();
-                            int size = P1.N - hashSet.size();
-                            P1.N = size;
+                            int size = R1.N - hashSet.size();
+                            R1.N = size;
                             if (size < 0) {
-                                P1.N = 0;
+                                R1.N = 0;
                             }
                             hashSet.clear();
-                            Iterator it = R0.iterator();
+                            Iterator it = S0.iterator();
                             while (it.hasNext()) {
                                 Long l10 = (Long) it.next();
-                                TLRPC.InputPeer j12 = np.s1(i17).j1(l10.longValue());
-                                if (!(j12 instanceof TLRPC.TL_inputPeerEmpty)) {
+                                TLRPC.InputPeer l1 = mp.u1(i17).l1(l10.longValue());
+                                if (!(l1 instanceof TLRPC.TL_inputPeerEmpty)) {
                                     hashSet.add(l10);
-                                    tL_contacts_setBlocked.id.add(j12);
+                                    tL_contacts_setBlocked.id.add(l1);
                                 }
                             }
-                            P1.N = hashSet.size() + P1.N;
+                            R1.N = hashSet.size() + R1.N;
                             tL_contacts_setBlocked.limit = Math.max(tL_contacts_setBlocked.limit, hashSet.size());
                             ConnectionsManager.getInstance(i17).sendRequest(tL_contacts_setBlocked, new ai.e1(b8Var, i16));
                             break;
                         } else {
                             q8Var.I1 = i14;
-                            q8Var.M0();
-                            q8Var.m1.C(0);
+                            q8Var.N0();
+                            q8Var.m1.A(0);
                             break;
                         }
                     } else if (q8Var.U1) {
-                        HashSet R02 = q8.R0(arrayList, hashMap);
-                        if (!R02.isEmpty()) {
-                            q8Var.M0();
-                            o8 o8Var2 = new o8(3, q8Var.a, new ArrayList(R02));
+                        HashSet S02 = q8.S0(arrayList, hashMap);
+                        if (!S02.isEmpty()) {
+                            q8Var.N0();
+                            o8 o8Var2 = new o8(3, q8Var.a, new ArrayList(S02));
                             ArrayList arrayList6 = o8Var2.c;
                             arrayList6.clear();
                             arrayList6.addAll(arrayList);
                             HashMap hashMap6 = o8Var2.d;
                             hashMap6.clear();
                             hashMap6.putAll(hashMap);
-                            q8Var.N0(o8Var2, new b8(l8Var, i10), false);
+                            q8Var.O0(o8Var2, new b8(l8Var, i10), false);
                             break;
                         }
-                    } else if (!q8.R0(arrayList, hashMap).isEmpty()) {
+                    } else if (!q8.S0(arrayList, hashMap).isEmpty()) {
                         q8Var.I1 = 3;
-                        q8Var.M0();
-                        q8Var.m1.C(0);
+                        q8Var.N0();
+                        q8Var.m1.A(0);
                         break;
                     }
                 }
@@ -153,7 +153,7 @@ public final /* synthetic */ class a8 implements View.OnClickListener {
                 q8 q8Var2 = l8Var.a0;
                 if (q8Var2.J1) {
                     q8Var2.H1 = 5;
-                    q8Var2.m1.C(1);
+                    q8Var2.m1.A(1);
                     break;
                 } else {
                     q8 q8Var3 = new q8(l8Var.getContext(), q8Var2.J0);

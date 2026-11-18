@@ -32,9 +32,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.cf;
+import org.telegram.ui.Cells.b5;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n0 extends g.u {
     public static final /* synthetic */ int k0 = 0;
@@ -105,7 +105,7 @@ public final class n0 extends g.u {
         this.h = new c(this, i7);
         this.r = s4.x.f();
         this.b0 = new q(this, 1);
-        h(s4.x.e());
+        g(s4.x.e());
     }
 
     public final void e(List list) {
@@ -135,7 +135,7 @@ public final class n0 extends g.u {
         }
     }
 
-    public final void h(MediaSessionCompat$Token mediaSessionCompat$Token) {
+    public final void g(MediaSessionCompat$Token mediaSessionCompat$Token) {
         MediaMetadataCompat mediaMetadataCompat;
         wf.b bVar = this.a0;
         q qVar = this.b0;
@@ -146,7 +146,7 @@ public final class n0 extends g.u {
         if (mediaSessionCompat$Token != null && this.G) {
             wf.b bVar2 = new wf.b(this.E, mediaSessionCompat$Token);
             this.a0 = bVar2;
-            bVar2.N(qVar);
+            bVar2.O(qVar);
             MediaMetadata metadata = ((android.support.v4.media.session.h) this.a0.b).a.getMetadata();
             if (metadata != null) {
                 a0.f fVar = MediaMetadataCompat.d;
@@ -295,7 +295,7 @@ public final class n0 extends g.u {
         uVar.getClass();
         s4.x.b();
         for (s4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            cf b10 = this.r.b(vVar);
+            b5 b10 = this.r.b(vVar);
             if (b10 != null) {
                 s4.o oVar = (s4.o) b10.a;
                 if (oVar != null && oVar.d) {
@@ -351,7 +351,7 @@ public final class n0 extends g.u {
         this.G = true;
         this.f.a(this.n, this.h, 1);
         l();
-        h(s4.x.e());
+        g(s4.x.e());
     }
 
     @Override // g.u, androidx.activity.m, android.app.Dialog
@@ -373,7 +373,7 @@ public final class n0 extends g.u {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_cast_list);
         this.J = recyclerView;
         recyclerView.setAdapter(this.K);
-        this.J.setLayoutManager(new v4.b0());
+        this.J.setLayoutManager(new v4.c0());
         this.L = new m0(this);
         this.M = new HashMap();
         this.O = new HashMap();
@@ -397,6 +397,6 @@ public final class n0 extends g.u {
         this.G = false;
         this.f.h(this.h);
         this.I.removeCallbacksAndMessages(null);
-        h(null);
+        g(null);
     }
 }

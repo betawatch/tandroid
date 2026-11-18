@@ -1,25 +1,85 @@
 package ki;
 
-import android.app.Activity;
-import android.content.Context;
-import org.telegram.ui.LaunchActivity;
+import android.net.Uri;
+import android.text.TextUtils;
+import org.telegram.messenger.a8;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class f4 extends org.telegram.ui.ActionBar.e2 {
-    @Override // org.telegram.ui.ActionBar.e2
-    public final Context getContext() {
-        return org.telegram.messenger.g0.W(LaunchActivity.H1);
+public final class f4 {
+    public int a;
+    public long b;
+    public long c;
+    public long d;
+    public String e;
+    public String f;
+    public int g;
+    public int h;
+    public long i;
+    public TLRPC.BotApp j;
+    public boolean k;
+    public String l;
+    public TLRPC.User m;
+    public int n;
+    public boolean o;
+    public boolean p;
+    public TLObject q;
+    public long r;
+
+    public static f4 b(int i7, long j3, long j10, String str, String str2, int i10, int i11, long j11, TLRPC.BotApp botApp, boolean z10, String str3, TLRPC.User user, int i12, boolean z11, boolean z12) {
+        f4 f4Var = new f4();
+        f4Var.a = i7;
+        f4Var.b = j3;
+        f4Var.c = j10;
+        f4Var.e = str;
+        f4Var.f = str2;
+        f4Var.g = i10;
+        f4Var.h = i11;
+        f4Var.i = j11;
+        f4Var.j = botApp;
+        f4Var.k = z10;
+        f4Var.l = str3;
+        f4Var.m = user;
+        f4Var.n = i12;
+        f4Var.o = z11;
+        f4Var.p = z12;
+        if (!z11 && !z12 && !TextUtils.isEmpty(str2)) {
+            try {
+                Uri parse = Uri.parse(str2);
+                f4Var.o = TextUtils.equals(parse.getQueryParameter("mode"), "compact");
+                f4Var.p = TextUtils.equals(parse.getQueryParameter("mode"), "fullscreen");
+                return f4Var;
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
+        }
+        return f4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final int getCurrentAccount() {
-        return this.currentAccount;
+    public final void a(TLObject tLObject) {
+        this.q = tLObject;
+        this.r = System.currentTimeMillis();
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final Activity getParentActivity() {
-        Activity W = org.telegram.messenger.g0.W(org.telegram.messenger.t0.b);
-        return W == null ? LaunchActivity.H1 : W;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof f4)) {
+            return false;
+        }
+        f4 f4Var = (f4) obj;
+        if (this.a != f4Var.a || this.b != f4Var.b || this.c != f4Var.c || !TextUtils.equals(this.f, f4Var.f) || this.g != f4Var.g || this.h != f4Var.h) {
+            return false;
+        }
+        TLRPC.BotApp botApp = this.j;
+        long j3 = botApp == null ? 0L : botApp.id;
+        TLRPC.BotApp botApp2 = f4Var.j;
+        if (j3 != (botApp2 == null ? 0L : botApp2.id) || this.k != f4Var.k || !TextUtils.equals(this.l, f4Var.l)) {
+            return false;
+        }
+        TLRPC.User user = this.m;
+        long j10 = user == null ? 0L : user.id;
+        TLRPC.User user2 = f4Var.m;
+        return j10 == (user2 != null ? user2.id : 0L) && this.n == f4Var.n;
     }
 }

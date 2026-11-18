@@ -1,76 +1,107 @@
 package org.telegram.ui.ActionBar;
 
-import a8.xa;
-import android.graphics.Bitmap;
-import android.text.TextUtils;
+import android.app.Dialog;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowManager;
+import c8.ma;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.hd;
-import org.telegram.messenger.np;
-import org.telegram.messenger.q10;
+import org.telegram.messenger.beta.R;
+import org.telegram.messenger.ks;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class b3 {
-    public boolean A;
-    public boolean B;
-    public boolean C;
-    public boolean D;
-    public String E;
-    public Bitmap F;
-    public boolean G;
-    public String H;
-    public float I;
-    public org.telegram.ui.g4 J;
-    public ki.w0 K;
-    public boolean L;
-    public ki.k4 a;
-    public org.telegram.ui.web.s0 b;
-    public org.telegram.ui.k3 c;
-    public Object d;
+public final class b3 extends Dialog {
+    public final k3 a;
+    public final a3 b;
+    public final z2 c;
+    public final Paint d;
     public boolean e;
-    public String f;
-    public int g;
-    public int h;
-    public int i;
-    public boolean j;
-    public float k = Float.MAX_VALUE;
-    public boolean l = true;
-    public Bitmap m;
-    public boolean n;
-    public boolean o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public boolean t;
-    public boolean u;
-    public boolean v;
-    public xa w;
-    public String x;
-    public boolean y;
-    public boolean z;
 
-    public final void a() {
-        try {
-            org.telegram.ui.web.s0 s0Var = this.b;
-            if (s0Var != null) {
-                s0Var.destroy();
-                this.b = null;
+    public b3(k3 k3Var) {
+        super(k3Var.d().getContext(), R.style.TransparentDialog);
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.a = k3Var;
+        l3 d = k3Var.d();
+        z2 z2Var = new z2(this, getContext());
+        this.c = z2Var;
+        paint.setColor(n6.x0(null, n6.a7, false));
+        a3 a3Var = new a3(d);
+        this.b = a3Var;
+        setContentView(a3Var, new ViewGroup.LayoutParams(-1, -1));
+        a3Var.addView(z2Var, ma.e(-1, -2, 80));
+        a3Var.setClipToPadding(false);
+    }
+
+    public static /* synthetic */ WindowInsets a(View view, WindowInsets windowInsets) {
+        view.setPadding(0, 0, 0, windowInsets.getSystemWindowInsetBottom());
+        return Build.VERSION.SDK_INT >= 30 ? WindowInsets.CONSUMED : windowInsets.consumeSystemWindowInsets();
+    }
+
+    public static void b(k3 k3Var) {
+        h2 T = LaunchActivity.T();
+        if (T == null) {
+            return;
+        }
+        if (org.telegram.messenger.g0.Q1() || k3Var.g() || org.telegram.messenger.g0.u1(T)) {
+            b3 b3Var = new b3(k3Var);
+            if (k3Var.i(b3Var)) {
+                a3 a3Var = b3Var.b;
+                View view = (View) a3Var.a;
+                org.telegram.messenger.g0.E2(view);
+                a3Var.addView(view, ma.e(-1, -1, ks.E1));
             }
-            org.telegram.ui.g4 g4Var = this.J;
-            if (g4Var != null) {
-                g4Var.q();
-            }
-        } catch (Exception e10) {
-            a8.g(e10, true);
         }
     }
 
-    public String b() {
-        if (this.J != null) {
-            return TextUtils.isEmpty(this.E) ? hd.M0(2131742926, null) : this.E;
+    public final void c() {
+        this.a.i(null);
+        if (this.e) {
+            this.e = false;
+            try {
+                super.dismiss();
+            } catch (Exception e10) {
+                a8.g(e10, true);
+            }
         }
-        ki.k4 k4Var = this.a;
-        return k4Var == null ? "" : k4Var.g == 6 ? k4Var.e : q10.p(np.s1(k4Var.a).a2(Long.valueOf(this.a.c)));
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        this.a.a(false);
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= 30) {
+            window.addFlags(-2147483392);
+        } else {
+            window.addFlags(-2147417856);
+        }
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.gravity = 51;
+        attributes.dimAmount = 0.0f;
+        attributes.flags &= -3;
+        attributes.softInputMode = 16;
+        attributes.height = -1;
+        org.telegram.messenger.g0.m(attributes);
+        window.setAttributes(attributes);
+        window.setStatusBarColor(0);
+        a3 a3Var = this.b;
+        a3Var.setFitsSystemWindows(true);
+        a3Var.setSystemUiVisibility(1792);
+        a3Var.setPadding(0, 0, 0, 0);
+        a3Var.setOnApplyWindowInsetsListener(new y2(0));
     }
 }

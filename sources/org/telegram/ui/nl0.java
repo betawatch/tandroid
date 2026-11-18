@@ -1,48 +1,37 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nl0 implements r0.m, org.telegram.ui.ActionBar.q1 {
+public final /* synthetic */ class nl0 implements org.telegram.messenger.x10 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ jm0 b;
+    public final /* synthetic */ lm0 b;
 
-    public /* synthetic */ nl0(jm0 jm0Var, int i7) {
+    public /* synthetic */ nl0(lm0 lm0Var, int i7) {
         this.a = i7;
-        this.b = jm0Var;
+        this.b = lm0Var;
     }
 
-    @Override // r0.m
-    public r0.k1 M0(View view, r0.k1 k1Var) {
-        i0.c I0 = org.telegram.messenger.g0.I0(k1Var, false);
-        jm0 jm0Var = this.b;
-        jm0Var.c0 = I0;
-        ul0 ul0Var = jm0Var.h.b;
-        int i7 = I0.a;
-        int paddingTop = ul0Var.getPaddingTop();
-        i0.c cVar = jm0Var.c0;
-        ul0Var.setPadding(i7, paddingTop, cVar.c, org.telegram.messenger.g0.L(72.0f) + cVar.d);
-        ul0 ul0Var2 = jm0Var.n.b;
-        int i10 = jm0Var.c0.a;
-        int paddingTop2 = ul0Var2.getPaddingTop();
-        i0.c cVar2 = jm0Var.c0;
-        ul0Var2.setPadding(i10, paddingTop2, cVar2.c, org.telegram.messenger.g0.L(72.0f) + cVar2.d);
-        FrameLayout frameLayout = jm0Var.Q;
-        i0.c cVar3 = jm0Var.c0;
-        frameLayout.setPadding(cVar3.a, 0, cVar3.c, cVar3.d);
-        return r0.k1.b;
-    }
-
-    @Override // org.telegram.ui.ActionBar.q1
-    public void h(org.telegram.ui.ActionBar.t1 t1Var, int i7) {
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
         switch (this.a) {
-            case 1:
-                this.b.finishFragment();
+            case 0:
+                Integer num = (Integer) obj;
+                hi.i1 i1Var = this.b.J;
+                if (i1Var != null) {
+                    i1Var.A(num.intValue());
+                    break;
+                }
                 break;
             default:
-                this.b.D0();
+                lm0 lm0Var = this.b;
+                lm0Var.r = false;
+                lm0Var.R.setLoading(false);
+                if (((Boolean) obj).booleanValue()) {
+                    lm0Var.C0();
+                    lm0Var.finishFragment();
+                    lm0Var.I0();
+                    break;
+                }
                 break;
         }
     }

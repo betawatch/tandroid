@@ -1,15 +1,28 @@
 package hi;
 
-import java.util.TimeZone;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public abstract class qb {
-    public static String a;
-    public static pb b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class qb extends TLObject {
+    public double a;
+    public double b;
+    public String c;
+    public float d;
 
-    public static boolean a() {
-        String id2 = TimeZone.getDefault().getID();
-        return (id2.startsWith("US/") || "America/Nassau".equals(id2) || "America/Belize".equals(id2) || "America/Cayman".equals(id2) || "Pacific/Palau".equals(id2)) ? false : true;
+    public final String a() {
+        if (!rb.a()) {
+            return a8.p0.n((int) Math.round(((this.d * 9.0d) / 5.0d) + 32.0d), "°F", new StringBuilder());
+        }
+        return Math.round(this.d) + "°C";
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeDouble(this.a);
+        outputSerializedData.writeDouble(this.b);
+        outputSerializedData.writeString(this.c);
+        outputSerializedData.writeFloat(this.d);
     }
 }

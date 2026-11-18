@@ -1,6 +1,6 @@
 package e2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s1 {
     public static final s1 b;
@@ -9,13 +9,13 @@ public final class s1 {
 
     static {
         h9.g0 g0Var = h9.i0.b;
-        b = new s1(h9.s1.e);
+        b = new s1(h9.t1.e);
         String str = h2.l0.a;
         c = Integer.toString(0, 36);
     }
 
-    public s1(h9.s1 s1Var) {
-        this.a = h9.i0.q(s1Var);
+    public s1(h9.t1 t1Var) {
+        this.a = h9.i0.q(t1Var);
     }
 
     public final boolean a(int i7) {

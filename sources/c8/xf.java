@@ -1,8 +1,8 @@
 package c8;
 
-import org.telegram.ui.Components.bx0;
+import org.telegram.ui.Components.ix0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class xf implements l5.e {
     public static xf b;
@@ -32,7 +32,7 @@ public final class xf implements l5.e {
         aVar.b(jb.class, j5.a);
         aVar.b(ba.class, y3.a);
         aVar.b(aa.class, x3.a);
-        aVar.b(ta.class, u4.a);
+        aVar.b(ua.class, u4.a);
         aVar.b(ie.class, h8.a);
         aVar.b(z9.class, w3.a);
         aVar.b(y9.class, v3.a);
@@ -92,8 +92,8 @@ public final class xf implements l5.e {
         aVar.b(c0.class, s1.a);
         aVar.b(o0.class, d2.a);
         aVar.b(n0.class, e2.a);
-        aVar.b(e0.class, t1.a);
-        aVar.b(hd.r.class, u1.a);
+        aVar.b(f0.class, t1.a);
+        aVar.b(e0.class, u1.a);
         aVar.b(u0.class, j2.a);
         aVar.b(t0.class, k2.a);
         aVar.b(y0.class, n2.a);
@@ -117,7 +117,7 @@ public final class xf implements l5.e {
         aVar.b(mf.class, g9.a);
         aVar.b(lf.class, e9.a);
         aVar.b(ke.class, n8.a);
-        aVar.b(ua.class, w4.a);
+        aVar.b(ix0.class, w4.a);
         aVar.b(ya.class, a5.a);
         aVar.b(i9.class, g3.a);
         aVar.b(ra.class, r4.a);
@@ -156,10 +156,10 @@ public final class xf implements l5.e {
         aVar.b(hd.class, h7.a);
         aVar.b(fd.class, f7.a);
         aVar.b(gd.class, g7.a);
-        aVar.b(sa.class, t4.a);
+        aVar.b(ta.class, t4.a);
         aVar.b(w0.class, l2.a);
         aVar.b(v0.class, m2.a);
-        aVar.b(bx0.class, s4.a);
+        aVar.b(sa.class, s4.a);
         aVar.b(oa.class, p4.a);
         aVar.b(wc.class, x6.a);
         aVar.b(yc.class, z6.a);
@@ -175,7 +175,7 @@ public final class xf implements l5.e {
         aVar.b(bc.class, c6.a);
         aVar.b(cc.class, d6.a);
         aVar.b(g0.class, v1.a);
-        aVar.b(f0.class, w1.a);
+        aVar.b(hd.r.class, w1.a);
         aVar.b(gc.class, h6.a);
         aVar.b(hc.class, i6.a);
         aVar.b(ic.class, j6.a);

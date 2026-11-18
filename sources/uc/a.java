@@ -1,8 +1,8 @@
 package uc;
 
-import c8.qd;
+import c8.td;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a {
     public static final String[] o = {"34", "37"};
@@ -27,37 +27,37 @@ public final class a {
     public final String n;
 
     public a(String str, Integer num, Integer num2, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15) {
-        this.a = qd.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
+        this.a = td.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
         this.c = num;
         this.d = num2;
-        this.b = qd.e(str2);
-        this.e = qd.e(str3);
-        this.f = qd.e(str4);
-        this.g = qd.e(str5);
-        this.h = qd.e(str6);
-        this.i = qd.e(str7);
-        this.j = qd.e(str8);
-        this.k = qd.e(str9);
-        this.m = qd.a(str10) == null ? a() : str10;
-        this.l = qd.e(str11) == null ? b() : str11;
-        qd.e(str12);
-        qd.b(str13);
-        qd.e(str14);
-        this.n = qd.e(str15);
+        this.b = td.e(str2);
+        this.e = td.e(str3);
+        this.f = td.e(str4);
+        this.g = td.e(str5);
+        this.h = td.e(str6);
+        this.i = td.e(str7);
+        this.j = td.e(str8);
+        this.k = td.e(str9);
+        this.m = td.a(str10) == null ? a() : str10;
+        this.l = td.e(str11) == null ? b() : str11;
+        td.e(str12);
+        td.b(str13);
+        td.e(str14);
+        this.n = td.e(str15);
     }
 
     public final String a() {
-        if (qd.d(this.m)) {
+        if (td.d(this.m)) {
             String str = this.a;
-            if (!qd.d(str)) {
-                this.m = qd.c(str, o) ? "American Express" : qd.c(str, p) ? "Discover" : qd.c(str, q) ? "JCB" : qd.c(str, r) ? "Diners Club" : qd.c(str, s) ? "Visa" : qd.c(str, t) ? "MasterCard" : "Unknown";
+            if (!td.d(str)) {
+                this.m = td.c(str, o) ? "American Express" : td.c(str, p) ? "Discover" : td.c(str, q) ? "JCB" : td.c(str, r) ? "Diners Club" : td.c(str, s) ? "Visa" : td.c(str, t) ? "MasterCard" : "Unknown";
             }
         }
         return this.m;
     }
 
     public final String b() {
-        if (!qd.d(this.l)) {
+        if (!td.d(this.l)) {
             return this.l;
         }
         String str = this.a;

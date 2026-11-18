@@ -1,27 +1,27 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m00 implements oc, nc {
-    public final /* synthetic */ c10 a;
-    public final /* synthetic */ gj b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class m00 implements nc, mc {
+    public final /* synthetic */ z00 a;
+    public final /* synthetic */ TL_stories.StoryItem b;
+    public final /* synthetic */ x00 c;
 
-    public /* synthetic */ m00(c10 c10Var, gj gjVar, long j3, int i7) {
-        this.a = c10Var;
-        this.b = gjVar;
-        this.c = j3;
-        this.d = i7;
-    }
-
-    @Override // org.telegram.messenger.oc
-    public void a(String str) {
-        g0.h3(new j00(this.a, str, this.b, this.c, this.d, 1));
+    public /* synthetic */ m00(z00 z00Var, TL_stories.StoryItem storyItem, x00 x00Var) {
+        this.a = z00Var;
+        this.b = storyItem;
+        this.c = x00Var;
     }
 
     @Override // org.telegram.messenger.nc
-    public void r(Exception exc) {
-        g0.h3(new fk(this.d, 12, this.c, this.a, this.b));
+    public void a(String str) {
+        g0.g3(new tl(this.a, this.b, str, this.c, 28));
+    }
+
+    @Override // org.telegram.messenger.mc
+    public void q(Exception exc) {
+        g0.g3(new oz(this.a, this.b, this.c, 1));
     }
 }

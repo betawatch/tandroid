@@ -4,7 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class y extends h0 {
     public final /* synthetic */ int b = 1;
@@ -36,7 +36,7 @@ public final class y extends h0 {
                     if (!aVar.c()) {
                         if (c0Var.x && !aVar.b()) {
                             c0Var.g();
-                            c0Var.d();
+                            c0Var.c();
                             break;
                         } else {
                             c0Var.h(aVar);
@@ -44,7 +44,7 @@ public final class y extends h0 {
                         }
                     } else {
                         q6.x xVar = hVar.c;
-                        q6.m.g(xVar);
+                        q6.m.h(xVar);
                         n6.a aVar2 = xVar.c;
                         if (!aVar2.c()) {
                             Log.wtf("GACConnecting", "Sign-in succeeded with resolve account failure: ".concat(String.valueOf(aVar2)), new Exception());
@@ -60,11 +60,11 @@ public final class y extends h0 {
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.common.internal.IAccountAccessor");
                                 m0Var = queryLocalInterface instanceof q6.i ? (q6.i) queryLocalInterface : new q6.m0(iBinder, "com.google.android.gms.common.internal.IAccountAccessor", 9);
                             }
-                            q6.m.g(m0Var);
+                            q6.m.h(m0Var);
                             c0Var.F = m0Var;
                             c0Var.G = xVar.d;
                             c0Var.H = xVar.e;
-                            c0Var.d();
+                            c0Var.c();
                             break;
                         }
                     }

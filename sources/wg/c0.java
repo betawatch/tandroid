@@ -1,33 +1,114 @@
 package wg;
 
-import org.telegram.messenger.m10;
-import ug.g1;
+import android.content.Intent;
+import android.net.Uri;
+import bi.i2;
+import bi.m1;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.mp;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h2;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.sa;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e0 b;
+public final class c0 extends sa {
+    public final TLRPC.TL_payments_checkedGiftCode T1;
+    public final boolean U1;
+    public b0 V1;
+    public final String W1;
 
-    public /* synthetic */ c0(e0 e0Var, int i7) {
-        this.a = i7;
-        this.b = e0Var;
+    public c0(h2 h2Var, TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode, String str) {
+        super(h2Var, true);
+        this.U1 = tL_payments_checkedGiftCode.used_date == 0;
+        this.T1 = tL_payments_checkedGiftCode;
+        this.W1 = str;
+        this.v0 = false;
+        this.w0 = false;
+        O();
+        c1();
+        b0 b0Var = this.V1;
+        n2 n2Var = this.c;
+        b0Var.getClass();
+        b0Var.d = tL_payments_checkedGiftCode.used_date == 0;
+        b0Var.e = h2Var;
+        b0Var.f = tL_payments_checkedGiftCode;
+        b0Var.h = str;
+        b0Var.n = n2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                e0.l1(this.b);
-                break;
-            default:
-                e0 e0Var = this.b;
-                g1 g1Var = new g1(e0Var.s1, m10.t0, null, null, null, e0Var.J0);
-                g1Var.F2 = true;
-                g1Var.G2 = true;
-                g1Var.Y1 = true;
-                e0Var.s1.showDialog(g1Var);
-                break;
+    public static boolean e1(Intent intent, vf.b bVar) {
+        String scheme;
+        String path;
+        Uri data = intent.getData();
+        if (data == null || (scheme = data.getScheme()) == null) {
+            return false;
         }
+        if (!scheme.equals("http") && !scheme.equals("https")) {
+            if (!scheme.equals("tg")) {
+                return false;
+            }
+            String uri = data.toString();
+            String lastPathSegment = data.getLastPathSegment();
+            if ((!uri.startsWith("tg:giftcode") && !uri.startsWith("tg://giftcode")) || lastPathSegment == null) {
+                return false;
+            }
+            f1(LaunchActivity.Q(), lastPathSegment, bVar);
+            return true;
+        }
+        String lowerCase = data.getHost().toLowerCase();
+        if ((!lowerCase.equals("telegram.me") && !lowerCase.equals("t.me") && !lowerCase.equals("telegram.dog")) || (path = data.getPath()) == null) {
+            return false;
+        }
+        String lastPathSegment2 = data.getLastPathSegment();
+        if (!path.startsWith("/giftcode") || lastPathSegment2 == null) {
+            return false;
+        }
+        f1(LaunchActivity.Q(), lastPathSegment2, bVar);
+        return true;
+    }
+
+    public static void f1(h2 h2Var, String str, vf.b bVar) {
+        if (h2Var == null) {
+            return;
+        }
+        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        if (bVar != null) {
+            bVar.d();
+            bVar.b = new c(atomicBoolean, 1);
+        }
+        i2 i2Var = new i2(atomicBoolean, h2Var, str, bVar);
+        e eVar = new e(atomicBoolean, bVar, 1);
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(j10.t0);
+        mp u12 = mp.u1(j10.t0);
+        TLRPC.TL_payments_checkGiftCode tL_payments_checkGiftCode = new TLRPC.TL_payments_checkGiftCode();
+        tL_payments_checkGiftCode.slug = str;
+        connectionsManager.sendRequest(tL_payments_checkGiftCode, new m1(u12, i2Var, eVar, 25));
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final bk0 M0(ck0 ck0Var) {
+        b0 b0Var = new b0(this, this.J0);
+        this.V1 = b0Var;
+        return b0Var;
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence P0() {
+        return this.U1 ? gd.M0(2131753498, null) : gd.M0(2131753171, null);
+    }
+
+    @Override // org.telegram.ui.Components.sa
+    public final void V0(au0 au0Var) {
+        gc.a(this.c, new bi.t(15));
     }
 }

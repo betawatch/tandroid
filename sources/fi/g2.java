@@ -1,53 +1,62 @@
 package fi;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class g2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b4 b;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class g2 extends hi.d5 {
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ g2(b4 b4Var, int i7) {
-        this.a = i7;
-        this.b = b4Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g2(int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        super(2, i6Var);
+        this.d = i7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        m2 m2Var;
-        Runnable runnable;
-        switch (this.a) {
+    @Override // hi.d5
+    public final void a() {
+        switch (this.d) {
             case 0:
-                b4 b4Var = this.b;
-                b4Var.d3 = 0.0f;
-                b4Var.b3.setAlpha(1.0f);
-                b4Var.b3.setVisibility(8);
-                b4Var.b3.n();
+                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
+                sparseIntArray.append(org.telegram.ui.ActionBar.n6.h5, -14737633);
+                sparseIntArray.append(org.telegram.ui.ActionBar.n6.a7, -13421773);
+                break;
+            case 1:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.n6.zf, -1071635414);
+                break;
+            case 2:
+                SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
+                sparseIntArray2.put(org.telegram.ui.ActionBar.n6.zf, i0.a.f(0.2f, -16777216, -1));
+                sparseIntArray2.put(org.telegram.ui.ActionBar.n6.Oe, i0.a.f(0.5f, -16777216, -1));
+                break;
+            case 3:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.n6.zf, i0.a.o(-1, 30));
+                break;
+            case 4:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.n6.zf, i0.a.o(-1, 30));
+                break;
+            case 5:
+                SparseIntArray sparseIntArray3 = (SparseIntArray) this.b;
+                sparseIntArray3.append(org.telegram.ui.ActionBar.n6.h5, -14803426);
+                sparseIntArray3.append(org.telegram.ui.ActionBar.n6.a7, -16777216);
+                break;
+            case 6:
+                ((SparseIntArray) this.b).put(org.telegram.ui.ActionBar.n6.zf, i0.a.o(-1, 30));
+                break;
+            case 7:
+                SparseIntArray sparseIntArray4 = (SparseIntArray) this.b;
+                sparseIntArray4.append(org.telegram.ui.ActionBar.n6.h5, -14737633);
+                sparseIntArray4.append(org.telegram.ui.ActionBar.n6.a7, -13421773);
+                break;
+            case 8:
+                SparseIntArray sparseIntArray5 = (SparseIntArray) this.b;
+                sparseIntArray5.append(org.telegram.ui.ActionBar.n6.h5, -14803426);
+                sparseIntArray5.append(org.telegram.ui.ActionBar.n6.a7, -16777216);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                b4 b4Var2 = this.b;
-                b4Var2.x2.e();
-                b4Var2.r2 = b4Var2.Y1;
-                k2 k2Var = b4Var2.L1;
-                if (k2Var != null && (runnable = k2Var.x) != null) {
-                    runnable.run();
-                    k2Var.x = null;
-                }
-                if (b4Var2.u1 && !b4Var2.f2) {
-                    i9 i9Var = ((z8) b4Var2.A1).d;
-                    if (i9Var.y) {
-                        i9Var.y = false;
-                        i9Var.V();
-                    }
-                }
-                if (!b4Var2.f2 && (m2Var = b4Var2.N2) != null) {
-                    m2Var.setVisibility(8);
-                }
-                b4Var2.F2 = true;
-                b4Var2.invalidate();
+                SparseIntArray sparseIntArray6 = (SparseIntArray) this.b;
+                sparseIntArray6.append(org.telegram.ui.ActionBar.n6.h5, -14803426);
+                sparseIntArray6.append(org.telegram.ui.ActionBar.n6.a7, -16777216);
                 break;
         }
     }

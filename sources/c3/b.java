@@ -7,9 +7,9 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketTimeoutException;
 import java.util.Arrays;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final Object a = new Object();
@@ -35,7 +35,7 @@ public abstract class b {
             int i10 = 0;
             while (i7 < length) {
                 byte[] bArr2 = new byte[48];
-                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i7], ns.H1);
+                DatagramPacket datagramPacket = new DatagramPacket(bArr2, 48, allByName[i7], ks.H1);
                 bArr2[b11] = 27;
                 long currentTimeMillis = System.currentTimeMillis();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -126,16 +126,16 @@ public abstract class b {
         int i12 = bArr[i7 + 2];
         int i13 = bArr[i7 + 3];
         if ((i10 & 128) == 128) {
-            i10 = (i10 & ns.L1) + 128;
+            i10 = (i10 & ks.L1) + 128;
         }
         if ((i11 & 128) == 128) {
-            i11 = (i11 & ns.L1) + 128;
+            i11 = (i11 & ks.L1) + 128;
         }
         if ((i12 & 128) == 128) {
-            i12 = (i12 & ns.L1) + 128;
+            i12 = (i12 & ks.L1) + 128;
         }
         if ((i13 & 128) == 128) {
-            i13 = (i13 & ns.L1) + 128;
+            i13 = (i13 & ks.L1) + 128;
         }
         return (i10 << 24) + (i11 << 16) + (i12 << 8) + i13;
     }

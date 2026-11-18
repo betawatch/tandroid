@@ -9,12 +9,12 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.MotionEvent;
 import android.view.View;
-import hi.j3;
+import hi.k3;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.z20;
+import org.telegram.ui.Components.lr;
+import org.telegram.ui.c30;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class o1 extends View {
     public Bitmap a;
@@ -37,9 +37,9 @@ public abstract class o1 extends View {
         }
         this.w = true;
         ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(150L);
-        duration.setInterpolator(er.f);
-        duration.addUpdateListener(new j3(this, 28));
-        duration.addListener(new z20(15, this, z10));
+        duration.setInterpolator(lr.f);
+        duration.addUpdateListener(new k3(this, 28));
+        duration.addListener(new c30(15, this, z10));
         duration.start();
     }
 

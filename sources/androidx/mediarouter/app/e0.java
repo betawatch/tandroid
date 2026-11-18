@@ -6,11 +6,11 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
 import org.telegram.messenger.beta.R;
-import v4.e1;
+import v4.f1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class e0 extends e1 {
+public abstract class e0 extends f1 {
     public s4.v v;
     public final ImageButton w;
     public final MediaRouteVolumeSlider x;
@@ -25,7 +25,7 @@ public abstract class e0 extends e1 {
         this.w = imageButton;
         this.x = mediaRouteVolumeSlider;
         Context context = n0Var.E;
-        Drawable b10 = b5.a.b(context, R.drawable.mr_cast_mute_button);
+        Drawable b10 = c8.z.b(context, R.drawable.mr_cast_mute_button);
         if (c7.h(context)) {
             b10.setTint(context.getColor(R.color.mr_dynamic_dialog_icon_light));
         }

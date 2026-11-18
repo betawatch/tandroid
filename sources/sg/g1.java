@@ -4,10 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.ui.Components.nt0;
-import org.telegram.ui.Components.u11;
+import org.telegram.ui.Components.h01;
+import org.telegram.ui.Components.vt0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g1 {
     public u0 a;
@@ -36,13 +36,13 @@ public final class g1 {
         return (float) Math.sqrt((f19 * f19) + (f18 * f18));
     }
 
-    public final void b(Canvas canvas, nt0 nt0Var, f1 f1Var) {
-        float width = (f1Var.d / nt0Var.a) * canvas.getWidth();
-        float height = (f1Var.e / nt0Var.b) * canvas.getHeight();
+    public final void b(Canvas canvas, vt0 vt0Var, f1 f1Var) {
+        float width = (f1Var.d / vt0Var.a) * canvas.getWidth();
+        float height = (f1Var.e / vt0Var.b) * canvas.getHeight();
         float L = org.telegram.messenger.g0.L(5.0f);
         boolean z10 = f1Var.a;
         canvas.drawCircle(width, height, L, z10 ? this.d : this.f);
-        canvas.drawCircle((f1Var.d / nt0Var.a) * canvas.getWidth(), (f1Var.e / nt0Var.b) * canvas.getHeight(), org.telegram.messenger.g0.L(5.0f), z10 ? this.e : this.g);
+        canvas.drawCircle((f1Var.d / vt0Var.a) * canvas.getWidth(), (f1Var.e / vt0Var.b) * canvas.getHeight(), org.telegram.messenger.g0.L(5.0f), z10 ? this.e : this.g);
     }
 
     public final void c(float f10, float f11, boolean z10) {
@@ -84,14 +84,14 @@ public final class g1 {
         if (x0Var2 == null) {
             painting.getClass();
         } else if (painting.r != null) {
-            painting.f.f(new u11(painting, x0Var2, currentColor, 25));
+            painting.f.f(new h01(painting, x0Var2, currentColor, 26));
         }
         this.m.clear();
         this.n.clear();
         this.h = null;
         t0 t0Var = u0Var.a;
         if (t0Var != null) {
-            t0Var.t();
+            t0Var.n();
         }
         u0Var.e.z = true;
     }

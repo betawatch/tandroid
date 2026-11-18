@@ -3,19 +3,19 @@ package org.telegram.ui.Components.voip;
 import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.messenger.i20;
-import org.telegram.messenger.s3;
+import org.telegram.messenger.n10;
+import org.telegram.messenger.u3;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.c40;
 import org.telegram.ui.f40;
+import org.telegram.ui.i40;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class r extends FrameLayout {
     public int a;
-    public f40 b;
-    public z c;
-    public s3 d;
+    public i40 b;
+    public y c;
+    public u3 d;
     public boolean e;
     public final boolean f;
 
@@ -28,11 +28,11 @@ public abstract class r extends FrameLayout {
         return this.b != null ? r0.F() : getMeasuredHeight();
     }
 
-    public s3 getParticipant() {
+    public u3 getParticipant() {
         return this.d;
     }
 
-    public z getRenderer() {
+    public y getRenderer() {
         return this.c;
     }
 
@@ -54,13 +54,13 @@ public abstract class r extends FrameLayout {
             ((View) getParent()).getMeasuredWidth();
             super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f10 = c40.E5 ? 3.0f : 2.0f;
-            float A = i20.A(14.0f, 2, org.telegram.messenger.g0.q.x) + (c40.E5 ? -org.telegram.messenger.g0.L(90.0f) : 0);
-            super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) ((c40.F5 ? A / 2.0f : A / f10) + org.telegram.messenger.g0.L(4.0f)), TLObject.FLAG_30));
+            float f10 = f40.E5 ? 3.0f : 2.0f;
+            float B = n10.B(14.0f, 2, org.telegram.messenger.g0.q.x) + (f40.E5 ? -org.telegram.messenger.g0.L(90.0f) : 0);
+            super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec((int) ((f40.F5 ? B / 2.0f : B / f10) + org.telegram.messenger.g0.L(4.0f)), TLObject.FLAG_30));
         }
     }
 
-    public void setRenderer(z zVar) {
-        this.c = zVar;
+    public void setRenderer(y yVar) {
+        this.c = yVar;
     }
 }

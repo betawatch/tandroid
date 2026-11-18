@@ -1,41 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class j5 extends AnimatorListenerAdapter {
+public final /* synthetic */ class j5 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p5 b;
+    public final /* synthetic */ k5 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ j5(p5 p5Var, int i7) {
+    public /* synthetic */ j5(k5 k5Var, ArrayList arrayList, TLObject tLObject, int i7) {
         this.a = i7;
-        this.b = p5Var;
+        this.b = k5Var;
+        this.c = arrayList;
+        this.d = tLObject;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        Runnable runnable;
-        Runnable runnable2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.scaleAnimator = null;
-                boolean unused = p5.lockPositionChanging = false;
-                break;
-            case 1:
-                p5 p5Var = this.b;
-                p5Var.scaleAnimator = null;
-                runnable = p5Var.removedAction;
-                if (runnable != null) {
-                    runnable2 = p5Var.removedAction;
-                    runnable2.run();
-                    p5Var.removedAction = null;
-                    break;
-                }
+                org.telegram.messenger.g0.g3(new j5(this.b, this.c, this.d, 1));
                 break;
             default:
-                this.b.moveAnimator = null;
+                k5 k5Var = this.b;
+                int i7 = k5Var.e;
+                HashSet hashSet = new HashSet(this.c);
+                TLObject tLObject = this.d;
+                if (tLObject instanceof Vector) {
+                    ArrayList arrayList = ((Vector) tLObject).objects;
+                    org.telegram.messenger.tr.a0(i7).a.c(new h5(k5Var, arrayList, 1));
+                    k5Var.d(arrayList);
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        if (arrayList.get(i10) instanceof TLRPC.Document) {
+                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i10)).id));
+                        }
+                    }
+                    if (!hashSet.isEmpty()) {
+                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
+                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
+                        ConnectionsManager.getInstance(i7).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.u7(11, k5Var, arrayList2));
+                        break;
+                    }
+                }
                 break;
         }
     }

@@ -32,17 +32,17 @@ import m.z0;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.ks;
 import org.telegram.messenger.t0;
-import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.f61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.u9;
 import org.webrtc.MediaStreamTrack;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class f {
     public static int a;
@@ -62,7 +62,7 @@ public abstract class f {
         }
         b.incrementAndGet();
         double d2 = f10;
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (e10.w()) {
             l lVar = new l(e10, d2, 0);
             h.x(lVar);
@@ -97,24 +97,24 @@ public abstract class f {
                 long a10 = e11 == null ? -1L : e11.a();
                 long D = B.D(B.v0);
                 if (D >= 0 && a10 >= 0 && Math.abs(D - a10) > 1000) {
-                    gj gjVar = B.v0;
-                    if ((B.j0 != null || B.F0 != null) && gjVar != null && B.L(gjVar)) {
+                    fj fjVar = B.v0;
+                    if ((B.j0 != null || B.F0 != null) && fjVar != null && B.L(fjVar)) {
                         try {
-                            u51 u51Var = B.j0;
-                            if (u51Var != null) {
-                                j3 = u51Var.U();
+                            f61 f61Var = B.j0;
+                            if (f61Var != null) {
+                                j3 = f61Var.U();
                                 if (j3 != -9223372036854775807L) {
-                                    gjVar.b0 = Utilities.l(a10 / j3);
+                                    fjVar.b0 = Utilities.l(a10 / j3);
                                 }
                                 B.j0.q0(a10, false);
-                                gjVar.e0 = a10;
+                                fjVar.e0 = a10;
                                 if (!B.U1) {
                                     v(a10);
                                 }
                             } else {
-                                u51 u51Var2 = B.F0;
-                                if (u51Var2 != null) {
-                                    j3 = u51Var2.U();
+                                f61 f61Var2 = B.F0;
+                                if (f61Var2 != null) {
+                                    j3 = f61Var2.U();
                                     B.F0.p0(a10);
                                     if (!B.U1) {
                                         v(a10);
@@ -124,7 +124,7 @@ public abstract class f {
                                 }
                             }
                             if (j3 != 0) {
-                                ns.f(gjVar.K1).k(ns.i2, Integer.valueOf(gjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
+                                ks.f(fjVar.K1).k(ks.i2, Integer.valueOf(fjVar.e1()), Float.valueOf(Utilities.l(a10 / j3)));
                             }
                         } catch (Exception e12) {
                             a8.g(e12, true);
@@ -231,7 +231,7 @@ public abstract class f {
             try {
                 g6.a c11 = g6.a.c(f());
                 if (c11 != null && (c10 = c11.b().c()) != null && c10.b()) {
-                    m.d("Must be called from the main thread.");
+                    m.e("Must be called from the main thread.");
                     return c10.j;
                 }
             } catch (Exception e10) {
@@ -359,7 +359,7 @@ public abstract class f {
         }
         b.incrementAndGet();
         if (z10) {
-            m.d("Must be called from the main thread.");
+            m.e("Must be called from the main thread.");
             if (e10.w()) {
                 i iVar = new i(e10, 6);
                 h.x(iVar);
@@ -370,7 +370,7 @@ public abstract class f {
             basePendingResult2.b(new u9(0));
             return;
         }
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (e10.w()) {
             i iVar2 = new i(e10, 5);
             h.x(iVar2);
@@ -396,7 +396,7 @@ public abstract class f {
         }
         b.incrementAndGet();
         double d2 = f10;
-        m.d("Must be called from the main thread.");
+        m.e("Must be called from the main thread.");
         if (e10.w()) {
             l lVar = new l(e10, d2, 1);
             h.x(lVar);

@@ -4,35 +4,35 @@ import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
-import org.telegram.messenger.is;
-import org.telegram.messenger.m10;
-import org.telegram.messenger.np;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.fs;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.voip.c2;
+import org.telegram.ui.Components.voip.b2;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private org.telegram.messenger.c accountInstance;
     private final Activity activity;
     private Handler handler;
-    private ns notificationCenter;
-    private final is observer;
+    private ks notificationCenter;
+    private final fs observer;
     private final Runnable releaseRunnable;
     private boolean released;
     private final long userId;
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j3, boolean z10, long j10, org.telegram.messenger.c cVar) {
-        is isVar = new is() { // from class: org.telegram.messenger.voip.o
-            @Override // org.telegram.messenger.is
+        fs fsVar = new fs() { // from class: org.telegram.messenger.voip.o
+            @Override // org.telegram.messenger.fs
             public final void didReceivedNotification(int i7, int i10, Object[] objArr) {
                 VoIPPendingCall.this.lambda$new$0(i7, i10, objArr);
             }
         };
-        this.observer = isVar;
+        this.observer = fsVar;
         q0 q0Var = new q0(this, 2);
         this.releaseRunnable = q0Var;
         this.activity = activity;
@@ -42,9 +42,9 @@ public final class VoIPPendingCall {
         if (onConnectionStateUpdated(false)) {
             return;
         }
-        ns f10 = ns.f(m10.t0);
+        ks f10 = ks.f(j10.t0);
         this.notificationCenter = f10;
-        f10.b(isVar, ns.T1);
+        f10.b(fsVar, ks.T1);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
         handler.postDelayed(q0Var, j10);
@@ -60,7 +60,7 @@ public final class VoIPPendingCall {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(int i7, int i10, Object[] objArr) {
-        if (i7 == ns.T1) {
+        if (i7 == ks.T1) {
             onConnectionStateUpdated(false);
         }
     }
@@ -74,13 +74,13 @@ public final class VoIPPendingCall {
         if (this.released || !(z10 || isConnected(this.accountInstance) || isAirplaneMode())) {
             return false;
         }
-        np s12 = np.s1(this.accountInstance.a);
-        TLRPC.User a22 = s12.a2(Long.valueOf(this.userId));
-        if (a22 != null) {
-            TLRPC.UserFull b22 = s12.b2(a22.id);
-            c2.m(a22, this.video, b22 != null && b22.video_calls_available, this.activity, b22, this.accountInstance);
+        mp u12 = mp.u1(this.accountInstance.a);
+        TLRPC.User c22 = u12.c2(Long.valueOf(this.userId));
+        if (c22 != null) {
+            TLRPC.UserFull d2 = u12.d2(c22.id);
+            b2.m(c22, this.video, d2 != null && d2.video_calls_available, this.activity, d2, this.accountInstance);
         } else if (isAirplaneMode()) {
-            c2.m(null, this.video, false, this.activity, null, this.accountInstance);
+            b2.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;
@@ -94,9 +94,9 @@ public final class VoIPPendingCall {
         if (this.released) {
             return;
         }
-        ns nsVar = this.notificationCenter;
-        if (nsVar != null) {
-            nsVar.n(this.observer, ns.T1);
+        ks ksVar = this.notificationCenter;
+        if (ksVar != null) {
+            ksVar.n(this.observer, ks.T1);
         }
         Handler handler = this.handler;
         if (handler != null) {

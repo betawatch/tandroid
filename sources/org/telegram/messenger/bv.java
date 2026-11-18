@@ -1,103 +1,65 @@
 package org.telegram.messenger;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.x41;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class bv extends cu implements Drawable.Callback {
-    public final x41 X;
-    public final int Y;
-    public final int Z;
-    public final int a0;
-    public final int b0;
-    public w7.s c0;
-    public Bitmap d0;
+public final /* synthetic */ class bv implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ dv b;
+    public final /* synthetic */ ev c;
+    public final /* synthetic */ View d;
 
-    public bv(iv ivVar, Rect rect, int i7, int i10, int i11) {
-        super(ivVar, rect, i7);
-        this.a0 = i10;
-        this.b0 = i11;
-        x41 x41Var = new x41();
-        this.X = x41Var;
-        x41Var.setCallback(this);
-        x41Var.n = hd.M0(2131743831, null);
-        x41Var.o = hd.M0(2131743832, null);
-        x41Var.p = hd.M0(2131743826, null);
-        x41Var.j = new as(ivVar, 7);
-        int i12 = this.c;
-        this.Y = i12;
-        this.Z = x41Var.a(i12);
+    public /* synthetic */ bv(dv dvVar, View view, ev evVar) {
+        this.b = dvVar;
+        this.d = view;
+        this.c = evVar;
     }
 
-    @Override // org.telegram.messenger.cu
-    public final int I() {
-        Rect rect = this.b;
-        return rect.top + this.Z + rect.bottom;
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final boolean Y(MotionEvent motionEvent) {
-        View view = this.W;
-        if (view != null) {
-            return this.X.i.a(view, motionEvent);
-        }
-        return false;
-    }
-
-    public final float i0(org.telegram.ui.Cells.x1 x1Var) {
-        int i7;
-        if (x1Var != null) {
-            iv ivVar = this.a;
-            if (ivVar.s || ivVar.u) {
-                i7 = g0.W1(Math.max(0.0f, Math.min(1.0f, x1Var.L1)), this.Q, this.O);
-                return i7;
-            }
-        }
-        i7 = this.O;
-        return i7;
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        View view = this.W;
-        if (view != null) {
-            view.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dv dvVar = this.b;
+                dvVar.getClass();
+                View view = this.d;
+                if (view != null) {
+                    view.post(new bv(dvVar, this.c, view));
+                    break;
+                }
+                break;
+            default:
+                dv dvVar2 = this.b;
+                ev evVar = this.c;
+                if (evVar != null) {
+                    dvVar2.getClass();
+                    fj fjVar = evVar.b;
+                    if (fjVar != null) {
+                        fjVar.N0 = true;
+                    }
+                    ArrayList arrayList = evVar.n;
+                    int size = arrayList.size();
+                    int i7 = 0;
+                    while (i7 < size) {
+                        Object obj = arrayList.get(i7);
+                        i7++;
+                        org.telegram.ui.Cells.t9 t9Var = (org.telegram.ui.Cells.t9) obj;
+                        if (t9Var instanceof dv) {
+                            ((dv) t9Var).x.clear();
+                        }
+                    }
+                } else {
+                    dvVar2.x.clear();
+                }
+                this.d.invalidate();
+                break;
         }
     }
 
-    public final float j0(org.telegram.ui.Cells.x1 x1Var) {
-        if (x1Var != null) {
-            iv ivVar = this.a;
-            if (ivVar.s || ivVar.u) {
-                return g0.T1(this.P, this.N, Math.max(0.0f, Math.min(1.0f, x1Var.L1)));
-            }
-        }
-        return this.N;
-    }
-
-    @Override // org.telegram.messenger.cu
-    public final void q(Canvas canvas) {
-        Rect rect = this.b;
-        int i7 = rect.left;
-        int i10 = rect.top;
-        int i11 = this.Y + i7;
-        int i12 = this.Z + i10;
-        x41 x41Var = this.X;
-        x41Var.setBounds(i7, i10, i11, i12);
-        x41Var.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+    public /* synthetic */ bv(dv dvVar, ev evVar, View view) {
+        this.b = dvVar;
+        this.c = evVar;
+        this.d = view;
     }
 }

@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class oa implements eh.a {
     public final /* synthetic */ int a;
@@ -36,33 +36,33 @@ public final /* synthetic */ class oa implements eh.a {
                 break;
             case 2:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
-                org.telegram.ui.Components.uj0 uj0Var = premiumPreviewFragment.a;
-                ih.d.a(uj0Var, canvas, rectF, uj0Var, premiumPreviewFragment.e0);
+                org.telegram.ui.Components.ck0 ck0Var = premiumPreviewFragment.a;
+                ih.d.a(ck0Var, canvas, rectF, ck0Var, premiumPreviewFragment.e0);
                 break;
             case 3:
-                RectF rectF2 = ProfileActivity.X6;
+                RectF rectF2 = ProfileActivity.Z6;
                 canvas.save();
                 canvas.translate(-r1.getScrollX(), -r1.getScrollY());
                 ((View) obj).draw(canvas);
                 canvas.restore();
                 break;
             case 4:
-                vw0 vw0Var = ((ProfileActivity) obj).d1;
-                vw0Var.P = true;
-                vw0Var.draw(canvas);
-                vw0Var.P = false;
+                zw0 zw0Var = ((ProfileActivity) obj).d1;
+                zw0Var.P = true;
+                zw0Var.draw(canvas);
+                zw0Var.P = false;
                 break;
             default:
-                org.telegram.ui.Components.uj0 uj0Var2 = (org.telegram.ui.Components.uj0) obj;
-                org.telegram.ui.Components.n9 n9Var = uj0Var2.S2;
-                if (n9Var == null) {
-                    org.telegram.ui.Components.ej0 ej0Var = uj0Var2.H2;
-                    if (ej0Var != null) {
-                        ej0Var.d(canvas, rectF);
+                org.telegram.ui.Components.ck0 ck0Var2 = (org.telegram.ui.Components.ck0) obj;
+                org.telegram.ui.Components.v9 v9Var = ck0Var2.S2;
+                if (v9Var == null) {
+                    org.telegram.ui.Components.mj0 mj0Var = ck0Var2.H2;
+                    if (mj0Var != null) {
+                        mj0Var.d(canvas, rectF);
                         break;
                     }
                 } else {
-                    n9Var.d(canvas, rectF);
+                    v9Var.d(canvas, rectF);
                     break;
                 }
                 break;

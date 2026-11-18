@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 import zd.b0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements de.e {
     public final id.h a;
@@ -21,55 +21,8 @@ public final class b implements de.e {
         this.e = obj;
     }
 
-    @Override // ce.c
-    public Object G(d dVar, kd.c cVar) {
-        Object a10;
-        switch (this.d) {
-            case 1:
-                int i7 = this.b;
-                gd.k kVar = gd.k.a;
-                if (i7 == -3) {
-                    id.h context = cVar.getContext();
-                    Boolean bool = Boolean.FALSE;
-                    b1.e eVar = new b1.e(10);
-                    id.h hVar = this.a;
-                    id.h plus = !((Boolean) hVar.fold(bool, eVar)).booleanValue() ? context.plus(hVar) : b0.h(context, hVar, false);
-                    if (kotlin.jvm.internal.j.a(plus, context)) {
-                        a10 = ((c) this.e).G(dVar, cVar);
-                        jd.a aVar = jd.a.a;
-                        if (a10 != aVar) {
-                            a10 = kVar;
-                        }
-                        if (a10 != aVar) {
-                            return kVar;
-                        }
-                    } else {
-                        id.d dVar2 = id.d.a;
-                        if (kotlin.jvm.internal.j.a(plus.get(dVar2), context.get(dVar2))) {
-                            id.h context2 = cVar.getContext();
-                            if (!(dVar instanceof de.l)) {
-                                dVar = new o(dVar, context2);
-                            }
-                            a10 = de.g.a(plus, dVar, ee.a.k(plus), new be.l(this, (id.c) null, 2), cVar);
-                            if (a10 != jd.a.a) {
-                                return kVar;
-                            }
-                        }
-                    }
-                    return a10;
-                }
-                a10 = a(dVar, cVar);
-                if (a10 != jd.a.a) {
-                    return kVar;
-                }
-                return a10;
-            default:
-                return a(dVar, cVar);
-        }
-    }
-
     @Override // de.e
-    public final c Q(id.h hVar, int i7, be.a aVar) {
+    public final c B(id.h hVar, int i7, be.a aVar) {
         be.a aVar2;
         id.h hVar2 = this.a;
         id.h plus = hVar.plus(hVar2);
@@ -136,6 +89,53 @@ public final class b implements de.e {
                 return "block[" + ((de.c) this.e) + "] -> " + b();
             default:
                 return ((c) this.e) + " -> " + b();
+        }
+    }
+
+    @Override // ce.c
+    public Object v(d dVar, kd.c cVar) {
+        Object a10;
+        switch (this.d) {
+            case 1:
+                int i7 = this.b;
+                gd.k kVar = gd.k.a;
+                if (i7 == -3) {
+                    id.h context = cVar.getContext();
+                    Boolean bool = Boolean.FALSE;
+                    b1.e eVar = new b1.e(10);
+                    id.h hVar = this.a;
+                    id.h plus = !((Boolean) hVar.fold(bool, eVar)).booleanValue() ? context.plus(hVar) : b0.h(context, hVar, false);
+                    if (kotlin.jvm.internal.j.a(plus, context)) {
+                        a10 = ((c) this.e).v(dVar, cVar);
+                        jd.a aVar = jd.a.a;
+                        if (a10 != aVar) {
+                            a10 = kVar;
+                        }
+                        if (a10 != aVar) {
+                            return kVar;
+                        }
+                    } else {
+                        id.d dVar2 = id.d.a;
+                        if (kotlin.jvm.internal.j.a(plus.get(dVar2), context.get(dVar2))) {
+                            id.h context2 = cVar.getContext();
+                            if (!(dVar instanceof de.l)) {
+                                dVar = new o(dVar, context2);
+                            }
+                            a10 = de.g.a(plus, dVar, ee.a.k(plus), new be.l(this, (id.c) null, 2), cVar);
+                            if (a10 != jd.a.a) {
+                                return kVar;
+                            }
+                        }
+                    }
+                    return a10;
+                }
+                a10 = a(dVar, cVar);
+                if (a10 != jd.a.a) {
+                    return kVar;
+                }
+                return a10;
+            default:
+                return a(dVar, cVar);
         }
     }
 }

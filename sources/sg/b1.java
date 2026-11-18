@@ -2,22 +2,22 @@ package sg;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import hi.g7;
+import hi.t6;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.q5;
+import org.telegram.messenger.r5;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class b1 {
-    public static final q5 m = new q5("ShapeDetector", true);
+    public static final r5 m = new r5("ShapeDetector", true);
     public static final double n = Math.sqrt(125000.0d) / 2.0d;
     public int a;
     public ArrayList b;
     public ArrayList c;
     public boolean d;
-    public g7 e;
+    public t6 e;
     public Context f;
     public SharedPreferences g;
     public boolean h;

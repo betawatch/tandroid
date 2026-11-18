@@ -1,14 +1,16 @@
 package org.telegram.messenger;
 
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.content.AsyncQueryHandler;
+import android.os.Message;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class yr {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public Path d;
-    public RectF e;
+public final class yr extends AsyncQueryHandler {
+    @Override // android.content.AsyncQueryHandler, android.os.Handler
+    public final void handleMessage(Message message) {
+        try {
+            super.handleMessage(message);
+        } catch (Throwable unused) {
+        }
+    }
 }

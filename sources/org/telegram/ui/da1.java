@@ -1,45 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class da1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class da1 extends rg.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public /* synthetic */ da1(TwoStepVerificationActivity twoStepVerificationActivity, int i7) {
-        this.a = i7;
-        this.b = twoStepVerificationActivity;
+    public da1(int i7, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i7, false);
+        this.c = tL_forumTopic;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                if (!twoStepVerificationActivity.isFinishing() && !twoStepVerificationActivity.I && (editTextBoldCursor = twoStepVerificationActivity.s) != null) {
-                    editTextBoldCursor.requestFocus();
-                    org.telegram.messenger.g0.J3(twoStepVerificationActivity.s);
-                    break;
-                }
-                break;
-            case 1:
-                TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
-                da1 da1Var = twoStepVerificationActivity2.W;
-                org.telegram.messenger.g0.r(da1Var);
-                org.telegram.messenger.g0.i3(da1Var, 1500L);
-                twoStepVerificationActivity2.V = true;
-                break;
-            case 2:
-                TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
-                twoStepVerificationActivity3.V = false;
-                twoStepVerificationActivity3.w.a(0.0f);
-                break;
-            default:
-                this.b.D0();
-                break;
+    public final boolean equals(Object obj) {
+        TLRPC.TL_forumTopic tL_forumTopic;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || da1.class != obj.getClass()) {
+            return false;
+        }
+        da1 da1Var = (da1) obj;
+        if (this.a != da1Var.a) {
+            return false;
+        }
+        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
+        return tL_forumTopic2 == null || (tL_forumTopic = da1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

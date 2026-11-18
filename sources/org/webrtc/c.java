@@ -3,10 +3,10 @@ package org.webrtc;
 import android.content.Context;
 import android.graphics.Matrix;
 import android.view.WindowManager;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public abstract /* synthetic */ class c {
     public static VideoFrame.TextureBuffer a(TextureBufferImpl textureBufferImpl, boolean z10, int i7) {
@@ -26,11 +26,11 @@ public abstract /* synthetic */ class c {
             return 90;
         }
         if (rotation == 2) {
-            return ns.K2;
+            return ks.K2;
         }
         if (rotation != 3) {
             return 0;
         }
-        return ns.t4;
+        return ks.t4;
     }
 }

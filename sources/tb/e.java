@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import pb.i;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends i {
     public ThickLanguageIdentifier d;
@@ -25,7 +25,7 @@ public final class e extends i {
 
     @Override // pb.i
     public final void b() {
-        m.j(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
+        m.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
         if (this.d == null) {
             this.f.getClass();
             ThickLanguageIdentifier thickLanguageIdentifier = new ThickLanguageIdentifier(this.e);
@@ -36,7 +36,7 @@ public final class e extends i {
 
     @Override // pb.i
     public final void c() {
-        m.j(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
+        m.k(Thread.currentThread().equals(((AtomicReference) this.a.d).get()));
         ThickLanguageIdentifier thickLanguageIdentifier = this.d;
         if (thickLanguageIdentifier != null) {
             thickLanguageIdentifier.c();
@@ -53,7 +53,7 @@ public final class e extends i {
             return "und";
         }
         ThickLanguageIdentifier thickLanguageIdentifier = this.d;
-        m.g(thickLanguageIdentifier);
+        m.h(thickLanguageIdentifier);
         ArrayList a10 = thickLanguageIdentifier.a(str);
         int size = a10.size();
         int i7 = 0;

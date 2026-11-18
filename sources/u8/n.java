@@ -10,9 +10,9 @@ import com.google.android.gms.internal.vision.e3;
 import com.google.android.gms.internal.vision.g3;
 import com.google.android.gms.internal.vision.u2;
 import java.nio.ByteBuffer;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends q {
     public final u2 b;
@@ -28,20 +28,20 @@ public final class n extends q {
         this.b.l();
     }
 
-    public final SparseArray e1(ld0 ld0Var) {
+    public final SparseArray e1(md0 md0Var) {
         m[] mVarArr;
-        if (ld0Var == null) {
+        if (md0Var == null) {
             throw new IllegalArgumentException("No frame supplied.");
         }
-        g3 b10 = g3.b(ld0Var);
-        Bitmap bitmap = (Bitmap) ld0Var.d;
+        g3 b10 = g3.b(md0Var);
+        Bitmap bitmap = (Bitmap) md0Var.d;
         u2 u2Var = this.b;
         if (bitmap != null) {
             if (u2Var.k()) {
                 try {
                     a7.b bVar = new a7.b(bitmap);
                     e3 e3Var = (e3) u2Var.m();
-                    q6.m.g(e3Var);
+                    q6.m.h(e3Var);
                     Parcel h12 = e3Var.h1();
                     int i7 = com.google.android.gms.internal.vision.a.a;
                     h12.writeStrongBinder(bVar);
@@ -61,13 +61,13 @@ public final class n extends q {
                 throw new IllegalArgumentException("Internal barcode detector error; check logcat output.");
             }
         } else {
-            ByteBuffer w10 = ld0Var.w();
-            q6.m.g(w10);
+            ByteBuffer w10 = md0Var.w();
+            q6.m.h(w10);
             if (u2Var.k()) {
                 try {
                     a7.b bVar2 = new a7.b(w10);
                     e3 e3Var2 = (e3) u2Var.m();
-                    q6.m.g(e3Var2);
+                    q6.m.h(e3Var2);
                     Parcel h13 = e3Var2.h1();
                     int i10 = com.google.android.gms.internal.vision.a.a;
                     h13.writeStrongBinder(bVar2);

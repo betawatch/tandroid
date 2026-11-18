@@ -13,9 +13,10 @@ import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AutoCompleteTextView;
-import c8.mc;
+import c8.i9;
+import c8.pc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class l extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -28,11 +29,11 @@ public class l extends AutoCompleteTextView implements u0.k {
         super(context, attributeSet, i7);
         a3.a(context);
         z2.a(this, getContext());
-        h6.m z10 = h6.m.z(getContext(), attributeSet, d, i7);
-        if (((TypedArray) z10.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(z10.p(0));
+        h6.m D = h6.m.D(getContext(), attributeSet, d, i7);
+        if (((TypedArray) D.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(D.t(0));
         }
-        z10.D();
+        D.G();
         h2.c cVar = new h2.c(this);
         this.a = cVar;
         cVar.x(attributeSet, i7);
@@ -77,7 +78,7 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return mc.d(super.getCustomSelectionActionModeCallback());
+        return pc.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -107,7 +108,7 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        c8.n1.a(editorInfo, onCreateInputConnection, this);
+        i9.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
@@ -149,12 +150,12 @@ public class l extends AutoCompleteTextView implements u0.k {
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(mc.e(callback, this));
+        super.setCustomSelectionActionModeCallback(pc.e(callback, this));
     }
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i7) {
-        setDropDownBackgroundDrawable(b5.a.b(getContext(), i7));
+        setDropDownBackgroundDrawable(c8.z.b(getContext(), i7));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {

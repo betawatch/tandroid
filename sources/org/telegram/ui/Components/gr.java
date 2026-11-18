@@ -1,46 +1,41 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class gr extends ImageView {
-    public final /* synthetic */ int a = 0;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final class gr extends k41 {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gr(ir irVar, Context context, org.telegram.messenger.ou ouVar) {
-        super(context);
-        this.c = irVar;
-        this.b = ouVar;
+    static {
+        k41.h(new gr());
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                ir irVar = (ir) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (irVar.n || irVar.f)) {
-                    irVar.n = false;
-                    irVar.f = false;
-                    removeCallbacks(irVar.r);
-                    removeCallbacks(irVar.h);
-                }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((org.telegram.messenger.ou) this.b).b).onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        org.telegram.ui.Cells.x8 x8Var = (org.telegram.ui.Cells.x8) view;
+        x8Var.c(l41Var.m, l41Var.o, !l41Var.j);
+        xh.l lVar = x8Var.a;
+        if (l41Var.m instanceof SpannableStringBuilder) {
+            lVar.setTextSize(1, 13.0f);
+            lVar.setTranslationY(org.telegram.messenger.g0.L(2.0f));
+            lVar.setTypeface(org.telegram.messenger.g0.o1("fonts/rmono.ttf"));
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gr(mi0 mi0Var, Context context) {
-        super(context);
-        this.c = mi0Var;
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        org.telegram.ui.Cells.x8 x8Var = new org.telegram.ui.Cells.x8(context, i6Var, true);
+        org.telegram.ui.ActionBar.u6.h(org.telegram.ui.ActionBar.n6.d6, x8Var, i6Var);
+        Drawable mutate = context.getDrawable(R.drawable.msg_copy).mutate();
+        org.telegram.ui.ActionBar.u6.x(x8Var, mutate, org.telegram.ui.ActionBar.n6.L6, i6Var, PorterDuff.Mode.MULTIPLY);
+        x8Var.setImage(mutate);
+        x8Var.setImageClickListener(new ah.h(this, context, x8Var, 28));
+        return x8Var;
     }
 }

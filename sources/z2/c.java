@@ -1,20 +1,20 @@
 package z2;
 
-import a8.ja;
+import a8.la;
 import h9.f0;
 import h9.g0;
 import h9.i0;
 import h9.n;
-import h9.n1;
-import h9.s1;
+import h9.o1;
+import h9.t1;
 import h9.x;
 import java.util.ArrayList;
-import x2.p1;
+import x2.z0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c implements a {
-    public static final x b = new x(new n(new p1(3), n1.b), new n(new p1(4), n1.c));
+    public static final x b = new x(new n(new z0(4), o1.b), new n(new z0(5), o1.c));
     public final ArrayList a = new ArrayList();
 
     @Override // z2.a
@@ -58,7 +58,7 @@ public final class c implements a {
                         break;
                     }
                 }
-                s1 w10 = i0.w(b, arrayList2);
+                t1 w10 = i0.w(b, arrayList2);
                 f0 p10 = i0.p();
                 for (int i10 = 0; i10 < w10.d; i10++) {
                     p10.d(((c4.a) w10.get(i10)).a);
@@ -67,14 +67,14 @@ public final class c implements a {
             }
         }
         g0 g0Var = i0.b;
-        return s1.e;
+        return t1.e;
     }
 
     @Override // z2.a
     public final boolean c(c4.a aVar, long j3) {
         long j10 = aVar.b;
-        ja.f(j10 != -9223372036854775807L);
-        ja.f(aVar.c != -9223372036854775807L);
+        la.f(j10 != -9223372036854775807L);
+        la.f(aVar.c != -9223372036854775807L);
         boolean z10 = j10 <= j3 && j3 < aVar.d;
         ArrayList arrayList = this.a;
         for (int size = arrayList.size() - 1; size >= 0; size--) {

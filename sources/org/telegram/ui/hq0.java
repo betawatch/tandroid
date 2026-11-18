@@ -1,320 +1,338 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.animation.AnimatorSet;
 import android.graphics.Point;
-import android.text.Layout;
-import android.view.MotionEvent;
+import android.os.StatFs;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.OverScroller;
-import android.widget.TextView;
-import androidx.core.widget.NestedScrollView;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class hq0 extends NestedScrollView {
-    public final Paint a0;
-    public final r1.g b0;
-    public boolean c0;
-    public float d0;
-    public float e0;
-    public float f0;
-    public final Method g0;
-    public final OverScroller h0;
-    public boolean i0;
-    public int j0;
-    public int k0;
-    public float l0;
-    public boolean m0;
-    public int n0;
-    public final kq0 o0;
-    public final FrameLayout p0;
+public final /* synthetic */ class hq0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public hq0(Context context, kq0 kq0Var, FrameLayout frameLayout) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.a0 = paint;
-        this.l0 = 1.0f;
-        this.n0 = -1;
-        this.o0 = kq0Var;
-        this.p0 = frameLayout;
-        setClipChildren(false);
-        setOverScrollMode(2);
-        paint.setColor(-16777216);
-        setFadingEdgeLength(org.telegram.messenger.g0.L(12.0f));
-        setVerticalFadingEdgeEnabled(true);
-        setWillNotDraw(false);
-        r1.g gVar = new r1.g((Object) kq0Var, (r1.e) r1.g.p, 0.0f);
-        this.b0 = gVar;
-        gVar.m.b(100.0f);
-        gVar.f(1.0f);
-        gVar.b(new ab0(this, 2));
-        gVar.a(new l9(this, 2));
-        gVar.m.a(1.0f);
-        try {
-            Method declaredMethod = NestedScrollView.class.getDeclaredMethod("a", null);
-            this.g0 = declaredMethod;
-            declaredMethod.setAccessible(true);
-        } catch (Exception e10) {
-            this.g0 = null;
-            org.telegram.messenger.a8.g(e10, true);
-        }
-        try {
-            Field declaredField = NestedScrollView.class.getDeclaredField("d");
-            declaredField.setAccessible(true);
-            this.h0 = (OverScroller) declaredField.get(this);
-        } catch (Exception e11) {
-            this.h0 = null;
-            org.telegram.messenger.a8.g(e11, true);
-        }
+    public /* synthetic */ hq0(Object obj, int i7) {
+        this.a = i7;
+        this.b = obj;
     }
 
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean A(int i7, int i10) {
-        if (i10 == 0) {
-            this.b0.d();
-            this.c0 = true;
-            this.d0 = this.o0.getTranslationY();
-            F();
-        }
-        return true;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void C(int i7) {
-        OverScroller overScroller;
-        if (this.c0 && i7 == 0) {
-            this.c0 = false;
-            if (this.d0 != 0.0f && (overScroller = this.h0) != null && overScroller.isFinished()) {
-                float f10 = this.f0;
-                r1.g gVar = this.b0;
-                if (!gVar.f) {
-                    gVar.a = f10;
-                    gVar.h();
-                }
-            }
-            E();
-        }
-    }
-
-    public boolean D() {
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x009c  */
-    /* JADX WARN: Removed duplicated region for block: B:26:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x02f2  */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x02f4  */
+    @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void H(int i7, int i10) {
+    public final void run() {
+        hi.w wVar;
+        ArrayList arrayList;
+        int i7;
+        int i10;
         int i11;
-        int fontMetricsInt;
-        int L;
-        if (i7 != 0 && i10 != 0) {
-            kq0 kq0Var = this.o0;
-            TextView currentView = kq0Var.getCurrentView();
-            CharSequence text = currentView.getText();
-            int hashCode = text.hashCode();
-            Point point = org.telegram.messenger.g0.q;
-            boolean z10 = point.x > point.y;
-            if (this.j0 != hashCode || this.i0 != z10 || this.k0 != i10) {
-                this.j0 = hashCode;
-                this.i0 = z10;
-                this.k0 = i10;
-                currentView.measure(View.MeasureSpec.makeMeasureSpec(i7, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
-                Layout layout = currentView.getLayout();
-                int lineCount = layout.getLineCount();
-                if ((!z10 || lineCount > 2) && (z10 || lineCount > 5)) {
-                    int min = Math.min(z10 ? 2 : 5, lineCount);
-                    loop0: while (min > 1) {
-                        int i12 = min - 1;
-                        for (int lineStart = layout.getLineStart(i12); lineStart < layout.getLineEnd(i12); lineStart++) {
-                            if (!Character.isWhitespace(text.charAt(lineStart))) {
-                                break loop0;
+        TL_iv.PageBlock pageBlock = null;
+        int i12 = 0;
+        switch (this.a) {
+            case 0:
+                PhotoViewer.BackgroundDrawable backgroundDrawable = (PhotoViewer.BackgroundDrawable) this.b;
+                int i13 = PhotoViewer.BackgroundDrawable.g;
+                backgroundDrawable.a();
+                break;
+            case 1:
+                vq0 vq0Var = (vq0) this.b;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) vq0Var.a.O0.getLayoutParams();
+                ((WindowManager) org.telegram.messenger.t0.b.getSystemService("window")).getDefaultDisplay().getRotation();
+                int z10 = org.telegram.messenger.n10.z(34.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                PhotoViewer photoViewer = vq0Var.a;
+                int i14 = z10 + (!photoViewer.s ? org.telegram.messenger.g0.m : 0);
+                if (i14 != layoutParams.topMargin) {
+                    layoutParams.topMargin = i14;
+                    photoViewer.O0.setLayoutParams(layoutParams);
+                }
+                FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) vq0Var.a.P0.getLayoutParams();
+                int z11 = org.telegram.messenger.n10.z(40.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                PhotoViewer photoViewer2 = vq0Var.a;
+                int i15 = z11 + (!photoViewer2.s ? org.telegram.messenger.g0.m : 0);
+                if (layoutParams2.topMargin != i15) {
+                    layoutParams2.topMargin = i15;
+                    photoViewer2.P0.setLayoutParams(layoutParams2);
+                    break;
+                }
+                break;
+            case 2:
+                ((ai.a1) this.b).run();
+                break;
+            case 3:
+                k kVar = (k) this.b;
+                kVar.getClass();
+                kVar.presentFragment(new PremiumPreviewFragment(0, "settings"));
+                break;
+            case 4:
+                ((AnimatorSet) this.b).start();
+                break;
+            case 5:
+                ((a1) this.b).a(2, false);
+                break;
+            case 6:
+                g4 g4Var = ((p0) this.b).a;
+                g4Var.T0.e();
+                Runnable runnable = g4Var.b0;
+                if (runnable != null) {
+                    runnable.run();
+                    g4Var.b0 = null;
+                    break;
+                }
+                break;
+            case 7:
+                q1 q1Var = (q1) ((m1) this.b).b;
+                g4 g4Var2 = q1Var.y;
+                View view = g4Var2.P;
+                if (view != null) {
+                    g4Var2.Q.addView(view, c8.ma.c(-1.0f, -1));
+                    q1Var.y.Q.setVisibility(0);
+                    break;
+                }
+                break;
+            case 8:
+                vf.c.t(((q1) ((n1) this.b).b).getContext(), "https://play.google.com/store/apps/details?id=com.google.android.webview");
+                break;
+            case 9:
+                ((a2) this.b).requestLayout();
+                break;
+            case 10:
+                t3 t3Var = (t3) this.b;
+                t3Var.release();
+                t3Var.L.q();
+                break;
+            case 11:
+                e4 e4Var = (e4) this.b;
+                ArrayList arrayList2 = new ArrayList(e4Var.d);
+                int size = arrayList2.size();
+                g4 g4Var3 = e4Var.N;
+                int i16 = size + (g4Var3.L == null ? 0 : 1);
+                int[] iArr = new int[i16];
+                int[] iArr2 = new int[i16];
+                k3 k3Var = g4Var3.v0[0];
+                if (k3Var != null && (wVar = k3Var.b) != null) {
+                    Point point = org.telegram.messenger.g0.q;
+                    int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(point.x, TLObject.FLAG_31);
+                    int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(point.y, TLObject.FLAG_31);
+                    int i17 = 0;
+                    int i18 = 0;
+                    while (i17 < i16) {
+                        boolean z12 = e4Var.J;
+                        if (z12 && i17 == 0) {
+                            iArr[i12] = i12;
+                        } else {
+                            int i19 = z12 ? i17 - 1 : i17;
+                            TL_iv.PageBlock pageBlock2 = (i19 < 0 || i19 >= arrayList2.size()) ? pageBlock : (TL_iv.PageBlock) arrayList2.get(i19);
+                            if (pageBlock2 == null || pageBlock2.cachedHeight == 0 || pageBlock2.cachedWidth != View.MeasureSpec.getSize(makeMeasureSpec)) {
+                                v4.f1 a10 = e4Var.a(wVar, e4.I(pageBlock2));
+                                View view2 = a10.a;
+                                int i20 = i18;
+                                TL_iv.PageBlock pageBlock3 = pageBlock2;
+                                arrayList = arrayList2;
+                                i7 = makeMeasureSpec2;
+                                i10 = i17;
+                                i11 = i20;
+                                e4Var.H(a10.f, a10, pageBlock3, i19, arrayList2.size(), true);
+                                view2.measure(makeMeasureSpec, i7);
+                                int measuredHeight = view2.getMeasuredHeight();
+                                iArr[i10] = measuredHeight;
+                                if (pageBlock3 != null) {
+                                    pageBlock3.cachedHeight = measuredHeight;
+                                    pageBlock3.cachedWidth = View.MeasureSpec.getSize(makeMeasureSpec);
+                                }
+                                int i21 = i10 - 1;
+                                iArr2[i10] = (i21 >= 0 ? 0 : iArr2[i21]) + iArr[i10];
+                                i18 = i11 + iArr[i10];
+                                i17 = i10 + 1;
+                                makeMeasureSpec2 = i7;
+                                arrayList2 = arrayList;
+                                pageBlock = null;
+                                i12 = 0;
+                            } else {
+                                iArr[i17] = pageBlock2.cachedHeight;
                             }
                         }
-                        min--;
+                        arrayList = arrayList2;
+                        i7 = makeMeasureSpec2;
+                        i10 = i17;
+                        i11 = i18;
+                        int i212 = i10 - 1;
+                        iArr2[i10] = (i212 >= 0 ? 0 : iArr2[i212]) + iArr[i10];
+                        i18 = i11 + iArr[i10];
+                        i17 = i10 + 1;
+                        makeMeasureSpec2 = i7;
+                        arrayList2 = arrayList;
+                        pageBlock = null;
+                        i12 = 0;
                     }
-                    fontMetricsInt = i10 - (currentView.getPaint().getFontMetricsInt(null) * min);
-                    L = org.telegram.messenger.g0.L(8.0f);
-                } else {
-                    fontMetricsInt = i10 - currentView.getMeasuredHeight();
-                    L = kq0Var.getPaddingBottom();
+                    org.telegram.messenger.g0.g3(new b0(e4Var, i18, iArr, iArr2));
+                    break;
                 }
-                i11 = fontMetricsInt - L;
-                if (i11 < 0) {
-                    if (this.m0) {
-                        this.n0 = i11;
-                        return;
-                    } else {
-                        ((ViewGroup.MarginLayoutParams) this.p0.getLayoutParams()).topMargin = i11;
-                        this.n0 = -1;
-                        return;
-                    }
+                break;
+            case 12:
+                b5 b5Var = (b5) this.b;
+                if (!b5Var.x) {
+                    b5Var.x = true;
+                    org.telegram.ui.Components.wk0.d(new a5(b5Var, i12));
+                    break;
                 }
-                return;
-            }
-        }
-        i11 = -1;
-        if (i11 < 0) {
-        }
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void computeScroll() {
-        OverScroller overScroller;
-        super.computeScroll();
-        if (!this.c0 && this.d0 != 0.0f && (overScroller = this.h0) != null && overScroller.isFinished()) {
-            r1.g gVar = this.b0;
-            if (!gVar.f) {
-                gVar.a = 0.0f;
-                gVar.h();
-            }
-        }
-        G();
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final boolean d(int i7, int i10, int i11, int[] iArr, int[] iArr2) {
-        iArr[1] = 0;
-        if (this.c0) {
-            float f10 = this.d0;
-            if ((f10 > 0.0f && i10 > 0) || (f10 < 0.0f && i10 < 0)) {
-                float f11 = i10;
-                float f12 = f10 - f11;
-                if (f10 > 0.0f) {
-                    if (f12 < 0.0f) {
-                        this.d0 = 0.0f;
-                        iArr[1] = (int) (f11 + f12 + 0);
-                    } else {
-                        this.d0 = f12;
-                        iArr[1] = i10;
-                    }
-                } else if (f12 > 0.0f) {
-                    this.d0 = 0.0f;
-                    iArr[1] = (int) (f11 + f12 + 0);
-                } else {
-                    this.d0 = f12;
-                    iArr[1] = i10;
-                }
-                G();
-                this.o0.setTranslationY(this.d0);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void draw(Canvas canvas) {
-        int width = getWidth();
-        int height = getHeight();
-        int scrollY = getScrollY();
-        int save = canvas.save();
-        int i7 = height + scrollY;
-        canvas.clipRect(0, scrollY, width, i7);
-        int i10 = (int) (this.l0 * 127.0f);
-        Paint paint = this.a0;
-        paint.setAlpha(i10);
-        canvas.drawRect(0.0f, this.o0.getTranslationY() + this.p0.getTop(), width, i7, paint);
-        super.draw(canvas);
-        canvas.restoreToCount(save);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void e(int i7, int i10, int i11, int i12, int[] iArr, int i13, int[] iArr2) {
-        float f10;
-        if (i12 != 0) {
-            int round = Math.round((1.0f - Math.abs((-this.d0) / (this.p0.getTop() - (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (D() ? org.telegram.messenger.g0.m : 0))))) * i12);
-            if (round != 0) {
-                boolean z10 = this.c0;
-                kq0 kq0Var = this.o0;
-                if (z10) {
-                    float f11 = this.d0 - round;
-                    this.d0 = f11;
-                    kq0Var.setTranslationY(f11);
-                } else {
-                    r1.g gVar = this.b0;
-                    if (!gVar.f) {
-                        OverScroller overScroller = this.h0;
-                        float currVelocity = overScroller != null ? overScroller.getCurrVelocity() : Float.NaN;
-                        if (Float.isNaN(currVelocity)) {
-                            f10 = 0.0f;
+                break;
+            case 13:
+                x5 x5Var = (x5) this.b;
+                x5Var.d.clear();
+                x5Var.getMessagesController().u7.h(x5Var.e, x5Var.d);
+                x5Var.Z();
+                x5Var.finishFragment();
+                break;
+            case 14:
+                final a5 a5Var = (a5) this.b;
+                ArrayList d12 = org.telegram.messenger.g0.d1();
+                File file = (File) d12.get(0);
+                file.getAbsolutePath();
+                if (!TextUtils.isEmpty(org.telegram.messenger.bz.h0)) {
+                    int size2 = d12.size();
+                    while (i12 < size2) {
+                        File file2 = (File) d12.get(i12);
+                        if (file2.getAbsolutePath().startsWith(org.telegram.messenger.bz.h0) && file2.canWrite()) {
+                            file = file2;
                         } else {
-                            Point point = org.telegram.messenger.g0.q;
-                            float min = Math.min(point.x > point.y ? 3000.0f : 5000.0f, currVelocity);
-                            round = (int) ((round * min) / currVelocity);
-                            f10 = min * (-this.e0);
-                        }
-                        if (round != 0) {
-                            float f12 = this.d0 - round;
-                            this.d0 = f12;
-                            kq0Var.setTranslationY(f12);
-                        }
-                        if (!gVar.f) {
-                            gVar.a = f10;
-                            gVar.h();
+                            i12++;
                         }
                     }
                 }
-            }
-            G();
+                try {
+                    StatFs statFs = new StatFs(file.getPath());
+                    final long blockSizeLong = statFs.getBlockSizeLong();
+                    final long availableBlocksLong = statFs.getAvailableBlocksLong();
+                    final long blockCountLong = statFs.getBlockCountLong();
+                    org.telegram.messenger.g0.g3(new Runnable() { // from class: org.telegram.ui.c6
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            long j3 = blockCountLong;
+                            long j10 = blockSizeLong;
+                            x6.l0 = Long.valueOf(j3 * j10);
+                            Long valueOf = Long.valueOf(availableBlocksLong * j10);
+                            x6.m0 = valueOf;
+                            a5Var.a(x6.l0, valueOf);
+                        }
+                    });
+                    break;
+                } catch (Exception e10) {
+                    org.telegram.messenger.a8.g(e10, true);
+                    return;
+                }
+            case 15:
+                org.telegram.messenger.x10 x10Var = (org.telegram.messenger.x10) this.b;
+                x6.i0 = false;
+                long s02 = x6.s0(org.telegram.messenger.w7.j(4), 5);
+                long s03 = x6.s0(org.telegram.messenger.w7.j(4), 4);
+                long s04 = x6.s0(org.telegram.messenger.w7.j(100), 0) + x6.s0(org.telegram.messenger.w7.j(0), 0);
+                long s05 = x6.s0(org.telegram.messenger.w7.j(101), 0) + x6.s0(org.telegram.messenger.w7.j(2), 0);
+                long s06 = x6.s0(org.telegram.messenger.w7.j(5), 1) + x6.s0(org.telegram.messenger.w7.j(3), 1);
+                long s07 = x6.s0(org.telegram.messenger.w7.j(5), 2) + x6.s0(org.telegram.messenger.w7.j(3), 2);
+                long s08 = x6.s0(org.telegram.messenger.w7.j(4), 3) + x6.s0(new File(org.telegram.messenger.w7.j(4), "acache"), 0);
+                long s09 = x6.s0(org.telegram.messenger.w7.j(1), 0);
+                long s010 = x6.s0(org.telegram.messenger.w7.j(6), 0);
+                long s011 = x6.s0(org.telegram.messenger.g0.P0(), 1);
+                boolean z13 = org.telegram.messenger.s2.a;
+                long j3 = s02 + s03 + s05 + s09 + s04 + s06 + s07 + s08 + s010 + s011;
+                x6.k0 = Long.valueOf(j3);
+                x6.j0 = System.currentTimeMillis();
+                if (!x6.i0) {
+                    org.telegram.messenger.g0.g3(new a6(0, j3, x10Var));
+                    break;
+                }
+                break;
+            case 16:
+                ((o6) this.b).dismiss();
+                break;
+            case 17:
+                t9 t9Var = (t9) ((m4) this.b).b;
+                try {
+                    CameraView cameraView = t9Var.d;
+                    cameraView.focusToPoint(cameraView.getWidth() / 2, t9Var.d.getHeight() / 2, false);
+                } catch (Exception unused) {
+                }
+                CameraView cameraView2 = t9Var.d;
+                if (cameraView2 != null) {
+                    t9Var.h0(cameraView2.getTextureView().getBitmap());
+                    break;
+                }
+                break;
+            case 18:
+                y9 y9Var = (y9) this.b;
+                x9 x9Var = y9Var.a;
+                if (x9Var != null) {
+                    x9Var.requestFocus();
+                    org.telegram.messenger.g0.I3(y9Var.a);
+                    break;
+                }
+                break;
+            case 19:
+                la laVar = (la) this.b;
+                String str = laVar.r;
+                if (str == null || str.length() > 0) {
+                    laVar.n = true;
+                    laVar.j0(laVar.w.size() <= 0);
+                    laVar.n = false;
+                    break;
+                }
+                break;
+            case 20:
+                cb cbVar = (cb) this.b;
+                if (cbVar.W != -1) {
+                    cbVar.Y.getNotificationCenter().j(cbVar.W);
+                    cbVar.W = -1;
+                }
+                if (org.telegram.messenger.s2.a) {
+                    org.telegram.messenger.a8.b("admin logs chatItemAnimator enable notifications");
+                    break;
+                }
+                break;
+            case 21:
+                lb lbVar = ((kb) this.b).f;
+                lbVar.getNotificationCenter().j(lbVar.L0);
+                break;
+            case 22:
+                org.telegram.ui.Components.lc.e0((TLRPC.TL_error) this.b);
+                break;
+            case 23:
+                ((boolean[]) this.b)[0] = true;
+                break;
+            case 24:
+                AtomicReference atomicReference = (AtomicReference) this.b;
+                if (atomicReference.get() != null) {
+                    ((Runnable) atomicReference.getAndSet(null)).run();
+                    break;
+                }
+                break;
+            case 25:
+                ((org.telegram.ui.ActionBar.k) this.b).invalidate();
+                break;
+            case 26:
+                ((org.telegram.ui.ActionBar.z0) this.b).performClick();
+                break;
+            case 27:
+                ((org.telegram.ui.Components.y60) this.b).s();
+                break;
+            case 28:
+                ((x) this.b).a(Boolean.FALSE);
+                break;
+            default:
+                ((org.telegram.ui.ActionBar.h1) this.b).dismiss();
+                break;
         }
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getBottomFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    public int getPendingMarginTopDiff() {
-        int i7 = this.n0;
-        if (i7 >= 0) {
-            return i7 - ((ViewGroup.MarginLayoutParams) this.p0.getLayoutParams()).topMargin;
-        }
-        return 0;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public float getTopFadingEdgeStrength() {
-        return 1.0f;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView
-    public final void i(int i7) {
-        super.i(i7);
-        this.e0 = Math.signum(i7);
-        this.f0 = 0.0f;
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        H(View.MeasureSpec.getSize(i7), View.MeasureSpec.getSize(i10));
-        super.onMeasure(i7, i10);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            if (motionEvent.getY() < this.o0.getTranslationY() + (this.p0.getTop() - getScrollY())) {
-                return false;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    public void E() {
-    }
-
-    public void F() {
-    }
-
-    public void G() {
     }
 }

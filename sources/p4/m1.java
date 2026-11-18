@@ -1,65 +1,64 @@
 package p4;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
-import android.os.SystemClock;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m1 {
+    public static final String d;
     public static final String e;
     public static final String f;
-    public static final String g;
-    public static final String h;
     public final int a;
-    public final Bundle b;
-    public final long c;
-    public final k1 d;
+    public final String b;
+    public final Bundle c;
 
     static {
         String str = h2.l0.a;
-        e = Integer.toString(0, 36);
-        f = Integer.toString(1, 36);
-        g = Integer.toString(2, 36);
-        h = Integer.toString(3, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
     public m1(int i7) {
-        this(i7, Bundle.EMPTY, SystemClock.elapsedRealtime(), null);
+        this("no error message provided", i7, Bundle.EMPTY);
     }
 
-    public static m1 a(Bundle bundle) {
-        k1 k1Var;
-        int i7 = bundle.getInt(e, -1);
-        Bundle o4 = h2.l0.o(bundle.getBundle(f));
-        long j3 = bundle.getLong(g, SystemClock.elapsedRealtime());
-        Bundle bundle2 = bundle.getBundle(h);
-        if (bundle2 != null) {
-            int i10 = bundle2.getInt(k1.d, 1000);
-            String string = bundle2.getString(k1.e, "");
-            Bundle o10 = h2.l0.o(bundle2.getBundle(k1.f));
-            if (o10 == null) {
-                o10 = Bundle.EMPTY;
-            }
-            k1Var = new k1(string, i10, o10);
-        } else {
-            k1Var = i7 != 0 ? new k1(i7) : null;
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        bundle.putInt(d, this.a);
+        bundle.putString(e, this.b);
+        Bundle bundle2 = this.c;
+        if (!bundle2.isEmpty()) {
+            bundle.putBundle(f, bundle2);
         }
-        k1 k1Var2 = k1Var;
-        if (o4 == null) {
-            o4 = Bundle.EMPTY;
-        }
-        return new m1(i7, o4, j3, k1Var2);
+        return bundle;
     }
 
-    public m1(int i7, Bundle bundle, long j3, k1 k1Var) {
-        ja.f(k1Var == null || i7 < 0);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof m1)) {
+            return false;
+        }
+        m1 m1Var = (m1) obj;
+        return this.a == m1Var.a && Objects.equals(this.b, m1Var.b);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), this.b);
+    }
+
+    public m1(String str, int i7, Bundle bundle) {
+        boolean z10 = true;
+        if (i7 >= 0 && i7 != 1) {
+            z10 = false;
+        }
+        la.f(z10);
         this.a = i7;
-        this.b = new Bundle(bundle);
-        this.c = j3;
-        if (k1Var == null && i7 < 0) {
-            k1Var = new k1(i7);
-        }
-        this.d = k1Var;
+        this.b = str;
+        this.c = bundle;
     }
 }

@@ -1,32 +1,60 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fh implements z10 {
+public final /* synthetic */ class fh implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ si b;
-    public final /* synthetic */ TLRPC.StickerSet c;
+    public final /* synthetic */ ArrayList b;
 
-    public /* synthetic */ fh(si siVar, TLRPC.StickerSet stickerSet, int i7) {
+    public /* synthetic */ fh(int i7, ArrayList arrayList) {
         this.a = i7;
-        this.b = siVar;
-        this.c = stickerSet;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        int i7 = this.a;
-        si siVar = this.b;
-        siVar.getClass();
-        switch (i7) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        switch (this.a) {
             case 0:
-                siVar.f1(this.c.id, false);
+                Long valueOf = Long.valueOf(((TLRPC.TL_messages_stickerSet) obj).set.id);
+                ArrayList arrayList = this.b;
+                int indexOf = arrayList.indexOf(valueOf);
+                int indexOf2 = arrayList.indexOf(Long.valueOf(((TLRPC.TL_messages_stickerSet) obj2).set.id));
+                if (indexOf <= indexOf2) {
+                    if (indexOf < indexOf2) {
+                    }
+                }
                 break;
             default:
-                siVar.g1(this.c.id, false);
+                ni niVar = (ni) obj;
+                ni niVar2 = (ni) obj2;
+                String str = niVar.a;
+                ArrayList arrayList2 = this.b;
+                int indexOf3 = arrayList2.indexOf(str);
+                int i7 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                if (indexOf3 < 0) {
+                    indexOf3 = Integer.MAX_VALUE;
+                }
+                int indexOf4 = arrayList2.indexOf(niVar2.a);
+                if (indexOf4 >= 0) {
+                    i7 = indexOf4;
+                }
+                if (indexOf3 >= i7) {
+                    if (indexOf3 <= i7) {
+                        int length = niVar.b.length();
+                        int length2 = niVar2.b.length();
+                        if (length >= length2) {
+                            if (length > length2) {
+                            }
+                        }
+                    }
+                }
                 break;
         }
+        return 0;
     }
 }

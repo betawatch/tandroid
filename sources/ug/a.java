@@ -4,50 +4,50 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.FrameLayout;
-import c8.ja;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.uj0;
+import c8.ma;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.Components.ck0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class a extends FrameLayout implements m0 {
-    public final e6 a;
-    public final uj0 b;
-    public final v4.b0 c;
+public abstract class a extends FrameLayout implements o0 {
+    public final i6 a;
+    public final ck0 b;
+    public final v4.c0 c;
 
-    public a(Context context, e6 e6Var) {
+    public a(Context context, i6 i6Var) {
         super(context);
-        this.a = e6Var;
-        uj0 uj0Var = new uj0(context, e6Var);
-        this.b = uj0Var;
-        uj0Var.setNestedScrollingEnabled(true);
-        uj0Var.setAdapter(a());
-        v4.b0 b0Var = new v4.b0(1, false);
-        this.c = b0Var;
-        uj0Var.setLayoutManager(b0Var);
-        uj0Var.setClipToPadding(false);
-        addView(uj0Var, ja.c(-1.0f, -1));
+        this.a = i6Var;
+        ck0 ck0Var = new ck0(context, i6Var);
+        this.b = ck0Var;
+        ck0Var.setNestedScrollingEnabled(true);
+        ck0Var.setAdapter(a());
+        v4.c0 c0Var = new v4.c0(1, false);
+        this.c = c0Var;
+        ck0Var.setLayoutManager(c0Var);
+        ck0Var.setClipToPadding(false);
+        addView(ck0Var, ma.c(-1.0f, -1));
     }
 
-    public abstract v4.h0 a();
+    public abstract v4.i0 a();
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        Paint W0 = j6.W0("paintDivider", this.a);
+        Paint W0 = n6.W0("paintDivider", this.a);
         if (W0 == null) {
-            W0 = j6.k0;
+            W0 = n6.k0;
         }
         canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, W0);
     }
 
-    @Override // ug.m0
+    @Override // ug.o0
     public void setOffset(float f10) {
         if (Math.abs(f10 / getMeasuredWidth()) == 1.0f) {
-            uj0 uj0Var = this.b;
-            if (uj0Var.K(0) == null || uj0Var.K(0).a.getTop() != uj0Var.getPaddingTop()) {
-                uj0Var.v0(0);
+            ck0 ck0Var = this.b;
+            if (ck0Var.K(0) == null || ck0Var.K(0).a.getTop() != ck0Var.getPaddingTop()) {
+                ck0Var.v0(0);
             }
         }
     }

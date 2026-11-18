@@ -1,40 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class o40 extends org.telegram.ui.Components.z00 {
-    public final /* synthetic */ w40 r;
+public final /* synthetic */ class o40 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o40(w40 w40Var, Context context, int i7) {
-        super(context, i7);
-        this.r = w40Var;
+    public /* synthetic */ o40(z40 z40Var, int i7) {
+        this.a = i7;
+        this.b = z40Var;
     }
 
-    @Override // org.telegram.ui.Components.z00
-    public final void a(org.telegram.ui.Components.f20 f20Var) {
-        super.a(f20Var);
-        w40.e0(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.z00
-    public final void b() {
-        super.b();
-        w40.e0(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.z00
-    public final void c(org.telegram.ui.Components.f20 f20Var) {
-        w40 w40Var = this.r;
-        if (f20Var == w40Var.Y) {
-            w40Var.Y = null;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                z40 z40Var = this.b;
+                z40Var.Y = null;
+                z40Var.a0.b();
+                z40Var.h.b();
+                z40Var.p0();
+                z40Var.w0();
+                z40Var.x0();
+                break;
+            case 1:
+                z40 z40Var2 = this.b;
+                z40Var2.f.r.clearFocus();
+                z40Var2.f.r.requestFocus();
+                org.telegram.messenger.g0.I3(z40Var2.f.r);
+                break;
+            case 2:
+                this.b.t0();
+                break;
+            case 3:
+                z40 z40Var3 = this.b;
+                z40Var3.s0(z40Var3.q0());
+                break;
+            default:
+                z40 z40Var4 = this.b;
+                z40Var4.s0(z40Var4.q0());
+                break;
         }
-        if (f20Var == w40Var.Z) {
-            w40Var.Z = null;
-        }
-        super.c(f20Var);
-        w40.e0(w40Var);
     }
 }

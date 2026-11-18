@@ -1,86 +1,81 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.util.TypedValue;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class g30 extends Drawable {
-    public byte[] a;
-    public final Paint b = new Paint();
-    public final int[] c = {-1, -2758925, -13805707, -13657655};
+public class g30 extends EditTextBoldCursor {
+    public final TextPaint M1;
+    public String N1;
+    public final Rect O1;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte[] bArr = this.a;
-        if (bArr == null) {
-            return;
-        }
-        int length = bArr.length;
-        int[] iArr = this.c;
-        Paint paint = this.b;
-        if (length == 16) {
-            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
-            float f10 = 8.0f * floor;
-            float v = org.telegram.ui.Cells.y0.v(getBounds().width(), f10, 2.0f, 0.0f);
-            float v10 = org.telegram.ui.Cells.y0.v(getBounds().height(), f10, 2.0f, 0.0f);
+    public g30(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.M1 = textPaint;
+        this.O1 = new Rect();
+        textPaint.setColor(org.telegram.ui.ActionBar.n6.x0(null, org.telegram.ui.ActionBar.n6.H6, false));
+    }
+
+    public String getHintText() {
+        return this.N1;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.N1 != null && length() < this.N1.length()) {
             int i7 = 0;
-            for (int i10 = 0; i10 < 8; i10++) {
-                int i11 = 0;
-                while (i11 < 8) {
-                    int i12 = i7 + 2;
-                    paint.setColor(iArr[Math.abs((this.a[i7 / 8] >> (i7 % 8)) & 3) % 4]);
-                    float f11 = (i11 * floor) + v;
-                    float f12 = i10 * floor;
-                    canvas.drawRect(f11, f12 + v10, f11 + floor, f12 + floor + v10, paint);
-                    i11++;
-                    i7 = i12;
+            float f10 = 0.0f;
+            while (i7 < this.N1.length()) {
+                int length = length();
+                TextPaint textPaint = this.M1;
+                float measureText = i7 < length ? getPaint().measureText(getText(), i7, i7 + 1) : textPaint.measureText(this.N1, i7, i7 + 1);
+                if (i7 < length()) {
+                    f10 += measureText;
+                    canvas2 = canvas;
+                } else {
+                    int color = textPaint.getColor();
+                    canvas.save();
+                    String str = this.N1;
+                    textPaint.getTextBounds(str, 0, str.length(), this.O1);
+                    A(i7);
+                    canvas2 = canvas;
+                    canvas2.drawText(this.N1, i7, i7 + 1, f10, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
+                    f10 += measureText;
+                    canvas2.restore();
+                    textPaint.setColor(color);
                 }
+                i7++;
+                canvas = canvas2;
             }
-            return;
         }
-        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
-        float f13 = 12.0f * floor2;
-        float v11 = org.telegram.ui.Cells.y0.v(getBounds().width(), f13, 2.0f, 0.0f);
-        float v12 = org.telegram.ui.Cells.y0.v(getBounds().height(), f13, 2.0f, 0.0f);
-        int i13 = 0;
-        int i14 = 0;
-        while (i14 < 12) {
-            int i15 = i13;
-            for (int i16 = 0; i16 < 12; i16++) {
-                paint.setColor(iArr[Math.abs((this.a[i15 / 8] >> (i15 % 8)) & 3) % 4]);
-                float f14 = (i16 * floor2) + v11;
-                float f15 = i14 * floor2;
-                canvas.drawRect(f14, f15 + v12, f14 + floor2, f15 + floor2 + v12, paint);
-                i15 += 2;
-            }
-            i14++;
-            i13 = i15;
-        }
+        super.onDraw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return org.telegram.messenger.g0.L(32.0f);
+    @Override // org.telegram.ui.Components.pt, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i7, int i10, int i11, int i12) {
+        super.onLayout(z10, i7, i10, i11, i12);
+        invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return org.telegram.messenger.g0.L(32.0f);
+    public void setHintText(String str) {
+        this.N1 = str;
+        invalidate();
+        setText(getText());
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i7, float f10) {
+        super.setTextSize(i7, f10);
+        this.M1.setTextSize(TypedValue.applyDimension(i7, f10, getResources().getDisplayMetrics()));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void A(int i7) {
     }
 }

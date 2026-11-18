@@ -1,18 +1,18 @@
 package org.telegram.ui.ActionBar;
 
 import android.view.ViewGroup;
-import org.telegram.messenger.gj;
-import org.telegram.messenger.hd;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.pm0;
-import org.telegram.ui.Components.qm0;
-import org.telegram.ui.Components.qz;
-import org.telegram.ui.Components.tm0;
+import org.telegram.messenger.fj;
+import org.telegram.messenger.gd;
+import org.telegram.ui.Components.bn0;
+import org.telegram.ui.Components.mu0;
+import org.telegram.ui.Components.vm0;
+import org.telegram.ui.Components.xm0;
+import org.telegram.ui.Components.xz;
+import org.telegram.ui.Components.ym0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class u0 extends qz {
+public final class u0 extends xz {
     public final /* synthetic */ int e;
     public final /* synthetic */ ViewGroup f;
 
@@ -23,26 +23,26 @@ public final class u0 extends qz {
         this.f = viewGroup;
     }
 
-    @Override // org.telegram.ui.Components.om0
+    @Override // org.telegram.ui.Components.wm0
     public CharSequence d() {
         int i7 = this.e;
         ViewGroup viewGroup = this.f;
         switch (i7) {
             case 0:
-                return eu0.a(((v0) viewGroup).getSpeed()) + "x  " + hd.M0(2131754759, null);
+                return mu0.a(((v0) viewGroup).getSpeed()) + "x  " + gd.M0(2131754759, null);
             case 1:
             default:
                 return super.d();
             case 2:
-                pm0 pm0Var = ((qm0) viewGroup).y;
-                if (pm0Var != null) {
-                    return pm0Var.getContentDescription();
+                xm0 xm0Var = ((ym0) viewGroup).y;
+                if (xm0Var != null) {
+                    return xm0Var.getContentDescription();
                 }
                 return null;
         }
     }
 
-    @Override // org.telegram.ui.Components.qz
+    @Override // org.telegram.ui.Components.xz
     public float h() {
         switch (this.e) {
             case 0:
@@ -51,15 +51,15 @@ public final class u0 extends qz {
             default:
                 return super.h();
             case 2:
-                int p02 = ((qm0) this.f).y.p0();
-                if (p02 > 0) {
-                    return 1.0f / p02;
+                int r02 = ((ym0) this.f).y.r0();
+                if (r02 > 0) {
+                    return 1.0f / r02;
                 }
                 return 0.05f;
         }
     }
 
-    @Override // org.telegram.ui.Components.qz
+    @Override // org.telegram.ui.Components.xz
     public float i() {
         switch (this.e) {
             case 0:
@@ -69,7 +69,7 @@ public final class u0 extends qz {
         }
     }
 
-    @Override // org.telegram.ui.Components.qz
+    @Override // org.telegram.ui.Components.xz
     public float j() {
         switch (this.e) {
             case 0:
@@ -79,7 +79,7 @@ public final class u0 extends qz {
         }
     }
 
-    @Override // org.telegram.ui.Components.qz
+    @Override // org.telegram.ui.Components.xz
     public final float k() {
         float f10;
         int i7;
@@ -93,29 +93,29 @@ public final class u0 extends qz {
                 if (q1Var.Q5.I3()) {
                     f10 = i1Var.b;
                     i7 = i1Var.f;
-                    i10 = nm0.E;
+                    i10 = vm0.E;
                 } else {
-                    if (!gj.R4(q1Var.Q5.k)) {
+                    if (!fj.R4(q1Var.Q5.k)) {
                         if (q1Var.Q5.h4()) {
                             return q1Var.Q5.b0;
                         }
                         return 0.0f;
                     }
                     if (q1Var.C4) {
-                        tm0 tm0Var = q1Var.E4;
-                        return tm0Var.a / tm0Var.g;
+                        bn0 bn0Var = q1Var.E4;
+                        return bn0Var.a / bn0Var.g;
                     }
                     f10 = i1Var.b;
                     i7 = i1Var.f;
-                    i10 = nm0.E;
+                    i10 = vm0.E;
                 }
                 return f10 / (i7 - i10);
             default:
-                return ((qm0) this.f).getProgress();
+                return ((ym0) this.f).getProgress();
         }
     }
 
-    @Override // org.telegram.ui.Components.qz
+    @Override // org.telegram.ui.Components.xz
     public final void l(float f10) {
         switch (this.e) {
             case 0:
@@ -123,43 +123,43 @@ public final class u0 extends qz {
                 break;
             case 1:
                 org.telegram.ui.Cells.q1 q1Var = (org.telegram.ui.Cells.q1) this.f;
-                tm0 tm0Var = q1Var.E4;
+                bn0 bn0Var = q1Var.E4;
                 org.telegram.ui.Cells.i1 i1Var = q1Var.D4;
                 if (q1Var.Q5.I3()) {
                     i1Var.h(f10);
-                } else if (gj.R4(q1Var.Q5.k)) {
+                } else if (fj.R4(q1Var.Q5.k)) {
                     if (q1Var.C4) {
-                        tm0Var.g(false, f10);
+                        bn0Var.g(false, f10);
                     } else {
                         i1Var.h(f10);
                     }
                 } else if (q1Var.Q5.h4()) {
                     if (q1Var.C4) {
-                        if (tm0Var != null) {
-                            tm0Var.g(false, f10);
+                        if (bn0Var != null) {
+                            bn0Var.g(false, f10);
                         }
                     } else if (i1Var != null) {
                         i1Var.h(f10);
                     }
                     q1Var.Q5.b0 = f10;
                 }
-                q1Var.e(f10);
+                q1Var.a(f10);
                 q1Var.invalidate();
                 break;
             default:
-                qm0 qm0Var = (qm0) this.f;
-                qm0Var.x = true;
-                qm0Var.setProgress(f10);
-                qm0Var.f(true, f10);
-                qm0Var.x = false;
+                ym0 ym0Var = (ym0) this.f;
+                ym0Var.x = true;
+                ym0Var.setProgress(f10);
+                ym0Var.f(true, f10);
+                ym0Var.x = false;
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u0(qm0 qm0Var, boolean z10) {
+    public u0(ym0 ym0Var, boolean z10) {
         super(z10);
         this.e = 2;
-        this.f = qm0Var;
+        this.f = ym0Var;
     }
 }

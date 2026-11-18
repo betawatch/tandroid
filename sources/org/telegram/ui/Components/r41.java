@@ -1,53 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class r41 extends org.telegram.ui.ActionBar.e2 {
-    public bi.v3 a;
-    public kg.m1 b;
-    public int c;
-    public int d;
+public final class r41 extends URLSpan {
+    public final dz0 a;
+    public boolean b;
 
-    public r41() {
-        super(null);
-        this.c = -1;
+    public r41(String str, dz0 dz0Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = dz0Var;
     }
 
-    public abstract void Z(ArrayList arrayList, p41 p41Var);
-
-    public abstract CharSequence a0();
-
-    public abstract void b0(b41 b41Var, View view);
-
-    public abstract boolean c0(b41 b41Var, View view);
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public View createView(Context context) {
-        org.telegram.ui.p9 p9Var = new org.telegram.ui.p9(this, 19);
-        org.telegram.ui.ActionBar.w4 w4Var = this.simpleActionBar;
-        if (w4Var != null) {
-            w4Var.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
-            this.simpleActionBar.setTitle(a0());
-            this.simpleActionBar.setActionBarMenuOnItemClick(p9Var);
-        } else {
-            this.actionBar.setBackButtonDrawable(new org.telegram.ui.ActionBar.x1(false));
-            this.actionBar.setAllowOverlayTitle(true);
-            this.actionBar.setTitle(a0());
-            this.actionBar.setActionBarMenuOnItemClick(p9Var);
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).X0 = true;
         }
-        this.b = new kg.m1(context, null, 1);
-        if (!useSimpleActionBar()) {
-            org.telegram.ui.ActionBar.q6.h(org.telegram.ui.ActionBar.j6.a7, this.b, null);
+        vf.c.q(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        dz0 dz0Var = this.a;
+        if (dz0Var != null) {
+            dz0Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
         }
-        bi.v3 v3Var = new bi.v3(this, this, new d(this, 22), new q41(this), new q41(this));
-        this.a = v3Var;
-        this.b.addView(v3Var, c8.ja.c(-1.0f, -1));
-        kg.m1 m1Var = this.b;
-        this.fragmentView = m1Var;
-        return m1Var;
     }
 }

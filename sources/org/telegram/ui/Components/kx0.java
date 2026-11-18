@@ -1,37 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class kx0 extends ViewGroup.MarginLayoutParams {
-    public mx0 a;
-    public mx0 b;
+public final class kx0 {
+    public final qx0 a;
+    public final sx0 b;
+    public boolean c = true;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kx0() {
-        super(-2, -2);
-        mx0 mx0Var = mx0.e;
-        this.a = mx0Var;
-        this.b = mx0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = mx0Var;
-        this.b = mx0Var;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || kx0.class != obj.getClass()) {
-            return false;
-        }
-        kx0 kx0Var = (kx0) obj;
-        return this.b.equals(kx0Var.b) && this.a.equals(kx0Var.a);
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
+    public kx0(qx0 qx0Var, sx0 sx0Var) {
+        this.a = qx0Var;
+        this.b = sx0Var;
     }
 }

@@ -1,185 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import android.text.style.CharacterStyle;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class a80 {
-    public static final ArrayList s = new ArrayList();
-    public int a;
-    public int b;
-    public Paint c;
-    public Paint d;
-    public int e;
-    public int f;
-    public final CharacterStyle i;
-    public final float j;
-    public final float k;
-    public Rect m;
-    public float n;
-    public final long q;
-    public final ArrayList g = new ArrayList();
-    public int h = 0;
-    public final Path l = new Path();
-    public long o = -1;
-    public long p = -1;
-    public final boolean r = !org.telegram.messenger.qc.e(360928);
+public final class a80 implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewTreeObserver.OnPreDrawListener d;
+    public final /* synthetic */ ViewGroup e;
 
-    public a80(CharacterStyle characterStyle, org.telegram.ui.ActionBar.e6 e6Var, float f10, float f11, int i7) {
-        this.i = characterStyle;
-        d(org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.Ce, e6Var));
-        this.j = f10;
-        this.k = f11;
-        this.q = (long) Math.min(ViewConfiguration.getTapTimeout() * 1.8f, ViewConfiguration.getLongPressTimeout() * 0.8f);
+    public /* synthetic */ a80(ViewGroup viewGroup, View view, FrameLayout frameLayout, ViewTreeObserver.OnPreDrawListener onPreDrawListener, int i7) {
+        this.a = i7;
+        this.e = viewGroup;
+        this.c = view;
+        this.b = frameLayout;
+        this.d = onPreDrawListener;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public final boolean a(Canvas canvas) {
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        float f10;
-        boolean z13 = this.r;
-        int L = z13 ? 0 : org.telegram.messenger.g0.L(4.0f);
-        boolean z14 = this.a != L;
-        if (this.c == null) {
-            Paint paint = new Paint(1);
-            this.c = paint;
-            paint.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.c.setColor(this.b);
-            this.e = Color.alpha(this.b);
-        }
-        if (this.d == null) {
-            Paint paint2 = new Paint(1);
-            this.d = paint2;
-            paint2.setStyle(Paint.Style.FILL_AND_STROKE);
-            this.d.setColor(this.b);
-            this.f = Color.alpha(this.b);
-        }
-        if (z14) {
-            this.a = L;
-            if (L <= 0) {
-                this.c.setPathEffect(null);
-                this.d.setPathEffect(null);
-            } else {
-                this.c.setPathEffect(new CornerPathEffect(this.a));
-                this.d.setPathEffect(new CornerPathEffect(this.a));
-            }
-        }
-        Rect rect = this.m;
-        float f11 = this.k;
-        float f12 = this.j;
-        ArrayList arrayList = this.g;
-        if (rect != null || this.h <= 0) {
-            z10 = 0;
-            z11 = z13;
-            z12 = true;
-            f10 = f12;
-        } else {
-            u70 u70Var = (u70) arrayList.get(0);
-            RectF rectF = org.telegram.messenger.g0.P;
-            u70Var.computeBounds(rectF, false);
-            this.m = new Rect((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            for (int i7 = 1; i7 < this.h; i7++) {
-                u70 u70Var2 = (u70) arrayList.get(i7);
-                RectF rectF2 = org.telegram.messenger.g0.P;
-                u70Var2.computeBounds(rectF2, false);
-                Rect rect2 = this.m;
-                rect2.left = Math.min(rect2.left, (int) rectF2.left);
-                Rect rect3 = this.m;
-                rect3.top = Math.min(rect3.top, (int) rectF2.top);
-                Rect rect4 = this.m;
-                rect4.right = Math.max(rect4.right, (int) rectF2.right);
-                Rect rect5 = this.m;
-                rect5.bottom = Math.max(rect5.bottom, (int) rectF2.bottom);
-            }
-            z10 = 0;
-            z11 = z13;
-            z12 = true;
-            f10 = f12;
-            this.n = (float) Math.sqrt(Math.max(Math.max(Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.top - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d)), Math.max(Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.left - f12, 2.0d), Math.pow(this.m.bottom - f11, 2.0d) + Math.pow(this.m.right - f12, 2.0d))));
-        }
-        if (z11) {
-            for (int i10 = z10; i10 < this.h; i10++) {
-                canvas.drawPath((Path) arrayList.get(i10), this.d);
-            }
-            return z10;
-        }
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.o < 0) {
-            this.o = elapsedRealtime;
-        }
-        float interpolation = er.f.getInterpolation(Math.min(1.0f, (elapsedRealtime - this.o) / this.q));
-        float min = 1.0f - (this.p < 0 ? 0.0f : Math.min(1.0f, Math.max(0.0f, ((elapsedRealtime - 75) - r11) / 100.0f)));
-        this.c.setAlpha((int) (Math.min(1.0f, interpolation * 5.0f) * this.e * 0.2f * min));
-        this.c.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
-        for (int i11 = z10; i11 < this.h; i11++) {
-            ((u70) arrayList.get(i11)).a();
-            canvas.drawPath((Path) arrayList.get(i11), this.c);
-        }
-        this.d.setAlpha((int) (this.f * 0.8f * min));
-        this.d.setStrokeWidth(Math.min(1.0f, 0.0f) * org.telegram.messenger.g0.L(5.0f));
-        if (interpolation < 1.0f) {
-            float f13 = interpolation * this.n;
-            canvas.save();
-            Path path = this.l;
-            path.reset();
-            path.addCircle(f10, f11, f13, Path.Direction.CW);
-            canvas.clipPath(path);
-            for (int i12 = z10; i12 < this.h; i12++) {
-                canvas.drawPath((Path) arrayList.get(i12), this.d);
-            }
-            canvas.restore();
-        } else {
-            for (int i13 = z10; i13 < this.h; i13++) {
-                canvas.drawPath((Path) arrayList.get(i13), this.d);
-            }
-        }
-        return (interpolation < 1.0f || this.p >= 0) ? z12 : z10;
-    }
-
-    public final u70 b() {
-        ArrayList arrayList = s;
-        u70 u70Var = !arrayList.isEmpty() ? (u70) arrayList.remove(0) : new u70(0);
-        u70Var.c = !this.r;
-        u70Var.reset();
-        ArrayList arrayList2 = this.g;
-        arrayList2.add(u70Var);
-        this.h = arrayList2.size();
-        return u70Var;
-    }
-
-    public final void c() {
-        ArrayList arrayList = this.g;
-        if (arrayList.isEmpty()) {
-            return;
-        }
-        s.addAll(arrayList);
-        arrayList.clear();
-        this.h = 0;
-    }
-
-    public final void d(int i7) {
-        this.b = i7;
-        Paint paint = this.c;
-        if (paint != null) {
-            paint.setColor(i7);
-            this.e = Color.alpha(i7);
-        }
-        Paint paint2 = this.d;
-        if (paint2 != null) {
-            paint2.setColor(i7);
-            this.f = Color.alpha(i7);
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((e80) this.e).s = null;
+                hi.m5 m5Var = (hi.m5) this.c;
+                m5Var.animate().cancel();
+                m5Var.animate().alpha(0.0f).setDuration(150L).setListener(new q60(this, 3));
+                break;
+            default:
+                ((org.telegram.ui.iy) this.e).y = null;
+                hi.m5 m5Var2 = (hi.m5) this.c;
+                m5Var2.animate().cancel();
+                m5Var2.animate().alpha(0.0f).setDuration(150L).setListener(new org.telegram.ui.ay(this, 0));
+                break;
         }
     }
 }

@@ -22,12 +22,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.bz;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.w7;
-import org.telegram.ui.Components.ch0;
+import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class i {
     public static int A;
@@ -91,7 +91,7 @@ public final class i {
         File file3 = new File(file2, a8.p0.s(sb2, i11 != 0 ? i5.c.i(i11, "_fitz") : "", ".pcache2"));
         this.m = file3;
         this.f = i7 < org.telegram.messenger.g0.L(60.0f) && i10 < org.telegram.messenger.g0.L(60.0f);
-        if (gz.o() < 2) {
+        if (bz.o() < 2) {
             this.k = false;
             this.q = false;
             return;
@@ -150,7 +150,7 @@ public final class i {
         A = i7;
         if (i7 <= 0) {
             A = 0;
-            ch0.U0.postRunnable(new ai.o(3));
+            mh0.U0.postRunnable(new ai.o(3));
         }
     }
 
@@ -226,7 +226,7 @@ public final class i {
                 B.a(this.c, this.b);
                 xa xaVar = B;
                 bitmapArr = (Bitmap[]) xaVar.d;
-                d0[] d0VarArr = (d0[]) xaVar.c;
+                e0[] e0VarArr = (e0[]) xaVar.c;
                 countDownLatchArr = new CountDownLatch[y];
                 ArrayList arrayList = new ArrayList();
                 randomAccessFile2.writeBoolean(false);
@@ -246,7 +246,7 @@ public final class i {
                     if (a10 != -1) {
                     }
                 }
-                boolean z10 = r2.a;
+                boolean z10 = s2.a;
                 a8.b("cancelled cache generation");
                 atomicBoolean.set(true);
                 while (i7 < y) {
@@ -290,7 +290,7 @@ public final class i {
         B.a(this.c, this.b);
         xa xaVar2 = B;
         bitmapArr = (Bitmap[]) xaVar2.d;
-        d0[] d0VarArr2 = (d0[]) xaVar2.c;
+        e0[] e0VarArr2 = (e0[]) xaVar2.c;
         countDownLatchArr = new CountDownLatch[y];
         ArrayList arrayList2 = new ArrayList();
         randomAccessFile22.writeBoolean(false);
@@ -328,15 +328,15 @@ public final class i {
                 }
                 int length = (int) randomAccessFile22.length();
                 Collections.sort(arrayList2, Comparator$-CC.comparingInt(new d(i7)));
-                d0VarArr2[0].b();
+                e0VarArr2[0].b();
                 int size = arrayList2.size();
-                d0VarArr2[0].c(size);
+                e0VarArr2[0].c(size);
                 for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                    d0VarArr2[0].c(((h) arrayList2.get(i13)).c);
-                    d0VarArr2[0].c(((h) arrayList2.get(i13)).b);
+                    e0VarArr2[0].c(((h) arrayList2.get(i13)).c);
+                    e0VarArr2[0].c(((h) arrayList2.get(i13)).b);
                 }
-                randomAccessFile22.write(d0VarArr2[0].a, 0, (size * 8) + 4);
-                d0VarArr2[0].b();
+                randomAccessFile22.write(e0VarArr2[0].a, 0, (size * 8) + 4);
+                e0VarArr2[0].b();
                 randomAccessFile22.seek(0L);
                 randomAccessFile22.writeBoolean(true);
                 randomAccessFile22.writeInt(length);
@@ -350,7 +350,7 @@ public final class i {
                 this.k = true;
             } else {
                 countDownLatchArr[i10] = new CountDownLatch(1);
-                z.execute(new c(this, atomicBoolean2, bitmapArr, i10, d0VarArr2, i112, randomAccessFile22, arrayList2, countDownLatchArr));
+                z.execute(new c(this, atomicBoolean2, bitmapArr, i10, e0VarArr2, i112, randomAccessFile22, arrayList2, countDownLatchArr));
                 i10++;
                 i112++;
                 if (i10 >= y) {
@@ -359,7 +359,7 @@ public final class i {
                 this.d.set(i112);
             }
         }
-        boolean z102 = r2.a;
+        boolean z102 = s2.a;
         a8.b("cancelled cache generation");
         atomicBoolean2.set(true);
         while (i7 < y) {
@@ -413,7 +413,7 @@ public final class i {
         w.put(Thread.currentThread(), bArr2);
         if (!x) {
             x = true;
-            org.telegram.messenger.g0.i3(this.p, 5000L);
+            org.telegram.messenger.g0.h3(this.p, 5000L);
         }
         return bArr2;
     }

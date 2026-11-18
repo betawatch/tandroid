@@ -1,28 +1,34 @@
 package fi;
 
-import org.telegram.messenger.z10;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.NativeByteBuffer;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c8 implements z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d8 b;
-
-    public /* synthetic */ c8(d8 d8Var, int i7) {
-        this.a = i7;
-        this.b = d8Var;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public abstract class c8 {
+    public static void a(TL_stories.StoryItem storyItem, NativeByteBuffer nativeByteBuffer) {
+        if (nativeByteBuffer == null) {
+            return;
+        }
+        int readInt32 = nativeByteBuffer.readInt32(true);
+        if (readInt32 != 1) {
+            throw new RuntimeException(i5.c.i(readInt32, "(story) can't read params version = "));
+        }
+        new b8(storyItem).readParams(nativeByteBuffer, true);
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        switch (this.a) {
-            case 0:
-                d8.c(this.b, (TLRPC.TL_messages_stickerSet) obj);
-                break;
-            default:
-                d8.b(this.b, (TLRPC.TL_messages_stickerSet) obj);
-                break;
+    public static NativeByteBuffer b(TL_stories.StoryItem storyItem) {
+        if (storyItem.detectedLng == null && storyItem.translatedLng == null && !storyItem.translated && storyItem.translatedText == null) {
+            return null;
+        }
+        b8 b8Var = new b8(storyItem);
+        try {
+            NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(b8Var.getObjectSize());
+            b8Var.serializeToStream(nativeByteBuffer);
+            return nativeByteBuffer;
+        } catch (Exception e10) {
+            e10.printStackTrace();
+            return null;
         }
     }
 }

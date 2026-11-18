@@ -21,7 +21,7 @@ import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import androidx.lifecycle.u0;
-import c8.he;
+import c8.ke;
 import com.google.android.gms.internal.cast.b0;
 import e0.k0;
 import java.util.ArrayList;
@@ -31,9 +31,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ld0;
+import org.telegram.ui.md0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public final CopyOnWriteArrayList E;
@@ -43,7 +43,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public boolean I;
     public boolean J;
     public final b0 b;
-    public final ld0 c;
+    public final md0 c;
     public final androidx.lifecycle.v d;
     public final n e;
     public t0 f;
@@ -58,7 +58,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     public l() {
         b0 b0Var = new b0();
         this.b = b0Var;
-        this.c = new ld0(new a3.f(this, 8));
+        this.c = new md0(new a3.f(this, 9));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         n nVar = new n(this);
@@ -95,7 +95,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
                 if (mVar == androidx.lifecycle.m.ON_DESTROY) {
                     l.this.b.c = null;
                     if (!l.this.isChangingConfigurations()) {
-                        l.this.f().a();
+                        l.this.g().a();
                     }
                     k kVar2 = l.this.r;
                     l lVar = kVar2.d;
@@ -143,7 +143,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // androidx.lifecycle.i
-    public final s0 c() {
+    public final s0 d() {
         if (this.h == null) {
             this.h = new n0(getApplication(), this, getIntent() != null ? getIntent().getExtras() : null);
         }
@@ -151,7 +151,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // androidx.lifecycle.i
-    public final y1.b d() {
+    public final y1.b e() {
         y1.b bVar = new y1.b();
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         if (getApplication() != null) {
@@ -166,7 +166,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // androidx.lifecycle.u0
-    public final t0 f() {
+    public final t0 g() {
         if (getApplication() == null) {
             throw new IllegalStateException("Your activity is not yet attached to the Application instance. You can't request ViewModel before onCreate call.");
         }
@@ -183,7 +183,7 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     }
 
     @Override // w4.e
-    public final m.p g() {
+    public final m.p h() {
         return (m.p) this.e.d;
     }
 
@@ -404,8 +404,8 @@ public abstract class l extends e0.e implements u0, androidx.lifecycle.i, w4.e {
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (he.b()) {
-                he.a("reportFullyDrawn() for ComponentActivity");
+            if (ke.b()) {
+                ke.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             n nVar = this.s;

@@ -1,39 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tz implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ vz b;
+public final class tz {
+    public byte a;
+    public byte b;
+    public byte c;
+    public byte d;
+    public byte e;
+    public byte f;
+    public float g;
+    public float h;
+    public short i;
+    public float j;
+    public float k;
+    public final /* synthetic */ uz l;
 
-    public /* synthetic */ tz(vz vzVar, int i7) {
-        this.a = i7;
-        this.b = vzVar;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                vz vzVar = this.b;
-                vzVar.getClass();
-                vzVar.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vzVar.invalidate();
-                break;
-            case 1:
-                vz vzVar2 = this.b;
-                vzVar2.getClass();
-                vzVar2.w = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                vzVar2.invalidate();
-                break;
-            default:
-                vz vzVar3 = this.b;
-                vzVar3.getClass();
-                vzVar3.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                vzVar3.invalidate();
-                break;
-        }
+    public tz(uz uzVar) {
+        this.l = uzVar;
     }
 }

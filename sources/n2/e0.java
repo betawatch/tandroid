@@ -3,7 +3,7 @@ package n2;
 import android.media.AudioTrack;
 import android.media.AudioTrack$StreamEventCallback;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e0 extends AudioTrack$StreamEventCallback {
     public final /* synthetic */ f0 a;
@@ -13,14 +13,14 @@ public final class e0 extends AudioTrack$StreamEventCallback {
     }
 
     public final void onDataRequest(AudioTrack audioTrack, int i7) {
-        this.a.c.j.e(-1, new a0(1));
-    }
-
-    public final void onPresentationEnded(AudioTrack audioTrack) {
         this.a.c.j.e(-1, new a0(2));
     }
 
+    public final void onPresentationEnded(AudioTrack audioTrack) {
+        this.a.c.j.e(-1, new a0(3));
+    }
+
     public final void onTearDown(AudioTrack audioTrack) {
-        this.a.c.j.e(-1, new a0(1));
+        this.a.c.j.e(-1, new a0(2));
     }
 }

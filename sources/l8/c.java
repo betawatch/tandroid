@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import q6.m;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c {
     public static Parcelable a(String str, Bundle bundle) {
         ClassLoader classLoader = c.class.getClassLoader();
-        m.g(classLoader);
+        m.h(classLoader);
         bundle.setClassLoader(classLoader);
         Bundle bundle2 = bundle.getBundle("map_state");
         if (bundle2 == null) {
@@ -45,7 +45,7 @@ public abstract class c {
 
     public static void c(Bundle bundle, String str, Parcelable parcelable) {
         ClassLoader classLoader = c.class.getClassLoader();
-        m.g(classLoader);
+        m.h(classLoader);
         bundle.setClassLoader(classLoader);
         Bundle bundle2 = bundle.getBundle("map_state");
         if (bundle2 == null) {

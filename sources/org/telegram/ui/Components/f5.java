@@ -1,66 +1,94 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public class f5 extends Drawable {
-    public final Drawable a;
-    public final int b;
-    public final int c;
-    public int d = org.telegram.messenger.ns.e4;
+public final class f5 {
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public f5(int i7, int i10, Drawable drawable) {
-        this.a = drawable;
-        this.b = i7;
-        this.c = i10;
+    public f5(View view) {
+        this.f = 200L;
+        this.g = lr.f;
+        this.a = view;
+        this.e = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setBounds(getBounds());
-            drawable.setAlpha(this.d);
-            drawable.draw(canvas);
+    public final int a(int i7, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.f;
+        if (z10 || j3 <= 0 || this.e) {
+            this.d = i7;
+            this.c = i7;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i7) {
+            this.h = true;
+            this.d = i7;
+            this.j = this.c;
+            this.i = elapsedRealtime;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
+        if (this.h) {
+            float a10 = c8.l9.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.a.f(a10, this.j, this.d);
+                } else {
+                    this.c = i0.a.f(timeInterpolator.getInterpolation(a10), this.j, this.d);
+                }
+            }
+            if (a10 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
+            }
+        }
         return this.c;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.b;
+    public f5(View view, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        lr lrVar = lr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            return drawable.getOpacity();
-        }
-        return -2;
+    public f5(View view, long j3, TimeInterpolator timeInterpolator, int i7) {
+        this.f = 200L;
+        lr lrVar = lr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i7) {
-        this.d = i7;
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setAlpha(i7);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Drawable drawable = this.a;
-        if (drawable != null) {
-            drawable.setColorFilter(colorFilter);
-        }
+    public f5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        lr lrVar = lr.f;
+        this.b = runnable;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

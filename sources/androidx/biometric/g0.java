@@ -21,7 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class g0 extends androidx.fragment.app.p {
     public final Handler B0 = new Handler(Looper.getMainLooper());
@@ -49,11 +49,11 @@ public class g0 extends androidx.fragment.app.p {
 
     @Override // androidx.fragment.app.p
     public final Dialog O() {
-        f5.v vVar = new f5.v(K());
+        b3.j jVar = new b3.j(K());
         m6.n nVar = this.D0.f;
         Object obj = null;
         CharSequence charSequence = nVar != null ? (CharSequence) nVar.b : null;
-        g.b bVar = (g.b) vVar.c;
+        g.b bVar = (g.b) jVar.c;
         bVar.f = charSequence;
         View inflate = LayoutInflater.from((ContextThemeWrapper) bVar.c).inflate(R.layout.fingerprint_dialog_layout, (ViewGroup) null);
         TextView textView = (TextView) inflate.findViewById(R.id.fingerprint_subtitle);
@@ -97,7 +97,7 @@ public class g0 extends androidx.fragment.app.p {
         bVar.g = obj;
         bVar.j = yVar;
         bVar.i = inflate;
-        g.f g10 = vVar.g();
+        g.f g10 = jVar.g();
         g10.setCanceledOnTouchOutside(false);
         return g10;
     }

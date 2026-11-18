@@ -1,43 +1,36 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Rect;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class wv extends v4.s {
-    public final /* synthetic */ ly Q;
+public final class wv extends v4.o0 {
+    public final /* synthetic */ ry a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wv(ly lyVar) {
-        super(5);
-        this.Q = lyVar;
+    public wv(ry ryVar) {
+        this.a = ryVar;
     }
 
-    @Override // v4.s, v4.b0, v4.o0
-    public final int o0(int i7, v4.w0 w0Var, v4.b1 b1Var) {
-        int o02 = super.o0(i7, w0Var, b1Var);
-        ly lyVar = this.Q;
-        if (o02 != 0 && lyVar.E0.getScrollState() == 1) {
-            lyVar.Y1 = false;
-            lyVar.Z();
+    @Override // v4.o0
+    public final void e(Rect rect, View view, RecyclerView recyclerView, v4.c1 c1Var) {
+        int R = RecyclerView.R(view);
+        ry ryVar = this.a;
+        v4.i0 adapter = ryVar.i0.getAdapter();
+        vx vxVar = ryVar.o0;
+        if (adapter == vxVar && R == vxVar.J) {
+            rect.set(0, 0, 0, 0);
+            return;
         }
-        if (lyVar.U0 == null) {
-            jg.d1 d1Var = new jg.d1(lyVar, lyVar.d1, lyVar.u1.a(), lyVar.u1.f(), 1);
-            lyVar.U0 = d1Var;
-            d1Var.a();
+        if (R == 0) {
+            vxVar.getClass();
         }
-        lyVar.U0.b();
-        return o02;
-    }
-
-    @Override // v4.b0, v4.o0
-    public final void v0(RecyclerView recyclerView, v4.b1 b1Var, int i7) {
-        try {
-            pi.l lVar = new pi.l(recyclerView.getContext(), 2);
-            lVar.a = i7;
-            w0(lVar);
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
-        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = org.telegram.messenger.g0.L(2.0f);
+        wx wxVar = ryVar.j0;
+        vxVar.getClass();
+        rect.right = wxVar.E1(R) ? 0 : org.telegram.messenger.g0.L(2.0f);
     }
 }

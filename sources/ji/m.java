@@ -17,31 +17,33 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import c8.ja;
-import c8.z0;
+import c8.b1;
+import c8.ma;
 import hi.d8;
-import hi.h4;
+import hi.r1;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.bz;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.gz;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.xr;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.gd;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mp;
+import org.telegram.messenger.vr;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gf;
-import org.telegram.ui.Components.st0;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.pf;
 import org.telegram.ui.Dictation.DictationAsr;
-import org.telegram.ui.an;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class m implements a2 {
     public static boolean n0;
     public static final HashMap o0 = new HashMap();
@@ -59,7 +61,7 @@ public final class m implements a2 {
     public int Y;
     public int Z;
     public final Context a;
-    public final gf b;
+    public final pf b;
     public int b0;
     public z d;
     public q e;
@@ -94,54 +96,25 @@ public final class m implements a2 {
     public final int[] d0 = new int[2];
     public final f j0 = new f(this, 1);
 
-    public m(Context context, gf gfVar) {
+    public m(Context context, pf pfVar) {
         int i7 = 2;
         this.k0 = new i(this, i7);
         this.m0 = new f(this, i7);
         this.a = context;
-        this.b = gfVar;
+        this.b = pfVar;
     }
 
     public static void b(m mVar, c2 c2Var, String str, int i7) {
         if (c2Var == mVar.f || c2Var == mVar.U) {
             if (!mVar.J) {
-                mVar.M(i7, str);
+                mVar.l(i7, str);
                 return;
             }
             int i10 = mVar.c;
             if (i10 == 2 || i10 == 4) {
-                mVar.u(c2Var, str);
-                mVar.n();
+                mVar.v(c2Var, str);
+                mVar.p();
             }
-        }
-    }
-
-    @Override // ai.a2
-    public final void M(int i7, String str) {
-        if (this.c != 2) {
-            return;
-        }
-        if (str == null) {
-            str = "";
-        }
-        this.n = str;
-        p pVar = this.h;
-        if (pVar != null) {
-            pVar.t(i7, str);
-        }
-    }
-
-    @Override // ai.a2
-    public final void P(String str) {
-        String l10 = str == null ? null : n0.l(str);
-        p pVar = this.h;
-        if (pVar != null && this.c == 2) {
-            pVar.setLanguage(l10);
-        }
-        e eVar = this.K;
-        if (eVar != null && this.J && this.c == 2) {
-            this.l0 = l10;
-            eVar.setLanguage(l10);
         }
     }
 
@@ -158,8 +131,8 @@ public final class m implements a2 {
         u10.append(" (the voice recording goes on)");
         Log.d("VoiceLive", u10.toString());
         this.f = null;
-        if (xr.k == this) {
-            xr.k = null;
+        if (vr.k == this) {
+            vr.k = null;
         }
         this.d = null;
         this.e = null;
@@ -193,17 +166,17 @@ public final class m implements a2 {
         if (U == null) {
             return;
         }
-        String l10 = n0.l(U);
+        String p10 = n0.p(U);
         p pVar = this.h;
         if (pVar != null) {
-            pVar.setLanguage(l10);
+            pVar.setLanguage(p10);
         }
         e eVar = this.K;
         if (eVar == null || !this.J) {
             return;
         }
-        this.l0 = l10;
-        eVar.setLanguage(l10);
+        this.l0 = p10;
+        eVar.setLanguage(p10);
     }
 
     public final void e() {
@@ -247,7 +220,7 @@ public final class m implements a2 {
         }
         boolean z11 = this.J && i7 == 4 && this.b.c() && ("chat paused".equals(str) || "destroy".equals(str));
         if (this.J && this.c != 0 && !z11) {
-            o0.remove(p());
+            o0.remove(r());
         }
         if (this.c != 0) {
             StringBuilder u10 = p0.u("dispose (", str, ") state=");
@@ -267,7 +240,7 @@ public final class m implements a2 {
             c2Var.c();
             this.U = null;
         }
-        i(true);
+        j(true);
         if (z11) {
             if (this.U == null) {
                 e();
@@ -304,7 +277,7 @@ public final class m implements a2 {
             kVar.f = this.g0;
             kVar.h = this.h0;
             kVar.i = this.l0;
-            o0.put(p(), kVar);
+            o0.put(r(), kVar);
             StringBuilder sb2 = new StringBuilder("field: kept for the chat (");
             sb2.append(arrayList.size());
             sb2.append(" words");
@@ -325,8 +298,8 @@ public final class m implements a2 {
         DictationAsr.N(this.m0);
         g0.r(this.k0);
         g0.r(this.j0);
-        if (xr.k == this) {
-            xr.k = null;
+        if (vr.k == this) {
+            vr.k = null;
         }
         c2 c2Var2 = this.f;
         if (c2Var2 != null) {
@@ -364,7 +337,12 @@ public final class m implements a2 {
         }
     }
 
-    public final void i(boolean z10) {
+    @Override // ai.a2
+    public final void i(String str) {
+        l(-1, str);
+    }
+
+    public final void j(boolean z10) {
         EditTextBoldCursor editTextBoldCursor = this.X;
         if (editTextBoldCursor == null) {
             return;
@@ -385,12 +363,12 @@ public final class m implements a2 {
         g0.E2(editTextBoldCursor);
     }
 
-    public final void j(Object obj) {
+    public final void k(Object obj) {
         if (obj == null || this.i0 || this.K == null) {
             return;
         }
         if (this.X != null) {
-            i(false);
+            j(false);
         }
         if (this.g0 == null) {
             this.g0 = this.n.trim();
@@ -403,45 +381,60 @@ public final class m implements a2 {
         this.i0 = true;
         this.K.setBusy(true);
         StringBuilder sb2 = new StringBuilder("field: style ");
-        gf gfVar = this.b;
-        gfVar.getClass();
-        sb2.append(obj instanceof ai.h ? ((ai.h) obj).a : null);
+        pf pfVar = this.b;
+        pfVar.getClass();
+        sb2.append(obj instanceof ai.g ? ((ai.g) obj).a() : null);
         sb2.append(" in place on ");
         sb2.append(str.length());
         sb2.append(" chars");
         Log.d("VoiceLive", sb2.toString());
-        gfVar.f(obj, str, new d8(this, SystemClock.uptimeMillis(), 1));
+        pfVar.f(obj, str, new d8(this, SystemClock.uptimeMillis(), 1));
     }
 
-    public final void k() {
+    @Override // ai.a2
+    public final void l(int i7, String str) {
+        if (this.c != 2) {
+            return;
+        }
+        if (str == null) {
+            str = "";
+        }
+        this.n = str;
+        p pVar = this.h;
+        if (pVar != null) {
+            pVar.t(i7, str);
+        }
+    }
+
+    public final void m() {
         int i7 = this.c;
-        gf gfVar = this.b;
+        pf pfVar = this.b;
         if (i7 != 4) {
             if (i7 != 2) {
                 return;
             }
-            gfVar.e();
-            g0.i3(new f(this, 4), 300L);
+            pfVar.e();
+            g0.h3(new f(this, 4), 300L);
             return;
         }
-        s();
-        an anVar = gfVar.a.x3;
-        if (anVar != null) {
-            anVar.presentFragment(new x2());
+        t();
+        bn bnVar = pfVar.a.D3;
+        if (bnVar != null) {
+            bnVar.presentFragment(new x2());
         }
     }
 
-    public final void l(String str) {
+    public final void n(String str) {
         boolean z10 = this.c == 4;
         g(str, false);
         e eVar = this.K;
         if (eVar == null) {
             return;
         }
-        g0.i3(new h4(23, this, eVar), z10 ? 470L : 60L);
+        g0.h3(new r1(26, this, eVar), z10 ? 470L : 60L);
     }
 
-    public final void m(ByteBuffer byteBuffer, int i7, int i10, int i11) {
+    public final void o(ByteBuffer byteBuffer, int i7, int i10, int i11) {
         z zVar = this.d;
         q qVar = this.e;
         if (zVar == null || qVar == null) {
@@ -496,7 +489,7 @@ public final class m implements a2 {
         }
     }
 
-    public final void n() {
+    public final void p() {
         String str;
         int i7;
         ArrayList c10 = c();
@@ -592,174 +585,160 @@ public final class m implements a2 {
         }
     }
 
-    public final void o() {
-        gf gfVar = this.b;
-        st0 st0Var = gfVar.a.U1;
-        if (st0Var == null) {
+    public final void q() {
+        pf pfVar = this.b;
+        au0 au0Var = pfVar.a.a2;
+        if (au0Var == null) {
             return;
         }
         if (this.K == null) {
-            e6 e6Var = gfVar.a.E4;
+            i6 i6Var = pfVar.a.K4;
             xi.e eVar = new xi.e();
             eVar.d = this;
-            eVar.c = st0Var;
+            eVar.c = au0Var;
             eVar.a = new int[2];
             eVar.b = new int[2];
-            this.K = new e(this.a, e6Var, eVar);
+            this.K = new e(this.a, i6Var, eVar);
         }
-        View a10 = gfVar.a();
-        if (this.K.getParent() != st0Var) {
+        View a10 = pfVar.a();
+        if (this.K.getParent() != au0Var) {
             g0.E2(this.K);
-            int indexOfChild = (a10 == null || a10.getParent() != st0Var) ? -1 : st0Var.indexOfChild(a10);
+            int indexOfChild = (a10 == null || a10.getParent() != au0Var) ? -1 : au0Var.indexOfChild(a10);
             if (indexOfChild >= 0) {
-                st0Var.addView(this.K, indexOfChild, ja.c(-1.0f, -1));
+                au0Var.addView(this.K, indexOfChild, ma.c(-1.0f, -1));
             } else {
-                st0Var.addView(this.K, ja.c(-1.0f, -1));
+                au0Var.addView(this.K, ma.c(-1.0f, -1));
             }
         }
         this.K.E();
         this.K.setPaused(false);
         this.K.setListening(true);
-        n();
+        p();
         this.K.z();
         Log.d("VoiceLive", "field shown");
     }
 
-    public final String p() {
+    public final String r() {
         StringBuilder sb2 = new StringBuilder();
-        gf gfVar = this.b;
-        sb2.append(gfVar.a.R);
+        pf pfVar = this.b;
+        sb2.append(pfVar.a.R);
         sb2.append(":");
-        sb2.append(gfVar.a.y3);
+        sb2.append(pfVar.a.E3);
         return sb2.toString();
     }
 
-    public final void q() {
+    public final void s() {
         j jVar = new j(this);
         ChatActivityEnterView chatActivityEnterView = this.b.a;
-        c2 c2Var = new c2(this.a, chatActivityEnterView.R, chatActivityEnterView.y3, false, jVar);
+        c2 c2Var = new c2(this.a, chatActivityEnterView.R, chatActivityEnterView.E3, false, jVar);
         jVar.b = c2Var;
         this.f = c2Var;
-        c2Var.L = this.d;
+        c2Var.J = this.d;
         c2Var.s();
     }
 
-    @Override // ai.a2
-    public final void r(String str) {
-        M(-1, str);
-    }
-
-    public final void s() {
-        float f10;
+    public final void t() {
         String str;
         int i7;
+        k kVar;
         long j3;
         int i10 = this.c;
         if (i10 == 3) {
             return;
         }
-        if (i10 == 0 && z0.c() && !this.b.d() && this.b.c()) {
-            f10 = 0.999f;
-            k kVar = (k) o0.get(p());
-            if (kVar != null) {
-                i iVar = this.k0;
-                i iVar2 = this.W;
-                float[] fArr = this.V;
-                this.J = true;
-                ArrayList arrayList = this.L;
-                arrayList.clear();
-                ArrayList arrayList2 = kVar.a;
-                int size = arrayList2.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList2.get(i11);
-                    i11++;
-                    l lVar = (l) obj;
-                    l lVar2 = new l(lVar.a, lVar.b);
-                    lVar2.c = lVar.c;
-                    arrayList.add(lVar2);
+        if (i10 == 0 && mp.g1().getBoolean("design_voice_live_field", true) && !this.b.d() && this.b.c() && (kVar = (k) o0.get(r())) != null) {
+            i iVar = this.k0;
+            i iVar2 = this.W;
+            float[] fArr = this.V;
+            this.J = true;
+            ArrayList arrayList = this.L;
+            arrayList.clear();
+            ArrayList arrayList2 = kVar.a;
+            int size = arrayList2.size();
+            for (int i11 = 0; i11 < size; i11++) {
+                l lVar = (l) arrayList2.get(i11);
+                l lVar2 = new l(lVar.a, lVar.b);
+                lVar2.c = lVar.c;
+                arrayList.add(lVar2);
+            }
+            long j10 = 0;
+            this.M.clear();
+            this.O = kVar.b;
+            this.e0 = kVar.e;
+            this.f0 = Math.min(kVar.g, arrayList.size());
+            this.g0 = kVar.f;
+            this.h0 = kVar.h;
+            this.l0 = kVar.i;
+            this.c = 4;
+            this.P = 0.0f;
+            this.Q = 1.0f;
+            this.T = false;
+            boolean z10 = kVar.c > 0.001f || kVar.d < 0.999f;
+            boolean z11 = this.b.b(fArr) && (fArr[0] > 0.001f || fArr[1] < 0.999f);
+            if (z10 && !z11 && this.O > 0) {
+                float f10 = kVar.c;
+                this.P = f10;
+                float f11 = kVar.d;
+                this.Q = f11;
+                boolean[] f12 = f(arrayList, f10, f11);
+                float f13 = this.P;
+                float f14 = this.O;
+                long j11 = (long) (f13 * f14);
+                long j12 = (long) (this.Q * f14);
+                ArrayList arrayList3 = new ArrayList();
+                int i12 = 0;
+                while (i12 < arrayList.size()) {
+                    if (f12[i12]) {
+                        j3 = j12;
+                    } else {
+                        l lVar3 = (l) arrayList.get(i12);
+                        j3 = j12;
+                        long j13 = j10;
+                        lVar3.b = Math.max(j13, lVar3.b - j11);
+                        long j14 = lVar3.c;
+                        if (j14 >= j13) {
+                            lVar3.c = Math.max(j13, j14 - j11);
+                        }
+                        arrayList3.add(lVar3);
+                    }
+                    i12++;
+                    j12 = j3;
+                    j10 = 0;
                 }
-                long j10 = 0;
-                this.M.clear();
-                this.O = kVar.b;
-                this.e0 = kVar.e;
-                this.f0 = Math.min(kVar.g, arrayList.size());
-                this.g0 = kVar.f;
-                this.h0 = kVar.h;
-                this.l0 = kVar.i;
-                this.c = 4;
+                arrayList.clear();
+                arrayList.addAll(arrayList3);
+                this.O = Math.max(0L, j12 - j11);
                 this.P = 0.0f;
                 this.Q = 1.0f;
-                this.T = false;
-                boolean z10 = kVar.c > 0.001f || kVar.d < 0.999f;
-                boolean z11 = this.b.b(fArr) && (fArr[0] > 0.001f || fArr[1] < 0.999f);
-                if (z10 && !z11 && this.O > 0) {
-                    float f11 = kVar.c;
-                    this.P = f11;
-                    float f12 = kVar.d;
-                    this.Q = f12;
-                    boolean[] f13 = f(arrayList, f11, f12);
-                    float f14 = this.P;
-                    float f15 = this.O;
-                    long j11 = (long) (f14 * f15);
-                    long j12 = (long) (this.Q * f15);
-                    ArrayList arrayList3 = new ArrayList();
-                    int i12 = 0;
-                    while (i12 < arrayList.size()) {
-                        if (f13[i12]) {
-                            j3 = j12;
-                        } else {
-                            l lVar3 = (l) arrayList.get(i12);
-                            j3 = j12;
-                            long j13 = j10;
-                            lVar3.b = Math.max(j13, lVar3.b - j11);
-                            long j14 = lVar3.c;
-                            if (j14 >= j13) {
-                                lVar3.c = Math.max(j13, j14 - j11);
-                            }
-                            arrayList3.add(lVar3);
-                        }
-                        i12++;
-                        j12 = j3;
-                        j10 = 0;
-                    }
-                    arrayList.clear();
-                    arrayList.addAll(arrayList3);
-                    this.O = Math.max(0L, j12 - j11);
-                    this.P = 0.0f;
-                    this.Q = 1.0f;
-                } else if (z11) {
-                    this.P = fArr[0];
-                    this.Q = fArr[1];
-                }
-                Log.d("VoiceLive", "field: back with the chat (" + arrayList.size() + " words, " + this.O + " ms)");
-                o();
-                e eVar = this.K;
-                if (eVar != null) {
-                    eVar.setListening(false);
-                    this.K.setPaused(true);
-                    this.K.setRevertShown(this.g0 != null);
-                    e eVar2 = this.K;
-                    eVar2.z();
-                    eVar2.W = 1.0f;
-                    boolean z12 = eVar2.T;
-                    eVar2.a0 = z12 ? 1.0f : 0.0f;
-                    eVar2.T0 = z12 ? 1.0f : 0.0f;
-                    eVar2.b0 = 0.0f;
-                    eVar2.E0 = -1.0f;
-                    eVar2.invalidate();
-                    this.K.setLanguage(this.l0);
-                    d();
-                }
-                n();
-                g0.r(iVar2);
-                g0.i3(iVar2, 50L);
-                g0.r(iVar);
-                g0.i3(iVar, 250L);
-                return;
+            } else if (z11) {
+                this.P = fArr[0];
+                this.Q = fArr[1];
             }
-        } else {
-            f10 = 0.999f;
+            Log.d("VoiceLive", "field: back with the chat (" + arrayList.size() + " words, " + this.O + " ms)");
+            q();
+            e eVar = this.K;
+            if (eVar != null) {
+                eVar.setListening(false);
+                this.K.setPaused(true);
+                this.K.setRevertShown(this.g0 != null);
+                e eVar2 = this.K;
+                eVar2.z();
+                eVar2.W = 1.0f;
+                boolean z12 = eVar2.T;
+                eVar2.a0 = z12 ? 1.0f : 0.0f;
+                eVar2.T0 = z12 ? 1.0f : 0.0f;
+                eVar2.b0 = 0.0f;
+                eVar2.E0 = -1.0f;
+                eVar2.invalidate();
+                this.K.setLanguage(this.l0);
+                d();
+            }
+            p();
+            g0.r(iVar2);
+            g0.h3(iVar2, 50L);
+            g0.r(iVar);
+            g0.h3(iVar, 250L);
+            return;
         }
         if (this.c == 4) {
             if (!this.b.d()) {
@@ -777,21 +756,21 @@ public final class m implements a2 {
                 e();
             }
             e();
-            float f16 = this.P;
+            float f15 = this.P;
             long j15 = this.O;
-            float f17 = j15;
-            long j16 = (long) (f16 * f17);
-            float f18 = this.Q;
-            long j17 = (long) (f17 * f18);
-            if (j15 <= 0 || (f16 <= 0.001f && f18 >= f10)) {
+            float f16 = j15;
+            long j16 = (long) (f15 * f16);
+            float f17 = this.Q;
+            long j17 = (long) (f16 * f17);
+            if (j15 <= 0 || (f15 <= 0.001f && f17 >= 0.999f)) {
                 this.N = j15;
                 Log.d("VoiceLive", "field: resumed at " + this.N + " ms");
             } else {
-                boolean[] f19 = f(this.L, f16, f18);
+                boolean[] f18 = f(this.L, f15, f17);
                 ArrayList arrayList4 = new ArrayList();
                 int i13 = 0;
                 while (i13 < this.L.size()) {
-                    if (f19[i13]) {
+                    if (f18[i13]) {
                         i7 = i13;
                     } else {
                         l lVar4 = (l) this.L.get(i13);
@@ -830,9 +809,9 @@ public final class m implements a2 {
             }
             this.d = new z();
             this.e = new q(0);
-            xr.k = this;
+            vr.k = this;
             this.c = 2;
-            q();
+            s();
             e eVar3 = this.K;
             if (eVar3 != null) {
                 eVar3.setPaused(false);
@@ -841,13 +820,13 @@ public final class m implements a2 {
             d();
             DictationAsr.N(this.m0);
             DictationAsr.g.add(this.m0);
-            t();
-            n();
+            u();
+            p();
             g0.r(this.k0);
-            g0.i3(this.k0, 250L);
+            g0.h3(this.k0, 250L);
             return;
         }
-        if (!z0.a()) {
+        if (!b1.a()) {
             if (this.c != 0) {
                 g("unavailable", true);
                 return;
@@ -856,15 +835,15 @@ public final class m implements a2 {
         }
         if (!this.b.d()) {
             if (this.J && this.c == 2) {
-                gf gfVar = this.b;
-                gfVar.getClass();
-                if ((MediaController.B().K() || gfVar.a.J3 != null) && this.b.c()) {
+                pf pfVar = this.b;
+                pfVar.getClass();
+                if ((MediaController.B().K() || pfVar.a.P3 != null) && this.b.c()) {
                     i iVar3 = this.W;
                     this.c = 4;
                     g0.r(this.j0);
-                    this.O = this.N + (this.d != null ? r3.c() / 32 : 0L);
-                    if (xr.k == this) {
-                        xr.k = null;
+                    this.O = this.N + (this.d != null ? r2.c() / 32 : 0L);
+                    if (vr.k == this) {
+                        vr.k = null;
                     }
                     c2 c2Var2 = this.f;
                     if (c2Var2 != null) {
@@ -889,9 +868,9 @@ public final class m implements a2 {
                         eVar4.setListening(false);
                         this.K.setPaused(true);
                     }
-                    n();
+                    p();
                     g0.r(iVar3);
-                    g0.i3(iVar3, 50L);
+                    g0.h3(iVar3, 50L);
                     return;
                 }
             }
@@ -928,9 +907,9 @@ public final class m implements a2 {
                     byte[] bArr = (byte[]) qVar.g;
                     double d = 0.0d;
                     int i19 = 0;
-                    for (int i20 = ns.e3; i20 < c10 / 2; i20++) {
+                    for (int i20 = ks.e3; i20 < c10 / 2; i20++) {
                         int i21 = i20 * 2;
-                        double d2 = (short) ((bArr[i21 + 1] << 8) | (bArr[i21] & 255));
+                        double d2 = (short) ((bArr[i21] & 255) | (bArr[i21 + 1] << 8));
                         d += d2 * d2;
                         i19++;
                     }
@@ -954,7 +933,7 @@ public final class m implements a2 {
             this.F = 0;
             this.G = false;
             this.n = "";
-            this.J = z0.c();
+            this.J = mp.g1().getBoolean("design_voice_live_field", true);
             this.L.clear();
             this.M.clear();
             this.N = 0L;
@@ -964,12 +943,12 @@ public final class m implements a2 {
             this.r = SystemClock.elapsedRealtime();
             i14 = 1;
             this.c = 1;
-            xr.k = this;
+            vr.k = this;
             g0.r(this.k0);
-            g0.i3(this.k0, 250L);
+            g0.h3(this.k0, 250L);
             Log.d("VoiceLive", "buffering: recorder tap on");
         }
-        if (this.c == i14 && this.b.a.I0()) {
+        if (this.c == i14 && this.b.a.Q0()) {
             this.c = 2;
             this.l0 = null;
             this.s = SystemClock.elapsedRealtime();
@@ -986,94 +965,94 @@ public final class m implements a2 {
             sb4.append(this.s - this.r);
             sb4.append(" ms since start)");
             Log.d("VoiceLive", sb4.toString());
-            q();
+            s();
             if (this.J) {
-                o();
+                q();
             } else {
-                gf gfVar2 = this.b;
-                st0 st0Var = gfVar2.a.U1;
-                if (st0Var != null) {
+                pf pfVar2 = this.b;
+                au0 au0Var = pfVar2.a.a2;
+                if (au0Var != null) {
                     if (this.h == null) {
-                        this.h = new p(this.a, gfVar2.a.E4, this);
+                        this.h = new p(this.a, pfVar2.a.K4, this);
                     }
-                    View a10 = gfVar2.a();
-                    int indexOfChild = (a10 == null || a10.getParent() != st0Var) ? -1 : st0Var.indexOfChild(a10);
-                    if (this.h.getParent() != st0Var || (indexOfChild >= 0 && st0Var.indexOfChild(this.h) != indexOfChild - 1)) {
+                    View a10 = pfVar2.a();
+                    int indexOfChild = (a10 == null || a10.getParent() != au0Var) ? -1 : au0Var.indexOfChild(a10);
+                    if (this.h.getParent() != au0Var || (indexOfChild >= 0 && au0Var.indexOfChild(this.h) != indexOfChild - 1)) {
                         g0.E2(this.h);
-                        int indexOfChild2 = (a10 == null || a10.getParent() != st0Var) ? -1 : st0Var.indexOfChild(a10);
+                        int indexOfChild2 = (a10 == null || a10.getParent() != au0Var) ? -1 : au0Var.indexOfChild(a10);
                         if (indexOfChild2 >= 0) {
-                            st0Var.addView(this.h, indexOfChild2, ja.e(-1, -1, 80));
+                            au0Var.addView(this.h, indexOfChild2, ma.e(-1, -1, 80));
                         } else {
-                            st0Var.addView(this.h, ja.e(-1, -1, 80));
+                            au0Var.addView(this.h, ma.e(-1, -1, 80));
                             Log.w("VoiceLive", "composer isn't a direct child of the root: overlay on top");
                         }
                     }
                     p pVar = this.h;
-                    ChatActivityEnterView chatActivityEnterView = gfVar2.a;
-                    int i23 = j6.Pe;
-                    int i24 = ChatActivityEnterView.N6;
-                    pVar.setAccent(chatActivityEnterView.u0(i23) | (-16777216));
+                    ChatActivityEnterView chatActivityEnterView = pfVar2.a;
+                    int i23 = n6.Pe;
+                    int i24 = ChatActivityEnterView.n7;
+                    pVar.setAccent(chatActivityEnterView.C0(i23) | (-16777216));
                     p pVar2 = this.h;
                     TextPaint textPaint = pVar2.c;
-                    int i25 = j6.d6;
-                    e6 e6Var = pVar2.b;
-                    pVar2.e0 = g0.B(j6.w0(i25, e6Var)) < 0.5f;
-                    int w02 = (-16777216) | j6.w0(j6.G6, e6Var);
-                    pVar2.f0 = w02;
+                    int i25 = n6.d6;
+                    i6 i6Var = pVar2.b;
+                    pVar2.g0 = g0.B(n6.w0(i25, i6Var)) < 0.5f;
+                    int w02 = (-16777216) | n6.w0(n6.G6, i6Var);
+                    pVar2.h0 = w02;
                     textPaint.setColor(w02);
-                    int i26 = pVar2.f0;
-                    p.W1 = i26;
-                    p.V1 = pVar2.e0 ? i0.a.f(0.12f, pVar2.g0, -1) : i0.a.f(0.32f, pVar2.g0, i26);
-                    p.X1 = g0.L(7.0f);
-                    pVar2.d.setColor(j6.r1(pVar2.e0 ? 0.42f : 0.36f, pVar2.f0));
-                    pVar2.h0 = Build.VERSION.SDK_INT >= 31 && gz.o() != 0;
+                    int i26 = pVar2.h0;
+                    p.Y1 = i26;
+                    p.X1 = pVar2.g0 ? i0.a.f(0.12f, pVar2.i0, -1) : i0.a.f(0.32f, pVar2.i0, i26);
+                    p.Z1 = g0.L(7.0f);
+                    pVar2.d.setColor(n6.r1(pVar2.g0 ? 0.42f : 0.36f, pVar2.h0));
+                    pVar2.j0 = Build.VERSION.SDK_INT >= 31 && bz.o() != 0;
                     pVar2.r = 0;
-                    pVar2.s.setColor(pVar2.e0 ? 0 : 335544320);
-                    pVar2.i0 = "";
-                    pVar2.w1 = -1;
-                    pVar2.j0 = null;
-                    pVar2.m0.clear();
-                    pVar2.S0 = true;
-                    pVar2.B0 = 0.0f;
-                    pVar2.A0 = 0.0f;
-                    pVar2.C0 = 0.0f;
+                    pVar2.s.setColor(pVar2.g0 ? 0 : 335544320);
+                    pVar2.k0 = "";
+                    pVar2.y1 = -1;
+                    pVar2.l0 = null;
+                    pVar2.o0.clear();
+                    pVar2.U0 = true;
                     pVar2.D0 = 0.0f;
-                    pVar2.F0 = -1.0f;
-                    pVar2.E0 = -1.0f;
+                    pVar2.C0 = 0.0f;
+                    pVar2.E0 = 0.0f;
+                    pVar2.F0 = 0.0f;
                     pVar2.H0 = -1.0f;
-                    pVar2.J0 = false;
+                    pVar2.G0 = -1.0f;
+                    pVar2.J0 = -1.0f;
+                    pVar2.L0 = false;
                     pVar2.setStyleIcon(null);
-                    pVar2.K0 = false;
-                    pVar2.N0 = false;
-                    pVar2.v1 = null;
-                    pVar2.N1 = false;
-                    pVar2.x1 = false;
-                    pVar2.B1 = null;
-                    pVar2.C1.clear();
+                    pVar2.M0 = false;
+                    pVar2.P0 = false;
+                    pVar2.x1 = null;
+                    pVar2.P1 = false;
+                    pVar2.z1 = false;
+                    pVar2.D1 = null;
+                    pVar2.E1.clear();
                     textPaint.setShader(null);
-                    pVar2.Q0 = 0L;
-                    pVar2.R0 = 0.0f;
-                    pVar2.y0 = true;
-                    pVar2.V0 = 0.0f;
-                    pVar2.W0 = 0.0f;
-                    pVar2.X0 = true;
-                    pVar2.Y0 = 1.0f;
-                    pVar2.Z0 = 0.0f;
-                    pVar2.j1 = -1;
-                    Arrays.fill(pVar2.k1, 0.0f);
-                    pVar2.M = null;
-                    pVar2.N = 0.0f;
-                    pVar2.O = 0.0f;
-                    pVar2.U = false;
-                    pVar2.P.setEmpty();
+                    pVar2.S0 = 0L;
+                    pVar2.T0 = 0.0f;
+                    pVar2.A0 = true;
+                    pVar2.X0 = 0.0f;
+                    pVar2.Y0 = 0.0f;
+                    pVar2.Z0 = true;
+                    pVar2.a1 = 1.0f;
+                    pVar2.b1 = 0.0f;
+                    pVar2.l1 = -1;
+                    Arrays.fill(pVar2.m1, 0.0f);
+                    pVar2.O = null;
+                    pVar2.P = 0.0f;
+                    pVar2.Q = 0.0f;
+                    pVar2.W = false;
+                    pVar2.R.setEmpty();
                     pVar2.setPlaceholder(null);
-                    pVar2.n0 = true;
-                    pVar2.p0 = SystemClock.uptimeMillis();
-                    pVar2.r0 = 0L;
-                    pVar2.d0 = 0L;
+                    pVar2.p0 = true;
+                    pVar2.r0 = SystemClock.uptimeMillis();
+                    pVar2.t0 = 0L;
+                    pVar2.f0 = 0L;
                     pVar2.setVisibility(0);
                     pVar2.invalidate();
-                    Log.d("VoiceLive", "overlay shown at index " + st0Var.indexOfChild(this.h) + "/" + st0Var.getChildCount());
+                    Log.d("VoiceLive", "overlay shown at index " + au0Var.indexOfChild(this.h) + "/" + au0Var.getChildCount());
                 }
             }
             e eVar5 = this.K;
@@ -1083,28 +1062,22 @@ public final class m implements a2 {
             d();
             DictationAsr.N(this.m0);
             DictationAsr.g.add(this.m0);
-            t();
-            g0.i3(this.j0, 1500L);
+            u();
+            g0.h3(this.j0, 1500L);
         }
     }
 
-    public final void t() {
-        String r10;
-        if (DictationAsr.F(new long[2])) {
-            Locale locale = Locale.US;
-            r10 = p0.r(p0.t(Math.round(r0[0] / 1048576.0d), "Downloading models… ", " / "), Math.max(1L, Math.round(r0[1] / 1048576.0d)), "MB");
-        } else {
-            r10 = null;
-        }
+    public final void u() {
+        String a02 = DictationAsr.F(new long[2]) ? gd.a0(null, null, 2131745067, Long.valueOf(Math.round(r1[0] / 1048576.0d)), Long.valueOf(Math.max(1L, Math.round(r1[1] / 1048576.0d)))) : null;
         p pVar = this.h;
         if (pVar != null) {
-            pVar.setPlaceholder(r10);
+            pVar.setPlaceholder(a02);
         }
         e eVar = this.K;
         if (eVar == null || !this.J) {
             return;
         }
-        eVar.setPlaceholder(r10);
+        eVar.setPlaceholder(a02);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x0061  */
@@ -1116,7 +1089,7 @@ public final class m implements a2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(c2 c2Var, String str) {
+    public final void v(c2 c2Var, String str) {
         int i7;
         int i10;
         int length;
@@ -1258,6 +1231,20 @@ public final class m implements a2 {
         if (wVar22 == null) {
         }
         if (iArr != null) {
+        }
+    }
+
+    @Override // ai.a2
+    public final void x(String str) {
+        String p10 = str == null ? null : n0.p(str);
+        p pVar = this.h;
+        if (pVar != null && this.c == 2) {
+            pVar.setLanguage(p10);
+        }
+        e eVar = this.K;
+        if (eVar != null && this.J && this.c == 2) {
+            this.l0 = p10;
+            eVar.setLanguage(p10);
         }
     }
 }

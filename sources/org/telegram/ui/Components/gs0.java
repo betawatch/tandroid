@@ -1,43 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class gs0 extends org.telegram.ui.Cells.q1 {
-    public final /* synthetic */ int zd = 1;
-
-    public /* synthetic */ gs0(Context context, int i7) {
-        super(context, i7);
-    }
-
-    @Override // org.telegram.ui.Cells.q1
-    public int getParentWidth() {
-        int i7;
-        int L;
-        switch (this.zd) {
-            case 1:
-                if (getMeasuredWidth() != 0) {
-                    i7 = getMeasuredWidth();
-                    L = org.telegram.messenger.g0.L(24.0f);
-                } else {
-                    i7 = org.telegram.messenger.g0.q.x;
-                    L = org.telegram.messenger.g0.L(24.0f);
-                }
-                return i7 - L;
-            default:
-                return super.getParentWidth();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean isPressed() {
-        switch (this.zd) {
-        }
-        return false;
-    }
-
-    public /* synthetic */ gs0(Context context, int i7, boolean z10, h6.m mVar, org.telegram.ui.ActionBar.e6 e6Var) {
-        super(context, i7, z10, mVar, e6Var);
-    }
+public final class gs0 {
+    public String a;
+    public int b;
+    public int c;
+    public int d;
 }

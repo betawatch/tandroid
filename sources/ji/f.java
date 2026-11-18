@@ -3,10 +3,10 @@ package ji;
 import ai.x2;
 import android.util.Log;
 import java.util.Locale;
-import org.telegram.ui.an;
+import org.telegram.ui.bn;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
@@ -20,7 +20,7 @@ public final /* synthetic */ class f implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.l("field send preview");
+                this.b.n("field send preview");
                 break;
             case 1:
                 m mVar = this.b;
@@ -36,7 +36,7 @@ public final /* synthetic */ class f implements Runnable {
                         sb2.append(mVar.x > 0 ? String.format(Locale.US, "%.2f", Double.valueOf(mVar.w / mVar.x)) : "-");
                         sb2.append(", expect 3.00 at 48 kHz) source=");
                         int i7 = mVar.F;
-                        r.b.t(sb2, i7 == 1 ? "MediaController" : i7 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
+                        p5.c.t(sb2, i7 == 1 ? "MediaController" : i7 == 2 ? "AudioRecorderV2" : "none", "VoiceLive");
                         break;
                     } else {
                         Log.w("VoiceLive", "SELF-CHECK FAILED: no PCM from the recorder tap 1.5 s after lock (neither MediaController nor AudioCapture fed it)");
@@ -47,19 +47,19 @@ public final /* synthetic */ class f implements Runnable {
             case 2:
                 m mVar2 = this.b;
                 if (mVar2.c == 2) {
-                    mVar2.t();
+                    mVar2.u();
                     break;
                 }
                 break;
             case 3:
-                this.b.k();
+                this.b.m();
                 break;
             default:
                 m mVar3 = this.b;
-                mVar3.s();
-                an anVar = mVar3.b.a.x3;
-                if (anVar != null) {
-                    anVar.presentFragment(new x2());
+                mVar3.t();
+                bn bnVar = mVar3.b.a.D3;
+                if (bnVar != null) {
+                    bnVar.presentFragment(new x2());
                     break;
                 }
                 break;

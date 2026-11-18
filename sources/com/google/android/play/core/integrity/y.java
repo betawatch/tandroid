@@ -7,7 +7,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import d9.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
@@ -34,7 +34,7 @@ abstract class y {
                 if (Log.isLoggable("PlayCore", 3)) {
                     Log.d("PlayCore", g0.d(g0Var.a, "checkAndShowDialog(%s)", objArr));
                 }
-                Bundle f10 = r.b.f(i7, "dialog.intent.type");
+                Bundle f10 = p5.c.f(i7, "dialog.intent.type");
                 f10.putString("package.name", this.b);
                 f10.putInt("playcore.integrity.version.major", 1);
                 f10.putInt("playcore.integrity.version.minor", 4);

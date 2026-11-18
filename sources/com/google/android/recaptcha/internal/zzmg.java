@@ -3,9 +3,9 @@ package com.google.android.recaptcha.internal;
 import a8.p0;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import r.b;
+import p5.c;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
@@ -29,7 +29,7 @@ public final class zzmg {
                 } catch (Exception e10) {
                     String E = p0.E(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(E), (Throwable) e10);
-                    l10 = b.l("<", E, " threw ", e10.getClass().getName(), ">");
+                    l10 = c.l("<", E, " threw ", e10.getClass().getName(), ">");
                 }
             }
             objArr[i10] = l10;

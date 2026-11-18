@@ -25,7 +25,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
-import di.o;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,7 +36,7 @@ import s4.l;
 import s4.m;
 import s4.w;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile d a;
@@ -122,7 +121,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = e.a(context.getSystemService(o.d())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = e.a(context.getSystemService(e.b())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -138,7 +137,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return e.a(context.getSystemService(o.d())).getMaxShortcutCountPerActivity();
+            return e.a(context.getSystemService(e.b())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -300,7 +299,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            e.a(context.getSystemService(o.d())).removeAllDynamicShortcuts();
+            e.a(context.getSystemService(e.b())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -341,7 +340,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            e.a(context.getSystemService(o.d())).reportShortcutUsed(str);
+            e.a(context.getSystemService(e.b())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {

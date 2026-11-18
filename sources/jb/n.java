@@ -4,7 +4,7 @@ import ce.x;
 import java.util.concurrent.atomic.AtomicReference;
 import zd.z;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends kd.j implements rd.p {
     public final /* synthetic */ int a;
@@ -44,7 +44,7 @@ public final class n extends kd.j implements rd.p {
                 jd.a aVar = jd.a.a;
                 int i7 = this.b;
                 if (i7 == 0) {
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     p pVar = this.c;
                     ce.c data = pVar.b.getData();
                     final AtomicReference atomicReference = pVar.c;
@@ -68,14 +68,14 @@ public final class n extends kd.j implements rd.p {
                         }
                     };
                     this.b = 1;
-                    if (data.G(dVar, this) == aVar) {
+                    if (data.v(dVar, this) == aVar) {
                         return aVar;
                     }
                 } else {
                     if (i7 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                 }
                 return gd.k.a;
             default:
@@ -85,10 +85,10 @@ public final class n extends kd.j implements rd.p {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    af.b.c(obj);
+                    b7.h.b(obj);
                     return obj;
                 }
-                af.b.c(obj);
+                b7.h.b(obj);
                 ce.c data2 = this.c.b.getData();
                 this.b = 1;
                 Object d = x.d(data2, this);

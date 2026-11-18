@@ -1,8 +1,8 @@
 package n2;
 
-import p4.g1;
+import p4.i1;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d0 implements h2.o, h2.j {
     public final /* synthetic */ long a;
@@ -13,7 +13,7 @@ public final /* synthetic */ class d0 implements h2.o, h2.j {
 
     @Override // h2.j
     public void accept(Object obj) {
-        ((g1) obj).c(this.a);
+        ((i1) obj).c(this.a);
     }
 
     @Override // h2.o
@@ -22,7 +22,7 @@ public final /* synthetic */ class d0 implements h2.o, h2.j {
         n0 n0Var = (n0) obj;
         r0 r0Var = n0Var.b;
         if (n0Var.equals(r0Var.j) && (vVar = r0Var.n) != null) {
-            vVar.b(this.a);
+            vVar.j(this.a);
         }
     }
 }

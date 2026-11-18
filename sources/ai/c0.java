@@ -2,10 +2,10 @@ package ai;
 
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ae;
-import org.telegram.ui.sl;
+import org.telegram.ui.Components.qf;
+import org.telegram.ui.tl;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -20,26 +20,25 @@ public final /* synthetic */ class c0 implements ValueAnimator.AnimatorUpdateLis
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                ae aeVar = this.b.f;
+                qf qfVar = this.b.f;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ChatActivityEnterView chatActivityEnterView = aeVar.b;
-                chatActivityEnterView.t1 = floatValue;
-                chatActivityEnterView.Z1();
+                ChatActivityEnterView chatActivityEnterView = qfVar.a;
+                chatActivityEnterView.y1 = floatValue;
+                chatActivityEnterView.i2();
                 break;
             case 1:
-                n0 n0Var = this.b;
-                n0Var.getClass();
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n0 n0Var = this.b;
                 n0Var.b0 = floatValue2;
-                n0Var.f.e(floatValue2);
+                n0Var.f.d(floatValue2);
                 break;
             default:
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 n0 n0Var2 = this.b;
-                n0Var2.E0 = floatValue3;
-                sl slVar = n0Var2.D0;
-                if (slVar != null && !slVar.c0()) {
-                    n0Var2.D0.a0();
+                n0Var2.F0 = floatValue3;
+                tl tlVar = n0Var2.E0;
+                if (tlVar != null && !tlVar.c0()) {
+                    n0Var2.E0.a0();
                     break;
                 }
                 break;

@@ -1,10 +1,10 @@
 package u2;
 
-import a8.ja;
+import a8.la;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class g extends k2.h {
     public long r;
@@ -19,9 +19,9 @@ public final class g extends k2.h {
 
     public final boolean e(k2.h hVar) {
         ByteBuffer byteBuffer;
-        ja.f(!hVar.getFlag(TLObject.FLAG_30));
-        ja.f(!hVar.hasSupplementalData());
-        ja.f(!hVar.isEndOfStream());
+        la.f(!hVar.getFlag(TLObject.FLAG_30));
+        la.f(!hVar.hasSupplementalData());
+        la.f(!hVar.isEndOfStream());
         if (f()) {
             if (this.s >= this.w) {
                 return false;

@@ -2,7 +2,7 @@ package j6;
 
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class g extends a8.q implements h {
     public g() {
@@ -15,7 +15,7 @@ public abstract class g extends a8.q implements h {
             case 1:
                 int readInt = parcel.readInt();
                 com.google.android.gms.internal.cast.t.b(parcel);
-                X(readInt);
+                W(readInt);
                 return true;
             case 2:
                 f6.d dVar = (f6.d) com.google.android.gms.internal.cast.t.a(parcel, f6.d.CREATOR);
@@ -28,7 +28,7 @@ public abstract class g extends a8.q implements h {
             case 3:
                 int readInt2 = parcel.readInt();
                 com.google.android.gms.internal.cast.t.b(parcel);
-                d0(readInt2);
+                c0(readInt2);
                 return true;
             case 4:
                 parcel.readString();
@@ -42,7 +42,7 @@ public abstract class g extends a8.q implements h {
                 String readString3 = parcel.readString();
                 String readString4 = parcel.readString();
                 com.google.android.gms.internal.cast.t.b(parcel);
-                a0(readString3, readString4);
+                Z(readString3, readString4);
                 return true;
             case 6:
                 String readString5 = parcel.readString();
@@ -76,17 +76,17 @@ public abstract class g extends a8.q implements h {
                 parcel.readString();
                 long readLong2 = parcel.readLong();
                 com.google.android.gms.internal.cast.t.b(parcel);
-                g0(readLong2);
+                f0(readLong2);
                 return true;
             case 12:
                 c cVar = (c) com.google.android.gms.internal.cast.t.a(parcel, c.CREATOR);
                 com.google.android.gms.internal.cast.t.b(parcel);
-                O0(cVar);
+                N0(cVar);
                 return true;
             case 13:
                 d dVar2 = (d) com.google.android.gms.internal.cast.t.a(parcel, d.CREATOR);
                 com.google.android.gms.internal.cast.t.b(parcel);
-                L0(dVar2);
+                K0(dVar2);
                 return true;
             case 14:
                 int readInt7 = parcel.readInt();
@@ -96,7 +96,7 @@ public abstract class g extends a8.q implements h {
             case 15:
                 int readInt8 = parcel.readInt();
                 com.google.android.gms.internal.cast.t.b(parcel);
-                P0(readInt8);
+                O0(readInt8);
                 return true;
             default:
                 return false;

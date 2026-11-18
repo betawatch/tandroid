@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import af.b;
 import android.os.Build;
-import c8.d0;
+import b7.h;
+import c8.f0;
 import gd.k;
 import id.c;
 import jd.a;
 import kd.j;
 import rd.p;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 final class zzv extends j implements p {
     final /* synthetic */ zzx zza;
@@ -33,7 +33,7 @@ final class zzv extends j implements p {
     @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        b.c(obj);
+        h.b(obj);
         zzx zzxVar = this.zza;
         String zza = zzbs.zza(zzx.zzb(zzxVar));
         if (zza.length() == 0) {
@@ -45,7 +45,7 @@ final class zzv extends j implements p {
         zzyu zzf = zzyx.zzf();
         zzyv zzf2 = zzyw.zzf();
         zzf2.zzw(zza);
-        zzf.zze(d0.a(zzf2.zzk()));
+        zzf.zze(f0.a(zzf2.zzk()));
         return zzas.zzb(zzxVar, (zzyx) zzf.zzk());
     }
 }

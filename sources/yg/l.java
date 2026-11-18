@@ -5,58 +5,58 @@ import android.text.InputFilter;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import c8.ja;
+import c8.ma;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.hd;
+import org.telegram.messenger.gd;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.q6;
-import org.telegram.ui.Components.ft;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.u6;
+import org.telegram.ui.Components.mt;
 import org.telegram.ui.Wallet.i9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class l extends LinearLayout {
-    public final ft a;
+    public final mt a;
     public final TextView b;
     public k c;
 
-    public l(Context context, e6 e6Var) {
+    public l(Context context, i6 i6Var) {
         super(context);
         setOrientation(0);
-        ft ftVar = new ft(context, e6Var);
-        this.a = ftVar;
-        ftVar.setLines(1);
-        ftVar.setSingleLine(true);
+        mt mtVar = new mt(context, i6Var);
+        this.a = mtVar;
+        mtVar.setLines(1);
+        mtVar.setSingleLine(true);
         InputFilter[] inputFilterArr = {new j(this)};
-        ftVar.setInputType(TLObject.FLAG_14);
-        ftVar.setFilters(inputFilterArr);
-        ftVar.setTextSize(1, 16.0f);
-        q6.U(ftVar, j6.Le, e6Var);
-        q6.G(ftVar, j6.Yc, e6Var);
-        q6.C(ftVar, j6.lg, e6Var);
-        int i7 = j6.Me;
-        q6.l(ftVar, 34, i7, e6Var);
-        q6.D(ftVar, i7, e6Var);
-        q6.l(ftVar, 30, j6.Ne, e6Var);
-        q6.l(ftVar, 36, j6.mg, e6Var);
-        ftVar.setBackground(null);
-        ftVar.setHint(hd.M0(2131753477, null));
-        ftVar.addTextChangedListener(new i9(this, 6));
-        ftVar.setImeOptions(6);
+        mtVar.setInputType(TLObject.FLAG_14);
+        mtVar.setFilters(inputFilterArr);
+        mtVar.setTextSize(1, 16.0f);
+        u6.U(mtVar, n6.Le, i6Var);
+        u6.G(mtVar, n6.Yc, i6Var);
+        u6.C(mtVar, n6.lg, i6Var);
+        int i7 = n6.Me;
+        u6.l(mtVar, 34, i7, i6Var);
+        u6.D(mtVar, i7, i6Var);
+        u6.l(mtVar, 30, n6.Ne, i6Var);
+        u6.l(mtVar, 36, n6.mg, i6Var);
+        mtVar.setBackground(null);
+        mtVar.setHint(gd.M0(2131753475, null));
+        mtVar.addTextChangedListener(new i9(this, 7));
+        mtVar.setImeOptions(6);
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 16.0f);
-        q6.U(textView, j6.j5, e6Var);
-        if (!hd.a0) {
-            addView(textView, ja.t(-2, -2, 16, 20, 0, 0, 0));
-            addView(ftVar, ja.t(-1, -2, 16, 36, 0, 20, 0));
+        u6.U(textView, n6.j5, i6Var);
+        if (!gd.a0) {
+            addView(textView, ma.t(-2, -2, 16, 20, 0, 0, 0));
+            addView(mtVar, ma.t(-1, -2, 16, 36, 0, 20, 0));
         } else {
-            LinearLayout.LayoutParams t6 = ja.t(-1, -2, 16, 20, 0, 36, 0);
+            LinearLayout.LayoutParams t6 = ma.t(-1, -2, 16, 20, 0, 36, 0);
             t6.weight = 1.0f;
-            addView(ftVar, t6);
-            addView(textView, ja.t(-2, -2, 16, 0, 0, 20, 0));
+            addView(mtVar, t6);
+            addView(textView, ma.t(-2, -2, 16, 0, 0, 20, 0));
         }
     }
 

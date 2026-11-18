@@ -1,52 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import j$.util.Objects;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t01 extends FrameLayout {
-    public final Paint a;
-    public final RectF b;
-    public final u5 c;
-    public final String d;
-    public final /* synthetic */ v01 e;
+public final /* synthetic */ class t01 implements org.telegram.messenger.s10 {
+    public final /* synthetic */ f11 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Boolean d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t01(v01 v01Var, Context context) {
-        super(context);
-        this.e = v01Var;
-        this.a = new Paint(1);
-        this.b = new RectF();
-        this.c = new u5(this, 0L, 260L, er.h);
-        this.d = "";
-        setWillNotDraw(false);
-        c8.na.a(this);
-        addView(new i9(context), c8.ja.d(20, 20.0f, 19, 10.0f, 0.0f, 0.0f, 0.0f));
+    public /* synthetic */ t01(f11 f11Var, String str, long j3, Boolean bool) {
+        this.a = f11Var;
+        this.b = str;
+        this.c = j3;
+        this.d = bool;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float e10 = this.c.e(false, 0.0f);
-        int i7 = org.telegram.ui.ActionBar.j6.tk;
-        v01 v01Var = this.e;
-        int w02 = org.telegram.ui.ActionBar.j6.w0(i7, v01Var.e);
-        RectF rectF = this.b;
-        rectF.set(org.telegram.messenger.g0.L(3.0f), (getHeight() - org.telegram.messenger.g0.L(28.0f)) / 2.0f, getWidth() - org.telegram.messenger.g0.L(3.0f), (org.telegram.messenger.g0.L(28.0f) + getHeight()) / 2.0f);
-        int f10 = i0.a.f(e10, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.O5, v01Var.e), w02);
-        Paint paint = this.a;
-        paint.setColor(f10);
-        canvas.drawRoundRect(rectF, org.telegram.messenger.g0.L(10.0f), org.telegram.messenger.g0.L(10.0f), paint);
-        v01Var.h0.setColor(i0.a.f(e10, org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.G6, v01Var.e), org.telegram.ui.ActionBar.j6.w0(org.telegram.ui.ActionBar.j6.wk, v01Var.e)));
-        canvas.drawText(this.d, org.telegram.messenger.g0.L(35.0f), rectF.centerY() - ((v01Var.h0.ascent() + v01Var.h0.descent()) / 2.0f), v01Var.h0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(org.telegram.messenger.i20.B(13.0f, org.telegram.messenger.g0.L(35.0f) + ((int) Math.ceil(this.e.h0.measureText(this.d))), TLObject.FLAG_30), i10);
+    @Override // org.telegram.messenger.s10
+    public final void a(Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = (ArrayList) obj;
+        org.telegram.messenger.d00 d00Var = (org.telegram.messenger.d00) obj2;
+        Integer num = (Integer) obj3;
+        f11 f11Var = this.a;
+        ArrayList arrayList2 = f11Var.N;
+        f11Var.O = 0;
+        if (this.b.equals(f11Var.M)) {
+            if (this.c == f11Var.V) {
+                if (Objects.equals(this.d, f11Var.W)) {
+                    arrayList2.addAll(arrayList);
+                    f11Var.Q = d00Var;
+                    f11Var.R = d00Var == null || arrayList2.size() >= num.intValue();
+                    f11Var.n();
+                }
+            }
+        }
     }
 }

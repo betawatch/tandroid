@@ -1,46 +1,39 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import j$.util.Objects;
+import android.view.View;
+import org.telegram.ui.Components.ck0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k41;
+import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class f6 extends org.telegram.ui.Components.h6 {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ h6 w;
+public final class f6 extends k41 {
+    public static final /* synthetic */ int b = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f6(h6 h6Var, Context context, int i7) {
-        super(context, false, true, true, true, true);
-        this.s = i7;
-        this.w = h6Var;
+    static {
+        k41.h(new f6());
     }
 
-    @Override // org.telegram.ui.Components.h6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 0:
-                float c10 = getDrawable().c();
-                h6 h6Var = this.w;
-                float b10 = h6Var.b();
-                float min = (((c10 > 0.0f ? Math.min(1.0f, h6Var.V / c10) : 1.0f) - b10) * h6Var.U) + b10;
-                h6Var.b = min;
-                int save = canvas.save();
-                canvas.scale(min, min, 0.0f, getHeight() / 2.0f);
-                float e10 = (1.0f - h6Var.U) * h6Var.g0.e(false, h6Var.e0);
-                org.telegram.ui.Components.g6 drawable = getDrawable();
-                Objects.requireNonNull(drawable);
-                h6Var.c(e10, new b3(drawable, 4), new r(11, this, canvas));
-                canvas.restoreToCount(save);
-                break;
-            default:
-                h6 h6Var2 = this.w;
-                float e11 = (1.0f - h6Var2.U) * h6Var2.g0.e(false, h6Var2.e0);
-                org.telegram.ui.Components.g6 drawable2 = getDrawable();
-                Objects.requireNonNull(drawable2);
-                h6Var2.c(e11, new b3(drawable2, 4), new r(12, this, canvas));
-                break;
-        }
+    @Override // org.telegram.ui.Components.k41
+    public final void b(View view, l41 l41Var, boolean z10, z41 z41Var, e51 e51Var) {
+        ((g6) view).a(l41Var.k, l41Var.m, l41Var.n);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final View d(Context context, ck0 ck0Var, int i7, org.telegram.ui.ActionBar.i6 i6Var) {
+        return new g6(context, i6Var);
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.k41
+    public final boolean g() {
+        return true;
     }
 }

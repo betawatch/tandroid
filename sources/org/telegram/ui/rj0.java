@@ -1,86 +1,127 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.tl.TL_account;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rj0 implements Runnable {
+public final class rj0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sj0 b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ hk0 b;
 
-    public /* synthetic */ rj0(sj0 sj0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 0;
-        this.b = sj0Var;
-        this.d = tLObject;
-        this.c = tL_error;
+    public /* synthetic */ rj0(hk0 hk0Var, int i7) {
+        this.a = i7;
+        this.b = hk0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        String str;
+        int indexOf;
+        int i7 = this.a;
+        hk0 hk0Var = this.b;
+        switch (i7) {
             case 0:
-                sj0 sj0Var = this.b;
-                TLObject tLObject = this.d;
-                TLRPC.TL_error tL_error = this.c;
-                ek0 ek0Var = sj0Var.e;
-                if (tLObject instanceof Vector) {
-                    ek0Var.E = new TL_account.authorizationForm();
-                    Vector vector = (Vector) tLObject;
-                    int size = vector.objects.size();
-                    for (int i7 = 0; i7 < size; i7++) {
-                        ek0Var.E.values.add((TLRPC.TL_secureValue) vector.objects.get(i7));
-                    }
-                    sj0Var.a();
-                    break;
-                } else {
-                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
-                        org.telegram.ui.Components.t4.u0(ek0Var.getParentActivity(), org.telegram.messenger.hd.M0(2131743820, null), true);
-                    } else {
-                        ek0Var.Q1(org.telegram.messenger.hd.M0(R.string.AppName, null), tL_error.text);
-                    }
-                    ek0Var.R1(true, false);
+                if (!hk0Var.a1 && hk0Var.U0 != 0 && hk0Var.Z[0].length() == hk0Var.U0) {
+                    hk0Var.M.callOnClick();
                     break;
                 }
-            case 1:
-                sj0 sj0Var2 = this.b;
-                TLRPC.TL_error tL_error2 = this.c;
-                TLObject tLObject2 = this.d;
-                if (tL_error2 == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject2;
-                    sj0Var2.e.K = password;
-                    TwoStepVerificationActivity.r0(password);
-                    sj0Var2.b();
-                    break;
-                } else {
-                    sj0Var2.getClass();
-                    break;
-                }
+                break;
             default:
-                sj0 sj0Var3 = this.b;
-                TLRPC.TL_error tL_error3 = this.c;
-                TLObject tLObject3 = this.d;
-                if (tL_error3 == null) {
-                    TL_account.Password password2 = (TL_account.Password) tLObject3;
-                    sj0Var3.e.K = password2;
-                    TwoStepVerificationActivity.r0(password2);
-                    Utilities.e.c(new lc0(sj0Var3, sj0Var3.b, sj0Var3.d, 14));
+                ArrayList arrayList = hk0Var.V0;
+                HashMap hashMap = hk0Var.X0;
+                if (!hk0Var.a1) {
+                    hk0Var.a1 = true;
+                    String d = pf.b.d(hk0Var.Z[1].getText().toString(), false);
+                    hk0Var.Z[1].setText(d);
+                    org.telegram.ui.Components.g30 g30Var = (org.telegram.ui.Components.g30) hk0Var.Z[2];
+                    if (d.length() == 0) {
+                        g30Var.setHintText((String) null);
+                        g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
+                        hk0Var.Z[0].setText(org.telegram.messenger.gd.M0(2131752123, null));
+                    } else {
+                        int i10 = 4;
+                        if (d.length() > 4) {
+                            while (true) {
+                                if (i10 >= 1) {
+                                    String substring = d.substring(0, i10);
+                                    if (((String) hashMap.get(substring)) != null) {
+                                        String str2 = d.substring(i10) + hk0Var.Z[2].getText().toString();
+                                        hk0Var.Z[1].setText(substring);
+                                        str = str2;
+                                        d = substring;
+                                        z10 = true;
+                                    } else {
+                                        i10--;
+                                    }
+                                } else {
+                                    z10 = false;
+                                    str = null;
+                                }
+                            }
+                            if (!z10) {
+                                str = d.substring(1) + hk0Var.Z[2].getText().toString();
+                                EditTextBoldCursor editTextBoldCursor = hk0Var.Z[1];
+                                d = d.substring(0, 1);
+                                editTextBoldCursor.setText(d);
+                            }
+                        } else {
+                            z10 = false;
+                            str = null;
+                        }
+                        String str3 = (String) hashMap.get(d);
+                        if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
+                            g30Var.setHintText((String) null);
+                            g30Var.setHint(org.telegram.messenger.gd.M0(2131747179, null));
+                            hk0Var.Z[0].setText(org.telegram.messenger.gd.M0(2131742601, null));
+                        } else {
+                            hk0Var.Z[0].setText((CharSequence) arrayList.get(indexOf));
+                            String str4 = (String) hk0Var.Y0.get(d);
+                            if (str4 != null) {
+                                g30Var.setHintText(str4.replace('X', (char) 8211));
+                                g30Var.setHint((CharSequence) null);
+                            }
+                        }
+                        if (!z10) {
+                            EditTextBoldCursor editTextBoldCursor2 = hk0Var.Z[1];
+                            editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+                        }
+                        if (str != null) {
+                            g30Var.requestFocus();
+                            g30Var.setText(str);
+                            g30Var.setSelection(g30Var.length());
+                        }
+                    }
+                    hk0Var.a1 = false;
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ rj0(sj0 sj0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i7) {
-        this.a = i7;
-        this.b = sj0Var;
-        this.c = tL_error;
-        this.d = tLObject;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i7, int i10, int i11) {
+        int i12 = this.a;
+    }
+
+    private final void a(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void b(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void c(int i7, int i10, int i11, CharSequence charSequence) {
+    }
+
+    private final void d(int i7, int i10, int i11, CharSequence charSequence) {
     }
 }

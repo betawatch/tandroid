@@ -1,15 +1,15 @@
 package hd;
 
-import c8.c0;
-import c8.d0;
-import c8.sd;
+import c8.e0;
+import c8.f0;
+import c8.vd;
 import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /* loaded from: classes.dex */
-public abstract class e extends c0 {
+public abstract class e extends e0 {
     public static boolean a(Object[] objArr, Object obj) {
         int i7;
         kotlin.jvm.internal.j.e(objArr, "<this>");
@@ -70,7 +70,7 @@ public abstract class e extends c0 {
             if (i7 > 1) {
                 sb2.append((CharSequence) ",");
             }
-            sd.a(sb2, obj, null);
+            vd.a(sb2, obj, null);
         }
         sb2.append((CharSequence) "]");
         return sb2.toString();
@@ -84,7 +84,7 @@ public abstract class e extends c0 {
         }
         int i7 = 0;
         if (length == 1) {
-            return d0.a(Long.valueOf(jArr[0]));
+            return f0.a(Long.valueOf(jArr[0]));
         }
         ArrayList arrayList = new ArrayList(jArr.length);
         int length2 = jArr.length;
@@ -97,6 +97,6 @@ public abstract class e extends c0 {
     public static List h(Object[] objArr) {
         kotlin.jvm.internal.j.e(objArr, "<this>");
         int length = objArr.length;
-        return length != 0 ? length != 1 ? new ArrayList(new a0.e(objArr)) : d0.a(objArr[0]) : n.a;
+        return length != 0 ? length != 1 ? new ArrayList(new a0.e(objArr)) : f0.a(objArr[0]) : n.a;
     }
 }

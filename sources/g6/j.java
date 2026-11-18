@@ -10,7 +10,7 @@ import f6.e0;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j extends a8.q {
     public final /* synthetic */ int b = 2;
@@ -94,7 +94,7 @@ public final class j extends a8.q {
                         break;
                     case 5:
                         c cVar2 = (c) fVar;
-                        q6.m.d("Must be called from the main thread.");
+                        q6.m.e("Must be called from the main thread.");
                         h6.h hVar = cVar2.j;
                         long g10 = hVar == null ? 0L : hVar.g() - cVar2.j.a();
                         parcel2.writeNoException();
@@ -184,7 +184,7 @@ public final class j extends a8.q {
                         com.google.android.gms.common.api.internal.t b11 = com.google.android.gms.common.api.internal.u.b();
                         b11.c = new f6.b0(e0Var, readString2, readString3, i11);
                         b11.a = 8407;
-                        e0Var.e(1, b11.a()).addOnCompleteListener(new cb.c(this, 28));
+                        e0Var.e(1, b11.a()).addOnCompleteListener(new d6.i(this, 24));
                     }
                     parcel2.writeNoException();
                     break;
@@ -197,7 +197,7 @@ public final class j extends a8.q {
                         com.google.android.gms.common.api.internal.t b12 = com.google.android.gms.common.api.internal.u.b();
                         b12.c = new android.support.v4.media.session.a0(e0Var2, readString4, iVar, false, 23);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ob.c(this, 24));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new cb.c(this, 25));
                     }
                     parcel2.writeNoException();
                     break;

@@ -4,8 +4,8 @@ import android.media.AudioDescriptor;
 import android.media.AudioDeviceInfo;
 import android.media.AudioProfile;
 import android.os.Build;
-import c8.y9;
-import h9.s1;
+import c8.aa;
+import h9.t1;
 import j$.util.Comparator$-CC;
 import j$.util.Comparator$-EL;
 import j$.util.List;
@@ -13,13 +13,13 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class x0 {
-    public static final s1 a = h9.i0.u(12);
+    public static final t1 a = h9.i0.u(12);
 
     public static h9.i0 a(AudioDeviceInfo audioDeviceInfo) {
         List<AudioProfile> audioProfiles = audioDeviceInfo.getAudioProfiles();
@@ -38,8 +38,8 @@ public abstract class x0 {
         int type;
         h9.i0 i0Var;
         int speakerLayoutChannelMask;
-        boolean a10 = y9.a(audioDeviceInfo.getType());
-        s1 s1Var = a;
+        boolean a10 = aa.a(audioDeviceInfo.getType());
+        t1 t1Var = a;
         if (!a10) {
             if (audioDeviceInfo.getType() == 1) {
                 return h9.i0.u(4);
@@ -49,7 +49,7 @@ public abstract class x0 {
                     return h9.i0.u(Integer.valueOf(speakerLayoutChannelMask));
                 }
                 h2.a.l("SpeakerLayoutUtil", "Built-in speaker's getSpeakerLayoutChannelMask not usable, defaulting to stereo.");
-                return s1Var;
+                return t1Var;
             }
             int i7 = Build.VERSION.SDK_INT;
             if (i7 < 31 || audioDeviceInfo.getType() != 10) {
@@ -64,7 +64,7 @@ public abstract class x0 {
                         if (i7 >= 34) {
                             if (i7 < 34 || audioDescriptors == null) {
                                 h9.g0 g0Var = h9.i0.b;
-                                i0Var = s1.e;
+                                i0Var = t1.e;
                             } else {
                                 ArrayList arrayList = new ArrayList();
                                 Iterator<AudioDescriptor> it = audioDescriptors.iterator();
@@ -85,7 +85,7 @@ public abstract class x0 {
                                                     r10 |= 16;
                                                 }
                                                 if ((b10 & 8) != 0) {
-                                                    r10 |= ns.W2;
+                                                    r10 |= ks.W2;
                                                 }
                                                 if ((b10 & 16) != 0) {
                                                     r10 |= 1024;
@@ -143,7 +143,7 @@ public abstract class x0 {
                                 return i0Var;
                             }
                         }
-                        h9.i0 c10 = bg.n0.c(audioDescriptors);
+                        h9.i0 c10 = bg.o0.c(audioDescriptors);
                         if (!c10.isEmpty()) {
                             return c10;
                         }
@@ -160,12 +160,12 @@ public abstract class x0 {
                 if (!a14.isEmpty()) {
                     return a14;
                 }
-                h9.i0 c11 = bg.n0.c(audioDeviceInfo.getAudioDescriptors());
+                h9.i0 c11 = bg.o0.c(audioDeviceInfo.getAudioDescriptors());
                 if (!c11.isEmpty()) {
                     return c11;
                 }
             }
         }
-        return s1Var;
+        return t1Var;
     }
 }

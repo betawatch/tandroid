@@ -1,13 +1,12 @@
 package com.googlecode.mp4parser;
 
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ ff c;
-    public static final /* synthetic */ ff d;
+    public static final /* synthetic */ ze.b c;
+    public static final /* synthetic */ ze.b d;
     public int a;
     public int b;
 
@@ -42,7 +41,7 @@ public abstract class c extends a {
     }
 
     public final void g(int i7) {
-        i5.c.u(ze.a.c(d, this, this, new Integer(i7)));
+        i5.c.w(ze.a.c(d, this, this, new Integer(i7)));
         this.b = i7;
     }
 
@@ -52,7 +51,7 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        i5.c.u(ze.a.c(c, this, this, new Integer(1)));
+        i5.c.w(ze.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 

@@ -3,10 +3,10 @@ package d3;
 import android.content.Context;
 import android.util.Pair;
 import android.util.SparseArray;
-import h9.s1;
+import h9.t1;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class t {
     public static final b q = new b(0);
@@ -34,7 +34,7 @@ public final class t {
         this.b = rVar;
         this.c = new SparseArray();
         h9.g0 g0Var = h9.i0.b;
-        s1 s1Var = s1.e;
+        t1 t1Var = t1.e;
         this.d = xVar.a;
         h2.g0 g0Var2 = (h2.g0) xVar.g;
         this.f = g0Var2;

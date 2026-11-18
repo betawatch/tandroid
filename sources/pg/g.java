@@ -5,7 +5,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import org.telegram.messenger.g0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class g extends GestureDetector.SimpleOnGestureListener {
     public float a;
@@ -32,10 +32,10 @@ public final class g extends GestureDetector.SimpleOnGestureListener {
         r1.h hVar = iVar.c.m;
         if ((f10 / 7.0f) + ((float) hVar.i) >= iVar.getWidth() / 2.0f) {
             displayMetrics = iVar.getResources().getDisplayMetrics();
-            f12 = 2.14748365E9f;
+            f12 = 2.1474836E9f;
         } else {
             displayMetrics = iVar.getResources().getDisplayMetrics();
-            f12 = -2.14748365E9f;
+            f12 = -2.1474836E9f;
         }
         hVar.i = i.a(displayMetrics, f12);
         iVar.d.m.i = i.b(iVar.getResources().getDisplayMetrics(), (f11 / 10.0f) + ((float) iVar.d.m.i));

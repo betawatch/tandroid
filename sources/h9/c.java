@@ -1,6 +1,6 @@
 package h9;
 
-import a8.ia;
+import a8.ka;
 import a8.lb;
 import j$.util.Objects;
 import java.util.AbstractMap;
@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class c extends a8.h0 {
     public final /* synthetic */ int b;
@@ -58,7 +58,7 @@ public final class c extends a8.h0 {
         } catch (ClassCastException | NullPointerException unused) {
             obj2 = null;
         }
-        if (ia.a(obj2, entry.getValue())) {
+        if (ka.a(obj2, entry.getValue())) {
             return obj2 != null || i().containsKey(key);
         }
         return false;
@@ -69,7 +69,7 @@ public final class c extends a8.h0 {
             case 0:
                 return (lb) this.c;
             default:
-                return (h1) this.c;
+                return (i1) this.c;
         }
     }
 
@@ -84,11 +84,11 @@ public final class c extends a8.h0 {
             case 0:
                 return new a8.d((lb) this.c, (char) 0);
             default:
-                h1 h1Var = (h1) this.c;
-                Iterator it = h1Var.a.entrySet().iterator();
-                g1 g1Var = h1Var.b;
-                g1Var.getClass();
-                return new w0(it, new d6.i(g1Var, 24));
+                i1 i1Var = (i1) this.c;
+                Iterator it = i1Var.a.entrySet().iterator();
+                h1 h1Var = i1Var.b;
+                h1Var.getClass();
+                return new w0(it, new ob.c(h1Var, 27));
         }
     }
 
@@ -109,9 +109,9 @@ public final class c extends a8.h0 {
                 }
                 Map.Entry entry = (Map.Entry) obj;
                 Objects.requireNonNull(entry);
-                k1 k1Var = (k1) ((lb) this.c).e;
+                l1 l1Var = (l1) ((lb) this.c).e;
                 Object key = entry.getKey();
-                Map map = k1Var.e;
+                Map map = l1Var.e;
                 map.getClass();
                 try {
                     obj2 = map.remove(key);
@@ -122,7 +122,7 @@ public final class c extends a8.h0 {
                 if (collection != null) {
                     int size = collection.size();
                     collection.clear();
-                    k1Var.f -= size;
+                    l1Var.f -= size;
                 }
                 return true;
             default:

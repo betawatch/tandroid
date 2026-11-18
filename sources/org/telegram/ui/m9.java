@@ -1,35 +1,37 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m9 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class m9 implements r1.c {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t9 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ m9(t9 t9Var, int i7) {
+    public /* synthetic */ m9(Object obj, int i7) {
         this.a = i7;
-        this.b = t9Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // r1.c
+    public final void a(r1.g gVar, boolean z10, float f10, float f11) {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t9 t9Var = this.b;
-                t9Var.Z = floatValue;
-                t9Var.b.setAlpha(1.0f - floatValue);
-                if (t9Var.X == 3) {
-                    t9Var.c.setAlpha(1.0f - t9Var.Z);
+                t9 t9Var = (t9) this.b;
+                r1.g gVar2 = t9Var.E;
+                if (gVar2 != null) {
+                    gVar2.d();
+                    t9Var.E = null;
+                    break;
                 }
-                t9Var.s.setAlpha(1.0f - t9Var.Z);
-                t9Var.x = (t9Var.Z * 0.25f) + 0.5f;
-                t9Var.fragmentView.invalidate();
+                break;
+            case 1:
+                il0 il0Var = (il0) this.b;
+                if (gVar == il0Var.c) {
+                    il0Var.c = null;
+                    break;
+                }
                 break;
             default:
-                this.b.s.invalidate();
+                ((jq0) this.b).E();
                 break;
         }
     }

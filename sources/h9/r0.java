@@ -3,16 +3,16 @@ package h9;
 import j$.util.Collection;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public abstract class r0 extends d0 implements m1, Collection {
+public abstract class r0 extends d0 implements n1, Collection {
     public static final /* synthetic */ int d = 0;
-    public transient s1 b;
+    public transient t1 b;
     public transient t0 c;
 
-    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection
+    @Override // h9.d0, java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final boolean contains(Object obj) {
-        return ((y1) this).e.b(obj) > 0;
+        return ((z1) this).e.b(obj) > 0;
     }
 
     @Override // java.util.Collection
@@ -20,20 +20,20 @@ public abstract class r0 extends d0 implements m1, Collection {
         if (obj == this) {
             return true;
         }
-        if (!(obj instanceof m1)) {
+        if (!(obj instanceof n1)) {
             return false;
         }
-        m1 m1Var = (m1) obj;
-        y1 y1Var = (y1) this;
-        if (y1Var.size() != m1Var.size()) {
+        n1 n1Var = (n1) obj;
+        z1 z1Var = (z1) this;
+        if (z1Var.size() != n1Var.size()) {
             return false;
         }
-        r0 r0Var = (r0) m1Var;
+        r0 r0Var = (r0) n1Var;
         if (p().size() != r0Var.p().size()) {
             return false;
         }
-        for (o1 o1Var : r0Var.p()) {
-            if (y1Var.e.b(o1Var.a) != o1Var.a()) {
+        for (p1 p1Var : r0Var.p()) {
+            if (z1Var.e.b(p1Var.a) != p1Var.a()) {
                 return false;
             }
         }
@@ -42,12 +42,12 @@ public abstract class r0 extends d0 implements m1, Collection {
 
     @Override // h9.d0
     public final i0 f() {
-        s1 s1Var = this.b;
-        if (s1Var != null) {
-            return s1Var;
+        t1 t1Var = this.b;
+        if (t1Var != null) {
+            return t1Var;
         }
         i0 f10 = super.f();
-        this.b = (s1) f10;
+        this.b = (t1) f10;
         return f10;
     }
 
@@ -58,18 +58,18 @@ public abstract class r0 extends d0 implements m1, Collection {
 
     @Override // h9.d0
     public final int i(int i7, Object[] objArr) {
-        g2 it = p().iterator();
+        h2 it = p().iterator();
         while (it.hasNext()) {
-            o1 o1Var = (o1) it.next();
-            Arrays.fill(objArr, i7, o1Var.a() + i7, o1Var.a);
-            i7 += o1Var.a();
+            p1 p1Var = (p1) it.next();
+            Arrays.fill(objArr, i7, p1Var.a() + i7, p1Var.a);
+            i7 += p1Var.a();
         }
         return i7;
     }
 
     @Override // h9.d0
     /* renamed from: n */
-    public final g2 iterator() {
+    public final h2 iterator() {
         return new o0(p().iterator());
     }
 
@@ -78,7 +78,7 @@ public abstract class r0 extends d0 implements m1, Collection {
     public final t0 p() {
         t0 t0Var = this.c;
         if (t0Var == null) {
-            t0Var = isEmpty() ? z1.s : new q0(this, 0);
+            t0Var = isEmpty() ? a2.s : new q0(this, 0);
             this.c = t0Var;
         }
         return t0Var;

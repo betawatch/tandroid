@@ -1,52 +1,84 @@
 package hi;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.ui.Components.er;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.j10;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.au0;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
-public final class i3 extends View implements m2 {
-    public final org.telegram.ui.Components.g6 a;
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final class i3 extends org.telegram.ui.ActionBar.x2 {
+    public final h3 m1;
+    public ValueAnimator n1;
+    public r1.g o1;
+    public Boolean p1;
+    public x10 q1;
 
-    public i3(Activity activity) {
-        super(activity);
-        org.telegram.ui.Components.g6 g6Var = new org.telegram.ui.Components.g6(true, true, true);
-        this.a = g6Var;
-        g6Var.n(0.35f, 300L, er.h);
-        g6Var.u(-1);
-        g6Var.w(org.telegram.messenger.g0.L(14.0f));
-        g6Var.s(org.telegram.messenger.g0.L(1.4f), org.telegram.messenger.g0.L(0.4f), 1275068416);
-        g6Var.b = 1;
-        g6Var.setCallback(this);
-        g6Var.N = org.telegram.messenger.g0.q.x;
+    public i3(Context context, org.telegram.ui.ActionBar.i6 i6Var, String str, float f10) {
+        super(1, context, i6Var, false);
+        P(-14737633);
+        h3 h3Var = new h3(j10.t0, context, new fi.b(), f10, str);
+        this.m1 = h3Var;
+        h3Var.H.setVisibility(8);
+        h3Var.setMultipleOnClick(false);
+        h3Var.setOnBackClickListener(new f3(this, 0));
+        h3Var.setOnSelectListener(new bi.b(this, 27));
+        au0 au0Var = new au0(context, null);
+        this.b = au0Var;
+        int i7 = this.u0;
+        au0Var.setPadding(i7, 0, i7, 0);
+        this.b.addView(h3Var);
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        super.draw(canvas);
-        int width = getWidth();
-        int height = getHeight();
-        org.telegram.ui.Components.g6 g6Var = this.a;
-        g6Var.setBounds(0, 0, width, height);
-        g6Var.draw(canvas);
+    @Override // org.telegram.ui.ActionBar.x2
+    public final boolean G() {
+        return !this.m1.x;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, i10);
-        this.a.N = getMeasuredWidth();
+    public final void K0(boolean z10, f3 f3Var) {
+        h3 h3Var = this.m1;
+        float translationY = h3Var.getTranslationY();
+        float height = z10 ? 0.0f : (this.b.getHeight() - h3Var.g()) + (org.telegram.messenger.g0.n * 2.5f);
+        this.p1 = Boolean.valueOf(z10);
+        if (z10) {
+            r1.g gVar = new r1.g(h3Var, r1.g.p, height);
+            this.o1 = gVar;
+            gVar.m.a(0.75f);
+            this.o1.m.b(350.0f);
+            this.o1.a(new g3(this, height, f3Var));
+            this.o1.h();
+            return;
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(translationY, height);
+        this.n1 = ofFloat;
+        ofFloat.addUpdateListener(new ah.g(this, 29));
+        this.n1.addListener(new ah.l(5, this, f3Var));
+        this.n1.setDuration(450L);
+        this.n1.setInterpolator(lr.h);
+        this.n1.start();
     }
 
-    @Override // hi.m2
-    public void setInvert(float f10) {
-        this.a.u(i0.a.f(f10, -1, -16777216));
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    public final void dismiss() {
+        K0(false, new f3(this, 1));
+        super.dismiss();
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.a || super.verifyDrawable(drawable);
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.view.Window.Callback
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.m1.g()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        dismiss();
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
+    public final void show() {
+        super.show();
+        K0(true, null);
     }
 }

@@ -12,7 +12,7 @@ import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.concurrent.ExecutionException;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class b1 {
     public static boolean a() {
@@ -338,7 +338,7 @@ public abstract class b1 {
                 return;
             }
             try {
-                ((o5.r) fVar).a("FCM_CLIENT_EVENT_LOGGING", new l5.c("proto"), new a3.l(i12)).a(new l5.a(null, new bb.e(dVar), l5.d.a, new l5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new n2.a0(7));
+                ((o5.q) fVar).a("FCM_CLIENT_EVENT_LOGGING", new l5.c("proto"), new a3.l(i12)).a(new l5.a(null, new bb.e(dVar), l5.d.a, new l5.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new n2.a0(8));
             } catch (RuntimeException e16) {
                 Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e16);
             }

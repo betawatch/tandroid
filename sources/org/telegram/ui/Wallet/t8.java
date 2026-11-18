@@ -1,91 +1,32 @@
 package org.telegram.ui.Wallet;
 
-import android.view.KeyEvent;
-import android.widget.EditText;
-import android.widget.TextView;
+import org.telegram.messenger.gd;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t8 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class t8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ u8 b;
 
-    public /* synthetic */ t8(Object obj, int i7) {
+    public /* synthetic */ t8(u8 u8Var, int i7) {
         this.a = i7;
-        this.b = obj;
+        this.b = u8Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i7, KeyEvent keyEvent) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i7 = this.a;
+        u8 u8Var = this.b;
+        switch (i7) {
             case 0:
-                u8 u8Var = (u8) this.b;
-                if (i7 != 3) {
-                    u8Var.getClass();
-                    return false;
-                }
-                org.telegram.messenger.g0.v1(u8Var.b);
-                return true;
-            case 1:
-                p9 p9Var = (p9) this.b;
-                if (i7 == 6) {
-                    hi.d dVar = p9Var.e0;
-                    if (dVar.d0) {
-                        dVar.performClick();
-                        return true;
-                    }
-                } else {
-                    p9Var.getClass();
-                }
-                return false;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(0, u8Var.getParentActivity(), u8Var.getResourceProvider());
+                alertDialog$Builder.a.U = gd.M0(2131742886, null);
+                org.telegram.messenger.f3.m(null, 2131747638, alertDialog$Builder, null);
+                break;
             default:
-                pa paVar = (pa) this.b;
-                EditText editText = paVar.a;
-                boolean z10 = keyEvent != null && (keyEvent.getKeyCode() == 66 || keyEvent.getKeyCode() == 160);
-                if (i7 != 5 && !z10) {
-                    return false;
-                }
-                if (keyEvent == null || (keyEvent.getAction() == 1 && !keyEvent.isCanceled())) {
-                    String lowerCase = editText.getText().toString().trim().toLowerCase();
-                    if (lowerCase.isEmpty() || !paVar.b()) {
-                        String str = null;
-                        if (!lowerCase.isEmpty()) {
-                            String[] mnemonicWordlist = WalletEngine2.getMnemonicWordlist();
-                            int length = mnemonicWordlist.length;
-                            int i10 = 0;
-                            while (true) {
-                                if (i10 < length) {
-                                    String str2 = mnemonicWordlist[i10];
-                                    if (str2.startsWith(lowerCase)) {
-                                        str = str2;
-                                    } else {
-                                        i10++;
-                                    }
-                                }
-                            }
-                        }
-                        if (str != null) {
-                            editText.setText(str);
-                            editText.setSelection(str.length());
-                            paVar.setError(false);
-                            paVar.a();
-                            Runnable runnable = paVar.r;
-                            if (runnable != null) {
-                                editText.post(runnable);
-                            }
-                        } else {
-                            paVar.setError(true);
-                        }
-                    } else {
-                        paVar.setError(false);
-                        paVar.a();
-                        Runnable runnable2 = paVar.r;
-                        if (runnable2 != null) {
-                            editText.post(runnable2);
-                        }
-                    }
-                }
-                return true;
+                u8Var.d0();
+                break;
         }
     }
 }

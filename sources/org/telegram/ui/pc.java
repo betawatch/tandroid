@@ -5,51 +5,36 @@ import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class pc implements org.telegram.ui.ActionBar.e6 {
+public final class pc implements org.telegram.ui.ActionBar.i6 {
     public final /* synthetic */ qc a;
 
     public pc(qc qcVar) {
         this.a = qcVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final boolean a() {
+    @Override // org.telegram.ui.ActionBar.i6
+    public final boolean d() {
         return this.a.K;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final void b(float f10, float f11, int i7, int i10) {
-        org.telegram.ui.ActionBar.j6.r(f10, f11, i7, i10);
+    @Override // org.telegram.ui.ActionBar.i6
+    public final void e(float f10, float f11, int i7, int i10) {
+        org.telegram.ui.ActionBar.n6.r(f10, f11, i7, i10);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final ColorFilter c() {
-        return org.telegram.ui.ActionBar.j6.v3;
+    @Override // org.telegram.ui.ActionBar.i6
+    public final ColorFilter f() {
+        return org.telegram.ui.ActionBar.n6.v3;
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final Paint d(String str) {
-        return str.equals("paintDivider") ? this.a.z0 : org.telegram.ui.ActionBar.j6.V0(str);
+    @Override // org.telegram.ui.ActionBar.i6
+    public final Paint g(String str) {
+        return str.equals("paintDivider") ? this.a.z0 : org.telegram.ui.ActionBar.n6.V0(str);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final boolean e() {
-        return org.telegram.messenger.gz.H0;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int f(int i7) {
-        return h(i7);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
-    public final /* synthetic */ boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e6
+    @Override // org.telegram.ui.ActionBar.i6
     public final Drawable getDrawable(String str) {
         qc qcVar = this.a;
         Drawable drawable = qcVar.y0;
@@ -67,34 +52,49 @@ public final class pc implements org.telegram.ui.ActionBar.e6 {
             return qcVar.w0;
         }
         if (str.equals("drawableMsgOutCheckRead")) {
-            drawable2.setColorFilter(h(org.telegram.ui.ActionBar.j6.Cb), PorterDuff.Mode.MULTIPLY);
+            drawable2.setColorFilter(k(org.telegram.ui.ActionBar.n6.Cb), PorterDuff.Mode.MULTIPLY);
             return drawable2;
         }
         if (str.equals("drawableMsgOutHalfCheck")) {
-            drawable.setColorFilter(h(org.telegram.ui.ActionBar.j6.Cb), PorterDuff.Mode.MULTIPLY);
+            drawable.setColorFilter(k(org.telegram.ui.ActionBar.n6.Cb), PorterDuff.Mode.MULTIPLY);
             return drawable;
         }
-        org.telegram.ui.ActionBar.e6 e6Var = qcVar.r0;
-        return e6Var != null ? e6Var.getDrawable(str) : org.telegram.ui.ActionBar.j6.R0(str);
+        org.telegram.ui.ActionBar.i6 i6Var = qcVar.r0;
+        return i6Var != null ? i6Var.getDrawable(str) : org.telegram.ui.ActionBar.n6.R0(str);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int h(int i7) {
+    @Override // org.telegram.ui.ActionBar.i6
+    public final boolean h() {
+        return org.telegram.messenger.bz.H0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int i(int i7) {
+        return k(i7);
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int k(int i7) {
         qc qcVar = this.a;
         int indexOfKey = qcVar.s0.indexOfKey(i7);
         if (indexOfKey >= 0) {
             return qcVar.s0.valueAt(indexOfKey);
         }
-        org.telegram.ui.ActionBar.e6 e6Var = qcVar.r0;
-        return e6Var != null ? e6Var.h(i7) : org.telegram.ui.ActionBar.j6.v0(i7);
+        org.telegram.ui.ActionBar.i6 i6Var = qcVar.r0;
+        return i6Var != null ? i6Var.k(i7) : org.telegram.ui.ActionBar.n6.v0(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final int j(int i7) {
-        return h(i7);
+    @Override // org.telegram.ui.ActionBar.i6
+    public final int m(int i7) {
+        return k(i7);
     }
 
-    @Override // org.telegram.ui.ActionBar.e6
-    public final /* synthetic */ void i(int i7, int i10) {
+    @Override // org.telegram.ui.ActionBar.i6
+    public final /* synthetic */ void l(int i7, int i10) {
     }
 }

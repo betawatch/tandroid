@@ -25,7 +25,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.view.Surface;
-import c8.kc;
+import c8.nc;
 import com.google.android.gms.tasks.Tasks;
 import j$.util.Objects;
 import java.security.MessageDigest;
@@ -33,13 +33,13 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.ExecutionException;
-import org.telegram.messenger.as;
-import org.telegram.messenger.az;
 import org.telegram.messenger.beta.R;
-import org.telegram.messenger.pd;
-import org.telegram.ui.Components.aw0;
+import org.telegram.messenger.od;
+import org.telegram.messenger.vy;
+import org.telegram.messenger.xr;
+import org.telegram.ui.Components.hw0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class b8 {
     public Object a;
@@ -78,19 +78,19 @@ public class b8 {
         return new ColorStateList(new int[][]{m.z2.b, m.z2.d, m.z2.c, m.z2.f}, new int[]{m.z2.b(context, R.attr.colorButtonNormal), i0.a.k(c10, i7), i0.a.k(c10, i7), i7});
     }
 
-    public static x2.f0 f(e2.c1 c1Var, h9.i0 i0Var, x2.f0 f0Var, e2.i1 i1Var) {
+    public static x2.g0 f(e2.c1 c1Var, h9.i0 i0Var, x2.g0 g0Var, e2.i1 i1Var) {
         e2.l1 y02 = c1Var.y0();
         int B = c1Var.B();
         Object l10 = y02.p() ? null : y02.l(B);
         int b10 = (c1Var.p() || y02.p()) ? -1 : y02.f(B, i1Var, false).b(h2.l0.S(c1Var.l()) - i1Var.e);
         for (int i7 = 0; i7 < i0Var.size(); i7++) {
-            x2.f0 f0Var2 = (x2.f0) i0Var.get(i7);
-            if (i(f0Var2, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
-                return f0Var2;
+            x2.g0 g0Var2 = (x2.g0) i0Var.get(i7);
+            if (i(g0Var2, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
+                return g0Var2;
             }
         }
-        if (i0Var.isEmpty() && f0Var != null && i(f0Var, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
-            return f0Var;
+        if (i0Var.isEmpty() && g0Var != null && i(g0Var, l10, c1Var.p(), c1Var.n0(), c1Var.O(), b10)) {
+            return g0Var;
         }
         return null;
     }
@@ -130,16 +130,16 @@ public class b8 {
         return layerDrawable;
     }
 
-    public static boolean i(x2.f0 f0Var, Object obj, boolean z10, int i7, int i10, int i11) {
-        Object obj2 = f0Var.a;
-        int i12 = f0Var.b;
+    public static boolean i(x2.g0 g0Var, Object obj, boolean z10, int i7, int i10, int i11) {
+        Object obj2 = g0Var.a;
+        int i12 = g0Var.b;
         if (!obj2.equals(obj)) {
             return false;
         }
-        if (z10 && i12 == i7 && f0Var.c == i10) {
+        if (z10 && i12 == i7 && g0Var.c == i10) {
             return true;
         }
-        return !z10 && i12 == -1 && f0Var.e == i11;
+        return !z10 && i12 == -1 && g0Var.e == i11;
     }
 
     public static void n(Drawable drawable, int i7, PorterDuff.Mode mode) {
@@ -156,22 +156,22 @@ public class b8 {
         mutate.setColorFilter(h);
     }
 
-    public void a(xa xaVar, x2.f0 f0Var, e2.l1 l1Var) {
-        if (f0Var == null) {
+    public void a(xa xaVar, x2.g0 g0Var, e2.l1 l1Var) {
+        if (g0Var == null) {
             return;
         }
-        if (l1Var.b(f0Var.a) != -1) {
-            xaVar.u(f0Var, l1Var);
+        if (l1Var.b(g0Var.a) != -1) {
+            xaVar.w(g0Var, l1Var);
             return;
         }
-        e2.l1 l1Var2 = (e2.l1) ((h9.x1) this.c).get(f0Var);
+        e2.l1 l1Var2 = (e2.l1) ((h9.y1) this.c).get(g0Var);
         if (l1Var2 != null) {
-            xaVar.u(f0Var, l1Var2);
+            xaVar.w(g0Var, l1Var2);
         }
     }
 
     public t9.b c() {
-        q6.m.h((String) this.f, "setActionToken is required before calling build().");
+        q6.m.i((String) this.f, "setActionToken is required before calling build().");
         new String((String) this.e);
         j("actionToken", (String) this.f);
         String str = (String) this.c;
@@ -183,28 +183,28 @@ public class b8 {
         if ((str2 != null ? new String(str2) : null) == null) {
             String valueOf = String.valueOf((String) this.f);
             String concat = valueOf.length() != 0 ? "https://developers.google.com/actions?invocation=".concat(valueOf) : new String("https://developers.google.com/actions?invocation=");
-            q6.m.g(concat);
+            q6.m.h(concat);
             this.d = concat;
             j("url", concat);
         }
-        q6.m.h((String) this.c, "setObject is required before calling build().");
-        q6.m.h((String) this.d, "setObject is required before calling build().");
+        q6.m.i((String) this.c, "setObject is required before calling build().");
+        q6.m.i((String) this.d, "setObject is required before calling build().");
         return new t9.b((String) this.b, (String) this.c, (String) this.d, null, new t9.a(), (String) this.e, (Bundle) this.a);
     }
 
     public void d() {
-        ((LocationManager) this.b).removeUpdates((pd) this.c);
-        ((LocationManager) this.b).removeUpdates((pd) this.d);
+        ((LocationManager) this.b).removeUpdates((od) this.c);
+        ((LocationManager) this.b).removeUpdates((od) this.d);
         this.f = null;
         this.e = null;
     }
 
     public ColorStateList h(Context context, int i7) {
         if (i7 == R.drawable.abc_edit_text_material) {
-            return b5.a.a(context, R.color.abc_tint_edittext);
+            return c8.z.a(context, R.color.abc_tint_edittext);
         }
         if (i7 == R.drawable.abc_switch_track_mtrl_alpha) {
-            return b5.a.a(context, R.color.abc_tint_switch_track);
+            return c8.z.a(context, R.color.abc_tint_switch_track);
         }
         if (i7 != R.drawable.abc_switch_thumb_material) {
             if (i7 == R.drawable.abc_btn_default_mtrl_shape) {
@@ -217,19 +217,19 @@ public class b8 {
                 return e(context, m.z2.c(context, R.attr.colorAccent));
             }
             if (i7 == R.drawable.abc_spinner_mtrl_am_alpha || i7 == R.drawable.abc_spinner_textfield_background_material) {
-                return b5.a.a(context, R.color.abc_tint_spinner);
+                return c8.z.a(context, R.color.abc_tint_spinner);
             }
             if (b((int[]) this.b, i7)) {
                 return m.z2.d(context, R.attr.colorControlNormal);
             }
             if (b((int[]) this.e, i7)) {
-                return b5.a.a(context, R.color.abc_tint_default);
+                return c8.z.a(context, R.color.abc_tint_default);
             }
             if (b((int[]) this.f, i7)) {
-                return b5.a.a(context, R.color.abc_tint_btn_checkable);
+                return c8.z.a(context, R.color.abc_tint_btn_checkable);
             }
             if (i7 == R.drawable.abc_seekbar_thumb_material) {
-                return b5.a.a(context, R.color.abc_tint_seek_thumb);
+                return c8.z.a(context, R.color.abc_tint_seek_thumb);
             }
             return null;
         }
@@ -259,7 +259,7 @@ public class b8 {
         Bundle bundle = (Bundle) this.a;
         String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
         if (strArr2.length <= 0) {
-            kc.a("String array is empty and is ignored by put method.");
+            nc.a("String array is empty and is ignored by put method.");
             return;
         }
         int i7 = 0;
@@ -271,7 +271,7 @@ public class b8 {
                 sb2.append("String at ");
                 sb2.append(i10);
                 sb2.append(" is null and is ignored by put method.");
-                kc.a(sb2.toString());
+                nc.a(sb2.toString());
             } else {
                 int i11 = 20000;
                 if (str2.length() > 20000) {
@@ -279,7 +279,7 @@ public class b8 {
                     sb3.append("String at ");
                     sb3.append(i10);
                     sb3.append(" is too long, truncating string.");
-                    kc.a(sb3.toString());
+                    nc.a(sb3.toString());
                     String str3 = strArr2[i7];
                     if (str3.length() > 20000) {
                         if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
@@ -295,7 +295,7 @@ public class b8 {
         if (i7 > 0) {
             Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i7);
             if (objArr.length >= 100) {
-                kc.a("Input Array of elements is too big, cutting off.");
+                nc.a("Input Array of elements is too big, cutting off.");
                 objArr = Arrays.copyOf(objArr, 100);
             }
             bundle.putStringArray(str, (String[]) objArr);
@@ -411,12 +411,12 @@ public class b8 {
             this.b = (LocationManager) org.telegram.messenger.t0.b.getSystemService("location");
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (pd) this.c);
+            ((LocationManager) this.b).requestLocationUpdates("gps", 1L, 0.0f, (od) this.c);
         } catch (Exception e10) {
             org.telegram.messenger.a8.g(e10, true);
         }
         try {
-            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (pd) this.d);
+            ((LocationManager) this.b).requestLocationUpdates("network", 1L, 0.0f, (od) this.d);
         } catch (Exception e11) {
             org.telegram.messenger.a8.g(e11, true);
         }
@@ -429,22 +429,22 @@ public class b8 {
         } catch (Exception e12) {
             org.telegram.messenger.a8.g(e12, true);
         }
-        as asVar = (as) this.e;
-        if (asVar != null) {
-            org.telegram.messenger.g0.r(asVar);
+        xr xrVar = (xr) this.e;
+        if (xrVar != null) {
+            org.telegram.messenger.g0.r(xrVar);
         }
-        as asVar2 = new as(this, 14);
-        this.e = asVar2;
-        org.telegram.messenger.g0.i3(asVar2, 5000L);
+        xr xrVar2 = new xr(this, 14);
+        this.e = xrVar2;
+        org.telegram.messenger.g0.h3(xrVar2, 5000L);
     }
 
     public void p() {
         if (((LocationManager) this.b) == null) {
             return;
         }
-        as asVar = (as) this.e;
-        if (asVar != null) {
-            org.telegram.messenger.g0.r(asVar);
+        xr xrVar = (xr) this.e;
+        if (xrVar != null) {
+            org.telegram.messenger.g0.r(xrVar);
         }
         d();
     }
@@ -457,7 +457,7 @@ public class b8 {
             ((ValueAnimator) arrayList3.get(i7)).cancel();
             if (z10) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i7)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new aw0(this, i7, 0));
+                ofFloat.addUpdateListener(new hw0(this, i7, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -466,7 +466,7 @@ public class b8 {
             ((ValueAnimator) arrayList2.get(i10)).cancel();
             if (z10) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i10)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new aw0(this, i10, 1));
+                ofFloat2.addUpdateListener(new hw0(this, i10, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -475,7 +475,7 @@ public class b8 {
             ((ValueAnimator) arrayList.get(i11)).cancel();
             if (z10) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i11)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new aw0(this, i11, 2));
+                ofFloat3.addUpdateListener(new hw0(this, i11, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -504,19 +504,19 @@ public class b8 {
     public void s(e2.l1 l1Var) {
         xa xaVar = new xa(4, 10);
         if (((h9.i0) this.b).isEmpty()) {
-            a(xaVar, (x2.f0) this.e, l1Var);
-            if (!Objects.equals((x2.f0) this.f, (x2.f0) this.e)) {
-                a(xaVar, (x2.f0) this.f, l1Var);
+            a(xaVar, (x2.g0) this.e, l1Var);
+            if (!Objects.equals((x2.g0) this.f, (x2.g0) this.e)) {
+                a(xaVar, (x2.g0) this.f, l1Var);
             }
-            if (!Objects.equals((x2.f0) this.d, (x2.f0) this.e) && !Objects.equals((x2.f0) this.d, (x2.f0) this.f)) {
-                a(xaVar, (x2.f0) this.d, l1Var);
+            if (!Objects.equals((x2.g0) this.d, (x2.g0) this.e) && !Objects.equals((x2.g0) this.d, (x2.g0) this.f)) {
+                a(xaVar, (x2.g0) this.d, l1Var);
             }
         } else {
             for (int i7 = 0; i7 < ((h9.i0) this.b).size(); i7++) {
-                a(xaVar, (x2.f0) ((h9.i0) this.b).get(i7), l1Var);
+                a(xaVar, (x2.g0) ((h9.i0) this.b).get(i7), l1Var);
             }
-            if (!((h9.i0) this.b).contains((x2.f0) this.d)) {
-                a(xaVar, (x2.f0) this.d, l1Var);
+            if (!((h9.i0) this.b).contains((x2.g0) this.d)) {
+                a(xaVar, (x2.g0) this.d, l1Var);
             }
         }
         this.c = xaVar.c(true);
@@ -570,10 +570,10 @@ public class b8 {
         this.f = jVar;
     }
 
-    public b8(az azVar) {
+    public b8(vy vyVar) {
         int i7 = 1;
-        this.c = new pd(this, i7);
-        this.d = new pd(this, i7);
-        this.a = azVar;
+        this.c = new od(this, i7);
+        this.d = new od(this, i7);
+        this.a = vyVar;
     }
 }

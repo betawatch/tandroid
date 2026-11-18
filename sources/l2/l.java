@@ -1,15 +1,15 @@
 package l2;
 
-import a8.ja;
+import a8.la;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l extends e2.v0 {
     public final int E;
-    public final x2.f0 F;
+    public final x2.g0 F;
     public final boolean G;
     public final int s;
     public final String w;
@@ -20,24 +20,24 @@ public final class l extends e2.v0 {
         this(i7, exc, i10, null, -1, null, 4, null, false);
     }
 
-    public final l a(x2.f0 f0Var) {
+    public final l a(x2.g0 g0Var) {
         String message = getMessage();
         String str = h2.l0.a;
-        return new l(message, getCause(), this.a, this.s, this.w, this.x, this.y, this.E, f0Var, this.b, this.G);
+        return new l(message, getCause(), this.a, this.s, this.w, this.x, this.y, this.E, g0Var, this.b, this.G);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(String str, Throwable th2, int i7, int i10, String str2, int i11, e2.u uVar, int i12, x2.f0 f0Var, long j3, boolean z10) {
+    public l(String str, Throwable th2, int i7, int i10, String str2, int i11, e2.u uVar, int i12, x2.g0 g0Var, long j3, boolean z10) {
         super(str, th2, i7, j3);
         Bundle bundle = Bundle.EMPTY;
-        ja.f(!z10 || i10 == 1);
-        ja.f(th2 != null || i10 == 3);
+        la.f(!z10 || i10 == 1);
+        la.f(th2 != null || i10 == 3);
         this.s = i10;
         this.w = str2;
         this.x = i11;
         this.y = uVar;
         this.E = i12;
-        this.F = f0Var;
+        this.F = g0Var;
         this.G = z10;
     }
 
@@ -45,8 +45,8 @@ public final class l extends e2.v0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public l(int i7, Throwable th2, int i10, String str, int i11, e2.u uVar, int i12, x2.f0 f0Var, boolean z10) {
-        this(TextUtils.isEmpty(null) ? r0 : r.b.v(r0, ": null"), th2, i10, i7, r5, r6, r7, i12, f0Var, SystemClock.elapsedRealtime(), z10);
+    public l(int i7, Throwable th2, int i10, String str, int i11, e2.u uVar, int i12, x2.g0 g0Var, boolean z10) {
+        this(TextUtils.isEmpty(null) ? r0 : p5.c.v(r0, ": null"), th2, i10, i7, r5, r6, r7, i12, g0Var, SystemClock.elapsedRealtime(), z10);
         String str2;
         int i13;
         e2.u uVar2;

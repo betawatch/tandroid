@@ -1,74 +1,24 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class ph implements c5.h {
-    public final /* synthetic */ AtomicBoolean a;
-    public final /* synthetic */ LinearLayout b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ HorizontalScrollView d;
-    public final /* synthetic */ SparseIntArray e;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
-    public final /* synthetic */ int[] g;
+public final class ph extends org.telegram.ui.Components.bv {
+    public final /* synthetic */ bn R1;
 
-    public ph(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i7, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.a = atomicBoolean;
-        this.b = linearLayout;
-        this.c = i7;
-        this.d = horizontalScrollView;
-        this.e = sparseIntArray;
-        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.g = iArr;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ph(bn bnVar, org.telegram.ui.ActionBar.h2 h2Var, Activity activity, org.telegram.ui.ActionBar.i6 i6Var, ArrayList arrayList) {
+        super(h2Var, activity, i6Var, arrayList);
+        this.R1 = bnVar;
     }
 
-    @Override // c5.h
-    public final void a(int i7) {
-        this.f.getSwipeBack().f(this.g[0], this.e.get(i7), true);
-    }
-
-    @Override // c5.h
-    public final void b(float f10, int i7, int i10) {
-        HorizontalScrollView horizontalScrollView;
-        if (this.a.get()) {
-            return;
-        }
-        float f11 = -1.0f;
-        float f12 = -1.0f;
-        int i11 = 0;
-        while (true) {
-            LinearLayout linearLayout = this.b;
-            int childCount = linearLayout.getChildCount();
-            horizontalScrollView = this.d;
-            if (i11 >= childCount) {
-                break;
-            }
-            org.telegram.ui.Components.wh0 wh0Var = (org.telegram.ui.Components.wh0) linearLayout.getChildAt(i11);
-            wh0Var.setOutlineProgress(i11 == i7 ? 1.0f - f10 : i11 == (i7 + 1) % this.c ? f10 : 0.0f);
-            if (i11 == i7) {
-                f11 = wh0Var.getX() - ((horizontalScrollView.getWidth() - wh0Var.getWidth()) / 2.0f);
-            }
-            if (i11 == i7 + 1) {
-                f12 = wh0Var.getX() - ((horizontalScrollView.getWidth() - wh0Var.getWidth()) / 2.0f);
-            }
-            i11++;
-        }
-        if (f11 != -1.0f && f12 != -1.0f) {
-            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.vision.e2.z(f12, f11, f10, f11));
-        }
-        SparseIntArray sparseIntArray = this.e;
-        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i7 + 1, 0) * f10) + ((1.0f - f10) * sparseIntArray.get(i7, 0))), false);
-    }
-
-    @Override // c5.h
-    public final void c(int i7) {
-        if (i7 == 0) {
-            this.a.set(false);
-        }
+    @Override // org.telegram.ui.Components.bv, org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
+    public final void dismiss() {
+        super.dismiss();
+        bn bnVar = this.R1;
+        bnVar.getClass();
+        bnVar.x8(false, true, 0.0f);
     }
 }

@@ -11,11 +11,11 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.a8;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.r2;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.s2;
 import org.telegram.messenger.t0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class CameraSession {
     public static final int ORIENTATION_HYSTERESIS = 5;
@@ -45,7 +45,7 @@ public class CameraSession {
     public ArrayList<String> availableFlashModes = new ArrayList<>();
     private int infoCameraId = -1;
     Camera.CameraInfo info = new Camera.CameraInfo();
-    private Camera.AutoFocusCallback autoFocusCallback = new j();
+    private Camera.AutoFocusCallback autoFocusCallback = new k();
 
     public CameraSession(CameraInfo cameraInfo, Size size, Size size2, int i7, boolean z10) {
         this.previewSize = size;
@@ -90,7 +90,7 @@ public class CameraSession {
             if (rotation == 1) {
                 i7 = 90;
             } else if (rotation == 2) {
-                i7 = ns.K2;
+                i7 = ks.K2;
             } else if (rotation == 3) {
                 i7 = 270;
             }
@@ -252,11 +252,11 @@ public class CameraSession {
                 updateCameraInfo();
                 updateRotation();
                 if (parameters != null) {
-                    if (z10 && r2.a) {
+                    if (z10 && s2.a) {
                         a8.b("set preview size = " + this.previewSize.getWidth() + " " + this.previewSize.getHeight());
                     }
                     parameters.setPreviewSize(this.previewSize.getWidth(), this.previewSize.getHeight());
-                    if (z10 && r2.a) {
+                    if (z10 && s2.a) {
                         a8.b("set picture size = " + this.pictureSize.getWidth() + " " + this.pictureSize.getHeight());
                     }
                     parameters.setPictureSize(this.pictureSize.getWidth(), this.pictureSize.getHeight());
@@ -498,9 +498,9 @@ public class CameraSession {
                     if (i11 == 1) {
                         i7 = 90;
                     } else if (i11 == 2) {
-                        i7 = ns.K2;
+                        i7 = ks.K2;
                     } else if (i11 == 3) {
-                        i7 = ns.t4;
+                        i7 = ks.t4;
                     }
                     cameraInfo = this.info;
                     if (cameraInfo.orientation % 90 != 0) {

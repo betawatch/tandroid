@@ -5,11 +5,11 @@ import ch.p0;
 import ch.q0;
 import da.h0;
 import da.v1;
-import di.bc;
-import fi.d4;
-import fi.t0;
-import h9.q1;
-import hi.xa;
+import di.fc;
+import fi.b4;
+import fi.s0;
+import h9.r1;
+import hi.ya;
 import java.io.File;
 import java.util.Collections;
 import java.util.Comparator;
@@ -20,7 +20,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Comparator {
     public final /* synthetic */ int a;
@@ -67,7 +67,7 @@ public final /* synthetic */ class c implements Comparator {
                 r rVar2 = (r) obj2;
                 boolean z10 = rVar.e;
                 int i13 = rVar.s;
-                q1 a10 = (z10 && rVar.n) ? s.l : s.l.a();
+                r1 a10 = (z10 && rVar.n) ? s.l : s.l.a();
                 boolean z11 = rVar.f.F;
                 h9.w wVar = h9.w.a;
                 if (z11) {
@@ -83,9 +83,9 @@ public final /* synthetic */ class c implements Comparator {
             case 9:
                 return ((h0) ((v1) obj)).a.compareTo(((h0) ((v1) obj2)).a);
             case 10:
-                return ((b3.s) obj).a - ((b3.s) obj2).a;
+                return ((b3.t) obj).a - ((b3.t) obj2).a;
             case 11:
-                return Float.compare(((b3.s) obj).c, ((b3.s) obj2).c);
+                return Float.compare(((b3.t) obj).c, ((b3.t) obj2).c);
             case 12:
                 return Long.compare(((TLRPC.PollAnswer) obj).shuffle_hash ^ Long.MIN_VALUE, ((TLRPC.PollAnswer) obj2).shuffle_hash ^ Long.MIN_VALUE);
             case 13:
@@ -101,7 +101,7 @@ public final /* synthetic */ class c implements Comparator {
                 i10 = ((TL_stars.SavedStarGift) obj).date;
                 break;
             case 17:
-                return (int) (((bc) obj2).d - ((bc) obj).d);
+                return (int) (((fc) obj2).d - ((fc) obj).d);
             case 18:
                 long j3 = ((ei.b) obj2).c;
                 long j10 = ((ei.b) obj).c;
@@ -115,8 +115,8 @@ public final /* synthetic */ class c implements Comparator {
                 break;
             case 20:
             case 22:
-                i7 = ((t0) obj2).c;
-                i10 = ((t0) obj).c;
+                i7 = ((s0) obj2).c;
+                i10 = ((s0) obj).c;
                 break;
             case 21:
                 return (int) (((TL_phone.groupCallDonor) obj2).stars - ((TL_phone.groupCallDonor) obj).stars);
@@ -124,7 +124,7 @@ public final /* synthetic */ class c implements Comparator {
                 return ((Integer) ((Pair) obj).first).intValue() - ((Integer) ((Pair) obj2).first).intValue();
             case 24:
                 int i14 = ProfileStoriesView.t0;
-                return (int) (((d4) obj2).i - ((d4) obj).i);
+                return (int) (((b4) obj2).i - ((b4) obj).i);
             case 25:
                 return (int) (((Long) obj2).longValue() - ((Long) obj).longValue());
             case 26:
@@ -140,7 +140,7 @@ public final /* synthetic */ class c implements Comparator {
                 String str2 = p0Var.f;
                 return i16 - ((str2 == null || !str2.equals("❤")) ? 0 : -1);
             default:
-                return (int) (((xa) obj2).e - ((xa) obj).e);
+                return (int) (((ya) obj2).e - ((ya) obj).e);
         }
         return i7 - i10;
     }

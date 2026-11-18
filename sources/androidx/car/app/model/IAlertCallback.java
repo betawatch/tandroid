@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface IAlertCallback extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IAlertCallback".replace('$', '.');
@@ -15,12 +15,12 @@ public interface IAlertCallback extends IInterface {
 
     void onAlertDismissed(IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static abstract class Stub extends Binder implements IAlertCallback {
         static final int TRANSACTION_onAlertCancelled = 2;
         static final int TRANSACTION_onAlertDismissed = 3;
 
-        /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+        /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
         public static class Proxy implements IAlertCallback {
             private IBinder mRemote;
 
@@ -102,7 +102,7 @@ public interface IAlertCallback extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+    /* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
     public static class Default implements IAlertCallback {
         @Override // android.os.IInterface
         public IBinder asBinder() {

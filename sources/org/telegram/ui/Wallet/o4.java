@@ -1,49 +1,41 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
-import org.telegram.messenger.z10;
-import org.telegram.ui.Components.cc;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import java.io.Serializable;
+import org.telegram.messenger.v10;
+import org.telegram.messenger.w10;
+import org.telegram.ui.Components.l41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o4 implements z10 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hi.d b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.u2 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e6 d;
+public final /* synthetic */ class o4 implements org.telegram.ui.ActionBar.r1, v10, w10 {
+    public final /* synthetic */ n6 a;
 
-    public /* synthetic */ o4(hi.d dVar, org.telegram.ui.ActionBar.u2 u2Var, org.telegram.ui.ActionBar.e6 e6Var, int i7) {
-        this.a = i7;
-        this.b = dVar;
-        this.c = u2Var;
-        this.d = e6Var;
+    public /* synthetic */ o4(n6 n6Var) {
+        this.a = n6Var;
     }
 
-    @Override // org.telegram.messenger.z10
-    public final void a(Object obj) {
-        String str = (String) obj;
-        switch (this.a) {
-            case 0:
-                this.b.setLoading(false);
-                boolean isEmpty = TextUtils.isEmpty(str);
-                org.telegram.ui.ActionBar.u2 u2Var = this.c;
-                if (!isEmpty) {
-                    new cc(u2Var.F, this.d).e0(str, false);
-                    break;
-                } else {
-                    u2Var.dismiss();
-                    break;
-                }
-            default:
-                this.b.setLoading(false);
-                org.telegram.ui.ActionBar.u2 u2Var2 = this.c;
-                if (str == null) {
-                    u2Var2.dismiss();
-                    break;
-                } else {
-                    new cc(u2Var2.F, this.d).e0(str, false);
-                    break;
-                }
+    @Override // org.telegram.messenger.w10
+    public Boolean a(l41 l41Var, View view, Integer num, Float f10, Float f11) {
+        return Boolean.valueOf(this.a.c0(l41Var, view));
+    }
+
+    @Override // org.telegram.ui.ActionBar.r1
+    public void h(org.telegram.ui.ActionBar.u1 u1Var, int i7) {
+        n6 n6Var = this.a;
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + org.telegram.messenger.t0.b.getPackageName()));
+            n6Var.getParentActivity().startActivity(intent);
+        } catch (Exception e10) {
+            org.telegram.messenger.a8.g(e10, true);
         }
+    }
+
+    @Override // org.telegram.messenger.v10
+    public void l(Object obj, Object obj2, Number number, Serializable serializable, Serializable serializable2) {
+        this.a.b0((l41) obj, (View) obj2);
     }
 }

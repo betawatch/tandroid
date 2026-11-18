@@ -1,11 +1,11 @@
 package o3;
 
-import c8.j1;
+import c8.l1;
 import e2.n0;
 import e2.p0;
 import e2.u;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class b implements p0 {
     public final long a;
@@ -46,7 +46,7 @@ public final class b implements p0 {
     }
 
     public final int hashCode() {
-        return j1.b(this.e) + ((j1.b(this.d) + ((j1.b(this.c) + ((j1.b(this.b) + ((j1.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        return l1.b(this.e) + ((l1.b(this.d) + ((l1.b(this.c) + ((l1.b(this.b) + ((l1.b(this.a) + 527) * 31)) * 31)) * 31)) * 31);
     }
 
     public final String toString() {

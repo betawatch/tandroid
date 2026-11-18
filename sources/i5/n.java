@@ -2,28 +2,27 @@ package i5;
 
 import a8.p0;
 import ab.c0;
-import c8.mb;
+import c8.pb;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class n extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ ff J;
-    public static final /* synthetic */ ff K;
-    public static final /* synthetic */ ff L;
-    public static final /* synthetic */ ff M;
-    public static final /* synthetic */ ff N;
-    public static final /* synthetic */ ff O;
-    public static final /* synthetic */ ff P;
-    public static final /* synthetic */ ff Q;
-    public static final /* synthetic */ ff R;
-    public static final /* synthetic */ ff S;
-    public static final /* synthetic */ ff T;
-    public static final /* synthetic */ ff U;
-    public static final /* synthetic */ ff V;
-    public static final /* synthetic */ ff W;
+    public static final /* synthetic */ ze.b J;
+    public static final /* synthetic */ ze.b K;
+    public static final /* synthetic */ ze.b L;
+    public static final /* synthetic */ ze.b M;
+    public static final /* synthetic */ ze.b N;
+    public static final /* synthetic */ ze.b O;
+    public static final /* synthetic */ ze.b P;
+    public static final /* synthetic */ ze.b Q;
+    public static final /* synthetic */ ze.b R;
+    public static final /* synthetic */ ze.b S;
+    public static final /* synthetic */ ze.b T;
+    public static final /* synthetic */ ze.b U;
+    public static final /* synthetic */ ze.b V;
+    public static final /* synthetic */ ze.b W;
     public int E;
     public int F;
     public int G;
@@ -76,13 +75,13 @@ public final class n extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = mb.b(h5.b.j(byteBuffer));
-            this.f = mb.b(h5.b.j(byteBuffer));
+            this.e = pb.b(h5.b.j(byteBuffer));
+            this.f = pb.b(h5.b.j(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             this.n = h5.b.j(byteBuffer);
         } else {
-            this.e = mb.b(h5.b.i(byteBuffer));
-            this.f = mb.b(h5.b.i(byteBuffer));
+            this.e = pb.b(h5.b.i(byteBuffer));
+            this.f = pb.b(h5.b.i(byteBuffer));
             this.h = h5.b.i(byteBuffer);
             this.n = h5.b.i(byteBuffer);
         }
@@ -105,13 +104,13 @@ public final class n extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(mb.a(this.e));
-            byteBuffer.putLong(mb.a(this.f));
+            byteBuffer.putLong(pb.a(this.e));
+            byteBuffer.putLong(pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) mb.a(this.e));
-            byteBuffer.putInt((int) mb.a(this.f));
+            byteBuffer.putInt((int) pb.a(this.e));
+            byteBuffer.putInt((int) pb.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -141,27 +140,27 @@ public final class n extends com.googlecode.mp4parser.c {
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MovieHeaderBox[creationTime=");
-        c.u(ze.a.b(J, this, this));
+        c.w(ze.a.b(J, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        c.u(ze.a.b(K, this, this));
+        c.w(ze.a.b(K, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        c.u(ze.a.b(L, this, this));
+        c.w(ze.a.b(L, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        c.u(ze.a.b(M, this, this));
+        c.w(ze.a.b(M, this, this));
         sb2.append(this.n);
         sb2.append(";rate=");
-        c.u(ze.a.b(N, this, this));
+        c.w(ze.a.b(N, this, this));
         sb2.append(this.r);
         sb2.append(";volume=");
-        c.u(ze.a.b(O, this, this));
+        c.w(ze.a.b(O, this, this));
         sb2.append(this.s);
         sb2.append(";matrix=");
         sb2.append(this.w);
         sb2.append(";nextTrackId=");
-        c.u(ze.a.b(P, this, this));
+        c.w(ze.a.b(P, this, this));
         return p0.r(sb2, this.x, "]");
     }
 }

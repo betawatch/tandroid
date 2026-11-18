@@ -2,7 +2,7 @@ package v6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.common.api.n;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +13,7 @@ import java.util.TreeSet;
 import q6.m;
 import u8.o;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class a extends r6.a {
     public static final Parcelable.Creator<a> CREATOR = new o(14);
@@ -23,7 +23,7 @@ public final class a extends r6.a {
     public final String d;
 
     public a(ArrayList arrayList, boolean z10, String str, String str2) {
-        m.g(arrayList);
+        m.h(arrayList);
         this.a = arrayList;
         this.b = z10;
         this.c = str;
@@ -44,7 +44,7 @@ public final class a extends r6.a {
             return false;
         }
         a aVar = (a) obj;
-        return this.b == aVar.b && m.k(this.a, aVar.a) && m.k(this.c, aVar.c) && m.k(this.d, aVar.d);
+        return this.b == aVar.b && m.l(this.a, aVar.a) && m.l(this.c, aVar.c) && m.l(this.d, aVar.d);
     }
 
     public final int hashCode() {
@@ -53,12 +53,12 @@ public final class a extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.p(parcel, 1, this.a);
-        yb.q(parcel, 2, 4);
+        int r10 = bc.r(parcel, 20293);
+        bc.p(parcel, 1, this.a);
+        bc.q(parcel, 2, 4);
         parcel.writeInt(this.b ? 1 : 0);
-        yb.l(parcel, 3, this.c);
-        yb.l(parcel, 4, this.d);
-        yb.s(parcel, r10);
+        bc.l(parcel, 3, this.c);
+        bc.l(parcel, 4, this.d);
+        bc.s(parcel, r10);
     }
 }

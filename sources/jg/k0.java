@@ -3,15 +3,15 @@ package jg;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class k0 extends v4.k {
     @Override // v4.k
-    public final void D(v4.e1 e1Var) {
-        View view = e1Var.a;
+    public final void D(v4.f1 f1Var) {
+        View view = f1Var.a;
         ViewPropertyAnimator animate = view.animate();
-        this.A.add(e1Var);
-        animate.setDuration(this.d).alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setListener(new j0(this, e1Var, animate, view, 0)).start();
+        this.A.add(f1Var);
+        animate.setDuration(this.d).alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setListener(new j0(this, f1Var, animate, view, 0)).start();
     }
 
     @Override // v4.k
@@ -24,20 +24,20 @@ public final class k0 extends v4.k {
         return 0L;
     }
 
-    @Override // v4.m0
+    @Override // v4.n0
     public final long h() {
         return 220L;
     }
 
-    @Override // v4.m0
+    @Override // v4.n0
     public final long j() {
         return 220L;
     }
 
-    @Override // v4.k, v4.g1
-    public final void p(v4.e1 e1Var) {
-        super.p(e1Var);
-        View view = e1Var.a;
+    @Override // v4.k, v4.h1
+    public final void p(v4.f1 f1Var) {
+        super.p(f1Var);
+        View view = f1Var.a;
         view.setScaleX(0.0f);
         view.setScaleY(0.0f);
     }

@@ -1,26 +1,26 @@
 package aj;
 
-import org.telegram.ui.ActionBar.x4;
-import org.telegram.ui.ActionBar.y4;
-import yi.h;
+import org.telegram.ui.ActionBar.b5;
+import org.telegram.ui.ActionBar.c5;
+import yi.g;
 import zi.n0;
 import zi.o0;
-import zi.q0;
-import zi.t0;
+import zi.p0;
+import zi.s0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public abstract class e {
     public static final a a = new a("experimental_settings_allowed");
     public static final a b = new a("audio_recorder_v2_enabled");
-    public static final b c = new b("audio_recorder_noise_suppression", h.a);
+    public static final b c = new b("audio_recorder_noise_suppression", g.a);
     public static final a d = new a("round_video_camera2_enabled");
-    public static final b e = new b("round_video_output_resolution", t0.b);
+    public static final b e = new b("round_video_output_resolution", s0.b);
     public static final b f = new b("round_video_camera_resolution", o0.a);
-    public static final b g = new b("round_video_frame_rate", q0.b);
+    public static final b g = new b("round_video_frame_rate", p0.b);
     public static final c h = new c();
     public static final a i = new a("round_video_composition");
     public static final b j = new b("round_video_last_camera", n0.a);
-    public static final b k = new b("header_done_button_style", y4.a);
-    public static final b l = new b("header_done_button_shape", x4.b);
+    public static final b k = new b("header_done_button_style", c5.a);
+    public static final b l = new b("header_done_button_shape", b5.b);
 }

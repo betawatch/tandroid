@@ -2,9 +2,10 @@ package m;
 
 import android.content.Context;
 import android.view.View;
+import hi.u5;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d extends l.v {
     public final /* synthetic */ int l = 0;
@@ -15,11 +16,11 @@ public final class d extends l.v {
         super(context, kVar, view, true, R.attr.actionOverflowMenuStyle, 0);
         this.m = hVar;
         this.f = 8388613;
-        ia.d dVar = hVar.N;
-        this.h = dVar;
+        u5 u5Var = hVar.N;
+        this.h = u5Var;
         l.s sVar = this.i;
         if (sVar != null) {
-            sVar.h(dVar);
+            sVar.h(u5Var);
         }
     }
 
@@ -52,11 +53,11 @@ public final class d extends l.v {
             View view2 = hVar.r;
             this.e = view2 == null ? (View) hVar.n : view2;
         }
-        ia.d dVar = hVar.N;
-        this.h = dVar;
+        u5 u5Var = hVar.N;
+        this.h = u5Var;
         l.s sVar = this.i;
         if (sVar != null) {
-            sVar.h(dVar);
+            sVar.h(u5Var);
         }
     }
 }

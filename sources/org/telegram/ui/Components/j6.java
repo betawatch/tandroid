@@ -1,42 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class j6 extends Property {
-    public final /* synthetic */ int a;
+public final class j6 {
+    public final t5 a;
+    public final StaticLayout b;
+    public final float c;
+    public final int d;
+    public final float e;
+    public final float f;
+    public final float g;
+    public final float h;
+    public final /* synthetic */ m6 i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j6(String str, int i7) {
-        super(Float.class, str);
-        this.a = i7;
-        switch (i7) {
-            case 1:
-                super(Integer.class, str);
-                break;
-            default:
-                break;
+    public j6(m6 m6Var, StaticLayout staticLayout, float f10, int i7) {
+        this.i = m6Var;
+        this.b = staticLayout;
+        this.d = i7;
+        this.c = f10;
+        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
+        this.f = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineWidth(0);
+        this.g = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineBaseline(0);
+        this.h = staticLayout != null ? staticLayout.getHeight() - this.g : 0.0f;
+        if (m6Var.getCallback() instanceof View) {
+            this.a = x5.update(m6Var.p, (View) m6Var.getCallback(), this.a, staticLayout);
         }
     }
 
-    public void a(Object obj, Float f10) {
-        c(obj, f10.floatValue());
-    }
-
-    public abstract void b(int i7, Object obj);
-
-    public abstract void c(Object obj, float f10);
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                c(obj, ((Float) obj2).floatValue());
-                break;
-            default:
-                b(((Integer) obj2).intValue(), obj);
-                break;
+    public final void a(Canvas canvas, float f10) {
+        m6 m6Var = this.i;
+        int i7 = m6Var.C;
+        TextPaint textPaint = m6Var.a;
+        int max = Math.max(0, Math.min(org.telegram.messenger.ks.e4, (int) (i7 * f10)));
+        if (max == 0) {
+            return;
+        }
+        textPaint.setAlpha(org.telegram.messenger.ks.e4);
+        if (m6Var.V) {
+            textPaint.setShadowLayer(m6Var.W, 0.0f, m6Var.X, m6Var.Y);
+        }
+        int saveLayerAlpha = max < 255 ? canvas.saveLayerAlpha(null, max, 31) : -1;
+        this.b.draw(canvas);
+        x5.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, m6Var.b0);
+        if (saveLayerAlpha != -1) {
+            canvas.restoreToCount(saveLayerAlpha);
         }
     }
 }

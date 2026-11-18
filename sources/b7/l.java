@@ -3,12 +3,12 @@ package b7;
 import android.content.Context;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.gj;
-import org.telegram.ui.Components.u51;
+import org.telegram.messenger.fj;
+import org.telegram.ui.Components.f61;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.v9;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l implements c, g6.h {
     public int a;
@@ -18,20 +18,16 @@ public final class l implements c, g6.h {
     }
 
     @Override // b7.c
-    public int D(Context context, String str) {
+    public int C(Context context, String str) {
         return this.a;
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void b(g6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void a(g6.f fVar, boolean z10) {
     }
 
     @Override // g6.h
-    public /* bridge */ /* synthetic */ void c(g6.f fVar, int i7) {
-    }
-
-    @Override // g6.h
-    public /* bridge */ /* synthetic */ void d(g6.f fVar, int i7) {
+    public /* bridge */ /* synthetic */ void b(g6.f fVar, int i7) {
     }
 
     @Override // g6.h
@@ -39,14 +35,18 @@ public final class l implements c, g6.h {
     }
 
     @Override // g6.h
-    public void f(g6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void f(g6.f fVar, int i7) {
+    }
+
+    @Override // g6.h
+    public void h(g6.f fVar, String str) {
         MediaController B;
-        gj gjVar;
+        fj fjVar;
         g6.c cVar = (g6.c) fVar;
         if (cVar == null) {
             return;
         }
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         h6.h hVar = cVar.j;
         if (hVar == null) {
             return;
@@ -56,7 +56,7 @@ public final class l implements c, g6.h {
             atomicInteger.set(0);
         }
         hVar.p(new v9());
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         if (hVar.w()) {
             h6.h.x(new h6.i(hVar, 3));
         } else {
@@ -65,12 +65,12 @@ public final class l implements c, g6.h {
         int i7 = this.a;
         long j3 = -1;
         if (i7 == 0) {
-            u51 u51Var = PhotoViewer.p1().G2;
-            if (u51Var != null) {
-                j3 = u51Var.S();
+            f61 f61Var = PhotoViewer.p1().G2;
+            if (f61Var != null) {
+                j3 = f61Var.S();
             }
-        } else if (i7 == 1 && (gjVar = (B = MediaController.B()).v0) != null) {
-            j3 = B.D(gjVar);
+        } else if (i7 == 1 && (fjVar = (B = MediaController.B()).v0) != null) {
+            j3 = B.D(fjVar);
         }
         if (j3 >= 0) {
             d1.f.v(j3);
@@ -79,7 +79,7 @@ public final class l implements c, g6.h {
     }
 
     @Override // g6.h
-    public void i(g6.f fVar, int i7) {
+    public void k(g6.f fVar, int i7) {
         d1.f.d(false);
         d1.f.C();
     }
@@ -99,7 +99,7 @@ public final class l implements c, g6.h {
     }
 
     @Override // b7.c
-    public int q(Context context, String str, boolean z10) {
+    public int o(Context context, String str, boolean z10) {
         return 0;
     }
 

@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import m9.y;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class h implements y {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
@@ -241,7 +241,7 @@ public abstract class h implements y {
         t6.append(timeUnit.toString().toLowerCase(locale));
         String sb2 = t6.toString();
         if (nanos + 1000 < 0) {
-            String v = r.b.v(sb2, " (plus ");
+            String v = p5.c.v(sb2, " (plus ");
             long j10 = -nanos;
             long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
             long nanos2 = j10 - timeUnit.toNanos(convert);
@@ -249,17 +249,17 @@ public abstract class h implements y {
             if (convert > 0) {
                 String str = v + convert + " " + lowerCase;
                 if (z10) {
-                    str = r.b.v(str, ",");
+                    str = p5.c.v(str, ",");
                 }
-                v = r.b.v(str, " ");
+                v = p5.c.v(str, " ");
             }
             if (z10) {
                 v = v + nanos2 + " nanoseconds ";
             }
-            sb2 = r.b.v(v, "delay)");
+            sb2 = p5.c.v(v, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(r.b.v(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(p5.c.v(sb2, " but future completed as timeout expired"));
         }
         throw new TimeoutException(p0.E(sb2, " for ", hVar));
     }

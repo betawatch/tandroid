@@ -1,48 +1,70 @@
 package org.telegram.messenger;
 
+import android.os.Bundle;
+import com.google.android.gms.tasks.CancellationToken;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.concurrent.CancellationException;
+import org.json.JSONObject;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.n60;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f9 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final class f9 implements v0.g {
+    public final /* synthetic */ CancellationToken a;
+    public final /* synthetic */ TaskCompletionSource b;
+    public final /* synthetic */ n60 c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Runnable[] e;
 
-    public /* synthetic */ f9(int i7, int i10, int i11) {
-        this.a = i11;
-        this.b = i7;
-        this.c = i10;
+    public f9(CancellationToken cancellationToken, TaskCompletionSource taskCompletionSource, n60 n60Var, int i7, Runnable[] runnableArr) {
+        this.a = cancellationToken;
+        this.b = taskCompletionSource;
+        this.c = n60Var;
+        this.d = i7;
+        this.e = runnableArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i7 = this.a;
-        int i10 = this.c;
-        int i11 = this.b;
-        switch (i7) {
-            case 0:
-                ConnectionsManager.getInstance(i11).cancelRequest(i10, true);
-                break;
-            case 1:
-                ConnectionsManager.getInstance(i11).cancelRequest(i10, true);
-                break;
-            case 2:
-                String[] strArr = MediaController.W1;
-                ns.f(i11).k(ns.m2, Integer.valueOf(i10));
-                break;
-            case 3:
-                ConnectionsManager.getInstance(i11).cancelRequest(i10, true);
-                break;
-            case 4:
-                ConnectionsManager.lambda$onConnectionStateChanged$15(i11, i10);
-                break;
-            case 5:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(i11, i10);
-                break;
-            default:
-                ConnectionsManager.getInstance(i11).cancelRequest(i10, true);
-                break;
+    @Override // v0.g
+    public final void a(Object obj) {
+        w0.i iVar = (w0.i) obj;
+        if (this.a.isCancellationRequested()) {
+            return;
+        }
+        boolean z10 = iVar instanceof w0.k;
+        TaskCompletionSource taskCompletionSource = this.b;
+        if (z10) {
+            taskCompletionSource.trySetException(new Exception("EMPTY"));
+        } else if ((iVar instanceof w0.g) || (iVar instanceof w0.j)) {
+            taskCompletionSource.trySetException(new CancellationException());
+        } else {
+            taskCompletionSource.trySetException(iVar);
+        }
+    }
+
+    @Override // v0.g
+    public final void onResult(Object obj) {
+        v0.n nVar = (v0.n) obj;
+        TaskCompletionSource taskCompletionSource = this.b;
+        CancellationToken cancellationToken = this.a;
+        if (cancellationToken.isCancellationRequested()) {
+            return;
+        }
+        try {
+            String string = new JSONObject(((Bundle) nVar.a.a).getString("androidx.credentials.BUNDLE_KEY_REQUEST_JSON")).getJSONObject("data").getJSONObject("vp_token").getJSONArray("firebase").getString(0);
+            this.c.run();
+            TLRPC.TL_auth_finishFirebasePnvLogin tL_auth_finishFirebasePnvLogin = new TLRPC.TL_auth_finishFirebasePnvLogin();
+            tL_auth_finishFirebasePnvLogin.google_token = string;
+            int i7 = this.d;
+            e9 e9Var = new e9(i7, ConnectionsManager.getInstance(i7).sendRequestTyped(tL_auth_finishFirebasePnvLogin, new d3.b(1), new z3(1, cancellationToken, taskCompletionSource), 8), 1);
+            Runnable[] runnableArr = this.e;
+            runnableArr[0] = e9Var;
+            if (cancellationToken.isCancellationRequested()) {
+                runnableArr[0].run();
+            }
+        } catch (Exception e10) {
+            taskCompletionSource.trySetException(e10);
         }
     }
 }

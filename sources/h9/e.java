@@ -12,15 +12,15 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.SortedSet;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class e extends h implements NavigableMap {
-    public final /* synthetic */ k1 n;
+    public final /* synthetic */ l1 n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(k1 k1Var, NavigableMap navigableMap) {
-        super(k1Var, navigableMap);
-        this.n = k1Var;
+    public e(l1 l1Var, NavigableMap navigableMap) {
+        super(l1Var, navigableMap);
+        this.n = l1Var;
     }
 
     @Override // h9.h

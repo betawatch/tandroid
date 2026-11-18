@@ -2,12 +2,12 @@ package hi;
 
 import android.content.DialogInterface;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.xr;
-import org.telegram.ui.Components.gz0;
-import org.telegram.ui.c40;
+import org.telegram.messenger.vr;
+import org.telegram.ui.Components.nz0;
+import org.telegram.ui.f40;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class f1 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class f1 implements DialogInterface.OnDismissListen
     public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                int i7 = i2.C1;
+                int i7 = j2.C1;
                 break;
             case 1:
                 org.telegram.ui.b.a = false;
@@ -27,13 +27,13 @@ public final /* synthetic */ class f1 implements DialogInterface.OnDismissListen
             case 2:
                 break;
             case 3:
-                xr.j.edit().putInt("dismissed_count", xr.j.getInt("dismissed_count", 0) + 1).apply();
+                vr.j.edit().putInt("dismissed_count", vr.j.getInt("dismissed_count", 0) + 1).apply();
                 break;
             case 4:
-                int i10 = gz0.e;
+                int i10 = nz0.e;
                 break;
             case 5:
-                c40 c40Var = c40.C5;
+                f40 f40Var = f40.C5;
                 break;
             case 6:
                 break;

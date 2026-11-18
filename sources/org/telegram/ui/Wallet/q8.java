@@ -1,162 +1,205 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.os.SystemClock;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.er;
-import org.telegram.ui.pf;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.fc;
+import org.telegram.messenger.ks;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_wallet;
+import org.telegram.ui.Components.mh0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final class q8 extends FrameLayout {
-    public final ImageView a;
-    public final b4 b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public int h;
-    public float n;
-    public float r;
-    public boolean s;
-    public ValueAnimator w;
-    public r1.g x;
+public final class q8 {
+    public int[] A;
+    public int[] B;
+    public boolean C;
+    public boolean D;
+    public int E;
+    public Path F;
+    public Bitmap G;
+    public int H;
+    public long I;
+    public long J;
+    public boolean K;
+    public boolean L;
+    public boolean M;
+    public boolean N;
+    public boolean O;
+    public boolean P;
+    public boolean Q;
+    public boolean R;
+    public boolean S;
+    public boolean T;
+    public float U;
+    public float V;
+    public float W;
+    public float X;
+    public float Y;
+    public float Z;
+    public final String a;
+    public float a0;
+    public TL_wallet.nftItem b;
+    public float b0;
+    public final fi.s2 c;
+    public float c0;
+    public final ImageReceiver d;
+    public final /* synthetic */ r8 d0;
+    public final p8 e;
+    public final p8 f;
+    public final p8 g;
+    public final p8 h;
+    public final p8 i;
+    public final p8 j;
+    public final p8 k;
+    public final p8 l;
+    public final p8 m;
+    public final p8 n;
+    public final p8 o;
+    public final p8 p;
+    public final p8 q;
+    public final p8 r;
+    public final p8[] s;
+    public final TL_stars.starGiftAttributeBackdrop t;
+    public Bitmap u;
+    public Bitmap v;
+    public Bitmap w;
+    public Canvas x;
+    public int[] y;
+    public int[] z;
 
-    public q8(Context context) {
-        super(context);
-        this.e = 1.0f;
-        this.h = -1;
-        setClipChildren(false);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setImageResource(R.drawable.mini_gram_72);
-        imageView.setScaleX(0.7407407f);
-        imageView.setScaleY(0.7407407f);
-        addView(imageView, c8.ja.c(-1.0f, -1));
-        b4 b4Var = new b4(this, context, new l(this, 11));
-        this.b = b4Var;
-        addView(b4Var, c8.ja.c(-1.0f, -1));
-    }
-
-    public final void a(float f10) {
-        if (this.x == null) {
-            r1.g gVar = new r1.g(new r1.f(this.e));
-            this.x = gVar;
-            r1.h hVar = new r1.h(f10);
-            hVar.a(0.55f);
-            hVar.b(280.0f);
-            gVar.m = hVar;
-            this.x.f(0.001f);
-            this.x.b(new p3(this, 1));
-        }
-        this.x.c(f10);
-    }
-
-    public final void b() {
-        this.h = -1;
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(false);
-        }
-        this.f = (float) Math.IEEEremainder((this.f + this.c) - c(), 6.283185307179586d);
-        float IEEEremainder = (float) Math.IEEEremainder(this.d, 6.283185307179586d);
-        this.s = true;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        this.w = ofFloat;
-        ofFloat.setDuration(350L);
-        this.w.setInterpolator(er.h);
-        this.w.addUpdateListener(new pf(this, IEEEremainder, 6));
-        this.w.start();
-        a(1.0f);
-    }
-
-    public final float c() {
-        return ((float) (((SystemClock.uptimeMillis() / 1000.0d) * 0.5961171984672546d) % 6.283185307179586d)) + this.f;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.setPaused(false);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        this.b.setPaused(true);
-        ValueAnimator valueAnimator = this.w;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        r1.g gVar = this.x;
-        if (gVar != null) {
-            gVar.d();
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        b4 b4Var = this.b;
-        if (b4Var.n && b4Var.getVisibility() == 0) {
-            int actionMasked = motionEvent.getActionMasked();
-            if (actionMasked == 0) {
-                if (!this.s && this.e <= 1.001f) {
-                    this.c = c();
-                    this.d = 0.0f;
-                }
-                ValueAnimator valueAnimator = this.w;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    this.w = null;
-                }
-                this.s = false;
-                this.h = motionEvent.getPointerId(0);
-                this.n = motionEvent.getX();
-                this.r = motionEvent.getY();
-                if (getParent() != null) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                a(3.0f);
-                return true;
+    public q8(r8 r8Var, TL_wallet.nftItem nftitem) {
+        org.telegram.ui.ActionBar.h2 h2Var = r8Var.a;
+        this.d0 = r8Var;
+        this.c = new fi.s2(this, r8Var, 6);
+        this.d = new ImageReceiver(r8Var.N);
+        p8 p8Var = new p8(0.0f, 900.0f, 0.86f);
+        this.e = p8Var;
+        p8 p8Var2 = new p8(0.0f, 900.0f, 0.86f);
+        this.f = p8Var2;
+        p8 p8Var3 = new p8(1.0f, 420.0f, 0.78f);
+        this.g = p8Var3;
+        p8 p8Var4 = new p8(1.0f, 700.0f, 0.9f);
+        this.h = p8Var4;
+        p8 p8Var5 = new p8(0.0f, 700.0f, 0.9f);
+        this.i = p8Var5;
+        p8 p8Var6 = new p8(0.0f, 380.0f, 0.82f);
+        this.j = p8Var6;
+        p8 p8Var7 = new p8(0.0f, 30.0f, 1.0f);
+        this.k = p8Var7;
+        p8 p8Var8 = new p8(0.0f, 520.0f, 0.62f);
+        this.l = p8Var8;
+        p8 p8Var9 = new p8(0.0f, 300.0f, 1.0f);
+        this.m = p8Var9;
+        p8 p8Var10 = new p8(0.0f, 150.0f, 0.82f);
+        this.n = p8Var10;
+        p8 p8Var11 = new p8(0.0f, 150.0f, 0.82f);
+        this.o = p8Var11;
+        p8 p8Var12 = new p8(0.0f, 240.0f, 1.0f);
+        this.p = p8Var12;
+        p8 p8Var13 = new p8(0.0f, 700.0f, 1.0f);
+        this.q = p8Var13;
+        p8 p8Var14 = new p8(1.0f, 260.0f, 1.0f);
+        this.r = p8Var14;
+        int i7 = 5;
+        this.s = new p8[]{p8Var, p8Var2, p8Var3, p8Var4, p8Var5, p8Var6, p8Var7, p8Var8, p8Var9, p8Var10, p8Var11, p8Var12, p8Var13, p8Var14};
+        this.E = -2;
+        this.V = 1.0f;
+        this.c0 = 1.0f;
+        this.b = nftitem;
+        this.a = nftitem.address;
+        ArrayList<TL_stars.StarGiftAttribute> arrayList = nftitem.gift.attributes;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            TL_stars.StarGiftAttribute starGiftAttribute = arrayList.get(i10);
+            i10++;
+            TL_stars.StarGiftAttribute starGiftAttribute2 = starGiftAttribute;
+            if (starGiftAttribute2 instanceof TL_stars.starGiftAttributeBackdrop) {
+                this.t = (TL_stars.starGiftAttributeBackdrop) starGiftAttribute2;
             }
-            if (actionMasked != 1) {
-                if (actionMasked == 2) {
-                    int i7 = this.h;
-                    if (i7 != -1) {
-                        int findPointerIndex = motionEvent.findPointerIndex(i7);
-                        if (findPointerIndex < 0) {
-                            b();
-                            return true;
-                        }
-                        float radians = ((float) Math.toRadians(0.800000011920929d)) / org.telegram.messenger.g0.p;
-                        this.c = com.google.android.gms.internal.vision.e2.z(motionEvent.getX(findPointerIndex), this.n, radians, this.c);
-                        this.d = com.google.android.gms.internal.vision.e2.z(motionEvent.getY(findPointerIndex), this.r, radians, this.d);
-                        this.n = motionEvent.getX(findPointerIndex);
-                        this.r = motionEvent.getY(findPointerIndex);
-                        return true;
-                    }
-                } else if (actionMasked != 3) {
-                    if (actionMasked != 6) {
-                        if (this.h != -1) {
-                        }
-                    } else if (motionEvent.getPointerId(motionEvent.getActionIndex()) == this.h) {
-                        int i10 = motionEvent.getActionIndex() == 0 ? 1 : 0;
-                        this.h = motionEvent.getPointerId(i10);
-                        this.n = motionEvent.getX(i10);
-                        this.r = motionEvent.getY(i10);
-                        return true;
-                    }
-                    return true;
-                }
+            if (starGiftAttribute2 instanceof TL_stars.starGiftAttributePattern) {
+                this.d.q0(fc.b(((TL_stars.starGiftAttributePattern) starGiftAttribute2).document), "60_60_firstframe", null, null, nftitem.gift, 1);
             }
-            if (this.h != -1) {
-                b();
-            }
-            return true;
         }
-        return false;
+        h3 h3Var = new h3(this, i7);
+        fi.s2 s2Var = this.c;
+        s2Var.h1 = h3Var;
+        this.d.h1 = h3Var;
+        s2Var.d = h2Var.getCurrentAccount();
+        this.d.d = h2Var.getCurrentAccount();
+        fi.s2 s2Var2 = this.c;
+        s2Var2.v0 = false;
+        s2Var2.W(1);
+        this.c.q0(fc.b(nftitem.gift.getDocument()), "120_120_nolimit", null, null, nftitem.gift, 1);
+        if (r8Var.isAttachedToWindow()) {
+            this.c.P();
+            this.d.P();
+        }
+    }
+
+    public final Bitmap a() {
+        r8 r8Var = this.d0;
+        RectF rectF = r8Var.F;
+        fi.s2 s2Var = this.c;
+        Bitmap n10 = s2Var.n();
+        if (n10 == null || n10.isRecycled()) {
+            return this.u;
+        }
+        mh0 B = s2Var.B();
+        int i7 = B == null ? 0 : B.b0;
+        Bitmap bitmap = this.v;
+        if (bitmap != null && this.G == n10 && this.E == i7) {
+            return this.u;
+        }
+        this.G = n10;
+        this.E = i7;
+        if (bitmap == null) {
+            this.v = Bitmap.createBitmap(ks.L4, ks.L4, Bitmap.Config.ARGB_8888);
+            this.x = new Canvas(this.v);
+        }
+        this.v.eraseColor(0);
+        rectF.set(10.0f, 10.0f, 278.0f, 278.0f);
+        this.x.drawBitmap(n10, (Rect) null, rectF, r8Var.E);
+        if (this.C) {
+            this.D = true;
+        } else {
+            c();
+        }
+        return this.u;
+    }
+
+    public final boolean b() {
+        int i7 = this.H;
+        return i7 == 2 || i7 == 1;
+    }
+
+    /* JADX WARN: Type inference failed for: r8v1, types: [int[], java.io.Serializable] */
+    public final void c() {
+        if (this.y == null) {
+            this.y = new int[82944];
+            this.z = new int[82944];
+            this.A = new int[82944];
+            org.telegram.messenger.r5 r5Var = sa.a;
+            this.B = new int[ks.L4];
+        }
+        this.v.getPixels(this.y, 0, ks.L4, 0, 0, ks.L4, ks.L4);
+        this.C = true;
+        this.D = false;
+        boolean z10 = this.w == null;
+        int[] iArr = this.y;
+        int[] iArr2 = this.z;
+        int[] iArr3 = this.A;
+        ?? r82 = this.B;
+        if (sa.a == null) {
+            sa.a = new org.telegram.messenger.r5("walletStickerOutline", true);
+        }
+        sa.a.postRunnable(new di.o3(this, iArr, iArr2, iArr3, (Serializable) r82, z10, 9));
     }
 }

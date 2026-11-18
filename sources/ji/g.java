@@ -3,12 +3,12 @@ package ji;
 import ai.c2;
 import ai.n0;
 import ai.t;
-import org.telegram.messenger.z10;
+import org.telegram.messenger.x10;
 import org.telegram.ui.Dictation.DictationAsr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g implements z10 {
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g implements x10 {
     public final /* synthetic */ int a;
     public final /* synthetic */ m b;
     public final /* synthetic */ String[] c;
@@ -19,7 +19,7 @@ public final /* synthetic */ class g implements z10 {
         this.c = strArr;
     }
 
-    @Override // org.telegram.messenger.z10
+    @Override // org.telegram.messenger.x10
     public final void a(Object obj) {
         c2 c2Var;
         p pVar;
@@ -34,39 +34,39 @@ public final /* synthetic */ class g implements z10 {
                     t H = DictationAsr.H(str);
                     boolean z10 = (H == null || DictationAsr.w(H)) ? false : true;
                     DictationAsr.S(str);
-                    DictationAsr.s(H);
+                    DictationAsr.r(H);
                     if (z10 && mVar.c == 2 && (pVar = mVar.h) != null) {
                         mVar.n = "";
-                        if (pVar.N1) {
-                            pVar.v1 = null;
+                        if (pVar.P1) {
+                            pVar.x1 = null;
                         }
-                        pVar.i0 = "";
-                        pVar.w1 = -1;
-                        pVar.j0 = null;
-                        pVar.m0.clear();
-                        pVar.S0 = true;
-                        pVar.B0 = 0.0f;
-                        pVar.A0 = 0.0f;
-                        pVar.C0 = 0.0f;
+                        pVar.k0 = "";
+                        pVar.y1 = -1;
+                        pVar.l0 = null;
+                        pVar.o0.clear();
+                        pVar.U0 = true;
                         pVar.D0 = 0.0f;
-                        pVar.F0 = -1.0f;
-                        pVar.E0 = -1.0f;
+                        pVar.C0 = 0.0f;
+                        pVar.E0 = 0.0f;
+                        pVar.F0 = 0.0f;
                         pVar.H0 = -1.0f;
-                        pVar.J0 = false;
-                        pVar.Q0 = 0L;
-                        pVar.R0 = 0.0f;
-                        pVar.y0 = true;
-                        pVar.X0 = true;
+                        pVar.G0 = -1.0f;
+                        pVar.J0 = -1.0f;
+                        pVar.L0 = false;
+                        pVar.S0 = 0L;
+                        pVar.T0 = 0.0f;
+                        pVar.A0 = true;
+                        pVar.Z0 = true;
                         pVar.invalidate();
                     }
                     p pVar2 = mVar.h;
                     if (pVar2 != null) {
-                        pVar2.setLanguage(n0.l(str));
+                        pVar2.setLanguage(n0.p(str));
                     }
                     if (mVar.c == 2 && (c2Var = mVar.f) != null) {
                         c2Var.p(str);
                     }
-                    mVar.t();
+                    mVar.u();
                     break;
                 } else {
                     DictationAsr.T(true);
@@ -79,22 +79,22 @@ public final /* synthetic */ class g implements z10 {
                     t H2 = DictationAsr.H(str2);
                     boolean z11 = (H2 == null || DictationAsr.w(H2)) ? false : true;
                     DictationAsr.S(str2);
-                    DictationAsr.s(H2);
+                    DictationAsr.r(H2);
                     m mVar2 = this.b;
                     if (z11 && mVar2.c == 2 && mVar2.X == null && mVar2.e0 == null) {
                         mVar2.M.clear();
-                        mVar2.n();
+                        mVar2.p();
                     }
-                    String l10 = n0.l(str2);
-                    mVar2.l0 = l10;
+                    String p10 = n0.p(str2);
+                    mVar2.l0 = p10;
                     e eVar = mVar2.K;
                     if (eVar != null) {
-                        eVar.setLanguage(l10);
+                        eVar.setLanguage(p10);
                     }
                     if (mVar2.c == 2 && (c2Var2 = mVar2.f) != null) {
                         c2Var2.p(str2);
                     }
-                    mVar2.t();
+                    mVar2.u();
                     break;
                 } else {
                     DictationAsr.T(true);

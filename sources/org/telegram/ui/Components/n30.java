@@ -1,35 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class n30 extends FrameLayout {
-    public View a;
-    public TextView b;
-    public fh0 c;
-    public LinearLayout d;
+public enum n30 {
+    c(-15431455, "BLUE"),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(-15497247, "BLUE_ALT"),
+    d(-13276952, "BLUE_DEEP"),
+    e(-15431455, "BLUE_LIGHT"),
+    f(-1996271, "ORANGE"),
+    h(-1940716, "ORANGE_DEEP"),
+    n(-14175180, "GREEN"),
+    r(-2148011, "RED"),
+    s(-14836538, "CYAN"),
+    w(-6335009, "PURPLE"),
+    x(-9534569, "GRAY");
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        super.onMeasure(i7, View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.g0.L(80.0f), TLObject.FLAG_30));
-    }
+    public final int a;
+    public final int b;
 
-    public void setGravity(int i7) {
-        this.b.setGravity(i7);
-    }
-
-    public void setText(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i7) {
-        TextView textView = this.b;
-        org.telegram.ui.ActionBar.q6.q(textView);
-        textView.setTextColor(i7);
+    n30(int i7, String str) {
+        this.a = r2;
+        this.b = i7;
     }
 }

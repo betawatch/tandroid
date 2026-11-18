@@ -10,7 +10,7 @@ import android.os.Build;
 import android.support.v4.media.session.w;
 import dh.i;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
 public final class f implements a, dh.b, si.a {
     public final a a;
@@ -48,40 +48,6 @@ public final class f implements a, dh.b, si.a {
         return gVar;
     }
 
-    @Override // ui.a
-    public final void b0(float f10, float f11, float f12, float f13, Canvas canvas) {
-        dh.g gVar;
-        ri.c cVar;
-        if (!canvas.isHardwareAccelerated()) {
-            a aVar = this.a;
-            if (aVar != null) {
-                aVar.b0(f10, f11, f12, f13, canvas);
-                return;
-            }
-            return;
-        }
-        if (this.r) {
-            throw new IllegalStateException();
-        }
-        a aVar2 = this.f;
-        if (aVar2 != null) {
-            aVar2.b0(f10, f11, f12, f13, canvas);
-        }
-        canvas.save();
-        if (!this.n) {
-            canvas.clipRect(f10, f11, f12, f13);
-        }
-        int i7 = Build.VERSION.SDK_INT;
-        if (i7 >= 31 && (cVar = this.h) != null) {
-            cVar.b0(f10, f11, f12, f13, canvas);
-        } else if (i7 < 31 || (gVar = this.d) == null) {
-            canvas.drawRenderNode(this.b);
-        } else {
-            gVar.c(canvas, this.e);
-        }
-        canvas.restore();
-    }
-
     @Override // dh.b
     public final void c(fh.g gVar) {
         this.w.add(gVar);
@@ -104,7 +70,7 @@ public final class f implements a, dh.b, si.a {
             a aVar = this.f;
             if (aVar != null) {
                 float f13 = i7 * 2;
-                aVar.b0(rectF.left - f13, rectF.top - f13, rectF.right + f13, rectF.bottom + f13, canvas);
+                aVar.o(rectF.left - f13, rectF.top - f13, rectF.right + f13, rectF.bottom + f13, canvas);
                 canvas2 = canvas;
             } else {
                 canvas2 = canvas;
@@ -194,5 +160,39 @@ public final class f implements a, dh.b, si.a {
 
     public final void m(int i7, int i10) {
         this.b.setPosition(0, 0, i7, i10);
+    }
+
+    @Override // ui.a
+    public final void o(float f10, float f11, float f12, float f13, Canvas canvas) {
+        dh.g gVar;
+        ri.c cVar;
+        if (!canvas.isHardwareAccelerated()) {
+            a aVar = this.a;
+            if (aVar != null) {
+                aVar.o(f10, f11, f12, f13, canvas);
+                return;
+            }
+            return;
+        }
+        if (this.r) {
+            throw new IllegalStateException();
+        }
+        a aVar2 = this.f;
+        if (aVar2 != null) {
+            aVar2.o(f10, f11, f12, f13, canvas);
+        }
+        canvas.save();
+        if (!this.n) {
+            canvas.clipRect(f10, f11, f12, f13);
+        }
+        int i7 = Build.VERSION.SDK_INT;
+        if (i7 >= 31 && (cVar = this.h) != null) {
+            cVar.o(f10, f11, f12, f13, canvas);
+        } else if (i7 < 31 || (gVar = this.d) == null) {
+            canvas.drawRenderNode(this.b);
+        } else {
+            gVar.c(canvas, this.e);
+        }
+        canvas.restore();
     }
 }

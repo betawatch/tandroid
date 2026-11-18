@@ -1,66 +1,54 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.HashSet;
+import android.text.TextUtils;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h00 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
-    public TextView a;
-    public TextView b;
-    public org.telegram.ui.Components.dg0 c;
-    public boolean d;
+public final class h00 extends rg.a {
+    public CharSequence c;
+    public org.telegram.messenger.ro d;
     public TLRPC.TL_dialogFilterSuggested e;
 
-    public TLRPC.TL_dialogFilterSuggested getSuggestedFilter() {
-        return this.e;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.d) {
-            canvas.drawLine(0.0f, getHeight() - 1, getWidth() - getPaddingRight(), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-        accessibilityNodeInfo.setText(this.c.getText());
-        accessibilityNodeInfo.setClassName("android.widget.Button");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i7, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i7), org.telegram.messenger.g0.L(64.0f));
-        measureChildWithMargins(this.c, i7, 0, i10, 0);
-        TextView textView = this.a;
-        org.telegram.ui.Components.dg0 dg0Var = this.c;
-        measureChildWithMargins(textView, i7, dg0Var.getMeasuredWidth(), i10, 0);
-        measureChildWithMargins(this.b, i7, dg0Var.getMeasuredWidth(), i10, 0);
-    }
-
-    public void setAddOnClickListener(View.OnClickListener onClickListener) {
-        this.c.setOnClickListener(onClickListener);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final void updateColors() {
-        try {
-            this.c.setProgressColor(org.telegram.ui.ActionBar.j6.x0(null, org.telegram.ui.ActionBar.j6.Ei, false));
-            invalidate();
-        } catch (Exception e10) {
-            org.telegram.messenger.a8.g(e10, true);
+        if (!(obj instanceof h00)) {
+            return false;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z5
-    public final /* synthetic */ void addColorKeys(HashSet hashSet) {
+        h00 h00Var = (h00) obj;
+        int i7 = h00Var.a;
+        int i10 = this.a;
+        if (i7 != i10) {
+            return false;
+        }
+        if ((i10 == 0 || i10 == 4 || i10 == 3 || i10 == 6) && !TextUtils.equals(this.c, h00Var.c)) {
+            return false;
+        }
+        int i11 = this.a;
+        if (i11 == 2) {
+            org.telegram.messenger.ro roVar = this.d;
+            boolean z10 = roVar == null;
+            org.telegram.messenger.ro roVar2 = h00Var.d;
+            if (z10 != (roVar2 == null)) {
+                return false;
+            }
+            if (roVar != null && roVar.a != roVar2.a) {
+                return false;
+            }
+        }
+        if (i11 == 5) {
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested = this.e;
+            boolean z11 = tL_dialogFilterSuggested == null;
+            TLRPC.TL_dialogFilterSuggested tL_dialogFilterSuggested2 = h00Var.e;
+            if (z11 != (tL_dialogFilterSuggested2 == null)) {
+                return false;
+            }
+            if (tL_dialogFilterSuggested != null && tL_dialogFilterSuggested.filter.id != tL_dialogFilterSuggested2.filter.id) {
+                return false;
+            }
+        }
+        return true;
     }
 }

@@ -5,12 +5,12 @@ import android.os.IInterface;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public interface b extends IInterface {
-    void F(Bundle bundle);
+    void E(Bundle bundle);
 
-    void M(List list);
+    void L(List list);
 
     void e(int i7);
 
@@ -20,9 +20,9 @@ public interface b extends IInterface {
 
     void j(int i7);
 
-    void l0(CharSequence charSequence);
+    void k0(CharSequence charSequence);
 
-    void n0();
+    void m0();
 
-    void p0(MediaMetadataCompat mediaMetadataCompat);
+    void o0(MediaMetadataCompat mediaMetadataCompat);
 }

@@ -10,7 +10,7 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -51,37 +51,37 @@ public final /* synthetic */ class b implements Vector.TLDeserializer {
             case 13:
                 return TL_stars.SavedStarGift.TLdeserialize(inputSerializedData, i7, z10);
             case 14:
-                return TL_stars.StarsSubscription.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.TL_payments_starGiftOnchainOfferTxMessage.TLdeserialize(inputSerializedData, i7, z10);
             case 15:
-                return TL_stars.StarsTransaction.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarsSubscription.TLdeserialize(inputSerializedData, i7, z10);
             case 16:
-                return TL_stars.TL_AuctionBidLevel.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarsTransaction.TLdeserialize(inputSerializedData, i7, z10);
             case 17:
-                return TL_stars.StarGiftAuctionRound.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.TL_AuctionBidLevel.TLdeserialize(inputSerializedData, i7, z10);
             case 18:
-                return TL_stars.TL_starGiftCollection.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarGiftAuctionRound.TLdeserialize(inputSerializedData, i7, z10);
             case 19:
-                return TL_stars.StarGiftAttribute.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.TL_starGiftCollection.TLdeserialize(inputSerializedData, i7, z10);
             case 20:
-                return TL_stars.StarsAmount.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarGiftAttribute.TLdeserialize(inputSerializedData, i7, z10);
             case 21:
-                return TL_stars.StarGift.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarsAmount.TLdeserialize(inputSerializedData, i7, z10);
             case 22:
-                return TL_stars.TL_starsGiveawayWinnersOption.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarGift.TLdeserialize(inputSerializedData, i7, z10);
             case 23:
-                return TLRPC.MessageMedia.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.TL_starsGiveawayWinnersOption.TLdeserialize(inputSerializedData, i7, z10);
             case 24:
-                return TL_stars.starGiftAttributeCounter.TLdeserialize(inputSerializedData, i7, z10);
+                return TLRPC.MessageMedia.TLdeserialize(inputSerializedData, i7, z10);
             case 25:
-                return TL_stars.StarGiftUpgradePrice.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.starGiftAttributeCounter.TLdeserialize(inputSerializedData, i7, z10);
             case 26:
-                return TL_stats.BroadcastRevenueTransaction.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stars.StarGiftUpgradePrice.TLdeserialize(inputSerializedData, i7, z10);
             case 27:
-                return TL_stats.PostInteractionCounters.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stats.BroadcastRevenueTransaction.TLdeserialize(inputSerializedData, i7, z10);
             case 28:
-                return TL_stats.TL_statsGroupTopPoster.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stats.PostInteractionCounters.TLdeserialize(inputSerializedData, i7, z10);
             default:
-                return TL_stats.TL_statsGroupTopAdmin.TLdeserialize(inputSerializedData, i7, z10);
+                return TL_stats.TL_statsGroupTopPoster.TLdeserialize(inputSerializedData, i7, z10);
         }
     }
 }

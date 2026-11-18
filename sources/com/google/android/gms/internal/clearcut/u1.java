@@ -23,7 +23,7 @@ public final class u1 extends com.google.android.gms.common.api.internal.d {
             v1 v1Var = cVar2.r;
             int c10 = v1Var.c();
             byte[] bArr = new byte[c10];
-            m1.a(v1Var, bArr, c10);
+            m1.b(v1Var, bArr, c10);
             cVar2.b = bArr;
             z1 z1Var = (z1) y1Var.n();
             Parcel obtain = Parcel.obtain();

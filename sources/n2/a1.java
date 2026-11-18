@@ -2,9 +2,9 @@ package n2;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class a1 extends f2.n {
+public final class a1 extends f2.o {
     public int i;
     public int j;
     public boolean k;
@@ -13,12 +13,12 @@ public final class a1 extends f2.n {
     public int n;
     public long o;
 
-    @Override // f2.n, f2.m
+    @Override // f2.o, f2.n
     public final boolean a() {
         return super.a() && this.n == 0;
     }
 
-    @Override // f2.n, f2.m
+    @Override // f2.o, f2.n
     public final ByteBuffer b() {
         int i7;
         if (super.a() && (i7 = this.n) > 0) {
@@ -28,7 +28,7 @@ public final class a1 extends f2.n {
         return super.b();
     }
 
-    @Override // f2.m
+    @Override // f2.n
     public final void c(ByteBuffer byteBuffer) {
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
@@ -62,21 +62,21 @@ public final class a1 extends f2.n {
         l10.flip();
     }
 
-    @Override // f2.n, f2.m
+    @Override // f2.o, f2.n
     public final long g(long j3) {
         return Math.max(0L, j3 - h2.l0.Y(this.b.a, this.j + this.i));
     }
 
-    @Override // f2.n
-    public final f2.j h(f2.j jVar) {
-        if (!h2.l0.M(jVar.c)) {
-            throw new f2.l(jVar);
+    @Override // f2.o
+    public final f2.k h(f2.k kVar) {
+        if (!h2.l0.M(kVar.c)) {
+            throw new f2.m(kVar);
         }
         this.k = true;
-        return (this.i == 0 && this.j == 0) ? f2.j.e : jVar;
+        return (this.i == 0 && this.j == 0) ? f2.k.e : kVar;
     }
 
-    @Override // f2.n
+    @Override // f2.o
     public final void i() {
         if (this.k) {
             this.k = false;
@@ -88,7 +88,7 @@ public final class a1 extends f2.n {
         this.n = 0;
     }
 
-    @Override // f2.n
+    @Override // f2.o
     public final void j() {
         if (this.k) {
             if (this.n > 0) {
@@ -98,7 +98,7 @@ public final class a1 extends f2.n {
         }
     }
 
-    @Override // f2.n
+    @Override // f2.o
     public final void k() {
         this.m = h2.l0.b;
     }

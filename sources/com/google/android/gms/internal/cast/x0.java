@@ -6,9 +6,9 @@ import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.cast.CastDevice;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class x0 {
     public static final j6.b j = new j6.b("ApplicationAnalytics", null);
@@ -32,7 +32,7 @@ public final class x0 {
     public static void a(x0 x0Var, int i7) {
         j.b("log session ended with error = %d", Integer.valueOf(i7));
         x0Var.c();
-        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ns.E3);
+        x0Var.a.a(x0Var.c.a(x0Var.g, i7), ks.F3);
         x0Var.e.removeCallbacks(x0Var.d);
         if (x0Var.i) {
             return;
@@ -72,7 +72,7 @@ public final class x0 {
         }
         g6.c cVar = this.h;
         if (cVar != null) {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             castDevice = cVar.k;
         } else {
             castDevice = null;
@@ -85,7 +85,7 @@ public final class x0 {
                 y0Var.h = castDevice.e;
             }
         }
-        q6.m.g(this.g);
+        q6.m.h(this.g);
     }
 
     public final void d() {
@@ -98,16 +98,16 @@ public final class x0 {
         g6.c cVar = this.h;
         y0Var2.i = cVar != null && cVar.g.i;
         j6.b bVar = g6.a.l;
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         g6.a aVar = g6.a.n;
-        q6.m.g(aVar);
-        q6.m.d("Must be called from the main thread.");
+        q6.m.h(aVar);
+        q6.m.e("Must be called from the main thread.");
         y0Var2.b = aVar.e.a;
         g6.c cVar2 = this.h;
         if (cVar2 == null) {
             castDevice = null;
         } else {
-            q6.m.d("Must be called from the main thread.");
+            q6.m.e("Must be called from the main thread.");
             castDevice = cVar2.k;
         }
         if (castDevice != null && (y0Var = this.g) != null) {
@@ -116,17 +116,17 @@ public final class x0 {
             y0Var.h = castDevice.e;
         }
         y0 y0Var3 = this.g;
-        q6.m.g(y0Var3);
+        q6.m.h(y0Var3);
         g6.c cVar3 = this.h;
         y0Var3.j = cVar3 != null ? cVar3.e() : 0;
-        q6.m.g(this.g);
+        q6.m.h(this.g);
     }
 
     public final void e() {
         y yVar = this.e;
-        q6.m.g(yVar);
+        q6.m.h(yVar);
         u uVar = this.d;
-        q6.m.g(uVar);
+        q6.m.h(uVar);
         yVar.postDelayed(uVar, 300000L);
     }
 
@@ -138,16 +138,16 @@ public final class x0 {
             return false;
         }
         j6.b bVar2 = g6.a.l;
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         g6.a aVar = g6.a.n;
-        q6.m.g(aVar);
-        q6.m.d("Must be called from the main thread.");
+        q6.m.h(aVar);
+        q6.m.e("Must be called from the main thread.");
         String str2 = aVar.e.a;
         if (str2 == null || (str = this.g.b) == null || !TextUtils.equals(str, str2)) {
             bVar.b("The analytics session doesn't match the application ID %s", str2);
             return false;
         }
-        q6.m.g(this.g);
+        q6.m.h(this.g);
         return true;
     }
 
@@ -156,7 +156,7 @@ public final class x0 {
         if (!f()) {
             return false;
         }
-        q6.m.g(this.g);
+        q6.m.h(this.g);
         if (str != null && (str2 = this.g.f) != null && TextUtils.equals(str2, str)) {
             return true;
         }

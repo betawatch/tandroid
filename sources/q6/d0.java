@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.util.Log;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class d0 extends a8.q {
     public d b;
@@ -24,7 +24,7 @@ public final class d0 extends a8.q {
             IBinder readStrongBinder = parcel.readStrongBinder();
             Bundle bundle = (Bundle) p7.g.a(parcel, Bundle.CREATOR);
             p7.g.c(parcel);
-            m.h(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
+            m.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
             this.b.w(readInt, readStrongBinder, bundle, this.c);
             this.b = null;
         } else if (i7 == 2) {
@@ -40,8 +40,8 @@ public final class d0 extends a8.q {
             h0 h0Var = (h0) p7.g.a(parcel, h0.CREATOR);
             p7.g.c(parcel);
             d dVar = this.b;
-            m.h(dVar, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
-            m.g(h0Var);
+            m.i(dVar, "onPostInitCompleteWithConnectionInfo can be called only once per call togetRemoteService");
+            m.h(h0Var);
             dVar.B = h0Var;
             if (dVar.x()) {
                 f fVar = h0Var.d;
@@ -61,7 +61,7 @@ public final class d0 extends a8.q {
                 }
             }
             Bundle bundle2 = h0Var.a;
-            m.h(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
+            m.i(this.b, "onPostInitComplete can be called only once per call to getRemoteService");
             this.b.w(readInt2, readStrongBinder2, bundle2, this.c);
             this.b = null;
         }

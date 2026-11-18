@@ -1,29 +1,45 @@
 package bi;
 
-import android.view.ViewTreeObserver;
+import java.util.ArrayList;
+import java.util.List;
+import org.telegram.messenger.x10;
+import org.telegram.ui.Components.z41;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c2 extends a6 {
-    public final /* synthetic */ ViewTreeObserver T;
-    public final /* synthetic */ j1 U;
+public final /* synthetic */ class c2 implements x10 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(long j3, String str, long j10, org.telegram.ui.ActionBar.e6 e6Var, ViewTreeObserver viewTreeObserver, j1 j1Var) {
-        super(j3, str, j10, e6Var);
-        this.T = viewTreeObserver;
-        this.U = j1Var;
+    public /* synthetic */ c2(j3 j3Var, int i7) {
+        this.a = i7;
+        this.b = j3Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onPause() {
-        super.onPause();
-        this.T.removeOnPreDrawListener(this.U);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e2
-    public final void onResume() {
-        super.onResume();
-        this.T.addOnPreDrawListener(this.U);
+    @Override // org.telegram.messenger.x10
+    public final void a(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.v2.setTitleMinSideInset(org.telegram.messenger.g0.L(6.0f) + ((Integer) obj).intValue());
+                break;
+            default:
+                List list = (List) obj;
+                j3 j3Var = this.b;
+                if (j3Var.getContext() != null && !j3Var.J) {
+                    ArrayList b10 = wg.s.b(1, list);
+                    j3Var.V1 = b10;
+                    List c10 = wg.s.c(b10);
+                    j3Var.V1 = c10;
+                    if (!((ArrayList) c10).isEmpty()) {
+                        j3Var.h1();
+                        z41 z41Var = j3Var.U1;
+                        if (z41Var != null) {
+                            z41Var.O(true);
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

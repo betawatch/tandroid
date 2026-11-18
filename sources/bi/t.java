@@ -1,47 +1,47 @@
 package bi;
 
-import org.telegram.ui.Components.wa;
-import org.telegram.ui.Components.xb;
+import org.telegram.ui.Components.fb;
+import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class t implements wa {
+public final class t implements fb {
     public final /* synthetic */ int a;
 
     public /* synthetic */ t(int i7) {
         this.a = i7;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wa
-    public final /* synthetic */ void b(xb xbVar) {
+    @Override // org.telegram.ui.Components.fb
+    public final /* synthetic */ void b(gc gcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ void c(float f10) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wa
-    public final /* synthetic */ void d(xb xbVar) {
+    @Override // org.telegram.ui.Components.fb
+    public final /* synthetic */ void d(gc gcVar) {
         int i7 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final int f(int i7) {
         int i10;
         int L;
@@ -90,117 +90,117 @@ public final class t implements wa {
         return L + i10;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final boolean g(int i7) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.wa
+    @Override // org.telegram.ui.Components.fb
     public final int h(int i7) {
         switch (this.a) {
         }
         return org.telegram.messenger.g0.m;
     }
 
-    private final /* synthetic */ void A(xb xbVar) {
+    private final /* synthetic */ void A(gc gcVar) {
     }
 
-    private final /* synthetic */ void B(xb xbVar) {
+    private final /* synthetic */ void B(gc gcVar) {
     }
 
-    private final /* synthetic */ void C(xb xbVar) {
+    private final /* synthetic */ void C(gc gcVar) {
     }
 
-    private final /* synthetic */ void D(xb xbVar) {
+    private final /* synthetic */ void D(gc gcVar) {
     }
 
-    private final /* synthetic */ void E(xb xbVar) {
+    private final /* synthetic */ void E(gc gcVar) {
     }
 
-    private final /* synthetic */ void F(xb xbVar) {
+    private final /* synthetic */ void F(gc gcVar) {
     }
 
-    private final /* synthetic */ void G(xb xbVar) {
+    private final /* synthetic */ void G(gc gcVar) {
     }
 
-    private final /* synthetic */ void H(xb xbVar) {
+    private final /* synthetic */ void H(gc gcVar) {
     }
 
-    private final /* synthetic */ void I(xb xbVar) {
+    private final /* synthetic */ void I(gc gcVar) {
     }
 
-    private final /* synthetic */ void J(xb xbVar) {
+    private final /* synthetic */ void J(gc gcVar) {
     }
 
-    private final /* synthetic */ void K(xb xbVar) {
+    private final /* synthetic */ void K(gc gcVar) {
     }
 
-    private final /* synthetic */ void L(xb xbVar) {
+    private final /* synthetic */ void L(gc gcVar) {
     }
 
-    private final /* synthetic */ void M(xb xbVar) {
+    private final /* synthetic */ void M(gc gcVar) {
     }
 
-    private final /* synthetic */ void N(xb xbVar) {
+    private final /* synthetic */ void N(gc gcVar) {
     }
 
-    private final /* synthetic */ void O(xb xbVar) {
+    private final /* synthetic */ void O(gc gcVar) {
     }
 
-    private final /* synthetic */ void P(xb xbVar) {
+    private final /* synthetic */ void P(gc gcVar) {
     }
 
-    private final /* synthetic */ void Q(xb xbVar) {
+    private final /* synthetic */ void Q(gc gcVar) {
     }
 
-    private final /* synthetic */ void R(xb xbVar) {
+    private final /* synthetic */ void R(gc gcVar) {
     }
 
-    private final /* synthetic */ void S(xb xbVar) {
+    private final /* synthetic */ void S(gc gcVar) {
     }
 
-    private final /* synthetic */ void T(xb xbVar) {
+    private final /* synthetic */ void T(gc gcVar) {
     }
 
-    private final /* synthetic */ void U(xb xbVar) {
+    private final /* synthetic */ void U(gc gcVar) {
     }
 
-    private final /* synthetic */ void V(xb xbVar) {
+    private final /* synthetic */ void V(gc gcVar) {
     }
 
-    private final /* synthetic */ void W(xb xbVar) {
+    private final /* synthetic */ void W(gc gcVar) {
     }
 
-    private final /* synthetic */ void X(xb xbVar) {
+    private final /* synthetic */ void X(gc gcVar) {
     }
 
-    private final /* synthetic */ void Y(xb xbVar) {
+    private final /* synthetic */ void Y(gc gcVar) {
     }
 
-    private final /* synthetic */ void Z(xb xbVar) {
+    private final /* synthetic */ void Z(gc gcVar) {
     }
 
-    private final /* synthetic */ void a0(xb xbVar) {
+    private final /* synthetic */ void a0(gc gcVar) {
     }
 
-    private final /* synthetic */ void b0(xb xbVar) {
+    private final /* synthetic */ void b0(gc gcVar) {
     }
 
-    private final /* synthetic */ void c0(xb xbVar) {
+    private final /* synthetic */ void c0(gc gcVar) {
     }
 
-    private final /* synthetic */ void d0(xb xbVar) {
+    private final /* synthetic */ void d0(gc gcVar) {
     }
 
-    private final /* synthetic */ void e0(xb xbVar) {
+    private final /* synthetic */ void e0(gc gcVar) {
     }
 
-    private final /* synthetic */ void f0(xb xbVar) {
+    private final /* synthetic */ void f0(gc gcVar) {
     }
 
-    private final /* synthetic */ void g0(xb xbVar) {
+    private final /* synthetic */ void g0(gc gcVar) {
     }
 
     private final /* synthetic */ void i(float f10) {
@@ -254,6 +254,6 @@ public final class t implements wa {
     private final /* synthetic */ void y(float f10) {
     }
 
-    private final /* synthetic */ void z(xb xbVar) {
+    private final /* synthetic */ void z(gc gcVar) {
     }
 }

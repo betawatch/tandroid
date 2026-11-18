@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class m0 extends d2 implements o0 {
     public CharSequence T;
@@ -34,7 +34,7 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.o0
-    public final void h(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.T = charSequence;
     }
 
@@ -74,8 +74,8 @@ public final class m0 extends d2 implements o0 {
     }
 
     @Override // m.d2, m.o0
-    public final void o(ListAdapter listAdapter) {
-        super.o(listAdapter);
+    public final void p(ListAdapter listAdapter) {
+        super.p(listAdapter);
         this.U = (j0) listAdapter;
     }
 

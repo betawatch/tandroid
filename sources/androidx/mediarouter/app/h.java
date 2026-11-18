@@ -7,7 +7,7 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class h extends androidx.fragment.app.p {
     public boolean B0 = false;
@@ -33,7 +33,7 @@ public class h extends androidx.fragment.app.p {
             g gVar = new g(n());
             this.C0 = gVar;
             P();
-            gVar.h(this.D0);
+            gVar.g(this.D0);
         }
         return this.C0;
     }

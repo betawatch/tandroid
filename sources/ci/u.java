@@ -13,7 +13,7 @@ import android.graphics.SweepGradient;
 import android.os.Build;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public abstract class u {
     public static Bitmap a;
@@ -176,7 +176,7 @@ public abstract class u {
                         path2.rewind();
                         path2.addRoundRect(rectF5, min, min, direction);
                         canvas2.save();
-                        v.b(canvas2, path2);
+                        w.b(canvas2, path2);
                         paint2.setAlpha(Math.round(Math.min(1.0f, f28) * 255.0f));
                         canvas2.drawPath(path, paint2);
                         canvas2.restore();

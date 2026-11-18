@@ -5,8 +5,8 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
-import c8.a1;
-import c8.yb;
+import c8.bc;
+import c8.c1;
 import com.google.android.gms.cast.MediaInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +17,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class q extends r6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -47,7 +47,7 @@ public final class q extends r6.a {
     public final SparseArray O = new SparseArray();
 
     static {
-        q6.m.f("MediaStatus", "The log tag cannot be null or empty.");
+        q6.m.g("MediaStatus", "The log tag cannot be null or empty.");
         TextUtils.isEmpty(null);
         CREATOR = new v(15);
     }
@@ -704,7 +704,7 @@ public final class q extends r6.a {
                                         i21 = i20;
                                         mVar = null;
                                     }
-                                    Integer a16 = a1.a(jSONObject5.optString("repeatMode"));
+                                    Integer a16 = c1.a(jSONObject5.optString("repeatMode"));
                                     int intValue = a16 != null ? a16.intValue() : 0;
                                     JSONArray optJSONArray3 = jSONObject5.optJSONArray("items");
                                     if (optJSONArray3 != null) {
@@ -857,7 +857,7 @@ public final class q extends r6.a {
                 }
             }
             if (jSONObject2.has("repeatMode")) {
-                Integer a17 = a1.a(jSONObject2.getString("repeatMode"));
+                Integer a17 = c1.a(jSONObject2.getString("repeatMode"));
                 int intValue2 = a17 == null ? this.G : a17.intValue();
                 if (this.G != intValue2) {
                     this.G = intValue2;
@@ -891,9 +891,9 @@ public final class q extends r6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o P = new d6.i(mediaInfo).P();
-                                P.b(jSONObject6);
-                                arrayList7.add(P);
+                                o C = new ob.c(mediaInfo).C();
+                                C.b(jSONObject6);
+                                arrayList7.add(C);
                             }
                             i12 = i40;
                             i39++;
@@ -1088,7 +1088,7 @@ public final class q extends r6.a {
         if (this != obj) {
             if (obj instanceof q) {
                 q qVar = (q) obj;
-                if ((this.F == null) == (qVar.F == null) && this.b == qVar.b && this.c == qVar.c && this.d == qVar.d && this.e == qVar.e && this.f == qVar.f && this.h == qVar.h && this.r == qVar.r && this.s == qVar.s && this.x == qVar.x && this.y == qVar.y && this.G == qVar.G && Arrays.equals(this.w, qVar.w) && j6.a.d(Long.valueOf(this.n), Long.valueOf(qVar.n)) && j6.a.d(this.H, qVar.H) && j6.a.d(this.a, qVar.a) && (((jSONObject = this.F) == null || (jSONObject2 = qVar.F) == null || x6.c.a(jSONObject, jSONObject2)) && this.I == qVar.I && j6.a.d(this.J, qVar.J) && j6.a.d(this.K, qVar.K) && j6.a.d(this.L, qVar.L) && q6.m.k(this.M, qVar.M) && this.N == qVar.N)) {
+                if ((this.F == null) == (qVar.F == null) && this.b == qVar.b && this.c == qVar.c && this.d == qVar.d && this.e == qVar.e && this.f == qVar.f && this.h == qVar.h && this.r == qVar.r && this.s == qVar.s && this.x == qVar.x && this.y == qVar.y && this.G == qVar.G && Arrays.equals(this.w, qVar.w) && j6.a.d(Long.valueOf(this.n), Long.valueOf(qVar.n)) && j6.a.d(this.H, qVar.H) && j6.a.d(this.a, qVar.a) && (((jSONObject = this.F) == null || (jSONObject2 = qVar.F) == null || x6.c.a(jSONObject, jSONObject2)) && this.I == qVar.I && j6.a.d(this.J, qVar.J) && j6.a.d(this.K, qVar.K) && j6.a.d(this.L, qVar.L) && q6.m.l(this.M, qVar.M) && this.N == qVar.N)) {
                 }
             }
             return false;
@@ -1104,54 +1104,54 @@ public final class q extends r6.a {
     public final void writeToParcel(Parcel parcel, int i7) {
         JSONObject jSONObject = this.F;
         this.E = jSONObject == null ? null : jSONObject.toString();
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
         long j3 = this.b;
-        yb.q(parcel, 3, 8);
+        bc.q(parcel, 3, 8);
         parcel.writeLong(j3);
         int i10 = this.c;
-        yb.q(parcel, 4, 4);
+        bc.q(parcel, 4, 4);
         parcel.writeInt(i10);
         double d = this.d;
-        yb.q(parcel, 5, 8);
+        bc.q(parcel, 5, 8);
         parcel.writeDouble(d);
         int i11 = this.e;
-        yb.q(parcel, 6, 4);
+        bc.q(parcel, 6, 4);
         parcel.writeInt(i11);
         int i12 = this.f;
-        yb.q(parcel, 7, 4);
+        bc.q(parcel, 7, 4);
         parcel.writeInt(i12);
         long j10 = this.h;
-        yb.q(parcel, 8, 8);
+        bc.q(parcel, 8, 8);
         parcel.writeLong(j10);
         long j11 = this.n;
-        yb.q(parcel, 9, 8);
+        bc.q(parcel, 9, 8);
         parcel.writeLong(j11);
         double d2 = this.r;
-        yb.q(parcel, 10, 8);
+        bc.q(parcel, 10, 8);
         parcel.writeDouble(d2);
         boolean z10 = this.s;
-        yb.q(parcel, 11, 4);
+        bc.q(parcel, 11, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        yb.j(parcel, 12, this.w);
+        bc.j(parcel, 12, this.w);
         int i13 = this.x;
-        yb.q(parcel, 13, 4);
+        bc.q(parcel, 13, 4);
         parcel.writeInt(i13);
         int i14 = this.y;
-        yb.q(parcel, 14, 4);
+        bc.q(parcel, 14, 4);
         parcel.writeInt(i14);
-        yb.l(parcel, 15, this.E);
+        bc.l(parcel, 15, this.E);
         int i15 = this.G;
-        yb.q(parcel, 16, 4);
+        bc.q(parcel, 16, 4);
         parcel.writeInt(i15);
-        yb.p(parcel, 17, this.H);
+        bc.p(parcel, 17, this.H);
         boolean z11 = this.I;
-        yb.q(parcel, 18, 4);
+        bc.q(parcel, 18, 4);
         parcel.writeInt(z11 ? 1 : 0);
-        yb.k(parcel, 19, this.J, i7);
-        yb.k(parcel, 20, this.K, i7);
-        yb.k(parcel, 21, this.L, i7);
-        yb.k(parcel, 22, this.M, i7);
-        yb.s(parcel, r10);
+        bc.k(parcel, 19, this.J, i7);
+        bc.k(parcel, 20, this.K, i7);
+        bc.k(parcel, 21, this.L, i7);
+        bc.k(parcel, 22, this.M, i7);
+        bc.s(parcel, r10);
     }
 }

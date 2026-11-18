@@ -18,8 +18,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicReference;
 import n6.c;
-import org.telegram.messenger.ns;
-import org.telegram.ui.ld0;
+import org.telegram.messenger.ks;
+import org.telegram.ui.Components.hn;
+import org.telegram.ui.md0;
 import pb.g;
 import pb.j;
 import pb.n;
@@ -29,7 +30,6 @@ import rb.b;
 import s6.d;
 import tb.e;
 import tg.x;
-import u7.i;
 import y7.d6;
 import y7.d9;
 import y7.f7;
@@ -41,7 +41,7 @@ import y7.k6;
 import y7.k7;
 import y7.l6;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final d9 a;
@@ -90,10 +90,10 @@ public class LanguageIdentifierImpl implements b {
         n.a.execute(new qa(d9Var, xaVar, l6.d, task.isSuccessful() ? (String) task.getResult() : q6.j.c.a(d9Var.g), 7));
     }
 
-    public final Task g(final String str) {
-        q6.m.h(str, "Text can not be null");
+    public final Task h(final String str) {
+        q6.m.i(str, "Text can not be null");
         final e eVar = (e) this.d.get();
-        q6.m.i("LanguageIdentification has been closed", eVar != null);
+        q6.m.j("LanguageIdentification has been closed", eVar != null);
         final boolean z10 = true ^ eVar.c.get();
         return eVar.a(this.c, new Callable() { // from class: tb.d
             @Override // java.util.concurrent.Callable
@@ -104,12 +104,12 @@ public class LanguageIdentifierImpl implements b {
                 boolean z11 = z10;
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
-                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ns.e3)));
-                    i iVar = new i();
-                    aa.b0 b0Var = new aa.b0(3);
-                    b0Var.b = e10;
-                    iVar.a = new g7(b0Var);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new i7(iVar), k6.b);
+                    String e10 = eVar2.e(str2.substring(0, Math.min(str2.length(), ks.e3)));
+                    hn hnVar = new hn(28);
+                    aa.b0 b0Var = new aa.b0();
+                    b0Var.a = e10;
+                    hnVar.b = new g7(b0Var);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new i7(hnVar), k6.b);
                     return e10;
                 } catch (RuntimeException e11) {
                     languageIdentifierImpl.j(elapsedRealtime, z11, null, k6.c);
@@ -130,11 +130,11 @@ public class LanguageIdentifierImpl implements b {
             hashMap.put(l6Var, Long.valueOf(elapsedRealtime2));
             f7 f7Var = new f7();
             f7Var.b = k();
-            ld0 ld0Var = new ld0(29, false);
-            ld0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
-            ld0Var.d = Boolean.valueOf(z10);
-            ld0Var.c = k6Var;
-            f7Var.a = new d6(ld0Var);
+            md0 md0Var = new md0(29, false);
+            md0Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
+            md0Var.d = Boolean.valueOf(z10);
+            md0Var.c = k6Var;
+            f7Var.a = new d6(md0Var);
             if (i7Var != null) {
                 f7Var.c = i7Var;
             }

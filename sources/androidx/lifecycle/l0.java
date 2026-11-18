@@ -1,10 +1,9 @@
 package androidx.lifecycle;
 
-import a8.bb;
 import android.os.Bundle;
 import java.util.Map;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class l0 implements w4.d {
     public final m.p a;
@@ -15,7 +14,7 @@ public final class l0 implements w4.d {
     public l0(m.p savedStateRegistry, u0 u0Var) {
         kotlin.jvm.internal.j.e(savedStateRegistry, "savedStateRegistry");
         this.a = savedStateRegistry;
-        this.d = bb.b(new k0(u0Var, 0));
+        this.d = b5.a.c(new k0(u0Var, 0));
     }
 
     public final void a() {

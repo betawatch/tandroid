@@ -3,36 +3,36 @@ package gi;
 import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.View;
-import di.k4;
+import di.n4;
 import java.util.HashSet;
 import java.util.regex.Pattern;
-import org.telegram.ui.ActionBar.u2;
+import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.Cells.z2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.bu;
-import org.telegram.ui.Components.bw0;
-import org.telegram.ui.Components.dk;
-import org.telegram.ui.Components.dl;
-import org.telegram.ui.Components.ep;
-import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.kg0;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.ny;
-import org.telegram.ui.Components.po0;
-import org.telegram.ui.Components.t4;
-import org.telegram.ui.Components.v01;
-import org.telegram.ui.Components.y7;
-import org.telegram.ui.Components.ys0;
-import org.telegram.ui.an;
-import org.telegram.ui.bh0;
+import org.telegram.ui.Components.b5;
+import org.telegram.ui.Components.f11;
+import org.telegram.ui.Components.g8;
+import org.telegram.ui.Components.gt0;
+import org.telegram.ui.Components.gu;
+import org.telegram.ui.Components.iw0;
+import org.telegram.ui.Components.kk;
+import org.telegram.ui.Components.kl;
+import org.telegram.ui.Components.lp;
+import org.telegram.ui.Components.pc0;
+import org.telegram.ui.Components.rm0;
+import org.telegram.ui.Components.si;
+import org.telegram.ui.Components.ty;
+import org.telegram.ui.Components.ug0;
+import org.telegram.ui.Components.yo0;
+import org.telegram.ui.bn;
+import org.telegram.ui.eh0;
 import org.telegram.ui.g4;
 import org.telegram.ui.la;
 import org.telegram.ui.lb;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final /* synthetic */ class a implements View.OnTouchListener {
     public final /* synthetic */ int a;
 
@@ -47,14 +47,14 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 int i7 = m.b0;
                 break;
             case 1:
-                int i10 = u2.l1;
+                int i10 = x2.l1;
                 break;
             case 3:
                 HashSet hashSet = g4.d1;
             case 2:
                 return true;
             case 4:
-                int i11 = k4.f;
+                int i11 = n4.f;
                 break;
             case 5:
                 int i12 = z2.x;
@@ -66,17 +66,17 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 int i13 = lb.R0;
                 break;
             case 8:
-                int i14 = an.ld;
+                int i14 = bn.md;
                 break;
             case 10:
-                Pattern pattern = t4.a;
+                Pattern pattern = b5.a;
             case 9:
                 return true;
             case 11:
-                y7 y7Var = y7.T2;
+                g8 g8Var = g8.T2;
                 break;
             case 12:
-                int i15 = ChatActivityEnterView.N6;
+                int i15 = ChatActivityEnterView.n7;
                 break;
             case 13:
                 if (motionEvent.getActionMasked() == 0 && view.getParent() != null) {
@@ -85,43 +85,43 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 }
                 break;
             case 14:
-                int i16 = ki.I4;
+                int i16 = si.I4;
                 break;
             case 15:
-                int i17 = dk.h0;
+                int i17 = kk.h0;
                 break;
             case 16:
-                int i18 = dl.G0;
+                int i18 = kl.G0;
                 break;
             case 17:
-                int i19 = ep.g2;
+                int i19 = lp.g2;
                 break;
             case 18:
-                bu buVar = bu.S1;
+                gu guVar = gu.S1;
                 break;
             case 19:
-                int i20 = ny.h;
+                int i20 = ty.h;
                 break;
             case 20:
-                int[] iArr = fc0.j0;
+                int[] iArr = pc0.j0;
                 break;
             case 21:
-                int i21 = kg0.S;
+                int i21 = ug0.S;
                 break;
             case 22:
-                int i22 = jm0.b1;
+                int i22 = rm0.b1;
                 break;
             case 23:
-                int i23 = po0.U2;
+                int i23 = yo0.U2;
                 break;
             case 24:
-                int[] iArr2 = ys0.t2;
+                int[] iArr2 = gt0.t2;
                 break;
             case 25:
-                int i24 = bw0.r2;
+                int i24 = iw0.r2;
                 break;
             case 26:
-                int i25 = v01.n0;
+                int i25 = f11.r0;
                 break;
             case 27:
                 int i26 = UndoView.j0;
@@ -130,7 +130,7 @@ public final /* synthetic */ class a implements View.OnTouchListener {
                 int i27 = UndoView.j0;
                 break;
             default:
-                int i28 = bh0.Z1;
+                int i28 = eh0.Z1;
                 break;
         }
         return true;

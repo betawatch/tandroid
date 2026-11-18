@@ -1,34 +1,48 @@
 package ci;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class h0 extends ViewOutlineProvider {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i0 b;
+public final class h0 extends s {
+    public final /* synthetic */ j0 N;
 
-    public /* synthetic */ h0(i0 i0Var, int i7) {
-        this.a = i7;
-        this.b = i0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h0(j0 j0Var, Activity activity, int i7, g0 g0Var) {
+        super(activity, i7, g0Var);
+        this.N = j0Var;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        switch (this.a) {
-            case 0:
-                float translationY = view.getTranslationY() + view.getTop();
-                float translationX = view.getTranslationX() + view.getLeft();
-                i0 i0Var = this.b;
-                outline.setRoundRect(Math.round(i0Var.n - translationX), Math.round(i0Var.r - translationY), Math.round(i0Var.s - translationX), Math.round(i0Var.w - translationY), i0Var.x);
-                break;
-            default:
-                int height = view.getHeight();
-                i0 i0Var2 = this.b;
-                outline.setRoundRect(i0Var2.b0, i0Var2.c0, view.getWidth() - i0Var2.b0, view.getHeight() - i0Var2.d0, ((height - r4) - i0Var2.d0) / 2.0f);
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float height = getHeight();
+        j0 j0Var = this.N;
+        float min = Math.min(height, j0Var.w - (getTranslationY() + getTop()));
+        c cVar = j0Var.y;
+        if (cVar != null) {
+            cVar.H = min;
         }
+        j0Var.L = min;
+        if (cVar != null) {
+            cVar.V = j0Var.s - cVar.getLeft();
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        j0 j0Var = this.N;
+        z0 z0Var = j0Var.d;
+        if (z0Var == null || (z0Var.m1 <= 0.5f && z0Var.l1 <= 0.5f)) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        if (motionEvent.getActionMasked() == 1) {
+            z0 z0Var2 = j0Var.d;
+            z0Var2.m1 = 0.0f;
+            z0Var2.invalidate();
+        }
+        return true;
     }
 }

@@ -1,8 +1,8 @@
 package f3;
 
-import a8.ja;
+import a8.la;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class j0 {
     public final byte[] a = new byte[10];
@@ -21,7 +21,7 @@ public final class j0 {
     }
 
     public final void b(i0 i0Var, long j3, int i7, int i10, int i11, h0 h0Var) {
-        ja.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i10 + i11);
+        la.o("TrueHD chunk samples must be contiguous in the sample queue.", this.g <= i10 + i11);
         if (this.b) {
             int i12 = this.c;
             int i13 = i12 + 1;
@@ -44,8 +44,8 @@ public final class j0 {
             return;
         }
         byte[] bArr = this.a;
-        pVar.c(0, 10, bArr);
-        pVar.l();
+        pVar.b(0, 10, bArr);
+        pVar.n();
         if (bArr[4] == -8 && bArr[5] == 114 && bArr[6] == 111) {
             byte b10 = bArr[7];
             if ((b10 & 254) == 186) {

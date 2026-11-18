@@ -2,11 +2,11 @@ package f7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c8.yb;
+import c8.bc;
 import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class f extends r6.a {
     public static final Parcelable.Creator<f> CREATOR = new t0(0);
@@ -43,7 +43,7 @@ public final class f extends r6.a {
             return false;
         }
         f fVar = (f) obj;
-        return q6.m.k(this.a, fVar.a) && q6.m.k(this.b, fVar.b) && q6.m.k(this.c, fVar.c) && q6.m.k(this.d, fVar.d) && q6.m.k(this.e, fVar.e) && q6.m.k(this.f, fVar.f) && q6.m.k(this.h, fVar.h) && q6.m.k(this.n, fVar.n) && q6.m.k(this.r, fVar.r) && q6.m.k(this.s, fVar.s) && q6.m.k(this.w, fVar.w) && q6.m.k(this.x, fVar.x);
+        return q6.m.l(this.a, fVar.a) && q6.m.l(this.b, fVar.b) && q6.m.l(this.c, fVar.c) && q6.m.l(this.d, fVar.d) && q6.m.l(this.e, fVar.e) && q6.m.l(this.f, fVar.f) && q6.m.l(this.h, fVar.h) && q6.m.l(this.n, fVar.n) && q6.m.l(this.r, fVar.r) && q6.m.l(this.s, fVar.s) && q6.m.l(this.w, fVar.w) && q6.m.l(this.x, fVar.x);
     }
 
     public final int hashCode() {
@@ -72,19 +72,19 @@ public final class f extends r6.a {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i7) {
-        int r10 = yb.r(parcel, 20293);
-        yb.k(parcel, 2, this.a, i7);
-        yb.k(parcel, 3, this.b, i7);
-        yb.k(parcel, 4, this.c, i7);
-        yb.k(parcel, 5, this.d, i7);
-        yb.k(parcel, 6, this.e, i7);
-        yb.k(parcel, 7, this.f, i7);
-        yb.k(parcel, 8, this.h, i7);
-        yb.k(parcel, 9, this.n, i7);
-        yb.k(parcel, 10, this.r, i7);
-        yb.k(parcel, 11, this.s, i7);
-        yb.k(parcel, 12, this.w, i7);
-        yb.k(parcel, 13, this.x, i7);
-        yb.s(parcel, r10);
+        int r10 = bc.r(parcel, 20293);
+        bc.k(parcel, 2, this.a, i7);
+        bc.k(parcel, 3, this.b, i7);
+        bc.k(parcel, 4, this.c, i7);
+        bc.k(parcel, 5, this.d, i7);
+        bc.k(parcel, 6, this.e, i7);
+        bc.k(parcel, 7, this.f, i7);
+        bc.k(parcel, 8, this.h, i7);
+        bc.k(parcel, 9, this.n, i7);
+        bc.k(parcel, 10, this.r, i7);
+        bc.k(parcel, 11, this.s, i7);
+        bc.k(parcel, 12, this.w, i7);
+        bc.k(parcel, 13, this.x, i7);
+        bc.s(parcel, r10);
     }
 }

@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u2 extends h3 {
     public final /* synthetic */ int r = 0;
@@ -46,7 +46,7 @@ public final class u2 extends h3 {
                 if (f3Var != null) {
                     a7.b bVar = new a7.b(context);
                     x1 x1Var = (x1) aVar;
-                    q6.m.g(x1Var);
+                    q6.m.h(x1Var);
                     Parcel h12 = f3Var.h1();
                     int i10 = a.a;
                     h12.writeStrongBinder(bVar);
@@ -71,7 +71,7 @@ public final class u2 extends h3 {
                         if (eVar != null) {
                             a7.b bVar2 = new a7.b(context);
                             x8.b bVar3 = (x8.b) aVar;
-                            q6.m.g(bVar3);
+                            q6.m.h(bVar3);
                             x8.e eVar2 = (x8.e) eVar;
                             Parcel h13 = eVar2.h1();
                             int i12 = a.a;
@@ -114,14 +114,14 @@ public final class u2 extends h3 {
             case 0:
                 if (k()) {
                     e3 e3Var = (e3) m();
-                    q6.m.g(e3Var);
+                    q6.m.h(e3Var);
                     e3Var.s1(e3Var.h1());
                     break;
                 }
                 break;
             default:
                 x8.d dVar = (x8.d) m();
-                q6.m.g(dVar);
+                q6.m.h(dVar);
                 dVar.s1(dVar.h1());
                 break;
         }
@@ -136,7 +136,7 @@ public final class u2 extends h3 {
         try {
             a7.b bVar = new a7.b(byteBuffer);
             x8.d dVar = (x8.d) m();
-            q6.m.g(dVar);
+            q6.m.h(dVar);
             Parcel h12 = dVar.h1();
             int i7 = a.a;
             h12.writeStrongBinder(bVar);

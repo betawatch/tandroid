@@ -10,22 +10,21 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import c8.ja;
+import c8.ma;
 import com.google.android.gms.internal.vision.e2;
-import di.va;
-import hi.p5;
+import di.za;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.e6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.u2;
+import org.telegram.ui.ActionBar.i6;
+import org.telegram.ui.ActionBar.n6;
+import org.telegram.ui.ActionBar.x2;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.sc1;
+import org.telegram.ui.bd0;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class q extends u2 {
+public final class q extends x2 {
     public static final /* synthetic */ int u1 = 0;
-    public final va m1;
+    public final za m1;
     public final ImageView n1;
     public final k o1;
     public final Path p1;
@@ -34,8 +33,8 @@ public final class q extends u2 {
     public androidx.activity.n s1;
     public boolean t1;
 
-    public q(Context context, e6 e6Var) {
-        super(1, context, e6Var, true);
+    public q(Context context, i6 i6Var) {
+        super(1, context, i6Var, true);
         this.p1 = new Path();
         P(-14342875);
         Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
@@ -49,44 +48,44 @@ public final class q extends u2 {
         imageView.setImageResource(R.drawable.picker);
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
         imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView.setBackground(j6.h0(1090519039, 1, -1));
-        imageView.setOnClickListener(new sc1(2, this, context));
+        imageView.setBackground(n6.h0(1090519039, 1, -1));
+        imageView.setOnClickListener(new bd0(27, this, context));
         ImageView imageView2 = new ImageView(context);
         imageView2.setImageResource(R.drawable.ic_ab_done);
         imageView2.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        imageView2.setBackground(j6.h0(1090519039, 1, -1));
-        imageView2.setOnClickListener(new p5(this, 27));
+        imageView2.setBackground(n6.h0(1090519039, 1, -1));
+        imageView2.setOnClickListener(new hi.o0(this, 29));
         k kVar = new k(this, context);
         this.o1 = kVar;
         kVar.c = Color.alpha(-65536) / 255.0f;
         kVar.a();
         kVar.invalidate();
-        va vaVar = new va(context, 6);
-        vaVar.setOrientation(1);
+        za zaVar = new za(context, 6);
+        zaVar.setOrientation(1);
         o oVar = new o(this, context);
-        vaVar.b = oVar;
+        zaVar.b = oVar;
         oVar.a(this.q1);
-        vaVar.c = new n(this, context);
-        vaVar.d = new p(this, context);
+        zaVar.c = new n(this, context);
+        zaVar.d = new p(this, context);
         l lVar = new l(context, this.J0);
-        lVar.setAdapter(new li.x(vaVar, 4));
-        vaVar.addView(lVar, ja.l(1.0f, -1, 0));
-        vaVar.addView(kVar, ja.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
+        lVar.setAdapter(new li.x(zaVar, 4));
+        zaVar.addView(lVar, ma.l(1.0f, -1, 0));
+        zaVar.addView(kVar, ma.k(12.0f, 0.0f, 12.0f, 0.0f, -1, 48));
         LinearLayout linearLayout2 = new LinearLayout(context);
         linearLayout2.setOrientation(0);
         linearLayout2.setGravity(16);
-        linearLayout2.addView(imageView, ja.o(28, 28));
-        linearLayout2.addView(lVar.i(8, false), ja.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
-        linearLayout2.addView(imageView2, ja.o(28, 28));
-        vaVar.addView(linearLayout2, ja.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
-        this.m1 = vaVar;
-        linearLayout.addView(vaVar, ja.o(-1, 0));
+        linearLayout2.addView(imageView, ma.o(28, 28));
+        linearLayout2.addView(lVar.i(8, false), ma.q(-1, 40, 1.0f, 16, 12, 0, 12, 0));
+        linearLayout2.addView(imageView2, ma.o(28, 28));
+        zaVar.addView(linearLayout2, ma.k(14.0f, 0.0f, 14.0f, 0.0f, -1, 48));
+        this.m1 = zaVar;
+        linearLayout.addView(zaVar, ma.o(-1, 0));
         j jVar = new j(this, context, linearLayout);
         jVar.addView(linearLayout);
         this.O = jVar;
     }
 
-    public final void I0(int i7, int i10) {
+    public final void J0(int i7, int i10) {
         View findFocus;
         if (!this.t1) {
             if (i10 != 2) {
@@ -95,16 +94,16 @@ public final class q extends u2 {
                 this.t1 = true;
             }
         }
-        va vaVar = this.m1;
-        if (i10 != 5 && (findFocus = vaVar.findFocus()) != null) {
+        za zaVar = this.m1;
+        if (i10 != 5 && (findFocus = zaVar.findFocus()) != null) {
             findFocus.clearFocus();
             org.telegram.messenger.g0.v1(findFocus);
         }
         if (i10 != 3) {
-            ((o) vaVar.b).a(i7);
+            ((o) zaVar.b).a(i7);
         }
         if (i10 != 0) {
-            n nVar = (n) vaVar.c;
+            n nVar = (n) zaVar.c;
             boolean z10 = i10 != 1;
             nVar.n.q1 = i7;
             float[] fArr = nVar.h;
@@ -124,7 +123,7 @@ public final class q extends u2 {
             kVar.a();
             kVar.invalidate();
         }
-        p pVar = (p) vaVar.d;
+        p pVar = (p) zaVar.d;
         pVar.e = true;
         pVar.a.b();
         pVar.b.b();
@@ -143,7 +142,7 @@ public final class q extends u2 {
         pVar.e = false;
     }
 
-    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.a2
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.d2
     public final void dismiss() {
         super.dismiss();
         q0.a aVar = this.r1;
@@ -152,7 +151,7 @@ public final class q extends u2 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.u2, android.app.Dialog
+    @Override // org.telegram.ui.ActionBar.x2, android.app.Dialog
     public final void show() {
         boolean z10;
         androidx.activity.n nVar = this.s1;

@@ -1,81 +1,54 @@
 package org.telegram.ui.Wallet;
 
+import android.graphics.Rect;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.s10;
-import org.telegram.ui.Components.cc;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h8 implements s10 {
+public final /* synthetic */ class h8 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p8 b;
-    public final /* synthetic */ vf.b c;
-    public final /* synthetic */ l0 d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h8(p8 p8Var, vf.b bVar, l0 l0Var, int i7) {
+    public /* synthetic */ h8(Object obj, int i7) {
         this.a = i7;
-        this.b = p8Var;
-        this.c = bVar;
-        this.d = l0Var;
+        this.b = obj;
     }
 
-    @Override // org.telegram.messenger.s10
-    public final void a(Object obj, Object obj2) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i7, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
         switch (this.a) {
             case 0:
-                i0 i0Var = (i0) obj;
-                String str = (String) obj2;
-                this.c.c(false);
-                p8 p8Var = this.b;
-                if (i0Var != null) {
-                    w8 w8Var = new w8();
-                    w8Var.h = true;
-                    ArrayList arrayList = w8Var.a;
-                    arrayList.clear();
-                    if (!i0Var.d()) {
-                        arrayList.addAll(i0Var.f());
+                r8 r8Var = (r8) this.b;
+                r8Var.getClass();
+                if (i11 - i7 != i15 - i13 || i12 - i10 != i16 - i14) {
+                    Iterator it = r8Var.f.values().iterator();
+                    while (it.hasNext()) {
+                        ((q8) it.next()).K = false;
                     }
-                    w8Var.a0();
-                    w8Var.f = new r(p8Var, this.d);
-                    p8Var.presentFragment(w8Var);
-                    break;
-                } else {
-                    cc a02 = cc.a0(p8Var);
-                    if (str == null) {
-                        str = "NULL_ERROR";
-                    }
-                    a02.e0(str, false);
+                    r8Var.f0();
                     break;
                 }
+                break;
             default:
-                g0 g0Var = (g0) obj;
-                String str2 = (String) obj2;
-                this.c.c(false);
-                p8 p8Var2 = this.b;
-                if (g0Var != null) {
-                    if (!p8Var2.f) {
-                        p8Var2.e.add(g0Var);
-                        w8 w8Var2 = new w8();
-                        i0 i0Var2 = g0Var.b;
-                        ArrayList arrayList2 = w8Var2.a;
-                        arrayList2.clear();
-                        if (!i0Var2.d()) {
-                            arrayList2.addAll(i0Var2.f());
-                        }
-                        w8Var2.a0();
-                        w8Var2.f = new g(p8Var2, this.d, g0Var, 22);
-                        p8Var2.presentFragment(w8Var2);
-                        break;
-                    } else {
-                        g0Var.close();
-                        break;
-                    }
+                u8 u8Var = (u8) this.b;
+                if (i12 - i10 >= i16 - i14) {
+                    u8Var.getClass();
+                    break;
                 } else {
-                    cc a03 = cc.a0(p8Var2);
-                    if (str2 == null) {
-                        str2 = "NULL_ERROR";
+                    ArrayList arrayList = u8Var.w;
+                    int size = arrayList.size();
+                    int i17 = 0;
+                    while (i17 < size) {
+                        Object obj = arrayList.get(i17);
+                        i17++;
+                        db dbVar = (db) obj;
+                        if (dbVar.hasFocus()) {
+                            dbVar.requestRectangleOnScreen(new Rect(0, 0, dbVar.getWidth(), dbVar.getHeight()), true);
+                            break;
+                        }
                     }
-                    a03.e0(str2, false);
                     break;
                 }
         }

@@ -1,90 +1,138 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Shader;
+import android.os.SystemClock;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final class c90 extends oy {
-    public final nt0 X;
-    public final /* synthetic */ j90 Y;
+public final class c90 extends TextView {
+    public final Matrix a;
+    public LinearGradient b;
+    public int c;
+    public boolean d;
+    public boolean e;
+    public float f;
+    public long h;
+    public final mo n;
+    public boolean r;
+    public int s;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c90(j90 j90Var) {
-        super(100, false);
-        this.Y = j90Var;
-        this.X = new nt0();
+    public c90(Context context) {
+        super(context);
+        this.a = new Matrix();
+        this.n = new mo(this, 26);
     }
 
-    @Override // v4.o0
-    public final int A() {
-        j90 j90Var = this.Y;
-        return (j90Var.f.I() == null && j90Var.f.V == null) ? B() : B() - 1;
+    public final void a() {
+        float min = Math.min(org.telegram.messenger.g0.L(10.0f) / this.c, 0.49f);
+        int currentTextColor = getCurrentTextColor();
+        int i7 = 1048575 & currentTextColor;
+        this.b = new LinearGradient(0.0f, 0.0f, this.c, 0.0f, new int[]{i7, currentTextColor, currentTextColor, i7}, new float[]{0.0f, min, 1.0f - min, 1.0f}, Shader.TileMode.CLAMP);
+        if (this.d) {
+            getPaint().setShader(this.b);
+        } else {
+            getPaint().setShader(null);
+        }
+        this.b.setLocalMatrix(this.a);
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.oy
-    public final nt0 D1(int i7) {
-        TLRPC.PhotoSize w10;
-        nt0 nt0Var = this.X;
-        int i10 = 0;
-        nt0Var.c = false;
-        j90 j90Var = this.Y;
-        if (i7 == 0) {
-            nt0Var.a = this.m;
-            nt0Var.b = j90Var.e.h;
-            nt0Var.c = true;
-            return nt0Var;
-        }
-        int i11 = i7 - 1;
-        if (j90Var.f.I() == null && j90Var.f.V == null) {
-            i7 = i11;
-        }
-        nt0Var.a = 0.0f;
-        nt0Var.b = 0.0f;
-        Object J = j90Var.f.J(i7);
-        if (J instanceof TLRPC.BotInlineResult) {
-            TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) J;
-            TLRPC.Document document = botInlineResult.document;
-            if (document != null) {
-                TLRPC.PhotoSize w11 = org.telegram.messenger.w7.w(document.thumbs, 90, false, null, false);
-                nt0Var.a = w11 != null ? w11.w : 100.0f;
-                nt0Var.b = w11 != null ? w11.h : 100.0f;
-                while (i10 < botInlineResult.document.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute = botInlineResult.document.attributes.get(i10);
-                    if ((documentAttribute instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute instanceof TLRPC.TL_documentAttributeVideo)) {
-                        nt0Var.a = documentAttribute.w;
-                        nt0Var.b = documentAttribute.h;
-                        break;
-                    }
-                    i10++;
-                }
-            } else if (botInlineResult.content != null) {
-                while (i10 < botInlineResult.content.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute2 = botInlineResult.content.attributes.get(i10);
-                    if ((documentAttribute2 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute2 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        nt0Var.a = documentAttribute2.w;
-                        nt0Var.b = documentAttribute2.h;
-                        break;
-                    }
-                    i10++;
-                }
-            } else if (botInlineResult.thumb != null) {
-                while (i10 < botInlineResult.thumb.attributes.size()) {
-                    TLRPC.DocumentAttribute documentAttribute3 = botInlineResult.thumb.attributes.get(i10);
-                    if ((documentAttribute3 instanceof TLRPC.TL_documentAttributeImageSize) || (documentAttribute3 instanceof TLRPC.TL_documentAttributeVideo)) {
-                        nt0Var.a = documentAttribute3.w;
-                        nt0Var.b = documentAttribute3.h;
-                        break;
-                    }
-                    i10++;
-                }
-            } else {
-                TLRPC.Photo photo = botInlineResult.photo;
-                if (photo != null && (w10 = org.telegram.messenger.w7.w(photo.sizes, org.telegram.messenger.g0.Z0(false), false, null, false)) != null) {
-                    nt0Var.a = w10.w;
-                    nt0Var.b = w10.h;
-                }
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
+        int measuredWidth = getMeasuredWidth();
+        int L = org.telegram.messenger.g0.L(40.0f);
+        float f10 = this.f;
+        float f11 = measuredWidth;
+        float a10 = f10 < f11 ? c8.l9.a(f10 / org.telegram.messenger.g0.L(10.0f), 0.0f, 1.0f) : 0.0f;
+        Matrix matrix = this.a;
+        matrix.reset();
+        float L2 = org.telegram.messenger.g0.L(10.0f);
+        float f12 = this.c;
+        matrix.postScale(com.google.android.gms.internal.vision.e2.z(1.0f, a10, L2 / f12, 1.0f), 1.0f, f12, 0.0f);
+        matrix.postScale(1.0f - (this.s / this.c), 1.0f, 0.0f, 0.0f);
+        matrix.postTranslate(this.f, 0.0f);
+        this.b.setLocalMatrix(matrix);
+        canvas.save();
+        canvas.translate(-this.f, 0.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+        if (measuredWidth > 0) {
+            float f13 = this.f;
+            if (f13 > 0.0f && f13 + getWidth() > f11 && this.d && this.e) {
+                float f14 = -this.f;
+                float f15 = L;
+                matrix.postTranslate(f14 - ((f14 + f11) + f15), 0.0f);
+                this.b.setLocalMatrix(matrix);
+                canvas.save();
+                canvas.translate((-this.f) + f11 + f15, 0.0f);
+                super.onDraw(canvas);
+                canvas.restore();
             }
         }
-        return nt0Var;
+        boolean z11 = ((double) this.f) < 1.0E-4d;
+        long uptimeMillis = SystemClock.uptimeMillis();
+        long j3 = this.h;
+        long min = (j3 == 0 || z11) ? 16L : Math.min(uptimeMillis - j3, 120L);
+        this.h = uptimeMillis;
+        boolean z12 = this.d;
+        mo moVar = this.n;
+        if ((z12 && this.e) || !z11) {
+            float c10 = com.google.android.gms.internal.vision.e2.c(min, 1000.0f, org.telegram.messenger.g0.L(60.0f), this.f);
+            this.f = c10;
+            if (c10 > measuredWidth + L) {
+                org.telegram.messenger.g0.r(moVar);
+                this.r = false;
+                this.e = false;
+                this.f = 0.0f;
+            }
+            invalidate();
+        }
+        if (!this.d || this.e || (z10 = this.r) || z10) {
+            return;
+        }
+        this.r = true;
+        org.telegram.messenger.g0.h3(moVar, 1500L);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i7, int i10) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(0, 0), i10);
+        this.c = View.MeasureSpec.getSize(i7);
+        this.d = getMeasuredWidth() > this.c - this.s;
+        a();
+    }
+
+    public void setCustomPaddingRight(int i7) {
+        this.s = i7;
+        boolean z10 = getMeasuredWidth() > this.c - this.s;
+        this.d = z10;
+        if (z10) {
+            getPaint().setShader(this.b);
+        } else {
+            getPaint().setShader(null);
+        }
+        invalidate();
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        org.telegram.messenger.g0.r(this.n);
+        this.r = false;
+        this.e = false;
+        this.f = 0.0f;
+    }
+
+    @Override // android.widget.TextView
+    public void setTextColor(int i7) {
+        super.setTextColor(i7);
+        a();
     }
 }

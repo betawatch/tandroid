@@ -1,164 +1,137 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.media.RingtoneManager;
+import android.content.Context;
+import android.util.Base64;
+import java.util.Arrays;
+import java.util.HashSet;
+import org.json.JSONObject;
+import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class bt {
-    public final int a;
+public final /* synthetic */ class bt implements q10 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public bt(int i7) {
-        this.a = i7;
+    public /* synthetic */ bt(int i7, Context context, q10 q10Var) {
+        this.c = q10Var;
+        this.d = context;
+        this.b = i7;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00dc  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00e6  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(TLRPC.NotificationSound notificationSound, SharedPreferences.Editor editor, long j3, long j10, int i7) {
-        String str;
-        String str2;
-        String str3;
-        TLRPC.NotificationSound notificationSound2;
-        String str4;
-        if (notificationSound == null) {
-            return;
-        }
-        if (j3 != 0) {
-            String v = at.v(j3, j10, true);
-            str = r.b.k("sound_", v);
-            str3 = r.b.k("sound_path_", v);
-            str2 = r.b.k("sound_document_id_", v);
-        } else if (i7 == 0) {
-            str = "GroupSound";
-            str2 = "GroupSoundDocId";
-            str3 = "GroupSoundPath";
-        } else if (i7 == 3) {
-            str = "StoriesSound";
-            str2 = "StoriesSoundDocId";
-            str3 = "StoriesSoundPath";
-        } else if (i7 == 1) {
-            str = "GlobalSound";
-            str2 = "GlobalSoundDocId";
-            str3 = "GlobalSoundPath";
-        } else if (i7 == 4 || i7 == 5) {
-            str = "ReactionSound";
-            str2 = "ReactionSoundDocId";
-            str3 = "ReactionSoundPath";
-        } else {
-            str = "ChannelSound";
-            str2 = "ChannelSoundDocId";
-            str3 = "ChannelSoundPath";
-        }
-        String str5 = str3;
-        String str6 = str;
-        String str7 = str2;
-        if (notificationSound instanceof TLRPC.TL_notificationSoundLocal) {
-            TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal = (TLRPC.TL_notificationSoundLocal) notificationSound;
-            if ("Default".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
-                notificationSound2 = new TLRPC.TL_notificationSoundDefault();
-            } else if ("NoSound".equalsIgnoreCase(tL_notificationSoundLocal.data)) {
-                notificationSound2 = new TLRPC.TL_notificationSoundNone();
-            } else {
-                String str8 = tL_notificationSoundLocal.title;
-                if (str8 != null) {
-                    try {
-                        RingtoneManager ringtoneManager = new RingtoneManager(t0.b);
-                        ringtoneManager.setType(2);
-                        Cursor cursor = ringtoneManager.getCursor();
-                        while (cursor.moveToNext()) {
-                            String string = cursor.getString(1);
-                            str4 = cursor.getString(2) + "/" + cursor.getString(0);
-                            if (str8.equalsIgnoreCase(string)) {
-                                break;
+    @Override // org.telegram.messenger.q10
+    public final void a(Object obj, Object obj2) {
+        org.telegram.ui.ActionBar.h2 T;
+        int i7 = this.a;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        final int i10 = 1;
+        switch (i7) {
+            case 0:
+                final q10 q10Var = (q10) obj4;
+                Context context = (Context) obj3;
+                v0.c cVar = (v0.c) obj;
+                Throwable th2 = (Throwable) obj2;
+                final int i11 = 0;
+                if ((th2 instanceof w0.b) || (th2 instanceof w0.e)) {
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.et
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    q10Var.a(null, "CANCELLED");
+                                    break;
+                                default:
+                                    q10Var.a(null, "EMPTY");
+                                    break;
                             }
                         }
-                    } catch (Throwable th2) {
-                        a8.g(th2, true);
+                    });
+                    break;
+                } else if (th2 instanceof w0.f) {
+                    g0.g3(new Runnable() { // from class: org.telegram.messenger.et
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    q10Var.a(null, "CANCELLED");
+                                    break;
+                                default:
+                                    q10Var.a(null, "EMPTY");
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                } else if (th2 != null) {
+                    a8.g(th2, true);
+                    g0.g3(new rq(17, q10Var, th2));
+                    break;
+                } else {
+                    TL_account.registerPasskey registerpasskey = new TL_account.registerPasskey();
+                    try {
+                        JSONObject jSONObject = new JSONObject(cVar.a.getString("androidx.credentials.BUNDLE_KEY_REGISTRATION_RESPONSE_JSON"));
+                        TL_account.inputPasskeyCredentialPublicKey inputpasskeycredentialpublickey = new TL_account.inputPasskeyCredentialPublicKey();
+                        registerpasskey.credential = inputpasskeycredentialpublickey;
+                        inputpasskeycredentialpublickey.id = jSONObject.getString("id");
+                        registerpasskey.credential.raw_id = jSONObject.getString("rawId");
+                        JSONObject jSONObject2 = jSONObject.getJSONObject("response");
+                        TL_account.inputPasskeyResponseRegister inputpasskeyresponseregister = new TL_account.inputPasskeyResponseRegister();
+                        TLRPC.TL_dataJSON tL_dataJSON = new TLRPC.TL_dataJSON();
+                        inputpasskeyresponseregister.client_data = tL_dataJSON;
+                        tL_dataJSON.data = new String(Base64.decode(jSONObject2.getString("clientDataJSON"), 8));
+                        inputpasskeyresponseregister.attestation_object = Base64.decode(jSONObject2.getString("attestationObject"), 8);
+                        StringBuilder sb2 = new StringBuilder();
+                        sb2.append("AAGUID: ");
+                        byte[] copyOfRange = Arrays.copyOfRange(inputpasskeyresponseregister.attestation_object, 67, 83);
+                        StringBuilder sb3 = new StringBuilder(copyOfRange.length * 2);
+                        for (byte b10 : copyOfRange) {
+                            sb3.append(String.format("%02x", Byte.valueOf(b10)));
+                        }
+                        sb2.append(sb3.toString());
+                        a8.b(sb2.toString());
+                        registerpasskey.credential.response = inputpasskeyresponseregister;
+                        g0.g3(new dg(context, this.b, registerpasskey, q10Var, 15));
+                        break;
+                    } catch (Exception e10) {
+                        a8.g(e10, true);
+                        g0.g3(new ct(q10Var, e10, 1));
+                        return;
                     }
                 }
-                str4 = null;
-                if (str4 == null) {
-                    return;
-                } else {
-                    tL_notificationSoundLocal.data = str4;
+                break;
+            default:
+                x10 x10Var = (x10) obj3;
+                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                HashSet hashSet = ((z00) obj4).G;
+                int i12 = this.b;
+                if (tL_textWithEntities != null) {
+                    hashSet.remove(Integer.valueOf(i12));
+                    x10Var.a(tL_textWithEntities);
+                    break;
+                } else if (tL_error != null) {
+                    if ("SUMMARY_FLOOD_PREMIUM".equalsIgnoreCase(tL_error.text) && (T = LaunchActivity.T()) != null) {
+                        org.telegram.ui.Components.gc K = org.telegram.ui.Components.lc.b0(T).K(R.raw.star_premium_2, gd.M0(2131744096, null), gd.M0(2131744095, null), new ln(3, T));
+                        K.j = 5000;
+                        K.k(true);
+                    }
+                    hashSet.remove(Integer.valueOf(i12));
+                    x10Var.a(null);
+                    break;
                 }
-            }
-            if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
-                editor.putString(str6, "Default");
-                editor.putString(str5, "Default");
-                editor.remove(str7);
-                return;
-            }
-            if (notificationSound2 instanceof TLRPC.TL_notificationSoundNone) {
-                editor.putString(str6, "NoSound");
-                editor.putString(str5, "NoSound");
-                editor.remove(str7);
-                return;
-            } else {
-                if (notificationSound2 instanceof TLRPC.TL_notificationSoundLocal) {
-                    TLRPC.TL_notificationSoundLocal tL_notificationSoundLocal2 = (TLRPC.TL_notificationSoundLocal) notificationSound2;
-                    editor.putString(str6, tL_notificationSoundLocal2.title);
-                    editor.putString(str5, tL_notificationSoundLocal2.data);
-                    editor.remove(str7);
-                    return;
-                }
-                if (notificationSound2 instanceof TLRPC.TL_notificationSoundRingtone) {
-                    TLRPC.TL_notificationSoundRingtone tL_notificationSoundRingtone = (TLRPC.TL_notificationSoundRingtone) notificationSound2;
-                    editor.putLong(str7, tL_notificationSoundRingtone.id);
-                    si.b0(this.a).A0.g(true);
-                    si.b0(this.a).A0.c(tL_notificationSoundRingtone.id);
-                    return;
-                }
-                return;
-            }
-        }
-        notificationSound2 = notificationSound;
-        if (!(notificationSound2 instanceof TLRPC.TL_notificationSoundDefault)) {
+                break;
         }
     }
 
-    public final SharedPreferences b() {
-        return np.s1(this.a).e7;
-    }
-
-    public final int c(int i7, long j3, long j10, String str) {
-        String v = at.v(j3, j10, true);
-        if (b().contains(str + v)) {
-            return b().getInt(str + v, i7);
-        }
-        String v10 = at.v(j3, 0L, true);
-        return b().getInt(str + v10, i7);
-    }
-
-    public final long d(long j3, long j10) {
-        String v = at.v(j3, j10, true);
-        if (b().contains("sound_document_id_" + v)) {
-            return b().getLong("sound_document_id_" + v, 0L);
-        }
-        String v10 = at.v(j3, 0L, true);
-        return b().getLong("sound_document_id_" + v10, 0L);
-    }
-
-    public final boolean e(long j3, long j10) {
-        String v = at.v(j3, j10, false);
-        if (b().contains("custom_" + v)) {
-            return b().getBoolean("custom_" + v, false);
-        }
-        String v10 = at.v(j3, 0L, false);
-        return b().getBoolean("custom_" + v10, false);
-    }
-
-    public final String f(long j3, long j10) {
-        String v = at.v(j3, j10, false);
-        if (b().contains("sound_path_" + v)) {
-            return b().getString("sound_path_" + v, null);
-        }
-        String v10 = at.v(j3, 0L, false);
-        return b().getString("sound_path_" + v10, null);
+    public /* synthetic */ bt(z00 z00Var, int i7, x10 x10Var) {
+        this.c = z00Var;
+        this.b = i7;
+        this.d = x10Var;
     }
 }

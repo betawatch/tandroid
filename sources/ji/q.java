@@ -14,12 +14,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.beta.R;
 import org.telegram.messenger.g0;
-import org.telegram.messenger.ns;
-import org.telegram.messenger.qz;
+import org.telegram.messenger.ks;
+import org.telegram.messenger.mz;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
+/* loaded from: classes4.dex */
 public final class q {
     public float[] a;
     public int b;
@@ -37,7 +37,7 @@ public final class q {
             default:
                 this.b = -1;
                 this.c = 1;
-                this.f = new float[ns.K1];
+                this.f = new float[ks.K1];
                 this.g = new byte[TLObject.FLAG_12];
                 break;
         }
@@ -66,7 +66,7 @@ public final class q {
             throw new IllegalArgumentException("Requested dimensions are too small: " + i7 + 'x' + i10);
         }
         bc.b bVar = bc.b.a;
-        gc.c valueOf = hashMap.containsKey(bVar) ? gc.c.valueOf(hashMap.get(bVar).toString()) : gc.c.b;
+        gc.b valueOf = hashMap.containsKey(bVar) ? gc.b.valueOf(hashMap.get(bVar).toString()) : gc.b.b;
         bc.b bVar2 = bc.b.c;
         int parseInt = hashMap.containsKey(bVar2) ? Integer.parseInt(hashMap.get(bVar2).toString()) : 4;
         cc.c cVar = (cc.c) ic.b.b(str, valueOf, hashMap).f;
@@ -293,7 +293,7 @@ public final class q {
         } else {
             String y22 = g0.y2(null, R.raw.qr_logo);
             int i41 = this.e;
-            Bitmap e10 = qz.e(i41, i41, y22);
+            Bitmap e10 = mz.e(i41, i41, y22);
             float f29 = i29;
             canvas.drawBitmap(e10, f29, f29, (Paint) null);
             e10.recycle();

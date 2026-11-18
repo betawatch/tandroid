@@ -1,48 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PrivacyControlActivity;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c1 implements Runnable {
+public final /* synthetic */ class c1 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ a5 b;
 
-    public /* synthetic */ c1(int i7, ArrayList arrayList) {
+    public /* synthetic */ c1(int i7, a5 a5Var) {
         this.a = i7;
-        this.b = arrayList;
+        this.b = a5Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.e2 Q;
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                if (this.b != null && (Q = LaunchActivity.Q()) != null) {
-                    org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2();
-                    c2Var.a = true;
-                    Q.showAsSheet(new PrivacyControlActivity(11, false), c2Var);
-                    break;
-                }
+                a5 a5Var = this.b;
+                a5Var.requestFocus();
+                org.telegram.messenger.g0.I3(a5Var);
+                break;
+            case 1:
+                a5 a5Var2 = this.b;
+                a5Var2.requestFocus();
+                org.telegram.messenger.g0.I3(a5Var2);
                 break;
             default:
-                int i7 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    if (i7 >= arrayList.size()) {
-                        break;
-                    } else {
-                        ((View) arrayList.get(i7)).setVisibility(8);
-                        if (arrayList.get(i7) instanceof org.telegram.ui.Cells.q1) {
-                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).k3(false, false);
-                            ((org.telegram.ui.Cells.q1) arrayList.get(i7)).m3(false, false, false);
-                        }
-                        i7++;
-                    }
-                }
+                org.telegram.messenger.g0.g3(new lg(this.b, 2));
+                break;
         }
     }
 }

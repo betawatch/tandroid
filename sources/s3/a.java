@@ -1,7 +1,7 @@
 package s3;
 
-import a8.ha;
-import c8.ba;
+import a8.ja;
+import c8.da;
 import e2.q0;
 import java.nio.ByteBuffer;
 import java.nio.charset.CharacterCodingException;
@@ -10,14 +10,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
-public final class a extends ba {
+public final class a extends da {
     public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
     public final CharsetDecoder a = StandardCharsets.UTF_8.newDecoder();
     public final CharsetDecoder b = StandardCharsets.ISO_8859_1.newDecoder();
 
-    @Override // c8.ba
+    @Override // c8.da
     public final q0 b(o3.a aVar, ByteBuffer byteBuffer) {
         String str;
         CharsetDecoder charsetDecoder = this.b;
@@ -55,7 +55,7 @@ public final class a extends ba {
             String group = matcher.group(1);
             String group2 = matcher.group(2);
             if (group != null) {
-                String c10 = ha.c(group);
+                String c10 = ja.c(group);
                 c10.getClass();
                 if (c10.equals("streamurl")) {
                     str3 = group2;

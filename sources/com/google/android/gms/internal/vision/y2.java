@@ -6,10 +6,10 @@ import java.nio.ByteOrder;
 import java.security.AccessController;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public abstract class y2 {
     public static final Unsafe a;
@@ -373,13 +373,13 @@ public abstract class y2 {
         long j10 = (-4) & j3;
         int k10 = c.k(obj, j10);
         int i7 = ((~((int) j3)) & 3) << 3;
-        c(j10, obj, ((255 & b10) << i7) | (k10 & (~(ns.e4 << i7))));
+        c(j10, obj, ((255 & b10) << i7) | (k10 & (~(ks.e4 << i7))));
     }
 
     public static void j(Object obj, long j3, byte b10) {
         long j10 = (-4) & j3;
         int i7 = (((int) j3) & 3) << 3;
-        c(j10, obj, ((255 & b10) << i7) | (c.k(obj, j10) & (~(ns.e4 << i7))));
+        c(j10, obj, ((255 & b10) << i7) | (c.k(obj, j10) & (~(ks.e4 << i7))));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

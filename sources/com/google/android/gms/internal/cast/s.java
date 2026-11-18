@@ -7,9 +7,9 @@ import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import org.telegram.messenger.ns;
+import org.telegram.messenger.ks;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class s {
     public static final j6.b i = new j6.b("SessionTransController", null);
@@ -38,7 +38,7 @@ public final class s {
             bVar.b("skip transferring as CastSession is null", new Object[0]);
             return null;
         }
-        q6.m.d("Must be called from the main thread.");
+        q6.m.e("Must be called from the main thread.");
         return c10.j;
     }
 
@@ -70,7 +70,7 @@ public final class s {
                     m10.c();
                     k1.w((k1) m10.b, i7);
                     b10.e((k1) m10.a());
-                    x0Var.a.a((p1) b10.a(), ns.I3);
+                    x0Var.a.a((p1) b10.a(), ks.I3);
                     x0Var.i = false;
                     break;
                 default:
@@ -87,9 +87,9 @@ public final class s {
 
     public final void c() {
         y yVar = this.c;
-        q6.m.g(yVar);
+        q6.m.h(yVar);
         r rVar = this.d;
-        q6.m.g(rVar);
+        q6.m.h(rVar);
         yVar.removeCallbacks(rVar);
         this.e = 0;
         this.h = null;

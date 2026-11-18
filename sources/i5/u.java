@@ -1,14 +1,13 @@
 package i5;
 
-import c8.lb;
+import c8.ob;
 import java.nio.ByteBuffer;
-import org.telegram.ui.Components.ff;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes.dex */
 public final class u extends d {
-    public static final /* synthetic */ ff h;
-    public static final /* synthetic */ ff n;
+    public static final /* synthetic */ ze.b h;
+    public static final /* synthetic */ ze.b n;
     public long[] f;
 
     static {
@@ -20,7 +19,7 @@ public final class u extends d {
     @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
-        int a10 = lb.a(h5.b.i(byteBuffer));
+        int a10 = ob.a(h5.b.i(byteBuffer));
         this.f = new long[a10];
         for (int i7 = 0; i7 < a10; i7++) {
             this.f[i7] = h5.b.i(byteBuffer);

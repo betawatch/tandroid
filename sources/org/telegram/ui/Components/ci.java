@@ -1,192 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
+import android.content.Intent;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
-public abstract class ci extends FrameLayout {
-    public final org.telegram.ui.ActionBar.e6 a;
-    public final ki b;
-    public uj0 c;
-    public uj0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class ci implements ak {
+    public final /* synthetic */ si a;
 
-    public ci(Context context, org.telegram.ui.ActionBar.e6 e6Var, ki kiVar) {
-        super(context);
-        this.a = e6Var;
-        this.b = kiVar;
+    public ci(si siVar) {
+        this.a = siVar;
     }
 
-    public abstract void B(int i7, int i10);
-
-    public boolean H(int i7) {
-        return false;
+    @Override // org.telegram.ui.Components.ak
+    public final void A() {
+        si siVar = this.a;
+        ak akVar = siVar.S1;
+        if (akVar != null) {
+            akVar.A();
+            return;
+        }
+        Object obj = siVar.a2;
+        if (obj instanceof ak) {
+            ((ak) obj).A();
+            return;
+        }
+        if (obj instanceof org.telegram.ui.hk0) {
+            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
+            try {
+                Intent intent = new Intent("android.intent.action.GET_CONTENT");
+                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
+                intent.setType("*/*");
+                hk0Var.startActivityForResult(intent, 21);
+            } catch (Exception e10) {
+                org.telegram.messenger.a8.g(e10, true);
+            }
+        }
     }
 
-    public boolean M(boolean z10, int i7, int i10, long j3, boolean z11) {
-        return false;
+    @Override // org.telegram.ui.Components.ak
+    public final void T() {
+        this.a.q1(true);
     }
 
-    public boolean N() {
-        return !(this instanceof dl);
+    @Override // org.telegram.ui.Components.ak
+    public final void n(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i7, long j3, boolean z11, long j10) {
+        si siVar = this.a;
+        ak akVar = siVar.S1;
+        if (akVar != null) {
+            akVar.n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
+            return;
+        }
+        Object obj = siVar.a2;
+        if (obj instanceof ak) {
+            ((ak) obj).n(arrayList, str, arrayList2, arrayList3, z10, i7, j3, z11, j10);
+            return;
+        }
+        if (obj instanceof org.telegram.ui.hk0) {
+            org.telegram.ui.hk0 hk0Var = (org.telegram.ui.hk0) obj;
+            ArrayList arrayList4 = new ArrayList();
+            int size = arrayList.size();
+            for (int i10 = 0; i10 < size; i10++) {
+                org.telegram.messenger.yy yyVar = new org.telegram.messenger.yy();
+                yyVar.c = (String) arrayList.get(i10);
+                arrayList4.add(yyVar);
+            }
+            hk0Var.K1(arrayList4);
+        }
     }
 
-    public boolean O() {
-        return true;
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return this instanceof qk;
-    }
-
-    public boolean f() {
-        return this instanceof qk;
-    }
-
-    public boolean g() {
-        return false;
-    }
-
-    public int getButtonsHideOffset() {
-        return org.telegram.messenger.g0.L(j() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.s6> getThemeDescriptions() {
-        return null;
-    }
-
-    public boolean h() {
-        return this instanceof qk;
-    }
-
-    public boolean i() {
-        return false;
-    }
-
-    public int j() {
-        return 0;
-    }
-
-    public boolean k() {
-        return false;
-    }
-
-    public void n(float f10, float f11) {
-        m(f10);
-    }
-
-    public boolean o(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean q() {
-        return false;
-    }
-
-    public boolean s() {
-        return true;
-    }
-
-    public void setBlur3Capture(uj0 uj0Var) {
-        int i7 = ki.I4;
-        this.b.Y0.b(uj0Var);
-        this.c = uj0Var;
-    }
-
-    public void D(int i7) {
-    }
-
-    public void I(ci ciVar) {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void m(float f10) {
-    }
-
-    public void r(int i7) {
-    }
-
-    public void v(float f10) {
-    }
-
-    public void w(int i7) {
-    }
-
-    public void A() {
-    }
-
-    public void C() {
-    }
-
-    public void J() {
-    }
-
-    public void K() {
-    }
-
-    public void d() {
-    }
-
-    public void l() {
-    }
-
-    public void p() {
-    }
-
-    public void t() {
-    }
-
-    public void u() {
-    }
-
-    public void x() {
-    }
-
-    public void y() {
-    }
-
-    public void F(float f10, float f11) {
-    }
-
-    public void z(int i7, boolean z10) {
+    @Override // org.telegram.ui.Components.ak
+    public final void p(ArrayList arrayList, boolean z10, int i7, long j3) {
+        si siVar = this.a;
+        ak akVar = siVar.S1;
+        if (akVar != null) {
+            akVar.p(arrayList, z10, i7, j3);
+            return;
+        }
+        org.telegram.ui.ActionBar.h2 h2Var = siVar.a2;
+        if (h2Var instanceof org.telegram.ui.bn) {
+            ((org.telegram.ui.bn) h2Var).p(arrayList, z10, i7, j3);
+        } else if (h2Var instanceof org.telegram.ui.hk0) {
+            ((org.telegram.ui.hk0) h2Var).K1(arrayList);
+        }
     }
 }

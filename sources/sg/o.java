@@ -10,10 +10,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import java.util.HashMap;
 import java.util.Map;
-import org.telegram.messenger.i20;
-import org.telegram.ui.Components.er;
+import org.telegram.messenger.n10;
+import org.telegram.ui.Components.lr;
 
-/* compiled from: r8-map-id-67e6279fa6784b9b38f462e6fa99e7dfd910e42378764591e2cbed55febcd96c */
+/* compiled from: r8-map-id-a32da3a578b75970e97c101a53c8e7cdeb0e2fb6862be2d20329b7eb4b02756b */
 /* loaded from: classes3.dex */
 public final class o extends View {
     public final Paint a;
@@ -49,7 +49,7 @@ public final class o extends View {
                 if (i10 == 0) {
                     this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i0.a.f(i7 / 11.0f, -1, -16777216)));
                 } else {
-                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(i20.v(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
+                    this.n.put(Long.valueOf((i7 << 16) + i10), Integer.valueOf(i10 < 6 ? i0.a.f(((5 - i10) / 4.0f) * 0.5f, this.b[i7], -16777216) : i0.a.f(n10.w(9 - i10, 5.0f, 0.5f, 0.5f), this.b[i7], -1)));
                 }
             }
         }
@@ -86,7 +86,7 @@ public final class o extends View {
         if (num != null) {
             int intValue = num.intValue();
             int i7 = q.u1;
-            this.r.I0(intValue, 3);
+            this.r.J0(intValue, 3);
             b(x10, y10);
         }
     }
@@ -142,7 +142,7 @@ public final class o extends View {
             if (num2 != null) {
                 paint2.setColor(org.telegram.messenger.g0.B(num2.intValue()) > 0.721f ? -15658735 : -1);
             }
-            paint2.setStrokeWidth(er.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
+            paint2.setStrokeWidth(lr.h.getInterpolation(min) * org.telegram.messenger.g0.L(3.0f));
             Path path2 = this.f;
             path2.rewind();
             RectF rectF3 = org.telegram.messenger.g0.P;
